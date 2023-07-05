@@ -813,11 +813,11 @@ static const struct OamData sOamData_MoveTypes =
     .affineParam = 0,
 };
 static const union AnimCmd sSpriteAnim_TypeNormal[] = {
-    ANIMCMD_FRAME(TYPE_NORMAL * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_ILLUSION * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFighting[] = {
-    ANIMCMD_FRAME(TYPE_FIGHTING * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_DREAM * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFlying[] = {
@@ -825,19 +825,19 @@ static const union AnimCmd sSpriteAnim_TypeFlying[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypePoison[] = {
-    ANIMCMD_FRAME(TYPE_POISON * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_MIASMA * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGround[] = {
-    ANIMCMD_FRAME(TYPE_GROUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_EARTH * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeRock[] = {
-    ANIMCMD_FRAME(TYPE_ROCK * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_BEAST * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeBug[] = {
-    ANIMCMD_FRAME(TYPE_BUG * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_HEART * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGhost[] = {
@@ -861,15 +861,15 @@ static const union AnimCmd sSpriteAnim_TypeWater[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGrass[] = {
-    ANIMCMD_FRAME(TYPE_GRASS * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_NATURE * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeElectric[] = {
-    ANIMCMD_FRAME(TYPE_ELECTRIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_WIND * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypePsychic[] = {
-    ANIMCMD_FRAME(TYPE_PSYCHIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_REASON * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeIce[] = {
@@ -877,7 +877,7 @@ static const union AnimCmd sSpriteAnim_TypeIce[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeDragon[] = {
-    ANIMCMD_FRAME(TYPE_DRAGON * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_FAITH * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeDark[] = {
@@ -885,7 +885,7 @@ static const union AnimCmd sSpriteAnim_TypeDark[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFairy[] = {
-    ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_COSMIC * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_CategoryCool[] = {
@@ -953,25 +953,25 @@ static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
 };
 static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
 {
-    [TYPE_NORMAL] = 13,
-    [TYPE_FIGHTING] = 13,
+    [TYPE_ILLUSION] = 13,
+    [TYPE_DREAM] = 13,
     [TYPE_FLYING] = 14,
-    [TYPE_POISON] = 14,
-    [TYPE_GROUND] = 13,
-    [TYPE_ROCK] = 13,
-    [TYPE_BUG] = 15,
+    [TYPE_MIASMA] = 14,
+    [TYPE_EARTH] = 13,
+    [TYPE_BEAST] = 13,
+    [TYPE_HEART] = 15,
     [TYPE_GHOST] = 14,
     [TYPE_STEEL] = 13,
     [TYPE_MYSTERY] = 15,
     [TYPE_FIRE] = 13,
     [TYPE_WATER] = 14,
-    [TYPE_GRASS] = 15,
-    [TYPE_ELECTRIC] = 13,
-    [TYPE_PSYCHIC] = 14,
+    [TYPE_NATURE] = 15,
+    [TYPE_WIND] = 13,
+    [TYPE_REASON] = 14,
     [TYPE_ICE] = 14,
-    [TYPE_DRAGON] = 15,
+    [TYPE_FAITH] = 15,
     [TYPE_DARK] = 13,
-    [TYPE_FAIRY] = 14,
+    [TYPE_COSMIC] = 14,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = 13,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = 14,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = 14,

@@ -314,25 +314,25 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 
 const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
 {
-    [TYPE_NORMAL] = _("Normal"),
-    [TYPE_FIGHTING] = _("Fight"),
+    [TYPE_ILLUSION] = _("Illusn"),
+    [TYPE_DREAM] = _("Dream"),
     [TYPE_FLYING] = _("Flying"),
-    [TYPE_POISON] = _("Poison"),
-    [TYPE_GROUND] = _("Ground"),
-    [TYPE_ROCK] = _("Rock"),
-    [TYPE_BUG] = _("Bug"),
+    [TYPE_MIASMA] = _("Miasma"),
+    [TYPE_EARTH] = _("Earth"),
+    [TYPE_BEAST] = _("Beast"),
+    [TYPE_HEART] = _("Heart"),
     [TYPE_GHOST] = _("Ghost"),
     [TYPE_STEEL] = _("Steel"),
     [TYPE_MYSTERY] = _("???"),
     [TYPE_FIRE] = _("Fire"),
     [TYPE_WATER] = _("Water"),
-    [TYPE_GRASS] = _("Grass"),
-    [TYPE_ELECTRIC] = _("Electr"),
-    [TYPE_PSYCHIC] = _("Psychc"),
+    [TYPE_NATURE] = _("Nature"),
+    [TYPE_WIND] = _("Wind"),
+    [TYPE_REASON] = _("Reason"),
     [TYPE_ICE] = _("Ice"),
-    [TYPE_DRAGON] = _("Dragon"),
+    [TYPE_FAITH] = _("Faith"),
     [TYPE_DARK] = _("Dark"),
-    [TYPE_FAIRY] = _("Fairy"),
+    [TYPE_COSMIC] = _("Cosmic"),
 };
 
 // This is a factor in how much money you get for beating a trainer.
@@ -5629,13 +5629,13 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
             if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                 gBattleStruct->dynamicMoveType = TYPE_WATER | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & B_WEATHER_SANDSTORM)
-                gBattleStruct->dynamicMoveType = TYPE_ROCK | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_BEAST | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & B_WEATHER_SUN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                 gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & (B_WEATHER_HAIL |B_WEATHER_SNOW))
                 gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_2;
             else
-                gBattleStruct->dynamicMoveType = TYPE_NORMAL | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_2;
         }
     }
     else if (gBattleMoves[move].effect == EFFECT_HIDDEN_POWER)
@@ -5647,7 +5647,7 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
                      | ((gBattleMons[battlerAtk].spAttackIV & 1) << 4)
                      | ((gBattleMons[battlerAtk].spDefenseIV & 1) << 5);
 
-        // Subtract 4 instead of 1 below because 3 types are excluded (TYPE_NORMAL and TYPE_MYSTERY and TYPE_FAIRY)
+        // Subtract 4 instead of 1 below because 3 types are excluded (TYPE_ILLUSION and TYPE_MYSTERY and TYPE_COSMIC)
         // The final + 1 skips past Normal, and the following conditional skips TYPE_MYSTERY
         gBattleStruct->dynamicMoveType = ((NUMBER_OF_MON_TYPES - 4) * typeBits) / 63 + 1;
         if (gBattleStruct->dynamicMoveType >= TYPE_MYSTERY)
@@ -5678,46 +5678,46 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
         if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_TERRAIN_ANY))
         {
             if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
-                gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_WIND | F_DYNAMIC_TYPE_2;
             else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
-                gBattleStruct->dynamicMoveType = TYPE_GRASS | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_NATURE | F_DYNAMIC_TYPE_2;
             else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
-                gBattleStruct->dynamicMoveType = TYPE_FAIRY | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_COSMIC | F_DYNAMIC_TYPE_2;
             else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
-                gBattleStruct->dynamicMoveType = TYPE_PSYCHIC | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_REASON | F_DYNAMIC_TYPE_2;
             else //failsafe
-                gBattleStruct->dynamicMoveType = TYPE_NORMAL | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_2;
         }
     }
 
     attackerAbility = GetBattlerAbility(battlerAtk);
     GET_MOVE_TYPE(move, moveType);
-    if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_NORMAL)
+    if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_ILLUSION)
         || gStatuses4[battlerAtk] & STATUS4_ELECTRIFIED)
     {
-        gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_2;
+        gBattleStruct->dynamicMoveType = TYPE_WIND | F_DYNAMIC_TYPE_2;
     }
-    else if (gBattleMoves[move].type == TYPE_NORMAL
+    else if (gBattleMoves[move].type == TYPE_ILLUSION
              && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
              && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_FAIRY))
+             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
-                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_ELECTRIC))
+                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_WIND))
                 )
              )
     {
         gBattleStruct->dynamicMoveType = ateType | F_DYNAMIC_TYPE_2;
         gBattleStruct->ateBoost[battlerAtk] = 1;
     }
-    else if (gBattleMoves[move].type != TYPE_NORMAL
+    else if (gBattleMoves[move].type != TYPE_ILLUSION
              && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
              && attackerAbility == ABILITY_NORMALIZE)
     {
-        gBattleStruct->dynamicMoveType = TYPE_NORMAL | F_DYNAMIC_TYPE_2;
+        gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_2;
         gBattleStruct->ateBoost[battlerAtk] = 1;
     }
     else if (gBattleMoves[move].flags & FLAG_SOUND
@@ -5725,9 +5725,9 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = TYPE_WATER | F_DYNAMIC_TYPE_2;
     }
-    else if (gStatuses4[battlerAtk] & STATUS4_PLASMA_FISTS && moveType == TYPE_NORMAL)
+    else if (gStatuses4[battlerAtk] & STATUS4_PLASMA_FISTS && moveType == TYPE_ILLUSION)
     {
-        gBattleStruct->dynamicMoveType = TYPE_ELECTRIC | F_DYNAMIC_TYPE_2;
+        gBattleStruct->dynamicMoveType = TYPE_WIND | F_DYNAMIC_TYPE_2;
     }
     else if (move == MOVE_AURA_WHEEL && gBattleMons[battlerAtk].species == SPECIES_MORPEKO_HANGRY)
     {

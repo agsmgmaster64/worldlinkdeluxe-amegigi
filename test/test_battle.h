@@ -88,7 +88,7 @@
  *   {
  *       GIVEN {
  *           ASSUME(gBattleMoves[MOVE_STUN_SPORE].flags & FLAG_POWDER);
- *           ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_GRASS);
+ *           ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_NATURE);
  *           PLAYER(SPECIES_ODDISH); // 1.
  *           OPPONENT(SPECIES_ODDISH); // 2.
  *       } WHEN {

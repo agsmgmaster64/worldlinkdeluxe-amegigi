@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Powder Moves are blocked by Grass Types")
 {
     GIVEN {
         ASSUME(gBattleMoves[MOVE_STUN_SPORE].flags & FLAG_POWDER);
-        ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_GRASS);
+        ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_NATURE);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_ODDISH);
     } WHEN {

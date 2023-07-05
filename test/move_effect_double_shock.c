@@ -4,8 +4,8 @@
 ASSUMPTIONS
 {
     ASSUME(gBattleMoves[MOVE_DOUBLE_SHOCK].effect == EFFECT_DOUBLE_SHOCK);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_ELECTRIC || gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_ELECTRIC);
-    ASSUME(gSpeciesInfo[SPECIES_PIKACHU].types[0] == TYPE_ELECTRIC || gSpeciesInfo[SPECIES_PIKACHU].types[1] == TYPE_ELECTRIC);
+    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_WIND || gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_WIND);
+    ASSUME(gSpeciesInfo[SPECIES_PIKACHU].types[0] == TYPE_WIND || gSpeciesInfo[SPECIES_PIKACHU].types[1] == TYPE_WIND);
 }
 
 SINGLE_BATTLE_TEST("Double Shock user loses its Electric-type")

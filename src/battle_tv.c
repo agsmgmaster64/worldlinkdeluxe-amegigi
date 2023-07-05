@@ -1413,7 +1413,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
         break;
     case PTS_MUD_SPORT:
         // If used Electric move during Mud Sport
-        if (tvPtr->pos[defSide][0].mudSportMonId != -(tvPtr->pos[defSide][1].mudSportMonId) && gBattleMoves[move].type == TYPE_ELECTRIC)
+        if (tvPtr->pos[defSide][0].mudSportMonId != -(tvPtr->pos[defSide][1].mudSportMonId) && gBattleMoves[move].type == TYPE_WIND)
         {
             if (tvPtr->pos[defSide][0].mudSportMonId != 0)
             {

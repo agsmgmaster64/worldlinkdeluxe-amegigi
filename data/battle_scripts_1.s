@@ -867,7 +867,7 @@ BattleScript_EffectFling:
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_FLINCH, BattleScript_FlingFlinch
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_LIGHT_BALL, BattleScript_FlingLightBall
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_MENTAL_HERB, BattleScript_FlingMentalHerb
-	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_POISON_POWER, BattleScript_FlingPoisonBarb
+	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_MIASMA_POWER, BattleScript_FlingPoisonBarb
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_TOXIC_ORB, BattleScript_FlingToxicOrb
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_RESTORE_STATS, BattleScript_FlingWhiteHerb
 BattleScript_EffectFlingConsumeBerry:
@@ -1468,7 +1468,7 @@ BattleScript_EffectDoubleShock:
 	attackcanceler
 	attackstring
 	ppreduce
-	jumpiftype BS_ATTACKER, TYPE_ELECTRIC, BattleScript_DoubleShockWorks
+	jumpiftype BS_ATTACKER, TYPE_WIND, BattleScript_DoubleShockWorks
 	goto BattleScript_ButItFailed
 
 BattleScript_DoubleShockWorks:
@@ -1477,7 +1477,7 @@ BattleScript_DoubleShockWorks:
 	goto BattleScript_HitFromCritCalc
 
 BattleScript_DoubleShockRemoveType::
-	losetype BS_ATTACKER, TYPE_ELECTRIC
+	losetype BS_ATTACKER, TYPE_WIND
 	printstring STRINGID_ATTACKERLOSTELECTRICTYPE
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -1854,14 +1854,14 @@ BattleScript_EffectFlowerShield:
 	ppreduce
 	selectfirstvalidtarget
 BattleScript_FlowerShieldIsAnyGrass:
-	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_FlowerShieldLoopStart
+	jumpiftype BS_TARGET, TYPE_NATURE, BattleScript_FlowerShieldLoopStart
 	jumpifnexttargetvalid BattleScript_FlowerShieldIsAnyGrass
 	goto BattleScript_ButItFailed
 BattleScript_FlowerShieldLoopStart:
 	selectfirstvalidtarget
 BattleScript_FlowerShieldLoop:
 	movevaluescleanup
-	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_FlowerShieldLoop2
+	jumpiftype BS_TARGET, TYPE_NATURE, BattleScript_FlowerShieldLoop2
 	goto BattleScript_FlowerShieldMoveTargetEnd
 BattleScript_FlowerShieldLoop2:
 	setstatchanger STAT_DEF, 1, FALSE
@@ -8209,7 +8209,7 @@ BattleScript_PowderMoveNoEffect::
 	attackstring
 	ppreduce
 	pause B_WAIT_TIME_SHORT
-	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
+	jumpiftype BS_TARGET, TYPE_NATURE, BattleScript_PowderMoveNoEffectPrint
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg

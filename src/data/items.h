@@ -3218,7 +3218,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ELECTRIC,
+        .secondaryId = TYPE_WIND,
         .flingPower = 90,
     },
 
@@ -3233,7 +3233,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GRASS,
+        .secondaryId = TYPE_NATURE,
         .flingPower = 90,
     },
 
@@ -3263,7 +3263,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FIGHTING,
+        .secondaryId = TYPE_DREAM,
         .flingPower = 90,
     },
 
@@ -3278,7 +3278,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_POISON,
+        .secondaryId = TYPE_MIASMA,
         .flingPower = 90,
     },
 
@@ -3293,7 +3293,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GROUND,
+        .secondaryId = TYPE_EARTH,
         .flingPower = 90,
     },
 
@@ -3323,7 +3323,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_PSYCHIC,
+        .secondaryId = TYPE_REASON,
         .flingPower = 90,
     },
 
@@ -3338,7 +3338,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_BUG,
+        .secondaryId = TYPE_HEART,
         .flingPower = 90,
     },
 
@@ -3353,7 +3353,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ROCK,
+        .secondaryId = TYPE_BEAST,
         .flingPower = 90,
     },
 
@@ -3383,7 +3383,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_DRAGON,
+        .secondaryId = TYPE_FAITH,
         .flingPower = 90,
     },
 
@@ -3428,7 +3428,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FAIRY,
+        .secondaryId = TYPE_COSMIC,
         .flingPower = 90,
     },
 
@@ -3458,7 +3458,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ELECTRIC,
+        .secondaryId = TYPE_WIND,
         .flingPower = 70,
     },
 
@@ -3533,7 +3533,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ELECTRIC,
+        .secondaryId = TYPE_WIND,
         .flingPower = 50,
     },
 
@@ -3548,7 +3548,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GRASS,
+        .secondaryId = TYPE_NATURE,
         .flingPower = 50,
     },
 
@@ -3578,7 +3578,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FIGHTING,
+        .secondaryId = TYPE_DREAM,
         .flingPower = 50,
     },
 
@@ -3593,7 +3593,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_POISON,
+        .secondaryId = TYPE_MIASMA,
         .flingPower = 50,
     },
 
@@ -3608,7 +3608,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GROUND,
+        .secondaryId = TYPE_EARTH,
         .flingPower = 50,
     },
 
@@ -3638,7 +3638,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_PSYCHIC,
+        .secondaryId = TYPE_REASON,
         .flingPower = 50,
     },
 
@@ -3653,7 +3653,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_BUG,
+        .secondaryId = TYPE_HEART,
         .flingPower = 50,
     },
 
@@ -3668,7 +3668,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ROCK,
+        .secondaryId = TYPE_BEAST,
         .flingPower = 50,
     },
 
@@ -3698,7 +3698,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_DRAGON,
+        .secondaryId = TYPE_FAITH,
         .flingPower = 50,
     },
 
@@ -3743,7 +3743,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FAIRY,
+        .secondaryId = TYPE_COSMIC,
         .flingPower = 50,
     },
 
@@ -4421,7 +4421,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_NORMAL,
+        .secondaryId = TYPE_ILLUSION,
     },
 
     [ITEM_FIRE_GEM] =
@@ -4463,7 +4463,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ELECTRIC,
+        .secondaryId = TYPE_WIND,
     },
 
     [ITEM_GRASS_GEM] =
@@ -4477,7 +4477,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GRASS,
+        .secondaryId = TYPE_NATURE,
     },
 
     [ITEM_ICE_GEM] =
@@ -4505,7 +4505,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FIGHTING,
+        .secondaryId = TYPE_DREAM,
     },
 
     [ITEM_POISON_GEM] =
@@ -4519,7 +4519,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_POISON,
+        .secondaryId = TYPE_MIASMA,
     },
 
     [ITEM_GROUND_GEM] =
@@ -4533,7 +4533,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GROUND,
+        .secondaryId = TYPE_EARTH,
     },
 
     [ITEM_FLYING_GEM] =
@@ -4561,7 +4561,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_PSYCHIC,
+        .secondaryId = TYPE_REASON,
     },
 
     [ITEM_BUG_GEM] =
@@ -4575,7 +4575,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_BUG,
+        .secondaryId = TYPE_HEART,
     },
 
     [ITEM_ROCK_GEM] =
@@ -4589,7 +4589,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ROCK,
+        .secondaryId = TYPE_BEAST,
     },
 
     [ITEM_GHOST_GEM] =
@@ -4617,7 +4617,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_DRAGON,
+        .secondaryId = TYPE_FAITH,
     },
 
     [ITEM_DARK_GEM] =
@@ -4659,7 +4659,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FAIRY,
+        .secondaryId = TYPE_COSMIC,
     },
 
 // Z-Crystals
@@ -4674,7 +4674,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_NORMAL
+        .secondaryId = TYPE_ILLUSION
     },
 
     [ITEM_FIRIUM_Z] =
@@ -4713,7 +4713,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ELECTRIC
+        .secondaryId = TYPE_WIND
     },
 
     [ITEM_GRASSIUM_Z] =
@@ -4726,7 +4726,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GRASS
+        .secondaryId = TYPE_NATURE
     },
 
     [ITEM_ICIUM_Z] =
@@ -4752,7 +4752,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FIGHTING
+        .secondaryId = TYPE_DREAM
     },
 
     [ITEM_POISONIUM_Z] =
@@ -4765,7 +4765,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_POISON
+        .secondaryId = TYPE_MIASMA
     },
 
     [ITEM_GROUNDIUM_Z] =
@@ -4778,7 +4778,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_GROUND
+        .secondaryId = TYPE_EARTH
     },
 
     [ITEM_FLYINIUM_Z] =
@@ -4804,7 +4804,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_PSYCHIC
+        .secondaryId = TYPE_REASON
     },
 
     [ITEM_BUGINIUM_Z] =
@@ -4817,7 +4817,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_BUG
+        .secondaryId = TYPE_HEART
     },
 
     [ITEM_ROCKIUM_Z] =
@@ -4830,7 +4830,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ROCK
+        .secondaryId = TYPE_BEAST
     },
 
     [ITEM_GHOSTIUM_Z] =
@@ -4856,7 +4856,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_DRAGON
+        .secondaryId = TYPE_FAITH
     },
 
     [ITEM_DARKINIUM_Z] =
@@ -4895,7 +4895,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_FAIRY
+        .secondaryId = TYPE_COSMIC
     },
 
     [ITEM_PIKANIUM_Z] =
@@ -5320,7 +5320,7 @@ const struct Item gItems[] =
         .name = _("Odd Incense"),
         .itemId = ITEM_ODD_INCENSE,
         .price = 2000,
-        .holdEffect = HOLD_EFFECT_PSYCHIC_POWER,
+        .holdEffect = HOLD_EFFECT_REASON_POWER,
         .holdEffectParam = 20,
         .description = sOddIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -5334,7 +5334,7 @@ const struct Item gItems[] =
         .name = _("Rock Incense"),
         .itemId = ITEM_ROCK_INCENSE,
         .price = 2000,
-        .holdEffect = HOLD_EFFECT_ROCK_POWER,
+        .holdEffect = HOLD_EFFECT_BEAST_POWER,
         .holdEffectParam = 20,
         .description = sRockIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -5376,7 +5376,7 @@ const struct Item gItems[] =
         .name = _("Rose Incense"),
         .itemId = ITEM_ROSE_INCENSE,
         .price = 2000,
-        .holdEffect = HOLD_EFFECT_GRASS_POWER,
+        .holdEffect = HOLD_EFFECT_NATURE_POWER,
         .holdEffectParam = 20,
         .description = sRoseIncenseDesc,
         .pocket = POCKET_ITEMS,
@@ -5586,7 +5586,7 @@ const struct Item gItems[] =
         .name = _("Silk Scarf"),
         .itemId = ITEM_SILK_SCARF,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_NORMAL_POWER,
+        .holdEffect = HOLD_EFFECT_ILLUSION_POWER,
         .holdEffectParam = 20,
         .description = sSilkScarfDesc,
         .pocket = POCKET_ITEMS,
@@ -5628,7 +5628,7 @@ const struct Item gItems[] =
         .name = _("Magnet"),
         .itemId = ITEM_MAGNET,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_ELECTRIC_POWER,
+        .holdEffect = HOLD_EFFECT_WIND_POWER,
         .holdEffectParam = 20,
         .description = sMagnetDesc,
         .pocket = POCKET_ITEMS,
@@ -5642,7 +5642,7 @@ const struct Item gItems[] =
         .name = _("Miracle Seed"),
         .itemId = ITEM_MIRACLE_SEED,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_GRASS_POWER,
+        .holdEffect = HOLD_EFFECT_NATURE_POWER,
         .holdEffectParam = 20,
         .description = sMiracleSeedDesc,
         .pocket = POCKET_ITEMS,
@@ -5670,7 +5670,7 @@ const struct Item gItems[] =
         .name = _("Black Belt"),
         .itemId = ITEM_BLACK_BELT,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_FIGHTING_POWER,
+        .holdEffect = HOLD_EFFECT_DREAM_POWER,
         .holdEffectParam = 20,
         .description = sBlackBeltDesc,
         .pocket = POCKET_ITEMS,
@@ -5684,7 +5684,7 @@ const struct Item gItems[] =
         .name = _("Poison Barb"),
         .itemId = ITEM_POISON_BARB,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_POISON_POWER,
+        .holdEffect = HOLD_EFFECT_MIASMA_POWER,
         .holdEffectParam = 20,
         .description = sPoisonBarbDesc,
         .pocket = POCKET_ITEMS,
@@ -5698,7 +5698,7 @@ const struct Item gItems[] =
         .name = _("Soft Sand"),
         .itemId = ITEM_SOFT_SAND,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_GROUND_POWER,
+        .holdEffect = HOLD_EFFECT_EARTH_POWER,
         .holdEffectParam = 20,
         .description = sSoftSandDesc,
         .pocket = POCKET_ITEMS,
@@ -5726,7 +5726,7 @@ const struct Item gItems[] =
         .name = _("Twisted Spoon"),
         .itemId = ITEM_TWISTED_SPOON,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_PSYCHIC_POWER,
+        .holdEffect = HOLD_EFFECT_REASON_POWER,
         .holdEffectParam = 20,
         .description = sTwistedSpoonDesc,
         .pocket = POCKET_ITEMS,
@@ -5740,7 +5740,7 @@ const struct Item gItems[] =
         .name = _("Silver Powder"),
         .itemId = ITEM_SILVER_POWDER,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_BUG_POWER,
+        .holdEffect = HOLD_EFFECT_HEART_POWER,
         .holdEffectParam = 20,
         .description = sSilverPowderDesc,
         .pocket = POCKET_ITEMS,
@@ -5754,7 +5754,7 @@ const struct Item gItems[] =
         .name = _("Hard Stone"),
         .itemId = ITEM_HARD_STONE,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_ROCK_POWER,
+        .holdEffect = HOLD_EFFECT_BEAST_POWER,
         .holdEffectParam = 20,
         .description = sHardStoneDesc,
         .pocket = POCKET_ITEMS,
@@ -5782,7 +5782,7 @@ const struct Item gItems[] =
         .name = _("Dragon Fang"),
         .itemId = ITEM_DRAGON_FANG,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_DRAGON_POWER,
+        .holdEffect = HOLD_EFFECT_FAITH_POWER,
         .holdEffectParam = 20,
         .description = sDragonFangDesc,
         .pocket = POCKET_ITEMS,
@@ -7274,7 +7274,7 @@ const struct Item gItems[] =
         .itemId = ITEM_CHILAN_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_NORMAL,
+        .holdEffectParam = TYPE_ILLUSION,
         .description = sChilanBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7316,7 +7316,7 @@ const struct Item gItems[] =
         .itemId = ITEM_WACAN_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_ELECTRIC,
+        .holdEffectParam = TYPE_WIND,
         .description = sWacanBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7330,7 +7330,7 @@ const struct Item gItems[] =
         .itemId = ITEM_RINDO_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_GRASS,
+        .holdEffectParam = TYPE_NATURE,
         .description = sRindoBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7358,7 +7358,7 @@ const struct Item gItems[] =
         .itemId = ITEM_CHOPLE_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_FIGHTING,
+        .holdEffectParam = TYPE_DREAM,
         .description = sChopleBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7372,7 +7372,7 @@ const struct Item gItems[] =
         .itemId = ITEM_KEBIA_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_POISON,
+        .holdEffectParam = TYPE_MIASMA,
         .description = sKebiaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7386,7 +7386,7 @@ const struct Item gItems[] =
         .itemId = ITEM_SHUCA_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_GROUND,
+        .holdEffectParam = TYPE_EARTH,
         .description = sShucaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7414,7 +7414,7 @@ const struct Item gItems[] =
         .itemId = ITEM_PAYAPA_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_PSYCHIC,
+        .holdEffectParam = TYPE_REASON,
         .description = sPayapaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7428,7 +7428,7 @@ const struct Item gItems[] =
         .itemId = ITEM_TANGA_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_BUG,
+        .holdEffectParam = TYPE_HEART,
         .description = sTangaBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7442,7 +7442,7 @@ const struct Item gItems[] =
         .itemId = ITEM_CHARTI_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_ROCK,
+        .holdEffectParam = TYPE_BEAST,
         .description = sChartiBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7470,7 +7470,7 @@ const struct Item gItems[] =
         .itemId = ITEM_HABAN_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_DRAGON,
+        .holdEffectParam = TYPE_FAITH,
         .description = sHabanBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -7512,7 +7512,7 @@ const struct Item gItems[] =
         .itemId = ITEM_ROSELI_BERRY,
         .price = 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_FAIRY,
+        .holdEffectParam = TYPE_COSMIC,
         .description = sRoseliBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,

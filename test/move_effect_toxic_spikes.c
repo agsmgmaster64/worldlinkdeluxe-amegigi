@@ -163,8 +163,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by grounded Poison-types")
     PARAMETRIZE { species = SPECIES_ZUBAT; move = MOVE_GRAVITY; grounded = TRUE; }
     PARAMETRIZE { species = SPECIES_ZUBAT; move = MOVE_INGRAIN; grounded = TRUE; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_EKANS].types[0] == TYPE_POISON);
-        ASSUME(gSpeciesInfo[SPECIES_ZUBAT].types[0] == TYPE_POISON);
+        ASSUME(gSpeciesInfo[SPECIES_EKANS].types[0] == TYPE_MIASMA);
+        ASSUME(gSpeciesInfo[SPECIES_ZUBAT].types[0] == TYPE_MIASMA);
         ASSUME(gSpeciesInfo[SPECIES_ZUBAT].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -194,7 +194,7 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by Poison-types affected by Magnet 
 {
     KNOWN_FAILING;
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_EKANS].types[0] == TYPE_POISON);
+        ASSUME(gSpeciesInfo[SPECIES_EKANS].types[0] == TYPE_MIASMA);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_EKANS);

@@ -701,7 +701,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
 
         // check ground immunities
-        if (moveType == TYPE_GROUND
+        if (moveType == TYPE_EARTH
           && !IsBattlerGrounded(battlerDef)
           && ((AI_DATA->abilities[battlerDef] == ABILITY_LEVITATE
           && DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move))
@@ -751,7 +751,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case ABILITY_VOLT_ABSORB:
             case ABILITY_MOTOR_DRIVE:
             case ABILITY_LIGHTNING_ROD:
-                if (moveType == TYPE_ELECTRIC)
+                if (moveType == TYPE_WIND)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_WATER_ABSORB:
@@ -769,7 +769,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     return 0;
                 break;
             case ABILITY_SAP_SIPPER:
-                if (moveType == TYPE_GRASS)
+                if (moveType == TYPE_NATURE)
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_JUSTIFIED:
@@ -778,7 +778,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 break;
             case ABILITY_RATTLED:
                 if (!IS_MOVE_STATUS(move)
-                  && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG))
+                  && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_HEART))
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_SOUNDPROOF:
@@ -803,7 +803,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_FLOWER_VEIL:
-                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS) && (IsNonVolatileStatusMoveEffect(moveEffect) || IsStatLoweringMoveEffect(moveEffect)))
+                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE) && (IsNonVolatileStatusMoveEffect(moveEffect) || IsStatLoweringMoveEffect(moveEffect)))
                     RETURN_SCORE_MINUS(10);
                 break;
             case ABILITY_MAGIC_BOUNCE:
@@ -860,7 +860,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 switch (AI_DATA->abilities[BATTLE_PARTNER(battlerDef)])
                 {
                 case ABILITY_LIGHTNING_ROD:
-                    if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(move, AI_DATA->abilities[battlerAtk]))
+                    if (moveType == TYPE_WIND && !IsMoveRedirectionPrevented(move, AI_DATA->abilities[battlerAtk]))
                         RETURN_SCORE_MINUS(20);
                     break;
                 case ABILITY_STORM_DRAIN:
@@ -876,7 +876,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         RETURN_SCORE_MINUS(20);
                     break;
                 case ABILITY_FLOWER_VEIL:
-                    if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)) && (IsNonVolatileStatusMoveEffect(moveEffect) || IsStatLoweringMoveEffect(moveEffect)))
+                    if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE)) && (IsNonVolatileStatusMoveEffect(moveEffect) || IsStatLoweringMoveEffect(moveEffect)))
                         RETURN_SCORE_MINUS(10);
                     break;
                 case ABILITY_AROMA_VEIL:
@@ -1080,7 +1080,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_CHARGE:
             if (gStatuses3[battlerAtk] & STATUS3_CHARGED_UP)
                 score -= 20;
-            else if (!HasMoveWithType(battlerAtk, TYPE_ELECTRIC))
+            else if (!HasMoveWithType(battlerAtk, TYPE_WIND))
                 score -= 10;
             #if B_CHARGE_SPDEF_RAISE >= GEN_5
             else if (!BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPDEF))
@@ -1137,10 +1137,10 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_ROTOTILLER:
             if (isDoubleBattle)
             {
-                if (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)
+                if (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NATURE)
                   && AI_IsBattlerGrounded(battlerAtk)
                   && (BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_ATK) || BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPATK)))
-                  && !(IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), TYPE_GRASS)
+                  && !(IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), TYPE_NATURE)
                   && AI_IsBattlerGrounded(BATTLE_PARTNER(battlerAtk))
                   && AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] != ABILITY_CONTRARY
                   && (BattlerStatCanRise(BATTLE_PARTNER(battlerAtk), AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)], STAT_ATK)
@@ -1149,7 +1149,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     score -= 10;
                 }
             }
-            else if (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)
+            else if (!(IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NATURE)
               && AI_IsBattlerGrounded(battlerAtk)
               && (BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_ATK) || BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_SPATK))))
             {
@@ -1410,7 +1410,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_LEECH_SEED:
             if (gStatuses3[battlerDef] & STATUS3_LEECHSEED
-             || IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)
+             || IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE)
              || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
             else if (AI_DATA->abilities[battlerDef] == ABILITY_LIQUID_OOZE)
@@ -1773,8 +1773,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_MIRROR_MOVE:
             return AI_CheckBadMove(battlerAtk, battlerDef, predictedMove, score);
         case EFFECT_FLOWER_SHIELD:
-            if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GRASS)
-              && !(isDoubleBattle && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), TYPE_GRASS)))
+            if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NATURE)
+              && !(isDoubleBattle && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), TYPE_NATURE)))
                 score -= 10;
             break;
         case EFFECT_AROMATIC_MIST:
@@ -2035,7 +2035,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_DOUBLE_SHOCK:
-            if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_ELECTRIC))
+            if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_WIND))
                 score -= 10;
             break;
         case EFFECT_DEFOG:
@@ -2441,7 +2441,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     score -= 10;
                 break;
             case MOVE_FORESTS_CURSE:
-                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS) || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
+                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE) || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                     score -= 10;
                 break;
             }
@@ -2466,7 +2466,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_ELECTRIFY:
             if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER
-              //|| GetMoveTypeSpecial(battlerDef, predictedMove) == TYPE_ELECTRIC // Move will already be electric type
+              //|| GetMoveTypeSpecial(battlerDef, predictedMove) == TYPE_WIND // Move will already be electric type
               || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
             break;
@@ -2833,13 +2833,13 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     }
                     break;  // handled in AI_HPAware
                 case ABILITY_MOTOR_DRIVE:
-                    if (moveType == TYPE_ELECTRIC && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_SPEED))
+                    if (moveType == TYPE_WIND && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_SPEED))
                     {
                         RETURN_SCORE_PLUS(1);
                     }
                     break;
                 case ABILITY_LIGHTNING_ROD:
-                    if (moveType == TYPE_ELECTRIC
+                    if (moveType == TYPE_WIND
                       && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
                       && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_SPATK))
                     {
@@ -2877,7 +2877,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     }
                     break;
                 case ABILITY_SAP_SIPPER:
-                    if (moveType == TYPE_GRASS
+                    if (moveType == TYPE_NATURE
                       && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
                       && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_ATK))
                     {
@@ -2896,7 +2896,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     break;
                 case ABILITY_RATTLED:
                     if (!IS_MOVE_STATUS(move)
-                      && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
+                      && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_HEART)
                       && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbility, STAT_SPEED)
                       && !CanIndexMoveFaintTarget(battlerAtk, battlerAtkPartner, AI_THINKING_STRUCT->movesetIndex, 1))
                     {
@@ -3068,9 +3068,9 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                && IsUngroundingEffect(gBattleMoves[AI_DATA->partnerMove].effect)))
                 score += 2;
             else if (IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_FIRE)
-              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_ELECTRIC)
-              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_POISON)
-              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_ROCK))
+              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_WIND)
+              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_MIASMA)
+              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_BEAST))
                 score -= 10;    // partner will be hit by earthquake and is weak to it
             else
                 score -= 3;
@@ -3651,7 +3651,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_LEECH_SEED:
-        if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)
+        if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE)
           || gStatuses3[battlerDef] & STATUS3_LEECHSEED
           || HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
           || AI_DATA->abilities[battlerDef] == ABILITY_LIQUID_OOZE
@@ -3809,7 +3809,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         score += 2;
                     break;
                 case HOLD_EFFECT_BLACK_SLUDGE:
-                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MIASMA))
                         score += 2;
                     break;
                 case HOLD_EFFECT_IRON_BALL:
@@ -3934,13 +3934,13 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         else if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
          || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST)
-         && (HasMoveWithType(battlerAtk, TYPE_NORMAL)
-         || HasMoveWithType(battlerAtk, TYPE_FIGHTING))))
+         && (HasMoveWithType(battlerAtk, TYPE_ILLUSION)
+         || HasMoveWithType(battlerAtk, TYPE_DREAM))))
             score += 2;
         break;
     case EFFECT_MIRACLE_EYE:
         if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
-          || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_DARK) && (HasMoveWithType(battlerAtk, TYPE_PSYCHIC))))
+          || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_DARK) && (HasMoveWithType(battlerAtk, TYPE_REASON))))
             score += 2;
         break;
     case EFFECT_PERISH_SONG:
@@ -4228,7 +4228,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_NATURE_POWER:
         return AI_CheckViability(battlerAtk, battlerDef, GetNaturePowerMove(), score);
     case EFFECT_CHARGE:
-        if (HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
+        if (HasDamagingMoveOfType(battlerAtk, TYPE_WIND))
             score += 2;
         #if B_CHARGE_SPDEF_RAISE >= GEN_5
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
@@ -4264,7 +4264,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score += 2;
             break;
         case HOLD_EFFECT_BLACK_SLUDGE:
-            if (!IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && AI_DATA->abilities[battlerDef] != ABILITY_MAGIC_GUARD)
+            if (!IS_BATTLER_OF_TYPE(battlerDef, TYPE_MIASMA) && AI_DATA->abilities[battlerDef] != ABILITY_MAGIC_GUARD)
                 score += 3;
             break;
         case HOLD_EFFECT_IRON_BALL:
@@ -4314,7 +4314,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         score += 2;
                     break;
                 case HOLD_EFFECT_BLACK_SLUDGE:
-                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON) || AI_DATA->abilities[battlerAtk] == ABILITY_MAGIC_GUARD)
+                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MIASMA) || AI_DATA->abilities[battlerAtk] == ABILITY_MAGIC_GUARD)
                         score += 3;
                     break;
                 case HOLD_EFFECT_IRON_BALL:
@@ -4443,7 +4443,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 3; // Steal move
         break;
     case EFFECT_MUD_SPORT:
-        if (!HasMoveWithType(battlerAtk, TYPE_ELECTRIC) && HasMoveWithType(battlerDef, TYPE_ELECTRIC))
+        if (!HasMoveWithType(battlerAtk, TYPE_WIND) && HasMoveWithType(battlerDef, TYPE_WIND))
             score++;
         break;
     case EFFECT_WATER_SPORT:
@@ -4641,7 +4641,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if ((AI_DATA->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
           || AI_DATA->abilities[battlerAtk] == ABILITY_MOTOR_DRIVE
           || AI_DATA->abilities[battlerAtk] == ABILITY_LIGHTNING_ROD)
-          && gBattleMoves[predictedMove].type == TYPE_NORMAL)
+          && gBattleMoves[predictedMove].type == TYPE_ILLUSION)
             score += 2;
         break;
     case EFFECT_FLING:
@@ -4694,11 +4694,11 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER && predictedMove != MOVE_NONE && IsHealingMoveEffect(gBattleMoves[predictedMove].effect))
             score += 3; // Try to cancel healing move
         else if (HasHealingEffect(battlerDef) || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_LEFTOVERS
-          || (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_BLACK_SLUDGE && IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON)))
+          || (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_BLACK_SLUDGE && IS_BATTLER_OF_TYPE(battlerDef, TYPE_MIASMA)))
             score += 2;
         break;
     case EFFECT_SOAK:
-        if (HasMoveWithType(battlerAtk, TYPE_ELECTRIC) || HasMoveWithType(battlerAtk, TYPE_GRASS) || HasMoveEffect(battlerAtk, EFFECT_FREEZE_DRY))
+        if (HasMoveWithType(battlerAtk, TYPE_WIND) || HasMoveWithType(battlerAtk, TYPE_NATURE) || HasMoveEffect(battlerAtk, EFFECT_FREEZE_DRY))
             score += 2; // Get some super effective moves
         break;
     case EFFECT_THIRD_TYPE:
@@ -4746,18 +4746,18 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_MAGNET_RISE:
-        if (IsBattlerGrounded(battlerAtk) && HasDamagingMoveOfType(battlerDef, TYPE_ELECTRIC)
+        if (IsBattlerGrounded(battlerAtk) && HasDamagingMoveOfType(battlerDef, TYPE_WIND)
           && !(AI_GetTypeEffectiveness(MOVE_EARTHQUAKE, battlerDef, battlerAtk) == AI_EFFECTIVENESS_x0)) // Doesn't resist ground move
         {
             if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER) // Attacker goes first
            {
-                if (gBattleMoves[predictedMove].type == TYPE_GROUND)
+                if (gBattleMoves[predictedMove].type == TYPE_EARTH)
                     score += 3; // Cause the enemy's move to fail
                 break;
             }
             else // Opponent Goes First
             {
-                if (HasDamagingMoveOfType(battlerDef, TYPE_GROUND))
+                if (HasDamagingMoveOfType(battlerDef, TYPE_EARTH))
                     score += 2;
                 break;
             }
@@ -5105,7 +5105,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     if (IsTargetingPartner(battlerAtk, battlerDef))
     {
         if ((effect == EFFECT_HEAL_PULSE || effect == EFFECT_HIT_ENEMY_HEAL_ALLY)
-         || (moveType == TYPE_ELECTRIC && AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
+         || (moveType == TYPE_WIND && AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
          || (moveType == TYPE_WATER && (AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_DRY_SKIN || AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_WATER_ABSORB)))
         {
             if (gStatuses3[battlerDef] & STATUS3_HEAL_BLOCK)

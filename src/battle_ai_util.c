@@ -715,7 +715,7 @@ bool32 IsAffectedByPowder(u8 battler, u16 ability, u16 holdEffect)
 {
     if (ability == ABILITY_OVERCOAT
     #if B_POWDER_GRASS >= GEN_6
-        || IS_BATTLER_OF_TYPE(battler, TYPE_GRASS)
+        || IS_BATTLER_OF_TYPE(battler, TYPE_NATURE)
     #endif
         || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
@@ -1494,7 +1494,7 @@ bool32 IsMoveEncouragedToHit(u8 battlerAtk, u8 battlerDef, u16 move)
         return TRUE;
 
 #if B_TOXIC_NEVER_MISS >= GEN_6
-    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+    if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MIASMA))
         return TRUE;
 #endif
 
@@ -1566,9 +1566,9 @@ bool32 ShouldSetSandstorm(u8 battler, u16 ability, u16 holdEffect)
       || ability == ABILITY_OVERCOAT
       || ability == ABILITY_MAGIC_GUARD
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
-      || IS_BATTLER_OF_TYPE(battler, TYPE_ROCK)
+      || IS_BATTLER_OF_TYPE(battler, TYPE_BEAST)
       || IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
-      || IS_BATTLER_OF_TYPE(battler, TYPE_GROUND)
+      || IS_BATTLER_OF_TYPE(battler, TYPE_EARTH)
       || HasMoveEffect(battler, EFFECT_SHORE_UP)
       || HasMoveEffect(battler, EFFECT_WEATHER_BALL))
     {
@@ -2393,8 +2393,8 @@ static u32 GetPoisonDamage(u8 battlerId)
 
 static bool32 BattlerAffectedBySandstorm(u8 battlerId, u16 ability)
 {
-    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ROCK)
-      && !IS_BATTLER_OF_TYPE(battlerId, TYPE_GROUND)
+    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_BEAST)
+      && !IS_BATTLER_OF_TYPE(battlerId, TYPE_EARTH)
       && !IS_BATTLER_OF_TYPE(battlerId, TYPE_STEEL)
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
@@ -2809,7 +2809,7 @@ bool32 AI_CanPutToSleep(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, 
 static bool32 AI_CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 {
     return ((AI_DATA->abilities[battlerAttacker] == ABILITY_CORROSION && gBattleMoves[gCurrentMove].split == SPLIT_STATUS)
-            || !(IS_BATTLER_OF_TYPE(battlerTarget, TYPE_POISON) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)));
+            || !(IS_BATTLER_OF_TYPE(battlerTarget, TYPE_MIASMA) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)));
 }
 
 static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
@@ -2851,7 +2851,7 @@ bool32 AI_CanPoison(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, u16 
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))
         return FALSE;
-    else if (defAbility != ABILITY_CORROSION && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL)))
+    else if (defAbility != ABILITY_CORROSION && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_MIASMA) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL)))
         return FALSE;
     else if (IsValidDoubleBattle(battlerAtk) && AI_DATA->abilities[BATTLE_PARTNER(battlerDef)] == ABILITY_PASTEL_VEIL)
         return FALSE;
@@ -2863,7 +2863,7 @@ static bool32 AI_CanBeParalyzed(u8 battler, u16 ability)
 {
     if (ability == ABILITY_LIMBER
       || ability == ABILITY_COMATOSE
-      || IS_BATTLER_OF_TYPE(battler, TYPE_ELECTRIC)
+      || IS_BATTLER_OF_TYPE(battler, TYPE_WIND)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || IsAbilityStatusProtected(battler))
         return FALSE;

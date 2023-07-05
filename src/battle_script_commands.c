@@ -1332,35 +1332,35 @@ static const u8 sPickupProbabilities[] =
 
 static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =
 {
-    [BATTLE_TERRAIN_GRASS]            = TYPE_GRASS,
-    [BATTLE_TERRAIN_LONG_GRASS]       = TYPE_GRASS,
-    [BATTLE_TERRAIN_SAND]             = TYPE_GROUND,
+    [BATTLE_TERRAIN_GRASS]            = TYPE_NATURE,
+    [BATTLE_TERRAIN_LONG_GRASS]       = TYPE_NATURE,
+    [BATTLE_TERRAIN_SAND]             = TYPE_EARTH,
     [BATTLE_TERRAIN_UNDERWATER]       = TYPE_WATER,
     [BATTLE_TERRAIN_WATER]            = TYPE_WATER,
     [BATTLE_TERRAIN_POND]             = TYPE_WATER,
-    [BATTLE_TERRAIN_CAVE]             = TYPE_ROCK,
-    [BATTLE_TERRAIN_BUILDING]         = TYPE_NORMAL,
+    [BATTLE_TERRAIN_CAVE]             = TYPE_BEAST,
+    [BATTLE_TERRAIN_BUILDING]         = TYPE_ILLUSION,
     [BATTLE_TERRAIN_SOARING]          = TYPE_FLYING,
     [BATTLE_TERRAIN_SKY_PILLAR]       = TYPE_FLYING,
     [BATTLE_TERRAIN_BURIAL_GROUND]    = TYPE_GHOST,
-    [BATTLE_TERRAIN_PUDDLE]           = TYPE_GROUND,
-    [BATTLE_TERRAIN_MARSH]            = TYPE_GROUND,
-    [BATTLE_TERRAIN_SWAMP]            = TYPE_GROUND,
+    [BATTLE_TERRAIN_PUDDLE]           = TYPE_EARTH,
+    [BATTLE_TERRAIN_MARSH]            = TYPE_EARTH,
+    [BATTLE_TERRAIN_SWAMP]            = TYPE_EARTH,
     [BATTLE_TERRAIN_SNOW]             = TYPE_ICE,
     [BATTLE_TERRAIN_ICE]              = TYPE_ICE,
     [BATTLE_TERRAIN_VOLCANO]          = TYPE_FIRE,
-    [BATTLE_TERRAIN_DISTORTION_WORLD] = TYPE_NORMAL,
-    [BATTLE_TERRAIN_SPACE]            = TYPE_DRAGON,
-    [BATTLE_TERRAIN_ULTRA_SPACE]      = TYPE_PSYCHIC,
+    [BATTLE_TERRAIN_DISTORTION_WORLD] = TYPE_ILLUSION,
+    [BATTLE_TERRAIN_SPACE]            = TYPE_COSMIC,
+    [BATTLE_TERRAIN_ULTRA_SPACE]      = TYPE_REASON,
 #if B_CAMOUFLAGE_TYPES >= GEN_5
-    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_GROUND,
-    [BATTLE_TERRAIN_PLAIN]            = TYPE_GROUND,
+    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_EARTH,
+    [BATTLE_TERRAIN_PLAIN]            = TYPE_EARTH,
 #elif B_CAMOUFLAGE_TYPES == GEN_4
-    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_ROCK,
-    [BATTLE_TERRAIN_PLAIN]            = TYPE_GROUND,
+    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_BEAST,
+    [BATTLE_TERRAIN_PLAIN]            = TYPE_EARTH,
 #else
-    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_ROCK,
-    [BATTLE_TERRAIN_PLAIN]            = TYPE_NORMAL,
+    [BATTLE_TERRAIN_MOUNTAIN]         = TYPE_BEAST,
+    [BATTLE_TERRAIN_PLAIN]            = TYPE_ILLUSION,
 #endif
 };
 
@@ -1766,7 +1766,7 @@ static bool32 AccuracyCalcHelper(u16 move)
         return TRUE;
     }
 #if B_TOXIC_NEVER_MISS >= GEN_6
-    else if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_POISON))
+    else if (gBattleMoves[move].effect == EFFECT_TOXIC && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_MIASMA))
     {
         JumpIfMoveFailed(7, move);
         return TRUE;
@@ -5103,7 +5103,7 @@ static void Cmd_setroost(void)
         gBattleStruct->roostTypes[gBattlerAttacker][0] = TYPE_FLYING;
         gBattleStruct->roostTypes[gBattlerAttacker][1] = TYPE_FLYING;
 #if B_ROOST_PURE_FLYING >= GEN_5
-        SET_BATTLER_TYPE(gBattlerAttacker, TYPE_NORMAL);
+        SET_BATTLER_TYPE(gBattlerAttacker, TYPE_ILLUSION);
 #else
         SET_BATTLER_TYPE(gBattlerAttacker, TYPE_MYSTERY);
 #endif
@@ -7141,7 +7141,7 @@ static void Cmd_switchineffects(void)
         && IsBattlerGrounded(gActiveBattler))
     {
         gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_TOXIC_SPIKES_DAMAGED;
-        if (IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_POISON)) // Absorb the toxic spikes.
+        if (IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_MIASMA)) // Absorb the toxic spikes.
         {
             gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~SIDE_STATUS_TOXIC_SPIKES;
             gSideTimers[GetBattlerSide(gActiveBattler)].toxicSpikesAmount = 0;
@@ -8487,12 +8487,12 @@ static void HandleTerrainMove(u16 move)
 bool32 CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 {
     return ((GetBattlerAbility(battlerAttacker) == ABILITY_CORROSION && gBattleMoves[gCurrentMove].split == SPLIT_STATUS)
-            || !(IS_BATTLER_OF_TYPE(battlerTarget, TYPE_POISON) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)));
+            || !(IS_BATTLER_OF_TYPE(battlerTarget, TYPE_MIASMA) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)));
 }
 
 bool32 CanParalyzeType(u8 battlerAttacker, u8 battlerTarget)
 {
-    return !(B_PARALYZE_ELECTRIC >= GEN_6 && IS_BATTLER_OF_TYPE(battlerTarget, TYPE_ELECTRIC));
+    return !(B_PARALYZE_ELECTRIC >= GEN_6 && IS_BATTLER_OF_TYPE(battlerTarget, TYPE_WIND));
 }
 
 bool32 CanUseLastResort(u8 battlerId)
@@ -8589,7 +8589,7 @@ static bool32 TryDefogClear(u8 battlerAtk, bool32 clear)
 
 u32 IsFlowerVeilProtected(u32 battler)
 {
-    if (IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_NATURE))
         return IsAbilityOnSide(battler, ABILITY_FLOWER_VEIL);
     else
         return 0;
@@ -8638,7 +8638,7 @@ static bool32 IsRototillerAffected(u32 battlerId)
         return FALSE;
     if (!IsBattlerGrounded(battlerId))
         return FALSE;   // Only grounded battlers affected
-    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_GRASS))
+    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_NATURE))
         return FALSE;   // Only grass types affected
     if (gStatuses3[battlerId] & STATUS3_SEMI_INVULNERABLE)
         return FALSE;   // Rototiller doesn't affected semi-invulnerable battlers
@@ -8659,7 +8659,7 @@ static bool32 IsAbilityRodAffected(void)
     else
         moveType = gBattleMoves[gCurrentMove].type;
 
-    if (moveType == TYPE_ELECTRIC && GetBattlerAbility(gBattlerTarget) == ABILITY_LIGHTNING_ROD)
+    if (moveType == TYPE_WIND && GetBattlerAbility(gBattlerTarget) == ABILITY_LIGHTNING_ROD)
         return TRUE;
     else
         return FALSE;
@@ -8676,7 +8676,7 @@ static bool32 IsAbilityMotorAffected(void)
     else
         moveType = gBattleMoves[gCurrentMove].type;
 
-    if (moveType == TYPE_ELECTRIC && GetBattlerAbility(gBattlerTarget) == ABILITY_MOTOR_DRIVE)
+    if (moveType == TYPE_WIND && GetBattlerAbility(gBattlerTarget) == ABILITY_MOTOR_DRIVE)
         return TRUE;
     else
         return FALSE;
@@ -8693,7 +8693,7 @@ static bool32 IsAbilityAbsorbAffected(void)
     else
         moveType = gBattleMoves[gCurrentMove].type;
 
-    if (moveType == TYPE_ELECTRIC && GetBattlerAbility(gBattlerTarget) == ABILITY_VOLT_ABSORB)
+    if (moveType == TYPE_WIND && GetBattlerAbility(gBattlerTarget) == ABILITY_VOLT_ABSORB)
         return TRUE;
     else
         return FALSE;
@@ -11509,7 +11509,7 @@ static void Cmd_setseeded(void)
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_MISS;
     }
-    else if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
+    else if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_NATURE))
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_FAIL;
@@ -12481,7 +12481,7 @@ static void Cmd_tryconversiontypechange(void)
             if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
                 moveType = TYPE_GHOST;
             else
-                moveType = TYPE_NORMAL;
+                moveType = TYPE_ILLUSION;
         }
         if (moveType != gBattleMons[gBattlerAttacker].type1
             && moveType != gBattleMons[gBattlerAttacker].type2
@@ -12508,7 +12508,7 @@ static void Cmd_tryconversiontypechange(void)
                 if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
                     moveType = TYPE_GHOST;
                 else
-                    moveType = TYPE_NORMAL;
+                    moveType = TYPE_ILLUSION;
             }
         }
         while (moveType == gBattleMons[gBattlerAttacker].type1 || moveType == gBattleMons[gBattlerAttacker].type2 || moveType == gBattleMons[gBattlerAttacker].type3);
@@ -12695,8 +12695,8 @@ static void Cmd_weatherdamage(void)
     {
         if (gBattleWeather & B_WEATHER_SANDSTORM)
         {
-            if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_ROCK)
-                && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GROUND)
+            if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BEAST)
+                && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_EARTH)
                 && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_STEEL)
                 && ability != ABILITY_SAND_VEIL
                 && ability != ABILITY_SAND_FORCE
@@ -15277,16 +15277,16 @@ static void Cmd_settypetoterrain(void)
     switch(gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
     {
     case STATUS_FIELD_ELECTRIC_TERRAIN:
-        terrainType = TYPE_ELECTRIC;
+        terrainType = TYPE_WIND;
         break;
     case STATUS_FIELD_GRASSY_TERRAIN:
-        terrainType = TYPE_GRASS;
+        terrainType = TYPE_NATURE;
         break;
     case STATUS_FIELD_MISTY_TERRAIN:
-        terrainType = TYPE_FAIRY;
+        terrainType = TYPE_COSMIC;
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
-        terrainType = TYPE_PSYCHIC;
+        terrainType = TYPE_REASON;
         break;
     default:
         terrainType = sTerrainToType[gBattleTerrain];
@@ -15456,7 +15456,7 @@ static void Cmd_handleballthrow(void)
                 ballMultiplier = 150;
                 break;
             case ITEM_NET_BALL:
-                if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_BUG))
+                if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_HEART))
                 #if B_NET_BALL_MODIFIER >= GEN_7
                     ballMultiplier = 350;
                 #else
