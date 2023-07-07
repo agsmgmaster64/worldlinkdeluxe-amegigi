@@ -1162,9 +1162,8 @@
 	.4byte \failInstr
 	.endm
 
-	.macro unused2 ptr:req
+	.macro waitfanfare
 	.byte 0xe1
-	.4byte \ptr
 	.endm
 
 	.macro switchoutabilities battler:req
@@ -2101,6 +2100,10 @@
 
 	.macro trytrainerslidemegaevolutionmsg battler:req
 	various \battler, VARIOUS_TRY_TRAINER_SLIDE_MSG_MEGA_EVOLUTION
+	.endm
+
+	.macro checkpokeflute battler:req
+	various \battler, VARIOUS_CHECK_POKEFLUTE
 	.endm
 
 @ helpful macros

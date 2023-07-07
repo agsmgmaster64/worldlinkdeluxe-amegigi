@@ -1228,7 +1228,9 @@ void ItemUseInBattle_BagMenu(u8 taskId)
     else
     {
         PlaySE(SE_SELECT);
-        RemoveUsedItem();
+        // Exclude key items like Poke Flute from being removed from the bag
+        if (ItemId_GetPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
+            RemoveUsedItem();
         ScheduleBgCopyTilemapToVram(2);
         if (!InBattlePyramid())
             gTasks[taskId].func = Task_FadeAndCloseBagMenu;

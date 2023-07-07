@@ -25,6 +25,7 @@ gBattlescriptsForUsingItem::
     .4byte BattleScript_ItemRestoreHP                @ EFFECT_ITEM_REVIVE
     .4byte BattleScript_ItemRestorePP                @ EFFECT_ITEM_RESTORE_PP
     .4byte BattleScript_ItemIncreaseAllStats         @ EFFECT_ITEM_INCREASE_ALL_STATS
+    .4byte BattleScript_FluteWakeUpField             @ EFFECT_ITEM_POKEFLUTE
 
     .align 2
 gBattlescriptsForSafariActions::
@@ -200,6 +201,25 @@ BattleScript_RunByUsingItem::
     playse SE_FLEE
     setbyte gBattleOutcome, B_OUTCOME_RAN
     finishturn
+
+BattleScript_FluteWakeUpField::
+	checkpokeflute BS_ATTACKER
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_PokeFluteWakeUp
+	printstring STRINGID_POKEFLUTECATCHY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PokeFluteEnd
+
+BattleScript_PokeFluteWakeUp::
+	printstring STRINGID_POKEFLUTE
+	waitmessage B_WAIT_TIME_LONG
+	fanfare MUS_RG_POKE_FLUTE
+	waitfanfare
+	printstring STRINGID_MONHEARINGFLUTEAWOKE
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_PLAYER2
+	waitstate
+BattleScript_PokeFluteEnd::
+	finishaction
 
 BattleScript_ActionWatchesCarefully:
     printstring STRINGID_PKMNWATCHINGCAREFULLY
