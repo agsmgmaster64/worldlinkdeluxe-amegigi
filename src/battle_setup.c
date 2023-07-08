@@ -377,7 +377,8 @@ static void CreateBattleStartTask(u8 transition, u16 song)
     u8 taskId = CreateTask(Task_BattleStart, 1);
 
     gTasks[taskId].tTransition = transition;
-    PlayMapChosenOrBattleBGM(song);
+    if (!FlagGet(FLAG_OVERRIDE_MUSIC))
+        PlayMapChosenOrBattleBGM(song);
 }
 
 #undef tState
@@ -627,7 +628,10 @@ static void CB2_EndWildBattle(void)
     else
     {
         SetMainCallback2(CB2_ReturnToField);
-        gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
+        if (FlagGet(FLAG_OVERRIDE_MUSIC))
+            gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        else
+            gFieldCallback = FieldCB_ReturnToFieldNoScriptCheckMusic;
     }
 }
 
@@ -645,7 +649,10 @@ static void CB2_EndScriptedWildBattle(void)
     }
     else
     {
-        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        if (FlagGet(FLAG_OVERRIDE_MUSIC))
+            SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        else
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
 }
 
@@ -1355,6 +1362,24 @@ static void CB2_EndTrainerBattle(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
+    else if (FlagGet(FLAG_SCRIPTED_LOSS))
+    {
+        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            gSpecialVar_Result = TRUE;
+            HealPlayerParty();
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainersFlags();
+            RegisterTrainerInMatchCall();
+        }
+        else
+        {
+            gSpecialVar_Result = FALSE;
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainersFlags();
+            RegisterTrainerInMatchCall();
+        }
+    }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
         if (InBattlePyramid() || InTrainerHillChallenge())
@@ -1364,7 +1389,10 @@ static void CB2_EndTrainerBattle(void)
     }
     else
     {
-        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        if (FlagGet(FLAG_OVERRIDE_MUSIC))
+            SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        else
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         if (!InBattlePyramid() && !InTrainerHillChallenge())
         {
             RegisterTrainerInMatchCall();
@@ -1385,6 +1413,10 @@ static void CB2_EndRematchBattle(void)
     }
     else
     {
+        if (FlagGet(FLAG_OVERRIDE_MUSIC))
+            SetMainCallback2(CB2_ReturnToFieldContinueScript);
+        else
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         RegisterTrainerInMatchCall();
         SetBattledTrainersFlags();
@@ -1473,7 +1505,8 @@ void PlayTrainerEncounterMusic(void)
         trainerId = gTrainerBattleOpponent_B;
 
     if (sTrainerBattleMode != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC
-        && sTrainerBattleMode != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC)
+        && sTrainerBattleMode != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC
+        && !FlagGet(FLAG_OVERRIDE_MUSIC))
     {
         switch (GetTrainerEncounterMusicId(trainerId))
         {

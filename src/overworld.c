@@ -364,6 +364,7 @@ void DoWhiteOut(void)
     #if B_WHITEOUT_MONEY == GEN_3
     SetMoney(&gSaveBlock1Ptr->money, GetMoney(&gSaveBlock1Ptr->money) / 2);
     #endif
+    FlagClear(FLAG_OVERRIDE_MUSIC);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
     SetWarpDestinationToLastHealLocation();
@@ -1174,9 +1175,9 @@ void Overworld_PlaySpecialMapMusic(void)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
-        else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
+        else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER && Overworld_MusicCanOverrideMapMusic())
             music = MUS_UNDERWATER;
-        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
             music = MUS_SURF;
     }
 
@@ -1194,9 +1195,17 @@ void Overworld_ClearSavedMusic(void)
     gSaveBlock1Ptr->savedMusic = MUS_DUMMY;
 }
 
+bool32 Overworld_MusicCanOverrideMapMusic(void)
+{
+    if (FlagGet(FLAG_OVERRIDE_MUSIC))
+        return FALSE;
+    return TRUE;
+}
+
 static void TransitionMapMusic(void)
 {
-    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE)
+    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE
+     || FlagGet(FLAG_OVERRIDE_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
@@ -1204,7 +1213,7 @@ static void TransitionMapMusic(void)
         {
             if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_SURF)
                 return;
-            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
                 newMusic = MUS_SURF;
         }
         if (newMusic != currentMusic)

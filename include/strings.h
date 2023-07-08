@@ -3034,4 +3034,9 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
+// Poke Flute
+extern const u8 gText_PlayedPokeFlute[];
+extern const u8 gText_PlayedPokeFluteCatchy[];
+extern const u8 gText_PokeFluteAwakenedMon[];
+
 #endif // GUARD_STRINGS_H

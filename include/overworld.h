@@ -107,6 +107,7 @@ void Overworld_ResetMapMusic(void);
 void Overworld_PlaySpecialMapMusic(void);
 void Overworld_SetSavedMusic(u16 songNum);
 void Overworld_ClearSavedMusic(void);
+bool32 Overworld_MusicCanOverrideMapMusic(void);
 void Overworld_ChangeMusicToDefault(void);
 void Overworld_ChangeMusicTo(u16 newMusic);
 u8 GetMapMusicFadeoutSpeed(void);
