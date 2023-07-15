@@ -734,7 +734,7 @@
       "x": 33,
       "y": 45,
       "elevation": 3,
-      "item": "ITEM_GREAT_BALL",
+      "item": "ITEM_GREAT_ORB",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL"
     },
     {
@@ -742,7 +742,7 @@
       "x": 4,
       "y": 35,
       "elevation": 3,
-      "item": "ITEM_POKE_BALL",
+      "item": "ITEM_TOHO_ORB",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL"
     },
     {

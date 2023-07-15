@@ -4,20 +4,20 @@
 #define ITEM_NONE 0
 
 // Poké Balls
-#define ITEM_POKE_BALL 1
-#define ITEM_GREAT_BALL 2
-#define ITEM_ULTRA_BALL 3
-#define ITEM_MASTER_BALL 4
-#define ITEM_PREMIER_BALL 5
-#define ITEM_HEAL_BALL 6
-#define ITEM_NET_BALL 7
-#define ITEM_NEST_BALL 8
-#define ITEM_DIVE_BALL 9
+#define ITEM_TOHO_ORB 1
+#define ITEM_GREAT_ORB 2
+#define ITEM_ULTRA_ORB 3
+#define ITEM_MASTER_ORB 4
+#define ITEM_PREMIER_ORB 5
+#define ITEM_FOUL_ORB 6
+#define ITEM_NET_ORB 7
+#define ITEM_NEST_ORB 8
+#define ITEM_DIVE_ORB 9
 #define ITEM_DUSK_BALL 10
 #define ITEM_TIMER_BALL 11
 #define ITEM_QUICK_BALL 12
-#define ITEM_REPEAT_BALL 13
-#define ITEM_LUXURY_BALL 14
+#define ITEM_REPEAT_ORB 13
+#define ITEM_LUXURY_ORB 14
 #define ITEM_LEVEL_BALL 15
 #define ITEM_LURE_BALL 16
 #define ITEM_MOON_BALL 17
@@ -26,7 +26,7 @@
 #define ITEM_FAST_BALL 20
 #define ITEM_HEAVY_BALL 21
 #define ITEM_DREAM_BALL 22
-#define ITEM_SAFARI_BALL 23
+#define ITEM_SAFARI_ORB 23
 #define ITEM_SPORT_BALL 24
 #define ITEM_PARK_BALL 25
 #define ITEM_BEAST_BALL 26
@@ -35,7 +35,7 @@
 // Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
 //       Several places expect the ball IDs to be first and contiguous (e.g. MON_DATA_POKEBALL)
 //       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
-#define FIRST_BALL ITEM_POKE_BALL
+#define FIRST_BALL ITEM_TOHO_ORB
 #define LAST_BALL  ITEM_CHERISH_BALL
 
 // Medicine
@@ -504,8 +504,8 @@
 #define ITEM_POWER_ANKLET 424
 
 // Type-boosting Held Items
-#define ITEM_SILK_SCARF 425
-#define ITEM_CHARCOAL 426
+#define ITEM_BRIDAL_GOWN 425
+#define ITEM_GOTHIC_DRESS 426
 #define ITEM_MYSTIC_WATER 427
 #define ITEM_MAGNET 428
 #define ITEM_MIRACLE_SEED 429

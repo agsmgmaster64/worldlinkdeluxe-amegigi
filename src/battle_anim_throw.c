@@ -163,7 +163,7 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
     [BALL_ULTRA]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_ULTRABALL},
     [BALL_MASTER]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_MASTERBALL},
     [BALL_PREMIER]  = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_PREMIERBALL},
-    [BALL_HEAL]     = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_HEALBALL},
+    [BALL_FOUL]     = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_HEALBALL},
     [BALL_NET]      = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_NETBALL},
     [BALL_NEST]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_NESTBALL},
     [BALL_DIVE]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_DIVEBALL},
@@ -194,7 +194,7 @@ static const struct CompressedSpritePalette sBallParticlePalettes[] =
     [BALL_ULTRA]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_ULTRABALL},
     [BALL_MASTER]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_MASTERBALL},
     [BALL_PREMIER]  = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_PREMIERBALL},
-    [BALL_HEAL]     = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_HEALBALL},
+    [BALL_FOUL]     = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_HEALBALL},
     [BALL_NET]      = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_NETBALL},
     [BALL_NEST]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_NESTBALL},
     [BALL_DIVE]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_DIVEBALL},
@@ -277,7 +277,7 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_ULTRA]   = 5,
     [BALL_MASTER]  = 1,
     [BALL_PREMIER] = 4,
-    [BALL_HEAL]    = 0,
+    [BALL_FOUL]    = 0,
     [BALL_NET]     = 2,
     [BALL_NEST]    = 3,
     [BALL_DIVE]    = 2,
@@ -309,7 +309,7 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_ULTRA]   = UltraBallOpenParticleAnimation,
     [BALL_MASTER]  = MasterBallOpenParticleAnimation,
     [BALL_PREMIER] = PremierBallOpenParticleAnimation,
-    [BALL_HEAL]    = PokeBallOpenParticleAnimation,
+    [BALL_FOUL]    = PokeBallOpenParticleAnimation,
     [BALL_NET]     = SafariBallOpenParticleAnimation,
     [BALL_NEST]    = UltraBallOpenParticleAnimation,
     [BALL_DIVE]    = DiveBallOpenParticleAnimation,
@@ -380,7 +380,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-    [BALL_HEAL] = {
+    [BALL_FOUL] = {
         .tileTag = TAG_PARTICLES_HEALBALL,
         .paletteTag = TAG_PARTICLES_HEALBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
@@ -588,7 +588,7 @@ const u16 gBallOpenFadeColors[] =
     [BALL_ULTRA] = RGB(31, 31, 15),
     [BALL_MASTER] = RGB(23, 20, 28),
     [BALL_PREMIER] = RGB(31, 9, 10),
-    [BALL_HEAL] = RGB(31, 23, 27),
+    [BALL_FOUL] = RGB(15, 24, 7),
     [BALL_NET] = RGB(21, 31, 25),
     [BALL_NEST] = RGB(30, 27, 10),
     [BALL_DIVE] = RGB(12, 25, 30),
@@ -947,23 +947,23 @@ u8 ItemIdToBallId(u16 ballItem)
 {
     switch (ballItem)
     {
-    case ITEM_POKE_BALL:
+    case ITEM_TOHO_ORB:
         return BALL_POKE;
-    case ITEM_GREAT_BALL:
+    case ITEM_GREAT_ORB:
         return BALL_GREAT;
-    case ITEM_ULTRA_BALL:
+    case ITEM_ULTRA_ORB:
         return BALL_ULTRA;
-    case ITEM_MASTER_BALL:
+    case ITEM_MASTER_ORB:
         return BALL_MASTER;
-    case ITEM_PREMIER_BALL:
+    case ITEM_PREMIER_ORB:
         return BALL_PREMIER;
-    case ITEM_HEAL_BALL:
-        return BALL_HEAL;
-    case ITEM_NET_BALL:
+    case ITEM_FOUL_ORB:
+        return BALL_FOUL;
+    case ITEM_NET_ORB:
         return BALL_NET;
-    case ITEM_NEST_BALL:
+    case ITEM_NEST_ORB:
         return BALL_NEST;
-    case ITEM_DIVE_BALL:
+    case ITEM_DIVE_ORB:
         return BALL_DIVE;
     case ITEM_DUSK_BALL:
         return BALL_DUSK;
@@ -971,9 +971,9 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_TIMER;
     case ITEM_QUICK_BALL:
         return BALL_QUICK;
-    case ITEM_REPEAT_BALL:
+    case ITEM_REPEAT_ORB:
         return BALL_REPEAT;
-    case ITEM_LUXURY_BALL:
+    case ITEM_LUXURY_ORB:
         return BALL_LUXURY;
     case ITEM_LEVEL_BALL:
         return BALL_LEVEL;
@@ -991,7 +991,7 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_HEAVY;
     case ITEM_DREAM_BALL:
         return BALL_DREAM;
-    case ITEM_SAFARI_BALL:
+    case ITEM_SAFARI_ORB:
         return BALL_SAFARI;
     case ITEM_SPORT_BALL:
         return BALL_SPORT;

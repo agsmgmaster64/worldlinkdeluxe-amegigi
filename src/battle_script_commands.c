@@ -1063,12 +1063,12 @@ static const u16 sPickupItems[] =
     ITEM_POTION,
     ITEM_ANTIDOTE,
     ITEM_SUPER_POTION,
-    ITEM_GREAT_BALL,
+    ITEM_GREAT_ORB,
     ITEM_REPEL,
     ITEM_ESCAPE_ROPE,
     ITEM_X_ATTACK,
     ITEM_FULL_HEAL,
-    ITEM_ULTRA_BALL,
+    ITEM_ULTRA_ORB,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
     ITEM_PROTEIN,
@@ -15280,17 +15280,17 @@ static void Cmd_handleballthrow(void)
         {
             switch (gLastUsedItem)
             {
-            case ITEM_ULTRA_BALL:
+            case ITEM_ULTRA_ORB:
                 ballMultiplier = 200;
                 break;
         #if B_SPORT_BALL_MODIFIER <= GEN_7
             case ITEM_SPORT_BALL:
         #endif
-            case ITEM_GREAT_BALL:
-            case ITEM_SAFARI_BALL:
+            case ITEM_GREAT_ORB:
+            case ITEM_SAFARI_ORB:
                 ballMultiplier = 150;
                 break;
-            case ITEM_NET_BALL:
+            case ITEM_NET_ORB:
                 if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_HEART))
                 #if B_NET_BALL_MODIFIER >= GEN_7
                     ballMultiplier = 350;
@@ -15298,7 +15298,7 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 300;
                 #endif
                 break;
-            case ITEM_DIVE_BALL:
+            case ITEM_DIVE_ORB:
                 if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
                 #if B_DIVE_BALL_MODIFIER >= GEN_4
                     || gIsFishingEncounter || gIsSurfingEncounter
@@ -15306,7 +15306,7 @@ static void Cmd_handleballthrow(void)
                 )
                     ballMultiplier = 350;
                 break;
-            case ITEM_NEST_BALL:
+            case ITEM_NEST_ORB:
             #if B_NEST_BALL_MODIFIER >= GEN_6
                 //((41 - Pokémon's level) ÷ 10)× if Pokémon's level is between 1 and 29, 1× otherwise.
                 if (gBattleMons[gBattlerTarget].level < 30)
@@ -15325,7 +15325,7 @@ static void Cmd_handleballthrow(void)
                 }
             #endif
                 break;
-            case ITEM_REPEAT_BALL:
+            case ITEM_REPEAT_ORB:
             if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT))
                 #if B_REPEAT_BALL_MODIFIER >= GEN_7
                     ballMultiplier = 350;
@@ -15438,6 +15438,9 @@ static void Cmd_handleballthrow(void)
                 ballMultiplier = 100;
             #endif
                 break;
+            case ITEM_FOUL_ORB:
+                ballMultiplier = 50;
+                break;
             case ITEM_BEAST_BALL:
                 ballMultiplier = 10;
                 break;
@@ -15474,14 +15477,6 @@ static void Cmd_handleballthrow(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = 0;
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-
-            if (gLastUsedItem == ITEM_HEAL_BALL)
-            {
-                MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
-                HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], gBattlerPartyIndexes[gBattlerTarget], STATUS1_ANY, gBattlerTarget);
-                gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
-                SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
-            }
         }
         else // mon may be caught, calculate shakes
         {
@@ -15501,7 +15496,7 @@ static void Cmd_handleballthrow(void)
                 maxShakes = BALL_3_SHAKES_SUCCESS;
             }
 
-            if (gLastUsedItem == ITEM_MASTER_BALL)
+            if (gLastUsedItem == ITEM_MASTER_ORB)
             {
                 shakes = maxShakes;
             }
@@ -15528,14 +15523,6 @@ static void Cmd_handleballthrow(void)
                     gBattleCommunication[MULTISTRING_CHOOSER] = 0;
                 else
                     gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-
-                if (gLastUsedItem == ITEM_HEAL_BALL)
-                {
-                    MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
-                    HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], gBattlerPartyIndexes[gBattlerTarget], STATUS1_ANY, gBattlerTarget);
-                    gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
-                    SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
-                }
             }
             else // not caught
             {

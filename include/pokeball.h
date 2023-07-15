@@ -8,7 +8,7 @@ enum
     BALL_ULTRA,
     BALL_MASTER,
     BALL_PREMIER,
-    BALL_HEAL,
+    BALL_FOUL,
     BALL_NET,
     BALL_NEST,
     BALL_DIVE,

@@ -79,7 +79,7 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallGfx_Ultra,   384, GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallGfx_Master,  384, GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},
-    [BALL_HEAL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
+    [BALL_FOUL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallGfx_Net,     384, GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallGfx_Nest,    384, GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallGfx_Dive,    384, GFX_TAG_DIVE_BALL},
@@ -110,7 +110,7 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallPal_Ultra,   GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallPal_Master,  GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallPal_Premier, GFX_TAG_PREMIER_BALL},
-    [BALL_HEAL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
+    [BALL_FOUL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallPal_Net,     GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallPal_Nest,    GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallPal_Dive,    GFX_TAG_DIVE_BALL},
@@ -299,7 +299,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_HEAL] =
+    [BALL_FOUL] =
     {
         .tileTag = GFX_TAG_HEAL_BALL,
         .paletteTag = GFX_TAG_HEAL_BALL,
