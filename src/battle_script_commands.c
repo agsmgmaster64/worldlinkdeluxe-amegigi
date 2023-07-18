@@ -5850,7 +5850,7 @@ static void Cmd_moveend(void)
 
                     if (gBattleMons[gBattlerAttacker].hp
                     && gBattleMons[gBattlerTarget].hp
-                    && (gChosenMove == MOVE_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
+                    && (gBattleMoves[gChosenMove].effect == EFFECT_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
                     && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE))
                     {
                         if (gSpecialStatuses[gBattlerAttacker].parentalBondState)
@@ -12528,6 +12528,7 @@ static void Cmd_weatherdamage(void)
             if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BEAST)
                 && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_EARTH)
                 && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_STEEL)
+                && ability != ABILITY_SAND_STREAM
                 && ability != ABILITY_SAND_VEIL
                 && ability != ABILITY_SAND_FORCE
                 && ability != ABILITY_SAND_RUSH
@@ -12554,7 +12555,9 @@ static void Cmd_weatherdamage(void)
                 gBattleMoveDamage *= -1;
             }
             else if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_ICE)
+                && ability != ABILITY_SNOW_WARNING
                 && ability != ABILITY_SNOW_CLOAK
+                && ability != ABILITY_SLUSH_RUSH
                 && ability != ABILITY_OVERCOAT
                 && ability != ABILITY_ICE_BODY
                 && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))

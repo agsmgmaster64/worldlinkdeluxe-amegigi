@@ -2361,6 +2361,7 @@ static bool32 BattlerAffectedBySandstorm(u8 battlerId, u16 ability)
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_BEAST)
       && !IS_BATTLER_OF_TYPE(battlerId, TYPE_EARTH)
       && !IS_BATTLER_OF_TYPE(battlerId, TYPE_STEEL)
+      && ability != ABILITY_SAND_STREAM
       && ability != ABILITY_SAND_VEIL
       && ability != ABILITY_SAND_FORCE
       && ability != ABILITY_SAND_RUSH
@@ -2372,7 +2373,9 @@ static bool32 BattlerAffectedBySandstorm(u8 battlerId, u16 ability)
 static bool32 BattlerAffectedByHail(u8 battlerId, u16 ability)
 {
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
+      && ability != ABILITY_SNOW_WARNING
       && ability != ABILITY_SNOW_CLOAK
+      && ability != ABILITY_SLUSH_RUSH
       && ability != ABILITY_OVERCOAT
       && ability != ABILITY_ICE_BODY)
         return TRUE;
