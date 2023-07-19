@@ -963,7 +963,6 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_EARTH_EATER] = 1,
     [ABILITY_GOOD_AS_GOLD] = 1,
     [ABILITY_PURIFYING_SALT] = 1,
-    [ABILITY_WELL_BAKED_BODY] = 1,
 };
 
 static const u8 sAbilitiesNotTraced[ABILITIES_COUNT] =
@@ -4871,7 +4870,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     gBattleScripting.battler = battler;
                     BtlController_EmitSetMonData(BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, 2, &gLastUsedBall);
                     MarkBattlerForControllerExec(battler);
-                    gHasFetchedBall = TRUE;
+                    //gHasFetchedBall = TRUE;
                     gLastUsedItem = gLastUsedBall;
                     BattleScriptPushCursorAndCallback(BattleScript_BallFetch);
                     effect++;
@@ -5010,10 +5009,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     }
                 }
                 break;
-            case ABILITY_WELL_BAKED_BODY:
+            /*case ABILITY_LEAF_SPICE:
                 if (moveType == TYPE_FIRE)
                     effect = 2, statId = STAT_DEF, statAmount = 2;
-                break;
+                break;*/
             case ABILITY_WIND_RIDER:
                 if (gBattleMoves[gCurrentMove].windMove && !(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove) & MOVE_TARGET_USER))
                     effect = 2, statId = STAT_ATK;
@@ -5679,23 +5678,41 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 effect++;
             }
             break;
-        case ABILITY_STENCH:
+        case ABILITY_LEAF_SPICE:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && gBattleMons[gBattlerTarget].hp != 0
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && RandomWeighted(RNG_STENCH, 9, 1)
-             && !IS_MOVE_STATUS(move)
-             && !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_HIT
-             && !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_STATUS
-             && !gBattleMoves[gCurrentMove].effect != EFFECT_TRIPLE_ARROWS)
+             && CanBeBurned(gBattlerTarget)
+             && moveType == TYPE_NATURE
+             && IS_MOVE_SPECIAL(move)
+             && TARGET_TURN_DAMAGED // Need to actually hit the target
+             && (Random() % 3) == 0)
             {
-                gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
+                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptPushCursor();
-                SetMoveEffect(FALSE, 0);
-                BattleScriptPop();
+                gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
                 effect++;
             }
             break;
+        //case ABILITY_STENCH:
+            //if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             //&& gBattleMons[gBattlerTarget].hp != 0
+             //&& !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             //&& RandomWeighted(RNG_STENCH, 9, 1)
+             //&& !IS_MOVE_STATUS(move)
+             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_HIT
+             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_STATUS
+             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_TRIPLE_ARROWS)
+            //{
+                //gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
+                //BattleScriptPushCursor();
+                //SetMoveEffect(FALSE, 0);
+                //BattleScriptPop();
+                //effect++;
+            //}
+            //break;
         case ABILITY_GULP_MISSILE:
             if (((gCurrentMove == MOVE_SURF && TARGET_TURN_DAMAGED) || gStatuses3[gBattlerAttacker] & STATUS3_UNDERWATER)
              && TryBattleFormChange(gBattlerAttacker, FORM_CHANGE_BATTLE_HP_PERCENT))
@@ -7511,7 +7528,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     && !gBattleMoves[gCurrentMove].ignoresKingsRock
                     && gBattleMons[gBattlerTarget].hp
                     && RandomPercentage(RNG_HOLD_EFFECT_FLINCH, atkHoldEffectParam)
-                    && ability != ABILITY_STENCH)
+                    /*&& ability != ABILITY_STENCH*/)
                 {
                     gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
                     BattleScriptPushCursor();
@@ -8777,10 +8794,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         if (IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_ROCKY_PAYLOAD:
+    /*case ABILITY_NATURE_FROST:
         if (moveType == TYPE_BEAST)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;
+        break;*/
     case ABILITY_PROTOSYNTHESIS:
         {
             u8 atkHighestStat = GetHighestStatId(battlerAtk);
@@ -9819,6 +9836,12 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u16 move, u8 moveType, u8 battlerAtk, u
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier);
         if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
             modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier);
+        if (GetBattlerAbility(battlerAtk) == ABILITY_NATURE_FROST
+         && IS_MOVE_SPECIAL(move)
+         && moveType == TYPE_NATURE)
+        {
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_ICE, battlerAtk, battlerDef, recordAbilities, modifier);
+        }
     }
 
     if (recordAbilities)
