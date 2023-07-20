@@ -995,7 +995,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
-        .damagesUnderwater = TRUE,
+        .damagesInShadows = TRUE,
     },
 
     [MOVE_ICE_BEAM] =
@@ -4325,7 +4325,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
-        .damagesUnderwater = TRUE,
+        .damagesInShadows = TRUE,
     },
 
     [MOVE_BEAT_UP] =

@@ -370,7 +370,7 @@ struct BattleMove
     u32 ignoresTargetAbility:1;
     u32 ignoresTargetDefenseEvasionStages:1;
     u32 damagesUnderground:1;
-    u32 damagesUnderwater:1;
+    u32 damagesInShadows:1;
     u32 damagesAirborne:1;
     u32 damagesAirborneDoubleDamage:1;
     u32 ignoreTypeIfFlyingAndUngrounded:1;
