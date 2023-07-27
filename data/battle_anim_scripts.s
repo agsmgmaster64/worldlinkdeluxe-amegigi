@@ -3511,33 +3511,9 @@ Move_POWER_WHIP:
 	end
 
 Move_ROCK_WRECKER:
-	jumpargeq 7, 1, RockWrecker_1
-	fadetobg BG_ROCK_WRECKER
-	waitbgfadeout
-	createvisualtask AnimTask_StartSlidingBg, 5, -1024, 0, 1, -1
-	goto RockWrecker_2
-RockWrecker_1:
 	fadetobg BG_ROCK_WRECKER
 	waitbgfadeout
 	createvisualtask AnimTask_StartSlidingBg, 5, -1024, 0, 0, -1
-	loadspritegfx ANIM_TAG_ROCKS
-	loadspritegfx ANIM_TAG_IMPACT
-	createsprite gHorizontalLungeSpriteTemplate, 2, 2, 4, 6
-	delay 3
-	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
-	createsprite gRockBlastRockSpriteTemplate, 130, 6, 16, 0, 0, 0, 25, 257
-	waitforvisualfinish
-	createsprite gBasicHitSplatSpriteTemplate, 131, 4, 0, 0, 1, 1
-	playsewithpan SE_M_ROCK_THROW SOUND_PAN_TARGET
-	createsprite gRockFragmentSpriteTemplate, 130, 6, 0, 0, 20, 24, 14, 2
-	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 5, 1
-	createsprite gRockFragmentSpriteTemplate, 130, 6, 5, 0, -20, 24, 14, 1
-	createsprite gRockFragmentSpriteTemplate, 130, 6, 0, 5, 20, -18, 14, 2
-	createsprite gRockFragmentSpriteTemplate, 130, 6, -5, 0, -20, -18, 14, 2
-	waitforvisualfinish
-	call UnsetPsychicBg
-	end
-RockWrecker_2:
 	loadspritegfx ANIM_TAG_ROCKS
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gHorizontalLungeSpriteTemplate, 2, 2, 4, 6
@@ -4563,7 +4539,7 @@ Move_OMINOUS_WIND:
 	createvisualtask AnimTask_BlendBattleAnimPalExclude, 10, 5, 1, 0, 0, 0, 0
 	delay 0
 	createvisualtask AnimTask_GetAttackerSide, 2, 0
-	jumpargeq 7, 1, OminousWindFadeToBg
+	jumprettrue OminousWindFadeToBg
 	fadetobg BG_GHOST
 	waitbgfadeout
 	createvisualtask AnimTask_StartSlidingBg, 5, RGB(0, 16, 1), 0, 0, -1
@@ -10216,7 +10192,7 @@ Move_PRECIPICE_BLADES::
 	createvisualtask AnimTask_HorizontalShake, 0x5, 0x4, 0xa, 0x5
 	playsewithpan SE_M_EARTHQUAKE, 0x0
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7, ANIM_TARGET, PrecipiceBladesOpponent
+	jumprettrue PrecipiceBladesOpponent
 PrecipiceBladesPlayer:
 	createsprite gPrecipiceBladesSpikeTemplate, ANIM_ATTACKER, 3, ANIM_ATTACKER, -45, 5, 145, 0x0
 	delay 10
@@ -13379,7 +13355,7 @@ Move_STUFF_CHEEKS::
 	createsprite gFloatingBerryTemplate, ANIM_ATTACKER, 1, 0x0
 	delay 0x45
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 0x1 BERRYEAT_ON_PLAYER
+	jumprettrue BERRYEAT_ON_PLAYER
 BerryEatingOpponent:
 	call BiteOpponent
 	delay 0x10
@@ -16093,7 +16069,7 @@ Move_TRIPLE_ARROWS::
 	createvisualtask AnimTask_ShakeMon2, 0x2, ANIM_TARGET, 0x3, 0x0, 0xa, 0x1
 	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_IsAttackerPlayerSide, 0x2,
-	jumpargeq 0x7, FALSE, TripleArrowsOnOpponent
+	jumpretfalse TripleArrowsOnOpponent
 	createsprite gSpiritShackleArrowTemplate, ANIM_TARGET, 2, 0, -60, 0, 0, TRIPLE_ARROW_FLY_TIME
 TripleArrowsEnd:
 	delay 0x3
@@ -27325,7 +27301,7 @@ Move_SUPERSONIC_SKYSTRIKE:
 	fadetobg BG_SKY
 	waitbgfadeout
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 0x1 SupersonicSkystrikeOnPlayer
+	jumprettrue SupersonicSkystrikeOnPlayer
 SupersonicSkystrikeOnOpponent:
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xf800, 0x800, 0x0, 0xffff
 	goto FinishSupersonicSkystrike
@@ -27367,7 +27343,7 @@ Move_ACID_DOWNPOUR:
 	fadetobg BG_POISON
 	waitbgfadeout
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 0x1 AcidDownpourOnPlayer
+	jumprettrue AcidDownpourOnPlayer
 AcidDownpourOnOpponent:
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0x0, 0xff10, 0x1, 0xffff
 	goto FinishAcidDownpour
@@ -27753,7 +27729,7 @@ Move_SAVAGE_SPIN_OUT::
 	delay 0x0
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
 	delay 0x0
-	jumpargeq 0x7 ANIM_TARGET SavageSpinOutOnPlayer
+	jumprettrue SavageSpinOutOnPlayer
 SavageSpinOutOnOpponent:
 	createsprite gSavageSpinOutCacoonSpriteTemplate, ANIM_TARGET, 2, 0x0, ANIM_TARGET, 0x2, 0x0, 0x0, 0x80
 	goto FinishSavageSpinOut
@@ -28080,7 +28056,7 @@ Move_CORKSCREW_CRASH::
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xf700, 0x0, 0x1, 0xffff
 	waitbgfadein
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET CorkscrewCrashOnPlayer
+	jumprettrue CorkscrewCrashOnPlayer
 CorkscrewCrashOnOpponent:
 	createsprite gCorkscrewCrashRightUpSpriteTemplate, ANIM_ATTACKER, 50, 0xfff0, 0x88, 0x100, 0x38, 0x15
 	waitforvisualfinish
@@ -28183,7 +28159,7 @@ Move_INFERNO_OVERDRIVE::
 	fadetobg BG_INFERNO_OVERDRIVE
 	waitbgfadeout
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET InfernoOverdriveOnPlayer
+	jumprettrue InfernoOverdriveOnPlayer
 InfernoOverdriveOnOpponent:
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xfb00, 0x0, 0x0, 0xFFFF
 	goto FinishInfernoOverdrive
@@ -28813,7 +28789,7 @@ Move_SHATTERED_PSYCHE::
 	waitforvisualfinish
 ShatteredPsycheCheckBattler:
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET ShatteredPsycheOnPlayer
+	jumprettrue ShatteredPsycheOnPlayer
 ShatteredPsycheOnOpponent:
 	call ShatteredPsycheFlingOpponent
 	waitforvisualfinish
@@ -28937,7 +28913,7 @@ Move_SUBZERO_SLAMMER::
 	fadetobg BG_ICE
 	waitbgfadeout
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET SubzeroSlammerOnPlayer
+	jumprettrue SubzeroSlammerOnPlayer
 SubzeroSlammerOnOpponent:
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xfd00, 0x0, 0x0, 0xFFFF
 	goto SubzeroSlammerFinish
@@ -29109,7 +29085,7 @@ Move_DEVASTATING_DRAKE::
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0x0, 0x1000, 0x0, 0xffff
 	waitbgfadein
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET DevastatingDrakeOnPlayer
+	jumprettrue DevastatingDrakeOnPlayer
 DevastatingDrakeOnOpponent:
 	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
 	createsprite gDevastatingDrakeRightSpriteTemplate, ANIM_ATTACKER, 50, 0xfff0, 0x88, 0x100, 0x38, 0x15		@left to right
@@ -29458,7 +29434,7 @@ Move_TWINKLE_TACKLE::
 	createsprite gTwinkleTackleStarGrowSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x0, 0x0
 	waitforvisualfinish
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET TwinkleTackleOnPlayer
+	jumprettrue TwinkleTackleOnPlayer
 TwinkleTackleOnOpponent:
 	call PlayerTwinkling
 	goto TwinkleTackleFinish
@@ -30318,7 +30294,7 @@ Move_PULVERIZING_PANCAKE::
 	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 0xA
 	waitforvisualfinish
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET PulverizingPancakeOnPlayer
+	jumprettrue PulverizingPancakeOnPlayer
 PulverizingPancakeOnOpponent:
 	createsprite gPulverizingPancakeRedDetectSpriteTemplate, ANIM_ATTACKER, 13, 0x14, 0xffec
 	goto PulverizingPancakeFinish
@@ -30433,7 +30409,7 @@ Move_GENESIS_SUPERNOVA::
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY @focus energy
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET GenesisSupernovaOnPlayer
+	jumprettrue GenesisSupernovaOnPlayer
 GenesisSupernovaOnOpponent:
 	call GenesisSupernovaBuffEffectPlayer_1
 	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_ATTACKER, 0x2, 0x0, 0xb, 0xd87c
@@ -30643,7 +30619,7 @@ Move_SINISTER_ARROW_RAID::
 	loadspritegfx ANIM_TAG_EXPLOSION_2	@explosion
 	loadspritegfx ANIM_TAG_POISON_BUBBLE @purple
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET SinisterArrowRaidOnPlayer
+	jumprettrue SinisterArrowRaidOnPlayer
 SinisterArrowRaidOnOpponent:
 	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
 	createsprite gArrowRaidFlyRightSpriteTemplate, ANIM_ATTACKER, 50, 0xfff0, 0x88, 0x100, 0x38, 0x15		@left to right
@@ -31241,7 +31217,7 @@ SplinteredStormshardsFinishFade:
 	setalpha 12, 8
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET SplinteredStormshardsByOpponent
+	jumprettrue SplinteredStormshardsByOpponent
 SplinteredStormshardsByPlayer:
 	loopsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET, 0x10, 0xc
 	call SplinteredStormshardsPlayer_Rising1
@@ -31685,7 +31661,7 @@ Move_CLANGOROUS_SOULBLAZE::
 	call ClangorousSoulblazePulse_4
 	loadspritegfx ANIM_TAG_EXPLOSION
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET ClangorousSoulblazeOnOpponent
+	jumprettrue ClangorousSoulblazeOnOpponent
 ClangorousSoulblazeOnPlayer:
 	playsewithpan SE_M_EXPLOSION, SOUND_PAN_ATTACKER
 	createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 0x10, 0xfff0, ANIM_ATTACKER, 0x1
@@ -32273,7 +32249,7 @@ Move_MENACING_MOONRAZE_MAELSTROM::
 	fadetobg BG_COSMIC
 	waitbgfadeout
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumpargeq 0x7 ANIM_TARGET MenacingMoonrazeMaelstromOnPlayer
+	jumprettrue MenacingMoonrazeMaelstromOnPlayer
 MenacingMoonrazeMaelstromOnOpponent:
 	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xfd00, 0x200, 0x1, 0xffff
 	goto MenacingMoonrazeMaelstromFinish
