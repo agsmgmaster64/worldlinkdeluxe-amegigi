@@ -174,7 +174,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectTeleport                @ EFFECT_TELEPORT
 	.4byte BattleScript_EffectBeatUp                  @ EFFECT_BEAT_UP
 	.4byte BattleScript_EffectSemiInvulnerable        @ EFFECT_SEMI_INVULNERABLE
-	.4byte BattleScript_EffectDefenseCurl             @ EFFECT_DEFENSE_CURL
+	.4byte BattleScript_EffectHit                     @ EFFECT_UNUSED_152
 	.4byte BattleScript_EffectSoftboiled              @ EFFECT_SOFTBOILED
 	.4byte BattleScript_EffectFakeOut                 @ EFFECT_FAKE_OUT
 	.4byte BattleScript_EffectUproar                  @ EFFECT_UPROAR
@@ -5394,19 +5394,6 @@ BattleScript_SemiInvulnerableTryHit::
 BattleScript_SemiInvulnerableMiss::
 	clearsemiinvulnerablebit
 	goto BattleScript_PrintMoveMissed
-
-BattleScript_EffectDefenseCurl::
-	attackcanceler
-	attackstring
-	ppreduce
-	setdefensecurlbit
-	setstatchanger STAT_DEF, 1, FALSE
-	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_DefenseCurlDoStatUpAnim
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_StatUpPrintString
-	attackanimation
-	waitanimation
-BattleScript_DefenseCurlDoStatUpAnim::
-	goto BattleScript_StatUpDoAnim
 
 BattleScript_EffectSoftboiled::
 	attackcanceler

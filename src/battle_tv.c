@@ -242,7 +242,6 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_TELEPORT]                   = 1,
     [EFFECT_BEAT_UP]                    = 2,
     [EFFECT_SEMI_INVULNERABLE]          = 3,
-    [EFFECT_DEFENSE_CURL]               = 1,
     [EFFECT_SOFTBOILED]                 = 1,
     [EFFECT_FAKE_OUT]                   = 4,
     [EFFECT_UPROAR]                     = 4,

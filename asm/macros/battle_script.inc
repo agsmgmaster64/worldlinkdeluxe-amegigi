@@ -999,7 +999,7 @@
 	.byte 0xbe
 	.endm
 
-	.macro setdefensecurlbit
+	.macro unused191
 	.byte 0xbf
 	.endm
 

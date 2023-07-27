@@ -153,7 +153,7 @@
 #define EFFECT_TELEPORT                     149
 #define EFFECT_BEAT_UP                      150
 #define EFFECT_SEMI_INVULNERABLE            151
-#define EFFECT_DEFENSE_CURL                 152
+#define EFFECT_UNUSED_152                   152
 #define EFFECT_SOFTBOILED                   153
 #define EFFECT_FAKE_OUT                     154
 #define EFFECT_UPROAR                       155

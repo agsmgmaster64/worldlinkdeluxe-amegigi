@@ -1899,7 +1899,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_DEFENSE_CURL] =
     {
-        .effect = EFFECT_DEFENSE_CURL,
+        .effect = EFFECT_DEFENSE_UP,
         .power = 0,
         .type = TYPE_ILLUSION,
         .accuracy = 0,

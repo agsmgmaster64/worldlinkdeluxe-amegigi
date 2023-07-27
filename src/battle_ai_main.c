@@ -1012,7 +1012,6 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_DEFENSE_UP:
         case EFFECT_DEFENSE_UP_2:
         case EFFECT_DEFENSE_UP_3:
-        case EFFECT_DEFENSE_CURL:
             if (!BattlerStatCanRise(battlerAtk, AI_DATA->abilities[battlerAtk], STAT_DEF))
                 score -= 10;
             break;
@@ -4130,11 +4129,6 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             }
         }
         break;
-    case EFFECT_DEFENSE_CURL:
-        if (HasMoveEffect(battlerAtk, EFFECT_ROLLOUT) && !(gBattleMons[battlerAtk].status2 & STATUS2_DEFENSE_CURL))
-            score++;
-        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, &score);
-        break;
     case EFFECT_FAKE_OUT:
         if (move == MOVE_FAKE_OUT    // filter out first impression
           && ShouldFakeOut(battlerAtk, battlerDef, move))
@@ -4996,7 +4990,6 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_SWAGGER:
     case EFFECT_CAMOUFLAGE:
     case EFFECT_YAWN:
-    case EFFECT_DEFENSE_CURL:
     case EFFECT_TORMENT:
     case EFFECT_FLATTER:
     case EFFECT_WILL_O_WISP:

@@ -10192,7 +10192,7 @@ Move_PRECIPICE_BLADES::
 	createvisualtask AnimTask_HorizontalShake, 0x5, 0x4, 0xa, 0x5
 	playsewithpan SE_M_EARTHQUAKE, 0x0
 	createvisualtask AnimTask_IsTargetPlayerSide, 0x2
-	jumprettrue PrecipiceBladesOpponent
+	jumpretfalse PrecipiceBladesOpponent
 PrecipiceBladesPlayer:
 	createsprite gPrecipiceBladesSpikeTemplate, ANIM_ATTACKER, 3, ANIM_ATTACKER, -45, 5, 145, 0x0
 	delay 10
