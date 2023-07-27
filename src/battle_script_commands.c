@@ -1568,7 +1568,7 @@ static bool32 AccuracyCalcHelper(u16 move)
     if ((gStatuses3[gBattlerTarget] & STATUS3_PHANTOM_FORCE)
     || ((gStatuses3[gBattlerTarget] & STATUS3_ON_AIR) && !(gBattleMoves[move].damagesAirborne || gBattleMoves[move].damagesAirborneDoubleDamage))
     || ((gStatuses3[gBattlerTarget] & STATUS3_UNDERGROUND) && !gBattleMoves[move].damagesUnderground)
-    || ((gStatuses3[gBattlerTarget] & STATUS3_IN_SHADOWS) && !gBattleMoves[move].damagesInShadows))
+    || ((gStatuses3[gBattlerTarget] & STATUS3_UNDERWATER) && !gBattleMoves[move].damagesUnderwater))
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         JumpIfMoveFailed(7, move);
@@ -12520,7 +12520,7 @@ static void Cmd_weatherdamage(void)
                 && ability != ABILITY_SAND_FORCE
                 && ability != ABILITY_SAND_RUSH
                 && ability != ABILITY_OVERCOAT
-                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                 && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 16;
@@ -12531,7 +12531,7 @@ static void Cmd_weatherdamage(void)
         if (gBattleWeather & B_WEATHER_HAIL)
         {
             if (ability == ABILITY_ICE_BODY
-                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                 && !BATTLER_MAX_HP(gBattlerAttacker)
                 && !(gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK))
             {
@@ -12547,7 +12547,7 @@ static void Cmd_weatherdamage(void)
                 && ability != ABILITY_SLUSH_RUSH
                 && ability != ABILITY_OVERCOAT
                 && ability != ABILITY_ICE_BODY
-                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                 && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 16;
@@ -12558,7 +12558,7 @@ static void Cmd_weatherdamage(void)
         if (gBattleWeather & B_WEATHER_SNOW)
         {
             if (ability == ABILITY_ICE_BODY
-                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+                && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
                 && !BATTLER_MAX_HP(gBattlerAttacker)
                 && !(gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK))
             {
@@ -14004,7 +14004,7 @@ static void Cmd_setsemiinvulnerablebit(void)
         gStatuses3[gBattlerAttacker] |= STATUS3_UNDERGROUND;
         break;
     case MOVE_DIVE:
-        gStatuses3[gBattlerAttacker] |= STATUS3_IN_SHADOWS;
+        gStatuses3[gBattlerAttacker] |= STATUS3_UNDERWATER;
         break;
     case MOVE_PHANTOM_FORCE:
     case MOVE_SHADOW_FORCE:

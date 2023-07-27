@@ -1467,7 +1467,7 @@ bool32 IsSemiInvulnerable(u8 battlerDef, u16 move)
         return TRUE;
     else if (!gBattleMoves[move].damagesAirborne && gStatuses3[battlerDef] & STATUS3_ON_AIR)
         return TRUE;
-    else if (!gBattleMoves[move].damagesInShadows && gStatuses3[battlerDef] & STATUS3_IN_SHADOWS)
+    else if (!gBattleMoves[move].damagesUnderwater && gStatuses3[battlerDef] & STATUS3_UNDERWATER)
         return TRUE;
     else if (!gBattleMoves[move].damagesUnderground && gStatuses3[battlerDef] & STATUS3_UNDERGROUND)
         return TRUE;
@@ -2411,7 +2411,7 @@ static u32 GetWeatherDamage(u8 battlerId)
     if (gBattleWeather & B_WEATHER_SANDSTORM)
     {
         if (BattlerAffectedBySandstorm(battlerId, ability)
-          && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+          && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
           && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
         {
             damage = gBattleMons[battlerId].maxHP / 16;
@@ -2422,7 +2422,7 @@ static u32 GetWeatherDamage(u8 battlerId)
     if ((gBattleWeather & B_WEATHER_HAIL) && ability != ABILITY_ICE_BODY)
     {
         if (BattlerAffectedByHail(battlerId, ability)
-          && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_IN_SHADOWS))
+          && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
           && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
         {
             damage = gBattleMons[battlerId].maxHP / 16;

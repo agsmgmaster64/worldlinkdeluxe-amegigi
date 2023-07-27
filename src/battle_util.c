@@ -5681,7 +5681,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             //}
             //break;
         case ABILITY_GULP_MISSILE:
-            if (((gCurrentMove == MOVE_SURF && TARGET_TURN_DAMAGED) || gStatuses3[gBattlerAttacker] & STATUS3_IN_SHADOWS)
+            if (((gCurrentMove == MOVE_SURF && TARGET_TURN_DAMAGED) || gStatuses3[gBattlerAttacker] & STATUS3_UNDERWATER)
              && TryBattleFormChange(gBattlerAttacker, FORM_CHANGE_BATTLE_HP_PERCENT))
             {
                 BattleScriptPushCursor();
@@ -9596,7 +9596,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         finalModifier = uq4_12_multiply(finalModifier, UQ_4_12(2.0));
     if (gBattleMoves[move].damagesUnderground           && gStatuses3[battlerDef] & STATUS3_UNDERGROUND)
         finalModifier = uq4_12_multiply(finalModifier, UQ_4_12(2.0));
-    if (gBattleMoves[move].damagesInShadows            && gStatuses3[battlerDef] & STATUS3_IN_SHADOWS)
+    if (gBattleMoves[move].damagesUnderwater            && gStatuses3[battlerDef] & STATUS3_UNDERWATER)
         finalModifier = uq4_12_multiply(finalModifier, UQ_4_12(2.0));
     if (gBattleMoves[move].damagesAirborneDoubleDamage  && gStatuses3[battlerDef] & STATUS3_ON_AIR)
         finalModifier = uq4_12_multiply(finalModifier, UQ_4_12(2.0));
