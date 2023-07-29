@@ -22235,7 +22235,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_THICK_FAT},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_RATICATE_ALOLAN] =
@@ -22259,7 +22259,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_THICK_FAT},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_RAICHU_ALOLAN] =
@@ -22282,7 +22282,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SURGE_SURFER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_SANDSHREW_ALOLAN] =
@@ -22306,7 +22306,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_SANDSLASH_ALOLAN] =
@@ -22329,7 +22329,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_VULPIX_ALOLAN] =
@@ -22353,7 +22353,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SNOW_WARNING},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_NINETALES_ALOLAN] =
@@ -22377,7 +22377,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SNOW_WARNING},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_DIGLETT_ALOLAN] =
@@ -22401,7 +22401,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SAND_VEIL, ABILITY_TANGLING_HAIR, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_DUGTRIO_ALOLAN] =
@@ -22425,7 +22425,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SAND_VEIL, ABILITY_TANGLING_HAIR, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_MEOWTH_ALOLAN] =
@@ -22449,7 +22449,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_PICKUP, ABILITY_TECHNICIAN, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_PERSIAN_ALOLAN] =
@@ -22473,7 +22473,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_FUR_COAT, ABILITY_TECHNICIAN, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_GEODUDE_ALOLAN] =
@@ -22497,7 +22497,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_GRAVELER_ALOLAN] =
@@ -22521,7 +22521,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_GOLEM_ALOLAN] =
@@ -22544,7 +22544,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_GRIMER_ALOLAN] =
@@ -22568,7 +22568,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_POISON_TOUCH, ABILITY_GLUTTONY, ABILITY_POWER_OF_ALCHEMY},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_MUK_ALOLAN] =
@@ -22592,7 +22592,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_POISON_TOUCH, ABILITY_GLUTTONY, ABILITY_POWER_OF_ALCHEMY},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_EXEGGUTOR_ALOLAN] =
@@ -22615,7 +22615,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_FRISK, ABILITY_NONE, ABILITY_HARVEST},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_MAROWAK_ALOLAN] =
@@ -22638,7 +22638,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_CURSED_BODY, ABILITY_LIGHTNING_ROD, ABILITY_ROCK_HEAD},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_ALOLAN_FORM,
+        .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
 
     [SPECIES_MEOWTH_GALARIAN] =
@@ -22661,7 +22661,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_PICKUP, ABILITY_TOUGH_CLAWS, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_PONYTA_GALARIAN] =
@@ -22684,7 +22684,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PASTEL_VEIL, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_RAPIDASH_GALARIAN] =
@@ -22707,7 +22707,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PASTEL_VEIL, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_SLOWPOKE_GALARIAN] =
@@ -22730,7 +22730,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_GLUTTONY, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_SLOWBRO_GALARIAN] =
@@ -22753,7 +22753,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_QUICK_DRAW, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_FARFETCHD_GALARIAN] =
@@ -22777,7 +22777,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_WEEZING_GALARIAN] =
@@ -22801,7 +22801,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_MISTY_SURGE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_MR_MIME_GALARIAN] =
@@ -22824,7 +22824,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_SCREEN_CLEANER, ABILITY_ICE_BODY},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_ARTICUNO_GALARIAN] =
@@ -22847,7 +22847,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_COMPETITIVE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_ZAPDOS_GALARIAN] =
@@ -22870,7 +22870,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_DEFIANT, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_MOLTRES_GALARIAN] =
@@ -22893,7 +22893,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_BERSERK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_SLOWKING_GALARIAN] =
@@ -22916,7 +22916,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_CURIOUS_MEDICINE, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_CORSOLA_GALARIAN] =
@@ -22939,7 +22939,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_CURSED_BODY},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_ZIGZAGOON_GALARIAN] =
@@ -22962,7 +22962,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_LINOONE_GALARIAN] =
@@ -22985,7 +22985,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
 #if P_GEN_5_POKEMON == TRUE
@@ -23009,7 +23009,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_HUSTLE, ABILITY_NONE, ABILITY_INNER_FOCUS},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_DARMANITAN_GALARIAN] =
@@ -23032,7 +23032,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE, ABILITY_ZEN_MODE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_YAMASK_GALARIAN] =
@@ -23055,7 +23055,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_WANDERING_SPIRIT, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_STUNFISK_GALARIAN] =
@@ -23078,7 +23078,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_MIMICRY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 #endif
 
@@ -23102,7 +23102,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_ARCANINE_HISUIAN] =
@@ -23125,7 +23125,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_VOLTORB_HISUIAN] =
@@ -23148,7 +23148,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_ELECTRODE_HISUIAN] =
@@ -23171,7 +23171,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_TYPHLOSION_HISUIAN] =
@@ -23194,7 +23194,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_QWILFISH_HISUIAN] =
@@ -23218,7 +23218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_SNEASEL_HISUIAN] =
@@ -23242,7 +23242,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_KEEN_EYE, ABILITY_POISON_TOUCH},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
 #if P_GEN_5_POKEMON == TRUE
@@ -23266,7 +23266,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_LILLIGANT_HISUIAN] =
@@ -23290,7 +23290,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_HUSTLE, ABILITY_LEAF_GUARD},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_ZORUA_HISUIAN] =
@@ -23313,7 +23313,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_ZOROARK_HISUIAN] =
@@ -23336,7 +23336,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_BRAVIARY_HISUIAN] =
@@ -23359,7 +23359,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_DEFIANT},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 #endif
 
@@ -23385,7 +23385,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_OVERCOAT, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_GOODRA_HISUIAN] =
@@ -23408,7 +23408,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_OVERCOAT, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_AVALUGG_HISUIAN] =
@@ -23431,7 +23431,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_STRONG_JAW, ABILITY_ICE_BODY, ABILITY_STURDY},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 #endif
 
@@ -23456,7 +23456,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LONG_REACH},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_HISUIAN_FORM,
+	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 #endif
 
@@ -23841,7 +23841,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE, ABILITY_ZEN_MODE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_GALARIAN_FORM,
+        .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
     [SPECIES_DEERLING_SUMMER] = DEERLING_SPECIES_INFO(BODY_COLOR_GREEN),

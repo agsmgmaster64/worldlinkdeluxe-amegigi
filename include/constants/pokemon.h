@@ -322,11 +322,19 @@
 #define SPECIES_FLAG_MEGA_EVOLUTION     (1 << 2)
 #define SPECIES_FLAG_PRIMAL_REVERSION   (1 << 3)
 #define SPECIES_FLAG_ULTRA_BEAST        (1 << 4)
-#define SPECIES_FLAG_ALOLAN_FORM        (1 << 5)
-#define SPECIES_FLAG_GALARIAN_FORM      (1 << 6)
-#define SPECIES_FLAG_HISUIAN_FORM       (1 << 7)
+#define SPECIES_FLAG_HOENNIAN_FORM      (1 << 5)
+#define SPECIES_FLAG_GENSOKYIAN_FORM    (1 << 6)
+#define SPECIES_FLAG_SANNIAN_FORM       (1 << 7)
 #define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 8)
 #define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 9)
+#define SPECIES_FLAG_CHIBI_FORM         (1 << 10)
+#define SPECIES_FLAG_NORMAL_FORM        (1 << 11)
+#define SPECIES_FLAG_ATTACK_FORM        (1 << 12)
+#define SPECIES_FLAG_DEFENSE_FORM       (1 << 13)
+#define SPECIES_FLAG_SPEED_FORM         (1 << 14)
+#define SPECIES_FLAG_HELPER_FORM        (1 << 15)
+#define SPECIES_FLAG_TECHNICAL_FORM     (1 << 16)
+#define SPECIES_FLAG_ADVENT_FORM        (1 << 17)
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 
