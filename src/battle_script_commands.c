@@ -7392,10 +7392,9 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
 
 static void Cmd_getmoneyreward(void)
 {
-    CMD_ARGS();
+    CMD_ARGS(const u8 *noMoneyPtr);
 
     u32 money;
-    u8 sPartyLevel = 1;
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
@@ -7407,13 +7406,14 @@ static void Cmd_getmoneyreward(void)
     else
     {
         s32 i, count;
+        u8 partyLevel = 1;
         for (i = 0; i < PARTY_SIZE; i++)
         {
             if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
              && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
             {
-                if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > sPartyLevel)
-                    sPartyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+                if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > partyLevel)
+                    partyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
             }
         }
         for (count = 0, i = 0; i < ARRAY_COUNT(sBadgeFlags); i++)
@@ -7421,12 +7421,17 @@ static void Cmd_getmoneyreward(void)
             if (FlagGet(sBadgeFlags[i]) == TRUE)
                 ++count;
         }
-        money = sWhiteOutBadgeMoney[count] * sPartyLevel;
+        money = sWhiteOutBadgeMoney[count] * partyLevel;
+        if (!IsEnoughMoney(&gSaveBlock1Ptr->money, money))
+            money = &gSaveBlock1Ptr->money;
         RemoveMoney(&gSaveBlock1Ptr->money, money);
     }
 
     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, money);
-    gBattlescriptCurrInstr = cmd->nextInstr;
+    if (money)
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->noMoneyPtr;
 }
 
 // Command is never used

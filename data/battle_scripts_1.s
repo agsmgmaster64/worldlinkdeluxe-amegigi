@@ -6419,7 +6419,8 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
-	getmoneyreward
+	getmoneyreward BattleScript_LocalTrainerBattleWonGotMoney
+BattleScript_LocalTrainerBattleWonGotMoney::
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_PayDayMoneyAndPickUpItems::
@@ -6440,14 +6441,18 @@ BattleScript_LocalBattleLostPrintWhiteOut::
 	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_LocalBattleLostEnd
 	printstring STRINGID_PLAYERWHITEOUT
 	waitmessage B_WAIT_TIME_LONG
-	getmoneyreward
+	getmoneyreward BattleScript_LocalBattleLostPrintWhitedOutNoMoney
 	printstring STRINGID_PLAYERWHITEOUT2
+	waitmessage B_WAIT_TIME_LONG
+	end2
+BattleScript_LocalBattleLostPrintWhitedOutNoMoney::
+	printstring STRINGID_PLAYERWHITEDOUT
 	waitmessage B_WAIT_TIME_LONG
 	end2
 BattleScript_LocalBattleLostEnd::
 	printstring STRINGID_PLAYERLOSTTOENEMYTRAINER
 	waitmessage B_WAIT_TIME_LONG
-	getmoneyreward
+	getmoneyreward BattleScript_LocalBattleLostPrintWhitedOutNoMoney
 	printstring STRINGID_PLAYERPAIDPRIZEMONEY
 	waitmessage B_WAIT_TIME_LONG
 .else

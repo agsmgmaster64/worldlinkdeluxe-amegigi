@@ -548,8 +548,9 @@
 	.byte \battler
 	.endm
 
-	.macro getmoneyreward
+	.macro getmoneyreward noMoneyPtr:req
 	.byte 0x5d
+	.4byte \noMoneyPtr
 	.endm
 
 	.macro updatebattlermoves battler:req
