@@ -4135,8 +4135,8 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     }
     else
     {
-        PrintInfoScreenText(gText_UnkHeight, 0x81, 0x39);
-        PrintInfoScreenText(gText_UnkWeight, 0x81, 0x49);
+        PrintInfoScreenText(gText_UnkHeight, 0x94, 0x39);
+        PrintInfoScreenText(gText_UnkWeight, 0x94, 0x49);
     }
     if (owned)
         description = gPokedexEntries[num].description;

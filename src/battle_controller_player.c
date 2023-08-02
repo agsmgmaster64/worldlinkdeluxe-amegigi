@@ -1718,7 +1718,12 @@ static void MoveSelectionDisplayMoveType(void)
     u8 *txtPtr;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[gActiveBattler][4]);
 
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
+    if (IS_MOVE_PHYSICAL(moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]))
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePhyscial);
+    else if (IS_MOVE_SPECIAL(moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]))
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceSpecial);
+    else
+        txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceStatus);
     *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
     *(txtPtr)++ = EXT_CTRL_CODE_FONT;
     *(txtPtr)++ = FONT_NORMAL;
