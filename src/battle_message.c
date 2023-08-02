@@ -1954,13 +1954,6 @@ const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
 const u8 gText_BattleSwitchWhich4[] = _("{ESCAPE 4}");
 const u8 gText_BattleSwitchWhich5[] = _("-");
 
-// Unused
-static const u8 *const sStatNamesTable2[] =
-{
-    gText_HP3, gText_SpAtk, gText_Attack,
-    gText_SpDef, gText_Defense, gText_Speed
-};
-
 const u8 gText_SafariBalls[] = _("{HIGHLIGHT DARK_GRAY}SAFARI BALLS");
 const u8 gText_SafariBallLeft[] = _("{HIGHLIGHT DARK_GRAY}Left: $" "{HIGHLIGHT DARK_GRAY}");
 const u8 gText_Sleep[] = _("sleep");

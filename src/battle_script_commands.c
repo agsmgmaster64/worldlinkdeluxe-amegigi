@@ -2240,17 +2240,8 @@ static void Cmd_datahpupdate(void)
 {
     CMD_ARGS(u8 battler);
 
-    u32 moveType;
-
     if (gBattleControllerExecFlags)
         return;
-
-    if (gBattleStruct->dynamicMoveType == 0)
-        moveType = gBattleMoves[gCurrentMove].type;
-    else if (!(gBattleStruct->dynamicMoveType & F_DYNAMIC_TYPE_1))
-        moveType = gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
-    else
-        moveType = gBattleMoves[gCurrentMove].type;
 
     if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
@@ -2326,7 +2317,7 @@ static void Cmd_datahpupdate(void)
                 if (!gSpecialStatuses[gActiveBattler].dmg && !(gHitMarker & HITMARKER_PASSIVE_DAMAGE))
                     gSpecialStatuses[gActiveBattler].dmg = gHpDealt;
 
-                if (IS_MOVE_PHYSICAL(gCurrentMove) && !(gHitMarker & HITMARKER_PASSIVE_DAMAGE) && gCurrentMove != MOVE_PAIN_SPLIT)
+                if (IS_MOVE_PHYSICAL(gCurrentMove) && !(gHitMarker & HITMARKER_PASSIVE_DAMAGE))
                 {
                     gProtectStructs[gActiveBattler].physicalDmg = gHpDealt;
                     gSpecialStatuses[gActiveBattler].physicalDmg = gHpDealt;

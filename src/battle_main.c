@@ -5648,10 +5648,10 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
             if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                 gBattleStruct->dynamicMoveType = TYPE_WATER | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & B_WEATHER_SANDSTORM)
-                gBattleStruct->dynamicMoveType = TYPE_BEAST | F_DYNAMIC_TYPE_2;
+                gBattleStruct->dynamicMoveType = TYPE_EARTH | F_DYNAMIC_TYPE_2;
             else if (gBattleWeather & B_WEATHER_SUN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
                 gBattleStruct->dynamicMoveType = TYPE_FIRE | F_DYNAMIC_TYPE_2;
-            else if (gBattleWeather & (B_WEATHER_HAIL |B_WEATHER_SNOW))
+            else if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW))
                 gBattleStruct->dynamicMoveType = TYPE_ICE | F_DYNAMIC_TYPE_2;
             else
                 gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_2;

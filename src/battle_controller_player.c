@@ -184,9 +184,6 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
     [CONTROLLER_TERMINATOR_NOP]           = PlayerCmdEnd
 };
 
-// unknown unused data
-static const u8 sUnused[] = {0x48, 0x48, 0x20, 0x5a, 0x50, 0x50, 0x50, 0x58};
-
 void BattleControllerDummy(void)
 {
 }
@@ -819,56 +816,6 @@ static void ReloadMoveNames(void)
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
     MoveSelectionDisplayPpNumber();
     MoveSelectionDisplayMoveType();
-}
-
-static u32 HandleMoveInputUnused(void)
-{
-    u32 var = 0;
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        var = 1;
-    }
-    if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_SELECT);
-        gBattle_BG0_X = 0;
-        gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
-        var = 0xFF;
-    }
-    if (JOY_NEW(DPAD_LEFT) && gMoveSelectionCursor[gActiveBattler] & 1)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[gActiveBattler]);
-        gMoveSelectionCursor[gActiveBattler] ^= 1;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-    }
-    if (JOY_NEW(DPAD_RIGHT) && !(gMoveSelectionCursor[gActiveBattler] & 1)
-        && (gMoveSelectionCursor[gActiveBattler] ^ 1) < gNumberOfMovesToChoose)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[gActiveBattler]);
-        gMoveSelectionCursor[gActiveBattler] ^= 1;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-    }
-    if (JOY_NEW(DPAD_UP) && gMoveSelectionCursor[gActiveBattler] & 2)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[gActiveBattler]);
-        gMoveSelectionCursor[gActiveBattler] ^= 2;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-    }
-    if (JOY_NEW(DPAD_DOWN) && !(gMoveSelectionCursor[gActiveBattler] & 2)
-        && (gMoveSelectionCursor[gActiveBattler] ^ 2) < gNumberOfMovesToChoose)
-    {
-        MoveSelectionDestroyCursorAt(gMoveSelectionCursor[gActiveBattler]);
-        gMoveSelectionCursor[gActiveBattler] ^= 2;
-        PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-    }
-
-    return var;
 }
 
 static void HandleMoveSwitching(void)
@@ -1508,8 +1455,6 @@ static void Task_UpdateLvlInHealthbox(u8 taskId)
     {
         u8 monIndex = gTasks[taskId].tExpTask_monId;
 
-        GetMonData(&gPlayerParty[monIndex], MON_DATA_LEVEL);  // Unused return value.
-
         if (IsDoubleBattle() == TRUE && monIndex == gBattlerPartyIndexes[BATTLE_PARTNER(battlerId)])
             UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battlerId)], &gPlayerParty[monIndex], HEALTHBOX_ALL);
         else
@@ -1525,7 +1470,6 @@ static void DestroyExpTaskAndCompleteOnInactiveTextPrinter(u8 taskId)
     u8 battlerId;
 
     monIndex = gTasks[taskId].tExpTask_monId;
-    GetMonData(&gPlayerParty[monIndex], MON_DATA_LEVEL);  // Unused return value.
     battlerId = gTasks[taskId].tExpTask_battler;
     gBattlerControllerFuncs[battlerId] = CompleteOnInactiveTextPrinter;
     DestroyTask(taskId);
@@ -2977,7 +2921,6 @@ static void PlayerHandleExpUpdate(void)
     else
     {
         LoadBattleBarGfx(1);
-        GetMonData(&gPlayerParty[monId], MON_DATA_SPECIES);  // Unused return value.
         expPointsToGive = T1_READ_32(&gBattleResources->bufferA[gActiveBattler][2]);
         taskId = CreateTask(Task_GiveExpToMon, 10);
         gTasks[taskId].tExpTask_monId = monId;
