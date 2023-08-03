@@ -668,8 +668,9 @@
 #define STRINGID_POKEFLUTE                            666
 #define STRINGID_MONHEARINGFLUTEAWOKE                 667
 #define STRINGID_PLAYERWHITEDOUT                      668
+#define STRINGID_PKMNITEMMELTED                       669
 
-#define BATTLESTRINGS_COUNT                           669
+#define BATTLESTRINGS_COUNT                           670
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -830,6 +831,10 @@
 #define B_MSG_SENT_LANETTES_PC  1
 #define B_MSG_SOMEONES_BOX_FULL 2
 #define B_MSG_LANETTES_BOX_FULL 3
+
+// gPrimalWeatherBlocksStringIds
+#define B_MSG_PRIMAL_WEATHER_FIZZLED_BY_RAIN    0
+#define B_MSG_PRIMAL_WEATHER_EVAPORATED_IN_SUN  1
 
 // gInobedientStringIds
 #define B_MSG_LOAFING            0
