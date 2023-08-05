@@ -3125,6 +3125,9 @@ static void BattleStartClearSetData(void)
 
     gBattlerAttacker = 0;
     gBattlerTarget = 0;
+    gEffectBattler = 0;
+    gBattleScripting.battler = 0;
+    gBattlerAbility = 0;
     gBattleWeather = 0;
     gHitMarker = 0;
 
