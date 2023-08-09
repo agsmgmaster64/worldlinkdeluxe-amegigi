@@ -1215,9 +1215,8 @@
 	.4byte \failInstr
 	.endm
 
-	.macro pursuitdoubles failInstr:req
+	.macro unused236
 	.byte 0xec
-	.4byte \failInstr
 	.endm
 
 	.macro snatchsetbattlers
