@@ -725,8 +725,8 @@ static u32 CopyLinkPartnerMonData(u8 monId, u8 *dst)
         dst[0] = GetMonData(&gPlayerParty[monId], MON_DATA_TOUGH);
         size = 1;
         break;
-    case REQUEST_SHEEN_BATTLE:
-        dst[0] = GetMonData(&gPlayerParty[monId], MON_DATA_SHEEN);
+    case REQUEST_HIDDEN_NATURE_BATTLE:
+        dst[0] = GetMonData(&gPlayerParty[monId], MON_DATA_HIDDEN_NATURE);
         size = 1;
         break;
     case REQUEST_COOL_RIBBON_BATTLE:
@@ -976,8 +976,8 @@ static void SetLinkPartnerMonData(u8 monId)
     case REQUEST_TOUGH_BATTLE:
         SetMonData(&gPlayerParty[monId], MON_DATA_TOUGH, &gBattleResources->bufferA[gActiveBattler][3]);
         break;
-    case REQUEST_SHEEN_BATTLE:
-        SetMonData(&gPlayerParty[monId], MON_DATA_SHEEN, &gBattleResources->bufferA[gActiveBattler][3]);
+    case REQUEST_HIDDEN_NATURE_BATTLE:
+        SetMonData(&gPlayerParty[monId], MON_DATA_HIDDEN_NATURE, &gBattleResources->bufferA[gActiveBattler][3]);
         break;
     case REQUEST_COOL_RIBBON_BATTLE:
         SetMonData(&gPlayerParty[monId], MON_DATA_COOL_RIBBON, &gBattleResources->bufferA[gActiveBattler][3]);
