@@ -137,8 +137,8 @@ u16 ChooseMoveAndTargetInBattlePalace(void)
     // Otherwise use move from "Support" group
     for (; i < maxGroupNum; i++)
     {
-        if (GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE) != HIDDEN_NATURE_NONE)
-            monNature = GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE);
+        if (gBattleMons[gActiveBattler].hiddenNature != HIDDEN_NATURE_NONE)
+            monNature = gBattleMons[gActiveBattler].hiddenNature;
         else
             monNature = GetNatureFromPersonality(gBattleMons[gActiveBattler].personality);
 
@@ -318,8 +318,8 @@ static u16 GetBattlePalaceTarget(void)
         if (gBattleMons[opposing1].hp == gBattleMons[opposing2].hp)
             return (BATTLE_OPPOSITE(gActiveBattler & BIT_SIDE) + (Random() & 2)) << 8;
 
-        if (GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE) != HIDDEN_NATURE_NONE)
-            monNature = GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE);
+        if (gBattleMons[gActiveBattler].hiddenNature != HIDDEN_NATURE_NONE)
+            monNature = gBattleMons[gActiveBattler].hiddenNature;
         else
             monNature = GetNatureFromPersonality(gBattleMons[gActiveBattler].personality);
 

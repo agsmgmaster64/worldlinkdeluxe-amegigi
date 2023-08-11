@@ -9060,8 +9060,8 @@ static void Cmd_various(void)
             gBattleStruct->palaceFlags |= gBitTable[gActiveBattler];
             gBattleCommunication[0] = TRUE;
 
-            if (GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE) != HIDDEN_NATURE_NONE)
-                monNature = GetMonData(gActiveBattler, MON_DATA_HIDDEN_NATURE);
+            if (gBattleMons[gActiveBattler].hiddenNature != HIDDEN_NATURE_NONE)
+                monNature = gBattleMons[gActiveBattler].hiddenNature;
             else
                 monNature = GetNatureFromPersonality(gBattleMons[gActiveBattler].personality);
 
