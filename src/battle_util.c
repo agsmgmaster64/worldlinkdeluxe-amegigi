@@ -564,10 +564,7 @@ bool8 TryRunFromBattle(u8 battler)
     u8 pyramidMultiplier;
     u8 speedVar;
 
-    if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
-        holdEffect = gEnigmaBerries[battler].holdEffect;
-    else
-        holdEffect = ItemId_GetHoldEffect(gBattleMons[battler].item);
+    holdEffect = ItemId_GetHoldEffect(gBattleMons[battler].item);
 
     gPotentialItemEffectBattler = battler;
 
@@ -8065,26 +8062,17 @@ u32 GetBattlerHoldEffect(u8 battlerId, bool32 checkNegating)
 
     gPotentialItemEffectBattler = battlerId;
 
-    if (gBattleMons[battlerId].item == ITEM_ENIGMA_BERRY_E_READER)
-        return gEnigmaBerries[battlerId].holdEffect;
-    else
-        return ItemId_GetHoldEffect(gBattleMons[battlerId].item);
+    return ItemId_GetHoldEffect(gBattleMons[battlerId].item);
 }
 
 static u32 GetBattlerItemHoldEffectParam(u8 battlerId, u16 item)
 {
-    if (item == ITEM_ENIGMA_BERRY_E_READER)
-        return gEnigmaBerries[battlerId].holdEffectParam;
-    else
-        return ItemId_GetHoldEffectParam(item);
+    return ItemId_GetHoldEffectParam(item);
 }
 
 u32 GetBattlerHoldEffectParam(u8 battlerId)
 {
-    if (gBattleMons[battlerId].item == ITEM_ENIGMA_BERRY_E_READER)
-        return gEnigmaBerries[battlerId].holdEffectParam;
-    else
-        return ItemId_GetHoldEffectParam(gBattleMons[battlerId].item);
+    return ItemId_GetHoldEffectParam(gBattleMons[battlerId].item);
 }
 
 bool32 IsMoveMakingContact(u16 move, u8 battlerAtk)
@@ -10001,10 +9989,7 @@ bool32 CanMegaEvolve(u8 battlerId)
     // Check if there is an entry in the evolution table for regular Mega Evolution.
     if (GetBattleFormChangeTargetSpecies(battlerId, FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM) != SPECIES_NONE)
     {
-        if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-            holdEffect = gEnigmaBerries[battlerId].holdEffect;
-        else
-            holdEffect = ItemId_GetHoldEffect(itemId);
+        holdEffect = ItemId_GetHoldEffect(itemId);
 
         // Can Mega Evolve via Mega Stone.
         if (holdEffect == HOLD_EFFECT_MEGA_STONE)
@@ -10212,9 +10197,7 @@ bool32 CanBattlerGetOrLoseItem(u8 battlerId, u16 itemId)
     u16 holdEffect = ItemId_GetHoldEffect(itemId);
 
     // Mail can be stolen now
-    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-        return FALSE;
-    else if (DoesSpeciesUseHoldItemToChangeForm(species, itemId))
+    if (DoesSpeciesUseHoldItemToChangeForm(species, itemId))
         return FALSE;
     else if (holdEffect == HOLD_EFFECT_Z_CRYSTAL)
         return FALSE;

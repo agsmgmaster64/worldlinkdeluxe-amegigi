@@ -103,14 +103,9 @@ static const struct YesNoFuncTable sUseTMHMYesNoFuncTable =
     .noFunc = CloseItemMessage,
 };
 
-#define tEnigmaBerryType data[4]
 static void SetUpItemUseCallback(u8 taskId)
 {
-    u8 type;
-    if (gSpecialVar_ItemId == ITEM_ENIGMA_BERRY_E_READER)
-        type = gTasks[taskId].tEnigmaBerryType - 1;
-    else
-        type = ItemId_GetType(gSpecialVar_ItemId) - 1;
+    u8 type = ItemId_GetType(gSpecialVar_ItemId) - 1;
     if (!InBattlePyramid())
     {
         gBagMenu->newScreenCallback = sItemUseCallbacks[type];

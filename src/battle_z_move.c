@@ -155,10 +155,7 @@ bool32 IsViableZMove(u8 battlerId, u16 move)
             return FALSE;   // Partner has mega evolved or is about to mega evolve
     }
 
-    if (item == ITEM_ENIGMA_BERRY_E_READER)
-        return FALSE;   // HoldEffect = gEnigmaBerries[battlerId].holdEffect;
-    else
-        holdEffect = ItemId_GetHoldEffect(item);
+    holdEffect = ItemId_GetHoldEffect(item);
 
     if (holdEffect == HOLD_EFFECT_Z_CRYSTAL)
     {
