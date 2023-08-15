@@ -5,6 +5,7 @@
 #include "decompress.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "item_icon.h"
 #include "main.h"
 #include "math_util.h"
 #include "palette.h"
@@ -7010,4 +7011,50 @@ void AnimTask_CreateSmallSteelBeamOrbs(u8 taskId)
 
     if (gTasks[taskId].data[1] == 15)
         DestroyAnimVisualTask(taskId);
+}
+
+//Knock Off//
+void AnimTask_CreateKnockOffItem(u8 taskId)
+{
+	u8 iconSpriteId = AddItemIconSprite(ANIM_TAG_ITEM_BAG, ANIM_TAG_ITEM_BAG, gLastUsedItem);
+
+	if (iconSpriteId != MAX_SPRITES)
+	{
+		struct Sprite* sprite = &gSprites[iconSpriteId];
+
+		sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+		sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+		sprite->oam.priority = 2;
+		sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
+		sprite->affineAnims = gFallingBagAffineAnimTable;
+		sprite->callback = AnimKnockOffItem;
+
+		CalcCenterToCornerVec(sprite, sprite->oam.shape, sprite->oam.size, sprite->oam.affineMode);
+		InitSpriteAffineAnim(sprite);
+		++gAnimVisualTaskCount;
+	}
+
+	DestroyAnimVisualTask(taskId);
+}
+
+//Thief//
+void AnimTask_CreateStealItem(u8 taskId)
+{
+	u8 iconSpriteId = AddItemIconSprite(ANIM_TAG_ITEM_BAG, ANIM_TAG_ITEM_BAG, gLastUsedItem);
+
+	if (iconSpriteId != MAX_SPRITES)
+	{
+		struct Sprite* sprite = &gSprites[iconSpriteId];
+
+		sprite->oam.priority = 2;
+		sprite->oam.affineMode = ST_OAM_AFFINE_NORMAL;
+		sprite->affineAnims = gFallingBagAffineAnimTable;
+		sprite->callback = AnimItemSteal;
+
+		CalcCenterToCornerVec(sprite, sprite->oam.shape, sprite->oam.size, sprite->oam.affineMode);
+		InitSpriteAffineAnim(sprite);
+		++gAnimVisualTaskCount;
+	}
+
+	DestroyAnimVisualTask(taskId);
 }

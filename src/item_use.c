@@ -1280,50 +1280,6 @@ void ItemUseInBattle_BagMenu(u8 taskId)
     }
 }
 
-void ItemUseOutOfBattle_EnigmaBerry(u8 taskId)
-{
-    switch (GetItemEffectType(gSpecialVar_ItemId))
-    {
-    case ITEM_EFFECT_HEAL_HP:
-    case ITEM_EFFECT_CURE_POISON:
-    case ITEM_EFFECT_CURE_SLEEP:
-    case ITEM_EFFECT_CURE_BURN:
-    case ITEM_EFFECT_CURE_FREEZE_FROSTBITE:
-    case ITEM_EFFECT_CURE_PARALYSIS:
-    case ITEM_EFFECT_CURE_ALL_STATUS:
-    case ITEM_EFFECT_ATK_EV:
-    case ITEM_EFFECT_HP_EV:
-    case ITEM_EFFECT_SPATK_EV:
-    case ITEM_EFFECT_SPDEF_EV:
-    case ITEM_EFFECT_SPEED_EV:
-    case ITEM_EFFECT_DEF_EV:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
-        ItemUseOutOfBattle_Medicine(taskId);
-        break;
-    case ITEM_EFFECT_SACRED_ASH:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
-        ItemUseOutOfBattle_SacredAsh(taskId);
-        break;
-    case ITEM_EFFECT_RAISE_LEVEL:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
-        ItemUseOutOfBattle_RareCandy(taskId);
-        break;
-    case ITEM_EFFECT_PP_UP:
-    case ITEM_EFFECT_PP_MAX:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
-        ItemUseOutOfBattle_PPUp(taskId);
-        break;
-    case ITEM_EFFECT_HEAL_PP:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_PARTY_MENU;
-        ItemUseOutOfBattle_PPRecovery(taskId);
-        break;
-    default:
-        gTasks[taskId].tEnigmaBerryType = ITEM_USE_BAG_MENU;
-        ItemUseOutOfBattle_CannotUse(taskId);
-        break;
-    }
-}
-
 void ItemUseOutOfBattle_FormChange(u8 taskId)
 {
     gItemUseCB = ItemUseCB_FormChange;

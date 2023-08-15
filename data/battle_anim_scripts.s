@@ -26376,8 +26376,9 @@ General_PokeblockThrow:
 	end
 
 General_ItemKnockoff:
-	loadspritegfx ANIM_TAG_ITEM_BAG
-	createsprite gKnockOffItemSpriteTemplate, ANIM_TARGET, 2
+	createvisualtask AnimTask_CreateKnockOffItem, 2
+	waitforvisualfinish
+	unloadspritegfx ANIM_TAG_ITEM_BAG
 	end
 
 General_TurnTrap:
@@ -26626,11 +26627,12 @@ General_MonHit:
 	end
 
 General_ItemSteal:
-	loadspritegfx ANIM_TAG_ITEM_BAG
 	createvisualtask AnimTask_SetAnimAttackerAndTargetForEffectAtk, 2
 	createvisualtask AnimTask_SetTargetToEffectBattler, 2  @ Redundant with above
 	delay 1
-	createsprite gItemStealSpriteTemplate, ANIM_ATTACKER, 2, 0, -5, 10, 2, -1
+	createvisualtask AnimTask_CreateStealItem, 2, 0, -5, 10, 2, -1
+	waitforvisualfinish
+	unloadspritegfx ANIM_TAG_ITEM_BAG
 	end
 
 General_SnatchMove:
