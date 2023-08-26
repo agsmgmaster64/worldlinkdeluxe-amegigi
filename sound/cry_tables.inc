@@ -1298,6 +1298,9 @@ gCryTable::
 	@ Calyrex
 	cry Cry_Unown
 	cry Cry_Unown
+	@ Basculegion
+	cry Cry_Unown
+.endif
 
 	.align 2
 gCryTable_Reverse::
