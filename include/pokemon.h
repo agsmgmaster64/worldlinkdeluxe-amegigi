@@ -330,7 +330,7 @@ struct SpeciesInfo /*0x24*/
  /* 0x16 */ u8 eggGroups[2];
  /* 0x18 */ u16 abilities[NUM_ABILITY_SLOTS]; // 3 abilities, no longer u8 because we have over 255 abilities now.
  /* 0x1E */ u8 safariZoneFleeRate;
- /* 0x1F */ u8 bodyColor : 7;
+ /* 0x1F */ u8 sourceGame : 7;
             u8 noFlip : 1;
  /* 0x20 */ u16 flags;
 };

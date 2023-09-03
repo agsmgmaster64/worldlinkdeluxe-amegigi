@@ -34,7 +34,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                  \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},                  \
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},\
-        .bodyColor = BODY_COLOR_YELLOW,                                    \
+        .sourceGame = SOURCE_PODD,                                    \
         .noFlip = flip,                                                    \
     }
 
@@ -59,7 +59,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                  \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},    \
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},\
-        .bodyColor = BODY_COLOR_YELLOW,                                    \
+        .sourceGame = SOURCE_PODD,                                    \
         .noFlip = flip,                                                    \
     }
 
@@ -82,7 +82,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,             \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},          \
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_BLACK,                \
+        .sourceGame = SOURCE_MS,                \
         .noFlip = flip,                               \
     }
 
@@ -106,7 +106,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,             \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS},             \
         .abilities = {ABILITY_FORECAST, ABILITY_NONE},\
-        .bodyColor = color,                           \
+        .sourceGame = color,                           \
         .noFlip = FALSE,                              \
     }
 
@@ -128,7 +128,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                \
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},                                      \
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_OVERCOAT},\
-        .bodyColor = color,                                              \
+        .sourceGame = color,                                              \
         .noFlip = FALSE,                                                 \
     }
 
@@ -151,7 +151,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},                    \
         .abilities = {ABILITY_FLOWER_GIFT, ABILITY_NONE},\
-        .bodyColor = color,                              \
+        .sourceGame = color,                              \
         .noFlip = FALSE,                                 \
     }
 
@@ -173,7 +173,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                           \
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS},                                           \
         .abilities = {ABILITY_STICKY_HOLD, ABILITY_STORM_DRAIN, ABILITY_SAND_FORCE},\
-        .bodyColor = color,                                                         \
+        .sourceGame = color,                                                         \
         .noFlip = FALSE,                                                            \
     }
 
@@ -195,7 +195,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                           \
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS},                                           \
         .abilities = {ABILITY_STICKY_HOLD, ABILITY_STORM_DRAIN, ABILITY_SAND_FORCE},\
-        .bodyColor = color,                                                         \
+        .sourceGame = color,                                                         \
         .noFlip = FALSE,                                                            \
     }
 
@@ -218,7 +218,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,             \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},             \
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_RED,                  \
+        .sourceGame = SOURCE_HRTP,                  \
         .noFlip = flip,                               \
     }
 
@@ -240,7 +240,7 @@
         .growthRate = GROWTH_SLOW,                     \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},           \
         .abilities = {ABILITY_MULTITYPE, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_WHITE,                 \
+        .sourceGame = SOURCE_POFV,                 \
         .noFlip = FALSE,                               \
         .flags = SPECIES_FLAG_MYTHICAL,                \
     }
@@ -263,7 +263,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                            \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},                                                \
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SAP_SIPPER, ABILITY_SERENE_GRACE},\
-        .bodyColor = color,                                                          \
+        .sourceGame = color,                                                          \
         .noFlip = FALSE,                                                             \
     }
 
@@ -285,7 +285,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                            \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},                                                \
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SAP_SIPPER, ABILITY_SERENE_GRACE},\
-        .bodyColor = BODY_COLOR_BROWN,                                               \
+        .sourceGame = SOURCE_EOSD,                                               \
         .noFlip = FALSE,                                                             \
     }
 
@@ -309,7 +309,7 @@
         .growthRate = GROWTH_SLOW,                    \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},          \
         .abilities = {ABILITY_DOWNLOAD, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_PURPLE,               \
+        .sourceGame = SOURCE_PCB,               \
         .noFlip = FALSE,                              \
         .flags = SPECIES_FLAG_MYTHICAL,               \
     }
@@ -334,7 +334,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                               \
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},                                                     \
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_COMPOUND_EYES, ABILITY_FRIEND_GUARD},\
-        .bodyColor = color,                                                             \
+        .sourceGame = color,                                                             \
         .noFlip = FALSE,                                                                \
     }
 
@@ -356,7 +356,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
         .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
-        .bodyColor = BODY_COLOR_WHITE,                                      \
+        .sourceGame = SOURCE_POFV,                                      \
         .noFlip = FALSE,                                                    \
     }
 
@@ -378,7 +378,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
         .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
-        .bodyColor = BODY_COLOR_WHITE,                                      \
+        .sourceGame = SOURCE_POFV,                                      \
         .noFlip = FALSE,                                                    \
     }
 
@@ -400,7 +400,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},                                       \
         .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},\
-        .bodyColor = BODY_COLOR_WHITE,                                      \
+        .sourceGame = SOURCE_POFV,                                      \
         .noFlip = FALSE,                                                    \
     }
 
@@ -422,7 +422,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,             \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},                 \
         .abilities = {ABILITY_FUR_COAT, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_WHITE,                \
+        .sourceGame = SOURCE_POFV,                \
         .noFlip = flip,                               \
     }
 
@@ -437,7 +437,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                              \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},                              \
         .abilities = {ABILITY_PICKUP, ABILITY_FRISK, ABILITY_INSOMNIA},\
-        .bodyColor = BODY_COLOR_BROWN,                                 \
+        .sourceGame = SOURCE_EOSD,                                 \
         .noFlip = FALSE
 
 #define GOURGEIST_MISC_INFO                                            \
@@ -451,7 +451,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                              \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},                              \
         .abilities = {ABILITY_PICKUP, ABILITY_FRISK, ABILITY_INSOMNIA},\
-        .bodyColor = BODY_COLOR_BROWN,                                 \
+        .sourceGame = SOURCE_EOSD,                                 \
         .noFlip = FALSE
 
 #define XERNEAS_SPECIES_INFO                            \
@@ -472,7 +472,7 @@
         .growthRate = GROWTH_SLOW,                      \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},            \
         .abilities = {ABILITY_FAIRY_AURA, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_BLUE,                   \
+        .sourceGame = SOURCE_SOEW,                   \
         .noFlip = FALSE,                                \
         .flags = SPECIES_FLAG_LEGENDARY,                \
     }
@@ -495,7 +495,7 @@
         .growthRate = GROWTH_SLOW,           \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED}, \
         .abilities = {ability, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_GREEN,       \
+        .sourceGame = SOURCE_LLS,       \
         .noFlip = TRUE,                      \
         .flags = SPECIES_FLAG_LEGENDARY,     \
     }
@@ -518,7 +518,7 @@
         .growthRate = GROWTH_SLOW,           \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED}, \
         .abilities = {ability, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_BLACK,       \
+        .sourceGame = SOURCE_MS,       \
         .noFlip = TRUE,                      \
         .flags = SPECIES_FLAG_LEGENDARY,     \
     }
@@ -542,7 +542,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,           \
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},              \
         .abilities = {ABILITY_DANCER, ABILITY_NONE},\
-        .bodyColor = color,                         \
+        .sourceGame = color,                         \
         .noFlip = FALSE,                            \
     }
 
@@ -564,7 +564,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                       \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},                           \
         .abilities = {ability1, ability2, hiddenAbility},       \
-        .bodyColor = BODY_COLOR_BROWN,                          \
+        .sourceGame = SOURCE_EOSD,                          \
         .noFlip = FALSE,                                        \
     }
 
@@ -586,7 +586,7 @@
         .growthRate = GROWTH_SLOW,                      \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},            \
         .abilities = {ABILITY_RKS_SYSTEM, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_GRAY,                   \
+        .sourceGame = SOURCE_IN,                   \
         .noFlip = FALSE,                                \
         .flags = SPECIES_FLAG_LEGENDARY,                \
     }
@@ -620,13 +620,13 @@
         .growthRate = GROWTH_MEDIUM_SLOW,                   \
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},                     \
         .abilities = {ABILITY_SHIELDS_DOWN, ABILITY_NONE},  \
-        .bodyColor = color,                                 \
+        .sourceGame = color,                                 \
         .noFlip = TRUE
 
 #define MINIOR_METEOR_SPECIES_INFO          \
     {                                       \
         MINIOR_METEOR_ATTRIBUTES,           \
-        MINIOR_MISC_INFO(BODY_COLOR_BROWN), \
+        MINIOR_MISC_INFO(SOURCE_EOSD), \
     }
 
 
@@ -655,7 +655,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,             \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},             \
         .abilities = {ABILITY_DISGUISE, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_YELLOW,               \
+        .sourceGame = SOURCE_PODD,               \
         .noFlip = FALSE,                              \
     }
 
@@ -677,7 +677,7 @@
         .growthRate = GROWTH_SLOW,                      \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},            \
         .abilities = {ABILITY_SOUL_HEART, ABILITY_NONE},\
-        .bodyColor = color,                             \
+        .sourceGame = color,                             \
         .noFlip = FALSE,                                \
         .flags = SPECIES_FLAG_MYTHICAL,                 \
     }
@@ -700,7 +700,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                 \
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FLYING},                    \
         .abilities = {ABILITY_GULP_MISSILE, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_BLUE,                     \
+        .sourceGame = SOURCE_SOEW,                     \
         .noFlip = FALSE,                                  \
     }
 
@@ -722,7 +722,7 @@
         .growthRate = GROWTH_MEDIUM_SLOW,                              \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},                             \
         .abilities = {ABILITY_PUNK_ROCK, ability2, ABILITY_TECHNICIAN},\
-        .bodyColor = BODY_COLOR_PURPLE,                                \
+        .sourceGame = SOURCE_PCB,                                \
         .noFlip = FALSE,                                               \
     }
 
@@ -744,7 +744,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                    \
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},                                    \
         .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_CURSED_BODY},\
-        .bodyColor = BODY_COLOR_PURPLE,                                      \
+        .sourceGame = SOURCE_PCB,                                      \
         .noFlip = FALSE,                                                     \
     }
 
@@ -766,7 +766,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                    \
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},                                    \
         .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_CURSED_BODY},\
-        .bodyColor = BODY_COLOR_PURPLE,                                      \
+        .sourceGame = SOURCE_PCB,                                      \
         .noFlip = FALSE,                                                     \
     }
 
@@ -788,7 +788,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS},                                   \
         .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},\
-        .bodyColor = color,                                                 \
+        .sourceGame = color,                                                 \
         .noFlip = FALSE,                                                    \
     }
 
@@ -810,7 +810,7 @@
         .growthRate = GROWTH_MEDIUM_FAST,                  \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},                      \
         .abilities = {ABILITY_HUNGER_SWITCH, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_YELLOW,                    \
+        .sourceGame = SOURCE_PODD,                    \
         .noFlip = FALSE,                                   \
     }
 
@@ -832,7 +832,7 @@
         .growthRate = GROWTH_SLOW,                      \
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},            \
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE},\
-        .bodyColor = BODY_COLOR_GREEN,                  \
+        .sourceGame = SOURCE_LLS,                  \
         .noFlip = FALSE,                                \
         .flags = SPECIES_FLAG_MYTHICAL,                 \
     }
@@ -859,7 +859,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -882,7 +882,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -905,7 +905,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -927,7 +927,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -950,7 +950,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -972,7 +972,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -994,7 +994,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1017,7 +1017,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1039,7 +1039,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1061,7 +1061,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -1083,7 +1083,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -1111,7 +1111,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_TINTED_LENS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -1133,7 +1133,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1155,7 +1155,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1183,7 +1183,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1205,7 +1205,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1227,7 +1227,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1253,7 +1253,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1275,7 +1275,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1297,7 +1297,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1320,7 +1320,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1343,7 +1343,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1365,7 +1365,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1391,7 +1391,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_SHED_SKIN, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1419,7 +1419,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1442,7 +1442,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_SAND_RUSH},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1465,7 +1465,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_SAND_RUSH},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1487,7 +1487,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1509,7 +1509,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1535,7 +1535,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1557,7 +1557,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1579,7 +1579,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1605,7 +1605,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_POISON_POINT, ABILITY_RIVALRY, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1632,7 +1632,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -1663,7 +1663,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -1686,7 +1686,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_DROUGHT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -1710,7 +1710,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_DROUGHT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -1737,7 +1737,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -1768,7 +1768,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -1790,7 +1790,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1812,7 +1812,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1835,7 +1835,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1858,7 +1858,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_STENCH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -1885,7 +1885,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_EFFECT_SPORE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -1909,7 +1909,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -1934,7 +1934,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_DRY_SKIN, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -1956,7 +1956,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_COMPOUND_EYES, ABILITY_TINTED_LENS, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -1980,7 +1980,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_TINTED_LENS, ABILITY_WONDER_SKIN},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -2003,7 +2003,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_ARENA_TRAP, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2030,7 +2030,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_ARENA_TRAP, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2053,7 +2053,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_TECHNICIAN, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -2076,7 +2076,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -2098,7 +2098,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_DAMP, ABILITY_CLOUD_NINE, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -2120,7 +2120,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_DAMP, ABILITY_CLOUD_NINE, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -2142,7 +2142,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_ANGER_POINT, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2164,7 +2164,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_ANGER_POINT, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2186,7 +2186,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2208,7 +2208,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2230,7 +2230,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_DAMP, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -2253,7 +2253,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_DAMP, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -2280,7 +2280,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_DAMP, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -2303,7 +2303,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_INNER_FOCUS, ABILITY_MAGIC_GUARD},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2326,7 +2326,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_INNER_FOCUS, ABILITY_MAGIC_GUARD},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -2353,7 +2353,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_INNER_FOCUS, ABILITY_MAGIC_GUARD},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2376,7 +2376,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -2399,7 +2399,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -2422,7 +2422,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -2444,7 +2444,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -2466,7 +2466,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -2492,7 +2492,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -2515,7 +2515,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_LIQUID_OOZE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -2538,7 +2538,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_LIQUID_OOZE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -2561,7 +2561,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2584,7 +2584,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2611,7 +2611,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2633,7 +2633,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -2655,7 +2655,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -2678,7 +2678,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -2701,7 +2701,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -2724,7 +2724,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -2747,7 +2747,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -2774,7 +2774,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_INNER_FOCUS, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2797,7 +2797,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_EARLY_BIRD, ABILITY_TANGLED_FEET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2824,7 +2824,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_EARLY_BIRD, ABILITY_TANGLED_FEET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -2846,7 +2846,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -2868,7 +2868,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HYDRATION, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -2891,7 +2891,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -2915,7 +2915,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -2939,7 +2939,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SHELL_ARMOR, ABILITY_SKILL_LINK, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -2963,7 +2963,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SHELL_ARMOR, ABILITY_SKILL_LINK, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -2985,7 +2985,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3007,7 +3007,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3033,7 +3033,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
         #endif
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3055,7 +3055,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -3077,7 +3077,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -3099,7 +3099,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -3121,7 +3121,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SHELL_ARMOR, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3143,7 +3143,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SHELL_ARMOR, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -3165,7 +3165,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3191,7 +3191,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3214,7 +3214,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -3240,7 +3240,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -3263,7 +3263,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_LIGHTNING_ROD, ABILITY_BATTLE_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3286,7 +3286,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_LIGHTNING_ROD, ABILITY_BATTLE_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3308,7 +3308,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_LIMBER, ABILITY_RECKLESS, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3330,7 +3330,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_IRON_FIST, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3353,7 +3353,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_OBLIVIOUS, ABILITY_CLOUD_NINE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -3376,7 +3376,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3399,7 +3399,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = TRUE,
     },
 
@@ -3421,7 +3421,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_ROCK_HEAD, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -3443,7 +3443,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_ROCK_HEAD, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -3466,7 +3466,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_SERENE_GRACE, ABILITY_HEALER},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -3488,7 +3488,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3510,7 +3510,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_EARLY_BIRD, ABILITY_SCRAPPY, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3533,7 +3533,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SNIPER, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3557,7 +3557,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_POISON_POINT, ABILITY_SNIPER, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3580,7 +3580,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_LIGHTNING_ROD},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3603,7 +3603,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_LIGHTNING_ROD},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3627,7 +3627,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_NATURAL_CURE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -3651,7 +3651,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_NATURAL_CURE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3677,7 +3677,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_FILTER, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -3699,7 +3699,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_TECHNICIAN, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -3721,7 +3721,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_FOREWARN, ABILITY_DRY_SKIN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3744,7 +3744,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = TRUE,
     },
 
@@ -3767,7 +3767,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3789,7 +3789,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_MOLD_BREAKER, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3812,7 +3812,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_ANGER_POINT, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3834,7 +3834,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -3856,7 +3856,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3880,7 +3880,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_SHELL_ARMOR, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3904,7 +3904,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_DITTO, EGG_GROUP_DITTO},
         .abilities = {ABILITY_LIMBER, ABILITY_NONE, ABILITY_IMPOSTER},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -3926,7 +3926,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_ADAPTABILITY, ABILITY_ANTICIPATION},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -3948,7 +3948,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_WATER_ABSORB, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -3970,7 +3970,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_VOLT_ABSORB, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -3992,7 +3992,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_FLASH_FIRE, ABILITY_GUTS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -4014,7 +4014,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_TRACE, ABILITY_DOWNLOAD, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -4036,7 +4036,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4058,7 +4058,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4080,7 +4080,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4102,7 +4102,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_BATTLE_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4124,7 +4124,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_PRESSURE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -4148,7 +4148,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_IMMUNITY, ABILITY_THICK_FAT, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -4170,7 +4170,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_SNOW_CLOAK},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -4197,7 +4197,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
         #endif
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -4220,7 +4220,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -4244,7 +4244,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_MARVEL_SCALE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4267,7 +4267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_MARVEL_SCALE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4290,7 +4290,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_MULTISCALE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4312,7 +4312,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -4337,7 +4337,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -4360,7 +4360,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4383,7 +4383,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4406,7 +4406,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4428,7 +4428,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -4451,7 +4451,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -4473,7 +4473,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -4495,7 +4495,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4518,7 +4518,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -4541,7 +4541,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4563,7 +4563,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4585,7 +4585,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4607,7 +4607,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INSOMNIA, ABILITY_KEEN_EYE, ABILITY_TINTED_LENS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4633,7 +4633,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INSOMNIA, ABILITY_KEEN_EYE, ABILITY_TINTED_LENS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -4655,7 +4655,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -4677,7 +4677,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -4699,7 +4699,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_INSOMNIA, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4725,7 +4725,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_INSOMNIA, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -4747,7 +4747,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -4770,7 +4770,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4793,7 +4793,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_ILLUMINATE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -4822,7 +4822,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -4848,7 +4848,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -4874,7 +4874,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -4900,7 +4900,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -4922,7 +4922,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_EARLY_BIRD, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4945,7 +4945,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_EARLY_BIRD, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -4967,7 +4967,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_PLUS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -4989,7 +4989,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_PLUS},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -5015,7 +5015,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_PLUS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5042,7 +5042,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_HEALER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -5068,7 +5068,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HUGE_POWER, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5098,7 +5098,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HUGE_POWER, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5120,7 +5120,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -5143,7 +5143,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_DAMP, ABILITY_DRIZZLE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -5165,7 +5165,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -5187,7 +5187,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -5213,7 +5213,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5235,7 +5235,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PICKUP, ABILITY_SKILL_LINK},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -5257,7 +5257,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER, ABILITY_EARLY_BIRD},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5279,7 +5279,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER, ABILITY_EARLY_BIRD},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5302,7 +5302,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SPEED_BOOST, ABILITY_COMPOUND_EYES, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -5324,7 +5324,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_DAMP, ABILITY_WATER_ABSORB, ABILITY_UNAWARE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5346,7 +5346,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_DAMP, ABILITY_WATER_ABSORB, ABILITY_UNAWARE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5368,7 +5368,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_SYNCHRONIZE, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -5390,7 +5390,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_SYNCHRONIZE, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -5412,7 +5412,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INSOMNIA, ABILITY_SUPER_LUCK, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -5435,7 +5435,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -5457,7 +5457,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -5481,7 +5481,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_SHADOW_TAG, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5503,7 +5503,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5525,7 +5525,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_STURDY, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -5547,7 +5547,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_STURDY, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -5569,7 +5569,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SERENE_GRACE, ABILITY_RUN_AWAY, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5591,7 +5591,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SAND_VEIL, ABILITY_IMMUNITY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -5614,7 +5614,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -5640,7 +5640,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_RUN_AWAY, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -5666,7 +5666,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -5693,7 +5693,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -5715,7 +5715,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_TECHNICIAN, ABILITY_LIGHT_METAL},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -5740,7 +5740,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_STURDY, ABILITY_GLUTTONY, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -5762,7 +5762,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_GUTS, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -5785,7 +5785,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_KEEN_EYE, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
     },
 
@@ -5807,7 +5807,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_QUICK_FEET, ABILITY_HONEY_GATHER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -5829,7 +5829,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GUTS, ABILITY_QUICK_FEET, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -5851,7 +5851,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -5878,7 +5878,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -5900,7 +5900,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_SNOW_CLOAK, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -5923,7 +5923,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_SNOW_CLOAK, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -5953,7 +5953,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HUSTLE, ABILITY_NATURAL_CURE, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -5975,7 +5975,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_HUSTLE, ABILITY_SNIPER, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -5998,7 +5998,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SUCTION_CUPS, ABILITY_SNIPER, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6020,7 +6020,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_HUSTLE, ABILITY_INSOMNIA},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6046,7 +6046,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_ABSORB, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -6069,7 +6069,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_STURDY, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -6091,7 +6091,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_EARLY_BIRD, ABILITY_FLASH_FIRE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -6113,7 +6113,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_EARLY_BIRD, ABILITY_FLASH_FIRE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -6138,7 +6138,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SNIPER, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -6160,7 +6160,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_NONE, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -6183,7 +6183,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STURDY, ABILITY_NONE, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -6205,7 +6205,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_TRACE, ABILITY_DOWNLOAD, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6227,7 +6227,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FRISK, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -6249,7 +6249,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_TECHNICIAN, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -6271,7 +6271,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_GUTS, ABILITY_STEADFAST, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -6293,7 +6293,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_TECHNICIAN, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -6315,7 +6315,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_FOREWARN, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -6338,7 +6338,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = TRUE,
     },
 
@@ -6361,7 +6361,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -6385,7 +6385,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_SCRAPPY, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -6408,7 +6408,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_SERENE_GRACE, ABILITY_HEALER},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -6435,7 +6435,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_VOLT_ABSORB},
         #endif
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -6463,7 +6463,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FLASH_FIRE},
         #endif
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -6491,7 +6491,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_WATER_ABSORB},
         #endif
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -6514,7 +6514,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_GUTS, ABILITY_NONE, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -6536,7 +6536,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER },
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -6558,7 +6558,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -6580,7 +6580,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_MULTISCALE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -6605,7 +6605,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -6630,7 +6630,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -6653,7 +6653,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -6675,7 +6675,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -6697,7 +6697,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -6719,7 +6719,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6742,7 +6742,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6764,7 +6764,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6786,7 +6786,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -6808,7 +6808,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -6830,7 +6830,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -6852,7 +6852,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_QUICK_FEET, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -6874,7 +6874,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -6898,7 +6898,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -6922,7 +6922,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -6946,7 +6946,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -6968,7 +6968,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -6995,7 +6995,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_NONE, ABILITY_RIVALRY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -7017,7 +7017,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -7040,7 +7040,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_COMPOUND_EYES},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -7063,7 +7063,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_RAIN_DISH, ABILITY_OWN_TEMPO},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -7086,7 +7086,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_RAIN_DISH, ABILITY_OWN_TEMPO},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -7109,7 +7109,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_RAIN_DISH, ABILITY_OWN_TEMPO},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -7132,7 +7132,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7155,7 +7155,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7178,7 +7178,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7200,7 +7200,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_GUTS, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7226,7 +7226,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_GUTS, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7249,7 +7249,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_HYDRATION, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -7276,7 +7276,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_DRIZZLE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -7306,7 +7306,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         #endif
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -7336,7 +7336,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         #endif
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -7366,7 +7366,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         #endif
         .abilities = {ABILITY_SYNCHRONIZE, ABILITY_TRACE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -7389,7 +7389,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7418,7 +7418,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_BUG},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7442,7 +7442,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_POISON_HEAL, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7466,7 +7466,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_POISON_HEAL, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -7488,7 +7488,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = {ABILITY_TRUANT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7510,7 +7510,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -7532,7 +7532,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = {ABILITY_TRUANT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7555,7 +7555,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -7577,7 +7577,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SPEED_BOOST, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -7599,7 +7599,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_WONDER_GUARD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7621,7 +7621,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -7643,7 +7643,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7669,7 +7669,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7692,7 +7692,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_THICK_FAT, ABILITY_GUTS, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -7715,7 +7715,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_THICK_FAT, ABILITY_GUTS, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -7741,7 +7741,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_THICK_FAT, ABILITY_HUGE_POWER, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7764,7 +7764,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_MAGNET_PULL, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -7786,7 +7786,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -7813,7 +7813,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -7837,7 +7837,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_STALL, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -7865,7 +7865,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_INTIMIDATE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -7888,7 +7888,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -7911,7 +7911,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -7934,7 +7934,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -7956,7 +7956,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PURE_POWER, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -7978,7 +7978,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PURE_POWER, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8000,7 +8000,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_MINUS},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8022,7 +8022,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_MINUS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -8045,7 +8045,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_PLUS, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -8068,7 +8068,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_MINUS, ABILITY_NONE, ABILITY_VOLT_ABSORB},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -8096,7 +8096,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_SWARM, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -8124,7 +8124,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_TINTED_LENS, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -8147,7 +8147,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_POISON_POINT, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -8171,7 +8171,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LIQUID_OOZE, ABILITY_STICKY_HOLD, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8195,7 +8195,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LIQUID_OOZE, ABILITY_STICKY_HOLD, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -8218,7 +8218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_ROUGH_SKIN, ABILITY_NONE, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8241,7 +8241,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_ROUGH_SKIN, ABILITY_NONE, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8263,7 +8263,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_WATER_VEIL, ABILITY_OBLIVIOUS, ABILITY_PRESSURE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8285,7 +8285,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_WATER_VEIL, ABILITY_OBLIVIOUS, ABILITY_PRESSURE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8307,7 +8307,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_SIMPLE, ABILITY_OWN_TEMPO},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -8330,7 +8330,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_SOLID_ROCK, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8353,7 +8353,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_WHITE_SMOKE, ABILITY_DROUGHT, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -8375,7 +8375,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_OWN_TEMPO, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -8397,7 +8397,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_OWN_TEMPO, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -8419,7 +8419,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_TANGLED_FEET, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -8446,7 +8446,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         #endif
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_ARENA_TRAP, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -8473,7 +8473,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         #endif
         .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8500,7 +8500,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         #endif
         .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE, ABILITY_LEVITATE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8523,7 +8523,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8547,7 +8547,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8569,7 +8569,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_CLOUD_NINE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8591,7 +8591,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_CLOUD_NINE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8614,7 +8614,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_IMMUNITY, ABILITY_NONE, ABILITY_TOXIC_BOOST},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
     },
 
@@ -8638,7 +8638,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
     },
 
@@ -8666,7 +8666,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -8694,7 +8694,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8716,7 +8716,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -8738,7 +8738,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_ANTICIPATION, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -8760,7 +8760,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SHELL_ARMOR, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8782,7 +8782,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SHELL_ARMOR, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -8805,7 +8805,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -8828,7 +8828,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -8851,7 +8851,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SUCTION_CUPS, ABILITY_NONE, ABILITY_STORM_DRAIN},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -8874,7 +8874,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SUCTION_CUPS, ABILITY_NONE, ABILITY_STORM_DRAIN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -8896,7 +8896,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -8918,7 +8918,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -8940,7 +8940,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_OBLIVIOUS, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -8962,11 +8962,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_MARVEL_SCALE, ABILITY_COMPETITIVE, ABILITY_CUTE_CHARM},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
-    [SPECIES_CASTFORM] = CASTFORM_SPECIES_INFO(TYPE_ILLUSION, BODY_COLOR_GRAY),
+    [SPECIES_CASTFORM] = CASTFORM_SPECIES_INFO(TYPE_ILLUSION, SOURCE_IN),
 
     [SPECIES_KECLEON] =
     {
@@ -8986,7 +8986,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_COLOR_CHANGE, ABILITY_NONE, ABILITY_PROTEAN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -9009,7 +9009,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_INSOMNIA, ABILITY_FRISK, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -9032,7 +9032,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_INSOMNIA, ABILITY_FRISK, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -9055,7 +9055,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -9079,7 +9079,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -9101,7 +9101,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_SOLAR_POWER, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -9131,7 +9131,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9153,7 +9153,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PRESSURE, ABILITY_SUPER_LUCK, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
     },
 
@@ -9175,7 +9175,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SHADOW_TAG, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9198,7 +9198,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_ICE_BODY, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -9220,7 +9220,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_ICE_BODY, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -9242,7 +9242,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_ICE_BODY, ABILITY_OBLIVIOUS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9264,7 +9264,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_ICE_BODY, ABILITY_OBLIVIOUS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9286,7 +9286,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_ICE_BODY, ABILITY_OBLIVIOUS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9310,7 +9310,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SHELL_ARMOR, ABILITY_NONE, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9334,7 +9334,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9357,7 +9357,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -9381,7 +9381,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_ROCK_HEAD, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -9404,7 +9404,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -9427,7 +9427,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9450,7 +9450,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -9473,7 +9473,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9496,7 +9496,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_LIGHT_METAL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9519,7 +9519,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_LIGHT_METAL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9542,7 +9542,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_LIGHT_METAL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9564,7 +9564,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9587,7 +9587,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9611,7 +9611,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_LIGHT_METAL},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9634,7 +9634,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9657,7 +9657,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9680,7 +9680,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DRIZZLE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9703,7 +9703,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DROUGHT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9727,7 +9727,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_AIR_LOCK, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -9752,7 +9752,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -9777,7 +9777,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED },
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -9801,7 +9801,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -9824,7 +9824,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -9847,7 +9847,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -9869,7 +9869,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -9892,7 +9892,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -9916,7 +9916,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -9938,7 +9938,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9960,7 +9960,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -9982,7 +9982,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10004,7 +10004,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10026,7 +10026,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10052,7 +10052,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10074,7 +10074,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SIMPLE, ABILITY_UNAWARE, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10096,7 +10096,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SIMPLE, ABILITY_UNAWARE, ABILITY_MOODY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10119,7 +10119,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -10142,7 +10142,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_NONE, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -10164,7 +10164,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RIVALRY, ABILITY_INTIMIDATE, ABILITY_GUTS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10186,7 +10186,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RIVALRY, ABILITY_INTIMIDATE, ABILITY_GUTS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10208,7 +10208,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RIVALRY, ABILITY_INTIMIDATE, ABILITY_GUTS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10231,7 +10231,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_POISON_POINT, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -10258,7 +10258,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_POISON_POINT, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -10280,7 +10280,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_MOLD_BREAKER, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10302,7 +10302,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_MOLD_BREAKER, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -10324,7 +10324,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_STURDY, ABILITY_NONE, ABILITY_SOUNDPROOF},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -10346,11 +10346,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_STURDY, ABILITY_NONE, ABILITY_SOUNDPROOF},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
-    [SPECIES_BURMY] = BURMY_SPECIES_INFO(BODY_COLOR_GREEN),
+    [SPECIES_BURMY] = BURMY_SPECIES_INFO(SOURCE_LLS),
 
     [SPECIES_WORMADAM] =
     {
@@ -10371,7 +10371,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_ANTICIPATION, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -10395,7 +10395,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_NONE, ABILITY_TINTED_LENS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -10418,7 +10418,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HONEY_GATHER, ABILITY_NONE, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -10442,7 +10442,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -10464,7 +10464,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PICKUP, ABILITY_VOLT_ABSORB},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -10486,7 +10486,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10508,7 +10508,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10531,15 +10531,15 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
-    [SPECIES_CHERRIM] = CHERRIM_SPECIES_INFO(BODY_COLOR_PURPLE),
+    [SPECIES_CHERRIM] = CHERRIM_SPECIES_INFO(SOURCE_PCB),
 
-    [SPECIES_SHELLOS] = SHELLOS_SPECIES_INFO(BODY_COLOR_PURPLE),
+    [SPECIES_SHELLOS] = SHELLOS_SPECIES_INFO(SOURCE_PCB),
 
-    [SPECIES_GASTRODON] = GASTRODON_SPECIES_INFO(BODY_COLOR_PURPLE),
+    [SPECIES_GASTRODON] = GASTRODON_SPECIES_INFO(SOURCE_PCB),
 
     [SPECIES_AMBIPOM] =
     {
@@ -10559,7 +10559,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TECHNICIAN, ABILITY_PICKUP, ABILITY_SKILL_LINK},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10581,7 +10581,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_AFTERMATH, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10603,7 +10603,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_AFTERMATH, ABILITY_UNBURDEN, ABILITY_FLARE_BOOST},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10625,7 +10625,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_KLUTZ, ABILITY_LIMBER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10647,7 +10647,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_KLUTZ, ABILITY_LIMBER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10670,7 +10670,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10692,7 +10692,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_INSOMNIA, ABILITY_SUPER_LUCK, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -10714,7 +10714,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIMBER, ABILITY_OWN_TEMPO, ABILITY_KEEN_EYE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -10736,7 +10736,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_THICK_FAT, ABILITY_OWN_TEMPO, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -10759,7 +10759,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -10781,7 +10781,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STENCH, ABILITY_AFTERMATH, ABILITY_KEEN_EYE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10803,7 +10803,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STENCH, ABILITY_AFTERMATH, ABILITY_KEEN_EYE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10826,7 +10826,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_HEATPROOF, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -10850,7 +10850,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_HEATPROOF, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -10872,7 +10872,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_STURDY, ABILITY_ROCK_HEAD, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -10898,7 +10898,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_FILTER, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -10921,7 +10921,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_SERENE_GRACE, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -10944,7 +10944,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -10967,7 +10967,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -10989,7 +10989,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_ROUGH_SKIN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11011,7 +11011,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_ROUGH_SKIN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11033,7 +11033,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_NONE, ABILITY_ROUGH_SKIN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11057,7 +11057,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PICKUP, ABILITY_THICK_FAT, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -11079,7 +11079,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_STEADFAST, ABILITY_INNER_FOCUS, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11102,7 +11102,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_STEADFAST, ABILITY_INNER_FOCUS, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11124,7 +11124,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -11146,7 +11146,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_STREAM, ABILITY_NONE, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -11169,7 +11169,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_SNIPER, ABILITY_KEEN_EYE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -11192,7 +11192,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_SNIPER, ABILITY_KEEN_EYE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -11215,7 +11215,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_ANTICIPATION, ABILITY_DRY_SKIN, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11238,7 +11238,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_ANTICIPATION, ABILITY_DRY_SKIN, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11260,7 +11260,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -11282,7 +11282,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11304,7 +11304,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11326,7 +11326,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_ABSORB, ABILITY_WATER_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11349,7 +11349,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SNOW_WARNING, ABILITY_NONE, ABILITY_SOUNDPROOF},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -11373,7 +11373,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SNOW_WARNING, ABILITY_NONE, ABILITY_SOUNDPROOF},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -11397,7 +11397,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -11420,7 +11420,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -11443,7 +11443,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_OBLIVIOUS, ABILITY_CLOUD_NINE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -11465,7 +11465,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_SOLID_ROCK, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -11487,7 +11487,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11510,7 +11510,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_MOTOR_DRIVE, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -11533,7 +11533,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_VITAL_SPIRIT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -11560,7 +11560,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HUSTLE, ABILITY_SERENE_GRACE, ABILITY_SUPER_LUCK},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
     },
 
@@ -11583,7 +11583,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SPEED_BOOST, ABILITY_TINTED_LENS, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -11605,7 +11605,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_LEAF_GUARD, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -11627,7 +11627,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SNOW_CLOAK, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -11649,7 +11649,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_SAND_VEIL, ABILITY_POISON_HEAL},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -11671,7 +11671,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_SNOW_CLOAK, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -11693,7 +11693,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ADAPTABILITY, ABILITY_DOWNLOAD, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -11719,7 +11719,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         #endif
         .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -11743,7 +11743,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_MAGNET_PULL, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -11767,7 +11767,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FRISK},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -11789,7 +11789,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -11812,7 +11812,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -11835,7 +11835,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11860,7 +11860,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11884,7 +11884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11907,7 +11907,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11930,7 +11930,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11953,7 +11953,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11976,7 +11976,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SLOW_START, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -11999,7 +11999,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -12022,7 +12022,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -12045,7 +12045,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HYDRATION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12068,7 +12068,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HYDRATION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12092,7 +12092,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BAD_DREAMS, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12117,7 +12117,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12140,7 +12140,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MULTITYPE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12165,7 +12165,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_VICTORY_STAR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -12188,7 +12188,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -12210,7 +12210,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -12232,7 +12232,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -12254,7 +12254,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -12276,7 +12276,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -12298,7 +12298,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -12320,7 +12320,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12342,7 +12342,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12364,7 +12364,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12386,7 +12386,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -12408,7 +12408,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_KEEN_EYE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -12430,7 +12430,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_PICKUP, ABILITY_RUN_AWAY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -12452,7 +12452,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_SAND_RUSH, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -12478,7 +12478,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_SAND_RUSH, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -12500,7 +12500,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -12522,7 +12522,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -12544,7 +12544,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_OVERGROW},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -12566,7 +12566,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_OVERGROW},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -12588,7 +12588,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_BLAZE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -12610,7 +12610,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_BLAZE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
@@ -12632,7 +12632,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_TORRENT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12654,7 +12654,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_TORRENT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12676,7 +12676,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FOREWARN, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -12698,7 +12698,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FOREWARN, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -12720,7 +12720,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK, ABILITY_RIVALRY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -12742,7 +12742,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK, ABILITY_RIVALRY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -12768,7 +12768,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_SUPER_LUCK, ABILITY_RIVALRY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -12790,7 +12790,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_MOTOR_DRIVE, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -12812,7 +12812,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_MOTOR_DRIVE, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -12836,7 +12836,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12861,7 +12861,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12889,7 +12889,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_SAND_STREAM, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12915,7 +12915,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FLYING},
         .abilities = {ABILITY_UNAWARE, ABILITY_KLUTZ, ABILITY_SIMPLE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12937,7 +12937,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FLYING},
         .abilities = {ABILITY_UNAWARE, ABILITY_KLUTZ, ABILITY_SIMPLE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -12959,7 +12959,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_RUSH, ABILITY_SAND_FORCE, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -12981,7 +12981,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_RUSH, ABILITY_SAND_FORCE, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -13005,7 +13005,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_REGENERATOR, ABILITY_KLUTZ},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -13027,7 +13027,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13049,7 +13049,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13071,7 +13071,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -13093,7 +13093,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_HYDRATION, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -13115,7 +13115,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_HYDRATION, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -13141,7 +13141,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_POISON_TOUCH, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -13164,7 +13164,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_GUTS, ABILITY_INNER_FOCUS, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13187,7 +13187,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_STURDY, ABILITY_INNER_FOCUS, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -13210,7 +13210,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13233,7 +13233,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13260,7 +13260,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13287,7 +13287,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET},
         #endif
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13314,7 +13314,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET},
         #endif
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13345,7 +13345,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_POISON_POINT, ABILITY_SWARM, ABILITY_QUICK_FEET},
         #endif
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13372,7 +13372,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_PRANKSTER, ABILITY_INFILTRATOR, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13399,7 +13399,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_PRANKSTER, ABILITY_INFILTRATOR, ABILITY_CHLOROPHYLL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13422,7 +13422,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_OWN_TEMPO, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13445,7 +13445,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_OWN_TEMPO, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -13468,7 +13468,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_RECKLESS, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13491,7 +13491,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -13514,7 +13514,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -13541,7 +13541,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13563,7 +13563,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_HUSTLE, ABILITY_NONE, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13585,7 +13585,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_ZEN_MODE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13608,7 +13608,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_CHLOROPHYLL, ABILITY_STORM_DRAIN},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13631,7 +13631,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13658,7 +13658,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STURDY, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13681,7 +13681,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_MOXIE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13705,7 +13705,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_MOXIE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -13727,7 +13727,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_WONDER_SKIN, ABILITY_MAGIC_GUARD, ABILITY_TINTED_LENS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -13750,7 +13750,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -13773,7 +13773,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13795,7 +13795,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SOLID_ROCK, ABILITY_STURDY, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -13817,7 +13817,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_SOLID_ROCK, ABILITY_STURDY, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -13839,7 +13839,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_DEFEATIST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13861,7 +13861,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_DEFEATIST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -13884,7 +13884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -13908,7 +13908,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STENCH, ABILITY_WEAK_ARMOR, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -13930,7 +13930,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13952,7 +13952,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13974,7 +13974,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_TECHNICIAN, ABILITY_SKILL_LINK},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -13996,7 +13996,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_TECHNICIAN, ABILITY_SKILL_LINK},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -14018,7 +14018,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_FRISK, ABILITY_COMPETITIVE, ABILITY_SHADOW_TAG},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -14040,7 +14040,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_FRISK, ABILITY_COMPETITIVE, ABILITY_SHADOW_TAG},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -14062,7 +14062,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_FRISK, ABILITY_COMPETITIVE, ABILITY_SHADOW_TAG},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -14084,7 +14084,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_OVERCOAT, ABILITY_MAGIC_GUARD, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -14106,7 +14106,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_OVERCOAT, ABILITY_MAGIC_GUARD, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -14128,7 +14128,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_OVERCOAT, ABILITY_MAGIC_GUARD, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -14150,7 +14150,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_BIG_PECKS, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14172,7 +14172,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_BIG_PECKS, ABILITY_HYDRATION},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14195,7 +14195,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14218,7 +14218,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ICE_BODY, ABILITY_SNOW_CLOAK, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14241,11 +14241,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_ICE_BODY, ABILITY_SNOW_WARNING, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
-    [SPECIES_DEERLING] = DEERLING_SPECIES_INFO(BODY_COLOR_PINK),
+    [SPECIES_DEERLING] = DEERLING_SPECIES_INFO(SOURCE_MOF),
 
     [SPECIES_SAWSBUCK] = SAWSBUCK_SPECIES_INFO,
 
@@ -14267,7 +14267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_MOTOR_DRIVE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14289,7 +14289,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_SHED_SKIN, ABILITY_NO_GUARD},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14311,7 +14311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_SHELL_ARMOR, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -14335,7 +14335,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14359,7 +14359,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_EFFECT_SPORE, ABILITY_NONE, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
     },
 
@@ -14381,7 +14381,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_CURSED_BODY, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14403,7 +14403,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_CURSED_BODY, ABILITY_DAMP},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14425,7 +14425,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_HEALER, ABILITY_HYDRATION, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -14447,7 +14447,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_COMPOUND_EYES, ABILITY_UNNERVE, ABILITY_SWARM},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -14469,7 +14469,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_COMPOUND_EYES, ABILITY_UNNERVE, ABILITY_SWARM},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -14492,7 +14492,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_IRON_BARBS, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -14515,7 +14515,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_IRON_BARBS, ABILITY_NONE, ABILITY_ANTICIPATION},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -14537,7 +14537,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -14559,7 +14559,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -14581,7 +14581,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_PLUS, ABILITY_MINUS, ABILITY_CLEAR_BODY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -14603,7 +14603,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14625,7 +14625,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14647,7 +14647,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14669,7 +14669,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_TELEPATHY, ABILITY_SYNCHRONIZE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14691,7 +14691,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_TELEPATHY, ABILITY_SYNCHRONIZE, ABILITY_ANALYTIC},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -14717,7 +14717,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY, ABILITY_SHADOW_TAG},
         #endif
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
     },
 
@@ -14743,7 +14743,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY, ABILITY_SHADOW_TAG},
         #endif
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -14769,7 +14769,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         #else
             .abilities = {ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY, ABILITY_SHADOW_TAG},
         #endif
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -14791,7 +14791,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -14813,7 +14813,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -14835,7 +14835,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIVALRY, ABILITY_MOLD_BREAKER, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -14857,7 +14857,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SLUSH_RUSH, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14883,7 +14883,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SLUSH_RUSH, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -14911,7 +14911,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -14933,7 +14933,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HYDRATION, ABILITY_SHELL_ARMOR, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -14955,7 +14955,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_HYDRATION, ABILITY_STICKY_HOLD, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -14978,7 +14978,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_STATIC, ABILITY_LIMBER, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15000,7 +15000,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -15022,7 +15022,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_REGENERATOR, ABILITY_RECKLESS},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -15045,7 +15045,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_ROUGH_SKIN, ABILITY_SHEER_FORCE, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15068,7 +15068,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -15091,7 +15091,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_IRON_FIST, ABILITY_KLUTZ, ABILITY_NO_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -15113,7 +15113,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15135,7 +15135,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15157,7 +15157,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RECKLESS, ABILITY_SAP_SIPPER, ABILITY_SOUNDPROOF},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15179,7 +15179,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -15201,7 +15201,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15223,7 +15223,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_OVERCOAT, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15245,7 +15245,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_OVERCOAT, ABILITY_WEAK_ARMOR},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15267,7 +15267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15289,7 +15289,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_HUSTLE, ABILITY_TRUANT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -15311,7 +15311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_HUSTLE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -15333,7 +15333,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_HUSTLE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -15355,7 +15355,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -15377,7 +15377,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -15401,7 +15401,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_SWARM},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -15423,7 +15423,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_JUSTIFIED, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15446,7 +15446,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_JUSTIFIED, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15469,7 +15469,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_JUSTIFIED, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15492,7 +15492,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15515,7 +15515,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15538,7 +15538,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TURBOBLAZE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15561,7 +15561,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TERAVOLT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15584,7 +15584,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SAND_FORCE, ABILITY_NONE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15609,7 +15609,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -15632,7 +15632,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_JUSTIFIED, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -15659,7 +15659,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -15686,7 +15686,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -15708,7 +15708,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -15730,7 +15730,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -15752,7 +15752,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15774,7 +15774,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15796,7 +15796,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15818,7 +15818,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -15840,7 +15840,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -15862,7 +15862,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -15884,7 +15884,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_CHEEK_POUCH, ABILITY_HUGE_POWER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15906,7 +15906,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_CHEEK_POUCH, ABILITY_HUGE_POWER},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -15928,7 +15928,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_BIG_PECKS, ABILITY_NONE, ABILITY_GALE_WINGS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15950,7 +15950,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15972,7 +15972,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -15994,7 +15994,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_COMPOUND_EYES, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -16016,11 +16016,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_FRIEND_GUARD},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
-    [SPECIES_VIVILLON] = VIVILLON_SPECIES_INFO(BODY_COLOR_WHITE),
+    [SPECIES_VIVILLON] = VIVILLON_SPECIES_INFO(SOURCE_POFV),
 
     [SPECIES_LITLEO] =
     {
@@ -16040,7 +16040,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RIVALRY, ABILITY_UNNERVE, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16062,7 +16062,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RIVALRY, ABILITY_UNNERVE, ABILITY_MOXIE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16090,7 +16090,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GRASS_PELT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16112,7 +16112,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GRASS_PELT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16135,7 +16135,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -16158,7 +16158,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -16182,7 +16182,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_OWN_TEMPO},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -16204,7 +16204,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16226,7 +16226,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_NO_GUARD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16248,7 +16248,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_NO_GUARD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16276,7 +16276,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STANCE_CHANGE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16298,7 +16298,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -16320,7 +16320,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -16342,7 +16342,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -16364,7 +16364,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_UNBURDEN},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -16386,7 +16386,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16408,7 +16408,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16430,7 +16430,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_SNIPER, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16452,7 +16452,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_SNIPER, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -16474,7 +16474,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_POISON_POINT, ABILITY_POISON_TOUCH, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16496,7 +16496,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_POISON_POINT, ABILITY_POISON_TOUCH, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16518,7 +16518,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_MEGA_LAUNCHER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -16540,7 +16540,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_MEGA_LAUNCHER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -16562,7 +16562,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_DRY_SKIN, ABILITY_SAND_VEIL, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -16585,7 +16585,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_DRY_SKIN, ABILITY_SAND_VEIL, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -16607,7 +16607,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16629,7 +16629,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_ROCK_HEAD},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -16651,7 +16651,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_REFRIGERATE, ABILITY_NONE, ABILITY_SNOW_WARNING},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16673,7 +16673,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_REFRIGERATE, ABILITY_NONE, ABILITY_SNOW_WARNING},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16695,7 +16695,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_CUTE_CHARM, ABILITY_PIXILATE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
     },
 
@@ -16722,7 +16722,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         #endif
         .abilities = {ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -16744,7 +16744,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_CHEEK_POUCH, ABILITY_PICKUP, ABILITY_PLUS},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -16767,7 +16767,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -16790,7 +16790,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -16813,7 +16813,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -16835,7 +16835,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -16857,7 +16857,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_MAGICIAN},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
     },
 
@@ -16879,7 +16879,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_FRISK, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16901,7 +16901,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_NATURAL_CURE, ABILITY_FRISK, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -16949,7 +16949,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL},
         #endif
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_ICE_BODY, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -16975,7 +16975,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL},
         #endif
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_ICE_BODY, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17001,7 +17001,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         #endif
         .abilities = {ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -17027,7 +17027,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         #endif
         .abilities = {ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -17051,7 +17051,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DARK_AURA, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -17077,7 +17077,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -17100,7 +17100,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MAGICIAN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -17123,7 +17123,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -17148,7 +17148,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LONG_REACH},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17170,7 +17170,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LONG_REACH},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
     },
 
@@ -17192,7 +17192,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LONG_REACH},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17214,7 +17214,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -17236,7 +17236,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -17258,7 +17258,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -17280,7 +17280,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_LIQUID_VOICE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17302,7 +17302,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_LIQUID_VOICE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17324,7 +17324,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_LIQUID_VOICE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17347,7 +17347,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SKILL_LINK, ABILITY_PICKUP},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -17370,7 +17370,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SKILL_LINK, ABILITY_PICKUP},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -17393,7 +17393,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SKILL_LINK, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -17416,7 +17416,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STAKEOUT, ABILITY_STRONG_JAW, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17439,7 +17439,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STAKEOUT, ABILITY_STRONG_JAW, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17461,7 +17461,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -17484,7 +17484,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_BATTERY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -17506,7 +17506,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17529,7 +17529,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_IRON_FIST, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -17552,11 +17552,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_HYPER_CUTTER, ABILITY_IRON_FIST, ABILITY_ANGER_POINT},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
-    [SPECIES_ORICORIO] = ORICORIO_SPECIES_INFO(TYPE_FIRE, BODY_COLOR_RED),
+    [SPECIES_ORICORIO] = ORICORIO_SPECIES_INFO(TYPE_FIRE, SOURCE_HRTP),
 
     [SPECIES_CUTIEFLY] =
     {
@@ -17577,7 +17577,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HONEY_GATHER, ABILITY_SHIELD_DUST, ABILITY_SWEET_VEIL},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -17600,7 +17600,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HONEY_GATHER, ABILITY_SHIELD_DUST, ABILITY_SWEET_VEIL},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -17624,7 +17624,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SAND_RUSH, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17646,7 +17646,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SCHOOLING, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17669,7 +17669,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_MERCILESS, ABILITY_LIMBER, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17692,7 +17692,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_MERCILESS, ABILITY_LIMBER, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -17715,7 +17715,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_STAMINA, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17738,7 +17738,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_STAMINA, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -17761,7 +17761,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_BUG},
         .abilities = {ABILITY_WATER_BUBBLE, ABILITY_NONE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -17784,7 +17784,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_BUG},
         .abilities = {ABILITY_WATER_BUBBLE, ABILITY_NONE, ABILITY_WATER_ABSORB},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -17807,7 +17807,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -17830,7 +17830,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -17854,7 +17854,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_EFFECT_SPORE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -17878,7 +17878,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_ILLUMINATE, ABILITY_EFFECT_SPORE, ABILITY_RAIN_DISH},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -17901,7 +17901,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_CORROSION, ABILITY_NONE, ABILITY_OBLIVIOUS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -17924,7 +17924,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_CORROSION, ABILITY_NONE, ABILITY_OBLIVIOUS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -17946,7 +17946,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLUFFY, ABILITY_KLUTZ, ABILITY_CUTE_CHARM},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -17968,7 +17968,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLUFFY, ABILITY_KLUTZ, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -17991,7 +17991,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_OBLIVIOUS, ABILITY_SWEET_VEIL},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -18014,7 +18014,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_OBLIVIOUS, ABILITY_SWEET_VEIL},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = TRUE,
     },
 
@@ -18037,7 +18037,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_QUEENLY_MAJESTY, ABILITY_SWEET_VEIL},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = TRUE,
     },
 
@@ -18060,7 +18060,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_FLOWER_VEIL, ABILITY_TRIAGE, ABILITY_NATURAL_CURE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -18082,7 +18082,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_TELEPATHY, ABILITY_SYMBIOSIS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -18104,7 +18104,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RECEIVER, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -18126,7 +18126,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_WIMP_OUT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18148,7 +18148,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_EMERGENCY_EXIT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18171,7 +18171,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WATER_COMPACTION, ABILITY_NONE, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -18194,7 +18194,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WATER_COMPACTION, ABILITY_NONE, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -18216,7 +18216,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_INNARDS_OUT, ABILITY_NONE, ABILITY_UNAWARE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -18238,7 +18238,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18265,7 +18265,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_COMATOSE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -18288,7 +18288,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SHELL_ARMOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -18311,7 +18311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_IRON_BARBS, ABILITY_LIGHTNING_ROD, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18336,7 +18336,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_DAZZLING, ABILITY_STRONG_JAW, ABILITY_WONDER_SKIN},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -18359,7 +18359,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BERSERK, ABILITY_SAP_SIPPER, ABILITY_CLOUD_NINE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -18381,7 +18381,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STEELWORKER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -18404,7 +18404,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BULLETPROOF, ABILITY_SOUNDPROOF, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18427,7 +18427,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BULLETPROOF, ABILITY_SOUNDPROOF, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18450,7 +18450,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_BULLETPROOF, ABILITY_SOUNDPROOF, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -18472,7 +18472,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_ELECTRIC_SURGE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18495,7 +18495,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PSYCHIC_SURGE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18518,7 +18518,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_GRASSY_SURGE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18541,7 +18541,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MISTY_SURGE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18564,7 +18564,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_UNAWARE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18588,7 +18588,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_STURDY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18611,7 +18611,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_FULL_METAL_BODY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18634,7 +18634,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SHADOW_SHIELD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -18657,7 +18657,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18681,7 +18681,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18704,7 +18704,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18727,7 +18727,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18752,7 +18752,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18775,7 +18775,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18798,7 +18798,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18822,12 +18822,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRISM_ARMOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
 
-    [SPECIES_MAGEARNA] = MAGEARNA_SPECIES_INFO(BODY_COLOR_GRAY),
+    [SPECIES_MAGEARNA] = MAGEARNA_SPECIES_INFO(SOURCE_IN),
 
     [SPECIES_MARSHADOW] =
     {
@@ -18848,7 +18848,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TECHNICIAN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -18871,7 +18871,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18894,7 +18894,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18917,7 +18917,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18940,7 +18940,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BEAST_BOOST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_ULTRA_BEAST,
     },
@@ -18963,7 +18963,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -18986,7 +18986,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -19009,7 +19009,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_IRON_FIST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -19034,7 +19034,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_GRASSY_SURGE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19056,7 +19056,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_GRASSY_SURGE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19078,7 +19078,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_GRASS},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_GRASSY_SURGE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19100,7 +19100,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_LIBERO},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -19122,7 +19122,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_LIBERO},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -19144,7 +19144,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_LIBERO},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -19167,7 +19167,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19189,7 +19189,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19211,7 +19211,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SNIPER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19234,7 +19234,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_CHEEK_POUCH, ABILITY_NONE, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19257,7 +19257,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_CHEEK_POUCH, ABILITY_NONE, ABILITY_GLUTTONY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19279,7 +19279,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_UNNERVE, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19301,7 +19301,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_UNNERVE, ABILITY_BIG_PECKS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19323,7 +19323,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_PRESSURE, ABILITY_UNNERVE, ABILITY_MIRROR_ARMOR},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -19345,7 +19345,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_COMPOUND_EYES, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19368,7 +19368,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_COMPOUND_EYES, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -19391,7 +19391,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_FRISK, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -19413,7 +19413,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN, ABILITY_STAKEOUT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19435,7 +19435,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN, ABILITY_STAKEOUT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19457,7 +19457,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_COTTON_DOWN, ABILITY_REGENERATOR, ABILITY_EFFECT_SPORE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19479,7 +19479,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_COTTON_DOWN, ABILITY_REGENERATOR, ABILITY_EFFECT_SPORE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19501,7 +19501,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLUFFY, ABILITY_RUN_AWAY, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -19523,7 +19523,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FLUFFY, ABILITY_STEADFAST, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -19545,7 +19545,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_SHELL_ARMOR, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19567,7 +19567,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_SHELL_ARMOR, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19589,7 +19589,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BALL_FETCH, ABILITY_NONE, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -19611,7 +19611,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_COMPETITIVE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -19633,7 +19633,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STEAM_ENGINE, ABILITY_HEATPROOF, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -19655,7 +19655,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STEAM_ENGINE, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -19677,7 +19677,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STEAM_ENGINE, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -19699,7 +19699,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIPEN, ABILITY_GLUTTONY, ABILITY_BULLETPROOF},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19721,7 +19721,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIPEN, ABILITY_GLUTTONY, ABILITY_HUSTLE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19743,7 +19743,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_RIPEN, ABILITY_GLUTTONY, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19765,7 +19765,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_SPIT, ABILITY_SHED_SKIN, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19787,7 +19787,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_SPIT, ABILITY_SHED_SKIN, ABILITY_SAND_VEIL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -19811,7 +19811,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_PROPELLER_TAIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19833,7 +19833,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_PROPELLER_TAIL},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19855,7 +19855,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_RATTLED, ABILITY_STATIC, ABILITY_KLUTZ},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -19879,7 +19879,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -19901,7 +19901,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE, ABILITY_FLAME_BODY},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -19923,7 +19923,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_LIMBER, ABILITY_NONE, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -19945,7 +19945,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_LIMBER, ABILITY_NONE, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -19971,7 +19971,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_ANTICIPATION, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -19993,7 +19993,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_ANTICIPATION, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -20015,7 +20015,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_ANTICIPATION, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -20037,7 +20037,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -20059,7 +20059,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
     },
 
@@ -20081,7 +20081,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PRANKSTER, ABILITY_FRISK, ABILITY_PICKPOCKET},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -20103,7 +20103,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RECKLESS, ABILITY_GUTS, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -20125,7 +20125,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_TOUGH_CLAWS, ABILITY_STEELY_SPIRIT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -20147,7 +20147,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_PERISH_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -20170,7 +20170,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -20192,7 +20192,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_TANGLED_FEET, ABILITY_SCREEN_CLEANER, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -20214,7 +20214,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WANDERING_SPIRIT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -20236,11 +20236,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
-    [SPECIES_ALCREMIE] = ALCREMIE_SPECIES_INFO(BODY_COLOR_WHITE),
+    [SPECIES_ALCREMIE] = ALCREMIE_SPECIES_INFO(SOURCE_POFV),
 
     [SPECIES_FALINKS] =
     {
@@ -20261,7 +20261,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -20283,7 +20283,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_NONE, ABILITY_ELECTRIC_SURGE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -20306,7 +20306,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_ICE_SCALES},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -20328,7 +20328,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_ICE_SCALES},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -20350,7 +20350,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_POWER_SPOT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -20372,7 +20372,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ICE_FACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -20394,7 +20394,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -20419,7 +20419,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
     },
 
@@ -20442,7 +20442,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_HEAVY_METAL},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20464,7 +20464,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_HUSTLE, ABILITY_SAND_RUSH},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20486,7 +20486,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_STATIC, ABILITY_SLUSH_RUSH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -20508,7 +20508,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_STRONG_JAW, ABILITY_SAND_RUSH},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20530,7 +20530,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_WATER_ABSORB, ABILITY_ICE_BODY, ABILITY_SLUSH_RUSH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -20552,7 +20552,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_LIGHT_METAL, ABILITY_HEAVY_METAL, ABILITY_STALWART},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -20574,7 +20574,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20596,7 +20596,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20618,7 +20618,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_CLEAR_BODY, ABILITY_INFILTRATOR, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20640,7 +20640,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_INTREPID_SWORD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20663,7 +20663,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DAUNTLESS_SHIELD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20686,7 +20686,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20709,7 +20709,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20732,7 +20732,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_UNSEEN_FIST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20757,7 +20757,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TRANSISTOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20780,7 +20780,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DRAGONS_MAW, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20803,7 +20803,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_CHILLING_NEIGH, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20826,7 +20826,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_GRIM_NEIGH, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20849,7 +20849,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_UNNERVE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -20872,7 +20872,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FRISK, ABILITY_SAP_SIPPER},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
     },
 
@@ -20894,7 +20894,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SWARM, ABILITY_SHEER_FORCE, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -20916,7 +20916,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GUTS, ABILITY_BULLETPROOF, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -20938,7 +20938,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_RATTLED, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20960,7 +20960,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_RATTLED, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -20983,7 +20983,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -21005,7 +21005,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -21027,7 +21027,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_CONTRARY},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -21052,7 +21052,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_THICK_FAT, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21075,7 +21075,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21098,7 +21098,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_DROUGHT, ABILITY_DROUGHT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21121,7 +21121,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21146,7 +21146,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21169,7 +21169,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_NO_GUARD, ABILITY_NO_GUARD},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21197,7 +21197,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_TRACE, ABILITY_TRACE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21221,7 +21221,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SHELL_ARMOR, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21244,7 +21244,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_SHADOW_TAG, ABILITY_SHADOW_TAG},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21267,7 +21267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_PARENTAL_BOND, ABILITY_PARENTAL_BOND},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21290,7 +21290,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_AERILATE, ABILITY_AERILATE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21313,7 +21313,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_MOLD_BREAKER, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21336,7 +21336,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21359,7 +21359,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_STEADFAST, ABILITY_STEADFAST},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21382,7 +21382,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_INSOMNIA, ABILITY_INSOMNIA},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21405,7 +21405,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD},
         .abilities = {ABILITY_MOLD_BREAKER, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21429,7 +21429,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SAND_FORCE, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21452,7 +21452,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_TECHNICIAN, ABILITY_TECHNICIAN},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21475,7 +21475,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_SKILL_LINK, ABILITY_SKILL_LINK},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21498,7 +21498,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21521,7 +21521,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_SAND_STREAM, ABILITY_SAND_STREAM},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21544,7 +21544,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21567,7 +21567,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21590,7 +21590,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21613,7 +21613,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_PIXILATE, ABILITY_PIXILATE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21637,7 +21637,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21661,7 +21661,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HUGE_POWER, ABILITY_HUGE_POWER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21685,7 +21685,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_FILTER, ABILITY_FILTER},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21708,7 +21708,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_PURE_POWER, ABILITY_PURE_POWER},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21731,7 +21731,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21755,7 +21755,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_STRONG_JAW},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21779,7 +21779,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_SHEER_FORCE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21802,7 +21802,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_PIXILATE, ABILITY_PIXILATE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21826,7 +21826,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_PRANKSTER, ABILITY_PRANKSTER},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21849,7 +21849,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21872,7 +21872,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_REFRIGERATE, ABILITY_REFRIGERATE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21896,7 +21896,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_AERILATE, ABILITY_AERILATE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21920,7 +21920,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21943,7 +21943,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21966,7 +21966,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_LEVITATE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -21990,7 +21990,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_SCRAPPY, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22013,7 +22013,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAND_FORCE, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22037,7 +22037,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22062,7 +22062,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
         .abilities = {ABILITY_SNOW_WARNING, ABILITY_SNOW_WARNING},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22085,7 +22085,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22112,7 +22112,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_HEALER, ABILITY_HEALER},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22138,7 +22138,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_BOUNCE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22163,7 +22163,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DELTA_STREAM, ABILITY_DELTA_STREAM},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_MEGA_EVOLUTION,
     },
@@ -22186,7 +22186,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRIMORDIAL_SEA, ABILITY_PRIMORDIAL_SEA},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_PRIMAL_REVERSION,
     },
@@ -22209,7 +22209,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DESOLATE_LAND, ABILITY_DESOLATE_LAND},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_PRIMAL_REVERSION,
     },
@@ -22233,7 +22233,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22257,7 +22257,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_THICK_FAT},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22280,7 +22280,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_SURGE_SURFER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22304,7 +22304,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22327,7 +22327,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22351,7 +22351,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SNOW_WARNING},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22375,7 +22375,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SNOW_WARNING},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22399,7 +22399,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_TANGLING_HAIR, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22423,7 +22423,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SAND_VEIL, ABILITY_TANGLING_HAIR, ABILITY_SAND_FORCE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22447,7 +22447,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_TECHNICIAN, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22471,7 +22471,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_FUR_COAT, ABILITY_TECHNICIAN, ABILITY_RATTLED},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22495,7 +22495,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22519,7 +22519,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22542,7 +22542,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22566,7 +22566,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_POISON_TOUCH, ABILITY_GLUTTONY, ABILITY_POWER_OF_ALCHEMY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22590,7 +22590,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_POISON_TOUCH, ABILITY_GLUTTONY, ABILITY_POWER_OF_ALCHEMY},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22613,7 +22613,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_FRISK, ABILITY_NONE, ABILITY_HARVEST},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22636,7 +22636,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         .abilities = {ABILITY_CURSED_BODY, ABILITY_LIGHTNING_ROD, ABILITY_ROCK_HEAD},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_HOENNIAN_FORM,
     },
@@ -22659,7 +22659,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_TOUGH_CLAWS, ABILITY_UNNERVE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22682,7 +22682,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PASTEL_VEIL, ABILITY_ANTICIPATION},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22705,7 +22705,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_RUN_AWAY, ABILITY_PASTEL_VEIL, ABILITY_ANTICIPATION},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22728,7 +22728,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_GLUTTONY, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22751,7 +22751,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_QUICK_DRAW, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22775,7 +22775,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},
         .abilities = {ABILITY_STEADFAST, ABILITY_NONE, ABILITY_SCRAPPY},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22799,7 +22799,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_MISTY_SURGE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22822,7 +22822,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE},
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_SCREEN_CLEANER, ABILITY_ICE_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22845,7 +22845,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_COMPETITIVE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22868,7 +22868,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DEFIANT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22891,7 +22891,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BERSERK, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22914,7 +22914,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
         .abilities = {ABILITY_CURIOUS_MEDICINE, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22937,7 +22937,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3},
         .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_CURSED_BODY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22960,7 +22960,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -22983,7 +22983,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -23007,7 +23007,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_HUSTLE, ABILITY_NONE, ABILITY_INNER_FOCUS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -23030,7 +23030,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE, ABILITY_ZEN_MODE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -23053,7 +23053,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_WANDERING_SPIRIT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -23076,7 +23076,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_AMORPHOUS},
         .abilities = {ABILITY_MIMICRY, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
@@ -23100,7 +23100,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23123,7 +23123,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23146,7 +23146,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23169,7 +23169,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_SOUNDPROOF, ABILITY_STATIC, ABILITY_AFTERMATH},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23192,7 +23192,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_FLASH_FIRE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23216,7 +23216,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23240,7 +23240,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_KEEN_EYE, ABILITY_POISON_TOUCH},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23264,7 +23264,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23288,7 +23288,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS},
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_HUSTLE, ABILITY_LEAF_GUARD},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23311,7 +23311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23334,7 +23334,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ILLUSION, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23357,7 +23357,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_SHEER_FORCE, ABILITY_DEFIANT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23383,7 +23383,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_OVERCOAT, ABILITY_GOOEY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23406,7 +23406,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_OVERCOAT, ABILITY_GOOEY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23429,7 +23429,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STRONG_JAW, ABILITY_ICE_BODY, ABILITY_STURDY},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23454,7 +23454,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING},
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_LONG_REACH},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
 	    .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
@@ -23506,9 +23506,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_UNOWN_EMARK] = UNOWN_SPECIES_INFO(FLIP),
     [SPECIES_UNOWN_QMARK] = UNOWN_SPECIES_INFO(NO_FLIP),
 
-    [SPECIES_CASTFORM_SUNNY] = CASTFORM_SPECIES_INFO(TYPE_FIRE, BODY_COLOR_RED),
-    [SPECIES_CASTFORM_RAINY] = CASTFORM_SPECIES_INFO(TYPE_WATER, BODY_COLOR_BLUE),
-    [SPECIES_CASTFORM_SNOWY] = CASTFORM_SPECIES_INFO(TYPE_ICE, BODY_COLOR_WHITE),
+    [SPECIES_CASTFORM_SUNNY] = CASTFORM_SPECIES_INFO(TYPE_FIRE, SOURCE_HRTP),
+    [SPECIES_CASTFORM_RAINY] = CASTFORM_SPECIES_INFO(TYPE_WATER, SOURCE_SOEW),
+    [SPECIES_CASTFORM_SNOWY] = CASTFORM_SPECIES_INFO(TYPE_ICE, SOURCE_POFV),
 
     [SPECIES_DEOXYS_ATTACK] =
     {
@@ -23529,7 +23529,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -23552,7 +23552,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -23574,13 +23574,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = TRUE,
     },
 
 #if P_GEN_4_POKEMON == TRUE
-    [SPECIES_BURMY_SANDY_CLOAK] = BURMY_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_BURMY_TRASH_CLOAK] = BURMY_SPECIES_INFO(BODY_COLOR_RED),
+    [SPECIES_BURMY_SANDY_CLOAK] = BURMY_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_BURMY_TRASH_CLOAK] = BURMY_SPECIES_INFO(SOURCE_HRTP),
 
     [SPECIES_WORMADAM_SANDY_CLOAK] =
     {
@@ -23601,7 +23601,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_ANTICIPATION, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -23625,15 +23625,15 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
         .abilities = {ABILITY_ANTICIPATION, ABILITY_NONE, ABILITY_OVERCOAT},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
-    [SPECIES_CHERRIM_SUNSHINE] = CHERRIM_SPECIES_INFO(BODY_COLOR_PINK),
+    [SPECIES_CHERRIM_SUNSHINE] = CHERRIM_SPECIES_INFO(SOURCE_MOF),
 
-    [SPECIES_SHELLOS_EAST_SEA] = SHELLOS_SPECIES_INFO(BODY_COLOR_BLUE),
+    [SPECIES_SHELLOS_EAST_SEA] = SHELLOS_SPECIES_INFO(SOURCE_SOEW),
 
-    [SPECIES_GASTRODON_EAST_SEA] = GASTRODON_SPECIES_INFO(BODY_COLOR_BLUE),
+    [SPECIES_GASTRODON_EAST_SEA] = GASTRODON_SPECIES_INFO(SOURCE_SOEW),
 
     [SPECIES_ROTOM_HEAT]  = ROTOM_FORM_SPECIES_INFO(TYPE_FIRE, FLIP),
     [SPECIES_ROTOM_WASH]  = ROTOM_FORM_SPECIES_INFO(TYPE_WATER, NO_FLIP),
@@ -23659,7 +23659,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -23682,7 +23682,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -23705,7 +23705,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_LEVITATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
     },
 
@@ -23729,7 +23729,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = TRUE,
     },
 
@@ -23772,7 +23772,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_ROCK_HEAD, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -23795,7 +23795,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_RATTLED, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
     },
 
@@ -23817,7 +23817,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_ZEN_MODE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -23839,14 +23839,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_GORILLA_TACTICS, ABILITY_NONE, ABILITY_ZEN_MODE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_GENSOKYIAN_FORM,
     },
 
-    [SPECIES_DEERLING_SUMMER] = DEERLING_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_DEERLING_AUTUMN] = DEERLING_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_DEERLING_WINTER] = DEERLING_SPECIES_INFO(BODY_COLOR_BROWN),
+    [SPECIES_DEERLING_SUMMER] = DEERLING_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_DEERLING_AUTUMN] = DEERLING_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_DEERLING_WINTER] = DEERLING_SPECIES_INFO(SOURCE_EOSD),
 
     [SPECIES_SAWSBUCK_SUMMER] = SAWSBUCK_SPECIES_INFO,
     [SPECIES_SAWSBUCK_AUTUMN] = SAWSBUCK_SPECIES_INFO,
@@ -23870,7 +23870,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_REGENERATOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -23893,7 +23893,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_VOLT_ABSORB, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -23916,7 +23916,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -23939,7 +23939,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TURBOBLAZE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -23962,7 +23962,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_TERAVOLT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -23985,7 +23985,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_JUSTIFIED, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -24012,7 +24012,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
@@ -24042,7 +24042,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BATTLE_BOND, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
@@ -24064,29 +24064,29 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_BATTLE_BOND, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
     },
 
-    [SPECIES_VIVILLON_POLAR]       = VIVILLON_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_VIVILLON_TUNDRA]      = VIVILLON_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_VIVILLON_CONTINENTAL] = VIVILLON_SPECIES_INFO(BODY_COLOR_YELLOW),
-    [SPECIES_VIVILLON_GARDEN]      = VIVILLON_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_VIVILLON_ELEGANT]     = VIVILLON_SPECIES_INFO(BODY_COLOR_PURPLE),
-    [SPECIES_VIVILLON_MEADOW]      = VIVILLON_SPECIES_INFO(BODY_COLOR_PINK),
-    [SPECIES_VIVILLON_MODERN]      = VIVILLON_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_VIVILLON_MARINE]      = VIVILLON_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_VIVILLON_ARCHIPELAGO] = VIVILLON_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_VIVILLON_HIGH_PLAINS] = VIVILLON_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_VIVILLON_SANDSTORM]   = VIVILLON_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_VIVILLON_RIVER]       = VIVILLON_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_VIVILLON_MONSOON]     = VIVILLON_SPECIES_INFO(BODY_COLOR_GRAY),
-    [SPECIES_VIVILLON_SAVANNA]     = VIVILLON_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_VIVILLON_SUN]         = VIVILLON_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_VIVILLON_OCEAN]       = VIVILLON_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_VIVILLON_JUNGLE]      = VIVILLON_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_VIVILLON_FANCY]       = VIVILLON_SPECIES_INFO(BODY_COLOR_PINK),
-    [SPECIES_VIVILLON_POKE_BALL]   = VIVILLON_SPECIES_INFO(BODY_COLOR_RED),
+    [SPECIES_VIVILLON_POLAR]       = VIVILLON_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_VIVILLON_TUNDRA]      = VIVILLON_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_VIVILLON_CONTINENTAL] = VIVILLON_SPECIES_INFO(SOURCE_PODD),
+    [SPECIES_VIVILLON_GARDEN]      = VIVILLON_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_VIVILLON_ELEGANT]     = VIVILLON_SPECIES_INFO(SOURCE_PCB),
+    [SPECIES_VIVILLON_MEADOW]      = VIVILLON_SPECIES_INFO(SOURCE_MOF),
+    [SPECIES_VIVILLON_MODERN]      = VIVILLON_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_VIVILLON_MARINE]      = VIVILLON_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_VIVILLON_ARCHIPELAGO] = VIVILLON_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_VIVILLON_HIGH_PLAINS] = VIVILLON_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_VIVILLON_SANDSTORM]   = VIVILLON_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_VIVILLON_RIVER]       = VIVILLON_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_VIVILLON_MONSOON]     = VIVILLON_SPECIES_INFO(SOURCE_IN),
+    [SPECIES_VIVILLON_SAVANNA]     = VIVILLON_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_VIVILLON_SUN]         = VIVILLON_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_VIVILLON_OCEAN]       = VIVILLON_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_VIVILLON_JUNGLE]      = VIVILLON_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_VIVILLON_FANCY]       = VIVILLON_SPECIES_INFO(SOURCE_MOF),
+    [SPECIES_VIVILLON_POKE_BALL]   = VIVILLON_SPECIES_INFO(SOURCE_HRTP),
 
     [SPECIES_FLABEBE_YELLOW_FLOWER] = FLABEBE_SPECIES_INFO,
     [SPECIES_FLABEBE_ORANGE_FLOWER] = FLABEBE_SPECIES_INFO,
@@ -24116,7 +24116,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -24153,7 +24153,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_COMPETITIVE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
     },
 
@@ -24181,7 +24181,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
         .abilities = {ABILITY_STANCE_CHANGE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -24279,7 +24279,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_POWER_CONSTRUCT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -24302,16 +24302,16 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_MAGICIAN, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_MYTHICAL,
     },
 #endif
 
 #if P_GEN_7_POKEMON == TRUE
-    [SPECIES_ORICORIO_POM_POM] = ORICORIO_SPECIES_INFO(TYPE_WIND, BODY_COLOR_YELLOW),
-    [SPECIES_ORICORIO_PAU]     = ORICORIO_SPECIES_INFO(TYPE_REASON, BODY_COLOR_PINK),
-    [SPECIES_ORICORIO_SENSU]   = ORICORIO_SPECIES_INFO(TYPE_GHOST, BODY_COLOR_PURPLE),
+    [SPECIES_ORICORIO_POM_POM] = ORICORIO_SPECIES_INFO(TYPE_WIND, SOURCE_PODD),
+    [SPECIES_ORICORIO_PAU]     = ORICORIO_SPECIES_INFO(TYPE_REASON, SOURCE_MOF),
+    [SPECIES_ORICORIO_SENSU]   = ORICORIO_SPECIES_INFO(TYPE_GHOST, SOURCE_PCB),
 
     [SPECIES_ROCKRUFF_OWN_TEMPO] = ROCKRUFF_SPECIES_INFO(ABILITY_OWN_TEMPO, ABILITY_NONE, ABILITY_NONE),
 
@@ -24333,7 +24333,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_KEEN_EYE, ABILITY_VITAL_SPIRIT, ABILITY_NO_GUARD},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
     },
 
@@ -24355,7 +24355,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
         .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
 
@@ -24377,7 +24377,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
         .abilities = {ABILITY_SCHOOLING, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -24406,13 +24406,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_MINIOR_METEOR_INDIGO] = MINIOR_METEOR_SPECIES_INFO,
     [SPECIES_MINIOR_METEOR_VIOLET] = MINIOR_METEOR_SPECIES_INFO,
 
-    [SPECIES_MINIOR_CORE_RED]    = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_MINIOR_CORE_ORANGE] = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_RED),
-    [SPECIES_MINIOR_CORE_YELLOW] = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_YELLOW),
-    [SPECIES_MINIOR_CORE_GREEN]  = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_MINIOR_CORE_BLUE]   = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_MINIOR_CORE_INDIGO] = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_MINIOR_CORE_VIOLET] = MINIOR_CORE_SPECIES_INFO(BODY_COLOR_PURPLE),
+    [SPECIES_MINIOR_CORE_RED]    = MINIOR_CORE_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_MINIOR_CORE_ORANGE] = MINIOR_CORE_SPECIES_INFO(SOURCE_HRTP),
+    [SPECIES_MINIOR_CORE_YELLOW] = MINIOR_CORE_SPECIES_INFO(SOURCE_PODD),
+    [SPECIES_MINIOR_CORE_GREEN]  = MINIOR_CORE_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_MINIOR_CORE_BLUE]   = MINIOR_CORE_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_MINIOR_CORE_INDIGO] = MINIOR_CORE_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_MINIOR_CORE_VIOLET] = MINIOR_CORE_SPECIES_INFO(SOURCE_PCB),
 
     [SPECIES_MIMIKYU_BUSTED] = MIMIKYU_SPECIES_INFO,
 
@@ -24434,7 +24434,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRISM_ARMOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -24457,7 +24457,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRISM_ARMOR, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -24482,12 +24482,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_NEUROFORCE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .noFlip = TRUE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
 
-    [SPECIES_MAGEARNA_ORIGINAL_COLOR] = MAGEARNA_SPECIES_INFO(BODY_COLOR_RED),
+    [SPECIES_MAGEARNA_ORIGINAL_COLOR] = MAGEARNA_SPECIES_INFO(SOURCE_HRTP),
 #endif
 
 #if P_GEN_8_POKEMON == TRUE
@@ -24500,14 +24500,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_POLTEAGEIST_ANTIQUE] = POLTEAGEIST_SPECIES_INFO,
 
-    [SPECIES_ALCREMIE_RUBY_CREAM]    = ALCREMIE_SPECIES_INFO(BODY_COLOR_PINK),
-    [SPECIES_ALCREMIE_MATCHA_CREAM]  = ALCREMIE_SPECIES_INFO(BODY_COLOR_GREEN),
-    [SPECIES_ALCREMIE_MINT_CREAM]    = ALCREMIE_SPECIES_INFO(BODY_COLOR_BLUE),
-    [SPECIES_ALCREMIE_LEMON_CREAM]   = ALCREMIE_SPECIES_INFO(BODY_COLOR_YELLOW),
-    [SPECIES_ALCREMIE_SALTED_CREAM]  = ALCREMIE_SPECIES_INFO(BODY_COLOR_WHITE),
-    [SPECIES_ALCREMIE_RUBY_SWIRL]    = ALCREMIE_SPECIES_INFO(BODY_COLOR_YELLOW),
-    [SPECIES_ALCREMIE_CARAMEL_SWIRL] = ALCREMIE_SPECIES_INFO(BODY_COLOR_BROWN),
-    [SPECIES_ALCREMIE_RAINBOW_SWIRL] = ALCREMIE_SPECIES_INFO(BODY_COLOR_YELLOW),
+    [SPECIES_ALCREMIE_RUBY_CREAM]    = ALCREMIE_SPECIES_INFO(SOURCE_MOF),
+    [SPECIES_ALCREMIE_MATCHA_CREAM]  = ALCREMIE_SPECIES_INFO(SOURCE_LLS),
+    [SPECIES_ALCREMIE_MINT_CREAM]    = ALCREMIE_SPECIES_INFO(SOURCE_SOEW),
+    [SPECIES_ALCREMIE_LEMON_CREAM]   = ALCREMIE_SPECIES_INFO(SOURCE_PODD),
+    [SPECIES_ALCREMIE_SALTED_CREAM]  = ALCREMIE_SPECIES_INFO(SOURCE_POFV),
+    [SPECIES_ALCREMIE_RUBY_SWIRL]    = ALCREMIE_SPECIES_INFO(SOURCE_PODD),
+    [SPECIES_ALCREMIE_CARAMEL_SWIRL] = ALCREMIE_SPECIES_INFO(SOURCE_EOSD),
+    [SPECIES_ALCREMIE_RAINBOW_SWIRL] = ALCREMIE_SPECIES_INFO(SOURCE_PODD),
 
     [SPECIES_EISCUE_NOICE_FACE] =
     {
@@ -24527,7 +24527,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_FIELD},
         .abilities = {ABILITY_ICE_FACE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
 
@@ -24549,7 +24549,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY},
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_SYNCHRONIZE, ABILITY_PSYCHIC_SURGE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
     },
 
@@ -24573,7 +24573,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_INTREPID_SWORD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -24596,7 +24596,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_DAUNTLESS_SHIELD, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -24619,7 +24619,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -24642,7 +24642,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_UNSEEN_FIST, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
@@ -24667,7 +24667,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_AS_ONE_ICE_RIDER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -24690,7 +24690,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_AS_ONE_SHADOW_RIDER, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY | SPECIES_FLAG_CANNOT_BE_TRADED,
     },
@@ -24713,7 +24713,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},
         .abilities = {ABILITY_OVERCOAT, ABILITY_NONE},
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .noFlip = FALSE,
         .flags = SPECIES_FLAG_LEGENDARY,
     },
