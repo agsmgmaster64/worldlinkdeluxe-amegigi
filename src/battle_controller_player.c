@@ -1668,9 +1668,9 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     u8 *txtPtr;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
-    if (IS_MOVE_PHYSICAL(moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]))
+    if (IS_MOVE_PHYSICAL(moveInfo->moves[gMoveSelectionCursor[battler]]))
         txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfacePhyscial);
-    else if (IS_MOVE_SPECIAL(moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]))
+    else if (IS_MOVE_SPECIAL(moveInfo->moves[gMoveSelectionCursor[battler]]))
         txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceSpecial);
     else
         txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceStatus);

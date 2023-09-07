@@ -10893,10 +10893,10 @@ static void Cmd_various(void)
         }
         if (monToCheck)
         {
-            gActiveBattler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+            battler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
             status = 0;
-            BtlController_EmitSetMonData(BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
-            MarkBattlerForControllerExec(gActiveBattler);
+            BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+            MarkBattlerForControllerExec(battler);
             gBattleCommunication[MULTISTRING_CHOOSER] = 1;
         }
         monToCheck = 0;
@@ -10914,10 +10914,10 @@ static void Cmd_various(void)
         }
         if (monToCheck)
         {
-            gActiveBattler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+            battler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
             status = 0;
-            BtlController_EmitSetMonData(BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
-            MarkBattlerForControllerExec(gActiveBattler);
+            BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+            MarkBattlerForControllerExec(battler);
             gBattleCommunication[MULTISTRING_CHOOSER] = 1;
         }
     }
@@ -11613,7 +11613,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if ((GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_CLEAR_AMULET
                   || battlerAbility == ABILITY_HAKUREI_MIKO
                   || battlerAbility == ABILITY_FULL_METAL_BODY
-                  || battlerAbility == ABILITY_WHITE_SMOKE)
+                  || battlerAbility == ABILITY_MAGIC_BARRIER)
                  && (!affectsUser || mirrorArmored) && !certain && gBattleMoves[gCurrentMove].effect != EFFECT_CURSE)
         {
             if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_CLEAR_AMULET)
@@ -12473,12 +12473,12 @@ static void Cmd_updatestatusicon(void)
 
     if (cmd->battler == BS_PLAYER2)
     {
-        for (gActiveBattler = gBattleControllerExecFlags; gActiveBattler < gBattlersCount; gActiveBattler++)
+        for (battler = gBattleControllerExecFlags; battler < gBattlersCount; battler++)
         {
-            if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler]))
+            if (!(gAbsentBattlerFlags & gBitTable[battler]))
             {
-                BtlController_EmitStatusIconUpdate(BUFFER_A, gBattleMons[gActiveBattler].status1, gBattleMons[gActiveBattler].status2);
-                MarkBattlerForControllerExec(gActiveBattler);
+                BtlController_EmitStatusIconUpdate(battler, BUFFER_A, gBattleMons[battler].status1, gBattleMons[battler].status2);
+                MarkBattlerForControllerExec(battler);
             }
         }
         gBattlescriptCurrInstr = cmd->nextInstr;

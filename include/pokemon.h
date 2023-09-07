@@ -332,7 +332,7 @@ struct SpeciesInfo /*0x24*/
  /* 0x1E */ u8 safariZoneFleeRate;
  /* 0x1F */ u8 sourceGame : 7;
             u8 noFlip : 1;
- /* 0x20 */ u16 flags;
+ /* 0x20 */ u32 flags;
 };
 
 struct BattleMove
