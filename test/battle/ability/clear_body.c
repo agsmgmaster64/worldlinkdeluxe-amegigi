@@ -7,9 +7,9 @@ SINGLE_BATTLE_TEST("Clear Body prevents intimidate")
     s16 turnTwoHit;
 
     GIVEN {
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_BELDUM) { Ability(ABILITY_CLEAR_BODY); };
+        OPPONENT(SPECIES_BELDUM) { Ability(ABILITY_HAKUREI_MIKO); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }
@@ -18,7 +18,7 @@ SINGLE_BATTLE_TEST("Clear Body prevents intimidate")
         HP_BAR(player, captureDamage: &turnOneHit);
         ABILITY_POPUP(player, ABILITY_INTIMIDATE);
         NONE_OF { ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player); }
-        ABILITY_POPUP(opponent, ABILITY_CLEAR_BODY);
+        ABILITY_POPUP(opponent, ABILITY_HAKUREI_MIKO);
         MESSAGE("Foe Beldum's Clear Body prevents stat loss!");
         HP_BAR(player, captureDamage: &turnTwoHit);
     } THEN {

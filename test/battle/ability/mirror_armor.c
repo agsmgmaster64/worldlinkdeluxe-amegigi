@@ -75,13 +75,13 @@ SINGLE_BATTLE_TEST("Mirror Armor doesn't lower the stats of an attacking Pokemon
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); }
-        OPPONENT(SPECIES_WYNAUT) { Ability(ABILITY_CLEAR_BODY); }
+        OPPONENT(SPECIES_WYNAUT) { Ability(ABILITY_HAKUREI_MIKO); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_LEER); }
     } SCENE {
         MESSAGE("Foe Wynaut used Leer!");
         ABILITY_POPUP(player, ABILITY_MIRROR_ARMOR);
-        ABILITY_POPUP(opponent, ABILITY_CLEAR_BODY);
+        ABILITY_POPUP(opponent, ABILITY_HAKUREI_MIKO);
         MESSAGE("Foe Wynaut's Clear Body prevents stat loss!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE);

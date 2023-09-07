@@ -52,7 +52,7 @@
 #define ITEMEFFECT_LIFEORB_SHELLBELL            7
 #define ITEMEFFECT_USE_LAST_ITEM                8 // move end effects for just the battler, not whole field
 
-#define WEATHER_HAS_EFFECT ((!IsAbilityOnField(ABILITY_CLOUD_NINE) && !IsAbilityOnField(ABILITY_AIR_LOCK)))
+#define WEATHER_HAS_EFFECT ((!IsAbilityOnField(ABILITY_CLOUD_NINE) && !IsAbilityOnField(ABILITY_HISOUTEN)))
 
 #define IS_WHOLE_SIDE_ALIVE(battler)((IsBattlerAlive(battler) && IsBattlerAlive(BATTLE_PARTNER(battler))))
 

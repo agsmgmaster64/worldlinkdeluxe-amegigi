@@ -39,7 +39,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ADAPTABILITY] = 8,
     [ABILITY_AFTERMATH] = 5,
     [ABILITY_AERILATE] = 8,
-    [ABILITY_AIR_LOCK] = 5,
+    [ABILITY_HISOUTEN] = 5,
     [ABILITY_ANALYTIC] = 5,
     [ABILITY_ANGER_POINT] = 4,
     [ABILITY_ANTICIPATION] = 2,
@@ -48,7 +48,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_AURA_BREAK] = 3,
     [ABILITY_BAD_DREAMS] = 4,
     [ABILITY_BATTERY] = 0,
-    [ABILITY_BATTLE_ARMOR] = 2,
+    [ABILITY_GUARD_ARMOR] = 2,
     [ABILITY_BATTLE_BOND] = 6,
     [ABILITY_BEAST_BOOST] = 7,
     [ABILITY_BERSERK] = 5,
@@ -57,12 +57,12 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BULLETPROOF] = 7,
     [ABILITY_CHEEK_POUCH] = 4,
     [ABILITY_CHLOROPHYLL] = 6,
-    [ABILITY_CLEAR_BODY] = 4,
+    [ABILITY_HAKUREI_MIKO] = 4,
     [ABILITY_CLOUD_NINE] = 5,
-    [ABILITY_COLOR_CHANGE] = 2,
+    [ABILITY_MYSTERIOUS] = 2,
     [ABILITY_COMATOSE] = 6,
     [ABILITY_COMPETITIVE] = 5,
-    [ABILITY_COMPOUND_EYES] = 7,
+    [ABILITY_FOCUS] = 7,
     [ABILITY_CONTRARY] = 8,
     [ABILITY_CORROSION] = 5,
     [ABILITY_CURSED_BODY] = 4,
@@ -81,7 +81,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DROUGHT] = 9,
     [ABILITY_DRY_SKIN] = 6,
     [ABILITY_EARLY_BIRD] = 4,
-    [ABILITY_EFFECT_SPORE] = 4,
+    [ABILITY_INFECTIOUS] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
     [ABILITY_FAIRY_AURA] = 6,
@@ -110,12 +110,12 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_HEATPROOF] = 5,
     [ABILITY_HEAVY_METAL] = -1,
     [ABILITY_HONEY_GATHER] = 0,
-    [ABILITY_HUGE_POWER] = 10,
+    [ABILITY_UNZAN] = 10,
     [ABILITY_HUSTLE] = 7,
     [ABILITY_HYDRATION] = 4,
-    [ABILITY_HYPER_CUTTER] = 3,
+    [ABILITY_HIGH_STRENGTH] = 3,
     [ABILITY_ICE_BODY] = 3,
-    [ABILITY_ILLUMINATE] = 0,
+    [ABILITY_DIVA] = 0,
     [ABILITY_ILLUSION] = 8,
     [ABILITY_IMMUNITY] = 4,
     [ABILITY_IMPOSTER] = 9,
@@ -134,15 +134,15 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_LIGHT_METAL] = 2,
     [ABILITY_LIGHTNING_ROD] = 7,
     [ABILITY_LIMBER] = 3,
-    [ABILITY_LIQUID_OOZE] = 3,
+    [ABILITY_STRANGE_MIST] = 3,
     [ABILITY_LIQUID_VOICE] = 5,
     [ABILITY_LONG_REACH] = 3,
     [ABILITY_MAGIC_BOUNCE] = 9,
     [ABILITY_MAGIC_GUARD] = 9,
     [ABILITY_MAGICIAN] = 3,
-    [ABILITY_MAGMA_ARMOR] = 1,
+    [ABILITY_FIRE_VEIL] = 1,
     [ABILITY_MAGNET_PULL] = 9,
-    [ABILITY_MARVEL_SCALE] = 5,
+    [ABILITY_SPRING_CHARM] = 5,
     [ABILITY_MEGA_LAUNCHER] = 7,
     [ABILITY_MERCILESS] = 4,
     [ABILITY_MINUS] = 0,
@@ -168,7 +168,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PIXILATE] = 8,
     [ABILITY_PLUS] = 0,
     [ABILITY_POISON_HEAL] = 8,
-    [ABILITY_POISON_POINT] = 4,
+    [ABILITY_POISON_BODY] = 4,
     [ABILITY_POISON_TOUCH] = 4,
     [ABILITY_POWER_CONSTRUCT] = 10,
     [ABILITY_POWER_OF_ALCHEMY] = 0,
@@ -190,7 +190,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_RIVALRY] = 1,
     [ABILITY_RKS_SYSTEM] = 8,
     [ABILITY_ROCK_HEAD] = 5,
-    [ABILITY_ROUGH_SKIN] = 6,
+    [ABILITY_DOLL_WALL] = 6,
     [ABILITY_RUN_AWAY] = 0,
     [ABILITY_SAND_FORCE] = 4,
     [ABILITY_SAND_RUSH] = 6,
@@ -202,10 +202,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SERENE_GRACE] = 8,
     [ABILITY_SHADOW_SHIELD] = 8,
     [ABILITY_SHADOW_TAG] = 10,
-    [ABILITY_SHED_SKIN] = 7,
+    [ABILITY_MAINTENANCE] = 7,
     [ABILITY_SHEER_FORCE] = 8,
     [ABILITY_SHELL_ARMOR] = 2,
-    [ABILITY_SHIELD_DUST] = 5,
+    [ABILITY_ADVENT] = 5,
     [ABILITY_SHIELDS_DOWN] = 6,
     [ABILITY_SIMPLE] = 8,
     [ABILITY_SKILL_LINK] = 7,
@@ -226,15 +226,15 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_STATIC] = 4,
     [ABILITY_STEADFAST] = 2,
     [ABILITY_STEELWORKER] = 6,
-    [ABILITY_STENCH] = 1,
-    [ABILITY_STICKY_HOLD] = 3,
+    [ABILITY_JEALOUSY] = 1,
+    [ABILITY_COLLECTOR] = 3,
     [ABILITY_STORM_DRAIN] = 7,
     [ABILITY_STRONG_JAW] = 6,
     [ABILITY_STURDY] = 6,
-    [ABILITY_SUCTION_CUPS] = 2,
+    [ABILITY_GATE_KEEPER] = 2,
     [ABILITY_SUPER_LUCK] = 3,
     [ABILITY_SURGE_SURFER] = 4,
-    [ABILITY_SWARM] = 5,
+    [ABILITY_INNER_POWER] = 5,
     [ABILITY_SWEET_VEIL] = 4,
     [ABILITY_SWIFT_SWIM] = 6,
     [ABILITY_SYMBIOSIS] = 0,
@@ -244,18 +244,19 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_TECHNICIAN] = 8,
     [ABILITY_TELEPATHY] = 0,
     [ABILITY_TERAVOLT] = 7,
-    [ABILITY_THICK_FAT] = 7,
+    [ABILITY_WALL_OF_ICE] = 7,
     [ABILITY_TINTED_LENS] = 7,
     [ABILITY_TORRENT] = 5,
     [ABILITY_TOXIC_BOOST] = 6,
     [ABILITY_TOUGH_CLAWS] = 7,
     [ABILITY_TRACE] = 6,
     [ABILITY_TRIAGE] = 7,
-    [ABILITY_TRUANT] = -2,
+    [ABILITY_FRETFUL] = -2,
     [ABILITY_TURBOBLAZE] = 7,
     [ABILITY_UNAWARE] = 6,
     [ABILITY_UNBURDEN] = 7,
     [ABILITY_UNNERVE] = 3,
+    [ABILITY_UNWAVERING] = 6,
     [ABILITY_VICTORY_STAR] = 6,
     [ABILITY_VITAL_SPIRIT] = 4,
     [ABILITY_VOLT_ABSORB] = 7,
@@ -264,9 +265,9 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WATER_COMPACTION] = 4,
     [ABILITY_WATER_VEIL] = 4,
     [ABILITY_WEAK_ARMOR] = 2,
-    [ABILITY_WHITE_SMOKE] = 4,
+    [ABILITY_MAGIC_BARRIER] = 4,
     [ABILITY_WIMP_OUT] = 3,
-    [ABILITY_WONDER_GUARD] = 10,
+    [ABILITY_PLAY_GHOST] = 10,
     [ABILITY_WONDER_SKIN] = 4,
     [ABILITY_ZEN_MODE] = -1,
     [ABILITY_INTREPID_SWORD] = 3,
@@ -899,7 +900,7 @@ static u32 WhichMoveBetter(u32 move1, u32 move2)
     // Check if physical moves hurt.
     if (AI_DATA->holdEffects[sBattler_AI] != HOLD_EFFECT_PROTECTIVE_PADS
         && (BATTLE_HISTORY->itemEffects[gBattlerTarget] == HOLD_EFFECT_ROCKY_HELMET
-        || defAbility == ABILITY_IRON_BARBS || defAbility == ABILITY_ROUGH_SKIN))
+        || defAbility == ABILITY_IRON_BARBS || defAbility == ABILITY_DOLL_WALL))
     {
         if (IS_MOVE_PHYSICAL(move1) && !IS_MOVE_PHYSICAL(move2))
             return 1;
@@ -1716,8 +1717,8 @@ bool32 ShouldLowerStat(u8 battler, u16 battlerAbility, u8 stat)
       || (battlerAbility == ABILITY_CONTRARY && gBattleMons[battler].statStages[stat] < MAX_STAT_STAGE))
     {
         if (AI_DATA->holdEffects[battler] == HOLD_EFFECT_CLEAR_AMULET
-         || battlerAbility == ABILITY_CLEAR_BODY
-         || battlerAbility == ABILITY_WHITE_SMOKE
+         || battlerAbility == ABILITY_HAKUREI_MIKO
+         || battlerAbility == ABILITY_MAGIC_BARRIER
          || battlerAbility == ABILITY_FULL_METAL_BODY)
             return FALSE;
 
@@ -1790,10 +1791,10 @@ bool32 ShouldLowerAttack(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (gBattleMons[battlerDef].statStages[STAT_ATK] > 4
       && HasMoveWithSplit(battlerDef, SPLIT_PHYSICAL)
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_HAKUREI_MIKO
+      && defAbility != ABILITY_MAGIC_BARRIER
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_HYPER_CUTTER
+      && defAbility != ABILITY_HIGH_STRENGTH
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -1807,8 +1808,8 @@ bool32 ShouldLowerDefense(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (gBattleMons[battlerDef].statStages[STAT_DEF] > 4
       && HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL)
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_HAKUREI_MIKO
+      && defAbility != ABILITY_MAGIC_BARRIER
       && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_BIG_PECKS
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
@@ -1823,9 +1824,9 @@ bool32 ShouldLowerSpeed(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
     if (!WillAIStrikeFirst()
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
+      && defAbility != ABILITY_HAKUREI_MIKO
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_MAGIC_BARRIER
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -1839,9 +1840,9 @@ bool32 ShouldLowerSpAtk(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (gBattleMons[battlerDef].statStages[STAT_SPATK] > 4
       && HasMoveWithSplit(battlerDef, SPLIT_SPECIAL)
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
+      && defAbility != ABILITY_HAKUREI_MIKO
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_MAGIC_BARRIER
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -1855,9 +1856,9 @@ bool32 ShouldLowerSpDef(u8 battlerAtk, u8 battlerDef, u16 defAbility)
     if (gBattleMons[battlerDef].statStages[STAT_SPDEF] > 4
       && HasMoveWithSplit(battlerAtk, SPLIT_SPECIAL)
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
+      && defAbility != ABILITY_HAKUREI_MIKO
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_MAGIC_BARRIER
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -1869,8 +1870,8 @@ bool32 ShouldLowerAccuracy(u8 battlerAtk, u8 battlerDef, u16 defAbility)
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_HAKUREI_MIKO
+      && defAbility != ABILITY_MAGIC_BARRIER
       && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_KEEN_EYE
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
@@ -1885,9 +1886,9 @@ bool32 ShouldLowerEvasion(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
     if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
       && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_CLEAR_BODY
+      && defAbility != ABILITY_HAKUREI_MIKO
       && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_WHITE_SMOKE
+      && defAbility != ABILITY_MAGIC_BARRIER
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
     return FALSE;
@@ -2746,7 +2747,7 @@ bool32 CanKnockOffItem(u8 battler, u16 item)
       )) && GetBattlerSide(battler) == B_SIDE_PLAYER)
         return FALSE;
 
-    if (AI_DATA->abilities[battler] == ABILITY_STICKY_HOLD)
+    if (AI_DATA->abilities[battler] == ABILITY_COLLECTOR)
         return FALSE;
 
     if (!CanBattlerGetOrLoseItem(battler, item))
@@ -2764,7 +2765,7 @@ bool32 IsBattlerIncapacitated(u8 battler, u16 ability)
     if (gBattleMons[battler].status1 & STATUS1_SLEEP)
         return TRUE;
 
-    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || (ability == ABILITY_TRUANT && gDisableStructs[battler].truantCounter != 0))
+    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || (ability == ABILITY_FRETFUL && gDisableStructs[battler].truantCounter != 0))
         return TRUE;
 
     return FALSE;
@@ -2818,12 +2819,13 @@ static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
 bool32 ShouldPoisonSelf(u8 battler, u16 ability)
 {
     if (AI_CanBePoisoned(battler, battler) && (
-     ability == ABILITY_MARVEL_SCALE
+     ability == ABILITY_SPRING_CHARM
       || ability == ABILITY_POISON_HEAL
       || ability == ABILITY_QUICK_FEET
       || ability == ABILITY_MAGIC_GUARD
       || (ability == ABILITY_TOXIC_BOOST && HasMoveWithSplit(battler, SPLIT_PHYSICAL))
       || (ability == ABILITY_GUTS && HasMoveWithSplit(battler, SPLIT_PHYSICAL))
+      || (ability == ABILITY_UNWAVERING && HasMoveWithSplit(battler, SPLIT_SPECIAL))
       || HasMoveEffect(battler, EFFECT_FACADE)
       || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT)))
         return TRUE;    // battler can be poisoned and has move/ability that synergizes with being poisoned
@@ -2905,7 +2907,7 @@ bool32 AI_CanBeBurned(u8 battler, u16 ability)
 
 bool32 AI_CanGetFrostbite(u8 battler, u16 ability)
 {
-    if (ability == ABILITY_MAGMA_ARMOR
+    if (ability == ABILITY_FIRE_VEIL
       || ability == ABILITY_COMATOSE
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || gBattleMons[battler].status1 & STATUS1_ANY
@@ -2923,6 +2925,7 @@ bool32 ShouldBurnSelf(u8 battler, u16 ability)
       || ability == ABILITY_MAGIC_GUARD
       || (ability == ABILITY_FLARE_BOOST && HasMoveWithSplit(battler, SPLIT_SPECIAL))
       || (ability == ABILITY_GUTS && HasMoveWithSplit(battler, SPLIT_PHYSICAL))
+      || (ability == ABILITY_UNWAVERING && HasMoveWithSplit(battler, SPLIT_SPECIAL))
       || HasMoveEffect(battler, EFFECT_FACADE)
       || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT)))
         return TRUE;

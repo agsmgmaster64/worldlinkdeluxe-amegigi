@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Scrappy prevents intimidate")
 
     GIVEN {
         ASSUME(B_UPDATED_INTIMIDATE >= GEN_8);
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
         OPPONENT(SPECIES_KANGASKHAN) { Ability(ABILITY_SCRAPPY); };
     } WHEN {
@@ -52,7 +52,7 @@ SINGLE_BATTLE_TEST("Scrappy doesn't bypass a Ghost-type's Wonder Guard")
 
     GIVEN {
         PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_SCRAPPY); };
-        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_WONDER_GUARD); };
+        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_PLAY_GHOST); };
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Scrappy doesn't bypass a Ghost-type's Wonder Guard")
             ANIMATION(ANIM_TYPE_MOVE, move, player);
             HP_BAR(opponent);
         }
-        ABILITY_POPUP(opponent, ABILITY_WONDER_GUARD);
+        ABILITY_POPUP(opponent, ABILITY_PLAY_GHOST);
         MESSAGE("Foe Shedinja avoided damage with Wonder Guard!");
     }
 }

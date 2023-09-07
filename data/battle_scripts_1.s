@@ -457,7 +457,7 @@ BattleScript_EffectCorrosiveGas:
 	jumpifcantloseitem BS_TARGET, BattleScript_CorrosiveGasFail
 	attackanimation
 	waitanimation
-	jumpifability BS_TARGET, ABILITY_STICKY_HOLD, BattleScript_StickyHoldActivates
+	jumpifability BS_TARGET, ABILITY_COLLECTOR, BattleScript_StickyHoldActivates
 	setlastuseditem BS_TARGET
 	removeitem BS_TARGET
 	printstring STRINGID_PKMNITEMMELTED
@@ -1492,12 +1492,6 @@ BattleScript_StrengthSapLower:
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_StrengthSapHp
-@ Drain HP without lowering a stat
-BattleScript_StrengthSapTryHp:
-	jumpiffullhp BS_ATTACKER, BattleScript_ButItFailed
-	attackanimation
-	waitanimation
 BattleScript_StrengthSapHp:
 	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveEnd
 	jumpiffullhp BS_ATTACKER, BattleScript_MoveEnd
@@ -2148,8 +2142,8 @@ BattleScript_EffectFinalGambit:
 BattleScript_EffectHitSwitchTarget:
 	call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET
-	moveendall
-	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
+	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
+	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_AbilityPreventsPhasingOut
 	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
 	tryhitswitchtarget BattleScript_MoveEnd
 	forcerandomswitch BattleScript_HitSwitchTargetForceRandomSwitchFailed
@@ -3105,7 +3099,6 @@ BattleScript_EffectThroatChop:
 BattleScript_EffectHitEscape:
 	call BattleScript_EffectHit_Ret
 	jumpifmovehadnoeffect BattleScript_MoveEnd
-	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_MoveEnd
 	seteffectwithchance
 	tryfaintmon BS_TARGET
 	moveendto MOVEEND_ATTACKER_VISIBLE
@@ -3392,7 +3385,7 @@ BattleScript_EffectAbsorb::
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
-	jumpifability BS_TARGET, ABILITY_LIQUID_OOZE, BattleScript_AbsorbLiquidOoze
+	jumpifability BS_TARGET, ABILITY_STRANGE_MIST, BattleScript_AbsorbLiquidOoze
 	setbyte cMULTISTRING_CHOOSER, B_MSG_ABSORB
 	goto BattleScript_AbsorbUpdateHp
 BattleScript_AbsorbLiquidOoze::
@@ -3736,8 +3729,7 @@ BattleScript_EffectRoar::
 	attackstring
 	ppreduce
 	jumpifroarfails BattleScript_ButItFailed
-	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_ButItFailed
-	jumpifability BS_TARGET, ABILITY_SUCTION_CUPS, BattleScript_AbilityPreventsPhasingOut
+	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_AbilityPreventsPhasingOut
 	jumpifstatus3 BS_TARGET, STATUS3_ROOTED, BattleScript_PrintMonIsRooted
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
@@ -6863,7 +6855,7 @@ BattleScript_LeechSeedTurnDrain::
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	copyword gBattleMoveDamage, gHpDealt
-	jumpifability BS_ATTACKER, ABILITY_LIQUID_OOZE, BattleScript_LeechSeedTurnPrintLiquidOoze
+	jumpifability BS_ATTACKER, ABILITY_STRANGE_MIST, BattleScript_LeechSeedTurnPrintLiquidOoze
 	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_DRAIN
 	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_LeechSeedHealBlock
 	manipulatedamage DMG_BIG_ROOT
@@ -7207,9 +7199,9 @@ BattleScript_GulpMissileGulping::
 	getbattlerfainted BS_ATTACKER
 	jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_GulpMissileNoSecondEffectGulping
 	jumpifholdeffect BS_ATTACKER, HOLD_EFFECT_CLEAR_AMULET, BattleScript_GulpMissileNoSecondEffectGulping
-	jumpifability BS_ATTACKER, ABILITY_CLEAR_BODY, BattleScript_GulpMissileNoSecondEffectGulping
+	jumpifability BS_ATTACKER, ABILITY_HAKUREI_MIKO, BattleScript_GulpMissileNoSecondEffectGulping
 	jumpifability BS_ATTACKER, ABILITY_FULL_METAL_BODY, BattleScript_GulpMissileNoSecondEffectGulping
-	jumpifability BS_ATTACKER, ABILITY_WHITE_SMOKE, BattleScript_GulpMissileNoSecondEffectGulping
+	jumpifability BS_ATTACKER, ABILITY_MAGIC_BARRIER, BattleScript_GulpMissileNoSecondEffectGulping
 	jumpifflowerveilattacker BattleScript_GulpMissileNoSecondEffectGulping
 BattleScript_GulpMissileNoDmgGulping:
 	handleformchange BS_TARGET, 0
@@ -8552,14 +8544,14 @@ BattleScript_IntimidateLoop:
 	jumpiftargetally BattleScript_IntimidateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_IntimidateLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_IntimidateLoopIncrement
-	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_HIGH_STRENGTH, BattleScript_IntimidatePrevented
 .if B_UPDATED_INTIMIDATE >= GEN_8
 	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_IntimidatePrevented
 .endif
-	jumpifability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_IntimidateInReverse
+	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_IntimidateInReverse
 BattleScript_IntimidateEffect:
 	copybyte sBATTLER, gBattlerAttacker
 	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_IntimidateLoopIncrement
@@ -10103,7 +10095,7 @@ BattleScript_TryFaint:
 
 BattleScript_Pickpocket::
 	call BattleScript_AbilityPopUp
-	jumpifability BS_ATTACKER, ABILITY_STICKY_HOLD, BattleScript_PickpocketPrevented
+	jumpifability BS_ATTACKER, ABILITY_COLLECTOR, BattleScript_PickpocketPrevented
 	swapattackerwithtarget
 	call BattleScript_ItemSteal
 	swapattackerwithtarget
@@ -10131,7 +10123,7 @@ BattleScript_RedCardActivates::
 	waitmessage B_WAIT_TIME_LONG
 	swapattackerwithtarget
 	jumpifstatus3 BS_EFFECT_BATTLER, STATUS3_ROOTED, BattleScript_RedCardIngrain
-	jumpifability BS_EFFECT_BATTLER, ABILITY_SUCTION_CUPS, BattleScript_RedCardSuctionCups
+	jumpifability BS_EFFECT_BATTLER, ABILITY_GATE_KEEPER, BattleScript_RedCardSuctionCups
 	setbyte sSWITCH_CASE, B_SWITCH_RED_CARD
 	forcerandomswitch BattleScript_RedCardEnd
 	@ changes the current battle script. the rest happens in BattleScript_RoarSuccessSwitch_Ret, if switch is successful
@@ -10193,16 +10185,6 @@ BattleScript_DarkTypePreventsPrankster::
 	printstring STRINGID_ITDOESNTAFFECT
 	waitmessage B_WAIT_TIME_LONG
 	orhalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
-	goto BattleScript_MoveEnd
-
-BattleScript_WellBakedBodyActivates::
-	attackstring
-	ppreduce
-	pause B_WAIT_TIME_SHORT
-	showabilitypopup BS_TARGET
-	orhalfword gMoveResultFlags, MOVE_RESULT_NO_EFFECT
-	modifybattlerstatstage BS_TARGET, STAT_DEF, INCREASE, 1, BattleScript_WellBakedBodyEnd, ANIM_ON
-BattleScript_WellBakedBodyEnd:
 	goto BattleScript_MoveEnd
 
 BattleScript_WindRiderActivatesMoveEnd::

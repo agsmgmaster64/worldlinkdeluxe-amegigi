@@ -1832,7 +1832,7 @@ static bool8 Fishing_CheckForBite(struct Task *task)
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
             u16 ability = GetMonAbility(&gPlayerParty[0]);
-            if (ability == ABILITY_SUCTION_CUPS || ability  == ABILITY_STICKY_HOLD)
+            if (ability == ABILITY_GATE_KEEPER || ability  == ABILITY_COLLECTOR)
             {
                 if (Random() % 100 > 14)
                     bite = TRUE;

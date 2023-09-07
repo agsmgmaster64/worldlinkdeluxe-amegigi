@@ -36,14 +36,14 @@ SINGLE_BATTLE_TEST("Corrosive Gas doesn't destroy the item of a Pokemon with the
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_MUK) {Item(ITEM_POISON_BARB); Ability(ABILITY_STICKY_HOLD); }
+        OPPONENT(SPECIES_MUK) {Item(ITEM_POISON_BARB); Ability(ABILITY_COLLECTOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
     } SCENE {
         MESSAGE("Wobbuffet used CorrosiveGas!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CORROSIVE_GAS, player);
         NOT MESSAGE("Wobbuffet corroded Foe Wobbuffet's Potion!");
-        ABILITY_POPUP(opponent, ABILITY_STICKY_HOLD);
+        ABILITY_POPUP(opponent, ABILITY_COLLECTOR);
         MESSAGE("Foe Muk's Sticky Hold made CorrosiveGas ineffective!");
     } THEN {
         EXPECT_EQ(opponent->item, ITEM_POISON_BARB);

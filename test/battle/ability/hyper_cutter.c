@@ -7,9 +7,9 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate")
     s16 turnTwoHit;
 
     GIVEN {
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); };
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }
@@ -18,7 +18,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate")
         HP_BAR(player, captureDamage: &turnOneHit);
         ABILITY_POPUP(player, ABILITY_INTIMIDATE);
         NONE_OF { ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player); }
-        ABILITY_POPUP(opponent, ABILITY_HYPER_CUTTER);
+        ABILITY_POPUP(opponent, ABILITY_HIGH_STRENGTH);
         MESSAGE("Foe Krabby's Attack was not lowered!");
         HP_BAR(player, captureDamage: &turnTwoHit);
     } THEN {

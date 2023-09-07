@@ -445,7 +445,6 @@ extern const u8 BattleScript_TargetAbilityStatRaiseRet[];
 extern const u8 BattleScript_DoubleShockRemoveType[];
 extern const u8 BattleScript_SeedSowerActivates[];
 extern const u8 BattleScript_AngerShellActivates[];
-extern const u8 BattleScript_WellBakedBodyActivates[];
 extern const u8 BattleScript_WindRiderActivatesMoveEnd[];
 extern const u8 BattleScript_WindPowerActivates[];
 extern const u8 BattleScript_WindPowerActivatesEnd2[];

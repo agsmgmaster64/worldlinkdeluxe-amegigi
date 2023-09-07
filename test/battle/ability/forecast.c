@@ -280,7 +280,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal under Air Lock")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");
         // back to normal
-        ABILITY_POPUP(opponent, ABILITY_AIR_LOCK);
+        ABILITY_POPUP(opponent, ABILITY_HISOUTEN);
         ABILITY_POPUP(player, ABILITY_FORECAST);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");

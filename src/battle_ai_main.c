@@ -464,7 +464,7 @@ static u8 ChooseMoveOrAction_Singles(void)
 
         // Consider switching if your mon with truant is bodied by Protect spam.
         // Or is using a double turn semi invulnerable move(such as Fly) and is faster.
-        if (GetBattlerAbility(sBattler_AI) == ABILITY_TRUANT
+        if (GetBattlerAbility(sBattler_AI) == ABILITY_FRETFUL
             && IsTruantMonVulnerable(sBattler_AI, gBattlerTarget)
             && gDisableStructs[sBattler_AI].truantCounter
             && gBattleMons[sBattler_AI].hp >= gBattleMons[sBattler_AI].maxHP / 2)
@@ -770,7 +770,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 if (moveType == TYPE_FIRE)
                     RETURN_SCORE_MINUS(20);
                 break;
-            case ABILITY_WONDER_GUARD:
+            case ABILITY_PLAY_GHOST:
                 if (effectiveness < AI_EFFECTIVENESS_x2)
                     return 0;
                 break;
@@ -820,13 +820,13 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 if (IsStatLoweringMoveEffect(moveEffect))
                     RETURN_SCORE_MINUS(20);
                 break;
-            case ABILITY_CLEAR_BODY:
+            case ABILITY_HAKUREI_MIKO:
             case ABILITY_FULL_METAL_BODY:
-            case ABILITY_WHITE_SMOKE:
+            case ABILITY_MAGIC_BARRIER:
                 if (IsStatLoweringMoveEffect(moveEffect))
                     RETURN_SCORE_MINUS(10);
                 break;
-            case ABILITY_HYPER_CUTTER:
+            case ABILITY_HIGH_STRENGTH:
                 if ((moveEffect == EFFECT_ATTACK_DOWN ||  moveEffect == EFFECT_ATTACK_DOWN_2)
                   && move != MOVE_PLAY_NICE && move != MOVE_NOBLE_ROAR && move != MOVE_TEARFUL_LOOK && move != MOVE_VENOM_DRENCH)
                     RETURN_SCORE_MINUS(10);
@@ -1227,7 +1227,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_ATTACK_DOWN_2:
             if (!ShouldLowerStat(battlerDef, AI_DATA->abilities[battlerDef], STAT_ATK)) //|| !HasMoveWithSplit(battlerDef, SPLIT_PHYSICAL))
                 score -= 10;
-            else if (AI_DATA->abilities[battlerDef] == ABILITY_HYPER_CUTTER)
+            else if (AI_DATA->abilities[battlerDef] == ABILITY_HIGH_STRENGTH)
                 score -= 10;
             break;
         case EFFECT_DEFENSE_DOWN:
@@ -1333,7 +1333,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         //case EFFECT_ENDEAVOR:
         case EFFECT_LOW_KICK:
             // AI_CBM_HighRiskForDamage
-            if (AI_DATA->abilities[battlerDef] == ABILITY_WONDER_GUARD && effectiveness < AI_EFFECTIVENESS_x2)
+            if (AI_DATA->abilities[battlerDef] == ABILITY_PLAY_GHOST && effectiveness < AI_EFFECTIVENESS_x2)
                 score -= 10;
             break;
         case EFFECT_COUNTER:
@@ -1348,7 +1348,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_ROAR:
             if (CountUsablePartyMons(battlerDef) == 0)
                 score -= 10;
-            else if (AI_DATA->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+            else if (AI_DATA->abilities[battlerDef] == ABILITY_GATE_KEEPER)
                 score -= 10;
             break;
         case EFFECT_TOXIC_THREAD:
@@ -1418,7 +1418,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
              || IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE)
              || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
-            else if (AI_DATA->abilities[battlerDef] == ABILITY_LIQUID_OOZE)
+            else if (AI_DATA->abilities[battlerDef] == ABILITY_STRANGE_MIST)
                 score -= 3;
             break;
         case EFFECT_DISABLE:
@@ -1713,7 +1713,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_TRICK:
         case EFFECT_KNOCK_OFF:
-            if (AI_DATA->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+            if (AI_DATA->abilities[battlerDef] == ABILITY_COLLECTOR)
                 score -= 10;
             break;
         case EFFECT_INGRAIN:
@@ -1765,7 +1765,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_ABSORB:
-            if (AI_DATA->abilities[battlerDef] == ABILITY_LIQUID_OOZE)
+            if (AI_DATA->abilities[battlerDef] == ABILITY_STRANGE_MIST)
                 score -= 6;
             break;
         case EFFECT_STRENGTH_SAP:
@@ -1896,9 +1896,9 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 6;
             break;
         case EFFECT_RECHARGE:
-            if (AI_DATA->abilities[battlerDef] == ABILITY_WONDER_GUARD && effectiveness < AI_EFFECTIVENESS_x2)
+            if (AI_DATA->abilities[battlerDef] == ABILITY_PLAY_GHOST && effectiveness < AI_EFFECTIVENESS_x2)
                 score -= 10;
-            else if (AI_DATA->abilities[battlerAtk] != ABILITY_TRUANT
+            else if (AI_DATA->abilities[battlerAtk] != ABILITY_FRETFUL
               && !CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
                 score -= 2;
             break;
@@ -1937,7 +1937,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_LASER_FOCUS:
             if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS)
                 score -= 10;
-            else if (AI_DATA->abilities[battlerDef] == ABILITY_SHELL_ARMOR || AI_DATA->abilities[battlerDef] == ABILITY_BATTLE_ARMOR)
+            else if (AI_DATA->abilities[battlerDef] == ABILITY_SHELL_ARMOR || AI_DATA->abilities[battlerDef] == ABILITY_GUARD_ARMOR)
                 score -= 8;
             break;
         case EFFECT_SKETCH:
@@ -2993,11 +2993,11 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_SKILL_SWAP:
                 if (AI_DATA->abilities[battlerAtk] != AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] && !attackerHasBadAbility)
                 {
-                    if (AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_TRUANT)
+                    if (AI_DATA->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_FRETFUL)
                     {
                         RETURN_SCORE_PLUS(10);
                     }
-                    else if (AI_DATA->abilities[battlerAtk] == ABILITY_COMPOUND_EYES
+                    else if (AI_DATA->abilities[battlerAtk] == ABILITY_FOCUS
                      && HasMoveWithLowAccuracy(battlerAtkPartner, FOE(battlerAtkPartner), 90, TRUE, atkPartnerAbility, AI_DATA->abilities[FOE(battlerAtkPartner)], atkPartnerHoldEffect, AI_DATA->holdEffects[FOE(battlerAtkPartner)]))
                     {
                         RETURN_SCORE_PLUS(3);
@@ -3025,7 +3025,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 }
                 break;
             case EFFECT_SOAK:
-                if (atkPartnerAbility == ABILITY_WONDER_GUARD
+                if (atkPartnerAbility == ABILITY_PLAY_GHOST
                  && (gBattleMons[battlerAtkPartner].type1 != TYPE_WATER
                  || gBattleMons[battlerAtkPartner].type2 != TYPE_WATER
                  || gBattleMons[battlerAtkPartner].type3 != TYPE_WATER))
@@ -3076,7 +3076,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         switch (effect)
         {
         case EFFECT_SKILL_SWAP:
-            if (AI_DATA->abilities[battlerAtk] == ABILITY_TRUANT)
+            if (AI_DATA->abilities[battlerAtk] == ABILITY_FRETFUL)
                 score += 5;
             else if (IsAbilityOfRating(AI_DATA->abilities[battlerAtk], 0) || IsAbilityOfRating(AI_DATA->abilities[battlerDef], 10))
                 score += 2; // we want to transfer our bad ability or take their awesome ability
@@ -3203,6 +3203,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         switch (AI_DATA->abilities[battlerAtk])
         {
         case ABILITY_GUTS:
+        case ABILITY_UNWAVERING:
             break;
         case ABILITY_NATURAL_CURE:
             if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_SMART_SWITCHING
@@ -3222,6 +3223,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         switch (AI_DATA->abilities[battlerAtk])
         {
         case ABILITY_GUTS:
+        case ABILITY_UNWAVERING:
             break;
         case ABILITY_NATURAL_CURE:
             if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_SMART_SWITCHING
@@ -3596,7 +3598,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               || AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_STATUS
               || HasMoveEffect(EFFECT_SLEEP_TALK, battlerAtk)
               || HasMoveEffect(EFFECT_SNORE, battlerAtk)
-              || AI_DATA->abilities[battlerAtk] == ABILITY_SHED_SKIN
+              || AI_DATA->abilities[battlerAtk] == ABILITY_MAINTENANCE
               || AI_DATA->abilities[battlerAtk] == ABILITY_EARLY_BIRD
               || (gBattleWeather & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && AI_DATA->abilities[battlerAtk] == ABILITY_HYDRATION && AI_DATA->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
             {
@@ -3697,7 +3699,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE)
           || gStatuses3[battlerDef] & STATUS3_LEECHSEED
           || HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
-          || AI_DATA->abilities[battlerDef] == ABILITY_LIQUID_OOZE
+          || AI_DATA->abilities[battlerDef] == ABILITY_STRANGE_MIST
           || AI_DATA->abilities[battlerDef] == ABILITY_MAGIC_GUARD)
             break;
         score += 3;
@@ -3794,7 +3796,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_LOCK_ON:
         if (HasMoveEffect(battlerAtk, EFFECT_OHKO))
             score += 3;
-        else if (AI_DATA->abilities[battlerAtk] == ABILITY_COMPOUND_EYES && HasMoveWithLowAccuracy(battlerAtk, battlerDef, 80, TRUE, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef], AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]))
+        else if (AI_DATA->abilities[battlerAtk] == ABILITY_FOCUS && HasMoveWithLowAccuracy(battlerAtk, battlerDef, 80, TRUE, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef], AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]))
             score += 3;
         else if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 85, TRUE, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef], AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]))
             score += 3;
@@ -3832,7 +3834,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               && CanBattlerGetOrLoseItem(battlerDef, AI_DATA->items[battlerDef])
               && CanBattlerGetOrLoseItem(battlerAtk, AI_DATA->items[battlerDef])
               && !HasMoveEffect(battlerAtk, EFFECT_ACROBATICS)
-              && AI_DATA->abilities[battlerDef] != ABILITY_STICKY_HOLD)
+              && AI_DATA->abilities[battlerDef] != ABILITY_COLLECTOR)
             {
                 switch (AI_DATA->holdEffects[battlerDef])
                 {
@@ -4612,13 +4614,13 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_BUG_BITE:   // And pluck
-        if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || AI_DATA->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+        if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || AI_DATA->abilities[battlerDef] == ABILITY_COLLECTOR)
             break;
         else if (ItemId_GetPocket(AI_DATA->items[battlerDef]) == POCKET_BERRIES)
             score += 3;
         break;
     case EFFECT_INCINERATE:
-        if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || AI_DATA->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+        if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || AI_DATA->abilities[battlerDef] == ABILITY_COLLECTOR)
             break;
         else if (ItemId_GetPocket(AI_DATA->items[battlerDef]) == POCKET_BERRIES || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_GEMS)
             score += 3;
@@ -4748,7 +4750,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 2; // Get some super effective moves
         break;
     case EFFECT_THIRD_TYPE:
-        if (AI_DATA->abilities[battlerDef] == ABILITY_WONDER_GUARD)
+        if (AI_DATA->abilities[battlerDef] == ABILITY_PLAY_GHOST)
             score += 2; // Give target more weaknesses
         break;
     case EFFECT_ELECTRIFY:

@@ -266,7 +266,7 @@ DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cup
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_OCTILLERY) { Ability(ABILITY_SUCTION_CUPS); }
+        OPPONENT(SPECIES_OCTILLERY) { Ability(ABILITY_GATE_KEEPER); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_UNOWN);
     } WHEN {

@@ -1382,20 +1382,9 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
         *state = AMB_CRY_WAIT;
         break;
     case AMB_CRY_RESET:
-        divBy = 1;
-        monsCount = CalculatePlayerPartyCount();
-        for (i = 0; i < monsCount; i++)
-        {
-            if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG)
-                && GetMonAbility(&gPlayerParty[0]) == ABILITY_SWARM)
-            {
-                divBy = 2;
-                break;
-            }
-        }
         // Ambient cries after the first one take between 1200-2399 frames (~20-40 seconds)
         // If the player has a pokemon with the ability Swarm in their party, the time is halved to 600-1199 frames (~10-20 seconds)
-        *delayCounter = ((Random() % 1200) + 1200) / divBy;
+        *delayCounter = (Random() % 1200) + 1200;
         *state = AMB_CRY_WAIT;
         break;
     case AMB_CRY_WAIT:

@@ -88,7 +88,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
 
-    if (GetBattlerAbility(GetBattlerAtPosition(opposingPosition)) != ABILITY_WONDER_GUARD)
+    if (GetBattlerAbility(GetBattlerAtPosition(opposingPosition)) != ABILITY_PLAY_GHOST)
         return FALSE;
 
     // Check if Pokemon has a super effective move.
@@ -305,7 +305,7 @@ static bool8 ShouldSwitchIfGameStatePrompt(void)
 
             //Checks to see if active Pokemon can do something against sleep
             if ((monAbility == ABILITY_NATURAL_CURE
-                || monAbility == ABILITY_SHED_SKIN
+                || monAbility == ABILITY_MAINTENANCE
                 || monAbility == ABILITY_EARLY_BIRD)
                 || holdEffect == (HOLD_EFFECT_CURE_SLP | HOLD_EFFECT_CURE_STATUS)
                 || HasMove(gActiveBattler, MOVE_SLEEP_TALK)
@@ -941,7 +941,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
             || gBattlerPartyIndexes[battlerIn2] == i
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn1)
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn2)
-            || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.)
+            || (GetMonAbility(&party[i]) == ABILITY_FRETFUL && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.)
         {
             invalidMons |= gBitTable[i];
         }
