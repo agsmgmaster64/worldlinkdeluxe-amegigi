@@ -3051,4 +3051,8 @@ extern const u8 gText_PlayedPokeFlute[];
 extern const u8 gText_PlayedPokeFluteCatchy[];
 extern const u8 gText_PokeFluteAwakenedMon[];
 
+// Exp. Share
+extern const u8 gText_ExpShareOn[];
+extern const u8 gText_ExpShareOff[];
+
 #endif // GUARD_STRINGS_H
