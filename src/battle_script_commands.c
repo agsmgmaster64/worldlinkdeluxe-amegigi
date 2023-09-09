@@ -16106,10 +16106,7 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
     u16 item = GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_HELD_ITEM);
     u8 holdEffect;
 
-    if (item == ITEM_ENIGMA_BERRY_E_READER)
-        holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
-    else
-        holdEffect = ItemId_GetHoldEffect(item);
+    holdEffect = ItemId_GetHoldEffect(item);
 
     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
         *expAmount = (*expAmount * 150) / 100;

@@ -10182,10 +10182,7 @@ bool32 CanUltraBurst(u8 battler)
     // Check if there is an entry in the evolution table for Ultra Burst.
     if (GetBattleFormChangeTargetSpecies(battler, FORM_CHANGE_BATTLE_ULTRA_BURST) != SPECIES_NONE)
     {
-        if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-            holdEffect = gEnigmaBerries[battler].holdEffect;
-        else
-            holdEffect = ItemId_GetHoldEffect(itemId);
+        holdEffect = ItemId_GetHoldEffect(itemId);
 
         // Can Ultra Burst via Z Crystal.
         if (holdEffect == HOLD_EFFECT_Z_CRYSTAL)
