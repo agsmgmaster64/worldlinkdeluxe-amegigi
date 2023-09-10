@@ -3918,3 +3918,8 @@ static const u8 sBerserkGene[] = _(
     "Sharply boosts\n"
     "Attack, but causes\n"
     "lasting confusion.");
+
+static const u8 sPokevialDesc[] = _(
+    "Restores all\n"
+    "Puppets to full\n"
+    "health.");

@@ -184,6 +184,13 @@ const u8 gItemEffect_SacredAsh[7] = {
     [6] = ITEM6_HEAL_HP_FULL,
 };
 
+const u8 gItemEffect_Pokevial[7] = {
+    [0] = ITEM0_POKEVIAL,
+    [3] = ITEM3_STATUS_ALL,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM4_HEAL_PP,
+    [6] = ITEM6_HEAL_HP_FULL | ITEM6_HEAL_PP_FULL,
+};
+
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 5, /* Friendship change, low */  \
     [(i) + 1] = 3, /* Friendship change, mid */  \
@@ -521,6 +528,9 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_BLUE_FLUTE]         = gItemEffect_BlueFlute,
     [ITEM_YELLOW_FLUTE]       = gItemEffect_YellowFlute,
     [ITEM_RED_FLUTE]          = gItemEffect_RedFlute,
+
+    // Pokevial
+    [ITEM_TOHOVIAL]           = gItemEffect_Pokevial,
 
     // X Items
     [ITEM_X_ATTACK]           = gItemEffect_XAttack,

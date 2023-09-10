@@ -61,6 +61,7 @@
 #include "constants/species.h"
 #include "constants/weather.h"
 #include "save.h"
+#include "pokevial.h"
 
 #if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
@@ -92,6 +93,7 @@ enum { // Util
     DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES,
     DEBUG_UTIL_MENU_ITEM_CHEAT,
     DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG,
+    DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE,
 };
 enum { // Scripts
     DEBUG_UTIL_MENU_ITEM_SCRIPT_1,
@@ -203,6 +205,7 @@ enum { //Sound
 #define DEBUG_MENU_WIDTH_FLAGVAR 4
 #define DEBUG_MENU_HEIGHT_FLAGVAR 2
 
+#define DEBUG_NUMBER_DIGITS_VIAL 2
 #define DEBUG_NUMBER_DIGITS_FLAGS 4
 #define DEBUG_NUMBER_DIGITS_VARIABLES 5
 #define DEBUG_NUMBER_DIGITS_VARIABLE_VALUE 5
@@ -316,6 +319,9 @@ static void DebugAction_Util_Trainer_Id(u8 taskId);
 static void DebugAction_Util_Clear_Boxes(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 static void DebugAction_Util_HatchAnEgg(u8 taskId);
+static void DebugAction_Util_Vial_Size_Dose(u8 taskId);
+static void DebugAction_Util_Vial_Size_SelectAmount(u8 taskId);
+static void DebugAction_Util_Vial_Dose_SelectAmount(u8 taskId);
 
 static void DebugAction_FlagsVars_Flags(u8 taskId);
 static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
@@ -442,6 +448,9 @@ static const u8 sDebugText_Util_Trainer_Id[] =              _("New Trainer Id");
 static const u8 sDebugText_Util_Clear_Boxes[] =             _("Clear Storage Boxes");
 static const u8 sDebugText_Util_CheatStart[] =              _("CHEAT Start");
 static const u8 sDebugText_Util_HatchAnEgg[] =              _("Hatch an Egg");
+static const u8 sDebugText_Util_SetVialSizeDose[] =         _("Set Vial Size & Dose…{CLEAR_TO 110}{RIGHT_ARROW}");
+static const u8 sDebugText_Util_VialSizeChoose[] =          _("Vial Size:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}");
+static const u8 sDebugText_Util_VialDoseChoose[] =          _("Vial Doses:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}");
 // Flags/Vars Menu
 static const u8 sDebugText_FlagsVars_Flags[] =                  _("Set Flag XYZ…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_FlagsVars_Flag[] =                   _("Flag: {STR_VAR_1}{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}\n{STR_VAR_3}");
@@ -604,6 +613,7 @@ static const struct ListMenuItem sDebugMenu_Items_Utilities[] =
     [DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES]      = {sDebugText_Util_Clear_Boxes,      DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES},
     [DEBUG_UTIL_MENU_ITEM_CHEAT]            = {sDebugText_Util_CheatStart,       DEBUG_UTIL_MENU_ITEM_CHEAT},
     [DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG]     = {sDebugText_Util_HatchAnEgg,       DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG},
+    [DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE] = {sDebugText_Util_SetVialSizeDose,  DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE},
 };
 static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
 {
@@ -737,6 +747,7 @@ static void (*const sDebugMenu_Actions_Utilities[])(u8) =
     [DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES]      = DebugAction_Util_Clear_Boxes,
     [DEBUG_UTIL_MENU_ITEM_CHEAT]            = DebugAction_Util_CheatStart,
     [DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG]     = DebugAction_Util_HatchAnEgg,
+    [DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE] = DebugAction_Util_Vial_Size_Dose,
 };
 static void (*const sDebugMenu_Actions_Scripts[])(u8) =
 {
@@ -1991,6 +2002,161 @@ static void DebugAction_Util_HatchAnEgg(u8 taskId)
     Debug_DestroyMenu_Full_Script(taskId, Debug_HatchAnEgg);
 }
 
+#define ITEM_TAG 0xFDF3
+static void DebugAction_Util_Vial_Size_Dose(u8 taskId)
+{
+    u8 windowId;
+
+    ClearStdWindowAndFrame(gTasks[taskId].data[1], TRUE);
+    RemoveWindow(gTasks[taskId].data[1]);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, FALSE);
+
+    CopyWindowToVram(windowId, 3);
+
+    //Display initial Size
+    StringCopy(gStringVar2, gText_DigitIndicator[0]);
+    ConvertIntToDecimalStringN(gStringVar1, 1, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VIAL);
+    StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+    StringExpandPlaceholders(gStringVar4, sDebugText_Util_VialSizeChoose);
+    AddTextPrinterParameterized(windowId, 1, gStringVar4, 1, 1, 0, NULL);
+
+    gTasks[taskId].func = DebugAction_Util_Vial_Size_SelectAmount;
+    gTasks[taskId].data[2] = windowId;
+    gTasks[taskId].data[3] = 1;            //Current Size
+    gTasks[taskId].data[4] = 0;            //Digit Selected
+    gTasks[taskId].data[6] = AddItemIconSprite(ITEM_TAG, ITEM_TAG, ITEM_TOHOVIAL);
+    gSprites[gTasks[taskId].data[6]].x2 = DEBUG_NUMBER_ICON_X+10;
+    gSprites[gTasks[taskId].data[6]].y2 = DEBUG_NUMBER_ICON_Y+10;
+    gSprites[gTasks[taskId].data[6]].oam.priority = 0;
+}
+static void DebugAction_Util_Vial_Size_SelectAmount(u8 taskId)
+{
+    if (JOY_NEW(DPAD_ANY))
+    {
+        PlaySE(SE_SELECT);
+
+        if (JOY_NEW(DPAD_UP))
+        {
+            gTasks[taskId].data[3] += sPowersOfTen[gTasks[taskId].data[4]];
+            if (gTasks[taskId].data[3] > VIAL_MAX_SIZE)
+                gTasks[taskId].data[3] = VIAL_MAX_SIZE;
+        }
+        if (JOY_NEW(DPAD_DOWN))
+        {
+            gTasks[taskId].data[3] -= sPowersOfTen[gTasks[taskId].data[4]];
+            if (gTasks[taskId].data[3] < VIAL_MIN_SIZE)
+                gTasks[taskId].data[3] = VIAL_MIN_SIZE;
+        }
+        if (JOY_NEW(DPAD_LEFT))
+        {
+            if (gTasks[taskId].data[4] > 0)
+                gTasks[taskId].data[4] -= 1;
+        }
+        if (JOY_NEW(DPAD_RIGHT))
+        {
+            if (gTasks[taskId].data[4] < DEBUG_NUMBER_DIGITS_VIAL - 1)
+                gTasks[taskId].data[4] += 1;
+        }
+
+        StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].data[4]]);
+        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VIAL);
+        StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+        StringExpandPlaceholders(gStringVar4, sDebugText_Util_VialSizeChoose);
+        AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
+
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        gTasks[taskId].data[5] = gTasks[taskId].data[3];
+        gTasks[taskId].data[3] = 0;
+        gTasks[taskId].data[4] = 0;
+
+        StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].data[4]]);
+        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VIAL);
+        StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+        StringExpandPlaceholders(gStringVar4, sDebugText_Util_VialDoseChoose);
+        AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
+
+        gTasks[taskId].func = DebugAction_Util_Vial_Dose_SelectAmount;
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        FreeSpriteTilesByTag(ITEM_TAG);                         //Destroy item icon
+        FreeSpritePaletteByTag(ITEM_TAG);                       //Destroy item icon
+        FreeSpriteOamMatrix(&gSprites[gTasks[taskId].data[6]]); //Destroy item icon
+        DestroySprite(&gSprites[gTasks[taskId].data[6]]);       //Destroy item icon
+
+        PlaySE(SE_SELECT);
+        DebugAction_DestroyExtraWindow(taskId);
+    }
+}
+static void DebugAction_Util_Vial_Dose_SelectAmount(u8 taskId)
+{
+    u32 size = gTasks[taskId].data[5];
+
+    if (JOY_NEW(DPAD_ANY))
+    {
+        PlaySE(SE_SELECT);
+
+        if (JOY_NEW(DPAD_UP))
+        {
+            gTasks[taskId].data[3] += sPowersOfTen[gTasks[taskId].data[4]];
+            if (gTasks[taskId].data[3] > size)
+                gTasks[taskId].data[3] = size;
+        }
+        if (JOY_NEW(DPAD_DOWN))
+        {
+            gTasks[taskId].data[3] -= sPowersOfTen[gTasks[taskId].data[4]];
+            if (gTasks[taskId].data[3] < 0)
+                gTasks[taskId].data[3] = 0;
+        }
+        if (JOY_NEW(DPAD_LEFT))
+        {
+            if (gTasks[taskId].data[4] > 0)
+                gTasks[taskId].data[4] -= 1;
+        }
+        if (JOY_NEW(DPAD_RIGHT))
+        {
+            if (gTasks[taskId].data[4] < DEBUG_NUMBER_DIGITS_VIAL - 1)
+                gTasks[taskId].data[4] += 1;
+        }
+
+        StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].data[4]]);
+        ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].data[3], STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_VIAL);
+        StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
+        StringExpandPlaceholders(gStringVar4, sDebugText_Util_VialDoseChoose);
+        AddTextPrinterParameterized(gTasks[taskId].data[2], 1, gStringVar4, 1, 1, 0, NULL);
+    }
+
+    if (JOY_NEW(A_BUTTON))
+    {
+        FreeSpriteTilesByTag(ITEM_TAG);                         //Destroy item icon
+        FreeSpritePaletteByTag(ITEM_TAG);                       //Destroy item icon
+        FreeSpriteOamMatrix(&gSprites[gTasks[taskId].data[6]]); //Destroy item icon
+        DestroySprite(&gSprites[gTasks[taskId].data[6]]);       //Destroy item icon
+
+        PlaySE(MUS_OBTAIN_ITEM);
+        PokevialSizeSet(size);
+        PokevialDoseSet(gTasks[taskId].data[3]);
+        DebugAction_DestroyExtraWindow(taskId);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        FreeSpriteTilesByTag(ITEM_TAG);                         //Destroy item icon
+        FreeSpritePaletteByTag(ITEM_TAG);                       //Destroy item icon
+        FreeSpriteOamMatrix(&gSprites[gTasks[taskId].data[6]]); //Destroy item icon
+        DestroySprite(&gSprites[gTasks[taskId].data[6]]);       //Destroy item icon
+
+        PlaySE(SE_SELECT);
+        DebugAction_DestroyExtraWindow(taskId);
+    }
+}
+
 // *******************************
 // Actions Scripts
 static void DebugAction_Util_Script_1(u8 taskId)
@@ -2510,7 +2676,6 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
 
 // *******************************
 // Actions Give
-#define ITEM_TAG 0xFDF3
 static void DebugAction_Give_Item(u8 taskId)
 {
     u8 windowId;

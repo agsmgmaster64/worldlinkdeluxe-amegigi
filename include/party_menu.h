@@ -98,5 +98,7 @@ void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void ItemUseCB_Mints(u8 taskId, TaskFunc task);
+void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task);
+void InitPartyMenuForPokevialFromField(u8 taskId);
 
 #endif // GUARD_PARTY_MENU_H

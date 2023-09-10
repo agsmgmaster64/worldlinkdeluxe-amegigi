@@ -23,6 +23,7 @@
 #include "tv.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "pokevial.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -33,6 +34,9 @@ void HealPlayerParty(void)
     u8 ppBonuses;
     u8 arg[4];
 
+    // anytime this special is called, the Pokevial is always refilled
+    // cba to make a toggle for it
+    PokevialRefill();
     // restore HP.
     for(i = 0; i < gPlayerPartyCount; i++)
     {

@@ -10463,4 +10463,17 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
     },
+
+    [ITEM_TOHOVIAL] =
+    {
+        .name = _("TohoVial"),
+        .itemId = ITEM_TOHOVIAL,
+        .price = 0,
+        .description = sPokevialDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
+        .flingPower = 10,
+    },
 };

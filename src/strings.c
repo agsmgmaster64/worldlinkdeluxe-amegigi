@@ -1755,3 +1755,7 @@ const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTI
 const u8 gText_PlayedPokeFluteCatchy[] = _("Played the Toho Flute.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 const u8 gText_PlayedPokeFlute[] = _("Played the Toho Flute.");
 const u8 gText_PokeFluteAwakenedMon[] = _("The Toho Flute awakened sleeping\nPuppets.{PAUSE_UNTIL_PRESS}");
+const u8 gText_PokevialHasOneDose[] =_("The {STR_VAR_1} has 1 dose remaining.\nUse the {STR_VAR_1}?");
+const u8 gText_PokevialHasDoses[] =_("The {STR_VAR_1} has {STR_VAR_2} doses remaining.\nUse the {STR_VAR_1}?");
+const u8 gText_PokevialIsEmpty[] =_("The {STR_VAR_1} is empty!\nRefill it by healing at a {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+const u8 gText_YourPkmnWereRestored[] =_("Your POKéMON were restored to full health.{PAUSE_UNTIL_PRESS}");
