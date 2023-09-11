@@ -652,19 +652,19 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_SCRIPTED_LOSS   0x264 // 
-#define FLAG_NO_BAG_USE      0x265 // 
-#define FLAG_NO_CATCHING     0x266 // 
-#define FLAG_OVERRIDE_MUSIC  0x267 // 
-#define FLAG_PARTY_MOVES     0x268 // 
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_SCRIPTED_LOSS   0x264
+#define FLAG_NO_BAG_USE      0x265
+#define FLAG_NO_CATCHING     0x266
+#define FLAG_OVERRIDE_MUSIC  0x267
+#define FLAG_PARTY_MOVES     0x268
+#define FLAG_COLLISIONS_DISABLED  0x269
+#define FLAG_FORCED_WILD_DOUBLE  0x26A
+#define FLAG_SMART_WILD_AI  0x26B
+#define FLAG_PLAYER_AI  0x26C
+#define FLAG_INVERSE_BATTLE  0x26D
+#define FLAG_TRAINERS_BLIND  0x26E
+#define FLAG_FORCED_SHINY  0x26F
+#define FLAG_SHINY_LOCK  0x270
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
