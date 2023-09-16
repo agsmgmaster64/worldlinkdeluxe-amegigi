@@ -182,6 +182,8 @@ enum { // Give Fill
     DEBUG_FILL_MENU_ITEM_POCKET_TMHM,
     DEBUG_FILL_MENU_ITEM_POCKET_BERRIES,
     DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS,
+    DEBUG_FILL_MENU_ITEM_POCKET_MEDICINE,
+    DEBUG_FILL_MENU_ITEM_POCKET_BATTLE_ITEMS,
 };
 enum { //Sound
     DEBUG_SOUND_MENU_ITEM_SE,
@@ -371,6 +373,8 @@ static void DebugAction_Fill_PocketPokeBalls(u8 taskId);
 static void DebugAction_Fill_PocketTMHM(u8 taskId);
 static void DebugAction_Fill_PocketBerries(u8 taskId);
 static void DebugAction_Fill_PocketKeyItems(u8 taskId);
+static void DebugAction_Fill_PocketMedicine(u8 taskId);
+static void DebugAction_Fill_PocketBattleItems(u8 taskId);
 
 static void DebugAction_Sound_SE(u8 taskId);
 static void DebugAction_Sound_SE_SelectId(u8 taskId);
@@ -543,6 +547,8 @@ static const u8 sDebugText_Fill_PocketPokeBalls[] =_("Fill Pocket PokeBalls");
 static const u8 sDebugText_Fill_PocketTMHM[] =     _("Fill Pocket TMHM");
 static const u8 sDebugText_Fill_PocketBerries[] =  _("Fill Pocket Berries");
 static const u8 sDebugText_Fill_PocketKeyItems[] = _("Fill Pocket KeyItems");
+static const u8 sDebugText_Fill_PocketMedicine[] = _("Fill Pocket Medicine");
+static const u8 sDebugText_Fill_PocketBattleItems[] = _("Fill Pocket BattleItems");
 // Sound Mneu
 static const u8 sDebugText_Sound_SE[] =                 _("Effects…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Sound_SE_ID[] =              _("Sound Id: {STR_VAR_3}\n{STR_VAR_1}    \n{STR_VAR_2}");
@@ -709,6 +715,8 @@ static const struct ListMenuItem sDebugMenu_Items_Fill[] =
     [DEBUG_FILL_MENU_ITEM_POCKET_TMHM]      = {sDebugText_Fill_PocketTMHM,      DEBUG_FILL_MENU_ITEM_POCKET_TMHM},
     [DEBUG_FILL_MENU_ITEM_POCKET_BERRIES]   = {sDebugText_Fill_PocketBerries,   DEBUG_FILL_MENU_ITEM_POCKET_BERRIES},
     [DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS] = {sDebugText_Fill_PocketKeyItems,  DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS},
+    [DEBUG_FILL_MENU_ITEM_POCKET_MEDICINE] = {sDebugText_Fill_PocketMedicine,  DEBUG_FILL_MENU_ITEM_POCKET_MEDICINE},
+    [DEBUG_FILL_MENU_ITEM_POCKET_BATTLE_ITEMS] = {sDebugText_Fill_PocketBattleItems,  DEBUG_FILL_MENU_ITEM_POCKET_BATTLE_ITEMS},
 };
 static const struct ListMenuItem sDebugMenu_Items_Sound[] =
 {
@@ -800,6 +808,8 @@ static void (*const sDebugMenu_Actions_Fill[])(u8) =
     [DEBUG_FILL_MENU_ITEM_POCKET_TMHM]      = DebugAction_Fill_PocketTMHM,
     [DEBUG_FILL_MENU_ITEM_POCKET_BERRIES]   = DebugAction_Fill_PocketBerries,
     [DEBUG_FILL_MENU_ITEM_POCKET_KEY_ITEMS] = DebugAction_Fill_PocketKeyItems,
+    [DEBUG_FILL_MENU_ITEM_POCKET_MEDICINE] = DebugAction_Fill_PocketMedicine,
+    [DEBUG_FILL_MENU_ITEM_POCKET_BATTLE_ITEMS] = DebugAction_Fill_PocketBattleItems,
 };
 
 static void (*const sDebugMenu_Actions_Sound[])(u8) =
@@ -3762,6 +3772,26 @@ static void DebugAction_Fill_PocketKeyItems(u8 taskId)
     {
         if (ItemId_GetPocket(itemId) == POCKET_KEY_ITEMS && CheckBagHasSpace(itemId, 1))
             AddBagItem(itemId, 1);
+    }
+}
+static void DebugAction_Fill_PocketMedicine(u8 taskId)
+{
+    u16 itemId;
+
+    for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
+    {
+        if (ItemId_GetPocket(itemId) == POCKET_MEDICINE && CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
+            AddBagItem(itemId, MAX_BERRY_CAPACITY);
+    }
+}
+static void DebugAction_Fill_PocketBattleItems(u8 taskId)
+{
+    u16 itemId;
+
+    for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
+    {
+        if (ItemId_GetPocket(itemId) == POCKET_BATTLE_ITEMS && CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
+            AddBagItem(itemId, MAX_BERRY_CAPACITY);
     }
 }
 
