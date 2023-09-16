@@ -302,8 +302,15 @@
 #define EVO_ITEM_NIGHT                    39     // specified item is used on Pokémon, is night
 #define EVO_ITEM_DAY                      40     // specified item is used on Pokémon, is day
 #define EVO_ITEM_HOLD                     41     // Pokémon levels up, holds specified item
+#define EVO_ITEM_LEVEL                    42     // specified item is used on a Pokémon over the evo level in EVO_LEVEL
 
 #define EVOS_PER_MON 10
+
+#if I_SHARDS_REQUIRE_LEVEL == TRUE
+    #define EVO_SHARD EVO_ITEM_LEVEL
+#else
+    #define EVO_SHARD EVO_ITEM
+#endif
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0
