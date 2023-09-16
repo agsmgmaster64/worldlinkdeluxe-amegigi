@@ -667,13 +667,15 @@
 #define STRINGID_POKEFLUTECATCHY                      665
 #define STRINGID_POKEFLUTE                            666
 #define STRINGID_MONHEARINGFLUTEAWOKE                 667
-#define STRINGID_PLAYERWHITEDOUT                      668
-#define STRINGID_PKMNITEMMELTED                       669
-#define STRINGID_ULTRABURSTREACTING                   670
-#define STRINGID_ULTRABURSTCOMPLETED                  671
-#define STRINGID_TEAMGAINEDEXP                        672
+#define STRINGID_PKMNITEMMELTED                       668
+#define STRINGID_ULTRABURSTREACTING                   669
+#define STRINGID_ULTRABURSTCOMPLETED                  670
+#define STRINGID_TEAMGAINEDEXP                        671
+#define STRINGID_CURRENTMOVECANTSELECT                672
+#define STRINGID_TARGETISBEINGSALTCURED               673
+#define STRINGID_TARGETISHURTBYSALTCURE               674
 
-#define BATTLESTRINGS_COUNT                           673
+#define BATTLESTRINGS_COUNT                           672
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
