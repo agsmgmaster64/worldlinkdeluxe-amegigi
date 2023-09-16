@@ -5431,7 +5431,7 @@ void RunBattleScriptCommands(void)
 
 void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
 {
-    u32 moveType, ateType, attackerAbility;
+    u32 moveType, ateType, attackerAbility, multiPulseType;
     u16 holdEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
 
     if (move == MOVE_STRUGGLE)
@@ -5478,6 +5478,12 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
         if (holdEffect == gBattleMoves[move].argument)
             gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_2;
     }
+    else if (gBattleMoves[move].effect == EFFECT_MULTI_PULSE)
+    {
+        multiPulseType = GetTypeFromTypeBooster(holdEffect);
+        if (multiPulseType != NUMBER_OF_MON_TYPES)
+            gBattleStruct->dynamicMoveType = multiPulseType | F_DYNAMIC_TYPE_2;
+    }
     else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE)
     {
         if (gBattleMons[battlerAtk].type1 != TYPE_MYSTERY)
@@ -5519,8 +5525,10 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
     else if (gBattleMoves[move].type == TYPE_ILLUSION
              && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
+             && gBattleMoves[move].effect != EFFECT_MULTI_PULSE
              && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
+             && gBattleMoves[move].effect != EFFECT_TERRAIN_PULSE
              && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
@@ -5534,6 +5542,10 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
     else if (gBattleMoves[move].type != TYPE_ILLUSION
              && gBattleMoves[move].effect != EFFECT_HIDDEN_POWER
              && gBattleMoves[move].effect != EFFECT_WEATHER_BALL
+             && gBattleMoves[move].effect != EFFECT_MULTI_PULSE
+             && gBattleMoves[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
+             && gBattleMoves[move].effect != EFFECT_NATURAL_GIFT
+             && gBattleMoves[move].effect != EFFECT_TERRAIN_PULSE
              && attackerAbility == ABILITY_NORMALIZE)
     {
         gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_2;

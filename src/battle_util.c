@@ -1147,6 +1147,19 @@ static const uq4_12_t sTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON
 
 #undef X
 
+u8 GetTypeFromTypeBooster(u16 holdEffect)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sHoldEffectToType); i++)
+    {
+        if (holdEffect == sHoldEffectToType[i][0])
+        {
+            return sHoldEffectToType[i][1];
+        }
+    }
+    return NUMBER_OF_MON_TYPES;
+}
+
 // code
 u8 GetBattlerForBattleScript(u8 caseId)
 {

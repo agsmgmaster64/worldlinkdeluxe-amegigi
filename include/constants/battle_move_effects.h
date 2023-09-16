@@ -124,7 +124,7 @@
 #define EFFECT_PRESENT                      120
 #define EFFECT_FRUSTRATION                  121
 #define EFFECT_SAFEGUARD                    122
-#define EFFECT_UNUSED_125                   123
+#define EFFECT_MULTI_PULSE                  123
 #define EFFECT_MAGNITUDE                    124
 #define EFFECT_BATON_PASS                   125
 #define EFFECT_PURSUIT                      126
