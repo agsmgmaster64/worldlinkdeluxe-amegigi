@@ -9674,7 +9674,6 @@ const struct Item gItems[] =
     [ITEM_TOHOVIAL] =
     {
         .name = _("TohoVial"),
-        .itemId = ITEM_TOHOVIAL,
         .price = 0,
         .description = sPokevialDesc,
         .importance = 1,
