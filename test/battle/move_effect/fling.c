@@ -208,7 +208,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
 
     PARAMETRIZE {item = ITEM_FLAME_ORB; effect = EFFECT_WILL_O_WISP; }
     PARAMETRIZE {item = ITEM_TOXIC_ORB; effect = EFFECT_TOXIC; }
-    PARAMETRIZE {item = ITEM_POISON_BARB; effect = EFFECT_POISON; }
+    PARAMETRIZE {item = ITEM_NURSE_OUTFIT; effect = EFFECT_POISON; }
     PARAMETRIZE {item = ITEM_LIGHT_BALL; effect = EFFECT_PARALYZE; }
     PARAMETRIZE {item = ITEM_RAZOR_FANG; effect = EFFECT_FLINCH_HIT; }
     PARAMETRIZE {item = ITEM_KINGS_ROCK; effect = EFFECT_FLINCH_HIT; }

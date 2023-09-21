@@ -5187,7 +5187,7 @@ const struct Item gItems[] =
 
     [ITEM_BRIDAL_GOWN] =
     {
-        .name = _("Silk Scarf"),
+        .name = _("Bridal Gown"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_ILLUSION_POWER,
         .holdEffectParam = 20,
@@ -5200,7 +5200,7 @@ const struct Item gItems[] =
 
     [ITEM_GOTHIC_DRESS] =
     {
-        .name = _("Charcoal"),
+        .name = _("Gothic Dress"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_FIRE_POWER,
         .holdEffectParam = 20,
@@ -5211,9 +5211,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_MYSTIC_WATER] =
+    [ITEM_SWIMSUIT] =
     {
-        .name = _("Mystic Water"),
+        .name = _("Swimsuit"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_WATER_POWER,
         .holdEffectParam = 20,
@@ -5224,9 +5224,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_MAGNET] =
+    [ITEM_NINJA_SUIT] =
     {
-        .name = _("Magnet"),
+        .name = _("Ninja Suit"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_WIND_POWER,
         .holdEffectParam = 20,
@@ -5237,9 +5237,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_MIRACLE_SEED] =
+    [ITEM_CAMOUFLAGE] =
     {
-        .name = _("Miracle Seed"),
+        .name = _("Camouflage"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_NATURE_POWER,
         .holdEffectParam = 20,
@@ -5250,9 +5250,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_NEVER_MELT_ICE] =
+    [ITEM_THICK_FUR] =
     {
-        .name = _("Never-MeltIce"),
+        .name = _("Thick Fur"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_ICE_POWER,
         .holdEffectParam = 20,
@@ -5263,9 +5263,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_BLACK_BELT] =
+    [ITEM_CHINA_DRESS] =
     {
-        .name = _("Black Belt"),
+        .name = _("China Dress"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_DREAM_POWER,
         .holdEffectParam = 20,
@@ -5276,9 +5276,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_POISON_BARB] =
+    [ITEM_NURSE_OUTFIT] =
     {
-        .name = _("Poison Barb"),
+        .name = _("Nurse Outfit"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_MIASMA_POWER,
         .holdEffectParam = 20,
@@ -5289,9 +5289,9 @@ const struct Item gItems[] =
         .flingPower = 70,
     },
 
-    [ITEM_SOFT_SAND] =
+    [ITEM_GYM_SUIT] =
     {
-        .name = _("Soft Sand"),
+        .name = _("Gym Suit"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_EARTH_POWER,
         .holdEffectParam = 20,
@@ -5302,9 +5302,9 @@ const struct Item gItems[] =
         .flingPower = 10,
     },
 
-    [ITEM_SHARP_BEAK] =
+    [ITEM_STEWARDESS] =
     {
-        .name = _("Sharp Beak"),
+        .name = _("Stewardess"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_FLYING_POWER,
         .holdEffectParam = 20,
@@ -5315,9 +5315,9 @@ const struct Item gItems[] =
         .flingPower = 50,
     },
 
-    [ITEM_TWISTED_SPOON] =
+    [ITEM_WITCHS_ROBE] =
     {
-        .name = _("Twisted Spoon"),
+        .name = _("Witch's Robe"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_REASON_POWER,
         .holdEffectParam = 20,
@@ -5328,9 +5328,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_SILVER_POWDER] =
+    [ITEM_BLAZER] =
     {
-        .name = _("Silver Powder"),
+        .name = _("Blazer"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_HEART_POWER,
         .holdEffectParam = 20,
@@ -5341,9 +5341,9 @@ const struct Item gItems[] =
         .flingPower = 10,
     },
 
-    [ITEM_HARD_STONE] =
+    [ITEM_BUNNY_SUIT] =
     {
-        .name = _("Hard Stone"),
+        .name = _("Bunny Suit"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_BEAST_POWER,
         .holdEffectParam = 20,
@@ -5354,9 +5354,9 @@ const struct Item gItems[] =
         .flingPower = 100,
     },
 
-    [ITEM_SPELL_TAG] =
+    [ITEM_BURIAL_DRESS] =
     {
-        .name = _("Spell Tag"),
+        .name = _("Burial Dress"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_GHOST_POWER,
         .holdEffectParam = 20,
@@ -5367,9 +5367,9 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_DRAGON_FANG] =
+    [ITEM_PRIESTESS] =
     {
-        .name = _("Dragon Fang"),
+        .name = _("Priestess"),
         .price = 1000,
         .holdEffect = HOLD_EFFECT_FAITH_POWER,
         .holdEffectParam = 20,
@@ -5393,16 +5393,16 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_METAL_COAT] =
+    [ITEM_MAID_UNIFORM] =
     {
-        .name = _("Metal Coat"),
+        .name = _("Maid Uniform"),
         .price = 2000,
         .holdEffect = HOLD_EFFECT_STEEL_POWER,
         .holdEffectParam = 20,
         .description = sMetalCoatDesc,
         .pocket = POCKET_BATTLE_ITEMS,
-        .type = EVO_HELD_ITEM_TYPE,
-        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 

@@ -559,7 +559,7 @@ ShoalCave_LowTideIceRoom_EventScript_ItemTMHail::
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::
-	finditem ITEM_NEVER_MELT_ICE
+	finditem ITEM_THICK_FUR
 	end
 
 SeafloorCavern_Room9_EventScript_ItemTMEarthquake::

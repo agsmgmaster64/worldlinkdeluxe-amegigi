@@ -2147,7 +2147,7 @@ static const struct TrainerMon sParty_Nob5[] = {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 33,
     .species = SPECIES_MACHAMP,
-    .heldItem = ITEM_BLACK_BELT
+    .heldItem = ITEM_CHINA_DRESS
     }
 };
 
@@ -2720,7 +2720,7 @@ static const struct TrainerMon sParty_Jeffrey5[] = {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 38,
     .species = SPECIES_MASQUERAIN,
-    .heldItem = ITEM_SILVER_POWDER
+    .heldItem = ITEM_BLAZER
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -4942,7 +4942,7 @@ static const struct TrainerMon sParty_Nicolas5[] = {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 49,
     .species = SPECIES_SHELGON,
-    .heldItem = ITEM_DRAGON_FANG
+    .heldItem = ITEM_PRIESTESS
     }
 };
 

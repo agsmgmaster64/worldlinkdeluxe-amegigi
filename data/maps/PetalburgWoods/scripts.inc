@@ -253,7 +253,7 @@ PetalburgWoods_EventScript_Girl::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_MIRACLE_SEED, PetalburgWoods_EventScript_ExplainMiracleSeed
 	msgbox PetalburgWoods_Text_TryUsingThisItem, MSGBOX_DEFAULT
-	giveitem ITEM_MIRACLE_SEED
+	giveitem ITEM_CAMOUFLAGE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_MIRACLE_SEED
 	release
