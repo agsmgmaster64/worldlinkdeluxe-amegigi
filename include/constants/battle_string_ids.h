@@ -281,11 +281,11 @@
 #define STRINGID_PKMNTURNEDAWAY                       280
 #define STRINGID_PKMNPRETENDNOTNOTICE                 281
 #define STRINGID_ENEMYABOUTTOSWITCHPKMN               282
-#define STRINGID_CREPTCLOSER                          283
-#define STRINGID_CANTGETCLOSER                        284
+#define STRINGID_THREWROCK                            283
+#define STRINGID_THREWBAIT                            284
 #define STRINGID_PKMNWATCHINGCAREFULLY                285
-#define STRINGID_PKMNCURIOUSABOUTX                    286
-#define STRINGID_PKMNENTHRALLEDBYX                    287
+#define STRINGID_PKMNANGRY                            286
+#define STRINGID_PKMNEATING                           287
 #define STRINGID_PKMNIGNOREDX                         288
 #define STRINGID_THREWPOKEBLOCKATPKMN                 289
 #define STRINGID_OUTOFSAFARIBALLS                     290
@@ -852,14 +852,11 @@
 // Skips the one used for Battle Palace
 #define NUM_LOAF_STRINGS 4
 
-// gSafariGetNearStringIds
-#define B_MSG_CREPT_CLOSER    0
-#define B_MSG_CANT_GET_CLOSER 1
-
-// gSafariPokeblockResultStringIds
-#define B_MSG_MON_CURIOUS    0
-#define B_MSG_MON_ENTHRALLED 1
-#define B_MSG_MON_IGNORED    2
+// gSafariReactionStringIds
+#define B_MSG_MON_WATCHING   0
+#define B_MSG_MON_ANGRY      1
+#define B_MSG_MON_EATING     2
+#define NUM_SAFARI_REACTIONS 3
 
 // gFlashFireStringIds
 #define B_MSG_FLASH_FIRE_BOOST    0

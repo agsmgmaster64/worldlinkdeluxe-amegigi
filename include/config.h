@@ -73,6 +73,20 @@
 #define GEN_9 6
 #define GEN_LATEST GEN_9
 
+// Touhoumon constants used to toggle between stats from different hacks
+#define VANILLA_1_8        0
+#define ENHANCED_RELOADED  1
+#define PURPLE_UNNAMED     2
+#define WORLD_LINK_DELUXE  3
+
+#define TOUHOUMON_VERSION WORLD_LINK_DELUXE
+
+#define NIGHT_OF_DOOM FALSE
+#define TO_THE_MOON   FALSE
+
+#define HOLOLIVE    TRUE
+#define PIZZA_TOWER TRUE
+
 // General settings
 #define EXPANSION_INTRO   TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.
 

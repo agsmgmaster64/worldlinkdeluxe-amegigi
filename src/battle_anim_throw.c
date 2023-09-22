@@ -17,6 +17,7 @@
 #include "trig.h"
 #include "util.h"
 #include "data.h"
+#include "constants/battle_string_ids.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
@@ -634,7 +635,7 @@ static const union AnimCmd *const sAnims_SafariRock[] = {
 };
 
 // Unused, leftover from FRLG
-static const struct SpriteTemplate sSafariRockSpriteTemplate =
+const struct SpriteTemplate sSafariRockSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ROCKS,
     .paletteTag = ANIM_TAG_ROCKS,
@@ -2736,6 +2737,16 @@ void AnimTask_SetAttackerTargetLeftPos(u8 taskId)
         break;
     }
 
+    DestroyAnimVisualTask(taskId);
+}
+
+void AnimTask_SafariGetReaction(u8 taskId)
+{
+    if (gBattleCommunication[MULTISTRING_CHOOSER] >= NUM_SAFARI_REACTIONS)
+        gBattleAnimArgs[7] = 0;
+    else
+        gBattleAnimArgs[7] = gBattleCommunication[MULTISTRING_CHOOSER];
+    
     DestroyAnimVisualTask(taskId);
 }
 
