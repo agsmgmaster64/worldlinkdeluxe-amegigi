@@ -3615,6 +3615,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     value = HIDDEN_NATURE_NONE;
     SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &value);
 
+    value = 0xFF;
+    SetBoxMonData(boxMon, MON_DATA_AFFECTION, &value);
+
     GiveBoxMonInitialMoveset(boxMon);
 }
 
@@ -3945,10 +3948,7 @@ void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerP
 
 static void CreateEventMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
-    bool32 isModernFatefulEncounter = TRUE;
-
     CreateMon(mon, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
-    SetMonData(mon, MON_DATA_MODERN_FATEFUL_ENCOUNTER, &isModernFatefulEncounter);
 }
 
 // If FALSE, should load this game's Deoxys form. If TRUE, should load normal Deoxys form
@@ -4505,15 +4505,6 @@ bool32 IsPersonalityFemale(u16 species, u32 personality)
     return GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE;
 }
 
-u32 GetUnownSpeciesId(u32 personality)
-{
-    u16 unownLetter = GetUnownLetterByPersonality(personality);
-
-    if (unownLetter == 0)
-        return SPECIES_UNOWN;
-    return unownLetter + SPECIES_UNOWN_B - 1;
-}
-
 void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition)
 {
     if (gMonSpritesGfxPtr != NULL)
@@ -4906,32 +4897,11 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_EFFORT_RIBBON:
             retVal = substruct3->effortRibbon;
             break;
-        case MON_DATA_MARINE_RIBBON:
-            retVal = substruct3->marineRibbon;
+        case MON_DATA_AFFECTION:
+            retVal = substruct3->affection;
             break;
-        case MON_DATA_LAND_RIBBON:
-            retVal = substruct3->landRibbon;
-            break;
-        case MON_DATA_SKY_RIBBON:
-            retVal = substruct3->skyRibbon;
-            break;
-        case MON_DATA_COUNTRY_RIBBON:
-            retVal = substruct3->countryRibbon;
-            break;
-        case MON_DATA_NATIONAL_RIBBON:
-            retVal = substruct3->nationalRibbon;
-            break;
-        case MON_DATA_EARTH_RIBBON:
-            retVal = substruct3->earthRibbon;
-            break;
-        case MON_DATA_WORLD_RIBBON:
-            retVal = substruct3->worldRibbon;
-            break;
-        case MON_DATA_UNUSED_RIBBONS:
-            retVal = substruct3->unusedRibbons;
-            break;
-        case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            retVal = substruct3->modernFatefulEncounter;
+        case MON_DATA_FUTURE_RESERVE:
+            retVal = substruct3->unused1;
             break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = substruct0->species;
@@ -4978,13 +4948,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 retVal += substruct3->victoryRibbon;
                 retVal += substruct3->artistRibbon;
                 retVal += substruct3->effortRibbon;
-                retVal += substruct3->marineRibbon;
-                retVal += substruct3->landRibbon;
-                retVal += substruct3->skyRibbon;
-                retVal += substruct3->countryRibbon;
-                retVal += substruct3->nationalRibbon;
-                retVal += substruct3->earthRibbon;
-                retVal += substruct3->worldRibbon;
             }
             break;
         case MON_DATA_RIBBONS:
@@ -5000,14 +4963,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                     | (substruct3->winningRibbon << 16)
                     | (substruct3->victoryRibbon << 17)
                     | (substruct3->artistRibbon << 18)
-                    | (substruct3->effortRibbon << 19)
-                    | (substruct3->marineRibbon << 20)
-                    | (substruct3->landRibbon << 21)
-                    | (substruct3->skyRibbon << 22)
-                    | (substruct3->countryRibbon << 23)
-                    | (substruct3->nationalRibbon << 24)
-                    | (substruct3->earthRibbon << 25)
-                    | (substruct3->worldRibbon << 26);
+                    | (substruct3->effortRibbon << 19);
             }
             break;
         default:
@@ -5337,32 +5293,11 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_EFFORT_RIBBON:
             SET8(substruct3->effortRibbon);
             break;
-        case MON_DATA_MARINE_RIBBON:
-            SET8(substruct3->marineRibbon);
+        case MON_DATA_AFFECTION:
+            SET8(substruct3->affection);
             break;
-        case MON_DATA_LAND_RIBBON:
-            SET8(substruct3->landRibbon);
-            break;
-        case MON_DATA_SKY_RIBBON:
-            SET8(substruct3->skyRibbon);
-            break;
-        case MON_DATA_COUNTRY_RIBBON:
-            SET8(substruct3->countryRibbon);
-            break;
-        case MON_DATA_NATIONAL_RIBBON:
-            SET8(substruct3->nationalRibbon);
-            break;
-        case MON_DATA_EARTH_RIBBON:
-            SET8(substruct3->earthRibbon);
-            break;
-        case MON_DATA_WORLD_RIBBON:
-            SET8(substruct3->worldRibbon);
-            break;
-        case MON_DATA_UNUSED_RIBBONS:
-            SET8(substruct3->unusedRibbons);
-            break;
-        case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
-            SET8(substruct3->modernFatefulEncounter);
+        case MON_DATA_FUTURE_RESERVE:
+            SET8(substruct3->unused1);
             break;
         case MON_DATA_IVS:
         {
@@ -8619,6 +8554,26 @@ u32 GetMonFriendshipScore(struct Pokemon *pokemon)
         return FRIENDSHIP_1_TO_49;
 
     return FRIENDSHIP_NONE;
+}
+
+u32 GetMonAffectionScore(struct Pokemon *pokemon)
+{
+    u32 affectionScore = GetMonData(pokemon, MON_DATA_AFFECTION, NULL);
+
+    if (affectionScore == MAX_FRIENDSHIP)
+        return AFFECTION_MAX;
+    if (affectionScore >= 200)
+        return AFFECTION_200_TO_254;
+    if (affectionScore >= 150)
+        return AFFECTION_150_TO_199;
+    if (affectionScore >= 100)
+        return AFFECTION_100_TO_149;
+    if (affectionScore >= 50)
+        return AFFECTION_50_TO_99;
+    if (affectionScore >= 1)
+        return AFFECTION_1_TO_49;
+
+    return AFFECTION_NONE;
 }
 
 void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)

@@ -2712,17 +2712,10 @@ u16 GetIconSpecies(u16 species, u32 personality)
 {
     u16 result;
 
-    if (species == SPECIES_UNOWN)
-    {
-        result = GetUnownSpeciesId(personality);
-    }
+    if (species > NUM_SPECIES)
+        result = INVALID_ICON_SPECIES;
     else
-    {
-        if (species > NUM_SPECIES)
-            result = INVALID_ICON_SPECIES;
-        else
-            result = species;
-    }
+        result = species;
 
     return result;
 }
@@ -2739,18 +2732,10 @@ u16 GetIconSpeciesNoPersonality(u16 species)
 {
     u16 value;
 
-    if (MailSpeciesToSpecies(species, &value) == SPECIES_UNOWN)
-    {
-        value += SPECIES_UNOWN_B; // TODO
-        return value;
-    }
-    else
-    {
-        if (species > NUM_SPECIES)
-            species = INVALID_ICON_SPECIES;
+    if (species > NUM_SPECIES)
+        species = INVALID_ICON_SPECIES;
 
-        return GetIconSpecies(species, 0);
-    }
+    return GetIconSpecies(species, 0);
 }
 
 const u8 *GetMonIconPtr(u16 species, u32 personality)

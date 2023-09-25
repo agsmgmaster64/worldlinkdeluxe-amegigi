@@ -33,8 +33,6 @@ enum
 #define PALTAG_RIBBON_ICONS_5 19
 
 #define RIBBONS_PER_ROW 9
-#define GIFT_RIBBON_ROW (1 + (FIRST_GIFT_RIBBON / RIBBONS_PER_ROW)) // Gift ribbons start on a new row after the normal ribbons.
-#define GIFT_RIBBON_START_POS (RIBBONS_PER_ROW * GIFT_RIBBON_ROW)
 
 #define MON_SPRITE_X_ON  40
 #define MON_SPRITE_X_OFF -32
@@ -47,10 +45,7 @@ struct Pokenav_RibbonsSummaryList
     u16 selectedPos;
     u16 normalRibbonLastRowStart;
     u16 numNormalRibbons;
-    u16 numGiftRibbons;
-    u32 ribbonIds[FIRST_GIFT_RIBBON];
-    u32 giftRibbonIds[NUM_GIFT_RIBBONS];
-    u32 unused2;
+    u32 ribbonIds[NUM_RIBBONS];
     u32 (*callback)(struct Pokenav_RibbonsSummaryList *);
 };
 
@@ -119,26 +114,19 @@ struct
     u8 numBits; // The number of bits needed to represent numRibbons
     u8 numRibbons; // Never read. The contest ribbons have 4 (1 for each rank), the rest are just 1 ribbon
     u8 ribbonId;
-    bool8 isGiftRibbon;
-} static  const sRibbonData[] =
+}
+static  const sRibbonData[] =
 {
-    {1, 1, CHAMPION_RIBBON,      FALSE},
-    {3, 4, COOL_RIBBON_NORMAL,   FALSE},
-    {3, 4, BEAUTY_RIBBON_NORMAL, FALSE},
-    {3, 4, CUTE_RIBBON_NORMAL,   FALSE},
-    {3, 4, SMART_RIBBON_NORMAL,  FALSE},
-    {3, 4, TOUGH_RIBBON_NORMAL,  FALSE},
-    {1, 1, WINNING_RIBBON,       FALSE},
-    {1, 1, VICTORY_RIBBON,       FALSE},
-    {1, 1, ARTIST_RIBBON,        FALSE},
-    {1, 1, EFFORT_RIBBON,        FALSE},
-    {1, 1, MARINE_RIBBON,        TRUE},
-    {1, 1, LAND_RIBBON,          TRUE},
-    {1, 1, SKY_RIBBON,           TRUE},
-    {1, 1, COUNTRY_RIBBON,       TRUE},
-    {1, 1, NATIONAL_RIBBON,      TRUE},
-    {1, 1, EARTH_RIBBON,         TRUE},
-    {1, 1, WORLD_RIBBON,         TRUE}
+    {1, 1, CHAMPION_RIBBON},
+    {3, 4, COOL_RIBBON_NORMAL},
+    {3, 4, BEAUTY_RIBBON_NORMAL},
+    {3, 4, CUTE_RIBBON_NORMAL},
+    {3, 4, SMART_RIBBON_NORMAL},
+    {3, 4, TOUGH_RIBBON_NORMAL},
+    {1, 1, WINNING_RIBBON},
+    {1, 1, VICTORY_RIBBON},
+    {1, 1, ARTIST_RIBBON},
+    {1, 1, EFFORT_RIBBON},
 };
 
 #include "data/text/ribbon_descriptions.h"
@@ -276,32 +264,17 @@ static u32 ReturnToRibbonsListFromSummary(struct Pokenav_RibbonsSummaryList *lis
 
 static bool32 TrySelectRibbonUp(struct Pokenav_RibbonsSummaryList *list)
 {
-    if (list->selectedPos < FIRST_GIFT_RIBBON)
-    {
-        // In normal ribbons, try to move up a row
-        if (list->selectedPos < RIBBONS_PER_ROW)
-            return FALSE;
+    // In normal ribbons, try to move up a row
+    if (list->selectedPos < RIBBONS_PER_ROW)
+        return FALSE;
 
-        list->selectedPos -= RIBBONS_PER_ROW;
-        return TRUE;
-    }
-    if (list->numNormalRibbons != 0)
-    {
-        // In gift ribbons, try to move up into normal ribbons
-        // If there's > 1 row of gift ribbons (not normally possible)
-        // it's impossible to move up between them
-        u32 ribbonPos = list->selectedPos - GIFT_RIBBON_START_POS;
-        list->selectedPos = ribbonPos + list->normalRibbonLastRowStart;
-        if (list->selectedPos >= list->numNormalRibbons)
-            list->selectedPos = list->numNormalRibbons - 1;
-        return TRUE;
-    }
-    return FALSE;
+    list->selectedPos -= RIBBONS_PER_ROW;
+    return TRUE;
 }
 
 static bool32 TrySelectRibbonDown(struct Pokenav_RibbonsSummaryList *list)
 {
-    if (list->selectedPos >= FIRST_GIFT_RIBBON)
+    if (list->selectedPos >= NUM_RIBBONS)
         return FALSE;
     if (list->selectedPos < list->normalRibbonLastRowStart)
     {
@@ -309,16 +282,6 @@ static bool32 TrySelectRibbonDown(struct Pokenav_RibbonsSummaryList *list)
         list->selectedPos += RIBBONS_PER_ROW;
         if (list->selectedPos >= list->numNormalRibbons)
             list->selectedPos = list->numNormalRibbons - 1;
-        return TRUE;
-    }
-    if (list->numGiftRibbons != 0)
-    {
-        // In/beyond last of row of normal ribbons and gift ribbons present, move down to gift ribbon row
-        int ribbonPos = list->selectedPos - list->normalRibbonLastRowStart;
-        if (ribbonPos >= list->numGiftRibbons)
-            ribbonPos = list->numGiftRibbons - 1;
-
-        list->selectedPos = ribbonPos + GIFT_RIBBON_START_POS;
         return TRUE;
     }
     return FALSE;
@@ -343,23 +306,11 @@ static bool32 TrySelectRibbonRight(struct Pokenav_RibbonsSummaryList *list)
     if (column >= RIBBONS_PER_ROW - 1)
         return FALSE;
 
-    if (list->selectedPos < GIFT_RIBBON_START_POS)
+    // Move right in normal ribbon row
+    if (list->selectedPos < list->numNormalRibbons - 1)
     {
-        // Move right in normal ribbon row
-        if (list->selectedPos < list->numNormalRibbons - 1)
-        {
-            list->selectedPos++;
-            return TRUE;
-        }
-    }
-    else
-    {
-        // Move right in gift ribbon row
-        if (column < list->numGiftRibbons - 1)
-        {
-            list->selectedPos++;
-            return TRUE;
-        }
+        list->selectedPos++;
+        return TRUE;
     }
     return FALSE;
 }
@@ -450,36 +401,18 @@ static void GetMonRibbons(struct Pokenav_RibbonsSummaryList *list)
         ribbonFlags = GetBoxMonDataAt(monInfo->boxId, monInfo->monId, MON_DATA_RIBBONS);
 
     list->numNormalRibbons = 0;
-    list->numGiftRibbons = 0;
     for (i = 0; i < ARRAY_COUNT(sRibbonData); i++)
     {
         // For all non-contest ribbons, numRibbons will be 1 if they have it, 0 if they don't
         // For contest ribbons, numRibbons will be 0-4
         s32 numRibbons = ((1 << sRibbonData[i].numBits) - 1) & ribbonFlags;
-        if (!sRibbonData[i].isGiftRibbon)
-        {
-            for (j = 0; j < numRibbons; j++)
-                list->ribbonIds[list->numNormalRibbons++] = sRibbonData[i].ribbonId + j;
-        }
-        else
-        {
-            for (j = 0; j < numRibbons; j++)
-                list->giftRibbonIds[list->numGiftRibbons++] = sRibbonData[i].ribbonId + j;
-        }
+        for (j = 0; j < numRibbons; j++)
+            list->ribbonIds[list->numNormalRibbons++] = sRibbonData[i].ribbonId + j;
         ribbonFlags >>= sRibbonData[i].numBits;
     }
 
-    if (list->numNormalRibbons != 0)
-    {
-        list->normalRibbonLastRowStart = ((list->numNormalRibbons - 1) / RIBBONS_PER_ROW) * RIBBONS_PER_ROW;
-        list->selectedPos = 0;
-    }
-    else
-    {
-        // There are no normal ribbons, move cursor to first gift ribbon
-        list->normalRibbonLastRowStart = 0;
-        list->selectedPos = GIFT_RIBBON_START_POS;
-    }
+    list->normalRibbonLastRowStart = ((list->numNormalRibbons - 1) / RIBBONS_PER_ROW) * RIBBONS_PER_ROW;
+    list->selectedPos = 0;
 }
 
 static u32 *GetNormalRibbonIds(u32 *size)
@@ -487,13 +420,6 @@ static u32 *GetNormalRibbonIds(u32 *size)
     struct Pokenav_RibbonsSummaryList *list = GetSubstructPtr(POKENAV_SUBSTRUCT_RIBBONS_SUMMARY_LIST);
     *size = list->numNormalRibbons;
     return list->ribbonIds;
-}
-
-static u32 *GetGiftRibbonIds(u32 *size)
-{
-    struct Pokenav_RibbonsSummaryList *list = GetSubstructPtr(POKENAV_SUBSTRUCT_RIBBONS_SUMMARY_LIST);
-    *size = list->numGiftRibbons;
-    return list->giftRibbonIds;
 }
 
 static u16 GetSelectedPosition(void)
@@ -506,10 +432,7 @@ static u32 GetRibbonId(void)
 {
     struct Pokenav_RibbonsSummaryList *list = GetSubstructPtr(POKENAV_SUBSTRUCT_RIBBONS_SUMMARY_LIST);
     int ribbonPos = list->selectedPos;
-    if (ribbonPos < FIRST_GIFT_RIBBON)
-        return list->ribbonIds[ribbonPos];
-    else
-        return list->giftRibbonIds[ribbonPos - GIFT_RIBBON_START_POS];
+    return list->ribbonIds[ribbonPos];
 }
 
 bool32 OpenRibbonsSummaryMenu(void)
@@ -821,29 +744,9 @@ static void PrintRibbonNameAndDescription(struct Pokenav_RibbonsSummaryMenu *men
     u8 color[] = {TEXT_COLOR_RED, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 
     FillWindowPixelBuffer(menu->ribbonCountWindowId, PIXEL_FILL(4));
-    if (ribbonId < FIRST_GIFT_RIBBON)
-    {
-        // Print normal ribbon name/description
-        for (i = 0; i < 2; i++)
-            AddTextPrinterParameterized3(menu->ribbonCountWindowId, FONT_NORMAL, 0, (i * 16) + 1, color, TEXT_SKIP_DRAW, gRibbonDescriptionPointers[ribbonId][i]);
-    }
-    else
-    {
-        // ribbonId here is one of the 'gift' ribbon slots, used to read
-        // its actual value from giftRibbons to determine which specific
-        // gift ribbon it is
-        ribbonId = gSaveBlock1Ptr->giftRibbons[ribbonId - FIRST_GIFT_RIBBON];
-
-        // If 0, this gift ribbon slot is unoccupied
-        if (ribbonId == 0)
-            return;
-
-        // Print gift ribbon name/description
-        ribbonId--;
-        for (i = 0; i < 2; i++)
-            AddTextPrinterParameterized3(menu->ribbonCountWindowId, FONT_NORMAL, 0, (i * 16) + 1, color, TEXT_SKIP_DRAW, gGiftRibbonDescriptionPointers[ribbonId][i]);
-    }
-
+    // Print normal ribbon name/description
+    for (i = 0; i < 2; i++)
+        AddTextPrinterParameterized3(menu->ribbonCountWindowId, FONT_NORMAL, 0, (i * 16) + 1, color, TEXT_SKIP_DRAW, gRibbonDescriptionPointers[ribbonId][i]);
     CopyWindowToVram(menu->ribbonCountWindowId, COPYWIN_GFX);
 }
 
@@ -1041,10 +944,6 @@ static void DrawAllRibbonsSmall(struct Pokenav_RibbonsSummaryMenu *menu)
     for (sRibbonDraw_Current = 0; sRibbonDraw_Current < sRibbonDraw_Total; sRibbonDraw_Current++)
         DrawRibbonSmall(sRibbonDraw_Current, *(ribbonIds++));
 
-    ribbonIds = GetGiftRibbonIds(&sRibbonDraw_Total);
-    for (sRibbonDraw_Current = 0; sRibbonDraw_Current < sRibbonDraw_Total; sRibbonDraw_Current++)
-        DrawRibbonSmall(sRibbonDraw_Current + GIFT_RIBBON_START_POS, *(ribbonIds++));
-
     CopyBgTilemapBufferToVram(1);
 }
 
@@ -1113,13 +1012,6 @@ struct
     [VICTORY_RIBBON]       = { RIBBONGFX_VICTORY,        TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_1)},
     [ARTIST_RIBBON]        = { RIBBONGFX_ARTIST,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_2)},
     [EFFORT_RIBBON]        = { RIBBONGFX_EFFORT,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_3)},
-    [MARINE_RIBBON]        = { RIBBONGFX_GIFT_1,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_2)},
-    [LAND_RIBBON]          = { RIBBONGFX_GIFT_1,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_4)},
-    [SKY_RIBBON]           = { RIBBONGFX_GIFT_1,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_5)},
-    [COUNTRY_RIBBON]       = { RIBBONGFX_GIFT_2,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_4)},
-    [NATIONAL_RIBBON]      = { RIBBONGFX_GIFT_2,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_5)},
-    [EARTH_RIBBON]         = { RIBBONGFX_GIFT_3,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_1)},
-    [WORLD_RIBBON]         = { RIBBONGFX_GIFT_3,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_2)},
 };
 
 #undef TO_PAL_OFFSET

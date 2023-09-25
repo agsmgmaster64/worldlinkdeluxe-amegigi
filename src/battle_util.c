@@ -1933,16 +1933,16 @@ u32 GetBattlerFriendshipScore(u8 battler)
     u16 species = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES);
 
     if (side != B_SIDE_PLAYER)
-        return FRIENDSHIP_NONE;
+        return AFFECTION_NONE;
     else if (gSpeciesInfo[species].flags & SPECIES_FLAG_MEGA_EVOLUTION
           || (gBattleTypeFlags & (BATTLE_TYPE_EREADER_TRAINER
                                 | BATTLE_TYPE_FRONTIER
                                 | BATTLE_TYPE_LINK
                                 | BATTLE_TYPE_RECORDED_LINK
                                 | BATTLE_TYPE_SECRET_BASE)))
-        return FRIENDSHIP_NONE;
+        return AFFECTION_NONE;
 
-    return GetMonFriendshipScore(&party[gBattlerPartyIndexes[battler]]);
+    return GetMonAffectionScore(&party[gBattlerPartyIndexes[battler]]);
 }
 
 static void TryToRevertMimicry(void)
@@ -2460,7 +2460,7 @@ u8 DoFieldEndTurnEffects(void)
             {
             #if B_AFFECTION_MECHANICS == TRUE
                 if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER
-                 && GetBattlerFriendshipScore(gBattlerAttacker) >= FRIENDSHIP_150_TO_199
+                 && GetBattlerFriendshipScore(gBattlerAttacker) >= AFFECTION_150_TO_199
                  && (Random() % 100 < 20))
                 {
                     gBattleCommunication[MULTISTRING_CHOOSER] = 1;
@@ -8003,16 +8003,6 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
     return targetBattler;
 }
 
-static bool32 IsBattlerModernFatefulEncounter(u8 battler)
-{
-    if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
-        return TRUE;
-    if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS
-        && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
-            return TRUE;
-    return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_MODERN_FATEFUL_ENCOUNTER, NULL);
-}
-
 u8 IsMonDisobedient(void)
 {
     s32 rnd;
@@ -8025,7 +8015,7 @@ u8 IsMonDisobedient(void)
     if (BattlerHasAi(gBattlerAttacker))
         return 0;
 
-    if (IsBattlerModernFatefulEncounter(gBattlerAttacker)) // only false if illegal Mew or Deoxys
+    if (TRUE) // only false if illegal Mew or Deoxys
     {
         if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
             return 0;

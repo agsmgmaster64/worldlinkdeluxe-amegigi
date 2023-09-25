@@ -230,14 +230,14 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SWORDS_DANCE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
+        #if (B_UPDATED_MOVE_DATA >= GEN_6 && B_UPDATED_TOUHOUMON_MOVE_DATA > WORLD_LINK_DELUXE)
             .pp = 20,
         #else
             .pp = 30,
         #endif
         .effect = EFFECT_ATTACK_UP_2,
         .power = 0,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_STEEL,
         .accuracy = 0,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,

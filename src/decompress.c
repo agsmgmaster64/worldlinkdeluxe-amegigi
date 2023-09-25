@@ -87,8 +87,6 @@ void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontP
 {
     if (species > NUM_SPECIES)
         species = SPECIES_NONE;
-    else if (species == SPECIES_UNOWN)
-        species = GetUnownSpeciesId(personality);
 
     if (isFrontPic)
     {

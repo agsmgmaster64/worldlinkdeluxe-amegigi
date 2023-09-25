@@ -128,9 +128,7 @@
 #define EARTH_RIBBON         30
 #define WORLD_RIBBON         31
 
-#define FIRST_GIFT_RIBBON MARINE_RIBBON
-#define LAST_GIFT_RIBBON  WORLD_RIBBON
-#define NUM_GIFT_RIBBONS  (1 + LAST_GIFT_RIBBON - FIRST_GIFT_RIBBON)
+#define NUM_RIBBONS          32
 
 // The above gift ribbons (Marine - World) are
 // special distribution ribbons that correspond to
@@ -192,6 +190,15 @@
 #define FRIENDSHIP_150_TO_199  4
 #define FRIENDSHIP_200_TO_254  5
 #define FRIENDSHIP_MAX         6
+
+// Constants for GetLeadMonFriendshipScore
+#define AFFECTION_NONE        0
+#define AFFECTION_1_TO_49     1
+#define AFFECTION_50_TO_99    2
+#define AFFECTION_100_TO_149  3
+#define AFFECTION_150_TO_199  4
+#define AFFECTION_200_TO_254  5
+#define AFFECTION_MAX         6
 
 // Friendship value that the majority of species use. This was changed in Generation 8 to 50.
 #define STANDARD_FRIENDSHIP 70
