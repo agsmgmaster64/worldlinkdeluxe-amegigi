@@ -415,7 +415,7 @@ static const u16 sOtherMoveCallingMoves[] =
     MOVE_ME_FIRST,
     MOVE_METRONOME,
     MOVE_MIRROR_MOVE,
-    MOVE_NATURE_POWER,
+    MOVE_NATIVE_POWER,
     MOVE_SLEEP_TALK,
 };
 
@@ -803,7 +803,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef, u8 *typeEffectiveness,
 
     gBattleStruct->dynamicMoveType = 0;
 
-    if (move == MOVE_NATURE_POWER)
+    if (move == MOVE_NATIVE_POWER)
         move = GetNaturePowerMove();
 
     SetTypeBeforeUsingMove(move, battlerAtk);

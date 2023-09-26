@@ -1614,7 +1614,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .magicCoatAffected = TRUE,
     },
 
-    [MOVE_CONFUSION] =
+    [MOVE_PSYSHOT] =
     {
         .effect = EFFECT_CONFUSE_HIT,
         .power = 50,
@@ -1629,7 +1629,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_PSYCHIC] =
+    [MOVE_MANA_BURST] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
         .power = 90,
@@ -2063,7 +2063,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_EGG_BOMB] =
+    [MOVE_MIND_BOMB] =
     {
         .effect = EFFECT_HIT,
         .power = 100,
@@ -3248,7 +3248,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .snatchAffected = TRUE,
     },
 
-    [MOVE_SLUDGE_BOMB] =
+    [MOVE_POISON_BOMB] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 90,
@@ -3961,7 +3961,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .makesContact = TRUE,
     },
 
-    [MOVE_SWEET_SCENT] =
+    [MOVE_NATURE_POWER] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .effect = EFFECT_EVASION_DOWN_2,
@@ -4617,7 +4617,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .copycatBanned = TRUE,
     },
 
-    [MOVE_NATURE_POWER] =
+    [MOVE_NATIVE_POWER] =
     {
         .effect = EFFECT_NATURE_POWER,
         .power = 1,
@@ -6675,7 +6675,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_BOOST_CRITS,
     },
 
-    [MOVE_AQUA_RING] =
+    [MOVE_MYSTIC_WATER] =
     {
         .effect = EFFECT_AQUA_RING,
         .power = 0,
@@ -7011,7 +7011,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .ballisticMove = TRUE,
     },
 
-    [MOVE_ENERGY_BALL] =
+    [MOVE_ENERGY_LIGHT] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .power = 90,
@@ -7108,7 +7108,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .snatchAffected = TRUE,
     },
 
-    [MOVE_BULLET_PUNCH] =
+    [MOVE_BLADE_FLASH] =
     {
         .effect = EFFECT_HIT,
         .power = 40,
@@ -7153,7 +7153,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_SHADOW_CLAW] =
+    [MOVE_SHADOW_HIT] =
     {
         .effect = EFFECT_HIT,
         .power = 70,
@@ -7499,7 +7499,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_IRON_HEAD] =
+    [MOVE_DRAWN_LINE] =
     {
         .effect = EFFECT_FLINCH_HIT,
         .power = 80,

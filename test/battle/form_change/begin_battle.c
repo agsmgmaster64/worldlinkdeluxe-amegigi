@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Zacian's Iron Head becomes Behemoth Blade upon form change")
 {
     GIVEN {
         ASSUME(P_GEN_8_POKEMON == TRUE);
-        PLAYER(SPECIES_ZACIAN) { Item(ITEM_RUSTED_SWORD); Moves(MOVE_IRON_HEAD, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_ZACIAN) { Item(ITEM_RUSTED_SWORD); Moves(MOVE_DRAWN_LINE, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Zamazenta's Iron Head becomes Behemoth Bash upon form change
 {
     GIVEN {
         ASSUME(P_GEN_8_POKEMON == TRUE);
-        PLAYER(SPECIES_ZAMAZENTA) { Item(ITEM_RUSTED_SHIELD); Moves(MOVE_IRON_HEAD, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_ZAMAZENTA) { Item(ITEM_RUSTED_SHIELD); Moves(MOVE_DRAWN_LINE, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }

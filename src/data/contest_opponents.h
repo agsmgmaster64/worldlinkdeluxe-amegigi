@@ -641,7 +641,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_GROWL,
             MOVE_LEECH_SEED,
             MOVE_TACKLE,
-            MOVE_SWEET_SCENT
+            MOVE_NATURE_POWER
         },
         .cool = 5,
         .beauty = 3,
@@ -1019,7 +1019,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_SELF_DESTRUCT,
             MOVE_ROCK_TOMB,
             MOVE_PSYBEAM,
-            MOVE_CONFUSION
+            MOVE_PSYSHOT
         },
         .cool = 50,
         .beauty = 40,
@@ -1289,7 +1289,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_YAWN,
             MOVE_DISABLE,
             MOVE_GROWL,
-            MOVE_CONFUSION
+            MOVE_PSYSHOT
         },
         .cool = 20,
         .beauty = 40,
@@ -1423,7 +1423,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_SING,
             MOVE_SOFT_BOILED,
-            MOVE_EGG_BOMB,
+            MOVE_MIND_BOMB,
             MOVE_DOUBLE_EDGE
         },
         .cool = 20,
@@ -1882,8 +1882,8 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_EXPLOSION,
             MOVE_FUTURE_SIGHT,
-            MOVE_PSYCHIC,
-            MOVE_CONFUSION
+            MOVE_MANA_BURST,
+            MOVE_PSYSHOT
         },
         .cool = 50,
         .beauty = 70,
@@ -1936,7 +1936,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_STOMP,
             MOVE_HYPNOSIS,
-            MOVE_EGG_BOMB,
+            MOVE_MIND_BOMB,
             MOVE_SKILL_SWAP
         },
         .cool = 40,
@@ -2340,7 +2340,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_PETAL_DANCE,
-            MOVE_SWEET_SCENT,
+            MOVE_NATURE_POWER,
             MOVE_STUN_SPORE,
             MOVE_FLASH
         },
@@ -2396,7 +2396,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_NIGHT_SHADE,
             MOVE_FUTURE_SIGHT,
             MOVE_CONFUSE_RAY,
-            MOVE_PSYCHIC
+            MOVE_MANA_BURST
         },
         .cool = 35,
         .beauty = 35,
@@ -2585,7 +2585,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_DESTINY_BOND,
             MOVE_CONFUSE_RAY,
             MOVE_LICK,
-            MOVE_SLUDGE_BOMB
+            MOVE_POISON_BOMB
         },
         .cool = 200,
         .beauty = 100,

@@ -11,7 +11,7 @@ const u16 gEggMoves[] = {
         MOVE_GRASS_WHISTLE,
         MOVE_CURSE,
         MOVE_INGRAIN,
-        MOVE_NATURE_POWER,
+        MOVE_NATIVE_POWER,
         MOVE_AMNESIA,
         MOVE_LEAF_STORM,
         MOVE_POWER_WHIP,

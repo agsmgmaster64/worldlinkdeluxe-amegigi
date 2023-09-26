@@ -778,7 +778,7 @@ struct
         .level = 42,
         .nature = NATURE_BRAVE,
         .evs = {0, 252, 252, 0, 6, 0},
-        .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW}
+        .moves = {MOVE_LIGHT_SCREEN, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_METAL_CLAW}
     },
     {
         .species = SPECIES_SKARMORY,

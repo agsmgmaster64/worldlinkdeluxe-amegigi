@@ -49,7 +49,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain increases power of Psychic-type moves by 30/
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
-        TURN { MOVE(player, MOVE_CONFUSION); }
+        TURN { MOVE(player, MOVE_PSYSHOT); }
     } SCENE {
         MESSAGE("Wobbuffet used Confusion!");
         HP_BAR(opponent, captureDamage: &results[i].damage);

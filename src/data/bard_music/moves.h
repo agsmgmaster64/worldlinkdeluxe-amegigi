@@ -750,7 +750,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_CONFUSION] = {
+    [MOVE_PSYSHOT] = {
         { .songLengthId = 44 },
         { .songLengthId = 41 },
         { .songLengthId = 44 },
@@ -758,7 +758,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_PSYCHIC] = {
+    [MOVE_MANA_BURST] = {
         { .songLengthId = 18 },
         { .songLengthId = 15 },
         { .songLengthId = 51 },
@@ -974,7 +974,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_EGG_BOMB] = {
+    [MOVE_MIND_BOMB] = {
         { .songLengthId = 9 },
         { .songLengthId = 27 },
         { .songLengthId = 51 },
@@ -1510,7 +1510,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_SLUDGE_BOMB] = {
+    [MOVE_POISON_BOMB] = {
         { .songLengthId = 43 },
         { .songLengthId = 27 },
         { .songLengthId = 51 },
@@ -1846,7 +1846,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_SWEET_SCENT] = {
+    [MOVE_NATURE_POWER] = {
         { .songLengthId = 14 },
         { .songLengthId = 11 },
         { .songLengthId = 51 },
@@ -2142,7 +2142,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_NATURE_POWER] = {
+    [MOVE_NATIVE_POWER] = {
         { .songLengthId =  3 },
         { .songLengthId = 48 },
         { .songLengthId = 33 },

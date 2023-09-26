@@ -203,13 +203,13 @@ static const struct {
     },
     {
         .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
+        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATIVE_POWER, MOVE_LEECH_SEED},
         .level = 15,
         .location = MAP_NUM(ROUTE114),
     },
     {
         .species = SPECIES_SEEDOT,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
+        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATIVE_POWER, MOVE_LEECH_SEED},
         .level = 13,
         .location = MAP_NUM(ROUTE117),
     },

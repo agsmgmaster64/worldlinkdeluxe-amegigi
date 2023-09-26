@@ -114,8 +114,8 @@ gBattleAnims_Moves::
 	.4byte Move_FISSURE
 	.4byte Move_DIG
 	.4byte Move_TOXIC
-	.4byte Move_CONFUSION
-	.4byte Move_PSYCHIC
+	.4byte Move_PSYSHOT
+	.4byte Move_MANA_BURST
 	.4byte Move_HYPNOSIS
 	.4byte Move_MEDITATE
 	.4byte Move_AGILITY
@@ -142,7 +142,7 @@ gBattleAnims_Moves::
 	.4byte Move_METRONOME
 	.4byte Move_MIRROR_MOVE @ doesnt have an actual animation
 	.4byte Move_SELF_DESTRUCT
-	.4byte Move_EGG_BOMB
+	.4byte Move_MIND_BOMB
 	.4byte Move_LICK
 	.4byte Move_SMOG
 	.4byte Move_SLUDGE
@@ -209,7 +209,7 @@ gBattleAnims_Moves::
 	.4byte Move_FAINT_ATTACK
 	.4byte Move_SWEET_KISS
 	.4byte Move_BELLY_DRUM
-	.4byte Move_SLUDGE_BOMB
+	.4byte Move_POISON_BOMB
 	.4byte Move_MUD_SLAP
 	.4byte Move_OCTAZOOKA
 	.4byte Move_SPIKES
@@ -251,7 +251,7 @@ gBattleAnims_Moves::
 	.4byte Move_ENCORE
 	.4byte Move_PURSUIT
 	.4byte Move_RAPID_SPIN
-	.4byte Move_SWEET_SCENT
+	.4byte Move_NATURE_POWER
 	.4byte Move_IRON_TAIL
 	.4byte Move_METAL_CLAW
 	.4byte Move_VITAL_THROW
@@ -288,7 +288,7 @@ gBattleAnims_Moves::
 	.4byte Move_FOCUS_PUNCH
 	.4byte Move_SMELLING_SALTS
 	.4byte Move_FOLLOW_ME
-	.4byte Move_NATURE_POWER
+	.4byte Move_NATIVE_POWER
 	.4byte Move_CHARGE
 	.4byte Move_TAUNT
 	.4byte Move_HELPING_HAND
@@ -414,7 +414,7 @@ gBattleAnims_Moves::
 	.4byte Move_SUCKER_PUNCH
 	.4byte Move_TOXIC_SPIKES
 	.4byte Move_HEART_SWAP
-	.4byte Move_AQUA_RING
+	.4byte Move_MYSTIC_WATER
 	.4byte Move_MAGNET_RISE
 	.4byte Move_FLARE_BLITZ
 	.4byte Move_FORCE_PALM
@@ -434,16 +434,16 @@ gBattleAnims_Moves::
 	.4byte Move_DRAIN_PUNCH
 	.4byte Move_VACUUM_WAVE
 	.4byte Move_FOCUS_BLAST
-	.4byte Move_ENERGY_BALL
+	.4byte Move_ENERGY_LIGHT
 	.4byte Move_BRAVE_BIRD
 	.4byte Move_EARTH_POWER
 	.4byte Move_SWITCHEROO
 	.4byte Move_GIGA_IMPACT
 	.4byte Move_NASTY_PLOT
-	.4byte Move_BULLET_PUNCH
+	.4byte Move_BLADE_FLASH
 	.4byte Move_AVALANCHE
 	.4byte Move_ICE_SHARD
-	.4byte Move_SHADOW_CLAW
+	.4byte Move_SHADOW_HIT
 	.4byte Move_THUNDER_FANG
 	.4byte Move_ICE_FANG
 	.4byte Move_FIRE_FANG
@@ -464,7 +464,7 @@ gBattleAnims_Moves::
 	.4byte Move_ROCK_WRECKER
 	.4byte Move_CROSS_POISON
 	.4byte Move_GUNK_SHOT
-	.4byte Move_IRON_HEAD
+	.4byte Move_DRAWN_LINE
 	.4byte Move_MAGNET_BOMB
 	.4byte Move_STONE_EDGE
 	.4byte Move_CAPTIVATE
@@ -1831,7 +1831,7 @@ Move_TOXIC_SPIKES:
 Move_HEART_SWAP:
 	end
 
-Move_AQUA_RING:
+Move_MYSTIC_WATER:
 General_AquaRingHeal:
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
@@ -2524,7 +2524,7 @@ SetFocusBlastBG:
 	fadetobg BG_FOCUS_BLAST
 	goto SetHighSpeedBgFade
 
-Move_ENERGY_BALL:
+Move_ENERGY_LIGHT:
 	loadspritegfx ANIM_TAG_ENERGY_BALL
 	monbg ANIM_TARGET
 	setalpha 12, 8
@@ -2685,7 +2685,7 @@ Move_NASTY_PLOT:
 	call UnsetPsychicBg
 	end
 
-Move_BULLET_PUNCH:
+Move_BLADE_FLASH:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	monbg ANIM_TARGET
@@ -2826,7 +2826,7 @@ Move_ICE_SHARD:
 	blendoff
 	end
 
-Move_SHADOW_CLAW:
+Move_SHADOW_HIT:
 	loadspritegfx ANIM_TAG_BLUE_LIGHT_WALL
 	loadspritegfx ANIM_TAG_CLAW_SLASH
 	loadspritegfx ANIM_TAG_TORN_METAL
@@ -3609,7 +3609,7 @@ SetGunkShotBG:
 	goto SetHighSpeedBgFade
 
 
-Move_IRON_HEAD:
+Move_DRAWN_LINE:
 	loadspritegfx ANIM_TAG_GUST
 	loadspritegfx ANIM_TAG_IMPACT
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
@@ -20774,7 +20774,7 @@ Move_REST:
 	waitforvisualfinish
 	end
 
-Move_CONFUSION:
+Move_PSYSHOT:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
 	setalpha 8, 8
@@ -20791,7 +20791,7 @@ Move_CONFUSION:
 	call UnsetPsychicBg
 	end
 
-Move_PSYCHIC:
+Move_MANA_BURST:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
 	setalpha 8, 8
@@ -22008,7 +22008,7 @@ Move_SLUDGE:
 	waitforvisualfinish
 	end
 
-Move_SLUDGE_BOMB:
+Move_POISON_BOMB:
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	call SludgeBombProjectile
 	call SludgeBombProjectile
@@ -23381,7 +23381,7 @@ Move_NIGHT_SHADE:
 	waitbgfadein
 	end
 
-Move_EGG_BOMB:
+Move_MIND_BOMB:
 	loadspritegfx ANIM_TAG_EXPLOSION
 	loadspritegfx ANIM_TAG_LARGE_FRESH_EGG
 	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
@@ -24374,7 +24374,7 @@ MorningSunStar:
 	delay 5
 	return
 
-Move_SWEET_SCENT:
+Move_NATURE_POWER:
 	loadspritegfx ANIM_TAG_PINK_PETAL
 	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
 	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 100, 0, 100
@@ -25706,7 +25706,7 @@ Move_SECRET_POWER:
 	jumpargeq 0, STATUS_FIELD_MISTY_TERRAIN,    Move_FAIRY_WIND
 	jumpargeq 0, STATUS_FIELD_GRASSY_TERRAIN,   Move_NEEDLE_ARM
 	jumpargeq 0, STATUS_FIELD_ELECTRIC_TERRAIN, Move_THUNDER_SHOCK
-	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  Move_CONFUSION
+	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  Move_PSYSHOT
 	createvisualtask AnimTask_GetBattleTerrain, 5
 	jumpargeq 0, BATTLE_TERRAIN_GRASS,          Move_NEEDLE_ARM
 	jumpargeq 0, BATTLE_TERRAIN_LONG_GRASS,     Move_MAGICAL_LEAF
