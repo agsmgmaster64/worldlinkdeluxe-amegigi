@@ -1487,9 +1487,9 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                         {
                             .name = _("TERRANCE"),
                             .facilityClass = FACILITY_CLASS_GENTLEMAN,
-                            .speechBefore = {EC_WORD_GOOD, EC_WORD_CHILDREN, EC_WORD_WILL, EC_WORD_GET, EC_WORD_A, EC_MOVE2(PRESENT)},
-                            .speechWin = {EC_WORD_THANK_YOU, EC_WORD_MY, EC_WORD_VICTORY, EC_WORD_IS, EC_WORD_YOUR, EC_MOVE2(PRESENT)},
-                            .speechLose = {EC_WORD_THAT_WAS, EC_WORD_MY, EC_MOVE2(PRESENT), EC_WORD_TO, EC_WORD_YOU, EC_EMPTY_WORD},
+                            .speechBefore = {EC_WORD_GOOD, EC_WORD_CHILDREN, EC_WORD_WILL, EC_WORD_GET, EC_WORD_A, /*EC_MOVE2(PRESENT)*/},
+                            .speechWin = {EC_WORD_THANK_YOU, EC_WORD_MY, EC_WORD_VICTORY, EC_WORD_IS, EC_WORD_YOUR, /*EC_MOVE2(PRESENT)*/},
+                            .speechLose = {EC_WORD_THAT_WAS, EC_WORD_MY, /*EC_MOVE2(PRESENT),*/ EC_WORD_TO, EC_WORD_YOU, EC_EMPTY_WORD},
                             .speechAfter = {EC_WORD_WELL_THEN, EC_WORD_CONGRATS, EC_WORD_MY, EC_WORD_FRIEND, EC_EMPTY_WORD, EC_EMPTY_WORD},
                             .mons =
                                 {
