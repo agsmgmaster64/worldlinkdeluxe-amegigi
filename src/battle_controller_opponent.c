@@ -447,10 +447,6 @@ static u32 OpponentGetTrainerPicId(u32 battlerId)
             trainerPicId = GetFrontierTrainerFrontSpriteId(gTrainerBattleOpponent_A);
         }
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-    {
-        trainerPicId = GetEreaderTrainerFrontSpriteId();
-    }
     else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
     {
         if (battlerId != 1)

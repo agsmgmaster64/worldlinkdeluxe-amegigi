@@ -389,7 +389,6 @@ static void SendPacket_MemberState(struct PokemonJump_Player *, u8, u16);
 static bool32 RecvPacket_MemberStateToLeader(struct PokemonJump_Player *, int, u8 *, u16 *);
 static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *, int);
 static bool32 TryUpdateRecords(u32, u16, u16);
-static void IncrementGamesWithMaxPlayers(void);
 static void Task_RunPokeJumpGfxFunc(u8);
 static void ShowBonus(u8);
 static void Task_UpdateBonus(u8);
@@ -413,7 +412,6 @@ static void Msg_SomeoneDroppedOut(void);
 static void DoPokeJumpCountdown(void);
 static void Msg_CommunicationStandby(void);
 static void Task_ShowPokemonJumpRecords(u8);
-static void PrintRecordsText(u16, int);
 static void TruncateToFirstWordOnly(u8 *);
 
 EWRAM_DATA static struct PokemonJump *sPokemonJump = NULL;
@@ -750,8 +748,6 @@ static void InitGame(struct PokemonJump *jump)
     jump->comm.data = 0;
     InitPlayerAndJumpTypes();
     ResetForNewGame(jump);
-    if (jump->numPlayers == MAX_RFU_PLAYERS)
-        IncrementGamesWithMaxPlayers();
 }
 
 static void ResetForNewGame(struct PokemonJump *jump)
@@ -4272,42 +4268,9 @@ static bool32 RecvPacket_MemberStateToMember(struct PokemonJump_Player *player, 
     return TRUE;
 }
 
-static struct PokemonJumpRecords *GetPokeJumpRecords(void)
-{
-    return &gSaveBlock2Ptr->pokeJump;
-}
-
-void ResetPokemonJumpRecords(void)
-{
-    struct PokemonJumpRecords *records = GetPokeJumpRecords();
-    records->jumpsInRow = 0;
-    records->bestJumpScore = 0;
-    records->excellentsInRow = 0;
-    records->gamesWithMaxPlayers = 0;
-    records->unused2 = 0;
-    records->unused1 = 0;
-}
-
 static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRow)
 {
-    struct PokemonJumpRecords *records = GetPokeJumpRecords();
-    bool32 newRecord = FALSE;
-
-    if (records->bestJumpScore < jumpScore && jumpScore <= MAX_JUMP_SCORE)
-        records->bestJumpScore = jumpScore, newRecord = TRUE;
-    if (records->jumpsInRow < jumpsInRow && jumpsInRow <= MAX_JUMPS)
-        records->jumpsInRow = jumpsInRow, newRecord = TRUE;
-    if (records->excellentsInRow < excellentsInRow && excellentsInRow <= MAX_JUMPS)
-        records->excellentsInRow = excellentsInRow, newRecord = TRUE;
-
-    return newRecord;
-}
-
-static void IncrementGamesWithMaxPlayers(void)
-{
-    struct PokemonJumpRecords *records = GetPokeJumpRecords();
-    if (records->gamesWithMaxPlayers < 9999)
-        records->gamesWithMaxPlayers++;
+    return FALSE;
 }
 
 void ShowPokemonJumpRecords(void)
@@ -4355,7 +4318,6 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
         window.tilemapLeft = (30 - width) / 2;
         window.width = width;
         tWindowId = AddWindow(&window);
-        PrintRecordsText(tWindowId, width);
         CopyWindowToVram(tWindowId, COPYWIN_FULL);
         tState++;
         break;
@@ -4384,30 +4346,6 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
 
 #undef tState
 #undef tWindowId
-
-static void PrintRecordsText(u16 windowId, int width)
-{
-    int i, x;
-    int recordNums[3];
-    struct PokemonJumpRecords *records = GetPokeJumpRecords();
-    recordNums[0] = records->jumpsInRow;
-    recordNums[1] = records->bestJumpScore;
-    recordNums[2] = records->excellentsInRow;
-
-    LoadUserWindowBorderGfx_(windowId, 0x21D, BG_PLTT_ID(13));
-    DrawTextBorderOuter(windowId, 0x21D, 13);
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_PkmnJumpRecords, GetStringCenterAlignXOffset(FONT_NORMAL, gText_PkmnJumpRecords, width * 8), 1, TEXT_SKIP_DRAW, NULL);
-    for (i = 0; i < ARRAY_COUNT(sRecordsTexts); i++)
-    {
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, sRecordsTexts[i], 0, 25 + (i * 16), TEXT_SKIP_DRAW, NULL);
-        ConvertIntToDecimalStringN(gStringVar1, recordNums[i], STR_CONV_MODE_LEFT_ALIGN, 5);
-        TruncateToFirstWordOnly(gStringVar1);
-        x = (width * 8) - GetStringWidth(FONT_NORMAL, gStringVar1, 0);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar1, x, 25 + (i * 16), TEXT_SKIP_DRAW, NULL);
-    }
-    PutWindowTilemap(windowId);
-}
 
 static void TruncateToFirstWordOnly(u8 *str)
 {
