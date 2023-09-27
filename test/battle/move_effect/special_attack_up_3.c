@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_TAIL_GLOW].effect == EFFECT_SPECIAL_ATTACK_UP_3);
+    ASSUME(gBattleMoves[MOVE_MANA_CHARGE].effect == EFFECT_SPECIAL_ATTACK_UP_3);
 }
 
 SINGLE_BATTLE_TEST("Tail Glow drastically raises Special Attack", s16 damage)
@@ -16,11 +16,11 @@ SINGLE_BATTLE_TEST("Tail Glow drastically raises Special Attack", s16 damage)
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        if (raiseSpecialAttack) TURN { MOVE(player, MOVE_TAIL_GLOW); }
+        if (raiseSpecialAttack) TURN { MOVE(player, MOVE_MANA_CHARGE); }
         TURN { MOVE(player, MOVE_GUST); }
     } SCENE {
         if (raiseSpecialAttack) {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_TAIL_GLOW, player);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_MANA_CHARGE, player);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Wobbuffet's Sp. Atk drastically rose!");
         }

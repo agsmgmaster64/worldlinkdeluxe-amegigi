@@ -702,7 +702,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_TWINEEDLE] =
+    [MOVE_SEAL_NEEDLE] =
     {
         .effect = EFFECT_POISON_HIT,
         .power = 25,
@@ -824,7 +824,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .soundMove = TRUE,
     },
 
-    [MOVE_SUPERSONIC] =
+    [MOVE_JAMMING] =
     {
         .effect = EFFECT_CONFUSE,
         .power = 0,
@@ -875,7 +875,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
     },
 
-    [MOVE_ACID] =
+    [MOVE_POISON_TEARS] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_4
             .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
@@ -2381,7 +2381,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_POISON_GAS] =
+    [MOVE_TOXIC_GAS] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .accuracy = 90,
@@ -2596,7 +2596,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .gravityBanned = TRUE,
     },
 
-    [MOVE_ACID_ARMOR] =
+    [MOVE_DISPERSE] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_6
             .pp = 20,
@@ -3759,7 +3759,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .makesContact = TRUE,
     },
 
-    [MOVE_PRESENT] =
+    [MOVE_PRANK] =
     {
         .effect = EFFECT_PRESENT,
         .power = 1,
@@ -5042,7 +5042,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .snatchAffected = TRUE,
     },
 
-    [MOVE_TAIL_GLOW] =
+    [MOVE_MANA_CHARGE] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
             .effect = EFFECT_SPECIAL_ATTACK_UP_3,
@@ -5471,7 +5471,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .sheerForceBoost = TRUE,
     },
 
-    [MOVE_METAL_SOUND] =
+    [MOVE_BINDING_VOICE] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
         .power = 0,
@@ -5487,7 +5487,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .soundMove = TRUE,
     },
 
-    [MOVE_GRASS_WHISTLE] =
+    [MOVE_NATURE_SOUND] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
@@ -5598,7 +5598,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS < GEN_4,
     },
 
-    [MOVE_SKY_UPPERCUT] =
+    [MOVE_SOAR] =
     {
         .effect = EFFECT_SKY_UPPERCUT,
         .power = 85,
@@ -5771,7 +5771,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .soundMove = B_UPDATED_MOVE_FLAGS >= GEN_8,
     },
 
-    [MOVE_DRAGON_CLAW] =
+    [MOVE_HEART_BREAK] =
     {
         .effect = EFFECT_HIT,
         .power = 80,

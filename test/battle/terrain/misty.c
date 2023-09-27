@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Misty Terrain decreases power of Dragon-type moves by 50 per
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_MISTY_TERRAIN); }
-        TURN { MOVE(player, MOVE_DRAGON_CLAW); }
+        TURN { MOVE(player, MOVE_HEART_BREAK); }
     } SCENE {
         MESSAGE("Wobbuffet used Dragon Claw!");
         HP_BAR(opponent, captureDamage: &results[i].damage);

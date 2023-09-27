@@ -665,7 +665,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = FALSE,
         .moves =
         {
-            MOVE_SUPERSONIC,
+            MOVE_JAMMING,
             MOVE_WHIRLWIND,
             MOVE_SILVER_WIND,
             MOVE_SAFEGUARD
@@ -827,7 +827,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_PRESENT,
+            MOVE_PRANK,
             MOVE_FACADE,
             MOVE_FOCUS_PUNCH,
             MOVE_RETURN
@@ -883,7 +883,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_PETAL_DANCE,
             MOVE_MAGICAL_LEAF,
-            MOVE_GRASS_WHISTLE,
+            MOVE_NATURE_SOUND,
             MOVE_INGRAIN
         },
         .cool = 50,
@@ -1394,7 +1394,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_SKY_UPPERCUT,
+            MOVE_SOAR,
             MOVE_DETECT,
             MOVE_REVENGE,
             MOVE_MEGA_PUNCH
@@ -1529,7 +1529,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_METAL_SOUND,
+            MOVE_BINDING_VOICE,
             MOVE_METAL_CLAW,
             MOVE_HARDEN,
             MOVE_TAKE_DOWN
@@ -1692,7 +1692,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_FLAIL,
-            MOVE_SUPERSONIC,
+            MOVE_JAMMING,
             MOVE_HORN_ATTACK,
             MOVE_FURY_ATTACK
         },
