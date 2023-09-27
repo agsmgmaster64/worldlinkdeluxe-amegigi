@@ -2307,7 +2307,7 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
     [FRONTIER_TRAINER_OMAR] = {
         .facilityClass = FACILITY_CLASS_SAILOR,
         .trainerName = _("OMAR"),
-        .speechBefore = {EC_WORD_LET_ME_WIN, EC_WORD_IN, EC_MOVE(RETURN), EC_WORD_FOR, EC_WORD_A, EC_MOVE2(PRESENT)},
+        .speechBefore = {EC_WORD_LET_ME_WIN, EC_WORD_IN, EC_MOVE(RETURN), EC_WORD_FOR, EC_WORD_A, /*EC_MOVE2(PRESENT)*/},
         .speechWin = {EC_WORD_HERE, EC_WORD_YOU, EC_WORD_ARE, EC_WORD_SOME, EC_MOVE2(TOXIC), EC_WORD_SWEETS},
         .speechLose = {EC_WORD_YOUR, /*EC_MOVE2(PRESENT),*/ EC_WORD_QUES, EC_WORD_WHAT, EC_WORD_FOR, EC_WORD_QUES_EXCL},
         .monSet = gBattleFrontierTrainerMons_Omar
