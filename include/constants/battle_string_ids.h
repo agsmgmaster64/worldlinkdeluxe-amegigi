@@ -675,7 +675,7 @@
 #define STRINGID_MONHEARINGFLUTEAWOKE                 673
 #define STRINGID_PLAYERWHITEDOUT                      674
 
-#define BATTLESTRINGS_COUNT                           671
+#define BATTLESTRINGS_COUNT                           675
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
