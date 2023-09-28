@@ -140,8 +140,8 @@ static const u8 sText_TenDashes2[] = _("----------");
 
 
 #define SCROLLING_MON_X 146
-#define HGSS_DECAPPED 0 //0 false, 1 true
-#define HGSS_DARK_MODE 0 //0 false, 1 true
+#define HGSS_DECAPPED 1 //0 false, 1 true
+#define HGSS_DARK_MODE 1 //0 false, 1 true
 #define HGSS_HIDE_UNSEEN_EVOLUTION_NAMES 0 //0 false, 1 true
 
 
@@ -4902,7 +4902,7 @@ static void LoadTilesetTilemapHGSS(u8 page)
 static u8 ShowSplitIcon(u32 split)
 {
     if (sPokedexView->splitIconSpriteId == 0xFF)
-        sPokedexView->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 139, 90, 0);
+        sPokedexView->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 174, 43, 0);
 
     gSprites[sPokedexView->splitIconSpriteId].invisible = FALSE;
     StartSpriteAnim(&gSprites[sPokedexView->splitIconSpriteId], split);
@@ -5157,6 +5157,10 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         else
             gTasks[taskId].data[5] = 0;
 
+        FillWindowPixelBuffer(WIN_STATS_MOVES_TOP, PIXEL_FILL(0));
+        PrintStatsScreen_DestroyMoveItemIcon(taskId);
+        PrintStatsScreen_Moves_Top(taskId);
+
         FillWindowPixelBuffer(WIN_STATS_LEFT, PIXEL_FILL(0));
         PrintStatsScreen_Left(taskId);
 
@@ -5192,8 +5196,17 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         FillWindowPixelBuffer(WIN_STATS_MOVES_DESCRIPTION, PIXEL_FILL(0));
         PrintStatsScreen_Moves_Description(taskId);
 
-        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
-        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
+        if (gTasks[taskId].data[5] == 0)
+        {
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
+        }
+        else
+        {
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
+        }
         PrintStatsScreen_Moves_Bottom(taskId);
     }
     if (JOY_REPEAT(DPAD_DOWN) && sPokedexView->moveSelected < sPokedexView->movesTotal -1 )
@@ -5207,8 +5220,17 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         FillWindowPixelBuffer(WIN_STATS_MOVES_DESCRIPTION, PIXEL_FILL(0));
         PrintStatsScreen_Moves_Description(taskId);
 
-        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
-        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
+        if (gTasks[taskId].data[5] == 0)
+        {
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
+        }
+        else
+        {
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
+            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
+        }
         PrintStatsScreen_Moves_Bottom(taskId);
     }
 
@@ -5465,7 +5487,8 @@ static void PrintStatsScreen_Moves_BottomText(u8 taskId)
     if (gTasks[taskId].data[5] == 0)
     {
         PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Power,  moves_x, moves_y);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Accuracy2,  moves_x + 66, moves_y);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Accuracy3,  moves_x + 55, moves_y);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_PPDex,  moves_x + 104, moves_y);
     }
     else
     {
@@ -5496,7 +5519,7 @@ static void PrintStatsScreen_Moves_Bottom(u8 taskId)
             StringCopy(gStringVar1, gText_ThreeDashes);
         else
             ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1, moves_x + 45, moves_y);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1, moves_x + 30, moves_y);
         //Physical/Special Split from BE
         #ifdef BATTLE_ENGINE
             DestroySplitIcon();
@@ -5507,7 +5530,10 @@ static void PrintStatsScreen_Moves_Bottom(u8 taskId)
             StringCopy(gStringVar1, gText_ThreeDashes);
         else
             ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 114, moves_y);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 79, moves_y);
+        //Accuracy
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 119, moves_y);
     }
     else //Appeal + Jam
     {
