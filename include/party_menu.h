@@ -101,10 +101,4 @@ void ItemUseCB_Mints(u8 taskId, TaskFunc task);
 void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task);
 void InitPartyMenuForPokevialFromField(u8 taskId);
 
-#ifndef BATTLE_ENGINE
-bool8 CanLearnTutorMove(u16, u8);
-#else
-u16 GetTMHMMoves(u16 position);
-#endif
-
 #endif // GUARD_PARTY_MENU_H

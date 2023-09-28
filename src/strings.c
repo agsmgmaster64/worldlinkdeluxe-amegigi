@@ -1809,6 +1809,7 @@ const u8 gText_Stats_MEDIUM_SLOW[]   = _("MED. SLOW");
 const u8 gText_Stats_FAST[]          = _("FAST");
 const u8 gText_Stats_SLOW[]          = _("SLOW");
 const u8 gText_Stats_ContestHeart[]  = _("H");
+const u8 gText_PlusSymbol[] = _("+");
 const u8 gText_Stats_Minus[] = _("-");
 const u8 gText_Stats_eggGroup[]             = _("EGG G1:");
 const u8 gText_Stats_eggGroup_Groups[]      = _("{STR_VAR_1}/{STR_VAR_2}");

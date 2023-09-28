@@ -1910,41 +1910,59 @@ static const struct SearchOptionText sDexSearchNameOptions[] =
 static const struct SearchOptionText sDexSearchColorOptions[] =
 {
     {gText_DexEmptyString, gText_DexSearchDontSpecify},
-    [BODY_COLOR_RED + 1]    = {gText_DexEmptyString, gText_DexSearchColorRed},
-    [BODY_COLOR_BLUE + 1]   = {gText_DexEmptyString, gText_DexSearchColorBlue},
-    [BODY_COLOR_YELLOW + 1] = {gText_DexEmptyString, gText_DexSearchColorYellow},
-    [BODY_COLOR_GREEN + 1]  = {gText_DexEmptyString, gText_DexSearchColorGreen},
-    [BODY_COLOR_BLACK + 1]  = {gText_DexEmptyString, gText_DexSearchColorBlack},
-    [BODY_COLOR_BROWN + 1]  = {gText_DexEmptyString, gText_DexSearchColorBrown},
-    [BODY_COLOR_PURPLE + 1] = {gText_DexEmptyString, gText_DexSearchColorPurple},
-    [BODY_COLOR_GRAY + 1]   = {gText_DexEmptyString, gText_DexSearchColorGray},
-    [BODY_COLOR_WHITE + 1]  = {gText_DexEmptyString, gText_DexSearchColorWhite},
-    [BODY_COLOR_PINK + 1]   = {gText_DexEmptyString, gText_DexSearchColorPink},
+    [SOURCE_HRTP + 1]         = {gText_DexHRTPDescription,    gText_DexSearchSourceTouhou1},
+    [SOURCE_SOEW + 1]         = {gText_DexSOEWDescription,    gText_DexSearchSourceTouhou2},
+    [SOURCE_PODD + 1]         = {gText_DexPODDDescription,    gText_DexSearchSourceTouhou3},
+    [SOURCE_LLS + 1]          = {gText_DexLLSDescription,     gText_DexSearchSourceTouhou4},
+    [SOURCE_MS + 1]           = {gText_DexMSDescription,      gText_DexSearchSourceTouhou5},
+    [SOURCE_EOSD + 1]         = {gText_DexEOSDDescription,    gText_DexSearchSourceTouhou6},
+    [SOURCE_PCB + 1]          = {gText_DexPCBDescription,     gText_DexSearchSourceTouhou7},
+    [SOURCE_IN + 1]           = {gText_DexINDescription,      gText_DexSearchSourceTouhou8},
+    [SOURCE_POFV + 1]         = {gText_DexPOFVDescription,    gText_DexSearchSourceTouhou9},
+    [SOURCE_MOF + 1]          = {gText_DexMOFDescription,     gText_DexSearchSourceTouhou10},
+    [SOURCE_SA + 1]           = {gText_DexSADescription,      gText_DexSearchSourceTouhou11},
+    [SOURCE_UFO + 1]          = {gText_DexUFODescription,     gText_DexSearchSourceTouhou12},
+    [SOURCE_TD + 1]           = {gText_DexTDDescription,      gText_DexSearchSourceTouhou13},
+    [SOURCE_DDC + 1]          = {gText_DexDDCDescription,     gText_DexSearchSourceTouhou14},
+    [SOURCE_LOLK + 1]         = {gText_DexLOLKDescription,    gText_DexSearchSourceTouhou15},
+    [SOURCE_HSIFS + 1]        = {gText_DexHSIFSDescription,   gText_DexSearchSourceTouhou16},
+    [SOURCE_WBAWC + 1]        = {gText_DexWBAWCDescription,   gText_DexSearchSourceTouhou17},
+    [SOURCE_UM + 1]           = {gText_DexUMDescription,      gText_DexSearchSourceTouhou18},
+    [SOURCE_UDOALG + 1]       = {gText_DexUDOALGDescription,  gText_DexSearchSourceTouhou19},
+    [SOURCE_SPINOFF + 1]      = {gText_DexSpinoffDescription, gText_DexSearchSourceTouhouSpinoff},
+    [SOURCE_PRINT + 1]        = {gText_DexPrintWDescription,  gText_DexSearchSourceTouhouPrint},
+    [SOURCE_HOLOLIVE + 1]     = {gText_DexOtherDescription,   gText_DexSearchSourceHololive},
+    [SOURCE_NIJISANJI + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceNjisanji},
+    [SOURCE_UNDERTALE + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceUndertale},
+    [SOURCE_DELTARUNE + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceDeltarune},
+    [SOURCE_PIZZA_TOWER + 1]  = {gText_DexOtherDescription,   gText_DexSearchSourcePizzaTower},
+    [SOURCE_MARIO + 1]        = {gText_DexOtherDescription,   gText_DexSearchSourceMario},
+    [SOURCE_OTHER + 1]        = {gText_DexOtherDescription,   gText_DexSearchSourceMisc},
     {},
 };
 
 static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES + 1] = // + 2 for "None" and terminator, - 1 for Mystery
 {
     {gText_DexEmptyString, gText_DexSearchTypeNone},
-    {gText_DexEmptyString, gTypeNames[TYPE_NORMAL]},
-    {gText_DexEmptyString, gTypeNames[TYPE_FIGHTING]},
+    {gText_DexEmptyString, gTypeNames[TYPE_ILLUSION]},
+    {gText_DexEmptyString, gTypeNames[TYPE_DREAM]},
     {gText_DexEmptyString, gTypeNames[TYPE_FLYING]},
-    {gText_DexEmptyString, gTypeNames[TYPE_POISON]},
-    {gText_DexEmptyString, gTypeNames[TYPE_GROUND]},
-    {gText_DexEmptyString, gTypeNames[TYPE_ROCK]},
-    {gText_DexEmptyString, gTypeNames[TYPE_BUG]},
+    {gText_DexEmptyString, gTypeNames[TYPE_MIASMA]},
+    {gText_DexEmptyString, gTypeNames[TYPE_EARTH]},
+    {gText_DexEmptyString, gTypeNames[TYPE_BEAST]},
+    {gText_DexEmptyString, gTypeNames[TYPE_HEART]},
     {gText_DexEmptyString, gTypeNames[TYPE_GHOST]},
     {gText_DexEmptyString, gTypeNames[TYPE_STEEL]},
     {gText_DexEmptyString, gTypeNames[TYPE_FIRE]},
     {gText_DexEmptyString, gTypeNames[TYPE_WATER]},
-    {gText_DexEmptyString, gTypeNames[TYPE_GRASS]},
-    {gText_DexEmptyString, gTypeNames[TYPE_ELECTRIC]},
-    {gText_DexEmptyString, gTypeNames[TYPE_PSYCHIC]},
+    {gText_DexEmptyString, gTypeNames[TYPE_NATURE]},
+    {gText_DexEmptyString, gTypeNames[TYPE_WIND]},
+    {gText_DexEmptyString, gTypeNames[TYPE_REASON]},
     {gText_DexEmptyString, gTypeNames[TYPE_ICE]},
-    {gText_DexEmptyString, gTypeNames[TYPE_DRAGON]},
+    {gText_DexEmptyString, gTypeNames[TYPE_FAITH]},
     {gText_DexEmptyString, gTypeNames[TYPE_DARK]},
     #ifdef BATTLE_ENGINE
-    {gText_DexEmptyString, gTypeNames[TYPE_FAIRY]},
+    {gText_DexEmptyString, gTypeNames[TYPE_COSMIC]},
     #endif
     {},
 };
@@ -1963,25 +1981,25 @@ static const u8 sOrderOptions[] =
 static const u8 sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
 {
     TYPE_NONE,
-    TYPE_NORMAL,
-    TYPE_FIGHTING,
+    TYPE_ILLUSION,
+    TYPE_DREAM,
     TYPE_FLYING,
-    TYPE_POISON,
-    TYPE_GROUND,
-    TYPE_ROCK,
-    TYPE_BUG,
+    TYPE_MIASMA,
+    TYPE_EARTH,
+    TYPE_BEAST,
+    TYPE_HEART,
     TYPE_GHOST,
     TYPE_STEEL,
     TYPE_FIRE,
     TYPE_WATER,
-    TYPE_GRASS,
-    TYPE_ELECTRIC,
-    TYPE_PSYCHIC,
+    TYPE_NATURE,
+    TYPE_WIND,
+    TYPE_REASON,
     TYPE_ICE,
-    TYPE_DRAGON,
+    TYPE_FAITH,
     TYPE_DARK,
     #ifdef BATTLE_ENGINE
-    TYPE_FAIRY,
+    TYPE_COSMIC,
     #endif
 };
 
@@ -4358,32 +4376,30 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
 #define TYPE_ICON_PAL_NUM_2     15
 static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
 {
-    [TYPE_NORMAL] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_FIGHTING] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_ILLUSION] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_DREAM] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FLYING] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_POISON] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_GROUND] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_ROCK] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_BUG] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_MIASMA] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_EARTH] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_BEAST] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_HEART] = TYPE_ICON_PAL_NUM_1,
     [TYPE_GHOST] = TYPE_ICON_PAL_NUM_1,
     [TYPE_STEEL] = TYPE_ICON_PAL_NUM_0,
     [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_2,
     [TYPE_FIRE] = TYPE_ICON_PAL_NUM_0,
     [TYPE_WATER] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_GRASS] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_NATURE] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_WIND] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_REASON] = TYPE_ICON_PAL_NUM_1,
     [TYPE_ICE] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_DRAGON] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_FAITH] = TYPE_ICON_PAL_NUM_0,
     [TYPE_DARK] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_COSMIC] = TYPE_ICON_PAL_NUM_2, //based on battle_engine
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = TYPE_ICON_PAL_NUM_0,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = TYPE_ICON_PAL_NUM_1,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = TYPE_ICON_PAL_NUM_1,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = TYPE_ICON_PAL_NUM_2,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = TYPE_ICON_PAL_NUM_0,
-    #ifdef TYPE_FAIRY
-    [TYPE_FAIRY] = TYPE_ICON_PAL_NUM_1, //based on battle_engine
-    #endif
 };
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
@@ -5303,9 +5319,9 @@ static bool8 CalculateMoves(void)
         move = gTeachableLearnsets[species][i];
         for (j = 0; j < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; j++)
         {
-            if (GetTMHMMoves(j) == move)
+            if (ItemIdToBattleMoveId(ITEM_TM01 + j) == move)
             {
-                sStatsMovesTMHM_ID[numTMHMMoves] = (ITEM_TM01_FOCUS_PUNCH + j);
+                sStatsMovesTMHM_ID[numTMHMMoves] = (ITEM_TM01 + j);
                 numTMHMMoves++;
                 break;
             }
@@ -5408,7 +5424,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     else
     {
         StringCopy(gStringVar4, gText_CommunicationError);
-        item = ITEM_MASTER_BALL;
+        item = ITEM_MASTER_ORB;
     }
 
     //Egg/TM/Level/Tutor Item Icon
@@ -6256,11 +6272,11 @@ static void Task_LoadEvolutionScreen(u8 taskId)
         //Print evo info and icons
         gTasks[taskId].data[3] = 0;
         PrintEvolutionTargetSpeciesAndMethod(taskId, NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum), 0, sPokedexView->numPreEvolutions);
-        LoadSpritePalette(&sSpritePalette_Arrow);
+        LoadSpritePalette(&gSpritePalette_Arrow);
         GetSeenFlagTargetSpecies();
         if (sPokedexView->sEvoScreenData.numAllEvolutions != 0 && sPokedexView->sEvoScreenData.numSeen != 0)
         {
-            sPokedexView->sEvoScreenData.arrowSpriteId = CreateSprite(&sSpriteTemplate_Arrow, 7, 58, 0);
+            sPokedexView->sEvoScreenData.arrowSpriteId = CreateSprite(&gSpriteTemplate_Arrow, 7, 58, 0);
             gSprites[sPokedexView->sEvoScreenData.arrowSpriteId].animNum = 2;
         }
         gMain.state++;
@@ -6535,30 +6551,10 @@ static u8 PrintPreEvolutions(u8 taskId, u16 species)
             {
                 preEvolutionOne = i;
                 numPreEvolutions += 1;
-                #ifdef POKEMON_EXPANSION
-                    if (gEvolutionTable[i][j].method == EVO_MEGA_EVOLUTION)
-                    {
-                        CopyItemName(gEvolutionTable[i][j].param, gStringVar2); //item
-                        isMega = TRUE;
-                    }
-                #endif
                 break;
             }
         }
     }
-
-    #ifdef POKEMON_EXPANSION
-    if (isMega)
-    {
-        sPokedexView->numPreEvolutions = numPreEvolutions;
-        sPokedexView->sEvoScreenData.numAllEvolutions += numPreEvolutions;
-        sPokedexView->sEvoScreenData.isMega = isMega;
-
-        CreateCaughtBallEvolutionScreen(preEvolutionOne, base_x - 9 - 8, base_y + base_y_offset*(numPreEvolutions - 1), 0);
-        HandlePreEvolutionSpeciesPrint(taskId, preEvolutionOne, species, base_x - 8, base_y, base_y_offset, numPreEvolutions - 1);
-        return numPreEvolutions;
-    }
-    #endif
 
     //Calculate if previous evolution also has a previous evolution
     if (numPreEvolutions != 0)
@@ -6649,14 +6645,8 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
     //Calculate number of possible direct evolutions (e.g. Eevee has 5 but torchic has 1)
     for (i = 0; i < EVOS_PER_MON; i++)
     {
-        #ifndef POKEMON_EXPANSION
-            if (gEvolutionTable[species][i].method != 0)
-                times += 1;
-        #endif
-        #ifdef POKEMON_EXPANSION
-            if (gEvolutionTable[species][i].method != 0 && gEvolutionTable[species][i].method != EVO_MEGA_EVOLUTION)
-                times += 1;
-        #endif
+        if (gEvolutionTable[species][i].method != 0)
+            times += 1;
     }
     gTasks[taskId].data[3] = times;
     sPokedexView->sEvoScreenData.numAllEvolutions += times;
@@ -6780,7 +6770,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
                 StringCopy(gStringVar2, gMoveNames[gEvolutionTable[species][i].param]);
                 StringExpandPlaceholders(gStringVar4, gText_EVO_MOVE );
                 break;
-            case EVO_MOVE_TYPE:
+            case EVO_FRIENDSHIP_MOVE_TYPE:
                 StringCopy(gStringVar2, gTypeNames[gEvolutionTable[species][i].param]);
                 StringExpandPlaceholders(gStringVar4, gText_EVO_MOVE_TYPE );
                 break;
@@ -6947,7 +6937,7 @@ static void Task_LoadFormsScreen(u8 taskId)
         //Print form icons
         gTasks[taskId].data[3] = 0;
         PrintForms(taskId, NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum));
-        LoadSpritePalette(&sSpritePalette_Arrow);
+        LoadSpritePalette(&gSpritePalette_Arrow);
         gMain.state++;
         break;
     case 5:
@@ -7835,7 +7825,7 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
         {
             species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
 
-            if (bodyColor == gSpeciesInfo[species].bodyColor)
+            if (bodyColor == gSpeciesInfo[species].sourceGame)
             {
                 sPokedexView->pokedexList[resultsCount] = sPokedexView->pokedexList[i];
                 resultsCount++;
