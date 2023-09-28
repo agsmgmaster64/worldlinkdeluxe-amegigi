@@ -1384,9 +1384,9 @@ bool8 NameHasGenderSymbol(const u8 *name, u8 genderRatio)
 
     for (i = 0; name[i] != EOS; i++)
     {
-        if (name[i] == CHAR_MALE)
+        if (name[i] == CHAR_YIN)
             symbolsCount[MALE]++;
-        if (name[i] == CHAR_FEMALE)
+        if (name[i] == CHAR_YANG)
             symbolsCount[FEMALE]++;
     }
 

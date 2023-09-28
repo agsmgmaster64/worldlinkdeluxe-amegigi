@@ -365,9 +365,6 @@ static u8 *CopyConditionMonNameGender(u8 *str, u16 listId, bool8 skipPadding)
         level = GetLevelFromBoxMonExp(boxMon);
     }
 
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(str, GetSpeciesName(species)))
-        gender = MON_GENDERLESS;
-
     str_ = str; // For some reason, a variable is needed to match.
     while (*str_ != EOS)
         (str_++);
@@ -387,7 +384,7 @@ static u8 *CopyConditionMonNameGender(u8 *str, u16 listId, bool8 skipPadding)
         *(str_++) = EXT_CTRL_CODE_BEGIN;
         *(str_++) = EXT_CTRL_CODE_SHADOW;
         *(str_++) = TEXT_COLOR_LIGHT_RED;
-        *(str_++) = CHAR_MALE;
+        *(str_++) = CHAR_YIN;
         break;
     case MON_FEMALE:
         *(str_++) = EXT_CTRL_CODE_BEGIN;
@@ -396,7 +393,7 @@ static u8 *CopyConditionMonNameGender(u8 *str, u16 listId, bool8 skipPadding)
         *(str_++) = EXT_CTRL_CODE_BEGIN;
         *(str_++) = EXT_CTRL_CODE_SHADOW;
         *(str_++) = TEXT_COLOR_LIGHT_GREEN;
-        *(str_++) = CHAR_FEMALE;
+        *(str_++) = CHAR_YANG;
         break;
     }
 

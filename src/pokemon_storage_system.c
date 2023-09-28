@@ -6991,9 +6991,6 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
     }
     else
     {
-        if (sStorage->displayMonSpecies == SPECIES_NIDORAN_F || sStorage->displayMonSpecies == SPECIES_NIDORAN_M)
-            gender = MON_GENDERLESS;
-
         StringCopyPadded(sStorage->displayMonNameText, sStorage->displayMonName, CHAR_SPACE, 5);
 
         txtPtr = sStorage->displayMonSpeciesName;
@@ -7009,13 +7006,13 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             *(txtPtr)++ = TEXT_COLOR_RED;
             *(txtPtr)++ = TEXT_COLOR_WHITE;
             *(txtPtr)++ = TEXT_COLOR_LIGHT_RED;
-            *(txtPtr)++ = CHAR_MALE;
+            *(txtPtr)++ = CHAR_YIN;
             break;
         case MON_FEMALE:
             *(txtPtr)++ = TEXT_COLOR_GREEN;
             *(txtPtr)++ = TEXT_COLOR_WHITE;
             *(txtPtr)++ = TEXT_COLOR_LIGHT_GREEN;
-            *(txtPtr)++ = CHAR_FEMALE;
+            *(txtPtr)++ = CHAR_YANG;
             break;
         default:
             *(txtPtr)++ = TEXT_COLOR_DARK_GRAY;

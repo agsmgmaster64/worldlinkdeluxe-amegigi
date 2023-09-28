@@ -887,9 +887,9 @@ static void PutAiPartyText(struct BattleDebugMenu *data)
             txtPtr = ConvertIntToDecimalStringN(text + 1, aiMons[i].level, STR_CONV_MODE_LEFT_ALIGN, 3);
             *txtPtr++ = CHAR_SPACE;
             if (aiMons[i].gender == MON_MALE)
-                *txtPtr++ = CHAR_MALE;
+                *txtPtr++ = CHAR_YIN;
             else if (aiMons[i].gender == MON_FEMALE)
-                *txtPtr++ = CHAR_FEMALE;
+                *txtPtr++ = CHAR_YANG;
             *txtPtr = EOS;
             AddTextPrinterParameterized5(data->aiMovesWindowId, FONT_SMALL_NARROW, text, i * 41, 0, 0, NULL, 0, 0);
         }

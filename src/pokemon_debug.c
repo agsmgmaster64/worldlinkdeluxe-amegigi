@@ -486,9 +486,9 @@ static void PrintDigitChars(struct PokemonDebugMenu *data)
     if (SpeciesHasGenderDifferences(species))
     {
         if (data->isFemale)
-            text[i++] = CHAR_FEMALE;
+            text[i++] = CHAR_YANG;
         else
-            text[i++] = CHAR_MALE;
+            text[i++] = CHAR_YIN;
         text[i++] = CHAR_HYPHEN;
     }
 

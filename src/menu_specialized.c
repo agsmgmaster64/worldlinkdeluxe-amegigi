@@ -939,9 +939,6 @@ static u8 *GetConditionMenuMonString(u8 *dst, u16 boxId, u16 monId)
         level = GetLevelFromBoxMonExp(boxMon);
     }
 
-    if ((species == SPECIES_NIDORAN_F || species == SPECIES_NIDORAN_M) && !StringCompare(dst, GetSpeciesName(species)))
-        gender = MON_GENDERLESS;
-
     for (str = dst; *str != EOS; str++)
         ;
 
@@ -961,7 +958,7 @@ static u8 *GetConditionMenuMonString(u8 *dst, u16 boxId, u16 monId)
         *(str++) = EXT_CTRL_CODE_BEGIN;
         *(str++) = EXT_CTRL_CODE_SHADOW;
         *(str++) = TEXT_COLOR_LIGHT_RED;
-        *(str++) = CHAR_MALE;
+        *(str++) = CHAR_YIN;
         break;
     case MON_FEMALE:
         *(str++) = EXT_CTRL_CODE_BEGIN;
@@ -970,7 +967,7 @@ static u8 *GetConditionMenuMonString(u8 *dst, u16 boxId, u16 monId)
         *(str++) = EXT_CTRL_CODE_BEGIN;
         *(str++) = EXT_CTRL_CODE_SHADOW;
         *(str++) = TEXT_COLOR_LIGHT_GREEN;
-        *(str++) = CHAR_FEMALE;
+        *(str++) = CHAR_YANG;
         break;
     }
 

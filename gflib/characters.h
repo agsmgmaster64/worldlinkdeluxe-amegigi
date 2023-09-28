@@ -52,7 +52,9 @@
 #define CHAR_LV                0x34
 #define CHAR_EQUALS            0x35
 #define CHAR_SEMICOLON         0x36
-#define CHAR_BARD_WORD_DELIMIT 0x37 // Empty space to separate words in Bard's song
+#define CHAR_YIN               0x37
+#define CHAR_YANG              0x38
+#define CHAR_BARD_WORD_DELIMIT 0x39 // Empty space to separate words in Bard's song
 #define CHAR_INV_QUESTION_MARK 0x51
 #define CHAR_INV_EXCL_MARK     0x52
 #define CHAR_PK                0x53
