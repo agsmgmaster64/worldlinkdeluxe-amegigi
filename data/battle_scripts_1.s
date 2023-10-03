@@ -8587,6 +8587,7 @@ BattleScript_FascinateLoop:
 	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_FascinateInReverse
 BattleScript_FascinateEffect:
 	copybyte sBATTLER, gBattlerAttacker
+	setstatchanger STAT_SPATK, 1, TRUE
 	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_FascinateLoopIncrement
 	setgraphicalstatchangevalues
 	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_FascinateContrary

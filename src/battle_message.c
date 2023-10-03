@@ -424,6 +424,10 @@ static const u8 sText_LinkTrainer1WithdrewPkmn[] = _("{B_LINK_OPPONENT1_NAME} wi
 static const u8 sText_LinkTrainer2WithdrewPkmn[] = _("{B_LINK_SCR_TRAINER_NAME} withdrew\n{B_BUFF1}!");
 static const u8 sText_WildPkmnPrefix[] = _("Wild ");
 static const u8 sText_FoePkmnPrefix[] = _("Foe ");
+static const u8 sText_TheOpposingPkmnPrefix[] = _("The opposing ");
+static const u8 sText_TheWildPkmnPrefix[] = _("The wild ");
+static const u8 sText_TheOpposingPkmnPrefixNoCap[] = _("the opposing ");
+static const u8 sText_TheWildPkmnPrefixNoCap[] = _("the wild ");
 static const u8 sText_EmptyString8[] = _("");
 static const u8 sText_FoePkmnPrefix2[] = _("Foe");
 static const u8 sText_AllyPkmnPrefix[] = _("Ally");
@@ -2945,9 +2949,26 @@ static void GetBattlerNick(u32 battler, u8 *dst)
     if (GetBattlerSide(battler) != B_SIDE_PLAYER)                     \
     {                                                                   \
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)                     \
-            toCpy = sText_FoePkmnPrefix;                                \
+            toCpy = sText_TheOpposingPkmnPrefix;                        \
         else                                                            \
-            toCpy = sText_WildPkmnPrefix;                               \
+            toCpy = sText_TheWildPkmnPrefix;                            \
+        while (*toCpy != EOS)                                           \
+        {                                                               \
+            dst[dstID] = *toCpy;                                        \
+            dstID++;                                                    \
+            toCpy++;                                                    \
+        }                                                               \
+    }                                                                   \
+    GetBattlerNick(battler, text);                                    \
+    toCpy = text;
+
+#define HANDLE_NICKNAME_STRING_CASE_DECAP(battler)                    \
+    if (GetBattlerSide(battler) != B_SIDE_PLAYER)                     \
+    {                                                                   \
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)                     \
+            toCpy = sText_TheOpposingPkmnPrefixNoCap;                   \
+        else                                                            \
+            toCpy = sText_TheWildPkmnPrefixNoCap;                       \
         while (*toCpy != EOS)                                           \
         {                                                               \
             dst[dstID] = *toCpy;                                        \
@@ -3208,6 +3229,18 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 HANDLE_NICKNAME_STRING_CASE(gEffectBattler)
                 break;
             case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX: // scripting active battler name with prefix
+                HANDLE_NICKNAME_STRING_CASE(gBattleScripting.battler)
+                break;
+            case B_TXT_ATK_NAME_WITH_PREFIX_DECAP: // attacker name with prefix
+                HANDLE_NICKNAME_STRING_CASE(gBattlerAttacker)
+                break;
+            case B_TXT_DEF_NAME_WITH_PREFIX_DECAP: // target name with prefix
+                HANDLE_NICKNAME_STRING_CASE(gBattlerTarget)
+                break;
+            case B_TXT_EFF_NAME_WITH_PREFIX_DECAP: // effect battler name with prefix
+                HANDLE_NICKNAME_STRING_CASE(gEffectBattler)
+                break;
+            case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX_DECAP: // scripting active battler name with prefix
                 HANDLE_NICKNAME_STRING_CASE(gBattleScripting.battler)
                 break;
             case B_TXT_CURRENT_MOVE: // current move name

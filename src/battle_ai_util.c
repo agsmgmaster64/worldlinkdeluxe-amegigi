@@ -967,7 +967,7 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move)
             return TRUE;
         break;
     case EFFECT_ATTACK_DOWN_HIT:
-        if (ShouldLowerStat(battlerDef, abilityDef, STAT_ATK) && abilityDef != ABILITY_HYPER_CUTTER)
+        if (ShouldLowerStat(battlerDef, abilityDef, STAT_ATK) && abilityDef != ABILITY_HIGH_STRENGTH)
             return TRUE;
         break;
     case EFFECT_DEFENSE_DOWN_HIT:

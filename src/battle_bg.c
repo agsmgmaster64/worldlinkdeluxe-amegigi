@@ -816,6 +816,36 @@ static const struct {
     {MAP_BATTLE_SCENE_FRONTIER, BATTLE_TERRAIN_FRONTIER}
 };
 
+static u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
+{
+    int i;
+    for (i = 0; i < NELEMS(sMapBattleSceneMapping); i++)
+    {
+        if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
+            return sMapBattleSceneMapping[i].battleTerrain;
+    }
+    return BATTLE_TERRAIN_PLAIN;
+}
+
+static void LoadBattleTerrainGfx(u16 terrain)
+{
+    if (terrain >= NELEMS(sBattleTerrainTable))
+        terrain = BATTLE_TERRAIN_PLAIN;
+    // Copy to bg3
+    LZDecompressVram(sBattleTerrainTable[terrain].tileset, (void *)BG_CHAR_ADDR(2));
+    LZDecompressVram(sBattleTerrainTable[terrain].tilemap, (void *)BG_SCREEN_ADDR(26));
+    LoadCompressedPalette(sBattleTerrainTable[terrain].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+}
+
+static void LoadBattleTerrainEntryGfx(u16 terrain)
+{
+    if (terrain >= NELEMS(sBattleTerrainTable))
+        terrain = BATTLE_TERRAIN_PLAIN;
+    // Copy to bg1
+    LZDecompressVram(sBattleTerrainTable[terrain].entryTileset, (void *)BG_CHAR_ADDR(1));
+    LZDecompressVram(sBattleTerrainTable[terrain].entryTilemap, (void *)BG_SCREEN_ADDR(28));
+}
+
 static u8 GetBattleTerrainOverride(void)
 {
     u8 battleScene;
@@ -854,8 +884,8 @@ static u8 GetBattleTerrainOverride(void)
     return GetBattleTerrainByMapScene(battleScene);
 }
 
-static void CB2_UnusedBattleInit(void);
 static void UNUSED CB2_UnusedBattleInit(void);
+static u8 GetBattleTerrainOverride(void);
 
 static void UNUSED UnusedBattleInit(void)
 {
@@ -871,36 +901,6 @@ static void UNUSED CB2_UnusedBattleInit(void)
 {
     AnimateSprites();
     BuildOamBuffer();
-}
-
-static u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
-{
-    int i;
-    for (i = 0; i < NELEMS(sMapBattleSceneMapping); i++)
-    {
-        if (mapBattleScene == sMapBattleSceneMapping[i].mapScene)
-            return sMapBattleSceneMapping[i].battleTerrain;
-    }
-    return BATTLE_TERRAIN_PLAIN;
-}
-
-static void LoadBattleTerrainGfx(u16 terrain)
-{
-    if (terrain >= NELEMS(sBattleTerrainTable))
-        terrain = BATTLE_TERRAIN_PLAIN;
-    // Copy to bg3
-    LZDecompressVram(sBattleTerrainTable[terrain].tileset, (void *)BG_CHAR_ADDR(2));
-    LZDecompressVram(sBattleTerrainTable[terrain].tilemap, (void *)BG_SCREEN_ADDR(26));
-    LoadCompressedPalette(sBattleTerrainTable[terrain].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-}
-
-static void LoadBattleTerrainEntryGfx(u16 terrain)
-{
-    if (terrain >= NELEMS(sBattleTerrainTable))
-        terrain = BATTLE_TERRAIN_PLAIN;
-    // Copy to bg1
-    LZDecompressVram(sBattleTerrainTable[terrain].entryTileset, (void *)BG_CHAR_ADDR(1));
-    LZDecompressVram(sBattleTerrainTable[terrain].entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
 void BattleInitBgsAndWindows(void)
