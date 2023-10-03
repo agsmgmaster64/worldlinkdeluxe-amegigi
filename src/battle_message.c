@@ -3232,16 +3232,16 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 HANDLE_NICKNAME_STRING_CASE(gBattleScripting.battler)
                 break;
             case B_TXT_ATK_NAME_WITH_PREFIX_DECAP: // attacker name with prefix
-                HANDLE_NICKNAME_STRING_CASE(gBattlerAttacker)
+                HANDLE_NICKNAME_STRING_CASE_DECAP(gBattlerAttacker)
                 break;
             case B_TXT_DEF_NAME_WITH_PREFIX_DECAP: // target name with prefix
-                HANDLE_NICKNAME_STRING_CASE(gBattlerTarget)
+                HANDLE_NICKNAME_STRING_CASE_DECAP(gBattlerTarget)
                 break;
             case B_TXT_EFF_NAME_WITH_PREFIX_DECAP: // effect battler name with prefix
-                HANDLE_NICKNAME_STRING_CASE(gEffectBattler)
+                HANDLE_NICKNAME_STRING_CASE_DECAP(gEffectBattler)
                 break;
             case B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX_DECAP: // scripting active battler name with prefix
-                HANDLE_NICKNAME_STRING_CASE(gBattleScripting.battler)
+                HANDLE_NICKNAME_STRING_CASE_DECAP(gBattleScripting.battler)
                 break;
             case B_TXT_CURRENT_MOVE: // current move name
                 if (gBattleStruct->zmove.active)
