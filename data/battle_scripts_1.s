@@ -8970,6 +8970,12 @@ BattleScript_PRLZPrevention::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_FRBPrevention::
+	pause B_WAIT_TIME_SHORT
+	printfromtable gFRBPreventionStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_PSNPrevention::
 	pause B_WAIT_TIME_SHORT
 	printfromtable gPSNPreventionStringIds

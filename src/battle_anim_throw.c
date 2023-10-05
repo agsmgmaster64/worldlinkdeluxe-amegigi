@@ -129,6 +129,25 @@ static const struct CaptureStar sCaptureStars[] =
     },
 };
 
+static const struct CaptureStar sCaptureStarsHisui[] =
+{
+    {
+        .xOffset = 10,
+        .yOffset = -22,
+        .amplitude = -3,
+    },
+    {
+        .xOffset = 15,
+        .yOffset = -24,
+        .amplitude = -4,
+    },
+    {
+        .xOffset = -10,
+        .yOffset = -22,
+        .amplitude = -4,
+    },
+};
+
 #define TAG_PARTICLES_POKEBALL    65030
 #define TAG_PARTICLES_GREATBALL   65031
 #define TAG_PARTICLES_ULTRABALL   65032
@@ -1684,18 +1703,38 @@ static void MakeCaptureStars(struct Sprite *sprite)
     }
 
     LoadBallParticleGfx(BALL_MASTER);
-    for (i = 0; i < ARRAY_COUNT(sCaptureStars); i++)
+    if (gLastUsedItem == ITEM_LOVE_BALL)
     {
-        u8 spriteId = CreateSprite(&sBallParticleSpriteTemplates[BALL_MASTER], sprite->x, sprite->y, subpriority);
-        if (spriteId != MAX_SPRITES)
+        for (i = 0; i < ARRAY_COUNT(sCaptureStarsHisui); i++)
         {
-            gSprites[spriteId].sDuration = 24;
-            gSprites[spriteId].sTargetX = sprite->x + sCaptureStars[i].xOffset;
-            gSprites[spriteId].sTargetY = sprite->y + sCaptureStars[i].yOffset;
-            gSprites[spriteId].sAmplitude = sCaptureStars[i].amplitude;
-            InitAnimArcTranslation(&gSprites[spriteId]);
-            gSprites[spriteId].callback = SpriteCB_CaptureStar_Flicker;
-            StartSpriteAnim(&gSprites[spriteId], sBallParticleAnimNums[BALL_MASTER]);
+            u8 spriteId = CreateSprite(&sBallParticleSpriteTemplates[BALL_MASTER], sprite->x, sprite->y - 16, subpriority);
+            if (spriteId != MAX_SPRITES)
+            {
+                gSprites[spriteId].sDuration = 24;
+                gSprites[spriteId].sTargetX = sprite->x + sCaptureStarsHisui[i].xOffset;
+                gSprites[spriteId].sTargetY = sprite->y + sCaptureStarsHisui[i].yOffset;
+                gSprites[spriteId].sAmplitude = sCaptureStarsHisui[i].amplitude;
+                InitAnimArcTranslation(&gSprites[spriteId]);
+                gSprites[spriteId].callback = SpriteCB_CaptureStar_Flicker;
+                StartSpriteAnim(&gSprites[spriteId], sBallParticleAnimNums[BALL_MASTER]);
+            }
+        }
+    }
+    else
+    {
+        for (i = 0; i < ARRAY_COUNT(sCaptureStars); i++)
+        {
+            u8 spriteId = CreateSprite(&sBallParticleSpriteTemplates[BALL_MASTER], sprite->x, sprite->y, subpriority);
+            if (spriteId != MAX_SPRITES)
+            {
+                gSprites[spriteId].sDuration = 24;
+                gSprites[spriteId].sTargetX = sprite->x + sCaptureStars[i].xOffset;
+                gSprites[spriteId].sTargetY = sprite->y + sCaptureStars[i].yOffset;
+                gSprites[spriteId].sAmplitude = sCaptureStars[i].amplitude;
+                InitAnimArcTranslation(&gSprites[spriteId]);
+                gSprites[spriteId].callback = SpriteCB_CaptureStar_Flicker;
+                StartSpriteAnim(&gSprites[spriteId], sBallParticleAnimNums[BALL_MASTER]);
+            }
         }
     }
 }
