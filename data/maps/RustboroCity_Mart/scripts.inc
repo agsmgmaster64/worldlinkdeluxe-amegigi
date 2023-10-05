@@ -41,7 +41,7 @@ RustboroCity_Mart_EventScript_PokemartExpanded::
 	.align 2
 RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_TOHO_ORB
-	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_TIMER_ORB
 	.2byte ITEM_REPEAT_ORB
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION

@@ -52,11 +52,11 @@ const u32 gItemIconPalette_LevelBall[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIcon_LureBall[] = INCBIN_U32("graphics/items/icons/lure_ball.4bpp.lz");
 const u32 gItemIconPalette_LureBall[] = INCBIN_U32("graphics/items/icon_palettes/lure_ball.gbapal.lz");
 
-const u32 gItemIcon_MoonBall[] = INCBIN_U32("graphics/items/icons/moon_ball.4bpp.lz");
-const u32 gItemIconPalette_MoonBall[] = INCBIN_U32("graphics/items/icon_palettes/moon_ball.gbapal.lz");
+const u32 gItemIcon_PokeBallHisui[] = INCBIN_U32("graphics/items/icons/poke_ball_hisui.4bpp.lz");
+const u32 gItemIconPalette_PokeBallHisui[] = INCBIN_U32("graphics/items/icon_palettes/poke_ball_hisui.gbapal.lz");
 
-const u32 gItemIcon_FriendBall[] = INCBIN_U32("graphics/items/icons/friend_ball.4bpp.lz");
-const u32 gItemIconPalette_FriendBall[] = INCBIN_U32("graphics/items/icon_palettes/friend_ball.gbapal.lz");
+const u32 gItemIcon_GreatBallHisui[] = INCBIN_U32("graphics/items/icons/great_ball_hisui.4bpp.lz");
+const u32 gItemIconPalette_GreatBallHisui[] = INCBIN_U32("graphics/items/icon_palettes/great_ball_hisui.gbapal.lz");
 
 const u32 gItemIcon_LoveBall[] = INCBIN_U32("graphics/items/icons/love_ball.4bpp.lz");
 const u32 gItemIconPalette_LoveBall[] = INCBIN_U32("graphics/items/icon_palettes/love_ball.gbapal.lz");

@@ -144,7 +144,7 @@ const struct Item gItems[] =
         .secondaryId = ITEM_DUSK_BALL - FIRST_BALL,
     },
 
-    [ITEM_TIMER_BALL] =
+    [ITEM_TIMER_ORB] =
     {
         .name = _("Timer Orb"),
         .price = 1000,
@@ -152,7 +152,7 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_TIMER_BALL - FIRST_BALL,
+        .secondaryId = ITEM_TIMER_ORB - FIRST_BALL,
     },
 
     [ITEM_QUICK_BALL] =
@@ -210,37 +210,37 @@ const struct Item gItems[] =
         .secondaryId = ITEM_LURE_BALL - FIRST_BALL,
     },
 
-    [ITEM_MOON_BALL] =
+    [ITEM_POKE_BALL_HISUI] =
     {
-        .name = _("Moon Ball"),
+        .name = _("Poké Ball?"),
         .price = 0,
-        .description = sMoonBallDesc,
+        .description = sPokeBallHisuiDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_MOON_BALL - FIRST_BALL,
+        .secondaryId = ITEM_POKE_BALL_HISUI - FIRST_BALL,
     },
 
-    [ITEM_FRIEND_BALL] =
+    [ITEM_GREAT_BALL_HISUI] =
     {
-        .name = _("Friend Ball"),
+        .name = _("Great Ball?"),
         .price = 0,
-        .description = sFriendBallDesc,
+        .description = sGreatBallHisuiDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_FRIEND_BALL - FIRST_BALL,
+        .secondaryId = ITEM_GREAT_BALL_HISUI - FIRST_BALL,
     },
 
-    [ITEM_LOVE_BALL] =
+    [ITEM_ULTRA_BALL_HISUI] =
     {
-        .name = _("Love Ball"),
+        .name = _("Ultra Ball?"),
         .price = 0,
-        .description = sLoveBallDesc,
+        .description = sUltraBallHisuiDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_LOVE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_ULTRA_BALL_HISUI - FIRST_BALL,
     },
 
     [ITEM_FAST_BALL] =

@@ -15011,6 +15011,7 @@ static void Cmd_handleballthrow(void)
         #endif
             case ITEM_GREAT_ORB:
             case ITEM_SAFARI_ORB:
+            case ITEM_GREAT_BALL_HISUI:
                 ballMultiplier = 150;
                 break;
             case ITEM_NET_ORB:
@@ -15056,7 +15057,7 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 300;
                 #endif
             break;
-            case ITEM_TIMER_BALL:
+            case ITEM_TIMER_ORB:
             #if B_TIMER_BALL_MODIFIER >= GEN_5
                 ballMultiplier = (gBattleResults.battleTurnCounter * 30) + 100;
             #else
@@ -15098,23 +15099,11 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 300;
                 #endif
                 break;
-            case ITEM_MOON_BALL:
-                for (i = 0; i < EVOS_PER_MON; i++)
-                {
-                    if (gEvolutionTable[gBattleMons[gBattlerTarget].species][i].method == EVO_ITEM
-                        && gEvolutionTable[gBattleMons[gBattlerTarget].species][i].param == ITEM_MOON_STONE)
-                        ballMultiplier = 400;
-                }
+            case ITEM_POKE_BALL_HISUI:
+                ballMultiplier = 75;
                 break;
-            case ITEM_LOVE_BALL:
-                if (gBattleMons[gBattlerTarget].species == gBattleMons[gBattlerAttacker].species)
-                {
-                    u8 gender1 = GetMonGender(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
-                    u8 gender2 = GetMonGender(&gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]]);
-
-                    if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
-                        ballMultiplier = 800;
-                }
+            case ITEM_ULTRA_BALL_HISUI:
+                ballMultiplier = 225;
                 break;
             case ITEM_FAST_BALL:
                 if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].baseSpeed >= 100)

@@ -80,7 +80,7 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallGfx_Ultra,   384, GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallGfx_Master,  384, GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},
-    [BALL_FOUL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
+    [BALL_FOUL]    = {gBallGfx_Foul,    384, GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallGfx_Net,     384, GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallGfx_Nest,    384, GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallGfx_Dive,    384, GFX_TAG_DIVE_BALL},
@@ -91,9 +91,9 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_LUXURY]  = {gBallGfx_Luxury,  384, GFX_TAG_LUXURY_BALL},
     [BALL_LEVEL]   = {gBallGfx_Level,   384, GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallGfx_Lure,    384, GFX_TAG_LURE_BALL},
-    [BALL_MOON]    = {gBallGfx_Moon,    384, GFX_TAG_MOON_BALL},
-    [BALL_FRIEND]  = {gBallGfx_Friend,  384, GFX_TAG_FRIEND_BALL},
-    [BALL_LOVE]    = {gBallGfx_Love,    384, GFX_TAG_LOVE_BALL},
+    [BALL_POKE2]   = {gBallGfx_PokeHisui,  384, GFX_TAG_MOON_BALL},
+    [BALL_GREAT2]  = {gBallGfx_GreatHisui, 384, GFX_TAG_FRIEND_BALL},
+    [BALL_ULTRA2]  = {gBallGfx_UltraHisui, 384, GFX_TAG_LOVE_BALL},
     [BALL_FAST]    = {gBallGfx_Fast,    384, GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallGfx_Heavy,   384, GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
@@ -111,7 +111,7 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallPal_Ultra,   GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallPal_Master,  GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallPal_Premier, GFX_TAG_PREMIER_BALL},
-    [BALL_FOUL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
+    [BALL_FOUL]    = {gBallPal_Foul,    GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallPal_Net,     GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallPal_Nest,    GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallPal_Dive,    GFX_TAG_DIVE_BALL},
@@ -122,9 +122,9 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_LUXURY]  = {gBallPal_Luxury,  GFX_TAG_LUXURY_BALL},
     [BALL_LEVEL]   = {gBallPal_Level,   GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallPal_Lure,    GFX_TAG_LURE_BALL},
-    [BALL_MOON]    = {gBallPal_Moon,    GFX_TAG_MOON_BALL},
-    [BALL_FRIEND]  = {gBallPal_Friend,  GFX_TAG_FRIEND_BALL},
-    [BALL_LOVE]    = {gBallPal_Love,    GFX_TAG_LOVE_BALL},
+    [BALL_POKE2]   = {gBallPal_PokeHisui,  GFX_TAG_MOON_BALL},
+    [BALL_GREAT2]  = {gBallPal_GreatHisui, GFX_TAG_FRIEND_BALL},
+    [BALL_ULTRA2]  = {gBallPal_UltraHisui, GFX_TAG_LOVE_BALL},
     [BALL_FAST]    = {gBallPal_Fast,    GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallPal_Heavy,   GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
@@ -410,7 +410,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_MOON] =
+    [BALL_POKE2] =
     {
         .tileTag = GFX_TAG_MOON_BALL,
         .paletteTag = GFX_TAG_MOON_BALL,
@@ -420,7 +420,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_FRIEND] =
+    [BALL_GREAT2] =
     {
         .tileTag = GFX_TAG_FRIEND_BALL,
         .paletteTag = GFX_TAG_FRIEND_BALL,
@@ -430,7 +430,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_LOVE] =
+    [BALL_ULTRA2] =
     {
         .tileTag = GFX_TAG_LOVE_BALL,
         .paletteTag = GFX_TAG_LOVE_BALL,
@@ -1559,17 +1559,6 @@ void LoadBallGfx(u8 ballId)
     {
         LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[ballId]);
         LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[ballId]);
-    }
-
-    switch (ballId)
-    {
-    case BALL_POKE ... BALL_MASTER:
-    case BALL_NET ... BALL_NEST:
-    case BALL_REPEAT:
-    case BALL_SAFARI:
-        var = GetSpriteTileStartByTag(gBallSpriteSheets[ballId].tag);
-        LZDecompressVram(gOpenPokeballGfx, (void *)(OBJ_VRAM0 + 0x100 + var * 32));
-        break;
     }
 }
 

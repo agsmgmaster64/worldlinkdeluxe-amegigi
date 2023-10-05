@@ -13,8 +13,8 @@ const u32 gBallPal_Master[] = INCBIN_U32("graphics/balls/master.gbapal.lz");
 const u32 gBallGfx_Premier[] = INCBIN_U32("graphics/balls/premier.4bpp.lz");
 const u32 gBallPal_Premier[] = INCBIN_U32("graphics/balls/premier.gbapal.lz");
 
-const u32 gBallGfx_Heal[] = INCBIN_U32("graphics/balls/heal.4bpp.lz");
-const u32 gBallPal_Heal[] = INCBIN_U32("graphics/balls/heal.gbapal.lz");
+const u32 gBallGfx_Foul[] = INCBIN_U32("graphics/balls/foul.4bpp.lz");
+const u32 gBallPal_Foul[] = INCBIN_U32("graphics/balls/foul.gbapal.lz");
 
 const u32 gBallGfx_Net[] = INCBIN_U32("graphics/balls/net.4bpp.lz");
 const u32 gBallPal_Net[] = INCBIN_U32("graphics/balls/net.gbapal.lz");
@@ -46,14 +46,14 @@ const u32 gBallPal_Level[] = INCBIN_U32("graphics/balls/level.gbapal.lz");
 const u32 gBallGfx_Lure[] = INCBIN_U32("graphics/balls/lure.4bpp.lz");
 const u32 gBallPal_Lure[] = INCBIN_U32("graphics/balls/lure.gbapal.lz");
 
-const u32 gBallGfx_Moon[] = INCBIN_U32("graphics/balls/moon.4bpp.lz");
-const u32 gBallPal_Moon[] = INCBIN_U32("graphics/balls/moon.gbapal.lz");
+const u32 gBallGfx_PokeHisui[] = INCBIN_U32("graphics/balls/poke_hisui.4bpp.lz");
+const u32 gBallPal_PokeHisui[] = INCBIN_U32("graphics/balls/poke_hisui.gbapal.lz");
 
-const u32 gBallGfx_Friend[] = INCBIN_U32("graphics/balls/friend.4bpp.lz");
-const u32 gBallPal_Friend[] = INCBIN_U32("graphics/balls/friend.gbapal.lz");
+const u32 gBallGfx_GreatHisui[] = INCBIN_U32("graphics/balls/great_hisui.4bpp.lz");
+const u32 gBallPal_GreatHisui[] = INCBIN_U32("graphics/balls/great_hisui.gbapal.lz");
 
-const u32 gBallGfx_Love[] = INCBIN_U32("graphics/balls/love.4bpp.lz");
-const u32 gBallPal_Love[] = INCBIN_U32("graphics/balls/love.gbapal.lz");
+const u32 gBallGfx_UltraHisui[] = INCBIN_U32("graphics/balls/ultra_hisui.4bpp.lz");
+const u32 gBallPal_UltraHisui[] = INCBIN_U32("graphics/balls/ultra_hisui.gbapal.lz");
 
 const u32 gBallGfx_Fast[] = INCBIN_U32("graphics/balls/fast.4bpp.lz");
 const u32 gBallPal_Fast[] = INCBIN_U32("graphics/balls/fast.gbapal.lz");

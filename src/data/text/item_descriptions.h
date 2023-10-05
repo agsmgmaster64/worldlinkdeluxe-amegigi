@@ -5,46 +5,46 @@ static const u8 sDummyDesc[] = _(
 static const u8 sPokeBallDesc[] = _(
     "A tool used for\n"
     "catching wild\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sGreatBallDesc[] = _(
-    "A good Ball with a\n"
+    "A good Orb with a\n"
     "higher catch rate\n"
-    "than a Poké Ball.");
+    "than a Toho Orb.");
 
 static const u8 sUltraBallDesc[] = _(
-    "A better Ball with\n"
+    "A better Orb with\n"
     "a higher catch rate\n"
-    "than a Great Ball.");
+    "than a Great Orb.");
 
 static const u8 sMasterBallDesc[] = _(
-    "The best Ball that\n"
-    "catches a Pokémon\n"
+    "The best Orb that\n"
+    "catches a Puppet\n"
     "without fail.");
 
 static const u8 sPremierBallDesc[] = _(
-    "A rare Ball made\n"
+    "A rare Orb made\n"
     "in commemoration\n"
     "of some event.");
 
 static const u8 sHealBallDesc[] = _(
-    "A remedial Ball\n"
-    "that restores\n"
-    "caught Pokémon.");
+    "A rather cheap\n"
+    "Orb with a much\n"
+    "lower catch rate.");
 
 static const u8 sNetBallDesc[] = _(
-    "A Ball that works\n"
+    "An Orb that works\n"
     "well on Water- and\n"
-    "Bug-type Pokémon.");
+    "Bug-type Puppets.");
 
 static const u8 sNestBallDesc[] = _(
-    "A Ball that works\n"
+    "An Orb that works\n"
     "better on weaker\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sDiveBallDesc[] = _(
-    "A Ball that works\n"
-    "better on Pokémon\n"
+    "An Orb that works\n"
+    "better on Puppets\n"
     "on the ocean floor.");
 
 static const u8 sDuskBallDesc[] = _(
@@ -53,7 +53,7 @@ static const u8 sDuskBallDesc[] = _(
     "dark place.");
 
 static const u8 sTimerBallDesc[] = _(
-    "A Ball that gains\n"
+    "An Orb that gains\n"
     "power in battles\n"
     "taking many turns.");
 
@@ -63,80 +63,80 @@ static const u8 sQuickBallDesc[] = _(
     "first turn.");
 
 static const u8 sRepeatBallDesc[] = _(
-    "A Ball that works\n"
-    "better on Pokémon\n"
+    "An Orb that works\n"
+    "better on Puppets\n"
     "caught before.");
 
 static const u8 sLuxuryBallDesc[] = _(
-    "A cozy Ball that\n"
-    "makes Pokémon\n"
+    "A cozy Orb that\n"
+    "makes Puppets\n"
     "more friendly.");
 
 static const u8 sLevelBallDesc[] = _(
-    "A Ball that works\n"
+    "An Orb that works\n"
     "well on lower\n"
-    "level Pokémon.");
+    "level Puppets.");
 
 static const u8 sLureBallDesc[] = _(
     "A Ball that works\n"
     "well on fished\n"
-    "up Pokémon.");
+    "up Puppets.");
 
-static const u8 sMoonBallDesc[] = _(
-    "A Ball that works\n"
-    "well on Moon\n"
-    "Stone users.");
+static const u8 sPokeBallHisuiDesc[] = _(
+    "A weird-looking\n"
+    "Orb from the\n"
+    "ancient times.");
 
-static const u8 sFriendBallDesc[] = _(
-    "A Ball that makes\n"
-    "a Pokémon friendly\n"
-    "when caught.");
+static const u8 sGreatBallHisuiDesc[] = _(
+    "An ancient Orb\n"
+    "with a higher\n"
+    "catch rate.");
 
-static const u8 sLoveBallDesc[] = _(
-    "Works well on\n"
-    "Pokémon of the\n"
-    "opposite gender.");
+static const u8 sUltraBallHisuiDesc[] = _(
+    "An Orb that has a\n"
+    "higher catch rate\n"
+    "than an Ultra Orb.");
 
 static const u8 sFastBallDesc[] = _(
     "Works well on\n"
     "very fast\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sHeavyBallDesc[] = _(
     "Works well on\n"
     "very heavy\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sDreamBallDesc[] = _(
 #if B_DREAM_BALL_MODIFIER >= GEN_8
     "A Ball that works\n"
     "well on sleeping\n"
-    "Pokémon.");
+    "Puppets.");
 #else
     "A Poké Ball used in\n"
     "the Entree Forest.");
 #endif
 
 static const u8 sSafariBallDesc[] = _(
-    "A special Ball that\n"
+    "A special Orb that\n"
     "is used only in the\n"
     "Safari Zone.");
 
 static const u8 sSportBallDesc[] = _(
-    "A special Ball used\n"
+    "A special Orb used\n"
     "in the Bug-Catching\n"
     "Contest.");
 
 static const u8 sParkBallDesc[] = _(
-    "A special Ball for\n"
+    "A special Orb for\n"
     "the Pal Park.");
 
 static const u8 sBeastBallDesc[] = _(
-    "A Ball designed to\n"
+    "An Orb designed to\n"
     "catch Ultra Beasts.");
 
 static const u8 sCherishBallDesc[] = _(
-    "A rare Ball made\n"
+    "A rare Orb made\n"
     "in commemoration\n"
     "of some event.");
 
