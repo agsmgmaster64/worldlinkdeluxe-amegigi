@@ -240,7 +240,7 @@
 #define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_BATTLE_TERRAIN                               0x40DE
-#define VAR_GIFT_UNUSED_2                                0x40DF // Unused Var
+#define VAR_LAST_USED_LURE_REPEL                         0x40DF // Unused Var
 #define VAR_GIFT_UNUSED_3                                0x40E0 // Unused Var
 #define VAR_GIFT_UNUSED_4                                0x40E1 // Unused Var
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Unused Var
