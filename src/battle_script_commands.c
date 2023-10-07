@@ -5206,9 +5206,11 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
             gBattleMons[battlerDef].item = 0;
             if (gBattleMons[battlerDef].ability != ABILITY_GORILLA_TACTICS)
                 gBattleStruct->choicedMove[battlerDef] = 0;
-            gWishFutureKnock.knockedOffMons[side] |= gBitTable[gBattlerPartyIndexes[battlerDef]];
+            //gWishFutureKnock.knockedOffMons[side] |= gBitTable[gBattlerPartyIndexes[battlerDef]];
             CheckSetUnburden(battlerDef);
 
+            BtlController_EmitSetMonData(battlerDef, BUFFER_A, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[battlerDef].item), &gBattleMons[battlerDef].item);
+            MarkBattlerForControllerExec(battlerDef);
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_KnockedOff;
         }
@@ -5505,6 +5507,12 @@ static void Cmd_moveend(void)
             switch (gBattleStruct->moveEffect2)
             {
             case MOVE_EFFECT_KNOCK_OFF:
+                if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
+	             && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                {
+                    effect = FALSE;
+                    break;
+                }
                 effect = TryKnockOffBattleScript(gBattlerTarget);
                 break;
             case MOVE_EFFECT_STOCKPILE_WORE_OFF:
@@ -10819,6 +10827,32 @@ static void Cmd_various(void)
             gBattleCommunication[MULTISTRING_CHOOSER] = 1;
         }
     }
+    case VARIOUS_GIVE_DROPPED_ITEMS:
+	{
+        VARIOUS_ARGS();
+		u8 i;
+		u8 battlers[] = {GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), 
+						 GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)};
+		for (i = 0; i < 1 + IsDoubleBattle(); i++)
+		{
+			gLastUsedItem = gBattleResources->battleHistory->heldItems[battlers[i]];
+			gBattleResources->battleHistory->heldItems[battlers[i]] = ITEM_NONE;
+			if (gLastUsedItem && !(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FIRST_BATTLE | BATTLE_TYPE_WALLY_TUTORIAL)))
+			{
+				if(AddBagItem(gLastUsedItem, 1))
+					gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ITEM_DROPPED;
+				else
+					gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BAG_IS_FULL;
+				if (IsDoubleBattle())
+					BattleScriptPushCursor();
+				else
+					BattleScriptPush(cmd->nextInstr);
+				gBattlescriptCurrInstr = BattleScript_ItemDropped;
+				return;
+			}
+		}
+		break;
+	}
     } // End of switch (cmd->id)
 
     gBattlescriptCurrInstr = cmd->nextInstr;

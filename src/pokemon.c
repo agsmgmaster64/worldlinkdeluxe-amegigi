@@ -7659,8 +7659,9 @@ void SetWildMonHeldItem(void)
     {
         u16 rnd;
         u16 species;
-        u16 chanceNoItem = 45;
-        u16 chanceNotRare = 95;
+        u16 chanceNoItem = 44;
+        u16 chanceNotRare = 94;
+        u16 chanceNotSuperRare = 99;
         u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
         u16 i;
 
@@ -7668,8 +7669,9 @@ void SetWildMonHeldItem(void)
             && (GetMonAbility(&gPlayerParty[0]) == ABILITY_FOCUS
                 || GetMonAbility(&gPlayerParty[0]) == ABILITY_SUPER_LUCK))
         {
-            chanceNoItem = 20;
-            chanceNotRare = 80;
+            chanceNoItem = 15;
+            chanceNotRare = 75;
+            chanceNotSuperRare = 95;
         }
 
         for (i = 0; i < count; i++)
@@ -7713,8 +7715,10 @@ void SetWildMonHeldItem(void)
                         continue;
                     if (rnd < chanceNotRare)
                         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
-                    else
+                    else if (rnd < chanceNotSuperRare)
                         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
+                    else
+                        SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemSuperRare);
                 }
             }
         }
