@@ -11165,7 +11165,7 @@ u8 GetBattlerType(u32 battler, u8 typeIndex)
         {
             if (types[0] == TYPE_FLYING && types[1] == TYPE_FLYING)
 #if B_ROOST_PURE_FLYING >= GEN_5
-                return TYPE_NORMAL;
+                return TYPE_ILLUSION;
 #else
                 return TYPE_MYSTERY;
 #endif
