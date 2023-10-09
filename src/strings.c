@@ -1760,9 +1760,10 @@ const u8 gText_PokeFluteAwakenedMon[] = _("The Toho Flute awakened sleeping\nPup
 const u8 gText_PokevialHasOneDose[] =_("The {STR_VAR_1} has 1 dose remaining.\nUse the {STR_VAR_1}?");
 const u8 gText_PokevialHasDoses[] =_("The {STR_VAR_1} has {STR_VAR_2} doses remaining.\nUse the {STR_VAR_1}?");
 const u8 gText_PokevialIsEmpty[] =_("The {STR_VAR_1} is empty!\nRefill it by healing at a {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
-const u8 gText_YourPkmnWereRestored[] =_("Your POKéMON were restored to full health.{PAUSE_UNTIL_PRESS}");
+const u8 gText_YourPkmnWereRestored[] =_("Your Puppets were restored to full health.{PAUSE_UNTIL_PRESS}");
 
 
+const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}TOGGLE   {DPAD_UPDOWN}MOVES");
 const u8 gText_Stats_Buttons_Decapped[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");

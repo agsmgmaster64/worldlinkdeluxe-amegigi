@@ -3190,5 +3190,6 @@ extern const u8 gText_PokevialHasOneDose[];
 extern const u8 gText_PokevialHasDoses[];
 extern const u8 gText_PokevialIsEmpty[];
 extern const u8 gText_YourPkmnWereRestored[];
+extern const u8 gText_BasePointsResetToZero[];
 
 #endif // GUARD_STRINGS_H
