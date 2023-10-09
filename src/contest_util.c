@@ -2580,16 +2580,6 @@ void ShowContestEntryMonPic(void)
         gMultiuseSpriteTemplate.paletteTag = palette->tag;
         spriteId = CreateSprite(&gMultiuseSpriteTemplate, (left + 1) * 8 + 32, (top * 8) + 40, 0);
 
-        if (gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
-        {
-            if (!(gLinkContestFlags & LINK_CONTEST_FLAG_HAS_RS_PLAYER))
-                DoMonFrontSpriteAnimation(&gSprites[spriteId], species, FALSE, 0);
-        }
-        else
-        {
-            DoMonFrontSpriteAnimation(&gSprites[spriteId], species, FALSE, 0);
-        }
-
         gTasks[taskId].data[2] = spriteId;
         gTasks[taskId].data[3] = left;
         gTasks[taskId].data[4] = top;
