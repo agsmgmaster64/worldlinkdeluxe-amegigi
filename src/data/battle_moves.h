@@ -13809,7 +13809,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_GIGATON_HAMMER,
         .power = 140,
-        .type = TYPE_NORMAL,
+        .type = TYPE_BEAST,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -13823,7 +13823,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_PLACEHOLDER, // EFFECT_MATCHA_GOTCHA
         .power = 80,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 90,
         .pp = 15,
         .secondaryEffectChance = 20, //burn
@@ -13839,7 +13839,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_PLACEHOLDER, // EFFECT_SYRUP_BOMB
         .power = 60,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 85,
         .pp = 10,
         .secondaryEffectChance = 100, // syrup bomb volatile status
@@ -13855,7 +13855,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_PLACEHOLDER, // EFFECT_IVY_CUDGEL
         .power = 100,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
