@@ -61,6 +61,7 @@ static void CB2_TradeEvolutionSceneUpdate(void);
 static void EvoDummyFunc(void);
 static void VBlankCB_EvolutionScene(void);
 static void VBlankCB_TradeEvolutionScene(void);
+static void EvoScene_DoMonAnimAndCry(u8 monSpriteId, u16 speciesId);
 static bool32 EvoScene_IsMonAnimFinished(u8 monSpriteId);
 static void StartBgAnimation(bool8 isLink);
 static void StopBgAnimation(void);
@@ -678,12 +679,12 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_MON_ANIM:
         if (!IsTextPrinterActive(0))
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            EvoScene_DoMonAnimAndCry(sEvoStructPtr->preEvoSpriteId, gTasks[taskId].tPreEvoSpecies);
             gTasks[taskId].tState++;
         }
         break;
     case EVOSTATE_INTRO_SOUND:
-        if (IsCryFinished())
+        if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
             PlaySE(MUS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
@@ -760,7 +761,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_EVO_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPostEvoSpecies, 0);
+            EvoScene_DoMonAnimAndCry(sEvoStructPtr->postEvoSpriteId, gTasks[taskId].tPostEvoSpecies);
             gTasks[taskId].tState++;
         }
         break;
@@ -841,12 +842,12 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_CANCEL_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            EvoScene_DoMonAnimAndCry(sEvoStructPtr->preEvoSpriteId, gTasks[taskId].tPreEvoSpecies);
             gTasks[taskId].tState++;
         }
         break;
     case EVOSTATE_CANCEL_MSG:
-        if (IsCryFinished())
+        if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
             if (gTasks[taskId].tEvoWasStopped) // FRLG auto cancellation
                 StringExpandPlaceholders(gStringVar4, gText_EllipsisQuestionMark);
@@ -1178,7 +1179,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         {
             // Restore bg, do mon anim/cry
             Free(sBgAnimPal);
-            PlayCry_Normal(gTasks[taskId].tPostEvoSpecies, 0);
+            EvoScene_DoMonAnimAndCry(sEvoStructPtr->postEvoSpriteId, gTasks[taskId].tPostEvoSpecies);
             memcpy(&gPlttBufferUnfaded[BG_PLTT_ID(2)], sEvoStructPtr->savedPalette, sizeof(sEvoStructPtr->savedPalette));
             gTasks[taskId].tState++;
         }
@@ -1246,12 +1247,12 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_CANCEL_MON_ANIM:
         if (!gPaletteFade.active)
         {
-            PlayCry_Normal(gTasks[taskId].tPreEvoSpecies, 0);
+            EvoScene_DoMonAnimAndCry(sEvoStructPtr->preEvoSpriteId, gTasks[taskId].tPreEvoSpecies);
             gTasks[taskId].tState++;
         }
         break;
     case T_EVOSTATE_CANCEL_MSG:
-        if (IsCryFinished())
+        if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
             StringExpandPlaceholders(gStringVar4, gText_EllipsisQuestionMark);
             DrawTextOnTradeWindow(0, gStringVar4, 1);
@@ -1679,6 +1680,11 @@ static void RestoreBgAfterAnim(void)
     SetBgAttribute(2, BG_ATTR_PRIORITY, GetBattleBgTemplateData(2, 5));
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG3_ON | DISPCNT_BG0_ON | DISPCNT_OBJ_1D_MAP);
     Free(sBgAnimPal);
+}
+
+static void EvoScene_DoMonAnimAndCry(u8 monSpriteId, u16 speciesId)
+{
+    DoMonFrontSpriteAnimation(&gSprites[monSpriteId], speciesId, FALSE, 0);
 }
 
 static bool32 EvoScene_IsMonAnimFinished(u8 monSpriteId)

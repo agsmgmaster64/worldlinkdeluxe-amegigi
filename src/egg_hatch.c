@@ -635,13 +635,13 @@ static void CB2_EggHatch(void)
         if (gSprites[sEggHatchData->eggSpriteId].callback == SpriteCallbackDummy)
         {
             species = GetMonData(&gPlayerParty[sEggHatchData->eggPartyId], MON_DATA_SPECIES);
-            PlayCry_Normal(species, 0);
+            DoMonFrontSpriteAnimation(&gSprites[sEggHatchData->monSpriteId], species, FALSE, 1);
             sEggHatchData->state++;
         }
         break;
     case 4:
         // Wait for Pokémon's front sprite animation
-        if (IsCryFinished())
+        if (gSprites[sEggHatchData->monSpriteId].callback == SpriteCallbackDummy)
             sEggHatchData->state++;
         break;
     case 5:

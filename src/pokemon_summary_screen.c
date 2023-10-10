@@ -304,6 +304,7 @@ static void SwapMovesTypeSprites(u8, u8);
 static u8 LoadMonGfxAndSprite(struct Pokemon *, s16 *);
 static u8 CreateMonSprite(struct Pokemon *);
 static void SpriteCB_Pokemon(struct Sprite *);
+static void StopPokemonAnimations(void);
 static void CreateMonMarkingsSprite(struct Pokemon *);
 static void RemoveAndCreateMonMarkingsSprite(struct Pokemon *);
 static void CreateCaughtBallSprite(struct Pokemon *);
@@ -313,6 +314,7 @@ static void SpriteCB_MoveSelector(struct Sprite *);
 static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
+static void SummaryScreen_DestroyAnimDelayTask(void);
 
 int GetNatureColourID(s8 natureMod);
 static void PrintNatureColouredStatNames(void);
@@ -1207,6 +1209,7 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
 
     sMonSummaryScreen->currPageIndex = sMonSummaryScreen->minPageIndex;
     sMonSummaryScreen->splitIconSpriteId = 0xFF;
+    SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
 
     if (gMonSpritesGfxPtr == NULL)
         CreateMonSpritesGfxManager(MON_SPR_GFX_MANAGER_A, MON_SPR_GFX_MODE_NORMAL);
@@ -1596,6 +1599,7 @@ static void CloseSummaryScreen(u8 taskId)
     {
         SetMainCallback2(sMonSummaryScreen->callback);
         gLastViewedMonIndex = sMonSummaryScreen->curMonIndex;
+        SummaryScreen_DestroyAnimDelayTask();
         ResetSpriteData();
         FreeAllSpritePalettes();
         StopCryAndClearCrySongs();
@@ -1633,6 +1637,7 @@ static void Task_HandleInput(u8 taskId)
             {
                 if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
                 {
+                    StopPokemonAnimations();
                     PlaySE(SE_SELECT);
                     BeginCloseSummaryScreen(taskId);
                 }
@@ -1645,6 +1650,7 @@ static void Task_HandleInput(u8 taskId)
         }
         else if (JOY_NEW(B_BUTTON))
         {
+            StopPokemonAnimations();
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
@@ -1652,6 +1658,7 @@ static void Task_HandleInput(u8 taskId)
         else if (JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
         {
             sMonSummaryScreen->callback = CB2_Debug_Pokemon;
+            StopPokemonAnimations();
             PlaySE(SE_SELECT);
             CloseSummaryScreen(taskId);
         }
@@ -1719,6 +1726,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         StopCryAndClearCrySongs();
         break;
     case 1:
+        SummaryScreen_DestroyAnimDelayTask();
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]]);
         break;
     case 2:
@@ -2304,6 +2312,7 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             {
                 if (CanReplaceMove() == TRUE)
                 {
+                    StopPokemonAnimations();
                     PlaySE(SE_SELECT);
                     sMoveSlotToReplace = sMonSummaryScreen->firstMoveIndex;
                     gSpecialVar_0x8005 = sMoveSlotToReplace;
@@ -2317,6 +2326,7 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
             }
             else if (JOY_NEW(B_BUTTON))
             {
+                StopPokemonAnimations();
                 PlaySE(SE_SELECT);
                 sMoveSlotToReplace = MAX_MON_MOVES;
                 gSpecialVar_0x8005 = MAX_MON_MOVES;
@@ -4093,7 +4103,49 @@ static void SpriteCB_Pokemon(struct Sprite *sprite)
     {
         sprite->data[1] = IsMonSpriteNotFlipped(sprite->data[0]);
         PlayMonCry();
-        sprite->callback = SpriteCallbackDummy;
+        PokemonSummaryDoMonAnimation(sprite, sprite->data[0], summary->isEgg);
+    }
+}
+
+// Track and then destroy Task_PokemonSummaryAnimateAfterDelay
+// Normally destroys itself but it can be interrupted before the animation starts
+void SummaryScreen_SetAnimDelayTaskId(u8 taskId)
+{
+    sAnimDelayTaskId = taskId;
+}
+
+static void SummaryScreen_DestroyAnimDelayTask(void)
+{
+    if (sAnimDelayTaskId != TASK_NONE)
+    {
+        DestroyTask(sAnimDelayTaskId);
+        sAnimDelayTaskId = TASK_NONE;
+    }
+}
+
+static bool32 UNUSED IsMonAnimationFinished(void)
+{
+    if (gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].callback == SpriteCallbackDummy)
+        return FALSE;
+    else
+        return TRUE;
+}
+
+static void StopPokemonAnimations(void)  // A subtle effect, this function stops pokemon animations when leaving the PSS
+{
+    u16 i;
+    u16 paletteIndex;
+
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].animPaused = TRUE;
+    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].callback = SpriteCallbackDummy;
+    StopPokemonAnimationDelayTask();
+
+    paletteIndex = OBJ_PLTT_ID(gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].oam.paletteNum);
+
+    for (i = 0; i < 16; i++)
+    {
+        u16 id = i + paletteIndex;
+        gPlttBufferUnfaded[id] = gPlttBufferFaded[id];
     }
 }
 

@@ -78,7 +78,7 @@ static void Task_Hof_SetMonDisplayTask(u8 taskId);
 static void Task_Hof_TrySaveData(u8 taskId);
 static void Task_Hof_WaitToDisplayMon(u8 taskId);
 static void Task_Hof_DisplayMon(u8 taskId);
-static void Task_Hof_PlayMonCryAndPrintInfo(u8 taskId);
+static void Task_Hof_PrintMonInfoAfterAnimating(u8 taskId);
 static void Task_Hof_TryDisplayAnotherMon(u8 taskId);
 static void Task_Hof_PaletteFadeAndPrintWelcomeText(u8 taskId);
 static void Task_Hof_DoConfetti(u8 taskId);
@@ -96,7 +96,7 @@ static void Task_HofPC_HandleInput(u8 taskId);
 static void Task_HofPC_HandlePaletteOnExit(u8 taskId);
 static void Task_HofPC_HandleExit(u8 taskId);
 static void Task_HofPC_ExitOnButtonPress(u8 taskId);
-static void SpriteCB_GetOnScreen(struct Sprite *sprite);
+static void SpriteCB_GetOnScreenAndAnimate(struct Sprite *sprite);
 static void HallOfFame_PrintMonInfo(struct HallofFameMon* currMon, u8 unused1, u8 unused2);
 static void HallOfFame_PrintWelcomeText(u8 unusedPossiblyWindowId, u8 unused2);
 static void HallOfFame_PrintPlayerInfo(u8 unused1, u8 unused2);
@@ -588,21 +588,21 @@ static void Task_Hof_DisplayMon(u8 taskId)
     gSprites[spriteId].tDestinationY = destY;
     gSprites[spriteId].data[0] = 0;
     gSprites[spriteId].tSpecies = currMon->species;
-    gSprites[spriteId].callback = SpriteCB_GetOnScreen;
+    gSprites[spriteId].callback = SpriteCB_GetOnScreenAndAnimate;
     gTasks[taskId].tMonSpriteId(currMonId) = spriteId;
     ClearDialogWindowAndFrame(0, TRUE);
-    gTasks[taskId].func = Task_Hof_PlayMonCryAndPrintInfo;
+    gTasks[taskId].func = Task_Hof_PrintMonInfoAfterAnimating;
 }
 
-static void Task_Hof_PlayMonCryAndPrintInfo(u8 taskId)
+static void Task_Hof_PrintMonInfoAfterAnimating(u8 taskId)
 {
     u16 currMonId = gTasks[taskId].tDisplayedMonId;
     struct HallofFameMon* currMon = &sHofMonPtr->mon[currMonId];
+    struct Sprite *monSprite = &gSprites[gTasks[taskId].tMonSpriteId(currMonId)];
 
-    if (gSprites[gTasks[taskId].data[5 + currMonId]].data[0])
+    if (monSprite->callback == SpriteCallbackDummy)
     {
-        if (currMon->species != SPECIES_EGG)
-            PlayCry_Normal(currMon->species, 0);
+        monSprite->oam.affineMode = ST_OAM_AFFINE_OFF;
         HallOfFame_PrintMonInfo(currMon, 0, 14);
         gTasks[taskId].tFrameCount = 120;
         gTasks[taskId].func = Task_Hof_TryDisplayAnotherMon;
@@ -1334,7 +1334,7 @@ static bool8 LoadHofBgs(void)
     return TRUE;
 }
 
-static void SpriteCB_GetOnScreen(struct Sprite *sprite)
+static void SpriteCB_GetOnScreenAndAnimate(struct Sprite *sprite)
 {
     if (sprite->x != sprite->tDestinationX
         || sprite->y != sprite->tDestinationY)
@@ -1351,9 +1351,12 @@ static void SpriteCB_GetOnScreen(struct Sprite *sprite)
     }
     else
     {
-        sprite->data[0] = 1;
+        s16 species = sprite->tSpecies;
 
-        sprite->callback = SpriteCallbackDummy;
+        if (species == SPECIES_EGG)
+            DoMonFrontSpriteAnimation(sprite, species, TRUE, 3);
+        else
+            DoMonFrontSpriteAnimation(sprite, species, FALSE, 3);
     }
 }
 
