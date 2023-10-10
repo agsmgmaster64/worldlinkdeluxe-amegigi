@@ -7776,6 +7776,86 @@ const u8 *GetTrainerPartnerName(void)
     }
 }
 
+#define READ_PTR_FROM_TASK(taskId, dataId)                      \
+    (void *)(                                                   \
+    ((u16)(gTasks[taskId].data[dataId]) |                       \
+    ((u16)(gTasks[taskId].data[dataId + 1]) << 16)))
+
+#define STORE_PTR_IN_TASK(ptr, taskId, dataId)                 \
+{                                                              \
+    gTasks[taskId].data[dataId] = (u32)(ptr);                  \
+    gTasks[taskId].data[dataId + 1] = (u32)(ptr) >> 16;        \
+}
+
+#define sAnimId    data[2]
+#define sAnimDelay data[3]
+
+static void Task_AnimateAfterDelay(u8 taskId)
+{
+    if (--gTasks[taskId].sAnimDelay == 0)
+    {
+        LaunchAnimationTaskForFrontSprite(READ_PTR_FROM_TASK(taskId, 0), gTasks[taskId].sAnimId);
+        DestroyTask(taskId);
+    }
+}
+
+static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
+{
+    if (--gTasks[taskId].sAnimDelay == 0)
+    {
+        StartMonSummaryAnimation(READ_PTR_FROM_TASK(taskId, 0), gTasks[taskId].sAnimId);
+        SummaryScreen_SetAnimDelayTaskId(TASK_NONE);
+        DestroyTask(taskId);
+    }
+}
+
+void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, u8 panModeAnimFlag)
+{
+    s8 pan;
+    switch (panModeAnimFlag & (u8)~SKIP_FRONT_ANIM) // Exclude anim flag to get pan mode
+    {
+    case 0:
+        pan = -25;
+        break;
+    case 1:
+        pan = 25;
+        break;
+    default:
+        pan = 0;
+        break;
+    }
+    if (panModeAnimFlag & SKIP_FRONT_ANIM)
+    {
+        // No animation, only check if cry needs to be played
+        if (!noCry)
+            PlayCry_Normal(species, pan);
+        sprite->callback = SpriteCallbackDummy;
+    }
+    else
+    {
+        if (!noCry)
+        {
+            PlayCry_Normal(species, pan);
+            if (HasTwoFramesAnimation(species))
+                StartSpriteAnim(sprite, 1);
+        }
+        if (sMonAnimationDelayTable[species - 1] != 0)
+        {
+            // Animation has delay, start delay task
+            u8 taskId = CreateTask(Task_AnimateAfterDelay, 0);
+            STORE_PTR_IN_TASK(sprite, taskId, 0);
+            gTasks[taskId].sAnimId = sMonFrontAnimIdsTable[species - 1];
+            gTasks[taskId].sAnimDelay = sMonAnimationDelayTable[species - 1];
+        }
+        else
+        {
+            // No delay, start animation
+            LaunchAnimationTaskForFrontSprite(sprite, sMonFrontAnimIdsTable[species - 1]);
+        }
+        sprite->callback = SpriteCallbackDummy_2;
+    }
+}
+
 // Identical to GetOpposingLinkMultiBattlerId but for the player
 // "rightSide" from that team's perspective, i.e. B_POSITION_*_RIGHT
 static u8 UNUSED GetOwnOpposingLinkMultiBattlerId(bool8 rightSide)
