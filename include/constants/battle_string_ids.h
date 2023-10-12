@@ -678,8 +678,10 @@
 #define STRINGID_STRINGISRESERVED                     676
 #define STRINGID_PKMNDROPPEDITEM                      677
 #define STRINGID_BAGISFULL                            678
+#define STRINGID_OPPORTUNISTCOPIED                    679
+#define STRINGID_TARGETCOVEREDINSTICKYCANDYSYRUP      680
 
-#define BATTLESTRINGS_COUNT                           679
+#define BATTLESTRINGS_COUNT                           681
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

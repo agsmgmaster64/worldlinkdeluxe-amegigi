@@ -13821,12 +13821,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_MATCHA_GOTCHA] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_MATCHA_GOTCHA
+        .effect = EFFECT_MATCHA_GOTCHA,
         .power = 80,
         .type = TYPE_NATURE,
         .accuracy = 90,
         .pp = 15,
-        .secondaryEffectChance = 20, //burn
+        .secondaryEffectChance = 20,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -13837,7 +13837,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SYRUP_BOMB] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SYRUP_BOMB
+        .effect = EFFECT_SYRUP_BOMB,
         .power = 60,
         .type = TYPE_NATURE,
         .accuracy = 85,
@@ -13853,7 +13853,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_IVY_CUDGEL] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_IVY_CUDGEL
+        .effect = EFFECT_IVY_CUDGEL,
         .power = 100,
         .type = TYPE_NATURE,
         .accuracy = 100,

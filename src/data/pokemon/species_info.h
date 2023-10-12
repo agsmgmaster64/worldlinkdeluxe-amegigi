@@ -16972,9 +16972,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         #if P_UPDATED_EGG_GROUPS >= GEN_8
-            .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
-        #else
             .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL},
+        #else
+            .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         #endif
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_ICE_BODY, ABILITY_STURDY},
         .sourceGame = SOURCE_SOEW,
@@ -16998,9 +16998,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         #if P_UPDATED_EGG_GROUPS >= GEN_8
-            .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
-        #else
             .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MINERAL},
+        #else
+            .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER},
         #endif
         .abilities = {ABILITY_OWN_TEMPO, ABILITY_ICE_BODY, ABILITY_STURDY},
         .sourceGame = SOURCE_SOEW,
@@ -20921,7 +20921,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG},
-        .abilities = {ABILITY_INNER_POWER, ABILITY_SHEER_FORCE, ABILITY_STEADFAST},
+        .abilities = {ABILITY_INNER_POWER, ABILITY_SHEER_FORCE, ABILITY_SHARPNESS},
         .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
     },
@@ -21010,7 +21010,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_POISON_TOUCH},
+        .abilities = {ABILITY_PRESSURE, ABILITY_UNBURDEN, ABILITY_POISON_TOUCH},
         .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
     },
@@ -23130,7 +23130,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_ROCK_HEAD},
         .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_ARCANINE_HISUIAN] =
@@ -23153,7 +23153,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_ROCK_HEAD},
         .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_VOLTORB_HISUIAN] =
@@ -23237,7 +23237,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .catchRate = 45,
         .expYield = 88,
         .evYield_Attack    = 1,
-	    .itemRare = ITEM_NURSE_OUTFIT,
+        .itemRare = ITEM_NURSE_OUTFIT,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -23267,10 +23267,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD},
-        .abilities = {ABILITY_INNER_FOCUS, ABILITY_KEEN_EYE, ABILITY_POISON_TOUCH},
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_KEEN_EYE, ABILITY_PICKPOCKET},
         .sourceGame = SOURCE_MS,
         .noFlip = TRUE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
 #if P_GEN_5_POKEMON == TRUE
@@ -23294,7 +23294,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHARPNESS},
         .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_HISUIAN_FORM,
     },
 
     [SPECIES_LILLIGANT_HISUIAN] =
@@ -23459,7 +23459,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_STRONG_JAW, ABILITY_ICE_BODY, ABILITY_STURDY},
         .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 #endif
 
@@ -23484,7 +23484,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_SCRAPPY},
         .sourceGame = SOURCE_EOSD,
         .noFlip = FALSE,
-	    .flags = SPECIES_FLAG_SANNIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 #endif
 
