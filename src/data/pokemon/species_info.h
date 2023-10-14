@@ -23294,7 +23294,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHARPNESS},
         .sourceGame = SOURCE_SOEW,
         .noFlip = FALSE,
-        .flags = SPECIES_FLAG_HISUIAN_FORM,
+        .flags = SPECIES_FLAG_SANNIAN_FORM,
     },
 
     [SPECIES_LILLIGANT_HISUIAN] =

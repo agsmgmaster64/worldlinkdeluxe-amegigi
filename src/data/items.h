@@ -9738,7 +9738,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_ROCK,
+        .secondaryId = TYPE_BEAST,
     },
 
     [ITEM_WELLSPRING_MASK] =

@@ -455,9 +455,9 @@ BattleScript_SyrupBombEndTurn::
 	setbyte sSTAT_ANIM_PLAYED, FALSE
 	copybyte sBATTLER, gBattlerTarget
 	jumpifholdeffect BS_TARGET, HOLD_EFFECT_CLEAR_AMULET, BattleScript_SyrupBombItemNoStatLoss
-	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_SyrupBombAbilityNoStatLoss
+	jumpifability BS_TARGET, ABILITY_HAKUREI_MIKO, BattleScript_SyrupBombAbilityNoStatLoss
 	jumpifability BS_TARGET, ABILITY_FULL_METAL_BODY, BattleScript_SyrupBombAbilityNoStatLoss
-	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_SyrupBombAbilityNoStatLoss
+	jumpifability BS_TARGET, ABILITY_MAGIC_BARRIER, BattleScript_SyrupBombAbilityNoStatLoss
 	jumpifstat BS_TARGET, CMP_GREATER_THAN, BIT_SPEED, MIN_STAT_STAGE, BattleScript_SyrupBombLowerSpeed
 	goto BattleScript_SyrupBombEnd2
 BattleScript_SyrupBombLowerSpeed:
