@@ -14940,7 +14940,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{
 		.effect = EFFECT_MAX_MOVE,
 		.power = 1,
-		.type = TYPE_FIGHTING,
+		.type = TYPE_DREAM,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15108,7 +15108,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_GRASS,
+		.type = TYPE_NATURE,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15136,7 +15136,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{	//ANIM TODO
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_GRASS,
+		.type = TYPE_NATURE,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15220,7 +15220,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_FIGHTING,
+		.type = TYPE_DREAM,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15332,7 +15332,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{	//ANIM TODO
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_GRASS,
+		.type = TYPE_NATURE,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15433,7 +15433,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_GRASS,
+		.type = TYPE_NATURE,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,
@@ -15447,7 +15447,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 	{
 		.effect = EFFECT_MAX_MOVE,
 		.power = 10,
-		.type = TYPE_GRASS,
+		.type = TYPE_NATURE,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 100,

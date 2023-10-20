@@ -105,13 +105,13 @@
         .expYield = 178,                                                        \
         .evYield_SpAttack  = 2,                                                 \
         .evYield_SpDefense = 1,                                                 \
-        .itemRare = ITEM_SILVER_POWDER,                                         \
+        .itemRare = ITEM_BLAZER,                                         \
         .genderRatio = PERCENT_FEMALE(50),                                      \
         .eggCycles = 15,                                                        \
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = {EGG_GROUP_BUG, EGG_GROUP_BUG},                            \
-        .abilities = {ABILITY_COMPOUND_EYES, ABILITY_NONE, ABILITY_TINTED_LENS},\
+        .abilities = {ABILITY_FOCUS, ABILITY_NONE, ABILITY_TINTED_LENS},\
         .sourceGame = SOURCE_POFV,                                          \
         .noFlip = FALSE
 
@@ -506,7 +506,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = {EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},                    \
-        .abilities = {ABILITY_STENCH, ABILITY_WEAK_ARMOR, ABILITY_AFTERMATH},   \
+        .abilities = {ABILITY_JEALOUSY, ABILITY_WEAK_ARMOR, ABILITY_AFTERMATH},   \
         .sourceGame = SOURCE_LLS,                                          \
         .noFlip = TRUE
 
@@ -1165,7 +1165,7 @@
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = {EGG_GROUP_FIELD, EGG_GROUP_DRAGON},                       \
-        .abilities = {ABILITY_SAND_SPIT, ABILITY_SHED_SKIN, ABILITY_SAND_VEIL}, \
+        .abilities = {ABILITY_SAND_SPIT, ABILITY_MAINTENANCE, ABILITY_SAND_VEIL}, \
         .sourceGame = SOURCE_LLS,                                          \
         .noFlip = FALSE
 

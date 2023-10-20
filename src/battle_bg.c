@@ -1262,15 +1262,15 @@ void DrawBattleEntryBackground(void)
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_CAVE);
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE)
-    {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_UNDERWATER);
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_RAYQUAZA)
-    {
-        LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_RAYQUAZA);
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_KYOGRE:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_UNDERWATER);
+        case SPECIES_RAYQUAZA:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_RAYQUAZA);
+        default:
+            LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_CAVE);
+        }
     }
     else
     {
