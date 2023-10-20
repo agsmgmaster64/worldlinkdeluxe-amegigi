@@ -12070,7 +12070,7 @@ static void Cmd_tryconversiontypechange(void)
                     if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
                         moveType = TYPE_GHOST;
                     else
-                        moveType = TYPE_NORMAL;
+                        moveType = TYPE_ILLUSION;
                 }
             }
             while (moveType == gBattleMons[gBattlerAttacker].type1 || moveType == gBattleMons[gBattlerAttacker].type2 || moveType == gBattleMons[gBattlerAttacker].type3);
