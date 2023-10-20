@@ -552,6 +552,8 @@
 #define B_ANIM_SALT_CURE_DAMAGE         38
 #define B_ANIM_ROCK_THROW               39
 #define B_ANIM_SAFARI_REACTION          40
+#define B_ANIM_DYNAMAX_GROWTH           41
+#define B_ANIM_MAX_SET_WEATHER          42
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

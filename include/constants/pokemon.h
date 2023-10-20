@@ -312,7 +312,7 @@
 #define EVO_ITEM_LEVEL                    42     // specified item is used on a Pokémon over the evo level in EVO_LEVEL
 #define EVO_LEVEL_FOG                     43     // Pokémon reaches the specified level during fog in the overworld
 
-#define EVOS_PER_MON 10
+#define EVOS_PER_MON 11
 
 #if I_SHARDS_REQUIRE_LEVEL == TRUE
     #define EVO_SHARD EVO_ITEM_LEVEL

@@ -1300,6 +1300,40 @@ gCryTable::
 	cry Cry_Unown
 	@ Basculegion
 	cry Cry_Unown
+@ Gigantamax Forms
+	cry Cry_Venusaur
+	cry Cry_Charizard
+	cry Cry_Blastoise
+	cry Cry_Butterfree
+	cry Cry_Pikachu
+	cry Cry_Meowth
+	cry Cry_Machamp
+	cry Cry_Gengar
+	cry Cry_Kingler
+	cry Cry_Lapras
+	cry Cry_Eevee
+	cry Cry_Snorlax
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
+	cry Cry_Unown
 
 	.align 2
 gCryTable_Reverse::
@@ -2527,6 +2561,38 @@ gCryTable_Reverse::
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	cry_reverse Cry_Unown
+	@ Gigantamax Forms
+	cry_reverse Cry_Venusaur
+	cry_reverse Cry_Charizard
+	cry_reverse Cry_Blastoise
+	cry_reverse Cry_Butterfree
+	cry_reverse Cry_Pikachu
+	cry_reverse Cry_Meowth
+	cry_reverse Cry_Machamp
+	cry_reverse Cry_Gengar
+	cry_reverse Cry_Kingler
+	cry_reverse Cry_Lapras
+	cry_reverse Cry_Eevee
+	cry_reverse Cry_Snorlax
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown
 	cry_reverse Cry_Unown

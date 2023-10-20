@@ -853,17 +853,17 @@ static u8 GetBattleTerrainOverride(void)
     {
         return BATTLE_TERRAIN_FRONTIER;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_GROUDON)
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
-        return BATTLE_TERRAIN_GROUDON;
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_KYOGRE)
-    {
-        return BATTLE_TERRAIN_KYOGRE;
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_RAYQUAZA)
-    {
-        return BATTLE_TERRAIN_RAYQUAZA;
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+        case SPECIES_GROUDON:
+            return BATTLE_TERRAIN_GROUDON;
+        case SPECIES_KYOGRE:
+            return BATTLE_TERRAIN_KYOGRE;
+        case SPECIES_RAYQUAZA:
+            return BATTLE_TERRAIN_RAYQUAZA;
+        }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
@@ -1260,7 +1260,7 @@ void DrawBattleEntryBackground(void)
             CopyBgTilemapBufferToVram(2);
         }
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_GROUDON)
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_CAVE);
     }

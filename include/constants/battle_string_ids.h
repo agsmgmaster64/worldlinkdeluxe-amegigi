@@ -680,8 +680,21 @@
 #define STRINGID_BAGISFULL                            678
 #define STRINGID_OPPORTUNISTCOPIED                    679
 #define STRINGID_TARGETCOVEREDINSTICKYCANDYSYRUP      680
+#define STRINGID_SHARPSTEELFLOATS                     681
+#define STRINGID_SHARPSTEELDMG                        682
+#define STRINGID_PKMNBLEWAWAYSHARPSTEEL               683
+#define STRINGID_SHARPSTEELDISAPPEAREDFROMTEAM        684
+#define STRINGID_TEAMTRAPPEDWITHVINES                 685
+#define STRINGID_PKMNHURTBYVINES                      686
+#define STRINGID_TEAMCAUGHTINVORTEX                   687
+#define STRINGID_PKMNHURTBYVORTEX                     688
+#define STRINGID_TEAMSURROUNDEDBYFIRE                 689
+#define STRINGID_PKMNBURNINGUP                        690
+#define STRINGID_TEAMSURROUNDEDBYROCKS                691
+#define STRINGID_PKMNHURTBYROCKSTHROWN                692
+#define STRINGID_MOVEBLOCKEDBYDYNAMAX                 693
 
-#define BATTLESTRINGS_COUNT                           681
+#define BATTLESTRINGS_COUNT                           694
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -981,8 +994,22 @@
 // gDmgHazardsStringIds
 #define B_MSG_PKMNHURTBYSPIKES   0
 #define B_MSG_STEALTHROCKDMG     1
-#define B_MSG_POINTEDSTONESFLOAT 2
-#define B_MSG_SPIKESSCATTERED    3
+#define B_MSG_SHARPSTEELDMG      2
+#define B_MSG_POINTEDSTONESFLOAT 3
+#define B_MSG_SPIKESSCATTERED    4
+#define B_MSG_SHARPSTEELFLOATS   5
+
+// gDamageNonTypesStartStringIds
+#define B_MSG_TRAPPED_WITH_VINES  0
+#define B_MSG_CAUGHT_IN_VORTEX    1
+#define B_MSG_SURROUNDED_BY_FIRE  2
+#define B_MSG_SURROUNDED_BY_ROCKS 3
+
+// gDamageNonTypesDmgStringIds
+#define B_MSG_HURT_BY_VINES  0
+#define B_MSG_HURT_BY_VORTEX    1
+#define B_MSG_BURNING_UP  2
+#define B_MSG_HURT_BY_ROCKS_THROWN 3
 
 // gItemDroppedStringIds
 #define B_MSG_ITEM_DROPPED   0
