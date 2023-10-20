@@ -116,6 +116,9 @@ bool32 CanDynamax(u16 battlerId)
     #endif
         return FALSE;
 
+    // Cannot Dynamax against a ghost without the Silph Scope
+    if (IS_BATTLE_TYPE_GHOST_WITHOUT_SCOPE(gBattleTypeFlags))
+        return FALSE;
 
     // Check if Player has a Dynamax Band.
     if ((GetBattlerPosition(battlerId) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battlerId) == B_POSITION_PLAYER_RIGHT))

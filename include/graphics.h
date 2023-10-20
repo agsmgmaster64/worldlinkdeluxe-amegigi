@@ -9559,6 +9559,8 @@ extern const u32 gConfetti_Gfx[];
 extern const u32 gConfetti_Pal[];
 
 extern const u32 gBattleInterfaceGfx_BattleBar[];
+extern const u32 gGhostFrontPic[];
+extern const u32 gGhostPalette[];
 extern const u32 gBattleAnimSpriteGfx_Substitute[];
 extern const u32 gBattleAnimSpriteGfx_SubstituteBack[];
 extern const u32 gBattleAnimSpritePal_Substitute[];

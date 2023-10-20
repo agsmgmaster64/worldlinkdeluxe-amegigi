@@ -540,3 +540,4 @@ gSpecials::
 	def_special PokevialGetSize
 	def_special PokevialRefill
 	def_special BufferUnitSystemText
+	def_special StartScriptedGhostBattle

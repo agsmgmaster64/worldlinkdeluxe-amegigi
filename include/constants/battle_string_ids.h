@@ -693,8 +693,12 @@
 #define STRINGID_TEAMSURROUNDEDBYROCKS                691
 #define STRINGID_PKMNHURTBYROCKSTHROWN                692
 #define STRINGID_MOVEBLOCKEDBYDYNAMAX                 693
+#define STRINGID_MONTOOSCAREDTOMOVE                   694
+#define STRINGID_GHOSTGETOUTGETOUT                    695
+#define STRINGID_SILPHSCOPEUNVEILED                   696
+#define STRINGID_GHOSTWASMAROWAK                      697
 
-#define BATTLESTRINGS_COUNT                           694
+#define BATTLESTRINGS_COUNT                           698
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

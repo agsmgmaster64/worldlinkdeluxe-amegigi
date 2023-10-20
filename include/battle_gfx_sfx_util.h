@@ -11,6 +11,7 @@ bool8 TryHandleLaunchBattleTableAnimation(u8 activeBattlerId, u8 attacker, u8 ta
 void InitAndLaunchSpecialAnimation(u8 activeBattlerId, u8 attacker, u8 target, u8 tableId);
 bool8 IsBattleSEPlaying(u8 battler);
 void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battler);
+void DecompressGhostFrontPic(struct Pokemon *unused, u8 battlerId);
 void BattleGfxSfxDummy2(u16 species);
 void DecompressTrainerFrontPic(u16 frontPicId, u8 battler);
 void DecompressTrainerBackPic(u16 backPicId, u8 battler);
@@ -21,7 +22,7 @@ bool8 BattleInitAllSprites(u8 *state1, u8 *battler);
 void ClearSpritesHealthboxAnimData(void);
 void CopyAllBattleSpritesInvisibilities(void);
 void CopyBattleSpriteInvisibility(u8 battler);
-void HandleSpeciesGfxDataChange(u8 attacker, u8 target, bool32 megaEvo, bool8 trackEnemyPersonality);
+void HandleSpeciesGfxDataChange(u8 attacker, u8 target, u32 transformType, bool8 trackEnemyPersonality);
 void BattleLoadSubstituteOrMonSpriteGfx(u8 battler, bool8 loadMonSprite);
 void LoadBattleMonGfxAndAnimate(u8 battler, bool8 loadMonSprite, u8 spriteId);
 void TrySetBehindSubstituteSpriteBit(u8 battler, u16 move);

@@ -550,10 +550,13 @@
 #define B_ANIM_SNOW_CONTINUES           36
 #define B_ANIM_ULTRA_BURST              37
 #define B_ANIM_SALT_CURE_DAMAGE         38
-#define B_ANIM_ROCK_THROW               39
-#define B_ANIM_SAFARI_REACTION          40
-#define B_ANIM_DYNAMAX_GROWTH           41
-#define B_ANIM_MAX_SET_WEATHER          42
+#define B_ANIM_MON_SCARED               39
+#define B_ANIM_GHOST_GET_OUT            40
+#define B_ANIM_SILPH_SCOPED             41
+#define B_ANIM_ROCK_THROW               42
+#define B_ANIM_SAFARI_REACTION          43
+#define B_ANIM_DYNAMAX_GROWTH           44
+#define B_ANIM_MAX_SET_WEATHER          45
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

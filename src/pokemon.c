@@ -8015,7 +8015,8 @@ static void Task_PokemonSummaryAnimateAfterDelay(u8 taskId)
 
 void BattleAnimateFrontSprite(struct Sprite *sprite, u16 species, bool8 noCry, u8 panMode)
 {
-    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+    if ((gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+     || (gBattleTypeFlags & BATTLE_TYPE_GHOST))
         DoMonFrontSpriteAnimation(sprite, species, noCry, panMode | SKIP_FRONT_ANIM);
     else
         DoMonFrontSpriteAnimation(sprite, species, noCry, panMode);
@@ -8185,6 +8186,29 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
     
     if (caseId == FLAG_SET_SEEN)
         TryIncrementSpeciesSearchLevel(nationalNum);    // encountering pokemon increments its search level
+}
+
+bool8 CheckIfCanBeCaught(struct Pokemon *mon, u8 battlerId)
+{
+    if (CheckBattleTypeGhost(mon, battlerId))
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId)
+{
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+
+    if (gBattleTypeFlags & BATTLE_TYPE_GHOST && GetBattlerSide(battlerId) != B_SIDE_PLAYER)
+    {
+        GetMonData(mon, MON_DATA_NICKNAME, nickname);
+        StringGet_Nickname(nickname);
+        if (!StringCompare(nickname, gText_Ghost))
+            return TRUE;
+    }
+    return FALSE;
 }
 
 const u8 *GetTrainerClassNameFromId(u16 trainerId)

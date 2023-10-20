@@ -75,6 +75,8 @@ static void LoadBallParticleGfx(u8);
 static void SpriteCB_CaptureStar_Flicker(struct Sprite *);
 static void SpriteCB_Ball_Release_Wait(struct Sprite *);
 static void SpriteCB_Ball_Block_Step(struct Sprite *);
+static void SpriteCB_Ball_Dodge(struct Sprite *sprite);
+static void SpriteCB_Ball_Dodge_Step(struct Sprite *sprite);
 static void PokeBallOpenParticleAnimation_Step1(struct Sprite *);
 static void PokeBallOpenParticleAnimation_Step2(struct Sprite *);
 static void DestroyBallOpenAnimationParticle(struct Sprite *);
@@ -955,10 +957,18 @@ void AnimTask_FreeBallGfx(u8 taskId)
 
 void AnimTask_IsBallBlockedByTrainer(u8 taskId)
 {
-    if (gBattleSpritesDataPtr->animationData->ballThrowCaseId == BALL_TRAINER_BLOCK)
+    switch (gBattleSpritesDataPtr->animationData->ballThrowCaseId)
+    {
+    case BALL_TRAINER_BLOCK:
         gBattleAnimArgs[ARG_RET_ID] = -1;
-    else
+        break;
+    case BALL_MON_DODGE:
+        gBattleAnimArgs[ARG_RET_ID] = -2;
+        break;
+    default:
         gBattleAnimArgs[ARG_RET_ID] = 0;
+        break;
+    }
 
     DestroyAnimVisualTask(taskId);
 }
@@ -1156,6 +1166,10 @@ static void SpriteCB_Ball_Arc(struct Sprite *sprite)
         if (gBattleSpritesDataPtr->animationData->ballThrowCaseId == BALL_TRAINER_BLOCK)
         {
             sprite->callback = SpriteCB_Ball_Block;
+        }
+        else if (gBattleSpritesDataPtr->animationData->ballThrowCaseId == BALL_MON_DODGE)
+        {
+            sprite->callback = SpriteCB_Ball_Dodge;
         }
         else
         {
@@ -1857,6 +1871,36 @@ static void SpriteCB_Ball_Block_Step(struct Sprite *sprite)
 #undef sDx
 
 #undef sFrame
+
+static void SpriteCB_Ball_Dodge(struct Sprite *sprite)
+{
+    sprite->x += sprite->x2;
+    sprite->y += sprite->y2;
+    sprite->x2 = sprite->y2 = 0;
+    sprite->data[0] = 0x22;
+    sprite->data[1] = sprite->x;
+    sprite->data[2] = sprite->x - 8;
+    sprite->data[3] = sprite->y;
+    sprite->data[4] = 0x90;
+    sprite->data[5] = 0x20;
+    InitAnimArcTranslation(sprite);
+    TranslateAnimVerticalArc(sprite);
+    sprite->callback = SpriteCB_Ball_Dodge_Step;
+}
+
+static void SpriteCB_Ball_Dodge_Step(struct Sprite *sprite)
+{
+    if (!TranslateAnimVerticalArc(sprite))
+    {
+        if ((sprite->y + sprite->y2) < 65)
+            return;
+    }
+    
+    sprite->data[0] = 0;
+    sprite->callback = DestroySpriteAfterOneFrame;
+    gDoingBattleAnim = FALSE;
+    UpdateOamPriorityInAllHealthboxes(1, FALSE);
+}
 
 static void LoadBallParticleGfx(u8 ballId)
 {

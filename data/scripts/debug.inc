@@ -70,6 +70,12 @@ Debug_BoxFilledMessage_Text:
 	.string "Storage boxes filled!$"
 
 Debug_Script_1::
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 0, 2, 2
+	setvar VAR_0x8004, SPECIES_GENGAR
+	setvar VAR_0x8006, 0
+	setwildbattle SPECIES_GENGAR, 30
+	special StartScriptedGhostBattle
+	waitstate
 	end
 
 Debug_Script_2::

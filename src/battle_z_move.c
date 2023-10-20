@@ -175,6 +175,8 @@ bool32 IsZMoveUsable(u8 battler, u16 moveIndex)
 {
     if ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE) && IsPartnerMonFromSameTrainer(battler) && gBattleStruct->zmove.toBeUsed[BATTLE_PARTNER(battler)] != MOVE_NONE)
         return FALSE;   // Player's other mon has a z move queued up already
+    if (IS_BATTLE_TYPE_GHOST_WITHOUT_SCOPE(gBattleTypeFlags))
+        return FALSE;   // Cannot use Z moves against a ghost without the Silph Scope
     if (gBattleStruct->zmove.possibleZMoves[battler] & (1 << moveIndex))
         return TRUE;
     return FALSE;
