@@ -271,7 +271,7 @@ gSongTable::
 	song se_pike_curtain_close, 1, 1
 	song se_pike_curtain_open, 1, 1
 	song se_sudowoodo_shake, 1, 1
-	song dummy_song_header, 0, 0
+	song se_wld_faint, 1, 1
 	song dummy_song_header, 0, 0
 	song dummy_song_header, 0, 0
 	song dummy_song_header, 0, 0
@@ -560,6 +560,11 @@ gSongTable::
 	song mus_rg_trainer_tower, 0, 0
 	song mus_rg_slow_pallet, 0, 0
 	song mus_rg_teachy_tv_menu, 0, 0
+	song mus_wld_vs_wild, 0, 0
+	song mus_wld_vs_trainer, 0, 0
+	song mus_wld_vs_gym_leader, 0, 0
+	song mus_wld_surf, 0, 0
+	song mus_wld_victory_trainer, 0, 0
 
 	.align 2
 dummy_song_header:

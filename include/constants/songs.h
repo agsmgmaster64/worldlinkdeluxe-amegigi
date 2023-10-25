@@ -276,7 +276,8 @@
 #define SE_PIKE_CURTAIN_CLOSE       267 // SE_CURTAIN
 #define SE_PIKE_CURTAIN_OPEN        268 // SE_CURTAIN1
 #define SE_SUDOWOODO_SHAKE          269 // SE_USSOKI
-#define END_SE                      SE_SUDOWOODO_SHAKE
+#define SE_WLD_FAINT                270
+#define END_SE                      SE_WLD_FAINT
 
 // Music
 #define START_MUS                   350
@@ -490,8 +491,13 @@
 #define MUS_RG_TRAINER_TOWER        556 // MUS_RG_T_TOWER
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
+#define MUS_WLD_VS_WILD             559
+#define MUS_WLD_VS_TRAINER          560
+#define MUS_WLD_VS_GYM_LEADER       561
+#define MUS_WLD_SURF                562
+#define MUS_WLD_VICTORY_TRAINER     563
 
-#define END_MUS                     MUS_RG_TEACHY_TV_MENU
+#define END_MUS                     MUS_WLD_VICTORY_TRAINER
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

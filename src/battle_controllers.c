@@ -2622,13 +2622,13 @@ void BtlController_HandleFaintAnimation(u32 battler)
                 HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
                 gSprites[gBattlerSpriteIds[battler]].sSpeedX = 0;
                 gSprites[gBattlerSpriteIds[battler]].sSpeedY = 5;
-                PlaySE12WithPanning(SE_FAINT, SOUND_PAN_ATTACKER);
+                PlaySE12WithPanning(SE_WLD_FAINT, SOUND_PAN_ATTACKER);
                 gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_FaintSlideAnim;
                 gBattlerControllerFuncs[battler] = Controller_FaintPlayerMon;
             }
             else
             {
-                PlaySE12WithPanning(SE_FAINT, SOUND_PAN_TARGET);
+                PlaySE12WithPanning(SE_WLD_FAINT, SOUND_PAN_TARGET);
                 gSprites[gBattlerSpriteIds[battler]].callback = SpriteCB_FaintOpponentMon;
                 gBattlerControllerFuncs[battler] = Controller_FaintOpponentMon;
             }

@@ -633,6 +633,24 @@ $(MID_SUBDIR)/mus_vs_rayquaza.s: %.s: %.mid
 $(MID_SUBDIR)/mus_encounter_hiker.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G097 -V076
 
+$(MID_SUBDIR)/mus_wld_vs_trainer.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
+
+$(MID_SUBDIR)/mus_wld_vs_gym_leader.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G155
+
+$(MID_SUBDIR)/mus_wld_vs_wild.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
+
+$(MID_SUBDIR)/mus_wld_victory_trainer.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G169
+
+$(MID_SUBDIR)/mus_wld_surf.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
+
+$(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -P5
+
 $(MID_SUBDIR)/se_a.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G128 -V095 -P4
 
