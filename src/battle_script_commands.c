@@ -16304,8 +16304,8 @@ void BS_TryReflectType(void)
     }
     else if (targetType1 == TYPE_MYSTERY && targetType2 == TYPE_MYSTERY && targetType3 != TYPE_MYSTERY)
     {
-        gBattleMons[gBattlerAttacker].type1 = TYPE_NORMAL;
-        gBattleMons[gBattlerAttacker].type2 = TYPE_NORMAL;
+        gBattleMons[gBattlerAttacker].type1 = TYPE_ILLUSION;
+        gBattleMons[gBattlerAttacker].type2 = TYPE_ILLUSION;
         gBattleMons[gBattlerAttacker].type3 = targetType3;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
