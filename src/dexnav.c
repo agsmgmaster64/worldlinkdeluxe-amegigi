@@ -2361,7 +2361,7 @@ static void Task_DexNavWaitFadeIn(u8 taskId)
 static void Task_DexNavMain(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
-    u16 species;
+    u16 species, registeredSpecies;
     
     if (IsSEPlaying())
         return;
@@ -2468,8 +2468,15 @@ static void Task_DexNavMain(u8 taskId)
     {
         // check selection is valid. Play sound if invalid
         species = DexNavGetSpecies();
-        
-        if (species != SPECIES_NONE)
+        registeredSpecies = VarGet(VAR_DEXNAV_SPECIES);
+
+        if (species == (registeredSpecies & MASK_SPECIES) && species != SPECIES_NONE)
+        {
+            PrintSearchableSpecies(SPECIES_NONE);
+            PlayCry_Script(species, 0);
+            VarSet(VAR_DEXNAV_SPECIES, 0);
+        }
+        else if (species != SPECIES_NONE)
         {            
             PrintSearchableSpecies(species);
             //PlaySE(SE_DEX_SEARCH);
@@ -2480,6 +2487,8 @@ static void Task_DexNavMain(u8 taskId)
         }
         else
         {
+            PrintSearchableSpecies(SPECIES_NONE);
+            VarSet(VAR_DEXNAV_SPECIES, 0);
             PlaySE(SE_FAILURE);
         }
     }
