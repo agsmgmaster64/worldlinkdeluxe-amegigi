@@ -8608,15 +8608,6 @@ BattleScript_FascinateLoop:
 	jumpiftargetally BattleScript_FascinateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_FascinateLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateLoopIncrement
-	jumpifability BS_TARGET, ABILITY_HAKUREI_MIKO, BattleScript_IntimidatePrevented
-	jumpifability BS_TARGET, ABILITY_MAGIC_BARRIER, BattleScript_IntimidatePrevented
-	jumpifability BS_TARGET, ABILITY_FULL_METAL_BODY, BattleScript_IntimidatePrevented
-.if B_UPDATED_INTIMIDATE >= GEN_8
-	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_FascinatePrevented
-	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_FascinatePrevented
-	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_FascinatePrevented
-	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_FascinatePrevented
-.endif
 	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_FascinateInReverse
 BattleScript_FascinateEffect:
 	copybyte sBATTLER, gBattlerAttacker
@@ -8648,16 +8639,6 @@ BattleScript_FascinateContrary:
 BattleScript_FascinateContrary_WontIncrease:
 	printstring STRINGID_TARGETSTATWONTGOHIGHER
 	goto BattleScript_FascinateEffect_WaitString
-
-BattleScript_FascinatePrevented:
-	call BattleScript_AbilityPopUp
-	pause B_WAIT_TIME_LONG
-	setbyte gBattleCommunication STAT_SPATK
-	stattextbuffer BS_TARGET
-	printstring STRINGID_STATWASNOTLOWERED
-	waitmessage B_WAIT_TIME_LONG
-	call BattleScript_TryAdrenalineOrb
-	goto BattleScript_FascinateLoopIncrement
 
 BattleScript_FascinateInReverse:
 	copybyte sBATTLER, gBattlerTarget

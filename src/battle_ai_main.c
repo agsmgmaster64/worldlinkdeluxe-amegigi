@@ -869,7 +869,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                   && move != MOVE_PLAY_NICE && move != MOVE_NOBLE_ROAR && move != MOVE_TEARFUL_LOOK && move != MOVE_VENOM_DRENCH)
                     RETURN_SCORE_MINUS(10);
                 break;
-            case ABILITY_ILLUMINATE:
+            case ABILITY_DIVA:
                 if (B_ILLUMINATE_EFFECT < GEN_9)
                     break;
                 // fallthrough
@@ -1295,7 +1295,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_ACCURACY_DOWN_2:
             if (!ShouldLowerStat(battlerDef, aiData->abilities[battlerDef], STAT_ACC))
                 ADJUST_SCORE(-10);
-            else if (aiData->abilities[battlerDef] == ABILITY_KEEN_EYE || (B_ILLUMINATE_EFFECT >= GEN_9 && aiData->abilities[battlerDef] == ABILITY_ILLUMINATE))
+            else if (aiData->abilities[battlerDef] == ABILITY_KEEN_EYE || (B_ILLUMINATE_EFFECT >= GEN_9 && aiData->abilities[battlerDef] == ABILITY_DIVA))
                 ADJUST_SCORE(-8);
             break;
         case EFFECT_EVASION_DOWN:
