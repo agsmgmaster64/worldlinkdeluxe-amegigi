@@ -3945,8 +3945,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     value = HIDDEN_NATURE_NONE;
     SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &value);
 
-    value = 0xFF;
-    SetBoxMonData(boxMon, MON_DATA_AFFECTION, &value);
+    //value = 0xFF;
+    //SetBoxMonData(boxMon, MON_DATA_AFFECTION, &value);
 
     GiveBoxMonInitialMoveset(boxMon);
 }

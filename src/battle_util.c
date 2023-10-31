@@ -1844,6 +1844,8 @@ u32 GetBattlerFriendshipScore(u32 battler)
 
     if (side != B_SIDE_PLAYER)
         return AFFECTION_NONE;
+    else if (IsAiVsAiBattle())
+        return AFFECTION_NONE;
     else if (gSpeciesInfo[species].flags & SPECIES_FLAG_MEGA_EVOLUTION
           || (gBattleTypeFlags & (BATTLE_TYPE_EREADER_TRAINER
                                 | BATTLE_TYPE_FRONTIER

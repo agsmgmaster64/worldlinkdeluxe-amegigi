@@ -79,6 +79,12 @@ Debug_Script_1::
 	end
 
 Debug_Script_2::
+	special SavePlayerParty
+	setflag FLAG_SCRIPTED_LOSS
+	ai_vs_ai_battle TRAINER_PHOEBE, TRAINER_SIDNEY
+	clearflag FLAG_SCRIPTED_LOSS
+	special LoadPlayerParty
+	special HealPlayerParty
 	end
 
 Debug_Script_3::
