@@ -1534,6 +1534,9 @@ static void Debug_InitializeBattle(u8 taskId)
     {
     case DEBUG_BATTLE_0_MENU_ITEM_WILD:
         break;
+    case DEBUG_BATTLE_0_MENU_ITEM_WILD_DOUBLE:
+        gBattleTypeFlags = (BATTLE_TYPE_DOUBLE);
+        break;
     case DEBUG_BATTLE_0_MENU_ITEM_SINGLE:
         gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
         break;
@@ -1651,8 +1654,8 @@ static void DebugAction_OpenFlagsVarsMenu(u8 taskId)
 static void DebugAction_OpenBattleMenu(u8 taskId)
 {
     Debug_DestroyMenu(taskId);
-    sDebugMenuListData->listId = 0;
-    Debug_ShowMenu(DebugTask_HandleMenuInput_Battle, gMultiuseListMenuTemplate);
+    sDebugMenuListData->listId = 1;
+    Debug_ShowMenu(DebugTask_HandleMenuInput_Battle, sDebugMenu_ListTemplate_Battle_0);
 }
 
 static void DebugAction_OpenGiveMenu(u8 taskId)

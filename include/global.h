@@ -1060,7 +1060,7 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     /*      */ struct Pokevial pokevial;
-               u8 dexNavSearchLevels[NUM_SPECIES];
+               u8 dexNavSearchLevels[NATIONAL_DEX_COUNT];
                u8 dexNavChain;
     // sizeof: 0x3???
 };
