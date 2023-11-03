@@ -38,6 +38,9 @@ extern const u8 gText_Smart[];
 extern const u8 gText_Tough[];
 
 extern const u8 gText_Normal[];
+extern const u8 gText_Black[];
+extern const u8 gText_Pink[];
+extern const u8 gText_Sepia[];
 extern const u8 gText_Super[];
 extern const u8 gText_Hyper[];
 extern const u8 gText_Master[];

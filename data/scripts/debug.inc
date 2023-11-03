@@ -114,7 +114,36 @@ Debug_EventScript_Script_2::
 	end
 
 Debug_EventScript_Script_3::
+	lock
+	message Debug_EventScript_Script_3_Text_ChoosePrintType
+	waitmessage
+	multichoice 21, 0, MULTI_TRAINER_CARD_ICON_TINT, TRUE
+	switch VAR_RESULT
+	case 1, Debug_EventScript_Script_3_PrintTypeBlack
+	case 2, Debug_EventScript_Script_3_PrintTypePink
+	case 3, Debug_EventScript_Script_3_PrintTypeSepia
+    setvar VAR_0x8004, 0
+	goto Debug_EventScript_Script_3_UpdateTrainerCard
+
+Debug_EventScript_Script_3_PrintTypeBlack::
+    setvar VAR_0x8004, 1
+	goto Debug_EventScript_Script_3_UpdateTrainerCard
+
+Debug_EventScript_Script_3_PrintTypePink::
+    setvar VAR_0x8004, 2
+	goto Debug_EventScript_Script_3_UpdateTrainerCard
+
+Debug_EventScript_Script_3_PrintTypeSepia::
+    setvar VAR_0x8004, 3
+	goto Debug_EventScript_Script_3_UpdateTrainerCard
+
+Debug_EventScript_Script_3_UpdateTrainerCard::
+	playse MUS_RG_PHOTO
+	special UpdateTrainerCardPhotoIcons
 	end
+
+Debug_EventScript_Script_3_Text_ChoosePrintType::
+	.string "Please choose the print type.$"
 
 Debug_EventScript_Script_4::
 	end

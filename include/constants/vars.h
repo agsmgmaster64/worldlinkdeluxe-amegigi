@@ -237,16 +237,16 @@
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
 #define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+#define VAR_TRAINER_CARD_MON_ICON_TINT_IDX               0x40DC
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_BATTLE_TERRAIN                               0x40DE
-#define VAR_LAST_USED_LURE_REPEL                         0x40DF // Unused Var
-#define VAR_GIFT_UNUSED_3                                0x40E0 // Unused Var
-#define VAR_GIFT_UNUSED_4                                0x40E1 // Unused Var
-#define VAR_GIFT_UNUSED_5                                0x40E2 // Unused Var
-#define VAR_GIFT_UNUSED_6                                0x40E3 // Unused Var
-#define VAR_GIFT_UNUSED_7                                0x40E4 // Unused Var
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_LAST_USED_LURE_REPEL                         0x40DF
+#define VAR_TRAINER_CARD_MON_ICON_1                      0x40E0
+#define VAR_TRAINER_CARD_MON_ICON_2                      0x40E1
+#define VAR_TRAINER_CARD_MON_ICON_3                      0x40E2
+#define VAR_TRAINER_CARD_MON_ICON_4                      0x40E3
+#define VAR_TRAINER_CARD_MON_ICON_5                      0x40E4
+#define VAR_TRAINER_CARD_MON_ICON_6                      0x40E5
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8

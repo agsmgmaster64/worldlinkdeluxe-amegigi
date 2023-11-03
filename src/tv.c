@@ -3394,6 +3394,29 @@ void GetMomOrDadStringForTVMessage(void)
     }
 }
 
+void UpdateTrainerCardPhotoIcons(void)
+{
+    u16 species[PARTY_SIZE];
+    u32 personality[PARTY_SIZE];
+    u8 i;
+    u8 partyCount;
+    for (i = 0; i < PARTY_SIZE; i++)
+        species[i] = SPECIES_NONE;
+    partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        species[i] = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
+        personality[i] = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL);
+    }
+    VarSet(VAR_TRAINER_CARD_MON_ICON_1, species[0]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_2, species[1]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_3, species[2]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_4, species[3]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_5, species[4]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_6, species[5]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_TINT_IDX, gSpecialVar_0x8004);
+}
+
 void HideBattleTowerReporter(void)
 {
     VarSet(VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0);
