@@ -4415,6 +4415,12 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_WLD_VS_GYM_LEADER) \
     X(MUS_WLD_SURF) \
     X(MUS_WLD_VICTORY_TRAINER) \
+    X(MUS_WLD_VICTORY_WILD) \
+    X(MUS_WLD_CAUGHT_INTRO) \
+    X(MUS_WLD_CAUGHT) \
+    X(MUS_ZGS_VS_WILD) \
+    X(MUS_ZGS_VS_TRAINER) \
+    X(MUS_ZGS_VS_CHAMPION) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

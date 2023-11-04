@@ -496,8 +496,14 @@
 #define MUS_WLD_VS_GYM_LEADER       561
 #define MUS_WLD_SURF                562
 #define MUS_WLD_VICTORY_TRAINER     563
+#define MUS_WLD_VICTORY_WILD        564
+#define MUS_WLD_CAUGHT_INTRO        565
+#define MUS_WLD_CAUGHT              566
+#define MUS_ZGS_VS_WILD             567
+#define MUS_ZGS_VS_TRAINER          568
+#define MUS_ZGS_VS_CHAMPION         569
 
-#define END_MUS                     MUS_WLD_VICTORY_TRAINER
+#define END_MUS                     MUS_ZGS_VS_CHAMPION
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
