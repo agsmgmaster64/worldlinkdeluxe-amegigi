@@ -2038,3 +2038,6 @@ const u32 gItemIcon_Pokevial9[] = INCBIN_U32("graphics/items/icons/pokevial9.4bp
 const u32 gItemIcon_Pokevial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 
 const u32 gItemIconPalette_Pokevial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal.lz");
+
+const u32 gItemIcon_FairyFeather[] = INCBIN_U32("graphics/items/icons/fairy_feather.4bpp.lz");
+const u32 gItemIconPalette_FairyFeather[] = INCBIN_U32("graphics/items/icon_palettes/fairy_feather.gbapal.lz");
