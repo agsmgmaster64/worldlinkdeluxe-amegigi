@@ -4152,7 +4152,15 @@ static void Cmd_getexp(void)
                     && !FlagGet(FLAG_OVERRIDE_MUSIC))
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD);
+                    switch (gSaveBlock2Ptr->optionsMusicStyle)
+                    {
+                    case OPTIONS_MUSIC_STYLE_VANILLA:
+                        PlayBGM(MUS_VICTORY_WILD);
+                        break;
+                    default:
+                        PlayBGM(MUS_WLD_VICTORY_WILD);
+                        break;
+                    }
                     gBattleStruct->wildVictorySong++;
                 }
 

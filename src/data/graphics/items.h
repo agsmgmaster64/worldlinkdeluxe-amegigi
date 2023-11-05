@@ -1211,55 +1211,56 @@ const u32 gItemIconPalette_PowerAnklet[] = INCBIN_U32("graphics/items/icon_palet
 
 // Type-boosting Held Items
 
-const u32 gItemIcon_SilkScarf[] = INCBIN_U32("graphics/items/icons/silk_scarf.4bpp.lz");
-const u32 gItemIconPalette_SilkScarf[] = INCBIN_U32("graphics/items/icon_palettes/silk_scarf.gbapal.lz");
+const u32 gItemIcon_BridalGown[] = INCBIN_U32("graphics/items/icons/bridal_gown.4bpp.lz");
+const u32 gItemIconPalette_BridalGown[] = INCBIN_U32("graphics/items/icon_palettes/bridal_gown.gbapal.lz");
 
-const u32 gItemIcon_Charcoal[] = INCBIN_U32("graphics/items/icons/charcoal.4bpp.lz");
-const u32 gItemIconPalette_Charcoal[] = INCBIN_U32("graphics/items/icon_palettes/charcoal.gbapal.lz");
+const u32 gItemIcon_GothicDress[] = INCBIN_U32("graphics/items/icons/gothic_dress.4bpp.lz");
+const u32 gItemIconPalette_GothicDress[] = INCBIN_U32("graphics/items/icon_palettes/gothic_dress.gbapal.lz");
 
-const u32 gItemIcon_MysticWater[] = INCBIN_U32("graphics/items/icons/mystic_water.4bpp.lz");
-const u32 gItemIconPalette_MysticWater[] = INCBIN_U32("graphics/items/icon_palettes/mystic_water.gbapal.lz");
+const u32 gItemIcon_Swimsuit[] = INCBIN_U32("graphics/items/icons/swimsuit.4bpp.lz");
+const u32 gItemIconPalette_Swimsuit[] = INCBIN_U32("graphics/items/icon_palettes/swimsuit.gbapal.lz");
 
-const u32 gItemIcon_Magnet[] = INCBIN_U32("graphics/items/icons/magnet.4bpp.lz");
-const u32 gItemIconPalette_Magnet[] = INCBIN_U32("graphics/items/icon_palettes/magnet.gbapal.lz");
+const u32 gItemIcon_NinjaSuit[] = INCBIN_U32("graphics/items/icons/ninja_suit.4bpp.lz");
+const u32 gItemIconPalette_NinjaSuit[] = INCBIN_U32("graphics/items/icon_palettes/ninja_suit.gbapal.lz");
 
-const u32 gItemIcon_MiracleSeed[] = INCBIN_U32("graphics/items/icons/miracle_seed.4bpp.lz");
-const u32 gItemIconPalette_MiracleSeed[] = INCBIN_U32("graphics/items/icon_palettes/miracle_seed.gbapal.lz");
+const u32 gItemIcon_Camouflage[] = INCBIN_U32("graphics/items/icons/camouflage.4bpp.lz");
+const u32 gItemIconPalette_Camouflage[] = INCBIN_U32("graphics/items/icon_palettes/camouflage.gbapal.lz");
 
-const u32 gItemIcon_NeverMeltIce[] = INCBIN_U32("graphics/items/icons/never_melt_ice.4bpp.lz");
-const u32 gItemIconPalette_NeverMeltIce[] = INCBIN_U32("graphics/items/icon_palettes/never_melt_ice.gbapal.lz");
+const u32 gItemIcon_ThickFur[] = INCBIN_U32("graphics/items/icons/thick_fur.4bpp.lz");
+const u32 gItemIconPalette_ThickFur[] = INCBIN_U32("graphics/items/icon_palettes/thick_fur.gbapal.lz");
 
-const u32 gItemIcon_BlackBelt[] = INCBIN_U32("graphics/items/icons/black_belt.4bpp.lz");
-const u32 gItemIconPalette_BlackTypeEnhancingItem[] = INCBIN_U32("graphics/items/icon_palettes/black_type_enhancing_item.gbapal.lz");
+const u32 gItemIcon_ChinaDress[] = INCBIN_U32("graphics/items/icons/china_dress.4bpp.lz");
+const u32 gItemIconPalette_ChinaDress[] = INCBIN_U32("graphics/items/icon_palettes/china_dress.gbapal.lz");
 
-const u32 gItemIcon_PoisonBarb[] = INCBIN_U32("graphics/items/icons/poison_barb.4bpp.lz");
-const u32 gItemIconPalette_PoisonBarb[] = INCBIN_U32("graphics/items/icon_palettes/poison_barb.gbapal.lz");
+const u32 gItemIcon_NurseOutfit[] = INCBIN_U32("graphics/items/icons/nurse_outfit.4bpp.lz");
+const u32 gItemIconPalette_NurseOutfit[] = INCBIN_U32("graphics/items/icon_palettes/nurse_outfit.gbapal.lz");
 
-const u32 gItemIcon_SoftSand[] = INCBIN_U32("graphics/items/icons/soft_sand.4bpp.lz");
-const u32 gItemIconPalette_SoftSand[] = INCBIN_U32("graphics/items/icon_palettes/soft_sand.gbapal.lz");
+const u32 gItemIcon_GymSuit[] = INCBIN_U32("graphics/items/icons/gym_suit.4bpp.lz");
+const u32 gItemIconPalette_GymSuit[] = INCBIN_U32("graphics/items/icon_palettes/gym_suit.gbapal.lz");
 
-const u32 gItemIcon_SharpBeak[] = INCBIN_U32("graphics/items/icons/sharp_beak.4bpp.lz");
-const u32 gItemIconPalette_SharpBeak[] = INCBIN_U32("graphics/items/icon_palettes/sharp_beak.gbapal.lz");
+const u32 gItemIcon_Stewardess[] = INCBIN_U32("graphics/items/icons/stewardess.4bpp.lz");
+const u32 gItemIconPalette_Stewardess[] = INCBIN_U32("graphics/items/icon_palettes/stewardess.gbapal.lz");
 
-const u32 gItemIcon_TwistedSpoon[] = INCBIN_U32("graphics/items/icons/twisted_spoon.4bpp.lz");
-const u32 gItemIconPalette_TwistedSpoon[] = INCBIN_U32("graphics/items/icon_palettes/twisted_spoon.gbapal.lz");
+const u32 gItemIcon_WitchsRobe[] = INCBIN_U32("graphics/items/icons/witchs_robe.4bpp.lz");
+const u32 gItemIconPalette_WitchsRobe[] = INCBIN_U32("graphics/items/icon_palettes/witchs_robe.gbapal.lz");
 
-const u32 gItemIcon_SilverPowder[] = INCBIN_U32("graphics/items/icons/silver_powder.4bpp.lz");
-const u32 gItemIconPalette_SilverPowder[] = INCBIN_U32("graphics/items/icon_palettes/silver_powder.gbapal.lz");
+const u32 gItemIcon_Blazer[] = INCBIN_U32("graphics/items/icons/blazer.4bpp.lz");
+const u32 gItemIconPalette_Blazer[] = INCBIN_U32("graphics/items/icon_palettes/blazer.gbapal.lz");
 
-const u32 gItemIcon_HardStone[] = INCBIN_U32("graphics/items/icons/hard_stone.4bpp.lz");
-const u32 gItemIconPalette_HardStone[] = INCBIN_U32("graphics/items/icon_palettes/hard_stone.gbapal.lz");
+const u32 gItemIcon_BunnySuit[] = INCBIN_U32("graphics/items/icons/bunny_suit.4bpp.lz");
+const u32 gItemIconPalette_BunnySuit[] = INCBIN_U32("graphics/items/icon_palettes/bunny_suit.gbapal.lz");
 
-const u32 gItemIcon_SpellTag[] = INCBIN_U32("graphics/items/icons/spell_tag.4bpp.lz");
-const u32 gItemIconPalette_SpellTag[] = INCBIN_U32("graphics/items/icon_palettes/spell_tag.gbapal.lz");
+const u32 gItemIcon_BurialDress[] = INCBIN_U32("graphics/items/icons/burial_dress.4bpp.lz");
+const u32 gItemIconPalette_BurialDress[] = INCBIN_U32("graphics/items/icon_palettes/burial_dress.gbapal.lz");
 
-const u32 gItemIcon_DragonFang[] = INCBIN_U32("graphics/items/icons/dragon_fang.4bpp.lz");
-const u32 gItemIconPalette_DragonFang[] = INCBIN_U32("graphics/items/icon_palettes/dragon_fang.gbapal.lz");
+const u32 gItemIcon_Priestess[] = INCBIN_U32("graphics/items/icons/priestess.4bpp.lz");
+const u32 gItemIconPalette_Priestess[] = INCBIN_U32("graphics/items/icon_palettes/priestess.gbapal.lz");
 
 const u32 gItemIcon_BlackGlasses[] = INCBIN_U32("graphics/items/icons/black_glasses.4bpp.lz");
+const u32 gItemIconPalette_BlackTypeEnhancingItem[] = INCBIN_U32("graphics/items/icon_palettes/black_type_enhancing_item.gbapal.lz");
 
-const u32 gItemIcon_MetalCoat[] = INCBIN_U32("graphics/items/icons/metal_coat.4bpp.lz");
-const u32 gItemIconPalette_MetalCoat[] = INCBIN_U32("graphics/items/icon_palettes/metal_coat.gbapal.lz");
+const u32 gItemIcon_MaidUniform[] = INCBIN_U32("graphics/items/icons/maid_uniform.4bpp.lz");
+const u32 gItemIconPalette_MaidUniform[] = INCBIN_U32("graphics/items/icon_palettes/maid_uniform.gbapal.lz");
 
 // Choice Items
 

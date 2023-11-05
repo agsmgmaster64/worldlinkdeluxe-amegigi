@@ -2219,88 +2219,88 @@ static const u8 sPowerAnkletDesc[] = _(
     "but reduces Speed.");
 
 // Type-boosting Held Items
-static const u8 sSilkScarfDesc[] = _(
-    "A hold item that\n"
-    "raises the power of\n"
-    "Normal-type moves.");
+static const u8 sBridalGownDesc[] = _(
+    "A costume that\n"
+    "boost Illusion-\n"
+    "type moves.");
 
-static const u8 sCharcoalDesc[] = _(
-    "A hold item that\n"
+static const u8 sGothicDressDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Fire-type moves.");
 
-static const u8 sMysticWaterDesc[] = _(
-    "A hold item that\n"
+static const u8 sSwimsuitDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Water-type moves.");
 
-static const u8 sMagnetDesc[] = _(
-    "A hold item that\n"
-    "boosts Electric-\n"
+static const u8 sNinjaSuitDesc[] = _(
+    "A costume that\n"
+    "raises the power of\n"
     "type moves.");
 
-static const u8 sMiracleSeedDesc[] = _(
-    "A hold item that\n"
+static const u8 sCamouflageDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Grass-type moves.");
+    "Nature-type moves.");
 
-static const u8 sNeverMeltIceDesc[] = _(
-    "A hold item that\n"
+static const u8 sThickFurDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Ice-type moves.");
 
-static const u8 sBlackBeltDesc[] = _(
-    "A hold item that\n"
-    "boosts Fighting-\n"
-    "type moves.");
-
-static const u8 sPoisonBarbDesc[] = _(
-    "A hold item that\n"
+static const u8 sChinaDressDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Poison-type moves.");
+    "Dream-type moves.");
 
-static const u8 sSoftSandDesc[] = _(
-    "A hold item that\n"
+static const u8 sNurseOutfitDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Ground-type moves.");
+    "Miasma-type moves.");
 
-static const u8 sSharpBeakDesc[] = _(
-    "A hold item that\n"
+static const u8 sGymSuitDesc[] = _(
+    "A costume that\n"
+    "raises the power of\n"
+    "Earth-type moves.");
+
+static const u8 sStewardessDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Flying-type moves.");
 
-static const u8 sTwistedSpoonDesc[] = _(
-    "A hold item that\n"
-    "boosts Psychic-\n"
-    "type moves.");
-
-static const u8 sSilverPowderDesc[] = _(
-    "A hold item that\n"
+static const u8 sWitchsRobeDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Bug-type moves.");
+    "Reason-type moves.");
 
-static const u8 sHardStoneDesc[] = _(
-    "A hold item that\n"
+static const u8 sBlazerDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Rock-type moves.");
+    "Heart-type moves.");
 
-static const u8 sSpellTagDesc[] = _(
-    "A hold item that\n"
+static const u8 sBunnySuitDesc[] = _(
+    "A costume that\n"
+    "raises the power of\n"
+    "Beast-type moves.");
+
+static const u8 sBurialDressDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Ghost-type moves.");
 
-static const u8 sDragonFangDesc[] = _(
-    "A hold item that\n"
+static const u8 sPriestessDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
-    "Dragon-type moves.");
+    "Faith-type moves.");
 
 static const u8 sBlackGlassesDesc[] = _(
     "A hold item that\n"
     "raises the power of\n"
     "Dark-type moves.");
 
-static const u8 sMetalCoatDesc[] = _(
-    "A hold item that\n"
+static const u8 sMaidUniformDesc[] = _(
+    "A costume that\n"
     "raises the power of\n"
     "Steel-type moves.");
 
