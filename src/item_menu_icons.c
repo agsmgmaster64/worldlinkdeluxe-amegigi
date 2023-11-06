@@ -407,7 +407,18 @@ static const struct CompressedTilesPal sBerryPicTable[] =
     [ITEM_TO_BERRY(ITEM_ROWAP_BERRY)  - 1]          = {gBerryPic_Rowap, gBerryPalette_Rowap},
     [ITEM_TO_BERRY(ITEM_KEE_BERRY)    - 1]          = {gBerryPic_Kee, gBerryPalette_Kee},
     [ITEM_TO_BERRY(ITEM_MARANGA_BERRY)- 1]          = {gBerryPic_Maranga, gBerryPalette_Maranga},
-    [ITEM_TO_BERRY(ITEM_ENIGMA_BERRY_E_READER) - 1] = {gBerryPic_Enigma, gBerryPalette_Enigma},
+    [ITEM_TO_BERRY(ITEM_PUMKIN_BERRY) - 1]          = {gBerryPic_Pumkin, gBerryPalette_Pumkin},
+    [ITEM_TO_BERRY(ITEM_DRASH_BERRY)  - 1]          = {gBerryPic_Drash, gBerryPalette_Drash},
+    [ITEM_TO_BERRY(ITEM_EGGANT_BERRY) - 1]          = {gBerryPic_Eggant, gBerryPalette_Eggant},
+    [ITEM_TO_BERRY(ITEM_STRIB_BERRY)  - 1]          = {gBerryPic_Strib, gBerryPalette_Strib},
+    [ITEM_TO_BERRY(ITEM_TURLAN_BERRY) - 1]          = {gBerryPic_Turlan, gBerryPalette_Turlan},
+    [ITEM_TO_BERRY(ITEM_NUTPEA_BERRY) - 1]          = {gBerryPic_Nutpea, gBerryPalette_Nutpea},
+    [ITEM_TO_BERRY(ITEM_IONNO_BERRY)  - 1]          = {gBerryPic_Ionno, gBerryPalette_Ionno},
+    [ITEM_TO_BERRY(ITEM_KUO_BERRY)    - 1]          = {gBerryPic_Kuo, gBerryPalette_Kuo},
+    [ITEM_TO_BERRY(ITEM_YAGO_BERRY)   - 1]          = {gBerryPic_Yago, gBerryPalette_Yago},
+    [ITEM_TO_BERRY(ITEM_TOUGA_BERRY)  - 1]          = {gBerryPic_Touga, gBerryPalette_Touga},
+    [ITEM_TO_BERRY(ITEM_GARLIG_BERRY) - 1]          = {gBerryPic_Garlig, gBerryPalette_Garlig},
+    [ITEM_TO_BERRY(ITEM_TOPO_BERRY)   - 1]          = {gBerryPic_Topo, gBerryPalette_Topo},
 };
 
 const struct CompressedSpriteSheet gBerryCheckCircleSpriteSheet =

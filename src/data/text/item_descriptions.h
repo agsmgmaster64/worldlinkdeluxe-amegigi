@@ -2691,7 +2691,7 @@ static const u8 sCheriBerryDesc[] = _(
 
 static const u8 sChestoBerryDesc[] = _(
     "A hold item that\n"
-    "awakens Pokémon\n"
+    "awakens Puppets\n"
     "in battle.");
 
 static const u8 sPechaBerryDesc[] = _(
@@ -2706,7 +2706,7 @@ static const u8 sRawstBerryDesc[] = _(
 
 static const u8 sAspearBerryDesc[] = _(
     "A hold item that\n"
-    "defrosts Pokémon\n"
+    "defrosts Puppets\n"
     "in battle.");
 
 static const u8 sLeppaBerryDesc[] = _(
@@ -2791,32 +2791,32 @@ static const u8 sPinapBerryDesc[] = _(
     "to grow Pinap.");
 
 static const u8 sPomegBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base HP.");
 
 static const u8 sKelpsyBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base Attack.");
 
 static const u8 sQualotBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base Defense.");
 
 static const u8 sHondewBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base Sp. Atk.");
 
 static const u8 sGrepaBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base Sp. Def.");
 
 static const u8 sTamatoBerryDesc[] = _(
-    "Makes a Pokémon\n"
+    "Makes a Puppet\n"
     "friendly but lowers\n"
     "base Speed.");
 
@@ -2867,8 +2867,8 @@ static const u8 sBelueBerryDesc[] = _(
 
 static const u8 sChilanBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Normal\n"
-    "move.");
+    "weakens an\n"
+    "Illusion move.");
 
 static const u8 sOccaBerryDesc[] = _(
     "A hold item that\n"
@@ -2882,32 +2882,32 @@ static const u8 sPasshoBerryDesc[] = _(
 
 static const u8 sWacanBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Electric\n"
+    "weakens a Wind\n"
     "move if weak to it.");
 
 static const u8 sRindoBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Grass\n"
+    "weakens a Nature\n"
     "move if weak to it.");
 
 static const u8 sYacheBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Ice\n"
+    "weakens an Ice\n"
     "move if weak to it.");
 
 static const u8 sChopleBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Fighting\n"
+    "weakens a Dream\n"
     "move if weak to it.");
 
 static const u8 sKebiaBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Poison\n"
+    "weakens a Miasma\n"
     "move if weak to it.");
 
 static const u8 sShucaBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Ground\n"
+    "weakens an Earth\n"
     "move if weak to it.");
 
 static const u8 sCobaBerryDesc[] = _(
@@ -2917,17 +2917,17 @@ static const u8 sCobaBerryDesc[] = _(
 
 static const u8 sPayapaBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Psychic\n"
+    "weakens a Reason\n"
     "move if weak to it.");
 
 static const u8 sTangaBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Bug\n"
+    "weakens a Heart\n"
     "move if weak to it.");
 
 static const u8 sChartiBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Rock\n"
+    "weakens a Beast\n"
     "move if weak to it.");
 
 static const u8 sKasibBerryDesc[] = _(
@@ -2937,7 +2937,7 @@ static const u8 sKasibBerryDesc[] = _(
 
 static const u8 sHabanBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Dragon\n"
+    "weakens a Faith\n"
     "move if weak to it.");
 
 static const u8 sColburBerryDesc[] = _(
@@ -2952,7 +2952,7 @@ static const u8 sBabiriBerryDesc[] = _(
 
 static const u8 sRoseliBerryDesc[] = _(
     "A hold item that\n"
-    "weakens a Fairy\n"
+    "weakens a Cosmic\n"
     "move if weak to it.");
 
 static const u8 sLiechiBerryDesc[] = _(
@@ -3029,6 +3029,66 @@ static const u8 sEnigmaBerryEReaderDesc[] = _(
     "{POKEBLOCK} ingredient.\n"
     "Plant in loamy soil\n"
     "to grow a mystery.");
+
+static const u8 sPumkinBerryDesc[] = _(
+    "A hold item that\n"
+    "defrosts Puppets\n"
+    "in battle.");
+
+static const u8 sDrashBerryDesc[] = _(
+    "A hold item that\n"
+    "heals poisoning\n"
+    "in battle.");
+
+static const u8 sEggantBerryDesc[] = _(
+    "Snaps Pokémon out\n"
+    "of move-binding\n"
+    "effects.");
+
+static const u8 sStribBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Strib.");
+
+static const u8 sTurlanBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Turlan.");
+
+static const u8 sNutpeaBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Nutpea.");
+
+static const u8 sIonnoBerryDesc[] = _(
+    "A hold item that\n"
+    "restores any\n"
+    "lowered stat.");
+
+static const u8 sKuoBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Kuo.");
+
+static const u8 sYagoBerryDesc[] = _(
+    "A hold item that\n"
+    "heals a burn in\n"
+    "battle.");
+
+static const u8 sTougaBerryDesc[] = _(
+    "A hold item that\n"
+    "heals confusion\n"
+    "in battle.");
+
+static const u8 sGarligBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Garlig.");
+
+static const u8 sTopoBerryDesc[] = _(
+    "{POKEBLOCK} ingredient.\n"
+    "Plant in loamy soil\n"
+    "to grow Topo.");
 
 // TMs/HMs
 static const u8 sTM01Desc[] = _(

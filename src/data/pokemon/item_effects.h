@@ -497,6 +497,26 @@ const u8 gItemEffect_TamatoBerry[10] = {
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
 
+const u8 gItemEffect_PumkinBerry[6] = {
+    [3] = ITEM3_FREEZE,
+};
+
+const u8 gItemEffect_DrashBerry[6] = {
+    [3] = ITEM3_POISON,
+};
+
+const u8 gItemEffect_EggantBerry[6] = {
+    [3] = ITEM0_INFATUATION,
+};
+
+const u8 gItemEffect_YagoBerry[6] = {
+    [3] = ITEM3_BURN,
+};
+
+const u8 gItemEffect_TougaBerry[6] = {
+    [3] = ITEM3_CONFUSION,
+};
+
 const u8 *const gItemEffectTable[ITEMS_COUNT] =
 {
     // Medicine
@@ -654,5 +674,10 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_HONDEW_BERRY]       = gItemEffect_HondewBerry,
     [ITEM_GREPA_BERRY]        = gItemEffect_GrepaBerry,
     [ITEM_TAMATO_BERRY]       = gItemEffect_TamatoBerry,
+    [ITEM_PUMKIN_BERRY]       = gItemEffect_PumkinBerry,
+    [ITEM_DRASH_BERRY]        = gItemEffect_DrashBerry,
+    [ITEM_EGGANT_BERRY]       = gItemEffect_EggantBerry,
+    [ITEM_YAGO_BERRY]         = gItemEffect_YagoBerry,
+    [ITEM_TOUGA_BERRY]        = gItemEffect_TougaBerry,
     [LAST_BERRY_INDEX]        = NULL,
 };
