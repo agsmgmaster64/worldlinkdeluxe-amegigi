@@ -364,14 +364,9 @@
 #define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 8)
 #define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 9)
 #define SPECIES_FLAG_CHIBI_FORM         (1 << 10)
-#define SPECIES_FLAG_NORMAL_FORM        (1 << 11)
-#define SPECIES_FLAG_ATTACK_FORM        (1 << 12)
-#define SPECIES_FLAG_DEFENSE_FORM       (1 << 13)
-#define SPECIES_FLAG_SPEED_FORM         (1 << 14)
-#define SPECIES_FLAG_HELPER_FORM        (1 << 15)
-#define SPECIES_FLAG_TECHNICAL_FORM     (1 << 16)
-#define SPECIES_FLAG_ADVENT_FORM        (1 << 17)
-#define SPECIES_FLAG_ULTRA_BURST        (1 << 18)
+#define SPECIES_FLAG_EVOLVED_FORM       (1 << 11)
+#define SPECIES_FLAG_ULTRA_BURST        (1 << 12)
+#define SPECIES_FLAG_PARADOX            (1 << 13)
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 
