@@ -252,7 +252,7 @@ gBattleAnims_Moves::
 	.4byte Move_PURSUIT
 	.4byte Move_RAPID_SPIN
 	.4byte Move_NATURE_POWER
-	.4byte Move_IRON_TAIL
+	.4byte Move_STEEL_FIST
 	.4byte Move_METAL_CLAW
 	.4byte Move_VITAL_THROW
 	.4byte Move_MORNING_SUN
@@ -23680,7 +23680,7 @@ Move_STEEL_WING:
 	blendoff
 	end
 
-Move_IRON_TAIL:
+Move_STEEL_FIST:
 	loadspritegfx ANIM_TAG_IMPACT
 	loopsewithpan SE_M_HARDEN, SOUND_PAN_ATTACKER, 28, 2
 	createvisualtask AnimTask_MetallicShine, 5, 1, 0, RGB_BLACK

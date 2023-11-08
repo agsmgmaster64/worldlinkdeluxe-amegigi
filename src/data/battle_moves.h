@@ -774,7 +774,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_ATTACK_DOWN,
         .power = 0,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_BEAST,
         .accuracy = 100,
         .pp = 40,
         .secondaryEffectChance = 0,
@@ -982,10 +982,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SURF] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 95,
-            .target = MOVE_TARGET_FOES_AND_ALLY,
-        #elif B_UPDATED_MOVE_DATA >= GEN_4
+        #if B_UPDATED_MOVE_DATA >= GEN_4
             .power = 95,
             .target = MOVE_TARGET_FOES_AND_ALLY,
         #else
@@ -1085,7 +1082,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_ICE,
         .accuracy = 100,
         .pp = 20,
-        .secondaryEffectChance = 10,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -1095,12 +1092,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HYPER_BEAM] =
     {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_ILLUSION,
-        .accuracy = 90,
+        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
+        .power = 120,
+        .type = TYPE_DARK,
+        .accuracy = 85,
         .pp = 5,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
@@ -1111,7 +1108,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_PECK] =
     {
         .effect = EFFECT_HIT,
-        .power = 35,
+        .power = 40,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 35,
@@ -1140,18 +1137,14 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SUBMISSION] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 25,
-        #endif
-        .effect = EFFECT_RECOIL_25,
-        .power = 80,
+        .effect = EFFECT_HIT,
+        .power = 85,
         .type = TYPE_DREAM,
-        .accuracy = 80,
+        .accuracy = 100,
+        .pp = 20,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
+        .priority = -6,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
@@ -1159,17 +1152,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_LOW_KICK] =
     {
-        .effect = EFFECT_LOW_KICK,
-        .power = 1,
-        .type = TYPE_DREAM,
+        .effect = EFFECT_FLINCH_HIT,
+        .power = 60,
+        .type = TYPE_FAITH,
         .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
+        .pp = 25,
+        .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
         .makesContact = TRUE,
+        .ignoresKingsRock = TRUE,
     },
 
     [MOVE_COUNTER] =
@@ -1196,7 +1190,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_LEVEL_DAMAGE,
         .power = 1,
-        .type = TYPE_DREAM,
+        .type = TYPE_EARTH,
         .accuracy = 100,
         .pp = 20,
         .secondaryEffectChance = 0,
@@ -1209,12 +1203,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_STRENGTH] =
     {
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_ATTACK_UP_HIT,
         .power = 80,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_DREAM,
         .accuracy = 100,
         .pp = 15,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
@@ -1230,7 +1224,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
             .pp = 20,
         #endif
         .effect = EFFECT_ABSORB,
-        .power = 20,
+        .power = 40,
         .type = TYPE_NATURE,
         .accuracy = 100,
         .secondaryEffectChance = 0,
@@ -1250,7 +1244,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
             .pp = 10,
         #endif
         .effect = EFFECT_ABSORB,
-        .power = 40,
+        .power = 60,
         .type = TYPE_NATURE,
         .accuracy = 100,
         .secondaryEffectChance = 0,
@@ -1290,7 +1284,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
             .effect = EFFECT_SPECIAL_ATTACK_UP,
         #endif
         .power = 0,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_USER,
@@ -1305,9 +1299,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_RAZOR_LEAF] =
     {
         .effect = EFFECT_HIT,
-        .power = 55,
+        .power = 65,
         .type = TYPE_NATURE,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 25,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
@@ -1445,8 +1439,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_FIRE_SPIN] =
     {
         #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 35,
-            .accuracy = 85,
+            .power = 60,
+            .accuracy = 90,
         #else
             .power = 15,
             .accuracy = 70,
@@ -1498,14 +1492,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_THUNDER_WAVE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 90,
-        #else
-            .accuracy = 100,
-        #endif
         .effect = EFFECT_PARALYZE,
         .power = 0,
         .type = TYPE_WIND,
+        .accuracy = 100,
         .pp = 20,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -1517,12 +1507,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_THUNDER] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-        #else
-            .power = 120,
-        #endif
         .effect = EFFECT_THUNDER,
+        .power = 120,
         .type = TYPE_WIND,
         .accuracy = 70,
         .pp = 10,
@@ -3589,7 +3575,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SANDSTORM,
         .power = 0,
-        .type = TYPE_BEAST,
+        .type = TYPE_EARTH,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -4112,7 +4098,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .magicCoatAffected = TRUE,
     },
 
-    [MOVE_IRON_TAIL] =
+    [MOVE_STEEL_FIST] =
     {
         .effect = EFFECT_DEFENSE_DOWN_HIT,
         .power = 100,
@@ -4219,8 +4205,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HIDDEN_POWER] =
     {
-        .power = B_HIDDEN_POWER_DMG >= GEN_6 ? 60 : 1,
-        .effect = EFFECT_HIDDEN_POWER,
+        .power = 80,
+        .effect = EFFECT_MULTI_PULSE,
         .type = TYPE_ILLUSION,
         .accuracy = 100,
         .pp = 15,

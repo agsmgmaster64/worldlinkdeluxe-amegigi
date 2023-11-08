@@ -379,7 +379,7 @@ FieryPath_EventScript_ItemTMToxic::
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemTMIronTail::
-	finditem ITEM_TM_IRON_TAIL
+	finditem ITEM_TM_STEEL_FIST
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemFullHeal::
@@ -395,7 +395,7 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP::
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
-	finditem ITEM_TM_DRAGON_CLAW
+	finditem ITEM_TM_HEART_BREAK
 	end
 
 NewMauville_Inside_EventScript_ItemUltraBall::
@@ -611,7 +611,7 @@ VictoryRoad_1F_EventScript_ItemPPUp::
 	end
 
 VictoryRoad_B1F_EventScript_ItemTMPsychic::
-	finditem ITEM_TM_PSYCHIC
+	finditem ITEM_TM_MANA_BURST
 	end
 
 VictoryRoad_B1F_EventScript_ItemFullRestore::

@@ -1390,7 +1390,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Depletion takes away 2 PP from the target's 
         OPPONENT(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_DRAGON_CLAW, target: opponentLeft, dynamax: TRUE); }
+        TURN { MOVE(playerLeft, MOVE_HEART_BREAK, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
         MESSAGE("Foe Sableye used Celebrate!");
         MESSAGE("Duraludon used G-Max Depletion!");

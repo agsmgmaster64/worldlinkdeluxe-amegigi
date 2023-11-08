@@ -253,8 +253,8 @@ MauvilleCity_GameCorner_EventScript_TMDoubleTeam::
 
 MauvilleCity_GameCorner_EventScript_TMPsychic::
 	setvar VAR_TEMP_1, 2
-	bufferitemname STR_VAR_1, ITEM_TM_PSYCHIC
-	setvar VAR_0x8004, ITEM_TM_PSYCHIC
+	bufferitemname STR_VAR_1, ITEM_TM_MANA_BURST
+	setvar VAR_0x8004, ITEM_TM_MANA_BURST
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TMFlamethrower::
@@ -303,10 +303,10 @@ MauvilleCity_GameCorner_EventScript_BuyTMDoubleTeam::
 MauvilleCity_GameCorner_EventScript_BuyTMPsychic::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, TM_PSYCHIC_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitemspace ITEM_TM_PSYCHIC
+	checkitemspace ITEM_TM_MANA_BURST
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForTM
 	removecoins TM_PSYCHIC_COINS
-	additem ITEM_TM_PSYCHIC
+	additem ITEM_TM_MANA_BURST
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT

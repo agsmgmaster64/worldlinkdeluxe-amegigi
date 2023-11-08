@@ -930,7 +930,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_ARON_2] = {
         .species = SPECIES_ARON,
-        .moves = {MOVE_MUD_SLAP, MOVE_IRON_TAIL, MOVE_HARDEN, MOVE_ROAR},
+        .moves = {MOVE_MUD_SLAP, MOVE_STEEL_FIST, MOVE_HARDEN, MOVE_ROAR},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEPPA_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST

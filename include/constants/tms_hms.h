@@ -3,7 +3,7 @@
 
 #define FOREACH_TM(F) \
     F(FOCUS_PUNCH) \
-    F(DRAGON_CLAW) \
+    F(HEART_BREAK) \
     F(WATER_PULSE) \
     F(CALM_MIND) \
     F(ROAR) \
@@ -16,28 +16,28 @@
     F(TAUNT) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
-    F(HYPER_BEAM) \
+    F(SONIC_BOOM) \
     F(LIGHT_SCREEN) \
-    F(PROTECT) \
+    F(DETECT) \
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
-    F(FRUSTRATION) \
+    F(SIGNAL_BEAM) \
     F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(STEEL_FIST) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
     F(RETURN) \
     F(DIG) \
-    F(PSYCHIC) \
+    F(MANA_BURST) \
     F(SHADOW_BALL) \
     F(BRICK_BREAK) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
     F(SHOCK_WAVE) \
     F(FLAMETHROWER) \
-    F(SLUDGE_BOMB) \
+    F(POISON_BOMB) \
     F(SANDSTORM) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \

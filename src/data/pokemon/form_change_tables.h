@@ -13,6 +13,7 @@ static const struct FormChange sCharizardFormChangeTable[] = {
 
 //static const struct FormChange sMegaTemplateFormChangeTable[] = {
     //{FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_RANDOM_MEGA, ITEM_RANDOMITE},
+    //{FORM_CHANGE_BATTLE_GIGANTAMAX,             SPECIES_RANDOM_GIGANTAMAX},
     //{FORM_CHANGE_TERMINATOR},
 //};
 static const struct FormChange sBlastoiseFormChangeTable[] = {

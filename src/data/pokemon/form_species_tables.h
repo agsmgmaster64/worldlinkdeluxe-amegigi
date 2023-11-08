@@ -5,9 +5,10 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
-//static const u16 sMegaTemplateFormSpeciesIdTable[] = {
+//static const u16 sMegaGigantamaxTemplateFormSpeciesIdTable[] = {
     //SPECIES_RANDOM,
     //SPECIES_RANDOM_MEGA,
+    //SPECIES_RANDOM_GIGANTAMAX,
     //FORM_SPECIES_END,
 //};
 
@@ -31,6 +32,7 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
     //SPECIES_CHIBI_SHIZUHA_SANNIAN,
     //FORM_SPECIES_END,
 //};
+
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_CHARIZARD,
     SPECIES_CHARIZARD_MEGA_X,
