@@ -4051,17 +4051,16 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
-        #ifdef ITEM_SHINY_CHARM
-        u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? 3 : 1;
-        #else
-        u32 shinyRolls = 1;
-        #endif
+        u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? I_SHINY_CHARM_ADDITIONAL_ROLLS + 1 : 1;
         u32 i;
         
         value = gSaveBlock2Ptr->playerTrainerId[0]
               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+        if (LURE_STEP_COUNT != 0)
+            shinyRolls += 1;
 
         for (i = 0; i < shinyRolls; i++)
         {
@@ -4071,11 +4070,15 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 
         if (FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
+            if (FlagGet(FLAG_SHINY_CREATION))
+                FlagClear(FLAG_SHINY_CREATION); // clear the flag since no shiny will be created anyways
             while (GET_SHINY_VALUE(value, personality) < SHINY_ODDS)
                 personality = Random32();
         }
         else if (FlagGet(P_FLAG_FORCE_SHINY))
         {
+            if (FlagGet(FLAG_SHINY_CREATION))
+                FlagClear(FLAG_SHINY_CREATION); // clear the flag since a shiny will be created anyways
             while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS)
                 personality = Random32();
         }
@@ -4086,7 +4089,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 personality = Random32();
                 personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
             } while (nature != GetNatureFromPersonality(personality));
-            
+
             // clear the flag after use
             FlagClear(FLAG_SHINY_CREATION);
         }

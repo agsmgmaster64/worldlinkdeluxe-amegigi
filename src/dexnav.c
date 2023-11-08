@@ -1260,7 +1260,10 @@ static u8 DexNavTryGenerateMonLevel(u16 species, u8 environment)
 
     if (levelBase == MON_LEVEL_NONEXISTENT)
         return MON_LEVEL_NONEXISTENT;   //species not found in the area
-    
+
+    if (LURE_STEP_COUNT != 0)
+        levelBonus += 1;
+
     if (Random() % 100 < 4)
         levelBonus += 10; //4% chance of having a +10 level
 
@@ -1591,6 +1594,9 @@ static u8 GetEncounterLevelFromMapData(u16 species, u8 environment)
 
     if (max == 0)
         return MON_LEVEL_NONEXISTENT;
+
+    if (LURE_STEP_COUNT != 0)
+        return max;
 
     return RandRange(min, max);
 }
@@ -2688,16 +2694,18 @@ bool8 DexNavTryMakeShinyMon(void)
     u32 i, shinyRolls, chainBonus, rndBonus;
     u32 shinyRate = 0;
     u32 charmBonus = 0;
+    u32 lureBonus = 0;
     u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
     u8 chain = gSaveBlock1Ptr->dexNavChain;
-    
-    #ifdef ITEM_SHINY_CHARM
-    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
-    #endif
+
+    if (LURE_STEP_COUNT != 0)
+        lureBonus = 1;
+
+    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? I_SHINY_CHARM_ADDITIONAL_ROLLS : 0;
     
     chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
     rndBonus = (Random() % 100 < 4 ? 4 : 0);
-    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
+    shinyRolls = 1 + charmBonus + chainBonus + rndBonus + lureBonus;
 
     if (searchLevel > 200)
     {

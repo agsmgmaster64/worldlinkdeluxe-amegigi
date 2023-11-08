@@ -143,12 +143,12 @@ static const u8 sCherishBallDesc[] = _(
 // Medicine
 static const u8 sPotionDesc[] = _(
     "Restores the HP of\n"
-    "a Pokémon by\n"
+    "a Puppet by\n"
     "20 points.");
 
 static const u8 sSuperPotionDesc[] = _(
     "Restores the HP of\n"
-    "a Pokémon by\n"
+    "a Puppet by\n"
 #if I_HEALTH_RECOVERY >= GEN_7
     "60 points.");
 #else
@@ -157,7 +157,7 @@ static const u8 sSuperPotionDesc[] = _(
 
 static const u8 sHyperPotionDesc[] = _(
     "Restores the HP of\n"
-    "a Pokémon by\n"
+    "a Puppet by\n"
 #if I_HEALTH_RECOVERY >= GEN_7
     "120 points.");
 #else
@@ -166,21 +166,21 @@ static const u8 sHyperPotionDesc[] = _(
 
 static const u8 sMaxPotionDesc[] = _(
     "Fully restores the\n"
-    "HP of a Pokémon.");
+    "HP of a Puppet.");
 
 static const u8 sFullRestoreDesc[] = _(
     "Fully restores the\n"
     "HP and status of a\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sReviveDesc[] = _(
     "Revives a fainted\n"
-    "Pokémon with half\n"
+    "Puppet with half\n"
     "its HP.");
 
 static const u8 sMaxReviveDesc[] = _(
     "Revives a fainted\n"
-    "Pokémon with all\n"
+    "Puppet with all\n"
     "its HP.");
 
 static const u8 sFreshWaterDesc[] = _(
@@ -241,32 +241,32 @@ static const u8 sHealPowderDesc[] = _(
 static const u8 sRevivalHerbDesc[] = _(
     "A very bitter herb\n"
     "that revives a\n"
-    "fainted Pokémon.");
+    "fainted Puppet.");
 
 static const u8 sAntidoteDesc[] = _(
     "Heals a poisoned\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sParalyzeHealDesc[] = _(
     "Heals a paralyzed\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sBurnHealDesc[] = _(
-    "Heals Pokémon\n"
+    "Heals Puppets\n"
     "of a burn.");
 
 static const u8 sIceHealDesc[] = _(
     "Defrosts a frozen\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sAwakeningDesc[] = _(
     "Awakens a sleeping\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sFullHealDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sEtherDesc[] = _(
     "Restores the PP\n"
@@ -284,7 +284,7 @@ static const u8 sElixirDesc[] = _(
 
 static const u8 sMaxElixirDesc[] = _(
     "Fully restores the\n"
-    "PP of a Pokémon's\n"
+    "PP of a Puppet's\n"
     "moves.");
 
 static const u8 sBerryJuiceDesc[] = _(
@@ -295,7 +295,7 @@ static const u8 sBerryJuiceDesc[] = _(
 static const u8 sSacredAshDesc[] = _(
     "Fully revives and\n"
     "restores all\n"
-    "fainted Pokémon.");
+    "fainted Puppets.");
 
 static const u8 sSweetHeartDesc[] = _(
     "A sweet chocolate\n"
@@ -304,18 +304,18 @@ static const u8 sSweetHeartDesc[] = _(
 
 static const u8 sMaxHoneyDesc[] = _(
     "Revives a fainted\n"
-    "Pokémon with all\n"
+    "Puppet with all\n"
     "its HP.");
 
 static const u8 sPewterCrunchiesDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sRageCandyBarDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sLavaCookieDesc[] = _(
     "A local specialty\n"
@@ -325,57 +325,57 @@ static const u8 sLavaCookieDesc[] = _(
 static const u8 sOldGateauDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sCasteliaconeDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sLumioseGaletteDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sShalourSableDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sBigMalasadaDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
     "Raises the base HP\n"
-    "of one Pokémon.");
+    "of one Puppet.");
 
 static const u8 sProteinDesc[] = _(
     "Raises the base\n"
     "Attack stat of one\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sIronDesc[] = _(
     "Raises the base\n"
     "Defense stat of\n"
-    "one Pokémon.");
+    "one Puppet.");
 
 static const u8 sCalciumDesc[] = _(
     "Raises the base\n"
     "Sp. Atk stat of one\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sZincDesc[] = _(
     "Raises the base\n"
     "Sp. Def stat of one\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sCarbosDesc[] = _(
     "Raises the base\n"
     "Speed stat of one\n"
-    "Pokémon.");
+    "Puppet.");
 
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
@@ -391,41 +391,41 @@ static const u8 sPPMaxDesc[] = _(
 static const u8 sHealthFeatherDesc[] = _(
     "An item that raises\n"
     "the base HP of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sMuscleFeatherDesc[] = _(
     "An item that raises\n"
     "the base Attack of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sResistFeatherDesc[] = _(
     "An item that raises\n"
     "the base Defense\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sGeniusFeatherDesc[] = _(
     "An item that raises\n"
     "the base Sp. Atk.\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sCleverFeatherDesc[] = _(
     "An item that raises\n"
     "the base Sp. Def.\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sSwiftFeatherDesc[] = _(
     "An item that raises\n"
     "the base Speed of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 // Ability Modifiers
 static const u8 sAbilityCapsuleDesc[] = _(
-    "Switches a Poké-\n"
-    "mon's ability.");
+    "Switches a given\n"
+    "Puppet's ability.");
 
 static const u8 sAbilityPatchDesc[] = _(
     "Turns the ability\n"
-    "of a Pokémon into\n"
+    "of a Puppet into\n"
     "a rare ability.");
 
 // Mints
@@ -537,93 +537,93 @@ static const u8 sSeriousMintDesc[] = _(
 // Candy
 static const u8 sRareCandyDesc[] = _(
     "Raises the level\n"
-    "of a Pokémon by\n"
+    "of a Puppet by\n"
     "one.");
 
 static const u8 sExpCandyXSDesc[] = _(
     "Gives a very small\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Puppet.");
 
 static const u8 sExpCandySDesc[] = _(
     "Gives a small\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Puppet.");
 
 static const u8 sExpCandyMDesc[] = _(
     "Gives a moderate\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Puppet.");
 
 static const u8 sExpCandyLDesc[] = _(
     "Gives a large\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Puppet.");
 
 static const u8 sExpCandyXLDesc[] = _(
     "Gives a very large\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Puppet.");
 
 static const u8 sDynamaxCandyDesc[] = _(
     "Raises the Dynamax\n"
     "Level of a single\n"
-    "Pokémon by one.");
+    "Puppet by one.");
 
 // Medicinal Flutes
 static const u8 sBlueFluteDesc[] = _(
     "A glass flute that\n"
     "awakens sleeping\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sYellowFluteDesc[] = _(
     "A glass flute that\n"
-    "snaps Pokémon\n"
+    "snaps Puppets\n"
     "out of confusion.");
 
 static const u8 sRedFluteDesc[] = _(
     "A glass flute that\n"
-    "snaps Pokémon\n"
+    "snaps Puppets\n"
     "out of attraction.");
 
 // Encounter-modifying Flutes
 static const u8 sBlackFluteDesc[] = _(
     "A glass flute that\n"
     "keeps away wild\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sWhiteFluteDesc[] = _(
     "A glass flute that\n"
-    "lures wild Pokémon.");
+    "lures wild Puppets.");
 
 // Encounter Modifiers
 static const u8 sRepelDesc[] = _(
     "Repels weak wild\n"
-    "Pokémon for 100\n"
+    "Puppets for 100\n"
     "steps.");
 
 static const u8 sSuperRepelDesc[] = _(
     "Repels weak wild\n"
-    "Pokémon for 200\n"
+    "Puppets for 200\n"
     "steps.");
 
 static const u8 sMaxRepelDesc[] = _(
     "Repels weak wild\n"
-    "Pokémon for 250\n"
+    "Puppets for 250\n"
     "steps.");
 
 static const u8 sLureDesc[] = _(
-    "Makes Pokémon more\n"
+    "Makes Puppets more\n"
     "likely to appear\n"
     "for 100 steps.");
 
 static const u8 sSuperLureDesc[] = _(
-    "Makes Pokémon more\n"
+    "Makes Puppets more\n"
     "likely to appear\n"
     "for 200 steps.");
 
 static const u8 sMaxLureDesc[] = _(
-    "Makes Pokémon more\n"
+    "Makes Puppets more\n"
     "likely to appear\n"
     "for 250 steps.");
 
@@ -713,17 +713,17 @@ static const u8 sGuardSpecDesc[] = _(
 static const u8 sPokeDollDesc[] = _(
     "Use to flee from\n"
     "any battle with\n"
-    "a wild Pokémon.");
+    "a wild Puppet.");
 
 static const u8 sFluffyTailDesc[] = _(
     "Use to flee from\n"
     "any battle with\n"
-    "a wild Pokémon.");
+    "a wild Puppet.");
 
 static const u8 sPokeToyDesc[] = _(
     "Use to flee from\n"
     "any battle with\n"
-    "a wild Pokémon.");
+    "a wild Puppet.");
 
 static const u8 sMaxMushroomsDesc[] = _(
     "Raises every stat\n"
@@ -834,7 +834,7 @@ static const u8 sHeartScaleDesc[] = _(
 static const u8 sHoneyDesc[] = _(
     "Sweet honey that\n"
     "attracts wild\n"
-    "Pokémon when used.");
+    "Puppets when used.");
 
 static const u8 sRareBoneDesc[] = _(
     "A very rare bone.\n"
@@ -1779,93 +1779,93 @@ static const u8 sDianciteDesc[] = _(
 // Gems
 static const u8 sNormalGemDesc[] = _(
     "Increases the\n"
-    "power of Normal\n"
-    "Type moves.");
+    "power of Illusion\n"
+    "type moves.");
 
 static const u8 sFireGemDesc[] = _(
     "Increases the\n"
     "power of Fire\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sWaterGemDesc[] = _(
     "Increases the\n"
     "power of Water\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sElectricGemDesc[] = _(
     "Increases the\n"
-    "power of Electric\n"
-    "Type moves.");
+    "power of Wind\n"
+    "type moves.");
 
 static const u8 sGrassGemDesc[] = _(
     "Increases the\n"
     "power of Grass\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sIceGemDesc[] = _(
     "Increases the\n"
     "power of Ice\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sFightingGemDesc[] = _(
     "Increases the\n"
-    "power of Fighting\n"
-    "Type moves.");
+    "power of Dream\n"
+    "type moves.");
 
 static const u8 sPoisonGemDesc[] = _(
     "Increases the\n"
-    "power of Poison\n"
-    "Type moves.");
+    "power of Miasma\n"
+    "type moves.");
 
 static const u8 sGroundGemDesc[] = _(
     "Increases the\n"
-    "power of Ground\n"
-    "Type moves.");
+    "power of Earth\n"
+    "type moves.");
 
 static const u8 sFlyingGemDesc[] = _(
     "Increases the\n"
     "power of Flying\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sPsychicGemDesc[] = _(
     "Increases the\n"
-    "power of Psychic\n"
-    "Type moves.");
+    "power of Reason\n"
+    "type moves.");
 
 static const u8 sBugGemDesc[] = _(
     "Increases the\n"
-    "power of Bug\n"
-    "Type moves.");
+    "power of Heart\n"
+    "type moves.");
 
 static const u8 sRockGemDesc[] = _(
     "Increases the\n"
-    "power of Rock\n"
-    "Type moves.");
+    "power of Beast\n"
+    "type moves.");
 
 static const u8 sGhostGemDesc[] = _(
     "Increases the\n"
     "power of Ghost\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sDragonGemDesc[] = _(
     "Increases the\n"
-    "power of Dragon\n"
-    "Type moves.");
+    "power of Faith\n"
+    "type moves.");
 
 static const u8 sDarkGemDesc[] = _(
     "Increases the\n"
     "power of Dark\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sSteelGemDesc[] = _(
     "Increases the\n"
     "power of Steel\n"
-    "Type moves.");
+    "type moves.");
 
 static const u8 sFairyGemDesc[] = _(
     "Increases the\n"
-    "power of Fairy\n"
-    "Type moves.");
+    "power of Cosmic\n"
+    "type moves.");
 
 // Z-Crystals
 static const u8 sNormaliumZDesc[] = _(
@@ -2123,13 +2123,13 @@ static const u8 sLaxIncenseDesc[] = _(
 
 static const u8 sOddIncenseDesc[] = _(
     "A hold item that\n"
-    "boosts Psychic-\n"
+    "boosts Reason-\n"
     "type moves.");
 
 static const u8 sRockIncenseDesc[] = _(
     "A hold item that\n"
     "raises the power of\n"
-    "Rock-type moves.");
+    "Beast-type moves.");
 
 static const u8 sFullIncenseDesc[] = _(
     "A held item that\n"
@@ -2154,7 +2154,7 @@ static const u8 sLuckIncenseDesc[] = _(
 static const u8 sPureIncenseDesc[] = _(
     "A hold item that\n"
     "helps repel wild\n"
-    "Pokémon.");
+    "Puppets.");
 
 // Contest Scarves
 static const u8 sRedScarfDesc[] = _(
@@ -2382,7 +2382,7 @@ static const u8 sAbsorbBulbDesc[] = _(
 static const u8 sCellBatteryDesc[] = _(
     "Raises Atk if the\n"
     "holder is hit by an\n"
-    "Electric-type move.");
+    "Wind-type move.");
 
 static const u8 sLuminousMossDesc[] = _(
     "Raises Sp. Def if\n"
@@ -2428,13 +2428,13 @@ static const u8 sSootheBellDesc[] = _(
 
 #if B_MENTAL_HERB >= GEN_5
 static const u8 sMentalHerbDesc[] = _(
-    "Snaps Pokémon out\n"
+    "Snaps Puppets out\n"
     "of move-binding\n"
     "effects.");
 #else
 static const u8 sMentalHerbDesc[] = _(
     "A hold item that\n"
-    "snaps Pokémon out\n"
+    "snaps Puppets out\n"
     "of infatuation.");
 #endif
 
@@ -2451,12 +2451,12 @@ static const u8 sAmuletCoinDesc[] = _(
 static const u8 sCleanseTagDesc[] = _(
     "A hold item that\n"
     "helps repel wild\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sSmokeBallDesc[] = _(
     "A hold item that\n"
     "assures fleeing\n"
-    "from wild Pokémon.");
+    "from wild Puppets.");
 
 static const u8 sFocusBandDesc[] = _(
     "A hold item that\n"
@@ -2536,7 +2536,7 @@ static const u8 sMetronomeDesc[] = _(
 static const u8 sIronBallDesc[] = _(
     "Cuts Speed and lets\n"
     "Flying-types be hit\n"
-    "by Ground moves.");
+    "by Earth moves.");
 
 static const u8 sLaggingTailDesc[] = _(
     "A held item that\n"
@@ -2550,7 +2550,7 @@ static const u8 sDestinyKnotDesc[] = _(
 
 static const u8 sBlackSludgeDesc[] = _(
     "Gradually restores\n"
-    "HP of Poison-types.\n"
+    "HP of Miasma-types.\n"
     "Damages others.");
 
 static const u8 sGripClawDesc[] = _(
@@ -2585,7 +2585,7 @@ static const u8 sRazorFangDesc[] = _(
 
 static const u8 sEvioliteDesc[] = _(
     "Raises the Def and\n"
-    "Sp. Def of Pokémon\n"
+    "Sp. Def of Puppets\n"
     "that can evolve.");
 
 static const u8 sFloatStoneDesc[] = _(
@@ -3001,7 +3001,7 @@ static const u8 sMicleBerryDesc[] = _(
     "move in a pinch.");
 
 static const u8 sCustapBerryDesc[] = _(
-    "It allows a Pokémon\n"
+    "It allows a Puppet\n"
     "in a pinch to move\n"
     "first just once.");
 
@@ -3041,7 +3041,7 @@ static const u8 sDrashBerryDesc[] = _(
     "in battle.");
 
 static const u8 sEggantBerryDesc[] = _(
-    "Snaps Pokémon out\n"
+    "Snaps Puppets out\n"
     "of move-binding\n"
     "effects.");
 
@@ -3139,7 +3139,7 @@ static const u8 sTM09Desc[] = _(
 static const u8 sTM10Desc[] = _(
     "The attack power\n"
     "varies among\n"
-    "different Pokémon.");
+    "different Puppets.");
 
 static const u8 sTM11Desc[] = _(
     "Raises the power of\n"
@@ -3540,7 +3540,7 @@ static const u8 sOvalCharmDesc[] = _(
 static const u8 sShinyCharmDesc[] = _(
     "A charm that will\n"
     "raise the chance\n"
-    "of Shiny Pokémon.");
+    "of Shiny Puppets.");
 
 static const u8 sCatchingCharmDesc[] = _(
     "A charm that raises\n"
@@ -3633,17 +3633,17 @@ static const u8 sAcroBikeDesc[] = _(
 static const u8 sOldRodDesc[] = _(
     "Use by any body of\n"
     "water to fish for\n"
-    "wild Pokémon.");
+    "wild Puppets.");
 
 static const u8 sGoodRodDesc[] = _(
     "A decent fishing\n"
     "rod for catching\n"
-    "wild Pokémon.");
+    "wild Puppets.");
 
 static const u8 sSuperRodDesc[] = _(
     "The best fishing\n"
     "rod for catching\n"
-    "wild Pokémon.");
+    "wild Puppets.");
 
 static const u8 sDowsingMachineDesc[] = _(
     "A device that\n"
@@ -3691,7 +3691,7 @@ static const u8 sWailmerPailDesc[] = _(
 
 static const u8 sPokeRadarDesc[] = _(
     "A tool used to\n"
-    "search out Pokémon\n"
+    "search out Puppets\n"
     "hiding in grass.");
 
 static const u8 sPokeblockCaseDesc[] = _(
@@ -3707,7 +3707,7 @@ static const u8 sSootSackDesc[] = _(
 static const u8 sPokeFluteDesc[] = _(
     "A sweet-sounding\n"
     "flute that awakens\n"
-    "Pokémon.");
+    "Puppets.");
 
 static const u8 sFameCheckerDesc[] = _(
     "Stores information\n"
@@ -3763,7 +3763,7 @@ static const u8 sGoGogglesDesc[] = _(
 static const u8 sDevonScopeDesc[] = _(
     "A device by Devon\n"
     "that signals any\n"
-    "unseeable Pokémon.");
+    "unseeable Puppets.");
 
 static const u8 sBasementKeyDesc[] = _(
     "The key for New\n"
@@ -3812,11 +3812,11 @@ static const u8 sMagmaEmblemDesc[] = _(
 static const u8 sContestPassDesc[] = _(
     "The pass required\n"
     "for entering\n"
-    "Pokémon Contests.");
+    "Puppet Contests.");
 
 static const u8 sOaksParcelDesc[] = _(
     "A parcel for Prof.\n"
-    "Oak from a Pokémon\n"
+    "Oak from a Puppet\n"
     "Mart's clerk.");
 
 static const u8 sSecretKeyDesc[] = _(
@@ -3906,7 +3906,7 @@ static const u8 sAuspiciousArmorDesc[] = _(
 
 static const u8 sBoosterEnergyDesc[] = _(
     "Encapsuled energy\n"
-    "ups Pokémon with\n"
+    "ups Puppets with\n"
     "certain Abilities.");
 
 static const u8 sBigBambooShootDesc[] = _(
@@ -4022,37 +4022,37 @@ static const u8 sHearthflameMaskDesc[] = _(
 static const u8 sHealthMochiDesc[] = _(
     "An item that raises\n"
     "the base HP of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sMuscleMochiDesc[] = _(
     "An item that raises\n"
     "the base Attack of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sResistMochiDesc[] = _(
     "An item that raises\n"
     "the base Defense\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sGeniusMochiDesc[] = _(
     "An item that raises\n"
     "the base Sp. Atk.\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sCleverMochiDesc[] = _(
     "An item that raises\n"
     "the base Sp. Def.\n"
-    "of a Pokémon.");
+    "of a Puppet.");
 
 static const u8 sSwiftMochiDesc[] = _(
     "An item that raises\n"
     "the base Speed of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sFreshStartMochiDesc[] = _(
     "An item that resets\n"
     "all base points of\n"
-    "a Pokémon.");
+    "a Puppet.");
 
 static const u8 sGlimmeringCharmDesc[] = _(
     "A charm that will\n"
