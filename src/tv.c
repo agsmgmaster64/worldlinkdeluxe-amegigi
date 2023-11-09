@@ -196,7 +196,7 @@ static const struct {
 } sPokeOutbreakSpeciesList[] = {
     {
         .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
+        .moves = {MOVE_BURN_POWDER, MOVE_HARDEN, MOVE_LEECH_SEED},
         .level = 3,
         .location = MAP_NUM(ROUTE102)
     },

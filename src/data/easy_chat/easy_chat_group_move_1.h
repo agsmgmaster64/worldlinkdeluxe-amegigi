@@ -9,7 +9,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_AROMATHERAPY,
     MOVE_ASTONISH,
     MOVE_AURORA_BEAM,
-    MOVE_BIDE,
+    MOVE_BURN_POWDER,
     MOVE_BIND,
     MOVE_BITE,
     MOVE_BRICK_BREAK,

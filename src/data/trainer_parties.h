@@ -3179,7 +3179,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .lvl = 54,
     .species = SPECIES_ALTARIA,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_DOUBLE_EDGE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_DECISION, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -3193,7 +3193,7 @@ static const struct TrainerMon sParty_Drake[] = {
     .lvl = 53,
     .species = SPECIES_FLYGON,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_DRAGON_BREATH, MOVE_EARTHQUAKE}
+    .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_DECISION, MOVE_EARTHQUAKE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -3379,7 +3379,7 @@ static const struct TrainerMon sParty_Winona1[] = {
     .lvl = 33,
     .species = SPECIES_ALTARIA,
     .heldItem = ITEM_ORAN_BERRY,
-    .moves = {MOVE_EARTHQUAKE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
+    .moves = {MOVE_EARTHQUAKE, MOVE_DECISION, MOVE_DRAGON_DANCE, MOVE_AERIAL_ACE}
     }
 };
 
@@ -4951,7 +4951,7 @@ static const struct TrainerMon sParty_Aaron[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 34,
     .species = SPECIES_BAGON,
-    .moves = {MOVE_DRAGON_BREATH, MOVE_HEADBUTT, MOVE_FOCUS_ENERGY, MOVE_EMBER}
+    .moves = {MOVE_DECISION, MOVE_HEADBUTT, MOVE_FOCUS_ENERGY, MOVE_EMBER}
     }
 };
 
@@ -6384,7 +6384,7 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 44,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DECISION, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -8179,7 +8179,7 @@ static const struct TrainerMon sParty_Vivian[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
     .species = SPECIES_MEDITITE,
-    .moves = {MOVE_BIDE, MOVE_DETECT, MOVE_PSYSHOT, MOVE_THUNDER_PUNCH}
+    .moves = {MOVE_BURN_POWDER, MOVE_DETECT, MOVE_PSYSHOT, MOVE_THUNDER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -8194,7 +8194,7 @@ static const struct TrainerMon sParty_Danielle[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 23,
     .species = SPECIES_MEDITITE,
-    .moves = {MOVE_BIDE, MOVE_DETECT, MOVE_PSYSHOT, MOVE_FIRE_PUNCH}
+    .moves = {MOVE_BURN_POWDER, MOVE_DETECT, MOVE_PSYSHOT, MOVE_FIRE_PUNCH}
     }
 };
 
@@ -8281,7 +8281,7 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 47,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DECISION, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -8314,7 +8314,7 @@ static const struct TrainerMon sParty_WallyVR3[] = {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 50,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DECISION, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -8347,7 +8347,7 @@ static const struct TrainerMon sParty_WallyVR4[] = {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 53,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DECISION, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -8380,7 +8380,7 @@ static const struct TrainerMon sParty_WallyVR5[] = {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 56,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DECISION, MOVE_DRAGON_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),

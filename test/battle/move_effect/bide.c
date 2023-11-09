@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gBattleMoves[MOVE_BIDE].effect == EFFECT_BIDE);
+    ASSUME(gBattleMoves[MOVE_BURN_POWDER].effect == EFFECT_BIDE);
 }
 
 SINGLE_BATTLE_TEST("Bide deals twice the taken damage over two turns")
@@ -15,18 +15,18 @@ SINGLE_BATTLE_TEST("Bide deals twice the taken damage over two turns")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_BIDE); MOVE(opponent, MOVE_TACKLE); }
+        TURN { MOVE(player, MOVE_BURN_POWDER); MOVE(opponent, MOVE_TACKLE); }
         TURN { SKIP_TURN(player); MOVE(opponent, MOVE_TACKLE); }
         TURN { SKIP_TURN(player); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_BIDE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_BURN_POWDER, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
         HP_BAR(player, captureDamage: &damage1);
         MESSAGE("Wobbuffet is storing energy!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
         HP_BAR(player, captureDamage: &damage2);
         MESSAGE("Wobbuffet unleashed energy!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_BIDE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_BURN_POWDER, player);
         HP_BAR(opponent, captureDamage: &bideDamage);
     } THEN {
         EXPECT_EQ(bideDamage, 2 * (damage1 + damage2));

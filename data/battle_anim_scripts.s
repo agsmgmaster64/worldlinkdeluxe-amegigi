@@ -138,7 +138,7 @@ gBattleAnims_Moves::
 	.4byte Move_HAZE
 	.4byte Move_REFLECT
 	.4byte Move_FOCUS_ENERGY
-	.4byte Move_BIDE
+	.4byte Move_BURN_POWDER
 	.4byte Move_METRONOME
 	.4byte Move_MIRROR_MOVE @ doesnt have an actual animation
 	.4byte Move_SELF_DESTRUCT
@@ -246,7 +246,7 @@ gBattleAnims_Moves::
 	.4byte Move_MAGNITUDE
 	.4byte Move_DYNAMIC_PUNCH
 	.4byte Move_MEGAHORN
-	.4byte Move_DRAGON_BREATH
+	.4byte Move_DECISION
 	.4byte Move_BATON_PASS
 	.4byte Move_ENCORE
 	.4byte Move_PURSUIT
@@ -21368,7 +21368,7 @@ Move_SCRATCH:
 	waitforvisualfinish
 	end
 
-Move_DRAGON_BREATH:
+Move_DECISION:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
 	splitbgprio ANIM_TARGET
@@ -23822,7 +23822,31 @@ Move_FOCUS_ENERGY:
 	waitforvisualfinish
 	end
 
-Move_BIDE:
+Move_BURN_POWDER:
+	loadspritegfx ANIM_TAG_BURN_POWDER
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 6
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -30, -22, 117, 80, 5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 10, -22, 117, 80, -5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -25, -22, 117, 112, 5, 3
+	delay 15
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -5, -22, 117, 80, -5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 5, -22, 117, 96, 5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 0, -22, 117, 69, -5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -15, -22, 117, 112, 5, 2
+	delay 30
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -15, -22, 117, 112, 5, 2
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 15, -22, 117, 80, -5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -10, -22, 117, 96, 7, 2
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -5, -22, 117, 90, -8, 0
+	delay 20
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, -10, -22, 117, 80, -5, 1
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 0, -22, 117, 89, 5, 2
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 20, -22, 117, 112, -8, 2
+	createsprite gBurnPowderParticleSpriteTemplate, ANIM_TARGET, 2, 5, -22, 117, 80, 5, 1
+	waitforvisualfinish
+	end
+
+BideAnim:
 	choosetwoturnanim BideSetUp, BideUnleash
 	end
 BideSetUp:

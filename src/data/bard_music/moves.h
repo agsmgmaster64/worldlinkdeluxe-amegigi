@@ -942,7 +942,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         { .songLengthId = 12 },
         NULL_BARD_SOUND,
     },
-    [MOVE_BIDE] = {
+    [MOVE_BURN_POWDER] = {
         { .songLengthId = 11 },
         { .songLengthId = 50 },
         { .songLengthId = 51 },
@@ -1806,7 +1806,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_DRAGON_BREATH] = {
+    [MOVE_DECISION] = {
         { .songLengthId =  0 },
         { .songLengthId = 27 },
         { .songLengthId = 11 },

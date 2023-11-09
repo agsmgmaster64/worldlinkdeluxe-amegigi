@@ -1707,7 +1707,7 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
     [FRONTIER_TRAINER_GAVIN] = {
         .facilityClass = FACILITY_CLASS_POKEFAN_M,
         .trainerName = _("GAVIN"),
-        .speechBefore = {EC_WORD_I, EC_WORD_WILL, EC_MOVE(BIDE), EC_WORD_MY, EC_WORD_TIME, EC_EMPTY_WORD},
+        .speechBefore = {EC_WORD_I, EC_WORD_WILL, EC_MOVE(BURN_POWDER), EC_WORD_MY, EC_WORD_TIME, EC_EMPTY_WORD},
         .speechWin = {EC_WORD_IT_S, EC_WORD_OVER, EC_WORD_SO, EC_WORD_SOON, EC_WORD_QUES, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_MY, EC_WORD_MISTAKE, EC_WORD_WAS, EC_WORD_TOO, EC_WORD_EXPENSIVE, EC_WORD_ELLIPSIS},
         .monSet = gBattleFrontierTrainerMons_Gavin

@@ -3558,11 +3558,11 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                     //gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_MULTIPLETURNS;
                     if (gTakenDmg[gBattlerAttacker])
                     {
-                        gCurrentMove = MOVE_BIDE;
+                        gCurrentMove = MOVE_BURN_POWDER;
                         gBattleScripting.bideDmg = gTakenDmg[gBattlerAttacker] * 2;
                         gBattlerTarget = gTakenDmgByBattler[gBattlerAttacker];
                         if (gAbsentBattlerFlags & gBitTable[gBattlerTarget])
-                            gBattlerTarget = GetMoveTarget(MOVE_BIDE, MOVE_TARGET_SELECTED + 1);
+                            gBattlerTarget = GetMoveTarget(MOVE_BURN_POWDER, MOVE_TARGET_SELECTED + 1);
                         gBattlescriptCurrInstr = BattleScript_BideAttack;
                     }
                     else

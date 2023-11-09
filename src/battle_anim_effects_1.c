@@ -457,6 +457,17 @@ const struct SpriteTemplate gPoisonPowderParticleSpriteTemplate =
     .callback = AnimMovePowderParticle,
 };
 
+const struct SpriteTemplate gBurnPowderParticleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BURN_POWDER,
+    .paletteTag = ANIM_TAG_BURN_POWDER,
+    .oam = &gOamData_AffineOff_ObjNormal_8x16,
+    .anims = gPowderParticlesAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMovePowderParticle,
+};
+
 const union AnimCmd gSolarBeamBigOrbAnimCmds1[] =
 {
     ANIMCMD_FRAME(0, 1),

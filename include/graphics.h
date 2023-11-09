@@ -10849,7 +10849,7 @@ extern const u32 gBattleAnimSpritePal_PoisonPowder[];
 extern const u32 gBattleAnimSpritePal_BrownTriangle[];
 extern const u32 gBattleAnimSpritePal_SleepPowder[];
 extern const u32 gBattleAnimSpritePal_StunSpore[];
-extern const u32 gBattleAnimSpritePal_PoisonPowder[];
+extern const u32 gBattleAnimSpritePal_BurnPowder[];
 extern const u32 gBattleAnimSpritePal_Sparkle3[];
 extern const u32 gBattleAnimSpritePal_Sparkle3[];
 extern const u32 gBattleAnimSpritePal_MusicNotes[];

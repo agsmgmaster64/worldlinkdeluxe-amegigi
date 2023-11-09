@@ -248,7 +248,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round5[] =
         .species = SPECIES_FLYGON,
         .lvl = 45,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_HEART_BREAK, MOVE_DRAGON_BREATH}
+        .moves = {MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_HEART_BREAK, MOVE_DECISION}
     },
     {
         .species = SPECIES_GENGAR,
@@ -894,7 +894,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round18[] =
         .species = SPECIES_VIBRAVA,
         .lvl = 42,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_EARTHQUAKE, MOVE_DRAGON_BREATH, MOVE_CRUNCH, MOVE_STEEL_WING}
+        .moves = {MOVE_EARTHQUAKE, MOVE_DECISION, MOVE_CRUNCH, MOVE_STEEL_WING}
     },
     {
         .species = SPECIES_ALTARIA,

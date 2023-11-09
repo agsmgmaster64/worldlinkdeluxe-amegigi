@@ -22,7 +22,7 @@ ASSUMPTIONS
     ASSUME(gBattleMoves[MOVE_THUNDER_SHOCK].type == TYPE_ELECTRIC);
     ASSUME(gBattleMoves[MOVE_CONFUSION].type == TYPE_PSYCHIC);
     ASSUME(gBattleMoves[MOVE_ICE_BEAM].type == TYPE_ICE);
-    ASSUME(gBattleMoves[MOVE_DRAGON_BREATH].type == TYPE_DRAGON);
+    ASSUME(gBattleMoves[MOVE_DECISION].type == TYPE_DRAGON);
     ASSUME(gBattleMoves[MOVE_BITE].type == TYPE_DARK);
     ASSUME(gBattleMoves[MOVE_DISARMING_VOICE].type == TYPE_FAIRY);
 }
@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE{ damagingMove = MOVE_THUNDER_SHOCK; }
     PARAMETRIZE{ damagingMove = MOVE_CONFUSION; }
     PARAMETRIZE{ damagingMove = MOVE_ICE_BEAM; }
-    PARAMETRIZE{ damagingMove = MOVE_DRAGON_BREATH; }
+    PARAMETRIZE{ damagingMove = MOVE_DECISION; }
     PARAMETRIZE{ damagingMove = MOVE_BITE; }
     PARAMETRIZE{ damagingMove = MOVE_DISARMING_VOICE; }
 
@@ -195,7 +195,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE{ damagingMove = MOVE_THUNDER_SHOCK; }
     PARAMETRIZE{ damagingMove = MOVE_CONFUSION; }
     PARAMETRIZE{ damagingMove = MOVE_ICE_BEAM; }
-    PARAMETRIZE{ damagingMove = MOVE_DRAGON_BREATH; }
+    PARAMETRIZE{ damagingMove = MOVE_DECISION; }
     PARAMETRIZE{ damagingMove = MOVE_BITE; }
     PARAMETRIZE{ damagingMove = MOVE_DISARMING_VOICE; }
 

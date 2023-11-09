@@ -78,7 +78,7 @@
 #define ANIM_TAG_BROWN_TRIANGLE             (ANIM_SPRITES_START + 66) // unused
 #define ANIM_TAG_SLEEP_POWDER               (ANIM_SPRITES_START + 67)
 #define ANIM_TAG_STUN_SPORE                 (ANIM_SPRITES_START + 68)
-#define ANIM_TAG_POWDER                     (ANIM_SPRITES_START + 69) // unused
+#define ANIM_TAG_BURN_POWDER                (ANIM_SPRITES_START + 69)
 #define ANIM_TAG_SPARKLE_3                  (ANIM_SPRITES_START + 70)
 #define ANIM_TAG_SPARKLE_4                  (ANIM_SPRITES_START + 71)
 #define ANIM_TAG_MUSIC_NOTES                (ANIM_SPRITES_START + 72)

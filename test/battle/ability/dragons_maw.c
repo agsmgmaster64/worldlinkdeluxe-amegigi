@@ -10,15 +10,15 @@ SINGLE_BATTLE_TEST("Dragon's Maw increases Dragon-type move damage", s16 damage)
     PARAMETRIZE { move = MOVE_TACKLE; ability = ABILITY_DRAGONS_MAW; }
     PARAMETRIZE { move = MOVE_HEART_BREAK; ability = ABILITY_KLUTZ; }
     PARAMETRIZE { move = MOVE_HEART_BREAK; ability = ABILITY_DRAGONS_MAW; }
-    PARAMETRIZE { move = MOVE_DRAGON_BREATH; ability = ABILITY_KLUTZ; }
-    PARAMETRIZE { move = MOVE_DRAGON_BREATH; ability = ABILITY_DRAGONS_MAW; }
+    PARAMETRIZE { move = MOVE_DECISION; ability = ABILITY_KLUTZ; }
+    PARAMETRIZE { move = MOVE_DECISION; ability = ABILITY_DRAGONS_MAW; }
 
     GIVEN {
         ASSUME(gBattleMoves[MOVE_TACKLE].type != TYPE_DRAGON);
         ASSUME(gBattleMoves[MOVE_HEART_BREAK].type == TYPE_DRAGON);
-        ASSUME(gBattleMoves[MOVE_DRAGON_BREATH].type == TYPE_DRAGON);
+        ASSUME(gBattleMoves[MOVE_DECISION].type == TYPE_DRAGON);
         ASSUME(gBattleMoves[MOVE_HEART_BREAK].split == SPLIT_PHYSICAL);
-        ASSUME(gBattleMoves[MOVE_DRAGON_BREATH].split == SPLIT_SPECIAL);
+        ASSUME(gBattleMoves[MOVE_DECISION].split == SPLIT_SPECIAL);
         PLAYER(SPECIES_REGIDRAGO) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
