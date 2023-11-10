@@ -827,9 +827,11 @@ static const u8 sText_PkmnDroppedItem[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} dro
 static const u8 sText_BagIsFull[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} dropped\n{B_LAST_ITEM}!{WAIT_SE}\pBut your bag is full!\p");
 static const u8 sText_OpportunistCopied[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} copied its\nopponent's stat changes!");
 static const u8 sText_TargetCoveredInStickyCandySyrup[] = _("{B_DEF_NAME_WITH_PREFIX} got covered\nin sticky syrup!");
+static const u8 sText_ZeroToHeroTransformation[] = _("{B_ATK_NAME_WITH_PREFIX} underwent a heroic\ntransformation!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_ZEROTOHEROTRANSFORMATION - BATTLESTRINGS_TABLE_START] = sText_ZeroToHeroTransformation,
     [STRINGID_MOVEBLOCKEDBYDYNAMAX - BATTLESTRINGS_TABLE_START] = sText_MoveBlockedByDynamax,
     [STRINGID_OPPORTUNISTCOPIED - BATTLESTRINGS_TABLE_START] = sText_OpportunistCopied,
     [STRINGID_TARGETISHURTBYSALTCURE - BATTLESTRINGS_TABLE_START] = sText_TargetIsHurtBySaltCure,

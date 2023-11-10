@@ -55,6 +55,7 @@
 #include "constants/battle_ai.h"
 #include "constants/battle_frontier.h"
 #include "constants/coins.h"
+#include "constants/expansion.h"
 #include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/map_groups.h"
@@ -99,6 +100,7 @@ enum UtilMenu
     DEBUG_UTIL_MENU_ITEM_CHEAT,
     DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG,
     DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE,
+    DEBUG_UTIL_MENU_ITEM_EXPANSION_VER,
 };
 
 enum ScriptMenu
@@ -348,6 +350,7 @@ static void DebugAction_Util_HatchAnEgg(u8 taskId);
 static void DebugAction_Util_Vial_Size_Dose(u8 taskId);
 static void DebugAction_Util_Vial_Size_SelectAmount(u8 taskId);
 static void DebugAction_Util_Vial_Dose_SelectAmount(u8 taskId);
+static void DebugAction_Util_ExpansionVersion(u8 taskId);
 
 static void DebugAction_FlagsVars_Flags(u8 taskId);
 static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
@@ -429,6 +432,7 @@ extern const u8 PlayersHouse_2F_EventScript_CheckWallClock[];
 extern const u8 Debug_CheckSaveBlock[];
 extern const u8 Debug_CheckROMSpace[];
 extern const u8 Debug_BoxFilledMessage[];
+extern const u8 Debug_ShowExpansionVersion[];
 
 #include "data/map_group_count.h"
 
@@ -485,6 +489,7 @@ static const u8 sDebugText_Util_HatchAnEgg[] =               _("Hatch an Egg");
 static const u8 sDebugText_Util_SetVialSizeDose[] =          _("Set Vial Size & Dose…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Util_VialSizeChoose[] =           _("Vial Size:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}");
 static const u8 sDebugText_Util_VialDoseChoose[] =           _("Vial Doses:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}");
+static const u8 sDebugText_Util_ExpansionVersion[] =         _("Expansion Version");
 // Flags/Vars Menu
 static const u8 sDebugText_FlagsVars_Flags[] =                  _("Set Flag XYZ…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_FlagsVars_Flag[] =                   _("Flag: {STR_VAR_1}{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}\n{STR_VAR_3}");
@@ -637,23 +642,24 @@ static const struct ListMenuItem sDebugMenu_Items_Main[] =
 
 static const struct ListMenuItem sDebugMenu_Items_Utilities[] =
 {
-    [DEBUG_UTIL_MENU_ITEM_HEAL_PARTY]       = {sDebugText_Util_HealParty,      DEBUG_UTIL_MENU_ITEM_HEAL_PARTY},
-    [DEBUG_UTIL_MENU_ITEM_FLY]              = {sDebugText_Util_FlyToMap,       DEBUG_UTIL_MENU_ITEM_FLY},
-    [DEBUG_UTIL_MENU_ITEM_WARP]             = {sDebugText_Util_WarpToMap,      DEBUG_UTIL_MENU_ITEM_WARP},
-    [DEBUG_UTIL_MENU_ITEM_POISON_MONS]      = {sDebugText_Util_PoisonParty,    DEBUG_UTIL_MENU_ITEM_POISON_MONS},
-    [DEBUG_UTIL_MENU_ITEM_SAVEBLOCK]        = {sDebugText_Util_SaveBlockSpace, DEBUG_UTIL_MENU_ITEM_SAVEBLOCK},
-    [DEBUG_UTIL_MENU_ITEM_ROM_SPACE]        = {sDebugText_Util_ROMSpace,       DEBUG_UTIL_MENU_ITEM_ROM_SPACE},
-    [DEBUG_UTIL_MENU_ITEM_WEATHER]          = {sDebugText_Util_Weather,        DEBUG_UTIL_MENU_ITEM_WEATHER},
-    [DEBUG_UTIL_MENU_ITEM_CHECKWALLCLOCK]   = {sDebugText_Util_CheckWallClock, DEBUG_UTIL_MENU_ITEM_CHECKWALLCLOCK},
-    [DEBUG_UTIL_MENU_ITEM_SETWALLCLOCK]     = {sDebugText_Util_SetWallClock,   DEBUG_UTIL_MENU_ITEM_SETWALLCLOCK},
-    [DEBUG_UTIL_MENU_ITEM_WATCHCREDITS]     = {sDebugText_Util_WatchCredits,   DEBUG_UTIL_MENU_ITEM_WATCHCREDITS},
-    [DEBUG_UTIL_MENU_ITEM_PLAYER_NAME]      = {sDebugText_Util_Player_Name,    DEBUG_UTIL_MENU_ITEM_PLAYER_NAME},
-    [DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER]    = {sDebugText_Util_Player_Gender,  DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER},
-    [DEBUG_UTIL_MENU_ITEM_PLAYER_ID]        = {sDebugText_Util_Player_Id,      DEBUG_UTIL_MENU_ITEM_PLAYER_ID},
-    [DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES]      = {sDebugText_Util_Clear_Boxes,    DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES},
-    [DEBUG_UTIL_MENU_ITEM_CHEAT]            = {sDebugText_Util_CheatStart,     DEBUG_UTIL_MENU_ITEM_CHEAT},
-    [DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG]     = {sDebugText_Util_HatchAnEgg,     DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG},
+    [DEBUG_UTIL_MENU_ITEM_HEAL_PARTY]       = {sDebugText_Util_HealParty,        DEBUG_UTIL_MENU_ITEM_HEAL_PARTY},
+    [DEBUG_UTIL_MENU_ITEM_FLY]              = {sDebugText_Util_FlyToMap,         DEBUG_UTIL_MENU_ITEM_FLY},
+    [DEBUG_UTIL_MENU_ITEM_WARP]             = {sDebugText_Util_WarpToMap,        DEBUG_UTIL_MENU_ITEM_WARP},
+    [DEBUG_UTIL_MENU_ITEM_POISON_MONS]      = {sDebugText_Util_PoisonParty,      DEBUG_UTIL_MENU_ITEM_POISON_MONS},
+    [DEBUG_UTIL_MENU_ITEM_SAVEBLOCK]        = {sDebugText_Util_SaveBlockSpace,   DEBUG_UTIL_MENU_ITEM_SAVEBLOCK},
+    [DEBUG_UTIL_MENU_ITEM_ROM_SPACE]        = {sDebugText_Util_ROMSpace,         DEBUG_UTIL_MENU_ITEM_ROM_SPACE},
+    [DEBUG_UTIL_MENU_ITEM_WEATHER]          = {sDebugText_Util_Weather,          DEBUG_UTIL_MENU_ITEM_WEATHER},
+    [DEBUG_UTIL_MENU_ITEM_CHECKWALLCLOCK]   = {sDebugText_Util_CheckWallClock,   DEBUG_UTIL_MENU_ITEM_CHECKWALLCLOCK},
+    [DEBUG_UTIL_MENU_ITEM_SETWALLCLOCK]     = {sDebugText_Util_SetWallClock,     DEBUG_UTIL_MENU_ITEM_SETWALLCLOCK},
+    [DEBUG_UTIL_MENU_ITEM_WATCHCREDITS]     = {sDebugText_Util_WatchCredits,     DEBUG_UTIL_MENU_ITEM_WATCHCREDITS},
+    [DEBUG_UTIL_MENU_ITEM_PLAYER_NAME]      = {sDebugText_Util_Player_Name,      DEBUG_UTIL_MENU_ITEM_PLAYER_NAME},
+    [DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER]    = {sDebugText_Util_Player_Gender,    DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER},
+    [DEBUG_UTIL_MENU_ITEM_PLAYER_ID]        = {sDebugText_Util_Player_Id,        DEBUG_UTIL_MENU_ITEM_PLAYER_ID},
+    [DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES]      = {sDebugText_Util_Clear_Boxes,      DEBUG_UTIL_MENU_ITEM_CLEAR_BOXES},
+    [DEBUG_UTIL_MENU_ITEM_CHEAT]            = {sDebugText_Util_CheatStart,       DEBUG_UTIL_MENU_ITEM_CHEAT},
+    [DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG]     = {sDebugText_Util_HatchAnEgg,       DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG},
     [DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE] = {sDebugText_Util_SetVialSizeDose,  DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE},
+    [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]    = {sDebugText_Util_ExpansionVersion, DEBUG_UTIL_MENU_ITEM_EXPANSION_VER},
 };
 
 static const struct ListMenuItem sDebugMenu_Items_Scripts[] =
@@ -800,6 +806,7 @@ static void (*const sDebugMenu_Actions_Utilities[])(u8) =
     [DEBUG_UTIL_MENU_ITEM_CHEAT]            = DebugAction_Util_CheatStart,
     [DEBUG_UTIL_MENU_ITEM_HATCH_AN_EGG]     = DebugAction_Util_HatchAnEgg,
     [DEBUG_UTIL_MENU_ITEM_CHANGE_VIAL_SIZE] = DebugAction_Util_Vial_Size_Dose,
+    [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]    = DebugAction_Util_ExpansionVersion,
 };
 
 static void (*const sDebugMenu_Actions_Scripts[])(u8) =
@@ -2307,6 +2314,29 @@ static void DebugAction_Util_Vial_Dose_SelectAmount(u8 taskId)
         PlaySE(SE_SELECT);
         DebugAction_DestroyExtraWindow(taskId);
     }
+}
+static void DebugAction_Util_ExpansionVersion(u8 taskId)
+{
+    Debug_DestroyMenu_Full(taskId);
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(Debug_ShowExpansionVersion);
+}
+
+void BufferExpansionVersion(struct ScriptContext *ctx)
+{
+    static const u8 sText_Released[] = _("\nRelease Build");
+    static const u8 sText_Unreleased[] = _("\nDevelopment Build");
+    u8 *string = gStringVar1;
+    *string++ = CHAR_v;
+    string = ConvertIntToDecimalStringN(string, EXPANSION_VERSION_MAJOR, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *string++ = CHAR_PERIOD;
+    string = ConvertIntToDecimalStringN(string, EXPANSION_VERSION_MINOR, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *string++ = CHAR_PERIOD;
+    string = ConvertIntToDecimalStringN(string, EXPANSION_VERSION_PATCH, STR_CONV_MODE_LEFT_ALIGN, 3);
+    if (EXPANSION_TAGGED_RELEASE)
+        string = StringCopy(string, sText_Released);
+    else
+        string = StringCopy(string, sText_Unreleased);
 }
 
 // *******************************

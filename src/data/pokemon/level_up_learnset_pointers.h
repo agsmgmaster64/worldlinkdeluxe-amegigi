@@ -1540,8 +1540,12 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_LAPRAS_GIGANTAMAX] = sBulbasaurLevelUpLearnset,
     [SPECIES_EEVEE_GIGANTAMAX] = sBulbasaurLevelUpLearnset,
     [SPECIES_SNORLAX_GIGANTAMAX] = sBulbasaurLevelUpLearnset,
+#if P_GEN_5_POKEMON == TRUE
     [SPECIES_GARBODOR_GIGANTAMAX] = sGarbodorLevelUpLearnset,
+#endif
+#if P_GEN_7_POKEMON == TRUE
     [SPECIES_MELMETAL_GIGANTAMAX] = sMelmetalLevelUpLearnset,
+#endif
     [SPECIES_RILLABOOM_GIGANTAMAX] = sRillaboomLevelUpLearnset,
     [SPECIES_CINDERACE_GIGANTAMAX] = sCinderaceLevelUpLearnset,
     [SPECIES_INTELEON_GIGANTAMAX] = sInteleonLevelUpLearnset,
