@@ -134,6 +134,7 @@ enum FlagsVarsMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX,
 };
 
 enum BattleType
@@ -371,6 +372,7 @@ static void DebugAction_FlagsVars_EncounterOnOff(u8 taskId);
 static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
+static void DebugAction_FlagsVars_ToggleDynamax(u8 taskId);
 
 static void Debug_InitializeBattle(u8 taskId);
 
@@ -513,6 +515,7 @@ static const u8 sDebugText_FlagsVars_SwitchEncounter[] =        _("Toggle {STR_V
 static const u8 sDebugText_FlagsVars_SwitchTrainerSee[] =       _("Toggle {STR_VAR_1}TrainerSee OFF");
 static const u8 sDebugText_FlagsVars_SwitchBagUse[] =           _("Toggle {STR_VAR_1}BagUse OFF");
 static const u8 sDebugText_FlagsVars_SwitchCatching[] =         _("Toggle {STR_VAR_1}Catching OFF");
+static const u8 sDebugText_FlagsVars_ToggleDynamax[] =          _("Toggle {STR_VAR_1}Dynamax");
 // Battle
 static const u8 sDebugText_Battle_0_Wild[] =        _("Wild…{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Battle_0_WildDouble[] =  _("Wild Double…{CLEAR_TO 110}{RIGHT_ARROW}");
@@ -693,6 +696,7 @@ static const struct ListMenuItem sDebugMenu_Items_FlagsVars[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = {sDebugText_FlagsVars_SwitchTrainerSee,   DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = {sDebugText_FlagsVars_SwitchBagUse,       DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE},
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = {sDebugText_FlagsVars_SwitchCatching,     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING},
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX]       = {sDebugText_FlagsVars_ToggleDynamax,      DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX},
 };
 
 static const struct ListMenuItem sDebugMenu_Items_Battle_0[] =
@@ -840,6 +844,7 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = DebugAction_FlagsVars_TrainerSeeOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = DebugAction_FlagsVars_BagUseOnOff,
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = DebugAction_FlagsVars_CatchingOnOff,
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX]       = DebugAction_FlagsVars_ToggleDynamax,
 };
 static void (*const sDebugMenu_Actions_Give[])(u8) =
 {
@@ -1196,6 +1201,11 @@ static u8 Debug_CheckToggleFlags(u8 id)
     #if B_FLAG_NO_CATCHING != 0
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING:
             result = FlagGet(B_FLAG_NO_CATCHING);
+            break;
+    #endif
+    #if B_FLAG_DYNAMAX_BATTLE != 0
+        case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX:
+            result = FlagGet(B_FLAG_DYNAMAX_BATTLE);
             break;
     #endif
         default:
@@ -2896,6 +2906,19 @@ static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)
     else
         PlaySE(SE_PC_LOGIN);
     FlagToggle(B_FLAG_NO_CATCHING);
+#endif
+}
+
+static void DebugAction_FlagsVars_ToggleDynamax(u8 taskId)
+{
+#if B_FLAG_DYNAMAX_BATTLE == 0
+    Debug_DestroyMenu_Full_Script(taskId, Debug_FlagsNotSetBattleConfigMessage);
+#else
+    if (FlagGet(B_FLAG_DYNAMAX_BATTLE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(B_FLAG_DYNAMAX_BATTLE);
 #endif
 }
 

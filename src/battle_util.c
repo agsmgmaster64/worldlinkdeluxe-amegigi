@@ -9997,13 +9997,16 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
         if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
             modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
-        if (recordAbilities && GetBattlerAbility(battlerAtk) == ABILITY_NATURE_FROST
+        if (GetBattlerAbility(battlerAtk) == ABILITY_NATURE_FROST
          && IS_MOVE_SPECIAL(move)
          && moveType == TYPE_NATURE)
         {
-            gLastUsedAbility = ABILITY_NATURE_FROST;
             modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_ICE, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
-            RecordAbilityBattle(battlerAtk, ABILITY_NATURE_FROST);
+            if (recordAbilities)
+            {
+                gLastUsedAbility = ABILITY_NATURE_FROST;
+                RecordAbilityBattle(battlerAtk, ABILITY_NATURE_FROST);
+            }
         }
     }
 

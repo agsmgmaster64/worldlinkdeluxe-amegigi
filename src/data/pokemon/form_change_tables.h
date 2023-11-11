@@ -16,6 +16,7 @@ static const struct FormChange sCharizardFormChangeTable[] = {
     //{FORM_CHANGE_BATTLE_GIGANTAMAX,             SPECIES_RANDOM_GIGANTAMAX},
     //{FORM_CHANGE_TERMINATOR},
 //};
+
 static const struct FormChange sBlastoiseFormChangeTable[] = {
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_BLASTOISE_MEGA, ITEM_BLASTOISINITE},
     {FORM_CHANGE_BATTLE_GIGANTAMAX,             SPECIES_BLASTOISE_GIGANTAMAX},

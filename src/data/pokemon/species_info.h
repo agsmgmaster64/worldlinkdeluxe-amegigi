@@ -28,53 +28,88 @@
         .noFlip = TRUE,                                                         \
     }
 
+#define PUPPET_MISC_INFO(growth, source)                                \
+        .genderRatio = PERCENT_FEMALE(50),                              \
+        .eggCycles = 20,                                                \
+        .friendship = STANDARD_FRIENDSHIP,                              \
+        .growthRate = growth,                                           \
+        .sourceGame = source,                                           \
+        .noFlip = TRUE,
+
 const struct SpeciesInfo gSpeciesInfo[] =
 {
     [SPECIES_NONE] = {0},
 
+#define REIMU_MISC_INFO                                                 \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING},         \
+        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD)
+
     [SPECIES_BULBASAUR] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 49,
-        .baseDefense   = 49,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 65,
+        .baseHP        = 85,
+        .baseAttack    = 70,
+        .baseDefense   = 65,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 60,
         .baseSpDefense = 65,
-        .types = { TYPE_NATURE, TYPE_MIASMA },
-        .catchRate = 45,
-        .expYield = 64,
-        .evYield_SpAttack  = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .sourceGame = SOURCE_LLS,
-        .noFlip = FALSE,
+        .types = { TYPE_FAITH, TYPE_FAITH},
+        .catchRate = 60,
+        .expYield = 80,
+        .evYield_HP        = 2,
+        .itemRare = ITEM_PRIESTESS,
+        .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
+        REIMU_MISC_INFO
     },
 
     [SPECIES_IVYSAUR] =
     {
-        .baseHP        = 60,
-        .baseAttack    = 62,
-        .baseDefense   = 63,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 80,
-        .types = { TYPE_NATURE, TYPE_MIASMA },
+        .baseHP        = 110,
+        .baseAttack    = 95,
+        .baseDefense   = 90,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 90,
+        .types = { TYPE_FAITH, TYPE_FLYING},
         .catchRate = 45,
-        .expYield = 142,
-        .evYield_SpAttack  = 1,
-        .evYield_SpDefense = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_GRASS},
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .sourceGame = SOURCE_LLS,
-        .noFlip = FALSE,
+        .expYield = 220,
+        .evYield_HP        = 3,
+        .itemRare = ITEM_PRIESTESS,
+        .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
+        REIMU_MISC_INFO
+    },
+
+    [SPECIES_VENUSAUR] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 120,
+        .baseDefense   = 80,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 85,
+        .types = { TYPE_DREAM, TYPE_FLYING},
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack    = 3,
+        .itemRare = ITEM_PRIESTESS,
+        .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
+        REIMU_MISC_INFO
+    },
+
+    [SPECIES_CHARMANDER] =
+    {
+        .baseHP        = 125,
+        .baseAttack    = 75,
+        .baseDefense   = 100,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 100,
+        .types = { TYPE_FAITH, TYPE_DREAM},
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_HP        = 3,
+        .itemRare = ITEM_PRIESTESS,
+        .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
+        REIMU_MISC_INFO
     },
 
 #define VENUSAUR_MISC_INFO                                                  \
@@ -89,19 +124,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_GRASS},                  \
         .sourceGame = SOURCE_OTHER,                                      \
         .noFlip = FALSE
-
-    [SPECIES_VENUSAUR] =
-    {
-        .baseHP        = 80,
-        .baseAttack    = 82,
-        .baseDefense   = 83,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
-        .expYield = 236,
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-    	VENUSAUR_MISC_INFO,
-    },
 
     [SPECIES_VENUSAUR_MEGA] =
     {
@@ -131,49 +153,72 @@ const struct SpeciesInfo gSpeciesInfo[] =
         VENUSAUR_MISC_INFO,
     },
 
-    [SPECIES_CHARMANDER] =
-    {
-        .baseHP        = 39,
-        .baseAttack    = 52,
-        .baseDefense   = 43,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 50,
-        .types = { TYPE_FIRE, TYPE_FIRE },
-        .catchRate = 45,
-        .expYield = 62,
-        .evYield_Speed     = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .sourceGame = SOURCE_HRTP,
-        .noFlip = FALSE,
-    },
+#define MARISA_MISC_INFO                                                \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING},         \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD)
 
     [SPECIES_CHARMELEON] =
     {
-        .baseHP        = 58,
-        .baseAttack    = 64,
-        .baseDefense   = 58,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 65,
-        .types = { TYPE_FIRE, TYPE_FIRE },
-        .catchRate = 45,
-        .expYield = 142,
+        .baseHP        = 45,
+        .baseAttack    = 45,
+        .baseDefense   = 35,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 75,
+        .types = { TYPE_WIND, TYPE_WIND},
+        .catchRate = 60,
+        .expYield = 76,
         .evYield_Speed     = 1,
-        .evYield_SpAttack  = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .sourceGame = SOURCE_HRTP,
-        .noFlip = FALSE,
+        .abilities = {ABILITY_PICKUP, ABILITY_HUSTLE},
+        MARISA_MISC_INFO
+    },
+
+    [SPECIES_CHARIZARD] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 70,
+        .baseDefense   = 60,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 115,
+        .baseSpDefense = 100,
+        .types = { TYPE_WIND, TYPE_REASON},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Speed     = 3,
+        .abilities = {ABILITY_COLLECTOR, ABILITY_HUSTLE},
+        MARISA_MISC_INFO
+    },
+
+    [SPECIES_SQUIRTLE] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 80,
+        .baseDefense   = 70,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 70,
+        .types = { TYPE_WIND, TYPE_FIRE},
+        .catchRate = 45,
+        .expYield = 200,
+        .evYield_SpAttack  = 3,
+        .abilities = {ABILITY_COLLECTOR, ABILITY_HUSTLE},
+        MARISA_MISC_INFO
+    },
+
+    [SPECIES_WARTORTLE] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 85,
+        .baseDefense   = 70,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 70,
+        .types = { TYPE_WIND, TYPE_HEART},
+        .catchRate = 45,
+        .expYield = 200,
+        .evYield_Speed     = 3,
+        .abilities = {ABILITY_COLLECTOR, ABILITY_HUSTLE},
+        MARISA_MISC_INFO
     },
 
 #define CHARIZARD_MISC_INFO                                             \
@@ -185,21 +230,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_SLOW,                               \
         .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},             \
         .noFlip = FALSE
-
-    [SPECIES_CHARIZARD] =
-    {
-        .baseHP        = 78,
-        .baseAttack    = 84,
-        .baseDefense   = 78,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 109,
-        .baseSpDefense = 85,
-        .types = {TYPE_FIRE, TYPE_FLYING},
-        .expYield = 240,
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .sourceGame = SOURCE_MOF,
-        CHARIZARD_MISC_INFO,
-    },
 
     [SPECIES_CHARIZARD_MEGA_X] =
     {
@@ -249,49 +279,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         CHARIZARD_MISC_INFO,
     },
 
-    [SPECIES_SQUIRTLE] =
-    {
-        .baseHP        = 44,
-        .baseAttack    = 48,
-        .baseDefense   = 65,
-        .baseSpeed     = 43,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 64,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 45,
-        .expYield = 63,
-        .evYield_Defense   = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .sourceGame = SOURCE_SOEW,
-        .noFlip = FALSE,
-    },
+#define DAIYOUSEI_MISC_INFO                                             \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY},          \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD)
 
-    [SPECIES_WARTORTLE] =
+    [SPECIES_BLASTOISE] =
     {
-        .baseHP        = 59,
-        .baseAttack    = 63,
-        .baseDefense   = 80,
-        .baseSpeed     = 58,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 80,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 45,
-        .expYield = 142,
-        .evYield_Defense   = 1,
-        .evYield_SpDefense = 1,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .sourceGame = SOURCE_SOEW,
-        .noFlip = FALSE,
+        .baseHP        = 55,
+        .baseAttack    = 30,
+        .baseDefense   = 50,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 50,
+        .types = { TYPE_NATURE, TYPE_NATURE},
+        .catchRate = 225,
+        .expYield = 66,
+        .evYield_Speed     = 1,
+        //.itemRare = ITEM_ASSIST_BALL,
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_RUN_AWAY},
+        .safariZoneFleeRate = 50,
+        DAIYOUSEI_MISC_INFO
     },
 
 #define BLASTOISE_MISC_INFO                                             \
@@ -305,19 +312,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},            \
         .sourceGame = SOURCE_SOEW,                                   \
         .noFlip = FALSE
-
-    [SPECIES_BLASTOISE] =
-    {
-        .baseHP        = 79,
-        .baseAttack    = 83,
-        .baseDefense   = 100,
-        .baseSpeed     = 78,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 105,
-        .expYield = 239,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        BLASTOISE_MISC_INFO,
-    },
 
     [SPECIES_BLASTOISE_MEGA] =
     {
@@ -4559,26 +4553,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_DITTO] =
     {
-        .baseHP        = 48,
-        .baseAttack    = 48,
-        .baseDefense   = 48,
-        .baseSpeed     = 48,
-        .baseSpAttack  = 48,
-        .baseSpDefense = 48,
-        .types = { TYPE_ILLUSION, TYPE_ILLUSION },
-        .catchRate = 35,
-        .expYield = 101,
-        .evYield_HP        = 1,
-        .itemCommon = ITEM_QUICK_POWDER,
-        .itemRare = ITEM_METAL_POWDER,
+        .baseHP        = 50,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 50,
+        .types = { TYPE_NATURE, TYPE_NATURE},
+        .catchRate = 255,
+        .expYield = 99,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
+        .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_DITTO, EGG_GROUP_DITTO},
         .abilities = {ABILITY_LIMBER, ABILITY_NONE, ABILITY_IMPOSTER},
         .sourceGame = SOURCE_PCB,
-        .noFlip = FALSE,
+        .noFlip = TRUE,
     },
 
 #define EEVEE_MISC_INFO                                                             \
