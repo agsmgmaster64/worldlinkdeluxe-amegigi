@@ -2534,6 +2534,75 @@ const struct SpeciesInfo gSpeciesInfo[] =
         SLOWPOKE_MISC_INFO,
     },
 
+#define YOUMU_MISC_INFO                                                 \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD},          \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_PCB)
+
+    [SPECIES_CHIBI_YOUMU] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 95,
+        .baseDefense   = 75,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 45,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 90,
+        .expYield = 76,
+        .evYield_Attack    = 1,
+        .safariZoneFleeRate = 30,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO
+    },
+
+    [SPECIES_NORMAL_YOUMU] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 120,
+        .baseDefense   = 100,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 70,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Attack    = 3,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO
+    },
+
+    [SPECIES_DEFENSE_YOUMU] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 85,
+        .baseDefense   = 120,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 80,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Defense   = 3,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO
+    },
+
+    [SPECIES_SPEED_YOUMU] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 105,
+        .baseDefense   = 90,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 60,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Speed     = 3,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO
+    },
+
 #define SLOWBRO_MISC_INFO                                       \
         .catchRate = 75,                                        \
         .genderRatio = PERCENT_FEMALE(50),                      \
@@ -2542,23 +2611,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .growthRate = GROWTH_MEDIUM_FAST,                       \
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},   \
         .sourceGame = SOURCE_OTHER
-
-    [SPECIES_SLOWBRO] =
-    {
-        .baseHP        = 95,
-        .baseAttack    = 75,
-        .baseDefense   = 110,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 80,
-        .types = { TYPE_WATER, TYPE_REASON },
-        .expYield = 172,
-        .evYield_Defense   = 2,
-        .itemRare = ITEM_KINGS_ROCK,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-        .noFlip = FALSE,
-        SLOWBRO_MISC_INFO,
-    },
 
     [SPECIES_SLOWBRO_MEGA] =
     {
@@ -2636,52 +2688,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         SLOWKING_MISC_INFO,
     },
 
-    [SPECIES_MAGNEMITE] =
-    {
-        .baseHP        = 25,
-        .baseAttack    = 35,
-        .baseDefense   = 70,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 55,
-        .types = { TYPE_WIND, TYPE_STEEL },
-        .catchRate = 190,
-        .expYield = 65,
-        .evYield_SpAttack  = 1,
-        .itemRare = ITEM_MAID_UNIFORM,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_ANALYTIC},
-        .sourceGame = SOURCE_IN,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_MAGNETON] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 60,
-        .baseDefense   = 95,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 120,
-        .baseSpDefense = 70,
-        .types = { TYPE_WIND, TYPE_STEEL },
-        .catchRate = 60,
-        .expYield = 163,
-        .evYield_SpAttack  = 2,
-        .itemRare = ITEM_MAID_UNIFORM,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL},
-        .abilities = {ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_ANALYTIC},
-        .sourceGame = SOURCE_IN,
-        .noFlip = FALSE,
-    },
-
     [SPECIES_MAGNEZONE] =
     {
         .baseHP        = 70,
@@ -2718,20 +2724,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},  \
         .sourceGame = SOURCE_MOF,                      \
         .noFlip = FALSE
-
-    [SPECIES_FARFETCHD] =
-    {
-        .baseHP        = 52,
-        .baseDefense   = 55,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 58,
-        .baseSpDefense = 62,
-        .baseAttack    = FARFETCHD_ATTACK,
-        .types = { TYPE_ILLUSION, TYPE_FLYING},
-        .itemRare = ITEM_LEEK,
-        .abilities = {ABILITY_KEEN_EYE, ABILITY_INNER_FOCUS, ABILITY_DEFIANT},
-        FARFETCHD_MISC_INFO,
-    },
 
     [SPECIES_FARFETCHD_GALARIAN] =
     {

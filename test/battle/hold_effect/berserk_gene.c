@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
-        PLAYER(SPECIES_SLOWBRO) { Ability(ABILITY_OWN_TEMPO); Item(item); }
+        PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
@@ -119,11 +119,11 @@ DOUBLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     PARAMETRIZE { item = ITEM_BERSERK_GENE; positionLeft = FALSE; }
     GIVEN {
         if (positionLeft) {
-            PLAYER(SPECIES_SLOWBRO) { Ability(ABILITY_OWN_TEMPO); Item(item); }
+            PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
             PLAYER(SPECIES_WOBBUFFET);
         } else {
             PLAYER(SPECIES_WOBBUFFET);
-            PLAYER(SPECIES_SLOWBRO) { Ability(ABILITY_OWN_TEMPO); Item(item); }
+            PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
         }
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

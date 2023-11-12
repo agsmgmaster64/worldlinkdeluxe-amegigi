@@ -215,14 +215,14 @@ static const u16 sSlowpokeFormSpeciesIdTable[] = {
 };
 
 static const u16 sSlowbroFormSpeciesIdTable[] = {
-    SPECIES_SLOWBRO,
+    SPECIES_CHIBI_YOUMU,
     SPECIES_SLOWBRO_MEGA,
     SPECIES_SLOWBRO_GALARIAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sFarfetchdFormSpeciesIdTable[] = {
-    SPECIES_FARFETCHD,
+    SPECIES_SPEED_YOUMU,
     SPECIES_FARFETCHD_GALARIAN,
     FORM_SPECIES_END,
 };

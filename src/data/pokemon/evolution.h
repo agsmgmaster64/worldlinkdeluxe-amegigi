@@ -58,14 +58,11 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_GRAVELER]              = {{EVO_TRADE, 0, SPECIES_GOLEM},
                                        {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_GOLEM}},
     [SPECIES_PONYTA]                = {{EVO_LEVEL, 40, SPECIES_RAPIDASH}},
-    [SPECIES_SLOWPOKE]              = {{EVO_LEVEL, 37, SPECIES_SLOWBRO},
-                                       {EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING},
+    [SPECIES_SLOWPOKE]              = {{EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING},
                                        {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING}},
-    [SPECIES_MAGNEMITE]             = {{EVO_LEVEL, 30, SPECIES_MAGNETON}},
-#if P_GEN_4_POKEMON == TRUE
-    [SPECIES_MAGNETON]              = {{EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_MAGNEZONE},
-                                       {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}},
-#endif
+    [SPECIES_CHIBI_YOUMU]           = {{EVO_LEVEL, 30, SPECIES_NORMAL_YOUMU},
+                                       {EVO_SHARD, ITEM_FIRE_STONE, SPECIES_DEFENSE_YOUMU},
+                                       {EVO_SHARD, ITEM_WATER_STONE, SPECIES_SPEED_YOUMU}},
     [SPECIES_DODUO]                 = {{EVO_LEVEL, 31, SPECIES_DODRIO}},
     [SPECIES_SEEL]                  = {{EVO_LEVEL, 34, SPECIES_DEWGONG}},
     [SPECIES_GRIMER]                = {{EVO_LEVEL, 38, SPECIES_MUK}},

@@ -8248,6 +8248,34 @@ extern const u32 gMonShinyPalette_OgerponCornerstoneMaskTera[];
 extern const u8 gMonFootprint_Ogerpon[];
 #endif
 
+extern const u32 gMonFrontPic_THYoumu1[];
+extern const u32 gMonPalette_THYoumu1[];
+extern const u32 gMonBackPic_THYoumu1[];
+extern const u32 gMonShinyPalette_THYoumu1[];
+extern const u8 gMonIcon_THYoumu1[];
+extern const u8 gMonFootprint_THYoumu1[];
+
+extern const u32 gMonFrontPic_THYoumu2N[];
+extern const u32 gMonPalette_THYoumu2N[];
+extern const u32 gMonBackPic_THYoumu2N[];
+extern const u32 gMonShinyPalette_THYoumu2N[];
+extern const u8 gMonIcon_THYoumu2N[];
+extern const u8 gMonFootprint_THYoumu2N[];
+
+extern const u32 gMonFrontPic_THYoumu2D[];
+extern const u32 gMonPalette_THYoumu2D[];
+extern const u32 gMonBackPic_THYoumu2D[];
+extern const u32 gMonShinyPalette_THYoumu2D[];
+extern const u8 gMonIcon_THYoumu2D[];
+extern const u8 gMonFootprint_THYoumu2D[];
+
+extern const u32 gMonFrontPic_THYoumu2S[];
+extern const u32 gMonPalette_THYoumu2S[];
+extern const u32 gMonBackPic_THYoumu2S[];
+extern const u32 gMonShinyPalette_THYoumu2S[];
+extern const u8 gMonIcon_THYoumu2S[];
+extern const u8 gMonFootprint_THYoumu2S[];
+
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];
 extern const u32 gTrainerFrontPic_AquaGruntM[];

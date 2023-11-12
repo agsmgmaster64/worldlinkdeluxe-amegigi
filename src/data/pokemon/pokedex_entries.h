@@ -960,7 +960,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_SLOWBRO] =
+    [NATIONAL_DEX_CHIBI_YOUMU] =
     {
         .categoryName = _("Hermit Crab"),
         .height = 16,
@@ -972,7 +972,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 2,
     },
 
-    [NATIONAL_DEX_MAGNEMITE] =
+    [NATIONAL_DEX_NORMAL_YOUMU] =
     {
         .categoryName = _("Magnet"),
         .height = 3,
@@ -984,7 +984,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_MAGNETON] =
+    [NATIONAL_DEX_DEFENSE_YOUMU] =
     {
         .categoryName = _("Magnet"),
         .height = 10,
@@ -996,7 +996,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_FARFETCHD] =
+    [NATIONAL_DEX_SPEED_YOUMU] =
     {
         .categoryName = _("Wild Duck"),
         .height = 8,

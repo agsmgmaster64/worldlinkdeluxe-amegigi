@@ -81,10 +81,10 @@
 #define SPECIES_PONYTA                                  77
 #define SPECIES_RAPIDASH                                78
 #define SPECIES_SLOWPOKE                                79
-#define SPECIES_SLOWBRO                                 80
-#define SPECIES_MAGNEMITE                               81
-#define SPECIES_MAGNETON                                82
-#define SPECIES_FARFETCHD                               83
+#define SPECIES_CHIBI_YOUMU                             80
+#define SPECIES_NORMAL_YOUMU                            81
+#define SPECIES_DEFENSE_YOUMU                           82
+#define SPECIES_SPEED_YOUMU                             83
 #define SPECIES_DODUO                                   84
 #define SPECIES_DODRIO                                  85
 #define SPECIES_SEEL                                    86

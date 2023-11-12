@@ -644,7 +644,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_SLOWBRO] = {
+    [SPECIES_CHIBI_YOUMU] = {
         { .songLengthId = 24 },
         { .songLengthId = 24 },
         { .songLengthId = 51 },
@@ -652,7 +652,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_MAGNEMITE] = {
+    [SPECIES_NORMAL_YOUMU] = {
         { .songLengthId =  0 },
         { .songLengthId = 9 },
         { .songLengthId = 18 },
@@ -660,7 +660,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_MAGNETON] = {
+    [SPECIES_DEFENSE_YOUMU] = {
         { .songLengthId =  0 },
         { .songLengthId = 9 },
         { .songLengthId = 42 },
@@ -668,7 +668,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_FARFETCHD] = {
+    [SPECIES_SPEED_YOUMU] = {
         { .songLengthId = 6 },
         { .songLengthId = 11 },
         { .songLengthId = 51 },

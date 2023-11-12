@@ -8320,3 +8320,31 @@ const u32 gMonBackPic_OgerponCornerstoneMask[] = INCBIN_U32("graphics/pokemon/og
 // const u8 gMonFootprint_Ogerpon[] = INCBIN_U8("graphics/pokemon/ogerpon/footprint.1bpp");
 
 #endif
+
+const u32 gMonFrontPic_THYoumu1[] = INCBIN_U32("graphics/pokemon/_add/th/youmu1/anim_front.4bpp.lz");
+const u32 gMonPalette_THYoumu1[] = INCBIN_U32("graphics/pokemon/_add/th/youmu1/normal.gbapal.lz");
+const u32 gMonBackPic_THYoumu1[] = INCBIN_U32("graphics/pokemon/_add/th/youmu1/back.4bpp.lz");
+const u32 gMonShinyPalette_THYoumu1[] = INCBIN_U32("graphics/pokemon/_add/th/youmu1/shiny.gbapal.lz");
+const u8 gMonIcon_THYoumu1[] = INCBIN_U8("graphics/pokemon/_add/th/youmu1/icon.4bpp");
+const u8 gMonFootprint_THYoumu1[] = INCBIN_U8("graphics/pokemon/_add/th/youmu1/footprint.1bpp");
+
+const u32 gMonFrontPic_THYoumu2N[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2n/anim_front.4bpp.lz");
+const u32 gMonPalette_THYoumu2N[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2n/normal.gbapal.lz");
+const u32 gMonBackPic_THYoumu2N[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2n/back.4bpp.lz");
+const u32 gMonShinyPalette_THYoumu2N[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2n/shiny.gbapal.lz");
+const u8 gMonIcon_THYoumu2N[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2n/icon.4bpp");
+const u8 gMonFootprint_THYoumu2N[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2n/footprint.1bpp");
+
+const u32 gMonFrontPic_THYoumu2D[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2d/anim_front.4bpp.lz");
+const u32 gMonPalette_THYoumu2D[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2d/normal.gbapal.lz");
+const u32 gMonBackPic_THYoumu2D[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2d/back.4bpp.lz");
+const u32 gMonShinyPalette_THYoumu2D[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2d/shiny.gbapal.lz");
+const u8 gMonIcon_THYoumu2D[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2d/icon.4bpp");
+const u8 gMonFootprint_THYoumu2D[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2d/footprint.1bpp");
+
+const u32 gMonFrontPic_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s/anim_front.4bpp.lz");
+const u32 gMonPalette_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s/normal.gbapal.lz");
+const u32 gMonBackPic_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s/back.4bpp.lz");
+const u32 gMonShinyPalette_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s/shiny.gbapal.lz");
+const u8 gMonIcon_THYoumu2S[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2s/icon.4bpp");
+const u8 gMonFootprint_THYoumu2S[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2s/footprint.1bpp");

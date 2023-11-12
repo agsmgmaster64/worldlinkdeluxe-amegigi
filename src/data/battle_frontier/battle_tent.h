@@ -985,7 +985,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_MAGNEMITE] = {
-        .species = SPECIES_MAGNEMITE,
+        .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_BINDING_VOICE, MOVE_JAMMING, MOVE_THUNDER_WAVE, MOVE_SPARK},
         .itemTableId = BATTLE_FRONTIER_ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -2038,7 +2038,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_BASHFUL
     },
     [VERDANTURF_TENT_MON_MAGNEMITE] = {
-        .species = SPECIES_MAGNEMITE,
+        .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_BINDING_VOICE, MOVE_JAMMING, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE},
         .itemTableId = BATTLE_FRONTIER_ITEM_NINJA_SUIT,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -2821,7 +2821,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .nature = NATURE_HASTY
     },
     [FALLARBOR_TENT_MON_MAGNEMITE] = {
-        .species = SPECIES_MAGNEMITE,
+        .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_THUNDER_WAVE, MOVE_JAMMING, MOVE_ENDURE, MOVE_SPARK},
         .itemTableId = BATTLE_FRONTIER_ITEM_NINJA_SUIT,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,

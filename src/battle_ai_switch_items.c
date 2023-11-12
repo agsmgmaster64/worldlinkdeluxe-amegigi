@@ -1121,7 +1121,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
 
         // Toxic Spikes
         // TODO: CanBePoisoned compatibility to avoid duplicate code
-        if ((hazardFlags & SIDE_STATUS_TOXIC_SPIKES) && (defType1 != TYPE_POISON && defType2 != TYPE_POISON
+        if ((hazardFlags & SIDE_STATUS_TOXIC_SPIKES) && (defType1 != TYPE_MIASMA && defType2 != TYPE_MIASMA
             && defType1 != TYPE_STEEL && defType2 != TYPE_STEEL
             && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL && ability != ABILITY_COMATOSE
             && status == 0
@@ -1169,8 +1169,8 @@ static s32 GetSwitchinWeatherImpact(void)
                 if (weatherImpact == 0)
                     weatherImpact = 1;
             }
-            else if ((gBattleWeather & B_WEATHER_SANDSTORM) && (AI_DATA->switchinCandidate.battleMon.type1 != TYPE_GROUND && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_GROUND
-                && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_ROCK && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_ROCK
+            else if ((gBattleWeather & B_WEATHER_SANDSTORM) && (AI_DATA->switchinCandidate.battleMon.type1 != TYPE_EARTH && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_EARTH
+                && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_BEAST && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_BEAST
                 && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_STEEL && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_STEEL
                 && ability != ABILITY_OVERCOAT && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_FORCE))
             {
@@ -1221,7 +1221,7 @@ static u32 GetSwitchinRecurringHealing(void)
     // Items
     if (ability != ABILITY_KLUTZ)
     {
-        if (item == ITEM_BLACK_SLUDGE && (AI_DATA->switchinCandidate.battleMon.type1 == TYPE_POISON || AI_DATA->switchinCandidate.battleMon.type2 == TYPE_POISON))
+        if (item == ITEM_BLACK_SLUDGE && (AI_DATA->switchinCandidate.battleMon.type1 == TYPE_MIASMA || AI_DATA->switchinCandidate.battleMon.type2 == TYPE_MIASMA))
         {
             recurringHealing = maxHP / 16;
             if (recurringHealing == 0)
@@ -1254,7 +1254,7 @@ static u32 GetSwitchinRecurringDamage(void)
     // Items
     if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ)
     {
-        if (item == ITEM_BLACK_SLUDGE && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_POISON && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_POISON)
+        if (item == ITEM_BLACK_SLUDGE && AI_DATA->switchinCandidate.battleMon.type1 != TYPE_MIASMA && AI_DATA->switchinCandidate.battleMon.type2 != TYPE_MIASMA)
         {
             passiveDamage = maxHP / 8;
             if (passiveDamage == 0)
@@ -1328,7 +1328,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
 
     // Apply hypothetical poisoning from Toxic Spikes, which means the first turn of damage already added in GetSwitchinHazardsDamage
     // Do this last to skip one iteration of Poison / Toxic damage, and start counting Toxic damage one turn later.
-    if (tSpikesLayers != 0 && (defType1 != TYPE_POISON && defType2 != TYPE_POISON
+    if (tSpikesLayers != 0 && (defType1 != TYPE_MIASMA && defType2 != TYPE_MIASMA
         && ability != ABILITY_IMMUNITY && ability != ABILITY_POISON_HEAL
         && status == 0
         && !(heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS 
@@ -1559,7 +1559,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         InitializeSwitchinCandidate(&party[i]);
 
         // While not really invalid per say, not really wise to switch into this mon
-        if (AI_DATA->switchinCandidate.battleMon.ability == ABILITY_TRUANT && IsTruantMonVulnerable(battler, opposingBattler)) 
+        if (AI_DATA->switchinCandidate.battleMon.ability == ABILITY_FRETFUL && IsTruantMonVulnerable(battler, opposingBattler)) 
             continue;
 
         // Get max number of hits for player to KO AI mon
@@ -1795,7 +1795,7 @@ u8 GetMostSuitableMonToSwitchInto(u32 battler, bool32 switchAfterMonKOd)
                 || gBattlerPartyIndexes[battlerIn2] == i
                 || i == *(gBattleStruct->monToSwitchIntoId + battlerIn1)
                 || i == *(gBattleStruct->monToSwitchIntoId + battlerIn2)
-                || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(battler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.)
+                || (GetMonAbility(&party[i]) == ABILITY_FRETFUL && IsTruantMonVulnerable(battler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.)
             {
                 invalidMons |= gBitTable[i];
             }

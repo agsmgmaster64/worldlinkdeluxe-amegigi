@@ -931,49 +931,35 @@ static const union AnimCmd sAnim_Slowpoke_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Slowbro_1[] =
+static const union AnimCmd sAnim_CYoumu_1[] =
 {
-    ANIMCMD_FRAME(1, 45),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Magnemite_1[] =
+static const union AnimCmd sAnim_Youmu_1[] =
 {
-    ANIMCMD_FRAME(0, 28),
-    ANIMCMD_FRAME(1, 28),
-    ANIMCMD_FRAME(0, 28),
-    ANIMCMD_FRAME(1, 28),
-    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Magneton_1[] =
+static const union AnimCmd sAnim_DYoumu_1[] =
 {
-    ANIMCMD_FRAME(0, 14),
-    ANIMCMD_FRAME(1, 14),
-    ANIMCMD_FRAME(0, 14),
-    ANIMCMD_FRAME(1, 14),
-    ANIMCMD_FRAME(0, 14),
-    ANIMCMD_FRAME(1, 14),
-    ANIMCMD_FRAME(0, 14),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Farfetchd_1[] =
+static const union AnimCmd sAnim_SYoumu_1[] =
 {
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 15),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(1, 5),
-    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
     ANIMCMD_END,
 };
 
@@ -10974,10 +10960,10 @@ SINGLE_ANIMATION(Golem);
 SINGLE_ANIMATION(Ponyta);
 SINGLE_ANIMATION(Rapidash);
 SINGLE_ANIMATION(Slowpoke);
-SINGLE_ANIMATION(Slowbro);
-SINGLE_ANIMATION(Magnemite);
-SINGLE_ANIMATION(Magneton);
-SINGLE_ANIMATION(Farfetchd);
+SINGLE_ANIMATION(CYoumu);
+SINGLE_ANIMATION(Youmu);
+SINGLE_ANIMATION(DYoumu);
+SINGLE_ANIMATION(SYoumu);
 SINGLE_ANIMATION(Doduo);
 SINGLE_ANIMATION(Dodrio);
 SINGLE_ANIMATION(Seel);
@@ -12263,10 +12249,10 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[NUM_SPECIES + 1] =
     [SPECIES_PONYTA]                         = sAnims_Ponyta,
     [SPECIES_RAPIDASH]                       = sAnims_Rapidash,
     [SPECIES_SLOWPOKE]                       = sAnims_Slowpoke,
-    [SPECIES_SLOWBRO]                        = sAnims_Slowbro,
-    [SPECIES_MAGNEMITE]                      = sAnims_Magnemite,
-    [SPECIES_MAGNETON]                       = sAnims_Magneton,
-    [SPECIES_FARFETCHD]                      = sAnims_Farfetchd,
+    [SPECIES_CHIBI_YOUMU]                    = sAnims_CYoumu,
+    [SPECIES_NORMAL_YOUMU]                   = sAnims_Youmu,
+    [SPECIES_DEFENSE_YOUMU]                  = sAnims_DYoumu,
+    [SPECIES_SPEED_YOUMU]                    = sAnims_SYoumu,
     [SPECIES_DODUO]                          = sAnims_Doduo,
     [SPECIES_DODRIO]                         = sAnims_Dodrio,
     [SPECIES_SEEL]                           = sAnims_Seel,
