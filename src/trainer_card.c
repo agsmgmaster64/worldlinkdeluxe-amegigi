@@ -1282,7 +1282,8 @@ static void LoadMonIconGfx(void)
 {
     u8 i;
 
-    CpuSet(gMonIconPalettes, sData->monIconPal, 0x60);
+    CpuCopy16(gMonIconPalettes, sData->monIconPal, 2 * NELEMS(sData->monIconPal));
+    //CpuSet(gMonIconPalettes, sData->monIconPal, 0x60);
     switch (sData->trainerCard.monIconTint)
     {
     case MON_ICON_TINT_NORMAL:
@@ -1297,7 +1298,7 @@ static void LoadMonIconGfx(void)
         TintPalette_SepiaTone(sData->monIconPal, 96);
         break;
     }
-    LoadPalette(sData->monIconPal, BG_PLTT_ID(5), 6 * PLTT_SIZE_4BPP);
+    LoadPalette(sData->monIconPal, BG_PLTT_ID(5), sizeof(sData->monIconPal));
 
     for (i = 0; i < PARTY_SIZE; i++)
     {

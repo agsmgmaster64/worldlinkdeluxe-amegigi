@@ -99,6 +99,9 @@ static void SpriteCB_GlacialLance_Step1(struct Sprite* sprite);
 static void SpriteCB_GlacialLance_Step2(struct Sprite* sprite);
 static void SpriteCB_GlacialLance(struct Sprite* sprite);
 static void SpriteCB_TripleArrowKick(struct Sprite* sprite);
+static void SpriteCB_MaxSteelspike(struct Sprite* sprite);
+static void AnimTask_MaxSteelspikeStep(u8 taskId);
+static void CreateSteelspikeSprite(struct Task* task);
 
 // const data
 // general
@@ -2024,6 +2027,7 @@ static const union AnimCmd *const sAnimCmdTable_LargeSpike[] =
 {
     sAnimCmdLargeSpike,
 };
+
 const struct SpriteTemplate gPrecipiceBladesSpikeTemplate =
 {
     .tileTag = ANIM_TAG_LARGE_SPIKE,
@@ -3642,6 +3646,29 @@ const struct SpriteTemplate gSnipeShotBallTemplate =    //used in aura sphere
     .images = NULL,
     .affineAnims = sSpriteAffineAnimTable_SnipeShot,
     .callback = AnimShadowBall
+};
+
+// Max Steelspike
+const struct SpriteTemplate gMaxSteelspikeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_LARGE_SPIKE,
+    .paletteTag = ANIM_TAG_LARGE_SPIKE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x64,
+    .anims = sAnimCmdTable_LargeSpike,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_MaxSteelspike
+};
+
+const struct SpriteTemplate gMaxSteelspikeCurvedSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_LARGE_SPIKE,
+    .paletteTag = ANIM_TAG_LARGE_SPIKE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x64,
+    .anims = sAnimCmdTable_LargeSpike,
+    .images = NULL,
+    .affineAnims = sSpriteAffineAnimTable_LargeSpike,
+    .callback = SpriteCB_MaxSteelspike
 };
 
 //jaw lock
@@ -9166,4 +9193,144 @@ void AnimTask_StickySyrup(u8 taskId)
     else
         gBattleAnimArgs[0] = FALSE;
     DestroyAnimVisualTask(taskId);
+}
+
+static void SpriteCB_MaxSteelspike(struct Sprite* sprite)
+{
+	if (--sprite->data[7] == 0)
+	{
+		FreeSpriteOamMatrix(sprite);
+		DestroySprite(sprite);
+	}
+}
+
+// Creates explosions on the same path as Rollout rocks
+// No args
+// from CFRU
+void AnimTask_MaxSteelspike(u8 taskId)
+{
+	int var5;
+	u16 var0, var1, var2, var3, var4;
+	struct Task *task;
+
+	task = &gTasks[taskId];
+
+	var0 = GetBattlerSpriteCoord(gBattleAnimAttacker, 2);
+	var1 = GetBattlerSpriteCoord(gBattleAnimAttacker, 1) + 24;
+	var2 = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+	var3 = GetBattlerSpriteCoord(gBattleAnimTarget, 1) + 24;
+
+	if (BATTLE_PARTNER(gBattleAnimAttacker) == gBattleAnimTarget)
+		var3 = var1;
+
+	var4 = 4;
+	task->data[8] = 48 - (var4 * 8);
+
+	task->data[0] = 0;
+	task->data[11] = 0;
+	task->data[9] = 0;
+	task->data[12] = 1;
+
+	var5 = task->data[8];
+	if (var5 < 0)
+		var5 += 7;
+
+	task->data[10] = (var5 >> 3) - 1;
+
+	task->data[2] = var0 * 8;
+	task->data[3] = var1 * 8;
+	task->data[4] = ((var2 - var0) * 8) / task->data[8];
+	task->data[5] = ((var3 - var1) * 8) / task->data[8];
+	task->data[6] = 0;
+	task->data[7] = 0;
+
+	task->data[1] = var4;
+	task->data[15] = GetAnimBattlerSpriteId(0);
+
+	task->func = AnimTask_MaxSteelspikeStep;
+}
+
+static void AnimTask_MaxSteelspikeStep(u8 taskId)
+{
+	struct Task *task;
+	u8 spriteId1, spriteId2;
+	u16 x, y;
+
+	task = &gTasks[taskId];
+
+	switch (task->data[0]) {
+		case 0:
+			task->data[2] += task->data[4];
+			task->data[3] += task->data[5];
+			if (++task->data[9] >= task->data[10])
+			{
+				task->data[9] = 0;
+				CreateSteelspikeSprite(task);
+				task->data[13] += task->data[14];
+			}
+
+			if (--task->data[8] == 0)
+			{
+				task->data[11] = 0;
+				task->data[0]++;
+			}
+			break;
+		case 1:
+			if (++task->data[11] == 10)
+				task->data[0]++;
+			break;
+		case 2: ;
+			x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X);
+			y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y);
+
+			spriteId1 = CreateSprite(&gMaxSteelspikeCurvedSpriteTemplate, x + 5, y, 35);
+			spriteId2 = CreateSprite(&gMaxSteelspikeCurvedSpriteTemplate, x - 5, y, 35);
+			StartSpriteAffineAnim(&gSprites[spriteId1], 0); //Point Left
+			gSprites[spriteId1].data[7] = 50;
+			StartSpriteAffineAnim(&gSprites[spriteId2], 1); //Point Right
+			gSprites[spriteId2].data[7] = 50;
+
+			if (GetBattlerSide(gBattleAnimTarget) == B_SIDE_PLAYER)
+			{
+				gSprites[spriteId1].oam.priority = 1; //Above player's Pokemon
+				gSprites[spriteId2].oam.priority = 1; //Above player's Pokemon
+				gSprites[spriteId1].y += 15;
+				gSprites[spriteId2].y += 15;
+			}
+
+			task->data[0]++;
+			task->data[11] = 0;
+			break;
+		case 3:
+			if (++task->data[11] == 7)
+				task->data[0]++;
+			break;
+		case 4:
+			DestroyAnimVisualTask(taskId);
+	}
+}
+
+static void CreateSteelspikeSprite(struct Task* task)
+{
+	u8 spriteId;
+	u16 x, y;
+
+	x = task->data[2] >> 3;
+	y = task->data[3] >> 3;
+	x += (task->data[12] * 8);
+
+	spriteId = CreateSprite(&gMaxSteelspikeSpriteTemplate, x, y, 35);
+	if (spriteId != MAX_SPRITES)
+	{
+		gSprites[spriteId].data[0] = 18;
+		gSprites[spriteId].data[2] = ((task->data[12] * 20) + x) + (task->data[1] * 3);
+		gSprites[spriteId].data[4] = y;
+		gSprites[spriteId].data[5] = -16 - (task->data[1] * 2);
+		gSprites[spriteId].data[7] = task->data[8] + 60;
+
+		PlaySE(SE_M_HARDEN);
+		task->data[11]++;
+	}
+
+	task->data[12] *= -1;
 }

@@ -28,7 +28,7 @@
 
 extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
-#define IS_DITTO(species) (gBaseStats[species].eggGroup1 == EGG_GROUP_DITTO || gBaseStats[species].eggGroup2 == EGG_GROUP_DITTO)
+#define IS_DITTO(species) (gSpeciesInfo[species].eggGroups[0] == EGG_GROUP_DITTO || gSpeciesInfo[species].eggGroups[1] == EGG_GROUP_DITTO)
 
 static void ClearDaycareMonMail(struct DaycareMail *mail);
 static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *daycare);
@@ -705,7 +705,7 @@ static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, stru
 #if P_BALL_INHERITING >= GEN_7
     if (fatherSpecies == motherSpecies)
         inheritBall = (Random() % 2 == 0 ? motherBall : fatherBall);
-    else if (motherSpecies != SPECIES_DITTO)
+    else if (!IS_DITTO(motherSpecies))
         inheritBall = motherBall;
     else
         inheritBall = fatherBall;
@@ -722,7 +722,7 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
     u8 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
     u8 inheritAbility = motherAbility;
 
-    if (motherSpecies == SPECIES_DITTO)
+    if (IS_DITTO(motherSpecies))
     #if P_ABILITY_INHERITANCE < GEN_6
         return;
     #else
@@ -1032,7 +1032,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
     {
         species[i] = GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SPECIES);
-        if (species[i] == SPECIES_DITTO)
+        if (IS_DITTO(species[i]))
         {
             parentSlots[0] = i ^ 1;
             parentSlots[1] = i;
@@ -1067,7 +1067,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_FURFROU;
 
     // Make Ditto the "mother" slot if the other daycare mon is male.
-    if (species[parentSlots[1]] == SPECIES_DITTO && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
+    if (IS_DITTO(species[parentSlots[1]]) && GetBoxMonGender(&daycare->mons[parentSlots[0]].mon) != MON_FEMALE)
     {
         u8 ditto = parentSlots[1];
         parentSlots[1] = parentSlots[0];
