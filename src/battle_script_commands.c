@@ -5344,6 +5344,7 @@ static void Cmd_moveend(void)
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
                 && IsBattlerAlive(gBattlerAttacker)
+                && !IS_BATTLE_TYPE_GHOST_WITHOUT_SCOPE(gBattleTypeFlags) // needed to have recoil not appear at Ghost battles
                 && gBattleScripting.savedDmg != 0) // Some checks may be redundant alongside this one
             {
                 switch (gBattleMoves[gCurrentMove].effect)
