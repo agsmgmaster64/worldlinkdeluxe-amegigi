@@ -8941,6 +8941,13 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                         }
                     }
                     break;
+                case FORM_CHANGE_ITEM_USE_MULTICHOICE:
+                    if (arg == formChanges[i].param1)
+                    {
+                        if (formChanges[i].param2 == gSpecialVar_Result)
+                            targetSpecies = formChanges[i].targetSpecies;
+                    }
+                    break;
                 case FORM_CHANGE_MOVE:
                     if (BoxMonKnowsMove(boxMon, formChanges[i].param1) != formChanges[i].param2)
                         targetSpecies = formChanges[i].targetSpecies;
@@ -9159,24 +9166,24 @@ u32 GetMonFriendshipScore(struct Pokemon *pokemon)
     return FRIENDSHIP_NONE;
 }
 
-u32 GetMonAffectionScore(struct Pokemon *pokemon)
+u32 GetMonAffectionHearts(struct Pokemon *pokemon)
 {
-    u32 affectionScore = GetMonData(pokemon, MON_DATA_AFFECTION, NULL);
+    u32 affection = GetMonData(pokemon, MON_DATA_AFFECTION, NULL);
 
-    if (affectionScore == MAX_FRIENDSHIP)
-        return AFFECTION_MAX;
+    if (affection == MAX_FRIENDSHIP)
+        return AFFECTION_FIVE_HEARTS;
     if (affectionScore >= 200)
-        return AFFECTION_200_TO_254;
-    if (affectionScore >= 150)
-        return AFFECTION_150_TO_199;
-    if (affectionScore >= 100)
-        return AFFECTION_100_TO_149;
-    if (affectionScore >= 50)
-        return AFFECTION_50_TO_99;
-    if (affectionScore >= 1)
-        return AFFECTION_1_TO_49;
+        return AFFECTION_FOUR_HALF_HEARTS;
+    if (affection >= 150)
+        return AFFECTION_FOUR_HEARTS;
+    if (affection >= 100)
+        return AFFECTION_THREE_HEARTS;
+    if (affection >= 50)
+        return AFFECTION_TWO_HEARTS;
+    if (affection >= 1)
+        return AFFECTION_ONE_HEART;
 
-    return AFFECTION_NONE;
+    return AFFECTION_NO_HEARTS;
 }
 
 void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)

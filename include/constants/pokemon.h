@@ -191,14 +191,14 @@
 #define FRIENDSHIP_200_TO_254  5
 #define FRIENDSHIP_MAX         6
 
-// Constants for GetLeadMonFriendshipScore
-#define AFFECTION_NONE        0
-#define AFFECTION_1_TO_49     1
-#define AFFECTION_50_TO_99    2
-#define AFFECTION_100_TO_149  3
-#define AFFECTION_150_TO_199  4
-#define AFFECTION_200_TO_254  5
-#define AFFECTION_MAX         6
+// Constants for GetBattlerAffectionHearts (based on affection value)
+#define AFFECTION_NO_HEARTS          0 // 0 affection
+#define AFFECTION_ONE_HEART          1 // 1-49 affection
+#define AFFECTION_TWO_HEARTS         2 // 50-99 affection
+#define AFFECTION_THREE_HEARTS       3 // 100-149 affection
+#define AFFECTION_FOUR_HEARTS        4 // 150-199 affection
+#define AFFECTION_FOUR_HALF_HEARTS   5 // 200-254 affection
+#define AFFECTION_FIVE_HEARTS        6 // Max affection
 
 // Friendship value that the majority of species use.
 #if P_UPDATED_FRIENDSHIP >= GEN_8
@@ -362,15 +362,19 @@
 #define SPECIES_FLAG_MEGA_EVOLUTION     (1 << 2)
 #define SPECIES_FLAG_PRIMAL_REVERSION   (1 << 3)
 #define SPECIES_FLAG_ULTRA_BEAST        (1 << 4)
-#define SPECIES_FLAG_HOENNIAN_FORM      (1 << 5)
-#define SPECIES_FLAG_GENSOKYIAN_FORM    (1 << 6)
-#define SPECIES_FLAG_SANNIAN_FORM       (1 << 7)
-#define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 8)
-#define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 9)
-#define SPECIES_FLAG_CHIBI_FORM         (1 << 10)
-#define SPECIES_FLAG_EVOLVED_FORM       (1 << 11)
-#define SPECIES_FLAG_ULTRA_BURST        (1 << 12)
-#define SPECIES_FLAG_PARADOX            (1 << 13)
+#define SPECIES_FLAG_ALOLAN_FORM        (1 << 5)
+#define SPECIES_FLAG_GALARIAN_FORM      (1 << 6)
+#define SPECIES_FLAG_HISUIAN_FORM       (1 << 7)
+#define SPECIES_FLAG_PALDEAN_FORM       (1 << 8)
+#define SPECIES_FLAG_ALL_PERFECT_IVS    (1 << 9)
+#define SPECIES_FLAG_CANNOT_BE_TRADED   (1 << 10)
+#define SPECIES_FLAG_ULTRA_BURST        (1 << 11)
+#define SPECIES_FLAG_PARADOX            (1 << 12)
+#define SPECIES_FLAG_HOENNIAN_FORM      (1 << 13)
+#define SPECIES_FLAG_GENSOKYIAN_FORM    (1 << 14)
+#define SPECIES_FLAG_SANNIAN_FORM       (1 << 15)
+#define SPECIES_FLAG_CHIBI_FORM         (1 << 16)
+#define SPECIES_FLAG_EVOLVED_FORM       (1 << 17)
 
 #define LEGENDARY_PERFECT_IV_COUNT 3
 

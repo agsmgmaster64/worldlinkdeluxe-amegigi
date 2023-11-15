@@ -8657,7 +8657,7 @@ void AnimTask_TerrainPulse(u8 taskId)
 
 void AnimTask_AffectionHangedOn(u8 taskId)
 {
-    gBattleAnimArgs[0] = GetBattlerFriendshipScore(gBattleAnimTarget);
+    gBattleAnimArgs[0] = GetBattlerAffectionHearts(gBattleAnimTarget);
     DestroyAnimVisualTask(taskId);
 }
 

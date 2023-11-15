@@ -1844,25 +1844,25 @@ u8 GetImprisonedMovesCount(u32 battler, u16 move)
     return imprisonedMoves;
 }
 
-u32 GetBattlerFriendshipScore(u32 battler)
+u32 GetBattlerAffectionHearts(u32 battler)
 {
     u8 side = GetBattlerSide(battler);
     struct Pokemon *party = GetSideParty(side);
     u16 species = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES);
 
     if (side != B_SIDE_PLAYER)
-        return AFFECTION_NONE;
+        return AFFECTION_NO_HEARTS;
     else if (IsAiVsAiBattle())
-        return AFFECTION_NONE;
+        return AFFECTION_NO_HEARTS;
     else if (gSpeciesInfo[species].flags & SPECIES_FLAG_MEGA_EVOLUTION
           || (gBattleTypeFlags & (BATTLE_TYPE_EREADER_TRAINER
                                 | BATTLE_TYPE_FRONTIER
                                 | BATTLE_TYPE_LINK
                                 | BATTLE_TYPE_RECORDED_LINK
                                 | BATTLE_TYPE_SECRET_BASE)))
-        return AFFECTION_NONE;
+        return AFFECTION_NO_HEARTS;
 
-    return GetMonAffectionScore(&party[gBattlerPartyIndexes[battler]]);
+    return GetMonAffectionHearts(&party[gBattlerPartyIndexes[battler]]);
 }
 
 static void TryToRevertMimicry(void)
@@ -11111,6 +11111,20 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
     u8 gender2 = GetBattlerGender(battler2);
 
     return (gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS && gender1 == gender2);
+}
+
+bool32 CanBeInfatuated(u32 battler1, u32 battler2)
+{
+    u16 atkAbility = GetBattlerAbility(battler1);
+    u16 defAbility = GetBattlerAbility(battler2);
+
+    if (defAbility == ABILITY_OBLIVIOUS || (gBattleMons[battler2].status2 & STATUS2_INFATUATION))
+        return FALSE;
+
+    if (atkAbility == ABILITY_DIVA)
+        return TRUE;
+
+    return AreBattlersOfOppositeGender(battler1, battler2);
 }
 
 u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance)
