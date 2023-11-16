@@ -3933,7 +3933,7 @@ static void DebugAction_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffinity
     int boxId, boxPosition;
     u32 personality;
     struct BoxPokemon boxMon;
-    u16 species = SPECIES_BULBASAUR;
+    u16 species = SPECIES_CHIBI_REIMU;
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
 
     personality = Random32();
@@ -3965,7 +3965,7 @@ static void DebugAction_Fill_PCBoxes_Slow(u8 taskId)
 {
     int boxId, boxPosition;
     struct BoxPokemon boxMon;
-    u32 species = SPECIES_BULBASAUR;
+    u32 species = SPECIES_CHIBI_REIMU;
     bool8 spaceAvailable = FALSE;
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)

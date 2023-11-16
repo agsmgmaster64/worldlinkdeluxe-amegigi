@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Teatime causes the user to consume its Berry, even in the pr
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_LIECHI_BERRY); }
-        OPPONENT(SPECIES_EKANS) { Ability(ABILITY_UNNERVE); }
+        OPPONENT(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_UNNERVE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TEATIME); }
     } SCENE {
@@ -205,7 +205,7 @@ SINGLE_BATTLE_TEST("Teatime triggers Lightning Rod if it has been affected by El
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {
-        PLAYER(SPECIES_PIKACHU) { Ability(ABILITY_LIGHTNING_ROD); Item(item); }
+        PLAYER(SPECIES_CHIBI_KOAKUMA) { Ability(ABILITY_LIGHTNING_ROD); Item(item); }
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LIECHI_BERRY); }
     } WHEN {
         TURN {

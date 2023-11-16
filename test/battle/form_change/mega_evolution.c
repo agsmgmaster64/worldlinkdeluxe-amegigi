@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Venusaur can Mega Evolve holding Venusaurite")
 {
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); }
+        PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); }
@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Venusaur can Mega Evolve holding Venusaurite")
 DOUBLE_BATTLE_TEST("Mega Evolution's order is determined by Speed - opponent faster")
 {
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Speed(1); }
+        PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); Speed(1); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
         OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(3); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
@@ -39,7 +39,7 @@ DOUBLE_BATTLE_TEST("Mega Evolution's order is determined by Speed - opponent fas
 DOUBLE_BATTLE_TEST("Mega Evolution's order is determined by Speed - player faster")
 {
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); Speed(5); }
+        PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); Speed(5); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
         OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(2); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
@@ -110,7 +110,7 @@ DOUBLE_BATTLE_TEST("Mega Evolution happens after switching, but before Focus Pun
     GIVEN {
         ASSUME(gBattleMoves[MOVE_FOCUS_PUNCH].effect == EFFECT_FOCUS_PUNCH);
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); }
+        PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

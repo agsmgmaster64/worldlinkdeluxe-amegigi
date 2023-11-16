@@ -52,7 +52,7 @@ SINGLE_BATTLE_TEST("Eject Button will not activate under Substitute")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_RAICHU) { Item(ITEM_EJECT_BUTTON); }
+        OPPONENT(SPECIES_NORMAL_KOAKUMA) { Item(ITEM_EJECT_BUTTON); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves")
 SINGLE_BATTLE_TEST("Eject Button is not triggered after the mon loses Eject Button")
 {
     GIVEN {
-        PLAYER(SPECIES_RAICHU);
+        PLAYER(SPECIES_NORMAL_KOAKUMA);
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

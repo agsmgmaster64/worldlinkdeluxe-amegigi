@@ -174,7 +174,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_EARTHQUAKE, MOVE_BRICK_BREAK, MOVE_HEART_BREAK, MOVE_AERIAL_ACE},
             },
             {
-                .species = SPECIES_CHARIZARD,
+                .species = SPECIES_NORMAL_MARISA,
                 .heldItem = ITEM_WHITE_HERB,
                 .fixedIV = 20,
                 .nature = NATURE_QUIET,

@@ -5,13 +5,13 @@ ASSUMPTIONS
 {
     ASSUME(gBattleMoves[MOVE_DOUBLE_SHOCK].effect == EFFECT_DOUBLE_SHOCK);
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_WIND || gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_WIND);
-    ASSUME(gSpeciesInfo[SPECIES_PIKACHU].types[0] == TYPE_WIND || gSpeciesInfo[SPECIES_PIKACHU].types[1] == TYPE_WIND);
+    ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOAKUMA].types[0] == TYPE_WIND || gSpeciesInfo[SPECIES_CHIBI_KOAKUMA].types[1] == TYPE_WIND);
 }
 
 SINGLE_BATTLE_TEST("Double Shock user loses its Electric-type")
 {
     GIVEN {
-        PLAYER(SPECIES_PIKACHU);
+        PLAYER(SPECIES_CHIBI_KOAKUMA);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_DOUBLE_SHOCK); }
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Double Shock fails if the user isn't an Electric-type")
 SINGLE_BATTLE_TEST("Double Shock user loses its Electric-type if enemy faints")
 {
     GIVEN {
-        PLAYER(SPECIES_PIKACHU);
+        PLAYER(SPECIES_CHIBI_KOAKUMA);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_DOUBLE_SHOCK); }

@@ -35,9 +35,9 @@ SINGLE_BATTLE_TEST("Revival Blessing revives a fainted party member for an oppon
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_RAICHU);
+        OPPONENT(SPECIES_NORMAL_KOAKUMA);
         OPPONENT(SPECIES_PICHU) { HP(0); }
-        OPPONENT(SPECIES_PIKACHU) { HP(0); }
+        OPPONENT(SPECIES_CHIBI_KOAKUMA) { HP(0); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_REVIVAL_BLESSING); SEND_OUT(opponent, 1); }
     } SCENE {

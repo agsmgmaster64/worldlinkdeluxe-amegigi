@@ -118,9 +118,9 @@ static const u16 sHueShiftNormalRange = 40;
 static const u16 sHueShiftShinyRange = 30;
 static const s8 sHueShiftSpeciesLimit[NUM_SPECIES] =
 {
-    [SPECIES_CHARIZARD] = 3,
-    [SPECIES_PIKACHU] = 1,
-    [SPECIES_RAICHU] = 1,
+    [SPECIES_NORMAL_MARISA] = 3,
+    [SPECIES_CHIBI_KOAKUMA] = 1,
+    [SPECIES_NORMAL_KOAKUMA] = 1,
     [SPECIES_CLEFAIRY] = 3,
     [SPECIES_CLEFABLE] = 3,
     [SPECIES_VULPIX] = 3,

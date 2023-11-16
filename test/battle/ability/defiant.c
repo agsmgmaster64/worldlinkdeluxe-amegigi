@@ -14,7 +14,7 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises player's Attack after Intimidate")
         PLAYER(SPECIES_MANKEY) { Ability(abilityLeft); }
         PLAYER(SPECIES_PRIMEAPE) { Ability(abilityRight); }
         OPPONENT(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
-        OPPONENT(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target:opponentLeft); MOVE(playerRight, MOVE_TACKLE, target:opponentRight); }
     } SCENE {
@@ -72,7 +72,7 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises opponent's Attack after Intimidate")
         OPPONENT(SPECIES_MANKEY) { Ability(abilityLeft); }
         OPPONENT(SPECIES_PRIMEAPE) { Ability(abilityRight); }
         PLAYER(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
-        PLAYER(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target:playerLeft); MOVE(opponentRight, MOVE_TACKLE, target:playerRight); }
     } SCENE {

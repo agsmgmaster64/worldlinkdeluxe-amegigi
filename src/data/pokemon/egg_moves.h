@@ -5,7 +5,7 @@
 #define egg_moves(species, moves...) (SPECIES_##species + EGG_MOVES_SPECIES_OFFSET), moves
 
 const u16 gEggMoves[] = {
-    egg_moves(BULBASAUR,
+    egg_moves(CHIBI_REIMU,
         MOVE_SKULL_BASH,
         MOVE_CHARM,
         MOVE_PETAL_DANCE,
@@ -22,7 +22,7 @@ const u16 gEggMoves[] = {
         MOVE_GIGA_DRAIN,
         MOVE_GRASSY_TERRAIN),
 
-    egg_moves(CHARMANDER,
+    egg_moves(DEFENSE_REIMU,
         MOVE_BELLY_DRUM,
         MOVE_ANCIENT_POWER,
         MOVE_BITE,
@@ -38,7 +38,7 @@ const u16 gEggMoves[] = {
         MOVE_FOCUS_PUNCH,
         MOVE_AIR_CUTTER),
 
-    egg_moves(SQUIRTLE,
+    egg_moves(ATTACK_MARISA,
         MOVE_MIRROR_COAT,
         MOVE_HAZE,
         MOVE_MIST,
@@ -56,7 +56,7 @@ const u16 gEggMoves[] = {
         MOVE_DRAGON_PULSE,
         MOVE_AURA_SPHERE),
 
-    egg_moves(PIDGEY,
+    egg_moves(TECH_CIRNO,
         MOVE_PURSUIT,
         MOVE_FEINT_ATTACK,
         MOVE_FORESIGHT,
@@ -67,7 +67,7 @@ const u16 gEggMoves[] = {
         MOVE_UPROAR,
         MOVE_DEFOG),
 
-    egg_moves(RATTATA,
+    egg_moves(ATTACK_RUMIA,
         MOVE_SCREECH,
         MOVE_FLAME_WHEEL,
         MOVE_FURY_SWIPES,
@@ -80,7 +80,7 @@ const u16 gEggMoves[] = {
         MOVE_REVENGE,
         MOVE_FINAL_GAMBIT),
 
-    egg_moves(SPEAROW,
+    egg_moves(CHIBI_MEILING,
         MOVE_FEINT_ATTACK,
         MOVE_SCARY_FACE,
         MOVE_QUICK_ATTACK,
@@ -93,7 +93,7 @@ const u16 gEggMoves[] = {
         MOVE_STEEL_WING,
         MOVE_RAZOR_WIND),
 
-    egg_moves(EKANS,
+    egg_moves(DEFENSE_MEILING,
         MOVE_PURSUIT,
         MOVE_SLAM,
         MOVE_SPITE,
@@ -107,7 +107,7 @@ const u16 gEggMoves[] = {
         MOVE_SUCKER_PUNCH,
         MOVE_SNATCH),
 
-    egg_moves(SANDSHREW,
+    egg_moves(HELPER_KOAKUMA,
         MOVE_FLAIL,
         MOVE_COUNTER,
         MOVE_RAPID_SPIN,
@@ -121,7 +121,7 @@ const u16 gEggMoves[] = {
         MOVE_ROTOTILLER,
         MOVE_HONE_CLAWS),
 
-    egg_moves(NIDORAN_F,
+    egg_moves(CHIBI_PATCHOULI,
         MOVE_JAMMING,
         MOVE_DISABLE,
         MOVE_TAKE_DOWN,

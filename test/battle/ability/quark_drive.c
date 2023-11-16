@@ -63,8 +63,8 @@ SINGLE_BATTLE_TEST("Quark Drive either boosts Defense or Special Defense, not bo
     PARAMETRIZE { species = SPECIES_ONIX; move = MOVE_TACKLE; }
     PARAMETRIZE { species = SPECIES_ONIX; move = MOVE_ROUND; }
 
-    PARAMETRIZE { species = SPECIES_BLASTOISE; move = MOVE_TACKLE; }
-    PARAMETRIZE { species = SPECIES_BLASTOISE; move = MOVE_ROUND; }
+    PARAMETRIZE { species = SPECIES_CHIBI_DAIYOUSEI; move = MOVE_TACKLE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_DAIYOUSEI; move = MOVE_ROUND; }
 
     GIVEN {
         PLAYER(species) { Ability(ABILITY_QUARK_DRIVE); }
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Quark Drive either boosts Defense or Special Defense, not bo
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         HP_BAR(player, captureDamage: &damage[1]);
     } THEN {
-        if ((move == MOVE_TACKLE && species == SPECIES_ONIX) || (move == MOVE_ROUND && species == SPECIES_BLASTOISE))
+        if ((move == MOVE_TACKLE && species == SPECIES_ONIX) || (move == MOVE_ROUND && species == SPECIES_CHIBI_DAIYOUSEI))
             EXPECT_MUL_EQ(damage[0], Q_4_12(0.7), damage[1]);
         else
             EXPECT_EQ(damage[0], damage[1]);

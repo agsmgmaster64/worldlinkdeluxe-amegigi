@@ -34,7 +34,7 @@
         .friendship = STANDARD_FRIENDSHIP,                              \
         .growthRate = growth,                                           \
         .sourceGame = source,                                           \
-        .noFlip = TRUE,
+        .noFlip = TRUE
 
 const struct SpeciesInfo gSpeciesInfo[] =
 {
@@ -45,7 +45,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD)
 
 #if P_FAMILY_BULBASAUR
-    [SPECIES_BULBASAUR] =
+    [SPECIES_CHIBI_REIMU] =
     {
         .baseHP        = 85,
         .baseAttack    = 70,
@@ -59,10 +59,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_HP        = 2,
         .itemRare = ITEM_PRIESTESS,
         .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
-        REIMU_MISC_INFO
+        REIMU_MISC_INFO,
     },
 
-    [SPECIES_IVYSAUR] =
+    [SPECIES_NORMAL_REIMU] =
     {
         .baseHP        = 110,
         .baseAttack    = 95,
@@ -76,10 +76,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_HP        = 3,
         .itemRare = ITEM_PRIESTESS,
         .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
-        REIMU_MISC_INFO
+        REIMU_MISC_INFO,
     },
 
-    [SPECIES_VENUSAUR] =
+    [SPECIES_ATTACK_REIMU] =
     {
         .baseHP        = 90,
         .baseAttack    = 120,
@@ -93,10 +93,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_Attack    = 3,
         .itemRare = ITEM_PRIESTESS,
         .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
-        REIMU_MISC_INFO
+        REIMU_MISC_INFO,
     },
 
-    [SPECIES_CHARMANDER] =
+    [SPECIES_DEFENSE_REIMU] =
     {
         .baseHP        = 125,
         .baseAttack    = 75,
@@ -110,7 +110,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_HP        = 3,
         .itemRare = ITEM_PRIESTESS,
         .abilities = {ABILITY_HAKUREI_MIKO, ABILITY_NONE},
-        REIMU_MISC_INFO
+        REIMU_MISC_INFO,
     },
 
 #define VENUSAUR_MISC_INFO                                                  \
@@ -164,7 +164,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD)
 
 #if P_FAMILY_CHARMANDER
-    [SPECIES_CHARMELEON] =
+    [SPECIES_CHIBI_MARISA] =
     {
         .baseHP        = 45,
         .baseAttack    = 45,
@@ -177,10 +177,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 76,
         .evYield_Speed     = 1,
         .abilities = {ABILITY_PICKUP, ABILITY_HUSTLE},
-        MARISA_MISC_INFO
+        MARISA_MISC_INFO,
     },
 
-    [SPECIES_CHARIZARD] =
+    [SPECIES_NORMAL_MARISA] =
     {
         .baseHP        = 70,
         .baseAttack    = 70,
@@ -193,10 +193,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 212,
         .evYield_Speed     = 3,
         .abilities = {ABILITY_COLLECTOR, ABILITY_HUSTLE},
-        MARISA_MISC_INFO
+        MARISA_MISC_INFO,
     },
 
-    [SPECIES_SQUIRTLE] =
+    [SPECIES_ATTACK_MARISA] =
     {
         .baseHP        = 75,
         .baseAttack    = 80,
@@ -212,7 +212,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         MARISA_MISC_INFO
     },
 
-    [SPECIES_WARTORTLE] =
+    [SPECIES_SPEED_MARISA] =
     {
         .baseHP        = 70,
         .baseAttack    = 85,
@@ -225,7 +225,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 200,
         .evYield_Speed     = 3,
         .abilities = {ABILITY_COLLECTOR, ABILITY_HUSTLE},
-        MARISA_MISC_INFO
+        MARISA_MISC_INFO,
     },
 
 #define CHARIZARD_MISC_INFO                                             \
@@ -296,7 +296,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD)
 #if P_FAMILY_SQUIRTLE
 
-    [SPECIES_BLASTOISE] =
+    [SPECIES_CHIBI_DAIYOUSEI] =
     {
         .baseHP        = 55,
         .baseAttack    = 30,
@@ -311,7 +311,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         //.itemRare = ITEM_ASSIST_BALL,
         .abilities = {ABILITY_RUN_AWAY, ABILITY_RUN_AWAY},
         .safariZoneFleeRate = 50,
-        DAIYOUSEI_MISC_INFO
+        DAIYOUSEI_MISC_INFO,
     },
 
 #define BLASTOISE_MISC_INFO                                             \
@@ -360,7 +360,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_SQUIRTLE
 
 #if P_FAMILY_CATERPIE
-    [SPECIES_CATERPIE] =
+    [SPECIES_NORMAL_DAIYOUSEI] =
     {
         .baseHP        = 45,
         .baseAttack    = 30,
@@ -382,7 +382,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_METAPOD] =
+    [SPECIES_ATTACK_DAIYOUSEI] =
     {
         .baseHP        = 50,
         .baseAttack    = 20,
@@ -426,7 +426,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_MOF,                                          \
         .noFlip = FALSE
 
-    [SPECIES_BUTTERFREE] =
+    [SPECIES_DEFENSE_DAIYOUSEI] =
     {
         BUTTERFREE_MISC_INFO,
     },
@@ -441,7 +441,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_CATERPIE
 
 #if P_FAMILY_WEEDLE
-    [SPECIES_WEEDLE] =
+    [SPECIES_CHIBI_CIRNO] =
     {
         .baseHP        = 40,
         .baseAttack    = 35,
@@ -463,7 +463,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_KAKUNA] =
+    [SPECIES_NORMAL_CIRNO] =
     {
         .baseHP        = 45,
         .baseAttack    = 25,
@@ -501,7 +501,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_OTHER,                 \
         .noFlip = FALSE
 
-    [SPECIES_BEEDRILL] =
+    [SPECIES_SPEED_CIRNO] =
     {
         BEEDRILL_MISC_INFO,
         .baseHP        = 65,
@@ -532,7 +532,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_WEEDLE
 
 #if P_FAMILY_PIDGEY
-    [SPECIES_PIDGEY] =
+    [SPECIES_TECH_CIRNO] =
     {
         .baseHP        = 40,
         .baseAttack    = 45,
@@ -554,7 +554,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_PIDGEOTTO] =
+    [SPECIES_CHIBI_RUMIA] =
     {
         .baseHP        = 63,
         .baseAttack    = 60,
@@ -590,7 +590,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_MOF,                      \
         .noFlip = FALSE
 
-    [SPECIES_PIDGEOT] =
+    [SPECIES_NORMAL_RUMIA] =
     {
         PIDGEOT_MISC_INFO,
         .baseHP        = 83,
@@ -647,7 +647,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_Speed     = 2,             \
         RATTATA_FAMILY_MISC_INFO
 
-    [SPECIES_RATTATA] =
+    [SPECIES_ATTACK_RUMIA] =
     {
         RATTATA_MISC_INFO,
         .types = { TYPE_ILLUSION, TYPE_ILLUSION },
@@ -655,7 +655,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_OTHER,
     },
 
-    [SPECIES_RATICATE] =
+    [SPECIES_SPEED_RUMIA] =
     {
         RATICATE_MISC_INFO,
         .baseHP        = 55,
@@ -699,7 +699,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_RATTATA
 
 #if P_FAMILY_SPEAROW
-    [SPECIES_SPEAROW] =
+    [SPECIES_CHIBI_MEILING] =
     {
         .baseHP        = 40,
         .baseAttack    = 60,
@@ -722,7 +722,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_FEAROW] =
+    [SPECIES_NORMAL_MEILING] =
     {
         .baseHP        = 65,
         .baseAttack    = 90,
@@ -747,7 +747,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_SPEAROW
 
 #if P_FAMILY_EKANS
-    [SPECIES_EKANS] =
+    [SPECIES_DEFENSE_MEILING] =
     {
         .baseHP        = 35,
         .baseAttack    = 60,
@@ -769,7 +769,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_ARBOK] =
+    [SPECIES_SPEED_MEILING] =
     {
         .baseHP        = 60,
         .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 95 : 85,
@@ -845,7 +845,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_OTHER,                                    \
         .noFlip = flip
 
-    [SPECIES_PIKACHU] = { PIKACHU_MISC_INFO(PERCENT_FEMALE(50), FLIP) },
+    [SPECIES_CHIBI_KOAKUMA] = { PIKACHU_MISC_INFO(PERCENT_FEMALE(50), FLIP) },
 
 #define COSPLAY_PIKACHU_SPECIES_INFO(flip) { PIKACHU_MISC_INFO(MON_FEMALE, flip) }
 
@@ -888,7 +888,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY},   \
         .noFlip = FALSE
 
-    [SPECIES_RAICHU] =
+    [SPECIES_NORMAL_KOAKUMA] =
     {
         RAICHU_MISC_INFO,
         .baseHP        = 60,
@@ -942,7 +942,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evYield_Defense   = 2,                 \
         SANDSHREW_FAMILY_MISC_INFO
 
-    [SPECIES_SANDSHREW] =
+    [SPECIES_HELPER_KOAKUMA] =
     {
         SANDSHREW_MISC_INFO,
         .baseHP        = 50,
@@ -956,7 +956,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_OTHER,
     },
 
-    [SPECIES_SANDSLASH] =
+    [SPECIES_PLCEHOLDER1_KOAKUMA] =
     {
         SANDSLASH_MISC_INFO,
         .baseHP        = 75,
@@ -1004,7 +1004,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_FAMILY_SANDSHREW
 
 #if P_FAMILY_NIDORAN
-    [SPECIES_NIDORAN_F] =
+    [SPECIES_CHIBI_PATCHOULI] =
     {
         .baseHP        = 55,
         .baseAttack    = 47,
@@ -1026,7 +1026,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_NIDORINA] =
+    [SPECIES_NORMAL_PATCHOULI] =
     {
         .baseHP        = 70,
         .baseAttack    = 62,
@@ -1246,7 +1246,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         VULPIX_MISC_INFO,
         .types = { TYPE_FIRE, TYPE_FIRE },
-        .itemRare = ITEM_CHARCOAL,
+        .itemRare = ITEM_GOTHIC_DRESS,
         .abilities = {ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_DROUGHT},
         .sourceGame = SOURCE_OTHER,
     },
@@ -3017,7 +3017,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
 #define KANTONIAN_GRIMER_FAMILY_INFO                                                \
         .types = { TYPE_MIASMA, TYPE_MIASMA },                                      \
-        .abilities = {ABILITY_STENCH, ABILITY_STICKY_HOLD, ABILITY_POISON_TOUCH},   \
+        .abilities = {ABILITY_JEALOUSY, ABILITY_COLLECTOR, ABILITY_POISON_TOUCH},   \
         .sourceGame = SOURCE_OTHER
 
     [SPECIES_GRIMER] =
@@ -3765,7 +3765,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         WEEZING_MISC_INFO,
         .types = { TYPE_MIASMA, TYPE_MIASMA },
         .itemRare = ITEM_SMOKE_BALL,
-            .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_STENCH},
+            .abilities = {ABILITY_LEVITATE, ABILITY_NEUTRALIZING_GAS, ABILITY_JEALOUSY},
         .sourceGame = SOURCE_OTHER,
     },
 
@@ -11948,7 +11948,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
 #if P_FAMILY_LATIAS
 #define LATIAS_MISC_INFO                                                \
-        .types = { TYPE_DRAGON, TYPE_REASON},                          \
+        .types = { TYPE_FAITH, TYPE_REASON},                          \
         .catchRate = 3,                                                 \
         .evYield_SpDefense = 3,                                         \
         .genderRatio = MON_FEMALE,                                      \
@@ -11993,7 +11993,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
 #if P_FAMILY_LATIOS
 #define LATIOS_MISC_INFO                                                \
-        .types = { TYPE_DRAGON, TYPE_REASON},                          \
+        .types = { TYPE_FAITH, TYPE_REASON},                          \
         .catchRate = 3,                                                 \
         .evYield_SpAttack = 3,                                          \
         .genderRatio = MON_MALE,                                        \
@@ -19974,7 +19974,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 83,
         .baseSpDefense = 113,
-        .types = { TYPE_DRAGON, TYPE_DRAGON},
+        .types = { TYPE_FAITH, TYPE_FAITH},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY},
     },
 
@@ -20001,7 +20001,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 83,
         .baseSpDefense = 113,
-        .types = { TYPE_DRAGON, TYPE_STEEL},
+        .types = { TYPE_FAITH, TYPE_STEEL},
         .abilities = {ABILITY_SAP_SIPPER, ABILITY_SHELL_ARMOR, ABILITY_GOOEY},
         .flags = SPECIES_FLAG_HISUIAN_FORM,
     },

@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch ou
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_ARBOK) { Ability(ability); }
+        OPPONENT(SPECIES_SPEED_MEILING) { Ability(ability); }
     } WHEN {
         TURN { SWITCH(opponent, 1); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -39,7 +39,7 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after KO", s16 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(1); }
-        OPPONENT(SPECIES_ARBOK) { Ability(ability); Speed(1); }
+        OPPONENT(SPECIES_SPEED_MEILING) { Ability(ability); Speed(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -63,11 +63,11 @@ DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double ba
         ASSUME(gBattleMoves[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_ABRA);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_EXPLOSION); SEND_OUT(playerLeft, 2); SEND_OUT(opponentLeft, 2); SEND_OUT(playerRight, 3); SEND_OUT(opponentRight, 3); }

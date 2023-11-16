@@ -13,7 +13,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round1[] =
         .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_QUICK_ATTACK, MOVE_NONE}
     },
     {
-        .species = SPECIES_PIKACHU,
+        .species = SPECIES_CHIBI_KOAKUMA,
         .lvl = 37,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_SLAM, MOVE_NONE}
@@ -65,7 +65,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round2[] =
         .moves = {MOVE_TOXIC, MOVE_GIGA_DRAIN, MOVE_MAGICAL_LEAF, MOVE_PETAL_DANCE}
     },
     {
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_DEFENSE_DAIYOUSEI,
         .lvl = 38,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_POISON_POWDER, MOVE_GUST, MOVE_PSYBEAM, MOVE_NONE}
@@ -771,7 +771,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round15[] =
         .moves = {MOVE_WATER_PULSE, MOVE_THUNDERBOLT, MOVE_CONFUSE_RAY, MOVE_BLIZZARD}
     },
     {
-        .species = SPECIES_BLASTOISE,
+        .species = SPECIES_CHIBI_DAIYOUSEI,
         .lvl = 50,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_ICE_BEAM, MOVE_NONE}
@@ -927,7 +927,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round18[] =
         .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_PROTECT, MOVE_NONE}
     },
     {
-        .species = SPECIES_CHARIZARD,
+        .species = SPECIES_NORMAL_MARISA,
         .lvl = 50,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_FLAMETHROWER, MOVE_FOCUS_PUNCH, MOVE_FIRE_BLAST, MOVE_STEEL_FIST}
@@ -949,7 +949,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round19[] =
         .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_NONE, MOVE_NONE}
     },
     {
-        .species = SPECIES_RAICHU,
+        .species = SPECIES_NORMAL_KOAKUMA,
         .lvl = 46,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_SLAM, MOVE_NONE}
@@ -1019,7 +1019,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round20[] =
         .moves = {MOVE_EARTHQUAKE, MOVE_HYPER_BEAM, MOVE_SURF, MOVE_THUNDERBOLT}
     },
     {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NORMAL_MEILING,
         .lvl = 48,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_HYPER_BEAM, MOVE_FLY, MOVE_MIRROR_MOVE, MOVE_PROTECT}

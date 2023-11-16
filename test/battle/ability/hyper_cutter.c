@@ -7,8 +7,8 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate")
     s16 turnTwoHit;
 
     GIVEN {
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_MAINTENANCE); }
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_MAINTENANCE); }
+        PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }

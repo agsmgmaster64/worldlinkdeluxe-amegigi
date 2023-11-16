@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_PIDGEY) { Ability(ABILITY_BIG_PECKS); }
+        OPPONENT(SPECIES_TECH_CIRNO) { Ability(ABILITY_BIG_PECKS); }
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
     } SCENE {

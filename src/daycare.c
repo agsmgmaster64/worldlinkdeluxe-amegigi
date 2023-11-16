@@ -1045,13 +1045,13 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     }
 
     eggSpecies = GetEggSpecies(species[parentSlots[0]]);
-    if (eggSpecies == SPECIES_NIDORAN_F && daycare->offspringPersonality & EGG_GENDER_MALE)
+    if (eggSpecies == SPECIES_CHIBI_PATCHOULI && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_NIDORAN_M;
     else if (eggSpecies == SPECIES_ILLUMISE && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_VOLBEAT;
 #if P_NIDORAN_M_DITTO_BREED >= GEN_5
     else if (eggSpecies == SPECIES_NIDORAN_M && !(daycare->offspringPersonality & EGG_GENDER_MALE))
-        eggSpecies = SPECIES_NIDORAN_F;
+        eggSpecies = SPECIES_CHIBI_PATCHOULI;
     else if (eggSpecies == SPECIES_VOLBEAT && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_ILLUMISE;
 #endif

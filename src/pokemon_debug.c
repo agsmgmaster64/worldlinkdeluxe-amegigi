@@ -1114,7 +1114,7 @@ void CB2_Debug_Pokemon(void)
             AllocateMonSpritesGfx();
 
             LoadPalette(sBgColor, 0, 2);
-            LoadMonIconPalette(SPECIES_BULBASAUR);
+            LoadMonIconPalette(SPECIES_CHIBI_REIMU);
 
             SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
             ShowBg(0);
@@ -1128,7 +1128,7 @@ void CB2_Debug_Pokemon(void)
             data = AllocZeroed(sizeof(struct PokemonDebugMenu));
             SetStructPtr(taskId, data);
 
-            data->currentmonId = SPECIES_BULBASAUR;
+            data->currentmonId = SPECIES_CHIBI_REIMU;
             species = data->currentmonId;
 
             //Print instructions

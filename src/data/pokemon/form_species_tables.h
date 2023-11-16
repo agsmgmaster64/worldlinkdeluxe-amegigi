@@ -1,5 +1,5 @@
 static const u16 sVenusaurFormSpeciesIdTable[] = {
-    SPECIES_VENUSAUR,
+    SPECIES_ATTACK_REIMU,
     SPECIES_VENUSAUR_MEGA,
     SPECIES_VENUSAUR_GIGANTAMAX,
     FORM_SPECIES_END,
@@ -34,7 +34,7 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
 //};
 
 static const u16 sCharizardFormSpeciesIdTable[] = {
-    SPECIES_CHARIZARD,
+    SPECIES_NORMAL_MARISA,
     SPECIES_CHARIZARD_MEGA_X,
     SPECIES_CHARIZARD_MEGA_Y,
     SPECIES_CHARIZARD_GIGANTAMAX,
@@ -42,44 +42,44 @@ static const u16 sCharizardFormSpeciesIdTable[] = {
 };
 
 static const u16 sBlastoiseFormSpeciesIdTable[] = {
-    SPECIES_BLASTOISE,
+    SPECIES_CHIBI_DAIYOUSEI,
     SPECIES_BLASTOISE_MEGA,
     SPECIES_BLASTOISE_GIGANTAMAX,
     FORM_SPECIES_END,
 };
 
 static const u16 sButterfreeFormSpeciesIdTable[] = {
-    SPECIES_BUTTERFREE,
+    SPECIES_DEFENSE_DAIYOUSEI,
     SPECIES_BUTTERFREE_GIGANTAMAX,
     FORM_SPECIES_END,
 };
 
 static const u16 sBeedrillFormSpeciesIdTable[] = {
-    SPECIES_BEEDRILL,
+    SPECIES_SPEED_CIRNO,
     SPECIES_BEEDRILL_MEGA,
     FORM_SPECIES_END,
 };
 
 static const u16 sPidgeotFormSpeciesIdTable[] = {
-    SPECIES_PIDGEOT,
+    SPECIES_NORMAL_RUMIA,
     SPECIES_PIDGEOT_MEGA,
     FORM_SPECIES_END,
 };
 
 static const u16 sRattataFormSpeciesIdTable[] = {
-    SPECIES_RATTATA,
+    SPECIES_ATTACK_RUMIA,
     SPECIES_RATTATA_ALOLAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sRaticateFormSpeciesIdTable[] = {
-    SPECIES_RATICATE,
+    SPECIES_SPEED_RUMIA,
     SPECIES_RATICATE_ALOLAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sPikachuFormSpeciesIdTable[] = {
-    SPECIES_PIKACHU,
+    SPECIES_CHIBI_KOAKUMA,
     SPECIES_PIKACHU_COSPLAY,
     SPECIES_PIKACHU_ROCK_STAR,
     SPECIES_PIKACHU_BELLE,
@@ -99,19 +99,19 @@ static const u16 sPikachuFormSpeciesIdTable[] = {
 };
 
 static const u16 sRaichuFormSpeciesIdTable[] = {
-    SPECIES_RAICHU,
+    SPECIES_NORMAL_KOAKUMA,
     SPECIES_RAICHU_ALOLAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sSandshrewFormSpeciesIdTable[] = {
-    SPECIES_SANDSHREW,
+    SPECIES_HELPER_KOAKUMA,
     SPECIES_SANDSHREW_ALOLAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sSandslashFormSpeciesIdTable[] = {
-    SPECIES_SANDSLASH,
+    SPECIES_PLCEHOLDER1_KOAKUMA,
     SPECIES_SANDSLASH_ALOLAN,
     FORM_SPECIES_END,
 };

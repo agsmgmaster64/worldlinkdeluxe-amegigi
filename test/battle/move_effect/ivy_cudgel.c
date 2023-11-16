@@ -6,10 +6,10 @@ SINGLE_BATTLE_TEST("Ivy Gudgel changes the move type depending on the mask the u
     u16 species;
     u16 item;
 
-    PARAMETRIZE { species = SPECIES_BLASTOISE; item = ITEM_NONE; }
-    PARAMETRIZE { species = SPECIES_CHARIZARD; item = ITEM_CORNERSTONE_MASK; }
-    PARAMETRIZE { species = SPECIES_CHARIZARD; item = ITEM_WELLSPRING_MASK; }
-    PARAMETRIZE { species = SPECIES_VENUSAUR; item = ITEM_HEARTHFLAME_MASK; }
+    PARAMETRIZE { species = SPECIES_CHIBI_DAIYOUSEI; item = ITEM_NONE; }
+    PARAMETRIZE { species = SPECIES_NORMAL_MARISA; item = ITEM_CORNERSTONE_MASK; }
+    PARAMETRIZE { species = SPECIES_NORMAL_MARISA; item = ITEM_WELLSPRING_MASK; }
+    PARAMETRIZE { species = SPECIES_ATTACK_REIMU; item = ITEM_HEARTHFLAME_MASK; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(item); }

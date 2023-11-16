@@ -229,7 +229,7 @@
  *         PARAMETRIZE { hp = 33; }
  *         GIVEN {
  *             ASSUME(gBattleMoves[MOVE_EMBER].type == TYPE_FIRE);
- *             PLAYER(SPECIES_CHARMANDER) { Ability(ABILITY_BLAZE); MaxHP(99); HP(hp); }
+ *             PLAYER(SPECIES_DEFENSE_REIMU) { Ability(ABILITY_BLAZE); MaxHP(99); HP(hp); }
  *             OPPONENT(SPECIES_WOBBUFFET);
  *         } WHEN {
  *             TURN { MOVE(player, MOVE_EMBER); }

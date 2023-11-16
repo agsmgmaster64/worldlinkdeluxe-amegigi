@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Red Card switches the attacker with a random non-fainted rep
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_BULBASAUR);
-        OPPONENT(SPECIES_CHARMANDER);
-        OPPONENT(SPECIES_SQUIRTLE) { HP(0); }
+        OPPONENT(SPECIES_CHIBI_REIMU);
+        OPPONENT(SPECIES_DEFENSE_REIMU);
+        OPPONENT(SPECIES_ATTACK_MARISA) { HP(0); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -35,9 +35,9 @@ DOUBLE_BATTLE_TEST("Red Card switches the target with a random non-battler, non-
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_BULBASAUR);
-        OPPONENT(SPECIES_CHARMANDER);
-        OPPONENT(SPECIES_SQUIRTLE) { HP(0); }
+        OPPONENT(SPECIES_CHIBI_REIMU);
+        OPPONENT(SPECIES_DEFENSE_REIMU);
+        OPPONENT(SPECIES_ATTACK_MARISA) { HP(0); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); }
     } SCENE {

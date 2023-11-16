@@ -938,7 +938,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_TRADE]         = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel1),
     [ACTIONS_SPIN_TRADE]    = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel2),
     [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
-    [ACTIONS_MISC]          = ARRAY_COUNT(sPartyMenuAction_MiscCancel)
+    [ACTIONS_MISC]          = ARRAY_COUNT(sPartyMenuAction_MiscCancel),
     [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
 };

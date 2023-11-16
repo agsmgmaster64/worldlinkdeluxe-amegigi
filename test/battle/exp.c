@@ -12,7 +12,7 @@ WILD_BATTLE_TEST("Pokemon gain exp after catching a Pokemon")
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
-        OPPONENT(SPECIES_CATERPIE) { HP(1); }
+        OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { HP(1); }
     } WHEN {
         TURN { USE_ITEM(player, ITEM_ULTRA_BALL_HISUI); }
     } SCENE {
@@ -35,7 +35,7 @@ WILD_BATTLE_TEST("Higher leveled Pokemon give more exp", s32 exp)
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Level(20); }
-        OPPONENT(SPECIES_CATERPIE) { Level(level); HP(1); }
+        OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Level(level); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -56,7 +56,7 @@ WILD_BATTLE_TEST("Lucky Egg boosts gained exp points by 50%", s32 exp)
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Level(20); Item(item); }
-        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); }
+        OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Level(10); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -79,7 +79,7 @@ WILD_BATTLE_TEST("Exp is scaled to player and opponent's levels", s32 exp)
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
-        OPPONENT(SPECIES_CATERPIE) { Level(5); HP(1); }
+        OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Level(5); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -131,7 +131,7 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WYNAUT) { Level(40); Item(item); }
-        OPPONENT(SPECIES_CATERPIE) { Level(10); HP(1); }
+        OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Level(10); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {

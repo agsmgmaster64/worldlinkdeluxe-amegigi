@@ -470,7 +470,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Instruct")
 SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms change upon Dynamaxing")
 {
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR);
+        PLAYER(SPECIES_ATTACK_REIMU);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
@@ -482,7 +482,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms change upon Dynamaxi
 SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms revert upon switching")
 {
     GIVEN {
-        PLAYER(SPECIES_VENUSAUR);
+        PLAYER(SPECIES_ATTACK_REIMU);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -490,7 +490,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms revert upon switchin
         TURN { SWITCH(player, 1); }
         TURN { SWITCH(player, 0); }
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_VENUSAUR);
+        EXPECT_EQ(player->species, SPECIES_ATTACK_REIMU);
     }
 }
 
@@ -941,7 +941,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Volt Crash paralyzes both opponents")
 {
     GIVEN {
         ASSUME(gBattleMoves[MOVE_G_MAX_VOLT_CRASH].argument == MAX_EFFECT_PARALYZE_FOES);
-        PLAYER(SPECIES_PIKACHU);
+        PLAYER(SPECIES_CHIBI_KOAKUMA);
         PLAYER(SPECIES_PICHU);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
@@ -1040,8 +1040,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Befuddle paralyzes, poisons, or sleeps both 
     PARAMETRIZE { statusAnim = B_ANIM_STATUS_SLP; rng = STATUS1_SLEEP; }
     GIVEN {
         ASSUME(gBattleMoves[MOVE_G_MAX_BEFUDDLE].argument == MAX_EFFECT_EFFECT_SPORE_FOES);
-        PLAYER(SPECIES_BUTTERFREE);
-        PLAYER(SPECIES_CATERPIE);
+        PLAYER(SPECIES_DEFENSE_DAIYOUSEI);
+        PLAYER(SPECIES_NORMAL_DAIYOUSEI);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -1202,8 +1202,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Wildfire sets a field effect that damages no
     s16 damage;
     GIVEN {
         ASSUME(gBattleMoves[MOVE_G_MAX_WILDFIRE].argument == MAX_EFFECT_WILDFIRE);
-        PLAYER(SPECIES_CHARIZARD);
-        PLAYER(SPECIES_CHARMANDER);
+        PLAYER(SPECIES_NORMAL_MARISA);
+        PLAYER(SPECIES_DEFENSE_REIMU);
         OPPONENT(SPECIES_WOBBUFFET) { HP(600); MaxHP(600); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_ARCANINE);

@@ -233,8 +233,8 @@ DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this
         ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[1] != TYPE_FLYING);
         PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_COLOR_CHANGE); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
-        OPPONENT(SPECIES_PIDGEY) { Speed(30); }
-        OPPONENT(SPECIES_SANDSHREW) { Speed(20); }
+        OPPONENT(SPECIES_TECH_CIRNO) { Speed(30); }
+        OPPONENT(SPECIES_HELPER_KOAKUMA) { Speed(20); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_ROOST);
                MOVE(opponentLeft, MOVE_GUST, target: playerLeft);

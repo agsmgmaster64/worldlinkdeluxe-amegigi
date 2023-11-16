@@ -73,7 +73,7 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                         .friendship = MAX_FRIENDSHIP
                     },
                     [2] = {
-                        .species = SPECIES_SANDSHREW,
+                        .species = SPECIES_HELPER_KOAKUMA,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = { MOVE_SCRATCH, MOVE_POISON_STING, MOVE_SAND_ATTACK, MOVE_SWIFT },
                         .hpEV = 110,
@@ -1166,7 +1166,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [5] =
                     {
-                        .species = SPECIES_CHARIZARD,
+                        .species = SPECIES_NORMAL_MARISA,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_OVERHEAT, MOVE_BEAT_UP, MOVE_SCARY_FACE, MOVE_GROWL},
                         .hpEV = 6,
@@ -1533,7 +1533,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_PIKACHU,
+                                            .species = SPECIES_CHIBI_KOAKUMA,
                                             .heldItem = ITEM_SITRUS_BERRY,
                                             .moves = {MOVE_PRANK, MOVE_GROWL, MOVE_TAIL_WHIP, MOVE_AGILITY},
                                             .attackEV = 255,
@@ -1854,7 +1854,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_PIDGEOTTO,
+                                            .species = SPECIES_CHIBI_RUMIA,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_FEATHER_DANCE, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_NONE},
                                             .hpEV = 85,
@@ -2656,7 +2656,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_VENUSAUR,
+                                            .species = SPECIES_ATTACK_REIMU,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_EARTHQUAKE, MOVE_SYNTHESIS, MOVE_SUNNY_DAY},
                                             .hpEV = 100,
@@ -2786,7 +2786,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_BLASTOISE,
+                                            .species = SPECIES_CHIBI_DAIYOUSEI,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_HYDRO_PUMP, MOVE_BITE, MOVE_MIRROR_COAT, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
@@ -3101,7 +3101,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_BEEDRILL,
+                                            .species = SPECIES_SPEED_CIRNO,
                                             .heldItem = ITEM_SHELL_BELL,
                                             .moves = {MOVE_SEAL_NEEDLE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
@@ -3120,7 +3120,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_RATICATE,
+                                            .species = SPECIES_SPEED_RUMIA,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_SUPER_FANG, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
@@ -3167,7 +3167,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_CHARMELEON,
+                                            .species = SPECIES_CHIBI_MARISA,
                                             .heldItem = ITEM_GOTHIC_DRESS,
                                             .moves = {MOVE_FIRE_SPIN, MOVE_DRAGON_RAGE, MOVE_FLAMETHROWER, MOVE_SLASH},
                                             .hpEV = 252,
@@ -3187,7 +3187,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_WARTORTLE,
+                                            .species = SPECIES_SPEED_MARISA,
                                             .heldItem = ITEM_SWIMSUIT,
                                             .moves = {MOVE_HYDRO_PUMP, MOVE_SKULL_BASH, MOVE_RAIN_DANCE, MOVE_PROTECT},
                                             .hpEV = 250,
@@ -3206,7 +3206,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_IVYSAUR,
+                                            .species = SPECIES_NORMAL_REIMU,
                                             .heldItem = ITEM_CAMOUFLAGE,
                                             .moves = {MOVE_SOLAR_BEAM, MOVE_SYNTHESIS, MOVE_GROWTH, MOVE_NATURE_POWER},
                                             .hpEV = 252,
