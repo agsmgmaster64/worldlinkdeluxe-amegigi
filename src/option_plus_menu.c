@@ -45,6 +45,7 @@ enum
     MENUITEM_CUSTOM_FONT,
     MENUITEM_CUSTOM_MATCHCALL,
     MENUITEM_CUSTOM_MUSIC_STYLE,
+    MENUITEM_CUSTOM_UNIQUE_COLORS,
     MENUITEM_CUSTOM_CANCEL,
     MENUITEM_CUSTOM_COUNT,
 };
@@ -167,6 +168,7 @@ static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
 static void DrawChoices_MusicStyle(int selection, int y);
+static void DrawChoices_UniqueColors(int selection, int y);
 static void DrawBgWindowFrames(void);
 
 // EWRAM vars
@@ -220,6 +222,7 @@ struct // MENU_CUSTOM
     [MENUITEM_CUSTOM_FONT]         = {DrawChoices_Font,        ProcessInput_Options_Two}, 
     [MENUITEM_CUSTOM_MATCHCALL]    = {DrawChoices_MatchCall,   ProcessInput_Options_Two},
     [MENUITEM_CUSTOM_MUSIC_STYLE]  = {DrawChoices_MusicStyle,  ProcessInput_Options_Four},
+    [MENUITEM_CUSTOM_UNIQUE_COLORS]  = {DrawChoices_UniqueColors,  ProcessInput_Options_Two},
     [MENUITEM_CUSTOM_CANCEL]       = {NULL, NULL},
 };
 
@@ -246,6 +249,7 @@ static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_CUSTOM_COUNT] =
     [MENUITEM_CUSTOM_FONT]        = gText_Font,
     [MENUITEM_CUSTOM_MATCHCALL]   = gText_OptionMatchCalls,
     [MENUITEM_CUSTOM_MUSIC_STYLE] = gText_OptionMusicStyle,
+    [MENUITEM_CUSTOM_UNIQUE_COLORS] = gText_OptionUniqueColors,
     [MENUITEM_CUSTOM_CANCEL]      = gText_OptionMenuSave,
 };
 
@@ -284,6 +288,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CUSTOM_FONT:            return TRUE;
         case MENUITEM_CUSTOM_MATCHCALL:       return TRUE;
         case MENUITEM_CUSTOM_MUSIC_STYLE:     return TRUE;
+        case MENUITEM_CUSTOM_UNIQUE_COLORS:   return TRUE;
         case MENUITEM_CUSTOM_CANCEL:          return TRUE;
         case MENUITEM_CUSTOM_COUNT:           return TRUE;
         }
@@ -329,6 +334,8 @@ static const u8 sText_Desc_FontType[]           = _("Choose the font design.");
 static const u8 sText_Desc_OverworldCallsOn[]   = _("TRAINERs will be able to call you,\noffering rematches and info.");
 static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.\nSpecial events will still occur.");
 static const u8 sText_Desc_MusicType[]          = _("Choose the music used.");
+static const u8 sText_Desc_UniqueColorsOn[]     = _("Enables unique colors for\nPuppets.");
+static const u8 sText_Desc_UniqueColorsOff[]    = _("Disables unique colors for\nPuppets.");
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][2] =
 {
     [MENUITEM_CUSTOM_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
@@ -336,6 +343,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][
     [MENUITEM_CUSTOM_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
     [MENUITEM_CUSTOM_MATCHCALL]   = {sText_Desc_OverworldCallsOn,   sText_Desc_OverworldCallsOff},
     [MENUITEM_CUSTOM_MUSIC_STYLE] = {sText_Desc_MusicType,          sText_Empty},
+    [MENUITEM_CUSTOM_UNIQUE_COLORS] = {sText_Desc_UniqueColorsOn,   sText_Desc_UniqueColorsOff},
     [MENUITEM_CUSTOM_CANCEL]      = {sText_Desc_Save,               sText_Empty},
 };
 
@@ -362,6 +370,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM
     [MENUITEM_CUSTOM_FONT]        = sText_Empty,
     [MENUITEM_CUSTOM_MATCHCALL]   = sText_Empty,
     [MENUITEM_CUSTOM_MUSIC_STYLE] = sText_Empty,
+    [MENUITEM_CUSTOM_UNIQUE_COLORS] = sText_Empty,
     [MENUITEM_CUSTOM_CANCEL]      = sText_Empty,
 };
 
@@ -608,6 +617,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_custom[MENUITEM_CUSTOM_FONT]        = gSaveBlock2Ptr->optionsCurrentFont;
         sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
         sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE] = gSaveBlock2Ptr->optionsMusicStyle;
+        sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
         sOptions->submenu = MENU_MAIN;
 
         gMain.state++;
@@ -797,6 +807,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_custom[MENUITEM_CUSTOM_FONT];
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL];
     gSaveBlock2Ptr->optionsMusicStyle       = sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE];
+    gSaveBlock2Ptr->optionsUniqueColors     = sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1159,6 +1170,16 @@ static void DrawChoices_MusicStyle(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_CUSTOM_MUSIC_STYLE);
     DrawChoices_Options_Four(sMusicStyleStrings, selection, y, active);
+}
+
+static void DrawChoices_UniqueColors(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_CUSTOM_UNIQUE_COLORS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
 // Background tilemap

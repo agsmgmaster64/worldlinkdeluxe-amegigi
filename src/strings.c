@@ -1441,6 +1441,7 @@ const u8 gText_OptionMenuCancel[] = _("CANCEL");
 const u8 gText_Font[] = _("FONT");  //tx_optionsPlus
 const u8 gText_OptionMatchCalls[] = _("OVERWORLD CALLS");    //tx_optionsPlus
 const u8 gText_OptionMusicStyle[] = _("MUSIC STYLE");    //tx_optionsPlus
+const u8 gText_OptionUniqueColors[] = _("UNIQUE COLORS");    //tx_optionsPlus
 const u8 gText_OptionMenuSave[] = _("SAVE");
 const u8 gText_ButtonMode[] = _("BUTTON MODE");
 const u8 gText_TextSpeedSlow[] = _("SLOW");

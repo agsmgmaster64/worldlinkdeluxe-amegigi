@@ -421,6 +421,9 @@ void UniquePalette(u16 palOffset, u16 species, u32 personality, bool8 isShiny)
         {
             u16 index = i + palOffset;
             struct PlttData *data1 = (struct PlttData *)&gPlttBufferUnfaded[index];
+            s8 originalR = data1->r;
+            s8 originalG = data1->g;
+            s8 originalB = data1->b;
             s8 r = data1->r + dr - 2;
             s8 g = data1->g + dg - 2;
             s8 b = data1->b + db - 2;
@@ -438,7 +441,10 @@ void UniquePalette(u16 palOffset, u16 species, u32 personality, bool8 isShiny)
             if (b < 0)
                 b = db / 2;
 
-            gPlttBufferFaded[index] = RGB(r, g, b);
+            if (gSaveBlock2Ptr->optionsUniqueColors == 1)
+                gPlttBufferFaded[index] = RGB(originalR, originalG, originalB);
+            else
+                gPlttBufferFaded[index] = RGB(r, g, b);
         }
     }
     else
@@ -447,6 +453,9 @@ void UniquePalette(u16 palOffset, u16 species, u32 personality, bool8 isShiny)
         {
             u16 index = i + palOffset;
             struct PlttData *data1 = (struct PlttData *)&gPlttBufferUnfaded[index];
+            s8 originalR = data1->r;
+            s8 originalG = data1->g;
+            s8 originalB = data1->b;
             s32 r = (data1->r * 1000) / 31;
             s32 g = (data1->g * 1000) / 31;
             s32 b = (data1->b * 1000) / 31;
@@ -545,7 +554,10 @@ void UniquePalette(u16 palOffset, u16 species, u32 personality, bool8 isShiny)
                 b = l;
             }
 
-            gPlttBufferFaded[index] = RGB((u8)(r * 31 / 1000), (u8)(g * 31 / 1000), (u8)(b * 31 / 1000));
+            if (gSaveBlock2Ptr->optionsUniqueColors == 1)
+                gPlttBufferFaded[index] = RGB(originalR, originalG, originalB);
+            else
+                gPlttBufferFaded[index] = RGB((u8)(r * 31 / 1000), (u8)(g * 31 / 1000), (u8)(b * 31 / 1000));
         }
     }
 }
