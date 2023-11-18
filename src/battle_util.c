@@ -303,7 +303,6 @@ void HandleAction_UseMove(void)
         gCurrentMove = gBattleStruct->zmove.toBeUsed[gBattlerAttacker];
     }
 
-
     if (gBattleMons[gBattlerAttacker].hp != 0)
     {
         if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
@@ -538,7 +537,7 @@ void HandleAction_UseItem(void)
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
-    ClearFuryCutterDestinyBondGrudge(gBattlerAttacker);
+    ClearVariousBattlerFlags(gBattlerAttacker);
 
     gLastUsedItem = gBattleResources->bufferB[gBattlerAttacker][1] | (gBattleResources->bufferB[gBattlerAttacker][2] << 8);
     gBattlescriptCurrInstr = gBattlescriptsForUsingItem[ItemId_GetBattleUsage(gLastUsedItem) - 1];
@@ -664,7 +663,7 @@ void HandleAction_Run(void)
         {
             if (!TryRunFromBattle(gBattlerAttacker)) // failed to run away
             {
-                ClearFuryCutterDestinyBondGrudge(gBattlerAttacker);
+                ClearVariousBattlerFlags(gBattlerAttacker);
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE_2;
                 gBattlescriptCurrInstr = BattleScript_PrintFailedToRunString;
                 gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
@@ -1324,6 +1323,7 @@ const u8* CancelMultiTurnMoves(u32 battler)
 
     gDisableStructs[battler].rolloutTimer = 0;
     gDisableStructs[battler].furyCutterCounter = 0;
+
     return result;
 }
 
@@ -2460,7 +2460,6 @@ enum
     ENDTURN_POWDER,
     ENDTURN_THROAT_CHOP,
     ENDTURN_SLOW_START,
-    ENDTURN_PLASMA_FISTS,
     ENDTURN_CUD_CHEW,
     ENDTURN_TORMENT, // supposedly this goes after Taunt, before Encore, but Encore is first right now?
     ENDTURN_SALT_CURE,
@@ -2997,10 +2996,6 @@ u8 DoBattlerEndTurnEffects(void)
             }
             gBattleStruct->turnEffectsTracker++;
             break;
-        case ENDTURN_PLASMA_FISTS:
-            gStatuses4[battler] &= ~STATUS4_PLASMA_FISTS;
-            gBattleStruct->turnEffectsTracker++;
-            break;
         case ENDTURN_CUD_CHEW:
             if (GetBattlerAbility(battler) == ABILITY_CUD_CHEW && !gDisableStructs[battler].cudChew && ItemId_GetPocket(GetUsedHeldItem(battler)) == POCKET_BERRIES)
                 gDisableStructs[battler].cudChew = TRUE;
@@ -3306,6 +3301,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
         case CANCELLER_FLAGS: // flags clear
             gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_DESTINY_BOND;
             gStatuses3[gBattlerAttacker] &= ~STATUS3_GRUDGE;
+            gStatuses4[gBattlerAttacker] &= ~ STATUS4_GLAIVE_RUSH;
             gBattleScripting.tripleKickPower = 0;
             gBattleStruct->atkCancellerTracker++;
             break;
@@ -7912,11 +7908,12 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
     return effect;
 }
 
-void ClearFuryCutterDestinyBondGrudge(u32 battler)
+void ClearVariousBattlerFlags(u32 battler)
 {
     gDisableStructs[battler].furyCutterCounter = 0;
     gBattleMons[battler].status2 &= ~STATUS2_DESTINY_BOND;
     gStatuses3[battler] &= ~STATUS3_GRUDGE;
+    gStatuses4[battler] &= ~ STATUS4_GLAIVE_RUSH;
 }
 
 void HandleAction_RunBattleScript(void) // identical to RunBattleScriptCommands
@@ -9552,6 +9549,13 @@ static inline uq4_12_t GetCriticalModifier(bool32 isCrit)
     return UQ_4_12(1.0);
 }
 
+static inline uq4_12_t GetGlaiveRushModifier(u32 battlerDef)
+{
+    if (gStatuses4[battlerDef] & STATUS4_GLAIVE_RUSH)
+        return UQ_4_12(2.0);
+    return UQ_4_12(1.0);
+}
+
 static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(u32 battlerDef, u32 move)
 {
     if ((gBattleStruct->zmove.active || IsMaxMove(move)) && IS_BATTLER_PROTECTED(battlerDef))
@@ -9787,7 +9791,8 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
     DAMAGE_APPLY_MODIFIER(GetParentalBondModifier(battlerAtk));
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(battlerAtk, move, moveType, holdEffectAtk, holdEffectDef, weather));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(isCrit));
-    // TODO: Glaive Rush (Gen IX effect)
+    DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(battlerDef));
+
     if (randomFactor)
     {
         dmg *= 100 - RandomUniform(RNG_DAMAGE_MODIFIER, 0, 15);

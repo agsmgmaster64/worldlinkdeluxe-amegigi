@@ -440,11 +440,17 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSyrupBomb               @ EFFECT_SYRUP_BOMB
 	.4byte BattleScript_EffectHit                     @ EFFECT_IVY_CUDGEL
 	.4byte BattleScript_EffectMaxMove                 @ EFFECT_MAX_MOVE
+	.4byte BattleScript_EffectGlaiveRush              @ EFFECT_GLAIVE_RUSH
+
+BattleScript_EffectGlaiveRush::
+	call BattleScript_EffectHit_Ret
+	jumpifhalfword CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_TryFaintMon
+	setglaiverush
+	goto BattleScript_TryFaintMon
 
 BattleScript_EffectSyrupBomb::
 	setmoveeffect MOVE_EFFECT_SYRUP_BOMB
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
 	tryfaintmon BS_TARGET
 	goto BattleScript_MoveEnd
 
@@ -530,7 +536,6 @@ BattleScript_EffectMakeItRain:
 BattleScript_MakeItRainContinuous:
 	setmoveeffect MOVE_EFFECT_PAYDAY
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
 	tryfaintmon BS_TARGET
 	setmoveeffect MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
 	seteffectprimary
@@ -1168,9 +1173,8 @@ BattleScript_HyperspaceFuryRemoveProtect::
 
 BattleScript_EffectPlasmaFists:
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
 	tryfaintmon BS_TARGET
-	applyplasmafists
+	orword gFieldStatuses, STATUS_FIELD_ION_DELUGE
 	printstring STRINGID_IONDELUGEON
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
@@ -1346,12 +1350,12 @@ BattleScript_NoMoveEffect:
 	goto BattleScript_EffectHit
 
 BattleScript_EffectRelicSong:
-	setmoveeffect MOVE_EFFECT_RELIC_SONG | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	setmoveeffect MOVE_EFFECT_SLEEP
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
-	argumentstatuseffect
 	tryfaintmon BS_TARGET
-	goto BattleScript_MoveEnd
+	moveendall
+	tryrelicsong
+	end
 
 BattleScript_EffectAllySwitch:
 	attackcanceler
@@ -3129,6 +3133,7 @@ BattleScript_HitFromAtkAnimation::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	seteffectwithchance
+BattleScript_TryFaintMon::
 	tryfaintmon BS_TARGET
 BattleScript_MoveEnd::
 	moveendall
@@ -3153,6 +3158,7 @@ BattleScript_EffectHit_Ret::
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	seteffectwithchance
 	return
 
 BattleScript_EffectNaturalGift:
@@ -3347,7 +3353,6 @@ BattleScript_EffectPoisonHit:
 
 BattleScript_EffectAbsorb::
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
 	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_AbsorbHealBlock
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
@@ -3781,7 +3786,6 @@ BattleScript_EffectFlinchHit::
 BattleScript_EffectFlinchStatus:
 	setmoveeffect MOVE_EFFECT_FLINCH
 	call BattleScript_EffectHit_Ret
-	seteffectwithchance
 	argumentstatuseffect
 	tryfaintmon BS_TARGET
 	goto BattleScript_MoveEnd
@@ -7808,7 +7812,7 @@ BattleScript_AttackerFormChangeMoveEffect::
 	printstring STRINGID_PKMNTRANSFORMED
 	waitmessage B_WAIT_TIME_LONG
 	handleformchange BS_ATTACKER, 2
-	end3
+	return
 
 BattleScript_BallFetch::
 	call BattleScript_AbilityPopUp
