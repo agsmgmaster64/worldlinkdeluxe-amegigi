@@ -26,10 +26,10 @@ SINGLE_BATTLE_TEST("Poison Sting inflicts poison")
 SINGLE_BATTLE_TEST("Poison cannot be inflicted on Poison and Steel-type Pokémon")
 {
     u32 mon;
-    PARAMETRIZE { mon = SPECIES_NIDORAN_M; }
+    PARAMETRIZE { mon = SPECIES_DEFENSE_PATCHOULI; }
     PARAMETRIZE { mon = SPECIES_REGISTEEL; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_NIDORAN_M].types[0] == TYPE_MIASMA);
+        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_PATCHOULI].types[0] == TYPE_MIASMA);
         ASSUME(gSpeciesInfo[SPECIES_REGISTEEL].types[0] == TYPE_STEEL);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon);

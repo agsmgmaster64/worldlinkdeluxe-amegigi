@@ -32,8 +32,8 @@
 #define SPECIES_PLCEHOLDER1_KOAKUMA                     28
 #define SPECIES_CHIBI_PATCHOULI                         29
 #define SPECIES_NORMAL_PATCHOULI                        30
-#define SPECIES_NIDOQUEEN                               31
-#define SPECIES_NIDORAN_M                               32
+#define SPECIES_ATTACK_PATCHOULI                        31
+#define SPECIES_DEFENSE_PATCHOULI                       32
 #define SPECIES_NIDORINO                                33
 #define SPECIES_NIDOKING                                34
 #define SPECIES_CLEFAIRY                                35

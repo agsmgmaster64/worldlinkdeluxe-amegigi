@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact")
         ASSUME(gBattleMoves[MOVE_TACKLE].makesContact);
         ASSUME(!gBattleMoves[MOVE_SWIFT].makesContact);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_NIDORAN_M) { Ability(ABILITY_POISON_BODY); }
+        OPPONENT(SPECIES_DEFENSE_PATCHOULI) { Ability(ABILITY_POISON_BODY); }
     } WHEN {
         TURN { MOVE(player, move); }
         TURN {}

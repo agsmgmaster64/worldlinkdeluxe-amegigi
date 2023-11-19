@@ -4,7 +4,7 @@
 ASSUMPTIONS
 {
     ASSUME(gSpeciesInfo[SPECIES_NIDOKING].genderRatio == MON_MALE);
-    ASSUME(gSpeciesInfo[SPECIES_NIDOQUEEN].genderRatio == MON_FEMALE);
+    ASSUME(gSpeciesInfo[SPECIES_ATTACK_PATCHOULI].genderRatio == MON_FEMALE);
     ASSUME(gSpeciesInfo[SPECIES_PORYGON].genderRatio == MON_GENDERLESS);
 }
 
@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Rivalry increases power by x1.25 towards Pokémon of the sam
     u16 species, ability;
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_POINT; }
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_POISON_POINT; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_POINT; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
     GIVEN {
         PLAYER(species) { Ability(ability); }
@@ -33,10 +33,10 @@ SINGLE_BATTLE_TEST("Rivalry increases power by x1.25 towards Pokémon of the sam
 SINGLE_BATTLE_TEST("Rivalry decreases power by x0.75 towards Pokémon of different gender", s16 damage)
 {
     u16 species1, species2, ability;
-    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_NIDOQUEEN; ability = ABILITY_POISON_POINT; }
-    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_NIDOQUEEN; ability = ABILITY_RIVALRY; }
-    PARAMETRIZE { species1 = SPECIES_NIDOQUEEN; species2 = SPECIES_NIDOKING; ability = ABILITY_POISON_POINT; }
-    PARAMETRIZE { species1 = SPECIES_NIDOQUEEN; species2 = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_POINT; }
+    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NIDOKING; ability = ABILITY_POISON_POINT; }
+    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
 
     GIVEN {
         PLAYER(species1) { Ability(ability); }
@@ -57,8 +57,8 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless",
     u16 species, ability;
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_POINT; }
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_POISON_POINT; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_POINT; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_PORYGON].abilities[0] == ABILITY_TRACE);
@@ -81,8 +81,8 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the target is genderless", s
     u16 species, ability;
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_POINT; }
     PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_POISON_POINT; }
-    PARAMETRIZE { species = SPECIES_NIDOQUEEN; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_POINT; }
+    PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
     GIVEN {
         PLAYER(species) { Ability(ability); };
