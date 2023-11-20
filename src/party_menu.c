@@ -1652,7 +1652,7 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
         switch (movementDir)
         {
         case MENU_DIR_UP:
-            if (*slotPtr == 0)
+            if ((*slotPtr == 0) || (*slotPtr == 1))
             {
                 *slotPtr = PARTY_SIZE + 1;
             }
@@ -1667,7 +1667,7 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
                 else
                     *slotPtr = gPlayerPartyCount - 1;
             }
-            else if (*slotPtr-2 >= 0)
+            else if (*slotPtr - 2 >= 0)
             {
                 *slotPtr -= 2; //(*slotPtr)--;
             }
@@ -1676,6 +1676,10 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
             if (*slotPtr == PARTY_SIZE + 1)
             {
                 *slotPtr = 0;
+            }
+            else if (*slotPtr == 4)
+            {
+                *slotPtr = PARTY_SIZE + 1;
             }
             else
             {
@@ -1686,29 +1690,58 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
                     else
                         *slotPtr = PARTY_SIZE + 1;
                 }
-                else if(*slotPtr+2 < gPlayerPartyCount)
+                else if (*slotPtr + 2 < gPlayerPartyCount)
                 {
                     *slotPtr += 2;//(*slotPtr)++;
-                }else
+                }
+                else
+                {
                     (*slotPtr)++;
+                }
             }
             break;
         case MENU_DIR_RIGHT:
-            if (gPlayerPartyCount != 1 && *slotPtr%2 == 0)
+            if (gPlayerPartyCount != 1)
             {
-                if (*slotPtr+1 < gPlayerPartyCount)
+                if ((*slotPtr + 1 < gPlayerPartyCount) || (*slotPtr == PARTY_SIZE))
                     (*slotPtr)++;
                 // else
                 //     *slotPtr = sPartyMenuInternal->lastSelectedSlot;
+            }
+            else if (*slotPtr == gPlayerPartyCount)
+            {
+                if (sPartyMenuInternal->chooseHalf)
+                    *slotPtr = PARTY_SIZE;
+                else
+                    *slotPtr = PARTY_SIZE + 1;
+            }
+            else if (*slotPtr == PARTY_SIZE + 1)
+            {
+                *slotPtr = 0;
             }
             break;
         case MENU_DIR_LEFT:
             if (*slotPtr != 0 && *slotPtr != PARTY_SIZE && *slotPtr != PARTY_SIZE + 1)
             {
-                if (*slotPtr-1 >= 0 && *slotPtr%2 == 1)
+                if (*slotPtr - 1 >= 0)
                     (*slotPtr)--;
                 // sPartyMenuInternal->lastSelectedSlot = *slotPtr;
                 // *slotPtr = 0;
+            }
+            else if (*slotPtr != 0)
+            {
+                *slotPtr = PARTY_SIZE + 1;
+            }
+            else if (*slotPtr == PARTY_SIZE + 1)
+            {
+                if (sPartyMenuInternal->chooseHalf)
+                    *slotPtr = PARTY_SIZE;
+                else
+                    *slotPtr = gPlayerPartyCount - 1;
+            }
+            else // if (*slotPtr != PARTY_SIZE)
+            {
+                *slotPtr = gPlayerPartyCount - 1;
             }
             break;
         }
