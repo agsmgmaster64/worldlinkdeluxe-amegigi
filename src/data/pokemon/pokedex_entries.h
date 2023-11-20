@@ -372,7 +372,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_NIDOQUEEN] =
+    [NATIONAL_DEX_ATTACK_PATCHOULI] =
     {
         .categoryName = _("Drill"),
         .height = 13,
@@ -384,7 +384,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_NIDORAN_M] =
+    [NATIONAL_DEX_DEFENSE_PATCHOULI] =
     {
         .categoryName = _("Poison Pin"),
         .height = 5,

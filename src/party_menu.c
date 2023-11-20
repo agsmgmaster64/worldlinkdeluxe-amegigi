@@ -857,7 +857,7 @@ static void InitPartyMenuBoxes(u8 layout)
     if (layout != PARTY_LAYOUT_SINGLE) //Custom party menu
         sPartyMenuBoxes[0].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
 
-    if (layout == PARTY_LAYOUT_MULTI_SHOWCASE)
+    if (layout == PARTY_LAYOUT_MULTI_SHOWCASE) // tweak?
         sPartyMenuBoxes[3].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
     else if (layout != PARTY_LAYOUT_SINGLE)
         sPartyMenuBoxes[1].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
