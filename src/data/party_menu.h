@@ -258,11 +258,11 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate_Equal[] = //Cu
         .paletteNum = 8,
         .baseBlock = 0x39A, //0x181,
     },
-    {
+    [WIN_MSG] = {
         .bg = 2,
         .tilemapLeft = 4,
         .tilemapTop = 15,
-        .width = 28,
+        .width = 22,
         .height = 4,
         .paletteNum = 14,
         .baseBlock = 0x1DF, //0x1DF,
@@ -483,7 +483,7 @@ static const struct WindowTemplate sCancelButtonWindowTemplate_equal =
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x207, //0x1C7,  //Custom party menu
+    .baseBlock = 0x1C7, //0x1C7,  //Custom party menu
 };
 
 static const struct WindowTemplate sMultiCancelButtonWindowTemplate =
@@ -504,7 +504,7 @@ static const struct WindowTemplate sMultiCancelButtonWindowTemplate_equal =
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x207, //0x1C7,  //Custom party menu
+    .baseBlock = 0x1C7, //0x1C7,  //Custom party menu
 };
 
 static const struct WindowTemplate sConfirmButtonWindowTemplate =
@@ -525,7 +525,7 @@ static const struct WindowTemplate sConfirmButtonWindowTemplate_equal =
     .width = 6,
     .height = 2,
     .paletteNum = 3,
-    .baseBlock = 0x213, //0x1D3,  //Custom party menu
+    .baseBlock = 0x1D3, //0x1D3,  //Custom party menu
 };
 
 static const struct WindowTemplate sDefaultPartyMsgWindowTemplate =
