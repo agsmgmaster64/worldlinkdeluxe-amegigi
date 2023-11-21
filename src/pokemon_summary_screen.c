@@ -316,7 +316,7 @@ static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
 
-int GetNatureColourID(s8 natureMod);
+static u8 GetNatureColourID(s8 natureMod);
 static void PrintNatureColouredStatNames(void);
 
 // const rom data
@@ -4285,9 +4285,10 @@ static void KeepMoveSelectorVisible(u8 firstSpriteId)
         gSprites[spriteIds[i]].invisible = FALSE;
     }
 }
-int GetNatureColourID(s8 natureMod)
+
+static u8 GetNatureColourID(s8 natureMod)
 {
-    if (natureMod == 0)
+    if (natureMod == 0 || !SUMMARY_SCREEN_NATURE_COLORS)
         return 1; // Neutral - White (Standard)
     else if (natureMod > 0)
         return 4; // Positive - Blue (Male)
