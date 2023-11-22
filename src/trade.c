@@ -150,6 +150,7 @@ enum {
 struct InGameTrade {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
     u16 species;
+    u8 level;
     u8 ivs[NUM_STATS];
     u8 abilityNum;
     u32 otId;
@@ -160,6 +161,8 @@ struct InGameTrade {
     u8 otName[11];
     u8 otGender;
     u8 hiddenNature;
+    u8 language;
+    u8 metLocation;
     u16 requestedSpecies;
 };
 
@@ -4528,14 +4531,12 @@ static void BufferInGameTradeMonName(void)
 static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTrade)
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
-    u8 level = GetMonData(&gPlayerParty[whichPlayerMon], MON_DATA_LEVEL);
 
     struct Mail mail;
-    u8 metLocation = METLOC_IN_GAME_TRADE;
     u8 mailNum;
     struct Pokemon *pokemon = &gEnemyParty[0];
 
-    CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
+    CreateMon(pokemon, inGameTrade->species, inGameTrade->level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
 
     SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
@@ -4553,7 +4554,8 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     SetMonData(pokemon, MON_DATA_SMART, &inGameTrade->conditions[3]);
     SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->conditions[4]);
     SetMonData(pokemon, MON_DATA_HIDDEN_NATURE, &inGameTrade->hiddenNature);
-    SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+    SetMonData(pokemon, MON_DATA_LANGUAGE, &inGameTrade->language);
+    SetMonData(pokemon, MON_DATA_MET_LOCATION, &inGameTrade->metLocation);
 
     mailNum = 0;
     if (inGameTrade->heldItem != ITEM_NONE)

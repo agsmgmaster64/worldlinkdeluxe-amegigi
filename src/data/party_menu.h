@@ -260,9 +260,9 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate_Equal[] = //Cu
     },
     [WIN_MSG] = {
         .bg = 2,
-        .tilemapLeft = 4,
+        .tilemapLeft = 3,
         .tilemapTop = 15,
-        .width = 22,
+        .width = 24,
         .height = 4,
         .paletteNum = 14,
         .baseBlock = 0x1DF, //0x1DF,

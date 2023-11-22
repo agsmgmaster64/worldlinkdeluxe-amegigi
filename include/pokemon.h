@@ -280,6 +280,7 @@ struct BattlePokemon
     /*0x55*/ u32 otId;
     /*0x59*/ u8 metLevel;
     /*0x5A*/ u8 hiddenNature;
+    /*0x5B*/ u8 language;
 };
 
 struct SpeciesInfo /*0x24*/

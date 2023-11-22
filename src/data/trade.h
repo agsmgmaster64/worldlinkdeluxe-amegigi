@@ -988,6 +988,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("DOTS"),
         .species = SPECIES_SEEDOT,
+        .level = 5;
         .ivs = {5, 4, 5, 4, 4, 4},
         .abilityNum = 1,
         .otId = 38726,
@@ -997,13 +998,16 @@ static const struct InGameTrade sIngameTrades[] =
         .mailNum = -1,
         .otName = _("KOBE"),
         .otGender = MALE,
-        .hiddenNature = 26,
+        .hiddenNature = HIDDEN_NATURE_NONE,
+        .language = LANGUAGE_ENGLISH,
+        .metLocation = METLOC_IN_GAME_TRADE;
         .requestedSpecies = SPECIES_RALTS
     },
     [INGAME_TRADE_PLUSLE] =
     {
         .nickname = _("PLUSES"),
         .species = SPECIES_PLUSLE,
+        .level = 5;
         .ivs = {4, 4, 4, 5, 5, 4},
         .abilityNum = 0,
         .otId = 73996,
@@ -1013,13 +1017,16 @@ static const struct InGameTrade sIngameTrades[] =
         .mailNum = 0,
         .otName = _("ROMAN"),
         .otGender = MALE,
-        .hiddenNature = 26,
+        .hiddenNature = HIDDEN_NATURE_NONE,
+        .language = LANGUAGE_ENGLISH,
+        .metLocation = METLOC_IN_GAME_TRADE;
         .requestedSpecies = SPECIES_VOLBEAT
     },
     [INGAME_TRADE_HORSEA] =
     {
         .nickname = _("SEASOR"),
         .species = SPECIES_HORSEA,
+        .level = 5;
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
         .otId = 46285,
@@ -1029,13 +1036,16 @@ static const struct InGameTrade sIngameTrades[] =
         .mailNum = 1,
         .otName = _("SKYLAR"),
         .otGender = MALE,
-        .hiddenNature = 26,
+        .hiddenNature = HIDDEN_NATURE_NONE,
+        .language = LANGUAGE_ENGLISH,
+        .metLocation = METLOC_IN_GAME_TRADE;
         .requestedSpecies = SPECIES_BAGON
     },
     [INGAME_TRADE_MEOWTH] =
     {
-        .nickname = _("MEOWOW"),
+        .nickname = _("ヌケニン"),
         .species = SPECIES_MEOWTH,
+        .level = 5;
         .ivs = {4, 5, 4, 5, 4, 4},
         .abilityNum = 0,
         .otId = 91481,
@@ -1043,9 +1053,11 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x8B,
         .heldItem = ITEM_RETRO_MAIL,
         .mailNum = 2,
-        .otName = _("ISIS"),
+        .otName = _("AME"),
         .otGender = FEMALE,
-        .hiddenNature = 26,
+        .hiddenNature = HIDDEN_NATURE_NONE,
+        .language = LANGUAGE_JAPANESE,
+        .metLocation = METLOC_IN_GAME_TRADE;
         .requestedSpecies = SPECIES_SKITTY
     }
 };
