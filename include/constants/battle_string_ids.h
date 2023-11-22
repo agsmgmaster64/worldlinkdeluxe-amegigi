@@ -686,20 +686,29 @@
 #define STRINGID_PKMNHURTBYROCKSTHROWN                684
 #define STRINGID_MOVEBLOCKEDBYDYNAMAX                 685
 #define STRINGID_ZEROTOHEROTRANSFORMATION             686
-#define STRINGID_POKEFLUTECATCHY                      687
-#define STRINGID_POKEFLUTE                            688
-#define STRINGID_MONHEARINGFLUTEAWOKE                 689
-#define STRINGID_PLAYERWHITEDOUT                      690
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            691
-#define STRINGID_STRINGISRESERVED                     692
-#define STRINGID_PKMNDROPPEDITEM                      693
-#define STRINGID_BAGISFULL                            694
-#define STRINGID_MONTOOSCAREDTOMOVE                   695
-#define STRINGID_GHOSTGETOUTGETOUT                    696
-#define STRINGID_SILPHSCOPEUNVEILED                   697
-#define STRINGID_GHOSTWASMAROWAK                      698
+#define STRINGID_THETWOMOVESBECOMEONE                 687
+#define STRINGID_ARAINBOWAPPEAREDONSIDE               688
+#define STRINGID_THERAINBOWDISAPPEARED                689
+#define STRINGID_WAITINGFORPARTNERSMOVE               690
+#define STRINGID_SEAOFFIREENVELOPEDSIDE               691
+#define STRINGID_HURTBYTHESEAOFFIRE                   692
+#define STRINGID_THESEAOFFIREDISAPPEARED              693
+#define STRINGID_SWAMPENVELOPEDSIDE                   694
+#define STRINGID_THESWAMPDISAPPEARED                  695
+#define STRINGID_POKEFLUTECATCHY                      696
+#define STRINGID_POKEFLUTE                            697
+#define STRINGID_MONHEARINGFLUTEAWOKE                 698
+#define STRINGID_PLAYERWHITEDOUT                      699
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            700
+#define STRINGID_STRINGISRESERVED                     701
+#define STRINGID_PKMNDROPPEDITEM                      702
+#define STRINGID_BAGISFULL                            703
+#define STRINGID_MONTOOSCAREDTOMOVE                   704
+#define STRINGID_GHOSTGETOUTGETOUT                    705
+#define STRINGID_SILPHSCOPEUNVEILED                   706
+#define STRINGID_GHOSTWASMAROWAK                      707
 
-#define BATTLESTRINGS_COUNT                           699
+#define BATTLESTRINGS_COUNT                           708
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

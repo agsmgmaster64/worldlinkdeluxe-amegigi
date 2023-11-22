@@ -515,6 +515,7 @@
 #define BG_STEEL_BEAM_OPPONENT 78
 #define BG_STEEL_BEAM_PLAYER 79
 #define BG_CHLOROBLAST 80
+#define BG_RAINBOW 81
 
 // table ids for general animations (gBattleAnims_General)
 #define B_ANIM_STATS_CHANGE             0
@@ -556,14 +557,17 @@
 #define B_ANIM_SNOW_CONTINUES           36
 #define B_ANIM_ULTRA_BURST              37
 #define B_ANIM_SALT_CURE_DAMAGE         38
-#define B_ANIM_MON_SCARED               39
-#define B_ANIM_GHOST_GET_OUT            40
-#define B_ANIM_SILPH_SCOPED             41
-#define B_ANIM_ROCK_THROW               42
-#define B_ANIM_SAFARI_REACTION          43
-#define B_ANIM_DYNAMAX_GROWTH           44
-#define B_ANIM_MAX_SET_WEATHER          45
-#define B_ANIM_SYRUP_BOMB_SPEED_DROP    46
+#define B_ANIM_DYNAMAX_GROWTH           39
+#define B_ANIM_MAX_SET_WEATHER          40
+#define B_ANIM_SYRUP_BOMB_SPEED_DROP    41
+#define B_ANIM_RAINBOW                  42
+#define B_ANIM_SEA_OF_FIRE              43
+#define B_ANIM_SWAMP                    44
+#define B_ANIM_MON_SCARED               45
+#define B_ANIM_GHOST_GET_OUT            46
+#define B_ANIM_SILPH_SCOPED             47
+#define B_ANIM_ROCK_THROW               48
+#define B_ANIM_SAFARI_REACTION          49
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
