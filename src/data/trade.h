@@ -988,7 +988,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("DOTS"),
         .species = SPECIES_SEEDOT,
-        .level = 5;
+        .level = 5,
         .ivs = {5, 4, 5, 4, 4, 4},
         .abilityNum = 1,
         .otId = 38726,
@@ -1000,14 +1000,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .hiddenNature = HIDDEN_NATURE_NONE,
         .language = LANGUAGE_ENGLISH,
-        .metLocation = METLOC_IN_GAME_TRADE;
+        .metLocation = METLOC_IN_GAME_TRADE,
         .requestedSpecies = SPECIES_RALTS
     },
     [INGAME_TRADE_PLUSLE] =
     {
         .nickname = _("PLUSES"),
         .species = SPECIES_PLUSLE,
-        .level = 5;
+        .level = 5,
         .ivs = {4, 4, 4, 5, 5, 4},
         .abilityNum = 0,
         .otId = 73996,
@@ -1019,14 +1019,14 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .hiddenNature = HIDDEN_NATURE_NONE,
         .language = LANGUAGE_ENGLISH,
-        .metLocation = METLOC_IN_GAME_TRADE;
+        .metLocation = METLOC_IN_GAME_TRADE,
         .requestedSpecies = SPECIES_VOLBEAT
     },
     [INGAME_TRADE_HORSEA] =
     {
         .nickname = _("SEASOR"),
         .species = SPECIES_HORSEA,
-        .level = 5;
+        .level = 5,
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
         .otId = 46285,
@@ -1038,26 +1038,26 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .hiddenNature = HIDDEN_NATURE_NONE,
         .language = LANGUAGE_ENGLISH,
-        .metLocation = METLOC_IN_GAME_TRADE;
+        .metLocation = METLOC_IN_GAME_TRADE,
         .requestedSpecies = SPECIES_BAGON
     },
     [INGAME_TRADE_MEOWTH] =
     {
-        .nickname = _("ヌケニン"),
-        .species = SPECIES_MEOWTH,
-        .level = 5;
-        .ivs = {4, 5, 4, 5, 4, 4},
-        .abilityNum = 0,
+        .nickname = _("けだま"),
+        .species = SPECIES_DITTO,
+        .level = 50,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 2,
         .otId = 91481,
-        .conditions = {5, 5, 5, 30, 5},
+        .conditions = {255, 255, 255, 255, 255},
         .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL,
-        .mailNum = 2,
-        .otName = _("AME"),
+        .heldItem = ITEM_DESTINY_KNOT,
+        .mailNum = -1,
+        .otName = _("ミうイドソ"),
         .otGender = FEMALE,
         .hiddenNature = HIDDEN_NATURE_NONE,
         .language = LANGUAGE_JAPANESE,
-        .metLocation = METLOC_IN_GAME_TRADE;
+        .metLocation = METLOC_IN_GAME_TRADE,
         .requestedSpecies = SPECIES_SKITTY
     }
 };
