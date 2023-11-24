@@ -320,7 +320,14 @@
 #define EVO_LEVEL_FAMILY_OF_FOUR          46     // Pokémon reaches the specified level with a personality value with a modulus of 1-99
 #define EVO_ITEM_LEVEL                    47     // specified item is used on a Pokémon over the evo level in EVO_LEVEL
 
+//tx_randomizer_and_challenges
+#ifndef POKEMON_EXPANSION 
+#define EVOS_PER_MON 5
+#define EVOS_PER_LINE 6
+#else
 #define EVOS_PER_MON 11
+#define EVOS_PER_LINE 22
+#endif
 
 #if I_SHARDS_REQUIRE_LEVEL == TRUE
     #define EVO_SHARD EVO_ITEM_LEVEL

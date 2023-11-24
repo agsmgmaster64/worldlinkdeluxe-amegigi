@@ -707,8 +707,13 @@
 #define STRINGID_GHOSTGETOUTGETOUT                    705
 #define STRINGID_SILPHSCOPEUNVEILED                   706
 #define STRINGID_GHOSTWASMAROWAK                      707
+//tx_randomizer_and_challenges
+#define STRINGID_ONETYPECAPTUREBLOCKED                708
+#define STRINGID_NUZLOCKECAPTUREBLOCKED               709
+#define STRINGID_SPECIESCLAUSECAPTUREBLOCKED          710
+#define STRINGID_SAMESPECIESCAPTUREBLOCKED            711
 
-#define BATTLESTRINGS_COUNT                           708
+#define BATTLESTRINGS_COUNT                           712
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
