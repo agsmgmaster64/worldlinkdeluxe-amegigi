@@ -4674,7 +4674,7 @@ void CreateEnemyEventMon(void)
 {                                                               \
     u16 baseStat[] = {100, 255, 500};                                         \
     s32 n = (((2 * baseStat[option] + iv + ev / 4) * level) / 100) + 5; \
-    u8 nature = GetNature(mon);                                 \
+    u8 nature = GetNature(mon, TRUE);                                 \
     n = ModifyStatByNature(nature, n, statIndex);               \
     SetMonData(mon, field, &n);                                 \
 }
