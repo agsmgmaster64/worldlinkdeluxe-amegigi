@@ -541,3 +541,6 @@ gSpecials::
 	def_special PokevialRefill
 	def_special BufferUnitSystemText
 	def_special StartScriptedGhostBattle
+	def_special GetNumberSprayStrength
+	def_special GetSprayId
+	def_special GetLastUsedSprayType
