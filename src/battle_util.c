@@ -10013,9 +10013,9 @@ static inline void TryNoticeIllusionInTypeEffectiveness(u32 move, u32 moveType, 
 {
     // Check if the type effectiveness would've been different if the pokemon really had the types as the disguise.
     uq4_12_t presumedModifier = UQ_4_12(1.0);
-    MulByTypeEffectiveness(&presumedModifier, move, moveType, battlerDef, gSpeciesInfo[illusionSpecies].types[0], battlerAtk, FALSE);
-    if (gSpeciesInfo[illusionSpecies].types[1] != gSpeciesInfo[illusionSpecies].types[0])
-        MulByTypeEffectiveness(&presumedModifier, move, moveType, battlerDef, gSpeciesInfo[illusionSpecies].types[1], battlerAtk, FALSE);
+    MulByTypeEffectiveness(&presumedModifier, move, moveType, battlerDef, GetTypeBySpecies(illusionSpecies, 1), battlerAtk, FALSE);
+    if (GetTypeBySpecies(illusionSpecies, 2) != GetTypeBySpecies(illusionSpecies, 1))
+        MulByTypeEffectiveness(&presumedModifier, move, moveType, battlerDef, GetTypeBySpecies(illusionSpecies, 2), battlerAtk, FALSE);
 
     if (presumedModifier != resultingModifier)
         RecordAbilityBattle(battlerDef, ABILITY_ILLUSION);
@@ -10144,9 +10144,9 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
 
     if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
     {
-        MulByTypeEffectiveness(&modifier, move, moveType, 0, gSpeciesInfo[speciesDef].types[0], 0, FALSE);
-        if (gSpeciesInfo[speciesDef].types[1] != gSpeciesInfo[speciesDef].types[0])
-            MulByTypeEffectiveness(&modifier, move, moveType, 0, gSpeciesInfo[speciesDef].types[1], 0, FALSE);
+        MulByTypeEffectiveness(&modifier, move, moveType, 0, GetTypeBySpecies(speciesDef, 1), 0, FALSE);
+        if (GetTypeBySpecies(speciesDef, 2) != GetTypeBySpecies(speciesDef, 1))
+            MulByTypeEffectiveness(&modifier, move, moveType, 0, GetTypeBySpecies(speciesDef, 2), 0, FALSE);
 
         if (moveType == TYPE_EARTH && abilityDef == ABILITY_LEVITATE && !(gFieldStatuses & STATUS_FIELD_GRAVITY))
             modifier = UQ_4_12(0.0);
@@ -11182,8 +11182,8 @@ void CopyMonLevelAndBaseStatsToBattleMon(u32 battler, struct Pokemon *mon)
 void CopyMonAbilityAndTypesToBattleMon(u32 battler, struct Pokemon *mon)
 {
     gBattleMons[battler].ability = GetMonAbility(mon);
-    gBattleMons[battler].type1 = gSpeciesInfo[gBattleMons[battler].species].types[0];
-    gBattleMons[battler].type2 = gSpeciesInfo[gBattleMons[battler].species].types[1];
+    gBattleMons[battler].type1 = GetTypeBySpecies(gBattleMons[battler].species, 1);
+    gBattleMons[battler].type2 = GetTypeBySpecies(gBattleMons[battler].species, 2);
     gBattleMons[battler].type3 = TYPE_MYSTERY;
 }
 

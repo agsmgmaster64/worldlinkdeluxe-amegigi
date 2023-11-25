@@ -1457,7 +1457,7 @@ static u16 GetSwitchinTypeMatchup(u32 opposingBattler, struct BattlePokemon batt
 
     // Check type matchup
     u16 typeEffectiveness = UQ_4_12(1.0);
-    u8 atkType1 = gSpeciesInfo[gBattleMons[opposingBattler].species].types[0], atkType2 = gSpeciesInfo[gBattleMons[opposingBattler].species].types[1], 
+    u8 atkType1 = GetTypeBySpecies(gBattleMons[opposingBattler].species, 1), atkType2 = GetTypeBySpecies(gBattleMons[opposingBattler].species, 2), 
     defType1 = battleMon.type1, defType2 = battleMon.type2;
 
     // Multiply type effectiveness by a factor depending on type matchup

@@ -5111,8 +5111,8 @@ void Task_AbilityCapsule(u8 taskId)
     {
     case 0:
         // Can't use.
-        if (gSpeciesInfo[tSpecies].abilities[0] == gSpeciesInfo[tSpecies].abilities[1]
-            || gSpeciesInfo[tSpecies].abilities[1] == 0
+        if (GetAbilityBySpecies(tSpecies, 0) == GetAbilityBySpecies(tSpecies, 1)
+            || GetAbilityBySpecies(tSpecies, 1) == 0 // ABILITY_NONE
             || tAbilityNum > 1
             || !tSpecies)
         {
@@ -5199,7 +5199,7 @@ void Task_AbilityPatch(u8 taskId)
     {
     case 0:
         // Can't use.
-        if (gSpeciesInfo[tSpecies].abilities[tAbilityNum] == 0
+        if (GetAbilityBySpecies(tSpecies, tAbilityNum) == 0
             || !tSpecies
             )
         {

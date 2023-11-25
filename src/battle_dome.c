@@ -5951,8 +5951,8 @@ static void InitRandomTourneyTreeResults(void)
             statSums[i] += statValues[STAT_SPDEF];
             statSums[i] += statValues[STAT_SPEED];
             statSums[i] += statValues[STAT_HP];
-            monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types[0]];
-            monTypesBits |= gBitTable[gSpeciesInfo[gFacilityTrainerMons[DOME_MONS[i][j]].species].types[1]];
+            monTypesBits |= gBitTable[GetTypeBySpecies(gFacilityTrainerMons[DOME_MONS[i][j]].species, 1)];
+            monTypesBits |= gBitTable[GetTypeBySpecies(gFacilityTrainerMons[DOME_MONS[i][j]].species, 2)];
         }
 
         // Because GF hates temporary vars, trainerId acts like monTypesCount here.
