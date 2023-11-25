@@ -8139,7 +8139,7 @@ u16 GetBattleBGM(void)
             case OPTIONS_MUSIC_STYLE_DEFAULT:
                 return MUS_WLD_VS_GYM_LEADER;
             case OPTIONS_MUSIC_STYLE_ZGS:
-                return MUS_WLD_VS_GYM_LEADER;
+                return MUS_ZGS_VS_GYM_LEADER;
             case OPTIONS_MUSIC_STYLE_ALTERNATE:
                 return MUS_WLD_VS_GYM_LEADER;
             case OPTIONS_MUSIC_STYLE_VANILLA:
@@ -8160,7 +8160,7 @@ u16 GetBattleBGM(void)
                 case OPTIONS_MUSIC_STYLE_ZGS:
                     return MUS_ZGS_VS_TRAINER;
                 case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    return MUS_WLD_VS_TRAINER;
+                    return MUS_ZGS_VS_DREAM_TRAINER;
                 case OPTIONS_MUSIC_STYLE_VANILLA:
                 default:
                     return MUS_VS_TRAINER;
@@ -8185,7 +8185,7 @@ u16 GetBattleBGM(void)
             case OPTIONS_MUSIC_STYLE_ZGS:
                 return MUS_ZGS_VS_TRAINER;
             case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                return MUS_WLD_VS_TRAINER;
+                return MUS_ZGS_VS_DREAM_TRAINER;
             case OPTIONS_MUSIC_STYLE_VANILLA:
             default:
                 return MUS_VS_TRAINER;
@@ -8201,7 +8201,7 @@ u16 GetBattleBGM(void)
         case OPTIONS_MUSIC_STYLE_ZGS:
             return MUS_ZGS_VS_WILD;
         case OPTIONS_MUSIC_STYLE_ALTERNATE:
-            return MUS_WLD_VS_WILD;
+            return MUS_ZGS_VS_DREAM_WILD;
         case OPTIONS_MUSIC_STYLE_VANILLA:
         default:
             return MUS_VS_WILD;

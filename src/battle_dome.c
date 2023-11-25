@@ -3991,7 +3991,6 @@ static bool32 IsDomeDefensiveMoveEffect(u32 effect)
     case EFFECT_SPECIAL_DEFENSE_UP_2:
     case EFFECT_MINIMIZE:
     case EFFECT_ACCURACY_DOWN:
-    case EFFECT_DEFENSE_CURL:
     case EFFECT_LIGHT_SCREEN:
     case EFFECT_REFLECT:
     case EFFECT_AURORA_VEIL:

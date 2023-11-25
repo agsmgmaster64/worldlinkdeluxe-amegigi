@@ -642,6 +642,9 @@ $(MID_SUBDIR)/mus_wld_vs_gym_leader.s: %.s: %.mid
 $(MID_SUBDIR)/mus_wld_vs_wild.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G191
 
+$(MID_SUBDIR)/mus_wld_vs_champion.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -P1
+
 $(MID_SUBDIR)/mus_wld_victory_trainer.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G169
 
@@ -663,8 +666,26 @@ $(MID_SUBDIR)/mus_zgs_vs_wild.s: %.s: %.mid
 $(MID_SUBDIR)/mus_zgs_vs_trainer.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G156
 
+$(MID_SUBDIR)/mus_zgs_vs_gym_leader.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G155
+
 $(MID_SUBDIR)/mus_zgs_vs_champion.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G158
+
+$(MID_SUBDIR)/mus_zgs_vs_dream_wild.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G157
+
+$(MID_SUBDIR)/mus_zgs_vs_dream_trainer.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
+
+$(MID_SUBDIR)/mus_zgs_vs_sakuya.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
+
+$(MID_SUBDIR)/mus_zgs_surf.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G164
+
+$(MID_SUBDIR)/mus_zgs_eiki_island.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191
 
 $(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G127 -P5

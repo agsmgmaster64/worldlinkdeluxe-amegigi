@@ -494,16 +494,23 @@
 #define MUS_WLD_VS_WILD             559
 #define MUS_WLD_VS_TRAINER          560
 #define MUS_WLD_VS_GYM_LEADER       561
-#define MUS_WLD_SURF                562
-#define MUS_WLD_VICTORY_TRAINER     563
-#define MUS_WLD_VICTORY_WILD        564
-#define MUS_WLD_CAUGHT_INTRO        565
-#define MUS_WLD_CAUGHT              566
-#define MUS_ZGS_VS_WILD             567
-#define MUS_ZGS_VS_TRAINER          568
-#define MUS_ZGS_VS_CHAMPION         569
+#define MUS_WLD_VS_CHAMPION         562
+#define MUS_WLD_SURF                563
+#define MUS_WLD_VICTORY_TRAINER     564
+#define MUS_WLD_VICTORY_WILD        565
+#define MUS_WLD_CAUGHT_INTRO        566
+#define MUS_WLD_CAUGHT              567
+#define MUS_ZGS_VS_WILD             568
+#define MUS_ZGS_VS_TRAINER          569
+#define MUS_ZGS_VS_GYM_LEADER       570
+#define MUS_ZGS_VS_CHAMPION         571
+#define MUS_ZGS_VS_DREAM_WILD       572
+#define MUS_ZGS_VS_DREAM_TRAINER    573
+#define MUS_ZGS_VS_SAKUYA           574
+#define MUS_ZGS_SURF                575
+#define MUS_ZGS_EIKI_ISLAND         576
 
-#define END_MUS                     MUS_ZGS_VS_CHAMPION
+#define END_MUS                     MUS_ZGS_EIKI_ISLAND
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

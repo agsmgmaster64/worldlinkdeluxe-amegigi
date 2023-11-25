@@ -563,6 +563,7 @@ gSongTable::
 	song mus_wld_vs_wild, 0, 0
 	song mus_wld_vs_trainer, 0, 0
 	song mus_wld_vs_gym_leader, 0, 0
+	song mus_wld_vs_champion, 0, 0
 	song mus_wld_surf, 0, 0
 	song mus_wld_victory_trainer, 0, 0
 	song mus_wld_victory_wild, 0, 0
@@ -570,7 +571,13 @@ gSongTable::
 	song mus_wld_caught, 0, 0
 	song mus_zgs_vs_wild, 0, 0
 	song mus_zgs_vs_trainer, 0, 0
+	song mus_zgs_vs_gym_leader, 0, 0
 	song mus_zgs_vs_champion, 0, 0
+	song mus_zgs_vs_dream_wild, 0, 0
+	song mus_zgs_vs_dream_trainer, 0, 0
+	song mus_zgs_vs_sakuya, 0, 0
+	song mus_zgs_surf, 0, 0
+	song mus_zgs_eiki_island, 0, 0
 
 	.align 2
 dummy_song_header:
