@@ -7121,7 +7121,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_NATURE_AMPED:
                 if (gEvolutionTable[species][i].param <= level)
                 {
-                    u8 nature = GetNature(mon, TRUE);
+                    u8 nature = GetNature(mon, FALSE);
                     switch (nature)
                     {
                     case NATURE_HARDY:
@@ -7145,7 +7145,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_NATURE_LOW_KEY:
                 if (gEvolutionTable[species][i].param <= level)
                 {
-                    u8 nature = GetNature(mon, TRUE);
+                    u8 nature = GetNature(mon, FALSE);
                     switch (nature)
                     {
                     case NATURE_LONELY:
@@ -8338,7 +8338,7 @@ bool8 IsMonSpriteNotFlipped(u16 species)
 
 s8 GetMonFlavorRelation(struct Pokemon *mon, u8 flavor)
 {
-    u8 nature = GetNature(mon, TRUE);
+    u8 nature = GetNature(mon, FALSE);
     return gPokeblockFlavorCompatibilityTable[nature * FLAVOR_COUNT + flavor];
 }
 

@@ -137,9 +137,9 @@ u16 ChooseMoveAndTargetInBattlePalace(u32 battler)
     // Otherwise use move from "Support" group
     for (; i < maxGroupNum; i++)
     {
-        if (gBattleMons[battler].hiddenNature != HIDDEN_NATURE_NONE)
+        /*if (gBattleMons[battler].hiddenNature != HIDDEN_NATURE_NONE  && )
             monNature = gBattleMons[battler].hiddenNature;
-        else
+        else*/
             monNature = GetNatureFromPersonality(gBattleMons[battler].personality);
 
         if (gBattlePalaceNatureToMoveGroupLikelihood[monNature][i] > percent)
@@ -342,9 +342,9 @@ static u16 GetBattlePalaceTarget(u32 battler)
         if (gBattleMons[opposing1].hp == gBattleMons[opposing2].hp)
             return (BATTLE_OPPOSITE(battler & BIT_SIDE) + (Random() & 2)) << 8;
 
-        if (gBattleMons[battler].hiddenNature != HIDDEN_NATURE_NONE)
+        /*if (gBattleMons[battler].hiddenNature != HIDDEN_NATURE_NONE)
             monNature = gBattleMons[battler].hiddenNature;
-        else
+        else*/
             monNature = GetNatureFromPersonality(gBattleMons[battler].personality);
 
         switch (gBattlePalaceNatureToMoveTarget[monNature])
