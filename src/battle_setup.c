@@ -742,6 +742,19 @@ void StartRegiBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+static void DowngradeBadPoison(void)
+{
+    u8 i;
+    u32 status = STATUS1_POISON;
+    if (B_TOXIC_REVERSAL < GEN_5)
+        return;
+    for(i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_HAS_SPECIES) && GetMonData(&gPlayerParty[i], MON_DATA_STATUS) == STATUS1_TOXIC_POISON)
+            SetMonData(&gPlayerParty[i], MON_DATA_STATUS, &status);
+    }
+}
+
 static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
@@ -754,6 +767,7 @@ static void CB2_EndWildBattle(void)
     else
     {
         SetMainCallback2(CB2_ReturnToField);
+        DowngradeBadPoison();
         if (FlagGet(FLAG_OVERRIDE_MUSIC))
             gFieldCallback = FieldCB_ReturnToFieldNoScript;
         else
@@ -775,6 +789,7 @@ static void CB2_EndScriptedWildBattle(void)
     }
     else
     {
+        DowngradeBadPoison();
         if (FlagGet(FLAG_OVERRIDE_MUSIC))
             SetMainCallback2(CB2_ReturnToFieldContinueScript);
         else
@@ -799,6 +814,7 @@ static void CB2_EndScriptedGhostBattle(void)
         else
             gSpecialVar_Result = TRUE;
 
+        DowngradeBadPoison();
         if (FlagGet(FLAG_OVERRIDE_MUSIC))
             SetMainCallback2(CB2_ReturnToFieldContinueScript);
         else
@@ -1092,6 +1108,7 @@ static void CB2_StartFirstBattle(void)
 static void CB2_EndFirstBattle(void)
 {
     Overworld_ClearSavedMusic();
+    DowngradeBadPoison();
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
@@ -1509,6 +1526,7 @@ static void CB2_EndTrainerBattle(void)
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
     {
+        DowngradeBadPoison();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
     else if (FlagGet(FLAG_SCRIPTED_LOSS))
@@ -1542,6 +1560,7 @@ static void CB2_EndTrainerBattle(void)
             SetMainCallback2(CB2_ReturnToFieldContinueScript);
         else
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        DowngradeBadPoison();
         if (!InBattlePyramid() && !InTrainerHillChallenge())
         {
             RegisterTrainerInMatchCall();
@@ -1554,6 +1573,7 @@ static void CB2_EndRematchBattle(void)
 {
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
     {
+        DowngradeBadPoison();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
@@ -1570,6 +1590,7 @@ static void CB2_EndRematchBattle(void)
         RegisterTrainerInMatchCall();
         SetBattledTrainersFlags();
         HandleRematchVarsOnBattleEnd();
+        DowngradeBadPoison();
     }
 }
 
