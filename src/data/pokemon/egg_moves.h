@@ -686,7 +686,7 @@ const u16 gEggMoves[] = {
         MOVE_CLEAR_SMOG,
         MOVE_OUTRAGE),
 
-    egg_moves(GOLDEEN,
+    egg_moves(CHIBI_REISEN,
         MOVE_PSYBEAM,
         MOVE_HAZE,
         MOVE_HYDRO_PUMP,

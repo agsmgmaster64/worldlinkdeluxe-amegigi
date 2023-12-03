@@ -8348,3 +8348,31 @@ const u32 gMonBackPic_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s
 const u32 gMonShinyPalette_THYoumu2S[] = INCBIN_U32("graphics/pokemon/_add/th/youmu2s/shiny.gbapal.lz");
 const u8 gMonIcon_THYoumu2S[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2s/icon.4bpp");
 const u8 gMonFootprint_THYoumu2S[] = INCBIN_U8("graphics/pokemon/_add/th/youmu2s/footprint.1bpp");
+
+const u32 gMonFrontPic_THReisen1[] = INCBIN_U32("graphics/pokemon/_add/th/reisen1/anim_front.4bpp.lz");
+const u32 gMonPalette_THReisen1[] = INCBIN_U32("graphics/pokemon/_add/th/reisen1/normal.gbapal.lz");
+const u32 gMonBackPic_THReisen1[] = INCBIN_U32("graphics/pokemon/_add/th/reisen1/back.4bpp.lz");
+const u32 gMonShinyPalette_THReisen1[] = INCBIN_U32("graphics/pokemon/_add/th/reisen1/shiny.gbapal.lz");
+const u8 gMonIcon_THReisen1[] = INCBIN_U8("graphics/pokemon/_add/th/reisen1/icon.4bpp");
+const u8 gMonFootprint_THReisen1[] = INCBIN_U8("graphics/pokemon/_add/th/reisen1/footprint.1bpp");
+
+const u32 gMonFrontPic_THReisen2N[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2n/anim_front.4bpp.lz");
+const u32 gMonPalette_THReisen2N[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2n/normal.gbapal.lz");
+const u32 gMonBackPic_THReisen2N[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2n/back.4bpp.lz");
+const u32 gMonShinyPalette_THReisen2N[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2n/shiny.gbapal.lz");
+const u8 gMonIcon_THReisen2N[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2n/icon.4bpp");
+const u8 gMonFootprint_THReisen2N[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2n/footprint.1bpp");
+
+const u32 gMonFrontPic_THReisen2D[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2d/anim_front.4bpp.lz");
+const u32 gMonPalette_THReisen2D[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2d/normal.gbapal.lz");
+const u32 gMonBackPic_THReisen2D[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2d/back.4bpp.lz");
+const u32 gMonShinyPalette_THReisen2D[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2d/shiny.gbapal.lz");
+const u8 gMonIcon_THReisen2D[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2d/icon.4bpp");
+const u8 gMonFootprint_THReisen2D[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2d/footprint.1bpp");
+
+const u32 gMonFrontPic_THReisen2T[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2t/anim_front.4bpp.lz");
+const u32 gMonPalette_THReisen2T[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2t/normal.gbapal.lz");
+const u32 gMonBackPic_THReisen2T[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2t/back.4bpp.lz");
+const u32 gMonShinyPalette_THReisen2T[] = INCBIN_U32("graphics/pokemon/_add/th/reisen2t/shiny.gbapal.lz");
+const u8 gMonIcon_THReisen2T[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2t/icon.4bpp");
+const u8 gMonFootprint_THReisen2T[] = INCBIN_U8("graphics/pokemon/_add/th/reisen2t/footprint.1bpp");

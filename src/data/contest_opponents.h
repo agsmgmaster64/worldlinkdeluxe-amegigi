@@ -1165,7 +1165,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_ASHTON] = {
-        .species = SPECIES_GOLDEEN,
+        .species = SPECIES_NORMAL_REISEN,
         .nickname = _("GOLDEN"),
         .trainerName = _("ASHTON"),
         .trainerGfxId = OBJ_EVENT_GFX_MAN_3,
@@ -1678,7 +1678,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_SAUL] = {
-        .species = SPECIES_SEAKING,
+        .species = SPECIES_DEFENSE_REISEN,
         .nickname = _("KINGSEA"),
         .trainerName = _("SAUL"),
         .trainerGfxId = OBJ_EVENT_GFX_CAMPER,

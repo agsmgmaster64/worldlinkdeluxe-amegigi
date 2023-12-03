@@ -1404,7 +1404,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_SEADRA] =
+    [NATIONAL_DEX_CHIBI_REISEN] =
     {
         .categoryName = _("Dragon"),
         .height = 12,
@@ -1416,7 +1416,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_GOLDEEN] =
+    [NATIONAL_DEX_NORMAL_REISEN] =
     {
         .categoryName = _("Goldfish"),
         .height = 6,
@@ -1428,7 +1428,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_SEAKING] =
+    [NATIONAL_DEX_DEFENSE_REISEN] =
     {
         .categoryName = _("Goldfish"),
         .height = 13,
@@ -1440,7 +1440,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_STARYU] =
+    [NATIONAL_DEX_TECH_REISEN] =
     {
         .categoryName = _("Star Shape"),
         .height = 8,

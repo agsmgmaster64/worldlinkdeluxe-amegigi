@@ -118,10 +118,10 @@
 #define SPECIES_TANGELA                                 114
 #define SPECIES_KANGASKHAN                              115
 #define SPECIES_HORSEA                                  116
-#define SPECIES_SEADRA                                  117
-#define SPECIES_GOLDEEN                                 118
-#define SPECIES_SEAKING                                 119
-#define SPECIES_STARYU                                  120
+#define SPECIES_CHIBI_REISEN                            117
+#define SPECIES_NORMAL_REISEN                           118
+#define SPECIES_DEFENSE_REISEN                          119
+#define SPECIES_TECH_REISEN                             120
 #define SPECIES_STARMIE                                 121
 #define SPECIES_MR_MIME                                 122
 #define SPECIES_SCYTHER                                 123

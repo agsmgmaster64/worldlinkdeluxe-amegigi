@@ -8276,6 +8276,34 @@ extern const u32 gMonShinyPalette_THYoumu2S[];
 extern const u8 gMonIcon_THYoumu2S[];
 extern const u8 gMonFootprint_THYoumu2S[];
 
+extern const u32 gMonFrontPic_THReisen1[];
+extern const u32 gMonPalette_THReisen1[];
+extern const u32 gMonBackPic_THReisen1[];
+extern const u32 gMonShinyPalette_THReisen1[];
+extern const u8 gMonIcon_THReisen1[];
+extern const u8 gMonFootprint_THReisen1[];
+
+extern const u32 gMonFrontPic_THReisen2N[];
+extern const u32 gMonPalette_THReisen2N[];
+extern const u32 gMonBackPic_THReisen2N[];
+extern const u32 gMonShinyPalette_THReisen2N[];
+extern const u8 gMonIcon_THReisen2N[];
+extern const u8 gMonFootprint_THReisen2N[];
+
+extern const u32 gMonFrontPic_THReisen2D[];
+extern const u32 gMonPalette_THReisen2D[];
+extern const u32 gMonBackPic_THReisen2D[];
+extern const u32 gMonShinyPalette_THReisen2D[];
+extern const u8 gMonIcon_THReisen2D[];
+extern const u8 gMonFootprint_THReisen2D[];
+
+extern const u32 gMonFrontPic_THReisen2T[];
+extern const u32 gMonPalette_THReisen2T[];
+extern const u32 gMonBackPic_THReisen2T[];
+extern const u32 gMonShinyPalette_THReisen2T[];
+extern const u8 gMonIcon_THReisen2T[];
+extern const u8 gMonFootprint_THReisen2T[];
+
 // trainer sprites
 extern const u32 gTrainerFrontPic_Hiker[];
 extern const u32 gTrainerFrontPic_AquaGruntM[];

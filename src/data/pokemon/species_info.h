@@ -40,11 +40,168 @@ const struct SpeciesInfo gSpeciesInfo[] =
 {
     [SPECIES_NONE] = {0},
 
+
+#if P_FAMILY_BULBASAUR
+#define VENUSAUR_MISC_INFO                                                  \
+        .types = {TYPE_NATURE, TYPE_MIASMA},                                 \
+        .catchRate = 45,                                                    \
+        .evYield_SpAttack  = 2,                                             \
+        .evYield_SpDefense = 1,                                             \
+        .genderRatio = PERCENT_FEMALE(12.5),                                \
+        .eggCycles = 20,                                                    \
+        .friendship = STANDARD_FRIENDSHIP,                                  \
+        .growthRate = GROWTH_MEDIUM_SLOW,                                   \
+        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_GRASS},                  \
+        .sourceGame = SOURCE_OTHER,                                      \
+        .noFlip = FALSE
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_VENUSAUR_MEGA] =
+    {
+        VENUSAUR_MISC_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 100,
+        .baseDefense   = 123,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 122,
+        .baseSpDefense = 120,
+        .expYield = 281,
+        .abilities = {ABILITY_WALL_OF_ICE, ABILITY_WALL_OF_ICE, ABILITY_WALL_OF_ICE},
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
+    },
+#endif
+
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_VENUSAUR_GIGANTAMAX] =
+    {
+        VENUSAUR_MISC_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 82,
+        .baseDefense   = 83,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+        .expYield = 236,
+        .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
+        .gigantamax = TRUE,
+    },
+#endif
+#endif //P_FAMILY_BULBASAUR
+
+#if P_FAMILY_CHARMANDER
+#define CHARIZARD_MISC_INFO                                             \
+        .catchRate = 45,                                                \
+        .evYield_SpAttack  = 3,                                         \
+        .genderRatio = PERCENT_FEMALE(12.5),                            \
+        .eggCycles = 20,                                                \
+        .friendship = STANDARD_FRIENDSHIP,                              \
+        .growthRate = GROWTH_MEDIUM_SLOW,                               \
+        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},             \
+        .noFlip = FALSE
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_CHARIZARD_MEGA_X] =
+    {
+        CHARIZARD_MISC_INFO,
+        .baseHP        = 78,
+        .baseAttack    = 130,
+        .baseDefense   = 111,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 85,
+        .types = { TYPE_FIRE, TYPE_FAITH},
+        .expYield = 285,
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
+        .sourceGame = SOURCE_MOF,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
+    },
+
+    [SPECIES_CHARIZARD_MEGA_Y] =
+    {
+        CHARIZARD_MISC_INFO,
+        .baseHP        = 78,
+        .baseAttack    = 104,
+        .baseDefense   = 78,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 159,
+        .baseSpDefense = 115,
+        .types = { TYPE_FIRE, TYPE_FLYING},
+        .expYield = 285,
+        .abilities = {ABILITY_DROUGHT, ABILITY_DROUGHT, ABILITY_DROUGHT},
+        .sourceGame = SOURCE_MOF,
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
+    },
+#endif
+
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_CHARIZARD_GIGANTAMAX] =
+    {
+        CHARIZARD_MISC_INFO,
+        .baseHP        = 78,
+        .baseAttack    = 84,
+        .baseDefense   = 78,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 109,
+        .baseSpDefense = 85,
+        .types = {TYPE_FIRE, TYPE_FLYING},
+        .expYield = 240,
+        .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
+        .sourceGame = SOURCE_MOF,
+        .gigantamax = TRUE,
+    },
+#endif
+#endif //P_FAMILY_CHARMANDER
+
+#if P_FAMILY_SQUIRTLE
+#define BLASTOISE_MISC_INFO                                             \
+        .types = {TYPE_WATER, TYPE_WATER},                              \
+        .catchRate = 45,                                                \
+        .evYield_SpDefense = 3,                                         \
+        .genderRatio = PERCENT_FEMALE(12.5),                            \
+        .eggCycles = 20,                                                \
+        .friendship = STANDARD_FRIENDSHIP,                              \
+        .growthRate = GROWTH_MEDIUM_SLOW,                               \
+        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},            \
+        .sourceGame = SOURCE_SOEW,                                   \
+        .noFlip = FALSE
+
+#if P_MEGA_EVOLUTIONS
+    [SPECIES_BLASTOISE_MEGA] =
+    {
+        BLASTOISE_MISC_INFO,
+        .baseHP        = 79,
+        .baseAttack    = 103,
+        .baseDefense   = 120,
+        .baseSpeed     = 78,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 115,
+        .expYield = 284,
+        .abilities = {ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER},
+        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
+    },
+#endif
+
+#if P_GIGANTAMAX_FORMS
+    [SPECIES_BLASTOISE_GIGANTAMAX] =
+    {
+        BLASTOISE_MISC_INFO,
+        .baseHP        = 79,
+        .baseAttack    = 83,
+        .baseDefense   = 100,
+        .baseSpeed     = 78,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 105,
+        .expYield = 239,
+        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
+        .gigantamax = TRUE,
+    },
+#endif
+#endif //P_FAMILY_SQUIRTLE
+
 #define REIMU_MISC_INFO                                                 \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING},         \
         PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD)
 
-#if P_FAMILY_BULBASAUR
     [SPECIES_CHIBI_REIMU] =
     {
         .baseHP        = 85,
@@ -113,57 +270,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
         REIMU_MISC_INFO,
     },
 
-#define VENUSAUR_MISC_INFO                                                  \
-        .types = {TYPE_NATURE, TYPE_MIASMA},                                 \
-        .catchRate = 45,                                                    \
-        .evYield_SpAttack  = 2,                                             \
-        .evYield_SpDefense = 1,                                             \
-        .genderRatio = PERCENT_FEMALE(12.5),                                \
-        .eggCycles = 20,                                                    \
-        .friendship = STANDARD_FRIENDSHIP,                                  \
-        .growthRate = GROWTH_MEDIUM_SLOW,                                   \
-        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_GRASS},                  \
-        .sourceGame = SOURCE_OTHER,                                      \
-        .noFlip = FALSE
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_VENUSAUR_MEGA] =
-    {
-        VENUSAUR_MISC_INFO,
-        .baseHP        = 80,
-        .baseAttack    = 100,
-        .baseDefense   = 123,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 122,
-        .baseSpDefense = 120,
-        .expYield = 281,
-        .abilities = {ABILITY_WALL_OF_ICE, ABILITY_WALL_OF_ICE, ABILITY_WALL_OF_ICE},
-        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
-    },
-#endif
-
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_VENUSAUR_GIGANTAMAX] =
-    {
-        VENUSAUR_MISC_INFO,
-        .baseHP        = 80,
-        .baseAttack    = 82,
-        .baseDefense   = 83,
-        .baseSpeed     = 80,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
-        .expYield = 236,
-        .abilities = {ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL},
-        .gigantamax = TRUE,
-    },
-#endif
-#endif //P_FAMILY_BULBASAUR
-
 #define MARISA_MISC_INFO                                                \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING},         \
         PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD)
 
-#if P_FAMILY_CHARMANDER
     [SPECIES_CHIBI_MARISA] =
     {
         .baseHP        = 45,
@@ -228,73 +338,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         MARISA_MISC_INFO,
     },
 
-#define CHARIZARD_MISC_INFO                                             \
-        .catchRate = 45,                                                \
-        .evYield_SpAttack  = 3,                                         \
-        .genderRatio = PERCENT_FEMALE(12.5),                            \
-        .eggCycles = 20,                                                \
-        .friendship = STANDARD_FRIENDSHIP,                              \
-        .growthRate = GROWTH_MEDIUM_SLOW,                               \
-        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_DRAGON},             \
-        .noFlip = FALSE
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_CHARIZARD_MEGA_X] =
-    {
-        CHARIZARD_MISC_INFO,
-        .baseHP        = 78,
-        .baseAttack    = 130,
-        .baseDefense   = 111,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 130,
-        .baseSpDefense = 85,
-        .types = { TYPE_FIRE, TYPE_FAITH},
-        .expYield = 285,
-        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS},
-        .sourceGame = SOURCE_MOF,
-        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
-    },
-
-    [SPECIES_CHARIZARD_MEGA_Y] =
-    {
-        CHARIZARD_MISC_INFO,
-        .baseHP        = 78,
-        .baseAttack    = 104,
-        .baseDefense   = 78,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 159,
-        .baseSpDefense = 115,
-        .types = { TYPE_FIRE, TYPE_FLYING},
-        .expYield = 285,
-        .abilities = {ABILITY_DROUGHT, ABILITY_DROUGHT, ABILITY_DROUGHT},
-        .sourceGame = SOURCE_MOF,
-        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
-    },
-#endif
-
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_CHARIZARD_GIGANTAMAX] =
-    {
-        CHARIZARD_MISC_INFO,
-        .baseHP        = 78,
-        .baseAttack    = 84,
-        .baseDefense   = 78,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 109,
-        .baseSpDefense = 85,
-        .types = {TYPE_FIRE, TYPE_FLYING},
-        .expYield = 240,
-        .abilities = {ABILITY_BLAZE, ABILITY_NONE, ABILITY_SOLAR_POWER},
-        .sourceGame = SOURCE_MOF,
-        .gigantamax = TRUE,
-    },
-#endif
-#endif //P_FAMILY_CHARMANDER
-
 #define DAIYOUSEI_MISC_INFO                                             \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY},          \
         PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD)
-#if P_FAMILY_SQUIRTLE
 
     [SPECIES_CHIBI_DAIYOUSEI] =
     {
@@ -314,52 +360,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         DAIYOUSEI_MISC_INFO,
     },
 
-#define BLASTOISE_MISC_INFO                                             \
-        .types = {TYPE_WATER, TYPE_WATER},                              \
-        .catchRate = 45,                                                \
-        .evYield_SpDefense = 3,                                         \
-        .genderRatio = PERCENT_FEMALE(12.5),                            \
-        .eggCycles = 20,                                                \
-        .friendship = STANDARD_FRIENDSHIP,                              \
-        .growthRate = GROWTH_MEDIUM_SLOW,                               \
-        .eggGroups = {EGG_GROUP_MONSTER, EGG_GROUP_WATER_1},            \
-        .sourceGame = SOURCE_SOEW,                                   \
-        .noFlip = FALSE
-
-#if P_MEGA_EVOLUTIONS
-    [SPECIES_BLASTOISE_MEGA] =
-    {
-        BLASTOISE_MISC_INFO,
-        .baseHP        = 79,
-        .baseAttack    = 103,
-        .baseDefense   = 120,
-        .baseSpeed     = 78,
-        .baseSpAttack  = 135,
-        .baseSpDefense = 115,
-        .expYield = 284,
-        .abilities = {ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER, ABILITY_MEGA_LAUNCHER},
-        .flags = SPECIES_FLAG_MEGA_EVOLUTION,
-    },
-#endif
-
-#if P_GIGANTAMAX_FORMS
-    [SPECIES_BLASTOISE_GIGANTAMAX] =
-    {
-        BLASTOISE_MISC_INFO,
-        .baseHP        = 79,
-        .baseAttack    = 83,
-        .baseDefense   = 100,
-        .baseSpeed     = 78,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 105,
-        .expYield = 239,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_RAIN_DISH},
-        .gigantamax = TRUE,
-    },
-#endif
-#endif //P_FAMILY_SQUIRTLE
-
-#if P_FAMILY_CATERPIE
     [SPECIES_NORMAL_DAIYOUSEI] =
     {
         .baseHP        = 45,
@@ -404,6 +404,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
+#if P_FAMILY_CATERPIE
 #define BUTTERFREE_MISC_INFO                                                    \
         .baseHP        = 60,                                                    \
         .baseAttack    = 45,                                                    \
@@ -2651,33 +2652,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .sourceGame = SOURCE_OTHER,                           \
         .noFlip = FALSE
 
-#define YOUMU_MISC_INFO                                                 \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD},          \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_PCB)
-
     [SPECIES_SLOWPOKE] =
     {
         SLOWPOKE_MISC_INFO,
         .types = { TYPE_WATER, TYPE_REASON },
         .itemRare = ITEM_LAGGING_TAIL,
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
-    },
-
-    [SPECIES_CHIBI_YOUMU] =
-    {
-        .baseHP        = 60,
-        .baseAttack    = 95,
-        .baseDefense   = 75,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 45,
-        .types = { TYPE_GHOST, TYPE_STEEL},
-        .catchRate = 90,
-        .expYield = 76,
-        .evYield_Attack    = 1,
-        .safariZoneFleeRate = 30,
-        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
-        YOUMU_MISC_INFO
     },
 
     [SPECIES_SLOWKING] =
@@ -2757,7 +2737,27 @@ const struct SpeciesInfo gSpeciesInfo[] =
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_SLOWPOKE
 
-#if P_FAMILY_MAGNEMITE
+#define YOUMU_MISC_INFO                                                 \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD},          \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_PCB)
+
+    [SPECIES_CHIBI_YOUMU] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 95,
+        .baseDefense   = 75,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 45,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 90,
+        .expYield = 76,
+        .evYield_Attack    = 1,
+        .safariZoneFleeRate = 30,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO,
+    },
+
     [SPECIES_NORMAL_YOUMU] =
     {
         .baseHP        = 85,
@@ -2771,7 +2771,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 212,
         .evYield_Attack    = 3,
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
-        YOUMU_MISC_INFO
+        YOUMU_MISC_INFO,
     },
 
     [SPECIES_DEFENSE_YOUMU] =
@@ -2787,9 +2787,26 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .expYield = 212,
         .evYield_Defense   = 3,
         .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
-        YOUMU_MISC_INFO
+        YOUMU_MISC_INFO,
     },
 
+    [SPECIES_SPEED_YOUMU] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 105,
+        .baseDefense   = 90,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 60,
+        .types = { TYPE_GHOST, TYPE_STEEL},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Speed     = 3,
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
+        YOUMU_MISC_INFO,
+    },
+
+#if P_FAMILY_MAGNEMITE
     [SPECIES_MAGNEZONE] =
     {
         .baseHP        = 70,
@@ -2828,22 +2845,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FIELD},  \
         .sourceGame = SOURCE_MOF,                      \
         .noFlip = FALSE
-
-    [SPECIES_SPEED_YOUMU] =
-    {
-        .baseHP        = 85,
-        .baseAttack    = 105,
-        .baseDefense   = 90,
-        .baseSpeed     = 120,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 60,
-        .types = { TYPE_GHOST, TYPE_STEEL},
-        .catchRate = 45,
-        .expYield = 212,
-        .evYield_Speed     = 3,
-        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD},
-        YOUMU_MISC_INFO
-    },
 
 #if P_GALARIAN_FORMS
     [SPECIES_FARFETCHD_GALARIAN] =
@@ -4034,30 +4035,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_SEADRA] =
-    {
-        .baseHP        = 55,
-        .baseAttack    = 65,
-        .baseDefense   = 95,
-        .baseSpeed     = 85,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 45,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 75,
-        .expYield = 154,
-        .evYield_Defense   = 1,
-        .evYield_SpAttack  = 1,
-        .itemRare = ITEM_DRAGON_SCALE,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON},
-        .abilities = {ABILITY_POISON_BODY, ABILITY_SNIPER, ABILITY_DAMP},
-        .sourceGame = SOURCE_SOEW,
-        .noFlip = FALSE,
-    },
-
     [SPECIES_KINGDRA] =
     {
         .baseHP        = 75,
@@ -4084,79 +4061,77 @@ const struct SpeciesInfo gSpeciesInfo[] =
     },
 #endif //P_FAMILY_HORSEA
 
-#if P_FAMILY_GOLDEEN
-    [SPECIES_GOLDEEN] =
+#define REISEN_MISC_INFO                                                \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER},        \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_IN)
+
+    [SPECIES_CHIBI_REISEN] =
     {
-        .baseHP        = 45,
-        .baseAttack    = 67,
-        .baseDefense   = 60,
-        .baseSpeed     = 63,
-        .baseSpAttack  = 35,
+        .baseHP        = 60,
+        .baseAttack    = 55,
+        .baseDefense   = 55,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 80,
         .baseSpDefense = 50,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 225,
-        .expYield = 64,
-        .evYield_Attack    = 1,
-        .itemRare = ITEM_SWIMSUIT,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
-        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_LIGHTNING_ROD},
-        .sourceGame = SOURCE_HRTP,
-        .noFlip = FALSE,
+        .types = { TYPE_HEART, TYPE_HEART},
+        .catchRate = 60,
+        .expYield = 70,
+        .evYield_SpAttack  = 1,
+        .itemRare = ITEM_BLAZER,
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_KEEN_EYE},
+        REISEN_MISC_INFO,
     },
 
-    [SPECIES_SEAKING] =
+    [SPECIES_NORMAL_REISEN] =
     {
         .baseHP        = 80,
-        .baseAttack    = 92,
-        .baseDefense   = 65,
-        .baseSpeed     = 68,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 80,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 60,
-        .expYield = 158,
-        .evYield_Attack    = 2,
-        .itemRare = ITEM_SWIMSUIT,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_WATER_2, EGG_GROUP_WATER_2},
-        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_LIGHTNING_ROD},
-        .sourceGame = SOURCE_HRTP,
-        .noFlip = FALSE,
+        .baseAttack    = 70,
+        .baseDefense   = 75,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 125,
+        .baseSpDefense = 75,
+        .types = { TYPE_HEART, TYPE_HEART},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_SpAttack  = 3,
+        .abilities = {ABILITY_INSOMNIA, ABILITY_SNIPER},
+        REISEN_MISC_INFO,
     },
-#endif //P_FAMILY_GOLDEEN
+
+    [SPECIES_DEFENSE_REISEN] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 75,
+        .baseDefense   = 70,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 135,
+        .types = { TYPE_HEART, TYPE_HEART},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_SpDefense = 3,
+        .abilities = {ABILITY_INSOMNIA, ABILITY_SNIPER},
+        REISEN_MISC_INFO,
+    },
+
+    [SPECIES_TECH_REISEN] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 75,
+        .baseDefense   = 100,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 80,
+        .types = { TYPE_HEART, TYPE_HEART},
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Defense   = 1,
+        .evYield_SpAttack  = 2,
+        .abilities = {ABILITY_INSOMNIA, ABILITY_UNWAVERING},
+        REISEN_MISC_INFO,
+    },
 
 #if P_FAMILY_STARYU
-    [SPECIES_STARYU] =
-    {
-        .baseHP        = 30,
-        .baseAttack    = 45,
-        .baseDefense   = 55,
-        .baseSpeed     = 85,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 55,
-        .types = { TYPE_WATER, TYPE_WATER },
-        .catchRate = 225,
-        .expYield = 68,
-        .evYield_Speed     = 1,
-        .itemCommon = ITEM_STARDUST,
-        .itemRare = ITEM_STAR_PIECE,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_SLOW,
-        .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3},
-        .abilities = {ABILITY_DIVA, ABILITY_NATURAL_CURE, ABILITY_ANALYTIC},
-        .sourceGame = SOURCE_EOSD,
-        .noFlip = TRUE,
-    },
-
     [SPECIES_STARMIE] =
     {
         .baseHP        = 60,

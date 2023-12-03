@@ -940,7 +940,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_SEADRA] = {
+    [SPECIES_CHIBI_REISEN] = {
         { .songLengthId = 12 },
         { .songLengthId = 42 },
         { .songLengthId = 51 },
@@ -948,7 +948,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_GOLDEEN] = {
+    [SPECIES_NORMAL_REISEN] = {
         { .songLengthId = 26 },
         { .songLengthId = 12 },
         { .songLengthId = 51 },
@@ -956,7 +956,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_SEAKING] = {
+    [SPECIES_DEFENSE_REISEN] = {
         { .songLengthId = 12 },
         { .songLengthId = 12 },
         { .songLengthId = 51 },
@@ -964,7 +964,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_STARYU] = {
+    [SPECIES_TECH_REISEN] = {
         { .songLengthId = 27 },
         { .songLengthId = 39 },
         { .songLengthId = 51 },
