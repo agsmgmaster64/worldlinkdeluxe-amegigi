@@ -695,25 +695,26 @@
 #define STRINGID_THESEAOFFIREDISAPPEARED              693
 #define STRINGID_SWAMPENVELOPEDSIDE                   694
 #define STRINGID_THESWAMPDISAPPEARED                  695
-#define STRINGID_POKEFLUTECATCHY                      696
-#define STRINGID_POKEFLUTE                            697
-#define STRINGID_MONHEARINGFLUTEAWOKE                 698
-#define STRINGID_PLAYERWHITEDOUT                      699
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            700
-#define STRINGID_STRINGISRESERVED                     701
-#define STRINGID_PKMNDROPPEDITEM                      702
-#define STRINGID_BAGISFULL                            703
-#define STRINGID_MONTOOSCAREDTOMOVE                   704
-#define STRINGID_GHOSTGETOUTGETOUT                    705
-#define STRINGID_SILPHSCOPEUNVEILED                   706
-#define STRINGID_GHOSTWASMAROWAK                      707
+#define STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE        696
+#define STRINGID_POKEFLUTECATCHY                      697
+#define STRINGID_POKEFLUTE                            698
+#define STRINGID_MONHEARINGFLUTEAWOKE                 699
+#define STRINGID_PLAYERWHITEDOUT                      700
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            701
+#define STRINGID_STRINGISRESERVED                     702
+#define STRINGID_PKMNDROPPEDITEM                      703
+#define STRINGID_BAGISFULL                            704
+#define STRINGID_MONTOOSCAREDTOMOVE                   705
+#define STRINGID_GHOSTGETOUTGETOUT                    706
+#define STRINGID_SILPHSCOPEUNVEILED                   707
+#define STRINGID_GHOSTWASMAROWAK                      708
 //tx_randomizer_and_challenges
-#define STRINGID_ONETYPECAPTUREBLOCKED                708
-#define STRINGID_NUZLOCKECAPTUREBLOCKED               709
-#define STRINGID_SPECIESCLAUSECAPTUREBLOCKED          710
-#define STRINGID_SAMESPECIESCAPTUREBLOCKED            711
+#define STRINGID_ONETYPECAPTUREBLOCKED                709
+#define STRINGID_NUZLOCKECAPTUREBLOCKED               710
+#define STRINGID_SPECIESCLAUSECAPTUREBLOCKED          711
+#define STRINGID_SAMESPECIESCAPTUREBLOCKED            712
 
-#define BATTLESTRINGS_COUNT                           712
+#define BATTLESTRINGS_COUNT                           713
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
