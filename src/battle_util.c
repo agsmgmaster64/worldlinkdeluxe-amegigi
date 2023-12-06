@@ -5798,23 +5798,23 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        //case ABILITY_JEALOUSY:
-            //if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-             //&& gBattleMons[gBattlerTarget].hp != 0
-             //&& !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             //&& RandomWeighted(RNG_STENCH, 9, 1)
-             //&& !IS_MOVE_STATUS(move)
-             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_HIT
-             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_STATUS
-             //&& !gBattleMoves[gCurrentMove].effect != EFFECT_TRIPLE_ARROWS)
-            //{
-                //gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
-                //BattleScriptPushCursor();
-                //SetMoveEffect(FALSE, 0);
-                //BattleScriptPop();
-                //effect++;
-            //}
-            //break;
+        case ABILITY_JEALOUSY:
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && gBattleMons[gBattlerTarget].hp != 0
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && RandomWeighted(RNG_STENCH, 9, 1)
+             && !IS_MOVE_STATUS(move)
+             && !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_HIT
+             && !gBattleMoves[gCurrentMove].effect != EFFECT_FLINCH_STATUS
+             && !gBattleMoves[gCurrentMove].effect != EFFECT_TRIPLE_ARROWS)
+            {
+                gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
+                BattleScriptPushCursor();
+                SetMoveEffect(FALSE, 0);
+                BattleScriptPop();
+                effect++;
+            }
+            break;
         case ABILITY_GULP_MISSILE:
             if (((gCurrentMove == MOVE_SURF && TARGET_TURN_DAMAGED) || gStatuses3[gBattlerAttacker] & STATUS3_UNDERWATER)
              && TryBattleFormChange(gBattlerAttacker, FORM_CHANGE_BATTLE_HP_PERCENT))
@@ -7735,7 +7735,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     && !gBattleMoves[gCurrentMove].ignoresKingsRock
                     && gBattleMons[gBattlerTarget].hp
                     && RandomPercentage(RNG_HOLD_EFFECT_FLINCH, atkHoldEffectParam)
-                    /*&& ability != ABILITY_JEALOUSY*/)
+                    && ability != ABILITY_JEALOUSY)
                 {
                     gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
                     BattleScriptPushCursor();
