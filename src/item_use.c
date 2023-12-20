@@ -1327,6 +1327,8 @@ void ItemUseInBattle_BagMenu(u8 taskId)
             RemoveUsedItem();
         else
             CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        if (!(B_TRY_CATCH_TRAINER_BALL >= GEN_4 && (ItemId_GetBattleUsage(gSpecialVar_ItemId) == EFFECT_ITEM_THROW_BALL) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+            RemoveUsedItem();
         ScheduleBgCopyTilemapToVram(2);
         if (!InBattlePyramid())
             gTasks[taskId].func = Task_FadeAndCloseBagMenu;

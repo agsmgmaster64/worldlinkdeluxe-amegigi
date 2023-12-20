@@ -108,9 +108,8 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - the 
     PARAMETRIZE {playerSetUpper = 1; opponentSetUpper = 1; }
 
     GIVEN {
-        ASSUME(P_GEN_8_POKEMON == TRUE);
-        PLAYER(SPECIES_ATTACK_MARISA);
-        PLAYER(SPECIES_DEFENSE_REIMU);
+        PLAYER(SPECIES_SQUIRTLE);
+        PLAYER(SPECIES_CHARMANDER);
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); Item(ITEM_IRON_BALL); } // Iron Ball, so that flying type Corviknight is affected by Sticky Web.
         OPPONENT(SPECIES_NORMAL_DAIYOUSEI);
         OPPONENT(SPECIES_CHIBI_CIRNO);
@@ -148,9 +147,8 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - no o
     PARAMETRIZE { speedPlayer = 10; speedOpponent = 5; }
 
     GIVEN {
-        ASSUME(P_GEN_8_POKEMON == TRUE);
-        PLAYER(SPECIES_ATTACK_MARISA) { Speed(speedPlayer); }
-        PLAYER(SPECIES_DEFENSE_REIMU) { Speed(speedPlayer); }
+        PLAYER(SPECIES_SQUIRTLE) { Speed(speedPlayer); }
+        PLAYER(SPECIES_CHARMANDER) { Speed(speedPlayer); }
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); Item(ITEM_IRON_BALL); Speed(speedOpponent); } // Iron Ball, so that flying type Corviknight is affected by Sticky Web.
         OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Speed(speedOpponent); }
         OPPONENT(SPECIES_CHIBI_CIRNO) { Speed(speedOpponent); }
@@ -193,7 +191,6 @@ DOUBLE_BATTLE_TEST("Sticky Web has correct interactions with Mirror Armor - no o
     PARAMETRIZE {hasReplacement = FALSE;}
 
     GIVEN {
-        ASSUME(P_GEN_8_POKEMON == TRUE);
         ASSUME(gBattleMoves[MOVE_MEMENTO].effect == EFFECT_MEMENTO);
         PLAYER(SPECIES_ATTACK_MARISA) {Speed(5); }
         PLAYER(SPECIES_DEFENSE_REIMU) {Speed(5); }
