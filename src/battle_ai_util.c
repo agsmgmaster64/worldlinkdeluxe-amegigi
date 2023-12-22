@@ -1856,6 +1856,7 @@ bool32 ShouldLowerAccuracy(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       && defAbility != ABILITY_MAGIC_BARRIER
       && defAbility != ABILITY_FULL_METAL_BODY
       && defAbility != ABILITY_KEEN_EYE
+      && defAbility != ABILITY_MINDS_EYE
       && (B_ILLUMINATE_EFFECT >= GEN_9 && defAbility != ABILITY_DIVA)
       && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
         return TRUE;
@@ -2547,8 +2548,8 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
     bool32 shouldSwitch;
     u32 battlerToSwitch;
 
-    shouldSwitch = ShouldSwitch(battlerAtk);
-    battlerToSwitch = *(gBattleStruct->AI_monToSwitchIntoId + battlerAtk);
+    shouldSwitch = ShouldSwitch(battlerAtk, FALSE);
+    battlerToSwitch = gBattleStruct->AI_monToSwitchIntoId[battlerAtk];
 
     if (PartyBattlerShouldAvoidHazards(battlerAtk, battlerToSwitch))
         return DONT_PIVOT;

@@ -94,5 +94,6 @@
 #define POKEDEX_PLUS_HGSS            TRUE   // If TRUE, enables the custom HGSS style Pokedex.
 #define RANDOMIZER_CHALLENGES        TRUE
 #define SUMMARY_SCREEN_NATURE_COLORS TRUE    // If TRUE, nature-based stat boosts and reductions will be red and blue in the summary screen.
+#define HQ_RANDOM                    TRUE    // If TRUE, replaces the default RNG with an implementation of SFC32 RNG. May break code that relies on RNG.
 
 #endif // GUARD_CONFIG_H
