@@ -1416,8 +1416,12 @@ static u8 DexNavGetAbilityNum(u16 species, u8 searchLevel)
             genAbility = TRUE;
         #endif
     }
-
-    if (genAbility && GetAbilityBySpecies(species, 2) != ABILITY_NONE && GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    
+    #ifdef BATTLE_ENGINE    // if using RHH, the base stats abilities field is expanded
+    if (genAbility && gSpeciesInfo[species].abilities[2] != ABILITY_NONE && GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    #else
+    if (genAbility && gSpeciesInfo[species].abilityHidden != ABILITY_NONE && GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+    #endif
     {
         //Only give hidden ability if Pokemon has been caught before
         abilityNum = 2;
@@ -1425,7 +1429,7 @@ static u8 DexNavGetAbilityNum(u16 species, u8 searchLevel)
     else
     {
         //Pick a normal ability of that Pokemon
-        if (GetAbilityBySpecies(species, 1) != ABILITY_NONE)
+        if (gSpeciesInfo[species].abilities[1] != ABILITY_NONE)
             abilityNum = Random() & 1;
         else
             abilityNum = 0;
@@ -2173,8 +2177,13 @@ static void PrintCurrentSpeciesInfo(void)
     }
     else if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
     {
-        if (GetAbilityBySpecies(species, 2) != ABILITY_NONE)
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[GetAbilityBySpecies(species, 2)]);
+        #ifdef BATTLE_ENGINE
+        if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE)
+            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilities[2]]);
+        #else
+        if (gSpeciesInfo[species].abilityHidden != ABILITY_NONE)           
+            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilityHidden]);
+        #endif
         else
             AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gText_None);
     }
