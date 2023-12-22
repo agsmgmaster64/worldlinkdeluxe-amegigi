@@ -38,7 +38,6 @@
 #include "text_window.h"
 #include "trainer_pokemon_sprites.h"
 #include "trig.h"
-#include "tx_randomizer_and_challenges.h"
 #include "window.h"
 #include "constants/abilities.h"
 #include "constants/form_change_types.h"
@@ -7998,8 +7997,8 @@ static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 t
                 {
                     species = NationalPokedexNumToSpecies(sPokedexView->pokedexList[i].dexNum);
 
-                    types[0] = GetTypeBySpecies(species, 1);
-                    types[1] = GetTypeBySpecies(species, 2);
+                    types[0] = gSpeciesInfo[species].types[0];
+                    types[1] = gSpeciesInfo[species].types[1];
                     if ((types[0] == type1 && types[1] == type2) || (types[0] == type2 && types[1] == type1))
                     {
                         sPokedexView->pokedexList[resultsCount] = sPokedexView->pokedexList[i];
