@@ -1,14 +1,12 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
-#include "battle_setup.h" //tx_randomizer_and_challenges
 #include "berry.h"
 #include "data.h"
 #include "daycare.h"
 #include "decompress.h"
 #include "event_data.h"
 #include "international_string_util.h"
-#include "item.h" //tx_randomizer_and_challenges
 #include "link.h"
 #include "link_rfu.h"
 #include "main.h"
@@ -27,7 +25,6 @@
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
 #include "pokevial.h"
-#include "tx_randomizer_and_challenges.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -64,49 +61,6 @@ void HealPlayerParty(void)
         arg[3] = 0;
         SetMonData(&gPlayerParty[i], MON_DATA_STATUS, arg);
     }
-}
-
-u8 ScriptGiveMonWithRandom(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
-{
-    u16 nationalDexNum;
-    int sentToPc;
-    u8 heldItem[2];
-    struct Pokemon mon;
-    u16 targetSpecies;
-
-    if (gSaveBlock1Ptr->tx_Random_WildPokemon || gSaveBlock1Ptr->tx_Random_Evolutions) //tx_randomizer_and_challenges
-            species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_WILD_POKEMON, 0);
-
-    if (OW_SYNCHRONIZE_NATURE >= GEN_6 && (gSpeciesInfo[species].eggGroups[0] == EGG_GROUP_UNDISCOVERED || OW_SYNCHRONIZE_NATURE == GEN_7))
-        CreateMonWithNature(&mon, species, level, USE_RANDOM_IVS, PickWildMonNature());
-    else
-        CreateMon(&mon, species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-
-    heldItem[0] = item;
-    heldItem[1] = item >> 8;
-    SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
-
-    // In case a mon with a form changing item is given. Eg: SPECIES_ARCEUS_NORMAL with ITEM_SPLASH_PLATE will transform into SPECIES_ARCEUS_WATER upon gifted.
-    targetSpecies = GetFormChangeTargetSpecies(&mon, FORM_CHANGE_ITEM_HOLD, 0);
-    if (targetSpecies != SPECIES_NONE)
-    {
-        SetMonData(&mon, MON_DATA_SPECIES, &targetSpecies);
-        CalculateMonStats(&mon);
-    }
-
-    sentToPc = GiveMonToPlayer(&mon);
-    nationalDexNum = SpeciesToNationalPokedexNum(species);
-
-    // Don't set Pokédex flag for MON_CANT_GIVE
-    switch(sentToPc)
-    {
-    case MON_GIVEN_TO_PARTY:
-    case MON_GIVEN_TO_PC:
-        GetSetPokedexFlag(nationalDexNum, FLAG_SET_SEEN);
-        GetSetPokedexFlag(nationalDexNum, FLAG_SET_CAUGHT);
-        break;
-    }
-    return sentToPc;
 }
 
 u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
@@ -199,12 +153,6 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
 
-    //tx_randomizer_and_challenges
-    if (gSaveBlock1Ptr->tx_Random_Static)
-        species = GetSpeciesRandomSeeded(species, TX_RANDOM_T_STATIC, 0);
-    if (gSaveBlock1Ptr->tx_Random_Items)
-        item = RandomItemId(item);
-
     ZeroEnemyPartyMons();
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
         CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
@@ -216,8 +164,6 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
-
-    SetNuzlockeChecks(); //tx_randomizer_and_challenges
 }
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {

@@ -1246,7 +1246,7 @@ void IsGrassTypeInParty(void)
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
         {
             species = GetMonData(pokemon, MON_DATA_SPECIES);
-            if (GetTypeBySpecies(species, 1) == TYPE_NATURE || GetTypeBySpecies(species, 2) == TYPE_NATURE) //tx_randomizer_and_challenges
+            if (gSpeciesInfo[species].types[0] == TYPE_NATURE || gSpeciesInfo[species].types[1] == TYPE_NATURE)
             {
                 gSpecialVar_Result = TRUE;
                 return;
