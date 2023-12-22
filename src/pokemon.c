@@ -1212,7 +1212,7 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_MAX_HP, &newMaxHP);
 
-    if (gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer && RANDOMIZER_CHALLENGES)
+    if (gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer)
     {
         u8 option = gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer - 1;
         CALC_STAT_EQUALIZED(baseAttack, attackIV, attackEV, STAT_ATK, MON_DATA_ATK, option)
@@ -2383,7 +2383,7 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     if (i >= GetMaxPartySize()) //tx_randomizer_and_challenges
         return CopyMonToPC(mon);
 
-    if (RANDOMIZER_CHALLENGES && typeChallenge != TX_CHALLENGE_TYPE_OFF && 
+    if (typeChallenge != TX_CHALLENGE_TYPE_OFF && 
                     GetTypeBySpecies(GetMonData(mon, MON_DATA_SPECIES, NULL), 1) != typeChallenge && 
                     GetTypeBySpecies(GetMonData(mon, MON_DATA_SPECIES, NULL), 2) != typeChallenge)
         return CopyMonToPC(mon);
@@ -6124,9 +6124,6 @@ u8 GetRandomType(void)
 u8 EvolutionBlockedByEvoLimit(u16 species)
 {
     u8 slot = gSpeciesMapping[species];
-
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
     if (slot == EVO_TYPE_1 && gSaveBlock1Ptr->tx_Challenges_EvoLimit == 1) //No Evos already previously checked
         return TRUE;
 

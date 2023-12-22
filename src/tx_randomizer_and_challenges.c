@@ -12,9 +12,6 @@
 // Generic functions
 bool8 IsRandomizerActivated(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     if (gSaveBlock1Ptr->tx_Random_Chaos
         || gSaveBlock1Ptr->tx_Random_WildPokemon
         || gSaveBlock1Ptr->tx_Random_Similar
@@ -36,17 +33,11 @@ bool8 IsRandomizerActivated(void)
 
 bool8 IsRandomItemsActivated(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     return gSaveBlock1Ptr->tx_Random_Items;
 }
 
 bool8 IsDifficultyOptionsActivated(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     if (gSaveBlock1Ptr->tx_Challenges_PartyLimit
         || gSaveBlock1Ptr->tx_Challenges_LevelCap
         || gSaveBlock1Ptr->tx_Challenges_ExpMultiplier
@@ -60,17 +51,11 @@ bool8 IsDifficultyOptionsActivated(void)
 
 bool8 IsOneTypeChallengeActive(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     return (gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge != TX_CHALLENGE_TYPE_OFF);
 }
 
 bool8 AreAnyChallengesActive(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     if (gSaveBlock1Ptr->tx_Challenges_EvoLimit
         || gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer
         || gSaveBlock1Ptr->tx_Challenges_Mirror
@@ -83,8 +68,6 @@ bool8 AreAnyChallengesActive(void)
 
 bool8 IsNuzlockeActive(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
     if (!FlagGet(FLAG_SYS_POKEMON_GET))     //Nuzlocke has not started
         return FALSE;
     if (!FlagGet(FLAG_ADVENTURE_STARTED))   //Nuzlocke has not started
@@ -97,8 +80,6 @@ bool8 IsNuzlockeActive(void)
 
 bool8 IsNuzlockeNicknamingActive(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
     if (!gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
         return FALSE;
     if (FlagGet(FLAG_IS_CHAMPION))
@@ -109,17 +90,11 @@ bool8 IsNuzlockeNicknamingActive(void)
 
 bool8 IsPokecenterChallengeActivated(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     return gSaveBlock1Ptr->tx_Challenges_PkmnCenter;
 }
 
 bool8 HMsOverwriteOptionActive(void)
 {
-    if (!RANDOMIZER_CHALLENGES)
-        return FALSE;
-
     return (gSaveBlock1Ptr->tx_Challenges_Nuzlocke 
             || gSaveBlock1Ptr->tx_Challenges_Mirror 
             || gSaveBlock1Ptr->tx_Random_Moves

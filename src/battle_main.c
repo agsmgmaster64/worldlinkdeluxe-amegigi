@@ -5580,7 +5580,7 @@ static void TryEvolvePokemon(void)
 {
     s32 i;
 
-    while (gLeveledUpInBattle != 0 && (gSaveBlock1Ptr->tx_Challenges_EvoLimit != 2))
+    while (gLeveledUpInBattle != 0 && gSaveBlock1Ptr->tx_Challenges_EvoLimit != 2)
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
