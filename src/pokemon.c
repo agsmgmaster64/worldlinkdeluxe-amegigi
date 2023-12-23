@@ -3677,8 +3677,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ITEM_LEVEL:
-                if (IsMonPastEvolutionLevel(mon) && gEvolutionTable[species][i].param == evolutionItem)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (IsMonPastEvolutionLevel(mon) && evolutions[i].param == evolutionItem)
+                    targetSpecies = evolutions[i].targetSpecies;
                 break;
             }
         }
