@@ -2681,7 +2681,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
         .speciesName = _("Cleffa"),
-        .cryId = CRY_CLEFFA,
+        .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_CLEFFA,
         .categoryName = _("Star Shape"),
         .height = 3,
@@ -2782,7 +2782,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_MOF,
         .noFlip = TRUE,
         .speciesName = _("Clefable"),
-        .cryId = CRY_CLEFABLE,
+        .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_CLEFABLE,
         .categoryName = _("Fairy"),
         .height = 13,
@@ -3155,7 +3155,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR },
         .sourceGame = SOURCE_PCB,
         .speciesName = _("Zubat"),
-        .cryId = CRY_ZUBAT,
+        .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_ZUBAT,
         .categoryName = _("Bat"),
         .height = 8,
@@ -3698,7 +3698,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_DIGLETT
 #define DIGLETT_FAMILY_MISC_INFO                            \
-        .itemRare = ITEM_SOFT_SAND,                         \
+        .itemRare = ITEM_GYM_SUIT,                         \
         .genderRatio = PERCENT_FEMALE(50),                  \
         .eggCycles = 20,                                    \
         .friendship = STANDARD_FRIENDSHIP,                  \
@@ -6054,7 +6054,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         SLOWPOKE_MISC_INFO,
         .types = { TYPE_REASON, TYPE_REASON },
         .abilities = { ABILITY_GLUTTONY, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR },
-        .cryId = CRY_SLOWPOKE_GALARIAN,
+        .cryId = CRY_PORYGON,
         .description = COMPOUND_STRING(
             "Although it is normally zoned out, its\n"
             "expression abruptly sharpens on occasion.\n"
@@ -6697,7 +6697,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #define KANTONIAN_GRIMER_FAMILY_INFO                                                \
         .types = { TYPE_MIASMA, TYPE_MIASMA },                                      \
-        .abilities = { ABILITY_JEALOUSY, ABILITY_STICKY_HOLD, ABILITY_POISON_TOUCH }, \
+        .abilities = { ABILITY_JEALOUSY, ABILITY_COLLECTOR, ABILITY_POISON_TOUCH }, \
         .sourceGame = SOURCE_PCB
 
     [SPECIES_GRIMER] =

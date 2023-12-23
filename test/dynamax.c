@@ -894,7 +894,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) G-Max Steelsurge sets up sharp steel")
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_HATTERENE);
     } WHEN {
-        TURN { MOVE(player, MOVE_IRON_HEAD, dynamax: TRUE); }
+        TURN { MOVE(player, MOVE_DRAWN_LINE, dynamax: TRUE); }
         TURN { SWITCH(opponent, 1); }
         TURN { } // wait out Dynamax
         TURN { MOVE(opponent, MOVE_DEFOG); }
@@ -1162,7 +1162,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Meltdown torments both opponents for 3 turns
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WYNAUT) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_IRON_HEAD, target: opponentLeft, dynamax: TRUE); \
+        TURN { MOVE(playerLeft, MOVE_DRAWN_LINE, target: opponentLeft, dynamax: TRUE); \
                MOVE(opponentLeft, MOVE_SPLASH); MOVE(opponentRight, MOVE_SPLASH); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE, target: opponentLeft); \
                MOVE(opponentLeft, MOVE_SPLASH, allowed: FALSE); \

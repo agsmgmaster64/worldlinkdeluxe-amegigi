@@ -38,7 +38,7 @@ static const u16 sParalyzingMoves[] = {
 // EFFECT_POISON_HIT (30% or more), EFFECT_POISON, EFFECT_POISON_FANG, EFFECT_TOXIC, EFFECT_TOXIC_THREAD
 static const u16 sPoisoningMoves[] = {
     MOVE_POISON_STING,
-    //MOVE_TWINEEDLE,
+    //MOVE_SEAL_NEEDLE,
     MOVE_SMOG,
     MOVE_SLUDGE,
     MOVE_SLUDGE_BOMB,
@@ -48,7 +48,7 @@ static const u16 sPoisoningMoves[] = {
     MOVE_GUNK_SHOT,
     //MOVE_SLUDGE_WAVE,
     MOVE_NOXIOUS_TORQUE,
-    //MOVE_ACID,
+    //MOVE_POISON_TEARS,
     MOVE_POISON_POWDER,
     MOVE_TOXIC,
     MOVE_POISON_GAS,

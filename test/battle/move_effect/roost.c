@@ -20,7 +20,7 @@ ASSUMPTIONS
     ASSUME(gBattleMoves[MOVE_WATER_GUN].type == TYPE_WATER);
     ASSUME(gBattleMoves[MOVE_VINE_WHIP].type == TYPE_NATURE);
     ASSUME(gBattleMoves[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
-    ASSUME(gBattleMoves[MOVE_CONFUSION].type == TYPE_REASON);
+    ASSUME(gBattleMoves[MOVE_PSYSHOT].type == TYPE_REASON);
     ASSUME(gBattleMoves[MOVE_ICE_BEAM].type == TYPE_ICE);
     ASSUME(gBattleMoves[MOVE_DECISION].type == TYPE_FAITH);
     ASSUME(gBattleMoves[MOVE_BITE].type == TYPE_DARK);
@@ -124,7 +124,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE{ damagingMove = MOVE_WATER_GUN; }
     PARAMETRIZE{ damagingMove = MOVE_VINE_WHIP; }
     PARAMETRIZE{ damagingMove = MOVE_THUNDER_SHOCK; }
-    PARAMETRIZE{ damagingMove = MOVE_CONFUSION; }
+    PARAMETRIZE{ damagingMove = MOVE_PSYSHOT; }
     PARAMETRIZE{ damagingMove = MOVE_ICE_BEAM; }
     PARAMETRIZE{ damagingMove = MOVE_DECISION; }
     PARAMETRIZE{ damagingMove = MOVE_BITE; }
@@ -192,7 +192,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE{ damagingMove = MOVE_WATER_GUN; }
     PARAMETRIZE{ damagingMove = MOVE_VINE_WHIP; }
     PARAMETRIZE{ damagingMove = MOVE_THUNDER_SHOCK; }
-    PARAMETRIZE{ damagingMove = MOVE_CONFUSION; }
+    PARAMETRIZE{ damagingMove = MOVE_PSYSHOT; }
     PARAMETRIZE{ damagingMove = MOVE_ICE_BEAM; }
     PARAMETRIZE{ damagingMove = MOVE_DECISION; }
     PARAMETRIZE{ damagingMove = MOVE_BITE; }
@@ -230,7 +230,7 @@ DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[0] != TYPE_FLYING);
         ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[1] != TYPE_FLYING);
-        PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_COLOR_CHANGE); }
+        PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_MYSTERIOUS); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
         OPPONENT(SPECIES_TECH_CIRNO) { Speed(30); }
         OPPONENT(SPECIES_HELPER_KOAKUMA) { Speed(20); }

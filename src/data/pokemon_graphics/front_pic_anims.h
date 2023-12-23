@@ -1125,7 +1125,7 @@ static const union AnimCmd sAnim_Slowpoke_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_CYoumu_1[] =
+static const union AnimCmd sAnim_Slowbro_1[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),
@@ -1165,7 +1165,7 @@ static const union AnimCmd sAnim_Magnemite_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_DYoumu_1[] =
+static const union AnimCmd sAnim_Magneton_1[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),

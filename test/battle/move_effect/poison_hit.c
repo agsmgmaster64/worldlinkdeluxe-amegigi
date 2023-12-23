@@ -4,7 +4,7 @@
 ASSUMPTIONS
 {
     ASSUME(gBattleMoves[MOVE_POISON_STING].effect == EFFECT_POISON_HIT);
-    ASSUME(gBattleMoves[MOVE_TWINEEDLE].effect == EFFECT_POISON_HIT);
+    ASSUME(gBattleMoves[MOVE_SEAL_NEEDLE].effect == EFFECT_POISON_HIT);
 }
 
 SINGLE_BATTLE_TEST("Poison Sting inflicts poison")
@@ -34,9 +34,9 @@ SINGLE_BATTLE_TEST("Poison cannot be inflicted on Poison and Steel-type Pokémon
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon);
     } WHEN {
-        TURN { MOVE(player, MOVE_TWINEEDLE); }
+        TURN { MOVE(player, MOVE_SEAL_NEEDLE); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TWINEEDLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SEAL_NEEDLE, player);
         HP_BAR(opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
