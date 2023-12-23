@@ -42,8 +42,8 @@ SINGLE_BATTLE_TEST("Sandstorm damage does not hurt Ground, Rock, and Steel-type 
     PARAMETRIZE { mon = SPECIES_NOSEPASS; }
     PARAMETRIZE { mon = SPECIES_REGISTEEL; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_PLCEHOLDER1_KOAKUMA].types[0] == TYPE_GROUND);
-        ASSUME(gSpeciesInfo[SPECIES_NOSEPASS].types[0] == TYPE_ROCK);
+        ASSUME(gSpeciesInfo[SPECIES_PLCEHOLDER1_KOAKUMA].types[0] == TYPE_EARTH);
+        ASSUME(gSpeciesInfo[SPECIES_NOSEPASS].types[0] == TYPE_BEAST);
         ASSUME(gSpeciesInfo[SPECIES_REGISTEEL].types[0] == TYPE_STEEL);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon);

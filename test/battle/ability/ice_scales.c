@@ -5,11 +5,11 @@ SINGLE_BATTLE_TEST("Ice Scales halves the damage from special moves", s16 damage
 {
     u32 move;
     u16 ability;
-    PARAMETRIZE { ability = ABILITY_SHIELD_DUST; move = MOVE_PSYCHIC; }
+    PARAMETRIZE { ability = ABILITY_ADVENT; move = MOVE_PSYCHIC; }
     PARAMETRIZE { ability = ABILITY_ICE_SCALES; move = MOVE_PSYCHIC; }
-    PARAMETRIZE { ability = ABILITY_SHIELD_DUST; move = MOVE_PSYSHOCK; }
+    PARAMETRIZE { ability = ABILITY_ADVENT; move = MOVE_PSYSHOCK; }
     PARAMETRIZE { ability = ABILITY_ICE_SCALES; move = MOVE_PSYSHOCK; }
-    PARAMETRIZE { ability = ABILITY_SHIELD_DUST; move = MOVE_TACKLE; }
+    PARAMETRIZE { ability = ABILITY_ADVENT; move = MOVE_TACKLE; }
     PARAMETRIZE { ability = ABILITY_ICE_SCALES; move = MOVE_TACKLE; }
     GIVEN {
         ASSUME(gBattleMoves[MOVE_PSYCHIC].category == BATTLE_CATEGORY_SPECIAL);

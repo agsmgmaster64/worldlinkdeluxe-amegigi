@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect Pokémon with no types")
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[0] == TYPE_WATER);
-    ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_FIGHTING);
+    ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_DREAM);
     GIVEN {
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_POLIWRATH);
@@ -112,7 +112,7 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[0] == TYPE_WATER);
-    ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_FIGHTING);
+    ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_DREAM);
     GIVEN {
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_POLIWRATH);
@@ -124,7 +124,7 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
         MESSAGE("Arcanine's type changed to match the Foe Poliwrath's!");
     } THEN {
         EXPECT_EQ(player->type1, TYPE_WATER);
-        EXPECT_EQ(player->type2, TYPE_FIGHTING);
+        EXPECT_EQ(player->type2, TYPE_DREAM);
         EXPECT_EQ(player->type3, TYPE_MYSTERY);
     }
 }
@@ -133,8 +133,8 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
 {
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[0] == TYPE_ROCK);
-    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[1] == TYPE_ROCK);
+    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[0] == TYPE_BEAST);
+    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[1] == TYPE_BEAST);
     GIVEN {
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_SUDOWOODO);
@@ -145,16 +145,16 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT_TYPE, player);
         MESSAGE("Arcanine's type changed to match the Foe Sudowoodo's!");
     } THEN {
-        EXPECT_EQ(player->type1, TYPE_ROCK);
-        EXPECT_EQ(player->type2, TYPE_ROCK);
+        EXPECT_EQ(player->type1, TYPE_BEAST);
+        EXPECT_EQ(player->type2, TYPE_BEAST);
         EXPECT_EQ(player->type3, TYPE_MYSTERY);
     }
 }
 
 SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's type1 and type2 if the target only has a 3rd type")
 {
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_PSYCHIC);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_PSYCHIC);
+    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_REASON);
+    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_REASON);
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
     GIVEN {
@@ -179,8 +179,8 @@ SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's type1 an
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT_TYPE, player);
         MESSAGE("Wobbuffet's type changed to match the Foe Arcanine's!");
     } THEN {
-        EXPECT_EQ(player->type1, TYPE_NORMAL);
-        EXPECT_EQ(player->type2, TYPE_NORMAL);
-        EXPECT_EQ(player->type3, TYPE_GRASS);
+        EXPECT_EQ(player->type1, TYPE_ILLUSION);
+        EXPECT_EQ(player->type2, TYPE_ILLUSION);
+        EXPECT_EQ(player->type3, TYPE_NATURE);
     }
 }

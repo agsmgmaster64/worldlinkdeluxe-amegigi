@@ -4,7 +4,7 @@
 ASSUMPTIONS
 {
     ASSUME(gBattleMoves[MOVE_THUNDERBOLT].power != 0);
-    ASSUME(gBattleMoves[MOVE_THUNDERBOLT].type == TYPE_ELECTRIC);
+    ASSUME(gBattleMoves[MOVE_THUNDERBOLT].type == TYPE_WIND);
     ASSUME(gBattleMoves[MOVE_TACKLE].power != 0);
     ASSUME(gBattleMoves[MOVE_AIR_CUTTER].power != 0);
     ASSUME(gBattleMoves[MOVE_AIR_CUTTER].target == MOVE_TARGET_BOTH);

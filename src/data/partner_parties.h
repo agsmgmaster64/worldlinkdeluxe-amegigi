@@ -5,7 +5,7 @@ static const struct TrainerMon sParty_StevenPartner[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_BRAVE),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 6, 0),
-        .moves = {MOVE_LIGHT_SCREEN, MOVE_PSYCHIC, MOVE_REFLECT, MOVE_METAL_CLAW},
+        .moves = {MOVE_LIGHT_SCREEN, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_METAL_CLAW},
     },
     {
         .species = SPECIES_SKARMORY,
@@ -21,6 +21,6 @@ static const struct TrainerMon sParty_StevenPartner[] = {
         .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 6),
-        .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_DRAGON_CLAW},
+        .moves = {MOVE_THUNDER, MOVE_PROTECT, MOVE_SOLAR_BEAM, MOVE_HEART_BREAK},
     }
 };

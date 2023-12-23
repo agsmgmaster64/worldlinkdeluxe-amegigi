@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Electromorphosis sets up Charge when hit by any move")
         ASSUME(gBattleMoves[MOVE_GUST].category == BATTLE_CATEGORY_SPECIAL);
         ASSUME(gBattleMoves[MOVE_TACKLE].category == BATTLE_CATEGORY_PHYSICAL);
         ASSUME(gBattleMoves[MOVE_THUNDER_SHOCK].power != 0);
-        ASSUME(gBattleMoves[MOVE_THUNDER_SHOCK].type == TYPE_ELECTRIC);
+        ASSUME(gBattleMoves[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
 
         PLAYER(SPECIES_BELLIBOLT) { Ability(ABILITY_ELECTROMORPHOSIS); Speed(10); }
         OPPONENT(SPECIES_WOBBUFFET) {Ability(ABILITY_LIMBER); Speed(5) ;} // Limber, so it doesn't get paralyzed.

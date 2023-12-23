@@ -12,7 +12,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 38,
         .baseSpAttack  = 48,
         .baseSpDefense = 45,
-        .types = { TYPE_GRASS, TYPE_GRASS },
+        .types = { TYPE_NATURE, TYPE_NATURE },
         .catchRate = 45,
         .expYield = 63,
         .evYield_Defense = 1,
@@ -22,7 +22,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF },
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .speciesName = _("Chespin"),
         .cryId = CRY_CHESPIN,
         .natDexNum = NATIONAL_DEX_CHESPIN,
@@ -60,7 +60,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 57,
         .baseSpAttack  = 56,
         .baseSpDefense = 58,
-        .types = { TYPE_GRASS, TYPE_GRASS },
+        .types = { TYPE_NATURE, TYPE_NATURE },
         .catchRate = 45,
         .expYield = 142,
         .evYield_Defense = 2,
@@ -70,7 +70,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF },
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .speciesName = _("Quilladin"),
         .cryId = CRY_QUILLADIN,
         .natDexNum = NATIONAL_DEX_QUILLADIN,
@@ -108,7 +108,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 64,
         .baseSpAttack  = 74,
         .baseSpDefense = 75,
-        .types = { TYPE_GRASS, TYPE_FIGHTING },
+        .types = { TYPE_NATURE, TYPE_DREAM },
         .catchRate = 45,
         .expYield = 239,
         .evYield_Defense = 3,
@@ -118,7 +118,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_BULLETPROOF },
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .speciesName = _("Chesnaught"),
         .cryId = CRY_CHESNAUGHT,
         .natDexNum = NATIONAL_DEX_CHESNAUGHT,
@@ -167,7 +167,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Fennekin"),
         .cryId = CRY_FENNEKIN,
         .natDexNum = NATIONAL_DEX_FENNEKIN,
@@ -215,7 +215,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Braixen"),
         .cryId = CRY_BRAIXEN,
         .natDexNum = NATIONAL_DEX_BRAIXEN,
@@ -253,7 +253,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 104,
         .baseSpAttack  = 114,
         .baseSpDefense = 100,
-        .types = { TYPE_FIRE, TYPE_PSYCHIC },
+        .types = { TYPE_FIRE, TYPE_REASON },
         .catchRate = 45,
         .expYield = 240,
         .evYield_SpAttack = 3,
@@ -263,7 +263,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_MAGICIAN },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Delphox"),
         .cryId = CRY_DELPHOX,
         .natDexNum = NATIONAL_DEX_DELPHOX,
@@ -312,7 +312,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1 },
         .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Froakie"),
         .cryId = CRY_FROAKIE,
         .natDexNum = NATIONAL_DEX_FROAKIE,
@@ -360,7 +360,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_1 },
         .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_PROTEAN },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Frogadier"),
         .cryId = CRY_FROGADIER,
         .natDexNum = NATIONAL_DEX_FROGADIER,
@@ -414,7 +414,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggCycles = 20,                                \
         .friendship = STANDARD_FRIENDSHIP,              \
         .growthRate = GROWTH_MEDIUM_SLOW,               \
-        .bodyColor = BODY_COLOR_BLUE,                   \
+        .sourceGame = SOURCE_SOEW,                   \
         .noFlip = TRUE,                                 \
         .speciesName = _("Greninja"),                   \
         .cryId = CRY_GRENINJA,                          \
@@ -493,7 +493,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 57,
         .baseSpAttack  = 32,
         .baseSpDefense = 36,
-        .types = { TYPE_NORMAL, TYPE_NORMAL },
+        .types = { TYPE_ILLUSION, TYPE_ILLUSION },
         .catchRate = 255,
         .expYield = 47,
         .evYield_Speed = 1,
@@ -503,7 +503,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_PICKUP, ABILITY_CHEEK_POUCH, ABILITY_HUGE_POWER },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Bunnelby"),
         .cryId = CRY_BUNNELBY,
         .natDexNum = NATIONAL_DEX_BUNNELBY,
@@ -541,7 +541,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 78,
         .baseSpAttack  = 50,
         .baseSpDefense = 77,
-        .types = { TYPE_NORMAL, TYPE_GROUND },
+        .types = { TYPE_ILLUSION, TYPE_EARTH },
         .catchRate = 127,
         .expYield = 148,
         .evYield_HP = 2,
@@ -551,7 +551,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_PICKUP, ABILITY_CHEEK_POUCH, ABILITY_HUGE_POWER },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Diggersby"),
         .cryId = CRY_DIGGERSBY,
         .natDexNum = NATIONAL_DEX_DIGGERSBY,
@@ -590,7 +590,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 62,
         .baseSpAttack  = 40,
         .baseSpDefense = 38,
-        .types = { TYPE_NORMAL, TYPE_FLYING },
+        .types = { TYPE_ILLUSION, TYPE_FLYING },
         .catchRate = 255,
         .expYield = 56,
         .evYield_Speed = 1,
@@ -600,7 +600,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
         .abilities = { ABILITY_BIG_PECKS, ABILITY_NONE, ABILITY_GALE_WINGS },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Fletchling"),
         .cryId = CRY_FLETCHLING,
         .natDexNum = NATIONAL_DEX_FLETCHLING,
@@ -648,7 +648,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
         .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Flechinder"),
         .cryId = CRY_FLETCHINDER,
         .natDexNum = NATIONAL_DEX_FLETCHINDER,
@@ -697,7 +697,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
         .abilities = { ABILITY_FLAME_BODY, ABILITY_NONE, ABILITY_GALE_WINGS },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Talonflame"),
         .cryId = CRY_TALONFLAME,
         .natDexNum = NATIONAL_DEX_TALONFLAME,
@@ -737,7 +737,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 27,
         .baseSpDefense = 25,
-        .types = { TYPE_BUG, TYPE_BUG },
+        .types = { TYPE_HEART, TYPE_HEART },
         .catchRate = 255,
         .expYield = 40,
         .evYield_Defense = 1,
@@ -746,8 +746,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_COMPOUND_EYES, ABILITY_FRIEND_GUARD },
-        .bodyColor = BODY_COLOR_BLACK,
+        .abilities = { ABILITY_ADVENT, ABILITY_FOCUS, ABILITY_FRIEND_GUARD },
+        .sourceGame = SOURCE_MS,
         .speciesName = _("Scatterbug"),
         .cryId = CRY_SCATTERBUG,
         .natDexNum = NATIONAL_DEX_SCATTERBUG,
@@ -785,7 +785,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 29,
         .baseSpAttack  = 27,
         .baseSpDefense = 30,
-        .types = { TYPE_BUG, TYPE_BUG },
+        .types = { TYPE_HEART, TYPE_HEART },
         .catchRate = 120,
         .expYield = 75,
         .evYield_Defense = 2,
@@ -795,7 +795,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
         .abilities = { ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_FRIEND_GUARD },
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .speciesName = _("Spewpa"),
         .cryId = CRY_SPEWPA,
         .natDexNum = NATIONAL_DEX_SPEWPA,
@@ -832,7 +832,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 89,                                                                \
         .baseSpAttack  = 90,                                                                \
         .baseSpDefense = 50,                                                                \
-        .types = { TYPE_BUG, TYPE_FLYING },                                                 \
+        .types = { TYPE_HEART, TYPE_FLYING },                                                 \
         .catchRate = 45,                                                                    \
         .expYield = 185,                                                                    \
         .evYield_HP = 1,                                                                    \
@@ -843,8 +843,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,                                                  \
         .growthRate = GROWTH_MEDIUM_FAST,                                                   \
         .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },                                      \
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_COMPOUND_EYES, ABILITY_FRIEND_GUARD },  \
-        .bodyColor = color,                                                                 \
+        .abilities = { ABILITY_ADVENT, ABILITY_FOCUS, ABILITY_FRIEND_GUARD },  \
+        .sourceGame = color,                                                                 \
         .speciesName = _("Vivillon"),                                                       \
         .cryId = CRY_VIVILLON,                                                              \
         .natDexNum = NATIONAL_DEX_VIVILLON,                                                 \
@@ -871,7 +871,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_VIVILLON_ICY_SNOW] =
     {
-        VIVILLON_MISC_INFO(IcySnow, BODY_COLOR_WHITE, 0),
+        VIVILLON_MISC_INFO(IcySnow, SOURCE_POFV, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -880,7 +880,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_POLAR] =
     {
-        VIVILLON_MISC_INFO(Polar, BODY_COLOR_BLUE, 0),
+        VIVILLON_MISC_INFO(Polar, SOURCE_SOEW, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -889,7 +889,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_TUNDRA] =
     {
-        VIVILLON_MISC_INFO(Tundra, BODY_COLOR_BLUE, 0),
+        VIVILLON_MISC_INFO(Tundra, SOURCE_SOEW, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -898,7 +898,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_CONTINENTAL] =
     {
-        VIVILLON_MISC_INFO(Continental, BODY_COLOR_YELLOW, 2),
+        VIVILLON_MISC_INFO(Continental, SOURCE_PODD, 2),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -907,7 +907,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_GARDEN] =
     {
-        VIVILLON_MISC_INFO(Garden, BODY_COLOR_GREEN, 1),
+        VIVILLON_MISC_INFO(Garden, SOURCE_LLS, 1),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -916,7 +916,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_ELEGANT] =
     {
-        VIVILLON_MISC_INFO(Elegant, BODY_COLOR_PURPLE, 0),
+        VIVILLON_MISC_INFO(Elegant, SOURCE_PCB, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -925,7 +925,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_MEADOW] =
     {
-        VIVILLON_MISC_INFO(Meadow, BODY_COLOR_PINK, 0),
+        VIVILLON_MISC_INFO(Meadow, SOURCE_MOF, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -934,7 +934,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_MODERN] =
     {
-        VIVILLON_MISC_INFO(Modern, BODY_COLOR_RED, 2),
+        VIVILLON_MISC_INFO(Modern, SOURCE_HRTP, 2),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -943,7 +943,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_MARINE] =
     {
-        VIVILLON_MISC_INFO(Marine, BODY_COLOR_BLUE, 0),
+        VIVILLON_MISC_INFO(Marine, SOURCE_SOEW, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -952,7 +952,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_ARCHIPELAGO] =
     {
-        VIVILLON_MISC_INFO(Archipelago, BODY_COLOR_BROWN, 0),
+        VIVILLON_MISC_INFO(Archipelago, SOURCE_EOSD, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -961,7 +961,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_HIGH_PLAINS] =
     {
-        VIVILLON_MISC_INFO(HighPlains, BODY_COLOR_BROWN, 0),
+        VIVILLON_MISC_INFO(HighPlains, SOURCE_EOSD, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -970,7 +970,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_SANDSTORM] =
     {
-        VIVILLON_MISC_INFO(Sandstorm, BODY_COLOR_BROWN, 1),
+        VIVILLON_MISC_INFO(Sandstorm, SOURCE_EOSD, 1),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -979,7 +979,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_RIVER] =
     {
-        VIVILLON_MISC_INFO(River, BODY_COLOR_BROWN, 2),
+        VIVILLON_MISC_INFO(River, SOURCE_EOSD, 2),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -988,7 +988,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_MONSOON] =
     {
-        VIVILLON_MISC_INFO(Monsoon, BODY_COLOR_GRAY, 0),
+        VIVILLON_MISC_INFO(Monsoon, SOURCE_IN, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -997,7 +997,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_SAVANNA] =
     {
-        VIVILLON_MISC_INFO(Savanna, BODY_COLOR_GREEN, 0),
+        VIVILLON_MISC_INFO(Savanna, SOURCE_LLS, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -1006,7 +1006,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_SUN] =
     {
-        VIVILLON_MISC_INFO(Sun, BODY_COLOR_RED, 0),
+        VIVILLON_MISC_INFO(Sun, SOURCE_HRTP, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -1015,7 +1015,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_OCEAN] =
     {
-        VIVILLON_MISC_INFO(Ocean, BODY_COLOR_RED, 0),
+        VIVILLON_MISC_INFO(Ocean, SOURCE_HRTP, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -1024,7 +1024,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_JUNGLE] =
     {
-        VIVILLON_MISC_INFO(Jungle, BODY_COLOR_GREEN, 0),
+        VIVILLON_MISC_INFO(Jungle, SOURCE_LLS, 0),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in. This\n"
@@ -1033,7 +1033,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_FANCY] =
     {
-        VIVILLON_MISC_INFO(Fancy, BODY_COLOR_PINK, 1),
+        VIVILLON_MISC_INFO(Fancy, SOURCE_MOF, 1),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -1042,7 +1042,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
     [SPECIES_VIVILLON_POKE_BALL] =
     {
-        VIVILLON_MISC_INFO(PokeBall, BODY_COLOR_RED, 2),
+        VIVILLON_MISC_INFO(PokeBall, SOURCE_HRTP, 2),
         .description = COMPOUND_STRING(
             "Its pattern depends on the climate and\n"
             "topography of the land it was born in.\n"
@@ -1060,7 +1060,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 72,
         .baseSpAttack  = 73,
         .baseSpDefense = 54,
-        .types = { TYPE_FIRE, TYPE_NORMAL },
+        .types = { TYPE_FIRE, TYPE_ILLUSION },
         .catchRate = 220,
         .expYield = 74,
         .evYield_SpAttack = 1,
@@ -1070,7 +1070,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_RIVALRY, ABILITY_UNNERVE, ABILITY_MOXIE },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Litleo"),
         .cryId = CRY_LITLEO,
         .natDexNum = NATIONAL_DEX_LITLEO,
@@ -1108,7 +1108,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 106,
         .baseSpAttack  = 109,
         .baseSpDefense = 66,
-        .types = { TYPE_FIRE, TYPE_NORMAL },
+        .types = { TYPE_FIRE, TYPE_ILLUSION },
         .catchRate = 65,
         .expYield = 177,
         .evYield_SpAttack = 2,
@@ -1118,7 +1118,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_RIVALRY, ABILITY_UNNERVE, ABILITY_MOXIE },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Pyroar"),
         .cryId = CRY_PYROAR,
         .natDexNum = NATIONAL_DEX_PYROAR,
@@ -1159,7 +1159,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 42,                                                    \
         .baseSpAttack  = 61,                                                    \
         .baseSpDefense = 79,                                                    \
-        .types = { TYPE_FAIRY, TYPE_FAIRY },                                    \
+        .types = { TYPE_COSMIC, TYPE_COSMIC },                                    \
         .catchRate = 225,                                                       \
         .expYield = 61,                                                         \
         .evYield_SpDefense = 1,                                                 \
@@ -1169,7 +1169,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },                      \
         .abilities = { ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS },  \
-        .bodyColor = BODY_COLOR_WHITE,                                          \
+        .sourceGame = SOURCE_POFV,                                          \
         .speciesName = _("Flabébé"),                                            \
         .cryId = CRY_FLABEBE,                                                   \
         .natDexNum = NATIONAL_DEX_FLABEBE,                                      \
@@ -1242,7 +1242,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #define FLOETTE_MISC_INFO(form, FORM, iconPal)                                  \
-        .types = { TYPE_FAIRY, TYPE_FAIRY },                                    \
+        .types = { TYPE_COSMIC, TYPE_COSMIC },                                    \
         .catchRate = 120,                                                       \
         .evYield_SpDefense = 2,                                                 \
         .genderRatio = MON_FEMALE,                                              \
@@ -1250,7 +1250,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,                                      \
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .abilities = { ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS },  \
-        .bodyColor = BODY_COLOR_WHITE,                                          \
+        .sourceGame = SOURCE_POFV,                                          \
         .speciesName = _("Floette"),                                            \
         .natDexNum = NATIONAL_DEX_FLOETTE,                                      \
         .categoryName = _("Single Bloom"),                                      \
@@ -1364,7 +1364,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 75,                                                    \
         .baseSpAttack  = 112,                                                   \
         .baseSpDefense = 154,                                                   \
-        .types = { TYPE_FAIRY, TYPE_FAIRY },                                    \
+        .types = { TYPE_COSMIC, TYPE_COSMIC },                                    \
         .catchRate = 45,                                                        \
         .expYield = 248,                                                        \
         .evYield_SpDefense = 3,                                                 \
@@ -1374,7 +1374,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                                       \
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },                      \
         .abilities = { ABILITY_FLOWER_VEIL, ABILITY_NONE, ABILITY_SYMBIOSIS },  \
-        .bodyColor = BODY_COLOR_WHITE,                                          \
+        .sourceGame = SOURCE_POFV,                                          \
         .speciesName = _("Florges"),                                            \
         .cryId = CRY_FLORGES,                                                   \
         .natDexNum = NATIONAL_DEX_FLORGES,                                      \
@@ -1453,7 +1453,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 52,
         .baseSpAttack  = 62,
         .baseSpDefense = 57,
-        .types = { TYPE_GRASS, TYPE_GRASS },
+        .types = { TYPE_NATURE, TYPE_NATURE },
         .catchRate = 200,
         .expYield = 70,
         .evYield_HP = 1,
@@ -1463,7 +1463,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GRASS_PELT },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Skiddo"),
         .cryId = CRY_SKIDDO,
         .natDexNum = NATIONAL_DEX_SKIDDO,
@@ -1501,7 +1501,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 68,
         .baseSpAttack  = 97,
         .baseSpDefense = 81,
-        .types = { TYPE_GRASS, TYPE_GRASS },
+        .types = { TYPE_NATURE, TYPE_NATURE },
         .catchRate = 45,
         .expYield = 186,
         .evYield_HP = 2,
@@ -1511,7 +1511,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GRASS_PELT },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Gogoat"),
         .cryId = CRY_GOGOAT,
         .natDexNum = NATIONAL_DEX_GOGOAT,
@@ -1550,7 +1550,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 43,
         .baseSpAttack  = 46,
         .baseSpDefense = 48,
-        .types = { TYPE_FIGHTING, TYPE_FIGHTING },
+        .types = { TYPE_DREAM, TYPE_DREAM },
         .catchRate = 220,
         .expYield = 70,
         .evYield_Attack = 1,
@@ -1561,7 +1561,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE },
         .abilities = { ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY },
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .speciesName = _("Pancham"),
         .cryId = CRY_PANCHAM,
         .natDexNum = NATIONAL_DEX_PANCHAM,
@@ -1599,7 +1599,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 58,
         .baseSpAttack  = 69,
         .baseSpDefense = 71,
-        .types = { TYPE_FIGHTING, TYPE_DARK },
+        .types = { TYPE_DREAM, TYPE_DARK },
         .catchRate = 65,
         .expYield = 173,
         .evYield_Attack = 2,
@@ -1610,7 +1610,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_HUMAN_LIKE },
         .abilities = { ABILITY_IRON_FIST, ABILITY_MOLD_BREAKER, ABILITY_SCRAPPY },
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .speciesName = _("Pangoro"),
         .cryId = CRY_PANGORO,
         .natDexNum = NATIONAL_DEX_PANGORO,
@@ -1648,7 +1648,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 102,                               \
         .baseSpAttack  = 65,                                \
         .baseSpDefense = 90,                                \
-        .types = { TYPE_NORMAL, TYPE_NORMAL },              \
+        .types = { TYPE_ILLUSION, TYPE_ILLUSION },              \
         .catchRate = 160,                                   \
         .expYield = 165,                                    \
         .evYield_Speed = 1,                                 \
@@ -1658,7 +1658,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                   \
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },  \
         .abilities = { ABILITY_FUR_COAT, ABILITY_NONE },    \
-        .bodyColor = BODY_COLOR_WHITE,                      \
+        .sourceGame = SOURCE_POFV,                      \
         .speciesName = _("Furfrou"),                        \
         .cryId = CRY_FURFROU,                               \
         .natDexNum = NATIONAL_DEX_FURFROU,                  \
@@ -1789,7 +1789,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 68,
         .baseSpAttack  = 63,
         .baseSpDefense = 60,
-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
+        .types = { TYPE_REASON, TYPE_REASON },
         .catchRate = 190,
         .expYield = 71,
         .evYield_Speed = 1,
@@ -1799,7 +1799,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },
         .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_OWN_TEMPO },
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .speciesName = _("Espurr"),
         .cryId = CRY_ESPURR,
         .natDexNum = NATIONAL_DEX_ESPURR,
@@ -1837,7 +1837,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 104,                               \
         .baseSpAttack  = 83,                                \
         .baseSpDefense = 81,                                \
-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },            \
+        .types = { TYPE_REASON, TYPE_REASON },            \
         .catchRate = 75,                                    \
         .expYield = 163,                                    \
         .evYield_Speed = 2,                                 \
@@ -1867,7 +1867,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         MEOWSTIC_MISC_INFO,
         .genderRatio = MON_MALE,
         .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_PRANKSTER },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .description = COMPOUND_STRING(
             "The defensive instinct of the\n"
             "males is strong. It's when they're\n"
@@ -1886,7 +1886,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         MEOWSTIC_MISC_INFO,
         .genderRatio = MON_FEMALE,
         .abilities = { ABILITY_KEEN_EYE, ABILITY_INFILTRATOR, ABILITY_COMPETITIVE },
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .description = COMPOUND_STRING(
             "Females are a bit more selfish and\n"
             "aggressive than males. If they\n"
@@ -1920,7 +1920,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
         .abilities = { ABILITY_NO_GUARD, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Honedge"),
         .cryId = CRY_HONEDGE,
         .natDexNum = NATIONAL_DEX_HONEDGE,
@@ -1969,7 +1969,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
         .abilities = { ABILITY_NO_GUARD, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Doublade"),
         .cryId = CRY_DOUBLADE,
         .natDexNum = NATIONAL_DEX_DOUBLADE,
@@ -2010,7 +2010,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                       \
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },  \
         .abilities = { ABILITY_STANCE_CHANGE, ABILITY_NONE },   \
-        .bodyColor = BODY_COLOR_BROWN,                          \
+        .sourceGame = SOURCE_EOSD,                          \
         .speciesName = _("Aegislash"),                          \
         .cryId = CRY_AEGISLASH,                                 \
         .natDexNum = NATIONAL_DEX_AEGISLASH,                    \
@@ -2094,7 +2094,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 23,
         .baseSpAttack  = 63,
         .baseSpDefense = 65,
-        .types = { TYPE_FAIRY, TYPE_FAIRY },
+        .types = { TYPE_COSMIC, TYPE_COSMIC },
         .catchRate = 200,
         .expYield = 68,
         .evYield_HP = 1,
@@ -2104,7 +2104,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_HEALER, ABILITY_NONE, ABILITY_AROMA_VEIL },
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .speciesName = _("Spritzee"),
         .cryId = CRY_SPRITZEE,
         .natDexNum = NATIONAL_DEX_SPRITZEE,
@@ -2144,7 +2144,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 29,
         .baseSpAttack  = 99,
         .baseSpDefense = 89,
-        .types = { TYPE_FAIRY, TYPE_FAIRY },
+        .types = { TYPE_COSMIC, TYPE_COSMIC },
         .catchRate = 140,
         .expYield = 162,
         .evYield_HP = 2,
@@ -2154,7 +2154,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_HEALER, ABILITY_NONE, ABILITY_AROMA_VEIL },
-        .bodyColor = BODY_COLOR_PINK,
+        .sourceGame = SOURCE_MOF,
         .speciesName = _("Aromatisse"),
         .cryId = CRY_AROMATISSE,
         .natDexNum = NATIONAL_DEX_AROMATISSE,
@@ -2193,7 +2193,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 49,
         .baseSpAttack  = 59,
         .baseSpDefense = 57,
-        .types = { TYPE_FAIRY, TYPE_FAIRY },
+        .types = { TYPE_COSMIC, TYPE_COSMIC },
         .catchRate = 200,
         .expYield = 68,
         .evYield_Defense = 1,
@@ -2203,7 +2203,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_UNBURDEN },
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .speciesName = _("Swirlix"),
         .cryId = CRY_SWIRLIX,
         .natDexNum = NATIONAL_DEX_SWIRLIX,
@@ -2242,7 +2242,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 72,
         .baseSpAttack  = 85,
         .baseSpDefense = 75,
-        .types = { TYPE_FAIRY, TYPE_FAIRY },
+        .types = { TYPE_COSMIC, TYPE_COSMIC },
         .catchRate = 140,
         .expYield = 168,
         .evYield_Defense = 2,
@@ -2252,7 +2252,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_UNBURDEN },
-        .bodyColor = BODY_COLOR_WHITE,
+        .sourceGame = SOURCE_POFV,
         .speciesName = _("Slurpuff"),
         .cryId = CRY_SLURPUFF,
         .natDexNum = NATIONAL_DEX_SLURPUFF,
@@ -2291,7 +2291,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 45,
         .baseSpAttack  = 37,
         .baseSpDefense = 46,
-        .types = { TYPE_DARK, TYPE_PSYCHIC },
+        .types = { TYPE_DARK, TYPE_REASON },
         .catchRate = 190,
         .expYield = 58,
         .evYield_Attack = 1,
@@ -2301,7 +2301,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2 },
         .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Inkay"),
         .cryId = CRY_INKAY,
         .natDexNum = NATIONAL_DEX_INKAY,
@@ -2340,7 +2340,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 73,
         .baseSpAttack  = 68,
         .baseSpDefense = 75,
-        .types = { TYPE_DARK, TYPE_PSYCHIC },
+        .types = { TYPE_DARK, TYPE_REASON },
         .catchRate = 80,
         .expYield = 169,
         .evYield_Attack = 2,
@@ -2350,7 +2350,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_2 },
         .abilities = { ABILITY_CONTRARY, ABILITY_SUCTION_CUPS, ABILITY_INFILTRATOR },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Malamar"),
         .cryId = CRY_MALAMAR,
         .natDexNum = NATIONAL_DEX_MALAMAR,
@@ -2389,7 +2389,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 39,
         .baseSpDefense = 56,
-        .types = { TYPE_ROCK, TYPE_WATER },
+        .types = { TYPE_BEAST, TYPE_WATER },
         .catchRate = 120,
         .expYield = 61,
         .evYield_Attack = 1,
@@ -2399,7 +2399,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3 },
         .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_SNIPER, ABILITY_PICKPOCKET },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Binacle"),
         .cryId = CRY_BINACLE,
         .natDexNum = NATIONAL_DEX_BINACLE,
@@ -2437,7 +2437,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 68,
         .baseSpAttack  = 54,
         .baseSpDefense = 86,
-        .types = { TYPE_ROCK, TYPE_WATER },
+        .types = { TYPE_BEAST, TYPE_WATER },
         .catchRate = 45,
         .expYield = 175,
         .evYield_Attack = 2,
@@ -2447,7 +2447,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_3, EGG_GROUP_WATER_3 },
         .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_SNIPER, ABILITY_PICKPOCKET },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .speciesName = _("Barbaracle"),
         .cryId = CRY_BARBARACLE,
@@ -2487,7 +2487,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 30,
         .baseSpAttack  = 60,
         .baseSpDefense = 60,
-        .types = { TYPE_POISON, TYPE_WATER },
+        .types = { TYPE_MIASMA, TYPE_WATER },
         .catchRate = 225,
         .expYield = 64,
         .evYield_SpDefense = 1,
@@ -2497,7 +2497,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_POISON_POINT, ABILITY_POISON_TOUCH, ABILITY_ADAPTABILITY },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Skrelp"),
         .cryId = CRY_SKRELP,
         .natDexNum = NATIONAL_DEX_SKRELP,
@@ -2535,7 +2535,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 44,
         .baseSpAttack  = 97,
         .baseSpDefense = 123,
-        .types = { TYPE_POISON, TYPE_DRAGON },
+        .types = { TYPE_MIASMA, TYPE_FAITH },
         .catchRate = 55,
         .expYield = 173,
         .evYield_SpDefense = 2,
@@ -2545,7 +2545,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_POISON_POINT, ABILITY_POISON_TOUCH, ABILITY_ADAPTABILITY },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Dragalge"),
         .cryId = CRY_DRAGALGE,
         .natDexNum = NATIONAL_DEX_DRAGALGE,
@@ -2594,7 +2594,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3 },
         .abilities = { ABILITY_MEGA_LAUNCHER, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
         .speciesName = _("Clauncher"),
         .cryId = CRY_CLAUNCHER,
@@ -2643,7 +2643,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_WATER_1, EGG_GROUP_WATER_3 },
         .abilities = { ABILITY_MEGA_LAUNCHER, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .noFlip = TRUE,
         .speciesName = _("Clawitzer"),
         .cryId = CRY_CLAWITZER,
@@ -2683,7 +2683,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 70,
         .baseSpAttack  = 61,
         .baseSpDefense = 43,
-        .types = { TYPE_ELECTRIC, TYPE_NORMAL },
+        .types = { TYPE_WIND, TYPE_ILLUSION },
         .catchRate = 190,
         .expYield = 58,
         .evYield_Speed = 1,
@@ -2693,7 +2693,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_DRY_SKIN, ABILITY_SAND_VEIL, ABILITY_SOLAR_POWER },
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .speciesName = _("Helioptile"),
         .cryId = CRY_HELIOPTILE,
         .natDexNum = NATIONAL_DEX_HELIOPTILE,
@@ -2731,7 +2731,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 109,
         .baseSpAttack  = 109,
         .baseSpDefense = 94,
-        .types = { TYPE_ELECTRIC, TYPE_NORMAL },
+        .types = { TYPE_WIND, TYPE_ILLUSION },
         .catchRate = 75,
         .expYield = 168,
         .evYield_Speed = 1,
@@ -2742,7 +2742,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_DRY_SKIN, ABILITY_SAND_VEIL, ABILITY_SOLAR_POWER },
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .speciesName = _("Heliolisk"),
         .cryId = CRY_HELIOLISK,
         .natDexNum = NATIONAL_DEX_HELIOLISK,
@@ -2781,7 +2781,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 48,
         .baseSpAttack  = 45,
         .baseSpDefense = 45,
-        .types = { TYPE_ROCK, TYPE_DRAGON },
+        .types = { TYPE_BEAST, TYPE_FAITH },
         .catchRate = 45,
         .expYield = 72,
         .evYield_Attack = 1,
@@ -2791,7 +2791,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_STURDY },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Tyrunt"),
         .cryId = CRY_TYRUNT,
         .natDexNum = NATIONAL_DEX_TYRUNT,
@@ -2829,7 +2829,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 71,
         .baseSpAttack  = 69,
         .baseSpDefense = 59,
-        .types = { TYPE_ROCK, TYPE_DRAGON },
+        .types = { TYPE_BEAST, TYPE_FAITH },
         .catchRate = 45,
         .expYield = 182,
         .evYield_Attack = 2,
@@ -2839,7 +2839,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_STRONG_JAW, ABILITY_NONE, ABILITY_ROCK_HEAD },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .speciesName = _("Tyrantrum"),
         .cryId = CRY_TYRANTRUM,
         .natDexNum = NATIONAL_DEX_TYRANTRUM,
@@ -2878,7 +2878,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 46,
         .baseSpAttack  = 67,
         .baseSpDefense = 63,
-        .types = { TYPE_ROCK, TYPE_ICE },
+        .types = { TYPE_BEAST, TYPE_ICE },
         .catchRate = 45,
         .expYield = 72,
         .evYield_HP = 1,
@@ -2888,7 +2888,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER },
         .abilities = { ABILITY_REFRIGERATE, ABILITY_NONE, ABILITY_SNOW_WARNING },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Amaura"),
         .cryId = CRY_AMAURA,
         .natDexNum = NATIONAL_DEX_AMAURA,
@@ -2926,7 +2926,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 58,
         .baseSpAttack  = 99,
         .baseSpDefense = 92,
-        .types = { TYPE_ROCK, TYPE_ICE },
+        .types = { TYPE_BEAST, TYPE_ICE },
         .catchRate = 45,
         .expYield = 104,
         .evYield_HP = 2,
@@ -2936,7 +2936,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_MONSTER },
         .abilities = { ABILITY_REFRIGERATE, ABILITY_NONE, ABILITY_SNOW_WARNING },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Aurorus"),
         .cryId = CRY_AURORUS,
         .natDexNum = NATIONAL_DEX_AURORUS,
@@ -2975,7 +2975,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 118,
         .baseSpAttack  = 74,
         .baseSpDefense = 63,
-        .types = { TYPE_FIGHTING, TYPE_FLYING },
+        .types = { TYPE_DREAM, TYPE_FLYING },
         .catchRate = 100,
         .expYield = 175,
         .evYield_Attack = 2,
@@ -2990,7 +2990,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE },
         #endif
         .abilities = { ABILITY_LIMBER, ABILITY_UNBURDEN, ABILITY_MOLD_BREAKER },
-        .bodyColor = BODY_COLOR_GREEN,
+        .sourceGame = SOURCE_LLS,
         .speciesName = _("Hawlucha"),
         .cryId = CRY_HAWLUCHA,
         .natDexNum = NATIONAL_DEX_HAWLUCHA,
@@ -3029,7 +3029,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 101,
         .baseSpAttack  = 81,
         .baseSpDefense = 67,
-        .types = { TYPE_ELECTRIC, TYPE_FAIRY },
+        .types = { TYPE_WIND, TYPE_COSMIC },
         .catchRate = 180,
         .expYield = 151,
         .evYield_Speed = 2,
@@ -3039,7 +3039,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_CHEEK_POUCH, ABILITY_PICKUP, ABILITY_PLUS },
-        .bodyColor = BODY_COLOR_YELLOW,
+        .sourceGame = SOURCE_PODD,
         .speciesName = _("Dedenne"),
         .cryId = CRY_DEDENNE,
         .natDexNum = NATIONAL_DEX_DEDENNE,
@@ -3078,7 +3078,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 50,
         .baseSpAttack  = 50,
         .baseSpDefense = 150,
-        .types = { TYPE_ROCK, TYPE_FAIRY },
+        .types = { TYPE_BEAST, TYPE_COSMIC },
         .catchRate = 60,
         .expYield = 100,
         .evYield_Defense = 1,
@@ -3088,8 +3088,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_MINERAL },
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_NONE, ABILITY_STURDY },
-        .bodyColor = BODY_COLOR_GRAY,
+        .abilities = { ABILITY_HAKUREI_MIKO, ABILITY_NONE, ABILITY_STURDY },
+        .sourceGame = SOURCE_IN,
         .speciesName = _("Carbink"),
         .cryId = CRY_CARBINK,
         .natDexNum = NATIONAL_DEX_CARBINK,
@@ -3129,7 +3129,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 55,
         .baseSpDefense = 75,
-        .types = { TYPE_DRAGON, TYPE_DRAGON },
+        .types = { TYPE_FAITH, TYPE_FAITH },
         .catchRate = 45,
         .expYield = 60,
         .evYield_SpDefense = 1,
@@ -3140,7 +3140,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY },
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .speciesName = _("Goomy"),
         .cryId = CRY_GOOMY,
         .natDexNum = NATIONAL_DEX_GOOMY,
@@ -3181,7 +3181,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = 35,                                       \
         .growthRate = GROWTH_SLOW,                              \
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON },    \
-        .bodyColor = BODY_COLOR_PURPLE,                         \
+        .sourceGame = SOURCE_PCB,                         \
         .speciesName = _("Sliggoo"),                            \
         .cryId = CRY_SLIGGOO,                                   \
         .natDexNum = NATIONAL_DEX_SLIGGOO,                      \
@@ -3197,7 +3197,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 83,
         .baseSpDefense = 113,
-        .types = { TYPE_DRAGON, TYPE_DRAGON },
+        .types = { TYPE_FAITH, TYPE_FAITH },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY },
         .categoryName = _("Soft Tissue"),
         .height = 8,
@@ -3234,7 +3234,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = 35,                                       \
         .growthRate = GROWTH_SLOW,                              \
         .eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON },    \
-        .bodyColor = BODY_COLOR_PURPLE,                         \
+        .sourceGame = SOURCE_PCB,                         \
         .speciesName = _("Goodra"),                             \
         .cryId = CRY_GOODRA,                                    \
         .natDexNum = NATIONAL_DEX_GOODRA,                       \
@@ -3250,7 +3250,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 110,
         .baseSpDefense = 150,
-        .types = { TYPE_DRAGON, TYPE_DRAGON },
+        .types = { TYPE_FAITH, TYPE_FAITH },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_HYDRATION, ABILITY_GOOEY },
         .categoryName = _("Dragon"),
         .height = 20,
@@ -3286,7 +3286,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 40,
         .baseSpAttack  = 83,
         .baseSpDefense = 113,
-        .types = { TYPE_DRAGON, TYPE_STEEL },
+        .types = { TYPE_FAITH, TYPE_STEEL },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_SHELL_ARMOR, ABILITY_GOOEY },
         .categoryName = _("Snail"),
         .height = 7,
@@ -3324,7 +3324,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 110,
         .baseSpDefense = 150,
-        .types = { TYPE_DRAGON, TYPE_STEEL },
+        .types = { TYPE_FAITH, TYPE_STEEL },
         .abilities = { ABILITY_SAP_SIPPER, ABILITY_SHELL_ARMOR, ABILITY_GOOEY },
         .categoryName = _("Shell Bunker"),
         .height = 17,
@@ -3362,7 +3362,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 75,
         .baseSpAttack  = 80,
         .baseSpDefense = 87,
-        .types = { TYPE_STEEL, TYPE_FAIRY },
+        .types = { TYPE_STEEL, TYPE_COSMIC },
         .catchRate = 75,
         .expYield = 165,
         .evYield_Defense = 1,
@@ -3372,7 +3372,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
         .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_MAGICIAN },
-        .bodyColor = BODY_COLOR_GRAY,
+        .sourceGame = SOURCE_IN,
         .noFlip = TRUE,
         .speciesName = _("Klefki"),
         .cryId = CRY_KLEFKI,
@@ -3413,7 +3413,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 38,
         .baseSpAttack  = 50,
         .baseSpDefense = 60,
-        .types = { TYPE_GHOST, TYPE_GRASS },
+        .types = { TYPE_GHOST, TYPE_NATURE },
         .catchRate = 120,
         .expYield = 62,
         .evYield_Attack = 1,
@@ -3423,7 +3423,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS },
         .abilities = { ABILITY_NATURAL_CURE, ABILITY_FRISK, ABILITY_HARVEST },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Phantump"),
         .cryId = CRY_PHANTUMP,
         .natDexNum = NATIONAL_DEX_PHANTUMP,
@@ -3463,7 +3463,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 56,
         .baseSpAttack  = 65,
         .baseSpDefense = 82,
-        .types = { TYPE_GHOST, TYPE_GRASS },
+        .types = { TYPE_GHOST, TYPE_NATURE },
         .catchRate = 60,
         .expYield = 166,
         .evYield_Attack = 2,
@@ -3473,7 +3473,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS },
         .abilities = { ABILITY_NATURAL_CURE, ABILITY_FRISK, ABILITY_HARVEST },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .speciesName = _("Trevenant"),
         .cryId = CRY_TREVENANT,
         .natDexNum = NATIONAL_DEX_TREVENANT,
@@ -3505,7 +3505,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
 #if P_FAMILY_PUMPKABOO
 #define PUMPKABOO_MISC_INFO                                                 \
-        .types = { TYPE_GHOST, TYPE_GRASS },                                \
+        .types = { TYPE_GHOST, TYPE_NATURE },                                \
         .catchRate = 120,                                                   \
         .expYield = 67,                                                     \
         .evYield_Defense = 1,                                               \
@@ -3515,7 +3515,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },          \
         .abilities = { ABILITY_PICKUP, ABILITY_FRISK, ABILITY_INSOMNIA },   \
-        .bodyColor = BODY_COLOR_BROWN,                                      \
+        .sourceGame = SOURCE_EOSD,                                      \
         .speciesName = _("Pumpkaboo"),                                      \
         .natDexNum = NATIONAL_DEX_PUMPKABOO,                                \
         .categoryName = _("Pumpkin"),                                       \
@@ -3622,8 +3622,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 41,
         .baseSpAttack  = 44,
         .baseSpDefense = 55,
-        .itemCommon = ITEM_MIRACLE_SEED,
-        .itemRare = ITEM_MIRACLE_SEED,
+        .itemCommon = ITEM_CAMOUFLAGE,
+        .itemRare = ITEM_CAMOUFLAGE,
         .cryId = CRY_PUMPKABOO_SUPER,
         .height = 8,
         .weight = 150,
@@ -3644,7 +3644,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #define GOURGEIST_MISC_INFO                                                 \
-        .types = { TYPE_GHOST, TYPE_GRASS },                                \
+        .types = { TYPE_GHOST, TYPE_NATURE },                                \
         .catchRate = 60,                                                    \
         .expYield = 173,                                                    \
         .evYield_Defense = 2,                                               \
@@ -3654,7 +3654,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,                                   \
         .eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },          \
         .abilities = { ABILITY_PICKUP, ABILITY_FRISK, ABILITY_INSOMNIA },   \
-        .bodyColor = BODY_COLOR_BROWN,                                      \
+        .sourceGame = SOURCE_EOSD,                                      \
         .speciesName = _("Gourgeist"),                                      \
         .natDexNum = NATIONAL_DEX_GOURGEIST,                                \
         .categoryName = _("Pumpkin"),                                       \
@@ -3757,8 +3757,8 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 54,
         .baseSpAttack  = 58,
         .baseSpDefense = 75,
-        .itemCommon = ITEM_MIRACLE_SEED,
-        .itemRare = ITEM_MIRACLE_SEED,
+        .itemCommon = ITEM_CAMOUFLAGE,
+        .itemRare = ITEM_CAMOUFLAGE,
         .cryId = CRY_GOURGEIST_SUPER,
         .height = 17,
         .weight = 390,
@@ -3803,7 +3803,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = BERGMITE_EGG_GROUPS,
         .abilities = { ABILITY_OWN_TEMPO, ABILITY_ICE_BODY, ABILITY_STURDY },
-        .bodyColor = BODY_COLOR_BLUE,
+        .sourceGame = SOURCE_SOEW,
         .speciesName = _("Bergmite"),
         .cryId = CRY_BERGMITE,
         .natDexNum = NATIONAL_DEX_BERGMITE,
@@ -3843,7 +3843,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,              \
         .growthRate = GROWTH_MEDIUM_FAST,               \
         .eggGroups = BERGMITE_EGG_GROUPS,               \
-        .bodyColor = BODY_COLOR_BLUE,                   \
+        .sourceGame = SOURCE_SOEW,                   \
         .speciesName = _("Avalugg"),                    \
         .cryId = CRY_AVALUGG,                           \
         .natDexNum = NATIONAL_DEX_AVALUGG,              \
@@ -3896,7 +3896,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 38,
         .baseSpAttack  = 34,
         .baseSpDefense = 36,
-        .types = { TYPE_ICE, TYPE_ROCK },
+        .types = { TYPE_ICE, TYPE_BEAST },
         .abilities = { ABILITY_STRONG_JAW, ABILITY_ICE_BODY, ABILITY_STURDY },
         .height = 14,
         .weight = 2624,
@@ -3932,7 +3932,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 55,
         .baseSpAttack  = 45,
         .baseSpDefense = 40,
-        .types = { TYPE_FLYING, TYPE_DRAGON },
+        .types = { TYPE_FLYING, TYPE_FAITH },
         .catchRate = 190,
         .expYield = 49,
         .evYield_Speed = 1,
@@ -3946,7 +3946,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
         #endif
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .speciesName = _("Noibat"),
         .cryId = CRY_NOIBAT,
         .natDexNum = NATIONAL_DEX_NOIBAT,
@@ -3985,7 +3985,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 123,
         .baseSpAttack  = 97,
         .baseSpDefense = 80,
-        .types = { TYPE_FLYING, TYPE_DRAGON },
+        .types = { TYPE_FLYING, TYPE_FAITH },
         .catchRate = 45,
         .expYield = 187,
         .evYield_Speed = 2,
@@ -3999,7 +3999,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
         #endif
         .abilities = { ABILITY_FRISK, ABILITY_INFILTRATOR, ABILITY_TELEPATHY },
-        .bodyColor = BODY_COLOR_PURPLE,
+        .sourceGame = SOURCE_PCB,
         .speciesName = _("Noivern"),
         .cryId = CRY_NOIVERN,
         .natDexNum = NATIONAL_DEX_NOIVERN,
@@ -4038,7 +4038,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 99,                                                            \
         .baseSpAttack  = 131,                                                           \
         .baseSpDefense = 98,                                                            \
-        .types = { TYPE_FAIRY, TYPE_FAIRY },                                            \
+        .types = { TYPE_COSMIC, TYPE_COSMIC },                                            \
         .catchRate = 45,                                                                \
         .expYield = 306,                                                                \
         .evYield_HP = 3,                                                                \
@@ -4048,7 +4048,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,                                                      \
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },    \
         .abilities = { ABILITY_FAIRY_AURA, ABILITY_NONE },                              \
-        .bodyColor = BODY_COLOR_BLUE,                                                   \
+        .sourceGame = SOURCE_SOEW,                                                   \
         .speciesName = _("Xerneas"),                                                    \
         .cryId = CRY_XERNEAS,                                                           \
         .natDexNum = NATIONAL_DEX_XERNEAS,                                              \
@@ -4099,7 +4099,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
         .abilities = { ABILITY_DARK_AURA, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_RED,
+        .sourceGame = SOURCE_HRTP,
         .isLegendary = TRUE,
         .speciesName = _("Yveltal"),
         .cryId = CRY_YVELTAL,
@@ -4133,7 +4133,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
 #if P_FAMILY_ZYGARDE
 #define ZYGARDE_MISC_INFO(ability)                                                      \
-        .types = { TYPE_DRAGON, TYPE_GROUND },                                          \
+        .types = { TYPE_FAITH, TYPE_EARTH },                                          \
         .catchRate = 3,                                                                 \
         .evYield_HP = 3,                                                                \
         .genderRatio = MON_GENDERLESS,                                                  \
@@ -4160,7 +4160,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpAttack  = 81,                                    \
         .baseSpDefense = 95,                                    \
         .expYield = 270,                                        \
-        .bodyColor = BODY_COLOR_GREEN,                          \
+        .sourceGame = SOURCE_LLS,                          \
         .cryId = CRY_ZYGARDE_50,                                \
         .height = 50,                                           \
         .weight = 3050,                                         \
@@ -4195,7 +4195,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpAttack  = 61,                                    \
         .baseSpDefense = 85,                                    \
         .expYield = 219,                                        \
-        .bodyColor = BODY_COLOR_BLACK,                          \
+        .sourceGame = SOURCE_MS,                          \
         .cryId = CRY_ZYGARDE_10,                                \
         .height = 12,                                           \
         .weight = 335,                                          \
@@ -4235,7 +4235,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpAttack  = 91,
         .baseSpDefense = 95,
         .expYield = 319,
-        .bodyColor = BODY_COLOR_BLACK,
+        .sourceGame = SOURCE_MS,
         .cryId = CRY_ZYGARDE_COMPLETE,
         .height = 45,
         .weight = 6100,
@@ -4263,7 +4263,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
 #if P_FAMILY_DIANCIE
 #define DIANCE_MISC_INFO                                                                \
-        .types = { TYPE_ROCK, TYPE_FAIRY },                                             \
+        .types = { TYPE_BEAST, TYPE_COSMIC },                                             \
         .catchRate = 3,                                                                 \
         .evYield_Defense = 1,                                                           \
         .evYield_SpDefense = 2,                                                         \
@@ -4272,7 +4272,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .friendship = STANDARD_FRIENDSHIP,                                              \
         .growthRate = GROWTH_SLOW,                                                      \
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },    \
-        .bodyColor = BODY_COLOR_PINK,                                                   \
+        .sourceGame = SOURCE_MOF,                                                   \
         .speciesName = _("Diancie"),                                                    \
         .natDexNum = NATIONAL_DEX_DIANCIE,                                              \
         .categoryName = _("Jewel"),                                                     \
@@ -4292,7 +4292,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpAttack  = 100,
         .baseSpDefense = 150,
         .expYield = 270,
-        .abilities = { ABILITY_CLEAR_BODY, ABILITY_NONE },
+        .abilities = { ABILITY_HAKUREI_MIKO, ABILITY_NONE },
         .cryId = CRY_DIANCIE,
         .height = 7,
         .weight = 88,
@@ -4361,7 +4361,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,                                                      \
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },    \
         .abilities = { ABILITY_MAGICIAN, ABILITY_NONE },                                \
-        .bodyColor = BODY_COLOR_PURPLE,                                                 \
+        .sourceGame = SOURCE_PCB,                                                 \
         .speciesName = _("Hoopa"),                                                      \
         .natDexNum = NATIONAL_DEX_HOOPA,                                                \
         .footprint = gMonFootprint_Hoopa,                                               \
@@ -4378,7 +4378,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 70,
         .baseSpAttack  = 150,
         .baseSpDefense = 130,
-        .types = { TYPE_PSYCHIC, TYPE_GHOST },
+        .types = { TYPE_REASON, TYPE_GHOST },
         .friendship = 100,
         .cryId = CRY_HOOPA_CONFINED,
         .categoryName = _("Mischief"),
@@ -4415,7 +4415,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 170,
         .baseSpDefense = 130,
-        .types = { TYPE_PSYCHIC, TYPE_DARK },
+        .types = { TYPE_REASON, TYPE_DARK },
         .friendship = P_UPDATED_FRIENDSHIP >= GEN_8 ? STANDARD_FRIENDSHIP : 100,
         .cryId = CRY_HOOPA_UNBOUND,
         .categoryName = _("Djinn"),
@@ -4460,7 +4460,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED },
         .abilities = { ABILITY_WATER_ABSORB, ABILITY_NONE },
-        .bodyColor = BODY_COLOR_BROWN,
+        .sourceGame = SOURCE_EOSD,
         .isMythical = TRUE,
         .speciesName = _("Volcanion"),
         .cryId = CRY_VOLCANION,

@@ -31,11 +31,11 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents Attack stage reduction from moves")
     GIVEN {
         ASSUME(gBattleMoves[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); }
     } SCENE {
-        ABILITY_POPUP(opponent, ABILITY_HYPER_CUTTER);
+        ABILITY_POPUP(opponent, ABILITY_HIGH_STRENGTH);
         MESSAGE("Foe Krabby's Hyper Cutter prevents Attack loss!");
     }
 }
@@ -45,7 +45,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Attack reduction from burn")
     GIVEN {
         ASSUME(gBattleMoves[MOVE_WILL_O_WISP].effect == EFFECT_WILL_O_WISP);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(player, MOVE_WILL_O_WISP); }
     } SCENE {
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter is ignored by Mold Breaker")
     GIVEN {
         ASSUME(gBattleMoves[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
         PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); }
     } SCENE {
@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter is ignored by Mold Breaker")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_GROWL, player);
         MESSAGE("Foe Krabby's Attack fell!");
         NONE_OF {
-            ABILITY_POPUP(opponent, ABILITY_HYPER_CUTTER);
+            ABILITY_POPUP(opponent, ABILITY_HIGH_STRENGTH);
             MESSAGE("Foe Krabby's Hyper Cutter prevents Attack loss!");
         }
     }
@@ -81,7 +81,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Attack stage reduction from mov
     GIVEN {
         ASSUME(gBattleMoves[MOVE_SUPERPOWER].effect == EFFECT_SUPERPOWER);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUPERPOWER); }
         TURN {}
@@ -100,7 +100,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Topsy-Turvy")
         ASSUME(gBattleMoves[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
         ASSUME(gBattleMoves[MOVE_TOPSY_TURVY].effect == EFFECT_TOPSY_TURVY);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); MOVE(player, MOVE_TOPSY_TURVY); }
     } SCENE {
@@ -119,7 +119,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Spectral Thief from resetting p
         ASSUME(gBattleMoves[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
         ASSUME(gBattleMoves[MOVE_SPECTRAL_THIEF].effect == EFFECT_SPECTRAL_THIEF);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); MOVE(player, MOVE_SPECTRAL_THIEF); }
     } SCENE {
@@ -139,7 +139,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent receiving negative Attack stage
         ASSUME(gBattleMoves[MOVE_BATON_PASS].effect == EFFECT_BATON_PASS);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL);
                MOVE(opponent, MOVE_BATON_PASS);

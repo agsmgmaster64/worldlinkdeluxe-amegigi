@@ -14278,7 +14278,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_BUG,
+        .type = TYPE_HEART,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14292,7 +14292,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14306,7 +14306,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_ILLUSION,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14320,7 +14320,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_DREAM,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14362,7 +14362,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_POISON,
+        .type = TYPE_MIASMA,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14404,7 +14404,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_FAIRY,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14418,7 +14418,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_DRAGON,
+        .type = TYPE_FAITH,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14432,7 +14432,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14446,7 +14446,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_ROCK,
+        .type = TYPE_BEAST,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14460,7 +14460,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
-        .type = TYPE_GROUND,
+        .type = TYPE_EARTH,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14489,7 +14489,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14517,7 +14517,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {    //ANIM TODO
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14559,7 +14559,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_BUG,
+        .type = TYPE_HEART,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14573,7 +14573,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14587,7 +14587,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_NORMAL,
+        .type = TYPE_ILLUSION,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14601,7 +14601,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_DREAM,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14657,7 +14657,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_NORMAL,
+        .type = TYPE_ILLUSION,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14671,7 +14671,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_NORMAL,
+        .type = TYPE_ILLUSION,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14685,7 +14685,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_POISON,
+        .type = TYPE_MIASMA,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14713,7 +14713,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {    //ANIM TODO
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14772,7 +14772,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14800,7 +14800,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_ROCK,
+        .type = TYPE_BEAST,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14814,7 +14814,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14828,7 +14828,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GRASS,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14842,7 +14842,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_GROUND,
+        .type = TYPE_EARTH,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14856,7 +14856,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14884,7 +14884,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_FAIRY,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14913,7 +14913,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_FAIRY,
+        .type = TYPE_COSMIC,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,
@@ -14941,7 +14941,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_MAX_MOVE,
         .power = 10,
-        .type = TYPE_DRAGON,
+        .type = TYPE_FAITH,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 100,

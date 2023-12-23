@@ -23,8 +23,8 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_BELDUM; ability = ABILITY_CLEAR_BODY; }
-    PARAMETRIZE { species = SPECIES_TORKOAL; ability = ABILITY_WHITE_SMOKE; }
+    PARAMETRIZE { species = SPECIES_BELDUM; ability = ABILITY_HAKUREI_MIKO; }
+    PARAMETRIZE { species = SPECIES_TORKOAL; ability = ABILITY_MAGIC_BARRIER; }
     PARAMETRIZE { species = SPECIES_SOLGALEO; ability = ABILITY_FULL_METAL_BODY; }
 
     GIVEN {
@@ -38,7 +38,7 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
         if (species == SPECIES_BELDUM)
         {
             MESSAGE("Foe Beldum can no longer escape because of Octolock!");
-            ABILITY_POPUP(opponent, ABILITY_CLEAR_BODY);
+            ABILITY_POPUP(opponent, ABILITY_HAKUREI_MIKO);
             MESSAGE("Foe Beldum's Clear Body prevents stat loss!");
             NONE_OF {
                 MESSAGE("Foe Beldum's Defense fell!");
@@ -48,7 +48,7 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
         else if (species == SPECIES_TORKOAL)
         {
             MESSAGE("Foe Torkoal can no longer escape because of Octolock!");
-            ABILITY_POPUP(opponent, ABILITY_WHITE_SMOKE);
+            ABILITY_POPUP(opponent, ABILITY_MAGIC_BARRIER);
             MESSAGE("Foe Torkoal's White Smoke prevents stat loss!");
             NONE_OF {
                 MESSAGE("Foe Torkoal's Defense fell!");

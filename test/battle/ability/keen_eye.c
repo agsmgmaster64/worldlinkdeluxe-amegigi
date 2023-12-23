@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye prevent accuracy stag
     u32 species;
 
     PARAMETRIZE { species = SPECIES_HITMONCHAN; ability = ABILITY_KEEN_EYE; }
-    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_ILLUMINATE; }
+    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_DIVA; }
     PARAMETRIZE { species = SPECIES_URSALUNA_BLOODMOON; ability = ABILITY_MINDS_EYE; }
 
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye ignore target's evasi
     u32 species;
 
     PARAMETRIZE { species = SPECIES_HITMONCHAN; ability = ABILITY_KEEN_EYE; }
-    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_ILLUMINATE; }
+    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_DIVA; }
     PARAMETRIZE { species = SPECIES_URSALUNA_BLOODMOON; ability = ABILITY_MINDS_EYE; }
 
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye are ignored by Mold B
     for (j = 0; j < ARRAY_COUNT(moldBreakerAbilities); j++) {
         speciesPlayer = moldBreakerAbilities[j][0]; abilityPlayer = moldBreakerAbilities[j][1];
         PARAMETRIZE { speciesOpponent = SPECIES_HITMONCHAN; abilityOpponent = ABILITY_KEEN_EYE; }
-        PARAMETRIZE { speciesOpponent = SPECIES_STARYU; abilityOpponent = ABILITY_ILLUMINATE; }
+        PARAMETRIZE { speciesOpponent = SPECIES_STARYU; abilityOpponent = ABILITY_DIVA; }
         PARAMETRIZE { speciesOpponent = SPECIES_URSALUNA_BLOODMOON; abilityOpponent = ABILITY_MINDS_EYE; }
     }
 
@@ -98,7 +98,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye don't prevent Topsy-T
     u32 species;
 
     PARAMETRIZE { species = SPECIES_HITMONCHAN; ability = ABILITY_KEEN_EYE; }
-    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_ILLUMINATE; }
+    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_DIVA; }
     PARAMETRIZE { species = SPECIES_URSALUNA_BLOODMOON; ability = ABILITY_MINDS_EYE; }
 
     GIVEN {
@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye don't prevent receivi
     u16 ability;
     u32 species;
     PARAMETRIZE { species = SPECIES_HITMONCHAN; ability = ABILITY_KEEN_EYE; }
-    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_ILLUMINATE; }
+    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_DIVA; }
     PARAMETRIZE { species = SPECIES_URSALUNA_BLOODMOON; ability = ABILITY_MINDS_EYE; }
 
     GIVEN {
@@ -170,7 +170,7 @@ SINGLE_BATTLE_TEST("Keen Eye & Gen9+ Illuminate don't prevent Spectral Thief fro
     u32 species;
 
     PARAMETRIZE { species = SPECIES_HITMONCHAN; ability = ABILITY_KEEN_EYE; }
-    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_ILLUMINATE; }
+    PARAMETRIZE { species = SPECIES_STARYU; ability = ABILITY_DIVA; }
 
     GIVEN {
         ASSUME(gBattleMoves[MOVE_HONE_CLAWS].effect == EFFECT_ATTACK_ACCURACY_UP);

@@ -151,7 +151,7 @@
 #define EFFECT_TELEPORT                     147
 #define EFFECT_BEAT_UP                      148
 #define EFFECT_SEMI_INVULNERABLE            149
-#define EFFECT_DEFENSE_CURL                 150
+#define EFFECT_MULTI_PULSE                  150
 #define EFFECT_SOFTBOILED                   151
 #define EFFECT_FAKE_OUT                     152
 #define EFFECT_UPROAR                       153

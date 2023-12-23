@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Mind's Eye doesn't bypass a Ghost-type's Wonder Guard")
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_SCRAPPY); };
-        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_WONDER_GUARD); };
+        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_PLAY_GHOST); };
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Mind's Eye doesn't bypass a Ghost-type's Wonder Guard")
             ANIMATION(ANIM_TYPE_MOVE, move, player);
             HP_BAR(opponent);
         }
-        ABILITY_POPUP(opponent, ABILITY_WONDER_GUARD);
+        ABILITY_POPUP(opponent, ABILITY_PLAY_GHOST);
         MESSAGE("Foe Shedinja avoided damage with Wonder Guard!");
     }
 }
