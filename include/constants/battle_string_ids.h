@@ -696,20 +696,21 @@
 #define STRINGID_SWAMPENVELOPEDSIDE                   694
 #define STRINGID_THESWAMPDISAPPEARED                  695
 #define STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE        696
-#define STRINGID_POKEFLUTECATCHY                      697
-#define STRINGID_POKEFLUTE                            698
-#define STRINGID_MONHEARINGFLUTEAWOKE                 699
-#define STRINGID_PLAYERWHITEDOUT                      700
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            701
-#define STRINGID_STRINGISRESERVED                     702
-#define STRINGID_PKMNDROPPEDITEM                      703
-#define STRINGID_BAGISFULL                            704
-#define STRINGID_MONTOOSCAREDTOMOVE                   705
-#define STRINGID_GHOSTGETOUTGETOUT                    706
-#define STRINGID_SILPHSCOPEUNVEILED                   707
-#define STRINGID_GHOSTWASMAROWAK                      708
+#define STRINGID_HOSPITALITYRESTORATION               697
+#define STRINGID_POKEFLUTECATCHY                      698
+#define STRINGID_POKEFLUTE                            699
+#define STRINGID_MONHEARINGFLUTEAWOKE                 700
+#define STRINGID_PLAYERWHITEDOUT                      701
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            702
+#define STRINGID_STRINGISRESERVED                     703
+#define STRINGID_PKMNDROPPEDITEM                      704
+#define STRINGID_BAGISFULL                            705
+#define STRINGID_MONTOOSCAREDTOMOVE                   706
+#define STRINGID_GHOSTGETOUTGETOUT                    707
+#define STRINGID_SILPHSCOPEUNVEILED                   708
+#define STRINGID_GHOSTWASMAROWAK                      709
 
-#define BATTLESTRINGS_COUNT                           709
+#define BATTLESTRINGS_COUNT                           710
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
