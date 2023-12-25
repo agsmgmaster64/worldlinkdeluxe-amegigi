@@ -1979,7 +1979,6 @@ enum
     ENDTURN_GRASSY_TERRAIN,
     ENDTURN_PSYCHIC_TERRAIN,
     ENDTURN_ION_DELUGE,
-    ENDTURN_FAIRY_LOCK,
     ENDTURN_RETALIATE,
     ENDTURN_WEATHER_FORM,
     ENDTURN_STATUS_HEAL,
@@ -2452,13 +2451,6 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_ION_DELUGE:
             gFieldStatuses &= ~STATUS_FIELD_ION_DELUGE;
-            gBattleStruct->turnCountersTracker++;
-            break;
-        case ENDTURN_FAIRY_LOCK:
-            if (gFieldStatuses & STATUS_FIELD_FAIRY_LOCK && --gFieldTimers.fairyLockTimer == 0)
-            {
-                gFieldStatuses &= ~STATUS_FIELD_FAIRY_LOCK;
-            }
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_RETALIATE:
@@ -6460,8 +6452,6 @@ bool32 CanBattlerEscape(u32 battler) // no ability check
     else if (gBattleMons[battler].status2 & (STATUS2_ESCAPE_PREVENTION | STATUS2_WRAPPED))
         return FALSE;
     else if (gStatuses3[battler] & STATUS3_ROOTED)
-        return FALSE;
-    else if (gFieldStatuses & STATUS_FIELD_FAIRY_LOCK)
         return FALSE;
     else if (gStatuses3[battler] & STATUS3_SKY_DROPPED)
         return FALSE;

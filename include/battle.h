@@ -257,7 +257,6 @@ struct FieldTimer
     u8 trickRoomTimer;
     u8 terrainTimer;
     u8 gravityTimer;
-    u8 fairyLockTimer;
 };
 
 struct WishFutureKnock
