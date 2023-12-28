@@ -62,7 +62,6 @@ enum {
     REQUEST_SMART_RIBBON_BATTLE,
     REQUEST_TOUGH_RIBBON_BATTLE,
     REQUEST_AFFECTION_BATTLE,
-    REQUEST_FUTURE_RESERVE_BATTLE,
 };
 
 // Special arguments for Battle Controller functions.

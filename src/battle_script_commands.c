@@ -8909,10 +8909,7 @@ static void Cmd_various(void)
             gBattleStruct->palaceFlags |= gBitTable[battler];
             gBattleCommunication[0] = TRUE;
 
-            /*if (gBattleMons[battler].hiddenNature != HIDDEN_NATURE_NONE)
-                monNature = gBattleMons[battler].hiddenNature;
-            else*/
-                monNature = GetNatureFromPersonality(gBattleMons[battler].personality);
+            monNature = GetNatureFromPersonality(gBattleMons[battler].personality);
 
             gBattleCommunication[MULTISTRING_CHOOSER] = sBattlePalaceNatureToFlavorTextId[monNature];
         }
