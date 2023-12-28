@@ -435,6 +435,63 @@ static const struct SpriteTemplate sSpriteTemplate_64x64 =
     .callback = SpriteCallbackDummy,
 };
 
+// NOTE: Reordering this array will break compatibility with existing
+// saves.
+static const u32 sCompressedStatuses[] =
+{
+    STATUS1_NONE,
+    STATUS1_SLEEP_TURN(1),
+    STATUS1_SLEEP_TURN(2),
+    STATUS1_SLEEP_TURN(3),
+    STATUS1_SLEEP_TURN(4),
+    STATUS1_SLEEP_TURN(5),
+    STATUS1_POISON,
+    STATUS1_BURN,
+    STATUS1_FREEZE,
+    STATUS1_PARALYSIS,
+    STATUS1_TOXIC_POISON,
+    STATUS1_FROSTBITE,
+};
+
+// Attempt to detect situations where the BoxPokemon struct is unable to
+// contain all the values.
+// TODO: Is it possible to compute:
+// - The maximum experience.
+// - The maximum PP.
+// - The maximum HP.
+// - The maximum form countdown.
+STATIC_ASSERT(NUM_SPECIES < (1 << 11), PokemonSubstruct0_species_TooSmall);
+STATIC_ASSERT(NUMBER_OF_MON_TYPES + 1 <= (1 << 5), PokemonSubstruct0_teraType_TooSmall);
+STATIC_ASSERT(ITEMS_COUNT < (1 << 10), PokemonSubstruct0_heldItem_TooSmall);
+STATIC_ASSERT(MAX_LEVEL <= 100, PokemonSubstruct0_experience_PotentiallTooSmall); // Maximum of ~2 million exp.
+STATIC_ASSERT(LAST_BALL < (1 << 6), PokemonSubstruct0_pokeball_TooSmall);
+STATIC_ASSERT(MOVES_COUNT_ALL < (1 << 11), PokemonSubstruct1_moves_TooSmall);
+STATIC_ASSERT(ARRAY_COUNT(sCompressedStatuses) <= (1 << 4), PokemonSubstruct3_compressedStatus_TooSmall);
+STATIC_ASSERT(MAX_LEVEL < (1 << 7), PokemonSubstruct3_metLevel_TooSmall);
+STATIC_ASSERT(NUM_VERSIONS < (1 << 4), PokemonSubstruct3_metGame_TooSmall);
+STATIC_ASSERT(MAX_DYNAMAX_LEVEL < (1 << 4), PokemonSubstruct3_dynamaxLevel_TooSmall);
+STATIC_ASSERT(MAX_PER_STAT_IVS < (1 << 5), PokemonSubstruct3_ivs_TooSmall);
+STATIC_ASSERT(NUM_NATURES <= (1 << 5), BoxPokemon_hiddenNatureModifier_TooSmall);
+
+static u32 CompressStatus(u32 status)
+{
+    s32 i;
+    for (i = 0; i < ARRAY_COUNT(sCompressedStatuses); i++)
+    {
+        if (sCompressedStatuses[i] == status)
+            return i;
+    }
+    return 0; // STATUS1_NONE
+}
+
+static u32 UncompressStatus(u32 compressedStatus)
+{
+    if (compressedStatus < ARRAY_COUNT(sCompressedStatuses))
+        return sCompressedStatuses[compressedStatus];
+    else
+        return STATUS1_NONE;
+}
+
 void ZeroBoxMonData(struct BoxPokemon *boxMon)
 {
     u8 *raw = (u8 *)boxMon;
@@ -494,6 +551,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     u8 i;
     u8 availableIVs[NUM_STATS];
     u8 selectedIvs[LEGENDARY_PERFECT_IV_COUNT];
+    bool32 isShiny;
 
     ZeroBoxMonData(boxMon);
 
@@ -505,17 +563,13 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     // Determine original trainer ID
     if (otIdType == OT_ID_RANDOM_NO_SHINY) // Pokemon cannot be shiny
     {
-        u32 shinyValue;
-        do
-        {
-            // Choose random OT IDs until one that results in a non-shiny Pokémon
-            value = Random32();
-            shinyValue = GET_SHINY_VALUE(value, personality);
-        } while (shinyValue < SHINY_ODDS);
+        value = Random32();
+        isShiny = FALSE;
     }
     else if (otIdType == OT_ID_PRESET)
     {
         value = fixedOtId;
+        isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
     }
     else // Player is the OT
     {
@@ -527,38 +581,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
 
-        if (LURE_STEP_COUNT != 0)
-            shinyRolls += 1;
-
-        for (i = 0; i < shinyRolls; i++)
+        if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
-            if (Random() < SHINY_ODDS)
-                FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
+            isShiny = FALSE;
+            FlagClear(FLAG_SHINY_CREATION);
         }
-
-        if (FlagGet(P_FLAG_FORCE_NO_SHINY))
+        else if (P_FLAG_FORCE_SHINY != 0 && (FlagGet(P_FLAG_FORCE_SHINY) || FlagGet(FLAG_SHINY_CREATION)))
         {
-            if (FlagGet(FLAG_SHINY_CREATION))
-                FlagClear(FLAG_SHINY_CREATION); // clear the flag since no shiny will be created anyways
-            while (GET_SHINY_VALUE(value, personality) < SHINY_ODDS)
-                personality = Random32();
-        }
-        else if (FlagGet(P_FLAG_FORCE_SHINY))
-        {
-            if (FlagGet(FLAG_SHINY_CREATION))
-                FlagClear(FLAG_SHINY_CREATION); // clear the flag since a shiny will be created anyways
-            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS)
-                personality = Random32();
-        }
-        else if (FlagGet(FLAG_SHINY_CREATION))
-        {
-            u8 nature = personality % NUM_NATURES;  // keep current nature
-            do {
-                personality = Random32();
-                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
-            } while (nature != GetNatureFromPersonality(personality));
-
-            // clear the flag after use
+            isShiny = TRUE;
             FlagClear(FLAG_SHINY_CREATION);
         }
         else
@@ -574,12 +604,18 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 personality = Random32();
                 totalRerolls--;
             }
+
+            isShiny = GET_SHINY_VALUE(value, personality) < SHINY_ODDS;
         }
     }
 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, &value);
 
+    checksum = CalculateBoxMonChecksum(boxMon);
+    SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &checksum);
+    EncryptBoxMon(boxMon);
+    SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
     StringCopy(speciesName, GetSpeciesName(species));
     SetBoxMonData(boxMon, MON_DATA_NICKNAME, speciesName);
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
@@ -1134,7 +1170,6 @@ void CreateEnemyEventMon(void)
 {                                                               \
     u8 baseStat = gSpeciesInfo[species].base;                   \
     s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
-    u8 nature = GetNature(mon, TRUE);                           \
     n = ModifyStatByNature(nature, n, statIndex);               \
     if (B_FRIENDSHIP_BOOST == TRUE)                             \
         n = n + ((n * 10 * friendship) / (MAX_FRIENDSHIP * 100));\
@@ -1145,22 +1180,24 @@ void CalculateMonStats(struct Pokemon *mon)
 {
     s32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
     s32 currentHP = GetMonData(mon, MON_DATA_HP, NULL);
-    s32 hpIV = GetMonData(mon, MON_DATA_HP_IV, NULL);
+    s32 hpIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_HP) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_HP_IV, NULL);
     s32 hpEV = GetMonData(mon, MON_DATA_HP_EV, NULL);
-    s32 attackIV = GetMonData(mon, MON_DATA_ATK_IV, NULL);
+    s32 attackIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_ATK) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_ATK_IV, NULL);
     s32 attackEV = GetMonData(mon, MON_DATA_ATK_EV, NULL);
-    s32 defenseIV = GetMonData(mon, MON_DATA_DEF_IV, NULL);
+    s32 defenseIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_DEF) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_DEF_IV, NULL);
     s32 defenseEV = GetMonData(mon, MON_DATA_DEF_EV, NULL);
-    s32 speedIV = GetMonData(mon, MON_DATA_SPEED_IV, NULL);
+    s32 speedIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_SPEED) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_SPEED_IV, NULL);
     s32 speedEV = GetMonData(mon, MON_DATA_SPEED_EV, NULL);
-    s32 spAttackIV = GetMonData(mon, MON_DATA_SPATK_IV, NULL);
+    s32 spAttackIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_SPATK) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_SPATK_IV, NULL);
     s32 spAttackEV = GetMonData(mon, MON_DATA_SPATK_EV, NULL);
-    s32 spDefenseIV = GetMonData(mon, MON_DATA_SPDEF_IV, NULL);
+    s32 spDefenseIV = GetMonData(mon, MON_DATA_HYPER_TRAINED_SPDEF) ? MAX_PER_STAT_IVS : GetMonData(mon, MON_DATA_SPDEF_IV, NULL);
     s32 spDefenseEV = GetMonData(mon, MON_DATA_SPDEF_EV, NULL);
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
     s32 level = GetLevelFromMonExp(mon);
     s32 newMaxHP;
+
+    u8 nature = GetMonData(mon, MON_DATA_HIDDEN_NATURE, NULL);
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
@@ -1217,12 +1254,15 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
 {
     u32 value = 0;
     dest->box = *src;
-    SetMonData(dest, MON_DATA_STATUS, &value);
-    SetMonData(dest, MON_DATA_HP, &value);
-    SetMonData(dest, MON_DATA_MAX_HP, &value);
+    dest->status = GetBoxMonData(&dest->box, MON_DATA_STATUS, NULL);
+    dest->hp = 0;
+    dest->maxHP = 0;
     value = MAIL_NONE;
     SetMonData(dest, MON_DATA_MAIL, &value);
+    value = GetBoxMonData(&dest->box, MON_DATA_HP_LOST);
     CalculateMonStats(dest);
+    value = GetMonData(dest, MON_DATA_MAX_HP) - value;
+    SetMonData(dest, MON_DATA_HP, &value);
 }
 
 u8 GetLevelFromMonExp(struct Pokemon *mon)
@@ -1730,6 +1770,76 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
 
         switch (field)
         {
+        case MON_DATA_NICKNAME:
+        {
+            if (boxMon->isBadEgg)
+            {
+                for (retVal = 0;
+                    retVal < POKEMON_NAME_LENGTH && gText_BadEgg[retVal] != EOS;
+                    data[retVal] = gText_BadEgg[retVal], retVal++) {}
+
+                data[retVal] = EOS;
+            }
+            else if (boxMon->isEgg)
+            {
+                StringCopy(data, gText_EggNickname);
+                retVal = StringLength(data);
+            }
+            else if (boxMon->language == LANGUAGE_JAPANESE)
+            {
+                data[0] = EXT_CTRL_CODE_BEGIN;
+                data[1] = EXT_CTRL_CODE_JPN;
+
+                for (retVal = 2, i = 0;
+                    i < 5 && boxMon->nickname[i] != EOS;
+                    data[retVal] = boxMon->nickname[i], retVal++, i++) {}
+
+                data[retVal++] = EXT_CTRL_CODE_BEGIN;
+                data[retVal++] = EXT_CTRL_CODE_ENG;
+                data[retVal] = EOS;
+            }
+            else
+            {
+                retVal = 0;
+                while (retVal < min(sizeof(boxMon->nickname), POKEMON_NAME_LENGTH))
+                {
+                    data[retVal] = boxMon->nickname[retVal];
+                    retVal++;
+                }
+
+                // Vanilla Pokémon have 0s in nickname11 and nickname12
+                // so if both are 0 we assume that this is a vanilla
+                // Pokémon and replace them with EOS. This means that
+                // two CHAR_SPACE at the end of a nickname are trimmed.
+                if (POKEMON_NAME_LENGTH >= 12)
+                {
+                    if (substruct0->nickname11 == 0 && substruct0->nickname12 == 0)
+                    {
+                        data[retVal++] = EOS;
+                        data[retVal++] = EOS;
+                    }
+                    else
+                    {
+                        data[retVal++] = substruct0->nickname11;
+                        data[retVal++] = substruct0->nickname12;
+                    }
+                }
+                else if (POKEMON_NAME_LENGTH >= 11)
+                {
+                    if (substruct0->nickname11 == 0)
+                    {
+                        data[retVal++] = EOS;
+                    }
+                    else
+                    {
+                        data[retVal++] = substruct0->nickname11;
+                    }
+                }
+
+                data[retVal] = EOS;
+            }
+            break;
+        }
         case MON_DATA_SPECIES:
             retVal = boxMon->isBadEgg ? SPECIES_EGG : substruct0->species;
             break;
@@ -1746,16 +1856,28 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = substruct0->friendship;
             break;
         case MON_DATA_MOVE1:
+            retVal = substruct1->move1;
+            break;
         case MON_DATA_MOVE2:
+            retVal = substruct1->move2;
+            break;
         case MON_DATA_MOVE3:
+            retVal = substruct1->move3;
+            break;
         case MON_DATA_MOVE4:
-            retVal = substruct1->moves[field - MON_DATA_MOVE1];
+            retVal = substruct1->move4;
             break;
         case MON_DATA_PP1:
+            retVal = substruct1->pp1;
+            break;
         case MON_DATA_PP2:
+            retVal = substruct1->pp2;
+            break;
         case MON_DATA_PP3:
+            retVal = substruct1->pp3;
+            break;
         case MON_DATA_PP4:
-            retVal = substruct1->pp[field - MON_DATA_PP1];
+            retVal = substruct1->pp4;
             break;
         case MON_DATA_HP_EV:
             retVal = substruct2->hpEV;
@@ -1789,9 +1911,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         case MON_DATA_TOUGH:
             retVal = substruct2->tough;
-            break;
-        case MON_DATA_HIDDEN_NATURE:
-            retVal = substruct2->hiddenNature;
             break;
         case MON_DATA_POKERUS:
             retVal = substruct3->pokerus;
@@ -1868,8 +1987,26 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_AFFECTION:
             retVal = substruct3->affection;
             break;
-        case MON_DATA_FUTURE_RESERVE:
-            retVal = substruct3->unused1;
+        case MON_DATA_LAND_RIBBON:
+            retVal = substruct3->landRibbon;
+            break;
+        case MON_DATA_SKY_RIBBON:
+            retVal = substruct3->skyRibbon;
+            break;
+        case MON_DATA_COUNTRY_RIBBON:
+            retVal = substruct3->countryRibbon;
+            break;
+        case MON_DATA_NATIONAL_RIBBON:
+            retVal = substruct3->nationalRibbon;
+            break;
+        case MON_DATA_EARTH_RIBBON:
+            retVal = substruct3->earthRibbon;
+            break;
+        case MON_DATA_WORLD_RIBBON:
+            retVal = substruct3->worldRibbon;
+            break;
+        case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
+            retVal = substruct3->modernFatefulEncounter;
             break;
         case MON_DATA_SPECIES_OR_EGG:
             retVal = substruct0->species;
@@ -1893,10 +2030,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 while (moves[i] != MOVES_COUNT)
                 {
                     u16 move = moves[i];
-                    if (substruct1->moves[0] == move
-                        || substruct1->moves[1] == move
-                        || substruct1->moves[2] == move
-                        || substruct1->moves[3] == move)
+                    if (substruct1->move1 == move
+                        || substruct1->move2 == move
+                        || substruct1->move3 == move
+                        || substruct1->move4 == move)
                         retVal |= gBitTable[i];
                     i++;
                 }
@@ -1934,6 +2071,46 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                     | (substruct3->effortRibbon << 19);
             }
             break;
+        case MON_DATA_HYPER_TRAINED_HP:
+            retVal = substruct1->hyperTrainedHP;
+            break;
+        case MON_DATA_HYPER_TRAINED_ATK:
+            retVal = substruct1->hyperTrainedAttack;
+            break;
+        case MON_DATA_HYPER_TRAINED_DEF:
+            retVal = substruct1->hyperTrainedDefense;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPEED:
+            retVal = substruct1->hyperTrainedSpeed;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPATK:
+            retVal = substruct1->hyperTrainedSpAttack;
+            break;
+        case MON_DATA_HYPER_TRAINED_SPDEF:
+            retVal = substruct1->hyperTrainedSpDefense;
+            break;
+        case MON_DATA_IS_SHADOW:
+            retVal = substruct3->isShadow;
+            break;
+        case MON_DATA_DYNAMAX_LEVEL:
+            retVal = substruct3->dynamaxLevel;
+            break;
+        case MON_DATA_GIGANTAMAX_FACTOR:
+            retVal = substruct3->gigantamaxFactor;
+            break;
+        case MON_DATA_TERA_TYPE:
+        {
+            if (substruct0->teraType == 0)
+            {
+                const u8 *types = gSpeciesInfo[substruct0->species].types;
+                retVal = (boxMon->personality & 0x1) == 0 ? types[0] : types[1];
+            }
+            else
+            {
+                retVal = substruct0->teraType - 1;
+            }
+            break;
+        }
         default:
             break;
         }
@@ -1942,50 +2119,18 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     {
         switch (field)
         {
+        case MON_DATA_STATUS:
+            retVal = UncompressStatus(boxMon->compressedStatus);
+            break;
+        case MON_DATA_HP_LOST:
+            retVal = boxMon->hpLost;
+            break;
         case MON_DATA_PERSONALITY:
             retVal = boxMon->personality;
             break;
         case MON_DATA_OT_ID:
             retVal = boxMon->otId;
             break;
-        case MON_DATA_NICKNAME:
-        {
-            if (boxMon->isBadEgg)
-            {
-                for (retVal = 0;
-                    retVal < POKEMON_NAME_LENGTH && gText_BadEgg[retVal] != EOS;
-                    data[retVal] = gText_BadEgg[retVal], retVal++) {}
-
-                data[retVal] = EOS;
-            }
-            else if (boxMon->isEgg)
-            {
-                StringCopy(data, gText_EggNickname);
-                retVal = StringLength(data);
-            }
-            else if (boxMon->language == LANGUAGE_JAPANESE)
-            {
-                data[0] = EXT_CTRL_CODE_BEGIN;
-                data[1] = EXT_CTRL_CODE_JPN;
-
-                for (retVal = 2, i = 0;
-                    i < 5 && boxMon->nickname[i] != EOS;
-                    data[retVal] = boxMon->nickname[i], retVal++, i++) {}
-
-                data[retVal++] = EXT_CTRL_CODE_BEGIN;
-                data[retVal++] = EXT_CTRL_CODE_ENG;
-                data[retVal] = EOS;
-            }
-            else
-            {
-                for (retVal = 0;
-                    retVal < POKEMON_NAME_LENGTH;
-                    data[retVal] = boxMon->nickname[retVal], retVal++){}
-
-                data[retVal] = EOS;
-            }
-            break;
-        }
         case MON_DATA_LANGUAGE:
             retVal = boxMon->language;
             break;
@@ -2014,6 +2159,21 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_MARKINGS:
             retVal = boxMon->markings;
             break;
+        case MON_DATA_CHECKSUM:
+            retVal = boxMon->checksum;
+            break;
+        case MON_DATA_IS_SHINY:
+        {
+            u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
+            retVal = (shinyValue < SHINY_ODDS) ^ boxMon->shinyModifier;
+            break;
+        }
+        case MON_DATA_HIDDEN_NATURE:
+        {
+            u32 nature = GetNatureFromPersonality(boxMon->personality);
+            retVal = nature ^ boxMon->hiddenNatureModifier;
+            break;
+        }
         default:
             break;
         }
@@ -2039,13 +2199,27 @@ void SetMonData(struct Pokemon *mon, s32 field, const void *dataArg)
     {
     case MON_DATA_STATUS:
         SET32(mon->status);
+        SetBoxMonData(&mon->box, MON_DATA_STATUS, dataArg);
         break;
     case MON_DATA_LEVEL:
         SET8(mon->level);
         break;
     case MON_DATA_HP:
+    {
+        u32 hpLost;
         SET16(mon->hp);
+        hpLost = mon->maxHP - mon->hp;
+        SetBoxMonData(&mon->box, MON_DATA_HP_LOST, &hpLost);
         break;
+    }
+    case MON_DATA_HP_LOST:
+    {
+        u32 hpLost;
+        SET16(hpLost);
+        mon->hp = mon->maxHP - hpLost;
+        SetBoxMonData(&mon->box, MON_DATA_HP_LOST, &hpLost);
+        break;
+    }
     case MON_DATA_MAX_HP:
         SET16(mon->maxHP);
         break;
@@ -2093,6 +2267,17 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
 
         switch (field)
         {
+        case MON_DATA_NICKNAME:
+        {
+            s32 i;
+            for (i = 0; i < min(sizeof(boxMon->nickname), POKEMON_NAME_LENGTH); i++)
+                boxMon->nickname[i] = data[i];
+            if (POKEMON_NAME_LENGTH >= 11)
+                substruct0->nickname11 = data[10];
+            if (POKEMON_NAME_LENGTH >= 12)
+                substruct0->nickname12 = data[11];
+            break;
+        }
         case MON_DATA_SPECIES:
         {
             SET16(substruct0->species);
@@ -2115,16 +2300,28 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             SET8(substruct0->friendship);
             break;
         case MON_DATA_MOVE1:
+            SET16(substruct1->move1);
+            break;
         case MON_DATA_MOVE2:
+            SET16(substruct1->move2);
+            break;
         case MON_DATA_MOVE3:
+            SET16(substruct1->move3);
+            break;
         case MON_DATA_MOVE4:
-            SET16(substruct1->moves[field - MON_DATA_MOVE1]);
+            SET16(substruct1->move4);
             break;
         case MON_DATA_PP1:
+            SET8(substruct1->pp1);
+            break;
         case MON_DATA_PP2:
+            SET8(substruct1->pp2);
+            break;
         case MON_DATA_PP3:
+            SET8(substruct1->pp3);
+            break;
         case MON_DATA_PP4:
-            SET8(substruct1->pp[field - MON_DATA_PP1]);
+            SET8(substruct1->pp4);
             break;
         case MON_DATA_HP_EV:
             SET8(substruct2->hpEV);
@@ -2158,9 +2355,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_TOUGH:
             SET8(substruct2->tough);
-            break;
-        case MON_DATA_HIDDEN_NATURE:
-            SET8(substruct2->hiddenNature);
             break;
         case MON_DATA_POKERUS:
             SET8(substruct3->pokerus);
@@ -2247,8 +2441,26 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_AFFECTION:
             SET8(substruct3->affection);
             break;
-        case MON_DATA_FUTURE_RESERVE:
-            SET8(substruct3->unused1);
+        case MON_DATA_LAND_RIBBON:
+            SET8(substruct3->landRibbon);
+            break;
+        case MON_DATA_SKY_RIBBON:
+            SET8(substruct3->skyRibbon);
+            break;
+        case MON_DATA_COUNTRY_RIBBON:
+            SET8(substruct3->countryRibbon);
+            break;
+        case MON_DATA_NATIONAL_RIBBON:
+            SET8(substruct3->nationalRibbon);
+            break;
+        case MON_DATA_EARTH_RIBBON:
+            SET8(substruct3->earthRibbon);
+            break;
+        case MON_DATA_WORLD_RIBBON:
+            SET8(substruct3->worldRibbon);
+            break;
+        case MON_DATA_MODERN_FATEFUL_ENCOUNTER:
+            SET8(substruct3->modernFatefulEncounter);
             break;
         case MON_DATA_IVS:
         {
@@ -2261,6 +2473,40 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             substruct3->spDefenseIV = (ivs >> 25) & MAX_IV_MASK;
             break;
         }
+        case MON_DATA_HYPER_TRAINED_HP:
+            SET8(substruct1->hyperTrainedHP);
+            break;
+        case MON_DATA_HYPER_TRAINED_ATK:
+            SET8(substruct1->hyperTrainedAttack);
+            break;
+        case MON_DATA_HYPER_TRAINED_DEF:
+            SET8(substruct1->hyperTrainedDefense);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPEED:
+            SET8(substruct1->hyperTrainedSpeed);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPATK:
+            SET8(substruct1->hyperTrainedSpAttack);
+            break;
+        case MON_DATA_HYPER_TRAINED_SPDEF:
+            SET8(substruct1->hyperTrainedSpDefense);
+            break;
+        case MON_DATA_IS_SHADOW:
+            SET8(substruct3->isShadow);
+            break;
+        case MON_DATA_DYNAMAX_LEVEL:
+            SET8(substruct3->dynamaxLevel);
+            break;
+        case MON_DATA_GIGANTAMAX_FACTOR:
+            SET8(substruct3->gigantamaxFactor);
+            break;
+        case MON_DATA_TERA_TYPE:
+        {
+            u32 teraType;
+            SET8(teraType);
+            substruct0->teraType = 1 + teraType;
+            break;
+        }
         default:
             break;
         }
@@ -2269,19 +2515,22 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     {
         switch (field)
         {
+        case MON_DATA_STATUS:
+        {
+            u32 status;
+            SET32(status);
+            boxMon->compressedStatus = CompressStatus(status);
+            break;
+        }
+        case MON_DATA_HP_LOST:
+            SET16(boxMon->hpLost);
+            break;
         case MON_DATA_PERSONALITY:
             SET32(boxMon->personality);
             break;
         case MON_DATA_OT_ID:
             SET32(boxMon->otId);
             break;
-        case MON_DATA_NICKNAME:
-        {
-            s32 i;
-            for (i = 0; i < POKEMON_NAME_LENGTH; i++)
-                boxMon->nickname[i] = data[i];
-            break;
-        }
         case MON_DATA_LANGUAGE:
             SET8(boxMon->language);
             break;
@@ -2304,6 +2553,25 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_MARKINGS:
             SET8(boxMon->markings);
             break;
+        case MON_DATA_CHECKSUM:
+            SET16(boxMon->checksum);
+            break;
+        case MON_DATA_IS_SHINY:
+        {
+            u32 shinyValue = GET_SHINY_VALUE(boxMon->otId, boxMon->personality);
+            bool32 isShiny;
+            SET8(isShiny);
+            boxMon->shinyModifier = (shinyValue < SHINY_ODDS) ^ isShiny;
+            break;
+        }
+        case MON_DATA_HIDDEN_NATURE:
+        {
+            u32 nature = GetNatureFromPersonality(boxMon->personality);
+            u32 hiddenNature;
+            SET8(hiddenNature);
+            boxMon->hiddenNatureModifier = nature ^ hiddenNature;
+            break;
+        }
         }
     }
 }
@@ -3347,6 +3615,18 @@ u8 GetNatureFromPersonality(u32 personality)
     return personality % NUM_NATURES;
 }
 
+static u32 GetGMaxTargetSpecies(u32 species)
+{
+    const struct FormChange *formChanges = GetSpeciesFormChanges(species);
+    u32 i;
+    for (i = 0; formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
+    {
+        if (formChanges[i].method == FORM_CHANGE_BATTLE_GIGANTAMAX)
+            return formChanges[i].targetSpecies;
+    }
+    return SPECIES_NONE;
+}
+
 u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, struct Pokemon *tradePartner)
 {
     int i, j;
@@ -3359,6 +3639,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, 0);
     u16 upperPersonality = personality >> 16;
     u32 holdEffect, currentMap, partnerSpecies, partnerHeldItem, partnerHoldEffect;
+    bool32 consumeItem = FALSE;
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
 
     if (evolutions == NULL)
@@ -3424,17 +3705,15 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_ITEM_HOLD_NIGHT:
                 if (GetTimeOfDay() == TIME_NIGHT && heldItem == evolutions[i].param)
                 {
-                    heldItem = ITEM_NONE;
-                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
                 }
                 break;
             case EVO_ITEM_HOLD_DAY:
                 if (GetTimeOfDay() != TIME_NIGHT && heldItem == evolutions[i].param)
                 {
-                    heldItem = ITEM_NONE;
-                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
                 }
                 break;
             case EVO_LEVEL_DUSK:
@@ -3613,9 +3892,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_ITEM_HOLD:
                 if (heldItem == evolutions[i].param)
                 {
-                    heldItem = 0;
-                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
                 }
                 break;
             }
@@ -3635,9 +3913,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_TRADE_ITEM:
                 if (evolutions[i].param == heldItem)
                 {
-                    heldItem = ITEM_NONE;
-                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
                 }
                 break;
             case EVO_TRADE_SPECIFIC_MON:
@@ -3728,6 +4005,22 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             }
         }
         break;
+    }
+
+    // Pikachu, Meowth, and Eevee cannot evolve if they have the
+    // Gigantamax Factor. We assume that is because their evolutions
+    // do not have a Gigantamax Form.
+    if (GetMonData(mon, MON_DATA_GIGANTAMAX_FACTOR, NULL)
+     && GetGMaxTargetSpecies(species) != SPECIES_NONE
+     && GetGMaxTargetSpecies(targetSpecies) == SPECIES_NONE)
+    {
+        return SPECIES_NONE;
+    }
+
+    if (consumeItem)
+    {
+        heldItem = ITEM_NONE;
+        SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
     }
 
     return targetSpecies;
@@ -4681,20 +4974,17 @@ static void Task_PlayMapChosenOrBattleBGM(u8 taskId)
 
 const u32 *GetMonFrontSpritePal(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
-    u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);
-    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
-    return GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, NULL);
+    bool32 isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
+    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+    return GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality);
 }
 
-const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 personality)
+const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny, u32 personality)
 {
-    u32 shinyValue;
-
     species = SanitizeSpeciesId(species);
 
-    shinyValue = GET_SHINY_VALUE(otId, personality);
-    if (shinyValue < SHINY_ODDS)
+    if (isShiny)
     {
         if (gSpeciesInfo[species].shinyPaletteFemale != NULL && IsPersonalityFemale(species, personality))
             return gSpeciesInfo[species].shinyPaletteFemale;
@@ -4896,18 +5186,7 @@ void SetWildMonHeldItem(void)
 
 bool8 IsMonShiny(struct Pokemon *mon)
 {
-    u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);
-    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
-    return IsShinyOtIdPersonality(otId, personality);
-}
-
-bool8 IsShinyOtIdPersonality(u32 otId, u32 personality)
-{
-    bool8 retVal = FALSE;
-    u32 shinyValue = GET_SHINY_VALUE(otId, personality);
-    if (shinyValue < SHINY_ODDS)
-        retVal = TRUE;
-    return retVal;
+    return GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 }
 
 const u8 *GetTrainerPartnerName(void)
@@ -5719,6 +5998,10 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     struct PokemonSubstruct3 *old3, *new3;
     struct BoxPokemon old;
 
+    bool32 isShiny = GetBoxMonData(boxMon, MON_DATA_IS_SHINY, NULL);
+    u32 hiddenNature = GetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, NULL);
+    u32 teraType = GetBoxMonData(boxMon, MON_DATA_TERA_TYPE, NULL);
+
     old = *boxMon;
     old0 = &(GetSubstruct(&old, 0)->type0);
     old1 = &(GetSubstruct(&old, 1)->type1);
@@ -5735,6 +6018,38 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     *new1 = *old1;
     *new2 = *old2;
     *new3 = *old3;
+    boxMon->checksum = CalculateBoxMonChecksum(boxMon);
+    EncryptBoxMon(boxMon);
+
+    SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
+    SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &hiddenNature);
+    SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &teraType);
+}
+
+void HealPokemon(struct Pokemon *mon)
+{
+    u32 data;
+
+    data = GetMonData(mon, MON_DATA_MAX_HP);
+    SetMonData(mon, MON_DATA_HP, &data);
+
+    data = STATUS1_NONE;
+    SetMonData(mon, MON_DATA_STATUS, &data);
+
+    MonRestorePP(mon);
+}
+
+void HealBoxPokemon(struct BoxPokemon *boxMon)
+{
+    u32 data;
+
+    data = 0;
+    SetBoxMonData(boxMon, MON_DATA_HP_LOST, &data);
+
+    data = STATUS1_NONE;
+    SetBoxMonData(boxMon, MON_DATA_STATUS, &data);
+
+    BoxMonRestorePP(boxMon);
 }
 u16 GetCryIdBySpecies(u16 species)
 {

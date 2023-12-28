@@ -2017,10 +2017,10 @@ static void Select_CreateMonSprite(void)
     struct Pokemon *mon = &sFactorySelectScreen->mons[monId].monData;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-    u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+    bool8 isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
-    sFactorySelectScreen->monPics[1].monSpriteId = CreateMonPicSprite(species, otId, personality, TRUE, 88, 32, 15, TAG_NONE);
-    UniquePalette(0x1F0, species, personality, IsMonShiny(mon));
+    sFactorySelectScreen->monPics[1].monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, 88, 32, 15, TAG_NONE);
+    UniquePalette(0x1F0, species, personality, isShiny);
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecX = 0;
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecY = 0;
 
@@ -2036,10 +2036,13 @@ static void Select_ReshowMonSprite(void)
 {
     struct Pokemon *mon;
     u16 species, i;
-    u32 personality, otId;
+    u32 personality;
+    bool8 isShiny;
+
+    isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
     sFactorySelectScreen->monPics[1].bgSpriteId = CreateSprite(&sSpriteTemplate_Select_MonPicBgAnim, 120, 64, 1);
-    UniquePalette(0x1F0, species, personality, IsMonShiny(mon));
+    UniquePalette(0x1F0, species, personality, isShiny);
     for (i = 0x1F0; i < 0x200; i++)
     {
         gPlttBufferUnfaded[i] = gPlttBufferFaded[i];
@@ -2049,9 +2052,9 @@ static void Select_ReshowMonSprite(void)
     mon = &sFactorySelectScreen->mons[sFactorySelectScreen->cursorPos].monData;
     species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-    otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+    isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
-    sFactorySelectScreen->monPics[1].monSpriteId = CreateMonPicSprite(species, otId, personality, TRUE, 88, 32, 15, TAG_NONE);
+    sFactorySelectScreen->monPics[1].monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, 88, 32, 15, TAG_NONE);
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecX = 0;
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecY = 0;
 
@@ -2071,10 +2074,10 @@ static void Select_CreateChosenMonsSprites(void)
                 struct Pokemon *mon = &sFactorySelectScreen->mons[j].monData;
                 u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
                 u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-                u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+                bool8 isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
-                sFactorySelectScreen->monPics[i].monSpriteId = CreateMonPicSprite(species, otId, personality, TRUE, (i * 72) + 16, 32, i + 13, TAG_NONE);
-                UniquePalette(0x100 + (i + 13) * 0x10, species, personality, IsMonShiny(mon));
+                sFactorySelectScreen->monPics[i].monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, (i * 72) + 16, 32, i + 13, TAG_NONE);
+                UniquePalette(0x100 + (i + 13) * 0x10, species, personality, isShiny);
                 gSprites[sFactorySelectScreen->monPics[i].monSpriteId].centerToCornerVecX = 0;
                 gSprites[sFactorySelectScreen->monPics[i].monSpriteId].centerToCornerVecY = 0;
                 break;
@@ -4086,7 +4089,8 @@ static void Swap_ShowSummaryMonSprite(void)
 {
     struct Pokemon *mon;
     u16 species, i;
-    u32 personality, otId;
+    u32 personality;
+    bool8 isShiny;
 
     sFactorySwapScreen->monPic.bgSpriteId = CreateSprite(&sSpriteTemplate_Swap_MonPicBgAnim, 120, 64, 1);
     StartSpriteAffineAnim(&gSprites[sFactorySwapScreen->monPic.bgSpriteId], 2);
@@ -4094,14 +4098,10 @@ static void Swap_ShowSummaryMonSprite(void)
     mon = &gPlayerParty[sFactorySwapScreen->cursorPos];
     species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-    otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+    isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
-#ifdef BUGFIX
-    sFactorySwapScreen->monPic.monSpriteId = CreateMonPicSprite(species, otId, personality, TRUE, 88, 32, 15, TAG_NONE);
-#else
-    sFactorySwapScreen->monPic.monSpriteId = CreateMonPicSprite(species, personality, otId, TRUE, 88, 32, 15, TAG_NONE);
-#endif
-    UniquePalette(0x1F0, species, personality, IsMonShiny(mon));
+    sFactorySwapScreen->monPic.monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, 88, 32, 15, TAG_NONE);
+    UniquePalette(0x1F0, species, personality, isShiny);
     for (i = 0x1F0; i < 0x200; i++)
         gPlttBufferUnfaded[i] = gPlttBufferFaded[i];
     gSprites[sFactorySwapScreen->monPic.monSpriteId].centerToCornerVecX = 0;
@@ -4308,7 +4308,8 @@ static void Swap_CreateMonSprite(void)
 {
     struct Pokemon *mon;
     u16 species;
-    u32 personality, otId;
+    u32 personality;
+    bool8 isShiny;
 
     if (!sFactorySwapScreen->inEnemyScreen)
         mon = &gPlayerParty[sFactorySwapScreen->cursorPos];
@@ -4317,10 +4318,10 @@ static void Swap_CreateMonSprite(void)
 
     species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-    otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+    isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
-    sFactorySwapScreen->monPic.monSpriteId = CreateMonPicSprite(species, otId, personality, TRUE, 88, 32, 15, TAG_NONE);
-    UniquePalette(0x1F0, species, personality, IsMonShiny(mon));
+    sFactorySwapScreen->monPic.monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, 88, 32, 15, TAG_NONE);
+    UniquePalette(0x1F0, species, personality, isShiny);
     gSprites[sFactorySwapScreen->monPic.monSpriteId].centerToCornerVecX = 0;
     gSprites[sFactorySwapScreen->monPic.monSpriteId].centerToCornerVecY = 0;
 

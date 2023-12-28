@@ -2771,7 +2771,7 @@ static void LoadTradeMonPic(u8 whichParty, u8 state)
     int pos = 0;
     struct Pokemon *mon = NULL;
     u16 species = SPECIES_NONE;
-    u32 personality;
+    u32 personality, isShiny;
 
     if (whichParty == TRADE_PLAYER)
     {
@@ -2790,10 +2790,11 @@ static void LoadTradeMonPic(u8 whichParty, u8 state)
     {
     case 0:
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
+        isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
 
         HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->sprites.ptr[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality);
 
-        LoadCompressedUniqueSpritePaletteWithTag(GetMonFrontSpritePal(mon), species, personality, IsMonShiny(mon));
+        LoadCompressedUniqueSpritePaletteWithTag(GetMonFrontSpritePal(mon), species, personality, isShiny);
         sTradeAnim->monSpecies[whichParty] = species;
         sTradeAnim->monPersonalities[whichParty] = personality;
         break;
@@ -4845,7 +4846,7 @@ static void CheckPartnersMonForRibbons(void)
 {
     u8 i;
     u8 numRibbons = 0;
-    for (i = 0; i < (MON_DATA_EFFORT_RIBBON - MON_DATA_CHAMPION_RIBBON); i++)
+    for (i = 0; i < (MON_DATA_WORLD_RIBBON - MON_DATA_CHAMPION_RIBBON + 1); i++)
         numRibbons += GetMonData(&gEnemyParty[gSelectedTradeMonPositions[TRADE_PARTNER] % PARTY_SIZE], MON_DATA_CHAMPION_RIBBON + i);
 
     if (numRibbons != 0)
