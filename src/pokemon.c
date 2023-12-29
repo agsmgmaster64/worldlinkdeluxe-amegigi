@@ -5987,30 +5987,12 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     struct PokemonSubstruct1 *old1, *new1;
     struct PokemonSubstruct2 *old2, *new2;
     struct PokemonSubstruct3 *old3, *new3;
-    struct BoxPokemon old;
 
     bool32 isShiny = GetBoxMonData(boxMon, MON_DATA_IS_SHINY, NULL);
     u32 hiddenNature = GetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, NULL);
     u32 teraType = GetBoxMonData(boxMon, MON_DATA_TERA_TYPE, NULL);
 
-    old = *boxMon;
-    old0 = &(GetSubstruct(&old, 0)->type0);
-    old1 = &(GetSubstruct(&old, 1)->type1);
-    old2 = &(GetSubstruct(&old, 2)->type2);
-    old3 = &(GetSubstruct(&old, 3)->type3);
-
-    new0 = &(GetSubstruct(boxMon, 0)->type0);
-    new1 = &(GetSubstruct(boxMon, 1)->type1);
-    new2 = &(GetSubstruct(boxMon, 2)->type2);
-    new3 = &(GetSubstruct(boxMon, 3)->type3);
-
     boxMon->personality = personality;
-    *new0 = *old0;
-    *new1 = *old1;
-    *new2 = *old2;
-    *new3 = *old3;
-    boxMon->checksum = CalculateBoxMonChecksum(boxMon);
-    EncryptBoxMon(boxMon);
 
     SetBoxMonData(boxMon, MON_DATA_IS_SHINY, &isShiny);
     SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &hiddenNature);

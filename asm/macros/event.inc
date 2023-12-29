@@ -2089,6 +2089,7 @@
 	setvar VAR_0x8000, \texttype
 	setvar VAR_0x8001, \stringvarnumber
 	special BufferUnitSystemText
+	.endm
 
 	@ Sets VAR_RESULT to TRUE if stat can be hyper trained, or to
 	@ FALSE otherwise.
