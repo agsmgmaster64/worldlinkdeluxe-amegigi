@@ -8,6 +8,7 @@ void ItemUseOutOfBattle_Itemfinder(u8);
 void ItemUseOutOfBattle_PokeblockCase(u8);
 void ItemUseOutOfBattle_PokeFlute(u8);
 void ItemUseOutOfBattle_CoinCase(u8);
+void ItemUseOutOfBattle_PokemonBoxLink(u8);
 void ItemUseOutOfBattle_PowderJar(u8);
 void ItemUseOutOfBattle_SSTicket(u8);
 void ItemUseOutOfBattle_WailmerPail(u8);
