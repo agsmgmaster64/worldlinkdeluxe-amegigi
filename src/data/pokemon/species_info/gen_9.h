@@ -1699,7 +1699,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         ICON(Tadbulb, 5), // TODO: Redo to 0
         //.footprint = gMonFootprint_Tadbulb,
         LEARNSETS(Tadbulb),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_BELLIBOLT}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_BELLIBOLT}),
     },
 
     [SPECIES_BELLIBOLT] =
@@ -2330,7 +2330,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         ICON(Capsakid, 1),
         //.footprint = gMonFootprint_Capsakid,
         LEARNSETS(Capsakid),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_SCOVILLAIN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_SCOVILLAIN}),
     },
 
     [SPECIES_SCOVILLAIN] =
@@ -3480,7 +3480,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         ICON(Cetoddle, 0),
         //.footprint = gMonFootprint_Cetoddle,
         LEARNSETS(Cetoddle),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_CETITAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_CETITAN}),
     },
 
     [SPECIES_CETITAN] =

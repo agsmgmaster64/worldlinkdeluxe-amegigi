@@ -2104,28 +2104,28 @@ static const u8 sText_SpaceIs[] = _(" is");
 static const u8 sText_ApostropheS[] = _("'s");
 
 // For displaying names of invalid moves.
-// This is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
+// This is large enough that the text for TYPE_ILLUSION will exceed TEXT_BUFF_ARRAY_COUNT.
 static const u8 sATypeMove_Table[NUMBER_OF_MON_TYPES][17] =
 {
-    [TYPE_ILLUSION]   = _("a NORMAL move"),
-    [TYPE_DREAM] = _("a Dream move"),
+    [TYPE_ILLUSION] = _("an Illusion move"),
+    [TYPE_DREAM]    = _("a Dream move"),
     [TYPE_FLYING]   = _("a Flying move"),
     [TYPE_MIASMA]   = _("a Miasma move"),
-    [TYPE_EARTH]   = _("an Earth move"),
-    [TYPE_BEAST]     = _("a ROCK move"),
-    [TYPE_HEART]      = _("a BUG move"),
+    [TYPE_EARTH]    = _("an Earth move"),
+    [TYPE_BEAST]    = _("a Beast move"),
+    [TYPE_HEART]    = _("a Heart move"),
     [TYPE_GHOST]    = _("a GHOST move"),
     [TYPE_STEEL]    = _("a STEEL move"),
     [TYPE_MYSTERY]  = _("a ??? move"),
     [TYPE_FIRE]     = _("a FIRE move"),
     [TYPE_WATER]    = _("a WATER move"),
-    [TYPE_NATURE]    = _("a GRASS move"),
-    [TYPE_WIND] = _("an ELECTRIC move"),
-    [TYPE_REASON]  = _("a PSYCHIC move"),
+    [TYPE_NATURE]   = _("a GRASS move"),
+    [TYPE_WIND]     = _("a Wind move"),
+    [TYPE_REASON]   = _("a Reason move"),
     [TYPE_ICE]      = _("an ICE move"),
-    [TYPE_FAITH]   = _("a DRAGON move"),
+    [TYPE_FAITH]    = _("a Faith move"),
     [TYPE_DARK]     = _("a Dark move"),
-    [TYPE_COSMIC]    = _("a Cosmic move"),
+    [TYPE_COSMIC]   = _("a Cosmic move"),
 };
 
 const u8 gText_BattleTourney[] = _("BATTLE TOURNEY");

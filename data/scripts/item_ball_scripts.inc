@@ -171,7 +171,7 @@ Route119_EventScript_ItemElixir::
 	end
 
 Route119_EventScript_ItemLeafStone::
-	finditem ITEM_LEAF_STONE
+	finditem ITEM_TECH_HEART
 	end
 
 Route119_EventScript_ItemRareCandy::
@@ -371,7 +371,7 @@ JaggedPass_EventScript_ItemBurnHeal::
 	end
 
 FieryPath_EventScript_ItemFireStone::
-	finditem ITEM_FIRE_STONE
+	finditem ITEM_POWER_HEART
 	end
 
 FieryPath_EventScript_ItemTMToxic::
@@ -407,7 +407,7 @@ NewMauville_Inside_EventScript_ItemEscapeRope::
 	end
 
 NewMauville_Inside_EventScript_ItemThunderStone::
-	finditem ITEM_THUNDER_STONE
+	finditem ITEM_SWIFT_HEART
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::
@@ -451,7 +451,7 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner::
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone::
-	finditem ITEM_WATER_STONE
+	finditem ITEM_GUARD_HEART
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemTMRainDance::

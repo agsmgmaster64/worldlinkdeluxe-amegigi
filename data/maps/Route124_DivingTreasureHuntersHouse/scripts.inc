@@ -219,22 +219,22 @@ Route124_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYBG::
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeRedShard::
 	setvar VAR_0x8008, ITEM_RED_SHARD
-	setvar VAR_0x8009, ITEM_FIRE_STONE
+	setvar VAR_0x8009, ITEM_POWER_HEART
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeYellowShard::
 	setvar VAR_0x8008, ITEM_YELLOW_SHARD
-	setvar VAR_0x8009, ITEM_THUNDER_STONE
+	setvar VAR_0x8009, ITEM_SWIFT_HEART
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeBlueShard::
 	setvar VAR_0x8008, ITEM_BLUE_SHARD
-	setvar VAR_0x8009, ITEM_WATER_STONE
+	setvar VAR_0x8009, ITEM_GUARD_HEART
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TradeGreenShard::
 	setvar VAR_0x8008, ITEM_GREEN_SHARD
-	setvar VAR_0x8009, ITEM_LEAF_STONE
+	setvar VAR_0x8009, ITEM_TECH_HEART
 	goto Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard
 
 Route124_DivingTreasureHuntersHouse_EventScript_TryTradeShard::

@@ -616,11 +616,11 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_GUARD_SPEC]         = gItemEffect_GuardSpec,
 
     // Evolution Items
-    [ITEM_FIRE_STONE]         = gItemEffect_EvoItem,
-    [ITEM_WATER_STONE]        = gItemEffect_EvoItem,
-    [ITEM_THUNDER_STONE]      = gItemEffect_EvoItem,
-    [ITEM_LEAF_STONE]         = gItemEffect_EvoItem,
-    [ITEM_ICE_STONE]          = gItemEffect_EvoItem,
+    [ITEM_POWER_HEART]         = gItemEffect_EvoItem,
+    [ITEM_GUARD_HEART]        = gItemEffect_EvoItem,
+    [ITEM_SWIFT_HEART]      = gItemEffect_EvoItem,
+    [ITEM_TECH_HEART]         = gItemEffect_EvoItem,
+    [ITEM_HELPER_HEART]          = gItemEffect_EvoItem,
     [ITEM_SUN_STONE]          = gItemEffect_EvoItem,
     [ITEM_MOON_STONE]         = gItemEffect_EvoItem,
     [ITEM_SHINY_STONE]        = gItemEffect_EvoItem,

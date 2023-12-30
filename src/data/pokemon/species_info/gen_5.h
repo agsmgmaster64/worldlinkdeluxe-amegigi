@@ -912,7 +912,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Pansage, 1),
         .footprint = gMonFootprint_Pansage,
         LEARNSETS(Pansage),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_SIMISAGE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_SIMISAGE}),
     },
 
     [SPECIES_SIMISAGE] =
@@ -1010,7 +1010,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Pansear, 2),
         .footprint = gMonFootprint_Pansear,
         LEARNSETS(Pansear),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_SIMISEAR}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_SIMISEAR}),
     },
 
     [SPECIES_SIMISEAR] =
@@ -1108,7 +1108,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Panpour, 2),
         .footprint = gMonFootprint_Panpour,
         LEARNSETS(Panpour),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_SIMIPOUR}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_SIMIPOUR}),
     },
 
     [SPECIES_SIMIPOUR] =
@@ -3398,7 +3398,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(DarumakaGalarian, 0),
         LEARNSETS(DarumakaGalarian),
         .isGalarianForm = TRUE,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE}),
     },
 
 #define DARMANITAN_GALARIAN_MISC_INFO                                           \
@@ -6115,7 +6115,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Eelektrik, 0),
         .footprint = gMonFootprint_Eelektrik,
         LEARNSETS(Eelektrik),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_EELEKTROSS}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_EELEKTROSS}),
     },
 
     [SPECIES_EELEKTROSS] =

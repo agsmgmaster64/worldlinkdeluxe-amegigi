@@ -1792,7 +1792,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON_FEMALE(Pikachu, 2),
     #endif
         .formChangeTable = sPikachuFormChangeTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_NORMAL_KOAKUMA},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_NORMAL_KOAKUMA},
                                 {EVO_NONE, 0, SPECIES_RAICHU_ALOLAN}),
     },
 
@@ -2320,7 +2320,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(SandshrewAlolan, 0),
         LEARNSETS(SandshrewAlolan),
         .isAlolanForm = TRUE,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_SANDSLASH_ALOLAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_SANDSLASH_ALOLAN}),
     },
 
     [SPECIES_SANDSLASH_ALOLAN] =
@@ -2883,7 +2883,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Vulpix),
         ICON(Vulpix, 5),
         LEARNSETS(Vulpix),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_NINETALES}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_NINETALES}),
     },
 
     [SPECIES_NINETALES] =
@@ -2939,7 +2939,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(VulpixAlolan),
         ICON(VulpixAlolan, 2),
         LEARNSETS(VulpixAlolan),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_NINETALES_ALOLAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_NINETALES_ALOLAN}),
         .isAlolanForm = TRUE,
     },
 
@@ -3386,7 +3386,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Gloom, 0),
         .footprint = gMonFootprint_Gloom,
         LEARNSETS(Gloom),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_VILEPLUME},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_VILEPLUME},
                                 {EVO_ITEM, ITEM_SUN_STONE, SPECIES_BELLOSSOM}),
     },
 
@@ -4491,7 +4491,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Growlithe),
         ICON(Growlithe, 3),
         LEARNSETS(Growlithe),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_ARCANINE}),
     },
 
     [SPECIES_ARCANINE] =
@@ -4564,7 +4564,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(GrowlitheHisuian, 0),
         LEARNSETS(GrowlitheHisuian),
         .isHisuianForm = TRUE,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE_HISUIAN}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_ARCANINE_HISUIAN}),
     },
 
     [SPECIES_ARCANINE_HISUIAN] =
@@ -4702,7 +4702,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Poliwhirl, 0),
         .footprint = gMonFootprint_Poliwhirl,
         LEARNSETS(Poliwhirl),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_POLIWRATH},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_POLIWRATH},
                                 {EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED},
                                 {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED}),
     },
@@ -5287,7 +5287,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Weepinbell, 1),
         .footprint = gMonFootprint_Weepinbell,
         LEARNSETS(Weepinbell),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_VICTREEBEL}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_VICTREEBEL}),
     },
 
     [SPECIES_VICTREEBEL] =
@@ -6251,7 +6251,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .footprint = gMonFootprint_Magneton,
         LEARNSETS(Magneton),
         .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_MAGNEZONE},
-                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}),
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_MAGNEZONE}),
     },
 
 #if P_GEN_4_CROSS_EVOS
@@ -6870,7 +6870,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Shellder, 2),
         .footprint = gMonFootprint_Shellder,
         LEARNSETS(Shellder),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_CLOYSTER}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_CLOYSTER}),
     },
 
     [SPECIES_CLOYSTER] =
@@ -7658,7 +7658,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(VoltorbHisuian, 0),
         LEARNSETS(VoltorbHisuian),
         .isHisuianForm = TRUE,
-        .evolutions = EVOLUTION({EVO_LEVEL, ITEM_LEAF_STONE, SPECIES_ELECTRODE_HISUIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, ITEM_TECH_HEART, SPECIES_ELECTRODE_HISUIAN}),
     },
 
     [SPECIES_ELECTRODE_HISUIAN] =
@@ -7734,7 +7734,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Exeggcute, 0),
         .footprint = gMonFootprint_Exeggcute,
         LEARNSETS(Exeggcute),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_EXEGGUTOR},
                                 {EVO_NONE, 0, SPECIES_EXEGGUTOR_ALOLAN}),
     },
 
@@ -9207,7 +9207,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Staryu, 2),
         .footprint = gMonFootprint_Staryu,
         LEARNSETS(Staryu),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_STARMIE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_STARMIE}),
     },
 
     [SPECIES_STARMIE] =
@@ -10621,15 +10621,15 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
         PALETTES(Eevee),
         ICON(Eevee, 2),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_JOLTEON},
-                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_VAPOREON},
-                                {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_FLAREON},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_JOLTEON},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_VAPOREON},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_FLAREON},
                                 {EVO_FRIENDSHIP_DAY, 0, SPECIES_ESPEON},
                                 {EVO_FRIENDSHIP_NIGHT, 0, SPECIES_UMBREON},
                                 {EVO_SPECIFIC_MAP, MAP_PETALBURG_WOODS, SPECIES_LEAFEON},
-                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_LEAFEON},
                                 {EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
-                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_GLACEON},
                                 {EVO_FRIENDSHIP_MOVE_TYPE, TYPE_COSMIC, SPECIES_SYLVEON}),
     },
 

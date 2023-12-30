@@ -5579,6 +5579,12 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_SET;
     }
+    else if (gBattleMoves[move].effect == EFFECT_MULTI_PULSE)
+    {
+        multiPulseType = GetTypeFromTypeBooster(holdEffect);
+        if (multiPulseType != NUMBER_OF_MON_TYPES)
+            gBattleStruct->dynamicMoveType = multiPulseType | F_DYNAMIC_TYPE_SET;
+    }
     else if (gBattleMoves[move].effect == EFFECT_REVELATION_DANCE)
     {
         if (gBattleMons[battlerAtk].type1 != TYPE_MYSTERY)

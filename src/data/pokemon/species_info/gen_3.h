@@ -1214,7 +1214,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         ICON(Lombre, 1),
         .footprint = gMonFootprint_Lombre,
         LEARNSETS(Lombre),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_WATER_STONE, SPECIES_LUDICOLO}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_LUDICOLO}),
     },
 
     [SPECIES_LUDICOLO] =
@@ -1366,7 +1366,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         ICON(Nuzleaf, 1),
         .footprint = gMonFootprint_Nuzleaf,
         LEARNSETS(Nuzleaf),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_SHIFTRY}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_SHIFTRY}),
     },
 
     [SPECIES_SHIFTRY] =
@@ -2694,7 +2694,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .footprint = gMonFootprint_Nosepass,
         LEARNSETS(Nosepass),
         .evolutions = EVOLUTION({EVO_MAPSEC, MAPSEC_NEW_MAUVILLE, SPECIES_PROBOPASS},
-                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_PROBOPASS}),
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_PROBOPASS}),
     },
 
 #if P_GEN_4_CROSS_EVOS

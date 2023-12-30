@@ -3070,55 +3070,65 @@ const struct Item gItems[] =
 
 // Evolution Items
 
-    [ITEM_FIRE_STONE] =
+    [ITEM_POWER_HEART] =
     {
-        .name = _("Fire Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Power Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings attack\n"
+                                       "potential to\n"
+                                       "Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_WATER_STONE] =
+    [ITEM_GUARD_HEART] =
     {
-        .name = _("Water Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Guard Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings defensive\n"
+                                       "potential to\n"
+                                       "Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_THUNDER_STONE] =
+    [ITEM_SWIFT_HEART] =
     {
-        .name = _("Thunder Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Swift Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings speedy\n"
+                                       "potential to\n"
+                                       "Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_LEAF_STONE] =
+    [ITEM_TECH_HEART] =
     {
-        .name = _("Leaf Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Tech Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings technical\n"
+                                       "potential to\n"
+                                       "Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_ICE_STONE] =
+    [ITEM_HELPER_HEART] =
     {
         .name = _("Ice Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings support\n"
+                                       "potential to\n"
+                                       "Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
@@ -3128,8 +3138,10 @@ const struct Item gItems[] =
     [ITEM_SUN_STONE] =
     {
         .name = _("Sun Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .price = 3000,
+        .description = COMPOUND_STRING("Brings a sense\n"
+                                       "of justice\n"
+                                       "to Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
@@ -7486,7 +7498,7 @@ const struct Item gItems[] =
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_FRZ,
         .description = COMPOUND_STRING("A hold item that\n"
-                                       "defrosts Pokémon\n"
+                                       "defrosts Puppets\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
@@ -8384,11 +8396,11 @@ const struct Item gItems[] =
     [ITEM_PUMKIN_BERRY] =
     {
         .name = _("Pumkin Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_FRZ,
-        .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
-                                       "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+        .description = COMPOUND_STRING("A hold item that\n"
+                                       "defrosts Puppets\n"
+                                       "in battle."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -8399,7 +8411,7 @@ const struct Item gItems[] =
     [ITEM_DRASH_BERRY] =
     {
         .name = _("Drash Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_PSN,
         .description = COMPOUND_STRING("A hold item that\n"
                                        "heals poisoning\n"
@@ -8414,7 +8426,7 @@ const struct Item gItems[] =
     [ITEM_EGGANT_BERRY] =
     {
         .name = _("Eggant Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         #if B_MENTAL_HERB >= GEN_5
             .description = COMPOUND_STRING("Snaps Pokémon out\n"
@@ -8435,10 +8447,10 @@ const struct Item gItems[] =
     [ITEM_STRIB_BERRY] =
     {
         .name = _("Strib Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Strib."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8448,10 +8460,10 @@ const struct Item gItems[] =
     [ITEM_TURLAN_BERRY] =
     {
         .name = _("Turlan Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Turlan."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8461,10 +8473,10 @@ const struct Item gItems[] =
     [ITEM_NUTPEA_BERRY] =
     {
         .name = _("Nutpea Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Nutpea."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8474,7 +8486,7 @@ const struct Item gItems[] =
     [ITEM_IONNO_BERRY] =
     {
         .name = _("Ionno Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = COMPOUND_STRING("A hold item that\n"
                                        "restores any\n"
@@ -8488,10 +8500,10 @@ const struct Item gItems[] =
     [ITEM_KUO_BERRY] =
     {
         .name = _("Kuo Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Kuo."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8501,7 +8513,7 @@ const struct Item gItems[] =
     [ITEM_YAGO_BERRY] =
     {
         .name = _("Yago Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_BRN,
         .description = COMPOUND_STRING("A hold item that\n"
                                        "heals a burn in\n"
@@ -8516,7 +8528,7 @@ const struct Item gItems[] =
     [ITEM_TOUGA_BERRY] =
     {
         .name = _("Touga Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
         .description = COMPOUND_STRING("A hold item that\n"
                                        "heals confusion\n"
@@ -8531,10 +8543,10 @@ const struct Item gItems[] =
     [ITEM_GARLIG_BERRY] =
     {
         .name = _("Garlig Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Garlig."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -8544,10 +8556,10 @@ const struct Item gItems[] =
     [ITEM_TOPO_BERRY] =
     {
         .name = _("Topo Berry"),
-        .price = 20,
+        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .description = COMPOUND_STRING("{POKEBLOCK} ingredient.\n"
                                        "Plant in loamy soil\n"
-                                       "to grow a mystery."),
+                                       "to grow Topo."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
