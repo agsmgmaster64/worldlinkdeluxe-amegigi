@@ -20,12 +20,10 @@ enum {
     MON_DATA_SANITY_IS_EGG,
     MON_DATA_OT_NAME,
     MON_DATA_MARKINGS,
-    MON_DATA_CHECKSUM,
     MON_DATA_HP,
     MON_DATA_IS_SHINY,
     MON_DATA_HIDDEN_NATURE,
     MON_DATA_HP_LOST,
-    MON_DATA_ENCRYPT_SEPARATOR,
     MON_DATA_NICKNAME,
     MON_DATA_SPECIES,
     MON_DATA_HELD_ITEM,
@@ -336,8 +334,8 @@ struct BattlePokemon
     /*0x51*/ u32 status2;
     /*0x55*/ u32 otId;
     /*0x59*/ u8 metLevel;
-    /*0x59*/ u8 language;
-    /*0x5A*/ bool8 isShiny;
+    /*0x5A*/ u8 language;
+    /*0x5B*/ bool8 isShiny;
 };
 
 struct Evolution

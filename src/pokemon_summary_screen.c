@@ -3216,7 +3216,7 @@ static void BufferMonTrainerMemo(void)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sMemoMiscTextColor);
     BufferNatureString();
 
-    if (/*sum->hiddenNature*/TRUE)
+    if (sum->hiddenNature != sum->nature)
     {
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, sMemoHiddenNatureTextColor);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNatureNamePointers[sum->hiddenNature]);
@@ -3485,7 +3485,7 @@ static void PrintNatureColouredStatNames(void)
     const s8 *natureMod;
     u8 atkColour, defColour, spaColour, spdColour, speColour;
 
-    if (sum->hiddenNature)
+    if (sum->hiddenNature != sum->nature)
         natureMod = gNatureStatTable[sum->hiddenNature];
     else
         natureMod = gNatureStatTable[sum->nature];
@@ -4301,7 +4301,7 @@ static u8 GetNatureColourID(s8 natureMod)
     if (natureMod == 0 || !SUMMARY_SCREEN_NATURE_COLORS)
         return 1; // Neutral - White (Standard)
     else if (natureMod > 0)
-        return 4; // Positive - Blue (Male)
+        return 6; // Positive - Red
     else
-        return 3; // Negative - Red (Female)
+        return 5; // Negative - Blue
 }
