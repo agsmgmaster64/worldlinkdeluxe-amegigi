@@ -484,6 +484,8 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(B_FLAG_NO_BAG_USE);
     FlagClear(B_FLAG_NO_CATCHING);
     FlagClear(FLAG_OVERRIDE_MUSIC);
+    FlagClear(B_FLAG_DYNAMAX_BATTLE);
+    FlagClear(B_FLAG_SKY_BATTLE);
 }
 #endif
 
