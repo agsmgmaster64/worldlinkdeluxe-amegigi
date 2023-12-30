@@ -13835,7 +13835,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_ELECTRO_SHOT
         .power = 130,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -13849,7 +13849,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_TERA_STARSTORM
         .power = 120,
-        .type = TYPE_NORMAL, // Stellar type if used by Terapagos-Stellar
+        .type = TYPE_ILLUSION, // Stellar type if used by Terapagos-Stellar
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -13866,7 +13866,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_FICKLE_BEAM
         .power = 80,
-        .type = TYPE_DRAGON,
+        .type = TYPE_FAITH,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -13899,7 +13899,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_SUCKER_PUNCH,
         .power = 70,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -13912,7 +13912,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_FEINT,
         .power = 95,
-        .type = TYPE_ROCK,
+        .type = TYPE_BEAST,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 100,
@@ -13956,7 +13956,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_DRAGON_CHEER
         .power = 0,
-        .type = TYPE_DRAGON,
+        .type = TYPE_FAITH,
         .accuracy = 0,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -13970,7 +13970,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_ALLURING_VOICE
         .power = 80,
-        .type = TYPE_FAIRY,
+        .type = TYPE_COSMIC,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -13999,7 +13999,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_RECOIL_IF_MISS,
         .power = 100,
-        .type = TYPE_ELECTRIC,
+        .type = TYPE_WIND,
         .accuracy = 95,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -14013,7 +14013,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_PSYCHIC_NOISE
         .power = 75,
-        .type = TYPE_PSYCHIC,
+        .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -14028,7 +14028,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_PLACEHOLDER, //EFFECT_UPPER_HAND
         .power = 65,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_DREAM,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -14042,7 +14042,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_POISON_FANG,
         .power = 100,
-        .type = TYPE_POISON,
+        .type = TYPE_MIASMA,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 50,

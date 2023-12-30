@@ -6,7 +6,7 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("No special ability."),
     },
 
-    [ABILITY_STENCH] =
+    [ABILITY_JEALOUSY] =
     {
         .name = _("Stench"),
         .description = COMPOUND_STRING("May cause a foe to flinch."),
@@ -24,7 +24,7 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Gradually boosts Speed."),
     },
 
-    [ABILITY_BATTLE_ARMOR] =
+    [ABILITY_GUARD_ARMOR] =
     {
         .name = _("Battle Armor"),
         .description = COMPOUND_STRING("Blocks critical hits."),
@@ -84,13 +84,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Negates weather effects."),
     },
 
-    [ABILITY_COMPOUND_EYES] =
+    [ABILITY_FOCUS] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Compound Eyes"),
-    #else
-        .name = _("CompoundEyes"),
-    #endif
+        .name = _("Focus"),
         .description = COMPOUND_STRING("Raises accuracy."),
     },
 
@@ -100,9 +96,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents sleep."),
     },
 
-    [ABILITY_COLOR_CHANGE] =
+    [ABILITY_MYSTERIOUS] =
     {
-        .name = _("Color Change"),
+        .name = _("Mysterious"),
         .description = COMPOUND_STRING("Changes type to foe's move."),
     },
 
@@ -118,9 +114,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Powers up if hit by fire."),
     },
 
-    [ABILITY_SHIELD_DUST] =
+    [ABILITY_ADVENT] =
     {
-        .name = _("Shield Dust"),
+        .name = _("Advent"),
         .description = COMPOUND_STRING("Prevents added effects."),
     },
 
@@ -130,9 +126,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents confusion."),
     },
 
-    [ABILITY_SUCTION_CUPS] =
+    [ABILITY_GATE_KEEPER] =
     {
-        .name = _("Suction Cups"),
+        .name = _("Gate Keeper"),
         .description = COMPOUND_STRING("Firmly anchors the body."),
     },
 
@@ -148,15 +144,15 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents the foe's escape."),
     },
 
-    [ABILITY_ROUGH_SKIN] =
+    [ABILITY_DOLL_WALL] =
     {
         .name = _("Rough Skin"),
         .description = COMPOUND_STRING("Hurts to touch."),
     },
 
-    [ABILITY_WONDER_GUARD] =
+    [ABILITY_PLAY_GHOST] =
     {
-        .name = _("Wonder Guard"),
+        .name = _("Play Ghost"),
         .description = COMPOUND_STRING("“Supereffective” hits."),
     },
 
@@ -166,9 +162,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Not hit by Ground attacks."),
     },
 
-    [ABILITY_EFFECT_SPORE] =
+    [ABILITY_INFECTIOUS] =
     {
-        .name = _("Effect Spore"),
+        .name = _("Infectious"),
         .description = COMPOUND_STRING("Leaves spores on contact."),
     },
 
@@ -178,10 +174,10 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Passes on status problems."),
     },
 
-    [ABILITY_CLEAR_BODY] =
+    [ABILITY_HAKUREI_MIKO] =
     {
-        .name = _("Clear Body"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+        .name = _("Hakurei Miko"),
+        .description = COMPOUND_STRING("Prevents stat reduction."),
     },
 
     [ABILITY_NATURAL_CURE] =
@@ -218,10 +214,10 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Raises Speed in sunshine."),
     },
 
-    [ABILITY_ILLUMINATE] =
+    [ABILITY_DIVA] =
     {
-        .name = _("Illuminate"),
-        .description = COMPOUND_STRING("Encounter rate increases."),
+        .name = _("Diva"),
+        .description = COMPOUND_STRING("Attracting ignores energy."),
     },
 
     [ABILITY_TRACE] =
@@ -230,15 +226,15 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Copies special ability."),
     },
 
-    [ABILITY_HUGE_POWER] =
+    [ABILITY_UNZAN] =
     {
-        .name = _("Huge Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .name = _("Unzan"),
+        .description = COMPOUND_STRING("Doubles Attack."),
     },
 
-    [ABILITY_POISON_POINT] =
+    [ABILITY_POISON_BODY] =
     {
-        .name = _("Poison Point"),
+        .name = _("Poison Body"),
         .description = COMPOUND_STRING("Poisons foe on contact."),
     },
 
@@ -248,10 +244,10 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents flinching."),
     },
 
-    [ABILITY_MAGMA_ARMOR] =
+    [ABILITY_FIRE_VEIL] =
     {
-        .name = _("Magma Armor"),
-        .description = COMPOUND_STRING("Prevents freezing."),
+        .name = _("Fire Veil"),
+        .description = COMPOUND_STRING("Prevents frostbite."),
     },
 
     [ABILITY_WATER_VEIL] =
@@ -263,7 +259,7 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
     [ABILITY_MAGNET_PULL] =
     {
         .name = _("Magnet Pull"),
-        .description = COMPOUND_STRING("Traps Steel-type Pokémon."),
+        .description = COMPOUND_STRING("Traps Steel-type Puppets."),
     },
 
     [ABILITY_SOUNDPROOF] =
@@ -290,9 +286,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Raises foe's PP usage."),
     },
 
-    [ABILITY_THICK_FAT] =
+    [ABILITY_WALL_OF_ICE] =
     {
-        .name = _("Thick Fat"),
+        .name = _("Wall of Ice"),
         .description = COMPOUND_STRING("Heat-and-cold protection."),
     },
 
@@ -320,9 +316,13 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents loss of accuracy."),
     },
 
-    [ABILITY_HYPER_CUTTER] =
+    [ABILITY_HIGH_STRENGTH] =
     {
-        .name = _("Hyper Cutter"),
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("High Strength"),
+    #else
+        .name = _("HighStrength"),
+    #endif
         .description = COMPOUND_STRING("Prevents Attack reduction."),
     },
 
@@ -332,9 +332,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("May pick up items."),
     },
 
-    [ABILITY_TRUANT] =
+    [ABILITY_FRETFUL] =
     {
-        .name = _("Truant"),
+        .name = _("Fretful"),
         .description = COMPOUND_STRING("Moves only every two turns."),
     },
 
@@ -368,13 +368,13 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Changes with the weather."),
     },
 
-    [ABILITY_STICKY_HOLD] =
+    [ABILITY_COLLECTOR] =
     {
         .name = _("Sticky Hold"),
         .description = COMPOUND_STRING("Prevents item theft."),
     },
 
-    [ABILITY_SHED_SKIN] =
+    [ABILITY_MAINTENANCE] =
     {
         .name = _("Shed Skin"),
         .description = COMPOUND_STRING("Heals the body by shedding."),
@@ -386,22 +386,22 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups Attack if suffering."),
     },
 
-    [ABILITY_MARVEL_SCALE] =
+    [ABILITY_SPRING_CHARM] =
     {
         .name = _("Marvel Scale"),
         .description = COMPOUND_STRING("Ups Defense if suffering."),
     },
 
-    [ABILITY_LIQUID_OOZE] =
+    [ABILITY_STRANGE_MIST] =
     {
-        .name = _("Liquid Ooze"),
+        .name = _("Strange Mist"),
         .description = COMPOUND_STRING("Draining causes injury."),
     },
 
     [ABILITY_OVERGROW] =
     {
         .name = _("Overgrow"),
-        .description = COMPOUND_STRING("Ups Grass moves in a pinch."),
+        .description = COMPOUND_STRING("Ups Nature moves in a pinch."),
     },
 
     [ABILITY_BLAZE] =
@@ -416,10 +416,10 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups Water moves in a pinch."),
     },
 
-    [ABILITY_SWARM] =
+    [ABILITY_INNER_POWER] =
     {
-        .name = _("Swarm"),
-        .description = COMPOUND_STRING("Ups Bug moves in a pinch."),
+        .name = _("Inner Power"),
+        .description = COMPOUND_STRING("Ups Dream moves in a pinch."),
     },
 
     [ABILITY_ROCK_HEAD] =
@@ -446,10 +446,14 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Prevents sleep."),
     },
 
-    [ABILITY_WHITE_SMOKE] =
+    [ABILITY_MAGIC_BARRIER] =
     {
-        .name = _("White Smoke"),
-        .description = COMPOUND_STRING("Prevents ability reduction."),
+    #if B_EXPANDED_ABILITY_NAMES == TRUE
+        .name = _("Magic Barrier"),
+    #else
+        .name = _("MagicBarrier"),
+    #endif
+        .description = COMPOUND_STRING("Prevents stat reduction."),
     },
 
     [ABILITY_PURE_POWER] =
@@ -464,7 +468,7 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Blocks critical hits."),
     },
 
-    [ABILITY_AIR_LOCK] =
+    [ABILITY_HISOUTEN] =
     {
         .name = _("Air Lock"),
         .description = COMPOUND_STRING("Negates weather effects."),
@@ -1762,13 +1766,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Protected by pure salts."),
     },
 
-    [ABILITY_WELL_BAKED_BODY] =
+    [ABILITY_LEAF_SPICE] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Well-Baked Body"),
-    #else
-        .name = _("WellBakedBdy"),
-    #endif
+        .name = _("Leaf Spice"),
         .description = COMPOUND_STRING("Strengthened by Fire."),
     },
 
@@ -1778,19 +1778,15 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Ups Attack if hit by wind."),
     },
 
-    [ABILITY_GUARD_DOG] =
+    [ABILITY_COLD_HEART] =
     {
-        .name = _("Guard Dog"),
+        .name = _("Cold Heart"),
         .description = COMPOUND_STRING("Cannot be intimidated."),
     },
 
-    [ABILITY_ROCKY_PAYLOAD] =
+    [ABILITY_NATURE_FROST] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Rocky Payload"),
-    #else
-        .name = _("RockyPayload"),
-    #endif
+        .name = _("Nature Frost"),
         .description = COMPOUND_STRING("Powers up Rock moves."),
     },
 
@@ -1884,23 +1880,15 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Lowers foes' sp. defense."),
     },
 
-    [ABILITY_ORICHALCUM_PULSE] =
+    [ABILITY_UNWAVERING] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Orichalcum Pulse"),
-    #else
-        .name = _("OrchlcumPlse"),
-    #endif
+        .name = _("Unwavering"),
         .description = COMPOUND_STRING("Summons sunlight in battle."),
     },
 
-    [ABILITY_HADRON_ENGINE] =
+    [ABILITY_FASCINATE] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Hadron Engine"),
-    #else
-        .name = _("HadronEngine"),
-    #endif
+        .name = _("Fascinate"),
         .description = COMPOUND_STRING("Field becomes Electric."),
     },
 
@@ -1950,9 +1938,9 @@ const struct Ability gAbilities[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Protects from priority."),
     },
 
-    [ABILITY_EARTH_EATER] =
+    [ABILITY_FLORA_ABSORB] =
     {
-        .name = _("Earth Eater"),
+        .name = _("Flora Absorb"),
         .description = COMPOUND_STRING("Eats ground to heal HP."),
     },
 
