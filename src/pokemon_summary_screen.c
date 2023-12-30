@@ -3216,8 +3216,8 @@ static void BufferMonTrainerMemo(void)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sMemoMiscTextColor);
     BufferNatureString();
 
-    if (sum->hiddenNature)
-    {    
+    if (/*sum->hiddenNature*/TRUE)
+    {
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, sMemoHiddenNatureTextColor);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNatureNamePointers[sum->hiddenNature]);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(7, sText_EndParentheses);

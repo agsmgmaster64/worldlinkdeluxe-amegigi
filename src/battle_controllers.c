@@ -1835,10 +1835,6 @@ static u32 GetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId, u8 *
         dst[0] = GetMonData(&party[monId], MON_DATA_TOUGH);
         size = 1;
         break;
-    case REQUEST_HIDDEN_NATURE_BATTLE:
-        dst[0] = GetMonData(&party[monId], MON_DATA_HIDDEN_NATURE);
-        size = 1;
-        break;
     case REQUEST_COOL_RIBBON_BATTLE:
         dst[0] = GetMonData(&party[monId], MON_DATA_COOL_RIBBON);
         size = 1;
@@ -2059,9 +2055,6 @@ static void SetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId)
         break;
     case REQUEST_TOUGH_BATTLE:
         SetMonData(&party[monId], MON_DATA_TOUGH, &gBattleResources->bufferA[battler][3]);
-        break;
-    case REQUEST_HIDDEN_NATURE_BATTLE:
-        SetMonData(&party[monId], MON_DATA_HIDDEN_NATURE, &gBattleResources->bufferA[battler][3]);
         break;
     case REQUEST_COOL_RIBBON_BATTLE:
         SetMonData(&party[monId], MON_DATA_COOL_RIBBON, &gBattleResources->bufferA[battler][3]);
