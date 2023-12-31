@@ -387,7 +387,7 @@ MeteorFalls_1F_1R_EventScript_ItemFullHeal::
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::
-	finditem ITEM_MOON_STONE
+	finditem ITEM_CHROME_HEART
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemPPUP::

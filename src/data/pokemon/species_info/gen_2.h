@@ -1982,7 +1982,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         ICON(Sunkern, 1),
         .footprint = gMonFootprint_Sunkern,
         LEARNSETS(Sunkern),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_SUNFLORA}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_JUST_HEART, SPECIES_SUNFLORA}),
     },
 
     [SPECIES_SUNFLORA] =

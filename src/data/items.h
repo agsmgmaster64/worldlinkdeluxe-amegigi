@@ -3135,7 +3135,7 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_SUN_STONE] =
+    [ITEM_JUST_HEART] =
     {
         .name = _("Sun Stone"),
         .price = 3000,
@@ -3148,7 +3148,7 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_MOON_STONE] =
+    [ITEM_CHROME_HEART] =
     {
         .name = _("Moon Stone"),
         .price = (I_PRICE >= GEN_7) ? 3000 : 2100,

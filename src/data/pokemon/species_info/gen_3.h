@@ -2796,7 +2796,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         ICON(Skitty, 0),
         .footprint = gMonFootprint_Skitty,
         LEARNSETS(Skitty),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MOON_STONE, SPECIES_DELCATTY}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_DELCATTY}),
     },
 
     [SPECIES_DELCATTY] =
@@ -5078,7 +5078,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .expYield = 161,
         .evYield_SpAttack = 2,
         .itemCommon = ITEM_STARDUST,
-        .itemRare = ITEM_MOON_STONE,
+        .itemRare = ITEM_CHROME_HEART,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
@@ -5130,7 +5130,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .expYield = 161,
         .evYield_Attack = 2,
         .itemCommon = ITEM_STARDUST,
-        .itemRare = ITEM_SUN_STONE,
+        .itemRare = ITEM_JUST_HEART,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,

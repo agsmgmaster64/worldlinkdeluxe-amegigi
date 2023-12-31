@@ -2720,7 +2720,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         ICON(Helioptile, 2),
         .footprint = gMonFootprint_Helioptile,
         LEARNSETS(Helioptile),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_HELIOLISK}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_JUST_HEART, SPECIES_HELIOLISK}),
     },
 
     [SPECIES_HELIOLISK] =

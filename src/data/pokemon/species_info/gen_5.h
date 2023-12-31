@@ -1206,7 +1206,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Munna, 0),
         .footprint = gMonFootprint_Munna,
         LEARNSETS(Munna),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_MOON_STONE, SPECIES_MUSHARNA}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_MUSHARNA}),
     },
 
     [SPECIES_MUSHARNA] =
@@ -2703,7 +2703,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Cottonee, 1),
         .footprint = gMonFootprint_Cottonee,
         LEARNSETS(Cottonee),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_WHIMSICOTT}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_JUST_HEART, SPECIES_WHIMSICOTT}),
     },
 
     [SPECIES_WHIMSICOTT] =
@@ -2803,7 +2803,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         ICON(Petilil, 1),
         .footprint = gMonFootprint_Petilil,
         LEARNSETS(Petilil),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_JUST_HEART, SPECIES_LILLIGANT},
                                 {EVO_NONE, 0, SPECIES_LILLIGANT_HISUIAN}),
     },
 
