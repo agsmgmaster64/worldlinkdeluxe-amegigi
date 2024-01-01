@@ -1,7 +1,7 @@
 #ifndef GUARD_CONSTANTS_POKEMON_H
 #define GUARD_CONSTANTS_POKEMON_H
 
-// Pokemon types
+// Pokémon types
 #define TYPE_NONE             255
 #define TYPE_ILLUSION         0
 #define TYPE_DREAM            1
@@ -24,7 +24,7 @@
 #define TYPE_COSMIC           18
 #define NUMBER_OF_MON_TYPES   19
 
-// Pokemon egg groups
+// Pokémon egg groups
 #define EGG_GROUP_NONE                0
 #define EGG_GROUP_MONSTER             1
 #define EGG_GROUP_WATER_1             2
@@ -44,7 +44,7 @@
 
 #define EGG_GROUPS_PER_MON            2
 
-// Pokemon natures
+// Pokémon natures
 #define NATURE_HARDY    0
 #define NATURE_LONELY   1
 #define NATURE_BRAVE    2
@@ -72,7 +72,7 @@
 #define NATURE_QUIRKY   24
 #define NUM_NATURES     25
 
-// Pokemon Stats
+// Pokémon Stats
 #define STAT_HP      0
 #define STAT_ATK     1
 #define STAT_DEF     2
@@ -238,7 +238,7 @@
 #define GROWTH_FAST         4
 #define GROWTH_SLOW         5
 
-// Origin gamess for pokedex search
+// Origin gamess for Pokédex search
 #define SOURCE_HRTP         0
 #define SOURCE_SOEW         1
 #define SOURCE_PODD         2
@@ -341,7 +341,7 @@
 #define MON_PIC_HEIGHT 64
 #define MON_PIC_SIZE (MON_PIC_WIDTH * MON_PIC_HEIGHT / 2)
 
-// Most pokemon have 2 frames (a default and an alternate for their animation).
+// Most Pokémon have 2 frames (a default and an alternate for their animation).
 // There are 4 exceptions:
 // - Deoxys has 2 frames, 1 for each form
 // - Spinda has 1 frame, presumably to avoid the work of animating its spots

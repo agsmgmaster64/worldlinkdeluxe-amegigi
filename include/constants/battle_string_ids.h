@@ -697,20 +697,21 @@
 #define STRINGID_THESWAMPDISAPPEARED                  695
 #define STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE        696
 #define STRINGID_HOSPITALITYRESTORATION               697
-#define STRINGID_POKEFLUTECATCHY                      698
-#define STRINGID_POKEFLUTE                            699
-#define STRINGID_MONHEARINGFLUTEAWOKE                 700
-#define STRINGID_PLAYERWHITEDOUT                      701
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            702
-#define STRINGID_STRINGISRESERVED                     703
-#define STRINGID_PKMNDROPPEDITEM                      704
-#define STRINGID_BAGISFULL                            705
-#define STRINGID_MONTOOSCAREDTOMOVE                   706
-#define STRINGID_GHOSTGETOUTGETOUT                    707
-#define STRINGID_SILPHSCOPEUNVEILED                   708
-#define STRINGID_GHOSTWASMAROWAK                      709
+#define STRINGID_ELECTROSHOCKCHARGING                 698
+#define STRINGID_POKEFLUTECATCHY                      699
+#define STRINGID_POKEFLUTE                            700
+#define STRINGID_MONHEARINGFLUTEAWOKE                 701
+#define STRINGID_PLAYERWHITEDOUT                      702
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            703
+#define STRINGID_STRINGISRESERVED                     704
+#define STRINGID_PKMNDROPPEDITEM                      705
+#define STRINGID_BAGISFULL                            706
+#define STRINGID_MONTOOSCAREDTOMOVE                   707
+#define STRINGID_GHOSTGETOUTGETOUT                    708
+#define STRINGID_SILPHSCOPEUNVEILED                   709
+#define STRINGID_GHOSTWASMAROWAK                      710
 
-#define BATTLESTRINGS_COUNT                           710
+#define BATTLESTRINGS_COUNT                           711
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -768,6 +769,7 @@
 #define B_MSG_TURN1_FREEZE_SHOCK   10
 #define B_MSG_TURN1_SKY_DROP       11
 #define B_MSG_TURN1_METEOR_BEAM    12
+#define B_MSG_TURN1_ELECTRO_SHOCK  13
 
 // gMoveWeatherChangeStringIds
 #define B_MSG_STARTED_RAIN      0

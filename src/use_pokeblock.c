@@ -73,10 +73,10 @@ struct UsePokeblockSession
     u8 natureText[34];
 };
 
-// This struct is identical to PokenavMonListItem, the struct used for managing lists of pokemon in the pokenav
+// This struct is identical to PokenavMonListItem, the struct used for managing lists of Pokémon in the PokéNav
 // Given that this screen is essentially duplicated in the poknav, this struct was probably the same one with
 // a more general name/purpose
-// TODO: Once the pokenav conditions screens are documented, resolve the above
+// TODO: Once the PokéNav conditions screens are documented, resolve the above
 struct UsePokeblockMenuPokemon
 {
     u8 boxId; // Because this screen is never used for the PC this is always set to TOTAL_BOXES_COUNT to refer to party
@@ -1229,7 +1229,7 @@ static void LoadAndCreateSelectionIcons(void)
     LoadSpriteSheets(spriteSheets);
     LoadSpritePalettes(spritePals);
 
-    // Fill pokeball selection icons up to number in party
+    // Fill Poké Ball selection icons up to number in party
     for (i = 0; i < sMenu->info.numSelections - 1; i++)
     {
         spriteId = CreateSprite(&spriteTemplate, 226, (i * 20) + 8, 0);
@@ -1459,7 +1459,7 @@ static bool8 LoadNewSelection_CancelToMon(void)
     case 2:
         if (!ConditionMenu_UpdateMonEnter(&sMenu->graph, &sMenu->curMonXOffset))
         {
-            // Load the new adjacent pokemon (not the one being shown)
+            // Load the new adjacent Pokémon (not the one being shown)
             LoadMonInfo(sMenu->toLoadSelection, sMenu->toLoadId);
             sMenu->info.helperState++;
         }
@@ -1522,7 +1522,7 @@ static bool8 LoadNewSelection_MonToMon(void)
     case 2:
         if (!ConditionMenu_UpdateMonEnter(&sMenu->graph, &sMenu->curMonXOffset))
         {
-            // Load the new adjacent pokemon (not the one being shown)
+            // Load the new adjacent Pokémon (not the one being shown)
             LoadMonInfo(sMenu->toLoadSelection, sMenu->toLoadId);
             sMenu->info.helperState++;
         }
