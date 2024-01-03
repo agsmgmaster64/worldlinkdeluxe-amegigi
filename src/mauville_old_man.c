@@ -494,11 +494,11 @@ static void BardSing(struct Task *task, struct BardSong *song)
         {
         case 0:
             song->phonemeTimer = song->phonemes[song->currPhoneme].length;
-            if (sound->songLengthId <= 50)
-            {
-                u8 num = sound->songLengthId / 3;
+            //if (sound->songLengthId <= 50)
+            //{
+                //u8 num = sound->songLengthId / 3;
                 //m4aSongNumStart(PH_TRAP_HELD + 3 * num);
-            }
+            //}
             song->state = 2;
             song->phonemeTimer--;
             break;

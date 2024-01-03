@@ -1399,8 +1399,6 @@ enum {
 
 void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 {
-    u8 i, monsCount, divBy;
-
     switch (*state)
     {
     case AMB_CRY_INIT:

@@ -278,7 +278,6 @@ static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
 static void LoadPartyBoxPalette(struct PartyMenuBox *, u8);
 static void DrawEmptySlot(u8 windowId);
-static void DrawEmptySlot_Equal(u8 windowId); //Custom party menu
 static void DisplayPartyPokemonDataForRelearner(u8);
 static void DisplayPartyPokemonDataForContest(u8);
 static void DisplayPartyPokemonDataForChooseHalf(u8);
@@ -2488,10 +2487,6 @@ static void BlitBitmapToPartyWindow_Equal(u8 windowId, u8 x, u8 y, u8 width, u8 
     else
         BlitBitmapToPartyWindow(windowId, sEqualMainSlotTileNums_Egg, 14, x, y, width, height);
 }
-static void DrawEmptySlot_Equal(u8 windowId)
-{
-    BlitBitmapToPartyWindow(windowId, sEqualEmptySlotTileNums, 14, 0, 0, 14, 5);
-}//
 
 #define LOAD_PARTY_BOX_PAL(paletteIds, paletteOffsets)                                                    \
 {                                                                                                         \
@@ -8112,7 +8107,7 @@ static bool8 IsMonNotFullyHealed(void)
 void HealMonFromSlotId(void)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u32 i = 0, j = 0, ppBonuses = 0;
+    u32 i = 0, ppBonuses = 0;
     u8 arg[4] = {0,0,0,0};
 
     // restore HP.
@@ -8123,10 +8118,10 @@ void HealMonFromSlotId(void)
 
     // restore PP.
     ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
-    for(j = 0; j < MAX_MON_MOVES; j++)
+    for(i = 0; i < MAX_MON_MOVES; i++)
     {
-        arg[0] = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + j), ppBonuses, j);
-        SetMonData(mon, MON_DATA_PP1 + j, arg);
+        arg[0] = CalculatePPWithBonus(GetMonData(mon, MON_DATA_MOVE1 + i), ppBonuses, i);
+        SetMonData(mon, MON_DATA_PP1 + i, arg);
     }
 
     // since status is u32, the four 0 assignments here are probably for safety to prevent undefined data from reaching SetMonData.

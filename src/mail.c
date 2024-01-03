@@ -445,7 +445,6 @@ static const struct MailLayout sMailLayouts_Tall[] = {
 
 void ReadMail(struct Mail *mail, void (*exitCallback)(void), bool8 hasText)
 {
-    u16 buffer[2];
     u16 species;
 
     sMailRead = AllocZeroed(sizeof(*sMailRead));

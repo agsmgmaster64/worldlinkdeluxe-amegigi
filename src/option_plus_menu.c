@@ -147,10 +147,9 @@ static int ProcessInput_Options_Two(int selection);
 static int ProcessInput_Options_Three(int selection);
 static int ProcessInput_Options_Four(int selection);
 static int ProcessInput_Options_Eleven(int selection);
-static int ProcessInput_Sound(int selection);
 static int ProcessInput_FrameType(int selection);
 static const u8 *const OptionTextDescription(void);
-static const u8 *const OptionTextRight(u8 menuItem);
+static const u8 *OptionTextRight(u8 menuItem);
 static u8 MenuItemCount(void);
 static u8 MenuItemCancel(void);
 static void DrawDescriptionText(void);
@@ -253,12 +252,15 @@ static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_CUSTOM_COUNT] =
     [MENUITEM_CUSTOM_CANCEL]      = gText_OptionMenuSave,
 };
 
-static const u8 *const OptionTextRight(u8 menuItem)
+static const u8 *OptionTextRight(u8 menuItem)
 {
     switch (sOptions->submenu)
     {
-    case MENU_MAIN:     return sOptionMenuItemsNamesMain[menuItem];
-    case MENU_CUSTOM:   return sOptionMenuItemsNamesCustom[menuItem];
+    default:
+    case MENU_MAIN:
+        return sOptionMenuItemsNamesMain[menuItem];
+    case MENU_CUSTOM:
+        return sOptionMenuItemsNamesCustom[menuItem];
     }
 }
 
@@ -267,6 +269,7 @@ static bool8 CheckConditions(int selection)
 {
     switch (sOptions->submenu)
     {
+    default:
     case MENU_MAIN:
         switch(selection)
         {
@@ -279,6 +282,8 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_MAIN_FRAMETYPE:       return TRUE;
         case MENUITEM_MAIN_CANCEL:          return TRUE;
         case MENUITEM_MAIN_COUNT:           return TRUE;
+        default:
+            return FALSE;
         }
     case MENU_CUSTOM:
         switch(selection)
@@ -291,6 +296,8 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CUSTOM_UNIQUE_COLORS:   return TRUE;
         case MENUITEM_CUSTOM_CANCEL:          return TRUE;
         case MENUITEM_CUSTOM_COUNT:           return TRUE;
+        default:
+            return FALSE;
         }
     }
 }
@@ -381,15 +388,16 @@ static const u8 *const OptionTextDescription(void)
 
     switch (sOptions->submenu)
     {
+    default:
     case MENU_MAIN:
-        if (!CheckConditions(menuItem))
+        if (!CheckConditions(menuItem) && menuItem > MENUITEM_MAIN_COUNT)
             return sOptionMenuItemDescriptionsDisabledMain[menuItem];
         selection = sOptions->sel[menuItem];
         if (menuItem == MENUITEM_MAIN_TEXTSPEED || menuItem == MENUITEM_MAIN_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsMain[menuItem][selection];
     case MENU_CUSTOM:
-        if (!CheckConditions(menuItem))
+        if (!CheckConditions(menuItem) && menuItem > MENUITEM_CUSTOM_COUNT)
             return sOptionMenuItemDescriptionsDisabledMain[menuItem];
         selection = sOptions->sel_custom[menuItem];
         if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_MUSIC_STYLE)
@@ -402,8 +410,11 @@ static u8 MenuItemCount(void)
 {
     switch (sOptions->submenu)
     {
-    case MENU_MAIN:     return MENUITEM_MAIN_COUNT;
-    case MENU_CUSTOM:   return MENUITEM_CUSTOM_COUNT;
+    default:
+    case MENU_MAIN:
+        return MENUITEM_MAIN_COUNT;
+    case MENU_CUSTOM:
+        return MENUITEM_CUSTOM_COUNT;
     }
 }
 
@@ -411,8 +422,11 @@ static u8 MenuItemCancel(void)
 {
     switch (sOptions->submenu)
     {
-    case MENU_MAIN:     return MENUITEM_MAIN_CANCEL;
-    case MENU_CUSTOM:   return MENUITEM_CUSTOM_CANCEL;
+    default:
+    case MENU_MAIN:
+        return MENUITEM_MAIN_CANCEL;
+    case MENU_CUSTOM:
+        return MENUITEM_CUSTOM_CANCEL;
     }
 }
 
@@ -552,7 +566,7 @@ static void HighlightOptionMenuItem(void)
 
 void CB2_InitOptionPlusMenu(void)
 {
-    u32 i, taskId;
+    u32 i;
     switch (gMain.state)
     {
     default:
@@ -638,7 +652,7 @@ void CB2_InitOptionPlusMenu(void)
         gMain.state++;
         break;
     case 10:
-        taskId = CreateTask(Task_OptionMenuFadeIn, 0);
+        CreateTask(Task_OptionMenuFadeIn, 0);
         
         sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MENUITEM_MAIN_COUNT - 1, 110, 110, 0);
 
@@ -670,7 +684,6 @@ static void Task_OptionMenuFadeIn(u8 taskId)
 
 static void Task_OptionMenuProcessInput(u8 taskId)
 {
-    int i = 0;
     u8 optionsToDraw = min(OPTIONS_ON_SCREEN , MenuItemCount());
     if (JOY_NEW(A_BUTTON))
     {
@@ -933,7 +946,7 @@ static int ProcessInput_Options_Eleven(int selection)
 }
 
 // Process Input functions ****SPECIFIC****
-static int ProcessInput_Sound(int selection)
+static int UNUSED ProcessInput_Sound(int selection)
 {
     if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
     {
@@ -1017,7 +1030,9 @@ static void ReDrawAll(void)
     else
     {
         if (sOptions->arrowTaskId == TASK_NONE)
-            sOptions->arrowTaskId = sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MenuItemCount() - 1, 110, 110, 0);
+        {
+            sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MenuItemCount() - 1, 110, 110, 0);
+        }
 
     }
 

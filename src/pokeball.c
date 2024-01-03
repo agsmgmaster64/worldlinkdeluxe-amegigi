@@ -1553,8 +1553,6 @@ static void SpriteCB_HitAnimHealthoxEffect(struct Sprite *sprite)
 
 void LoadBallGfx(u8 ballId)
 {
-    u16 var;
-
     if (GetSpriteTileStartByTag(gBallSpriteSheets[ballId].tag) == 0xFFFF)
     {
         LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[ballId]);
