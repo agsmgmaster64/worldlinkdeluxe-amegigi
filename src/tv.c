@@ -3391,7 +3391,6 @@ void GetMomOrDadStringForTVMessage(void)
 void UpdateTrainerCardPhotoIcons(void)
 {
     u16 species[PARTY_SIZE];
-    u32 personality[PARTY_SIZE];
     u8 i;
     u8 partyCount;
     for (i = 0; i < PARTY_SIZE; i++)
@@ -3400,7 +3399,6 @@ void UpdateTrainerCardPhotoIcons(void)
     for (i = 0; i < partyCount; i++)
     {
         species[i] = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
-        personality[i] = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL);
     }
     VarSet(VAR_TRAINER_CARD_MON_ICON_1, species[0]);
     VarSet(VAR_TRAINER_CARD_MON_ICON_2, species[1]);

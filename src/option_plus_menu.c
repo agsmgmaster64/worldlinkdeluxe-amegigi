@@ -356,7 +356,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][
 
 // Disabled Descriptions
 static const u8 sText_Desc_Disabled_Textspeed[]     = _("Only active if xyz.");
-static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COUNT] =
+static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COUNT + 1] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_MAIN_BATTLESCENE] = sText_Empty,
@@ -366,11 +366,12 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     [MENUITEM_MAIN_UNIT_SYSTEM] = sText_Empty,
     [MENUITEM_MAIN_FRAMETYPE]   = sText_Empty,
     [MENUITEM_MAIN_CANCEL]      = sText_Empty,
+    [MENUITEM_MAIN_COUNT]      = sText_Empty,
 };
 
 // Disabled Custom
 static const u8 sText_Desc_Disabled_BattleHPBar[]   = _("Only active if xyz.");
-static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM_COUNT] =
+static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM_COUNT + 1] =
 {
     [MENUITEM_CUSTOM_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     [MENUITEM_CUSTOM_EXP_BAR]     = sText_Empty,
@@ -379,6 +380,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM
     [MENUITEM_CUSTOM_MUSIC_STYLE] = sText_Empty,
     [MENUITEM_CUSTOM_UNIQUE_COLORS] = sText_Empty,
     [MENUITEM_CUSTOM_CANCEL]      = sText_Empty,
+    [MENUITEM_CUSTOM_COUNT]      = sText_Empty,
 };
 
 static const u8 *const OptionTextDescription(void)
@@ -389,6 +391,7 @@ static const u8 *const OptionTextDescription(void)
     switch (sOptions->submenu)
     {
     default:
+        return sText_Empty;
     case MENU_MAIN:
         if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledMain[menuItem];

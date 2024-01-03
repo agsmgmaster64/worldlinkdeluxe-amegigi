@@ -413,7 +413,6 @@ static void Msg_SomeoneDroppedOut(void);
 static void DoPokeJumpCountdown(void);
 static void Msg_CommunicationStandby(void);
 static void Task_ShowPokemonJumpRecords(u8);
-static void TruncateToFirstWordOnly(u8 *);
 
 EWRAM_DATA static struct PokemonJump *sPokemonJump = NULL;
 EWRAM_DATA static struct PokemonJumpGfx *sPokemonJumpGfx = NULL;
@@ -4407,7 +4406,7 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
 #undef tState
 #undef tWindowId
 
-static void TruncateToFirstWordOnly(u8 *str)
+static void UNUSED TruncateToFirstWordOnly(u8 *str)
 {
     for (;*str != EOS; str++)
     {

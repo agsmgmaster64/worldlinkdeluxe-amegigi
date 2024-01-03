@@ -197,7 +197,7 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
 
 void BufferUnitSystemText(void)
 {
-    u8 *strvar, *text;
+    u8 *strvar;
     u8 textType = gSpecialVar_0x8000;
     u8 stringVarNum = gSpecialVar_0x8001;
 

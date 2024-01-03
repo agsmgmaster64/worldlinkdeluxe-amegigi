@@ -125,7 +125,7 @@ void HasEnoughMonsForDoubleBattle(void)
     }
 }
 
-static bool8 CheckPartyMonHasHeldItem(u16 item)
+static bool8 UNUSED CheckPartyMonHasHeldItem(u16 item)
 {
     int i;
 
@@ -136,11 +136,6 @@ static bool8 CheckPartyMonHasHeldItem(u16 item)
             return TRUE;
     }
     return FALSE;
-}
-
-bool8 DoesPartyHaveEnigmaBerry(void)
-{
-
 }
 
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)

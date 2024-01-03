@@ -603,9 +603,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
-        u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? I_SHINY_CHARM_ADDITIONAL_ROLLS + 1 : 1;
-        u32 i;
-        
         value = gSaveBlock2Ptr->playerTrainerId[0]
               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
@@ -6004,11 +6001,6 @@ u32 GetMonAffectionHearts(struct Pokemon *pokemon)
 
 void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
 {
-    struct PokemonSubstruct0 *old0, *new0;
-    struct PokemonSubstruct1 *old1, *new1;
-    struct PokemonSubstruct2 *old2, *new2;
-    struct PokemonSubstruct3 *old3, *new3;
-
     bool32 isShiny = GetBoxMonData(boxMon, MON_DATA_IS_SHINY, NULL);
     u32 hiddenNature = GetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, NULL);
     u32 teraType = GetBoxMonData(boxMon, MON_DATA_TERA_TYPE, NULL);

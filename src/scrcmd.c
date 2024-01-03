@@ -2327,15 +2327,11 @@ bool8 ScrCmd_lockfortrainer(struct ScriptContext *ctx)
 // This command will set a Pokémon's modernFatefulEncounter bit; there is no similar command to clear it.
 bool8 ScrCmd_setmonmodernfatefulencounter(struct ScriptContext *ctx)
 {
-    u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
-
     return FALSE;
 }
 
 bool8 ScrCmd_checkmonmodernfatefulencounter(struct ScriptContext *ctx)
 {
-    u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
-
     return FALSE;
 }
 

@@ -131,7 +131,6 @@ static void UpdateSelection(bool8);
 static void CloseUsePokeblockMenu(void);
 static void AskUsePokeblock(void);
 static s8 HandleAskUsePokeblockInput(void);
-static void PrintWontEatAnymore(void);
 static void FeedPokeblockToMon(void);
 static void EraseMenuWindow(void);
 static u8 GetPartyIdFromSelectionId(u8);
@@ -933,15 +932,6 @@ static bool8 TryPrintNextEnhancement(void)
     CopyWindowToVram(WIN_TEXT, COPYWIN_GFX);
 
     return TRUE;
-}
-
-static void PrintWontEatAnymore(void)
-{
-    FillWindowPixelBuffer(WIN_TEXT, 17);
-    DrawTextBorderOuter(WIN_TEXT, 151, 14);
-    AddTextPrinterParameterized(WIN_TEXT, FONT_NORMAL, gText_WontEatAnymore, 0, 1, 0, NULL);
-    PutWindowTilemap(WIN_TEXT);
-    CopyWindowToVram(WIN_TEXT, COPYWIN_FULL);
 }
 
 static void EraseMenuWindow(void)
