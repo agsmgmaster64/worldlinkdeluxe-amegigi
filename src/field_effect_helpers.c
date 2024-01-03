@@ -186,7 +186,6 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 u8 CreateWarpArrowSprite(void)
 {
     u8 spriteId;
-    struct Sprite *sprite;
 
     LoadFieldEffectPalette_(FLDEFFOBJ_ARROW, FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 0x52);

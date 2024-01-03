@@ -42,6 +42,9 @@ jobs:
         working-directory: agbcc
 
       - name: Agbcc
+        env:
+          MODERN: 0
+          COMPARE: 0
         run: make -j${nproc} -O all
 
       - name: Modern
@@ -54,5 +57,5 @@ jobs:
         env:
           TEST: 1
         run: |
-          make -j${nproc} -O pokeemerald_modern-test.elf
+          make -j${nproc} -O pokeemerald-test.elf
           make -j${nproc} check

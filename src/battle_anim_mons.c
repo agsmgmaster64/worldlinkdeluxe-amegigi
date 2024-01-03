@@ -144,8 +144,6 @@ u8 GetBattlerSpriteCoord(u8 battlerId, u8 coordType)
 
 u8 GetBattlerYDelta(u8 battlerId, u16 species)
 {
-    u32 personality;
-    struct BattleSpriteInfo *spriteInfo;
     u8 ret;
     species = SanitizeSpeciesId(species);
 

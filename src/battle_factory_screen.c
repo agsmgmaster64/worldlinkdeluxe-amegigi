@@ -2039,14 +2039,7 @@ static void Select_ReshowMonSprite(void)
     u32 personality;
     bool8 isShiny;
 
-    isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
-
     sFactorySelectScreen->monPics[1].bgSpriteId = CreateSprite(&sSpriteTemplate_Select_MonPicBgAnim, 120, 64, 1);
-    UniquePalette(0x1F0, species, personality, isShiny);
-    for (i = 0x1F0; i < 0x200; i++)
-    {
-        gPlttBufferUnfaded[i] = gPlttBufferFaded[i];
-    }
     StartSpriteAffineAnim(&gSprites[sFactorySelectScreen->monPics[1].bgSpriteId], 2);
 
     mon = &sFactorySelectScreen->mons[sFactorySelectScreen->cursorPos].monData;
@@ -2055,6 +2048,11 @@ static void Select_ReshowMonSprite(void)
     isShiny = GetMonData(mon, MON_DATA_IS_SHINY, NULL);
 
     sFactorySelectScreen->monPics[1].monSpriteId = CreateMonPicSprite(species, isShiny, personality, TRUE, 88, 32, 15, TAG_NONE);
+    UniquePalette(0x1F0, species, personality, isShiny);
+    for (i = 0x1F0; i < 0x200; i++)
+    {
+        gPlttBufferUnfaded[i] = gPlttBufferFaded[i];
+    }
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecX = 0;
     gSprites[sFactorySelectScreen->monPics[1].monSpriteId].centerToCornerVecY = 0;
 

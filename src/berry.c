@@ -1669,12 +1669,6 @@ const struct BerryCrushBerryData gBerryCrush_BerryData[] = {
 
 const struct BerryTree gBlankBerryTree = {};
 
-// nopped
-bool32 IsEnigmaBerryValid(void)
-{
-
-}
-
 const struct Berry *GetBerryInfo(u8 berry)
 {
     if (berry == BERRY_NONE || berry > ITEM_TO_BERRY(LAST_BERRY_INDEX))
