@@ -390,14 +390,14 @@ static const u8 *const OptionTextDescription(void)
     {
     default:
     case MENU_MAIN:
-        if (!CheckConditions(menuItem) && menuItem > MENUITEM_MAIN_COUNT)
+        if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledMain[menuItem];
         selection = sOptions->sel[menuItem];
         if (menuItem == MENUITEM_MAIN_TEXTSPEED || menuItem == MENUITEM_MAIN_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsMain[menuItem][selection];
     case MENU_CUSTOM:
-        if (!CheckConditions(menuItem) && menuItem > MENUITEM_CUSTOM_COUNT)
+        if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledMain[menuItem];
         selection = sOptions->sel_custom[menuItem];
         if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_MUSIC_STYLE)
