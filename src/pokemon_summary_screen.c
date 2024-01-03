@@ -169,9 +169,9 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 ppBonuses; // 0x34
         u8 sanity; // 0x35
         u8 OTName[17]; // 0x36
-        u8 hiddenNature;
         u32 OTID; // 0x48
         u8 teraType;
+        u8 mintNature;
     } summary;
     u16 bgTilemapBuffers[PSS_PAGE_COUNT][2][0x400];
     u8 mode;
@@ -1515,7 +1515,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         if (sMonSummaryScreen->monList.mons == gPlayerParty || sMonSummaryScreen->mode == SUMMARY_MODE_BOX || sMonSummaryScreen->handleDeoxys == TRUE)
         {
             sum->nature = GetNature(mon);
-            sum->hiddenNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
+            sum->mintNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
             sum->currentHP = GetMonData(mon, MON_DATA_HP);
             sum->maxHP = GetMonData(mon, MON_DATA_MAX_HP);
             sum->atk = GetMonData(mon, MON_DATA_ATK);
@@ -1527,7 +1527,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         else
         {
             sum->nature = GetNature(mon);
-            sum->hiddenNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
+            sum->mintNature = GetMonData(mon, MON_DATA_HIDDEN_NATURE);
             sum->currentHP = GetMonData(mon, MON_DATA_HP);
             sum->maxHP = GetMonData(mon, MON_DATA_MAX_HP);
             sum->atk = GetMonData(mon, MON_DATA_ATK2);
@@ -3215,10 +3215,10 @@ static void BufferMonTrainerMemo(void)
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, sMemoMiscTextColor);
     BufferNatureString();
 
-    if (sum->hiddenNature != sum->nature)
+    if (sum->mintNature != sum->nature)
     {
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, sMemoHiddenNatureTextColor);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNatureNamePointers[sum->hiddenNature]);
+        DynamicPlaceholderTextUtil_SetPlaceholderPtr(6, gNatureNamePointers[sum->mintNature]);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(7, sText_EndParentheses);
     }
 
@@ -3484,8 +3484,8 @@ static void PrintNatureColouredStatNames(void)
     const s8 *natureMod;
     u8 atkColour, defColour, spaColour, spdColour, speColour;
 
-    if (sum->hiddenNature != sum->nature)
-        natureMod = gNatureStatTable[sum->hiddenNature];
+    if (sum->mintNature != sum->nature)
+        natureMod = gNatureStatTable[sum->mintNature];
     else
         natureMod = gNatureStatTable[sum->nature];
 
