@@ -4,8 +4,8 @@
 enum {
     CRY_NONE,
     CRY_PORYGON,
-    CRY_REISEN,
     CRY_YOUMU,
+    CRY_REISEN,
     CRY_COUNT,
 };
 
