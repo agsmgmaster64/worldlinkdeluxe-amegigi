@@ -45,7 +45,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .backPicYOffset = 0,
         PALETTES(CYoumu),
         ICON(CYoumu, 0),
-        .footprint = gMonFootprint_CYoumu,
+        FOOTPRINT(CYoumu)
         LEARNSETS(CYoumu),
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_YOUMU},
                                 {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_YOUMU},
@@ -94,7 +94,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .backPicYOffset = 0,
         PALETTES(Youmu),
         ICON(Youmu, 0),
-        FOOTPRINT(Youmu),
+        FOOTPRINT(Youmu)
         LEARNSETS(Youmu),
     },
 
@@ -140,7 +140,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .backPicYOffset = 0,
         PALETTES(DYoumu),
         ICON(DYoumu, 0),
-        FOOTPRINT(DYoumu),
+        FOOTPRINT(DYoumu)
         LEARNSETS(DYoumu),
     },
 
@@ -186,7 +186,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .backPicYOffset = 0,
         PALETTES(SYoumu),
         ICON(SYoumu, 0),
-        .footprint = gMonFootprint_SYoumu,
+        FOOTPRINT(SYoumu)
         LEARNSETS(SYoumu),
     },
 
