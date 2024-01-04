@@ -391,6 +391,14 @@ Cry_Porygon::
 	.incbin "sound/direct_sound_samples/cries/porygon.bin"
 
 	.align 2
+Cry_Reisen::
+	.incbin "sound/direct_sound_samples/cries/reisen.bin"
+
+	.align 2
+Cry_Youmu::
+	.incbin "sound/direct_sound_samples/cries/youmu.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 
