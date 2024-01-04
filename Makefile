@@ -483,6 +483,8 @@ $(ROM): $(ELF)
 	$(OBJCOPY) -O binary $< $@
 	$(FIX) $@ -p --silent
 
+agbcc: all
+
 modern: all
 
 LD_SCRIPT_TEST := ld_script_test.ld
