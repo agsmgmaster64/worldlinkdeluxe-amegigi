@@ -2734,7 +2734,7 @@ static const struct TrainerMon sParty_Edward[] = {
     {
     .lvl = 15,
     .species = SPECIES_ABRA,
-    .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_MULTI_PULSE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
@@ -2851,7 +2851,7 @@ static const struct TrainerMon sParty_Jaclyn[] = {
     {
     .lvl = 16,
     .species = SPECIES_ABRA,
-    .moves = {MOVE_HIDDEN_POWER, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_MULTI_PULSE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 

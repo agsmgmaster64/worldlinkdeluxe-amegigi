@@ -8738,7 +8738,7 @@ const struct Item gItems[] =
         .secondaryId = MOVE_BULLET_SEED,
     },
 
-    [ITEM_TM_HIDDEN_POWER] =
+    [ITEM_TM_MULTI_PULSE] =
     {
         .name = _("TM10"),
         .price = 3000,
@@ -8749,7 +8749,7 @@ const struct Item gItems[] =
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_HIDDEN_POWER,
+        .secondaryId = MOVE_MULTI_PULSE,
     },
 
     [ITEM_TM_SUNNY_DAY] =

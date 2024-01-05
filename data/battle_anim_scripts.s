@@ -258,7 +258,7 @@ gBattleAnims_Moves::
 	.4byte Move_MORNING_SUN
 	.4byte Move_SYNTHESIS
 	.4byte Move_MOONLIGHT
-	.4byte Move_HIDDEN_POWER
+	.4byte Move_MULTI_PULSE
 	.4byte Move_CROSS_CHOP
 	.4byte Move_TWISTER
 	.4byte Move_RAIN_DANCE
@@ -17780,7 +17780,7 @@ Move_CUT:
 	waitforvisualfinish
 	end
 
-Move_HIDDEN_POWER:
+Move_MULTI_PULSE:
 	loadspritegfx ANIM_TAG_RED_ORB
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0

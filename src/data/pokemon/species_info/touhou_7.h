@@ -11,7 +11,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD }, \
         .sourceGame = SOURCE_PCB,                               \
         .noFlip = TRUE,                                         \
-        .eggCycles = 20,                                        \
         .cryId = CRY_YOUMU
 
     [SPECIES_CHIBI_YOUMU] =

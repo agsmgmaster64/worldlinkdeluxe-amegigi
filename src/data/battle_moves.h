@@ -4032,7 +4032,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .mirrorMoveBanned = TRUE,
     },
 
-    [MOVE_HIDDEN_POWER] =
+    [MOVE_MULTI_PULSE] =
     {
         .power = 80,
         .effect = EFFECT_MULTI_PULSE,

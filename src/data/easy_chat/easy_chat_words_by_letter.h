@@ -536,7 +536,7 @@ const u16 gEasyChatWordsByLetter_H[] = {
     EC_WORD_HI,
     EC_MOVE2(HIGH_JUMP_KICK),
     EC_WORD_HIDDEN,
-    EC_MOVE2(HIDDEN_POWER),
+    EC_MOVE2(MULTI_PULSE),
     EC_WORD_HIGH,
     EC_WORD_HIGHS,
     EC_WORD_HIM,

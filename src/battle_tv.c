@@ -74,7 +74,7 @@ enum {
 static const u16 sVariableDmgMoves[] =
 {
     MOVE_COUNTER, MOVE_FISSURE, MOVE_BURN_POWDER, MOVE_MIRROR_COAT,
-    MOVE_HORN_DRILL, MOVE_FLAIL, MOVE_REVERSAL, MOVE_HIDDEN_POWER,
+    MOVE_HORN_DRILL, MOVE_FLAIL, MOVE_REVERSAL, MOVE_MULTI_PULSE,
     MOVE_SHEER_COLD, MOVE_FOCUS_PUNCH, MOVE_ERUPTION,
     MOVE_WATER_SPOUT, MOVE_DREAM_EATER, MOVE_WEATHER_BALL,
     MOVE_SNORE, MOVE_PAIN_SPLIT, MOVE_GUILLOTINE,
@@ -1603,7 +1603,7 @@ static void TrySetBattleSeminarShow(void)
         return;
     else if (gBattleMons[gBattlerTarget].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE)
         return;
-    else if (gCurrentMove == MOVE_HIDDEN_POWER || gCurrentMove == MOVE_WEATHER_BALL)
+    else if (gCurrentMove == MOVE_MULTI_PULSE || gCurrentMove == MOVE_WEATHER_BALL)
         return;
     else if (gBattleTypeFlags & (BATTLE_TYPE_PALACE | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID))
         return;

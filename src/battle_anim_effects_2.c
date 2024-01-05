@@ -3448,7 +3448,7 @@ static void AnimTask_ScaryFace_Step(u8 taskId)
 }
 
 // Orbits a sphere in an ellipse around the mon.
-// Used by MOVE_HIDDEN_POWER
+// Used by MOVE_MULTI_PULSE
 // arg 0: duration
 // arg 1: initial wave offset
 void AnimOrbitFast(struct Sprite *sprite)
@@ -3500,7 +3500,7 @@ static void AnimOrbitFast_Step(struct Sprite *sprite)
 }
 
 // Moves orbs away from the mon, based on where they are in their orbit.
-// Used in MOVE_HIDDEN_POWER.
+// Used in MOVE_MULTI_PULSE.
 // arg 0: initial wave offset
 void AnimOrbitScatter(struct Sprite *sprite)
 {
