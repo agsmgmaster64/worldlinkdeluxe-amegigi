@@ -238,6 +238,7 @@ extern const u8 gText_SeeYaDescription[];
 
 extern const u8 gText_EggNickname[];
 extern const u8 gText_Pokemon[];
+extern const u8 gText_Puppet[];
 extern const u8 gText_InParty[];
 extern const u8 gText_InGameClockUsable[];
 

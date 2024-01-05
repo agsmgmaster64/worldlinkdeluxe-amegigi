@@ -20,6 +20,7 @@ const u8 gText_ExpandedPlaceholder_Brendan[] = _("BRENDAN");
 const u8 gText_ExpandedPlaceholder_May[] = _("MAY");
 const u8 gText_EggNickname[] = _("Egg");
 const u8 gText_Pokemon[] = _("POKéMON");
+const u8 gText_Puppet[] = _("Puppet");
 const u8 gText_ProfBirchMatchCallName[] = _("PROF. BIRCH");
 const u8 gText_MainMenuNewGame[] = _("New Game");
 const u8 gText_MainMenuContinue[] = _("Continue");

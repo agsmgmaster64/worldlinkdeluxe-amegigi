@@ -3,8 +3,20 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 {
 #endif
 
+#define YOUMU_MISC_INFO                                         \
+        .genderRatio = PERCENT_FEMALE(50),                      \
+        .friendship = STANDARD_FRIENDSHIP,                      \
+        .growthRate = GROWTH_MEDIUM_SLOW,                       \
+        .eggCycles = 20,                                        \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD }, \
+        .sourceGame = SOURCE_PCB,                               \
+        .noFlip = TRUE,                                         \
+        .eggCycles = 20,                                        \
+        .cryId = CRY_YOUMU
+
     [SPECIES_CHIBI_YOUMU] =
     {
+        YOUMU_MISC_INFO,
         .baseHP        = 60,
         .baseAttack    = 95,
         .baseDefense   = 75,
@@ -15,20 +27,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .catchRate = 90,
         .expYield = 76,
         .evYield_Attack = 1,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD },
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD },
-        .sourceGame = SOURCE_PCB,
         .speciesName = _("CYoumu"),
-        .cryId = CRY_YOUMU,
-        .noFlip = TRUE,
         .natDexNum = NATIONAL_DEX_CHIBI_YOUMU,
         .categoryName = _("Half-Human"),
-        .height = 16,
-        .weight = 785,
+        .height = 3,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Youmu is a half-human half-phantom,\n"
             "which are the mix of humans and\n"
@@ -54,6 +58,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
     [SPECIES_NORMAL_YOUMU] =
     {
+        YOUMU_MISC_INFO,
         .baseHP        = 85,
         .baseAttack    = 120,
         .baseDefense   = 100,
@@ -64,20 +69,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .catchRate = 45,
         .expYield = 212,
         .evYield_Attack = 3,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD },
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD },
-        .sourceGame = SOURCE_PCB,
         .speciesName = _("Youmu"),
-        .cryId = CRY_YOUMU,
-        .noFlip = TRUE,
         .natDexNum = NATIONAL_DEX_NORMAL_YOUMU,
         .categoryName = _("Magnet"),
-        .height = 3,
-        .weight = 60,
+        .height = 5,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "The units at its sides are extremely\n"
             "powerful magnets. They generate enough\n"
@@ -100,6 +97,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
     [SPECIES_DEFENSE_YOUMU] =
     {
+        YOUMU_MISC_INFO,
         .baseHP        = 90,
         .baseAttack    = 85,
         .baseDefense   = 120,
@@ -110,20 +108,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .catchRate = 45,
         .expYield = 212,
         .evYield_Defense = 3,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD },
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD },
-        .sourceGame = SOURCE_PCB,
         .speciesName = _("DYoumu"),
-        .cryId = CRY_YOUMU,
-        .noFlip = TRUE,
         .natDexNum = NATIONAL_DEX_DEFENSE_YOUMU,
         .categoryName = _("Magnet"),
-        .height = 10,
-        .weight = 600,
+        .height = 5,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It is actually three Magnemite linked\n"
             "by magnetism. It generates powerful radio\n"
@@ -146,6 +136,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
     [SPECIES_SPEED_YOUMU] =
     {
+        YOUMU_MISC_INFO,
         .baseHP        = 85,
         .baseAttack    = 105,
         .baseDefense   = 90,
@@ -156,20 +147,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .catchRate = 45,
         .expYield = 212,
         .evYield_Speed = 3,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD },
         .abilities = { ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD },
-        .sourceGame = SOURCE_PCB,
         .speciesName = _("SYoumu"),
-        .cryId = CRY_YOUMU,
-        .noFlip = TRUE,
         .natDexNum = NATIONAL_DEX_SPEED_YOUMU,
-        .categoryName = _("Wild Duck"),
+        .categoryName = _("Swordmaster"),
         .height = 8,
-        .weight = 150,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It is always seen with a stick from a plant.\n"
             "Apparently, there are good sticks and bad\n"
