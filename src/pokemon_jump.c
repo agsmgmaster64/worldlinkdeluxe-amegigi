@@ -4195,23 +4195,6 @@ static bool32 RecvPacket_MonInfo(int multiplayerId, struct PokemonJump_MonInfo *
     return FALSE;
 }
 
-struct UnusedPacket
-{
-    u8 id;
-    u32 data;
-    u32 filler;
-};
-
-// Data packet that's never sent
-// No function to read it either
-static void UNUSED SendPacket_Unused(u32 data)
-{
-    struct UnusedPacket packet;
-    packet.id = PACKET_UNUSED;
-    packet.data = data;
-    Rfu_SendPacket(&packet);
-}
-
 struct LeaderStatePacket
 {
     u8 id;
@@ -4405,15 +4388,3 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
 
 #undef tState
 #undef tWindowId
-
-static void UNUSED TruncateToFirstWordOnly(u8 *str)
-{
-    for (;*str != EOS; str++)
-    {
-        if (*str == CHAR_SPACE)
-        {
-            *str = EOS;
-            break;
-        }
-    }
-}
