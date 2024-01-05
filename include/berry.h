@@ -16,12 +16,15 @@ u8 ItemIdToBerryType(u16 item);
 void GetBerryNameByBerryType(u8 berry, u8 *string);
 void ResetBerryTreeSparkleFlag(u8 id);
 void Bag_ChooseBerry(void);
+void Bag_ChooseMulch(void);
 void ObjectEventInteractionGetBerryTreeData(void);
 void ObjectEventInteractionPlantBerryTree(void);
 void ObjectEventInteractionPickBerryTree(void);
 void ObjectEventInteractionRemoveBerryTree(void);
+void ObjectEventInteractionApplyMulch(void);
 bool8 PlayerHasBerries(void);
 void SetBerryTreesSeen(void);
+bool32 BerryTreeGrow(struct BerryTree *tree);
 
 extern const struct Berry gBerries[];
 
@@ -31,7 +34,5 @@ struct BerryCrushBerryData {
 };
 
 extern const struct BerryCrushBerryData gBerryCrush_BerryData[];
-extern const u8 sBerryDescriptionPart1_WatmelMetric[];
-extern const u8 sBerryDescriptionPart2_WatmelMetric[];
 
 #endif // GUARD_BERRY_H
