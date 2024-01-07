@@ -72,6 +72,11 @@
 #define FLDEFF_USE_VS_SEEKER             68
 #define FLDEFF_X_ICON                    69
 #define FLDEFF_DOUBLE_EXCL_MARK_ICON     70
+// Start qol_field_moves
+#define FLDEFF_USE_SURF_TOOL             71
+#define FLDEFF_USE_WATERFALL_TOOL        72
+#define FLDEFF_USE_DIVE_TOOL             73
+// End qol_field_moves
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

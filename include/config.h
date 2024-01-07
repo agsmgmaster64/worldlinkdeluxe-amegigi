@@ -75,11 +75,12 @@
 #define GEN_9 8
 #define GEN_LATEST GEN_9
 
-// Touhoumon constants used to toggle between stats from different hacks
+// Touhoumon constants used to toggle between stats from different hacks/fangames
 #define VANILLA_1_8        0
 #define ENHANCED_RELOADED  1
 #define PURPLE_UNNAMED     2
 #define WORLD_LINK_DELUXE  3
+#define CITRINE            4
 
 #define TOUHOUMON_VERSION WORLD_LINK_DELUXE
 

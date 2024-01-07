@@ -74,9 +74,12 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
     .4byte gFieldEffectScript_CaveDust                  @ FLDEFF_CAVE_DUST
-	.4byte gFldEffScript_UseVsSeeker                    @ FLDEFF_USE_VS_SEEKER
-	.4byte gFldEffScript_XIcon                          @ FLDEFF_X_ICON
-	.4byte gFldEffScript_DoubleExclMarkIcon             @ FLDEFF_DOUBLE_EXCL_MARK_ICON
+	.4byte gFieldEffectScript_UseVsSeeker               @ FLDEFF_USE_VS_SEEKER
+	.4byte gFieldEffectScript_XIcon                     @ FLDEFF_X_ICON
+	.4byte gFieldEffectScript_DoubleExclMarkIcon        @ FLDEFF_DOUBLE_EXCL_MARK_ICON
+	.4byte gFieldEffectScript_UseSurfTool               @ FLDEFF_USE_SURF_TOOL
+	.4byte gFieldEffectScript_UseWaterfallTool          @ FLDEFF_USE_WATERFALL_TOOL
+	.4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -351,17 +354,33 @@ gFieldEffectScript_MoveDeoxysRock::
     
 @ NEW
 gFieldEffectScript_CaveDust::
-    field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
-    field_eff_end
+	field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
+	field_eff_end
 
-gFldEffScript_UseVsSeeker::
+gFieldEffectScript_UseVsSeeker::
 	field_eff_callnative FldEff_UseVsSeeker
 	field_eff_end
 
-gFldEffScript_XIcon::
+gFieldEffectScript_XIcon::
 	field_eff_callnative FldEff_XIcon
 	field_eff_end
 
-gFldEffScript_DoubleExclMarkIcon::
+gFieldEffectScript_DoubleExclMarkIcon::
 	field_eff_callnative FldEff_DoubleExclMarkIcon
 	field_eff_end
+
+@ Start qol_field_moves
+
+gFieldEffectScript_UseSurfTool::
+	field_eff_callnative FldEff_UseSurfTool
+	field_eff_end
+
+gFieldEffectScript_UseWaterfallTool::
+	field_eff_callnative FldEff_UseWaterfallTool
+	field_eff_end
+
+gFieldEffectScript_UseDiveTool::
+	field_eff_callnative FldEff_UseDiveTool
+	field_eff_end
+
+@ End qol_field_moves

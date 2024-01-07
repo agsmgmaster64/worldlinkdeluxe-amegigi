@@ -230,27 +230,6 @@ const u8 gOgerponCornerstoneMaskPokedexText[] = _(
 #define FLIP    0
 #define NO_FLIP 1
 
-#define PLACEHOLDER_MISC_INFO                                                   \
-    {                                                                           \
-        .baseHP        = 10,                                                    \
-        .baseAttack    = 10,                                                    \
-        .baseDefense   = 10,                                                    \
-        .baseSpeed     = 10,                                                    \
-        .baseSpAttack  = 10,                                                    \
-        .baseSpDefense = 10,                                                    \
-        .types = { TYPE_MYSTERY, TYPE_MYSTERY},                                 \
-        .catchRate = 3,                                                         \
-        .expYield = 0,                                                          \
-        .genderRatio = MON_GENDERLESS,                                          \
-        .eggCycles = 20,                                                        \
-        .friendship = 0,                                                        \
-        .growthRate = GROWTH_SLOW,                                              \
-        .eggGroups = { EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED},         \
-        .abilities = {ABILITY_NEUROFORCE, ABILITY_NONE},                        \
-        .sourceGame = SOURCE_OTHER,                                             \
-        .noFlip = TRUE,                                                         \
-    }
-
 #define PUPPET_MISC_INFO(growth, source)                                \
         .genderRatio = PERCENT_FEMALE(50),                              \
         .eggCycles = 20,                                                \
@@ -258,6 +237,18 @@ const u8 gOgerponCornerstoneMaskPokedexText[] = _(
         .growthRate = growth,                                           \
         .sourceGame = source,                                           \
         .noFlip = TRUE
+
+#define CHIBI_DEX_SCALE                                       \
+        .pokemonScale = 356,                                  \
+        .pokemonOffset = 10,                                  \
+        .trainerScale = 256,                                  \
+        .trainerOffset = 0
+
+#define EVOLVED_DEX_SCALE                                     \
+        .pokemonScale = 270,                                  \
+        .pokemonOffset = 0,                                   \
+        .trainerScale = 256,                                  \
+        .trainerOffset = 0
 
 const struct SpeciesInfo gSpeciesInfo[] =
 {
@@ -299,6 +290,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #include "species_info/gen_7.h"
     #include "species_info/gen_8.h"
     #include "species_info/gen_9.h"
+    #include "species_info/touhou_6.h"
     #include "species_info/touhou_7.h"
 
     [SPECIES_EGG] =
