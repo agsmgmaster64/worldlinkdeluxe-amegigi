@@ -14936,10 +14936,14 @@ static void Cmd_handleballthrow(void)
             case ITEM_SPORT_BALL:
                 if (B_SPORT_BALL_MODIFIER <= GEN_7)
                     ballMultiplier = 150;
+                break;
             case ITEM_GREAT_ORB:
-            case ITEM_SAFARI_ORB:
             case ITEM_GREAT_BALL_HISUI:
                 ballMultiplier = 150;
+                break;
+            case ITEM_SAFARI_ORB:
+                if (B_SAFARI_BALL_MODIFIER <= GEN_7)
+                    ballMultiplier = 150;
                 break;
             case ITEM_NET_ORB:
                 if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_BEAST))
@@ -14999,7 +15003,14 @@ static void Cmd_handleballthrow(void)
                 break;
             case ITEM_LURE_BALL:
                 if (gIsFishingEncounter)
-                    ballMultiplier = (B_LURE_BALL_MODIFIER >= GEN_7 ? 500 : 300);
+                {
+                    if (B_LURE_BALL_MODIFIER >= GEN_8)
+                        ballMultiplier = 400;
+                    else if (B_LURE_BALL_MODIFIER >= GEN_7)
+                        ballMultiplier = 500;
+                    else
+                        ballMultiplier = 300;
+                }
                 break;
             case ITEM_POKE_BALL_HISUI:
                 ballMultiplier = 75;
