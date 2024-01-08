@@ -4513,7 +4513,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .cryId = CRY_PORYGON,                                   \
         .natDexNum = NATIONAL_DEX_CHIBI_YOUMU,                      \
         .categoryName = _("Hermit Crab"),                       \
-        FOOTPRINT(Slowbro)                                      \
         .formSpeciesIdTable = sSlowbroFormSpeciesIdTable
 
 #define SLOWKING_MISC_INFO                                      \
@@ -4810,7 +4809,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .cryId = CRY_PORYGON,                             \
         .natDexNum = NATIONAL_DEX_SPEED_YOUMU,                \
         .categoryName = _("Wild Duck"),                     \
-        FOOTPRINT(Farfetchd)                                \
         .formSpeciesIdTable = sFarfetchdFormSpeciesIdTable
 
 #if P_GALARIAN_FORMS

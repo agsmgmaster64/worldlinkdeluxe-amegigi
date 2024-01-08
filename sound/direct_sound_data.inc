@@ -391,6 +391,18 @@ Cry_Porygon::
 	.incbin "sound/direct_sound_samples/cries/porygon.bin"
 
 	.align 2
+Cry_Cirno::
+	.incbin "sound/direct_sound_samples/cries/cirno.bin"
+
+	.align 2
+Cry_Rumia::
+	.incbin "sound/direct_sound_samples/cries/rumia.bin"
+
+	.align 2
+Cry_Koakuma::
+	.incbin "sound/direct_sound_samples/cries/koakuma.bin"
+
+	.align 2
 Cry_Reisen::
 	.incbin "sound/direct_sound_samples/cries/reisen.bin"
 

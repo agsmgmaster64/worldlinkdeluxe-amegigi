@@ -4,6 +4,9 @@
 enum {
     CRY_NONE,
     CRY_PORYGON,
+    CRY_CIRNO,
+    CRY_RUMIA,
+    CRY_KOAKUMA,
     CRY_YOUMU,
     CRY_REISEN,
     CRY_COUNT,
