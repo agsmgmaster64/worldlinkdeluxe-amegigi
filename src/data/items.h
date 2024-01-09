@@ -130,7 +130,7 @@ static const u8 sKingsRockDesc[]      = _("A hold item that\n"
                                           "may cause flinching\n"
                                           "when the foe is hit.");
 
-static const u8 sFigyBerryDesc[]      = _("A hold item that\n"
+static const u8 sFigyBerryDesc[]      = _("A berry that\n"
                                           "restores HP but\n"
                                           "may confuse.");
 
@@ -6178,9 +6178,9 @@ const struct Item gItems[] =
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_ILLUSION_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
-                                       "raises the power of\n"
-                                       "Normal-type moves."),
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "boosts Illusion-\n"
+                                       "type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6189,11 +6189,11 @@ const struct Item gItems[] =
 
     [ITEM_GOTHIC_DRESS] =
     {
-        .name = _("Charcoal"),
+        .name = _("Gothic Dress"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 9800),
         .holdEffect = HOLD_EFFECT_FIRE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Fire-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6204,11 +6204,11 @@ const struct Item gItems[] =
 
     [ITEM_SWIMSUIT] =
     {
-        .name = _("Mystic Water"),
+        .name = _("Swimsuit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_WATER_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Water-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6219,13 +6219,13 @@ const struct Item gItems[] =
 
     [ITEM_NINJA_SUIT] =
     {
-        .name = _("Magnet"),
+        .name = _("Ninja Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_WIND_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
-                                       "boosts Electric-\n"
-                                       "type moves."),
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "raises the power of\n"
+                                       "Wind-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6234,11 +6234,13 @@ const struct Item gItems[] =
 
     [ITEM_CAMOUFLAGE] =
     {
-        .name = _("Miracle Seed"),
+        .name = _("Camouflage"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_NATURE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = sRoseIncenseDesc,
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "raises the power of\n"
+                                       "Nature-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6247,11 +6249,11 @@ const struct Item gItems[] =
 
     [ITEM_THICK_FUR] =
     {
-        .name = _("Never-MeltIce"),
+        .name = _("Thick Fur"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_ICE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Ice-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6262,13 +6264,13 @@ const struct Item gItems[] =
 
     [ITEM_CHINA_DRESS] =
     {
-        .name = _("Black Belt"),
+        .name = _("China Dress"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_DREAM_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
-                                       "boosts Fighting-\n"
-                                       "type moves."),
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "raises the power of\n"
+                                       "Dream-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6277,13 +6279,13 @@ const struct Item gItems[] =
 
     [ITEM_NURSE_OUTFIT] =
     {
-        .name = _("Poison Barb"),
+        .name = _("Nurse Outfit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_MIASMA_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
-                                       "Poison-type moves."),
+                                       "Miasma-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6292,13 +6294,13 @@ const struct Item gItems[] =
 
     [ITEM_GYM_SUIT] =
     {
-        .name = _("Soft Sand"),
+        .name = _("Gym Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_EARTH_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
-                                       "Ground-type moves."),
+                                       "Earth-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6307,11 +6309,11 @@ const struct Item gItems[] =
 
     [ITEM_STEWARDESS] =
     {
-        .name = _("Sharp Beak"),
+        .name = _("Stewardess"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_FLYING_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Flying-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6322,11 +6324,13 @@ const struct Item gItems[] =
 
     [ITEM_WITCHS_ROBE] =
     {
-        .name = _("Twisted Spoon"),
+        .name = _("Witch's Robe"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_REASON_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = sOddIncenseDesc,
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "raises the power of\n"
+                                       "Reason-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6335,13 +6339,13 @@ const struct Item gItems[] =
 
     [ITEM_BLAZER] =
     {
-        .name = _("Silver Powder"),
+        .name = _("Blazer"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_HEART_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
-                                       "Bug-type moves."),
+                                       "Heart-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6350,11 +6354,13 @@ const struct Item gItems[] =
 
     [ITEM_BUNNY_SUIT] =
     {
-        .name = _("Hard Stone"),
+        .name = _("Bunny Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_BEAST_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = sRockIncenseDesc,
+        .description = COMPOUND_STRING("A costume that\n"
+                                       "raises the power of\n"
+                                       "Beast-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6363,11 +6369,11 @@ const struct Item gItems[] =
 
     [ITEM_BURIAL_DRESS] =
     {
-        .name = _("Spell Tag"),
+        .name = _("Burial Dress"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_GHOST_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Ghost-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6378,13 +6384,13 @@ const struct Item gItems[] =
 
     [ITEM_PRIESTESS] =
     {
-        .name = _("Dragon Fang"),
+        .name = _("Priestess"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_FAITH_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
-                                       "Dragon-type moves."),
+                                       "Faith-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6397,7 +6403,7 @@ const struct Item gItems[] =
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_DARK_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Dark-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -6408,11 +6414,11 @@ const struct Item gItems[] =
 
     [ITEM_MAID_UNIFORM] =
     {
-        .name = _("Metal Coat"),
+        .name = _("Maid Uniform"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
         .holdEffect = HOLD_EFFECT_STEEL_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A costume that\n"
                                        "raises the power of\n"
                                        "Steel-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
@@ -7481,7 +7487,7 @@ const struct Item gItems[] =
         .name = _("Cheri Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "heals paralysis\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
@@ -7496,8 +7502,8 @@ const struct Item gItems[] =
         .name = _("Chesto Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_SLP,
-        .description = COMPOUND_STRING("A hold item that\n"
-                                       "awakens Pokémon\n"
+        .description = COMPOUND_STRING("A berry that\n"
+                                       "awakens Puppets\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
@@ -7511,7 +7517,7 @@ const struct Item gItems[] =
         .name = _("Pecha Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_PSN,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "heals poisoning\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
@@ -7526,7 +7532,7 @@ const struct Item gItems[] =
         .name = _("Rawst Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_BRN,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "heals a burn in\n"
                                        "battle."),
         .pocket = POCKET_BERRIES,
@@ -7541,7 +7547,7 @@ const struct Item gItems[] =
         .name = _("Aspear Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_FRZ,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "defrosts Puppets\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
@@ -7557,7 +7563,7 @@ const struct Item gItems[] =
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_RESTORE_PP,
         .holdEffectParam = 10,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "restores 10 PP in\n"
                                        "battle."),
         .pocket = POCKET_BERRIES,
@@ -7573,7 +7579,7 @@ const struct Item gItems[] =
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
         .holdEffectParam = 10,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "restores 10 HP in\n"
                                        "battle."),
         .pocket = POCKET_BERRIES,
@@ -7588,7 +7594,7 @@ const struct Item gItems[] =
         .name = _("Persim Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "heals confusion\n"
                                        "in battle."),
         .pocket = POCKET_BERRIES,
@@ -7603,7 +7609,7 @@ const struct Item gItems[] =
         .name = _("Lum Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_CURE_STATUS,
-        .description = COMPOUND_STRING("A hold item that\n"
+        .description = COMPOUND_STRING("A berry that\n"
                                        "heals any status\n"
                                        "problem in battle."),
         .pocket = POCKET_BERRIES,
@@ -7620,13 +7626,13 @@ const struct Item gItems[] =
         #if I_SITRUS_BERRY_HEAL >= GEN_4
             .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
             .holdEffectParam = 25,
-            .description = COMPOUND_STRING("A hold item that\n"
+            .description = COMPOUND_STRING("A berry that\n"
                                            "restores the user's\n"
                                            "HP a little."),
         #else
             .holdEffect = HOLD_EFFECT_RESTORE_HP,
             .holdEffectParam = 30,
-            .description = COMPOUND_STRING("A hold item that\n"
+            .description = COMPOUND_STRING("A berry that\n"
                                            "restores 30 HP in\n"
                                            "battle."),
         #endif
@@ -7771,7 +7777,7 @@ const struct Item gItems[] =
     {
         .name = _("Pomeg Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base HP."),
         .pocket = POCKET_BERRIES,
@@ -7784,7 +7790,7 @@ const struct Item gItems[] =
     {
         .name = _("Kelpsy Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base Attack."),
         .pocket = POCKET_BERRIES,
@@ -7797,7 +7803,7 @@ const struct Item gItems[] =
     {
         .name = _("Qualot Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base Defense."),
         .pocket = POCKET_BERRIES,
@@ -7810,7 +7816,7 @@ const struct Item gItems[] =
     {
         .name = _("Hondew Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base Sp. Atk."),
         .pocket = POCKET_BERRIES,
@@ -7823,7 +7829,7 @@ const struct Item gItems[] =
     {
         .name = _("Grepa Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base Sp. Def."),
         .pocket = POCKET_BERRIES,
@@ -7836,7 +7842,7 @@ const struct Item gItems[] =
     {
         .name = _("Tamato Berry"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .description = COMPOUND_STRING("Makes a Pokémon\n"
+        .description = COMPOUND_STRING("Makes a Puppet\n"
                                        "friendly but lowers\n"
                                        "base Speed."),
         .pocket = POCKET_BERRIES,
@@ -7969,8 +7975,8 @@ const struct Item gItems[] =
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ILLUSION,
         .description = COMPOUND_STRING("A hold item that\n"
-                                       "weakens a Normal\n"
-                                       "move."),
+                                       "weakens an\n"
+                                       "Illusion move."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
