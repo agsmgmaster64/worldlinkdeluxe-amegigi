@@ -1,8 +1,8 @@
-# pokeemerald-expansion
+# worldlinkdeluxe-ame
 
-## What is pokeemerald-expansion?
+## What is worldlinkdeluxe-ame?
 
-pokeemerald-expansion is a decomp hack base project based off pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. It's recommended that any new projects that plan on using it, to clone this repository instead of pret's vanilla repository, as we regurlarly incorporate pret's documentation changes. This is ***NOT*** a standalone romhack, and as such, most features will be unavailable and/or unbalanced if played as is.
+worldlinkdeluxe-ame is a decomp port of Touhou Puppet Play World Link Deluxe using pokeemerald-expansion based off of pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. It is currently a work-in-progress at the moment and should be treated as such.
 
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
 You can phrase it as the following:
