@@ -20,7 +20,7 @@ JPCONTESTGFXDIR := graphics/contest/japanese
 POKEDEXGFXDIR := graphics/pokedex
 STARTERGFXDIR := graphics/starter_choose
 NAMINGGFXDIR := graphics/naming_screen
-SPINDAGFXDIR := graphics/pokemon/gen_3/spinda/spots
+SPINDAGFXDIR := graphics/pokemon/spinda/spots
 
 types := illusion dream flying miasma earth beast heart ghost steel mystery fire water nature wind reason ice faith dark cosmic
 contest_types := cool beauty cute smart tough
