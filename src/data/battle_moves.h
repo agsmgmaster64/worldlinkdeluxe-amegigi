@@ -1539,7 +1539,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .effect = EFFECT_TOXIC,
         .power = 0,
-        .type = TYPE_POISON,
+        .type = TYPE_MIASMA,
         .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
@@ -1935,7 +1935,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_NATURE,
         .accuracy = 75,
         .pp = 15,
-        .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .category = BATTLE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
@@ -2465,7 +2464,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FLASH] =
     {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_FAITH,
         .accuracy = 90,
@@ -12599,7 +12598,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
             .power = 60,
         #endif
         .effect = EFFECT_HIT,
-        .type = TYPE_POISON,
+        .type = TYPE_MIASMA,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,

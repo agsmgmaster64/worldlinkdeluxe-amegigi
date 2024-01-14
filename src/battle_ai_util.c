@@ -1442,7 +1442,7 @@ bool32 ShouldLowerStat(u32 battler, u32 battlerAbility, u32 stat)
         switch (stat)
         {
             case STAT_ATK:
-                return !(battlerAbility == ABILITY_HYPER_CUTTER);
+                return !(battlerAbility == ABILITY_HIGH_STRENGTH);
             case STAT_DEF:
                 return !(battlerAbility == ABILITY_BIG_PECKS);
             case STAT_SPEED:
@@ -1451,7 +1451,7 @@ bool32 ShouldLowerStat(u32 battler, u32 battlerAbility, u32 stat)
                     && CountUsablePartyMons(sBattler_AI) == 0
                     && !HasMoveEffect(sBattler_AI, EFFECT_ELECTRO_BALL));
             case STAT_ACC:
-                return !(battlerAbility == ABILITY_KEEN_EYE || (B_ILLUMINATE_EFFECT >= GEN_9 && battlerAbility == ABILITY_ILLUMINATE));
+                return !(battlerAbility == ABILITY_KEEN_EYE || (B_ILLUMINATE_EFFECT >= GEN_9 && battlerAbility == ABILITY_DIVA));
         }
         return TRUE;
     }
@@ -3713,19 +3713,19 @@ s32 AI_CheckMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 score, str
                     score += AI_ShouldCopyStatChanges(battlerAtk, battlerDef);
                     break;
                 case MOVE_EFFECT_BUG_BITE:   // And pluck
-                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_COLLECTOR)
                         break;
                     else if (ItemId_GetPocket(aiData->items[battlerDef]) == POCKET_BERRIES)
                         ADJUST_SCORE(3);
                     break;
                 case MOVE_EFFECT_INCINERATE:
-                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_COLLECTOR)
                         break;
                     else if (ItemId_GetPocket(aiData->items[battlerDef]) == POCKET_BERRIES || aiData->holdEffects[battlerDef] == HOLD_EFFECT_GEMS)
                         ADJUST_SCORE(3);
                     break;
                 case MOVE_EFFECT_SMACK_DOWN:
-                    if (!IsBattlerGrounded(battlerDef) && HasDamagingMoveOfType(battlerAtk, TYPE_GROUND))
+                    if (!IsBattlerGrounded(battlerDef) && HasDamagingMoveOfType(battlerAtk, TYPE_EARTH))
                         ADJUST_SCORE(1);
                     break;
                 case MOVE_EFFECT_KNOCK_OFF:
@@ -3760,7 +3760,7 @@ s32 AI_CheckMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 score, str
                         && CanBattlerGetOrLoseItem(battlerDef, aiData->items[battlerDef])
                         && CanBattlerGetOrLoseItem(battlerAtk, aiData->items[battlerDef])
                         && !HasMoveEffect(battlerAtk, EFFECT_ACROBATICS)
-                        && aiData->abilities[battlerDef] != ABILITY_STICKY_HOLD)
+                        && aiData->abilities[battlerDef] != ABILITY_COLLECTOR)
                         {
                             switch (aiData->holdEffects[battlerDef])
                             {
@@ -3780,7 +3780,7 @@ s32 AI_CheckMoveEffects(u32 battlerAtk, u32 battlerDef, u32 move, s32 score, str
                                     ADJUST_SCORE(2);
                                 break;
                             case HOLD_EFFECT_BLACK_SLUDGE:
-                                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+                                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MIASMA))
                                     ADJUST_SCORE(2);
                                 break;
                             case HOLD_EFFECT_IRON_BALL:

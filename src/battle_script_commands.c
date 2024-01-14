@@ -3654,7 +3654,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     case TYPE_FIRE: // Burn Up
                         gBattlescriptCurrInstr = BattleScript_RemoveFireType;
                         break;
-                    case TYPE_ELECTRIC: // Double Shot
+                    case TYPE_WIND: // Double Shot
                         gBattlescriptCurrInstr = BattleScript_RemoveElectricType;
                         break;
                     default:

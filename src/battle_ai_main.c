@@ -3505,7 +3505,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         score += AI_TryToClearStats(battlerAtk, battlerDef, isDoubleBattle);
         break;
     case EFFECT_ROAR:
-        if ((gBattleMoves[move].soundMove && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF) || aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+        if ((gBattleMoves[move].soundMove && aiData->abilities[battlerDef] == ABILITY_SOUNDPROOF) || aiData->abilities[battlerDef] == ABILITY_GATE_KEEPER)
         {
             ADJUST_SCORE(-3);
             break;
