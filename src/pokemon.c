@@ -123,8 +123,6 @@ const struct SpindaSpot gSpindaSpotGraphics[] =
     {.x = 34, .y = 26, .image = INCBIN_U16("graphics/pokemon/spinda/spots/spot_3.1bpp")}
 };
 
-#include "data/pokemon/item_effects.h"
-
 const u8 *const gNatureNamePointers[NUM_NATURES] =
 {
     [NATURE_HARDY] = COMPOUND_STRING("Hardy"),
@@ -3028,11 +3026,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     holdEffect = ItemId_GetHoldEffect(heldItem);
 
     // Skip using the item if it won't do anything
-    if (gItemEffectTable[item] == NULL)
+    if (ItemId_GetEffect(item) == NULL)
         return TRUE;
 
     // Get item effect
-    itemEffect = GetItemEffect(item);
+    itemEffect = ItemId_GetEffect(item);
 
     // Do item effect
     for (i = 0; i < ITEM_EFFECT_ARG_START; i++)
@@ -3456,7 +3454,7 @@ u8 GetItemEffectParamOffset(u32 battler, u16 itemId, u8 effectByte, u8 effectBit
 
     offset = ITEM_EFFECT_ARG_START;
 
-    temp = gItemEffectTable[itemId];
+    temp = ItemId_GetEffect(itemId);
 
     if (temp != NULL && !temp)
         return 0;
@@ -3574,7 +3572,7 @@ u8 *UseStatIncreaseItem(u16 itemId)
 {
     const u8 *itemEffect;
 
-    itemEffect = gItemEffectTable[itemId];
+    itemEffect = ItemId_GetEffect(itemId);
 
     gPotentialItemEffectBattler = gBattlerInMenuId;
 

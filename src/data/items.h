@@ -536,6 +536,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
         .flingPower = 30,
     },
 
@@ -557,6 +558,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_SuperPotion,
         .flingPower = 30,
     },
 
@@ -578,6 +580,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_HyperPotion,
         .flingPower = 30,
     },
 
@@ -592,6 +595,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_MaxPotion,
         .flingPower = 30,
     },
 
@@ -607,6 +611,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_HEAL_AND_CURE_STATUS,
+        .effect = gItemEffect_FullRestore,
         .flingPower = 30,
     },
 
@@ -621,6 +626,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_Revive,
         .flingPower = 30,
     },
 
@@ -633,6 +639,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_MaxRevive,
         .flingPower = 30,
     },
 
@@ -654,6 +661,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_FreshWater,
         .flingPower = 30,
     },
 
@@ -675,6 +683,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_SodaPop,
         .flingPower = 30,
     },
 
@@ -696,6 +705,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Lemonade,
         .flingPower = 30,
     },
 
@@ -711,6 +721,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_MoomooMilk,
         .flingPower = 30,
     },
 
@@ -731,6 +742,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_EnergyPowder,
         .flingPower = 30,
     },
 
@@ -751,6 +763,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_EnergyRoot,
         .flingPower = 30,
     },
 
@@ -765,6 +778,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_HealPowder,
         .flingPower = 30,
     },
 
@@ -779,6 +793,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_RevivalHerb,
         .flingPower = 30,
     },
 
@@ -792,6 +807,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_Antidote,
         .flingPower = 30,
     },
 
@@ -805,6 +821,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_ParalyzeHeal,
         .flingPower = 30,
     },
 
@@ -818,6 +835,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_BurnHeal,
         .flingPower = 30,
     },
 
@@ -831,6 +849,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_IceHeal,
         .flingPower = 30,
     },
 
@@ -844,6 +863,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_Awakening,
         .flingPower = 30,
     },
 
@@ -856,6 +876,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -871,6 +892,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU_MOVES,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_Ether,
         .flingPower = 30,
     },
 
@@ -886,6 +908,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU_MOVES,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_MaxEther,
         .flingPower = 30,
     },
 
@@ -900,6 +923,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_Elixir,
         .flingPower = 30,
     },
 
@@ -915,6 +939,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_MaxElixir,
         .flingPower = 30,
     },
 
@@ -931,6 +956,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
         .flingPower = 30,
     },
 
@@ -944,6 +970,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_SacredAsh,
+        .effect = gItemEffect_SacredAsh,
         .flingPower = 30,
     },
 
@@ -959,6 +986,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
         .flingPower = 30,
     },
 
@@ -971,6 +999,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_MaxRevive,
         .flingPower = 30,
     },
 
@@ -985,6 +1014,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -997,6 +1027,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1011,6 +1042,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1023,6 +1055,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1035,6 +1068,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1047,6 +1081,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1059,6 +1094,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1071,6 +1107,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 30,
     },
 
@@ -1085,6 +1122,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_HPUp,
         .flingPower = 30,
     },
 
@@ -1098,6 +1136,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Protein,
         .flingPower = 30,
     },
 
@@ -1111,6 +1150,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Iron,
         .flingPower = 30,
     },
 
@@ -1124,6 +1164,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Calcium,
         .flingPower = 30,
     },
 
@@ -1137,6 +1178,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Zinc,
         .flingPower = 30,
     },
 
@@ -1150,6 +1192,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Carbos,
         .flingPower = 30,
     },
 
@@ -1163,6 +1206,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .effect = gItemEffect_PPUp,
         .flingPower = 30,
     },
 
@@ -1176,6 +1220,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .effect = gItemEffect_PPMax,
         .flingPower = 30,
     },
 
@@ -1189,6 +1234,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_HpFeather,
         .flingPower = 20,
     },
 
@@ -1200,6 +1246,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_AtkFeather,
         .flingPower = 20,
     },
 
@@ -1211,6 +1258,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_DefFeather,
         .flingPower = 20,
     },
 
@@ -1222,6 +1270,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpatkFeather,
         .flingPower = 20,
     },
 
@@ -1233,6 +1282,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpdefFeather,
         .flingPower = 20,
     },
 
@@ -1244,6 +1294,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpeedFeather,
         .flingPower = 20,
     },
 
@@ -1582,6 +1633,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1596,6 +1648,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1610,6 +1663,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1624,6 +1678,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1638,6 +1693,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1652,6 +1708,7 @@ const struct Item gItems[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
         .flingPower = 30,
     },
 
@@ -1681,6 +1738,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_Awakening,
         .flingPower = 30,
     },
 
@@ -1695,6 +1753,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_YellowFlute,
         .flingPower = 30,
     },
 
@@ -1709,6 +1768,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_RedFlute,
         .flingPower = 30,
     },
 
@@ -1869,6 +1929,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XAttack,
         .flingPower = 30,
     },
 
@@ -1890,6 +1951,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XDefense,
         .flingPower = 30,
     },
 
@@ -1911,6 +1973,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XSpecialAttack,
         .flingPower = 30,
     },
 
@@ -1932,6 +1995,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XSpecialDefense,
         .flingPower = 30,
     },
 
@@ -1953,6 +2017,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XSpeed,
         .flingPower = 30,
     },
 
@@ -1974,6 +2039,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_INCREASE_STAT,
+        .effect = gItemEffect_XAccuracy,
         .flingPower = 30,
     },
 
@@ -1988,6 +2054,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_SET_FOCUS_ENERGY,
+        .effect = gItemEffect_DireHit,
         .flingPower = 30,
     },
 
@@ -2002,6 +2069,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_SET_MIST,
+        .effect = gItemEffect_GuardSpec,
         .flingPower = 30,
     },
 
@@ -3130,6 +3198,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3143,6 +3212,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3156,6 +3226,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3169,6 +3240,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3182,6 +3254,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3195,6 +3268,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3206,6 +3280,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3217,6 +3292,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3228,6 +3304,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3239,6 +3316,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3252,6 +3330,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3265,6 +3344,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3278,6 +3358,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3291,6 +3372,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3304,6 +3386,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3317,6 +3400,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3332,6 +3416,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3345,6 +3430,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3358,6 +3444,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3371,6 +3458,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3384,6 +3472,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3397,6 +3486,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 50,
     },
 
@@ -3410,6 +3500,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 10,
     },
 
@@ -3423,6 +3514,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -3436,6 +3528,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3449,6 +3542,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -3462,6 +3556,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -5795,6 +5890,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -5809,6 +5905,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 90,
     },
 
@@ -6800,6 +6897,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -7182,6 +7280,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -7195,6 +7294,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = EVO_HELD_ITEM_TYPE,
         .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -7500,6 +7600,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_ParalyzeHeal,
         .flingPower = 10,
     },
 
@@ -7515,6 +7616,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_Awakening,
         .flingPower = 10,
     },
 
@@ -7530,6 +7632,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_Antidote,
         .flingPower = 10,
     },
 
@@ -7545,6 +7648,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_BurnHeal,
         .flingPower = 10,
     },
 
@@ -7560,6 +7664,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_IceHeal,
         .flingPower = 10,
     },
 
@@ -7576,6 +7681,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU_MOVES,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_LeppaBerry,
         .flingPower = 10,
     },
 
@@ -7592,6 +7698,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_OranBerry,
         .flingPower = 10,
     },
 
@@ -7607,6 +7714,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_PersimBerry,
         .flingPower = 10,
     },
 
@@ -7622,6 +7730,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .effect = gItemEffect_FullHeal,
         .flingPower = 10,
     },
 
@@ -7646,6 +7755,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_SitrusBerry,
         .flingPower = 10,
     },
 
@@ -7789,6 +7899,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_PomegBerry,
         .flingPower = 10,
     },
 
@@ -7802,6 +7913,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_KelpsyBerry,
         .flingPower = 10,
     },
 
@@ -7815,6 +7927,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_QualotBerry,
         .flingPower = 10,
     },
 
@@ -7828,6 +7941,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_HondewBerry,
         .flingPower = 10,
     },
 
@@ -7841,6 +7955,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_GrepaBerry,
         .flingPower = 10,
     },
 
@@ -7854,6 +7969,7 @@ const struct Item gItems[] =
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .effect = gItemEffect_TamatoBerry,
         .flingPower = 10,
     },
 
@@ -11065,6 +11181,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11129,6 +11246,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11157,6 +11275,7 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
     },
 
     [ITEM_SCROLL_OF_WATERS] =
@@ -11170,6 +11289,7 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
     },
 
     [ITEM_TERA_ORB] =
@@ -11427,6 +11547,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11440,6 +11561,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11453,6 +11575,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11509,6 +11632,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
     },
 
@@ -11522,6 +11646,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -11535,6 +11660,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 80,
     },
 
@@ -11582,6 +11708,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_HpMochi,
         .flingPower = 30,
     },
 
@@ -11593,6 +11720,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_AtkMochi,
         .flingPower = 30,
     },
 
@@ -11604,6 +11732,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_DefMochi,
         .flingPower = 30,
     },
 
@@ -11615,6 +11744,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpatkMochi,
         .flingPower = 30,
     },
 
@@ -11626,6 +11756,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpdefMochi,
         .flingPower = 30,
     },
 
@@ -11637,6 +11768,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SpeedMochi,
         .flingPower = 30,
     },
 
@@ -11650,6 +11782,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ResetEVs,
+        .effect = gItemEffect_ResetMochi,
         .flingPower = 30,
     },
 
@@ -11676,6 +11809,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
     },
 
     [ITEM_STELLAR_TERA_SHARD] =
