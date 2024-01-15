@@ -4358,8 +4358,8 @@ static void DebugAction_PCBag_Fill_PocketItems(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_ITEMS && CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
-            AddBagItem(itemId, MAX_BERRY_CAPACITY);
+        if (ItemId_GetPocket(itemId) == POCKET_ITEMS && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+            AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
 
@@ -4369,8 +4369,8 @@ static void DebugAction_PCBag_Fill_PocketPokeBalls(u8 taskId)
 
     for (itemId = FIRST_BALL; itemId < LAST_BALL; itemId++)
     {
-        if (CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
-            AddBagItem(itemId, MAX_BERRY_CAPACITY);
+        if (CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+            AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
 
@@ -4413,8 +4413,8 @@ static void DebugAction_PCBag_Fill_PocketMedicine(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_MEDICINE && CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
-            AddBagItem(itemId, MAX_BERRY_CAPACITY);
+        if (ItemId_GetPocket(itemId) == POCKET_MEDICINE && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+            AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
 
@@ -4424,8 +4424,8 @@ static void DebugAction_PCBag_Fill_PocketBattleItems(u8 taskId)
 
     for (itemId = 1; itemId < ITEMS_COUNT; itemId++)
     {
-        if (ItemId_GetPocket(itemId) == POCKET_BATTLE_ITEMS && CheckBagHasSpace(itemId, MAX_BERRY_CAPACITY))
-            AddBagItem(itemId, MAX_BERRY_CAPACITY);
+        if (ItemId_GetPocket(itemId) == POCKET_BATTLE_ITEMS && CheckBagHasSpace(itemId, MAX_BAG_ITEM_CAPACITY))
+            AddBagItem(itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
 

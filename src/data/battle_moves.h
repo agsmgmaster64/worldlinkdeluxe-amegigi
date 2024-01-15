@@ -356,7 +356,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 45 : 35,
         .type = TYPE_NATURE,
         .accuracy = 100,
-        .pp = 35,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = BATTLE_CATEGORY_PHYSICAL,
