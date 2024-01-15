@@ -886,10 +886,7 @@ u32 ItemId_GetPrice(u16 itemId)
 
 const u8 *ItemId_GetEffect(u32 itemId)
 {
-    if (itemId == ITEM_ENIGMA_BERRY_E_READER)
-        return gSaveBlock1Ptr->enigmaBerry.itemEffect;
-    else
-        return gItems[SanitizeItemId(itemId)].effect;
+    return gItems[SanitizeItemId(itemId)].effect;
 }
 
 u32 ItemId_GetHoldEffect(u32 itemId)
