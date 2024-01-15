@@ -7126,7 +7126,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .types = { TYPE_ILLUSION, TYPE_ILLUSION },
         .catchRate = 30,
         .expYield = 608,
-        .evYield_HP = 3,
+        .evYield_HP = (P_UPDATED_EVS >= GEN_4) ? 3 : 2,
         .itemRare = ITEM_LUCKY_EGG,
         .genderRatio = MON_FEMALE,
         .eggCycles = 40,
