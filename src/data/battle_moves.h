@@ -12882,7 +12882,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHED_TAIL] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SHED_TAIL
+        .effect = EFFECT_SHED_TAIL,
         .power = 0,
         .type = TYPE_ILLUSION,
         .accuracy = 0,
