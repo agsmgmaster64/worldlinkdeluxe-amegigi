@@ -797,9 +797,9 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 3,
     },
 
-    [EFFECT_DEFENSE_CURL] =
+    [EFFECT_MULTI_PULSE] =
     {
-        .battleScript = BattleScript_EffectDefenseCurl,
+        .battleScript = BattleScript_EffectHit,
         .battleTvScore = 1,
         .encourageEncore = TRUE,
     },
