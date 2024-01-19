@@ -1140,13 +1140,13 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 
     [SPECIES_RIBOMBEE] =
     {
-        .baseHP        = 60,
+        .baseHP        = 80,
         .baseAttack    = 55,
         .baseDefense   = 60,
-        .baseSpeed     = 124,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 70,
-        .types = { TYPE_HEART, TYPE_COSMIC },
+        .baseSpeed     = 125,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 85,
+        .types = { TYPE_NATURE, TYPE_WATER },
         .catchRate = 75,
         .expYield = 162,
         .evYield_Speed = 2,
@@ -1155,17 +1155,17 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_FAIRY },
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_HONEY_GATHER, ABILITY_ADVENT, ABILITY_SWEET_VEIL },
-        .sourceGame = SOURCE_PODD,
-        .speciesName = _("Ribombee"),
+        .sourceGame = SOURCE_NIJISANJI,
+        .speciesName = _("Pomu"),
         .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_RIBOMBEE,
-        .categoryName = _("Bee Fly"),
+        .categoryName = _("Fairy"),
         .height = 2,
         .weight = 5,
         .description = COMPOUND_STRING(
-            "Ribombee rolls up pollen into puffs.\n"
+            "Pomu Rainpuff is one of the fairies\n"
             "It makes many different varieties, some\n"
             "used as food and others used in battle.\n"
             "They are sometimes sold as supplements."),
