@@ -58,11 +58,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 
-#if P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9
-#define FRIENDSHIP_EVO_THRESHOLD 160
-#else
-#define FRIENDSHIP_EVO_THRESHOLD 220
-#endif
+#define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9) ? 160 : 220)
 
 struct SpeciesItem
 {
@@ -3172,10 +3168,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 break;
                             }
                             dataSigned += evChange;
-                            #if I_EV_LOWERING_BERRY_JUMP == GEN_4
-                            if (dataSigned > 100)
+                            if (I_BERRY_EV_JUMP == GEN_4 && dataSigned > 100)
                                 dataSigned = 100;
-                            #endif
                             if (dataSigned < 0)
                                 dataSigned = 0;
                         }
@@ -3359,10 +3353,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                                 break;
                             }
                             dataSigned += evChange;
-                            #if I_BERRY_EV_JUMP == GEN_4
-                            if (dataSigned > 100)
+                            if (I_BERRY_EV_JUMP == GEN_4 && dataSigned > 100)
                                 dataSigned = 100;
-                            #endif
                             if (dataSigned < 0)
                                 dataSigned = 0;
                         }
@@ -3678,10 +3670,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     // Prevent evolution with Everstone, unless we're just viewing the party menu with an evolution item
     if (holdEffect == HOLD_EFFECT_PREVENT_EVOLVE
         && mode != EVO_MODE_ITEM_CHECK
-    #if P_KADABRA_EVERSTONE >= GEN_4
-        && species != SPECIES_KADABRA
-    #endif
-    )
+        && (P_KADABRA_EVERSTONE < GEN_4 || species != SPECIES_KADABRA))
         return SPECIES_NONE;
 
     switch (mode)
