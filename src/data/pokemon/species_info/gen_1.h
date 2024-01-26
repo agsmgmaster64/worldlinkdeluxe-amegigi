@@ -8989,6 +8989,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Magikarp, 0),
         FOOTPRINT(Magikarp)
         LEARNSETS(Magikarp),
+        .tmIlliterate = TRUE,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_GYARADOS}),
     },
 
@@ -9213,6 +9214,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Ditto, 2),
         FOOTPRINT(Ditto)
         LEARNSETS(Ditto),
+        .tmIlliterate = TRUE,
     },
 #endif //P_FAMILY_DITTO
 
