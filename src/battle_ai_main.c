@@ -4622,19 +4622,19 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                     score += AI_ShouldCopyStatChanges(battlerAtk, battlerDef);
                     break;
                 case MOVE_EFFECT_BUG_BITE:   // And pluck
-                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_COLLECTOR)
                         break;
                     else if (ItemId_GetPocket(aiData->items[battlerDef]) == POCKET_BERRIES)
                         ADJUST_SCORE(3);
                     break;
                 case MOVE_EFFECT_INCINERATE:
-                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_STICKY_HOLD)
+                    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE || aiData->abilities[battlerDef] == ABILITY_COLLECTOR)
                         break;
                     else if (ItemId_GetPocket(aiData->items[battlerDef]) == POCKET_BERRIES || aiData->holdEffects[battlerDef] == HOLD_EFFECT_GEMS)
                         ADJUST_SCORE(3);
                     break;
                 case MOVE_EFFECT_SMACK_DOWN:
-                    if (!IsBattlerGrounded(battlerDef) && HasDamagingMoveOfType(battlerAtk, TYPE_GROUND))
+                    if (!IsBattlerGrounded(battlerDef) && HasDamagingMoveOfType(battlerAtk, TYPE_EARTH))
                         ADJUST_SCORE(1);
                     break;
                 case MOVE_EFFECT_KNOCK_OFF:
@@ -4669,7 +4669,7 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                         && CanBattlerGetOrLoseItem(battlerDef, aiData->items[battlerDef])
                         && CanBattlerGetOrLoseItem(battlerAtk, aiData->items[battlerDef])
                         && !HasMoveEffect(battlerAtk, EFFECT_ACROBATICS)
-                        && aiData->abilities[battlerDef] != ABILITY_STICKY_HOLD)
+                        && aiData->abilities[battlerDef] != ABILITY_COLLECTOR)
                         {
                             switch (aiData->holdEffects[battlerDef])
                             {
@@ -4689,7 +4689,7 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                                     ADJUST_SCORE(2);
                                 break;
                             case HOLD_EFFECT_BLACK_SLUDGE:
-                                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+                                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_MIASMA))
                                     ADJUST_SCORE(2);
                                 break;
                             case HOLD_EFFECT_IRON_BALL:

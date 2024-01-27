@@ -4168,7 +4168,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .baseSpDefense = 95,                                    \
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,\
         .sourceGame = SOURCE_LLS,                          \
-        .cryId = CRY_ZYGARDE_50,                                \
+        .cryId = CRY_PORYGON,                                \
         .height = 50,                                           \
         .weight = 3050,                                         \
         .description = gZygarde50PokedexText,                   \

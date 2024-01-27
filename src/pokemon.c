@@ -4639,9 +4639,8 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 
 static const u16 sUniversalMoves[] =
 {
-    MOVE_BIDE,
     MOVE_FRUSTRATION,
-    MOVE_HIDDEN_POWER,
+    MOVE_MULTI_PULSE,
     MOVE_MIMIC,
     MOVE_NATURAL_GIFT,
     MOVE_RAGE,
@@ -4701,7 +4700,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
                 {
                     if (move == MOVE_TERA_BLAST && GET_BASE_SPECIES_ID(species) == SPECIES_TERAPAGOS)
                         return FALSE;
-                    if (GET_BASE_SPECIES_ID(species) == SPECIES_PYUKUMUKU && (move == MOVE_HIDDEN_POWER || move == MOVE_RETURN || move == MOVE_FRUSTRATION))
+                    if (GET_BASE_SPECIES_ID(species) == SPECIES_PYUKUMUKU && (move == MOVE_MULTI_PULSE || move == MOVE_RETURN || move == MOVE_FRUSTRATION))
                         return FALSE;
                     return TRUE;
                 }

@@ -4978,7 +4978,7 @@ static const u16 sSlowkingGalarianTeachableLearnset[] = {
 
 #if P_FAMILY_MAGNEMITE
 static const u16 sYoumuTeachableLearnset[] = {
-    MOVE_HIDDEN_POWER,
+    MOVE_MULTI_PULSE,
     MOVE_DETECT,
     MOVE_RETURN,
     MOVE_SHADOW_BALL,
@@ -5001,7 +5001,7 @@ static const u16 sYoumuTeachableLearnset[] = {
 };
 
 static const u16 sDYoumuTeachableLearnset[] = {
-    MOVE_HIDDEN_POWER,
+    MOVE_MULTI_PULSE,
     MOVE_DETECT,
     MOVE_RETURN,
     MOVE_SHADOW_BALL,
