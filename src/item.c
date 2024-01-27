@@ -872,7 +872,7 @@ static u16 SanitizeItemId(u16 itemId)
 
 const u8 *ItemId_GetName(u16 itemId)
 {
-    return gItems[SanitizeItemId(itemId)].name;
+    return gItemsInfo[SanitizeItemId(itemId)].name;
 }
 
 u32 ItemId_GetPrice(u16 itemId)
