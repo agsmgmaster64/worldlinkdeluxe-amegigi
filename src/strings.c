@@ -2,7 +2,6 @@
 #include "strings.h"
 #include "battle_pyramid_bag.h"
 #include "item_menu.h"
-#include "text.h"
 
 ALIGNED(4)
 const u8 gText_ExpandedPlaceholder_Empty[] = _("");
@@ -156,7 +155,7 @@ const u8 gText_LeagueChamp[] = _("LEAGUE CHAMPION!\nCONGRATULATIONS!");
 const u8 gText_Number[] = _("No. ");
 const u8 gText_Level[] = _("Lv. ");
 const u8 gText_Name[] = _("Name");
-const u8 gText_IDNumber[] = _C("IDNo.");
+const u8 gText_IDNumber[] = _("IDNo.");
 const u8 gText_BirchInTrouble[] = _("Prof. Birch is in trouble!\nRelease a Puppet and rescue him!");
 const u8 gText_ConfirmStarterChoice[] = _("Do you choose this Puppet?");
 const u8 gText_FlyToWhere[] = _("Fly to where?");
@@ -488,13 +487,13 @@ const u8 gText_SpAtk4[] = _("Sp. Atk");
 const u8 gText_SpDef4[] = _("Sp. Def");
 const u8 gText_Speed2[] = _("Speed");
 const u8 gText_HP4[] = _("HP");
-const u8 gText_OTSlash[] = _C("OT/");
+const u8 gText_OTSlash[] = _("OT/");
 const u8 gText_RentalPkmn[] = _("Rental Puppet");
 const u8 gText_TypeSlash[] = _("Type/");
 const u8 gText_Power[] = _("Power");
 const u8 gText_Accuracy2[] = _("Accuracy");
 const u8 gText_Accuracy3[] = _("Acc.");
-const u8 gText_PPDex[] = _C("PP");
+const u8 gText_PPDex[] = _("PP");
 const u8 gText_Appeal[] = _("Appeal");
 const u8 gText_Jam[] = _("Jam");
 const u8 gText_Status[] = _("Status");
@@ -1059,15 +1058,9 @@ const u8 gText_GamePlayCannotBeContinued[] = _("{COLOR RED}“Game play cannot b
 const u8 gText_CheckCompleted[] = _("Check completed.\nAttempting to save again.\nPlease wait.");
 const u8 gText_SaveCompleteGameCannotContinue[] = _("Save completed.\n{COLOR RED}“Game play cannot be continued.\nReturning to the title screen.”");
 const u8 gText_SaveCompletePressA[] = _("Save completed.\n{COLOR RED}“Please press the A Button.”");
-#if (DECAP_ENABLED) && !(DECAP_MAP_NAMES)
-const u8 gText_Ferry[] = _C("FERRY");
-const u8 gText_SecretBase[] = _C("SECRET BASE");
-const u8 gText_Hideout[] = _C("HIDEOUT");
-#else
 const u8 gText_Ferry[] = _("FERRY");
 const u8 gText_SecretBase[] = _("SECRET BASE");
 const u8 gText_Hideout[] = _("HIDEOUT");
-#endif
 const u8 gText_ResetRTCConfirmCancel[] = _("Reset RTC?\nA: Confirm, B: Cancel");
 const u8 gText_PresentTime[] = _("Present time in game");
 const u8 gText_PreviousTime[] = _("Previous time in game");
@@ -1165,7 +1158,7 @@ const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} survived the poisoning.\nTh
 #endif
 const u8 gText_Marco[] = _("MARCO");
 const u8 gText_TrainerCardName[] = _("NAME: ");
-const u8 gText_TrainerCardIDNo[] = _C("IDNo.");
+const u8 gText_TrainerCardIDNo[] = _("IDNo.");
 const u8 gText_TrainerCardMoney[] = _("MONEY");
 const u8 gText_PokeDollar[] = _("¥"); // Unused
 const u8 gText_TrainerCardPokedex[] = _("TohoDex");
