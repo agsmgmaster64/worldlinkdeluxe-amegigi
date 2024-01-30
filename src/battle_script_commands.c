@@ -5962,7 +5962,7 @@ static void Cmd_moveend(void)
 
                     if (gBattleMons[gBattlerAttacker].hp
                     && gBattleMons[gBattlerTarget].hp
-                    && (gBattleMoves[gChosenMove].effect == EFFECT_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
+                    && (gMovesInfo[gChosenMove].effect == EFFECT_SLEEP_TALK || !(gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP))
                     && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_FREEZE))
                     {
                         if (gSpecialStatuses[gBattlerAttacker].parentalBondState)
@@ -11471,7 +11471,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
     if (statValue <= -1) // Stat decrease.
     {
         if (gSideTimers[GetBattlerSide(battler)].mistTimer
-            && !certain && gBattleMoves[gCurrentMove].effect != EFFECT_CURSE
+            && !certain && gMovesInfo[gCurrentMove].effect != EFFECT_CURSE
             && !(battler == gBattlerTarget && GetBattlerAbility(gBattlerAttacker) == ABILITY_INFILTRATOR))
         {
             if (flags == STAT_CHANGE_ALLOW_PTR)
@@ -11490,7 +11490,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             }
             return STAT_CHANGE_DIDNT_WORK;
         }
-        else if (gBattleMoves[gCurrentMove].effect != EFFECT_CURSE
+        else if (gMovesInfo[gCurrentMove].effect != EFFECT_CURSE
                  && notProtectAffected != TRUE && JumpIfMoveAffectedByProtect(gCurrentMove))
         {
             gBattlescriptCurrInstr = BattleScript_ButItFailed;
@@ -11499,7 +11499,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if ((battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET
               || CanAbilityPreventStatLoss(battlerAbility, GetBattlerAbility(gBattlerAttacker) == ABILITY_INTIMIDATE)
               || CanAbilityPreventStatLoss(battlerAbility, GetBattlerAbility(gBattlerAttacker) == ABILITY_FASCINATE))
-              && (!affectsUser || mirrorArmored) && !certain && gBattleMoves[gCurrentMove].effect != EFFECT_CURSE)
+              && (!affectsUser || mirrorArmored) && !certain && gMovesInfo[gCurrentMove].effect != EFFECT_CURSE)
         {
             if (flags == STAT_CHANGE_ALLOW_PTR)
             {

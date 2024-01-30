@@ -3209,7 +3209,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                         gBattleMons[gBattlerAttacker].status1 -= toSub;
                     if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP)
                     {
-                        if (gBattleMoves[gChosenMove].effect != EFFECT_SNORE && gBattleMoves[gChosenMove].effect != EFFECT_SLEEP_TALK)
+                        if (gMovesInfo[gChosenMove].effect != EFFECT_SNORE && gMovesInfo[gChosenMove].effect != EFFECT_SLEEP_TALK)
                         {
                             gBattlescriptCurrInstr = BattleScript_MoveUsedIsAsleep;
                             gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
@@ -7953,7 +7953,7 @@ u8 IsMonDisobedient(void)
     // is not obedient
     if (gCurrentMove == MOVE_RAGE)
         gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
-    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gBattleMoves[gChosenMove].effect == EFFECT_SNORE || gBattleMoves[gChosenMove].effect == EFFECT_SLEEP_TALK))
+    if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gMovesInfo[gChosenMove].effect == EFFECT_SNORE || gMovesInfo[gChosenMove].effect == EFFECT_SLEEP_TALK))
     {
         gBattlescriptCurrInstr = BattleScript_IgnoresWhileAsleep;
         return 1;

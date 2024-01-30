@@ -5642,7 +5642,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     if (gMovesInfo[move].type == TYPE_ILLUSION
              && gMovesInfo[move].effect != EFFECT_HIDDEN_POWER
              && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
-             && gBattleMoves[move].effect != EFFECT_MULTI_PULSE
+             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
              && gMovesInfo[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
              && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
@@ -5659,7 +5659,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     else if (gMovesInfo[move].type != TYPE_ILLUSION
              && gMovesInfo[move].effect != EFFECT_HIDDEN_POWER
              && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
-             && gBattleMoves[move].effect != EFFECT_MULTI_PULSE
+             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
              && attackerAbility == ABILITY_NORMALIZE)
     {
         gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_SET;

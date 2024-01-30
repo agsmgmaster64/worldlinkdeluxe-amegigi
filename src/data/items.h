@@ -8695,7 +8695,7 @@ const struct Item gItemsInfo[] =
         .pluralName = _("Chilan Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_NORMAL,
+        .holdEffectParam = TYPE_ILLUSION,
         .description = COMPOUND_STRING(
             "A berry that\n"
             "weakens an\n"
