@@ -267,7 +267,7 @@ bool32 IsMoveBlockedByMaxGuard(u16 move)
 bool32 IsMoveBlockedByDynamax(u16 move)
 {
     // TODO: Certain moves are banned in raids.
-    switch (gBattleMoves[move].effect)
+    switch (gMovesInfo[move].effect)
     {
         case EFFECT_HEAT_CRASH:
         case EFFECT_LOW_KICK:
@@ -325,19 +325,19 @@ u16 GetMaxMove(u16 battlerId, u16 baseMove)
     {
         return MOVE_STRUGGLE;
     }
-    else if (gBattleMoves[baseMove].category == BATTLE_CATEGORY_STATUS)
+    else if (gMovesInfo[baseMove].category == DAMAGE_CATEGORY_STATUS)
     {
         move = MOVE_MAX_GUARD;
     }
     else if (gBattleStruct->dynamicMoveType)
     {
         move = GetTypeBasedMaxMove(battlerId, gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK);
-        gBattleStruct->dynamax.categories[battlerId] = gBattleMoves[baseMove].category;
+        gBattleStruct->dynamax.categories[battlerId] = gMovesInfo[baseMove].category;
     }
     else
     {
-        move = GetTypeBasedMaxMove(battlerId, gBattleMoves[baseMove].type);
-        gBattleStruct->dynamax.categories[battlerId] = gBattleMoves[baseMove].category;
+        move = GetTypeBasedMaxMove(battlerId, gMovesInfo[baseMove].type);
+        gBattleStruct->dynamax.categories[battlerId] = gMovesInfo[baseMove].category;
     }
 
     return move;
@@ -361,7 +361,7 @@ u8 GetMaxMovePower(u16 move)
 {
     u8 tier;
     // G-Max Drum Solo, G-Max Hydrosnipe, and G-Max Fireball always have 160 base power.
-    if (gBattleMoves[GetMaxMove(gBattlerAttacker, move)].argument == MAX_EFFECT_FIXED_POWER)
+    if (gMovesInfo[GetMaxMove(gBattlerAttacker, move)].argument == MAX_EFFECT_FIXED_POWER)
         return 160;
 
     // Exceptions to all other rules below:
@@ -374,8 +374,8 @@ u8 GetMaxMovePower(u16 move)
     }
 
     tier = GetMaxPowerTier(move);
-    if (gBattleMoves[move].type == TYPE_DREAM
-     || gBattleMoves[move].type == TYPE_MIASMA
+    if (gMovesInfo[move].type == TYPE_DREAM
+     || gMovesInfo[move].type == TYPE_MIASMA
      || move == MOVE_MULTI_ATTACK)
     {
         switch (tier)
@@ -410,9 +410,9 @@ u8 GetMaxMovePower(u16 move)
 
 static u8 GetMaxPowerTier(u16 move)
 {
-    if (gBattleMoves[move].strikeCount >= 2 && gBattleMoves[move].strikeCount <= 5)
+    if (gMovesInfo[move].strikeCount >= 2 && gMovesInfo[move].strikeCount <= 5)
     {
-        switch(gBattleMoves[move].power)
+        switch(gMovesInfo[move].power)
         {
             case 0 ... 25:  return MAX_POWER_TIER_2;
             case 26 ... 30: return MAX_POWER_TIER_3;
@@ -423,7 +423,7 @@ static u8 GetMaxPowerTier(u16 move)
         }
     }
 
-    switch (gBattleMoves[move].effect)
+    switch (gMovesInfo[move].effect)
     {
         case EFFECT_BIDE:
         case EFFECT_SUPER_FANG:
@@ -460,7 +460,7 @@ static u8 GetMaxPowerTier(u16 move)
         case EFFECT_LOW_KICK:
             return MAX_POWER_TIER_7;
         case EFFECT_MULTI_HIT:
-            switch(gBattleMoves[move].power)
+            switch(gMovesInfo[move].power)
             {
                 case 0 ... 15:    return MAX_POWER_TIER_1;
                 case 16 ... 18:   return MAX_POWER_TIER_2;
@@ -470,7 +470,7 @@ static u8 GetMaxPowerTier(u16 move)
             }
     }
 
-    switch (gBattleMoves[move].power)
+    switch (gMovesInfo[move].power)
     {
         case 0 ... 40:    return MAX_POWER_TIER_1;
         case 45 ... 50:   return MAX_POWER_TIER_2;
@@ -487,15 +487,6 @@ static u8 GetMaxPowerTier(u16 move)
 bool32 IsMaxMove(u16 move)
 {
     return move >= FIRST_MAX_MOVE && move <= LAST_MAX_MOVE;
-}
-
-// Returns the full name of a Max Move for the move usage text.
-const u8 *GetMaxMoveName(u16 move)
-{
-    if (IsMaxMove(move))
-        return gMaxMoveNames[move - FIRST_MAX_MOVE];
-    else
-        return gMaxMoveNames[0];   // Failsafe
 }
 
 // Assigns the multistring to use for the "Damage Non- Types" G-Max effect.
@@ -521,7 +512,7 @@ void ChooseDamageNonTypesString(u8 type)
 // Returns the status effect that should be applied by a G-Max Move.
 static u32 GetMaxMoveStatusEffect(u16 move)
 {
-    u8 maxEffect = gBattleMoves[move].argument;
+    u8 maxEffect = gMovesInfo[move].argument;
     switch (maxEffect)
     {
         // Status 1
@@ -588,7 +579,7 @@ void BS_SetMaxMoveEffect(void)
 {
     NATIVE_ARGS();
     u16 effect = 0;
-    u8 maxEffect = gBattleMoves[gCurrentMove].argument;
+    u8 maxEffect = gMovesInfo[gCurrentMove].argument;
 
     // Don't continue if the move didn't land.
     if (gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
@@ -607,7 +598,7 @@ void BS_SetMaxMoveEffect(void)
             if (!NoAliveMonsForEitherParty())
             {
                 // Max Effects are ordered by stat ID.
-                SET_STATCHANGER(gBattleMoves[gCurrentMove].argument, 1, FALSE);
+                SET_STATCHANGER(gMovesInfo[gCurrentMove].argument, 1, FALSE);
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_EffectRaiseStatAllies;
                 effect++;
@@ -635,7 +626,7 @@ void BS_SetMaxMoveEffect(void)
                         break;
                     default:
                         // Max Effects are ordered by stat ID.
-                        statId = gBattleMoves[gCurrentMove].argument - MAX_EFFECT_LOWER_ATTACK + 1;
+                        statId = gMovesInfo[gCurrentMove].argument - MAX_EFFECT_LOWER_ATTACK + 1;
                         break;
                 }
                 SET_STATCHANGER(statId, stage, TRUE);
@@ -684,7 +675,7 @@ void BS_SetMaxMoveEffect(void)
         case MAX_EFFECT_PSYCHIC_TERRAIN:
         {
             u32 statusFlag = 0;
-            switch (gBattleMoves[gCurrentMove].argument)
+            switch (gMovesInfo[gCurrentMove].argument)
             {
                 case MAX_EFFECT_MISTY_TERRAIN:
                     statusFlag = STATUS_FIELD_MISTY_TERRAIN;
@@ -727,9 +718,9 @@ void BS_SetMaxMoveEffect(void)
             {
                 gSideStatuses[side] |= SIDE_STATUS_DAMAGE_NON_TYPES;
                 gSideTimers[side].damageNonTypesTimer = 5; // damage is dealt for 4 turns, ends on 5th
-                gSideTimers[side].damageNonTypesType = gBattleMoves[gCurrentMove].type;
+                gSideTimers[side].damageNonTypesType = gMovesInfo[gCurrentMove].type;
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
-                ChooseDamageNonTypesString(gBattleMoves[gCurrentMove].type);
+                ChooseDamageNonTypesString(gMovesInfo[gCurrentMove].type);
                 gBattlescriptCurrInstr = BattleScript_DamageNonTypesStarts;
                 effect++;
             }
