@@ -701,18 +701,19 @@
 #define STRINGID_ITEMWASUSEDUP                        699
 #define STRINGID_ATTACKERLOSTITSTYPE                  700
 #define STRINGID_SHEDITSTAIL                          701
-#define STRINGID_POKEFLUTECATCHY                      702
-#define STRINGID_POKEFLUTE                            703
-#define STRINGID_MONHEARINGFLUTEAWOKE                 704
-#define STRINGID_PLAYERWHITEDOUT                      705
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            706
-#define STRINGID_STRINGISRESERVED                     707
-#define STRINGID_PKMNDROPPEDITEM                      708
-#define STRINGID_BAGISFULL                            709
-#define STRINGID_MONTOOSCAREDTOMOVE                   710
-#define STRINGID_GHOSTGETOUTGETOUT                    711
-#define STRINGID_SILPHSCOPEUNVEILED                   712
-#define STRINGID_GHOSTWASMAROWAK                      713
+#define STRINGID_SUPERSWEETAROMAWAFTS                 702
+#define STRINGID_POKEFLUTECATCHY                      703
+#define STRINGID_POKEFLUTE                            704
+#define STRINGID_MONHEARINGFLUTEAWOKE                 705
+#define STRINGID_PLAYERWHITEDOUT                      706
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            707
+#define STRINGID_STRINGISRESERVED                     708
+#define STRINGID_PKMNDROPPEDITEM                      709
+#define STRINGID_BAGISFULL                            710
+#define STRINGID_MONTOOSCAREDTOMOVE                   711
+#define STRINGID_GHOSTGETOUTGETOUT                    712
+#define STRINGID_SILPHSCOPEUNVEILED                   713
+#define STRINGID_GHOSTWASMAROWAK                      714
 
 #define BATTLESTRINGS_COUNT                           714
 
