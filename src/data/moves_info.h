@@ -1567,7 +1567,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Fires a peculiar ray that\n"
             "may confuse the foe."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 60,
         .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 20,
@@ -1577,7 +1577,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 10,
+            .chance = 30,
         }),
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -2341,12 +2341,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PSYSHOT] =
     {
-        .name = COMPOUND_STRING("Confusion"),
+        .name = COMPOUND_STRING("Psyshot"),
         .description = COMPOUND_STRING(
             "A psychic attack that may\n"
             "cause confusion."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 40,
         .type = TYPE_REASON,
         .accuracy = 100,
         .pp = 25,
@@ -5058,7 +5058,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {0}
     },
 
-    [MOVE_ROLLOUT] =
+    [MOVE_TREMORS] =
     {
         .name = COMPOUND_STRING("Rollout"),
         .description = COMPOUND_STRING(
@@ -8084,10 +8084,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Attacks with muddy water.\n"
             "May lower accuracy."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 90 : 95,
+        .power = 80,
         .type = TYPE_WATER,
-        .accuracy = 85,
-        .pp = 10,
+        .accuracy = 100,
+        .pp = 15,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -8095,7 +8095,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .skyBattleBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 30,
+            .chance = 20,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -8346,17 +8346,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Hurls mud at the foe and\n"
             "reduces Speed."),
         .effect = EFFECT_HIT,
-        .power = 55,
+        .power = 65,
         .type = TYPE_EARTH,
-        .accuracy = 95,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .sheerForceBoost = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
+            .chance = 20,
         }),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -10391,7 +10391,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_REASON,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,

@@ -783,21 +783,21 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_WAILMER_1] = {
         .species = SPECIES_WAILMER,
-        .moves = {MOVE_ROLLOUT, MOVE_CURSE, MOVE_GROWL, MOVE_WHIRLPOOL},
+        .moves = {MOVE_TREMORS, MOVE_CURSE, MOVE_GROWL, MOVE_WHIRLPOOL},
         .itemTableId = BATTLE_FRONTIER_ITEM_RAWST_BERRY,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_WAILMER_2] = {
         .species = SPECIES_WAILMER,
-        .moves = {MOVE_ROLLOUT, MOVE_GROWL, MOVE_WHIRLPOOL, MOVE_WATER_PULSE},
+        .moves = {MOVE_TREMORS, MOVE_GROWL, MOVE_WHIRLPOOL, MOVE_WATER_PULSE},
         .itemTableId = BATTLE_FRONTIER_ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST
     },
     [SLATEPORT_TENT_MON_MARILL_1] = {
         .species = SPECIES_MARILL,
-        .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
+        .moves = {MOVE_TREMORS, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
         .itemTableId = BATTLE_FRONTIER_ITEM_WHITE_HERB,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_IMPISH
@@ -916,7 +916,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_VOLTORB] = {
         .species = SPECIES_VOLTORB,
-        .moves = {MOVE_SPARK, MOVE_ROLLOUT, MOVE_BATTERY_CHARGE, MOVE_SCREECH},
+        .moves = {MOVE_SPARK, MOVE_TREMORS, MOVE_BATTERY_CHARGE, MOVE_SCREECH},
         .itemTableId = BATTLE_FRONTIER_ITEM_NONE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_MILD
@@ -1878,7 +1878,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_NUMEL_1] = {
         .species = SPECIES_NUMEL,
-        .moves = {MOVE_EMBER, MOVE_ROCK_SLIDE, MOVE_ROLLOUT, MOVE_GROWL},
+        .moves = {MOVE_EMBER, MOVE_ROCK_SLIDE, MOVE_TREMORS, MOVE_GROWL},
         .itemTableId = BATTLE_FRONTIER_ITEM_CHARCOAL,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
         .nature = NATURE_SASSY
@@ -2018,7 +2018,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_GRAVELER] = {
         .species = SPECIES_GRAVELER,
-        .moves = {MOVE_ROLLOUT, MOVE_ROCK_SMASH, MOVE_SANDSTORM, MOVE_BLOCK},
+        .moves = {MOVE_TREMORS, MOVE_ROCK_SMASH, MOVE_SANDSTORM, MOVE_BLOCK},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK,
         .nature = NATURE_IMPISH
@@ -2060,7 +2060,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_MARILL] = {
         .species = SPECIES_MARILL,
-        .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
+        .moves = {MOVE_TREMORS, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
         .itemTableId = BATTLE_FRONTIER_ITEM_RAWST_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_JOLLY
@@ -2088,7 +2088,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_WAILMER] = {
         .species = SPECIES_WAILMER,
-        .moves = {MOVE_WATER_PULSE, MOVE_ROLLOUT, MOVE_CURSE, MOVE_PROTECT},
+        .moves = {MOVE_WATER_PULSE, MOVE_TREMORS, MOVE_CURSE, MOVE_PROTECT},
         .itemTableId = BATTLE_FRONTIER_ITEM_WHITE_HERB,
         .evSpread = F_EV_SPREAD_HP,
         .nature = NATURE_RELAXED
@@ -2913,7 +2913,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_MARILL] = {
         .species = SPECIES_MARILL,
-        .moves = {MOVE_DEFENSE_CURL, MOVE_ROLLOUT, MOVE_BUBBLE_BEAM, MOVE_ATTRACT},
+        .moves = {MOVE_DEFENSE_CURL, MOVE_TREMORS, MOVE_BUBBLE_BEAM, MOVE_ATTRACT},
         .itemTableId = BATTLE_FRONTIER_ITEM_BUNNY_SUIT,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT

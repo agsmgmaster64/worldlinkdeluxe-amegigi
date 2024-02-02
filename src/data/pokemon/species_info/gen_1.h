@@ -1263,7 +1263,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Cleffa, 0),
         FOOTPRINT(Cleffa)
         LEARNSETS(Cleffa),
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_CLEFAIRY}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_CLEFAIRY
@@ -6637,7 +6636,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Lickitung, 0),
         FOOTPRINT(Lickitung)
         LEARNSETS(Lickitung),
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_ROLLOUT, SPECIES_LICKILICKY}),
+        .evolutions = EVOLUTION({EVO_MOVE, MOVE_TREMORS, SPECIES_LICKILICKY}),
     },
 
 #if P_GEN_4_CROSS_EVOS

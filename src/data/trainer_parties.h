@@ -817,7 +817,7 @@ static const struct TrainerMon sParty_Braxton[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 28,
     .species = SPECIES_WAILMER,
-    .moves = {MOVE_ROLLOUT, MOVE_WHIRLPOOL, MOVE_ASTONISH, MOVE_WATER_PULSE}
+    .moves = {MOVE_TREMORS, MOVE_WHIRLPOOL, MOVE_ASTONISH, MOVE_WATER_PULSE}
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -3258,7 +3258,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     .lvl = 20,
     .species = SPECIES_VOLTORB,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_SPARK, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
+    .moves = {MOVE_TREMORS, MOVE_SPARK, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
@@ -5770,7 +5770,7 @@ static const struct TrainerMon sParty_Becky[] = {
     {
     .lvl = 22,
     .species = SPECIES_MARILL,
-    .moves = {MOVE_ROLLOUT, MOVE_BUBBLE_BEAM, MOVE_TAIL_WHIP, MOVE_DEFENSE_CURL}
+    .moves = {MOVE_TREMORS, MOVE_BUBBLE_BEAM, MOVE_TAIL_WHIP, MOVE_DEFENSE_CURL}
     }
 };
 
@@ -8697,7 +8697,7 @@ static const struct TrainerMon sParty_TyraAndIvy[] = {
     {
     .lvl = 20,
     .species = SPECIES_GRAVELER,
-    .moves = {MOVE_DEFENSE_CURL, MOVE_ROLLOUT, MOVE_MUD_SPORT, MOVE_ROCK_THROW}
+    .moves = {MOVE_DEFENSE_CURL, MOVE_TREMORS, MOVE_MUD_SPORT, MOVE_ROCK_THROW}
     }
 };
 
@@ -9689,7 +9689,7 @@ static const struct TrainerMon sParty_Roxanne2[] = {
     .lvl = 32,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
+    .moves = {MOVE_PROTECT, MOVE_TREMORS, MOVE_MAGNITUDE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9727,7 +9727,7 @@ static const struct TrainerMon sParty_Roxanne3[] = {
     .lvl = 37,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_MAGNITUDE, MOVE_EXPLOSION}
+    .moves = {MOVE_PROTECT, MOVE_TREMORS, MOVE_MAGNITUDE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9765,7 +9765,7 @@ static const struct TrainerMon sParty_Roxanne4[] = {
     .lvl = 42,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_PROTECT, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
+    .moves = {MOVE_PROTECT, MOVE_TREMORS, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9803,7 +9803,7 @@ static const struct TrainerMon sParty_Roxanne5[] = {
     .lvl = 47,
     .species = SPECIES_GOLEM,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_PUNCH, MOVE_ROLLOUT, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
+    .moves = {MOVE_FOCUS_PUNCH, MOVE_TREMORS, MOVE_EARTHQUAKE, MOVE_EXPLOSION}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -9993,7 +9993,7 @@ static const struct TrainerMon sParty_Wattson2[] = {
     .lvl = 36,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
+    .moves = {MOVE_TREMORS, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10031,7 +10031,7 @@ static const struct TrainerMon sParty_Wattson3[] = {
     .lvl = 41,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
+    .moves = {MOVE_TREMORS, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10069,7 +10069,7 @@ static const struct TrainerMon sParty_Wattson4[] = {
     .lvl = 46,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
+    .moves = {MOVE_TREMORS, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -10114,7 +10114,7 @@ static const struct TrainerMon sParty_Wattson5[] = {
     .lvl = 53,
     .species = SPECIES_ELECTRODE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
+    .moves = {MOVE_TREMORS, MOVE_THUNDER, MOVE_EXPLOSION, MOVE_RAIN_DANCE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

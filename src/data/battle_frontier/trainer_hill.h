@@ -1623,7 +1623,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         {
                                             .species = SPECIES_WIGGLYTUFF,
                                             .heldItem = ITEM_BRIDAL_GOWN,
-                                            .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_SING, MOVE_DREAM_EATER},
+                                            .moves = {MOVE_TREMORS, MOVE_DEFENSE_CURL, MOVE_SING, MOVE_DREAM_EATER},
                                             .hpEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
