@@ -4020,6 +4020,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_FOREWARN:
         case ABILITY_FRISK:
         case ABILITY_IMPOSTER:
+        case ABILITY_SUPERSWEET_SYRUP:
             return effect;
         }
     }
@@ -9078,10 +9079,6 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     case ABILITY_DEFEATIST:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
-        break;
-    case ABILITY_FLASH_FIRE:
-        if (moveType == TYPE_FIRE && gBattleResources->flags->flags[battlerAtk] & RESOURCE_FLAG_FLASH_FIRE)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_INNER_POWER:
         if (moveType == TYPE_DREAM && gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 3))

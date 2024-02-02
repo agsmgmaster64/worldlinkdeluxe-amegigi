@@ -32,7 +32,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GUARD_ARMOR] =
     {
-        .name = _("Battle Armor"),
+        .name = _("Guard Armor"),
         .description = COMPOUND_STRING("Blocks critical hits."),
         .aiRating = 2,
         .breakable = TRUE,
@@ -212,7 +212,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_INFECTIOUS] =
     {
         .name = _("Infectious"),
-        .description = COMPOUND_STRING("Leaves spores on contact."),
+        .description = COMPOUND_STRING("Leaves status on contact."),
         .aiRating = 4,
     },
 
@@ -2205,7 +2205,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEAF_SPICE] =
     {
         .name = _("Leaf Spice"),
-        .description = COMPOUND_STRING("Strengthened by Fire."),
+        .description = COMPOUND_STRING("Special Nature moves burn."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -2221,7 +2221,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_COLD_HEART] =
     {
         .name = _("Cold Heart"),
-        .description = COMPOUND_STRING("Cannot be intimidated."),
+        .description = COMPOUND_STRING("Ups Ice moves in a pinch."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -2229,7 +2229,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_NATURE_FROST] =
     {
         .name = _("Nature Frost"),
-        .description = COMPOUND_STRING("Powers up Rock moves."),
+        .description = COMPOUND_STRING("Nature moves are part Ice."),
         .aiRating = 6,
     },
 
@@ -2359,14 +2359,14 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_UNWAVERING] =
     {
         .name = _("Unwavering"),
-        .description = COMPOUND_STRING("Summons sunlight in battle."),
+        .description = COMPOUND_STRING("Ups Sp. Atk if suffering."),
         .aiRating = 8,
     },
 
     [ABILITY_FASCINATE] =
     {
         .name = _("Fascinate"),
-        .description = COMPOUND_STRING("Field becomes Electric."),
+        .description = COMPOUND_STRING("Lowers the foe's Sp. Atk."),
         .aiRating = 8,
     },
 
@@ -2427,7 +2427,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLORA_ABSORB] =
     {
         .name = _("Flora Absorb"),
-        .description = COMPOUND_STRING("Eats ground to heal HP."),
+        .description = COMPOUND_STRING("Turns nature into HP."),
         .aiRating = 7,
         .breakable = TRUE,
     },
