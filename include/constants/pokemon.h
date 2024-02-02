@@ -308,8 +308,9 @@
 #define EVO_LEVEL_FAMILY_OF_THREE         45     // Pokémon reaches the specified level with a personality value with a modulus of 0
 #define EVO_LEVEL_FAMILY_OF_FOUR          46     // Pokémon reaches the specified level with a personality value with a modulus of 1-99
 #define EVO_ITEM_LEVEL                    47     // specified item is used on a Pokémon over the evo level in EVO_LEVEL
-
-#define EVOS_PER_MON 11
+#define EVO_LEVEL_MOVE_TWENTY_TIMES       48     // Pokémon levels up after having used a move for at least 20 times
+#define EVO_LEVEL_RECOIL_DAMAGE_MALE      49     // Pokémon levels up after having suffered specified amount of non-fainting recoil damage as a male
+#define EVO_LEVEL_RECOIL_DAMAGE_FEMALE    50     // Pokémon levels up after having suffered specified amount of non-fainting recoil damage as a female
 
 #if I_SHARDS_REQUIRE_LEVEL == TRUE
     #define EVO_SHARD EVO_ITEM_LEVEL
