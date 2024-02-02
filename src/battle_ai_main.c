@@ -793,7 +793,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
           && DoesBattlerIgnoreAbilityChecks(aiData->abilities[battlerAtk], move))
           || aiData->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
           || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
-          && move != MOVE_THOUSAND_ARROWS)
+          && gMovesInfo[move].ignoreTypeIfFlyingAndUngrounded)
         {
             RETURN_SCORE_MINUS(20);
         }

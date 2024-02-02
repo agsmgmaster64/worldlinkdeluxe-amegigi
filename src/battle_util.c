@@ -7833,7 +7833,7 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
         moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, move);
 
     // Special cases
-    if (move == MOVE_CURSE && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+    if (gMovesInfo[move].effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
         moveTarget = MOVE_TARGET_USER;
 
     switch (moveTarget)
@@ -9839,11 +9839,9 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
     if (recordAbilities && (illusionSpecies = GetIllusionMonSpecies(battlerDef)))
         TryNoticeIllusionInTypeEffectiveness(move, moveType, battlerAtk, battlerDef, modifier, illusionSpecies);
 
-    if (gMovesInfo[move].category == DAMAGE_CATEGORY_STATUS && move != MOVE_THUNDER_WAVE)
+    if (gMovesInfo[move].category == DAMAGE_CATEGORY_STATUS && gMovesInfo[move].effect != EFFECT_PARALYZE)
     {
         modifier = UQ_4_12(1.0);
-        if (B_GLARE_GHOST < GEN_4 && move == MOVE_GLARE && IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
-            modifier = UQ_4_12(0.0);
     }
     else if (moveType == TYPE_EARTH && !IsBattlerGrounded2(battlerDef, TRUE) && !(gMovesInfo[move].ignoreTypeIfFlyingAndUngrounded))
     {
@@ -9901,8 +9899,7 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
         if (gMovesInfo[move].effect == EFFECT_TWO_TYPED_MOVE)
             modifier = CalcTypeEffectivenessMultiplierInternal(move, gMovesInfo[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
         if (GetBattlerAbility(battlerAtk) == ABILITY_NATURE_FROST
-         && IS_MOVE_SPECIAL(move)
-         && moveType == TYPE_NATURE)
+         && IS_MOVE_SPECIAL(move) && moveType == TYPE_NATURE)
         {
             modifier = CalcTypeEffectivenessMultiplierInternal(move, TYPE_ICE, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
             if (recordAbilities)

@@ -1454,7 +1454,7 @@ static void Cmd_attackcanceler(void)
         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
     }
     else if (IsBattlerProtected(gBattlerTarget, gCurrentMove)
-     && (gCurrentMove != MOVE_CURSE || IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
+     && (gMovesInfo[gCurrentMove].effect != EFFECT_CURSE || IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
      && ((!gMovesInfo[gCurrentMove].twoTurnMove || (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)))
      && gMovesInfo[gCurrentMove].effect != EFFECT_SUCKER_PUNCH)
     {
