@@ -1258,6 +1258,219 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(DPatchouli),
     },
 
+    [SPECIES_NIDORINO] =
+    {
+        .baseHP        = 55,
+        .baseAttack    = 85,
+        .baseDefense   = 55,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 55,
+        .types = { TYPE_STEEL, TYPE_STEEL },
+        .catchRate = 60,
+        .expYield = 76,
+        .evYield_Attack = 1,
+        .itemRare = ITEM_MAID_UNIFORM,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE },
+        .abilities = { ABILITY_FOCUS, ABILITY_GUARD_ARMOR },
+        .sourceGame = SOURCE_EOSD,
+        .speciesName = _("CSakuya"),
+        .cryId = CRY_PORYGON,
+        .noFlip = TRUE,
+        .natDexNum = NATIONAL_DEX_NIDORINO,
+        .categoryName = _("Poison Pin"),
+        .height = 9,
+        .weight = 195,
+        .description = COMPOUND_STRING(
+            "Its horn is harder than a diamond.\n"
+            "If it senses a hostile presence, all the\n"
+            "barbs on its back bristle up at once, and it\n"
+            "challenges the foe with all its might."),
+        .pokemonScale = 408,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(Nidorino, 56, 48),
+        .frontPicYOffset = 8,
+        .frontAnimFrames = sAnims_Nidorino,
+        .frontAnimId = ANIM_V_STRETCH,
+        BACK_PIC(Nidorino, 64, 56),
+        .backPicYOffset = 8,
+        .backAnimId = BACK_ANIM_JOLT_RIGHT,
+        PALETTES(Nidorino),
+        ICON(Nidorino, 2),
+        FOOTPRINT(Nidorino)
+        LEARNSETS(Nidorino),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_NIDOKING}),
+    },
+
+    [SPECIES_NIDOKING] =
+    {
+        .baseHP        = 81,
+        .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 102 : 92,
+        .baseDefense   = 77,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 75,
+        .types = { TYPE_MIASMA, TYPE_EARTH },
+        .catchRate = 45,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 253,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 227,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 223,
+    #else
+        .expYield = 195,
+    #endif
+        .evYield_Attack = 3,
+        .genderRatio = MON_MALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD },
+        .abilities = { ABILITY_POISON_BODY, ABILITY_RIVALRY, ABILITY_SHEER_FORCE },
+        .sourceGame = SOURCE_PCB,
+        .speciesName = _("Nidoking"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_NIDOKING,
+        .categoryName = _("Drill"),
+        .height = 14,
+        .weight = 620,
+        .description = COMPOUND_STRING(
+            "A Nidoking's thick tail packs enormously\n"
+            "destructive power capable of toppling\n"
+            "a metal transmission tower. Once it goes\n"
+            "on a rampage, there is no stopping it."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(Nidoking, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_Nidoking,
+        .frontAnimId = ANIM_H_SHAKE,
+        .frontAnimDelay = 25,
+        BACK_PIC(Nidoking, 64, 64),
+        .backPicYOffset = 3,
+        .backAnimId = BACK_ANIM_V_SHAKE,
+        PALETTES(Nidoking),
+        ICON(Nidoking, 2),
+        FOOTPRINT(Nidoking)
+        LEARNSETS(Nidoking),
+    },
+
+    [SPECIES_CLEFAIRY] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 45,
+        .baseDefense   = 48,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 65,
+        .types = CLEFAIRY_FAMILY_TYPES,
+        .catchRate = 150,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 113 : 68,
+        .evYield_HP = 2,
+        .itemRare = ITEM_CHROME_HEART,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 10,
+        .friendship = 140,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_FRIEND_GUARD },
+        .sourceGame = SOURCE_MOF,
+        .noFlip = TRUE,
+        .speciesName = _("Clefairy"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_CLEFAIRY,
+        .categoryName = _("Fairy"),
+        .height = 6,
+        .weight = 75,
+        .description = COMPOUND_STRING(
+            "On every night of a full moon, they come\n"
+            "out to play. When dawn arrives, the tired\n"
+            "Clefairy go to sleep nestled up against\n"
+            "each other in deep and quiet mountains."),
+        .pokemonScale = 441,
+        .pokemonOffset = 20,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(Clefairy, 40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_Clefairy,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        BACK_PIC(Clefairy, 56, 40),
+        .backPicYOffset = 14,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        PALETTES(Clefairy),
+        ICON(Clefairy, 0),
+        FOOTPRINT(Clefairy)
+        LEARNSETS(Clefairy),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_CLEFABLE}),
+    },
+
+    [SPECIES_CLEFABLE] =
+    {
+        .baseHP        = 95,
+        .baseAttack    = 70,
+        .baseDefense   = 73,
+        .baseSpeed     = 60,
+        .baseSpAttack  = P_UPDATED_STATS >= GEN_6 ? 95 : 85,
+        .baseSpDefense = 90,
+        .types = CLEFAIRY_FAMILY_TYPES,
+        .catchRate = 25,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 242,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_7
+        .expYield = 217,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 213,
+    #else
+        .expYield = 129,
+    #endif
+        .evYield_HP = 3,
+        .itemRare = ITEM_CHROME_HEART,
+        .genderRatio = PERCENT_FEMALE(75),
+        .eggCycles = 10,
+        .friendship = 140,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE },
+        .sourceGame = SOURCE_MOF,
+        .noFlip = TRUE,
+        .speciesName = _("Clefable"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_CLEFABLE,
+        .categoryName = _("Fairy"),
+        .height = 13,
+        .weight = 400,
+        .description = COMPOUND_STRING(
+            "A Clefable uses its wings to skip lightly \n"
+            "as if it were flying. Its bouncy step\n"
+            "lets it even walk on water. On quiet,\n"
+            "moonlit nights, it strolls on lakes."),
+        .pokemonScale = 256,
+        .pokemonOffset = 5,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        FRONT_PIC(Clefable, 56, 56),
+        .frontPicYOffset = 6,
+        .frontAnimFrames = sAnims_Clefable,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        BACK_PIC(Clefable, 64, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+        PALETTES(Clefable),
+        ICON(Clefable, 0),
+        FOOTPRINT(Clefable)
+        LEARNSETS(Clefable),
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif
