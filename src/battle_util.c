@@ -3147,8 +3147,8 @@ void TryClearRageAndFuryCutter(void)
     s32 i;
     for (i = 0; i < gBattlersCount; i++)
     {
-        if ((gBattleMons[i].status2 & STATUS2_RAGE) && gChosenMoveByBattler[i] != MOVE_RAGE)
-            gBattleMons[i].status2 &= ~STATUS2_RAGE;
+        //if ((gBattleMons[i].status2 & STATUS2_RAGE) && gChosenMoveByBattler[i] != MOVE_RAGE)
+            //gBattleMons[i].status2 &= ~STATUS2_RAGE;
         if (gDisableStructs[i].furyCutterCounter != 0 && gChosenMoveByBattler[i] != MOVE_FURY_CUTTER)
             gDisableStructs[i].furyCutterCounter = 0;
     }
@@ -7957,8 +7957,8 @@ u8 IsMonDisobedient(void)
         return 0;
 
     // is not obedient
-    if (gCurrentMove == MOVE_RAGE)
-        gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
+    //if (gCurrentMove == MOVE_RAGE)
+        //gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_RAGE;
     if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP && (gMovesInfo[gChosenMove].effect == EFFECT_SNORE || gMovesInfo[gChosenMove].effect == EFFECT_SLEEP_TALK))
     {
         gBattlescriptCurrInstr = BattleScript_IgnoresWhileAsleep;

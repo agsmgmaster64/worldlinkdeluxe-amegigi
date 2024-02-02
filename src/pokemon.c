@@ -4639,7 +4639,6 @@ static const u16 sUniversalMoves[] =
     MOVE_MULTI_PULSE,
     MOVE_MIMIC,
     MOVE_NATURAL_GIFT,
-    MOVE_RAGE,
     MOVE_RETURN,
     MOVE_SECRET_POWER,
     MOVE_SUBSTITUTE,
