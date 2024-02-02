@@ -1555,7 +1555,7 @@ static const struct TrainerMon sParty_Olivia[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 39,
     .species = SPECIES_LOMBRE,
-    .moves = {MOVE_UPROAR, MOVE_FURY_SWIPES, MOVE_FAKE_OUT, MOVE_WATER_PULSE}
+    .moves = {MOVE_PERFORMANCE, MOVE_FURY_SWIPES, MOVE_FAKE_OUT, MOVE_WATER_PULSE}
     }
 };
 
@@ -2191,7 +2191,7 @@ static const struct TrainerMon sParty_Kirk[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
     .species = SPECIES_VOLTORB,
-    .moves = {MOVE_CHARGE, MOVE_SHOCK_WAVE, MOVE_SCREECH, MOVE_NONE}
+    .moves = {MOVE_BATTERY_CHARGE, MOVE_SHOCK_WAVE, MOVE_SCREECH, MOVE_NONE}
     }
 };
 
@@ -3372,7 +3372,7 @@ static const struct TrainerMon sParty_Winona1[] = {
     .lvl = 31,
     .species = SPECIES_SKARMORY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SAND_ATTACK, MOVE_FURY_ATTACK, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
+    .moves = {MOVE_SAND_ATTACK, MOVE_MAGIC_KNIFE, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -4227,7 +4227,7 @@ static const struct TrainerMon sParty_Wallace[] = {
     .lvl = 57,
     .species = SPECIES_WAILORD,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_SPOUT, MOVE_DOUBLE_EDGE, MOVE_BLIZZARD}
+    .moves = {MOVE_RAIN_DANCE, MOVE_AQUA_SHOWER, MOVE_DOUBLE_EDGE, MOVE_BLIZZARD}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -6001,13 +6001,13 @@ static const struct TrainerMon sParty_AmyAndLiv5[] = {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 33,
     .species = SPECIES_PLUSLE,
-    .moves = {MOVE_SPARK, MOVE_CHARGE, MOVE_FAKE_TEARS, MOVE_HELPING_HAND}
+    .moves = {MOVE_SPARK, MOVE_BATTERY_CHARGE, MOVE_FAKE_TEARS, MOVE_HELPING_HAND}
     },
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 33,
     .species = SPECIES_MINUN,
-    .moves = {MOVE_SPARK, MOVE_CHARGE, MOVE_CHARM, MOVE_HELPING_HAND}
+    .moves = {MOVE_SPARK, MOVE_BATTERY_CHARGE, MOVE_CHARM, MOVE_HELPING_HAND}
     }
 };
 
@@ -6016,13 +6016,13 @@ static const struct TrainerMon sParty_AmyAndLiv6[] = {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 36,
     .species = SPECIES_PLUSLE,
-    .moves = {MOVE_THUNDER, MOVE_CHARGE, MOVE_FAKE_TEARS, MOVE_HELPING_HAND}
+    .moves = {MOVE_THUNDER, MOVE_BATTERY_CHARGE, MOVE_FAKE_TEARS, MOVE_HELPING_HAND}
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 36,
     .species = SPECIES_MINUN,
-    .moves = {MOVE_THUNDER, MOVE_CHARGE, MOVE_CHARM, MOVE_HELPING_HAND}
+    .moves = {MOVE_THUNDER, MOVE_BATTERY_CHARGE, MOVE_CHARM, MOVE_HELPING_HAND}
     }
 };
 
@@ -8679,7 +8679,7 @@ static const struct TrainerMon sParty_KimAndIris[] = {
     {
     .lvl = 32,
     .species = SPECIES_SWABLU,
-    .moves = {MOVE_SING, MOVE_FURY_ATTACK, MOVE_SAFEGUARD, MOVE_AERIAL_ACE}
+    .moves = {MOVE_SING, MOVE_MAGIC_KNIFE, MOVE_SAFEGUARD, MOVE_AERIAL_ACE}
     },
     {
     .lvl = 35,

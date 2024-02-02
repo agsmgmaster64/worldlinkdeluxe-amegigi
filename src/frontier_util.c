@@ -237,7 +237,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = 16,
                 .nature = NATURE_QUIET,
                 .evs = {0, 0, 252, 0, 106, 152},
-                .moves = {MOVE_ICE_BEAM, MOVE_HORN_DRILL, MOVE_CONFUSE_RAY, MOVE_PROTECT},
+                .moves = {MOVE_ICE_BEAM, MOVE_SCULPTURE, MOVE_CONFUSE_RAY, MOVE_PROTECT},
             },
         },
         // Gold Symbol.

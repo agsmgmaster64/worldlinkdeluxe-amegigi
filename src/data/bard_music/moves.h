@@ -246,7 +246,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_HORN_ATTACK] = {
+    [MOVE_KNIFE_THROW] = {
         { .songLengthId = 24 },
         { .songLengthId = 42 },
         { .songLengthId =  0 },
@@ -254,7 +254,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_FURY_ATTACK] = {
+    [MOVE_MAGIC_KNIFE] = {
         { .songLengthId = 48 },
         { .songLengthId = 12 },
         { .songLengthId = 42 },
@@ -262,7 +262,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_HORN_DRILL] = {
+    [MOVE_SCULPTURE] = {
         { .songLengthId = 24 },
         { .songLengthId = 17 },
         { .songLengthId = 51 },
@@ -1030,7 +1030,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_CLAMP] = {
+    [MOVE_MANA_SHIELD] = {
         { .songLengthId =  0 },
         { .songLengthId = 51 },
         { .songLengthId = 51 },
@@ -1078,7 +1078,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_KINESIS] = {
+    [MOVE_LUNA_DIAL] = {
         { .songLengthId = 15 },
         { .songLengthId = 12 },
         { .songLengthId = 17 },
@@ -1526,7 +1526,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_OCTAZOOKA] = {
+    [MOVE_BLACK_RIPPLE] = {
         { .songLengthId = 27 },
         { .songLengthId = 44 },
         { .songLengthId = 40 },
@@ -1702,7 +1702,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_MEAN_LOOK] = {
+    [MOVE_CHARMING_LOOK] = {
         { .songLengthId = 12 },
         { .songLengthId = 36 },
         { .songLengthId = 51 },
@@ -2030,7 +2030,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_UPROAR] = {
+    [MOVE_PERFORMANCE] = {
         { .songLengthId = 44 },
         { .songLengthId = 26 },
         { .songLengthId = 51 },
@@ -2150,7 +2150,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_CHARGE] = {
+    [MOVE_BATTERY_CHARGE] = {
         { .songLengthId = 27 },
         { .songLengthId = 51 },
         { .songLengthId = 51 },
@@ -2590,7 +2590,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_WATER_SPOUT] = {
+    [MOVE_AQUA_SHOWER] = {
         { .songLengthId = 27 },
         { .songLengthId = 48 },
         { .songLengthId = 33 },
@@ -2774,7 +2774,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         { .songLengthId = 51 },
         NULL_BARD_SOUND,
     },
-    [MOVE_WATER_SPORT] = {
+    [MOVE_SPLASHING] = {
         { .songLengthId = 27 },
         { .songLengthId = 48 },
         { .songLengthId = 26 },

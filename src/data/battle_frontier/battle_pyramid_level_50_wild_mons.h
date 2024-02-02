@@ -92,7 +92,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round2[] =
         .species = SPECIES_CROBAT,
         .lvl = 41,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_BITE}
+        .moves = {MOVE_TOXIC, MOVE_CONFUSE_RAY, MOVE_CHARMING_LOOK, MOVE_BITE}
     },
     {
         .species = SPECIES_GENGAR,
@@ -144,7 +144,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round3[] =
         .species = SPECIES_DUSCLOPS,
         .lvl = 42,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_MEAN_LOOK, MOVE_SHADOW_PUNCH}
+        .moves = {MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY, MOVE_CHARMING_LOOK, MOVE_SHADOW_PUNCH}
     },
     {
         .species = SPECIES_HOUNDOOM,
@@ -732,7 +732,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round15[] =
         .species = SPECIES_OCTILLERY,
         .lvl = 42,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_OCTAZOOKA, MOVE_ICE_BEAM, MOVE_FIRE_BLAST, MOVE_NONE}
+        .moves = {MOVE_BLACK_RIPPLE, MOVE_ICE_BEAM, MOVE_FIRE_BLAST, MOVE_NONE}
     },
     {
         .species = SPECIES_DEWGONG,
@@ -802,13 +802,13 @@ static const struct PyramidWildMon sLevel50WildMons_Round16[] =
         .species = SPECIES_MISDREAVUS,
         .lvl = 46,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_PERISH_SONG, MOVE_SPITE, MOVE_MEAN_LOOK, MOVE_NONE}
+        .moves = {MOVE_PERISH_SONG, MOVE_SPITE, MOVE_CHARMING_LOOK, MOVE_NONE}
     },
     {
         .species = SPECIES_SABLEYE,
         .lvl = 48,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_SHADOW_BALL, MOVE_MEAN_LOOK, MOVE_DIG, MOVE_NIGHT_SHADE}
+        .moves = {MOVE_SHADOW_BALL, MOVE_CHARMING_LOOK, MOVE_DIG, MOVE_NIGHT_SHADE}
     },
     {
         .species = SPECIES_DUSCLOPS,

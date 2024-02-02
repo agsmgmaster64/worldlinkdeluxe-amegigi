@@ -2842,9 +2842,6 @@ void AnimTask_GetTrappedMoveAnimId(u8 taskId)
     case MOVE_WHIRLPOOL:
         gBattleAnimArgs[0] = TRAP_ANIM_WHIRLPOOL;
         break;
-    case MOVE_CLAMP:
-        gBattleAnimArgs[0] = TRAP_ANIM_CLAMP;
-        break;
     case MOVE_SAND_TOMB:
         gBattleAnimArgs[0] = TRAP_ANIM_SAND_TOMB;
         break;

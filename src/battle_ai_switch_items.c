@@ -448,7 +448,7 @@ static bool32 ShouldSwitchIfGameStatePrompt(u32 battler, bool32 emitResult)
             if (IsDoubleBattle())
             {
                 if (IsBattlerAlive(BATTLE_PARTNER(battler))
-                    && (GetAIChosenMove(BATTLE_PARTNER(battler)) == MOVE_UPROAR)
+                    && (GetAIChosenMove(BATTLE_PARTNER(battler)) == MOVE_PERFORMANCE)
                     )
                     switchMon = FALSE;
 

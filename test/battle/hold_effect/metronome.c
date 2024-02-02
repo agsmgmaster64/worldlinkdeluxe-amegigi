@@ -134,18 +134,18 @@ SINGLE_BATTLE_TEST("Metronome Item doesn't increase damage per hit of multi-hit 
 {
     s16 damage[3];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FURY_ATTACK].effect == EFFECT_MULTI_HIT);
+        ASSUME(gMovesInfo[MOVE_MAGIC_KNIFE].effect == EFFECT_MULTI_HIT);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_METRONOME); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_FURY_ATTACK); }
-        TURN { MOVE(player, MOVE_FURY_ATTACK); }
+        TURN { MOVE(player, MOVE_MAGIC_KNIFE); }
+        TURN { MOVE(player, MOVE_MAGIC_KNIFE); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_ATTACK, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_MAGIC_KNIFE, player);
         HP_BAR(opponent, captureDamage: &damage[0]);
         HP_BAR(opponent, captureDamage: &damage[1]);
         MESSAGE("Hit 5 time(s)!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_ATTACK, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_MAGIC_KNIFE, player);
         HP_BAR(opponent, captureDamage: &damage[2]);
     } THEN {
         EXPECT_MUL_EQ(damage[0], UQ_4_12(1.2), damage[2]); // Got bonus once for the second turn
