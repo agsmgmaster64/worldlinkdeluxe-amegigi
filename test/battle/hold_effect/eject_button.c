@@ -30,7 +30,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered when there is nothing to switc
 SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move")
 {
     GIVEN {
-        PLAYER(SPECIES_NIDOKING) { Ability(ABILITY_SHEER_FORCE); }
+        PLAYER(SPECIES_NORMAL_SAKUYA) { Ability(ABILITY_SHEER_FORCE); }
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

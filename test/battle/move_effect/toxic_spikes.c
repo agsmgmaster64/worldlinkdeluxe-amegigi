@@ -158,14 +158,14 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by grounded Poison-type Pokémon on
     u32 move = MOVE_CELEBRATE;
     bool32 grounded;
     PARAMETRIZE { species = SPECIES_DEFENSE_MEILING; grounded = TRUE; }
-    PARAMETRIZE { species = SPECIES_ZUBAT; grounded = FALSE; }
-    PARAMETRIZE { species = SPECIES_ZUBAT; item = ITEM_IRON_BALL; grounded = TRUE; }
-    PARAMETRIZE { species = SPECIES_ZUBAT; move = MOVE_GRAVITY; grounded = TRUE; }
-    PARAMETRIZE { species = SPECIES_ZUBAT; move = MOVE_INGRAIN; grounded = TRUE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; grounded = FALSE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; item = ITEM_IRON_BALL; grounded = TRUE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; move = MOVE_GRAVITY; grounded = TRUE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; move = MOVE_INGRAIN; grounded = TRUE; }
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MEILING].types[0] == TYPE_MIASMA);
-        ASSUME(gSpeciesInfo[SPECIES_ZUBAT].types[0] == TYPE_MIASMA);
-        ASSUME(gSpeciesInfo[SPECIES_ZUBAT].types[1] == TYPE_FLYING);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[0] == TYPE_MIASMA);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(species) { Item(item); }

@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Alluring Voice confuse effect is removed if it is Sheer Forc
 {
     GIVEN {
         ASSUME(MoveHasMoveEffect(MOVE_ALLURING_VOICE, MOVE_EFFECT_CONFUSION));
-        PLAYER(SPECIES_NIDOKING) { Ability(ABILITY_SHEER_FORCE); }
+        PLAYER(SPECIES_NORMAL_SAKUYA) { Ability(ABILITY_SHEER_FORCE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); MOVE(player, MOVE_ALLURING_VOICE); }

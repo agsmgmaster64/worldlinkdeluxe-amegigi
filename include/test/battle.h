@@ -88,9 +88,9 @@
  *   {
  *       GIVEN {
  *           ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
- *           ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_NATURE);
- *           PLAYER(SPECIES_ODDISH); // 1.
- *           OPPONENT(SPECIES_ODDISH); // 2.
+ *           ASSUME(gSpeciesInfo[SPECIES_ATTACK_FLANDRE].types[0] == TYPE_NATURE);
+ *           PLAYER(SPECIES_ATTACK_FLANDRE); // 1.
+ *           OPPONENT(SPECIES_ATTACK_FLANDRE); // 2.
  *       } WHEN {
  *           TURN { MOVE(player, MOVE_STUN_SPORE); } // 3.
  *       } SCENE {

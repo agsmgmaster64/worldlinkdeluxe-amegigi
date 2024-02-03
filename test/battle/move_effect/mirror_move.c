@@ -42,9 +42,9 @@ SINGLE_BATTLE_TEST("Mirror Move's called powder move fails against Grass Types")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
-        ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_GRASS);
+        ASSUME(gSpeciesInfo[SPECIES_ATTACK_FLANDRE].types[0] == TYPE_GRASS);
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].effect == EFFECT_PARALYZE);
-        PLAYER(SPECIES_ODDISH);
+        PLAYER(SPECIES_ATTACK_FLANDRE);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); MOVE(opponent, MOVE_MIRROR_MOVE); }

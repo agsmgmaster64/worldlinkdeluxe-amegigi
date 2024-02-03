@@ -44,8 +44,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CReimu)
         LEARNSETS(CReimu),
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_REIMU},
-                                {EVO_SHARD, ITEM_POWER_HEART, SPECIES_ATTACK_REIMU},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_REIMU}),
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_REIMU},
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_REIMU}),
     },
 
     [SPECIES_NORMAL_REIMU] =
@@ -199,9 +199,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CMarisa)
         LEARNSETS(CMarisa),
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MARISA},
-                                //{EVO_SHARD, ITEM_JUST_HEART, SPECIES_ADVENT_MARISA},
-                                {EVO_SHARD, ITEM_POWER_HEART, SPECIES_ATTACK_MARISA},
-                                {EVO_SHARD, ITEM_SWIFT_HEART, SPECIES_SPEED_MARISA}),
+                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MARISA},
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MARISA},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MARISA}),
     },
 
     [SPECIES_NORMAL_MARISA] =
@@ -355,8 +355,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CDaiyousei)
         LEARNSETS(CDaiyousei),
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_DAIYOUSEI},
-                                {EVO_SHARD, ITEM_POWER_HEART, SPECIES_ATTACK_DAIYOUSEI},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_DAIYOUSEI}),
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_DAIYOUSEI},
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_DAIYOUSEI}),
     },
 
     [SPECIES_NORMAL_DAIYOUSEI] =
@@ -510,9 +510,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CCirno)
         LEARNSETS(CCirno),
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_CIRNO},
-                                //{EVO_SHARD, ITEM_JUST_HEART, SPECIES_ADVENT_CIRNO},
-                                {EVO_SHARD, ITEM_SWIFT_HEART, SPECIES_SPEED_CIRNO},
-                                {EVO_SHARD, ITEM_TECH_HEART, SPECIES_TECH_CIRNO}),
+                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_CIRNO},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_CIRNO},
+                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_CIRNO}),
     },
 
     [SPECIES_NORMAL_CIRNO] =
@@ -671,8 +671,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CRumia)
         LEARNSETS(CRumia),
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_RUMIA},
-                                {EVO_SHARD, ITEM_POWER_HEART, SPECIES_ATTACK_RUMIA},
-                                {EVO_SHARD, ITEM_SWIFT_HEART, SPECIES_SPEED_RUMIA}),
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_RUMIA},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_RUMIA}),
     },
 
     [SPECIES_NORMAL_RUMIA] =
@@ -812,8 +812,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("CMeiling"),
         .natDexNum = NATIONAL_DEX_CHIBI_MEILING,
         .categoryName = _("Tiny Bird"),
-        .height = 3,
-        .weight = 20,
+        .height = 5,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Its loud cry can be heard over half a mile\n"
             "away. If its high, keening cry is heard\n"
@@ -830,9 +830,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CMeiling)
         LEARNSETS(CMeiling),
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_MEILING},
-                                //{EVO_SHARD, ITEM_JUST_HEART, SPECIES_ADVENT_MEILING},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_MEILING},
-                                {EVO_SHARD, ITEM_SWIFT_HEART, SPECIES_SPEED_MEILING}),
+                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MEILING},
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MEILING},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MEILING}),
     },
 
     [SPECIES_NORMAL_MEILING] =
@@ -854,8 +854,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("Meiling"),
         .natDexNum = NATIONAL_DEX_NORMAL_MEILING,
         .categoryName = _("Beak"),
-        .height = 12,
-        .weight = 380,
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Its long neck and elongated beak are\n"
             "ideal for catching prey in soil or water.\n"
@@ -891,8 +891,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("DMeiling"),
         .natDexNum = NATIONAL_DEX_DEFENSE_MEILING,
         .categoryName = _("Snake"),
-        .height = 20,
-        .weight = 69,
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "An Ekans curls itself up in a spiral while\n"
             "it rests. This position allows it to quickly\n"
@@ -929,8 +929,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("SMeiling"),
         .natDexNum = NATIONAL_DEX_SPEED_MEILING,
         .categoryName = _("Cobra"),
-        .height = 35,
-        .weight = 650,
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "This Pokémon has a terrifically strong\n"
             "constricting power. It can even flatten\n"
@@ -971,8 +971,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("CKoakuma"),
         .natDexNum = NATIONAL_DEX_CHIBI_KOAKUMA,
         .categoryName = _("Mouse"),
-        .height = 4,
-        .weight = 60,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "This Pokémon has a terrifically strong\n"
             "constricting power. It can even flatten\n"
@@ -989,7 +989,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CKoakuma)
         LEARNSETS(CKoakuma),
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_KOAKUMA},
-                                {EVO_SHARD, ITEM_HELPER_HEART, SPECIES_HELPER_KOAKUMA}),
+                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_KOAKUMA}),
     },
 
     [SPECIES_NORMAL_KOAKUMA] =
@@ -1011,8 +1011,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("Koakuma"),
         .natDexNum = NATIONAL_DEX_NORMAL_KOAKUMA,
         .categoryName = _("Mouse"),
-        .height = 8,
-        .weight = 300,
+        .height = 6,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "If it stores too much electricity, its\n"
             "behavior turns aggressive. To avoid this,\n"
@@ -1049,7 +1049,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .natDexNum = NATIONAL_DEX_HELPER_KOAKUMA,
         .categoryName = _("Mouse"),
         .height = 6,
-        .weight = 120,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "When it curls up in a ball, it can make any\n"
             "attack bounce off harmlessly. Its hide has\n"
@@ -1084,8 +1084,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("PKoakuma"),
         .natDexNum = NATIONAL_DEX_PLCEHOLDER1_KOAKUMA,
         .categoryName = _("Mouse"), 
-        .height = 10,
-        .weight = 295,
+        .height = 6,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It curls up in a ball to protect itself from\n"
             "enemy attacks. It also curls up to prevent\n"
@@ -1127,7 +1127,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .natDexNum = NATIONAL_DEX_CHIBI_PATCHOULI,
         .categoryName = _("Poison Pin"),
         .height = 4,
-        .weight = 70,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its highly toxic barbs are thought to have\n"
             "developed as protection for this small-\n"
@@ -1144,8 +1144,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(CPatchouli)
         LEARNSETS(CPatchouli),
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_PATCHOULI},
-                                {EVO_SHARD, ITEM_POWER_HEART, SPECIES_ATTACK_PATCHOULI},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_PATCHOULI}),
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_PATCHOULI},
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_PATCHOULI}),
     },
 
     [SPECIES_NORMAL_PATCHOULI] =
@@ -1166,8 +1166,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("Patchouli"),
         .natDexNum = NATIONAL_DEX_NORMAL_PATCHOULI,
         .categoryName = _("Poison Pin"),
-        .height = 8,
-        .weight = 200,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "When it is with its friends or\n"
             "family, its barbs are tucked away to\n"
@@ -1202,8 +1202,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("APatchouli"),
         .natDexNum = NATIONAL_DEX_ATTACK_PATCHOULI,
         .categoryName = _("Drill"),
-        .height = 13,
-        .weight = 600,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It is adept at sending foes flying with\n"
             "harsh tackles using its tough, scaly body.\n"
@@ -1239,8 +1239,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .speciesName = _("DPatchouli"),
         .natDexNum = NATIONAL_DEX_DEFENSE_PATCHOULI,
         .categoryName = _("Poison Pin"),
-        .height = 5,
-        .weight = 90,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "The male Nidoran has developed muscles\n"
             "that freely move its ears in any direction.\n"
@@ -1258,8 +1258,14 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(DPatchouli),
     },
 
-    [SPECIES_NIDORINO] =
+#define SAKUYA_MISC_INFO                                             \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD),           \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE }, \
+        .cryId = CRY_PORYGON
+
+    [SPECIES_CHIBI_SAKUYA] =
     {
+        SAKUYA_MISC_INFO,
         .baseHP        = 55,
         .baseAttack    = 85,
         .baseDefense   = 55,
@@ -1271,204 +1277,447 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .expYield = 76,
         .evYield_Attack = 1,
         .itemRare = ITEM_MAID_UNIFORM,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE },
         .abilities = { ABILITY_FOCUS, ABILITY_GUARD_ARMOR },
-        .sourceGame = SOURCE_EOSD,
         .speciesName = _("CSakuya"),
-        .cryId = CRY_PORYGON,
-        .noFlip = TRUE,
-        .natDexNum = NATIONAL_DEX_NIDORINO,
+        .natDexNum = NATIONAL_DEX_CHIBI_SAKUYA,
         .categoryName = _("Poison Pin"),
-        .height = 9,
-        .weight = 195,
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its horn is harder than a diamond.\n"
             "If it senses a hostile presence, all the\n"
             "barbs on its back bristle up at once, and it\n"
             "challenges the foe with all its might."),
-        .pokemonScale = 408,
-        .pokemonOffset = 15,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Nidorino, 56, 48),
-        .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_Nidorino,
-        .frontAnimId = ANIM_V_STRETCH,
-        BACK_PIC(Nidorino, 64, 56),
-        .backPicYOffset = 8,
-        .backAnimId = BACK_ANIM_JOLT_RIGHT,
-        PALETTES(Nidorino),
-        ICON(Nidorino, 2),
-        FOOTPRINT(Nidorino)
-        LEARNSETS(Nidorino),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_NIDOKING}),
+        CHIBI_DEX_SCALE,
+        FRONT_PIC(CSakuya, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_CSakuya,
+        BACK_PIC(CSakuya, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(CSakuya),
+        ICON(CSakuya, 1),
+        FOOTPRINT(CSakuya)
+        LEARNSETS(CSakuya),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_SAKUYA},
+                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SAKUYA},
+                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_SAKUYA}),
     },
 
-    [SPECIES_NIDOKING] =
+    [SPECIES_NORMAL_SAKUYA] =
     {
-        .baseHP        = 81,
-        .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 102 : 92,
-        .baseDefense   = 77,
-        .baseSpeed     = 85,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 75,
-        .types = { TYPE_MIASMA, TYPE_EARTH },
-        .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
-        .expYield = 253,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 227,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 223,
-    #else
-        .expYield = 195,
-    #endif
-        .evYield_Attack = 3,
-        .genderRatio = MON_MALE,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_FIELD },
-        .abilities = { ABILITY_POISON_BODY, ABILITY_RIVALRY, ABILITY_SHEER_FORCE },
-        .sourceGame = SOURCE_PCB,
-        .speciesName = _("Nidoking"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_NIDOKING,
+        SAKUYA_MISC_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 110,
+        .baseDefense   = 80,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 80,
+        .types = { TYPE_STEEL, TYPE_REASON },
+        .catchRate = 30,
+        .expYield = 212,
+        .evYield_Attack = 2,
+        .evYield_Speed = 1,
+        .itemRare = ITEM_MAID_UNIFORM,
+        .abilities = { ABILITY_FOCUS, ABILITY_GUARD_ARMOR },
+        .speciesName = _("Sakuya"),
+        .natDexNum = NATIONAL_DEX_NORMAL_SAKUYA,
         .categoryName = _("Drill"),
-        .height = 14,
-        .weight = 620,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Nidoking's thick tail packs enormously\n"
             "destructive power capable of toppling\n"
             "a metal transmission tower. Once it goes\n"
             "on a rampage, there is no stopping it."),
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Nidoking, 64, 64),
-        .frontPicYOffset = 2,
-        .frontAnimFrames = sAnims_Nidoking,
-        .frontAnimId = ANIM_H_SHAKE,
-        .frontAnimDelay = 25,
-        BACK_PIC(Nidoking, 64, 64),
-        .backPicYOffset = 3,
-        .backAnimId = BACK_ANIM_V_SHAKE,
-        PALETTES(Nidoking),
-        ICON(Nidoking, 2),
-        FOOTPRINT(Nidoking)
-        LEARNSETS(Nidoking),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(Sakuya, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Sakuya,
+        .enemyMonElevation = 4,
+        BACK_PIC(Sakuya, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(Sakuya),
+        ICON(Sakuya, 1),
+        FOOTPRINT(Sakuya)
+        LEARNSETS(Sakuya),
     },
 
-    [SPECIES_CLEFAIRY] =
+    [SPECIES_TECH_SAKUYA] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 45,
-        .baseDefense   = 48,
-        .baseSpeed     = 35,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 65,
-        .types = CLEFAIRY_FAMILY_TYPES,
-        .catchRate = 150,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 113 : 68,
-        .evYield_HP = 2,
-        .itemRare = ITEM_CHROME_HEART,
-        .genderRatio = PERCENT_FEMALE(75),
-        .eggCycles = 10,
-        .friendship = 140,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
-        .abilities = { ABILITY_LEAF_SPICE, ABILITY_NATURE_FROST, ABILITY_FRIEND_GUARD },
-        .sourceGame = SOURCE_MOF,
-        .noFlip = TRUE,
-        .speciesName = _("Clefairy"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CLEFAIRY,
+        SAKUYA_MISC_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 90,
+        .baseDefense   = 90,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 90,
+        .types = { TYPE_STEEL, TYPE_REASON },
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_SpAttack = 3,
+        .abilities = { ABILITY_FOCUS, ABILITY_GUARD_ARMOR },
+        .speciesName = _("TSakuya"),
+        .natDexNum = NATIONAL_DEX_TECH_SAKUYA,
         .categoryName = _("Fairy"),
         .height = 6,
-        .weight = 75,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "On every night of a full moon, they come\n"
             "out to play. When dawn arrives, the tired\n"
             "Clefairy go to sleep nestled up against\n"
             "each other in deep and quiet mountains."),
-        .pokemonScale = 441,
-        .pokemonOffset = 20,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Clefairy, 40, 40),
-        .frontPicYOffset = 12,
-        .frontAnimFrames = sAnims_Clefairy,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        BACK_PIC(Clefairy, 56, 40),
-        .backPicYOffset = 14,
-        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        PALETTES(Clefairy),
-        ICON(Clefairy, 0),
-        FOOTPRINT(Clefairy)
-        LEARNSETS(Clefairy),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_CLEFABLE}),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(TSakuya, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_TSakuya,
+        BACK_PIC(TSakuya, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(TSakuya),
+        ICON(TSakuya, 1),
+        FOOTPRINT(TSakuya)
+        LEARNSETS(TSakuya),
     },
 
-    [SPECIES_CLEFABLE] =
+    [SPECIES_HELPER_SAKUYA] =
     {
-        .baseHP        = 95,
-        .baseAttack    = 70,
-        .baseDefense   = 73,
-        .baseSpeed     = 60,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_6 ? 95 : 85,
-        .baseSpDefense = 90,
-        .types = CLEFAIRY_FAMILY_TYPES,
-        .catchRate = 25,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
-        .expYield = 242,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 217,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 213,
-    #else
-        .expYield = 129,
-    #endif
-        .evYield_HP = 3,
-        .itemRare = ITEM_CHROME_HEART,
-        .genderRatio = PERCENT_FEMALE(75),
-        .eggCycles = 10,
-        .friendship = 140,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE },
-        .sourceGame = SOURCE_MOF,
-        .noFlip = TRUE,
-        .speciesName = _("Clefable"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CLEFABLE,
+        SAKUYA_MISC_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 75,
+        .baseDefense   = 110,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 110,
+        .types = { TYPE_STEEL, TYPE_REASON },
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Defense = 3,
+        .abilities = { ABILITY_FOCUS, ABILITY_GUARD_ARMOR },
+        .speciesName = _("HSakuya"),
+        .natDexNum = NATIONAL_DEX_HELPER_SAKUYA,
         .categoryName = _("Fairy"),
-        .height = 13,
-        .weight = 400,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Clefable uses its wings to skip lightly \n"
             "as if it were flying. Its bouncy step\n"
             "lets it even walk on water. On quiet,\n"
             "moonlit nights, it strolls on lakes."),
-        .pokemonScale = 256,
-        .pokemonOffset = 5,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Clefable, 56, 56),
-        .frontPicYOffset = 6,
-        .frontAnimFrames = sAnims_Clefable,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        BACK_PIC(Clefable, 64, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        PALETTES(Clefable),
-        ICON(Clefable, 0),
-        FOOTPRINT(Clefable)
-        LEARNSETS(Clefable),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(HSakuya, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_HSakuya,
+        BACK_PIC(HSakuya, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(HSakuya),
+        ICON(HSakuya, 1),
+        FOOTPRINT(HSakuya)
+        LEARNSETS(HSakuya),
+    },
+
+#define REMILIA_MISC_INFO                                            \
+        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),                  \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING },     \
+        .cryId = CRY_PORYGON
+
+    [SPECIES_CHIBI_REMILIA] =
+    {
+        REMILIA_MISC_INFO,
+        .baseHP        = 50,
+        .baseAttack    = 85,
+        .baseDefense   = 50,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 85,
+        .baseSpDefense = 50,
+        .types = { TYPE_DARK, TYPE_DARK },
+        .catchRate = 60,
+        .expYield = 80,
+        .evYield_Attack = 2,
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_PRESSURE },
+        .speciesName = _("CRemilia"),
+        .natDexNum = NATIONAL_DEX_CHIBI_REMILIA,
+        .categoryName = _("Fox"),
+        .height = 3,
+        .weight = 500,
+        .description = COMPOUND_STRING(
+            "It can freely control fire, making fiery\n"
+            "orbs fly like will-o'-the-wisps. Just\n"
+            "before evolution, its six tails grow hot \n"
+            "as if on fire."),
+        CHIBI_DEX_SCALE,
+        FRONT_PIC(CRemilia, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_CRemilia,
+        BACK_PIC(CRemilia, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(CRemilia),
+        ICON(CRemilia, 0),
+        FOOTPRINT(CRemilia)
+        LEARNSETS(CRemilia),
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_REMILIA},
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_REMILIA},
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_REMILIA}),
+    },
+
+    [SPECIES_NORMAL_REMILIA] =
+    {
+        REMILIA_MISC_INFO,
+        .baseHP        = 75,
+        .baseAttack    = 110,
+        .baseDefense   = 75,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 75,
+        .types = { TYPE_DARK, TYPE_FLYING },
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack = 3,
+        .itemRare = ITEM_LIECHI_BERRY,
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_PRESSURE },
+        .speciesName = _("Remilia"),
+        .natDexNum = NATIONAL_DEX_NORMAL_REMILIA,
+        .categoryName = _("Fox"),
+        .height = 5,
+        .weight = 1500,
+        .description = COMPOUND_STRING(
+            "It has long been said that each of the\n"
+            "nine tails embody an enchanted power.\n"
+            "A long-lived Ninetales will have fur that\n"
+            "shines like gold."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(Remilia, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Remilia,
+        BACK_PIC(Remilia, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(Remilia),
+        ICON(Remilia, 0),
+        FOOTPRINT(Remilia)
+        LEARNSETS(Remilia),
+    },
+
+    [SPECIES_ATTACK_REMILIA] =
+    {
+        REMILIA_MISC_INFO,
+        .baseHP        = 75,
+        .baseAttack    = 135,
+        .baseDefense   = 60,
+        .baseSpeed     = 120,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 70,
+        .types = { TYPE_DARK, TYPE_FLYING },
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack = 3,
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_PRESSURE },
+        .speciesName = _("ARemilia"),
+        .natDexNum = NATIONAL_DEX_ATTACK_REMILIA,
+        .categoryName = _("Balloon"),
+        .height = 5,
+        .weight = 1500,
+        .description = COMPOUND_STRING(
+            "Nothing can avoid falling asleep hearing a\n"
+            "Jigglypuff's song. The sound waves of its\n"
+            "singing voice match the brain waves of\n"
+            "someone in a deep sleep."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(ARemilia, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_ARemilia,
+        BACK_PIC(ARemilia, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(ARemilia),
+        ICON(ARemilia, 0),
+        FOOTPRINT(ARemilia)
+        LEARNSETS(ARemilia),
+    },
+
+    [SPECIES_DEFENSE_REMILIA] =
+    {
+        REMILIA_MISC_INFO,
+        .baseHP        = 70,
+        .baseAttack    = 100,
+        .baseDefense   = 100,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 100,
+        .types = { TYPE_DARK, TYPE_DARK },
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 3,
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_PRESSURE },
+        .speciesName = _("DRemilia"),
+        .natDexNum = NATIONAL_DEX_DEFENSE_REMILIA,
+        .categoryName = _("Balloon"),
+        .height = 5,
+        .weight = 1500,
+        .description = COMPOUND_STRING(
+            "Its fur is the ultimate in luxuriousness.\n"
+            "Sleeping alongside a Wigglytuff is simply\n"
+            "divine. Its body expands seemingly without\n"
+            "end when it inhales."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(DRemilia, 64, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_DRemilia,
+        BACK_PIC(DRemilia, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(DRemilia),
+        ICON(DRemilia, 0),
+        FOOTPRINT(DRemilia)
+        LEARNSETS(DRemilia),
+    },
+
+#define FLANDRE_MISC_INFO                                            \
+        PUPPET_MISC_INFO(GROWTH_FLUCTUATING, SOURCE_EOSD),           \
+        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER },    \
+        .cryId = CRY_PORYGON
+
+    [SPECIES_CHIBI_FLANDRE] =
+    {
+        FLANDRE_MISC_INFO,
+        .baseHP        = 25,
+        .baseAttack    = 100,
+        .baseDefense   = 55,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 60,
+        .types = { TYPE_DARK, TYPE_DARK },
+        .catchRate = 90,
+        .expYield = 82,
+        .evYield_Attack = 2,
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE },
+        .speciesName = _("CFlandre"),
+        .natDexNum = NATIONAL_DEX_CHIBI_FLANDRE,
+        .categoryName = _("Bat"),
+        .height = 5,
+        .weight = 1000,
+        .description = COMPOUND_STRING(
+            "While living in pitch-black caverns, their\n"
+            "eyes gradually grew shut and deprived\n"
+            "them of vision. They use ultrasonic waves\n"
+            "to detect obstacles."),
+        CHIBI_DEX_SCALE,
+        FRONT_PIC(CFlandre, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_CFlandre,
+        .enemyMonElevation = 4,
+        BACK_PIC(CFlandre, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(CFlandre),
+        ICON(CFlandre, 1),
+        FOOTPRINT(CFlandre)
+        LEARNSETS(CFlandre),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_FLANDRE},
+                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_FLANDRE},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_FLANDRE}),
+    },
+
+    [SPECIES_NORMAL_FLANDRE] =
+    {
+        FLANDRE_MISC_INFO,
+        .baseHP        = 50,
+        .baseAttack    = 120,
+        .baseDefense   = 75,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 140,
+        .baseSpDefense = 85,
+        .types = { TYPE_DARK, TYPE_FIRE },
+        .catchRate = 45,
+        .expYield = 224,
+        .evYield_Attack = 3,
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE },
+        .speciesName = _("Flandre"),
+        .natDexNum = NATIONAL_DEX_NORMAL_FLANDRE,
+        .categoryName = _("Bat"),
+        .height = 5,
+        .weight = 2100,
+        .description = COMPOUND_STRING(
+            "Its fangs easily puncture even thick\n"
+            "animal hide. It loves to feast on the blood\n"
+            "of people and Pokémon. It flits about in\n"
+            "darkness and strikes from behind."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(Flandre, 64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Flandre,
+        BACK_PIC(Flandre, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(Flandre),
+        ICON(Flandre, 1),
+        FOOTPRINT(Flandre)
+        LEARNSETS(Flandre),
+    },
+
+    [SPECIES_ATTACK_FLANDRE] =
+    {
+        FLANDRE_MISC_INFO,
+        .baseHP        = 50,
+        .baseAttack    = 170,
+        .baseDefense   = 75,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 65,
+        .types = { TYPE_DARK, TYPE_DARK },
+        .catchRate = 45,
+        .expYield = 250,
+        .evYield_Attack = 3,
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE },
+        .speciesName = _("AFlandre"),
+        .natDexNum = NATIONAL_DEX_ATTACK_FLANDRE,
+        .categoryName = _("Weed"),
+        .height = 5,
+        .weight = 2100,
+        .description = COMPOUND_STRING(
+            "This Pokémon grows by absorbing moonlight.\n"
+            "During the daytime, it buries itself in the\n"
+            "ground, leaving only its leaves exposed to\n"
+            "avoid detection by its enemies."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(AFlandre, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_AFlandre,
+        BACK_PIC(AFlandre, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(AFlandre),
+        ICON(AFlandre, 1),
+        FOOTPRINT(AFlandre)
+        LEARNSETS(AFlandre),
+    },
+
+    [SPECIES_SPEED_FLANDRE] =
+    {
+        FLANDRE_MISC_INFO,
+        .baseHP        = 50,
+        .baseAttack    = 115,
+        .baseDefense   = 70,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 80,
+        .types = { TYPE_DARK, TYPE_FIRE },
+        .catchRate = 45,
+        .expYield = 250,
+        .evYield_Speed = 3,
+        .abilities = { ABILITY_HUSTLE, ABILITY_NONE },
+        .speciesName = _("SFlandre"),
+        .natDexNum = NATIONAL_DEX_SPEED_FLANDRE,
+        .categoryName = _("Weed"),
+        .height = 5,
+        .weight = 2100,
+        .description = COMPOUND_STRING(
+            "A horribly noxious honey drools from its\n"
+            "mouth. One whiff of the honey can result\n"
+            "in memory loss. Some fans are said to\n"
+            "enjoy this overwhelming stink, however."),
+        EVOLVED_DEX_SCALE,
+        FRONT_PIC(SFlandre, 64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_SFlandre,
+        BACK_PIC(SFlandre, 64, 64),
+        .backPicYOffset = 0,
+        PALETTES(SFlandre),
+        ICON(SFlandre, 1),
+        FOOTPRINT(SFlandre)
+        LEARNSETS(SFlandre),
     },
 
 #ifdef __INTELLISENSE__

@@ -1287,7 +1287,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Speed = 1,                                     \
         .speciesName = _("Vulpix"),                             \
         .cryId = CRY_PORYGON,                                    \
-        .natDexNum = NATIONAL_DEX_VULPIX,                       \
+        .natDexNum = NATIONAL_DEX_CHIBI_REMILIA,                       \
         .categoryName = _("Fox"),                               \
         .height = 6,                                            \
         .weight = 99,                                           \
@@ -1306,7 +1306,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_SpDefense = 1,                                     \
         .speciesName = _("Ninetales"),                              \
         .cryId = CRY_PORYGON,                                     \
-        .natDexNum = NATIONAL_DEX_NINETALES,                        \
+        .natDexNum = NATIONAL_DEX_NORMAL_REMILIA,                        \
         .categoryName = _("Fox"),                                   \
         .height = 11,                                               \
         .weight = 199,                                              \
@@ -1317,61 +1317,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Ninetales)                                        \
         .formSpeciesIdTable = sNinetalesFormSpeciesIdTable,         \
         VULPIX_FAMILY_MISC_INFO
-
-    [SPECIES_VULPIX] =
-    {
-        VULPIX_MISC_INFO,
-        .types = { TYPE_FIRE, TYPE_FIRE },
-        .itemRare = ITEM_GOTHIC_DRESS,
-        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_DROUGHT },
-        .sourceGame = SOURCE_EOSD,
-        .description = COMPOUND_STRING(
-            "It can freely control fire, making fiery\n"
-            "orbs fly like will-o'-the-wisps. Just\n"
-            "before evolution, its six tails grow hot \n"
-            "as if on fire."),
-        FRONT_PIC(Vulpix, 56, 48),
-        .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_Vulpix,
-        .frontAnimId = ANIM_V_STRETCH,
-        BACK_PIC(Vulpix, 64, 48),
-        .backPicYOffset = 9,
-        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
-        PALETTES(Vulpix),
-        ICON(Vulpix, 5),
-        LEARNSETS(Vulpix),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_NINETALES}),
-    },
-
-    [SPECIES_NINETALES] =
-    {
-        NINETALES_MISC_INFO,
-        .baseHP        = 73,
-        .baseAttack    = 76,
-        .baseDefense   = 75,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 81,
-        .baseSpDefense = 100,
-        .types = { TYPE_FIRE, TYPE_FIRE },
-        .itemRare = ITEM_GOTHIC_DRESS,
-        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_DROUGHT },
-        .sourceGame = SOURCE_PODD,
-        .description = COMPOUND_STRING(
-            "It has long been said that each of the\n"
-            "nine tails embody an enchanted power.\n"
-            "A long-lived Ninetales will have fur that\n"
-            "shines like gold."),
-        FRONT_PIC(Ninetales, 64, 64),
-        .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_Ninetales,
-        .frontAnimId = ANIM_GROW_VIBRATE,
-        BACK_PIC(Ninetales, 64, 56),
-        .backPicYOffset = 5,
-        .backAnimId = BACK_ANIM_H_VIBRATE,
-        PALETTES(Ninetales),
-        ICON(Ninetales, 3),
-        LEARNSETS(Ninetales),
-    },
 
 #if P_ALOLAN_FORMS
     [SPECIES_VULPIX_ALOLAN] =
@@ -1487,221 +1432,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Igglybuff, 1),
         FOOTPRINT(Igglybuff)
         LEARNSETS(Igglybuff),
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_JIGGLYPUFF}),
     },
 #endif //P_GEN_2_CROSS_EVOS
-
-    [SPECIES_JIGGLYPUFF] =
-    {
-        .baseHP        = 115,
-        .baseAttack    = 45,
-        .baseDefense   = 20,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 25,
-        .types = JIGGLYPUFF_FAMILY_TYPES,
-        .catchRate = 170,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 95 : 76,
-        .evYield_HP = 2,
-        .itemRare = ITEM_CHROME_HEART,
-        .genderRatio = PERCENT_FEMALE(75),
-        .eggCycles = 10,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRIEND_GUARD },
-        .sourceGame = SOURCE_MOF,
-        .noFlip = TRUE,
-        .speciesName = _("Jigglypuff"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_JIGGLYPUFF,
-        .categoryName = _("Balloon"),
-        .height = 5,
-        .weight = 55,
-        .description = COMPOUND_STRING(
-            "Nothing can avoid falling asleep hearing a\n"
-            "Jigglypuff's song. The sound waves of its\n"
-            "singing voice match the brain waves of\n"
-            "someone in a deep sleep."),
-        .pokemonScale = 433,
-        .pokemonOffset = 2,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Jigglypuff, 40, 40),
-        .frontPicYOffset = 14,
-        .frontAnimFrames = sAnims_Jigglypuff,
-        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL,
-        BACK_PIC(Jigglypuff, 56, 48),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-        PALETTES(Jigglypuff),
-        ICON(Jigglypuff, 0),
-        FOOTPRINT(Jigglypuff)
-        LEARNSETS(Jigglypuff),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_WIGGLYTUFF}),
-    },
-
-    [SPECIES_WIGGLYTUFF] =
-    {
-        .baseHP        = 140,
-        .baseAttack    = 70,
-        .baseDefense   = 45,
-        .baseSpeed     = 45,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_6 ? 85 : 75,
-        .baseSpDefense = 50,
-        .types = JIGGLYPUFF_FAMILY_TYPES,
-        .catchRate = 50,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
-        .expYield = 218,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 196,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 191,
-    #else
-        .expYield = 109,
-    #endif
-        .evYield_HP = 3,
-        .itemRare = ITEM_CHROME_HEART,
-        .genderRatio = PERCENT_FEMALE(75),
-        .eggCycles = 10,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = { EGG_GROUP_FAIRY, EGG_GROUP_FAIRY },
-        .abilities = { ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRISK },
-        .sourceGame = SOURCE_MOF,
-        .noFlip = TRUE,
-        .speciesName = _("Wigglytuff"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_WIGGLYTUFF,
-        .categoryName = _("Balloon"),
-        .height = 10,
-        .weight = 120,
-        .description = COMPOUND_STRING(
-            "Its fur is the ultimate in luxuriousness.\n"
-            "Sleeping alongside a Wigglytuff is simply\n"
-            "divine. Its body expands seemingly without\n"
-            "end when it inhales."),
-        .pokemonScale = 328,
-        .pokemonOffset = 11,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Wigglytuff, 48, 64),
-        .frontPicYOffset = 4,
-        .frontAnimFrames = sAnims_Wigglytuff,
-        .frontAnimId = ANIM_H_JUMPS,
-        BACK_PIC(Wigglytuff, 56, 64),
-        .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_GROW,
-        PALETTES(Wigglytuff),
-        ICON(Wigglytuff, 0),
-        FOOTPRINT(Wigglytuff)
-        LEARNSETS(Wigglytuff),
-    },
 #endif //P_FAMILY_JIGGLYPUFF
 
 #if P_FAMILY_ZUBAT
-    [SPECIES_ZUBAT] =
-    {
-        .baseHP        = 40,
-        .baseAttack    = 45,
-        .baseDefense   = 35,
-        .baseSpeed     = 55,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 40,
-        .types = { TYPE_MIASMA, TYPE_FLYING },
-        .catchRate = 255,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 49 : 54,
-        .evYield_Speed = 1,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR },
-        .sourceGame = SOURCE_PCB,
-        .speciesName = _("Zubat"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_ZUBAT,
-        .categoryName = _("Bat"),
-        .height = 8,
-        .weight = 75,
-        .description = COMPOUND_STRING(
-            "While living in pitch-black caverns, their\n"
-            "eyes gradually grew shut and deprived\n"
-            "them of vision. They use ultrasonic waves\n"
-            "to detect obstacles."),
-        .pokemonScale = 362,
-        .pokemonOffset = -5,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Zubat, 56, 48),
-        FRONT_PIC_FEMALE(Zubat, 56, 48),
-        .frontPicYOffset = 16,
-        .frontAnimFrames = sAnims_Zubat,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 16,
-        BACK_PIC(Zubat, 56, 56),
-        BACK_PIC_FEMALE(Zubat, 56, 56),
-        .backPicYOffset = 7,
-        .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
-        PALETTES(Zubat),
-        ICON(Zubat, 2),
-        FOOTPRINT(Zubat)
-        LEARNSETS(Zubat),
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_GOLBAT}),
-    },
-
-    [SPECIES_GOLBAT] =
-    {
-        .baseHP        = 75,
-        .baseAttack    = 80,
-        .baseDefense   = 70,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 75,
-        .types = { TYPE_MIASMA, TYPE_FLYING },
-        .catchRate = 90,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 171,
-        .evYield_Speed = 2,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_FLYING },
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_INFILTRATOR },
-        .sourceGame = SOURCE_PCB,
-        .speciesName = _("Golbat"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_GOLBAT,
-        .categoryName = _("Bat"),
-        .height = 16,
-        .weight = 550,
-        .description = COMPOUND_STRING(
-            "Its fangs easily puncture even thick\n"
-            "animal hide. It loves to feast on the blood\n"
-            "of people and Pokémon. It flits about in\n"
-            "darkness and strikes from behind."),
-        .pokemonScale = 256,
-        .pokemonOffset = 1,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Golbat, 64, 56),
-        FRONT_PIC_FEMALE(Golbat, 64, 56),
-        .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_Golbat,
-        .frontAnimId = ANIM_H_SLIDE_WOBBLE,
-        .enemyMonElevation = 10,
-        BACK_PIC(Golbat, 56, 40),
-        BACK_PIC_FEMALE(Golbat, 56, 40),
-        .backPicYOffset = 13,
-        .backAnimId = BACK_ANIM_V_SHAKE,
-        PALETTES(Golbat),
-        ICON(Golbat, 2),
-        FOOTPRINT(Golbat)
-        LEARNSETS(Golbat),
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_CROBAT}),
-    },
-
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_CROBAT] =
     {
@@ -1760,107 +1495,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_ZUBAT
 
 #if P_FAMILY_ODDISH
-    [SPECIES_ODDISH] =
-    {
-        .baseHP        = 45,
-        .baseAttack    = 50,
-        .baseDefense   = 55,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 75,
-        .baseSpDefense = 65,
-        .types = { TYPE_NATURE, TYPE_MIASMA },
-        .catchRate = 255,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 64 : 78,
-        .evYield_SpAttack = 1,
-        .itemRare = ITEM_ABSORB_BULB,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS },
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_RUN_AWAY },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Oddish"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_ODDISH,
-        .categoryName = _("Weed"),
-        .height = 5,
-        .weight = 54,
-        .description = COMPOUND_STRING(
-            "This Pokémon grows by absorbing moonlight.\n"
-            "During the daytime, it buries itself in the\n"
-            "ground, leaving only its leaves exposed to\n"
-            "avoid detection by its enemies."),
-        .pokemonScale = 423,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Oddish, 40, 40),
-        .frontPicYOffset = 15,
-        .frontAnimFrames = sAnims_Oddish,
-        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        BACK_PIC(Oddish, 48, 48),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        PALETTES(Oddish),
-        ICON(Oddish, 4),
-        FOOTPRINT(Oddish)
-        LEARNSETS(Oddish),
-        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_GLOOM}),
-    },
-
-    [SPECIES_GLOOM] =
-    {
-        .baseHP        = 60,
-        .baseAttack    = 65,
-        .baseDefense   = 70,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 75,
-        .types = { TYPE_NATURE, TYPE_MIASMA },
-        .catchRate = 120,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 138 : 132,
-        .evYield_SpAttack = 2,
-        .itemRare = ITEM_ABSORB_BULB,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS },
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_JEALOUSY },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Gloom"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_GLOOM,
-        .categoryName = _("Weed"),
-        .height = 8,
-        .weight = 86,
-        .description = COMPOUND_STRING(
-            "A horribly noxious honey drools from its\n"
-            "mouth. One whiff of the honey can result\n"
-            "in memory loss. Some fans are said to\n"
-            "enjoy this overwhelming stink, however."),
-        .pokemonScale = 329,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Gloom, 56, 48),
-        FRONT_PIC_FEMALE(Gloom, 56, 48),
-        .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_Gloom,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-        BACK_PIC(Gloom, 64, 48),
-        BACK_PIC_FEMALE(Gloom, 64, 48),
-        .backPicYOffset = 11,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        PALETTES(Gloom),
-        ICON(Gloom, 0),
-        FOOTPRINT(Gloom)
-        LEARNSETS(Gloom),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_VILEPLUME},
-                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_BELLOSSOM}),
-    },
-
     [SPECIES_VILEPLUME] =
     {
         .baseHP        = 75,
@@ -7433,8 +7067,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(CReisen)
         LEARNSETS(CReisen),
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_REISEN},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_REISEN},
-                                {EVO_SHARD, ITEM_TECH_HEART, SPECIES_TECH_REISEN}),
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_REISEN},
+                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_REISEN}),
     },
 
 #if P_GEN_2_CROSS_EVOS

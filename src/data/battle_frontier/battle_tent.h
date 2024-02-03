@@ -616,7 +616,7 @@ const struct BattleFrontierTrainer gSlateportBattleTentTrainers[NUM_BATTLE_TENT_
     [SLATEPORT_TENT_TRAINER_MAGGIE] = {
         .facilityClass = FACILITY_CLASS_SCHOOL_KID_F,
         .trainerName = _("MAGGIE"),
-        .speechBefore = {EC_POKEMON(VULPIX), EC_POKEMON(XATU), EC_POKEMON_NATIONAL(UMBREON), EC_WORD_ELLIPSIS, EC_WORD_UM, EC_WORD_ELLIPSIS},
+        .speechBefore = {EC_POKEMON(CHIBI_REMILIA), EC_POKEMON(XATU), EC_POKEMON_NATIONAL(UMBREON), EC_WORD_ELLIPSIS, EC_WORD_UM, EC_WORD_ELLIPSIS},
         .speechWin = {EC_POKEMON(NOSEPASS), EC_WORD_ELLIPSIS, EC_WORD_UM, EC_POKEMON(SEVIPER), EC_WORD_EXCL, -1},
         .speechLose = {EC_POKEMON(NOSEPASS), EC_WORD_ELLIPSIS, EC_WORD_UM, EC_POKEMON_NATIONAL(SNORLAX), EC_WORD_ELLIPSIS, EC_WORD_UH_OH},
         .monSet = gSlateportBattleTentTrainerMons_Maggie
@@ -964,7 +964,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_IMPISH
     },
     [SLATEPORT_TENT_MON_GOLBAT_1] = {
-        .species = SPECIES_GOLBAT,
+        .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_ASTONISH, MOVE_GUST, MOVE_CHARMING_LOOK, MOVE_CONFUSE_RAY},
         .itemTableId = BATTLE_FRONTIER_ITEM_BURIAL_DRESS,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_SPEED | F_EV_SPREAD_DEFENSE,
@@ -1139,7 +1139,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_BRAVE
     },
     [SLATEPORT_TENT_MON_GOLBAT_2] = {
-        .species = SPECIES_GOLBAT,
+        .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_POISON_FANG},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -2877,7 +2877,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .nature = NATURE_BOLD
     },
     [FALLARBOR_TENT_MON_GOLBAT] = {
-        .species = SPECIES_GOLBAT,
+        .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_CONFUSE_RAY, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_SUBSTITUTE},
         .itemTableId = BATTLE_FRONTIER_ITEM_PETAYA_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,

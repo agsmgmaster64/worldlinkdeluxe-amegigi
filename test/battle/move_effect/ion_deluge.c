@@ -53,7 +53,7 @@ SINGLE_BATTLE_TEST("Ion Deluge makes Normal type moves Electric type")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_NORMAL);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_GOLBAT);
+        OPPONENT(SPECIES_NORMAL_FLANDRE);
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); MOVE(player, MOVE_TACKLE); }
     } SCENE {

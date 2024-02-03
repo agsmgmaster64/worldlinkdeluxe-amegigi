@@ -313,9 +313,9 @@
 #define EVO_LEVEL_RECOIL_DAMAGE_FEMALE    50     // Pokémon levels up after having suffered specified amount of non-fainting recoil damage as a female
 
 #if I_SHARDS_REQUIRE_LEVEL == TRUE
-    #define EVO_SHARD EVO_ITEM_LEVEL
+    #define EVO_HEART EVO_ITEM_LEVEL
 #else
-    #define EVO_SHARD EVO_ITEM
+    #define EVO_HEART EVO_ITEM
 #endif
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies

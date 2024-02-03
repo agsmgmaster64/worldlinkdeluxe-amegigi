@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Inner Focus prevents intimidate")
         ASSUME(B_UPDATED_INTIMIDATE >= GEN_8);
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); };
+        OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }
@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Inner Focus prevents flinching")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); };
+        OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT);
                MOVE(opponent, MOVE_TACKLE);
@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Inner Focus is ignored by Mold Breaker")
 {
     GIVEN {
         PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); };
-        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); };
+        OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT); }
     } SCENE {

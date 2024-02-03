@@ -109,7 +109,7 @@ DOUBLE_BATTLE_TEST("Mind Blown causes everyone to faint in a double battle")
 SINGLE_BATTLE_TEST("Mind Blown hp loss is prevented by Magic Guard")
 {
     GIVEN {
-        PLAYER(SPECIES_CLEFAIRY) { Ability(ABILITY_MAGIC_GUARD); }
+        PLAYER(SPECIES_TECH_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MIND_BLOWN); }

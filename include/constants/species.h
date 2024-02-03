@@ -34,50 +34,50 @@
 #define SPECIES_NORMAL_PATCHOULI                        30
 #define SPECIES_ATTACK_PATCHOULI                        31
 #define SPECIES_DEFENSE_PATCHOULI                       32
-#define SPECIES_NIDORINO                                33
-#define SPECIES_NIDOKING                                34
-#define SPECIES_CLEFAIRY                                35
-#define SPECIES_CLEFABLE                                36
-#define SPECIES_VULPIX                                  37
-#define SPECIES_NINETALES                               38
-#define SPECIES_JIGGLYPUFF                              39
-#define SPECIES_WIGGLYTUFF                              40
-#define SPECIES_ZUBAT                                   41
-#define SPECIES_GOLBAT                                  42
-#define SPECIES_ODDISH                                  43
-#define SPECIES_GLOOM                                   44
-#define SPECIES_VILEPLUME                               45
+#define SPECIES_CHIBI_SAKUYA                            33
+#define SPECIES_NORMAL_SAKUYA                           34
+#define SPECIES_TECH_SAKUYA                             35
+#define SPECIES_HELPER_SAKUYA                           36
+#define SPECIES_CHIBI_REMILIA                           37
+#define SPECIES_NORMAL_REMILIA                          38
+#define SPECIES_ATTACK_REMILIA                          39
+#define SPECIES_DEFENSE_REMILIA                         40
+#define SPECIES_CHIBI_FLANDRE                           41
+#define SPECIES_NORMAL_FLANDRE                          42
+#define SPECIES_ATTACK_FLANDRE                          43
+#define SPECIES_SPEED_FLANDRE                           44
+#define SPECIES_VILEPLUME                               45 // Letty
 #define SPECIES_PARAS                                   46
 #define SPECIES_PARASECT                                47
 #define SPECIES_VENONAT                                 48
-#define SPECIES_VENOMOTH                                49
+#define SPECIES_VENOMOTH                                49 // Dolls
 #define SPECIES_DIGLETT                                 50
 #define SPECIES_DUGTRIO                                 51
-#define SPECIES_MEOWTH                                  52
+#define SPECIES_MEOWTH                                  52 // Alice
 #define SPECIES_PERSIAN                                 53
 #define SPECIES_PSYDUCK                                 54
 #define SPECIES_GOLDUCK                                 55
-#define SPECIES_MANKEY                                  56
+#define SPECIES_MANKEY                                  56 // LilyWhite
 #define SPECIES_PRIMEAPE                                57
 #define SPECIES_GROWLITHE                               58
 #define SPECIES_ARCANINE                                59
-#define SPECIES_POLIWAG                                 60
+#define SPECIES_POLIWAG                                 60 // LilyBlack
 #define SPECIES_POLIWHIRL                               61
 #define SPECIES_POLIWRATH                               62
 #define SPECIES_ABRA                                    63
-#define SPECIES_KADABRA                                 64
+#define SPECIES_KADABRA                                 64 // Lunasa
 #define SPECIES_ALAKAZAM                                65
 #define SPECIES_MACHOP                                  66
 #define SPECIES_MACHOKE                                 67
-#define SPECIES_MACHAMP                                 68
+#define SPECIES_MACHAMP                                 68 // Merlin
 #define SPECIES_BELLSPROUT                              69
 #define SPECIES_WEEPINBELL                              70
 #define SPECIES_VICTREEBEL                              71
-#define SPECIES_TENTACOOL                               72
+#define SPECIES_TENTACOOL                               72 // Lyrica
 #define SPECIES_TENTACRUEL                              73
 #define SPECIES_GEODUDE                                 74
 #define SPECIES_GRAVELER                                75
-#define SPECIES_GOLEM                                   76
+#define SPECIES_GOLEM                                   76 // Layla
 #define SPECIES_PONYTA                                  77
 #define SPECIES_RAPIDASH                                78
 #define SPECIES_SLOWPOKE                                79
@@ -85,36 +85,36 @@
 #define SPECIES_NORMAL_YOUMU                            81
 #define SPECIES_DEFENSE_YOUMU                           82
 #define SPECIES_SPEED_YOUMU                             83
-#define SPECIES_DODUO                                   84
+#define SPECIES_DODUO                                   84 // Yuyuko
 #define SPECIES_DODRIO                                  85
 #define SPECIES_SEEL                                    86
 #define SPECIES_DEWGONG                                 87
-#define SPECIES_GRIMER                                  88
+#define SPECIES_GRIMER                                  88 // Chen
 #define SPECIES_MUK                                     89
 #define SPECIES_SHELLDER                                90
 #define SPECIES_CLOYSTER                                91
-#define SPECIES_GASTLY                                  92
+#define SPECIES_GASTLY                                  92 // Ran
 #define SPECIES_HAUNTER                                 93
 #define SPECIES_GENGAR                                  94
 #define SPECIES_ONIX                                    95
-#define SPECIES_DROWZEE                                 96
+#define SPECIES_DROWZEE                                 96 // Yukari
 #define SPECIES_HYPNO                                   97
 #define SPECIES_KRABBY                                  98
 #define SPECIES_KINGLER                                 99
-#define SPECIES_VOLTORB                                 100
+#define SPECIES_VOLTORB                                 100 // Wriggle
 #define SPECIES_ELECTRODE                               101
 #define SPECIES_EXEGGCUTE                               102
 #define SPECIES_EXEGGUTOR                               103
-#define SPECIES_CUBONE                                  104
+#define SPECIES_CUBONE                                  104 // Mystia
 #define SPECIES_MAROWAK                                 105
 #define SPECIES_HITMONLEE                               106
 #define SPECIES_HITMONCHAN                              107
-#define SPECIES_LICKITUNG                               108
+#define SPECIES_LICKITUNG                               108 // Keine
 #define SPECIES_KOFFING                                 109
 #define SPECIES_WEEZING                                 110
 #define SPECIES_RHYHORN                                 111
 #define SPECIES_RHYDON                                  112
-#define SPECIES_CHANSEY                                 113
+#define SPECIES_CHANSEY                                 113 // Tewi
 #define SPECIES_TANGELA                                 114
 #define SPECIES_KANGASKHAN                              115
 #define SPECIES_HORSEA                                  116

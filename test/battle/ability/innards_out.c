@@ -54,7 +54,7 @@ SINGLE_BATTLE_TEST("Innards Out does not damage Magic Guard Pokemon")
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_CLEFABLE) { Ability(ABILITY_MAGIC_GUARD); }
+        OPPONENT(SPECIES_HELPER_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
         ASSUME(gMovesInfo[MOVE_PSYCHIC].power != 0);
     } WHEN {
         TURN { MOVE(opponent, MOVE_PSYCHIC); SEND_OUT(player, 1); }

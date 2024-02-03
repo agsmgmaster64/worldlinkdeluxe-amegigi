@@ -43,8 +43,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CYoumu)
         LEARNSETS(CYoumu),
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_YOUMU},
-                                {EVO_SHARD, ITEM_GUARD_HEART, SPECIES_DEFENSE_YOUMU},
-                                {EVO_SHARD, ITEM_SWIFT_HEART, SPECIES_SPEED_YOUMU}),
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YOUMU},
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YOUMU}),
     },
 
     [SPECIES_NORMAL_YOUMU] =

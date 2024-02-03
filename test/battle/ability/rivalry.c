@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gSpeciesInfo[SPECIES_NIDOKING].genderRatio == MON_MALE);
+    ASSUME(gSpeciesInfo[SPECIES_NORMAL_SAKUYA].genderRatio == MON_MALE);
     ASSUME(gSpeciesInfo[SPECIES_ATTACK_PATCHOULI].genderRatio == MON_FEMALE);
     ASSUME(gSpeciesInfo[SPECIES_PORYGON].genderRatio == MON_GENDERLESS);
 }
@@ -11,8 +11,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Rivalry increases power by x1.25 towards Pokémon of the same gender", s16 damage)
 {
     u16 species, ability;
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_BODY; }
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_POISON_BODY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_RIVALRY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_BODY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
@@ -33,10 +33,10 @@ SINGLE_BATTLE_TEST("Rivalry increases power by x1.25 towards Pokémon of the sam
 SINGLE_BATTLE_TEST("Rivalry decreases power by x0.75 towards Pokémon of different gender", s16 damage)
 {
     u16 species1, species2, ability;
-    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_BODY; }
-    PARAMETRIZE { species1 = SPECIES_NIDOKING; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
-    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NIDOKING; ability = ABILITY_POISON_BODY; }
-    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species1 = SPECIES_NORMAL_SAKUYA; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_BODY; }
+    PARAMETRIZE { species1 = SPECIES_NORMAL_SAKUYA; species2 = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NORMAL_SAKUYA; ability = ABILITY_POISON_BODY; }
+    PARAMETRIZE { species1 = SPECIES_ATTACK_PATCHOULI; species2 = SPECIES_NORMAL_SAKUYA; ability = ABILITY_RIVALRY; }
 
     GIVEN {
         PLAYER(species1) { Ability(ability); }
@@ -55,8 +55,8 @@ SINGLE_BATTLE_TEST("Rivalry decreases power by x0.75 towards Pokémon of differe
 SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless", s16 damage)
 {
     u16 species, ability;
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_BODY; }
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_POISON_BODY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_RIVALRY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_BODY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
@@ -79,8 +79,8 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless",
 SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the target is genderless", s16 damage)
 {
     u16 species, ability;
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_POISON_BODY; }
-    PARAMETRIZE { species = SPECIES_NIDOKING; ability = ABILITY_RIVALRY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_POISON_BODY; }
+    PARAMETRIZE { species = SPECIES_NORMAL_SAKUYA; ability = ABILITY_RIVALRY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_POISON_BODY; }
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
