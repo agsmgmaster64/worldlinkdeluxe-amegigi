@@ -2682,9 +2682,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "to raise evasiveness."),
         .effect = EFFECT_MINIMIZE,
         .power = 0,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_EARTH,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 10 : 20,
+        .pp = 20,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -7209,8 +7209,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Mana Charge"),
         .description = COMPOUND_STRING(
-            "Collects some mana to sharply\n"
-            "raise Sp. Atk."),
+            "Collects some mana to\n"
+            "sharply raise Sp. Atk."),
         .effect = EFFECT_SPECIAL_ATTACK_UP_2,
         .power = 0,
         .type = TYPE_REASON,
@@ -7683,8 +7683,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .name = COMPOUND_STRING("Fake Tears"),
         .description = COMPOUND_STRING(
             "Feigns crying to sharply\n"
-            "lower the foe's Sp. Def."),
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
+            "lower the foe's Sp. Atk."),
+        .effect = EFFECT_SPECIAL_ATTACK_DOWN_2,
         .power = 0,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -7692,7 +7692,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPATK_UP_1 },
+        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
         .contestCategory = CONTEST_CATEGORY_SMART,
@@ -7800,12 +7800,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     {
         .name = COMPOUND_STRING("Silver Wind"),
         .description = COMPOUND_STRING(
-            "A powdery attack that may\n"
-            "raise abilities."),
+            "A holy wind blows that\n"
+            "may lower Speed."),
         .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_HEART,
-        .accuracy = 100,
+        .power = 120,
+        .type = TYPE_FAITH,
+        .accuracy = 85,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -7813,9 +7813,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
         .windMove = B_EXTRAPOLATED_MOVE_FLAGS,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ALL_STATS_UP,
-            .self = TRUE,
-            .chance = 10,
+            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
+            .chance = 30,
         }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -8220,8 +8219,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Howls to raise the spirit\n"
             "and boosts Attack."),
         .power = 0,
-        .effect = B_UPDATED_MOVE_DATA >= GEN_8 ? EFFECT_ATTACK_UP_USER_ALLY : EFFECT_ATTACK_UP,
-        .type = TYPE_ILLUSION,
+        .effect = EFFECT_ATTACK_UP,
+        .type = TYPE_BEAST,
         .accuracy = 0,
         .pp = 40,
         .target = MOVE_TARGET_USER,
@@ -10091,20 +10090,18 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_GIGA_IMPACT] =
     {
         .name = COMPOUND_STRING("Giga Impact"),
-        .description = sHyperBeamDescription,
-        .effect = EFFECT_HIT,
-        .power = 150,
-        .type = TYPE_ILLUSION,
-        .accuracy = 90,
-        .pp = 5,
+        .description = COMPOUND_STRING(
+            "A powerful attack that can\n"
+            "miss and hurt the user."),
+        .effect = EFFECT_RECOIL_IF_MISS,
+        .power = 130,
+        .type = TYPE_DARK,
+        .accuracy = 85,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_RECHARGE,
-            .self = TRUE,
-        }),
         .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -10416,8 +10413,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "damage and cut accuracy."),
         .effect = EFFECT_HIT,
         .power = 65,
-        .type = TYPE_STEEL,
-        .accuracy = 85,
+        .type = TYPE_HEART,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -10425,7 +10422,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 30,
+            .chance = 20,
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_CUTE,
