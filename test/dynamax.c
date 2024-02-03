@@ -563,11 +563,11 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Super Fang uses a Pokemon's non-Dynamax HP", s16 d
     PARAMETRIZE { dynamax = TRUE; }
     PARAMETRIZE { dynamax = FALSE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SUPER_FANG].effect == EFFECT_SUPER_FANG);
+        ASSUME(gMovesInfo[MOVE_HEAT_CLAW].effect == EFFECT_SUPER_FANG);
         PLAYER(SPECIES_WOBBUFFET) { Speed(50); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_SUPER_FANG); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
+        TURN { MOVE(opponent, MOVE_HEAT_CLAW); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
         MESSAGE("Foe Wobbuffet used Super Fang!");
         HP_BAR(player, captureDamage: &results[i].damage);

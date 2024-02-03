@@ -4,9 +4,9 @@
 // These tests cover all 3 effects: Stockpile, Spit up and Swallow.
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_STOCKPILE].effect == EFFECT_STOCKPILE);
+    ASSUME(gMovesInfo[MOVE_COERCE].effect == EFFECT_STOCKPILE);
     ASSUME(gMovesInfo[MOVE_SWALLOW].effect == EFFECT_SWALLOW);
-    ASSUME(gMovesInfo[MOVE_SPIT_UP].effect == EFFECT_SPIT_UP);
+    ASSUME(gMovesInfo[MOVE_BRAVER].effect == EFFECT_SPIT_UP);
 }
 
 SINGLE_BATTLE_TEST("Stockpile's count can go up only to 3")
@@ -15,21 +15,21 @@ SINGLE_BATTLE_TEST("Stockpile's count can go up only to 3")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_STOCKPILE); }
-        TURN { MOVE(player, MOVE_STOCKPILE); }
-        TURN { MOVE(player, MOVE_STOCKPILE); }
-        TURN { MOVE(player, MOVE_STOCKPILE); }
+        TURN { MOVE(player, MOVE_COERCE); }
+        TURN { MOVE(player, MOVE_COERCE); }
+        TURN { MOVE(player, MOVE_COERCE); }
+        TURN { MOVE(player, MOVE_COERCE); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 1!");
 
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 2!");
 
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 3!");
 
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet can't stockpile any more!");
     }
 }
@@ -38,13 +38,13 @@ SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
 {
     u32 move;
     PARAMETRIZE { move = MOVE_SWALLOW; }
-    PARAMETRIZE { move = MOVE_SPIT_UP; }
+    PARAMETRIZE { move = MOVE_BRAVER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(10), MaxHP(400); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, move); }
-        TURN { MOVE(player, MOVE_STOCKPILE); }
+        TURN { MOVE(player, MOVE_COERCE); }
         TURN { MOVE(player, move); }
     } SCENE {
         NOT ANIMATION(ANIM_TYPE_MOVE, move, player);
@@ -53,11 +53,11 @@ SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
         else
             MESSAGE("But it failed to spit up a thing!");
 
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 1!");
 
         ANIMATION(ANIM_TYPE_MOVE, move, player);
-        if (move == MOVE_SPIT_UP) {
+        if (move == MOVE_BRAVER) {
             HP_BAR(opponent);
         }
         else {
@@ -76,26 +76,26 @@ SINGLE_BATTLE_TEST("Spit Up's power raises depending on Stockpile's count", s16 
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_STOCKPILE); }
+        TURN { MOVE(player, MOVE_COERCE); }
         if (count != 1){
-            TURN { MOVE(player, MOVE_STOCKPILE); }
+            TURN { MOVE(player, MOVE_COERCE); }
             if (count == 3) {
-                TURN { MOVE(player, MOVE_STOCKPILE); }
+                TURN { MOVE(player, MOVE_COERCE); }
             }
         }
-        TURN { MOVE(player, MOVE_SPIT_UP); }
+        TURN { MOVE(player, MOVE_BRAVER); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 1!");
         if (count != 1) {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
             MESSAGE("Wobbuffet stockpiled 2!");
             if (count == 3) {
-                ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+                ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
                 MESSAGE("Wobbuffet stockpiled 3!");
             }
         }
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPIT_UP, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_BRAVER, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.0), results[1].damage);
@@ -113,22 +113,22 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
         PLAYER(SPECIES_WOBBUFFET) { HP(1), MaxHP(400); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_STOCKPILE); }
+        TURN { MOVE(player, MOVE_COERCE); }
         if (count != 1){
-            TURN { MOVE(player, MOVE_STOCKPILE); }
+            TURN { MOVE(player, MOVE_COERCE); }
             if (count == 3) {
-                TURN { MOVE(player, MOVE_STOCKPILE); }
+                TURN { MOVE(player, MOVE_COERCE); }
             }
         }
         TURN { MOVE(player, MOVE_SWALLOW); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 1!");
         if (count != 1) {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
             MESSAGE("Wobbuffet stockpiled 2!");
             if (count == 3) {
-                ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, player);
+                ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
                 MESSAGE("Wobbuffet stockpiled 3!");
             }
         }
@@ -144,7 +144,7 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
 SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsical, s16 dmgSpecial)
 {
     u16 move;
-    PARAMETRIZE { move = MOVE_STOCKPILE; }
+    PARAMETRIZE { move = MOVE_COERCE; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
@@ -157,7 +157,7 @@ SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsic
         TURN { MOVE(opponent, MOVE_GUST); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
-        if (move == MOVE_STOCKPILE) {
+        if (move == MOVE_COERCE) {
             MESSAGE("Wobbuffet stockpiled 1!");
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
             MESSAGE("Wobbuffet's Defense rose!");
@@ -179,9 +179,9 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
 {
     u8 count;
     u16 move;
-    PARAMETRIZE { count = 1; move = MOVE_SPIT_UP; }
+    PARAMETRIZE { count = 1; move = MOVE_BRAVER; }
     PARAMETRIZE { count = 2; move = MOVE_SWALLOW; }
-    PARAMETRIZE { count = 3; move = MOVE_SPIT_UP; }
+    PARAMETRIZE { count = 3; move = MOVE_BRAVER; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
@@ -192,11 +192,11 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
         OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerLeft); }
-        TURN { MOVE(playerLeft, MOVE_STOCKPILE); }
+        TURN { MOVE(playerLeft, MOVE_COERCE); }
         if (count != 1) {
-            TURN { MOVE(playerLeft, MOVE_STOCKPILE); }
+            TURN { MOVE(playerLeft, MOVE_COERCE); }
             if (count == 3) {
-                 TURN { MOVE(playerLeft, MOVE_STOCKPILE); }
+                 TURN { MOVE(playerLeft, MOVE_COERCE); }
             }
         }
         TURN { MOVE(playerLeft, move, target: opponentLeft); MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerLeft); }
@@ -206,11 +206,11 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
         ANIMATION(ANIM_TYPE_MOVE, MOVE_GUST, opponentRight);
         HP_BAR(playerLeft, captureDamage: &results[i].dmgSpecialBefore);
 
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, playerLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, playerLeft);
         if (count != 1) {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, playerLeft);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, playerLeft);
             if (count == 3) {
-                ANIMATION(ANIM_TYPE_MOVE, MOVE_STOCKPILE, playerLeft);
+                ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, playerLeft);
             }
         }
         ANIMATION(ANIM_TYPE_MOVE, move, playerLeft);

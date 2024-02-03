@@ -17,7 +17,7 @@ SINGLE_BATTLE_TEST("Schooling switches Level 20+ Wishiwashi's form when HP is 25
         }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_SUPER_FANG); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_HEAT_CLAW); }
     } SCENE {
         if (level >= 20)
         {

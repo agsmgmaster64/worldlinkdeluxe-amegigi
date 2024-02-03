@@ -8,9 +8,9 @@ SINGLE_BATTLE_TEST("Emergency Exit switches out when taking 50% max-hp damage")
         OPPONENT(SPECIES_GOLISOPOD) { Ability(ABILITY_EMERGENCY_EXIT); MaxHP(263); HP(262); };
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_SUPER_FANG); SEND_OUT(opponent, 1); }
+        TURN { MOVE(player, MOVE_HEAT_CLAW); SEND_OUT(opponent, 1); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_FANG, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HEAT_CLAW, player);
         HP_BAR(opponent);
         ABILITY_POPUP(opponent, ABILITY_EMERGENCY_EXIT);
     }
@@ -23,9 +23,9 @@ SINGLE_BATTLE_TEST("Emergency Exit does not switch out when going below 50% max-
         OPPONENT(SPECIES_GOLISOPOD) { Ability(ABILITY_EMERGENCY_EXIT); MaxHP(263); HP(262); Item(ITEM_SITRUS_BERRY); };
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_SUPER_FANG); }
+        TURN { MOVE(player, MOVE_HEAT_CLAW); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_FANG, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HEAT_CLAW, player);
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
         NOT ABILITY_POPUP(opponent, ABILITY_EMERGENCY_EXIT);
@@ -39,9 +39,9 @@ SINGLE_BATTLE_TEST("Emergency Exit switches out when going below 50% max-HP but 
         OPPONENT(SPECIES_GOLISOPOD) { Ability(ABILITY_EMERGENCY_EXIT); MaxHP(263); HP(133); Item(ITEM_ORAN_BERRY); };
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_SUPER_FANG); SEND_OUT(opponent, 1); }
+        TURN { MOVE(player, MOVE_HEAT_CLAW); SEND_OUT(opponent, 1); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_FANG, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HEAT_CLAW, player);
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
         ABILITY_POPUP(opponent, ABILITY_EMERGENCY_EXIT);

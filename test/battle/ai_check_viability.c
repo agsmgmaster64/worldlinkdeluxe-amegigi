@@ -134,14 +134,14 @@ AI_SINGLE_BATTLE_TEST("AI will only use Dream Eater if target is asleep")
 AI_SINGLE_BATTLE_TEST("AI sees increased base power of Spit Up")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_STOCKPILE].effect == EFFECT_STOCKPILE);
-        ASSUME(gMovesInfo[MOVE_SPIT_UP].effect == EFFECT_SPIT_UP);
+        ASSUME(gMovesInfo[MOVE_COERCE].effect == EFFECT_STOCKPILE);
+        ASSUME(gMovesInfo[MOVE_BRAVER].effect == EFFECT_SPIT_UP);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET) { HP(43); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_STOCKPILE, MOVE_SPIT_UP, MOVE_TACKLE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_COERCE, MOVE_BRAVER, MOVE_TACKLE); }
     } WHEN {
-        TURN { EXPECT_MOVE(opponent, MOVE_STOCKPILE); }
-        TURN { EXPECT_MOVE(opponent, MOVE_SPIT_UP); }
+        TURN { EXPECT_MOVE(opponent, MOVE_COERCE); }
+        TURN { EXPECT_MOVE(opponent, MOVE_BRAVER); }
     } SCENE {
         MESSAGE("Wobbuffet fainted!");
     }

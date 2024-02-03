@@ -1639,7 +1639,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_TAUNT,
             MOVE_THIEF,
-            MOVE_ODOR_SLEUTH,
+            MOVE_HEARTS_EYE,
             MOVE_TAKE_DOWN
         },
         .cool = 40,
@@ -2720,7 +2720,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_GROWL,
             MOVE_YAWN,
             MOVE_ENCORE,
-            MOVE_FOLLOW_ME
+            MOVE_GUARD
         },
         .cool = 80,
         .beauty = 120,
