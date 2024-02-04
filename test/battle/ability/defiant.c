@@ -11,8 +11,8 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises player's Attack after Intimidate")
     PARAMETRIZE { abilityLeft = ABILITY_DEFIANT; abilityRight = ABILITY_DEFIANT; }
 
     GIVEN {
-        PLAYER(SPECIES_MANKEY) { Ability(abilityLeft); }
-        PLAYER(SPECIES_PRIMEAPE) { Ability(abilityRight); }
+        PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(abilityLeft); }
+        PLAYER(SPECIES_NORMAL_LILY_WHITE) { Ability(abilityRight); }
         OPPONENT(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
@@ -69,8 +69,8 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises opponent's Attack after Intimidate")
     PARAMETRIZE { abilityLeft = ABILITY_DEFIANT; abilityRight = ABILITY_DEFIANT; }
 
     GIVEN {
-        OPPONENT(SPECIES_MANKEY) { Ability(abilityLeft); }
-        OPPONENT(SPECIES_PRIMEAPE) { Ability(abilityRight); }
+        OPPONENT(SPECIES_CHIBI_LILY_WHITE) { Ability(abilityLeft); }
+        OPPONENT(SPECIES_NORMAL_LILY_WHITE) { Ability(abilityRight); }
         PLAYER(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
@@ -120,7 +120,7 @@ SINGLE_BATTLE_TEST("Defiant activates after Sticky Web lowers Speed")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(ABILITY_DEFIANT); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_STICKY_WEB); }
@@ -143,10 +143,10 @@ SINGLE_BATTLE_TEST("Defiant activates after Sticky Web lowers Speed")
 DOUBLE_BATTLE_TEST("Defiant is activated by Cotton Down for non-ally pokemon")
 {
     GIVEN {
-        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
-        PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(ABILITY_DEFIANT); }
+        PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(ABILITY_DEFIANT); }
         OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
-        OPPONENT(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
+        OPPONENT(SPECIES_CHIBI_LILY_WHITE) { Ability(ABILITY_DEFIANT); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft); }
     } SCENE {

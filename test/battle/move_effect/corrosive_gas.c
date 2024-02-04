@@ -88,8 +88,8 @@ DOUBLE_BATTLE_TEST("Corrosive Gas destroys foes and ally's items if they have on
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) {Item(itemPlayerLeft);}
         PLAYER(SPECIES_WYNAUT) {Item(ITEM_SITRUS_BERRY);}
-        OPPONENT(SPECIES_ABRA) {Item(itemOpponentLeft);}
-        OPPONENT(SPECIES_KADABRA) {Item(itemOpponentRight);}
+        OPPONENT(SPECIES_SPEED_LILY_BLACK) {Item(itemOpponentLeft);}
+        OPPONENT(SPECIES_CHIBI_LUNASA) {Item(itemOpponentRight);}
     } WHEN {
         TURN { MOVE(playerRight, MOVE_CORROSIVE_GAS); }
     } SCENE {

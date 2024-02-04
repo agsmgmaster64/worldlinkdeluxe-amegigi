@@ -552,7 +552,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_MACHOKE,
+                        .species = SPECIES_PLACEHOLD_LUNASA,
                         .heldItem = ITEM_CHINA_DRESS,
                         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_MUD_SLAP, MOVE_COUNTER, MOVE_SCARY_FACE},
                         .hpEV = 255,
@@ -716,7 +716,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [3] =
                     {
-                        .species = SPECIES_MACHOP,
+                        .species = SPECIES_HELPER_LUNASA,
                         .heldItem = ITEM_SALAC_BERRY,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_REVENGE, MOVE_NONE, MOVE_NONE},
                         .hpEV = 252,
@@ -1213,7 +1213,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_ALAKAZAM,
+                        .species = SPECIES_NORMAL_LUNASA,
                         .heldItem = ITEM_PETAYA_BERRY,
                         .moves = {MOVE_SKILL_SWAP, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_REFLECT},
                         .speedEV = 255,
@@ -1291,7 +1291,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [4] =
                     {
-                        .species = SPECIES_VENOMOTH,
+                        .species = SPECIES_SHANGHAI,
                         .heldItem = ITEM_BRIGHT_POWDER,
                         .moves = {MOVE_SKILL_SWAP, MOVE_SIGNAL_BEAM, MOVE_SLEEP_POWDER, MOVE_TOXIC},
                         .attackEV = 255,
@@ -2079,7 +2079,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_POLIWAG,
+                                            .species = SPECIES_CHIBI_LILY_BLACK,
                                             .heldItem = ITEM_WIKI_BERRY,
                                             .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_MIST, MOVE_HYPNOSIS},
                                             .hpEV = 252,
@@ -2099,7 +2099,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_PSYDUCK,
+                                            .species = SPECIES_ATTACK_ALICE,
                                             .heldItem = ITEM_AGUAV_BERRY,
                                             .moves = {MOVE_HYPNOSIS, MOVE_SURF, MOVE_DISABLE, MOVE_SEISMIC_TOSS},
                                             .hpEV = 250,
@@ -2767,7 +2767,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GOLDUCK,
+                                            .species = SPECIES_TECH_ALICE,
                                             .heldItem = ITEM_LAX_INCENSE,
                                             .moves = {MOVE_SURF, MOVE_PSYBEAM, MOVE_BRICK_BREAK, MOVE_RAIN_DANCE},
                                             .speedEV = 255,
@@ -2824,7 +2824,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_RAPIDASH,
+                                            .species = SPECIES_DEFENSE_LAYLA,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_FIRE_BLAST, MOVE_BOUNCE, MOVE_QUICK_ATTACK, MOVE_SUNNY_DAY},
                                             .speedEV = 255,
@@ -3041,7 +3041,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MEOWTH,
+                                            .species = SPECIES_CHIBI_ALICE,
                                             .heldItem = ITEM_QUICK_CLAW,
                                             .moves = {MOVE_PAY_DAY, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
@@ -3956,7 +3956,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_ALAKAZAM,
+                                            .species = SPECIES_NORMAL_LUNASA,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_MANA_BURST, MOVE_RECOVER, MOVE_THUNDER_WAVE, MOVE_ATTRACT},
                                             .hpEV = 6,
@@ -4023,7 +4023,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MACHAMP,
+                                            .species = SPECIES_CHIBI_MERLIN,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_LOW_KICK, MOVE_ROCK_SLIDE, MOVE_FACADE, MOVE_ATTRACT},
                                             .hpEV = 252,
@@ -4155,7 +4155,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ALAKAZAM,
+                                            .species = SPECIES_NORMAL_LUNASA,
                                             .heldItem = ITEM_KINGS_ROCK,
                                             .moves = {MOVE_MANA_BURST, MOVE_ICE_PUNCH, MOVE_ATTRACT, MOVE_SWAGGER},
                                             .hpEV = 6,
@@ -4342,7 +4342,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DUGTRIO,
+                                            .species = SPECIES_GOLIATH,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_DOUBLE_TEAM, MOVE_PROTECT, MOVE_RETURN, MOVE_POISON_BOMB},
                                             .hpEV = 6,

@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Sturdy prevents OHKO moves")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FISSURE].effect == EFFECT_OHKO);
-        PLAYER(SPECIES_GEODUDE) { Ability(ABILITY_STURDY); }
+        PLAYER(SPECIES_HELPER_LYRICA) { Ability(ABILITY_STURDY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_FISSURE); }
@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Sturdy prevents OHKO moves")
 SINGLE_BATTLE_TEST("Sturdy prevents OHKOs")
 {
     GIVEN {
-        PLAYER(SPECIES_GEODUDE) { Ability(ABILITY_STURDY); MaxHP(100); HP(100); }
+        PLAYER(SPECIES_HELPER_LYRICA) { Ability(ABILITY_STURDY); MaxHP(100); HP(100); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SEISMIC_TOSS); }
@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Sturdy prevents OHKOs")
 SINGLE_BATTLE_TEST("Sturdy does not prevent non-OHKOs")
 {
     GIVEN {
-        PLAYER(SPECIES_GEODUDE) { Ability(ABILITY_STURDY); MaxHP(100); HP(99); }
+        PLAYER(SPECIES_HELPER_LYRICA) { Ability(ABILITY_STURDY); MaxHP(100); HP(99); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SEISMIC_TOSS); }

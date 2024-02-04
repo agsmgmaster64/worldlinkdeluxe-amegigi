@@ -218,7 +218,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats after Defiant or Competitive were 
     u16 ability;
 
     PARAMETRIZE { species = SPECIES_IGGLYBUFF; ability = ABILITY_COMPETITIVE; }
-    PARAMETRIZE { species = SPECIES_MANKEY; ability = ABILITY_DEFIANT; }
+    PARAMETRIZE { species = SPECIES_CHIBI_LILY_WHITE; ability = ABILITY_DEFIANT; }
 
     KNOWN_FAILING;
     GIVEN {

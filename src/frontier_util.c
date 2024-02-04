@@ -102,7 +102,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_ALAKAZAM,
+                .species = SPECIES_NORMAL_LUNASA,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 24,
                 .nature = NATURE_MODEST,
@@ -243,7 +243,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_ARCANINE,
+                .species = SPECIES_DEFENSE_LILY_WHITE,
                 .heldItem = ITEM_WHITE_HERB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HASTY,

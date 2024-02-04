@@ -15439,8 +15439,8 @@ static void Cmd_trainerslideout(void)
 
 static const u16 sTelekinesisBanList[] =
 {
-    SPECIES_DIGLETT,
-    SPECIES_DUGTRIO,
+    SPECIES_HOURAI,
+    SPECIES_GOLIATH,
     SPECIES_DIGLETT_ALOLAN,
     SPECIES_DUGTRIO_ALOLAN,
     SPECIES_SANDYGAST,

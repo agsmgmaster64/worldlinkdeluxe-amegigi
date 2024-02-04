@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by OHKO moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FISSURE].effect == EFFECT_OHKO);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_MACHAMP) { Ability(ABILITY_NO_GUARD); }
+        OPPONENT(SPECIES_CHIBI_MERLIN) { Ability(ABILITY_NO_GUARD); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_FISSURE); }
     } SCENE {
@@ -1083,8 +1083,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Gold Rush confuses both opponents and genera
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_G_MAX_GOLD_RUSH].argument == MAX_EFFECT_CONFUSE_FOES_PAY_DAY);
-        PLAYER(SPECIES_MEOWTH) { GigantamaxFactor(TRUE); }
-        PLAYER(SPECIES_PERSIAN);
+        PLAYER(SPECIES_CHIBI_ALICE) { GigantamaxFactor(TRUE); }
+        PLAYER(SPECIES_NORMAL_ALICE);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -1203,7 +1203,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Wildfire sets a field effect that damages no
         PLAYER(SPECIES_CHARMANDER);
         OPPONENT(SPECIES_WOBBUFFET) { HP(600); MaxHP(600); }
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_ARCANINE);
+        OPPONENT(SPECIES_DEFENSE_LILY_WHITE);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_EMBER, target: opponentLeft, dynamax: TRUE); }
         TURN { }
@@ -1366,8 +1366,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Chi Strike boosts allies' crit chance")
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_6);
         ASSUME(gMovesInfo[MOVE_G_MAX_CHI_STRIKE].argument == MAX_EFFECT_CRIT_PLUS);
-        PLAYER(SPECIES_MACHAMP) { GigantamaxFactor(TRUE); }
-        PLAYER(SPECIES_MACHOP);
+        PLAYER(SPECIES_CHIBI_MERLIN) { GigantamaxFactor(TRUE); }
+        PLAYER(SPECIES_HELPER_LUNASA);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

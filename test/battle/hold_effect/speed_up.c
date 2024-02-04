@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Salac Berry raises the holder's Speed by one stage when HP d
 SINGLE_BATTLE_TEST("Salac Berry raises Speed by one stage when HP drops to 1/2 or below if holder has Gluttony")
 {
     GIVEN {
-        PLAYER(SPECIES_BELLSPROUT) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_SALAC_BERRY); }
+        PLAYER(SPECIES_NORMAL_MERLIN) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_SALAC_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }

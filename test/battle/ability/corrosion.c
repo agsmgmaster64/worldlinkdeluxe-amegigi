@@ -109,7 +109,7 @@ SINGLE_BATTLE_TEST("If a Poison- or Steel-type Pokémon with Corrosion poisons a
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
         PLAYER(SPECIES_SALANDIT) { Ability(ABILITY_CORROSION); }
-        OPPONENT(SPECIES_ABRA) { Ability(ABILITY_SYNCHRONIZE); }
+        OPPONENT(SPECIES_SPEED_LILY_BLACK) { Ability(ABILITY_SYNCHRONIZE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {

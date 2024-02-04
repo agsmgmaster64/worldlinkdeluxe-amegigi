@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Apicot Berry raises the holder's Sp. Def by one stage when H
 SINGLE_BATTLE_TEST("Apicot Berry raises Sp. Def by one stage when HP drops to 1/2 or below if holder has Gluttony")
 {
     GIVEN {
-        PLAYER(SPECIES_BELLSPROUT) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_APICOT_BERRY); }
+        PLAYER(SPECIES_NORMAL_MERLIN) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_APICOT_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }

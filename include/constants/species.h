@@ -46,41 +46,41 @@
 #define SPECIES_NORMAL_FLANDRE                          42
 #define SPECIES_ATTACK_FLANDRE                          43
 #define SPECIES_SPEED_FLANDRE                           44
-#define SPECIES_VILEPLUME                               45 // Letty
-#define SPECIES_PARAS                                   46
-#define SPECIES_PARASECT                                47
-#define SPECIES_VENONAT                                 48
-#define SPECIES_VENOMOTH                                49 // Dolls
-#define SPECIES_DIGLETT                                 50
-#define SPECIES_DUGTRIO                                 51
-#define SPECIES_MEOWTH                                  52 // Alice
-#define SPECIES_PERSIAN                                 53
-#define SPECIES_PSYDUCK                                 54
-#define SPECIES_GOLDUCK                                 55
-#define SPECIES_MANKEY                                  56 // LilyWhite
-#define SPECIES_PRIMEAPE                                57
-#define SPECIES_GROWLITHE                               58
-#define SPECIES_ARCANINE                                59
-#define SPECIES_POLIWAG                                 60 // LilyBlack
-#define SPECIES_POLIWHIRL                               61
-#define SPECIES_POLIWRATH                               62
-#define SPECIES_ABRA                                    63
-#define SPECIES_KADABRA                                 64 // Lunasa
-#define SPECIES_ALAKAZAM                                65
-#define SPECIES_MACHOP                                  66
-#define SPECIES_MACHOKE                                 67
-#define SPECIES_MACHAMP                                 68 // Merlin
-#define SPECIES_BELLSPROUT                              69
-#define SPECIES_WEEPINBELL                              70
-#define SPECIES_VICTREEBEL                              71
-#define SPECIES_TENTACOOL                               72 // Lyrica
-#define SPECIES_TENTACRUEL                              73
-#define SPECIES_GEODUDE                                 74
-#define SPECIES_GRAVELER                                75
-#define SPECIES_GOLEM                                   76 // Layla
-#define SPECIES_PONYTA                                  77
-#define SPECIES_RAPIDASH                                78
-#define SPECIES_SLOWPOKE                                79
+#define SPECIES_CHIBI_LETTY                             45
+#define SPECIES_NORMAL_LETTY                            46
+#define SPECIES_DEFENSE_LETTY                           47
+#define SPECIES_HELPER_LETTY                            48
+#define SPECIES_SHANGHAI                                49
+#define SPECIES_HOURAI                                  50
+#define SPECIES_GOLIATH                                 51
+#define SPECIES_CHIBI_ALICE                             52
+#define SPECIES_NORMAL_ALICE                            53
+#define SPECIES_ATTACK_ALICE                            54
+#define SPECIES_TECH_ALICE                              55
+#define SPECIES_CHIBI_LILY_WHITE                        56
+#define SPECIES_NORMAL_LILY_WHITE                       57
+#define SPECIES_ATTACK_LILY_WHITE                       58
+#define SPECIES_DEFENSE_LILY_WHITE                      59
+#define SPECIES_CHIBI_LILY_BLACK                        60
+#define SPECIES_NORMAL_LILY_BLACK                       61
+#define SPECIES_ATTACK_LILY_BLACK                       62
+#define SPECIES_SPEED_LILY_BLACK                        63
+#define SPECIES_CHIBI_LUNASA                            64
+#define SPECIES_NORMAL_LUNASA                           65
+#define SPECIES_HELPER_LUNASA                           66
+#define SPECIES_PLACEHOLD_LUNASA                        67
+#define SPECIES_CHIBI_MERLIN                            68
+#define SPECIES_NORMAL_MERLIN                           69
+#define SPECIES_HELPER_MERLIN                           70
+#define SPECIES_PLACEHOLD_MERLIN                        71
+#define SPECIES_CHIBI_LYRICA                            72
+#define SPECIES_NORMAL_LYRICA                           73
+#define SPECIES_HELPER_LYRICA                           74
+#define SPECIES_PLACEHOLDER_LYRICA                      75
+#define SPECIES_CHIBI_LAYLA                             76
+#define SPECIES_NORMAL_LAYLA                            77
+#define SPECIES_DEFENSE_LAYLA                           78
+#define SPECIES_PLACEHOLDER_LAYLA                       79
 #define SPECIES_CHIBI_YOUMU                             80
 #define SPECIES_NORMAL_YOUMU                            81
 #define SPECIES_DEFENSE_YOUMU                           82

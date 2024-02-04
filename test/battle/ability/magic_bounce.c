@@ -61,8 +61,8 @@ DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting both foes at two foe
     GIVEN {
         ASSUME(gMovesInfo[MOVE_LEER].effect == EFFECT_DEFENSE_DOWN);
         ASSUME(gMovesInfo[MOVE_LEER].target == MOVE_TARGET_BOTH);
-        PLAYER(SPECIES_ABRA);
-        PLAYER(SPECIES_KADABRA);
+        PLAYER(SPECIES_SPEED_LILY_BLACK);
+        PLAYER(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {

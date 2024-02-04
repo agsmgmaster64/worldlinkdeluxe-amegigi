@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Eject Button will not activate under Substitute")
 SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves")
 {
     GIVEN {
-        PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_ARENA_TRAP); }
+        PLAYER(SPECIES_GOLIATH) { Ability(ABILITY_ARENA_TRAP); }
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

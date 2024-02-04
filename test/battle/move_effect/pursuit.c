@@ -9,7 +9,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and activated ability Tangling Hair")
 {
     GIVEN {
-        PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_TANGLING_HAIR); }
+        PLAYER(SPECIES_GOLIATH) { Ability(ABILITY_TANGLING_HAIR); }
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);

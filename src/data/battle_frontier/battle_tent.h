@@ -866,7 +866,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_NAUGHTY
     },
     [SLATEPORT_TENT_MON_GRAVELER] = {
-        .species = SPECIES_GRAVELER,
+        .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_MUD_SPORT, MOVE_BLOCK, MOVE_ROCK_TOMB, MOVE_MAGNITUDE},
         .itemTableId = BATTLE_FRONTIER_ITEM_NONE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -1020,7 +1020,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_JOLLY
     },
     [SLATEPORT_TENT_MON_TENTACOOL] = {
-        .species = SPECIES_TENTACOOL,
+        .species = SPECIES_CHIBI_LYRICA,
         .moves = {MOVE_SCREECH, MOVE_BUBBLE_BEAM, MOVE_POISON_TEARS, MOVE_BARRIER},
         .itemTableId = BATTLE_FRONTIER_ITEM_NURSE_OUTFIT,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -1181,7 +1181,7 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_KADABRA] = {
-        .species = SPECIES_KADABRA,
+        .species = SPECIES_CHIBI_LUNASA,
         .moves = {MOVE_DISABLE, MOVE_PSYSHOT, MOVE_REFLECT, MOVE_RECOVER},
         .itemTableId = BATTLE_FRONTIER_ITEM_NONE,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
@@ -1230,14 +1230,14 @@ const struct FacilityMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_JOLLY
     },
     [SLATEPORT_TENT_MON_MACHOP] = {
-        .species = SPECIES_MACHOP,
+        .species = SPECIES_HELPER_LUNASA,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_VITAL_THROW, MOVE_SEISMIC_TOSS, MOVE_FORESIGHT},
         .itemTableId = BATTLE_FRONTIER_ITEM_CHINA_DRESS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
     },
     [SLATEPORT_TENT_MON_MACHOKE] = {
-        .species = SPECIES_MACHOKE,
+        .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_LEER, MOVE_KARATE_CHOP, MOVE_FORESIGHT},
         .itemTableId = BATTLE_FRONTIER_ITEM_NONE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
@@ -1842,7 +1842,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_RASH
     },
     [VERDANTURF_TENT_MON_MACHOP] = {
-        .species = SPECIES_MACHOP,
+        .species = SPECIES_HELPER_LUNASA,
         .moves = {MOVE_LOW_KICK, MOVE_LEER, MOVE_FOCUS_ENERGY, MOVE_ENCORE},
         .itemTableId = BATTLE_FRONTIER_ITEM_PERSIM_BERRY,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK,
@@ -2017,14 +2017,14 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_ADAMANT
     },
     [VERDANTURF_TENT_MON_GRAVELER] = {
-        .species = SPECIES_GRAVELER,
+        .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_TREMORS, MOVE_ROCK_SMASH, MOVE_SANDSTORM, MOVE_BLOCK},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK,
         .nature = NATURE_IMPISH
     },
     [VERDANTURF_TENT_MON_KADABRA] = {
-        .species = SPECIES_KADABRA,
+        .species = SPECIES_CHIBI_LUNASA,
         .moves = {MOVE_ENCORE, MOVE_PSYBEAM, MOVE_DISABLE, MOVE_LUNA_DIAL},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -2073,7 +2073,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_NAUGHTY
     },
     [VERDANTURF_TENT_MON_TENTACOOL] = {
-        .species = SPECIES_TENTACOOL,
+        .species = SPECIES_CHIBI_LYRICA,
         .moves = {MOVE_SCREECH, MOVE_CONFUSE_RAY, MOVE_WRAP, MOVE_ATTRACT},
         .itemTableId = BATTLE_FRONTIER_ITEM_BRIGHT_POWDER,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -2101,7 +2101,7 @@ const struct FacilityMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_QUIRKY
     },
     [VERDANTURF_TENT_MON_MACHOKE] = {
-        .species = SPECIES_MACHOKE,
+        .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_LEER, MOVE_KARATE_CHOP, MOVE_BULK_UP, MOVE_REST},
         .itemTableId = BATTLE_FRONTIER_ITEM_CHESTO_BERRY,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -2744,7 +2744,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FALLARBOR_TENT_MON_MACHOKE] = {
-        .species = SPECIES_MACHOKE,
+        .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_COUNTER, MOVE_REVENGE, MOVE_BULK_UP, MOVE_FOCUS_ENERGY},
         .itemTableId = BATTLE_FRONTIER_ITEM_SCOPE_LENS,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -2947,7 +2947,7 @@ const struct FacilityMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .nature = NATURE_JOLLY
     },
     [FALLARBOR_TENT_MON_GRAVELER] = {
-        .species = SPECIES_GRAVELER,
+        .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_ROCK_BLAST, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_MUD_SPORT},
         .itemTableId = BATTLE_FRONTIER_ITEM_BUNNY_SUIT,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,

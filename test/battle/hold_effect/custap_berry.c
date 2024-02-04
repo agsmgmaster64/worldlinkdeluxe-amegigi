@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority
 SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority bracket when HP is below 1/2. If the holder has Gluttony")
 {
     GIVEN {
-        PLAYER(SPECIES_BELLSPROUT) { Speed(1); MaxHP(160); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_CUSTAP_BERRY); }
+        PLAYER(SPECIES_NORMAL_MERLIN) { Speed(1); MaxHP(160); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_CUSTAP_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }

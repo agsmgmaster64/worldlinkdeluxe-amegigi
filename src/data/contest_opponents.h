@@ -706,7 +706,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_CALE] = {
-        .species = SPECIES_DIGLETT,
+        .species = SPECIES_HOURAI,
         .nickname = _("DIGLE"),
         .trainerName = _("CALE"),
         .trainerGfxId = OBJ_EVENT_GFX_HIKER,
@@ -733,7 +733,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_CAITLIN] = {
-        .species = SPECIES_POLIWAG,
+        .species = SPECIES_CHIBI_LILY_BLACK,
         .nickname = _("WAGIL"),
         .trainerName = _("CAITLIN"),
         .trainerGfxId = OBJ_EVENT_GFX_TUBER_F,
@@ -1732,7 +1732,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_EMILIO] = {
-        .species = SPECIES_MACHOKE,
+        .species = SPECIES_PLACEHOLD_LUNASA,
         .nickname = _("CHOKEM"),
         .trainerName = _("EMILIO"),
         .trainerGfxId = OBJ_EVENT_GFX_SCHOOL_KID_M,
@@ -2650,7 +2650,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_KAILEY] = {
-        .species = SPECIES_MEOWTH,
+        .species = SPECIES_CHIBI_ALICE,
         .nickname = _("MEOWY"),
         .trainerName = _("KAILEY"),
         .trainerGfxId = OBJ_EVENT_GFX_TWIN,

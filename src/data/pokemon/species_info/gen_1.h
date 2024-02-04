@@ -1495,64 +1495,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_ZUBAT
 
 #if P_FAMILY_ODDISH
-    [SPECIES_VILEPLUME] =
-    {
-        .baseHP        = 75,
-        .baseAttack    = 80,
-        .baseDefense   = 85,
-        .baseSpeed     = 50,
-        .baseSpAttack  = P_UPDATED_STATS >= GEN_6 ? 110 : 100,
-        .baseSpDefense = 90,
-        .types = { TYPE_NATURE, TYPE_MIASMA },
-        .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
-        .expYield = 245,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 221,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_5
-        .expYield = 216,
-    #else
-        .expYield = 184,
-    #endif
-        .evYield_SpAttack = 3,
-        .itemRare = ITEM_ABSORB_BULB,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = { EGG_GROUP_GRASS, EGG_GROUP_GRASS },
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_INFECTIOUS },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Vileplume"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VILEPLUME,
-        .categoryName = _("Flower"),
-        .height = 12,
-        .weight = 186,
-        .description = COMPOUND_STRING(
-            "In seasons when it produces more pollen,\n"
-            "the air around a Vileplume turns yellow\n"
-            "with the powder as it walks. The pollen is\n"
-            "highly toxic and causes paralysis."),
-        .pokemonScale = 256,
-        .pokemonOffset = 4,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Vileplume, 56, 56),
-        FRONT_PIC_FEMALE(Vileplume, 56, 56),
-        .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_Vileplume,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE_SLOW,
-        BACK_PIC(Vileplume, 64, 56),
-        BACK_PIC_FEMALE(Vileplume, 64, 56),
-        .backPicYOffset = 6,
-        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
-        PALETTES(Vileplume),
-        ICON(Vileplume, 0),
-        FOOTPRINT(Vileplume)
-        LEARNSETS(Vileplume),
-    },
-
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_BELLOSSOM] =
     {
@@ -1613,208 +1555,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_ODDISH
 
 #if P_FAMILY_PARAS
-    [SPECIES_PARAS] =
-    {
-        .baseHP        = 35,
-        .baseAttack    = 70,
-        .baseDefense   = 55,
-        .baseSpeed     = 25,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 55,
-        .types = { TYPE_HEART, TYPE_NATURE },
-        .catchRate = 190,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 57 : 70,
-        .evYield_Attack = 1,
-        .itemCommon = ITEM_TINY_MUSHROOM,
-        .itemRare = ITEM_BIG_MUSHROOM,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_GRASS },
-        .abilities = { ABILITY_INFECTIOUS, ABILITY_DRY_SKIN, ABILITY_DAMP },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Paras"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_PARAS,
-        .categoryName = _("Mushroom"),
-        .height = 3,
-        .weight = 54,
-        .description = COMPOUND_STRING(
-            "A Paras has parasitic tochukaso\n"
-            "mushrooms growing on its back. They grow\n"
-            "by drawing nutrients from the host. They\n"
-            "are valued as a medicine for long life."),
-        .pokemonScale = 593,
-        .pokemonOffset = 22,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Paras, 48, 40),
-        .frontPicYOffset = 15,
-        .frontAnimFrames = sAnims_Paras,
-        .frontAnimId = ANIM_H_SLIDE_SLOW,
-        .frontAnimDelay = 10,
-        BACK_PIC(Paras, 64, 32),
-        .backPicYOffset = 18,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        PALETTES(Paras),
-        ICON(Paras, 0),
-        FOOTPRINT(Paras)
-        LEARNSETS(Paras),
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_PARASECT}),
-    },
-
-    [SPECIES_PARASECT] =
-    {
-        .baseHP        = 60,
-        .baseAttack    = 95,
-        .baseDefense   = 80,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 80,
-        .types = { TYPE_HEART, TYPE_NATURE },
-        .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 142 : 128,
-        .evYield_Attack = 2,
-        .evYield_Defense = 1,
-        .itemCommon = ITEM_TINY_MUSHROOM,
-        .itemRare = ITEM_BIG_MUSHROOM,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_GRASS },
-        .abilities = { ABILITY_INFECTIOUS, ABILITY_DRY_SKIN, ABILITY_DAMP },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Parasect"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_PARASECT,
-        .categoryName = _("Mushroom"),
-        .height = 10,
-        .weight = 295,
-        .description = COMPOUND_STRING(
-            "Parasect are known to infest the roots of\n"
-            "large trees en masse and drain nutrients.\n"
-            "When an infested tree dies, they move\n"
-            "onto another tree all at once."),
-        .pokemonScale = 307,
-        .pokemonOffset = 8,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(Parasect, 56, 56),
-        .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_Parasect,
-        .frontAnimId = ANIM_H_SHAKE,
-        .frontAnimDelay = 45,
-        BACK_PIC(Parasect, 64, 40),
-        .backPicYOffset = 13,
-        .backAnimId = BACK_ANIM_H_SHAKE,
-        PALETTES(Parasect),
-        ICON(Parasect, 0),
-        FOOTPRINT(Parasect)
-        LEARNSETS(Parasect),
-    },
 #endif //P_FAMILY_PARAS
 
 #if P_FAMILY_VENONAT
-    [SPECIES_VENONAT] =
-    {
-        .baseHP        = 60,
-        .baseAttack    = 55,
-        .baseDefense   = 50,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 55,
-        .types = { TYPE_HEART, TYPE_MIASMA },
-        .catchRate = 190,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 61 : 75,
-        .evYield_SpDefense = 1,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_FOCUS, ABILITY_TINTED_LENS, ABILITY_RUN_AWAY },
-        .sourceGame = SOURCE_PCB,
-        .speciesName = _("Venonat"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VENONAT,
-        .categoryName = _("Insect"),
-        .height = 10,
-        .weight = 300,
-        .description = COMPOUND_STRING(
-            "Its coat of thin, stiff hair that covers\n"
-            "its entire body is said to have evolved\n"
-            "for protection. Its large eyes never fail\n"
-            "to spot even miniscule prey."),
-        .pokemonScale = 360,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = -1,
-        FRONT_PIC(Venonat, 40, 56),
-        .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_Venonat,
-        .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-        .frontAnimDelay = 20,
-        BACK_PIC(Venonat, 64, 56),
-        .backPicYOffset = 5,
-        .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
-        PALETTES(Venonat),
-        ICON(Venonat, 2),
-        FOOTPRINT(Venonat)
-        LEARNSETS(Venonat),
-        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_VENOMOTH}),
-    },
-
-    [SPECIES_VENOMOTH] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = 65,
-        .baseDefense   = 60,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 90,
-        .baseSpDefense = 75,
-        .types = { TYPE_HEART, TYPE_MIASMA },
-        .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 138,
-        .evYield_Speed = 1,
-        .evYield_SpAttack = 1,
-        .itemRare = ITEM_SHED_SHELL,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = { EGG_GROUP_BUG, EGG_GROUP_BUG },
-        .abilities = { ABILITY_ADVENT, ABILITY_TINTED_LENS, ABILITY_WONDER_SKIN },
-        .sourceGame = SOURCE_PCB,
-        .speciesName = _("Venomoth"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VENOMOTH,
-        .categoryName = _("Poison Moth"),
-        .height = 15,
-        .weight = 125,
-        .description = COMPOUND_STRING(
-            "Venomoth are nocturnal--they are only\n"
-            "active at night. Their favorite prey are\n"
-            "insects that gather around streetlights,\n"
-            "attracted by the light in the darkness."),
-        .pokemonScale = 285,
-        .pokemonOffset = 2,
-        .trainerScale = 256,
-        .trainerOffset = 1,
-        FRONT_PIC(Venomoth, 64, 48),
-        .frontPicYOffset = 9,
-        .frontAnimFrames = sAnims_Venomoth,
-        .frontAnimId = ANIM_ZIGZAG_SLOW,
-        .enemyMonElevation = 16,
-        BACK_PIC(Venomoth, 64, 56),
-        .backPicYOffset = 4,
-        .backAnimId = BACK_ANIM_CONVEX_DOUBLE_ARC,
-        PALETTES(Venomoth),
-        ICON(Venomoth, 2),
-        FOOTPRINT(Venomoth)
-        LEARNSETS(Venomoth),
-    },
 #endif //P_FAMILY_VENONAT
 
 #if P_FAMILY_DIGLETT
@@ -1871,7 +1614,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #define DUGTRIO_ATTACK (P_UPDATED_STATS >= GEN_7 ? 100 : 80)
 
-    [SPECIES_DIGLETT] =
+    [SPECIES_HOURAI] =
     {
         DIGLETT_MISC_INFO,
         .baseHP        = 10,
@@ -1882,6 +1625,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .baseSpDefense = 45,
         .types = { TYPE_EARTH, TYPE_EARTH },
         .abilities = { ABILITY_SAND_VEIL, ABILITY_ARENA_TRAP, ABILITY_SAND_FORCE },
+        .natDexNum = NATIONAL_DEX_DIGLETT,
+        .categoryName = _("Mole"),
+        .height = 2,
         .weight = 8,
         .description = COMPOUND_STRING(
             "Diglett are raised in most farms.\n"
@@ -1899,10 +1645,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Diglett),
         ICON(Diglett, 2),
         LEARNSETS(Diglett),
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_DUGTRIO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_GOLIATH}),
     },
 
-    [SPECIES_DUGTRIO] =
+    [SPECIES_GOLIATH] =
     {
         DUGTRIO_MISC_INFO,
         .baseHP        = 35,
@@ -2030,7 +1776,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Persian)                                          \
         .formSpeciesIdTable = sPersianFormSpeciesIdTable
 
-    [SPECIES_MEOWTH] =
+    [SPECIES_CHIBI_ALICE] =
     {
         MEOWTH_MISC_INFO,
         .baseHP        = 40,
@@ -2067,10 +1813,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Meowth, 1),
         LEARNSETS(Meowth),
         .formChangeTable = sMeowthFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PERSIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_ALICE}),
     },
 
-    [SPECIES_PERSIAN] =
+    [SPECIES_NORMAL_ALICE] =
     {
         PERSIAN_MISC_INFO,
         .baseHP        = 65,
@@ -2312,7 +2058,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_MEOWTH
 
 #if P_FAMILY_PSYDUCK
-    [SPECIES_PSYDUCK] =
+    [SPECIES_ATTACK_ALICE] =
     {
         .baseHP        = 50,
         .baseAttack    = 52,
@@ -2357,10 +2103,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Psyduck, 1),
         FOOTPRINT(Psyduck)
         LEARNSETS(Psyduck),
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_GOLDUCK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_TECH_ALICE}),
     },
 
-    [SPECIES_GOLDUCK] =
+    [SPECIES_TECH_ALICE] =
     {
         .baseHP        = 80,
         .baseAttack    = 82,
@@ -2409,7 +2155,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_PSYDUCK
 
 #if P_FAMILY_MANKEY
-    [SPECIES_MANKEY] =
+    [SPECIES_CHIBI_LILY_WHITE] =
     {
         .baseHP        = 40,
         .baseAttack    = 80,
@@ -2455,10 +2201,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Mankey, 1),
         FOOTPRINT(Mankey)
         LEARNSETS(Mankey),
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PRIMEAPE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_LILY_WHITE}),
     },
 
-    [SPECIES_PRIMEAPE] =
+    [SPECIES_NORMAL_LILY_WHITE] =
     {
         .baseHP        = 65,
         .baseAttack    = 105,
@@ -2588,7 +2334,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sArcanineFormSpeciesIdTable,          \
         GROWLITHE_FAMILY_MISC_INFO
 
-    [SPECIES_GROWLITHE] =
+    [SPECIES_ATTACK_LILY_WHITE] =
     {
         GROWLITHE_MISC_INFO,
         .baseHP        = 55,
@@ -2622,10 +2368,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Growlithe),
         ICON(Growlithe, 3),
         LEARNSETS(Growlithe),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_ARCANINE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_POWER_HEART, SPECIES_DEFENSE_LILY_WHITE}),
     },
 
-    [SPECIES_ARCANINE] =
+    [SPECIES_DEFENSE_LILY_WHITE] =
     {
         ARCANINE_MISC_INFO,
         .baseHP        = 90,
@@ -2736,7 +2482,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_GROWLITHE
 
 #if P_FAMILY_POLIWAG
-    [SPECIES_POLIWAG] =
+    [SPECIES_CHIBI_LILY_BLACK] =
     {
         .baseHP        = 40,
         .baseAttack    = 50,
@@ -2782,10 +2528,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Poliwag, 0),
         FOOTPRINT(Poliwag)
         LEARNSETS(Poliwag),
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_POLIWHIRL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_LILY_BLACK}),
     },
 
-    [SPECIES_POLIWHIRL] =
+    [SPECIES_NORMAL_LILY_BLACK] =
     {
         .baseHP        = 65,
         .baseAttack    = 65,
@@ -2833,12 +2579,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Poliwhirl, 0),
         FOOTPRINT(Poliwhirl)
         LEARNSETS(Poliwhirl),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_POLIWRATH},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GUARD_HEART, SPECIES_ATTACK_LILY_BLACK},
                                 {EVO_TRADE_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED},
                                 {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_POLITOED}),
     },
 
-    [SPECIES_POLIWRATH] =
+    [SPECIES_ATTACK_LILY_BLACK] =
     {
         .baseHP        = 90,
         .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 95 : 85,
@@ -2957,7 +2703,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_POLIWAG
 
 #if P_FAMILY_ABRA
-    [SPECIES_ABRA] =
+    [SPECIES_SPEED_LILY_BLACK] =
     {
         .baseHP        = 25,
         .baseAttack    = 20,
@@ -3009,10 +2755,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Abra, 2),
         FOOTPRINT(Abra)
         LEARNSETS(Abra),
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_KADABRA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_CHIBI_LUNASA}),
     },
 
-    [SPECIES_KADABRA] =
+    [SPECIES_CHIBI_LUNASA] =
     {
         .baseHP        = 40,
         .baseAttack    = 35,
@@ -3061,8 +2807,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Kadabra, 2),
         FOOTPRINT(Kadabra)
         LEARNSETS(Kadabra),
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_ALAKAZAM},
-                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_ALAKAZAM}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_NORMAL_LUNASA},
+                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_NORMAL_LUNASA}),
     },
 
 #define ALAKAZAM_SP_DEF (P_UPDATED_STATS >= GEN_6 ? 95 : 85)
@@ -3086,7 +2832,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sAlakazamFormSpeciesIdTable,          \
         .formChangeTable = sAlakazamFormChangeTable
 
-    [SPECIES_ALAKAZAM] =
+    [SPECIES_NORMAL_LUNASA] =
     {
         ALAKAZAM_MISC_INFO,
         .baseHP        = 55,
@@ -3169,7 +2915,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_ABRA
 
 #if P_FAMILY_MACHOP
-    [SPECIES_MACHOP] =
+    [SPECIES_HELPER_LUNASA] =
     {
         .baseHP        = 70,
         .baseAttack    = 80,
@@ -3221,10 +2967,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Machop, 0),
         FOOTPRINT(Machop)
         LEARNSETS(Machop),
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MACHOKE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PLACEHOLD_LUNASA}),
     },
 
-    [SPECIES_MACHOKE] =
+    [SPECIES_PLACEHOLD_LUNASA] =
     {
         .baseHP        = 80,
         .baseAttack    = 100,
@@ -3271,8 +3017,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Machoke, 2),
         FOOTPRINT(Machoke)
         LEARNSETS(Machoke),
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_MACHAMP},
-                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_MACHAMP}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_CHIBI_MERLIN},
+                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_CHIBI_MERLIN}),
     },
 
 #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -3311,7 +3057,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sMachampFormSpeciesIdTable,                   \
         .formChangeTable = sMachampFormChangeTable
 
-    [SPECIES_MACHAMP] =
+    [SPECIES_CHIBI_MERLIN] =
     {
         MACHAMP_MISC_INFO,
         .height = 16,
@@ -3366,7 +3112,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_MACHOP
 
 #if P_FAMILY_BELLSPROUT
-    [SPECIES_BELLSPROUT] =
+    [SPECIES_NORMAL_MERLIN] =
     {
         .baseHP        = 50,
         .baseAttack    = 75,
@@ -3411,10 +3157,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Bellsprout, 1),
         FOOTPRINT(Bellsprout)
         LEARNSETS(Bellsprout),
-        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_WEEPINBELL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 21, SPECIES_HELPER_MERLIN}),
     },
 
-    [SPECIES_WEEPINBELL] =
+    [SPECIES_HELPER_MERLIN] =
     {
         .baseHP        = 65,
         .baseAttack    = 90,
@@ -3460,10 +3206,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Weepinbell, 1),
         FOOTPRINT(Weepinbell)
         LEARNSETS(Weepinbell),
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_VICTREEBEL}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TECH_HEART, SPECIES_PLACEHOLD_MERLIN}),
     },
 
-    [SPECIES_VICTREEBEL] =
+    [SPECIES_PLACEHOLD_MERLIN] =
     {
         .baseHP        = 80,
         .baseAttack    = 105,
@@ -3520,7 +3266,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_BELLSPROUT
 
 #if P_FAMILY_TENTACOOL
-    [SPECIES_TENTACOOL] =
+    [SPECIES_CHIBI_LYRICA] =
     {
         .baseHP        = 40,
         .baseAttack    = 40,
@@ -3566,10 +3312,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(Tentacool, 0),
         FOOTPRINT(Tentacool)
         LEARNSETS(Tentacool),
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_TENTACRUEL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_LYRICA}),
     },
 
-    [SPECIES_TENTACRUEL] =
+    [SPECIES_NORMAL_LYRICA] =
     {
         .baseHP        = 80,
         .baseAttack    = 70,
@@ -3716,7 +3462,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGolemFormSpeciesIdTable, \
         GEODUDE_FAMILY_MISC_INFO
 
-    [SPECIES_GEODUDE] =
+    [SPECIES_HELPER_LYRICA] =
     {
         KANTONIAN_GEODUDE_FAMILY_INFO,
         GEODUDE_MISC_INFO,
@@ -3737,10 +3483,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Geodude),
         ICON(Geodude, 1),
         LEARNSETS(Geodude),
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GRAVELER}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PLACEHOLDER_LYRICA}),
     },
 
-    [SPECIES_GRAVELER] =
+    [SPECIES_PLACEHOLDER_LYRICA] =
     {
         KANTONIAN_GEODUDE_FAMILY_INFO,
         GRAVELER_MISC_INFO,
@@ -3760,11 +3506,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Graveler),
         ICON(Graveler, 1),
         LEARNSETS(Graveler),
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_GOLEM},
-                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_GOLEM}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_CHIBI_LAYLA},
+                                {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_CHIBI_LAYLA}),
     },
 
-    [SPECIES_GOLEM] =
+    [SPECIES_CHIBI_LAYLA] =
     {
         KANTONIAN_GEODUDE_FAMILY_INFO,
         GOLEM_MISC_INFO,
@@ -3929,7 +3675,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sRapidashFormSpeciesIdTable,          \
         PONYTA_FAMILY_MISC_INFO
 
-    [SPECIES_PONYTA] =
+    [SPECIES_NORMAL_LAYLA] =
     {
         KANTONIAN_PONYTA_FAMILY_INFO,
         PONYTA_MISC_INFO,
@@ -3956,10 +3702,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(Ponyta),
         ICON(Ponyta, 3),
         LEARNSETS(Ponyta),
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_RAPIDASH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_DEFENSE_LAYLA}),
     },
 
-    [SPECIES_RAPIDASH] =
+    [SPECIES_DEFENSE_LAYLA] =
     {
         KANTONIAN_PONYTA_FAMILY_INFO,
         RAPIDASH_MISC_INFO,
@@ -4104,7 +3850,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Slowking)                                     \
         .formSpeciesIdTable = sSlowkingFormSpeciesIdTable
 
-    [SPECIES_SLOWPOKE] =
+    [SPECIES_PLACEHOLDER_LAYLA] =
     {
         SLOWPOKE_MISC_INFO,
         .types = { TYPE_WATER, TYPE_REASON },
