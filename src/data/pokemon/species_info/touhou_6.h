@@ -1106,7 +1106,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
 #define PATCHOULI_MISC_INFO                                          \
         PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),           \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE }, \
-        .cryId = CRY_PORYGON
+        .cryId = CRY_PATCHOULI
 
     [SPECIES_CHIBI_PATCHOULI] =
     {
@@ -1417,7 +1417,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
 #define REMILIA_MISC_INFO                                            \
         PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),                  \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING },     \
-        .cryId = CRY_PORYGON
+        .cryId = CRY_REMILIA
 
     [SPECIES_CHIBI_REMILIA] =
     {
@@ -1570,7 +1570,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
 #define FLANDRE_MISC_INFO                                            \
         PUPPET_MISC_INFO(GROWTH_FLUCTUATING, SOURCE_EOSD),           \
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER },    \
-        .cryId = CRY_PORYGON
+        .cryId = CRY_FLANDRE
 
     [SPECIES_CHIBI_FLANDRE] =
     {

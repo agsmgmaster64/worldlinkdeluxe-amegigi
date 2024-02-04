@@ -399,6 +399,22 @@ Cry_Rumia::
 	.incbin "sound/direct_sound_samples/cries/rumia.bin"
 
 	.align 2
+Cry_Patchouli::
+	.incbin "sound/direct_sound_samples/cries/patchouli.bin"
+
+	.align 2
+Cry_Remilia::
+	.incbin "sound/direct_sound_samples/cries/remilia.bin"
+
+	.align 2
+Cry_Flandre::
+	.incbin "sound/direct_sound_samples/cries/flandre.bin"
+
+	.align 2
+Cry_Letty::
+	.incbin "sound/direct_sound_samples/cries/letty.bin"
+
+	.align 2
 Cry_Koakuma::
 	.incbin "sound/direct_sound_samples/cries/koakuma.bin"
 

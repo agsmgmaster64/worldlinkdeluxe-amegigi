@@ -166,7 +166,7 @@ static const u16 sGrowlitheFormSpeciesIdTable[] = {
 };
 
 static const u16 sArcanineFormSpeciesIdTable[] = {
-    SPECIES_DEFENSE_LILY_WHITE,
+    SPECIES_HELPER_LILY_WHITE,
     SPECIES_ARCANINE_HISUIAN,
     FORM_SPECIES_END,
 };

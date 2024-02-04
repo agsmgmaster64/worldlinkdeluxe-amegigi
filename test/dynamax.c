@@ -1203,7 +1203,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Wildfire sets a field effect that damages no
         PLAYER(SPECIES_CHARMANDER);
         OPPONENT(SPECIES_WOBBUFFET) { HP(600); MaxHP(600); }
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_DEFENSE_LILY_WHITE);
+        OPPONENT(SPECIES_HELPER_LILY_WHITE);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_EMBER, target: opponentLeft, dynamax: TRUE); }
         TURN { }

@@ -243,7 +243,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_DEFENSE_LILY_WHITE,
+                .species = SPECIES_HELPER_LILY_WHITE,
                 .heldItem = ITEM_WHITE_HERB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HASTY,

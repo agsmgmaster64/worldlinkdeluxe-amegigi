@@ -60,7 +60,7 @@
 #define SPECIES_CHIBI_LILY_WHITE                        56
 #define SPECIES_NORMAL_LILY_WHITE                       57
 #define SPECIES_ATTACK_LILY_WHITE                       58
-#define SPECIES_DEFENSE_LILY_WHITE                      59
+#define SPECIES_HELPER_LILY_WHITE                       59
 #define SPECIES_CHIBI_LILY_BLACK                        60
 #define SPECIES_NORMAL_LILY_BLACK                       61
 #define SPECIES_ATTACK_LILY_BLACK                       62

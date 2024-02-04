@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Weather Ball doubles its power and turns to a Water-type mov
     PARAMETRIZE{ move = MOVE_RAIN_DANCE; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_DEFENSE_LILY_WHITE);
+        OPPONENT(SPECIES_HELPER_LILY_WHITE);
     } WHEN {
         TURN { MOVE(player, move); }
         TURN { MOVE(player, MOVE_WEATHER_BALL); }

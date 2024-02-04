@@ -88,12 +88,12 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Silvally's forms")
 
 SINGLE_BATTLE_TEST("Reflect Type does not affect Pokémon with no types")
 {
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[0] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[1] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[0] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[1] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ATTACK_LILY_BLACK].types[0] == TYPE_WATER);
     ASSUME(gSpeciesInfo[SPECIES_ATTACK_LILY_BLACK].types[1] == TYPE_DREAM);
     GIVEN {
-        PLAYER(SPECIES_DEFENSE_LILY_WHITE);
+        PLAYER(SPECIES_HELPER_LILY_WHITE);
         OPPONENT(SPECIES_ATTACK_LILY_BLACK);
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); MOVE(opponent, MOVE_REFLECT_TYPE); }
@@ -109,12 +109,12 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect Pokémon with no types")
 
 SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
 {
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[0] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[1] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[0] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[1] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_ATTACK_LILY_BLACK].types[0] == TYPE_WATER);
     ASSUME(gSpeciesInfo[SPECIES_ATTACK_LILY_BLACK].types[1] == TYPE_DREAM);
     GIVEN {
-        PLAYER(SPECIES_DEFENSE_LILY_WHITE);
+        PLAYER(SPECIES_HELPER_LILY_WHITE);
         OPPONENT(SPECIES_ATTACK_LILY_BLACK);
     } WHEN {
         TURN { MOVE(player, MOVE_REFLECT_TYPE); }
@@ -131,12 +131,12 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
 
 SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
 {
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[0] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[1] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[0] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[1] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[0] == TYPE_BEAST);
     ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[1] == TYPE_BEAST);
     GIVEN {
-        PLAYER(SPECIES_DEFENSE_LILY_WHITE);
+        PLAYER(SPECIES_HELPER_LILY_WHITE);
         OPPONENT(SPECIES_SUDOWOODO);
     } WHEN {
         TURN { MOVE(player, MOVE_REFLECT_TYPE); }
@@ -155,11 +155,11 @@ SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's type1 an
 {
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_REASON);
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_REASON);
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[0] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LILY_WHITE].types[1] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[0] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[1] == TYPE_FIRE);
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_DEFENSE_LILY_WHITE);
+        OPPONENT(SPECIES_HELPER_LILY_WHITE);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BURN_UP); }
         TURN { MOVE(player, MOVE_FORESTS_CURSE); }
