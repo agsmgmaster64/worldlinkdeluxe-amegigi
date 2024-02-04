@@ -2901,6 +2901,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_ACC_UP_1 },
+        .argument = STATUS2_FOCUS_ENERGY,
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .snatchAffected = TRUE,
@@ -19870,7 +19871,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Increases allies' critical hit\n"
             "ratio, especially if Dragons."),
-        .effect = EFFECT_PLACEHOLDER, //EFFECT_DRAGON_CHEER
+        .effect = EFFECT_DRAGON_CHEER,
         .power = 0,
         .type = TYPE_FAITH,
         .accuracy = 0,
