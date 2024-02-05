@@ -8,6 +8,10 @@ gCryTable::
 	cry Cry_Remilia
 	cry Cry_Flandre
 	cry Cry_Letty
+	cry Cry_AliceDoll
+	cry Cry_Alice
+	cry Cry_LilyWhite
+	cry Cry_LilyBlack
 	cry Cry_Youmu
 	cry Cry_Reisen
 
@@ -16,10 +20,14 @@ gCryTable_Reverse::
 	cry_reverse Cry_Porygon
 	cry_reverse Cry_Cirno
 	cry_reverse Cry_Rumia
+	cry_reverse Cry_Koakuma
 	cry_reverse Cry_Patchouli
 	cry_reverse Cry_Remilia
 	cry_reverse Cry_Flandre
 	cry_reverse Cry_Letty
-	cry_reverse Cry_Koakuma
+	cry_reverse Cry_AliceDoll
+	cry_reverse Cry_Alice
+	cry_reverse Cry_LilyWhite
+	cry_reverse Cry_LilyBlack
 	cry_reverse Cry_Youmu
 	cry_reverse Cry_Reisen

@@ -399,6 +399,10 @@ Cry_Rumia::
 	.incbin "sound/direct_sound_samples/cries/rumia.bin"
 
 	.align 2
+Cry_Koakuma::
+	.incbin "sound/direct_sound_samples/cries/koakuma.bin"
+
+	.align 2
 Cry_Patchouli::
 	.incbin "sound/direct_sound_samples/cries/patchouli.bin"
 
@@ -415,16 +419,28 @@ Cry_Letty::
 	.incbin "sound/direct_sound_samples/cries/letty.bin"
 
 	.align 2
-Cry_Koakuma::
-	.incbin "sound/direct_sound_samples/cries/koakuma.bin"
+Cry_AliceDoll::
+	.incbin "sound/direct_sound_samples/cries/alicedoll.bin"
 
 	.align 2
-Cry_Reisen::
-	.incbin "sound/direct_sound_samples/cries/reisen.bin"
+Cry_Alice::
+	.incbin "sound/direct_sound_samples/cries/alice.bin"
+
+	.align 2
+Cry_LilyWhite::
+	.incbin "sound/direct_sound_samples/cries/lilywhite.bin"
+
+	.align 2
+Cry_LilyBlack::
+	.incbin "sound/direct_sound_samples/cries/lilyblack.bin"
 
 	.align 2
 Cry_Youmu::
 	.incbin "sound/direct_sound_samples/cries/youmu.bin"
+
+	.align 2
+Cry_Reisen::
+	.incbin "sound/direct_sound_samples/cries/reisen.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::
