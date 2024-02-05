@@ -860,6 +860,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (moveType == TYPE_WATER)
                     RETURN_SCORE_MINUS(20);
                 break;
+            case ABILITY_FLAME_ABSORB:
             case ABILITY_FLASH_FIRE:
                 if (moveType == TYPE_FIRE)
                     RETURN_SCORE_MINUS(20);
@@ -868,6 +869,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (effectiveness < AI_EFFECTIVENESS_x2)
                     return 0;
                 break;
+            case ABILITY_FLORA_ABSORB:
             case ABILITY_SAP_SIPPER:
                 if (moveType == TYPE_NATURE)
                     RETURN_SCORE_MINUS(20);
@@ -2881,6 +2883,13 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     RETURN_SCORE_PLUS(WEAK_EFFECT);
                 }
                 break;
+            case ABILITY_FLAME_ABSORB:
+            case ABILITY_FLORA_ABSORB:
+                if (!(AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_HP_AWARE))
+                {
+                    RETURN_SCORE_MINUS(10);
+                }
+                break;  // handled in AI_HPAware
             case ABILITY_SAP_SIPPER:
                 if (moveType == TYPE_NATURE
                     && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_PHYSICAL)

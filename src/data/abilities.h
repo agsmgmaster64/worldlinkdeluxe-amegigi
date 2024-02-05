@@ -186,7 +186,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_DOLL_WALL] =
     {
-        .name = _("Rough Skin"),
+        .name = _("Doll Wall"),
         .description = COMPOUND_STRING("Hurts to touch."),
         .aiRating = 6,
     },
@@ -204,7 +204,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEVITATE] =
     {
         .name = _("Levitate"),
-        .description = COMPOUND_STRING("Not hit by Ground attacks."),
+        .description = COMPOUND_STRING("Not hit by Earth attacks."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -276,7 +276,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Diva"),
         .description = COMPOUND_STRING("Attracting ignores energy."),
         .aiRating = 0,
-        .breakable = TRUE,
     },
 
     [ABILITY_TRACE] =
@@ -291,7 +290,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_UNZAN] =
     {
         .name = _("Unzan"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .description = COMPOUND_STRING("Doubles Attack."),
         .aiRating = 10,
     },
 
@@ -465,7 +464,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_COLLECTOR] =
     {
-        .name = _("Sticky Hold"),
+        .name = _("Collector"),
         .description = COMPOUND_STRING("Prevents item theft."),
         .aiRating = 3,
         .breakable = TRUE,
@@ -473,8 +472,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MAINTENANCE] =
     {
-        .name = _("Shed Skin"),
-        .description = COMPOUND_STRING("Heals the body by shedding."),
+        .name = _("Maintenance"),
+        .description = COMPOUND_STRING("Heals status occasionally."),
         .aiRating = 7,
     },
 
@@ -487,7 +486,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SPRING_CHARM] =
     {
-        .name = _("Marvel Scale"),
+        .name = _("Spring Charm"),
         .description = COMPOUND_STRING("Ups Defense if suffering."),
         .aiRating = 5,
         .breakable = TRUE,
@@ -572,7 +571,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PURE_POWER] =
     {
         .name = _("Pure Power"),
-        .description = COMPOUND_STRING("Raises Attack."),
+        .description = COMPOUND_STRING("Doubles Attack."),
         .aiRating = 10,
     },
 
@@ -2171,14 +2170,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
     },
 
-    [ABILITY_THERMAL_EXCHANGE] =
+    [ABILITY_FLAME_ABSORB] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Thermal Exchange"),
-    #else
-        .name = _("ThrmlExchnge"),
-    #endif
-        .description = COMPOUND_STRING("Fire hits up Attack."),
+        .name = _("Flame Absorb"),
+        .description = COMPOUND_STRING("Turns fire into HP."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2207,7 +2202,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Leaf Spice"),
         .description = COMPOUND_STRING("Special Nature moves burn."),
         .aiRating = 5,
-        .breakable = TRUE,
     },
 
     [ABILITY_WIND_RIDER] =
@@ -2223,7 +2217,6 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Cold Heart"),
         .description = COMPOUND_STRING("Ups Ice moves in a pinch."),
         .aiRating = 5,
-        .breakable = TRUE,
     },
 
     [ABILITY_NATURE_FROST] =
