@@ -2781,7 +2781,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         if (gBattleMons[battlerAtkPartner].status2 & STATUS2_FOCUS_ENERGY_ANY || !HasDamagingMove(battlerAtkPartner))
             ADJUST_SCORE(-5);
         else if (atkPartnerHoldEffect == HOLD_EFFECT_SCOPE_LENS
-              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_DRAGON)
+              || IS_BATTLER_OF_TYPE(battlerAtkPartner, TYPE_FAITH)
               || gMovesInfo[aiData->partnerMove].criticalHitStage > 0)
             ADJUST_SCORE(GOOD_EFFECT);
     } // our effect relative to partner

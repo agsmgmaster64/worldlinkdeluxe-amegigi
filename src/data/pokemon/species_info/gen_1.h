@@ -1576,7 +1576,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Speed = 1,                                     \
         .speciesName = _("Diglett"),                            \
         .cryId = CRY_PORYGON,                                   \
-        .natDexNum = NATIONAL_DEX_DIGLETT,                      \
+        .natDexNum = NATIONAL_DEX_HOURAI,                      \
         .categoryName = _("Mole"),                              \
         .height = 2,                                            \
         .pokemonScale = 833,                                    \
@@ -1601,7 +1601,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Speed = 2,                                 \
         .speciesName = _("Dugtrio"),                        \
         .cryId = CRY_PORYGON,                               \
-        .natDexNum = NATIONAL_DEX_DUGTRIO,                  \
+        .natDexNum = NATIONAL_DEX_GOLIATH,                  \
         .categoryName = _("Mole"),                          \
         .height = 7,                                        \
         .pokemonScale = 406,                                \
@@ -1690,7 +1690,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },                  \
         .speciesName = _("Meowth"),                                         \
         .cryId = CRY_PORYGON,                                                \
-        .natDexNum = NATIONAL_DEX_MEOWTH,                                   \
+        .natDexNum = NATIONAL_DEX_CHIBI_ALICE,                                   \
         .categoryName = _("Scratch Cat"),                                   \
         FOOTPRINT(Meowth)                                                   \
         .formSpeciesIdTable = sMeowthFormSpeciesIdTable
@@ -1707,7 +1707,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_FIELD },          \
         .speciesName = _("Persian"),                                \
         .cryId = CRY_PORYGON,                                       \
-        .natDexNum = NATIONAL_DEX_PERSIAN,                          \
+        .natDexNum = NATIONAL_DEX_NORMAL_ALICE,                          \
         .categoryName = _("Classy Cat"),                            \
         FOOTPRINT(Persian)                                          \
         .formSpeciesIdTable = sPersianFormSpeciesIdTable
@@ -1986,7 +1986,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Attack = 1,                                    \
         .speciesName = _("Growlithe"),                          \
         .cryId = CRY_PORYGON,                                 \
-        .natDexNum = NATIONAL_DEX_GROWLITHE,                    \
+        .natDexNum = NATIONAL_DEX_ATTACK_LILY_WHITE,                    \
         FOOTPRINT(Growlithe)                                    \
         .formSpeciesIdTable = sGrowlitheFormSpeciesIdTable,     \
         GROWLITHE_FAMILY_MISC_INFO
@@ -1997,7 +1997,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Attack = 2,                                        \
         .speciesName = _("Arcanine"),                               \
         .cryId = CRY_PORYGON,                                      \
-        .natDexNum = NATIONAL_DEX_ARCANINE,                         \
+        .natDexNum = NATIONAL_DEX_HELPER_LILY_WHITE,                         \
         .categoryName = _("Legendary"),                             \
         FOOTPRINT(Arcanine)                                         \
         .formSpeciesIdTable = sArcanineFormSpeciesIdTable,          \
@@ -2155,7 +2155,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE },\
         .sourceGame = SOURCE_EOSD,                              \
         .speciesName = _("Alakazam"),                               \
-        .natDexNum = NATIONAL_DEX_ALAKAZAM,                         \
+        .natDexNum = NATIONAL_DEX_NORMAL_LUNASA,                         \
         .categoryName = _("Psi"),                                   \
         FOOTPRINT(Alakazam)                                         \
         LEARNSETS(Alakazam),                                        \
@@ -2230,7 +2230,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_IN,                                       \
         .speciesName = _("Machamp"),                                        \
         .cryId = CRY_PORYGON,                                               \
-        .natDexNum = NATIONAL_DEX_MACHAMP,                                  \
+        .natDexNum = NATIONAL_DEX_CHIBI_MERLIN,                                  \
         .categoryName = _("Superpower"),                                    \
         FOOTPRINT(Machamp)                                                  \
         LEARNSETS(Machamp),                                                 \
@@ -2306,7 +2306,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Defense = 1,                               \
         .speciesName = _("Geodude"),                        \
         .cryId = CRY_PORYGON,                               \
-        .natDexNum = NATIONAL_DEX_GEODUDE,                  \
+        .natDexNum = NATIONAL_DEX_HELPER_LYRICA,                  \
         .categoryName = _("Rock"),                          \
         .height = 4,                                        \
         .pokemonScale = 347,                                \
@@ -2329,7 +2329,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Defense = 2,                                       \
         .speciesName = _("Graveler"),                               \
         .cryId = CRY_PORYGON,                                      \
-        .natDexNum = NATIONAL_DEX_GRAVELER,                         \
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_LYRICA,                         \
         .categoryName = _("Rock"),                                  \
         .height = 10,                                               \
         .pokemonScale = 256,                                        \
@@ -2364,7 +2364,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Defense = 3,                           \
         .speciesName = _("Golem"),                      \
         .cryId = CRY_PORYGON,                             \
-        .natDexNum = NATIONAL_DEX_GOLEM,                \
+        .natDexNum = NATIONAL_DEX_CHIBI_LAYLA,                \
         .categoryName = _("Megaton"),                   \
         FOOTPRINT(Golem)                                \
         .formSpeciesIdTable = sGolemFormSpeciesIdTable, \
@@ -2481,7 +2481,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Speed = 1,                                     \
         .speciesName = _("Ponyta"),                             \
         .cryId = CRY_PORYGON,                                    \
-        .natDexNum = NATIONAL_DEX_PONYTA,                       \
+        .natDexNum = NATIONAL_DEX_NORMAL_LAYLA,                       \
         FOOTPRINT(Ponyta)                                       \
         .formSpeciesIdTable = sPonytaFormSpeciesIdTable,        \
         PONYTA_FAMILY_MISC_INFO
@@ -2498,7 +2498,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evYield_Speed = 2,                                         \
         .speciesName = _("Rapidash"),                               \
         .cryId = CRY_PORYGON,                                      \
-        .natDexNum = NATIONAL_DEX_RAPIDASH,                         \
+        .natDexNum = NATIONAL_DEX_DEFENSE_LAYLA,                         \
         .height = 17,                                               \
         .pokemonScale = 256,                                        \
         .pokemonOffset = 0,                                         \
@@ -2588,7 +2588,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = { EGG_GROUP_MONSTER, EGG_GROUP_WATER_1 },  \
         .sourceGame = SOURCE_MOF,                           \
         .speciesName = _("Slowpoke"),                           \
-        .natDexNum = NATIONAL_DEX_SLOWPOKE,                     \
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_LAYLA,                     \
         .categoryName = _("Dopey"),                             \
         .height = 12,                                           \
         .weight = 360,                                          \

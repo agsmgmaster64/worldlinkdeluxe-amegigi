@@ -24,10 +24,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_THICK_FUR,
         .abilities = { ABILITY_WALL_OF_ICE, ABILITY_DAMP },
         .speciesName = _("CLetty"),
-        .natDexNum = NATIONAL_DEX_VILEPLUME,
+        .natDexNum = NATIONAL_DEX_CHIBI_LETTY,
         .categoryName = _("Flower"),
-        .height = 12,
-        .weight = 186,
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "In seasons when it produces more pollen,\n"
             "the air around a Vileplume turns yellow\n"
@@ -66,10 +66,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_THICK_FUR,
         .abilities = { ABILITY_WALL_OF_ICE, ABILITY_SNOW_WARNING },
         .speciesName = _("Letty"),
-        .natDexNum = NATIONAL_DEX_PARAS,
+        .natDexNum = NATIONAL_DEX_NORMAL_LETTY,
         .categoryName = _("Mushroom"),
-        .height = 3,
-        .weight = 54,
+        .height = 6,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Paras has parasitic tochukaso\n"
             "mushrooms growing on its back. They grow\n"
@@ -102,10 +102,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 3,
         .abilities = { ABILITY_WALL_OF_ICE, ABILITY_SNOW_WARNING },
         .speciesName = _("DLetty"),
-        .natDexNum = NATIONAL_DEX_PARASECT,
+        .natDexNum = NATIONAL_DEX_DEFENSE_LETTY,
         .categoryName = _("Mushroom"),
-        .height = 10,
-        .weight = 295,
+        .height = 6,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Parasect are known to infest the roots of\n"
             "large trees en masse and drain nutrients.\n"
@@ -138,10 +138,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Speed = 3,
         .abilities = { ABILITY_WALL_OF_ICE, ABILITY_SNOW_WARNING },
         .speciesName = _("HLetty"),
-        .natDexNum = NATIONAL_DEX_VENONAT,
+        .natDexNum = NATIONAL_DEX_HELPER_LETTY,
         .categoryName = _("Insect"),
-        .height = 10,
-        .weight = 300,
+        .height = 6,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its coat of thin, stiff hair that covers\n"
             "its entire body is said to have evolved\n"
@@ -180,10 +180,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_LIECHI_BERRY,
         .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
         .speciesName = _("Shanghai"),
-        .natDexNum = NATIONAL_DEX_VENOMOTH,
+        .natDexNum = NATIONAL_DEX_SHANGHAI,
         .categoryName = _("Poison Moth"),
-        .height = 15,
-        .weight = 125,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Venomoth are nocturnal--they are only\n"
             "active at night. Their favorite prey are\n"
@@ -219,10 +219,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_PETAYA_BERRY,
         .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
         .speciesName = _("Hourai"),
-        .natDexNum = NATIONAL_DEX_DIGLETT,
+        .natDexNum = NATIONAL_DEX_HOURAI,
         .categoryName = _("Mole"),
-        .height = 2,
-        .weight = 8,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Diglett are raised in most farms.\n"
             "The reason is simple--wherever they\n"
@@ -257,10 +257,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Attack = 3,
         .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
         .speciesName = _("Goliath"),
-        .natDexNum = NATIONAL_DEX_DUGTRIO,
+        .natDexNum = NATIONAL_DEX_GOLIATH,
         .categoryName = _("Mole"),
-        .height = 7,
-        .weight = 333,
+        .height = 8,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Because the triplets originally split from\n"
             "one body, they think exactly alike.\n"
@@ -299,10 +299,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_WITCHS_ROBE,
         .abilities = { ABILITY_DOLL_WALL, ABILITY_MAGIC_BARRIER },
         .speciesName = _("CAlice"),
-        .natDexNum = NATIONAL_DEX_MEOWTH,
+        .natDexNum = NATIONAL_DEX_CHIBI_ALICE,
         .categoryName = _("Scratch Cat"),
         .height = 4,
-        .weight = 42,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Meowth withdraw their sharp claws into\n"
             "their paws to silently sneak about.\n"
@@ -342,10 +342,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_DOLL_WALL, ABILITY_MAGIC_BARRIER },
         .speciesName = _("Alice"),
-        .natDexNum = NATIONAL_DEX_PERSIAN,
+        .natDexNum = NATIONAL_DEX_NORMAL_ALICE,
         .categoryName = _("Classy Cat"),
-        .height = 10,
-        .weight = 320,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Persian's six bold whiskers sense air\n"
             "movements to determine what is in its\n"
@@ -378,10 +378,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpAttack = 3,
         .abilities = { ABILITY_DOLL_WALL, ABILITY_MAGIC_BARRIER },
         .speciesName = _("AAlice"),
-        .natDexNum = NATIONAL_DEX_PSYDUCK,
+        .natDexNum = NATIONAL_DEX_ATTACK_ALICE,
         .categoryName = _("Duck"),
-        .height = 8,
-        .weight = 196,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "When its headache intensifies, it starts\n"
             "using strange powers. However, it has no\n"
@@ -415,10 +415,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Speed = 2,
         .abilities = { ABILITY_DOLL_WALL, ABILITY_SKILL_LINK },
         .speciesName = _("TAlice"),
-        .natDexNum = NATIONAL_DEX_GOLDUCK,
+        .natDexNum = NATIONAL_DEX_TECH_ALICE,
         .categoryName = _("Duck"),
-        .height = 17,
-        .weight = 766,
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Golduck is an adept swimmer.\n"
             "It sometimes joins competitive swimmers\n"
@@ -457,10 +457,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_ORAN_BERRY,
         .abilities = { ABILITY_SPRING_CHARM, ABILITY_NONE },
         .speciesName = _("CLilyWhite"),
-        .natDexNum = NATIONAL_DEX_MANKEY,
+        .natDexNum = NATIONAL_DEX_CHIBI_LILY_WHITE,
         .categoryName = _("Pig Monkey"),
-        .height = 5,
-        .weight = 280,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "When it starts shaking and its nasal\n"
             "breathing turns rough, it's a sure sign\n"
@@ -497,10 +497,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_SITRUS_BERRY,
         .abilities = { ABILITY_SPRING_CHARM, ABILITY_NONE },
         .speciesName = _("LilyWhite"),
-        .natDexNum = NATIONAL_DEX_PRIMEAPE,
+        .natDexNum = NATIONAL_DEX_NORMAL_LILY_WHITE,
         .categoryName = _("Pig Monkey"),
-        .height = 10,
-        .weight = 320,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "When it becomes furious, its blood\n"
             "circulation becomes more robust, and\n"
@@ -534,10 +534,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Attack = 2,
         .abilities = { ABILITY_SPRING_CHARM, ABILITY_NONE },
         .speciesName = _("ALilyWhite"),
-        .natDexNum = NATIONAL_DEX_GROWLITHE,
+        .natDexNum = NATIONAL_DEX_ATTACK_LILY_WHITE,
         .categoryName = _("Puppy"),
-        .height = 7,
-        .weight = 190,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its superb sense of smell ensures that\n"
             "this Pokémon won't forget any scent,\n"
@@ -570,10 +570,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_HP = 2,
         .abilities = { ABILITY_SPRING_CHARM, ABILITY_NONE },
         .speciesName = _("HLilyWhite"),
-        .natDexNum = NATIONAL_DEX_ARCANINE,
+        .natDexNum = NATIONAL_DEX_HELPER_LILY_WHITE,
         .categoryName = _("Legendary"),
-        .height = 19,
-        .weight = 1550,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "This fleet-footed Pokémon is said to run\n"
             "over 6,200 miles in a single day and night.\n"
@@ -613,10 +613,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_LEPPA_BERRY,
         .abilities = { ABILITY_SPRING_CHARM, ABILITY_NONE },
         .speciesName = _("CLilyBlack"),
-        .natDexNum = NATIONAL_DEX_POLIWAG,
+        .natDexNum = NATIONAL_DEX_CHIBI_LILY_BLACK,
         .categoryName = _("Tadpole"),
-        .height = 6,
-        .weight = 124,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is possible to see this Pokémon's spiral\n"
             "innards right through its thin skin.\n"
@@ -654,10 +654,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_LANSAT_BERRY,
         .abilities = { ABILITY_SPEED_BOOST, ABILITY_NONE },
         .speciesName = _("LilyBlack"),
-        .natDexNum = NATIONAL_DEX_POLIWHIRL,
+        .natDexNum = NATIONAL_DEX_NORMAL_LILY_BLACK,
         .categoryName = _("Tadpole"),
-        .height = 10,
-        .weight = 200,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its body surface is always wet and slick\n"
             "with an oily fluid. Because of this greasy\n"
@@ -691,10 +691,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Attack = 2,
         .abilities = { ABILITY_GUTS, ABILITY_NONE },
         .speciesName = _("ALilyBlack"),
-        .natDexNum = NATIONAL_DEX_POLIWRATH,
+        .natDexNum = NATIONAL_DEX_ATTACK_LILY_BLACK,
         .categoryName = _("Tadpole"),
-        .height = 13,
-        .weight = 540,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its highly developed muscles never grow\n"
             "fatigued, however much it exercises.\n"
@@ -727,10 +727,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Speed = 2,
         .abilities = { ABILITY_SPEED_BOOST, ABILITY_NONE },
         .speciesName = _("SLilyBlack"),
-        .natDexNum = NATIONAL_DEX_ABRA,
+        .natDexNum = NATIONAL_DEX_SPEED_LILY_BLACK,
         .categoryName = _("Psi"),
-        .height = 9,
-        .weight = 195,
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Pokémon that sleeps 18 hours a day.\n"
             "Observation revealed that it uses\n"
@@ -769,10 +769,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_PECHA_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SOUNDPROOF },
         .speciesName = _("CLunasa"),
-        .natDexNum = NATIONAL_DEX_KADABRA,
+        .natDexNum = NATIONAL_DEX_CHIBI_LUNASA,
         .categoryName = _("Psi"),
-        .height = 13,
-        .weight = 565,
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is rumored that a boy with psychic\n"
             "abilities suddenly transformed into\n"
@@ -811,10 +811,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_GANLON_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_GUARD_ARMOR },
         .speciesName = _("Lunasa"),
-        .natDexNum = NATIONAL_DEX_ALAKAZAM,
+        .natDexNum = NATIONAL_DEX_NORMAL_LUNASA,
         .categoryName = _("Psi"),
-        .height = 15,
-        .weight = 480,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "While it has strong psychic abilities and\n"
             "high intelligence, an Alakazam's muscles\n"
@@ -850,10 +850,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_GUARD_ARMOR },
         .speciesName = _("HLunasa"),
-        .natDexNum = NATIONAL_DEX_MACHOP,
+        .natDexNum = NATIONAL_DEX_HELPER_LUNASA,
         .categoryName = _("Superpower"),
-        .height = 8,
-        .weight = 195,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It continually undertakes strenuous\n"
             "training to master all forms of martial\n"
@@ -888,10 +888,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_GUARD_ARMOR },
         .speciesName = _("PLunasa"),
-        .natDexNum = NATIONAL_DEX_MACHOKE,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_LUNASA,
         .categoryName = _("Superpower"),
-        .height = 15,
-        .weight = 705,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A belt is worn by a Machoke to keep its\n"
             "overwhelming power under control.\n"
@@ -930,10 +930,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_PERSIM_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SOUNDPROOF },
         .speciesName = _("CMerlin"),
-        .natDexNum = NATIONAL_DEX_MACHAMP,
+        .natDexNum = NATIONAL_DEX_CHIBI_MERLIN,
         .categoryName = _("Superpower"),
-        .height = 16,
-        .weight = 1300,
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is impossible to defend against punches\n"
             "and chops doled out by its four arms.\n"
@@ -970,10 +970,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_PETAYA_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SERENE_GRACE },
         .speciesName = _("Merlin"),
-        .natDexNum = NATIONAL_DEX_BELLSPROUT,
+        .natDexNum = NATIONAL_DEX_NORMAL_MERLIN,
         .categoryName = _("Flower"),
-        .height = 7,
-        .weight = 40,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Bellsprout's thin and flexible body lets\n"
             "it bend and sway to avoid any attack,\n"
@@ -1009,10 +1009,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpAttack = 1,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SERENE_GRACE },
         .speciesName = _("HMerlin"),
-        .natDexNum = NATIONAL_DEX_WEEPINBELL,
+        .natDexNum = NATIONAL_DEX_HELPER_MERLIN,
         .categoryName = _("Flycatcher"),
-        .height = 10,
-        .weight = 64,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "At night, a Weepinbell hangs on to a tree\n"
             "branch with its hooked rear and sleeps.\n"
@@ -1047,10 +1047,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpAttack = 1,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SERENE_GRACE },
         .speciesName = _("PMerlin"),
-        .natDexNum = NATIONAL_DEX_VICTREEBEL,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_MERLIN,
         .categoryName = _("Flycatcher"),
-        .height = 17,
-        .weight = 155,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "The long vine extending from its head is\n"
             "waved about as if it were a living thing to\n"
@@ -1089,10 +1089,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_CHERI_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SOUNDPROOF },
         .speciesName = _("CLyrica"),
-        .natDexNum = NATIONAL_DEX_TENTACOOL,
+        .natDexNum = NATIONAL_DEX_CHIBI_LYRICA,
         .categoryName = _("Jellyfish"),
-        .height = 9,
-        .weight = 455,
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Its body is almost entirely composed of\n"
             "water. It ensnares its foe with its two\n"
@@ -1129,10 +1129,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_SALAC_BERRY,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SAND_VEIL },
         .speciesName = _("Lyrica"),
-        .natDexNum = NATIONAL_DEX_TENTACRUEL,
+        .natDexNum = NATIONAL_DEX_NORMAL_LYRICA,
         .categoryName = _("Jellyfish"),
-        .height = 16,
-        .weight = 550,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It lives in complex rock formations on\n"
             "the ocean floor and traps prey using its\n"
@@ -1166,10 +1166,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Speed = 3,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SAND_VEIL },
         .speciesName = _("HLyrica"),
-        .natDexNum = NATIONAL_DEX_GEODUDE,
+        .natDexNum = NATIONAL_DEX_HELPER_LYRICA,
         .categoryName = _("Rock"),
-        .height = 4,
-        .weight = 200,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It climbs mountain paths using only the\n"
             "power of its arms. Because they look just\n"
@@ -1202,10 +1202,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_Speed = 3,
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_SAND_VEIL },
         .speciesName = _("PLyrica"),
-        .natDexNum = NATIONAL_DEX_GRAVELER,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_LYRICA,
         .categoryName = _("Rock"),
-        .height = 10,
-        .weight = 1050,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "They descend from mountains by tumbling\n"
             "down steep slopes. They are so brutal,\n"
@@ -1244,10 +1244,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .itemRare = ITEM_STARF_BERRY,
         .abilities = { ABILITY_SYNCHRONIZE, ABILITY_NONE },
         .speciesName = _("CLayla"),
-        .natDexNum = NATIONAL_DEX_GOLEM,
+        .natDexNum = NATIONAL_DEX_CHIBI_LAYLA,
         .categoryName = _("Megaton"),
-        .height = 14,
-        .weight = 3000,
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is said to live in volcanic craters\n"
             "on mountain peaks. Once a year, it sheds\n"
@@ -1285,10 +1285,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_SYNCHRONIZE, ABILITY_NONE },
         .speciesName = _("Layla"),
-        .natDexNum = NATIONAL_DEX_PONYTA,
+        .natDexNum = NATIONAL_DEX_NORMAL_LAYLA,
         .categoryName = _("Fire Horse"),
-        .height = 10,
-        .weight = 300,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Ponyta is very weak at birth. It can\n"
             "barely stand up. Its legs become stronger\n"
@@ -1323,10 +1323,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_SYNCHRONIZE, ABILITY_NONE },
         .speciesName = _("DLayla"),
-        .natDexNum = NATIONAL_DEX_RAPIDASH,
+        .natDexNum = NATIONAL_DEX_DEFENSE_LAYLA,
         .categoryName = _("Fire Horse"),
-        .height = 17,
-        .weight = 950,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It usually canters casually in the fields\n"
             "and plains. But once a Rapidash turns\n"
@@ -1360,14 +1360,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evYield_SpDefense = 1,
         .abilities = { ABILITY_SYNCHRONIZE, ABILITY_NONE },
         .speciesName = _("DLayla"),
-        .natDexNum = NATIONAL_DEX_SLOWPOKE,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_LAYLA,
         .categoryName = _("Dopey"),
-        .height = 12,
-        .weight = 360,
-        .types = { TYPE_WATER, TYPE_REASON },
-        .itemRare = ITEM_LAGGING_TAIL,
-        .abilities = { ABILITY_OBLIVIOUS, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR },
-        .cryId = CRY_PORYGON,
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It catches prey by dipping its tail in\n"
             "water at the side of a river. But it often\n"
