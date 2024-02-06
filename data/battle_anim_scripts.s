@@ -688,7 +688,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_FANGS
 	.4byte Move_STOMPING_TANTRUM
 	.4byte Move_SHADOW_BONE
-	.4byte Move_ACCELEROCK
+	.4byte Move_ROCK_BULLET
 	.4byte Move_LIQUIDATION
 	.4byte Move_PRISMATIC_LASER
 	.4byte Move_SPECTRAL_THIEF
@@ -12703,7 +12703,7 @@ Move_SHADOW_BONE::
 	blendoff
 	end
 
-Move_ACCELEROCK::
+Move_ROCK_BULLET::
 	loadspritegfx ANIM_TAG_ROCKS
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_ATK_PARTNER
@@ -17196,6 +17196,35 @@ Move_JET_PUNCH:
 	blendoff
 	end
 
+Move_CHILLING_WATER::
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	loadspritegfx ANIM_TAG_POISON_BUBBLE
+	monbg ANIM_TARGET
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_POISON_BUBBLE, 0, 15, 15, RGB(20, 27, 31)
+	createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, -20, FALSE
+	playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
+	delay 33
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 2, 0, 10, 1
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_TARGET, 2, 2, 0, 12, RGB(20, 27, 31)
+	playsewithpan SE_M_DIVE, SOUND_PAN_ATTACKER
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 10, 15, 55, FALSE
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -20, 15, 55, FALSE
+	delay 3
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 5, 15, 55, FALSE
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -10, 15, 55, FALSE
+	delay 3
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 30, 15, 55, FALSE
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -30, 15, 55, FALSE
+	delay 3
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 2, 15, 55, FALSE
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, -5, 15, 55, FALSE
+	delay 3
+	createsprite gAcidPoisonDropletSpriteTemplate, ANIM_TARGET, 2, 0, -20, 20, 15, 55, FALSE
+	call IceCrystalEffectShort
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	end
+
 Move_TERA_BLAST::
 Move_AXE_KICK::
 Move_LAST_RESPECTS::
@@ -17223,7 +17252,6 @@ Move_SHED_TAIL::
 Move_TIDY_UP::
 Move_POUNCE::
 Move_TRAILBLAZE::
-Move_CHILLING_WATER::
 Move_HYPER_DRILL::
 Move_TWIN_BEAM::
 Move_RAGE_FIST::
