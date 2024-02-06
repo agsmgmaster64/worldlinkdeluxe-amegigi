@@ -149,7 +149,7 @@ gBattleAnims_Moves::
 	.4byte Move_BONE_CLUB
 	.4byte Move_FIRE_BLAST
 	.4byte Move_WATERFALL
-	.4byte Move_CLAMP
+	.4byte Move_MANA_SHIELD
 	.4byte Move_SWIFT
 	.4byte Move_SKULL_BASH
 	.4byte Move_SPIKE_CANNON
@@ -179,11 +179,11 @@ gBattleAnims_Moves::
 	.4byte Move_BONEMERANG
 	.4byte Move_REST
 	.4byte Move_ROCK_SLIDE
-	.4byte Move_HYPER_FANG
+	.4byte Move_KILLING_BITE
 	.4byte Move_SHARPEN
 	.4byte Move_CONVERSION
 	.4byte Move_TRI_ATTACK
-	.4byte Move_SUPER_FANG
+	.4byte Move_HEAT_CLAW
 	.4byte Move_SLASH
 	.4byte Move_SUBSTITUTE
 	.4byte Move_STRUGGLE
@@ -211,7 +211,7 @@ gBattleAnims_Moves::
 	.4byte Move_BELLY_DRUM
 	.4byte Move_POISON_BOMB
 	.4byte Move_MUD_SLAP
-	.4byte Move_OCTAZOOKA
+	.4byte Move_BLACK_RIPPLE
 	.4byte Move_SPIKES
 	.4byte Move_ZAP_CANNON
 	.4byte Move_FORESIGHT
@@ -226,14 +226,14 @@ gBattleAnims_Moves::
 	.4byte Move_GIGA_DRAIN
 	.4byte Move_ENDURE
 	.4byte Move_CHARM
-	.4byte Move_ROLLOUT
+	.4byte Move_TREMORS
 	.4byte Move_FALSE_SWIPE
 	.4byte Move_SWAGGER
 	.4byte Move_MILK_DRINK
 	.4byte Move_SPARK
 	.4byte Move_FURY_CUTTER
 	.4byte Move_STEEL_WING
-	.4byte Move_MEAN_LOOK
+	.4byte Move_CHARMING_LOOK
 	.4byte Move_ATTRACT
 	.4byte Move_SLEEP_TALK
 	.4byte Move_HEAL_BELL
@@ -274,9 +274,9 @@ gBattleAnims_Moves::
 	.4byte Move_WHIRLPOOL
 	.4byte Move_BEAT_UP
 	.4byte Move_FAKE_OUT
-	.4byte Move_UPROAR
-	.4byte Move_STOCKPILE
-	.4byte Move_SPIT_UP
+	.4byte Move_PERFORMANCE
+	.4byte Move_COERCE
+	.4byte Move_BRAVER
 	.4byte Move_SWALLOW
 	.4byte Move_HEAT_WAVE
 	.4byte Move_HAIL
@@ -287,7 +287,7 @@ gBattleAnims_Moves::
 	.4byte Move_FACADE
 	.4byte Move_FOCUS_PUNCH
 	.4byte Move_SMELLING_SALTS
-	.4byte Move_FOLLOW_ME
+	.4byte Move_GUARD
 	.4byte Move_NATIVE_POWER
 	.4byte Move_CHARGE
 	.4byte Move_TAUNT
@@ -18877,7 +18877,7 @@ Move_LOCK_ON:
 	waitforvisualfinish
 	end
 
-Move_MEAN_LOOK:
+Move_CHARMING_LOOK:
 	loadspritegfx ANIM_TAG_EYE
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
@@ -19812,7 +19812,7 @@ Move_SHARPEN:
 	waitforvisualfinish
 	end
 
-Move_SUPER_FANG:
+Move_HEAT_CLAW:
 	loadspritegfx ANIM_TAG_FANG_ATTACK
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 1, 0, 20, 1
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
@@ -20041,7 +20041,7 @@ Move_CHARM:
 	waitforvisualfinish
 	end
 
-Move_ROLLOUT:
+Move_TREMORS:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_MUD_SAND
 	loadspritegfx ANIM_TAG_ROCKS
@@ -20228,7 +20228,7 @@ Move_EXTREME_SPEED:
 	delay 1
 	end
 
-Move_UPROAR:
+Move_PERFORMANCE:
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_DEF_PARTNER
@@ -20348,7 +20348,7 @@ Move_SMELLING_SALTS:
 	loopsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET, 16, 3
 	end
 
-Move_FOLLOW_ME:
+Move_GUARD:
 	loadspritegfx ANIM_TAG_FINGER
 	createsprite gFollowMeFingerSpriteTemplate, ANIM_ATTACKER, 2, 0
 	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
@@ -22122,7 +22122,7 @@ Move_CRUNCH:
 	waitbgfadein
 	end
 
-Move_CLAMP:
+Move_MANA_SHIELD:
 	loadspritegfx ANIM_TAG_CLAMP
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -23684,7 +23684,7 @@ Move_ANCIENT_POWER:
 	blendoff
 	end
 
-Move_OCTAZOOKA:
+Move_BLACK_RIPPLE:
 	loadspritegfx ANIM_TAG_GRAY_SMOKE
 	loadspritegfx ANIM_TAG_BLACK_BALL
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_ATTACKER
@@ -24800,7 +24800,7 @@ Move_SLEEP_TALK:
 	waitforvisualfinish
 	end
 
-Move_HYPER_FANG:
+Move_KILLING_BITE:
 	loadspritegfx ANIM_TAG_FANG_ATTACK
 	playsewithpan SE_M_BITE, SOUND_PAN_TARGET
 	delay 1
@@ -24975,7 +24975,7 @@ Move_WISH:
 	waitforvisualfinish
 	end
 
-Move_STOCKPILE:
+Move_COERCE:
 	loadspritegfx ANIM_TAG_GRAY_ORB
 	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 8, 1, 0, 12, RGB_WHITE
@@ -25004,7 +25004,7 @@ StockpileAbsorb:
 	delay 1
 	return
 
-Move_SPIT_UP:
+Move_BRAVER:
 	loadspritegfx ANIM_TAG_RED_ORB_2
 	loadspritegfx ANIM_TAG_IMPACT
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
@@ -26484,8 +26484,8 @@ Move_SECRET_POWER:
 	jumpargeq 0, BATTLE_TERRAIN_ULTRA_SPACE,    Move_PSYWAVE
 .if B_SECRET_POWER_ANIMATION >= GEN_7
 	jumpargeq 0, BATTLE_TERRAIN_SNOW,           Move_ICE_SHARD
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       Move_SPIT_UP
-	goto Move_SPIT_UP
+	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       Move_BRAVER
+	goto Move_BRAVER
 .elseif B_SECRET_POWER_ANIMATION >= GEN_6
 	jumpargeq 0, BATTLE_TERRAIN_SNOW,           Move_AVALANCHE
 	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       Move_BODY_SLAM
