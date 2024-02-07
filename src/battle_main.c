@@ -5536,6 +5536,101 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
+u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
+{
+    u32 ateType, attackerAbility, multiPulseType;
+    u16 holdEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
+
+    if (move == MOVE_STRUGGLE)
+        return TYPE_ILLUSION;
+
+    if (gMovesInfo[move].effect == EFFECT_WEATHER_BALL)
+    {
+        if (WEATHER_HAS_EFFECT)
+        {
+            if (gBattleWeather & B_WEATHER_RAIN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+                return TYPE_WATER;
+            else if (gBattleWeather & B_WEATHER_SANDSTORM)
+                return TYPE_EARTH;
+            else if (gBattleWeather & B_WEATHER_SUN && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA)
+                return TYPE_FIRE;
+            else if (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW))
+                return TYPE_ICE;
+            else
+                return TYPE_ILLUSION;
+        }
+    }
+    else if (gMovesInfo[move].effect == EFFECT_CHANGE_TYPE_ON_ITEM && holdEffect == gMovesInfo[move].argument)
+    {
+        return ItemId_GetSecondaryId(gBattleMons[battlerAtk].item);
+    }
+    else if (gMovesInfo[move].effect == EFFECT_MULTI_PULSE)
+    {
+        multiPulseType = GetTypeFromTypeBooster(holdEffect);
+        if (multiPulseType != NUMBER_OF_MON_TYPES)
+            return multiPulseType;
+    }
+    else if (gMovesInfo[move].effect == EFFECT_REVELATION_DANCE)
+    {
+        if (gBattleMons[battlerAtk].type1 != TYPE_MYSTERY)
+            return gBattleMons[battlerAtk].type1;
+        else if (gBattleMons[battlerAtk].type2 != TYPE_MYSTERY)
+            return gBattleMons[battlerAtk].type2;
+        else if (gBattleMons[battlerAtk].type3 != TYPE_MYSTERY)
+            return gBattleMons[battlerAtk].type3;
+    }
+    else if (gMovesInfo[move].effect == EFFECT_NATURAL_GIFT)
+    {
+        if (ItemId_GetPocket(gBattleMons[battlerAtk].item) == POCKET_BERRIES)
+            return gNaturalGiftTable[ITEM_TO_BERRY(gBattleMons[battlerAtk].item)].type;
+    }
+    else if (gMovesInfo[move].effect == EFFECT_TERRAIN_PULSE)
+    {
+        if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_TERRAIN_ANY))
+        {
+            if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+                return TYPE_WIND;
+            else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
+                return TYPE_NATURE;
+            else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+                return TYPE_COSMIC;
+            else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
+                return TYPE_REASON;
+            else //failsafe
+                return TYPE_ILLUSION;
+        }
+    }
+
+    attackerAbility = GetBattlerAbility(battlerAtk);
+
+    if (gMovesInfo[move].type == TYPE_ILLUSION
+             && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
+             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
+             && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
+             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
+                 || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
+                 || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
+                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_WIND))
+                )
+             )
+    {
+        return ateType;
+    }
+    else if (gMovesInfo[move].type != TYPE_ILLUSION
+             && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
+             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
+             && attackerAbility == ABILITY_NORMALIZE)
+    {
+        return TYPE_ILLUSION;
+    }
+    else if (gMovesInfo[move].soundMove && attackerAbility == ABILITY_LIQUID_VOICE)
+    {
+        return TYPE_WATER;
+    }
+
+    return gMovesInfo[move].type;
+}
+
 void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
 {
     u32 moveType, ateType, attackerAbility, multiPulseType;
