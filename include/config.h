@@ -88,6 +88,7 @@
 #define TO_THE_MOON   FALSE
 
 #define HOLOLIVE    TRUE
+#define NIJISANJI   FALSE
 #define PIZZA_TOWER TRUE
 
 // General settings

@@ -1157,7 +1157,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY },
         .abilities = { ABILITY_HONEY_GATHER, ABILITY_ADVENT, ABILITY_SWEET_VEIL },
-        .sourceGame = SOURCE_NIJISANJI,
+        .sourceGame = NIJISANJI == TRUE ? SOURCE_OTHER : SOURCE_NIJISANJI,
         .speciesName = _("Pomu"),
         .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_RIBOMBEE,

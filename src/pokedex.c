@@ -1385,7 +1385,9 @@ static const struct SearchOptionText sDexSearchColorOptions[] =
     [SOURCE_SPINOFF + 1]      = {gText_DexSpinoffDescription, gText_DexSearchSourceTouhouSpinoff},
     [SOURCE_PRINT + 1]        = {gText_DexPrintWDescription,  gText_DexSearchSourceTouhouPrint},
     [SOURCE_HOLOLIVE + 1]     = {gText_DexOtherDescription,   gText_DexSearchSourceHololive},
+#if NIJISANJI == TRUE
     [SOURCE_NIJISANJI + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceNjisanji},
+#endif
     [SOURCE_UNDERTALE + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceUndertale},
     [SOURCE_DELTARUNE + 1]    = {gText_DexOtherDescription,   gText_DexSearchSourceDeltarune},
     [SOURCE_PIZZA_TOWER + 1]  = {gText_DexOtherDescription,   gText_DexSearchSourcePizzaTower},
