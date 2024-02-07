@@ -14664,46 +14664,20 @@ static void Cmd_settypebasedhalvers(void)
 
     if (gMovesInfo[gCurrentMove].effect == EFFECT_MUD_SPORT)
     {
-        if (B_SPORT_TURNS >= GEN_6)
+        if (!(gStatuses4[gBattlerAttacker] & STATUS4_MUD_SPORT))
         {
-            if (!(gFieldStatuses & STATUS_FIELD_MUDSPORT))
-            {
-                gFieldStatuses |= STATUS_FIELD_MUDSPORT;
-                gFieldTimers.mudSportTimer = 5;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_ELECTRIC;
-                worked = TRUE;
-            }
-        }
-        else
-        {
-            if (!(gStatuses4[gBattlerAttacker] & STATUS4_MUD_SPORT))
-            {
-                gStatuses4[gBattlerAttacker] |= STATUS4_MUD_SPORT;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_ELECTRIC;
-                worked = TRUE;
-            }
+            gStatuses4[gBattlerAttacker] |= STATUS4_MUD_SPORT;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_ELECTRIC;
+            worked = TRUE;
         }
     }
     else // Water Sport
     {
-        if (B_SPORT_TURNS >= GEN_6)
+        if (!(gStatuses4[gBattlerAttacker] & STATUS4_WATER_SPORT))
         {
-            if (!(gFieldStatuses & STATUS_FIELD_WATERSPORT))
-            {
-                gFieldStatuses |= STATUS_FIELD_WATERSPORT;
-                gFieldTimers.waterSportTimer = 5;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_FIRE;
-                worked = TRUE;
-            }
-        }
-        else
-        {
-            if (!(gStatuses4[gBattlerAttacker] & STATUS4_WATER_SPORT))
-            {
-                gStatuses4[gBattlerAttacker] |= STATUS4_WATER_SPORT;
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_FIRE;
-                worked = TRUE;
-            }
+            gStatuses4[gBattlerAttacker] |= STATUS4_WATER_SPORT;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEAKEN_FIRE;
+            worked = TRUE;
         }
     }
 
@@ -14792,7 +14766,7 @@ static void Cmd_settypetoterrain(void)
         terrainType = TYPE_NATURE;
         break;
     case STATUS_FIELD_MISTY_TERRAIN:
-        terrainType = TYPE_COSMIC;
+        terrainType = TYPE_HEART;
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
         terrainType = TYPE_REASON;

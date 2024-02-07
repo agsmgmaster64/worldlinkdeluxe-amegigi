@@ -859,14 +859,6 @@ BattleScript_HyperspaceFuryRemoveProtect::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
-BattleScript_EffectPlasmaFists::
-	call BattleScript_EffectHit_Ret
-	tryfaintmon BS_TARGET
-	orword gFieldStatuses, STATUS_FIELD_ION_DELUGE
-	printstring STRINGID_IONDELUGEON
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
-
 BattleScript_EffectSparklySwirl::
 	call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET
@@ -2195,18 +2187,6 @@ BattleScript_EffectTopsyTurvyWorks:
 	waitanimation
 	invertstatstages BS_TARGET
 	printstring STRINGID_TOPSYTURVYSWITCHEDSTATS
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
-
-BattleScript_EffectIonDeluge::
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	attackstring
-	ppreduce
-	orword gFieldStatuses, STATUS_FIELD_ION_DELUGE
-	attackanimation
-	waitanimation
-	printstring STRINGID_IONDELUGEON
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

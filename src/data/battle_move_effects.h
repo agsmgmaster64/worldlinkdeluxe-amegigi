@@ -1426,7 +1426,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_ION_DELUGE] =
     {
-        .battleScript = BattleScript_EffectIonDeluge,
+        .battleScript = BattleScript_EffectDoNothing,
         .battleTvScore = 0, // TODO: Assign points
     },
 
@@ -1924,7 +1924,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_PLASMA_FISTS] =
     {
-        .battleScript = BattleScript_EffectPlasmaFists,
+        .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
     },
 

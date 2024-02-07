@@ -14921,7 +14921,7 @@ Move_TERRAIN_PULSE::
 	createvisualtask AnimTask_TerrainPulse, 0x5
 	jumpargeq 0x0, TYPE_WIND, TerrainPulseElectric
 	jumpargeq 0x0, TYPE_NATURE, TerrainPulseGrass
-	jumpargeq 0x0, TYPE_COSMIC, TerrainPulseFairy
+	jumpargeq 0x0, TYPE_HEART, TerrainPulseFairy
 	jumpargeq 0x0, TYPE_REASON, TerrainPulsePsychic
 TerrainPulseNormal:
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_DRAGON_PULSE, 0, 12, 12, RGB_WHITE

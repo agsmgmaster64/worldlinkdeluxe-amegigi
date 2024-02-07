@@ -5768,11 +5768,6 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
         gBattleStruct->dynamicMoveType = TYPE_DARK | F_DYNAMIC_TYPE_SET;
     }
 
-    GET_MOVE_TYPE(move, moveType);
-    if ((gFieldStatuses & STATUS_FIELD_ION_DELUGE && moveType == TYPE_ILLUSION)
-        || gStatuses4[battlerAtk] & STATUS4_ELECTRIFIED)
-        gBattleStruct->dynamicMoveType = TYPE_WIND | F_DYNAMIC_TYPE_SET;
-
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);
     if (holdEffect == HOLD_EFFECT_GEMS

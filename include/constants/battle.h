@@ -257,15 +257,12 @@
 #define STATUS_FIELD_MAGIC_ROOM                     (1 << 0)
 #define STATUS_FIELD_TRICK_ROOM                     (1 << 1)
 #define STATUS_FIELD_WONDER_ROOM                    (1 << 2)
-#define STATUS_FIELD_MUDSPORT                       (1 << 3)
-#define STATUS_FIELD_WATERSPORT                     (1 << 4)
-#define STATUS_FIELD_GRAVITY                        (1 << 5)
-#define STATUS_FIELD_GRASSY_TERRAIN                 (1 << 6)
-#define STATUS_FIELD_MISTY_TERRAIN                  (1 << 7)
-#define STATUS_FIELD_ELECTRIC_TERRAIN               (1 << 8)
-#define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 9)
-#define STATUS_FIELD_ION_DELUGE                     (1 << 10)
-#define STATUS_FIELD_TERRAIN_PERMANENT              (1 << 11)   // Overworld thunderstorm generates electric terrain
+#define STATUS_FIELD_GRAVITY                        (1 << 3)
+#define STATUS_FIELD_GRASSY_TERRAIN                 (1 << 4)
+#define STATUS_FIELD_MISTY_TERRAIN                  (1 << 5)
+#define STATUS_FIELD_ELECTRIC_TERRAIN               (1 << 6)
+#define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 7)
+#define STATUS_FIELD_TERRAIN_PERMANENT              (1 << 8)   // Overworld thunderstorm generates electric terrain
 
 #define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN)
 
