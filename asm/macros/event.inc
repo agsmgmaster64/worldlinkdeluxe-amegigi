@@ -1791,7 +1791,7 @@
 	.endm
 
 	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
-	.byte 0xe3
+	.byte 0xe4
 	.2byte \left
 	.2byte \top
 	.byte \ignoreBPress
@@ -1813,7 +1813,7 @@
 	.endm
 
 	.macro dynmultipush name:req, id:req
-	.byte 0xe4
+	.byte 0xe5
 	.4byte \name
 	.2byte \id
 	.endm
@@ -1822,6 +1822,18 @@
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, \shouldSort, \initialSelected, \callbacks, NULL
 	.endm
 
+	@ Start qol_field_moves
+
+	@ Checks if any Pokémon in the party can learn a specific HM.
+	@ If so, VAR_RESULT is set to the
+	@ (zero-indexed) slot number of the first Pokemon that knows the move. If not, VAR_RESULT is set to PARTY_SIZE.
+	@ VAR_0x8004 is also set to this Pokemon's species.
+	.macro checkpartylearnknowsfieldmove move:req
+	.byte 0xe6
+	.2byte \move
+	.endm
+
+	@ End qol_field_moves
 
 @ Supplementary
 

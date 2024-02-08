@@ -12490,6 +12490,118 @@ const struct Item gItemsInfo[] =
         .flingPower = 10,
     },
 
+    [ITEM_BIG_AXE] =
+    {
+        .name = _("Big Axe"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CutTool,
+    },
+
+    [ITEM_PAGER] =
+    {
+        .name = _("Pager"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A device that can\n"
+            "summon a Puppet\n"
+            "to fly with."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_FlyTool,
+    },
+
+    [ITEM_SURF_TOOL] =
+    {
+        .name = _("Pager"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_SurfTool,
+    },
+
+    [ITEM_STRENGTH_TOOL] =
+    {
+        .name = _("Pager"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_StrengthTool,
+    },
+
+    [ITEM_LANTERN] =
+    {
+        .name = _("Lantern"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_FlashTool,
+    },
+
+    [ITEM_PICKAXE] =
+    {
+        .name = _("Pickaxe"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A pickaxe that\n"
+            "can smash away\n"
+            "weak rocks."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_RockSmashTool,
+    },
+
+    [ITEM_WATERFALL_TOOL] =
+    {
+        .name = _("Pager"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_WaterfallTool,
+    },
+
+    [ITEM_SCUBA_GEAR] =
+    {
+        .name = _("Scuba Gear"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A big axe that\n"
+            "can cut down\n"
+            "small trees."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_DiveTool,
+    },
+
     [ITEM_FAIRY_FEATHER] =
     {
         .name = _("Fairy Feather"),

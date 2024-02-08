@@ -372,15 +372,15 @@ gFieldEffectScript_DoubleExclMarkIcon::
 @ Start qol_field_moves
 
 gFieldEffectScript_UseSurfTool::
-	@field_eff_callnative FldEff_UseSurfTool
+	field_eff_callnative FldEff_UseSurfTool
 	field_eff_end
 
 gFieldEffectScript_UseWaterfallTool::
-	@field_eff_callnative FldEff_UseWaterfallTool
+	field_eff_callnative FldEff_UseWaterfallTool
 	field_eff_end
 
 gFieldEffectScript_UseDiveTool::
-	@field_eff_callnative FldEff_UseDiveTool
+	field_eff_callnative FldEff_UseDiveTool
 	field_eff_end
 
 @ End qol_field_moves

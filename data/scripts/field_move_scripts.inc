@@ -3,7 +3,8 @@ EventScript_CutTree::
 	lockall
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
 	checkpartymove MOVE_CUT
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseCutOtherwise
+EventScript_DoCut::
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_CUT
@@ -16,6 +17,13 @@ EventScript_CutTree::
 	goto EventScript_CutTreeDown
 	end
 
+EventScript_CanUseCutOtherwise::
+	checkpartylearnknowsfieldmove MOVE_CUT
+	goto_if_ne VAR_RESULT, PARTY_SIZE, EventScript_DoCut
+	checkitem ITEM_BIG_AXE, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CheckTreeCantCut
+	goto EventScript_UseCutTool
+
 @ Use cut from party menu
 EventScript_UseCut::
 	lockall
@@ -25,6 +33,7 @@ EventScript_UseCut::
 	end
 
 EventScript_CutTreeDown::
+	setflag FLAG_SYS_USE_CUT
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -62,7 +71,8 @@ EventScript_RockSmash::
 	lockall
 	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
 	checkpartymove MOVE_ROCK_SMASH
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockSmashOtherwise
+EventScript_DoRockSmash::
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
@@ -75,6 +85,13 @@ EventScript_RockSmash::
 	goto EventScript_SmashRock
 	end
 
+EventScript_CanUseRockSmashOtherwise::
+	checkpartylearnknowsfieldmove MOVE_ROCK_SMASH
+	goto_if_ne VAR_RESULT, PARTY_SIZE, EventScript_DoRockSmash
+	checkitem ITEM_PICKAXE, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CantSmashRock
+	goto EventScript_UseRockSmashTool
+
 @ Use rock smash from party menu
 EventScript_UseRockSmash::
 	lockall
@@ -84,6 +101,7 @@ EventScript_UseRockSmash::
 	end
 
 EventScript_SmashRock::
+	setflag FLAG_SYS_USE_ROCK_SMASH
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -115,10 +133,10 @@ EventScript_CancelSmash::
 
 Text_WantToSmash:
 	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use ROCK SMASH?$"
+	.string "Would you like to use Rock Smash?$"
 
 Text_CantSmash:
-	.string "It's a rugged rock, but a POKéMON\n"
+	.string "It's a rugged rock, but a Puppet\n"
 	.string "may be able to smash it.$"
 
 EventScript_StrengthBoulder::
@@ -127,14 +145,23 @@ EventScript_StrengthBoulder::
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
 	checkpartymove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
+EventScript_DoStrength::
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
 	closemessage
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
+	call_if_set FLAG_SYS_USE_STRENGTH, EventScript_PushBoulderScript
 	goto EventScript_ActivateStrength
 	end
+
+EventScript_CanUseStrengthOtherwise::
+	checkpartylearnknowsfieldmove MOVE_STRENGTH
+	goto_if_ne VAR_RESULT, PARTY_SIZE, EventScript_DoStrength
+	checkitem ITEM_STRENGTH_TOOL, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CantStrength
+	goto EventScript_UseStrengthTool
 
 EventScript_UseStrength::
 	lockall
@@ -155,6 +182,7 @@ EventScript_CantStrength::
 	end
 
 EventScript_CheckActivatedBoulder::
+	buffermovename STR_VAR_2, MOVE_STRENGTH
 	msgbox Text_StrengthActivated, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -165,34 +193,44 @@ EventScript_CancelStrength::
 	end
 
 Text_WantToStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Puppet\n"
 	.string "may be able to push it aside.\p"
-	.string "Would you like to use STRENGTH?$"
+	.string "Would you like to use Strength?$"
 
 Text_MonUsedStrength:
-	.string "{STR_VAR_1} used STRENGTH!\p"
-	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "{STR_VAR_1} used Strength!\p"
+	.string "{STR_VAR_1}'s Strength made it\n"
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Puppet\n"
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated:
-	.string "STRENGTH made it possible to move\n"
+	.string "{STR_VAR_2} made it possible to move\n"
 	.string "boulders around.$"
 
 EventScript_UseWaterfall::
 	lockall
 	checkpartymove MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
+EventScript_DoWaterfall::
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToWaterfall, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
+EventScript_UseWaterfallMon::
+	setflag FLAG_SYS_USE_WATERFALL
 	dofieldeffect FLDEFF_USE_WATERFALL
 	goto EventScript_EndWaterfall
+
+EventScript_CanUseWaterfallOtherwise::
+	checkpartylearnknowsfieldmove MOVE_WATERFALL
+	goto_if_ne VAR_RESULT, PARTY_SIZE, EventScript_DoWaterfall
+	checkitem ITEM_WATERFALL_TOOL, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CantWaterfall
+	goto EventScript_UseWaterfallTool
 
 EventScript_CannotUseWaterfall::
 	lockall
