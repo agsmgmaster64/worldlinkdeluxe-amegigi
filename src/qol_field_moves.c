@@ -175,7 +175,7 @@ void ResetFlyTool(void)
 u32 CanUseSurf(s16 x, s16 y, u8 collision)
 {
     bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_SURF);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_SURF_TOOL, 1);
+    bool32 bagHasItem = CheckBagHasItem(ITEM_SURFBOARD, 1);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE05_GET);
     bool32 collisionHasMismatch = (collision == COLLISION_ELEVATION_MISMATCH);
 

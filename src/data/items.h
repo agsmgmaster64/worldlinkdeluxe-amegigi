@@ -12518,9 +12518,9 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_FlyTool,
     },
 
-    [ITEM_SURF_TOOL] =
+    [ITEM_SURFBOARD] =
     {
-        .name = _("Pager"),
+        .name = _("Surfboard"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A big axe that\n"

@@ -64,7 +64,7 @@ EventScript_UseFlashTool::
 	end
 
 EventScript_UseSurfTool::
-	bufferitemname STR_VAR_2, ITEM_SURF_TOOL
+	bufferitemname STR_VAR_2, ITEM_SURFBOARD
 	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
 EventScript_UseSurfFieldEffect::
 	dofieldeffect FLDEFF_USE_SURF_TOOL
