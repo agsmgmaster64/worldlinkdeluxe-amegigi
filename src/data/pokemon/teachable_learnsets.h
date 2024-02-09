@@ -5,7 +5,7 @@
 // *************************************************** //
 // TM/HM moves found in "include/constants/tms_hms.h": //
 // - MOVE_FOCUS_PUNCH                                  //
-// - MOVE_DRAGON_CLAW                                  //
+// - MOVE_HEART_BREAK                                  //
 // - MOVE_WATER_PULSE                                  //
 // - MOVE_CALM_MIND                                    //
 // - MOVE_ROAR                                         //
@@ -13,7 +13,7 @@
 // - MOVE_HAIL                                         //
 // - MOVE_BULK_UP                                      //
 // - MOVE_BULLET_SEED                                  //
-// - MOVE_HIDDEN_POWER                                 //
+// - MOVE_MULTI_PULSE                                 //
 // - MOVE_SUNNY_DAY                                    //
 // - MOVE_TAUNT                                        //
 // - MOVE_ICE_BEAM                                     //
@@ -26,20 +26,20 @@
 // - MOVE_SAFEGUARD                                    //
 // - MOVE_FRUSTRATION                                  //
 // - MOVE_SOLAR_BEAM                                   //
-// - MOVE_IRON_TAIL                                    //
+// - MOVE_STEEL_FIST                                    //
 // - MOVE_THUNDERBOLT                                  //
 // - MOVE_THUNDER                                      //
 // - MOVE_EARTHQUAKE                                   //
 // - MOVE_RETURN                                       //
 // - MOVE_DIG                                          //
-// - MOVE_PSYCHIC                                      //
+// - MOVE_MANA_BURST                                      //
 // - MOVE_SHADOW_BALL                                  //
 // - MOVE_BRICK_BREAK                                  //
 // - MOVE_DOUBLE_TEAM                                  //
 // - MOVE_REFLECT                                      //
 // - MOVE_SHOCK_WAVE                                   //
 // - MOVE_FLAMETHROWER                                 //
-// - MOVE_SLUDGE_BOMB                                  //
+// - MOVE_POISON_BOMB                                  //
 // - MOVE_SANDSTORM                                    //
 // - MOVE_FIRE_BLAST                                   //
 // - MOVE_ROCK_TOMB                                    //
@@ -83,7 +83,7 @@
 // - MOVE_MUD_SLAP                                     //
 // - MOVE_PSYCH_UP                                     //
 // - MOVE_ROCK_SLIDE                                   //
-// - MOVE_ROLLOUT                                      //
+// - MOVE_TREMORS                                      //
 // - MOVE_SEISMIC_TOSS                                 //
 // - MOVE_SLEEP_TALK                                   //
 // - MOVE_SNORE                                        //
@@ -96,9 +96,9 @@
 // - MOVE_THUNDER_WAVE                                 //
 // *************************************************** //
 // Near-universal moves found in sUniversalMoves:      //
-// - MOVE_BIDE                                         //
+// - MOVE_BURN_POWDER                                         //
 // - MOVE_FRUSTRATION                                  //
-// - MOVE_HIDDEN_POWER                                 //
+// - MOVE_MULTI_PULSE                                 //
 // - MOVE_MIMIC                                        //
 // - MOVE_NATURAL_GIFT                                 //
 // - MOVE_RAGE                                         //
@@ -17585,7 +17585,7 @@ static const u16 sVibravaTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
-    MOVE_DRAGON_CLAW,
+    MOVE_HEART_BREAK,
     MOVE_EARTHQUAKE,
     MOVE_FACADE,
     MOVE_FLY,
@@ -20794,7 +20794,7 @@ static const u16 sRampardosTeachableLearnset[] = {
     MOVE_CUT,
     MOVE_DIG,
     MOVE_DOUBLE_TEAM,
-    MOVE_DRAGON_CLAW,
+    MOVE_HEART_BREAK,
     MOVE_EARTHQUAKE,
     MOVE_FACADE,
     MOVE_FIRE_BLAST,
@@ -23162,7 +23162,7 @@ static const u16 sTepigTeachableLearnset[] = {
     MOVE_ENDURE,
     MOVE_FIRE_PUNCH,
     MOVE_MUD_SLAP,
-    MOVE_ROLLOUT,
+    MOVE_TREMORS,
     MOVE_SLEEP_TALK,
     MOVE_SNORE,
     MOVE_SWAGGER,
@@ -32905,7 +32905,7 @@ static const u16 sLunalaTeachableLearnset[] = {
     MOVE_ICE_BEAM,
     MOVE_LIGHT_SCREEN,
     MOVE_PROTECT,
-    MOVE_PSYCHIC,
+    MOVE_MANA_BURST,
     MOVE_RAIN_DANCE,
     MOVE_REFLECT,
     MOVE_REST,
@@ -34998,7 +34998,7 @@ static const u16 sDuraludonTeachableLearnset[] = {
 #if P_GEN_9_CROSS_EVOS
 static const u16 sArchaludonTeachableLearnset[] = {
     MOVE_BRICK_BREAK,
-    MOVE_DRAGON_CLAW,
+    MOVE_HEART_BREAK,
     MOVE_EARTHQUAKE,
     MOVE_FACADE,
     MOVE_HYPER_BEAM,
@@ -36445,7 +36445,7 @@ static const u16 sRabscaTeachableLearnset[] = {
     MOVE_ENDURE,
     MOVE_MUD_SLAP,
     MOVE_PSYCH_UP,
-    MOVE_ROLLOUT,
+    MOVE_TREMORS,
     MOVE_SLEEP_TALK,
     MOVE_UNAVAILABLE,
 };
@@ -37127,7 +37127,7 @@ static const u16 sIronTreadsTeachableLearnset[] = {
     MOVE_DOUBLE_EDGE,
     MOVE_MUD_SLAP,
     MOVE_ROCK_SLIDE,
-    MOVE_ROLLOUT,
+    MOVE_TREMORS,
     MOVE_SLEEP_TALK,
     MOVE_UNAVAILABLE,
 };
@@ -37729,7 +37729,7 @@ static const u16 sOgerponTeachableLearnset[] = {
 
 #if P_FAMILY_GOUGING_FIRE
 static const u16 sGougingFireTeachableLearnset[] = {
-    MOVE_DRAGON_CLAW,
+    MOVE_HEART_BREAK,
     MOVE_EARTHQUAKE,
     MOVE_FACADE,
     MOVE_FIRE_BLAST,
@@ -37780,7 +37780,7 @@ static const u16 sIronBoulderTeachableLearnset[] = {
     MOVE_FACADE,
     MOVE_HYPER_BEAM,
     MOVE_PROTECT,
-    MOVE_PSYCHIC,
+    MOVE_MANA_BURST,
     MOVE_REST,
     MOVE_ROCK_TOMB,
     MOVE_SANDSTORM,
@@ -37802,7 +37802,7 @@ static const u16 sIronCrownTeachableLearnset[] = {
     MOVE_FACADE,
     MOVE_HYPER_BEAM,
     MOVE_PROTECT,
-    MOVE_PSYCHIC,
+    MOVE_MANA_BURST,
     MOVE_REST,
     MOVE_BODY_SLAM,
     MOVE_DOUBLE_EDGE,
@@ -37846,11 +37846,11 @@ static const u16 sPecharuntTeachableLearnset[] = {
     MOVE_PROTECT,
     MOVE_REST,
     MOVE_SHADOW_BALL,
-    MOVE_SLUDGE_BOMB,
+    MOVE_POISON_BOMB,
     MOVE_TOXIC,
     MOVE_DEFENSE_CURL,
     MOVE_ENDURE,
-    MOVE_ROLLOUT,
+    MOVE_TREMORS,
     MOVE_SLEEP_TALK,
     MOVE_UNAVAILABLE,
 };

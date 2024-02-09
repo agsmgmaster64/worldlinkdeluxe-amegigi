@@ -831,8 +831,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Mindstorm sets up Psychic Terrain")
         OPPONENT(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_PSYCHIC, dynamax: TRUE); }
-        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_PSYCHIC); }
+        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST, dynamax: TRUE); }
+        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST); }
     } SCENE {
         MESSAGE("Foe Wobbuffet used ExtremeSpeed!");
         MESSAGE("Wobbuffet used Max Mindstorm!");
@@ -1394,7 +1394,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Chi Strike boosts allies' crit chance")
 DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Depletion takes away 2 PP from the target's last move")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_DRAGON_CLAW].category == DAMAGE_CATEGORY_PHYSICAL); // Otherwise Sableye faints.
+        ASSUME(gMovesInfo[MOVE_HEART_BREAK].category == DAMAGE_CATEGORY_PHYSICAL); // Otherwise Sableye faints.
         ASSUME(gMovesInfo[MOVE_G_MAX_DEPLETION].argument == MAX_EFFECT_SPITE);
         PLAYER(SPECIES_DURALUDON) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_WYNAUT);
@@ -1428,7 +1428,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max One Blow bypasses Max Guard for full damage"
                    MOVE(opponentLeft, MOVE_PROTECT, dynamax: TRUE); }
         else
             TURN { MOVE(playerLeft, MOVE_WICKED_BLOW, target: opponentLeft, dynamax: TRUE); \
-                   MOVE(opponentLeft, MOVE_PSYCHIC, target: playerLeft, dynamax: TRUE); }
+                   MOVE(opponentLeft, MOVE_MANA_BURST, target: playerLeft, dynamax: TRUE); }
     } SCENE {
         if (protect)
             MESSAGE("Foe Wobbuffet used Max Guard!");

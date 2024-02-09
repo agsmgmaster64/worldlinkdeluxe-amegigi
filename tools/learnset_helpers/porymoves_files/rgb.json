@@ -51,7 +51,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -115,7 +115,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -184,7 +184,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -245,7 +245,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -314,7 +314,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -390,7 +390,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -457,7 +457,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -526,7 +526,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -602,7 +602,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -647,11 +647,11 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 12,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 15,
@@ -667,7 +667,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 26,
@@ -693,12 +693,12 @@
       "MOVE_RAGE",
       "MOVE_MEGA_DRAIN",
       "MOVE_SOLAR_BEAM",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_PSYWAVE",
@@ -742,11 +742,11 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 12,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 16,
@@ -785,7 +785,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -837,7 +837,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -893,7 +893,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -954,7 +954,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -980,7 +980,7 @@
       },
       {
         "Level": 14,
-        "Move": "MOVE_HYPER_FANG"
+        "Move": "MOVE_KILLING_BITE"
       },
       {
         "Level": 23,
@@ -988,7 +988,7 @@
       },
       {
         "Level": 34,
-        "Move": "MOVE_SUPER_FANG"
+        "Move": "MOVE_HEAT_CLAW"
       }
     ],
     "PreEvoMoves": [],
@@ -1006,7 +1006,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1035,7 +1035,7 @@
       },
       {
         "Level": 14,
-        "Move": "MOVE_HYPER_FANG"
+        "Move": "MOVE_KILLING_BITE"
       },
       {
         "Level": 27,
@@ -1043,7 +1043,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_SUPER_FANG"
+        "Move": "MOVE_HEAT_CLAW"
       }
     ],
     "PreEvoMoves": [],
@@ -1063,7 +1063,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1088,7 +1088,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 22,
@@ -1113,7 +1113,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -1143,7 +1143,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 25,
@@ -1169,7 +1169,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -1207,7 +1207,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       }
     ],
     "PreEvoMoves": [],
@@ -1223,7 +1223,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_ROCK_SLIDE",
@@ -1265,7 +1265,7 @@
       },
       {
         "Level": 47,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       }
     ],
     "PreEvoMoves": [],
@@ -1282,7 +1282,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_ROCK_SLIDE",
@@ -1340,7 +1340,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1389,7 +1389,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1442,7 +1442,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1501,7 +1501,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1561,7 +1561,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -1611,7 +1611,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -1625,7 +1625,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -1674,7 +1674,7 @@
       "MOVE_MEGA_PUNCH",
       "MOVE_MEGA_KICK",
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -1695,7 +1695,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1719,7 +1719,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 43,
@@ -1735,17 +1735,17 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 36,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       }
     ],
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -1756,7 +1756,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -1776,11 +1776,11 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 8,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 50,
@@ -1796,17 +1796,17 @@
       },
       {
         "Level": 32,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 41,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       }
     ],
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -1820,7 +1820,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -1836,7 +1836,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 1,
@@ -1848,7 +1848,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 14,
@@ -1862,15 +1862,15 @@
     "PreEvoMoves": [
       "MOVE_DOUBLE_KICK",
       "MOVE_FOCUS_ENERGY",
-      "MOVE_FURY_ATTACK",
-      "MOVE_HORN_DRILL",
+      "MOVE_MAGIC_KNIFE",
+      "MOVE_SCULPTURE",
       "MOVE_LEER"
     ],
     "TMMoves": [
       "MOVE_MEGA_PUNCH",
       "MOVE_MEGA_KICK",
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -1891,7 +1891,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -1957,12 +1957,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -2021,12 +2021,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -2083,7 +2083,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -2128,7 +2128,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -2192,12 +2192,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -2255,12 +2255,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -2282,7 +2282,7 @@
       },
       {
         "Level": 10,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 15,
@@ -2312,7 +2312,7 @@
       "MOVE_MEGA_DRAIN",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -2336,7 +2336,7 @@
       },
       {
         "Level": 10,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 15,
@@ -2367,7 +2367,7 @@
       "MOVE_MEGA_DRAIN",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_SUBSTITUTE"
@@ -2395,7 +2395,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 33,
@@ -2418,7 +2418,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -2454,7 +2454,7 @@
       },
       {
         "Level": 28,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 38,
@@ -2477,7 +2477,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -2497,7 +2497,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 1,
@@ -2533,7 +2533,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -2582,7 +2582,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -2641,7 +2641,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -2682,7 +2682,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       }
     ],
     "PreEvoMoves": [],
@@ -2693,11 +2693,11 @@
       "MOVE_RAGE",
       "MOVE_MEGA_DRAIN",
       "MOVE_SOLAR_BEAM",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_PSYWAVE",
       "MOVE_SUBSTITUTE"
@@ -2745,7 +2745,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       }
     ],
     "PreEvoMoves": [],
@@ -2759,12 +2759,12 @@
       "MOVE_RAGE",
       "MOVE_MEGA_DRAIN",
       "MOVE_SOLAR_BEAM",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_PSYWAVE",
@@ -2812,7 +2812,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_ROCK_SLIDE",
       "MOVE_SUBSTITUTE"
@@ -2868,7 +2868,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_ROCK_SLIDE",
       "MOVE_SUBSTITUTE"
@@ -2921,7 +2921,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -2984,7 +2984,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3009,7 +3009,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 43,
@@ -3040,7 +3040,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3075,7 +3075,7 @@
       },
       {
         "Level": 39,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 48,
@@ -3107,7 +3107,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3167,7 +3167,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -3237,7 +3237,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -3292,7 +3292,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -3339,7 +3339,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -3391,10 +3391,10 @@
       "MOVE_ICE_BEAM",
       "MOVE_BLIZZARD",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_PSYWAVE",
@@ -3461,10 +3461,10 @@
       "MOVE_RAGE",
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3526,10 +3526,10 @@
       "MOVE_RAGE",
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3560,12 +3560,12 @@
       "MOVE_COUNTER",
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3582,7 +3582,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 1,
@@ -3594,7 +3594,7 @@
       },
       {
         "Level": 16,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 20,
@@ -3610,7 +3610,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 42,
@@ -3630,12 +3630,12 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
       "MOVE_DIG",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3652,7 +3652,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 1,
@@ -3664,7 +3664,7 @@
       },
       {
         "Level": 16,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 20,
@@ -3680,7 +3680,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 42,
@@ -3701,12 +3701,12 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
       "MOVE_DIG",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -3763,7 +3763,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -3827,7 +3827,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -3892,7 +3892,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -3932,7 +3932,7 @@
       },
       {
         "Level": 26,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 33,
@@ -3955,7 +3955,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -3995,7 +3995,7 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 38,
@@ -4018,7 +4018,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -4038,7 +4038,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 1,
@@ -4075,7 +4075,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT"
@@ -4087,11 +4087,11 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 7,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 13,
@@ -4137,7 +4137,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -4151,11 +4151,11 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_ACID"
+        "Move": "MOVE_POISON_TEARS"
       },
       {
         "Level": 1,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 1,
@@ -4163,7 +4163,7 @@
       },
       {
         "Level": 7,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 13,
@@ -4210,7 +4210,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -4267,7 +4267,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
@@ -4331,7 +4331,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
@@ -4397,7 +4397,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
@@ -4444,7 +4444,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -4452,7 +4452,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -4508,7 +4508,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -4517,7 +4517,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -4531,7 +4531,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 18,
@@ -4555,7 +4555,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       }
     ],
     "PreEvoMoves": [],
@@ -4573,12 +4573,12 @@
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
       "MOVE_DIG",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -4598,7 +4598,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 1,
@@ -4634,7 +4634,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       }
     ],
     "PreEvoMoves": [],
@@ -4658,12 +4658,12 @@
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
       "MOVE_DIG",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -4695,7 +4695,7 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 35,
@@ -4722,7 +4722,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_THUNDER_WAVE",
@@ -4756,7 +4756,7 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 38,
@@ -4784,7 +4784,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_REST",
       "MOVE_THUNDER_WAVE",
@@ -4810,7 +4810,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 23,
@@ -4838,7 +4838,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -4861,7 +4861,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 30,
@@ -4891,7 +4891,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -4914,7 +4914,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 20,
@@ -4922,7 +4922,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 30,
@@ -4953,7 +4953,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -4994,7 +4994,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -5006,7 +5006,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -5054,7 +5054,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -5067,7 +5067,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -5089,7 +5089,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_TOXIC_GAS"
       },
       {
         "Level": 33,
@@ -5109,7 +5109,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_ACID_ARMOR"
+        "Move": "MOVE_DISPERSE"
       }
     ],
     "PreEvoMoves": [],
@@ -5122,7 +5122,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
       "MOVE_REST",
@@ -5144,11 +5144,11 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_TOXIC_GAS"
       },
       {
         "Level": 30,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_TOXIC_GAS"
       },
       {
         "Level": 33,
@@ -5168,7 +5168,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_ACID_ARMOR"
+        "Move": "MOVE_DISPERSE"
       }
     ],
     "PreEvoMoves": [],
@@ -5182,7 +5182,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
       "MOVE_REST",
@@ -5204,7 +5204,7 @@
       },
       {
         "Level": 18,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 23,
@@ -5237,7 +5237,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SWIFT",
       "MOVE_REST",
@@ -5257,7 +5257,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 1,
@@ -5291,7 +5291,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SWIFT",
       "MOVE_REST",
@@ -5333,10 +5333,10 @@
       "MOVE_MEGA_DRAIN",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_DREAM_EATER",
       "MOVE_REST",
@@ -5377,10 +5377,10 @@
       "MOVE_MEGA_DRAIN",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_DREAM_EATER",
       "MOVE_REST",
@@ -5430,10 +5430,10 @@
       "MOVE_MEGA_DRAIN",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SKULL_BASH",
@@ -5490,7 +5490,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -5518,7 +5518,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 24,
@@ -5526,11 +5526,11 @@
       },
       {
         "Level": 29,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_TOXIC_GAS"
       },
       {
         "Level": 32,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 37,
@@ -5549,12 +5549,12 @@
       "MOVE_COUNTER",
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_DREAM_EATER",
@@ -5584,7 +5584,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 12,
@@ -5592,7 +5592,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 24,
@@ -5600,11 +5600,11 @@
       },
       {
         "Level": 33,
-        "Move": "MOVE_POISON_GAS"
+        "Move": "MOVE_TOXIC_GAS"
       },
       {
         "Level": 37,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 43,
@@ -5624,12 +5624,12 @@
       "MOVE_COUNTER",
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_DREAM_EATER",
@@ -5688,7 +5688,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT",
@@ -5748,7 +5748,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT",
@@ -5800,7 +5800,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SWIFT",
       "MOVE_REST",
@@ -5859,7 +5859,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -5913,12 +5913,12 @@
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_EGG_BOMB",
       "MOVE_REST",
@@ -5960,12 +5960,12 @@
       "MOVE_RAGE",
       "MOVE_MEGA_DRAIN",
       "MOVE_SOLAR_BEAM",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_EGG_BOMB",
       "MOVE_REST",
@@ -6029,7 +6029,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6100,7 +6100,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6155,7 +6155,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -6211,7 +6211,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -6230,7 +6230,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 7,
@@ -6277,7 +6277,7 @@
       "MOVE_FISSURE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6328,7 +6328,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
       "MOVE_REST",
@@ -6382,7 +6382,7 @@
       "MOVE_THUNDER",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
       "MOVE_REST",
@@ -6396,7 +6396,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 30,
@@ -6408,11 +6408,11 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 45,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       },
       {
         "Level": 50,
@@ -6426,7 +6426,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -6438,7 +6438,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6453,7 +6453,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 1,
@@ -6465,7 +6465,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 30,
@@ -6477,11 +6477,11 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 48,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       },
       {
         "Level": 55,
@@ -6497,7 +6497,7 @@
       "MOVE_MEGA_PUNCH",
       "MOVE_MEGA_KICK",
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -6518,7 +6518,7 @@
       "MOVE_DIG",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6585,12 +6585,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_EGG_BOMB",
       "MOVE_FIRE_BLAST",
@@ -6655,7 +6655,7 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -6718,7 +6718,7 @@
       "MOVE_FISSURE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6769,7 +6769,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6823,7 +6823,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6845,15 +6845,15 @@
       },
       {
         "Level": 19,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 24,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 30,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 37,
@@ -6861,7 +6861,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       },
       {
         "Level": 54,
@@ -6871,7 +6871,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
       "MOVE_BUBBLE_BEAM",
@@ -6881,7 +6881,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -6903,19 +6903,19 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 19,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 24,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 30,
-        "Move": "MOVE_FURY_ATTACK"
+        "Move": "MOVE_MAGIC_KNIFE"
       },
       {
         "Level": 39,
@@ -6923,7 +6923,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_HORN_DRILL"
+        "Move": "MOVE_SCULPTURE"
       },
       {
         "Level": 54,
@@ -6933,7 +6933,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
       "MOVE_BUBBLE_BEAM",
@@ -6944,7 +6944,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7001,12 +7001,12 @@
       "MOVE_RAGE",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7054,12 +7054,12 @@
       "MOVE_RAGE",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7077,7 +7077,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 1,
@@ -7085,7 +7085,7 @@
       },
       {
         "Level": 15,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 23,
@@ -7120,12 +7120,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7178,7 +7178,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7240,12 +7240,12 @@
       "MOVE_COUNTER",
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7301,12 +7301,12 @@
       "MOVE_RAGE",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -7364,11 +7364,11 @@
       "MOVE_COUNTER",
       "MOVE_SEISMIC_TOSS",
       "MOVE_RAGE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
@@ -7424,7 +7424,7 @@
       "MOVE_RAGE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_CUT",
@@ -7463,7 +7463,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -7477,7 +7477,7 @@
       "MOVE_FISSURE",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7563,7 +7563,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7612,7 +7612,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -7626,11 +7626,11 @@
       "MOVE_DRAGON_RAGE",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_PSYWAVE",
@@ -7690,7 +7690,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7739,7 +7739,7 @@
       },
       {
         "Level": 42,
-        "Move": "MOVE_ACID_ARMOR"
+        "Move": "MOVE_DISPERSE"
       },
       {
         "Level": 54,
@@ -7767,7 +7767,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7844,7 +7844,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -7919,7 +7919,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -7971,12 +7971,12 @@
       "MOVE_RAGE",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
@@ -8001,7 +8001,7 @@
       },
       {
         "Level": 34,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 39,
@@ -8030,7 +8030,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_SURF"
@@ -8050,11 +8050,11 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 34,
-        "Move": "MOVE_HORN_ATTACK"
+        "Move": "MOVE_KNIFE_THROW"
       },
       {
         "Level": 39,
@@ -8072,7 +8072,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -8087,7 +8087,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -8137,7 +8137,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
       "MOVE_SURF"
@@ -8196,7 +8196,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SKULL_BASH",
       "MOVE_REST",
       "MOVE_SUBSTITUTE",
@@ -8217,7 +8217,7 @@
       },
       {
         "Level": 33,
-        "Move": "MOVE_SUPERSONIC"
+        "Move": "MOVE_JAMMING"
       },
       {
         "Level": 38,
@@ -8245,7 +8245,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
@@ -8310,11 +8310,11 @@
       "MOVE_THUNDER",
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
@@ -8368,7 +8368,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -8415,7 +8415,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
       "MOVE_REST",
@@ -8462,7 +8462,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKY_ATTACK",
@@ -8521,7 +8521,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -8571,7 +8571,7 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -8586,7 +8586,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -8641,7 +8641,7 @@
     "TMMoves": [
       "MOVE_RAZOR_WIND",
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -8657,7 +8657,7 @@
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_FIRE_BLAST",
       "MOVE_SWIFT",
       "MOVE_SKULL_BASH",
@@ -8674,7 +8674,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_CONFUSION"
+        "Move": "MOVE_PSYSHOT"
       },
       {
         "Level": 1,
@@ -8686,7 +8686,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 63,
@@ -8694,7 +8694,7 @@
       },
       {
         "Level": 66,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       },
       {
         "Level": 70,
@@ -8730,12 +8730,12 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDERBOLT",
       "MOVE_THUNDER",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_FIRE_BLAST",
@@ -8771,7 +8771,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_PSYCHIC"
+        "Move": "MOVE_MANA_BURST"
       }
     ],
     "PreEvoMoves": [],
@@ -8782,7 +8782,7 @@
       "MOVE_WHIRLWIND",
       "MOVE_MEGA_KICK",
       "MOVE_TOXIC",
-      "MOVE_HORN_DRILL",
+      "MOVE_SCULPTURE",
       "MOVE_BODY_SLAM",
       "MOVE_TAKE_DOWN",
       "MOVE_DOUBLE_EDGE",
@@ -8804,12 +8804,12 @@
       "MOVE_EARTHQUAKE",
       "MOVE_FISSURE",
       "MOVE_DIG",
-      "MOVE_PSYCHIC",
+      "MOVE_MANA_BURST",
       "MOVE_TELEPORT",
       "MOVE_MIMIC",
       "MOVE_DOUBLE_TEAM",
       "MOVE_REFLECT",
-      "MOVE_BIDE",
+      "MOVE_BURN_POWDER",
       "MOVE_METRONOME",
       "MOVE_SELF_DESTRUCT",
       "MOVE_EGG_BOMB",

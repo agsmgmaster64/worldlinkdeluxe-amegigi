@@ -20,9 +20,9 @@ ASSUMPTIONS
     ASSUME(gMovesInfo[MOVE_WATER_GUN].type == TYPE_WATER);
     ASSUME(gMovesInfo[MOVE_VINE_WHIP].type == TYPE_NATURE);
     ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
-    ASSUME(gMovesInfo[MOVE_CONFUSION].type == TYPE_REASON);
+    ASSUME(gMovesInfo[MOVE_PSYSHOT].type == TYPE_REASON);
     ASSUME(gMovesInfo[MOVE_ICE_BEAM].type == TYPE_ICE);
-    ASSUME(gMovesInfo[MOVE_DRAGON_BREATH].type == TYPE_FAITH);
+    ASSUME(gMovesInfo[MOVE_DECISION].type == TYPE_FAITH);
     ASSUME(gMovesInfo[MOVE_BITE].type == TYPE_DARK);
     ASSUME(gMovesInfo[MOVE_DISARMING_VOICE].type == TYPE_COSMIC);
 }
