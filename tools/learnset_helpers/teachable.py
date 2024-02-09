@@ -139,22 +139,22 @@ for mon in list_of_mons:
         print("Unable to find %s in json" % mon)
         continue
     for move in tm_moves:
-        if move in universal_moves:
-            continue
+        #if move in universal_moves:
+            #continue
         if move in tm_learnset:
             continue
         if move in compatibility_dict[mon_parsed]:
             tm_learnset.append(move)
             continue
     for move in tutor_moves:
-        if move in universal_moves:
-            continue
+        #if move in universal_moves:
+            #continue
         if move in tutor_learnset:
             continue
         if move in compatibility_dict[mon_parsed]:
             tutor_learnset.append(move)
             continue
-    tm_learnset.sort()
+    #tm_learnset.sort()
     tutor_learnset.sort()
     tm_learnset += tutor_learnset
     repl = "static const u16 s%sTeachableLearnset[] = {\n    " % mon

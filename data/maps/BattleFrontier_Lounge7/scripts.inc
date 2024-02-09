@@ -79,7 +79,7 @@ BattleFrontier_Lounge7_EventScript_SeismicToss::
 
 BattleFrontier_Lounge7_EventScript_DreamEater::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_DREAM_EATER
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -109,19 +109,19 @@ BattleFrontier_Lounge7_EventScript_RockSlide::
 
 BattleFrontier_Lounge7_EventScript_Counter::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_COUNTER
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderWave::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_WAVE
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SwordsDance::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -215,37 +215,37 @@ BattleFrontier_Lounge7_EventScript_Swift::
 
 BattleFrontier_Lounge7_EventScript_IcyWind::
 	setvar VAR_0x8008, 24
-	setvar VAR_0x8005, MOVE_ICY_WIND
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Endure::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ENDURE
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_PsychUp::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_PSYCH_UP
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_IcePunch::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_ICE_PUNCH
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderPunch::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_FirePunch::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 

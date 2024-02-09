@@ -7,7 +7,7 @@ SlateportCity_PokemonFanClub_EventScript_SwaggerTutor::
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SwaggerDeclined
 	msgbox MoveTutor_Text_SwaggerWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SWAGGER
+	setvar VAR_0x8005, MOVE_TACKLE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SwaggerDeclined
 	setflag FLAG_MOVE_TUTOR_TAUGHT_SWAGGER
@@ -111,7 +111,7 @@ FallarborTown_Mart_EventScript_MetronomeTutor::
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_MetronomeDeclined
 	msgbox MoveTutor_Text_MetronomeWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_METRONOME
+	setvar VAR_0x8005, MOVE_TACKLE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_MetronomeDeclined
 	setflag FLAG_MOVE_TUTOR_TAUGHT_METRONOME
@@ -137,7 +137,7 @@ FortreeCity_House2_EventScript_SleepTalkTutor::
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_SleepTalkDeclined
 	msgbox MoveTutor_Text_SleepTalkWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_SLEEP_TALK
+	setvar VAR_0x8005, MOVE_TACKLE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_SleepTalkDeclined
 	setflag FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK
@@ -241,7 +241,7 @@ PacifidlogTown_PokemonCenter_1F_EventScript_ExplosionTutor::
 	call MoveTutor_EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, MoveTutor_EventScript_ExplosionDeclined
 	msgbox MoveTutor_Text_ExplosionWhichMon, MSGBOX_DEFAULT
-	setvar VAR_0x8005, MOVE_EXPLOSION
+	setvar VAR_0x8005, MOVE_TACKLE
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, MoveTutor_EventScript_ExplosionDeclined
 	setflag FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION

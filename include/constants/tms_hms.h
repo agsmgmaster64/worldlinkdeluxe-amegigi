@@ -41,7 +41,7 @@
     F(SANDSTORM) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
-    F(AERIAL_ACE) \
+    F(RAZOR_WIND) \
     F(TORMENT) \
     F(FACADE) \
     F(SECRET_POWER) \
@@ -51,7 +51,52 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(MIND_BOMB)
+    F(MIND_BOMB) \
+    F(ROOST) \
+    F(FOCUS_BLAST) \
+    F(ENERGY_LIGHT) \
+    F(FALSE_SWIPE) \
+    F(CHILLING_WATER) \
+    F(FLING) \
+    F(CHARGE_BEAM) \
+    F(ENDURE) \
+    F(INCINERATE) \
+    F(DRAIN_PUNCH) \
+    F(WILL_O_WISP) \
+    F(PSYCHO_CUT) \
+    F(ICY_WIND) \
+    F(EXPLOSION) \
+    F(SHADOW_HIT) \
+    F(PAYBACK) \
+    F(RECYCLE) \
+    F(COUNTER) \
+    F(MIRROR_COAT) \
+    F(DECISION) \
+    F(NATURE_POWER) \
+    F(VOLT_SWITCH) \
+    F(THUNDER_WAVE) \
+    F(TACKLE) \
+    F(SWORDS_DANCE) \
+    F(SPIKES) \
+    F(PSYCH_UP) \
+    F(CURSE) \
+    F(DARK_PULSE) \
+    F(FIRE_PUNCH) \
+    F(ICE_PUNCH) \
+    F(THUNDER_PUNCH) \
+    F(SLEEP_TALK) \
+    F(POISON_JAB) \
+    F(DREAM_EATER) \
+    F(POUND) \
+    F(SWAGGER) \
+    F(SCRATCH) \
+    F(U_TURN) \
+    F(SUBSTITUTE) \
+    F(METRONOME) \
+    F(TRICK_ROOM)
+
+// todo
+// change TACKLE, POUND
 
 #define FOREACH_HM(F) \
     F(CUT) \
