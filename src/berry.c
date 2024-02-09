@@ -1918,6 +1918,48 @@ const struct BerryCrushBerryData gBerryCrush_BerryData[] = {
 
 const struct BerryTree gBlankBerryTree = {};
 
+void SetEnigmaBerry(u8 *src)
+{
+#if FREE_ENIGMA_BERRY == FALSE
+    u32 i;
+    u8 *dest = (u8 *)&gSaveBlock1Ptr->enigmaBerry;
+
+    for (i = 0; i < sizeof(gSaveBlock1Ptr->enigmaBerry); i++)
+        dest[i] = src[i];
+#endif //FREE_ENIGMA_BERRY
+}
+
+#if FREE_ENIGMA_BERRY == FALSE
+static u32 GetEnigmaBerryChecksum(struct EnigmaBerry *enigmaBerry)
+{
+    u32 i;
+    u32 checksum;
+    u8 *dest;
+
+    dest = (u8 *)enigmaBerry;
+    checksum = 0;
+    for (i = 0; i < sizeof(gSaveBlock1Ptr->enigmaBerry) - sizeof(gSaveBlock1Ptr->enigmaBerry.checksum); i++)
+        checksum += dest[i];
+
+    return checksum;
+}
+#endif //FREE_ENIGMA_BERRY
+
+bool32 IsEnigmaBerryValid(void)
+{
+#if FREE_ENIGMA_BERRY == FALSE
+    if (!gSaveBlock1Ptr->enigmaBerry.berry.growthDuration)
+        return FALSE;
+    if (!gSaveBlock1Ptr->enigmaBerry.berry.maxYield)
+        return FALSE;
+    if (GetEnigmaBerryChecksum(&gSaveBlock1Ptr->enigmaBerry) != gSaveBlock1Ptr->enigmaBerry.checksum)
+        return FALSE;
+    return TRUE;
+#else
+    return FALSE;
+#endif //FREE_ENIGMA_BERRY
+}
+
 const struct Berry *GetBerryInfo(u8 berry)
 {
     if (berry == BERRY_NONE || berry > ITEM_TO_BERRY(LAST_BERRY_INDEX))

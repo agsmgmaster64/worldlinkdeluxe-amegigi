@@ -224,6 +224,56 @@ bool8 MEScrCmd_runscript(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 MEScrCmd_setenigmaberry(struct ScriptContext *ctx)
+{
+#if FREE_ENIGMA_BERRY == FALSE
+    u8 *str;
+    const u8 *message;
+    bool32 haveBerry = IsEnigmaBerryValid();
+    u8 *berry = (u8 *)(ScriptReadWord(ctx) - ctx->mOffset + ctx->mScriptBase);
+    StringCopyN(gStringVar1, gSaveBlock1Ptr->enigmaBerry.berry.name, BERRY_NAME_LENGTH + 1);
+    SetEnigmaBerry(berry);
+    StringCopyN(gStringVar2, gSaveBlock1Ptr->enigmaBerry.berry.name, BERRY_NAME_LENGTH + 1);
+
+    if (!haveBerry)
+    {
+        str = gStringVar4;
+        message = gText_MysteryEventBerry;
+    }
+    else if (StringCompare(gStringVar1, gStringVar2))
+    {
+        str = gStringVar4;
+        message = gText_MysteryEventBerryTransform;
+    }
+    else
+    {
+        str = gStringVar4;
+        message = gText_MysteryEventBerryObtained;
+    }
+
+    StringExpandPlaceholders(str, message);
+
+    ctx->mStatus = MEVENT_STATUS_SUCCESS;
+
+    if (IsEnigmaBerryValid() == TRUE)
+        VarSet(VAR_ENIGMA_BERRY_AVAILABLE, 1);
+    else
+        ctx->mStatus = MEVENT_STATUS_LOAD_ERROR;
+#endif //FREE_ENIGMA_BERRY
+
+    return FALSE;
+}
+
+bool8 MEScrCmd_giveribbon(struct ScriptContext *ctx)
+{
+    u8 index = ScriptReadByte(ctx);
+    u8 ribbonId = ScriptReadByte(ctx);
+    GiveGiftRibbonToParty(index, ribbonId);
+    StringExpandPlaceholders(gStringVar4, gText_MysteryEventSpecialRibbon);
+    ctx->mStatus = MEVENT_STATUS_SUCCESS;
+    return FALSE;
+}
+
 bool8 MEScrCmd_initramscript(struct ScriptContext *ctx)
 {
     u8 mapGroup = ScriptReadByte(ctx);
@@ -309,6 +359,13 @@ bool8 MEScrCmd_givepokemon(struct ScriptContext *ctx)
 
 bool8 MEScrCmd_addtrainer(struct ScriptContext *ctx)
 {
+#if FREE_BATTLE_TOWER_E_READER == FALSE
+    u32 data = ScriptReadWord(ctx) - ctx->mOffset + ctx->mScriptBase;
+    memcpy(&gSaveBlock2Ptr->frontier.ereaderTrainer, (void *)data, sizeof(gSaveBlock2Ptr->frontier.ereaderTrainer));
+    ValidateEReaderTrainer();
+    StringExpandPlaceholders(gStringVar4, gText_MysteryEventNewTrainer);
+    ctx->mStatus = MEVENT_STATUS_SUCCESS;
+#endif //FREE_BATTLE_TOWER_E_READER
     return FALSE;
 }
 

@@ -6443,6 +6443,7 @@ static u8 DamagedStatBoostBerryEffect(u32 battler, u8 statId, u8 category)
      && (gBattleScripting.overrideBerryRequirements
          || (!DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
              && GetBattleMoveCategory(gCurrentMove) == category
+             && battler != gBattlerAttacker
              && TARGET_TURN_DAMAGED))
         )
     {
