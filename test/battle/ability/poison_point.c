@@ -16,7 +16,7 @@ SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact")
         TURN {}
     } SCENE {
         if (gMovesInfo[move].makesContact) {
-            ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
+            ABILITY_POPUP(opponent, ABILITY_POISON_BODY);
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
             MESSAGE("Wobbuffet was poisoned by Foe Nidoran♂'s Poison Point!");
             STATUS_ICON(player, poison: TRUE);

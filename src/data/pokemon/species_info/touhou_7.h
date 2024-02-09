@@ -438,7 +438,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
 #define LILY_WHITE_MISC_INFO                                    \
         PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_PCB),       \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY }, \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY), \
         .cryId = CRY_LILY_WHITE
 
     [SPECIES_CHIBI_LILY_WHITE] =
@@ -593,7 +593,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
 #define LILY_BLACK_MISC_INFO                                    \
         PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_PCB),       \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY }, \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY), \
         .cryId = CRY_LILY_BLACK
 
     [SPECIES_CHIBI_LILY_BLACK] =

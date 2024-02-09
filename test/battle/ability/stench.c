@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch")
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
-        PLAYER(SPECIES_GRIMER) { Ability(ABILITY_STENCH); }
+        PLAYER(SPECIES_GRIMER) { Ability(ABILITY_JEALOUSY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_CELEBRATE); }

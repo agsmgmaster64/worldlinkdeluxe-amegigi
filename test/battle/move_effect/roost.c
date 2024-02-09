@@ -7,24 +7,24 @@ ASSUMPTIONS
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_FLYING);
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_FLYING);
     // One attack of each type to verify typelessness
-    ASSUME(gMovesInfo[MOVE_POUND].type == TYPE_NORMAL);
-    ASSUME(gMovesInfo[MOVE_KARATE_CHOP].type == TYPE_FIGHTING);
+    ASSUME(gMovesInfo[MOVE_POUND].type == TYPE_ILLUSION);
+    ASSUME(gMovesInfo[MOVE_KARATE_CHOP].type == TYPE_DREAM);
     ASSUME(gMovesInfo[MOVE_GUST].type == TYPE_FLYING);
-    ASSUME(gMovesInfo[MOVE_POISON_STING].type == TYPE_POISON);
-    ASSUME(gMovesInfo[MOVE_EARTHQUAKE].type == TYPE_GROUND);
-    ASSUME(gMovesInfo[MOVE_ROCK_THROW].type == TYPE_ROCK);
-    ASSUME(gMovesInfo[MOVE_LEECH_LIFE].type == TYPE_BUG);
+    ASSUME(gMovesInfo[MOVE_POISON_STING].type == TYPE_MIASMA);
+    ASSUME(gMovesInfo[MOVE_EARTHQUAKE].type == TYPE_EARTH);
+    ASSUME(gMovesInfo[MOVE_ROCK_THROW].type == TYPE_BEAST);
+    ASSUME(gMovesInfo[MOVE_LEECH_LIFE].type == TYPE_HEART);
     ASSUME(gMovesInfo[MOVE_LICK].type == TYPE_GHOST);
     ASSUME(gMovesInfo[MOVE_STEEL_WING].type == TYPE_STEEL);
     ASSUME(gMovesInfo[MOVE_EMBER].type == TYPE_FIRE);
     ASSUME(gMovesInfo[MOVE_WATER_GUN].type == TYPE_WATER);
-    ASSUME(gMovesInfo[MOVE_VINE_WHIP].type == TYPE_GRASS);
-    ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_ELECTRIC);
-    ASSUME(gMovesInfo[MOVE_CONFUSION].type == TYPE_PSYCHIC);
+    ASSUME(gMovesInfo[MOVE_VINE_WHIP].type == TYPE_NATURE);
+    ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
+    ASSUME(gMovesInfo[MOVE_CONFUSION].type == TYPE_REASON);
     ASSUME(gMovesInfo[MOVE_ICE_BEAM].type == TYPE_ICE);
-    ASSUME(gMovesInfo[MOVE_DRAGON_BREATH].type == TYPE_DRAGON);
+    ASSUME(gMovesInfo[MOVE_DRAGON_BREATH].type == TYPE_FAITH);
     ASSUME(gMovesInfo[MOVE_BITE].type == TYPE_DARK);
-    ASSUME(gMovesInfo[MOVE_DISARMING_VOICE].type == TYPE_FAIRY);
+    ASSUME(gMovesInfo[MOVE_DISARMING_VOICE].type == TYPE_COSMIC);
 }
 
 SINGLE_BATTLE_TEST("Roost fails when user is at full HP")

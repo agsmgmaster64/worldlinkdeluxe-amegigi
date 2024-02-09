@@ -3,13 +3,13 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_FURY_CUTTER].type == TYPE_BUG);
+    ASSUME(gMovesInfo[MOVE_FURY_CUTTER].type == TYPE_HEART);
     ASSUME(gMovesInfo[MOVE_FURY_CUTTER].power != 0);
     ASSUME(gMovesInfo[MOVE_FEINT_ATTACK].type == TYPE_DARK);
     ASSUME(gMovesInfo[MOVE_FEINT_ATTACK].power != 0);
     ASSUME(gMovesInfo[MOVE_SHADOW_PUNCH].type == TYPE_GHOST);
     ASSUME(gMovesInfo[MOVE_SHADOW_PUNCH].power != 0);
-    ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_NORMAL);
+    ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_ILLUSION);
     ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
 }
 
@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Rattled triggers correctly when hit by U-Turn") // Specific 
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_U_TURN].effect == EFFECT_HIT_ESCAPE);
-        ASSUME(gMovesInfo[MOVE_U_TURN].type == TYPE_BUG);
+        ASSUME(gMovesInfo[MOVE_U_TURN].type == TYPE_HEART);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_SUDOWOODO) {Ability(ABILITY_RATTLED); }

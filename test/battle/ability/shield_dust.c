@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects")
         ASSUME(MoveHasMoveEffectWithChance(MOVE_SPIRIT_SHACKLE, MOVE_EFFECT_PREVENT_ESCAPE, 100) == TRUE);
         ASSUME(MoveHasMoveEffectWithChance(MOVE_PSYCHIC_NOISE, MOVE_EFFECT_PSYCHIC_NOISE, 100) == TRUE);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_SHIELD_DUST); }
+        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -55,7 +55,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
         ASSUME(MoveHasMoveEffectWithChance(MOVE_PAY_DAY, MOVE_EFFECT_PAYDAY, 0) == TRUE);
         ASSUME(MoveHasMoveEffectWithChance(MOVE_SMACK_DOWN, MOVE_EFFECT_SMACK_DOWN, 0) == TRUE);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_SHIELD_DUST); }
+        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -98,7 +98,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary o
         ASSUME(MoveHasMoveEffectSelf(MOVE_LEAF_STORM, MOVE_EFFECT_SP_ATK_TWO_DOWN) == TRUE);
         ASSUME(MoveHasMoveEffectSelf(MOVE_METEOR_ASSAULT, MOVE_EFFECT_RECHARGE) == TRUE);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_SHIELD_DUST); }
+        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
     } WHEN {
         TURN { MOVE(player, move); }
         if (move == MOVE_METEOR_ASSAULT) {
@@ -127,7 +127,7 @@ DOUBLE_BATTLE_TEST("Shield Dust does not block Sparkling Aria in doubles")
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_SHIELD_DUST); Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SPARKLING_ARIA); }

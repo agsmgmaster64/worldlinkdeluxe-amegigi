@@ -177,7 +177,7 @@ SINGLE_BATTLE_TEST("Strength Sap makes attacker lose HP if target's ability is L
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(atkStat); Ability(ABILITY_LIQUID_OOZE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Attack(atkStat); Ability(ABILITY_STRANGE_MIST); }
     } WHEN {
         TURN { MOVE(player, MOVE_STRENGTH_SAP); if (atkStat == 490) { SEND_OUT(player, 1); } }
     } SCENE {
@@ -185,7 +185,7 @@ SINGLE_BATTLE_TEST("Strength Sap makes attacker lose HP if target's ability is L
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STRENGTH_SAP, player);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
         MESSAGE("Foe Wobbuffet's Attack fell!");
-        ABILITY_POPUP(opponent, ABILITY_LIQUID_OOZE);
+        ABILITY_POPUP(opponent, ABILITY_STRANGE_MIST);
         HP_BAR(player, captureDamage: &lostHp);
         MESSAGE("It sucked up the liquid ooze!");
         if (atkStat >= 490) {
