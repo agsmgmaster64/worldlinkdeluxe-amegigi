@@ -931,9 +931,7 @@ static void GetItemName(u8 *dest, u16 itemId)
         }
         else if (itemId == ITEM_TM100)
         {
-            // Get HM number
-            ConvertIntToDecimalStringN(gStringVar1, 0, STR_CONV_MODE_LEADING_ZEROS, 1);
-            StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
+            StringExpandPlaceholders(dest, gText_NumberItem_TM100);
         }
         else
         {

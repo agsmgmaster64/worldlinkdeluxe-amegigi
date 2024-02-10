@@ -75,7 +75,7 @@
     F(NATURE_POWER) \
     F(VOLT_SWITCH) \
     F(THUNDER_WAVE) \
-    F(TACKLE) \
+    F(SHADOW_FORCE) \
     F(SWORDS_DANCE) \
     F(SPIKES) \
     F(PSYCH_UP) \

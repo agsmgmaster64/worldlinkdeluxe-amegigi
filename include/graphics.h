@@ -1517,6 +1517,16 @@ extern const u32 gItemIconPalette_DragonTMHM[];
 extern const u32 gItemIconPalette_DarkTMHM[];
 extern const u32 gItemIconPalette_SteelTMHM[];
 extern const u32 gItemIconPalette_FairyTMHM[];
+extern const u32 gItemIconPalette_IllusionTMHM[];
+extern const u32 gItemIconPalette_WindTMHM[];
+extern const u32 gItemIconPalette_NatureTMHM[];
+extern const u32 gItemIconPalette_DreamTMHM[];
+extern const u32 gItemIconPalette_MiasmaTMHM[];
+extern const u32 gItemIconPalette_EarthTMHM[];
+extern const u32 gItemIconPalette_ReasonTMHM[];
+extern const u32 gItemIconPalette_HeartTMHM[];
+extern const u32 gItemIconPalette_BeastTMHM[];
+extern const u32 gItemIconPalette_FaithTMHM[];
 // Charms
 extern const u32 gItemIcon_OvalCharm[];
 extern const u32 gItemIconPalette_OvalCharm[];
