@@ -1742,6 +1742,19 @@ extern const u32 gItemIcon_Pokevial[];
 
 extern const u32 gItemIconPalette_Pokevial[];
 
+extern const u32 gItemIcon_BigAxe[];
+extern const u32 gItemIconPalette_BigAxe[];
+extern const u32 gItemIcon_Surfboard[];
+extern const u32 gItemIconPalette_Surfboard[];
+extern const u32 gItemIcon_PowerGlove[];
+extern const u32 gItemIconPalette_PowerGlove[];
+extern const u32 gItemIcon_Lantern[];
+extern const u32 gItemIconPalette_Lantern[];
+extern const u32 gItemIcon_Pickaxe[];
+extern const u32 gItemIconPalette_Pickaxe[];
+extern const u32 gItemIcon_ScubaGear[];
+extern const u32 gItemIconPalette_ScubaGear[];
+
 extern const u32 gItemIcon_FairyFeather[];
 extern const u32 gItemIconPalette_FairyFeather[];
 

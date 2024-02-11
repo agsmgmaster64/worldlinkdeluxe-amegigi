@@ -12576,14 +12576,14 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_SurfTool,
     },
 
-    [ITEM_STRENGTH_TOOL] =
+    [ITEM_POWER_GLOVE] =
     {
-        .name = _("Pager"),
+        .name = _("Power Glove"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A big axe that\n"
-            "can cut down\n"
-            "small trees."),
+            "Some gloves that\n"
+            "have the strength\n"
+            "to move boulders."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,

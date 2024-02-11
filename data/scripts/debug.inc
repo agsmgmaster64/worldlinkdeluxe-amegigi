@@ -164,19 +164,19 @@ Debug_EventScript_Script_3::
 	case 1, Debug_EventScript_Script_3_PrintTypeBlack
 	case 2, Debug_EventScript_Script_3_PrintTypePink
 	case 3, Debug_EventScript_Script_3_PrintTypeSepia
-    setvar VAR_0x8004, 0
+	setvar VAR_0x8004, 0
 	goto Debug_EventScript_Script_3_UpdateTrainerCard
 
 Debug_EventScript_Script_3_PrintTypeBlack::
-    setvar VAR_0x8004, 1
+	setvar VAR_0x8004, 1
 	goto Debug_EventScript_Script_3_UpdateTrainerCard
 
 Debug_EventScript_Script_3_PrintTypePink::
-    setvar VAR_0x8004, 2
+	setvar VAR_0x8004, 2
 	goto Debug_EventScript_Script_3_UpdateTrainerCard
 
 Debug_EventScript_Script_3_PrintTypeSepia::
-    setvar VAR_0x8004, 3
+	setvar VAR_0x8004, 3
 	goto Debug_EventScript_Script_3_UpdateTrainerCard
 
 Debug_EventScript_Script_3_UpdateTrainerCard::
@@ -188,6 +188,25 @@ Debug_EventScript_Script_3_Text_ChoosePrintType::
 	.string "Please choose the print type.$"
 
 Debug_EventScript_Script_4::
+	giveitem ITEM_OLD_ROD
+	giveitem ITEM_GOOD_ROD
+	giveitem ITEM_SUPER_ROD
+	giveitem ITEM_DOWSING_MACHINE
+	giveitem ITEM_VS_SEEKER
+	giveitem ITEM_POKEMON_BOX_LINK
+	giveitem ITEM_COIN_CASE
+	giveitem ITEM_POWDER_JAR
+	giveitem ITEM_WAILMER_PAIL
+	giveitem ITEM_POKEBLOCK_CASE
+	giveitem ITEM_SOOT_SACK
+	giveitem ITEM_POKE_FLUTE
+	giveitem ITEM_BIG_AXE
+	giveitem ITEM_SURFBOARD
+	giveitem ITEM_PAGER
+	giveitem ITEM_POWER_GLOVE
+	giveitem ITEM_LANTERN
+	giveitem ITEM_PICKAXE
+	giveitem ITEM_SCUBA_GEAR
 	end
 
 Debug_EventScript_Script_5::
