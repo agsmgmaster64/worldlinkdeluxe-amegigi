@@ -313,8 +313,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(SMarisa),
     },
 
-#define DAIYOUSEI_MISC_INFO                                     \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),      \
+#define DAIYOUSEI_MISC_INFO                                                 \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),                  \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY), \
         .cryId = CRY_PORYGON
 
@@ -469,8 +469,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(DDaiyousei),
     },
 
-#define CIRNO_MISC_INFO                                         \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),      \
+#define CIRNO_MISC_INFO                                                     \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),                  \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY), \
         .cryId = CRY_CIRNO
 
@@ -629,8 +629,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(TCirno),
     },
 
-#define RUMIA_MISC_INFO                                           \
-        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),               \
+#define RUMIA_MISC_INFO                                                       \
+        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),                           \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER), \
         .cryId = CRY_RUMIA
 
@@ -789,9 +789,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(SRumia),
     },
 
-#define MEILING_MISC_INFO                                         \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),        \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD },   \
+#define MEILING_MISC_INFO                                                   \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),                  \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD), \
         .cryId = CRY_PORYGON
 
     [SPECIES_CHIBI_MEILING] =
@@ -948,9 +948,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(SMeiling),
     },
 
-#define KOAKUMA_MISC_INFO                                         \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),        \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING },  \
+#define KOAKUMA_MISC_INFO                                                    \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),                   \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING), \
         .cryId = CRY_KOAKUMA
 
     [SPECIES_CHIBI_KOAKUMA] =
@@ -1103,9 +1103,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(HKoakuma),
     },
 
-#define PATCHOULI_MISC_INFO                                          \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD),           \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE }, \
+#define PATCHOULI_MISC_INFO                                \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_FAST, SOURCE_EOSD), \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), \
         .cryId = CRY_PATCHOULI
 
     [SPECIES_CHIBI_PATCHOULI] =
@@ -1194,7 +1194,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 160,
         .baseSpDefense = 160,
-        .types = { TYPE_FIRE, TYPE_WATER },
+        .types = MON_TYPES(TYPE_FIRE, TYPE_WATER),
         .catchRate = 45,
         .expYield = 190,
         .evYield_SpAttack = 3,
@@ -1230,7 +1230,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 35,
         .baseSpAttack  = 85,
         .baseSpDefense = 150,
-        .types = { TYPE_EARTH, TYPE_WIND },
+        .types = MON_TYPES(TYPE_EARTH, TYPE_WIND),
         .catchRate = 45,
         .expYield = 208,
         .evYield_SpDefense = 3,
@@ -1258,9 +1258,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(DPatchouli),
     },
 
-#define SAKUYA_MISC_INFO                                             \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD),           \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE }, \
+#define SAKUYA_MISC_INFO                                   \
+        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD), \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), \
         .cryId = CRY_PORYGON
 
     [SPECIES_CHIBI_SAKUYA] =
@@ -1272,7 +1272,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 75,
         .baseSpAttack  = 55,
         .baseSpDefense = 55,
-        .types = { TYPE_STEEL, TYPE_STEEL },
+        .types = MON_TYPES(TYPE_STEEL),
         .catchRate = 60,
         .expYield = 76,
         .evYield_Attack = 1,
@@ -1312,7 +1312,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 100,
         .baseSpAttack  = 80,
         .baseSpDefense = 80,
-        .types = { TYPE_STEEL, TYPE_REASON },
+        .types = MON_TYPES(TYPE_STEEL, TYPE_REASON),
         .catchRate = 30,
         .expYield = 212,
         .evYield_Attack = 2,
@@ -1351,7 +1351,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 100,
         .baseSpDefense = 90,
-        .types = { TYPE_STEEL, TYPE_REASON },
+        .types = MON_TYPES(TYPE_STEEL, TYPE_REASON),
         .catchRate = 45,
         .expYield = 212,
         .evYield_SpAttack = 3,
@@ -1387,7 +1387,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 75,
         .baseSpDefense = 110,
-        .types = { TYPE_STEEL, TYPE_REASON },
+        .types = MON_TYPES(TYPE_STEEL, TYPE_REASON),
         .catchRate = 45,
         .expYield = 212,
         .evYield_Defense = 3,
@@ -1414,9 +1414,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(HSakuya),
     },
 
-#define REMILIA_MISC_INFO                                            \
-        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),                  \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING },     \
+#define REMILIA_MISC_INFO                                                    \
+        PUPPET_MISC_INFO(GROWTH_SLOW, SOURCE_EOSD),                          \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING), \
         .cryId = CRY_REMILIA
 
     [SPECIES_CHIBI_REMILIA] =
@@ -1428,7 +1428,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 80,
         .baseSpAttack  = 85,
         .baseSpDefense = 50,
-        .types = { TYPE_DARK, TYPE_DARK },
+        .types = MON_TYPES(TYPE_DARK),
         .catchRate = 60,
         .expYield = 80,
         .evYield_Attack = 2,
@@ -1467,7 +1467,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 105,
         .baseSpAttack  = 110,
         .baseSpDefense = 75,
-        .types = { TYPE_DARK, TYPE_FLYING },
+        .types = MON_TYPES(TYPE_DARK, TYPE_FLYING),
         .catchRate = 45,
         .expYield = 220,
         .evYield_Attack = 3,
@@ -1504,7 +1504,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 120,
         .baseSpAttack  = 90,
         .baseSpDefense = 70,
-        .types = { TYPE_DARK, TYPE_FLYING },
+        .types = MON_TYPES(TYPE_DARK, TYPE_FLYING),
         .catchRate = 45,
         .expYield = 220,
         .evYield_Attack = 3,
@@ -1540,7 +1540,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 100,
         .baseSpAttack  = 80,
         .baseSpDefense = 100,
-        .types = { TYPE_DARK, TYPE_DARK },
+        .types = MON_TYPES(TYPE_DARK),
         .catchRate = 45,
         .expYield = 220,
         .evYield_Speed = 3,
@@ -1567,9 +1567,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         LEARNSETS(DRemilia),
     },
 
-#define FLANDRE_MISC_INFO                                            \
-        PUPPET_MISC_INFO(GROWTH_FLUCTUATING, SOURCE_EOSD),           \
-        .eggGroups = { EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER },    \
+#define FLANDRE_MISC_INFO                                                     \
+        PUPPET_MISC_INFO(GROWTH_FLUCTUATING, SOURCE_EOSD),                    \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MONSTER), \
         .cryId = CRY_FLANDRE
 
     [SPECIES_CHIBI_FLANDRE] =
@@ -1581,7 +1581,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 65,
         .baseSpAttack  = 105,
         .baseSpDefense = 60,
-        .types = { TYPE_DARK, TYPE_DARK },
+        .types = MON_TYPES(TYPE_DARK),
         .catchRate = 90,
         .expYield = 82,
         .evYield_Attack = 2,
@@ -1621,7 +1621,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 90,
         .baseSpAttack  = 140,
         .baseSpDefense = 85,
-        .types = { TYPE_DARK, TYPE_FIRE },
+        .types = MON_TYPES(TYPE_DARK, TYPE_FIRE),
         .catchRate = 45,
         .expYield = 224,
         .evYield_Attack = 3,
@@ -1657,7 +1657,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 95,
         .baseSpAttack  = 105,
         .baseSpDefense = 65,
-        .types = { TYPE_DARK, TYPE_DARK },
+        .types = MON_TYPES(TYPE_DARK),
         .catchRate = 45,
         .expYield = 250,
         .evYield_Attack = 3,
@@ -1693,7 +1693,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .baseSpeed     = 125,
         .baseSpAttack  = 120,
         .baseSpDefense = 80,
-        .types = { TYPE_DARK, TYPE_FIRE },
+        .types = MON_TYPES(TYPE_DARK, TYPE_FIRE),
         .catchRate = 45,
         .expYield = 250,
         .evYield_Speed = 3,
