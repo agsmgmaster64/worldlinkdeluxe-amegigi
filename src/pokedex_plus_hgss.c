@@ -582,7 +582,6 @@ static void LoadTilesetTilemapHGSS(u8 page);
 static void Task_HandleStatsScreenInput(u8 taskId);
 static void Task_LoadStatsScreen(u8 taskId);
 static void Task_SwitchScreensFromStatsScreen(u8 taskId);
-static void Task_ExitStatsScreen(u8 taskId);
 static bool8 CalculateMoves(void);
 static void PrintStatsScreen_NameGender(u8 taskId, u32 num, u32 value);
 static void PrintStatsScreen_DestroyMoveItemIcon(u8 taskId);
@@ -4609,100 +4608,39 @@ static void PrintMonHeight(u16 height, u8 left, u8 top)
 
 static void PrintMonWeight(u16 weight, u8 left, u8 top)
 {
-    u8 buffer[16];
     u8 buffer_metric[18];
-    bool8 output;
     u8 i = 0;
-    u32 lbs = (weight * 100000) / 4536;
     int offset = 0;
     u8 result;
 
-    if (gSaveBlock2Ptr->optionsUnitSystem == 0) //Imperial
-    {
-    if (lbs % 10u >= 5)
-        lbs += 10;
-    i = 0;
-    output = FALSE;
+    buffer_metric[i++] = EXT_CTRL_CODE_BEGIN;
+    buffer_metric[i++] = EXT_CTRL_CODE_CLEAR_TO;
+    i++;
+    buffer_metric[i++] = CHAR_SPACE;
+    buffer_metric[i++] = CHAR_SPACE;
+    buffer_metric[i++] = CHAR_SPACE;
+    buffer_metric[i++] = CHAR_SPACE;
+    buffer_metric[i++] = CHAR_SPACE;
 
-    if ((buffer[i] = (lbs / 100000) + CHAR_0) == CHAR_0 && !output)
-    {
-        buffer[i++] = CHAR_SPACER;
-    }
+    result = (weight / 1000);
+    if (result == 0)
+        offset = 6;
     else
-    {
-        output = TRUE;
-        i++;
-    }
+        buffer_metric[i++] = result + CHAR_0;
 
-    lbs %= 100000;
-    if ((buffer[i] = (lbs / 10000) + CHAR_0) == CHAR_0 && !output)
-    {
-        buffer[i++] = CHAR_SPACER;
-    }
+    result = (weight % 1000) / 100;
+    if (result == 0 && offset != 0)
+        offset += 6;
     else
-    {
-        output = TRUE;
-        i++;
-    }
+        buffer_metric[i++] = result + CHAR_0;
 
-    lbs %= 10000;
-    if ((buffer[i] = (lbs / 1000) + CHAR_0) == CHAR_0 && !output)
-    {
-        buffer[i++] = CHAR_SPACER;
-    }
-    else
-    {
-        output = TRUE;
-        i++;
-    }
+    buffer_metric[i++] = (((weight % 1000) % 100) / 10) + CHAR_0;
+    buffer_metric[i++] = CHAR_PERIOD;
+    buffer_metric[i++] = (((weight % 1000) % 100) % 10) + CHAR_0;
 
-    lbs %= 1000;
-    buffer[i++] = (lbs / 100) + CHAR_0;
-    lbs %= 100;
-    buffer[i++] = CHAR_PERIOD;
-    buffer[i++] = (lbs / 10) + CHAR_0;
-    buffer[i++] = CHAR_SPACE;
-    buffer[i++] = CHAR_l;
-    buffer[i++] = CHAR_b;
-    buffer[i++] = CHAR_s;
-    buffer[i++] = CHAR_PERIOD;
-    buffer[i++] = EOS;
-    PrintInfoScreenText(buffer, left, top);
-    }
-    else //Metric
-    {
-        buffer_metric[i++] = EXT_CTRL_CODE_BEGIN;
-        buffer_metric[i++] = EXT_CTRL_CODE_CLEAR_TO;
-        i++;
-        buffer_metric[i++] = CHAR_SPACE;
-        buffer_metric[i++] = CHAR_SPACE;
-        buffer_metric[i++] = CHAR_SPACE;
-        buffer_metric[i++] = CHAR_SPACE;
-        buffer_metric[i++] = CHAR_SPACE;
-
-        result = (weight / 1000);
-        if (result == 0)
-            offset = 6;
-        else
-            buffer_metric[i++] = result + CHAR_0;
-
-        result = (weight % 1000) / 100;
-        if (result == 0 && offset != 0)
-            offset += 6;
-        else
-            buffer_metric[i++] = result + CHAR_0;
-
-        buffer_metric[i++] = (((weight % 1000) % 100) / 10) + CHAR_0;
-        buffer_metric[i++] = CHAR_PERIOD;
-        buffer_metric[i++] = (((weight % 1000) % 100) % 10) + CHAR_0;
-        buffer_metric[i++] = CHAR_SPACE;
-        buffer_metric[i++] = CHAR_k;
-        buffer_metric[i++] = CHAR_g;
-
-        buffer_metric[i++] = EOS;
-        buffer_metric[2] = offset;
-        PrintInfoScreenText(buffer_metric, left, top);
-    }
+    buffer_metric[i++] = EOS;
+    buffer_metric[2] = offset;
+    PrintInfoScreenText(buffer_metric, left, top);
 }
 
 // Unused in the English version, used to print height/weight in versions which use metric system.
@@ -5264,7 +5202,8 @@ static void Task_HandleStatsScreenInput(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-        gTasks[taskId].func = Task_ExitStatsScreen;
+        sPokedexView->screenSwitchState = 0;
+        gTasks[taskId].func = Task_SwitchScreensFromStatsScreen;
         PlaySE(SE_PC_OFF);
         return;
     }
@@ -6173,29 +6112,13 @@ static void Task_SwitchScreensFromStatsScreen(u8 taskId)
             gTasks[taskId].func = Task_LoadEvolutionScreen;
             break;
         default:
+            FreeAllWindowBuffers();
+            InitWindows(sInfoScreen_WindowTemplates);
             gTasks[taskId].func = Task_LoadInfoScreen;
             break;
         }
     }
 }
-
-static void Task_ExitStatsScreen(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        FreeSpriteTilesByTag(ITEM_TAG);                         //Destroy item icon
-        FreeSpritePaletteByTag(ITEM_TAG);                       //Destroy item icon
-        FreeSpriteOamMatrix(&gSprites[gTasks[taskId].data[3]]); //Destroy item icon
-        DestroySprite(&gSprites[gTasks[taskId].data[3]]);       //Destroy item icon
-        FreeMonIconPalettes();                                          //Destroy pokemon icon sprite
-        FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].data[4]]); //Destroy pokemon icon sprite
-
-        FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
-        FreeInfoScreenWindowAndBgBuffers();
-        DestroyTask(taskId);
-    }
-}
-
 
 //************************************
 //*                                  *
@@ -6979,8 +6902,7 @@ static void Task_ExitEvolutionScreen(u8 taskId)
         }
         FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
 
-        FreeInfoScreenWindowAndBgBuffers();
-        DestroyTask(taskId);
+        gTasks[taskId].func = Task_LoadInfoScreen;
     }
 }
 
@@ -7275,8 +7197,7 @@ static void Task_ExitFormsScreen(u8 taskId)
         }
         FreeAndDestroyMonPicSprite(gTasks[taskId].tMonSpriteId);
 
-        FreeInfoScreenWindowAndBgBuffers();
-        DestroyTask(taskId);
+        gTasks[taskId].func = Task_LoadInfoScreen;
     }
 }
 
