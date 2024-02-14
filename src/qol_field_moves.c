@@ -633,6 +633,7 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)
     gSpecialVar_0x8004 = 0;
 
     reserveSpecies = SPECIES_NONE;
+    reserveSlot = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
