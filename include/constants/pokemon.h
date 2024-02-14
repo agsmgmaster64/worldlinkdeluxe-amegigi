@@ -249,20 +249,11 @@
 #define SOURCE_SPINOFF      19
 #define SOURCE_PRINT        20
 #define SOURCE_HOLOLIVE     21
-#if NIJISANJI == TRUE
-#define SOURCE_NIJISANJI    22
-#define SOURCE_UNDERTALE    23
-#define SOURCE_DELTARUNE    24
-#define SOURCE_PIZZA_TOWER  25
-#define SOURCE_MARIO        26
-#define SOURCE_OTHER        27
-#else
 #define SOURCE_UNDERTALE    22
 #define SOURCE_DELTARUNE    23
 #define SOURCE_PIZZA_TOWER  24
 #define SOURCE_MARIO        25
 #define SOURCE_OTHER        26
-#endif
 
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 

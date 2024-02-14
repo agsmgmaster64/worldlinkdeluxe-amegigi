@@ -106,7 +106,6 @@ const u8 gText_DexSearchSourceTouhou19[] = _("UDoALG");
 const u8 gText_DexSearchSourceTouhouSpinoff[] = _("Spinoff");
 const u8 gText_DexSearchSourceTouhouPrint[] = _("Print");
 const u8 gText_DexSearchSourceHololive[] = _("Hololive");
-const u8 gText_DexSearchSourceNjisanji[] = _("Nijisanji");
 const u8 gText_DexSearchSourceUndertale[] = _("Undertale");
 const u8 gText_DexSearchSourceDeltarune[] = _("Deltarune");
 const u8 gText_DexSearchSourcePizzaTower[] = _("Pizza Tower");
