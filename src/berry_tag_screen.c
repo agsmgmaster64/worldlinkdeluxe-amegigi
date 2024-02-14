@@ -416,7 +416,7 @@ static void PrintBerrySize(void)
 
     if (berry->size != 0)
     {
-        if (gSaveBlock2Ptr->optionsUnitSystem == 0)
+        if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
         {
             u32 inches, fraction;
 
