@@ -1035,6 +1035,10 @@ gBattleAnims_General::
 	.4byte General_SilphScoped              @ B_ANIM_SILPH_SCOPED
 	.4byte General_SafariRockThrow          @ B_ANIM_ROCK_THROW
 	.4byte General_SafariReaction           @ B_ANIM_SAFARI_REACTION
+	.4byte General_TrickRoom                @ B_ANIM_TRICK_ROOM
+	.4byte General_WonderRoom               @ B_ANIM_WONDER_ROOM
+	.4byte General_MagicRoom                @ B_ANIM_MAGIC_ROOM
+	.4byte General_Tailwind                 @ B_ANIM_TAILLWIND
 
 	.align 2
 gBattleAnims_Special::
@@ -1319,6 +1323,35 @@ Move_TAILWIND:
 	stopsound
 	call UnsetHighSpeedBg
 	clearmonbg ANIM_ATK_PARTNER
+	blendoff
+	delay 1
+	end
+
+General_Tailwind:
+	loadspritegfx ANIM_TAG_FLYING_DIRT
+	playsewithpan SE_M_GUST, SOUND_PAN_ATTACKER
+	call SetHighSpeedBg
+	setalpha 12, 8
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 10, 2304, 96, 0
+	delay 12
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 90, 2048, 96, 0
+	delay 12
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 50, 2560, 96, 0
+	delay 12
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 20, 2304, 96, 0
+	delay 12
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 70, 1984, 96, 0
+	delay 12
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 0, 2816, 96, 0
+	delay 10
+	createsprite gFlyingSandCrescentSpriteTemplate, ANIM_ATTACKER, 40, 60, 2560, 96, 0
+	waitforvisualfinish
+	stopsound
+	call UnsetHighSpeedBg
 	blendoff
 	delay 1
 	end
@@ -3287,6 +3320,8 @@ Move_DEFOG:
 
 Move_TRICK_ROOM::
 	call InitRoomAnimation
+General_TrickRoom:
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
 	fadetobg BG_TRICK_ROOM
 	waitbgfadein
 	delay 0x40
@@ -3296,7 +3331,6 @@ Move_TRICK_ROOM::
 	end
 InitRoomAnimation:
 	setalpha 8, 8
-	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, -6, 15, ANIM_TARGET, 1
 	return
 
@@ -4900,6 +4934,8 @@ PowerSplitLaunch:
 
 Move_WONDER_ROOM::
 	call InitRoomAnimation
+General_WonderRoom:
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
 	fadetobg BG_WONDER_ROOM
 	waitbgfadein
 	delay 0x40
@@ -5080,6 +5116,8 @@ Move_TELEKINESIS::
 
 Move_MAGIC_ROOM::
 	call InitRoomAnimation
+General_MagicRoom:
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
 	fadetobg BG_MAGIC_ROOM
 	waitbgfadein
 	delay 0x40

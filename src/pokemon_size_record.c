@@ -40,54 +40,51 @@ static const struct UnknownStruct sBigMonSizeTable[] =
 extern const u8 gText_DecimalPoint[];
 extern const u8 gText_Marco[];
 
-static const u8 gText_Inch[] = _("inch");
-static const u8 gText_InchPlural[] = _("inches");
-static const u8 gText_InchSymbol[] = _("”");
-static const u8 gText_Foot[] = _("foot");
-static const u8 gText_FootPlural[] = _("feet");
-static const u8 gText_FootSymbol[] = _("’");
-static const u8 gText_Pound[] = _("pound");
-static const u8 gText_PoundPlural[] = _("pounds");
-static const u8 gText_PoundSymbol[] = _("lb");
+static const u8 sText_Inch[] = _("inch");
+static const u8 sText_InchPlural[] = _("inches");
+static const u8 sText_InchSymbol[] = _("”");
+static const u8 sText_Foot[] = _("foot");
+static const u8 sText_FootPlural[] = _("feet");
+static const u8 sText_FootSymbol[] = _("’");
+static const u8 sText_Pound[] = _("pound");
+static const u8 sText_PoundPlural[] = _("pounds");
+static const u8 sText_PoundSymbol[] = _("lb");
 
-static const u8 gText_Centimeter[] = _("centimeter");
-static const u8 gText_CentimeterPlural[] = _("centimeters");
-static const u8 gText_CentimeterSymbol[] = _("cm");
-static const u8 gText_Meter[] = _("meter");
-static const u8 gText_MeterPlural[] = _("meters");
-static const u8 gText_MeterSymbol[] = _("m");
-static const u8 gText_Kilogram[] = _("kilogram");
-static const u8 gText_KilogramPlural[] = _("kilograms");
-static const u8 gText_KilogramSymbol[] = _("kg");
+static const u8 sText_Centimeter[] = _("centimeter");
+static const u8 sText_CentimeterPlural[] = _("centimeters");
+static const u8 sText_CentimeterSymbol[] = _("cm");
+static const u8 sText_Meter[] = _("meter");
+static const u8 sText_MeterPlural[] = _("meters");
+static const u8 sText_MeterSymbol[] = _("m");
+static const u8 sText_Kilogram[] = _("kilogram");
+static const u8 sText_KilogramPlural[] = _("kilograms");
+static const u8 sText_KilogramSymbol[] = _("kg");
 
 static const u8* const sImperialText[] =
 {
-    [UNIT_TEXT_LENGTH_SMALL_SINGLE]  = gText_Inch,
-    [UNIT_TEXT_LENGTH_SMALL_PLURAL]  = gText_InchPlural,
-    [UNIT_TEXT_LENGTH_SMALL_SYMBOL]  = gText_InchSymbol,
-    [UNIT_TEXT_LENGTH_MEDIUM_SINGLE] = gText_Foot,
-    [UNIT_TEXT_LENGTH_MEDIUM_PLURAL] = gText_FootPlural,
-    [UNIT_TEXT_LENGTH_MEDIUM_SYMBOL] = gText_FootSymbol,
-    [UNIT_TEXT_WEIGHT_SINGLE]        = gText_Pound,
-    [UNIT_TEXT_WEIGHT_PLURAL]        = gText_PoundPlural,
-    [UNIT_TEXT_WEIGHT_SYMBOL]        = gText_PoundSymbol
+    [UNIT_TEXT_LENGTH_SMALL_SINGLE]  = sText_Inch,
+    [UNIT_TEXT_LENGTH_SMALL_PLURAL]  = sText_InchPlural,
+    [UNIT_TEXT_LENGTH_SMALL_SYMBOL]  = sText_InchSymbol,
+    [UNIT_TEXT_LENGTH_MEDIUM_SINGLE] = sText_Foot,
+    [UNIT_TEXT_LENGTH_MEDIUM_PLURAL] = sText_FootPlural,
+    [UNIT_TEXT_LENGTH_MEDIUM_SYMBOL] = sText_FootSymbol,
+    [UNIT_TEXT_WEIGHT_SINGLE]        = sText_Pound,
+    [UNIT_TEXT_WEIGHT_PLURAL]        = sText_PoundPlural,
+    [UNIT_TEXT_WEIGHT_SYMBOL]        = sText_PoundSymbol,
 };
 
 static const u8* const sMetricText[] =
 {
-    [UNIT_TEXT_LENGTH_SMALL_SINGLE] = gText_Centimeter,
-    [UNIT_TEXT_LENGTH_SMALL_PLURAL] = gText_CentimeterPlural,
-    [UNIT_TEXT_LENGTH_SMALL_SYMBOL] = gText_CentimeterSymbol,
-    [UNIT_TEXT_LENGTH_MEDIUM_SINGLE] = gText_Meter,
-    [UNIT_TEXT_LENGTH_MEDIUM_PLURAL] = gText_MeterPlural,
-    [UNIT_TEXT_LENGTH_MEDIUM_SYMBOL] = gText_MeterSymbol,
-    [UNIT_TEXT_WEIGHT_SINGLE]        = gText_Kilogram,
-    [UNIT_TEXT_WEIGHT_PLURAL]        = gText_KilogramPlural,
-    [UNIT_TEXT_WEIGHT_SYMBOL]        = gText_KilogramSymbol
+    [UNIT_TEXT_LENGTH_SMALL_SINGLE] = sText_Centimeter,
+    [UNIT_TEXT_LENGTH_SMALL_PLURAL] = sText_CentimeterPlural,
+    [UNIT_TEXT_LENGTH_SMALL_SYMBOL] = sText_CentimeterSymbol,
+    [UNIT_TEXT_LENGTH_MEDIUM_SINGLE] = sText_Meter,
+    [UNIT_TEXT_LENGTH_MEDIUM_PLURAL] = sText_MeterPlural,
+    [UNIT_TEXT_LENGTH_MEDIUM_SYMBOL] = sText_MeterSymbol,
+    [UNIT_TEXT_WEIGHT_SINGLE]        = sText_Kilogram,
+    [UNIT_TEXT_WEIGHT_PLURAL]        = sText_KilogramPlural,
+    [UNIT_TEXT_WEIGHT_SYMBOL]        = sText_KilogramSymbol,
 };
-
-
-#define CM_PER_INCH 2.54
 
 static u32 GetMonSizeHash(struct Pokemon *pkmn)
 {
@@ -135,7 +132,7 @@ static u32 GetMonSize(u16 species, u16 b)
 
 static void FormatMonSizeRecord(u8 *string, u32 size)
 {
-    if (gSaveBlock2Ptr->optionsUnitSystem == 0) //Imperial
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
         size = (f64)(size * 10) / (CM_PER_INCH * 10);
 
     string = ConvertIntToDecimalStringN(string, size / 10, STR_CONV_MODE_LEFT_ALIGN, 8);
@@ -215,7 +212,7 @@ void BufferUnitSystemText(void)
             break;
     }
 
-    if (gSaveBlock2Ptr->optionsUnitSystem == 0) //Imperial
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
     {
         StringCopy(strvar, sImperialText[textType]);
     }

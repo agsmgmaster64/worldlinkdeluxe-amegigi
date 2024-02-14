@@ -537,8 +537,6 @@ static void Task_HandleCaughtMonPageInput(u8);
 static void Task_ExitCaughtMonPage(u8);
 static void SpriteCB_SlideCaughtMonToCenter(struct Sprite *sprite);
 static void PrintMonInfo(u32 num, u32, u32 owned, u32 newEntry);
-static void PrintMonHeight(u16 height, u8 left, u8 top);
-static void PrintMonWeight(u16 weight, u8 left, u8 top);
 static void ResetOtherVideoRegisters(u16);
 static u8 PrintCryScreenSpeciesName(u8, u16, u8, u8);
 static void PrintDecimalNum(u8 windowId, u16 num, u8 left, u8 top);
@@ -4500,18 +4498,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
         category = gText_5MarksPokemon;
     }
     PrintInfoScreenText(category, 123, 31);
-    PrintInfoScreenText(gText_HTHeight, 155, 64);
-    PrintInfoScreenText(gText_WTWeight, 155, 77);
-    if (owned)
-    {
-        PrintMonHeight(GetSpeciesHeight(species), 180, 64);
-        PrintMonWeight(GetSpeciesWeight(species), 180, 77);
-    }
-    else
-    {
-        PrintInfoScreenText(gText_UnkHeight, 180, 64);
-        PrintInfoScreenText(gText_UnkWeight, 180, 77);
-    }
+    PrintMonMeasurements(species, owned);
     if (owned)
         description = GetSpeciesPokedexDescription(species);
     else
@@ -4521,123 +4508,6 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     //Type Icon(s)
     if (owned)
         PrintCurrentSpeciesTypeInfo(newEntry, species);
-}
-
-static void PrintMonHeight(u16 height, u8 left, u8 top)
-{
-    u8 buffer[16];
-    u32 inches, feet;
-    u8 i = 0;
-    int offset;
-    u8 result;
-    offset = 0;
-
-    if (gSaveBlock2Ptr->optionsUnitSystem == 0) //Imperial
-    {
-    inches = (height * 10000) / 254;
-    if (inches % 10 >= 5)
-        inches += 10;
-    feet = inches / 120;
-    inches = (inches - (feet * 120)) / 10;
-
-    buffer[i++] = EXT_CTRL_CODE_BEGIN;
-    buffer[i++] = EXT_CTRL_CODE_CLEAR_TO;
-    if (feet / 10 == 0)
-    {
-        buffer[i++] = 18;
-        buffer[i++] = feet + CHAR_0;
-    }
-    else
-    {
-        buffer[i++] = 12;
-        buffer[i++] = feet / 10 + CHAR_0;
-        buffer[i++] = (feet % 10) + CHAR_0;
-    }
-    buffer[i++] = CHAR_SGL_QUOTE_RIGHT;
-    buffer[i++] = (inches / 10) + CHAR_0;
-    buffer[i++] = (inches % 10) + CHAR_0;
-    buffer[i++] = CHAR_DBL_QUOTE_RIGHT;
-    buffer[i++] = EOS;
-    PrintInfoScreenText(buffer, left, top);
-    }
-    else //Metric
-    {
-        buffer[i++] = EXT_CTRL_CODE_BEGIN;
-        buffer[i++] = EXT_CTRL_CODE_CLEAR_TO;
-        i++;
-        buffer[i++] = CHAR_SPACE;
-        buffer[i++] = CHAR_SPACE;
-        buffer[i++] = CHAR_SPACE;
-        buffer[i++] = CHAR_SPACE;
-        buffer[i++] = CHAR_SPACE;
-
-        result = (height / 1000);
-        if (result == 0)
-        {
-            offset = 6;
-        }
-        else
-        {
-            buffer[i++] = result + CHAR_0;
-        }
-
-        result = (height % 1000) / 100;
-        if (result == 0 && offset != 0)
-        {
-            offset += 6;
-        }
-        else
-        {
-            buffer[i++] = result + CHAR_0;
-        }
-
-        buffer[i++] = (((height % 1000) % 100) / 10) + CHAR_0;
-        buffer[i++] = CHAR_PERIOD;
-        buffer[i++] = (((height % 1000) % 100) % 10) + CHAR_0;
-        buffer[i++] = CHAR_SPACE;
-        buffer[i++] = CHAR_m;
-
-        buffer[i++] = EOS;
-        buffer[2] = offset;
-        PrintInfoScreenText(buffer, left, top);   
-    }
-}
-
-static void PrintMonWeight(u16 weight, u8 left, u8 top)
-{
-    u8 buffer_metric[18];
-    u8 i = 0;
-    int offset = 0;
-    u8 result;
-
-    buffer_metric[i++] = EXT_CTRL_CODE_BEGIN;
-    buffer_metric[i++] = EXT_CTRL_CODE_CLEAR_TO;
-    i++;
-    buffer_metric[i++] = CHAR_SPACE;
-    buffer_metric[i++] = CHAR_SPACE;
-    buffer_metric[i++] = CHAR_SPACE;
-    buffer_metric[i++] = CHAR_SPACE;
-    buffer_metric[i++] = CHAR_SPACE;
-
-    result = (weight / 1000);
-    if (result == 0)
-        offset = 6;
-    else
-        buffer_metric[i++] = result + CHAR_0;
-
-    result = (weight % 1000) / 100;
-    if (result == 0 && offset != 0)
-        offset += 6;
-    else
-        buffer_metric[i++] = result + CHAR_0;
-
-    buffer_metric[i++] = (((weight % 1000) % 100) / 10) + CHAR_0;
-    buffer_metric[i++] = CHAR_PERIOD;
-    buffer_metric[i++] = (((weight % 1000) % 100) % 10) + CHAR_0;
-
-    buffer_metric[i++] = EOS;
-    buffer_metric[2] = offset;
-    PrintInfoScreenText(buffer_metric, left, top);
 }
 
 // Unused in the English version, used to print height/weight in versions which use metric system.
@@ -5356,7 +5226,7 @@ static bool8 CalculateMoves(void)
         if (j >= NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES)
         {
             numTutorMoves++;
-            
+
             sStatsMoves[movesTotal] = move;
             movesTotal++;
         }

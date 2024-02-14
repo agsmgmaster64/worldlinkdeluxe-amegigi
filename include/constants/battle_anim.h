@@ -568,6 +568,10 @@
 #define B_ANIM_SILPH_SCOPED             47
 #define B_ANIM_ROCK_THROW               48
 #define B_ANIM_SAFARI_REACTION          49
+#define B_ANIM_TRICK_ROOM               50
+#define B_ANIM_WONDER_ROOM              51
+#define B_ANIM_MAGIC_ROOM               52
+#define B_ANIM_TAILWIND                 53
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
