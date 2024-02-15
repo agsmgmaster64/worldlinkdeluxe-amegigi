@@ -286,7 +286,7 @@ static u8* ConvertMonHeightToImperialString(u32 height);
 static u8* ConvertMonHeightToMetricString(u32 height);
 static u8* ConvertMonWeightToImperialString(u32 weight);
 static u8* ConvertMonWeightToMetricString(u32 weight);
-static u8* ConvertMeasurementToMetricString(u16 num, u32* index);
+static u8* ConvertMeasurementToMetricString(u32 num, u32* index);
 static void ResetOtherVideoRegisters(u16);
 static u8 PrintCryScreenSpeciesName(u8, u16, u8, u8);
 static void PrintDecimalNum(u8 windowId, u16 num, u8 left, u8 top);
@@ -4306,13 +4306,18 @@ static void PrintOwnedMonHeight(u16 species)
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
     u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
 
-    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
-        heightString = ConvertMonHeightToImperialString(height);
-    else
-        heightString = ConvertMonHeightToMetricString(height);
+    heightString = ConvertMonHeightToString(height);
 
     PrintInfoScreenText(heightString, x, yTop);
     Free(heightString);
+}
+
+u8* ConvertMonHeightToString(u32 height)
+{
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
+        return ConvertMonHeightToImperialString(height);
+    else
+        return ConvertMonHeightToMetricString(height);
 }
 
 static void PrintOwnedMonWeight(u16 species)
@@ -4322,13 +4327,18 @@ static void PrintOwnedMonWeight(u16 species)
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
     u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
 
-    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
-        weightString = ConvertMonWeightToImperialString(weight);
-    else
-        weightString = ConvertMonWeightToMetricString(weight);
+    weightString = ConvertMonWeightToString(weight);
 
     PrintInfoScreenText(weightString, x, yBottom);
     Free(weightString);
+}
+
+u8* ConvertMonWeightToString(u32 weight)
+{
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
+        return ConvertMonWeightToImperialString(weight);
+    else
+        return ConvertMonWeightToMetricString(weight);
 }
 
 static u8* ConvertMonHeightToImperialString(u32 height)
@@ -4442,7 +4452,7 @@ static u8* ConvertMonWeightToMetricString(u32 weight)
     return weightString;
 }
 
-static u8* ConvertMeasurementToMetricString(u16 num, u32* index)
+static u8* ConvertMeasurementToMetricString(u32 num, u32* index)
 {
     u8* string = Alloc(WEIGHT_HEIGHT_STR_MEM);
     bool32 outputted = FALSE;
