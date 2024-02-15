@@ -408,7 +408,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ULTRA_BALL_HISUI] =
     {
-        .name = _("Love Ball"),
+        .name = _("Ultra Ball?"),
         .price = (I_PRICE >= GEN_7) ? 0 : 300,
         .description = COMPOUND_STRING(
             "Works well on\n"
