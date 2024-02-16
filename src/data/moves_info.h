@@ -5,9 +5,10 @@
 #include "constants/battle_script_commands.h"
 #include "constants/battle_string_ids.h"
 #include "constants/battle_z_move_effects.h"
+#include "constants/contest.h"
 #include "constants/hold_effects.h"
 #include "constants/moves.h"
-#include "constants/contest.h"
+#include "constants/pokemon.h"
 
 // The Gen. 4+ contest data comes from urpg's contest movedex.
 
