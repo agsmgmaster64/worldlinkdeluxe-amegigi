@@ -537,7 +537,6 @@ gSpecials::
 	def_special PokevialGetDose
 	def_special PokevialGetSize
 	def_special PokevialRefill
-	def_special BufferUnitSystemText
 	def_special StartScriptedGhostBattle
 	def_special GetNumberSprayStrength
 	def_special GetSprayId
