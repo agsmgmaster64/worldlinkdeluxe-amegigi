@@ -163,11 +163,11 @@ SINGLE_BATTLE_TEST("Pewter Crunchies heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_PEWTER_CRUNCHIES].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_GEYSER_WATER].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_PEWTER_CRUNCHIES, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_GEYSER_WATER, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -207,11 +207,11 @@ SINGLE_BATTLE_TEST("Rage Candy Bar heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_RAGE_CANDY_BAR].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_BEER_BOTTLE].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_RAGE_CANDY_BAR, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_BEER_BOTTLE, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -229,11 +229,11 @@ SINGLE_BATTLE_TEST("Old Gateu heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_OLD_GATEAU].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_UNAGI_LUNCH].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_OLD_GATEAU, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_UNAGI_LUNCH, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -251,11 +251,11 @@ SINGLE_BATTLE_TEST("Casteliacone heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_CASTELIACONE].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_SAKE_GOURD].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_CASTELIACONE, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_SAKE_GOURD, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -295,11 +295,11 @@ SINGLE_BATTLE_TEST("Shalour Sable heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_SHALOUR_SABLE].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_HEAVEN_PEACH].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_SHALOUR_SABLE, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_HEAVEN_PEACH, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -334,13 +334,13 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
     u16 item;
     PARAMETRIZE { item = ITEM_FULL_HEAL; }
     PARAMETRIZE { item = ITEM_HEAL_POWDER; }
-    PARAMETRIZE { item = ITEM_PEWTER_CRUNCHIES; }
+    PARAMETRIZE { item = ITEM_GEYSER_WATER; }
     PARAMETRIZE { item = ITEM_LAVA_COOKIE; }
-    PARAMETRIZE { item = ITEM_RAGE_CANDY_BAR; }
-    PARAMETRIZE { item = ITEM_OLD_GATEAU; }
-    PARAMETRIZE { item = ITEM_CASTELIACONE; }
+    PARAMETRIZE { item = ITEM_BEER_BOTTLE; }
+    PARAMETRIZE { item = ITEM_UNAGI_LUNCH; }
+    PARAMETRIZE { item = ITEM_SAKE_GOURD; }
     PARAMETRIZE { item = ITEM_LUMIOSE_GALETTE; }
-    PARAMETRIZE { item = ITEM_SHALOUR_SABLE; }
+    PARAMETRIZE { item = ITEM_HEAVEN_PEACH; }
     PARAMETRIZE { item = ITEM_BIG_MALASADA; }
     GIVEN {
         ASSUME(gItemsInfo[item].battleUsage == EFFECT_ITEM_CURE_STATUS);

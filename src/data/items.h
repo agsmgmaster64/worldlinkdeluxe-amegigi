@@ -280,7 +280,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = ITEM_DIVE_ORB - FIRST_BALL,
     },
 
-    [ITEM_DUSK_BALL] =
+    [ITEM_DUSK_ORB] =
     {
         .name = _("Dusk Orb"),
         .price = 1000,
@@ -291,7 +291,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_DUSK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_DUSK_ORB - FIRST_BALL,
     },
 
     [ITEM_TIMER_ORB] =
@@ -308,7 +308,7 @@ const struct Item gItemsInfo[] =
         .secondaryId = ITEM_TIMER_ORB - FIRST_BALL,
     },
 
-    [ITEM_QUICK_BALL] =
+    [ITEM_QUICK_ORB] =
     {
         .name = _("Quick Orb"),
         .price = 1000,
@@ -319,7 +319,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_QUICK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_QUICK_ORB - FIRST_BALL,
     },
 
     [ITEM_REPEAT_ORB] =
@@ -666,11 +666,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A mineral water\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 30 points."),
-        #else
             "by 50 points."),
-        #endif
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -687,11 +683,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A fizzy soda drink\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 50 points."),
-        #else
             "by 60 points."),
-        #endif
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -705,17 +697,10 @@ const struct Item gItemsInfo[] =
         .name = _("Lemonade"),
         .price = (I_PRICE >= GEN_7) ? 400 : 350,
         .holdEffectParam = 70,
-#if I_HEALTH_RECOVERY >= GEN_7
-        .description = COMPOUND_STRING(
-            "A very sweet drink\n"
-            "that restores HP\n"
-            "by 70 points."),
-#else
         .description = COMPOUND_STRING(
             "A very sweet drink\n"
             "that restores HP\n"
             "by 80 points."),
-#endif
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1006,23 +991,6 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_SWEET_HEART] =
-    {
-        .name = _("Sweet Heart"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 100,
-        .holdEffectParam = 20,
-        .description = COMPOUND_STRING(
-            "A sweet chocolate\n"
-            "that restores HP\n"
-            "by 20 points."),
-        .pocket = POCKET_MEDICINE,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_Potion,
-        .flingPower = 30,
-    },
-
     [ITEM_MAX_HONEY] =
     {
         .name = _("Max Honey"),
@@ -1038,33 +1006,6 @@ const struct Item gItemsInfo[] =
     },
 
 // Regional Specialties
-
-    [ITEM_PEWTER_CRUNCHIES] =
-    {
-        .name = _("PewtrCrnches"),
-        .pluralName = _("PewtrCrnches"),
-        .price = 250,
-        .description = sFullHealDesc,
-        .pocket = POCKET_MEDICINE,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
-        .flingPower = 30,
-    },
-
-    [ITEM_RAGE_CANDY_BAR] =
-    {
-        .name = _("RageCandyBar"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 300,
-        .description = sFullHealDesc,
-        .pocket = POCKET_MEDICINE,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
-        .flingPower = 30,
-    },
 
     [ITEM_LAVA_COOKIE] =
     {
@@ -1082,30 +1023,89 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_OLD_GATEAU] =
+    [ITEM_SCARLET_TEA] =
     {
-        .name = _("Old Gateau"),
-        .pluralName = _("Old Gateaux"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 200,
-        .description = sFullHealDesc,
+        .name = _("Scarlet Tea"),
+        .pluralName = _("Scarlet Tea"),
+        .price = 100,
+        .holdEffectParam = 20,
+        .description = COMPOUND_STRING(
+            "A cup of tea\n"
+            "that restores HP\n"
+            "by 20 points."),
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_Potion,
         .flingPower = 30,
     },
 
-    [ITEM_CASTELIACONE] =
+    [ITEM_GEYSER_WATER] =
     {
-        .name = _("Casteliacone"),
-        .price = (I_PRICE >= GEN_7) ? 350 : 100,
-        .description = sFullHealDesc,
+        .name = _("Geyser Water"),
+        .price = 300,
+        .holdEffectParam = 60,
+        .description = COMPOUND_STRING(
+            "A bottle of water\n"
+            "that restores HP\n"
+            "by 60 points."),
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_SodaPop,
+        .flingPower = 30,
+    },
+
+    [ITEM_BEER_BOTTLE] =
+    {
+        .name = _("Beer Bottle"),
+        .price = 600,
+        .description = COMPOUND_STRING(
+            "A bottle of water\n"
+            "that restores HP\n"
+            "by 60 points."),
+        .holdEffectParam = 100,
+        .pocket = POCKET_MEDICINE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_MoomooMilk,
+        .flingPower = 30,
+    },
+
+    [ITEM_UNAGI_LUNCH] =
+    {
+        .name = _("Unagi Lunch"),
+        .pluralName = _("Unagi Lunches"),
+        .price = 900,
+        .holdEffectParam = 150,
+        .description = COMPOUND_STRING(
+            "A meal with unagi\n"
+            "that restores HP\n"
+            "by 60 points."),
+        .pocket = POCKET_MEDICINE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_UnagiLunch,
+        .flingPower = 30,
+    },
+
+    [ITEM_SAKE_GOURD] =
+    {
+        .name = _("Sake Gourd"),
+        .price = (I_PRICE >= GEN_7) ? 350 : 100,
+        .description = COMPOUND_STRING(
+            "A meal with unagi\n"
+            "that restores HP\n"
+            "by 60 points."),
+        .pocket = POCKET_MEDICINE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_MaxPotion,
         .flingPower = 30,
     },
 
@@ -1117,14 +1117,15 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-        .effect = gItemEffect_FullHeal,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_CURE_STATUS,
+        .effect = gItemEffect_FullRestore,
         .flingPower = 30,
     },
 
-    [ITEM_SHALOUR_SABLE] =
+    [ITEM_HEAVEN_PEACH] =
     {
-        .name = _("ShalourSable"),
+        .name = _("Heaven Peach"),
+        .pluralName = _("Heaven Peaches"),
         .price = (I_PRICE >= GEN_7) ? 350 : 200,
         .description = sFullHealDesc,
         .pocket = POCKET_MEDICINE,
@@ -2291,9 +2292,9 @@ const struct Item gItemsInfo[] =
         .flingPower = 130,
     },
 
-    [ITEM_TINY_MUSHROOM] =
+    [ITEM_GREEN_UFO] =
     {
-        .name = _("Tiny Mushroom"),
+        .name = _("Green UFO"),
         .price = 500 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
             "A plain mushroom\n"
@@ -2305,7 +2306,7 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_BIG_MUSHROOM] =
+    [ITEM_RED_UFO] =
     {
         .name = _("Big Mushroom"),
         .price = 5000 * TREASURE_FACTOR,
@@ -2316,7 +2317,7 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
-    [ITEM_BALM_MUSHROOM] =
+    [ITEM_BLUE_UFO] =
     {
         .name = _("Balm Mushroom"),
         .price = (I_PRICE >= GEN_7) ? 15000 * TREASURE_FACTOR: 12500,
@@ -6724,6 +6725,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GOTHIC_DRESS] =
     {
         .name = _("Gothic Dress"),
+        .pluralName = _("Gothic Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 9800),
         .holdEffect = HOLD_EFFECT_FIRE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -6804,6 +6806,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CHINA_DRESS] =
     {
         .name = _("China Dress"),
+        .pluralName = _("China Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_DREAM_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -6852,6 +6855,7 @@ const struct Item gItemsInfo[] =
     [ITEM_STEWARDESS] =
     {
         .name = _("Stewardess"),
+        .pluralName = _("Stewardesses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_FLYING_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -6916,6 +6920,7 @@ const struct Item gItemsInfo[] =
     [ITEM_BURIAL_DRESS] =
     {
         .name = _("Burial Dress"),
+        .pluralName = _("Burial Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_GHOST_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -6932,6 +6937,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PRIESTESS] =
     {
         .name = _("Priestess"),
+        .pluralName = _("Priestesses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_FAITH_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
@@ -11525,7 +11531,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A sweet-sounding\n"
             "flute that awakens\n"
-            "Pokémon."),
+            "Puppets."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -11685,7 +11691,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A device by Devon\n"
             "that signals any\n"
-            "unseeable Pokémon."),
+            "unseeable Puppets."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

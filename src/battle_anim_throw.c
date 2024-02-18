@@ -995,11 +995,11 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_NEST;
     case ITEM_DIVE_ORB:
         return BALL_DIVE;
-    case ITEM_DUSK_BALL:
+    case ITEM_DUSK_ORB:
         return BALL_DUSK;
     case ITEM_TIMER_ORB:
         return BALL_TIMER;
-    case ITEM_QUICK_BALL:
+    case ITEM_QUICK_ORB:
         return BALL_QUICK;
     case ITEM_REPEAT_ORB:
         return BALL_REPEAT;

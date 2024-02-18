@@ -323,8 +323,8 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
     ITEM_BUNNY_SUIT,
     ITEM_SMOKE_BALL,
     ITEM_SHOAL_SHELL,
-    ITEM_TINY_MUSHROOM,
-    ITEM_BIG_MUSHROOM,
+    ITEM_GREEN_UFO,
+    ITEM_RED_UFO,
     ITEM_PECHA_BERRY,
     ITEM_ASPEAR_BERRY,
     ITEM_ORAN_BERRY,
@@ -390,7 +390,7 @@ static const u16 sFavorLadyAcceptedItems_Sticky[] =
     ITEM_GUARD_SPEC,
     ITEM_WATMEL_BERRY,
     ITEM_LEFTOVERS,
-    ITEM_TINY_MUSHROOM,
+    ITEM_GREEN_UFO,
     ITEM_HEART_SCALE,
     ITEM_NONE
 };

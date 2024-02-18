@@ -60,22 +60,27 @@ const u8 gItemEffect_MaxRevive[7] = {
 
 const u8 gItemEffect_FreshWater[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 30 : 50, // Amount of HP to recover
+    [6] = 50, // Amount of HP to recover
 };
 
 const u8 gItemEffect_SodaPop[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 50 : 60, // Amount of HP to recover
+    [6] = 60, // Amount of HP to recover
 };
 
 const u8 gItemEffect_Lemonade[7] = {
     [4] = ITEM4_HEAL_HP,
-    [6] = I_HEALTH_RECOVERY >= GEN_7 ? 70 : 80, // Amount of HP to recover
+    [6] = 80, // Amount of HP to recover
 };
 
 const u8 gItemEffect_MoomooMilk[7] = {
     [4] = ITEM4_HEAL_HP,
     [6] = 100, // Amount of HP to recover
+};
+
+const u8 gItemEffect_UnagiLunch[7] = {
+    [4] = ITEM4_HEAL_HP,
+    [6] = 150, // Amount of HP to recover
 };
 
 const u8 gItemEffect_EnergyPowder[10] = {
