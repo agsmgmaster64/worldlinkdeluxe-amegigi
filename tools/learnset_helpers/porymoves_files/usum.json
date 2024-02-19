@@ -90324,7 +90324,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_ELECTRIFY"
+        "Move": "MOVE_HOLY_TERRAIN"
       },
       {
         "Level": 49,
@@ -90391,7 +90391,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ELECTRIFY"
+        "Move": "MOVE_HOLY_TERRAIN"
       },
       {
         "Level": 1,

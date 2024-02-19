@@ -157,22 +157,22 @@ const u32 gItemIconPalette_BerryJuice[] = INCBIN_U32("graphics/items/icon_palett
 const u32 gItemIcon_SacredAsh[] = INCBIN_U32("graphics/items/icons/sacred_ash.4bpp.lz");
 const u32 gItemIconPalette_SacredAsh[] = INCBIN_U32("graphics/items/icon_palettes/sacred_ash.gbapal.lz");
 
-const u32 gItemIcon_SweetHeart[] = INCBIN_U32("graphics/items/icons/sweet_heart.4bpp.lz");
-const u32 gItemIconPalette_SweetHeart[] = INCBIN_U32("graphics/items/icon_palettes/sweet_heart.gbapal.lz");
-
 const u32 gItemIcon_MaxHoney[] = INCBIN_U32("graphics/items/icons/max_honey.4bpp.lz");
 const u32 gItemIconPalette_MaxHoney[] = INCBIN_U32("graphics/items/icon_palettes/max_honey.gbapal.lz");
 
 // Regional Specialties
+
+const u32 gItemIcon_LavaCookie[] = INCBIN_U32("graphics/items/icons/lava_cookie.4bpp.lz");
+const u32 gItemIconPalette_LavaCookieAndLetter[] = INCBIN_U32("graphics/items/icon_palettes/lava_cookie_and_letter.gbapal.lz");
+
+const u32 gItemIcon_SweetHeart[] = INCBIN_U32("graphics/items/icons/sweet_heart.4bpp.lz");
+const u32 gItemIconPalette_SweetHeart[] = INCBIN_U32("graphics/items/icon_palettes/sweet_heart.gbapal.lz");
 
 const u32 gItemIcon_PewterCrunchies[] = INCBIN_U32("graphics/items/icons/pewter_crunchies.4bpp.lz");
 const u32 gItemIconPalette_PewterCrunchies[] = INCBIN_U32("graphics/items/icon_palettes/pewter_crunchies.gbapal.lz");
 
 const u32 gItemIcon_RageCandyBar[] = INCBIN_U32("graphics/items/icons/rage_candy_bar.4bpp.lz");
 const u32 gItemIconPalette_RageCandyBar[] = INCBIN_U32("graphics/items/icon_palettes/rage_candy_bar.gbapal.lz");
-
-const u32 gItemIcon_LavaCookie[] = INCBIN_U32("graphics/items/icons/lava_cookie.4bpp.lz");
-const u32 gItemIconPalette_LavaCookieAndLetter[] = INCBIN_U32("graphics/items/icon_palettes/lava_cookie_and_letter.gbapal.lz");
 
 const u32 gItemIcon_OldGateau[] = INCBIN_U32("graphics/items/icons/old_gateau.4bpp.lz");
 const u32 gItemIconPalette_OldGateau[] = INCBIN_U32("graphics/items/icon_palettes/old_gateau.gbapal.lz");

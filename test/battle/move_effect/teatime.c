@@ -163,9 +163,9 @@ SINGLE_BATTLE_TEST("Teatime triggers Volt Absorb if it has been affected by Elec
     bool8 shouldTriggerAbility = TRUE;
 
     PARAMETRIZE { move = MOVE_CELEBRATE; shouldTriggerAbility = FALSE; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; item = ITEM_NONE; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; item = ITEM_NONE; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {
@@ -199,9 +199,9 @@ SINGLE_BATTLE_TEST("Teatime triggers Lightning Rod if it has been affected by El
     bool8 shouldTriggerAbility = TRUE;
 
     PARAMETRIZE { move = MOVE_CELEBRATE; shouldTriggerAbility = FALSE; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; item = ITEM_NONE; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; item = ITEM_NONE; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {
@@ -238,9 +238,9 @@ SINGLE_BATTLE_TEST("Teatime triggers Motor Drive if it has been affected by Elec
     bool8 shouldTriggerAbility = TRUE;
 
     PARAMETRIZE { move = MOVE_CELEBRATE; shouldTriggerAbility = FALSE; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; }
-    PARAMETRIZE { move = MOVE_ELECTRIFY; item = ITEM_NONE; }
+    PARAMETRIZE { move = MOVE_HOLY_TERRAIN; item = ITEM_NONE; }
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {

@@ -718,8 +718,11 @@
 #define STRINGID_GHOSTGETOUTGETOUT                    716
 #define STRINGID_SILPHSCOPEUNVEILED                   717
 #define STRINGID_GHOSTWASMAROWAK                      718
+#define STRINGID_TERRAINBECOMESHOLY                   719
+#define STRINGID_HOLYTERRAINENDS                      720
+#define STRINGID_HOLYTERRAINPREVENTS                  721
 
-#define BATTLESTRINGS_COUNT                           719
+#define BATTLESTRINGS_COUNT                           722
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -973,23 +976,26 @@
 #define B_MSG_TERRAIN_SET_ELECTRIC  1
 #define B_MSG_TERRAIN_SET_PSYCHIC   2
 #define B_MSG_TERRAIN_SET_GRASSY    3
-#define B_MSG_TERRAIN_END_MISTY     4
-#define B_MSG_TERRAIN_END_ELECTRIC  5
-#define B_MSG_TERRAIN_END_PSYCHIC   6
-#define B_MSG_TERRAIN_END_GRASSY    7
-#define B_MSG_TERRAIN_COUNT         8
+#define B_MSG_TERRAIN_SET_HOLY      4
+#define B_MSG_TERRAIN_END_MISTY     5
+#define B_MSG_TERRAIN_END_ELECTRIC  6
+#define B_MSG_TERRAIN_END_PSYCHIC   7
+#define B_MSG_TERRAIN_END_GRASSY    8
+#define B_MSG_TERRAIN_END_HOLY      9
+#define B_MSG_TERRAIN_COUNT         10
 
 // gStartingStatusStringIds
 #define B_MSG_TERRAIN_SET_MISTY     0
 #define B_MSG_TERRAIN_SET_ELECTRIC  1
 #define B_MSG_TERRAIN_SET_PSYCHIC   2
 #define B_MSG_TERRAIN_SET_GRASSY    3
-#define B_MSG_SET_TRICK_ROOM        4
-#define B_MSG_SET_MAGIC_ROOM        5
-#define B_MSG_SET_WONDER_ROOM       6
-#define B_MSG_SET_TAILWIND_PLAYER   7
-#define B_MSG_SET_TAILWIND_OPPONENT 8
-#define B_MSG_STARTING_STATUS_COUNT 9
+#define B_MSG_TERRAIN_SET_HOLY      4
+#define B_MSG_SET_TRICK_ROOM        5
+#define B_MSG_SET_MAGIC_ROOM        6
+#define B_MSG_SET_WONDER_ROOM       7
+#define B_MSG_SET_TAILWIND_PLAYER   8
+#define B_MSG_SET_TAILWIND_OPPONENT 9
+#define B_MSG_STARTING_STATUS_COUNT 10
 
 
 // gWrappedStringIds

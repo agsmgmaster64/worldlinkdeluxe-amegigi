@@ -14961,6 +14961,7 @@ Move_TERRAIN_PULSE::
 	jumpargeq 0x0, TYPE_NATURE, TerrainPulseGrass
 	jumpargeq 0x0, TYPE_HEART, TerrainPulseFairy
 	jumpargeq 0x0, TYPE_REASON, TerrainPulsePsychic
+	jumpargeq 0x0, TYPE_FAITH, TerrainPulseFaith
 TerrainPulseNormal:
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_DRAGON_PULSE, 0, 12, 12, RGB_WHITE
 	waitforvisualfinish
@@ -15014,6 +15015,17 @@ TerrainPulsePsychic:
 	call DragonPulseParticle
 	createvisualtask AnimTask_SwayMon, 5, 0, 4, 51200, 24, ANIM_TARGET
 	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_TARGET, 2, 2, 0, 12, RGB(27, 0, 13)
+	goto TerrainPulseEnd
+
+TerrainPulseFaith:
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_DRAGON_PULSE, 0, 12, 12, RGB(27, 27, 0)
+	waitforvisualfinish
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_PSYBEAM2, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 3, 4, 0, 15
+	call DragonPulseParticle
+	call DragonPulseParticle
+	createvisualtask AnimTask_SwayMon, 5, 0, 4, 51200, 24, ANIM_TARGET
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_TARGET, 2, 2, 0, 12, RGB(27, 27, 0)
 	goto TerrainPulseEnd
 
 TerrainPulseEnd:
@@ -27105,6 +27117,7 @@ Move_SECRET_POWER:
 	jumpargeq 0, STATUS_FIELD_GRASSY_TERRAIN,   Move_NEEDLE_ARM
 	jumpargeq 0, STATUS_FIELD_ELECTRIC_TERRAIN, Move_THUNDER_SHOCK
 	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  Move_PSYSHOT
+	jumpargeq 0, STATUS_FIELD_HOLY_TERRAIN,     Move_EXTRASENSORY
 	createvisualtask AnimTask_GetBattleTerrain, 5
 	jumpargeq 0, BATTLE_TERRAIN_GRASS,          Move_NEEDLE_ARM
 	jumpargeq 0, BATTLE_TERRAIN_LONG_GRASS,     Move_MAGICAL_LEAF

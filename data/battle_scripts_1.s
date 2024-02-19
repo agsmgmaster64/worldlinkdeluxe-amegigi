@@ -2158,6 +2158,7 @@ BattleScript_EffectMistyTerrain::
 BattleScript_EffectGrassyTerrain::
 BattleScript_EffectElectricTerrain::
 BattleScript_EffectPsychicTerrain::
+BattleScript_EffectHolyTerrain::
 	attackcanceler
 	attackstring
 	ppreduce
@@ -2806,6 +2807,12 @@ BattleScript_MistyTerrainPrevents::
 	waitmessage B_WAIT_TIME_LONG
 	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
 	goto BattleScript_MoveEnd
+
+BattleScript_HolyTerrainPrevents::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_HOLYTERRAINPREVENTS
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_FlowerVeilProtectsRet::
 	pause B_WAIT_TIME_SHORT

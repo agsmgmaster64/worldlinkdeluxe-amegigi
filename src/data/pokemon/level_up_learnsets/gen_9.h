@@ -23249,7 +23249,7 @@ static const struct LevelUpMove sHelioptileLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_PARABOLIC_CHARGE),
     LEVEL_UP_MOVE(32, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE(36, MOVE_THUNDERBOLT),
-    LEVEL_UP_MOVE(40, MOVE_ELECTRIFY),
+    LEVEL_UP_MOVE(40, MOVE_HOLY_TERRAIN),
     LEVEL_UP_MOVE(44, MOVE_THUNDER),
     LEVEL_UP_END
 };
@@ -23264,7 +23264,7 @@ static const struct LevelUpMove sHelioliskLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PARABOLIC_CHARGE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDERBOLT),
-    LEVEL_UP_MOVE( 1, MOVE_ELECTRIFY),
+    LEVEL_UP_MOVE( 1, MOVE_HOLY_TERRAIN),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER),
     LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
@@ -26156,7 +26156,7 @@ static const struct LevelUpMove sYamperLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBoltundLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ELECTRIFY),
+    LEVEL_UP_MOVE( 1, MOVE_HOLY_TERRAIN),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_NUZZLE),

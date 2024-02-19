@@ -3733,6 +3733,9 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     case STATUS_FIELD_PSYCHIC_TERRAIN:
                         gBattleScripting.moveEffect = MOVE_EFFECT_SPD_MINUS_1;
                         break;
+                    case STATUS_FIELD_HOLY_TERRAIN:
+                        gBattleScripting.moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1;
+                        break;
                     default:
                         gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
                         break;
@@ -5264,7 +5267,9 @@ static void Cmd_playstatchangeanimation(void)
 
         while (stats != 0)
         {
-            if (stats & 1 && gBattleMons[battler].statStages[currStat] < MAX_STAT_STAGE)
+            if (stats & 1 && gBattleMons[battler].statStages[currStat] < MAX_STAT_STAGE
+             && (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN)
+             && ability != ABILITY_HAKUREI_MIKO))
             {
                 statAnimId = startingStatAnimId + currStat;
                 changeableStatsCount++;
@@ -8332,6 +8337,9 @@ static void RemoveAllTerrains(void)
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_END_PSYCHIC;
+        break;
+    case STATUS_FIELD_HOLY_TERRAIN:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_END_HOLY;
         break;
     default:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_COUNT;  // failsafe
@@ -11633,59 +11641,81 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
     }
     else // stat increase
     {
-        statValue = GET_STAT_BUFF_VALUE(statValue);
-        if (gBattleMons[battler].statStages[statId] == 11)
-            statValue = 1;
-        else if (gBattleMons[battler].statStages[statId] == 10 && statValue > 2)
-            statValue = 2;
-        gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
-        index = 1;
-        if (statValue == 2)
+        if (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN)
+         && battlerAbility != ABILITY_HAKUREI_MIKO)
         {
-            gBattleTextBuff2[1] = B_BUFF_STRING;
-            gBattleTextBuff2[2] = STRINGID_STATSHARPLY;
-            gBattleTextBuff2[3] = STRINGID_STATSHARPLY >> 8;
-            index = 4;
-        }
-        else if (statValue >= 3)
-        {
-            gBattleTextBuff2[1] = B_BUFF_STRING;
-            gBattleTextBuff2[2] = STRINGID_DRASTICALLY & 0xFF;
-            gBattleTextBuff2[3] = STRINGID_DRASTICALLY >> 8;
-            index = 4;
-        }
-        gBattleTextBuff2[index++] = B_BUFF_STRING;
-        gBattleTextBuff2[index++] = STRINGID_STATROSE;
-        gBattleTextBuff2[index++] = STRINGID_STATROSE >> 8;
-        gBattleTextBuff2[index] = B_BUFF_EOS;
-
-        if (gBattleMons[battler].statStages[statId] == MAX_STAT_STAGE)
-        {
-            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAT_WONT_INCREASE;
-        }
-        else
-        {
-            gBattleCommunication[MULTISTRING_CHOOSER] = (gBattlerTarget == battler);
-            gProtectStructs[battler].statRaised = TRUE;
-
-            // check mirror herb
-            for (index = 0; index < gBattlersCount; index++)
+            if (flags == STAT_CHANGE_ALLOW_PTR)
             {
-                if (GetBattlerSide(index) == GetBattlerSide(battler))
-                    continue; // Only triggers on opposing side
-                if (GetBattlerAbility(index) == ABILITY_OPPORTUNIST
-                        && gProtectStructs[battler].activateOpportunist == 0) // don't activate opportunist on other mon's opportunist raises
+                if (gSpecialStatuses[battler].statRaised)
                 {
-                    gProtectStructs[index].activateOpportunist = 2;      // set stats to copy
-                    gQueuedStatBoosts[index].stats |= (1 << (statId - 1));    // -1 to start at atk
-                    gQueuedStatBoosts[index].statChanges[statId - 1] += statValue; // cumulative in case of multiple opponent boosts
+                    gBattlescriptCurrInstr = BS_ptr;
                 }
-                else if (GetBattlerHoldEffect(index, TRUE) == HOLD_EFFECT_MIRROR_HERB
-                        && gBattleMons[index].statStages[statId] < MAX_STAT_STAGE)
+                else
                 {
-                    gProtectStructs[index].eatMirrorHerb = 1;
-                    gQueuedStatBoosts[index].stats |= (1 << (statId - 1));    // -1 to start at atk
-                    gQueuedStatBoosts[index].statChanges[statId - 1] = statValue;
+                    BattleScriptPush(BS_ptr);
+                    gBattleScripting.battler = battler;
+                    gBattlescriptCurrInstr = BattleScript_HolyTerrainPrevents;
+                    gSpecialStatuses[battler].statRaised = TRUE;
+                }
+            }
+            return STAT_CHANGE_DIDNT_WORK;
+        }
+        else // try to increase
+        {
+            statValue = GET_STAT_BUFF_VALUE(statValue);
+            if (gBattleMons[battler].statStages[statId] == 11)
+                statValue = 1;
+            else if (gBattleMons[battler].statStages[statId] == 10 && statValue > 2)
+                statValue = 2;
+            gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
+            index = 1;
+            if (statValue == 2)
+            {
+                gBattleTextBuff2[1] = B_BUFF_STRING;
+                gBattleTextBuff2[2] = STRINGID_STATSHARPLY;
+                gBattleTextBuff2[3] = STRINGID_STATSHARPLY >> 8;
+                index = 4;
+            }
+            else if (statValue >= 3)
+            {
+                gBattleTextBuff2[1] = B_BUFF_STRING;
+                gBattleTextBuff2[2] = STRINGID_DRASTICALLY & 0xFF;
+                gBattleTextBuff2[3] = STRINGID_DRASTICALLY >> 8;
+                index = 4;
+            }
+            gBattleTextBuff2[index++] = B_BUFF_STRING;
+            gBattleTextBuff2[index++] = STRINGID_STATROSE;
+            gBattleTextBuff2[index++] = STRINGID_STATROSE >> 8;
+            gBattleTextBuff2[index] = B_BUFF_EOS;
+
+            if (gBattleMons[battler].statStages[statId] == MAX_STAT_STAGE)
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAT_WONT_INCREASE;
+            }
+            else
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = (gBattlerTarget == battler);
+                gProtectStructs[battler].statRaised = TRUE;
+
+                // check mirror herb
+                for (index = 0; index < gBattlersCount; index++)
+                {
+                    if (GetBattlerSide(index) == GetBattlerSide(battler))
+                        continue; // Only triggers on opposing side
+                    if (GetBattlerAbility(index) == ABILITY_OPPORTUNIST
+                            && gProtectStructs[battler].activateOpportunist == 0) // don't activate opportunist on other mon's opportunist raises
+                    {
+                        gProtectStructs[index].activateOpportunist = 2;      // set stats to copy
+                        gQueuedStatBoosts[index].stats |= (1 << (statId - 1));    // -1 to start at atk
+                        gQueuedStatBoosts[index].statChanges[statId - 1] += statValue; // cumulative in case of multiple opponent boosts
+                    }
+                    else if (GetBattlerHoldEffect(index, TRUE) == HOLD_EFFECT_MIRROR_HERB
+                            && gBattleMons[index].statStages[statId] < MAX_STAT_STAGE)
+                    {
+                        gProtectStructs[index].eatMirrorHerb = 1;
+                        gQueuedStatBoosts[index].stats |= (1 << (statId - 1));    // -1 to start at atk
+                        gQueuedStatBoosts[index].statChanges[statId - 1] = statValue;
+                    }
                 }
             }
         }
@@ -13893,6 +13923,8 @@ u16 GetNaturePowerMove(void)
         return MOVE_ENERGY_LIGHT;
     else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         return MOVE_MANA_BURST;
+    else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
+        return MOVE_EXTRASENSORY;
     else if (sNaturePowerMoves[gBattleTerrain] == MOVE_NONE)
         return MOVE_TRI_ATTACK;
     return sNaturePowerMoves[gBattleTerrain];
@@ -14760,6 +14792,9 @@ static void Cmd_settypetoterrain(void)
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
         terrainType = TYPE_REASON;
+        break;
+    case STATUS_FIELD_HOLY_TERRAIN:
+        terrainType = TYPE_FAITH;
         break;
     default:
         terrainType = sTerrainToType[gBattleTerrain];
@@ -16233,6 +16268,10 @@ void BS_SetRemoveTerrain(void)
     case EFFECT_PSYCHIC_TERRAIN:
         statusFlag = STATUS_FIELD_PSYCHIC_TERRAIN;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
+        break;
+    case EFFECT_HOLY_TERRAIN:
+        statusFlag = STATUS_FIELD_HOLY_TERRAIN;
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_HOLY;
         break;
     case EFFECT_HIT_SET_REMOVE_TERRAIN:
         switch (gMovesInfo[gCurrentMove].argument)

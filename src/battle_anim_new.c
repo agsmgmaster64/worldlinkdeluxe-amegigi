@@ -8645,6 +8645,8 @@ void AnimTask_TerrainPulse(u8 taskId)
             gBattleAnimArgs[0] = TYPE_HEART;
         else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
             gBattleAnimArgs[0] = TYPE_REASON;
+        else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
+            gBattleAnimArgs[0] = TYPE_FAITH;
         else //failsafe
             gBattleAnimArgs[0] = 0;
     }

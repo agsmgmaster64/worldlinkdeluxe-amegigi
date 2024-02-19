@@ -1433,6 +1433,8 @@ bool32 ShouldLowerStat(u32 battler, u32 battlerAbility, u32 stat)
 
 bool32 BattlerStatCanRise(u32 battler, u32 battlerAbility, u32 stat)
 {
+    if (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN))
+        return FALSE;
     if ((gBattleMons[battler].statStages[stat] < MAX_STAT_STAGE && battlerAbility != ABILITY_CONTRARY)
       || (battlerAbility == ABILITY_CONTRARY && gBattleMons[battler].statStages[stat] > MIN_STAT_STAGE))
         return TRUE;
@@ -2989,7 +2991,8 @@ bool32 PartnerMoveEffectIsTerrain(u32 battlerAtkPartner, u32 partnerMove)
      && (gMovesInfo[partnerMove].effect == EFFECT_GRASSY_TERRAIN
       || gMovesInfo[partnerMove].effect == EFFECT_MISTY_TERRAIN
       || gMovesInfo[partnerMove].effect == EFFECT_ELECTRIC_TERRAIN
-      || gMovesInfo[partnerMove].effect == EFFECT_PSYCHIC_TERRAIN))
+      || gMovesInfo[partnerMove].effect == EFFECT_PSYCHIC_TERRAIN
+      || gMovesInfo[partnerMove].effect == EFFECT_HOLY_TERRAIN))
         return TRUE;
 
     return FALSE;

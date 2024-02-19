@@ -5771,6 +5771,8 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                 return TYPE_COSMIC;
             else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
                 return TYPE_REASON;
+            else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
+                return TYPE_FAITH;
             else //failsafe
                 return TYPE_ILLUSION;
         }
@@ -5900,6 +5902,8 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                 gBattleStruct->dynamicMoveType = TYPE_COSMIC | F_DYNAMIC_TYPE_SET;
             else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
                 gBattleStruct->dynamicMoveType = TYPE_REASON | F_DYNAMIC_TYPE_SET;
+            else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
+                gBattleStruct->dynamicMoveType = TYPE_FAITH | F_DYNAMIC_TYPE_SET;
             else //failsafe
                 gBattleStruct->dynamicMoveType = TYPE_ILLUSION | F_DYNAMIC_TYPE_SET;
         }
