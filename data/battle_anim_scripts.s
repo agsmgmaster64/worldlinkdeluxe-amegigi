@@ -606,7 +606,7 @@ gBattleAnims_Moves::
 	.4byte Move_FLOWER_SHIELD
 	.4byte Move_GRASSY_TERRAIN
 	.4byte Move_MISTY_TERRAIN
-	.4byte Move_ELECTRIFY
+	.4byte Move_HOLY_TERRAIN
 	.4byte Move_PLAY_ROUGH
 	.4byte Move_FAIRY_WIND
 	.4byte Move_MOONBLAST
@@ -9063,7 +9063,7 @@ Move_MISTY_TERRAIN::
 	waitforvisualfinish
 	end
 
-Move_ELECTRIFY::
+Move_HOLY_TERRAIN::
 	loadspritegfx ANIM_TAG_GUARD_RING @ring around user
 	loadspritegfx ANIM_TAG_SPARK_2 @yellow color
 	loadspritegfx ANIM_TAG_SMALL_EMBER @yellow color
