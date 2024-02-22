@@ -778,8 +778,6 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender);
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality);
 bool8 CheckIfCannotBeCaught(struct Pokemon *mon, u8 battlerId);
 bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId);
-const u8 *GetTrainerClassNameFromId(u16 trainerId);
-const u8 *GetTrainerNameFromId(u16 trainerId);
 bool8 HasTwoFramesAnimation(u16 species);
 struct MonSpritesGfxManager *CreateMonSpritesGfxManager(u8 managerId, u8 mode);
 void DestroyMonSpritesGfxManager(u8 managerId);
