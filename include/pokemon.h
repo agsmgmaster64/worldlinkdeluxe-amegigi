@@ -776,7 +776,7 @@ u8 GetOpposingLinkMultiBattlerId(bool8 rightSide, u8 multiplayerId);
 u16 FacilityClassToPicIndex(u16 facilityClass);
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender);
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality);
-bool8 CheckIfCanBeCaught(struct Pokemon *mon, u8 battlerId);
+bool8 CheckIfCannotBeCaught(struct Pokemon *mon, u8 battlerId);
 bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId);
 const u8 *GetTrainerClassNameFromId(u16 trainerId);
 const u8 *GetTrainerNameFromId(u16 trainerId);

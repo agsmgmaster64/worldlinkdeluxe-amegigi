@@ -11033,18 +11033,17 @@ bool32 AreBattlersOfSameGender(u32 battler1, u32 battler2)
     return (gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS && gender1 == gender2);
 }
 
-bool32 CanBeInfatuated(u32 battler1, u32 battler2)
+bool32 CanBeInfatuated(u32 battlerAtk, u32 battlerDef)
 {
-    u16 atkAbility = GetBattlerAbility(battler1);
-    u16 defAbility = GetBattlerAbility(battler2);
+    u16 atkAbility = GetBattlerAbility(battlerAtk);
 
-    if (defAbility == ABILITY_OBLIVIOUS || (gBattleMons[battler2].status2 & STATUS2_INFATUATION))
+    if (gBattleMons[battlerDef].status2 & STATUS2_INFATUATION)
         return FALSE;
 
     if (atkAbility == ABILITY_DIVA)
         return TRUE;
 
-    return AreBattlersOfOppositeGender(battler1, battler2);
+    return AreBattlersOfOppositeGender(battlerAtk, battlerDef);
 }
 
 u32 CalcSecondaryEffectChance(u32 battler, u32 battlerAbility, const struct AdditionalEffect *additionalEffect)

@@ -1050,6 +1050,7 @@ gBattleAnims_Special::
 	.4byte Special_SubstituteToMon          @ B_ANIM_SUBSTITUTE_TO_MON
 	.4byte Special_MonToSubstitute          @ B_ANIM_MON_TO_SUBSTITUTE
 	.4byte Special_CriticalCaptureBallThrow @ B_ANIM_CRITICAL_CAPTURE_THROW
+	.4byte Special_LevelUpEvolve            @ B_ANIM_LVL_UP_EVOLVE
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 4 @@@@@@@@@@@@@@@@@@@@@@@
 Move_ROOST:
@@ -28030,12 +28031,6 @@ General_HeldItemEffect:
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_RotateMonToSideAndRestore, 2, 16, 128, ANIM_ATTACKER, 2
 	waitforvisualfinish
-	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
-	createvisualtask AnimTask_RotateMonToSideAndRestore, 2, 16, 128, ANIM_ATTACKER, 2
-	waitforvisualfinish
-	playsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER
-	call GrantingStarsEffect
-	waitforvisualfinish
 	playsewithpan SE_SHINY, SOUND_PAN_ATTACKER
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_ATTACKER, 3, 7, 0, RGB(17, 31, 25)
 	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0
@@ -28600,7 +28595,7 @@ General_AffectionHangedOn_3Hearts:
 	end
 
 General_SaltCureDamage::
-	goto Status_Freeze
+	goto Status_Frostbite
 
 General_SafariRockThrow:
 	createvisualtask AnimTask_SetAttackerTargetLeftPos, 2, 0
@@ -28753,6 +28748,21 @@ Special_LevelUp:
 	createvisualtask AnimTask_LoadHealthboxPalsForLevelUp, 2
 	delay 0
 	createvisualtask AnimTask_FlashHealthboxOnLevelUp, 5, 0, 0
+	waitforvisualfinish
+	createvisualtask AnimTask_FreeHealthboxPalsForLevelUp, 2
+	end
+
+@ Extra effect played on an evolution level
+Special_LevelUpEvolve:
+	playsewithpan SE_EXP_MAX, 0
+	createvisualtask AnimTask_LoadHealthboxPalsForLevelUp, 2
+	delay 0
+	createvisualtask AnimTask_FlashHealthboxOnLevelUp, 5, 0, 0
+	waitforvisualfinish
+	delay 1 @ Wait for the exp noise to end so the charge can actually play.
+	playsewithpan SE_M_MEGA_KICK, 0
+	createvisualtask AnimTask_FlashHealthboxOnLevelUp, 5, 1, 5
+	createvisualtask AnimTask_UnusedLevelUpHealthBox, 5, 0
 	waitforvisualfinish
 	createvisualtask AnimTask_FreeHealthboxPalsForLevelUp, 2
 	end

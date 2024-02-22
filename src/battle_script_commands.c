@@ -12418,8 +12418,7 @@ static void Cmd_tryinfatuating(void)
     }
     else
     {
-        if (gBattleMons[gBattlerTarget].status2 & STATUS2_INFATUATION
-            || !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+        if (!CanBeInfatuated(gBattlerAttacker, gBattlerTarget))
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
@@ -14933,7 +14932,8 @@ static void Cmd_handleballthrow(void)
 
     gBattlerTarget = GetCatchingBattler();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
+    if ((gBattleTypeFlags & BATTLE_TYPE_GHOST)
+     || FlagGet(B_FLAG_NO_CATCHING))
     {
         BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_MON_DODGE);
         MarkBattlerForControllerExec(gBattlerAttacker);
