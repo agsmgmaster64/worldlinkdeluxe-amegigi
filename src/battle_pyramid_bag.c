@@ -95,7 +95,6 @@ static void CloseMenuActionWindowById(u8);
 static void PrintMenuActionText_SingleRow(u8);
 static void PrintMenuActionText_MultiRow(u8, u8, u8);
 static bool8 IsValidMenuAction(s8);
-static void CreatePyramidBagYesNo(u8, const struct YesNoFuncTable *);
 static void DrawTossNumberWindow(u8);
 static void UpdateSwapLinePos(u8);
 static void SetSwapLineInvisibility(bool8);
@@ -626,6 +625,26 @@ static void CopyBagItemName(u8 *dst, u16 itemId)
         CopyItemName(itemId, gStringVar2);
         StringExpandPlaceholders(dst, gText_NumberItem_TMBerry);
     }
+    else if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
+    {
+        StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
+        if (itemId >= ITEM_HM01)
+        {
+            // Get HM number
+            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_HM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 1);
+            StringExpandPlaceholders(dst, gText_NumberItem_HM);
+        }
+        else if (itemId == ITEM_TM100)
+        {
+            StringExpandPlaceholders(dst, gText_NumberItem_TM100);
+        }
+        else
+        {
+            // Get TM number
+            ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
+            StringExpandPlaceholders(dst, gText_NumberItem_TMBerry);
+        }
+    }
     else
     {
         CopyItemName(itemId, dst);
@@ -654,6 +673,9 @@ static void BagCursorMoved(s32 itemIndex, bool8 onInit, struct ListMenu *list)
 static void PrintItemQuantity(u8 windowId, u32 itemIndex, u8 y)
 {
     s32 xAlign;
+    u16 itemId;
+    u8 itemQuantity;
+
     if (itemIndex == LIST_CANCEL)
         return;
 
@@ -667,13 +689,20 @@ static void PrintItemQuantity(u8 windowId, u32 itemIndex, u8 y)
             PrintSelectorArrowAtPos(y, COLORID_NONE);
     }
 
-    ConvertIntToDecimalStringN(gStringVar1,
-                               gSaveBlock2Ptr->frontier.pyramidBag.quantity[gSaveBlock2Ptr->frontier.lvlMode][itemIndex],
-                               STR_CONV_MODE_RIGHT_ALIGN,
-                               MAX_PYRAMID_ITEM_DIGITS);
-    StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    xAlign = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 119);
-    PyramidBagPrint_Quantity(windowId, gStringVar4, xAlign, y, 0, 0, TEXT_SKIP_DRAW, COLORID_DARK_GRAY);
+    itemId = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode][itemIndex];
+    itemQuantity = gSaveBlock2Ptr->frontier.pyramidBag.quantity[gSaveBlock2Ptr->frontier.lvlMode][itemIndex];
+
+    // Draw HM icon
+    if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
+        BlitBitmapToWindow(windowId, gBagMenuHMIcon_Gfx, 8, y - 1, 16, 16);
+
+    if (ItemId_GetImportance(itemId) == FALSE)
+    {
+        ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_PYRAMID_ITEM_DIGITS);
+        StringExpandPlaceholders(gStringVar4, gText_xVar1);
+        xAlign = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 119);
+        PyramidBagPrint_Quantity(windowId, gStringVar4, xAlign, y, 0, 0, TEXT_SKIP_DRAW, COLORID_DARK_GRAY);
+    }
 }
 
 static void PrintItemDescription(s32 listMenuId)
@@ -1099,9 +1128,7 @@ static void BagAction_UseOnField(u8 taskId)
 {
     u8 pocketId = ItemId_GetPocket(gSpecialVar_ItemId);
 
-    if (pocketId == POCKET_KEY_ITEMS
-        || pocketId == POCKET_POKE_BALLS
-        || pocketId == POCKET_TM_HM
+    if (pocketId == POCKET_POKE_BALLS
         || ItemIsMail(gSpecialVar_ItemId) == TRUE)
     {
         CloseMenuActionWindow();
@@ -1521,7 +1548,7 @@ static void CloseMenuActionWindowById(u8 windowArrayId)
     }
 }
 
-static void CreatePyramidBagYesNo(u8 taskId, const struct YesNoFuncTable *yesNoTable)
+void CreatePyramidBagYesNo(u8 taskId, const struct YesNoFuncTable *yesNoTable)
 {
     CreateYesNoMenuWithCallbacks(taskId, &sWindowTemplates_MenuActions[MENU_WIN_YESNO], 1, 0, 2, 1, 0xE, yesNoTable);
 }

@@ -64,6 +64,7 @@ void CB2_ReturnToPyramidBagMenu(void);
 void UpdatePyramidBagList(void);
 void UpdatePyramidBagCursorPos(void);
 void GoToBattlePyramidBagMenu(u8 location, void (*exitCallback)(void));
+void CreatePyramidBagYesNo(u8, const struct YesNoFuncTable *);
 void Task_CloseBattlePyramidBagMessage(u8 taskId);
 void TryStoreHeldItemsInPyramidBag(void);
 void ChooseItemsToTossFromPyramidBag(void);
