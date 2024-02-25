@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_PYRAMID_BAG_H
 
 #include "list_menu.h"
+#include "menu_helpers.h"
 
 enum {
     PYRAMIDBAG_LOC_FIELD,
