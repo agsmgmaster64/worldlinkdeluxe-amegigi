@@ -3481,10 +3481,7 @@ static void PrintNatureColouredStatNames(void)
     const s8 *natureMod;
     u8 atkColour, defColour, spaColour, spdColour, speColour;
 
-    if (sum->mintNature != sum->nature)
-        natureMod = gNatureStatTable[sum->mintNature];
-    else
-        natureMod = gNatureStatTable[sum->nature];
+    natureMod = gNatureStatTable[sum->mintNature];
 
     atkColour = GetNatureColourID(natureMod[STAT_ATK - 1]);
     defColour = GetNatureColourID(natureMod[STAT_DEF - 1]);
