@@ -10,6 +10,8 @@ You can phrase it as the following:
 Based off RHH's pokeemerald-expansion v1.7.3 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 
+Credits: [CREDITS.md](CREDITS.md)
+
 ## What features are included?
 - ***IMPORTANT*❗❗ Read through these to learn what features you can toggle**:
     - [Battle configurations](/include/config/battle.h)
