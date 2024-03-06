@@ -97,7 +97,7 @@ BattleFrontier_Lounge7_EventScript_MegaKick::
 
 BattleFrontier_Lounge7_EventScript_BodySlam::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_BODY_SLAM
+	setvar VAR_0x8005, MOVE_TACKLE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 

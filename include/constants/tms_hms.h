@@ -87,16 +87,16 @@
     F(SLEEP_TALK) \
     F(POISON_JAB) \
     F(DREAM_EATER) \
-    F(POUND) \
+    F(MIND_BLOWN) \
     F(SWAGGER) \
-    F(SCRATCH) \
+    F(BODY_SLAM) \
     F(U_TURN) \
     F(SUBSTITUTE) \
     F(METRONOME) \
     F(TRICK_ROOM)
 
 // todo
-// change TACKLE, POUND
+// change MIND_BLOWN
 
 #define FOREACH_HM(F) \
     F(CUT) \
