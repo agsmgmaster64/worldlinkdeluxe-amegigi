@@ -31,6 +31,6 @@ bool16 HasAllMons(void);
 void CB2_OpenPokedex(void);
 void PrintMonMeasurements(u16 species, u32 owned);
 u8* ConvertMonHeightToString(u32 height);
-u8* ConvertMonWeightToString(u32 weight);
+u8* ConvertMonCostToString(u32 cost);
 
 #endif // GUARD_POKEDEX_H

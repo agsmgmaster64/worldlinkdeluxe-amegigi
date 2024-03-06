@@ -458,7 +458,7 @@ static const struct PokemonJumpMons sPokeJumpMons[] =
     { .species = SPECIES_DEFENSE_PATCHOULI,                         .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_TECH_SAKUYA,                          .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_CHIBI_REMILIA,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_VULPIX_ALOLAN,                     .jumpType = JUMP_TYPE_NORMAL, },
+    { .species = SPECIES_NORMAL_MOMIJI_SANNIAN,                     .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_ATTACK_REMILIA,                        .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_ATTACK_FLANDRE,                            .jumpType = JUMP_TYPE_SLOW, },
     { .species = SPECIES_NORMAL_LETTY,                             .jumpType = JUMP_TYPE_FAST, },

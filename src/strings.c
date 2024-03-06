@@ -52,6 +52,7 @@ const u8 gText_UnkHeight[] = _("{CLEAR_TO 0x0C}??'??”");
 const u8 gText_UnkHeightMetric[] = _("???.? m");
 const u8 gText_UnkWeight[] = _("????.? lbs.");
 const u8 gText_UnkWeightMetric[] = _("???.? kg.");
+const u8 gText_UnkCost[] = _("???.?");
 const u8 gText_CryOf[] = _("Cry Of");
 const u8 gText_SizeComparedTo[] = _("SIZE COMPARED TO ");
 const u8 gText_PokedexRegistration[] = _("TohoDex registration completed.");

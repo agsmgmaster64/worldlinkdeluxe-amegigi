@@ -523,6 +523,7 @@ extern const u8 gText_UnkHeight[];
 extern const u8 gText_UnkHeightMetric[];
 extern const u8 gText_UnkWeight[];
 extern const u8 gText_UnkWeightMetric[];
+extern const u8 gText_UnkCost[];
 extern const u8 gText_HTHeight[];
 extern const u8 gText_WTWeight[];
 extern const u8 gText_SearchingPleaseWait[];

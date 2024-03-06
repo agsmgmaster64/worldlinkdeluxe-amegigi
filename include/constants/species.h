@@ -1023,8 +1023,8 @@
 #define SPECIES_NORMAL_MINORIKO_SANNIAN                 FORMS_START + 52
 #define SPECIES_CHIBI_SHIZUHA_SANNIAN                   FORMS_START + 53
 #define SPECIES_NORMAL_SHIZUHA_SANNIAN                  FORMS_START + 54
-#define SPECIES_SANDSLASH_ALOLAN                        FORMS_START + 55
-#define SPECIES_VULPIX_ALOLAN                           FORMS_START + 56
+#define SPECIES_CHIBI_MOMIJI_SANNIAN                    FORMS_START + 55
+#define SPECIES_NORMAL_MOMIJI_SANNIAN                   FORMS_START + 56
 #define SPECIES_NINETALES_ALOLAN                        FORMS_START + 57
 #define SPECIES_DIGLETT_ALOLAN                          FORMS_START + 58
 #define SPECIES_DUGTRIO_ALOLAN                          FORMS_START + 59

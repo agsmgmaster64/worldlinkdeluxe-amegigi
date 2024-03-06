@@ -1085,6 +1085,7 @@ enum {
 #define DEX_Y_TOP                      57
 #define DEX_Y_BOTTOM                   73
 #define DEX_MEASUREMENT_X              129
+#define DEX_MEASUREMENT_X_METRIC       140
 
 #define DEX_HGSS_HEADER_X_PADDING      59
 #define DEX_HGSS_Y_TOP_PADDING         7

@@ -514,53 +514,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif
 #endif //P_FAMILY_PIDGEY
 
-#if P_FAMILY_RATTATA
-#define RATTATA_FAMILY_MISC_INFO                            \
-        .genderRatio = PERCENT_FEMALE(50),                  \
-        .eggCycles = 15,                                    \
-        .friendship = STANDARD_FRIENDSHIP,                  \
-        .growthRate = GROWTH_MEDIUM_FAST,                   \
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD)
-
-#define RATTATA_MISC_INFO                                       \
-        .baseHP        = 30,                                    \
-        .baseAttack    = 56,                                    \
-        .baseDefense   = 35,                                    \
-        .baseSpeed     = 72,                                    \
-        .baseSpAttack  = 25,                                    \
-        .baseSpDefense = 35,                                    \
-        .catchRate = 255,                                       \
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 51 : 57,  \
-        .evYield_Speed = 1,                                     \
-        .speciesName = _("Rattata"),                            \
-        .cryId = CRY_PORYGON,                                   \
-        .natDexNum = NATIONAL_DEX_ATTACK_RUMIA,                      \
-        .categoryName = _("Mouse"),                             \
-        FOOTPRINT(Rattata)                                      \
-        .formSpeciesIdTable = sRattataFormSpeciesIdTable
-
-#define RATICATE_MISC_INFO                                          \
-        .catchRate = 127,                                           \
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 145 : 116,    \
-        .evYield_Speed = 2,                                         \
-        .speciesName = _("Raticate"),                               \
-        .cryId = CRY_PORYGON,                                      \
-        .natDexNum = NATIONAL_DEX_SPEED_RUMIA,                         \
-        .categoryName = _("Mouse"),                                 \
-        .height = 7,                                                \
-        FOOTPRINT(Raticate)                                         \
-        .formSpeciesIdTable = sRaticateFormSpeciesIdTable
-
-#if P_ALOLAN_FORMS
-#endif //P_ALOLAN_FORMS
-#endif //P_FAMILY_RATTATA
-
-#if P_FAMILY_SPEAROW
-#endif //P_FAMILY_SPEAROW
-
-#if P_FAMILY_EKANS
-#endif //P_FAMILY_EKANS
-
 #if P_FAMILY_PIKACHU
 #if P_GEN_2_CROSS_EVOS
 #define PICHU_MISC_INFO                                                                 \
@@ -958,37 +911,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .isGigantamax = TRUE,
     },
 #endif //P_GIGANTAMAX_FORMS
-
-#define RAICHU_SPEED (P_UPDATED_STATS >= GEN_6 ? 110 : 100)
-
-#if P_UPDATED_EXP_YIELDS >= GEN_8
-    #define RAICHU_EXP_YIELD 243
-#elif P_UPDATED_EXP_YIELDS >= GEN_7
-    #define RAICHU_EXP_YIELD 218
-#elif P_UPDATED_EXP_YIELDS >= GEN_5
-    #define RAICHU_EXP_YIELD 214
-#else
-    #define RAICHU_EXP_YIELD 122
-#endif
-
-#define RAICHU_MISC_INFO                                                \
-        .catchRate = 75,                                                \
-        .expYield = RAICHU_EXP_YIELD,                                   \
-        .evYield_Speed = 3,                                             \
-        .genderRatio = PERCENT_FEMALE(50),                              \
-        .eggCycles = 10,                                                \
-        .friendship = STANDARD_FRIENDSHIP,                              \
-        .growthRate = GROWTH_MEDIUM_FAST,                               \
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY), \
-        .speciesName = _("Raichu"),                                     \
-        .cryId = CRY_PORYGON,                                            \
-        .natDexNum = NATIONAL_DEX_NORMAL_KOAKUMA,                               \
-        .categoryName = _("Mouse"),                                     \
-        FOOTPRINT(Raichu)                                               \
-        .formSpeciesIdTable = sRaichuFormSpeciesIdTable
-
-#if P_ALOLAN_FORMS
-#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_PIKACHU
 
 #if P_FAMILY_SANDSHREW
@@ -999,18 +921,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,                  \
         .growthRate = GROWTH_MEDIUM_FAST,                   \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD)
-
-#define SANDSHREW_MISC_INFO                                     \
-        .catchRate = 255,                                       \
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 93,  \
-        .evYield_Defense = 1,                                   \
-        .speciesName = _("Sandshrew"),                          \
-        .cryId = CRY_PORYGON,                                 \
-        .natDexNum = NATIONAL_DEX_HELPER_KOAKUMA,                    \
-        .categoryName = _("Mouse"),                             \
-        FOOTPRINT(Sandshrew)                                    \
-        .formSpeciesIdTable = sSandshrewFormSpeciesIdTable,     \
-        SANDSHREW_FAMILY_MISC_INFO
 
 #define SANDSLASH_MISC_INFO                                         \
         .catchRate = 90,                                            \
@@ -1025,7 +935,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         SANDSHREW_FAMILY_MISC_INFO
 
 #if P_ALOLAN_FORMS
-    [SPECIES_SANDSLASH_ALOLAN] =
+    [SPECIES_CHIBI_MOMIJI_SANNIAN] =
     {
         SANDSLASH_MISC_INFO,
         .baseHP        = 75,
@@ -1062,9 +972,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_SANDSHREW
-
-#if P_FAMILY_NIDORAN
-#endif //P_FAMILY_NIDORAN
 
 #if P_FAMILY_CLEFAIRY
 #if P_UPDATED_TYPES >= GEN_6
@@ -1177,7 +1084,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         VULPIX_FAMILY_MISC_INFO
 
 #if P_ALOLAN_FORMS
-    [SPECIES_VULPIX_ALOLAN] =
+    [SPECIES_NORMAL_MOMIJI_SANNIAN] =
     {
         VULPIX_MISC_INFO,
         .types = MON_TYPES(TYPE_ICE),

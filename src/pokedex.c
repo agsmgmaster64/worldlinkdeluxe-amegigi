@@ -277,15 +277,13 @@ static void PrintMonInfo(u32 num, u32, u32 owned, u32 newEntry);
 static u32 GetMeasurementTextPositions(u32 textElement);
 static void PrintUnknownMonMeasurements(void);
 static u8* GetUnknownMonHeightString(void);
-static u8* GetUnknownMonWeightString(void);
+static u8* GetUnknownMonCostString(void);
 static u8* ReplaceDecimalSeparator(const u8* originalString);
 static void PrintOwnedMonMeasurements(u16 species);
 static void PrintOwnedMonHeight(u16 species);
-static void PrintOwnedMonWeight(u16 species);
+static void PrintOwnedMonCost(u16 species);
 static u8* ConvertMonHeightToImperialString(u32 height);
 static u8* ConvertMonHeightToMetricString(u32 height);
-static u8* ConvertMonWeightToImperialString(u32 weight);
-static u8* ConvertMonWeightToMetricString(u32 weight);
 static u8* ConvertMeasurementToMetricString(u32 num, u32* index);
 static void ResetOtherVideoRegisters(u16);
 static u8 PrintCryScreenSpeciesName(u8, u16, u8, u8);
@@ -4233,6 +4231,8 @@ static u32 GetMeasurementTextPositions(u32 textElement)
             return (DEX_Y_TOP + DEX_HGSS_Y_TOP_PADDING);
         case DEX_Y_BOTTOM:
             return (DEX_Y_BOTTOM + DEX_HGSS_Y_BOTTOM_PADDING);
+        case DEX_MEASUREMENT_X_METRIC:
+            return (DEX_MEASUREMENT_X_METRIC + DEX_HGSS_MEASUREMENT_X_PADDING);
         default:
         case DEX_MEASUREMENT_X:
             return (DEX_MEASUREMENT_X + DEX_HGSS_MEASUREMENT_X_PADDING);
@@ -4242,17 +4242,22 @@ static u32 GetMeasurementTextPositions(u32 textElement)
 static void PrintUnknownMonMeasurements(void)
 {
     u8* heightString = GetUnknownMonHeightString();
-    u8* weightString = GetUnknownMonWeightString();
+    u8* costString = GetUnknownMonCostString();
 
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
+    u32 xMetric = GetMeasurementTextPositions(DEX_MEASUREMENT_X_METRIC);
     u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
     u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
 
-    PrintInfoScreenText(heightString, x, yTop);
-    PrintInfoScreenText(weightString, x, yBottom);
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
+        PrintInfoScreenText(heightString, x, yTop);
+    else
+        PrintInfoScreenText(heightString, xMetric, yTop);
+
+    PrintInfoScreenText(costString, xMetric, yBottom);
 
     Free(heightString);
-    Free(weightString);
+    Free(costString);
 }
 
 static u8* GetUnknownMonHeightString(void)
@@ -4263,12 +4268,9 @@ static u8* GetUnknownMonHeightString(void)
         return ReplaceDecimalSeparator(gText_UnkHeightMetric);
 }
 
-static u8* GetUnknownMonWeightString(void)
+static u8* GetUnknownMonCostString(void)
 {
-    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
-        return ReplaceDecimalSeparator(gText_UnkWeight);
-    else
-        return ReplaceDecimalSeparator(gText_UnkWeightMetric);
+    return ReplaceDecimalSeparator(gText_UnkCost);
 }
 
 static u8* ReplaceDecimalSeparator(const u8* originalString)
@@ -4295,7 +4297,7 @@ static u8* ReplaceDecimalSeparator(const u8* originalString)
 static void PrintOwnedMonMeasurements(u16 species)
 {
     PrintOwnedMonHeight(species);
-    PrintOwnedMonWeight(species);
+    PrintOwnedMonCost(species);
 }
 
 static void PrintOwnedMonHeight(u16 species)
@@ -4304,11 +4306,16 @@ static void PrintOwnedMonHeight(u16 species)
     u8* heightString;
 
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
+    u32 xMetric = GetMeasurementTextPositions(DEX_MEASUREMENT_X_METRIC);
     u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
 
     heightString = ConvertMonHeightToString(height);
 
-    PrintInfoScreenText(heightString, x, yTop);
+    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
+        PrintInfoScreenText(heightString, x, yTop);
+    else
+        PrintInfoScreenText(heightString, xMetric, yTop);
+
     Free(heightString);
 }
 
@@ -4320,25 +4327,17 @@ u8* ConvertMonHeightToString(u32 height)
         return ConvertMonHeightToMetricString(height);
 }
 
-static void PrintOwnedMonWeight(u16 species)
+static void PrintOwnedMonCost(u16 species)
 {
-    u32 weight = GetSpeciesWeight(species);
-    u8* weightString;
-    u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
+    u32 cost = GetSpeciesWeight(species);
+    u8* costString;
+    u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X_METRIC);
     u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
 
-    weightString = ConvertMonWeightToString(weight);
+    costString = ConvertMonCostToString(cost);
 
-    PrintInfoScreenText(weightString, x, yBottom);
-    Free(weightString);
-}
-
-u8* ConvertMonWeightToString(u32 weight)
-{
-    if (gSaveBlock2Ptr->optionsUnitSystem == UNITS_IMPERIAL)
-        return ConvertMonWeightToImperialString(weight);
-    else
-        return ConvertMonWeightToMetricString(weight);
+    PrintInfoScreenText(costString, x, yBottom);
+    Free(costString);
 }
 
 static u8* ConvertMonHeightToImperialString(u32 height)
@@ -4384,72 +4383,13 @@ static u8* ConvertMonHeightToMetricString(u32 height)
     return heightString;
 }
 
-static u8* ConvertMonWeightToImperialString(u32 weight)
-{
-    u8* weightString = Alloc(WEIGHT_HEIGHT_STR_MEM);
-    bool32 output = FALSE;
-    u32 index = 0, lbs = (weight * 100000) / DECAGRAMS_IN_POUND;
-
-    if (lbs % 10u >= 5)
-        lbs += 10;
-
-    if ((weightString[index] = (lbs / 100000) + CHAR_0) == CHAR_0 && !output)
-    {
-        weightString[index++] = CHAR_SPACER;
-    }
-    else
-    {
-        output = TRUE;
-        index++;
-    }
-
-    lbs %= 100000;
-    if ((weightString[index] = (lbs / 10000) + CHAR_0) == CHAR_0 && !output)
-    {
-        weightString[index++] = CHAR_SPACER;
-    }
-    else
-    {
-        output = TRUE;
-        index++;
-    }
-
-    lbs %= 10000;
-    if ((weightString[index] = (lbs / 1000) + CHAR_0) == CHAR_0 && !output)
-    {
-        weightString[index++] = CHAR_SPACER;
-    }
-    else
-    {
-        output = TRUE;
-        index++;
-    }
-
-    lbs %= 1000;
-    weightString[index++] = (lbs / 100) + CHAR_0;
-    lbs %= 100;
-    weightString[index++] = CHAR_DEC_SEPARATOR;
-    weightString[index++] = (lbs / 10) + CHAR_0;
-    weightString[index++] = CHAR_SPACE;
-    weightString[index++] = CHAR_l;
-    weightString[index++] = CHAR_b;
-    weightString[index++] = CHAR_s;
-    weightString[index++] = CHAR_PERIOD;
-    weightString[index++] = EOS;
-
-    return weightString;
-}
-
-static u8* ConvertMonWeightToMetricString(u32 weight)
+u8* ConvertMonCostToString(u32 cost)
 {
     u32 index = 0;
-    u8* weightString = ConvertMeasurementToMetricString(weight, &index);
+    u8* costString = ConvertMeasurementToMetricString(cost, &index);
 
-    weightString[index++] = CHAR_k;
-    weightString[index++] = CHAR_g;
-    weightString[index++] = CHAR_PERIOD;
-    weightString[index++] = EOS;
-    return weightString;
+    costString[index++] = EOS;
+    return costString;
 }
 
 static u8* ConvertMeasurementToMetricString(u32 num, u32* index)

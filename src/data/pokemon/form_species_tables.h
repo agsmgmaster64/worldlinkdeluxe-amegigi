@@ -116,19 +116,13 @@ static const u16 sPikachuFormSpeciesIdTable[] = {
     SPECIES_PIKACHU_GIGANTAMAX,
     FORM_SPECIES_END,
 };
-
-static const u16 sRaichuFormSpeciesIdTable[] = {
-    SPECIES_NORMAL_KOAKUMA,
-    SPECIES_CHIBI_SHIZUHA_SANNIAN,
-    FORM_SPECIES_END,
-};
 #endif //P_FAMILY_PIKACHU
 
 #if P_FAMILY_SANDSHREW
 
 static const u16 sSandslashFormSpeciesIdTable[] = {
     SPECIES_PLCEHOLDER1_KOAKUMA,
-    SPECIES_SANDSLASH_ALOLAN,
+    SPECIES_CHIBI_MOMIJI_SANNIAN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_SANDSHREW
@@ -136,7 +130,7 @@ static const u16 sSandslashFormSpeciesIdTable[] = {
 #if P_FAMILY_VULPIX
 static const u16 sVulpixFormSpeciesIdTable[] = {
     SPECIES_CHIBI_REMILIA,
-    SPECIES_VULPIX_ALOLAN,
+    SPECIES_NORMAL_MOMIJI_SANNIAN,
     FORM_SPECIES_END,
 };
 
