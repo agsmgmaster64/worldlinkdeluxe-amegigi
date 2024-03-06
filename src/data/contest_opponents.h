@@ -760,7 +760,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_COLBY] = {
-        .species = SPECIES_TOTODILE,
+        .species = SPECIES_CHIBI_SHIZUHA,
         .nickname = _("TOTDIL"),
         .trainerName = _("COLBY"),
         .trainerGfxId = OBJ_EVENT_GFX_NINJA_BOY,
@@ -787,7 +787,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_KYLIE] = {
-        .species = SPECIES_LEDYBA,
+        .species = SPECIES_DEFENSE_MINORIKO,
         .nickname = _("BALEDY"),
         .trainerName = _("KYLIE"),
         .trainerGfxId = OBJ_EVENT_GFX_BEAUTY,

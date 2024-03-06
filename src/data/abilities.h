@@ -2200,7 +2200,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LEAF_SPICE] =
     {
         .name = _("Leaf Spice"),
-        .description = COMPOUND_STRING("Special Nature moves burn."),
+        .description = COMPOUND_STRING("Nature moves may burn."),
         .aiRating = 5,
     },
 
@@ -2222,7 +2222,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_NATURE_FROST] =
     {
         .name = _("Nature Frost"),
-        .description = COMPOUND_STRING("Nature moves are part Ice."),
+        .description = COMPOUND_STRING("Ups Nature-type moves."),
         .aiRating = 6,
     },
 

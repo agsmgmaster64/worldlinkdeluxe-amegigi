@@ -4,10 +4,10 @@
 DOUBLE_BATTLE_TEST("Frisk does not trigger when pokemon hold no items")
 {
     GIVEN {
-        PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
-        PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
-        OPPONENT(SPECIES_SENTRET) { Ability(ABILITY_FRISK); };
-        OPPONENT(SPECIES_SENTRET) { Ability(ABILITY_FRISK); };
+        PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
+        PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
+        OPPONENT(SPECIES_HELPER_SHIZUHA) { Ability(ABILITY_FRISK); };
+        OPPONENT(SPECIES_HELPER_SHIZUHA) { Ability(ABILITY_FRISK); };
     } WHEN {
         TURN { ; }
     } SCENE {
@@ -23,8 +23,8 @@ DOUBLE_BATTLE_TEST("Frisk does not trigger when pokemon hold no items")
 SINGLE_BATTLE_TEST("Frisk triggers in a Single Battle")
 {
     GIVEN {
-        PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); Item(ITEM_POTION); };
-        OPPONENT(SPECIES_SENTRET) { Ability(ABILITY_FRISK); Item(ITEM_POTION); };
+        PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); Item(ITEM_POTION); };
+        OPPONENT(SPECIES_HELPER_SHIZUHA) { Ability(ABILITY_FRISK); Item(ITEM_POTION); };
     } WHEN {
         TURN { ; }
     } SCENE {
@@ -45,7 +45,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching
         ASSUME(gMovesInfo[MOVE_POUND].power != 0);
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
+        PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
         OPPONENT(SPECIES_WYNAUT) { Item(ITEM_POTION); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -70,7 +70,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
+        OPPONENT(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_POUND, target: targetLeft ? opponentLeft : opponentRight); SEND_OUT(targetLeft ? opponentLeft : opponentRight, 2); }
     } SCENE {

@@ -2653,7 +2653,7 @@ static u16 GetBerryPestSpecies(u8 berryId)
     switch(berry->color)
     {
         case BERRY_COLOR_RED:
-            return P_FAMILY_LEDYBA ? SPECIES_LEDYBA : SPECIES_NONE;
+            return P_FAMILY_LEDYBA ? SPECIES_DEFENSE_MINORIKO : SPECIES_NONE;
             break;
         case BERRY_COLOR_BLUE:
             return P_FAMILY_VOLBEAT_ILLUMISE ? SPECIES_VOLBEAT : SPECIES_NONE;

@@ -171,8 +171,8 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
@@ -206,9 +206,9 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_FLY"
@@ -242,8 +242,8 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
       "MOVE_DREAM_EATER",
@@ -280,9 +280,9 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_FLY"
@@ -1094,8 +1094,8 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_THUNDER_WAVE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_THUNDER_WAVE",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1129,8 +1129,8 @@
       "MOVE_SNATCH",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_THUNDER_WAVE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_THUNDER_WAVE",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1159,8 +1159,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_CUT",
@@ -1193,8 +1193,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_CUT",
@@ -1227,8 +1227,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_CUT",
@@ -1261,8 +1261,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
       "MOVE_CUT",
@@ -1520,9 +1520,9 @@
       "MOVE_ATTRACT",
       "MOVE_FOCUS_BLAST",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_CURSE",
       "MOVE_SWAGGER",
       "MOVE_CUT"
@@ -1573,9 +1573,9 @@
       "MOVE_REST",
       "MOVE_ATTRACT",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
       "MOVE_POISON_JAB",
@@ -1607,9 +1607,9 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_CURSE"
     ]
   },
@@ -1637,10 +1637,10 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
       "MOVE_CUT"
@@ -1670,9 +1670,9 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_CURSE",
       "MOVE_CUT"
     ]
@@ -1701,9 +1701,9 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_CURSE",
       "MOVE_CUT"
     ]
@@ -1804,8 +1804,8 @@
       "MOVE_SKILL_SWAP",
       "MOVE_MIND_BOMB",
       "MOVE_FOCUS_BLAST",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -1871,8 +1871,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -1907,8 +1907,8 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_SWORDS_DANCE",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -1980,9 +1980,9 @@
       "MOVE_STEEL_WING",
       "MOVE_SNATCH",
       "MOVE_ENDURE",
+      "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCHO_CUT",
       "MOVE_PSYCH_UP",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
@@ -2418,27 +2418,25 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_ATTRACT",
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_ICE_BEAM",
       "MOVE_BLIZZARD",
-      "MOVE_DIVE",
+      "MOVE_RAIN_DANCE",
       "MOVE_DOUBLE_TEAM",
       "MOVE_FACADE",
-      "MOVE_HAIL",
-      "MOVE_HYPER_BEAM",
-      "MOVE_ICE_BEAM",
-      "MOVE_PROTECT",
-      "MOVE_RAIN_DANCE",
       "MOVE_REST",
-      "MOVE_SURF",
-      "MOVE_TOXIC",
-      "MOVE_WATERFALL",
-      "MOVE_WATER_PULSE",
-      "MOVE_DOUBLE_EDGE",
+      "MOVE_ATTRACT",
       "MOVE_ENDURE",
       "MOVE_ICY_WIND",
       "MOVE_SLEEP_TALK",
-      "MOVE_SNORE",
       "MOVE_SWAGGER",
+      "MOVE_SURF",
+      "MOVE_WATERFALL",
+      "MOVE_DIVE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SNORE",
       "MOVE_SWIFT"
     ]
   },
@@ -2448,31 +2446,30 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_ATTRACT",
-      "MOVE_BLIZZARD",
-      "MOVE_DIVE",
-      "MOVE_DOUBLE_TEAM",
-      "MOVE_FACADE",
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
       "MOVE_HAIL",
       "MOVE_ICE_BEAM",
-      "MOVE_PROTECT",
+      "MOVE_BLIZZARD",
       "MOVE_RAIN_DANCE",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
       "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SWAGGER",
       "MOVE_SURF",
-      "MOVE_TOXIC",
       "MOVE_WATERFALL",
-      "MOVE_WATER_PULSE",
+      "MOVE_DIVE",
       "MOVE_BODY_SLAM",
       "MOVE_DOUBLE_EDGE",
-      "MOVE_ENDURE",
       "MOVE_FURY_CUTTER",
-      "MOVE_ICY_WIND",
       "MOVE_MUD_SLAP",
-      "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
-      "MOVE_SWAGGER",
-      "MOVE_SWIFT",
-      "MOVE_SWORDS_DANCE"
+      "MOVE_SWIFT"
     ]
   },
   "D_REISEN": {
@@ -2481,32 +2478,30 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_ATTRACT",
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_ICE_BEAM",
       "MOVE_BLIZZARD",
-      "MOVE_DIVE",
+      "MOVE_RAIN_DANCE",
       "MOVE_DOUBLE_TEAM",
       "MOVE_FACADE",
-      "MOVE_HAIL",
-      "MOVE_HYPER_BEAM",
-      "MOVE_ICE_BEAM",
-      "MOVE_PROTECT",
-      "MOVE_RAIN_DANCE",
       "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SWAGGER",
       "MOVE_SURF",
-      "MOVE_TOXIC",
       "MOVE_WATERFALL",
-      "MOVE_WATER_PULSE",
+      "MOVE_DIVE",
       "MOVE_BODY_SLAM",
       "MOVE_DOUBLE_EDGE",
-      "MOVE_ENDURE",
       "MOVE_FURY_CUTTER",
-      "MOVE_ICY_WIND",
       "MOVE_MUD_SLAP",
-      "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
-      "MOVE_SWAGGER",
-      "MOVE_SWIFT",
-      "MOVE_SWORDS_DANCE"
+      "MOVE_SWIFT"
     ]
   },
   "T_REISEN": {
@@ -2515,306 +2510,413 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_ATTRACT",
-      "MOVE_BLIZZARD",
-      "MOVE_DIVE",
-      "MOVE_DOUBLE_TEAM",
-      "MOVE_FACADE",
-      "MOVE_FLASH",
+      "MOVE_WATER_PULSE",
+      "MOVE_TOXIC",
       "MOVE_HAIL",
       "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
       "MOVE_LIGHT_SCREEN",
-      "MOVE_PROTECT",
-      "MOVE_MANA_BURST",
       "MOVE_RAIN_DANCE",
-      "MOVE_REFLECT",
-      "MOVE_REST",
-      "MOVE_SURF",
-      "MOVE_THUNDER",
       "MOVE_THUNDERBOLT",
-      "MOVE_TOXIC",
-      "MOVE_WATERFALL",
-      "MOVE_WATER_PULSE",
-      "MOVE_DOUBLE_EDGE",
+      "MOVE_THUNDER",
+      "MOVE_MANA_BURST",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_FACADE",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
       "MOVE_ENDURE",
       "MOVE_ICY_WIND",
+      "MOVE_THUNDER_WAVE",
       "MOVE_PSYCH_UP",
-      "MOVE_TREMORS",
       "MOVE_SLEEP_TALK",
-      "MOVE_SNORE",
       "MOVE_SWAGGER",
+      "MOVE_SURF",
+      "MOVE_FLASH",
+      "MOVE_WATERFALL",
+      "MOVE_DIVE",
+      "MOVE_DOUBLE_EDGE",
+      "MOVE_SNORE",
       "MOVE_SWIFT",
-      "MOVE_THUNDER_WAVE"
+      "MOVE_TREMORS"
     ]
   },
-  "RATTATA_ALOLAN": {
+  "C_SHIZUHA": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_DREAM_EATER",
+      "MOVE_FLASH"
     ]
   },
-  "RATICATE_ALOLAN": {
+  "SHIZUHA": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_DREAM_EATER",
+      "MOVE_FLASH"
     ]
   },
-  "RAICHU_ALOLAN": {
+  "S_SHIZUHA": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_FLASH"
     ]
   },
-  "VULPIX_ALOLAN": {
+  "H_SHIZUHA": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_PSYCH_UP",
+      "MOVE_FLASH"
     ]
   },
-  "NINETALES_ALOLAN": {
+  "C_SHIZUHA_SANNIAN": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_DREAM_EATER",
+      "MOVE_FLASH"
     ]
   },
-  "MEOWTH_ALOLAN": {
+  "SHIZUHA_SANNIAN": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_HAIL",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_DREAM_EATER",
+      "MOVE_FLASH"
     ]
   },
-  "PERSIAN_ALOLAN": {
+  "C_MINORIKO": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   },
-  "RAPIDASH_GALARIAN": {
+  "MINORIKO": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   },
-  "SLOWKING": {
+  "A_MINORIKO": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   },
-  "SLOWPOKE_GALARIAN": {
+  "D_MINORIKO": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SAFEGUARD",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   },
-  "SLOWBRO_GALARIAN": {
+  "C_MINORIKO_SANNIAN": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FIRE_BLAST",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_INCINERATE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   },
-  "SLOWKING_GALARIAN": {
+  "MINORIKO_SANNIAN": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "LICKILICKY": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "BLISSEY": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "ELECTIVIRE": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "MAGMORTAR": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "ESPEON": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "LEAFEON": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "GLACEON": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "SYLVEON": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "PORYGON2": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "PORYGON_Z": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "AZURILL": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "AMBIPOM": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "WEAVILE": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "ZIGZAGOON_GALARIAN": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "LINOONE_GALARIAN": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "OBSTAGOON": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "MEOWSTIC_FEMALE": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
-    ]
-  },
-  "ZARUDE": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DRAWN_LINE"
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_BULLET_SEED",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FIRE_BLAST",
+      "MOVE_RAZOR_WIND",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_INCINERATE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_DECISION",
+      "MOVE_NATURE_POWER",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_SWAGGER",
+      "MOVE_FLASH"
     ]
   }
 }

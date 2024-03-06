@@ -10485,7 +10485,7 @@ static const struct TrainerMon sParty_Winona3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 43,
-    .species = SPECIES_HOOTHOOT,
+    .species = SPECIES_NORMAL_MINORIKO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_DREAM_EATER}
     },
@@ -10530,7 +10530,7 @@ static const struct TrainerMon sParty_Winona4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 48,
-    .species = SPECIES_NOCTOWL,
+    .species = SPECIES_ATTACK_MINORIKO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_DREAM_EATER}
     },
@@ -10575,7 +10575,7 @@ static const struct TrainerMon sParty_Winona5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 53,
-    .species = SPECIES_NOCTOWL,
+    .species = SPECIES_ATTACK_MINORIKO,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_HYPNOSIS, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_DREAM_EATER}
     },

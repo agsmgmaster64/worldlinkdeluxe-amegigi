@@ -7,6 +7,30 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_BULBASAUR
 
+static const u16 sCShizuhaFormSpeciesIdTable[] = {
+    SPECIES_CHIBI_SHIZUHA,
+    SPECIES_CHIBI_SHIZUHA_SANNIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sShizuhaFormSpeciesIdTable[] = {
+    SPECIES_NORMAL_SHIZUHA,
+    SPECIES_NORMAL_SHIZUHA_SANNIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sCMinorikoFormSpeciesIdTable[] = {
+    SPECIES_CHIBI_MINORIKO,
+    SPECIES_CHIBI_MINORIKO_SANNIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMinorikoFormSpeciesIdTable[] = {
+    SPECIES_NORMAL_MINORIKO,
+    SPECIES_NORMAL_MINORIKO_SANNIAN,
+    FORM_SPECIES_END,
+};
+
 #if P_FAMILY_CHARMANDER
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_NORMAL_MARISA,
@@ -53,13 +77,13 @@ static const u16 sPidgeotFormSpeciesIdTable[] = {
 #if P_FAMILY_RATTATA
 static const u16 sRattataFormSpeciesIdTable[] = {
     SPECIES_ATTACK_RUMIA,
-    SPECIES_RATTATA_ALOLAN,
+    SPECIES_CHIBI_MINORIKO_SANNIAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sRaticateFormSpeciesIdTable[] = {
     SPECIES_SPEED_RUMIA,
-    SPECIES_RATICATE_ALOLAN,
+    SPECIES_NORMAL_MINORIKO_SANNIAN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_RATTATA
@@ -95,17 +119,12 @@ static const u16 sPikachuFormSpeciesIdTable[] = {
 
 static const u16 sRaichuFormSpeciesIdTable[] = {
     SPECIES_NORMAL_KOAKUMA,
-    SPECIES_RAICHU_ALOLAN,
+    SPECIES_CHIBI_SHIZUHA_SANNIAN,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_PIKACHU
 
 #if P_FAMILY_SANDSHREW
-static const u16 sSandshrewFormSpeciesIdTable[] = {
-    SPECIES_HELPER_KOAKUMA,
-    SPECIES_SANDSHREW_ALOLAN,
-    FORM_SPECIES_END,
-};
 
 static const u16 sSandslashFormSpeciesIdTable[] = {
     SPECIES_PLCEHOLDER1_KOAKUMA,

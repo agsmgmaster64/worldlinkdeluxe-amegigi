@@ -429,7 +429,7 @@ struct SpeciesInfo /*0x8C*/
             u32 isPrimalReversion:1;
             u32 isUltraBurst:1;
             u32 isGigantamax:1;
-            u32 isAlolanForm:1;
+            u32 isSannianForm:1;
             u32 isGalarianForm:1;
             u32 isHisuianForm:1;
             u32 isPaldeanForm:1;

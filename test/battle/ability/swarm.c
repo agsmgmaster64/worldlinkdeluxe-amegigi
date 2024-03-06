@@ -10,10 +10,10 @@ SINGLE_BATTLE_TEST("Swarm boosts Bug-type moves in a pinch", s16 damage)
         ASSUME(gMovesInfo[MOVE_BUG_BITE].type == TYPE_HEART);
         ASSUME(gMovesInfo[MOVE_BUG_BITE].power == 60);
         ASSUME(gMovesInfo[MOVE_BUG_BITE].category == DAMAGE_CATEGORY_PHYSICAL);
-        ASSUME(gSpeciesInfo[SPECIES_LEDYBA].types[0] == TYPE_HEART);
+        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MINORIKO].types[0] == TYPE_HEART);
         ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_REASON);
         ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_REASON);
-        PLAYER(SPECIES_LEDYBA) { Ability(ABILITY_INNER_POWER); MaxHP(99); HP(hp); Attack(45); }
+        PLAYER(SPECIES_DEFENSE_MINORIKO) { Ability(ABILITY_INNER_POWER); MaxHP(99); HP(hp); Attack(45); }
         OPPONENT(SPECIES_WOBBUFFET) { Defense(121); }
     } WHEN {
         TURN { MOVE(player, MOVE_BUG_BITE); }

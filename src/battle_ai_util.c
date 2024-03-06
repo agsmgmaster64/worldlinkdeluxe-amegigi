@@ -383,7 +383,7 @@ bool32 IsDamageMoveUsable(u32 move, u32 battlerAtk, u32 battlerDef)
     case ABILITY_VOLT_ABSORB:
     case ABILITY_MOTOR_DRIVE:
     case ABILITY_LIGHTNING_ROD:
-        if (moveType == TYPE_ELECTRIC)
+        if (moveType == TYPE_WIND)
             return TRUE;
         break;
     case ABILITY_WATER_ABSORB:
@@ -405,7 +405,7 @@ bool32 IsDamageMoveUsable(u32 move, u32 battlerAtk, u32 battlerDef)
             return TRUE;
         break;
     case ABILITY_SAP_SIPPER:
-        if (moveType == TYPE_GRASS)
+        if (moveType == TYPE_NATURE)
             return TRUE;
         break;
     }

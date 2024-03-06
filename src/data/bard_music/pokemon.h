@@ -1268,7 +1268,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         { .songLengthId = 51 },
         NULL_BARD_SOUND,
     },
-    [SPECIES_TOTODILE] = {
+    [SPECIES_CHIBI_SHIZUHA] = {
         { .songLengthId = 24 },
         { .songLengthId = 24 },
         { .songLengthId = 18 },
@@ -1276,7 +1276,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_CROCONAW] = {
+    [SPECIES_NORMAL_SHIZUHA] = {
         { .songLengthId = 27 },
         { .songLengthId = 24 },
         { .songLengthId = 27 },
@@ -1284,7 +1284,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_FERALIGATR] = {
+    [SPECIES_SPEED_SHIZUHA] = {
         { .songLengthId = 48 },
         { .songLengthId =  0 },
         { .songLengthId = 15 },
@@ -1292,7 +1292,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         { .songLengthId = 48 },
         NULL_BARD_SOUND,
     },
-    [SPECIES_SENTRET] = {
+    [SPECIES_HELPER_SHIZUHA] = {
         { .songLengthId = 9 },
         { .songLengthId = 9 },
         { .songLengthId = 51 },
@@ -1300,7 +1300,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_FURRET] = {
+    [SPECIES_CHIBI_MINORIKO] = {
         { .songLengthId = 48 },
         { .songLengthId = 9 },
         { .songLengthId = 51 },
@@ -1308,7 +1308,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_HOOTHOOT] = {
+    [SPECIES_NORMAL_MINORIKO] = {
         { .songLengthId = 39 },
         { .songLengthId = 39 },
         { .songLengthId = 51 },
@@ -1316,7 +1316,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_NOCTOWL] = {
+    [SPECIES_ATTACK_MINORIKO] = {
         { .songLengthId = 27 },
         { .songLengthId = 33 },
         { .songLengthId = 51 },
@@ -1324,7 +1324,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_LEDYBA] = {
+    [SPECIES_DEFENSE_MINORIKO] = {
         { .songLengthId = 9 },
         { .songLengthId = 12 },
         { .songLengthId = 42 },

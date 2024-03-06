@@ -552,75 +552,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sRaticateFormSpeciesIdTable
 
 #if P_ALOLAN_FORMS
-    [SPECIES_RATTATA_ALOLAN] =
-    {
-        RATTATA_FAMILY_MISC_INFO,
-        RATTATA_MISC_INFO,
-        .types = MON_TYPES(TYPE_DARK, TYPE_ILLUSION),
-        .itemRare = ITEM_PECHA_BERRY,
-        .abilities = { ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_WALL_OF_ICE },
-        .sourceGame = SOURCE_MS,
-        .height = 3,
-        .weight = 38,
-        .description = COMPOUND_STRING(
-            "With its incisors, it gnaws through doors\n"
-            "and infiltrates people's homes.\n"
-            "Then, with a twitch of its whiskers,\n"
-            "it steals whatever food it finds."),
-        .pokemonScale = 481,
-        .pokemonOffset = 21,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(RattataAlolan, 40, 48),
-        .frontPicYOffset = 11,
-        .frontAnimFrames = sAnims_RattataAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        BACK_PIC(RattataAlolan, 64, 56),
-        .backPicYOffset = 7,
-        //.backAnimId = BACK_ANIM_NONE,
-        PALETTES(RattataAlolan),
-        ICON(RattataAlolan, 2),
-        LEARNSETS(RattataAlolan),
-        .isAlolanForm = TRUE,
-        .evolutions = EVOLUTION({EVO_LEVEL_NIGHT, 20, SPECIES_RATICATE_ALOLAN}),
-    },
-
-    [SPECIES_RATICATE_ALOLAN] =
-    {
-        RATTATA_FAMILY_MISC_INFO,
-        RATICATE_MISC_INFO,
-        .baseHP        = 75,
-        .baseAttack    = 71,
-        .baseDefense   = 70,
-        .baseSpeed     = 77,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 80,
-        .types = MON_TYPES(TYPE_DARK, TYPE_ILLUSION),
-        .itemRare = ITEM_PECHA_BERRY,
-        .abilities = { ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_WALL_OF_ICE },
-        .sourceGame = SOURCE_MS,
-        .weight = 255,
-        .description = COMPOUND_STRING(
-            "It forms a group of Rattata, which it \n"
-            "assumes command of. Each group\n"
-            "has its own territory, and disputes\n"
-            "over food happen often."),
-        .pokemonScale = 459,
-        .pokemonOffset = 18,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(RaticateAlolan, 56, 48),
-        .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_RaticateAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        BACK_PIC(RaticateAlolan, 64, 48),
-        .backPicYOffset = 8,
-        //.backAnimId = BACK_ANIM_NONE,
-        PALETTES(RaticateAlolan),
-        ICON(RaticateAlolan, 2),
-        LEARNSETS(RaticateAlolan),
-        .isAlolanForm = TRUE,
-    },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_RATTATA
 
@@ -1057,42 +988,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sRaichuFormSpeciesIdTable
 
 #if P_ALOLAN_FORMS
-    [SPECIES_RAICHU_ALOLAN] =
-    {
-        RAICHU_MISC_INFO,
-        .baseHP        = 60,
-        .baseAttack    = 85,
-        .baseDefense   = 50,
-        .baseSpeed     = RAICHU_SPEED,
-        .baseSpAttack  = 95,
-        .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_WIND, TYPE_REASON),
-        .abilities = { ABILITY_SURGE_SURFER, ABILITY_NONE },
-        .sourceGame = SOURCE_EOSD,
-        .isAlolanForm = TRUE,
-        .height = 7,
-        .weight = 210,
-        .description = COMPOUND_STRING(
-            "It uses psychokinesis to control\n"
-            "electricity. It focuses psychic energy\n"
-            "into its tail and rides it like it's surfing.\n"
-            "Another name for this Pokémon is 'hodad'."),
-        .pokemonScale = 426,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(RaichuAlolan, 64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_RaichuAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
-        BACK_PIC(RaichuAlolan, 56, 56),
-        .backPicYOffset = 6,
-        //.backAnimId = BACK_ANIM_NONE,
-        PALETTES(RaichuAlolan),
-        ICON(RaichuAlolan, 2),
-        LEARNSETS(RaichuAlolan),
-    },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_PIKACHU
 
@@ -1130,43 +1025,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         SANDSHREW_FAMILY_MISC_INFO
 
 #if P_ALOLAN_FORMS
-    [SPECIES_SANDSHREW_ALOLAN] =
-    {
-        SANDSHREW_MISC_INFO,
-        .baseHP        = 50,
-        .baseAttack    = 75,
-        .baseDefense   = 90,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 10,
-        .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_ICE, TYPE_STEEL),
-        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH },
-        .sourceGame = SOURCE_SOEW,
-        .height = 7,
-        .weight = 400,
-        .description = COMPOUND_STRING(
-            "Life on mountains covered with deep snow\n"
-            "has granted this Pokémon a body of ice\n"
-            "that's as hard as steel.\n"
-            "Predators go after its soft belly."),
-        .pokemonScale = 365,
-        .pokemonOffset = 18,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        FRONT_PIC(SandshrewAlolan, 40, 40),
-        .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_SandshrewAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        BACK_PIC(SandshrewAlolan, 56, 40),
-        .backPicYOffset = 13,
-        //.backAnimId = BACK_ANIM_NONE,
-        PALETTES(SandshrewAlolan),
-        ICON(SandshrewAlolan, 0),
-        LEARNSETS(SandshrewAlolan),
-        .isAlolanForm = TRUE,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_SANDSLASH_ALOLAN}),
-    },
-
     [SPECIES_SANDSLASH_ALOLAN] =
     {
         SANDSLASH_MISC_INFO,
@@ -1200,7 +1058,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(SandslashAlolan),
         ICON(SandslashAlolan, 0),
         LEARNSETS(SandslashAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_SANDSHREW
@@ -1342,7 +1200,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         ICON(VulpixAlolan, 2),
         LEARNSETS(VulpixAlolan),
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_NINETALES_ALOLAN}),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 
     [SPECIES_NINETALES_ALOLAN] =
@@ -1373,7 +1231,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(NinetalesAlolan),
         ICON(NinetalesAlolan, 2),
         LEARNSETS(NinetalesAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
@@ -1642,7 +1500,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(DiglettAlolan),
         ICON(DiglettAlolan, 2),
         LEARNSETS(DiglettAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
         .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_DUGTRIO_ALOLAN}),
     },
 
@@ -1674,7 +1532,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(DugtrioAlolan),
         ICON(DugtrioAlolan, 2),
         LEARNSETS(DugtrioAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_DIGLETT
@@ -1748,7 +1606,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(MeowthAlolan),
         ICON(MeowthAlolan, 2),
         LEARNSETS(MeowthAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
         .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_PERSIAN_ALOLAN}),
     },
 
@@ -1785,7 +1643,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(PersianAlolan),
         ICON(PersianAlolan, 2),
         LEARNSETS(PersianAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 
@@ -2374,7 +2232,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #define ALOLAN_GEODUDE_FAMILY_INFO                                              \
         .types = MON_TYPES(TYPE_BEAST, TYPE_WIND),                           \
         .abilities = { ABILITY_MAGNET_PULL, ABILITY_STURDY, ABILITY_GALVANIZE },\
-        .isAlolanForm = TRUE
+        .isSannianForm = TRUE
 
     [SPECIES_GEODUDE_ALOLAN] =
     {
@@ -3306,7 +3164,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .types = MON_TYPES(TYPE_MIASMA, TYPE_DARK),                                         \
         .abilities = { ABILITY_POISON_TOUCH, ABILITY_GLUTTONY, ABILITY_POWER_OF_ALCHEMY },  \
         .sourceGame = SOURCE_LLS,                                                      \
-        .isAlolanForm = TRUE
+        .isSannianForm = TRUE
 
     [SPECIES_GRIMER_ALOLAN] =
     {
@@ -4390,7 +4248,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(ExeggutorAlolan),
         ICON(ExeggutorAlolan, 1),
         LEARNSETS(ExeggutorAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_EXEGGCUTE
@@ -4522,7 +4380,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         PALETTES(MarowakAlolan),
         ICON(MarowakAlolan, 1),
         LEARNSETS(MarowakAlolan),
-        .isAlolanForm = TRUE,
+        .isSannianForm = TRUE,
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
