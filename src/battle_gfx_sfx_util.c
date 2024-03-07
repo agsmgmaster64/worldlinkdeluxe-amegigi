@@ -664,7 +664,7 @@ void DecompressGhostFrontPic(struct Pokemon *unused, u8 battlerId)
     void *buffer;
     u8 position = GetBattlerPosition(battlerId);
 
-    LZ77UnCompWram(gGhostFrontPic, gMonSpritesGfxPtr->sprites.ptr[position]);
+    LZ77UnCompWram(gGhostFrontPic, gMonSpritesGfxPtr->spritesGfx[position]);
     palOffset = OBJ_PLTT_ID(battlerId);
     buffer = AllocZeroed(0x400);
     LZDecompressWram(gGhostPalette, buffer);
@@ -921,10 +921,10 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u32 transformType,
         personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_PERSONALITY);
         isShiny = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_IS_SHINY);
         HandleLoadSpecialPokePic(TRUE,
-                                 gMonSpritesGfxPtr->sprites.ptr[position],
+                                 gMonSpritesGfxPtr->spritesGfx[position],
                                  targetSpecies,
                                  personalityValue);
-        src = gMonSpritesGfxPtr->sprites.ptr[position];
+        src = gMonSpritesGfxPtr->spritesGfx[position];
         dst = (void *)(OBJ_VRAM0 + gSprites[gBattlerSpriteIds[battlerAtk]].oam.tileNum * 32);
         DmaCopy32(3, src, dst, MON_PIC_SIZE);
         paletteOffset = OBJ_PLTT_ID(battlerAtk);
