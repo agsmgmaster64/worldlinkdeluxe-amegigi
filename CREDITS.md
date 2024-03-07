@@ -9,6 +9,7 @@
 - **ShinyRaichu**: Making Touhoumon Citrine which this project takes some ideas, Puppets, and mechanics off of
 - **Doesnt**: Making some sprites for the DDC Puppets as well as the basis for their stats
 - **Neotornado**: Helping out with tweaks to the DDC Puppets
+- **BonFlanCake**: Making some miscellaneous sprites including Puppet sprites
 - **TouhouDaMemes SM64**: Bringing me to my contribution to this project in the first place
 
 - **HemoglobinA1C**: Making the orignal Touhoumon Japanese hacks that this project is based off of, including sprites and stats
@@ -25,6 +26,7 @@
 - **KryptonLion**: Making some item icons for a few items
 - **Frander04**: Making the GBA-styled Hisui Pokeball battle sprites
 - **Kiy, usigusom , (), 黒インク**: Making the binary version of the DS-styled Party Screen which I tweaked the decomp version to more closely resemble
+- **ipatix**: Making the improved music engine used for this project
 
 - **haven**: Making Hex Maniac Advance, which was used for porting from the binary version, as well as helping out with the process
 
