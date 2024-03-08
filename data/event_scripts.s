@@ -889,7 +889,7 @@ gText_PlayerWhitedOut::
 
 gText_RegisteredTrainerinPokeNav::
 	.string "Registered {STR_VAR_1} {STR_VAR_2}\n"
-	.string "in the TohoNav.$"
+	.string "in the iDollNav.$"
 
 gText_ComeBackWithSecretPower::
 	.string "Do you know the TM SECRET POWER?\p"
@@ -903,10 +903,10 @@ gText_ComeBackWithSecretPower::
 gText_PokerusExplanation::
 	.string "Your Puppet may be infected with\n"
 	.string "TohoRus.\p"
-	.string "Little is known about the POKéRUS\n"
+	.string "Little is known about the TohoRus\n"
 	.string "except that they are microscopic life-\l"
-	.string "forms that attach to Puppet.\p"
-	.string "While infected, Puppet are said to\n"
+	.string "forms that attach to Puppets.\p"
+	.string "While infected, Puppets are said to\n"
 	.string "grow exceptionally well.$"
 
 	.include "data/text/surf.inc"

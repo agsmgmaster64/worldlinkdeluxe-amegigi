@@ -628,12 +628,9 @@ static bool32 CanLearnMoveLevelUp(u16 species, u16 move)
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)
 {
     struct Pokemon *mon;
-    u32 species, i, monCanLearn, reserveSpecies, reserveSlot;
+    u32 species, i, monCanLearn;
     gSpecialVar_Result = PARTY_SIZE;
     gSpecialVar_0x8004 = 0;
-
-    reserveSpecies = SPECIES_NONE;
-    reserveSlot = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -648,16 +645,12 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)
         if (monCanLearn == ALREADY_KNOWS_MOVE)
             return SetMonResultVariables(i, species);
 
-        if ((CanLearnMoveLevelUp(species, move) || monCanLearn == CAN_LEARN_MOVE)
-         && reserveSpecies != SPECIES_NONE)
+        if (CanLearnMoveLevelUp(species, move) || monCanLearn == CAN_LEARN_MOVE)
         {
-            reserveSpecies = species;
-            reserveSlot = i;
+            return SetMonResultVariables(i, species);
         }
     }
 
-    if (reserveSpecies != SPECIES_NONE)
-        return SetMonResultVariables(reserveSlot, reserveSpecies);
     return FALSE;
 }
 
