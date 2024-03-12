@@ -3112,7 +3112,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             if (gBattleScripting.moveEffect == MOVE_EFFECT_POISON
              || gBattleScripting.moveEffect == MOVE_EFFECT_TOXIC
              || gBattleScripting.moveEffect == MOVE_EFFECT_PARALYSIS
-             || gBattleScripting.moveEffect == MOVE_EFFECT_BURN)
+             || gBattleScripting.moveEffect == MOVE_EFFECT_BURN
+             || gBattleScripting.moveEffect == MOVE_EFFECT_FROSTBITE)
              {
                 gBattleStruct->synchronizeMoveEffect = gBattleScripting.moveEffect;
                 gHitMarker |= HITMARKER_SYNCHRONISE_EFFECT;
@@ -11709,7 +11710,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         if (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN)
          && battlerAbility != ABILITY_HAKUREI_MIKO)
         {
-            if (flags == STAT_CHANGE_ALLOW_PTR)
+            if (flags == STAT_CHANGE_ALLOW_PTR && certain)
             {
                 if (gSpecialStatuses[battler].statRaised)
                 {

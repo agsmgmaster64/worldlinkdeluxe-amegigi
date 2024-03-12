@@ -655,7 +655,11 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
                     if (AI_CanBurn(battlerAtk, battlerDef, abilityDef, BATTLE_PARTNER(battlerAtk), move, MOVE_NONE))
                         return TRUE;
                     break;
-                case MOVE_EFFECT_FREEZE_OR_FROSTBITE:
+                case MOVE_EFFECT_FREEZE:
+                    if (AI_CanBeFrozen(battlerDef, abilityDef))
+                        return TRUE;
+                    break;
+                case MOVE_EFFECT_FROSTBITE:
                     if (AI_CanGetFrostbite(battlerDef, abilityDef))
                         return TRUE;
                     break;
@@ -2715,6 +2719,19 @@ bool32 AI_CanBeBurned(u32 battler, u32 ability)
       || ability == ABILITY_WATER_BUBBLE
       || ability == ABILITY_COMATOSE
       || IS_BATTLER_OF_TYPE(battler, TYPE_FIRE)
+      || gBattleMons[battler].status1 & STATUS1_ANY
+      || IsAbilityStatusProtected(battler)
+      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
+        return FALSE;
+    return TRUE;
+}
+
+bool32 AI_CanBeFrozen(u32 battler, u32 ability)
+{
+    if (ability == ABILITY_FIRE_VEIL
+      || ability == ABILITY_COMATOSE
+      || IsBattlerWeatherAffected(battler, B_WEATHER_SUN)
+      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || IsAbilityStatusProtected(battler)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)

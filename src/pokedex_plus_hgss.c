@@ -589,7 +589,7 @@ static void PrintStatsScreen_Moves_BottomText(u8 taskId);
 static void PrintStatsScreen_Moves_Bottom(u8 taskId);
 static void PrintStatsScreen_Left(u8 taskId);
 static void PrintStatsScreen_Abilities(u8 taskId);
-static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top);
+//static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmallWhite(const u8* str, u8 left, u8 top);
 static void Task_LoadEvolutionScreen(u8 taskId);
@@ -1361,7 +1361,7 @@ static const struct WindowTemplate sInfoScreen_WindowTemplates[] =
     [WIN_FOOTPRINT] =
     {
         .bg = 2,
-        .tilemapLeft = 15, //HGSSS_Ui
+        .tilemapLeft = 25, //HGSSS_Ui
         .tilemapTop = 7, //HGSSS_Ui
         .width = 2,
         .height = 2,
@@ -1555,7 +1555,7 @@ static const struct WindowTemplate sNewEntryInfoScreen_WindowTemplates[] =
     [WIN_FOOTPRINT] =
     {
         .bg = 2,
-        .tilemapLeft = 15, //HGSSS_Ui
+        .tilemapLeft = 25, //HGSSS_Ui
         .tilemapTop = 7, //HGSSS_Ui
         .width = 2,
         .height = 2,
@@ -4329,7 +4329,7 @@ static void PrintInfoScreenText(const u8 *str, u8 left, u8 top)
 
     AddTextPrinterParameterized4(0, 1, left, top, 0, 0, color, -1, str);
 }
-static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
+/*static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
@@ -4337,7 +4337,7 @@ static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
     color[2] = TEXT_DYNAMIC_COLOR_6;
 
     AddTextPrinterParameterized4(0, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
-}
+}*/
 static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
@@ -4440,13 +4440,13 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, u16 species)
 
     if (type1 == type2)
     {
-        SetTypeIconPosAndPal(type1, 147, 48, 0);
+        SetTypeIconPosAndPal(type1, 96, 46, 0);
         SetSpriteInvisibility(1, TRUE);
     }
     else
     {
-        SetTypeIconPosAndPal(type1, 147, 48, 0);
-        SetTypeIconPosAndPal(type2, 147 + 33, 48, 1);
+        SetTypeIconPosAndPal(type1, 96, 46, 0);
+        SetTypeIconPosAndPal(type2, 96 + 33, 46, 1);
     }
 
 }
@@ -4481,13 +4481,13 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     else
         value = num;
     ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, digitCount);
-    PrintInfoScreenTextWhite(str, 123, 17);
+    PrintInfoScreenText(str, 96, 17);
     species = NationalPokedexNumToSpeciesHGSS(num);
     if (species)
         name = GetSpeciesName(species);
     else
         name = sText_TenDashes;
-    PrintInfoScreenTextWhite(name, 139 + (6 * digitCount), 17);
+    PrintInfoScreenText(name, 114 + (6 * digitCount), 17);
     if (owned)
     {
         CopyMonCategoryText(species, str2);
@@ -4497,7 +4497,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     {
         category = gText_5MarksPokemon;
     }
-    PrintInfoScreenText(category, 123, 31);
+    PrintInfoScreenText(category, 100, 31);
     PrintMonMeasurements(species, owned);
     if (owned)
         description = GetSpeciesPokedexDescription(species);
