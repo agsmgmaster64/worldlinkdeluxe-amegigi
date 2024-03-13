@@ -1970,24 +1970,24 @@ static const struct SearchOptionText sDexSearchColorOptions[] =
 static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES + 1] = // + 2 for "None" and terminator, - 1 for Mystery
 {
     {gText_DexEmptyString, gText_DexSearchTypeNone},
-    {gText_DexEmptyString, gTypeNames[TYPE_ILLUSION]},
-    {gText_DexEmptyString, gTypeNames[TYPE_DREAM]},
-    {gText_DexEmptyString, gTypeNames[TYPE_FLYING]},
-    {gText_DexEmptyString, gTypeNames[TYPE_MIASMA]},
-    {gText_DexEmptyString, gTypeNames[TYPE_EARTH]},
-    {gText_DexEmptyString, gTypeNames[TYPE_BEAST]},
-    {gText_DexEmptyString, gTypeNames[TYPE_HEART]},
-    {gText_DexEmptyString, gTypeNames[TYPE_GHOST]},
-    {gText_DexEmptyString, gTypeNames[TYPE_STEEL]},
-    {gText_DexEmptyString, gTypeNames[TYPE_FIRE]},
-    {gText_DexEmptyString, gTypeNames[TYPE_WATER]},
-    {gText_DexEmptyString, gTypeNames[TYPE_NATURE]},
-    {gText_DexEmptyString, gTypeNames[TYPE_WIND]},
-    {gText_DexEmptyString, gTypeNames[TYPE_REASON]},
-    {gText_DexEmptyString, gTypeNames[TYPE_ICE]},
-    {gText_DexEmptyString, gTypeNames[TYPE_FAITH]},
-    {gText_DexEmptyString, gTypeNames[TYPE_DARK]},
-    {gText_DexEmptyString, gTypeNames[TYPE_COSMIC]},
+    {gText_DexEmptyString, gTypesInfo[TYPE_ILLUSION].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_DREAM].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_FLYING].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_MIASMA].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_EARTH].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_BEAST].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_HEART].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_GHOST].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_STEEL].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_FIRE].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_WATER].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_NATURE].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_WIND].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_REASON].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_ICE].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_FAITH].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_DARK].name},
+    {gText_DexEmptyString, gTypesInfo[TYPE_COSMIC].name},
     {},
 };
 
@@ -4381,36 +4381,13 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
 {
     gSprites[sPokedexView->typeIconSpriteIds[spriteArrayId]].invisible = invisible;
 }
-// different from pokemon_summary_screen
-#define TYPE_ICON_PAL_NUM_0     13
-#define TYPE_ICON_PAL_NUM_1     14
-#define TYPE_ICON_PAL_NUM_2     15
-static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
+static const u8 sContestCategoryToOamPaletteNum[CONTEST_CATEGORIES_COUNT] =
 {
-    [TYPE_ILLUSION] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_DREAM] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_FLYING] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_MIASMA] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_EARTH] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_BEAST] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_HEART] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_GHOST] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_STEEL] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_FIRE] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_WATER] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_NATURE] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_WIND] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_REASON] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_ICE] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_FAITH] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_DARK] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_COSMIC] = TYPE_ICON_PAL_NUM_2,
-    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = TYPE_ICON_PAL_NUM_0,
-    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = TYPE_ICON_PAL_NUM_1,
-    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = TYPE_ICON_PAL_NUM_1,
-    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = TYPE_ICON_PAL_NUM_2,
-    [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = TYPE_ICON_PAL_NUM_0,
+    [CONTEST_CATEGORY_COOL] = 13,
+    [CONTEST_CATEGORY_BEAUTY] = 14,
+    [CONTEST_CATEGORY_CUTE] = 14,
+    [CONTEST_CATEGORY_SMART] = 15,
+    [CONTEST_CATEGORY_TOUGH] = 13,
 };
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
@@ -4418,7 +4395,10 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 
     sprite = &gSprites[sPokedexView->typeIconSpriteIds[spriteArrayId]];
     StartSpriteAnim(sprite, typeId);
-    sprite->oam.paletteNum = sMoveTypeToOamPaletteNum[typeId];
+    if (typeId < NUMBER_OF_MON_TYPES)
+        sprite->oam.paletteNum = gTypesInfo[typeId].palette;
+    else
+        sprite->oam.paletteNum = sContestCategoryToOamPaletteNum[typeId - NUMBER_OF_MON_TYPES];
     sprite->x = x + 16;
     sprite->y = y + 8;
     SetSpriteInvisibility(spriteArrayId, FALSE);
@@ -6618,7 +6598,7 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
             StringExpandPlaceholders(gStringVar4, sText_EVO_MOVE );
             break;
         case EVO_FRIENDSHIP_MOVE_TYPE:
-            StringCopy(gStringVar2, gTypeNames[evolutions[i].param]);
+            StringCopy(gStringVar2, gTypesInfo[evolutions[i].param].name);
             StringExpandPlaceholders(gStringVar4, sText_EVO_FRIENDSHIP_MOVE_TYPE );
             break;
         case EVO_MAPSEC:

@@ -1815,7 +1815,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
 
     type = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
 
-    txtPtr = StringCopy(gDisplayedStringBattle, gTypeNames[type]);
+    txtPtr = StringCopy(gDisplayedStringBattle, gTypesInfo[type].name);
     *(txtPtr)++ = CHAR_SLASH;
     *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
     *(txtPtr)++ = EXT_CTRL_CODE_FONT;
@@ -1827,6 +1827,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
         StringCopy(txtPtr, gText_MoveInterfaceSpecial);
     else
         StringCopy(txtPtr, gText_MoveInterfaceStatus);
+
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
 }
 
