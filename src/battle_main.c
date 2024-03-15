@@ -303,7 +303,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Illusn"),
         .generic = _("an Illusion move"),
-        .palette = 15,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BREAKNECK_BLITZ,
         .maxMove = MOVE_MAX_STRIKE,
         //.enhanceItem = ITEM_SILK_SCARF,
@@ -317,7 +317,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Dream"),
         .generic = _("a Dream move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_ALL_OUT_PUMMELING,
         .maxMove = MOVE_MAX_KNUCKLE,
         //.enhanceItem = ITEM_BLACK_BELT,
@@ -333,7 +333,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Flying"),
         .generic = _("a Flying move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_SUPERSONIC_SKYSTRIKE,
         .maxMove = MOVE_MAX_AIRSTREAM,
         //.enhanceItem = ITEM_SHARP_BEAK,
@@ -349,7 +349,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Miasma"),
         .generic = _("a Miasma move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_ACID_DOWNPOUR,
         .maxMove = MOVE_MAX_OOZE,
         //.enhanceItem = ITEM_POISON_BARB,
@@ -365,7 +365,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Earth"),
         .generic = _("a Earth move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_TECTONIC_RAGE,
         .maxMove = MOVE_MAX_QUAKE,
         //.enhanceItem = ITEM_SOFT_SAND,
@@ -381,7 +381,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Beast"),
         .generic = _("a Beast move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_CONTINENTAL_CRUSH,
         .maxMove = MOVE_MAX_ROCKFALL,
         //.enhanceItem = ITEM_HARD_STONE,
@@ -397,7 +397,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Heart"),
         .generic = _("a Heart move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_SAVAGE_SPIN_OUT,
         .maxMove = MOVE_MAX_FLUTTERBY,
         //.enhanceItem = ITEM_SILVER_POWDER,
@@ -413,7 +413,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Ghost"),
         .generic = _("a Ghost move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_NEVER_ENDING_NIGHTMARE,
         .maxMove = MOVE_MAX_PHANTASM,
         //.enhanceItem = ITEM_SPELL_TAG,
@@ -429,7 +429,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Steel"),
         .generic = _("a Steel move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_CORKSCREW_CRASH,
         .maxMove = MOVE_MAX_STEELSPIKE,
         //.enhanceItem = ITEM_METAL_COAT,
@@ -445,13 +445,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("???"),
         .generic = _("a ??? move"),
-        .palette = 15,
+        .palette = TYPE_ICON_PAL_3,
     },
     [TYPE_FIRE] =
     {
         .name = _("Fire"),
         .generic = _("a Fire move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_INFERNO_OVERDRIVE,
         .maxMove = MOVE_MAX_FLARE,
         //.enhanceItem = ITEM_CHARCOAL,
@@ -467,7 +467,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Water"),
         .generic = _("a Water move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_HYDRO_VORTEX,
         .maxMove = MOVE_MAX_GEYSER,
         //.enhanceItem = ITEM_MYSTIC_WATER,
@@ -483,7 +483,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Nature"),
         .generic = _("a Nature move"),
-        .palette = 15,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BLOOM_DOOM,
         .maxMove = MOVE_MAX_OVERGROWTH,
         //.enhanceItem = ITEM_MIRACLE_SEED,
@@ -499,7 +499,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Wind"),
         .generic = _("a Wind move"),
-        .palette = 15,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_GIGAVOLT_HAVOC,
         .maxMove = MOVE_MAX_LIGHTNING,
         //.enhanceItem = ITEM_MAGNET,
@@ -515,7 +515,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Reason"),
         .generic = _("a Reason move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_SHATTERED_PSYCHE,
         .maxMove = MOVE_MAX_MINDSTORM,
         //.enhanceItem = ITEM_TWISTED_SPOON,
@@ -531,7 +531,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Ice"),
         .generic = _("an Ice move"),
-        .palette = 14,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_SUBZERO_SLAMMER,
         .maxMove = MOVE_MAX_HAILSTORM,
         //.enhanceItem = ITEM_NEVER_MELT_ICE,
@@ -547,7 +547,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Faith"),
         .generic = _("a Faith move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_DEVASTATING_DRAKE,
         .maxMove = MOVE_MAX_WYRMWIND,
         //.enhanceItem = ITEM_DRAGON_FANG,
@@ -563,7 +563,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Dark"),
         .generic = _("a Dark move"),
-        .palette = 13,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_BLACK_HOLE_ECLIPSE,
         .maxMove = MOVE_MAX_DARKNESS,
         //.enhanceItem = ITEM_BLACK_GLASSES,
@@ -579,7 +579,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Cosmic"),
         .generic = _("a Cosmic move"),
-        .palette = 15,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_TWINKLE_TACKLE,
         .maxMove = MOVE_MAX_STARFALL,
         //.enhanceItem = ITEM_FAIRY_FEATHER,

@@ -24,6 +24,11 @@
 #define TYPE_COSMIC           18
 #define NUMBER_OF_MON_TYPES   19
 
+// Type icon palettes for summary / HGSS Dex / DexNav
+#define TYPE_ICON_PAL_1     13
+#define TYPE_ICON_PAL_2     14
+#define TYPE_ICON_PAL_3     15
+
 // Pokémon egg groups
 #define EGG_GROUP_NONE                0
 #define EGG_GROUP_MONSTER             1

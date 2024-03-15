@@ -333,13 +333,13 @@ static void BuildNormalStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
     
-    if (FlagGet(FLAG_SYS_DEXNAV_GET))
+    if (FlagGet(FLAG_SYS_DEXNAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
     
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
 
-    if (FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (FlagGet(FLAG_USE_PYRAMID_BAG) == TRUE)
         AddStartMenuAction(MENU_ACTION_PYRAMID_BAG);
     else
         AddStartMenuAction(MENU_ACTION_BAG);
@@ -360,7 +360,7 @@ static void BuildDebugStartMenu(void)
         AddStartMenuAction(MENU_ACTION_POKEDEX);
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_POKEMON);
-    if (FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (FlagGet(FLAG_USE_PYRAMID_BAG) == TRUE)
         AddStartMenuAction(MENU_ACTION_PYRAMID_BAG);
     else
         AddStartMenuAction(MENU_ACTION_BAG);

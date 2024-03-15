@@ -589,7 +589,7 @@ static void PrintStatsScreen_Moves_BottomText(u8 taskId);
 static void PrintStatsScreen_Moves_Bottom(u8 taskId);
 static void PrintStatsScreen_Left(u8 taskId);
 static void PrintStatsScreen_Abilities(u8 taskId);
-//static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top);
+static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top);
 static void PrintInfoScreenTextSmallWhite(const u8* str, u8 left, u8 top);
 static void Task_LoadEvolutionScreen(u8 taskId);
@@ -4329,7 +4329,7 @@ static void PrintInfoScreenText(const u8 *str, u8 left, u8 top)
 
     AddTextPrinterParameterized4(0, 1, left, top, 0, 0, color, -1, str);
 }
-/*static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
+static void PrintInfoScreenTextWhite(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
@@ -4337,7 +4337,7 @@ static void PrintInfoScreenText(const u8 *str, u8 left, u8 top)
     color[2] = TEXT_DYNAMIC_COLOR_6;
 
     AddTextPrinterParameterized4(0, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
-}*/
+}
 static void PrintInfoScreenTextSmall(const u8* str, u8 left, u8 top)
 {
     u8 color[3];
@@ -4381,14 +4381,16 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
 {
     gSprites[sPokedexView->typeIconSpriteIds[spriteArrayId]].invisible = invisible;
 }
+
 static const u8 sContestCategoryToOamPaletteNum[CONTEST_CATEGORIES_COUNT] =
 {
-    [CONTEST_CATEGORY_COOL] = 13,
-    [CONTEST_CATEGORY_BEAUTY] = 14,
-    [CONTEST_CATEGORY_CUTE] = 14,
-    [CONTEST_CATEGORY_SMART] = 15,
-    [CONTEST_CATEGORY_TOUGH] = 13,
+    [CONTEST_CATEGORY_COOL] = TYPE_ICON_PAL_1,
+    [CONTEST_CATEGORY_BEAUTY] = TYPE_ICON_PAL_2,
+    [CONTEST_CATEGORY_CUTE] = TYPE_ICON_PAL_2,
+    [CONTEST_CATEGORY_SMART] = TYPE_ICON_PAL_3,
+    [CONTEST_CATEGORY_TOUGH] = TYPE_ICON_PAL_1,
 };
+
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
     struct Sprite *sprite;
@@ -4403,6 +4405,7 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
     sprite->y = y + 8;
     SetSpriteInvisibility(spriteArrayId, FALSE);
 }
+
 static void PrintCurrentSpeciesTypeInfo(u8 newEntry, u16 species)
 {
     u8 type1, type2;
@@ -4430,6 +4433,7 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, u16 species)
     }
 
 }
+
 static void CreateTypeIconSprites(void)
 {
     u8 i;
@@ -4461,13 +4465,13 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     else
         value = num;
     ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, digitCount);
-    PrintInfoScreenText(str, 96, 17);
+    PrintInfoScreenTextWhite(str, 96, 17);
     species = NationalPokedexNumToSpeciesHGSS(num);
     if (species)
         name = GetSpeciesName(species);
     else
         name = sText_TenDashes;
-    PrintInfoScreenText(name, 114 + (6 * digitCount), 17);
+    PrintInfoScreenTextWhite(name, 114 + (6 * digitCount), 17);
     if (owned)
     {
         CopyMonCategoryText(species, str2);
@@ -7353,7 +7357,7 @@ static void LoadPlayArrowPalette(bool8 cryPlaying)
         color = RGB(18, 28, 0);
     else
         color = RGB(15, 21, 0);
-    LoadPalette(&color, BG_PLTT_ID(5) + 13, PLTT_SIZEOF(1));
+    LoadPalette(&color, BG_PLTT_ID(1) + 14, PLTT_SIZEOF(1));
 }
 
 static void Task_HandleSizeScreenInput(u8 taskId)
