@@ -74,9 +74,9 @@ SINGLE_BATTLE_TEST("Freezing Glare shouldn't freeze Psychic-types")
 #endif
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_ARTICUNO_GALARIAN].types[0] == TYPE_PSYCHIC);
+        ASSUME(gSpeciesInfo[SPECIES_ARTICUNO_GALARIAN].types[0] == TYPE_REASON);
         ASSUME(MoveHasAdditionalEffect(MOVE_FREEZING_GLARE, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
-        ASSUME(gMovesInfo[MOVE_FREEZING_GLARE].type == TYPE_PSYCHIC);
+        ASSUME(gMovesInfo[MOVE_FREEZING_GLARE].type == TYPE_REASON);
         PLAYER(SPECIES_ARTICUNO_GALARIAN);
         OPPONENT(SPECIES_ARTICUNO_GALARIAN);
     } WHEN {

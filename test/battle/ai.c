@@ -769,7 +769,7 @@ AI_SINGLE_BATTLE_TEST("AI will not choose Burn Up if the user lost the Fire typi
 AI_SINGLE_BATTLE_TEST("AI will choose Surf over Thunderbolt and Ice Beam if the opposing mon has Volt Absorb")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_THUNDERBOLT].type == TYPE_ELECTRIC);
+        ASSUME(gMovesInfo[MOVE_THUNDERBOLT].type == TYPE_WIND);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_LANTURN) { Ability(ABILITY_VOLT_ABSORB); };
         OPPONENT(SPECIES_LANTURN) { Moves(MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_SURF); }
