@@ -1,6 +1,7 @@
 	.align 2
 gCryTable::
 	cry Cry_Porygon
+	cry Cry_Terapagos
 	cry Cry_Cirno
 	cry Cry_Rumia
 	cry Cry_Koakuma
@@ -18,6 +19,7 @@ gCryTable::
 	.align 2
 gCryTable_Reverse::
 	cry_reverse Cry_Porygon
+	cry_reverse Cry_Terapagos
 	cry_reverse Cry_Cirno
 	cry_reverse Cry_Rumia
 	cry_reverse Cry_Koakuma

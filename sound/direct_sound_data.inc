@@ -391,6 +391,10 @@ Cry_Porygon::
 	.incbin "sound/direct_sound_samples/cries/porygon.bin"
 
 	.align 2
+Cry_Terapagos::
+	.incbin "sound/direct_sound_samples/cries/terapagos.bin"
+
+	.align 2
 Cry_Cirno::
 	.incbin "sound/direct_sound_samples/cries/cirno.bin"
 
