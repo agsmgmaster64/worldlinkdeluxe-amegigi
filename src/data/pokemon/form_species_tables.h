@@ -270,13 +270,13 @@ static const u16 sFarfetchdFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GRIMER
 static const u16 sGrimerFormSpeciesIdTable[] = {
-    SPECIES_GRIMER,
+    SPECIES_CHIBI_CHEN,
     SPECIES_GRIMER_ALOLAN,
     FORM_SPECIES_END,
 };
 
 static const u16 sMukFormSpeciesIdTable[] = {
-    SPECIES_MUK,
+    SPECIES_NORMAL_CHEN,
     SPECIES_MUK_ALOLAN,
     FORM_SPECIES_END,
 };
@@ -284,7 +284,7 @@ static const u16 sMukFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GASTLY
 static const u16 sGengarFormSpeciesIdTable[] = {
-    SPECIES_GENGAR,
+    SPECIES_ATTACK_RAN,
     SPECIES_GENGAR_MEGA,
     SPECIES_GENGAR_GIGANTAMAX,
     FORM_SPECIES_END,
@@ -303,7 +303,7 @@ static const u16 sSteelixFormSpeciesIdTable[] = {
 
 #if P_FAMILY_KRABBY
 static const u16 sKinglerFormSpeciesIdTable[] = {
-    SPECIES_KINGLER,
+    SPECIES_TECH_YUKARI,
     SPECIES_KINGLER_GIGANTAMAX,
     FORM_SPECIES_END,
 };

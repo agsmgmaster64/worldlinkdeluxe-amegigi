@@ -7,32 +7,5 @@
     "TutorMoves": [
       "MOVE_DREAM_EATER"
     ]
-  },
-  "SHIZUHA": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DREAM_EATER"
-    ]
-  },
-  "C_SHIZUHA_SANNIAN": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DREAM_EATER"
-    ]
-  },
-  "SHIZUHA_SANNIAN": {
-    "LevelMoves": [],
-    "PreEvoMoves": [],
-    "TMMoves": [],
-    "EggMoves": [],
-    "TutorMoves": [
-      "MOVE_DREAM_EATER"
-    ]
   }
 }

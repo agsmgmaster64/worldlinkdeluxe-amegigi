@@ -227,6 +227,8 @@ struct SpecialStatus
     u8 afterYou:1;
     u8 preventLifeOrbDamage:1; // So that Life Orb doesn't activate various effects.
     u8 statRaised:1;
+    u8 concertoUsedMove:1;
+    u8 concertoOriginalTarget:3;
 };
 
 struct SideTimer

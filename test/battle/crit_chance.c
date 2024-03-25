@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Battle Armor and Shell Armor block critical hits")
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_KINGLER; ability = ABILITY_SHELL_ARMOR; }
+    PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
     PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Flag ignoresTargetAbility ignores Battle Armor and Shell Arm
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_KINGLER; ability = ABILITY_SHELL_ARMOR; }
+    PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
     PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Mold Breaker, Teravolt and Turboblaze ignore Battle Armor an
         PARAMETRIZE {
             speciesPlayer = pokemonPlayer[j][0];
             abilityPlayer = pokemonPlayer[j][1];
-            speciesOpponent = SPECIES_KINGLER;
+            speciesOpponent = SPECIES_TECH_YUKARI;
             abilityOpponent = ABILITY_SHELL_ARMOR;
         }
 

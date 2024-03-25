@@ -231,7 +231,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased if move had no affect"
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_GASTLY);
+        PLAYER(SPECIES_CHIBI_RAN);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {

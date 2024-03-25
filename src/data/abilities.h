@@ -2409,12 +2409,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 4,
     },
 
-    [ABILITY_ARMOR_TAIL] =
+    [ABILITY_CONCERTO] =
     {
-        .name = _("Armor Tail"),
-        .description = COMPOUND_STRING("Protects from priority."),
+        .name = _("Concerto"),
+        .description = COMPOUND_STRING("Sings along with others."),
         .aiRating = 5,
-        .breakable = TRUE,
     },
 
     [ABILITY_FLORA_ABSORB] =

@@ -2229,7 +2229,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_CHIBI_YUYUKO"
               },
               {
                 "min_level": 25,
@@ -2545,12 +2545,12 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_GRIMER"
+                "species": "SPECIES_CHIBI_CHEN"
               },
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_GRIMER"
+                "species": "SPECIES_CHIBI_CHEN"
               }
             ]
           }
@@ -6917,7 +6917,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_CHIBI_YUYUKO"
               },
               {
                 "min_level": 25,
@@ -7165,7 +7165,7 @@
               {
                 "min_level": 27,
                 "max_level": 27,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_CHIBI_YUYUKO"
               },
               {
                 "min_level": 29,
@@ -7180,12 +7180,12 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DODUO"
+                "species": "SPECIES_CHIBI_YUYUKO"
               },
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_DODRIO"
+                "species": "SPECIES_NORMAL_YUYUKO"
               },
               {
                 "min_level": 27,
@@ -7195,7 +7195,7 @@
               {
                 "min_level": 31,
                 "max_level": 31,
-                "species": "SPECIES_DODRIO"
+                "species": "SPECIES_NORMAL_YUYUKO"
               },
               {
                 "min_level": 29,

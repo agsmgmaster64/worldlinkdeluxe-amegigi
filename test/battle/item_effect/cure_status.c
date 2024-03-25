@@ -345,7 +345,7 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
     GIVEN {
         ASSUME(gItemsInfo[item].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_GENGAR);
+        OPPONENT(SPECIES_ATTACK_RAN);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CONFUSE_RAY); }
         TURN { USE_ITEM(player, item, partyIndex: 0); }

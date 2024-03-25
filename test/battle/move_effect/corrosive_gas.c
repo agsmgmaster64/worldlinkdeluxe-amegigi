@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas doesn't destroy the item of a Pokemon with the
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_MUK) {Item(ITEM_NURSE_OUTFIT); Ability(ABILITY_COLLECTOR); }
+        OPPONENT(SPECIES_NORMAL_CHEN) {Item(ITEM_NURSE_OUTFIT); Ability(ABILITY_COLLECTOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
     } SCENE {

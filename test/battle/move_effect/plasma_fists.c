@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Ion Duldge turns normal moves into electric for the remainde
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ION_DELUGE].effect == EFFECT_ION_DELUGE);
-        PLAYER(SPECIES_KRABBY);
+        PLAYER(SPECIES_DEFENSE_YUKARI);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ION_DELUGE); MOVE(opponent, MOVE_TACKLE); }
@@ -30,7 +30,7 @@ SINGLE_BATTLE_TEST("Ion Duldge turns normal moves into electric for the remainde
 SINGLE_BATTLE_TEST("Plasma Fists turns normal moves into electric for the remainder of the current turn")
 {
     GIVEN {
-        PLAYER(SPECIES_KRABBY);
+        PLAYER(SPECIES_DEFENSE_YUKARI);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_TACKLE); }
@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Plasma Fists turns normal moves into electric for the remain
 SINGLE_BATTLE_TEST("Plasma Fists type-changing effect is applied after Pixilate")
 {
     GIVEN {
-        PLAYER(SPECIES_KRABBY) { Speed(300); };
+        PLAYER(SPECIES_DEFENSE_YUKARI) { Speed(300); };
         OPPONENT(SPECIES_ALTARIA) { Speed(1); Item(ITEM_ALTARIANITE); }
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_EMBER, megaEvolve: TRUE); }
@@ -68,7 +68,7 @@ SINGLE_BATTLE_TEST("Plasma Fists type-changing effect is applied after Pixilate"
 SINGLE_BATTLE_TEST("Plasma Fists type-changing effect is applied after Normalize")
 {
     GIVEN {
-        PLAYER(SPECIES_KRABBY);
+        PLAYER(SPECIES_DEFENSE_YUKARI);
         OPPONENT(SPECIES_SKITTY) { Ability(ABILITY_NORMALIZE); }
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_EMBER); }
@@ -85,7 +85,7 @@ SINGLE_BATTLE_TEST("Plasma Fists type-changing effect is applied after Normalize
 SINGLE_BATTLE_TEST("Plasma Fists turns normal type dynamax-moves into electric type moves")
 {
     GIVEN {
-        PLAYER(SPECIES_KRABBY) { Speed(100); }
+        PLAYER(SPECIES_DEFENSE_YUKARI) { Speed(100); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_TACKLE, dynamax: TRUE); }

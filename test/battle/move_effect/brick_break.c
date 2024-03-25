@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Brick Break doesn't remove Light Screen, Reflect and Aurora 
     KNOWN_FAILING;
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_GASTLY);
+        OPPONENT(SPECIES_CHIBI_RAN);
     } WHEN {
         TURN { MOVE(player, MOVE_SNOWSCAPE); }
         TURN { MOVE(opponent, move); MOVE(player, MOVE_BRICK_BREAK); }

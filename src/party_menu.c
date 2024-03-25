@@ -2254,7 +2254,7 @@ static bool16 IsMonAllowedInPokemonJump(struct Pokemon *mon)
 
 static bool16 IsMonAllowedInDodrioBerryPicking(struct Pokemon *mon)
 {
-    if (GetMonData(mon, MON_DATA_IS_EGG) != TRUE && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_DODRIO)
+    if (GetMonData(mon, MON_DATA_IS_EGG) != TRUE && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_NORMAL_YUYUKO)
         return TRUE;
     return FALSE;
 }

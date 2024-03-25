@@ -1761,11 +1761,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .teachableLearnset = sDPatchouliTeachableLearnset,
     },
 
-#define SAKUYA_MISC_INFO                                   \
-        PUPPET_MISC_INFO(GROWTH_MEDIUM_SLOW, SOURCE_EOSD), \
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE), \
-        .cryId = CRY_PORYGON
-
     [SPECIES_CHIBI_SAKUYA] =
     {
         .baseHP        = 55,

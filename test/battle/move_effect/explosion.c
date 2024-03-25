@@ -55,9 +55,9 @@ SINGLE_BATTLE_TEST("Explosion causes the user to faint even if it has no effect"
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].type == TYPE_ILLUSION);
-        ASSUME(gSpeciesInfo[SPECIES_GASTLY].types[0] == TYPE_GHOST);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_RAN].types[0] == TYPE_GHOST);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_GASTLY);
+        OPPONENT(SPECIES_CHIBI_RAN);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); }
     } SCENE {

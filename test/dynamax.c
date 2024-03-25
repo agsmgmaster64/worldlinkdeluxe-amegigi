@@ -1143,8 +1143,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Terror traps both opponents")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_G_MAX_TERROR].argument == MAX_EFFECT_MEAN_LOOK);
-        PLAYER(SPECIES_GENGAR) { GigantamaxFactor(TRUE); }
-        PLAYER(SPECIES_GASTLY);
+        PLAYER(SPECIES_ATTACK_RAN) { GigantamaxFactor(TRUE); }
+        PLAYER(SPECIES_CHIBI_RAN);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

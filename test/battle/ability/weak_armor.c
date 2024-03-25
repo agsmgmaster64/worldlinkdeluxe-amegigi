@@ -136,7 +136,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Defense can'
     u32 j;
     GIVEN {
         PLAYER(SPECIES_MAGCARGO) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
-        OPPONENT(SPECIES_CLOYSTER) { Ability(ABILITY_SKILL_LINK); }
+        OPPONENT(SPECIES_TECH_CHEN) { Ability(ABILITY_SKILL_LINK); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCREECH); }
         TURN { MOVE(opponent, MOVE_SCREECH); }
@@ -174,7 +174,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Speed can't 
     u32 j;
     GIVEN {
         PLAYER(SPECIES_MAGCARGO) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
-        OPPONENT(SPECIES_CLOYSTER) { Ability(ABILITY_SKILL_LINK); }
+        OPPONENT(SPECIES_TECH_CHEN) { Ability(ABILITY_SKILL_LINK); }
     } WHEN {
         TURN { MOVE(player, MOVE_AGILITY); }
         TURN { MOVE(player, MOVE_AGILITY); }

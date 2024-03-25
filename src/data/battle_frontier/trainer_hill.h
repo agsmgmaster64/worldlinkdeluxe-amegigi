@@ -955,7 +955,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_DODRIO,
+                        .species = SPECIES_NORMAL_YUYUKO,
                         .heldItem = ITEM_KINGS_ROCK,
                         .moves = {MOVE_HAZE, MOVE_TRI_ATTACK, MOVE_TAUNT, MOVE_TORMENT},
                         .hpEV = 252,
@@ -1379,7 +1379,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [2] =
                     {
-                        .species = SPECIES_MUK,
+                        .species = SPECIES_NORMAL_CHEN,
                         .heldItem = ITEM_BRIGHT_POWDER,
                         .moves = {MOVE_SCREECH, MOVE_DISABLE, MOVE_POISON_BOMB, MOVE_DISPERSE},
                         .hpEV = 255,
@@ -3916,7 +3916,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_ATTACK_RAN,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_MANA_BURST, MOVE_THUNDERBOLT, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH},
                                             .hpEV = 6,
@@ -4063,7 +4063,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_KINGLER,
+                                            .species = SPECIES_TECH_YUKARI,
                                             .heldItem = ITEM_PERSIM_BERRY,
                                             .moves = {MOVE_RETURN, MOVE_PROTECT, MOVE_CRABHAMMER, MOVE_ATTRACT},
                                             .hpEV = 252,
@@ -4382,7 +4382,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_ATTACK_RAN,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_CONFUSE_RAY, MOVE_CHARMING_LOOK, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP},
                                             .hpEV = 252,
@@ -4474,7 +4474,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_DEWGONG,
+                                            .species = SPECIES_DEFENSE_YUYUKO,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_ICE_BEAM, MOVE_SIGNAL_BEAM, MOVE_REST, MOVE_PERISH_SONG},
                                             .hpEV = 252,
@@ -4708,7 +4708,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_ATTACK_RAN,
                                             .heldItem = ITEM_LUM_BERRY,
                                             .moves = {MOVE_MANA_BURST, MOVE_GIGA_DRAIN, MOVE_WILL_O_WISP, MOVE_DESTINY_BOND},
                                             .speedEV = 255,
@@ -4746,7 +4746,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         },
                                     [3] =
                                         {
-                                            .species = SPECIES_GENGAR,
+                                            .species = SPECIES_ATTACK_RAN,
                                             .heldItem = ITEM_SALAC_BERRY,
                                             .moves = {MOVE_EXPLOSION, MOVE_CHARMING_LOOK, MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY},
                                             .attackEV = 255,

@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Mind's Eye allows to hit Ghost-type Pokémon with Normal- an
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_MINDS_EYE); };
-        OPPONENT(SPECIES_GASTLY);
+        OPPONENT(SPECIES_CHIBI_RAN);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

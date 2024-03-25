@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Scrappy allows to hit Ghost-type Pokémon with Normal- and F
 
     GIVEN {
         PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_SCRAPPY); };
-        OPPONENT(SPECIES_GASTLY);
+        OPPONENT(SPECIES_CHIBI_RAN);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

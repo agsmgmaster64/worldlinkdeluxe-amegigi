@@ -3191,7 +3191,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 }
                 break;
             case MOVE_EFFECT_UPROAR:
-                if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR))
+                // Concerto doesn't lock 
+                if (!(gBattleMons[gEffectBattler].status2 & STATUS2_UPROAR) && !gSpecialStatuses[gEffectBattler].concertoUsedMove)
                 {
                     gBattleMons[gEffectBattler].status2 |= STATUS2_MULTIPLETURNS;
                     gLockedMoves[gEffectBattler] = gCurrentMove;
@@ -5820,7 +5821,7 @@ static void Cmd_moveend(void)
                 SWAP(gBattlerAttacker, gBattlerTarget, temp);
                 gHitMarker &= ~HITMARKER_SWAP_ATTACKER_TARGET;
             }
-            if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove)
+            if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove && !gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
             {
                 gDisableStructs[gBattlerAttacker].usedMoves |= gBitTable[gCurrMovePos];
                 gBattleStruct->lastMoveTarget[gBattlerAttacker] = gBattlerTarget;
@@ -5839,7 +5840,7 @@ static void Cmd_moveend(void)
             {
                 if (gHitMarker & HITMARKER_OBEYS)
                 {
-                    if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove)
+                    if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove && !gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
                     {
                         gLastMoves[gBattlerAttacker] = gChosenMove;
                         RecordKnownMove(gBattlerAttacker, gChosenMove);
@@ -6200,6 +6201,36 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_CONCERTO: // Special case because it's so annoying
+            if (gMovesInfo[gCurrentMove].soundMove)
+            {
+                u8 battler, nextConcerto = 0;
+
+                if (!(gBattleStruct->lastMoveFailed & gBitTable[gBattlerAttacker]
+                    || (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove
+                        && gProtectStructs[gBattlerAttacker].usesBouncedMove)))
+                {   // Dance move succeeds
+                    // Set target for other Dancer mons; set bit so that mon cannot activate Dancer off of its own move
+                    if (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
+                    {
+                        gBattleScripting.savedBattler = gBattlerTarget | 0x4;
+                        gBattleScripting.savedBattler |= (gBattlerAttacker << 4);
+                        gSpecialStatuses[gBattlerAttacker].concertoUsedMove = TRUE;
+                    }
+                    for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+                    {
+                        if (GetBattlerAbility(battler) == ABILITY_CONCERTO && !gSpecialStatuses[battler].concertoUsedMove)
+                        {
+                            if (!nextConcerto || (gBattleMons[battler].speed < gBattleMons[nextConcerto & 0x3].speed))
+                                nextConcerto = battler | 0x4;
+                        }
+                    }
+                    if (nextConcerto && AbilityBattleEffects(ABILITYEFFECT_MOVE_END_OTHER, nextConcerto & 0x3, 0, 0, 0))
+                        effect = TRUE;
+                }
+            }
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_EMERGENCY_EXIT: // Special case, because moves hitting multiple opponents stop after switching out
             for (i = 0; i < gBattlersCount; i++)
             {
@@ -6264,6 +6295,8 @@ static void Cmd_moveend(void)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
             if (gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget)
                 *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget & 0x3;
+            if (gSpecialStatuses[gBattlerAttacker].concertoOriginalTarget)
+                *(gBattleStruct->moveTarget + gBattlerAttacker) = gSpecialStatuses[gBattlerAttacker].concertoOriginalTarget & 0x3;
 
             if (B_RAMPAGE_CANCELLING >= GEN_5
               && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH) // If we're rampaging

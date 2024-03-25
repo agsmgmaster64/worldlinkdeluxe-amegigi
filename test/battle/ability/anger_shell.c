@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Anger Shell activates after all hits from a multi-hit move")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DOUBLE_SLAP].effect == EFFECT_MULTI_HIT);
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_ANGER_SHELL); MaxHP(maxHp); HP(maxHp / 2 + 1); }
-        OPPONENT(SPECIES_SHELLDER) { Ability(ABILITY_SKILL_LINK); } // Always hits 5 times.
+        OPPONENT(SPECIES_ATTACK_CHEN) { Ability(ABILITY_SKILL_LINK); } // Always hits 5 times.
     } WHEN {
         TURN { MOVE(opponent, MOVE_DOUBLE_SLAP); }
     } SCENE {

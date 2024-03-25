@@ -139,9 +139,9 @@ Debug_EventScript_Text_DefensiveIVs:
 
 Debug_EventScript_Script_1::
 	settotemboost B_POSITION_OPPONENT_LEFT, 2, 0, 2, 2
-	setvar VAR_0x8004, SPECIES_GENGAR
+	setvar VAR_0x8004, SPECIES_ATTACK_RAN
 	setvar VAR_0x8006, 0
-	setwildbattle SPECIES_GENGAR, 30
+	setwildbattle SPECIES_ATTACK_RAN, 30
 	special StartScriptedGhostBattle
 	waitstate
 	end
@@ -210,6 +210,8 @@ Debug_EventScript_Script_4::
 	end
 
 Debug_EventScript_Script_5::
+	setwildbattle SPECIES_CHIBI_MERLIN, 50, ITEM_NONE, SPECIES_CHIBI_LUNASA, 50, item2=ITEM_NONE
+	dowildbattle
 	end
 
 Debug_EventScript_Script_6::

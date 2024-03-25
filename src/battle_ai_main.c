@@ -857,7 +857,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case ABILITY_DAZZLING:
             case ABILITY_QUEENLY_MAJESTY:
-            case ABILITY_ARMOR_TAIL:
                 if (atkPriority > 0)
                     RETURN_SCORE_MINUS(10);
                 break;
@@ -957,7 +956,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     break;
                 case ABILITY_DAZZLING:
                 case ABILITY_QUEENLY_MAJESTY:
-                case ABILITY_ARMOR_TAIL:
                     if (atkPriority > 0)
                         RETURN_SCORE_MINUS(10);
                     break;

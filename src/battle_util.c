@@ -4963,8 +4963,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gBattlescriptCurrInstr = BattleScript_SoundproofProtected;
                 effect = 1;
             }
-            else if ((gLastUsedAbility == ABILITY_DAZZLING || gLastUsedAbility == ABILITY_QUEENLY_MAJESTY || gLastUsedAbility == ABILITY_ARMOR_TAIL || IsBattlerAlive(battler ^= BIT_FLANK))
-                  && (battlerAbility == ABILITY_DAZZLING || battlerAbility == ABILITY_QUEENLY_MAJESTY || battlerAbility == ABILITY_ARMOR_TAIL)
+            else if ((gLastUsedAbility == ABILITY_DAZZLING || gLastUsedAbility == ABILITY_QUEENLY_MAJESTY || IsBattlerAlive(battler ^= BIT_FLANK))
+                  && (battlerAbility == ABILITY_DAZZLING || battlerAbility == ABILITY_QUEENLY_MAJESTY)
                   && GetChosenMovePriority(gBattlerAttacker) > 0
                   && GetBattlerSide(gBattlerAttacker) != GetBattlerSide(battler))
             {
@@ -5710,6 +5710,30 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 gCalledMove = gCurrentMove;
 
                 // Set the target to the original target of the mon that first used a Dance move
+                gBattlerTarget = gBattleScripting.savedBattler & 0x3;
+
+                // Make sure that the target isn't an ally - if it is, target the original user
+                if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker))
+                    gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
+                gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
+                BattleScriptExecute(BattleScript_DancerActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_CONCERTO:
+            if (IsBattlerAlive(battler)
+             && (gMovesInfo[gCurrentMove].soundMove)
+             && !gSpecialStatuses[battler].concertoUsedMove
+             && gBattlerAttacker != battler)
+            {
+                // Set bit and save Concerto mon's original target
+                gSpecialStatuses[battler].concertoUsedMove = TRUE;
+                gSpecialStatuses[battler].concertoOriginalTarget = *(gBattleStruct->moveTarget + battler) | 0x4;
+                gBattleStruct->atkCancellerTracker = 0;
+                gBattlerAttacker = gBattlerAbility = battler;
+                gCalledMove = gCurrentMove;
+
+                // Set the target to the original target of the mon that first used a sound move
                 gBattlerTarget = gBattleScripting.savedBattler & 0x3;
 
                 // Make sure that the target isn't an ally - if it is, target the original user
@@ -11160,8 +11184,8 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
 #if B_SKY_BATTLE_STRICT_ELIGIBILITY == TRUE
         case SPECIES_SPEAROW:
         case SPECIES_FARFETCHD:
-        case SPECIES_DODUO:
-        case SPECIES_DODRIO:
+        case SPECIES_CHIBI_YUYUKO:
+        case SPECIES_NORMAL_YUYUKO:
         case SPECIES_NORMAL_MINORIKO:
         case SPECIES_NATU:
         case SPECIES_MURKROW:

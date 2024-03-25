@@ -85,22 +85,22 @@
 #define SPECIES_NORMAL_YOUMU                            81
 #define SPECIES_DEFENSE_YOUMU                           82
 #define SPECIES_SPEED_YOUMU                             83
-#define SPECIES_DODUO                                   84 // Yuyuko
-#define SPECIES_DODRIO                                  85
-#define SPECIES_SEEL                                    86
-#define SPECIES_DEWGONG                                 87
-#define SPECIES_GRIMER                                  88 // Chen
-#define SPECIES_MUK                                     89
-#define SPECIES_SHELLDER                                90
-#define SPECIES_CLOYSTER                                91
-#define SPECIES_GASTLY                                  92 // Ran
-#define SPECIES_HAUNTER                                 93
-#define SPECIES_GENGAR                                  94
-#define SPECIES_ONIX                                    95
-#define SPECIES_DROWZEE                                 96 // Yukari
-#define SPECIES_HYPNO                                   97
-#define SPECIES_KRABBY                                  98
-#define SPECIES_KINGLER                                 99
+#define SPECIES_CHIBI_YUYUKO                            84
+#define SPECIES_NORMAL_YUYUKO                           85
+#define SPECIES_ATTACK_YUYUKO                           86
+#define SPECIES_DEFENSE_YUYUKO                          87
+#define SPECIES_CHIBI_CHEN                              88
+#define SPECIES_NORMAL_CHEN                             89
+#define SPECIES_ATTACK_CHEN                             90
+#define SPECIES_TECH_CHEN                               91
+#define SPECIES_CHIBI_RAN                               92
+#define SPECIES_NORMAL_RAN                              93
+#define SPECIES_ATTACK_RAN                              94
+#define SPECIES_HELPER_RAN                              95
+#define SPECIES_CHIBI_YUKARI                            96
+#define SPECIES_NORMAL_YUKARI                           97
+#define SPECIES_DEFENSE_YUKARI                          98
+#define SPECIES_TECH_YUKARI                             99
 #define SPECIES_VOLTORB                                 100 // Wriggle
 #define SPECIES_ELECTRODE                               101
 #define SPECIES_EXEGGCUTE                               102
@@ -315,12 +315,12 @@
 #define SPECIES_PLUSLE                                  311 // Hakurei
 #define SPECIES_MINUN                                   312
 #define SPECIES_VOLBEAT                                 313
-#define SPECIES_ILLUMISE                                314
-#define SPECIES_ROSELIA                                 315 // Kirisame
+#define SPECIES_ILLUMISE                                314 // Kirisame
+#define SPECIES_ROSELIA                                 315
 #define SPECIES_GULPIN                                  316
-#define SPECIES_SWALOT                                  317
+#define SPECIES_SWALOT                                  317 // 
 #define SPECIES_CARVANHA                                318
-#define SPECIES_SHARPEDO                                319 // 
+#define SPECIES_SHARPEDO                                319
 #define SPECIES_WAILMER                                 320
 #define SPECIES_WAILORD                                 321
 #define SPECIES_NUMEL                                   322

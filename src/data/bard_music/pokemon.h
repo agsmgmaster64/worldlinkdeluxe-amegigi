@@ -676,7 +676,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_DODUO] = {
+    [SPECIES_CHIBI_YUYUKO] = {
         { .songLengthId = 26 },
         { .songLengthId = 39 },
         { .songLengthId = 24 },
@@ -684,7 +684,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_DODRIO] = {
+    [SPECIES_NORMAL_YUYUKO] = {
         { .songLengthId = 26 },
         { .songLengthId = 12 },
         { .songLengthId = 24 },
@@ -692,7 +692,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_SEEL] = {
+    [SPECIES_ATTACK_YUYUKO] = {
         { .songLengthId = 14 },
         { .songLengthId = 51 },
         { .songLengthId = 51 },
@@ -700,7 +700,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_DEWGONG] = {
+    [SPECIES_DEFENSE_YUYUKO] = {
         { .songLengthId = 39 },
         { .songLengthId = 21 },
         { .songLengthId = 51 },
@@ -708,7 +708,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_GRIMER] = {
+    [SPECIES_CHIBI_CHEN] = {
         { .songLengthId = 18 },
         { .songLengthId = 48 },
         { .songLengthId = 51 },
@@ -716,7 +716,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_MUK] = {
+    [SPECIES_NORMAL_CHEN] = {
         { .songLengthId = 42 },
         { .songLengthId = 51 },
         { .songLengthId = 51 },
@@ -724,7 +724,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_SHELLDER] = {
+    [SPECIES_ATTACK_CHEN] = {
         { .songLengthId = 9 },
         { .songLengthId = 48 },
         { .songLengthId = 51 },
@@ -732,7 +732,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_CLOYSTER] = {
+    [SPECIES_TECH_CHEN] = {
         { .songLengthId = 30 },
         { .songLengthId = 48 },
         { .songLengthId = 51 },
@@ -740,7 +740,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_GASTLY] = {
+    [SPECIES_CHIBI_RAN] = {
         { .songLengthId =  0 },
         { .songLengthId = 14 },
         { .songLengthId = 51 },
@@ -748,7 +748,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_HAUNTER] = {
+    [SPECIES_NORMAL_RAN] = {
         { .songLengthId = 21 },
         { .songLengthId = 48 },
         { .songLengthId = 51 },
@@ -756,7 +756,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_GENGAR] = {
+    [SPECIES_ATTACK_RAN] = {
         { .songLengthId = 9 },
         { .songLengthId = 8 },
         { .songLengthId = 51 },
@@ -764,7 +764,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_ONIX] = {
+    [SPECIES_HELPER_RAN] = {
         { .songLengthId = 21 },
         { .songLengthId = 17 },
         { .songLengthId = 51 },
@@ -772,7 +772,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_DROWZEE] = {
+    [SPECIES_CHIBI_YUKARI] = {
         { .songLengthId = 33 },
         { .songLengthId = 12 },
         { .songLengthId = 51 },
@@ -780,7 +780,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_HYPNO] = {
+    [SPECIES_NORMAL_YUKARI] = {
         { .songLengthId = 17 },
         { .songLengthId = 24 },
         { .songLengthId = 51 },
@@ -788,7 +788,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_KRABBY] = {
+    [SPECIES_DEFENSE_YUKARI] = {
         { .songLengthId =  0 },
         { .songLengthId = 12 },
         { .songLengthId = 51 },
@@ -796,7 +796,7 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [SPECIES_KINGLER] = {
+    [SPECIES_TECH_YUKARI] = {
         { .songLengthId = 12 },
         { .songLengthId = 48 },
         { .songLengthId = 51 },

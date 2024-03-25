@@ -21,26 +21,6 @@
 #define FLIP    0
 #define NO_FLIP 1
 
-#define PUPPET_MISC_INFO(growth, source)                                \
-        .genderRatio = PERCENT_FEMALE(50),                              \
-        .eggCycles = 20,                                                \
-        .friendship = STANDARD_FRIENDSHIP,                              \
-        .growthRate = growth,                                           \
-        .sourceGame = source,                                           \
-        .noFlip = TRUE
-
-#define CHIBI_DEX_SCALE                                       \
-        .pokemonScale = 356,                                  \
-        .pokemonOffset = 10,                                  \
-        .trainerScale = 256,                                  \
-        .trainerOffset = 0
-
-#define EVOLVED_DEX_SCALE                                     \
-        .pokemonScale = 270,                                  \
-        .pokemonOffset = 0,                                   \
-        .trainerScale = 256,                                  \
-        .trainerOffset = 0
-
 const struct SpeciesInfo gSpeciesInfo[] =
 {
     [SPECIES_NONE] =
