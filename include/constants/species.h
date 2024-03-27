@@ -312,35 +312,35 @@
 #define SPECIES_MEDICHAM                                308
 #define SPECIES_ELECTRIKE                               309
 #define SPECIES_MANECTRIC                               310
-#define SPECIES_PLUSLE                                  311 // Hakurei
+#define SPECIES_PLUSLE                                  311 // Suika
 #define SPECIES_MINUN                                   312
 #define SPECIES_VOLBEAT                                 313
-#define SPECIES_ILLUMISE                                314 // Kirisame
-#define SPECIES_ROSELIA                                 315
+#define SPECIES_ILLUMISE                                314
+#define SPECIES_ROSELIA                                 315 // Iku
 #define SPECIES_GULPIN                                  316
-#define SPECIES_SWALOT                                  317 // 
+#define SPECIES_SWALOT                                  317
 #define SPECIES_CARVANHA                                318
-#define SPECIES_SHARPEDO                                319
+#define SPECIES_SHARPEDO                                319 // Tenshi
 #define SPECIES_WAILMER                                 320
 #define SPECIES_WAILORD                                 321
 #define SPECIES_NUMEL                                   322
-#define SPECIES_CAMERUPT                                323
+#define SPECIES_CAMERUPT                                323 // Hatate
 #define SPECIES_TORKOAL                                 324
 #define SPECIES_SPOINK                                  325
 #define SPECIES_GRUMPIG                                 326
-#define SPECIES_SPINDA                                  327
+#define SPECIES_SPINDA                                  327 // Sunny
 #define SPECIES_TRAPINCH                                328
 #define SPECIES_VIBRAVA                                 329
 #define SPECIES_FLYGON                                  330
-#define SPECIES_CACNEA                                  331
+#define SPECIES_CACNEA                                  331 // Luna
 #define SPECIES_CACTURNE                                332
 #define SPECIES_SWABLU                                  333
 #define SPECIES_ALTARIA                                 334
-#define SPECIES_ZANGOOSE                                335
+#define SPECIES_ZANGOOSE                                335 // Star
 #define SPECIES_SEVIPER                                 336
 #define SPECIES_LUNATONE                                337
 #define SPECIES_SOLROCK                                 338
-#define SPECIES_BARBOACH                                339
+#define SPECIES_BARBOACH                                339 // Kokoro
 #define SPECIES_WHISCASH                                340
 #define SPECIES_CORPHISH                                341
 #define SPECIES_CRAWDAUNT                               342

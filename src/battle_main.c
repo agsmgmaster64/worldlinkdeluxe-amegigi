@@ -6064,7 +6064,7 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
             else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
                 return TYPE_NATURE;
             else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
-                return TYPE_COSMIC;
+                return TYPE_HEART;
             else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
                 return TYPE_REASON;
             else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
@@ -6080,7 +6080,7 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
              && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
              && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
              && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
+             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_HEART))
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
                  || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_WIND))
@@ -6195,7 +6195,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
             else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
                 gBattleStruct->dynamicMoveType = TYPE_NATURE | F_DYNAMIC_TYPE_SET;
             else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
-                gBattleStruct->dynamicMoveType = TYPE_COSMIC | F_DYNAMIC_TYPE_SET;
+                gBattleStruct->dynamicMoveType = TYPE_HEART | F_DYNAMIC_TYPE_SET;
             else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
                 gBattleStruct->dynamicMoveType = TYPE_REASON | F_DYNAMIC_TYPE_SET;
             else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
@@ -6213,7 +6213,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
              && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
              && gMovesInfo[move].effect != EFFECT_CHANGE_TYPE_ON_ITEM
              && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_COSMIC))
+             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_HEART))
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
                  || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_WIND))
