@@ -1,6 +1,8 @@
 #ifndef GUARD_DEXNAV_H
 #define GUARD_DEXNAV_H
 
+#include "main.h"
+
 #define DEXNAV_TIMEOUT                  15  //15 seconds is the time out. Max of 1092 seconds allowed
 #define SNEAKING_PROXIMITY              4   //Tile amount
 #define CREEPING_PROXIMITY              2
@@ -120,6 +122,7 @@
 #define MASK_ENVIRONMENT     0xC000  //last two bit
 
 //funcs
+void DexNavGuiInit(MainCallback callback);
 void EndDexNavSearch(u8 taskId);
 void Task_OpenDexNavFromStartMenu(u8 taskId);
 bool8 TryStartDexnavSearch(void);
