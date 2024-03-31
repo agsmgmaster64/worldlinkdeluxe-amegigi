@@ -493,7 +493,7 @@ static const TransitionStateFunc sPokeballsTrail_Funcs[] =
 
 #define NUM_POKEBALL_TRAILS 5
 static const s16 sPokeballsTrail_StartXCoords[2] = { -16, DISPLAY_WIDTH + 16 };
-static const s16 sPokeballsTrail_Delays[NUM_POKEBALL_TRAILS] = {0, 32, 64, 18, 48};
+static const s16 sPokeballsTrail_Delays[NUM_POKEBALL_TRAILS] = {0, 16, 32, 8, 24};
 static const s16 sPokeballsTrail_Speeds[2] = {8, -8};
 
 static const TransitionStateFunc sClockwiseWipe_Funcs[] =
@@ -737,7 +737,7 @@ static const s16 sAngledWipes_MoveData[NUM_ANGLED_WIPES][5] =
     {168,           DISPLAY_HEIGHT, 48,             0,              1},
 };
 
-static const s16 sAngledWipes_EndDelays[NUM_ANGLED_WIPES] = {8, 4, 2, 1, 1, 1, 0};
+static const s16 sAngledWipes_EndDelays[NUM_ANGLED_WIPES] = {1, 1, 1, 1, 1, 1, 0};
 
 static const TransitionStateFunc sTransitionIntroFuncs[] =
 {
@@ -2084,10 +2084,10 @@ static bool8 Ripple_Main(struct Task *task)
         gScanlineEffectRegBuffers[0][i] = sTransitionData->cameraY + Sin(sinIndex & 0xffff, amplitude);
     }
 
-    if (++task->tTimer == 81)
+    if (++task->tTimer == 41)
     {
         task->tFadeStarted++;
-        BeginNormalPaletteFade(PALETTES_ALL, -2, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, -8, 0, 16, RGB_BLACK);
     }
 
     if (task->tFadeStarted && !gPaletteFade.active)
