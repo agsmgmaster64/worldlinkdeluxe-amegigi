@@ -9857,7 +9857,7 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
         mod = UQ_4_12(1.0);
     if (gMovesInfo[move].effect == EFFECT_SUPER_EFFECTIVE_ON_ARG && defType == gMovesInfo[move].argument)
         mod = UQ_4_12(2.0);
-    if (abilityAtk == ABILITY_NATURE_FROST && (defType == TYPE_NATURE || defType == TYPE_FLYING))
+    if (moveType == TYPE_NATURE && (defType == TYPE_NATURE || defType == TYPE_FLYING) && abilityAtk == ABILITY_NATURE_FROST)
     {
         mod = UQ_4_12(2.0);
         if (recordAbilities)
