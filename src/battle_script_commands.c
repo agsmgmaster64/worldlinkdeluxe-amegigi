@@ -5345,7 +5345,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
         }
         else
         {
-            //u32 side = GetBattlerSide(battlerDef);
+            u32 side = GetBattlerSide(battlerDef);
 
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleMons[battlerDef].item = 0;

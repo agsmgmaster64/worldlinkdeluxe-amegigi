@@ -966,7 +966,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_GOLBAT_1] = {
         .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_ASTONISH, MOVE_GUST, MOVE_CHARMING_LOOK, MOVE_CONFUSE_RAY},
-        .heldItem = ITEM_SPELL_TAG,
+        .heldItem = ITEM_BURIAL_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 170, 0, 170),
         .nature = NATURE_TIMID
     },
