@@ -8060,7 +8060,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
         .abilities = { ABILITY_TRACE, ABILITY_DOWNLOAD, ABILITY_ANALYTIC },
-        .sourceGame = SOURCE_MOF,
+        .sourceGame = SOURCE_OTHER,
         .speciesName = _("Porygon"),
         .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_PORYGON,
@@ -8088,12 +8088,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Porygon,
         .shinyPalette = gMonShinyPalette_Porygon,
         .iconSprite = gMonIcon_Porygon,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         FOOTPRINT(Porygon)
         .levelUpLearnset = sPorygonLevelUpLearnset,
         .teachableLearnset = sPorygonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_TRADE_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2},
-                                {EVO_ITEM, ITEM_UPGRADE, SPECIES_PORYGON2}),
     },
 
 #if P_GEN_2_CROSS_EVOS
