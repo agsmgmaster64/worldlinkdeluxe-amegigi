@@ -1,5 +1,7 @@
 # worldlinkdeluxe-ame
 
+### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
+
 ## What is worldlinkdeluxe-ame?
 
 worldlinkdeluxe-ame is a decomp port of Touhou Puppet Play World Link Deluxe using pokeemerald-expansion based off of pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. It is currently a work-in-progress at the moment and should be treated as such.
