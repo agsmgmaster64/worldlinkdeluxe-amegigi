@@ -5595,8 +5595,17 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #else
     #define ARCEUS_EXP_YIELD 255
 #endif
+#if P_ARCEUS_UNIQUE_FORM_ICONS >= GEN_9
+    #define ARCEUS_ICON(typeName, iconPal)        \
+        .iconSprite = gMonIcon_Arceus ##typeName, \
+        .iconPalIndex = iconPal,
+#else
+    #define ARCEUS_ICON(typeName, iconPal)   \
+        .iconSprite = gMonIcon_ArceusNormal, \
+        .iconPalIndex = 1,
+#endif
 
-#define ARCEUS_SPECIES_INFO(type, typeName)                             \
+#define ARCEUS_SPECIES_INFO(type, typeName, iconPal)                    \
     {                                                                   \
         .baseHP        = 120,                                           \
         .baseAttack    = 120,                                           \
@@ -5637,8 +5646,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backAnimId = BACK_ANIM_GROW_STUTTER,                           \
         .palette = gMonPalette_Arceus ##typeName,                       \
         .shinyPalette = gMonShinyPalette_Arceus ##typeName,             \
-        .iconSprite = gMonIcon_Arceus,                                  \
-        .iconPalIndex = 1,                                              \
+        ARCEUS_ICON(typeName, iconPal)                                  \
         FOOTPRINT(Arceus)                                               \
         .levelUpLearnset = sArceusLevelUpLearnset,                      \
         .teachableLearnset = sArceusTeachableLearnset,                  \
@@ -5647,24 +5655,24 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .isMythical = TRUE,                                             \
     }
 
-    [SPECIES_ARCEUS_NORMAL]   = ARCEUS_SPECIES_INFO(TYPE_ILLUSION,   Normal),
-    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_DREAM, Fighting),
-    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING,   Flying),
-    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_MIASMA,   Poison),
-    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_EARTH,   Ground),
-    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_BEAST,     Rock),
-    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_HEART,      Bug),
-    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST,    Ghost),
-    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL,    Steel),
-    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE,     Fire),
-    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER,    Water),
-    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_NATURE,    Grass),
-    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_WIND, Electric),
-    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_REASON,  Psychic),
-    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE,      Ice),
-    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_FAITH,   Dragon),
-    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark),
-    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_COSMIC,    Fairy),
+    [SPECIES_ARCEUS_NORMAL]   = ARCEUS_SPECIES_INFO(TYPE_ILLUSION,   Normal,   1),
+    [SPECIES_ARCEUS_FIGHTING] = ARCEUS_SPECIES_INFO(TYPE_DREAM, Fighting, 1),
+    [SPECIES_ARCEUS_FLYING]   = ARCEUS_SPECIES_INFO(TYPE_FLYING,   Flying,   2),
+    [SPECIES_ARCEUS_POISON]   = ARCEUS_SPECIES_INFO(TYPE_MIASMA,   Poison,   2),
+    [SPECIES_ARCEUS_GROUND]   = ARCEUS_SPECIES_INFO(TYPE_EARTH,   Ground,   1),
+    [SPECIES_ARCEUS_ROCK]     = ARCEUS_SPECIES_INFO(TYPE_BEAST,     Rock,     2),
+    [SPECIES_ARCEUS_BUG]      = ARCEUS_SPECIES_INFO(TYPE_HEART,      Bug,      1),
+    [SPECIES_ARCEUS_GHOST]    = ARCEUS_SPECIES_INFO(TYPE_GHOST,    Ghost,    2),
+    [SPECIES_ARCEUS_STEEL]    = ARCEUS_SPECIES_INFO(TYPE_STEEL,    Steel,    0),
+    [SPECIES_ARCEUS_FIRE]     = ARCEUS_SPECIES_INFO(TYPE_FIRE,     Fire,     0),
+    [SPECIES_ARCEUS_WATER]    = ARCEUS_SPECIES_INFO(TYPE_WATER,    Water,    0),
+    [SPECIES_ARCEUS_GRASS]    = ARCEUS_SPECIES_INFO(TYPE_NATURE,    Grass,    1),
+    [SPECIES_ARCEUS_ELECTRIC] = ARCEUS_SPECIES_INFO(TYPE_WIND, Electric, 3),
+    [SPECIES_ARCEUS_PSYCHIC]  = ARCEUS_SPECIES_INFO(TYPE_REASON,  Psychic,  1),
+    [SPECIES_ARCEUS_ICE]      = ARCEUS_SPECIES_INFO(TYPE_ICE,      Ice,      0),
+    [SPECIES_ARCEUS_DRAGON]   = ARCEUS_SPECIES_INFO(TYPE_FAITH,   Dragon,   0),
+    [SPECIES_ARCEUS_DARK]     = ARCEUS_SPECIES_INFO(TYPE_DARK,     Dark,     0),
+    [SPECIES_ARCEUS_FAIRY]    = ARCEUS_SPECIES_INFO(TYPE_COSMIC,    Fairy,    0),
 #endif //P_FAMILY_ARCEUS
 
 #ifdef __INTELLISENSE__
