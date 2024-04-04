@@ -7154,13 +7154,27 @@ BattleScript_MoveUsedWokeUp::
 	printfromtable gWokeUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_ATTACKER
+	call BattleScript_TryEarlyBirdHeal
 	return
 
 BattleScript_MonWokeUpInUproar::
 	printstring STRINGID_PKMNWOKEUPINUPROAR
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_ATTACKER
+	call BattleScript_TryEarlyBirdHeal
 	end2
+
+BattleScript_TryEarlyBirdHeal:
+	tryearlybirdheal BS_ATTACKER, BattleScript_EarlyBirdHeal_Ret
+BattleScript_EarlyBirdHeal:
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_LONG
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EarlyBirdHeal_Ret:
+	return
 
 BattleScript_PoisonTurnDmg::
 	printstring STRINGID_PKMNHURTBYPOISON
@@ -7829,7 +7843,7 @@ BattleScript_FascinateEffect:
 BattleScript_FascinateEffect_WaitString:
 	waitmessage B_WAIT_TIME_LONG
 	copybyte sBATTLER, gBattlerTarget
-	call BattleScript_TryAdrenalineOrb
+	call BattleScript_TryIntimidateHoldEffects
 BattleScript_FascinateLoopIncrement:
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_FascinateLoop
@@ -7854,7 +7868,7 @@ BattleScript_FascinateInReverse:
 	call BattleScript_AbilityPopUpTarget
 	pause B_WAIT_TIME_SHORT
 	modifybattlerstatstage BS_TARGET, STAT_SPATK, INCREASE, 1, BattleScript_FascinateLoopIncrement, ANIM_ON
-	call BattleScript_TryAdrenalineOrb
+	call BattleScript_TryIntimidateHoldEffects
 	goto BattleScript_FascinateLoopIncrement
 
 BattleScript_SupersweetSyrupActivates::

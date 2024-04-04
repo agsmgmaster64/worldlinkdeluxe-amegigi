@@ -16310,6 +16310,30 @@ void BS_SetSnow(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+void BS_TryEarlyBirdHeal(void)
+{
+    NATIVE_ARGS(u8 battler, const u8 *jumpInstr);
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+    u32 battlerAbility = GetBattlerAbility(battler);
+
+    if (battlerAbility == ABILITY_EARLY_BIRD && !BATTLER_MAX_HP(battler))
+    {
+        gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 4;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        gBattleMoveDamage *= -1;
+
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        gLastUsedAbility = ABILITY_EARLY_BIRD;
+        RecordAbilityBattle(battler, gLastUsedAbility);
+        gBattlerAbility = battler;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    }
+}
+
 void BS_HandleMegaEvolution(void)
 {
     NATIVE_ARGS(u8 battler, u8 caseId);
