@@ -1724,35 +1724,6 @@ enum
     MOVE_EFFECTIVENESS_SUPER_EFFECTIVE,
 };
 
-static u8 GetVisualTypeEffectiveness(u32 battlerAtk, u32 battlerDef, u16 move, u8 moveType)
-{
-    /*
-    uq4_12_t modifier = CalcTypeEffectivenessMultiplier(move, moveType, battlerAtk, battlerDef, 0, FALSE);
-
-    if (modifier == UQ_4_12(0.0))
-        return MOVE_EFFECTIVENESS_NONE;
-    else if (modifier == UQ_4_12(1.0))
-        return MOVE_EFFECTIVENESS_NORMAL;
-    else if (modifier < UQ_4_12(1.0))
-        return MOVE_EFFECTIVENESS_NOT_VERY_EFFECTIVE;
-    else // if (modifier > UQ_4_12(1.0))
-        return MOVE_EFFECTIVENESS_SUPER_EFFECTIVE;
-    */
-    u8 defType = GetBattlerType(battlerDef, 0);
-    u8 atkType = GetBattlerType(battlerAtk, 0);
-
-    if (IS_MOVE_STATUS(move) && gMovesInfo[move].effect != EFFECT_PARALYZE)
-        return MOVE_EFFECTIVENESS_NORMAL;
-    if (defType == atkType)
-        return MOVE_EFFECTIVENESS_NONE;
-    else if (defType == moveType)
-        return MOVE_EFFECTIVENESS_NORMAL;
-    else if (move == MOVE_ABSORB || atkType == moveType)
-        return MOVE_EFFECTIVENESS_NOT_VERY_EFFECTIVE;
-    else
-        return MOVE_EFFECTIVENESS_SUPER_EFFECTIVE;
-}
-
 static void MoveSelectionDisplayPpString(u32 battlerAtk, u32 battlerDef)
 {
     static const u8 superEffectiveIcon[]   =  _("{UP_ARROW_2}");
@@ -1762,29 +1733,12 @@ static void MoveSelectionDisplayPpString(u32 battlerAtk, u32 battlerDef)
     static const u8 stabIcon[]   =  _("{PLUS}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battlerAtk][4]);
     u8 moveType = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battlerAtk]], battlerAtk);
-    u8 *txtPtr;
 
-    switch (GetVisualTypeEffectiveness(battlerAtk, battlerDef, moveInfo->moves[gMoveSelectionCursor[battlerAtk]], moveType))
-    {
-    default:
-    case MOVE_EFFECTIVENESS_NONE:
-        txtPtr = StringCopy(gDisplayedStringBattle, noEffectIcon);
-    case MOVE_EFFECTIVENESS_NOT_VERY_EFFECTIVE:
-        txtPtr = StringCopy(gDisplayedStringBattle, notVeryEffectiveIcon);
-    case MOVE_EFFECTIVENESS_NORMAL:
-        txtPtr = StringCopy(gDisplayedStringBattle, normalIcon);
-    case MOVE_EFFECTIVENESS_SUPER_EFFECTIVE:
-        txtPtr = StringCopy(gDisplayedStringBattle, superEffectiveIcon);
-    }
-
-    if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && !IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battlerAtk]]))
-        StringCopy(txtPtr, stabIcon);
-/*
     if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && !IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battlerAtk]]))
         StringCopy(gDisplayedStringBattle, stabIcon);
     else
         StringCopy(gDisplayedStringBattle, normalIcon);
-*/
+
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }
 

@@ -7169,7 +7169,7 @@ BattleScript_EarlyBirdHeal:
 	pause B_WAIT_TIME_LONG
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
-	printstring STRINGID_PKMNREGAINEDHEALTH
+	printstring STRINGID_FELTBETTERWITHABILITY
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_EarlyBirdHeal_Ret:
 	return

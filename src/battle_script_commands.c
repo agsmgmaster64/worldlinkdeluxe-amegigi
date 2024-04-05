@@ -16316,7 +16316,7 @@ void BS_TryEarlyBirdHeal(void)
     u32 battler = GetBattlerForBattleScript(cmd->battler);
     u32 battlerAbility = GetBattlerAbility(battler);
 
-    if (battlerAbility == ABILITY_EARLY_BIRD && !BATTLER_MAX_HP(battler))
+    if (battlerAbility == ABILITY_EARLY_BIRD && !BATTLER_MAX_HP(battler) && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
     {
         gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 4;
         if (gBattleMoveDamage == 0)

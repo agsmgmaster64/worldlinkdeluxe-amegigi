@@ -17,7 +17,11 @@ enum {
     CRY_LILY_WHITE,
     CRY_LILY_BLACK,
     CRY_YOUMU,
+    CRY_CHEN,
+    CRY_YUKARI,
     CRY_REISEN,
+    CRY_SHIZUHA,
+    CRY_MINORIKO,
     CRY_COUNT,
 };
 

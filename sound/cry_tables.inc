@@ -14,7 +14,11 @@ gCryTable::
 	cry Cry_LilyWhite
 	cry Cry_LilyBlack
 	cry Cry_Youmu
+	cry Cry_Chen
+	cry Cry_Yukari
 	cry Cry_Reisen
+	cry Cry_Shizuha
+	cry Cry_Minoriko
 
 	.align 2
 gCryTable_Reverse::
@@ -32,4 +36,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_LilyWhite
 	cry_reverse Cry_LilyBlack
 	cry_reverse Cry_Youmu
+	cry_reverse Cry_Chen
+	cry_reverse Cry_Yukari
 	cry_reverse Cry_Reisen
+	cry_reverse Cry_Shizuha
+	cry_reverse Cry_Minoriko

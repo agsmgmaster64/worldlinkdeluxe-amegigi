@@ -443,8 +443,24 @@ Cry_Youmu::
 	.incbin "sound/direct_sound_samples/cries/youmu.bin"
 
 	.align 2
+Cry_Chen::
+	.incbin "sound/direct_sound_samples/cries/chen.bin"
+
+	.align 2
+Cry_Yukari::
+	.incbin "sound/direct_sound_samples/cries/yukari.bin"
+
+	.align 2
 Cry_Reisen::
 	.incbin "sound/direct_sound_samples/cries/reisen.bin"
+
+	.align 2
+Cry_Shizuha::
+	.incbin "sound/direct_sound_samples/cries/shizuha.bin"
+
+	.align 2
+Cry_Minoriko::
+	.incbin "sound/direct_sound_samples/cries/minoriko.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::
