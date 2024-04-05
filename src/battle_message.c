@@ -621,7 +621,8 @@ static const u8 sText_TurboblazeEnters[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} is
 static const u8 sText_SlowStartEnters[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} can't get it going!");
 static const u8 sText_SlowStartEnd[] = _("{B_ATK_NAME_WITH_PREFIX} finally got\nits act together!");
 static const u8 sText_SolarPowerHpDrop[] = _("{B_ATK_NAME_WITH_PREFIX}'s {B_ATK_ABILITY}\ntakes its toll!");
-static const u8 sText_FeltBetterWithEarlyBird[] = _("{B_ATK_NAME_WITH_PREFIX} felt better\nwith {B_ATK_ABILITY}!");
+static const u8 sText_FeltBetterWithEarlyBird[] = _("{B_ATK_NAME_WITH_PREFIX} felt better\nwith its {B_ATK_ABILITY}!");
+static const u8 sText_TargetFeltBetterWithEarlyBird[] = _("{B_DEF_NAME_WITH_PREFIX} felt better\nwith its {B_DEF_ABILITY}!");
 static const u8 sText_AftermathDmg[] = _("{B_ATK_NAME_WITH_PREFIX} is hurt!");
 static const u8 sText_AnticipationActivates[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} shuddered\nin anticipation!");
 static const u8 sText_ForewarnActivates[] = _("{B_SCR_ACTIVE_ABILITY} alerted {B_SCR_ACTIVE_NAME_WITH_PREFIX_DECAP}\nto {B_DEF_NAME_WITH_PREFIX_DECAP}'s {B_BUFF1}!");
@@ -1570,6 +1571,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_CLOAKEDINAHARSHLIGHT - BATTLESTRINGS_TABLE_START] = sText_PkmnIsCloakedInAHarshLight,
     [STRINGID_FROSTBITBY - BATTLESTRINGS_TABLE_START] = sText_PkmnFrostbitBy,
     [STRINGID_FELTBETTERWITHABILITY - BATTLESTRINGS_TABLE_START] = sText_FeltBetterWithEarlyBird,
+    [STRINGID_TARGETFELTBETTERWITHABILITY - BATTLESTRINGS_TABLE_START] = sText_TargetFeltBetterWithEarlyBird,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

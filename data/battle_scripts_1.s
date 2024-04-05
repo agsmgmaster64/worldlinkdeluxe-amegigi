@@ -7392,6 +7392,19 @@ BattleScript_TargetWokeUp::
 	printstring STRINGID_TARGETWOKEUP
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_TARGET
+	call BattleScript_TryEarlyBirdHealTarget
+	return
+
+BattleScript_TryEarlyBirdHealTarget:
+	tryearlybirdheal BS_TARGET, BattleScript_EarlyBirdHealTarget_Ret
+BattleScript_EarlyBirdHealTarget:
+	call BattleScript_AbilityPopUpTarget
+	pause B_WAIT_TIME_LONG
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_TARGETFELTBETTERWITHABILITY
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EarlyBirdHealTarget_Ret:
 	return
 
 BattleScript_TargetBurnHeal::
