@@ -46,6 +46,8 @@ enum
     MENUITEM_CUSTOM_MATCHCALL,
     MENUITEM_CUSTOM_MUSIC_STYLE,
     MENUITEM_CUSTOM_UNIQUE_COLORS,
+    MENUITEM_CUSTOM_IV_VIEW,
+    MENUITEM_CUSTOM_MON_ANIMATIONS,
     MENUITEM_CUSTOM_CANCEL,
     MENUITEM_CUSTOM_COUNT,
 };
@@ -168,6 +170,8 @@ static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
 static void DrawChoices_MusicStyle(int selection, int y);
 static void DrawChoices_UniqueColors(int selection, int y);
+static void DrawChoices_IvView(int selection, int y);
+static void DrawChoices_MonAnimations(int selection, int y);
 static void DrawBgWindowFrames(void);
 
 // EWRAM vars
@@ -216,19 +220,24 @@ struct // MENU_CUSTOM
     int (*processInput)(int selection);
 } static const sItemFunctionsCustom[MENUITEM_CUSTOM_COUNT] =
 {
-    [MENUITEM_CUSTOM_HP_BAR]       = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
-    [MENUITEM_CUSTOM_EXP_BAR]      = {DrawChoices_BarSpeed,    ProcessInput_Options_Eleven},
-    [MENUITEM_CUSTOM_FONT]         = {DrawChoices_Font,        ProcessInput_Options_Two}, 
-    [MENUITEM_CUSTOM_MATCHCALL]    = {DrawChoices_MatchCall,   ProcessInput_Options_Two},
-    [MENUITEM_CUSTOM_MUSIC_STYLE]  = {DrawChoices_MusicStyle,  ProcessInput_Options_Four},
+    [MENUITEM_CUSTOM_HP_BAR]         = {DrawChoices_BarSpeed,      ProcessInput_Options_Eleven},
+    [MENUITEM_CUSTOM_EXP_BAR]        = {DrawChoices_BarSpeed,      ProcessInput_Options_Eleven},
+    [MENUITEM_CUSTOM_FONT]           = {DrawChoices_Font,          ProcessInput_Options_Two}, 
+    [MENUITEM_CUSTOM_MATCHCALL]      = {DrawChoices_MatchCall,     ProcessInput_Options_Two},
+    [MENUITEM_CUSTOM_MUSIC_STYLE]    = {DrawChoices_MusicStyle,    ProcessInput_Options_Four},
     [MENUITEM_CUSTOM_UNIQUE_COLORS]  = {DrawChoices_UniqueColors,  ProcessInput_Options_Two},
-    [MENUITEM_CUSTOM_CANCEL]       = {NULL, NULL},
+    [MENUITEM_CUSTOM_IV_VIEW]        = {DrawChoices_IvView,        ProcessInput_Options_Two},
+    [MENUITEM_CUSTOM_MON_ANIMATIONS] = {DrawChoices_MonAnimations, ProcessInput_Options_Two},
+    [MENUITEM_CUSTOM_CANCEL]         = {NULL, NULL},
 };
 
 // Menu left side option names text
 static const u8 sText_HpBar[]       = _("HP BAR");
 static const u8 sText_ExpBar[]      = _("EXP BAR");
 static const u8 sText_UnitSystem[]  = _("UNIT SYSTEM");
+static const u8 sText_IvView[]      = _("IV VIEW");
+static const u8 sText_Animations[]  = _("ANIMATIONS");
+
 static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = gText_TextSpeed,
@@ -243,13 +252,15 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 
 static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_CUSTOM_COUNT] =
 {
-    [MENUITEM_CUSTOM_HP_BAR]      = sText_HpBar,
-    [MENUITEM_CUSTOM_EXP_BAR]     = sText_ExpBar,
-    [MENUITEM_CUSTOM_FONT]        = gText_Font,
-    [MENUITEM_CUSTOM_MATCHCALL]   = gText_OptionMatchCalls,
-    [MENUITEM_CUSTOM_MUSIC_STYLE] = gText_OptionMusicStyle,
-    [MENUITEM_CUSTOM_UNIQUE_COLORS] = gText_OptionUniqueColors,
-    [MENUITEM_CUSTOM_CANCEL]      = gText_OptionMenuSave,
+    [MENUITEM_CUSTOM_HP_BAR]         = sText_HpBar,
+    [MENUITEM_CUSTOM_EXP_BAR]        = sText_ExpBar,
+    [MENUITEM_CUSTOM_FONT]           = gText_Font,
+    [MENUITEM_CUSTOM_MATCHCALL]      = gText_OptionMatchCalls,
+    [MENUITEM_CUSTOM_MUSIC_STYLE]    = gText_OptionMusicStyle,
+    [MENUITEM_CUSTOM_UNIQUE_COLORS]  = gText_OptionUniqueColors,
+    [MENUITEM_CUSTOM_IV_VIEW]        = sText_IvView,
+    [MENUITEM_CUSTOM_MON_ANIMATIONS] = sText_Animations,
+    [MENUITEM_CUSTOM_CANCEL]         = gText_OptionMenuSave,
 };
 
 static const u8 *OptionTextRight(u8 menuItem)
@@ -294,6 +305,8 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CUSTOM_MATCHCALL:       return TRUE;
         case MENUITEM_CUSTOM_MUSIC_STYLE:     return TRUE;
         case MENUITEM_CUSTOM_UNIQUE_COLORS:   return TRUE;
+        case MENUITEM_CUSTOM_IV_VIEW:         return TRUE;
+        case MENUITEM_CUSTOM_MON_ANIMATIONS:  return TRUE;
         case MENUITEM_CUSTOM_CANCEL:          return TRUE;
         case MENUITEM_CUSTOM_COUNT:           return TRUE;
         default:
@@ -343,15 +356,22 @@ static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.
 static const u8 sText_Desc_MusicType[]          = _("Choose the music used.");
 static const u8 sText_Desc_UniqueColorsOn[]     = _("Enables unique colors for\nPuppets.");
 static const u8 sText_Desc_UniqueColorsOff[]    = _("Disables unique colors for\nPuppets.");
+static const u8 sText_Desc_IvViewOn[]           = _("IVs can be viewed in the\nsummary.");
+static const u8 sText_Desc_IvViewOff[]          = _("IVs cannot be viewed in the\nsummary.");
+static const u8 sText_Desc_MonAnimationsOn[]    = _("Animations will play for\nPuppets.");
+static const u8 sText_Desc_MonAnimationsOff[]   = _("Animations are disabled\nfor Puppets.");
+
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][2] =
 {
-    [MENUITEM_CUSTOM_HP_BAR]      = {sText_Desc_BattleHPBar,        sText_Empty},
-    [MENUITEM_CUSTOM_EXP_BAR]     = {sText_Desc_BattleExpBar,       sText_Empty},
-    [MENUITEM_CUSTOM_FONT]        = {sText_Desc_FontType,           sText_Desc_FontType},
-    [MENUITEM_CUSTOM_MATCHCALL]   = {sText_Desc_OverworldCallsOn,   sText_Desc_OverworldCallsOff},
-    [MENUITEM_CUSTOM_MUSIC_STYLE] = {sText_Desc_MusicType,          sText_Empty},
-    [MENUITEM_CUSTOM_UNIQUE_COLORS] = {sText_Desc_UniqueColorsOn,   sText_Desc_UniqueColorsOff},
-    [MENUITEM_CUSTOM_CANCEL]      = {sText_Desc_Save,               sText_Empty},
+    [MENUITEM_CUSTOM_HP_BAR]         = {sText_Desc_BattleHPBar,        sText_Empty},
+    [MENUITEM_CUSTOM_EXP_BAR]        = {sText_Desc_BattleExpBar,       sText_Empty},
+    [MENUITEM_CUSTOM_FONT]           = {sText_Desc_FontType,           sText_Desc_FontType},
+    [MENUITEM_CUSTOM_MATCHCALL]      = {sText_Desc_OverworldCallsOn,   sText_Desc_OverworldCallsOff},
+    [MENUITEM_CUSTOM_MUSIC_STYLE]    = {sText_Desc_MusicType,          sText_Empty},
+    [MENUITEM_CUSTOM_UNIQUE_COLORS]  = {sText_Desc_UniqueColorsOn,     sText_Desc_UniqueColorsOff},
+    [MENUITEM_CUSTOM_IV_VIEW]        = {sText_Desc_IvViewOn,           sText_Desc_IvViewOff},
+    [MENUITEM_CUSTOM_MON_ANIMATIONS] = {sText_Desc_MonAnimationsOn,    sText_Desc_MonAnimationsOff},
+    [MENUITEM_CUSTOM_CANCEL]         = {sText_Desc_Save,               sText_Empty},
 };
 
 // Disabled Descriptions
@@ -379,8 +399,10 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM
     [MENUITEM_CUSTOM_MATCHCALL]   = sText_Empty,
     [MENUITEM_CUSTOM_MUSIC_STYLE] = sText_Empty,
     [MENUITEM_CUSTOM_UNIQUE_COLORS] = sText_Empty,
+    [MENUITEM_CUSTOM_IV_VIEW]     = sText_Empty,
+    [MENUITEM_CUSTOM_MON_ANIMATIONS] = sText_Empty,
     [MENUITEM_CUSTOM_CANCEL]      = sText_Empty,
-    [MENUITEM_CUSTOM_COUNT]      = sText_Empty,
+    [MENUITEM_CUSTOM_COUNT]       = sText_Empty,
 };
 
 static const u8 *const OptionTextDescription(void)
@@ -635,6 +657,8 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
         sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE] = gSaveBlock2Ptr->optionsMusicStyle;
         sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
+        sOptions->sel_custom[MENUITEM_CUSTOM_IV_VIEW]     = gSaveBlock2Ptr->optionsSummaryIvView;
+        sOptions->sel_custom[MENUITEM_CUSTOM_MON_ANIMATIONS] = gSaveBlock2Ptr->optionsMonAnimations;
         sOptions->submenu = MENU_MAIN;
 
         gMain.state++;
@@ -824,6 +848,8 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL];
     gSaveBlock2Ptr->optionsMusicStyle       = sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE];
     gSaveBlock2Ptr->optionsUniqueColors     = sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS];
+    gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->sel_custom[MENUITEM_CUSTOM_IV_VIEW];
+    gSaveBlock2Ptr->optionsMonAnimations    = sOptions->sel_custom[MENUITEM_CUSTOM_MON_ANIMATIONS];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1184,6 +1210,7 @@ static const u8 sText_MusicZGS[] = _("ZGS");
 static const u8 sText_MusicAlt[] = _("ALT");
 static const u8 sText_MusicVanilla[] = _("VANILLA");
 static const u8 *const sMusicStyleStrings[] = {sText_MusicDefault, sText_MusicZGS, sText_MusicAlt, sText_MusicVanilla};
+
 static void DrawChoices_MusicStyle(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_CUSTOM_MUSIC_STYLE);
@@ -1193,6 +1220,26 @@ static void DrawChoices_MusicStyle(int selection, int y)
 static void DrawChoices_UniqueColors(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_CUSTOM_UNIQUE_COLORS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
+}
+
+static void DrawChoices_IvView(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_CUSTOM_IV_VIEW);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
+}
+
+static void DrawChoices_MonAnimations(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_CUSTOM_MON_ANIMATIONS);
     u8 styles[2] = {0};
     styles[selection] = 1;
 

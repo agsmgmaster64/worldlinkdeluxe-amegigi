@@ -497,7 +497,7 @@ struct SaveBlock2
     /*0x10*/ u8 playTimeMinutes;
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
-    /*0x13*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
+    /*0x13*/ u32 optionsButtonMode:3;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
     /*0x14*/ u32 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
              u32 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u32 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
@@ -511,6 +511,8 @@ struct SaveBlock2
              u32 optionsCurrentFont:1;  //tx_optionsPlus
              u32 optionsMusicStyle:3; //tx_optionsPlus
              u32 optionsUniqueColors:1; //tx_optionsPlus
+             u32 optionsSummaryIvView:1; //tx_optionsPlus
+             u32 optionsMonAnimations:1; //tx_optionsPlus
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;

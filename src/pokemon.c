@@ -5403,7 +5403,7 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
         pan = 0;
         break;
     }
-    if (panModeAnimFlag & SKIP_FRONT_ANIM)
+    if ((panModeAnimFlag & SKIP_FRONT_ANIM) || gSaveBlock2Ptr->optionsMonAnimations == 1)
     {
         // No animation, only check if cry needs to be played
         if (!noCry)
@@ -5437,22 +5437,29 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
 
 void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame)
 {
-    if (!oneFrame && HasTwoFramesAnimation(species))
-        StartSpriteAnim(sprite, 1);
-    if (gSpeciesInfo[species].frontAnimDelay != 0)
+    if (gSaveBlock2Ptr->optionsMonAnimations == 1)
     {
-        // Animation has delay, start delay task
-        u8 taskId = CreateTask(Task_PokemonSummaryAnimateAfterDelay, 0);
-        STORE_PTR_IN_TASK(sprite, taskId, 0);
-        gTasks[taskId].sAnimId = gSpeciesInfo[species].frontAnimId;
-        gTasks[taskId].sAnimDelay = gSpeciesInfo[species].frontAnimDelay;
-        SummaryScreen_SetAnimDelayTaskId(taskId);
-        SetSpriteCB_MonAnimDummy(sprite);
+        sprite->callback = SpriteCallbackDummy;
     }
     else
     {
-        // No delay, start animation
-        StartMonSummaryAnimation(sprite, gSpeciesInfo[species].frontAnimId);
+        if (!oneFrame && HasTwoFramesAnimation(species))
+            StartSpriteAnim(sprite, 1);
+        if (gSpeciesInfo[species].frontAnimDelay != 0)
+        {
+            // Animation has delay, start delay task
+            u8 taskId = CreateTask(Task_PokemonSummaryAnimateAfterDelay, 0);
+            STORE_PTR_IN_TASK(sprite, taskId, 0);
+            gTasks[taskId].sAnimId = gSpeciesInfo[species].frontAnimId;
+            gTasks[taskId].sAnimDelay = gSpeciesInfo[species].frontAnimDelay;
+            SummaryScreen_SetAnimDelayTaskId(taskId);
+            SetSpriteCB_MonAnimDummy(sprite);
+        }
+        else
+        {
+            // No delay, start animation
+            StartMonSummaryAnimation(sprite, gSpeciesInfo[species].frontAnimId);
+        }
     }
 }
 
@@ -5465,7 +5472,8 @@ void StopPokemonAnimationDelayTask(void)
 
 void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
 {
-    if (gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+    if ((gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+     || gSaveBlock2Ptr->optionsMonAnimations == 1)
     {
         sprite->callback = SpriteCallbackDummy;
     }
