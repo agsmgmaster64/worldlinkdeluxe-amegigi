@@ -452,7 +452,7 @@ void ReadMail(struct Mail *mail, void (*exitCallback)(void), bool8 hasText)
     sMailRead->international = TRUE;
     sMailRead->parserSingle = CopyEasyChatWord;
     sMailRead->parserMultiple = ConvertEasyChatWordsToString;
-    if (IS_ITEM_MAIL(mail->itemId))
+    if (ItemIsMail(mail->itemId))
     {
         sMailRead->mailType = ITEM_TO_MAIL(mail->itemId);
     }

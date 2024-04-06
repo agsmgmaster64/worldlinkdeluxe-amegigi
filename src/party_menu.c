@@ -3660,8 +3660,7 @@ void CursorCb_MoveItemCallback(u8 taskId)
             }
 
             // Pokemon cannot switch items with mail to avoid creating unremovable blank mails
-            if (GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) >= ITEM_ORANGE_MAIL
-             && GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM) <= ITEM_RETRO_MAIL)
+            if (ItemIsMail(GetMonData(&gPlayerParty[gPartyMenu.slotId2], MON_DATA_HELD_ITEM)))
             {
                 PlaySE(SE_FAILURE);
                 return;
@@ -3975,10 +3974,24 @@ static void ChangePokemonNicknamePartyScreen(void)
 
 static void CursorCb_Nickname(u8 taskId)
 {
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
     PlaySE(SE_SELECT);
-    gSpecialVar_0x8004 = gPartyMenu.slotId;
-    sPartyMenuInternal->exitCallback = ChangePokemonNicknamePartyScreen;
-    Task_ClosePartyMenu(taskId);
+    if (!IsTradedMon(mon))
+    {
+        gSpecialVar_0x8004 = gPartyMenu.slotId;
+        sPartyMenuInternal->exitCallback = ChangePokemonNicknamePartyScreen;
+        Task_ClosePartyMenu(taskId);
+    }
+    else
+    {
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnIsTradedMon);
+        PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+        PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+    }
 }
 
 static void CursorCb_Moves(u8 taskId)

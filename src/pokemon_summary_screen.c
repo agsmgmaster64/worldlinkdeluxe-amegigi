@@ -3563,10 +3563,27 @@ static void PrintRightColumnStats(void)
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar4, 2, 1, 0, 0);
 }
 
+static void BufferStat(u8 *dst, s8 colorMod, u32 stat, u32 strId, u32 n)
+{
+    static const u8 sTextBlue[] = _("{COLOR DYNAMIC_COLOR3}");
+    static const u8 sTextNeutral[] = _("{COLOR WHITE}");
+    u8 *txtPtr;
+
+    if (!colorMod)
+        txtPtr = StringCopy(dst, sTextNeutral);
+    else
+        txtPtr = StringCopy(dst, sTextBlue);
+
+    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
+}
+
 static void BufferIvOrEvStats(u8 mode)
 {
     u16 hp, maxHp, atk, def, spA, spD, spe;
     u8 *currHPString = Alloc(20);
+    u8 colorMod, i;
+    u16 totalEvs;
 
     switch (mode)
     {
@@ -3589,6 +3606,16 @@ static void BufferIvOrEvStats(u8 mode)
         spA = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPATK_EV);
         spD = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPDEF_EV);
         spe = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPEED_EV);
+        
+        totalEvs = 0;
+
+        for (i = 0; i < NUM_STATS; i++)
+        {
+            totalEvs += GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HP_EV + i, 0);
+        }
+
+        if (totalEvs == MAX_TOTAL_EVS)
+            colorMod = 1;
         break;
     case 2: // iv mode
         hp = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HP_IV);
@@ -3629,40 +3656,34 @@ static void BufferIvOrEvStats(u8 mode)
         PrintRightColumnStats();
         break;
     case 1:
-        ConvertIntToDecimalStringN(gStringVar1, hp, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar2, atk, STR_CONV_MODE_RIGHT_ALIGN, 7);
-        ConvertIntToDecimalStringN(gStringVar3, def, STR_CONV_MODE_RIGHT_ALIGN, 7);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gStringVar3);
+        BufferStat(gStringVar1, colorMod, hp, 0, 3);
+        BufferStat(gStringVar2, colorMod, atk, 1, 7);
+        BufferStat(gStringVar3, colorMod, def, 2, 7);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutEV);
         PrintLeftColumnStats();
 
-        ConvertIntToDecimalStringN(gStringVar1, spA, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar2, spD, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar3, spe, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gStringVar3);
+        BufferStat(gStringVar1, colorMod, spA, 0, 3);
+        BufferStat(gStringVar2, colorMod, spD, 1, 3);
+        BufferStat(gStringVar3, colorMod, spe, 2, 3);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
         PrintRightColumnStats();
         break;
     case 2:
-        ConvertIntToDecimalStringN(gStringVar1, hp, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar2, atk, STR_CONV_MODE_RIGHT_ALIGN, 7);
-        ConvertIntToDecimalStringN(gStringVar3, def, STR_CONV_MODE_RIGHT_ALIGN, 7);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gStringVar3);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_HP);
+        BufferStat(gStringVar1, colorMod, hp, 0, 3);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_ATK);
+        BufferStat(gStringVar2, colorMod, atk, 1, 7);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_DEF);
+        BufferStat(gStringVar3, colorMod, def, 2, 7);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutIV);
         PrintLeftColumnStats();
 
-        ConvertIntToDecimalStringN(gStringVar1, spA, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar2, spD, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        ConvertIntToDecimalStringN(gStringVar3, spe, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
-        DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gStringVar3);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPATK);
+        BufferStat(gStringVar1, colorMod, spA, 0, 3);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPDEF);
+        BufferStat(gStringVar2, colorMod, spD, 1, 3);
+        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPEED);
+        BufferStat(gStringVar3, colorMod, spe, 2, 3);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
         PrintRightColumnStats();
         break;
