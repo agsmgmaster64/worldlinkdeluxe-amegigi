@@ -1,5 +1,5 @@
 === TRAINER_NONE ===
-Name:
+Name: 
 Class: Pkmn Trainer 1
 Pic: Hiker
 Gender: Male
@@ -15,7 +15,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Geodude
+Helper Lyrica
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -41,7 +41,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -58,7 +58,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -110,7 +110,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -260,7 +260,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -298,7 +298,7 @@ Poochyena
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Chibi Flandre
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -328,7 +328,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -358,7 +358,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -427,7 +427,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -444,7 +444,7 @@ Makuhita
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Machoke
+Placehold Lunasa
 Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -462,7 +462,7 @@ Mightyena
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Golbat
+Normal Flandre
 Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -599,7 +599,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Medicham
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
+- Mana Burst
 
 Claydol
 Level: 43
@@ -620,7 +620,7 @@ Roselia
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Gloom
+Speed Flandre
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -654,7 +654,7 @@ Shroomish
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Gloom
+Speed Flandre
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -675,7 +675,7 @@ Shroomish
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Gloom
+Speed Flandre
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -696,7 +696,7 @@ Breloom
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Gloom
+Speed Flandre
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -713,7 +713,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 23
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Dig
@@ -738,7 +738,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Sandstorm
 - Ancient Power
 
-Sandshrew
+Helper Koakuma
 Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Dig
@@ -746,7 +746,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Sand Attack
 - Poison Sting
 
-Sandslash
+Helper Koakuma
 Level: 27
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Dig
@@ -763,7 +763,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dig
@@ -771,7 +771,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sand Attack
 - Poison Sting
 
-Sandslash
+Helper Koakuma
 Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dig
@@ -788,7 +788,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 27
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 - Dig
@@ -805,7 +805,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Dig
@@ -822,7 +822,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 33
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 - Dig
@@ -839,7 +839,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 36
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Dig
@@ -856,7 +856,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -873,7 +873,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -890,7 +890,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 30
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -907,7 +907,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 33
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -924,7 +924,7 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 36
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -941,12 +941,12 @@ Music: Interviewer
 Double Battle: Yes
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 39
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Sonic Boom
 - Thunder Wave
-- Metal Sound
+- Binding Voice
 - Thunderbolt
 
 Exploud
@@ -954,7 +954,7 @@ Level: 39
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Astonish
 - Stomp
-- Supersonic
+- Jamming
 - Hyper Voice
 
 === TRAINER_LOLA_1 ===
@@ -1279,16 +1279,16 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Wailmer
 Level: 28
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
+- Tremors
 - Whirlpool
 - Astonish
 - Water Pulse
 
-Magneton
+Defense Youmu
 Level: 28
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunderbolt
-- Supersonic
+- Jamming
 - Thunder Wave
 - Sonic Boom
 
@@ -1390,11 +1390,11 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Magneton
+Defense Youmu
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Muk
+Normal Chen
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1416,7 +1416,7 @@ Mawile
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Kadabra
+Chibi Lunasa
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1430,11 +1430,11 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Dodrio
+Normal Yuyuko
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Kadabra
+Chibi Lunasa
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1460,7 +1460,7 @@ Kecleon
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1566,7 +1566,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Graveler
+Placeholder Lyrica
 Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -1600,7 +1600,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Wigglytuff
+Defense Remilia
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Defense Curl
@@ -1646,7 +1646,7 @@ Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mega Drain
 - Magical Leaf
-- Grass Whistle
+- Nature Sound
 - Leech Seed
 
 Pelipper
@@ -1789,11 +1789,11 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Sandslash
+Helper Koakuma
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ninetales
+Normal Remilia
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2125,7 +2125,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Seaking @ Nugget
+Defense Reisen @ Nugget
 Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -2200,7 +2200,7 @@ Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Fury Swipes
 - Mud Sport
-- Odor Sleuth
+- Hearts Eye
 - Sand Attack
 
 === TRAINER_MELISSA ===
@@ -2276,7 +2276,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2320,7 +2320,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Lombre
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Uproar
+- Performance
 - Fury Swipes
 - Fake Out
 - Water Pulse
@@ -2544,7 +2544,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Fury Swipes
 - Mud Sport
-- Odor Sleuth
+- Hearts Eye
 - Sand Attack
 
 === TRAINER_STEVE_1 ===
@@ -2689,7 +2689,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2702,11 +2702,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -2719,7 +2719,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -2727,7 +2727,7 @@ Wingull
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -2753,7 +2753,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
+Normal Lyrica
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2779,7 +2779,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2796,7 +2796,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2826,7 +2826,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
+Normal Lyrica
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2916,7 +2916,7 @@ Wingull
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2929,7 +2929,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
+Normal Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2998,7 +2998,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3006,7 +3006,7 @@ Wingull
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3019,7 +3019,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3062,7 +3062,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -3096,7 +3096,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 13
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -3109,11 +3109,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Machoke
+Placehold Lunasa
 Level: 32
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -3139,11 +3139,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 24
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Machoke
+Placehold Lunasa
 Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -3156,7 +3156,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3169,7 +3169,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
+Placehold Lunasa
 Level: 27
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
@@ -3182,11 +3182,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 29
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Machoke
+Placehold Lunasa
 Level: 29
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -3199,15 +3199,15 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 31
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Machoke
+Placehold Lunasa
 Level: 31
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Machoke
+Placehold Lunasa
 Level: 31
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -3220,19 +3220,19 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Machoke
+Placehold Lunasa
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Machoke
+Placehold Lunasa
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Machamp @ Black Belt
+Chibi Merlin @ China Dress
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -3249,7 +3249,7 @@ Makuhita
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Machoke
+Placehold Lunasa
 Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3262,7 +3262,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3299,7 +3299,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Voltorb
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Charge
+- Battery Charge
 - Shock Wave
 - Screech
 
@@ -3316,7 +3316,7 @@ Poochyena
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Chibi Flandre
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3346,7 +3346,7 @@ Voltorb
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Magnemite
+Normal Youmu
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3376,7 +3376,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3393,7 +3393,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -3401,7 +3401,7 @@ Whismur
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Magnemite
+Normal Youmu
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -3414,7 +3414,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -3422,7 +3422,7 @@ Loudred
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Magnemite
+Normal Youmu
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -3435,7 +3435,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -3443,7 +3443,7 @@ Loudred
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Magneton
+Defense Youmu
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -3456,7 +3456,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -3464,7 +3464,7 @@ Exploud
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Magneton
+Defense Youmu
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -3631,7 +3631,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dig
@@ -3656,7 +3656,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Psybeam
 - Rock Tomb
 
-Sandshrew
+Helper Koakuma
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Poison Sting
@@ -3694,7 +3694,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3754,7 +3754,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3801,7 +3801,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -3826,7 +3826,7 @@ Swellow
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Sandslash
+Helper Koakuma
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4015,7 +4015,7 @@ Surskit
 Level: 38
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Masquerain @ Silver Powder
+Masquerain @ Blazer
 Level: 38
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4032,10 +4032,10 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Abra
+Speed Lily Black
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hidden Power
+- Multi Pulse
 
 === TRAINER_PRESTON ===
 Name: PRESTON
@@ -4106,7 +4106,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4136,7 +4136,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 33
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -4153,7 +4153,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 38
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -4170,7 +4170,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -4191,7 +4191,7 @@ Solrock
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Alakazam
+Normal Lunasa
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4204,10 +4204,10 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Abra
+Speed Lily Black
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hidden Power
+- Multi Pulse
 
 === TRAINER_HANNAH ===
 Name: HANNAH
@@ -4244,7 +4244,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4265,7 +4265,7 @@ Natu
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kadabra
+Chibi Lunasa
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4295,7 +4295,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4312,7 +4312,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 34
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -4329,7 +4329,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 37
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -4346,7 +4346,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 40
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -4367,7 +4367,7 @@ Lunatone
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Alakazam
+Normal Lunasa
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4441,7 +4441,7 @@ Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Headbutt
 - Sand Attack
-- Odor Sleuth
+- Hearts Eye
 - Fury Swipes
 
 Manectric
@@ -4449,7 +4449,7 @@ Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Quick Attack
 - Spark
-- Odor Sleuth
+- Hearts Eye
 - Roar
 
 === TRAINER_WALTER_4 ===
@@ -4466,7 +4466,7 @@ Level: 39
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Headbutt
 - Sand Attack
-- Odor Sleuth
+- Hearts Eye
 - Fury Swipes
 
 Manectric
@@ -4474,7 +4474,7 @@ Level: 39
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Quick Attack
 - Spark
-- Odor Sleuth
+- Hearts Eye
 
 === TRAINER_WALTER_5 ===
 Name: WALTER
@@ -4490,15 +4490,15 @@ Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Headbutt
 - Sand Attack
-- Odor Sleuth
+- Hearts Eye
 - Fury Swipes
 
-Golduck
+Tech Alice
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Fury Swipes
 - Disable
-- Confusion
+- Psyshot
 - Psych Up
 
 Manectric
@@ -4506,7 +4506,7 @@ Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Quick Attack
 - Spark
-- Odor Sleuth
+- Hearts Eye
 - Roar
 
 === TRAINER_SIDNEY ===
@@ -4599,7 +4599,7 @@ Banette
 Level: 49
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shadow Ball
-- Psychic
+- Mana Burst
 - Thunderbolt
 - Facade
 
@@ -4677,7 +4677,7 @@ Shelgon
 Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Rock Tomb
-- Dragon Claw
+- Heart Break
 - Protect
 - Double Edge
 
@@ -4685,7 +4685,7 @@ Altaria
 Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Edge
-- Dragon Breath
+- Decision
 - Dragon Dance
 - Aerial Ace
 
@@ -4702,14 +4702,14 @@ Level: 53
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Flamethrower
 - Crunch
-- Dragon Breath
+- Decision
 - Earthquake
 
 Salamence @ Sitrus Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
-- Dragon Claw
+- Heart Break
 - Rock Slide
 - Crunch
 
@@ -4723,7 +4723,7 @@ Items: Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Geodude
+Helper Lyrica
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
@@ -4731,7 +4731,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Throw
 - Rock Tomb
 
-Geodude
+Helper Lyrica
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
@@ -4757,7 +4757,7 @@ Items: Super Potion / Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machop
+Helper Lunasa
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Karate Chop
@@ -4794,7 +4794,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Voltorb
 Level: 20
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Rollout
+- Tremors
 - Spark
 - Self Destruct
 - Shock Wave
@@ -4807,10 +4807,10 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Quick Attack
 - Howl
 
-Magneton
+Defense Youmu
 Level: 22
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Supersonic
+- Jamming
 - Shock Wave
 - Thunder Wave
 - Sonic Boom
@@ -4937,7 +4937,7 @@ Pelipper
 Level: 30
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Water Gun
-- Supersonic
+- Jamming
 - Protect
 - Aerial Ace
 
@@ -4945,7 +4945,7 @@ Skarmory
 Level: 31
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Sand Attack
-- Fury Attack
+- Magic Knife
 - Steel Wing
 - Aerial Ace
 
@@ -4953,7 +4953,7 @@ Altaria @ Oran Berry
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Dragon Breath
+- Decision
 - Dragon Dance
 - Aerial Ace
 
@@ -4972,13 +4972,13 @@ Level: 41
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Earthquake
 - Ancient Power
-- Psychic
+- Mana Burst
 - Light Screen
 
 Xatu
 Level: 41
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Psychic
+- Mana Burst
 - Sunny Day
 - Confuse Ray
 - Calm Mind
@@ -4987,7 +4987,7 @@ Lunatone @ Sitrus Berry
 Level: 42
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Light Screen
-- Psychic
+- Mana Burst
 - Hypnosis
 - Calm Mind
 
@@ -4996,7 +4996,7 @@ Level: 42
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Sunny Day
 - Solar Beam
-- Psychic
+- Mana Burst
 - Flamethrower
 
 === TRAINER_JUAN_1 ===
@@ -5088,7 +5088,7 @@ Numel
 Level: 15
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Oddish
+Attack Flandre
 Level: 15
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -5306,7 +5306,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 - Tail Whip
 - Headbutt
-- Odor Sleuth
+- Hearts Eye
 
 Makuhita
 Level: 17
@@ -5330,7 +5330,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Growl
 - Tail Whip
 - Headbutt
-- Odor Sleuth
+- Hearts Eye
 
 Makuhita
 Level: 30
@@ -5354,7 +5354,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Growl
 - Tail Whip
 - Headbutt
-- Odor Sleuth
+- Hearts Eye
 
 Makuhita
 Level: 33
@@ -5378,7 +5378,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Growl
 - Tail Whip
 - Headbutt
-- Odor Sleuth
+- Hearts Eye
 
 Makuhita
 Level: 36
@@ -5402,7 +5402,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Growl
 - Tail Whip
 - Headbutt
-- Odor Sleuth
+- Hearts Eye
 
 Hariyama
 Level: 38
@@ -5572,7 +5572,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Pikachu @ Oran Berry
+Chibi Koakuma @ Oran Berry
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5777,7 +5777,7 @@ Level: 18
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - High Jump Kick
 - Meditate
-- Confusion
+- Psyshot
 - Detect
 
 === TRAINER_SHELBY_1 ===
@@ -5904,7 +5904,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 10
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Tackle
@@ -5918,11 +5918,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -5935,7 +5935,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6004,7 +6004,7 @@ Gardevoir
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Skill Swap
-- Psychic
+- Mana Burst
 - Thunderbolt
 - Calm Mind
 
@@ -6180,16 +6180,16 @@ Wailord
 Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rain Dance
-- Water Spout
+- Aqua Shower
 - Double Edge
 - Blizzard
 
-Tentacruel
+Normal Lyrica
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
 - Hydro Pump
-- Sludge Bomb
+- Poison Bomb
 - Ice Beam
 
 Ludicolo
@@ -6237,7 +6237,7 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6279,7 +6279,7 @@ Magikarp
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goldeen
+Normal Reisen
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6300,7 +6300,7 @@ Magikarp
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6317,7 +6317,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 11
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6330,7 +6330,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6338,7 +6338,7 @@ Wailmer
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6368,7 +6368,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6385,7 +6385,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6402,7 +6402,7 @@ Wailmer
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6415,7 +6415,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6444,7 +6444,7 @@ Carvanha
 Level: 26
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 26
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6469,7 +6469,7 @@ Carvanha
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6498,7 +6498,7 @@ Gyarados
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6552,7 +6552,7 @@ Voltorb
 Level: 6
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Magnemite
+Normal Youmu
 Level: 14
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -6565,11 +6565,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Magnemite
+Normal Youmu
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6582,7 +6582,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6595,7 +6595,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6608,7 +6608,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6621,7 +6621,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 36
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6634,7 +6634,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6647,7 +6647,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6660,11 +6660,11 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 14
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Magnemite
+Normal Youmu
 Level: 14
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -6681,7 +6681,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 28
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6694,7 +6694,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 31
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6707,7 +6707,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6720,7 +6720,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magneton
+Defense Youmu
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6733,7 +6733,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6746,7 +6746,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 28
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6759,7 +6759,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 31
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6772,7 +6772,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
+Normal Yuyuko
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6785,7 +6785,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
+Normal Yuyuko
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6798,7 +6798,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6811,7 +6811,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 28
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6824,7 +6824,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 31
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6837,7 +6837,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
+Normal Yuyuko
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -6850,7 +6850,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Dodrio
+Normal Yuyuko
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -6863,11 +6863,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
+Tech Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6897,7 +6897,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6910,11 +6910,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
+Tech Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6931,7 +6931,7 @@ Wingull
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -6944,7 +6944,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -6957,7 +6957,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 42
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -6996,7 +6996,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7013,7 +7013,7 @@ Wingull
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 19 HP / 19 Atk / 19 Def / 19 SpA / 19 SpD / 19 Spe
 
@@ -7026,7 +7026,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7039,7 +7039,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -7056,7 +7056,7 @@ Wingull
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Staryu
+Tech Reisen
 Level: 33
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
@@ -7069,7 +7069,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -7082,7 +7082,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 42
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -7201,7 +7201,7 @@ Altaria
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Shelgon @ Dragon Fang
+Shelgon @ Priestess
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -7217,7 +7217,7 @@ AI: Check Bad Move
 Bagon
 Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Breath
+- Decision
 - Headbutt
 - Focus Energy
 - Ember
@@ -7274,7 +7274,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -7325,7 +7325,7 @@ Music: Cool
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -7573,7 +7573,7 @@ Double Battle: No
 Koffing
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Smog
 - Self Destruct
@@ -7581,7 +7581,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Koffing
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Smog
 - Self Destruct
@@ -7589,7 +7589,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Koffing
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7621,7 +7621,7 @@ Double Battle: No
 Koffing
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7629,14 +7629,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Koffing
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
 Koffing
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7658,7 +7658,7 @@ Double Battle: No
 Koffing
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7666,7 +7666,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Koffing
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7674,7 +7674,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Koffing
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
@@ -7695,21 +7695,21 @@ Double Battle: No
 Koffing
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
 Koffing
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
 Koffing
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
@@ -7730,14 +7730,14 @@ Double Battle: No
 Koffing
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 
 Koffing
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7745,7 +7745,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Koffing
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-- Poison Gas
+- Toxic Gas
 - Tackle
 - Sludge
 - Self Destruct
@@ -7936,7 +7936,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Castform
+Castform Normal
 Level: 30
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Rain Dance
@@ -7992,7 +7992,7 @@ Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Leech Seed
 - Mega Drain
-- Grass Whistle
+- Nature Sound
 - Sunny Day
 
 Numel
@@ -8084,7 +8084,7 @@ Wingull
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goldeen
+Normal Reisen
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8097,7 +8097,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8127,7 +8127,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8140,7 +8140,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8148,7 +8148,7 @@ Wingull
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goldeen
+Normal Reisen
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8200,7 +8200,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
+Defense Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8230,7 +8230,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8243,7 +8243,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8273,7 +8273,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
+Defense Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8316,7 +8316,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
+Defense Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8333,7 +8333,7 @@ Horsea
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seadra
+Chibi Reisen
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8380,7 +8380,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Seaking
+Defense Reisen
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8419,7 +8419,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8457,7 +8457,7 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dig
@@ -8482,7 +8482,7 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sand Attack
@@ -8493,7 +8493,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Marill
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Rollout
+- Tremors
 - Bubble Beam
 - Tail Whip
 - Defense Curl
@@ -8562,7 +8562,7 @@ Shroomish
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Oddish
+Attack Flandre
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8617,7 +8617,7 @@ Shroomish
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Gloom
+Speed Flandre
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -8638,7 +8638,7 @@ Breloom
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Gloom
+Speed Flandre
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -8659,7 +8659,7 @@ Breloom
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Gloom
+Speed Flandre
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -8680,7 +8680,7 @@ Breloom
 Level: 40
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Vileplume
+Chibi Letty
 Level: 40
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -8824,7 +8824,7 @@ Plusle
 Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Spark
-- Charge
+- Battery Charge
 - Fake Tears
 - Helping Hand
 
@@ -8832,7 +8832,7 @@ Minun
 Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Spark
-- Charge
+- Battery Charge
 - Charm
 - Helping Hand
 
@@ -8849,7 +8849,7 @@ Plusle
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Thunder
-- Charge
+- Battery Charge
 - Fake Tears
 - Helping Hand
 
@@ -8857,7 +8857,7 @@ Minun
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Thunder
-- Charge
+- Battery Charge
 - Charm
 - Helping Hand
 
@@ -8874,7 +8874,7 @@ Wingull
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Machop
+Helper Lunasa
 Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -8904,7 +8904,7 @@ Wingull
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
+Placehold Lunasa
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8921,11 +8921,11 @@ Wingull
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machop
+Helper Lunasa
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8938,11 +8938,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
+Normal Lyrica
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
+Placehold Lunasa
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8955,7 +8955,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8963,7 +8963,7 @@ Pelipper
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
+Placehold Lunasa
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8980,7 +8980,7 @@ Spheal
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
+Placehold Lunasa
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8997,11 +8997,11 @@ Wingull
 Level: 36
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 36
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Machoke
+Placehold Lunasa
 Level: 36
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -9018,11 +9018,11 @@ Pelipper
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Machoke
+Placehold Lunasa
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -9039,11 +9039,11 @@ Pelipper
 Level: 42
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 42
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Machoke
+Placehold Lunasa
 Level: 42
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -9060,11 +9060,11 @@ Pelipper
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Machoke
+Placehold Lunasa
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -9135,7 +9135,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Toxic
 - Thunder
 - Self Destruct
-- Sludge Bomb
+- Poison Bomb
 
 === TRAINER_KAYLEY ===
 Name: KAYLEY
@@ -9146,7 +9146,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Castform
+Castform Normal
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sunny Day
@@ -9167,7 +9167,7 @@ Manectric
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machamp
+Chibi Merlin
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9180,7 +9180,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
+Placehold Lunasa
 Level: 33
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -9304,7 +9304,7 @@ Mightyena
 Level: 38
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Golbat
+Normal Flandre
 Level: 40
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9391,7 +9391,7 @@ Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Aerial Ace
 - Safeguard
-- Dragon Breath
+- Decision
 - Dragon Dance
 
 Delcatty
@@ -9410,10 +9410,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Defense Youmu
 Level: 41
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+- Jamming
 - Thunderbolt
 - Tri Attack
 - Screech
@@ -9423,7 +9423,7 @@ Level: 45
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
 - Calm Mind
-- Psychic
+- Mana Burst
 - Future Sight
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
@@ -9817,7 +9817,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Explosion
 - Reflect
 - Light Screen
-- Psychic
+- Mana Burst
 
 Solrock
 Level: 43
@@ -9988,7 +9988,7 @@ Skitty
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goldeen
+Normal Reisen
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10019,7 +10019,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandslash
+Helper Koakuma
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10052,7 +10052,7 @@ Skitty
 Level: 22
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Goldeen
+Normal Reisen
 Level: 22
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -10085,7 +10085,7 @@ Delcatty
 Level: 25
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Goldeen
+Normal Reisen
 Level: 25
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -10118,7 +10118,7 @@ Delcatty
 Level: 28
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Goldeen
+Normal Reisen
 Level: 28
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -10151,7 +10151,7 @@ Delcatty
 Level: 31
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Seaking
+Defense Reisen
 Level: 31
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -10275,7 +10275,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Setup First Turn
 
-Gloom
+Speed Flandre
 Level: 26
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -10333,7 +10333,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Setup First Turn
 
-Gloom
+Speed Flandre
 Level: 30
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 
@@ -10351,7 +10351,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Gloom
+Speed Flandre
 Level: 33
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
@@ -10369,7 +10369,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Setup First Turn
 
-Gloom
+Speed Flandre
 Level: 36
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -10404,7 +10404,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10421,7 +10421,7 @@ Mightyena
 Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Golbat
+Normal Flandre
 Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -10438,7 +10438,7 @@ Wailmer
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Chibi Flandre
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10455,7 +10455,7 @@ Wailmer
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Chibi Flandre
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10485,11 +10485,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -10502,7 +10502,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Machop
+Helper Lunasa
 Level: 13
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -10590,7 +10590,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacruel
+Normal Lyrica
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10603,7 +10603,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10655,7 +10655,7 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -10694,7 +10694,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10724,7 +10724,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10827,7 +10827,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10840,7 +10840,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10869,7 +10869,7 @@ Numel
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Zubat
+Chibi Flandre
 Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -10961,7 +10961,7 @@ Mightyena
 Level: 24
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Zubat
+Chibi Flandre
 Level: 24
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -11118,7 +11118,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Oddish
+Attack Flandre
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11165,7 +11165,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -11385,7 +11385,7 @@ Numel
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machop
+Helper Lunasa
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11398,15 +11398,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude
+Helper Lyrica
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude
+Helper Lyrica
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11419,11 +11419,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machop
+Helper Lunasa
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11436,7 +11436,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11453,7 +11453,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11461,7 +11461,7 @@ Nosepass
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11474,7 +11474,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11487,7 +11487,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11540,15 +11540,15 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude
+Helper Lyrica
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machop
+Helper Lunasa
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11561,19 +11561,19 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Geodude
+Helper Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Geodude
+Helper Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 24
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -11586,19 +11586,19 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Geodude
+Helper Lyrica
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 27
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -11611,19 +11611,19 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -11636,19 +11636,19 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Graveler
+Placeholder Lyrica
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Golem
+Chibi Layla
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -11780,7 +11780,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11814,9 +11814,9 @@ AI: Check Bad Move
 Meditite
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
+- Burn Powder
 - Detect
-- Confusion
+- Psyshot
 - Thunder Punch
 
 Meditite
@@ -11824,7 +11824,7 @@ Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder Punch
 - Detect
-- Confusion
+- Psyshot
 - Meditate
 
 === TRAINER_DANIELLE ===
@@ -11839,9 +11839,9 @@ AI: Check Bad Move
 Meditite
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bide
+- Burn Powder
 - Detect
-- Confusion
+- Psyshot
 - Fire Punch
 
 === TRAINER_HIDEO ===
@@ -11865,7 +11865,7 @@ Koffing
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Poison Gas
+- Toxic Gas
 - Sludge
 - Smokescreen
 
@@ -11881,7 +11881,7 @@ AI: Check Bad Move / Try To Faint
 Koffing
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Gas
+- Toxic Gas
 - Self Destruct
 - Sludge
 - Smokescreen
@@ -11985,7 +11985,7 @@ Level: 47
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Aerial Ace
 - Safeguard
-- Dragon Breath
+- Decision
 - Dragon Dance
 
 Delcatty
@@ -12004,10 +12004,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Defense Youmu
 Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+- Jamming
 - Thunderbolt
 - Tri Attack
 - Screech
@@ -12017,7 +12017,7 @@ Level: 48
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
 - Calm Mind
-- Psychic
+- Mana Burst
 - Future Sight
 
 === TRAINER_WALLY_VR_3 ===
@@ -12035,7 +12035,7 @@ Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Aerial Ace
 - Safeguard
-- Dragon Breath
+- Decision
 - Dragon Dance
 
 Delcatty
@@ -12054,10 +12054,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Defense Youmu
 Level: 47
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+- Jamming
 - Thunderbolt
 - Tri Attack
 - Screech
@@ -12067,7 +12067,7 @@ Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
 - Calm Mind
-- Psychic
+- Mana Burst
 - Future Sight
 
 === TRAINER_WALLY_VR_4 ===
@@ -12085,7 +12085,7 @@ Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Aerial Ace
 - Safeguard
-- Dragon Breath
+- Decision
 - Dragon Dance
 
 Delcatty
@@ -12104,10 +12104,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Defense Youmu
 Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+- Jamming
 - Thunderbolt
 - Tri Attack
 - Screech
@@ -12117,7 +12117,7 @@ Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
 - Calm Mind
-- Psychic
+- Mana Burst
 - Future Sight
 
 === TRAINER_WALLY_VR_5 ===
@@ -12135,7 +12135,7 @@ Level: 56
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Aerial Ace
 - Safeguard
-- Dragon Breath
+- Decision
 - Dragon Dance
 
 Delcatty
@@ -12154,10 +12154,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Giga Drain
 - Toxic
 
-Magneton
+Defense Youmu
 Level: 53
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Supersonic
+- Jamming
 - Thunderbolt
 - Tri Attack
 - Screech
@@ -12167,7 +12167,7 @@ Level: 57
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Double Team
 - Calm Mind
-- Psychic
+- Mana Burst
 - Future Sight
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
@@ -12333,7 +12333,7 @@ Wailmer
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12354,7 +12354,7 @@ Carvanha
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12389,7 +12389,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Gloom
+Speed Flandre
 Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -12424,7 +12424,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
+Placehold Lunasa
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12437,11 +12437,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12526,7 +12526,7 @@ Swablu
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sing
-- Fury Attack
+- Magic Knife
 - Safeguard
 - Aerial Ace
 
@@ -12555,11 +12555,11 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Mega Drain
 - Leech Seed
 
-Graveler
+Placeholder Lyrica
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Defense Curl
-- Rollout
+- Tremors
 - Mud Sport
 - Rock Throw
 
@@ -12600,7 +12600,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Medicham
 Level: 39
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Psychic
+- Mana Burst
 - Fire Punch
 - Psych Up
 - Protect
@@ -12625,7 +12625,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Medicham
 Level: 43
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
+- Mana Burst
 - Fire Punch
 - Psych Up
 - Protect
@@ -12650,7 +12650,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Medicham
 Level: 46
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
-- Psychic
+- Mana Burst
 - Fire Punch
 - Psych Up
 - Protect
@@ -12675,7 +12675,7 @@ AI: Check Bad Move / Try To Faint / Setup First Turn
 Medicham
 Level: 49
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
-- Psychic
+- Mana Burst
 - Fire Punch
 - Psych Up
 - Protect
@@ -12700,7 +12700,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Medicham
 Level: 52
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-- Psychic
+- Mana Burst
 - Fire Punch
 - Psych Up
 - Protect
@@ -12824,11 +12824,11 @@ Music: Swimmer
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12845,7 +12845,7 @@ Magikarp
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 20
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12927,11 +12927,11 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12978,7 +12978,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Normal Youmu
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13017,7 +13017,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13107,7 +13107,7 @@ Baltoy
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13201,7 +13201,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13244,7 +13244,7 @@ Baltoy
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zubat
+Chibi Flandre
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13287,7 +13287,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13313,7 +13313,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13365,7 +13365,7 @@ Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
+Chibi Flandre
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13425,7 +13425,7 @@ Mightyena
 Level: 28
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Zubat
+Chibi Flandre
 Level: 30
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
@@ -13481,7 +13481,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
+Chibi Lyrica
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13507,11 +13507,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -13541,7 +13541,7 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13558,11 +13558,11 @@ Wingull
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machop
+Helper Lunasa
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13631,11 +13631,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Sandslash
+Helper Koakuma
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13699,11 +13699,11 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dodrio
+Normal Yuyuko
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13733,7 +13733,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Kadabra
+Chibi Lunasa
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13784,11 +13784,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Geodude
+Helper Lyrica
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13818,7 +13818,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
+Chibi Yuyuko
 Level: 17
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13905,7 +13905,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Goldeen
+Normal Reisen
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14018,7 +14018,7 @@ Marill
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -14088,11 +14088,11 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Golem
+Chibi Layla
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
-- Rollout
+- Tremors
 - Magnitude
 - Explosion
 
@@ -14104,10 +14104,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Onix
+Helper Ran
 Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
+- Steel Fist
 - Explosion
 - Roar
 - Rock Slide
@@ -14138,11 +14138,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Surf
 
-Golem
+Chibi Layla
 Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
-- Rollout
+- Tremors
 - Magnitude
 - Explosion
 
@@ -14154,10 +14154,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Onix
+Helper Ran
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
+- Steel Fist
 - Explosion
 - Roar
 - Rock Slide
@@ -14188,11 +14188,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Surf
 
-Golem
+Chibi Layla
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
-- Rollout
+- Tremors
 - Earthquake
 - Explosion
 
@@ -14204,10 +14204,10 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Onix
+Helper Ran
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
+- Steel Fist
 - Explosion
 - Roar
 - Rock Slide
@@ -14235,14 +14235,14 @@ Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Hyper Beam
-- Supersonic
+- Jamming
 - Protect
 
-Golem
+Chibi Layla
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
-- Rollout
+- Tremors
 - Earthquake
 - Explosion
 
@@ -14265,7 +14265,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Steelix
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
+- Steel Fist
 - Explosion
 - Roar
 - Rock Slide
@@ -14288,7 +14288,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machamp @ Sitrus Berry
+Chibi Merlin @ Sitrus Berry
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
@@ -14299,7 +14299,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Meditite
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Light Screen
 - Reflect
 - Focus Punch
@@ -14330,7 +14330,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machamp @ Sitrus Berry
+Chibi Merlin @ Sitrus Berry
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
@@ -14341,7 +14341,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Medicham
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Light Screen
 - Reflect
 - Focus Punch
@@ -14375,12 +14375,12 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Hitmonchan
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Uppercut
+- Soar
 - Protect
 - Fire Punch
 - Ice Punch
 
-Machamp @ Sitrus Berry
+Chibi Merlin @ Sitrus Berry
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Karate Chop
@@ -14394,7 +14394,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Light Screen
 - Reflect
-- Psychic
+- Mana Burst
 
 Hitmontop
 Level: 45
@@ -14433,12 +14433,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Hitmonchan
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sky Uppercut
+- Soar
 - Protect
 - Fire Punch
 - Ice Punch
 
-Machamp @ Sitrus Berry
+Chibi Merlin @ Sitrus Berry
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Cross Chop
@@ -14452,7 +14452,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Punch
 - Light Screen
 - Reflect
-- Psychic
+- Mana Burst
 
 Hitmontop
 Level: 50
@@ -14491,15 +14491,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Electrode
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
+- Tremors
 - Thunder
 - Explosion
 - Rain Dance
 
-Magneton @ Sitrus Berry
+Defense Youmu @ Sitrus Berry
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
+- Jamming
 - Protect
 - Thunder
 - Rain Dance
@@ -14522,7 +14522,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Pikachu
+Chibi Koakuma
 Level: 39
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
@@ -14541,15 +14541,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Electrode
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
+- Tremors
 - Thunder
 - Explosion
 - Rain Dance
 
-Magneton @ Sitrus Berry
+Defense Youmu @ Sitrus Berry
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
+- Jamming
 - Protect
 - Thunder
 - Rain Dance
@@ -14572,7 +14572,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Raichu
+Normal Koakuma
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
@@ -14591,15 +14591,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Electrode
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
+- Tremors
 - Thunder
 - Explosion
 - Rain Dance
 
-Magneton @ Sitrus Berry
+Defense Youmu @ Sitrus Berry
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
+- Jamming
 - Protect
 - Thunder
 - Rain Dance
@@ -14630,7 +14630,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Punch
 - Light Screen
 
-Raichu
+Normal Koakuma
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
@@ -14649,15 +14649,15 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Electrode
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rollout
+- Tremors
 - Thunder
 - Explosion
 - Rain Dance
 
-Magneton @ Sitrus Berry
+Defense Youmu @ Sitrus Berry
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Supersonic
+- Jamming
 - Protect
 - Thunder
 - Rain Dance
@@ -14688,7 +14688,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Rock Slide
 
-Ponyta
+Normal Layla
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
@@ -14722,7 +14722,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Growlithe
+Attack Lily White
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Helping Hand
@@ -14738,7 +14738,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Rock Slide
 
-Ponyta
+Normal Layla
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
@@ -14780,7 +14780,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Taunt
 - Sunny Day
 
-Growlithe
+Attack Lily White
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Helping Hand
@@ -14796,7 +14796,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Light Screen
 - Rock Slide
 
-Rapidash
+Defense Layla
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
@@ -14830,7 +14830,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Arcanine
+Helper Lily White
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Helping Hand
@@ -14854,7 +14854,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Taunt
 - Sunny Day
 
-Rapidash
+Defense Layla
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Flamethrower
@@ -15108,7 +15108,7 @@ Pelipper
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Jamming
 - Protect
 - Aerial Ace
 
@@ -15138,11 +15138,11 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Risky
 
-Hoothoot
+Normal Minoriko
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Psychic
+- Mana Burst
 - Reflect
 - Dream Eater
 
@@ -15166,7 +15166,7 @@ Pelipper
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Jamming
 - Protect
 - Aerial Ace
 
@@ -15196,11 +15196,11 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Risky
 
-Noctowl
+Attack Minoriko
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Psychic
+- Mana Burst
 - Reflect
 - Dream Eater
 
@@ -15224,7 +15224,7 @@ Pelipper
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Jamming
 - Protect
 - Aerial Ace
 
@@ -15254,11 +15254,11 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Risky
 
-Noctowl
+Attack Minoriko
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
-- Psychic
+- Mana Burst
 - Reflect
 - Dream Eater
 
@@ -15274,7 +15274,7 @@ Pelipper
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
-- Supersonic
+- Jamming
 - Protect
 - Aerial Ace
 
@@ -15312,11 +15312,11 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slowpoke
+Placeholder Layla
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
-- Psychic
+- Mana Burst
 - Calm Mind
 - Protect
 
@@ -15325,13 +15325,13 @@ Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Ancient Power
-- Psychic
+- Mana Burst
 - Light Screen
 
 Xatu @ Chesto Berry
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Rest
 - Confuse Ray
 - Calm Mind
@@ -15340,7 +15340,7 @@ Lunatone @ Chesto Berry
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Psychic
+- Mana Burst
 - Rest
 - Calm Mind
 
@@ -15349,7 +15349,7 @@ Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Solar Beam
-- Psychic
+- Mana Burst
 - Flamethrower
 
 === TRAINER_TATE_AND_LIZA_3 ===
@@ -15362,7 +15362,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Drowzee
+Chibi Yukari
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15370,11 +15370,11 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Headbutt
 - Protect
 
-Slowpoke
+Placeholder Layla
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
-- Psychic
+- Mana Burst
 - Calm Mind
 - Protect
 
@@ -15383,13 +15383,13 @@ Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Explosion
-- Psychic
+- Mana Burst
 - Light Screen
 
 Xatu @ Chesto Berry
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Rest
 - Confuse Ray
 - Calm Mind
@@ -15398,7 +15398,7 @@ Lunatone @ Chesto Berry
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Psychic
+- Mana Burst
 - Rest
 - Calm Mind
 
@@ -15407,7 +15407,7 @@ Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Solar Beam
-- Psychic
+- Mana Burst
 - Flamethrower
 
 === TRAINER_TATE_AND_LIZA_4 ===
@@ -15420,7 +15420,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Hypno
+Normal Yukari
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15433,21 +15433,21 @@ Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Explosion
-- Psychic
+- Mana Burst
 - Light Screen
 
-Slowpoke
+Placeholder Layla
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
-- Psychic
+- Mana Burst
 - Calm Mind
 - Protect
 
 Xatu @ Chesto Berry
 Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Rest
 - Confuse Ray
 - Calm Mind
@@ -15456,7 +15456,7 @@ Lunatone @ Chesto Berry
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Psychic
+- Mana Burst
 - Rest
 - Calm Mind
 
@@ -15465,7 +15465,7 @@ Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Solar Beam
-- Psychic
+- Mana Burst
 - Flamethrower
 
 === TRAINER_TATE_AND_LIZA_5 ===
@@ -15478,7 +15478,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Hypno
+Normal Yukari
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15491,21 +15491,21 @@ Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 - Explosion
-- Psychic
+- Mana Burst
 - Light Screen
 
 Slowking
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
-- Psychic
+- Mana Burst
 - Calm Mind
 - Protect
 
 Xatu @ Chesto Berry
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
+- Mana Burst
 - Rest
 - Confuse Ray
 - Calm Mind
@@ -15514,7 +15514,7 @@ Lunatone @ Chesto Berry
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Psychic
+- Mana Burst
 - Rest
 - Calm Mind
 
@@ -15523,7 +15523,7 @@ Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sunny Day
 - Solar Beam
-- Psychic
+- Mana Burst
 - Flamethrower
 
 === TRAINER_JUAN_2 ===
@@ -15536,7 +15536,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Poliwag
+Chibi Lily Black
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15586,7 +15586,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Poliwhirl
+Normal Lily Black
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15652,7 +15652,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Double Team
 - Fissure
 
-Poliwhirl
+Normal Lily Black
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hypnosis
@@ -15810,7 +15810,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder
 - Earthquake
 - Solar Beam
-- Dragon Claw
+- Heart Break
 
 Cradily
 Level: 76
@@ -15832,7 +15832,7 @@ Metagross @ Sitrus Berry
 Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
-- Psychic
+- Mana Burst
 - Meteor Mash
 - Shadow Ball
 
@@ -15936,11 +15936,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Sandshrew
+Helper Koakuma
 Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -15957,11 +15957,11 @@ Nosepass
 Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -15978,11 +15978,11 @@ Nosepass
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Sandshrew
+Helper Koakuma
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -15999,11 +15999,11 @@ Nosepass
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Sandslash
+Helper Koakuma
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Sandslash
+Helper Koakuma
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16020,11 +16020,11 @@ Wingull
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Machop
+Helper Lunasa
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 30
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -16041,11 +16041,11 @@ Pelipper
 Level: 32
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Machop
+Helper Lunasa
 Level: 32
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Tentacool
+Chibi Lyrica
 Level: 32
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16062,11 +16062,11 @@ Pelipper
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Machop
+Helper Lunasa
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16083,11 +16083,11 @@ Pelipper
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Machoke
+Placehold Lunasa
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Tentacruel
+Normal Lyrica
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16100,11 +16100,11 @@ Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Staryu
+Tech Reisen
 Level: 37
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Staryu
+Tech Reisen
 Level: 37
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -16121,11 +16121,11 @@ Wingull
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Staryu
+Tech Reisen
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Staryu
+Tech Reisen
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16142,11 +16142,11 @@ Pelipper
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Staryu
+Tech Reisen
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Staryu
+Tech Reisen
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16180,11 +16180,11 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Machoke
+Placehold Lunasa
 Level: 37
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Machoke
+Placehold Lunasa
 Level: 37
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -16201,11 +16201,11 @@ Makuhita
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Machoke
+Placehold Lunasa
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Machoke
+Placehold Lunasa
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16222,11 +16222,11 @@ Hariyama
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Machoke
+Placehold Lunasa
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Machoke
+Placehold Lunasa
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16243,11 +16243,11 @@ Hariyama
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Machamp
+Chibi Merlin
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Machamp
+Chibi Merlin
 Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16428,7 +16428,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Geodude
+Helper Lyrica
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -16445,7 +16445,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machop
+Helper Lunasa
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16453,7 +16453,7 @@ Numel
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16466,7 +16466,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machop
+Helper Lunasa
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16474,7 +16474,7 @@ Numel
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Graveler
+Placeholder Lyrica
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16487,7 +16487,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Machoke
+Placehold Lunasa
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16495,7 +16495,7 @@ Camerupt
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Golem
+Chibi Layla
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -16665,7 +16665,7 @@ Wailmer
 Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Seadra
+Chibi Reisen
 Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -16686,7 +16686,7 @@ Wailmer
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Seadra
+Chibi Reisen
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -16735,7 +16735,7 @@ Banette
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Kadabra
+Chibi Lunasa
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -16759,7 +16759,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-Charmander
+Defense Reimu
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -16771,7 +16771,7 @@ Gender: Female
 Music: Male
 Double Battle: No
 
-Bulbasaur
+Chibi Reimu
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

@@ -43,6 +43,8 @@ species_replacements = {
     "TYPE_NULL": "Type: Null",
     "WO_CHIEN": "Wo-Chien",
 
+#    "_NORMAL_": "",
+#    "_SANNIAN": "-Sanni",
     "_ALOLAN": "-Alola",
     "_AQUA_BREED": "-Aqua",
     "_BATTLE_BOND": "-Bond",
@@ -192,7 +194,7 @@ trainer_ai_flags_definition        = re.compile(r'\.aiFlags = (.*)')
 trainer_ai_flag_definition         = re.compile(r'AI_FLAG_(\w+)')
 trainer_party_definition           = re.compile(r'\.party = TRAINER_PARTY\((\w+)\)')
 trainer_mugshot_definition         = re.compile(r'\.mugshotColor = MUGSHOT_COLOR_(\w+)')
-trainer_starting_status_definition = re.compile(r'\.startingStatus = STARTING_STATUS_(\w+)')```
+trainer_starting_status_definition = re.compile(r'\.startingStatus = STARTING_STATUS_(\w+)')
 
 class_fixups = {
     "Rs": "RS",
