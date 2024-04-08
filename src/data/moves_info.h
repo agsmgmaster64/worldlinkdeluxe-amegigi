@@ -6246,7 +6246,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {COMBO_STARTER_STOCKPILE},
     },
 
-    [MOVE_SWALLOW] =
+    [MOVE_SHADOW_DANCE] =
     {
         .name = COMPOUND_STRING("Swallow"),
         .description = COMPOUND_STRING(

@@ -1493,7 +1493,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_PELIPPER_1] = {
         .species = SPECIES_PELIPPER,
-        .moves = {MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_COERCE, MOVE_SWALLOW},
+        .moves = {MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_COERCE, MOVE_SHADOW_DANCE},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
         .nature = NATURE_QUIET
@@ -1738,7 +1738,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SWALOT_1] = {
         .species = SPECIES_SWALOT,
-        .moves = {MOVE_COERCE, MOVE_SWALLOW, MOVE_BRAVER, MOVE_SLUDGE},
+        .moves = {MOVE_COERCE, MOVE_SHADOW_DANCE, MOVE_BRAVER, MOVE_SLUDGE},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
         .nature = NATURE_QUIRKY

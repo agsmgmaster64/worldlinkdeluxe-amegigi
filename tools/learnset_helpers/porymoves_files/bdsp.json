@@ -2072,7 +2072,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 25,
@@ -2212,7 +2212,7 @@
       },
       {
         "Level": 27,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 27,
@@ -4093,7 +4093,7 @@
       },
       {
         "Level": 12,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 12,
@@ -4223,7 +4223,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 1,
@@ -7617,7 +7617,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 1,
@@ -9389,7 +9389,7 @@
       "MOVE_SLAM",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -9528,7 +9528,7 @@
       "MOVE_SLAM",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -9645,7 +9645,7 @@
       "MOVE_SHADOW_SNEAK",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -9785,7 +9785,7 @@
       "MOVE_SHADOW_SNEAK",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -12110,7 +12110,7 @@
       "MOVE_BRAVER",
       "MOVE_SPITE",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_TOXIC_SPIKES",
       "MOVE_VENOM_DRENCH"
     ],
@@ -12234,7 +12234,7 @@
       "MOVE_BRAVER",
       "MOVE_SPITE",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_TOXIC_SPIKES",
       "MOVE_VENOM_DRENCH"
     ],
@@ -15731,7 +15731,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 1,
@@ -19067,7 +19067,7 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 0,
@@ -19083,7 +19083,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 1,
@@ -21770,7 +21770,7 @@
       "MOVE_RECOVER",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -21885,7 +21885,7 @@
       "MOVE_RECOVER",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -24588,7 +24588,7 @@
       "MOVE_SMOKESCREEN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -24721,7 +24721,7 @@
       "MOVE_SMOKESCREEN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW"
+      "MOVE_SHADOW_DANCE"
     ],
     "TutorMoves": []
   },
@@ -31212,7 +31212,7 @@
       },
       {
         "Level": 28,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 28,
@@ -34022,7 +34022,7 @@
       },
       {
         "Level": 16,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 16,
@@ -35611,7 +35611,7 @@
       },
       {
         "Level": 28,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 33,
@@ -35744,7 +35744,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 37,
@@ -36352,7 +36352,7 @@
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_STOMP",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -36500,7 +36500,7 @@
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_STOMP",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -38117,7 +38117,7 @@
       "MOVE_SCARY_FACE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_SWITCHEROO"
     ],
     "TutorMoves": []
@@ -39087,7 +39087,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 44,
@@ -39191,7 +39191,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 48,
@@ -41063,7 +41063,7 @@
       "MOVE_TREMORS",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -41175,7 +41175,7 @@
       "MOVE_TREMORS",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -41295,7 +41295,7 @@
       "MOVE_TREMORS",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -43557,7 +43557,7 @@
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_THRASH",
       "MOVE_TICKLE",
       "MOVE_WIDE_GUARD",
@@ -43671,7 +43671,7 @@
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_THRASH",
       "MOVE_TICKLE",
       "MOVE_WIDE_GUARD",
@@ -43811,7 +43811,7 @@
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_THRASH",
       "MOVE_TICKLE",
       "MOVE_WIDE_GUARD",
@@ -47190,7 +47190,7 @@
       "MOVE_SLUDGE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -47289,7 +47289,7 @@
       "MOVE_SLUDGE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_YAWN"
     ],
     "TutorMoves": []
@@ -47459,7 +47459,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 24,
@@ -47581,7 +47581,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 24,
@@ -49823,7 +49823,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 24,
@@ -50317,7 +50317,7 @@
       "MOVE_SLACK_OFF",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_WHIRLWIND"
     ],
     "TutorMoves": []
@@ -50433,7 +50433,7 @@
       "MOVE_SLACK_OFF",
       "MOVE_BRAVER",
       "MOVE_COERCE",
-      "MOVE_SWALLOW",
+      "MOVE_SHADOW_DANCE",
       "MOVE_WHIRLWIND"
     ],
     "TutorMoves": []
@@ -50983,7 +50983,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_SWALLOW"
+        "Move": "MOVE_SHADOW_DANCE"
       },
       {
         "Level": 41,

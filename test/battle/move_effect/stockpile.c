@@ -5,7 +5,7 @@
 ASSUMPTIONS
 {
     ASSUME(gMovesInfo[MOVE_COERCE].effect == EFFECT_STOCKPILE);
-    ASSUME(gMovesInfo[MOVE_SWALLOW].effect == EFFECT_SWALLOW);
+    ASSUME(gMovesInfo[MOVE_SHADOW_DANCE].effect == EFFECT_SWALLOW);
     ASSUME(gMovesInfo[MOVE_BRAVER].effect == EFFECT_SPIT_UP);
 }
 
@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Stockpile's count can go up only to 3")
 SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
 {
     u32 move;
-    PARAMETRIZE { move = MOVE_SWALLOW; }
+    PARAMETRIZE { move = MOVE_SHADOW_DANCE; }
     PARAMETRIZE { move = MOVE_BRAVER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(10), MaxHP(400); }
@@ -48,7 +48,7 @@ SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
         TURN { MOVE(player, move); }
     } SCENE {
         NOT ANIMATION(ANIM_TYPE_MOVE, move, player);
-        if (move == MOVE_SWALLOW)
+        if (move == MOVE_SHADOW_DANCE)
             MESSAGE("But it failed to swallow a thing!");
         else
             MESSAGE("But it failed to spit up a thing!");
@@ -120,7 +120,7 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
                 TURN { MOVE(player, MOVE_COERCE); }
             }
         }
-        TURN { MOVE(player, MOVE_SWALLOW); }
+        TURN { MOVE(player, MOVE_SHADOW_DANCE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_COERCE, player);
         MESSAGE("Wobbuffet stockpiled 1!");
@@ -132,7 +132,7 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
                 MESSAGE("Wobbuffet stockpiled 3!");
             }
         }
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWALLOW, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SHADOW_DANCE, player);
         HP_BAR(player, captureDamage: &results[i].hpHeal);
     } FINALLY {
         EXPECT_EQ(results[0].hpHeal, -100);
@@ -180,7 +180,7 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
     u8 count;
     u16 move;
     PARAMETRIZE { count = 1; move = MOVE_BRAVER; }
-    PARAMETRIZE { count = 2; move = MOVE_SWALLOW; }
+    PARAMETRIZE { count = 2; move = MOVE_SHADOW_DANCE; }
     PARAMETRIZE { count = 3; move = MOVE_BRAVER; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);

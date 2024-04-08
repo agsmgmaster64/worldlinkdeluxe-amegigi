@@ -277,7 +277,7 @@ gBattleAnims_Moves::
 	.4byte Move_PERFORMANCE
 	.4byte Move_COERCE
 	.4byte Move_BRAVER
-	.4byte Move_SWALLOW
+	.4byte Move_SHADOW_DANCE
 	.4byte Move_HEAT_WAVE
 	.4byte Move_HAIL
 	.4byte Move_TORMENT
@@ -25708,7 +25708,7 @@ SpitUpStrongest:
 	createsprite gSpitUpOrbSpriteTemplate, ANIM_ATTACKER, 2, 240
 	goto SpitUpContinue
 
-Move_SWALLOW:
+Move_SHADOW_DANCE:
 	loadspritegfx ANIM_TAG_BLUE_ORB
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER

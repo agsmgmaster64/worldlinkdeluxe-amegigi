@@ -2054,7 +2054,7 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
-    [MOVE_SWALLOW] = {
+    [MOVE_SHADOW_DANCE] = {
         { .songLengthId = 27 },
         { .songLengthId = 24 },
         { .songLengthId = 51 },
