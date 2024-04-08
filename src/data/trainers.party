@@ -7,7 +7,7 @@ Music: Male
 Double Battle: No
 
 === TRAINER_SAWYER_1 ===
-Name: SAWYER
+Name: Sawyer
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -20,7 +20,7 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -33,7 +33,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -50,7 +50,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -63,7 +63,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -76,7 +76,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -89,7 +89,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -102,7 +102,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -148,7 +148,7 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -213,7 +213,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -239,7 +239,7 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -252,7 +252,7 @@ Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -269,7 +269,7 @@ Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -286,7 +286,7 @@ Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -307,7 +307,7 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MUSEUM_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -320,7 +320,7 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MUSEUM_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -337,7 +337,7 @@ Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -350,7 +350,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -363,7 +363,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -376,7 +376,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -393,7 +393,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -406,7 +406,7 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -419,7 +419,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -2079,7 +2079,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Water Pulse
 
 === TRAINER_GRUNT_SPACE_CENTER_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -2591,7 +2591,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -3304,7 +3304,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Screech
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -3321,7 +3321,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -9427,9 +9427,9 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9440,9 +9440,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9461,9 +9461,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9482,9 +9482,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9495,9 +9495,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9516,9 +9516,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9537,9 +9537,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9550,9 +9550,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9571,9 +9571,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9592,9 +9592,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9605,9 +9605,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9626,9 +9626,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9647,9 +9647,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9660,9 +9660,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9681,9 +9681,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9702,9 +9702,9 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9715,9 +9715,9 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_ROUTE_110_TORCHIC ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -9736,9 +9736,9 @@ Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -10409,7 +10409,7 @@ Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_5 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
@@ -10426,7 +10426,7 @@ Level: 35
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_GRUNT_UNUSED ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
@@ -10443,7 +10443,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -10460,7 +10460,7 @@ Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_JAGGED_PASS ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10595,7 +10595,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10686,7 +10686,7 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -10703,7 +10703,7 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10716,7 +10716,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_5 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10729,7 +10729,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_6 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10742,7 +10742,7 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_7 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -10768,9 +10768,9 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TREECKO ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10785,9 +10785,9 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10832,7 +10832,7 @@ Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Aqua
 Pic: Aqua Grunt F
 Gender: Female
@@ -10892,9 +10892,9 @@ Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10909,9 +10909,9 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -12171,9 +12171,9 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_BRENDAN_LILYCOVE_MUDKIP ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -12196,9 +12196,9 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -12221,9 +12221,9 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
-Name: BRENDAN
+Name: Renko
 Class: Rival
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
@@ -12246,9 +12246,9 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -12271,9 +12271,9 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -12296,9 +12296,9 @@ Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -13193,7 +13193,7 @@ Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_1 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13206,7 +13206,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_2 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13219,7 +13219,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_3 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13232,7 +13232,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_4 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13249,7 +13249,7 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_5 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13266,7 +13266,7 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_6 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13279,7 +13279,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_7 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13292,7 +13292,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_8 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13305,7 +13305,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_9 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13318,7 +13318,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_10 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13331,7 +13331,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_11 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13344,7 +13344,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_12 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13357,7 +13357,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_13 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt M
 Gender: Male
@@ -13370,7 +13370,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_14 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -13383,7 +13383,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_15 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -13396,7 +13396,7 @@ Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MAGMA_HIDEOUT_16 ===
-Name: GRUNT
+Name: Grunt
 Class: Team Magma
 Pic: Magma Grunt F
 Gender: Female
@@ -14027,7 +14027,7 @@ Level: 25
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_CRISTIN_1 ===
-Name: CRISTIN
+Name: Cristin
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -14045,9 +14045,9 @@ Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_RUSTBORO_TREECKO ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -14062,9 +14062,9 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
-Name: MAY
+Name: Maribel
 Class: Rival
-Pic: May
+Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
@@ -16252,7 +16252,7 @@ Level: 43
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_CRISTIN_2 ===
-Name: CRISTIN
+Name: Cristin
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -16270,7 +16270,7 @@ Level: 35
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_CRISTIN_3 ===
-Name: CRISTIN
+Name: Cristin
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -16292,7 +16292,7 @@ Level: 37
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_CRISTIN_4 ===
-Name: CRISTIN
+Name: Cristin
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -16314,7 +16314,7 @@ Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CRISTIN_5 ===
-Name: CRISTIN
+Name: Cristin
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Female
@@ -16420,7 +16420,7 @@ Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_SAWYER_2 ===
-Name: SAWYER
+Name: Sawyer
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -16437,7 +16437,7 @@ Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_SAWYER_3 ===
-Name: SAWYER
+Name: Sawyer
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -16458,7 +16458,7 @@ Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_SAWYER_4 ===
-Name: SAWYER
+Name: Sawyer
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -16479,7 +16479,7 @@ Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_SAWYER_5 ===
-Name: SAWYER
+Name: Sawyer
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -16776,7 +16776,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
+Name: Renko
 Class: RS Protag
 Pic: RS Brendan
 Gender: Male
@@ -16788,7 +16788,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
+Name: Maribel
 Class: RS Protag
 Pic: RS May
 Gender: Female

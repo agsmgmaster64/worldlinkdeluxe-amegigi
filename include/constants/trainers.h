@@ -86,8 +86,8 @@
 #define TRAINER_PIC_SAILOR                68
 #define TRAINER_PIC_MAGMA_ADMIN           69
 #define TRAINER_PIC_WALLY                 70
-#define TRAINER_PIC_BRENDAN               71
-#define TRAINER_PIC_MAY                   72
+#define TRAINER_PIC_RENKO                 71
+#define TRAINER_PIC_MARIBEL               72
 #define TRAINER_PIC_BUG_CATCHER           73
 #define TRAINER_PIC_POKEMON_RANGER_M      74
 #define TRAINER_PIC_POKEMON_RANGER_F      75
@@ -111,8 +111,8 @@
 #define TRAINER_PIC_COUNT                 93
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
-#define TRAINER_BACK_PIC_BRENDAN                0
-#define TRAINER_BACK_PIC_MAY                    1
+#define TRAINER_BACK_PIC_RENKO                  0
+#define TRAINER_BACK_PIC_MARIBEL                1
 #define TRAINER_BACK_PIC_RED                    2
 #define TRAINER_BACK_PIC_LEAF                   3
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN  4
@@ -180,10 +180,10 @@
 #define FACILITY_CLASS_TWINS                 0x39
 #define FACILITY_CLASS_SAILOR                0x3a
 #define FACILITY_CLASS_WALLY                 0x3b
-#define FACILITY_CLASS_BRENDAN               0x3c
+#define FACILITY_CLASS_RENKO                 0x3c
 #define FACILITY_CLASS_BRENDAN_2             0x3d
 #define FACILITY_CLASS_BRENDAN_3             0x3e
-#define FACILITY_CLASS_MAY                   0x3f
+#define FACILITY_CLASS_MARIBEL               0x3f
 #define FACILITY_CLASS_MAY_2                 0x40
 #define FACILITY_CLASS_MAY_3                 0x41
 #define FACILITY_CLASS_PKMN_BREEDER_M        0x42
