@@ -1716,14 +1716,6 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
     }
 }
 
-enum
-{
-    MOVE_EFFECTIVENESS_NONE,
-    MOVE_EFFECTIVENESS_NOT_VERY_EFFECTIVE,
-    MOVE_EFFECTIVENESS_NORMAL,
-    MOVE_EFFECTIVENESS_SUPER_EFFECTIVE,
-};
-
 static void MoveSelectionDisplayPpString(u32 battlerAtk, u32 battlerDef)
 {
     static const u8 superEffectiveIcon[]   =  _("{UP_ARROW_2}");
