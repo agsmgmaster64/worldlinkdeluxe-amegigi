@@ -2980,7 +2980,7 @@ u8 FldEff_UseSurf(void)
         Overworld_ChangeMusicTo(MUS_WLD_SURF);
         break;
     case OPTIONS_MUSIC_STYLE_ZGS:
-        Overworld_ChangeMusicTo(MUS_WLD_SURF);
+        Overworld_ChangeMusicTo(MUS_ZGS_SURF);
         break;
     case OPTIONS_MUSIC_STYLE_ALTERNATE:
         Overworld_ChangeMusicTo(MUS_WLD_SURF);

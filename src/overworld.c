@@ -1285,7 +1285,7 @@ void Overworld_PlaySpecialMapMusic(void)
                 music = MUS_WLD_SURF;
                 break;
             case OPTIONS_MUSIC_STYLE_ZGS:
-                music = MUS_WLD_SURF;
+                music = MUS_ZGS_SURF;
                 break;
             case OPTIONS_MUSIC_STYLE_ALTERNATE:
                 music = MUS_WLD_SURF;
@@ -1328,7 +1328,7 @@ static void TransitionMapMusic(void)
         u16 currentMusic = GetCurrentMapMusic();
         if (newMusic != MUS_ABNORMAL_WEATHER && newMusic != MUS_NONE)
         {
-            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_WLD_SURF || currentMusic == MUS_SURF)
+            if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_WLD_SURF || currentMusic == MUS_ZGS_SURF || currentMusic == MUS_SURF)
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
                 newMusic = MUS_WLD_SURF;
@@ -1372,7 +1372,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if ((currentMusic == MUS_WLD_SURF || currentMusic == MUS_SURF)
+        if ((currentMusic == MUS_WLD_SURF || currentMusic == MUS_ZGS_SURF || currentMusic == MUS_SURF)
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SOOTOPOLIS_CITY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(SOOTOPOLIS_CITY)

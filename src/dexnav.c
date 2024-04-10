@@ -615,18 +615,17 @@ static bool8 DexNavPickTile(u8 environment, u8 areaX, u8 areaY, bool8 smallScan)
     u8 scale = 0;
     u8 weight = 0;
     u8 currMapType = GetCurrentMapType();
-    u8 tileBehaviour;
+    u32 metatileAttributes;
     u8 tileBuffer = 2;
+    u32 curMetatileEncounterType;
     
     // loop through every tile in area and evaluate
     while (topY < botY)
     {
         while (topX < botX)
         {
-            tileBehaviour = MapGridGetMetatileBehaviorAt(topX, topY);
-            
-            //gSpecialVar_0x8005 = tileBehaviour;
-            
+            metatileAttributes = MapGridGetMetatileAttributeAt(topX, topY, METATILE_ATTRIBUTES_ALL);
+
             //Check for objects
             nextIter = FALSE;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
@@ -660,7 +659,8 @@ static bool8 DexNavPickTile(u8 environment, u8 areaX, u8 areaY, bool8 smallScan)
             switch (environment)
             {
             case ENCOUNTER_TYPE_LAND:
-                if (MetatileBehavior_IsLandWildEncounter(tileBehaviour))
+                curMetatileEncounterType = ExtractMetatileAttribute(metatileAttributes, METATILE_ATTRIBUTE_ENCOUNTER_TYPE);
+                if (curMetatileEncounterType == TILE_ENCOUNTER_LAND)
                 {
                     if (currMapType == MAP_TYPE_UNDERGROUND)
                     { // inside (cave)
@@ -678,7 +678,8 @@ static bool8 DexNavPickTile(u8 environment, u8 areaX, u8 areaY, bool8 smallScan)
                 }
                 break;
             case ENCOUNTER_TYPE_WATER:
-                if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehaviour))
+                curMetatileEncounterType = ExtractMetatileAttribute(metatileAttributes, METATILE_ATTRIBUTE_ENCOUNTER_TYPE);
+                if (curMetatileEncounterType == TILE_ENCOUNTER_WATER)
                 {
                     u8 scale = 320 - (smallScan * 200) - (GetPlayerDistance(topX, topY) / 2);
                     if (IsElevationMismatchAt(gObjectEvents[gPlayerAvatar.spriteId].currentElevation, topX, topY))
