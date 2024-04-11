@@ -11,6 +11,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -24,9 +25,15 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [],
-  "warp_events": [],
-  "coord_events": [],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
@@ -34,7 +41,9 @@
       "y": 51,
       "elevation": 0,
       "item": "ITEM_CARBOS",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -42,7 +51,9 @@
       "y": 40,
       "elevation": 0,
       "item": "ITEM_GREEN_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -50,7 +61,9 @@
       "y": 34,
       "elevation": 3,
       "item": "ITEM_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -58,7 +71,9 @@
       "y": 54,
       "elevation": 3,
       "item": "ITEM_BIG_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -66,7 +81,9 @@
       "y": 64,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -74,7 +91,9 @@
       "y": 5,
       "elevation": 3,
       "item": "ITEM_CALCIUM",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -82,7 +101,9 @@
       "y": 36,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }

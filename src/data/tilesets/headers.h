@@ -803,3 +803,80 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RG_General =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_RG_General,
+    .palettes = gTilesetPalettes_RG_General,
+    .metatiles = gMetatiles_RG_General,
+    .metatileAttributes = gMetatileAttributes_RG_General,
+    .callback = InitTilesetAnim_RG_General,
+};
+
+const struct Tileset gTileset_RG_Building =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_RG_Building,
+    .palettes = gTilesetPalettes_RG_Building,
+    .metatiles = gMetatiles_RG_Building,
+    .metatileAttributes = gMetatileAttributes_RG_Building,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_Condominiums =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_Condominiums,
+    .palettes = gTilesetPalettes_RG_Condominiums,
+    .metatiles = gMetatiles_RG_Condominiums,
+    .metatileAttributes = gMetatileAttributes_RG_Condominiums,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_GenericBuilding1 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_GenericBuilding1,
+    .palettes = gTilesetPalettes_RG_GenericBuilding1,
+    .metatiles = gMetatiles_RG_GenericBuilding1,
+    .metatileAttributes = gMetatileAttributes_RG_GenericBuilding1,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_GenericBuilding2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_GenericBuilding2,
+    .palettes = gTilesetPalettes_RG_GenericBuilding2,
+    .metatiles = gMetatiles_RG_GenericBuilding2,
+    .metatileAttributes = gMetatileAttributes_RG_GenericBuilding2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_Mart =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_Mart,
+    .palettes = gTilesetPalettes_RG_Mart,
+    .metatiles = gMetatiles_RG_Mart,
+    .metatileAttributes = gMetatileAttributes_RG_Mart,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_PokemonCenter =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_PokemonCenter,
+    .palettes = gTilesetPalettes_RG_PokemonCenter,
+    .metatiles = gMetatiles_RG_PokemonCenter,
+    .metatileAttributes = gMetatileAttributes_RG_PokemonCenter,
+    .callback = NULL,
+};

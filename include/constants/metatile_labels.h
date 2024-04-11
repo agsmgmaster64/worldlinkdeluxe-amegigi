@@ -253,8 +253,8 @@
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215
 #define METATILE_InsideOfTruck_DoorClosedFloor_Top     0x20D
-#define METATILE_InsideOfTruck_ExitLight_Bottom        0x218
-#define METATILE_InsideOfTruck_ExitLight_Mid           0x210
+#define METATILE_InsideOfTruck_ExitLight_Bottom        0x298
+#define METATILE_InsideOfTruck_ExitLight_Mid           0x290
 #define METATILE_InsideOfTruck_ExitLight_Top           0x208
 
 // gTileset_InsideShip

@@ -11,6 +11,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -29,7 +30,9 @@
       "direction": "emerge"
     }
   ],
-  "object_events": [],
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 45,
@@ -39,7 +42,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "hidden_item",
@@ -47,7 +52,9 @@
       "y": 17,
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -55,7 +62,9 @@
       "y": 19,
       "elevation": 3,
       "item": "ITEM_ULTRA_ORB",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -63,7 +72,9 @@
       "y": 19,
       "elevation": 3,
       "item": "ITEM_STARDUST",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -71,7 +82,9 @@
       "y": 36,
       "elevation": 3,
       "item": "ITEM_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -79,7 +92,9 @@
       "y": 39,
       "elevation": 3,
       "item": "ITEM_IRON",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -87,7 +102,9 @@
       "y": 35,
       "elevation": 3,
       "item": "ITEM_YELLOW_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -95,7 +112,9 @@
       "y": 60,
       "elevation": 3,
       "item": "ITEM_BIG_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -103,7 +122,9 @@
       "y": 77,
       "elevation": 3,
       "item": "ITEM_BLUE_SHARD",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }
