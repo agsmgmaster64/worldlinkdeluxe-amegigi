@@ -1359,7 +1359,7 @@
 	.byte \battler
 	.4byte \jumpInstr
 	.endm
-	
+
 	.macro itemstatchangeeffects battler:req
 	callnative BS_RunStatChangeItems
 	.byte \battler
@@ -1635,6 +1635,10 @@
 	callnative BS_TryTidyUp
 	.byte \clear
 	.4byte \jumpInstr
+	.endm
+
+	.macro trygulpmissile
+	callnative BS_TryGulpMissile
 	.endm
 
 @ various command changed to more readable macros
