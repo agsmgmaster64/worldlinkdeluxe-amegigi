@@ -880,3 +880,25 @@ const struct Tileset gTileset_RG_PokemonCenter =
     .metatileAttributes = gMetatileAttributes_RG_PokemonCenter,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RG_PokemonTower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_PokemonTower,
+    .palettes = gTilesetPalettes_RG_PokemonTower,
+    .metatiles = gMetatiles_RG_PokemonTower,
+    .metatileAttributes = gMetatileAttributes_RG_PokemonTower,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_LavenderTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_LavenderTown,
+    .palettes = gTilesetPalettes_RG_LavenderTown,
+    .metatiles = gMetatiles_RG_LavenderTown,
+    .metatileAttributes = gMetatileAttributes_RG_LavenderTown,
+    .callback = NULL,
+};

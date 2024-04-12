@@ -1076,3 +1076,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/qol_field_move_scripts.inc"
 	.include "data/scripts/dexnav.inc"
     
+
+	.include "data/maps/EikiIsland_1/scripts.inc"
+	.include "data/maps/EikiIsland_1/text.inc"

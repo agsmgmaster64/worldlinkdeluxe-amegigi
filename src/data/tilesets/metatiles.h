@@ -222,3 +222,9 @@ const u32 gMetatileAttributes_RG_Mart[] = INCBIN_U32("data/tilesets/frlg/seconda
 
 const u16 gMetatiles_RG_PokemonCenter[] = INCBIN_U16("data/tilesets/frlg/secondary/pokemon_center/metatiles.bin");
 const u32 gMetatileAttributes_RG_PokemonCenter[] = INCBIN_U32("data/tilesets/frlg/secondary/pokemon_center/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_PokemonTower[] = INCBIN_U16("data/tilesets/frlg/secondary/pokemon_tower/metatiles.bin");
+const u32 gMetatileAttributes_RG_PokemonTower[] = INCBIN_U32("data/tilesets/frlg/secondary/pokemon_tower/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_LavenderTown[] = INCBIN_U16("data/tilesets/frlg/secondary/lavender_town/metatiles.bin");
+const u32 gMetatileAttributes_RG_LavenderTown[] = INCBIN_U32("data/tilesets/frlg/secondary/lavender_town/metatile_attributes.bin");
