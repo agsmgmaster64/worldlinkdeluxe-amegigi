@@ -593,7 +593,7 @@
 #define B_ANIM_STATUS_SLP               4
 #define B_ANIM_STATUS_PRZ               5
 #define B_ANIM_STATUS_FRZ               6
-#define B_ANIM_STATUS_FSB               7
+#define B_ANIM_STATUS_FRB               7
 #define B_ANIM_STATUS_CURSED            8
 #define B_ANIM_STATUS_NIGHTMARE         9
 #define B_ANIM_STATUS_WRAPPED           10 // does not actually exist
