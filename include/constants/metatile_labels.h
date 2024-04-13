@@ -431,6 +431,21 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
+// gTileset_RG_Building
+#define METATILE_RG_Building_PCOff  0x062
+#define METATILE_RG_Building_PCOn   0x063
+
+// gTileset_RG_General
+#define METATILE_RG_General_BlueCaveIndent     0x19B
+#define METATILE_RG_General_BlueCaveOpen       0x19C
+#define METATILE_RG_General_Door               0x03D
+#define METATILE_RG_General_RedCaveIndent      0x18B
+#define METATILE_RG_General_RedCaveOpen        0x18C
+#define METATILE_RG_General_SlidingDoubleDoor  0x15B
+#define METATILE_RG_General_SlidingSingleDoor  0x062
+#define METATILE_RG_General_YellowCaveIndent   0x193
+#define METATILE_RG_General_YellowCaveOpen     0x194
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F

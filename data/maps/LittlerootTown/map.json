@@ -24,7 +24,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 16,
+      "x": 18,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -38,7 +38,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 12,
+      "x": 14,
       "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -52,7 +52,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
+      "x": 16,
       "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -66,7 +66,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 5,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -80,7 +80,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 2,
+      "x": 4,
       "y": 10,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -94,7 +94,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
-      "x": 11,
+      "x": 13,
       "y": 10,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -108,7 +108,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 13,
+      "x": 15,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -122,7 +122,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 14,
+      "x": 16,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -136,21 +136,21 @@
   ],
   "warp_events": [
     {
-      "x": 14,
+      "x": 16,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 5,
+      "x": 7,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 7,
+      "x": 9,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
@@ -160,7 +160,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
+      "x": 12,
       "y": 1,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -169,7 +169,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 13,
       "y": 1,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -178,7 +178,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 13,
       "y": 1,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -187,7 +187,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 10,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -196,7 +196,7 @@
     },
     {
       "type": "trigger",
-      "x": 9,
+      "x": 11,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -205,7 +205,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 12,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -214,7 +214,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 13,
       "y": 9,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -223,7 +223,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 12,
       "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -232,7 +232,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 13,
       "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_TOWN_STATE",
@@ -243,7 +243,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 15,
+      "x": 17,
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -251,7 +251,7 @@
     },
     {
       "type": "sign",
-      "x": 6,
+      "x": 8,
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -259,7 +259,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 9,
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -267,7 +267,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 14,
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
