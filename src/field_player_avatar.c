@@ -2246,7 +2246,7 @@ static bool32 CheckTileQualification(s16 tile[], s16 player[], u32 facingDirecti
         return FALSE;
     else if (IsMetatileBlocking(tile[AXIS_X], tile[AXIS_Y], collison))
         return TRUE;
-    else if (MetatileBehavior_IsSurfableFishableWater(MapGridGetMetatileBehaviorAt(tile[AXIS_X], tile[AXIS_Y])))
+    else if (TestMetatileAttributeBit(MapGridGetMetatileAttributeAt(tile[AXIS_X], tile[AXIS_Y], METATILE_ATTRIBUTE_TERRAIN), TILE_TERRAIN_WATER))
         return FALSE;
     else if (IsMetatileLand(tile[AXIS_X], tile[AXIS_Y], collison))
         isTileLand[direction] = TRUE;
