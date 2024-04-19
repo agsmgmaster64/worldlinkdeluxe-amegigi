@@ -573,6 +573,7 @@
 #define B_ANIM_WONDER_ROOM              51
 #define B_ANIM_MAGIC_ROOM               52
 #define B_ANIM_TAILWIND                 53
+#define B_ANIM_FOG_CONTINUES            54
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -623,6 +624,7 @@
 #define ANIM_WEATHER_SANDSTORM 3
 #define ANIM_WEATHER_HAIL 4
 #define ANIM_WEATHER_SNOW 5
+#define ANIM_WEATHER_FOG 6
 
 // horseshoe/fist frames
 #define ANIM_RIGHT_FIST  0
