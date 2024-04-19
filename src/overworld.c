@@ -1339,7 +1339,24 @@ static void TransitionMapMusic(void)
             if (currentMusic == MUS_UNDERWATER || currentMusic == MUS_WLD_SURF || currentMusic == MUS_ZGS_SURF || currentMusic == MUS_SURF)
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
-                newMusic = MUS_WLD_SURF;
+            {
+                switch (gSaveBlock2Ptr->optionsMusicStyle)
+                {
+                case OPTIONS_MUSIC_STYLE_DEFAULT:
+                    newMusic = MUS_WLD_SURF;
+                    break;
+                case OPTIONS_MUSIC_STYLE_ZGS:
+                    newMusic = MUS_ZGS_SURF;
+                    break;
+                case OPTIONS_MUSIC_STYLE_ALTERNATE:
+                    newMusic = MUS_WLD_SURF;
+                    break;
+                case OPTIONS_MUSIC_STYLE_VANILLA:
+                default:
+                    newMusic = MUS_SURF;
+                    break;
+                }
+            }
         }
         if (newMusic != currentMusic)
         {
