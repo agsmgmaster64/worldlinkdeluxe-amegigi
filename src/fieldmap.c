@@ -415,7 +415,6 @@ u32 MapGridGetMetatileBehaviorAt(int x, int y)
 
 u8 MapGridGetMetatileLayerTypeAt(int x, int y)
 {
-    u16 metatile = MapGridGetMetatileIdAt(x, y);
     return MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_LAYER_TYPE);
 }
 

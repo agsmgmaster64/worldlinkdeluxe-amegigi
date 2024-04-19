@@ -8405,7 +8405,6 @@ u32 GetMoveSlot(u16 *moves, u32 move)
 
 u32 GetBattlerWeight(u32 battler)
 {
-    u32 i;
     u32 weight = GetSpeciesWeight(gBattleMons[battler].species);
 
     if (weight == 0)
