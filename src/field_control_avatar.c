@@ -565,6 +565,11 @@ static bool8 TryStartMiscWalkingScripts(u16 metatileBehavior)
         PlaySecretBaseMusicNoteMatSound(MapGridGetMetatileIdAt(x, y));
         return FALSE;
     }
+    else if (MetatileBehavior_IsPokeGrass(metatileBehavior))
+    {
+        PlaySE(SE_M_POISON_POWDER);
+        return FALSE;
+    }
     return FALSE;
 }
 

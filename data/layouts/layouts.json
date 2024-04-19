@@ -248,7 +248,7 @@
       "height": 80,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route105/border.bin",
       "blockdata_filepath": "data/layouts/Route105/map.bin"
@@ -260,7 +260,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route106/border.bin",
       "blockdata_filepath": "data/layouts/Route106/map.bin"
@@ -272,7 +272,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route107/border.bin",
       "blockdata_filepath": "data/layouts/Route107/map.bin"
@@ -284,7 +284,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route108/border.bin",
       "blockdata_filepath": "data/layouts/Route108/map.bin"
@@ -296,7 +296,7 @@
       "height": 63,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route109/border.bin",
       "blockdata_filepath": "data/layouts/Route109/map.bin"
@@ -308,7 +308,7 @@
       "height": 100,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route110/border.bin",
       "blockdata_filepath": "data/layouts/Route110/map.bin"
@@ -668,7 +668,7 @@
       "height": 9,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RG_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
@@ -680,7 +680,7 @@
       "height": 8,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RG_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_2F/map.bin"
@@ -689,7 +689,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
       "name": "LittlerootTown_ProfessorBirchsLab_Layout",
       "width": 13,
-      "height": 13,
+      "height": 14,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
@@ -716,7 +716,7 @@
       "height": 8,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RG_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House2/border.bin",
       "blockdata_filepath": "data/layouts/House2/map.bin"
@@ -736,12 +736,12 @@
     {
       "id": "LAYOUT_POKEMON_CENTER_2F",
       "name": "PokemonCenter_2F_Layout",
-      "width": 14,
-      "height": 10,
+      "width": 15,
+      "height": 9,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PokemonCenter",
       "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
       "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin"
     },
@@ -844,12 +844,12 @@
     {
       "id": "LAYOUT_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
       "name": "LavaridgeTown_PokemonCenter_1F_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 15,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonCenter",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PokemonCenter",
       "border_filepath": "data/layouts/LavaridgeTown_PokemonCenter_1F/border.bin",
       "blockdata_filepath": "data/layouts/LavaridgeTown_PokemonCenter_1F/map.bin"
     },
