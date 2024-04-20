@@ -18,6 +18,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "random.h"
+#include "sound.h"
 #include "sprite.h"
 #include "task.h"
 #include "trainer_see.h"
@@ -28,6 +29,7 @@
 #include "constants/field_effects.h"
 #include "constants/items.h"
 #include "constants/mauville_old_man.h"
+#include "constants/songs.h"
 #include "constants/trainer_types.h"
 #include "constants/union_room.h"
 
