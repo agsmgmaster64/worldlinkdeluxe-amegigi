@@ -7880,6 +7880,7 @@ BattleScript_FascinateEffect:
 	statbuffchange STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_FascinateLoopIncrement
 	setgraphicalstatchangevalues
 	jumpifability BS_TARGET, ABILITY_CONTRARY, BattleScript_FascinateContrary
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BattleScript_FascinateWontDecrease
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printstring STRINGID_PKMNCUTSATTACKWITH
 BattleScript_FascinateEffect_WaitString:
@@ -7894,6 +7895,10 @@ BattleScript_FascinateEnd:
 	destroyabilitypopup
 	pause B_WAIT_TIME_MED
 	end3
+
+BattleScript_FascinateWontDecrease:
+	printstring STRINGID_STATSWONTDECREASE
+	goto BattleScript_FascinateEffect_WaitString
 
 BattleScript_FascinateContrary:
 	call BattleScript_AbilityPopUpTarget

@@ -1,7 +1,7 @@
 === PARTNER_NONE ===
-Name:
+Name: 
 Class: Pkmn Trainer 1
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 
@@ -18,7 +18,7 @@ Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
 - Light Screen
-- Psychic
+- Mana Burst
 - Reflect
 - Metal Claw
 
@@ -40,4 +40,4 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Thunder
 - Protect
 - Solar Beam
-- Dragon Claw
+- Heart Break
