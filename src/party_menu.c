@@ -3996,14 +3996,27 @@ static void CursorCb_Nickname(u8 taskId)
 
 static void CursorCb_Moves(u8 taskId)
 {
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
     PlaySE(SE_SELECT);
-    FlagSet(FLAG_PARTY_MOVES);
-    gSpecialVar_0x8004 = gPartyMenu.slotId;
-    gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(&gPlayerParty[gSpecialVar_0x8004]);
-    DisplayPartyPokemonDataForRelearner(gSpecialVar_0x8004);
-    TeachMoveRelearnerMove();
-    sPartyMenuInternal->exitCallback = TeachMoveRelearnerMove;
-    Task_ClosePartyMenu(taskId);
+    if (GetNumberOfRelearnableMoves(mon) != 0)
+    {
+        FlagSet(FLAG_PARTY_MOVES);
+        gSpecialVar_0x8004 = gPartyMenu.slotId;
+        gSpecialVar_0x8005 = GetNumberOfRelearnableMoves(mon);
+        TeachMoveRelearnerMove();
+        sPartyMenuInternal->exitCallback = TeachMoveRelearnerMove;
+        Task_ClosePartyMenu(taskId);
+    }
+    else
+    {
+        GetMonNickname(mon, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnCantRelearnMoves);
+        PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+        PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+    }
 }
 
 static void CursorCb_Cancel2(u8 taskId)
