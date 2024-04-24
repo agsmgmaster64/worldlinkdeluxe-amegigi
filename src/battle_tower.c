@@ -2950,18 +2950,6 @@ void CopyEReaderTrainerGreeting(void)
 #endif //FREE_BATTLE_TOWER_E_READER
 }
 
-static void CopyEReaderTrainerFarewellMessage(void)
-{
-#if FREE_BATTLE_TOWER_E_READER == FALSE
-    if (gBattleOutcome == B_OUTCOME_DREW)
-        gStringVar4[0] = EOS;
-    else if (gBattleOutcome == B_OUTCOME_WON)
-        FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerWon);
-    else
-        FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.farewellPlayerLost);
-#endif //FREE_BATTLE_TOWER_E_READER
-}
-
 void TryHideBattleTowerReporter(void)
 {
     if (gSaveBlock2Ptr->frontier.challengeStatus == CHALLENGE_STATUS_SAVING)

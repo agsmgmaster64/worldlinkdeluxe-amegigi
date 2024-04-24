@@ -147,12 +147,7 @@ Debug_EventScript_Script_1::
 	end
 
 Debug_EventScript_Script_2::
-	special SavePlayerParty
-	setflag FLAG_SCRIPTED_LOSS
-	ai_vs_ai_battle TRAINER_PHOEBE, TRAINER_SIDNEY
-	clearflag FLAG_SCRIPTED_LOSS
-	special LoadPlayerParty
-	special HealPlayerParty
+	givemon SPECIES_NORMAL_YOUMU, 100, ITEM_MAID_UNIFORM, ITEM_LUXURY_ORB, NATURE_ADAMANT, 2, 0, 0, 252, 0, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_BLADE_FLASH, MOVE_DRAWN_LINE, MOVE_SHADOW_HIT, MOVE_SWORDS_DANCE, TRUE, 0, TYPE_STELLAR
 	end
 
 Debug_EventScript_Script_3::
@@ -207,6 +202,7 @@ Debug_EventScript_Script_4::
 	giveitem ITEM_LANTERN
 	giveitem ITEM_PICKAXE
 	giveitem ITEM_SCUBA_GEAR
+	giveitem ITEM_TERA_ORB
 	end
 
 Debug_EventScript_Script_5::

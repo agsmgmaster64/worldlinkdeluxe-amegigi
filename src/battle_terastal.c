@@ -162,25 +162,25 @@ uq4_12_t GetTeraMultiplier(u32 battler, u32 type)
 
 // Most values pulled from the Tera type icon palette.
 const u16 sTeraTypeRGBValues[NUMBER_OF_MON_TYPES] = {
-    [TYPE_NORMAL] = RGB_WHITE, // custom
-    [TYPE_FIGHTING] = RGB(26, 8, 14),
+    [TYPE_ILLUSION] = RGB_WHITE, // custom
+    [TYPE_DREAM] = RGB(26, 8, 14),
     [TYPE_FLYING] = RGB(31, 26, 7),
-    [TYPE_POISON] = RGB(26, 10, 25), // custom
-    [TYPE_GROUND] = RGB(25, 23, 18),
-    [TYPE_ROCK] = RGB(18, 16, 8), // custom
-    [TYPE_BUG] = RGB(18, 24, 6),
+    [TYPE_MIASMA] = RGB(26, 10, 25), // custom
+    [TYPE_EARTH] = RGB(25, 23, 18),
+    [TYPE_BEAST] = RGB(18, 16, 8), // custom
+    [TYPE_HEART] = RGB(31, 15, 21),
     [TYPE_GHOST] = RGB(12, 10, 16),
     [TYPE_STEEL] = RGB(19, 19, 20),
     [TYPE_MYSTERY] = RGB_WHITE,
     [TYPE_FIRE] = RGB(31, 20, 11),
     [TYPE_WATER] = RGB(10, 18, 27),
-    [TYPE_GRASS] = RGB(12, 24, 11),
-    [TYPE_ELECTRIC] = RGB(30, 26, 7),
-    [TYPE_PSYCHIC] = RGB(31, 14, 15),
+    [TYPE_NATURE] = RGB(12, 24, 11),
+    [TYPE_WIND] = RGB(30, 26, 7),
+    [TYPE_REASON] = RGB(31, 14, 15),
     [TYPE_ICE] = RGB(14, 26, 25),
-    [TYPE_DRAGON] = RGB(10, 18, 27),
+    [TYPE_FAITH] = RGB(10, 18, 27),
     [TYPE_DARK] = RGB(6, 5, 8),
-    [TYPE_FAIRY] = RGB(31, 15, 21),
+    [TYPE_COSMIC] = RGB(18, 6, 24),
     [TYPE_STELLAR] = RGB(10, 18, 27),
 };
 
@@ -652,25 +652,25 @@ static const struct SpriteSheet sTeraIndicatorSpriteSheets[NUMBER_OF_MON_TYPES +
 
 static const struct SpriteTemplate * const sTeraIndicatorSpriteTemplates[NUMBER_OF_MON_TYPES] =
 {
-    [TYPE_NORMAL] = &sSpriteTemplate_NormalIndicator,
-    [TYPE_FIGHTING] = &sSpriteTemplate_FightingIndicator,
+    [TYPE_ILLUSION] = &sSpriteTemplate_NormalIndicator,
+    [TYPE_DREAM] = &sSpriteTemplate_FightingIndicator,
     [TYPE_FLYING] = &sSpriteTemplate_FlyingIndicator,
-    [TYPE_POISON] = &sSpriteTemplate_PoisonIndicator,
-    [TYPE_GROUND] = &sSpriteTemplate_GroundIndicator,
-    [TYPE_ROCK] = &sSpriteTemplate_RockIndicator,
-    [TYPE_BUG] = &sSpriteTemplate_BugIndicator,
+    [TYPE_MIASMA] = &sSpriteTemplate_PoisonIndicator,
+    [TYPE_EARTH] = &sSpriteTemplate_GroundIndicator,
+    [TYPE_BEAST] = &sSpriteTemplate_RockIndicator,
+    [TYPE_HEART] = &sSpriteTemplate_BugIndicator,
     [TYPE_GHOST] = &sSpriteTemplate_GhostIndicator,
     [TYPE_STEEL] = &sSpriteTemplate_SteelIndicator,
     [TYPE_MYSTERY] = &sSpriteTemplate_NormalIndicator, // just in case
     [TYPE_FIRE] = &sSpriteTemplate_FireIndicator,
     [TYPE_WATER] = &sSpriteTemplate_WaterIndicator,
-    [TYPE_GRASS] = &sSpriteTemplate_GrassIndicator,
-    [TYPE_ELECTRIC] = &sSpriteTemplate_ElectricIndicator,
-    [TYPE_PSYCHIC] = &sSpriteTemplate_PsychicIndicator,
+    [TYPE_NATURE] = &sSpriteTemplate_GrassIndicator,
+    [TYPE_WIND] = &sSpriteTemplate_ElectricIndicator,
+    [TYPE_REASON] = &sSpriteTemplate_PsychicIndicator,
     [TYPE_ICE] = &sSpriteTemplate_IceIndicator,
-    [TYPE_DRAGON] = &sSpriteTemplate_DragonIndicator,
+    [TYPE_FAITH] = &sSpriteTemplate_DragonIndicator,
     [TYPE_DARK] = &sSpriteTemplate_DarkIndicator,
-    [TYPE_FAIRY] = &sSpriteTemplate_FairyIndicator,
+    [TYPE_COSMIC] = &sSpriteTemplate_FairyIndicator,
     [TYPE_STELLAR] = &sSpriteTemplate_StellarIndicator,
 };
 
