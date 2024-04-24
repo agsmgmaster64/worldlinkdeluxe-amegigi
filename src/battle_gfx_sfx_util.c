@@ -657,6 +657,13 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battler)
             BlendPalette(paletteOffset, 16, 4, RGB(31, 0, 12));
         CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, PLTT_SIZEOF(16));
     }
+
+    // Terastallization's tint
+    if (IsTerastallized(battler))
+    {
+        BlendPalette(paletteOffset, 16, 8, GetTeraTypeRGB(GetBattlerTeraType(battler)));
+        CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, PLTT_SIZEOF(16));
+    }
 }
 
 void DecompressGhostFrontPic(struct Pokemon *unused, u8 battlerId)
@@ -737,6 +744,7 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
             LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[0]);
             LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
             MegaIndicator_LoadSpritesGfx();
+            TeraIndicator_LoadSpriteGfx();
         }
         else if (!IsDoubleBattle())
         {

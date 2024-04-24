@@ -18445,7 +18445,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "If the user's Terastallized,\n"
             "it hits with its Tera-type."),
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_TERA_BLAST,
+        .effect = EFFECT_TERA_BLAST,
         .power = 80,
         .type = TYPE_ILLUSION,
         .accuracy = 100,
@@ -18454,6 +18454,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .forcePressure = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TERA_BLAST,
+            .self = TRUE,
+        }),
     },
 
     [MOVE_SILK_TRAP] =
