@@ -5793,6 +5793,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 // Set the target to the original target of the mon that first used a Dance move
                 gBattlerTarget = gBattleScripting.savedBattler & 0x3;
 
+                // Edge case for dance moves that hit multiply targets
+                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
+
                 // Make sure that the target isn't an ally - if it is, target the original user
                 if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker))
                     gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
@@ -5816,6 +5819,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
 
                 // Set the target to the original target of the mon that first used a sound move
                 gBattlerTarget = gBattleScripting.savedBattler & 0x3;
+
+                // Edge case for sound moves that hit multiply targets
+                gHitMarker &= ~HITMARKER_NO_ATTACKSTRING;
 
                 // Make sure that the target isn't an ally - if it is, target the original user
                 if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker))
@@ -7960,6 +7966,15 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 effect = ITEM_STATUS_CHANGE;
                 gBattleMons[battler].status1 = STATUS1_BURN;
                 BattleScriptExecute(BattleScript_FlameOrb);
+                RecordItemEffectBattle(battler, battlerHoldEffect);
+            }
+            break;
+        case HOLD_EFFECT_FROST_ORB:
+            if (CanGetFrostbite(battler))
+            {
+                effect = ITEM_STATUS_CHANGE;
+                gBattleMons[battler].status1 = STATUS1_FROSTBITE;
+                BattleScriptExecute(BattleScript_FrostOrb);
                 RecordItemEffectBattle(battler, battlerHoldEffect);
             }
             break;

@@ -162,8 +162,8 @@ uq4_12_t GetTeraMultiplier(u32 battler, u32 type)
 
 // Most values pulled from the Tera type icon palette.
 const u16 sTeraTypeRGBValues[NUMBER_OF_MON_TYPES] = {
-    [TYPE_ILLUSION] = RGB_WHITE, // custom
-    [TYPE_DREAM] = RGB(26, 8, 14),
+    [TYPE_ILLUSION] = RGB(10, 18, 27), // custom
+    [TYPE_DREAM] = RGB_WHITE,
     [TYPE_FLYING] = RGB(31, 26, 7),
     [TYPE_MIASMA] = RGB(26, 10, 25), // custom
     [TYPE_EARTH] = RGB(25, 23, 18),
@@ -171,14 +171,14 @@ const u16 sTeraTypeRGBValues[NUMBER_OF_MON_TYPES] = {
     [TYPE_HEART] = RGB(31, 15, 21),
     [TYPE_GHOST] = RGB(12, 10, 16),
     [TYPE_STEEL] = RGB(19, 19, 20),
-    [TYPE_MYSTERY] = RGB_WHITE,
+    [TYPE_MYSTERY] = RGB(26, 8, 14),
     [TYPE_FIRE] = RGB(31, 20, 11),
     [TYPE_WATER] = RGB(10, 18, 27),
     [TYPE_NATURE] = RGB(12, 24, 11),
     [TYPE_WIND] = RGB(30, 26, 7),
     [TYPE_REASON] = RGB(31, 14, 15),
     [TYPE_ICE] = RGB(14, 26, 25),
-    [TYPE_FAITH] = RGB(10, 18, 27),
+    [TYPE_FAITH] = RGB(30, 26, 7),
     [TYPE_DARK] = RGB(6, 5, 8),
     [TYPE_COSMIC] = RGB(18, 6, 24),
     [TYPE_STELLAR] = RGB(10, 18, 27),

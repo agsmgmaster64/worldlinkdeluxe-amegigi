@@ -706,6 +706,7 @@ BattleScript_EffectFling::
 	jumpiflastuseditemberry BattleScript_EffectFlingConsumeBerry
 	jumpifability BS_TARGET, ABILITY_ADVENT, BattleScript_FlingBlockedByShieldDust
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_FLAME_ORB, BattleScript_FlingFlameOrb
+	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_FROST_ORB, BattleScript_FlingFrostOrb
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_FLINCH, BattleScript_FlingFlinch
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_LIGHT_BALL, BattleScript_FlingLightBall
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_MENTAL_HERB, BattleScript_FlingMentalHerb
@@ -738,6 +739,9 @@ BattleScript_FlingBlockedByShieldDust::
 
 BattleScript_FlingFlameOrb:
 	seteffectsecondary MOVE_EFFECT_BURN
+	goto BattleScript_FlingEnd
+BattleScript_FlingFrostOrb:
+	seteffectsecondary MOVE_EFFECT_FROSTBITE
 	goto BattleScript_FlingEnd
 BattleScript_FlingFlinch:
 	seteffectsecondary MOVE_EFFECT_FLINCH
@@ -7534,6 +7538,12 @@ BattleScript_FlameOrb::
 	setbyte cMULTISTRING_CHOOSER, 0
 	copybyte gEffectBattler, gBattlerAttacker
 	call BattleScript_MoveEffectBurn
+	end2
+
+BattleScript_FrostOrb::
+	setbyte cMULTISTRING_CHOOSER, 0
+	copybyte gEffectBattler, gBattlerAttacker
+	call BattleScript_MoveEffectFrostbite
 	end2
 
 BattleScript_MoveEffectPoison::

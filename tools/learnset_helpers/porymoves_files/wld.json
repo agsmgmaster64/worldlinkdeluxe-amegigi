@@ -30,6 +30,7 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -66,6 +67,7 @@
       "MOVE_DECISION",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -103,6 +105,7 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -140,6 +143,7 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -176,6 +180,7 @@
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY"
     ]
   },
@@ -211,6 +216,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY"
     ]
   },
@@ -248,6 +254,7 @@
       "MOVE_POISON_JAB",
       "MOVE_DREAM_EATER",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY"
     ]
   },
@@ -285,6 +292,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY"
     ]
   },
@@ -315,6 +323,7 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -346,6 +355,7 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -377,6 +387,7 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -408,6 +419,7 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ]
   },
@@ -442,6 +454,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_SURF",
       "MOVE_WATERFALL"
@@ -478,6 +491,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_SURF",
       "MOVE_WATERFALL"
@@ -514,6 +528,7 @@
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_SURF",
       "MOVE_WATERFALL"
@@ -551,6 +566,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_SURF",
       "MOVE_WATERFALL"
@@ -584,7 +600,8 @@
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
       "MOVE_THUNDER_WAVE",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "RUMIA": {
@@ -614,7 +631,8 @@
       "MOVE_SNATCH",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "A_RUMIA": {
@@ -646,6 +664,7 @@
       "MOVE_WILL_O_WISP",
       "MOVE_THUNDER_WAVE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ]
   },
@@ -676,7 +695,8 @@
       "MOVE_SNATCH",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_MEILING": {
@@ -703,6 +723,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ]
@@ -731,6 +752,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ]
@@ -761,6 +783,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ]
@@ -789,6 +812,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ]
@@ -822,7 +846,8 @@
       "MOVE_SKILL_SWAP",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_PSYCHO_CUT"
+      "MOVE_PSYCHO_CUT",
+      "MOVE_TERA_BLAST"
     ]
   },
   "KOAKUMA": {
@@ -854,7 +879,8 @@
       "MOVE_SKILL_SWAP",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_PSYCHO_CUT"
+      "MOVE_PSYCHO_CUT",
+      "MOVE_TERA_BLAST"
     ]
   },
   "H_KOAKUMA": {
@@ -886,7 +912,8 @@
       "MOVE_SKILL_SWAP",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_PSYCHO_CUT"
+      "MOVE_PSYCHO_CUT",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_PATCHOULI": {
@@ -910,7 +937,8 @@
       "MOVE_ATTRACT",
       "MOVE_SKILL_SWAP",
       "MOVE_MIND_BOMB",
-      "MOVE_ENDURE"
+      "MOVE_ENDURE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "PATCHOULI": {
@@ -939,7 +967,8 @@
       "MOVE_ATTRACT",
       "MOVE_SKILL_SWAP",
       "MOVE_MIND_BOMB",
-      "MOVE_ENDURE"
+      "MOVE_ENDURE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "A_PATCHOULI": {
@@ -969,7 +998,8 @@
       "MOVE_SKILL_SWAP",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_WILL_O_WISP"
+      "MOVE_WILL_O_WISP",
+      "MOVE_TERA_BLAST"
     ]
   },
   "D_PATCHOULI": {
@@ -1000,7 +1030,8 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_THUNDER_WAVE",
-      "MOVE_PSYCH_UP"
+      "MOVE_PSYCH_UP",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_SAKUYA": {
@@ -1031,6 +1062,7 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1063,6 +1095,7 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1096,6 +1129,7 @@
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER_WAVE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1131,6 +1165,7 @@
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER_WAVE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ]
@@ -1163,6 +1198,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_FLY",
       "MOVE_STRENGTH",
@@ -1197,6 +1233,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_FLY",
       "MOVE_STRENGTH",
@@ -1231,6 +1268,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_FLY",
       "MOVE_STRENGTH",
@@ -1265,6 +1303,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_FLY",
       "MOVE_STRENGTH",
@@ -1295,6 +1334,7 @@
       "MOVE_ENDURE",
       "MOVE_EXPLOSION",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -1324,6 +1364,7 @@
       "MOVE_ENDURE",
       "MOVE_EXPLOSION",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -1354,6 +1395,7 @@
       "MOVE_ENDURE",
       "MOVE_EXPLOSION",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ]
@@ -1382,6 +1424,7 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_EXPLOSION",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -1411,7 +1454,8 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "LETTY": {
@@ -1441,7 +1485,8 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_PSYCH_UP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "D_LETTY": {
@@ -1470,7 +1515,8 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_CURSE",
-      "MOVE_DREAM_EATER"
+      "MOVE_DREAM_EATER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "H_LETTY": {
@@ -1498,7 +1544,8 @@
       "MOVE_ATTRACT",
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "SHANGHAI": {
@@ -1525,6 +1572,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_CURSE",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ]
   },
@@ -1551,6 +1599,7 @@
       "MOVE_ENDURE",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_CURSE"
     ]
   },
@@ -1579,6 +1628,7 @@
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -1610,7 +1660,8 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "ALICE": {
@@ -1643,6 +1694,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ]
   },
@@ -1674,6 +1726,7 @@
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
       "MOVE_CURSE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ]
   },
@@ -1705,6 +1758,7 @@
       "MOVE_EXPLOSION",
       "MOVE_SWORDS_DANCE",
       "MOVE_CURSE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ]
   },
@@ -1737,6 +1791,7 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -1770,6 +1825,7 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -1806,6 +1862,7 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_PSYCHO_CUT",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -1841,6 +1898,7 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_FLASH"
     ]
@@ -1873,6 +1931,7 @@
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -1909,6 +1968,7 @@
       "MOVE_ENDURE",
       "MOVE_PSYCHO_CUT",
       "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -1946,6 +2006,7 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_PSYCH_UP",
       "MOVE_DREAM_EATER",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -1984,6 +2045,7 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
+      "MOVE_TERA_BLAST",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH",
       "MOVE_WATERFALL"
@@ -2012,7 +2074,8 @@
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
       "MOVE_CURSE",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "LUNASA": {
@@ -2038,7 +2101,8 @@
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
       "MOVE_CURSE",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "H_LUNASA": {
@@ -2064,7 +2128,8 @@
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
       "MOVE_CURSE",
-      "MOVE_POISON_JAB"
+      "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_MERLIN": {
@@ -2089,7 +2154,8 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "MERLIN": {
@@ -2116,7 +2182,8 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "H_MERLIN": {
@@ -2141,7 +2208,8 @@
       "MOVE_MIND_BOMB",
       "MOVE_ENDURE",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_LYRICA": {
@@ -2170,7 +2238,8 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "LYRICA": {
@@ -2199,7 +2268,8 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_PSYCH_UP",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "H_LYRICA": {
@@ -2225,7 +2295,8 @@
       "MOVE_SNATCH",
       "MOVE_FOCUS_BLAST",
       "MOVE_CURSE",
-      "MOVE_SWAGGER"
+      "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_LAYLA": {
@@ -2249,7 +2320,8 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "LAYLA": {
@@ -2273,7 +2345,8 @@
       "MOVE_FOCUS_BLAST",
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "D_LAYLA": {
@@ -2300,7 +2373,8 @@
       "MOVE_ENDURE",
       "MOVE_WILL_O_WISP",
       "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE"
+      "MOVE_SWORDS_DANCE",
+      "MOVE_TERA_BLAST"
     ]
   },
   "C_YOUMU": {
@@ -2326,6 +2400,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_STRENGTH"
     ]
@@ -2353,6 +2428,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_STRENGTH"
     ]
@@ -2381,6 +2457,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_PSYCH_UP",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_STRENGTH"
     ]
@@ -2408,6 +2485,7 @@
       "MOVE_ENDURE",
       "MOVE_SWORDS_DANCE",
       "MOVE_POISON_JAB",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_STRENGTH"
     ]
@@ -2470,6 +2548,7 @@
       "MOVE_CURSE",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -2567,6 +2646,7 @@
       "MOVE_CURSE",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -2668,6 +2748,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -2765,6 +2846,7 @@
       "MOVE_ICE_PUNCH",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -2831,6 +2913,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -2926,6 +3009,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -3022,6 +3106,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -3122,6 +3207,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -3194,6 +3280,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -3310,6 +3397,7 @@
       "MOVE_FIRE_PUNCH",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -3422,6 +3510,7 @@
       "MOVE_ICE_PUNCH",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -3538,6 +3627,7 @@
       "MOVE_ICE_PUNCH",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -3613,7 +3703,8 @@
       "MOVE_POISON_JAB",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
-      "MOVE_METRONOME"
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -3728,7 +3819,8 @@
       "MOVE_POISON_JAB",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
-      "MOVE_METRONOME"
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -3847,7 +3939,8 @@
       "MOVE_POISON_JAB",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
-      "MOVE_METRONOME"
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -3965,7 +4058,8 @@
       "MOVE_SWAGGER",
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
-      "MOVE_METRONOME"
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
     ],
     "EggMoves": [],
     "TutorMoves": [
@@ -3992,6 +4086,7 @@
       "MOVE_ICY_WIND",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_DIVE",
@@ -4021,6 +4116,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_DIVE",
@@ -4053,6 +4149,7 @@
       "MOVE_SWORDS_DANCE",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_DIVE",
@@ -4091,6 +4188,7 @@
       "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
+      "MOVE_TERA_BLAST",
       "MOVE_SURF",
       "MOVE_FLASH",
       "MOVE_WATERFALL",
@@ -4162,6 +4260,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4257,6 +4356,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4356,6 +4456,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4456,6 +4557,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4524,6 +4626,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4633,6 +4736,7 @@
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4699,6 +4803,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4795,6 +4900,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4890,6 +4996,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -4984,6 +5091,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -5054,6 +5162,7 @@
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "EggMoves": [],
@@ -5163,6 +5272,7 @@
       "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
       "MOVE_FLASH"
     ],
     "TutorMoves": []

@@ -3889,6 +3889,10 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
             if (!ShouldBurnSelf(battlerAtk, aiData->abilities[battlerAtk]) && AI_CanBeBurned(battlerAtk, aiData->abilities[battlerDef]))
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
+        case HOLD_EFFECT_FROST_ORB:
+            if (!ShouldFrostbiteSelf(battlerAtk, aiData->abilities[battlerAtk]) && AI_CanGetFrostbite(battlerAtk, aiData->abilities[battlerDef]))
+                ADJUST_SCORE(DECENT_EFFECT);
+            break;
         case HOLD_EFFECT_BLACK_SLUDGE:
             if (!IS_BATTLER_OF_TYPE(battlerDef, TYPE_MIASMA) && aiData->abilities[battlerDef] != ABILITY_MAGIC_GUARD)
                 ADJUST_SCORE(DECENT_EFFECT);
@@ -3937,6 +3941,10 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                     break;
                 case HOLD_EFFECT_FLAME_ORB:
                     if (ShouldBurnSelf(battlerAtk, aiData->abilities[battlerAtk]))
+                        ADJUST_SCORE(DECENT_EFFECT);
+                    break;
+                case HOLD_EFFECT_FROST_ORB:
+                    if (ShouldFrostbiteSelf(battlerAtk, aiData->abilities[battlerAtk]))
                         ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case HOLD_EFFECT_BLACK_SLUDGE:
@@ -4537,6 +4545,10 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
                                 break;
                             case HOLD_EFFECT_FLAME_ORB:
                                 if (ShouldBurnSelf(battlerAtk, aiData->abilities[battlerAtk]))
+                                    ADJUST_SCORE(DECENT_EFFECT);
+                                break;
+                            case HOLD_EFFECT_FROST_ORB:
+                                if (ShouldFrostbiteSelf(battlerAtk, aiData->abilities[battlerAtk]))
                                     ADJUST_SCORE(DECENT_EFFECT);
                                 break;
                             case HOLD_EFFECT_BLACK_SLUDGE:

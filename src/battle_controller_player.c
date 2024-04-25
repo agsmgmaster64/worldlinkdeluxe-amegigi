@@ -82,7 +82,7 @@ static void PlayerBufferRunCommand(u32 battler);
 static void HandleInputChooseTarget(u32 battler);
 static void HandleInputChooseMove(u32 battler);
 static void MoveSelectionDisplayPpNumber(u32 battler);
-static void MoveSelectionDisplayPpString(u32 battlerAtk, u32 battlerDef);
+static void MoveSelectionDisplayPpString(u32 battler);
 static void MoveSelectionDisplayMoveType(u32 battler);
 static void MoveSelectionDisplayMoveNames(u32 battler);
 static void HandleMoveSwitching(u32 battler);
@@ -516,7 +516,7 @@ static void HandleInputChooseTarget(u32 battler)
                     i++;
                     break;
                 }
-                MoveSelectionDisplayPpString(battler, GetBattlerPosition(gMultiUsePlayerCursor));
+                MoveSelectionDisplayPpString(battler);
 
                 if (gAbsentBattlerFlags & gBitTable[gMultiUsePlayerCursor]
                  || !CanTargetBattler(battler, gMultiUsePlayerCursor, move))
@@ -567,7 +567,7 @@ static void HandleInputChooseTarget(u32 battler)
                     i++;
                     break;
                 }
-                MoveSelectionDisplayPpString(battler, GetBattlerPosition(gMultiUsePlayerCursor));
+                MoveSelectionDisplayPpString(battler);
 
                 if (gAbsentBattlerFlags & gBitTable[gMultiUsePlayerCursor]
                  || !CanTargetBattler(battler, gMultiUsePlayerCursor, move))
@@ -837,7 +837,7 @@ static void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+            MoveSelectionDisplayPpString(battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryChangeZIndicator(battler, gMoveSelectionCursor[battler]);
@@ -852,7 +852,7 @@ static void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+            MoveSelectionDisplayPpString(battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryChangeZIndicator(battler, gMoveSelectionCursor[battler]);
@@ -866,7 +866,7 @@ static void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+            MoveSelectionDisplayPpString(battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryChangeZIndicator(battler, gMoveSelectionCursor[battler]);
@@ -881,7 +881,7 @@ static void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+            MoveSelectionDisplayPpString(battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryChangeZIndicator(battler, gMoveSelectionCursor[battler]);
@@ -938,6 +938,8 @@ static void HandleInputChooseMove(u32 battler)
         else if (CanTerastallize(battler))
         {
             gBattleStruct->tera.playerSelect ^= 1;
+            MoveSelectionDisplayPpString(battler);
+            MoveSelectionDisplayMoveType(battler);
             ChangeTeraTriggerSprite(gBattleStruct->tera.triggerSpriteId, gBattleStruct->tera.playerSelect);
             PlaySE(SE_SELECT);
         }
@@ -954,7 +956,7 @@ static void ReloadMoveNames(u32 battler)
     MoveSelectionDestroyCursorAt(battler);
     MoveSelectionDisplayMoveNames(battler);
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+    MoveSelectionDisplayPpString(battler);
     MoveSelectionDisplayPpNumber(battler);
     MoveSelectionDisplayMoveType(battler);
 }
@@ -1106,7 +1108,7 @@ static void HandleMoveSwitching(u32 battler)
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         gMoveSelectionCursor[battler] = gMultiUsePlayerCursor;
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-        MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+        MoveSelectionDisplayPpString(battler);
         MoveSelectionDisplayPpNumber(battler);
         MoveSelectionDisplayMoveType(battler);
         GetUsableZMoves(battler, moveInfo->moves);
@@ -1117,7 +1119,7 @@ static void HandleMoveSwitching(u32 battler)
         MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
-        MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+        MoveSelectionDisplayPpString(battler);
         MoveSelectionDisplayPpNumber(battler);
         MoveSelectionDisplayMoveType(battler);
     }
@@ -1732,20 +1734,32 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
     }
 }
 
-static void MoveSelectionDisplayPpString(u32 battlerAtk, u32 battlerDef)
+static void MoveSelectionDisplayPpString(u32 battler)
 {
-    static const u8 superEffectiveIcon[]   =  _("{UP_ARROW_2}");
-    static const u8 notVeryEffectiveIcon[] =  _("{DOWN_ARROW_2}");
-    static const u8 noEffectIcon[]   =  _("{BIG_MULT_X}");
     static const u8 normalIcon[] =  _("");
     static const u8 stabIcon[]   =  _("{PLUS}");
-    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battlerAtk][4]);
-    u8 moveType = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battlerAtk]], battlerAtk);
+    static const u8 teraIcon[]   =  _("T");
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    u32 moveType = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    u8 *txtPtr;
 
-    if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && !IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battlerAtk]]))
-        StringCopy(gDisplayedStringBattle, stabIcon);
+    if (IS_BATTLER_OF_TYPE(battler, moveType) && !IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]))
+        txtPtr = StringCopy(gDisplayedStringBattle, stabIcon);
     else
-        StringCopy(gDisplayedStringBattle, normalIcon);
+        txtPtr = StringCopy(gDisplayedStringBattle, normalIcon);
+
+    if (IsTerastallized(battler) || (gBattleStruct->tera.playerSelect))
+    {
+        u32 teraType = GetBattlerTeraType(battler);
+        if (teraType == TYPE_STELLAR && IsTypeStellarBoosted(battler, moveType))
+        {
+            StringCopy(txtPtr, teraIcon);
+        }
+        else if (moveType == teraType)
+        {
+            StringCopy(txtPtr, teraIcon);
+        }
+    }
 
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }
@@ -2125,7 +2139,7 @@ void InitMoveSelectionsVarsAndStrings(u32 battler)
     MoveSelectionDisplayMoveNames(battler);
     gMultiUsePlayerCursor = 0xFF;
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    MoveSelectionDisplayPpString(battler, GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battler))));
+    MoveSelectionDisplayPpString(battler);
     MoveSelectionDisplayPpNumber(battler);
     MoveSelectionDisplayMoveType(battler);
 }

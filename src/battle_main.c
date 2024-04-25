@@ -6047,6 +6047,7 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
 {
     u32 ateType, attackerAbility, multiPulseType;
     u16 holdEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
+    u32 checkTera = (IsTerastallized(battlerAtk) || (gBattleStruct->tera.playerSelect));
 
     if (move == MOVE_STRUGGLE)
         return TYPE_ILLUSION;
@@ -6109,6 +6110,10 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
                 return TYPE_ILLUSION;
         }
     }
+    else if (gMovesInfo[move].effect == EFFECT_TERA_BLAST && checkTera)
+    {
+        return GetBattlerTeraType(battlerAtk);
+    }
 
     attackerAbility = GetBattlerAbility(battlerAtk);
 
@@ -6116,6 +6121,7 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
              && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
              && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
              && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
+             && !(gMovesInfo[move].effect == EFFECT_TERA_BLAST && checkTera)
              && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_HEART))
                  || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
                  || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))

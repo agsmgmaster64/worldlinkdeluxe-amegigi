@@ -2782,11 +2782,10 @@ bool32 ShouldBurnSelf(u32 battler, u32 ability)
     return FALSE;
 }
 
-/*bool32 ShouldFrostbiteSelf(u8 battler, u16 ability)
+bool32 ShouldFrostbiteSelf(u32 battler, u32 ability)
 {
     if (AI_CanGetFrostbite(battler, ability) && (
      ability == ABILITY_QUICK_FEET
-      || ability == ABILITY_HEATPROOF
       || ability == ABILITY_MAGIC_GUARD
       || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
       || (ability == ABILITY_UNWAVERING && HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
@@ -2794,7 +2793,7 @@ bool32 ShouldBurnSelf(u32 battler, u32 ability)
       || HasMoveEffect(battler, EFFECT_PSYCHO_SHIFT)))
         return TRUE;
     return FALSE;
-}*/
+}
 
 bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
 {

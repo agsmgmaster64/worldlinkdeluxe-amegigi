@@ -7065,6 +7065,21 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
     },
 
+    [ITEM_FROST_ORB] =
+    {
+        .name = _("Frost Orb"),
+        .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .holdEffect = HOLD_EFFECT_FROST_ORB,
+        .description = COMPOUND_STRING(
+            "A bizarre orb that\n"
+            "gives the holder in\n"
+            "battle frostbite."),
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+    },
+
 // Weather Rocks
 
     [ITEM_DAMP_ROCK] =
@@ -9624,10 +9639,11 @@ const struct Item gItemsInfo[] =
         .price = 3000,
         .description = COMPOUND_STRING(
             "Fires an icy cold\n"
-            "beam that may\n"
         #if B_USE_FROSTBITE == TRUE
-            "give the foe frostbite."),
+            "beam that can\n"
+            "give frostbite."),
         #else
+            "beam that may\n"
             "freeze the foe."),
         #endif
         .importance = I_REUSABLE_TMS,
@@ -9645,7 +9661,7 @@ const struct Item gItemsInfo[] =
             "A brutal snow-and-\n"
             "wind attack that\n"
         #if B_USE_FROSTBITE == TRUE
-            "may give the foe frostbite."),
+            "can give frostbite."),
         #else
             "may freeze the foe."),
         #endif
@@ -10827,12 +10843,15 @@ const struct Item gItemsInfo[] =
     {
         .name = _("TM93"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "\n"
+            "\n"
+            "."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
-        .secondaryId = MOVE_NONE, // Todo
+        .secondaryId = MOVE_TERA_BLAST,
     },
 
     [ITEM_TM94] =

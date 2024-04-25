@@ -93,7 +93,8 @@
     F(U_TURN) \
     F(SUBSTITUTE) \
     F(METRONOME) \
-    F(TRICK_ROOM)
+    F(TRICK_ROOM) \
+    F(TERA_BLAST)
 
 // todo
 // change MIND_BLOWN

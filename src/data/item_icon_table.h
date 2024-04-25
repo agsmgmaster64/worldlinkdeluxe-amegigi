@@ -725,7 +725,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_TM90] = {gItemIcon_TM, gItemIconPalette_IllusionTMHM},
     [ITEM_TM91] = {gItemIcon_TM, gItemIconPalette_IllusionTMHM},
     [ITEM_TM92] = {gItemIcon_TM, gItemIconPalette_ReasonTMHM},
-    [ITEM_TM93] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
+    [ITEM_TM93] = {gItemIcon_TM, gItemIconPalette_IllusionTMHM},
     [ITEM_TM94] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
     [ITEM_TM95] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
     [ITEM_TM96] = {gItemIcon_TM, gItemIconPalette_NormalTMHM},  // Todo
@@ -893,6 +893,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SWAP_SNACK] = {gItemIcon_SwapSnack, gItemIconPalette_SwapSnack},
     [ITEM_TWICE_SPICED_RADISH] = {gItemIcon_TwiceSpicedRadish, gItemIconPalette_TwiceSpicedRadish},
     [ITEM_POKESHI_DOLL] = {gItemIcon_PokeshiDoll, gItemIconPalette_PokeshiDoll},
+    [ITEM_FROST_ORB] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };
