@@ -296,12 +296,18 @@ const struct OamData gOamData_BattleSpritePlayerSide =
 
 static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 
+#if B_EXPANDED_TYPE_NAMES == TRUE
+#define HANDLE_EXPANDED_TYPE_NAME(_name, ...) _(DEFAULT(_name, __VA_ARGS__))
+#else
+#define HANDLE_EXPANDED_TYPE_NAME(_name) _(_name)
+#endif
+
 // .generic is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
 const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
 {
     [TYPE_ILLUSION] =
     {
-        .name = _("Illusn"),
+        .name = HANDLE_EXPANDED_TYPE_NAME("Illusn", "Illusion"),
         .generic = _("an Illusion move"),
         .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BREAKNECK_BLITZ,
@@ -593,7 +599,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     },
     [TYPE_STELLAR] =
     {
-        .name = _("Stellr"),
+        .name = HANDLE_EXPANDED_TYPE_NAME("Stellr", "Stellar"),
         .generic = _("a STELLAR move"),
         .palette = 15,
         .zMove = MOVE_BREAKNECK_BLITZ,

@@ -1783,7 +1783,7 @@ static void MoveSelectionDisplayPpNumber(u32 battler)
 
 static void MoveSelectionDisplayMoveType(u32 battler)
 {
-    u8 *txtPtr;
+    u8 *txtPtr, *end;
     u8 type;
     //u32 speciesId;
     //struct Pokemon *mon;
@@ -1792,18 +1792,15 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     type = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
 
     txtPtr = StringCopy(gDisplayedStringBattle, gTypesInfo[type].name);
-    *(txtPtr)++ = CHAR_SLASH;
-    *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
-    *(txtPtr)++ = EXT_CTRL_CODE_FONT;
-    *(txtPtr)++ = FONT_NARROW;
 
     if (IS_MOVE_PHYSICAL(moveInfo->moves[gMoveSelectionCursor[battler]]))
-        StringCopy(txtPtr, gText_MoveInterfacePhyscial);
+        end = StringCopy(txtPtr, gText_MoveInterfacePhyscial);
     else if (IS_MOVE_SPECIAL(moveInfo->moves[gMoveSelectionCursor[battler]]))
-        StringCopy(txtPtr, gText_MoveInterfaceSpecial);
+        end = StringCopy(txtPtr, gText_MoveInterfaceSpecial);
     else
-        StringCopy(txtPtr, gText_MoveInterfaceStatus);
+        end = StringCopy(txtPtr, gText_MoveInterfaceStatus);
 
+    PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);
 }
 
