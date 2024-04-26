@@ -1738,7 +1738,7 @@ static void MoveSelectionDisplayPpString(u32 battler)
 {
     static const u8 normalIcon[] =  _("");
     static const u8 stabIcon[]   =  _("{PLUS}");
-    static const u8 teraIcon[]   =  _("T");
+    static const u8 teraIcon[]   =  _("{CIRCLE_DOT}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     u32 moveType = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
     u8 *txtPtr;
@@ -1785,8 +1785,6 @@ static void MoveSelectionDisplayMoveType(u32 battler)
 {
     u8 *txtPtr, *end;
     u8 type;
-    //u32 speciesId;
-    //struct Pokemon *mon;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
     type = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);

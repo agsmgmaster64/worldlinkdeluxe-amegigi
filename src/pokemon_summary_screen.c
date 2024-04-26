@@ -3627,16 +3627,7 @@ static void BufferIvOrEvStats(u8 mode)
         spA = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPATK_EV);
         spD = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPDEF_EV);
         spe = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPEED_EV);
-        
-        totalEvs = 0;
 
-        for (i = 0; i < NUM_STATS; i++)
-        {
-            totalEvs += GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HP_EV + i, 0);
-        }
-
-        if (totalEvs == MAX_TOTAL_EVS)
-            colorMod = 1;
         break;
     case 2: // iv mode
         hp = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HP_IV);
@@ -3677,6 +3668,12 @@ static void BufferIvOrEvStats(u8 mode)
         PrintRightColumnStats();
         break;
     case 1:
+        totalEvs = hp + atk + def + spA + spD + spe;
+
+        if (totalEvs == MAX_TOTAL_EVS)
+            colorMod = 1;
+        else
+            colorMod = 0;
         BufferStat(gStringVar1, colorMod, hp, 0, 3);
         BufferStat(gStringVar2, colorMod, atk, 1, 7);
         BufferStat(gStringVar3, colorMod, def, 2, 7);

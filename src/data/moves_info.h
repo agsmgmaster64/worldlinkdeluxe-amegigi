@@ -7693,7 +7693,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_HEARTS_EYE] =
     {
-        .name = COMPOUND_STRING("Odor Sleuth"),
+        .name = COMPOUND_STRING("Heart's Eye"),
         .description = COMPOUND_STRING(
             "Negates the foe's efforts\n"
             "to heighten evasiveness."),
@@ -7765,7 +7765,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BINDING_VOICE] =
     {
-        .name = COMPOUND_STRING("Metal Sound"),
+        .name = HANDLE_EXPANDED_MOVE_NAME("BindingVoice", "Binding Voice"),
         .description = COMPOUND_STRING(
             "Emits a horrible screech\n"
             "that sharply lowers Sp. Def."),
