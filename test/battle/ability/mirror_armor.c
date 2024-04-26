@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Mirror Armor lowers the Attack of Pokemon with Intimidate")
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) { Ability(ABILITY_MIRROR_ARMOR); }
-        OPPONENT(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_NORMAL_KAGUYA) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN {}
     } SCENE {

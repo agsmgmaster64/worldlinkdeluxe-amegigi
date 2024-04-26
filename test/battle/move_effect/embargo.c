@@ -257,7 +257,7 @@ SINGLE_BATTLE_TEST("Embargo disables the effect of the Plate items on the move J
     PARAMETRIZE{ heldItem = ITEM_PIXIE_PLATE; }
     GIVEN {
         PLAYER(SPECIES_ARCEUS) { Item(heldItem); };
-        OPPONENT(SPECIES_DRAGONITE);
+        OPPONENT(SPECIES_TECH_YUUKA);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); MOVE(player, MOVE_JUDGMENT); }
     } SCENE {
@@ -278,7 +278,7 @@ SINGLE_BATTLE_TEST("Embargo disables the effect of the Drive items on the move T
     PARAMETRIZE{ heldItem = ITEM_SHOCK_DRIVE; }
     GIVEN {
         PLAYER(SPECIES_GENESECT) { Item(heldItem); };
-        OPPONENT(SPECIES_GYARADOS);
+        OPPONENT(SPECIES_NORMAL_KAGUYA);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); MOVE(player, MOVE_TECHNO_BLAST); }
     } SCENE {

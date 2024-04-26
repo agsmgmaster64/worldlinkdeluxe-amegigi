@@ -4572,7 +4572,7 @@ static u8 PrintCryScreenSpeciesName(u8 windowId, u16 num, u8 left, u8 top)
 // All others use personality 0
 static u32 GetPokedexMonPersonality(u16 species)
 {
-    if (species == SPECIES_UNOWN || species == SPECIES_SPINDA)
+    if (species == SPECIES_UNOWN || species == SPECIES_CHIBI_SUNNY)
     {
         if (species == SPECIES_UNOWN)
             return gSaveBlock2Ptr->pokedex.unownPersonality;
@@ -6473,8 +6473,8 @@ static u8 PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth,
 
     StringCopy(gStringVar1, GetSpeciesName(species));
 
-    if (species == SPECIES_EEVEE)
-        isEevee = TRUE;
+    //if (species == SPECIES_CHIBI_MOKOU)
+        //isEevee = TRUE;
 
     #ifdef TX_RANDOMIZER_AND_CHALLENGES
     if (EvolutionBlockedByEvoLimit(species)) //No Evos already previously checked

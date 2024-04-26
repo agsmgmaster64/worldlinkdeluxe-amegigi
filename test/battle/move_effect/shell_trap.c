@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Shell Trap does not activate if attacker's Sheer Force appli
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_TAUROS) { Ability(ABILITY_SHEER_FORCE); }
+        OPPONENT(SPECIES_HELPER_EIRIN) { Ability(ABILITY_SHEER_FORCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_SHELL_TRAP); MOVE(opponent, move); }
     } SCENE {

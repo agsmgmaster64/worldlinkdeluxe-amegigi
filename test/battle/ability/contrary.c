@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle",
     PARAMETRIZE { ability = ABILITY_TANGLED_FEET; }
     GIVEN {
         PLAYER(SPECIES_MIGHTYENA) { Ability(ABILITY_INTIMIDATE); }
-        OPPONENT(SPECIES_SPINDA) { Ability(ability); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -42,8 +42,8 @@ DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle",
     GIVEN {
         PLAYER(SPECIES_MIGHTYENA) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_SPINDA) { Ability(abilityLeft); }
-        OPPONENT(SPECIES_SPINDA) { Ability(abilityRight); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityLeft); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityRight); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_TACKLE, target: playerRight); }
     } SCENE {
@@ -85,7 +85,7 @@ SINGLE_BATTLE_TEST("Contrary raises stats after using a move which would normall
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_OVERHEAT, MOVE_EFFECT_SP_ATK_TWO_DOWN) == TRUE);
         ASSUME(gMovesInfo[MOVE_OVERHEAT].category == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_SPINDA) { Ability(ability); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_OVERHEAT); }
         TURN { MOVE(opponent, MOVE_OVERHEAT); }
@@ -128,7 +128,7 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
         PLAYER(SPECIES_WOBBUFFET) { Defense(102); }
-        OPPONENT(SPECIES_SPINDA) { Ability(ability); Attack(100); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); Attack(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); }
@@ -165,7 +165,7 @@ SINGLE_BATTLE_TEST("Contrary raises a stat after using a move which would normal
     GIVEN {
         ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
         PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_SPINDA) { Ability(ability); Speed(2); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -196,7 +196,7 @@ SINGLE_BATTLE_TEST("Contrary lowers a stat after using a move which would normal
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BELLY_DRUM].effect == EFFECT_BELLY_DRUM);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_SPINDA) { Ability(ability); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_BELLY_DRUM); }

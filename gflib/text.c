@@ -1863,8 +1863,16 @@ static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        glyphs = gFontNarrowLatinGlyphs + (0x20 * glyphId);
-        gCurGlyph.width = gFontNarrowLatinGlyphWidths[glyphId];
+        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        {
+            glyphs = gFontNarrowLatinGlyphs + (0x20 * glyphId);
+            gCurGlyph.width = gFontNarrowLatinGlyphWidths[glyphId];
+        }
+        else
+        {
+            glyphs = gFontShortNarrowLatinGlyphs + (0x20 * glyphId);
+            gCurGlyph.width = gFontShortNarrowLatinGlyphWidths[glyphId];
+        }
 
         if (gCurGlyph.width <= 8)
         {
@@ -1886,9 +1894,16 @@ static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
 static u32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
+    {
         return 8;
+    }
     else
-        return gFontNarrowLatinGlyphWidths[glyphId];
+    {
+        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+            return gFontNarrowLatinGlyphWidths[glyphId];
+        else
+            return gFontShortNarrowLatinGlyphWidths[glyphId];
+    }
 }
 
 static void DecompressGlyph_SmallNarrow(u16 glyphId, bool32 isJapanese)
@@ -2022,8 +2037,11 @@ static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
 static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
+    {
         return 8;
-    else {
+    }
+    else
+    {
         if (gSaveBlock2Ptr->optionsCurrentFont == 0)
             return gFontNormalLatinGlyphWidths[glyphId];
         else

@@ -11,7 +11,7 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_LANTURN) { Ability(ABILITY_VOLT_ABSORB); HP(1); }
+        OPPONENT(SPECIES_NORMAL_NITORI) { Ability(ABILITY_VOLT_ABSORB); HP(1); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); }
     } SCENE {

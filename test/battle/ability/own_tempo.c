@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("Own Tempo cures confusion obtained from an opponent with Mol
     KNOWN_FAILING;
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CONFUSE_RAY].effect == EFFECT_CONFUSE);
-        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); };
+        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); };
         OPPONENT(SPECIES_PLACEHOLDER_LAYLA) { Ability(ABILITY_OWN_TEMPO); };
     } WHEN {
         TURN { MOVE(player, MOVE_CONFUSE_RAY); }

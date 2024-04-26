@@ -288,7 +288,7 @@ DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cup
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_OCTILLERY) { Ability(ABILITY_GATE_KEEPER); }
+        OPPONENT(SPECIES_NORMAL_NAZRIN) { Ability(ABILITY_GATE_KEEPER); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_UNOWN);
     } WHEN {
@@ -362,7 +362,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_TAUROS) { Ability(ABILITY_SHEER_FORCE); }
+        OPPONENT(SPECIES_HELPER_EIRIN) { Ability(ABILITY_SHEER_FORCE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, move); }

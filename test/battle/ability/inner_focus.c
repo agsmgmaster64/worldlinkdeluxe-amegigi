@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Inner Focus prevents flinching")
 SINGLE_BATTLE_TEST("Inner Focus is ignored by Mold Breaker")
 {
     GIVEN {
-        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); };
+        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); };
         OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT); }

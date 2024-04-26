@@ -136,7 +136,7 @@ SINGLE_BATTLE_TEST("Eject Button has no chance to activate after Dragon Tail")
     GIVEN {
         PLAYER(SPECIES_KOMMO_O);
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
-        OPPONENT(SPECIES_CHANSEY);
+        OPPONENT(SPECIES_CHIBI_TEWI);
     } WHEN {
         TURN {
             MOVE(player, MOVE_DRAGON_TAIL);

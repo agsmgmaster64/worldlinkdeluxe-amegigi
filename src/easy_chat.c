@@ -5181,12 +5181,8 @@ bool8 IsBardWordInvalid(u16 easyChatWord)
     {
     case EC_GROUP_POKEMON:
     case EC_GROUP_POKEMON_NATIONAL:
-        numWordsInGroup = gNumBardWords_Species;
-        break;
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
-        numWordsInGroup = gNumBardWords_Moves;
-        break;
     default:
         numWordsInGroup = gEasyChatGroups[groupId].numWords;
         break;

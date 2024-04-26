@@ -8,7 +8,7 @@ static const struct TrainerMon sParty_StevenPartner[] = {
         .moves = {MOVE_LIGHT_SCREEN, MOVE_MANA_BURST, MOVE_REFLECT, MOVE_METAL_CLAW},
     },
     {
-        .species = SPECIES_SKARMORY,
+        .species = SPECIES_CHIBI_KOGASA,
         .lvl = 43,
         .nature = NATURE_IMPISH,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

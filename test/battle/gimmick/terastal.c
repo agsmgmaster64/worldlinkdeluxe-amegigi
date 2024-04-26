@@ -154,7 +154,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     PARAMETRIZE { tera = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MEGA_DRAIN].power == 40);
-        PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
+        PLAYER(SPECIES_NORMAL_REISEN_II) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MEGA_DRAIN, tera: tera); }
@@ -174,7 +174,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     PARAMETRIZE { tera = FALSE; }
     PARAMETRIZE { tera = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_PSYCHIC); }
+        PLAYER(SPECIES_NORMAL_REISEN_II) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_PSYCHIC); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_STORED_POWER, tera: tera); }
@@ -304,7 +304,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization changes the effect of Curse")
 SINGLE_BATTLE_TEST("(TERA) Roost does not remove the user's Flying type while Terastallized")
 {
     GIVEN {
-        PLAYER(SPECIES_ZAPDOS) { HP(1); TeraType(TYPE_FLYING); }
+        PLAYER(SPECIES_TECH_MEDICINE) { HP(1); TeraType(TYPE_FLYING); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST, tera: TRUE); MOVE(opponent, MOVE_ICE_BEAM); }
@@ -434,7 +434,7 @@ SINGLE_BATTLE_TEST("(TERA) Double Shock does not remove the user's Electric type
     s16 damage[4];
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DOUBLE_SHOCK].effect == EFFECT_FAIL_IF_NOT_ARG_TYPE);
-        PLAYER(SPECIES_PICHU) { TeraType(TYPE_ELECTRIC); }
+        PLAYER(SPECIES_ATTACK_NITORI) { TeraType(TYPE_ELECTRIC); }
         PLAYER(SPECIES_WOBBUFFET)
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -477,7 +477,7 @@ SINGLE_BATTLE_TEST("(TERA) Transform does not copy the target's Tera Type, and i
     KNOWN_FAILING; // Transform seems to be bugged in tests.
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TACKLE, MOVE_EARTHQUAKE); TeraType(TYPE_GHOST); }
-        OPPONENT(SPECIES_DITTO) { TeraType(TYPE_FLYING); }
+        OPPONENT(SPECIES_DEFENSE_KAGUYA) { TeraType(TYPE_FLYING); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, tera: TRUE); MOVE(opponent, MOVE_TRANSFORM); }
         TURN { MOVE(player, MOVE_EARTHQUAKE); }
@@ -570,7 +570,7 @@ SINGLE_BATTLE_TEST("(TERA) Conversion2 fails if last hit by a Stellar-type move"
 SINGLE_BATTLE_TEST("(TERA) Roost does not remove Flying-type ground immunity when Terastallized into the Stellar type")
 {
     GIVEN {
-        PLAYER(SPECIES_ZAPDOS) { HP(1); TeraType(TYPE_STELLAR); }
+        PLAYER(SPECIES_TECH_MEDICINE) { HP(1); TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST, tera: TRUE); MOVE(opponent, MOVE_ICE_BEAM); }

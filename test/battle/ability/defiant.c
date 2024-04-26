@@ -13,7 +13,7 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises player's Attack after Intimidate")
     GIVEN {
         PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(abilityLeft); }
         PLAYER(SPECIES_NORMAL_LILY_WHITE) { Ability(abilityRight); }
-        OPPONENT(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_NORMAL_KAGUYA) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target:opponentLeft); MOVE(playerRight, MOVE_TACKLE, target:opponentRight); }
@@ -71,7 +71,7 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises opponent's Attack after Intimidate")
     GIVEN {
         OPPONENT(SPECIES_CHIBI_LILY_WHITE) { Ability(abilityLeft); }
         OPPONENT(SPECIES_NORMAL_LILY_WHITE) { Ability(abilityRight); }
-        PLAYER(SPECIES_GYARADOS) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_NORMAL_KAGUYA) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target:playerLeft); MOVE(opponentRight, MOVE_TACKLE, target:playerRight); }

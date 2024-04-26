@@ -94,7 +94,7 @@ SINGLE_BATTLE_TEST("Future Sight is affected by type effectiveness")
     GIVEN {
         PLAYER(SPECIES_PIKACHU);
         PLAYER(SPECIES_RAICHU);
-        OPPONENT(SPECIES_HOUNDOOM);
+        OPPONENT(SPECIES_SPEED_KOGASA);
     } WHEN {
         TURN { MOVE(player, MOVE_SEED_FLARE, WITH_RNG(RNG_SECONDARY_EFFECT, FALSE)); }
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }

@@ -71,7 +71,7 @@ DOUBLE_BATTLE_TEST("Howl does not work on partner if it has Soundproof")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_WOBBUFFET) { Speed(15); }
-        PLAYER(SPECIES_VOLTORB) { Speed(10); Ability(ABILITY_SOUNDPROOF); }
+        PLAYER(SPECIES_CHIBI_WRIGGLE) { Speed(10); Ability(ABILITY_SOUNDPROOF); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
         OPPONENT(SPECIES_WYNAUT) { Speed(1); }
     } WHEN {

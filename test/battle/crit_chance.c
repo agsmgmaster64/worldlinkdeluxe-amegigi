@@ -64,7 +64,7 @@ SINGLE_BATTLE_TEST("Mold Breaker, Teravolt and Turboblaze ignore Battle Armor an
     u32 j;
     static const u32 pokemonPlayer[][2] =
     {
-        {SPECIES_PINSIR, ABILITY_MOLD_BREAKER},
+        {SPECIES_ATTACK_EIRIN, ABILITY_MOLD_BREAKER},
         {SPECIES_ZEKROM, ABILITY_TERAVOLT},
         {SPECIES_KYUREM_WHITE,  ABILITY_TURBOBLAZE},
     };
@@ -167,7 +167,7 @@ SINGLE_BATTLE_TEST("Super Luck increases the critical hit ratio by one stage")
 {
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
-        PLAYER(SPECIES_TOGEPI) { Ability(ABILITY_SUPER_LUCK); };
+        PLAYER(SPECIES_NORMAL_MOMIJI) { Ability(ABILITY_SUPER_LUCK); };
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -217,7 +217,7 @@ SINGLE_BATTLE_TEST("Signature items Leek and Lucky Punch increase the critical h
     PARAMETRIZE { species = SPECIES_SPEED_YOUMU; item = ITEM_LEEK; }
     PARAMETRIZE { species = SPECIES_FARFETCHD_GALARIAN; item = ITEM_LEEK; }
     PARAMETRIZE { species = SPECIES_SIRFETCHD; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_CHANSEY; item = ITEM_LUCKY_PUNCH; }
+    PARAMETRIZE { species = SPECIES_CHIBI_TEWI; item = ITEM_LUCKY_PUNCH; }
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LEEK].holdEffect == HOLD_EFFECT_LEEK);
@@ -309,7 +309,7 @@ DOUBLE_BATTLE_TEST("Dragon Cheer increases critical hit ratio by two on Dragon t
         ASSUME(gMovesInfo[MOVE_TACKLE].criticalHitStage == 0);
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_DRATINI);
+        PLAYER(SPECIES_NORMAL_YUUKA);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

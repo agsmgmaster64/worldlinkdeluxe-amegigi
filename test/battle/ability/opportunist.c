@@ -52,8 +52,8 @@ DOUBLE_BATTLE_TEST("Opportunist raises Attack only once when partner has Intimid
     GIVEN {
         PLAYER(SPECIES_MIGHTYENA) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_ESPATHRA) { Ability(ABILITY_OPPORTUNIST); }
-        OPPONENT(SPECIES_SPINDA) { Ability(abilityLeft); }
-        OPPONENT(SPECIES_SPINDA) { Ability(abilityRight); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityLeft); }
+        OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityRight); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_TACKLE, target: playerRight); }
     } SCENE {

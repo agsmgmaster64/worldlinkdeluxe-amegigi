@@ -6,13 +6,13 @@ ASSUMPTIONS
     ASSUME(gMovesInfo[MOVE_BURN_UP].effect == EFFECT_FAIL_IF_NOT_ARG_TYPE);
     ASSUME(MoveHasAdditionalEffectSelfArg(MOVE_BURN_UP, MOVE_EFFECT_REMOVE_ARG_TYPE, TYPE_FIRE) == TRUE);
     ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_FIRE || gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_CYNDAQUIL].types[0] == TYPE_FIRE || gSpeciesInfo[SPECIES_CYNDAQUIL].types[1] == TYPE_FIRE);
+    ASSUME(gSpeciesInfo[SPECIES_NORMAL_EIKI].types[0] == TYPE_FIRE || gSpeciesInfo[SPECIES_NORMAL_EIKI].types[1] == TYPE_FIRE);
 }
 
 SINGLE_BATTLE_TEST("Burn Up user loses its Fire-type")
 {
     GIVEN {
-        PLAYER(SPECIES_CYNDAQUIL);
+        PLAYER(SPECIES_NORMAL_EIKI);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); }
@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Burn Up fails if the user isn't a Fire-type")
 SINGLE_BATTLE_TEST("Burn Up user loses its Fire-type if enemy faints")
 {
     GIVEN {
-        PLAYER(SPECIES_CYNDAQUIL);
+        PLAYER(SPECIES_NORMAL_EIKI);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); }

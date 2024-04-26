@@ -85,9 +85,9 @@ SINGLE_BATTLE_TEST("Roost recovers 50% of the user's Max HP")
 SINGLE_BATTLE_TEST("Roost suppresses the user's Flying-typing this turn, then restores it at the end of the turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SKARMORY].types[0] == TYPE_STEEL);
-        ASSUME(gSpeciesInfo[SPECIES_SKARMORY].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_SKARMORY) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[0] == TYPE_STEEL);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[1] == TYPE_FLYING);
+        PLAYER(SPECIES_CHIBI_KOGASA) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -199,9 +199,9 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE{ damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_MOLTRES].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_MOLTRES].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_MOLTRES) { HP(300); MaxHP(400); }
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[0] == TYPE_FIRE);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[1] == TYPE_FLYING);
+        PLAYER(SPECIES_CHIBI_YUUKA) { HP(300); MaxHP(400); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); }
@@ -353,7 +353,7 @@ SINGLE_BATTLE_TEST("Roost's suppression prevents Reflect Type from copying any F
 SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Levitate")
 {
     GIVEN {
-        PLAYER(SPECIES_FLYGON) { HP(1); Ability(ABILITY_LEVITATE); }
+        PLAYER(SPECIES_DEFENSE_SUNNY) { HP(1); Ability(ABILITY_LEVITATE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }

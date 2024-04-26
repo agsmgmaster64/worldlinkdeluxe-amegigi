@@ -62,7 +62,7 @@ SINGLE_BATTLE_TEST("Damp prevents damage from aftermath")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         PLAYER(SPECIES_NORMAL_LETTY) { Ability(ABILITY_DAMP); }
-        OPPONENT(SPECIES_VOLTORB) { Ability(ABILITY_AFTERMATH); HP(1); }
+        OPPONENT(SPECIES_CHIBI_WRIGGLE) { Ability(ABILITY_AFTERMATH); HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(opponent, 1); }

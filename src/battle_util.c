@@ -9394,7 +9394,7 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     switch (holdEffectAtk)
     {
     case HOLD_EFFECT_THICK_CLUB:
-        if ((atkBaseSpeciesId == SPECIES_CUBONE || atkBaseSpeciesId == SPECIES_MAROWAK) && IS_MOVE_PHYSICAL(move))
+        if ((atkBaseSpeciesId == SPECIES_CHIBI_MYSTIA || atkBaseSpeciesId == SPECIES_NORMAL_MYSTIA) && IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_DEEP_SEA_TOOTH:
@@ -11377,9 +11377,9 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
         case SPECIES_CHIBI_YUYUKO:
         case SPECIES_NORMAL_YUYUKO:
         case SPECIES_NORMAL_MINORIKO:
-        case SPECIES_NATU:
+        case SPECIES_PLACEHOLD_MOMIJI:
         case SPECIES_MURKROW:
-        case SPECIES_DELIBIRD:
+        case SPECIES_TECH_NAZRIN:
         case SPECIES_TAILLOW:
         case SPECIES_STARLY:
         case SPECIES_CHATOT:

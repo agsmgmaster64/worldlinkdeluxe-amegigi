@@ -4,7 +4,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif
 
 #if P_FAMILY_CHIKORITA
-    [SPECIES_CHIKORITA] =
+    [SPECIES_ATTACK_KOMACHI] =
     {
         .baseHP        = 45,
         .baseAttack    = 49,
@@ -54,10 +54,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Chikorita)
         .levelUpLearnset = sChikoritaLevelUpLearnset,
         .teachableLearnset = sChikoritaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_BAYLEEF}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_SPEED_KOMACHI}),
     },
 
-    [SPECIES_BAYLEEF] =
+    [SPECIES_SPEED_KOMACHI] =
     {
         .baseHP        = 60,
         .baseAttack    = 62,
@@ -108,10 +108,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Bayleef)
         .levelUpLearnset = sBayleefLevelUpLearnset,
         .teachableLearnset = sBayleefTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_MEGANIUM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_CHIBI_EIKI}),
     },
 
-    [SPECIES_MEGANIUM] =
+    [SPECIES_CHIBI_EIKI] =
     {
         .baseHP        = 80,
         .baseAttack    = 82,
@@ -176,7 +176,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_CHIKORITA
 
 #if P_FAMILY_CYNDAQUIL
-    [SPECIES_CYNDAQUIL] =
+    [SPECIES_NORMAL_EIKI] =
     {
         .baseHP        = 39,
         .baseAttack    = 52,
@@ -226,10 +226,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Cyndaquil)
         .levelUpLearnset = sCyndaquilLevelUpLearnset,
         .teachableLearnset = sCyndaquilTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_QUILAVA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_ATTACK_EIKI}),
     },
 
-    [SPECIES_QUILAVA] =
+    [SPECIES_ATTACK_EIKI] =
     {
         .baseHP        = 58,
         .baseAttack    = 64,
@@ -280,7 +280,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Quilava)
         .levelUpLearnset = sQuilavaLevelUpLearnset,
         .teachableLearnset = sQuilavaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_TYPHLOSION},
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_DEFENSE_EIKI},
                                 {EVO_NONE, 0, SPECIES_TYPHLOSION_HISUIAN}),
     },
 
@@ -292,7 +292,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     #define TYPHLOSION_EXP_YIELD 209
 #endif
 
-    [SPECIES_TYPHLOSION] =
+    [SPECIES_DEFENSE_EIKI] =
     {
         .baseHP        = 78,
         .baseAttack    = 84,
@@ -413,7 +413,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_HOOTHOOT
 
 #if P_FAMILY_LEDYBA
-    [SPECIES_LEDIAN] =
+    [SPECIES_CHIBI_HINA] =
     {
         .baseHP        = 55,
         .baseAttack    = 35,
@@ -472,7 +472,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_LEDYBA
 
 #if P_FAMILY_SPINARAK
-    [SPECIES_SPINARAK] =
+    [SPECIES_NORMAL_HINA] =
     {
         .baseHP        = 40,
         .baseAttack    = 60,
@@ -522,10 +522,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Spinarak)
         .levelUpLearnset = sSpinarakLevelUpLearnset,
         .teachableLearnset = sSpinarakTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_ARIADOS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_ATTACK_HINA}),
     },
 
-    [SPECIES_ARIADOS] =
+    [SPECIES_ATTACK_HINA] =
     {
         .baseHP        = 70,
         .baseAttack    = 90,
@@ -585,7 +585,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_SPINARAK
 
 #if P_FAMILY_CHINCHOU
-    [SPECIES_CHINCHOU] =
+    [SPECIES_CHIBI_NITORI] =
     {
         .baseHP        = 75,
         .baseAttack    = 38,
@@ -636,10 +636,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Chinchou)
         .levelUpLearnset = sChinchouLevelUpLearnset,
         .teachableLearnset = sChinchouTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_LANTURN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_NORMAL_NITORI}),
     },
 
-    [SPECIES_LANTURN] =
+    [SPECIES_NORMAL_NITORI] =
     {
         .baseHP        = 125,
         .baseAttack    = 58,
@@ -696,7 +696,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #if P_FAMILY_TOGEPI
 #define TOGEPI_FAMILY_TYPE (P_UPDATED_TYPES >= GEN_6 ? TYPE_COSMIC : TYPE_ILLUSION)
 
-    [SPECIES_TOGEPI] =
+    [SPECIES_NORMAL_MOMIJI] =
     {
         .baseHP        = 35,
         .baseAttack    = 20,
@@ -746,10 +746,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Togepi)
         .levelUpLearnset = sTogepiLevelUpLearnset,
         .teachableLearnset = sTogepiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_TOGETIC}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_DEFENSE_MOMIJI}),
     },
 
-    [SPECIES_TOGETIC] =
+    [SPECIES_DEFENSE_MOMIJI] =
     {
         .baseHP        = 55,
         .baseAttack    = 40,
@@ -867,7 +867,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_TOGEPI
 
 #if P_FAMILY_NATU
-    [SPECIES_NATU] =
+    [SPECIES_PLACEHOLD_MOMIJI] =
     {
         .baseHP        = 40,
         .baseAttack    = 50,
@@ -918,10 +918,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Natu)
         .levelUpLearnset = sNatuLevelUpLearnset,
         .teachableLearnset = sNatuTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_XATU}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_CHIBI_SANAE}),
     },
 
-    [SPECIES_XATU] =
+    [SPECIES_CHIBI_SANAE] =
     {
         .baseHP        = 65,
         .baseAttack    = 75,
@@ -978,7 +978,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_NATU
 
 #if P_FAMILY_MAREEP
-    [SPECIES_MAREEP] =
+    [SPECIES_NORMAL_SANAE] =
     {
         .baseHP        = 55,
         .baseAttack    = 40,
@@ -1029,10 +1029,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Mareep)
         .levelUpLearnset = sMareepLevelUpLearnset,
         .teachableLearnset = sMareepTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_FLAAFFY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_ATTACK_SANAE}),
     },
 
-    [SPECIES_FLAAFFY] =
+    [SPECIES_ATTACK_SANAE] =
     {
         .baseHP        = 70,
         .baseAttack    = 55,
@@ -1082,12 +1082,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Flaaffy)
         .levelUpLearnset = sFlaaffyLevelUpLearnset,
         .teachableLearnset = sFlaaffyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_AMPHAROS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_TECH_SANAE}),
     },
 
 #define AMPHAROS_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 85 : 75)
 
-    [SPECIES_AMPHAROS] =
+    [SPECIES_TECH_SANAE] =
     {
         .baseHP        = 90,
         .baseAttack    = 75,
@@ -1264,11 +1264,11 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Azurill)
         .levelUpLearnset = sAzurillLevelUpLearnset,
         .teachableLearnset = sAzurillTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_MARILL}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_NORMAL_KANAKO}),
     },
 #endif //P_GEN_3_CROSS_EVOS
 
-    [SPECIES_MARILL] =
+    [SPECIES_NORMAL_KANAKO] =
     {
         .baseHP        = 70,
         .baseAttack    = 20,
@@ -1322,10 +1322,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Marill)
         .levelUpLearnset = sMarillLevelUpLearnset,
         .teachableLearnset = sMarillTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_AZUMARILL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_ATTACK_KANAKO}),
     },
 
-    [SPECIES_AZUMARILL] =
+    [SPECIES_ATTACK_KANAKO] =
     {
         .baseHP        = 100,
         .baseAttack    = 50,
@@ -1442,11 +1442,11 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Bonsly)
         .levelUpLearnset = sBonslyLevelUpLearnset,
         .teachableLearnset = sBonslyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_MIMIC, SPECIES_SUDOWOODO}),
+        .evolutions = EVOLUTION({EVO_MOVE, MOVE_MIMIC, SPECIES_DEFENSE_KANAKO}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
-    [SPECIES_SUDOWOODO] =
+    [SPECIES_DEFENSE_KANAKO] =
     {
         .baseHP        = 70,
         .baseAttack    = 100,
@@ -1504,7 +1504,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_SUDOWOODO
 
 #if P_FAMILY_HOPPIP
-    [SPECIES_HOPPIP] =
+    [SPECIES_NORMAL_SUWAKO] =
     {
         .baseHP        = 35,
         .baseAttack    = 35,
@@ -1555,10 +1555,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Hoppip)
         .levelUpLearnset = sHoppipLevelUpLearnset,
         .teachableLearnset = sHoppipTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_SKIPLOOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_ATTACK_SUWAKO}),
     },
 
-    [SPECIES_SKIPLOOM] =
+    [SPECIES_ATTACK_SUWAKO] =
     {
         .baseHP        = 55,
         .baseAttack    = 45,
@@ -1609,10 +1609,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Skiploom)
         .levelUpLearnset = sSkiploomLevelUpLearnset,
         .teachableLearnset = sSkiploomTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_JUMPLUFF}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_DEFENSE_SUWAKO}),
     },
 
-    [SPECIES_JUMPLUFF] =
+    [SPECIES_DEFENSE_SUWAKO] =
     {
         .baseHP        = 75,
         .baseAttack    = 55,
@@ -3229,10 +3229,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Snubbull)
         .levelUpLearnset = sSnubbullLevelUpLearnset,
         .teachableLearnset = sSnubbullTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_GRANBULL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_ZOMBIE_FAIRY}),
     },
 
-    [SPECIES_GRANBULL] =
+    [SPECIES_ZOMBIE_FAIRY] =
     {
         .baseHP        = 90,
         .baseAttack    = 120,
@@ -4566,7 +4566,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_CORSOLA
 
 #if P_FAMILY_REMORAID
-    [SPECIES_REMORAID] =
+    [SPECIES_CHIBI_NAZRIN] =
     {
         .baseHP        = 35,
         .baseAttack    = 65,
@@ -4616,10 +4616,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Remoraid)
         .levelUpLearnset = sRemoraidLevelUpLearnset,
         .teachableLearnset = sRemoraidTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_OCTILLERY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_NAZRIN}),
     },
 
-    [SPECIES_OCTILLERY] =
+    [SPECIES_NORMAL_NAZRIN] =
     {
         .baseHP        = 75,
         .baseAttack    = 105,
@@ -4679,7 +4679,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_REMORAID
 
 #if P_FAMILY_DELIBIRD
-    [SPECIES_DELIBIRD] =
+    [SPECIES_TECH_NAZRIN] =
     {
         .baseHP        = 45,
         .baseAttack    = 55,
@@ -4784,11 +4784,11 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Mantyke)
         .levelUpLearnset = sMantykeLevelUpLearnset,
         .teachableLearnset = sMantykeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_SPECIFIC_MON_IN_PARTY, SPECIES_REMORAID, SPECIES_MANTINE}),
+        .evolutions = EVOLUTION({EVO_SPECIFIC_MON_IN_PARTY, SPECIES_CHIBI_NAZRIN, SPECIES_HELPER_NAZRIN}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
-    [SPECIES_MANTINE] =
+    [SPECIES_HELPER_NAZRIN] =
     {
         .baseHP        = P_UPDATED_STATS >= GEN_7 ? 85 : 65,
         .baseAttack    = 40,
@@ -4849,7 +4849,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_MANTINE
 
 #if P_FAMILY_SKARMORY
-    [SPECIES_SKARMORY] =
+    [SPECIES_CHIBI_KOGASA] =
     {
         .baseHP        = 65,
         .baseAttack    = 80,
@@ -4904,7 +4904,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_SKARMORY
 
 #if P_FAMILY_HOUNDOUR
-    [SPECIES_HOUNDOUR] =
+    [SPECIES_NORMAL_KOGASA] =
     {
         .baseHP        = 45,
         .baseAttack    = 60,
@@ -4954,10 +4954,10 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Houndour)
         .levelUpLearnset = sHoundourLevelUpLearnset,
         .teachableLearnset = sHoundourTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_HOUNDOOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_SPEED_KOGASA}),
     },
 
-    [SPECIES_HOUNDOOM] =
+    [SPECIES_SPEED_KOGASA] =
     {
         .baseHP        = 75,
         .baseAttack    = 90,

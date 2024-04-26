@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Collision Course damage is increased by 33 Percent if super 
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KANGASKHAN);
+        OPPONENT(SPECIES_ATTACK_TEWI);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

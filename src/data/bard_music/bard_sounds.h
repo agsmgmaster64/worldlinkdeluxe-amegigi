@@ -3,8 +3,6 @@
 
 #define NULL_BARD_SOUND { .songLengthId = 0xff }
 
-#include "pokemon.h"
-#include "moves.h"
 #include "trainer.h"
 #include "status.h"
 #include "battle.h"

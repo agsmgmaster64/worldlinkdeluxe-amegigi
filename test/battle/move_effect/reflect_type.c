@@ -133,11 +133,11 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
 {
     ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[0] == TYPE_FIRE);
     ASSUME(gSpeciesInfo[SPECIES_HELPER_LILY_WHITE].types[1] == TYPE_FIRE);
-    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[0] == TYPE_BEAST);
-    ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[1] == TYPE_BEAST);
+    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_KANAKO].types[0] == TYPE_BEAST);
+    ASSUME(gSpeciesInfo[SPECIES_DEFENSE_KANAKO].types[1] == TYPE_BEAST);
     GIVEN {
         PLAYER(SPECIES_HELPER_LILY_WHITE);
-        OPPONENT(SPECIES_SUDOWOODO);
+        OPPONENT(SPECIES_DEFENSE_KANAKO);
     } WHEN {
         TURN { MOVE(player, MOVE_REFLECT_TYPE); }
     } SCENE {

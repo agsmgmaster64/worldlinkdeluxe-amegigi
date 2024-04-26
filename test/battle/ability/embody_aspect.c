@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Embodoy Aspect raises a stat depending on the users form by 
 SINGLE_BATTLE_TEST("Embodoy Aspect activates when it's no longer effected by Neutralizing Gas")
 {
     GIVEN {
-        PLAYER(SPECIES_WEEZING) { Ability(ABILITY_NEUTRALIZING_GAS); }
+        PLAYER(SPECIES_ATTACK_KEINE) { Ability(ABILITY_NEUTRALIZING_GAS); }
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_OGERPON_TEAL_MASK_TERA) { Ability(ABILITY_EMBODY_ASPECT_TEAL); }
     } WHEN {

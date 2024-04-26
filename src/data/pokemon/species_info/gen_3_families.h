@@ -5361,7 +5361,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_SPOINK
 
 #if P_FAMILY_SPINDA
-    [SPECIES_SPINDA] =
+    [SPECIES_CHIBI_SUNNY] =
     {
         .baseHP        = 60,
         .baseAttack    = 60,
@@ -5416,7 +5416,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_SPINDA
 
 #if P_FAMILY_TRAPINCH
-    [SPECIES_TRAPINCH] =
+    [SPECIES_NORMAL_SUNNY] =
     {
         .baseHP        = 45,
         .baseAttack    = 100,
@@ -5471,10 +5471,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Trapinch)
         .levelUpLearnset = sTrapinchLevelUpLearnset,
         .teachableLearnset = sTrapinchTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_VIBRAVA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_ATTACK_SUNNY}),
     },
 
-    [SPECIES_VIBRAVA] =
+    [SPECIES_ATTACK_SUNNY] =
     {
         .baseHP        = 50,
         .baseAttack    = 70,
@@ -5529,10 +5529,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Vibrava)
         .levelUpLearnset = sVibravaLevelUpLearnset,
         .teachableLearnset = sVibravaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_FLYGON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 45, SPECIES_DEFENSE_SUNNY}),
     },
 
-    [SPECIES_FLYGON] =
+    [SPECIES_DEFENSE_SUNNY] =
     {
         .baseHP        = 80,
         .baseAttack    = 100,
@@ -5598,7 +5598,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_TRAPINCH
 
 #if P_FAMILY_CACNEA
-    [SPECIES_CACNEA] =
+    [SPECIES_CHIBI_LUNA] =
     {
         .baseHP        = 50,
         .baseAttack    = 85,
@@ -5649,10 +5649,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Cacnea)
         .levelUpLearnset = sCacneaLevelUpLearnset,
         .teachableLearnset = sCacneaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_CACTURNE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_LUNA}),
     },
 
-    [SPECIES_CACTURNE] =
+    [SPECIES_NORMAL_LUNA] =
     {
         .baseHP        = 70,
         .baseAttack    = 115,
@@ -5710,7 +5710,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_CACNEA
 
 #if P_FAMILY_SWABLU
-    [SPECIES_SWABLU] =
+    [SPECIES_ATTACK_LUNA] =
     {
         .baseHP        = 45,
         .baseAttack    = 40,
@@ -5760,10 +5760,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Swablu)
         .levelUpLearnset = sSwabluLevelUpLearnset,
         .teachableLearnset = sSwabluTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_ALTARIA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_TECH_LUNA}),
     },
 
-    [SPECIES_ALTARIA] =
+    [SPECIES_TECH_LUNA] =
     {
         .baseHP        = 75,
         .baseAttack    = 70,
@@ -5877,7 +5877,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_SWABLU
 
 #if P_FAMILY_ZANGOOSE
-    [SPECIES_ZANGOOSE] =
+    [SPECIES_CHIBI_STAR] =
     {
         .baseHP        = 73,
         .baseAttack    = 115,
@@ -5933,7 +5933,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_ZANGOOSE
 
 #if P_FAMILY_SEVIPER
-    [SPECIES_SEVIPER] =
+    [SPECIES_NORMAL_STAR] =
     {
         .baseHP        = 73,
         .baseAttack    = 100,
@@ -5990,7 +5990,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_SEVIPER
 
 #if P_FAMILY_LUNATONE
-    [SPECIES_LUNATONE] =
+    [SPECIES_ATTACK_STAR] =
     {
         .baseHP        = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
         .baseAttack    = 55,
@@ -6053,7 +6053,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_FAMILY_LUNATONE
 
 #if P_FAMILY_SOLROCK
-    [SPECIES_SOLROCK] =
+    [SPECIES_HELPER_STAR] =
     {
         .baseHP        = P_UPDATED_STATS >= GEN_7 ? 90 : 70,
         .baseAttack    = 95,

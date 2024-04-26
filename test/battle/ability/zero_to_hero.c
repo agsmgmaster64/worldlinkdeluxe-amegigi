@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Zero to Hero can't be surpressed by Neutralizing Gas")
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_ZERO_TO_HERO); }
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_KOFFING) { Ability(ABILITY_NEUTRALIZING_GAS); }
+        OPPONENT(SPECIES_NORMAL_KEINE) { Ability(ABILITY_NEUTRALIZING_GAS); }
     } WHEN {
         TURN { SWITCH(player, 1); }
         TURN { SWITCH(player, 0); }
@@ -119,7 +119,7 @@ SINGLE_BATTLE_TEST("Imposter doesn't apply the heroic transformation message whe
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_ZERO_TO_HERO); }
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_DITTO) { Ability(ABILITY_IMPOSTER); }
+        OPPONENT(SPECIES_DEFENSE_KAGUYA) { Ability(ABILITY_IMPOSTER); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { SWITCH(player, 1); SWITCH(opponent, 1); }

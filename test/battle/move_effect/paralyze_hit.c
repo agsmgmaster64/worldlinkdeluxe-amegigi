@@ -47,11 +47,11 @@ SINGLE_BATTLE_TEST("Body Slam shouldn't paralyze Normal-types")
 #endif
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_TAUROS].types[0] == TYPE_ILLUSION);
+        ASSUME(gSpeciesInfo[SPECIES_HELPER_EIRIN].types[0] == TYPE_ILLUSION);
         ASSUME(MoveHasAdditionalEffect(MOVE_BODY_SLAM, MOVE_EFFECT_PARALYSIS) == TRUE);
         ASSUME(gMovesInfo[MOVE_BODY_SLAM].type == TYPE_ILLUSION);
-        PLAYER(SPECIES_TAUROS);
-        OPPONENT(SPECIES_TAUROS);
+        PLAYER(SPECIES_HELPER_EIRIN);
+        OPPONENT(SPECIES_HELPER_EIRIN);
     } WHEN {
         TURN { MOVE(player, MOVE_BODY_SLAM); }
     } SCENE {

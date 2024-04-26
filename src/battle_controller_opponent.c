@@ -595,8 +595,8 @@ static void OpponentHandleChooseMove(u32 battler)
                 static const u16 naturalEnemies[][2] =
                 {
                     // Attacker         Target
-                    {SPECIES_ZANGOOSE,  SPECIES_SEVIPER},
-                    {SPECIES_SEVIPER,   SPECIES_ZANGOOSE},
+                    {SPECIES_CHIBI_STAR,  SPECIES_NORMAL_STAR},
+                    {SPECIES_NORMAL_STAR,   SPECIES_CHIBI_STAR},
                     {SPECIES_HEATMOR,   SPECIES_DURANT},
                     {SPECIES_DURANT,    SPECIES_HEATMOR},
                     {SPECIES_SABLEYE,   SPECIES_CARBINK},

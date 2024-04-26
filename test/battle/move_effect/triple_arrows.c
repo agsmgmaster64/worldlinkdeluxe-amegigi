@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Triple Arrows may lower Defense by one stage")
     PARAMETRIZE { ability = ABILITY_SERENE_GRACE; chance = 100; }
     PASSES_RANDOMLY(chance, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
-        PLAYER(SPECIES_TOGEPI) { Ability(ability); }
+        PLAYER(SPECIES_NORMAL_MOMIJI) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Triple Arrows makes the foe flinch 30% of the time")
     PARAMETRIZE { ability = ABILITY_SERENE_GRACE; chance = 60; }
     PASSES_RANDOMLY(chance, 100, RNG_SECONDARY_EFFECT_2);
     GIVEN {
-        PLAYER(SPECIES_TOGEPI) { Ability(ability); }
+        PLAYER(SPECIES_NORMAL_MOMIJI) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }

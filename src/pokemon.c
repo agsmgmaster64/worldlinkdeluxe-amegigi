@@ -443,9 +443,9 @@ static const u16 sHMMoves[] =
 static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
 {
     {SPECIES_NONE,      ITEM_NONE},
-    {SPECIES_MAREEP,    ITEM_GANLON_BERRY},
+    {SPECIES_NORMAL_SANAE,    ITEM_GANLON_BERRY},
     {SPECIES_PINECO,    ITEM_APICOT_BERRY},
-    {SPECIES_HOUNDOUR,  ITEM_RED_UFO},
+    {SPECIES_NORMAL_KOGASA,  ITEM_RED_UFO},
     {SPECIES_TEDDIURSA, ITEM_PETAYA_BERRY},
     {SPECIES_AIPOM,     ITEM_BERRY_JUICE},
     {SPECIES_SHUCKLE,   ITEM_BERRY_JUICE},
@@ -4743,7 +4743,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     {
         return FALSE;
     }
-    else if (species == SPECIES_MEW)
+    /*else if (species == SPECIES_NORMAL_KOMACHI)
     {
         switch (move)
         {
@@ -4766,7 +4766,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
         default:
             return TRUE;
         }
-    }
+    }*/
     else
     {
         u32 i, j;
@@ -5545,7 +5545,7 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         GetSetPokedexFlag(nationalNum, caseId);
         if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_UNOWN)
             gSaveBlock2Ptr->pokedex.unownPersonality = personality;
-        if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_SPINDA)
+        if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_CHIBI_SUNNY)
             gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
     }
     

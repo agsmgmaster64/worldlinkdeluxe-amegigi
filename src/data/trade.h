@@ -1023,7 +1023,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_HORSEA] =
     {
         .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
+        .species = SPECIES_DEFENSE_TEWI,
         .level = 5,
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
@@ -1041,7 +1041,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_MEOWTH] =
     {
         .nickname = _("けだま"),
-        .species = SPECIES_DITTO,
+        .species = SPECIES_DEFENSE_KAGUYA,
         .level = 50,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 2,
@@ -1064,9 +1064,9 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
         EC_WORD_BE,
         EC_WORD_NICE,
         EC_WORD_TO,
-        EC_POKEMON(PLUSLE),
+        //EC_POKEMON(PLUSLE),
         EC_WORD_EXCL,
-        EC_POKEMON(VOLBEAT),
+        //EC_POKEMON(VOLBEAT),
         EC_WORD_WILL,
         EC_WORD_BE,
         EC_WORD_FANTASTIC
@@ -1074,16 +1074,16 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
         EC_WORD_I,
         EC_WORD_WILL,
         EC_WORD_MAKE,
-        EC_POKEMON(BAGON),
+        //EC_POKEMON(BAGON),
         EC_WORD_TOUGH,
         EC_WORD_PLEASE,
         EC_WORD_TRAIN,
-        EC_POKEMON(HORSEA),
+        //EC_POKEMON(HORSEA),
         EC_WORD_WELL
     }, {
         EC_WORD_THANK_YOU,
         EC_WORD_FOR,
-        EC_POKEMON(SKITTY),
+        //EC_POKEMON(SKITTY),
         EC_POKEMON_NATIONAL(CHIBI_ALICE),
         EC_WORD_CRIES,
         EC_WORD_IN,

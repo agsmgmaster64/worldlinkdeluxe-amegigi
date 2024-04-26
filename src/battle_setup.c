@@ -603,7 +603,7 @@ void StartScriptedGhostBattle(void)
     {
         gBattleTypeFlags = BATTLE_TYPE_GHOST | BATTLE_TYPE_GHOST_UNVEILED;
         if (gSpecialVar_0x8004 == 0 || gSpecialVar_0x8004 >= NUM_SPECIES) //Default is Marowak
-            CreateMonWithGenderNatureLetter(&gEnemyParty[0], SPECIES_MAROWAK, 30, 31, MON_FEMALE, NATURE_SERIOUS, 0);
+            CreateMonWithGenderNatureLetter(&gEnemyParty[0], SPECIES_NORMAL_MYSTIA, 30, 31, MON_FEMALE, NATURE_SERIOUS, 0);
     }
     else
     {
@@ -673,7 +673,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_MEW:
+    case SPECIES_NORMAL_KOMACHI:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
     }

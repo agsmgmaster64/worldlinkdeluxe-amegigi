@@ -16,7 +16,7 @@ SINGLE_BATTLE_TEST("Techno Blast changes the move type depending on the mask the
     PARAMETRIZE { species = SPECIES_CHARIZARD; item = ITEM_DOUSE_DRIVE; }
     PARAMETRIZE { species = SPECIES_BLASTOISE; item = ITEM_SHOCK_DRIVE; }
     PARAMETRIZE { species = SPECIES_VENUSAUR; item = ITEM_BURN_DRIVE; }
-    PARAMETRIZE { species = SPECIES_DRATINI; item = ITEM_CHILL_DRIVE; }
+    PARAMETRIZE { species = SPECIES_NORMAL_YUUKA; item = ITEM_CHILL_DRIVE; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(item); }

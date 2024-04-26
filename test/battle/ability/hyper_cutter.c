@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter is ignored by Mold Breaker")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
+        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); }
         OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); }

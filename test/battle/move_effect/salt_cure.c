@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Salt Cure inflicts 1/4 to Water/Steel types of their maximum
 {
     u32 species;
 
-    PARAMETRIZE { species = SPECIES_LAPRAS; };
+    PARAMETRIZE { species = SPECIES_ATTACK_KAGUYA; };
     PARAMETRIZE { species = SPECIES_JIRACHI; };
 
     GIVEN {

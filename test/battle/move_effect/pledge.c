@@ -60,7 +60,7 @@ DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace")
     PASSES_RANDOMLY(60, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_BITE, MOVE_EFFECT_FLINCH) == TRUE);
-        PLAYER(SPECIES_TOGEPI) { Speed(8); Ability(ABILITY_SERENE_GRACE); }
+        PLAYER(SPECIES_NORMAL_MOMIJI) { Speed(8); Ability(ABILITY_SERENE_GRACE); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
         OPPONENT(SPECIES_WYNAUT) { Speed(3); }
@@ -317,7 +317,7 @@ DOUBLE_BATTLE_TEST("Damage calculation: Combined pledge move")
         PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
         PLAYER(SPECIES_WOBBUFFET) { HP(521); SpDefense(152); Speed(3); }
         OPPONENT(SPECIES_CHARIZARD) { Speed(8); }
-        OPPONENT(SPECIES_EEVEE) { SpAttack(126); Speed(5); }
+        OPPONENT(SPECIES_CHIBI_MOKOU) { SpAttack(126); Speed(5); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_FIRE_PLEDGE, target: playerLeft, WITH_RNG(RNG_DAMAGE_MODIFIER, i));
                MOVE(opponentRight, MOVE_GRASS_PLEDGE, target: playerRight, WITH_RNG(RNG_DAMAGE_MODIFIER, i));

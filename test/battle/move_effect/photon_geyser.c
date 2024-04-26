@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Photon Geyser ignores ignorable Abilities like Battle Armor"
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_LAPRAS) { Ability(ABILITY_SHELL_ARMOR); }
+        OPPONENT(SPECIES_ATTACK_KAGUYA) { Ability(ABILITY_SHELL_ARMOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_PHOTON_GEYSER, criticalHit: TRUE); }
     } SCENE {

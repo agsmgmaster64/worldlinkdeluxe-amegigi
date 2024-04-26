@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def"
     PARAMETRIZE { ability = ABILITY_DOWNLOAD; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Defense(100); SpDefense(200); }
-        OPPONENT(SPECIES_PORYGON) { Ability(ability); Attack(100); }
+        OPPONENT(SPECIES_CHIBI_AYA) { Ability(ability); Attack(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Download raises Sp.Attack if enemy has lower Sp. Def than De
     PARAMETRIZE { ability = ABILITY_TRACE; }
     PARAMETRIZE { ability = ABILITY_DOWNLOAD; }
     GIVEN {
-        PLAYER(SPECIES_PORYGON) { Ability(ability); SpAttack(100); }
+        PLAYER(SPECIES_CHIBI_AYA) { Ability(ability); SpAttack(100); }
         OPPONENT(SPECIES_WOBBUFFET) { Defense(200); SpDefense(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_TRI_ATTACK); }
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); }
-        PLAYER(SPECIES_PORYGON) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
+        PLAYER(SPECIES_CHIBI_AYA) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
         OPPONENT(SPECIES_PORYGON2) { Ability(ability); Defense(100); SpDefense(200); Speed(200); }
     } WHEN {

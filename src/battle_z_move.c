@@ -56,7 +56,6 @@ static void ZMoveSelectionDisplayMoveType(u16 zMove, u32 battler);
 // Const Data
 static const struct SignatureZMove sSignatureZMoves[] =
 {
-    {SPECIES_PIKACHU_COSPLAY,         ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_PIKACHU_ROCK_STAR,       ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_PIKACHU_BELLE,           ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
     {SPECIES_PIKACHU_POP_STAR,        ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
@@ -93,10 +92,10 @@ static const struct SignatureZMove sSignatureZMoves[] =
     {SPECIES_TAPU_LELE,               ITEM_TAPUNIUM_Z,           MOVE_NATURES_MADNESS,     MOVE_GUARDIAN_OF_ALOLA},
     {SPECIES_TAPU_FINI,               ITEM_TAPUNIUM_Z,           MOVE_NATURES_MADNESS,     MOVE_GUARDIAN_OF_ALOLA},
     {SPECIES_NECROZMA_ULTRA,          ITEM_ULTRANECROZIUM_Z,     MOVE_PHOTON_GEYSER,       MOVE_LIGHT_THAT_BURNS_THE_SKY},
-    {SPECIES_MEW,                     ITEM_MEWNIUM_Z,            MOVE_MANA_BURST,             MOVE_GENESIS_SUPERNOVA},
+    {SPECIES_NORMAL_KOMACHI,                     ITEM_MEWNIUM_Z,            MOVE_MANA_BURST,             MOVE_GENESIS_SUPERNOVA},
     {SPECIES_CHIBI_KOAKUMA,                 ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
-    {SPECIES_EEVEE,                   ITEM_EEVIUM_Z,             MOVE_LAST_RESORT,         MOVE_EXTREME_EVOBOOST},
-    {SPECIES_SNORLAX,                 ITEM_SNORLIUM_Z,           MOVE_GIGA_IMPACT,         MOVE_PULVERIZING_PANCAKE},
+    {SPECIES_CHIBI_MOKOU,                   ITEM_EEVIUM_Z,             MOVE_LAST_RESORT,         MOVE_EXTREME_EVOBOOST},
+    {SPECIES_ATTACK_MEDICINE,                 ITEM_SNORLIUM_Z,           MOVE_GIGA_IMPACT,         MOVE_PULVERIZING_PANCAKE},
 };
 
 static const u8 sText_ResetStats[] = _("Reset Lowered Stats");

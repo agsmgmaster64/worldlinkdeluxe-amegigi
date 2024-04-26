@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Flame Body inflicts burn on contact")
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         ASSUME(!gMovesInfo[MOVE_SWIFT].makesContact);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_MAGMAR) { Ability(ABILITY_FLAME_BODY); }
+        OPPONENT(SPECIES_NORMAL_EIRIN) { Ability(ABILITY_FLAME_BODY); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
