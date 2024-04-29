@@ -1073,8 +1073,8 @@
 
 // Misc Forms
 #define SPECIES_PORYGON                                 1009
-#define SPECIES_PIKACHU_ROCK_STAR                       1010
-#define SPECIES_PIKACHU_BELLE                           1011
+#define SPECIES_PROYGON2                                1010
+#define SPECIES_PROYGON_Z                               1011
 #define SPECIES_PIKACHU_POP_STAR                        1012
 #define SPECIES_PIKACHU_PH_D                            1013
 #define SPECIES_PIKACHU_LIBRE                           1014
@@ -1086,7 +1086,7 @@
 #define SPECIES_PIKACHU_ALOLA_CAP                       1020
 #define SPECIES_PIKACHU_PARTNER_CAP                     1021
 #define SPECIES_PIKACHU_WORLD_CAP                       1022
-#define SPECIES_ATTACK_NITORI_SPIKY_EARED                       1023
+#define SPECIES_ATTACK_NITORI_SPIKY_EARED               1023
 #define SPECIES_UNOWN_B                                 1024
 #define SPECIES_UNOWN_C                                 1025
 #define SPECIES_UNOWN_D                                 1026

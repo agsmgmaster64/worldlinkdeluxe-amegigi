@@ -93,14 +93,6 @@ static const u16 sPidgeotFormSpeciesIdTable[] = {
 #endif //P_FAMILY_PIDGEY
 
 #if P_FAMILY_RATTATA
-static const u16 sRattataFormSpeciesIdTable[] = {
-    SPECIES_ATTACK_RUMIA,
-#if P_ALOLAN_FORMS
-    SPECIES_CHIBI_MINORIKO_SANNIAN,
-#endif
-    FORM_SPECIES_END,
-};
-
 static const u16 sRaticateFormSpeciesIdTable[] = {
     SPECIES_SPEED_RUMIA,
 #if P_ALOLAN_FORMS
@@ -123,8 +115,6 @@ static const u16 sPichuFormSpeciesIdTable[] = {
 static const u16 sPikachuFormSpeciesIdTable[] = {
     SPECIES_CHIBI_KOAKUMA,
 #if P_COSPLAY_PIKACHU_FORMS
-    SPECIES_PIKACHU_ROCK_STAR,
-    SPECIES_PIKACHU_BELLE,
     SPECIES_PIKACHU_POP_STAR,
     SPECIES_PIKACHU_PH_D,
     SPECIES_PIKACHU_LIBRE,

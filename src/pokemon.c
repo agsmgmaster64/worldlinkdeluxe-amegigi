@@ -4728,6 +4728,7 @@ static const u16 sUniversalMoves[] =
 {
     MOVE_FRUSTRATION,
     MOVE_MULTI_PULSE,
+    MOVE_METRONOME,
     MOVE_MIMIC,
     MOVE_DETECT,
     MOVE_NATURAL_GIFT,

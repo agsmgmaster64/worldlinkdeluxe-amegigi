@@ -4066,6 +4066,392 @@
       "MOVE_MIMIC"
     ]
   },
+  "C_WRIGGLE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_TACKLE"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 8,
+        "Move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_FEINT_ATTACK"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_AGILITY"
+      },
+      {
+        "Level": 19,
+        "Move": "MOVE_FAKE_OUT"
+      },
+      {
+        "Level": 22,
+        "Move": "MOVE_JUMP_KICK"
+      },
+      {
+        "Level": 26,
+        "Move": "MOVE_NEEDLE_ARM"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SONIC_BOOM",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_SHADOW_BALL",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_POISON_BOMB",
+      "MOVE_RAZOR_WIND",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_SNATCH",
+      "MOVE_ENDURE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "WRIGGLE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_WHIRLWIND"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_NATURE_POWER"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_INGRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDEAVOR"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_POWER_WHIP"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TAILWIND"
+      },
+      {
+        "Level": 31,
+        "Move": "MOVE_SHADOW_HIT"
+      },
+      {
+        "Level": 34,
+        "Move": "MOVE_AIR_SLASH"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_ENDURE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_SOAR"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_HEAT_WAVE"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_HIGH_JUMP_KICK"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_POWER_WHIP"
+      },
+      {
+        "Level": 56,
+        "Move": "MOVE_TAILWIND"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SONIC_BOOM",
+      "MOVE_DETECT",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_SHADOW_BALL",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_POISON_BOMB",
+      "MOVE_RAZOR_WIND",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_SNATCH",
+      "MOVE_ENDURE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_COUNTER",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_FIRE_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "D_WRIGGLE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_WHIRLWIND"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDURE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_HEAL_BELL"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_INGRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDEAVOR"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_NATURE_SOUND"
+      },
+      {
+        "Level": 31,
+        "Move": "MOVE_TWISTER"
+      },
+      {
+        "Level": 34,
+        "Move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_ENERGY_LIGHT"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_SIGNAL_BEAM"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_CHARM"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_BURN_POWDER"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_NATURE_SOUND"
+      },
+      {
+        "Level": 56,
+        "Move": "MOVE_HEAL_BELL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_SONIC_BOOM",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_SHADOW_BALL",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_POISON_BOMB",
+      "MOVE_RAZOR_WIND",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_COUNTER",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_FIRE_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC"
+    ]
+  },
+  "S_WRIGGLE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_QUICK_ATTACK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_AEROBLAST"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_NATURE_POWER"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_INGRAIN"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDEAVOR"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_NATURE_SOUND"
+      },
+      {
+        "Level": 31,
+        "Move": "MOVE_GALE"
+      },
+      {
+        "Level": 34,
+        "Move": "MOVE_WHIRLWIND"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_ENERGY_LIGHT"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_HEAT_WAVE"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_OMINOUS_WIND"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_ENDURE"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_NATURE_SOUND"
+      },
+      {
+        "Level": 56,
+        "Move": "MOVE_AEROBLAST"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_SONIC_BOOM",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_SHADOW_BALL",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_POISON_BOMB",
+      "MOVE_RAZOR_WIND",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
   "C_REISEN": {
     "LevelMoves": [],
     "PreEvoMoves": [],
@@ -4251,12 +4637,8 @@
       "MOVE_ATTRACT",
       "MOVE_ENERGY_LIGHT",
       "MOVE_ENDURE",
-      "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4347,12 +4729,8 @@
       "MOVE_ATTRACT",
       "MOVE_ENERGY_LIGHT",
       "MOVE_ENDURE",
-      "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4447,12 +4825,8 @@
       "MOVE_ATTRACT",
       "MOVE_ENERGY_LIGHT",
       "MOVE_ENDURE",
-      "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4549,11 +4923,8 @@
       "MOVE_ATTRACT",
       "MOVE_ENERGY_LIGHT",
       "MOVE_ENDURE",
-      "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4620,9 +4991,6 @@
       "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4730,9 +5098,6 @@
       "MOVE_ICY_WIND",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
@@ -4797,8 +5162,6 @@
       "MOVE_ENDURE",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
@@ -4892,12 +5255,8 @@
       "MOVE_ENDURE",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
-      "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
       "MOVE_TERA_BLAST",
@@ -4989,11 +5348,8 @@
       "MOVE_ENDURE",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
-      "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
       "MOVE_TERA_BLAST",
@@ -5085,10 +5441,8 @@
       "MOVE_ENERGY_LIGHT",
       "MOVE_ENDURE",
       "MOVE_DECISION",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_SLEEP_TALK",
+      "MOVE_NATURE_POWER",
       "MOVE_SWAGGER",
-      "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
       "MOVE_TERA_BLAST",
@@ -5156,8 +5510,6 @@
       "MOVE_WILL_O_WISP",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
       "MOVE_SUBSTITUTE",
@@ -5264,12 +5616,8 @@
       "MOVE_WILL_O_WISP",
       "MOVE_DECISION",
       "MOVE_NATURE_POWER",
-      "MOVE_THUNDER_WAVE",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_PSYCH_UP",
       "MOVE_SLEEP_TALK",
       "MOVE_SWAGGER",
-      "MOVE_BODY_SLAM",
       "MOVE_SUBSTITUTE",
       "MOVE_METRONOME",
       "MOVE_TERA_BLAST",

@@ -1,11 +1,11 @@
 {
-  "C_SHIZUHA": {
+  "PORYGON": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": [
-      "MOVE_DREAM_EATER"
+      "MOVE_TACKLE"
     ]
   }
 }

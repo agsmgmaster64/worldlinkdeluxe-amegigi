@@ -671,107 +671,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 
 #if P_COSPLAY_PIKACHU_FORMS
-    [SPECIES_PIKACHU_ROCK_STAR] =
-    {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = P_UPDATED_STATS >= GEN_6 ? 40 : 30,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 50 : 40,
-        .types = MON_TYPES(TYPE_WIND),
-        .catchRate = 190,
-        .expYield = PIKACHU_EXP_YIELD,
-        .evYield_Speed = 2,
-        .itemRare = ITEM_LIGHT_BALL,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 10,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
-        .sourceGame = SOURCE_IN,
-        .speciesName = _("Pikachu"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CHIBI_KOAKUMA,
-        .categoryName = _("Mouse"),
-        .height = 4,
-        .weight = 60,
-        .description = gPikachuPokedexText,
-        .pokemonScale = 479,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_PikachuRockStar,
-        .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 9,
-        .frontAnimFrames = sAnims_PikachuRockStar,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_PikachuRockStar,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 4,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_PikachuRockStar,
-        .shinyPalette = gMonShinyPalette_PikachuRockStar,
-        .iconSprite = gMonIcon_PikachuRockStar,
-        .iconPalIndex = 1,
-        FOOTPRINT(Pikachu)
-        .levelUpLearnset = sPikachuLevelUpLearnset,
-        .teachableLearnset = sPikachuTeachableLearnset,
-        .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-    },
-
-    [SPECIES_PIKACHU_BELLE] =
-    {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = P_UPDATED_STATS >= GEN_6 ? 40 : 30,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 50,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 50 : 40,
-        .types = MON_TYPES(TYPE_WIND),
-        .catchRate = 190,
-        .expYield = PIKACHU_EXP_YIELD,
-        .evYield_Speed = 2,
-        .itemRare = ITEM_LIGHT_BALL,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 10,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD },
-        .sourceGame = SOURCE_IN,
-        .noFlip = TRUE,
-        .speciesName = _("Pikachu"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CHIBI_KOAKUMA,
-        .categoryName = _("Mouse"),
-        .height = 4,
-        .weight = 60,
-        .description = gPikachuPokedexText,
-        .pokemonScale = 479,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_PikachuBelle,
-        .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 9,
-        .frontAnimFrames = sAnims_PikachuBelle,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_PikachuBelle,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 4,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_PikachuBelle,
-        .shinyPalette = gMonShinyPalette_PikachuBelle,
-        .iconSprite = gMonIcon_PikachuBelle,
-        .iconPalIndex = 0,
-        FOOTPRINT(Pikachu)
-        .levelUpLearnset = sPikachuLevelUpLearnset,
-        .teachableLearnset = sPikachuTeachableLearnset,
-        .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
-    },
-
     [SPECIES_PIKACHU_POP_STAR] =
     {
         .baseHP        = 35,
@@ -1421,65 +1320,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_PIKACHU
 
-#if P_FAMILY_SANDSHREW
-#if P_ALOLAN_FORMS
-    [SPECIES_CHIBI_MOMIJI_SANNIAN] =
-    {
-        .baseHP        = 75,
-        .baseAttack    = 100,
-        .baseDefense   = 120,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 25,
-        .baseSpDefense = 65,
-        .types = MON_TYPES(TYPE_ICE, TYPE_STEEL),
-        .catchRate = 90,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 163,
-        .evYield_Defense = 2,
-        .itemRare = ITEM_GRIP_CLAW,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SLUSH_RUSH },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Sandslash"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CHIBI_KOAKUMA,
-        .categoryName = _("Mouse"),
-        .height = 12,
-        .weight = 550,
-        .description = COMPOUND_STRING(
-            "It uses large, hooked claws to cut a path\n"
-            "through deep snow as it runs.\n"
-            "On snowy mountains, this Sandslash\n"
-            "is faster than any other Pokémon."),
-        .pokemonScale = 341,
-        .pokemonOffset = 11,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_SandslashAlolan,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
-        .frontAnimFrames = sAnims_SandslashAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_SandslashAlolan,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 6,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_SandslashAlolan,
-        .shinyPalette = gMonShinyPalette_SandslashAlolan,
-        .iconSprite = gMonIcon_SandslashAlolan,
-        .iconPalIndex = 0,
-        FOOTPRINT(Sandslash)
-        .isSannianForm = TRUE,
-        .levelUpLearnset = sSandslashAlolanLevelUpLearnset,
-        .teachableLearnset = sSandslashAlolanTeachableLearnset,
-        .formSpeciesIdTable = sSandslashFormSpeciesIdTable,
-    },
-#endif //P_ALOLAN_FORMS
-#endif //P_FAMILY_SANDSHREW
-
 #if P_FAMILY_CLEFAIRY
 #if P_UPDATED_TYPES >= GEN_6
     #define CLEFAIRY_FAMILY_TYPES { TYPE_COSMIC, TYPE_COSMIC }
@@ -1494,62 +1334,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_VULPIX
 
 #if P_ALOLAN_FORMS
-    [SPECIES_NORMAL_MOMIJI_SANNIAN] =
-    {
-        .baseHP        = 38,
-        .baseAttack    = 41,
-        .baseDefense   = 40,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 50,
-        .baseSpDefense = 65,
-        .types = MON_TYPES(TYPE_ICE),
-        .catchRate = 190,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 63,
-        .evYield_Speed = 1,
-        .itemRare = ITEM_SNOWBALL,
-        .genderRatio = PERCENT_FEMALE(75),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SNOW_WARNING },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Vulpix"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_ATTACK_REIMU,
-        .categoryName = _("Fox"),
-        .height = 6,
-        .weight = 99,
-        .description = COMPOUND_STRING(
-            "They live together in a skulk, helping\n"
-            "one another. In hot weather, this Pokémon\n"
-            "makes ice shards with its six tails and\n"
-            "sprays them around to cool itself off."),
-        .pokemonScale = 542,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_VulpixAlolan,
-        .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_VulpixAlolan,
-        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_VulpixAlolan,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 5,
-        //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_VulpixAlolan,
-        .shinyPalette = gMonShinyPalette_VulpixAlolan,
-        .iconSprite = gMonIcon_VulpixAlolan,
-        .iconPalIndex = 2,
-        FOOTPRINT(Vulpix)
-        .isSannianForm = TRUE,
-        .levelUpLearnset = sVulpixAlolanLevelUpLearnset,
-        .teachableLearnset = sVulpixAlolanTeachableLearnset,
-        .formSpeciesIdTable = sVulpixFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_HELPER_HEART, SPECIES_NINETALES_ALOLAN}),
-    },
-
     [SPECIES_NINETALES_ALOLAN] =
     {
         .baseHP        = 73,
@@ -1618,22 +1402,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_GEN_2_CROSS_EVOS
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_JIGGLYPUFF
-
-#if P_FAMILY_ZUBAT
-#if P_GEN_2_CROSS_EVOS
-#endif //P_GEN_2_CROSS_EVOS
-#endif //P_FAMILY_ZUBAT
-
-#if P_FAMILY_ODDISH
-#if P_GEN_2_CROSS_EVOS
-#endif //P_GEN_2_CROSS_EVOS
-#endif //P_FAMILY_ODDISH
-
-#if P_FAMILY_PARAS
-#endif //P_FAMILY_PARAS
-
-#if P_FAMILY_VENONAT
-#endif //P_FAMILY_VENONAT
 
 #if P_FAMILY_DIGLETT
 
@@ -2044,9 +1812,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_MEOWTH
 
-#if P_FAMILY_PSYDUCK
-#endif //P_FAMILY_PSYDUCK
-
 #if P_FAMILY_MANKEY
 #if P_GEN_9_CROSS_EVOS
     [SPECIES_ANNIHILAPE] =
@@ -2217,11 +1982,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_GROWLITHE
 
-#if P_FAMILY_POLIWAG
-#if P_GEN_2_CROSS_EVOS
-#endif //P_GEN_2_CROSS_EVOS
-#endif //P_FAMILY_POLIWAG
-
 #if P_FAMILY_ABRA
 #define ALAKAZAM_SP_DEF (P_UPDATED_STATS >= GEN_6 ? 95 : 85)
 
@@ -2352,12 +2112,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_MACHOP
-
-#if P_FAMILY_BELLSPROUT
-#endif //P_FAMILY_BELLSPROUT
-
-#if P_FAMILY_TENTACOOL
-#endif //P_FAMILY_TENTACOOL
 
 #if P_FAMILY_GEODUDE
 
@@ -3142,12 +2896,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_FARFETCHD
 
-#if P_FAMILY_DODUO
-#endif //P_FAMILY_DODUO
-
-#if P_FAMILY_SEEL
-#endif //P_FAMILY_SEEL
-
 #if P_FAMILY_GRIMER
 #if P_ALOLAN_FORMS
     [SPECIES_GRIMER_ALOLAN] =
@@ -3264,9 +3012,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_GRIMER
-
-#if P_FAMILY_SHELLDER
-#endif //P_FAMILY_SHELLDER
 
 #if P_FAMILY_GASTLY
 #if P_UPDATED_ABILITIES >= GEN_7
@@ -3511,9 +3256,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_ONIX
-
-#if P_FAMILY_DROWZEE
-#endif //P_FAMILY_DROWZEE
 
 #if P_FAMILY_KRABBY
 #if P_GIGANTAMAX_FORMS
@@ -4363,7 +4105,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_EOSD,
         .speciesName = _("Kangaskhan"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_KANGASKHAN,
+        .natDexNum = NATIONAL_DEX_ATTACK_TEWI,
         .categoryName = _("Parent"),
         .height = 22,
         .weight = 1000,
@@ -4464,12 +4206,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_HORSEA
 
-#if P_FAMILY_GOLDEEN
-#endif //P_FAMILY_GOLDEEN
-
-#if P_FAMILY_STARYU
-#endif //P_FAMILY_STARYU
-
 #if P_FAMILY_MR_MIME
 #if P_GEN_4_CROSS_EVOS
     [SPECIES_MIME_JR] =
@@ -4526,8 +4262,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(MimeJr)
         .levelUpLearnset = sMimeJrLevelUpLearnset,
         .teachableLearnset = sMimeJrTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE, MOVE_MIMIC, SPECIES_NORMAL_REISEN_II},
-                                {EVO_NONE, 0, SPECIES_MR_MIME_GALARIAN}),
+        .evolutions = EVOLUTION({EVO_NONE, 0, SPECIES_MR_MIME_GALARIAN}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -4553,7 +4288,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_POFV,
         .speciesName = _("Mr. Mime"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_MR_MIME,
+        .natDexNum = NATIONAL_DEX_NORMAL_REISEN_II,
         .categoryName = _("Dancing"),
         .height = 14,
         .weight = 568,
@@ -4865,7 +4600,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Smoochum)
         .levelUpLearnset = sSmoochumLevelUpLearnset,
         .teachableLearnset = sSmoochumTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PLACEHOLD2_REISEN_II}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_JYNX
@@ -4924,7 +4658,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Elekid)
         .levelUpLearnset = sElekidLevelUpLearnset,
         .teachableLearnset = sElekidTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_CHIBI_EIRIN}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -5044,7 +4777,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Magby)
         .levelUpLearnset = sMagbyLevelUpLearnset,
         .teachableLearnset = sMagbyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_EIRIN}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -5134,7 +4866,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_EOSD,
         .speciesName = _("Pinsir"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_PINSIR,
+        .natDexNum = NATIONAL_DEX_ATTACK_EIRIN,
         .categoryName = _("Stag Beetle"),
         .height = 17,
         .weight = 590,
@@ -5194,7 +4926,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_MS,
         .speciesName = _("Tauros"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_TAUROS,
+        .natDexNum = NATIONAL_DEX_HELPER_EIRIN,
         .categoryName = _("Wild Bull"),
         .height = 14,
         .weight = 1150,
@@ -5248,7 +4980,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_MS,
         .speciesName = _("Tauros"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_TAUROS,
+        .natDexNum = NATIONAL_DEX_HELPER_EIRIN,
         .categoryName = _("Wild Bull"),
         .height = 14,
         .weight = 850,
@@ -5302,7 +5034,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_MS,
         .speciesName = _("Tauros"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_TAUROS,
+        .natDexNum = NATIONAL_DEX_HELPER_EIRIN,
         .categoryName = _("Wild Bull"),
         .height = 14,
         .weight = 1100,
@@ -5360,7 +5092,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_SOEW,
         .speciesName = _("Gyarados"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_GYARADOS,
+        .natDexNum = NATIONAL_DEX_NORMAL_KAGUYA,
         .categoryName = _("Atrocious"),
         .height = 65,
         .weight = 3050,
@@ -5422,7 +5154,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .sourceGame = SOURCE_SOEW,
         .speciesName = _("Lapras"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_LAPRAS,
+        .natDexNum = NATIONAL_DEX_ATTACK_KAGUYA,
         .categoryName = _("Transport"),
         .height = 240,
         .weight = 0,
@@ -5457,9 +5189,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_LAPRAS
-
-#if P_FAMILY_DITTO
-#endif //P_FAMILY_DITTO
 
 #if P_FAMILY_EEVEE
 #if P_GIGANTAMAX_FORMS
@@ -5897,10 +5626,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Porygon)
         .levelUpLearnset = sPorygonLevelUpLearnset,
         .teachableLearnset = sPorygonTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_TRADE_ITEM, ITEM_UPGRADE, SPECIES_PROYGON2},
+                                {EVO_ITEM, ITEM_UPGRADE, SPECIES_PROYGON2}),
     },
 
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_PORYGON2] =
+    [SPECIES_PROYGON2] =
     {
         .baseHP        = 85,
         .baseAttack    = 80,
@@ -5951,12 +5682,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Porygon2)
         .levelUpLearnset = sPorygon2LevelUpLearnset,
         .teachableLearnset = sPorygon2TeachableLearnset,
-        .evolutions = EVOLUTION({EVO_TRADE_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PORYGON_Z},
-                                {EVO_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PORYGON_Z}),
+        .evolutions = EVOLUTION({EVO_TRADE_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PROYGON_Z},
+                                {EVO_ITEM, ITEM_DUBIOUS_DISC, SPECIES_PROYGON_Z}),
     },
 
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_PORYGON_Z] =
+    [SPECIES_PROYGON_Z] =
     {
         .baseHP        = 85,
         .baseAttack    = 80,
@@ -6017,12 +5748,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_GEN_2_CROSS_EVOS
 #endif //P_FAMILY_PORYGON
-
-#if P_FAMILY_OMANYTE
-#endif //P_FAMILY_OMANYTE
-
-#if P_FAMILY_KABUTO
-#endif //P_FAMILY_KABUTO
 
 #if P_FAMILY_AERODACTYL
 #if P_MEGA_EVOLUTIONS
@@ -6379,9 +6104,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_MOLTRES
 
-#if P_FAMILY_DRATINI
-#endif //P_FAMILY_DRATINI
-
 #if P_FAMILY_MEWTWO
 #if P_MEGA_EVOLUTIONS
     [SPECIES_MEWTWO_MEGA_X] =
@@ -6498,9 +6220,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_MEWTWO
-
-#if P_FAMILY_MEW
-#endif //P_FAMILY_MEW
 
 #ifdef __INTELLISENSE__
 };
