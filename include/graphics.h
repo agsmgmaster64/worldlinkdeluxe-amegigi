@@ -1526,6 +1526,7 @@ extern const u32 gItemIconPalette_ReasonTMHM[];
 extern const u32 gItemIconPalette_HeartTMHM[];
 extern const u32 gItemIconPalette_BeastTMHM[];
 extern const u32 gItemIconPalette_FaithTMHM[];
+extern const u32 gItemIconPalette_CosmicTMHM[];
 // Charms
 extern const u32 gItemIcon_OvalCharm[];
 extern const u32 gItemIconPalette_OvalCharm[];

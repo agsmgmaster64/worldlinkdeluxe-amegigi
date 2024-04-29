@@ -1801,6 +1801,8 @@ const u32 gItemIconPalette_SteelTMHM[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIconPalette_FairyTMHM[] = INCBIN_U32("graphics/items/icon_palettes/fairy_tm_hm.gbapal.lz");
 
+const u32 gItemIconPalette_CosmicTMHM[] = INCBIN_U32("graphics/items/icon_palettes/fairy_tm_hm.gbapal.lz");
+
 // Charms
 
 const u32 gItemIcon_OvalCharm[] = INCBIN_U32("graphics/items/icons/oval_charm.4bpp.lz");
