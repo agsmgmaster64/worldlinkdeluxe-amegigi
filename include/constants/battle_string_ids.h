@@ -712,26 +712,27 @@
 #define STRINGID_FOGCREPTUP                           710
 #define STRINGID_FOGISDEEP                            711
 #define STRINGID_FOGLIFTED                            712
-#define STRINGID_POKEFLUTECATCHY                      713
-#define STRINGID_POKEFLUTE                            714
-#define STRINGID_MONHEARINGFLUTEAWOKE                 715
-#define STRINGID_PLAYERWHITEDOUT                      716
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            717
-#define STRINGID_STRINGISRESERVED                     718
-#define STRINGID_PKMNDROPPEDITEM                      719
-#define STRINGID_BAGISFULL                            720
-#define STRINGID_MONTOOSCAREDTOMOVE                   721
-#define STRINGID_GHOSTGETOUTGETOUT                    722
-#define STRINGID_SILPHSCOPEUNVEILED                   723
-#define STRINGID_GHOSTWASMAROWAK                      724
-#define STRINGID_TERRAINBECOMESHOLY                   725
-#define STRINGID_HOLYTERRAINENDS                      726
-#define STRINGID_HOLYTERRAINPREVENTS                  727
-#define STRINGID_FROSTBITBY                           728
-#define STRINGID_FELTBETTERWITHABILITY                729
-#define STRINGID_TARGETFELTBETTERWITHABILITY          730
+#define STRINGID_PKMNMADESHELLGLEAM                   713
+#define STRINGID_POKEFLUTECATCHY                      714
+#define STRINGID_POKEFLUTE                            715
+#define STRINGID_MONHEARINGFLUTEAWOKE                 716
+#define STRINGID_PLAYERWHITEDOUT                      717
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            718
+#define STRINGID_STRINGISRESERVED                     719
+#define STRINGID_PKMNDROPPEDITEM                      720
+#define STRINGID_BAGISFULL                            721
+#define STRINGID_MONTOOSCAREDTOMOVE                   722
+#define STRINGID_GHOSTGETOUTGETOUT                    723
+#define STRINGID_SILPHSCOPEUNVEILED                   724
+#define STRINGID_GHOSTWASMAROWAK                      725
+#define STRINGID_TERRAINBECOMESHOLY                   726
+#define STRINGID_HOLYTERRAINENDS                      727
+#define STRINGID_HOLYTERRAINPREVENTS                  728
+#define STRINGID_FROSTBITBY                           729
+#define STRINGID_FELTBETTERWITHABILITY                730
+#define STRINGID_TARGETFELTBETTERWITHABILITY          731
 
-#define BATTLESTRINGS_COUNT                           731
+#define BATTLESTRINGS_COUNT                           732
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -784,6 +785,16 @@
 #define B_MSG_STARTED_HAIL      5
 #define B_MSG_STARTED_SNOW      6
 #define B_MSG_STARTED_FOG       7
+
+// gWeatherEndsStringIds
+#define B_MSG_WEATHER_END_RAIN         0
+#define B_MSG_WEATHER_END_SANDSTORM    1
+#define B_MSG_WEATHER_END_SUN          2
+#define B_MSG_WEATHER_END_HAIL         3
+#define B_MSG_WEATHER_END_STRONG_WINDS 4
+#define B_MSG_WEATHER_END_SNOW         5
+#define B_MSG_WEATHER_END_FOG          6
+#define B_MSG_WEATHER_END_COUNT        7
 
 // gRainContinuesStringIds
 #define B_MSG_RAIN_CONTINUES     0
