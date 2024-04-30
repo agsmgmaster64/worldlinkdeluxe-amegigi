@@ -28586,6 +28586,7 @@ General_AffectionHangedOn::
 	createvisualtask AnimTask_AffectionHangedOn, 0x5
 	jumpargeq 0x0, AFFECTION_THREE_HEARTS, General_AffectionHangedOn_3Hearts
 	jumpargeq 0x0, AFFECTION_FOUR_HEARTS, General_AffectionHangedOn_4Hearts
+	jumpargeq 0x0, AFFECTION_FOUR_HALF_HEARTS, General_AffectionHangedOn_4Hearts
 	jumpargeq 0x0, AFFECTION_FIVE_HEARTS, General_AffectionHangedOn_5Hearts
 	createsprite gRedHeartBurstSpriteTemplate, ANIM_ATTACKER, 3, -384, -31
 General_AffectionHangedOn_5Hearts:
