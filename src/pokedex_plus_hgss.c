@@ -5038,19 +5038,8 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         else
             gTasks[taskId].data[5] = 0;
 
-        FillWindowPixelBuffer(WIN_STATS_MOVES_TOP, PIXEL_FILL(0));
-        PrintStatsScreen_DestroyMoveItemIcon(taskId);
-        PrintStatsScreen_Moves_Top(taskId);
-
         FillWindowPixelBuffer(WIN_STATS_LEFT, PIXEL_FILL(0));
         PrintStatsScreen_Left(taskId);
-
-        FillWindowPixelBuffer(WIN_STATS_MOVES_DESCRIPTION, PIXEL_FILL(0));
-        PrintStatsScreen_Moves_Description(taskId);
-
-        FillWindowPixelBuffer(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0));
-        PrintStatsScreen_Moves_BottomText(taskId);
-        PrintStatsScreen_Moves_Bottom(taskId);
 
         FillWindowPixelBuffer(WIN_STATS_ABILITIES, PIXEL_FILL(0));
         PrintStatsScreen_Abilities(taskId);
@@ -5076,17 +5065,9 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         FillWindowPixelBuffer(WIN_STATS_MOVES_DESCRIPTION, PIXEL_FILL(0));
         PrintStatsScreen_Moves_Description(taskId);
 
-        if (gTasks[taskId].data[5] == 0)
-        {
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
-        }
-        else
-        {
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
-        }
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
         PrintStatsScreen_Moves_Bottom(taskId);
     }
     if (JOY_REPEAT(DPAD_DOWN) && sPokedexView->moveSelected < sPokedexView->movesTotal -1 )
@@ -5100,17 +5081,9 @@ static void Task_HandleStatsScreenInput(u8 taskId)
         FillWindowPixelBuffer(WIN_STATS_MOVES_DESCRIPTION, PIXEL_FILL(0));
         PrintStatsScreen_Moves_Description(taskId);
 
-        if (gTasks[taskId].data[5] == 0)
-        {
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
-        }
-        else
-        {
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 50, 0, 20, 16);
-            FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 120, 0, 20, 16);
-        }
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 38, 0, 15, 16);
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 87, 0, 15, 16);
+        FillWindowPixelRect(WIN_STATS_MOVES_BOTTOM, PIXEL_FILL(0), 127, 0, 10, 16);
         PrintStatsScreen_Moves_Bottom(taskId);
     }
 
@@ -5261,16 +5234,8 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar3, moves_x, moves_y + 17);
 
     //Draw move type icon
-    if (gTasks[taskId].data[5] == 0)
-    {
-        SetTypeIconPosAndPal(gMovesInfo[move].type, moves_x + 146, moves_y + 17, 0);
-        SetSpriteInvisibility(1, TRUE);
-    }
-    else
-    {
-        SetTypeIconPosAndPal(NUMBER_OF_MON_TYPES + gMovesInfo[move].contestCategory, moves_x + 146, moves_y + 17, 1);
-        SetSpriteInvisibility(0, TRUE);
-    }
+    SetTypeIconPosAndPal(gMovesInfo[move].type, moves_x + 146, moves_y + 17, 0);
+    SetSpriteInvisibility(1, TRUE);
 
     //Calculate and retrieve correct move from the arrays
     if (selected < numEggMoves)
@@ -5322,33 +5287,18 @@ static void PrintStatsScreen_Moves_Description(u8 taskId)
     move = sStatsMoves[selected];
 
     //Move description
-    if (gTasks[taskId].data[5] == 0)
-    {
-        StringCopy(gStringVar4, gMovesInfo[move].description);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_DESCRIPTION, gStringVar4, moves_x, moves_y);
-    }
-    else
-    {
-        StringCopy(gStringVar4, gContestEffectDescriptionPointers[gMovesInfo[move].contestEffect]);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_DESCRIPTION, gStringVar4, moves_x, moves_y);
-    }
+    StringCopy(gStringVar4, gMovesInfo[move].description);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_DESCRIPTION, gStringVar4, moves_x, moves_y);
 }
 
 static void PrintStatsScreen_Moves_BottomText(u8 taskId)
 {
     u8 moves_x = 8;
     u8 moves_y = 3;
-    if (gTasks[taskId].data[5] == 0)
-    {
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Power,  moves_x, moves_y);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Accuracy3,  moves_x + 55, moves_y);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_PPDex,  moves_x + 104, moves_y);
-    }
-    else
-    {
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Appeal,  moves_x, moves_y);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Jam,  moves_x + 66, moves_y);
-    }
+
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Power,  moves_x, moves_y);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_Accuracy3,  moves_x + 55, moves_y);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gText_PPDex,  moves_x + 104, moves_y);
 }
 
 static void PrintStatsScreen_Moves_Bottom(u8 taskId)
@@ -5365,50 +5315,24 @@ static void PrintStatsScreen_Moves_Bottom(u8 taskId)
     //Move
     move = sStatsMoves[selected];
 
-    //Power + Accuracy
-    if (gTasks[taskId].data[5] == 0)
-    {
-        //Power
-        if (gMovesInfo[move].power < 2)
-            StringCopy(gStringVar1, gText_ThreeDashes);
-        else
-            ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1, moves_x + 30, moves_y);
-        //Physical/Special/Status Category
-        DestroyCategoryIcon();
-        ShowCategoryIcon(GetBattleMoveCategory(move));
-        //Accuracy
-        if (gMovesInfo[move].accuracy == 0)
-            StringCopy(gStringVar1, gText_ThreeDashes);
-        else
-            ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 79, moves_y);
-        //PP
-        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 119, moves_y);
-    }
-    else //Appeal + Jam
-    {
-        DestroyCategoryIcon();
-        gSprites[sPokedexView->categoryIconSpriteId].invisible = TRUE;
-        //Appeal
-        contest_effectValue = gContestEffects[gMovesInfo[move].contestEffect].appeal;
-        if (contest_effectValue != 0xFF)
-            contest_appeal = contest_effectValue / 10;
-        ConvertIntToDecimalStringN(gStringVar1, contest_appeal, STR_CONV_MODE_RIGHT_ALIGN, 1);
-        StringCopy(gStringVar2, sText_PlusSymbol);
-        StringAppend(gStringVar2, gStringVar1);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar2, moves_x + 45, moves_y);
-
-        //Jam
-        contest_effectValue = gContestEffects[gMovesInfo[move].contestEffect].jam;
-        if (contest_effectValue != 0xFF)
-            contest_jam = contest_effectValue / 10;
-        ConvertIntToDecimalStringN(gStringVar1, contest_jam, STR_CONV_MODE_RIGHT_ALIGN, 1);
-        StringCopy(gStringVar2, sText_Stats_Minus);
-        StringAppend(gStringVar2, gStringVar1);
-        PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar2,  moves_x + 119, moves_y);
-    }
+    //Power
+    if (gMovesInfo[move].power < 2)
+        StringCopy(gStringVar1, gText_ThreeDashes);
+    else
+        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1, moves_x + 30, moves_y);
+    //Physical/Special/Status Category
+    DestroyCategoryIcon();
+    ShowCategoryIcon(GetBattleMoveCategory(move));
+    //Accuracy
+    if (gMovesInfo[move].accuracy == 0)
+        StringCopy(gStringVar1, gText_ThreeDashes);
+    else
+        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 79, moves_y);
+    //PP
+    ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 119, moves_y);
 }
 
 static void PrintStatsScreen_NameGender(u8 taskId, u32 num, u32 value)
