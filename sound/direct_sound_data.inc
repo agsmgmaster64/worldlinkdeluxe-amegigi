@@ -451,8 +451,28 @@ Cry_Yukari::
 	.incbin "sound/direct_sound_samples/cries/yukari.bin"
 
 	.align 2
+Cry_Mystia::
+	.incbin "sound/direct_sound_samples/cries/mystia.bin"
+
+	.align 2
+Cry_Keine::
+	.incbin "sound/direct_sound_samples/cries/keine.bin"
+
+	.align 2
+Cry_KeineBeast::
+	.incbin "sound/direct_sound_samples/cries/keine_beast.bin"
+
+	.align 2
 Cry_Reisen::
 	.incbin "sound/direct_sound_samples/cries/reisen.bin"
+
+	.align 2
+Cry_Mokou::
+	.incbin "sound/direct_sound_samples/cries/mokou.bin"
+
+	.align 2
+Cry_Medicine::
+	.incbin "sound/direct_sound_samples/cries/medicine.bin"
 
 	.align 2
 Cry_Shizuha::
@@ -461,6 +481,14 @@ Cry_Shizuha::
 	.align 2
 Cry_Minoriko::
 	.incbin "sound/direct_sound_samples/cries/minoriko.bin"
+
+	.align 2
+Cry_Momiji::
+	.incbin "sound/direct_sound_samples/cries/momiji.bin"
+
+	.align 2
+Cry_Sanae::
+	.incbin "sound/direct_sound_samples/cries/sanae.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::

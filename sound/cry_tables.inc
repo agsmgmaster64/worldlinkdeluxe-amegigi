@@ -16,9 +16,16 @@ gCryTable::
 	cry Cry_Youmu
 	cry Cry_Chen
 	cry Cry_Yukari
+	cry Cry_Mystia
+	cry Cry_Keine
+	cry Cry_KeineBeast
 	cry Cry_Reisen
+	cry Cry_Mokou
+	cry Cry_Medicine
 	cry Cry_Shizuha
 	cry Cry_Minoriko
+	cry Cry_Momiji
+	cry Cry_Sanae
 
 	.align 2
 gCryTable_Reverse::
@@ -38,6 +45,13 @@ gCryTable_Reverse::
 	cry_reverse Cry_Youmu
 	cry_reverse Cry_Chen
 	cry_reverse Cry_Yukari
+	cry_reverse Cry_Mystia
+	cry_reverse Cry_Keine
+	cry_reverse Cry_KeineBeast
 	cry_reverse Cry_Reisen
+	cry_reverse Cry_Mokou
+	cry_reverse Cry_Medicine
 	cry_reverse Cry_Shizuha
 	cry_reverse Cry_Minoriko
+	cry_reverse Cry_Momiji
+	cry_reverse Cry_Sanae

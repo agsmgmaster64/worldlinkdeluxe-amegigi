@@ -19,9 +19,16 @@ enum {
     CRY_YOUMU,
     CRY_CHEN,
     CRY_YUKARI,
+    CRY_MYSTIA,
+    CRY_KEINE,
+    CRY_KEINE_BEAST,
     CRY_REISEN,
+    CRY_MOKOU,
+    CRY_MEDICINE,
     CRY_SHIZUHA,
     CRY_MINORIKO,
+    CRY_MOMIJI,
+    CRY_SANAE,
     CRY_COUNT,
 };
 
