@@ -762,7 +762,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_ZIGZAGOON_2] = {
         .species = SPECIES_ZIGZAGOON,
-        .moves = {MOVE_DIG, MOVE_MUD_SPORT, MOVE_TAIL_WHIP, MOVE_REST},
+        .moves = {MOVE_DIG, MOVE_SUB_ZERO, MOVE_TAIL_WHIP, MOVE_REST},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
@@ -867,7 +867,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_GRAVELER] = {
         .species = SPECIES_PLACEHOLDER_LYRICA,
-        .moves = {MOVE_MUD_SPORT, MOVE_BLOCK, MOVE_ROCK_TOMB, MOVE_MAGNITUDE},
+        .moves = {MOVE_SUB_ZERO, MOVE_BLOCK, MOVE_ROCK_TOMB, MOVE_MAGNITUDE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
         .nature = NATURE_BRAVE
@@ -1014,7 +1014,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     },
     [SLATEPORT_TENT_MON_BARBOACH] = {
         .species = SPECIES_BARBOACH,
-        .moves = {MOVE_MAGNITUDE, MOVE_MUD_SPORT, MOVE_SPLASHING, MOVE_WATER_GUN},
+        .moves = {MOVE_MAGNITUDE, MOVE_SUB_ZERO, MOVE_SPLASHING, MOVE_WATER_GUN},
         .heldItem = ITEM_SEA_INCENSE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_JOLLY
@@ -1815,7 +1815,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_ZIGZAGOON] = {
         .species = SPECIES_ZIGZAGOON,
-        .moves = {MOVE_COVET, MOVE_GROWL, MOVE_PIN_MISSILE, MOVE_MUD_SPORT},
+        .moves = {MOVE_COVET, MOVE_GROWL, MOVE_PIN_MISSILE, MOVE_SUB_ZERO},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
@@ -1927,7 +1927,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     },
     [VERDANTURF_TENT_MON_GOLDEEN_1] = {
         .species = SPECIES_NORMAL_REISEN,
-        .moves = {MOVE_WATERFALL, MOVE_MUD_SPORT, MOVE_JAMMING, MOVE_DOUBLE_TEAM},
+        .moves = {MOVE_WATERFALL, MOVE_SUB_ZERO, MOVE_JAMMING, MOVE_DOUBLE_TEAM},
         .heldItem = ITEM_SWIMSUIT,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_GENTLE
@@ -2948,7 +2948,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_GRAVELER] = {
         .species = SPECIES_PLACEHOLDER_LYRICA,
-        .moves = {MOVE_ROCK_BLAST, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_MUD_SPORT},
+        .moves = {MOVE_ROCK_BLAST, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_SUB_ZERO},
         .heldItem = ITEM_BUNNY_SUIT,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
         .nature = NATURE_ADAMANT

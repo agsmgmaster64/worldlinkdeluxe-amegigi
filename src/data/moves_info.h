@@ -7301,28 +7301,26 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
     },
 
-    [MOVE_MUD_SPORT] =
+    [MOVE_SUB_ZERO] =
     {
-        .name = COMPOUND_STRING("Mud Sport"),
+        .name = COMPOUND_STRING("Sub-Zero"),
         .description = COMPOUND_STRING(
-            "Covers the user in mud to\n"
-            "raise electrical resistance."),
-        .effect = EFFECT_MUD_SPORT,
+            "Inflicts frostbite on the\n"
+            "foe with intense coldness."),
+        .effect = EFFECT_SUB_ZERO,
         .power = 0,
-        .type = TYPE_EARTH,
-        .accuracy = 100,
+        .type = TYPE_ICE,
+        .accuracy = B_UPDATED_MOVE_DATA >= GEN_6 ? 85 : 75,
         .pp = 15,
-        .target = MOVE_TARGET_ALL_BATTLERS,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .skyBattleBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = COMBO_STARTER_MUD_SPORT,
-        .contestComboMoves = {COMBO_STARTER_MUD_SLAP, COMBO_STARTER_SANDSTORM, COMBO_STARTER_WATER_SPORT},
+        .zMove = { .effect = Z_EFFECT_SPATK_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_HAIL},
     },
 
     [MOVE_ICE_BALL] =

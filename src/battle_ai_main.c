@@ -855,6 +855,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 {
                 case EFFECT_POISON:
                 case EFFECT_WILL_O_WISP:
+                case EFFECT_SUB_ZERO:
                 case EFFECT_TOXIC:
                 case EFFECT_LEECH_SEED:
                     ADJUST_SCORE(-5);
@@ -1732,6 +1733,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_WILL_O_WISP:
             if (!AI_CanBurn(battlerAtk, battlerDef, aiData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_SUB_ZERO:
+            if (!AI_CanGiveFrostbite(battlerAtk, battlerDef, aiData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_MEMENTO:
@@ -3468,6 +3473,7 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
           || HasMoveEffect(battlerDef, EFFECT_POISON)
           || HasMoveEffect(battlerDef, EFFECT_PARALYZE)
           || HasMoveEffect(battlerDef, EFFECT_WILL_O_WISP)
+          || HasMoveEffect(battlerDef, EFFECT_SUB_ZERO)
           || HasMoveEffect(battlerDef, EFFECT_CONFUSE)
           || HasMoveEffect(battlerDef, EFFECT_LEECH_SEED))
             ADJUST_SCORE(GOOD_EFFECT);
@@ -3841,6 +3847,9 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
         break;
     case EFFECT_WILL_O_WISP:
         IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+        break;
+    case EFFECT_SUB_ZERO:
+        IncreaseFrostbiteScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_FOLLOW_ME:
         if (isDoubleBattle
@@ -4699,6 +4708,7 @@ static s32 AI_SetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_TORMENT:
     case EFFECT_FLATTER:
     case EFFECT_WILL_O_WISP:
+    case EFFECT_SUB_ZERO:
     case EFFECT_INGRAIN:
     case EFFECT_IMPRISON:
     case EFFECT_TICKLE:

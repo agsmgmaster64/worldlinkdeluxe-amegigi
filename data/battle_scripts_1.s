@@ -4923,6 +4923,43 @@ BattleScript_AlreadyBurned::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectSubZero::
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	jumpifstatus BS_TARGET, STATUS1_FROSTBITE, BattleScript_AlreadyFrostbit
+	jumpiftype BS_TARGET, TYPE_FIRE, BattleScript_NotAffected
+	jumpifability BS_TARGET, ABILITY_FIRE_VEIL, BattleScript_FireVeilPrevents
+	jumpifability BS_TARGET, ABILITY_FLAME_BODY, BattleScript_FireVeilPrevents
+	jumpifability BS_TARGET, ABILITY_COMATOSE, BattleScript_AbilityProtectsDoesntAffect
+	jumpifability BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_AbilityProtectsDoesntAffect
+	jumpifflowerveil BattleScript_FlowerVeilProtects
+	jumpifleafguardprotected BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifshieldsdown BS_TARGET, BattleScript_AbilityProtectsDoesntAffect
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
+	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	jumpifsafeguard BattleScript_SafeguardProtected
+	attackanimation
+	waitanimation
+	seteffectprimary MOVE_EFFECT_FROSTBITE
+	goto BattleScript_MoveEnd
+
+BattleScript_FireVeilPrevents::
+	call BattleScript_AbilityPopUp
+	copybyte gEffectBattler, gBattlerTarget
+	setbyte cMULTISTRING_CHOOSER, B_MSG_ABILITY_PREVENTS_MOVE_STATUS
+	call BattleScript_FRBPrevention
+	goto BattleScript_MoveEnd
+
+BattleScript_AlreadyFrostbit::
+	setalreadystatusedmoveattempt BS_ATTACKER
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_PKMNALREADYHASFROSTBITE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectMemento::
 	attackcanceler
 	jumpifbyte CMP_EQUAL, cMISS_TYPE, B_MSG_PROTECTED, BattleScript_MementoTargetProtect

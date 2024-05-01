@@ -5923,6 +5923,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 }
                 break;
             case ABILITY_FIRE_VEIL:
+            case ABILITY_FLAME_BODY:
                 if (gBattleMons[battler].status1 & (STATUS1_FREEZE | STATUS1_FROSTBITE))
                 {
                     StringCopy(gBattleTextBuff1, gStatusConditionString_IceJpn);
@@ -6437,6 +6438,7 @@ bool32 CanBeFrozen(u32 battler)
       || IsBattlerWeatherAffected(battler, B_WEATHER_SUN)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || ability == ABILITY_FIRE_VEIL
+      || ability == ABILITY_FLAME_BODY
       || ability == ABILITY_COMATOSE
       || ability == ABILITY_PURIFYING_SALT
       || gBattleMons[battler].status1 & STATUS1_ANY
@@ -6452,6 +6454,7 @@ bool32 CanGetFrostbite(u32 battler)
     if (IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || ability == ABILITY_FIRE_VEIL
+      || ability == ABILITY_FLAME_BODY
       || ability == ABILITY_COMATOSE
       || ability == ABILITY_PURIFYING_SALT
       || gBattleMons[battler].status1 & STATUS1_ANY

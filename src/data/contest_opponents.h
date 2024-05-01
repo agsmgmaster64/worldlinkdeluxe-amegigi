@@ -1205,7 +1205,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_MUD_SPORT,
+            MOVE_SUB_ZERO,
             MOVE_SPLASHING,
             MOVE_EARTHQUAKE,
             MOVE_FUTURE_SIGHT

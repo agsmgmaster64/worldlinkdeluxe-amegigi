@@ -711,7 +711,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_YAWN"
     ],
@@ -824,7 +824,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_YAWN"
     ],
@@ -944,7 +944,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_YAWN"
     ],
@@ -6697,7 +6697,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 11,
@@ -6795,7 +6795,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -6803,7 +6803,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 11,
@@ -6901,7 +6901,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -6909,7 +6909,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 11,
@@ -7261,7 +7261,7 @@
     "EggMoves": [
       "MOVE_BELLY_DRUM",
       "MOVE_FUTURE_SIGHT",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SAFEGUARD",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -7375,7 +7375,7 @@
     "EggMoves": [
       "MOVE_BELLY_DRUM",
       "MOVE_FUTURE_SIGHT",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SAFEGUARD",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -11029,7 +11029,7 @@
     "EggMoves": [
       "MOVE_HAZE",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_PSYBEAM",
       "MOVE_SLEEP_TALK"
     ],
@@ -11117,7 +11117,7 @@
     "EggMoves": [
       "MOVE_HAZE",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_PSYBEAM",
       "MOVE_SLEEP_TALK"
     ],
@@ -14744,7 +14744,7 @@
       "MOVE_CRUNCH",
       "MOVE_HEART_BREAK",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_SLIDE",
       "MOVE_THRASH",
       "MOVE_SPLASHING"
@@ -14848,7 +14848,7 @@
       "MOVE_CRUNCH",
       "MOVE_HEART_BREAK",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_SLIDE",
       "MOVE_THRASH",
       "MOVE_SPLASHING"
@@ -14960,7 +14960,7 @@
       "MOVE_CRUNCH",
       "MOVE_HEART_BREAK",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_SLIDE",
       "MOVE_THRASH",
       "MOVE_SPLASHING"
@@ -18080,7 +18080,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_BODY_SLAM",
       "MOVE_CURSE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SAFEGUARD",
       "MOVE_BRAVER",
       "MOVE_COERCE",
@@ -18182,7 +18182,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_BODY_SLAM",
       "MOVE_CURSE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SAFEGUARD",
       "MOVE_BRAVER",
       "MOVE_COERCE",
@@ -18579,7 +18579,7 @@
     "EggMoves": [
       "MOVE_BELLY_DRUM",
       "MOVE_FUTURE_SIGHT",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SAFEGUARD",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -20966,7 +20966,7 @@
     "EggMoves": [
       "MOVE_HAZE",
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_SLIDE",
       "MOVE_SLAM",
       "MOVE_TWISTER"
@@ -23365,7 +23365,7 @@
       "MOVE_DECISION",
       "MOVE_ENDEAVOR",
       "MOVE_LEECH_SEED",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -23484,7 +23484,7 @@
       "MOVE_DECISION",
       "MOVE_ENDEAVOR",
       "MOVE_LEECH_SEED",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -23607,7 +23607,7 @@
       "MOVE_DECISION",
       "MOVE_ENDEAVOR",
       "MOVE_LEECH_SEED",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -24004,7 +24004,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 28,
@@ -24116,7 +24116,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 31,
@@ -24239,7 +24239,7 @@
       },
       {
         "Level": 25,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 31,
@@ -24560,7 +24560,7 @@
       },
       {
         "Level": 21,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 25,
@@ -24672,7 +24672,7 @@
       },
       {
         "Level": 23,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 29,
@@ -31991,7 +31991,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -32083,7 +32083,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -32091,7 +32091,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -32255,7 +32255,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_BODY_SLAM",
       "MOVE_ENDEAVOR",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -32367,7 +32367,7 @@
       "MOVE_ANCIENT_POWER",
       "MOVE_BODY_SLAM",
       "MOVE_ENDEAVOR",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -32776,7 +32776,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 19,
@@ -32862,7 +32862,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -32874,7 +32874,7 @@
       },
       {
         "Level": 13,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 19,
@@ -32995,7 +32995,7 @@
       "MOVE_HYPNOSIS",
       "MOVE_LIGHT_SCREEN",
       "MOVE_MIRROR_COAT",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_DOUBLE_EDGE",
@@ -33090,7 +33090,7 @@
       "MOVE_HYPNOSIS",
       "MOVE_LIGHT_SCREEN",
       "MOVE_MIRROR_COAT",
-      "MOVE_MUD_SPORT"
+      "MOVE_SUB_ZERO"
     ],
     "TutorMoves": [
       "MOVE_BODY_SLAM",
@@ -34634,7 +34634,7 @@
       "MOVE_BARRIER",
       "MOVE_BODY_SLAM",
       "MOVE_CONFUSE_RAY",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_JAMMING"
     ],
@@ -34717,7 +34717,7 @@
       "MOVE_BARRIER",
       "MOVE_BODY_SLAM",
       "MOVE_CONFUSE_RAY",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_JAMMING"
     ],
@@ -34803,7 +34803,7 @@
       "MOVE_BARRIER",
       "MOVE_BODY_SLAM",
       "MOVE_CONFUSE_RAY",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_JAMMING"
     ],
@@ -34849,7 +34849,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 43,
@@ -34981,7 +34981,7 @@
       "MOVE_DIVE"
     ],
     "EggMoves": [
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SPLASH",
       "MOVE_JAMMING",
       "MOVE_SPLASHING"

@@ -679,6 +679,7 @@ extern const u8 BattleScript_EffectHail[];
 extern const u8 BattleScript_EffectTorment[];
 extern const u8 BattleScript_EffectFlatter[];
 extern const u8 BattleScript_EffectWillOWisp[];
+extern const u8 BattleScript_EffectSubZero[];
 extern const u8 BattleScript_EffectMemento[];
 extern const u8 BattleScript_EffectFocusPunch[];
 extern const u8 BattleScript_EffectFollowMe[];

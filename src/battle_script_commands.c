@@ -3072,6 +3072,36 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             }
             break;
         case STATUS1_FROSTBITE:
+            if ((battlerAbility == ABILITY_FIRE_VEIL || battlerAbility == ABILITY_FLAME_BODY)
+              && (primary == TRUE || certain == TRUE))
+            {
+                gLastUsedAbility = battlerAbility;
+                RecordAbilityBattle(gEffectBattler, battlerAbility);
+
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_FRBPrevention;
+                if (gHitMarker & HITMARKER_STATUS_ABILITY_EFFECT)
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABILITY_PREVENTS_ABILITY_STATUS;
+                    gHitMarker &= ~HITMARKER_STATUS_ABILITY_EFFECT;
+                }
+                else
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABILITY_PREVENTS_MOVE_STATUS;
+                }
+                RESET_RETURN
+            }
+            if (IS_BATTLER_OF_TYPE(gEffectBattler, TYPE_ICE)
+                && (gHitMarker & HITMARKER_STATUS_ABILITY_EFFECT)
+                && (primary == TRUE || certain == TRUE))
+            {
+                BattleScriptPush(gBattlescriptCurrInstr + 1);
+                gBattlescriptCurrInstr = BattleScript_FRBPrevention;
+
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STATUS_HAD_NO_EFFECT;
+                RESET_RETURN
+            }
+
             if (B_STATUS_TYPE_IMMUNITY == GEN_1)
             {
                 u8 moveType = 0;
@@ -3079,6 +3109,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 if (primary == FALSE && certain == FALSE && IS_BATTLER_OF_TYPE(gEffectBattler, moveType))
                     break;
             }
+
             if (!CanGetFrostbite(gEffectBattler))
                 break;
 

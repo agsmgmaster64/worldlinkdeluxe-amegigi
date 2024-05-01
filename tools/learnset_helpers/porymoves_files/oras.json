@@ -917,7 +917,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_AQUA_SHOWER",
@@ -1050,7 +1050,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_AQUA_SHOWER",
@@ -1202,7 +1202,7 @@
       "MOVE_HAZE",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_AQUA_SHOWER",
@@ -9195,7 +9195,7 @@
       },
       {
         "Level": 4,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -9325,7 +9325,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -9333,7 +9333,7 @@
       },
       {
         "Level": 4,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -9467,7 +9467,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -9475,7 +9475,7 @@
       },
       {
         "Level": 4,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -9967,7 +9967,7 @@
       "MOVE_BLOCK",
       "MOVE_FUTURE_SIGHT",
       "MOVE_ME_FIRST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
       "MOVE_STOMP",
@@ -10129,7 +10129,7 @@
       "MOVE_BLOCK",
       "MOVE_FUTURE_SIGHT",
       "MOVE_ME_FIRST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
       "MOVE_STOMP",
@@ -12010,7 +12010,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -12482,7 +12482,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -12610,7 +12610,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -15311,7 +15311,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_MUD_SHOT",
       "MOVE_MUD_SLAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_PSYBEAM",
       "MOVE_SIGNAL_BEAM",
       "MOVE_SKULL_BASH",
@@ -15435,7 +15435,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_MUD_SHOT",
       "MOVE_MUD_SLAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_PSYBEAM",
       "MOVE_SIGNAL_BEAM",
       "MOVE_SKULL_BASH",
@@ -20548,7 +20548,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
       "MOVE_METAL_CLAW",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
       "MOVE_SPLASHING"
@@ -20692,7 +20692,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
       "MOVE_METAL_CLAW",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
       "MOVE_SPLASHING"
@@ -20850,7 +20850,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
       "MOVE_METAL_CLAW",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_THRASH",
       "MOVE_WATER_PULSE",
       "MOVE_SPLASHING"
@@ -25293,7 +25293,7 @@
       },
       {
         "Level": 5,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 9,
@@ -25383,7 +25383,7 @@
       "MOVE_EERIE_IMPULSE",
       "MOVE_ENCORE",
       "MOVE_GUARD_SWAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_RECOVER",
       "MOVE_SLEEP_TALK",
       "MOVE_BRAVER",
@@ -25413,11 +25413,11 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 5,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 9,
@@ -25518,7 +25518,7 @@
       "MOVE_EERIE_IMPULSE",
       "MOVE_ENCORE",
       "MOVE_GUARD_SWAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_RECOVER",
       "MOVE_SLEEP_TALK",
       "MOVE_BRAVER",
@@ -26089,7 +26089,7 @@
       "MOVE_BLOCK",
       "MOVE_FUTURE_SIGHT",
       "MOVE_ME_FIRST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
       "MOVE_STOMP",
@@ -27032,7 +27032,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -28811,7 +28811,7 @@
       },
       {
         "Level": 5,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 8,
@@ -28935,7 +28935,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -28943,7 +28943,7 @@
       },
       {
         "Level": 5,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 8,
@@ -29661,7 +29661,7 @@
       "MOVE_HAZE",
       "MOVE_HYDRO_PUMP",
       "MOVE_MIRROR_COAT",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SLAM",
       "MOVE_SPLASH",
       "MOVE_TWISTER",
@@ -30737,7 +30737,7 @@
       "MOVE_EXTRASENSORY",
       "MOVE_ME_FIRST",
       "MOVE_MEGAHORN",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_RAGE",
       "MOVE_SPITE",
       "MOVE_THRASH",
@@ -33018,7 +33018,7 @@
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_NATURAL_GIFT",
       "MOVE_RAZOR_WIND",
       "MOVE_SYNTHESIS",
@@ -33170,7 +33170,7 @@
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_NATURAL_GIFT",
       "MOVE_RAZOR_WIND",
       "MOVE_SYNTHESIS",
@@ -33342,7 +33342,7 @@
       "MOVE_LEAF_STORM",
       "MOVE_LEECH_SEED",
       "MOVE_MAGICAL_LEAF",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_NATURAL_GIFT",
       "MOVE_RAZOR_WIND",
       "MOVE_SYNTHESIS",
@@ -33825,7 +33825,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 25,
@@ -33987,7 +33987,7 @@
     ],
     "PreEvoMoves": [
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_THROW",
       "MOVE_WHIRLPOOL"
     ],
@@ -34140,7 +34140,7 @@
     ],
     "PreEvoMoves": [
       "MOVE_HYDRO_PUMP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_THROW",
       "MOVE_WHIRLPOOL"
     ],
@@ -34521,7 +34521,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 19,
@@ -34668,7 +34668,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 19,
@@ -44544,7 +44544,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -44662,7 +44662,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -44674,7 +44674,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 6,
@@ -44905,7 +44905,7 @@
       "MOVE_ENDEAVOR",
       "MOVE_KNOCK_OFF",
       "MOVE_METAL_CLAW",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SUPERPOWER",
       "MOVE_SWITCHEROO",
       "MOVE_TRUMP_CARD"
@@ -45059,7 +45059,7 @@
       "MOVE_ENDEAVOR",
       "MOVE_KNOCK_OFF",
       "MOVE_METAL_CLAW",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SUPERPOWER",
       "MOVE_SWITCHEROO",
       "MOVE_TRUMP_CARD"
@@ -45633,7 +45633,7 @@
       },
       {
         "Level": 4,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 7,
@@ -45751,7 +45751,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -45759,7 +45759,7 @@
       },
       {
         "Level": 4,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 7,
@@ -45932,7 +45932,7 @@
       "MOVE_STEEL_FIST",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_TICKLE"
     ],
     "TutorMoves": [
@@ -46062,7 +46062,7 @@
       "MOVE_STEEL_FIST",
       "MOVE_MIRROR_COAT",
       "MOVE_MIST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_TICKLE"
     ],
     "TutorMoves": [
@@ -48145,7 +48145,7 @@
       "MOVE_BRINE",
       "MOVE_CONFUSE_RAY",
       "MOVE_ENDURE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_JAMMING",
@@ -48264,7 +48264,7 @@
       "MOVE_BRINE",
       "MOVE_CONFUSE_RAY",
       "MOVE_ENDURE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_JAMMING",
@@ -48390,7 +48390,7 @@
       "MOVE_BRINE",
       "MOVE_CONFUSE_RAY",
       "MOVE_ENDURE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_MUDDY_WATER",
       "MOVE_REFRESH",
       "MOVE_JAMMING",
@@ -48422,7 +48422,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -48430,7 +48430,7 @@
       },
       {
         "Level": 6,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 10,
@@ -48636,7 +48636,7 @@
       "MOVE_CAPTIVATE",
       "MOVE_ENTRAINMENT",
       "MOVE_HEAL_PULSE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SPLASH",
       "MOVE_JAMMING",
       "MOVE_SPLASHING"
@@ -51618,7 +51618,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICY_WIND",
       "MOVE_MUD_SLAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SNORE",
       "MOVE_JAMMING",
       "MOVE_YAWN"
@@ -51747,7 +51747,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICY_WIND",
       "MOVE_MUD_SLAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SNORE",
       "MOVE_JAMMING",
       "MOVE_YAWN"
@@ -51895,7 +51895,7 @@
       "MOVE_HYDRO_PUMP",
       "MOVE_ICY_WIND",
       "MOVE_MUD_SLAP",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SNORE",
       "MOVE_JAMMING",
       "MOVE_YAWN"
@@ -54715,7 +54715,7 @@
       },
       {
         "Level": 2,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 4,
@@ -54810,7 +54810,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -54822,7 +54822,7 @@
       },
       {
         "Level": 2,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 4,
@@ -55469,7 +55469,7 @@
       "MOVE_FOCUS_PUNCH",
       "MOVE_ICE_PUNCH",
       "MOVE_LOW_KICK",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SKY_UPPERCUT",
       "MOVE_SWEET_KISS",
       "MOVE_SWITCHEROO",
@@ -55646,7 +55646,7 @@
       "MOVE_FOCUS_PUNCH",
       "MOVE_ICE_PUNCH",
       "MOVE_LOW_KICK",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SKY_UPPERCUT",
       "MOVE_SWEET_KISS",
       "MOVE_SWITCHEROO",
@@ -59545,7 +59545,7 @@
       "MOVE_HAZE",
       "MOVE_HYDRO_PUMP",
       "MOVE_MIRROR_COAT",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_SIGNAL_BEAM",
       "MOVE_SLAM",
       "MOVE_SPLASH",
@@ -61689,7 +61689,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -61697,7 +61697,7 @@
       },
       {
         "Level": 5,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 8,
@@ -67480,7 +67480,7 @@
       "MOVE_DISARMING_VOICE",
       "MOVE_HYDRO_PUMP",
       "MOVE_LOW_KICK",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_NASTY_PLOT",
       "MOVE_ROLE_PLAY",
       "MOVE_TICKLE"
@@ -67591,7 +67591,7 @@
       "MOVE_DISARMING_VOICE",
       "MOVE_HYDRO_PUMP",
       "MOVE_LOW_KICK",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_NASTY_PLOT",
       "MOVE_ROLE_PLAY",
       "MOVE_TICKLE"
@@ -69090,7 +69090,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 5,
@@ -69211,7 +69211,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 1,
@@ -70014,7 +70014,7 @@
       "MOVE_EARTH_POWER",
       "MOVE_MIST",
       "MOVE_MUD_BOMB",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -70132,7 +70132,7 @@
       "MOVE_EARTH_POWER",
       "MOVE_MIST",
       "MOVE_MUD_BOMB",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -70276,7 +70276,7 @@
       "MOVE_EARTH_POWER",
       "MOVE_MIST",
       "MOVE_MUD_BOMB",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_REFRESH",
       "MOVE_SLEEP_TALK",
       "MOVE_SNORE",
@@ -74374,7 +74374,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_HAZE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_BLAST",
       "MOVE_TREMORS",
       "MOVE_SAND_ATTACK",
@@ -74513,7 +74513,7 @@
     "EggMoves": [
       "MOVE_CURSE",
       "MOVE_HAZE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_ROCK_BLAST",
       "MOVE_TREMORS",
       "MOVE_SAND_ATTACK",
@@ -76066,7 +76066,7 @@
       "MOVE_LUCKY_CHANT",
       "MOVE_ME_FIRST",
       "MOVE_MIRROR_MOVE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_STEEL_WING"
     ],
     "TutorMoves": [
@@ -76190,7 +76190,7 @@
       "MOVE_LUCKY_CHANT",
       "MOVE_ME_FIRST",
       "MOVE_MIRROR_MOVE",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_STEEL_WING"
     ],
     "TutorMoves": [
@@ -80798,7 +80798,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MUD_SPORT"
+        "Move": "MOVE_SUB_ZERO"
       },
       {
         "Level": 5,
@@ -86181,7 +86181,7 @@
       "MOVE_BESTOW",
       "MOVE_CAMOUFLAGE",
       "MOVE_MIND_READER",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_TOXIC_SPIKES",
       "MOVE_SPLASHING"
     ],
@@ -86301,7 +86301,7 @@
       "MOVE_BESTOW",
       "MOVE_CAMOUFLAGE",
       "MOVE_MIND_READER",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_TOXIC_SPIKES",
       "MOVE_SPLASHING"
     ],
@@ -86459,7 +86459,7 @@
       "MOVE_BESTOW",
       "MOVE_CAMOUFLAGE",
       "MOVE_MIND_READER",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_TOXIC_SPIKES",
       "MOVE_SPLASHING"
     ],
@@ -91746,7 +91746,7 @@
       "MOVE_BATON_PASS",
       "MOVE_ENTRAINMENT",
       "MOVE_ME_FIRST",
-      "MOVE_MUD_SPORT",
+      "MOVE_SUB_ZERO",
       "MOVE_QUICK_GUARD"
     ],
     "TutorMoves": [

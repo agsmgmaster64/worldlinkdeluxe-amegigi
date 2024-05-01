@@ -1219,6 +1219,7 @@ bool32 IsNonVolatileStatusMoveEffect(u32 moveEffect)
     case EFFECT_POISON:
     case EFFECT_PARALYZE:
     case EFFECT_WILL_O_WISP:
+    case EFFECT_SUB_ZERO:
     case EFFECT_YAWN:
         return TRUE;
     default:
@@ -2745,6 +2746,7 @@ bool32 AI_CanBeBurned(u32 battler, u32 ability)
 bool32 AI_CanBeFrozen(u32 battler, u32 ability)
 {
     if (ability == ABILITY_FIRE_VEIL
+      || ability == ABILITY_FLAME_BODY
       || ability == ABILITY_COMATOSE
       || IsBattlerWeatherAffected(battler, B_WEATHER_SUN)
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
@@ -2758,6 +2760,7 @@ bool32 AI_CanBeFrozen(u32 battler, u32 ability)
 bool32 AI_CanGetFrostbite(u32 battler, u32 ability)
 {
     if (ability == ABILITY_FIRE_VEIL
+      || ability == ABILITY_FLAME_BODY
       || ability == ABILITY_COMATOSE
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || gBattleMons[battler].status1 & STATUS1_ANY
@@ -3098,6 +3101,7 @@ bool32 PartnerMoveEffectIsStatusSameTarget(u32 battlerAtkPartner, u32 battlerDef
        || gMovesInfo[partnerMove].effect == EFFECT_TOXIC
        || gMovesInfo[partnerMove].effect == EFFECT_PARALYZE
        || gMovesInfo[partnerMove].effect == EFFECT_WILL_O_WISP
+       || gMovesInfo[partnerMove].effect == EFFECT_SUB_ZERO
        || gMovesInfo[partnerMove].effect == EFFECT_YAWN))
         return TRUE;
     return FALSE;

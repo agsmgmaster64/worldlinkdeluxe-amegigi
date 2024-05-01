@@ -718,7 +718,7 @@
 #define STRINGID_MONHEARINGFLUTEAWOKE                 716
 #define STRINGID_PLAYERWHITEDOUT                      717
 #define STRINGID_PKMNPREVENTSFROSTBITEWITH            718
-#define STRINGID_STRINGISRESERVED                     719
+#define STRINGID_PKMNALREADYHASFROSTBITE              719
 #define STRINGID_PKMNDROPPEDITEM                      720
 #define STRINGID_BAGISFULL                            721
 #define STRINGID_MONTOOSCAREDTOMOVE                   722
@@ -728,7 +728,7 @@
 #define STRINGID_TERRAINBECOMESHOLY                   726
 #define STRINGID_HOLYTERRAINENDS                      727
 #define STRINGID_HOLYTERRAINPREVENTS                  728
-#define STRINGID_FROSTBITBY                           729
+#define STRINGID_PKMNFROSTBITBY                       729
 #define STRINGID_FELTBETTERWITHABILITY                730
 #define STRINGID_TARGETFELTBETTERWITHABILITY          731
 

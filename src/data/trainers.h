@@ -5575,7 +5575,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 2201
                 MOVE_FURY_SWIPES,
-                MOVE_MUD_SPORT,
+                MOVE_MUD_SHOT,
                 MOVE_HEARTS_EYE,
                 MOVE_SAND_ATTACK,
             },
@@ -6429,7 +6429,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 2545
                 MOVE_FURY_SWIPES,
-                MOVE_MUD_SPORT,
+                MOVE_MUD_SHOT,
                 MOVE_HEARTS_EYE,
                 MOVE_SAND_ATTACK,
             },
@@ -31688,7 +31688,7 @@ F_TRAINER_FEMALE |
 #line 12561
                 MOVE_DEFENSE_CURL,
                 MOVE_TREMORS,
-                MOVE_MUD_SPORT,
+                MOVE_MUD_SHOT,
                 MOVE_ROCK_THROW,
             },
             },

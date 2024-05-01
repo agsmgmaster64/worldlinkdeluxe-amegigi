@@ -321,7 +321,7 @@ gBattleAnims_Moves::
 	.4byte Move_FEATHER_DANCE
 	.4byte Move_TEETER_DANCE
 	.4byte Move_BLAZE_KICK
-	.4byte Move_MUD_SPORT
+	.4byte Move_SUB_ZERO
 	.4byte Move_ICE_BALL
 	.4byte Move_NEEDLE_ARM
 	.4byte Move_SLACK_OFF
@@ -21463,51 +21463,26 @@ Move_TEETER_DANCE:
 	playsewithpan SE_M_TEETER_DANCE, SOUND_PAN_ATTACKER
 	end
 
-Move_MUD_SPORT:
-	loadspritegfx ANIM_TAG_MUD_SAND
-	createvisualtask AnimTask_Splash, 2, ANIM_ATTACKER, 6
-	delay 24
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, -4, -16
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, 4, -12
-	playsewithpan SE_M_DIG, SOUND_PAN_ATTACKER
-	delay 32
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, -3, -12
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, 5, -14
-	playsewithpan SE_M_DIG, SOUND_PAN_ATTACKER
-	delay 32
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, -5, -18
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 0, 3, -14
-	playsewithpan SE_M_DIG, SOUND_PAN_ATTACKER
-	delay 16
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 220, 60
-	waitplaysewithpan SE_M_BUBBLE2, 0, 15
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 60, 100
-	waitplaysewithpan SE_M_BUBBLE2, 0, 25
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 140, 55
-	waitplaysewithpan SE_M_BUBBLE2, 0, 14
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 180, 50
-	waitplaysewithpan SE_M_BUBBLE2, 0, 10
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 20, 90
-	waitplaysewithpan SE_M_BUBBLE2, 0, 22
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 90, 90
-	waitplaysewithpan SE_M_BUBBLE2, 0, 22
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 160, 60
-	waitplaysewithpan SE_M_BUBBLE2, 0, 15
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 30, 90
-	waitplaysewithpan SE_M_BUBBLE2, 0, 22
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 120, 60
-	waitplaysewithpan SE_M_BUBBLE2, 0, 15
-	delay 2
-	createsprite gMudsportMudSpriteTemplate, ANIM_TARGET, 2, 1, 200, 40
-	waitplaysewithpan SE_M_BUBBLE2, 0, 10
+Move_SUB_ZERO:
+	fadetobg BG_ICE
+	waitbgfadeout
+	playsewithpan SE_M_ICY_WIND, 0
+	waitbgfadein
+	loadspritegfx ANIM_TAG_ICE_CRYSTALS
+	monbg ANIM_TARGET
+	splitbgprio ANIM_TARGET
+	setalpha 12, 8
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 4, -31, 0, 7, RGB(0, 20, 31)
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 25, 1
+	waitforvisualfinish
+	delay 20
+	call IceCrystalEffectShort
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 4, 5, 7, 0, RGB(0, 20, 31)
+	waitforvisualfinish
+	restorebg
+	waitbgfadein
+	clearmonbg ANIM_TARGET
+	blendoff
 	end
 
 Move_NEEDLE_ARM:

@@ -674,7 +674,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MUDKIP] = {
         .species = SPECIES_MUDKIP,
-        .moves = {MOVE_WHIRLPOOL, MOVE_ENDEAVOR, MOVE_MUD_SPORT, MOVE_MUD_SLAP},
+        .moves = {MOVE_WHIRLPOOL, MOVE_ENDEAVOR, MOVE_SUB_ZERO, MOVE_MUD_SLAP},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_DOCILE
