@@ -3418,7 +3418,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Steals half of the damage\n"
             "inflicted on a foe."),
         .effect = EFFECT_ABSORB,
-        .power = 80,
+        .power = 75,
         .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 10,
@@ -4956,7 +4956,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "An attack that steals half\n"
             "the damage inflicted."),
         .effect = EFFECT_ABSORB,
-        .power = 80,
+        .power = 75,
         .type = TYPE_NATURE,
         .accuracy = 100,
         .pp = 10,
