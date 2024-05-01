@@ -43,8 +43,6 @@
 #include "pokedex.h"
 #include "trainer_card.h"
 #include "pokenav.h"
-#include "dexnav.h"
-#include "wild_encounter.h"
 #include "option_menu.h"
 #include "link.h"
 #include "frontier_pass.h"
@@ -621,6 +619,7 @@ static void CreatePartyMonIcons()
     u8 i = 0;
     s16 x = ICON_BOX_1_START_X;
     s16 y = ICON_BOX_1_START_Y;
+    struct Pokemon *mon;
     LoadMonIconPalettes();
     for(i = 0; i < gPlayerPartyCount; i++)
     {   
@@ -902,6 +901,7 @@ static void DestroyStatusSprites()
 // These next few functions are from the Ghoulslash UI Shell, they are the basic functions to init a brand new UI
 void Task_OpenStartMenuFullScreen(u8 taskId)
 {
+    s16 *data = gTasks[taskId].data;
     if (!gPaletteFade.active)
     {
         CleanupOverworldWindowsAndTilemaps();
@@ -1389,17 +1389,6 @@ void Task_OpenTrainerCardFromStartMenu(u8 taskId)
     }
 }
 
-void Task_OpenDexNaxStartMenu(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        StartMenuFull_FreeResources();
-        PlayRainStoppingSoundEffect();
-        CleanupOverworldWindowsAndTilemaps();
-        DexNavGuiInit(CB2_ReturnToFullScreenStartMenu);
-    }
-}
-
 void Task_OpenPokenavStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -1510,7 +1499,7 @@ static void Task_StartMenuFullMain(u8 taskId)
                 gTasks[taskId].func = Task_OpenBagFromStartMenu;
                 break;
             case START_MENU_POKEDEX:
-                if (FlagGet(FLAG_SYS_POKEDEX_GET))
+                if(FlagGet(FLAG_SYS_POKEDEX_GET))
                 {
                     PlaySE(SE_SELECT);
                     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1522,7 +1511,7 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_PARTY:
-                if (FlagGet(FLAG_SYS_POKEMON_GET))
+                if(FlagGet(FLAG_SYS_POKEMON_GET))
                 {
                     PlaySE(SE_SELECT);
                     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
@@ -1534,14 +1523,13 @@ static void Task_StartMenuFullMain(u8 taskId)
                 }
                 break;
             case START_MENU_MAP:
-                if (FlagGet(FLAG_SYS_POKENAV_GET))
+                if(FlagGet(FLAG_SYS_POKENAV_GET))
                 {
                     PlaySE(SE_SELECT);
                     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
                     gTasks[taskId].func = Task_OpenPokenavStartMenu;
                 }
-                else
-                {
+                else{
                     PlaySE(SE_BOO);
                 }
                 break;
@@ -1558,24 +1546,10 @@ static void Task_StartMenuFullMain(u8 taskId)
         }
     }
 
-    if (JOY_NEW(START_BUTTON)) // If start button pressed go to Save Confirmation Control Task
+    if(JOY_NEW(START_BUTTON)) // If start button pressed go to Save Confirmation Control Task
     {
         PrintSaveConfirmToWindow();
         gTasks[taskId].func = Task_HandleSaveConfirmation;
-    }
-
-    if (JOY_NEW(R_BUTTON)) // If start button pressed go to Save Confirmation Control Task
-    {
-        if (FlagGet(FLAG_SYS_DEXNAV_GET) && !MapHasNoEncounterData())
-        {
-            PlaySE(SE_SELECT);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            gTasks[taskId].func = Task_OpenDexNaxStartMenu;
-        }
-        else
-        {
-            PlaySE(SE_BOO);
-        }
     }
 
 #if (FLAG_CLOCK_MODE != 0)
