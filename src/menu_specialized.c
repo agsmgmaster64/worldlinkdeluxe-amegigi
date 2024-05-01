@@ -1043,12 +1043,6 @@ void GetConditionMenuMonConditions(struct ConditionGraph *graph, u8 *numSparkles
 
     if (partyId != numMons)
     {
-        graph->conditions[id][CONDITION_COOL] = GetBoxOrPartyMonData(boxId, monId, MON_DATA_COOL, NULL);
-        graph->conditions[id][CONDITION_TOUGH] = GetBoxOrPartyMonData(boxId, monId, MON_DATA_TOUGH, NULL);
-        graph->conditions[id][CONDITION_SMART] = GetBoxOrPartyMonData(boxId, monId, MON_DATA_SMART, NULL);
-        graph->conditions[id][CONDITION_CUTE] = GetBoxOrPartyMonData(boxId, monId, MON_DATA_CUTE, NULL);
-        graph->conditions[id][CONDITION_BEAUTY] = GetBoxOrPartyMonData(boxId, monId, MON_DATA_BEAUTY, NULL);
-
         numSparkles[id] = MAX_CONDITION_SPARKLES - 1;
 
         ConditionGraph_CalcPositions(graph->conditions[id], graph->savedPositions[id]);

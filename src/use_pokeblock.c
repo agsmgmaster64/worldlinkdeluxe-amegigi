@@ -173,17 +173,6 @@ static const u32 sMonFrame_Gfx[] = INCBIN_U32("graphics/pokeblock/use_screen/mon
 static const u32 sMonFrame_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/mon_frame.bin.lz");
 static const u32 sGraphData_Tilemap[] = INCBIN_U32("graphics/pokeblock/use_screen/graph_data.bin.lz");
 
-// The condition/flavors aren't listed in their normal order in this file, they're listed as shown on the graph going counter-clockwise
-// Normally they would go Cool/Spicy, Beauty/Dry, Cute/Sweet, Smart/Bitter, Tough/Sour (also graph order, but clockwise)
-static const u32 sConditionToMonData[CONDITION_COUNT] =
-{
-    [CONDITION_COOL]   = MON_DATA_COOL,
-    [CONDITION_TOUGH]  = MON_DATA_TOUGH,
-    [CONDITION_SMART]  = MON_DATA_SMART,
-    [CONDITION_CUTE]   = MON_DATA_CUTE,
-    [CONDITION_BEAUTY] = MON_DATA_BEAUTY
-};
-
 static const u8 sConditionToFlavor[CONDITION_COUNT] =
 {
     [CONDITION_COOL]   = FLAVOR_SPICY,
@@ -970,7 +959,7 @@ static void GetMonConditions(struct Pokemon *mon, u8 *data)
     u16 i;
 
     for (i = 0; i < CONDITION_COUNT; i++)
-        data[i] = GetMonData(mon, sConditionToMonData[i]);
+        data[i] = 0;
 }
 
 static void AddPokeblockToConditions(struct Pokeblock *pokeblock, struct Pokemon *mon)
@@ -982,14 +971,14 @@ static void AddPokeblockToConditions(struct Pokeblock *pokeblock, struct Pokemon
     CalculatePokeblockEffectiveness(pokeblock, mon);
     for (i = 0; i < CONDITION_COUNT; i++)
     {
-        data = GetMonData(mon, sConditionToMonData[i]);
+        data = 0;
         stat = data +  sInfo->pokeblockStatBoosts[i];
         if (stat < 0)
             stat = 0;
         if (stat > MAX_CONDITION)
             stat = MAX_CONDITION;
         data = stat;
-        SetMonData(mon, sConditionToMonData[i], &data);
+        //SetMonData(mon, sConditionToMonData[i], &data);
     }
 
 }
