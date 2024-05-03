@@ -6570,7 +6570,7 @@ static void GetRestrictedReleaseMoves(u16 *moves)
 {
     s32 i;
 
-    for (i = 0; i < ARRAY_COUNT(sRestrictedReleaseMoves); i++)
+    /*for (i = 0; i < ARRAY_COUNT(sRestrictedReleaseMoves); i++)
     {
         if (sRestrictedReleaseMoves[i].mapGroup == MAP_GROUPS_COUNT
         || (sRestrictedReleaseMoves[i].mapGroup == gSaveBlock1Ptr->location.mapGroup
@@ -6579,7 +6579,7 @@ static void GetRestrictedReleaseMoves(u16 *moves)
             *moves = sRestrictedReleaseMoves[i].move;
             moves++;
         }
-    }
+    }*/
     *moves = MOVES_COUNT;
 }
 
