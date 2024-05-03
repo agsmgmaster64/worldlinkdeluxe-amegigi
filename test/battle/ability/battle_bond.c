@@ -9,9 +9,9 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Battle Bond does not transform species other than Greninja")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_BATTLE_BOND); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_BATTLE_BOND); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_WATER_GUN); SEND_OUT(opponent, 1); }
     } SCENE {
@@ -22,7 +22,7 @@ SINGLE_BATTLE_TEST("Battle Bond does not transform species other than Greninja")
             MESSAGE("Wobbuffet became fully charged due to its bond with its trainer!");
         }
     } THEN {
-        EXPECT(player->species == SPECIES_WOBBUFFET);
+        EXPECT(player->species == SPECIES_CHIBI_YUUGI);
     }
 }
 
@@ -39,11 +39,11 @@ SINGLE_BATTLE_TEST("Battle Bond transforms player's Greninja - Singles")
     GIVEN {
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND);
         if (monsCountPlayer == 2) {
-            PLAYER(SPECIES_WOBBUFFET);
+            PLAYER(SPECIES_CHIBI_YUUGI);
         }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         if (monsCountOpponent == 2) {
-            OPPONENT(SPECIES_WOBBUFFET);
+            OPPONENT(SPECIES_CHIBI_YUUGI);
         }
     } WHEN {
         if (monsCountOpponent == 2) {
@@ -86,11 +86,11 @@ SINGLE_BATTLE_TEST("Battle Bond transforms opponent's Greninja - Singles")
     GIVEN {
         OPPONENT(SPECIES_GRENINJA_BATTLE_BOND);
         if (monsCountOpponent == 2) {
-            OPPONENT(SPECIES_WOBBUFFET);
+            OPPONENT(SPECIES_CHIBI_YUUGI);
         }
-        PLAYER(SPECIES_WOBBUFFET) {HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) {HP(1); }
         if (monsCountPlayer == 2) {
-            PLAYER(SPECIES_WOBBUFFET);
+            PLAYER(SPECIES_CHIBI_YUUGI);
         }
     } WHEN {
         if (monsCountPlayer == 2) {
@@ -132,14 +132,14 @@ DOUBLE_BATTLE_TEST("Battle Bond transforms player's Greninja when fainting its A
 
     GIVEN {
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         if (monsCountPlayer == 3) {
-            PLAYER(SPECIES_WOBBUFFET);
+            PLAYER(SPECIES_CHIBI_YUUGI);
         }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         if (monsCountOpponent == 3) {
-            OPPONENT(SPECIES_WOBBUFFET);
+            OPPONENT(SPECIES_CHIBI_YUUGI);
         }
     } WHEN {
         if (monsCountPlayer == 3) {

@@ -961,7 +961,7 @@ static const struct {
 } sIncenseBabyTable[] =
 {
     // Regular offspring,   Item,              Incense Offspring
-    { SPECIES_WOBBUFFET,    ITEM_LAX_INCENSE,  SPECIES_WYNAUT },
+    { SPECIES_CHIBI_YUUGI,    ITEM_LAX_INCENSE,  SPECIES_WYNAUT },
     { SPECIES_NORMAL_KANAKO,       ITEM_SEA_INCENSE,  SPECIES_AZURILL },
     { SPECIES_ATTACK_MEDICINE,      ITEM_FULL_INCENSE, SPECIES_MUNCHLAX },
     { SPECIES_CHIBI_TEWI,      ITEM_LUCK_INCENSE, SPECIES_HAPPINY },
@@ -998,7 +998,7 @@ static const struct {
 } sBreedingSpecialMoveItemTable[] =
 {
     // Offspring,    Item,            Move
-    { SPECIES_ATTACK_NITORI, ITEM_LIGHT_BALL, MOVE_VOLT_TACKLE },
+    { SPECIES_CHIBI_CIRNO, ITEM_LIGHT_BALL, MOVE_VOLT_TACKLE },
 };
 
 static void GiveMoveIfItem(struct Pokemon *mon, struct DayCare *daycare)

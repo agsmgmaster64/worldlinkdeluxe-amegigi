@@ -3490,11 +3490,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Slugma
+Goliath
 Level: 22
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3520,7 +3520,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 23
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -3533,7 +3533,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 23
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -3546,7 +3546,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3563,7 +3563,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -3580,7 +3580,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -3597,7 +3597,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -4072,7 +4072,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Girafarig
+Goliath
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4257,7 +4257,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Wobbuffet
+Goliath
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -4841,7 +4841,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Magnitude
 - Sunny Day
 
-Slugma
+Goliath
 Level: 24
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Overheat
@@ -8579,7 +8579,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Wobbuffet
+Goliath
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Destiny Bond
@@ -9448,7 +9448,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slugma
+Goliath
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9469,7 +9469,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slugma
+Goliath
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9562,7 +9562,7 @@ Lombre
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slugma
+Goliath
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9583,7 +9583,7 @@ Lombre
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Slugma
+Goliath
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9617,7 +9617,7 @@ Wingull
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slugma
+Goliath
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9634,7 +9634,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slugma
+Goliath
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -9727,7 +9727,7 @@ Lombre
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Slugma
+Goliath
 Level: 18
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -9748,7 +9748,7 @@ Lombre
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Slugma
+Goliath
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -10629,7 +10629,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Girafarig
+Goliath
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10668,7 +10668,7 @@ Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Girafarig
+Goliath
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10681,7 +10681,7 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Wobbuffet
+Goliath
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10900,7 +10900,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Slugma
+Goliath
 Level: 13
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -12183,7 +12183,7 @@ Goliath
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Slugma
+Goliath
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -12237,7 +12237,7 @@ Ludicolo
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Slugma
+Goliath
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -12258,7 +12258,7 @@ Goliath
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Slugma
+Goliath
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -12312,7 +12312,7 @@ Ludicolo
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Slugma
+Goliath
 Level: 32
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -13669,7 +13669,7 @@ Numel
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Slugma
+Goliath
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13888,7 +13888,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Slugma
+Goliath
 Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14262,7 +14262,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Surf
 - Rock Slide
 
-Steelix
+Goliath
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Steel Fist
@@ -15494,7 +15494,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mana Burst
 - Light Screen
 
-Slowking
+Goliath
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Yawn
@@ -16747,7 +16747,7 @@ Gender: Male
 Music: Rich
 Double Battle: No
 
-Wobbuffet
+Goliath
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Gem is consumed when it corresponds to the type of a move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -33,8 +33,8 @@ SINGLE_BATTLE_TEST("Gem boost is only applied once")
 
     GIVEN {
         ASSUME(I_GEM_BOOST_POWER >= GEN_6);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -56,8 +56,8 @@ SINGLE_BATTLE_TEST("Gem modifier is used for all hits of Multi Hit Moves")
     s16 secondHit;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE(player, MOVE_DOUBLE_HIT);
@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed")
 {
     GIVEN {
         PLAYER(SPECIES_DELCATTY) { Ability(ABILITY_NORMALIZE); Item(ITEM_NORMAL_GEM); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE(player, MOVE_FEINT_ATTACK);

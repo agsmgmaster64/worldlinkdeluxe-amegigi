@@ -11412,7 +11412,7 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
         case SPECIES_NORMAL_YUYUKO:
         case SPECIES_NORMAL_MINORIKO:
         case SPECIES_PLACEHOLD_MOMIJI:
-        case SPECIES_MURKROW:
+        case SPECIES_CHIBI_PARSEE:
         case SPECIES_TECH_NAZRIN:
         case SPECIES_TAILLOW:
         case SPECIES_STARLY:

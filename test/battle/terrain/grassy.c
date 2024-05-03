@@ -4,8 +4,8 @@
 SINGLE_BATTLE_TEST("Grassy Terrain recovers 1/16th HP at end of turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_GRASSY_TERRAIN); }
     } SCENE {
@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Grassy Terrain activates Grassy Seed and Mimicry")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_GRASSY_SEED].holdEffect == HOLD_EFFECT_SEEDS);
         ASSUME(gItemsInfo[ITEM_GRASSY_SEED].holdEffectParam == HOLD_EFFECT_PARAM_GRASSY_TERRAIN);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_GRASSY_SEED); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_GRASSY_SEED); }
         OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_GRASSY_TERRAIN); }
@@ -40,8 +40,8 @@ SINGLE_BATTLE_TEST("Grassy Terrain increases power of Grass-type moves by 30/50 
     PARAMETRIZE { terrain = FALSE; }
     PARAMETRIZE { terrain = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_GRASSY_TERRAIN); }
@@ -69,8 +69,8 @@ SINGLE_BATTLE_TEST("Grassy Terrain decreases power of Earthquake and Bulldoze by
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EARTHQUAKE].effect == EFFECT_EARTHQUAKE);
         ASSUME(gMovesInfo[MOVE_BULLDOZE].effect == EFFECT_BULLDOZE);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_GRASSY_TERRAIN); }
@@ -87,8 +87,8 @@ SINGLE_BATTLE_TEST("Grassy Terrain decreases power of Earthquake and Bulldoze by
 SINGLE_BATTLE_TEST("Grassy Terrain lasts for 5 turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_GRASSY_TERRAIN); }
         TURN {}

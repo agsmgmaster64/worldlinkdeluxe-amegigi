@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority bracket when HP is below 1/4")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(1); MaxHP(160); HP(40); Item(ITEM_CUSTAP_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); MaxHP(160); HP(40); Item(ITEM_CUSTAP_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_MERLIN) { Speed(1); MaxHP(160); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_CUSTAP_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -40,8 +40,8 @@ SINGLE_BATTLE_TEST("Custap Berry activates even if the opposing mon switches out
 {
     GIVEN {
         PLAYER(SPECIES_REGIROCK) { HP(1); Item(ITEM_CUSTAP_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { SWITCH(opponent, 1); }
     } SCENE {

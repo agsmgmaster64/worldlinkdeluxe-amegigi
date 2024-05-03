@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Berserk Gene sharply raises attack at the start of a single 
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, WITH_RNG(RNG_CONFUSION, FALSE)); }
     } SCENE {
@@ -39,9 +39,9 @@ DOUBLE_BATTLE_TEST("Berserk Gene sharply raises attack at the start of a double 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerRight, MOVE_TACKLE, target:opponentLeft, WITH_RNG(RNG_CONFUSION, FALSE)); }
     } SCENE {
@@ -66,8 +66,8 @@ SINGLE_BATTLE_TEST("Berserk Gene activates on switch in", s16 damage)
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { SWITCH(player, 1); }
         TURN { MOVE(player, MOVE_TACKLE, WITH_RNG(RNG_CONFUSION, FALSE)); }
@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_SLOWBRO) { Ability(ABILITY_OWN_TEMPO); Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE(player, MOVE_TACKLE);
@@ -125,13 +125,13 @@ DOUBLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         if (positionLeft) {
             PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
-            PLAYER(SPECIES_WOBBUFFET);
+            PLAYER(SPECIES_CHIBI_YUUGI);
         } else {
-            PLAYER(SPECIES_WOBBUFFET);
+            PLAYER(SPECIES_CHIBI_YUUGI);
             PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
         }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE((positionLeft != 0) ? playerLeft : playerRight, MOVE_TACKLE, target: opponentLeft);
@@ -158,7 +158,7 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse on Misty Terrain but still rai
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_TAPU_FINI) { Ability(ABILITY_MISTY_SURGE); Item(ITEM_BERSERK_GENE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE(player, MOVE_TACKLE);
@@ -174,8 +174,8 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse when Safeguard is active")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_BERSERK_GENE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BERSERK_GENE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SAFEGUARD); }
         TURN { SWITCH(player, 1); }
@@ -190,8 +190,8 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse when Safeguard is active")
 SINGLE_BATTLE_TEST("Berserk Gene causes confusion for more than 5 turns") // how else would be check for infinite?
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_BERSERK_GENE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BERSERK_GENE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {}
         TURN {}
@@ -207,8 +207,8 @@ SINGLE_BATTLE_TEST("Berserk Gene causes confusion for more than 5 turns") // how
 SINGLE_BATTLE_TEST("Berserk Gene causes infinite confusion") // check if bit is set
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_BERSERK_GENE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BERSERK_GENE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {}
     } SCENE {
@@ -223,8 +223,8 @@ SINGLE_BATTLE_TEST("Berserk Gene causes confusion timer to not tick down", u32 s
     PARAMETRIZE { turns = 1; }
     PARAMETRIZE { turns = 2; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_BERSERK_GENE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BERSERK_GENE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         u32 count;
         for (count = 0; count < turns; count++) {

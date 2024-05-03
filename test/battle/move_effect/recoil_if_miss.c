@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Jump Kick has 50% recoil on miss")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }
     } SCENE {
@@ -26,8 +26,8 @@ SINGLE_BATTLE_TEST("Jump Kick has 50% recoil on protect")
 {
     GIVEN {
         ASSUME(!gMovesInfo[MOVE_JUMP_KICK].ignoresProtect);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_PROTECT); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }
     } SCENE {
@@ -42,8 +42,8 @@ SINGLE_BATTLE_TEST("Jump Kick has no recoil if no target")
 {
     GIVEN {
         ASSUME(B_HEALING_WISH_SWITCH >= GEN_5);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEALING_WISH); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); SEND_OUT(opponent, 1); }
@@ -65,9 +65,9 @@ SINGLE_BATTLE_TEST("Jump Kick's recoil happens after Spiky Shield damage and Pok
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SPIKY_SHIELD].effect == EFFECT_PROTECT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(hp); MaxHP(maxHp); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(hp); MaxHP(maxHp); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (!faintOnJumpKick && !faintOnSpiky) {
             TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }

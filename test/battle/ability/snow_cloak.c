@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Snow Cloak prevents damage from hail")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_GLACEON) { Ability(ABILITY_SNOW_CLOAK); }
     } WHEN {
         TURN { MOVE(player, MOVE_HAIL); MOVE(opponent, MOVE_SKILL_SWAP); }
@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during hail")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_POUND].accuracy == 100);
         PLAYER(SPECIES_GLACEON) { Ability(ABILITY_SNOW_CLOAK); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HAIL); }
         TURN { MOVE(opponent, MOVE_POUND); }

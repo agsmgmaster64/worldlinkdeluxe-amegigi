@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitt
     ASSUME(MoveHasAdditionalEffect(MOVE_POWDER_SNOW, MOVE_EFFECT_FREEZE_OR_FROSTBITE));
     GIVEN {
         PLAYER(SPECIES_SHAYMIN_SKY);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_POWDER_SNOW); }
     } THEN {

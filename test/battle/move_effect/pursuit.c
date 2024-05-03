@@ -10,9 +10,9 @@ SINGLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
 {
     GIVEN {
         PLAYER(SPECIES_GOLIATH) { Ability(ABILITY_TANGLING_HAIR); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_PURSUIT); }
     } SCENE {

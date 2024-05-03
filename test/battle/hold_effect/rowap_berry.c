@@ -17,8 +17,8 @@ SINGLE_BATTLE_TEST("Rowap Berry causes the attacker to lose 1/8 of its max HP if
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_ROWAP_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_ROWAP_BERRY); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -44,8 +44,8 @@ SINGLE_BATTLE_TEST("Rowap Berry is not triggered by a physical move")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_ROWAP_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_ROWAP_BERRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {

@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Explosion causes the user to faint")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); }
     } SCENE {
@@ -23,9 +23,9 @@ SINGLE_BATTLE_TEST("Explosion causes the user to faint")
 SINGLE_BATTLE_TEST("Explosion causes the user & the target to faint")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); }
     } SCENE {
@@ -40,8 +40,8 @@ SINGLE_BATTLE_TEST("Explosion causes the user & the target to faint")
 SINGLE_BATTLE_TEST("Explosion causes the user to faint even if it misses")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION, hit: FALSE); }
     } SCENE {
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Explosion causes the user to faint even if it has no effect"
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].type == TYPE_ILLUSION);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_RAN].types[0] == TYPE_GHOST);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_RAN);
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); }
@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Explosion causes the user to faint even if it has no effect"
 DOUBLE_BATTLE_TEST("Explosion causes everyone to faint in a double battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK) { HP(1); }
         OPPONENT(SPECIES_CHIBI_LUNASA) { HP(1); }

@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Limber prevents paralysis")
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_ALICE) { Ability(ABILITY_LIMBER); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_THUNDER_SHOCK); }
     } SCENE {

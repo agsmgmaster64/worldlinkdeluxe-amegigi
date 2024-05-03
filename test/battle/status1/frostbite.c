@@ -8,8 +8,8 @@ SINGLE_BATTLE_TEST("Frostbite reduces the special attack by 50 percent")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWIFT); MOVE(player, MOVE_FLAME_WHEEL); }
         TURN { MOVE(opponent, MOVE_SWIFT); }
@@ -28,8 +28,8 @@ SINGLE_BATTLE_TEST("Frostbite deals 1/16 damage to effected pokemon")
     s16 frostbiteDamage;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN {}
     } SCENE {
@@ -50,8 +50,8 @@ SINGLE_BATTLE_TEST("Frostbite is healed if hit with a thawing move")
     PARAMETRIZE { move = MOVE_EMBER; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -77,8 +77,8 @@ SINGLE_BATTLE_TEST("Frostbite is healed when the user uses a thawing move")
     PARAMETRIZE { move = MOVE_EMBER; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_FROSTBITE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

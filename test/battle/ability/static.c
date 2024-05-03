@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Static inflicts paralysis on contact")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         ASSUME(!gMovesInfo[MOVE_SWIFT].makesContact);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_KOAKUMA) { Ability(ABILITY_STATIC); }
     } WHEN {
         TURN { MOVE(player, move); }

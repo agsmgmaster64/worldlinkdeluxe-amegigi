@@ -2425,7 +2425,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #if P_FAMILY_SLOWPOKE
 
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_SLOWKING] =
+    [SPECIES_NORMAL_PARSEE] =
     {
         .baseHP        = 95,
         .baseAttack    = 75,
@@ -3137,7 +3137,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_ONIX
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_STEELIX] =
+    [SPECIES_ATTACK_RIN] =
     {
         .baseHP        = 75,
         .baseAttack    = 85,
@@ -3198,7 +3198,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_STEELIX_MEGA] =
+    [SPECIES_ATTACK_RIN_MEGA] =
     {
         .baseHP        = 75,
         .baseAttack    = 125,
@@ -3615,7 +3615,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_HITMONS
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_TYROGUE] =
+    [SPECIES_NORMAL_MURASA] =
     {
         .baseHP        = 35,
         .baseAttack    = 35,
@@ -3667,12 +3667,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTyrogueTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL_ATK_LT_DEF, 20, SPECIES_HELPER_MYSTIA},
                                 {EVO_LEVEL_ATK_GT_DEF, 20, SPECIES_ATTACK_MYSTIA},
-                                {EVO_LEVEL_ATK_EQ_DEF, 20, SPECIES_HITMONTOP}),
+                                {EVO_LEVEL_ATK_EQ_DEF, 20, SPECIES_ATTACK_MURASA}),
     },
 #endif //P_GEN_2_CROSS_EVOS
 
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_HITMONTOP] =
+    [SPECIES_ATTACK_MURASA] =
     {
         .baseHP        = 50,
         .baseAttack    = 95,
@@ -3969,7 +3969,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GEN_4_CROSS_EVOS
 
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_BLISSEY] =
+    [SPECIES_TECH_SHOU] =
     {
         .baseHP        = 255,
         .baseAttack    = 10,
@@ -4377,7 +4377,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_SCYTHER
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_SCIZOR] =
+    [SPECIES_NORMAL_UTSUHO] =
     {
         .baseHP        = 70,
         .baseAttack    = 130,
@@ -4549,7 +4549,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_JYNX
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_SMOOCHUM] =
+    [SPECIES_DEFENSE_MURASA] =
     {
         .baseHP        = 45,
         .baseAttack    = 30,
@@ -4606,7 +4606,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_ELECTABUZZ
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_ELEKID] =
+    [SPECIES_CHIBI_SHOU] =
     {
         .baseHP        = 45,
         .baseAttack    = 63,
@@ -4725,7 +4725,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_MAGMAR
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_MAGBY] =
+    [SPECIES_NORMAL_SHOU] =
     {
         .baseHP        = 45,
         .baseAttack    = 75,
@@ -5308,7 +5308,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_GEN_2_CROSS_EVOS
-    [SPECIES_ESPEON] =
+    [SPECIES_SPEED_YAMAME] =
     {
         .baseHP        = 65,
         .baseAttack    = 65,
@@ -5360,7 +5360,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sEspeonTeachableLearnset,
     },
 
-    [SPECIES_UMBREON] =
+    [SPECIES_TECH_YAMAME] =
     {
         .baseHP        = 95,
         .baseAttack    = 65,

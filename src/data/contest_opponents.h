@@ -841,7 +841,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_MILO] = {
-        .species = SPECIES_LARVITAR,
+        .species = SPECIES_TECH_BYAKUREN,
         .nickname = _("TARVITAR"),
         .trainerName = _("MILO"),
         .trainerGfxId = OBJ_EVENT_GFX_MANIAC,
@@ -1408,7 +1408,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_ALIYAH] = {
-        .species = SPECIES_BLISSEY,
+        .species = SPECIES_TECH_SHOU,
         .nickname = _("BLISS"),
         .trainerName = _("ALIYAH"),
         .trainerGfxId = OBJ_EVENT_GFX_TEALA,
@@ -1435,7 +1435,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_NATALIA] = {
-        .species = SPECIES_ELEKID,
+        .species = SPECIES_CHIBI_SHOU,
         .nickname = _("KIDLEK"),
         .trainerName = _("NATALIA"),
         .trainerGfxId = OBJ_EVENT_GFX_POKEFAN_F,
@@ -1462,7 +1462,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_DEVIN] = {
-        .species = SPECIES_SNUBBULL,
+        .species = SPECIES_SPEED_RIN,
         .nickname = _("SNUBBINS"),
         .trainerName = _("DEVIN"),
         .trainerGfxId = OBJ_EVENT_GFX_GENTLEMAN,
@@ -1489,7 +1489,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_TYLOR] = {
-        .species = SPECIES_MISDREAVUS,
+        .species = SPECIES_DEFENSE_PARSEE,
         .nickname = _("DREAVIS"),
         .trainerName = _("TYLOR"),
         .trainerGfxId = OBJ_EVENT_GFX_HEX_MANIAC,
@@ -2056,7 +2056,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_BRYCE] = {
-        .species = SPECIES_PINECO,
+        .species = SPECIES_ATTACK_YUUGI,
         .nickname = _("PINOC"),
         .trainerName = _("BRYCE"),
         .trainerGfxId = OBJ_EVENT_GFX_BUG_CATCHER,
@@ -2083,7 +2083,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_JAMIE] = {
-        .species = SPECIES_DUNSPARCE,
+        .species = SPECIES_CHIBI_RIN,
         .nickname = _("DILTOT"),
         .trainerName = _("JAMIE"),
         .trainerGfxId = OBJ_EVENT_GFX_WOMAN_5,
@@ -2137,7 +2137,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_DEVON] = {
-        .species = SPECIES_MILTANK,
+        .species = SPECIES_ATTACK_SHOU,
         .nickname = _("MILKAN"),
         .trainerName = _("DEVON"),
         .trainerGfxId = OBJ_EVENT_GFX_POKEFAN_M,
@@ -2461,7 +2461,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_HEATH] = {
-        .species = SPECIES_HERACROSS,
+        .species = SPECIES_SPEED_UTSUHO,
         .nickname = _("HEROSS"),
         .trainerName = _("HEATH"),
         .trainerGfxId = OBJ_EVENT_GFX_MAN_3,
@@ -2542,7 +2542,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_HELEN] = {
-        .species = SPECIES_WOBBUFFET,
+        .species = SPECIES_CHIBI_YUUGI,
         .nickname = _("WOBET"),
         .trainerName = _("HELEN"),
         .trainerGfxId = OBJ_EVENT_GFX_WOMAN_1,
@@ -2731,7 +2731,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_JAKOB] = {
-        .species = SPECIES_ESPEON,
+        .species = SPECIES_SPEED_YAMAME,
         .nickname = _("SPEON"),
         .trainerName = _("JAKOB"),
         .trainerGfxId = OBJ_EVENT_GFX_PSYCHIC_M,
@@ -2758,7 +2758,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_TREY] = {
-        .species = SPECIES_SLOWKING,
+        .species = SPECIES_NORMAL_PARSEE,
         .nickname = _("SLOWGO"),
         .trainerName = _("TREY"),
         .trainerGfxId = OBJ_EVENT_GFX_SAILOR,
@@ -2785,7 +2785,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_LANE] = {
-        .species = SPECIES_URSARING,
+        .species = SPECIES_DEFENSE_SATORI,
         .nickname = _("URSING"),
         .trainerName = _("LANE"),
         .trainerGfxId = OBJ_EVENT_GFX_BLACK_BELT,

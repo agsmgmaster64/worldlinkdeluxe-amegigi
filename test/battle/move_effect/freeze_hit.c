@@ -10,8 +10,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Powder Snow inflicts freeze")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_POWDER_SNOW); }
     } SCENE {
@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Powder Snow cannot freeze an Ice-type Pokémon")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SNORUNT].types[0] == TYPE_ICE);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_SNORUNT);
     } WHEN {
         TURN { MOVE(player, MOVE_POWDER_SNOW); }
@@ -43,8 +43,8 @@ SINGLE_BATTLE_TEST("Powder Snow cannot freeze an Ice-type Pokémon")
 SINGLE_BATTLE_TEST("Freeze cannot be inflicted in Sunlight")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUNNY_DAY); MOVE(player, MOVE_ICE_BEAM); }
     } SCENE {
@@ -58,8 +58,8 @@ SINGLE_BATTLE_TEST("Blizzard bypasses accuracy checks in Hail and Snow")
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_BLIZZARD); }
     } SCENE {

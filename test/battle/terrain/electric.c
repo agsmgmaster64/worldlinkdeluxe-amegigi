@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Electric Terrain protects grounded battlers from falling asleep")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CLAYDOL) { Ability(ABILITY_LEVITATE); }
     } WHEN {
         TURN { MOVE(player, MOVE_ELECTRIC_TERRAIN); MOVE(opponent, MOVE_SPORE); }
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Electric Terrain activates Electric Seed and Mimicry")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ELECTRIC_SEED].holdEffect == HOLD_EFFECT_SEEDS);
         ASSUME(gItemsInfo[ITEM_ELECTRIC_SEED].holdEffectParam == HOLD_EFFECT_PARAM_ELECTRIC_TERRAIN);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_ELECTRIC_SEED); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ELECTRIC_SEED); }
         OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_ELECTRIC_TERRAIN); }
@@ -44,8 +44,8 @@ SINGLE_BATTLE_TEST("Electric Terrain increases power of Electric-type moves by 3
     PARAMETRIZE { terrain = FALSE; }
     PARAMETRIZE { terrain = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_ELECTRIC_TERRAIN); }
@@ -64,8 +64,8 @@ SINGLE_BATTLE_TEST("Electric Terrain increases power of Electric-type moves by 3
 SINGLE_BATTLE_TEST("Electric Terrain lasts for 5 turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_ELECTRIC_TERRAIN); }
         TURN {}

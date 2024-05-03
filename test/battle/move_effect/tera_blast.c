@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("Tera Blast changes from Normal-type to the user's Tera Type"
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TERA_BLAST].type == TYPE_NORMAL);
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_DARK); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_DARK); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); }
     } SCENE {
@@ -27,8 +27,8 @@ SINGLE_BATTLE_TEST("Tera Blast becomes a physical move if the user is Terastalli
     PARAMETRIZE { tera = FALSE; }
     PARAMETRIZE { tera = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_NORMAL); Attack(100); SpAttack(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { Defense(200); SpDefense(200); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_NORMAL); Attack(100); SpAttack(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Defense(200); SpDefense(200); }
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: tera); }
     } SCENE {
@@ -46,8 +46,8 @@ SINGLE_BATTLE_TEST("Tera Blast becomes a physical move if the user is Terastalli
 SINGLE_BATTLE_TEST("Stellar-type Tera Blast lowers both offensive stats")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); }
     } SCENE {
@@ -64,8 +64,8 @@ SINGLE_BATTLE_TEST("Stellar-type Tera Blast has 100 BP and a one-time 1.2x boost
 {
     s16 damage[3];
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST); MOVE(opponent, MOVE_RECOVER); }
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); }
@@ -95,8 +95,8 @@ SINGLE_BATTLE_TEST("Stellar-type Tera Blast has 100 BP and a one-time 1.2x boost
 SINGLE_BATTLE_TEST("Stellar-type Tera Blast is super-effective on Stellar-type Pokemon")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); MOVE(opponent, MOVE_CELEBRATE, tera: TRUE); }
     } SCENE {
@@ -109,8 +109,8 @@ SINGLE_BATTLE_TEST("Stellar-type Tera Blast is super-effective on Stellar-type P
 SINGLE_BATTLE_TEST("Stellar-type Tera Blast activates a Stellar-type Pokemon's Weakness Policy")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_WEAKNESS_POLICY); TeraType(TYPE_NORMAL); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_WEAKNESS_POLICY); TeraType(TYPE_NORMAL); }
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); MOVE(opponent, MOVE_CELEBRATE, tera: TRUE); }
     } SCENE {
@@ -125,7 +125,7 @@ SINGLE_BATTLE_TEST("Flying-type Tera Blast does not have its priority boosted by
 {
     GIVEN {
         PLAYER(SPECIES_TALONFLAME) { Ability(ABILITY_GALE_WINGS); TeraType(TYPE_FLYING); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, tera: TRUE); MOVE(opponent, MOVE_QUICK_ATTACK); }
     } SCENE {

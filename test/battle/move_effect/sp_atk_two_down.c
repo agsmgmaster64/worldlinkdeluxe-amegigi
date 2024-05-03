@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Overheat drops Sp. Atk by 2 stages - singles")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET)
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI)
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_OVERHEAT); }
     } SCENE {
@@ -26,10 +26,10 @@ SINGLE_BATTLE_TEST("Overheat drops Sp. Atk by 2 stages - singles")
 DOUBLE_BATTLE_TEST("Overheat drops Sp. Atk by 2 stages - doubles")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET)
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI)
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_OVERHEAT, target: opponentLeft); }
     } SCENE {

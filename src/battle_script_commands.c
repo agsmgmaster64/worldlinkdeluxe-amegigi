@@ -14895,7 +14895,7 @@ static void Cmd_pickup(void)
                 }
             }
             else if (P_SHUCKLE_BERRY_JUICE == GEN_2
-                && species == SPECIES_SHUCKLE
+                && species == SPECIES_ATTACK_UTSUHO
                 && heldItem == ITEM_ORAN_BERRY
                 && (Random() % 16) == 0)
             {

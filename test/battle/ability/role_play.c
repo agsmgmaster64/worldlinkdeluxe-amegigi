@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Role Play fails if target has a banned ability")
     PARAMETRIZE { species = SPECIES_TATSUGIRI; ability = ABILITY_COMMANDER; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_TELEPATHY); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_TELEPATHY); }
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player,MOVE_ROLE_PLAY); }
@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("Role Play fails if user has a banned ability")
     PARAMETRIZE { species = SPECIES_TATSUGIRI; ability = ABILITY_COMMANDER; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_TELEPATHY); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_TELEPATHY); }
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent,MOVE_ROLE_PLAY); }

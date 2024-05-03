@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 if the user takes da
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
@@ -38,7 +38,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by each multi hit")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BULLET_SEED].effect == EFFECT_MULTI_HIT);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased by a confusion hit")
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -89,10 +89,10 @@ DOUBLE_BATTLE_TEST("Rage Fist maximum base power is 350")
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_REGIROCK);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         for (turns = 1; turns <= 3; turns++) {
             TURN {
@@ -131,7 +131,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased if a substitute was hi
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CRUNCH].category == DAMAGE_CATEGORY_PHYSICAL); // Substitute doesn't fade otherwise
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); }
@@ -156,7 +156,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not lost if user switches out")
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
@@ -183,7 +183,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 even if a damaging m
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
@@ -206,7 +206,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 even if a damaging m
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(2); }
         OPPONENT(SPECIES_REGIROCK);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_FALSE_SWIPE); }

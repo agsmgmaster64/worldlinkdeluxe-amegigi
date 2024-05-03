@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Teeter Dance confuses target")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TEETER_DANCE); }
     } SCENE {
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Teeter Dance confuses target")
 SINGLE_BATTLE_TEST("Teeter Dance confusion is blocked by Own Tempo")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_SLOWPOKE) { Ability(ABILITY_OWN_TEMPO); }
     } WHEN {
         TURN { MOVE(player, MOVE_TEETER_DANCE); }
@@ -40,9 +40,9 @@ SINGLE_BATTLE_TEST("Teeter Dance confusion is blocked by Own Tempo")
 DOUBLE_BATTLE_TEST("Teeter Dance can confuse foes and allies")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TEETER_DANCE); }

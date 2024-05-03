@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("Salt Cure inflicts 1/8 of the target's maximum HP as damage 
 {
     u32 j;
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SALT_CURE); }
         for (j = 0; j < 3; j++)
@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Salt Cure inflicts 1/4 to Water/Steel types of their maximum
     PARAMETRIZE { species = SPECIES_JIRACHI; };
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species);
     } WHEN {
         TURN { MOVE(player, MOVE_SALT_CURE); }
@@ -54,8 +54,8 @@ SINGLE_BATTLE_TEST("Salt Cure inflicts 1/4 to Water/Steel types of their maximum
 SINGLE_BATTLE_TEST("Salt Cure is removed when the afflicted Pokémon is switched out")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_SALT_CURE); }
@@ -75,8 +75,8 @@ SINGLE_BATTLE_TEST("Salt Cure is removed when the afflicted Pokémon is switched
 SINGLE_BATTLE_TEST("If Salt Cure faints the target no status will be applied")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_SALT_CURE); }
     } SCENE {

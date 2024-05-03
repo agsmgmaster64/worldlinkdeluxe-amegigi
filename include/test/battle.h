@@ -35,8 +35,8 @@
  *   SINGLE_BATTLE_TEST("Stun Spore inflicts paralysis")
  *   {
  *       GIVEN {
- *           PLAYER(SPECIES_WOBBUFFET); // 1.
- *           OPPONENT(SPECIES_WOBBUFFET); // 2.
+ *           PLAYER(SPECIES_CHIBI_YUUGI); // 1.
+ *           OPPONENT(SPECIES_CHIBI_YUUGI); // 2.
  *       } WHEN {
  *           TURN { MOVE(player, MOVE_STUN_SPORE); } // 3.
  *       } SCENE {
@@ -130,8 +130,8 @@
  *        PARAMETRIZE { raiseAttack = TRUE; }
  *        GIVEN {
  *            ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
- *            PLAYER(SPECIES_WOBBUFFET);
- *            OPPONENT(SPECIES_WOBBUFFET);
+ *            PLAYER(SPECIES_CHIBI_YUUGI);
+ *            OPPONENT(SPECIES_CHIBI_YUUGI);
  *        } WHEN {
  *            if (raiseAttack) TURN { MOVE(player, MOVE_MEDITATE); } // 5.
  *            TURN { MOVE(player, MOVE_TACKLE); } // 3 & 6.
@@ -230,7 +230,7 @@
  *         GIVEN {
  *             ASSUME(gMovesInfo[MOVE_EMBER].type == TYPE_FIRE);
  *             PLAYER(SPECIES_CHARMANDER) { Ability(ABILITY_BLAZE); MaxHP(99); HP(hp); }
- *             OPPONENT(SPECIES_WOBBUFFET);
+ *             OPPONENT(SPECIES_CHIBI_YUUGI);
  *         } WHEN {
  *             TURN { MOVE(player, MOVE_EMBER); }
  *         } SCENE {
@@ -251,8 +251,8 @@
  *     {
  *         PASSES_RANDOMLY(25, 100, RNG_PARALYSIS);
  *         GIVEN {
- *             PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_PARALYSIS); }
- *             OPPONENT(SPECIES_WOBBUFFET);
+ *             PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_PARALYSIS); }
+ *             OPPONENT(SPECIES_CHIBI_YUUGI);
  *         } WHEN {
  *             TURN { MOVE(player, MOVE_CELEBRATE); }
  *         } SCENE {
@@ -301,7 +301,7 @@
  * - Friendship(friendship)
  * - Status1(status1)
  * For example to create a Wobbuffet that is poisoned:
- *     PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
+ *     PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_POISON); }
  * Note if Speed is specified for any Pokémon then it must be specified
  * for all Pokémon.
  * Note if Moves is specified then MOVE will not automatically add moves

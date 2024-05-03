@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Sheer Force boosts power, but removes secondary effects of m
 
     GIVEN {
         PLAYER(SPECIES_HELPER_EIRIN) { Ability(ability); Status1(move == MOVE_SNORE ? STATUS1_SLEEP : STATUS1_NONE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (move == MOVE_ALLURING_VOICE || move == MOVE_BURNING_JEALOUSY) // Alluring Voice requires the target to boost stats to have an effect
             TURN { MOVE(opponent, MOVE_AGILITY); MOVE(player, move); }

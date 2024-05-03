@@ -17,8 +17,8 @@ SINGLE_BATTLE_TEST("Full Restore restores a battler's HP and cures any primary s
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     PARAMETRIZE{ status = STATUS1_NONE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); Status1(status); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); MaxHP(300); Status1(status); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN{ USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 0); }
     } SCENE {
@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Full Restore heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Status1(status); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 0); }
@@ -57,8 +57,8 @@ SINGLE_BATTLE_TEST("Full Restore heals a battler from any primary status")
 SINGLE_BATTLE_TEST("Full Restore restores a battler's HP and cures confusion")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); MaxHP(300); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN{ MOVE(opponent, MOVE_CONFUSE_RAY); }
         TURN{ USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 0); }
@@ -74,8 +74,8 @@ SINGLE_BATTLE_TEST("Full Restore restores a battler's HP and cures confusion")
 SINGLE_BATTLE_TEST("Full Restore resets Toxic Counter")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TOXIC); }
         TURN { ; }

@@ -128,7 +128,7 @@ SINGLE_BATTLE_TEST("Mirror Armor raises the stat of an attacking Pokemon with Co
 {
     GIVEN {
         PLAYER(SPECIES_CORVIKNIGHT) {Ability(ABILITY_MIRROR_ARMOR);}
-        OPPONENT(SPECIES_SHUCKLE) {Ability(ABILITY_CONTRARY);}
+        OPPONENT(SPECIES_ATTACK_UTSUHO) {Ability(ABILITY_CONTRARY);}
     } WHEN {
         TURN { MOVE(opponent, MOVE_LEER); }
     } SCENE {
@@ -173,8 +173,8 @@ DOUBLE_BATTLE_TEST("Mirror Armor lowers Speed of the partner Pokemon after Court
     GIVEN {
         ASSUME(gMovesInfo[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
         ASSUME(gMovesInfo[MOVE_COURT_CHANGE].effect == EFFECT_COURT_CHANGE);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CORVIKNIGHT) {Ability(ABILITY_MIRROR_ARMOR); Item(ITEM_IRON_BALL); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WYNAUT);

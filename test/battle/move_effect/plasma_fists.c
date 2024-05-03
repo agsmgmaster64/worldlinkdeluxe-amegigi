@@ -11,7 +11,7 @@ SINGLE_BATTLE_TEST("Ion Duldge turns normal moves into electric for the remainde
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ION_DELUGE].effect == EFFECT_ION_DELUGE);
         PLAYER(SPECIES_DEFENSE_YUKARI);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ION_DELUGE); MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Plasma Fists turns normal moves into electric for the remain
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_YUKARI);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -86,7 +86,7 @@ SINGLE_BATTLE_TEST("Plasma Fists turns normal type dynamax-moves into electric t
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_YUKARI) { Speed(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_TACKLE, dynamax: TRUE); }
     } SCENE {

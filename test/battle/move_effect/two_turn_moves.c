@@ -23,8 +23,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Razor Wind needs a charging turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAZOR_WIND); }
         TURN { SKIP_TURN(player); }
@@ -51,8 +51,8 @@ SINGLE_BATTLE_TEST("Razor Wind doesn't need to charge with Power Herb")
 {
     KNOWN_FAILING;
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POWER_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_POWER_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAZOR_WIND); }
     } SCENE {
@@ -78,8 +78,8 @@ SINGLE_BATTLE_TEST("Razor Wind doesn't need to charge with Power Herb")
 SINGLE_BATTLE_TEST("Skull Bash needs a charging turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SKULL_BASH); }
         TURN { SKIP_TURN(player); }
@@ -106,8 +106,8 @@ SINGLE_BATTLE_TEST("Skull Bash needs a charging turn")
 SINGLE_BATTLE_TEST("Skull Bash doesn't need to charge with Power Herb")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POWER_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_POWER_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SKULL_BASH); }
     } SCENE {
@@ -134,8 +134,8 @@ SINGLE_BATTLE_TEST("Skull Bash doesn't need to charge with Power Herb")
 SINGLE_BATTLE_TEST("Sky Attack needs a charging turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SKY_ATTACK); }
         TURN { SKIP_TURN(player); }
@@ -165,8 +165,8 @@ SINGLE_BATTLE_TEST("Sky Attack needs a charging turn")
 SINGLE_BATTLE_TEST("Sky Attack doesn't need to charge with Power Herb")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POWER_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_POWER_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SKY_ATTACK); }
     } SCENE {
@@ -201,8 +201,8 @@ SINGLE_BATTLE_TEST("Solar Beam and Solar Blade can be used instantly in Sunlight
     PARAMETRIZE { move1 = MOVE_SPLASH; move2 = MOVE_SOLAR_BLADE; }
     PARAMETRIZE { move1 = MOVE_SUNNY_DAY; move2 = MOVE_SOLAR_BLADE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move1); MOVE(player, move2); }
         TURN { SKIP_TURN(player); }
@@ -246,8 +246,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in Rain", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_RAIN_DANCE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -264,7 +264,7 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Rain", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_RAIN_DANCE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
@@ -282,8 +282,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in a Sandstorm", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SANDSTORM; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -300,8 +300,8 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in a Sandstorm", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SANDSTORM; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }
@@ -318,8 +318,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in Hail", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_HAIL; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -336,8 +336,8 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Hail", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_HAIL; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }
@@ -354,8 +354,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in Snow", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -372,7 +372,7 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Snow", s16 damage)
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
@@ -387,8 +387,8 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Snow", s16 damage)
 SINGLE_BATTLE_TEST("Electro Shot needs a charging Turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ELECTRO_SHOT); }
         TURN { SKIP_TURN(player); }
@@ -408,8 +408,8 @@ SINGLE_BATTLE_TEST("Electro Shot needs a charging Turn")
 SINGLE_BATTLE_TEST("Electro Shot doesn't need to charge when it's raining")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_RAIN_DANCE); MOVE(player, MOVE_ELECTRO_SHOT); }
     } SCENE {
@@ -429,8 +429,8 @@ SINGLE_BATTLE_TEST("Electro Shot doesn't need to charge when it's raining")
 SINGLE_BATTLE_TEST("Electro Shot doesn't need to charge with Power Herb")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POWER_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_POWER_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ELECTRO_SHOT); }
     } SCENE {

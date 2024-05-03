@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Ally Switch fails in a single battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ALLY_SWITCH); }
     } SCENE {
@@ -23,10 +23,10 @@ SINGLE_BATTLE_TEST("Ally Switch fails in a single battle")
 DOUBLE_BATTLE_TEST("Ally Switch fails if there is no partner")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target:playerRight); }
         TURN { MOVE(playerLeft, MOVE_ALLY_SWITCH); }
@@ -43,7 +43,7 @@ DOUBLE_BATTLE_TEST("Ally Switch changes the position of battlers")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SCREECH].effect == EFFECT_DEFENSE_DOWN_2);
         ASSUME(gMovesInfo[MOVE_SCREECH].target == MOVE_TARGET_SELECTED);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); } // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); } // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
         PLAYER(SPECIES_WYNAUT) { Speed(4); }
         OPPONENT(SPECIES_CHIBI_LUNASA) { Speed(3); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK) { Speed(2); }
@@ -65,7 +65,7 @@ DOUBLE_BATTLE_TEST("Ally Switch changes the position of battlers")
         EXPECT_EQ(playerLeft->speed, 4);
         EXPECT_EQ(playerLeft->species, SPECIES_WYNAUT);
         EXPECT_EQ(playerRight->speed, 5);
-        EXPECT_EQ(playerRight->species, SPECIES_WOBBUFFET);
+        EXPECT_EQ(playerRight->species, SPECIES_CHIBI_YUUGI);
     }
 }
 
@@ -73,7 +73,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect the target of Snipe Shot")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SNIPE_SHOT].effect == EFFECT_SNIPE_SHOT);
-        PLAYER(SPECIES_WOBBUFFET); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
+        PLAYER(SPECIES_CHIBI_YUUGI); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
@@ -98,7 +98,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect moves done by pokemon with Sta
     PARAMETRIZE { ability = ABILITY_TELEPATHY; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
+        PLAYER(SPECIES_CHIBI_YUUGI); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_LUNASA) { Ability(ability); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
@@ -126,7 +126,7 @@ DOUBLE_BATTLE_TEST("Ally Switch has no effect on parnter's chosen move")
     PARAMETRIZE { chosenMove = MOVE_POUND; chosenTarget = opponentRight; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT) { Moves(MOVE_TACKLE, MOVE_POUND, MOVE_CELEBRATE, MOVE_SCRATCH); }
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
@@ -151,7 +151,7 @@ DOUBLE_BATTLE_TEST("Ally Switch - move fails if the target was ally which change
     PARAMETRIZE { move = MOVE_HOLD_HANDS; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
@@ -176,7 +176,7 @@ DOUBLE_BATTLE_TEST("Acupressure works after ally used Ally Switch")
     PARAMETRIZE { battlerTarget = playerRight; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
@@ -197,10 +197,10 @@ DOUBLE_BATTLE_TEST("Ally Switch increases the Protect-like moves counter")
 {
     GIVEN {
         ASSUME(B_ALLY_SWITCH_FAIL_CHANCE >= GEN_9);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_ALLY_SWITCH); }
     } THEN {
@@ -211,10 +211,10 @@ DOUBLE_BATTLE_TEST("Ally Switch increases the Protect-like moves counter")
 DOUBLE_BATTLE_TEST("Ally Switch works if ally used two-turn move like Dig")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerRight, MOVE_DIG, target:opponentRight); }
         TURN { MOVE(playerLeft, MOVE_ALLY_SWITCH); SKIP_TURN(playerRight); }

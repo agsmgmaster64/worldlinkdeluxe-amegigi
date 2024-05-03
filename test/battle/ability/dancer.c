@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Dancer can copy a dance move immediately after it was used a
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_QUIVER_DANCE].danceMove == TRUE);
-        PLAYER(SPECIES_WOBBUFFET)
+        PLAYER(SPECIES_CHIBI_YUUGI)
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); }
     } WHEN {
         TURN { MOVE(player, MOVE_QUIVER_DANCE); }
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Dancer can copy Teeter Dance")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TEETER_DANCE].danceMove == TRUE);
-        PLAYER(SPECIES_WOBBUFFET)
+        PLAYER(SPECIES_CHIBI_YUUGI)
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); Item(ITEM_LUM_BERRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_TEETER_DANCE); }
@@ -39,7 +39,7 @@ DOUBLE_BATTLE_TEST("Dancer can copy Teeter Dance and confuse both opposing targe
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TEETER_DANCE].danceMove == TRUE);
         ASSUME(gItemsInfo[ITEM_LUM_BERRY].holdEffect == HOLD_EFFECT_CURE_STATUS);
-        PLAYER(SPECIES_WOBBUFFET)
+        PLAYER(SPECIES_CHIBI_YUUGI)
         PLAYER(SPECIES_WYNAUT) { Item(ITEM_LUM_BERRY); }
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); Item(ITEM_LUM_BERRY); }
         OPPONENT(SPECIES_SLOWPOKE) { Ability(ABILITY_OWN_TEMPO); }

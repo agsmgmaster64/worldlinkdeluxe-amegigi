@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on switch in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
@@ -28,8 +28,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on switch in")
 SINGLE_BATTLE_TEST("Toxic Spikes inflicts bad poison on switch in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
@@ -50,8 +50,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes inflicts bad poison on switch in")
 SINGLE_BATTLE_TEST("Toxic Spikes fails after 2 layers")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
@@ -75,8 +75,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes fails after 2 layers")
 SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on subsequent switch ins")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on subsequent switch ins")
 
 SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
 {
-    u32 species = SPECIES_WOBBUFFET;
+    u32 species = SPECIES_CHIBI_YUUGI;
     u32 item = ITEM_NONE;
     u32 move1 = MOVE_CELEBRATE;
     u32 move2 = MOVE_CELEBRATE;
@@ -103,11 +103,11 @@ SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
     PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_GRAVITY; airborne = FALSE; }
     PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
-    ASSUME(gSpeciesInfo[SPECIES_UNOWN].abilities[0] == ABILITY_LEVITATE);
-    PARAMETRIZE { species = SPECIES_UNOWN; airborne = TRUE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; item = ITEM_IRON_BALL; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_GRAVITY; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_INGRAIN; airborne = FALSE; }
+    ASSUME(gSpeciesInfo[SPECIES_TECH_PARSEE].abilities[0] == ABILITY_LEVITATE);
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; airborne = TRUE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; item = ITEM_IRON_BALL; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_GRAVITY; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; airborne = TRUE; }
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; item = ITEM_IRON_BALL; airborne = FALSE; }
@@ -120,8 +120,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
     PARAMETRIZE { item = ITEM_AIR_BALLOON; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); MOVE(opponent, move1); }
@@ -139,10 +139,10 @@ SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
 SINGLE_BATTLE_TEST("Toxic Spikes do not affect Steel-types")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_STEELIX].types[0] == TYPE_STEEL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_STEELIX);
+        ASSUME(gSpeciesInfo[SPECIES_ATTACK_RIN].types[0] == TYPE_STEEL);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_ATTACK_RIN);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(opponent, 1); }
@@ -166,8 +166,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by grounded Poison-type Pokémon on
         ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MEILING].types[0] == TYPE_MIASMA);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[0] == TYPE_MIASMA);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); MOVE(opponent, move); }
@@ -195,8 +195,8 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by Poison-type Pokémon affected by
     KNOWN_FAILING;
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MEILING].types[0] == TYPE_MIASMA);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_DEFENSE_MEILING);
     } WHEN {
         TURN { MOVE(opponent, MOVE_MAGNET_RISE); }
@@ -213,10 +213,10 @@ SINGLE_BATTLE_TEST("Toxic Spikes inflicts poison on switch in after Primal Rever
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MEMENTO].effect == EFFECT_MEMENTO); // Faints the user.
-        PLAYER(SPECIES_WOBBUFFET) {Speed(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(5); }
         PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(1); }
         PLAYER(SPECIES_WYNAUT) {Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(15); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(15); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(player, 1); }

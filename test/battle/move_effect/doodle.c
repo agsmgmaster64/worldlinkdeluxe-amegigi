@@ -12,7 +12,7 @@ DOUBLE_BATTLE_TEST("Doodle gives the target's ability to user and ally")
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DOODLE, target: opponentLeft);  }
     } SCENE {
@@ -31,7 +31,7 @@ DOUBLE_BATTLE_TEST("Doodle can't copy a banned ability")
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_GREAT_TUSK) { Ability(ABILITY_PROTOSYNTHESIS); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DOODLE, target: opponentLeft);  }
     } SCENE {
@@ -52,7 +52,7 @@ DOUBLE_BATTLE_TEST("Doodle fails if user has a banned Ability")
         PLAYER(SPECIES_CRAMORANT) { Ability(ABILITY_GULP_MISSILE); }
         PLAYER(SPECIES_WYNAUT) { Ability(ABILITY_SHADOW_TAG); }
         OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DOODLE, target: opponentLeft);  }
     } SCENE {
@@ -70,7 +70,7 @@ DOUBLE_BATTLE_TEST("Doodle fails if partner has a banned Ability")
         PLAYER(SPECIES_WYNAUT) { Ability(ABILITY_SHADOW_TAG); }
         PLAYER(SPECIES_CRAMORANT) { Ability(ABILITY_GULP_MISSILE); }
         OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DOODLE, target: opponentLeft);  }
     } SCENE {

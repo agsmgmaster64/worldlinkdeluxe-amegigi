@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye prevent accuracy stag
 
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_SAND_ATTACK); MOVE(opponent, MOVE_TACKLE); }
@@ -48,7 +48,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye ignore target's evasi
     PASSES_RANDOMLY(100, 100, RNG_ACCURACY);
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DOUBLE_TEAM].effect == EFFECT_EVASION_UP);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_DOUBLE_TEAM); MOVE(opponent, MOVE_TACKLE); }
@@ -104,7 +104,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye don't prevent Topsy-T
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HONE_CLAWS].effect == EFFECT_ATTACK_ACCURACY_UP);
         ASSUME(gMovesInfo[MOVE_TOPSY_TURVY].effect == EFFECT_TOPSY_TURVY);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_HONE_CLAWS); MOVE(player, MOVE_TOPSY_TURVY); }
@@ -142,8 +142,8 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye don't prevent receivi
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BATON_PASS].effect == EFFECT_BATON_PASS);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_SAND_ATTACK);
@@ -175,7 +175,7 @@ SINGLE_BATTLE_TEST("Keen Eye & Gen9+ Illuminate don't prevent Spectral Thief fro
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HONE_CLAWS].effect == EFFECT_ATTACK_ACCURACY_UP);
         ASSUME(MoveHasAdditionalEffect(MOVE_SPECTRAL_THIEF, MOVE_EFFECT_SPECTRAL_THIEF) == TRUE);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_HONE_CLAWS); MOVE(player, MOVE_SPECTRAL_THIEF); }

@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("Quick Claw activates 10% of the time")
 {
     PASSES_RANDOMLY(2, 10, RNG_QUICK_CLAW);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(1); Item(ITEM_QUICK_CLAW); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); Item(ITEM_QUICK_CLAW); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {

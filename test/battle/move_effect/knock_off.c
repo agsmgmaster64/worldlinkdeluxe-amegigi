@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Knock Off knocks a healing berry before it has the chance to activate")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SITRUS_BERRY); MaxHP(500); HP(255); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SITRUS_BERRY); MaxHP(500); HP(255); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -34,8 +34,8 @@ SINGLE_BATTLE_TEST("Knock Off activates after Rocky Helmet and Weakness Policy")
     PARAMETRIZE { item = ITEM_ROCKY_HELMET; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -64,8 +64,8 @@ SINGLE_BATTLE_TEST("Knock Off deals additional damage to opponents holding an it
     PARAMETRIZE { item = ITEM_LEFTOVERS; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); };
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -87,8 +87,8 @@ SINGLE_BATTLE_TEST("Knock Off deals additional damage to opponents holding an it
 SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); 
                MOVE(player, MOVE_KNOCK_OFF); }
@@ -103,8 +103,8 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute")
 SINGLE_BATTLE_TEST("Recycle cannot recover an item removed by Knock Off")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF);
                MOVE(opponent, MOVE_RECYCLE); }
@@ -123,8 +123,8 @@ SINGLE_BATTLE_TEST("Recycle cannot recover an item removed by Knock Off")
 SINGLE_BATTLE_TEST("Knock Off does not prevent targets from receiving another item in Gen 5+")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
         TURN { MOVE(player, MOVE_BESTOW); }
@@ -154,8 +154,8 @@ SINGLE_BATTLE_TEST("Knock Off does not prevent targets from receiving another it
 SINGLE_BATTLE_TEST("Knock Off triggers Unburden")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(60); }
-        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_UNBURDEN); Item(ITEM_LEFTOVERS); Speed(50); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(60); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_UNBURDEN); Item(ITEM_LEFTOVERS); Speed(50); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -175,10 +175,10 @@ SINGLE_BATTLE_TEST("Knock Off triggers Unburden")
 DOUBLE_BATTLE_TEST("Knock Off does not trigger the opposing ally's Symbiosis")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
         PLAYER(SPECIES_FLORGES) { Item(ITEM_LEFTOVERS); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_KNOCK_OFF, target: playerLeft); }
     } SCENE {

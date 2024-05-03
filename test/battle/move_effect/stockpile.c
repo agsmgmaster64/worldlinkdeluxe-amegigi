@@ -12,8 +12,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Stockpile's count can go up only to 3")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_COERCE); }
         TURN { MOVE(player, MOVE_COERCE); }
@@ -40,8 +40,8 @@ SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
     PARAMETRIZE { move = MOVE_SHADOW_DANCE; }
     PARAMETRIZE { move = MOVE_BRAVER; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(10), MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(10), MaxHP(400); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move); }
         TURN { MOVE(player, MOVE_COERCE); }
@@ -73,8 +73,8 @@ SINGLE_BATTLE_TEST("Spit Up's power raises depending on Stockpile's count", s16 
     PARAMETRIZE { count = 2; }
     PARAMETRIZE { count = 3; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_COERCE); }
         if (count != 1){
@@ -110,8 +110,8 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
     PARAMETRIZE { count = 2; }
     PARAMETRIZE { count = 3; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1), MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1), MaxHP(400); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_COERCE); }
         if (count != 1){
@@ -150,8 +150,8 @@ SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsic
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(player, move); MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_GUST); }
@@ -186,10 +186,10 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); HP(399); MaxHP(400); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); HP(399); MaxHP(400); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerLeft); }
         TURN { MOVE(playerLeft, MOVE_COERCE); }

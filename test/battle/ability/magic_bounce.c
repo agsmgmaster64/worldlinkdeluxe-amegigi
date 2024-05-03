@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back status moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
+        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back powder moves")
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].effect == EFFECT_PARALYZE);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
+        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); }
     } SCENE {
@@ -43,7 +43,7 @@ SINGLE_BATTLE_TEST("Magic Bounce cannot bounce back powder moves against Grass T
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
         ASSUME(gSpeciesInfo[SPECIES_ATTACK_FLANDRE].types[0] == TYPE_NATURE);
         PLAYER(SPECIES_ATTACK_FLANDRE);
-        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
+        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); }
     } SCENE {
@@ -63,7 +63,7 @@ DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting both foes at two foe
         ASSUME(gMovesInfo[MOVE_LEER].target == MOVE_TARGET_BOTH);
         PLAYER(SPECIES_SPEED_LILY_BLACK);
         PLAYER(SPECIES_CHIBI_LUNASA);
-        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
+        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_LEER); }

@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Howl raises user's Attack", s16 damage)
     PARAMETRIZE { raiseAttack = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (raiseAttack) TURN { MOVE(player, MOVE_HOWL); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -38,9 +38,9 @@ DOUBLE_BATTLE_TEST("Howl raises user's and partner's Attack", s16 damageLeft, s1
     PARAMETRIZE { raiseAttack = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(15); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(15); }
         PLAYER(SPECIES_WYNAUT) { Speed(10); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(13); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(13); }
         OPPONENT(SPECIES_WYNAUT) { Speed(12); }
     } WHEN {
         if (raiseAttack) TURN { MOVE(playerLeft, MOVE_HOWL); }
@@ -70,9 +70,9 @@ DOUBLE_BATTLE_TEST("Howl does not work on partner if it has Soundproof")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(15); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(15); }
         PLAYER(SPECIES_CHIBI_WRIGGLE) { Speed(10); Ability(ABILITY_SOUNDPROOF); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
         OPPONENT(SPECIES_WYNAUT) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerRight, MOVE_TACKLE, target: opponentLeft); }

@@ -18,8 +18,8 @@ SINGLE_BATTLE_TEST("Hex deals double damage to foes with a status", s16 damage)
     PARAMETRIZE { status1 = STATUS1_PARALYSIS; }
     PARAMETRIZE { status1 = STATUS1_TOXIC_POISON; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(status1); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(status1); }
     } WHEN {
         TURN { MOVE(player, MOVE_HEX); }
     } SCENE {

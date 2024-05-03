@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Sticky Web lowers Speed by 1 on switch-in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_STICKY_WEB); }
@@ -29,8 +29,8 @@ SINGLE_BATTLE_TEST("Sticky Web lowers Speed by 1 on switch-in")
 SINGLE_BATTLE_TEST("Sticky Web can only be set up 1 time")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_STICKY_WEB); }
         TURN { MOVE(player, MOVE_STICKY_WEB); }
@@ -50,11 +50,11 @@ DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explos
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
-        PLAYER(SPECIES_WOBBUFFET) {Speed(5);}
-        PLAYER(SPECIES_WOBBUFFET) {HP(1500); Speed(10);}
-        PLAYER(SPECIES_WOBBUFFET) {Speed(10);}
-        OPPONENT(SPECIES_WOBBUFFET) {HP(1); Speed(1);}
-        OPPONENT(SPECIES_WOBBUFFET) {HP(1); Speed(1);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(5);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {HP(1500); Speed(10);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(10);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {HP(1); Speed(1);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {HP(1); Speed(1);}
         OPPONENT(SPECIES_WYNAUT) {Speed(10);}
         OPPONENT(SPECIES_WYNAUT) {Speed(10);}
     } WHEN {
@@ -78,9 +78,9 @@ DOUBLE_BATTLE_TEST("Sticky Web lowers Speed by 1 in a double battle after Explos
 SINGLE_BATTLE_TEST("Sticky Web raises Speed by 1 for a Pokemon with Contrary")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_SHUCKLE) { Ability(ABILITY_CONTRARY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_ATTACK_UTSUHO) { Ability(ABILITY_CONTRARY); }
     } WHEN {
         TURN { MOVE(player, MOVE_STICKY_WEB); }
         TURN { SWITCH(opponent, 1); }

@@ -15,8 +15,8 @@ SINGLE_BATTLE_TEST("Headbutt flinches the target if attacker is faster")
     PARAMETRIZE { isFaster = FALSE; spdPlayer = 5; spdOpponent = 10; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(spdPlayer); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(spdOpponent); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(spdPlayer); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(spdOpponent); }
     } WHEN {
         TURN { MOVE(player, MOVE_HEADBUTT); }
         TURN { MOVE(player, MOVE_HEADBUTT); }
@@ -46,8 +46,8 @@ SINGLE_BATTLE_TEST("Headbutt flinches the target if attacker is faster")
 SINGLE_BATTLE_TEST("Protect always works when used after flinching")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_PROTECT); MOVE(opponent, MOVE_HEADBUTT); }
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_HEADBUTT); }

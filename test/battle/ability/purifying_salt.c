@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves", s16 dam
     PARAMETRIZE { ability = ABILITY_PURIFYING_SALT; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SHADOW_BALL].type == TYPE_GHOST);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_GARGANACL) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_SHADOW_BALL); }
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail")
 {
     GIVEN {
         PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_PURIFYING_SALT); HP(1); MaxHP(100);}
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_REST); }
     } SCENE {
@@ -48,8 +48,8 @@ SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects")
         ASSUME(gMovesInfo[MOVE_THUNDER_WAVE].effect == EFFECT_PARALYZE);
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
         ASSUME(MoveHasAdditionalEffect(MOVE_POWDER_SNOW, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_PURIFYING_SALT); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_PURIFYING_SALT); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {

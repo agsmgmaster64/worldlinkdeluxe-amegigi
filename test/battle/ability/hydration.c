@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Hydration cures non-volatile Status conditions if it is rain
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_MOKOU) { Ability(ABILITY_HYDRATION); Status1(STATUS1_BURN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
     } SCENE {

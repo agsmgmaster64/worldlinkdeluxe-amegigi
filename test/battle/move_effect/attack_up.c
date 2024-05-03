@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Meditate raises Attack", s16 damage)
     PARAMETRIZE { raiseAttack = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (raiseAttack) TURN { MOVE(player, MOVE_MEDITATE); }
         TURN { MOVE(player, MOVE_TACKLE); }

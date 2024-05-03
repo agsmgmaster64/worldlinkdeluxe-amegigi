@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Tablets of Ruin reduces Attack if opposing mon's ability doe
 
     GIVEN {
         PLAYER(SPECIES_WO_CHIEN) { Ability(ABILITY_TABLETS_OF_RUIN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); MOVE(player, MOVE_ENTRAINMENT); }
         TURN { MOVE(opponent, MOVE_TACKLE); }

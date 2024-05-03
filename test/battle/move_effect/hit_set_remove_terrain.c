@@ -32,8 +32,8 @@ SINGLE_BATTLE_TEST("Steel Roller and Ice Spinner can remove a terrain from the f
     }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, terrainMove); MOVE(player, removeTerrainMove); }
     } SCENE {
@@ -60,8 +60,8 @@ SINGLE_BATTLE_TEST("Steel Roller and Ice Spinner can remove a terrain from the f
 SINGLE_BATTLE_TEST("Steel Roller fails if there is no terrain on the field")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_STEEL_ROLLER); }
     } SCENE {
@@ -73,8 +73,8 @@ SINGLE_BATTLE_TEST("Steel Roller fails if there is no terrain on the field")
 SINGLE_BATTLE_TEST("Ice Spinner doesn't fail if there is no terrain on the field")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ICE_SPINNER); }
     } SCENE {

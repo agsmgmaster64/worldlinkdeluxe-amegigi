@@ -4,8 +4,8 @@
 SINGLE_BATTLE_TEST("Octolock decreases Defense and Sp. Def by at the end of the turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
     } SCENE {
@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
     PARAMETRIZE { species = SPECIES_SOLGALEO; ability = ABILITY_FULL_METAL_BODY; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
@@ -71,7 +71,7 @@ SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Body, White Smoke a
 SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_TECH_CIRNO) { Ability(ABILITY_BIG_PECKS); }
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
@@ -89,8 +89,8 @@ SINGLE_BATTLE_TEST("Octolock Defense reduction is prevented by Big Pecks")
 SINGLE_BATTLE_TEST("Octolock reduction is prevented by Clear Amulet")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_CLEAR_AMULET); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_CLEAR_AMULET); }
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
         TURN {}
@@ -111,8 +111,8 @@ SINGLE_BATTLE_TEST("Octolock will not decrease Defense and Sp. Def further then 
     u8 j;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_OCTOLOCK); }
         for (j = 0; j < 6; j++)

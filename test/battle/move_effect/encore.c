@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for player")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_ENCORE); }
         TURN { FORCED_MOVE(player); }
@@ -28,8 +28,8 @@ SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for player")
 SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for opponent")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_ENCORE); }
         TURN { FORCED_MOVE(opponent); }
@@ -47,8 +47,8 @@ SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for opponent
 SINGLE_BATTLE_TEST("Encore has no effect if no previous move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_ENCORE); MOVE(player, MOVE_CELEBRATE); }
     } SCENE {
@@ -60,8 +60,8 @@ SINGLE_BATTLE_TEST("Encore has no effect if no previous move")
 SINGLE_BATTLE_TEST("Encore overrides the chosen move if it occurs first")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
         TURN { MOVE(opponent, MOVE_ENCORE); MOVE(player, MOVE_SPLASH); }

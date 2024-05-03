@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Vessel of Ruin reduces Sp. Atk if opposing mon's ability doe
 
     GIVEN {
         PLAYER(SPECIES_TING_LU) { Ability(ABILITY_VESSEL_OF_RUIN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_GUN); MOVE(player, MOVE_ENTRAINMENT); }
         TURN { MOVE(opponent, MOVE_WATER_GUN); }

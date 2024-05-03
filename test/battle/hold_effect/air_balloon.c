@@ -12,8 +12,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Air Balloon prevents the holder from taking damage from ground type moves")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EARTHQUAKE); }
     } SCENE {
@@ -27,8 +27,8 @@ SINGLE_BATTLE_TEST("Air Balloon prevents the holder from taking damage from grou
 SINGLE_BATTLE_TEST("Air Balloon pops when the holder is hit by a move that is not ground type")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -41,8 +41,8 @@ SINGLE_BATTLE_TEST("Air Balloon pops when the holder is hit by a move that is no
 SINGLE_BATTLE_TEST("Air Balloon no longer prevents the holder from taking damage from ground type moves once it has been popped")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -59,8 +59,8 @@ SINGLE_BATTLE_TEST("Air Balloon no longer prevents the holder from taking damage
 SINGLE_BATTLE_TEST("Air Balloon can not be restored with Recycle after it has been popped")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
             MOVE(opponent, MOVE_TACKLE);
@@ -78,8 +78,8 @@ SINGLE_BATTLE_TEST("Air Balloon can not be restored with Recycle after it has be
 SINGLE_BATTLE_TEST("Air Balloon prevents the user from being healed by Grassy Terrain")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); MaxHP(100); HP(1); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); MaxHP(100); HP(1); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_GRASSY_TERRAIN); }
     } SCENE {
@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Air Balloon prevents the user from being healed by Grassy Te
 SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Magician")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
         OPPONENT(SPECIES_DELPHOX) { Ability(ABILITY_MAGICIAN); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -110,8 +110,8 @@ SINGLE_BATTLE_TEST("Air Balloon pops before it can be stolen with Thief or Covet
     PARAMETRIZE { move = MOVE_COVET; }
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(move, MOVE_EFFECT_STEAL_ITEM) == TRUE);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_AIR_BALLOON); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {

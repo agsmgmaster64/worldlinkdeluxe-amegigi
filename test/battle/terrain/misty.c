@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Misty Terrain protects grounded battlers from non-volatile status conditions")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CLAYDOL) { Ability(ABILITY_LEVITATE); }
     } WHEN {
         TURN { MOVE(player, MOVE_MISTY_TERRAIN); MOVE(opponent, MOVE_TOXIC); }
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Misty Terrain activates Misty Seed and Mimicry")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_MISTY_SEED].holdEffect == HOLD_EFFECT_SEEDS);
         ASSUME(gItemsInfo[ITEM_MISTY_SEED].holdEffectParam == HOLD_EFFECT_PARAM_MISTY_TERRAIN);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MISTY_SEED); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_MISTY_SEED); }
         OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_MISTY_TERRAIN); }
@@ -44,8 +44,8 @@ SINGLE_BATTLE_TEST("Misty Terrain does not increase the power of Fairy-type move
     PARAMETRIZE { terrain = FALSE; }
     PARAMETRIZE { terrain = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_MISTY_TERRAIN); }
@@ -64,8 +64,8 @@ SINGLE_BATTLE_TEST("Misty Terrain decreases power of Dragon-type moves by 50 per
     PARAMETRIZE { terrain = FALSE; }
     PARAMETRIZE { terrain = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_MISTY_TERRAIN); }
@@ -81,8 +81,8 @@ SINGLE_BATTLE_TEST("Misty Terrain decreases power of Dragon-type moves by 50 per
 SINGLE_BATTLE_TEST("Misty Terrain lasts for 5 turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_MISTY_TERRAIN); }
         TURN {}

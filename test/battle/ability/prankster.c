@@ -3,14 +3,14 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gSpeciesInfo[SPECIES_UMBREON].types[0] == TYPE_DARK);
+    ASSUME(gSpeciesInfo[SPECIES_TECH_YAMAME].types[0] == TYPE_DARK);
     ASSUME(gMovesInfo[MOVE_CONFUSE_RAY].category == DAMAGE_CATEGORY_STATUS);
 }
 
 SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon")
 {
     GIVEN {
-        PLAYER(SPECIES_UMBREON);
+        PLAYER(SPECIES_TECH_YAMAME);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -23,8 +23,8 @@ SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon")
 SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon after they switch-in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_UMBREON);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_TECH_YAMAME);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -38,9 +38,9 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon")
 {
     GIVEN {
         PLAYER(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_UMBREON);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_TECH_YAMAME);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CONFUSE_RAY, target: playerRight); }
     } SCENE {
@@ -52,9 +52,9 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon")
 SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark-type Pokémon")
 {
     GIVEN {
-        PLAYER(SPECIES_UMBREON);
+        PLAYER(SPECIES_TECH_YAMAME);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CONFUSE_RAY); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_CONFUSE_RAY); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_ASSIST); }
     } SCENE {
@@ -68,9 +68,9 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect D
 {
     GIVEN {
         PLAYER(SPECIES_VOLBEAT) { Speed(20); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(10);}
-        OPPONENT(SPECIES_UMBREON) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10);}
+        OPPONENT(SPECIES_TECH_YAMAME) { Speed(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CONFUSE_RAY, target: opponentLeft);
                MOVE(playerRight, MOVE_INSTRUCT, target: playerLeft);
@@ -88,7 +88,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect D
 SINGLE_BATTLE_TEST("Prankster increases the priority of moves by 1")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10); }
         OPPONENT(SPECIES_VOLBEAT) { Speed(5); Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CONFUSE_RAY); MOVE(player, MOVE_CELEBRATE, WITH_RNG(RNG_CONFUSION, FALSE)); } // RNG_CONFUSION so that Wobb doesn't hit itself.
@@ -102,9 +102,9 @@ DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-ty
 {
     GIVEN {
         PLAYER(SPECIES_VOLBEAT) { Speed(1); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(1);}
-        OPPONENT(SPECIES_UMBREON) { Speed(10); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(10); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1);}
+        OPPONENT(SPECIES_TECH_YAMAME) { Speed(10); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(10); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_AFTER_YOU, target: playerRight);
                MOVE(playerRight, MOVE_CONFUSE_RAY, target: opponentLeft);
@@ -121,7 +121,7 @@ DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-ty
 SINGLE_BATTLE_TEST("Prankster is blocked by Quick Guard in Gen5+")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_QUICK_GUARD); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -137,9 +137,9 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are succes
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CAPTIVATE].target == MOVE_TARGET_BOTH);
         PLAYER(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_UMBREON);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_TECH_YAMAME);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CAPTIVATE); }
     } SCENE {
@@ -150,7 +150,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are succes
 SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by Dark-types using Magic Coat")
 {
     GIVEN {
-        PLAYER(SPECIES_UMBREON);
+        PLAYER(SPECIES_TECH_YAMAME);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -172,7 +172,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
 
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(sableyeAbility); }
-        OPPONENT(SPECIES_MURKROW) { Ability(ABILITY_PRANKSTER); }
+        OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Boun
 {
     GIVEN {
         PLAYER(SPECIES_ABSOL) { Item(ITEM_ABSOLITE); }
-        OPPONENT(SPECIES_MURKROW) { Ability(ABILITY_PRANKSTER); }
+        OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {

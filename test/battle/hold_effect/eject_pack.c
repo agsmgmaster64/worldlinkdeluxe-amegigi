@@ -10,9 +10,9 @@ SINGLE_BATTLE_TEST("Eject Pack does not cause the new pokemon to lose hp due to 
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_PACK); }
         PLAYER(SPECIES_WYNAUT) { Item(ITEM_LIFE_ORB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_OVERHEAT); SEND_OUT(player, 1); }
     } SCENE {
@@ -29,8 +29,8 @@ SINGLE_BATTLE_TEST("Eject Pack does not cause the new pokemon to lose hp due to 
 SINGLE_BATTLE_TEST("Eject Pack does not activate if there are no pokemon left to battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
-        PLAYER(SPECIES_WOBBUFFET) { HP(0); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_PACK); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(0); }
         OPPONENT(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { }
@@ -47,9 +47,9 @@ SINGLE_BATTLE_TEST("Eject Pack triggers on the correct pokemon")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_PACK); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_PACK); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET)  { Item(ITEM_EJECT_PACK); }
+        OPPONENT(SPECIES_CHIBI_YUUGI)  { Item(ITEM_EJECT_PACK); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_OVERHEAT); SEND_OUT(player, 1); }

@@ -9,7 +9,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ZAMAZENTA) { Ability(ABILITY_DAUNTLESS_SHIELD); }
     } WHEN {
         TURN { }
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage")
 SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage only once per battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ZAMAZENTA) { Ability(ABILITY_DAUNTLESS_SHIELD); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -49,7 +49,7 @@ SINGLE_BATTLE_TEST("Dauntless Shield activates when it's no longer effected by N
 {
     GIVEN {
         PLAYER(SPECIES_ATTACK_KEINE) { Ability(ABILITY_NEUTRALIZING_GAS); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ZAMAZENTA) { Ability(ABILITY_DAUNTLESS_SHIELD); }
     } WHEN {
         TURN { SWITCH(player, 1); }

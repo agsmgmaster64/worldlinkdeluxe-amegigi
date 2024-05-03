@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Torment prevents consecutive move uses")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TORMENT); MOVE(opponent, MOVE_SPLASH); }
         TURN { MOVE(opponent, MOVE_SPLASH, allowed: FALSE); MOVE(opponent, MOVE_CELEBRATE); }
@@ -25,8 +25,8 @@ SINGLE_BATTLE_TEST("Torment prevents consecutive move uses")
 SINGLE_BATTLE_TEST("Torment forces Struggle if the only move is prevented")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_SPLASH); }
     } WHEN {
         TURN { MOVE(player, MOVE_TORMENT); MOVE(opponent, MOVE_SPLASH); }
         TURN { MOVE(opponent, MOVE_SPLASH, allowed: FALSE); }
@@ -39,8 +39,8 @@ SINGLE_BATTLE_TEST("Torment forces Struggle if the only move is prevented")
 SINGLE_BATTLE_TEST("Torment allows non-consecutive move uses")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TORMENT); MOVE(opponent, MOVE_SPLASH); }
         TURN { MOVE(opponent, MOVE_CELEBRATE); }

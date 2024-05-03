@@ -16,7 +16,7 @@ SINGLE_BATTLE_TEST("Triple Arrows may lower Defense by one stage")
     PASSES_RANDOMLY(chance, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
         PLAYER(SPECIES_NORMAL_MOMIJI) { Ability(ability); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Triple Arrows makes the foe flinch 30% of the time")
     PASSES_RANDOMLY(chance, 100, RNG_SECONDARY_EFFECT_2);
     GIVEN {
         PLAYER(SPECIES_NORMAL_MOMIJI) { Ability(ability); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
     } SCENE {
@@ -50,8 +50,8 @@ SINGLE_BATTLE_TEST("Triple Arrows lands a critical hit")
     ASSUME(gMovesInfo[MOVE_TRIPLE_ARROWS].criticalHitStage == 1);
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
     } SCENE {
@@ -63,8 +63,8 @@ SINGLE_BATTLE_TEST("Triple Arrows lands a critical hit")
 SINGLE_BATTLE_TEST("Triple Arrows can lower Defense and cause flinch at the time")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
     } SCENE {
@@ -78,7 +78,7 @@ SINGLE_BATTLE_TEST("Triple Arrows can lower Defense and cause flinch at the time
 SINGLE_BATTLE_TEST("Triple Arrows's flinching is prevented by Inner Focus")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_RIOLU) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS);

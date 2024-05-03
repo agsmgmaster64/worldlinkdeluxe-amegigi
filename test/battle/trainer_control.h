@@ -29,7 +29,7 @@
 #line 9
             .nickname = COMPOUND_STRING("Bubbles"),
 #line 9
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_CHIBI_YUUGI,
 #line 9
             .gender = TRAINER_MON_FEMALE,
 #line 9
@@ -63,7 +63,7 @@
             },
             {
 #line 24
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_CHIBI_YUUGI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

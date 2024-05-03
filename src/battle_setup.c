@@ -669,13 +669,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_SPEED:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_NORMAL_KOMACHI:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
-        break;
+    //case SPECIES_ATTACK_NUE:
+    //case SPECIES_TECH_NUE:
+        //CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        //break;
+    //case SPECIES_NORMAL_KOMACHI:
+        //CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+        //break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

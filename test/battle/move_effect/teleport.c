@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Teleport fails when there is no pokemon to switch in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TELEPORT); }
     } SCENE {
@@ -21,8 +21,8 @@ SINGLE_BATTLE_TEST("Teleport fails when there is no pokemon to switch in")
 SINGLE_BATTLE_TEST("Teleport fails when there no alive pokemon left")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT) { HP(0); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TELEPORT); }
@@ -34,8 +34,8 @@ SINGLE_BATTLE_TEST("Teleport fails when there no alive pokemon left")
 SINGLE_BATTLE_TEST("Teleport forces the pokemon to switch out")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TELEPORT); SEND_OUT(opponent, 1); }
@@ -48,8 +48,8 @@ SINGLE_BATTLE_TEST("Teleport forces the pokemon to switch out")
 SINGLE_BATTLE_TEST("Teleport does not fail if the user is trapped")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_FIRE_SPIN); MOVE(opponent, MOVE_TELEPORT); SEND_OUT(opponent, 1); }

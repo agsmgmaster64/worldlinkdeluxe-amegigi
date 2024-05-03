@@ -12,8 +12,8 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after switch ou
     PARAMETRIZE { ability = ABILITY_INTIMIDATE; }
     PARAMETRIZE { ability = ABILITY_MAINTENANCE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ability); }
     } WHEN {
         TURN { SWITCH(opponent, 1); }
@@ -37,8 +37,8 @@ SINGLE_BATTLE_TEST("Intimidate (opponent) lowers player's attack after KO", s16 
     PARAMETRIZE { ability = ABILITY_INTIMIDATE; }
     PARAMETRIZE { ability = ABILITY_MAINTENANCE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(1); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ability); Speed(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(opponent, 1); }
@@ -61,12 +61,12 @@ DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double ba
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_SPEED_LILY_BLACK);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -102,9 +102,9 @@ SINGLE_BATTLE_TEST("Intimidate and Eject Button force the opponent to Attack")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
-        OPPONENT(SPECIES_HITMONTOP) { Moves(MOVE_TACKLE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_BUTTON); }
+        OPPONENT(SPECIES_ATTACK_MURASA) { Moves(MOVE_TACKLE); }
     } WHEN {
         TURN {
                MOVE(player, MOVE_QUICK_ATTACK);
@@ -128,10 +128,10 @@ SINGLE_BATTLE_TEST("Intimidate and Eject Button force the opponent to Attack")
 DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CROAGUNK);
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_HITMONTOP) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_ATTACK_MURASA) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_RALTS);
         OPPONENT(SPECIES_AZURILL);
     } WHEN {
@@ -166,11 +166,11 @@ DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched 
 {
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); Item(ITEM_ELECTRIC_SEED); }
         OPPONENT(SPECIES_WYNAUT) { HP(1); }
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_U_TURN, target: opponentLeft); SEND_OUT(playerLeft, 2); SEND_OUT(opponentLeft, 2); }
     } SCENE {
@@ -188,8 +188,8 @@ DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched 
 SINGLE_BATTLE_TEST("Intimidate can not further lower opponents Atk stat if it is at minimum stages")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CHARM); }

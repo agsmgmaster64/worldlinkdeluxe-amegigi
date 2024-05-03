@@ -14,8 +14,8 @@ SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by one stage when 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_MARANGA_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_MARANGA_BERRY); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_APPLIN) { Item(ITEM_MARANGA_BERRY); Ability(ABILITY_RIPEN); }
     } WHEN {
         TURN { MOVE(player, MOVE_SWIFT); }
@@ -58,8 +58,8 @@ SINGLE_BATTLE_TEST("Maranga Berry raises the holder's Sp. Def by two stages with
 SINGLE_BATTLE_TEST("Maranga Berry doesn't trigger if the item hold user used a special move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MARANGA_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_MARANGA_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SWIFT); }
     } SCENE {

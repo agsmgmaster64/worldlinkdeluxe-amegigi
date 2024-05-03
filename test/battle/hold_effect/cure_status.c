@@ -15,8 +15,8 @@ SINGLE_BATTLE_TEST("Pecha and Lum Berries cure poison")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_POISON_POWDER); }
     } SCENE {
@@ -37,8 +37,8 @@ SINGLE_BATTLE_TEST("Pecha and Lum Berries cure bad poison")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
@@ -59,8 +59,8 @@ SINGLE_BATTLE_TEST("Rawst and Lum Berries cure burn")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_RAWST_BERRY].holdEffect == HOLD_EFFECT_CURE_BRN);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_WILL_O_WISP); }
     } SCENE {
@@ -81,8 +81,8 @@ SINGLE_BATTLE_TEST("Aspear and Lum Berries cure freeze")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ASPEAR_BERRY].holdEffect == HOLD_EFFECT_CURE_FRZ);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_ICE_PUNCH); }
     } SCENE {
@@ -103,8 +103,8 @@ SINGLE_BATTLE_TEST("Chesto and Lum Berries cure sleep")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_CHESTO_BERRY].holdEffect == HOLD_EFFECT_CURE_SLP);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_HYPNOSIS); }
     } SCENE {
@@ -125,8 +125,8 @@ SINGLE_BATTLE_TEST("Cheri and Lum Berries cure paralysis")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_CHERI_BERRY].holdEffect == HOLD_EFFECT_CURE_PAR);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_WAVE); }
     } SCENE {
@@ -147,8 +147,8 @@ SINGLE_BATTLE_TEST("Perism and Lum Berries cure confusion")
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PERSIM_BERRY].holdEffect == HOLD_EFFECT_CURE_CONFUSION);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_CONFUSE_RAY); }
     } SCENE {
@@ -176,8 +176,8 @@ SINGLE_BATTLE_TEST("Berry hold effect cures status if a pokemon enters a battle"
         ASSUME(gItemsInfo[ITEM_CHERI_BERRY].holdEffect == HOLD_EFFECT_CURE_PAR);
         ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
         ASSUME(gItemsInfo[ITEM_CHESTO_BERRY].holdEffect == HOLD_EFFECT_CURE_SLP);
-        PLAYER(SPECIES_WOBBUFFET) { Status1(status); Item(ITEM_LUM_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(status); Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); Item(ITEM_LUM_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(status); Item(item); }
     } WHEN {
         TURN { }
     } SCENE {
@@ -196,8 +196,8 @@ SINGLE_BATTLE_TEST("Opponent Pokemon can be further poisoned with Toxic spikes a
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
         ASSUME(gItemsInfo[ITEM_LUM_BERRY].holdEffect == HOLD_EFFECT_CURE_STATUS);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
@@ -236,10 +236,10 @@ SINGLE_BATTLE_TEST("Player Pokemon can be further poisoned with Toxic spikes aft
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
         ASSUME(gItemsInfo[ITEM_LUM_BERRY].holdEffect == HOLD_EFFECT_CURE_STATUS);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET) {Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI) {Item(item); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(player, 1); }

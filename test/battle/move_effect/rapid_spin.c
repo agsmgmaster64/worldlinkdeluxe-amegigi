@@ -14,8 +14,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Rapin Spin blows away Wrap, hazards and raises Speed (Gen 8+)")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WRAP); }
         TURN { MOVE(opponent, MOVE_STEALTH_ROCK); MOVE(player, MOVE_RAPID_SPIN); }
@@ -34,8 +34,8 @@ SINGLE_BATTLE_TEST("Rapin Spin blows away Wrap, hazards and raises Speed (Gen 8+
 SINGLE_BATTLE_TEST("Mortal Spin blows away Wrap, hazards and poisons foe")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WRAP); }
         TURN { MOVE(opponent, MOVE_STEALTH_ROCK); MOVE(player, MOVE_MORTAL_SPIN); }

@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by a damaging move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Cotton Down drops speed by one of opposing battler if hit by
 SINGLE_BATTLE_TEST("Cotton Down drops speed by one for each multi hit")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
     } WHEN {
         TURN { MOVE(player, MOVE_DOUBLE_KICK); }
@@ -41,10 +41,10 @@ SINGLE_BATTLE_TEST("Cotton Down drops speed by one for each multi hit")
 DOUBLE_BATTLE_TEST("Cotton Down drops speed by one of all other battlers on the field")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft); }
     } SCENE {

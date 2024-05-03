@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Embody Aspect raises a stat depending on the users form by o
     PARAMETRIZE { species = SPECIES_OGERPON_CORNERSTONE_MASK_TERA; ability = ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { }
@@ -43,7 +43,7 @@ SINGLE_BATTLE_TEST("Embody Aspect activates when it's no longer effected by Neut
 {
     GIVEN {
         PLAYER(SPECIES_ATTACK_KEINE) { Ability(ABILITY_NEUTRALIZING_GAS); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_OGERPON_TEAL_MASK_TERA) { Ability(ABILITY_EMBODY_ASPECT_TEAL_MASK); }
     } WHEN {
         TURN { SWITCH(player, 1); }

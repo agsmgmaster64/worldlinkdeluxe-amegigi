@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Enigma Berry recovers 25% of HP if hit by super effective mo
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT) { MaxHP(100); HP(2); Item(ITEM_ENIGMA_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ENDURE); MOVE(opponent, MOVE_BITE); }
     } SCENE {
@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Enigma Berry does nothing if not hit by super effective move
 {
     GIVEN {
         PLAYER(SPECIES_MIGHTYENA) { MaxHP(100); HP(2); Item(ITEM_ENIGMA_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ENDURE); MOVE(opponent, MOVE_BITE); }
     } SCENE {
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Enigma Berry does nothing if Heal Block applies")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT) { MaxHP(100); HP(2); Item(ITEM_ENIGMA_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); }
         TURN { MOVE(player, MOVE_ENDURE); MOVE(opponent, MOVE_BITE); }

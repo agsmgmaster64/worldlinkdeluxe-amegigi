@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Aurora Veil can only be used in Hail and Snow")
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_AURORA_VEIL); }
     } SCENE {

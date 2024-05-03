@@ -310,7 +310,7 @@ static const u16 sSlowbroFormSpeciesIdTable[] = {
 
 #if P_GEN_2_CROSS_EVOS
 static const u16 sSlowkingFormSpeciesIdTable[] = {
-    SPECIES_SLOWKING,
+    SPECIES_NORMAL_PARSEE,
 #if P_GALARIAN_FORMS
     SPECIES_SLOWKING_GALARIAN,
 #endif
@@ -363,9 +363,9 @@ static const u16 sGengarFormSpeciesIdTable[] = {
 #if P_FAMILY_ONIX
 #if P_GEN_2_CROSS_EVOS
 static const u16 sSteelixFormSpeciesIdTable[] = {
-    SPECIES_STEELIX,
+    SPECIES_ATTACK_RIN,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_STEELIX_MEGA,
+    SPECIES_ATTACK_RIN_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -454,7 +454,7 @@ static const u16 sMrMimeFormSpeciesIdTable[] = {
 #if P_FAMILY_SCYTHER
 #if P_GEN_2_CROSS_EVOS
 static const u16 sScizorFormSpeciesIdTable[] = {
-    SPECIES_SCIZOR,
+    SPECIES_NORMAL_UTSUHO,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SCIZOR_MEGA,
 #endif
@@ -599,7 +599,7 @@ static const u16 sAmpharosFormSpeciesIdTable[] = {
 
 #if P_FAMILY_WOOPER
 static const u16 sWooperFormSpeciesIdTable[] = {
-    SPECIES_WOOPER,
+    SPECIES_CHIBI_YAMAME,
 #if P_PALDEAN_FORMS
     SPECIES_WOOPER_PALDEAN,
 #endif
@@ -609,7 +609,7 @@ static const u16 sWooperFormSpeciesIdTable[] = {
 
 #if P_FAMILY_UNOWN
 static const u16 sUnownFormSpeciesIdTable[] = {
-    SPECIES_UNOWN,
+    SPECIES_TECH_PARSEE,
     SPECIES_UNOWN_B,
     SPECIES_UNOWN_C,
     SPECIES_UNOWN_D,
@@ -651,7 +651,7 @@ static const u16 sDudunsparceFormSpeciesIdTable[] = {
 
 #if P_FAMILY_QWILFISH
 static const u16 sQwilfishFormSpeciesIdTable[] = {
-    SPECIES_QWILFISH,
+    SPECIES_CHIBI_UTSUHO,
 #if P_HISUIAN_FORMS
     SPECIES_QWILFISH_HISUIAN,
 #endif
@@ -661,7 +661,7 @@ static const u16 sQwilfishFormSpeciesIdTable[] = {
 
 #if P_FAMILY_HERACROSS
 static const u16 sHeracrossFormSpeciesIdTable[] = {
-    SPECIES_HERACROSS,
+    SPECIES_SPEED_UTSUHO,
 #if P_MEGA_EVOLUTIONS
     SPECIES_HERACROSS_MEGA,
 #endif
@@ -671,7 +671,7 @@ static const u16 sHeracrossFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SNEASEL
 static const u16 sSneaselFormSpeciesIdTable[] = {
-    SPECIES_SNEASEL,
+    SPECIES_CHIBI_SATORI,
 #if P_HISUIAN_FORMS
     SPECIES_SNEASEL_HISUIAN,
 #endif
@@ -689,7 +689,7 @@ static const u16 sUrsalunaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_CORSOLA
 static const u16 sCorsolaFormSpeciesIdTable[] = {
-    SPECIES_CORSOLA,
+    SPECIES_SPEED_KOISHI,
 #if P_GALARIAN_FORMS
     SPECIES_CORSOLA_GALARIAN,
 #endif
@@ -709,7 +709,7 @@ static const u16 sHoundoomFormSpeciesIdTable[] = {
 
 #if P_FAMILY_LARVITAR
 static const u16 sTyranitarFormSpeciesIdTable[] = {
-    SPECIES_TYRANITAR,
+    SPECIES_NORMAL_NUE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_TYRANITAR_MEGA,
 #endif

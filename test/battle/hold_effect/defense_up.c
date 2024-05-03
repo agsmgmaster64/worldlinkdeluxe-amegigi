@@ -16,8 +16,8 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises the holder's Defense by one stage when H
     PARAMETRIZE { move = MOVE_DRAGON_RAGE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_GANLON_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(160); HP(80); Item(ITEM_GANLON_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_MERLIN) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_GANLON_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {
@@ -57,7 +57,7 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
 {
     GIVEN {
         PLAYER(SPECIES_APPLIN) { MaxHP(160); HP(80); Ability(ABILITY_RIPEN); Item(ITEM_GANLON_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {

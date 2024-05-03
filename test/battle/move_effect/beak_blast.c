@@ -11,9 +11,9 @@ DOUBLE_BATTLE_TEST("Beak Blast's charging message is shown before other moves ar
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BEAK_BLAST].priority < 0);
         PLAYER(SPECIES_WYNAUT) { Speed(10); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(3); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_BEAK_BLAST, target: opponentLeft); }
     } SCENE {
@@ -39,9 +39,9 @@ DOUBLE_BATTLE_TEST("Beak Blast burns all who make contact with the pokemon")
         ASSUME(gMovesInfo[MOVE_BEAK_BLAST].priority < 0);
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         PLAYER(SPECIES_WYNAUT) { Speed(10); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_TACKLE, target: playerLeft); MOVE(playerLeft, MOVE_BEAK_BLAST, target: opponentLeft); }
     } SCENE {
@@ -83,8 +83,8 @@ SINGLE_BATTLE_TEST("Beak Blast burns only when contact moves are used")
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         ASSUME(!gMovesInfo[MOVE_WATER_GUN].makesContact);
         ASSUME(!gMovesInfo[MOVE_LEER].makesContact);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_BEAK_BLAST); MOVE(opponent, move); }
         TURN {}

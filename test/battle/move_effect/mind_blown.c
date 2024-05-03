@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Mind Blown makes the user lose 1/2 of its HP")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(400); MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(400); MaxHP(400); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MIND_BLOWN); }
     } SCENE {
@@ -23,10 +23,10 @@ SINGLE_BATTLE_TEST("Mind Blown makes the user lose 1/2 of its HP")
 DOUBLE_BATTLE_TEST("Mind Blown makes the user lose 1/2 of its HP in a double battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(400); MaxHP(400); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(400); MaxHP(400); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MIND_BLOWN); }
     } SCENE {
@@ -39,8 +39,8 @@ DOUBLE_BATTLE_TEST("Mind Blown makes the user lose 1/2 of its HP in a double bat
 SINGLE_BATTLE_TEST("Mind Blown causes the user to faint when below 1/2 of its HP")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); MaxHP(400); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MIND_BLOWN); }
     } SCENE {
@@ -53,10 +53,10 @@ SINGLE_BATTLE_TEST("Mind Blown causes the user to faint when below 1/2 of its HP
 DOUBLE_BATTLE_TEST("Mind Blown causes the user to faint when below 1/2 of its HP in a double battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); MaxHP(400); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); MaxHP(400); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MIND_BLOWN); }
     } SCENE {
@@ -69,9 +69,9 @@ DOUBLE_BATTLE_TEST("Mind Blown causes the user to faint when below 1/2 of its HP
 SINGLE_BATTLE_TEST("Mind Blown causes the user & the target to faint when below 1/2 of its HP")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200) ; MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200) ; MaxHP(400); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MIND_BLOWN); }
     } SCENE {
@@ -86,7 +86,7 @@ SINGLE_BATTLE_TEST("Mind Blown causes the user & the target to faint when below 
 DOUBLE_BATTLE_TEST("Mind Blown causes everyone to faint in a double battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); MaxHP(400); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); MaxHP(400); }
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK) { HP(1); }
         OPPONENT(SPECIES_CHIBI_LUNASA) { HP(1); }
@@ -110,7 +110,7 @@ SINGLE_BATTLE_TEST("Mind Blown hp loss is prevented by Magic Guard")
 {
     GIVEN {
         PLAYER(SPECIES_TECH_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MIND_BLOWN); }
     } SCENE {

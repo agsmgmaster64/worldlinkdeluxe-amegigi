@@ -11,8 +11,8 @@ SINGLE_BATTLE_TEST("Photon Geyser can be mirror coated if it is a special move")
     GIVEN {
         // EFFECT_PHOTON_GEYSER requires the move data to be Special to work
         ASSUME(gMovesInfo[MOVE_PHOTON_GEYSER].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET) { Attack(100); SpAttack(110); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Attack(100); SpAttack(110); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PHOTON_GEYSER); MOVE(opponent, MOVE_MIRROR_COAT); }
     } SCENE {
@@ -26,8 +26,8 @@ SINGLE_BATTLE_TEST("Photon Geyser can be mirror coated if it is a special move")
 SINGLE_BATTLE_TEST("Photon Geyser can be countered if it is a physcal move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Attack(110); SpAttack(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Attack(110); SpAttack(100); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PHOTON_GEYSER); MOVE(opponent, MOVE_COUNTER); }
     } SCENE {
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Photon Geyser can be countered if it is a physcal move")
 SINGLE_BATTLE_TEST("Photon Geyser ignores ignorable Abilities like Battle Armor")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_KAGUYA) { Ability(ABILITY_SHELL_ARMOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_PHOTON_GEYSER, criticalHit: TRUE); }

@@ -16,8 +16,8 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2 when HP drop
     PARAMETRIZE { move = MOVE_DRAGON_RAGE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -38,7 +38,7 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2 when HP drop
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_MERLIN) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_MICLE_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {
@@ -53,8 +53,8 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2")
     PASSES_RANDOMLY(24, 25, RNG_ACCURACY);
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SUBMISSION].accuracy == 80);
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_SUBMISSION); }
     } SCENE {

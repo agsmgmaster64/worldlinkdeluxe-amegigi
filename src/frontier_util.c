@@ -110,7 +110,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_DISABLE},
             },
             {
-                .species = SPECIES_ENTEI,
+                .species = SPECIES_NORMAL_BYAKUREN,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 24,
                 .nature = NATURE_LONELY,
@@ -129,7 +129,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_RAIKOU,
+                .species = SPECIES_CHIBI_BYAKUREN,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
@@ -259,7 +259,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_YAWN},
             },
             {
-                .species = SPECIES_SUICUNE,
+                .species = SPECIES_DEFENSE_BYAKUREN,
                 .heldItem = ITEM_KINGS_ROCK,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_HASTY,
@@ -273,7 +273,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Silver Symbol.
         {
             {
-                .species = SPECIES_HERACROSS,
+                .species = SPECIES_SPEED_UTSUHO,
                 .heldItem = ITEM_SALAC_BERRY,
                 .fixedIV = 20,
                 .nature = NATURE_JOLLY,
@@ -281,7 +281,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_MEGAHORN, MOVE_ROCK_TOMB, MOVE_ENDURE, MOVE_REVERSAL},
             },
             {
-                .species = SPECIES_UMBREON,
+                .species = SPECIES_TECH_YAMAME,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = 20,
                 .nature = NATURE_CALM,
@@ -300,7 +300,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
-                .species = SPECIES_UMBREON,
+                .species = SPECIES_TECH_YAMAME,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_CALM,
@@ -395,7 +395,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_GIGA_DRAIN},
             },
             {
-                .species = SPECIES_SHUCKLE,
+                .species = SPECIES_ATTACK_UTSUHO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 16,
                 .nature = NATURE_BOLD,
@@ -422,7 +422,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_BOMB, MOVE_GIGA_DRAIN},
             },
             {
-                .species = SPECIES_STEELIX,
+                .species = SPECIES_ATTACK_RIN,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
@@ -625,8 +625,6 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
 
 const u16 gFrontierBannedSpecies[] =
 {
-    SPECIES_NORMAL_KOMACHI, SPECIES_CHIBI_KOMACHI,
-    SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
     SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS,
     SPECIES_DIALGA, SPECIES_PALKIA, SPECIES_GIRATINA, SPECIES_MANAPHY, SPECIES_PHIONE, SPECIES_DARKRAI, SPECIES_SHAYMIN, SPECIES_ARCEUS,
     SPECIES_VICTINI, SPECIES_RESHIRAM, SPECIES_ZEKROM, SPECIES_KYUREM, SPECIES_KELDEO, SPECIES_MELOETTA, SPECIES_GENESECT,

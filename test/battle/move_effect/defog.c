@@ -22,8 +22,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_DEFOG); }
     } SCENE {
@@ -36,8 +36,8 @@ SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1")
 SINGLE_BATTLE_TEST("Defog does not lower evasiveness if target behind Substitute")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); MOVE(player, MOVE_DEFOG); }
     } SCENE {
@@ -58,10 +58,10 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Reflect and Light 
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_REFLECT); MOVE(opponentRight, MOVE_LIGHT_SCREEN); }
         TURN { MOVE(playerLeft, move, target: opponentLeft); }
@@ -93,10 +93,10 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Mist and Safeguard
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_MIST); MOVE(opponentRight, MOVE_SAFEGUARD); }
         TURN { MOVE(playerLeft, move, target: opponentLeft); }
@@ -138,11 +138,11 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Stealth Rock and S
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_STEALTH_ROCK); MOVE(opponentRight, MOVE_STICKY_WEB); }
         TURN { MOVE(playerLeft, move, target: opponentLeft); }
@@ -186,9 +186,9 @@ SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Spikes from player
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SPIKES); MOVE(player, move); }
         TURN { SWITCH(player, 1); }
@@ -226,8 +226,8 @@ SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes terrain")
     PARAMETRIZE { move = MOVE_GRASSY_TERRAIN; }
     GIVEN {
         ASSUME(B_DEFOG_CLEARS_TERRAIN >= GEN_8);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
     } WHEN {
         TURN { MOVE(player, move); MOVE(opponent, MOVE_DEFOG); }
     } SCENE {
@@ -258,9 +258,9 @@ SINGLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Toxic Spikes from 
     PARAMETRIZE { move = MOVE_DEFOG; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); MOVE(opponent, move); }
         TURN { SWITCH(opponent, 1); }

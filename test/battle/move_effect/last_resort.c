@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Last Resort always fails if it's the only known move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_LAST_RESORT); }
         TURN { MOVE(player, MOVE_LAST_RESORT); }
@@ -26,8 +26,8 @@ SINGLE_BATTLE_TEST("Last Resort always fails if it's the only known move")
 SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been used - 2 moves")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_LAST_RESORT); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -44,8 +44,8 @@ SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been
 SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been used - 3 moves")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE, MOVE_SCRATCH); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE, MOVE_SCRATCH); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_LAST_RESORT); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -67,8 +67,8 @@ SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been
 SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been used - 4 moves")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE, MOVE_SCRATCH, MOVE_GUST); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT, MOVE_TACKLE, MOVE_SCRATCH, MOVE_GUST); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_LAST_RESORT); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -96,8 +96,8 @@ SINGLE_BATTLE_TEST("Last Resort works with Sleep Talk")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SLEEP_TALK].effect == EFFECT_SLEEP_TALK);
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT, MOVE_SLEEP_TALK); Status1(STATUS1_SLEEP_TURN(3)); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT, MOVE_SLEEP_TALK); Status1(STATUS1_SLEEP_TURN(3)); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SLEEP_TALK); }
         TURN { MOVE(player, MOVE_SLEEP_TALK); }

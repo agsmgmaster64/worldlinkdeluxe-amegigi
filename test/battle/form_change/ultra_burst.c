@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Dusk Mane Necrozma can Ultra Burst holding Ultranecrozium Z"
 {
     GIVEN {
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, ultraBurst: TRUE); }
     } SCENE {
@@ -21,9 +21,9 @@ DOUBLE_BATTLE_TEST("Ultra Burst's order is determined by Speed - opponent faster
 {
     GIVEN {
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); Speed(1); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
         OPPONENT(SPECIES_NECROZMA_DAWN_WINGS) { Item(ITEM_ULTRANECROZIUM_Z); Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE, ultraBurst: TRUE); MOVE(playerLeft, MOVE_CELEBRATE, ultraBurst: TRUE); }
     } SCENE {
@@ -40,9 +40,9 @@ DOUBLE_BATTLE_TEST("Ultra Burst's order is determined by Speed - player faster")
 {
     GIVEN {
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); Speed(5); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
         OPPONENT(SPECIES_NECROZMA_DAWN_WINGS) { Item(ITEM_ULTRANECROZIUM_Z); Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE, ultraBurst: TRUE); MOVE(playerLeft, MOVE_CELEBRATE, ultraBurst: TRUE); }
     } SCENE {
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Ultra Burst affects turn order")
     GIVEN {
         ASSUME(B_MEGA_EVO_TURN_ORDER >= GEN_7);
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); Speed(105); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(106); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(106); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, ultraBurst: TRUE); }
     } SCENE {
@@ -75,11 +75,11 @@ DOUBLE_BATTLE_TEST("Ultra Burst happens after switching, but before Focus Punch-
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FOCUS_PUNCH].effect == EFFECT_FOCUS_PUNCH);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_NECROZMA_DUSK_MANE) { Item(ITEM_ULTRANECROZIUM_Z); }
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { SWITCH(opponentRight, 2); MOVE(playerRight, MOVE_FOCUS_PUNCH, ultraBurst: TRUE, target: opponentLeft); MOVE(playerLeft, MOVE_FOCUS_PUNCH, target: opponentLeft); }
         TURN {}

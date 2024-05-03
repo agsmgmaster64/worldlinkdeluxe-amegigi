@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Hunger Switch switches Morpeko's forms at the end of the tur
     PARAMETRIZE { species = SPECIES_MORPEKO_HANGRY; }
     GIVEN {
         PLAYER(species) { Speed(2); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
     } SCENE {

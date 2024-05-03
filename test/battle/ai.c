@@ -9,7 +9,7 @@ AI_SINGLE_BATTLE_TEST("AI gets baited by Protect Switch tactics") // This behavi
         PLAYER(SPECIES_STUNFISK);
         PLAYER(SPECIES_PELIPPER);
         OPPONENT(SPECIES_DARKRAI) { Moves(MOVE_TACKLE, MOVE_PECK, MOVE_EARTHQUAKE, MOVE_THUNDERBOLT); }
-        OPPONENT(SPECIES_SCIZOR) { Moves(MOVE_HYPER_BEAM, MOVE_FACADE, MOVE_GIGA_IMPACT, MOVE_EXTREME_SPEED); }
+        OPPONENT(SPECIES_NORMAL_UTSUHO) { Moves(MOVE_HYPER_BEAM, MOVE_FACADE, MOVE_GIGA_IMPACT, MOVE_EXTREME_SPEED); }
     } WHEN {
 
         TURN { MOVE(player, MOVE_PROTECT);  EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); } // E-quake
@@ -31,8 +31,8 @@ AI_SINGLE_BATTLE_TEST("AI prefers Bubble over Water Gun if it's slower")
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_SCIZOR) { Speed(speedPlayer); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_WATER_GUN, MOVE_BUBBLE); Speed(speedAi); }
+        PLAYER(SPECIES_NORMAL_UTSUHO) { Speed(speedPlayer); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_WATER_GUN, MOVE_BUBBLE); Speed(speedAi); }
     } WHEN {
         if (speedPlayer > speedAi)
         {
@@ -55,7 +55,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers Water Gun over Bubble if it knows that foe has
     PARAMETRIZE { abilityAI = ABILITY_MOLD_BREAKER; } // Mold Breaker ignores Contrary.
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_SHUCKLE) { Ability(ABILITY_CONTRARY); }
+        PLAYER(SPECIES_ATTACK_UTSUHO) { Ability(ABILITY_CONTRARY); }
         OPPONENT(SPECIES_ATTACK_EIRIN) { Moves(MOVE_WATER_GUN, MOVE_BUBBLE); Ability(abilityAI); }
     } WHEN {
             TURN { MOVE(player, MOVE_DEFENSE_CURL); }
@@ -98,8 +98,8 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they b
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(hp); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(hp); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
         ASSUME(gMovesInfo[MOVE_SWIFT].accuracy == 0);
         ASSUME(gMovesInfo[MOVE_SLAM].power == gMovesInfo[MOVE_STRENGTH].power);
         ASSUME(gMovesInfo[MOVE_MEGA_KICK].power > gMovesInfo[MOVE_STRENGTH].power);
@@ -172,7 +172,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves which deal more damage instead of moves 
         ASSUME(gMovesInfo[MOVE_WATER_GUN].category == DAMAGE_CATEGORY_SPECIAL);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_DEFENSE_EIKI) { Ability(abilityDef); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_PATCHOULI) { Moves(move1, move2, move3, move4); Ability(abilityAtk); }
     } WHEN {
             switch (turns)
@@ -200,7 +200,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers Earthquake over Drill Run if both require the 
         ASSUME(gMovesInfo[MOVE_DRILL_RUN].category == DAMAGE_CATEGORY_PHYSICAL);  // Added because Geodude has to KO Typhlosion
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_DEFENSE_EIKI);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HELPER_LYRICA) { Moves(MOVE_EARTHQUAKE, MOVE_DRILL_RUN); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -225,8 +225,8 @@ AI_SINGLE_BATTLE_TEST("AI prefers a weaker move over a one with a downside effec
         ASSUME(gMovesInfo[MOVE_FLAMETHROWER].category == DAMAGE_CATEGORY_SPECIAL); // Added because Typhlosion has to KO Wobbuffet
         ASSUME(gMovesInfo[MOVE_OVERHEAT].category == DAMAGE_CATEGORY_SPECIAL);     // Added because Typhlosion has to KO Wobbuffet
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(hp); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(hp); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_DEFENSE_EIKI) { Moves(move1, move2, move3, move4); }
     } WHEN {
         switch (turns)
@@ -248,9 +248,9 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with the best possible score, chosen ran
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(5); };
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_THUNDERBOLT, MOVE_POISON_BOMB, MOVE_TAKE_DOWN); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(5); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_THUNDERBOLT, MOVE_POISON_BOMB, MOVE_TAKE_DOWN); }
     } WHEN {
         TURN { EXPECT_MOVES(opponent, MOVE_THUNDERBOLT, MOVE_POISON_BOMB); SEND_OUT(player, 1); }
     }
@@ -265,8 +265,8 @@ AI_SINGLE_BATTLE_TEST("AI can choose a status move that boosts the attack by two
         ASSUME(gMovesInfo[MOVE_STRENGTH].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_KNIFE_THROW].category == DAMAGE_CATEGORY_PHYSICAL);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(277); };
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(277); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_TEWI) { Moves(MOVE_STRENGTH, MOVE_KNIFE_THROW, MOVE_SWORDS_DANCE); }
     } WHEN {
         TURN { EXPECT_MOVES(opponent, MOVE_STRENGTH, MOVE_SWORDS_DANCE); }
@@ -298,8 +298,8 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(5); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_GEODUDE) { Moves(move1, move2, move3, move4); Ability(abilityAtk); Item(holdItemAtk); }
     } WHEN {
         TURN {  if (expectedMove2 == MOVE_NONE) { EXPECT_MOVE(opponent, expectedMove); SEND_OUT(player, 1); }
@@ -327,8 +327,8 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     KNOWN_FAILING;
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(5); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HELPER_LYRICA) { Moves(move1, move2, move3, move4); Ability(abilityAtk); Item(holdItemAtk); }
     } WHEN {
         TURN {  if (expectedMove2 == MOVE_NONE) { EXPECT_MOVE(opponent, expectedMove); SEND_OUT(player, 1); }
@@ -353,8 +353,8 @@ AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user
         ASSUME(gMovesInfo[MOVE_SOLAR_BEAM].category == DAMAGE_CATEGORY_SPECIAL);
         ASSUME(gMovesInfo[MOVE_GRASS_PLEDGE].category == DAMAGE_CATEGORY_SPECIAL);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(211); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(211); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_DEFENSE_EIKI) { Moves(MOVE_SOLAR_BEAM, MOVE_GRASS_PLEDGE); Ability(abilityAtk); Item(holdItemAtk); }
     } WHEN {
         if (abilityAtk == ABILITY_DROUGHT) {
@@ -378,7 +378,7 @@ AI_SINGLE_BATTLE_TEST("AI won't use ground type attacks against flying type Poke
         ASSUME(gMovesInfo[MOVE_EARTHQUAKE].category == DAMAGE_CATEGORY_PHYSICAL); // Otherwise, it doesn't KO Crobat
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_DEFENSE_HINA);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_PATCHOULI) { Moves(MOVE_EARTHQUAKE, MOVE_TACKLE, MOVE_POISON_STING, MOVE_GUST); }
     } WHEN {
         TURN { NOT_EXPECT_MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -405,10 +405,10 @@ AI_DOUBLE_BATTLE_TEST("AI won't use a Weather changing move if partner already c
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(weatherMoveLeft); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE, weatherMoveRight); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(weatherMoveLeft); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_TACKLE, weatherMoveRight); }
     } WHEN {
             TURN {  NOT_EXPECT_MOVE(opponentRight, weatherMoveRight);
                     SCORE_LT_VAL(opponentRight, weatherMoveRight, AI_SCORE_DEFAULT, target:playerLeft);
@@ -428,10 +428,10 @@ AI_DOUBLE_BATTLE_TEST("AI will not use Helping Hand if partner does not have any
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HELPING_HAND, MOVE_TACKLE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(move1, move2, move3, move4); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_HELPING_HAND, MOVE_TACKLE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(move1, move2, move3, move4); }
     } WHEN {
             TURN {  NOT_EXPECT_MOVE(opponentLeft, MOVE_HELPING_HAND);
                     SCORE_LT_VAL(opponentLeft, MOVE_HELPING_HAND, AI_SCORE_DEFAULT, target:playerLeft);
@@ -457,10 +457,10 @@ AI_DOUBLE_BATTLE_TEST("AI will not use a status move if partner already chose He
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HELPING_HAND); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_TACKLE, statusMove); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_HELPING_HAND); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_TACKLE, statusMove); }
     } WHEN {
             TURN {  NOT_EXPECT_MOVE(opponentRight, statusMove);
                     SCORE_LT_VAL(opponentRight, statusMove, AI_SCORE_DEFAULT, target:playerLeft);
@@ -476,7 +476,7 @@ AI_SINGLE_BATTLE_TEST("AI without any flags chooses moves at random - singles")
 {
     GIVEN {
         AI_FLAGS(0);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_PATCHOULI) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
     } WHEN {
             TURN { EXPECT_MOVES(opponent, MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
@@ -492,8 +492,8 @@ AI_DOUBLE_BATTLE_TEST("AI without any flags chooses moves at random - doubles")
 {
     GIVEN {
         AI_FLAGS(0);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_PATCHOULI) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
         OPPONENT(SPECIES_ATTACK_PATCHOULI) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
     } WHEN {
@@ -515,9 +515,9 @@ AI_SINGLE_BATTLE_TEST("AI will choose either Rock Tomb or Bulldoze if Stat drop 
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(46); Speed(20); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(46); Speed(20); }
         PLAYER(SPECIES_WYNAUT) { Speed(20); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(10); Moves(MOVE_BULLDOZE, MOVE_ROCK_TOMB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(10); Moves(MOVE_BULLDOZE, MOVE_ROCK_TOMB); }
     } WHEN {
             TURN { EXPECT_MOVES(opponent, MOVE_BULLDOZE, MOVE_ROCK_TOMB); }
             TURN { EXPECT_MOVES(opponent, MOVE_BULLDOZE, MOVE_ROCK_TOMB); SEND_OUT(player, 1); }
@@ -537,7 +537,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_MON_CHOICES: Number of hits to KO calculati
         OPPONENT(SPECIES_WEAVILE) { Level(100); Moves(MOVE_NIGHT_SLASH, MOVE_TRIPLE_AXEL, MOVE_ICE_SHARD, MOVE_FAKE_OUT); }
         OPPONENT(SPECIES_DEFENSE_KAGUYA) { Level(100); Moves(MOVE_TRANSFORM); }
         OPPONENT(SPECIES_DEFENSE_EIKI) { Level(100); Moves(MOVE_ERUPTION, MOVE_HEAT_WAVE, MOVE_FOCUS_BLAST, MOVE_EXTRASENSORY); }
-        OPPONENT(SPECIES_UMBREON) { Level(100); Item(ITEM_LEFTOVERS); Moves(MOVE_FOUL_PLAY, MOVE_SNARL, MOVE_HELPING_HAND, MOVE_THUNDER_WAVE); }
+        OPPONENT(SPECIES_TECH_YAMAME) { Level(100); Item(ITEM_LEFTOVERS); Moves(MOVE_FOUL_PLAY, MOVE_SNARL, MOVE_HELPING_HAND, MOVE_THUNDER_WAVE); }
     } WHEN {
             TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVES(opponent, MOVE_ZIPPY_ZAP, MOVE_EXTREME_SPEED, MOVE_IRON_TAIL, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -616,8 +616,8 @@ AI_SINGLE_BATTLE_TEST("AI switches if Perish Song is about to kill")
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) {Moves(MOVE_TACKLE); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Moves(MOVE_TACKLE); }
         OPPONENT(SPECIES_DEFENSE_HINA) {Moves(MOVE_TACKLE); }
     } WHEN {
             TURN { MOVE(player, MOVE_PERISH_SONG); }
@@ -703,7 +703,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI switches out after sufficient
 {
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
-        PLAYER(SPECIES_HITMONTOP) { Level(30); Moves(MOVE_CHARM, MOVE_TACKLE); Ability(ABILITY_INTIMIDATE); Speed(5); }
+        PLAYER(SPECIES_ATTACK_MURASA) { Level(30); Moves(MOVE_CHARM, MOVE_TACKLE); Ability(ABILITY_INTIMIDATE); Speed(5); }
         OPPONENT(SPECIES_CHIBI_CHEN) { Level(30); Moves(MOVE_TACKLE); Speed(4); }
         OPPONENT(SPECIES_NORMAL_LAYLA) { Level(30); Moves(MOVE_HEADBUTT); Speed(4); }
     } WHEN {
@@ -725,7 +725,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will not switch out if Pokemo
         ASSUME(gMovesInfo[MOVE_EARTHQUAKE].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_HEADBUTT].category == DAMAGE_CATEGORY_PHYSICAL);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_SWITCHING);
-        PLAYER(SPECIES_HITMONTOP) { Level(30); Moves(MOVE_CHARM, MOVE_TACKLE, MOVE_STEALTH_ROCK, MOVE_EARTHQUAKE); Ability(ABILITY_INTIMIDATE); Speed(5); }
+        PLAYER(SPECIES_ATTACK_MURASA) { Level(30); Moves(MOVE_CHARM, MOVE_TACKLE, MOVE_STEALTH_ROCK, MOVE_EARTHQUAKE); Ability(ABILITY_INTIMIDATE); Speed(5); }
         OPPONENT(SPECIES_CHIBI_CHEN) { Level(30); Moves(MOVE_TACKLE); Item(ITEM_FOCUS_SASH); Speed(4); }
         OPPONENT(SPECIES_NORMAL_LAYLA) { Level(30); Moves(MOVE_HEADBUTT, move1); Speed(4); }
     } WHEN {
@@ -750,7 +750,7 @@ AI_SINGLE_BATTLE_TEST("First Impression is preferred on the first turn of the sp
         ASSUME(gMovesInfo[MOVE_LUNGE].power == 80);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_ATTACK_TEWI);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_FIRST_IMPRESSION, MOVE_LUNGE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_FIRST_IMPRESSION, MOVE_LUNGE); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, MOVE_FIRST_IMPRESSION); }
         TURN { EXPECT_MOVE(opponent, MOVE_LUNGE); }
@@ -772,7 +772,7 @@ AI_SINGLE_BATTLE_TEST("First Impression is not chosen if it's blocked by certain
         ASSUME(gMovesInfo[MOVE_LUNGE].power == 80);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
         PLAYER(species) { Ability(ability); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_FIRST_IMPRESSION, MOVE_LUNGE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_FIRST_IMPRESSION, MOVE_LUNGE); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, MOVE_LUNGE); }
     }
@@ -811,7 +811,7 @@ AI_SINGLE_BATTLE_TEST("AI will not choose Burn Up if the user lost the Fire typi
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BURN_UP].effect == EFFECT_FAIL_IF_NOT_ARG_TYPE);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_NORMAL_EIKI) { Moves(MOVE_BURN_UP, MOVE_EXTRASENSORY, MOVE_FLAMETHROWER); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, MOVE_BURN_UP); }

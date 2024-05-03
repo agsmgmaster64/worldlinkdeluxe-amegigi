@@ -33,8 +33,8 @@ SINGLE_BATTLE_TEST("Bug Bite eats the target's berry and immediately gains its e
     PARAMETRIZE { item = ITEM_SALAC_BERRY; effect = HOLD_EFFECT_SPEED_UP; statId = STAT_SPEED; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(399); MaxHP(400); Status1(status1); Moves(MOVE_SLEEP_TALK, MOVE_BUG_BITE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(399); MaxHP(400); Status1(status1); Moves(MOVE_SLEEP_TALK, MOVE_BUG_BITE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
     } WHEN {
         // Chesto Berry can only be applied if the pokemon is asleep and uses Sleep Talk.
         if (item == ITEM_CHESTO_BERRY) {
@@ -119,8 +119,8 @@ SINGLE_BATTLE_TEST("Tanga Berry activates before Bug Bite")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_TANGA_BERRY].holdEffect == HOLD_EFFECT_RESIST_BERRY);
         ASSUME(gItemsInfo[ITEM_TANGA_BERRY].holdEffectParam == TYPE_HEART);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) {Item(ITEM_TANGA_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Item(ITEM_TANGA_BERRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_BUG_BITE); }
     } SCENE {

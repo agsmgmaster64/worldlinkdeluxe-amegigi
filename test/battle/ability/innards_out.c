@@ -11,9 +11,9 @@ SINGLE_BATTLE_TEST("Innards Out deal dmg on fainting equal to the amount of dmg 
 
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(hp); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(70); SpAttack(1000); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(70); SpAttack(1000); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
         ASSUME(gMovesInfo[MOVE_MANA_BURST].category == DAMAGE_CATEGORY_SPECIAL);
     } WHEN {
@@ -30,8 +30,8 @@ SINGLE_BATTLE_TEST("Innards Out does not trigger after Gastro Acid has been used
 {
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
         ASSUME(gMovesInfo[MOVE_GASTRO_ACID].effect == EFFECT_GASTRO_ACID);
     } WHEN {
@@ -53,7 +53,7 @@ SINGLE_BATTLE_TEST("Innards Out does not damage Magic Guard Pokemon")
 {
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HELPER_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
         ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
     } WHEN {

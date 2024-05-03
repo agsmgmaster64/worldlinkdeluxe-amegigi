@@ -41,8 +41,8 @@ SINGLE_BATTLE_TEST("Protect, Detect, Spiky Shield, Baneful Bunker and Burning Bu
     }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, protectMove); MOVE(player, usedMove); }
         TURN {}
@@ -80,8 +80,8 @@ SINGLE_BATTLE_TEST("King's Shield, Silk Trap and Obstruct protect from damaging 
     }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, protectMove); MOVE(player, usedMove); }
         TURN {}
@@ -132,9 +132,9 @@ SINGLE_BATTLE_TEST("Spiky Shield does 1/8 dmg of max hp of attackers making cont
     PARAMETRIZE { usedMove = MOVE_WATER_GUN; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(hp); MaxHP(maxHp); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(hp); MaxHP(maxHp); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (hp == 1) {
             TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, usedMove); SEND_OUT(player, 1); }
@@ -167,9 +167,9 @@ SINGLE_BATTLE_TEST("Baneful Bunker poisons pokemon for moves making contact")
     PARAMETRIZE {usedMove = MOVE_WATER_GUN; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BANEFUL_BUNKER); MOVE(player, usedMove); }
         TURN {}
@@ -199,9 +199,9 @@ SINGLE_BATTLE_TEST("Burning Bulwark burns pokemon for moves making contact")
     PARAMETRIZE {usedMove = MOVE_WATER_GUN; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BURNING_BULWARK); MOVE(player, usedMove); }
         TURN {}
@@ -324,10 +324,10 @@ DOUBLE_BATTLE_TEST("Wide Guard protects self and ally from multi-target moves")
         ASSUME(gMovesInfo[MOVE_TACKLE].target == MOVE_TARGET_SELECTED);
         ASSUME(gMovesInfo[MOVE_SURF].target == MOVE_TARGET_FOES_AND_ALLY);
         ASSUME(gMovesInfo[MOVE_HYPER_VOICE].target == MOVE_TARGET_BOTH);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_WIDE_GUARD); MOVE(playerLeft, move, target: opponentLeft); }
         TURN {}
@@ -361,10 +361,10 @@ DOUBLE_BATTLE_TEST("Wide Guard can not fail on consecutive turns")
     PASSES_RANDOMLY(2, 2);
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HYPER_VOICE].target == MOVE_TARGET_BOTH);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_WIDE_GUARD); MOVE(playerLeft, MOVE_HYPER_VOICE, target: opponentLeft); }
         TURN { MOVE(opponentLeft, MOVE_WIDE_GUARD); MOVE(playerLeft, MOVE_HYPER_VOICE, target: opponentLeft); }
@@ -395,10 +395,10 @@ DOUBLE_BATTLE_TEST("Quick Guard protects self and ally from priority moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].priority == 0);
         ASSUME(gMovesInfo[MOVE_QUICK_ATTACK].priority == 1);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_QUICK_GUARD); MOVE(playerLeft, move, target:targetOpponent); }
         TURN {}
@@ -424,10 +424,10 @@ DOUBLE_BATTLE_TEST("Quick Guard can not fail on consecutive turns")
     PASSES_RANDOMLY(2, 2);
     GIVEN {
         ASSUME(gMovesInfo[MOVE_QUICK_ATTACK].priority == 1);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_QUICK_GUARD); MOVE(playerLeft, MOVE_QUICK_ATTACK, target: opponentRight); }
         TURN { MOVE(opponentLeft, MOVE_QUICK_GUARD); MOVE(playerLeft, MOVE_QUICK_ATTACK, target: opponentRight); }
@@ -456,10 +456,10 @@ DOUBLE_BATTLE_TEST("Crafty Shield protects self and ally from status moves")
         ASSUME(gMovesInfo[MOVE_LEER].target == MOVE_TARGET_BOTH);
         ASSUME(gMovesInfo[MOVE_HYPER_VOICE].target == MOVE_TARGET_BOTH);
         ASSUME(gMovesInfo[MOVE_HYPER_VOICE].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CRAFTY_SHIELD); (move == MOVE_TACKLE) ? MOVE(playerLeft, move, target:targetOpponent) : MOVE(playerLeft, move); }
         TURN {}

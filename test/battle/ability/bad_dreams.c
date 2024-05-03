@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Bad Dreams causes the sleeping enemy Pokemon to lose 1/8 of 
     PARAMETRIZE { status = STATUS1_SLEEP; }
     GIVEN {
         PLAYER(SPECIES_DARKRAI);
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(status);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(status);}
     } WHEN {
         TURN {;}
     } SCENE {
@@ -39,9 +39,9 @@ DOUBLE_BATTLE_TEST("Bad Dreams does not activate if only the partner Pokemon is 
 {
     GIVEN {
         PLAYER(SPECIES_DARKRAI);
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {;}
     } SCENE {
@@ -60,10 +60,10 @@ DOUBLE_BATTLE_TEST("Bad Dreams does not activate if only the partner Pokemon is 
 DOUBLE_BATTLE_TEST("Bad Dreams activates for both sleeping pokemon on the player side")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
         OPPONENT(SPECIES_DARKRAI);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {;}
     } SCENE {
@@ -83,12 +83,12 @@ DOUBLE_BATTLE_TEST("Bad Dreams activates for both sleeping pokemon on the player
 DOUBLE_BATTLE_TEST("Bad Dreams faints both sleeping Pokemon on player side")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP); HP(1);}
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP); HP(1);}
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
-        PLAYER(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP); HP(1);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP); HP(1);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
         OPPONENT(SPECIES_DARKRAI);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {SEND_OUT(playerLeft, 2); SEND_OUT(playerRight, 3);}
     } SCENE {
@@ -106,11 +106,11 @@ DOUBLE_BATTLE_TEST("Bad Dreams faints both sleeping Pokemon on opponent side")
 {
     GIVEN {
         PLAYER(SPECIES_DARKRAI);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP); HP(1);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP); HP(1);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP); HP(1);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP); HP(1);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
     } WHEN {
         TURN {SEND_OUT(opponentLeft, 2); SEND_OUT(opponentRight, 3);}
     } SCENE {

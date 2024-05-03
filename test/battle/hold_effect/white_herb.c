@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("White Herb restores stats when they're lowered")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_LEER].effect == EFFECT_DEFENSE_DOWN);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_LEER); }
     } SCENE {
@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats when they're lowered")
 SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in singles")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { ; }
@@ -45,10 +45,10 @@ SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
 DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate in doubles")
 {
     GIVEN {
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
         OPPONENT(SPECIES_WYNAUT) { Item(ITEM_WHITE_HERB); }
         PLAYER(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { ; }
     } SCENE {
@@ -72,8 +72,8 @@ DOUBLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimi
 SINGLE_BATTLE_TEST("White Herb restores stats after Attack was lowered by Intimidate while switching in")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }
     } WHEN {
         TURN { SWITCH(opponent, 1); MOVE(player, MOVE_CLOSE_COMBAT); }
@@ -104,7 +104,7 @@ SINGLE_BATTLE_TEST("White Herb restores stats after all hits of a multi hit move
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DUAL_WINGBEAT].strikeCount == 2);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_DUAL_WINGBEAT); }
@@ -134,8 +134,8 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off o
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_THIEF, MOVE_EFFECT_STEAL_ITEM) == TRUE);
         ASSUME(gMovesInfo[MOVE_KNOCK_OFF].effect == EFFECT_KNOCK_OFF);
-        PLAYER(SPECIES_SLUGMA) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_TECH_SATORI) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -163,7 +163,7 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off o
 SINGLE_BATTLE_TEST("White Herb wont have time to activate if Magician steals it")
 {
     GIVEN {
-        PLAYER(SPECIES_SLUGMA) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
+        PLAYER(SPECIES_TECH_SATORI) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
         OPPONENT(SPECIES_FENNEKIN) { Ability(ABILITY_MAGICIAN); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }

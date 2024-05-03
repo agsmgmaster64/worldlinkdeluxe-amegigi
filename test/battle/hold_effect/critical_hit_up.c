@@ -16,8 +16,8 @@ SINGLE_BATTLE_TEST("Lansat Berry raises the holder's critical-hit-ratio by two s
     PARAMETRIZE { move = MOVE_DRAGON_RAGE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_LANSAT_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(160); HP(80); Item(ITEM_LANSAT_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -38,7 +38,7 @@ SINGLE_BATTLE_TEST("Lansat Berry raises the holder's critical-hit-ratio by two s
 {
     GIVEN {
         PLAYER(SPECIES_NORMAL_MERLIN) { MaxHP(80); HP(80); Ability(ABILITY_GLUTTONY); Item(ITEM_LANSAT_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {
@@ -54,8 +54,8 @@ SINGLE_BATTLE_TEST("Lansat Berry raises the holder's critical-hit-ratio by two s
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].criticalHitStage == 0);
         ASSUME(B_CRIT_CHANCE >= GEN_6);
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_LANSAT_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(160); HP(80); Item(ITEM_LANSAT_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_TACKLE); }
     } SCENE {

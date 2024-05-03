@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Parental Bond converts Tackle into a two-strike move")
         ASSUME(gMovesInfo[MOVE_TACKLE].strikeCount < 2);
         ASSUME(gMovesInfo[MOVE_TACKLE].effect == EFFECT_HIT);
         PLAYER(SPECIES_ATTACK_TEWI) { Item(ITEM_KANGASKHANITE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, megaEvolve: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -30,7 +30,7 @@ SINGLE_BATTLE_TEST("Parental Bond does not convert a move with three or more str
         ASSUME(gMovesInfo[MOVE_TRIPLE_KICK].category != DAMAGE_CATEGORY_STATUS);
         ASSUME(gMovesInfo[MOVE_TRIPLE_KICK].strikeCount == 3);
         PLAYER(SPECIES_ATTACK_TEWI) { Item(ITEM_KANGASKHANITE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_KICK, megaEvolve: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -59,7 +59,7 @@ SINGLE_BATTLE_TEST("Parental Bond converts multi-target moves into a two-strike 
         ASSUME(gMovesInfo[MOVE_ICY_WIND].strikeCount < 2);
         ASSUME(gMovesInfo[MOVE_ICY_WIND].target == MOVE_TARGET_BOTH);
         PLAYER(SPECIES_ATTACK_TEWI) { Item(ITEM_KANGASKHANITE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move, megaEvolve: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -83,7 +83,7 @@ DOUBLE_BATTLE_TEST("Parental Bond does not convert multi-target moves into a two
         ASSUME(gSpeciesInfo[SPECIES_PIDGEY].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_ATTACK_TEWI) { Item(ITEM_KANGASKHANITE); }
         PLAYER(SPECIES_PIDGEY);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_PIDGEY);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_EARTHQUAKE, megaEvolve: TRUE); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentLeft, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }

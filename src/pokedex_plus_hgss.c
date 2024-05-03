@@ -4572,7 +4572,7 @@ static u8 PrintCryScreenSpeciesName(u8 windowId, u16 num, u8 left, u8 top)
 // All others use personality 0
 static u32 GetPokedexMonPersonality(u16 species)
 {
-    if (species == SPECIES_UNOWN || species == SPECIES_CHIBI_SUNNY)
+    /*if (species == SPECIES_UNOWN || species == SPECIES_CHIBI_SUNNY)
     {
         if (species == SPECIES_UNOWN)
             return gSaveBlock2Ptr->pokedex.unownPersonality;
@@ -4580,9 +4580,9 @@ static u32 GetPokedexMonPersonality(u16 species)
             return gSaveBlock2Ptr->pokedex.spindaPersonality;
     }
     else
-    {
+    {*/
         return MALE_PERSONALITY;
-    }
+    //}
 }
 
 static u16 CreateMonSpriteFromNationalDexNumberHGSS(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
@@ -6908,11 +6908,11 @@ static void PrintForms(u8 taskId, u16 species)
     u8 times = 0;
     u8 y_offset_icons = 0; //For unown only
 
-    if (species == SPECIES_UNOWN)
-        y_offset_icons = 8;
+    //if (species == SPECIES_UNOWN)
+        //y_offset_icons = 8;
 
-    if (GetFormSpeciesId(species, 0) == SPECIES_UNOWN)
-        y_offset_icons = 8;
+    //if (GetFormSpeciesId(species, 0) == SPECIES_UNOWN)
+        //y_offset_icons = 8;
 
     StringCopy(gStringVar1, GetSpeciesName(species));
 

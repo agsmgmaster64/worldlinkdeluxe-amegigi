@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Rattled boosts speed by 1 when hit by Bug, Dark or Ghost typ
     PARAMETRIZE { move = MOVE_SHADOW_PUNCH; }
     PARAMETRIZE { move = MOVE_TACKLE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) {Speed(42) ;}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(42) ;}
         OPPONENT(SPECIES_DEFENSE_KANAKO) {Speed(40); Ability(ABILITY_RATTLED);}
     } WHEN {
         TURN { MOVE(player, move); }
@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Rattled triggers correctly when hit by U-Turn") // Specific 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_U_TURN].effect == EFFECT_HIT_ESCAPE);
         ASSUME(gMovesInfo[MOVE_U_TURN].type == TYPE_HEART);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_DEFENSE_KANAKO) {Ability(ABILITY_RATTLED); }
         OPPONENT(SPECIES_DEFENSE_KANAKO);

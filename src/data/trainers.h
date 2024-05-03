@@ -8806,7 +8806,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3493
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3495
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -8817,7 +8817,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 3497
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3499
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -8881,7 +8881,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3523
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3525
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -8913,7 +8913,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3536
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3538
             .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
@@ -8945,7 +8945,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3549
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3551
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -8988,7 +8988,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3566
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3568
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -9031,7 +9031,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3583
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3585
             .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -9074,7 +9074,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 3600
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3602
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -10272,7 +10272,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4075
-            .species = SPECIES_GIRAFARIG,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4077
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -10747,7 +10747,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4260
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4262
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -12153,7 +12153,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 4844
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4846
             .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
@@ -21600,7 +21600,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 8582
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8584
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23778,7 +23778,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9451
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9453
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -23832,7 +23832,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9472
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9474
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -24069,7 +24069,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9565
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9567
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -24123,7 +24123,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9586
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9588
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -24213,7 +24213,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9620
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9622
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -24258,7 +24258,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9637
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9639
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -24505,7 +24505,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9730
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9732
             .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -24561,7 +24561,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 9751
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9753
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -26834,7 +26834,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10632
-            .species = SPECIES_GIRAFARIG,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10634
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26932,7 +26932,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10671
-            .species = SPECIES_GIRAFARIG,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10673
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26964,7 +26964,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10684
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10686
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -27521,7 +27521,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10903
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10905
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -30724,7 +30724,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12186
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12188
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -30865,7 +30865,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12240
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12242
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -30921,7 +30921,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12261
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12263
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -31066,7 +31066,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12315
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12317
             .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
@@ -34472,7 +34472,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 13672
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13674
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -35039,7 +35039,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 13891
-            .species = SPECIES_SLUGMA,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13893
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -35974,7 +35974,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 14265
-            .species = SPECIES_STEELIX,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 14267
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -38882,7 +38882,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 15497
-            .species = SPECIES_SLOWKING,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15499
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -42048,7 +42048,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 16750
-            .species = SPECIES_WOBBUFFET,
+            .species = SPECIES_GOLIATH,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 16752
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

@@ -113,11 +113,11 @@ void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontP
             LZ77UnCompWram(gSpeciesInfo[SPECIES_NONE].backPic, dest);
     }
 
-    if (species == SPECIES_CHIBI_SUNNY && isFrontPic)
-    {
-        DrawSpindaSpots(personality, dest, FALSE);
-        DrawSpindaSpots(personality, dest, TRUE);
-    }
+    //if (species == SPECIES_CHIBI_SUNNY && isFrontPic)
+    //{
+        //DrawSpindaSpots(personality, dest, FALSE);
+        //DrawSpindaSpots(personality, dest, TRUE);
+    //}
 }
 
 void Unused_LZDecompressWramIndirect(const void **src, void *dest)

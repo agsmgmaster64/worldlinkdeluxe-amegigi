@@ -23,8 +23,8 @@ SINGLE_BATTLE_TEST("Safety Goggles block powder and spore moves")
 SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Hail")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(player, MOVE_HAIL); }
     } SCENE {
@@ -35,8 +35,8 @@ SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Hail")
 SINGLE_BATTLE_TEST("Safety Goggles blocks damage from Sandstorm")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(player, MOVE_SANDSTORM); }
     } SCENE {

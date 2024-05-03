@@ -8,8 +8,8 @@ SINGLE_BATTLE_TEST("Being underwater causes the target to take double damage fro
     PARAMETRIZE { useDive = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SURF].damagesUnderwater);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
     } WHEN {
         if (useDive)
             TURN { MOVE(opponent, MOVE_DIVE); MOVE(player, MOVE_SURF); }

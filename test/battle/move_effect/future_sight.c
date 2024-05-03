@@ -114,8 +114,8 @@ SINGLE_BATTLE_TEST("Future Sight is affected by type effectiveness")
 SINGLE_BATTLE_TEST("Future Sight will miss timing if target faints before it is about to get hit")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }

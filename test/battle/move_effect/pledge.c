@@ -11,9 +11,9 @@ ASSUMPTIONS
 DOUBLE_BATTLE_TEST("Water and Fire Pledge create a rainbow on the user's side of the field for four turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
@@ -39,9 +39,9 @@ DOUBLE_BATTLE_TEST("Rainbow doubles the chance of secondary move effects")
     PASSES_RANDOMLY(20, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_EMBER, MOVE_EFFECT_BURN) == TRUE);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
@@ -61,8 +61,8 @@ DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace")
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_BITE, MOVE_EFFECT_FLINCH) == TRUE);
         PLAYER(SPECIES_NORMAL_MOMIJI) { Speed(8); Ability(ABILITY_SERENE_GRACE); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
         OPPONENT(SPECIES_WYNAUT) { Speed(3); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
@@ -79,9 +79,9 @@ DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace")
 DOUBLE_BATTLE_TEST("Fire and Grass Pledge summons Sea Of Fire for four turns that damages the opponent")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
@@ -118,9 +118,9 @@ DOUBLE_BATTLE_TEST("Fire and Grass Pledge summons Sea Of Fire for four turns tha
 DOUBLE_BATTLE_TEST("Sea Of Fire deals 1/8th damage per turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
@@ -137,9 +137,9 @@ DOUBLE_BATTLE_TEST("Sea Of Fire deals 1/8th damage per turn")
 DOUBLE_BATTLE_TEST("Grass and Water Pledge create a swamp on the user's side of the field for four turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_GRASS_PLEDGE, target: opponentLeft);
@@ -163,9 +163,9 @@ DOUBLE_BATTLE_TEST("Grass and Water Pledge create a swamp on the user's side of 
 DOUBLE_BATTLE_TEST("Swamp reduces the speed of the effected side by 1/4th")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(5); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
         PLAYER(SPECIES_WYNAUT) { Speed(4); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(12); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(12); }
         OPPONENT(SPECIES_WYNAUT) { Speed(8); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_GRASS_PLEDGE, target: opponentLeft);
@@ -190,9 +190,9 @@ DOUBLE_BATTLE_TEST("The base power of a combined pledge move effect is 150")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HYPER_BEAM].power == 150);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(opponentRight, MOVE_HYPER_BEAM, target: playerRight);
@@ -212,10 +212,10 @@ DOUBLE_BATTLE_TEST("The base power of a combined pledge move effect is 150")
 DOUBLE_BATTLE_TEST("Pledge moves can not be redirected by absorbing abilities")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_LILEEP) { Ability(ABILITY_STORM_DRAIN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentRight);}
     } SCENE {
@@ -233,9 +233,9 @@ DOUBLE_BATTLE_TEST("Pledge status timer does not reset if combined move is used 
     PARAMETRIZE { pledgeMove1 = MOVE_GRASS_PLEDGE; pledgeMove2 = MOVE_WATER_PLEDGE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, pledgeMove1, target: opponentLeft);
@@ -272,13 +272,13 @@ DOUBLE_BATTLE_TEST("Pledge moves get same attack type bonus from partner", s16 d
 {
     u32 species;
 
-    PARAMETRIZE { species = SPECIES_WOBBUFFET; }
+    PARAMETRIZE { species = SPECIES_CHIBI_YUUGI; }
     PARAMETRIZE { species = SPECIES_CHARMANDER; }
 
     GIVEN {
         PLAYER(species) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
         OPPONENT(SPECIES_WYNAUT) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
@@ -314,8 +314,8 @@ DOUBLE_BATTLE_TEST("Damage calculation: Combined pledge move")
     PARAMETRIZE { expectedDamage = 135; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_GRASS_PLEDGE].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
-        PLAYER(SPECIES_WOBBUFFET) { HP(521); SpDefense(152); Speed(3); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(521); SpDefense(152); Speed(3); }
         OPPONENT(SPECIES_CHARIZARD) { Speed(8); }
         OPPONENT(SPECIES_CHIBI_MOKOU) { SpAttack(126); Speed(5); }
     } WHEN {

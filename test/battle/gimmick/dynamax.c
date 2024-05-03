@@ -8,8 +8,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamax increases HP and max HP by 1.5x", u16 hp)
     PARAMETRIZE { dynamax = FALSE; }
     PARAMETRIZE { dynamax = TRUE; }
     GIVEN { // TODO: Dynamax level
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: dynamax); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -31,8 +31,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamax expires after three turns", u16 hp)
     PARAMETRIZE { dynamax = FALSE; }
     PARAMETRIZE { dynamax = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: dynamax); }   // 1st max move
         TURN { MOVE(player, MOVE_TACKLE); }                     // 2nd max move
@@ -59,8 +59,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be flinched")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FAKE_OUT].effect == EFFECT_FIRST_TURN_ONLY);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_FAKE_OUT); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
     } SCENE {
@@ -74,8 +74,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by weight-based mo
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HEAVY_SLAM].effect == EFFECT_HEAT_CRASH);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_HEAVY_SLAM); }
     } SCENE {
@@ -90,7 +90,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by OHKO moves")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FISSURE].effect == EFFECT_OHKO);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_MERLIN) { Ability(ABILITY_NO_GUARD); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_FISSURE); }
@@ -106,8 +106,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by OHKO moves")
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Destiny Bond")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); };
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_DESTINY_BOND); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
     } SCENE {
@@ -121,8 +121,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Destiny Bond
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are affected by Grudge")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); };
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_GRUDGE); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
     } SCENE {
@@ -138,9 +138,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by phazing move
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DRAGON_TAIL].effect == EFFECT_HIT_SWITCH_TARGET);
         ASSUME(gMovesInfo[MOVE_WHIRLWIND].effect == EFFECT_ROAR);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_TAIL); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
         TURN { MOVE(opponent, MOVE_WHIRLWIND); MOVE(player, MOVE_TACKLE); }
@@ -159,9 +159,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by phazing move
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DRAGON_TAIL].effect == EFFECT_HIT_SWITCH_TARGET);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); };
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_TAIL); MOVE(player, MOVE_TACKLE, dynamax: TRUE); SEND_OUT(player, 1); }
     } SCENE {
@@ -177,9 +177,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Red Card")
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_RED_CARD].holdEffect == HOLD_EFFECT_RED_CARD);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -195,9 +195,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Red Card")
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can be switched out by Eject Button")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_BUTTON); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
     } SCENE {
@@ -213,7 +213,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can be switched out by Eject But
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot have their ability swapped to another Pokemon's")
 {
     GIVEN {
-        PLAYER(SPECIES_MILTANK) { Ability(ABILITY_SCRAPPY); }
+        PLAYER(SPECIES_ATTACK_SHOU) { Ability(ABILITY_SCRAPPY); }
         OPPONENT(SPECIES_RUNERIGUS) { Ability(ABILITY_WANDERING_SPIRIT); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_SKILL_SWAP); }
@@ -229,8 +229,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot have their ability swappe
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can have their ability changed or suppressed")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_SHADOW_TAG); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_SIMPLE_BEAM); }
     } SCENE {
@@ -245,8 +245,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can have their ability changed o
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Encore")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_ENCORE); }
         TURN { MOVE(player, MOVE_EMBER); }
@@ -261,8 +261,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Encore")
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can be encored immediately after reverting")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); }; // yes, this speed is necessary
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); }; // yes, this speed is necessary
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); };
     } WHEN {
         TURN { MOVE(player, MOVE_ARM_THRUST, dynamax: TRUE); }
         TURN { MOVE(player, MOVE_ARM_THRUST); }
@@ -281,8 +281,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can be encored immediately after
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon's Max Moves cannot be disabled")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_DISABLE); }
     } SCENE {
@@ -296,8 +296,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can have base moves disabled on 
 {
     GIVEN {
         ASSUME(B_DISABLE_TURNS >= GEN_5);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); };
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_DISABLE); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
@@ -316,8 +316,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can have base moves disabled on 
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Torment")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_TORMENT); }
     } SCENE {
@@ -331,8 +331,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Torment")
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not immune to Knock Off")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_POTION); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -347,8 +347,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not immune to Knock Off")
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon lose their substitutes")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SUBSTITUTE); MOVE(opponent, MOVE_CELEBRATE); }
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_TACKLE); }
@@ -364,9 +364,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon lose their substitutes")
 DOUBLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon can have their base moves copied by Copycat")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TRICK_ROOM, dynamax: TRUE, target: opponentLeft); MOVE(playerRight, MOVE_COPYCAT, target: opponentLeft); }
@@ -383,8 +383,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon take double damage from Dynamax 
     PARAMETRIZE { dynamaxed = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DYNAMAX_CANNON].effect == EFFECT_DYNAMAX_DOUBLE_DMG);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: dynamaxed); MOVE(opponent, MOVE_DYNAMAX_CANNON); }
     } SCENE {
@@ -400,8 +400,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Moves deal 1/4 damage through protect", s16 da
     PARAMETRIZE { protected = TRUE; }
     PARAMETRIZE { protected = FALSE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (protected)
             TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_PROTECT); }
@@ -417,8 +417,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Moves deal 1/4 damage through protect", s16 da
 SINGLE_BATTLE_TEST("(DYNAMAX) Max Moves don't bypass Max Guard")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_PROTECT, dynamax: TRUE); }
     } SCENE {
@@ -429,9 +429,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Moves don't bypass Max Guard")
 DOUBLE_BATTLE_TEST("(DYNAMAX) Feint bypasses Max Guard but doesn't break it")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_PROTECT, dynamax: TRUE);
@@ -450,9 +450,9 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) Feint bypasses Max Guard but doesn't break it")
 DOUBLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are immune to Instruct")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, dynamax: TRUE, target: opponentLeft);
@@ -473,7 +473,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms change upon Dynamaxi
     PARAMETRIZE { gigantamaxFactor = TRUE; species = SPECIES_VENUSAUR_GIGANTAMAX; }
     GIVEN {
         PLAYER(SPECIES_ATTACK_REIMU) { GigantamaxFactor(gigantamaxFactor); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
     } THEN {
@@ -485,8 +485,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms revert upon switchin
 {
     GIVEN {
         PLAYER(SPECIES_ATTACK_REIMU);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
         TURN { SWITCH(player, 1); }
@@ -503,8 +503,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Choice items
     PARAMETRIZE { item = ITEM_NONE; }
     GIVEN {
         ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
-        PLAYER(SPECIES_WOBBUFFET) { Item(item); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
         TURN { MOVE(player, MOVE_ARM_THRUST, dynamax: TRUE); }
@@ -521,8 +521,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot use Max Guard while holdi
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ASSAULT_VEST].holdEffect == HOLD_EFFECT_ASSAULT_VEST);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_ASSAULT_VEST); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ASSAULT_VEST); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
         TURN { MOVE(player, MOVE_PROTECT, allowed: FALSE); MOVE(player, MOVE_TACKLE); }
@@ -545,8 +545,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Endeavor uses a Pokemon's non-Dynamax HP", s16 dam
     PARAMETRIZE { dynamax = FALSE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ENDEAVOR].effect == EFFECT_ENDEAVOR);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ENDEAVOR); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
@@ -564,8 +564,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Super Fang uses a Pokemon's non-Dynamax HP", s16 d
     PARAMETRIZE { dynamax = FALSE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HEAT_CLAW].effect == EFFECT_SUPER_FANG);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAT_CLAW); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
@@ -583,8 +583,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pain Split uses a Pokemon's non-Dynamax HP", s16 d
     PARAMETRIZE { dynamax = FALSE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_PAIN_SPLIT].effect == EFFECT_PAIN_SPLIT);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_PAIN_SPLIT); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
@@ -603,8 +603,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Sitrus Berries heal based on a Pokemon's non-Dynam
     GIVEN {
         ASSUME(I_SITRUS_BERRY_HEAL >= GEN_4);
         ASSUME(gItemsInfo[ITEM_SITRUS_BERRY].holdEffect == HOLD_EFFECT_RESTORE_PCT_HP);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SITRUS_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SITRUS_BERRY); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_FLING); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
@@ -622,8 +622,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Heal Pulse heals based on a Pokemon's non-Dynamax 
     PARAMETRIZE { dynamax = FALSE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HEAL_PULSE].effect == EFFECT_HEAL_PULSE);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); Speed(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(100); Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { MaxHP(100); Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_PULSE); MOVE(player, MOVE_TACKLE, dynamax: dynamax); }
     } SCENE {
@@ -640,8 +640,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Strike lowers single opponent's speed")
     GIVEN {
         // Fails?: ASSUME(GetMaxMove(B_POSITION_PLAYER_LEFT, MOVE_TACKLE) == MOVE_MAX_STRIKE);
         ASSUME(gMovesInfo[MOVE_MAX_STRIKE].argument == MAX_EFFECT_LOWER_SPEED);
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(80); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_TACKLE); }
@@ -664,10 +664,10 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) Max Strike lowers both opponents' speed")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_STRIKE].argument == MAX_EFFECT_LOWER_SPEED);
-        PLAYER(SPECIES_WOBBUFFET) { Speed(80); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(79); }
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(99); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(80); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(79); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(100); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(99); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft, dynamax: TRUE); \
                MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); \
@@ -703,9 +703,9 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) Max Knuckle raises both allies' attack")
         ASSUME(gMovesInfo[MOVE_MAX_KNUCKLE].argument == MAX_EFFECT_RAISE_TEAM_ATTACK);
         ASSUME(gMovesInfo[MOVE_CLOSE_COMBAT].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CLOSE_COMBAT, target: opponentLeft, dynamax: TRUE); \
@@ -743,8 +743,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Flare sets up sunlight")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_FLARE].argument == MAX_EFFECT_SUN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -759,8 +759,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Geyser sets up heavy rain")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_GEYSER].argument == MAX_EFFECT_RAIN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_WATER_GUN, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -775,8 +775,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Hailstorm sets up hail")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_HAILSTORM].argument == MAX_EFFECT_HAIL);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_POWDER_SNOW, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -791,8 +791,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Rockfall sets up a sandstorm")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_ROCKFALL].argument == MAX_EFFECT_SANDSTORM);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROCK_THROW, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -808,9 +808,9 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Overgrowth sets up Grassy Terrain")
     s32 maxHP = 490; // Because of recalculated stats upon Dynamaxing
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_OVERGROWTH].argument == MAX_EFFECT_GRASSY_TERRAIN);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].baseHP == 190);
-        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(maxHP); HP(maxHP / 2); };
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(maxHP); HP(maxHP / 2); };
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].baseHP == 190);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { MaxHP(maxHP); HP(maxHP / 2); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(maxHP); HP(maxHP / 2); };
     } WHEN {
         TURN { MOVE(player, MOVE_VINE_WHIP, dynamax: TRUE); MOVE(opponent, MOVE_CELEBRATE); }
         TURN { MOVE(player, MOVE_VINE_WHIP); MOVE(opponent, MOVE_CELEBRATE); }
@@ -828,8 +828,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Mindstorm sets up Psychic Terrain")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_MINDSTORM].argument == MAX_EFFECT_PSYCHIC_TERRAIN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST, dynamax: TRUE); }
         TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST); }
@@ -845,8 +845,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Lightning sets up Electric Terrain")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_LIGHTNING].argument == MAX_EFFECT_ELECTRIC_TERRAIN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDERBOLT, dynamax: TRUE); MOVE(opponent, MOVE_SPORE); }
     } SCENE {
@@ -860,8 +860,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Starfall sets up Misty Terrain")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAX_STARFALL].argument == MAX_EFFECT_MISTY_TERRAIN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MOONBLAST, dynamax: TRUE); MOVE(opponent, MOVE_TOXIC); }
     } SCENE {
@@ -876,8 +876,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) G-Max Stonesurge sets up Stealth Rocks")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_G_MAX_STONESURGE].argument == MAX_EFFECT_STEALTH_ROCK);
         PLAYER(SPECIES_DREDNAW) { GigantamaxFactor(TRUE); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_LIQUIDATION, dynamax: TRUE); }
         TURN { SWITCH(opponent, 1); }
@@ -896,7 +896,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) G-Max Steelsurge sets up sharp steel")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_G_MAX_STEELSURGE].argument == MAX_EFFECT_STEELSURGE);
         PLAYER(SPECIES_COPPERAJAH) { GigantamaxFactor(TRUE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HATTERENE);
     } WHEN {
         TURN { MOVE(player, MOVE_DRAWN_LINE, dynamax: TRUE); }
@@ -944,7 +944,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Volt Crash paralyzes both opponents")
         ASSUME(gMovesInfo[MOVE_G_MAX_VOLT_CRASH].argument == MAX_EFFECT_PARALYZE_FOES);
         PLAYER(SPECIES_PIKACHU) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_ATTACK_NITORI);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_THUNDERBOLT, target: opponentLeft, dynamax: TRUE); }
@@ -971,7 +971,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Stun Shock paralyzes or poisons both opponen
         ASSUME(gMovesInfo[MOVE_G_MAX_STUN_SHOCK].argument == MAX_EFFECT_POISON_PARALYZE_FOES);
         PLAYER(SPECIES_TOXTRICITY) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_TOXEL);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_THUNDERBOLT, target: opponentLeft, dynamax: TRUE, \
@@ -1041,8 +1041,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Befuddle paralyzes, poisons, or sleeps both 
         ASSUME(gMovesInfo[MOVE_G_MAX_BEFUDDLE].argument == MAX_EFFECT_EFFECT_SPORE_FOES);
         PLAYER(SPECIES_BUTTERFREE) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_CATERPIE);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_BUG_BITE, target: opponentLeft, dynamax: TRUE,
                WITH_RNG(RNG_G_MAX_BEFUDDLE, rng)); }
@@ -1085,8 +1085,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Gold Rush confuses both opponents and genera
         ASSUME(gMovesInfo[MOVE_G_MAX_GOLD_RUSH].argument == MAX_EFFECT_CONFUSE_FOES_PAY_DAY);
         PLAYER(SPECIES_CHIBI_ALICE) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_NORMAL_ALICE);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1105,8 +1105,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Smite confuses both opponents")
         ASSUME(gMovesInfo[MOVE_G_MAX_SMITE].argument == MAX_EFFECT_CONFUSE_FOES);
         PLAYER(SPECIES_HATTERENE) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_HATENNA);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MOONBLAST, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1124,8 +1124,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Cuddle infatuates both opponents, if possibl
         ASSUME(gMovesInfo[MOVE_G_MAX_CUDDLE].argument == MAX_EFFECT_INFATUATE_FOES);
         PLAYER(SPECIES_CHIBI_MOKOU) { Gender(MON_MALE); GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_CHIBI_MOKOU);
-        OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_FEMALE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_MALE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Gender(MON_FEMALE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Gender(MON_MALE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1145,8 +1145,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Terror traps both opponents")
         ASSUME(gMovesInfo[MOVE_G_MAX_TERROR].argument == MAX_EFFECT_MEAN_LOOK);
         PLAYER(SPECIES_ATTACK_RAN) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_CHIBI_RAN);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_LICK, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1164,7 +1164,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Meltdown torments both opponents for 3 turns
         ASSUME(gMovesInfo[MOVE_G_MAX_MELTDOWN].argument == MAX_EFFECT_TORMENT_FOES);
         PLAYER(SPECIES_MELMETAL) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_MELTAN);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WYNAUT) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DRAWN_LINE, target: opponentLeft, dynamax: TRUE); \
@@ -1201,7 +1201,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Wildfire sets a field effect that damages no
         ASSUME(gMovesInfo[MOVE_G_MAX_WILDFIRE].argument == MAX_EFFECT_WILDFIRE);
         PLAYER(SPECIES_CHARIZARD) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_CHARMANDER);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(600); MaxHP(600); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(600); MaxHP(600); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_HELPER_LILY_WHITE);
     } WHEN {
@@ -1247,8 +1247,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Replenish recycles allies' berries 50\% of t
         ASSUME(gMovesInfo[MOVE_G_MAX_REPLENISH].argument == MAX_EFFECT_RECYCLE_BERRIES);
         PLAYER(SPECIES_ATTACK_MEDICINE) { Item(ITEM_APICOT_BERRY); GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_MUNCHLAX) { Item(ITEM_APICOT_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_APICOT_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_APICOT_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_APICOT_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_APICOT_BERRY); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_STUFF_CHEEKS); \
                MOVE(playerRight, MOVE_STUFF_CHEEKS); \
@@ -1276,7 +1276,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Snooze makes only the target drowsy")
         ASSUME(gMovesInfo[MOVE_DARK_PULSE].category == DAMAGE_CATEGORY_SPECIAL); // Otherwise, Blissey faints.
         PLAYER(SPECIES_GRIMMSNARL) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_IMPIDIMP);
-        OPPONENT(SPECIES_BLISSEY);
+        OPPONENT(SPECIES_TECH_SHOU);
         OPPONENT(SPECIES_CHIBI_TEWI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DARK_PULSE, target: opponentLeft, dynamax: TRUE); }
@@ -1299,8 +1299,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Finale heals allies by 1/6 of their health")
         ASSUME(gMovesInfo[MOVE_G_MAX_FINALE].argument == MAX_EFFECT_HEAL_TEAM);
         PLAYER(SPECIES_ALCREMIE) { HP(1); GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_MILCERY) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MOONBLAST, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1319,8 +1319,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Sweetness cures allies' status conditions")
         ASSUME(gMovesInfo[MOVE_G_MAX_SWEETNESS].argument == MAX_EFFECT_AROMATHERAPY);
         PLAYER(SPECIES_APPLETUN) { Status1(STATUS1_POISON); GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_APPLIN)  { Status1(STATUS1_POISON); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_VINE_WHIP, target: opponentLeft, dynamax: TRUE); }
     } SCENE {
@@ -1340,7 +1340,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Centiferno traps both opponents in Fire Spin
         PLAYER(SPECIES_CENTISKORCH) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_SIZZLIPEDE);
         PLAYER(SPECIES_SIZZLIPEDE);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FLAME_CHARGE, target: opponentLeft, dynamax: TRUE); }
@@ -1368,8 +1368,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Chi Strike boosts allies' crit chance")
         ASSUME(gMovesInfo[MOVE_G_MAX_CHI_STRIKE].argument == MAX_EFFECT_CRIT_PLUS);
         PLAYER(SPECIES_CHIBI_MERLIN) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_HELPER_LUNASA);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FORCE_PALM, target: opponentLeft, dynamax: TRUE); }
         TURN { MOVE(playerLeft, MOVE_FORCE_PALM, target: opponentLeft); }
@@ -1420,7 +1420,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max One Blow bypasses Max Guard for full damage"
         ASSUME(gMovesInfo[MOVE_G_MAX_ONE_BLOW].argument == MAX_EFFECT_BYPASS_PROTECT);
         PLAYER(SPECIES_URSHIFU) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_KUBFU);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         if (protect)
@@ -1443,11 +1443,11 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max One Blow bypasses Max Guard for full damage"
 DOUBLE_BATTLE_TEST("(DYNAMAX) Max Flare doesn't softlock the game when fainting player partner")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); };
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_PROTECT, dynamax: TRUE);
                MOVE(opponentLeft, MOVE_V_CREATE, target: playerRight, dynamax: TRUE);
@@ -1459,8 +1459,8 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) Max Flare doesn't softlock the game when fainting 
 SINGLE_BATTLE_TEST("(DYNAMAX) Max Moves don't execute effects on fainted battlers")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); };
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
     } SCENE {

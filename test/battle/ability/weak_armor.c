@@ -18,8 +18,8 @@ SINGLE_BATTLE_TEST("Weak Armor lowers Defense by 1 and boosts Speed by 2 when hi
     PARAMETRIZE { move = MOVE_GUST; }
 
     GIVEN {
-        PLAYER(SPECIES_SLUGMA) { Ability(ABILITY_WEAK_ARMOR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_TECH_SATORI) { Ability(ABILITY_WEAK_ARMOR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -52,9 +52,9 @@ SINGLE_BATTLE_TEST("Weak Armor does not trigger when brought in by Dragon Tail a
     GIVEN {
         ASSUME(gMovesInfo[MOVE_STEALTH_ROCK].effect == EFFECT_STEALTH_ROCK);
         ASSUME(gMovesInfo[MOVE_DRAGON_TAIL].effect == EFFECT_HIT_SWITCH_TARGET);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_SLUGMA) { Ability(ABILITY_WEAK_ARMOR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_TECH_SATORI) { Ability(ABILITY_WEAK_ARMOR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_STEALTH_ROCK); }
         TURN { MOVE(opponent, MOVE_DRAGON_TAIL); }
@@ -80,8 +80,8 @@ SINGLE_BATTLE_TEST("Weak Armor does not trigger when brought in by Dragon Tail a
 SINGLE_BATTLE_TEST("Weak Armor still lowers boosts Speed if Defense can't go any lower")
 {
     GIVEN {
-        PLAYER(SPECIES_SLUGMA) { Ability(ABILITY_WEAK_ARMOR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_TECH_SATORI) { Ability(ABILITY_WEAK_ARMOR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCREECH); }
         TURN { MOVE(opponent, MOVE_SCREECH); }
@@ -107,8 +107,8 @@ SINGLE_BATTLE_TEST("Weak Armor still lowers boosts Speed if Defense can't go any
 SINGLE_BATTLE_TEST("Weak Armor still lowers Defense if Speed can't go any higher")
 {
     GIVEN {
-        PLAYER(SPECIES_SLUGMA) { Ability(ABILITY_WEAK_ARMOR); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_TECH_SATORI) { Ability(ABILITY_WEAK_ARMOR); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_AGILITY); }
         TURN { MOVE(player, MOVE_AGILITY); }
@@ -135,7 +135,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Defense can'
 {
     u32 j;
     GIVEN {
-        PLAYER(SPECIES_MAGCARGO) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
+        PLAYER(SPECIES_CHIBI_KOISHI) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
         OPPONENT(SPECIES_TECH_CHEN) { Ability(ABILITY_SKILL_LINK); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCREECH); }
@@ -173,7 +173,7 @@ SINGLE_BATTLE_TEST("Weak Armor doesn't interrupt multi hit moves if Speed can't 
 {
     u32 j;
     GIVEN {
-        PLAYER(SPECIES_MAGCARGO) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
+        PLAYER(SPECIES_CHIBI_KOISHI) { Ability(ABILITY_WEAK_ARMOR); Defense(999); }
         OPPONENT(SPECIES_TECH_CHEN) { Ability(ABILITY_SKILL_LINK); }
     } WHEN {
         TURN { MOVE(player, MOVE_AGILITY); }

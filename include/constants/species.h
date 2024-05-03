@@ -191,39 +191,39 @@
 #define SPECIES_NORMAL_SUWAKO                           187
 #define SPECIES_ATTACK_SUWAKO                           188
 #define SPECIES_DEFENSE_SUWAKO                          189
-#define SPECIES_AIPOM                                   190 // Kisume
-#define SPECIES_SUNKERN                                 191
-#define SPECIES_SUNFLORA                                192
-#define SPECIES_YANMA                                   193
-#define SPECIES_WOOPER                                  194 // Yamame
-#define SPECIES_QUAGSIRE                                195
-#define SPECIES_ESPEON                                  196
-#define SPECIES_UMBREON                                 197
-#define SPECIES_MURKROW                                 198 // Parsee
-#define SPECIES_SLOWKING                                199
-#define SPECIES_MISDREAVUS                              200
-#define SPECIES_UNOWN                                   201
-#define SPECIES_WOBBUFFET                               202 // Yuugi
-#define SPECIES_GIRAFARIG                               203
-#define SPECIES_PINECO                                  204
-#define SPECIES_FORRETRESS                              205
-#define SPECIES_DUNSPARCE                               206 // Rin
-#define SPECIES_GLIGAR                                  207
-#define SPECIES_STEELIX                                 208
-#define SPECIES_SNUBBULL                                209
+#define SPECIES_CHIBI_KISUME                            190
+#define SPECIES_NORMAL_KISUME                           191
+#define SPECIES_TECH_KISUME                             192
+#define SPECIES_PLACEHOLD_KISUME                        193
+#define SPECIES_CHIBI_YAMAME                            194
+#define SPECIES_NORMAL_YAMAME                           195
+#define SPECIES_SPEED_YAMAME                            196
+#define SPECIES_TECH_YAMAME                             197
+#define SPECIES_CHIBI_PARSEE                            198
+#define SPECIES_NORMAL_PARSEE                           199
+#define SPECIES_DEFENSE_PARSEE                          200
+#define SPECIES_TECH_PARSEE                             201
+#define SPECIES_CHIBI_YUUGI                             202
+#define SPECIES_NORMAL_YUUGI                            203
+#define SPECIES_ATTACK_YUUGI                            204
+#define SPECIES_DEFENSE_YUUGI                           205
+#define SPECIES_CHIBI_RIN                               206
+#define SPECIES_NORMAL_RIN                              207
+#define SPECIES_ATTACK_RIN                              208
+#define SPECIES_SPEED_RIN                               209
 #define SPECIES_ZOMBIE_FAIRY                            210
-#define SPECIES_QWILFISH                                211 // Utsuho
-#define SPECIES_SCIZOR                                  212
-#define SPECIES_SHUCKLE                                 213
-#define SPECIES_HERACROSS                               214
-#define SPECIES_SNEASEL                                 215 // Satori
-#define SPECIES_TEDDIURSA                               216
-#define SPECIES_URSARING                                217
-#define SPECIES_SLUGMA                                  218
-#define SPECIES_MAGCARGO                                219 // Koishi
-#define SPECIES_SWINUB                                  220
-#define SPECIES_PILOSWINE                               221
-#define SPECIES_CORSOLA                                 222
+#define SPECIES_CHIBI_UTSUHO                            211
+#define SPECIES_NORMAL_UTSUHO                           212
+#define SPECIES_ATTACK_UTSUHO                           213
+#define SPECIES_SPEED_UTSUHO                            214
+#define SPECIES_CHIBI_SATORI                            215
+#define SPECIES_NORMAL_SATORI                           216
+#define SPECIES_DEFENSE_SATORI                          217
+#define SPECIES_TECH_SATORI                             218
+#define SPECIES_CHIBI_KOISHI                            219
+#define SPECIES_NORMAL_KOISHI                           220
+#define SPECIES_ATTACK_KOISHI                           221
+#define SPECIES_SPEED_KOISHI                            222
 #define SPECIES_CHIBI_NAZRIN                            223
 #define SPECIES_NORMAL_NAZRIN                           224
 #define SPECIES_TECH_NAZRIN                             225
@@ -232,26 +232,26 @@
 #define SPECIES_NORMAL_KOGASA                           228
 #define SPECIES_SPEED_KOGASA                            229
 #define SPECIES_TECH_KOGASA                             230
-#define SPECIES_PHANPY                                  231 // Ichirin
-#define SPECIES_DONPHAN                                 232
-#define SPECIES_PORYGON2                                233
-#define SPECIES_STANTLER                                234
-#define SPECIES_SMEARGLE                                235 // Murasa
-#define SPECIES_TYROGUE                                 236
-#define SPECIES_HITMONTOP                               237
-#define SPECIES_SMOOCHUM                                238
-#define SPECIES_ELEKID                                  239 // Shou
-#define SPECIES_MAGBY                                   240
-#define SPECIES_MILTANK                                 241
-#define SPECIES_BLISSEY                                 242
-#define SPECIES_RAIKOU                                  243 // Byakuren
-#define SPECIES_ENTEI                                   244
-#define SPECIES_SUICUNE                                 245
-#define SPECIES_LARVITAR                                246
-#define SPECIES_PUPITAR                                 247 // Nue
-#define SPECIES_TYRANITAR                               248
-#define SPECIES_LUGIA                                   249
-#define SPECIES_HO_OH                                   250
+#define SPECIES_CHIBI_ICHIRIN                           231
+#define SPECIES_NORMAL_ICHIRIN                          232
+#define SPECIES_DEFENSE_ICHIRIN                         233
+#define SPECIES_TECH_ICHIRIN                            234
+#define SPECIES_CHIBI_MURASA                            235
+#define SPECIES_NORMAL_MURASA                           236
+#define SPECIES_ATTACK_MURASA                           237
+#define SPECIES_DEFENSE_MURASA                          238
+#define SPECIES_CHIBI_SHOU                              239
+#define SPECIES_NORMAL_SHOU                             240
+#define SPECIES_ATTACK_SHOU                             241
+#define SPECIES_TECH_SHOU                               242
+#define SPECIES_CHIBI_BYAKUREN                          243
+#define SPECIES_NORMAL_BYAKUREN                         244
+#define SPECIES_DEFENSE_BYAKUREN                        245
+#define SPECIES_TECH_BYAKUREN                           246
+#define SPECIES_CHIBI_NUE                               247
+#define SPECIES_NORMAL_NUE                              248
+#define SPECIES_ATTACK_NUE                              249
+#define SPECIES_TECH_NUE                                250
 #define SPECIES_CELEBI                                  251 // Kyouko
 #define SPECIES_TREECKO                                 252
 #define SPECIES_GROVYLE                                 253
@@ -344,24 +344,24 @@
 #define SPECIES_WHISCASH                                340
 #define SPECIES_CORPHISH                                341
 #define SPECIES_CRAWDAUNT                               342
-#define SPECIES_BALTOY                                  343
+#define SPECIES_BALTOY                                  343 // Yorihime
 #define SPECIES_CLAYDOL                                 344
 #define SPECIES_LILEEP                                  345
 #define SPECIES_CRADILY                                 346
-#define SPECIES_ANORITH                                 347
+#define SPECIES_ANORITH                                 347 // Toyohime
 #define SPECIES_ARMALDO                                 348
 #define SPECIES_FEEBAS                                  349
 #define SPECIES_MILOTIC                                 350
 #define SPECIES_CASTFORM                                SPECIES_CASTFORM_NORMAL
-#define SPECIES_CASTFORM_NORMAL                         351
+#define SPECIES_CASTFORM_NORMAL                         351 // Kasen
 #define SPECIES_KECLEON                                 352
 #define SPECIES_SHUPPET                                 353
 #define SPECIES_BANETTE                                 354
-#define SPECIES_DUSKULL                                 355
+#define SPECIES_DUSKULL                                 355 // Tokiko
 #define SPECIES_DUSCLOPS                                356
 #define SPECIES_TROPIUS                                 357
 #define SPECIES_CHIMECHO                                358
-#define SPECIES_ABSOL                                   359
+#define SPECIES_ABSOL                                   359 // Kosuzu
 #define SPECIES_WYNAUT                                  360
 #define SPECIES_SNORUNT                                 361
 #define SPECIES_GLALIE                                  362
@@ -980,7 +980,7 @@
 #define SPECIES_MEWTWO_MEGA_X                           919
 #define SPECIES_MEWTWO_MEGA_Y                           920
 #define SPECIES_AMPHAROS_MEGA                           921
-#define SPECIES_STEELIX_MEGA                            922
+#define SPECIES_ATTACK_RIN_MEGA                            922
 #define SPECIES_SCIZOR_MEGA                             923
 #define SPECIES_HERACROSS_MEGA                          924
 #define SPECIES_HOUNDOOM_MEGA                           925

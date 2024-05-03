@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Beads of Ruin reduces Sp. Def if opposing mon's ability does
 
     GIVEN {
         PLAYER(SPECIES_CHI_YU) { Ability(ABILITY_BEADS_OF_RUIN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_WATER_GUN); MOVE(opponent, MOVE_ROLE_PLAY); }
         TURN { MOVE(player, MOVE_WATER_GUN); }

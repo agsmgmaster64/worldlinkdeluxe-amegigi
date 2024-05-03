@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Dry Skin causes 1/8th Max HP damage in Sun")
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SUNNY_DAY); }
     } SCENE {
@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Dry Skin heals 1/8th Max HP in Rain")
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
     } SCENE {
@@ -39,9 +39,9 @@ SINGLE_BATTLE_TEST("Dry Skin increases damage taken from Fire-type moves by 25%"
         ASSUME(gMovesInfo[MOVE_EMBER].power == 40);
         ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LETTY].types[0] == TYPE_HEART);
         ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LETTY].types[1] == TYPE_NATURE);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_REASON);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_REASON);
-        PLAYER(SPECIES_WOBBUFFET) { SpAttack(71); }
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] == TYPE_REASON);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] == TYPE_REASON);
+        PLAYER(SPECIES_CHIBI_YUUGI) { SpAttack(71); }
         OPPONENT(SPECIES_DEFENSE_LETTY) { Ability(ability); SpDefense(165); }
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER); }
@@ -62,7 +62,7 @@ SINGLE_BATTLE_TEST("Dry Skin heals 25% when hit by water type moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {
@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Dry Skin does not activate if protected")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PROTECT); MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {
@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Dry Skin is only triggered once on multi strike moves")
         ASSUME(gMovesInfo[MOVE_WATER_SHURIKEN].type == TYPE_WATER);
         ASSUME(gMovesInfo[MOVE_WATER_SHURIKEN].effect == EFFECT_MULTI_HIT);
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_SHURIKEN); }
     } SCENE {
@@ -109,7 +109,7 @@ SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activat
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
         PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {

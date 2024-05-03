@@ -127,7 +127,7 @@ static const struct FormChange sGengarFormChangeTable[] = {
 #if P_GEN_2_CROSS_EVOS
 static const struct FormChange sSteelixFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_STEELIX_MEGA, ITEM_STEELIXITE},
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ATTACK_RIN_MEGA, ITEM_STEELIXITE},
 #endif
     {FORM_CHANGE_TERMINATOR},
 };

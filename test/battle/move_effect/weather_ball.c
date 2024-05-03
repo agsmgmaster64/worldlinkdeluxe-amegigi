@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Weather Ball doubles its power and turns to a Fire-type move
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SUNNY_DAY; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_EIKI);
     } WHEN {
         TURN { MOVE(player, move); }
@@ -30,7 +30,7 @@ SINGLE_BATTLE_TEST("Weather Ball doubles its power and turns to a Water-type mov
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_RAIN_DANCE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HELPER_LILY_WHITE);
     } WHEN {
         TURN { MOVE(player, move); }
@@ -48,7 +48,7 @@ SINGLE_BATTLE_TEST("Weather Ball doubles its power and turns to a Rock-type move
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     PARAMETRIZE{ move = MOVE_SANDSTORM; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_NORMAL_EIRIN) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(player, move); }
@@ -67,7 +67,7 @@ SINGLE_BATTLE_TEST("Weather Ball doubles its power and turns to an Ice-type move
     PARAMETRIZE{ move = MOVE_HAIL; }
     PARAMETRIZE{ move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ATTACK_YUUKA) { Item(ITEM_SAFETY_GOGGLES); };
     } WHEN {
         TURN { MOVE(player, move); }

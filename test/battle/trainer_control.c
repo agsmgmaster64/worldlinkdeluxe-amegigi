@@ -27,8 +27,8 @@ TEST("CreateNPCTrainerPartyForTrainer generates customized Pokémon")
     EXPECT(GetMonData(&testParty[0], MON_DATA_POKEBALL, 0) == ITEM_MASTER_ORB);
     EXPECT(GetMonData(&testParty[1], MON_DATA_POKEBALL, 0) == ITEM_TOHO_ORB);
 
-    EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES, 0) == SPECIES_WOBBUFFET);
-    EXPECT(GetMonData(&testParty[1], MON_DATA_SPECIES, 0) == SPECIES_WOBBUFFET);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES, 0) == SPECIES_CHIBI_YUUGI);
+    EXPECT(GetMonData(&testParty[1], MON_DATA_SPECIES, 0) == SPECIES_CHIBI_YUUGI);
 
     EXPECT(GetMonAbility(&testParty[0]) == ABILITY_TELEPATHY);
     EXPECT(GetMonAbility(&testParty[1]) == ABILITY_SHADOW_TAG);

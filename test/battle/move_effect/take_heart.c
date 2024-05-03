@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Take Heart increases Sp. Atk and Sp. Def by one stage")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TAKE_HEART); }
     } SCENE {
@@ -28,8 +28,8 @@ SINGLE_BATTLE_TEST("Take Heart cures the user of all status conditions")
     PARAMETRIZE { status1 = STATUS1_PARALYSIS; }
     PARAMETRIZE { status1 = STATUS1_TOXIC_POISON; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Status1(status1); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status1); };
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TAKE_HEART); }
     } SCENE {

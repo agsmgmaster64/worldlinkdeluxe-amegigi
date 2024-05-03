@@ -11,8 +11,8 @@ SINGLE_BATTLE_TEST("Absorb recovers 50% of the damage dealt")
     s16 damage;
     s16 healed;
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ABSORB); }
     } SCENE {
@@ -28,8 +28,8 @@ SINGLE_BATTLE_TEST("Absorb fails if Heal Block applies")
 {
     ASSUME(B_HEAL_BLOCKING >= GEN_6);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); MOVE(player, MOVE_ABSORB); }
     } SCENE {
@@ -51,10 +51,10 @@ DOUBLE_BATTLE_TEST("Matcha Gatcha recovers 50% of the damage dealt from both tar
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MATCHA_GOTCHA].effect == EFFECT_ABSORB);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MATCHA_GOTCHA); }
     } SCENE {

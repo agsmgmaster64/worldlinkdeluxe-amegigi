@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Volt Absorb heals 25% when hit by electric type moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
         PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_THUNDER_SHOCK); }
     } SCENE {
@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Volt Absorb does not activate if protected")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
         PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PROTECT); MOVE(opponent, MOVE_THUNDER_SHOCK); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Volt Absorb activates on status moves")
         ASSUME(gMovesInfo[MOVE_THUNDER_WAVE].type == TYPE_WIND);
         ASSUME(gMovesInfo[MOVE_THUNDER_WAVE].category == DAMAGE_CATEGORY_STATUS);
         PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_THUNDER_WAVE); }
     } SCENE {
@@ -90,7 +90,7 @@ SINGLE_BATTLE_TEST("Volt Absorb prevents Cell Battery from activating")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_THUNDER_SHOCK].type == TYPE_WIND);
         PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); Item(ITEM_CELL_BATTERY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_THUNDER_SHOCK); }
     } SCENE {

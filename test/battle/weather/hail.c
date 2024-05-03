@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Hail deals 1/16 damage per turn")
 
     GIVEN {
         PLAYER(SPECIES_GLALIE);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {MOVE(player, MOVE_HAIL);}
     } SCENE {
@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Hail damage does not affect Ice-type Pokémon")
 {
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_GLALIE);
     } WHEN {
         TURN {MOVE(player, MOVE_HAIL);}
@@ -35,13 +35,13 @@ SINGLE_BATTLE_TEST("Hail fails if Desolate Land or Primordial Sea are active")
     u32 species;
     u32 item;
 
-    PARAMETRIZE { species = SPECIES_WOBBUFFET; item = ITEM_NONE; }
+    PARAMETRIZE { species = SPECIES_CHIBI_YUUGI; item = ITEM_NONE; }
     PARAMETRIZE { species = SPECIES_GROUDON; item = ITEM_RED_ORB; }
     PARAMETRIZE { species = SPECIES_KYOGRE; item = ITEM_BLUE_ORB; }
 
     GIVEN {
         PLAYER(species) { Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HAIL); }
     } SCENE {

@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Harden raises Defense", s16 damage)
     PARAMETRIZE { raiseDefense = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (raiseDefense) TURN { MOVE(player, MOVE_HARDEN); }
         TURN { MOVE(opponent, MOVE_TACKLE); }

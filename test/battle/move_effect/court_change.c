@@ -12,9 +12,9 @@ DOUBLE_BATTLE_TEST("Court Change swaps entry hazards used by the opponent")
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_STICKY_WEB); MOVE(opponentRight, MOVE_STEALTH_ROCK); }
         TURN { MOVE(opponentLeft, MOVE_SPIKES); MOVE(opponentRight, MOVE_TOXIC_SPIKES); }
@@ -45,9 +45,9 @@ DOUBLE_BATTLE_TEST("Court Change swaps entry hazards used by the opponent")
 DOUBLE_BATTLE_TEST("Court Change swaps entry hazards used by the player")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WYNAUT);
@@ -84,9 +84,9 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps Mist, Safeguard, Lucky
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_MIST); MOVE(opponentRight, MOVE_SAFEGUARD); }
         TURN { MOVE(opponentLeft, MOVE_LUCKY_CHANT); MOVE(opponentRight, MOVE_REFLECT); }
@@ -118,9 +118,9 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps Mist, Safeguard, Lucky
 DOUBLE_BATTLE_TEST("Court Change used by the opponent swaps Mist, Safeguard, Lucky Chant, Reflect, Light Screen, Tailwind")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WYNAUT);

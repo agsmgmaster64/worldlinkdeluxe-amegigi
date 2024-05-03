@@ -43,8 +43,8 @@ DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_POUND].power != 0);
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
         OPPONENT(SPECIES_WYNAUT) { Item(ITEM_POTION); }
         OPPONENT(SPECIES_WYNAUT);
@@ -68,8 +68,8 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
         ASSUME(gMovesInfo[MOVE_POUND].power != 0);
         PLAYER(SPECIES_WYNAUT) { Item(ITEM_POTION); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_POUND, target: target); SEND_OUT(target, 2); }

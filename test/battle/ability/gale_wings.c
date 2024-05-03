@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Gale Wings only grants priority at full HP")
         ASSUME(B_GALE_WINGS >= GEN_7);
         ASSUME(gMovesInfo[MOVE_AERIAL_ACE].type == TYPE_FLYING);
         PLAYER(SPECIES_TALONFLAME) { Ability(ABILITY_GALE_WINGS); HP(hp); MaxHP(100); Speed(1);}
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100);};
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100);};
     } WHEN {
         TURN { MOVE(player, MOVE_AERIAL_ACE); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Gale Wings only grants priority to Flying-type moves")
         ASSUME(gMovesInfo[MOVE_AERIAL_ACE].type == TYPE_FLYING);
         ASSUME(gMovesInfo[MOVE_FLARE_BLITZ].type == TYPE_FIRE);
         PLAYER(SPECIES_TALONFLAME) { Ability(ABILITY_GALE_WINGS); HP(100); MaxHP(100); Speed(1);}
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100);};
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(100);};
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

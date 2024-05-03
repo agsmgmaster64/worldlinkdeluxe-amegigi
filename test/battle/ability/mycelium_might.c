@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Mycelium Might causes the user to move last in the priority 
 {
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_MYCELIUM_MIGHT); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_SPORE); }
     } SCENE {

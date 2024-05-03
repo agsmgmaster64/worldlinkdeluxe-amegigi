@@ -16,8 +16,8 @@ SINGLE_BATTLE_TEST("Kee Berry raises the holder's Defense by one stage when hit 
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_KEE_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_KEE_BERRY); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Kee Berry raises the holder's Defense by one stage when hit 
 SINGLE_BATTLE_TEST("Kee Berry raises the holder's Defense by two stages with Ripen when hit by a physical move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_APPLIN) { Item(ITEM_KEE_BERRY); Ability(ABILITY_RIPEN); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -58,8 +58,8 @@ SINGLE_BATTLE_TEST("Kee Berry raises the holder's Defense by two stages with Rip
 SINGLE_BATTLE_TEST("Kee Berry doesn't trigger if the item hold user used a physical move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_KEE_BERRY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_KEE_BERRY); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {

@@ -9,8 +9,8 @@ ASSUMPTIONS
 WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_POKE_TOY); }
     } SCENE {
@@ -22,8 +22,8 @@ WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if a m
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CHARMING_LOOK].effect == EFFECT_MEAN_LOOK);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CHARMING_LOOK); }
         TURN { USE_ITEM(player, ITEM_POKE_TOY); }
@@ -40,7 +40,7 @@ WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if a m
 WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if an ability forbid them to")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HOURAI) { Ability(ABILITY_ARENA_TRAP); }
     } WHEN {
         TURN { USE_ITEM(player, ITEM_POKE_TOY); }

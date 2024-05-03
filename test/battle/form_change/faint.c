@@ -5,8 +5,8 @@ SINGLE_BATTLE_TEST("Aegislash reverts to Shield Form upon fainting")
 {
     GIVEN {
         PLAYER(SPECIES_AEGISLASH_SHIELD) { HP(1); }
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_GUST); SEND_OUT(player, 1); }
     } SCENE {

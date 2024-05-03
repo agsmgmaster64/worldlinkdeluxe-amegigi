@@ -444,13 +444,13 @@ static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
 {
     {SPECIES_NONE,      ITEM_NONE},
     {SPECIES_NORMAL_SANAE,    ITEM_GANLON_BERRY},
-    {SPECIES_PINECO,    ITEM_APICOT_BERRY},
+    {SPECIES_ATTACK_YUUGI,    ITEM_APICOT_BERRY},
     {SPECIES_NORMAL_KOGASA,  ITEM_RED_UFO},
-    {SPECIES_TEDDIURSA, ITEM_PETAYA_BERRY},
-    {SPECIES_AIPOM,     ITEM_BERRY_JUICE},
-    {SPECIES_SHUCKLE,   ITEM_BERRY_JUICE},
-    {SPECIES_STANTLER,  ITEM_PETAYA_BERRY},
-    {SPECIES_SMEARGLE,  ITEM_SALAC_BERRY},
+    {SPECIES_NORMAL_SATORI, ITEM_PETAYA_BERRY},
+    {SPECIES_CHIBI_KISUME,     ITEM_BERRY_JUICE},
+    {SPECIES_ATTACK_UTSUHO,   ITEM_BERRY_JUICE},
+    {SPECIES_TECH_ICHIRIN,  ITEM_PETAYA_BERRY},
+    {SPECIES_CHIBI_MURASA,  ITEM_SALAC_BERRY},
 };
 
 static const struct OamData sOamData_64x64 =
@@ -5518,10 +5518,10 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
     if (!GetSetPokedexFlag(nationalNum, getFlagCaseId)) // don't set if it's already set
     {
         GetSetPokedexFlag(nationalNum, caseId);
-        if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_UNOWN)
-            gSaveBlock2Ptr->pokedex.unownPersonality = personality;
-        if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_CHIBI_SUNNY)
-            gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
+        //if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_UNOWN)
+            //gSaveBlock2Ptr->pokedex.unownPersonality = personality;
+        //if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_CHIBI_SUNNY)
+            //gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
     }
     
     if (caseId == FLAG_SET_SEEN)
@@ -5554,7 +5554,7 @@ bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId)
 
 bool8 HasTwoFramesAnimation(u16 species)
 {
-    return species != SPECIES_UNOWN;
+    return TRUE;
 }
 
 static bool8 ShouldSkipFriendshipChange(void)

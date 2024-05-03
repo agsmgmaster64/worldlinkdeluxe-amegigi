@@ -119,9 +119,9 @@ DOUBLE_BATTLE_TEST("Defiant sharply raises opponent's Attack after Intimidate")
 SINGLE_BATTLE_TEST("Defiant activates after Sticky Web lowers Speed")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CHIBI_LILY_WHITE) { Ability(ABILITY_DEFIANT); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_STICKY_WEB); }
         TURN { SWITCH(player, 1); }
@@ -185,7 +185,7 @@ SINGLE_BATTLE_TEST("Defiant activates before White Herb")
 
     GIVEN {
         PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -220,7 +220,7 @@ SINGLE_BATTLE_TEST("Defiant activates for each stat that is lowered")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TICKLE].effect == EFFECT_TICKLE);
         PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TICKLE); }
     } SCENE {
@@ -257,7 +257,7 @@ SINGLE_BATTLE_TEST("Defiant doesn't activate if the pokemon lowers it's own stat
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_MAKE_IT_RAIN, MOVE_EFFECT_SP_ATK_MINUS_1));
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_SPIN_OUT, MOVE_EFFECT_SPD_MINUS_2));
         PLAYER(SPECIES_MANKEY) { Ability(ABILITY_DEFIANT); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

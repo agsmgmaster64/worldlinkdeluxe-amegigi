@@ -10,8 +10,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Infernal Parade inflicts burn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_INFERNAL_PARADE); }
     } SCENE {
@@ -33,8 +33,8 @@ SINGLE_BATTLE_TEST("Infernal Parade's power doubles if the target has a status c
     PARAMETRIZE { status1 = STATUS1_PARALYSIS; }
     PARAMETRIZE { status1 = STATUS1_TOXIC_POISON; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(status1); };
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(status1); };
     } WHEN {
         TURN { MOVE(player, MOVE_INFERNAL_PARADE); }
     } SCENE {

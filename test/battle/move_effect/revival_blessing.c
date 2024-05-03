@@ -13,10 +13,10 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Revival Blessing revives a chosen fainted party member for the player")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET) { HP(0); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(0); }
         PLAYER(SPECIES_WYNAUT) { HP(0); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_REVIVAL_BLESSING); SEND_OUT(player, 2); }
     } SCENE {
@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Revival Blessing revives a chosen fainted party member for t
 SINGLE_BATTLE_TEST("Revival Blessing revives a fainted party member for an opponent")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_NORMAL_KOAKUMA);
         OPPONENT(SPECIES_ATTACK_NITORI) { HP(0); }
         OPPONENT(SPECIES_CHIBI_KOAKUMA) { HP(0); }
@@ -43,8 +43,8 @@ SINGLE_BATTLE_TEST("Revival Blessing revives a fainted party member for an oppon
 SINGLE_BATTLE_TEST("Revival Blessing fails if no party members are fainted")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_REVIVAL_BLESSING); }
     } SCENE {
@@ -64,11 +64,11 @@ TO_DO_BATTLE_TEST("Revival Blessing cannot revive a partner's party member");
 //     PARAMETRIZE { user = opponentRight; }
 //     GIVEN {
 //         ASSUME((gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) != FALSE);
-//         PLAYER(SPECIES_WOBBUFFET);
-//         PLAYER(SPECIES_WOBBUFFET);
-//         OPPONENT(SPECIES_WOBBUFFET);
-//         OPPONENT(SPECIES_WOBBUFFET);
-//         OPPONENT(SPECIES_WOBBUFFET);
+//         PLAYER(SPECIES_CHIBI_YUUGI);
+//         PLAYER(SPECIES_CHIBI_YUUGI);
+//         OPPONENT(SPECIES_CHIBI_YUUGI);
+//         OPPONENT(SPECIES_CHIBI_YUUGI);
+//         OPPONENT(SPECIES_CHIBI_YUUGI);
 //         OPPONENT(SPECIES_WYNAUT);
 //         OPPONENT(SPECIES_WYNAUT) { HP(0); }
 //         OPPONENT(SPECIES_WYNAUT);
@@ -91,9 +91,9 @@ TO_DO_BATTLE_TEST("Revived battlers still lose their turn");
 // DOUBLE_BATTLE_TEST("Revived battlers still lose their turn")
 // {
 //     GIVEN {
-//         PLAYER(SPECIES_WOBBUFFET);
+//         PLAYER(SPECIES_CHIBI_YUUGI);
 //         PLAYER(SPECIES_WYNAUT);
-//         OPPONENT(SPECIES_WOBBUFFET);
+//         OPPONENT(SPECIES_CHIBI_YUUGI);
 //         OPPONENT(SPECIES_WYNAUT) { HP(1); }
 //     } WHEN {
 //         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentRight);

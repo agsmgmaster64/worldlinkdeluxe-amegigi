@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Belly Drum cuts the user's HP in half")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_BELLY_DRUM); }
     } SCENE {
@@ -26,8 +26,8 @@ SINGLE_BATTLE_TEST("Belly Drum maximizes the user's Attack stat", s16 damage)
     PARAMETRIZE { raiseAttack = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (raiseAttack) TURN { MOVE(player, MOVE_BELLY_DRUM); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -47,8 +47,8 @@ SINGLE_BATTLE_TEST("Belly Drum maximizes the user's Attack stat", s16 damage)
 SINGLE_BATTLE_TEST("Belly Drum fails if user's current HP is half or less than half its maximum")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(50);}
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(50);}
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_BELLY_DRUM); }
     } SCENE {
@@ -65,8 +65,8 @@ SINGLE_BATTLE_TEST("Belly Drum fails if the user's Attack is already at +6")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SWORDS_DANCE); }
         TURN { MOVE(player, MOVE_SWORDS_DANCE); }

@@ -4,8 +4,8 @@
 ASSUMPTIONS
 {
     ASSUME(gMovesInfo[MOVE_ROOST].effect == EFFECT_ROOST);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_FLYING);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_FLYING);
+    ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] != TYPE_FLYING);
+    ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] != TYPE_FLYING);
     // One attack of each type to verify typelessness
     ASSUME(gMovesInfo[MOVE_POUND].type == TYPE_ILLUSION);
     ASSUME(gMovesInfo[MOVE_KARATE_CHOP].type == TYPE_DREAM);
@@ -30,8 +30,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Roost fails when user is at full HP")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); }
     } SCENE {
@@ -46,8 +46,8 @@ SINGLE_BATTLE_TEST("Roost fails when user is at full HP")
 SINGLE_BATTLE_TEST("Roost fails if the user is under the effects of Heal Block")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(100); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); MOVE(player, MOVE_ROOST); }
     } SCENE {
@@ -67,8 +67,8 @@ SINGLE_BATTLE_TEST("Roost recovers 50% of the user's Max HP")
 
     KNOWN_FAILING; // All healing is currently rounded down
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(99); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); MaxHP(99); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); }
     } SCENE {
@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Roost suppresses the user's Flying-typing this turn, then re
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[0] == TYPE_STEEL);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_CHIBI_KOGASA) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
         TURN { MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -134,7 +134,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
         ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[0] == TYPE_FLYING);
         ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_TORNADUS) { HP(50); MaxHP(100); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, damagingMove); }
     } SCENE {
@@ -202,7 +202,7 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[0] == TYPE_FIRE);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_CHIBI_YUUKA) { HP(300); MaxHP(400); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); }
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, damagingMove); }
@@ -231,7 +231,7 @@ DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this
         ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[0] != TYPE_FLYING);
         ASSUME(gSpeciesInfo[SPECIES_KECLEON].types[1] != TYPE_FLYING);
         PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_MYSTERIOUS); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10); }
         OPPONENT(SPECIES_TECH_CIRNO) { Speed(30); }
         OPPONENT(SPECIES_HELPER_KOAKUMA) { Speed(20); }
     } WHEN {
@@ -257,7 +257,7 @@ SINGLE_BATTLE_TEST("Roost prevents a Flying-type user from being protected by De
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_RAYQUAZA].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_RAYQUAZA) { HP(1); Ability(ABILITY_DELTA_STREAM); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_ICE_BEAM); }
     } SCENE {
@@ -275,7 +275,7 @@ SINGLE_BATTLE_TEST("Roost does not undo other type-changing effects at the end o
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_ILLUSION);
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_SWELLOW) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_SOAK); }
         TURN { MOVE(opponent, MOVE_VINE_WHIP); }
@@ -299,7 +299,7 @@ SINGLE_BATTLE_TEST("Roost's effect is lifted after Grassy Terrain's healing")
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_ILLUSION);
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
         PLAYER(SPECIES_SWELLOW) { HP(1); Ability(ABILITY_GRASSY_SURGE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); }
     } SCENE {
@@ -317,10 +317,10 @@ SINGLE_BATTLE_TEST("Roost's suppression prevents Reflect Type from copying any F
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[0] == TYPE_ILLUSION);
         ASSUME(gSpeciesInfo[SPECIES_SWELLOW].types[1] == TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_REASON);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_REASON);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] == TYPE_REASON);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] == TYPE_REASON);
         PLAYER(SPECIES_SWELLOW) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_REFLECT_TYPE); }
         TURN { MOVE(player, MOVE_EARTHQUAKE); MOVE(opponent, MOVE_REFLECT_TYPE); }
@@ -354,7 +354,7 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Levitate")
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_SUNNY) { HP(1); Ability(ABILITY_LEVITATE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
     } SCENE {
@@ -372,8 +372,8 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Levitate")
 SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Air Balloon")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); Item(ITEM_AIR_BALLOON); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); Item(ITEM_AIR_BALLOON); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
     } SCENE {
@@ -391,8 +391,8 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Air Balloon
 SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Magnet Rise")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MAGNET_RISE); }
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -416,8 +416,8 @@ SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Magnet Rise
 SINGLE_BATTLE_TEST("Roost does not suppress the ungrounded effect of Telekinesis")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TELEKINESIS); }
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }

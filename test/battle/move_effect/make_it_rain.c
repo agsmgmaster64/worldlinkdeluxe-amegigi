@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Make It Rain lowers special attack by one stage")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MAKE_IT_RAIN].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_MAKE_IT_RAIN); }
         TURN { MOVE(player, MOVE_MAKE_IT_RAIN); }
@@ -38,10 +38,10 @@ SINGLE_BATTLE_TEST("Make It Rain lowers special attack by one stage")
 DOUBLE_BATTLE_TEST("Make It Rain lowers special attack by one stage if it hits both targets")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET)
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI)
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MAKE_IT_RAIN); }
     } SCENE {

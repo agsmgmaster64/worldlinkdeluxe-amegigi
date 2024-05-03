@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Shed Tail creates a Substitute at the cost of 1/2 users maxi
     s16 costHP = 0;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); SEND_OUT(player, 1); }
     } SCENE {
@@ -31,9 +31,9 @@ SINGLE_BATTLE_TEST("Shed Tail creates a Substitute at the cost of 1/2 users maxi
 SINGLE_BATTLE_TEST("Shed Tail fails if the user doesn't have enough HP")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); }
     } SCENE {
@@ -45,9 +45,9 @@ SINGLE_BATTLE_TEST("Shed Tail's HP cost can trigger a berry before the user swit
 {
     GIVEN {
         ASSUME(gItemsInfo[ITEM_SITRUS_BERRY].battleUsage == EFFECT_ITEM_RESTORE_HP);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_SITRUS_BERRY); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_SITRUS_BERRY); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); SEND_OUT(player, 1); }
     } SCENE {
@@ -60,9 +60,9 @@ SINGLE_BATTLE_TEST("Shed Tail's HP cost can trigger a berry before the user swit
 SINGLE_BATTLE_TEST("Shed Tail fails if there are no usable pokemon left")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET)
+        PLAYER(SPECIES_CHIBI_YUUGI)
         PLAYER(SPECIES_WYNAUT) { HP(0); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); }
     } SCENE {

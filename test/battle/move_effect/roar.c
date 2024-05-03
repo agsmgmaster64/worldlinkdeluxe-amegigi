@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("Roar switches the target with a random non-fainted replaceme
 {
     PASSES_RANDOMLY(1, 2, RNG_FORCE_RANDOM_SWITCH);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_REIMU);
         OPPONENT(SPECIES_DEFENSE_REIMU);
         OPPONENT(SPECIES_ATTACK_MARISA) { HP(0); }
@@ -27,9 +27,9 @@ DOUBLE_BATTLE_TEST("Roar switches the target with a random non-battler, non-fain
 {
     PASSES_RANDOMLY(1, 2, RNG_FORCE_RANDOM_SWITCH);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_REIMU);
         OPPONENT(SPECIES_DEFENSE_REIMU);
@@ -45,8 +45,8 @@ DOUBLE_BATTLE_TEST("Roar switches the target with a random non-battler, non-fain
 SINGLE_BATTLE_TEST("Roar fails if no replacements")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_ROAR); }
     } SCENE {
@@ -58,8 +58,8 @@ SINGLE_BATTLE_TEST("Roar fails if no replacements")
 SINGLE_BATTLE_TEST("Roar fails if replacements fainted")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT) { HP(0); }
     } WHEN {
         TURN { MOVE(player, MOVE_ROAR); }

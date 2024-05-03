@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Cute Charm inflicts infatuation on contact")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
         ASSUME(!gMovesInfo[MOVE_SWIFT].makesContact);
-        PLAYER(SPECIES_WOBBUFFET) { Gender(MON_MALE); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Gender(MON_MALE); }
         OPPONENT(SPECIES_TECH_SAKUYA) { Gender(MON_FEMALE); Ability(ABILITY_CUTE_CHARM); }
     } WHEN {
         TURN { MOVE(player, move); }
@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Cute Charm inflicts infatuation on contact")
 SINGLE_BATTLE_TEST("Cute Charm cannot infatuate same gender")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Gender(MON_MALE); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Gender(MON_MALE); }
         OPPONENT(SPECIES_TECH_SAKUYA) { Gender(MON_MALE); Ability(ABILITY_CUTE_CHARM); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }

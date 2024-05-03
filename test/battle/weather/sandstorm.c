@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Sandstorm deals 1/16 damage per turn")
 
     GIVEN {
         PLAYER(SPECIES_PLCEHOLDER1_KOAKUMA);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {MOVE(player, MOVE_SANDSTORM);}
     } SCENE {
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Sandstorm multiplies the special defense of Rock-types by 1.
     PARAMETRIZE{ move = MOVE_CELEBRATE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET) ;
+        PLAYER(SPECIES_CHIBI_YUUGI) ;
         OPPONENT(SPECIES_NOSEPASS);
     } WHEN {
         TURN { MOVE(opponent, move); }
@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Sandstorm damage does not hurt Ground, Rock, and Steel-type 
         ASSUME(gSpeciesInfo[SPECIES_PLCEHOLDER1_KOAKUMA].types[0] == TYPE_EARTH);
         ASSUME(gSpeciesInfo[SPECIES_NOSEPASS].types[0] == TYPE_BEAST);
         ASSUME(gSpeciesInfo[SPECIES_REGISTEEL].types[0] == TYPE_STEEL);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(mon);
     } WHEN {
         TURN { MOVE(player, MOVE_SANDSTORM); }

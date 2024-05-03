@@ -11,8 +11,8 @@ SINGLE_BATTLE_TEST("Steel Beam causes the user to take damage equal to half of i
     s16 recoilDamage;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_STEEL_BEAM); }
     } SCENE {
@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Steel Beam hp loss is prevented by Magic Guard")
 {
     GIVEN {
         PLAYER(SPECIES_TECH_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_STEEL_BEAM); }
     } SCENE {

@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Thunder Shock inflicts paralysis")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK); }
     } SCENE {
@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Thunder Shock cannot paralyze an Electric-type")
     GIVEN {
         ASSUME(B_PARALYZE_ELECTRIC >= GEN_6);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOAKUMA].types[0] == TYPE_WIND);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_KOAKUMA);
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK); }

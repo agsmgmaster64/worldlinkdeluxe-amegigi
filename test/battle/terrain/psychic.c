@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority mov
 {
     GIVEN {
         PLAYER(SPECIES_CLAYDOL) { Ability(ABILITY_LEVITATE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(player, MOVE_QUICK_ATTACK); MOVE(opponent, MOVE_QUICK_ATTACK); }
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain activates Psychic Seed and Mimicry")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_PSYCHIC_SEED].holdEffect == HOLD_EFFECT_SEEDS);
         ASSUME(gItemsInfo[ITEM_PSYCHIC_SEED].holdEffectParam == HOLD_EFFECT_PARAM_PSYCHIC_TERRAIN);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_PSYCHIC_SEED); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_PSYCHIC_SEED); }
         OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -43,8 +43,8 @@ SINGLE_BATTLE_TEST("Psychic Terrain increases power of Psychic-type moves by 30/
     PARAMETRIZE { terrain = FALSE; }
     PARAMETRIZE { terrain = TRUE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (terrain)
             TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -64,7 +64,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target the
 {
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(player, MOVE_RECOVER); }
@@ -79,7 +79,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 {
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(player, MOVE_HAZE); }
@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 {
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(player, MOVE_SPIKES); }
@@ -107,9 +107,9 @@ DOUBLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 {
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(playerLeft, MOVE_HEAL_PULSE, target: playerRight); }
@@ -123,7 +123,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority field moves")
 {
     GIVEN {
         PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN { MOVE(player, MOVE_SUNNY_DAY); }
@@ -136,8 +136,8 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority field moves")
 SINGLE_BATTLE_TEST("Psychic Terrain lasts for 5 turns")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_PSYCHIC_TERRAIN); }
         TURN {}

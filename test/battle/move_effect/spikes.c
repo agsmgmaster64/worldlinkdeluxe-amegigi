@@ -14,8 +14,8 @@ SINGLE_BATTLE_TEST("Spikes damage on switch in")
     PARAMETRIZE { layers = 2; divisor = 6; }
     PARAMETRIZE { layers = 3; divisor = 4; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         u32 count;
@@ -39,8 +39,8 @@ SINGLE_BATTLE_TEST("Spikes damage on switch in")
 SINGLE_BATTLE_TEST("Spikes fails after 3 layers")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_SPIKES); }
@@ -67,8 +67,8 @@ SINGLE_BATTLE_TEST("Spikes fails after 3 layers")
 SINGLE_BATTLE_TEST("Spikes damage on subsequent switch ins")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_SPIKES); }
@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Spikes damage on subsequent switch ins")
 
 SINGLE_BATTLE_TEST("Spikes do not damage airborne Pokemon")
 {
-    u32 species = SPECIES_WOBBUFFET;
+    u32 species = SPECIES_CHIBI_YUUGI;
     u32 item = ITEM_NONE;
     u32 move1 = MOVE_CELEBRATE;
     u32 move2 = MOVE_CELEBRATE;
@@ -100,11 +100,11 @@ SINGLE_BATTLE_TEST("Spikes do not damage airborne Pokemon")
     PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_GRAVITY; airborne = FALSE; }
     PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
-    ASSUME(gSpeciesInfo[SPECIES_UNOWN].abilities[0] == ABILITY_LEVITATE);
-    PARAMETRIZE { species = SPECIES_UNOWN; airborne = TRUE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; item = ITEM_IRON_BALL; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_GRAVITY; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_INGRAIN; airborne = FALSE; }
+    ASSUME(gSpeciesInfo[SPECIES_TECH_PARSEE].abilities[0] == ABILITY_LEVITATE);
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; airborne = TRUE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; item = ITEM_IRON_BALL; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_GRAVITY; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; airborne = TRUE; }
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; item = ITEM_IRON_BALL; airborne = FALSE; }
@@ -117,8 +117,8 @@ SINGLE_BATTLE_TEST("Spikes do not damage airborne Pokemon")
     PARAMETRIZE { item = ITEM_AIR_BALLOON; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_SPIKES); MOVE(opponent, move1); }

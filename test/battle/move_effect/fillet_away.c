@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Fillet Away cuts the user's HP in half")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_FILLET_AWAY); }
     } SCENE {
@@ -22,8 +22,8 @@ SINGLE_BATTLE_TEST("Fillet Away cuts the user's HP in half")
 SINGLE_BATTLE_TEST("Fillet Away sharply raises Attack, Sp. Atk, and Speed")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_FILLET_AWAY); }
     } SCENE {
@@ -43,8 +43,8 @@ SINGLE_BATTLE_TEST("Fillet Away sharply raises Attack, Sp. Atk, and Speed")
 SINGLE_BATTLE_TEST("Fillet Away fails if user's current HP is half or less than half its maximum")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(50);}
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(50);}
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_FILLET_AWAY); }
     } SCENE {

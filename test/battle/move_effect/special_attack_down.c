@@ -13,8 +13,8 @@ SINGLE_BATTLE_TEST("Confide lowers Special Attack", s16 damage)
     PARAMETRIZE { lowerSpecialAttack = TRUE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         if (lowerSpecialAttack) TURN { MOVE(player, MOVE_CONFIDE); }
         TURN { MOVE(opponent, MOVE_GUST); }

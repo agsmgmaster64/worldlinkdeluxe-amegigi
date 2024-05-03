@@ -14,8 +14,8 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
     PARAMETRIZE{ atkStat = 50; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); }
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(atkStat); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(atkStat); }
     } WHEN {
         TURN { MOVE(player, MOVE_STRENGTH_SAP); }
     } SCENE {
@@ -39,8 +39,8 @@ SINGLE_BATTLE_TEST("Strength Sap works exactly the same when attacker is behind 
     PARAMETRIZE{ atkStat = 50; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); }
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(atkStat); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(atkStat); }
     } WHEN {
         TURN { MOVE(player, MOVE_SUBSTITUTE); }
         TURN { MOVE(player, MOVE_STRENGTH_SAP); }
@@ -71,8 +71,8 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
     GIVEN {
         ASSUME(gMovesInfo[MOVE_WORK_UP].effect == EFFECT_ATTACK_SPATK_UP);
         ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        PLAYER(SPECIES_WOBBUFFET) { HP(50); }
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(60); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(60); }
     } WHEN {
         if (statStage > DEFAULT_STAT_STAGE) { // +
             for (j = statStage; j > DEFAULT_STAT_STAGE; j--) {
@@ -118,8 +118,8 @@ SINGLE_BATTLE_TEST("Strength Sap fails if target is at -6 Atk")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CHARM].effect == EFFECT_ATTACK_DOWN_2);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CHARM); }
         TURN { MOVE(player, MOVE_CHARM); }
@@ -150,8 +150,8 @@ SINGLE_BATTLE_TEST("Strength Sap restores more HP if Big Root is held", s16 hp)
 
     GIVEN {
         ASSUME(gItemsInfo[ITEM_BIG_ROOT].holdEffect == HOLD_EFFECT_BIG_ROOT);
-        PLAYER(SPECIES_WOBBUFFET) { HP(200); Item(item); }
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(100); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); Item(item); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_STRENGTH_SAP); }
     } SCENE {
@@ -175,9 +175,9 @@ SINGLE_BATTLE_TEST("Strength Sap makes attacker lose HP if target's ability is L
     PARAMETRIZE { atkStat = 490; } // Checks that attacker can faint with no problems.
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Attack(atkStat); Ability(ABILITY_STRANGE_MIST); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(atkStat); Ability(ABILITY_STRANGE_MIST); }
     } WHEN {
         TURN { MOVE(player, MOVE_STRENGTH_SAP); if (atkStat == 490) { SEND_OUT(player, 1); } }
     } SCENE {

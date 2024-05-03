@@ -11,7 +11,7 @@ SINGLE_BATTLE_TEST("Primordial Sea blocks damaging Fire-type moves")
 {
     GIVEN {
         PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB);}
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBER); }
         TURN { MOVE(opponent, MOVE_EMBER); }
@@ -36,9 +36,9 @@ DOUBLE_BATTLE_TEST("Primordial Sea blocks damaging Fire-type moves and prints th
         ASSUME(gMovesInfo[MOVE_ERUPTION].type == TYPE_FIRE);
         ASSUME(gMovesInfo[MOVE_ERUPTION].target == MOVE_TARGET_BOTH);
         PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB); {Speed(5);}}
-        PLAYER(SPECIES_WOBBUFFET) {Speed(5);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(10);}
-        OPPONENT(SPECIES_WOBBUFFET) {Speed(8);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(5);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(10);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(8);}
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_ERUPTION); }
     } SCENE {
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Primordial Sea does not block a move if pokemon is asleep an
 {
     GIVEN {
         PLAYER(SPECIES_KYOGRE) {Item(ITEM_BLUE_ORB);}
-        OPPONENT(SPECIES_WOBBUFFET) {Status1(STATUS1_SLEEP);}
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBER); }
     } SCENE {

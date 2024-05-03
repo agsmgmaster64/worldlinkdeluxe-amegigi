@@ -9,9 +9,9 @@ ASSUMPTIONS
 DOUBLE_BATTLE_TEST("After You makes the target move after user")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
         OPPONENT(SPECIES_WYNAUT) { Speed(2); }
     } WHEN {
         TURN {
@@ -32,9 +32,9 @@ DOUBLE_BATTLE_TEST("After You makes the target move after user")
 DOUBLE_BATTLE_TEST("After You does nothing if the target has already moved")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(3); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
         OPPONENT(SPECIES_WYNAUT) { Speed(2); }
     } WHEN {
         TURN {

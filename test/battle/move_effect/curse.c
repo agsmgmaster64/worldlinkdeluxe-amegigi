@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Curse lowers Speed, raises Attack, and raises Defense when used by non-Ghost-types")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CURSE); }
     } SCENE {
@@ -24,8 +24,8 @@ SINGLE_BATTLE_TEST("Curse lowers Speed, raises Attack, and raises Defense when u
 SINGLE_BATTLE_TEST("Curse cuts the user's HP in half when used by Ghost-types")
 {
     GIVEN {
-        PLAYER(SPECIES_MISDREAVUS);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_DEFENSE_PARSEE);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CURSE); }
     } SCENE {

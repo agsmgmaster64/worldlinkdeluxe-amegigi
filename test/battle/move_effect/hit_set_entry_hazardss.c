@@ -13,9 +13,9 @@ SINGLE_BATTLE_TEST("Stone Axe / Ceaseless Edge set up hazards after hitting the 
     PARAMETRIZE { move = MOVE_STONE_AXE; }
     PARAMETRIZE { move = MOVE_CEASELESS_EDGE; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move); }
         TURN { SWITCH(opponent, 1); }
@@ -44,8 +44,8 @@ SINGLE_BATTLE_TEST("Stone Axe / Ceaseless Edge set up hazards after hitting the 
 SINGLE_BATTLE_TEST("Ceaseless Edge can set up to 3 layers of Spikes")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_CEASELESS_EDGE); }
@@ -81,8 +81,8 @@ SINGLE_BATTLE_TEST("Ceaseless Edge can set up to 3 layers of Spikes")
 SINGLE_BATTLE_TEST("Stone Axe can set up pointed stones only once")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_STONE_AXE); }

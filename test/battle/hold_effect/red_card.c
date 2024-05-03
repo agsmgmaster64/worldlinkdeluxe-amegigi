@@ -10,8 +10,8 @@ SINGLE_BATTLE_TEST("Red Card switches the attacker with a random non-fainted rep
 {
     PASSES_RANDOMLY(1, 2, RNG_FORCE_RANDOM_SWITCH);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_REIMU);
         OPPONENT(SPECIES_DEFENSE_REIMU);
         OPPONENT(SPECIES_ATTACK_MARISA) { HP(0); }
@@ -31,9 +31,9 @@ DOUBLE_BATTLE_TEST("Red Card switches the target with a random non-battler, non-
 {
     PASSES_RANDOMLY(1, 2, RNG_FORCE_RANDOM_SWITCH);
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_CHIBI_REIMU);
         OPPONENT(SPECIES_DEFENSE_REIMU);
@@ -53,9 +53,9 @@ DOUBLE_BATTLE_TEST("Red Card switches the target with a random non-battler, non-
 SINGLE_BATTLE_TEST("Red Card does not activate if holder faints")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
@@ -73,8 +73,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if holder faints")
 SINGLE_BATTLE_TEST("Red Card does not activate if target is behind a Substitute")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_SUBSTITUTE); MOVE(opponent, MOVE_TACKLE); }
@@ -92,8 +92,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if target is behind a Substitute"
 SINGLE_BATTLE_TEST("Red Card activates after the last hit of a multi-hit move")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DOUBLE_KICK); }
@@ -111,8 +111,8 @@ SINGLE_BATTLE_TEST("Red Card activates after the last hit of a multi-hit move")
 SINGLE_BATTLE_TEST("Red Card does not activate if no replacements")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -129,8 +129,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if no replacements")
 SINGLE_BATTLE_TEST("Red Card does not activate if replacements fainted")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT) { HP(0); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -148,8 +148,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if replacements fainted")
 SINGLE_BATTLE_TEST("Red Card does not activate if knocked off")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_KNOCK_OFF); }
@@ -173,8 +173,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by a move")
     ASSUME(MoveHasAdditionalEffect(MOVE_THIEF, MOVE_EFFECT_STEAL_ITEM) == TRUE);
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_THIEF); }
@@ -202,7 +202,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician")
     PARAMETRIZE { item = ITEM_POTION; activate = TRUE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         OPPONENT(SPECIES_FENNEKIN) { Ability(ABILITY_MAGICIAN); Item(item); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -226,11 +226,11 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician")
 DOUBLE_BATTLE_TEST("Red Card activates for only the fastest target")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(3); Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT) { Speed(2); Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
         OPPONENT(SPECIES_WYNAUT) { Speed(4); }
-        OPPONENT(SPECIES_UNOWN) { Speed(1); }
+        OPPONENT(SPECIES_TECH_PARSEE) { Speed(1); }
     } WHEN {
         TURN {
             MOVE(opponentLeft, MOVE_ROCK_SLIDE);
@@ -257,11 +257,11 @@ DOUBLE_BATTLE_TEST("Red Card activates for only the fastest target")
 DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker is rooted")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_UNOWN);
+        OPPONENT(SPECIES_TECH_PARSEE);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_INGRAIN); }
         TURN {
@@ -286,11 +286,11 @@ DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker is rooted")
 DOUBLE_BATTLE_TEST("Red Card activates but fails if the attacker has Suction Cups")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_NORMAL_NAZRIN) { Ability(ABILITY_GATE_KEEPER); }
         OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_UNOWN);
+        OPPONENT(SPECIES_TECH_PARSEE);
     } WHEN {
         TURN {
             MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft);
@@ -318,9 +318,9 @@ SINGLE_BATTLE_TEST("Red Card does not activate if switched by Dragon Tail")
     PARAMETRIZE { hasWynaut = FALSE; activate = TRUE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         if (hasWynaut) PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_DRAGON_TAIL); }
@@ -341,8 +341,8 @@ SINGLE_BATTLE_TEST("Red Card does not activate if switched by Dragon Tail")
 SINGLE_BATTLE_TEST("Red Card activates and overrides U-turn")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_U_TURN); }
@@ -361,7 +361,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied
     PARAMETRIZE { move = MOVE_STOMP; activate = FALSE; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
         OPPONENT(SPECIES_HELPER_EIRIN) { Ability(ABILITY_SHEER_FORCE); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
@@ -385,7 +385,7 @@ SINGLE_BATTLE_TEST("Red Card activates before Emergency Exit")
     GIVEN {
         PLAYER(SPECIES_GOLISOPOD) { MaxHP(100); HP(51); Item(ITEM_RED_CARD); }
         PLAYER(SPECIES_WIMPOD);
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
@@ -402,9 +402,9 @@ SINGLE_BATTLE_TEST("Red Card is consumed after dragged out replacement has its S
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_STICKY_WEB); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -433,9 +433,9 @@ SINGLE_BATTLE_TEST("Red Card is consumed after dragged out replacement has its S
 SINGLE_BATTLE_TEST("Red Card does not cause the dragged out mon to lose hp due to it's held Life Orb")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT) { Item(ITEM_LIFE_ORB); }
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {

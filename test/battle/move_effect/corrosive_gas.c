@@ -14,8 +14,8 @@ SINGLE_BATTLE_TEST("Corrosive Gas destroys the target's item or fails if the tar
     PARAMETRIZE {item = ITEM_POTION; }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) {Item(item); }
+        PLAYER(SPECIES_CHIBI_YUUGI);
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
     } SCENE {
@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas destroys the target's item or fails if the tar
 SINGLE_BATTLE_TEST("Corrosive Gas doesn't destroy the item of a Pokemon with the Sticky Hold ability")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_NORMAL_CHEN) {Item(ITEM_NURSE_OUTFIT); Ability(ABILITY_COLLECTOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
@@ -54,8 +54,8 @@ SINGLE_BATTLE_TEST("Items lost to Corrosive Gas cannot be restored by Recycle")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_RECYCLE].effect == EFFECT_RECYCLE);
-        PLAYER(SPECIES_WOBBUFFET) {Speed(15); }
-        OPPONENT(SPECIES_WOBBUFFET) {Item(ITEM_ORAN_BERRY); Speed(10); }
+        PLAYER(SPECIES_CHIBI_YUUGI) {Speed(15); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) {Item(ITEM_ORAN_BERRY); Speed(10); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); MOVE(opponent, MOVE_RECYCLE); }
     } SCENE {
@@ -86,7 +86,7 @@ DOUBLE_BATTLE_TEST("Corrosive Gas destroys foes and ally's items if they have on
     }
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) {Item(itemPlayerLeft);}
+        PLAYER(SPECIES_CHIBI_YUUGI) {Item(itemPlayerLeft);}
         PLAYER(SPECIES_WYNAUT) {Item(ITEM_SITRUS_BERRY);}
         OPPONENT(SPECIES_SPEED_LILY_BLACK) {Item(itemOpponentLeft);}
         OPPONENT(SPECIES_CHIBI_LUNASA) {Item(itemOpponentRight);}

@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Sword of Ruin reduces Defense if opposing mon's ability does
 
     GIVEN {
         PLAYER(SPECIES_CHIEN_PAO) { Ability(ABILITY_SWORD_OF_RUIN); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_ROLE_PLAY); }
         TURN { MOVE(player, MOVE_TACKLE); }
