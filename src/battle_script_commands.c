@@ -16437,6 +16437,68 @@ void BS_TryEarlyBirdHeal(void)
     }
 }
 
+void BS_TryPokeFlute(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+    u32 monToCheck = 0;
+    u32 shouldJump = 0;
+    u32 status, species, abilityNum, battler, i;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (GetBattlerAbility(i) != ABILITY_SOUNDPROOF)
+        {
+            gBattleMons[i].status1 &= ~STATUS1_SLEEP;
+            gBattleMons[i].status2 &= ~STATUS2_NIGHTMARE;
+        }
+    }
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+        abilityNum = GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM);
+        status = GetMonData(&gPlayerParty[i], MON_DATA_STATUS);
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && status & AILMENT_FNT
+         && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            monToCheck |= (1 << i);
+    }
+    if (monToCheck)
+    {
+        battler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+        status = 0;
+        BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+        MarkBattlerForControllerExec(battler);
+        shouldJump = TRUE;
+    }
+    monToCheck = 0;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES_OR_EGG);
+        abilityNum = GetMonData(&gEnemyParty[i], MON_DATA_ABILITY_NUM);
+        status = GetMonData(&gEnemyParty[i], MON_DATA_STATUS);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && status & AILMENT_FNT
+         && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            monToCheck |= (1 << i);
+    }
+    if (monToCheck)
+    {
+        battler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+        status = 0;
+        BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
+        MarkBattlerForControllerExec(battler);
+        shouldJump = TRUE;
+    }
+
+    if (shouldJump)
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_JumpIfShellTrap(void)
 {
     NATIVE_ARGS(u8 battler, const u8 *jumpInstr);

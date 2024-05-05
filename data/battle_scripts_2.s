@@ -215,8 +215,7 @@ BattleScript_RunByUsingItem::
 	finishturn
 
 BattleScript_FluteWakeUpField::
-	checkpokeflute BS_ATTACKER
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_PokeFluteWakeUp
+	trypokeflute BattleScript_PokeFluteWakeUp
 	printstring STRINGID_POKEFLUTECATCHY
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_PokeFluteEnd
