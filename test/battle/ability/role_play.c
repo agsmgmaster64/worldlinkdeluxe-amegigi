@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Role Play fails if target has a banned ability")
     u32 species, ability;
 
     PARAMETRIZE { species = SPECIES_SHEDINJA; ability = ABILITY_WONDER_GUARD; }
-    PARAMETRIZE { species = SPECIES_CASTFORM; ability = ABILITY_FORECAST; }
+    PARAMETRIZE { species = SPECIES_CASTFORM_NORMAL; ability = ABILITY_FORECAST; }
     PARAMETRIZE { species = SPECIES_CHERRIM; ability = ABILITY_FLOWER_GIFT; }
     PARAMETRIZE { species = SPECIES_ARCEUS; ability = ABILITY_MULTITYPE; }
     PARAMETRIZE { species = SPECIES_ZORUA; ability = ABILITY_ILLUSION; }

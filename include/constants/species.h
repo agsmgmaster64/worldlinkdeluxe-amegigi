@@ -352,7 +352,6 @@
 #define SPECIES_ARMALDO                                 348
 #define SPECIES_FEEBAS                                  349
 #define SPECIES_MILOTIC                                 350
-#define SPECIES_CASTFORM                                SPECIES_CASTFORM_NORMAL
 #define SPECIES_CASTFORM_NORMAL                         351 // Kasen
 #define SPECIES_KECLEON                                 352
 #define SPECIES_SHUPPET                                 353

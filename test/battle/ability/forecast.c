@@ -357,7 +357,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it switches out")
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CASTFORM) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -370,7 +370,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it switches out")
         MESSAGE("Castform transformed!");
         MESSAGE("Castform, that's enough! Come back!");
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM_NORMAL);
     }
 }
 
@@ -378,7 +378,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it uses a move that f
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CASTFORM) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -391,6 +391,6 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it uses a move that f
         MESSAGE("Castform transformed!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_U_TURN, player);
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM_NORMAL);
     }
 }
