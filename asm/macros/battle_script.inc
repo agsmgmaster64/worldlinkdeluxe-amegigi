@@ -1651,6 +1651,10 @@
 	.macro removeweather
 	callnative BS_RemoveWeather
 	.endm
+	
+	.macro applyterastallization
+	callnative BS_ApplyTerastallization
+	.endm
 
 @ various command changed to more readable macros
 	.macro cancelmultiturnmoves battler:req
