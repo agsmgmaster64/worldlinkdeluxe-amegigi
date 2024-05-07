@@ -1,17 +1,12 @@
 #include "global.h"
 #include "test/battle.h"
 
-ASSUMPTIONS
-{
-    ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
-    ASSUME(MoveHasAdditionalEffect(MOVE_TWINEEDLE, MOVE_EFFECT_POISON) == TRUE);
-}
-
 SINGLE_BATTLE_TEST("Poison Sting inflicts poison")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_POISON_STING); }
         TURN {}
@@ -29,7 +24,8 @@ SINGLE_BATTLE_TEST("Poison cannot be inflicted on Poison and Steel-type Pokémon
     PARAMETRIZE { mon = SPECIES_DEFENSE_PATCHOULI; }
     PARAMETRIZE { mon = SPECIES_REGISTEEL; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_PATCHOULI].types[0] == TYPE_MIASMA);
+        ASSUME(MoveHasAdditionalEffect(MOVE_TWINEEDLE, MOVE_EFFECT_POISON) == TRUE);
+        ASSUME(gSpeciesInfo[SPECIES_NIDORAN_M].types[0] == TYPE_POISON);
         ASSUME(gSpeciesInfo[SPECIES_REGISTEEL].types[0] == TYPE_STEEL);
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(mon);

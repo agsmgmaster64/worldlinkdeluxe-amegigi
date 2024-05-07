@@ -886,6 +886,13 @@ static const uq4_12_t sPercentToModifier[] =
 #define X UQ_4_12
 #define ______ X(1.0) // Regular effectiveness.
 
+// Type matchup updates.                                                Attacker      Defender
+#define STL_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_6 ? X(1.0) : X(0.5))  // Ghost/Dark -> Steel
+#define PSN_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(2.0))  // Bug        -> Poison
+#define BUG_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.0) : X(2.0))  // Poison     -> Bug
+#define PSY_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(2.0) : X(0.0))  // Ghost      -> Psychic
+#define FIR_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(1.0))  // Ice        -> Fire
+
 static const uq4_12_t sTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
 {//                   Defender -->
  //  Attacker         Illusion Dream   Flying  Miasma  Earth   Beast   Heart   Ghost   Steel   Mystery  Fire   Water   Nature  Wind    Reason    Ice   Faith   Dark    Cosmic  Stellar
