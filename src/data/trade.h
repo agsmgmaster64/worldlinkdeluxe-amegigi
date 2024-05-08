@@ -614,7 +614,7 @@ static const struct WindowTemplate sTradeYesNoWindowTemplate =
     .baseBlock = 582
 };
 
-static const u8 sText_ShedinjaJP[] = _("ヌケニン");
+static const u8 sText_ShedinjaJP[] = _("ゾンビF");
 static const u8 sSelectedMonLevelGenderCoords[3][2] =
 {
     [TRADE_PLAYER]  = {4,  3},
@@ -1037,9 +1037,9 @@ static const struct InGameTrade sIngameTrades[] =
     },
     [INGAME_TRADE_MEOWTH] =
     {
-        .nickname = _("けだま"),
-        .species = SPECIES_DEFENSE_KAGUYA,
-        .level = 50,
+        .nickname = _("りん"),
+        .species = SPECIES_CHIBI_RIN,
+        .level = 35,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 2,
         .otId = 91481,

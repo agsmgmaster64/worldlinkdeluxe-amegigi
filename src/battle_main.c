@@ -262,7 +262,7 @@ const struct SpriteTemplate gUnusedBattleInitSprite =
     .callback = SpriteCB_UnusedBattleInit,
 };
 
-static const u8 sText_ShedinjaJpnName[] = _("ヌケニン"); // Nukenin
+static const u8 sText_ShedinjaJpnName[] = _("ゾンビF"); // Nukenin
 
 const struct OamData gOamData_BattleSpriteOpponentSide =
 {

@@ -4084,6 +4084,7 @@ bool8 IsMonPastEvolutionLevel(struct Pokemon *mon)
         switch (evolutions[i].method)
         {
         case EVO_LEVEL:
+        case EVO_LEVEL_NINJASK:
             if (evolutions[i].param <= level)
                 return TRUE;
             break;
