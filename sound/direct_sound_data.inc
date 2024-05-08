@@ -587,6 +587,70 @@ Cry_Suwako::
 	.incbin "sound/direct_sound_samples/cries_add/suwako.bin"
 
 	.align 2
+Cry_Kisume::
+	.incbin "sound/direct_sound_samples/cries_add/kisume.bin"
+
+	.align 2
+Cry_Yamame::
+	.incbin "sound/direct_sound_samples/cries_add/yamame.bin"
+
+	.align 2
+Cry_Parsee::
+	.incbin "sound/direct_sound_samples/cries_add/parsee.bin"
+
+	.align 2
+Cry_Yuugi::
+	.incbin "sound/direct_sound_samples/cries_add/yuugi.bin"
+
+	.align 2
+Cry_Rin::
+	.incbin "sound/direct_sound_samples/cries_add/rin.bin"
+
+	.align 2
+Cry_ZFairy::
+	.incbin "sound/direct_sound_samples/cries_add/zombie_fairy.bin"
+
+	.align 2
+Cry_Utsuho::
+	.incbin "sound/direct_sound_samples/cries_add/utsuho.bin"
+
+	.align 2
+Cry_Satori::
+	.incbin "sound/direct_sound_samples/cries_add/satori.bin"
+
+	.align 2
+Cry_Koishi::
+	.incbin "sound/direct_sound_samples/cries_add/koishi.bin"
+
+	.align 2
+Cry_Nazrin::
+	.incbin "sound/direct_sound_samples/cries_add/nazrin.bin"
+
+	.align 2
+Cry_Kogasa::
+	.incbin "sound/direct_sound_samples/cries_add/kogasa.bin"
+
+	.align 2
+Cry_Ichirin::
+	.incbin "sound/direct_sound_samples/cries_add/ichirin.bin"
+
+	.align 2
+Cry_Murasa::
+	.incbin "sound/direct_sound_samples/cries_add/murasa.bin"
+
+	.align 2
+Cry_Shou::
+	.incbin "sound/direct_sound_samples/cries_add/shou.bin"
+
+	.align 2
+Cry_Byakuren::
+	.incbin "sound/direct_sound_samples/cries_add/byakuren.bin"
+
+	.align 2
+Cry_Nue::
+	.incbin "sound/direct_sound_samples/cries_add/nue.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

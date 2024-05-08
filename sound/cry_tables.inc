@@ -50,6 +50,22 @@ gCryTable::
 	cry Cry_Sanae
 	cry Cry_Kanako
 	cry Cry_Suwako
+	cry Cry_Kisume
+	cry Cry_Yamame
+	cry Cry_Parsee
+	cry Cry_Yuugi
+	cry Cry_Rin
+	cry Cry_ZFairy
+	cry Cry_Utsuho
+	cry Cry_Satori
+	cry Cry_Koishi
+	cry Cry_Nazrin
+	cry Cry_Kogasa
+	cry Cry_Ichirin
+	cry Cry_Murasa
+	cry Cry_Shou
+	cry Cry_Byakuren
+	cry Cry_Nue
 
 	.align 2
 gCryTable_Reverse::
@@ -103,3 +119,19 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sanae
 	cry_reverse Cry_Kanako
 	cry_reverse Cry_Suwako
+	cry_reverse Cry_Kisume
+	cry_reverse Cry_Yamame
+	cry_reverse Cry_Parsee
+	cry_reverse Cry_Yuugi
+	cry_reverse Cry_Rin
+	cry_reverse Cry_ZFairy
+	cry_reverse Cry_Utsuho
+	cry_reverse Cry_Satori
+	cry_reverse Cry_Koishi
+	cry_reverse Cry_Nazrin
+	cry_reverse Cry_Kogasa
+	cry_reverse Cry_Ichirin
+	cry_reverse Cry_Murasa
+	cry_reverse Cry_Shou
+	cry_reverse Cry_Byakuren
+	cry_reverse Cry_Nue
