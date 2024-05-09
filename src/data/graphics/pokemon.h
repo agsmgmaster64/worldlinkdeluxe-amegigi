@@ -14105,6 +14105,15 @@ const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mar
     const u8 gMonFootprint_TReisen[] = INCBIN_U8("graphics/pokemon/_add/th/reisen/tech/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CReisenII[] = INCBIN_U8("graphics/pokemon/_add/th/reisenii/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CReisenII[] = INCBIN_U8("graphics/pokemon/_add/th/reisenii/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_ReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/normal/anim_front.4bpp.lz");
     const u32 gMonPalette_ReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/normal/normal.gbapal.lz");
     const u32 gMonBackPic_ReisenII[] = INCBIN_U32("graphics/pokemon/_add/th/reisenii/normal/back.4bpp.lz");

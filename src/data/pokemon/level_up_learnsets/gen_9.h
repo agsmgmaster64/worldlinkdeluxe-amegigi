@@ -3079,6 +3079,18 @@ static const struct LevelUpMove sSuwakoLevelUpLearnset[] = {
 	LEVEL_UP_END
 };
 
+static const struct LevelUpMove sCReisenIILevelUpLearnset[] = {
+	LEVEL_UP_MOVE(1, MOVE_FLAIL),
+	LEVEL_UP_MOVE(5, MOVE_TAIL_WHIP),
+	LEVEL_UP_MOVE(8, MOVE_FAKE_OUT),
+	LEVEL_UP_MOVE(12, MOVE_LUCKY_CHANT),
+	LEVEL_UP_MOVE(16, MOVE_HELPING_HAND),
+	LEVEL_UP_MOVE(20, MOVE_QUICK_ATTACK),
+	LEVEL_UP_MOVE(24, MOVE_MIND_BOMB),
+	LEVEL_UP_MOVE(28, MOVE_ENDEAVOR),
+	LEVEL_UP_END
+};
+
 static const struct LevelUpMove sReisenIILevelUpLearnset[] = {
 	LEVEL_UP_MOVE(1, MOVE_FLAIL),
 	LEVEL_UP_MOVE(5, MOVE_TAIL_WHIP),
