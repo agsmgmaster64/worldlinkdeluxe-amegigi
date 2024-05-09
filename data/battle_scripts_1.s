@@ -5498,6 +5498,7 @@ BattleScript_EffectCamouflage::
 
 BattleScript_FaintAttacker::
 	tryillusionoff BS_ATTACKER
+	tryactivategulpmissile
 	playfaintcry BS_ATTACKER
 	pause B_WAIT_TIME_LONG
 	dofaintanimation BS_ATTACKER
@@ -5511,6 +5512,7 @@ BattleScript_FaintAttacker::
 
 BattleScript_FaintTarget::
 	tryillusionoff BS_TARGET
+	tryactivategulpmissile
 	playfaintcry BS_TARGET
 	pause B_WAIT_TIME_LONG
 	dofaintanimation BS_TARGET
