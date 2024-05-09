@@ -84,6 +84,7 @@ BattleScript_EffectShedTail::
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ButItFailed
 	setsubstitute
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SUBSTITUTE_FAILED, BattleScript_SubstituteString
+        orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
 	healthbarupdate BS_ATTACKER
@@ -108,7 +109,7 @@ BattleScript_EffectFilletAway::
 	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPEED, MAX_STAT_STAGE, BattleScript_ButItFailed
 BattleScript_FilletAwayTryAttack::
 	halvehp BattleScript_ButItFailed
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
 	setbyte sSTAT_ANIM_PLAYED, FALSE
@@ -3850,6 +3851,7 @@ BattleScript_EffectSubstitute::
 	jumpifstatus2 BS_ATTACKER, STATUS2_SUBSTITUTE, BattleScript_AlreadyHasSubstitute
 	setsubstitute
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SUBSTITUTE_FAILED, BattleScript_SubstituteString
+        orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
 	healthbarupdate BS_ATTACKER
@@ -4584,7 +4586,7 @@ BattleScript_EffectBellyDrum::
 	ppreduce
 	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_ATK, MAX_STAT_STAGE, BattleScript_ButItFailed
 	halvehp BattleScript_ButItFailed
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	attackanimation
 	waitanimation
 	healthbarupdate BS_ATTACKER
