@@ -17,6 +17,8 @@ const u8 gRibbonDescriptionPart1_Artist[] = _("RIBBON for being chosen");
 const u8 gRibbonDescriptionPart2_Artist[] = _("as a super sketch model.");
 const u8 gRibbonDescriptionPart1_Effort[] = _("RIBBON awarded for");
 const u8 gRibbonDescriptionPart2_Effort[] = _("being a hard worker.");
+const u8 gRibbonDescriptionPart1_National[] = _("RIBBON awarded for");
+const u8 gRibbonDescriptionPart2_National[] = _("clearing all challenges.");
 
 const u8 *const gRibbonDescriptionPointers[][2] =
 {
@@ -45,4 +47,5 @@ const u8 *const gRibbonDescriptionPointers[][2] =
     [VICTORY_RIBBON]       = {gRibbonDescriptionPart1_Victory,       gRibbonDescriptionPart2_Victory},
     [ARTIST_RIBBON]        = {gRibbonDescriptionPart1_Artist,        gRibbonDescriptionPart2_Artist},
     [EFFORT_RIBBON]        = {gRibbonDescriptionPart1_Effort,        gRibbonDescriptionPart2_Effort},
+    [NATIONAL_RIBBON]      = {gRibbonDescriptionPart1_National,      gRibbonDescriptionPart2_National},
 };

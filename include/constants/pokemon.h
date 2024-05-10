@@ -126,15 +126,9 @@
 #define VICTORY_RIBBON       22
 #define ARTIST_RIBBON        23
 #define EFFORT_RIBBON        24
-#define MARINE_RIBBON        25
-#define LAND_RIBBON          26
-#define SKY_RIBBON           27
-#define COUNTRY_RIBBON       28
-#define NATIONAL_RIBBON      29
-#define EARTH_RIBBON         30
-#define WORLD_RIBBON         31
+#define NATIONAL_RIBBON      25
 
-#define NUM_RIBBONS          32
+#define NUM_RIBBONS          26
 
 // The above gift ribbons (Marine - World) are
 // special distribution ribbons that correspond to

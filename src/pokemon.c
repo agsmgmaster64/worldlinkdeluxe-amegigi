@@ -2032,6 +2032,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_EFFORT_RIBBON:
             retVal = substruct3->effortRibbon;
             break;
+        case MON_DATA_NATIONAL_RIBBON:
+            retVal = substruct3->nationalRibbon;
+            break;
         case MON_DATA_AFFECTION:
             retVal = substruct2->affection;
             break;
@@ -2080,6 +2083,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 retVal += substruct3->victoryRibbon;
                 retVal += substruct3->artistRibbon;
                 retVal += substruct3->effortRibbon;
+                retVal += substruct3->nationalRibbon;
             }
             break;
         case MON_DATA_RIBBONS:
@@ -2095,7 +2099,8 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                     | (substruct3->winningRibbon << 16)
                     | (substruct3->victoryRibbon << 17)
                     | (substruct3->artistRibbon << 18)
-                    | (substruct3->effortRibbon << 19);
+                    | (substruct3->effortRibbon << 19)
+                    | (substruct3->nationalRibbon << 20);
             }
             break;
         case MON_DATA_HYPER_TRAINED_HP:
@@ -2461,6 +2466,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_EFFORT_RIBBON:
             SET8(substruct3->effortRibbon);
+            break;
+        case MON_DATA_NATIONAL_RIBBON:
+            SET8(substruct3->nationalRibbon);
             break;
         case MON_DATA_AFFECTION:
             SET8(substruct2->affection);

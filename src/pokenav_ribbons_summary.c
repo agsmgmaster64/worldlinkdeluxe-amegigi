@@ -127,6 +127,7 @@ static  const sRibbonData[] =
     {1, 1, VICTORY_RIBBON},
     {1, 1, ARTIST_RIBBON},
     {1, 1, EFFORT_RIBBON},
+    {1, 1, NATIONAL_RIBBON},
 };
 
 #include "data/text/ribbon_descriptions.h"
@@ -1014,6 +1015,7 @@ struct
     [VICTORY_RIBBON]       = { RIBBONGFX_VICTORY,        TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_1)},
     [ARTIST_RIBBON]        = { RIBBONGFX_ARTIST,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_2)},
     [EFFORT_RIBBON]        = { RIBBONGFX_EFFORT,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_3)},
+    [NATIONAL_RIBBON]      = { RIBBONGFX_GIFT_2,         TO_PAL_OFFSET(PALTAG_RIBBON_ICONS_5)},
 };
 
 #undef TO_PAL_OFFSET
