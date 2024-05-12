@@ -131,6 +131,7 @@ enum PartyDebugMenu
     DEBUG_PARTY_MENU_ITEM_HATCH_AN_EGG,
     DEBUG_PARTY_MENU_ITEM_HEAL_PARTY,
     DEBUG_PARTY_MENU_ITEM_INFLICT_STATUS1,
+    DEBUG_PARTY_MENU_ITEM_SET_TERA_TYPE,
     DEBUG_PARTY_MENU_ITEM_CHECK_EVS,
     DEBUG_PARTY_MENU_ITEM_CHECK_IVS,
     DEBUG_PARTY_MENU_ITEM_CLEAR_PARTY,
@@ -405,6 +406,7 @@ static void DebugAction_Party_MoveReminder(u8 taskId);
 static void DebugAction_Party_HatchAnEgg(u8 taskId);
 static void DebugAction_Party_HealParty(u8 taskId);
 static void DebugAction_Party_InflictStatus1(u8 taskId);
+static void DebugAction_Party_SetTeraType(u8 taskId);
 static void DebugAction_Party_CheckEVs(u8 taskId);
 static void DebugAction_Party_CheckIVs(u8 taskId);
 static void DebugAction_Party_ClearParty(u8 taskId);
@@ -470,6 +472,7 @@ extern const u8 Debug_FlagsAndVarNotSetBattleConfigMessage[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_InflictStatus1[];
+extern const u8 Debug_EventScript_SetTeraType[];
 extern const u8 Debug_EventScript_Script_1[];
 extern const u8 Debug_EventScript_Script_2[];
 extern const u8 Debug_EventScript_Script_3[];
@@ -570,6 +573,7 @@ static const u8 sDebugText_Party_MoveReminder[] =            _("Move Reminder");
 static const u8 sDebugText_Party_HatchAnEgg[] =              _("Hatch an Egg");
 static const u8 sDebugText_Party_HealParty[] =               _("Heal party");
 static const u8 sDebugText_Party_InflictStatus1[] =          _("Inflict Status1");
+static const u8 sDebugText_Party_SetTeraType[] =             _("Set Tera Type");
 static const u8 sDebugText_Party_CheckEVs[] =                _("Check EVs");
 static const u8 sDebugText_Party_CheckIVs[] =                _("Check IVs");
 static const u8 sDebugText_Party_ClearParty[] =              _("Clear Party");
@@ -773,6 +777,7 @@ static const struct ListMenuItem sDebugMenu_Items_Party[] =
     [DEBUG_PARTY_MENU_ITEM_HATCH_AN_EGG]    = {sDebugText_Party_HatchAnEgg,     DEBUG_PARTY_MENU_ITEM_HATCH_AN_EGG},
     [DEBUG_PARTY_MENU_ITEM_HEAL_PARTY]      = {sDebugText_Party_HealParty,      DEBUG_PARTY_MENU_ITEM_HEAL_PARTY},
     [DEBUG_PARTY_MENU_ITEM_INFLICT_STATUS1] = {sDebugText_Party_InflictStatus1, DEBUG_PARTY_MENU_ITEM_INFLICT_STATUS1},
+    [DEBUG_PARTY_MENU_ITEM_SET_TERA_TYPE]   = {sDebugText_Party_SetTeraType,    DEBUG_PARTY_MENU_ITEM_SET_TERA_TYPE},
     [DEBUG_PARTY_MENU_ITEM_CHECK_EVS]       = {sDebugText_Party_CheckEVs,       DEBUG_PARTY_MENU_ITEM_CHECK_EVS},
     [DEBUG_PARTY_MENU_ITEM_CHECK_IVS]       = {sDebugText_Party_CheckIVs,       DEBUG_PARTY_MENU_ITEM_CHECK_IVS},
     [DEBUG_PARTY_MENU_ITEM_CLEAR_PARTY]     = {sDebugText_Party_ClearParty,     DEBUG_PARTY_MENU_ITEM_CLEAR_PARTY},
@@ -947,6 +952,7 @@ static void (*const sDebugMenu_Actions_Party[])(u8) =
     [DEBUG_PARTY_MENU_ITEM_HATCH_AN_EGG]    = DebugAction_Party_HatchAnEgg,
     [DEBUG_PARTY_MENU_ITEM_HEAL_PARTY]      = DebugAction_Party_HealParty,
     [DEBUG_PARTY_MENU_ITEM_INFLICT_STATUS1] = DebugAction_Party_InflictStatus1,
+    [DEBUG_PARTY_MENU_ITEM_SET_TERA_TYPE]   = DebugAction_Party_SetTeraType,
     [DEBUG_PARTY_MENU_ITEM_CHECK_EVS]       = DebugAction_Party_CheckEVs,
     [DEBUG_PARTY_MENU_ITEM_CHECK_IVS]       = DebugAction_Party_CheckIVs,
     [DEBUG_PARTY_MENU_ITEM_CLEAR_PARTY]     = DebugAction_Party_ClearParty,
@@ -5317,6 +5323,11 @@ static void DebugAction_Party_HealParty(u8 taskId)
 static void DebugAction_Party_InflictStatus1(u8 taskId)
 {
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_InflictStatus1);
+}
+
+static void DebugAction_Party_SetTeraType(u8 taskId)
+{
+    Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_SetTeraType);
 }
 
 static void DebugAction_Party_CheckEVs(u8 taskId)

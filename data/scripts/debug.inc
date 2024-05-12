@@ -552,4 +552,215 @@ Debug_EventScript_InflictStatus1_Text_Freeze:
 Debug_EventScript_InflictStatus1_Text_Frostbite:
 	.string "Frostbite$"
 
+Debug_EventScript_SetTeraType::
+	lockall
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, Debug_NoPokemon
+	special ChoosePartyMon
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Debug_EventScript_SetTeraType_Close
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_EGG, Debug_EventScript_SetTeraType_Close
+	dynmultipush Debug_EventScript_SetTeraType_Text_Illusion, 0
+	dynmultipush Debug_EventScript_SetTeraType_Text_Dream, 1
+	dynmultipush Debug_EventScript_SetTeraType_Text_Flying, 2
+	dynmultipush Debug_EventScript_SetTeraType_Text_Miasma, 3
+	dynmultipush Debug_EventScript_SetTeraType_Text_Earth, 4
+	dynmultipush Debug_EventScript_SetTeraType_Text_Beast, 5
+	dynmultipush Debug_EventScript_SetTeraType_Text_Heart, 6
+	dynmultipush Debug_EventScript_SetTeraType_Text_Ghost, 7
+	dynmultipush Debug_EventScript_SetTeraType_Text_Steel, 8
+	dynmultipush Debug_EventScript_SetTeraType_Text_Fire, 9
+	dynmultipush Debug_EventScript_SetTeraType_Text_Water, 10
+	dynmultipush Debug_EventScript_SetTeraType_Text_Nature, 11
+	dynmultipush Debug_EventScript_SetTeraType_Text_Wind, 12
+	dynmultipush Debug_EventScript_SetTeraType_Text_Reason, 13
+	dynmultipush Debug_EventScript_SetTeraType_Text_Ice, 14
+	dynmultipush Debug_EventScript_SetTeraType_Text_Faith, 15
+	dynmultipush Debug_EventScript_SetTeraType_Text_Dark, 16
+	dynmultipush Debug_EventScript_SetTeraType_Text_Cosmic, 17
+	dynmultipush Debug_EventScript_SetTeraType_Text_Stellar, 18
+	dynmultipush Debug_EventScript_SetTeraType_Text_Close, 19
+	dynmultistack 0, 0, FALSE, 7, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, Debug_EventScript_SetTeraType_Illusion
+	case 1, Debug_EventScript_SetTeraType_Dream
+	case 2, Debug_EventScript_SetTeraType_Flying
+	case 3, Debug_EventScript_SetTeraType_Miasma
+	case 4, Debug_EventScript_SetTeraType_Earth
+	case 5, Debug_EventScript_SetTeraType_Beast
+	case 6, Debug_EventScript_SetTeraType_Heart
+	case 7, Debug_EventScript_SetTeraType_Ghost
+	case 8, Debug_EventScript_SetTeraType_Steel
+	case 9, Debug_EventScript_SetTeraType_Fire
+	case 10, Debug_EventScript_SetTeraType_Water
+	case 11, Debug_EventScript_SetTeraType_Nature
+	case 12, Debug_EventScript_SetTeraType_Wind
+	case 13, Debug_EventScript_SetTeraType_Reason
+	case 14, Debug_EventScript_SetTeraType_Ice
+	case 15, Debug_EventScript_SetTeraType_Faith
+	case 16, Debug_EventScript_SetTeraType_Dark
+	case 17, Debug_EventScript_SetTeraType_Cosmic
+	case 18, Debug_EventScript_SetTeraType_Stellar
+	case 19, Debug_EventScript_SetTeraType_Close
+	case MULTI_B_PRESSED, Debug_EventScript_SetTeraType_Close
+Debug_EventScript_SetTeraType_Close:
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Illusion:
+	setteratype TYPE_ILLUSION, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Dream:
+	setteratype TYPE_DREAM, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Flying:
+	setteratype TYPE_FLYING, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Miasma:
+	setteratype TYPE_MIASMA, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Earth:
+	setteratype TYPE_EARTH, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Beast:
+	setteratype TYPE_BEAST, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Heart:
+	setteratype TYPE_HEART, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Ghost:
+	setteratype TYPE_GHOST, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Steel:
+	setteratype TYPE_STEEL, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Fire:
+	setteratype TYPE_FIRE, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Water:
+	setteratype TYPE_WATER, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Nature:
+	setteratype TYPE_NATURE, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Wind:
+	setteratype TYPE_WIND, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Reason:
+	setteratype TYPE_REASON, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Ice:
+	setteratype TYPE_ICE, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Faith:
+	setteratype TYPE_FAITH, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Dark:
+	setteratype TYPE_DARK, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Cosmic:
+	setteratype TYPE_COSMIC, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Stellar:
+	setteratype TYPE_STELLAR, VAR_0x8004
+	releaseall
+	end
+
+Debug_EventScript_SetTeraType_Text_Illusion:
+	.string "Illusion$"
+
+Debug_EventScript_SetTeraType_Text_Dream:
+	.string "Dream$"
+
+Debug_EventScript_SetTeraType_Text_Flying:
+	.string "Flying$"
+
+Debug_EventScript_SetTeraType_Text_Miasma:
+	.string "Miasma$"
+
+Debug_EventScript_SetTeraType_Text_Earth:
+	.string "Earth$"
+
+Debug_EventScript_SetTeraType_Text_Beast:
+	.string "Beast$"
+
+Debug_EventScript_SetTeraType_Text_Heart:
+	.string "Heart$"
+
+Debug_EventScript_SetTeraType_Text_Ghost:
+	.string "Ghost$"
+
+Debug_EventScript_SetTeraType_Text_Steel:
+	.string "Steel$"
+
+Debug_EventScript_SetTeraType_Text_Fire:
+	.string "Fire$"
+
+Debug_EventScript_SetTeraType_Text_Water:
+	.string "Water$"
+
+Debug_EventScript_SetTeraType_Text_Nature:
+	.string "Nature$"
+
+Debug_EventScript_SetTeraType_Text_Wind:
+	.string "Wind$"
+
+Debug_EventScript_SetTeraType_Text_Reason:
+	.string "Reason$"
+
+Debug_EventScript_SetTeraType_Text_Ice:
+	.string "Ice$"
+
+Debug_EventScript_SetTeraType_Text_Faith:
+	.string "Faith$"
+
+Debug_EventScript_SetTeraType_Text_Dark:
+	.string "Dark$"
+
+Debug_EventScript_SetTeraType_Text_Cosmic:
+	.string "Cosmic$"
+
+Debug_EventScript_SetTeraType_Text_Stellar:
+	.string "Stellar$"
+
+Debug_EventScript_SetTeraType_Text_Close:
+	.string "Close$"
+
 .endif
