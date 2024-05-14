@@ -1,7 +1,7 @@
 #include "global.h"
 #include "test/battle.h"
 
-SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects")
+SINGLE_BATTLE_TEST("Covert Cloak blocks secondary effects")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_NUZZLE; }
@@ -20,27 +20,27 @@ SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects")
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_ROCK_TOMB, MOVE_EFFECT_SPD_MINUS_1, 100) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_SPIRIT_SHACKLE, MOVE_EFFECT_PREVENT_ESCAPE, 100) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_PSYCHIC_NOISE, MOVE_EFFECT_PSYCHIC_NOISE, 100) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
         HP_BAR(opponent);
         NONE_OF {
-            MESSAGE("Foe Vivillon is paralyzed! It may be unable to move!");
-            MESSAGE("Foe Vivillon was burned!");
-            MESSAGE("Foe Vivillon was poisoned!");
-            MESSAGE("Foe Vivillon flinched!");
+            MESSAGE("Foe Wobbuffet is paralyzed! It may be unable to move!");
+            MESSAGE("Foe Wobbuffet was burned!");
+            MESSAGE("Foe Wobbuffet was poisoned!");
+            MESSAGE("Foe Wobbuffet flinched!");
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
-            MESSAGE("Foe Vivillon was prevented from healing!");
+            MESSAGE("Foe Wobbuffet was prevented from healing!");
         }
     } THEN { // Can't find good way to test trapping
         EXPECT(!(opponent->status2 & STATUS2_ESCAPE_PREVENTION));
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
+SINGLE_BATTLE_TEST("Covert Cloak does not block primary effects")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_INFESTATION; }
@@ -54,20 +54,19 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_JAW_LOCK, MOVE_EFFECT_TRAP_BOTH, 0) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_PAY_DAY, MOVE_EFFECT_PAYDAY, 0) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_SMACK_DOWN, MOVE_EFFECT_SMACK_DOWN, 0) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_SKARMORY) { Item(ITEM_COVERT_CLOAK); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
         HP_BAR(opponent);
-        switch (move)
-        {
+        switch (move) {
             case MOVE_INFESTATION:
-                MESSAGE("Foe Vivillon has been afflicted with an infestation by Wobbuffet!");
+                MESSAGE("Foe Skarmory has been afflicted with an infestation by Wobbuffet!");
                 break;
             case MOVE_THOUSAND_ARROWS:
-                MESSAGE("Foe Vivillon fell straight down!");
+                MESSAGE("Foe Skarmory fell straight down!");
                 break;
             case MOVE_JAW_LOCK:
                 MESSAGE("Neither Pokémon can run away!");
@@ -84,7 +83,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary or secondary")
+SINGLE_BATTLE_TEST("Covert Cloak does not block self-targeting effects, primary or secondary")
 {
     u16 move;
     PARAMETRIZE { move = MOVE_POWER_UP_PUNCH; }
@@ -97,8 +96,8 @@ SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary o
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_RAPID_SPIN, MOVE_EFFECT_RAPID_SPIN) == TRUE);
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_LEAF_STORM, MOVE_EFFECT_SP_ATK_TWO_DOWN) == TRUE);
         ASSUME(MoveHasAdditionalEffectSelf(MOVE_METEOR_ASSAULT, MOVE_EFFECT_RECHARGE) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); }
     } WHEN {
         TURN { MOVE(player, move); }
         if (move == MOVE_METEOR_ASSAULT) {
@@ -107,8 +106,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary o
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
         HP_BAR(opponent);
-        switch (move)
-        {
+        switch (move) {
             case MOVE_POWER_UP_PUNCH:
             case MOVE_RAPID_SPIN:
             case MOVE_LEAF_STORM:
@@ -121,43 +119,43 @@ SINGLE_BATTLE_TEST("Shield Dust does not block self-targeting effects, primary o
     }
 }
 
-DOUBLE_BATTLE_TEST("Shield Dust does or does not block Sparkling Aria depending on number of targets hit")
+DOUBLE_BATTLE_TEST("Covert Cloak does or does not block Sparkling Aria depending on number of targets hit")
 {
     u32 moveToUse;
     PARAMETRIZE { moveToUse = MOVE_FINAL_GAMBIT; }
     PARAMETRIZE { moveToUse = MOVE_TACKLE; }
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_ADVENT); Status1(STATUS1_BURN); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(playerRight, moveToUse, target: opponentRight); MOVE(playerLeft, MOVE_SPARKLING_ARIA); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SPARKLING_ARIA, playerLeft);
         if (moveToUse == MOVE_TACKLE) {
-            MESSAGE("Foe Vivillon's burn was healed.");
+            MESSAGE("Foe Wobbuffet's burn was healed.");
             STATUS_ICON(opponentLeft, none: TRUE);
         } else {
             NONE_OF {
-                MESSAGE("Foe Vivillon's burn was healed.");
+                MESSAGE("Foe Wobbuffet's burn was healed.");
                 STATUS_ICON(opponentLeft, none: TRUE);
             }
         }
     }
 }
 
-SINGLE_BATTLE_TEST("Shield Dust blocks Sparkling Aria in singles")
+SINGLE_BATTLE_TEST("Covert Cloak blocks Sparkling Aria in singles")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_VIVILLON) { Ability(ABILITY_SHIELD_DUST); Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_COVERT_CLOAK); Status1(STATUS1_BURN); }
     } WHEN {
         TURN { MOVE(player, MOVE_SPARKLING_ARIA); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SPARKLING_ARIA, player);
         NONE_OF {
-            MESSAGE("Foe Vivillon's burn was healed.");
+            MESSAGE("Foe Wobbuffet's burn was healed.");
             STATUS_ICON(opponent, none: TRUE);
         }
     }
