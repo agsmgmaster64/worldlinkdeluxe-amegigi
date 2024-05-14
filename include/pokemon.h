@@ -107,8 +107,8 @@ struct PokemonSubstruct0
 {
     u16 species:11; // 2047 species.
     u16 teraType:5; // 30 types.
-    u16 heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 heldItem:11; // 2047 items.
+    u16 unused_02:5;
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
     u32 unused_04:3;
@@ -129,17 +129,15 @@ struct PokemonSubstruct1
     u16 move3:11; // 2047 moves.
     u16 unused_04:5;
     u16 move4:11; // 2047 moves.
-    u16 unused_06:3;
-    u16 hyperTrainedHP:1;
-    u16 hyperTrainedAttack:1;
+    u16 unused_06:5;
     u8 pp1:7; // 127 PP.
-    u8 hyperTrainedDefense:1;
+    u8 unused_07:1;
     u8 pp2:7; // 127 PP.
-    u8 hyperTrainedSpeed:1;
+    u8 unused_08:1;
     u8 pp3:7; // 127 PP.
-    u8 hyperTrainedSpAttack:1;
+    u8 unused_09:1;
     u8 pp4:7; // 127 PP.
-    u8 hyperTrainedSpDefense:1;
+    u8 unused_0A:1;
 };
 
 struct PokemonSubstruct2
@@ -150,8 +148,13 @@ struct PokemonSubstruct2
     u8 speedEV;
     u8 spAttackEV;
     u8 spDefenseEV;
-    u8 cool;
-    u8 beauty;
+    u8 hyperTrainedHP:2;
+    u8 hyperTrainedAttack:2;
+    u8 hyperTrainedDefense:2;
+    u8 hyperTrainedSpeed:2;
+    u8 hyperTrainedSpAttack:2;
+    u8 hyperTrainedSpDefense:2;
+    u8 unused_02:4;
     u8 cute;
     u8 smart;
     u8 tough;

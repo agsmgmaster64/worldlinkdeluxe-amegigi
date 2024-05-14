@@ -2104,22 +2104,22 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             }
             break;
         case MON_DATA_HYPER_TRAINED_HP:
-            retVal = substruct1->hyperTrainedHP;
+            retVal = substruct2->hyperTrainedHP;
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            retVal = substruct1->hyperTrainedAttack;
+            retVal = substruct2->hyperTrainedAttack;
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            retVal = substruct1->hyperTrainedDefense;
+            retVal = substruct2->hyperTrainedDefense;
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            retVal = substruct1->hyperTrainedSpeed;
+            retVal = substruct2->hyperTrainedSpeed;
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            retVal = substruct1->hyperTrainedSpAttack;
+            retVal = substruct2->hyperTrainedSpAttack;
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            retVal = substruct1->hyperTrainedSpDefense;
+            retVal = substruct2->hyperTrainedSpDefense;
             break;
         case MON_DATA_IS_SHADOW:
             retVal = substruct3->isShadow;
@@ -2485,22 +2485,22 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_HYPER_TRAINED_HP:
-            SET8(substruct1->hyperTrainedHP);
+            SET8(substruct2->hyperTrainedHP);
             break;
         case MON_DATA_HYPER_TRAINED_ATK:
-            SET8(substruct1->hyperTrainedAttack);
+            SET8(substruct2->hyperTrainedAttack);
             break;
         case MON_DATA_HYPER_TRAINED_DEF:
-            SET8(substruct1->hyperTrainedDefense);
+            SET8(substruct2->hyperTrainedDefense);
             break;
         case MON_DATA_HYPER_TRAINED_SPEED:
-            SET8(substruct1->hyperTrainedSpeed);
+            SET8(substruct2->hyperTrainedSpeed);
             break;
         case MON_DATA_HYPER_TRAINED_SPATK:
-            SET8(substruct1->hyperTrainedSpAttack);
+            SET8(substruct2->hyperTrainedSpAttack);
             break;
         case MON_DATA_HYPER_TRAINED_SPDEF:
-            SET8(substruct1->hyperTrainedSpDefense);
+            SET8(substruct2->hyperTrainedSpDefense);
             break;
         case MON_DATA_IS_SHADOW:
             SET8(substruct3->isShadow);

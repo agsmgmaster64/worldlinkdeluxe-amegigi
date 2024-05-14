@@ -1326,8 +1326,7 @@ bool32 Overworld_MusicCanOverrideMapMusic(void)
 
 static void TransitionMapMusic(void)
 {
-    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE
-     || FlagGet(FLAG_OVERRIDE_MUSIC) != TRUE)
+    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && FlagGet(FLAG_OVERRIDE_MUSIC) != TRUE)
     {
         u16 newMusic = GetWarpDestinationMusic();
         u16 currentMusic = GetCurrentMapMusic();
