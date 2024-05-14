@@ -1729,7 +1729,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         FOOTPRINT(Mantyke)
         .levelUpLearnset = sMantykeLevelUpLearnset,
         .teachableLearnset = sMantykeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_SPECIFIC_MON_IN_PARTY, SPECIES_CHIBI_NAZRIN, SPECIES_HELPER_NAZRIN}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 #endif //P_FAMILY_MANTINE
