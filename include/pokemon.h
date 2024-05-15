@@ -100,7 +100,6 @@ enum {
     MON_DATA_DYNAMAX_LEVEL,
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
-    MON_DATA_EVOLUTION_TRACKER,
 };
 
 struct PokemonSubstruct0
@@ -155,7 +154,7 @@ struct PokemonSubstruct2
     u8 hyperTrainedSpAttack:2;
     u8 hyperTrainedSpDefense:2;
     u8 unused_02:4;
-    u8 cute;
+    u8 nickname13;
     u8 smart;
     u8 tough;
     u8 affection;
@@ -227,7 +226,7 @@ struct BoxPokemon
     u8 otName[PLAYER_NAME_LENGTH];
     u8 markings:4;
     u8 compressedStatus:4;
-    u16 checksum;
+    u8 unused_01;
     u16 hpLost:14; // 16383 HP.
     u16 shinyModifier:1;
     u16 unused_1E:1;
