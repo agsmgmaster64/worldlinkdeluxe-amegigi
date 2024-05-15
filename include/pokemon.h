@@ -126,14 +126,16 @@ struct BoxPokemon
     /*0x24*/ u32 experience:21;
              u32 metLevel:7;
              u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
-             u32 hyperTrainedHP:2;
-             u32 gigantamaxFactor:1;
+             u32 hyperTrainedHP:1;
+             u32 hyperTrainedAttack:1;
+             u32 isShadow:1;
     /*0x28*/ u8 markings:4;
              u8 compressedStatus:4;
     /*0x29*/ u8 ppBonuses;
     /*0x2A*/ u8 friendship;
     /*0x2B*/ u8 pokeball:6; // 63 balls.
-             u8 hyperTrainedAttack:2;
+             u8 hyperTrainedDefense:1;
+             u8 hyperTrainedSpeed:1;
     /*0x2C*/ u16 move1:11; // 2047 moves.
              u16 attackIV:5;
     /*0x2E*/ u16 move2:11; // 2047 moves.
@@ -143,11 +145,11 @@ struct BoxPokemon
     /*0x32*/ u16 move4:11; // 2047 moves.
              u16 spAttackIV:5;
     /*0x34*/ u8 pp1:7; // 127 PP.
-             u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
+             u8 hyperTrainedSpAttack:1;
     /*0x35*/ u8 pp2:7; // 127 PP.
-             u8 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+             u8 hyperTrainedSpDefense:1;
     /*0x36*/ u8 pp3:7; // 127 PP.
-             u8 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+             u8 isBadEgg:1;
     /*0x37*/ u8 pp4:7; // 127 PP.
              u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
     /*0x38*/ u8 hpEV;
@@ -156,22 +158,23 @@ struct BoxPokemon
     /*0x3B*/ u8 speedEV;
     /*0x3C*/ u8 spAttackEV;
     /*0x3D*/ u8 spDefenseEV;
-    /*0x3E*/ u8 hyperTrainedDefense:2;
-             u8 hyperTrainedSpeed:2;
-             u8 hyperTrainedSpAttack:2;
-             u8 hyperTrainedSpDefense:2;
-    /*0x3F*/ u8 pokerus:5;
+    /*0x3E*/ u8 spDefenseIV:5;
+             u8 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+             u8 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+             u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
+    /*0x3F*/ u8 metLocation;
+    /*0x40*/ u8 pokerus:5;
              u8 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
-    /*0x40*/ u8 metLocation;
-    /*0x41*/ u8 dynamaxLevel:4;
+    /*0x41*/ u8 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
              u8 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
-             u8 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
-    /*0x42*/ u8 spDefenseIV:5;
-             u8 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
-    /*0x43*/ u8 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
+             u8 unused_41:2;
+    /*0x42*/ u8 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
              u8 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
-             u8 isBadEgg:1;
-             u8 isShadow:1;
+             u8 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
+             u8 unused_42:1;
+    /*0x43*/ u8 dynamaxLevel:4;
+             u8 gigantamaxFactor:1;
+             u8 unused_43:3;
 };
 
 struct Pokemon

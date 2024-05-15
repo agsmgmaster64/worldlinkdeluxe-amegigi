@@ -364,10 +364,10 @@
 #define SPECIES_WYNAUT                                  360
 #define SPECIES_SNORUNT                                 361
 #define SPECIES_GLALIE                                  362
-#define SPECIES_SPHEAL                                  363
+#define SPECIES_SPHEAL                                  363 // Hakurei
 #define SPECIES_SEALEO                                  364
 #define SPECIES_WALREIN                                 365
-#define SPECIES_CLAMPERL                                366
+#define SPECIES_CLAMPERL                                366 // Kirisame
 #define SPECIES_HUNTAIL                                 367
 #define SPECIES_GOREBYSS                                368
 #define SPECIES_RELICANTH                               369
