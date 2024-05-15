@@ -59,7 +59,6 @@ enum {
     MON_DATA_SPDEF_IV,
     MON_DATA_IS_EGG,
     MON_DATA_ABILITY_NUM,
-    MON_DATA_AFFECTION,
     MON_DATA_OT_GENDER,
     MON_DATA_COOL_RIBBON,
     MON_DATA_BEAUTY_RIBBON,
@@ -102,140 +101,77 @@ enum {
     MON_DATA_TERA_TYPE,
 };
 
-struct PokemonSubstruct0
-{
-    u16 species:11; // 2047 species.
-    u16 teraType:5; // 30 types.
-    u16 heldItem:11; // 2047 items.
-    u16 unused_02:5;
-    u32 experience:21;
-    u32 nickname11:8; // 11th character of nickname.
-    u32 unused_04:3;
-    u8 ppBonuses;
-    u8 friendship;
-    u16 pokeball:6; // 63 balls.
-    u16 nickname12:8; // 12th character of nickname.
-    u16 unused_0A:2;
-};
-
-struct PokemonSubstruct1
-{
-    u16 move1:11; // 2047 moves.
-    u16 evolutionTracker1:5;
-    u16 move2:11; // 2047 moves.
-    u16 evolutionTracker2:4;
-    u16 unused_02:1;
-    u16 move3:11; // 2047 moves.
-    u16 unused_04:5;
-    u16 move4:11; // 2047 moves.
-    u16 unused_06:5;
-    u8 pp1:7; // 127 PP.
-    u8 unused_07:1;
-    u8 pp2:7; // 127 PP.
-    u8 unused_08:1;
-    u8 pp3:7; // 127 PP.
-    u8 unused_09:1;
-    u8 pp4:7; // 127 PP.
-    u8 unused_0A:1;
-};
-
-struct PokemonSubstruct2
-{
-    u8 hpEV;
-    u8 attackEV;
-    u8 defenseEV;
-    u8 speedEV;
-    u8 spAttackEV;
-    u8 spDefenseEV;
-    u8 hyperTrainedHP:2;
-    u8 hyperTrainedAttack:2;
-    u8 hyperTrainedDefense:2;
-    u8 hyperTrainedSpeed:2;
-    u8 hyperTrainedSpAttack:2;
-    u8 hyperTrainedSpDefense:2;
-    u8 unused_02:4;
-    u8 nickname13;
-    u8 smart;
-    u8 tough;
-    u8 affection;
-};
-
-struct PokemonSubstruct3
-{
-    u8 pokerus;
-    u8 metLocation;
-    u16 metLevel:7;
-    u16 metGame:4;
-    u16 dynamaxLevel:4;
-    u16 otGender:1;
-    u32 hpIV:5;
-    u32 attackIV:5;
-    u32 defenseIV:5;
-    u32 speedIV:5;
-    u32 spAttackIV:5;
-    u32 spDefenseIV:5;
-    u32 isEgg:1;
-    u32 gigantamaxFactor:1;
-    u32 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
-    u32 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
-    u32 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
-    u32 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
-    u32 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
-    u32 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
-    u32 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-    u32 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-    u32 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
-    u32 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
-    u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
-    u32 isShadow:1;
-    u32 abilityNum:2;
-
-    u32 unused_64:8;
-};
-
-// Number of bytes in the largest Pokémon substruct.
-// They are assumed to be the same size, and will be padded to
-// the largest size by the union.
-// By default they are all 12 bytes.
-#define NUM_SUBSTRUCT_BYTES (max(sizeof(struct PokemonSubstruct0),     \
-                             max(sizeof(struct PokemonSubstruct1),     \
-                             max(sizeof(struct PokemonSubstruct2),     \
-                                 sizeof(struct PokemonSubstruct3)))))
-
-union PokemonSubstruct
-{
-    struct PokemonSubstruct0 type0;
-    struct PokemonSubstruct1 type1;
-    struct PokemonSubstruct2 type2;
-    struct PokemonSubstruct3 type3;
-    u16 raw[NUM_SUBSTRUCT_BYTES / 2]; // /2 because it's u16, not u8
-};
-
 struct BoxPokemon
 {
-    u32 personality;
-    u32 otId;
-    u8 nickname[min(10, POKEMON_NAME_LENGTH)];
-    u8 language:3;
-    u8 hiddenNatureModifier:5; // 31 natures.
-    u8 isBadEgg:1;
-    u8 hasSpecies:1;
-    u8 isEgg:1;
-    u8 blockBoxRS:1; // Unused, but Pokémon Box Ruby & Sapphire will refuse to deposit a Pokémon with this flag set.
-    u8 unused_13:4;
-    u8 otName[PLAYER_NAME_LENGTH];
-    u8 markings:4;
-    u8 compressedStatus:4;
-    u8 unused_01;
-    u16 hpLost:14; // 16383 HP.
-    u16 shinyModifier:1;
-    u16 unused_1E:1;
-
-    union
-    {
-        u32 raw[(NUM_SUBSTRUCT_BYTES * 4) / 4]; // *4 because there are 4 substructs, /4 because it's u32, not u8
-        union PokemonSubstruct substructs[4];
-    } secure;
+    /*0x00*/ u32 personality;
+    /*0x04*/ u32 otId;
+    /*0x08*/ u8 nickname[min(10, POKEMON_NAME_LENGTH)];
+    /*0x12*/ u8 nickname11; // 11th character of nickname.
+    /*0x13*/ u8 nickname12; // 12th character of nickname.
+    /*0x14*/ u8 nickname13; // 13th character of nickname.
+    /*0x15*/ u8 language:3;
+             u8 hiddenNatureModifier:5; // 31 natures.
+    /*0x16*/ u8 hasSpecies:1;
+             u8 isEgg:1;
+			 u8 abilityNum:2;
+             u8 metGame:4;
+    /*0x17*/ u8 otName[PLAYER_NAME_LENGTH];
+    /*0x1E*/ u16 hpLost:14; // 16383 HP.
+             u16 shinyModifier:1;
+             u16 otGender:1;
+    /*0x20*/ u16 species:11; // 2047 species.
+             u16 teraType:5; // 30 types.
+    /*0x22*/ u16 heldItem:11; // 2047 items.
+             u16 hpIV:5;
+    /*0x24*/ u32 experience:21;
+             u32 metLevel:7;
+             u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
+             u32 hyperTrainedHP:2;
+             u32 gigantamaxFactor:1;
+    /*0x28*/ u8 markings:4;
+             u8 compressedStatus:4;
+    /*0x29*/ u8 ppBonuses;
+    /*0x2A*/ u8 friendship;
+    /*0x2B*/ u8 pokeball:6; // 63 balls.
+             u8 hyperTrainedAttack:2;
+    /*0x2C*/ u16 move1:11; // 2047 moves.
+             u16 attackIV:5;
+    /*0x2E*/ u16 move2:11; // 2047 moves.
+             u16 defenseIV:5;
+    /*0x30*/ u16 move3:11; // 2047 moves.
+             u16 speedIV:5;
+    /*0x32*/ u16 move4:11; // 2047 moves.
+             u16 spAttackIV:5;
+    /*0x34*/ u8 pp1:7; // 127 PP.
+             u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
+    /*0x35*/ u8 pp2:7; // 127 PP.
+             u8 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+    /*0x36*/ u8 pp3:7; // 127 PP.
+             u8 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+    /*0x37*/ u8 pp4:7; // 127 PP.
+             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+    /*0x38*/ u8 hpEV;
+    /*0x39*/ u8 attackEV;
+    /*0x3A*/ u8 defenseEV;
+    /*0x3B*/ u8 speedEV;
+    /*0x3C*/ u8 spAttackEV;
+    /*0x3D*/ u8 spDefenseEV;
+    /*0x3E*/ u8 hyperTrainedDefense:2;
+             u8 hyperTrainedSpeed:2;
+             u8 hyperTrainedSpAttack:2;
+             u8 hyperTrainedSpDefense:2;
+    /*0x3F*/ u8 pokerus:5;
+             u8 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
+    /*0x40*/ u8 metLocation;
+    /*0x41*/ u8 dynamaxLevel:4;
+             u8 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
+             u8 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
+    /*0x42*/ u8 spDefenseIV:5;
+             u8 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
+    /*0x43*/ u8 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
+             u8 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
+             u8 isBadEgg:1;
+             u8 isShadow:1;
 };
 
 struct Pokemon

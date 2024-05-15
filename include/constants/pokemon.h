@@ -192,13 +192,12 @@
 #define FRIENDSHIP_MAX         6
 
 // Constants for GetBattlerAffectionHearts (based on affection value)
-#define AFFECTION_NO_HEARTS          0 // 0 affection
-#define AFFECTION_ONE_HEART          1 // 1-49 affection
-#define AFFECTION_TWO_HEARTS         2 // 50-99 affection
-#define AFFECTION_THREE_HEARTS       3 // 100-149 affection
-#define AFFECTION_FOUR_HEARTS        4 // 150-199 affection
-#define AFFECTION_FOUR_HALF_HEARTS   5 // 200-254 affection
-#define AFFECTION_FIVE_HEARTS        6 // Max affection
+#define AFFECTION_NO_HEARTS     0 // 0-79 friendship
+#define AFFECTION_ONE_HEART     1 // 80-129 friendship
+#define AFFECTION_TWO_HEARTS    2 // 130-179 friendship
+#define AFFECTION_THREE_HEARTS  3 // 180-219 friendship
+#define AFFECTION_FOUR_HEARTS   4 // 220-254 friendship
+#define AFFECTION_FIVE_HEARTS   5 // Max friendship
 
 // Friendship value that the majority of species use.
 #define STANDARD_FRIENDSHIP ((P_UPDATED_FRIENDSHIP >= GEN_8) ? 50 : 70)
