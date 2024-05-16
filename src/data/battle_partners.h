@@ -50,7 +50,6 @@
             .lvl = 42,
 #line 16
             .nature = NATURE_BRAVE,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 20
                 MOVE_LIGHT_SCREEN,
@@ -71,7 +70,6 @@
             .lvl = 43,
 #line 26
             .nature = NATURE_IMPISH,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 30
                 MOVE_TOXIC,
@@ -92,7 +90,6 @@
             .lvl = 44,
 #line 36
             .nature = NATURE_ADAMANT,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 40
                 MOVE_THUNDER,

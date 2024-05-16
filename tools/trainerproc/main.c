@@ -1809,10 +1809,6 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprintf(f, "#line %d\n", pokemon->dynamax_level_line);
                 fprintf(f, "            .dynamaxLevel = %d,\n", pokemon->dynamax_level);
             }
-            else
-            {
-                fprintf(f, "            .dynamaxLevel = MAX_DYNAMAX_LEVEL,\n");
-            }
 
             if (pokemon->gigantamax_factor_line)
             {

@@ -1869,22 +1869,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             // so if both are 0 we assume that this is a vanilla
             // Pokémon and replace them with EOS. This means that
             // two CHAR_SPACE at the end of a nickname are trimmed.
-            if (field != MON_DATA_NICKNAME10 && POKEMON_NAME_LENGTH >= 13)
-            {
-                if (boxMon->nickname11 == 0 && boxMon->nickname12 == 0 && boxMon->nickname13 == 0)
-                {
-                    data[retVal++] = EOS;
-                    data[retVal++] = EOS;
-                    data[retVal++] = EOS;
-                }
-                else
-                {
-                    data[retVal++] = boxMon->nickname11;
-                    data[retVal++] = boxMon->nickname12;
-                    data[retVal++] = boxMon->nickname13;
-                }
-            }
-            else if (field != MON_DATA_NICKNAME10 && POKEMON_NAME_LENGTH >= 12)
+            if (field != MON_DATA_NICKNAME10 && POKEMON_NAME_LENGTH >= 12)
             {
                 if (boxMon->nickname11 == 0 && boxMon->nickname12 == 0)
                 {
@@ -2012,21 +1997,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_ABILITY_NUM:
         retVal = boxMon->abilityNum;
         break;
-    case MON_DATA_COOL_RIBBON:
-        retVal = boxMon->coolRibbon;
-        break;
-    case MON_DATA_BEAUTY_RIBBON:
-        retVal = boxMon->beautyRibbon;
-        break;
-    case MON_DATA_CUTE_RIBBON:
-        retVal = boxMon->cuteRibbon;
-        break;
-    case MON_DATA_SMART_RIBBON:
-        retVal = boxMon->smartRibbon;
-        break;
-    case MON_DATA_TOUGH_RIBBON:
-        retVal = boxMon->toughRibbon;
-        break;
     case MON_DATA_CHAMPION_RIBBON:
         retVal = boxMon->championRibbon;
         break;
@@ -2035,9 +2005,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         break;
     case MON_DATA_VICTORY_RIBBON:
         retVal = boxMon->victoryRibbon;
-        break;
-    case MON_DATA_ARTIST_RIBBON:
-        retVal = boxMon->artistRibbon;
         break;
     case MON_DATA_EFFORT_RIBBON:
         retVal = boxMon->effortRibbon;
@@ -2080,15 +2047,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = 0;
         if (boxMon->species && !boxMon->isEgg)
         {
-            retVal += boxMon->coolRibbon;
-            retVal += boxMon->beautyRibbon;
-            retVal += boxMon->cuteRibbon;
-            retVal += boxMon->smartRibbon;
-            retVal += boxMon->toughRibbon;
             retVal += boxMon->championRibbon;
             retVal += boxMon->winningRibbon;
             retVal += boxMon->victoryRibbon;
-            retVal += boxMon->artistRibbon;
             retVal += boxMon->effortRibbon;
             retVal += boxMon->nationalRibbon;
         }
@@ -2098,16 +2059,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         if (boxMon->species && !boxMon->isEgg)
         {
             retVal = boxMon->championRibbon
-                | (boxMon->coolRibbon << 1)
-                | (boxMon->beautyRibbon << 4)
-                | (boxMon->cuteRibbon << 7)
-                | (boxMon->smartRibbon << 10)
-                | (boxMon->toughRibbon << 13)
-                | (boxMon->winningRibbon << 16)
-                | (boxMon->victoryRibbon << 17)
-                | (boxMon->artistRibbon << 18)
-                | (boxMon->effortRibbon << 19)
-                | (boxMon->nationalRibbon << 20);
+                | (boxMon->winningRibbon << 1)
+                | (boxMon->victoryRibbon << 2)
+                | (boxMon->effortRibbon << 3)
+                | (boxMon->nationalRibbon << 4);
         }
         break;
     case MON_DATA_HYPER_TRAINED_HP:
@@ -2296,14 +2251,11 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
                 boxMon->nickname11 = data[10];
             if (POKEMON_NAME_LENGTH >= 12)
                 boxMon->nickname12 = data[11];
-            if (POKEMON_NAME_LENGTH >= 13)
-                boxMon->nickname13 = data[12];
         }
         else
         {
             boxMon->nickname11 = EOS;
             boxMon->nickname12 = EOS;
-            boxMon->nickname13 = EOS;
         }
         break;
     }
@@ -2418,21 +2370,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     case MON_DATA_ABILITY_NUM:
         SET8(boxMon->abilityNum);
         break;
-    case MON_DATA_COOL_RIBBON:
-        SET8(boxMon->coolRibbon);
-        break;
-    case MON_DATA_BEAUTY_RIBBON:
-        SET8(boxMon->beautyRibbon);
-        break;
-    case MON_DATA_CUTE_RIBBON:
-        SET8(boxMon->cuteRibbon);
-        break;
-    case MON_DATA_SMART_RIBBON:
-        SET8(boxMon->smartRibbon);
-        break;
-    case MON_DATA_TOUGH_RIBBON:
-        SET8(boxMon->toughRibbon);
-        break;
     case MON_DATA_CHAMPION_RIBBON:
         SET8(boxMon->championRibbon);
         break;
@@ -2441,9 +2378,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     case MON_DATA_VICTORY_RIBBON:
         SET8(boxMon->victoryRibbon);
-        break;
-    case MON_DATA_ARTIST_RIBBON:
-        SET8(boxMon->artistRibbon);
         break;
     case MON_DATA_EFFORT_RIBBON:
         SET8(boxMon->effortRibbon);

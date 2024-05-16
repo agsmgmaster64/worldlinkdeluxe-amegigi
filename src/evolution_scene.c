@@ -582,8 +582,8 @@ static void CreateShedinja(u16 preEvoSpecies, struct Pokemon *mon)
         RemoveBagItem(ball, 1);
     #endif
 
-        for (i = MON_DATA_COOL_RIBBON; i < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; i++)
-            SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
+        //for (i = MON_DATA_COOL_RIBBON; i < MON_DATA_COOL_RIBBON + CONTEST_CATEGORIES_COUNT; i++)
+            //SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
         for (i = MON_DATA_CHAMPION_RIBBON; i <= MON_DATA_NATIONAL_RIBBON; i++)
             SetMonData(&gPlayerParty[gPlayerPartyCount], i, &data);
 

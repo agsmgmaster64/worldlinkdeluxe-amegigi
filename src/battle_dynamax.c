@@ -142,7 +142,7 @@ void ApplyDynamaxHPMultiplier(u32 battler, struct Pokemon* mon)
         return;
     else
     {
-        u32 scale = 150 + 5 * GetMonData(mon, MON_DATA_DYNAMAX_LEVEL);
+        u32 scale = 150 + 10 * GetMonData(mon, MON_DATA_DYNAMAX_LEVEL);
         u32 hp = (GetMonData(mon, MON_DATA_HP) * scale + 99) / 100;
         u32 maxHP = (GetMonData(mon, MON_DATA_MAX_HP) * scale + 99) / 100;
         SetMonData(mon, MON_DATA_HP, &hp);

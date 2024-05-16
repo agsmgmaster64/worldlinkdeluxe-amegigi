@@ -3051,14 +3051,14 @@ void SetLinkAIContestants(u8 contestType, u8 rank, bool32 isPostgame)
 
 u8 GetContestEntryEligibility(struct Pokemon *pkmn)
 {
-    u8 ribbon;
+    u8 ribbon = 0;
     u8 eligibility;
 
     if (GetMonData(pkmn, MON_DATA_IS_EGG))
         return CANT_ENTER_CONTEST_EGG;
     if (GetMonData(pkmn, MON_DATA_HP) == 0)
         return CANT_ENTER_CONTEST_FAINTED;
-    switch (gSpecialVar_ContestCategory)
+    /*switch (gSpecialVar_ContestCategory)
     {
     case CONTEST_CATEGORY_COOL:
         ribbon = GetMonData(pkmn, MON_DATA_COOL_RIBBON);
@@ -3077,7 +3077,7 @@ u8 GetContestEntryEligibility(struct Pokemon *pkmn)
         break;
     default:
         return CANT_ENTER_CONTEST;
-    }
+    }*/
 
     // Couldn't get this to match any other way.
     // Returns 2, 1, or 0 respectively if ribbon's rank is above, equal, or below

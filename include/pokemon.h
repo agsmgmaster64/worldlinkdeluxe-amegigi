@@ -60,11 +60,6 @@ enum {
     MON_DATA_IS_EGG,
     MON_DATA_ABILITY_NUM,
     MON_DATA_OT_GENDER,
-    MON_DATA_COOL_RIBBON,
-    MON_DATA_BEAUTY_RIBBON,
-    MON_DATA_CUTE_RIBBON,
-    MON_DATA_SMART_RIBBON,
-    MON_DATA_TOUGH_RIBBON,
     MON_DATA_LEVEL,
     MON_DATA_MAX_HP,
     MON_DATA_ATK,
@@ -78,7 +73,6 @@ enum {
     MON_DATA_CHAMPION_RIBBON,
     MON_DATA_WINNING_RIBBON,
     MON_DATA_VICTORY_RIBBON,
-    MON_DATA_ARTIST_RIBBON,
     MON_DATA_EFFORT_RIBBON,
     MON_DATA_NATIONAL_RIBBON,
     MON_DATA_KNOWN_MOVES,
@@ -108,7 +102,7 @@ struct BoxPokemon
     /*0x08*/ u8 nickname[min(10, POKEMON_NAME_LENGTH)];
     /*0x12*/ u8 nickname11; // 11th character of nickname.
     /*0x13*/ u8 nickname12; // 12th character of nickname.
-    /*0x14*/ u8 nickname13; // 13th character of nickname.
+    /*0x14*/ u8 metLocation;
     /*0x15*/ u8 language:3;
              u8 hiddenNatureModifier:5; // 31 natures.
     /*0x16*/ u8 hasSpecies:1;
@@ -151,7 +145,7 @@ struct BoxPokemon
     /*0x36*/ u8 pp3:7; // 127 PP.
              u8 isBadEgg:1;
     /*0x37*/ u8 pp4:7; // 127 PP.
-             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+             u8 gigantamaxFactor:1;
     /*0x38*/ u8 hpEV;
     /*0x39*/ u8 attackEV;
     /*0x3A*/ u8 defenseEV;
@@ -162,19 +156,9 @@ struct BoxPokemon
              u8 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
              u8 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
              u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
-    /*0x3F*/ u8 metLocation;
-    /*0x40*/ u8 pokerus:5;
-             u8 cuteRibbon:3;     // Stores the highest contest rank achieved in the Cute category.
-    /*0x41*/ u8 beautyRibbon:3;   // Stores the highest contest rank achieved in the Beauty category.
-             u8 coolRibbon:3;     // Stores the highest contest rank achieved in the Cool category.
-             u8 unused_41:2;
-    /*0x42*/ u8 smartRibbon:3;    // Stores the highest contest rank achieved in the Smart category.
-             u8 toughRibbon:3;    // Stores the highest contest rank achieved in the Tough category.
-             u8 artistRibbon:1;   // Given at the Contest Hall by winning a Master Rank contest with at least 800 points, and agreeing to have the Pokémon's portrait placed in the museum after being offered.
-             u8 unused_42:1;
-    /*0x43*/ u8 dynamaxLevel:4;
-             u8 gigantamaxFactor:1;
-             u8 unused_43:3;
+    /*0x3F*/ u8 pokerus:4;
+             u8 dynamaxLevel:3;
+             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
 };
 
 struct Pokemon

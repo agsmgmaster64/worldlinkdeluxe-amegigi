@@ -1960,7 +1960,7 @@ u16 HasMonWonThisContestBefore(void)
 {
     u16 hasRankRibbon = FALSE;
     struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
-    switch (gSpecialVar_ContestCategory)
+    /*switch (gSpecialVar_ContestCategory)
     {
     case CONTEST_CATEGORY_COOL:
         if (GetMonData(mon, MON_DATA_COOL_RIBBON) > gSpecialVar_ContestRank)
@@ -1982,7 +1982,7 @@ u16 HasMonWonThisContestBefore(void)
         if (GetMonData(mon, MON_DATA_TOUGH_RIBBON) > gSpecialVar_ContestRank)
             hasRankRibbon = TRUE;
         break;
-    }
+    }*/
 
     return hasRankRibbon;
 }
@@ -1994,7 +1994,7 @@ void GiveMonContestRibbon(void)
     if (gContestFinalStandings[gContestPlayerMonIndex] != 0)
         return;
 
-    switch (gSpecialVar_ContestCategory)
+    /*switch (gSpecialVar_ContestCategory)
     {
     case CONTEST_CATEGORY_COOL:
         ribbonData = GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_COOL_RIBBON);
@@ -2046,7 +2046,7 @@ void GiveMonContestRibbon(void)
                 TryPutSpotTheCutiesOnAir(&gPlayerParty[gContestMonPartyIndex], MON_DATA_TOUGH_RIBBON);
         }
         break;
-    }
+    }*/
 }
 
 void BufferContestantTrainerName(void)
@@ -2530,25 +2530,7 @@ void LoadLinkContestPlayerPalettes(void)
 
 bool8 GiveMonArtistRibbon(void)
 {
-    u8 hasArtistRibbon;
-
-    hasArtistRibbon = GetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_ARTIST_RIBBON);
-    if (!hasArtistRibbon
-        && gContestFinalStandings[gContestPlayerMonIndex] == 0
-        && gSpecialVar_ContestRank == CONTEST_RANK_MASTER
-        && gContestMonTotalPoints[gContestPlayerMonIndex] >= 800)
-    {
-        hasArtistRibbon = 1;
-        SetMonData(&gPlayerParty[gContestMonPartyIndex], MON_DATA_ARTIST_RIBBON, &hasArtistRibbon);
-        if (GetRibbonCount(&gPlayerParty[gContestMonPartyIndex]) > NUM_CUTIES_RIBBONS)
-            TryPutSpotTheCutiesOnAir(&gPlayerParty[gContestMonPartyIndex], MON_DATA_ARTIST_RIBBON);
-
-        return TRUE;
-    }
-    else
-    {
-        return FALSE;
-    }
+    return FALSE;
 }
 
 bool8 IsContestDebugActive(void)
