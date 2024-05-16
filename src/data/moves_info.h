@@ -12505,7 +12505,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Stomps down on the ground.\n"
             "Lowers Speed."),
-        .effect = EFFECT_BULLDOZE,
+        .effect = EFFECT_EARTHQUAKE,
         .power = 60,
         .type = TYPE_EARTH,
         .accuracy = 100,
