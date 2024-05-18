@@ -3879,9 +3879,9 @@ bool32 AI_ShouldSpicyExtract(u32 battlerAtk, u32 battlerAtkPartner, u32 move, st
      || HasMoveEffect(BATTLE_OPPOSITE(battlerAtkPartner), EFFECT_FOUL_PLAY))
         return FALSE;
 
-    preventsStatLoss = (partnerAbility == ABILITY_CLEAR_BODY
+    preventsStatLoss = (partnerAbility == ABILITY_HAKUREI_MIKO
                      || partnerAbility == ABILITY_FULL_METAL_BODY
-                     || partnerAbility == ABILITY_WHITE_SMOKE
+                     || partnerAbility == ABILITY_MAGIC_BARRIER
                      || partnerHoldEffect == HOLD_EFFECT_CLEAR_AMULET);
 
     switch (gMovesInfo[aiData->partnerMove].effect)
