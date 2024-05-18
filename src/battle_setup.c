@@ -1523,6 +1523,7 @@ static void CB2_EndTrainerBattle(void)
         {
             gSpecialVar_Result = FALSE;
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            DowngradeBadPoison();
             SetBattledTrainersFlags();
             RegisterTrainerInMatchCall();
         }
