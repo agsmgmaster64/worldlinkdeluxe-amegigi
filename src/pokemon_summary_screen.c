@@ -321,7 +321,7 @@ static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
 static void BufferIvOrEvStats(u8 mode);
 
-static u8 GetNatureColourID(s8 natureMod);
+static u8 GetNatureColourID(u8 nature, u8 statIndex);
 static void PrintNatureColouredStatNames(void);
 
 static const struct BgTemplate sBgTemplates[] =
@@ -3302,7 +3302,7 @@ static void PrintMonTrainerMemo(void)
 static void BufferNatureString(void)
 {
     struct PokemonSummaryScreenData *sumStruct = sMonSummaryScreen;
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gNatureNamePointers[sumStruct->summary.nature]);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(2, gNaturesInfo[sumStruct->summary.nature].name);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(5, gText_EmptyString5);
 }
 
@@ -3513,16 +3513,13 @@ static void PrintNatureColouredStatNames(void)
 {
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
     int statsXPos;
-    const s8 *natureMod;
     u8 atkColour, defColour, spaColour, spdColour, speColour;
 
-    natureMod = gNatureStatTable[sum->mintNature];
-
-    atkColour = GetNatureColourID(natureMod[STAT_ATK - 1]);
-    defColour = GetNatureColourID(natureMod[STAT_DEF - 1]);
-    spaColour = GetNatureColourID(natureMod[STAT_SPATK - 1]);
-    spdColour = GetNatureColourID(natureMod[STAT_SPDEF - 1]);
-    speColour = GetNatureColourID(natureMod[STAT_SPEED - 1]);
+    atkColour = GetNatureColourID(sum->mintNature, STAT_ATK);
+    defColour = GetNatureColourID(sum->mintNature, STAT_DEF);
+    spaColour = GetNatureColourID(sum->mintNature, STAT_SPATK);
+    spdColour = GetNatureColourID(sum->mintNature, STAT_SPDEF);
+    speColour = GetNatureColourID(sum->mintNature, STAT_SPEED);
 
     statsXPos = 6 + GetStringCenterAlignXOffset(1, gText_Attack3, 42);
     PrintTextOnWindow(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT, gText_Attack3, statsXPos, 17, 0, atkColour);
@@ -4453,12 +4450,14 @@ static void KeepMoveSelectorVisible(u8 firstSpriteId)
     }
 }
 
-static u8 GetNatureColourID(s8 natureMod)
+static u8 GetNatureColourID(u8 nature, u8 statIndex)
 {
-    if (natureMod == 0 || !SUMMARY_SCREEN_NATURE_COLORS)
+    if (statIndex == 0 || !SUMMARY_SCREEN_NATURE_COLORS || gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
         return 1; // Neutral - White (Standard)
-    else if (natureMod > 0)
+    else if (statIndex == gNaturesInfo[nature].statUp)
         return 6; // Positive - Red
-    else
+    else if (statIndex == gNaturesInfo[nature].statDown)
         return 5; // Negative - Blue
+    else
+        return 1; // failsafe
 }
