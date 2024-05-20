@@ -34,7 +34,7 @@ with open("src/data/pokemon/egg_moves.h", "w") as f:
 
 # update gBaseStats
 
-for file in glob.glob('./src/data/pokemon/species_info/gen_*_families.h'):
+for file in glob.glob('./src/data/pokemon/species_info/touhou_*_families.h'):
     with open(file, "r") as f:
         data = f.read()
 
