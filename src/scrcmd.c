@@ -2462,3 +2462,12 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
     }
     return TRUE;
 }
+
+bool8 ScrCmd_casinopokemart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+
+    CreateCoinsShopMenu(ptr);
+    ScriptContext_Stop();
+    return TRUE;
+}

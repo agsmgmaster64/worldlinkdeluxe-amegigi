@@ -968,3 +968,8 @@ u32 GetItemStatus2Mask(u16 itemId)
     else
         return 0;
 }
+
+u16 ItemId_GetCoinPrice(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].coinPrice;
+}

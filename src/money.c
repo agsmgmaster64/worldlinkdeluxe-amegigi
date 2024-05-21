@@ -9,6 +9,7 @@
 #include "sprite.h"
 #include "strings.h"
 #include "decompress.h"
+#include "constants/coins.h"
 
 EWRAM_DATA static u8 sMoneyBoxWindowId = 0;
 EWRAM_DATA static u8 sMoneyLabelSpriteId = 0;
@@ -65,6 +66,14 @@ static const struct CompressedSpritePalette sSpritePalette_MoneyLabel =
 {
     .data = gShopMenu_Pal,
     .tag = MONEY_LABEL_TAG
+};
+
+static const u32 sMenuCoinGfx[] = INCBIN_U32("graphics/interface/coins.4bpp.lz");
+static const struct CompressedSpriteSheet sSpriteSheet_CoinLabel =
+{
+    .data = sMenuCoinGfx,
+    .size = 256,
+    .tag = MONEY_LABEL_TAG,
 };
 
 u32 GetMoney(u32 *moneyPtr)
@@ -193,3 +202,24 @@ void RemoveMoneyLabelObject(void)
 {
     DestroySpriteAndFreeResources(&gSprites[sMoneyLabelSpriteId]);
 }
+
+// coin label object -> uses same resources as money label except sprite sheet
+void AddCoinLabelObject(u16 x, u16 y)
+{
+    LoadCompressedSpriteSheet(&sSpriteSheet_CoinLabel);
+    LoadCompressedSpritePalette(&sSpritePalette_MoneyLabel);
+    sMoneyLabelSpriteId = CreateSprite(&sSpriteTemplate_MoneyLabel, x, y, 0);
+}
+
+void PrintCoinsAmount(u8 windowId, u16 x, u16 y, u16 amount)
+{
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_RIGHT_ALIGN, MAX_COIN_DIGITS);
+    AddTextPrinterParameterized(windowId, 1, gStringVar1, x, y, 0, NULL);
+}
+
+void PrintCoinsAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, u16 amount)
+{
+    DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, tileStart, pallete);
+    PrintCoinsAmount(windowId, 56, 1, amount);
+}
+

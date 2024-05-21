@@ -18,5 +18,8 @@ void DrawMoneyBox(int amount, u8 x, u8 y);
 void HideMoneyBox(void);
 void AddMoneyLabelObject(u16 x, u16 y);
 void RemoveMoneyLabelObject(void);
+void AddCoinLabelObject(u16 x, u16 y);
+void PrintCoinsAmount(u8 windowId, u16 x, u16 y, u16 amount);
+void PrintCoinsAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, u16 amount);
 
 #endif // GUARD_MONEY_H

@@ -10,6 +10,7 @@ typedef void (*ItemUseFunc)(u8);
 struct Item
 {
     u32 price;
+    u16 coinPrice;
     u16 secondaryId;
     ItemUseFunc fieldUseFunc;
     const u8 *description;
@@ -78,6 +79,7 @@ ItemUseFunc ItemId_GetFieldFunc(u16 itemId);
 u8 ItemId_GetBattleUsage(u16 itemId);
 u8 ItemId_GetSecondaryId(u16 itemId);
 u32 ItemId_GetFlingPower(u32 itemId);
+u16 ItemId_GetCoinPrice(u16 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
 

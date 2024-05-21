@@ -231,6 +231,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_dynmultichoice                    @ 0xe4
 	.4byte ScrCmd_dynmultipush                      @ 0xe5
 	.4byte ScrCmd_checkpartylearnknowsfieldmove     @ 0xe6
+	.4byte ScrCmd_casinopokemart                    @ 0xe7
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
