@@ -7942,9 +7942,12 @@ BattleScript_IntimidateInReverse:
 	goto BattleScript_IntimidateLoopIncrement
 
 BattleScript_FascinateActivates::
+	copybyte sSAVED_BATTLER, gBattlerTarget
+.if B_ABILITY_POP_UP == TRUE
 	showabilitypopup BS_ATTACKER
 	pause B_WAIT_TIME_LONG
 	destroyabilitypopup
+.endif
 	setbyte gBattlerTarget, 0
 BattleScript_FascinateLoop:
 	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_FascinateLoopIncrement
