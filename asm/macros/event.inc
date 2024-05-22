@@ -1780,11 +1780,6 @@
 	.2byte \item
 	.2byte \quantity
 	.endm
-    
-    .macro casinopokemart pointer:req
-    .byte 0xe3
-    .4byte \pointer
-    .endm
 
 	@ Checks or manipulates the size or dose of the Pokevial.
 	@ When parameter is empty, it assumes VIAL_SIZE.
@@ -1885,6 +1880,11 @@
 	.endm
 
 	@ End qol_field_moves
+
+	.macro casinopokemart pointer:req
+	.byte 0xe7
+	.4byte \pointer
+	.endm
 
 @ Supplementary
 

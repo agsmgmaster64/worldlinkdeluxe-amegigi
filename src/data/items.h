@@ -1289,6 +1289,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("HP Up"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base HP\n"
             "of one Puppet."),
@@ -1305,6 +1306,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Protein"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Attack stat of one\n"
@@ -1322,6 +1324,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Iron"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Defense stat of\n"
@@ -1339,6 +1342,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Calcium"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Sp. Atk stat of one\n"
@@ -1356,6 +1360,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Zinc"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Sp. Def stat of one\n"
@@ -1374,6 +1379,7 @@ const struct Item gItemsInfo[] =
         .name = _("Carbos"),
         .pluralName = _("Carbos"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .coinPrice = 100,
         .description = COMPOUND_STRING(
             "Raises the base\n"
             "Speed stat of one\n"

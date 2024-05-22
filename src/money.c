@@ -211,15 +211,14 @@ void AddCoinLabelObject(u16 x, u16 y)
     sMoneyLabelSpriteId = CreateSprite(&sSpriteTemplate_MoneyLabel, x, y, 0);
 }
 
-void PrintCoinsAmount(u8 windowId, u16 x, u16 y, u16 amount)
+void PrintCoinsAmount(u8 windowId, u8 x, u8 y, u16 amount, u8 speed)
 {
     ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_RIGHT_ALIGN, MAX_COIN_DIGITS);
-    AddTextPrinterParameterized(windowId, 1, gStringVar1, x, y, 0, NULL);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar1, x, y, speed, NULL);
 }
 
 void PrintCoinsAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, u16 amount)
 {
     DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, tileStart, pallete);
-    PrintCoinsAmount(windowId, 56, 1, amount);
+    PrintCoinsAmount(windowId, 56, 1, amount, 0);
 }
-

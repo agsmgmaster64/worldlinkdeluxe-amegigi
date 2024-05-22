@@ -138,13 +138,22 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	settotemboost B_POSITION_OPPONENT_LEFT, 2, 0, 2, 2
-	setvar VAR_0x8004, SPECIES_ATTACK_RAN
-	setvar VAR_0x8006, 0
-	setwildbattle SPECIES_ATTACK_RAN, 30
-	special StartScriptedGhostBattle
-	waitstate
+	lockall
+	message gText_HowMayIServeYou
+	waitmessage
+	casinopokemart Debug_EventScript_Script_1_Mart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	releaseall
 	end
+
+Debug_EventScript_Script_1_Mart:
+	.2byte ITEM_HP_UP
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_IRON
+	.2byte ITEM_ZINC
+	.2byte ITEM_CARBOS
+	.2byte ITEM_NONE
 
 Debug_EventScript_Script_2::
 	givemon SPECIES_NORMAL_YOUMU, 100, ITEM_MAID_UNIFORM, ITEM_LUXURY_ORB, NATURE_ADAMANT, 2, 0, 0, 252, 0, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_BLADE_FLASH, MOVE_DRAWN_LINE, MOVE_SHADOW_HIT, MOVE_SWORDS_DANCE, TRUE, 0, TYPE_STELLAR
