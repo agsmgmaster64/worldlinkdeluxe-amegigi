@@ -11,10 +11,12 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 10,
       "y": 8,
@@ -28,6 +30,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 16,
       "y": 35,
@@ -41,6 +44,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 23,
       "y": 24,
@@ -54,6 +58,7 @@
       "flag": "FLAG_ITEM_JAGGED_PASS_BURN_HEAL"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 9,
       "y": 21,
@@ -67,6 +72,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 16,
       "y": 19,
@@ -80,6 +86,7 @@
       "flag": "FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 14,
       "y": 25,
@@ -93,6 +100,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 18,
       "y": 25,
@@ -232,7 +240,9 @@
       "y": 10,
       "elevation": 3,
       "item": "ITEM_FULL_HEAL",
-      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL"
+      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL",
+      "quantity": 0,
+      "underfoot": false
     },
     {
       "type": "hidden_item",
@@ -240,7 +250,9 @@
       "y": 29,
       "elevation": 3,
       "item": "ITEM_GREAT_ORB",
-      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL"
+      "flag": "FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL",
+      "quantity": 0,
+      "underfoot": false
     }
   ]
 }
