@@ -5623,6 +5623,18 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	pickup
 	end2
 
+BattleScript_DoiseBattleWon::
+	trainerslidein BS_ATTACKER
+	waitstate
+	printstring STRINGID_TRAINER1LOSETEXT
+	waitmessage B_WAIT_TIME_LONG
+	trainerslideout B_POSITION_OPPONENT_LEFT
+	waitstate
+	playtrainerdefeatbgm BS_ATTACKER
+	printstring STRINGID_PLAYERDEFEATEDTRAINER1
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_LocalBattleWonReward
+
 BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_DOME, BattleScript_CheckDomeDrew
 	jumpifbattletype BATTLE_TYPE_FRONTIER, BattleScript_LocalBattleLostPrintTrainersWinText

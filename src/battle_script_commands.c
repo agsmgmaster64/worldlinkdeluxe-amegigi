@@ -4338,6 +4338,7 @@ static void Cmd_getexp(void)
             }
             else
             {
+                BattleStopLowHpSound();
                 // Music change in a wild battle after fainting opposing pokemon.
                 if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                     && (gBattleMons[0].hp || (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && gBattleMons[2].hp))
@@ -4346,7 +4347,6 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong
                     && !FlagGet(FLAG_OVERRIDE_MUSIC))
                 {
-                    BattleStopLowHpSound();
                     switch (gSaveBlock2Ptr->optionsMusicStyle)
                     {
                     case OPTIONS_MUSIC_STYLE_VANILLA:
@@ -9385,8 +9385,48 @@ static void Cmd_various(void)
     case VARIOUS_PLAY_TRAINER_DEFEATED_MUSIC:
     {
         VARIOUS_ARGS();
-        BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
-        MarkBattlerForControllerExec(battler);
+        if (!FlagGet(FLAG_OVERRIDE_MUSIC))
+        {
+            if (FlagGet(FLAG_DOISE_BATTLE))
+            {
+                switch (gSaveBlock2Ptr->optionsMusicStyle)
+                {
+                case OPTIONS_MUSIC_STYLE_DEFAULT:
+                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                    break;
+                case OPTIONS_MUSIC_STYLE_ZGS:
+                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                    break;
+                case OPTIONS_MUSIC_STYLE_ALTERNATE:
+                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                    break;
+                case OPTIONS_MUSIC_STYLE_VANILLA:
+                default:
+                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                    break;
+                }
+            }
+            else
+            {
+                switch (gSaveBlock2Ptr->optionsMusicStyle)
+                {
+                case OPTIONS_MUSIC_STYLE_DEFAULT:
+                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
+                    break;
+                case OPTIONS_MUSIC_STYLE_ZGS:
+                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
+                    break;
+                case OPTIONS_MUSIC_STYLE_ALTERNATE:
+                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
+                    break;
+                case OPTIONS_MUSIC_STYLE_VANILLA:
+                default:
+                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_VICTORY_TRAINER, TRUE);
+                    break;
+                }
+                MarkBattlerForControllerExec(battler);
+            }
+        }
         break;
     }
     case VARIOUS_STAT_TEXT_BUFFER:

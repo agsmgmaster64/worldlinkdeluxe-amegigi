@@ -185,24 +185,23 @@ RustboroCity_Gym_Text_RoxanneIntro:
 	.string "battle, and with which POKéMON?$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
-	.string "So…\n"
+	.string "Well I'll be…\n"
 	.string "I lost…\p"
-	.string "It seems that I still have much more\n"
-	.string "to learn…\p"
-	.string "I understand.\p"
-	.string "The POKéMON LEAGUE's rules state\n"
-	.string "that TRAINERS are to be given this\l"
-	.string "if they defeat a GYM LEADER.\p"
-	.string "Please accept the official POKéMON\n"
-	.string "LEAGUE STONE BADGE.$"
+	.string "………\p"
+	.string "Well, guess I'll have to make…\n"
+	.string "a run for it then…\p"
+	.string "Before that though, here's the\n"
+	.string "badge and all the other prizes\l"
+	.string "you get.\p"
+	.string "…\n"
+	.string "The Noise is gonna hate me.$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
 	.string "{PLAYER} received the STONE BADGE\n"
 	.string "from ROXANNE.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
+	.string "A note is on the floor.\p"
 	.string "It also enables them to use the HM move\n"
 	.string "CUT outside of battle.\p"
 	.string "Please take this with you, too.$"

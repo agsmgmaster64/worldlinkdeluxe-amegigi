@@ -5653,60 +5653,68 @@ static void HandleEndTurn_BattleWon(void)
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         BattleStopLowHpSound();
-        gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
 
-        if (!FlagGet(FLAG_OVERRIDE_MUSIC))
+        if (FlagGet(FLAG_DOISE_BATTLE))
         {
-            switch (GetTrainerClassFromId(gTrainerBattleOpponent_A))
+            gBattlescriptCurrInstr = BattleScript_DoiseBattleWon;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
+
+            if (!FlagGet(FLAG_OVERRIDE_MUSIC))
             {
-            case TRAINER_CLASS_ELITE_FOUR:
-            case TRAINER_CLASS_CHAMPION:
-                PlayBGM(MUS_VICTORY_LEAGUE);
-                break;
-            case TRAINER_CLASS_TEAM_AQUA:
-            case TRAINER_CLASS_TEAM_MAGMA:
-            case TRAINER_CLASS_AQUA_ADMIN:
-            case TRAINER_CLASS_AQUA_LEADER:
-            case TRAINER_CLASS_MAGMA_ADMIN:
-            case TRAINER_CLASS_MAGMA_LEADER:
-                PlayBGM(MUS_VICTORY_AQUA_MAGMA);
-                break;
-            case TRAINER_CLASS_LEADER:
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
+                switch (GetTrainerClassFromId(gTrainerBattleOpponent_A))
                 {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                case TRAINER_CLASS_ELITE_FOUR:
+                case TRAINER_CLASS_CHAMPION:
+                    PlayBGM(MUS_VICTORY_LEAGUE);
                     break;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                case TRAINER_CLASS_TEAM_AQUA:
+                case TRAINER_CLASS_TEAM_MAGMA:
+                case TRAINER_CLASS_AQUA_ADMIN:
+                case TRAINER_CLASS_AQUA_LEADER:
+                case TRAINER_CLASS_MAGMA_ADMIN:
+                case TRAINER_CLASS_MAGMA_LEADER:
+                    PlayBGM(MUS_VICTORY_AQUA_MAGMA);
                     break;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                case TRAINER_CLASS_LEADER:
+                    switch (gSaveBlock2Ptr->optionsMusicStyle)
+                    {
+                    case OPTIONS_MUSIC_STYLE_DEFAULT:
+                        PlayBGM(MUS_VICTORY_GYM_LEADER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_ZGS:
+                        PlayBGM(MUS_VICTORY_GYM_LEADER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_ALTERNATE:
+                        PlayBGM(MUS_VICTORY_GYM_LEADER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_VANILLA:
+                    default:
+                        PlayBGM(MUS_VICTORY_GYM_LEADER);
+                        break;
+                    }
                     break;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
                 default:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
+                    switch (gSaveBlock2Ptr->optionsMusicStyle)
+                    {
+                    case OPTIONS_MUSIC_STYLE_DEFAULT:
+                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_ZGS:
+                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_ALTERNATE:
+                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
+                        break;
+                    case OPTIONS_MUSIC_STYLE_VANILLA:
+                    default:
+                        PlayBGM(MUS_VICTORY_TRAINER);
+                        break;
+                    }
                     break;
                 }
-                break;
-            default:
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
-                {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
-                default:
-                    PlayBGM(MUS_VICTORY_TRAINER);
-                    break;
-                }
-                break;
             }
         }
     }
