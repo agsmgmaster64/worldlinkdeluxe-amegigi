@@ -80,6 +80,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseSurfTool               @ FLDEFF_USE_SURF_TOOL
 	.4byte gFieldEffectScript_UseWaterfallTool          @ FLDEFF_USE_WATERFALL_TOOL
 	.4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
+	.4byte gFieldEffectScript_TracksSlither             @ FLDEFF_TRACKS_SLITHER
+	.4byte gFieldEffectScript_TracksBug                 @ FLDEFF_TRACKS_BUG
+	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -384,3 +387,15 @@ gFieldEffectScript_UseDiveTool::
 	field_eff_end
 
 @ End qol_field_moves
+
+gFieldEffectScript_TracksBug::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksBug
+	field_eff_end
+
+gFieldEffectScript_TracksSpot::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSpot
+	field_eff_end
+
+gFieldEffectScript_TracksSlither::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TracksSlither
+	field_eff_end

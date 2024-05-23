@@ -1886,6 +1886,13 @@
 	.4byte \pointer
 	.endm
 
+	@ Like callnative, but can return a value. TODO: Replace uses with callnative.
+	.macro callfunc func:req
+	.byte 0xe8
+	.4byte \func
+	.endm
+
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2256,4 +2263,35 @@
 	callnative SetTeraType
 	.byte \type
 	.2byte \slot
+	.endm
+
+	@ Saves species and forms of Daycare Pokémon to specific vars. Saves the amount of Daycare mon to VAR_RESULT.
+	.macro getdaycaregfx varSpecies1:req varSpecies2:req varForm1:req varForm2:req
+	callfunc ScrFunc_getdaycaregfx
+	.2byte \varSpecies1
+	.2byte \varSpecies2
+	.2byte \varForm1
+	.2byte \varForm2
+	.endm
+
+	@ Plays the cry of the first alive party member.
+	.macro playfirstmoncry
+	callfunc ScrFunc_playfirstmoncry
+	.endm
+
+	@ Buffers the nickname of the first alive party member.
+	.macro bufferlivemonnickname out:req
+	callfunc ScrFunc_bufferlivemonnickname
+	.byte \out
+	.endm
+
+	@ Executes Follower actions
+	.macro getfolloweraction
+	callfunc ScrFunc_getfolloweraction
+	.endm
+
+	@ Checks if Field move is being used by the current follower.
+	.macro IsFollowerFieldMoveUser var:req
+	callfunc ScrFunc_IsFollowerFieldMoveUser
+	.2byte \var
 	.endm
