@@ -7907,6 +7907,12 @@ BattleScript_IntimidateLoop:
 	jumpiftargetally BattleScript_IntimidateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_IntimidateLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_IntimidateLoopIncrement
+.if B_UPDATED_INTIMIDATE >= GEN_8 @These abilties specifically prevent just intimidate, without blocking stat decreases
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_IntimidatePrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_IntimidatePrevented
+.endif
 	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_IntimidateInReverse
 BattleScript_IntimidateEffect:
 	copybyte sBATTLER, gBattlerAttacker
@@ -7930,6 +7936,12 @@ BattleScript_IntimidateEnd:
 	copybyte gBattlerTarget, sSAVED_BATTLER
 	pause B_WAIT_TIME_MED
 	end3
+
+BattleScript_IntimidatePrevented:
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
+	goto BattleScript_IntimidateEffect_WaitString
 
 BattleScript_IntimidateWontDecrease:
 	printstring STRINGID_STATSWONTDECREASE
@@ -7966,6 +7978,12 @@ BattleScript_FascinateLoop:
 	jumpiftargetally BattleScript_FascinateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_FascinateLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateLoopIncrement
+.if B_UPDATED_INTIMIDATE >= GEN_8 @These abilties specifically prevent just intimidate, without blocking stat decreases
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_FascinatePrevented
+	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_FascinatePrevented
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_FascinatePrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_FascinatePrevented
+.endif
 	jumpifability BS_TARGET, ABILITY_GATE_KEEPER, BattleScript_FascinateInReverse
 BattleScript_FascinateEffect:
 	copybyte sBATTLER, gBattlerAttacker
@@ -7988,6 +8006,12 @@ BattleScript_FascinateEnd:
 	destroyabilitypopup
 	pause B_WAIT_TIME_MED
 	end3
+
+BattleScript_FascinatePrevented:
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
+	goto BattleScript_FascinateEffect_WaitString
 
 BattleScript_FascinateWontDecrease:
 	printstring STRINGID_STATSWONTDECREASE
