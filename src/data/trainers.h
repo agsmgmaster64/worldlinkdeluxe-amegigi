@@ -37861,14 +37861,16 @@ F_TRAINER_FEMALE |
     [TRAINER_STEVEN] =
     {
 #line 15780
-        .trainerName = _("STEVEN"),
+        .trainerName = _("Baelz"),
 #line 15781
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 15782
         .trainerPic = TRAINER_PIC_STEVEN,
         .encounterMusic_gender = 
+#line 15783
+F_TRAINER_FEMALE | 
 #line 15784
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 15785
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 15786

@@ -511,7 +511,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_LuxuryBall,            OBJ_EVENT_PAL_TAG_BALL_LUXURY},
     {gObjectEventPal_PremierBall,           OBJ_EVENT_PAL_TAG_BALL_PREMIER},
     {gObjectEventPal_DuskBall,              OBJ_EVENT_PAL_TAG_BALL_DUSK},
-    {gObjectEventPal_HealBall,              OBJ_EVENT_PAL_TAG_BALL_HEAL},
+    {gObjectEventPal_FoulBall,              OBJ_EVENT_PAL_TAG_BALL_FOUL},
     {gObjectEventPal_QuickBall,             OBJ_EVENT_PAL_TAG_BALL_QUICK},
     {gObjectEventPal_CherishBall,           OBJ_EVENT_PAL_TAG_BALL_CHERISH},
     {gObjectEventPal_ParkBall,              OBJ_EVENT_PAL_TAG_BALL_PARK},
@@ -519,9 +519,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_LevelBall,             OBJ_EVENT_PAL_TAG_BALL_LEVEL},
     {gObjectEventPal_LureBall,              OBJ_EVENT_PAL_TAG_BALL_LURE},
     {gObjectEventPal_HeavyBall,             OBJ_EVENT_PAL_TAG_BALL_HEAVY},
-    {gObjectEventPal_LoveBall,              OBJ_EVENT_PAL_TAG_BALL_LOVE},
-    {gObjectEventPal_FriendBall,            OBJ_EVENT_PAL_TAG_BALL_FRIEND},
-    {gObjectEventPal_MoonBall,              OBJ_EVENT_PAL_TAG_BALL_MOON},
+    {gObjectEventPal_UltraBallHisui,        OBJ_EVENT_PAL_TAG_BALL_ULTRA2},
+    {gObjectEventPal_GreatBallHisui,        OBJ_EVENT_PAL_TAG_BALL_GREAT2},
+    {gObjectEventPal_PokeBallHisui,         OBJ_EVENT_PAL_TAG_BALL_POKE2},
     {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
     {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
     {gObjectEventPal_BeastBall,             OBJ_EVENT_PAL_TAG_BALL_BEAST},
@@ -1860,10 +1860,10 @@ static const struct ObjectEventGraphicsInfo *SpeciesToGraphicsInfo(u16 species, 
 #if OW_FOLLOWERS_ENABLED
     switch (species)
     {
-    case SPECIES_UNOWN: // Letters >A are defined as species >= NUM_SPECIES, so are not contiguous with A
+    /*case SPECIES_UNOWN: // Letters >A are defined as species >= NUM_SPECIES, so are not contiguous with A
         form %= NUM_UNOWN_FORMS;
         graphicsInfo = &gSpeciesInfo[form ? SPECIES_UNOWN_B + form - 1 : species].followerData;
-        break;
+        break;*/
     default:
         graphicsInfo = &gSpeciesInfo[species].followerData;
         break;
@@ -2024,7 +2024,7 @@ static bool8 GetMonInfo(struct Pokemon *mon, u16 *species, u8 *form, u8 *shiny)
     }
     *species = GetMonData(mon, MON_DATA_SPECIES);
     *shiny = IsMonShiny(mon);
-    switch (*species)
+    /*switch (*species)
     {
     case SPECIES_UNOWN:
         *form = GET_UNOWN_LETTER(mon->box.personality);
@@ -2032,7 +2032,7 @@ static bool8 GetMonInfo(struct Pokemon *mon, u16 *species, u8 *form, u8 *shiny)
     case SPECIES_CASTFORM: // form is based on overworld weather
         *species = GetOverworldCastformSpecies();
         break;
-    }
+    }*/
     return TRUE;
 }
 
@@ -2332,41 +2332,39 @@ bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big 
         {
         case MAPSEC_RUSTBORO_CITY:
         case MAPSEC_PEWTER_CITY:
-            multi = TYPE_ROCK;
+        case MAPSEC_VIRIDIAN_CITY:
+            multi = TYPE_EARTH;
             break;
         case MAPSEC_DEWFORD_TOWN:
-            multi = TYPE_FIGHTING;
+            multi = TYPE_DREAM;
             break;
         case MAPSEC_MAUVILLE_CITY:
         case MAPSEC_VERMILION_CITY:
-            multi = TYPE_ELECTRIC;
+            multi = TYPE_WIND;
             break;
         case MAPSEC_LAVARIDGE_TOWN:
         case MAPSEC_CINNABAR_ISLAND:
             multi = TYPE_FIRE;
             break;
         case MAPSEC_PETALBURG_CITY:
-            multi = TYPE_NORMAL;
+            multi = TYPE_ILLUSION;
             break;
         case MAPSEC_FORTREE_CITY:
             multi = TYPE_FLYING;
             break;
         case MAPSEC_MOSSDEEP_CITY:
         case MAPSEC_SAFFRON_CITY:
-            multi = TYPE_PSYCHIC;
+            multi = TYPE_REASON;
             break;
         case MAPSEC_SOOTOPOLIS_CITY:
         case MAPSEC_CERULEAN_CITY:
             multi = TYPE_WATER;
             break;
         case MAPSEC_CELADON_CITY:
-            multi = TYPE_GRASS;
+            multi = TYPE_NATURE;
             break;
         case MAPSEC_FUCHSIA_CITY:
-            multi = TYPE_POISON;
-            break;
-        case MAPSEC_VIRIDIAN_CITY:
-            multi = TYPE_GROUND;
+            multi = TYPE_MIASMA;
             break;
         default:
             multi = NUMBER_OF_MON_TYPES;
@@ -5199,7 +5197,7 @@ static bool32 EndFollowerTransformEffect(struct ObjectEvent *objectEvent, struct
 static bool32 TryStartFollowerTransformEffect(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     u32 multi;
-    if (GET_BASE_SPECIES_ID(OW_SPECIES(objectEvent)) == SPECIES_CASTFORM
+    /*if (GET_BASE_SPECIES_ID(OW_SPECIES(objectEvent)) == SPECIES_CASTFORM
         && OW_SPECIES(objectEvent) != (multi = GetOverworldCastformSpecies()))
     {
         sprite->data[7] = TRANSFORM_TYPE_WEATHER << 8;
@@ -5211,7 +5209,7 @@ static bool32 TryStartFollowerTransformEffect(struct ObjectEvent *objectEvent, s
         sprite->data[7] = TRANSFORM_TYPE_RANDOM_WILD << 8;
         PlaySE(SE_M_MINIMIZE);
         return TRUE;
-    }
+    }*/
     return FALSE;
 }
 

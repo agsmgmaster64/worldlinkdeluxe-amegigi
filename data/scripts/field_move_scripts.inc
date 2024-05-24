@@ -27,14 +27,6 @@ EventScript_CanUseCutOtherwise::
 	goto_if_ne VAR_RESULT, TRUE, EventScript_CheckTreeCantCut
 	goto EventScript_UseCutTool
 
-@ Use cut from party menu
-EventScript_UseCut::
-	lockall
-	dofieldeffect FLDEFF_USE_CUT_ON_TREE
-	waitstate
-	goto EventScript_CutTreeDown
-	end
-
 EventScript_CutTreeDown::
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
@@ -110,14 +102,6 @@ EventScript_CanUseRockSmashOtherwise::
 	checkitem ITEM_PICKAXE, 1
 	goto_if_ne VAR_RESULT, TRUE, EventScript_CantSmashRock
 	goto EventScript_UseRockSmashTool
-
-@ Use rock smash from party menu
-EventScript_UseRockSmash::
-	lockall
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-	goto EventScript_SmashRock
-	end
 
 EventScript_SmashRock::
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT

@@ -27,14 +27,16 @@
     [PARTNER_STEVEN] =
     {
 #line 9
-        .trainerName = _("STEVEN"),
+        .trainerName = _("Baelz"),
 #line 10
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 11
         .trainerPic = TRAINER_BACK_PIC_STEVEN,
         .encounterMusic_gender = 
+#line 12
+F_TRAINER_FEMALE | 
 #line 13
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {

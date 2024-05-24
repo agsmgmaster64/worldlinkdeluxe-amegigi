@@ -388,7 +388,7 @@
 #define OBJ_EVENT_PAL_TAG_BALL_PREMIER            0x115A
 // Gen IV/Sinnoh
 #define OBJ_EVENT_PAL_TAG_BALL_DUSK               0x115B
-#define OBJ_EVENT_PAL_TAG_BALL_HEAL               0x115C
+#define OBJ_EVENT_PAL_TAG_BALL_FOUL               0x115C
 #define OBJ_EVENT_PAL_TAG_BALL_QUICK              0x115D
 #define OBJ_EVENT_PAL_TAG_BALL_CHERISH            0x115E
 #define OBJ_EVENT_PAL_TAG_BALL_PARK               0x115F
@@ -397,9 +397,9 @@
 #define OBJ_EVENT_PAL_TAG_BALL_LEVEL              0x1161
 #define OBJ_EVENT_PAL_TAG_BALL_LURE               0x1162
 #define OBJ_EVENT_PAL_TAG_BALL_HEAVY              0x1163
-#define OBJ_EVENT_PAL_TAG_BALL_LOVE               0x1164
-#define OBJ_EVENT_PAL_TAG_BALL_FRIEND             0x1165
-#define OBJ_EVENT_PAL_TAG_BALL_MOON               0x1166
+#define OBJ_EVENT_PAL_TAG_BALL_ULTRA2             0x1164
+#define OBJ_EVENT_PAL_TAG_BALL_GREAT2             0x1165
+#define OBJ_EVENT_PAL_TAG_BALL_POKE2              0x1166
 #define OBJ_EVENT_PAL_TAG_BALL_SPORT              0x1167
 // Gen V
 #define OBJ_EVENT_PAL_TAG_BALL_DREAM              0x1168
