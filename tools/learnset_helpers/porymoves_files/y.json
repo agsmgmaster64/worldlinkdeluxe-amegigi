@@ -5720,7 +5720,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 40,
@@ -5779,7 +5779,7 @@
       },
       {
         "Level": 42,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 49,

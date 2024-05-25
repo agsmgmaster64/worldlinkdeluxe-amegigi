@@ -9336,7 +9336,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -9466,7 +9466,7 @@
       },
       {
         "Level": 61,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 68,
@@ -14483,7 +14483,7 @@
     "EggMoves": [
       "MOVE_DISABLE",
       "MOVE_LUNGE",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_NIGHT_SLASH",
       "MOVE_RAGE_POWDER"
     ],
@@ -14621,7 +14621,7 @@
     "EggMoves": [
       "MOVE_DISABLE",
       "MOVE_LUNGE",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_NIGHT_SLASH",
       "MOVE_RAGE_POWDER"
     ],
@@ -18639,7 +18639,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 50,
@@ -19354,7 +19354,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -21379,7 +21379,7 @@
       "MOVE_DISABLE",
       "MOVE_DOUBLE_KICK",
       "MOVE_EXTRASENSORY",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PSYSHIELD_BASH",
       "MOVE_SPITE",
       "MOVE_THRASH"
@@ -30960,7 +30960,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 48,
@@ -31080,7 +31080,7 @@
       },
       {
         "Level": 52,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 58,
@@ -41240,7 +41240,7 @@
       },
       {
         "Level": 61,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 68,
@@ -42084,7 +42084,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 50,
@@ -45963,7 +45963,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -50231,7 +50231,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 10,
@@ -58838,7 +58838,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -58951,7 +58951,7 @@
       },
       {
         "Level": 63,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -63105,7 +63105,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 42,
@@ -71646,7 +71646,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -74340,7 +74340,7 @@
       },
       {
         "Level": 62,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -74408,7 +74408,7 @@
       "MOVE_DISABLE",
       "MOVE_DOUBLE_KICK",
       "MOVE_EXTRASENSORY",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PSYSHIELD_BASH",
       "MOVE_SPITE",
       "MOVE_THRASH"
@@ -80262,7 +80262,7 @@
     ],
     "EggMoves": [
       "MOVE_ANCIENT_POWER",
-      "MOVE_CRABHAMMER",
+      "MOVE_GALE",
       "MOVE_ENDEAVOR",
       "MOVE_KNOCK_OFF"
     ],
@@ -83575,7 +83575,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 40,
@@ -84152,7 +84152,7 @@
       },
       {
         "Level": 77,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 84,
@@ -84918,7 +84918,7 @@
       },
       {
         "Level": 77,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 84,
@@ -87309,7 +87309,7 @@
       },
       {
         "Level": 77,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 84,
@@ -88709,7 +88709,7 @@
       },
       {
         "Level": 70,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 77,
@@ -93253,7 +93253,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,

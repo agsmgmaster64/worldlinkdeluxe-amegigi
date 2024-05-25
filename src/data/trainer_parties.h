@@ -1549,7 +1549,7 @@ static const struct TrainerMon sParty_Olivia[] = {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 37,
     .species = SPECIES_CORPHISH,
-    .moves = {MOVE_TAUNT, MOVE_CRABHAMMER, MOVE_WATER_PULSE, MOVE_NONE}
+    .moves = {MOVE_TAUNT, MOVE_GALE, MOVE_WATER_PULSE, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -3441,7 +3441,7 @@ static const struct TrainerMon sParty_Juan1[] = {
     .lvl = 43,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_WATER_PULSE, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_LEER}
+    .moves = {MOVE_WATER_PULSE, MOVE_GALE, MOVE_TAUNT, MOVE_LEER}
     },
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
@@ -10816,7 +10816,7 @@ static const struct TrainerMon sParty_Juan2[] = {
     .lvl = 48,
     .species = SPECIES_CRAWDAUNT,
     .heldItem = ITEM_CHESTO_BERRY,
-    .moves = {MOVE_REST, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
+    .moves = {MOVE_REST, MOVE_GALE, MOVE_TAUNT, MOVE_DOUBLE_TEAM}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

@@ -504,11 +504,11 @@
 #define SPECIES_EMBOAR                                  500 // JKSanae
 #define SPECIES_OSHAWOTT                                501 // Dark Alice
 #define SPECIES_DEWOTT                                  502 // AkiSisters
-#define SPECIES_LAST_WORD_SUWAKO                        503 // LSuwako
-#define SPECIES_LAST_WORD_UTSUHO                        504 // LUtsuho
+#define SPECIES_LAST_WORD_SUWAKO                        503
+#define SPECIES_LAST_WORD_UTSUHO                        504
 #define SPECIES_LAST_WORD_TENSHI                        505 // LTenshi
 #define SPECIES_LAST_WORD_LETTY                         506 // LLetty
-#define SPECIES_LAST_WORD_KANAKO                        507 // LKanako
+#define SPECIES_LAST_WORD_KANAKO                        507
 #define SPECIES_STOUTLAND                               508 // Ayakashi
 #define SPECIES_PURRLOIN                                509
 #define SPECIES_LIEPARD                                 510

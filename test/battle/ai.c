@@ -321,8 +321,8 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_FIERY_DANCE; move4 = MOVE_DOUBLE_EDGE;
                   expectedMove = MOVE_FIERY_DANCE; expectedMove2 = MOVE_SKULL_BASH; }
     // Crabhammer is chosen even if Skull Bash is more accurate, the user has no Power Herb
-    PARAMETRIZE { abilityAtk = ABILITY_STURDY; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_SLAM; move4 = MOVE_CRABHAMMER;
-                  expectedMove = MOVE_CRABHAMMER; }
+    PARAMETRIZE { abilityAtk = ABILITY_STURDY; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_SLAM; move4 = MOVE_GALE;
+                  expectedMove = MOVE_GALE; }
 
     KNOWN_FAILING;
     GIVEN {

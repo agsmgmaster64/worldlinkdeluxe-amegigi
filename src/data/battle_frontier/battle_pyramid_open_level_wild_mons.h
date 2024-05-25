@@ -560,7 +560,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round11[] =
         .species = SPECIES_SPEED_UTSUHO,
         .lvl = 5,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_MEGAHORN, MOVE_EARTHQUAKE, MOVE_FOCUS_PUNCH, MOVE_ROCK_SLIDE}
+        .moves = {MOVE_BATTLE_CHANT, MOVE_EARTHQUAKE, MOVE_FOCUS_PUNCH, MOVE_ROCK_SLIDE}
     },
     {
         .species = SPECIES_CHIBI_MERLIN,
@@ -652,7 +652,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round13[] =
         .species = SPECIES_SPEED_UTSUHO,
         .lvl = 6,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_MEGAHORN, MOVE_BRICK_BREAK, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE}
+        .moves = {MOVE_BATTLE_CHANT, MOVE_BRICK_BREAK, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE}
     },
     {
         .species = SPECIES_DEFENSE_YUUGI,
@@ -692,7 +692,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round14[] =
         .species = SPECIES_CRAWDAUNT,
         .lvl = 8,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_CRABHAMMER, MOVE_ICE_BEAM, MOVE_SURF, MOVE_NONE}
+        .moves = {MOVE_GALE, MOVE_ICE_BEAM, MOVE_SURF, MOVE_NONE}
     },
     {
         .species = SPECIES_SHIFTRY,

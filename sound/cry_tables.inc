@@ -66,6 +66,13 @@ gCryTable::
 	cry Cry_Shou
 	cry Cry_Byakuren
 	cry Cry_Nue
+	cry Cry_Suika
+	cry Cry_Iku
+	cry Cry_Tenshi
+	cry Cry_Hatate
+	cry Cry_Sunny
+	cry Cry_Luna
+	cry Cry_Star
 
 	.align 2
 gCryTable_Reverse::
@@ -135,3 +142,10 @@ gCryTable_Reverse::
 	cry_reverse Cry_Shou
 	cry_reverse Cry_Byakuren
 	cry_reverse Cry_Nue
+	cry_reverse Cry_Suika
+	cry_reverse Cry_Iku
+	cry_reverse Cry_Tenshi
+	cry_reverse Cry_Hatate
+	cry_reverse Cry_Sunny
+	cry_reverse Cry_Luna
+	cry_reverse Cry_Star

@@ -3748,26 +3748,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {0}
     },
 
-    [MOVE_CRABHAMMER] =
+    [MOVE_GALE] =
     {
-        .name = COMPOUND_STRING("Crabhammer"),
+        .name = COMPOUND_STRING("Gale"),
         .description = COMPOUND_STRING(
-            "Hammers with a pincer. Has a\n"
-            "high critical-hit ratio."),
+            "An extremely fast attack\n"
+            "that always strikes first."),
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 100 : 90,
-        .type = TYPE_WATER,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 85,
-        .criticalHitStage = 1,
-        .pp = 10,
+        .power = 40,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 30,
         .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_RAIN_DANCE, COMBO_STARTER_SWORDS_DANCE},
+        .contestComboMoves = {COMBO_STARTER_DOUBLE_TEAM},
     },
 
     [MOVE_EXPLOSION] =
@@ -5467,21 +5465,26 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_MIND_READER},
     },
 
-    [MOVE_MEGAHORN] =
+    [MOVE_BATTLE_CHANT] =
     {
-        .name = COMPOUND_STRING("Megahorn"),
+        .name = COMPOUND_STRING("Battle Chant"),
         .description = COMPOUND_STRING(
             "A brutal ramming attack\n"
             "using out-thrust horns."),
         .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_HEART,
-        .accuracy = 85,
+        .power = 100,
+        .type = TYPE_STEEL,
+        .accuracy = 95,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 20,
+        }),
         .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,

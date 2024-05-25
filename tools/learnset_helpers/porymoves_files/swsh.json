@@ -2379,11 +2379,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -2493,7 +2493,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_SHADOW_BALL",
       "MOVE_PERFORMANCE",
@@ -6318,7 +6318,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -6411,7 +6411,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_STEEL_FIST",
       "MOVE_HEAT_WAVE",
@@ -7864,7 +7864,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 48,
@@ -7980,7 +7980,7 @@
       },
       {
         "Level": 54,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 60,
@@ -9215,7 +9215,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -9261,7 +9261,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_CRUNCH",
       "MOVE_PERFORMANCE",
@@ -9347,7 +9347,7 @@
       },
       {
         "Level": 61,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 68,
@@ -9412,7 +9412,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_CRUNCH",
       "MOVE_PERFORMANCE",
@@ -10100,7 +10100,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 50,
@@ -10135,7 +10135,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_MUDDY_WATER",
       "MOVE_POISON_JAB",
       "MOVE_SCALD",
@@ -10198,7 +10198,7 @@
       },
       {
         "Level": 51,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 58,
@@ -10235,7 +10235,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_MUDDY_WATER",
       "MOVE_POISON_JAB",
       "MOVE_SCALD",
@@ -11333,7 +11333,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_PERFORMANCE",
       "MOVE_CLOSE_COMBAT",
@@ -11615,7 +11615,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_FUTURE_SIGHT",
       "MOVE_HYPER_VOICE",
@@ -14191,7 +14191,7 @@
       "MOVE_PSYSHOCK",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_ENCORE",
       "MOVE_STEEL_FIST",
@@ -17829,7 +17829,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -17876,7 +17876,7 @@
       "MOVE_SPIKES",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_IRON_DEFENSE",
       "MOVE_BULK_UP",
       "MOVE_CLOSE_COMBAT",
@@ -27645,7 +27645,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 48,
@@ -27767,7 +27767,7 @@
       },
       {
         "Level": 52,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 58,
@@ -29091,7 +29091,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_STEEL_FIST",
       "MOVE_SHADOW_BALL",
@@ -36401,7 +36401,7 @@
       },
       {
         "Level": 61,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 68,
@@ -36470,7 +36470,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_CRUNCH",
       "MOVE_PERFORMANCE",
@@ -42525,7 +42525,7 @@
       },
       {
         "Level": 74,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -42561,7 +42561,7 @@
       "MOVE_SPIKES",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_STEEL_FIST",
       "MOVE_SUPERPOWER",
@@ -47218,7 +47218,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_ENCORE",
       "MOVE_IRON_DEFENSE",
       "MOVE_POISON_JAB",
@@ -47348,7 +47348,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_ENCORE",
       "MOVE_TAUNT",
       "MOVE_IRON_DEFENSE",
@@ -51104,7 +51104,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 55,
@@ -51144,7 +51144,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PERFORMANCE",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
@@ -52573,7 +52573,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
       "MOVE_IRON_DEFENSE",
@@ -52686,7 +52686,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
       "MOVE_CALM_MIND",
@@ -52796,7 +52796,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
       "MOVE_CALM_MIND",
@@ -53648,7 +53648,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
       "MOVE_MUDDY_WATER",
@@ -56309,7 +56309,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -56418,7 +56418,7 @@
       },
       {
         "Level": 63,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -59171,7 +59171,7 @@
       },
       {
         "Level": 70,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 75,
@@ -59216,7 +59216,7 @@
       "MOVE_PSYSHOCK",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_HYPER_VOICE",
       "MOVE_CALM_MIND",
       "MOVE_CLOSE_COMBAT",
@@ -65821,7 +65821,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 70,
@@ -65867,7 +65867,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_TAUNT",
       "MOVE_SUPERPOWER",
       "MOVE_IRON_DEFENSE",
@@ -66873,7 +66873,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_SUPERPOWER",
       "MOVE_IRON_DEFENSE",
       "MOVE_GYRO_BALL",
@@ -70689,7 +70689,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_STEEL_FIST",
       "MOVE_CRUNCH",
       "MOVE_SUPERPOWER",
@@ -74540,7 +74540,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 60,
@@ -74575,7 +74575,7 @@
       "MOVE_REVERSAL",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_SUPERPOWER",
       "MOVE_IRON_DEFENSE",
       "MOVE_BULK_UP",
@@ -77350,7 +77350,7 @@
       "MOVE_OUTRAGE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_CRUNCH",
       "MOVE_PERFORMANCE",
       "MOVE_TAUNT",
@@ -79268,7 +79268,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -79358,7 +79358,7 @@
       "MOVE_SUBSTITUTE",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_STEEL_FIST",
       "MOVE_FUTURE_SIGHT",
@@ -83260,7 +83260,7 @@
       "MOVE_PSYSHOCK",
       "MOVE_ENDURE",
       "MOVE_SLEEP_TALK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_BATON_PASS",
       "MOVE_ENCORE",
       "MOVE_CRUNCH",

@@ -69,6 +69,13 @@ enum {
     CRY_SHOU,
     CRY_BYAKUREN,
     CRY_NUE,
+    CRY_SUIKA,
+    CRY_IKU,
+    CRY_TENSHI,
+    CRY_HATATE,
+    CRY_SUNNY,
+    CRY_LUNA,
+    CRY_STAR,
     CRY_COUNT,
 };
 

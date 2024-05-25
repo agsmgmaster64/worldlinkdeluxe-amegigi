@@ -21,7 +21,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_CONSTRICT,
     MOVE_COSMIC_POWER,
     MOVE_COUNTER,
-    MOVE_CRABHAMMER,
+    MOVE_GALE,
     MOVE_CROSS_CHOP,
     MOVE_CRUNCH,
     MOVE_CUT,

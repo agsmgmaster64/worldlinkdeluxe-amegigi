@@ -5627,7 +5627,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 2316
                 MOVE_TAUNT,
-                MOVE_CRABHAMMER,
+                MOVE_GALE,
                 MOVE_WATER_PULSE,
             },
             },
@@ -12088,7 +12088,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 5037
                 MOVE_WATER_PULSE,
-                MOVE_CRABHAMMER,
+                MOVE_GALE,
                 MOVE_TAUNT,
                 MOVE_LEER,
             },
@@ -37377,7 +37377,7 @@ F_TRAINER_FEMALE |
             .moves = {
 #line 15564
                 MOVE_REST,
-                MOVE_CRABHAMMER,
+                MOVE_GALE,
                 MOVE_TAUNT,
                 MOVE_DOUBLE_TEAM,
             },

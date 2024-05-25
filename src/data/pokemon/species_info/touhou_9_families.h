@@ -27,9 +27,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("CAya"),
         .cryId = CRY_AYA,
         .natDexNum = NATIONAL_DEX_PORYGON,
-        .categoryName = _("Virtual"),
-        .height = 8,
-        .weight = 365,
+        .categoryName = _("Reporter"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It is capable of reverting itself entirely\n"
             "back to program data in order to enter\n"
@@ -56,6 +56,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         FOOTPRINT(CAya)
         .levelUpLearnset = sCAyaLevelUpLearnset,
         .teachableLearnset = sCAyaTeachableLearnset,
+        .eggMoveLearnset = sCAyaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_AYA},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_AYA},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_AYA}),
@@ -85,9 +86,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("Aya"),
         .cryId = CRY_AYA,
         .natDexNum = NATIONAL_DEX_OMANYTE,
-        .categoryName = _("Spiral"),
-        .height = 4,
-        .weight = 75,
+        .categoryName = _("Reporter"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "One of the ancient and long-since-extinct\n"
             "Pokémon that have been regenerated\n"
@@ -139,9 +140,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("SAya"),
         .cryId = CRY_AYA,
         .natDexNum = NATIONAL_DEX_OMASTAR,
-        .categoryName = _("Spiral"),
-        .height = 10,
-        .weight = 350,
+        .categoryName = _("Reporter"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "An Omastar uses its tentacles to capture\n"
             "its prey. It is believed to have become\n"
@@ -194,9 +195,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("TAya"),
         .cryId = CRY_AYA,
         .natDexNum = NATIONAL_DEX_KABUTO,
-        .categoryName = _("Shellfish"),
-        .height = 5,
-        .weight = 115,
+        .categoryName = _("Reporter"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It is a Pokémon that has been regenerated\n"
             "from a fossil. However, in rare cases, living\n"
@@ -249,9 +250,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("CMedicine"),
         .cryId = CRY_MEDICINE,
         .natDexNum = NATIONAL_DEX_KABUTOPS,
-        .categoryName = _("Shellfish"),
-        .height = 13,
-        .weight = 405,
+        .categoryName = _("Suzuran"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Kabutops once swam underwater to hunt \n"
             "for prey. It was apparently evolving from\n"
@@ -277,6 +278,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         FOOTPRINT(CMedicine)
         .levelUpLearnset = sCMedicineLevelUpLearnset,
         .teachableLearnset = sCMedicineTeachableLearnset,
+        .eggMoveLearnset = sCMedicineEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MEDICINE},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MEDICINE},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MEDICINE},
@@ -308,9 +310,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("Medicine"),
         .cryId = CRY_MEDICINE,
         .natDexNum = NATIONAL_DEX_AERODACTYL,
-        .categoryName = _("Fossil"),
-        .height = 18,
-        .weight = 590,
+        .categoryName = _("Suzuran"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Aerodactyl is a Pokémon from the age\n"
             "of dinosaurs. It was regenerated from DNA\n"
@@ -361,9 +363,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("AMedicine"),
         .cryId = CRY_MEDICINE,
         .natDexNum = NATIONAL_DEX_SNORLAX,
-        .categoryName = _("Sleeping"),
-        .height = 21,
-        .weight = 4600,
+        .categoryName = _("Suzuran"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Snorlax's typical day consists of nothing\n"
             "more than eating and sleeping. It is such\n"
@@ -415,9 +417,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("SMedicine"),
         .cryId = CRY_MEDICINE,
         .natDexNum = NATIONAL_DEX_ARTICUNO,
-        .categoryName = _("Freeze"),
-        .height = 17,
-        .weight = 554,
+        .categoryName = _("Suzuran"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Articuno is a legendary bird Pokémon that\n"
             "can control ice. The flapping of its wings\n"
@@ -469,9 +471,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("TMedicine"),
         .cryId = CRY_MEDICINE,
         .natDexNum = NATIONAL_DEX_ZAPDOS,
-        .categoryName = _("Electric"),
-        .height = 16,
-        .weight = 526,
+        .categoryName = _("Suzuran"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Zapdos is a legendary bird Pokémon that\n"
             "has the ability to control electricity.\n"
@@ -522,9 +524,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("CYuuka"),
         .cryId = CRY_YUUKA,
         .natDexNum = NATIONAL_DEX_MOLTRES,
-        .categoryName = _("Flame"),
-        .height = 20,
-        .weight = 600,
+        .categoryName = _("Sun Flower"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Moltres is a legendary bird Pokémon\n"
             "that can control fire. If injured, it is said\n"
@@ -550,6 +552,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         FOOTPRINT(CYuuka)
         .levelUpLearnset = sCYuukaLevelUpLearnset,
         .teachableLearnset = sCYuukaTeachableLearnset,
+        .eggMoveLearnset = sCYuukaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_YUUKA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUUKA},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_YUUKA}),
@@ -578,9 +581,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("Yuuka"),
         .cryId = CRY_YUUKA,
         .natDexNum = NATIONAL_DEX_DRATINI,
-        .categoryName = _("Dragon"),
-        .height = 18,
-        .weight = 33,
+        .categoryName = _("Sun Flower"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Dratini continually molts and sloughs\n"
             "off its old skin. It does so because the\n"
@@ -631,9 +634,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("AYuuka"),
         .cryId = CRY_YUUKA,
         .natDexNum = NATIONAL_DEX_DRAGONAIR,
-        .categoryName = _("Dragon"),
-        .height = 40,
-        .weight = 165,
+        .categoryName = _("Sun Flower"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "A Dragonair stores an enormous amount of\n"
             "energy inside its body. It is said to alter\n"
@@ -684,9 +687,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("TYuuka"),
         .cryId = CRY_YUUKA,
         .natDexNum = NATIONAL_DEX_DRAGONITE,
-        .categoryName = _("Dragon"),
-        .height = 22,
-        .weight = 2100,
+        .categoryName = _("Sun Flower"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It can circle the globe in just 16 hours.\n"
             "It is a kindhearted Pokémon that leads\n"
@@ -738,9 +741,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("CKomachi"),
         .cryId = CRY_KOMACHI,
         .natDexNum = NATIONAL_DEX_MEWTWO,
-        .categoryName = _("Genetic"),
-        .height = 20,
-        .weight = 1220,
+        .categoryName = _("Ferryman"),
+        .height = 5,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "A Pokémon that was created by genetic\n"
             "manipulation. However, even though the\n"
@@ -766,6 +769,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         FOOTPRINT(CKomachi)
         .levelUpLearnset = sCKomachiLevelUpLearnset,
         .teachableLearnset = sCKomachiTeachableLearnset,
+        .eggMoveLearnset = sCKomachiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_KOMACHI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KOMACHI},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_KOMACHI}),
@@ -795,9 +799,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("Komachi"),
         .cryId = CRY_KOMACHI,
         .natDexNum = NATIONAL_DEX_MEW,
-        .categoryName = _("New Species"),
-        .height = 4,
-        .weight = 40,
+        .categoryName = _("Ferryman"),
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Mew is said to possess the genes of all\n"
             "Pokémon. It is capable of making itself\n"
@@ -848,9 +852,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("AKomachi"),
         .cryId = CRY_KOMACHI,
         .natDexNum = NATIONAL_DEX_CHIKORITA,
-        .categoryName = _("Leaf"),
-        .height = 9,
-        .weight = 64,
+        .categoryName = _("Ferryman"),
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It waves its leaf around to keep foes\n"
             "at bay. However, a sweet fragrance also\n"
@@ -901,9 +905,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("SKomachi"),
         .cryId = CRY_KOMACHI,
         .natDexNum = NATIONAL_DEX_BAYLEEF,
-        .categoryName = _("Leaf"),
-        .height = 12,
-        .weight = 158,
+        .categoryName = _("Ferryman"),
+        .height = 7,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Bayleef's neck is ringed by curled-up\n"
             "leaves. Inside each leaf is a small tree\n"
@@ -955,9 +959,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("CEiki"),
         .cryId = CRY_EIKI,
         .natDexNum = NATIONAL_DEX_MEGANIUM,
-        .categoryName = _("Herb"),
-        .height = 18,
-        .weight = 1005,
+        .categoryName = _("Judge"),
+        .height = 3,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "The fragrance of a Meganium's flower\n"
             "soothes and calms emotions. In battle,\n"
@@ -983,6 +987,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         FOOTPRINT(CEiki)
         .levelUpLearnset = sCEikiLevelUpLearnset,
         .teachableLearnset = sCEikiTeachableLearnset,
+        .eggMoveLearnset = sCEikiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_EIKI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_EIKI},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_EIKI}),
@@ -1012,9 +1017,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("Eiki"),
         .cryId = CRY_EIKI,
         .natDexNum = NATIONAL_DEX_CYNDAQUIL,
-        .categoryName = _("Fire Mouse"),
+        .categoryName = _("Judge"),
         .height = 5,
-        .weight = 79,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It flares flames from its back to protect\n"
             "itself. The fire burns vigorously if the\n"
@@ -1066,9 +1071,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("AEiki"),
         .cryId = CRY_EIKI,
         .natDexNum = NATIONAL_DEX_QUILAVA,
-        .categoryName = _("Volcano"),
-        .height = 9,
-        .weight = 190,
+        .categoryName = _("Judge"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It intimidates foes with intense gusts of\n"
             "flames and superheated air. Its quick\n"
@@ -1122,9 +1127,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .speciesName = _("DEiki"),
         .cryId = CRY_EIKI,
         .natDexNum = NATIONAL_DEX_TYPHLOSION,
-        .categoryName = _("Volcano"),
-        .height = 17,
-        .weight = 795,
+        .categoryName = _("Judge"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It can hide behind a shimmering heat haze\n"
             "that it creates using its intense flames.\n"

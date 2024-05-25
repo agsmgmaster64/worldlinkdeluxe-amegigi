@@ -25,11 +25,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CSuika"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUIKA,
         .natDexNum = NATIONAL_DEX_PLUSLE,
-        .categoryName = _("Cheering"),
-        .height = 4,
-        .weight = 42,
+        .categoryName = _("Oni"),
+        .height = 3,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It has the trait of cheering on its fellow\n"
             "Pokémon. By shorting out the electricity\n"
@@ -55,6 +55,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CSuika)
         .levelUpLearnset = sCSuikaLevelUpLearnset,
         .teachableLearnset = sCSuikaTeachableLearnset,
+        .eggMoveLearnset = sCSuikaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_SUIKA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUIKA},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SUIKA}),
@@ -82,11 +83,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Suika"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUIKA,
         .natDexNum = NATIONAL_DEX_MINUN,
-        .categoryName = _("Cheering"),
-        .height = 4,
-        .weight = 42,
+        .categoryName = _("Oni"),
+        .height = 5,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "At a meeting of Pokémon academics, it was\n"
             "announced that simultaneous exposure to\n"
@@ -135,11 +136,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("ASuika"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUIKA,
         .natDexNum = NATIONAL_DEX_VOLBEAT,
-        .categoryName = _("Firefly"),
-        .height = 7,
-        .weight = 177,
+        .categoryName = _("Oni"),
+        .height = 5,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "With their taillights lit, Volbeat fly in\n"
             "a swarm, drawing geometric designs in the\n"
@@ -188,11 +189,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("TSuika"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUIKA,
         .natDexNum = NATIONAL_DEX_ILLUMISE,
-        .categoryName = _("Firefly"),
-        .height = 6,
-        .weight = 177,
+        .categoryName = _("Oni"),
+        .height = 5,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A nocturnal Pokémon that becomes active\n"
             "upon nightfall. It leads a Volbeat swarm\n"
@@ -242,11 +243,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CIku"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_IKU,
         .natDexNum = NATIONAL_DEX_ROSELIA,
-        .categoryName = _("Thorn"),
-        .height = 3,
-        .weight = 20,
+        .categoryName = _("Oarfish"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Roselia that drinks nutritionally rich\n"
             "springwater blooms with lovely flowers.\n"
@@ -272,6 +273,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CIku)
         .levelUpLearnset = sCIkuLevelUpLearnset,
         .teachableLearnset = sCIkuTeachableLearnset,
+        .eggMoveLearnset = sCIkuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_IKU},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_IKU},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_IKU}),
@@ -299,11 +301,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Iku"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_IKU,
         .natDexNum = NATIONAL_DEX_GULPIN,
-        .categoryName = _("Stomach"),
-        .height = 4,
-        .weight = 103,
+        .categoryName = _("Oarfish"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "This Pokémon's stomach fluid can even\n"
             "digest scrap iron. In one gulp, it can\n"
@@ -352,11 +354,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("DIku"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_IKU,
         .natDexNum = NATIONAL_DEX_SWALOT,
-        .categoryName = _("Poison Bag"),
-        .height = 17,
-        .weight = 800,
+        .categoryName = _("Oarfish"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Its powerful stomach acid is capable of\n"
             "digesting almost anything. The one thing\n"
@@ -406,11 +408,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("TIku"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_IKU,
         .natDexNum = NATIONAL_DEX_CARVANHA,
-        .categoryName = _("Savage"),
-        .height = 8,
-        .weight = 208,
+        .categoryName = _("Oarfish"),
+        .height = 7,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Carvanha attack ships in swarms, making\n"
             "them sink. Although it is said to be a very\n"
@@ -459,11 +461,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CTenshi"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_TENSHI,
         .natDexNum = NATIONAL_DEX_SHARPEDO,
-        .categoryName = _("Brutal"),
-        .height = 18,
-        .weight = 888,
+        .categoryName = _("Celestial"),
+        .height = 4,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "The vicious and sly gangster of the sea.\n"
             "Its skin is specially textured to minimize\n"
@@ -489,6 +491,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CTenshi)
         .levelUpLearnset = sCTenshiLevelUpLearnset,
         .teachableLearnset = sCTenshiTeachableLearnset,
+        .eggMoveLearnset = sCTenshiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_TENSHI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TENSHI},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_TENSHI}),
@@ -515,11 +518,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Tenshi"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_TENSHI,
         .natDexNum = NATIONAL_DEX_WAILMER,
-        .categoryName = _("Ball Whale"),
-        .height = 20,
-        .weight = 1300,
+        .categoryName = _("Celestial"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "While this Pokémon usually lives in the sea,\n"
             "it can survive on land, although not too\n"
@@ -568,11 +571,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("ATenshi"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_TENSHI,
         .natDexNum = NATIONAL_DEX_WAILORD,
-        .categoryName = _("Float Whale"),
-        .height = 145,
-        .weight = 3980,
+        .categoryName = _("Celestial"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It breathes through nostrils that it\n"
             "raises above the sea. By inhaling to its\n"
@@ -621,11 +624,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("DTenshi"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_TENSHI,
         .natDexNum = NATIONAL_DEX_NUMEL,
-        .categoryName = _("Numb"),
-        .height = 7,
-        .weight = 240,
+        .categoryName = _("Celestial"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Numel stores boiling magma in the hump\n"
             "on its back. It is a hardy Pokémon that can\n"
@@ -676,11 +679,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CHatate"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_HATATE,
         .natDexNum = NATIONAL_DEX_CAMERUPT,
-        .categoryName = _("Eruption"),
-        .height = 19,
-        .weight = 2200,
+        .categoryName = _("Crow Tengu"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Pokémon that lives in the crater of\n"
             "a volcano. Every 10 years, the volcanoes\n"
@@ -707,6 +710,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CHatate)
         .levelUpLearnset = sCHatateLevelUpLearnset,
         .teachableLearnset = sCHatateTeachableLearnset,
+        .eggMoveLearnset = sCHatateEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_HATATE},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_HATATE},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_HATATE}),
@@ -736,11 +740,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Hatate"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_HATATE,
         .natDexNum = NATIONAL_DEX_TORKOAL,
-        .categoryName = _("Coal"),
-        .height = 5,
-        .weight = 804,
+        .categoryName = _("Crow Tengu"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It battles using energy it gets from\n"
             "burning coal. When loosing smoke from its\n"
@@ -792,11 +796,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("DHatate"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_HATATE,
         .natDexNum = NATIONAL_DEX_SPOINK,
-        .categoryName = _("Bounce"),
-        .height = 7,
-        .weight = 306,
+        .categoryName = _("Crow Tengu"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Pokémon that manipulates psychic power\n"
             "at will. It doesn't stop bouncing even when\n"
@@ -847,11 +851,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("THatate"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_HATATE,
         .natDexNum = NATIONAL_DEX_GRUMPIG,
-        .categoryName = _("Manipulate"),
-        .height = 9,
-        .weight = 715,
+        .categoryName = _("Crow Tengu"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It stores power in the black pearls on its\n"
             "forehead. When it uses psychic power, it\n"
@@ -902,11 +906,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CSunny"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUNNY,
         .natDexNum = NATIONAL_DEX_SPINDA,
-        .categoryName = _("Spot Panda"),
-        .height = 11,
-        .weight = 50,
+        .categoryName = _("Sunny"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is distinguished by a pattern of\n"
             "spots that is always different. Its\n"
@@ -932,6 +936,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CSunny)
         .levelUpLearnset = sCSunnyLevelUpLearnset,
         .teachableLearnset = sCSunnyTeachableLearnset,
+        .eggMoveLearnset = sCSunnyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_SUNNY},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUNNY},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUNNY}),
@@ -960,11 +965,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Sunny"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUNNY,
         .natDexNum = NATIONAL_DEX_TRAPINCH,
-        .categoryName = _("Ant Pit"),
-        .height = 7,
-        .weight = 150,
+        .categoryName = _("Sunny"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its big jaws crunch through boulders.\n"
             "Because its head is so big, it has a hard\n"
@@ -1013,11 +1018,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("ASunny"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUNNY,
         .natDexNum = NATIONAL_DEX_VIBRAVA,
-        .categoryName = _("Vibration"),
-        .height = 11,
-        .weight = 153,
+        .categoryName = _("Sunny"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It looses ultrasonic waves by rubbing its\n"
             "wings together. Since a Vibrava's wings\n"
@@ -1066,11 +1071,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("DSunny"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_SUNNY,
         .natDexNum = NATIONAL_DEX_FLYGON,
-        .categoryName = _("Mystic"),
-        .height = 20,
-        .weight = 820,
+        .categoryName = _("Sunny"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "The flapping of its wings sounds like\n"
             "singing. To prevent detection by enemies,\n"
@@ -1120,11 +1125,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CLuna"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_LUNA,
         .natDexNum = NATIONAL_DEX_CACNEA,
-        .categoryName = _("Cactus"),
-        .height = 4,
-        .weight = 513,
+        .categoryName = _("Moonlight"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Cacnea live in deserts with virtually no\n"
             "rainfall. It battles by swinging its thick,\n"
@@ -1151,6 +1156,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CLuna)
         .levelUpLearnset = sCLunaLevelUpLearnset,
         .teachableLearnset = sCLunaTeachableLearnset,
+        .eggMoveLearnset = sCLunaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_LUNA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_LUNA},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_LUNA}),
@@ -1178,11 +1184,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Luna"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_LUNA,
         .natDexNum = NATIONAL_DEX_CACTURNE,
-        .categoryName = _("Scarecrow"),
-        .height = 13,
-        .weight = 774,
+        .categoryName = _("Moonlight"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "After spending thousands of years in\n"
             "harsh deserts, its blood transformed into\n"
@@ -1231,11 +1237,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("ALuna"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_LUNA,
         .natDexNum = NATIONAL_DEX_SWABLU,
-        .categoryName = _("Cotton Bird"),
-        .height = 4,
-        .weight = 12,
+        .categoryName = _("Moonlight"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Pokémon that has wings like cottony\n"
             "clouds. After enduring winter, in which\n"
@@ -1284,11 +1290,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("TLuna"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_LUNA,
         .natDexNum = NATIONAL_DEX_ALTARIA,
-        .categoryName = _("Humming"),
-        .height = 11,
-        .weight = 206,
+        .categoryName = _("Moonlight"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It hums in a beautiful soprano voice.\n"
             "It flies among white clouds in the blue\n"
@@ -1338,11 +1344,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("CStar"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_STAR,
         .natDexNum = NATIONAL_DEX_ZANGOOSE,
-        .categoryName = _("Cat Ferret"),
-        .height = 13,
-        .weight = 403,
+        .categoryName = _("Star Power"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "When it battles, it stands on its hind legs\n"
             "and attacks with its sharply clawed\n"
@@ -1368,6 +1374,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CStar)
         .levelUpLearnset = sCStarLevelUpLearnset,
         .teachableLearnset = sCStarTeachableLearnset,
+        .eggMoveLearnset = sCStarEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_STAR},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_STAR},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_STAR}),
@@ -1395,11 +1402,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("Star"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_STAR,
         .natDexNum = NATIONAL_DEX_SEVIPER,
-        .categoryName = _("Fang Snake"),
-        .height = 27,
-        .weight = 525,
+        .categoryName = _("Star Power"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Seviper and Zangoose are eternal rivals.\n"
             "It counters a Zangoose's dazzling agility\n"
@@ -1448,11 +1455,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("AStar"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_STAR,
         .natDexNum = NATIONAL_DEX_LUNATONE,
-        .categoryName = _("Meteorite"),
-        .height = 10,
-        .weight = 1680,
+        .categoryName = _("Star Power"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It becomes very active on the night of\n"
             "a full moon. This Pokémon was first\n"
@@ -1501,11 +1508,11 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .sourceGame = SOURCE_SPINOFF,
         .noFlip = TRUE,
         .speciesName = _("HStar"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_STAR,
         .natDexNum = NATIONAL_DEX_SOLROCK,
-        .categoryName = _("Meteorite"),
-        .height = 12,
-        .weight = 1540,
+        .categoryName = _("Star Power"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Solar energy is the source of this \n"
             "Pokémon's power. On sunny days, groups of\n"

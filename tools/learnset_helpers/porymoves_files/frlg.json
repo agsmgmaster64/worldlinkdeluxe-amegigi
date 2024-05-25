@@ -2693,7 +2693,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [
@@ -8406,7 +8406,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 49,
@@ -8508,7 +8508,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 65,
@@ -9612,7 +9612,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -9714,7 +9714,7 @@
       },
       {
         "Level": 66,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -10287,7 +10287,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -10372,7 +10372,7 @@
       },
       {
         "Level": 69,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -18511,7 +18511,7 @@
       },
       {
         "Level": 53,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -29903,7 +29903,7 @@
       },
       {
         "Level": 34,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 37,
@@ -30010,7 +30010,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 43,

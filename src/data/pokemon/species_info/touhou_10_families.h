@@ -52,6 +52,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CShizuha)
         .levelUpLearnset = sCShizuhaLevelUpLearnset,
         .teachableLearnset = sCShizuhaTeachableLearnset,
+        .eggMoveLearnset = sCShizuhaEggMoveLearnset,
         .formSpeciesIdTable = sCShizuhaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA},
                                 //{EVO_HEART, ITEM_CHROME_HEART, SPECIES_AkiSisters},
@@ -257,9 +258,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_CShizuhaSannian,
         .iconPalIndex = 1,
         FOOTPRINT(CShizuhaSannian)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sCShizuhaSannianLevelUpLearnset,
         .teachableLearnset = sCShizuhaSannianTeachableLearnset,
-        .isSannianForm = TRUE,
         .formSpeciesIdTable = sCShizuhaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA_SANNIAN}),
     },
@@ -365,6 +366,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CMinoriko)
         .levelUpLearnset = sCMinorikoLevelUpLearnset,
         .teachableLearnset = sCMinorikoTeachableLearnset,
+        .eggMoveLearnset = sCMinorikoEggMoveLearnset,
         .formSpeciesIdTable = sCMinorikoFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO},
                                 //{EVO_HEART, ITEM_CHROME_HEART, SPECIES_AkiSisters},
@@ -572,9 +574,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_CMinorikoSannian,
         .iconPalIndex = 2,
         FOOTPRINT(CMinorikoSannian)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sCMinorikoSannianLevelUpLearnset,
         .teachableLearnset = sCMinorikoSannianTeachableLearnset,
-        .isSannianForm = TRUE,
         .formSpeciesIdTable = sCMinorikoFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO_SANNIAN}),
     },
@@ -627,9 +629,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_MinorikoSannian,
         .iconPalIndex = 2,
         FOOTPRINT(MinorikoSannian)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sMinorikoSannianLevelUpLearnset,
         .teachableLearnset = sMinorikoSannianTeachableLearnset,
-        .isSannianForm = TRUE,
         .formSpeciesIdTable = sMinorikoFormSpeciesIdTable,
     },
 
@@ -657,9 +659,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CHina"),
         .cryId = CRY_HINA,
         .natDexNum = NATIONAL_DEX_LEDIAN,
-        .categoryName = _("Five Star"),
-        .height = 14,
-        .weight = 356,
+        .categoryName = _("Misfortune"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It is said that in lands with clean air,\n"
             "where the stars fill the sky, there live\n"
@@ -685,6 +687,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CHina)
         .levelUpLearnset = sCHinaLevelUpLearnset,
         .teachableLearnset = sCHinaTeachableLearnset,
+        .eggMoveLearnset = sCHinaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_HINA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_HINA},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_HINA}),
@@ -715,9 +718,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Hina"),
         .cryId = CRY_HINA,
         .natDexNum = NATIONAL_DEX_SPINARAK,
-        .categoryName = _("String Spit"),
+        .categoryName = _("Misfortune"),
         .height = 5,
-        .weight = 85,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "The web it spins can be considered its\n"
             "second nervous system. It is said that a\n"
@@ -768,9 +771,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("AHina"),
         .cryId = CRY_HINA,
         .natDexNum = NATIONAL_DEX_ARIADOS,
-        .categoryName = _("Long Leg"),
-        .height = 11,
-        .weight = 335,
+        .categoryName = _("Misfortune"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Its feet are tipped with tiny hooked claws\n"
             "that enable it to scuttle on ceilings and\n"
@@ -821,9 +824,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("DHina"),
         .cryId = CRY_HINA,
         .natDexNum = NATIONAL_DEX_CROBAT,
-        .categoryName = _("Bat"),
-        .height = 18,
-        .weight = 750,
+        .categoryName = _("Misfortune"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Over the course of evolution, its hind legs\n"
             "turned into wings. By alternately resting\n"
@@ -876,9 +879,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CNitori"),
         .cryId = CRY_NITORI,
         .natDexNum = NATIONAL_DEX_CHINCHOU,
-        .categoryName = _("Angler"),
-        .height = 5,
-        .weight = 120,
+        .categoryName = _("Kappa"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "When it senses danger, it discharges\n"
             "positive and negative electricity from its\n"
@@ -904,6 +907,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CNitori)
         .levelUpLearnset = sCNitoriLevelUpLearnset,
         .teachableLearnset = sCNitoriTeachableLearnset,
+        .eggMoveLearnset = sCNitoriEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_NITORI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_NITORI},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_NITORI}),
@@ -934,9 +938,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Nitori"),
         .cryId = CRY_NITORI,
         .natDexNum = NATIONAL_DEX_LANTURN,
-        .categoryName = _("Light"),
-        .height = 12,
-        .weight = 225,
+        .categoryName = _("Kappa"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "The light-emitting orbs on its back are\n"
             "very bright. They are formed from a part of\n"
@@ -987,9 +991,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("ANitori"),
         .cryId = CRY_NITORI,
         .natDexNum = NATIONAL_DEX_PICHU,
-        .categoryName = _("Tiny Mouse"),
-        .height = 3,
-        .weight = 20,
+        .categoryName = _("Kappa"),
+        .height = 5,
+        .weight = 500,
         .description = gPichuPokedexText,
         .pokemonScale = 508,
         .pokemonOffset = 20,
@@ -1038,9 +1042,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("TNitori"),
         .cryId = CRY_NITORI,
         .natDexNum = NATIONAL_DEX_CLEFFA,
-        .categoryName = _("Star Shape"),
-        .height = 3,
-        .weight = 30,
+        .categoryName = _("Kappa"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "On nights with many shooting stars,\n"
             "Cleffa can be seen dancing in a ring.\n"
@@ -1091,9 +1095,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CMomiji"),
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_IGGLYBUFF,
-        .categoryName = _("Balloon"),
+        .categoryName = _("Wolf Tengu"),
         .height = 3,
-        .weight = 10,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Its soft and pliable body is very bouncy.\n"
             "When it sings continuously with all its\n"
@@ -1119,6 +1123,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CMomiji)
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
+        .eggMoveLearnset = sCMomijiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOMIJI}),
     },
@@ -1146,9 +1151,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Momiji"),
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_TOGEPI,
-        .categoryName = _("Spike Ball"),
-        .height = 3,
-        .weight = 15,
+        .categoryName = _("Wolf Tengu"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "As its energy, it uses the feelings of\n"
             "compassion and pleasure exuded by\n"
@@ -1199,9 +1204,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("DMomiji"),
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_TOGETIC,
-        .categoryName = _("Happiness"),
-        .height = 6,
-        .weight = 32,
+        .categoryName = _("Wolf Tengu"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It is said to be a Pokémon that brings good\n"
             "fortune. When it spots someone who is pure\n"
@@ -1252,9 +1257,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("PMomiji"),
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_NATU,
-        .categoryName = _("Tiny Bird"),
-        .height = 2,
-        .weight = 20,
+        .categoryName = _("Wolf Tengu"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It runs up short trees that grow on the\n"
             "savanna to peck at new shoots.\n"
@@ -1306,8 +1311,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_CHIBI_KOAKUMA,
         .categoryName = _("Mouse"),
-        .height = 12,
-        .weight = 550,
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It uses large, hooked claws to cut a path\n"
             "through deep snow as it runs.\n"
@@ -1359,9 +1364,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Momiji"),
         .cryId = CRY_MOMIJI,
         .natDexNum = NATIONAL_DEX_ATTACK_REIMU,
-        .categoryName = _("Fox"),
-        .height = 6,
-        .weight = 99,
+        .categoryName = _("Wolf Tengu"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "They live together in a skulk, helping\n"
             "one another. In hot weather, this Pokémon\n"
@@ -1413,9 +1418,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CSanae"),
         .cryId = CRY_SANAE,
         .natDexNum = NATIONAL_DEX_XATU,
-        .categoryName = _("Mystic"),
-        .height = 15,
-        .weight = 150,
+        .categoryName = _("Miko"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It has the enigmatic power of foreseeing\n"
             "the future. Some people in different lands\n"
@@ -1441,6 +1446,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CSanae)
         .levelUpLearnset = sCSanaeLevelUpLearnset,
         .teachableLearnset = sCSanaeTeachableLearnset,
+        .eggMoveLearnset = sCSanaeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_SANAE},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SANAE},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SANAE}/*,
@@ -1470,9 +1476,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Sanae"),
         .cryId = CRY_SANAE,
         .natDexNum = NATIONAL_DEX_MAREEP,
-        .categoryName = _("Wool"),
+        .categoryName = _("Miko"),
         .height = 6,
-        .weight = 78,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Its fluffy wool rubs together and builds\n"
             "a static charge. The more energy is\n"
@@ -1523,9 +1529,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("ASanae"),
         .cryId = CRY_SANAE,
         .natDexNum = NATIONAL_DEX_FLAAFFY,
-        .categoryName = _("Wool"),
-        .height = 8,
-        .weight = 133,
+        .categoryName = _("Wind-Bearer"),
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Its fleece quality changes to generate\n"
             "strong static electricity with a small\n"
@@ -1577,9 +1583,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("TSanae"),
         .cryId = CRY_SANAE,
         .natDexNum = NATIONAL_DEX_AMPHAROS,
-        .categoryName = _("Light"),
-        .height = 14,
-        .weight = 615,
+        .categoryName = _("Wind-Bearer"),
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It gives off so much light that it can be\n"
             "seen even from space. People in the old\n"
@@ -1631,9 +1637,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CKanako"),
         .cryId = CRY_KANAKO,
         .natDexNum = NATIONAL_DEX_BELLOSSOM,
-        .categoryName = _("Flower"),
-        .height = 4,
-        .weight = 58,
+        .categoryName = _("Sky Goddess"),
+        .height = 5,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Its flower petals deepen in color through\n"
             "exposure to sunlight. When cloudy weather\n"
@@ -1659,6 +1665,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CKanako)
         .levelUpLearnset = sCKanakoLevelUpLearnset,
         .teachableLearnset = sCKanakoTeachableLearnset,
+        .eggMoveLearnset = sCKanakoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KANAKO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KANAKO},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_KANAKO}),
@@ -1688,9 +1695,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Kanako"),
         .cryId = CRY_KANAKO,
         .natDexNum = NATIONAL_DEX_MARILL,
-        .categoryName = _("Aqua Mouse"),
-        .height = 4,
-        .weight = 85,
+        .categoryName = _("Sky Goddess"),
+        .height = 7,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "Its body is covered with water-repellent\n"
             "fur. Because of the fur, it can swim\n"
@@ -1741,9 +1748,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("AKanako"),
         .cryId = CRY_KANAKO,
         .natDexNum = NATIONAL_DEX_AZUMARILL,
-        .categoryName = _("Aqua Rabbit"),
-        .height = 8,
-        .weight = 285,
+        .categoryName = _("Sky Goddess"),
+        .height = 7,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It lives in water virtually all day long.\n"
             "Its body color and pattern act as\n"
@@ -1795,9 +1802,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("DKanako"),
         .cryId = CRY_KANAKO,
         .natDexNum = NATIONAL_DEX_SUDOWOODO,
-        .categoryName = _("Imitation"),
-        .height = 12,
-        .weight = 380,
+        .categoryName = _("Sky Goddess"),
+        .height = 7,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It mimics a tree to avoid being attacked\n"
             "by enemies. But since its forelegs\n"
@@ -1848,9 +1855,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("CSuwako"),
         .cryId = CRY_SUWAKO,
         .natDexNum = NATIONAL_DEX_POLITOED,
-        .categoryName = _("Frog"),
-        .height = 11,
-        .weight = 339,
+        .categoryName = _("Native"),
+        .height = 3,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "The curled hair on its head proves its\n"
             "status as a king. It is said that the\n"
@@ -1876,6 +1883,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CSuwako)
         .levelUpLearnset = sCSuwakoLevelUpLearnset,
         .teachableLearnset = sCSuwakoTeachableLearnset,
+        .eggMoveLearnset = sCSuwakoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_SUWAKO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUWAKO},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUWAKO}),
@@ -1905,9 +1913,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("Suwako"),
         .cryId = CRY_SUWAKO,
         .natDexNum = NATIONAL_DEX_HOPPIP,
-        .categoryName = _("Cottonweed"),
-        .height = 4,
-        .weight = 5,
+        .categoryName = _("Native"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "This Pokémon drifts and floats with the\n"
             "wind. If it senses the approach of strong\n"
@@ -1959,9 +1967,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("ASuwako"),
         .cryId = CRY_SUWAKO,
         .natDexNum = NATIONAL_DEX_SKIPLOOM,
-        .categoryName = _("Cottonweed"),
-        .height = 6,
-        .weight = 10,
+        .categoryName = _("Native"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It blossoms when the temperature rises\n"
             "above 64 degrees F. Because its flower's\n"
@@ -2012,9 +2020,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .speciesName = _("DSuwako"),
         .cryId = CRY_SUWAKO,
         .natDexNum = NATIONAL_DEX_JUMPLUFF,
-        .categoryName = _("Cottonweed"),
-        .height = 8,
-        .weight = 30,
+        .categoryName = _("Native"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "Jumpluff ride warm southern winds to\n"
             "cross the sea and fly to foreign lands.\n"

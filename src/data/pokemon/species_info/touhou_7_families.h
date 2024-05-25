@@ -27,7 +27,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLetty"),
         .cryId = CRY_LETTY,
         .natDexNum = NATIONAL_DEX_CHIBI_LETTY,
-        .categoryName = _("Flower"),
+        .categoryName = _("Winter"),
         .height = 4,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -55,6 +55,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLetty)
         .levelUpLearnset = sCLettyLevelUpLearnset,
         .teachableLearnset = sCLettyTeachableLearnset,
+        .eggMoveLearnset = sCLettyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_LETTY},
                                 //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_LETTY},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_LETTY},
@@ -86,7 +87,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Letty"),
         .cryId = CRY_LETTY,
         .natDexNum = NATIONAL_DEX_NORMAL_LETTY,
-        .categoryName = _("Mushroom"),
+        .categoryName = _("Winter"),
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -139,7 +140,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("DLetty"),
         .cryId = CRY_LETTY,
         .natDexNum = NATIONAL_DEX_DEFENSE_LETTY,
-        .categoryName = _("Mushroom"),
+        .categoryName = _("Winter"),
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -192,7 +193,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HLetty"),
         .cryId = CRY_LETTY,
         .natDexNum = NATIONAL_DEX_HELPER_LETTY,
-        .categoryName = _("Insect"),
+        .categoryName = _("Winter"),
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -246,7 +247,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Shanghai"),
         .cryId = CRY_ALICE_DOLL,
         .natDexNum = NATIONAL_DEX_SHANGHAI,
-        .categoryName = _("Poison Moth"),
+        .categoryName = _("Doll"),
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -301,7 +302,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Hourai"),
         .cryId = CRY_ALICE_DOLL,
         .natDexNum = NATIONAL_DEX_HOURAI,
-        .categoryName = _("Mole"),
+        .categoryName = _("Doll"),
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -355,7 +356,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Goliath"),
         .cryId = CRY_ALICE_DOLL,
         .natDexNum = NATIONAL_DEX_GOLIATH,
-        .categoryName = _("Mole"),
+        .categoryName = _("Big Doll"),
         .height = 8,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -437,6 +438,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CAlice)
         .levelUpLearnset = sCAliceLevelUpLearnset,
         .teachableLearnset = sCAliceTeachableLearnset,
+        .eggMoveLearnset = sCAliceEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_ALICE},
                                 //{EVO_HEART, ITEM_CHROME_HEART, SPECIES_DARK_ALICE},
                                 //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_ALICE},
@@ -469,7 +471,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Alice"),
         .cryId = CRY_ALICE,
         .natDexNum = NATIONAL_DEX_NORMAL_ALICE,
-        .categoryName = _("Classy Cat"),
+        .categoryName = _("Puppeteer"),
         .height = 6,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -522,7 +524,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("AAlice"),
         .cryId = CRY_ALICE,
         .natDexNum = NATIONAL_DEX_ATTACK_ALICE,
-        .categoryName = _("Duck"),
+        .categoryName = _("Puppeteer"),
         .height = 6,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -576,7 +578,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("TAlice"),
         .cryId = CRY_ALICE,
         .natDexNum = NATIONAL_DEX_TECH_ALICE,
-        .categoryName = _("Duck"),
+        .categoryName = _("Puppeteer"),
         .height = 6,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -630,7 +632,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLilyWhite"),
         .cryId = CRY_LILY_WHITE,
         .natDexNum = NATIONAL_DEX_CHIBI_LILY_WHITE,
-        .categoryName = _("Pig Monkey"),
+        .categoryName = _("SpringFairy"),
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -658,6 +660,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLilyWhite)
         .levelUpLearnset = sCLilyWhiteLevelUpLearnset,
         .teachableLearnset = sCLilyWhiteTeachableLearnset,
+        .eggMoveLearnset = sCLilyWhiteEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_LILY_WHITE},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_LILY_WHITE},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_LILY_WHITE}),
@@ -687,7 +690,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("LilyWhite"),
         .cryId = CRY_LILY_WHITE,
         .natDexNum = NATIONAL_DEX_NORMAL_LILY_WHITE,
-        .categoryName = _("Pig Monkey"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -741,7 +744,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("ALilyWhite"),
         .cryId = CRY_LILY_WHITE,
         .natDexNum = NATIONAL_DEX_ATTACK_LILY_WHITE,
-        .categoryName = _("Puppy"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -794,7 +797,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HLilyWhite"),
         .cryId = CRY_LILY_WHITE,
         .natDexNum = NATIONAL_DEX_HELPER_LILY_WHITE,
-        .categoryName = _("Legendary"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -849,7 +852,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLilyBlack"),
         .cryId = CRY_LILY_BLACK,
         .natDexNum = NATIONAL_DEX_CHIBI_LILY_BLACK,
-        .categoryName = _("Tadpole"),
+        .categoryName = _("SpringFairy"),
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -877,6 +880,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLilyBlack)
         .levelUpLearnset = sCLilyBlackLevelUpLearnset,
         .teachableLearnset = sCLilyBlackTeachableLearnset,
+        .eggMoveLearnset = sCLilyBlackEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_LILY_BLACK},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_LILY_BLACK},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_LILY_BLACK}),
@@ -907,7 +911,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("LilyBlack"),
         .cryId = CRY_LILY_BLACK,
         .natDexNum = NATIONAL_DEX_NORMAL_LILY_BLACK,
-        .categoryName = _("Tadpole"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -961,7 +965,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("ALilyBlack"),
         .cryId = CRY_LILY_BLACK,
         .natDexNum = NATIONAL_DEX_ATTACK_LILY_BLACK,
-        .categoryName = _("Tadpole"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -1014,7 +1018,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("SLilyBlack"),
         .cryId = CRY_LILY_BLACK,
         .natDexNum = NATIONAL_DEX_SPEED_LILY_BLACK,
-        .categoryName = _("Psi"),
+        .categoryName = _("SpringFairy"),
         .height = 5,
         .weight = 250,
         .description = COMPOUND_STRING(
@@ -1068,7 +1072,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLunasa"),
         .cryId = CRY_LUNASA,
         .natDexNum = NATIONAL_DEX_CHIBI_LUNASA,
-        .categoryName = _("Psi"),
+        .categoryName = _("Poltergeist"),
         .height = 4,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -1096,6 +1100,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLunasa)
         .levelUpLearnset = sCLunasaLevelUpLearnset,
         .teachableLearnset = sCLunasaTeachableLearnset,
+        .eggMoveLearnset = sCLunasaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_LUNASA},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_LUNASA}),
     },
@@ -1127,7 +1132,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Lunasa"),
         .cryId = CRY_LUNASA,
         .natDexNum = NATIONAL_DEX_NORMAL_LUNASA,
-        .categoryName = _("Psi"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1183,7 +1188,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HLunasa"),
         .cryId = CRY_LUNASA,
         .natDexNum = NATIONAL_DEX_HELPER_LUNASA,
-        .categoryName = _("Superpower"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1238,7 +1243,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("PLunasa"),
         .cryId = CRY_LUNASA,
         .natDexNum = NATIONAL_DEX_PLACEHOLD_LUNASA,
-        .categoryName = _("Superpower"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1292,7 +1297,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CMerlin"),
         .cryId = CRY_MERLIN,
         .natDexNum = NATIONAL_DEX_CHIBI_MERLIN,
-        .categoryName = _("Superpower"),
+        .categoryName = _("Poltergeist"),
         .height = 4,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -1320,6 +1325,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CMerlin)
         .levelUpLearnset = sCMerlinLevelUpLearnset,
         .teachableLearnset = sCMerlinTeachableLearnset,
+        .eggMoveLearnset = sCMerlinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_MERLIN},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_MERLIN}),
     },
@@ -1349,7 +1355,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Merlin"),
         .cryId = CRY_MERLIN,
         .natDexNum = NATIONAL_DEX_NORMAL_MERLIN,
-        .categoryName = _("Flower"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1405,7 +1411,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HMerlin"),
         .cryId = CRY_MERLIN,
         .natDexNum = NATIONAL_DEX_HELPER_MERLIN,
-        .categoryName = _("Flycatcher"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1460,7 +1466,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("PMerlin"),
         .cryId = CRY_MERLIN,
         .natDexNum = NATIONAL_DEX_PLACEHOLD_MERLIN,
-        .categoryName = _("Flycatcher"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1514,7 +1520,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLyrica"),
         .cryId = CRY_LYRICA,
         .natDexNum = NATIONAL_DEX_CHIBI_LYRICA,
-        .categoryName = _("Jellyfish"),
+        .categoryName = _("Poltergeist"),
         .height = 4,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -1542,6 +1548,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLyrica)
         .levelUpLearnset = sCLyricaLevelUpLearnset,
         .teachableLearnset = sCLyricaTeachableLearnset,
+        .eggMoveLearnset = sCLyricaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_LYRICA},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_LYRICA}),
     },
@@ -1571,7 +1578,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Lyrica"),
         .cryId = CRY_LYRICA,
         .natDexNum = NATIONAL_DEX_NORMAL_LYRICA,
-        .categoryName = _("Jellyfish"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1625,7 +1632,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HLyrica"),
         .cryId = CRY_LYRICA,
         .natDexNum = NATIONAL_DEX_HELPER_LYRICA,
-        .categoryName = _("Rock"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1678,7 +1685,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("PLyrica"),
         .cryId = CRY_LYRICA,
         .natDexNum = NATIONAL_DEX_PLACEHOLD_LYRICA,
-        .categoryName = _("Rock"),
+        .categoryName = _("Poltergeist"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1732,7 +1739,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CLayla"),
         .cryId = CRY_LAYLA,
         .natDexNum = NATIONAL_DEX_CHIBI_LAYLA,
-        .categoryName = _("Megaton"),
+        .categoryName = _("Remainer"),
         .height = 4,
         .weight = 100,
         .description = COMPOUND_STRING(
@@ -1760,6 +1767,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CLayla)
         .levelUpLearnset = sCLaylaLevelUpLearnset,
         .teachableLearnset = sCLaylaTeachableLearnset,
+        .eggMoveLearnset = sCLaylaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_LAYLA},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_LAYLA}),
     },
@@ -1789,7 +1797,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Layla"),
         .cryId = CRY_LAYLA,
         .natDexNum = NATIONAL_DEX_NORMAL_LAYLA,
-        .categoryName = _("Fire Horse"),
+        .categoryName = _("Remainer"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1843,7 +1851,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("DLayla"),
         .cryId = CRY_LAYLA,
         .natDexNum = NATIONAL_DEX_DEFENSE_LAYLA,
-        .categoryName = _("Fire Horse"),
+        .categoryName = _("Remainer"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1897,7 +1905,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("PLayla"),
         .cryId = CRY_LAYLA,
         .natDexNum = NATIONAL_DEX_PLACEHOLD_LAYLA,
-        .categoryName = _("Dopey"),
+        .categoryName = _("Remainer"),
         .height = 6,
         .weight = 500,
         .description = COMPOUND_STRING(
@@ -1978,6 +1986,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CYoumu)
         .levelUpLearnset = sCYoumuLevelUpLearnset,
         .teachableLearnset = sCYoumuTeachableLearnset,
+        .eggMoveLearnset = sCYoumuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_YOUMU},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YOUMU},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YOUMU}),
@@ -2006,7 +2015,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Youmu"),
         .cryId = CRY_YOUMU,
         .natDexNum = NATIONAL_DEX_NORMAL_YOUMU,
-        .categoryName = _("Magnet"),
+        .categoryName = _("Half-Human"),
         .height = 5,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -2059,7 +2068,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("DYoumu"),
         .cryId = CRY_YOUMU,
         .natDexNum = NATIONAL_DEX_DEFENSE_YOUMU,
-        .categoryName = _("Magnet"),
+        .categoryName = _("Half-Human"),
         .height = 5,
         .weight = 1000,
         .description = COMPOUND_STRING(
@@ -2166,9 +2175,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CYuyuko"),
         .cryId = CRY_YUYUKO,
         .natDexNum = NATIONAL_DEX_CHIBI_YUYUKO,
-        .categoryName = _("Twin Bird"),
-        .height = 14,
-        .weight = 392,
+        .categoryName = _("Noble Ghost"),
+        .height = 4,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Even while eating or sleeping, one of the\n"
             "heads remains always vigilant for any sign\n"
@@ -2195,6 +2204,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CYuyuko)
         .levelUpLearnset = sCYuyukoLevelUpLearnset,
         .teachableLearnset = sCYuyukoTeachableLearnset,
+        .eggMoveLearnset = sCYuyukoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YUYUKO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUYUKO},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUYUKO}),
@@ -2224,9 +2234,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Yuyuko"),
         .cryId = CRY_YUYUKO,
         .natDexNum = NATIONAL_DEX_NORMAL_YUYUKO,
-        .categoryName = _("Triple Bird"),
-        .height = 18,
-        .weight = 852,
+        .categoryName = _("Noble Ghost"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A peculiar Pokémon species with three\n"
             "heads. It vigorously races across grassy\n"
@@ -2279,9 +2289,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("AYuyuko"),
         .cryId = CRY_YUYUKO,
         .natDexNum = NATIONAL_DEX_ATTACK_YUYUKO,
-        .categoryName = _("Sea Lion"),
-        .height = 11,
-        .weight = 900,
+        .categoryName = _("Noble Ghost"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "Seel hunt for prey in frigid, ice-covered\n"
             "seas. When it needs to breathe, it punches\n"
@@ -2334,9 +2344,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("DYuyuko"),
         .cryId = CRY_YUYUKO,
         .natDexNum = NATIONAL_DEX_DEFENSE_YUYUKO,
-        .categoryName = _("Sea Lion"),
-        .height = 17,
-        .weight = 1200,
+        .categoryName = _("Noble Ghost"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It loves to snooze on bitterly cold ice.\n"
             "The sight of this Pokémon sleeping on\n"
@@ -2388,9 +2398,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CChen"),
         .cryId = CRY_CHEN,
         .natDexNum = NATIONAL_DEX_CHIBI_CHEN,
-        .categoryName = _("Sludge"),
-        .height = 9,
-        .weight = 300,
+        .categoryName = _("Nekotama"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Born from polluted sludge in the sea,\n"
             "Grimer's favorite food is anything filthy.\n"
@@ -2416,6 +2426,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CChen)
         .levelUpLearnset = sCChenLevelUpLearnset,
         .teachableLearnset = sCChenTeachableLearnset,
+        .eggMoveLearnset = sCChenEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_CHEN},
                                 //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_CHEN},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_CHEN},
@@ -2447,9 +2458,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Chen"),
         .cryId = CRY_CHEN,
         .natDexNum = NATIONAL_DEX_NORMAL_CHEN,
-        .categoryName = _("Sludge"),
-        .height = 12,
-        .weight = 300,
+        .categoryName = _("Nekotama"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It prefers warm and humid habitats.\n"
             "In the summertime, the toxic substances\n"
@@ -2500,9 +2511,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("AChen"),
         .cryId = CRY_CHEN,
         .natDexNum = NATIONAL_DEX_ATTACK_CHEN,
-        .categoryName = _("Bivalve"),
-        .height = 3,
-        .weight = 40,
+        .categoryName = _("Nekotama"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "At night, it burrows a hole in the seafloor\n"
             "with its broad tongue to make a place to\n"
@@ -2553,9 +2564,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("TChen"),
         .cryId = CRY_CHEN,
         .natDexNum = NATIONAL_DEX_TECH_CHEN,
-        .categoryName = _("Bivalve"),
-        .height = 15,
-        .weight = 1325,
+        .categoryName = _("Nekotama"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It swims in the sea by swallowing water,\n"
             "then jetting it out toward the rear.\n"
@@ -2608,9 +2619,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CRan"),
         .cryId = CRY_RAN,
         .natDexNum = NATIONAL_DEX_CHIBI_RAN,
-        .categoryName = _("Gas"),
-        .height = 13,
-        .weight = 1,
+        .categoryName = _("Nine-Tailed"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "When exposed to a strong wind, a Gastly's\n"
             "gaseous body quickly dwindles away.\n"
@@ -2636,6 +2647,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CRan)
         .levelUpLearnset = sCRanLevelUpLearnset,
         .teachableLearnset = sCRanTeachableLearnset,
+        .eggMoveLearnset = sCRanEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_RAN},
                                 //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_RAN},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_RAN},
@@ -2665,9 +2677,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Ran"),
         .cryId = CRY_RAN,
         .natDexNum = NATIONAL_DEX_NORMAL_RAN,
-        .categoryName = _("Gas"),
-        .height = 16,
-        .weight = 1,
+        .categoryName = _("Nine-Tailed"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "If a Haunter beckons you while it is\n"
             "floating in darkness, don't approach it.\n"
@@ -2718,9 +2730,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("ARan"),
         .cryId = CRY_RAN,
         .natDexNum = NATIONAL_DEX_ATTACK_RAN,
-        .categoryName = _("Shadow"),
-        .height = 15,
-        .weight = 405,
+        .categoryName = _("Nine-Tailed"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "Deep in the night, your shadow cast by\n"
             "a streetlight may suddenly overtake you.\n"
@@ -2773,9 +2785,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("HRan"),
         .cryId = CRY_RAN,
         .natDexNum = NATIONAL_DEX_HELPER_RAN,
-        .categoryName = _("Rock Snake"),
-        .height = 88,
-        .weight = 2100,
+        .categoryName = _("Nine-Tailed"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "There is a magnet in its brain that\n"
             "prevents an Onix from losing direction\n"
@@ -2826,9 +2838,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("CYukari"),
         .cryId = CRY_YUKARI,
         .natDexNum = NATIONAL_DEX_CHIBI_YUKARI,
-        .categoryName = _("Hypnosis"),
-        .height = 10,
-        .weight = 324,
+        .categoryName = _("Gap Youkai"),
+        .height = 4,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "If your nose becomes itchy while you are\n"
             "sleeping, it's a sure sign that a Drowzee is\n"
@@ -2855,6 +2867,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(CYukari)
         .levelUpLearnset = sCYukariLevelUpLearnset,
         .teachableLearnset = sCYukariTeachableLearnset,
+        .eggMoveLearnset = sCYukariEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_YUKARI},
                                 //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_YUKARI},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUKARI},
@@ -2884,9 +2897,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("Yukari"),
         .cryId = CRY_YUKARI,
         .natDexNum = NATIONAL_DEX_NORMAL_YUKARI,
-        .categoryName = _("Hypnosis"),
-        .height = 16,
-        .weight = 756,
+        .categoryName = _("Gap Youkai"),
+        .height = 6,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "The arcing movement and glitter of the\n"
             "pendulum in a Hypno's hand lull the foe\n"
@@ -2938,9 +2951,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("DYukari"),
         .cryId = CRY_YUKARI,
         .natDexNum = NATIONAL_DEX_DEFENSE_YUKARI,
-        .categoryName = _("River Crab"),
-        .height = 4,
-        .weight = 65,
+        .categoryName = _("Barrier"),
+        .height = 6,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "Krabby live in holes dug into beaches.\n"
             "On sandy shores with little in the way\n"
@@ -2991,9 +3004,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .speciesName = _("TYukari"),
         .cryId = CRY_YUKARI,
         .natDexNum = NATIONAL_DEX_TECH_YUKARI,
-        .categoryName = _("Pincer"),
-        .height = 13,
-        .weight = 600,
+        .categoryName = _("Boundaries"),
+        .height = 6,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It waves its huge, oversized claw in the\n"
             "air to communicate with others.\n"

@@ -7298,7 +7298,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -7377,7 +7377,7 @@
       },
       {
         "Level": 49,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       }
     ],
     "PreEvoMoves": [],
@@ -16073,7 +16073,7 @@
       },
       {
         "Level": 54,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],

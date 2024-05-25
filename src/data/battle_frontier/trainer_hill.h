@@ -219,7 +219,7 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                     [1] = {
                         .species = SPECIES_CORPHISH,
                         .heldItem = ITEM_QUICK_CLAW,
-                        .moves = { MOVE_KNOCK_OFF, MOVE_CRABHAMMER, MOVE_TAUNT, MOVE_PROTECT },
+                        .moves = { MOVE_KNOCK_OFF, MOVE_GALE, MOVE_TAUNT, MOVE_PROTECT },
                         .hpEV = 100,
                         .attackEV = 110,
                         .defenseEV = 100,
@@ -4065,7 +4065,7 @@ static const struct TrainerHillFloor sFloors_Expert[] = {
                                         {
                                             .species = SPECIES_TECH_YUKARI,
                                             .heldItem = ITEM_PERSIM_BERRY,
-                                            .moves = {MOVE_RETURN, MOVE_PROTECT, MOVE_CRABHAMMER, MOVE_ATTRACT},
+                                            .moves = {MOVE_RETURN, MOVE_PROTECT, MOVE_GALE, MOVE_ATTRACT},
                                             .hpEV = 252,
                                             .attackEV = 252,
                                             .spDefenseEV = 6,

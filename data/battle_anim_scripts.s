@@ -173,7 +173,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYWAVE
 	.4byte Move_SPLASH
 	.4byte Move_DISPERSE
-	.4byte Move_CRABHAMMER
+	.4byte Move_GALE
 	.4byte Move_EXPLOSION
 	.4byte Move_FURY_SWIPES
 	.4byte Move_BONEMERANG
@@ -245,7 +245,7 @@ gBattleAnims_Moves::
 	.4byte Move_SACRED_FIRE
 	.4byte Move_MAGNITUDE
 	.4byte Move_DYNAMIC_PUNCH
-	.4byte Move_MEGAHORN
+	.4byte Move_BATTLE_CHANT
 	.4byte Move_DECISION
 	.4byte Move_BATON_PASS
 	.4byte Move_ENCORE
@@ -23564,7 +23564,7 @@ Move_SPIKES:
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-Move_MEGAHORN:
+Move_BATTLE_CHANT:
 	loadspritegfx ANIM_TAG_HORN_HIT_2
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -23722,7 +23722,7 @@ Move_WATER_GUN:
 	blendoff
 	end
 
-Move_CRABHAMMER:
+Move_GALE:
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_WATER_IMPACT
 	monbg ANIM_DEF_PARTNER

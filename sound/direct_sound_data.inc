@@ -651,6 +651,34 @@ Cry_Nue::
 	.incbin "sound/direct_sound_samples/cries_add/nue.bin"
 
 	.align 2
+Cry_Suika::
+	.incbin "sound/direct_sound_samples/cries_add/suika.bin"
+
+	.align 2
+Cry_Iku::
+	.incbin "sound/direct_sound_samples/cries_add/iku.bin"
+
+	.align 2
+Cry_Tenshi::
+	.incbin "sound/direct_sound_samples/cries_add/tenshi.bin"
+
+	.align 2
+Cry_Hatate::
+	.incbin "sound/direct_sound_samples/cries_add/hatate.bin"
+
+	.align 2
+Cry_Sunny::
+	.incbin "sound/direct_sound_samples/cries_add/sunny.bin"
+
+	.align 2
+Cry_Luna::
+	.incbin "sound/direct_sound_samples/cries_add/luna.bin"
+
+	.align 2
+Cry_Star::
+	.incbin "sound/direct_sound_samples/cries_add/star.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

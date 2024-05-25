@@ -3551,7 +3551,7 @@
       },
       {
         "Level": 58,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [
@@ -8621,7 +8621,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -11153,7 +11153,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 45,
@@ -11281,7 +11281,7 @@
       },
       {
         "Level": 56,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 63,
@@ -12730,7 +12730,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -12863,7 +12863,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -13642,7 +13642,7 @@
       },
       {
         "Level": 51,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -13753,7 +13753,7 @@
       },
       {
         "Level": 63,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -25026,7 +25026,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -40021,7 +40021,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 44,
@@ -40155,7 +40155,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 52,
@@ -53998,7 +53998,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 61,

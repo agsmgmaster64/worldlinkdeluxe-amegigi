@@ -26,9 +26,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CKisume"),
         .cryId = CRY_KISUME,
         .natDexNum = NATIONAL_DEX_AIPOM,
-        .categoryName = _("Long Tail"),
-        .height = 8,
-        .weight = 115,
+        .categoryName = _("Bucket"),
+        .height = 2,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Its tail ends with a dexterous, handlike\n"
             "appendage. However, because it uses the\n"
@@ -54,6 +54,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CKisume)
         .levelUpLearnset = sCKisumeLevelUpLearnset,
         .teachableLearnset = sCKisumeTeachableLearnset,
+        .eggMoveLearnset = sCKisumeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_NORMAL_KISUME},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_KISUME}),
     },
@@ -81,9 +82,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Kisume"),
         .cryId = CRY_KISUME,
         .natDexNum = NATIONAL_DEX_SUNKERN,
-        .categoryName = _("Seed"),
-        .height = 3,
-        .weight = 18,
+        .categoryName = _("Bucket"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Sunkern try to minimize movement to\n"
             "conserve the nutrients they have stored\n"
@@ -135,9 +136,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("TKisume"),
         .cryId = CRY_KISUME,
         .natDexNum = NATIONAL_DEX_SUNFLORA,
-        .categoryName = _("Sun"),
-        .height = 8,
-        .weight = 85,
+        .categoryName = _("Bucket"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Sunflora convert solar energy into\n"
             "nutrition. They are highly active in the\n"
@@ -189,9 +190,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("PKisume"),
         .cryId = CRY_KISUME,
         .natDexNum = NATIONAL_DEX_YANMA,
-        .categoryName = _("Clear Wing"),
-        .height = 12,
-        .weight = 380,
+        .categoryName = _("Bucket"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It can see 360 degrees without moving\n"
             "its eyes. It is a great flier capable of\n"
@@ -245,9 +246,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CYamame"),
         .cryId = CRY_YAMAME,
         .natDexNum = NATIONAL_DEX_WOOPER,
-        .categoryName = _("Water Fish"),
-        .height = 4,
-        .weight = 85,
+        .categoryName = _("EarthSpider"),
+        .height = 3,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Wooper usually live in water but come\n"
             "out onto land seeking food occasionally.\n"
@@ -273,6 +274,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CYamame)
         .levelUpLearnset = sCYamameLevelUpLearnset,
         .teachableLearnset = sCYamameTeachableLearnset,
+        .eggMoveLearnset = sCYamameEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_YAMAME},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YAMAME},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_YAMAME}),
@@ -304,9 +306,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Yamame"),
         .cryId = CRY_YAMAME,
         .natDexNum = NATIONAL_DEX_QUAGSIRE,
-        .categoryName = _("Water Fish"),
-        .height = 14,
-        .weight = 750,
+        .categoryName = _("EarthSpider"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A Quagsire hunts by leaving its mouth wide\n"
             "open in water and waiting for its prey to\n"
@@ -357,9 +359,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("SYamame"),
         .cryId = CRY_YAMAME,
         .natDexNum = NATIONAL_DEX_ESPEON,
-        .categoryName = _("Sun"),
-        .height = 9,
-        .weight = 265,
+        .categoryName = _("EarthSpider"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "An Espeon is extremely loyal to any\n"
             "Trainer it considers to be worthy. It is\n"
@@ -411,9 +413,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("TYamame"),
         .cryId = CRY_YAMAME,
         .natDexNum = NATIONAL_DEX_UMBREON,
-        .categoryName = _("Moonlight"),
-        .height = 10,
-        .weight = 270,
+        .categoryName = _("EarthSpider"),
+        .height = 5,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Umbreon evolved from exposure to the\n"
             "moon's energy pulses. It lurks in darkness\n"
@@ -465,9 +467,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CParsee"),
         .cryId = CRY_PARSEE,
         .natDexNum = NATIONAL_DEX_MURKROW,
-        .categoryName = _("Darkness"),
-        .height = 5,
-        .weight = 21,
+        .categoryName = _("Envy"),
+        .height = 4,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Murkrow were feared as the alleged\n"
             "bearers of ill fortune. It shows strong\n"
@@ -493,6 +495,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CParsee)
         .levelUpLearnset = sCParseeLevelUpLearnset,
         .teachableLearnset = sCParseeTeachableLearnset,
+        .eggMoveLearnset = sCParseeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_PARSEE},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_PARSEE},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_PARSEE}),
@@ -521,9 +524,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Parsee"),
         .cryId = CRY_PARSEE,
         .natDexNum = NATIONAL_DEX_SLOWKING,
-        .categoryName = _("Royal"),
-        .height = 20,
-        .weight = 795,
+        .categoryName = _("Envy"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It undertakes research every day to\n"
             "solve the mysteries of the world.\n"
@@ -574,9 +577,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("DParsee"),
         .cryId = CRY_PARSEE,
         .natDexNum = NATIONAL_DEX_MISDREAVUS,
-        .categoryName = _("Screech"),
-        .height = 7,
-        .weight = 10,
+        .categoryName = _("Envy"),
+        .height = 6,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Misdreavus frightens people with a\n"
             "creepy, sobbing cry. It apparently uses\n"
@@ -628,9 +631,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("TParsee"),
         .cryId = CRY_PARSEE,
         .natDexNum = NATIONAL_DEX_UNOWN,
-        .categoryName = _("Symbol"),
-        .height = 5,
-        .weight = 50,
+        .categoryName = _("Envy"),
+        .height = 6,
+        .weight = 500,
         .description = gUnownPokedexText,
         .pokemonScale = 411,
         .pokemonOffset = 2,
@@ -678,9 +681,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CYuugi"),
         .cryId = CRY_YUUGI,
         .natDexNum = NATIONAL_DEX_WOBBUFFET,
-        .categoryName = _("Patient"),
-        .height = 13,
-        .weight = 285,
+        .categoryName = _("Oni"),
+        .height = 5,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Usually docile, a Wobbuffet strikes back\n"
             "ferociously if its black tail is attacked.\n"
@@ -706,6 +709,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CYuugi)
         .levelUpLearnset = sCYuugiLevelUpLearnset,
         .teachableLearnset = sCYuugiTeachableLearnset,
+        .eggMoveLearnset = sCYuugiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YUUGI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUUGI},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUUGI}),
@@ -735,9 +739,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Yuugi"),
         .cryId = CRY_YUUGI,
         .natDexNum = NATIONAL_DEX_GIRAFARIG,
-        .categoryName = _("Long Neck"),
-        .height = 15,
-        .weight = 415,
+        .categoryName = _("Oni"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Girafarig is an herbivore--it eats\n"
             "grass and tree shoots. While it is eating,\n"
@@ -789,9 +793,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("AYuugi"),
         .cryId = CRY_YUUGI,
         .natDexNum = NATIONAL_DEX_PINECO,
-        .categoryName = _("Bagworm"),
-        .height = 6,
-        .weight = 72,
+        .categoryName = _("Oni"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Pineco hangs from a tree branch and\n"
             "waits for prey. While eating, if it is\n"
@@ -843,9 +847,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("DYuugi"),
         .cryId = CRY_YUUGI,
         .natDexNum = NATIONAL_DEX_FORRETRESS,
-        .categoryName = _("Bagworm"),
-        .height = 12,
-        .weight = 1258,
+        .categoryName = _("Oni"),
+        .height = 7,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It keeps itself inside its steel shell.\n"
             "The shell is opened when it is catching\n"
@@ -896,9 +900,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CRin"),
         .cryId = CRY_RIN,
         .natDexNum = NATIONAL_DEX_DUNSPARCE,
-        .categoryName = _("Land Snake"),
-        .height = 15,
-        .weight = 140,
+        .categoryName = _("Nekotama"),
+        .height = 4,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Its drill-tipped tail is used to burrow into\n"
             "the ground backwards. This Pokémon is\n"
@@ -924,6 +928,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CRin)
         .levelUpLearnset = sCRinLevelUpLearnset,
         .teachableLearnset = sCRinTeachableLearnset,
+        .eggMoveLearnset = sCRinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 34, SPECIES_NORMAL_RIN},
                                 {EVO_LEVEL_SHEDINJA, 34, SPECIES_ZOMBIE_FAIRY},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_RIN},
@@ -955,9 +960,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Rin"),
         .cryId = CRY_RIN,
         .natDexNum = NATIONAL_DEX_GLIGAR,
-        .categoryName = _("Fly Scorpion"),
-        .height = 11,
-        .weight = 648,
+        .categoryName = _("Nekotama"),
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "It glides without making a single sound.\n"
             "It grasps the face of its foe using its\n"
@@ -1008,9 +1013,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("ARin"),
         .cryId = CRY_RIN,
         .natDexNum = NATIONAL_DEX_STEELIX,
-        .categoryName = _("Iron Snake"),
-        .height = 92,
-        .weight = 4000,
+        .categoryName = _("Nekotama"),
+        .height = 6,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "Steelix live even further underground\n"
             "than Onix. This Pokémon is known to dig\n"
@@ -1061,9 +1066,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("SRin"),
         .cryId = CRY_RIN,
         .natDexNum = NATIONAL_DEX_SNUBBULL,
-        .categoryName = _("Fairy"),
+        .categoryName = _("Nekotama"),
         .height = 6,
-        .weight = 78,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "By baring its fangs and making a scary\n"
             "face, it sends smaller Pokémon scurrying\n"
@@ -1114,9 +1119,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("ZFairy"),
         .cryId = CRY_ZFAIRY,
         .natDexNum = NATIONAL_DEX_GRANBULL,
-        .categoryName = _("Fairy"),
-        .height = 14,
-        .weight = 487,
+        .categoryName = _("Zombie"),
+        .height = 3,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It has a particularly well-developed lower\n"
             "jaw. The huge fangs are heavy, causing\n"
@@ -1168,9 +1173,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CUtsuho"),
         .cryId = CRY_UTSUHO,
         .natDexNum = NATIONAL_DEX_QWILFISH,
-        .categoryName = _("Balloon"),
-        .height = 5,
-        .weight = 39,
+        .categoryName = _("Yatagarasu"),
+        .height = 4,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Qwilfish uses the pressure of water\n"
             "it swallows to shoot toxic quills all at\n"
@@ -1196,6 +1201,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CUtsuho)
         .levelUpLearnset = sCUtsuhoLevelUpLearnset,
         .teachableLearnset = sCUtsuhoTeachableLearnset,
+        .eggMoveLearnset = sCUtsuhoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_UTSUHO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_UTSUHO},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_UTSUHO}),
@@ -1224,9 +1230,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Utsuho"),
         .cryId = CRY_UTSUHO,
         .natDexNum = NATIONAL_DEX_SCIZOR,
-        .categoryName = _("Pincer"),
-        .height = 18,
-        .weight = 1180,
+        .categoryName = _("Yatagarasu"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Scizor has a body with the hardness of\n"
             "steel. It is not easily fazed by ordinary\n"
@@ -1277,9 +1283,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("AUtsuho"),
         .cryId = CRY_UTSUHO,
         .natDexNum = NATIONAL_DEX_SHUCKLE,
-        .categoryName = _("Mold"),
+        .categoryName = _("Yatagarasu"),
         .height = 6,
-        .weight = 205,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Shuckle hides under rocks, keeping its\n"
             "body concealed inside its shell while\n"
@@ -1330,9 +1336,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("SUtsuho"),
         .cryId = CRY_UTSUHO,
         .natDexNum = NATIONAL_DEX_HERACROSS,
-        .categoryName = _("Single Horn"),
-        .height = 15,
-        .weight = 540,
+        .categoryName = _("Yatagarasu"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "They gather in forests seeking the sweet\n"
             "sap of trees. It is completely clad in a\n"
@@ -1384,9 +1390,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CSatori"),
         .cryId = CRY_SATORI,
         .natDexNum = NATIONAL_DEX_SNEASEL,
-        .categoryName = _("Sharp Claw"),
-        .height = 9,
-        .weight = 280,
+        .categoryName = _("Mind-Reader"),
+        .height = 4,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Sneasel scales trees by punching its\n"
             "hooked claws into the bark. It seeks out\n"
@@ -1441,9 +1447,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Satori"),
         .cryId = CRY_SATORI,
         .natDexNum = NATIONAL_DEX_TEDDIURSA,
-        .categoryName = _("Little Bear"),
+        .categoryName = _("Mind-Reader"),
         .height = 6,
-        .weight = 88,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It licks its palms that are sweetened by\n"
             "being soaked in honey. A Teddiursa makes\n"
@@ -1494,9 +1500,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("DSatori"),
         .cryId = CRY_SATORI,
         .natDexNum = NATIONAL_DEX_URSARING,
-        .categoryName = _("Hibernator"),
-        .height = 18,
-        .weight = 1258,
+        .categoryName = _("Mind-Reader"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "In forests, it is said that there are many\n"
             "streams and towering trees where an\n"
@@ -1550,9 +1556,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("TSatori"),
         .cryId = CRY_SATORI,
         .natDexNum = NATIONAL_DEX_SLUGMA,
-        .categoryName = _("Lava"),
-        .height = 7,
-        .weight = 350,
+        .categoryName = _("Mind-Reader"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It is a species of Pokémon that lives in\n"
             "volcanic areas. If its body cools, its skin\n"
@@ -1604,9 +1610,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("CKoishi"),
         .cryId = CRY_KOISHI,
         .natDexNum = NATIONAL_DEX_MAGCARGO,
-        .categoryName = _("Lava"),
-        .height = 8,
-        .weight = 550,
+        .categoryName = _("Unconscious"),
+        .height = 3,
+        .weight = 1000,
         .description = COMPOUND_STRING(
             "The shell on its back is made of hardened\n"
             "magma. Tens of thousands of years spent\n"
@@ -1632,6 +1638,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         FOOTPRINT(CKoishi)
         .levelUpLearnset = sCKoishiLevelUpLearnset,
         .teachableLearnset = sCKoishiTeachableLearnset,
+        .eggMoveLearnset = sCKoishiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KOISHI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KOISHI},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_KOISHI}),
@@ -1661,9 +1668,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("Koishi"),
         .cryId = CRY_KOISHI,
         .natDexNum = NATIONAL_DEX_SWINUB,
-        .categoryName = _("Pig"),
-        .height = 4,
-        .weight = 65,
+        .categoryName = _("Unconscious"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "It roots for food by rubbing its snout\n"
             "against the ground. Its favorite food is a\n"
@@ -1714,9 +1721,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("AKoishi"),
         .cryId = CRY_KOISHI,
         .natDexNum = NATIONAL_DEX_PILOSWINE,
-        .categoryName = _("Swine"),
-        .height = 11,
-        .weight = 558,
+        .categoryName = _("Unconscious"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "A Piloswine is covered by a thick coat\n"
             "of long hair for enduring freezing cold.\n"
@@ -1769,9 +1776,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .speciesName = _("SKoishi"),
         .cryId = CRY_KOISHI,
         .natDexNum = NATIONAL_DEX_CORSOLA,
-        .categoryName = _("Coral"),
-        .height = 6,
-        .weight = 50,
+        .categoryName = _("Unconscious"),
+        .height = 5,
+        .weight = 2100,
         .description = COMPOUND_STRING(
             "Corsola live in warm southern seas.\n"
             "If the sea becomes polluted, the beautiful\n"

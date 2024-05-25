@@ -2314,7 +2314,7 @@ Corphish
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Taunt
-- Crabhammer
+- Gale
 - Water Pulse
 
 Lombre
@@ -5035,7 +5035,7 @@ Crawdaunt
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Water Pulse
-- Crabhammer
+- Gale
 - Taunt
 - Leer
 
@@ -15562,7 +15562,7 @@ Crawdaunt @ Chesto Berry
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
-- Crabhammer
+- Gale
 - Taunt
 - Double Team
 

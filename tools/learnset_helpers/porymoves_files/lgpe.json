@@ -2306,7 +2306,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -2347,7 +2347,7 @@
       "MOVE_STEALTH_ROCK",
       "MOVE_PAY_DAY",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -5577,7 +5577,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -5649,7 +5649,7 @@
       "MOVE_FIRE_BLAST",
       "MOVE_HYPER_BEAM",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -6261,7 +6261,7 @@
       "MOVE_ICE_BEAM",
       "MOVE_PAY_DAY",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -6350,7 +6350,7 @@
       "MOVE_ICE_BEAM",
       "MOVE_PAY_DAY",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -7178,7 +7178,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 41,
@@ -7262,7 +7262,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 56,
@@ -8110,7 +8110,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 43,
@@ -8148,7 +8148,7 @@
       "MOVE_ICE_BEAM",
       "MOVE_STEALTH_ROCK",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -8201,7 +8201,7 @@
       },
       {
         "Level": 36,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 48,
@@ -8250,7 +8250,7 @@
       "MOVE_STEALTH_ROCK",
       "MOVE_PAY_DAY",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -8689,7 +8689,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -8707,7 +8707,7 @@
       "MOVE_BLIZZARD",
       "MOVE_ICE_BEAM",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -8768,7 +8768,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -8787,7 +8787,7 @@
       "MOVE_BLIZZARD",
       "MOVE_ICE_BEAM",
       "MOVE_DRILL_RUN",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -9628,7 +9628,7 @@
       "MOVE_ICE_BEAM",
       "MOVE_DRILL_RUN",
       "MOVE_DREAM_EATER",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []
@@ -11194,7 +11194,7 @@
       "MOVE_PAY_DAY",
       "MOVE_DRILL_RUN",
       "MOVE_DREAM_EATER",
-      "MOVE_MEGAHORN"
+      "MOVE_BATTLE_CHANT"
     ],
     "EggMoves": [],
     "TutorMoves": []

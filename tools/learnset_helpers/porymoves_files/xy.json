@@ -3486,7 +3486,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -3518,7 +3518,7 @@
       },
       {
         "Level": 58,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [
@@ -8701,7 +8701,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -11249,7 +11249,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 45,
@@ -11376,7 +11376,7 @@
       },
       {
         "Level": 56,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 63,
@@ -12836,7 +12836,7 @@
       },
       {
         "Level": 67,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -12916,7 +12916,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -12976,7 +12976,7 @@
       },
       {
         "Level": 77,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -13715,7 +13715,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -13762,7 +13762,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -13826,7 +13826,7 @@
       },
       {
         "Level": 72,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -19531,7 +19531,7 @@
       "MOVE_BATON_PASS",
       "MOVE_DISABLE",
       "MOVE_ELECTROWEB",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_NIGHT_SLASH",
       "MOVE_PSYBEAM",
       "MOVE_PURSUIT",
@@ -19666,7 +19666,7 @@
       "MOVE_BATON_PASS",
       "MOVE_DISABLE",
       "MOVE_ELECTROWEB",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_NIGHT_SLASH",
       "MOVE_PSYBEAM",
       "MOVE_PURSUIT",
@@ -25139,7 +25139,7 @@
       },
       {
         "Level": 46,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [],
@@ -25191,7 +25191,7 @@
       "MOVE_FLAIL",
       "MOVE_FOCUS_PUNCH",
       "MOVE_HARDEN",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PURSUIT",
       "MOVE_REVENGE",
       "MOVE_ROCK_BLAST",
@@ -27603,7 +27603,7 @@
       "MOVE_DOUBLE_KICK",
       "MOVE_EXTRASENSORY",
       "MOVE_ME_FIRST",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_SUB_ZERO",
       "MOVE_RAGE",
       "MOVE_SPITE",
@@ -40048,7 +40048,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 44,
@@ -40180,7 +40180,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 52,
@@ -42296,7 +42296,7 @@
       "MOVE_MAGIC_COAT",
       "MOVE_ME_FIRST",
       "MOVE_CHARMING_LOOK",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PERISH_SONG",
       "MOVE_PLAY_ROUGH",
       "MOVE_PUNISHMENT",
@@ -53885,7 +53885,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -53949,7 +53949,7 @@
       },
       {
         "Level": 77,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 86,
@@ -58728,7 +58728,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -63478,7 +63478,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -63554,7 +63554,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       }
     ],
     "PreEvoMoves": [
@@ -68499,7 +68499,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 1,
@@ -68834,7 +68834,7 @@
       "MOVE_FAINT_ATTACK",
       "MOVE_KNIFE_THROW",
       "MOVE_KNOCK_OFF",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PURSUIT",
       "MOVE_SCREECH"
     ],
@@ -68971,7 +68971,7 @@
       "MOVE_FAINT_ATTACK",
       "MOVE_KNIFE_THROW",
       "MOVE_KNOCK_OFF",
-      "MOVE_MEGAHORN",
+      "MOVE_BATTLE_CHANT",
       "MOVE_PURSUIT",
       "MOVE_SCREECH"
     ],
@@ -73305,7 +73305,7 @@
       },
       {
         "Level": 41,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 46,
@@ -81012,7 +81012,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 34,
@@ -81064,7 +81064,7 @@
     ],
     "EggMoves": [
       "MOVE_AQUA_JET",
-      "MOVE_CRABHAMMER",
+      "MOVE_GALE",
       "MOVE_ENDURE",
       "MOVE_ENTRAINMENT",
       "MOVE_HELPING_HAND"
@@ -81123,7 +81123,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_CRABHAMMER"
+        "Move": "MOVE_GALE"
       },
       {
         "Level": 34,
@@ -81192,7 +81192,7 @@
     ],
     "EggMoves": [
       "MOVE_AQUA_JET",
-      "MOVE_CRABHAMMER",
+      "MOVE_GALE",
       "MOVE_ENDURE",
       "MOVE_ENTRAINMENT",
       "MOVE_HELPING_HAND"
@@ -83784,7 +83784,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_MEGAHORN"
+        "Move": "MOVE_BATTLE_CHANT"
       },
       {
         "Level": 51,
