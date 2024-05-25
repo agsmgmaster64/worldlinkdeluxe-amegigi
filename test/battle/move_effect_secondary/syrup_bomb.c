@@ -77,7 +77,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, Whi
     u32 ability;
 
     PARAMETRIZE { species = SPECIES_BELDUM; ability = ABILITY_HAKUREI_MIKO; }
-    PARAMETRIZE { species = SPECIES_TORKOAL; ability = ABILITY_MAGIC_BARRIER; }
+    PARAMETRIZE { species = SPECIES_NORMAL_HATATE; ability = ABILITY_MAGIC_BARRIER; }
     PARAMETRIZE { species = SPECIES_SOLGALEO; ability = ABILITY_FULL_METAL_BODY; }
 
     GIVEN {
@@ -100,7 +100,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, Whi
                 MESSAGE("Foe Beldum's Speed fell!");
             }
         }
-        else if (species == SPECIES_TORKOAL)
+        else if (species == SPECIES_NORMAL_HATATE)
         {
             MESSAGE("Foe Torkoal got covered in sticky syrup!");
             ABILITY_POPUP(opponent, ABILITY_MAGIC_BARRIER);

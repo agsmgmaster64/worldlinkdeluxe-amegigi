@@ -132,7 +132,7 @@ SINGLE_BATTLE_TEST("Flower Gift transforms Cherrim back when it switches out")
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CHERRIM) { Ability(ABILITY_FLOWER_GIFT); }
+        PLAYER(SPECIES_CHERRIM_OVERCAST) { Ability(ABILITY_FLOWER_GIFT); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -145,7 +145,7 @@ SINGLE_BATTLE_TEST("Flower Gift transforms Cherrim back when it switches out")
         MESSAGE("Cherrim transformed!");
         MESSAGE("Cherrim, that's enough! Come back!");
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHERRIM);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHERRIM_OVERCAST);
     }
 }
 
@@ -153,7 +153,7 @@ SINGLE_BATTLE_TEST("Flower Gift transforms Cherrim back when it uses a move that
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CHERRIM) { Ability(ABILITY_FLOWER_GIFT); }
+        PLAYER(SPECIES_CHERRIM_OVERCAST) { Ability(ABILITY_FLOWER_GIFT); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -166,7 +166,7 @@ SINGLE_BATTLE_TEST("Flower Gift transforms Cherrim back when it uses a move that
         MESSAGE("Cherrim transformed!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_U_TURN, player);
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHERRIM);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHERRIM_OVERCAST);
     }
 }
 

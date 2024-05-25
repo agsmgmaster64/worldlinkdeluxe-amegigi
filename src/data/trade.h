@@ -1004,7 +1004,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_PLUSLE] =
     {
         .nickname = _("PLUSES"),
-        .species = SPECIES_PLUSLE,
+        .species = SPECIES_CHIBI_SUIKA,
         .level = 5,
         .ivs = {4, 4, 4, 5, 5, 4},
         .abilityNum = 0,
@@ -1016,7 +1016,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .language = LANGUAGE_ENGLISH,
         .metLocation = METLOC_IN_GAME_TRADE,
-        .requestedSpecies = SPECIES_VOLBEAT
+        .requestedSpecies = SPECIES_ATTACK_SUIKA
     },
     [INGAME_TRADE_HORSEA] =
     {

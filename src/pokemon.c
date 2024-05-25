@@ -4972,10 +4972,10 @@ u16 GetBattleBGM(void)
     {
         switch (species)
         {
-        case SPECIES_RAYQUAZA:
+        case SPECIES_LAST_WORD_KANAKO:
             return MUS_VS_RAYQUAZA;
-        case SPECIES_KYOGRE:
-        case SPECIES_GROUDON:
+        case SPECIES_LAST_WORD_SUWAKO:
+        case SPECIES_LAST_WORD_UTSUHO:
             return MUS_VS_KYOGRE_GROUDON;
         case SPECIES_REGIROCK:
         case SPECIES_REGICE:

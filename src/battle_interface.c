@@ -1717,9 +1717,7 @@ static bool32 MegaIndicator_ShouldBeInvisible(u32 battlerId, struct Sprite *spri
 
     if (megaEvolved)
         sprite->tType = INDICATOR_MEGA;
-    else if (primalReverted && gBattleMons[battlerId].species == SPECIES_KYOGRE_PRIMAL)
-        sprite->tType = INDICATOR_ALPHA;
-    else if (primalReverted && gBattleMons[battlerId].species == SPECIES_GROUDON_PRIMAL)
+    else if (primalReverted)
         sprite->tType = INDICATOR_OMEGA;
     else if (dynamaxed)
         sprite->tType = INDICATOR_DYNAMAX;

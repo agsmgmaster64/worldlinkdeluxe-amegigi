@@ -837,7 +837,7 @@ static const u16 sManectricFormSpeciesIdTable[] = {
 
 #if P_FAMILY_CARVANHA
 static const u16 sSharpedoFormSpeciesIdTable[] = {
-    SPECIES_SHARPEDO,
+    SPECIES_CHIBI_TENSHI,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SHARPEDO_MEGA,
 #endif
@@ -847,7 +847,7 @@ static const u16 sSharpedoFormSpeciesIdTable[] = {
 
 #if P_FAMILY_NUMEL
 static const u16 sCameruptFormSpeciesIdTable[] = {
-    SPECIES_CAMERUPT,
+    SPECIES_CHIBI_HATATE,
 #if P_MEGA_EVOLUTIONS
     SPECIES_CAMERUPT_MEGA,
 #endif
@@ -945,35 +945,29 @@ static const u16 sLatiosFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_LATIOS
 
-#if P_FAMILY_KYOGRE
-static const u16 sKyogreFormSpeciesIdTable[] = {
-    SPECIES_KYOGRE,
+static const u16 sLSuwakoFormSpeciesIdTable[] = {
+    SPECIES_LAST_WORD_SUWAKO,
 #if P_PRIMAL_REVERSIONS
     SPECIES_KYOGRE_PRIMAL,
 #endif
     FORM_SPECIES_END,
 };
-#endif //P_FAMILY_KYOGRE
 
-#if P_FAMILY_GROUDON
-static const u16 sGroudonFormSpeciesIdTable[] = {
-    SPECIES_GROUDON,
+static const u16 sLUtsuhoFormSpeciesIdTable[] = {
+    SPECIES_LAST_WORD_UTSUHO,
 #if P_PRIMAL_REVERSIONS
     SPECIES_GROUDON_PRIMAL,
 #endif
     FORM_SPECIES_END,
 };
-#endif //P_FAMILY_GROUDON
 
-#if P_FAMILY_RAYQUAZA
-static const u16 sRayquazaFormSpeciesIdTable[] = {
-    SPECIES_RAYQUAZA,
+static const u16 sLKanakoFormSpeciesIdTable[] = {
+    SPECIES_LAST_WORD_KANAKO,
 #if P_MEGA_EVOLUTIONS
     SPECIES_RAYQUAZA_MEGA,
 #endif
     FORM_SPECIES_END,
 };
-#endif //P_FAMILY_RAYQUAZA
 
 #if P_FAMILY_DEOXYS
 static const u16 sDeoxysFormSpeciesIdTable[] = {
@@ -1140,7 +1134,7 @@ static const u16 sArceusFormSpeciesIdTable[] = {
 
 #if P_FAMILY_OSHAWOTT
 static const u16 sSamurottFormSpeciesIdTable[] = {
-    SPECIES_SAMUROTT,
+    SPECIES_LAST_WORD_SUWAKO,
 #if P_HISUIAN_FORMS
     SPECIES_SAMUROTT_HISUIAN,
 #endif

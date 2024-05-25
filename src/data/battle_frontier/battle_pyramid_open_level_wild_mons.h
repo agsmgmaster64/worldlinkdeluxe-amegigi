@@ -1,13 +1,13 @@
 static const struct PyramidWildMon sOpenLevelWildMons_Round1[] =
 {
     {
-        .species = SPECIES_PLUSLE,
+        .species = SPECIES_CHIBI_SUIKA,
         .lvl = 15,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER_WAVE, MOVE_SPARK, MOVE_ENCORE, MOVE_NONE}
     },
     {
-        .species = SPECIES_MINUN,
+        .species = SPECIES_NORMAL_SUIKA,
         .lvl = 15,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_QUICK_ATTACK, MOVE_NONE}
@@ -53,13 +53,13 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round1[] =
 static const struct PyramidWildMon sOpenLevelWildMons_Round2[] =
 {
     {
-        .species = SPECIES_GULPIN,
+        .species = SPECIES_NORMAL_IKU,
         .lvl = 14,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_TOXIC, MOVE_SLUDGE, MOVE_PROTECT, MOVE_NONE}
     },
     {
-        .species = SPECIES_ROSELIA,
+        .species = SPECIES_CHIBI_IKU,
         .lvl = 14,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_TOXIC, MOVE_GIGA_DRAIN, MOVE_MAGICAL_LEAF, MOVE_PETAL_DANCE}

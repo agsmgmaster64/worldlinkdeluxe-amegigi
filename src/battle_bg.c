@@ -857,11 +857,11 @@ static u8 GetBattleTerrainOverride(void)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
-        case SPECIES_GROUDON:
+        case SPECIES_LAST_WORD_UTSUHO:
             return BATTLE_TERRAIN_GROUDON;
-        case SPECIES_KYOGRE:
+        case SPECIES_LAST_WORD_SUWAKO:
             return BATTLE_TERRAIN_KYOGRE;
-        case SPECIES_RAYQUAZA:
+        case SPECIES_LAST_WORD_KANAKO:
             return BATTLE_TERRAIN_RAYQUAZA;
         }
     }
@@ -1264,9 +1264,9 @@ void DrawBattleEntryBackground(void)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
-        case SPECIES_KYOGRE:
+        case SPECIES_LAST_WORD_SUWAKO:
             LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_UNDERWATER);
-        case SPECIES_RAYQUAZA:
+        case SPECIES_LAST_WORD_KANAKO:
             LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_RAYQUAZA);
         default:
             LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_CAVE);

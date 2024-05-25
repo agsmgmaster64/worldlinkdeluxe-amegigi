@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Arceus' forms")
 {
     u32 j;
     static const u16 sArceusFormSpeciesIdTable[] = {
-        SPECIES_ARCEUS,
+        SPECIES_ARCEUS_NORMAL,
         SPECIES_ARCEUS_FIGHTING,
         SPECIES_ARCEUS_FLYING,
         SPECIES_ARCEUS_POISON,

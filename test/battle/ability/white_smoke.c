@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("White Smoke prevents intimidate")
     GIVEN {
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_MAGIC_BARRIER); };
+        OPPONENT(SPECIES_NORMAL_HATATE) { Ability(ABILITY_MAGIC_BARRIER); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }

@@ -651,15 +651,15 @@ void BattleSetup_StartLegendaryBattle(void)
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
     default:
-    case SPECIES_GROUDON:
+    case SPECIES_LAST_WORD_UTSUHO:
     case SPECIES_GROUDON_PRIMAL:
         CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
         break;
-    case SPECIES_KYOGRE:
+    case SPECIES_LAST_WORD_SUWAKO:
     case SPECIES_KYOGRE_PRIMAL:
         CreateBattleStartTask(B_TRANSITION_KYOGRE, MUS_VS_KYOGRE_GROUDON);
         break;
-    case SPECIES_RAYQUAZA:
+    case SPECIES_LAST_WORD_KANAKO:
     case SPECIES_RAYQUAZA_MEGA:
         CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
         break;

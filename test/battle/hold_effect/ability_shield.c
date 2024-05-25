@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Ability Shield prevents Neutralizing Gas")
     PARAMETRIZE { item = ITEM_NONE; }
 
     GIVEN {
-        PLAYER(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); Item(item); }
+        PLAYER(SPECIES_NORMAL_HATATE) { Ability(ABILITY_DROUGHT); Item(item); }
         OPPONENT(SPECIES_NORMAL_KEINE) { Ability(ABILITY_NEUTRALIZING_GAS); }
     } WHEN {
         TURN { }

@@ -64,7 +64,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [1] = DUMMY_HILL_MON,
             [2] = DUMMY_HILL_MON,
             [3] = {
-                .species = SPECIES_SWALOT,
+                .species = SPECIES_DEFENSE_IKU,
                 .heldItem = ITEM_SHELL_BELL,
                 .moves = { MOVE_POISON_BOMB, MOVE_SHADOW_BALL, MOVE_PAIN_SPLIT, MOVE_YAWN },
                 .hpEV = 55,
@@ -246,7 +246,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [4] = {
-                .species = SPECIES_ROSELIA,
+                .species = SPECIES_CHIBI_IKU,
                 .heldItem = ITEM_LEFTOVERS,
                 .moves = { MOVE_GIGA_DRAIN, MOVE_NATURE_SOUND, MOVE_TOXIC, MOVE_LEECH_SEED },
                 .hpEV = 255,
@@ -326,7 +326,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [4] = {
-                .species = SPECIES_SHARPEDO,
+                .species = SPECIES_CHIBI_TENSHI,
                 .heldItem = ITEM_SCOPE_LENS,
                 .moves = { MOVE_SURF, MOVE_CRUNCH, MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE },
                 .hpEV = 255,

@@ -11480,7 +11480,7 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
         case SPECIES_TAILLOW:
         case SPECIES_STARLY:
         case SPECIES_CHATOT:
-        case SPECIES_SHAYMIN:
+        case SPECIES_SHAYMIN_LAND:
         case SPECIES_PIDOVE:
         case SPECIES_ARCHEN:
         case SPECIES_DUCKLETT:

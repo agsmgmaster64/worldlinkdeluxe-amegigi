@@ -16601,7 +16601,7 @@ void BS_TryReflectType(void)
     u8 targetType2 = GetBattlerType(gBattlerTarget, 1, FALSE);
     u8 targetType3 = GetBattlerType(gBattlerTarget, 2, FALSE);
 
-    if (targetBaseSpecies == SPECIES_ARCEUS || targetBaseSpecies == SPECIES_SILVALLY)
+    if (targetBaseSpecies == SPECIES_ARCEUS_NORMAL || targetBaseSpecies == SPECIES_SILVALLY)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }

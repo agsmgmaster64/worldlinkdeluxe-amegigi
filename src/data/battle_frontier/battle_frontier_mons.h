@@ -554,7 +554,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_GULPIN] = {
-        .species = SPECIES_GULPIN,
+        .species = SPECIES_NORMAL_IKU,
         .moves = {MOVE_TOXIC, MOVE_YAWN, MOVE_PAIN_SPLIT, MOVE_ATTRACT},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
@@ -596,14 +596,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_NUMEL] = {
-        .species = SPECIES_NUMEL,
+        .species = SPECIES_DEFENSE_TENSHI,
         .moves = {MOVE_EMBER, MOVE_MAGNITUDE, MOVE_ROCK_TOMB, MOVE_SANDSTORM},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_CARVANHA] = {
-        .species = SPECIES_CARVANHA,
+        .species = SPECIES_TECH_IKU,
         .moves = {MOVE_BITE, MOVE_SCREECH, MOVE_SCARY_FACE, MOVE_SWAGGER},
         .heldItem = ITEM_SHELL_BELL,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
@@ -848,7 +848,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_NAUGHTY
     },
     [FRONTIER_MON_SPOINK] = {
-        .species = SPECIES_SPOINK,
+        .species = SPECIES_DEFENSE_HATATE,
         .moves = {MOVE_PSYWAVE, MOVE_BOUNCE, MOVE_MAGIC_COAT, MOVE_CONFUSE_RAY},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
@@ -1191,28 +1191,28 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_WAILMER_1] = {
-        .species = SPECIES_WAILMER,
+        .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_WHIRLPOOL, MOVE_ROAR, MOVE_DEFENSE_CURL, MOVE_TREMORS},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_ROSELIA_1] = {
-        .species = SPECIES_ROSELIA,
+        .species = SPECIES_CHIBI_IKU,
         .moves = {MOVE_MAGICAL_LEAF, MOVE_TOXIC, MOVE_NATURE_SOUND, MOVE_COTTON_SPORE},
         .heldItem = ITEM_PECHA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_VOLBEAT_1] = {
-        .species = SPECIES_VOLBEAT,
+        .species = SPECIES_ATTACK_SUIKA,
         .moves = {MOVE_SILVER_WIND, MOVE_CONFUSE_RAY, MOVE_QUICK_ATTACK, MOVE_HELPING_HAND},
         .heldItem = ITEM_LIECHI_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_QUIRKY
     },
     [FRONTIER_MON_ILLUMISE_1] = {
-        .species = SPECIES_ILLUMISE,
+        .species = SPECIES_TECH_SUIKA,
         .moves = {MOVE_SILVER_WIND, MOVE_WISH, MOVE_QUICK_ATTACK, MOVE_HELPING_HAND},
         .heldItem = ITEM_LIECHI_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
@@ -1303,14 +1303,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_PLUSLE_1] = {
-        .species = SPECIES_PLUSLE,
+        .species = SPECIES_CHIBI_SUIKA,
         .moves = {MOVE_SPARK, MOVE_FAKE_TEARS, MOVE_QUICK_ATTACK, MOVE_HELPING_HAND},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_MINUN_1] = {
-        .species = SPECIES_MINUN,
+        .species = SPECIES_NORMAL_SUIKA,
         .moves = {MOVE_SPARK, MOVE_CHARM, MOVE_ENCORE, MOVE_HELPING_HAND},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
@@ -1688,14 +1688,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_CAMERUPT_1] = {
-        .species = SPECIES_CAMERUPT,
+        .species = SPECIES_CHIBI_HATATE,
         .moves = {MOVE_MAGNITUDE, MOVE_PROTECT, MOVE_SANDSTORM, MOVE_ROCK_SLIDE},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_QUIRKY
     },
     [FRONTIER_MON_SHARPEDO_1] = {
-        .species = SPECIES_SHARPEDO,
+        .species = SPECIES_CHIBI_TENSHI,
         .moves = {MOVE_SLASH, MOVE_BITE, MOVE_WATER_PULSE, MOVE_SCARY_FACE},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
@@ -1737,7 +1737,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_SWALOT_1] = {
-        .species = SPECIES_SWALOT,
+        .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_COERCE, MOVE_SHADOW_DANCE, MOVE_BRAVER, MOVE_SLUDGE},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
@@ -1758,14 +1758,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_GRUMPIG_1] = {
-        .species = SPECIES_GRUMPIG,
+        .species = SPECIES_TECH_HATATE,
         .moves = {MOVE_PSYBEAM, MOVE_CONFUSE_RAY, MOVE_FUTURE_SIGHT, MOVE_MAGIC_COAT},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_TORKOAL_1] = {
-        .species = SPECIES_TORKOAL,
+        .species = SPECIES_NORMAL_HATATE,
         .moves = {MOVE_EMBER, MOVE_FIRE_SPIN, MOVE_SMOKESCREEN, MOVE_AMNESIA},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
@@ -1926,28 +1926,28 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_WAILMER_2] = {
-        .species = SPECIES_WAILMER,
+        .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_AQUA_SHOWER, MOVE_EARTHQUAKE, MOVE_BODY_SLAM, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_ROSELIA_2] = {
-        .species = SPECIES_ROSELIA,
+        .species = SPECIES_CHIBI_IKU,
         .moves = {MOVE_GIGA_DRAIN, MOVE_POISON_BOMB, MOVE_NATURE_SOUND, MOVE_SYNTHESIS},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_VOLBEAT_2] = {
-        .species = SPECIES_VOLBEAT,
+        .species = SPECIES_ATTACK_SUIKA,
         .moves = {MOVE_SIGNAL_BEAM, MOVE_THUNDERBOLT, MOVE_ICE_PUNCH, MOVE_MANA_CHARGE},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_QUIRKY
     },
     [FRONTIER_MON_ILLUMISE_2] = {
-        .species = SPECIES_ILLUMISE,
+        .species = SPECIES_TECH_SUIKA,
         .moves = {MOVE_SILVER_WIND, MOVE_THUNDERBOLT, MOVE_ICE_PUNCH, MOVE_GIGA_DRAIN},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -2038,14 +2038,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_CAREFUL
     },
     [FRONTIER_MON_PLUSLE_2] = {
-        .species = SPECIES_PLUSLE,
+        .species = SPECIES_CHIBI_SUIKA,
         .moves = {MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_SEISMIC_TOSS, MOVE_WISH},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_MINUN_2] = {
-        .species = SPECIES_MINUN,
+        .species = SPECIES_NORMAL_SUIKA,
         .moves = {MOVE_THUNDERBOLT, MOVE_ATTRACT, MOVE_CHARM, MOVE_WISH},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -2423,14 +2423,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_CAMERUPT_2] = {
-        .species = SPECIES_CAMERUPT,
+        .species = SPECIES_CHIBI_HATATE,
         .moves = {MOVE_EARTHQUAKE, MOVE_ERUPTION, MOVE_BODY_SLAM, MOVE_SCARY_FACE},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
         .nature = NATURE_QUIRKY
     },
     [FRONTIER_MON_SHARPEDO_2] = {
-        .species = SPECIES_SHARPEDO,
+        .species = SPECIES_CHIBI_TENSHI,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_SURF},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
@@ -2472,7 +2472,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_SWALOT_2] = {
-        .species = SPECIES_SWALOT,
+        .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_POISON_BOMB, MOVE_SHADOW_BALL, MOVE_BODY_SLAM, MOVE_COUNTER},
         .heldItem = ITEM_LEFTOVERS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
@@ -2493,14 +2493,14 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_GRUMPIG_2] = {
-        .species = SPECIES_GRUMPIG,
+        .species = SPECIES_TECH_HATATE,
         .moves = {MOVE_MANA_BURST, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 252, 0),
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_TORKOAL_2] = {
-        .species = SPECIES_TORKOAL,
+        .species = SPECIES_NORMAL_HATATE,
         .moves = {MOVE_OVERHEAT, MOVE_BODY_SLAM, MOVE_SMOKESCREEN, MOVE_PROTECT},
         .heldItem = ITEM_WHITE_HERB,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
@@ -3004,7 +3004,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_WAILORD_1] = {
-        .species = SPECIES_WAILORD,
+        .species = SPECIES_ATTACK_TENSHI,
         .moves = {MOVE_SURF, MOVE_ICY_WIND, MOVE_BODY_SLAM, MOVE_ROAR},
         .heldItem = ITEM_SHELL_BELL,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
@@ -3676,7 +3676,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_WAILORD_2] = {
-        .species = SPECIES_WAILORD,
+        .species = SPECIES_ATTACK_TENSHI,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_REST, MOVE_CURSE, MOVE_AMNESIA},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
@@ -4348,7 +4348,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_WAILORD_3] = {
-        .species = SPECIES_WAILORD,
+        .species = SPECIES_ATTACK_TENSHI,
         .moves = {MOVE_HYDRO_PUMP, MOVE_FISSURE, MOVE_DOUBLE_TEAM, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
@@ -5020,7 +5020,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_WAILORD_4] = {
-        .species = SPECIES_WAILORD,
+        .species = SPECIES_ATTACK_TENSHI,
         .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_EARTHQUAKE, MOVE_FISSURE},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),

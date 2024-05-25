@@ -574,71 +574,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         */
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_NONE, 0, SPECIES_SAMUROTT_HISUIAN}),
-    },
-
-    [SPECIES_SAMUROTT] =
-    {
-        .baseHP        = 95,
-        .baseAttack    = 100,
-        .baseDefense   = 85,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 108,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
-        .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Samurott"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_SAMUROTT,
-        .categoryName = _("Formidable"),
-        .height = 15,
-        .weight = 946,
-        .description = COMPOUND_STRING(
-            "One swing of the seamitars attached\n"
-            "to its armor can fell an opponent.\n"
-            "A simple glare from one of them is\n"
-            "enough to intimidate most enemies."),
-        .pokemonScale = 268,
-        .pokemonOffset = 2,
-        .trainerScale = 271,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Samurott,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_Samurott,
-        .frontAnimId = ANIM_V_SHAKE,
-        .backPic = gMonBackPic_Samurott,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 8,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
-        .palette = gMonPalette_Samurott,
-        .shinyPalette = gMonShinyPalette_Samurott,
-        .iconSprite = gMonIcon_Samurott,
-        .iconPalIndex = 2,
-        FOOTPRINT(Samurott)
-        /*
-        FOLLOWER(
-            sPicTable_Samurott,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gFollowerPalette_Samurott,
-            gShinyFollowerPalette_Samurott
-        )
-        */
-        .levelUpLearnset = sSamurottLevelUpLearnset,
-        .teachableLearnset = sSamurottTeachableLearnset,
-        .formSpeciesIdTable = sSamurottFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_NONE, 0, SPECIES_SAMUROTT_HISUIAN}),
     },
 
 #if P_HISUIAN_FORMS
@@ -709,70 +645,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_OSHAWOTT
 
 #if P_FAMILY_PATRAT
-    [SPECIES_PATRAT] =
-    {
-        .baseHP        = 45,
-        .baseAttack    = 55,
-        .baseDefense   = 39,
-        .baseSpeed     = 42,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 39,
-        .types = MON_TYPES(TYPE_ILLUSION),
-        .catchRate = 255,
-        .expYield = 51,
-        .evYield_Attack = 1,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_KEEN_EYE, ABILITY_ANALYTIC },
-        .sourceGame = SOURCE_EOSD,
-        .speciesName = _("Patrat"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_PATRAT,
-        .categoryName = _("Scout"),
-        .height = 5,
-        .weight = 116,
-        .description = COMPOUND_STRING(
-            "Extremely cautious, they take shifts to\n"
-            "maintain a constant watch of their nest.\n"
-            "Using food stored in cheek pouches,\n"
-            "they can keep watch for days."),
-        .pokemonScale = 432,
-        .pokemonOffset = 14,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Patrat,
-        .frontPicSize = MON_COORDS_SIZE(48, 40),
-        .frontPicYOffset = 12,
-        .frontAnimFrames = sAnims_Patrat,
-        .frontAnimId = ANIM_V_STRETCH,
-        .backPic = gMonBackPic_Patrat,
-        .backPicSize = MON_COORDS_SIZE(64, 40),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_Patrat,
-        .shinyPalette = gMonShinyPalette_Patrat,
-        .iconSprite = gMonIcon_Patrat,
-        .iconPalIndex = 2,
-        FOOTPRINT(Patrat)
-        /*
-        FOLLOWER(
-            sPicTable_Patrat,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gFollowerPalette_Patrat,
-            gShinyFollowerPalette_Patrat
-        )
-        */
-        .levelUpLearnset = sPatratLevelUpLearnset,
-        .teachableLearnset = sPatratTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_WATCHOG}),
-    },
-
-    [SPECIES_WATCHOG] =
+    [SPECIES_LAST_WORD_TENSHI] =
     {
         .baseHP        = 60,
         .baseAttack    = 85,
@@ -836,7 +709,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_PATRAT
 
 #if P_FAMILY_LILLIPUP
-    [SPECIES_LILLIPUP] =
+    [SPECIES_LAST_WORD_LETTY] =
     {
         .baseHP        = 45,
         .baseAttack    = 60,
@@ -896,70 +769,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         */
         .levelUpLearnset = sLillipupLevelUpLearnset,
         .teachableLearnset = sLillipupTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_HERDIER}),
-    },
-
-    [SPECIES_HERDIER] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 80,
-        .baseDefense   = 65,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 65,
-        .types = MON_TYPES(TYPE_ILLUSION),
-        .catchRate = 120,
-        .expYield = 130,
-        .evYield_Attack = 2,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 15,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_SAND_RUSH, ABILITY_SCRAPPY },
-        .sourceGame = SOURCE_IN,
-        .speciesName = _("Herdier"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_HERDIER,
-        .categoryName = _("Loyal Dog"),
-        .height = 9,
-        .weight = 147,
-        .description = COMPOUND_STRING(
-            "Its dense black fur grows continuously.\n"
-            "The high cost of keeping its hard fur\n"
-            "properly groomed makes this a\n"
-            "troublesome Pokémon to train."),
-        .pokemonScale = 338,
-        .pokemonOffset = 9,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Herdier,
-        .frontPicSize = MON_COORDS_SIZE(48, 48),
-        .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_Herdier,
-        .frontAnimId = ANIM_H_STRETCH,
-        .backPic = gMonBackPic_Herdier,
-        .backPicSize = MON_COORDS_SIZE(48, 56),
-        .backPicYOffset = 10,
-        .backAnimId = BACK_ANIM_H_SHAKE,
-        .palette = gMonPalette_Herdier,
-        .shinyPalette = gMonShinyPalette_Herdier,
-        .iconSprite = gMonIcon_Herdier,
-        .iconPalIndex = 2,
-        FOOTPRINT(Herdier)
-        /*
-        FOLLOWER(
-            sPicTable_Herdier,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gFollowerPalette_Herdier,
-            gShinyFollowerPalette_Herdier
-        )
-        */
-        .levelUpLearnset = sHerdierLevelUpLearnset,
-        .teachableLearnset = sHerdierTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_STOUTLAND}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_LAST_WORD_KANAKO}),
     },
 
     [SPECIES_STOUTLAND] =

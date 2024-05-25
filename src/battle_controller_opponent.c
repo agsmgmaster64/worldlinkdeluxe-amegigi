@@ -595,12 +595,8 @@ static void OpponentHandleChooseMove(u32 battler)
                 static const u16 naturalEnemies[][2] =
                 {
                     // Attacker         Target
-                    {SPECIES_CHIBI_STAR,  SPECIES_NORMAL_STAR},
-                    {SPECIES_NORMAL_STAR,   SPECIES_CHIBI_STAR},
-                    {SPECIES_HEATMOR,   SPECIES_DURANT},
-                    {SPECIES_DURANT,    SPECIES_HEATMOR},
-                    {SPECIES_SABLEYE,   SPECIES_CARBINK},
-                    {SPECIES_MAREANIE,  SPECIES_SPEED_KOISHI},
+                    {SPECIES_CHIBI_KAGUYA,  SPECIES_CHIBI_MOKOU},
+                    {SPECIES_CHIBI_MOKOU,   SPECIES_CHIBI_KAGUYA},
                 };
                 speciesAttacker = gBattleMons[battler].species;
                 speciesTarget = gBattleMons[GetBattlerAtPosition(BATTLE_PARTNER(battler))].species;

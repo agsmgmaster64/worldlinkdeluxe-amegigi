@@ -930,7 +930,7 @@ static const struct {
     { SPECIES_NORMAL_REISEN_II,      ITEM_ODD_INCENSE,  SPECIES_MIME_JR },
     { SPECIES_CHIMECHO,     ITEM_PURE_INCENSE, SPECIES_CHINGLING },
     { SPECIES_DEFENSE_KANAKO,    ITEM_ROCK_INCENSE, SPECIES_BONSLY },
-    { SPECIES_ROSELIA,      ITEM_ROSE_INCENSE, SPECIES_BUDEW },
+    { SPECIES_CHIBI_IKU,      ITEM_ROSE_INCENSE, SPECIES_BUDEW },
     { SPECIES_HELPER_NAZRIN,      ITEM_WAVE_INCENSE, SPECIES_MANTYKE },
 };
 
@@ -1005,12 +1005,12 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     eggSpecies = GetEggSpecies(species[parentSlots[0]]);
     if (eggSpecies == SPECIES_CHIBI_PATCHOULI && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_DEFENSE_PATCHOULI;
-    else if (eggSpecies == SPECIES_ILLUMISE && daycare->offspringPersonality & EGG_GENDER_MALE)
-        eggSpecies = SPECIES_VOLBEAT;
+    else if (eggSpecies == SPECIES_TECH_SUIKA && daycare->offspringPersonality & EGG_GENDER_MALE)
+        eggSpecies = SPECIES_ATTACK_SUIKA;
     else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_DEFENSE_PATCHOULI && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_DEFENSE_PATCHOULI;
-    else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_VOLBEAT && !(daycare->offspringPersonality & EGG_GENDER_MALE))
-        eggSpecies = SPECIES_ILLUMISE;
+    else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_ATTACK_SUIKA && !(daycare->offspringPersonality & EGG_GENDER_MALE))
+        eggSpecies = SPECIES_TECH_SUIKA;
     else if (eggSpecies == SPECIES_MANAPHY)
         eggSpecies = SPECIES_PHIONE;
     else if (eggSpecies == SPECIES_SINISTEA_ANTIQUE)
