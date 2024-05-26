@@ -1078,7 +1078,7 @@ static const u16 sRotomFormSpeciesIdTable[] = {
 
 #if P_FAMILY_DIALGA
 static const u16 sDialgaFormSpeciesIdTable[] = {
-    SPECIES_DIALGA,
+    SPECIES_ADVENT_CIRNO,
     SPECIES_DIALGA_ORIGIN,
     FORM_SPECIES_END,
 };
@@ -1086,7 +1086,7 @@ static const u16 sDialgaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_PALKIA
 static const u16 sPalkiaFormSpeciesIdTable[] = {
-    SPECIES_PALKIA,
+    SPECIES_ADVENT_REISEN,
     SPECIES_PALKIA_ORIGIN,
     FORM_SPECIES_END,
 };
@@ -1094,7 +1094,7 @@ static const u16 sPalkiaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GIRATINA
 static const u16 sGiratinaFormSpeciesIdTable[] = {
-    SPECIES_GIRATINA_ALTERED,
+    SPECIES_ADVENT_LETTY,
     SPECIES_GIRATINA_ORIGIN,
     FORM_SPECIES_END,
 };
@@ -1102,7 +1102,7 @@ static const u16 sGiratinaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SHAYMIN
 static const u16 sShayminFormSpeciesIdTable[] = {
-    SPECIES_SHAYMIN_LAND,
+    SPECIES_ADVENT_YUKARI,
     SPECIES_SHAYMIN_SKY,
     FORM_SPECIES_END,
 };
@@ -1110,7 +1110,7 @@ static const u16 sShayminFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ARCEUS
 static const u16 sArceusFormSpeciesIdTable[] = {
-    SPECIES_ARCEUS_NORMAL,
+    SPECIES_ADVENT_RAN,
     SPECIES_ARCEUS_FIGHTING,
     SPECIES_ARCEUS_FLYING,
     SPECIES_ARCEUS_POISON,

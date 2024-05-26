@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("Gastro Acid fails if target has a banned ability")
 {
     u32 species, ability;
 
-    PARAMETRIZE { species = SPECIES_ARCEUS_NORMAL; ability = ABILITY_MULTITYPE; }
+    PARAMETRIZE { species = SPECIES_ADVENT_RAN; ability = ABILITY_MULTITYPE; }
     PARAMETRIZE { species = SPECIES_AEGISLASH; ability = ABILITY_STANCE_CHANGE; }
     PARAMETRIZE { species = SPECIES_WISHIWASHI; ability = ABILITY_SCHOOLING; }
     PARAMETRIZE { species = SPECIES_KOMALA; ability = ABILITY_COMATOSE; }

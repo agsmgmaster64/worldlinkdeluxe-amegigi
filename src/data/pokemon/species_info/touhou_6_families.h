@@ -276,9 +276,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .teachableLearnset = sCMarisaTeachableLearnset,
         .eggMoveLearnset = sCMarisaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MARISA},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MARISA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MARISA},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MARISA}),
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MARISA},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MARISA}),
     },
 
     [SPECIES_NORMAL_MARISA] =
@@ -438,6 +438,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(SMarisa)
         .levelUpLearnset = sSMarisaLevelUpLearnset,
         .teachableLearnset = sSMarisaTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_MARISA] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 115,
+        .baseDefense   = 70,
+        .baseSpeed     = 135,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_WIND),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_EOSD,
+        .noFlip = TRUE,
+        .speciesName = _("AdMarisa"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_PHIONE,
+        .categoryName = _("Sea Drifter"),
+        .height = 4,
+        .weight = 31,
+        .description = COMPOUND_STRING(
+            "When the water warms, they inflate the\n"
+            "flotation sac on their heads and drift\n"
+            "languidly on the sea in packs.\n"
+            "It always returns to where it was born."),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_AdMarisa,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_AdMarisa,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdMarisa,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdMarisa,
+        .shinyPalette = gMonShinyPalette_AdMarisa,
+        .iconSprite = gMonIcon_AdMarisa,
+        .iconPalIndex = 1,
+        FOOTPRINT(AdMarisa)
+        .levelUpLearnset = sAdMarisaLevelUpLearnset,
+        .teachableLearnset = sAdMarisaTeachableLearnset,
     },
 
     [SPECIES_CHIBI_DAIYOUSEI] =
@@ -714,9 +767,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .teachableLearnset = sCCirnoTeachableLearnset,
         .eggMoveLearnset = sCCirnoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_CIRNO},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_CIRNO},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_CIRNO},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_CIRNO}),
+                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_CIRNO},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_CIRNO}),
     },
 
     [SPECIES_NORMAL_CIRNO] =
@@ -882,6 +935,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(TCirno)
         .levelUpLearnset = sTCirnoLevelUpLearnset,
         .teachableLearnset = sTCirnoTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_CIRNO] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 125,
+        .baseDefense   = 95,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_ICE, TYPE_STEEL),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_EOSD,
+        .noFlip = TRUE,
+        .speciesName = _("AdCirno"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_DIALGA,
+        .categoryName = _("Temporal"),
+        .height = 54,
+        .weight = 6830,
+        .description = COMPOUND_STRING(
+            "A Pokémon spoken of in legend.\n"
+            "It completely controls the flow of time.\n"
+            "It uses its power to travel at will\n"
+            "through the past and future."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 721,
+        .trainerOffset = 19,
+        .frontPic = gMonFrontPic_AdCirno,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_AdCirno,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdCirno,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdCirno,
+        .shinyPalette = gMonShinyPalette_AdCirno,
+        .iconSprite = gMonIcon_AdCirno,
+        .iconPalIndex = 1,
+        FOOTPRINT(AdCirno)
+        .levelUpLearnset = sAdCirnoLevelUpLearnset,
+        .teachableLearnset = sAdCirnoTeachableLearnset,
     },
 
     [SPECIES_CHIBI_RUMIA] =
@@ -1162,9 +1268,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .teachableLearnset = sCMeilingTeachableLearnset,
         .eggMoveLearnset = sCMeilingEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_MEILING},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MEILING},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MEILING},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MEILING}),
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MEILING},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MEILING}),
     },
 
     [SPECIES_NORMAL_MEILING] =
@@ -1329,6 +1435,60 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         FOOTPRINT(SMeiling)
         .levelUpLearnset = sSMeilingLevelUpLearnset,
         .teachableLearnset = sSMeilingTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_MEILING] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 120,
+        .baseDefense   = 80,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_DREAM, TYPE_HEART),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack = 2,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_EOSD,
+        .noFlip = TRUE,
+        .speciesName = _("AdMeiling"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_HEATRAN,
+        .categoryName = _("Lava Dome"),
+        .height = 17,
+        .weight = 4300,
+        .description = COMPOUND_STRING(
+            "Boiling blood, like magma, circulates\n"
+            "through its body. It dwells in volcanic\n"
+            "caves, using its cross-shaped feet\n"
+            "to crawl on ceilings and walls."),
+        .pokemonScale = 259,
+        .pokemonOffset = 1,
+        .trainerScale = 290,
+        .trainerOffset = 1,
+        .frontPic = gMonFrontPic_AdMeiling,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_AdMeiling,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdMeiling,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdMeiling,
+        .shinyPalette = gMonShinyPalette_AdMeiling,
+        .iconSprite = gMonIcon_AdMeiling,
+        .iconPalIndex = 0,
+        FOOTPRINT(AdMeiling)
+        .levelUpLearnset = sAdMeilingLevelUpLearnset,
+        .teachableLearnset = sAdMeilingTeachableLearnset,
     },
 
     [SPECIES_CHIBI_KOAKUMA] =

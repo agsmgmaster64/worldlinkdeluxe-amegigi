@@ -256,7 +256,7 @@ SINGLE_BATTLE_TEST("Embargo disables the effect of the Plate items on the move J
     PARAMETRIZE{ heldItem = ITEM_NONE; }
     PARAMETRIZE{ heldItem = ITEM_PIXIE_PLATE; }
     GIVEN {
-        PLAYER(SPECIES_ARCEUS_NORMAL) { Item(heldItem); };
+        PLAYER(SPECIES_ADVENT_RAN) { Item(heldItem); };
         OPPONENT(SPECIES_TECH_YUUKA);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); MOVE(player, MOVE_JUDGMENT); }

@@ -11469,18 +11469,6 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
     switch (species)
     {
 #if B_SKY_BATTLE_STRICT_ELIGIBILITY == TRUE
-        case SPECIES_SPEAROW:
-        case SPECIES_FARFETCHD:
-        case SPECIES_CHIBI_YUYUKO:
-        case SPECIES_NORMAL_YUYUKO:
-        case SPECIES_NORMAL_MINORIKO:
-        case SPECIES_PLACEHOLD_MOMIJI:
-        case SPECIES_CHIBI_PARSEE:
-        case SPECIES_TECH_NAZRIN:
-        case SPECIES_TAILLOW:
-        case SPECIES_STARLY:
-        case SPECIES_CHATOT:
-        case SPECIES_SHAYMIN_LAND:
         case SPECIES_PIDOVE:
         case SPECIES_ARCHEN:
         case SPECIES_DUCKLETT:

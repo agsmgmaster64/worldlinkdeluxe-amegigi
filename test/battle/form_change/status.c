@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitt
         }
     } THEN {
         if (move == MOVE_POWDER_SNOW)
-            EXPECT_EQ(player->species, SPECIES_SHAYMIN_LAND);
+            EXPECT_EQ(player->species, SPECIES_ADVENT_YUKARI);
         else
             EXPECT_EQ(player->species, SPECIES_SHAYMIN_SKY);
 

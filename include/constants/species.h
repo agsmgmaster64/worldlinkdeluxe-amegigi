@@ -484,23 +484,23 @@
 #define SPECIES_UXIE                                    480 // Sasha
 #define SPECIES_MESPRIT                                 481
 #define SPECIES_AZELF                                   482
-#define SPECIES_DIALGA                                  483 // Advent Cirno
-#define SPECIES_PALKIA                                  484 // Advent Reisen
-#define SPECIES_HEATRAN                                 485 // Advent Meiling
-#define SPECIES_REGIGIGAS                               486 // Advent Mystia
-#define SPECIES_GIRATINA_ALTERED                        487 // Advent Letty
-#define SPECIES_CRESSELIA                               488 // Advent Tewi
-#define SPECIES_PHIONE                                  489 // Advent Marisa
-#define SPECIES_MANAPHY                                 490 // Advent Alice
-#define SPECIES_DARKRAI                                 491 // Advent Mokou
-#define SPECIES_SHAYMIN_LAND                            492 // Advent Yukari
-#define SPECIES_ARCEUS_NORMAL                           493 // Advent Ran
-#define SPECIES_VICTINI                                 494 // Advent Chen
-#define SPECIES_SNIVY                                   495 // Advent Eirin
-#define SPECIES_SERVINE                                 496 // Advent Yuyuko
-#define SPECIES_SERPERIOR                               497 // Advent Youmu
-#define SPECIES_TEPIG                                   498 // Advent Reimu
-#define SPECIES_PIGNITE                                 499 // Advent Remilia
+#define SPECIES_ADVENT_CIRNO                            483
+#define SPECIES_ADVENT_REISEN                           484
+#define SPECIES_ADVENT_MEILING                          485
+#define SPECIES_ADVENT_MYSTIA                           486
+#define SPECIES_ADVENT_LETTY                            487
+#define SPECIES_ADVENT_TEWI                             488
+#define SPECIES_ADVENT_MARISA                           489
+#define SPECIES_ADVENT_ALICE                            490
+#define SPECIES_ADVENT_MOKOU                            491
+#define SPECIES_ADVENT_YUKARI                           492
+#define SPECIES_ADVENT_RAN                              493
+#define SPECIES_ADVENT_CHEN                             494
+#define SPECIES_ADVENT_EIRIN                            495
+#define SPECIES_ADVENT_YUYUKO                           496
+#define SPECIES_ADVENT_YOUMU                            497
+#define SPECIES_ADVENT_REIMU                            498
+#define SPECIES_ADVENT_REMILIA                          499
 #define SPECIES_EMBOAR                                  500 // JKSanae
 #define SPECIES_OSHAWOTT                                501 // Dark Alice
 #define SPECIES_DEWOTT                                  502 // AkiSisters

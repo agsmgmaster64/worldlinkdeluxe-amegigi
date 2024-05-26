@@ -4,73 +4,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif
 
 #if P_FAMILY_VICTINI
-    [SPECIES_VICTINI] =
-    {
-        .baseHP        = 100,
-        .baseAttack    = 100,
-        .baseDefense   = 100,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 100,
-        .baseSpDefense = 100,
-        .types = MON_TYPES(TYPE_REASON, TYPE_FIRE),
-        .catchRate = 3,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
-        .evYield_HP = 3,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 120,
-        .friendship = 100,
-        .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_VICTORY_STAR, ABILITY_NONE, ABILITY_NONE },
-        .sourceGame = SOURCE_PODD,
-        .speciesName = _("Victini"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VICTINI,
-        .categoryName = _("Victory"),
-        .height = 4,
-        .weight = 40,
-        .description = COMPOUND_STRING(
-            "This Pokémon brings victory.\n"
-            "It is said that Trainers with Victini\n"
-            "always win, regardless of the type\n"
-            "of encounter."),
-        .pokemonScale = 491,
-        .pokemonOffset = 16,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Victini,
-        .frontPicSize = MON_COORDS_SIZE(48, 56),
-        .frontPicYOffset = 10,
-        .frontAnimFrames = sAnims_Victini,
-        .frontAnimId = ANIM_H_JUMPS,
-        .backPic = gMonBackPic_Victini,
-        .backPicSize = MON_COORDS_SIZE(40, 64),
-        .backPicYOffset = 7,
-        .backAnimId = BACK_ANIM_H_SHAKE,
-        .palette = gMonPalette_Victini,
-        .shinyPalette = gMonShinyPalette_Victini,
-        .iconSprite = gMonIcon_Victini,
-        .iconPalIndex = 0,
-        FOOTPRINT(Victini)
-        /*
-        FOLLOWER(
-            sPicTable_Victini,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gFollowerPalette_Victini,
-            gShinyFollowerPalette_Victini
-        )
-        */
-        .isMythical = TRUE,
-        .isFrontierBanned = TRUE,
-        .levelUpLearnset = sVictiniLevelUpLearnset,
-        .teachableLearnset = sVictiniTeachableLearnset,
-    },
 #endif //P_FAMILY_VICTINI
 
 #if P_FAMILY_SNIVY
-    [SPECIES_SNIVY] =
+    [SPECIES_ADVENT_EIRIN] =
     {
         .baseHP        = 45,
         .baseAttack    = 45,
@@ -130,10 +67,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         */
         .levelUpLearnset = sSnivyLevelUpLearnset,
         .teachableLearnset = sSnivyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_SERVINE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_ADVENT_YUYUKO}),
     },
 
-    [SPECIES_SERVINE] =
+    [SPECIES_ADVENT_YUYUKO] =
     {
         .baseHP        = 60,
         .baseAttack    = 60,
@@ -193,10 +130,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         */
         .levelUpLearnset = sServineLevelUpLearnset,
         .teachableLearnset = sServineTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SERPERIOR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_ADVENT_YOUMU}),
     },
 
-    [SPECIES_SERPERIOR] =
+    [SPECIES_ADVENT_YOUMU] =
     {
         .baseHP        = 75,
         .baseAttack    = 75,
@@ -260,7 +197,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_SNIVY
 
 #if P_FAMILY_TEPIG
-    [SPECIES_TEPIG] =
+    [SPECIES_ADVENT_REIMU] =
     {
         .baseHP        = 65,
         .baseAttack    = 63,
@@ -320,10 +257,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         */
         .levelUpLearnset = sTepigLevelUpLearnset,
         .teachableLearnset = sTepigTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_PIGNITE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_ADVENT_REMILIA}),
     },
 
-    [SPECIES_PIGNITE] =
+    [SPECIES_ADVENT_REMILIA] =
     {
         .baseHP        = 90,
         .baseAttack    = 93,

@@ -277,9 +277,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCMystiaTeachableLearnset,
         .eggMoveLearnset = sCMystiaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MYSTIA},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MYSTIA},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MYSTIA},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_MYSTIA}),
+                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_MYSTIA},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MYSTIA}),
     },
 
     [SPECIES_NORMAL_MYSTIA] =
@@ -442,6 +442,60 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         FOOTPRINT(HMystia)
         .levelUpLearnset = sHMystiaLevelUpLearnset,
         .teachableLearnset = sHMystiaTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_MYSTIA] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 50,
+        .baseDefense   = 105,
+        .baseSpeed     = 105,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_HEART, TYPE_FLYING),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Defense = 1,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_IN,
+        .noFlip = TRUE,
+        .speciesName = _("AdMystia"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_REGIGIGAS,
+        .categoryName = _("Colossal"),
+        .height = 37,
+        .weight = 4200,
+        .description = COMPOUND_STRING(
+            "There is an enduring legend that\n"
+            "states this Pokémon shaped Regirock,\n"
+            "Regice, and Registeel out of clay, ice,\n"
+            "and magma."),
+        .pokemonScale = 256,
+        .pokemonOffset = 2,
+        .trainerScale = 610,
+        .trainerOffset = 17,
+        .frontPic = gMonFrontPic_AdMystia,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_AdMystia,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdMystia,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdMystia,
+        .shinyPalette = gMonShinyPalette_AdMystia,
+        .iconSprite = gMonIcon_AdMystia,
+        .iconPalIndex = 0,
+        FOOTPRINT(AdMystia)
+        .levelUpLearnset = sAdMystiaLevelUpLearnset,
+        .teachableLearnset = sAdMystiaTeachableLearnset,
     },
 
     [SPECIES_CHIBI_KEINE] =
@@ -769,9 +823,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCTewiTeachableLearnset,
         .eggMoveLearnset = sCTewiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_NORMAL_TEWI},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_TEWI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TEWI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_TEWI}),
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_TEWI},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_TEWI}),
     },
 
     [SPECIES_NORMAL_TEWI] =
@@ -935,6 +989,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sDTewiTeachableLearnset,
     },
 
+    [SPECIES_ADVENT_TEWI] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 80,
+        .baseSpeed     = 125,
+        .baseSpAttack  = 75,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_BEAST, TYPE_REASON),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_IN,
+        .noFlip = TRUE,
+        .speciesName = _("AdTewi"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_CRESSELIA,
+        .categoryName = _("Lunar"),
+        .height = 15,
+        .weight = 856,
+        .description = COMPOUND_STRING(
+            "Those who sleep holding one of\n"
+            "Cresselia's feathers are assured of\n"
+            "joyful dreams. It is said to represent\n"
+            "the crescent moon."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_AdTewi,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_AdTewi,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdTewi,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdTewi,
+        .shinyPalette = gMonShinyPalette_AdTewi,
+        .iconSprite = gMonIcon_AdTewi,
+        .iconPalIndex = 0,
+        FOOTPRINT(AdTewi)
+        .levelUpLearnset = sAdTewiLevelUpLearnset,
+        .teachableLearnset = sAdTewiTeachableLearnset,
+    },
+
     [SPECIES_CHIBI_REISEN] =
     {
         .baseHP        = 60,
@@ -990,7 +1097,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .eggMoveLearnset = sCReisenEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_REISEN},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_REISEN},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_REISEN}),
+                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_REISEN},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_REISEN}),
     },
 
     [SPECIES_NORMAL_REISEN] =
@@ -1151,6 +1259,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         FOOTPRINT(TReisen)
         .levelUpLearnset = sTReisenLevelUpLearnset,
         .teachableLearnset = sTReisenTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_REISEN] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 70,
+        .baseDefense   = 50,
+        .baseSpeed     = 130,
+        .baseSpAttack  = 120,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_HEART, TYPE_REASON),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_IN,
+        .noFlip = TRUE,
+        .speciesName = _("AdReisen"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_PALKIA,
+        .categoryName = _("Spatial"),
+        .height = 42,
+        .weight = 3360,
+        .description = COMPOUND_STRING(
+            "Palkia has the ability to distort space.\n"
+            "Its total control over the boundaries of\n"
+            "space enable it to transport itself to\n"
+            "faraway places and other dimensions."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 650,
+        .trainerOffset = 16,
+        .frontPic = gMonFrontPic_AdReisen,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_AdReisen,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdReisen,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdReisen,
+        .shinyPalette = gMonShinyPalette_AdReisen,
+        .iconSprite = gMonIcon_AdReisen,
+        .iconPalIndex = 1,
+        FOOTPRINT(AdReisen)
+        .levelUpLearnset = sAdReisenLevelUpLearnset,
+        .teachableLearnset = sAdReisenTeachableLearnset,
     },
 
     [SPECIES_CHIBI_REISEN_II] =
@@ -1852,9 +2013,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCMokouTeachableLearnset,
         .eggMoveLearnset = sCMokouEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MOKOU},
-                                //{EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MOKOU},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MOKOU},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOKOU}),
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOKOU},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MOKOU}),
     },
 
     [SPECIES_NORMAL_MOKOU] =
@@ -2015,6 +2176,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         FOOTPRINT(DMokou)
         .levelUpLearnset = sDMokouLevelUpLearnset,
         .teachableLearnset = sDMokouTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_MOKOU] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 130,
+        .baseDefense   = 75,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_DREAM),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FLUCTUATING,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT },
+        .sourceGame = SOURCE_IN,
+        .noFlip = TRUE,
+        .speciesName = _("AdMokou"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_DARKRAI,
+        .categoryName = _("Pitch-Black"),
+        .height = 15,
+        .weight = 505,
+        .description = COMPOUND_STRING(
+            "It chases people and Pokémon from its\n"
+            "territory by causing them to experience\n"
+            "deep, nightmarish slumbers. However,\n"
+            "it means no harm."),
+        .pokemonScale = 268,
+        .pokemonOffset = 2,
+        .trainerScale = 271,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_AdMokou,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_AdMokou,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_AdMokou,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdMokou,
+        .shinyPalette = gMonShinyPalette_AdMokou,
+        .iconSprite = gMonIcon_AdMokou,
+        .iconPalIndex = 1,
+        FOOTPRINT(AdMokou)
+        .levelUpLearnset = sAdMokouLevelUpLearnset,
+        .teachableLearnset = sAdMokouTeachableLearnset,
     },
 
 #ifdef __INTELLISENSE__
