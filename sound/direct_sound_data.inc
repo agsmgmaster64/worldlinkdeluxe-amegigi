@@ -679,6 +679,54 @@ Cry_Star::
 	.incbin "sound/direct_sound_samples/cries_add/star.bin"
 
 	.align 2
+Cry_Advent_Cirno::
+	.incbin "sound/direct_sound_samples/cries_add/advent_cirno.bin"
+
+	.align 2
+Cry_Advent_Reisen::
+	.incbin "sound/direct_sound_samples/cries_add/advent_reisen.bin"
+
+	.align 2
+Cry_Advent_Meiling::
+	.incbin "sound/direct_sound_samples/cries_add/advent_meiling.bin"
+
+	.align 2
+Cry_Advent_Mystia::
+	.incbin "sound/direct_sound_samples/cries_add/advent_mystia.bin"
+
+	.align 2
+Cry_Advent_Letty::
+	.incbin "sound/direct_sound_samples/cries_add/advent_letty.bin"
+
+	.align 2
+Cry_Advent_Tewi::
+	.incbin "sound/direct_sound_samples/cries_add/advent_tewi.bin"
+
+	.align 2
+Cry_Advent_Marisa::
+	.incbin "sound/direct_sound_samples/cries_add/advent_marisa.bin"
+
+	.align 2
+Cry_Advent_Alice::
+	.incbin "sound/direct_sound_samples/cries_add/advent_alice.bin"
+
+	.align 2
+Cry_Advent_Mokou::
+	.incbin "sound/direct_sound_samples/cries_add/advent_mokou.bin"
+
+	.align 2
+Cry_Advent_Yukari::
+	.incbin "sound/direct_sound_samples/cries_add/advent_yukari.bin"
+
+	.align 2
+Cry_Advent_Ran::
+	.incbin "sound/direct_sound_samples/cries_add/advent_ran.bin"
+
+	.align 2
+Cry_Advent_Chen::
+	.incbin "sound/direct_sound_samples/cries_add/advent_chen.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

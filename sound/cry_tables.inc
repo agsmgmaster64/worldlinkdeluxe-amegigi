@@ -73,6 +73,18 @@ gCryTable::
 	cry Cry_Sunny
 	cry Cry_Luna
 	cry Cry_Star
+	cry Cry_Advent_Cirno
+	cry Cry_Advent_Reisen
+	cry Cry_Advent_Meiling
+	cry Cry_Advent_Mystia
+	cry Cry_Advent_Letty
+	cry Cry_Advent_Tewi
+	cry Cry_Advent_Marisa
+	cry Cry_Advent_Alice
+	cry Cry_Advent_Mokou
+	cry Cry_Advent_Yukari
+	cry Cry_Advent_Ran
+	cry Cry_Advent_Chen
 
 	.align 2
 gCryTable_Reverse::
@@ -149,3 +161,15 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sunny
 	cry_reverse Cry_Luna
 	cry_reverse Cry_Star
+	cry_reverse Cry_Advent_Cirno
+	cry_reverse Cry_Advent_Reisen
+	cry_reverse Cry_Advent_Meiling
+	cry_reverse Cry_Advent_Mystia
+	cry_reverse Cry_Advent_Letty
+	cry_reverse Cry_Advent_Tewi
+	cry_reverse Cry_Advent_Marisa
+	cry_reverse Cry_Advent_Alice
+	cry_reverse Cry_Advent_Mokou
+	cry_reverse Cry_Advent_Yukari
+	cry_reverse Cry_Advent_Ran
+	cry_reverse Cry_Advent_Chen
