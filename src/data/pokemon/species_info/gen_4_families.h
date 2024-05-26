@@ -5818,8 +5818,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sShayminSkyLevelUpLearnset,
         .teachableLearnset = sShayminSkyTeachableLearnset,
-        .formSpeciesIdTable = sShayminFormSpeciesIdTable,
-        .formChangeTable = sShayminFormChangeTable,
     },
 #endif //P_FAMILY_SHAYMIN
 

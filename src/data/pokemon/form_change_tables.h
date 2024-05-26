@@ -622,12 +622,6 @@ static const struct FormChange sGiratinaFormChangeTable[] = {
 };
 #endif //P_FAMILY_GIRATINA
 
-#if P_FAMILY_SHAYMIN
-static const struct FormChange sShayminFormChangeTable[] = {
-    {FORM_CHANGE_TERMINATOR},
-};
-#endif //P_FAMILY_SHAYMIN
-
 #if P_FAMILY_ARCEUS
 static const struct FormChange sArceusFormChangeTable[] = {
     {FORM_CHANGE_ITEM_HOLD, SPECIES_ADVENT_RAN,   ITEM_NONE,         ABILITY_MULTITYPE},
