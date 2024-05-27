@@ -6147,4 +6147,36 @@ static const struct SpriteFrameImage sPicTable_TerapagosStellar[] = {
 };*/
 #endif //P_FAMILY_PECHARUNT
 
+static const struct SpriteFrameImage sPicTable_CLilyWhite[] = {
+    overworld_ascending_frames(gObjectEventPic_CLilyWhite, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LilyWhite[] = {
+    overworld_ascending_frames(gObjectEventPic_LilyWhite, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_ALilyWhite[] = {
+    overworld_ascending_frames(gObjectEventPic_ALilyWhite, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_HLilyWhite[] = {
+    overworld_ascending_frames(gObjectEventPic_HLilyWhite, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CReisen[] = {
+    overworld_ascending_frames(gObjectEventPic_CReisen, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Reisen[] = {
+    overworld_ascending_frames(gObjectEventPic_Reisen, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_DReisen[] = {
+    overworld_ascending_frames(gObjectEventPic_DReisen, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_TReisen[] = {
+    overworld_ascending_frames(gObjectEventPic_TReisen, 4, 4),
+};
+
 #endif //OW_FOLLOWERS_ENABLED

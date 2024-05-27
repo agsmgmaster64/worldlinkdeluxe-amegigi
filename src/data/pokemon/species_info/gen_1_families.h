@@ -5348,7 +5348,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Porygon2,
         .shinyPalette = gMonShinyPalette_Porygon2,
         .iconSprite = gMonIcon_Porygon2,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         FOOTPRINT(Porygon2)
         FOLLOWER(
             sPicTable_Porygon2,
@@ -5418,7 +5418,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_PorygonZ,
         .shinyPalette = gMonShinyPalette_PorygonZ,
         .iconSprite = gMonIcon_PorygonZ,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         FOOTPRINT(PorygonZ)
         FOLLOWER(
             sPicTable_PorygonZ,
