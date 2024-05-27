@@ -7533,6 +7533,12 @@ BattleScript_SilphScopeUnveiled::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_TargetPoisonHealed::
+	printstring STRINGID_PASTELVEILENTERS
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_TARGET
+	return
+
 BattleScript_MoveEffectSleep::
 	statusanimation BS_EFFECT_BATTLER
 	printfromtable gFellAsleepStringIds
