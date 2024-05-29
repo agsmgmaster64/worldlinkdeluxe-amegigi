@@ -311,9 +311,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_ShizuhaSannian,
         .iconPalIndex = 1,
         FOOTPRINT(ShizuhaSannian)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sShizuhaSannianLevelUpLearnset,
         .teachableLearnset = sShizuhaSannianTeachableLearnset,
-        .isSannianForm = TRUE,
         .formSpeciesIdTable = sShizuhaFormSpeciesIdTable,
     },
 
