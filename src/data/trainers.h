@@ -11389,7 +11389,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4726
-            .species = SPECIES_CHIBI_YUUGI,
+            .species = SPECIES_CHIBI_SUIKA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4728
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -11421,7 +11421,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 4740
-            .species = SPECIES_CHIBI_YUUGI,
+            .species = SPECIES_CHIBI_TENSHI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4740
             .heldItem = ITEM_ORAN_BERRY,
