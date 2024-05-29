@@ -2187,14 +2187,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_PURIFYING_SALT] =
+    [ABILITY_LIFESTREAM] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
-        .name = _("Purifying Salt"),
-    #else
-        .name = _("PurfyingSalt"),
-    #endif
-        .description = COMPOUND_STRING("Protected by pure salts."),
+        .name = _("Lifestream"),
+        .description = COMPOUND_STRING("Protected by status."),
         .aiRating = 6,
         .breakable = TRUE,
     },

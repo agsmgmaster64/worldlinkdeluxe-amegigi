@@ -496,9 +496,9 @@
 #define SPECIES_ADVENT_YUKARI                           492
 #define SPECIES_ADVENT_RAN                              493
 #define SPECIES_ADVENT_CHEN                             494
-#define SPECIES_ADVENT_EIRIN                            495
+#define SPECIES_ADVENT_YOUMU                            495
 #define SPECIES_ADVENT_YUYUKO                           496
-#define SPECIES_ADVENT_YOUMU                            497
+#define SPECIES_ADVENT_EIRIN                            497
 #define SPECIES_ADVENT_REIMU                            498
 #define SPECIES_ADVENT_REMILIA                          499
 #define SPECIES_EMBOAR                                  500 // JKSanae

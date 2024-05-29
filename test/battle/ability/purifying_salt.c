@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves", s16 dam
 {
     u16 ability;
     PARAMETRIZE { ability = ABILITY_STURDY; }
-    PARAMETRIZE { ability = ABILITY_PURIFYING_SALT; }
+    PARAMETRIZE { ability = ABILITY_LIFESTREAM; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SHADOW_BALL].type == TYPE_GHOST);
         PLAYER(SPECIES_CHIBI_YUUGI);
@@ -22,7 +22,7 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from Ghost-type moves", s16 dam
 SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail")
 {
     GIVEN {
-        PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_PURIFYING_SALT); HP(1); MaxHP(100);}
+        PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_LIFESTREAM); HP(1); MaxHP(100);}
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_REST); }
@@ -48,19 +48,19 @@ SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects")
         ASSUME(gMovesInfo[MOVE_THUNDER_WAVE].effect == EFFECT_PARALYZE);
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
         ASSUME(MoveHasAdditionalEffect(MOVE_POWDER_SNOW, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_PURIFYING_SALT); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_LIFESTREAM); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
         if (move != MOVE_POWDER_SNOW) {
             NOT ANIMATION(ANIM_TYPE_MOVE, move, opponent);
-            ABILITY_POPUP(player, ABILITY_PURIFYING_SALT);
+            ABILITY_POPUP(player, ABILITY_LIFESTREAM);
             MESSAGE("It doesn't affect Wobbuffet…");
             NOT STATUS_ICON(player, status);
         } else {
             NONE_OF {
-                ABILITY_POPUP(player, ABILITY_PURIFYING_SALT);
+                ABILITY_POPUP(player, ABILITY_LIFESTREAM);
                 STATUS_ICON(player, status);
             }
         }

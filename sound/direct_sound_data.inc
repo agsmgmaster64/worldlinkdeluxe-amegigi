@@ -727,6 +727,14 @@ Cry_Advent_Chen::
 	.incbin "sound/direct_sound_samples/cries_add/advent_chen.bin"
 
 	.align 2
+Cry_Advent_Youmu::
+	.incbin "sound/direct_sound_samples/cries_add/advent_youmu.bin"
+
+	.align 2
+Cry_Advent_Yuyuko::
+	.incbin "sound/direct_sound_samples/cries_add/advent_yuyuko.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

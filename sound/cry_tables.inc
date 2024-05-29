@@ -85,6 +85,8 @@ gCryTable::
 	cry Cry_Advent_Yukari
 	cry Cry_Advent_Ran
 	cry Cry_Advent_Chen
+	cry Cry_Advent_Youmu
+	cry Cry_Advent_Yuyuko
 
 	.align 2
 gCryTable_Reverse::
@@ -173,3 +175,5 @@ gCryTable_Reverse::
 	cry_reverse Cry_Advent_Yukari
 	cry_reverse Cry_Advent_Ran
 	cry_reverse Cry_Advent_Chen
+	cry_reverse Cry_Advent_Youmu
+	cry_reverse Cry_Advent_Yuyuko

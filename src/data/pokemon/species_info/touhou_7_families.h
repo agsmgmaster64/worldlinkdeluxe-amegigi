@@ -2128,7 +2128,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .eggMoveLearnset = sCYoumuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_YOUMU},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YOUMU},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YOUMU}),
+                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YOUMU},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_YOUMU}),
     },
 
     [SPECIES_NORMAL_YOUMU] =
@@ -2290,6 +2291,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .teachableLearnset = sSYoumuTeachableLearnset,
     },
 
+    [SPECIES_ADVENT_YOUMU] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 125,
+        .baseDefense   = 65,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 105,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_STEEL),
+        .catchRate = 45,
+        .expYield = 212,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_ADVENT, ABILITY_ADVENT, ABILITY_LIFESTREAM },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("AdYoumu"),
+        .cryId = CRY_ADVENT_YOUMU,
+        .natDexNum = NATIONAL_DEX_SERPERIOR,
+        .categoryName = _("Advent"),
+        .height = 5,
+        .weight = 1500,
+        .description = COMPOUND_STRING(
+            "They raise their heads to intimidate foes,\n"
+            "but only give it their all when fighting\n"
+            "powerful opponents who are not fazed\n"
+            "by the glare from its noble eyes."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 405,
+        .trainerOffset = 8,
+        .frontPic = gMonFrontPic_AdYoumu,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_AdYoumu,
+        .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
+        .backPic = gMonBackPic_AdYoumu,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_AdYoumu,
+        .shinyPalette = gMonShinyPalette_AdYoumu,
+        .iconSprite = gMonIcon_AdYoumu,
+        .iconPalIndex = 0,
+        FOOTPRINT(AdYoumu)
+        .levelUpLearnset = sAdYoumuLevelUpLearnset,
+        .teachableLearnset = sAdYoumuTeachableLearnset,
+    },
+
     [SPECIES_CHIBI_YUYUKO] =
     {
         .baseHP        = 80,
@@ -2346,7 +2400,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .eggMoveLearnset = sCYuyukoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YUYUKO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUYUKO},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUYUKO}),
+                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUYUKO},
+                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_YUYUKO}),
     },
 
     [SPECIES_NORMAL_YUYUKO] =
@@ -2511,6 +2566,60 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(DYuyuko)
         .levelUpLearnset = sDYuyukoLevelUpLearnset,
         .teachableLearnset = sDYuyukoTeachableLearnset,
+    },
+
+    [SPECIES_ADVENT_YUYUKO] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 60,
+        .baseDefense   = 75,
+        .baseSpeed     = 83,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 75,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_NATURE),
+        .catchRate = 45,
+        .expYield = 220,
+        .evYield_Speed = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_ADVENT, ABILITY_NONE, ABILITY_LIFESTREAM },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("AdYuyuko"),
+        .cryId = CRY_ADVENT_YUYUKO,
+        .natDexNum = NATIONAL_DEX_SERVINE,
+        .categoryName = _("Advent"),
+        .height = 8,
+        .weight = 2100,
+        .description = COMPOUND_STRING(
+            "When it gets dirty, its leaves can't be\n"
+            "used in photosynthesis, so it always keeps\n"
+            "clean. They avoid attacks by sinking into\n"
+            "the shadows of thick foliage."),
+        .pokemonScale = 366,
+        .pokemonOffset = 9,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_AdYuyuko,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 1,
+        .frontAnimFrames = sAnims_AdYuyuko,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
+        .backPic = gMonBackPic_AdYuyuko,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_AdYuyuko,
+        .shinyPalette = gMonShinyPalette_AdYuyuko,
+        .iconSprite = gMonIcon_AdYuyuko,
+        .iconPalIndex = 0,
+        FOOTPRINT(AdYuyuko)
+        .levelUpLearnset = sAdYuyukoLevelUpLearnset,
+        .teachableLearnset = sAdYuyukoTeachableLearnset,
     },
 
     [SPECIES_CHIBI_CHEN] =

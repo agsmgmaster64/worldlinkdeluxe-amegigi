@@ -22776,6 +22776,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_SYoumu[] = INCBIN_U8("graphics/pokemon/_add/th/youmu/speed/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_AdYoumu[] = INCBIN_U32("graphics/pokemon/_add/th/youmu/advent/anim_front.4bpp.lz");
+    const u32 gMonPalette_AdYoumu[] = INCBIN_U32("graphics/pokemon/_add/th/youmu/advent/normal.gbapal.lz");
+    const u32 gMonBackPic_AdYoumu[] = INCBIN_U32("graphics/pokemon/_add/th/youmu/advent/back.4bpp.lz");
+    const u32 gMonShinyPalette_AdYoumu[] = INCBIN_U32("graphics/pokemon/_add/th/youmu/advent/shiny.gbapal.lz");
+    const u8 gMonIcon_AdYoumu[] = INCBIN_U8("graphics/pokemon/_add/th/youmu/advent/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_AdYoumu[] = INCBIN_U8("graphics/pokemon/_add/th/youmu/advent/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/chibi/anim_front.4bpp.lz");
     const u32 gMonPalette_CYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/chibi/normal.gbapal.lz");
     const u32 gMonBackPic_CYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/chibi/back.4bpp.lz");
@@ -22810,6 +22819,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonIcon_DYuyuko[] = INCBIN_U8("graphics/pokemon/_add/th/yuyuko/defense/icon.4bpp");
 #if P_FOOTPRINTS
     const u8 gMonFootprint_DYuyuko[] = INCBIN_U8("graphics/pokemon/_add/th/yuyuko/defense/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_AdYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/advent/anim_front.4bpp.lz");
+    const u32 gMonPalette_AdYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/advent/normal.gbapal.lz");
+    const u32 gMonBackPic_AdYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/advent/back.4bpp.lz");
+    const u32 gMonShinyPalette_AdYuyuko[] = INCBIN_U32("graphics/pokemon/_add/th/yuyuko/advent/shiny.gbapal.lz");
+    const u8 gMonIcon_AdYuyuko[] = INCBIN_U8("graphics/pokemon/_add/th/yuyuko/advent/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_AdYuyuko[] = INCBIN_U8("graphics/pokemon/_add/th/yuyuko/advent/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
     const u32 gMonFrontPic_CChen[] = INCBIN_U32("graphics/pokemon/_add/th/chen/chibi/anim_front.4bpp.lz");
