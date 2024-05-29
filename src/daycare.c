@@ -1011,8 +1011,6 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         eggSpecies = SPECIES_DEFENSE_PATCHOULI;
     else if (P_NIDORAN_M_DITTO_BREED >= GEN_5 && eggSpecies == SPECIES_ATTACK_SUIKA && !(daycare->offspringPersonality & EGG_GENDER_MALE))
         eggSpecies = SPECIES_TECH_SUIKA;
-    else if (eggSpecies == SPECIES_ADVENT_ALICE)
-        eggSpecies = SPECIES_ADVENT_MARISA;
     else if (eggSpecies == SPECIES_SINISTEA_ANTIQUE)
         eggSpecies = SPECIES_SINISTEA_PHONY;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)

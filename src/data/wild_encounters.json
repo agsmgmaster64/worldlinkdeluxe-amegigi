@@ -105,22 +105,22 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_CHIBI_KOGASA"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
                 "species": "SPECIES_POOCHYENA"
-              },
-              {
-                "min_level": 3,
-                "max_level": 3,
-                "species": "SPECIES_WURMPLE"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
                 "species": "SPECIES_CHIBI_NAZRIN"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CHIBI_KOGASA"
               },
               {
                 "min_level": 2,

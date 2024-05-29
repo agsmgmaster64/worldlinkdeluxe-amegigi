@@ -4785,7 +4785,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     {
         return FALSE;
     }
-    /*else if (species == SPECIES_NORMAL_KOMACHI)
+    /*else if (species == SPECIES_AKYUU)
     {
         switch (move)
         {
@@ -4947,7 +4947,6 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 {
     u16 learnedMoves[MAX_MON_MOVES];
     u16 moves[MAX_LEVEL_UP_MOVES];
-    u16 eggMoves[EGG_MOVES_ARRAY_COUNT];
     u8 numMoves = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
     u16 eggSpecies;
@@ -5012,11 +5011,11 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
 
             if (j == MAX_MON_MOVES)
             {
-                for (k = 0; k < numMoves && eggMoves[k] != eggMoveLearnset[i]; k++)
+                for (k = 0; k < numMoves && moves[k] != eggMoveLearnset[i]; k++)
                     ;
 
                 if (k == numMoves)
-                    eggMoves[numMoves++] = eggMoveLearnset[i];
+                    moves[numMoves++] = eggMoveLearnset[i];
             }
         }
         break;
