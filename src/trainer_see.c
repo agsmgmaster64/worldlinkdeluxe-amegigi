@@ -321,10 +321,6 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
     sSpriteAnim_Emotes10,
 };
 
-// TODO: Move these declarations into even_object_movement.h
-#define OBJ_EVENT_PAL_TAG_MAY 0x1110
-#define OBJ_EVENT_PAL_TAG_EMOTES 0x8002
-
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
@@ -339,7 +335,7 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 static const struct SpriteTemplate sSpriteTemplate_HeartIcon =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_NPC_1,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_HeartIcon,
