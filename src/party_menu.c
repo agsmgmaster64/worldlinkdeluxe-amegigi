@@ -4005,6 +4005,7 @@ static void CursorCb_Moves(u8 taskId)
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
 
     PlaySE(SE_SELECT);
+    VarSet(VAR_MOVE_MANAGER, MOVE_REMINDER_NORMAL);
     if (GetNumberOfRelearnableMoves(mon) != 0)
     {
         FlagSet(FLAG_PARTY_MOVES);
