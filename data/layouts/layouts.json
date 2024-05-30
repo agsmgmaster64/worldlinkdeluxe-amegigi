@@ -56,7 +56,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeCity/border.bin",
       "blockdata_filepath": "data/layouts/FortreeCity/map.bin"
@@ -1196,7 +1196,7 @@
       "height": 25,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RG_Building",
       "secondary_tileset": "gTileset_FortreeGym",
       "border_filepath": "data/layouts/FortreeCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/FortreeCity_Gym/map.bin"
