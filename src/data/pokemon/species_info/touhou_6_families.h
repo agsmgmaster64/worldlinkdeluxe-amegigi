@@ -462,10 +462,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .noFlip = TRUE,
         .speciesName = _("AdMarisa"),
         .cryId = CRY_ADVENT_MARISA,
-        .natDexNum = NATIONAL_DEX_PHIONE,
-        .categoryName = _("Sea Drifter"),
-        .height = 4,
-        .weight = 31,
+        .natDexNum = NATIONAL_DEX_ADVENT_MARISA,
+        .categoryName = _("Advent"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "When the water warms, they inflate the\n"
             "flotation sac on their heads and drift\n"
@@ -959,10 +959,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .noFlip = TRUE,
         .speciesName = _("AdCirno"),
         .cryId = CRY_ADVENT_CIRNO,
-        .natDexNum = NATIONAL_DEX_DIALGA,
-        .categoryName = _("Temporal"),
-        .height = 54,
-        .weight = 6830,
+        .natDexNum = NATIONAL_DEX_ADVENT_CIRNO,
+        .categoryName = _("Advent"),
+        .height = 5,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "A Pokémon spoken of in legend.\n"
             "It completely controls the flow of time.\n"
@@ -1460,10 +1460,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .noFlip = TRUE,
         .speciesName = _("AdMeiling"),
         .cryId = CRY_ADVENT_MEILING,
-        .natDexNum = NATIONAL_DEX_HEATRAN,
-        .categoryName = _("Lava Dome"),
-        .height = 17,
-        .weight = 4300,
+        .natDexNum = NATIONAL_DEX_ADVENT_MEILING,
+        .categoryName = _("Advent"),
+        .height = 6,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "Boiling blood, like magma, circulates\n"
             "through its body. It dwells in volcanic\n"
