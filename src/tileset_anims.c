@@ -707,8 +707,8 @@ static void TilesetAnim_RG_General(u16 timer)
 {
     if (timer % 8 == 0)
         QueueAnimTiles_RG_General_SandWatersEdge(timer / 8);
-    if (timer % 16 == 1)
-        QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(timer / 16);
+    //if (timer % 16 == 1)
+        //QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(timer / 16);
     if (timer % 16 == 2)
         QueueAnimTiles_RG_General_Flower(timer / 16);
 }

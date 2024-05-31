@@ -239,7 +239,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
-            "."),
+            "During the winter, these Shizuhas scatter\n"
+            "all over her home region, sprinkling tiny\n"
+            "bits of ice on the leaves from trees."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -292,7 +294,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
-            ""),
+            "Due to these Shizuhas like the winter, the\n"
+            "Gensokyan Shizuhas doesn't get along with\n"
+            "them really well."),
         .pokemonScale = 270,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -555,7 +559,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
-            ""),
+            "She makes spices and seasonings.\n"
+            "Apparently, her spices and seasonings are\n"
+            "very popular in her home region."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -610,7 +616,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
-            ""),
+            "She has some sort of rivalry with the\n"
+            "Gensokyan Minorikos outside of her home\n"
+            "region due to them being more popular than\n"
+            "her."),
         .pokemonScale = 270,
         .pokemonOffset = 0,
         .trainerScale = 256,
