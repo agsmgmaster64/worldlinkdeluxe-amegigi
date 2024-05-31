@@ -6263,7 +6263,7 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
     switch (attackerAbility)
     {
     case ABILITY_PIXILATE:
-        ateType = TYPE_COSMIC;
+        ateType = TYPE_HEART;
         break;
     case ABILITY_REFRIGERATE:
         ateType = TYPE_ICE;
