@@ -910,7 +910,7 @@ static void HandleInputChooseMove(u32 battler)
     }
     else if (sDescriptionSubmenu)
     {
-        if (JOY_NEW(L_BUTTON) || JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
+        if (JOY_NEW(R_BUTTON) || JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
         {
             sDescriptionSubmenu = FALSE;
             if (gCategoryIconSpriteId != 0xFF)
@@ -927,7 +927,7 @@ static void HandleInputChooseMove(u32 battler)
             MoveSelectionDisplayMoveType(battler);
         }
     }
-    else if (JOY_NEW(L_BUTTON))
+    else if (JOY_NEW(R_BUTTON))
     {
         sDescriptionSubmenu = TRUE;
         MoveSelectionDisplayMoveDescription(battler);
@@ -1869,7 +1869,7 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     if (gMovesInfo[move].effect == EFFECT_PLACEHOLDER)
         StringAppend(gDisplayedStringBattle, gNotDoneYetDescription);
     else
-        StringAppend(gDisplayedStringBattle, gMovesInfo[move - 1].description);
+        StringAppend(gDisplayedStringBattle, gMovesInfo[move].description);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_DESCRIPTION);
 
     if (gCategoryIconSpriteId == 0xFF)

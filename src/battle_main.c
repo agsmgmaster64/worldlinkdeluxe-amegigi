@@ -6090,9 +6090,59 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
+u8 TryGetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
+{
+    u32 ateType;
+
+    switch (gMovesInfo[move].effect)
+    {
+    case EFFECT_TERA_BLAST:
+        if (IsTerastallized(battlerAtk))
+            return FALSE;
+        break;
+    case EFFECT_TERA_STARSTORM:
+        if (gBattleMons[battlerAtk].species == SPECIES_TERAPAGOS_STELLAR)
+            return FALSE;
+        break;
+    case EFFECT_HIDDEN_POWER:
+    case EFFECT_WEATHER_BALL:
+    case EFFECT_MULTI_PULSE:
+    case EFFECT_CHANGE_TYPE_ON_ITEM:
+    case EFFECT_NATURAL_GIFT:
+        return FALSE;
+    }
+
+    ateType = TYPE_NONE;
+    switch (attackerAbility)
+    {
+    case ABILITY_PIXILATE:
+        ateType = TYPE_COSMIC;
+        break;
+    case ABILITY_REFRIGERATE:
+        ateType = TYPE_ICE;
+        break;
+    case ABILITY_AERILATE:
+        ateType = TYPE_FLYING;
+        break;
+    case ABILITY_GALVANIZE:
+        ateType = TYPE_WIND;
+        break;
+    default:
+        ateType = TYPE_NONE;
+        break;
+    }
+
+    if (ateType != TYPE_NONE)
+    {
+        return ateType;
+    }
+
+    return FALSE;
+}
+
 u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
 {
-    u32 ateType, attackerAbility, multiPulseType;
+    u32 attackerAbility, multiPulseType;
     u16 holdEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
     u32 checkTera = (IsTerastallized(battlerAtk) || (gBattleStruct->tera.playerSelect));
 
@@ -6168,25 +6218,14 @@ u8 GetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
 
     attackerAbility = GetBattlerAbility(battlerAtk);
 
-    if (gMovesInfo[move].type == TYPE_ILLUSION
-             && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
-             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
-             && gMovesInfo[move].effect != EFFECT_NATURAL_GIFT
-             && !(gMovesInfo[move].effect == EFFECT_TERA_BLAST && checkTera)
-             && !(gMovesInfo[move].effect == EFFECT_TERA_STARSTORM && gBattleMons[battlerAtk].species == SPECIES_TERAPAGOS_STELLAR)
-             && ((attackerAbility == ABILITY_PIXILATE && (ateType = TYPE_HEART))
-                 || (attackerAbility == ABILITY_REFRIGERATE && (ateType = TYPE_ICE))
-                 || (attackerAbility == ABILITY_AERILATE && (ateType = TYPE_FLYING))
-                 || ((attackerAbility == ABILITY_GALVANIZE) && (ateType = TYPE_WIND))
-                )
-             )
+    if (gMovesInfo[move].type == TYPE_ILLUSION && TryGetAteType(move, battlerAtk, attackerAbility))
     {
-        return ateType;
+        return TryGetAteType(move, battlerAtk, attackerAbility);
     }
     else if (gMovesInfo[move].type != TYPE_ILLUSION
-             && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
-             && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
-             && attackerAbility == ABILITY_NORMALIZE)
+         && gMovesInfo[move].effect != EFFECT_WEATHER_BALL
+         && gMovesInfo[move].effect != EFFECT_MULTI_PULSE
+         && attackerAbility == ABILITY_NORMALIZE)
     {
         return TYPE_ILLUSION;
     }
