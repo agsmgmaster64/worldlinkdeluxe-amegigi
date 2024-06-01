@@ -2,28 +2,28 @@
 #define GUARD_CONSTANTS_POKEMON_H
 
 // Pokémon types
-#define TYPE_NONE             255
-#define TYPE_ILLUSION         0
-#define TYPE_DREAM            1
-#define TYPE_FLYING           2
-#define TYPE_MIASMA           3
-#define TYPE_EARTH            4
-#define TYPE_BEAST            5
-#define TYPE_HEART            6
-#define TYPE_GHOST            7
-#define TYPE_STEEL            8
-#define TYPE_MYSTERY          9
-#define TYPE_FIRE             10
-#define TYPE_WATER            11
-#define TYPE_NATURE           12
-#define TYPE_WIND             13
-#define TYPE_REASON           14
-#define TYPE_ICE              15
-#define TYPE_FAITH            16
-#define TYPE_DARK             17
-#define TYPE_COSMIC           18
-#define TYPE_STELLAR          19
-#define NUMBER_OF_MON_TYPES   20
+#define TYPE_NONE             0
+#define TYPE_ILLUSION         1
+#define TYPE_DREAM            2
+#define TYPE_FLYING           3
+#define TYPE_MIASMA           4
+#define TYPE_EARTH            5
+#define TYPE_BEAST            6
+#define TYPE_HEART            7
+#define TYPE_GHOST            8
+#define TYPE_STEEL            9
+#define TYPE_MYSTERY          10
+#define TYPE_FIRE             11
+#define TYPE_WATER            12
+#define TYPE_NATURE           13
+#define TYPE_WIND             14
+#define TYPE_REASON           15
+#define TYPE_ICE              16
+#define TYPE_FAITH            17
+#define TYPE_DARK             18
+#define TYPE_COSMIC           19
+#define TYPE_STELLAR          20
+#define NUMBER_OF_MON_TYPES   21
 
 // Type icon palettes for summary / HGSS Dex / DexNav
 #define TYPE_ICON_PAL_1     13

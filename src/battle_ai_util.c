@@ -389,9 +389,9 @@ static inline s32 HighestRollDmg(s32 dmg)
     return dmg;
 }
 
-static inline s32 AverageRollDmg(s32 dmg)
+static inline s32 AverageDmg(s32 dmg)
 {
-    dmg = ((HighestRollDmg(dmg) + LowestRollDmg(dmg)) * 100) / 2;
+    dmg = (dmg * (MIN_ROLL_PERCENTAGE + MAX_ROLL_PERCENTAGE)) / 2;
     dmg /= 100;
     return dmg;
 }
@@ -553,7 +553,7 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
             u32 critChance = GetCritHitChance(critChanceIndex);
             // With critChance getting closer to 1, dmg gets closer to critDmg.
             if (dmgRoll == DMG_ROLL_AVERAGE)
-                dmg = AverageRollDmg((critDmg + normalDmg * (critChance - 1)) / (critChance));
+                dmg = AverageDmg((critDmg + normalDmg * (critChance - 1)) / (critChance));
             else if (dmgRoll == DMG_ROLL_HIGHEST)
                 dmg = HighestRollDmg((critDmg + normalDmg * (critChance - 1)) / (critChance));
             else
@@ -562,7 +562,7 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
         else
         {
             if (dmgRoll == DMG_ROLL_AVERAGE)
-                dmg = AverageRollDmg(normalDmg);
+                dmg = AverageDmg(normalDmg);
             else if (dmgRoll == DMG_ROLL_HIGHEST)
                 dmg = HighestRollDmg(normalDmg);
             else
@@ -1705,19 +1705,14 @@ bool32 ShouldLowerDefense(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 
 bool32 ShouldLowerSpeed(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 {
-    if (AI_IsFaster(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered)
-            && (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT)
-            && CanAIFaintTarget(battlerAtk, battlerDef, 0))
-        return FALSE; // Don't bother lowering stats if can kill enemy.
+    if (defAbility == ABILITY_CONTRARY
+     || defAbility == ABILITY_HAKUREI_MIKO
+     || defAbility == ABILITY_FULL_METAL_BODY
+     || defAbility == ABILITY_MAGIC_BARRIER
+     || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET)
+        return FALSE;
 
-    if (AI_IsSlower(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered)
-      && defAbility != ABILITY_CONTRARY
-      && defAbility != ABILITY_HAKUREI_MIKO
-      && defAbility != ABILITY_FULL_METAL_BODY
-      && defAbility != ABILITY_MAGIC_BARRIER
-      && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_CLEAR_AMULET)
-        return TRUE;
-    return FALSE;
+    return (AI_IsSlower(battlerAtk, battlerDef, AI_THINKING_STRUCT->moveConsidered));
 }
 
 bool32 ShouldLowerSpAtk(u32 battlerAtk, u32 battlerDef, u32 defAbility)

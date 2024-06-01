@@ -883,44 +883,6 @@ static const uq4_12_t sPercentToModifier[] =
     UQ_4_12(1.00), // 100
 };
 
-#define X UQ_4_12
-#define ______ X(1.0) // Regular effectiveness.
-
-// Type matchup updates.                                                Attacker      Defender
-#define STL_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_6 ? X(1.0) : X(0.5))  // Ghost/Dark -> Steel
-#define PSN_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(2.0))  // Bug        -> Poison
-#define BUG_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(1.0) : X(2.0))  // Poison     -> Bug
-#define PSY_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(2.0) : X(0.0))  // Ghost      -> Psychic
-#define FIR_RS (B_UPDATED_TYPE_MATCHUPS >= GEN_2 ? X(0.5) : X(1.0))  // Ice        -> Fire
-
-static const uq4_12_t sTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
-{//                   Defender -->
- //  Attacker         Illusion Dream   Flying  Miasma  Earth   Beast   Heart   Ghost   Steel   Mystery  Fire   Water   Nature  Wind    Reason    Ice   Faith   Dark    Cosmic  Stellar
-    [TYPE_ILLUSION] = {______, X(0.5), ______, ______, ______, ______, ______, X(0.0), ______, ______, ______, ______, ______, ______, ______, ______, ______, X(0.5), ______, ______},
-    [TYPE_DREAM]    = {______, X(0.5), X(0.5), ______, ______, ______, X(2.0), ______, X(2.0), ______, ______, ______, ______, ______, X(0.5), ______, ______, X(0.5), ______, ______},
-    [TYPE_FLYING]   = {______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), ______, ______, ______, X(2.0), X(0.5), ______, ______, ______, ______, X(2.0), ______},
-    [TYPE_MIASMA]   = {______, ______, ______, X(0.5), X(0.5), ______, ______, X(0.5), X(0.0), ______, ______, X(2.0), X(2.0), ______, X(0.5), ______, ______, ______, ______, ______},
-    [TYPE_EARTH]    = {______, ______, X(0.0), X(2.0), ______, X(0.5), ______, ______, X(2.0), ______, X(2.0), ______, X(0.5), X(2.0), ______, ______, ______, ______, ______, ______},
-    [TYPE_BEAST]    = {______, ______, X(0.5), ______, ______, ______, ______, X(2.0), ______, ______, ______, ______, X(0.5), ______, ______, ______, X(2.0), ______, ______, ______},
-    [TYPE_HEART]    = {______, X(0.5), ______, X(0.5), ______, ______, X(0.5), ______, ______, ______, ______, ______, ______, ______, X(2.0), ______, X(0.5), X(2.0), ______, ______},
-    [TYPE_GHOST]    = {X(0.0), ______, ______, ______, ______, X(0.5), X(0.5), X(2.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.0), ______, ______},
-    [TYPE_STEEL]    = {______, ______, X(2.0), ______, ______, ______, ______, ______, X(0.5), ______, X(0.5), X(0.5), ______, ______, ______, X(2.0), ______, X(2.0), X(2.0), ______},
-    [TYPE_MYSTERY]  = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
-    [TYPE_FIRE]     = {______, ______, ______, ______, X(0.5), X(2.0), ______, ______, X(2.0), ______, X(0.5), X(0.5), X(2.0), ______, ______, X(2.0), X(0.5), ______, X(0.5), ______},
-    [TYPE_WATER]    = {______, ______, ______, ______, X(2.0), X(2.0), ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), X(0.5), ______, X(0.5), ______},
-    [TYPE_NATURE]   = {______, ______, X(0.5), X(0.5), X(2.0), ______, ______, ______, ______, ______, X(0.5), X(2.0), X(0.5), ______, ______, ______, ______, ______, ______, ______},
-    [TYPE_WIND]     = {______, ______, X(2.0), ______, X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), X(0.5), X(0.5), ______, ______, X(0.5), ______, ______, ______},
-    [TYPE_REASON]   = {______, X(2.0), ______, X(2.0), ______, ______, X(0.5), X(0.5), X(0.5), ______, ______, ______, ______, ______, ______, ______, X(2.0), ______, X(2.0), ______},
-    [TYPE_ICE]      = {______, ______, X(2.0), ______, ______, ______, ______, ______, ______, ______, ______, X(0.5), X(2.0), ______, ______, X(0.5), ______, ______, X(0.5), ______},
-    [TYPE_FAITH]    = {______, ______, ______, X(0.5), ______, ______, X(2.0), ______, ______, ______, ______, ______, ______, ______, X(0.5), ______, ______, X(2.0), ______, ______},
-    [TYPE_DARK]     = {______, X(2.0), ______, ______, ______, ______, X(0.5), X(0.0), ______, ______, ______, ______, ______, ______, X(2.0), ______, ______, X(0.5), X(0.5), ______},
-    [TYPE_COSMIC]   = {______, ______, ______, ______, ______, X(2.0), ______, ______, ______, ______, X(2.0), ______, ______, X(2.0), ______, X(0.5), ______, X(0.5), ______, ______},
-    [TYPE_STELLAR]  = {______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______},
-};
-
-#undef ______
-#undef X
-
 u8 GetTypeFromTypeBooster(u16 holdEffect)
 {
     u8 i;
@@ -931,7 +893,7 @@ u8 GetTypeFromTypeBooster(u16 holdEffect)
             return sHoldEffectToType[i][1];
         }
     }
-    return NUMBER_OF_MON_TYPES;
+    return TYPE_NONE;
 }
 
 // code
@@ -5061,8 +5023,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
     case ABILITYEFFECT_WOULD_BLOCK:
         {
             u16 moveTarget = GetBattlerMoveTargetType(battler, move);
-            u16 battlerAbility = GetBattlerAbility(battler);
-            u16 targetAbility = GetBattlerAbility(gBattlerTarget);
             const u8 * battleScriptBlocksMove = NULL;
 
             switch (gLastUsedAbility)
@@ -5106,7 +5066,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
                     gHitMarker |= HITMARKER_NO_PPDEDUCT;
                 battleScriptBlocksMove = BattleScript_SoundproofProtected;
-                effect = 1;
             }
             else if (effect == 2 || effect == 4)
             {
@@ -5118,12 +5077,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
                     gHitMarker |= HITMARKER_NO_PPDEDUCT;
                 battleScriptBlocksMove = BattleScript_DazzlingProtected;
-                effect = 1;
             }
             else if (effect == 3)
             {
                 battleScriptBlocksMove = BattleScript_GoodAsGoldActivates;
-                effect = 1;
             }
             else if (GetChosenMovePriority(gBattlerAttacker) > 0
                   && BlocksPrankster(move, gBattlerAttacker, gBattlerTarget, TRUE)
@@ -10032,7 +9989,7 @@ static inline s32 DoMoveDamageCalcVars(u32 move, u32 battlerAtk, u32 battlerDef,
 
     if (randomFactor)
     {
-        dmg *= 100 - RandomUniform(RNG_DAMAGE_MODIFIER, 0, 15);
+        dmg *= DMG_ROLL_PERCENT_HI - RandomUniform(RNG_DAMAGE_MODIFIER, 0, DMG_ROLL_PERCENT_HI - DMG_ROLL_PERCENT_LO);
         dmg /= 100;
     }
 
@@ -10093,7 +10050,7 @@ static inline s32 DoFutureSightAttackDamageCalcVars(u32 move, u32 battlerAtk, u3
 
     if (randomFactor)
     {
-        dmg *= 100 - RandomUniform(RNG_DAMAGE_MODIFIER, 0, 15);
+        dmg *= DMG_ROLL_PERCENT_HI - RandomUniform(RNG_DAMAGE_MODIFIER, 0, DMG_ROLL_PERCENT_HI - DMG_ROLL_PERCENT_LO);
         dmg /= 100;
     }
 
@@ -10409,8 +10366,8 @@ uq4_12_t GetTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 uq4_12_t GetTypeModifier(u32 atkType, u32 defType)
 {
     if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
-        return GetInverseTypeMultiplier(sTypeEffectivenessTable[atkType][defType]);
-    return sTypeEffectivenessTable[atkType][defType];
+        return GetInverseTypeMultiplier(gTypeEffectivenessTable[atkType][defType]);
+    return gTypeEffectivenessTable[atkType][defType];
 }
 
 s32 GetStealthHazardDamageByTypesAndHP(u8 hazardType, u8 type1, u8 type2, u32 maxHp)
@@ -10946,10 +10903,8 @@ u8 GetBattleMoveCategory(u32 moveId)
 
     if (IS_MOVE_STATUS(moveId))
         return DAMAGE_CATEGORY_STATUS;
-    else if (gMovesInfo[moveId].type < TYPE_MYSTERY)
-        return DAMAGE_CATEGORY_PHYSICAL;
     else
-        return DAMAGE_CATEGORY_SPECIAL;
+        return gTypesInfo[gMovesInfo[moveId].type].damageCategory;
 }
 
 static bool32 TryRemoveScreens(u32 battler)
