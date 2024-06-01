@@ -69,6 +69,13 @@ enum {
     JUMP_DISTANCE_FAR,
 };
 
+// Used for storing conditional emotes
+struct SpecialEmote
+{
+    u16 index;
+    u8 emotion;
+};
+
 // Sprite data used throughout
 #define sObjEventId   data[0]
 #define sTypeFuncId   data[1] // Index into corresponding gMovementTypeFuncs_* table
@@ -529,7 +536,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     #ifdef ITEM_STRANGE_BALL
     {gObjectEventPal_StrangeBall,           OBJ_EVENT_PAL_TAG_BALL_STRANGE},
     #endif //ITEM_STRANGE_BALL
-#endif //W_MON_POKEBALLS
+#endif //OW_MON_POKEBALLS
     {gObjectEventPal_Substitute,            OBJ_EVENT_PAL_TAG_SUBSTITUTE},
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
 #ifdef BUGFIX
@@ -2055,9 +2062,9 @@ void UpdateFollowingPokemon(void)
     // 2. Map is indoors and gfx is larger than 32x32
     // 3. flag is set
     if (OW_FOLLOWERS_ENABLED == FALSE
-        || !GetFollowerInfo(&species, &form, &shiny)
-        || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, 0)->oam->size > ST_OAM_SIZE_2)
-        || FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
+     || !GetFollowerInfo(&species, &form, &shiny)
+     || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, 0)->oam->size > ST_OAM_SIZE_2)
+     || FlagGet(FLAG_TEMP_HIDE_FOLLOWER))
     {
         RemoveFollowingPokemon();
         return;
@@ -2129,24 +2136,6 @@ static void ObjectEventEmote(struct ObjectEvent *objEvent, u8 emotion)
     gFieldEffectArguments[7] = emotion;
     FieldEffectStart(FLDEFF_EMOTE);
 }
-
-// Script-accessible version of the above
-bool8 ScrFunc_emote(struct ScriptContext *ctx)
-{
-    u8 localId = ScriptReadByte(ctx);
-    u8 emotion = ScriptReadByte(ctx) % FOLLOWER_EMOTION_LENGTH;
-    u8 i = GetObjectEventIdByLocalId(localId);
-    if (i < OBJECT_EVENTS_COUNT)
-        ObjectEventEmote(&gObjectEvents[i], emotion);
-    return FALSE;
-}
-
-// Used for storing conditional emotes
-struct SpecialEmote
-{
-    u16 index;
-    u8 emotion;
-};
 
 // Find and return direction of metatile behavior within distance
 static u32 FindMetatileBehaviorWithinRange(s32 x, s32 y, u32 mb, u8 distance)
@@ -2263,7 +2252,7 @@ bool32 CheckMsgInfo(const struct FollowerMsgInfoExtended *info, struct Pokemon *
 }
 
 // Call an applicable follower message script
-bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big switch for follower messages
+void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch for follower messages
 {
     u32 species;
     s32 multi;
@@ -2289,7 +2278,7 @@ bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big 
     if (mon == NULL) // failsafe
     {
         ScriptCall(ctx, EventScript_FollowerLovesYou);
-        return FALSE;
+        return;
     }
     // Set the script to the very end; we'll be calling another script dynamically
     ScriptJump(ctx, EventScript_FollowerEnd);
@@ -2424,7 +2413,7 @@ bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big 
             ctx->data[0] = i ? ((u32*)gFollowerConditionalMessages[multi].text)[Random() % i] : 0;
         }
         ScriptCall(ctx, gFollowerConditionalMessages[multi].script ? gFollowerConditionalMessages[multi].script : gFollowerBasicMessages[emotion].script);
-        return FALSE;
+        return;
     }
     // otherwise, a basic or C-based message was picked
     ObjectEventEmote(objEvent, emotion);
@@ -2432,7 +2421,6 @@ bool8 ScrFunc_getfolloweraction(struct ScriptContext *ctx) // Essentially a big 
     ScriptCall(ctx, gFollowerBasicMessages[emotion].messages[multi].script ?
                         gFollowerBasicMessages[emotion].messages[multi].script :
                         gFollowerBasicMessages[emotion].script);
-    return FALSE;
 }
 
 void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
@@ -5862,40 +5850,38 @@ u8 GetDirectionToFace(s16 x, s16 y, s16 targetX, s16 targetY)
 }
 
 // Uses the above, but script accessible, and uses localIds
-bool8 ScrFunc_GetDirectionToFace(struct ScriptContext *ctx)
+void GetDirectionToFaceScript(struct ScriptContext *ctx)
 {
     u16 *var = GetVarPointer(ScriptReadHalfword(ctx));
-    u8 id0 = GetObjectEventIdByLocalId(ScriptReadByte(ctx)); // source
-    u8 id1 = GetObjectEventIdByLocalId(ScriptReadByte(ctx)); // target
+    u8 sourceId = GetObjectEventIdByLocalId(ScriptReadByte(ctx));
+    u8 targetId = GetObjectEventIdByLocalId(ScriptReadByte(ctx));
     if (var == NULL)
-        return FALSE;
-    if (id0 >= OBJECT_EVENTS_COUNT || id1 >= OBJECT_EVENTS_COUNT)
+        return;
+    if (sourceId >= OBJECT_EVENTS_COUNT || targetId >= OBJECT_EVENTS_COUNT)
         *var = DIR_NONE;
     else
-        *var = GetDirectionToFace(gObjectEvents[id0].currentCoords.x,
-                                  gObjectEvents[id0].currentCoords.y,
-                                  gObjectEvents[id1].currentCoords.x,
-                                  gObjectEvents[id1].currentCoords.y);
-    return FALSE;
+        *var = GetDirectionToFace(gObjectEvents[sourceId].currentCoords.x,
+                                  gObjectEvents[sourceId].currentCoords.y,
+                                  gObjectEvents[targetId].currentCoords.x,
+                                  gObjectEvents[targetId].currentCoords.y);
 }
 
 // Whether following pokemon is also the user of the field move
 // Intended to be called before the field effect itself
-bool8 ScrFunc_IsFollowerFieldMoveUser(struct ScriptContext *ctx)
+void IsFollowerFieldMoveUser(struct ScriptContext *ctx)
 {
     u16 *var = GetVarPointer(ScriptReadHalfword(ctx));
     u16 userIndex = gFieldEffectArguments[0]; // field move user index
     struct Pokemon *follower = GetFirstLiveMon();
     struct ObjectEvent *obj = GetFollowerObject();
     if (var == NULL)
-        return FALSE;
+        return;
     *var = FALSE;
     if (follower && obj && !obj->invisible)
     {
         u16 followIndex = ((u32)follower - (u32)gPlayerParty) / sizeof(struct Pokemon);
         *var = userIndex == followIndex;
     }
-    return FALSE;
 }
 
 void SetTrainerMovementType(struct ObjectEvent *objectEvent, u8 movementType)
@@ -6723,10 +6709,10 @@ static void InitJumpRegular(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     // For follower only, match the anim duration of the player's movement, whether dashing, walking or jumping
     if (objectEvent->localId == OBJ_EVENT_ID_FOLLOWER
-        && type == JUMP_TYPE_HIGH
-        && distance == JUMP_DISTANCE_FAR
-        // In some areas (i.e Meteor Falls), the player can jump as the follower jumps, so preserve type in this case
-        && PlayerGetCopyableMovement() != COPY_MOVE_JUMP2)
+      && type == JUMP_TYPE_HIGH
+      && distance == JUMP_DISTANCE_FAR
+      // In some areas (i.e Meteor Falls), the player can jump as the follower jumps, so preserve type in this case
+      && PlayerGetCopyableMovement() != COPY_MOVE_JUMP2)
         type = TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH) ? JUMP_TYPE_FASTER : JUMP_TYPE_FAST;
     InitJump(objectEvent, sprite, direction, distance, type);
     SetStepAnimHandleAlternation(objectEvent, sprite, GetMoveDirectionAnimNum(objectEvent->facingDirection));
@@ -10598,7 +10584,7 @@ bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *object
 }
 
 // Get gfx data from daycare pokemon and store it in vars
-bool8 ScrFunc_getdaycaregfx(struct ScriptContext *ctx)
+void GetDaycareGraphics(struct ScriptContext *ctx)
 {
     u16 varGfx[] = {ScriptReadHalfword(ctx), ScriptReadHalfword(ctx)};
     u16 varForm[] = {ScriptReadHalfword(ctx), ScriptReadHalfword(ctx)};
@@ -10618,5 +10604,4 @@ bool8 ScrFunc_getdaycaregfx(struct ScriptContext *ctx)
         VarSet(varForm[i], form | (shiny << 5));
     }
     gSpecialVar_Result = i;
-    return FALSE;
 }
