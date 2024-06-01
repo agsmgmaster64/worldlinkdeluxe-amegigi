@@ -11,10 +11,12 @@
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 5,
       "y": 3,
@@ -28,6 +30,7 @@
       "flag": "FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WINGULL",
       "x": 6,
       "y": 3,
@@ -57,6 +60,10 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

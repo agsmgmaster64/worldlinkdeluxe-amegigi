@@ -217,6 +217,15 @@ const u32 gMetatileAttributes_RG_GenericBuilding1[] = INCBIN_U32("data/tilesets/
 const u16 gMetatiles_RG_GenericBuilding2[] = INCBIN_U16("data/tilesets/frlg/secondary/generic_building_2/metatiles.bin");
 const u32 gMetatileAttributes_RG_GenericBuilding2[] = INCBIN_U32("data/tilesets/frlg/secondary/generic_building_2/metatile_attributes.bin");
 
+const u16 gMetatiles_RG_Cave[] = INCBIN_U16("data/tilesets/frlg/secondary/cave/metatiles.bin");
+const u32 gMetatileAttributes_RG_Cave[] = INCBIN_U32("data/tilesets/frlg/secondary/cave/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_SeafoamIslands[] = INCBIN_U16("data/tilesets/frlg/secondary/seafoam_islands/metatiles.bin");
+const u32 gMetatileAttributes_RG_SeafoamIslands[] = INCBIN_U32("data/tilesets/frlg/secondary/seafoam_islands/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_PewterGym[] = INCBIN_U16("data/tilesets/frlg/secondary/pewter_gym/metatiles.bin");
+const u32 gMetatileAttributes_RG_PewterGym[] = INCBIN_U32("data/tilesets/frlg/secondary/pewter_gym/metatile_attributes.bin");
+
 const u16 gMetatiles_RG_Mart[] = INCBIN_U16("data/tilesets/frlg/secondary/mart/metatiles.bin");
 const u32 gMetatileAttributes_RG_Mart[] = INCBIN_U32("data/tilesets/frlg/secondary/mart/metatile_attributes.bin");
 

@@ -21,7 +21,7 @@
     },
     {
       "map": "MAP_MAUVILLE_CITY",
-      "offset": 0,
+      "offset": -7,
       "direction": "right"
     }
   ],
@@ -363,6 +363,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 47,
       "y": 2,
@@ -376,6 +377,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 49,
       "y": 2,

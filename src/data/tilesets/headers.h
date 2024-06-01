@@ -826,6 +826,28 @@ const struct Tileset gTileset_RG_Building =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_RG_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_Cave,
+    .palettes = gTilesetPalettes_RG_Cave,
+    .metatiles = gMetatiles_RG_Cave,
+    .metatileAttributes = gMetatileAttributes_RG_Cave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_SeafoamIslands =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_SeafoamIslands,
+    .palettes = gTilesetPalettes_RG_SeafoamIslands,
+    .metatiles = gMetatiles_RG_SeafoamIslands,
+    .metatileAttributes = gMetatileAttributes_RG_SeafoamIslands,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_RG_Condominiums =
 {
     .isCompressed = TRUE,
@@ -856,6 +878,17 @@ const struct Tileset gTileset_RG_GenericBuilding2 =
     .palettes = gTilesetPalettes_RG_GenericBuilding2,
     .metatiles = gMetatiles_RG_GenericBuilding2,
     .metatileAttributes = gMetatileAttributes_RG_GenericBuilding2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_PewterGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_PewterGym,
+    .palettes = gTilesetPalettes_RG_PewterGym,
+    .metatiles = gMetatiles_RG_PewterGym,
+    .metatileAttributes = gMetatileAttributes_RG_PewterGym,
     .callback = NULL,
 };
 

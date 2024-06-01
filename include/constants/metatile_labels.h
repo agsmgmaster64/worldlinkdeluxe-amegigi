@@ -439,6 +439,10 @@
 #define METATILE_RG_General_BlueCaveIndent     0x19B
 #define METATILE_RG_General_BlueCaveOpen       0x19C
 #define METATILE_RG_General_Door               0x03D
+#define METATILE_RG_General_MuddySlope_Frame0  0x22B
+#define METATILE_RG_General_MuddySlope_Frame1  0x22C
+#define METATILE_RG_General_MuddySlope_Frame2  0x22D
+#define METATILE_RG_General_MuddySlope_Frame3  0x22E
 #define METATILE_RG_General_RedCaveIndent      0x18B
 #define METATILE_RG_General_RedCaveOpen        0x18C
 #define METATILE_RG_General_SlidingDoubleDoor  0x15B

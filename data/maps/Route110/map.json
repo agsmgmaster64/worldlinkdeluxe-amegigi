@@ -16,7 +16,7 @@
   "connections": [
     {
       "map": "MAP_MAUVILLE_CITY",
-      "offset": 0,
+      "offset": -6,
       "direction": "up"
     },
     {
