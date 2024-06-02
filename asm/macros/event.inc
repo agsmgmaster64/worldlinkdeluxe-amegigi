@@ -1886,9 +1886,15 @@
 	.4byte \pointer
 	.endm
 
+	@ Sets the text of the name box in the next-shown message box.
+	.macro setspeakername text:req
+	.byte 0xe8
+	.4byte \text
+	.endm
+
 	@ Like callnative, but can return a value. TODO: Replace uses with callnative.
 	.macro callfunc func:req
-	.byte 0xe8
+	.byte 0xe9
 	.4byte \func
 	.endm
 
@@ -2263,6 +2269,11 @@
 	callnative SetTeraType
 	.byte \type
 	.2byte \slot
+	.endm
+
+	@ Hides the name box for the next-shown message boxes if there is one.
+	.macro hidespeakername
+	setspeakername NULL
 	.endm
 
 	@ Saves species and forms of Daycare Pokémon to specific vars. Saves the amount of Daycare mon to VAR_RESULT.

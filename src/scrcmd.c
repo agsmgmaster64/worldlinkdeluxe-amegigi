@@ -2535,3 +2535,10 @@ bool8 ScrCmd_casinopokemart(struct ScriptContext *ctx)
     ScriptContext_Stop();
     return TRUE;
 }
+
+bool8 ScrCmd_setspeakername(struct ScriptContext *ctx)
+{
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+    SetSpeakerName(name);
+    return FALSE;
+}

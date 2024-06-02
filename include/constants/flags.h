@@ -672,7 +672,7 @@
 #define FLAG_CAN_TERASTALIZE  0x275
 #define FLAG_TERA_ORB_NO_COST  0x276
 #define FLAG_DOISE_BATTLE  0x277
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
+#define FLAG_SUPPRESS_SPEAKER_NAME  0x278
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
