@@ -233,7 +233,6 @@ gScriptCmdTable::
 	.4byte ScrCmd_checkpartylearnknowsfieldmove     @ 0xe6
 	.4byte ScrCmd_casinopokemart                    @ 0xe7
 	.4byte ScrCmd_setspeakername                    @ 0xe8
-	.4byte ScrCmd_callfunc                          @ 0xe9
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

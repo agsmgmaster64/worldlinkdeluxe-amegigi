@@ -1393,7 +1393,7 @@
 	@ The specified id can be used to refer to the sprite again later with turnvobject.
 	.macro createvobject graphicsId:req, id:req, x:req, y:req, elevation=3, direction=DIR_SOUTH
 	.byte 0xaa
-	.byte \graphicsId
+	.2byte \graphicsId
 	.byte \id
 	.2byte \x
 	.2byte \y
@@ -1891,13 +1891,6 @@
 	.byte 0xe8
 	.4byte \text
 	.endm
-
-	@ Like callnative, but can return a value. TODO: Replace uses with callnative.
-	.macro callfunc func:req
-	.byte 0xe9
-	.4byte \func
-	.endm
-
 
 @ Supplementary
 
