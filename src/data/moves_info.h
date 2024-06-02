@@ -14505,7 +14505,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestEffect = CONTEST_EFFECT_BETTER_WHEN_AUDIENCE_EXCITED,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_MISTY_TERRAIN,
-        .contestComboMoves = {0}
+        .contestComboMoves = {0},
         .battleAnimScript = Move_HOLY_TERRAIN,
     },
 
@@ -16507,7 +16507,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = Move_ACCELEROCK,
+        .battleAnimScript = Move_ROCK_BULLET,
     },
 
     [MOVE_LIQUIDATION] =

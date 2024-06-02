@@ -19984,7 +19984,7 @@ Move_EXTREME_SPEED::
 	delay 1
 	end
 
-Move_PERFORMANCE:
+Move_PERFORMANCE::
 	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
 	monbg ANIM_DEF_PARTNER
@@ -22512,7 +22512,7 @@ SludgeBombProjectile:
 	delay 3
 	return
 
-Move_POISON_TEARS:
+Move_POISON_TEARS::
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
 	monbg ANIM_DEF_PARTNER
 	createsprite gAcidPoisonBubbleSpriteTemplate, ANIM_TARGET, 2, 20, 0, 40, 1, 0, 0, TRUE
@@ -22774,7 +22774,7 @@ Move_WATER_GUN::
 	blendoff
 	end
 
-Move_GALE:
+Move_GALE::
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS
 	loadspritegfx ANIM_TAG_WATER_IMPACT
 	monbg ANIM_DEF_PARTNER
