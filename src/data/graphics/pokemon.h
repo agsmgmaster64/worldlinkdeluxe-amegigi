@@ -22126,6 +22126,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     const u8 gMonFootprint_CCirno[] = INCBIN_U8("graphics/pokemon/_add/th/cirno/chibi/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_FOLLOWERS_ENABLED
+    const u32 gObjectEventPic_CCirno[] = INCBIN_COMP("graphics/pokemon/_add/th/cirno/chibi/follower.4bpp");
+#if OW_FOLLOWERS_SHARE_PALETTE == FALSE
+    const u32 gFollowerPalette_CCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/chibi/follow_normal.gbapal.lz");
+    const u32 gShinyFollowerPalette_CCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/chibi/follow_shiny.gbapal.lz");
+#endif //OW_FOLLOWERS_SHARE_PALETTE
+#endif //OW_FOLLOWERS_ENABLED
 
     const u32 gMonFrontPic_Cirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/normal/anim_front.4bpp.lz");
     const u32 gMonPalette_Cirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/normal/normal.gbapal.lz");
@@ -22135,6 +22142,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Cirno[] = INCBIN_U8("graphics/pokemon/_add/th/cirno/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_FOLLOWERS_ENABLED
+    const u32 gObjectEventPic_Cirno[] = INCBIN_COMP("graphics/pokemon/_add/th/cirno/normal/follower.4bpp");
+#if OW_FOLLOWERS_SHARE_PALETTE == FALSE
+    const u32 gFollowerPalette_Cirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/normal/follow_normal.gbapal.lz");
+    const u32 gShinyFollowerPalette_Cirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/normal/follow_shiny.gbapal.lz");
+#endif //OW_FOLLOWERS_SHARE_PALETTE
+#endif //OW_FOLLOWERS_ENABLED
 
     const u32 gMonFrontPic_SCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/speed/anim_front.4bpp.lz");
     const u32 gMonPalette_SCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/speed/normal.gbapal.lz");
@@ -22144,6 +22158,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     const u8 gMonFootprint_SCirno[] = INCBIN_U8("graphics/pokemon/_add/th/cirno/speed/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_FOLLOWERS_ENABLED
+    const u32 gObjectEventPic_SCirno[] = INCBIN_COMP("graphics/pokemon/_add/th/cirno/speed/follower.4bpp");
+#if OW_FOLLOWERS_SHARE_PALETTE == FALSE
+    const u32 gFollowerPalette_SCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/speed/follow_normal.gbapal.lz");
+    const u32 gShinyFollowerPalette_SCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/speed/follow_shiny.gbapal.lz");
+#endif //OW_FOLLOWERS_SHARE_PALETTE
+#endif //OW_FOLLOWERS_ENABLED
 
     const u32 gMonFrontPic_TCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/tech/anim_front.4bpp.lz");
     const u32 gMonPalette_TCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/tech/normal.gbapal.lz");
@@ -22153,6 +22174,13 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if P_FOOTPRINTS
     const u8 gMonFootprint_TCirno[] = INCBIN_U8("graphics/pokemon/_add/th/cirno/tech/footprint.1bpp");
 #endif //P_FOOTPRINTS
+#if OW_FOLLOWERS_ENABLED
+    const u32 gObjectEventPic_TCirno[] = INCBIN_COMP("graphics/pokemon/_add/th/cirno/tech/follower.4bpp");
+#if OW_FOLLOWERS_SHARE_PALETTE == FALSE
+    const u32 gFollowerPalette_TCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/tech/follow_normal.gbapal.lz");
+    const u32 gShinyFollowerPalette_TCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/tech/follow_shiny.gbapal.lz");
+#endif //OW_FOLLOWERS_SHARE_PALETTE
+#endif //OW_FOLLOWERS_ENABLED
 
     const u32 gMonFrontPic_AdCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/advent/anim_front.4bpp.lz");
     const u32 gMonPalette_AdCirno[] = INCBIN_U32("graphics/pokemon/_add/th/cirno/advent/normal.gbapal.lz");

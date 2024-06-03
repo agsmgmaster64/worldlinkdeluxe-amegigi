@@ -2334,41 +2334,29 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
     {
         switch (gMapHeader.regionMapSectionId)
         {
-        case MAPSEC_RUSTBORO_CITY:
-        case MAPSEC_PEWTER_CITY:
-        case MAPSEC_VIRIDIAN_CITY:
+        case MAPSEC_RUSTBORO_CITY: // Gym 1
             multi = TYPE_EARTH;
             break;
-        case MAPSEC_DEWFORD_TOWN:
+        case MAPSEC_DEWFORD_TOWN: // Gym 2
             multi = TYPE_DREAM;
             break;
-        case MAPSEC_MAUVILLE_CITY:
-        case MAPSEC_VERMILION_CITY:
+        case MAPSEC_MAUVILLE_CITY: // Gym 3
             multi = TYPE_WIND;
             break;
-        case MAPSEC_LAVARIDGE_TOWN:
-        case MAPSEC_CINNABAR_ISLAND:
+        case MAPSEC_LAVARIDGE_TOWN: // Gym 4
             multi = TYPE_FIRE;
             break;
-        case MAPSEC_PETALBURG_CITY:
-            multi = TYPE_ILLUSION;
+        case MAPSEC_PETALBURG_CITY: // Gym 5
+            multi = TYPE_HEART;
             break;
-        case MAPSEC_FORTREE_CITY:
+        case MAPSEC_FORTREE_CITY: // Gym 6
             multi = TYPE_FLYING;
             break;
-        case MAPSEC_MOSSDEEP_CITY:
-        case MAPSEC_SAFFRON_CITY:
+        case MAPSEC_MOSSDEEP_CITY: // Gym 7
             multi = TYPE_REASON;
             break;
-        case MAPSEC_SOOTOPOLIS_CITY:
-        case MAPSEC_CERULEAN_CITY:
+        case MAPSEC_SOOTOPOLIS_CITY: // Gym 8
             multi = TYPE_WATER;
-            break;
-        case MAPSEC_CELADON_CITY:
-            multi = TYPE_NATURE;
-            break;
-        case MAPSEC_FUCHSIA_CITY:
-            multi = TYPE_MIASMA;
             break;
         default:
             multi = NUMBER_OF_MON_TYPES;

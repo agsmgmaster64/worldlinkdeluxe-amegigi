@@ -763,6 +763,14 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_CCirno,
         .iconPalIndex = 1,
         FOOTPRINT(CCirno)
+        FOLLOWER(
+            sPicTable_CCirno,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gFollowerPalette_CCirno,
+            gShinyFollowerPalette_CCirno
+        )
         .levelUpLearnset = sCCirnoLevelUpLearnset,
         .teachableLearnset = sCCirnoTeachableLearnset,
         .eggMoveLearnset = sCCirnoEggMoveLearnset,
@@ -824,6 +832,14 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_Cirno,
         .iconPalIndex = 1,
         FOOTPRINT(Cirno)
+        FOLLOWER(
+            sPicTable_Cirno,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gFollowerPalette_Cirno,
+            gShinyFollowerPalette_Cirno
+        )
         .levelUpLearnset = sCirnoLevelUpLearnset,
         .teachableLearnset = sCirnoTeachableLearnset,
     },
@@ -878,6 +894,14 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_SCirno,
         .iconPalIndex = 1,
         FOOTPRINT(SCirno)
+        FOLLOWER(
+            sPicTable_SCirno,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gFollowerPalette_SCirno,
+            gShinyFollowerPalette_SCirno
+        )
         .levelUpLearnset = sSCirnoLevelUpLearnset,
         .teachableLearnset = sSCirnoTeachableLearnset,
     },
@@ -933,6 +957,14 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_TCirno,
         .iconPalIndex = 1,
         FOOTPRINT(TCirno)
+        FOLLOWER(
+            sPicTable_TCirno,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gFollowerPalette_TCirno,
+            gShinyFollowerPalette_TCirno
+        )
         .levelUpLearnset = sTCirnoLevelUpLearnset,
         .teachableLearnset = sTCirnoTeachableLearnset,
     },

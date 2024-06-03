@@ -6147,6 +6147,22 @@ static const struct SpriteFrameImage sPicTable_TerapagosStellar[] = {
 };*/
 #endif //P_FAMILY_PECHARUNT
 
+static const struct SpriteFrameImage sPicTable_CCirno[] = {
+    overworld_ascending_frames(gObjectEventPic_CCirno, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Cirno[] = {
+    overworld_ascending_frames(gObjectEventPic_Cirno, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SCirno[] = {
+    overworld_ascending_frames(gObjectEventPic_SCirno, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_TCirno[] = {
+    overworld_ascending_frames(gObjectEventPic_TCirno, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CLilyWhite[] = {
     overworld_ascending_frames(gObjectEventPic_CLilyWhite, 4, 4),
 };
