@@ -27,6 +27,7 @@
 - **Frander04**: Making the GBA-styled Hisui Pokeball battle sprites
 - **Kiy, usigusom , (), 黒インク**: Making the binary version of the DS-styled Party Screen which I tweaked the decomp version to more closely resemble
 - **ipatix**: Making the improved music engine used for this project
+- **tustin**: Making the name box branch used in this project
 
 - **haven**: Making Hex Maniac Advance, which was used for porting from the binary version, as well as helping out with the process
 

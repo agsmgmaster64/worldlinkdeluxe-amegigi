@@ -688,6 +688,22 @@ static const union AnimCmd sAnim_FieldMove[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_VSSeeker[] = {
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_LOOP(0),
+    ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(5, 4),
+    ANIMCMD_LOOP(6),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(2, 4),
+    ANIMCMD_FRAME(1, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_GetOnOffSurfBlobSouth[] =
 {
     ANIMCMD_FRAME(9, 32),
@@ -1454,6 +1470,10 @@ static const union AnimCmd *const sAnimTable_Nurse[] = {
 
 static const union AnimCmd *const sAnimTable_FieldMove[] = {
     [ANIM_FIELD_MOVE] = sAnim_FieldMove,
+};
+
+static const union AnimCmd *const sAnimTable_VSSeeker[] = {
+    [ANIM_VS_SEEKER] = sAnim_VSSeeker,
 };
 
 static const union AnimCmd *const sAnimTable_BerryTree[] = {

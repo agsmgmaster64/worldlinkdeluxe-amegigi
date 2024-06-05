@@ -66,6 +66,7 @@ static const u8 sEmotion_DoubleExclamationMarkGfx[] = INCBIN_U8("graphics/field_
 static const u8 sEmotion_XGfx[] = INCBIN_U8("graphics/field_effects/pics/emote_x.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
+static const u16 sEmoticons_Gfx[] = INCBIN_U16("graphics/misc/emoticons.4bpp");
 
 static u8 (*const sDirectionalApproachDistanceFuncs[])(struct ObjectEvent *trainerObj, s16 range, s16 x, s16 y) =
 {
@@ -321,6 +322,71 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
     sSpriteAnim_Emotes10,
 };
 
+static const struct SpriteFrameImage sSpriteImageTable_Emoticons[] = {
+    {sEmoticons_Gfx + 0x000, 0x80},
+    {sEmoticons_Gfx + 0x040, 0x80},
+    {sEmoticons_Gfx + 0x080, 0x80},
+
+    {sEmoticons_Gfx + 0x180, 0x80},
+    {sEmoticons_Gfx + 0x1C0, 0x80},
+    {sEmoticons_Gfx + 0x200, 0x80},
+
+    {sEmoticons_Gfx + 0x0C0, 0x80},
+    {sEmoticons_Gfx + 0x100, 0x80},
+    {sEmoticons_Gfx + 0x140, 0x80},
+
+    {sEmoticons_Gfx + 0x240, 0x80},
+    {sEmoticons_Gfx + 0x280, 0x80},
+    {sEmoticons_Gfx + 0x2C0, 0x80},
+
+    {sEmoticons_Gfx + 0x300, 0x80},
+    {sEmoticons_Gfx + 0x340, 0x80},
+    {sEmoticons_Gfx + 0x380, 0x80},
+};
+
+static const union AnimCmd sAnimCmd_ExclamationMark1[] = {
+    ANIMCMD_FRAME( 0,  4),
+    ANIMCMD_FRAME( 1,  4),
+    ANIMCMD_FRAME( 2, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_DoubleExclMark[] = {
+    ANIMCMD_FRAME( 6,  4),
+    ANIMCMD_FRAME( 7,  4),
+    ANIMCMD_FRAME( 8, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_X[] = {
+    ANIMCMD_FRAME( 3,  4),
+    ANIMCMD_FRAME( 4,  4),
+    ANIMCMD_FRAME( 5, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_SmileyFace[] = {
+    ANIMCMD_FRAME( 9,  4),
+    ANIMCMD_FRAME(10,  4),
+    ANIMCMD_FRAME(11, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sAnimCmd_QuestionMark[] = {
+    ANIMCMD_FRAME(12,  4),
+    ANIMCMD_FRAME(13,  4),
+    ANIMCMD_FRAME(14, 52),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_Emoticons[] = {
+    sAnimCmd_ExclamationMark1,
+    sAnimCmd_DoubleExclMark,
+    sAnimCmd_X,
+    sAnimCmd_SmileyFace,
+    sAnimCmd_QuestionMark
+};
+
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
@@ -328,6 +394,16 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_TrainerIcons
+};
+
+static const struct SpriteTemplate sSpriteTemplate_Emoticons = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
+    .oam = &sOamData_Icons,
+    .anims = sSpriteAnimTable_Emoticons,
+    .images = sSpriteImageTable_Emoticons,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_TrainerIcons
 };
@@ -865,12 +941,12 @@ void TryPrepareSecondApproachingTrainer(void)
 
 u8 FldEff_ExclamationMarkIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
     {
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 0);
-        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emoticons, &gSprites[spriteId]);
     }
 
     return 0;
@@ -890,12 +966,12 @@ u8 FldEff_QuestionMarkIcon(void)
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
         return 0;
     }
-    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x52);
+    spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x52);
 
     if (spriteId != MAX_SPRITES)
     {
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 1);
-        UpdateSpritePaletteByTemplate(&sSpriteTemplate_ExclamationQuestionMark, &gSprites[spriteId]);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_QUESTION_MARK_ICON, 4);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emoticons, &gSprites[spriteId]);
     }
 
     return 0;
@@ -919,20 +995,26 @@ u8 FldEff_HeartIcon(void)
 
 u8 FldEff_DoubleExclMarkIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 2);
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 1);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emoticons, &gSprites[spriteId]);
+    }
 
     return 0;
 }
 
 u8 FldEff_XIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_ExclamationQuestionMark, 0, 0, 0x53);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emoticons, 0, 0, 0x53);
 
     if (spriteId != MAX_SPRITES)
-        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 3);
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_EXCLAMATION_MARK_ICON, 2);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emoticons, &gSprites[spriteId]);
+    }
 
     return 0;
 }

@@ -1188,7 +1188,7 @@ u32 FldEff_SurfBlob(void)
         sprite->sPlayerObjId = gFieldEffectArguments[2];
         // Can use either gender's palette, so try to use the one that should be loaded
         sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
-        sprite->sVelocity = -1;
+        sprite->sVelocity = 0;
         sprite->sPrevX = -1;
         sprite->sPrevY = -1;
     }
@@ -1288,7 +1288,7 @@ static void UpdateBobbingEffect(struct ObjectEvent *playerObj, struct Sprite *pl
 {
     // The frame interval at which to update the blob's y movement.
     // Normally every 4th frame, but every 8th frame while dismounting.
-    u16 intervals[] = {0x3, 0x7};
+    u16 intervals[] = {7, 15};
 
     u8 bobState = GetSurfBlob_BobState(sprite);
     if (bobState != BOB_NONE)

@@ -41,6 +41,24 @@ static const struct SpriteFrameImage sPicTable_BrendanFieldMove[] = {
     overworld_ascending_frames(gObjectEventPic_BrendanFieldMove, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_BrendanVSSeeker[] = {
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 0),
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 1),
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 2),
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 3),
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 4),
+    overworld_frame(gObjectEventPic_BrendanVSSeeker, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_BrendanVSSeekerBike[] = {
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 0),
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 1),
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 2),
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 3),
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 4),
+    overworld_frame(gObjectEventPic_BrendanVSSeekerBike, 4, 4, 5),
+};
+
 static const struct SpriteFrameImage sPicTable_QuintyPlump[] = {
     overworld_ascending_frames(gObjectEventPic_QuintyPlump, 4, 4),
 };
@@ -451,6 +469,24 @@ static const struct SpriteFrameImage sPicTable_MayUnderwater[] = {
 
 static const struct SpriteFrameImage sPicTable_MayFieldMove[] = {
     overworld_ascending_frames(gObjectEventPic_MayFieldMove, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_MayVSSeeker[] = {
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 2),
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 3),
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 4),
+    overworld_frame(gObjectEventPic_MayVSSeeker, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage sPicTable_MayVSSeekerBike[] = {
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 0),
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 1),
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 2),
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 3),
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 4),
+    overworld_frame(gObjectEventPic_MayVSSeekerBike, 4, 4, 5),
 };
 
 static const struct SpriteFrameImage sPicTable_Cameraman[] = {
