@@ -152,7 +152,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/LavaridgeTown/border.bin",
       "blockdata_filepath": "data/layouts/LavaridgeTown/map.bin"
@@ -440,7 +440,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route121/border.bin",
       "blockdata_filepath": "data/layouts/Route121/map.bin"
@@ -452,7 +452,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route122/border.bin",
       "blockdata_filepath": "data/layouts/Route122/map.bin"
@@ -464,7 +464,7 @@
       "height": 20,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/Route123/border.bin",
       "blockdata_filepath": "data/layouts/Route123/map.bin"

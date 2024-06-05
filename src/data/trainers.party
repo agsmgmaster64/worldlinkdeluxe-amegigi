@@ -156,7 +156,7 @@ Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
+Chibi Chen
 Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5864,7 +5864,7 @@ Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
-Name: CALVIN
+Name: Calvin
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -5872,7 +5872,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
+Chibi Nazrin
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5889,12 +5889,12 @@ Zigzagoon
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seedot
+Chibi Mystia
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
-Name: JOSH
+Name: Josh
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -5902,10 +5902,9 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Helper Lyrica
+Chibi Yamame
 Level: 10
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Tackle
 
 === TRAINER_TOMMY ===
 Name: TOMMY
@@ -5916,11 +5915,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Helper Lyrica
+Chibi Suika
 Level: 8
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
-Helper Lyrica
+Chibi Suika
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
@@ -6130,7 +6129,7 @@ Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLEN ===
-Name: ALLEN
+Name: Allen
 Class: Youngster
 Pic: Youngster
 Gender: Male
@@ -6138,11 +6137,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
+Chibi Mystia
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Taillow
+Chibi Chen
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -6244,7 +6243,7 @@ Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_IVAN ===
-Name: IVAN
+Name: Ivan
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
@@ -6252,11 +6251,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Chibi Nitori
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Goliath
+Chibi Murasa
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8721,7 +8720,7 @@ Level: 27
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_GINA_AND_MIA_1 ===
-Name: GINA & MIA
+Name: Gina & Mia
 Class: Twins
 Pic: Twins
 Gender: Male
@@ -8729,11 +8728,11 @@ Music: Twins
 Double Battle: Yes
 AI: Check Bad Move
 
-Seedot
+Chibi Minoriko
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Lotad
+Chibi Shizuha
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10483,11 +10482,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Helper Lyrica
+Chibi Yuugi
 Level: 8
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
-Helper Lyrica
+Chibi Yuugi
 Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -10968,7 +10967,7 @@ Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_TIANA ===
-Name: TIANA
+Name: Tiana
 Class: Lass
 Pic: Lass
 Gender: Female
@@ -10976,7 +10975,7 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon
+Chibi Mystia
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11172,7 +11171,7 @@ Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK ===
-Name: RICK
+Name: Rick
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11180,16 +11179,16 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
+Chibi Star
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Chibi Sunny
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
-Name: LYLE
+Name: Lyle
 Class: Bug Catcher
 Pic: Bug Catcher
 Gender: Male
@@ -11197,19 +11196,19 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
+Chibi Daiyousei
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Chibi Lily White
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Chibi Lily Black
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Chibi Cirno
 Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11222,11 +11221,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Wurmple
+Chibi Lily White
 Level: 8
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Nincada
+Chibi Lily BLack
 Level: 8
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -11286,11 +11285,11 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Nincada
+Chibi Lily Whhite
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Nincada
+Chibi LIly Black
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11472,7 +11471,7 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Helper Lyrica
+Chibi Chen
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13782,11 +13781,11 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Helper Lyrica
+Chibi Kisume
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Helper Lyrica
+Chibi Rumia
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
