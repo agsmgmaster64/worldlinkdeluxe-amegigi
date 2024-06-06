@@ -396,8 +396,8 @@
 #define SPECIES_NORMAL_YUMEMI                           392
 #define SPECIES_PLACEHOLD_YUMEMI                        393 // Placeholder
 #define SPECIES_KEDAMA                                  394
-#define SPECIES_RUUKOTO                                 395
-#define SPECIES_MIMI_CHAN                               396
+#define SPECIES_MIMI_CHAN                               395
+#define SPECIES_RUUKOTO                                 396
 #define SPECIES_CHIBI_ORANGE                            397
 #define SPECIES_NORMAL_ORANGE                           398
 #define SPECIES_PLACEHOLD_ORANGE                        399 // Placeholder

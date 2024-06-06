@@ -24668,6 +24668,177 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_HStar[] = INCBIN_U8("graphics/pokemon/_add/th/star/helper/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CRika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CRika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CRika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CRika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CRika[] = INCBIN_U8("graphics/pokemon/_add/th/rika/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CRika[] = INCBIN_U8("graphics/pokemon/_add/th/rika/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Rika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Rika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Rika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Rika[] = INCBIN_U32("graphics/pokemon/_add/th/rika/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Rika[] = INCBIN_U8("graphics/pokemon/_add/th/rika/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Rika[] = INCBIN_U8("graphics/pokemon/_add/th/rika/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CMeira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CMeira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CMeira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CMeira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CMeira[] = INCBIN_U8("graphics/pokemon/_add/th/meira/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CMeira[] = INCBIN_U8("graphics/pokemon/_add/th/meira/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Meira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Meira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Meira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Meira[] = INCBIN_U32("graphics/pokemon/_add/th/meira/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Meira[] = INCBIN_U8("graphics/pokemon/_add/th/meira/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Meira[] = INCBIN_U8("graphics/pokemon/_add/th/meira/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CEllen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CEllen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CEllen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CEllen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CEllen[] = INCBIN_U8("graphics/pokemon/_add/th/ellen/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CEllen[] = INCBIN_U8("graphics/pokemon/_add/th/ellen/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Ellen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Ellen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Ellen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Ellen[] = INCBIN_U32("graphics/pokemon/_add/th/ellen/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Ellen[] = INCBIN_U8("graphics/pokemon/_add/th/ellen/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Ellen[] = INCBIN_U8("graphics/pokemon/_add/th/ellen/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CKotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CKotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CKotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CKotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CKotohime[] = INCBIN_U8("graphics/pokemon/_add/th/kotohime/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CKotohime[] = INCBIN_U8("graphics/pokemon/_add/th/kotohime/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Kotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Kotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Kotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Kotohime[] = INCBIN_U32("graphics/pokemon/_add/th/kotohime/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Kotohime[] = INCBIN_U8("graphics/pokemon/_add/th/kotohime/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Kotohime[] = INCBIN_U8("graphics/pokemon/_add/th/kotohime/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CKana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CKana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CKana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CKana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CKana[] = INCBIN_U8("graphics/pokemon/_add/th/kana/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CKana[] = INCBIN_U8("graphics/pokemon/_add/th/kana/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Kana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Kana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Kana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Kana[] = INCBIN_U32("graphics/pokemon/_add/th/kana/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Kana[] = INCBIN_U8("graphics/pokemon/_add/th/kana/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Kana[] = INCBIN_U8("graphics/pokemon/_add/th/kana/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CRikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CRikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CRikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CRikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CRikako[] = INCBIN_U8("graphics/pokemon/_add/th/rikako/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CRikako[] = INCBIN_U8("graphics/pokemon/_add/th/rikako/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Rikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Rikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Rikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Rikako[] = INCBIN_U32("graphics/pokemon/_add/th/rikako/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Rikako[] = INCBIN_U8("graphics/pokemon/_add/th/rikako/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Rikako[] = INCBIN_U8("graphics/pokemon/_add/th/rikako/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CChiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CChiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CChiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CChiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CChiyuri[] = INCBIN_U8("graphics/pokemon/_add/th/chiyuri/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CChiyuri[] = INCBIN_U8("graphics/pokemon/_add/th/chiyuri/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Chiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Chiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Chiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Chiyuri[] = INCBIN_U32("graphics/pokemon/_add/th/chiyuri/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Chiyuri[] = INCBIN_U8("graphics/pokemon/_add/th/chiyuri/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Chiyuri[] = INCBIN_U8("graphics/pokemon/_add/th/chiyuri/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CYumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CYumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CYumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CYumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CYumemi[] = INCBIN_U8("graphics/pokemon/_add/th/yumemi/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CYumemi[] = INCBIN_U8("graphics/pokemon/_add/th/yumemi/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Yumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Yumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Yumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Yumemi[] = INCBIN_U32("graphics/pokemon/_add/th/yumemi/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Yumemi[] = INCBIN_U8("graphics/pokemon/_add/th/yumemi/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Yumemi[] = INCBIN_U8("graphics/pokemon/_add/th/yumemi/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Kedama[] = INCBIN_U32("graphics/pokemon/_add/th/kedama/anim_front.4bpp.lz");
+    const u32 gMonPalette_Kedama[] = INCBIN_U32("graphics/pokemon/_add/th/kedama/normal.gbapal.lz");
+    const u32 gMonBackPic_Kedama[] = INCBIN_U32("graphics/pokemon/_add/th/kedama/back.4bpp.lz");
+    const u32 gMonShinyPalette_Kedama[] = INCBIN_U32("graphics/pokemon/_add/th/kedama/shiny.gbapal.lz");
+    const u8 gMonIcon_Kedama[] = INCBIN_U8("graphics/pokemon/_add/th/kedama/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Kedama[] = INCBIN_U8("graphics/pokemon/_add/th/kedama/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Ruukoto[] = INCBIN_U32("graphics/pokemon/_add/th/ruukoto/anim_front.4bpp.lz");
+    const u32 gMonPalette_Ruukoto[] = INCBIN_U32("graphics/pokemon/_add/th/ruukoto/normal.gbapal.lz");
+    const u32 gMonBackPic_Ruukoto[] = INCBIN_U32("graphics/pokemon/_add/th/ruukoto/back.4bpp.lz");
+    const u32 gMonShinyPalette_Ruukoto[] = INCBIN_U32("graphics/pokemon/_add/th/ruukoto/shiny.gbapal.lz");
+    const u8 gMonIcon_Ruukoto[] = INCBIN_U8("graphics/pokemon/_add/th/ruukoto/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Ruukoto[] = INCBIN_U8("graphics/pokemon/_add/th/ruukoto/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Mimichan[] = INCBIN_U32("graphics/pokemon/_add/th/mimichan/anim_front.4bpp.lz");
+    const u32 gMonPalette_Mimichan[] = INCBIN_U32("graphics/pokemon/_add/th/mimichan/normal.gbapal.lz");
+    const u32 gMonBackPic_Mimichan[] = INCBIN_U32("graphics/pokemon/_add/th/mimichan/back.4bpp.lz");
+    const u32 gMonShinyPalette_Mimichan[] = INCBIN_U32("graphics/pokemon/_add/th/mimichan/shiny.gbapal.lz");
+    const u8 gMonIcon_Mimichan[] = INCBIN_U8("graphics/pokemon/_add/th/mimichan/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Mimichan[] = INCBIN_U8("graphics/pokemon/_add/th/mimichan/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
