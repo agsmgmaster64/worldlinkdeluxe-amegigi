@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens for Groudon only when holding Red O
     PARAMETRIZE { heldItem = ITEM_RED_ORB;}
     PARAMETRIZE { heldItem = ITEM_BLUE_ORB;}
     GIVEN {
-        PLAYER(SPECIES_GROUDON) { Item(heldItem); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(heldItem); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -28,7 +28,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens for Groudon only when holding Red O
             EXPECT_EQ(player->species, SPECIES_GROUDON_PRIMAL);
         }
         else {
-            EXPECT_EQ(player->species, SPECIES_GROUDON);
+            EXPECT_EQ(player->species, SPECIES_NORMAL_KANA);
         }
     }
 }
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens for Kyogre only when holding Blue O
     PARAMETRIZE { heldItem = ITEM_BLUE_ORB;}
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_KYOGRE) { Item(heldItem); }
+        OPPONENT(SPECIES_CHIBI_KANA) { Item(heldItem); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens for Kyogre only when holding Blue O
             EXPECT_EQ(opponent->species, SPECIES_KYOGRE_PRIMAL);
         }
         else {
-            EXPECT_EQ(opponent->species, SPECIES_KYOGRE);
+            EXPECT_EQ(opponent->species, SPECIES_CHIBI_KANA);
         }
     }
 }
@@ -68,10 +68,10 @@ SINGLE_BATTLE_TEST("Primal reversion happens for Kyogre only when holding Blue O
 DOUBLE_BATTLE_TEST("Primal reversion's order is determined by Speed - opponent faster")
 {
     GIVEN {
-        PLAYER(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); Speed(5); };
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(15); };
-        OPPONENT(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(10); }
-        OPPONENT(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); Speed(20); }
+        PLAYER(SPECIES_CHIBI_KANA) { Item(ITEM_BLUE_ORB); Speed(5); };
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); Speed(15); };
+        OPPONENT(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); Speed(10); }
+        OPPONENT(SPECIES_CHIBI_KANA) { Item(ITEM_BLUE_ORB); Speed(20); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE); }
     } SCENE {
@@ -94,10 +94,10 @@ DOUBLE_BATTLE_TEST("Primal reversion's order is determined by Speed - opponent f
 DOUBLE_BATTLE_TEST("Primal reversion's order is determined by Speed - player faster")
 {
     GIVEN {
-        PLAYER(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); Speed(20); };
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(30); };
-        OPPONENT(SPECIES_GROUDON) { Item(ITEM_RED_ORB); Speed(10); }
-        OPPONENT(SPECIES_KYOGRE) { Item(ITEM_BLUE_ORB); Speed(2); }
+        PLAYER(SPECIES_CHIBI_KANA) { Item(ITEM_BLUE_ORB); Speed(20); };
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); Speed(30); };
+        OPPONENT(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); Speed(10); }
+        OPPONENT(SPECIES_CHIBI_KANA) { Item(ITEM_BLUE_ORB); Speed(2); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE); }
     } SCENE {
@@ -122,7 +122,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a mon is sent out after a mon
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
         PLAYER(SPECIES_CHIBI_YUUGI) {HP(1); }
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
@@ -140,7 +140,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a mon is switched in")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_CELEBRATE); }
@@ -159,7 +159,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a switch-in caused by Eject B
         ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
         ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
         PLAYER(SPECIES_CHIBI_YUUGI) {Item(ITEM_EJECT_BUTTON); }
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
@@ -180,7 +180,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a switch-in caused by Red Car
         ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
         ASSUME(gItemsInfo[ITEM_RED_CARD].holdEffect == HOLD_EFFECT_RED_CARD);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI) {Item(ITEM_RED_CARD); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -199,7 +199,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after the entry hazards damage")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SPIKES].effect == EFFECT_SPIKES);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SPIKES); }
@@ -219,7 +219,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens immediately if it was brought in by
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_GROUDON) { Item(ITEM_RED_ORB); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
         OPPONENT(SPECIES_WYNAUT) { HP(1); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {

@@ -363,7 +363,7 @@ SINGLE_BATTLE_TEST("Embargo doesn't prevent Primal Reversion")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_GROUDON) { Item(ITEM_RED_ORB); };
+        OPPONENT(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); };
     } WHEN {
         TURN { MOVE(player, MOVE_EMBARGO); }
         TURN { MOVE(opponent, MOVE_BATON_PASS); SEND_OUT(opponent, 1); }

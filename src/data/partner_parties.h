@@ -1,6 +1,6 @@
 static const struct TrainerMon sParty_StevenPartner[] = {
     {
-        .species = SPECIES_METANG,
+        .species = SPECIES_PLACEHOLD_MEIRA,
         .lvl = 42,
         .nature = NATURE_BRAVE,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

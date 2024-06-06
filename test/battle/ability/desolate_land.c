@@ -10,7 +10,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves")
 {
     GIVEN {
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB);}
+        PLAYER(SPECIES_NORMAL_KANA) {Item(ITEM_RED_ORB);}
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_GUN); }
@@ -35,7 +35,7 @@ DOUBLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves and prints th
         ASSUME(gMovesInfo[MOVE_SURF].power != 0);
         ASSUME(gMovesInfo[MOVE_SURF].type == TYPE_WATER);
         ASSUME(gMovesInfo[MOVE_SURF].target == MOVE_TARGET_FOES_AND_ALLY);
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB); {Speed(5);}}
+        PLAYER(SPECIES_NORMAL_KANA) {Item(ITEM_RED_ORB); {Speed(5);}}
         PLAYER(SPECIES_CHIBI_YUUGI) {Speed(5);}
         OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(10);}
         OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(8);}
@@ -56,7 +56,7 @@ DOUBLE_BATTLE_TEST("Desolate Land blocks damaging Water-type moves and prints th
 SINGLE_BATTLE_TEST("Desolate Land does not block a move if pokemon is asleep and uses a Water-type move") // Sleep/confusion/paralysis all happen before the check for primal weather
 {
     GIVEN {
-        PLAYER(SPECIES_GROUDON) {Item(ITEM_RED_ORB);}
+        PLAYER(SPECIES_NORMAL_KANA) {Item(ITEM_RED_ORB);}
         OPPONENT(SPECIES_CHIBI_YUUGI) {Status1(STATUS1_SLEEP);}
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_GUN); }

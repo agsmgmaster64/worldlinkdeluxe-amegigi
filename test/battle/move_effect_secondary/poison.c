@@ -22,11 +22,11 @@ SINGLE_BATTLE_TEST("Poison cannot be inflicted on Poison and Steel-type Pokémon
 {
     u32 mon;
     PARAMETRIZE { mon = SPECIES_DEFENSE_PATCHOULI; }
-    PARAMETRIZE { mon = SPECIES_REGISTEEL; }
+    PARAMETRIZE { mon = SPECIES_CHIBI_KOTOHIME; }
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_TWINEEDLE, MOVE_EFFECT_POISON) == TRUE);
         ASSUME(gSpeciesInfo[SPECIES_NIDORAN_M].types[0] == TYPE_POISON);
-        ASSUME(gSpeciesInfo[SPECIES_REGISTEEL].types[0] == TYPE_STEEL);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOTOHIME].types[0] == TYPE_STEEL);
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(mon);
     } WHEN {

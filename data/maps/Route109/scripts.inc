@@ -725,7 +725,7 @@ Route109_EventScript_Zigzagoon::
 # 363 "data/maps/Route109/scripts.pory"
 	waitse
 # 364 "data/maps/Route109/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 365 "data/maps/Route109/scripts.pory"
 	msgbox Route109_Text_ZigzagoonCry, MSGBOX_DEFAULT
 # 366 "data/maps/Route109/scripts.pory"

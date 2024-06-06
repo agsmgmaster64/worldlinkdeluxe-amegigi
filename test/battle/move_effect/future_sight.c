@@ -21,7 +21,7 @@ SINGLE_BATTLE_TEST("Future Sight uses Sp. Atk stat of the original user without 
     GIVEN {
         PLAYER(SPECIES_PIKACHU) { Item(item); }
         PLAYER(SPECIES_RAICHU) { Item(item); }
-        OPPONENT(SPECIES_REGICE);
+        OPPONENT(SPECIES_PLACEHOLD_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_SEED_FLARE, WITH_RNG(RNG_SECONDARY_EFFECT, FALSE)); }
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }
@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Future Sight is not boosted by Life Orb is original user if 
     GIVEN {
         PLAYER(SPECIES_PIKACHU);
         PLAYER(SPECIES_RAICHU) { Item(ITEM_LIFE_ORB); }
-        OPPONENT(SPECIES_REGICE);
+        OPPONENT(SPECIES_PLACEHOLD_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_SEED_FLARE, WITH_RNG(RNG_SECONDARY_EFFECT, FALSE)); }
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }
@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Future Sight receives STAB from party mon")
     GIVEN {
         PLAYER(SPECIES_RALTS);
         PLAYER(SPECIES_RAICHU);
-        OPPONENT(SPECIES_REGICE);
+        OPPONENT(SPECIES_PLACEHOLD_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_SEED_FLARE, WITH_RNG(RNG_SECONDARY_EFFECT, FALSE)); }
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }

@@ -5064,9 +5064,9 @@ u16 GetBattleBGM(void)
         case SPECIES_LAST_WORD_SUWAKO:
         case SPECIES_LAST_WORD_UTSUHO:
             return MUS_VS_KYOGRE_GROUDON;
-        case SPECIES_REGIROCK:
-        case SPECIES_REGICE:
-        case SPECIES_REGISTEEL:
+        case SPECIES_NORMAL_ELLEN:
+        case SPECIES_PLACEHOLD_ELLEN:
+        case SPECIES_CHIBI_KOTOHIME:
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;

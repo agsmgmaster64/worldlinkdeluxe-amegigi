@@ -78,7 +78,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_NEUTRAL,
         .conditions =
         {
-            MATCH_SPECIES(SPECIES_CELEBI),
+            MATCH_SPECIES(SPECIES_CHIBI_KYOUKO),
         },
     },
     [COND_MSG_FIRE] =

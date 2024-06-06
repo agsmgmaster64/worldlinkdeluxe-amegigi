@@ -173,7 +173,7 @@ SINGLE_BATTLE_TEST("Eject Button prevents Volt Switch / U-Turn from activating")
 SINGLE_BATTLE_TEST("Eject Button is activated before Emergency Exit")
 {
     GIVEN {
-        PLAYER(SPECIES_LATIAS);
+        PLAYER(SPECIES_NORMAL_KOTOHIME);
         OPPONENT(SPECIES_GOLISOPOD) { Ability(ABILITY_EMERGENCY_EXIT); Item(ITEM_EJECT_BUTTON); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

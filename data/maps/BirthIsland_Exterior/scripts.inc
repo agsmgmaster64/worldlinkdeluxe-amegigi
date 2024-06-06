@@ -167,7 +167,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 # 84 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitse
 # 85 "data/maps/BirthIsland_Exterior/scripts.pory"
-	playmoncry SPECIES_DEOXYS_NORMAL, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_NORMAL_RIKAKO, CRY_MODE_ENCOUNTER
 # 86 "data/maps/BirthIsland_Exterior/scripts.pory"
 	delay 40
 # 87 "data/maps/BirthIsland_Exterior/scripts.pory"
@@ -175,7 +175,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 # 88 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setvar VAR_LAST_TALKED, LOCALID_DEOXYS
 # 89 "data/maps/BirthIsland_Exterior/scripts.pory"
-	seteventmon SPECIES_DEOXYS_NORMAL, 30
+	seteventmon SPECIES_NORMAL_RIKAKO, 30
 # 90 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 91 "data/maps/BirthIsland_Exterior/scripts.pory"
@@ -205,7 +205,7 @@ BirthIsland_Exterior_EventScript_DefeatedDeoxys::
 # 103 "data/maps/BirthIsland_Exterior/scripts.pory"
 	setflag FLAG_DEFEATED_DEOXYS
 # 104 "data/maps/BirthIsland_Exterior/scripts.pory"
-	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
+	setvar VAR_0x8004, SPECIES_NORMAL_RIKAKO
 # 105 "data/maps/BirthIsland_Exterior/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 106 "data/maps/BirthIsland_Exterior/scripts.pory"
@@ -215,7 +215,7 @@ BirthIsland_Exterior_EventScript_DefeatedDeoxys::
 # 108 "data/maps/BirthIsland_Exterior/scripts.pory"
 BirthIsland_Exterior_EventScript_RanFromDeoxys::
 # 109 "data/maps/BirthIsland_Exterior/scripts.pory"
-	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
+	setvar VAR_0x8004, SPECIES_NORMAL_RIKAKO
 # 110 "data/maps/BirthIsland_Exterior/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 111 "data/maps/BirthIsland_Exterior/scripts.pory"

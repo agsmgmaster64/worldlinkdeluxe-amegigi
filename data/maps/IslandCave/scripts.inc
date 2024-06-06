@@ -187,13 +187,13 @@ IslandCave_EventScript_Regice::
 # 94 "data/maps/IslandCave/scripts.pory"
 	waitse
 # 95 "data/maps/IslandCave/scripts.pory"
-	playmoncry SPECIES_REGICE, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_PLACEHOLD_ELLEN, CRY_MODE_ENCOUNTER
 # 96 "data/maps/IslandCave/scripts.pory"
 	delay 40
 # 97 "data/maps/IslandCave/scripts.pory"
 	waitmoncry
 # 98 "data/maps/IslandCave/scripts.pory"
-	setwildbattle SPECIES_REGICE, 40
+	setwildbattle SPECIES_PLACEHOLD_ELLEN, 40
 # 99 "data/maps/IslandCave/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 100 "data/maps/IslandCave/scripts.pory"
@@ -231,7 +231,7 @@ IslandCave_EventScript_DefeatedRegice::
 # 116 "data/maps/IslandCave/scripts.pory"
 IslandCave_EventScript_RanFromRegice::
 # 117 "data/maps/IslandCave/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGICE
+	setvar VAR_0x8004, SPECIES_PLACEHOLD_ELLEN
 # 118 "data/maps/IslandCave/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 119 "data/maps/IslandCave/scripts.pory"

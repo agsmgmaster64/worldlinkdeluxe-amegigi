@@ -86,7 +86,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [4] = {
-                .species = SPECIES_DUSTOX,
+                .species = SPECIES_TECH_FUTO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_SILVER_WIND, MOVE_POISON_BOMB, MOVE_SHADOW_BALL, MOVE_GIGA_DRAIN },
                 .hpEV = 0,
@@ -108,7 +108,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [5] = {
-                .species = SPECIES_RELICANTH,
+                .species = SPECIES_GENJI,
                 .heldItem = ITEM_QUICK_CLAW,
                 .moves = { MOVE_ANCIENT_POWER, MOVE_SURF, MOVE_EARTHQUAKE, MOVE_AMNESIA },
                 .hpEV = 100,
@@ -188,7 +188,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [5] = {
-                .species = SPECIES_WHISCASH,
+                .species = SPECIES_NORMAL_KOKORO,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .moves = { MOVE_SURF, MOVE_EARTHQUAKE, MOVE_AMNESIA, MOVE_REST },
                 .hpEV = 0,
@@ -268,7 +268,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = MAX_FRIENDSHIP
             },
             [5] = {
-                .species = SPECIES_BEAUTIFLY,
+                .species = SPECIES_CHIBI_FUTO,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_SILVER_WIND, MOVE_AERIAL_ACE, MOVE_ATTRACT, MOVE_MANA_BURST },
                 .hpEV = 100,

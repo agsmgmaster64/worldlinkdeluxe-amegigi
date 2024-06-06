@@ -39,7 +39,7 @@ SINGLE_BATTLE_TEST("Custap Berry allows the holder to move first in its priority
 SINGLE_BATTLE_TEST("Custap Berry activates even if the opposing mon switches out")
 {
     GIVEN {
-        PLAYER(SPECIES_REGIROCK) { HP(1); Item(ITEM_CUSTAP_BERRY); }
+        PLAYER(SPECIES_NORMAL_ELLEN) { HP(1); Item(ITEM_CUSTAP_BERRY); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

@@ -103,7 +103,7 @@ static const struct PikeWildMon sLvl50_Mons1[] =
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
-        .species = SPECIES_DUSCLOPS,
+        .species = SPECIES_NORMAL_TOKIKO,
         .levelDelta = 5,
         .moves = {MOVE_WILL_O_WISP, MOVE_CHARMING_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
     }
@@ -187,7 +187,7 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
     },
     {
-        .species = SPECIES_DUSCLOPS,
+        .species = SPECIES_NORMAL_TOKIKO,
         .levelDelta = 5,
         .moves = {MOVE_WILL_O_WISP, MOVE_CHARMING_LOOK, MOVE_TOXIC, MOVE_ICE_BEAM}
     }

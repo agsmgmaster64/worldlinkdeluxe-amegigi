@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 if the user takes da
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
             TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_TACKLE); }
@@ -39,7 +39,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by each multi hit")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_BULLET_SEED].effect == EFFECT_MULTI_HIT);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
             TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_BULLET_SEED); }
@@ -62,7 +62,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased by a confusion hit")
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_CONFUSE_RAY); }
         TURN {}
@@ -91,7 +91,7 @@ DOUBLE_BATTLE_TEST("Rage Fist maximum base power is 350")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         for (turns = 1; turns <= 3; turns++) {
@@ -132,7 +132,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased if a substitute was hi
     GIVEN {
         ASSUME(gMovesInfo[MOVE_CRUNCH].category == DAMAGE_CATEGORY_PHYSICAL); // Substitute doesn't fade otherwise
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); }
         TURN { MOVE(player, MOVE_SUBSTITUTE); MOVE(opponent, MOVE_CRUNCH); }
@@ -158,7 +158,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not lost if user switches out")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }
@@ -184,7 +184,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 even if a damaging m
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
             TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_FALSE_SWIPE); }
@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased by 50 even if a damaging m
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(2); }
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_FALSE_SWIPE); }
         TURN { MOVE(player, MOVE_ENDURE); MOVE(opponent, MOVE_TACKLE); }
@@ -232,7 +232,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is not increased if move had no affect"
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_RAN);
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         for (turns = 0; turns < 2; turns++) {
             TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_TACKLE); }
@@ -259,7 +259,7 @@ SINGLE_BATTLE_TEST("Rage Fist base power is increased if Disguise breaks")
 
     GIVEN {
         PLAYER(species) { Ability(ABILITY_DISGUISE); }
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_ROCK_THROW); }
         TURN { MOVE(player, MOVE_RAGE_FIST); }
@@ -280,8 +280,8 @@ SINGLE_BATTLE_TEST("Rage Fist number of hits is copied by Transform")
     s16 timesGotHit[2];
 
     GIVEN {
-        PLAYER(SPECIES_REGIROCK);
-        OPPONENT(SPECIES_REGIROCK) { Moves(MOVE_RAGE_FIST, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_NORMAL_ELLEN);
+        OPPONENT(SPECIES_NORMAL_ELLEN) { Moves(MOVE_RAGE_FIST, MOVE_CELEBRATE); }
     } WHEN {
             TURN { MOVE(player, MOVE_RAGE_FIST); MOVE(opponent, MOVE_CELEBRATE); }
             TURN { MOVE(player, MOVE_TRANSFORM); MOVE(opponent, MOVE_CELEBRATE); }

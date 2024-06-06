@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, Whi
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_BELDUM; ability = ABILITY_HAKUREI_MIKO; }
+    PARAMETRIZE { species = SPECIES_NORMAL_MEIRA; ability = ABILITY_HAKUREI_MIKO; }
     PARAMETRIZE { species = SPECIES_NORMAL_HATATE; ability = ABILITY_MAGIC_BARRIER; }
     PARAMETRIZE { species = SPECIES_SOLGALEO; ability = ABILITY_FULL_METAL_BODY; }
 
@@ -90,7 +90,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, Whi
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SYRUP_BOMB, player);
         HP_BAR(opponent);
-        if (species == SPECIES_BELDUM)
+        if (species == SPECIES_NORMAL_MEIRA)
         {
             MESSAGE("Foe Beldum got covered in sticky syrup!");
             ABILITY_POPUP(opponent, ABILITY_HAKUREI_MIKO);

@@ -245,7 +245,7 @@ SINGLE_BATTLE_TEST("Recoil damage is not applied if target was protected")
         ASSUME(gMovesInfo[MOVE_TAKE_DOWN].recoil > 0);
         ASSUME(gMovesInfo[MOVE_DOUBLE_EDGE].recoil > 0);
         PLAYER(SPECIES_DEFENSE_LAYLA);
-        OPPONENT(SPECIES_BEAUTIFLY);
+        OPPONENT(SPECIES_CHIBI_FUTO);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); MOVE(player, MOVE_TACKLE); }
         TURN { MOVE(opponent, protectMove); MOVE(player, recoilMove); }
@@ -280,7 +280,7 @@ SINGLE_BATTLE_TEST("Multi-hit moves don't hit a protected target and fail only o
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ARM_THRUST].effect == EFFECT_MULTI_HIT);
         PLAYER(SPECIES_DEFENSE_LAYLA);
-        OPPONENT(SPECIES_BEAUTIFLY);
+        OPPONENT(SPECIES_CHIBI_FUTO);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_ARM_THRUST); }
         TURN {}

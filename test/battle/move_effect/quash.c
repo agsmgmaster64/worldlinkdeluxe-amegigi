@@ -11,8 +11,8 @@ DOUBLE_BATTLE_TEST("Quash-affected target will move last in the priority bracket
     GIVEN {
         PLAYER(SPECIES_ATTACK_SUIKA) { Speed(10); Ability(ABILITY_PRANKSTER); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(30); }
-        OPPONENT(SPECIES_TORCHIC) { Speed(20); }
-        OPPONENT(SPECIES_TREECKO) { Speed(40); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Speed(20); }
+        OPPONENT(SPECIES_NORMAL_KYOUKO) { Speed(40); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_QUASH, target: opponentRight); }
     } SCENE {
@@ -30,8 +30,8 @@ DOUBLE_BATTLE_TEST("Quash is not affected by dynamic speed")
         ASSUME(gMovesInfo[MOVE_TAILWIND].effect == EFFECT_TAILWIND);
         PLAYER(SPECIES_ATTACK_SUIKA) { Speed(10); Ability(ABILITY_PRANKSTER); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(30); }
-        OPPONENT(SPECIES_TORCHIC) { Speed(50); }
-        OPPONENT(SPECIES_TREECKO) { Speed(40); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Speed(50); }
+        OPPONENT(SPECIES_NORMAL_KYOUKO) { Speed(40); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_QUASH, target: opponentRight);
                MOVE(opponentLeft, MOVE_TAILWIND);

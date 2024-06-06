@@ -23,7 +23,7 @@ LavaridgeTown_House_EventScript_Zigzagoon::
 # 12 "data/maps/LavaridgeTown_House/scripts.pory"
 	waitse
 # 13 "data/maps/LavaridgeTown_House/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 14 "data/maps/LavaridgeTown_House/scripts.pory"
 	msgbox LavaridgeTown_House_Text_Zigzagoon, MSGBOX_DEFAULT
 # 15 "data/maps/LavaridgeTown_House/scripts.pory"

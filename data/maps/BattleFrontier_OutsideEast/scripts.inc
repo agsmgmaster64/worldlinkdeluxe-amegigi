@@ -147,7 +147,7 @@ BattleFrontier_OutsideEast_EventScript_Zigzagoon::
 # 74 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
 	waitse
 # 75 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 76 "data/maps/BattleFrontier_OutsideEast/scripts.pory"
 	msgbox BattleFrontier_OutsideEast_Text_ZigzagoonLooksVacant, MSGBOX_DEFAULT
 # 77 "data/maps/BattleFrontier_OutsideEast/scripts.pory"

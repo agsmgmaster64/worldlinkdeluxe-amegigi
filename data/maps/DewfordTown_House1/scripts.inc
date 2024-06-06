@@ -31,7 +31,7 @@ DewfordTown_House1_EventScript_Zigzagoon::
 # 16 "data/maps/DewfordTown_House1/scripts.pory"
 	waitse
 # 17 "data/maps/DewfordTown_House1/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 18 "data/maps/DewfordTown_House1/scripts.pory"
 	msgbox DewfordTown_House1_Text_Zigzagoon, MSGBOX_DEFAULT
 # 19 "data/maps/DewfordTown_House1/scripts.pory"

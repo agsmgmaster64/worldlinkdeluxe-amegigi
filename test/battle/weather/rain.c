@@ -54,7 +54,7 @@ SINGLE_BATTLE_TEST("Drizzle fails if Desolate Land is active")
     PARAMETRIZE { item = ITEM_RED_ORB; }
 
     GIVEN {
-        PLAYER(SPECIES_GROUDON) { Item(item); }
+        PLAYER(SPECIES_NORMAL_KANA) { Item(item); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_RAIN_DANCE); }

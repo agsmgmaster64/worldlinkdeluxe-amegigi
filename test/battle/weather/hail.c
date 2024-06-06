@@ -36,8 +36,8 @@ SINGLE_BATTLE_TEST("Hail fails if Desolate Land or Primordial Sea are active")
     u32 item;
 
     PARAMETRIZE { species = SPECIES_CHIBI_YUUGI; item = ITEM_NONE; }
-    PARAMETRIZE { species = SPECIES_GROUDON; item = ITEM_RED_ORB; }
-    PARAMETRIZE { species = SPECIES_KYOGRE; item = ITEM_BLUE_ORB; }
+    PARAMETRIZE { species = SPECIES_NORMAL_KANA; item = ITEM_RED_ORB; }
+    PARAMETRIZE { species = SPECIES_CHIBI_KANA; item = ITEM_BLUE_ORB; }
 
     GIVEN {
         PLAYER(species) { Item(item); }

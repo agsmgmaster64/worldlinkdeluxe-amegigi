@@ -121,13 +121,13 @@ AncientTomb_EventScript_Registeel::
 # 61 "data/maps/AncientTomb/scripts.pory"
 	waitse
 # 62 "data/maps/AncientTomb/scripts.pory"
-	playmoncry SPECIES_REGISTEEL, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_CHIBI_KOTOHIME, CRY_MODE_ENCOUNTER
 # 63 "data/maps/AncientTomb/scripts.pory"
 	delay 40
 # 64 "data/maps/AncientTomb/scripts.pory"
 	waitmoncry
 # 65 "data/maps/AncientTomb/scripts.pory"
-	setwildbattle SPECIES_REGISTEEL, 40
+	setwildbattle SPECIES_CHIBI_KOTOHIME, 40
 # 66 "data/maps/AncientTomb/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 67 "data/maps/AncientTomb/scripts.pory"
@@ -165,7 +165,7 @@ AncientTomb_EventScript_DefeatedRegisteel::
 # 83 "data/maps/AncientTomb/scripts.pory"
 AncientTomb_EventScript_RanFromRegisteel::
 # 84 "data/maps/AncientTomb/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGISTEEL
+	setvar VAR_0x8004, SPECIES_CHIBI_KOTOHIME
 # 85 "data/maps/AncientTomb/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 86 "data/maps/AncientTomb/scripts.pory"

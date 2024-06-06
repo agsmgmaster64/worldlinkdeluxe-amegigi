@@ -444,7 +444,7 @@ SINGLE_BATTLE_TEST("Fling deals damage based on items fling power")
         ASSUME(gMovesInfo[MOVE_CRUNCH].power == 80);
         ASSUME(gItemsInfo[ITEM_VENUSAURITE].flingPower == 80);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_VENUSAURITE); }
-        OPPONENT(SPECIES_REGIROCK);
+        OPPONENT(SPECIES_NORMAL_ELLEN);
     } WHEN {
         TURN { MOVE(player, MOVE_CRUNCH); }
         TURN { MOVE(player, MOVE_FLING); }

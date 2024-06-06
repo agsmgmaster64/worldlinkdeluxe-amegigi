@@ -45,7 +45,7 @@ SINGLE_BATTLE_TEST("Smelling Salts get incread power vs. paralyzed targets")
     PARAMETRIZE { status1 = STATUS1_NONE; }
     GIVEN {
         PLAYER(SPECIES_CROBAT);
-        OPPONENT(SPECIES_LOTAD) { Status1(status1); }
+        OPPONENT(SPECIES_PLACEHOLD_FUTO) { Status1(status1); }
     } WHEN {
         TURN { MOVE(player, MOVE_SMELLING_SALTS); }
     } SCENE {

@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Aerilate turns a normal type move into Flying")
 {
     GIVEN {
         PLAYER(SPECIES_MEGANIUM);
-        OPPONENT(SPECIES_SALAMENCE) { Item(ITEM_SALAMENCITE); }
+        OPPONENT(SPECIES_CHIBI_MEIRA) { Item(ITEM_SALAMENCITE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE, megaEvolve: TRUE); }
     } SCENE {

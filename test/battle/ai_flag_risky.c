@@ -10,10 +10,10 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY: AI will blindly Mirror Coat against specia
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MIRROR_COAT].effect == EFFECT_MIRROR_COAT);
-        ASSUME(gSpeciesInfo[SPECIES_GROVYLE].baseSpAttack == 85);
-        ASSUME(gSpeciesInfo[SPECIES_GROVYLE].baseAttack == 65);
+        ASSUME(gSpeciesInfo[SPECIES_TECH_KYOUKO].baseSpAttack == 85);
+        ASSUME(gSpeciesInfo[SPECIES_TECH_KYOUKO].baseAttack == 65);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | aiRiskyFlag);
-        PLAYER(SPECIES_GROVYLE) { Level(20); Moves(MOVE_ENERGY_BALL); } 
+        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Moves(MOVE_ENERGY_BALL); } 
         OPPONENT(SPECIES_CASTFORM) { Level(20); Moves(MOVE_TACKLE, MOVE_MIRROR_COAT); }
     } WHEN {
             TURN { MOVE(player, MOVE_ENERGY_BALL) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_MIRROR_COAT : MOVE_TACKLE); }
@@ -29,10 +29,10 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY: AI will blindly Counter against physical a
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_COUNTER].effect == EFFECT_COUNTER);
-        ASSUME(gSpeciesInfo[SPECIES_MARSHTOMP].baseAttack == 85);
-        ASSUME(gSpeciesInfo[SPECIES_MARSHTOMP].baseSpAttack == 60);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_SEIGA].baseAttack == 85);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_SEIGA].baseSpAttack == 60);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | aiRiskyFlag);
-        PLAYER(SPECIES_MARSHTOMP) { Level(20); Moves(MOVE_WATERFALL); } 
+        PLAYER(SPECIES_CHIBI_SEIGA) { Level(20); Moves(MOVE_WATERFALL); } 
         OPPONENT(SPECIES_CASTFORM) { Level(20); Moves(MOVE_TACKLE, MOVE_COUNTER); }
     } WHEN {
             TURN { MOVE(player, MOVE_WATERFALL) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_COUNTER : MOVE_TACKLE); }
@@ -49,7 +49,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY: AI will prioritize Revenge if slower")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_REVENGE].effect == EFFECT_REVENGE);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | aiRiskyFlag);
-        PLAYER(SPECIES_GROVYLE) { Level(20); Speed(4); Moves(MOVE_ENERGY_BALL); } 
+        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Speed(4); Moves(MOVE_ENERGY_BALL); } 
         OPPONENT(SPECIES_CASTFORM) { Level(19); Speed(3); Moves(MOVE_TACKLE, MOVE_REVENGE); }
     } WHEN {
             TURN { MOVE(player, MOVE_ENERGY_BALL) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_REVENGE : MOVE_TACKLE); }

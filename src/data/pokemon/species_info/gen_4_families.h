@@ -4,7 +4,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif
 
 #if P_FAMILY_TURTWIG
-    [SPECIES_TURTWIG] =
+    [SPECIES_PLACEHOLD_RIKAKO] =
     {
         .baseHP        = 55,
         .baseAttack    = 68,
@@ -62,10 +62,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sTurtwigLevelUpLearnset,
         .teachableLearnset = sTurtwigTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_GROTLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_CHIBI_CHIYURI}),
     },
 
-    [SPECIES_GROTLE] =
+    [SPECIES_CHIBI_CHIYURI] =
     {
         .baseHP        = 75,
         .baseAttack    = 89,
@@ -124,10 +124,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sGrotleLevelUpLearnset,
         .teachableLearnset = sGrotleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_TORTERRA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_CHIYURI}),
     },
 
-    [SPECIES_TORTERRA] =
+    [SPECIES_NORMAL_CHIYURI] =
     {
         .baseHP        = 95,
         .baseAttack    = 109,
@@ -197,7 +197,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_TURTWIG
 
 #if P_FAMILY_CHIMCHAR
-    [SPECIES_CHIMCHAR] =
+    [SPECIES_PLACEHOLD_CHIYURI] =
     {
         .baseHP        = 44,
         .baseAttack    = 58,
@@ -256,10 +256,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sChimcharLevelUpLearnset,
         .teachableLearnset = sChimcharTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_MONFERNO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_CHIBI_YUMEMI}),
     },
 
-    [SPECIES_MONFERNO] =
+    [SPECIES_CHIBI_YUMEMI] =
     {
         .baseHP        = 64,
         .baseAttack    = 78,
@@ -319,10 +319,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sMonfernoLevelUpLearnset,
         .teachableLearnset = sMonfernoTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_INFERNAPE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_YUMEMI}),
     },
 
-    [SPECIES_INFERNAPE] =
+    [SPECIES_NORMAL_YUMEMI] =
     {
         .baseHP        = 76,
         .baseAttack    = 104,
@@ -392,7 +392,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CHIMCHAR
 
 #if P_FAMILY_PIPLUP
-    [SPECIES_PIPLUP] =
+    [SPECIES_PLACEHOLD_YUMEMI] =
     {
         .baseHP        = 53,
         .baseAttack    = 51,
@@ -454,10 +454,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sPiplupLevelUpLearnset,
         .teachableLearnset = sPiplupTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_PRINPLUP}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_KEDAMA}),
     },
 
-    [SPECIES_PRINPLUP] =
+    [SPECIES_KEDAMA] =
     {
         .baseHP        = 64,
         .baseAttack    = 66,
@@ -519,10 +519,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sPrinplupLevelUpLearnset,
         .teachableLearnset = sPrinplupTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_EMPOLEON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_RUUKOTO}),
     },
 
-    [SPECIES_EMPOLEON] =
+    [SPECIES_RUUKOTO] =
     {
         .baseHP        = 84,
         .baseAttack    = 86,
@@ -594,7 +594,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_PIPLUP
 
 #if P_FAMILY_STARLY
-    [SPECIES_STARLY] =
+    [SPECIES_MIMI_CHAN] =
     {
         .baseHP        = 40,
         .baseAttack    = 55,
@@ -656,10 +656,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStarlyLevelUpLearnset,
         .teachableLearnset = sStarlyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_STARAVIA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_CHIBI_ORANGE}),
     },
 
-    [SPECIES_STARAVIA] =
+    [SPECIES_CHIBI_ORANGE] =
     {
         .baseHP        = 55,
         .baseAttack    = 75,
@@ -721,10 +721,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStaraviaLevelUpLearnset,
         .teachableLearnset = sStaraviaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_STARAPTOR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_ORANGE}),
     },
 
-    [SPECIES_STARAPTOR] =
+    [SPECIES_NORMAL_ORANGE] =
     {
         .baseHP        = 85,
         .baseAttack    = 120,
@@ -796,7 +796,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_STARLY
 
 #if P_FAMILY_BIDOOF
-    [SPECIES_BIDOOF] =
+    [SPECIES_PLACEHOLD_ORANGE] =
     {
         .baseHP        = 59,
         .baseAttack    = 45,
@@ -858,10 +858,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sBidoofLevelUpLearnset,
         .teachableLearnset = sBidoofTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_BIBAREL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_CHIBI_KURUMI}),
     },
 
-    [SPECIES_BIBAREL] =
+    [SPECIES_CHIBI_KURUMI] =
     {
         .baseHP        = 79,
         .baseAttack    = 85,
@@ -925,7 +925,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BIDOOF
 
 #if P_FAMILY_KRICKETOT
-    [SPECIES_KRICKETOT] =
+    [SPECIES_NORMAL_KURUMI] =
     {
         .baseHP        = 37,
         .baseAttack    = 25,
@@ -989,10 +989,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sKricketotLevelUpLearnset,
         .teachableLearnset = sKricketotTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 10, SPECIES_KRICKETUNE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 10, SPECIES_PLACEHOLD_KURUMI}),
     },
 
-    [SPECIES_KRICKETUNE] =
+    [SPECIES_PLACEHOLD_KURUMI] =
     {
         .baseHP        = 77,
         .baseAttack    = 85,
@@ -1059,7 +1059,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_KRICKETOT
 
 #if P_FAMILY_SHINX
-    [SPECIES_SHINX] =
+    [SPECIES_CHIBI_ELLY] =
     {
         .baseHP        = 45,
         .baseAttack    = 65,
@@ -1121,10 +1121,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sShinxLevelUpLearnset,
         .teachableLearnset = sShinxTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_LUXIO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_NORMAL_ELLY}),
     },
 
-    [SPECIES_LUXIO] =
+    [SPECIES_NORMAL_ELLY] =
     {
         .baseHP        = 60,
         .baseAttack    = 85,
@@ -1186,10 +1186,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sLuxioLevelUpLearnset,
         .teachableLearnset = sLuxioTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_LUXRAY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PLACEHOLD_ELLY}),
     },
 
-    [SPECIES_LUXRAY] =
+    [SPECIES_PLACEHOLD_ELLY] =
     {
         .baseHP        = 80,
         .baseAttack    = 120,
@@ -1261,7 +1261,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SHINX
 
 #if P_FAMILY_CRANIDOS
-    [SPECIES_CRANIDOS] =
+    [SPECIES_ATTACK_KAZAMI] =
     {
         .baseHP        = 67,
         .baseAttack    = 125,
@@ -1319,10 +1319,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sCranidosLevelUpLearnset,
         .teachableLearnset = sCranidosTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_RAMPARDOS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_CHIBI_MUGETSU}),
     },
 
-    [SPECIES_RAMPARDOS] =
+    [SPECIES_CHIBI_MUGETSU] =
     {
         .baseHP        = 97,
         .baseAttack    = 165,
@@ -1384,7 +1384,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CRANIDOS
 
 #if P_FAMILY_SHIELDON
-    [SPECIES_SHIELDON] =
+    [SPECIES_NORMAL_MUGETSU] =
     {
         .baseHP        = 30,
         .baseAttack    = 42,
@@ -1442,10 +1442,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sShieldonLevelUpLearnset,
         .teachableLearnset = sShieldonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_BASTIODON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PLACEHOLD_MUGETSU}),
     },
 
-    [SPECIES_BASTIODON] =
+    [SPECIES_PLACEHOLD_MUGETSU] =
     {
         .baseHP        = 60,
         .baseAttack    = 52,
@@ -1507,7 +1507,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SHIELDON
 
 #if P_FAMILY_BURMY
-    [SPECIES_BURMY_PLANT_CLOAK] =
+    [SPECIES_CHIBI_GENGETSU] =
     {
         .baseHP        = 40,
         .baseAttack    = 29,
@@ -1569,8 +1569,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_PLANT_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_PLANT_CLOAK}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_NORMAL_GENGETSU},
+                                {EVO_LEVEL_MALE, 20, SPECIES_PLACEHOLD_GENGETSU}),
     },
 
     [SPECIES_BURMY_SANDY_CLOAK] =
@@ -1705,7 +1705,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
                                 {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_TRASH_CLOAK}),
     },
 
-    [SPECIES_WORMADAM_PLANT_CLOAK] =
+    [SPECIES_NORMAL_GENGETSU] =
     {
         .baseHP        = 60,
         .baseAttack    = 59,
@@ -1955,13 +1955,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .formSpeciesIdTable = sMothimFormSpeciesIdTable,                    \
     }
 
-    [SPECIES_MOTHIM_PLANT_CLOAK] = MOTHIM_SPECIES_INFO,
+    [SPECIES_PLACEHOLD_GENGETSU] = MOTHIM_SPECIES_INFO,
     [SPECIES_MOTHIM_SANDY_CLOAK] = MOTHIM_SPECIES_INFO,
     [SPECIES_MOTHIM_TRASH_CLOAK] = MOTHIM_SPECIES_INFO,
 #endif //P_FAMILY_BURMY
 
 #if P_FAMILY_COMBEE
-    [SPECIES_COMBEE] =
+    [SPECIES_CHIBI_SARA] =
     {
         .baseHP        = 30,
         .baseAttack    = 30,
@@ -2024,10 +2024,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .tmIlliterate = TRUE,
         .levelUpLearnset = sCombeeLevelUpLearnset,
         .teachableLearnset = sCombeeTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 21, SPECIES_VESPIQUEN}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 21, SPECIES_NORMAL_SARA}),
     },
 
-    [SPECIES_VESPIQUEN] =
+    [SPECIES_NORMAL_SARA] =
     {
         .baseHP        = 70,
         .baseAttack    = 80,
@@ -2092,7 +2092,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_COMBEE
 
 #if P_FAMILY_PACHIRISU
-    [SPECIES_PACHIRISU] =
+    [SPECIES_PLACEHOLD_SARA] =
     {
         .baseHP        = 60,
         .baseAttack    = 45,
@@ -2156,7 +2156,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_PACHIRISU
 
 #if P_FAMILY_BUIZEL
-    [SPECIES_BUIZEL] =
+    [SPECIES_CHIBI_LOUISE] =
     {
         .baseHP        = 55,
         .baseAttack    = 65,
@@ -2216,10 +2216,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sBuizelLevelUpLearnset,
         .teachableLearnset = sBuizelTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_FLOATZEL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_NORMAL_LOUISE}),
     },
 
-    [SPECIES_FLOATZEL] =
+    [SPECIES_NORMAL_LOUISE] =
     {
         .baseHP        = 85,
         .baseAttack    = 105,
@@ -2283,7 +2283,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BUIZEL
 
 #if P_FAMILY_CHERUBI
-    [SPECIES_CHERUBI] =
+    [SPECIES_PLACEHOLD_LOUISE] =
     {
         .baseHP        = 45,
         .baseAttack    = 35,

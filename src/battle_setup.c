@@ -663,7 +663,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_RAYQUAZA_MEGA:
         CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
         break;
-    case SPECIES_DEOXYS_NORMAL:
+    case SPECIES_NORMAL_RIKAKO:
     case SPECIES_DEOXYS_ATTACK:
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
@@ -713,13 +713,13 @@ void StartRegiBattle(void)
     species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
     switch (species)
     {
-    case SPECIES_REGIROCK:
+    case SPECIES_NORMAL_ELLEN:
         transitionId = B_TRANSITION_REGIROCK;
         break;
-    case SPECIES_REGICE:
+    case SPECIES_PLACEHOLD_ELLEN:
         transitionId = B_TRANSITION_REGICE;
         break;
-    case SPECIES_REGISTEEL:
+    case SPECIES_CHIBI_KOTOHIME:
         transitionId = B_TRANSITION_REGISTEEL;
         break;
     default:

@@ -158,8 +158,8 @@ DOUBLE_BATTLE_TEST("Forecast transforms all Castforms present in weather")
 SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an ability")
 {
     u32 species, ability;
-    PARAMETRIZE { species = SPECIES_KYOGRE; ability = ABILITY_DRIZZLE; }
-    PARAMETRIZE { species = SPECIES_GROUDON; ability = ABILITY_DROUGHT; }
+    PARAMETRIZE { species = SPECIES_CHIBI_KANA; ability = ABILITY_DRIZZLE; }
+    PARAMETRIZE { species = SPECIES_NORMAL_KANA; ability = ABILITY_DROUGHT; }
     PARAMETRIZE { species = SPECIES_ABOMASNOW; ability = ABILITY_SNOW_WARNING; }
     GIVEN {
         PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
@@ -190,8 +190,8 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an ability")
 SINGLE_BATTLE_TEST("Forecast transforms Castform in primal weather")
 {
     u32 species, item, ability;
-    PARAMETRIZE { species = SPECIES_KYOGRE; ability = ABILITY_PRIMORDIAL_SEA; item = ITEM_BLUE_ORB; }
-    PARAMETRIZE { species = SPECIES_GROUDON; ability = ABILITY_DESOLATE_LAND; item = ITEM_RED_ORB; }
+    PARAMETRIZE { species = SPECIES_CHIBI_KANA; ability = ABILITY_PRIMORDIAL_SEA; item = ITEM_BLUE_ORB; }
+    PARAMETRIZE { species = SPECIES_NORMAL_KANA; ability = ABILITY_DESOLATE_LAND; item = ITEM_RED_ORB; }
     GIVEN {
         PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
@@ -269,7 +269,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal under Air Lock")
     GIVEN {
         PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_RAYQUAZA);
+        OPPONENT(SPECIES_PLACEHOLD_KANA);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
         TURN { SWITCH(opponent, 1); }

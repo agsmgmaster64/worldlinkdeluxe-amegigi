@@ -113,7 +113,7 @@ FortreeCity_House1_EventScript_Zigzagoon::
 # 57 "data/maps/FortreeCity_House1/scripts.pory"
 	waitse
 # 58 "data/maps/FortreeCity_House1/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 59 "data/maps/FortreeCity_House1/scripts.pory"
 	msgbox FortreeCity_House1_Text_Zigzagoon, MSGBOX_DEFAULT
 # 60 "data/maps/FortreeCity_House1/scripts.pory"

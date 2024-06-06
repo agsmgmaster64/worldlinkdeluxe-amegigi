@@ -121,13 +121,13 @@ DesertRuins_EventScript_Regirock::
 # 61 "data/maps/DesertRuins/scripts.pory"
 	waitse
 # 62 "data/maps/DesertRuins/scripts.pory"
-	playmoncry SPECIES_REGIROCK, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_NORMAL_ELLEN, CRY_MODE_ENCOUNTER
 # 63 "data/maps/DesertRuins/scripts.pory"
 	delay 40
 # 64 "data/maps/DesertRuins/scripts.pory"
 	waitmoncry
 # 65 "data/maps/DesertRuins/scripts.pory"
-	setwildbattle SPECIES_REGIROCK, 40
+	setwildbattle SPECIES_NORMAL_ELLEN, 40
 # 66 "data/maps/DesertRuins/scripts.pory"
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 # 67 "data/maps/DesertRuins/scripts.pory"
@@ -165,7 +165,7 @@ DesertRuins_EventScript_DefeatedRegirock::
 # 83 "data/maps/DesertRuins/scripts.pory"
 DesertRuins_EventScript_RanFromRegirock::
 # 84 "data/maps/DesertRuins/scripts.pory"
-	setvar VAR_0x8004, SPECIES_REGIROCK
+	setvar VAR_0x8004, SPECIES_NORMAL_ELLEN
 # 85 "data/maps/DesertRuins/scripts.pory"
 	goto Common_EventScript_LegendaryFlewAway
 # 86 "data/maps/DesertRuins/scripts.pory"

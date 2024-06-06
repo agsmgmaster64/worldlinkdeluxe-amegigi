@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Corrosion can poison or badly poison a Pokemon regardless of
     u16 species;
 
     PARAMETRIZE { species = SPECIES_ATTACK_FLANDRE; }
-    PARAMETRIZE { species = SPECIES_BELDUM; }
+    PARAMETRIZE { species = SPECIES_NORMAL_MEIRA; }
 
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_TWINEEDLE, MOVE_EFFECT_POISON) == TRUE);
@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Corrosion can poison or badly poison a Steel type with a sta
         ASSUME(gMovesInfo[MOVE_POISON_POWDER].effect == EFFECT_POISON);
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
         PLAYER(SPECIES_SALANDIT) { Ability(ABILITY_CORROSION); }
-        OPPONENT(SPECIES_BELDUM);
+        OPPONENT(SPECIES_NORMAL_MEIRA);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Corrosion does not effect poison type damaging moves if the 
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_SLUDGE_BOMB, MOVE_EFFECT_POISON) == TRUE);
         PLAYER(SPECIES_SALANDIT) { Ability(ABILITY_CORROSION); }
-        OPPONENT(SPECIES_BELDUM);
+        OPPONENT(SPECIES_NORMAL_MEIRA);
     } WHEN {
         TURN { MOVE(player, MOVE_POISON_BOMB); }
     } SCENE {

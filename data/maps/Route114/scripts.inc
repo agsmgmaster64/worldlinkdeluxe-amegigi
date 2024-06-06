@@ -127,7 +127,7 @@ Route114_EventScript_Poochyena::
 # 64 "data/maps/Route114/scripts.pory"
 	waitse
 # 65 "data/maps/Route114/scripts.pory"
-	playmoncry SPECIES_POOCHYENA, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_SPEED_SEIGA, CRY_MODE_ENCOUNTER
 # 66 "data/maps/Route114/scripts.pory"
 	msgbox Route114_Text_Poochyena, MSGBOX_DEFAULT
 # 67 "data/maps/Route114/scripts.pory"

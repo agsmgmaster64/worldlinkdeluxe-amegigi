@@ -657,7 +657,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack::
 # 329 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 330 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_TOKIKO, CRY_MODE_NORMAL
 # 331 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 332 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -681,7 +681,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack::
 # 341 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 342 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_TOKIKO, CRY_MODE_NORMAL
 # 343 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 344 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -689,7 +689,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack::
 # 345 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 346 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_DUSCLOPS, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_TOKIKO, CRY_MODE_NORMAL
 # 347 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 348 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"

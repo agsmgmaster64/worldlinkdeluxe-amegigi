@@ -51,7 +51,7 @@ SouthernIsland_Interior_EventScript_SetUpLatios::
 # 26 "data/maps/SouthernIsland_Interior/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIOS
 # 27 "data/maps/SouthernIsland_Interior/scripts.pory"
-	setvar VAR_TEMP_4, SPECIES_LATIOS
+	setvar VAR_TEMP_4, SPECIES_PLACEHOLD_KOTOHIME
 # 28 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 29 "data/maps/SouthernIsland_Interior/scripts.pory"
@@ -61,7 +61,7 @@ SouthernIsland_Interior_EventScript_SetUpLatias::
 # 31 "data/maps/SouthernIsland_Interior/scripts.pory"
 	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIAS
 # 32 "data/maps/SouthernIsland_Interior/scripts.pory"
-	setvar VAR_TEMP_4, SPECIES_LATIAS
+	setvar VAR_TEMP_4, SPECIES_NORMAL_KOTOHIME
 # 33 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 34 "data/maps/SouthernIsland_Interior/scripts.pory"
@@ -215,7 +215,7 @@ SouthernIsland_Interior_EventScript_Sign::
 # 108 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
 # 109 "data/maps/SouthernIsland_Interior/scripts.pory"
-	seteventmon SPECIES_LATIOS, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_PLACEHOLD_KOTOHIME, 50, ITEM_SOUL_DEW
 # 110 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 111 "data/maps/SouthernIsland_Interior/scripts.pory"
@@ -223,7 +223,7 @@ SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
 # 112 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars::
 # 113 "data/maps/SouthernIsland_Interior/scripts.pory"
-	seteventmon SPECIES_LATIAS, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_NORMAL_KOTOHIME, 50, ITEM_SOUL_DEW
 # 114 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 115 "data/maps/SouthernIsland_Interior/scripts.pory"

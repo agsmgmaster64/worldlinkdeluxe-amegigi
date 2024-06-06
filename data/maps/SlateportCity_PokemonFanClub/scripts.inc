@@ -477,7 +477,7 @@ SlateportCity_PokemonFanClub_EventScript_Zigzagoon::
 # 239 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	waitse
 # 240 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_NORMAL
+	playmoncry SPECIES_CHIBI_TOJIKO, CRY_MODE_NORMAL
 # 241 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_Zigzagoon, MSGBOX_DEFAULT
 # 242 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"

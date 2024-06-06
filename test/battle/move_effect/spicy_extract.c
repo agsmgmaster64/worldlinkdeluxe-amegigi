@@ -35,7 +35,7 @@ SINGLE_BATTLE_TEST("Spicy Extract is prevented by target's ability if it's Attac
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_BELDUM) { Ability(ability); }
+        OPPONENT(SPECIES_NORMAL_MEIRA) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); }
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); }

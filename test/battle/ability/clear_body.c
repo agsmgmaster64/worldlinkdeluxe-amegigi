@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Clear Body prevents intimidate")
     GIVEN {
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_MAINTENANCE); };
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_BELDUM) { Ability(ABILITY_HAKUREI_MIKO); };
+        OPPONENT(SPECIES_NORMAL_MEIRA) { Ability(ABILITY_HAKUREI_MIKO); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }

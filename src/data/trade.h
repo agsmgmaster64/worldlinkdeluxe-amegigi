@@ -1033,7 +1033,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .language = LANGUAGE_ENGLISH,
         .metLocation = METLOC_IN_GAME_TRADE,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_NORMAL_RIKA
     },
     [INGAME_TRADE_MEOWTH] =
     {

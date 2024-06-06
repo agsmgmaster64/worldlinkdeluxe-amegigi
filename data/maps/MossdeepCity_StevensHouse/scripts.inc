@@ -175,9 +175,9 @@ MossdeepCity_StevensHouse_EventScript_LeaveBeldum::
 # 88 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_EventScript_GiveBeldum::
 # 89 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELDUM
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_NORMAL_MEIRA
 # 90 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	givemon SPECIES_BELDUM, 5
+	givemon SPECIES_NORMAL_MEIRA, 5
 # 91 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_StevensHouse_EventScript_SendBeldumParty
 # 92 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -235,7 +235,7 @@ MossdeepCity_StevensHouse_EventScript_BeldumTransferredToPC::
 # 118 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 # 119 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_BELDUM
+	bufferspeciesname STR_VAR_2, SPECIES_NORMAL_MEIRA
 # 120 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	removeobject LOCALID_BELDUM_BALL
 # 121 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -247,7 +247,7 @@ MossdeepCity_StevensHouse_EventScript_ReceivedBeldumFanfare::
 # 124 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	waitfanfare
 # 125 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_BELDUM
+	bufferspeciesname STR_VAR_1, SPECIES_NORMAL_MEIRA
 # 126 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	return
 # 127 "data/maps/MossdeepCity_StevensHouse/scripts.pory"

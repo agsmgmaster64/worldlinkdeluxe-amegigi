@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Mycelium Might ignores opposing abilities")
 {
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_MYCELIUM_MIGHT); }
-        OPPONENT(SPECIES_BELDUM) { Speed(1); Ability(ABILITY_HAKUREI_MIKO);}
+        OPPONENT(SPECIES_NORMAL_MEIRA) { Speed(1); Ability(ABILITY_HAKUREI_MIKO);}
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_SCREECH); }
     } SCENE {

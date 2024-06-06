@@ -2084,7 +2084,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_FAMILY_LARVITAR
 
 #if P_FAMILY_CELEBI
-    [SPECIES_CELEBI] =
+    [SPECIES_CHIBI_KYOUKO] =
     {
         .baseHP        = 100,
         .baseAttack    = 100,

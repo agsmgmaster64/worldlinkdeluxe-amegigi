@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Trace copies opponents ability")
 {
     GIVEN {
         PLAYER(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
-        OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ABILITY_BLAZE); }
     } WHEN {
         TURN { }
     } SCENE {
@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Trace copies opponents ability on switch-in")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI)
         PLAYER(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
-        OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ABILITY_BLAZE); }
     } WHEN {
         TURN { SWITCH(player, 1); }
     } SCENE {
@@ -33,8 +33,8 @@ SINGLE_BATTLE_TEST("Trace copies opponents ability on switch-in even if opponent
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI)
         PLAYER(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
-        OPPONENT(SPECIES_TREECKO) { HP(1); }
-        OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
+        OPPONENT(SPECIES_NORMAL_KYOUKO) { HP(1); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ABILITY_BLAZE); }
     } WHEN {
         TURN { MOVE(player, MOVE_MISTY_EXPLOSION); SEND_OUT(opponent, 1); SEND_OUT(player, 1); }
     } SCENE {
@@ -55,8 +55,8 @@ DOUBLE_BATTLE_TEST("Trace copies opponents ability randomly")
     GIVEN {
         PLAYER(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_TORCHIC) { Ability(ability1); }
-        OPPONENT(SPECIES_TORCHIC) { Ability(ability2); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ability1); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ability2); }
     } WHEN {
         TURN { }
     } SCENE {
@@ -70,7 +70,7 @@ SINGLE_BATTLE_TEST("Trace will copy an opponent's ability whenever it has the ch
     GIVEN {
         PLAYER(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
         OPPONENT(SPECIES_CHERRIM_OVERCAST) { Ability(ABILITY_FLOWER_GIFT); }
-        OPPONENT(SPECIES_TORCHIC) { Ability(ABILITY_BLAZE); }
+        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Ability(ABILITY_BLAZE); }
     } WHEN {
         TURN { SWITCH(opponent, 1); }
     } SCENE {

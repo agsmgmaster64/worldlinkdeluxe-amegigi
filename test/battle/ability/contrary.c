@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a single battle",
     PARAMETRIZE { ability = ABILITY_CONTRARY; }
     PARAMETRIZE { ability = ABILITY_TANGLED_FEET; }
     GIVEN {
-        PLAYER(SPECIES_MIGHTYENA) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_PLACEHOLD_SEIGA) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -40,7 +40,7 @@ DOUBLE_BATTLE_TEST("Contrary raises Attack when Intimidated in a double battle",
     PARAMETRIZE { abilityLeft = ABILITY_TANGLED_FEET; abilityRight = ABILITY_CONTRARY; }
 
     GIVEN {
-        PLAYER(SPECIES_MIGHTYENA) { Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_PLACEHOLD_SEIGA) { Ability(ABILITY_INTIMIDATE); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityLeft); }
         OPPONENT(SPECIES_CHIBI_SUNNY) { Ability(abilityRight); }
