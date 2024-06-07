@@ -1336,24 +1336,24 @@ static u16 DexNavGenerateHeldItem(u16 species, u8 searchLevel)
 {
     u16 randVal = Random() % 100;
     u8 searchLevelInfluence = searchLevel >> 1;
-    u16 item1 = gSpeciesInfo[species].itemCommon;
-    u16 item2 = gSpeciesInfo[species].itemRare;
+    u16 itemCommon = gSpeciesInfo[species].itemCommon;
+    u16 itemRare = gSpeciesInfo[species].itemRare;
     
     // if both are the same, 100% to hold
-    if (item1 == item2)
-        return item1;
+    if (itemCommon == itemRare)
+        return itemCommon;
 
     // if no items can be held, then yeah...no items
-    if (item2 == ITEM_NONE && item1 == ITEM_NONE)
+    if (itemCommon == ITEM_NONE && itemRare == ITEM_NONE)
         return ITEM_NONE;
 
     // if only one entry, 50% chance
-    if (item2 == ITEM_NONE && item1 != ITEM_NONE)
-        return (randVal < 50) ? item1 : ITEM_NONE;
+    if (itemRare == ITEM_NONE && itemCommon != ITEM_NONE)
+        return (randVal < 50) ? itemCommon : ITEM_NONE;
 
-    // if both are distinct item1 = 50% + srclvl/2; item2 = 5% + srchlvl/2
+    // if both are distinct itemCommon = 50% + srclvl/2; itemRare = 5% + srchlvl/2
     if (randVal < (50 + searchLevelInfluence + 5 + searchLevel))
-        return (randVal > 5 + searchLevelInfluence) ? item1 : item2;
+        return (randVal > 5 + searchLevelInfluence) ? itemCommon : itemRare;
     else
         return ITEM_NONE;
 

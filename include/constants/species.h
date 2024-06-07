@@ -344,18 +344,18 @@
 #define SPECIES_NORMAL_KOKORO                           340
 #define SPECIES_ATTACK_KOKORO                           341
 #define SPECIES_TECH_KOKORO                             342
-#define SPECIES_CHIBI_YORIHIME                          343 //
-#define SPECIES_NORMAL_YORIHIME                         344
-#define SPECIES_SPEED_YORIHIME                          345
-#define SPECIES_PLACEHOLD_YORIHIME                      346 // Placeholder
-#define SPECIES_CHIBI_TOYOHIME                          347
-#define SPECIES_NORMAL_TOYOHIME                         348
-#define SPECIES_TECH_TOYOHIME                           349
-#define SPECIES_PLACEHOLD_TOYOHIME                      350 // Placeholder
-#define SPECIES_CHIBI_KASEN                             351 // Kasen
-#define SPECIES_NORMAL_KASEN                            352
-#define SPECIES_ATTACK_KASEN                            353
-#define SPECIES_PLACEHOLD_KASEN                         354 // Placeholder
+#define SPECIES_CHIBI_KASEN                             343
+#define SPECIES_NORMAL_KASEN                            344
+#define SPECIES_ATTACK_KASEN                            345
+#define SPECIES_PLACEHOLD_KASEN                         346 // Placeholder
+#define SPECIES_CHIBI_YORIHIME                          347
+#define SPECIES_NORMAL_YORIHIME                         348
+#define SPECIES_SPEED_YORIHIME                          349
+#define SPECIES_PLACEHOLD_YORIHIME                      350 // Placeholder
+#define SPECIES_CHIBI_TOYOHIME                          351
+#define SPECIES_NORMAL_TOYOHIME                         352
+#define SPECIES_TECH_TOYOHIME                           353
+#define SPECIES_PLACEHOLD_TOYOHIME                      354 // Placeholder
 #define SPECIES_CHIBI_TOKIKO                            355
 #define SPECIES_NORMAL_TOKIKO                           356
 #define SPECIES_ATTACK_TOKIKO                           357
