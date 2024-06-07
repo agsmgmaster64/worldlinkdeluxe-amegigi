@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Sandstorm multiplies the special defense of Rock-types by 1.
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_CHIBI_YUUGI) ;
-        OPPONENT(SPECIES_NOSEPASS);
+        OPPONENT(SPECIES_CHIBI_RAIKO);
     } WHEN {
         TURN { MOVE(opponent, move); }
         TURN { MOVE(player, MOVE_SWIFT); }
@@ -40,11 +40,11 @@ SINGLE_BATTLE_TEST("Sandstorm damage does not hurt Ground, Rock, and Steel-type 
 {
     u32 mon;
     PARAMETRIZE { mon = SPECIES_PLCEHOLDER1_KOAKUMA; }
-    PARAMETRIZE { mon = SPECIES_NOSEPASS; }
+    PARAMETRIZE { mon = SPECIES_CHIBI_RAIKO; }
     PARAMETRIZE { mon = SPECIES_CHIBI_KOTOHIME; }
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_PLCEHOLDER1_KOAKUMA].types[0] == TYPE_EARTH);
-        ASSUME(gSpeciesInfo[SPECIES_NOSEPASS].types[0] == TYPE_BEAST);
+        ASSUME(gSpeciesInfo[SPECIES_CHIBI_RAIKO].types[0] == TYPE_BEAST);
         ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOTOHIME].types[0] == TYPE_STEEL);
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(mon);
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Sandstorm damage does not hurt Ground, Rock, and Steel-type 
         case SPECIES_PLCEHOLDER1_KOAKUMA:
             NOT MESSAGE("Foe Sandslash is buffeted by the sandstorm!");
             break;
-        case SPECIES_NOSEPASS:
+        case SPECIES_CHIBI_RAIKO:
             NOT MESSAGE("Foe Nosepass is buffeted by the sandstorm!");
             break;
         case SPECIES_CHIBI_KOTOHIME:

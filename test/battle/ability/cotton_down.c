@@ -42,7 +42,7 @@ DOUBLE_BATTLE_TEST("Cotton Down drops speed by one of all other battlers on the 
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_ELDEGOSS) { Ability(ABILITY_COTTON_DOWN); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

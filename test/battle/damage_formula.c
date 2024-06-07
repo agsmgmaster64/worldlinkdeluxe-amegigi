@@ -102,7 +102,7 @@ SINGLE_BATTLE_TEST("Damage calculation matches Gen5+ (Marshadow vs Mawile)")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SPECTRAL_THIEF].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_MARSHADOW) { Level(100); Attack(286); }
-        OPPONENT(SPECIES_MAWILE) { Level(100); Defense(226); HP(241); }
+        OPPONENT(SPECIES_CHIBI_SEIJA) { Level(100); Defense(226); HP(241); }
     } WHEN {
         TURN {
             MOVE(player, MOVE_SPECTRAL_THIEF, WITH_RNG(RNG_DAMAGE_MODIFIER, i), criticalHit: FALSE);

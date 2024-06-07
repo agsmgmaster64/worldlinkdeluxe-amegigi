@@ -767,7 +767,7 @@ static const u16 sLinooneFormSpeciesIdTable[] = {
 
 #if P_FAMILY_RALTS
 static const u16 sGardevoirFormSpeciesIdTable[] = {
-    SPECIES_GARDEVOIR,
+    SPECIES_PLACEHOLD_SEKIBANKI,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GARDEVOIR_MEGA,
 #endif
@@ -787,7 +787,7 @@ static const u16 sGalladeFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SABLEYE
 static const u16 sSableyeFormSpeciesIdTable[] = {
-    SPECIES_SABLEYE,
+    SPECIES_PLACEHOLD_RAIKO,
 #if P_MEGA_EVOLUTIONS
     SPECIES_SABLEYE_MEGA,
 #endif
@@ -797,7 +797,7 @@ static const u16 sSableyeFormSpeciesIdTable[] = {
 
 #if P_FAMILY_MAWILE
 static const u16 sMawileFormSpeciesIdTable[] = {
-    SPECIES_MAWILE,
+    SPECIES_CHIBI_SEIJA,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MAWILE_MEGA,
 #endif
@@ -807,7 +807,7 @@ static const u16 sMawileFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ARON
 static const u16 sAggronFormSpeciesIdTable[] = {
-    SPECIES_AGGRON,
+    SPECIES_PLACEHOLD_SEIJA,
 #if P_MEGA_EVOLUTIONS
     SPECIES_AGGRON_MEGA,
 #endif
@@ -817,7 +817,7 @@ static const u16 sAggronFormSpeciesIdTable[] = {
 
 #if P_FAMILY_MEDITITE
 static const u16 sMedichamFormSpeciesIdTable[] = {
-    SPECIES_MEDICHAM,
+    SPECIES_NORMAL_SHINYOUMARU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MEDICHAM_MEGA,
 #endif
@@ -827,7 +827,7 @@ static const u16 sMedichamFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ELECTRIKE
 static const u16 sManectricFormSpeciesIdTable[] = {
-    SPECIES_MANECTRIC,
+    SPECIES_DEFENSE_SHINYOUMARU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MANECTRIC_MEGA,
 #endif
@@ -867,7 +867,7 @@ static const u16 sAltariaFormSpeciesIdTable[] = {
 
 #if P_FAMILY_CASTFORM
 static const u16 sCastformFormSpeciesIdTable[] = {
-    SPECIES_CASTFORM_NORMAL,
+    SPECIES_CHIBI_KASEN,
     SPECIES_CASTFORM_SUNNY,
     SPECIES_CASTFORM_RAINY,
     SPECIES_CASTFORM_SNOWY,
@@ -877,7 +877,7 @@ static const u16 sCastformFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SHUPPET
 static const u16 sBanetteFormSpeciesIdTable[] = {
-    SPECIES_BANETTE,
+    SPECIES_PLACEHOLD_KASEN,
 #if P_MEGA_EVOLUTIONS
     SPECIES_BANETTE_MEGA,
 #endif
@@ -887,7 +887,7 @@ static const u16 sBanetteFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ABSOL
 static const u16 sAbsolFormSpeciesIdTable[] = {
-    SPECIES_ABSOL,
+    SPECIES_CHIBI_KOSUZU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_ABSOL_MEGA,
 #endif
@@ -897,7 +897,7 @@ static const u16 sAbsolFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SNORUNT
 static const u16 sGlalieFormSpeciesIdTable[] = {
-    SPECIES_GLALIE,
+    SPECIES_PLACEHOLD2_KOSUZU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GLALIE_MEGA,
 #endif
@@ -1004,7 +1004,7 @@ static const u16 sMothimFormSpeciesIdTable[] = {
 
 #if P_FAMILY_CHERUBI
 static const u16 sCherrimFormSpeciesIdTable[] = {
-    SPECIES_CHERRIM_OVERCAST,
+    SPECIES_CHIBI_MARGATROID,
     SPECIES_CHERRIM_SUNSHINE,
     FORM_SPECIES_END,
 };
@@ -1012,13 +1012,13 @@ static const u16 sCherrimFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SHELLOS
 static const u16 sShellosFormSpeciesIdTable[] = {
-    SPECIES_SHELLOS_WEST_SEA,
+    SPECIES_NORMAL_MARGATROID,
     SPECIES_SHELLOS_EAST_SEA,
     FORM_SPECIES_END,
 };
 
 static const u16 sGastrodonFormSpeciesIdTable[] = {
-    SPECIES_GASTRODON_WEST_SEA,
+    SPECIES_PLACEHOLD_MARGATROID,
     SPECIES_GASTRODON_EAST_SEA,
     FORM_SPECIES_END,
 };
@@ -1026,7 +1026,7 @@ static const u16 sGastrodonFormSpeciesIdTable[] = {
 
 #if P_FAMILY_BUNEARY
 static const u16 sLopunnyFormSpeciesIdTable[] = {
-    SPECIES_LOPUNNY,
+    SPECIES_NORMAL_MAI,
 #if P_MEGA_EVOLUTIONS
     SPECIES_LOPUNNY_MEGA,
 #endif

@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Psychic Terrain protects grounded battlers from priority moves")
 {
     GIVEN {
-        PLAYER(SPECIES_CLAYDOL) { Ability(ABILITY_LEVITATE); }
+        PLAYER(SPECIES_NORMAL_YORIHIME) { Ability(ABILITY_LEVITATE); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -63,7 +63,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain increases power of Psychic-type moves by 30/
 SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target the user")
 {
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); HP(1); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); HP(1); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -78,7 +78,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target the
 SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all battlers")
 {
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -92,7 +92,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all opponents")
 {
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }
@@ -106,7 +106,7 @@ SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 DOUBLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target allies")
 {
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); }
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
@@ -122,7 +122,7 @@ DOUBLE_BATTLE_TEST("Psychic Terrain doesn't block priority moves that target all
 SINGLE_BATTLE_TEST("Psychic Terrain doesn't block priority field moves")
 {
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_PSYCHIC_TERRAIN); }

@@ -121,7 +121,7 @@ SINGLE_BATTLE_TEST("Full Heal heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_FULL_HEAL].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_FULL_HEAL, partyIndex: 0); }
     } SCENE {
@@ -143,7 +143,7 @@ SINGLE_BATTLE_TEST("Heal Powder heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_HEAL_POWDER].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_HEAL_POWDER, partyIndex: 0); }
     } SCENE {
@@ -165,7 +165,7 @@ SINGLE_BATTLE_TEST("Pewter Crunchies heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_GEYSER_WATER].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_GEYSER_WATER, partyIndex: 0); }
     } SCENE {
@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Lava Cookies heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LAVA_COOKIE].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_LAVA_COOKIE, partyIndex: 0); }
     } SCENE {
@@ -209,7 +209,7 @@ SINGLE_BATTLE_TEST("Rage Candy Bar heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_BEER_BOTTLE].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_BEER_BOTTLE, partyIndex: 0); }
     } SCENE {
@@ -231,7 +231,7 @@ SINGLE_BATTLE_TEST("Old Gateu heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_UNAGI_LUNCH].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_UNAGI_LUNCH, partyIndex: 0); }
     } SCENE {
@@ -253,7 +253,7 @@ SINGLE_BATTLE_TEST("Casteliacone heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_SAKE_GOURD].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_SAKE_GOURD, partyIndex: 0); }
     } SCENE {
@@ -275,7 +275,7 @@ SINGLE_BATTLE_TEST("Lumiose Galette heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LUMIOSE_GALETTE].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_LUMIOSE_GALETTE, partyIndex: 0); }
     } SCENE {
@@ -297,7 +297,7 @@ SINGLE_BATTLE_TEST("Shalour Sable heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_HEAVEN_PEACH].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_HEAVEN_PEACH, partyIndex: 0); }
     } SCENE {
@@ -319,7 +319,7 @@ SINGLE_BATTLE_TEST("Big Malasada heals a battler from any primary status")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_BIG_MALASADA].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_BIG_MALASADA, partyIndex: 0); }
     } SCENE {

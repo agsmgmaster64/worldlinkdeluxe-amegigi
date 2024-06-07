@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an opponent's m
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, move); }
@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from its own move")
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, move); }
@@ -75,7 +75,7 @@ DOUBLE_BATTLE_TEST("Forecast transforms Castform in weather from a partner's mov
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
@@ -110,10 +110,10 @@ DOUBLE_BATTLE_TEST("Forecast transforms all Castforms present in weather")
     PARAMETRIZE { move = MOVE_HAIL; }
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
-        OPPONENT(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
-        OPPONENT(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
+        OPPONENT(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
+        OPPONENT(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
     } WHEN {
         TURN { MOVE(playerRight, move); }
     } SCENE {
@@ -162,7 +162,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an ability")
     PARAMETRIZE { species = SPECIES_NORMAL_KANA; ability = ABILITY_DROUGHT; }
     PARAMETRIZE { species = SPECIES_ABOMASNOW; ability = ABILITY_SNOW_WARNING; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
@@ -193,7 +193,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in primal weather")
     PARAMETRIZE { species = SPECIES_CHIBI_KANA; ability = ABILITY_PRIMORDIAL_SEA; item = ITEM_BLUE_ORB; }
     PARAMETRIZE { species = SPECIES_NORMAL_KANA; ability = ABILITY_DESOLATE_LAND; item = ITEM_RED_ORB; }
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Item(item); }
     } WHEN {
@@ -219,7 +219,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in primal weather")
 SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when weather expires")
 {
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
@@ -238,14 +238,14 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when weather exp
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(player->species, SPECIES_CHIBI_KASEN);
     }
 }
 
 SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when Sandstorm is active")
 {
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
@@ -260,14 +260,14 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when Sandstorm i
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(player->species, SPECIES_CHIBI_KASEN);
     }
 }
 
 SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal under Air Lock")
 {
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_PLACEHOLD_KANA);
     } WHEN {
@@ -284,7 +284,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal under Air Lock")
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(player->species, SPECIES_CHIBI_KASEN);
     }
 }
 
@@ -292,7 +292,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform on switch-in")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
@@ -312,7 +312,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform on switch-in")
 SINGLE_BATTLE_TEST("Forecast transforms Castform when weather changes")
 {
     GIVEN {
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
@@ -335,7 +335,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when its ability
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUNNY_DAY); }
@@ -349,7 +349,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back to normal when its ability
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_FORM_CHANGE, player);
         MESSAGE("Castform transformed!");
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(player->species, SPECIES_CHIBI_KASEN);
     }
 }
 
@@ -357,7 +357,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it switches out")
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -370,7 +370,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it switches out")
         MESSAGE("Castform transformed!");
         SWITCH_OUT_MESSAGE("Castform");
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_KASEN);
     }
 }
 
@@ -378,7 +378,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it uses a move that f
 {
     GIVEN {
         ASSUME(B_WEATHER_FORMS >= GEN_5);
-        PLAYER(SPECIES_CASTFORM_NORMAL) { Ability(ABILITY_FORECAST); }
+        PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -391,6 +391,6 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform back when it uses a move that f
         MESSAGE("Castform transformed!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_U_TURN, player);
     } THEN {
-        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CASTFORM_NORMAL);
+        EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_KASEN);
     }
 }

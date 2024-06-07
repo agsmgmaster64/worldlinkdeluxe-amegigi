@@ -71,7 +71,7 @@ BattleFrontier_PokemonCenter_1F_EventScript_Skitty::
 # 36 "data/maps/BattleFrontier_PokemonCenter_1F/scripts.pory"
 	waitse
 # 37 "data/maps/BattleFrontier_PokemonCenter_1F/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_RAIKO, CRY_MODE_NORMAL
 # 38 "data/maps/BattleFrontier_PokemonCenter_1F/scripts.pory"
 	msgbox BattleFrontier_PokemonCenter_1F_Text_Skitty, MSGBOX_DEFAULT
 # 39 "data/maps/BattleFrontier_PokemonCenter_1F/scripts.pory"

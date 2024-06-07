@@ -41,9 +41,9 @@ DOUBLE_BATTLE_TEST("Tailwind affects partner on first turn")
     GIVEN {
         ASSUME(B_RECALC_TURN_AFTER_ACTIONS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(20); }
-        PLAYER(SPECIES_WYNAUT) { Speed(10); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(10); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(15); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(14); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(14); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TAILWIND); }
     } SCENE {

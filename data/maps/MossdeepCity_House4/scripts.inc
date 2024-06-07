@@ -71,7 +71,7 @@ MossdeepCity_House4_EventScript_Skitty::
 # 36 "data/maps/MossdeepCity_House4/scripts.pory"
 	waitse
 # 37 "data/maps/MossdeepCity_House4/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_RAIKO, CRY_MODE_NORMAL
 # 38 "data/maps/MossdeepCity_House4/scripts.pory"
 	msgbox MossdeepCity_House4_Text_Skitty, MSGBOX_DEFAULT
 # 39 "data/maps/MossdeepCity_House4/scripts.pory"

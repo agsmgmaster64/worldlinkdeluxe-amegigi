@@ -37,7 +37,7 @@ DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage")
         ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_CHEN) { Ability(ABILITY_JEALOUSY); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -61,7 +61,7 @@ DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move")
         ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(20); }
-        PLAYER(SPECIES_WYNAUT) { Speed(10); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(10); }
         OPPONENT(SPECIES_CHIBI_CHEN) { Speed(100); Ability(ABILITY_JEALOUSY); }
         OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(50); }
     } WHEN {

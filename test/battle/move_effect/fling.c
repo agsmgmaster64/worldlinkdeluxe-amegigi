@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("Fling fails for pokemon with Klutz ability")
 
     GIVEN {
         ASSUME(B_KLUTZ_FLING_INTERACTION >= GEN_5);
-        PLAYER(SPECIES_BUNEARY) { Item(ITEM_RAZOR_CLAW); Ability(ability); }
+        PLAYER(SPECIES_CHIBI_MAI) { Item(ITEM_RAZOR_CLAW); Ability(ability); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_FLING); }

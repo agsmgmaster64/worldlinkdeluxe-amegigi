@@ -218,7 +218,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_MARILL
 #if P_GEN_3_CROSS_EVOS
-    [SPECIES_AZURILL] =
+    [SPECIES_PLACEHOLD_YATSUHASHI] =
     {
         .baseHP        = 50,
         .baseAttack    = 20,
@@ -350,7 +350,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_AIPOM
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_AMBIPOM] =
+    [SPECIES_CHIBI_YUKI] =
     {
         .baseHP        = 75,
         .baseAttack    = 100,
@@ -595,7 +595,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_MURKROW
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_HONCHKROW] =
+    [SPECIES_CHIBI_YUMEKO] =
     {
         .baseHP        = 100,
         .baseAttack    = 125,
@@ -659,7 +659,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_MISDREAVUS
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_MISMAGIUS] =
+    [SPECIES_PLACEHOLD_MAI] =
     {
         .baseHP        = 60,
         .baseAttack    = 60,
@@ -816,7 +816,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_WOBBUFFET
 #if P_GEN_3_CROSS_EVOS
-    [SPECIES_WYNAUT] =
+    [SPECIES_NORMAL_KOSUZU] =
     {
         .baseHP        = 95,
         .baseAttack    = 23,

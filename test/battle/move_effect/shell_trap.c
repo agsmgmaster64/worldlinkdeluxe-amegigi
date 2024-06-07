@@ -102,7 +102,7 @@ DOUBLE_BATTLE_TEST("Shell Trap activates immediately after being hit on turn 1 a
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(1); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SHELL_TRAP); MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
     } SCENE {
@@ -126,7 +126,7 @@ DOUBLE_BATTLE_TEST("Shell Trap activates immediately after being hit on turn 2 a
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(6); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(6); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SHELL_TRAP); MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
     } SCENE {
@@ -150,7 +150,7 @@ DOUBLE_BATTLE_TEST("Shell Trap activates immediately after being hit on turn 3 a
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(7); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(5); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(6); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(6); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SHELL_TRAP); MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(playerRight, MOVE_CELEBRATE); MOVE(opponentRight, MOVE_CELEBRATE); }
     } SCENE {

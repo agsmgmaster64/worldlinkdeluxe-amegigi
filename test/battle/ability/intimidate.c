@@ -68,7 +68,7 @@ DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double ba
         OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_SPEED_MEILING) { Ability(ABILITY_INTIMIDATE); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_EXPLOSION); SEND_OUT(playerLeft, 2); SEND_OUT(opponentLeft, 2); SEND_OUT(playerRight, 3); SEND_OUT(opponentRight, 3); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE); }
@@ -130,10 +130,10 @@ DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CROAGUNK);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         PLAYER(SPECIES_ATTACK_MURASA) { Ability(ABILITY_INTIMIDATE); }
-        OPPONENT(SPECIES_RALTS);
-        OPPONENT(SPECIES_AZURILL);
+        OPPONENT(SPECIES_NORMAL_SEKIBANKI);
+        OPPONENT(SPECIES_PLACEHOLD_YATSUHASHI);
     } WHEN {
         TURN {
             SWITCH(playerLeft, 2);
@@ -168,8 +168,8 @@ DOUBLE_BATTLE_TEST("Intimidate activates immediately after the mon was switched 
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); Item(ITEM_ELECTRIC_SEED); }
-        OPPONENT(SPECIES_WYNAUT) { HP(1); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(1); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_U_TURN, target: opponentLeft); SEND_OUT(playerLeft, 2); SEND_OUT(opponentLeft, 2); }

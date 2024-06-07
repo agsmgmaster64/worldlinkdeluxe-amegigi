@@ -87,7 +87,7 @@ DOUBLE_BATTLE_TEST("Mind Blown causes everyone to faint in a double battle")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(200); MaxHP(400); }
-        PLAYER(SPECIES_WYNAUT) { HP(1); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { HP(1); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK) { HP(1); }
         OPPONENT(SPECIES_CHIBI_LUNASA) { HP(1); }
         OPPONENT(SPECIES_CHIBI_LUNASA);

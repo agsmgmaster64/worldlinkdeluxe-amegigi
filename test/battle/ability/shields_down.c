@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Minior Meteor transforms into Minior Core on switch-in if it has 1/2 or less health")
 {
     GIVEN {
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_MINIOR_METEOR) { Ability(ABILITY_SHIELDS_DOWN); HP(1); }
     } WHEN {
@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Minior Meteor transforms into Minior Core on switch-in if it
 SINGLE_BATTLE_TEST("Minior Core transforms into Minior Meteor on switch-in if it more then 1/2 health")
 {
     GIVEN {
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
         OPPONENT(SPECIES_MINIOR_CORE) { Ability(ABILITY_SHIELDS_DOWN); }
     } WHEN {

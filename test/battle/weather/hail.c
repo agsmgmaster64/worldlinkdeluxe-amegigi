@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Hail deals 1/16 damage per turn")
     s16 hailDamage;
 
     GIVEN {
-        PLAYER(SPECIES_GLALIE);
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {MOVE(player, MOVE_HAIL);}
@@ -20,9 +20,9 @@ SINGLE_BATTLE_TEST("Hail deals 1/16 damage per turn")
 SINGLE_BATTLE_TEST("Hail damage does not affect Ice-type Pokémon")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
+        ASSUME(gSpeciesInfo[SPECIES_PLACEHOLD2_KOSUZU].types[0] == TYPE_ICE);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_GLALIE);
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU);
     } WHEN {
         TURN {MOVE(player, MOVE_HAIL);}
     } SCENE {

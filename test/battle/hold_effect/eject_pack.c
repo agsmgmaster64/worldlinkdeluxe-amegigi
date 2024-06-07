@@ -11,7 +11,7 @@ SINGLE_BATTLE_TEST("Eject Pack does not cause the new Pokémon to lose HP due to
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_PACK); }
-        PLAYER(SPECIES_WYNAUT) { Item(ITEM_LIFE_ORB); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_LIFE_ORB); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_OVERHEAT); SEND_OUT(player, 1); }
@@ -48,9 +48,9 @@ SINGLE_BATTLE_TEST("Eject Pack is triggered by self-inflicting stat decreases")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_EJECT_PACK); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI)  { Item(ITEM_EJECT_PACK); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_OVERHEAT); SEND_OUT(player, 1); }
     } SCENE {

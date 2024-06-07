@@ -19,7 +19,7 @@ SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].makesContact == FALSE);
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_TANGLING_HAIR); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Tangling Hair does not cause Rocky Helmet miss activation")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_ROCKY_HELMET].holdEffect == HOLD_EFFECT_ROCKY_HELMET);
         PLAYER(SPECIES_DUGTRIO) { Ability(ABILITY_TANGLING_HAIR); Item(ITEM_ROCKY_HELMET); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {

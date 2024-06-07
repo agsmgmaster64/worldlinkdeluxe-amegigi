@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Ceaseless Edge can set up to 3 layers of Spikes")
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_CEASELESS_EDGE); }
         TURN { MOVE(player, MOVE_CEASELESS_EDGE); }

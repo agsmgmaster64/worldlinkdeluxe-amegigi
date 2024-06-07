@@ -105,7 +105,7 @@ SINGLE_BATTLE_TEST("Upper Hand is boosted by Sheer Force")
         ASSUME(gMovesInfo[MOVE_EXTREME_SPEED].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_EXTREME_SPEED].priority == 2);
         ASSUME(MoveIsAffectedBySheerForce(MOVE_UPPER_HAND) == TRUE);
-        PLAYER(SPECIES_HARIYAMA) { Ability(ABILITY_SHEER_FORCE); }
+        PLAYER(SPECIES_HELPER_YATSUHASHI) { Ability(ABILITY_SHEER_FORCE); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_UPPER_HAND); }

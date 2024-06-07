@@ -595,7 +595,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack::
 # 298 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 299 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_KIRLIA, CRY_MODE_NORMAL
+	playmoncry SPECIES_TECH_SEKIBANKI, CRY_MODE_NORMAL
 # 300 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 301 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -623,7 +623,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack::
 # 312 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 313 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_KIRLIA, CRY_MODE_NORMAL
+	playmoncry SPECIES_TECH_SEKIBANKI, CRY_MODE_NORMAL
 # 314 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 315 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -631,7 +631,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack::
 # 316 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitse
 # 317 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playmoncry SPECIES_KIRLIA, CRY_MODE_NORMAL
+	playmoncry SPECIES_TECH_SEKIBANKI, CRY_MODE_NORMAL
 # 318 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmoncry
 # 319 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"

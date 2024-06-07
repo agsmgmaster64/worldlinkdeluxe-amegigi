@@ -87,7 +87,7 @@ DOUBLE_BATTLE_TEST("Corrosive Gas destroys foes and ally's items if they have on
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) {Item(itemPlayerLeft);}
-        PLAYER(SPECIES_WYNAUT) {Item(ITEM_SITRUS_BERRY);}
+        PLAYER(SPECIES_NORMAL_KOSUZU) {Item(ITEM_SITRUS_BERRY);}
         OPPONENT(SPECIES_SPEED_LILY_BLACK) {Item(itemOpponentLeft);}
         OPPONENT(SPECIES_CHIBI_LUNASA) {Item(itemOpponentRight);}
     } WHEN {

@@ -22,7 +22,7 @@ DOUBLE_BATTLE_TEST("Mega Evolution's order is determined by Speed - opponent fas
     GIVEN {
         PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); Speed(1); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
-        OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(3); }
+        OPPONENT(SPECIES_PLACEHOLD_SEKIBANKI) { Item(ITEM_GARDEVOIRITE); Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(playerLeft, MOVE_CELEBRATE, megaEvolve: TRUE); }
@@ -41,7 +41,7 @@ DOUBLE_BATTLE_TEST("Mega Evolution's order is determined by Speed - player faste
     GIVEN {
         PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); Speed(5); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
-        OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(2); }
+        OPPONENT(SPECIES_PLACEHOLD_SEKIBANKI) { Item(ITEM_GARDEVOIRITE); Speed(2); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(playerLeft, MOVE_CELEBRATE, megaEvolve: TRUE); }
@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Mega Evolution affects turn order")
 {
     GIVEN {
         ASSUME(B_MEGA_EVO_TURN_ORDER >= GEN_7);
-        PLAYER(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(105); }
+        PLAYER(SPECIES_PLACEHOLD_SEKIBANKI) { Item(ITEM_GARDEVOIRITE); Speed(105); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(106); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); }
@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("Abilities replaced by Mega Evolution do not affect turn orde
         ASSUME(B_MEGA_EVO_TURN_ORDER >= GEN_7);
         ASSUME(gSpeciesInfo[SPECIES_SABLEYE_MEGA].abilities[0] != ABILITY_STALL
             && gSpeciesInfo[SPECIES_SABLEYE_MEGA].abilities[1] != ABILITY_STALL);
-        PLAYER(SPECIES_SABLEYE) { Item(ITEM_SABLENITE); Ability(ABILITY_STALL); Speed(105); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Item(ITEM_SABLENITE); Ability(ABILITY_STALL); Speed(105); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(44); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); }
@@ -111,7 +111,7 @@ DOUBLE_BATTLE_TEST("Mega Evolution happens after switching, but before Focus Pun
         ASSUME(gMovesInfo[MOVE_FOCUS_PUNCH].effect == EFFECT_FOCUS_PUNCH);
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Regular Mega Evolution and Fervent Wish Mega Evolution can h
 {
     GIVEN {
         PLAYER(SPECIES_PLACEHOLD_KANA) { Moves(MOVE_DRAGON_ASCENT, MOVE_CELEBRATE); Speed(3); }
-        OPPONENT(SPECIES_GARDEVOIR) { Item(ITEM_GARDEVOIRITE); Speed(2); }
+        OPPONENT(SPECIES_PLACEHOLD_SEKIBANKI) { Item(ITEM_GARDEVOIRITE); Speed(2); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CELEBRATE, megaEvolve: TRUE); }
     } SCENE {

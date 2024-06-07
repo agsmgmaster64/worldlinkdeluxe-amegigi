@@ -149,7 +149,7 @@ PacifidlogTown_House2_EventScript_HappyAzurill::
 # 75 "data/maps/PacifidlogTown_House2/scripts.pory"
 	waitse
 # 76 "data/maps/PacifidlogTown_House2/scripts.pory"
-	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_YATSUHASHI, CRY_MODE_NORMAL
 # 77 "data/maps/PacifidlogTown_House2/scripts.pory"
 	msgbox PacifidlogTown_House2_Text_Rurii, MSGBOX_DEFAULT
 # 78 "data/maps/PacifidlogTown_House2/scripts.pory"
@@ -171,7 +171,7 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill::
 # 86 "data/maps/PacifidlogTown_House2/scripts.pory"
 	waitse
 # 87 "data/maps/PacifidlogTown_House2/scripts.pory"
-	playmoncry SPECIES_AZURILL, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_PLACEHOLD_YATSUHASHI, CRY_MODE_ENCOUNTER
 # 88 "data/maps/PacifidlogTown_House2/scripts.pory"
 	msgbox PacifidlogTown_House2_Text_Rururi, MSGBOX_DEFAULT
 # 89 "data/maps/PacifidlogTown_House2/scripts.pory"

@@ -187,7 +187,7 @@ SINGLE_BATTLE_TEST("Zero to Hero cannot be copied by Trace")
 {
     GIVEN {
         PLAYER(SPECIES_PALAFIN_ZERO) { Ability(ABILITY_ZERO_TO_HERO); }
-        OPPONENT(SPECIES_RALTS) { Ability(ABILITY_TRACE); }
+        OPPONENT(SPECIES_NORMAL_SEKIBANKI) { Ability(ABILITY_TRACE); }
     } WHEN {
         TURN {}
     } SCENE {

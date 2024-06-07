@@ -71,7 +71,7 @@ FallarborTown_EventScript_Azurill::
 # 36 "data/maps/FallarborTown/scripts.pory"
 	waitse
 # 37 "data/maps/FallarborTown/scripts.pory"
-	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_YATSUHASHI, CRY_MODE_NORMAL
 # 38 "data/maps/FallarborTown/scripts.pory"
 	msgbox FallarborTown_Text_Azurill, MSGBOX_DEFAULT
 # 39 "data/maps/FallarborTown/scripts.pory"

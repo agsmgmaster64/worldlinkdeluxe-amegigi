@@ -40,7 +40,7 @@ DOUBLE_BATTLE_TEST("Dancer can copy Teeter Dance and confuse both opposing targe
         ASSUME(gMovesInfo[MOVE_TEETER_DANCE].danceMove == TRUE);
         ASSUME(gItemsInfo[ITEM_LUM_BERRY].holdEffect == HOLD_EFFECT_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI)
-        PLAYER(SPECIES_WYNAUT) { Item(ITEM_LUM_BERRY); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_LUM_BERRY); }
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); Item(ITEM_LUM_BERRY); }
         OPPONENT(SPECIES_SLOWPOKE) { Ability(ABILITY_OWN_TEMPO); }
     } WHEN {
@@ -59,7 +59,7 @@ DOUBLE_BATTLE_TEST("Dancer triggers from slowest to fastest")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DRAGON_DANCE].danceMove == TRUE);
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_DANCER); Speed(10); }
-        PLAYER(SPECIES_WYNAUT) { Speed(50); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(50); }
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); Speed(20); }
         OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_DANCER); Speed(3); }
     } WHEN {
@@ -104,7 +104,7 @@ DOUBLE_BATTLE_TEST("Dancer still triggers if another dancer flinches")
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
         ASSUME(gMovesInfo[MOVE_DRAGON_DANCE].danceMove == TRUE);
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_DANCER); Speed(10); }
-        PLAYER(SPECIES_WYNAUT) { Speed(5); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(5); }
         OPPONENT(SPECIES_ORICORIO) { Ability(ABILITY_DANCER); Speed(20); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(3); }
     } WHEN {

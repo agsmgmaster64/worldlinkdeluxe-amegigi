@@ -17,9 +17,9 @@ DOUBLE_BATTLE_TEST("Pressure's effect stacks with multiple Pokémon")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { MovesWithPP({MOVE_SWIFT, 20}); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_PRESSURE); }
-        OPPONENT(SPECIES_WYNAUT) { Ability(ABILITY_PRESSURE); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Ability(ABILITY_PRESSURE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SWIFT); }
     } THEN {

@@ -297,11 +297,11 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes Aurora Veil from p
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HAIL].effect == EFFECT_HAIL);
-        ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
-        PLAYER(SPECIES_GLALIE) { Speed(4); }
-        PLAYER(SPECIES_GLALIE) { Speed(3); }
-        OPPONENT(SPECIES_GLALIE) { Speed(2); }
-        OPPONENT(SPECIES_GLALIE) { Speed(1); }
+        ASSUME(gSpeciesInfo[SPECIES_PLACEHOLD2_KOSUZU].types[0] == TYPE_ICE);
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(4); }
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(3); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(2); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_HAIL); MOVE(playerRight, MOVE_AURORA_VEIL); }
         TURN { MOVE(opponentLeft, move, target: playerLeft); }
@@ -329,15 +329,15 @@ DOUBLE_BATTLE_TEST("Defog lowers evasiveness by 1 and removes everything it can"
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HAIL].effect == EFFECT_HAIL);
-        ASSUME(gSpeciesInfo[SPECIES_GLALIE].types[0] == TYPE_ICE);
-        PLAYER(SPECIES_GLALIE) { Speed(4); }
-        PLAYER(SPECIES_GLALIE) { Speed(3); }
-        PLAYER(SPECIES_GLALIE) { Speed(12); }
-        PLAYER(SPECIES_GLALIE) { Speed(3); }
-        OPPONENT(SPECIES_GLALIE) { Speed(2); }
-        OPPONENT(SPECIES_GLALIE) { Speed(1); }
-        OPPONENT(SPECIES_GLALIE) { Speed(1); }
-        OPPONENT(SPECIES_GLALIE) { Speed(1); }
+        ASSUME(gSpeciesInfo[SPECIES_PLACEHOLD2_KOSUZU].types[0] == TYPE_ICE);
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(4); }
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(3); }
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(12); }
+        PLAYER(SPECIES_PLACEHOLD2_KOSUZU) { Speed(3); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(2); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(1); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(1); }
+        OPPONENT(SPECIES_PLACEHOLD2_KOSUZU) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_STICKY_WEB); MOVE(playerRight, MOVE_SPIKES); MOVE(opponentLeft, MOVE_STICKY_WEB); MOVE(opponentRight, MOVE_SPIKES); }
         TURN { SWITCH(playerLeft, 2); SWITCH(playerRight, 3); SWITCH(opponentLeft, 2); SWITCH(opponentRight, 3); }

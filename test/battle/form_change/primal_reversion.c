@@ -220,8 +220,8 @@ SINGLE_BATTLE_TEST("Primal reversion happens immediately if it was brought in by
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
-        OPPONENT(SPECIES_WYNAUT) { HP(1); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(1); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
     } SCENE {

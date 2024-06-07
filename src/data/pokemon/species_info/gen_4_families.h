@@ -1696,10 +1696,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sCherubiLevelUpLearnset,
         .teachableLearnset = sCherubiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_CHERRIM_OVERCAST}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_CHIBI_MARGATROID}),
     },
 
-    [SPECIES_CHERRIM_OVERCAST] =
+    [SPECIES_CHIBI_MARGATROID] =
     {
         .baseHP        = 70,
         .baseAttack    = 60,
@@ -1819,7 +1819,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CHERUBI
 
 #if P_FAMILY_SHELLOS
-    [SPECIES_SHELLOS_WEST_SEA] =
+    [SPECIES_NORMAL_MARGATROID] =
     {
         .baseHP        = 76,
         .baseAttack    = 48,
@@ -1878,7 +1878,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sShellosLevelUpLearnset,
         .teachableLearnset = sShellosTeachableLearnset,
         .formSpeciesIdTable = sShellosFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_WEST_SEA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PLACEHOLD_MARGATROID}),
     },
 
     [SPECIES_SHELLOS_EAST_SEA] =
@@ -1943,7 +1943,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_EAST_SEA}),
     },
 
-    [SPECIES_GASTRODON_WEST_SEA] =
+    [SPECIES_PLACEHOLD_MARGATROID] =
     {
         .baseHP        = 111,
         .baseAttack    = 83,
@@ -2067,7 +2067,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SHELLOS
 
 #if P_FAMILY_DRIFLOON
-    [SPECIES_DRIFLOON] =
+    [SPECIES_NORMAL_YUKI] =
     {
         .baseHP        = 90,
         .baseAttack    = 50,
@@ -2126,10 +2126,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sDrifloonLevelUpLearnset,
         .teachableLearnset = sDrifloonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_DRIFBLIM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PLACEHOLD_YUKI}),
     },
 
-    [SPECIES_DRIFBLIM] =
+    [SPECIES_PLACEHOLD_YUKI] =
     {
         .baseHP        = 150,
         .baseAttack    = 80,
@@ -2192,7 +2192,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_DRIFLOON
 
 #if P_FAMILY_BUNEARY
-    [SPECIES_BUNEARY] =
+    [SPECIES_CHIBI_MAI] =
     {
         .baseHP        = 55,
         .baseAttack    = 66,
@@ -2250,10 +2250,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sBunearyLevelUpLearnset,
         .teachableLearnset = sBunearyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_LOPUNNY}),
+        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_NORMAL_MAI}),
     },
 
-    [SPECIES_LOPUNNY] =
+    [SPECIES_NORMAL_MAI] =
     {
         .baseHP        = 65,
         .baseAttack    = 76,
@@ -2374,7 +2374,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BUNEARY
 
 #if P_FAMILY_GLAMEOW
-    [SPECIES_GLAMEOW] =
+    [SPECIES_NORMAL_YUMEKO] =
     {
         .baseHP        = 49,
         .baseAttack    = 55,
@@ -2432,10 +2432,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sGlameowLevelUpLearnset,
         .teachableLearnset = sGlameowTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_PURUGLY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_PLACEHOLD_YUMEKO}),
     },
 
-    [SPECIES_PURUGLY] =
+    [SPECIES_PLACEHOLD_YUMEKO] =
     {
         .baseHP        = 71,
         .baseAttack    = 82,
@@ -2497,7 +2497,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_GLAMEOW
 
 #if P_FAMILY_STUNKY
-    [SPECIES_STUNKY] =
+    [SPECIES_NORMAL_SHINKI] =
     {
         .baseHP        = 63,
         .baseAttack    = 63,
@@ -2555,10 +2555,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStunkyLevelUpLearnset,
         .teachableLearnset = sStunkyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_SKUNTANK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PLACEHOLD_SHINKI}),
     },
 
-    [SPECIES_SKUNTANK] =
+    [SPECIES_PLACEHOLD_SHINKI] =
     {
         .baseHP        = 103,
         .baseAttack    = 93,

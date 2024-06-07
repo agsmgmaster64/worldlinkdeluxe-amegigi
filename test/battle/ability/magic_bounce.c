@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back status moves")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back powder moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
         ASSUME(gMovesInfo[MOVE_STUN_SPORE].effect == EFFECT_PARALYZE);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); }
@@ -64,7 +64,7 @@ DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting both foes at two foe
         PLAYER(SPECIES_SPEED_LILY_BLACK);
         PLAYER(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_LEER); }
     } SCENE {

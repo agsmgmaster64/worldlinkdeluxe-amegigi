@@ -23,7 +23,7 @@ RustboroCity_Flat2_1F_EventScript_Skitty::
 # 12 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
 	waitse
 # 13 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_RAIKO, CRY_MODE_NORMAL
 # 14 "data/maps/RustboroCity_Flat2_1F/scripts.pory"
 	msgbox RustboroCity_Flat2_1F_Text_Skitty, MSGBOX_DEFAULT
 # 15 "data/maps/RustboroCity_Flat2_1F/scripts.pory"

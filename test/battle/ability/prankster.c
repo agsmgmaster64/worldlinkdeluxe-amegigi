@@ -171,7 +171,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
     PARAMETRIZE { sableyeAbility = ABILITY_KEEN_EYE; }
 
     GIVEN {
-        PLAYER(SPECIES_SABLEYE) { Ability(sableyeAbility); }
+        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(sableyeAbility); }
         OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -193,7 +193,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
 SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark-type with Magic Bounce")
 {
     GIVEN {
-        PLAYER(SPECIES_ABSOL) { Item(ITEM_ABSOLITE); }
+        PLAYER(SPECIES_CHIBI_KOSUZU) { Item(ITEM_ABSOLITE); }
         OPPONENT(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CONFUSE_RAY); }
@@ -206,7 +206,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark
 SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Bounce can affect Dark-type Pokémon")
 {
     GIVEN {
-        PLAYER(SPECIES_ABSOL) { Item(ITEM_ABSOLITE); }
+        PLAYER(SPECIES_CHIBI_KOSUZU) { Item(ITEM_ABSOLITE); }
         OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CONFUSE_RAY); }

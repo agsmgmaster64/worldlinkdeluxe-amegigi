@@ -44,7 +44,7 @@ DOUBLE_BATTLE_TEST("Ally Switch changes the position of battlers")
         ASSUME(gMovesInfo[MOVE_SCREECH].effect == EFFECT_DEFENSE_DOWN_2);
         ASSUME(gMovesInfo[MOVE_SCREECH].target == MOVE_TARGET_SELECTED);
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); } // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
-        PLAYER(SPECIES_WYNAUT) { Speed(4); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(4); }
         OPPONENT(SPECIES_CHIBI_LUNASA) { Speed(3); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK) { Speed(2); }
     } WHEN {
@@ -63,7 +63,7 @@ DOUBLE_BATTLE_TEST("Ally Switch changes the position of battlers")
         MESSAGE("Wynaut's Defense harshly fell!");
     } THEN {
         EXPECT_EQ(playerLeft->speed, 4);
-        EXPECT_EQ(playerLeft->species, SPECIES_WYNAUT);
+        EXPECT_EQ(playerLeft->species, SPECIES_NORMAL_KOSUZU);
         EXPECT_EQ(playerRight->speed, 5);
         EXPECT_EQ(playerRight->species, SPECIES_CHIBI_YUUGI);
     }
@@ -74,7 +74,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect the target of Snipe Shot")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SNIPE_SHOT].effect == EFFECT_SNIPE_SHOT);
         PLAYER(SPECIES_CHIBI_YUUGI); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
     } WHEN {
@@ -99,7 +99,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect moves done by pokemon with Sta
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI); // Wobb is playerLeft, but it'll be Wynaut after Ally Switch
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_LUNASA) { Ability(ability); }
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
     } WHEN {
@@ -127,7 +127,7 @@ DOUBLE_BATTLE_TEST("Ally Switch has no effect on partner's chosen move")
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT) { Moves(MOVE_TACKLE, MOVE_POUND, MOVE_CELEBRATE, MOVE_SCRATCH); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Moves(MOVE_TACKLE, MOVE_POUND, MOVE_CELEBRATE, MOVE_SCRATCH); }
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
     } WHEN {
@@ -152,7 +152,7 @@ DOUBLE_BATTLE_TEST("Ally Switch - move fails if the target was ally which change
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_LUNASA);
         OPPONENT(SPECIES_SPEED_LILY_BLACK);
     } WHEN {
@@ -186,7 +186,7 @@ DOUBLE_BATTLE_TEST("Ally Switch works if ally used two-turn move like Dig")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

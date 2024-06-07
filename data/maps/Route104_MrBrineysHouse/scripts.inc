@@ -187,7 +187,7 @@ Route104_MrBrineysHouse_EventScript_Peeko::
 # 94 "data/maps/Route104_MrBrineysHouse/scripts.pory"
 	waitse
 # 95 "data/maps/Route104_MrBrineysHouse/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 96 "data/maps/Route104_MrBrineysHouse/scripts.pory"
 	msgbox Route104_MrBrineysHouse_Text_Peeko, MSGBOX_DEFAULT
 # 97 "data/maps/Route104_MrBrineysHouse/scripts.pory"

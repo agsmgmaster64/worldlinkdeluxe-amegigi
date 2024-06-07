@@ -52,7 +52,7 @@ SINGLE_BATTLE_TEST("Scrappy doesn't bypass a Ghost-type's Wonder Guard")
 
     GIVEN {
         PLAYER(SPECIES_ATTACK_TEWI) { Ability(ABILITY_SCRAPPY); };
-        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_PLAY_GHOST); };
+        OPPONENT(SPECIES_NORMAL_BENBEN) { Ability(ABILITY_PLAY_GHOST); };
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

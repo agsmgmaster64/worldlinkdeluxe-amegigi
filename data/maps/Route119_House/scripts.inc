@@ -23,7 +23,7 @@ Route119_House_EventScript_Wingull::
 # 12 "data/maps/Route119_House/scripts.pory"
 	waitse
 # 13 "data/maps/Route119_House/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 14 "data/maps/Route119_House/scripts.pory"
 	msgbox Route119_House_Text_Wingull, MSGBOX_DEFAULT
 # 15 "data/maps/Route119_House/scripts.pory"

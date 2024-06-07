@@ -113,7 +113,7 @@ static const u32 sAreaGlow_Pal[] = INCBIN_U32("graphics/pokedex/area_glow.gbapal
 static const u32 sAreaGlow_Gfx[] = INCBIN_U32("graphics/pokedex/area_glow.4bpp.lz");
 static const u32 sPokedexPlusHGSS_ScreenSelectBarSubmenu_Tilemap[] = INCBIN_U32("graphics/pokedex/hgss/SelectBar.bin.lz");
 
-static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_WYNAUT };
+static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_NORMAL_KOSUZU };
 
 static const u16 sMovingRegionMapSections[3] =
 {
@@ -124,7 +124,7 @@ static const u16 sMovingRegionMapSections[3] =
 
 static const u16 sFeebasData[][3] =
 {
-    {SPECIES_FEEBAS, MAP_GROUP(ROUTE119), MAP_NUM(ROUTE119)},
+    //{SPECIES_TECH_TOYOHIME, MAP_GROUP(ROUTE119), MAP_NUM(ROUTE119)},
     {NUM_SPECIES}
 };
 
@@ -258,13 +258,13 @@ static void FindMapsWithMon(u16 species)
         sPokedexAreaScreen->numOverworldAreas = 0;
         sPokedexAreaScreen->numSpecialAreas = 0;
 
-        // Check if this species should be hidden from the area map.
+        /*// Check if this species should be hidden from the area map.
         // This only applies to Wynaut, to hide the encounters on Mirage Island.
         for (i = 0; i < ARRAY_COUNT(sSpeciesHiddenFromAreaScreen); i++)
         {
             if (sSpeciesHiddenFromAreaScreen[i] == species)
                 return;
-        }
+        }*/
 
         // Add Pokémon with special encounter circumstances (i.e. not listed
         // in the regular wild encounter table) to the area map.

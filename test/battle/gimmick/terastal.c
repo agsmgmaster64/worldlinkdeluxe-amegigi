@@ -517,7 +517,7 @@ SINGLE_BATTLE_TEST("(TERA) Stellar type does not change the user's defensive pro
 SINGLE_BATTLE_TEST("(TERA) Reflect Type copies a Stellar-type Pokemon's base type")
 {
     GIVEN {
-        PLAYER(SPECIES_BANETTE) { TeraType(TYPE_STELLAR); }
+        PLAYER(SPECIES_PLACEHOLD_KASEN) { TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_CELEBRATE, tera: TRUE); }
@@ -727,7 +727,7 @@ SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-
     s16 damage[4];
     GIVEN {
         ASSUME(gMovesInfo[MOVE_WEATHER_BALL].type == TYPE_NORMAL);
-        PLAYER(SPECIES_PELIPPER) { Ability(ABILITY_DRIZZLE); TeraType(TYPE_STELLAR); }
+        PLAYER(SPECIES_CHIBI_SEKIBANKI) { Ability(ABILITY_DRIZZLE); TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_WEATHER_BALL, tera: TRUE); MOVE(opponent, MOVE_RECOVER); }

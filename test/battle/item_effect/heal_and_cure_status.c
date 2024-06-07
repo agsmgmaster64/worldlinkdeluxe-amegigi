@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Full Restore restores a party members HP and cures any prima
     PARAMETRIZE{ status = STATUS1_NONE; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); Status1(status); }
-        PLAYER(SPECIES_WYNAUT) { HP(1); MaxHP(300); Status1(status); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { HP(1); MaxHP(300); Status1(status); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 1); }
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Full Restore restores a party members HP and cures any prima
         }
     } THEN {
         EXPECT_EQ(player->hp, player->maxHP);
-        EXPECT_EQ(player->species, SPECIES_WYNAUT);
+        EXPECT_EQ(player->species, SPECIES_NORMAL_KOSUZU);
         EXPECT_EQ(player->status1, STATUS1_NONE);
     }
 }
@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Full Restore heals a battler from any primary status")
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 0); }
     } SCENE {
@@ -94,8 +94,8 @@ SINGLE_BATTLE_TEST("Full Restore heals a party member from any primary status")
     PARAMETRIZE{ status = STATUS1_SLEEP; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WYNAUT) { Status1(status); }
-        OPPONENT(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Status1(status); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_FULL_RESTORE, partyIndex: 1); }
         TURN { SWITCH(player, 1); }
@@ -103,7 +103,7 @@ SINGLE_BATTLE_TEST("Full Restore heals a party member from any primary status")
         NOT MESSAGE("Wynaut had its HP restored!"); // The message is not printed if mon has max HP.
         MESSAGE("Wynaut had its status healed!");
     } THEN {
-        EXPECT_EQ(player->species, SPECIES_WYNAUT);
+        EXPECT_EQ(player->species, SPECIES_NORMAL_KOSUZU);
         EXPECT_EQ(player->status1, STATUS1_NONE);
     }
 }

@@ -31,7 +31,7 @@ SINGLE_BATTLE_TEST("Stone Axe can set up pointed stones only once")
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_STONE_AXE); }
         TURN { MOVE(player, MOVE_STONE_AXE); }

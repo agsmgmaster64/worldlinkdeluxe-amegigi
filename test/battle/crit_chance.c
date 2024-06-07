@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Battle Armor and Shell Armor block critical hits")
     u32 ability;
 
     PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
-    PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_GUARD_ARMOR; }
+    PARAMETRIZE { species = SPECIES_NORMAL_TOYOHIME; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
@@ -45,7 +45,7 @@ SINGLE_BATTLE_TEST("Flag ignoresTargetAbility ignores Battle Armor and Shell Arm
     u32 ability;
 
     PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
-    PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_GUARD_ARMOR; }
+    PARAMETRIZE { species = SPECIES_NORMAL_TOYOHIME; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SUNSTEEL_STRIKE].ignoresTargetAbility == TRUE);
@@ -86,7 +86,7 @@ SINGLE_BATTLE_TEST("Mold Breaker, Teravolt and Turboblaze ignore Battle Armor an
         PARAMETRIZE {
             speciesPlayer = pokemonPlayer[j][0];
             abilityPlayer = pokemonPlayer[j][1];
-            speciesOpponent = SPECIES_ARMALDO;
+            speciesOpponent = SPECIES_NORMAL_TOYOHIME;
             abilityOpponent = ABILITY_GUARD_ARMOR;
         }
     }
@@ -289,7 +289,7 @@ DOUBLE_BATTLE_TEST("Dragon Cheer increases critical hit ratio by one on non Drag
         ASSUME(gMovesInfo[MOVE_TACKLE].criticalHitStage == 0);
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

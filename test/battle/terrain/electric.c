@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Electric Terrain protects grounded battlers from falling asl
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CLAYDOL) { Ability(ABILITY_LEVITATE); }
+        OPPONENT(SPECIES_NORMAL_YORIHIME) { Ability(ABILITY_LEVITATE); }
     } WHEN {
         TURN { MOVE(player, MOVE_ELECTRIC_TERRAIN); MOVE(opponent, MOVE_SPORE); }
         TURN { MOVE(player, MOVE_SPORE); }

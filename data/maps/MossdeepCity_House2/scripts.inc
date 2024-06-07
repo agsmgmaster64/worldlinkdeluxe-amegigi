@@ -35,7 +35,7 @@ MossdeepCity_House2_EventScript_Wingull::
 # 18 "data/maps/MossdeepCity_House2/scripts.pory"
 	waitse
 # 19 "data/maps/MossdeepCity_House2/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 20 "data/maps/MossdeepCity_House2/scripts.pory"
 	msgbox MossdeepCity_House2_Text_Wingull, MSGBOX_DEFAULT
 # 21 "data/maps/MossdeepCity_House2/scripts.pory"

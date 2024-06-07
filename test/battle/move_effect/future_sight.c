@@ -72,7 +72,7 @@ SINGLE_BATTLE_TEST("Future Sight receives STAB from party mon")
     s16 futureSightDmg;
 
     GIVEN {
-        PLAYER(SPECIES_RALTS);
+        PLAYER(SPECIES_NORMAL_SEKIBANKI);
         PLAYER(SPECIES_RAICHU);
         OPPONENT(SPECIES_PLACEHOLD_ELLEN);
     } WHEN {
@@ -118,7 +118,7 @@ SINGLE_BATTLE_TEST("Future Sight will miss timing if target faints before it is 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -140,7 +140,7 @@ SINGLE_BATTLE_TEST("Future Sight will miss timing if target faints by residual d
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { HP(10); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_FUTURE_SIGHT); }
         TURN { MOVE(player, MOVE_CELEBRATE); }

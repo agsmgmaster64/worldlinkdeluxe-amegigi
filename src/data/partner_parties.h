@@ -16,7 +16,7 @@ static const struct TrainerMon sParty_StevenPartner[] = {
         .moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_PROTECT, MOVE_STEEL_WING},
     },
     {
-        .species = SPECIES_AGGRON,
+        .species = SPECIES_PLACEHOLD_SEIJA,
         .lvl = 44,
         .nature = NATURE_ADAMANT,
         .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),

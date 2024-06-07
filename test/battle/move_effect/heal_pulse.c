@@ -24,9 +24,9 @@ DOUBLE_BATTLE_TEST("Heal Pulse can heal partner")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(playerRight, MOVE_HEAL_PULSE, target: playerLeft); }
     } SCENE {

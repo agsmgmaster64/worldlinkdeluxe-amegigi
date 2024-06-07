@@ -181,9 +181,9 @@ Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 # 91 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
 # 92 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CASTFORM_NORMAL
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIBI_KASEN
 # 93 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	givemon SPECIES_CASTFORM_NORMAL, 25, ITEM_SWIMSUIT
+	givemon SPECIES_CHIBI_KASEN, 25, ITEM_SWIMSUIT
 # 94 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
 # 95 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
@@ -249,7 +249,7 @@ Route119_WeatherInstitute_2F_EventScript_ReceivedCastformFanfare::
 # 125 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	waitfanfare
 # 126 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_CASTFORM_NORMAL
+	bufferspeciesname STR_VAR_1, SPECIES_CHIBI_KASEN
 # 127 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"
 	return
 # 128 "data/maps/Route119_WeatherInstitute_2F/scripts.pory"

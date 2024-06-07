@@ -121,7 +121,7 @@ FortreeCity_House4_EventScript_Wingull::
 # 61 "data/maps/FortreeCity_House4/scripts.pory"
 	waitse
 # 62 "data/maps/FortreeCity_House4/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 63 "data/maps/FortreeCity_House4/scripts.pory"
 	msgbox FortreeCity_House4_Text_Wingull, MSGBOX_DEFAULT
 # 64 "data/maps/FortreeCity_House4/scripts.pory"

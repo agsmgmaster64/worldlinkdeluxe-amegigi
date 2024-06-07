@@ -80,7 +80,7 @@ EWRAM_DATA static u16 sLastFishingSpecies = 0;
 
 #include "data/wild_encounters.h"
 
-static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_FEEBAS};
+static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_TECH_TOYOHIME};
 
 static const u16 sRoute119WaterTileData[] =
 {
@@ -128,7 +128,7 @@ static u16 GetFeebasFishingSpotId(s16 targetX, s16 targetY, u8 section)
 
 static bool8 CheckFeebas(void)
 {
-    u8 i;
+    /*u8 i;
     u16 feebasSpots[NUM_FEEBAS_SPOTS];
     s16 x, y;
     u8 route119Section = 0;
@@ -179,7 +179,7 @@ static bool8 CheckFeebas(void)
             if (spotId == feebasSpots[i])
                 return TRUE;
         }
-    }
+    }*/
     return FALSE;
 }
 

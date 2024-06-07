@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Baton Pass passes Embargo's effect")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT) { Item(ITEM_LIGHT_BALL); };
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_LIGHT_BALL); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); }

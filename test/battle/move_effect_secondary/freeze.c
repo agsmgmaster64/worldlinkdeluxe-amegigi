@@ -25,9 +25,9 @@ SINGLE_BATTLE_TEST("Powder Snow inflicts freeze")
 SINGLE_BATTLE_TEST("Powder Snow cannot freeze an Ice-type Pokémon")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_SNORUNT].types[0] == TYPE_ICE);
+        ASSUME(gSpeciesInfo[SPECIES_PLACEHOLD_KOSUZU].types[0] == TYPE_ICE);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_SNORUNT);
+        OPPONENT(SPECIES_PLACEHOLD_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_POWDER_SNOW); }
     } SCENE {

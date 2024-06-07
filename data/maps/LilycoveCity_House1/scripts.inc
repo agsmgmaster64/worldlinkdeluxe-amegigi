@@ -23,7 +23,7 @@ LilycoveCity_House1_EventScript_Kecleon::
 # 12 "data/maps/LilycoveCity_House1/scripts.pory"
 	waitse
 # 13 "data/maps/LilycoveCity_House1/scripts.pory"
-	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_KASEN, CRY_MODE_NORMAL
 # 14 "data/maps/LilycoveCity_House1/scripts.pory"
 	msgbox LilycoveCity_House1_Text_Kecleon, MSGBOX_DEFAULT
 # 15 "data/maps/LilycoveCity_House1/scripts.pory"

@@ -495,7 +495,7 @@ LavaridgeTown_EventScript_EggWoman::
 # 248 "data/maps/LavaridgeTown/scripts.pory"
 	waitfanfare
 # 249 "data/maps/LavaridgeTown/scripts.pory"
-	giveegg SPECIES_WYNAUT
+	giveegg SPECIES_NORMAL_KOSUZU
 # 250 "data/maps/LavaridgeTown/scripts.pory"
 	release
 # 251 "data/maps/LavaridgeTown/scripts.pory"

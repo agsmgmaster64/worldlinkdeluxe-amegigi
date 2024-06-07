@@ -151,7 +151,7 @@ FortreeCity_EventScript_UseDevonScope::
 # 76 "data/maps/FortreeCity/scripts.pory"
 	waitse
 # 77 "data/maps/FortreeCity/scripts.pory"
-	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_NORMAL_KASEN, CRY_MODE_ENCOUNTER
 # 78 "data/maps/FortreeCity/scripts.pory"
 	delay 40
 # 79 "data/maps/FortreeCity/scripts.pory"

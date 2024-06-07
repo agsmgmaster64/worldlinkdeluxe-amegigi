@@ -130,7 +130,7 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT) { Level(40); Item(item); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Level(40); Item(item); }
         OPPONENT(SPECIES_NORMAL_DAIYOUSEI) { Level(10); HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -141,9 +141,9 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
         NOT MESSAGE("The rest of your team gained EXP. Points thanks to the Exp. Share!");
     } THEN {
         if (item == ITEM_EXP_SHARE)
-            EXPECT_GT(GetMonData(&gPlayerParty[1], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WYNAUT].growthRate][40]);
+            EXPECT_GT(GetMonData(&gPlayerParty[1], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_NORMAL_KOSUZU].growthRate][40]);
         else
-            EXPECT_EQ(GetMonData(&gPlayerParty[1], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WYNAUT].growthRate][40]);
+            EXPECT_EQ(GetMonData(&gPlayerParty[1], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_NORMAL_KOSUZU].growthRate][40]);
     }
 }
 

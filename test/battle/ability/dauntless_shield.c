@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Dauntless Shield raises Defense by one stage only once per b
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ZAMAZENTA) { Ability(ABILITY_DAUNTLESS_SHIELD); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { SWITCH(opponent, 1); }
         TURN { SWITCH(opponent, 0); }

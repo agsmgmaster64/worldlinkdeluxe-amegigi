@@ -16,7 +16,7 @@ SINGLE_BATTLE_TEST("Spikes damage on switch in")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         u32 count;
         for (count = 0; count < layers; ++count) {
@@ -41,7 +41,7 @@ SINGLE_BATTLE_TEST("Spikes fails after 3 layers")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_SPIKES); }
         TURN { MOVE(player, MOVE_SPIKES); }
@@ -69,7 +69,7 @@ SINGLE_BATTLE_TEST("Spikes damage on subsequent switch ins")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_SPIKES); }
         TURN { SWITCH(opponent, 1); }

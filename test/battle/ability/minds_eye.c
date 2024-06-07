@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Mind's Eye doesn't bypass a Ghost-type's Wonder Guard")
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_SCRAPPY); };
-        OPPONENT(SPECIES_SHEDINJA) { Ability(ABILITY_PLAY_GHOST); };
+        OPPONENT(SPECIES_NORMAL_BENBEN) { Ability(ABILITY_PLAY_GHOST); };
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

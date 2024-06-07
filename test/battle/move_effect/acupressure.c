@@ -12,7 +12,7 @@ DOUBLE_BATTLE_TEST("Acupressure works on the ally if the user targeted itself bu
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_KADABRA);
         OPPONENT(SPECIES_ABRA);
     } WHEN {
@@ -33,7 +33,7 @@ DOUBLE_BATTLE_TEST("Acupressure fails on the user if it targeted its ally but sw
     KNOWN_FAILING; // Tested in Gen 5, Acupressure fails here
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_KADABRA);
         OPPONENT(SPECIES_ABRA);
     } WHEN {

@@ -13,7 +13,7 @@ SINGLE_BATTLE_TEST("Shed Tail creates a Substitute at the cost of 1/2 users maxi
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); SEND_OUT(player, 1); }
@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Shed Tail fails if the user doesn't have enough HP")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); }
@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Shed Tail's HP cost can trigger a berry before the user swit
     GIVEN {
         ASSUME(gItemsInfo[ITEM_SITRUS_BERRY].battleUsage == EFFECT_ITEM_RESTORE_HP);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_SITRUS_BERRY); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); SEND_OUT(player, 1); }
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Shed Tail fails if there are no usable pokemon left")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI)
-        PLAYER(SPECIES_WYNAUT) { HP(0); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { HP(0); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); }
@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Shed Tail's HP cost doesn't trigger effects that trigger on 
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SHED_TAIL); SEND_OUT(player, 1); }

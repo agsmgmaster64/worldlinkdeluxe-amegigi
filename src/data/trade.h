@@ -987,7 +987,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_SEEDOT] =
     {
         .nickname = _("DOTS"),
-        .species = SPECIES_SEEDOT,
+        .species = SPECIES_ATTACK_MIKO,
         .level = 5,
         .ivs = {5, 4, 5, 4, 4, 4},
         .abilityNum = 1,
@@ -999,7 +999,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .language = LANGUAGE_ENGLISH,
         .metLocation = METLOC_IN_GAME_TRADE,
-        .requestedSpecies = SPECIES_RALTS
+        .requestedSpecies = SPECIES_NORMAL_SEKIBANKI
     },
     [INGAME_TRADE_PLUSLE] =
     {
@@ -1050,7 +1050,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .language = LANGUAGE_JAPANESE,
         .metLocation = METLOC_IN_GAME_TRADE,
-        .requestedSpecies = SPECIES_SKITTY
+        .requestedSpecies = SPECIES_NORMAL_RAIKO
     }
 };
 

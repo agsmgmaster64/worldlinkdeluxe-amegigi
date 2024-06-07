@@ -8,7 +8,7 @@ SINGLE_BATTLE_TEST("Poison Heal heals from (Toxic) Poison damage")
     PARAMETRIZE { status = STATUS1_TOXIC_POISON; }
 
     GIVEN {
-        PLAYER(SPECIES_SHROOMISH) { Ability(ABILITY_POISON_HEAL); Status1(status);  HP(1), MaxHP(400); }
+        PLAYER(SPECIES_HELPER_KAGEROU) { Ability(ABILITY_POISON_HEAL); Status1(status);  HP(1), MaxHP(400); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Poison Heal heals from Toxic Poison damage are constant")
     s16 turnTwoHit;
 
     GIVEN {
-        PLAYER(SPECIES_SHROOMISH) { Ability(ABILITY_POISON_HEAL); Status1(STATUS1_TOXIC_POISON);  HP(1), MaxHP(400); }
+        PLAYER(SPECIES_HELPER_KAGEROU) { Ability(ABILITY_POISON_HEAL); Status1(STATUS1_TOXIC_POISON);  HP(1), MaxHP(400); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { }
@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Poison Heal heals from Toxic Poison damage are constant")
 SINGLE_BATTLE_TEST("Poison Heal does not heal or cause damage when under Heal Block")
 {
     GIVEN {
-        PLAYER(SPECIES_SHROOMISH) { Ability(ABILITY_POISON_HEAL); Status1(STATUS1_POISON);  HP(1), MaxHP(400); }
+        PLAYER(SPECIES_HELPER_KAGEROU) { Ability(ABILITY_POISON_HEAL); Status1(STATUS1_POISON);  HP(1), MaxHP(400); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); }
@@ -62,7 +62,7 @@ SINGLE_BATTLE_TEST("Poison Heal does not heal or cause damage when under Heal Bl
 SINGLE_BATTLE_TEST("Poison Heal activates before Toxic Orb")
 {
     GIVEN {
-        PLAYER(SPECIES_SHROOMISH) { Ability(ABILITY_POISON_HEAL); Item(ITEM_TOXIC_ORB);  HP(1), MaxHP(400); }
+        PLAYER(SPECIES_HELPER_KAGEROU) { Ability(ABILITY_POISON_HEAL); Item(ITEM_TOXIC_ORB);  HP(1), MaxHP(400); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }

@@ -265,7 +265,7 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Rain", s16 damage)
     PARAMETRIZE{ move = MOVE_RAIN_DANCE; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }
@@ -373,7 +373,7 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Snow", s16 damage)
     PARAMETRIZE{ move = MOVE_SNOWSCAPE; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }

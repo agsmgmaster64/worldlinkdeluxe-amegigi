@@ -2029,7 +2029,7 @@ static u16 GetOverworldCastformSpecies(void)
     case WEATHER_SNOW:
         return SPECIES_CASTFORM_SNOWY;
     }
-    return SPECIES_CASTFORM_NORMAL;
+    return SPECIES_CHIBI_KASEN;
 }
 
 static bool8 GetMonInfo(struct Pokemon *mon, u16 *species, u8 *form, u8 *shiny)

@@ -107,7 +107,7 @@ SINGLE_BATTLE_TEST("Parental Bond-converted moves only hit once on Lightning Rod
 {
     u16 move, species, ability, type;
     PARAMETRIZE { move = MOVE_THUNDERBOLT; ability = ABILITY_LIGHTNING_ROD; species = SPECIES_RAICHU; type = TYPE_WIND; }
-    PARAMETRIZE { move = MOVE_SURF; ability = ABILITY_STORM_DRAIN; species = SPECIES_LILEEP; type = TYPE_WATER; }
+    PARAMETRIZE { move = MOVE_SURF; ability = ABILITY_STORM_DRAIN; species = SPECIES_SPEED_YORIHIME; type = TYPE_WATER; }
     GIVEN {
         ASSUME(gMovesInfo[move].strikeCount < 2);
         ASSUME(gMovesInfo[move].type == type);

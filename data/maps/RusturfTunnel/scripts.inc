@@ -597,7 +597,7 @@ RusturfTunnel_EventScript_Peeko::
 # 299 "data/maps/RusturfTunnel/scripts.pory"
 	waitse
 # 300 "data/maps/RusturfTunnel/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 301 "data/maps/RusturfTunnel/scripts.pory"
 	msgbox RusturfTunnel_Text_Peeko, MSGBOX_DEFAULT
 # 302 "data/maps/RusturfTunnel/scripts.pory"
@@ -661,7 +661,7 @@ RusturfTunnel_EventScript_Grunt::
 # 331 "data/maps/RusturfTunnel/scripts.pory"
 	waitse
 # 332 "data/maps/RusturfTunnel/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 333 "data/maps/RusturfTunnel/scripts.pory"
 	waitbuttonpress
 # 334 "data/maps/RusturfTunnel/scripts.pory"

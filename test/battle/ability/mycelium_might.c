@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Mycelium Might vs Stall action order depends on speed")
     PARAMETRIZE { speed = 101; }
     GIVEN {
         PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_MYCELIUM_MIGHT); }
-        OPPONENT(SPECIES_SABLEYE) { Speed(speed); Ability(ABILITY_STALL);}
+        OPPONENT(SPECIES_PLACEHOLD_RAIKO) { Speed(speed); Ability(ABILITY_STALL);}
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_CELEBRATE); }
     } SCENE {

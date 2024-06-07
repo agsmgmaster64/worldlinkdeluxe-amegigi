@@ -87,7 +87,7 @@ FallarborTown_Mart_EventScript_Skitty::
 # 44 "data/maps/FallarborTown_Mart/scripts.pory"
 	waitse
 # 45 "data/maps/FallarborTown_Mart/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_RAIKO, CRY_MODE_NORMAL
 # 46 "data/maps/FallarborTown_Mart/scripts.pory"
 	msgbox FallarborTown_Mart_Text_Skitty, MSGBOX_DEFAULT
 # 47 "data/maps/FallarborTown_Mart/scripts.pory"

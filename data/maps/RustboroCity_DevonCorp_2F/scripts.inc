@@ -269,7 +269,7 @@ RustboroCity_DevonCorp_2F_EventScript_FossilMonReady::
 # 135 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_LileepReady::
 # 136 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_LILEEP
+	bufferspeciesname STR_VAR_2, SPECIES_SPEED_YORIHIME
 # 137 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
 # 138 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -281,7 +281,7 @@ RustboroCity_DevonCorp_2F_EventScript_LileepReady::
 # 141 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_AnorithReady::
 # 142 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_ANORITH
+	bufferspeciesname STR_VAR_2, SPECIES_CHIBI_TOYOHIME
 # 143 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_FossilizedMonBroughtBackToLife, MSGBOX_DEFAULT
 # 144 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -293,9 +293,9 @@ RustboroCity_DevonCorp_2F_EventScript_AnorithReady::
 # 147 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
 # 148 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_LILEEP
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SPEED_YORIHIME
 # 149 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	givemon SPECIES_LILEEP, 20
+	givemon SPECIES_SPEED_YORIHIME, 20
 # 150 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty
 # 151 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -353,7 +353,7 @@ RustboroCity_DevonCorp_2F_EventScript_TransferLileepToPC::
 # 177 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare::
 # 178 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_LILEEP
+	bufferspeciesname STR_VAR_2, SPECIES_SPEED_YORIHIME
 # 179 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 180 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -363,7 +363,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare::
 # 182 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	waitfanfare
 # 183 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_LILEEP
+	bufferspeciesname STR_VAR_1, SPECIES_SPEED_YORIHIME
 # 184 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	return
 # 185 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -383,9 +383,9 @@ RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep::
 # 192 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith::
 # 193 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ANORITH
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CHIBI_TOYOHIME
 # 194 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	givemon SPECIES_ANORITH, 20
+	givemon SPECIES_CHIBI_TOYOHIME, 20
 # 195 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty
 # 196 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -443,7 +443,7 @@ RustboroCity_DevonCorp_2F_EventScript_TransferAnorithToPC::
 # 222 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_ReceivedAnorithFanfare::
 # 223 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_2, SPECIES_ANORITH
+	bufferspeciesname STR_VAR_2, SPECIES_CHIBI_TOYOHIME
 # 224 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 225 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -453,7 +453,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedAnorithFanfare::
 # 227 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	waitfanfare
 # 228 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_ANORITH
+	bufferspeciesname STR_VAR_1, SPECIES_CHIBI_TOYOHIME
 # 229 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	return
 # 230 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"

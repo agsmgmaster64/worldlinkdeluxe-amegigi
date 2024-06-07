@@ -10,9 +10,9 @@ DOUBLE_BATTLE_TEST("After You makes the target move after user")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(1); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(1); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(2); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(2); }
     } WHEN {
         TURN {
             MOVE(playerLeft, MOVE_AFTER_YOU, target: playerRight);
@@ -33,9 +33,9 @@ DOUBLE_BATTLE_TEST("After You does nothing if the target has already moved")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(1); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(1); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(3); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(2); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(2); }
     } WHEN {
         TURN {
             MOVE(playerLeft, MOVE_CELEBRATE);

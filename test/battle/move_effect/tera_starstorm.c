@@ -27,9 +27,9 @@ DOUBLE_BATTLE_TEST("Tera Starstorm targets both opponents in a double battle if 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TERA_STARSTORM].target == MOVE_TARGET_SELECTED);
         PLAYER(SPECIES_TERAPAGOS_STELLAR);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TERA_STARSTORM, target:opponentLeft); }
     } SCENE {

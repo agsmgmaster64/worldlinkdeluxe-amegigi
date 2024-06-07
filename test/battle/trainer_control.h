@@ -76,7 +76,7 @@
             },
             {
 #line 29
-            .species = SPECIES_WYNAUT,
+            .species = SPECIES_NORMAL_KOSUZU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 31
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

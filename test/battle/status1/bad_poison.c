@@ -22,7 +22,7 @@ SINGLE_BATTLE_TEST("Bad poison cumulative damage resets on switch")
     u32 j;
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_TOXIC_POISON); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {}

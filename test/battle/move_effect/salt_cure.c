@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Salt Cure is removed when the afflicted Pokémon is switched
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_SALT_CURE); }
         TURN { SWITCH(opponent, 1); }

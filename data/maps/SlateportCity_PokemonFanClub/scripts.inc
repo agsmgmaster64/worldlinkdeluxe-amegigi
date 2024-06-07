@@ -457,7 +457,7 @@ SlateportCity_PokemonFanClub_EventScript_Skitty::
 # 229 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	waitse
 # 230 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	playmoncry SPECIES_NORMAL_RAIKO, CRY_MODE_NORMAL
 # 231 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_Skitty, MSGBOX_DEFAULT
 # 232 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"

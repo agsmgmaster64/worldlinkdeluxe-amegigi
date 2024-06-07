@@ -185,7 +185,7 @@ SSTidalCorridor_EventScript_Peeko::
 # 93 "data/maps/SSTidalCorridor/scripts.pory"
 	waitse
 # 94 "data/maps/SSTidalCorridor/scripts.pory"
-	playmoncry SPECIES_WINGULL, CRY_MODE_NORMAL
+	playmoncry SPECIES_PLACEHOLD_MAMIZOU, CRY_MODE_NORMAL
 # 95 "data/maps/SSTidalCorridor/scripts.pory"
 	msgbox SSTidalCorridor_Text_Peeko, MSGBOX_DEFAULT
 # 96 "data/maps/SSTidalCorridor/scripts.pory"

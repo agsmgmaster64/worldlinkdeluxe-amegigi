@@ -69,7 +69,7 @@ SINGLE_BATTLE_TEST("Plasma Fists type-changing effect is applied after Normalize
 {
     GIVEN {
         PLAYER(SPECIES_DEFENSE_YUKARI);
-        OPPONENT(SPECIES_SKITTY) { Ability(ABILITY_NORMALIZE); }
+        OPPONENT(SPECIES_NORMAL_RAIKO) { Ability(ABILITY_NORMALIZE); }
     } WHEN {
         TURN { MOVE(player, MOVE_PLASMA_FISTS); MOVE(opponent, MOVE_EMBER); }
     } SCENE {

@@ -272,46 +272,46 @@
 #define SPECIES_NORMAL_FUTO                             268
 #define SPECIES_TECH_FUTO                               269
 #define SPECIES_PLACEHOLD_FUTO                          270 // Placeholder
-#define SPECIES_LOMBRE                                  271 // Miko
-#define SPECIES_LUDICOLO                                272
-#define SPECIES_SEEDOT                                  273
-#define SPECIES_NUZLEAF                                 274
-#define SPECIES_SHIFTRY                                 275 // Mamizou
-#define SPECIES_TAILLOW                                 276
-#define SPECIES_SWELLOW                                 277
-#define SPECIES_WINGULL                                 278
-#define SPECIES_PELIPPER                                279 // Sekibanki
-#define SPECIES_RALTS                                   280
-#define SPECIES_KIRLIA                                  281
-#define SPECIES_GARDEVOIR                               282
-#define SPECIES_SURSKIT                                 283 // Kagerou
-#define SPECIES_MASQUERAIN                              284
-#define SPECIES_SHROOMISH                               285
-#define SPECIES_BRELOOM                                 286
-#define SPECIES_SLAKOTH                                 287 // Wakasagihime
-#define SPECIES_VIGOROTH                                288
-#define SPECIES_SLAKING                                 289
-#define SPECIES_NINCADA                                 290
-#define SPECIES_NINJASK                                 291 // Benben
-#define SPECIES_SHEDINJA                                292
-#define SPECIES_WHISMUR                                 293
-#define SPECIES_LOUDRED                                 294
-#define SPECIES_EXPLOUD                                 295 // Yatsuhashi
-#define SPECIES_MAKUHITA                                296
-#define SPECIES_HARIYAMA                                297
-#define SPECIES_AZURILL                                 298
-#define SPECIES_NOSEPASS                                299 // Raiko
-#define SPECIES_SKITTY                                  300
-#define SPECIES_DELCATTY                                301
-#define SPECIES_SABLEYE                                 302
-#define SPECIES_MAWILE                                  303 // Seija
-#define SPECIES_ARON                                    304
-#define SPECIES_LAIRON                                  305
-#define SPECIES_AGGRON                                  306
-#define SPECIES_MEDITITE                                307 // Sukuna
-#define SPECIES_MEDICHAM                                308
-#define SPECIES_ELECTRIKE                               309
-#define SPECIES_MANECTRIC                               310
+#define SPECIES_CHIBI_MIKO                              271
+#define SPECIES_NORMAL_MIKO                             272
+#define SPECIES_ATTACK_MIKO                             273
+#define SPECIES_DEFENSE_MIKO                            274
+#define SPECIES_CHIBI_MAMIZOU                           275
+#define SPECIES_NORMAL_MAMIZOU                          276
+#define SPECIES_DEFENSE_MAMIZOU                         277
+#define SPECIES_PLACEHOLD_MAMIZOU                       278 // Placeholder
+#define SPECIES_CHIBI_SEKIBANKI                         279
+#define SPECIES_NORMAL_SEKIBANKI                        280
+#define SPECIES_TECH_SEKIBANKI                          281
+#define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
+#define SPECIES_CHIBI_KAGEROU                                 283
+#define SPECIES_NORMAL_KAGEROU                              284
+#define SPECIES_HELPER_KAGEROU                               285
+#define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
+#define SPECIES_CHIBI_WAKASAGIHIME                      287
+#define SPECIES_NORMAL_WAKASAGIHIME                     288
+#define SPECIES_DEFENSE_WAKASAGIHIME                    289
+#define SPECIES_PLACEHOLD_WAKASAGIHIME                  290 // Placeholder
+#define SPECIES_CHIBI_BENBEN                            291
+#define SPECIES_NORMAL_BENBEN                           292
+#define SPECIES_DEFENSE_BENBEN                          293
+#define SPECIES_PLACEHOLD_BENBEN                        294 // Placeholder
+#define SPECIES_CHIBI_YATSUHASHI                        295
+#define SPECIES_NORMAL_YATSUHASHI                       296
+#define SPECIES_HELPER_YATSUHASHI                       297
+#define SPECIES_PLACEHOLD_YATSUHASHI                    298 // Placeholder
+#define SPECIES_CHIBI_RAIKO                             299
+#define SPECIES_NORMAL_RAIKO                            300
+#define SPECIES_ATTACK_RAIKO                            301
+#define SPECIES_PLACEHOLD_RAIKO                         302 // Placeholder
+#define SPECIES_CHIBI_SEIJA                             303 // Seija
+#define SPECIES_NORMAL_SEIJA                            304
+#define SPECIES_DEFENSE_SEIJA                           305
+#define SPECIES_PLACEHOLD_SEIJA                         306 // Placeholder
+#define SPECIES_CHIBI_SHINYOUMARU                       307
+#define SPECIES_NORMAL_SHINYOUMARU                      308
+#define SPECIES_ATTACK_SHINYOUMARU                      309
+#define SPECIES_DEFENSE_SHINYOUMARU                     310
 #define SPECIES_CHIBI_SUIKA                             311
 #define SPECIES_NORMAL_SUIKA                            312
 #define SPECIES_ATTACK_SUIKA                            313
@@ -344,32 +344,32 @@
 #define SPECIES_NORMAL_KOKORO                           340
 #define SPECIES_ATTACK_KOKORO                           341
 #define SPECIES_TECH_KOKORO                             342
-#define SPECIES_BALTOY                                  343 // Yorihime
-#define SPECIES_CLAYDOL                                 344
-#define SPECIES_LILEEP                                  345
-#define SPECIES_CRADILY                                 346 //
-#define SPECIES_ANORITH                                 347 // Toyohime
-#define SPECIES_ARMALDO                                 348
-#define SPECIES_FEEBAS                                  349
-#define SPECIES_MILOTIC                                 350
-#define SPECIES_CASTFORM_NORMAL                         351 // Kasen
-#define SPECIES_KECLEON                                 352
-#define SPECIES_SHUPPET                                 353
-#define SPECIES_BANETTE                                 354
+#define SPECIES_CHIBI_YORIHIME                          343 //
+#define SPECIES_NORMAL_YORIHIME                         344
+#define SPECIES_SPEED_YORIHIME                          345
+#define SPECIES_PLACEHOLD_YORIHIME                      346 // Placeholder
+#define SPECIES_CHIBI_TOYOHIME                          347
+#define SPECIES_NORMAL_TOYOHIME                         348
+#define SPECIES_TECH_TOYOHIME                           349
+#define SPECIES_PLACEHOLD_TOYOHIME                      350 // Placeholder
+#define SPECIES_CHIBI_KASEN                             351 // Kasen
+#define SPECIES_NORMAL_KASEN                            352
+#define SPECIES_ATTACK_KASEN                            353
+#define SPECIES_PLACEHOLD_KASEN                         354 // Placeholder
 #define SPECIES_CHIBI_TOKIKO                            355
 #define SPECIES_NORMAL_TOKIKO                           356
 #define SPECIES_ATTACK_TOKIKO                           357
 #define SPECIES_PLACEHOLD_TOKIKO                        358 // Placeholder
-#define SPECIES_ABSOL                                   359 // Kosuzu
-#define SPECIES_WYNAUT                                  360
-#define SPECIES_SNORUNT                                 361
-#define SPECIES_GLALIE                                  362
-#define SPECIES_SPHEAL                                  363 // Hakurei
-#define SPECIES_SEALEO                                  364
-#define SPECIES_WALREIN                                 365
-#define SPECIES_CLAMPERL                                366 // Kirisame
-#define SPECIES_HUNTAIL                                 367
-#define SPECIES_GOREBYSS                                368
+#define SPECIES_CHIBI_KOSUZU                            359
+#define SPECIES_NORMAL_KOSUZU                           360
+#define SPECIES_PLACEHOLD_KOSUZU                        361 // Placeholder
+#define SPECIES_PLACEHOLD2_KOSUZU                       362 // Placeholder
+#define SPECIES_CHIBI_HAKUREI                           363
+#define SPECIES_NORMAL_HAKUREI                          364
+#define SPECIES_PLACEHOLD_HAKUREI                       365 // Placeholder
+#define SPECIES_CHIBI_KIRISAME                          366
+#define SPECIES_NORMAL_KIRISAME                         367
+#define SPECIES_PLACEHOLD_KIRISAME                      368 // Placeholder
 #define SPECIES_GENJI                                   369
 #define SPECIES_CHIBI_RIKA                              370
 #define SPECIES_NORMAL_RIKA                             371
@@ -422,21 +422,21 @@
 #define SPECIES_CHIBI_LOUISE                            418
 #define SPECIES_NORMAL_LOUISE                           419
 #define SPECIES_PLACEHOLD_LOUISE                        420 // Placeholder
-#define SPECIES_CHERRIM_OVERCAST                        421 // Margatroid
-#define SPECIES_SHELLOS_WEST_SEA                        422
-#define SPECIES_GASTRODON_WEST_SEA                      423 // Placeholder
-#define SPECIES_AMBIPOM                                 424 // Yuki
-#define SPECIES_DRIFLOON                                425
-#define SPECIES_DRIFBLIM                                426 // Placeholder
-#define SPECIES_BUNEARY                                 427 // Mai
-#define SPECIES_LOPUNNY                                 428
-#define SPECIES_MISMAGIUS                               429 // Placeholder
-#define SPECIES_HONCHKROW                               430 // Yumeko
-#define SPECIES_GLAMEOW                                 431
-#define SPECIES_PURUGLY                                 432 // Placeholder
-#define SPECIES_CHINGLING                               433 // Shinki
-#define SPECIES_STUNKY                                  434
-#define SPECIES_SKUNTANK                                435 // Placeholder
+#define SPECIES_CHIBI_MARGATROID                        421
+#define SPECIES_NORMAL_MARGATROID                       422
+#define SPECIES_PLACEHOLD_MARGATROID                    423 // Placeholder
+#define SPECIES_CHIBI_YUKI                              424
+#define SPECIES_NORMAL_YUKI                             425
+#define SPECIES_PLACEHOLD_YUKI                          426 // Placeholder
+#define SPECIES_CHIBI_MAI                               427
+#define SPECIES_NORMAL_MAI                              428
+#define SPECIES_PLACEHOLD_MAI                           429 // Placeholder
+#define SPECIES_CHIBI_YUMEKO                            430
+#define SPECIES_NORMAL_YUMEKO                           431
+#define SPECIES_PLACEHOLD_YUMEKO                        432 // Placeholder
+#define SPECIES_CHIBI_SHINKI                            433
+#define SPECIES_NORMAL_SHINKI                           434
+#define SPECIES_PLACEHOLD_SHINKI                        435 // Placeholder
 #define SPECIES_BRONZOR                                 436 // Akyuu
 #define SPECIES_BRONZONG                                437 // Rinnosuke
 #define SPECIES_BONSLY                                  438 // Youki

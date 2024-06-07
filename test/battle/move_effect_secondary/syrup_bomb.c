@@ -174,7 +174,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup is removed when the user switches out")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SYRUP_BOMB); }
@@ -196,7 +196,7 @@ SINGLE_BATTLE_TEST("Sticky Syrup is removed when the user faints")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SYRUP_BOMB);

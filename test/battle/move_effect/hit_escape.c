@@ -10,7 +10,7 @@ SINGLE_BATTLE_TEST("U-turn switches the user out")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); }
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("U-turn does not switch the user out if the battle ends")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); }
@@ -52,7 +52,7 @@ SINGLE_BATTLE_TEST("U-turn does not switch the user out if replacements fainted"
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT) { HP(0); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { HP(0); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); }
@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("U-turn does not switch the user out if Wimp Out activates")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_WIMPOD) { MaxHP(200); HP(101); Ability(ABILITY_WIMP_OUT); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -83,7 +83,7 @@ SINGLE_BATTLE_TEST("U-turn switches the user out if Wimp Out fails to activate")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_WIMPOD) { MaxHP(200); HP(101); Ability(ABILITY_WIMP_OUT); }
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); }
@@ -100,7 +100,7 @@ SINGLE_BATTLE_TEST("U-turn switches the user out after Ice Face activates")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_U_TURN].category == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_BEEDRILL);
-        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_NORMAL_KOSUZU);
         OPPONENT(SPECIES_EISCUE) { Ability(ABILITY_ICE_FACE); }
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); }
@@ -118,8 +118,8 @@ SINGLE_BATTLE_TEST("Held items are consumed immediately after a mon switched in 
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); Item(ITEM_ELECTRIC_SEED); }
-        OPPONENT(SPECIES_WYNAUT) { HP(1); }
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(1); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
     } SCENE {
@@ -141,8 +141,8 @@ SINGLE_BATTLE_TEST("Held items are consumed immediately after a mon switched in 
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE);  }
-        OPPONENT(SPECIES_WYNAUT) { HP(1); }
-        OPPONENT(SPECIES_WYNAUT) { Item(ITEM_ELECTRIC_SEED); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(1); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Item(ITEM_ELECTRIC_SEED); }
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
     } SCENE {
@@ -164,8 +164,8 @@ SINGLE_BATTLE_TEST("Electric Seed boost is received by the right pokemon after U
     GIVEN {
         PLAYER(SPECIES_TAPU_KOKO) { Ability(ABILITY_ELECTRIC_SURGE); };
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); Item(ITEM_ELECTRIC_SEED); }
-        OPPONENT(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
         TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); }
     } SCENE {

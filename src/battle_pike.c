@@ -98,7 +98,7 @@ static const struct PikeWildMon sLvl50_Mons1[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
@@ -117,7 +117,7 @@ static const struct PikeWildMon sLvl50_Mons2[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
@@ -136,12 +136,12 @@ static const struct PikeWildMon sLvl50_Mons3[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
     {
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_PLACEHOLD_KAGEROU,
         .levelDelta = 5,
         .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_MULTI_PULSE}
     }
@@ -155,7 +155,7 @@ static const struct PikeWildMon sLvl50_Mons4[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
     },
@@ -182,7 +182,7 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
     },
@@ -201,7 +201,7 @@ static const struct PikeWildMon sLvlOpen_Mons2[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
     },
@@ -220,12 +220,12 @@ static const struct PikeWildMon sLvlOpen_Mons3[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
     },
     {
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_PLACEHOLD_KAGEROU,
         .levelDelta = 5,
         .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_MULTI_PULSE}
     }
@@ -239,7 +239,7 @@ static const struct PikeWildMon sLvlOpen_Mons4[] =
         .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_POISON_BOMB}
     },
     {
-        .species = SPECIES_MILOTIC,
+        .species = SPECIES_PLACEHOLD_TOYOHIME,
         .levelDelta = 4,
         .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
     },
@@ -1640,7 +1640,7 @@ static u8 SpeciesToPikeMonId(u16 species)
 
     if (species == SPECIES_NORMAL_STAR)
         ret = 0;
-    else if (species == SPECIES_MILOTIC)
+    else if (species == SPECIES_PLACEHOLD_TOYOHIME)
         ret = 1;
     else
         ret = 2;

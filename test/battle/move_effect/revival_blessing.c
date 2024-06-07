@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Revival Blessing revives a chosen fainted party member for t
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(0); }
-        PLAYER(SPECIES_WYNAUT) { HP(0); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { HP(0); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_REVIVAL_BLESSING); SEND_OUT(player, 2); }
@@ -69,9 +69,9 @@ TO_DO_BATTLE_TEST("Revival Blessing cannot revive a partner's party member");
 //         OPPONENT(SPECIES_CHIBI_YUUGI);
 //         OPPONENT(SPECIES_CHIBI_YUUGI);
 //         OPPONENT(SPECIES_CHIBI_YUUGI);
-//         OPPONENT(SPECIES_WYNAUT);
-//         OPPONENT(SPECIES_WYNAUT) { HP(0); }
-//         OPPONENT(SPECIES_WYNAUT);
+//         OPPONENT(SPECIES_NORMAL_KOSUZU);
+//         OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(0); }
+//         OPPONENT(SPECIES_NORMAL_KOSUZU);
 //     } WHEN {
 //         TURN { MOVE(user, MOVE_REVIVAL_BLESSING); }
 //     } SCENE {
@@ -92,9 +92,9 @@ TO_DO_BATTLE_TEST("Revived battlers still lose their turn");
 // {
 //     GIVEN {
 //         PLAYER(SPECIES_CHIBI_YUUGI);
-//         PLAYER(SPECIES_WYNAUT);
+//         PLAYER(SPECIES_NORMAL_KOSUZU);
 //         OPPONENT(SPECIES_CHIBI_YUUGI);
-//         OPPONENT(SPECIES_WYNAUT) { HP(1); }
+//         OPPONENT(SPECIES_NORMAL_KOSUZU) { HP(1); }
 //     } WHEN {
 //         TURN { MOVE(playerLeft, MOVE_TACKLE, target: opponentRight);
 //                MOVE(opponentLeft, MOVE_REVIVAL_BLESSING);

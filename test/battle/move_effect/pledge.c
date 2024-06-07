@@ -12,9 +12,9 @@ DOUBLE_BATTLE_TEST("Water and Fire Pledge create a rainbow on the user's side of
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_FIRE_PLEDGE, target: opponentRight);
@@ -40,9 +40,9 @@ DOUBLE_BATTLE_TEST("Rainbow doubles the chance of secondary move effects")
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_EMBER, MOVE_EFFECT_BURN) == TRUE);
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_FIRE_PLEDGE, target: opponentRight);
@@ -63,7 +63,7 @@ DOUBLE_BATTLE_TEST("Rainbow flinch chance does not stack with Serene Grace")
         PLAYER(SPECIES_NORMAL_MOMIJI) { Speed(8); Ability(ABILITY_SERENE_GRACE); }
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(3); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(3); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_FIRE_PLEDGE, target: opponentRight);
@@ -80,9 +80,9 @@ DOUBLE_BATTLE_TEST("Fire and Grass Pledge summons Sea Of Fire for four turns tha
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight);
@@ -119,9 +119,9 @@ DOUBLE_BATTLE_TEST("Sea Of Fire deals 1/8th damage per turn")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight);
@@ -138,9 +138,9 @@ DOUBLE_BATTLE_TEST("Grass and Water Pledge create a swamp on the user's side of 
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_GRASS_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_WATER_PLEDGE, target: opponentRight);
@@ -164,9 +164,9 @@ DOUBLE_BATTLE_TEST("Swamp reduces the speed of the effected side by 1/4th")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(5); }
-        PLAYER(SPECIES_WYNAUT) { Speed(4); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(4); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(12); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(8); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(8); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_GRASS_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_WATER_PLEDGE, target: opponentRight);
@@ -191,9 +191,9 @@ DOUBLE_BATTLE_TEST("The base power of a combined pledge move effect is 150")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_HYPER_BEAM].power == 150);
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(opponentRight, MOVE_HYPER_BEAM, target: playerRight);
                MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
@@ -214,7 +214,7 @@ DOUBLE_BATTLE_TEST("Pledge moves can not be redirected by absorbing abilities")
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_LILEEP) { Ability(ABILITY_STORM_DRAIN); }
+        OPPONENT(SPECIES_SPEED_YORIHIME) { Ability(ABILITY_STORM_DRAIN); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentRight);}
@@ -234,9 +234,9 @@ DOUBLE_BATTLE_TEST("Pledge status timer does not reset if combined move is used 
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, pledgeMove1, target: opponentLeft);
                MOVE(playerRight, pledgeMove2, target: opponentRight);
@@ -277,9 +277,9 @@ DOUBLE_BATTLE_TEST("Pledge moves get same attack type bonus from partner", s16 d
 
     GIVEN {
         PLAYER(species) { Speed(4); }
-        PLAYER(SPECIES_WYNAUT) { Speed(3); }
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(3); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(8); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(5); }
+        OPPONENT(SPECIES_NORMAL_KOSUZU) { Speed(5); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FIRE_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_GRASS_PLEDGE, target: opponentRight);
