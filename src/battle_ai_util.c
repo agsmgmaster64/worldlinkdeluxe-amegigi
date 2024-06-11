@@ -554,14 +554,27 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
                                              aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
 
         critChanceIndex = CalcCritChanceStageArgs(battlerAtk, battlerDef, move, FALSE, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], aiData->holdEffects[battlerAtk]);
-        if (critChanceIndex > 1) // Consider crit damage only if a move has at least +1 crit chance
+        if (critChanceIndex > 1) // Consider crit damage only if a move has at least +2 crit chance
         {
             s32 critDmg = CalculateMoveDamageVars(move, battlerAtk, battlerDef, moveType, fixedBasePower,
                                              effectivenessMultiplier, weather, TRUE,
                                              aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
                                              aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
-            u32 critChance = GetCritHitChance(critChanceIndex);
+            u32 critOdds = GetCritHitOdds(critChanceIndex); // Crit chance is 1/critOdds
             // With critChance getting closer to 1, dmg gets closer to critDmg.
+            if (dmgRoll == DMG_ROLL_DEFAULT)
+                dmg = DmgRoll((critDmg + normalDmg * (critChance - 1)) / (critChance));
+            else if (dmgRoll == DMG_ROLL_HIGHEST)
+                dmg = HighestRollDmg((critDmg + normalDmg * (critChance - 1)) / (critChance));
+            else
+                dmg = LowestRollDmg((critDmg + normalDmg * (critChance - 1)) / (critChance)); // Default to lowest roll
+        }
+        else if (critChanceIndex == -2) // Guaranteed critical
+        {
+            s32 critDmg = CalculateMoveDamageVars(move, battlerAtk, battlerDef, moveType, fixedBasePower,
+                                             effectivenessMultiplier, weather, TRUE,
+                                             aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
+                                             aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
             if (dmgRoll == DMG_ROLL_DEFAULT)
                 dmg = DmgRoll((critDmg + normalDmg * (critChance - 1)) / (critChance));
             else if (dmgRoll == DMG_ROLL_HIGHEST)
