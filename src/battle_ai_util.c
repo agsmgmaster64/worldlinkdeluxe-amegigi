@@ -560,8 +560,8 @@ s32 AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u8 *typeEffectivenes
                                              effectivenessMultiplier, weather, TRUE,
                                              aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
                                              aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
-            u32 critOdds = GetCritHitOdds(critChanceIndex); // Crit chance is 1/critOdds
-            // With critChance getting closer to 1, dmg gets closer to critDmg.
+            u32 critOdds = GetCritHitOdds(critChanceIndex);
+            // With critOdds getting closer to 1, dmg gets closer to critDmg.
             if (dmgRoll == DMG_ROLL_DEFAULT)
                 dmg = DmgRoll((critDmg + normalDmg * (critOdds - 1)) / (critOdds));
             else if (dmgRoll == DMG_ROLL_HIGHEST)
