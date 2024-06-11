@@ -5679,7 +5679,7 @@ bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId)
 
 bool8 HasTwoFramesAnimation(u16 species)
 {
-    return TRUE;
+    return P_TWO_FRAME_FRONT_SPRITES;
 }
 
 static bool8 ShouldSkipFriendshipChange(void)
