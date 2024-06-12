@@ -808,10 +808,6 @@ BattleScript_FlingMissed:
 	ppreduce
 	goto BattleScript_MoveMissedPause
 
-BattleScript_EffectShellSideArm::
-	shellsidearmcheck
-	goto BattleScript_EffectHit
-
 BattleScript_EffectPhotonGeyser::
 	setphotongeysercategory
 	goto BattleScript_EffectHit
