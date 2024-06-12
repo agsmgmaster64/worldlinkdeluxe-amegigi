@@ -55,6 +55,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         FOOTPRINT(CKirisame)
         .levelUpLearnset = sCKirisameLevelUpLearnset,
         .teachableLearnset = sCKirisameTeachableLearnset,
+        .eggMoveLearnset = sCKirisameEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_KIRISAME}),
     },
 
@@ -215,6 +216,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         FOOTPRINT(Genji)
         .levelUpLearnset = sGenjiLevelUpLearnset,
         .teachableLearnset = sGenjiTeachableLearnset,
+        .eggMoveLearnset = sGenjiEggMoveLearnset,
     },
 
     [SPECIES_CHIBI_RIKA] =
@@ -268,6 +270,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         FOOTPRINT(CRika)
         .levelUpLearnset = sCRikaLevelUpLearnset,
         .teachableLearnset = sCRikaTeachableLearnset,
+        .eggMoveLearnset = sCRikaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_RIKA}),
     },
 
@@ -431,6 +434,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         FOOTPRINT(CMeira)
         .levelUpLearnset = sCMeiraLevelUpLearnset,
         .teachableLearnset = sCMeiraTeachableLearnset,
+        .eggMoveLearnset = sCMeiraEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_MEIRA}),
     },
 

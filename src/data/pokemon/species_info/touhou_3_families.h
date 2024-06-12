@@ -54,6 +54,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CEllen)
         .levelUpLearnset = sCEllenLevelUpLearnset,
         .teachableLearnset = sCEllenTeachableLearnset,
+        .eggMoveLearnset = sCEllenEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_ELLEN}),
     },
 
@@ -214,6 +215,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CKotohime)
         .levelUpLearnset = sCKotohimeLevelUpLearnset,
         .teachableLearnset = sCKotohimeTeachableLearnset,
+        .eggMoveLearnset = sCKotohimeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_KOTOHIME}),
     },
 
@@ -375,6 +377,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CKana)
         .levelUpLearnset = sCKanaLevelUpLearnset,
         .teachableLearnset = sCKanaTeachableLearnset,
+        .eggMoveLearnset = sCKanaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_KANA}),
     },
 
@@ -539,6 +542,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CRikako)
         .levelUpLearnset = sCRikakoLevelUpLearnset,
         .teachableLearnset = sCRikakoTeachableLearnset,
+        .eggMoveLearnset = sCRikakoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_RIKAKO}),
     },
 
@@ -697,6 +701,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CChiyuri)
         .levelUpLearnset = sCChiyuriLevelUpLearnset,
         .teachableLearnset = sCChiyuriTeachableLearnset,
+        .eggMoveLearnset = sCChiyuriEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_CHIYURI}),
     },
 
@@ -858,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         FOOTPRINT(CYumemi)
         .levelUpLearnset = sCYumemiLevelUpLearnset,
         .teachableLearnset = sCYumemiTeachableLearnset,
+        .eggMoveLearnset = sCYumemiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_YUMEMI}),
     },
 

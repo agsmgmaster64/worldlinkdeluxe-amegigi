@@ -6515,23 +6515,25 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHADOW_DANCE] =
     {
-        .name = COMPOUND_STRING("Swallow"),
+        .name = COMPOUND_STRING("Shadow Dance"),
         .description = COMPOUND_STRING(
-            "Absorbs stockpiled power\n"
-            "and restores HP."),
-        .effect = EFFECT_SWALLOW,
-        .power = 0,
-        .type = TYPE_ILLUSION,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
+            "A dance of 2 to 3 turns\n"
+            "that confuses the user."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_RANDOM,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .healingMove = TRUE,
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .danceMove = TRUE,
+        .instructBanned = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_THRASH,
+            .self = TRUE,
+        }),
         .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,

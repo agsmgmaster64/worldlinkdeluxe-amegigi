@@ -55,6 +55,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou1[] =
         FOOTPRINT(CHakurei)
         .levelUpLearnset = sCHakureiLevelUpLearnset,
         .teachableLearnset = sCHakureiTeachableLearnset,
+        .eggMoveLearnset = sCHakureiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_HAKUREI}),
     },
 

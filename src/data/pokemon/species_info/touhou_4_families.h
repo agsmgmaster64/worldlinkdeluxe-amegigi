@@ -54,6 +54,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(COrange)
         .levelUpLearnset = sCOrangeLevelUpLearnset,
         .teachableLearnset = sCOrangeTeachableLearnset,
+        .eggMoveLearnset = sCOrangeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_ORANGE}),
     },
 
@@ -214,6 +215,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(CKurumi)
         .levelUpLearnset = sCKurumiLevelUpLearnset,
         .teachableLearnset = sCKurumiTeachableLearnset,
+        .eggMoveLearnset = sCKurumiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_KURUMI}),
     },
 
@@ -374,6 +376,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(CElly)
         .levelUpLearnset = sCEllyLevelUpLearnset,
         .teachableLearnset = sCEllyTeachableLearnset,
+        .eggMoveLearnset = sCEllyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_ELLY}),
     },
 
@@ -534,6 +537,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(CKazami)
         .levelUpLearnset = sCKazamiLevelUpLearnset,
         .teachableLearnset = sCKazamiTeachableLearnset,
+        .eggMoveLearnset = sCKazamiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_KAZAMI},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KAZAMI}),
     },
@@ -700,6 +704,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(CMugetsu)
         .levelUpLearnset = sCMugetsuLevelUpLearnset,
         .teachableLearnset = sCMugetsuTeachableLearnset,
+        .eggMoveLearnset = sCMugetsuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_MUGETSU}),
     },
 
@@ -862,6 +867,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         FOOTPRINT(CGengetsu)
         .levelUpLearnset = sCGengetsuLevelUpLearnset,
         .teachableLearnset = sCGengetsuTeachableLearnset,
+        .eggMoveLearnset = sCGengetsuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_GENGETSU}),
     },
 

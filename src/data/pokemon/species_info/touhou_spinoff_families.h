@@ -1591,6 +1591,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CKokoro)
         .levelUpLearnset = sCKokoroLevelUpLearnset,
         .teachableLearnset = sCKokoroTeachableLearnset,
+        .eggMoveLearnset = sCKokoroEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_KOKORO}),
     },
 
@@ -1810,6 +1811,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         FOOTPRINT(CKasen)
         .levelUpLearnset = sCKasenLevelUpLearnset,
         .teachableLearnset = sCKasenTeachableLearnset,
+        .eggMoveLearnset = sCKasenEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KASEN}),
     },
 

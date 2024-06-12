@@ -269,6 +269,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         FOOTPRINT(CYorihime)
         .levelUpLearnset = sCYorihimeLevelUpLearnset,
         .teachableLearnset = sCYorihimeTeachableLearnset,
+        .eggMoveLearnset = sCYorihimeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YORIHIME},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YORIHIME}),
     },
@@ -487,6 +488,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         FOOTPRINT(CToyohime)
         .levelUpLearnset = sCToyohimeLevelUpLearnset,
         .teachableLearnset = sCToyohimeTeachableLearnset,
+        .eggMoveLearnset = sCToyohimeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_TOYOHIME},
                                 {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_TOYOHIME}),
     },
@@ -704,6 +706,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         FOOTPRINT(CTokiko)
         .levelUpLearnset = sCTokikoLevelUpLearnset,
         .teachableLearnset = sCTokikoTeachableLearnset,
+        .eggMoveLearnset = sCTokikoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_TOKIKO},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TOKIKO}),
     },
@@ -919,6 +922,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         FOOTPRINT(CKosuzu)
         .levelUpLearnset = sCKosuzuLevelUpLearnset,
         .teachableLearnset = sCKosuzuTeachableLearnset,
+        .eggMoveLearnset = sCKosuzuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_KOSUZU}),
     },
 

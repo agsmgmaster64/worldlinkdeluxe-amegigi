@@ -54,6 +54,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CSara)
         .levelUpLearnset = sCSaraLevelUpLearnset,
         .teachableLearnset = sCSaraTeachableLearnset,
+        .eggMoveLearnset = sCSaraEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_SARA}),
     },
 
@@ -214,6 +215,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CLouise)
         .levelUpLearnset = sCLouiseLevelUpLearnset,
         .teachableLearnset = sCLouiseTeachableLearnset,
+        .eggMoveLearnset = sCLouiseEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_LOUISE}),
     },
 
@@ -375,6 +377,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CMargatroid)
         .levelUpLearnset = sCMargatroidLevelUpLearnset,
         .teachableLearnset = sCMargatroidTeachableLearnset,
+        .eggMoveLearnset = sCMargatroidEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_MARGATROID}),
     },
 
@@ -537,6 +540,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CYuki)
         .levelUpLearnset = sCYukiLevelUpLearnset,
         .teachableLearnset = sCYukiTeachableLearnset,
+        .eggMoveLearnset = sCYukiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_YUKI}),
     },
 
@@ -697,6 +701,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CMai)
         .levelUpLearnset = sCMaiLevelUpLearnset,
         .teachableLearnset = sCMaiTeachableLearnset,
+        .eggMoveLearnset = sCMaiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_MAI}),
     },
 
@@ -858,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CYumeko)
         .levelUpLearnset = sCYumekoLevelUpLearnset,
         .teachableLearnset = sCYumekoTeachableLearnset,
+        .eggMoveLearnset = sCYumekoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YUMEKO}),
     },
 
@@ -1021,6 +1027,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou5[] =
         FOOTPRINT(CShinki)
         .levelUpLearnset = sCShinkiLevelUpLearnset,
         .teachableLearnset = sCShinkiTeachableLearnset,
+        .eggMoveLearnset = sCShinkiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_SHINKI}),
     },
 
