@@ -112,9 +112,9 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_CHIBI_ALICE,
-    SPECIES_CHIBI_SANAE,
-    SPECIES_CHIBI_REISEN,
+    SPECIES_CHIBI_SARA,
+    SPECIES_CHIBI_LOUISE,
+    SPECIES_CHIBI_KURUMI,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
