@@ -11564,30 +11564,6 @@ void RemoveBattlerType(u32 battler, u8 type)
     }
 }
 
-bool32 CanTargetPartner(u32 battlerAtk, u32 battlerDef)
-{
-    return (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
-         && IsBattlerAlive(BATTLE_PARTNER(battlerDef))
-         && battlerDef != BATTLE_PARTNER(battlerAtk));
-}
-
-static inline bool32 DoesCurrentTargetHaveAbilityImmunity(void)
-{
-    return (AbilityBattleEffects(ABILITYEFFECT_WOULD_BLOCK, gBattlerTarget, 0, 0, 0)
-         || AbilityBattleEffects(ABILITYEFFECT_WOULD_ABSORB, gBattlerTarget, 0, 0, 0));
-}
-
-bool32 TargetFullyImmuneToCurrMove(u32 battlerAtk, u32 battlerDef)
-{
-    u32 moveType = 0;
-    GET_MOVE_TYPE(gCurrentMove, moveType);
-
-    return ((CalcTypeEffectivenessMultiplier(gCurrentMove, moveType, battlerAtk, battlerDef, GetBattlerAbility(battlerDef), FALSE) == UQ_4_12(0.0))
-         || IsBattlerProtected(battlerAtk, battlerDef, gCurrentMove)
-         || IsSemiInvulnerable(battlerDef, gCurrentMove)
-         || DoesCurrentTargetHaveAbilityImmunity());
-}
-
 void SetShellSideArmCategory(void)
 {
     u32 battlerAtk, battlerDef;
@@ -11634,4 +11610,28 @@ void SetShellSideArmCategory(void)
                 gBattleStruct->shellSideArmCategory[battlerAtk][battlerDef] = DAMAGE_CATEGORY_SPECIAL;
         }
     }
+}
+
+bool32 CanTargetPartner(u32 battlerAtk, u32 battlerDef)
+{
+    return (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
+         && IsBattlerAlive(BATTLE_PARTNER(battlerDef))
+         && battlerDef != BATTLE_PARTNER(battlerAtk));
+}
+
+static inline bool32 DoesCurrentTargetHaveAbilityImmunity(void)
+{
+    return (AbilityBattleEffects(ABILITYEFFECT_WOULD_BLOCK, gBattlerTarget, 0, 0, 0)
+         || AbilityBattleEffects(ABILITYEFFECT_WOULD_ABSORB, gBattlerTarget, 0, 0, 0));
+}
+
+bool32 TargetFullyImmuneToCurrMove(u32 BattlerAtk, u32 battlerDef)
+{
+    u32 moveType = 0;
+    GET_MOVE_TYPE(gCurrentMove, moveType);
+
+    return ((CalcTypeEffectivenessMultiplier(gCurrentMove, moveType, BattlerAtk, battlerDef, GetBattlerAbility(battlerDef), FALSE) == UQ_4_12(0.0))
+         || IsBattlerProtected(BattlerAtk, battlerDef, gCurrentMove)
+         || IsSemiInvulnerable(battlerDef, gCurrentMove)
+         || DoesCurrentTargetHaveAbilityImmunity());
 }

@@ -28388,6 +28388,7 @@ Move_TECTONIC_RAGE::
 	waitforvisualfinish
 	call UnsetPsychicBg
 	waitbgfadein
+	clearmonbg_static ANIM_ATTACKER
 	createvisualtask AnimTask_AllBattlersVisible, 0xA
 	waitforvisualfinish
 	end

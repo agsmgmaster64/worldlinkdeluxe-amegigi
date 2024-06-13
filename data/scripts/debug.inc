@@ -157,6 +157,7 @@ Debug_EventScript_Script_1_Mart:
 
 Debug_EventScript_Script_2::
 	givemon SPECIES_NORMAL_YOUMU, 100, ITEM_MAID_UNIFORM, ITEM_LUXURY_ORB, NATURE_ADAMANT, 2, 0, 0, 252, 0, 252, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_BLADE_FLASH, MOVE_DRAWN_LINE, MOVE_SHADOW_HIT, MOVE_SWORDS_DANCE, TRUE, 0, TYPE_STELLAR
+	release
 	end
 
 Debug_EventScript_Script_3::
@@ -186,6 +187,7 @@ Debug_EventScript_Script_3_PrintTypeSepia::
 Debug_EventScript_Script_3_UpdateTrainerCard::
 	playse MUS_RG_PHOTO
 	special UpdateTrainerCardPhotoIcons
+	release
 	end
 
 Debug_EventScript_Script_3_Text_ChoosePrintType::
@@ -212,6 +214,7 @@ Debug_EventScript_Script_4::
 	giveitem ITEM_PICKAXE
 	giveitem ITEM_SCUBA_GEAR
 	giveitem ITEM_TERA_ORB
+	release
 	end
 
 Debug_EventScript_Script_5::
@@ -283,12 +286,15 @@ Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined:
 
 
 Debug_EventScript_Script_6::
+	release
 	end
 
 Debug_EventScript_Script_7::
+	release
 	end
 
 Debug_EventScript_Script_8::
+	release
 	end
 
 Debug_CheckSaveBlock::

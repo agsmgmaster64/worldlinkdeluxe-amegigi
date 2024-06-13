@@ -2536,3 +2536,8 @@ bool8 ScrCmd_setspeakername(struct ScriptContext *ctx)
     SetSpeakerName(name);
     return FALSE;
 }
+
+void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
+{
+    sIsScriptedWildDouble = TRUE;
+}

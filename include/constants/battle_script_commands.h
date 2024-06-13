@@ -228,7 +228,7 @@
 #define VARIOUS_SWAP_STATS                           136
 #define VARIOUS_TEATIME_INVUL                        137
 #define VARIOUS_TEATIME_TARGETS                      138
-#define VARIOUS_TRY_WIND_RIDER_POWER                 149
+#define VARIOUS_TRY_WIND_RIDER_POWER                 139
 #define VARIOUS_ACTIVATE_WEATHER_CHANGE_ABILITIES    140
 #define VARIOUS_ACTIVATE_TERRAIN_CHANGE_ABILITIES    141
 #define VARIOUS_STORE_HEALING_WISH                   142
