@@ -156,7 +156,7 @@ extern const u8 Move_DISPERSE[];
 extern const u8 Move_GALE[];
 extern const u8 Move_EXPLOSION[];
 extern const u8 Move_FURY_SWIPES[];
-extern const u8 Move_BONEMERANG[];
+extern const u8 Move_LUNATIC[];
 extern const u8 Move_REST[];
 extern const u8 Move_ROCK_SLIDE[];
 extern const u8 Move_KILLING_BITE[];

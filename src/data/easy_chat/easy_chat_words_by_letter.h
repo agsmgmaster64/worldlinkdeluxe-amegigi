@@ -147,7 +147,7 @@ const u16 gEasyChatWordsByLetter_B[] = {
     EC_MOVE2(BODY_SLAM),
     EC_MOVE2(BONE_CLUB),
     EC_MOVE2(BONE_RUSH),
-    EC_MOVE2(BONEMERANG),
+    EC_MOVE2(LUNATIC),
     EC_WORD_BOOK,
     EC_WORD_BORED,
     EC_WORD_BORING,

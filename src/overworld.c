@@ -492,7 +492,6 @@ void Overworld_ResetBattleFlagsAndVars(void)
     FlagClear(B_SMART_WILD_AI_FLAG);
     FlagClear(B_FLAG_NO_BAG_USE);
     FlagClear(B_FLAG_NO_CATCHING);
-    FlagClear(FLAG_OVERRIDE_MUSIC);
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
     FlagClear(B_FLAG_SKY_BATTLE);
 }
@@ -1102,7 +1101,7 @@ void SetDefaultFlashLevel(void)
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
-        gSaveBlock1Ptr->flashLevel = 1;
+        gSaveBlock1Ptr->flashLevel = 0;
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
     TryUseFlash(); // qol_field_moves
@@ -1392,7 +1391,7 @@ void TryFadeOutOldMapMusic(void)
 {
     u16 currentMusic = GetCurrentMapMusic();
     u16 warpMusic = GetWarpDestinationMusic();
-    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
+    if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && FlagGet(FLAG_OVERRIDE_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
         if ((currentMusic == MUS_WLD_SURF || currentMusic == MUS_ZGS_SURF || currentMusic == MUS_SURF)
             && VarGet(VAR_SKY_PILLAR_STATE) == 2

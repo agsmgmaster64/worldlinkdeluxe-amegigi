@@ -1962,7 +1962,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_BONE_CLUB,
-            MOVE_BONEMERANG,
+            MOVE_LUNATIC,
             MOVE_BONE_RUSH,
             MOVE_GROWL
         },

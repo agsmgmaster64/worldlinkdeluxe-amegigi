@@ -91,41 +91,6 @@ static void LockPlayerAndLoadMon(void)
     gFieldEffectArguments[0] = gSpecialVar_Result;
 }
 
-// Cut
-u32 CanUseCut(s16 x, s16 y)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_CUT);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_BIG_AXE, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE01_GET);
-
-    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE)
-     && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
-     && ((monHasMove && playerHasBadge) || bagHasItem))
-    {
-        return monHasMove ? FIELD_MOVE_POKEMON : FIELD_MOVE_TOOL;
-    }
-
-    return FIELD_MOVE_FAIL;
-}
-
-u32 UseCut(u32 fieldMoveStatus)
-{
-    HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
-    if (QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_CUT);
-
-    if (FlagGet(FLAG_SYS_USE_CUT))
-        ScriptContext_SetupScript(EventScript_CutTreeDown);
-    else if (fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseCut);
-    else if (fieldMoveStatus == FIELD_MOVE_TOOL)
-        ScriptContext_SetupScript(EventScript_UseCutTool);
-
-    FlagSet(FLAG_SYS_USE_CUT);
-    return COLLISION_START_CUT;
-}
-
 // Fly
 void ReturnToFieldFromFlyToolMapSelect(void)
 {
@@ -191,13 +156,13 @@ u32 CanUseSurf(s16 x, s16 y, u8 collision)
     return FIELD_MOVE_FAIL;
 }
 
-u32 CanUseSurfFromInteractedWater()
+u32 CanUseSurfFromInteractedWater(void)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     s16 x = playerObjEvent->currentCoords.x;
     s16 y = playerObjEvent->currentCoords.y;
 
-    return CanUseSurf(x,y,COLLISION_ELEVATION_MISMATCH);
+    return CanUseSurf(x, y, COLLISION_ELEVATION_MISMATCH);
 }
 
 u8 FldEff_UseSurfTool(void)
@@ -277,49 +242,6 @@ void RemoveRelevantSurfFieldEffect(void)
     }
 }
 
-// Strength
-
-u32 CanUseStrength(u8 collision)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_STRENGTH);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_POWER_GLOVE, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE04_GET);
-    bool32 playerUsedStrength = FlagGet(FLAG_SYS_USE_STRENGTH);
-    bool32 collisionEvent = (collision == COLLISION_OBJECT_EVENT);
-
-    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER)
-     && !playerUsedStrength && collisionEvent
-     && ((monHasMove && playerHasBadge) || bagHasItem))
-    {
-        return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
-    return FIELD_MOVE_FAIL;
-}
-
-u32 UseStrength(u32 fieldMoveStatus, u8 x, u8 y, u8 direction)
-{
-    if (QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_STRENGTH);
-
-    HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
-
-    if (FlagGet(FLAG_SYS_USE_STRENGTH))
-    {
-        TryPushBoulder(x, y, direction);
-        return COLLISION_PUSHED_BOULDER;
-    }
-
-    FlagSet(FLAG_SYS_USE_STRENGTH);
-
-    if(fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseStrength);
-    else
-        ScriptContext_SetupScript(EventScript_UseStrengthTool);
-
-    return COLLISION_PUSHED_BOULDER;
-}
-
 void PushBoulderFromScript(void)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
@@ -397,42 +319,6 @@ void TryUseFlash(void)
     u32 fieldMoveStatus = CanUseFlash();
     if (fieldMoveStatus)
         UseFlash(fieldMoveStatus);
-}
-
-// Rock Smash
-
-u32 CanUseRockSmash(s16 x, s16 y)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_ROCK_SMASH);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_PICKAXE, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE03_GET);
-
-    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK)
-     && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
-     && ((monHasMove && playerHasBadge) || bagHasItem))
-    {
-        return monHasMove ? FIELD_MOVE_POKEMON : FIELD_MOVE_TOOL;
-    }
-
-    return FIELD_MOVE_FAIL;
-}
-
-u32 UseRockSmash(u32 fieldMoveStatus)
-{
-    HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
-    if (QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_ROCK_SMASH);
-
-    if (FlagGet(FLAG_SYS_USE_ROCK_SMASH))
-        ScriptContext_SetupScript(EventScript_SmashRock);
-    else if (fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseRockSmash);
-    else if (fieldMoveStatus == FIELD_MOVE_TOOL)
-        ScriptContext_SetupScript(EventScript_UseRockSmashTool);
-
-    FlagSet(FLAG_SYS_USE_ROCK_SMASH);
-    return COLLISION_START_ROCK_SMASH;
 }
 
 //Waterfall
@@ -627,7 +513,7 @@ void ClearFieldMoveFlags(void)
     FlagClear(FLAG_SYS_USE_WATERFALL);
 }
 
-static bool32 CanLearnMoveLevelUp(u16 species, u16 move)
+static bool32 CanSpeciesLearnMoveLevelUp(u16 species, u16 move)
 {
     const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
     u32 i = 0;
@@ -660,7 +546,7 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)
         if (monCanLearn == ALREADY_KNOWS_MOVE)
             return SetMonResultVariables(i, species);
 
-        if (CanLearnMoveLevelUp(species, move) || monCanLearn == CAN_LEARN_MOVE)
+        if (CanSpeciesLearnMoveLevelUp(species, move) || monCanLearn == CAN_LEARN_MOVE)
         {
             return SetMonResultVariables(i, species);
         }

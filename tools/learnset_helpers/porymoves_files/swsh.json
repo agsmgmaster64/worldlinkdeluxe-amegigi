@@ -8325,7 +8325,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_BONEMERANG"
+        "Move": "MOVE_LUNATIC"
       },
       {
         "Level": 44,
@@ -8445,7 +8445,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_BONEMERANG"
+        "Move": "MOVE_LUNATIC"
       },
       {
         "Level": 54,
@@ -78957,7 +78957,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_BONEMERANG"
+        "Move": "MOVE_LUNATIC"
       },
       {
         "Level": 54,

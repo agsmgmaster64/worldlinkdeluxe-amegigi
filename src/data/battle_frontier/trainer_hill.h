@@ -3083,7 +3083,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_CHIBI_MYSTIA,
                                             .heldItem = ITEM_THICK_CLUB,
-                                            .moves = {MOVE_BONEMERANG, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+                                            .moves = {MOVE_LUNATIC, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 252,
                                             .defenseEV = 6,
                                             .spDefenseEV = 252,

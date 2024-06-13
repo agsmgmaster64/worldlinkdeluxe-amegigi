@@ -3966,26 +3966,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .battleAnimScript = Move_FURY_SWIPES,
     },
 
-    [MOVE_BONEMERANG] =
+    [MOVE_LUNATIC] =
     {
-        .name = COMPOUND_STRING("Bonemerang"),
+        .name = COMPOUND_STRING("Lunatic"),
         .description = COMPOUND_STRING(
-            "Throws a bone boomerang\n"
-            "that strikes twice."),
+            "A lunatic force that\n"
+            "may lower Sp. Def."),
         .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_EARTH,
-        .accuracy = 90,
-        .pp = 10,
+        .power = 120,
+        .type = TYPE_STEEL,
+        .accuracy = 85,
+        .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .strikeCount = 2,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+            .chance = 20,
+        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_BONEMERANG,
         .contestComboMoves = {COMBO_STARTER_BONE_CLUB, COMBO_STARTER_BONE_RUSH, COMBO_STARTER_SHADOW_BONE},
-        .battleAnimScript = Move_BONEMERANG,
+        .battleAnimScript = Move_LUNATIC,
     },
 
     [MOVE_REST] =

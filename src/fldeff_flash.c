@@ -6,6 +6,7 @@
 #include "fldeff.h"
 #include "gpu_regs.h"
 #include "main.h"
+#include "map_name_popup.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -99,6 +100,7 @@ static void FieldCallback_Flash(void)
 
 void FldEff_UseFlash(void)
 {
+    HideMapNamePopUpWindow();
     PlaySE(SE_M_REFLECT);
     FlagSet(FLAG_SYS_USE_FLASH);
     ScriptContext_SetupScript(EventScript_UseFlash);

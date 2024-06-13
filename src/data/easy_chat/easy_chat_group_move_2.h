@@ -20,7 +20,7 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_BODY_SLAM,
     MOVE_BONE_CLUB,
     MOVE_BONE_RUSH,
-    MOVE_BONEMERANG,
+    MOVE_LUNATIC,
     MOVE_BOUNCE,
     MOVE_BUBBLE_BEAM,
     MOVE_BULK_UP,

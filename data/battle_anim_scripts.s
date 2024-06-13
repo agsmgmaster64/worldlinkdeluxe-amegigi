@@ -22545,7 +22545,7 @@ Move_POISON_TEARS::
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-Move_BONEMERANG::
+Move_LUNATIC::
 	loadspritegfx ANIM_TAG_BONE
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
