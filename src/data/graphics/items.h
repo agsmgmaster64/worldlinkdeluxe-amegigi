@@ -544,23 +544,23 @@ const u32 gItemIconPalette_RetroMail[] = INCBIN_U32("graphics/items/icon_palette
 
 // Evolution Items
 
-const u32 gItemIcon_FireStone[] = INCBIN_U32("graphics/items/icons/fire_stone.4bpp.lz");
-const u32 gItemIconPalette_FireStone[] = INCBIN_U32("graphics/items/icon_palettes/fire_stone.gbapal.lz");
+const u32 gItemIcon_PowerHeart[] = INCBIN_U32("graphics/items/icons/power_heart.4bpp.lz");
+const u32 gItemIconPalette_PowerHeart[] = INCBIN_U32("graphics/items/icon_palettes/power_heart.gbapal.lz");
 
-const u32 gItemIcon_WaterStone[] = INCBIN_U32("graphics/items/icons/water_stone.4bpp.lz");
-const u32 gItemIconPalette_WaterStone[] = INCBIN_U32("graphics/items/icon_palettes/water_stone.gbapal.lz");
+const u32 gItemIcon_GuardHeart[] = INCBIN_U32("graphics/items/icons/guard_heart.4bpp.lz");
+const u32 gItemIconPalette_GuardHeart[] = INCBIN_U32("graphics/items/icon_palettes/guard_heart.gbapal.lz");
 
-const u32 gItemIcon_ThunderStone[] = INCBIN_U32("graphics/items/icons/thunder_stone.4bpp.lz");
-const u32 gItemIconPalette_ThunderStone[] = INCBIN_U32("graphics/items/icon_palettes/thunder_stone.gbapal.lz");
+const u32 gItemIcon_SwiftHeart[] = INCBIN_U32("graphics/items/icons/swift_heart.4bpp.lz");
+const u32 gItemIconPalette_SwiftHeart[] = INCBIN_U32("graphics/items/icon_palettes/swift_heart.gbapal.lz");
 
-const u32 gItemIcon_LeafStone[] = INCBIN_U32("graphics/items/icons/leaf_stone.4bpp.lz");
-const u32 gItemIconPalette_LeafStone[] = INCBIN_U32("graphics/items/icon_palettes/leaf_stone.gbapal.lz");
+const u32 gItemIcon_TechHeart[] = INCBIN_U32("graphics/items/icons/tech_heart.4bpp.lz");
+const u32 gItemIconPalette_TechHeart[] = INCBIN_U32("graphics/items/icon_palettes/tech_heart.gbapal.lz");
 
-const u32 gItemIcon_IceStone[] = INCBIN_U32("graphics/items/icons/ice_stone.4bpp.lz");
-const u32 gItemIconPalette_IceStone[] = INCBIN_U32("graphics/items/icon_palettes/ice_stone.gbapal.lz");
+const u32 gItemIcon_HelperHeart[] = INCBIN_U32("graphics/items/icons/helper_heart.4bpp.lz");
+const u32 gItemIconPalette_HelperHeart[] = INCBIN_U32("graphics/items/icon_palettes/helper_heart.gbapal.lz");
 
-const u32 gItemIcon_SunStone[] = INCBIN_U32("graphics/items/icons/sun_stone.4bpp.lz");
-const u32 gItemIconPalette_SunStone[] = INCBIN_U32("graphics/items/icon_palettes/sun_stone.gbapal.lz");
+const u32 gItemIcon_JustHeart[] = INCBIN_U32("graphics/items/icons/just_heart.4bpp.lz");
+const u32 gItemIconPalette_JustHeart[] = INCBIN_U32("graphics/items/icon_palettes/just_heart.gbapal.lz");
 
 const u32 gItemIcon_MoonStone[] = INCBIN_U32("graphics/items/icons/moon_stone.4bpp.lz");
 const u32 gItemIconPalette_MoonStone[] = INCBIN_U32("graphics/items/icon_palettes/moon_stone.gbapal.lz");

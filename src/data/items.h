@@ -3836,8 +3836,8 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_FireStone,
-        .iconPalette = gItemIconPalette_FireStone,
+        .iconPic = gItemIcon_PowerHeart,
+        .iconPalette = gItemIconPalette_PowerHeart,
     },
 
     [ITEM_GUARD_HEART] =
@@ -3853,8 +3853,8 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_WaterStone,
-        .iconPalette = gItemIconPalette_WaterStone,
+        .iconPic = gItemIcon_GuardHeart,
+        .iconPalette = gItemIconPalette_GuardHeart,
     },
 
     [ITEM_SWIFT_HEART] =
@@ -3870,8 +3870,8 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_ThunderStone,
-        .iconPalette = gItemIconPalette_ThunderStone,
+        .iconPic = gItemIcon_SwiftHeart,
+        .iconPalette = gItemIconPalette_SwiftHeart,
     },
 
     [ITEM_TECH_HEART] =
@@ -3887,13 +3887,13 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_LeafStone,
-        .iconPalette = gItemIconPalette_LeafStone,
+        .iconPic = gItemIcon_TechHeart,
+        .iconPalette = gItemIconPalette_TechHeart,
     },
 
     [ITEM_HELPER_HEART] =
     {
-        .name = _("Ice Stone"),
+        .name = _("Helper Heart"),
         .price = 3000,
         .description = COMPOUND_STRING(
             "Brings support\n"
@@ -3904,13 +3904,13 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_IceStone,
-        .iconPalette = gItemIconPalette_IceStone,
+        .iconPic = gItemIcon_HelperHeart,
+        .iconPalette = gItemIconPalette_HelperHeart,
     },
 
     [ITEM_JUST_HEART] =
     {
-        .name = _("Sun Stone"),
+        .name = _("Just Heart"),
         .price = 3000,
         .description = COMPOUND_STRING(
             "Brings a sense\n"
@@ -3921,8 +3921,8 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_SunStone,
-        .iconPalette = gItemIconPalette_SunStone,
+        .iconPic = gItemIcon_JustHeart,
+        .iconPalette = gItemIconPalette_JustHeart,
     },
 
     [ITEM_CHROME_HEART] =
@@ -7660,6 +7660,7 @@ const struct Item gItemsInfo[] =
     [ITEM_THICK_FUR] =
     {
         .name = _("Thick Fur"),
+        .pluralName = _("Thick Fur"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
         .holdEffect = HOLD_EFFECT_ICE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
