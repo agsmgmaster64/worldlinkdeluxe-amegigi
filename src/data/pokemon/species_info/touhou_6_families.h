@@ -763,13 +763,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_CCirno,
         .iconPalIndex = 1,
         FOOTPRINT(CCirno)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_CCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_CCirno,
-            gShinyFollowerPalette_CCirno
+            gOverworldPalette_CCirno,
+            gShinyOverworldPalette_CCirno
         )
         .levelUpLearnset = sCCirnoLevelUpLearnset,
         .teachableLearnset = sCCirnoTeachableLearnset,
@@ -832,13 +832,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_Cirno,
         .iconPalIndex = 1,
         FOOTPRINT(Cirno)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_Cirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_Cirno,
-            gShinyFollowerPalette_Cirno
+            gOverworldPalette_Cirno,
+            gShinyOverworldPalette_Cirno
         )
         .levelUpLearnset = sCirnoLevelUpLearnset,
         .teachableLearnset = sCirnoTeachableLearnset,
@@ -894,13 +894,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_SCirno,
         .iconPalIndex = 1,
         FOOTPRINT(SCirno)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_SCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_SCirno,
-            gShinyFollowerPalette_SCirno
+            gOverworldPalette_SCirno,
+            gShinyOverworldPalette_SCirno
         )
         .levelUpLearnset = sSCirnoLevelUpLearnset,
         .teachableLearnset = sSCirnoTeachableLearnset,
@@ -957,13 +957,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconSprite = gMonIcon_TCirno,
         .iconPalIndex = 1,
         FOOTPRINT(TCirno)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_TCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_TCirno,
-            gShinyFollowerPalette_TCirno
+            gOverworldPalette_TCirno,
+            gShinyOverworldPalette_TCirno
         )
         .levelUpLearnset = sTCirnoLevelUpLearnset,
         .teachableLearnset = sTCirnoTeachableLearnset,

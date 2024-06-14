@@ -2108,13 +2108,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_Kyogre,
         .iconPalIndex = 2,
         FOOTPRINT(Kyogre)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_Kyogre,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
-            gFollowerPalette_Kyogre,
-            gShinyFollowerPalette_Kyogre
+            gOverworldPalette_Kyogre,
+            gShinyOverworldPalette_Kyogre
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
@@ -2232,13 +2232,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_Rayquaza,
         .iconPalIndex = 1,
         FOOTPRINT(Rayquaza)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_Rayquaza,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
-            gFollowerPalette_Rayquaza,
-            gShinyFollowerPalette_Rayquaza
+            gOverworldPalette_Rayquaza,
+            gShinyOverworldPalette_Rayquaza
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,

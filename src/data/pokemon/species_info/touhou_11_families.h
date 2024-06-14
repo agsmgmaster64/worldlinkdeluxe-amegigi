@@ -1854,13 +1854,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconSprite = gMonIcon_Groudon,
         .iconPalIndex = 0,
         FOOTPRINT(Groudon)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_Groudon,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_Groudon,
-            gShinyFollowerPalette_Groudon
+            gOverworldPalette_Groudon,
+            gShinyOverworldPalette_Groudon
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,

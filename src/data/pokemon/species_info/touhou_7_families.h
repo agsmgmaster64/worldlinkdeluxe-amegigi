@@ -765,13 +765,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_CLilyWhite,
         .iconPalIndex = 2,
         FOOTPRINT(CLilyWhite)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_CLilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_CLilyWhite,
-            gShinyFollowerPalette_CLilyWhite
+            gOverworldPalette_CLilyWhite,
+            gShinyOverworldPalette_CLilyWhite
         )
         .levelUpLearnset = sCLilyWhiteLevelUpLearnset,
         .teachableLearnset = sCLilyWhiteTeachableLearnset,
@@ -832,13 +832,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_LilyWhite,
         .iconPalIndex = 2,
         FOOTPRINT(LilyWhite)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_LilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_LilyWhite,
-            gShinyFollowerPalette_LilyWhite
+            gOverworldPalette_LilyWhite,
+            gShinyOverworldPalette_LilyWhite
         )
         .levelUpLearnset = sLilyWhiteLevelUpLearnset,
         .teachableLearnset = sLilyWhiteTeachableLearnset,
@@ -893,13 +893,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_ALilyWhite,
         .iconPalIndex = 2,
         FOOTPRINT(ALilyWhite)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_ALilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_ALilyWhite,
-            gShinyFollowerPalette_ALilyWhite
+            gOverworldPalette_ALilyWhite,
+            gShinyOverworldPalette_ALilyWhite
         )
         .levelUpLearnset = sALilyWhiteLevelUpLearnset,
         .teachableLearnset = sALilyWhiteTeachableLearnset,
@@ -954,13 +954,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_HLilyWhite,
         .iconPalIndex = 2,
         FOOTPRINT(HLilyWhite)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_HLilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_HLilyWhite,
-            gShinyFollowerPalette_HLilyWhite
+            gOverworldPalette_HLilyWhite,
+            gShinyOverworldPalette_HLilyWhite
         )
         .levelUpLearnset = sHLilyWhiteLevelUpLearnset,
         .teachableLearnset = sHLilyWhiteTeachableLearnset,

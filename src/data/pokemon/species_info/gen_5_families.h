@@ -373,69 +373,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT},
-                                {EVO_NONE, 0, SPECIES_SAMUROTT_HISUIAN}),
-    },
-
-    [SPECIES_SAMUROTT] =
-    {
-        .baseHP        = 95,
-        .baseAttack    = 100,
-        .baseDefense   = 85,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 108,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 45,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
-        .evYield_SpAttack = 3,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
-        .bodyColor = BODY_COLOR_BLUE,
-        .speciesName = _("Samurott"),
-        .cryId = CRY_SAMUROTT,
-        .natDexNum = NATIONAL_DEX_SAMUROTT,
-        .categoryName = _("Formidable"),
-        .height = 15,
-        .weight = 946,
-        .description = COMPOUND_STRING(
-            "One swing of the seamitars attached\n"
-            "to its armor can fell an opponent.\n"
-            "A simple glare from one of them is\n"
-            "enough to intimidate most enemies."),
-        .pokemonScale = 268,
-        .pokemonOffset = 2,
-        .trainerScale = 271,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Samurott,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_Samurott,
-        .frontAnimId = ANIM_V_SHAKE,
-        .backPic = gMonBackPic_Samurott,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 8,
-        .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
-        .palette = gMonPalette_Samurott,
-        .shinyPalette = gMonShinyPalette_Samurott,
-        .iconSprite = gMonIcon_Samurott,
-        .iconPalIndex = 2,
-        FOOTPRINT(Samurott)
-        OVERWORLD(
-            sPicTable_Samurott,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gOverworldPalette_Samurott,
-            gShinyOverworldPalette_Samurott
-        )
-        .levelUpLearnset = sSamurottLevelUpLearnset,
-        .teachableLearnset = sSamurottTeachableLearnset,
-        .formSpeciesIdTable = sSamurottFormSpeciesIdTable,
+        .evolutions = EVOLUTION({EVO_NONE, 0, SPECIES_SAMUROTT_HISUIAN}),
     },
 
 #if P_HISUIAN_FORMS

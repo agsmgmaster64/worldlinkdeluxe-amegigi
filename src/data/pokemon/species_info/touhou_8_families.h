@@ -1092,13 +1092,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_CReisen,
         .iconPalIndex = 1,
         FOOTPRINT(CReisen)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_CReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_CReisen,
-            gShinyFollowerPalette_CReisen
+            gOverworldPalette_CReisen,
+            gShinyOverworldPalette_CReisen
         )
         .levelUpLearnset = sCReisenLevelUpLearnset,
         .teachableLearnset = sCReisenTeachableLearnset,
@@ -1158,13 +1158,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_Reisen,
         .iconPalIndex = 1,
         FOOTPRINT(Reisen)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_Reisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_Reisen,
-            gShinyFollowerPalette_Reisen
+            gOverworldPalette_Reisen,
+            gShinyOverworldPalette_Reisen
         )
         .levelUpLearnset = sReisenLevelUpLearnset,
         .teachableLearnset = sReisenTeachableLearnset,
@@ -1219,13 +1219,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_DReisen,
         .iconPalIndex = 1,
         FOOTPRINT(DReisen)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_DReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_DReisen,
-            gShinyFollowerPalette_DReisen
+            gOverworldPalette_DReisen,
+            gShinyOverworldPalette_DReisen
         )
         .levelUpLearnset = sDReisenLevelUpLearnset,
         .teachableLearnset = sDReisenTeachableLearnset,
@@ -1281,13 +1281,13 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_TReisen,
         .iconPalIndex = 1,
         FOOTPRINT(TReisen)
-        FOLLOWER(
+        OVERWORLD(
             sPicTable_TReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
-            gFollowerPalette_TReisen,
-            gShinyFollowerPalette_TReisen
+            gOverworldPalette_TReisen,
+            gShinyOverworldPalette_TReisen
         )
         .levelUpLearnset = sTReisenLevelUpLearnset,
         .teachableLearnset = sTReisenTeachableLearnset,
