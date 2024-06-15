@@ -106,11 +106,11 @@ SouthernIsland_Interior_EventScript_Sign::
 	end
 
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
-	seteventmon SPECIES_PLACEHOLD_KOTOHIME, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_PLACEHOLD_KOTOHIME, 50, ITEM_DOUBLE_SOUL
 	return
 
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars::
-	seteventmon SPECIES_NORMAL_KOTOHIME, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_NORMAL_KOTOHIME, 50, ITEM_DOUBLE_SOUL
 	return
 
 SouthernIsland_Interior_Movement_CameraPanUp:

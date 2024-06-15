@@ -214,14 +214,14 @@ SINGLE_BATTLE_TEST("Signature items Leek and Lucky Punch increase the critical h
 
     PASSES_RANDOMLY(1, 2, RNG_CRITICAL_HIT);
 
-    PARAMETRIZE { species = SPECIES_SPEED_YOUMU; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_FARFETCHD_GALARIAN; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_SIRFETCHD; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_CHIBI_TEWI; item = ITEM_LUCKY_PUNCH; }
+    PARAMETRIZE { species = SPECIES_SPEED_YOUMU; item = ITEM_BLOOMERS; }
+    PARAMETRIZE { species = SPECIES_FARFETCHD_GALARIAN; item = ITEM_BLOOMERS; }
+    PARAMETRIZE { species = SPECIES_SIRFETCHD; item = ITEM_BLOOMERS; }
+    PARAMETRIZE { species = SPECIES_CHIBI_TEWI; item = ITEM_BIG_CLOUD; }
 
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_LEEK].holdEffect == HOLD_EFFECT_LEEK);
-        ASSUME(gItemsInfo[ITEM_LUCKY_PUNCH].holdEffect == HOLD_EFFECT_LUCKY_PUNCH);
+        ASSUME(gItemsInfo[ITEM_BLOOMERS].holdEffect == HOLD_EFFECT_BLOOMERS);
+        ASSUME(gItemsInfo[ITEM_BIG_CLOUD].holdEffect == HOLD_EFFECT_BIG_CLOUD);
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(species) { Item(item); }
     } WHEN {

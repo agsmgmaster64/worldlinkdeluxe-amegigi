@@ -693,7 +693,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_Leftovers::
 # 347 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	setvar VAR_0x8008, 48
 # 348 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	setvar VAR_0x8009, ITEM_LEFTOVERS
+	setvar VAR_0x8009, ITEM_BENTO_BOX
 # 349 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 # 350 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"

@@ -212,8 +212,8 @@ TEST("Item names fit on Pokemon Storage System")
     case ITEM_CHARIZARDITE_X:
     case ITEM_CHARIZARDITE_Y:
     case ITEM_ULTRANECROZIUM_Z:
-    case ITEM_DEEP_SEA_SCALE:
-    case ITEM_DEEP_SEA_TOOTH:
+    case ITEM_YATA_MIRROR:
+    case ITEM_KUSANAGI:
     case ITEM_NEVER_MELT_ICE:
     case ITEM_WEAKNESS_POLICY:
     case ITEM_SAFETY_GOGGLES:

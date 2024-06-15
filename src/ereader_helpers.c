@@ -247,7 +247,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             },
             [4] = {
                 .species = SPECIES_CHIBI_IKU,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .moves = { MOVE_GIGA_DRAIN, MOVE_NATURE_SOUND, MOVE_TOXIC, MOVE_LEECH_SEED },
                 .hpEV = 255,
                 .attackEV = 0,

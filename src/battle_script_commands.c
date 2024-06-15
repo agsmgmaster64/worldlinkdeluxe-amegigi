@@ -1060,7 +1060,7 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
     { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
     { ITEM_DESTINY_KNOT,    {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_LEFTOVERS,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_BENTO_BOX,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_MENTAL_HERB,     {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_POWER_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
     { ITEM_WHITE_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
@@ -1862,7 +1862,10 @@ static void Cmd_ppreduce(void)
     static const u8 sCriticalHitOdds[] = {16, 8, 4, 3, 2}; // Gens 2,3,4,5
 #endif // B_CRIT_CHANCE
 
-#define BENEFITS_FROM_LEEK(battler, holdEffect)((holdEffect == HOLD_EFFECT_LEEK) && (gBattleMons[battler].species == SPECIES_SIRFETCHD))
+#define IS_ICHIRIN_LINE(species)(species == SPECIES_CHIBI_ICHIRIN || species == SPECIES_NORMAL_ICHIRIN || species == SPECIES_DEFENSE_ICHIRIN || species == SPECIES_TECH_ICHIRIN)
+#define BENEFITS_FROM_BIG_CLOUD(battler, holdEffect)((holdEffect == HOLD_EFFECT_BIG_CLOUD) && IS_ICHIRIN_LINE(gBattleMons[battler].species))
+#define IS_RAN_LINE(species)(species == SPECIES_CHIBI_RAN || species == SPECIES_NORMAL_RAN || species == SPECIES_ATTACK_RAN || species == SPECIES_HELPER_RAN)
+#define BENEFITS_FROM_BLOOMERS(battler, holdEffect)((holdEffect == HOLD_EFFECT_BLOOMERS) && IS_RAN_LINE(gBattleMons[battler].species))
 s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk)
 {
     s32 critChance = 0;
@@ -1883,8 +1886,8 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
                     + 1 * ((gBattleMons[battlerAtk].status2 & STATUS2_DRAGON_CHEER) != 0)
                     + gMovesInfo[move].criticalHitStage
                     + (holdEffectAtk == HOLD_EFFECT_SCOPE_LENS)
-                    + 2 * (holdEffectAtk == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[battlerAtk].species == SPECIES_CHIBI_TEWI)
-                    + 2 * BENEFITS_FROM_LEEK(battlerAtk, holdEffectAtk)
+                    + 2 * BENEFITS_FROM_BIG_CLOUD(battlerAtk, holdEffectAtk)
+                    + 2 * BENEFITS_FROM_BLOOMERS(battlerAtk, holdEffectAtk)
                     + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
                     + (abilityAtk == ABILITY_SUPER_LUCK)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];

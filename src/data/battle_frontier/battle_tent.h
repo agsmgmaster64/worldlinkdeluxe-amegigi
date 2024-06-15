@@ -1141,7 +1141,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_GOLBAT_2] = {
         .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_POISON_FANG},
-        .heldItem = ITEM_LEFTOVERS,
+        .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
         .nature = NATURE_HARDY
     },
@@ -1900,7 +1900,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     [VERDANTURF_TENT_MON_BALTOY] = {
         .species = SPECIES_CHIBI_YORIHIME,
         .moves = {MOVE_SANDSTORM, MOVE_FLASH, MOVE_SELF_DESTRUCT, MOVE_HARDEN},
-        .heldItem = ITEM_LEFTOVERS,
+        .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
         .nature = NATURE_NAUGHTY
     },
@@ -2054,7 +2054,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     [VERDANTURF_TENT_MON_LOUDRED] = {
         .species = SPECIES_PLACEHOLD_BENBEN,
         .moves = {MOVE_HOWL, MOVE_PERFORMANCE, MOVE_REST, MOVE_SCREECH},
-        .heldItem = ITEM_LEFTOVERS,
+        .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
         .nature = NATURE_CALM
     },
@@ -2984,7 +2984,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     [FALLARBOR_TENT_MON_LOMBRE] = {
         .species = SPECIES_CHIBI_MIKO,
         .moves = {MOVE_NATURE_POWER, MOVE_WATER_GUN, MOVE_RAIN_DANCE, MOVE_FLASH},
-        .heldItem = ITEM_LEFTOVERS,
+        .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
         .nature = NATURE_BASHFUL
     },

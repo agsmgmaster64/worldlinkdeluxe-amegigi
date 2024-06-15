@@ -215,7 +215,7 @@ SouthernIsland_Interior_EventScript_Sign::
 # 108 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
 # 109 "data/maps/SouthernIsland_Interior/scripts.pory"
-	seteventmon SPECIES_PLACEHOLD_KOTOHIME, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_PLACEHOLD_KOTOHIME, 50, ITEM_DOUBLE_SOUL
 # 110 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 111 "data/maps/SouthernIsland_Interior/scripts.pory"
@@ -223,7 +223,7 @@ SouthernIsland_Interior_EventScript_SetLatiosBattleVars::
 # 112 "data/maps/SouthernIsland_Interior/scripts.pory"
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars::
 # 113 "data/maps/SouthernIsland_Interior/scripts.pory"
-	seteventmon SPECIES_NORMAL_KOTOHIME, 50, ITEM_SOUL_DEW
+	seteventmon SPECIES_NORMAL_KOTOHIME, 50, ITEM_DOUBLE_SOUL
 # 114 "data/maps/SouthernIsland_Interior/scripts.pory"
 	return
 # 115 "data/maps/SouthernIsland_Interior/scripts.pory"

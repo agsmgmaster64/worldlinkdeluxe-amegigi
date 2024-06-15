@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Knock Off deals additional damage to opponents holding an it
     u16 item = 0;
 
     PARAMETRIZE { item = ITEM_NONE; }
-    PARAMETRIZE { item = ITEM_LEFTOVERS; }
+    PARAMETRIZE { item = ITEM_BENTO_BOX; }
 
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); 
                MOVE(player, MOVE_KNOCK_OFF); }
@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_KNOCK_OFF, player);
         NOT { ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_ITEM_KNOCKOFF); }
     } THEN {
-        EXPECT(opponent->item == ITEM_LEFTOVERS);
+        EXPECT(opponent->item == ITEM_BENTO_BOX);
     }
 }
 
@@ -104,7 +104,7 @@ SINGLE_BATTLE_TEST("Recycle cannot recover an item removed by Knock Off")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF);
                MOVE(opponent, MOVE_RECYCLE); }
@@ -123,8 +123,8 @@ SINGLE_BATTLE_TEST("Recycle cannot recover an item removed by Knock Off")
 SINGLE_BATTLE_TEST("Knock Off does not prevent targets from receiving another item in Gen 5+")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
         TURN { MOVE(player, MOVE_BESTOW); }
@@ -144,7 +144,7 @@ SINGLE_BATTLE_TEST("Knock Off does not prevent targets from receiving another it
         }
     } THEN {
         if (B_KNOCK_OFF_REMOVAL >= GEN_5)
-            EXPECT(opponent->item == ITEM_LEFTOVERS);
+            EXPECT(opponent->item == ITEM_BENTO_BOX);
         else
             EXPECT(opponent->item == ITEM_NONE);
     }
@@ -155,7 +155,7 @@ SINGLE_BATTLE_TEST("Knock Off triggers Unburden")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(60); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_UNBURDEN); Item(ITEM_LEFTOVERS); Speed(50); }
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_UNBURDEN); Item(ITEM_BENTO_BOX); Speed(50); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
         TURN { MOVE(player, MOVE_CELEBRATE); }
@@ -175,8 +175,8 @@ SINGLE_BATTLE_TEST("Knock Off triggers Unburden")
 DOUBLE_BATTLE_TEST("Knock Off does not trigger the opposing ally's Symbiosis")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
-        PLAYER(SPECIES_FLORGES) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); }
+        PLAYER(SPECIES_FLORGES) { Item(ITEM_BENTO_BOX); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

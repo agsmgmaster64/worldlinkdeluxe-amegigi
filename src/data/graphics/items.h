@@ -342,13 +342,14 @@ const u32 gItemIconPalette_Nugget[] = INCBIN_U32("graphics/items/icon_palettes/n
 const u32 gItemIcon_BigNugget[] = INCBIN_U32("graphics/items/icons/big_nugget.4bpp.lz");
 const u32 gItemIconPalette_BigNugget[] = INCBIN_U32("graphics/items/icon_palettes/big_nugget.gbapal.lz");
 
-const u32 gItemIcon_TinyMushroom[] = INCBIN_U32("graphics/items/icons/tiny_mushroom.4bpp.lz");
-const u32 gItemIconPalette_Mushroom[] = INCBIN_U32("graphics/items/icon_palettes/mushroom.gbapal.lz");
+const u32 gItemIcon_GreenUFO[] = INCBIN_U32("graphics/items/icons/green_ufo.4bpp.lz");
+const u32 gItemIconPalette_GreenUFO[] = INCBIN_U32("graphics/items/icon_palettes/green_ufo.gbapal.lz");
 
-const u32 gItemIcon_BigMushroom[] = INCBIN_U32("graphics/items/icons/big_mushroom.4bpp.lz");
+const u32 gItemIcon_RedUFO[] = INCBIN_U32("graphics/items/icons/red_ufo.4bpp.lz");
+const u32 gItemIconPalette_RedUFO[] = INCBIN_U32("graphics/items/icon_palettes/red_ufo.gbapal.lz");
 
-const u32 gItemIcon_BalmMushroom[] = INCBIN_U32("graphics/items/icons/balm_mushroom.4bpp.lz");
-const u32 gItemIconPalette_BalmMushroom[] = INCBIN_U32("graphics/items/icon_palettes/balm_mushroom.gbapal.lz");
+const u32 gItemIcon_BlueUFO[] = INCBIN_U32("graphics/items/icons/blue_ufo.4bpp.lz");
+const u32 gItemIconPalette_BlueUFO[] = INCBIN_U32("graphics/items/icon_palettes/blue_ufo.gbapal.lz");
 
 const u32 gItemIcon_Pearl[] = INCBIN_U32("graphics/items/icons/pearl.4bpp.lz");
 const u32 gItemIconPalette_Pearl[] = INCBIN_U32("graphics/items/icon_palettes/pearl.gbapal.lz");
@@ -1120,11 +1121,14 @@ const u32 gItemIconPalette_UltranecroziumZ[] = INCBIN_U32("graphics/items/icon_p
 
 // Species-specific Held Items
 
-const u32 gItemIcon_LightBall[] = INCBIN_U32("graphics/items/icons/light_ball.4bpp.lz");
-const u32 gItemIconPalette_LightBall[] = INCBIN_U32("graphics/items/icon_palettes/light_ball.gbapal.lz");
+const u32 gItemIcon_IcyBall[] = INCBIN_U32("graphics/items/icons/icy_ball.4bpp.lz");
+const u32 gItemIconPalette_IcyBall[] = INCBIN_U32("graphics/items/icon_palettes/icy_ball.gbapal.lz");
 
-const u32 gItemIcon_Leek[] = INCBIN_U32("graphics/items/icons/leek.4bpp.lz");
-const u32 gItemIconPalette_Leek[] = INCBIN_U32("graphics/items/icon_palettes/leek.gbapal.lz");
+const u32 gItemIcon_AssistBall[] = INCBIN_U32("graphics/items/icons/assist_ball.4bpp.lz");
+const u32 gItemIconPalette_AssistBall[] = INCBIN_U32("graphics/items/icon_palettes/assist_ball.gbapal.lz");
+
+const u32 gItemIcon_Bloomers[] = INCBIN_U32("graphics/items/icons/bloomers.4bpp.lz");
+const u32 gItemIconPalette_Bloomers[] = INCBIN_U32("graphics/items/icon_palettes/bloomers.gbapal.lz");
 
 const u32 gItemIcon_ThickClub[] = INCBIN_U32("graphics/items/icons/thick_club.4bpp.lz");
 const u32 gItemIconPalette_ThickClub[] = INCBIN_U32("graphics/items/icon_palettes/thick_club.gbapal.lz");
@@ -1132,17 +1136,14 @@ const u32 gItemIconPalette_ThickClub[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIcon_LuckyPunch[] = INCBIN_U32("graphics/items/icons/lucky_punch.4bpp.lz");
 const u32 gItemIconPalette_LuckyPunch[] = INCBIN_U32("graphics/items/icon_palettes/lucky_punch.gbapal.lz");
 
-const u32 gItemIcon_MetalPowder[] = INCBIN_U32("graphics/items/icons/metal_powder.4bpp.lz");
-const u32 gItemIconPalette_MetalPowder[] = INCBIN_U32("graphics/items/icon_palettes/metal_powder.gbapal.lz");
-
 const u32 gItemIcon_QuickPowder[] = INCBIN_U32("graphics/items/icons/quick_powder.4bpp.lz");
 const u32 gItemIconPalette_QuickPowder[] = INCBIN_U32("graphics/items/icon_palettes/quick_powder.gbapal.lz");
 
-const u32 gItemIcon_DeepSeaScale[] = INCBIN_U32("graphics/items/icons/deep_sea_scale.4bpp.lz");
-const u32 gItemIconPalette_DeepSeaScale[] = INCBIN_U32("graphics/items/icon_palettes/deep_sea_scale.gbapal.lz");
+const u32 gItemIcon_Kusanagi[] = INCBIN_U32("graphics/items/icons/kusanagi.4bpp.lz");
+const u32 gItemIconPalette_Kusanagi[] = INCBIN_U32("graphics/items/icon_palettes/kusanagi.gbapal.lz");
 
-const u32 gItemIcon_DeepSeaTooth[] = INCBIN_U32("graphics/items/icons/deep_sea_tooth.4bpp.lz");
-const u32 gItemIconPalette_DeepSeaTooth[] = INCBIN_U32("graphics/items/icon_palettes/deep_sea_tooth.gbapal.lz");
+const u32 gItemIcon_YataMirror[] = INCBIN_U32("graphics/items/icons/yata_mirror.4bpp.lz");
+const u32 gItemIconPalette_YataMirror[] = INCBIN_U32("graphics/items/icon_palettes/yata_mirror.gbapal.lz");
 
 const u32 gItemIcon_SoulDew[] = INCBIN_U32("graphics/items/icons/soul_dew.4bpp.lz");
 const u32 gItemIconPalette_SoulDew[] = INCBIN_U32("graphics/items/icon_palettes/soul_dew.gbapal.lz");
@@ -1357,8 +1358,8 @@ const u32 gItemIconPalette_MentalHerb[] = INCBIN_U32("graphics/items/icon_palett
 const u32 gItemIcon_KingsRock[] = INCBIN_U32("graphics/items/icons/kings_rock.4bpp.lz");
 const u32 gItemIconPalette_KingsRock[] = INCBIN_U32("graphics/items/icon_palettes/kings_rock.gbapal.lz");
 
-const u32 gItemIcon_AmuletCoin[] = INCBIN_U32("graphics/items/icons/amulet_coin.4bpp.lz");
-const u32 gItemIconPalette_AmuletCoin[] = INCBIN_U32("graphics/items/icon_palettes/amulet_coin.gbapal.lz");
+const u32 gItemIcon_DonationBox[] = INCBIN_U32("graphics/items/icons/donation_box.4bpp.lz");
+const u32 gItemIconPalette_DonationBox[] = INCBIN_U32("graphics/items/icon_palettes/donation_box.gbapal.lz");
 
 const u32 gItemIcon_CleanseTag[] = INCBIN_U32("graphics/items/icons/cleanse_tag.4bpp.lz");
 const u32 gItemIconPalette_CleanseTag[] = INCBIN_U32("graphics/items/icon_palettes/cleanse_tag.gbapal.lz");
@@ -1375,8 +1376,8 @@ const u32 gItemIconPalette_LuckyEgg[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIcon_ScopeLens[] = INCBIN_U32("graphics/items/icons/scope_lens.4bpp.lz");
 const u32 gItemIconPalette_ScopeLens[] = INCBIN_U32("graphics/items/icon_palettes/scope_lens.gbapal.lz");
 
-const u32 gItemIcon_Leftovers[] = INCBIN_U32("graphics/items/icons/leftovers.4bpp.lz");
-const u32 gItemIconPalette_Leftovers[] = INCBIN_U32("graphics/items/icon_palettes/leftovers.gbapal.lz");
+const u32 gItemIcon_BentoBox[] = INCBIN_U32("graphics/items/icons/bento_box.4bpp.lz");
+const u32 gItemIconPalette_BentoBox[] = INCBIN_U32("graphics/items/icon_palettes/bento_box.gbapal.lz");
 
 const u32 gItemIcon_ShellBell[] = INCBIN_U32("graphics/items/icons/shell_bell.4bpp.lz");
 

@@ -965,7 +965,7 @@ static const struct {
 } sBreedingSpecialMoveItemTable[] =
 {
     // Offspring,    Item,            Move
-    { SPECIES_CHIBI_CIRNO, ITEM_LIGHT_BALL, MOVE_VOLT_TACKLE },
+    { SPECIES_CHIBI_CIRNO, ITEM_ICY_BALL, MOVE_VOLT_TACKLE },
 };
 
 static void GiveMoveIfItem(struct Pokemon *mon, struct DayCare *daycare)

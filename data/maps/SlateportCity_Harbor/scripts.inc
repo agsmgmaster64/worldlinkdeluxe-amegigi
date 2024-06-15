@@ -705,7 +705,7 @@ SlateportCity_Harbor_EventScript_DeepSeaTooth::
 # 353 "data/maps/SlateportCity_Harbor/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseDifferentTrade
 # 354 "data/maps/SlateportCity_Harbor/scripts.pory"
-	giveitem ITEM_DEEP_SEA_TOOTH
+	giveitem ITEM_KUSANAGI
 # 355 "data/maps/SlateportCity_Harbor/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 356 "data/maps/SlateportCity_Harbor/scripts.pory"
@@ -727,7 +727,7 @@ SlateportCity_Harbor_EventScript_DeepSeaScale::
 # 364 "data/maps/SlateportCity_Harbor/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseDifferentTrade
 # 365 "data/maps/SlateportCity_Harbor/scripts.pory"
-	giveitem ITEM_DEEP_SEA_SCALE
+	giveitem ITEM_YATA_MIRROR
 # 366 "data/maps/SlateportCity_Harbor/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 367 "data/maps/SlateportCity_Harbor/scripts.pory"

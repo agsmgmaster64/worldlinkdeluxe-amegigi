@@ -187,7 +187,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_NORMAL_SEIGA,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_BRAVE,
                 .evs = {252, 252, 6, 0, 0, 0},
@@ -282,7 +282,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_TECH_YAMAME,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .fixedIV = 20,
                 .nature = NATURE_CALM,
                 .evs = {152, 0, 100, 0, 152, 106},
@@ -309,7 +309,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_ATTACK_RAN,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
                 .evs = {252, 0, 252, 0, 6, 0},
@@ -404,7 +404,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_PLACEHOLD_TOYOHIME,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .fixedIV = 16,
                 .nature = NATURE_MODEST,
                 .evs = {152, 0, 100, 0, 152, 106},
@@ -453,7 +453,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_CHIBI_KOTOHIME,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_BENTO_BOX,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
                 .evs = {152, 152, 0, 0, 6, 200},

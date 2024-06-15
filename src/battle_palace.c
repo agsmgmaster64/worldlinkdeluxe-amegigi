@@ -55,7 +55,7 @@ static const u16 sBattlePalaceLatePrizes[] =
     ITEM_BRIGHT_POWDER,
     ITEM_WHITE_HERB,
     ITEM_QUICK_CLAW,
-    ITEM_LEFTOVERS,
+    ITEM_BENTO_BOX,
     ITEM_MENTAL_HERB,
     ITEM_KINGS_ROCK,
     ITEM_FOCUS_BAND,

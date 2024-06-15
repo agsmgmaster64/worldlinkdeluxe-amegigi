@@ -9233,7 +9233,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         if (IS_MOVE_SPECIAL(move))
             modifier = uq4_12_multiply(modifier, holdEffectModifier);
         break;
-    case HOLD_EFFECT_SOUL_DEW:
+    case HOLD_EFFECT_DOUBLE_SOUL:
         if ((gBattleMons[battlerAtk].species == SPECIES_NORMAL_KOTOHIME || gBattleMons[battlerAtk].species == SPECIES_PLACEHOLD_KOTOHIME)
             && ((B_SOUL_DEW_BOOST >= GEN_7 && (moveType == TYPE_REASON || moveType == TYPE_FAITH))
              || (B_SOUL_DEW_BOOST < GEN_7 && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER) && IS_MOVE_SPECIAL(move))))
@@ -9465,15 +9465,16 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
     // attacker's hold effect
     switch (holdEffectAtk)
     {
-    case HOLD_EFFECT_THICK_CLUB:
-        if ((atkBaseSpeciesId == SPECIES_CHIBI_MYSTIA || atkBaseSpeciesId == SPECIES_NORMAL_MYSTIA) && IS_MOVE_PHYSICAL(move))
+    case HOLD_EFFECT_DARK_RIBBON:
+        if (IS_MOVE_PHYSICAL(move) && (atkBaseSpeciesId == SPECIES_CHIBI_HINA  || atkBaseSpeciesId == SPECIES_NORMAL_HINA
+         || atkBaseSpeciesId == SPECIES_ATTACK_HINA || atkBaseSpeciesId == SPECIES_DEFENSE_HINA))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_DEEP_SEA_TOOTH:
-        if (gBattleMons[battlerAtk].species == SPECIES_CHIBI_KIRISAME && IS_MOVE_SPECIAL(move))
+        if (gBattleMons[battlerAtk].species == SPECIES_CHIBI_KIRISAME && IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
-    case HOLD_EFFECT_LIGHT_BALL:
+    case HOLD_EFFECT_ICY_BALL:
         if (atkBaseSpeciesId == SPECIES_CHIBI_CIRNO && (B_LIGHT_BALL_ATTACK_BOOST >= GEN_4 || IS_MOVE_SPECIAL(move)))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
@@ -9621,7 +9622,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     switch (holdEffectDef)
     {
     case HOLD_EFFECT_DEEP_SEA_SCALE:
-        if (gBattleMons[battlerDef].species == SPECIES_CHIBI_KIRISAME && !usesDefStat)
+        if (gBattleMons[battlerDef].species == SPECIES_CHIBI_KIRISAME && usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_EVIOLITE:
@@ -9632,7 +9633,11 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         if (!usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
-    case HOLD_EFFECT_SOUL_DEW:
+    case HOLD_EFFECT_ASSIST_BALL:
+        if (gBattleMons[battlerDef].species == SPECIES_CHIBI_DAIYOUSEI)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
+        break;
+    case HOLD_EFFECT_DOUBLE_SOUL:
         if (B_SOUL_DEW_BOOST < GEN_7
          && (gBattleMons[battlerDef].species == SPECIES_NORMAL_KOTOHIME || gBattleMons[battlerDef].species == SPECIES_PLACEHOLD_KOTOHIME)
          && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)

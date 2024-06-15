@@ -145,7 +145,7 @@ SlateportCity_PokemonFanClub_EventScript_NoHighConditions::
 # 73 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 SlateportCity_PokemonFanClub_EventScript_GiveRedScarf::
 # 74 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	checkitemspace ITEM_RED_SCARF
+	checkitemspace ITEM_CHOICE_SCARF
 # 75 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
 # 76 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -153,7 +153,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveRedScarf::
 # 77 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	setflag FLAG_RECEIVED_RED_SCARF
 # 78 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	giveitem ITEM_RED_SCARF
+	giveitem ITEM_CHOICE_SCARF
 # 79 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_ExplainRedScarf, MSGBOX_DEFAULT
 # 80 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -165,7 +165,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveRedScarf::
 # 83 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 SlateportCity_PokemonFanClub_EventScript_GiveBlueScarf::
 # 84 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	checkitemspace ITEM_BLUE_SCARF
+	checkitemspace ITEM_CHOICE_SCARF
 # 85 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
 # 86 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -173,7 +173,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveBlueScarf::
 # 87 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	setflag FLAG_RECEIVED_BLUE_SCARF
 # 88 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	giveitem ITEM_BLUE_SCARF
+	giveitem ITEM_CHOICE_SCARF
 # 89 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_ExplainBlueScarf, MSGBOX_DEFAULT
 # 90 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -185,7 +185,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveBlueScarf::
 # 93 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 SlateportCity_PokemonFanClub_EventScript_GivePinkScarf::
 # 94 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	checkitemspace ITEM_PINK_SCARF
+	checkitemspace ITEM_CHOICE_SCARF
 # 95 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
 # 96 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -193,7 +193,7 @@ SlateportCity_PokemonFanClub_EventScript_GivePinkScarf::
 # 97 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	setflag FLAG_RECEIVED_PINK_SCARF
 # 98 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	giveitem ITEM_PINK_SCARF
+	giveitem ITEM_CHOICE_SCARF
 # 99 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_ExplainPinkScarf, MSGBOX_DEFAULT
 # 100 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -205,7 +205,7 @@ SlateportCity_PokemonFanClub_EventScript_GivePinkScarf::
 # 103 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 SlateportCity_PokemonFanClub_EventScript_GiveGreenScarf::
 # 104 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	checkitemspace ITEM_GREEN_SCARF
+	checkitemspace ITEM_CHOICE_SCARF
 # 105 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
 # 106 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -213,7 +213,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveGreenScarf::
 # 107 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	setflag FLAG_RECEIVED_GREEN_SCARF
 # 108 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	giveitem ITEM_GREEN_SCARF
+	giveitem ITEM_CHOICE_SCARF
 # 109 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_ExplainGreenScarf, MSGBOX_DEFAULT
 # 110 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -225,7 +225,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveGreenScarf::
 # 113 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 SlateportCity_PokemonFanClub_EventScript_GiveYellowScarf::
 # 114 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	checkitemspace ITEM_YELLOW_SCARF
+	checkitemspace ITEM_CHOICE_SCARF
 # 115 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
 # 116 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
@@ -233,7 +233,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveYellowScarf::
 # 117 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	setflag FLAG_RECEIVED_YELLOW_SCARF
 # 118 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
-	giveitem ITEM_YELLOW_SCARF
+	giveitem ITEM_CHOICE_SCARF
 # 119 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"
 	msgbox SlateportCity_PokemonFanClub_Text_ExplainYellowScarf, MSGBOX_DEFAULT
 # 120 "data/maps/SlateportCity_PokemonFanClub/scripts.pory"

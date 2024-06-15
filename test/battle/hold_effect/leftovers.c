@@ -3,13 +3,13 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gItemsInfo[ITEM_LEFTOVERS].holdEffect == HOLD_EFFECT_LEFTOVERS);
+    ASSUME(gItemsInfo[ITEM_BENTO_BOX].holdEffect == HOLD_EFFECT_LEFTOVERS);
 }
 
 SINGLE_BATTLE_TEST("Leftovers recovers 1/16th HP at end of turn")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); Item(ITEM_BENTO_BOX); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {}
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Leftovers recovers 1/16th HP at end of turn")
 SINGLE_BATTLE_TEST("Leftovers does nothing if max HP")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {}
@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Leftovers does nothing if max HP")
 SINGLE_BATTLE_TEST("Leftovers does nothing if Heal Block applies")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); Item(ITEM_LEFTOVERS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(1); Item(ITEM_BENTO_BOX); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); }

@@ -162,7 +162,7 @@ SINGLE_BATTLE_TEST("Embargo makes Fling and Natural Gift fail")
 {
     u32 heldItem, moveId;
 
-    PARAMETRIZE { heldItem = ITEM_LIGHT_BALL; moveId = MOVE_FLING; }
+    PARAMETRIZE { heldItem = ITEM_ICY_BALL; moveId = MOVE_FLING; }
     PARAMETRIZE { heldItem = ITEM_CHERI_BERRY; moveId = MOVE_NATURAL_GIFT; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(heldItem); };
@@ -186,7 +186,7 @@ SINGLE_BATTLE_TEST("Embargo makes Fling and Natural Gift fail")
 SINGLE_BATTLE_TEST("Embargo doesn't stop an item flung at an affected target from activating")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_LIGHT_BALL); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ICY_BALL); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EMBARGO); }
@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Baton Pass passes Embargo's effect")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_LIGHT_BALL); };
+        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_ICY_BALL); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBARGO); }
@@ -316,7 +316,7 @@ SINGLE_BATTLE_TEST("Embargo can be reflected by Magic Coat")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LIGHT_BALL); };
+        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_ICY_BALL); };
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_EMBARGO); }
         TURN { MOVE(opponent, MOVE_FLING); }

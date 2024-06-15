@@ -344,7 +344,7 @@ static const u16 sFavorLadyAcceptedItems_Whamish[] =
     ITEM_SODA_POP,
     ITEM_LEMONADE,
     ITEM_BUNNY_SUIT,
-    ITEM_LIGHT_BALL,
+    ITEM_ICY_BALL,
     ITEM_LAVA_COOKIE,
     ITEM_CHESTO_BERRY,
     ITEM_NANAB_BERRY,
@@ -389,7 +389,7 @@ static const u16 sFavorLadyAcceptedItems_Sticky[] =
     ITEM_X_ACCURACY,
     ITEM_GUARD_SPEC,
     ITEM_WATMEL_BERRY,
-    ITEM_LEFTOVERS,
+    ITEM_BENTO_BOX,
     ITEM_GREEN_UFO,
     ITEM_HEART_SCALE,
     ITEM_NONE

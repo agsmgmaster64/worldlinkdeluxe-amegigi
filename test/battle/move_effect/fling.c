@@ -206,7 +206,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
     u16 item;
 
     PARAMETRIZE {item = ITEM_FLAME_ORB; }
-    PARAMETRIZE {item = ITEM_LIGHT_BALL; }
+    PARAMETRIZE {item = ITEM_ICY_BALL; }
     PARAMETRIZE {item = ITEM_NURSE_OUTFIT; }
     PARAMETRIZE {item = ITEM_TOXIC_ORB; }
     PARAMETRIZE {item = ITEM_RAZOR_FANG; }
@@ -229,7 +229,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
                 STATUS_ICON(opponent, STATUS1_BURN);
             }
             break;
-        case ITEM_LIGHT_BALL:
+        case ITEM_ICY_BALL:
             {
                 MESSAGE("Foe Wobbuffet is paralyzed! It may be unable to move!");
                 STATUS_ICON(opponent, STATUS1_PARALYSIS);
@@ -262,7 +262,7 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust")
     u16 item;
 
     PARAMETRIZE {item = ITEM_FLAME_ORB; }
-    PARAMETRIZE {item = ITEM_LIGHT_BALL; }
+    PARAMETRIZE {item = ITEM_ICY_BALL; }
     PARAMETRIZE {item = ITEM_NURSE_OUTFIT; }
     PARAMETRIZE {item = ITEM_TOXIC_ORB; }
     PARAMETRIZE {item = ITEM_RAZOR_FANG; }
@@ -288,7 +288,7 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust")
                 MESSAGE("The Flame Orb was used up...");
             }
             break;
-        case ITEM_LIGHT_BALL:
+        case ITEM_ICY_BALL:
             {
                 NONE_OF {
                     MESSAGE("Foe Wobbuffet is paralyzed! It may be unable to move!");
