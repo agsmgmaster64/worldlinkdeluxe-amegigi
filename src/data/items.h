@@ -2581,9 +2581,9 @@ const struct Item gItemsInfo[] =
         .name = _("Green UFO"),
         .price = 500 * TREASURE_FACTOR,
         .description = COMPOUND_STRING(
-            "A plain mushroom\n"
-            "that would sell\n"
-            "at a cheap price."),
+            "A strange UFO that\n"
+            "would sell at\n"
+            "a cheap price."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2596,7 +2596,10 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Red UFO"),
         .price = 5000 * TREASURE_FACTOR,
-        .description = sBigMushroomDesc,
+        .description = COMPOUND_STRING(
+            "A strange UFO that\n"
+            "would sell at\n"
+            "a high price."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2609,7 +2612,10 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Blue UFO"),
         .price = (I_PRICE >= GEN_7) ? 15000 * TREASURE_FACTOR: 12500,
-        .description = sBigMushroomDesc,
+        .description = COMPOUND_STRING(
+            "A strange UFO that\n"
+            "would sell at\n"
+            "a high price."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
