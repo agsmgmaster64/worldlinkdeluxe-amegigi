@@ -4747,3 +4747,22 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayVSSeekerBike = 
     .images = sPicTable_MayVSSeekerBike,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HakosBaelz = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_HAKOS_BAELZ,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard_Asym,
+    .images = sPicTable_HakosBaelz,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

@@ -1545,7 +1545,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
-      "secondary_tileset": "gTileset_RusturfTunnel",
+      "secondary_tileset": "gTileset_RG_Cave",
       "border_filepath": "data/layouts/RusturfTunnel/border.bin",
       "blockdata_filepath": "data/layouts/RusturfTunnel/map.bin"
     },
