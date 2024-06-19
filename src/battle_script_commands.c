@@ -9288,7 +9288,6 @@ static void Cmd_various(void)
     case VARIOUS_PALACE_FLAVOR_TEXT:
     {
         VARIOUS_ARGS();
-        u8 monNature;
         // Try and print end-of-turn Battle Palace flavor text (e.g. "A glint appears in mon's eyes")
         gBattleCommunication[0] = FALSE; // whether or not msg should be printed
         gBattleScripting.battler = battler = gBattleCommunication[1];

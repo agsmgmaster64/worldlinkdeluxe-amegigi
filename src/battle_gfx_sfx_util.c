@@ -112,7 +112,6 @@ u16 ChooseMoveAndTargetInBattlePalace(u32 battler)
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     u8 unusableMovesBits = CheckMoveLimitations(battler, 0, MOVE_LIMITATIONS_ALL);
     s32 percent = Random() % 100;
-    u8 monNature;
 
     // Heavy variable re-use here makes this hard to read without defines
     // Possibly just optimization? might still match with additional vars
@@ -312,7 +311,7 @@ static u16 GetBattlePalaceTarget(u32 battler)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
     {
-        u8 opposing1, opposing2, monNature;
+        u8 opposing1, opposing2;
 
         if (GetBattlerSide(battler) == B_SIDE_PLAYER)
         {

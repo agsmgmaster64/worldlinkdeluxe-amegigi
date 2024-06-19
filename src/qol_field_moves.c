@@ -49,7 +49,7 @@ static bool8 IsPlayerFacingWaterfall(void);
 
 static void Task_UseDiveTool(u8);
 
-static bool32 CanLearnMoveLevelUp(u16 species, u16 move);
+static bool32 CanSpeciesLearnMoveLevelUp(u16 species, u16 move);
 static bool32 SetMonResultVariables(u32 partyIndex, u32 species);
 
 #define tState      data[0]

@@ -3602,7 +3602,7 @@ static void BufferIvOrEvStats(u8 mode)
 {
     u16 hp, maxHp, atk, def, spA, spD, spe;
     u8 *currHPString = Alloc(20);
-    u8 colorMod, i;
+    u8 colorMod;
     u16 totalEvs;
 
     switch (mode)

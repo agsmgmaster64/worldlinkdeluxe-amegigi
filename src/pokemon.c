@@ -698,19 +698,6 @@ static const u16 sHMMoves[] =
     MOVE_ROCK_SMASH, MOVE_WATERFALL, MOVE_DIVE, HM_MOVES_END
 };
 
-static const struct SpeciesItem sAlteringCaveWildMonHeldItems[] =
-{
-    {SPECIES_NONE,      ITEM_NONE},
-    {SPECIES_NORMAL_SANAE,    ITEM_GANLON_BERRY},
-    {SPECIES_ATTACK_YUUGI,    ITEM_APICOT_BERRY},
-    {SPECIES_NORMAL_KOGASA,  ITEM_RED_UFO},
-    {SPECIES_NORMAL_SATORI, ITEM_PETAYA_BERRY},
-    {SPECIES_CHIBI_KISUME,     ITEM_BERRY_JUICE},
-    {SPECIES_ATTACK_UTSUHO,   ITEM_BERRY_JUICE},
-    {SPECIES_TECH_ICHIRIN,  ITEM_PETAYA_BERRY},
-    {SPECIES_CHIBI_MURASA,  ITEM_SALAC_BERRY},
-};
-
 static const struct OamData sOamData_64x64 =
 {
     .y = 0,
@@ -5346,15 +5333,6 @@ void SetMonPreventsSwitchingString(void)
     PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff2, gBattlerInMenuId, GetPartyIdFromBattlePartyId(gBattlerPartyIndexes[gBattlerInMenuId]))
 
     BattleStringExpandPlaceholders(gText_PkmnsXPreventsSwitching, gStringVar4);
-}
-
-static s32 GetWildMonTableIdInAlteringCave(u16 species)
-{
-    s32 i;
-    for (i = 0; i < (s32) ARRAY_COUNT(sAlteringCaveWildMonHeldItems); i++)
-        if (sAlteringCaveWildMonHeldItems[i].species == species)
-            return i;
-    return 0;
 }
 
 static inline bool32 CanFirstMonBoostHeldItemRarity(void)
