@@ -1,5 +1,6 @@
 	.align 2
 gCryTable::
+.if P_CRIES_ENABLED == TRUE
 	cry Cry_Porygon
 	cry Cry_Terapagos
 	cry Cry_Reimu
@@ -87,9 +88,11 @@ gCryTable::
 	cry Cry_Advent_Chen
 	cry Cry_Advent_Youmu
 	cry Cry_Advent_Yuyuko
+.endif @ P_CRIES_ENABLED
 
 	.align 2
 gCryTable_Reverse::
+.if P_CRIES_ENABLED == TRUE
 	cry_reverse Cry_Porygon
 	cry_reverse Cry_Terapagos
 	cry_reverse Cry_Reimu
@@ -177,3 +180,4 @@ gCryTable_Reverse::
 	cry_reverse Cry_Advent_Chen
 	cry_reverse Cry_Advent_Youmu
 	cry_reverse Cry_Advent_Yuyuko
+.endif @ P_CRIES_ENABLED

@@ -390,6 +390,7 @@ DirectSoundWaveData_unknown_17::
 Cry_Porygon::
 	.incbin "sound/direct_sound_samples/cries/porygon.bin"
 
+.if P_CRIES_ENABLED == TRUE
 	.align 2
 Cry_Terapagos::
 	.incbin "sound/direct_sound_samples/cries/terapagos.bin"
@@ -733,6 +734,7 @@ Cry_Advent_Youmu::
 	.align 2
 Cry_Advent_Yuyuko::
 	.incbin "sound/direct_sound_samples/cries_add/advent_yuyuko.bin"
+.endif @ P_CRIES_ENABLED
 
 	.align 2
 DirectSoundWaveData_register_noise::
