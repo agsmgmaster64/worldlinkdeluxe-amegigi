@@ -833,7 +833,6 @@ static void Task_SetUpDexNavSearch(u8 taskId)
     }
     
     FlagSet(FLAG_SYS_DEXNAV_SEARCH);
-    gPlayerAvatar.creeping = TRUE;  //initialize as true in case mon appears beside you
     gTasks[taskId].tProximity = gSprites[gPlayerAvatar.spriteId].x;
     gTasks[taskId].tFrameCount = 0;
     gTasks[taskId].func = Task_DexNavSearch;
@@ -1049,34 +1048,28 @@ static void Task_RevealHiddenMon(u8 taskId)
 static void Task_DexNavSearch(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
-    
+
+    // out of range
     if (sDexNavSearchDataPtr->proximity > MAX_PROXIMITY)
-    { // out of range
+    {
         if (sDexNavSearchDataPtr->hiddenSearch && !task->tRevealed)
             EndDexNavSearch(taskId);
         else
             EndDexNavSearchSetupScript(EventScript_LostSignal, taskId);
         return;
     }
-    
-    if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && task->tFrameCount > 60)
-    { //should be creeping but player walks normally
-        if (sDexNavSearchDataPtr->hiddenSearch && !task->tRevealed)
-            EndDexNavSearch(taskId);
-        else
-            EndDexNavSearchSetupScript(EventScript_MovedTooFast, taskId);
-        return;
-    }
-    
+
+    // running/biking too close
     if (sDexNavSearchDataPtr->proximity <= SNEAKING_PROXIMITY && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_BIKE)) 
-    { // running/biking too close
+    {
         //always do event script, even if player hasn't revealed a hidden mon. It's assumed they would be creeping towards it
         EndDexNavSearchSetupScript(EventScript_MovedTooFast, taskId);
         return;
     }
-    
+
+    // check if script just executed
     if (ArePlayerFieldControlsLocked() == TRUE)
-    { // check if script just executed
+    {
         //gSaveBlock1Ptr->dexNavChain = 0;  //issue with reusable repels
         EndDexNavSearch(taskId);
         return;
