@@ -56,10 +56,6 @@ static void ZMoveSelectionDisplayMoveType(u16 zMove, u32 battler);
 // Const Data
 static const struct SignatureZMove sSignatureZMoves[] =
 {
-    {SPECIES_PIKACHU_POP_STAR,        ITEM_PIKANIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
-    {SPECIES_PIKACHU_PH_D,            ITEM_EEVIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
-    {SPECIES_PIKACHU_LIBRE,           ITEM_SNORLIUM_Z,           MOVE_VOLT_TACKLE,         MOVE_CATASTROPIKA},
-    {SPECIES_CHIBI_SHIZUHA_SANNIAN,           ITEM_MEWNIUM_Z,        MOVE_THUNDERBOLT,         MOVE_STOKED_SPARKSURFER},
     {SPECIES_DECIDUEYE,               ITEM_DECIDIUM_Z,           MOVE_SPIRIT_SHACKLE,      MOVE_SINISTER_ARROW_RAID},
     {SPECIES_INCINEROAR,              ITEM_INCINIUM_Z,           MOVE_DARKEST_LARIAT,      MOVE_MALICIOUS_MOONSAULT},
 };

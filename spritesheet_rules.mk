@@ -4007,40 +4007,40 @@ $(POKEMONGFXDIR)/exeggutor/alolan/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/marowak/alolan/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/cirno/chibi/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/cirno/chibi/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/cirno/normal/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/cirno/normal/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/cirno/speed/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/cirno/speed/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/cirno/tech/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/cirno/tech/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/lilywhite/chibi/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/lilywhite/chibi/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/lilywhite/normal/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/lilywhite/normal/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/lilywhite/attack/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/lilywhite/attack/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/lilywhite/defense/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/lilywhite/defense/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/reisen/chibi/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/reisen/chibi/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/reisen/normal/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/reisen/normal/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/reisen/defense/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/reisen/defense/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/reisen/tech/follower.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/reisen/tech/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(MISCGFXDIR)/emotes.4bpp: %.4bpp: %.png

@@ -80,7 +80,7 @@ EWRAM_DATA static u16 sLastFishingSpecies = 0;
 
 #include "data/wild_encounters.h"
 
-static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_TECH_TOYOHIME};
+static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_CHIBI_WAKASAGIHIME_GOLD};
 
 static const u16 sRoute119WaterTileData[] =
 {

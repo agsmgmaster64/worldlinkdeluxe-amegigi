@@ -1061,13 +1061,13 @@
 #define SPECIES_DECIDUEYE_HISUIAN                       1008
 
 // Misc Forms
-#define SPECIES_PORYGON                                 1009
-#define SPECIES_PROYGON2                                1010
+#define SPECIES_PORYGON                                 1009 // Needed to keep RHH intro work
+#define SPECIES_PORYGON2                                1010
 #define SPECIES_PROYGON_Z                               1011
-#define SPECIES_PIKACHU_POP_STAR                        1012
-#define SPECIES_PIKACHU_PH_D                            1013
-#define SPECIES_PIKACHU_LIBRE                           1014
-#define SPECIES_PIKACHU_ORIGINAL_CAP                    1015
+#define SPECIES_CHIBI_WAKASAGIHIME_GOLD                 1012
+#define SPECIES_NORMAL_WAKASAGIHIME_GOLD                1013
+#define SPECIES_DEFENSE_WAKASAGIHIME_GOLD               1014
+#define SPECIES_PLACEHOLD_WAKASAGIHIME_GOLD             1015 // Placeholder
 #define SPECIES_PIKACHU_HOENN_CAP                       1016
 #define SPECIES_PIKACHU_SINNOH_CAP                      1017
 #define SPECIES_PIKACHU_UNOVA_CAP                       1018
@@ -1705,9 +1705,7 @@
 #define SPECIES_PIKACHU_GMAX                            SPECIES_PIKACHU_GIGANTAMAX
 #define SPECIES_PIKACHU_HOENN                           SPECIES_PIKACHU_HOENN_CAP
 #define SPECIES_PIKACHU_KALOS                           SPECIES_PIKACHU_KALOS_CAP
-#define SPECIES_PIKACHU_ORIGINAL                        SPECIES_PIKACHU_ORIGINAL_CAP
 //#define SPECIES_PIKACHU_PARTNER                       SPECIES_PIKACHU_PARTNER_CAP
-#define SPECIES_PIKACHU_PHD                             SPECIES_PIKACHU_PH_D
 #define SPECIES_PIKACHU_SINNOH                          SPECIES_PIKACHU_SINNOH_CAP
 #define SPECIES_PIKACHU_STARTER                         SPECIES_PIKACHU_PARTNER
 #define SPECIES_PIKACHU_UNOVA                           SPECIES_PIKACHU_UNOVA_CAP

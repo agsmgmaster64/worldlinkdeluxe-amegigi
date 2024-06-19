@@ -642,6 +642,16 @@ static const u16 sCNueEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCWakasagihimeEggMoveLearnset[] = {
+    MOVE_AQUA_JET,
+    MOVE_ASSIST,
+    MOVE_ENCORE,
+    MOVE_FAKE_TEARS,
+    MOVE_COVET,
+    MOVE_AQUA_SHOWER,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCSuikaEggMoveLearnset[] = {
     MOVE_HAZE,
     MOVE_MIST,

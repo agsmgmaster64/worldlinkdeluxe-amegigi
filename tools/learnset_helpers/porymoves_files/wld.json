@@ -18698,6 +18698,289 @@
       "MOVE_MIMIC"
     ]
   },
+  "C_WAKASAGIHIME": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_TAIL_WHIP"
+      },
+      {
+        "Level": 8,
+        "Move": "MOVE_BUBBLE"
+      },
+      {
+        "Level": 11,
+        "Move": "MOVE_SING"
+      },
+      {
+        "Level": 14,
+        "Move": "MOVE_WITHDRAW"
+      },
+      {
+        "Level": 17,
+        "Move": "MOVE_WATER_PULSE"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_AURORA_BEAM"
+      },
+      {
+        "Level": 23,
+        "Move": "MOVE_REFRESH"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_HEART_BREAK",
+      "MOVE_WATER_PULSE",
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_MANA_BURST",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_SNATCH",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_SURF"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_MIMIC"
+    ]
+  },
+  "WAKASAGIHIME": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_WRAP"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_CONSTRICT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDURE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TRICK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_HYDRO_CANNON"
+      },
+      {
+        "Level": 2,
+        "Move": "MOVE_BLIZZARD"
+      },
+      {
+        "Level": 27,
+        "Move": "MOVE_HAZE"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_BUBBLE_BEAM"
+      },
+      {
+        "Level": 33,
+        "Move": "MOVE_RAIN_DANCE"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_CHARM"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_RECOVER"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_MYSTIC_WATER"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_ICE_BEAM"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_HYDRO_PUMP"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FOCUS_PUNCH",
+      "MOVE_HEART_BREAK",
+      "MOVE_WATER_PULSE",
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_MANA_BURST",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_SNATCH",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_SURF"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "D_WAKASAGIHIME": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_WRAP"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_CONSTRICT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_ENDURE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_TRICK"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_HYDRO_CANNON"
+      },
+      {
+        "Level": 2,
+        "Move": "MOVE_BLIZZARD"
+      },
+      {
+        "Level": 27,
+        "Move": "MOVE_CHARM"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_BUBBLE_BEAM"
+      },
+      {
+        "Level": 33,
+        "Move": "MOVE_SWEET_KISS"
+      },
+      {
+        "Level": 36,
+        "Move": "MOVE_LUCKY_CHANT"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_MYSTIC_WATER"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_LOVELY_KISS"
+      },
+      {
+        "Level": 48,
+        "Move": "MOVE_MUDDY_WATER"
+      },
+      {
+        "Level": 52,
+        "Move": "MOVE_RECOVER"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FOCUS_PUNCH",
+      "MOVE_HEART_BREAK",
+      "MOVE_WATER_PULSE",
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_MANA_BURST",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_THIEF",
+      "MOVE_SNATCH",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_ICY_WIND",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_SURF"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
   "C_SUIKA": {
     "LevelMoves": [
       {

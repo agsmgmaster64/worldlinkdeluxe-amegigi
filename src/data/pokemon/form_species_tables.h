@@ -35,6 +35,30 @@ static const u16 sMinorikoFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sCWakasagihimeFormSpeciesIdTable[] = {
+    SPECIES_CHIBI_WAKASAGIHIME,
+    SPECIES_CHIBI_WAKASAGIHIME_GOLD,
+    FORM_SPECIES_END,
+};
+
+static const u16 sWakasagihimeFormSpeciesIdTable[] = {
+    SPECIES_NORMAL_WAKASAGIHIME,
+    SPECIES_NORMAL_WAKASAGIHIME_GOLD,
+    FORM_SPECIES_END,
+};
+
+static const u16 sDWakasagihimeFormSpeciesIdTable[] = {
+    SPECIES_DEFENSE_WAKASAGIHIME,
+    SPECIES_DEFENSE_WAKASAGIHIME_GOLD,
+    FORM_SPECIES_END,
+};
+
+static const u16 sPWakasagihimeFormSpeciesIdTable[] = {
+    SPECIES_PLACEHOLD_WAKASAGIHIME,
+    SPECIES_PLACEHOLD_WAKASAGIHIME_GOLD,
+    FORM_SPECIES_END,
+};
+
 #if P_FAMILY_CHARMANDER
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_NORMAL_MARISA,
@@ -114,13 +138,7 @@ static const u16 sPichuFormSpeciesIdTable[] = {
 
 static const u16 sPikachuFormSpeciesIdTable[] = {
     SPECIES_CHIBI_KOAKUMA,
-#if P_COSPLAY_PIKACHU_FORMS
-    SPECIES_PIKACHU_POP_STAR,
-    SPECIES_PIKACHU_PH_D,
-    SPECIES_PIKACHU_LIBRE,
-#endif
 #if P_CAP_PIKACHU_FORMS
-    SPECIES_PIKACHU_ORIGINAL_CAP,
     SPECIES_PIKACHU_HOENN_CAP,
     SPECIES_PIKACHU_SINNOH_CAP,
     SPECIES_PIKACHU_UNOVA_CAP,

@@ -129,6 +129,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #include "species_info/touhou_11_families.h"
     #include "species_info/touhou_12_families.h"
     #include "species_info/touhou_13_families.h"
+    #include "species_info/touhou_14_families.h"
     #include "species_info/touhou_spinoff_families.h"
     #include "species_info/touhou_print_families.h"
 

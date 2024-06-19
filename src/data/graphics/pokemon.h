@@ -24416,6 +24416,60 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_TNue[] = INCBIN_U8("graphics/pokemon/_add/th/nue/tech/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CWakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CWakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Wakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Wakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Wakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Wakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Wakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Wakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_DWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/defense/anim_front.4bpp.lz");
+    const u32 gMonPalette_DWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/defense/normal.gbapal.lz");
+    const u32 gMonBackPic_DWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/defense/back.4bpp.lz");
+    const u32 gMonShinyPalette_DWakasagihime[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/defense/shiny.gbapal.lz");
+    const u8 gMonIcon_DWakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/defense/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_DWakasagihime[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/defense/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CWakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CWakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_WakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_WakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_WakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_WakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_WakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_WakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_DWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/defense/anim_front.4bpp.lz");
+    const u32 gMonPalette_DWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/defense/normal.gbapal.lz");
+    const u32 gMonBackPic_DWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/defense/back.4bpp.lz");
+    const u32 gMonShinyPalette_DWakasagihimeGolden[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime/golden/defense/shiny.gbapal.lz");
+    const u8 gMonIcon_DWakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/defense/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_DWakasagihimeGolden[] = INCBIN_U8("graphics/pokemon/_add/th/wakasagihime/golden/defense/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CSuika[] = INCBIN_U32("graphics/pokemon/_add/th/suika/chibi/anim_front.4bpp.lz");
     const u32 gMonPalette_CSuika[] = INCBIN_U32("graphics/pokemon/_add/th/suika/chibi/normal.gbapal.lz");
     const u32 gMonBackPic_CSuika[] = INCBIN_U32("graphics/pokemon/_add/th/suika/chibi/back.4bpp.lz");
