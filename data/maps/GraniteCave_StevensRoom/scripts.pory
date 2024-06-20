@@ -95,7 +95,8 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	step_end
 
 GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlace::
-	switch VAR_FACING
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	switch VAR_RESULT
 	case DIR_NORTH, GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceNorth
 	case DIR_SOUTH, GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceSouth
 	case DIR_EAST, GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceEast
@@ -123,7 +124,8 @@ GraniteCave_StevensRoom_Movement_WalkInPlaceUp::
 	step_end
 
 GraniteCave_StevensRoom_EventScript_StevenFacePlayer::
-	switch VAR_FACING
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	switch VAR_RESULT
 	case DIR_NORTH, GraniteCave_StevensRoom_EventScript_StevenFacePlayerNorth
 	case DIR_SOUTH, GraniteCave_StevensRoom_EventScript_StevenFacePlayerSouth
 	case DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenFacePlayerEast
@@ -169,12 +171,12 @@ GraniteCave_StevensRoom_Text_ThankYouTakeThis:
 	.string "Huh, the Noise.\n"
 	.string "I guess that's nice of him?\p"
 	.string "You know what, since you came here,\n"
-	.string "you can have this little TM for\n"
-	.string "the move STEEL WING.$"
+	.string "you can have this little TM for\l"
+	.string "the move Steel Wing.$"
 
 GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "Your POKéMON appear quite\n"
-	.string "capable.\p"
+	.string "Now let's see what the letter has\n"
+	.string "inside.\p"
 	.string "If you keep training, you could even\n"
 	.string "become the CHAMPION of the POKéMON\l"
 	.string "LEAGUE one day. That's what I think.\p"

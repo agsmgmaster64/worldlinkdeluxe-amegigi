@@ -22,16 +22,27 @@ static const u8 sBattleAnimBgCnts[] = {REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, REG
 
 static const TaskFunc sBattleIntroSlideFuncs[] =
 {
-    [BATTLE_TERRAIN_GRASS]      = BattleIntroSlide1,
-    [BATTLE_TERRAIN_LONG_GRASS] = BattleIntroSlide1,
-    [BATTLE_TERRAIN_SAND]       = BattleIntroSlide2,
-    [BATTLE_TERRAIN_UNDERWATER] = BattleIntroSlide2,
-    [BATTLE_TERRAIN_WATER]      = BattleIntroSlide2,
-    [BATTLE_TERRAIN_POND]       = BattleIntroSlide1,
-    [BATTLE_TERRAIN_MOUNTAIN]   = BattleIntroSlide1,
-    [BATTLE_TERRAIN_CAVE]       = BattleIntroSlide1,
-    [BATTLE_TERRAIN_BUILDING]   = BattleIntroSlide3,
-    [BATTLE_TERRAIN_PLAIN]      = BattleIntroSlide3,
+    [BATTLE_TERRAIN_GRASS]            = BattleIntroSlide1,
+    [BATTLE_TERRAIN_LONG_GRASS]       = BattleIntroSlide1,
+    [BATTLE_TERRAIN_SAND]             = BattleIntroSlide2,
+    [BATTLE_TERRAIN_UNDERWATER]       = BattleIntroSlide2,
+    [BATTLE_TERRAIN_WATER]            = BattleIntroSlide2,
+    [BATTLE_TERRAIN_POND]             = BattleIntroSlide1,
+    [BATTLE_TERRAIN_MOUNTAIN]         = BattleIntroSlide1,
+    [BATTLE_TERRAIN_CAVE]             = BattleIntroSlide1,
+    [BATTLE_TERRAIN_BUILDING]         = BattleIntroSlide3,
+    [BATTLE_TERRAIN_PLAIN]            = BattleIntroSlide3,
+    [BATTLE_TERRAIN_SOARING]          = BattleIntroSlide1,
+    [BATTLE_TERRAIN_SKY_PILLAR]       = BattleIntroSlide1,
+    [BATTLE_TERRAIN_BURIAL_GROUND]    = BattleIntroSlide1,
+    [BATTLE_TERRAIN_PUDDLE]           = BattleIntroSlide1,
+    [BATTLE_TERRAIN_MARSH]            = BattleIntroSlide1,
+    [BATTLE_TERRAIN_SNOW]             = BattleIntroSlide1,
+    [BATTLE_TERRAIN_ICE]              = BattleIntroSlide1,
+    [BATTLE_TERRAIN_VOLCANO]          = BattleIntroSlide1,
+    [BATTLE_TERRAIN_DISTORTION_WORLD] = BattleIntroSlide1,
+    [BATTLE_TERRAIN_SPACE]            = BattleIntroSlide1,
+    [BATTLE_TERRAIN_ULTRA_SPACE]      = BattleIntroSlide1,
 };
 
 void SetAnimBgAttribute(u8 bgId, u8 attributeId, u8 value)
