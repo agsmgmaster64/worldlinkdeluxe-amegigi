@@ -99,38 +99,27 @@ static const struct PacifidlogMetatileOffsets sFloatingBridgeMetatileOffsets[] =
     {-1,  0, METATILE_Pacifidlog_FloatingLogs_HorizontalLeft}, {0, 0, METATILE_Pacifidlog_FloatingLogs_HorizontalRight}
 };
 
-// Each element corresponds to a y coordinate row in the sootopolis gym 1F map.
-// The rows with ice each have a temp var used to track the ice steps. Each bit in the var
-// represents whether ice at that x coordinate (starting from the left edge) has been visited.
-// This method of tracking steps will break if the ice puzzle is more than 16 map spaces wide.
-static const u16 sSootopolisGymIceRowVars[] =
+// The positions of each map space with crackable ice in Granite Cave.
+static const u8 sIcefallCaveIceCoords[][2] =
 {
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    VAR_TEMP_1,
-    VAR_TEMP_2,
-    VAR_TEMP_3,
-    VAR_TEMP_4,
-    0,
-    0,
-    VAR_TEMP_5,
-    VAR_TEMP_6,
-    VAR_TEMP_7,
-    0,
-    0,
-    VAR_TEMP_8,
-    VAR_TEMP_9,
-    VAR_TEMP_A,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
+    {  1,  1 },
+    {  3,  2 },
+    {  2,  4 },
+    {  4,  5 },
+    {  1,  6 },
+    { 15,  1 },
+    { 22,  1 },
+    { 17,  2 },
+    { 19,  2 },
+    { 18,  3 },
+    { 20,  3 },
+    { 22,  3 },
+    { 19,  4 },
+    { 18,  5 },
+    { 21,  5 },
+    { 17,  6 },
+    { 20,  6 },
+    { 22,  6 },
 };
 
 #define tCallbackId data[0]
@@ -605,7 +594,7 @@ static void FortreeBridgePerStepCallback(u8 taskId)
 #define ICE_PUZZLE_WIDTH  (ICE_PUZZLE_R - ICE_PUZZLE_L + 1)
 #define ICE_PUZZLE_HEIGHT (ICE_PUZZLE_B - ICE_PUZZLE_T + 1)
 
-static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
+/*static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
 {
     if ((u16)(x - ICE_PUZZLE_L) < ICE_PUZZLE_WIDTH
      && (u16)(y - ICE_PUZZLE_T) < ICE_PUZZLE_HEIGHT
@@ -613,15 +602,22 @@ static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
         return TRUE;
     else
         return FALSE;
-}
+}*/
 
 static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
 {
-    if (CoordInIcePuzzleRegion(x, y))
-        *GetVarPointer(sSootopolisGymIceRowVars[y]) |= (1 << (x - ICE_PUZZLE_L));
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    {
+        if (sIcefallCaveIceCoords[i][0] + MAP_OFFSET == x && sIcefallCaveIceCoords[i][1] + MAP_OFFSET == y)
+        {
+            FlagSet(i + 1);
+            break;
+        }
+    }
 }
 
-static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
+/*static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
 {
     u16 var;
     if (!CoordInIcePuzzleRegion(x, y))
@@ -632,19 +628,18 @@ static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
         return TRUE;
     else
         return FALSE;
-}
+}*/
 
 void SetSootopolisGymCrackedIceMetatiles(void)
 {
-    s32 x, y;
-    s32 width = gMapHeader.mapLayout->width;
-    s32 height = gMapHeader.mapLayout->height;
-    for (x = 0; x < width; x++)
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
     {
-        for (y = 0; y < height; y++)
+        if (FlagGet(i + 1) == TRUE)
         {
-            if (IsIcePuzzleCoordVisited(x, y) == TRUE)
-                MapGridSetMetatileIdAt(x + MAP_OFFSET, y + MAP_OFFSET, METATILE_SootopolisGym_Ice_Cracked);
+            int x = sIcefallCaveIceCoords[i][0] + MAP_OFFSET;
+            int y = sIcefallCaveIceCoords[i][1] + MAP_OFFSET;
+            MapGridSetMetatileIdAt(x, y, METATILE_RG_SeafoamIslands_CrackedIce);
         }
     }
 }
@@ -660,7 +655,6 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
 {
     s16 x, y;
     u16 tileBehavior;
-    u16 *iceStepCount;
     s16 *data = gTasks[taskId].data;
     switch (tState)
     {
@@ -679,11 +673,10 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
         tPrevX = x;
         tPrevY = y;
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
-        iceStepCount = GetVarPointer(VAR_ICE_STEP_COUNT);
         if (MetatileBehavior_IsThinIce(tileBehavior) == TRUE)
         {
             // Thin ice, set it to cracked ice
-            (*iceStepCount)++;
+            MarkIcePuzzleCoordVisited(x, y);
             tDelay = 4;
             tState = 2;
             tIceX = x;
@@ -692,7 +685,6 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
         else if (MetatileBehavior_IsCrackedIce(tileBehavior) == TRUE)
         {
             // Cracked ice, set it to broken ice
-            *iceStepCount = 0;
             tDelay = 4;
             tState = 3;
             tIceX = x;
@@ -710,9 +702,8 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
             x = tIceX;
             y = tIceY;
             PlaySE(SE_ICE_CRACK);
-            MapGridSetMetatileIdAt(x, y, METATILE_SootopolisGym_Ice_Cracked);
+            MapGridSetMetatileIdAt(x, y, METATILE_RG_SeafoamIslands_CrackedIce);
             CurrentMapDrawMetatileAt(x, y);
-            MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
             tState = 1;
         }
         break;
@@ -727,8 +718,9 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
             x = tIceX;
             y = tIceY;
             PlaySE(SE_ICE_BREAK);
-            MapGridSetMetatileIdAt(x, y, METATILE_SootopolisGym_Ice_Broken);
+            MapGridSetMetatileIdAt(x, y, METATILE_RG_SeafoamIslands_IceHole);
             CurrentMapDrawMetatileAt(x, y);
+            VarSet(VAR_TEMP_1, 1);
             tState = 1;
         }
         break;

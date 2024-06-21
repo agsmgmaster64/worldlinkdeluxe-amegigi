@@ -450,6 +450,11 @@
 #define METATILE_RG_General_YellowCaveIndent   0x193
 #define METATILE_RG_General_YellowCaveOpen     0x194
 
+// gTileset_RG_SeafoamIslands
+#define METATILE_RG_SeafoamIslands_CrackedIce    0x35A
+#define METATILE_RG_SeafoamIslands_IceHole       0x35B
+#define METATILE_RG_SeafoamIslands_UncrackedIce  0x359
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F

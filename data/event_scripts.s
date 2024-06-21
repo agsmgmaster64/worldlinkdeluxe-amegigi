@@ -1082,3 +1082,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/EikiIsland_1/scripts.inc"
 	.include "data/maps/EikiIsland_1/text.inc"
+
+	.include "data/maps/Yogyakarta/scripts.inc"
+	.include "data/maps/Yogyakarta/text.inc"

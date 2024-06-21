@@ -785,23 +785,23 @@
       "id": "LAYOUT_DEWFORD_TOWN_HALL",
       "name": "DewfordTown_Hall_Layout",
       "width": 17,
-      "height": 9,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PewterGym",
       "border_filepath": "data/layouts/DewfordTown_Hall/border.bin",
       "blockdata_filepath": "data/layouts/DewfordTown_Hall/map.bin"
     },
     {
       "id": "LAYOUT_HOUSE4",
       "name": "House4_Layout",
-      "width": 10,
-      "height": 9,
+      "width": 11,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PewterGym",
       "border_filepath": "data/layouts/House4/border.bin",
       "blockdata_filepath": "data/layouts/House4/map.bin"
     },
@@ -5304,6 +5304,18 @@
       "secondary_tileset": "gTileset_RG_LavenderTown",
       "border_filepath": "data/layouts/EikiIsland_1/border.bin",
       "blockdata_filepath": "data/layouts/EikiIsland_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOGYAKARTA",
+      "name": "Yogyakarta_Layout",
+      "width": 50,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Yogyakarta/border.bin",
+      "blockdata_filepath": "data/layouts/Yogyakarta/map.bin"
     }
   ]
 }
