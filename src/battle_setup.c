@@ -845,6 +845,8 @@ u8 BattleSetup_GetTerrainId(void)
         return BATTLE_TERRAIN_LONG_GRASS;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
         return BATTLE_TERRAIN_SAND;
+    if (MetatileBehavior_IsIce(tileBehavior))
+        return BATTLE_TERRAIN_ICE;
 
     switch (gMapHeader.mapType)
     {
@@ -857,6 +859,11 @@ u8 BattleSetup_GetTerrainId(void)
             return BATTLE_TERRAIN_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_TERRAIN_POND;
+        if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_1F))
+         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_B1F))
+         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_B2F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_B2F))
+         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_STEVENS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_STEVENS_ROOM)))
+            return BATTLE_TERRAIN_ICE;
         return BATTLE_TERRAIN_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:

@@ -751,18 +751,18 @@ const struct BattleBackground sBattleTerrainTable[] =
     {
         .tileset = gBattleTerrainTiles_Plain,
         .tilemap = gBattleTerrainTilemap_Plain,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
+        .entryTileset = gBattleTerrainAnimTiles_TallGrass,
+        .entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
         .palette = gBattleTerrainPalette_Plain,
     },
 
     [BATTLE_TERRAIN_ICE] =
     {
-        .tileset = gBattleTerrainTiles_Plain,
-        .tilemap = gBattleTerrainTilemap_Plain,
-        .entryTileset = gBattleTerrainAnimTiles_Building,
-        .entryTilemap = gBattleTerrainAnimTilemap_Building,
-        .palette = gBattleTerrainPalette_Plain,
+        .tileset = gBattleTerrainTiles_Ice,
+        .tilemap = gBattleTerrainTilemap_Ice,
+        .entryTileset = gBattleTerrainAnimTiles_Cave,
+        .entryTilemap = gBattleTerrainAnimTilemap_Cave,
+        .palette = gBattleTerrainPalette_Ice,
     },
 
     [BATTLE_TERRAIN_VOLCANO] =

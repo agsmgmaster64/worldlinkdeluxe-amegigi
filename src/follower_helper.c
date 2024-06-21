@@ -225,9 +225,14 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .text = (u8*)sColdTexts,
         .textSpread = 1,
         .emotion = FOLLOWER_EMOTION_SURPRISE,
+        .orFlag = 1, // match any of these maps
         .conditions =
         {
             MATCH_MAP(SHOAL_CAVE_LOW_TIDE_ICE_ROOM),
+            MATCH_MAP(GRANITE_CAVE_1F),
+            MATCH_MAP(GRANITE_CAVE_B1F),
+            MATCH_MAP(GRANITE_CAVE_B2F),
+            MATCH_MAP(GRANITE_CAVE_STEVENS_ROOM),
         },
     },
     [COND_MSG_ROUTE_117] =
