@@ -631,372 +631,378 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 # 316 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 317 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	end
+#ifdef BUGFIX
 # 318 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
-# 319 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer::
-# 320 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	switch VAR_FACING
-# 321 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	case DIR_SOUTH, MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth
-# 322 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	case DIR_WEST, MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest
-# 323 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	return
-# 324 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
-# 325 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth::
-# 326 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	turnobject LOCALID_STEVEN, DIR_NORTH
-# 327 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	return
-# 328 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
-# 329 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest::
-# 330 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	turnobject LOCALID_STEVEN, DIR_EAST
-# 331 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	return
-# 332 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
-# 333 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
-# 334 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	lockall
-# 335 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	checkplayergender
-# 336 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	call_if_eq VAR_RESULT, MALE, MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall
-# 337 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall
-# 338 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	closemessage
-# 339 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	clearflag FLAG_DEFEATED_MAGMA_SPACE_CENTER
-# 340 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	releaseall
-# 341 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+# 319 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+#endif
+# 320 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	end
+# 321 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 322 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayer::
+# 323 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	switch VAR_FACING
+# 324 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	case DIR_SOUTH, MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth
+# 325 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	case DIR_WEST, MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest
+# 326 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	return
+# 327 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 328 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerSouth::
+# 329 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	turnobject LOCALID_STEVEN, DIR_NORTH
+# 330 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	return
+# 331 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 332 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest::
+# 333 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	turnobject LOCALID_STEVEN, DIR_EAST
+# 334 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	return
+# 335 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 336 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
+# 337 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	lockall
+# 338 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	checkplayergender
+# 339 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	call_if_eq VAR_RESULT, MALE, MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall
+# 340 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	call_if_eq VAR_RESULT, FEMALE, MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall
+# 341 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	closemessage
 # 342 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	clearflag FLAG_DEFEATED_MAGMA_SPACE_CENTER
 # 343 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall::
+	releaseall
 # 344 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	pokenavcall MatchCall_Text_MayRayquazaCall
+	end
 # 345 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	waitmessage
+
 # 346 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	return
+MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall::
 # 347 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	pokenavcall MatchCall_Text_MayRayquazaCall
 # 348 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
-# 349 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	pokenavcall MatchCall_Text_BrendanRayquazaCall
-# 350 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	waitmessage
-# 351 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+# 349 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	return
+# 350 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 351 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
 # 352 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	pokenavcall MatchCall_Text_BrendanRayquazaCall
 # 353 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
+	waitmessage
 # 354 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MOSSDEEP has mainly sunny weather,\n"
+	return
 # 355 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "and its winds are stable.\p"
+
 # 356 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "It's an ideal location for launching\n"
+MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
 # 357 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "rockets.$"
+	.string "MOSSDEEP has mainly sunny weather,\n"
 # 358 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "and its winds are stable.\p"
 # 359 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
+	.string "It's an ideal location for launching\n"
 # 360 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Why would TEAM MAGMA want to steal\n"
+	.string "rockets.$"
 # 361 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "our rocket fuel in the first place?$"
+
 # 362 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
 # 363 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
+	.string "Why would TEAM MAGMA want to steal\n"
 # 364 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If only I was a little younger, I would\n"
+	.string "our rocket fuel in the first place?$"
 # 365 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "have liked being an astronaut…\p"
+
 # 366 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "No… It's not too late!\n"
+MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 # 367 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I can and will try!$"
+	.string "If only I was a little younger, I would\n"
 # 368 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "have liked being an astronaut…\p"
 # 369 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
+	.string "No… It's not too late!\n"
 # 370 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If TEAM MAGMA takes the rocket fuel,\n"
+	.string "I can and will try!$"
 # 371 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I won't be able to go to space!\p"
+
 # 372 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "They can't be allowed to get away\n"
+MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
 # 373 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "with such an outrage!$"
+	.string "If TEAM MAGMA takes the rocket fuel,\n"
 # 374 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "I won't be able to go to space!\p"
 # 375 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
+	.string "They can't be allowed to get away\n"
 # 376 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I wish ordinary people could go into\n"
+	.string "with such an outrage!$"
 # 377 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "space one day…$"
+
 # 378 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 # 379 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
+	.string "I wish ordinary people could go into\n"
 # 380 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "TEAM MAGMA…\n"
+	.string "space one day…$"
 # 381 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Do they want to go to space, too?$"
+
 # 382 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
 # 383 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
+	.string "TEAM MAGMA…\n"
 # 384 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "What's wrong with you?\p"
+	.string "Do they want to go to space, too?$"
 # 385 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "You're outnumbered three to one,\n"
+
 # 386 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "but you still want to take us on?$"
+MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
 # 387 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "What's wrong with you?\p"
 # 388 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_GoodAnswer:
+	.string "You're outnumbered three to one,\n"
 # 389 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Good answer!\n"
+	.string "but you still want to take us on?$"
 # 390 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "That's what a smart person'll do!$"
+
 # 391 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_GoodAnswer:
 # 392 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro:
+	.string "Good answer!\n"
 # 393 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "A reckless go-getter, are you?\n"
+	.string "That's what a smart person'll do!$"
 # 394 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Okay, I'll go first!$"
+
 # 395 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro:
 # 396 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat:
+	.string "A reckless go-getter, are you?\n"
 # 397 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I lost!\n"
+	.string "Okay, I'll go first!$"
 # 398 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "But!$"
+
 # 399 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat:
 # 400 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro:
+	.string "I lost!\n"
 # 401 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "It's too soon to be relieved!\n"
-# 402 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I'm up next!$"
-# 403 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
-# 404 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat:
-# 405 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I lost, too!\n"
-# 406 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "But!$"
+# 402 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
+# 403 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro:
+# 404 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "It's too soon to be relieved!\n"
+# 405 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "I'm up next!$"
+# 406 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+
 # 407 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat:
 # 408 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro:
+	.string "I lost, too!\n"
 # 409 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I bet you want to take a break.\n"
+	.string "But!$"
 # 410 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "But I'm not about to let you do that!$"
+
 # 411 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro:
 # 412 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat:
+	.string "I bet you want to take a break.\n"
 # 413 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We should've taken a break…\n"
+	.string "But I'm not about to let you do that!$"
 # 414 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "That's what we should've done…$"
+
 # 415 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat:
 # 416 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt6PostBattle:
+	.string "We should've taken a break…\n"
 # 417 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Three of us here, and look at the sorry\n"
+	.string "That's what we should've done…$"
 # 418 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "mess we got ourselves into.$"
+
 # 419 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt6PostBattle:
 # 420 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt7PostBattle:
+	.string "Three of us here, and look at the sorry\n"
 # 421 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We three losing like this…\n"
+	.string "mess we got ourselves into.$"
 # 422 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We look worse than usual by triple!$"
+
 # 423 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt7PostBattle:
 # 424 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
+	.string "We three losing like this…\n"
 # 425 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Are we being useful to our leader\n"
+	.string "We look worse than usual by triple!$"
 # 426 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "at all?$"
+
 # 427 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
 # 428 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
+	.string "Are we being useful to our leader\n"
 # 429 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Hehehe!\p"
+	.string "at all?$"
 # 430 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We come all the way here to get some\n"
+
 # 431 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "fuel, and we're interfered with again!\p"
+MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
 # 432 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If you're going to mess with us too,\n"
+	.string "Hehehe!\p"
 # 433 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "we'll take care of you at the same time!$"
+	.string "We come all the way here to get some\n"
 # 434 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "fuel, and we're interfered with again!\p"
 # 435 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
+	.string "If you're going to mess with us too,\n"
 # 436 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: Clear out of the way!\n"
+	.string "we'll take care of you at the same time!$"
 # 437 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Don't you dare interfere!$"
+
 # 438 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
 # 439 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
+	.string "MAXIE: Clear out of the way!\n"
 # 440 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: TEAM MAGMA…\p"
+	.string "Don't you dare interfere!$"
 # 441 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "What's the point of stealing rocket\n"
+
 # 442 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "fuel?$"
+MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
 # 443 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "STEVEN: TEAM MAGMA…\p"
 # 444 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
+	.string "What's the point of stealing rocket\n"
 # 445 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: Fufufu… Since you're so\n"
+	.string "fuel?$"
 # 446 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "curious, you deserve an explanation.\p"
+
 # 447 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We're going to jettison the entire\n"
+MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
 # 448 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "load into MT. CHIMNEY!\p"
+	.string "MAXIE: Fufufu… Since you're so\n"
 # 449 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "With GROUDON gone, we have no need\n"
+	.string "curious, you deserve an explanation.\p"
 # 450 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "for that slag heap of a mountain!\p"
+	.string "We're going to jettison the entire\n"
 # 451 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "So we'll use the fuel's power to make\n"
+	.string "load into MT. CHIMNEY!\p"
 # 452 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "the volcano erupt!\p"
+	.string "With GROUDON gone, we have no need\n"
 # 453 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "It will be savage!$"
+	.string "for that slag heap of a mountain!\p"
 # 454 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "So we'll use the fuel's power to make\n"
 # 455 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle:
+	.string "the volcano erupt!\p"
 # 456 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: {PLAYER}{KUN}!\n"
+	.string "It will be savage!$"
 # 457 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "You're going to help me?\p"
+
 # 458 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Let's go into battle together!\n"
+MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle:
 # 459 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Are you ready?$"
+	.string "STEVEN: {PLAYER}{KUN}!\n"
 # 460 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "You're going to help me?\p"
 # 461 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
+	.string "Let's go into battle together!\n"
 # 462 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: Then, hurry!\n"
+	.string "Are you ready?$"
 # 463 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Get ready quickly!$"
+
 # 464 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
 # 465 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
+	.string "STEVEN: Then, hurry!\n"
 # 466 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "All I want…\n"
+	.string "Get ready quickly!$"
 # 467 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I just want to expand the land mass…$"
-# 468 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 
+# 468 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
 # 469 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_Text_TabithaDefeat:
+	.string "All I want…\n"
 # 470 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I'm with our leader…$"
+	.string "I just want to expand the land mass…$"
 # 471 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 
 # 472 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
+MossdeepCity_SpaceCenter_Text_TabithaDefeat:
 # 473 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: We failed to make the volcano\n"
+	.string "I'm with our leader…$"
 # 474 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "erupt…\p"
+
 # 475 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We failed to control GROUDON after\n"
+MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
 # 476 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "we had awoken it…\p"
+	.string "MAXIE: We failed to make the volcano\n"
 # 477 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Is our goal to expand the land\n"
+	.string "erupt…\p"
 # 478 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "misguided?\p"
+	.string "We failed to control GROUDON after\n"
 # 479 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "… … … … … …\n"
+	.string "we had awoken it…\p"
 # 480 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "… … … … … …\p"
+	.string "Is our goal to expand the land\n"
 # 481 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If…\n"
+	.string "misguided?\p"
 # 482 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "If we, TEAM MAGMA, are wrong…\l"
+	.string "… … … … … …\n"
 # 483 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "… … … … … …\p"
 # 484 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Then might TEAM AQUA's goal to expand\n"
+	.string "If…\n"
 # 485 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "the sea also be equally misguided?$"
+	.string "If we, TEAM MAGMA, are wrong…\l"
 # 486 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-
+	.string "… … … … … …\p"
 # 487 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
+	.string "Then might TEAM AQUA's goal to expand\n"
 # 488 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "MAXIE: All right…\n"
+	.string "the sea also be equally misguided?$"
 # 489 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "We will give up on the fuel…\p"
-# 490 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "There appear to be more important\n"
-# 491 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "matters that I must examine…$"
-# 492 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 
+# 490 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
+# 491 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "MAXIE: All right…\n"
+# 492 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "We will give up on the fuel…\p"
 # 493 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
+	.string "There appear to be more important\n"
 # 494 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "STEVEN: Whew, that was too tense.\n"
+	.string "matters that I must examine…$"
 # 495 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "{PLAYER}{KUN}, thank you.\p"
+
 # 496 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "I have something to give you as\n"
+MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
 # 497 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "thanks for your support.\p"
+	.string "STEVEN: Whew, that was too tense.\n"
 # 498 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Please come see me at home\n"
+	.string "{PLAYER}{KUN}, thank you.\p"
 # 499 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "after this.\p"
+	.string "I have something to give you as\n"
 # 500 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
-	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
+	.string "thanks for your support.\p"
 # 501 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "Please come see me at home\n"
+# 502 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "after this.\p"
+# 503 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
+	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
+# 504 "data/maps/MossdeepCity_SpaceCenter_2F/scripts.pory"
 	.string "I live right here on this island.$"
