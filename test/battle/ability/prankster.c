@@ -196,7 +196,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves can still be bounced back by a Dark
         PLAYER(SPECIES_CHIBI_KOSUZU) { Item(ITEM_ABSOLITE); }
         OPPONENT(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
-        TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CONFUSE_RAY); }
+        TURN { MOVE(player, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
         MESSAGE("Foe Volbeat's Confuse Ray was bounced back by Absol's Magic Bounce!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, player);
@@ -209,7 +209,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves that are bounced back by Magic Boun
         PLAYER(SPECIES_CHIBI_KOSUZU) { Item(ITEM_ABSOLITE); }
         OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
-        TURN { MOVE(player, MOVE_CELEBRATE, megaEvolve: TRUE); MOVE(opponent, MOVE_CONFUSE_RAY); }
+        TURN { MOVE(player, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
         MESSAGE("Foe Murkrow's Confuse Ray was bounced back by Absol's Magic Bounce!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, player);
