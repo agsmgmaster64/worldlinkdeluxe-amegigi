@@ -152,10 +152,10 @@ SINGLE_BATTLE_TEST("Zero to Hero's message displays correctly after all battlers
         HP_BAR(opponent, hp: 0);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_EXPLOSION, opponent);
         // Everyone faints.
-        SEND_IN_MESSAGE("Palafin");
+        MESSAGE("Go! Palafin!");
+        MESSAGE("2 sent out Wobbuffet!");
         ABILITY_POPUP(player, ABILITY_ZERO_TO_HERO);
         MESSAGE("Palafin underwent a heroic transformation!");
-        MESSAGE("2 sent out Wobbuffet!");
     }
 }
 
