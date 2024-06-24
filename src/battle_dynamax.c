@@ -132,7 +132,7 @@ bool32 IsGigantamaxed(u32 battler)
 // Applies the HP Multiplier for Dynamaxed Pokemon and Raid Bosses.
 void ApplyDynamaxHPMultiplier(u32 battler, struct Pokemon* mon)
 {
-    if (gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].baseHP != 1)
+    if (gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].baseHP == 1)
         return;
     else
     {
