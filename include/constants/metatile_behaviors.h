@@ -93,7 +93,7 @@
 #define MB_WATER_DOOR 0x59
 #define MB_WATER_SOUTH_ARROW_WARP 0x5A
 #define MB_DEEP_SOUTH_WARP 0x5B
-#define MB_UNUSED_5C 0x5C
+#define MB_FEEBAS 0x5C
 #define MB_UNUSED_5D 0x5D
 #define MB_UNUSED_5E 0x5E
 #define MB_UNUSED_5F 0x5F

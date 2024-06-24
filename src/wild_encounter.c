@@ -28,8 +28,6 @@ extern const u8 EventScript_SprayWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
 
-#define NUM_FEEBAS_SPOTS 6
-
 // Number of accessible fishing spots in each section of Route 119
 // Each section is an area of the route between the y coordinates in sRoute119WaterTileData
 #define NUM_FISHING_SPOTS_1 131
@@ -49,8 +47,6 @@ enum {
 
 #define HEADER_NONE 0xFFFF
 
-static u16 FeebasRandom(void);
-static void FeebasSeedRng(u16 seed);
 static u32 GetLastFishingSpecies(void);
 static bool32 DoesSpeciesMatchLastFishingSpecies(u32 species);
 static u32 GetCurrentChainFishingDexNavStreak(void);
@@ -82,14 +78,6 @@ EWRAM_DATA static u16 sLastFishingSpecies = 0;
 
 static const struct WildPokemon sWildFeebas = {20, 25, SPECIES_CHIBI_WAKASAGIHIME_GOLD};
 
-static const u16 sRoute119WaterTileData[] =
-{
-//yMin, yMax, numSpots in previous sections
-     0,  45,  0,
-    46,  91,  NUM_FISHING_SPOTS_1,
-    92, 139,  NUM_FISHING_SPOTS_1 + NUM_FISHING_SPOTS_2,
-};
-
 void DisableWildEncounters(bool8 disabled)
 {
     sWildEncountersDisabled = disabled;
@@ -103,95 +91,17 @@ void DisableWildEncounters(bool8 disabled)
 // of the inaccessible water metatiles (so that they can't be selected as a Feebas spot) they
 // use a different metatile that isn't actually surfable because it has MB_NORMAL instead.
 // This function is given the coordinates and section of a fishing spot and returns which number it is.
-static u16 GetFeebasFishingSpotId(s16 targetX, s16 targetY, u8 section)
+static bool32 CheckFeebas(void)
 {
     u16 x, y;
-    u16 yMin = sRoute119WaterTileData[section * 3 + 0];
-    u16 yMax = sRoute119WaterTileData[section * 3 + 1];
-    u16 spotId = sRoute119WaterTileData[section * 3 + 2];
 
-    for (y = yMin; y <= yMax; y++)
+    PlayerGetDestCoords(&x, &y);
+
+    if (MetatileBehavior_HasFeebas(MapGridGetMetatileBehaviorAt(x, y)) == TRUE)
     {
-        for (x = 0; x < gMapHeader.mapLayout->width; x++)
-        {
-            u8 behavior = MapGridGetMetatileBehaviorAt(x + MAP_OFFSET, y + MAP_OFFSET);
-            if (MetatileBehavior_IsSurfableAndNotWaterfall(behavior) == TRUE)
-            {
-                spotId++;
-                if (targetX == x && targetY == y)
-                    return spotId;
-            }
-        }
+        return TRUE;
     }
-    return spotId + 1;
-}
-
-static bool8 CheckFeebas(void)
-{
-    /*u8 i;
-    u16 feebasSpots[NUM_FEEBAS_SPOTS];
-    s16 x, y;
-    u8 route119Section = 0;
-    u16 spotId;
-
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE119)
-     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE119))
-    {
-        GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-        x -= MAP_OFFSET;
-        y -= MAP_OFFSET;
-
-        // Get which third of the map the player is in
-        if (y >= sRoute119WaterTileData[3 * 0 + 0] && y <= sRoute119WaterTileData[3 * 0 + 1])
-            route119Section = 0;
-        if (y >= sRoute119WaterTileData[3 * 1 + 0] && y <= sRoute119WaterTileData[3 * 1 + 1])
-            route119Section = 1;
-        if (y >= sRoute119WaterTileData[3 * 2 + 0] && y <= sRoute119WaterTileData[3 * 2 + 1])
-            route119Section = 2;
-
-        // 50% chance of encountering Feebas (assuming this is a Feebas spot)
-        if (Random() % 100 > 49)
-            return FALSE;
-
-        FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
-
-        // Assign each Feebas spot to a random fishing spot.
-        // Randomness is fixed depending on the seed above.
-        for (i = 0; i != NUM_FEEBAS_SPOTS;)
-        {
-            feebasSpots[i] = FeebasRandom() % NUM_FISHING_SPOTS;
-            if (feebasSpots[i] == 0)
-                feebasSpots[i] = NUM_FISHING_SPOTS;
-
-            // < 1 below is a pointless check, it will never be TRUE.
-            // >= 4 to skip fishing spots 1-3, because these are inaccessible
-            // spots at the top of the map, at (9,7), (7,13), and (15,16).
-            // The first accessible fishing spot is spot 4 at (18,18).
-            if (feebasSpots[i] < 1 || feebasSpots[i] >= 4)
-                i++;
-        }
-
-        // Check which fishing spot the player is at, and see if
-        // it matches any of the Feebas spots.
-        spotId = GetFeebasFishingSpotId(x, y, route119Section);
-        for (i = 0; i < NUM_FEEBAS_SPOTS; i++)
-        {
-            if (spotId == feebasSpots[i])
-                return TRUE;
-        }
-    }*/
     return FALSE;
-}
-
-static u16 FeebasRandom(void)
-{
-    sFeebasRngValue = ISO_RANDOMIZE2(sFeebasRngValue);
-    return sFeebasRngValue >> 16;
-}
-
-static void FeebasSeedRng(u16 seed)
-{
-    sFeebasRngValue = seed;
 }
 
 // LAND_WILD_COUNT

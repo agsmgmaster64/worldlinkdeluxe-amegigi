@@ -105,6 +105,14 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_HasFeebas(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FEEBAS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ICE)
