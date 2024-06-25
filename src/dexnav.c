@@ -812,6 +812,8 @@ static u8 GetSearchLevel(u16 dexNum)
 #define tRevealed           data[4]
 static void Task_SetUpDexNavSearch(u8 taskId)
 {
+    struct Task *task = &gTasks[taskId];
+
     u16 species = sDexNavSearchDataPtr->species;
     u8 searchLevel = GetSearchLevel(SpeciesToNationalPokedexNum(species));
 
@@ -2455,7 +2457,7 @@ static void Task_DexNavMain(u8 taskId)
         species = DexNavGetSpecies();
         registeredSpecies = VarGet(VAR_DEXNAV_SPECIES);
 
-        if (species == (registeredSpecies & MASK_SPECIES) && species != SPECIES_NONE)
+        if (species == (registeredSpecies & DEXNAV_MASK_SPECIES) && species != SPECIES_NONE)
         {
             PrintSearchableSpecies(SPECIES_NONE);
             PlayCry_Script(species, 0);

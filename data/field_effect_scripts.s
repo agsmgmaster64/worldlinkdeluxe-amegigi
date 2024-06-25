@@ -25,8 +25,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_JumpSmallSplash           @ FLDEFF_JUMP_SMALL_SPLASH
 	.4byte gFieldEffectScript_LongGrass                 @ FLDEFF_LONG_GRASS
 	.4byte gFieldEffectScript_JumpLongGrass             @ FLDEFF_JUMP_LONG_GRASS
-	.4byte gFieldEffectScript_ShakingGrass               @ FLDEFF_SHAKING_GRASS
-	.4byte gFieldEffectScript_ShakingGrass2              @ FLDEFF_SHAKING_LONG_GRASS
+	.4byte gFieldEffectScript_ShakingGrass              @ FLDEFF_SHAKING_GRASS
+	.4byte gFieldEffectScript_ShakingGrass2             @ FLDEFF_SHAKING_LONG_GRASS
 	.4byte gFieldEffectScript_UnusedSand                @ FLDEFF_SAND_HOLE
 	.4byte gFieldEffectScript_WaterSurfacing            @ FLDEFF_WATER_SURFACING
 	.4byte gFieldEffectScript_BerryTreeGrowthSparkle    @ FLDEFF_BERRY_TREE_GROWTH_SPARKLE
@@ -73,9 +73,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_RayquazaSpotlight         @ FLDEFF_RAYQUAZA_SPOTLIGHT
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
-	.4byte gFldEffScript_UseVsSeeker                    @ FLDEFF_USE_VS_SEEKER
-	.4byte gFldEffScript_XIcon                          @ FLDEFF_X_ICON
-	.4byte gFldEffScript_DoubleExclMarkIcon             @ FLDEFF_DOUBLE_EXCL_MARK_ICON
+	.4byte gFieldEffectScript_UseVsSeeker               @ FLDEFF_USE_VS_SEEKER
+	.4byte gFieldEffectScript_XIcon                     @ FLDEFF_X_ICON
+	.4byte gFieldEffectScript_DoubleExclMarkIcon        @ FLDEFF_DOUBLE_EXCL_MARK_ICON
 	.4byte gFieldEffectScript_TracksSlither             @ FLDEFF_TRACKS_SLITHER
 	.4byte gFieldEffectScript_TracksBug                 @ FLDEFF_TRACKS_BUG
 	.4byte gFieldEffectScript_TracksSpot                @ FLDEFF_TRACKS_SPOT
@@ -83,7 +83,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseSurfTool               @ FLDEFF_USE_SURF_TOOL
 	.4byte gFieldEffectScript_UseWaterfallTool          @ FLDEFF_USE_WATERFALL_TOOL
 	.4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
-    
+
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
 	field_eff_end
