@@ -362,6 +362,7 @@ SECTIONS {
         src/expansion_intro.o(.text);
         src/dexnav.o(.text);
         src/ui_main_menu.o(.text);
+        src/new_shop.o(.text);
     } > ROM =0
 
     script_data :
@@ -732,6 +733,7 @@ SECTIONS {
         src/expansion_intro.o(.rodata);
         src/dexnav.o(.rodata);
         src/ui_main_menu.o(.rodata);
+        src/new_shop.o(.rodata);
     } > ROM =0
 
     song_data :
