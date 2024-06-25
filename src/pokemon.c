@@ -886,12 +886,10 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
             isShiny = FALSE;
-            FlagClear(FLAG_SHINY_CREATION);
         }
-        else if (P_FLAG_FORCE_SHINY != 0 && (FlagGet(P_FLAG_FORCE_SHINY) || FlagGet(FLAG_SHINY_CREATION)))
+        else if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
         {
             isShiny = TRUE;
-            FlagClear(FLAG_SHINY_CREATION);
         }
         else if (gDexnavBattle)
         {

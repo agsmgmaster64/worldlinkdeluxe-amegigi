@@ -169,10 +169,6 @@ struct UCoords32
 
 struct SaveBlock3
 {
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    u8 dexNavSearchLevels[ROUND_BITS_TO_BYTES(NUM_SPECIES)];
-#endif
-    u8 dexNavChain;
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
@@ -1094,7 +1090,9 @@ struct SaveBlock1
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     /*      */ struct Pokevial pokevial;
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
                u8 dexNavSearchLevels[NATIONAL_DEX_COUNT];
+#endif //USE_DEXNAV_SEARCH_LEVELS
                u8 dexNavChain;
     // sizeof: 0x3???
 };

@@ -2,7 +2,7 @@
 #define GUARD_CONFIG_DEXNAV_H
 
 
-#define USE_DEXNAV_SEARCH_LEVELS      FALSE  /* WARNING: EXCEEDS SAVEBLOCK SPACE! YOU WILL NEED TO FREE UP SPACE */
+#define USE_DEXNAV_SEARCH_LEVELS      TRUE  /* WARNING: EXCEEDS SAVEBLOCK SPACE! YOU WILL NEED TO FREE UP SPACE */
 
 // search parameters
 #define DEXNAV_TIMEOUT                  15  //15 seconds is the time out. Max of 1092 seconds allowed
