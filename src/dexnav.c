@@ -794,6 +794,17 @@ static void LoadSearchIconData(void)
     LoadCompressedSpriteSheetUsingHeap(&sHiddenMonIconSpriteSheet);
 }
 
+static u8 GetSearchLevel(u16 dexNum)
+{
+    u8 searchLevel;
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    searchLevel = gSaveBlock1Ptr->dexNavSearchLevels[dexNum];
+#else
+    searchLevel = 0;
+#endif
+    return searchLevel;
+}
+
 #define tProximity          data[0]
 #define tFrameCount         data[1]
 #define tSpecies            data[2]
@@ -802,8 +813,8 @@ static void LoadSearchIconData(void)
 static void Task_SetUpDexNavSearch(u8 taskId)
 {
     u16 species = sDexNavSearchDataPtr->species;
-    u8 searchLevel = gSaveBlock1Ptr->dexNavSearchLevels[SpeciesToNationalPokedexNum(species)];
-    
+    u8 searchLevel = GetSearchLevel(SpeciesToNationalPokedexNum(species));
+
     // init sprites
     sDexNavSearchDataPtr->iconSpriteId = MAX_SPRITES;
     sDexNavSearchDataPtr->itemSpriteId = MAX_SPRITES;
@@ -833,10 +844,18 @@ static void Task_SetUpDexNavSearch(u8 taskId)
     }
     
     FlagSet(FLAG_SYS_DEXNAV_SEARCH);
-    gTasks[taskId].tProximity = gSprites[gPlayerAvatar.spriteId].x;
-    gTasks[taskId].tFrameCount = 0;
-    gTasks[taskId].func = Task_DexNavSearch;
+    task->tProximity = gSprites[gPlayerAvatar.spriteId].x;
+    task->tFrameCount = 0;
+    task->func = Task_DexNavSearch;
     IncrementGameStat(GAME_STAT_DEXNAV_SCANNED);
+}
+
+static void DexNavSearchBail(u8 taskId, const u8 *script)
+{
+    TRY_FREE_AND_SET_NULL(sDexNavSearchDataPtr);
+    FreeMonIconPalettes();
+    ScriptContext_SetupScript(script);
+    DestroyTask(taskId);    
 }
 
 static void Task_InitDexNavSearch(u8 taskId)
@@ -846,6 +865,11 @@ static void Task_InitDexNavSearch(u8 taskId)
     u8 environment = task->tEnvironment;
     
     sDexNavSearchDataPtr = AllocZeroed(sizeof(struct DexNavSearch));
+    if (sDexNavSearchDataPtr == NULL)
+    {
+        DexNavSearchBail(taskId, EventScript_NotFoundNearby);
+        return;
+    }
     
     // assign non-objects to struct
     sDexNavSearchDataPtr->species = species;
@@ -855,19 +879,13 @@ static void Task_InitDexNavSearch(u8 taskId)
     
     if (GetFlashLevel() > 0)
     {
-        Free(sDexNavSearchDataPtr);
-        FreeMonIconPalettes();
-        ScriptContext_SetupScript(EventScript_TooDark);
-        DestroyTask(taskId);
+        DexNavSearchBail(taskId, EventScript_TooDark);
         return;
     }
     
     if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 12, 12, FALSE))
     {
-        Free(sDexNavSearchDataPtr);
-        FreeMonIconPalettes();
-        ScriptContext_SetupScript(EventScript_NotFoundNearby);
-        DestroyTask(taskId);
+        DexNavSearchBail(taskId, EventScript_NotFoundNearby);
         return;
     }
     
@@ -938,21 +956,13 @@ static void DexNavUpdateDirectionArrow(void)
 
 static void DexNavDrawIcons(void)
 {
-    //u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
     u16 species = sDexNavSearchDataPtr->species;
-    
-    // init sprite ids
-    /*sDexNavSearchDataPtr->iconSpriteId = 0xFF;
-    sDexNavSearchDataPtr->itemSpriteId = 0xFF;
-    for (i = 0; i < NELEMS(sDexNavSearchDataPtr->starSpriteIds); i++)
-        sDexNavSearchDataPtr->starSpriteIds[i] = 0xFF;*/
     
     DrawSearchWindow(species, sDexNavSearchDataPtr->potential, FALSE);
     DrawDexNavSearchMonIcon(species, &sDexNavSearchDataPtr->iconSpriteId, GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT));
     DrawDexNavSearchHeldItem(&sDexNavSearchDataPtr->itemSpriteId);
     DexNavDrawPotentialStars(sDexNavSearchDataPtr->potential, &sDexNavSearchDataPtr->starSpriteIds[0]);
     DexNavUpdateDirectionArrow();
-    //DexNavDrawSight(sDexNavSearchDataPtr->proximity, &sDexNavSearchDataPtr->eyeSpriteId);
 }
 
 /////////////////////
@@ -963,13 +973,13 @@ bool8 TryStartDexnavSearch(void)
     u8 taskId;
     u16 val = VarGet(VAR_DEXNAV_SPECIES);
     
-    if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) || (val & MASK_SPECIES) == SPECIES_NONE)
+    if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) || (val & DEXNAV_MASK_SPECIES) == SPECIES_NONE)
         return FALSE;
     
     HideMapNamePopUpWindow();
     ChangeBgY_ScreenOff(0, 0, 0);
     taskId = CreateTask(Task_InitDexNavSearch, 0);
-    gTasks[taskId].tSpecies = val & MASK_SPECIES;
+    gTasks[taskId].tSpecies = val & DEXNAV_MASK_SPECIES;
     gTasks[taskId].tEnvironment = val >> 14;
     PlaySE(SE_DEX_SEARCH);
     return FALSE;   //we dont actually want to enable the script context
@@ -1070,7 +1080,6 @@ static void Task_DexNavSearch(u8 taskId)
     // check if script just executed
     if (ArePlayerFieldControlsLocked() == TRUE)
     {
-        //gSaveBlock1Ptr->dexNavChain = 0;  //issue with reusable repels
         EndDexNavSearch(taskId);
         return;
     }
@@ -1086,11 +1095,11 @@ static void Task_DexNavSearch(u8 taskId)
     
     if (sDexNavSearchDataPtr->proximity < 1)
     {
+        gDexnavBattle = TRUE;
         CreateDexNavWildMon(sDexNavSearchDataPtr->species, sDexNavSearchDataPtr->potential, sDexNavSearchDataPtr->monLevel, 
           sDexNavSearchDataPtr->abilityNum, sDexNavSearchDataPtr->heldItem, sDexNavSearchDataPtr->moves);
         
         FlagClear(FLAG_SYS_DEXNAV_SEARCH);
-        gDexnavBattle = TRUE;        
         ScriptContext_SetupScript(EventScript_StartDexNavBattle);
         Free(sDexNavSearchDataPtr);
         DestroyTask(taskId);
@@ -1116,10 +1125,20 @@ static void Task_DexNavSearch(u8 taskId)
         && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
         && task->tRevealed)
     {
+        u32 attempts = 0;
         FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
-        while (1) {
-            if (TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
+        while (1)
+        {
+            if (++attempts > 20)
+            {
+                // failsafe if we can't find another tile
+                EndDexNavSearchSetupScript(EventScript_PokemonGotAway, taskId);
+                return;
+            }
+            else if (TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
+            {
                 break;
+            }
         }
         
         sDexNavSearchDataPtr->movementCount++;
@@ -1201,9 +1220,6 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
     u8 i;
     u8 perfectIv = 31;
     
-    if (DexNavTryMakeShinyMon())
-        FlagSet(FLAG_SHINY_CREATION); // just easier this way
-    
     CreateWildMon(species, level);  // shiny rate bonus handled in CreateBoxMon
     
     // Pick random, unique IVs to set to 31. The number of perfect IVs that are assigned is equal to the potential
@@ -1233,7 +1249,6 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
         SetMonMoveSlot(mon, moves[i], i);
 
     CalculateMonStats(mon);
-    FlagClear(FLAG_SHINY_CREATION);
 }
 
 // gets a random level of the species based on map data.
@@ -1583,7 +1598,7 @@ static u8 GetEncounterLevelFromMapData(u16 species, u8 environment)
     if (LURE_STEP_COUNT != 0)
         return max;
 
-    return RandRange(min, max);
+    return RandomUniform(RNG_DEXNAV_ENCOUNTER_LEVEL, min, max);
 }
 
 
@@ -2135,7 +2150,7 @@ static void PrintCurrentSpeciesInfo(void)
     }
     else
     {
-        ConvertIntToDecimalStringN(gStringVar4, gSaveBlock1Ptr->dexNavSearchLevels[dexNum], 0, 4);
+        ConvertIntToDecimalStringN(gStringVar4, GetSearchLevel(dexNum), 0, 4);
         AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, SEARCH_LEVEL_Y, sFontColor_Black, 0, gStringVar4);
     }
     
@@ -2254,7 +2269,7 @@ static bool8 DexNav_DoGfxSetup(void)
         gMain.state++;
         break;
     case 7:
-        PrintSearchableSpecies(VarGet(VAR_DEXNAV_SPECIES) & MASK_SPECIES);
+        PrintSearchableSpecies(VarGet(VAR_DEXNAV_SPECIES) & DEXNAV_MASK_SPECIES);
         DexNavLoadEncounterData();
         gMain.state++;
         break;
@@ -2663,7 +2678,6 @@ bool8 DexNavTryMakeShinyMon(void)
         lureBonus = 1;
 
     charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? I_SHINY_CHARM_ADDITIONAL_ROLLS : 0;
-    
     chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
     rndBonus = (Random() % 100 < 4 ? 4 : 0);
     shinyRolls = 1 + charmBonus + chainBonus + rndBonus + lureBonus;
@@ -2695,8 +2709,10 @@ bool8 DexNavTryMakeShinyMon(void)
 
 void TryIncrementSpeciesSearchLevel(u16 dexNum)
 {
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock1Ptr->dexNavSearchLevels[dexNum] < 255)
         gSaveBlock1Ptr->dexNavSearchLevels[dexNum]++;
+#endif
 }
 
 void ResetDexNavSearch(void)

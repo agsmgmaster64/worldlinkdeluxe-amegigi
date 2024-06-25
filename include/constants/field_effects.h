@@ -69,18 +69,18 @@
 #define FLDEFF_RAYQUAZA_SPOTLIGHT        64
 #define FLDEFF_DESTROY_DEOXYS_ROCK       65
 #define FLDEFF_MOVE_DEOXYS_ROCK          66
-#define FLDEFF_CAVE_DUST                 67
-#define FLDEFF_USE_VS_SEEKER             68
-#define FLDEFF_X_ICON                    69
-#define FLDEFF_DOUBLE_EXCL_MARK_ICON     70
+#define FLDEFF_USE_VS_SEEKER             67
+#define FLDEFF_X_ICON                    68
+#define FLDEFF_DOUBLE_EXCL_MARK_ICON     69
+#define FLDEFF_TRACKS_SLITHER            70
+#define FLDEFF_TRACKS_SPOT               71
+#define FLDEFF_TRACKS_BUG                72
+#define FLDEFF_CAVE_DUST                 73
 // Start qol_field_moves
-#define FLDEFF_USE_SURF_TOOL             71
-#define FLDEFF_USE_WATERFALL_TOOL        72
-#define FLDEFF_USE_DIVE_TOOL             73
+#define FLDEFF_USE_SURF_TOOL             74
+#define FLDEFF_USE_WATERFALL_TOOL        75
+#define FLDEFF_USE_DIVE_TOOL             76
 // End qol_field_moves
-#define FLDEFF_TRACKS_SLITHER            74
-#define FLDEFF_TRACKS_SPOT               75
-#define FLDEFF_TRACKS_BUG                76
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -119,10 +119,10 @@
 #define FLDEFFOBJ_BUBBLES               34
 #define FLDEFFOBJ_SMALL_SPARKLE         35
 #define FLDEFFOBJ_RAYQUAZA              36
-#define FLDEFFOBJ_CAVE_DUST             37
-#define FLDEFFOBJ_TRACKS_SLITHER        38
-#define FLDEFFOBJ_TRACKS_SPOT           39
-#define FLDEFFOBJ_TRACKS_BUG            40
+#define FLDEFFOBJ_TRACKS_SLITHER        37
+#define FLDEFFOBJ_TRACKS_SPOT           38
+#define FLDEFFOBJ_TRACKS_BUG            39
+#define FLDEFFOBJ_CAVE_DUST             40
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
