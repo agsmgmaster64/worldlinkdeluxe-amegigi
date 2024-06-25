@@ -92,7 +92,7 @@ void DisableWildEncounters(bool8 disabled)
 // This function is given the coordinates and section of a fishing spot and returns which number it is.
 static bool32 CheckFeebas(void)
 {
-    u16 x, y;
+    s16 x, y;
 
     PlayerGetDestCoords(&x, &y);
 
