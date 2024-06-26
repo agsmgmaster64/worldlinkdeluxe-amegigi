@@ -243,7 +243,7 @@ const struct Item gItemsInfo[] =
     [ITEM_FOUL_ORB] =
     {
         .name = _("Foul Orb"),
-        .price = 300,
+        .price = 100,
         .description = COMPOUND_STRING(
             "A rather cheap\n"
             "Orb with a much\n"

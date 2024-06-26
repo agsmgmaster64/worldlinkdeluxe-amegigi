@@ -220,6 +220,262 @@ static void Task_ReturnToItemListWaitMsg(u8 taskId);
 static const u8 sGridPosX[] = { (120 + 16), (160 + 16), (200 + 16) };
 static const u8 sGridPosY[] = { (24 + 16), (64 + 16) };
 
+static const u16 sShopInventory_ZeroBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SPEED,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_OneBadge[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SPEED,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_TwoBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SPEED,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_ThreeBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FourBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_REVIVE,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_FiveBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_ULTRA_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_MAX_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_MAX_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SixBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_ULTRA_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_MAX_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_MAX_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_SevenBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_ULTRA_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_MAX_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_MAX_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_MAX_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 sShopInventory_EightBadges[] = {
+    ITEM_TOHO_ORB,
+    ITEM_FOUL_ORB,
+    ITEM_GREAT_ORB,
+    ITEM_ULTRA_ORB,
+    ITEM_POTION,
+    ITEM_SUPER_POTION,
+    ITEM_HYPER_POTION,
+    ITEM_MAX_POTION,
+    ITEM_FULL_RESTORE,
+    ITEM_ANTIDOTE,
+    ITEM_PARALYZE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_FULL_HEAL,
+    ITEM_REVIVE,
+    ITEM_MAX_REVIVE,
+    ITEM_ESCAPE_ROPE,
+    ITEM_REPEL,
+    ITEM_SUPER_REPEL,
+    ITEM_MAX_REPEL,
+    ITEM_LURE,
+    ITEM_SUPER_LURE,
+    ITEM_MAX_LURE,
+    ITEM_X_ATTACK,
+    ITEM_X_DEFENSE,
+    ITEM_X_SP_ATK,
+    ITEM_X_SP_DEF,
+    ITEM_X_SPEED,
+    ITEM_X_ACCURACY,
+    ITEM_DIRE_HIT,
+    ITEM_GUARD_SPEC,
+    ITEM_NONE
+};
+
+static const u16 *const sShopInventories[] = 
+{
+    sShopInventory_ZeroBadges, 
+    sShopInventory_OneBadge,
+    sShopInventory_TwoBadges,
+    sShopInventory_ThreeBadges,
+    sShopInventory_FourBadges,
+    sShopInventory_FiveBadges,
+    sShopInventory_SixBadges,
+    sShopInventory_SevenBadges,
+    sShopInventory_EightBadges
+};
+
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
     BuyMenuTryMakePurchase,
@@ -496,9 +752,27 @@ static void SetShopMenuCallback(void (* callback)(void))
     sMartInfo.callback = callback;
 }
 
+static u8 GetNumberOfBadges(void)
+{
+    u16 badgeFlag;
+    u8 count = 0;
+    
+    for (badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++)
+    {
+        if (FlagGet(badgeFlag))
+            count++;
+    }
+    
+    return count;
+}
+
 static void SetShopItemsForSale(const u16 *items)
 {
     u32 i = 0;
+    u8 badgeCount = GetNumberOfBadges();
+
+    if (items == NULL)
+        items = sShopInventories[badgeCount];
 
     sMartInfo.itemSource = items;
     sMartInfo.itemCount = 0;
