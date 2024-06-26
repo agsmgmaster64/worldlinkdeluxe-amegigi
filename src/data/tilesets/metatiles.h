@@ -211,6 +211,9 @@ const u32 gMetatileAttributes_RG_Building[] = INCBIN_U32("data/tilesets/frlg/pri
 const u16 gMetatiles_RG_Condominiums[] = INCBIN_U16("data/tilesets/frlg/secondary/condominiums/metatiles.bin");
 const u32 gMetatileAttributes_RG_Condominiums[] = INCBIN_U32("data/tilesets/frlg/secondary/condominiums/metatile_attributes.bin");
 
+const u16 gMetatiles_RG_SilphCo[] = INCBIN_U16("data/tilesets/frlg/secondary/silph_co/metatiles.bin");
+const u32 gMetatileAttributes_RG_SilphCo[] = INCBIN_U32("data/tilesets/frlg/secondary/silph_co/metatile_attributes.bin");
+
 const u16 gMetatiles_RG_GenericBuilding1[] = INCBIN_U16("data/tilesets/frlg/secondary/generic_building_1/metatiles.bin");
 const u32 gMetatileAttributes_RG_GenericBuilding1[] = INCBIN_U32("data/tilesets/frlg/secondary/generic_building_1/metatile_attributes.bin");
 
@@ -222,6 +225,9 @@ const u32 gMetatileAttributes_RG_Cave[] = INCBIN_U32("data/tilesets/frlg/seconda
 
 const u16 gMetatiles_RG_SeafoamIslands[] = INCBIN_U16("data/tilesets/frlg/secondary/seafoam_islands/metatiles.bin");
 const u32 gMetatileAttributes_RG_SeafoamIslands[] = INCBIN_U32("data/tilesets/frlg/secondary/seafoam_islands/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_GameCorner[] = INCBIN_U16("data/tilesets/frlg/secondary/game_corner/metatiles.bin");
+const u32 gMetatileAttributes_RG_GameCorner[] = INCBIN_U32("data/tilesets/frlg/secondary/game_corner/metatile_attributes.bin");
 
 const u16 gMetatiles_RG_PewterGym[] = INCBIN_U16("data/tilesets/frlg/secondary/pewter_gym/metatiles.bin");
 const u32 gMetatileAttributes_RG_PewterGym[] = INCBIN_U32("data/tilesets/frlg/secondary/pewter_gym/metatile_attributes.bin");

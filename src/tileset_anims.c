@@ -210,6 +210,19 @@ static const u16 *const sTilesetAnims_RG_General_SandWatersEdge[] = {
     sTilesetAnims_RG_General_SandWatersEdge_Frame7
 };
 
+static const u16 sTilesetAnims_RG_SilphCo_Fountain_Frame0[] = INCBIN_U16("data/tilesets/frlg/secondary/silph_co/anim/fountain/0.4bpp");
+static const u16 sTilesetAnims_RG_SilphCo_Fountain_Frame1[] = INCBIN_U16("data/tilesets/frlg/secondary/silph_co/anim/fountain/1.4bpp");
+static const u16 sTilesetAnims_RG_SilphCo_Fountain_Frame2[] = INCBIN_U16("data/tilesets/frlg/secondary/silph_co/anim/fountain/2.4bpp");
+static const u16 sTilesetAnims_RG_SilphCo_Fountain_Frame3[] = INCBIN_U16("data/tilesets/frlg/secondary/silph_co/anim/fountain/3.4bpp");
+static const u16 sTilesetAnims_RG_SilphCo_Fountain_Empty[16] = {};
+
+static const u16 *const sTilesetAnims_RG_SilphCo_Fountain[] = {
+    sTilesetAnims_RG_SilphCo_Fountain_Frame0,
+    sTilesetAnims_RG_SilphCo_Fountain_Frame1,
+    sTilesetAnims_RG_SilphCo_Fountain_Frame2,
+    sTilesetAnims_RG_SilphCo_Fountain_Frame3
+};
+
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/1.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame2[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/2.4bpp");
@@ -761,6 +774,24 @@ static void QueueAnimTiles_RG_General_SandWatersEdge(u16 timer)
     AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_SandWatersEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(464)), 26 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_RG_SilphCo_Fountain(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_RG_SilphCo_Fountain[timer % ARRAY_COUNT(sTilesetAnims_RG_SilphCo_Fountain)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(976)), 8 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_RG_SilphCo(u16 timer)
+{
+    if (timer % 10 == 0)
+        QueueAnimTiles_RG_SilphCo_Fountain(timer / 10);
+}
+
+void InitTilesetAnim_RG_SilphCo(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 160;
+    sSecondaryTilesetAnimCallback = TilesetAnim_RG_SilphCo;
+}
+
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -771,7 +802,7 @@ void InitTilesetAnim_Petalburg(void)
 void InitTilesetAnim_Rustboro(void)
 {
     sSecondaryTilesetAnimCounter = 0;
-    sSecondaryTilesetAnimCounterMax = NUM_METATILES_TOTAL - sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_Rustboro;
 }
 

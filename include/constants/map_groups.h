@@ -153,14 +153,15 @@
 #define MAP_SLATEPORT_CITY_MART                    (13 | (9 << 8))
 
 // gMapGroup_IndoorMauville
-#define MAP_MAUVILLE_CITY_GYM               (0 | (10 << 8))
-#define MAP_MAUVILLE_CITY_BIKE_SHOP         (1 | (10 << 8))
-#define MAP_MAUVILLE_CITY_HOUSE1            (2 | (10 << 8))
-#define MAP_MAUVILLE_CITY_GAME_CORNER       (3 | (10 << 8))
-#define MAP_MAUVILLE_CITY_HOUSE2            (4 | (10 << 8))
-#define MAP_MAUVILLE_CITY_POKEMON_CENTER_1F (5 | (10 << 8))
-#define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F (6 | (10 << 8))
-#define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
+#define MAP_MAUVILLE_CITY_GYM                  (0 | (10 << 8))
+#define MAP_MAUVILLE_CITY_BIKE_SHOP            (1 | (10 << 8))
+#define MAP_MAUVILLE_CITY_HOUSE1               (2 | (10 << 8))
+#define MAP_MAUVILLE_CITY_GAME_CORNER          (3 | (10 << 8))
+#define MAP_MAUVILLE_CITY_HOUSE2               (4 | (10 << 8))
+#define MAP_MAUVILLE_CITY_POKEMON_CENTER_1F    (5 | (10 << 8))
+#define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F    (6 | (10 << 8))
+#define MAP_MAUVILLE_CITY_MART                 (7 | (10 << 8))
+#define MAP_MAUVILLE_CITY_GAME_CORNER_BASEMENT (8 | (10 << 8))
 
 // gMapGroup_IndoorRustboro
 #define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))

@@ -859,6 +859,17 @@ const struct Tileset gTileset_RG_Condominiums =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_RG_SilphCo =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_Condominiums,
+    .palettes = gTilesetPalettes_RG_Condominiums,
+    .metatiles = gMetatiles_RG_SilphCo,
+    .metatileAttributes = gMetatileAttributes_RG_SilphCo,
+    .callback = InitTilesetAnim_RG_SilphCo,
+};
+
 const struct Tileset gTileset_RG_GenericBuilding1 =
 {
     .isCompressed = TRUE,
@@ -878,6 +889,17 @@ const struct Tileset gTileset_RG_GenericBuilding2 =
     .palettes = gTilesetPalettes_RG_GenericBuilding2,
     .metatiles = gMetatiles_RG_GenericBuilding2,
     .metatileAttributes = gMetatileAttributes_RG_GenericBuilding2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_GameCorner =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_GameCorner,
+    .palettes = gTilesetPalettes_RG_GameCorner,
+    .metatiles = gMetatiles_RG_GameCorner,
+    .metatileAttributes = gMetatileAttributes_RG_GameCorner,
     .callback = NULL,
 };
 

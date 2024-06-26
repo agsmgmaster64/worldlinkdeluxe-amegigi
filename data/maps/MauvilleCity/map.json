@@ -193,14 +193,14 @@
   ],
   "warp_events": [
     {
-      "x": 18,
-      "y": 13,
+      "x": 23,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_GYM",
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
+      "x": 18,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_POKEMON_CENTER_1F",
@@ -214,7 +214,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 24,
+      "x": 27,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_MART",
@@ -228,15 +228,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
-      "y": 13,
+      "x": 24,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER",
       "dest_warp_id": "0"
     },
     {
-      "x": 19,
-      "y": 13,
+      "x": 22,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY_HOUSE2",
       "dest_warp_id": "0"
