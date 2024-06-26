@@ -12,6 +12,7 @@ void NewShop_CreateOutfitShopMenu(const u16 *);
 #endif // MUDSKIP_OUTFIT_SYSTEM
 
 void NewShop_CreateVariablePokemartMenu(const u16 *);
+void NewShop_CreateCasinoMartMenu(const u16 *);
 
 #endif // MUDSKIP_SHOP_UI
 

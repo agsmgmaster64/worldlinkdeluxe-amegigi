@@ -2535,7 +2535,7 @@ bool8 ScrCmd_casinopokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    CreateCoinsShopMenu(ptr);
+    NewShop_CreateCasinoMartMenu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
