@@ -1787,6 +1787,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     {
         if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
         {
+            GetSetItemObtained(sShopData->currentItemId, FLAG_SET_ITEM_OBTAINED);
             RecordItemPurchase(taskId);
             BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
         }
@@ -1800,6 +1801,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     {
         if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
         {
+            GetSetItemObtained(sShopData->currentItemId, FLAG_SET_ITEM_OBTAINED);
             RecordItemPurchase(taskId);
             BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractCoins);
         }

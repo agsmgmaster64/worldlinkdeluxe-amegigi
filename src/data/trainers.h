@@ -23161,7 +23161,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9600
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_KURUMI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9602
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23300,7 +23300,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9655
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_SARA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9657
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23439,7 +23439,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9710
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_LOUISE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9712
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
