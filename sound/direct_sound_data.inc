@@ -680,6 +680,22 @@ Cry_Star::
 	.incbin "sound/direct_sound_samples/cries_add/star.bin"
 
 	.align 2
+Cry_Kasen::
+	.incbin "sound/direct_sound_samples/cries_add/kasen.bin"
+
+	.align 2
+Cry_Yorihime::
+	.incbin "sound/direct_sound_samples/cries_add/yorihime.bin"
+
+	.align 2
+Cry_Toyohime::
+	.incbin "sound/direct_sound_samples/cries_add/toyohime.bin"
+
+	.align 2
+Cry_Tokiko::
+	.incbin "sound/direct_sound_samples/cries_add/tokiko.bin"
+
+	.align 2
 Cry_Advent_Cirno::
 	.incbin "sound/direct_sound_samples/cries_add/advent_cirno.bin"
 

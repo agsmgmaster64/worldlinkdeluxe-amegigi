@@ -5628,6 +5628,9 @@ void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)
         //if (NationalPokedexNumToSpecies(nationalNum) == SPECIES_CHIBI_SUNNY)
             //gSaveBlock2Ptr->pokedex.spindaPersonality = personality;
     }
+
+    if (caseId == FLAG_SET_SEEN)
+        TryIncrementSpeciesSearchLevel(nationalNum);    // encountering pokemon increments its search level
 }
 
 bool8 CheckIfCannotBeCaught(struct Pokemon *mon, u8 battlerId)

@@ -74,6 +74,10 @@ gCryTable::
 	cry Cry_Sunny
 	cry Cry_Luna
 	cry Cry_Star
+	cry Cry_Kasen
+	cry Cry_Yorihime
+	cry Cry_Toyohime
+	cry Cry_Tokiko
 	cry Cry_Advent_Cirno
 	cry Cry_Advent_Reisen
 	cry Cry_Advent_Meiling
@@ -166,6 +170,10 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sunny
 	cry_reverse Cry_Luna
 	cry_reverse Cry_Star
+	cry_reverse Cry_Kasen
+	cry_reverse Cry_Yorihime
+	cry_reverse Cry_Toyohime
+	cry_reverse Cry_Tokiko
 	cry_reverse Cry_Advent_Cirno
 	cry_reverse Cry_Advent_Reisen
 	cry_reverse Cry_Advent_Meiling
