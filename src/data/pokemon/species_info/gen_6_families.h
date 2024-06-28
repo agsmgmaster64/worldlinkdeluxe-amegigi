@@ -2145,6 +2145,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sFurfrouLevelUpLearnset,                                                     \
         .teachableLearnset = sFurfrouTeachableLearnset,                                                 \
         .formSpeciesIdTable = sFurfrouFormSpeciesIdTable,                                               \
+        .formChangeTable = sFurfrouFormChangeTable,                                                     \
     }
 
     [SPECIES_FURFROU_NATURAL] =        FURFROU_MISC_INFO(Natural,       FALSE, 48, 3, 56, 0, 0),
