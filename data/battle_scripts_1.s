@@ -5642,7 +5642,6 @@ BattleScript_LocalTrainerBattleWonGotMoney::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
-	@ givedroppeditems
 	pickup
 	end2
 

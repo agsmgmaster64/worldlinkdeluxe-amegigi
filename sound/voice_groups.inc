@@ -157,7 +157,7 @@
 .include "sound/voicegroups/voicegroup156.inc"
 .include "sound/voicegroups/voicegroup_rg_vs_wild.inc"
 .include "sound/voicegroups/voicegroup_rg_vs_champion.inc"
-.include "sound/voicegroups/voicegroup159.inc"
+.include "sound/voicegroups/voicegroup_rg_pallet.inc"
 .include "sound/voicegroups/voicegroup160.inc"
 .include "sound/voicegroups/voicegroup161.inc"
 .include "sound/voicegroups/voicegroup_rg_poke_center.inc"

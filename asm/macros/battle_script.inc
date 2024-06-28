@@ -2305,10 +2305,6 @@
 	various \battler, VARIOUS_CHECK_POKEFLUTE
 	.endm
 
-	.macro givedroppeditems
-	various BS_FAINTED, VARIOUS_GIVE_DROPPED_ITEMS
-	.endm
-
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
 	setbyte sSTATCHANGER, \stat | \stages << 3 | \down << 7

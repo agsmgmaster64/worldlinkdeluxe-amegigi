@@ -409,7 +409,7 @@ $(MID_SUBDIR)/mus_rg_route11.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G153 -V090
 
 $(MID_SUBDIR)/mus_rg_pallet.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G159 -V100
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_pallet -V100
 
 $(MID_SUBDIR)/mus_rg_surf.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_surf -V071
@@ -694,7 +694,7 @@ $(MID_SUBDIR)/mus_zgs_dark_blow_hole.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
 
 $(MID_SUBDIR)/mus_zgs_agtlp.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_vs_champion
 
 $(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_sfx_rs_1 -P5
