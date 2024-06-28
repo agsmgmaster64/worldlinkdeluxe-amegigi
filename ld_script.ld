@@ -1237,6 +1237,9 @@ SECTIONS {
         sound/songs/midi/mus_zgs_vs_sakuya.o(.rodata);
         sound/songs/midi/mus_zgs_surf.o(.rodata);
         sound/songs/midi/mus_zgs_eiki_island.o(.rodata);
+        sound/songs/midi/mus_zgs_poke_center.o(.rodata);
+        sound/songs/midi/mus_zgs_dark_blow_hole.o(.rodata);
+        sound/songs/midi/mus_zgs_agtlp.o(.rodata);
     } > ROM =0
 
     lib_rodata :

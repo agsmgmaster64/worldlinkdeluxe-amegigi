@@ -578,6 +578,9 @@ gSongTable::
 	song mus_zgs_vs_sakuya, 0, 0
 	song mus_zgs_surf, 0, 0
 	song mus_zgs_eiki_island, 0, 0
+	song mus_zgs_poke_center, 0, 0
+	song mus_zgs_dark_blow_hole, 0, 0
+	song mus_zgs_agtlp, 0, 0
 
 	.align 2
 dummy_song_header:

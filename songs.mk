@@ -373,7 +373,7 @@ $(MID_SUBDIR)/mus_rg_caught_intro.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G179 -V094 -P5
 
 $(MID_SUBDIR)/mus_rg_caught.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G170 -V100
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_victory_wild -V100
 
 $(MID_SUBDIR)/mus_rg_cinnabar.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G138 -V090
@@ -433,7 +433,7 @@ $(MID_SUBDIR)/mus_rg_sevii_route.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G187 -V080
 
 $(MID_SUBDIR)/mus_rg_net_center.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G162 -V096
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_poke_center -V096
 
 $(MID_SUBDIR)/mus_rg_pewter.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G173 -V084
@@ -457,7 +457,7 @@ $(MID_SUBDIR)/mus_rg_poke_tower.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G165 -V090
 
 $(MID_SUBDIR)/mus_rg_poke_center.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G162 -V096
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_poke_center -V096
 
 $(MID_SUBDIR)/mus_rg_poke_flute.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G165 -V048 -P5
@@ -556,7 +556,7 @@ $(MID_SUBDIR)/mus_rg_victory_trainer.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G169 -V089
 
 $(MID_SUBDIR)/mus_rg_victory_wild.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G170 -V090
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_victory_wild -V090
 
 $(MID_SUBDIR)/mus_cable_car.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G071 -V078
@@ -652,13 +652,13 @@ $(MID_SUBDIR)/mus_wld_surf.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
 
 $(MID_SUBDIR)/mus_wld_victory_wild.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G170
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_victory_wild
 
 $(MID_SUBDIR)/mus_wld_caught_intro.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G179
 
 $(MID_SUBDIR)/mus_wld_caught.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G170
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_victory_wild
 
 $(MID_SUBDIR)/mus_zgs_vs_wild.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_vs_wild
@@ -685,6 +685,15 @@ $(MID_SUBDIR)/mus_zgs_surf.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_surf
 
 $(MID_SUBDIR)/mus_zgs_eiki_island.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
+
+$(MID_SUBDIR)/mus_zgs_poke_center.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_poke_center
+
+$(MID_SUBDIR)/mus_zgs_dark_blow_hole.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
+
+$(MID_SUBDIR)/mus_zgs_agtlp.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
 
 $(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid

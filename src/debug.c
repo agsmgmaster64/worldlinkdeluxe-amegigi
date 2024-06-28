@@ -4897,6 +4897,9 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_VS_SAKUYA) \
     X(MUS_ZGS_SURF) \
     X(MUS_ZGS_EIKI_ISLAND) \
+    X(MUS_ZGS_POKE_CENTER) \
+    X(MUS_ZGS_DARK_BLOW_HOLE) \
+    X(MUS_ZGS_AGTLP) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

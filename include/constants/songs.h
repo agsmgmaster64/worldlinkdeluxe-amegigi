@@ -509,8 +509,11 @@
 #define MUS_ZGS_VS_SAKUYA           574
 #define MUS_ZGS_SURF                575
 #define MUS_ZGS_EIKI_ISLAND         576
+#define MUS_ZGS_POKE_CENTER         577
+#define MUS_ZGS_DARK_BLOW_HOLE      578
+#define MUS_ZGS_AGTLP               579
 
-#define END_MUS                     MUS_ZGS_EIKI_ISLAND
+#define END_MUS                     MUS_ZGS_AGTLP
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

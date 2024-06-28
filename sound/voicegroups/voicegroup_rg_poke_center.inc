@@ -1,5 +1,5 @@
 	.align 2
-voicegroup162::
+voicegroup_rg_poke_center::
 	voice_keysplit_all voicegroup_drums_frlg
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
