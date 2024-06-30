@@ -26,6 +26,7 @@ static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
 static void TilesetAnim_RG_General(u16);
 static void TilesetAnim_Building(u16);
+static void TilesetAnim_RG_Building(u16);
 static void TilesetAnim_Rustboro(u16);
 static void TilesetAnim_Dewford(u16);
 static void TilesetAnim_Slateport(u16);
@@ -52,6 +53,7 @@ static void QueueAnimTiles_General_LandWaterEdge(u16);
 static void QueueAnimTiles_RG_General_Flower(u16);
 static void QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(u16);
 static void QueueAnimTiles_RG_General_SandWatersEdge(u16);
+static void QueueAnimTiles_RG_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
 static void QueueAnimTiles_Rustboro_Fountain(u16);
@@ -166,6 +168,21 @@ static const u16 *const sTilesetAnims_RG_General_Flower[] = {
     sTilesetAnims_RG_General_Flower_Frame2,
     sTilesetAnims_RG_General_Flower_Frame3,
     sTilesetAnims_RG_General_Flower_Frame4
+};
+
+const u16 gTilesetAnims_RG_Building_TvTurnedOnLeft_Frame0[] = INCBIN_U16("data/tilesets/frlg/primary/building/anim/tv_turned_on_left/0.4bpp");
+const u16 gTilesetAnims_RG_Building_TvTurnedOnLeft_Frame1[] = INCBIN_U16("data/tilesets/frlg/primary/building/anim/tv_turned_on_left/1.4bpp");
+const u16 gTilesetAnims_RG_Building_TvTurnedOnRight_Frame0[] = INCBIN_U16("data/tilesets/frlg/primary/building/anim/tv_turned_on_right/0.4bpp");
+const u16 gTilesetAnims_RG_Building_TvTurnedOnRight_Frame1[] = INCBIN_U16("data/tilesets/frlg/primary/building/anim/tv_turned_on_right/1.4bpp");
+
+const u16 *const gTilesetAnims_RG_Building_TvTurnedOnLeft[] = {
+    gTilesetAnims_RG_Building_TvTurnedOnLeft_Frame0,
+    gTilesetAnims_RG_Building_TvTurnedOnLeft_Frame1
+};
+
+const u16 *const gTilesetAnims_RG_Building_TvTurnedOnRight[] = {
+    gTilesetAnims_RG_Building_TvTurnedOnRight_Frame0,
+    gTilesetAnims_RG_Building_TvTurnedOnRight_Frame1
 };
 
 // palette: general 04
@@ -702,6 +719,13 @@ void InitTilesetAnim_Building(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_Building;
 }
 
+void InitTilesetAnim_RG_Building(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_RG_Building;
+}
+
 static void TilesetAnim_General(u16 timer)
 {
     if (timer % 16 == 0)
@@ -732,6 +756,12 @@ static void TilesetAnim_Building(u16 timer)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
 }
 
+static void TilesetAnim_RG_Building(u16 timer)
+{
+    if (timer % 8 == 0)
+        QueueAnimTiles_RG_Building_TVTurnedOn(timer / 8);
+}
+
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Flower);
@@ -760,6 +790,13 @@ static void QueueAnimTiles_RG_General_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(sTilesetAnims_RG_General_Flower);
     AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_RG_Building_TVTurnedOn(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_RG_Building_TvTurnedOnLeft);
+    AppendTilesetAnimToBuffer(gTilesetAnims_RG_Building_TvTurnedOnLeft[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(182)), TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(gTilesetAnims_RG_Building_TvTurnedOnRight[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(198)), TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(u16 timer)

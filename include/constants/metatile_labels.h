@@ -432,8 +432,10 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
 // gTileset_RG_Building
-#define METATILE_RG_Building_PCOff  0x062
-#define METATILE_RG_Building_PCOn   0x063
+#define METATILE_RG_Building_PCOff   0x062
+#define METATILE_RG_Building_PCOn    0x063
+#define METATILE_RG_Building_TV_Off  0x035
+#define METATILE_RG_Building_TV_On   0x061
 
 // gTileset_RG_General
 #define METATILE_RG_General_BlueCaveIndent     0x19B

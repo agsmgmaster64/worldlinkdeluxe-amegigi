@@ -823,7 +823,7 @@ const struct Tileset gTileset_RG_Building =
     .palettes = gTilesetPalettes_RG_Building,
     .metatiles = gMetatiles_RG_Building,
     .metatileAttributes = gMetatileAttributes_RG_Building,
-    .callback = NULL,
+    .callback = InitTilesetAnim_RG_Building,
 };
 
 const struct Tileset gTileset_RG_Cave =

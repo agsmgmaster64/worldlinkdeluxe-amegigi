@@ -102,23 +102,15 @@ static const struct PacifidlogMetatileOffsets sFloatingBridgeMetatileOffsets[] =
 // The positions of each map space with crackable ice in Granite Cave.
 static const u8 sIcefallCaveIceCoords[][2] =
 {
-    {  1,  1 },
-    {  3,  2 },
-    {  2,  4 },
-    {  4,  5 },
+    {  4,  2 },
+    {  2,  5 },
     {  1,  6 },
-    { 15,  1 },
-    { 22,  1 },
-    { 17,  2 },
-    { 19,  2 },
-    { 18,  3 },
-    { 20,  3 },
-    { 22,  3 },
-    { 19,  4 },
-    { 18,  5 },
+    { 22,  2 },
+    { 17,  3 },
+    { 21,  3 },
     { 21,  5 },
     { 17,  6 },
-    { 20,  6 },
+    { 19,  6 },
     { 22,  6 },
 };
 
