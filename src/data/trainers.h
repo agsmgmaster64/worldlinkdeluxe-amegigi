@@ -4937,7 +4937,7 @@ F_TRAINER_FEMALE |
     [TRAINER_CINDY_1] =
     {
 #line 2042
-        .trainerName = _("CINDY"),
+        .trainerName = _("Cindy"),
 #line 2043
         .trainerClass = TRAINER_CLASS_LADY,
 #line 2044
@@ -4958,7 +4958,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 2051
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_ELLEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2051
             .heldItem = ITEM_NUGGET,
@@ -5944,7 +5944,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 2455
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_KAGEROU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2455
             .heldItem = ITEM_NUGGET,
@@ -12118,7 +12118,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JERRY_1] =
     {
 #line 5051
-        .trainerName = _("JERRY"),
+        .trainerName = _("Jerry"),
 #line 5052
         .trainerClass = TRAINER_CLASS_SCHOOL_KID,
 #line 5053
@@ -12135,7 +12135,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5059
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_SHIZUHA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5061
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -12424,7 +12424,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5178
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_KYOUKO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5180
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -14156,7 +14156,7 @@ F_TRAINER_FEMALE |
     [TRAINER_BILLY] =
     {
 #line 5880
-        .trainerName = _("BILLY"),
+        .trainerName = _("Billy"),
 #line 5881
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 5882
@@ -14173,7 +14173,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5888
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_TOKIKO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5890
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -14269,7 +14269,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JOEY] =
     {
 #line 5927
-        .trainerName = _("JOEY"),
+        .trainerName = _("Joey"),
 #line 5928
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 5929
@@ -14286,7 +14286,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 5935
-            .species = SPECIES_HELPER_LUNASA,
+            .species = SPECIES_CHIBI_ORANGE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 5937
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -15048,7 +15048,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 6262
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_WAKASAGIHIME,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6264
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -22760,7 +22760,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9435
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_LOUISE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9437
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -22893,7 +22893,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9490
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_KURUMI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9492
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23026,7 +23026,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9545
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_SARA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9547
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23161,7 +23161,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9600
-            .species = SPECIES_CHIBI_KURUMI,
+            .species = SPECIES_CHIBI_LOUISE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9602
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23300,7 +23300,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9655
-            .species = SPECIES_CHIBI_SARA,
+            .species = SPECIES_CHIBI_KURUMI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9657
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -23439,7 +23439,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9710
-            .species = SPECIES_CHIBI_LOUISE,
+            .species = SPECIES_CHIBI_SARA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9712
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26556,7 +26556,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10982
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_TOKIKO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10984
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26570,7 +26570,7 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_1] =
     {
 #line 10987
-        .trainerName = _("HALEY"),
+        .trainerName = _("Haley"),
 #line 10988
         .trainerClass = TRAINER_CLASS_LASS,
 #line 10989
@@ -26589,7 +26589,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 10995
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 10997
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26599,7 +26599,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 10999
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11001
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -26613,7 +26613,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JANICE] =
     {
 #line 11004
-        .trainerName = _("JANICE"),
+        .trainerName = _("Janice"),
 #line 11005
         .trainerClass = TRAINER_CLASS_LASS,
 #line 11006
@@ -26632,7 +26632,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11012
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_KOSUZU,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11014
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -27145,7 +27145,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JOSE] =
     {
 #line 11216
-        .trainerName = _("JOSE"),
+        .trainerName = _("Jose"),
 #line 11217
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
 #line 11218
@@ -27299,7 +27299,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_1] =
     {
 #line 11280
-        .trainerName = _("JAMES"),
+        .trainerName = _("James"),
 #line 11281
         .trainerClass = TRAINER_CLASS_BUG_CATCHER,
 #line 11282
@@ -27749,7 +27749,7 @@ F_TRAINER_FEMALE |
     [TRAINER_CLARK] =
     {
 #line 11466
-        .trainerName = _("CLARK"),
+        .trainerName = _("Clark"),
 #line 11467
         .trainerClass = TRAINER_CLASS_HIKER,
 #line 11468
@@ -31054,7 +31054,7 @@ F_TRAINER_FEMALE |
     [TRAINER_SARAH] =
     {
 #line 12875
-        .trainerName = _("SARAH"),
+        .trainerName = _("Sarah"),
 #line 12876
         .trainerClass = TRAINER_CLASS_LADY,
 #line 12877
@@ -31075,7 +31075,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 12884
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_MINORIKO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12886
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -31085,7 +31085,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 12888
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_SHIZUHA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12888
             .heldItem = ITEM_NUGGET,
@@ -31101,7 +31101,7 @@ F_TRAINER_FEMALE |
     [TRAINER_DARIAN] =
     {
 #line 12893
-        .trainerName = _("DARIAN"),
+        .trainerName = _("Darian"),
 #line 12894
         .trainerClass = TRAINER_CLASS_FISHERMAN,
 #line 12895
@@ -31118,7 +31118,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 12901
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_WAKASAGIHIME,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 12903
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -33264,7 +33264,7 @@ F_TRAINER_FEMALE |
     [TRAINER_DEVAN] =
     {
 #line 13776
-        .trainerName = _("DEVAN"),
+        .trainerName = _("Devan"),
 #line 13777
         .trainerClass = TRAINER_CLASS_HIKER,
 #line 13778
@@ -33305,7 +33305,7 @@ F_TRAINER_FEMALE |
     [TRAINER_JOHNSON] =
     {
 #line 13793
-        .trainerName = _("JOHNSON"),
+        .trainerName = _("Johnson"),
 #line 13794
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 13795
@@ -33322,7 +33322,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 13801
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_ORANGE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13803
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -33332,7 +33332,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 13805
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_ELLY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 13807
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

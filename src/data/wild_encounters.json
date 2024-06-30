@@ -1365,62 +1365,62 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_SPEED_SEIGA"
+                "species": "SPECIES_CHIBI_ORANGE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_MYSTIA"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_PLACEHOLD_WAKASAGIHIME"
+                "species": "SPECIES_CHIBI_KAGEROU"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_SPEED_LILY_BLACK"
+                "species": "SPECIES_CHIBI_MEILING"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_PLACEHOLD_WAKASAGIHIME"
+                "species": "SPECIES_CHIBI_KYOUKO"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_NORMAL_MAMIZOU"
+                "species": "SPECIES_CHIBI_ELLY"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_NORMAL_MAMIZOU"
+                "species": "SPECIES_CHIBI_MEILING"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_NORMAL_MAMIZOU"
+                "species": "SPECIES_CHIBI_TEWI"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_SPEED_SEIGA"
+                "species": "SPECIES_CHIBI_KAGEROU"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_SPEED_SEIGA"
+                "species": "SPECIES_CHIBI_ELLY"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_NORMAL_RAIKO"
+                "species": "SPECIES_CHIBI_KAGEROU"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_NORMAL_RAIKO"
+                "species": "SPECIES_CHIBI_ELLY"
               }
             ]
           }
@@ -1831,62 +1831,62 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SPEED_SEIGA"
+                "species": "SPECIES_CHIBI_SUNNY"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_HELPER_TOJIKO"
+                "species": "SPECIES_CHIBI_STAR"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_HELPER_KAGEROU"
+                "species": "SPECIES_CHIBI_LUNA"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_SPEED_SEIGA"
+                "species": "SPECIES_CHIBI_DAIYOUSEI"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PLACEHOLD_TOJIKO"
+                "species": "SPECIES_CHIBI_LUNA"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NORMAL_FUTO"
+                "species": "SPECIES_CHIBI_CIRNO"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_HELPER_TOJIKO"
+                "species": "SPECIES_CHIBI_LILY_WHITE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_HELPER_KAGEROU"
+                "species": "SPECIES_CHIBI_LILY_BLACK"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_NORMAL_MAMIZOU"
+                "species": "SPECIES_CHIBI_WRIGGLE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHIBI_WAKASAGIHIME"
+                "species": "SPECIES_CHIBI_WRIGGLE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_NORMAL_MAMIZOU"
+                "species": "SPECIES_CHIBI_WRIGGLE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_CHIBI_WAKASAGIHIME"
+                "species": "SPECIES_CHIBI_WRIGGLE"
               }
             ]
           }
@@ -1900,62 +1900,62 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KYOUKO"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KISUME"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KOAKUMA"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KISUME"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KOAKUMA"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_KYOUKO"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_RIKA"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_RIKA"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_DEFENSE_BENBEN"
+                "species": "SPECIES_CHIBI_PARSEE"
               }
             ]
           }
