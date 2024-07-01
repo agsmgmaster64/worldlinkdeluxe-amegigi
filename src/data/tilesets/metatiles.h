@@ -243,3 +243,6 @@ const u32 gMetatileAttributes_RG_PokemonTower[] = INCBIN_U32("data/tilesets/frlg
 
 const u16 gMetatiles_RG_LavenderTown[] = INCBIN_U16("data/tilesets/frlg/secondary/lavender_town/metatiles.bin");
 const u32 gMetatileAttributes_RG_LavenderTown[] = INCBIN_U32("data/tilesets/frlg/secondary/lavender_town/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_SeviiIslands123[] = INCBIN_U16("data/tilesets/frlg/secondary/sevii_islands_123/metatiles.bin");
+const u32 gMetatileAttributes_RG_SeviiIslands123[] = INCBIN_U32("data/tilesets/frlg/secondary/sevii_islands_123/metatile_attributes.bin");

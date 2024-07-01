@@ -457,6 +457,9 @@
 #define METATILE_RG_SeafoamIslands_IceHole       0x35B
 #define METATILE_RG_SeafoamIslands_UncrackedIce  0x359
 
+// gTileset_RG_SeviiIslands123
+#define METATILE_RG_SeviiIslands123_Door  0x297
+
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
 #define METATILE_Rustboro_Door_Tan   0x22F

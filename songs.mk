@@ -502,7 +502,7 @@ $(MID_SUBDIR)/mus_rg_game_corner.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G132 -V090
 
 $(MID_SUBDIR)/mus_rg_slow_pallet.s: %.s: %.mid
-	$(MID) $< $@ -E -R$(STD_REVERB) -G159 -V092
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_pallet -V092
 
 $(MID_SUBDIR)/mus_rg_new_game_instruct.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G182 -V085
