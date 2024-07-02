@@ -4028,7 +4028,7 @@ $(POKEMONGFXDIR)/_add/th/lilywhite/normal/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/_add/th/lilywhite/attack/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/lilywhite/defense/overworld.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/lilywhite/helper/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/_add/th/reisen/chibi/overworld.4bpp: %.4bpp: %.png
@@ -4041,6 +4041,18 @@ $(POKEMONGFXDIR)/_add/th/reisen/defense/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/_add/th/reisen/tech/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/chibi/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/normal/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/attack/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/helper/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(MISCGFXDIR)/emotes.4bpp: %.4bpp: %.png

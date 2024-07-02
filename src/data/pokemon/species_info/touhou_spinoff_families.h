@@ -1372,6 +1372,14 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_CStar,
         .iconPalIndex = 0,
         FOOTPRINT(CStar)
+        OVERWORLD(
+            sPicTable_CStar,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_CStar,
+            gShinyOverworldPalette_CStar
+        )
         .levelUpLearnset = sCStarLevelUpLearnset,
         .teachableLearnset = sCStarTeachableLearnset,
         .eggMoveLearnset = sCStarEggMoveLearnset,
@@ -1430,6 +1438,14 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_Star,
         .iconPalIndex = 0,
         FOOTPRINT(Star)
+        OVERWORLD(
+            sPicTable_Star,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Star,
+            gShinyOverworldPalette_Star
+        )
         .levelUpLearnset = sStarLevelUpLearnset,
         .teachableLearnset = sStarTeachableLearnset,
     },
@@ -1483,6 +1499,14 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_AStar,
         .iconPalIndex = 0,
         FOOTPRINT(AStar)
+        OVERWORLD(
+            sPicTable_AStar,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_AStar,
+            gShinyOverworldPalette_AStar
+        )
         .levelUpLearnset = sAStarLevelUpLearnset,
         .teachableLearnset = sAStarTeachableLearnset,
     },
@@ -1536,6 +1560,14 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_HStar,
         .iconPalIndex = 0,
         FOOTPRINT(HStar)
+        OVERWORLD(
+            sPicTable_HStar,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_HStar,
+            gShinyOverworldPalette_HStar
+        )
         .levelUpLearnset = sHStarLevelUpLearnset,
         .teachableLearnset = sHStarTeachableLearnset,
     },

@@ -6200,4 +6200,20 @@ static const struct SpriteFrameImage sPicTable_TReisen[] = {
     overworld_ascending_frames(gObjectEventPic_TReisen, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_CStar[] = {
+    overworld_ascending_frames(gObjectEventPic_CStar, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Star[] = {
+    overworld_ascending_frames(gObjectEventPic_Star, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_AStar[] = {
+    overworld_ascending_frames(gObjectEventPic_AStar, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_HStar[] = {
+    overworld_ascending_frames(gObjectEventPic_HStar, 4, 4),
+};
+
 #endif //OW_POKEMON_OBJECT_EVENTS
