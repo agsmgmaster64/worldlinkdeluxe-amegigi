@@ -435,6 +435,38 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_ShopShelf;
     if (MetatileBehavior_IsBlueprint(metatileBehavior) == TRUE)
         return EventScript_Blueprint;
+    if (MetatileBehavior_IsFood(metatileBehavior) == TRUE)
+        return EventScript_Food;
+    if (MetatileBehavior_IsVideoGame(metatileBehavior) == TRUE)
+        return EventScript_VideoGame;
+    if (MetatileBehavior_IsComputer(metatileBehavior) == TRUE)
+        return EventScript_Computer;
+    if (MetatileBehavior_IsImpressiveMachine(metatileBehavior) == TRUE)
+        return EventScript_ImpressiveMachine;
+    if (MetatileBehavior_IsCabinet(metatileBehavior) == TRUE)
+        return EventScript_Cabinet;
+    if (MetatileBehavior_IsKitchen(metatileBehavior) == TRUE)
+        return EventScript_Kitchen;
+    if (MetatileBehavior_IsDresser(metatileBehavior) == TRUE)
+        return EventScript_Dresser;
+    if (MetatileBehavior_IsSnacks(metatileBehavior) == TRUE)
+        return EventScript_Snacks;
+    if (MetatileBehavior_IsPainting(metatileBehavior) == TRUE)
+        return EventScript_Painting;
+    if (MetatileBehavior_IsPowerPlantMachine(metatileBehavior) == TRUE)
+        return EventScript_PowerPlantMachine;
+    if (MetatileBehavior_IsTelephone(metatileBehavior) == TRUE)
+        return EventScript_Telephone;
+    if (MetatileBehavior_IsAdvertisingPoster(metatileBehavior) == TRUE)
+        return EventScript_AdvertisingPoster;
+    if (MetatileBehavior_IsTastyFood(metatileBehavior) == TRUE)
+        return EventScript_TastyFood;
+    if (MetatileBehavior_IsCup(metatileBehavior) == TRUE)
+        return EventScript_Cup;
+    if (MetatileBehavior_IsBlinkingLights(metatileBehavior) == TRUE)
+        return EventScript_BlinkingLights;
+    if (MetatileBehavior_IsNeatlyLinedUpTools(metatileBehavior) == TRUE)
+        return EventScript_NeatlyLinedUpTools;
     if (MetatileBehavior_IsPlayerFacingWirelessBoxResults(metatileBehavior, direction) == TRUE)
         return EventScript_WirelessBoxResults;
     if (MetatileBehavior_IsCableBoxResults2(metatileBehavior, direction) == TRUE)
