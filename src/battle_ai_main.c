@@ -3973,7 +3973,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_FROST_ORB:
-            if (!ShouldFrostbiteSelf(battlerAtk, aiData->abilities[battlerAtk]) && AI_CanGetFrostbite(battlerAtk, aiData->abilities[battlerDef]))
+            if (!ShouldFrostbiteSelf(battlerAtk, aiData->abilities[battlerAtk]) && CanGetFrostbite(battlerAtk, aiData->abilities[battlerDef]))
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_BLACK_SLUDGE:

@@ -5830,10 +5830,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && IsBattlerAlive(gBattlerTarget)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeBurned(gBattlerTarget)
+             && CanBeBurned(gBattlerTarget, GetBattlerAbility(gBattlerTarget))
              && moveType == TYPE_NATURE
              && TARGET_TURN_DAMAGED // Need to actually hit the target
-             && (Random() % 3) == 0)
+             && RandomPercentage(RNG_LEAF_SPICE, 30))
             {
                 gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
@@ -6541,9 +6541,8 @@ bool32 CanBeFrozen(u32 battler)
     return TRUE;
 }
 
-bool32 CanGetFrostbite(u32 battler)
+bool32 CanGetFrostbite(u32 battler, u32 ability)
 {
-    u16 ability = GetBattlerAbility(battler);
     if (IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || ability == ABILITY_FIRE_VEIL
@@ -8101,7 +8100,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             }
             break;
         case HOLD_EFFECT_FROST_ORB:
-            if (CanGetFrostbite(battler))
+            if (CanGetFrostbite(battler, battlerAbility))
             {
                 effect = ITEM_STATUS_CHANGE;
                 gBattleMons[battler].status1 = STATUS1_FROSTBITE;

@@ -3099,7 +3099,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     break;
             }
 
-            if (!CanGetFrostbite(gEffectBattler))
+            if (!CanGetFrostbite(gEffectBattler, GetBattlerAbility(gEffectBattler)))
                 break;
 
             statusChanged = TRUE;
