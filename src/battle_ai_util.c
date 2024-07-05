@@ -506,9 +506,6 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     struct AiLogicData *aiData = AI_DATA;
     gBattleStruct->aiCalcInProgress = TRUE;
 
-    SetBattlerData(battlerAtk);
-    SetBattlerData(battlerDef);
-
     // Temporarily enable gimmicks for damage calcs if planned
     if (gBattleStruct->gimmick.usableGimmick[battlerAtk] && GetActiveGimmick(battlerAtk) == GIMMICK_NONE
         && !(gBattleStruct->gimmick.usableGimmick[battlerAtk] == GIMMICK_Z_MOVE && !considerZPower))
@@ -785,11 +782,11 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
                         return TRUE;
                     break;
                 case MOVE_EFFECT_FREEZE:
-                    if (AI_CanBeFrozen(battlerDef, abilityDef))
+                    if (AI_CanGiveFrostbite(battlerAtk, battlerDef, abilityDef, BATTLE_PARTNER(battlerAtk), move, MOVE_NONE))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_FROSTBITE:
-                    if (AI_CanGetFrostbite(battlerDef, abilityDef))
+                    if (AI_CanGiveFrostbite(battlerAtk, battlerDef, abilityDef, BATTLE_PARTNER(battlerAtk), move, MOVE_NONE))
                         return TRUE;
                     break;
                 case MOVE_EFFECT_PARALYSIS:
@@ -2737,48 +2734,18 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
     return FALSE;
 }
 
-bool32 AI_CanSleep(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_INSOMNIA
-      || ability == ABILITY_VITAL_SPIRIT
-      || ability == ABILITY_COMATOSE
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
-      || (gFieldStatuses & (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN))
-      || IsAbilityStatusProtected(battler))
-        return FALSE;
-    return TRUE;
-}
-
 bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!AI_CanSleep(battlerDef, defAbility)
+    if (!CanBeSlept(battlerDef, defAbility)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))   // shouldn't try to sleep mon that partner is trying to make sleep
         return FALSE;
     return TRUE;
 }
 
-static bool32 AI_CanBePoisoned(u32 battlerAtk, u32 battlerDef, u32 move)
-{
-    u32 ability = AI_DATA->abilities[battlerDef];
-
-    if (!(CanPoisonType(battlerAtk, battlerDef))
-     || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
-     || gBattleMons[battlerDef].status1 & STATUS1_ANY
-     || ability == ABILITY_IMMUNITY
-     || ability == ABILITY_COMATOSE
-     || AI_IsAbilityOnSide(battlerDef, ABILITY_PASTEL_VEIL)
-     || gBattleMons[battlerDef].status1 & STATUS1_ANY
-     || IsAbilityStatusProtected(battlerDef)
-     || AI_IsTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN))
-        return FALSE;
-    return TRUE;
-}
-
 bool32 ShouldPoisonSelf(u32 battler, u32 ability)
 {
-    if (AI_CanBePoisoned(battler, battler, 0) && (
+    if (CanBePoisoned(battler, battler, GetBattlerAbility(battler)) && (
      ability == ABILITY_SPRING_CHARM
       || ability == ABILITY_POISON_HEAL
       || ability == ABILITY_QUICK_FEET
@@ -2794,7 +2761,7 @@ bool32 ShouldPoisonSelf(u32 battler, u32 ability)
 
 bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!AI_CanBePoisoned(battlerAtk, battlerDef, move)
+    if (!CanBePoisoned(battlerAtk, battlerDef, GetBattlerAbility(battlerDef))
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == AI_EFFECTIVENESS_x0
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))
@@ -2807,20 +2774,9 @@ bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u3
     return TRUE;
 }
 
-static bool32 AI_CanBeParalyzed(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_LIMBER
-      || ability == ABILITY_COMATOSE
-      || IS_BATTLER_OF_TYPE(battler, TYPE_WIND)
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || IsAbilityStatusProtected(battler))
-        return FALSE;
-    return TRUE;
-}
-
 bool32 AI_CanParalyze(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!AI_CanBeParalyzed(battlerDef, defAbility)
+    if (!CanBeParalyzed(battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == AI_EFFECTIVENESS_x0
       || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
@@ -2854,49 +2810,9 @@ bool32 AI_CanConfuse(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battler
     return TRUE;
 }
 
-bool32 AI_CanBeBurned(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_WATER_VEIL
-      || ability == ABILITY_WATER_BUBBLE
-      || ability == ABILITY_COMATOSE
-      || IS_BATTLER_OF_TYPE(battler, TYPE_FIRE)
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || IsAbilityStatusProtected(battler)
-      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
-        return FALSE;
-    return TRUE;
-}
-
-bool32 AI_CanBeFrozen(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_FIRE_VEIL
-      || ability == ABILITY_FLAME_BODY
-      || ability == ABILITY_COMATOSE
-      || IsBattlerWeatherAffected(battler, B_WEATHER_SUN)
-      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || IsAbilityStatusProtected(battler)
-      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
-        return FALSE;
-    return TRUE;
-}
-
-bool32 AI_CanGetFrostbite(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_FIRE_VEIL
-      || ability == ABILITY_FLAME_BODY
-      || ability == ABILITY_COMATOSE
-      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || IsAbilityStatusProtected(battler)
-      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
-        return FALSE;
-    return TRUE;
-}
-
 bool32 ShouldBurnSelf(u32 battler, u32 ability)
 {
-    if (AI_CanBeBurned(battler, ability) && (
+    if (CanBeBurned(battler, ability) && (
      ability == ABILITY_QUICK_FEET
       || ability == ABILITY_HEATPROOF
       || ability == ABILITY_MAGIC_GUARD
@@ -2911,7 +2827,7 @@ bool32 ShouldBurnSelf(u32 battler, u32 ability)
 
 bool32 ShouldFrostbiteSelf(u32 battler, u32 ability)
 {
-    if (AI_CanGetFrostbite(battler, ability) && (
+    if (CanGetFrostbite(battler, ability) && (
      ability == ABILITY_QUICK_FEET
       || ability == ABILITY_MAGIC_GUARD
       || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
@@ -2924,7 +2840,7 @@ bool32 ShouldFrostbiteSelf(u32 battler, u32 ability)
 
 bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
 {
-    if (!AI_CanBeBurned(battlerDef, defAbility)
+    if (!CanBeBurned(battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == AI_EFFECTIVENESS_x0
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
@@ -2936,7 +2852,7 @@ bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtk
 
 bool32 AI_CanGiveFrostbite(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
 {
-    if (!AI_CanGetFrostbite(battlerDef, defAbility)
+    if (!CanGetFrostbite(battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == AI_EFFECTIVENESS_x0
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
