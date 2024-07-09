@@ -1122,17 +1122,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_PIKACHU
 
-#if P_FAMILY_CLEFAIRY
-#if P_UPDATED_TYPES >= GEN_6
-    #define CLEFAIRY_FAMILY_TYPES { TYPE_COSMIC, TYPE_COSMIC }
-#else
-    #define CLEFAIRY_FAMILY_TYPES { TYPE_ILLUSION, TYPE_ILLUSION }
-#endif
-
-#if P_GEN_2_CROSS_EVOS
-#endif //P_GEN_2_CROSS_EVOS
-#endif //P_FAMILY_CLEFAIRY
-
 #if P_FAMILY_VULPIX
 
 #if P_ALOLAN_FORMS
@@ -1201,17 +1190,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
-
-#if P_FAMILY_JIGGLYPUFF
-#if P_UPDATED_TYPES >= GEN_6
-    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_ILLUSION, TYPE_COSMIC}
-#else
-    #define JIGGLYPUFF_FAMILY_TYPES { TYPE_ILLUSION, TYPE_ILLUSION}
-#endif
-
-#if P_GEN_2_CROSS_EVOS
-#endif //P_GEN_2_CROSS_EVOS
-#endif //P_FAMILY_JIGGLYPUFF
 
 #if P_FAMILY_DIGLETT
 
@@ -1947,7 +1925,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_GUTS, ABILITY_NO_GUARD, ABILITY_STEADFAST },
+    #else
+        .abilities = { ABILITY_GUTS, ABILITY_NONE, ABILITY_STEADFAST },
+    #endif
         .sourceGame = SOURCE_IN,
         .speciesName = _("Machamp"),
         .cryId = CRY_PORYGON,
@@ -3936,7 +3918,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_SOUNDPROOF, ABILITY_FILTER, ABILITY_TECHNICIAN },
+    #else
+        .abilities = { ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_TECHNICIAN },
+    #endif
         .sourceGame = SOURCE_MOF,
         .speciesName = _("Mime Jr."),
         .cryId = CRY_PORYGON,
@@ -5043,7 +5029,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_TRACE, ABILITY_DOWNLOAD, ABILITY_ANALYTIC },
+    #else
+        .abilities = { ABILITY_TRACE, ABILITY_NONE, ABILITY_ANALYTIC },
+    #endif
         .sourceGame = SOURCE_OTHER,
         .speciesName = _("Porygon"),
         .cryId = CRY_PORYGON,
@@ -5106,8 +5096,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_TRACE, ABILITY_DOWNLOAD, ABILITY_ANALYTIC },
-        .sourceGame = SOURCE_HRTP,
+    #else
+        .abilities = { ABILITY_TRACE, ABILITY_NONE, ABILITY_ANALYTIC },
+    #endif
+        .sourceGame = SOURCE_OTHER,
         .speciesName = _("Porygon2"),
         .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_DEFENSE_ICHIRIN,

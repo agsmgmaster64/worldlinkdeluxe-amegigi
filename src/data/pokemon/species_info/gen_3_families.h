@@ -785,7 +785,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_RUN_AWAY, ABILITY_QUICK_FEET, ABILITY_RATTLED },
+    #else
+        .abilities = { ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_RATTLED },
+    #endif
         .sourceGame = SOURCE_IN,
         .speciesName = _("Poochyena"),
         .cryId = CRY_PORYGON,
@@ -846,7 +850,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_INTIMIDATE, ABILITY_QUICK_FEET, ABILITY_MOXIE },
+    #else
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_MOXIE },
+    #endif
         .sourceGame = SOURCE_IN,
         .speciesName = _("Mightyena"),
         .cryId = CRY_PORYGON,
@@ -918,7 +926,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET },
+    #else
+        .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_QUICK_FEET },
+    #endif
         .sourceGame = SOURCE_EOSD,
         .speciesName = _("Zigzagoon"),
         .cryId = CRY_PORYGON,
@@ -982,7 +994,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_PICKUP, ABILITY_GLUTTONY, ABILITY_QUICK_FEET },
+    #else
+        .abilities = { ABILITY_PICKUP, ABILITY_NONE, ABILITY_QUICK_FEET },
+    #endif
         .sourceGame = SOURCE_POFV,
         .speciesName = _("Linoone"),
         .cryId = CRY_PORYGON,
@@ -2118,7 +2134,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_KEEN_EYE, ABILITY_HYDRATION, ABILITY_RAIN_DISH },
+    #else
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RAIN_DISH },
+    #endif
         .sourceGame = SOURCE_POFV,
         .speciesName = _("Wingull"),
         .cryId = CRY_PORYGON,
@@ -2187,7 +2207,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FLYING),
+    #if P_UPDATED_ABILITIES >= GEN_7
         .abilities = { ABILITY_KEEN_EYE, ABILITY_DRIZZLE, ABILITY_RAIN_DISH },
+    #else
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_RAIN_DISH },
+    #endif
         .sourceGame = SOURCE_PODD,
         .speciesName = _("Pelipper"),
         .cryId = CRY_PORYGON,
@@ -2774,7 +2798,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_INFECTIOUS, ABILITY_POISON_HEAL, ABILITY_QUICK_FEET },
+    #else
+        .abilities = { ABILITY_INFECTIOUS, ABILITY_NONE, ABILITY_QUICK_FEET },
+    #endif
         .sourceGame = SOURCE_EOSD,
         .speciesName = _("Shroomish"),
         .cryId = CRY_PORYGON,
@@ -2837,7 +2865,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_INFECTIOUS, ABILITY_POISON_HEAL, ABILITY_TECHNICIAN },
+    #else
+        .abilities = { ABILITY_INFECTIOUS, ABILITY_NONE, ABILITY_TECHNICIAN },
+    #endif
         .sourceGame = SOURCE_LLS,
         .speciesName = _("Breloom"),
         .cryId = CRY_PORYGON,
@@ -3473,7 +3505,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_WONDER_SKIN },
+    #endif
         .sourceGame = SOURCE_MOF,
         .speciesName = _("Skitty"),
         .cryId = CRY_PORYGON,
@@ -3541,7 +3577,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FAIRY),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_CUTE_CHARM, ABILITY_NORMALIZE, ABILITY_WONDER_SKIN },
+    #else
+        .abilities = { ABILITY_CUTE_CHARM, ABILITY_NONE, ABILITY_WONDER_SKIN },
+    #endif
         .sourceGame = SOURCE_PCB,
         .speciesName = _("Delcatty"),
         .cryId = CRY_PORYGON,
@@ -3605,7 +3645,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+    #if P_UPDATED_ABILITIES >= GEN_4
         .abilities = { ABILITY_KEEN_EYE, ABILITY_STALL, ABILITY_PRANKSTER },
+    #else
+        .abilities = { ABILITY_KEEN_EYE, ABILITY_NONE, ABILITY_PRANKSTER },
+    #endif
         .sourceGame = SOURCE_IN,
         .speciesName = _("Sableye"),
         .cryId = CRY_PORYGON,
@@ -4927,7 +4971,11 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+    #if P_UPDATED_ABILITIES >= GEN_6
         .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FRISK },
+    #else
+        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE },
+    #endif
         .sourceGame = SOURCE_MS,
         .speciesName = _("Dusknoir"),
         .cryId = CRY_PORYGON,

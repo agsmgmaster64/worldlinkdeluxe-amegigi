@@ -335,29 +335,27 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler, bool32 emitResult)
     // Create an array of possible absorb abilities so the AI considers all of them
     if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_FIRE)
     {
-        absorbingTypeAbilities[0] = ABILITY_FLASH_FIRE;
-        absorbingTypeAbilities[1] = ABILITY_FLAME_ABSORB;
-        numAbsorbingAbilities = 2;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLASH_FIRE;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLAME_ABSORB;
     }
     else if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_WATER)
     {
-        absorbingTypeAbilities[0] = ABILITY_WATER_ABSORB;
-        absorbingTypeAbilities[1] = ABILITY_STORM_DRAIN;
-        absorbingTypeAbilities[2] = ABILITY_DRY_SKIN;
-        numAbsorbingAbilities = 3;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WATER_ABSORB;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_DRY_SKIN;
+        if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5)
+            absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
     }
     else if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_WIND)
     {
-        absorbingTypeAbilities[0] = ABILITY_VOLT_ABSORB;
-        absorbingTypeAbilities[1] = ABILITY_MOTOR_DRIVE;
-        absorbingTypeAbilities[2] = ABILITY_LIGHTNING_ROD;
-        numAbsorbingAbilities = 3;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_VOLT_ABSORB;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOTOR_DRIVE;
+        if (B_REDIRECT_ABILITY_IMMUNITY >= GEN_5)
+            absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LIGHTNING_ROD;
     }
     else if (gMovesInfo[gLastLandedMoves[battler]].type == TYPE_NATURE)
     {
-        absorbingTypeAbilities[0] = ABILITY_SAP_SIPPER;
-        absorbingTypeAbilities[1] = ABILITY_FLORA_ABSORB;
-        numAbsorbingAbilities = 2;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLORA_ABSORB;
     }
     else
     {
