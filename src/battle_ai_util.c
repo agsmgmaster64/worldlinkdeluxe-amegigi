@@ -422,7 +422,6 @@ bool32 IsDamageMoveUnusable(u32 move, u32 battlerAtk, u32 battlerDef)
         // Fallthrough
     case ABILITY_VOLT_ABSORB:
     case ABILITY_MOTOR_DRIVE:
-    case ABILITY_LIGHTNING_ROD:
         if (moveType == TYPE_WIND)
             return TRUE;
         break;
