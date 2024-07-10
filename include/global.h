@@ -168,6 +168,14 @@ struct UCoords32
     u32 y;
 };
 
+struct Time
+{
+    /*0x00*/ s16 days;
+    /*0x02*/ s8 hours;
+    /*0x03*/ s8 minutes;
+    /*0x04*/ s8 seconds;
+};
+
 #include "constants/items.h"
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
@@ -176,17 +184,12 @@ struct SaveBlock3
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
     /*0x000*/ u8 itemFlags[ITEM_FLAGS_COUNT];
 #endif
+#if OW_USE_FAKE_RTC
+    struct Time fakeRTC;
+#endif
 };
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;
-
-struct Time
-{
-    /*0x00*/ s16 days;
-    /*0x02*/ s8 hours;
-    /*0x03*/ s8 minutes;
-    /*0x04*/ s8 seconds;
-};
 
 struct Pokedex
 {
