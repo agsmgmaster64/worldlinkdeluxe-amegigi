@@ -1807,7 +1807,7 @@ static void CreateTrainerCardTrainerPic(void)
                     TRUE,
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
-                    8,
+                    10,
                     WIN_TRAINER_PIC);
     }
     else
@@ -1816,7 +1816,7 @@ static void CreateTrainerCardTrainerPic(void)
                     TRUE,
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
-                    8,
+                    10,
                     WIN_TRAINER_PIC);
     }
 }

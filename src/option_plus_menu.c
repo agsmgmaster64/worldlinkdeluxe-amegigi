@@ -376,7 +376,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][
 
 // Disabled Descriptions
 static const u8 sText_Desc_Disabled_Textspeed[]     = _("Only active if xyz.");
-static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COUNT + 1] =
+static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]   = sText_Desc_Disabled_Textspeed,
     [MENUITEM_MAIN_BATTLESCENE] = sText_Empty,
@@ -386,12 +386,11 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     [MENUITEM_MAIN_UNIT_SYSTEM] = sText_Empty,
     [MENUITEM_MAIN_FRAMETYPE]   = sText_Empty,
     [MENUITEM_MAIN_CANCEL]      = sText_Empty,
-    [MENUITEM_MAIN_COUNT]      = sText_Empty,
 };
 
 // Disabled Custom
 static const u8 sText_Desc_Disabled_BattleHPBar[]   = _("Only active if xyz.");
-static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM_COUNT + 1] =
+static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM_COUNT] =
 {
     [MENUITEM_CUSTOM_HP_BAR]      = sText_Desc_Disabled_BattleHPBar,
     [MENUITEM_CUSTOM_EXP_BAR]     = sText_Empty,
@@ -402,7 +401,6 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM
     [MENUITEM_CUSTOM_IV_VIEW]     = sText_Empty,
     [MENUITEM_CUSTOM_MON_ANIMATIONS] = sText_Empty,
     [MENUITEM_CUSTOM_CANCEL]      = sText_Empty,
-    [MENUITEM_CUSTOM_COUNT]       = sText_Empty,
 };
 
 static const u8 *const OptionTextDescription(void)
@@ -423,7 +421,7 @@ static const u8 *const OptionTextDescription(void)
         return sOptionMenuItemDescriptionsMain[menuItem][selection];
     case MENU_CUSTOM:
         if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledMain[menuItem];
+            return sOptionMenuItemDescriptionsDisabledCustom[menuItem];
         selection = sOptions->sel_custom[menuItem];
         if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_MUSIC_STYLE)
             selection = 0;
