@@ -4959,7 +4959,7 @@ void ItemUseCB_BattleScript(u8 taskId, TaskFunc task)
         gBattleStruct->itemPartyIndex[gBattlerInMenuId] = GetPartyIdFromBattleSlot(gPartyMenu.slotId);
         gPartyMenuUseExitCallback = TRUE;
         PlaySE(SE_SELECT);
-        if (!IsItemFlute(gSpecialVar_ItemId))
+        if (!IsItemFlute(gSpecialVar_ItemId) && ItemId_GetPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
             RemoveBagItem(gSpecialVar_ItemId, 1);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
