@@ -1,3 +1,8 @@
+#DISCLAIMER
+***dont expect this to come along quickly; im rather slow***
+
+
+
 # worldlinkdeluxe-amesame
 
 ### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
