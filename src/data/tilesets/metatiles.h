@@ -246,3 +246,9 @@ const u32 gMetatileAttributes_RG_LavenderTown[] = INCBIN_U32("data/tilesets/frlg
 
 const u16 gMetatiles_RG_SeviiIslands123[] = INCBIN_U16("data/tilesets/frlg/secondary/sevii_islands_123/metatiles.bin");
 const u32 gMetatileAttributes_RG_SeviiIslands123[] = INCBIN_U32("data/tilesets/frlg/secondary/sevii_islands_123/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_School[] = INCBIN_U16("data/tilesets/frlg/secondary/school/metatiles.bin");
+const u32 gMetatileAttributes_RG_School[] = INCBIN_U32("data/tilesets/frlg/secondary/school/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_FanClubDaycare[] = INCBIN_U16("data/tilesets/frlg/secondary/fan_club_daycare/metatiles.bin");
+const u32 gMetatileAttributes_RG_FanClubDaycare[] = INCBIN_U32("data/tilesets/frlg/secondary/fan_club_daycare/metatile_attributes.bin");

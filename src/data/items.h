@@ -10159,7 +10159,7 @@ const struct Item gItemsInfo[] =
         .holdEffectParam = TYPE_COSMIC,
         .description = COMPOUND_STRING(
             "A berry that\n"
-            "weakens a Fairy\n"
+            "weakens a Cosmic\n"
             "move if weak to it."),
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_BAG_MENU,
@@ -10478,12 +10478,12 @@ const struct Item gItemsInfo[] =
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = COMPOUND_STRING(
         #if B_MENTAL_HERB >= GEN_5
-            "Snaps Pokémon out\n"
+            "Snaps Puppets out\n"
             "of move-binding\n"
             "effects."),
         #else
             "A hold item that\n"
-            "snaps Pokémon out\n"
+            "snaps Puppets out\n"
             "of infatuation."),
         #endif
         .pocket = POCKET_BERRIES,

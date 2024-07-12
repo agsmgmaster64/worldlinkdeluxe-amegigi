@@ -968,3 +968,25 @@ const struct Tileset gTileset_RG_SeviiIslands123 =
     .metatileAttributes = gMetatileAttributes_RG_SeviiIslands123,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RG_School =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_School,
+    .palettes = gTilesetPalettes_RG_School,
+    .metatiles = gMetatiles_RG_School,
+    .metatileAttributes = gMetatileAttributes_RG_School,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_FanClubDaycare =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_FanClubDaycare,
+    .palettes = gTilesetPalettes_RG_FanClubDaycare,
+    .metatiles = gMetatiles_RG_FanClubDaycare,
+    .metatileAttributes = gMetatileAttributes_RG_FanClubDaycare,
+    .callback = NULL,
+};

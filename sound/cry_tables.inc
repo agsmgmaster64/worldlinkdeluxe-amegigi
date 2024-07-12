@@ -2,6 +2,8 @@
 gCryTable::
 .if P_CRIES_ENABLED == TRUE
 	cry Cry_Porygon
+	cry Cry_Porygon2
+	cry Cry_PorygonZ
 	cry Cry_Terapagos
 	cry Cry_Reimu
 	cry Cry_Marisa
@@ -67,6 +69,7 @@ gCryTable::
 	cry Cry_Shou
 	cry Cry_Byakuren
 	cry Cry_Nue
+	cry Cry_Wakasagihime
 	cry Cry_Suika
 	cry Cry_Iku
 	cry Cry_Tenshi
@@ -74,10 +77,12 @@ gCryTable::
 	cry Cry_Sunny
 	cry Cry_Luna
 	cry Cry_Star
+	cry Cry_Kokoro
 	cry Cry_Kasen
 	cry Cry_Yorihime
 	cry Cry_Toyohime
 	cry Cry_Tokiko
+	cry Cry_Kosuzu
 	cry Cry_Advent_Cirno
 	cry Cry_Advent_Reisen
 	cry Cry_Advent_Meiling
@@ -98,6 +103,8 @@ gCryTable::
 gCryTable_Reverse::
 .if P_CRIES_ENABLED == TRUE
 	cry_reverse Cry_Porygon
+	cry_reverse Cry_Porygon2
+	cry_reverse Cry_PorygonZ
 	cry_reverse Cry_Terapagos
 	cry_reverse Cry_Reimu
 	cry_reverse Cry_Marisa
@@ -163,6 +170,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Shou
 	cry_reverse Cry_Byakuren
 	cry_reverse Cry_Nue
+	cry_reverse Cry_Wakasagihime
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
 	cry_reverse Cry_Tenshi
@@ -170,10 +178,12 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sunny
 	cry_reverse Cry_Luna
 	cry_reverse Cry_Star
+	cry_reverse Cry_Kokoro
 	cry_reverse Cry_Kasen
 	cry_reverse Cry_Yorihime
 	cry_reverse Cry_Toyohime
 	cry_reverse Cry_Tokiko
+	cry_reverse Cry_Kosuzu
 	cry_reverse Cry_Advent_Cirno
 	cry_reverse Cry_Advent_Reisen
 	cry_reverse Cry_Advent_Meiling

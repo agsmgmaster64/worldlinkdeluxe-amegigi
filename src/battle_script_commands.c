@@ -6340,12 +6340,23 @@ static void Cmd_moveend(void)
             if (gMovesInfo[gCurrentMove].soundMove)
             {
                 u8 battler, nextConcerto = 0;
+                bool32 turnOnHitmarker = FALSE;
+
+                for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+                {
+                    if (gSpecialStatuses[battler].concertoUsedMove)
+                    {
+                        // in case a battler fails to act on a Concerto-called move
+                        turnOnHitmarker = TRUE;
+                        break;
+                    }
+                }
 
                 if (!(gBattleStruct->lastMoveFailed & gBitTable[gBattlerAttacker]
                     || (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove
                         && gBattleStruct->bouncedMoveIsUsed)))
-                {   // Dance move succeeds
-                    // Set target for other Dancer mons; set bit so that mon cannot activate Dancer off of its own move
+                {   // Sound move succeeds
+                    // Set target for other Concerto mons; set bit so that mon cannot activate Concerto off of its own move
                     if (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
                     {
                         gBattleScripting.savedBattler = gBattlerTarget | 0x4;
@@ -6356,6 +6367,8 @@ static void Cmd_moveend(void)
                     {
                         if (GetBattlerAbility(battler) == ABILITY_CONCERTO && !gSpecialStatuses[battler].concertoUsedMove)
                         {
+                            if (turnOnHitmarker)
+                                gHitMarker |= HITMARKER_ATTACKSTRING_PRINTED;
                             if (!nextConcerto || (gBattleMons[battler].speed < gBattleMons[nextConcerto & 0x3].speed))
                                 nextConcerto = battler | 0x4;
                         }
