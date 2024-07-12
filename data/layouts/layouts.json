@@ -1472,8 +1472,8 @@
       "height": 9,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokemonDayCare",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_FanClubDaycare",
       "border_filepath": "data/layouts/Route117_PokemonDayCare/border.bin",
       "blockdata_filepath": "data/layouts/Route117_PokemonDayCare/map.bin"
     },

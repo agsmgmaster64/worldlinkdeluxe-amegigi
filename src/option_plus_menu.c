@@ -413,15 +413,19 @@ static const u8 *const OptionTextDescription(void)
     default:
         return sText_Empty;
     case MENU_MAIN:
-        if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledMain[menuItem];
+        if (menuItem >= MENUITEM_MAIN_COUNT)
+            return sText_Empty;
+        //else if (!CheckConditions(menuItem))
+            //return sOptionMenuItemDescriptionsDisabledMain[menuItem];
         selection = sOptions->sel[menuItem];
         if (menuItem == MENUITEM_MAIN_TEXTSPEED || menuItem == MENUITEM_MAIN_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsMain[menuItem][selection];
     case MENU_CUSTOM:
-        if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledCustom[menuItem];
+        if (menuItem >= MENUITEM_CUSTOM_COUNT)
+            return sText_Empty;
+        //else if (!CheckConditions(menuItem))
+            //return sOptionMenuItemDescriptionsDisabledCustom[menuItem];
         selection = sOptions->sel_custom[menuItem];
         if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_MUSIC_STYLE)
             selection = 0;
