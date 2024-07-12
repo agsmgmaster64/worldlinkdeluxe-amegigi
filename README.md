@@ -2,6 +2,13 @@
 ***dont expect this to come along quickly; im rather slow***
 
 
+## info
+this is a personal fork of agsmgmaster64's World Link Deluxe project, based from RHH's pokeemerald-expansion, to help me facilitate an idea i had for a couple of years now
+will probably be heavily WIP for a pretty long while
+
+
+
+
 
 # worldlinkdeluxe-amesame
 
