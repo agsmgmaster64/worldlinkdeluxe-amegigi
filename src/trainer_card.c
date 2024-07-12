@@ -252,7 +252,7 @@ static const struct WindowTemplate sTrainerCardWindowTemplates[] =
         .tilemapTop = 5,
         .width = 9,
         .height = 10,
-        .paletteNum = 8,
+        .paletteNum = 10,
         .baseBlock = 0x150,
     },
     DUMMY_WIN_TEMPLATE

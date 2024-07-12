@@ -5103,7 +5103,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     #endif
         .sourceGame = SOURCE_OTHER,
         .speciesName = _("Porygon2"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_PORYGON2,
         .natDexNum = NATIONAL_DEX_DEFENSE_ICHIRIN,
         .categoryName = _("Virtual"),
         .height = 6,
@@ -5173,7 +5173,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .abilities = { ABILITY_ADAPTABILITY, ABILITY_DOWNLOAD, ABILITY_ANALYTIC },
         .sourceGame = SOURCE_HRTP,
         .speciesName = _("Porygon-Z"),
-        .cryId = CRY_PORYGON,
+        .cryId = CRY_PORYGON_Z,
         .natDexNum = NATIONAL_DEX_PORYGON_Z,
         .categoryName = _("Virtual"),
         .height = 9,
