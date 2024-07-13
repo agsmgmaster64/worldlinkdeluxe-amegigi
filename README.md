@@ -1,3 +1,16 @@
+# DISCLAIMER
+***dont expect this to come along quickly; im rather slow***
+
+
+## info
+this is a personal fork of agsmgmaster64's World Link Deluxe project, based from RHH's pokeemerald-expansion, to help me facilitate an idea i had for a couple of years now 
+
+will probably be heavily WIP for a pretty long while
+
+
+
+
+
 # worldlinkdeluxe-amesame
 
 ### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
