@@ -413,7 +413,7 @@ static const u8 *const OptionTextDescription(void)
     default:
         return sText_Empty;
     case MENU_MAIN:
-        if (menuItem >= MENUITEM_MAIN_COUNT)
+        if (menuItem >= MENUITEM_MAIN_COUNT) // safeguard to avoid compiler issues
             return sText_Empty;
         //else if (!CheckConditions(menuItem))
             //return sOptionMenuItemDescriptionsDisabledMain[menuItem];
@@ -422,7 +422,7 @@ static const u8 *const OptionTextDescription(void)
             selection = 0;
         return sOptionMenuItemDescriptionsMain[menuItem][selection];
     case MENU_CUSTOM:
-        if (menuItem >= MENUITEM_CUSTOM_COUNT)
+        if (menuItem >= MENUITEM_CUSTOM_COUNT) // safeguard to avoid compiler issues
             return sText_Empty;
         //else if (!CheckConditions(menuItem))
             //return sOptionMenuItemDescriptionsDisabledCustom[menuItem];
