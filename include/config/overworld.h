@@ -49,7 +49,7 @@
                                                   // (You should not use 48x48 sprites/tables for compressed gfx)
                                                   // 16x32, 32x32, 64x64 etc are fine
 // Follower Pokémon
-#define OW_FOLLOWERS_ENABLED           TRUE       // Enables follower Pokémon, HGSS style. Requires OW_POKEMON_OBJECT_EVENTS.
+#define OW_FOLLOWERS_ENABLED           FALSE      // Enables follower Pokémon, HGSS style. Requires OW_POKEMON_OBJECT_EVENTS. Note that additional scripting may be required for them to be fully supported!
 #define OW_FOLLOWERS_BOBBING           TRUE       // If true, follower pokemon will bob up and down during their idle & walking animations
 #define OW_FOLLOWERS_POKEBALLS         TRUE       // Followers will emerge from the pokeball they are stored in, instead of a normal pokeball
 
@@ -64,9 +64,18 @@
 #define OW_STORM_DRAIN              GEN_LATEST // In Gen8+, if a Pokémon with Storm Drain is leading the party, there is a 50% chance to encounter a Water-type Pokémon.
 #define OW_FLASH_FIRE               GEN_LATEST // In Gen8+, if a Pokémon with Flash Fire is leading the party, there is a 50% chance to encounter a Fire-type Pokémon.
 
+// These generational defines only make a distinction for OW_ALTERED_TIME_RATIO
+#define GEN_8_PLA                       GEN_LATEST + 2
+
+//Time
+#define OW_TIMES_OF_DAY                 GEN_LATEST // Different generations have the times of day change at different times.
+#define OW_USE_FAKE_RTC                 TRUE      // When TRUE, seconds on the in-game clock will only advance once every 60 playTimeVBlanks (every 60 frames).
+#define OW_ALTERED_TIME_RATIO           GEN_LATEST // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC. In GEN_9, it is 20 seconds. This has no effect if OW_USE_FAKE_RTC is FALSE.
+
 // Overworld flags
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
 // Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag to toggle the feature.
+#define OW_FLAG_PAUSE_TIME          0  // If this flag is set and OW_USE_FAKE_RTC is enabled, seconds on the in-game clock will not advance.
 #define OW_FLAG_NO_ENCOUNTER        FLAG_NO_WILD_BATTLES  // If this flag is set, wild encounters will be disabled.
 #define OW_FLAG_NO_TRAINER_SEE      FLAG_TRAINERS_BLIND  // If this flag is set, trainers will not battle the player unless they're talked to.
 #define OW_FLAG_NO_COLLISION        FLAG_COLLISIONS_DISABLED  // If this flag is set, the player will be able to walk over tiles with collision. Mainly intended for debugging purposes.
@@ -90,14 +99,6 @@
 #define OW_POPUP_BW_COLOR          OW_POPUP_BW_COLOR_BLACK  // B2W2 use different colors for their map pop-ups.
 #define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_NONE    // Determines what type of time is shown.
 #define OW_POPUP_BW_ALPHA_BLEND    FALSE                    // Enables alpha blending/transparency for the pop-ups. Mainly intended to be used with the black color option.
-
-// These generational defines only make a distinction for OW_ALTERED_TIME_RATIO
-#define GEN_8_PLA                       GEN_LATEST + 2
-
-//Time
-#define OW_TIMES_OF_DAY                 GEN_LATEST // Different generations have the times of day change at different times.
-#define OW_USE_FAKE_RTC                 TRUE      // When TRUE, seconds on the in-clock will only advance once every 60 playTimeVBlanks (every 60 frames).
-#define OW_ALTERED_TIME_RATIO           GEN_LATEST // In GEN_8_PLA, the time in game moves forward 60 seconds for every second in the RTC. In GEN_9, it is 20 seconds. This has no effect if OW_USE_FAKE_RTC is FALSE.
 
 // Pokémon Center
 #define OW_IGNORE_EGGS_ON_HEAL     GEN_LATEST               // In Gen 4+, the nurse in the Pokémon Center does not heal Eggs on healing machine.

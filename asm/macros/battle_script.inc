@@ -839,7 +839,7 @@
 	.byte 0x95
 	.endm
 
-	.macro weatherdamage
+	.macro unused_96
 	.byte 0x96
 	.endm
 
@@ -1358,15 +1358,15 @@
 	.macro restoretarget
 	callnative BS_RestoreTarget
 	.endm
-	
+
 	.macro saveattacker
 	callnative BS_SaveAttacker
 	.endm
-	
+
 	.macro restoreattacker
 	callnative BS_RestoreAttacker
 	.endm
-	
+
 	.macro metalburstdamagecalculator failInstr:req
 	callnative BS_CalcMetalBurstDmg
 	.4byte \failInstr
@@ -1570,10 +1570,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro damagenontypes
-	callnative BS_DamageNonTypes
-	.endm
-
 	.macro trysetstatus1, ptr:req
 	callnative BS_TrySetStatus1
 	.4byte \ptr
@@ -1661,7 +1657,7 @@
 	.macro removeweather
 	callnative BS_RemoveWeather
 	.endm
-	
+
 	.macro applyterastallization
 	callnative BS_ApplyTerastallization
 	.endm
