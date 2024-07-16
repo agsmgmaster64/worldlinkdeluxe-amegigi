@@ -99,4 +99,7 @@
 // Set this to either TRUE or FALSE.
 #define MUDSKIP_SHOP_UI
 
+// Naming Screen
+#define AUTO_LOWERCASE_KEYBOARD      GEN_LATEST  // Starting in GEN_6, after entering the first uppercase character, the keyboard switches to lowercase letters.
+
 #endif // GUARD_CONFIG_GENERAL_H
