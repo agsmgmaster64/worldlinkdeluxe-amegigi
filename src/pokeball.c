@@ -1223,6 +1223,20 @@ static void SpriteCB_ReleaseMon2FromBall(struct Sprite *sprite)
 
 #undef HIBYTE
 
+static void SpriteCB_OpponentMonSendOut(struct Sprite *sprite)
+{
+    sprite->data[0]++;
+    if (sprite->data[0] > 15)
+    {
+        sprite->data[0] = 0;
+        if (IsDoubleBattle() && gBattleSpritesDataPtr->animationData->introAnimActive
+         && sprite->sBattler == GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))
+            sprite->callback = SpriteCB_ReleaseMon2FromBall;
+        else
+            sprite->callback = SpriteCB_ReleaseMonFromBall;
+    }
+}
+
 #undef sBattler
 
 static u8 AnimateBallOpenParticlesForPokeball(u8 x, u8 y, u8 kindOfStars, u8 subpriority)
