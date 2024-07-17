@@ -211,6 +211,14 @@ static const u16 sCYoumuEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCYoumuOldEggMoveLearnset[] = {
+    MOVE_DESTINY_BOND,
+    MOVE_FORESIGHT,
+    MOVE_LOW_KICK,
+    MOVE_MUD_BOMB,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCYuyukoEggMoveLearnset[] = {
     MOVE_SHADOW_DANCE,
     MOVE_LEAF_BLADE,

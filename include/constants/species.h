@@ -510,7 +510,7 @@
 #define SPECIES_LAST_WORD_LETTY                         506 // LLetty
 #define SPECIES_LAST_WORD_KANAKO                        507
 #define SPECIES_STOUTLAND                               508 // Ayakashi
-#define SPECIES_PURRLOIN                                509
+#define SPECIES_PURRLOIN                                509 // Basiney
 #define SPECIES_LIEPARD                                 510
 #define SPECIES_PANSAGE                                 511
 #define SPECIES_SIMISAGE                                512
@@ -1068,12 +1068,12 @@
 #define SPECIES_NORMAL_WAKASAGIHIME_GOLD                1013
 #define SPECIES_DEFENSE_WAKASAGIHIME_GOLD               1014
 #define SPECIES_PLACEHOLD_WAKASAGIHIME_GOLD             1015 // Placeholder
-#define SPECIES_PIKACHU_HOENN_CAP                       1016
-#define SPECIES_PIKACHU_SINNOH_CAP                      1017
-#define SPECIES_PIKACHU_UNOVA_CAP                       1018
-#define SPECIES_PIKACHU_KALOS_CAP                       1019
-#define SPECIES_PIKACHU_ALOLA_CAP                       1020
-#define SPECIES_PIKACHU_PARTNER_CAP                     1021
+#define SPECIES_CHIBI_YOUMU_OLD                         1016
+#define SPECIES_NORMAL_YOUMU_OLD                        1017
+#define SPECIES_EXTRA_YOUMU_OLD                         1018
+#define SPECIES_CHIBI_REISEN_OLD                        1019
+#define SPECIES_NORMAL_REISEN_OLD                       1020
+#define SPECIES_EXTRA_REISEN_OLD                        1021
 #define SPECIES_PIKACHU_WORLD_CAP                       1022
 #define SPECIES_ATTACK_NITORI_SPIKY_EARED               1023
 #define SPECIES_UNOWN_B                                 1024
@@ -1701,15 +1701,8 @@
 #define SPECIES_NINETALES_ALOLA                         SPECIES_NINETALES_ALOLAN
 #define SPECIES_ORBEETLE_GMAX                           SPECIES_ORBEETLE_GIGANTAMAX
 #define SPECIES_PERSIAN_ALOLA                           SPECIES_PERSIAN_ALOLAN
-#define SPECIES_PIKACHU_ALOLA                           SPECIES_PIKACHU_ALOLA_CAP
 #define SPECIES_PIKACHU_GMAX                            SPECIES_PIKACHU_GIGANTAMAX
-#define SPECIES_PIKACHU_HOENN                           SPECIES_PIKACHU_HOENN_CAP
-#define SPECIES_PIKACHU_KALOS                           SPECIES_PIKACHU_KALOS_CAP
-//#define SPECIES_PIKACHU_PARTNER                       SPECIES_PIKACHU_PARTNER_CAP
-#define SPECIES_PIKACHU_SINNOH                          SPECIES_PIKACHU_SINNOH_CAP
 #define SPECIES_PIKACHU_STARTER                         SPECIES_PIKACHU_PARTNER
-#define SPECIES_PIKACHU_UNOVA                           SPECIES_PIKACHU_UNOVA_CAP
-#define SPECIES_PIKACHU_WORLD                           SPECIES_PIKACHU_WORLD_CAP
 #define SPECIES_PONYTA_GALAR                            SPECIES_PONYTA_GALARIAN
 #define SPECIES_QWILFISH_HISUI                          SPECIES_QWILFISH_HISUIAN
 #define SPECIES_RAPIDASH_GALAR                          SPECIES_RAPIDASH_GALARIAN
