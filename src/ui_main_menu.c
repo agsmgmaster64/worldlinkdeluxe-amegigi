@@ -347,6 +347,7 @@ void Task_OpenMainMenu(u8 taskId)
         {                //  where the UI is initialized by swapping a task func with this one 
             case HAS_NO_SAVED_GAME:
             default:
+                gExitStairsMovementDisabled = FALSE;
                 SetMainCallback2(CB2_NewGameBirchSpeech_FromNewMainMenu);
                 DestroyTask(taskId);
                 return;
@@ -893,10 +894,12 @@ static void Task_MainMenuMain(u8 taskId)
         switch(sSelectedOption)
         {
             case HW_WIN_CONTINUE:
+                gExitStairsMovementDisabled = FALSE;
                 sMainMenuDataPtr->savedCallback = CB2_ContinueSavedGame;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;
             case HW_WIN_NEW_GAME:
+                gExitStairsMovementDisabled = FALSE;
                 sMainMenuDataPtr->savedCallback = CB2_NewGameBirchSpeech_FromNewMainMenu;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;

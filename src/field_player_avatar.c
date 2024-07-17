@@ -4,10 +4,12 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "field_camera.h"
+#include "field_control_avatar.h"
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
+#include "m4a.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -31,7 +33,6 @@
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
 #include "constants/metatile_behaviors.h"
-#include "m4a.h"
 
 #define NUM_FORCED_MOVEMENTS 22
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -690,6 +691,7 @@ static void PlayerNotOnBikeTurningInPlace(u8 direction, u16 heldKeys)
 static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
 {
     u8 collision = CheckForPlayerAvatarCollision(direction);
+    bool32 isPlayerOnStairs;
 
     if (collision)
     {
@@ -697,6 +699,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         {
             PlayerJumpLedge(direction);
             return;
+        }
+        else if (collision == COLLISION_DIRECTIONAL_STAIR_WARP)
+        {
+            PlayerFaceDirection(direction);
         }
         else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
         {
@@ -726,16 +732,45 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
+    isPlayerOnStairs = PlayerIsMovingOnStairs(direction);
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
     {
-        PlayerRun(direction);
+        if (isPlayerOnStairs)
+            PlayerSetAnimId(GetPlayerRunOnStairsMovementAction(direction), COPY_MOVE_WALK);
+        else
+            PlayerRun(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
     else
     {
-        PlayerWalkNormal(direction);
+        if (isPlayerOnStairs)
+            PlayerSetAnimId(GetWalkOnStairsMovementAction(direction), COPY_MOVE_WALK);
+        else
+            PlayerWalkNormal(direction);
+    }
+}
+
+bool32 PlayerIsMovingOnStairs(u8 direction)
+{
+    struct ObjectEvent *objectEvent;
+    s16 x, y;
+
+    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    x = objectEvent->currentCoords.x;
+    y = objectEvent->currentCoords.y;
+    switch (direction)
+    {
+    case DIR_SOUTH:
+        MoveCoords(DIR_SOUTH, &x, &y);
+    case DIR_NORTH:
+        if (MapGridGetMetatileBehaviorAt(x, y) == MB_STAIRS)
+            return TRUE;
+        else
+            return FALSE;
+    default:
+        return FALSE;
     }
 }
 
@@ -743,11 +778,15 @@ static u8 CheckForPlayerAvatarCollision(u8 direction)
 {
     s16 x, y;
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    u8 metatileBehavior;
 
     x = playerObjEvent->currentCoords.x;
     y = playerObjEvent->currentCoords.y;
+    metatileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    if (IsDirectionalStairWarpMetatileBehavior(metatileBehavior, direction))
+        return COLLISION_DIRECTIONAL_STAIR_WARP;
     MoveCoords(direction, &x, &y);
-    return CheckForObjectEventCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
+    return CheckForObjectEventCollision(playerObjEvent, x, y, direction, metatileBehavior);
 }
 
 static u8 CheckForPlayerAvatarStaticCollision(u8 direction)

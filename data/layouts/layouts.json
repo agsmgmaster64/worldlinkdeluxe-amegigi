@@ -572,7 +572,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route132/border.bin",
       "blockdata_filepath": "data/layouts/Route132/map.bin"
@@ -584,7 +584,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/Route133/border.bin",
       "blockdata_filepath": "data/layouts/Route133/map.bin"
@@ -1628,7 +1628,7 @@
       "height": 47,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MtChimney/border.bin",
       "blockdata_filepath": "data/layouts/MtChimney/map.bin"
@@ -1640,8 +1640,8 @@
       "height": 19,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Facility",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PokemonTower",
       "border_filepath": "data/layouts/MtPyre_1F/border.bin",
       "blockdata_filepath": "data/layouts/MtPyre_1F/map.bin"
     },
@@ -3513,15 +3513,15 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
-      "secondary_tileset": "gTileset_Lavaridge",
+      "secondary_tileset": "gTileset_RG_Cave",
       "border_filepath": "data/layouts/FieryPath/border.bin",
       "blockdata_filepath": "data/layouts/FieryPath/map.bin"
     },
     {
       "id": "LAYOUT_RUSTBORO_CITY_FLAT2_1F",
       "name": "RustboroCity_Flat2_1F_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 16,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
@@ -3620,7 +3620,7 @@
       "height": 51,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MtPyre_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/MtPyre_Exterior/map.bin"
