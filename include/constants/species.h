@@ -437,8 +437,8 @@
 #define SPECIES_CHIBI_SHINKI                            433
 #define SPECIES_NORMAL_SHINKI                           434
 #define SPECIES_PLACEHOLD_SHINKI                        435 // Placeholder
-#define SPECIES_BRONZOR                                 436 // Akyuu
-#define SPECIES_BRONZONG                                437 // Rinnosuke
+#define SPECIES_AKYUU                                   436 // Akyuu
+#define SPECIES_RINNOSUKE                               437 // Rinnosuke
 #define SPECIES_BONSLY                                  438 // Youki
 #define SPECIES_MIME_JR                                 439 // Tori
 #define SPECIES_HAPPINY                                 440 // Namazu

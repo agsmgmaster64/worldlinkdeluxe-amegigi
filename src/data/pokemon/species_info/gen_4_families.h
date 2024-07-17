@@ -569,7 +569,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BUNEARY
 
 #if P_FAMILY_BRONZOR
-    [SPECIES_BRONZOR] =
+    [SPECIES_AKYUU] =
     {
         .baseHP        = 57,
         .baseAttack    = 24,
@@ -629,10 +629,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sBronzorLevelUpLearnset,
         .teachableLearnset = sBronzorTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_BRONZONG}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_RINNOSUKE}),
     },
 
-    [SPECIES_BRONZONG] =
+    [SPECIES_RINNOSUKE] =
     {
         .baseHP        = 67,
         .baseAttack    = 89,

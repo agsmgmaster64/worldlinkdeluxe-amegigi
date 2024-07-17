@@ -9588,8 +9588,8 @@ static inline u32 CalcAttackStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 m
          || atkBaseSpeciesId == SPECIES_ATTACK_HINA || atkBaseSpeciesId == SPECIES_DEFENSE_HINA))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
-    case HOLD_EFFECT_DEEP_SEA_TOOTH:
-        if (gBattleMons[battlerAtk].species == SPECIES_CHIBI_KIRISAME && IS_MOVE_PHYSICAL(move))
+    case HOLD_EFFECT_KUSANAGI:
+        if (gBattleMons[battlerAtk].species == SPECIES_RINNOSUKE && IS_MOVE_PHYSICAL(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_ICY_BALL:
@@ -9739,8 +9739,8 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     // target's hold effects
     switch (holdEffectDef)
     {
-    case HOLD_EFFECT_DEEP_SEA_SCALE:
-        if (gBattleMons[battlerDef].species == SPECIES_CHIBI_KIRISAME && usesDefStat)
+    case HOLD_EFFECT_YATA_MIRROR:
+        if (gBattleMons[battlerDef].species == SPECIES_RINNOSUKE && usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_EVIOLITE:
