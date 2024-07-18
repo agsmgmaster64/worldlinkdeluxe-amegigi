@@ -330,12 +330,6 @@ extern const u8 gText_BattleStyle[];
 extern const u8 gText_Sound[];
 extern const u8 gText_Frame[];
 extern const u8 gText_OptionMenuCancel[];
-extern const u8 gText_Font[];               //tx_optionsPlus
-extern const u8 gText_OptionFontFireRed[];  //tx_optionsPlus
-extern const u8 gText_OptionFontEmerald[];  //tx_optionsPlus
-extern const u8 gText_OptionMatchCalls[];   //tx_optionsPlus
-extern const u8 gText_OptionMusicStyle[];   //tx_optionsPlus
-extern const u8 gText_OptionUniqueColors[];   //tx_optionsPlus
 extern const u8 gText_OptionMenuSave[];
 extern const u8 gText_ButtonMode[];
 
@@ -3094,5 +3088,9 @@ extern const u8 gText_PlantBerry[];
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
+
+// FRLG whiteout
+extern const u8 gText_PlayerScurriedToCenter[];
+extern const u8 gText_PlayerScurriedBackHome[];
 
 #endif // GUARD_STRINGS_H

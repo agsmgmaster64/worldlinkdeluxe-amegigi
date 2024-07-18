@@ -522,7 +522,7 @@ struct SaveBlock2
              u32 optionsExpBarSpeed:4;  //tx_optionsPlus
              u32 optionsDisableMatchCall:1; //tx_optionsPlus
              u32 optionsCurrentFont:1;  //tx_optionsPlus
-             u32 optionsMusicStyle:3; //tx_optionsPlus
+             u32 optionsAnimSpeed:3; //tx_optionsPlus
              u32 optionsUniqueColors:1; //tx_optionsPlus
              u32 optionsSummaryIvView:1; //tx_optionsPlus
              u32 optionsMonAnimations:1; //tx_optionsPlus

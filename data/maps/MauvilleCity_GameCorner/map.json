@@ -196,8 +196,8 @@
       "x": 15,
       "y": 2,
       "elevation": 3,
-      "dest_map": "MAP_MAUVILLE_CITY",
-      "dest_warp_id": "5"
+      "dest_map": "MAP_MAUVILLE_CITY_GAME_CORNER_BASEMENT",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

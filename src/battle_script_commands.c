@@ -4400,15 +4400,7 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong
                     && !FlagGet(FLAG_OVERRIDE_MUSIC))
                 {
-                    switch (gSaveBlock2Ptr->optionsMusicStyle)
-                    {
-                    case OPTIONS_MUSIC_STYLE_VANILLA:
-                        PlayBGM(MUS_VICTORY_WILD);
-                        break;
-                    default:
-                        PlayBGM(MUS_WLD_VICTORY_WILD);
-                        break;
-                    }
+                    PlayBGM(MUS_VICTORY_WILD);
                     gBattleStruct->wildVictorySong++;
                 }
 
@@ -9538,41 +9530,11 @@ static void Cmd_various(void)
         {
             if (FlagGet(FLAG_DOISE_BATTLE))
             {
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
-                {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
-                    break;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
-                default:
-                    PlayBGM(MUS_VICTORY_GYM_LEADER);
-                    break;
-                }
+                PlayBGM(MUS_VICTORY_GYM_LEADER);
             }
             else
             {
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
-                {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
-                    break;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
-                    break;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
-                default:
-                    BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_VICTORY_TRAINER, TRUE);
-                    break;
-                }
+                BtlController_EmitPlayFanfareOrBGM(battler, BUFFER_A, MUS_WLD_VICTORY_TRAINER, TRUE);
                 MarkBattlerForControllerExec(battler);
             }
         }
