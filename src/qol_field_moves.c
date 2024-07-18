@@ -169,22 +169,7 @@ u8 FldEff_UseSurfTool(void)
 {
     u8 taskId = CreateTask(Task_SurfToolFieldEffect, 0);
     Overworld_ClearSavedMusic();
-    switch (gSaveBlock2Ptr->optionsMusicStyle)
-    {
-    case OPTIONS_MUSIC_STYLE_DEFAULT:
-        Overworld_ChangeMusicTo(MUS_WLD_SURF);
-        break;
-    case OPTIONS_MUSIC_STYLE_ZGS:
-        Overworld_ChangeMusicTo(MUS_ZGS_SURF);
-        break;
-    case OPTIONS_MUSIC_STYLE_ALTERNATE:
-        Overworld_ChangeMusicTo(MUS_WLD_SURF);
-        break;
-    case OPTIONS_MUSIC_STYLE_VANILLA:
-    default:
-        Overworld_ChangeMusicTo(MUS_SURF);
-        break;
-    }
+    Overworld_ChangeMusicTo(MUS_WLD_SURF);
     return FALSE;
 }
 

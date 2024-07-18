@@ -5099,18 +5099,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
-            switch (gSaveBlock2Ptr->optionsMusicStyle)
-            {
-            case OPTIONS_MUSIC_STYLE_DEFAULT:
-                return MUS_WLD_VS_GYM_LEADER;
-            case OPTIONS_MUSIC_STYLE_ZGS:
-                return MUS_ZGS_VS_GYM_LEADER;
-            case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                return MUS_WLD_VS_GYM_LEADER;
-            case OPTIONS_MUSIC_STYLE_VANILLA:
-            default:
-                return MUS_VS_GYM_LEADER;
-            }
+            return MUS_WLD_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
@@ -5118,18 +5107,7 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(gTrainerBattleOpponent_A), gText_BattleWallyName))
             {
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
-                {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    return MUS_WLD_VS_TRAINER;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    return MUS_ZGS_VS_TRAINER;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    return MUS_ZGS_VS_DREAM_TRAINER;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
-                default:
-                    return MUS_VS_TRAINER;
-                }
+                return MUS_WLD_VS_TRAINER;
             }
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
@@ -5143,34 +5121,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            switch (gSaveBlock2Ptr->optionsMusicStyle)
-            {
-            case OPTIONS_MUSIC_STYLE_DEFAULT:
-                return MUS_WLD_VS_TRAINER;
-            case OPTIONS_MUSIC_STYLE_ZGS:
-                return MUS_ZGS_VS_TRAINER;
-            case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                return MUS_ZGS_VS_DREAM_TRAINER;
-            case OPTIONS_MUSIC_STYLE_VANILLA:
-            default:
-                return MUS_VS_TRAINER;
-            }
+            return MUS_WLD_VS_TRAINER;
         }
     }
     else
     {
-        switch (gSaveBlock2Ptr->optionsMusicStyle)
-        {
-        case OPTIONS_MUSIC_STYLE_DEFAULT:
-            return MUS_WLD_VS_WILD;
-        case OPTIONS_MUSIC_STYLE_ZGS:
-            return MUS_ZGS_VS_WILD;
-        case OPTIONS_MUSIC_STYLE_ALTERNATE:
-            return MUS_ZGS_VS_DREAM_WILD;
-        case OPTIONS_MUSIC_STYLE_VANILLA:
-        default:
-            return MUS_VS_WILD;
-        }
+        return MUS_WLD_VS_WILD;
     }
 }
 

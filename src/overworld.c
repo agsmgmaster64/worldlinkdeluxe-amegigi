@@ -1298,22 +1298,7 @@ void Overworld_PlaySpecialMapMusic(void)
         }
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
         {
-            switch (gSaveBlock2Ptr->optionsMusicStyle)
-            {
-            case OPTIONS_MUSIC_STYLE_DEFAULT:
-                music = MUS_WLD_SURF;
-                break;
-            case OPTIONS_MUSIC_STYLE_ZGS:
-                music = MUS_ZGS_SURF;
-                break;
-            case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                music = MUS_WLD_SURF;
-                break;
-            case OPTIONS_MUSIC_STYLE_VANILLA:
-            default:
-                music = MUS_SURF;
-                break;
-            }
+            music = MUS_WLD_SURF;
         }
     }
 
@@ -1350,22 +1335,7 @@ static void TransitionMapMusic(void)
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
             {
-                switch (gSaveBlock2Ptr->optionsMusicStyle)
-                {
-                case OPTIONS_MUSIC_STYLE_DEFAULT:
-                    newMusic = MUS_WLD_SURF;
-                    break;
-                case OPTIONS_MUSIC_STYLE_ZGS:
-                    newMusic = MUS_ZGS_SURF;
-                    break;
-                case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                    newMusic = MUS_WLD_SURF;
-                    break;
-                case OPTIONS_MUSIC_STYLE_VANILLA:
-                default:
-                    newMusic = MUS_SURF;
-                    break;
-                }
+                newMusic = MUS_WLD_SURF;
             }
         }
         if (newMusic != currentMusic)

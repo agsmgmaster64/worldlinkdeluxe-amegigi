@@ -44,7 +44,7 @@ enum
     MENUITEM_CUSTOM_EXP_BAR,
     MENUITEM_CUSTOM_FONT,
     MENUITEM_CUSTOM_MATCHCALL,
-    MENUITEM_CUSTOM_MUSIC_STYLE,
+    MENUITEM_CUSTOM_ANIM_SPEED,
     MENUITEM_CUSTOM_UNIQUE_COLORS,
     MENUITEM_CUSTOM_IV_VIEW,
     MENUITEM_CUSTOM_MON_ANIMATIONS,
@@ -168,7 +168,7 @@ static void DrawChoices_UnitSystem(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
-static void DrawChoices_MusicStyle(int selection, int y);
+static void DrawChoices_AnimSpeed(int selection, int y);
 static void DrawChoices_UniqueColors(int selection, int y);
 static void DrawChoices_IvView(int selection, int y);
 static void DrawChoices_MonAnimations(int selection, int y);
@@ -224,7 +224,7 @@ struct // MENU_CUSTOM
     [MENUITEM_CUSTOM_EXP_BAR]        = {DrawChoices_BarSpeed,      ProcessInput_Options_Eleven},
     [MENUITEM_CUSTOM_FONT]           = {DrawChoices_Font,          ProcessInput_Options_Two}, 
     [MENUITEM_CUSTOM_MATCHCALL]      = {DrawChoices_MatchCall,     ProcessInput_Options_Two},
-    [MENUITEM_CUSTOM_MUSIC_STYLE]    = {DrawChoices_MusicStyle,    ProcessInput_Options_Four},
+    [MENUITEM_CUSTOM_ANIM_SPEED]     = {DrawChoices_AnimSpeed,     ProcessInput_Options_Four},
     [MENUITEM_CUSTOM_UNIQUE_COLORS]  = {DrawChoices_UniqueColors,  ProcessInput_Options_Two},
     [MENUITEM_CUSTOM_IV_VIEW]        = {DrawChoices_IvView,        ProcessInput_Options_Two},
     [MENUITEM_CUSTOM_MON_ANIMATIONS] = {DrawChoices_MonAnimations, ProcessInput_Options_Two},
@@ -232,9 +232,13 @@ struct // MENU_CUSTOM
 };
 
 // Menu left side option names text
+static const u8 sText_UnitSystem[]  = _("UNIT SYSTEM");
 static const u8 sText_HpBar[]       = _("HP BAR");
 static const u8 sText_ExpBar[]      = _("EXP BAR");
-static const u8 sText_UnitSystem[]  = _("UNIT SYSTEM");
+static const u8 sText_Font[]        = _("FONT");
+static const u8 sText_MatchCalls[]  = _("OVERWORLD CALLS");    //tx_optionsPlus
+static const u8 sText_AnimSpeed[]   = _("ANIM. SPEED");    //tx_optionsPlus
+static const u8 sText_UniqueColors[] = _("UNIQUE COLORS");    //tx_optionsPlus
 static const u8 sText_IvView[]      = _("IV VIEW");
 static const u8 sText_Animations[]  = _("ANIMATIONS");
 
@@ -254,10 +258,10 @@ static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_CUSTOM_COUNT] =
 {
     [MENUITEM_CUSTOM_HP_BAR]         = sText_HpBar,
     [MENUITEM_CUSTOM_EXP_BAR]        = sText_ExpBar,
-    [MENUITEM_CUSTOM_FONT]           = gText_Font,
-    [MENUITEM_CUSTOM_MATCHCALL]      = gText_OptionMatchCalls,
-    [MENUITEM_CUSTOM_MUSIC_STYLE]    = gText_OptionMusicStyle,
-    [MENUITEM_CUSTOM_UNIQUE_COLORS]  = gText_OptionUniqueColors,
+    [MENUITEM_CUSTOM_FONT]           = sText_Font,
+    [MENUITEM_CUSTOM_MATCHCALL]      = sText_MatchCalls,
+    [MENUITEM_CUSTOM_ANIM_SPEED]     = sText_AnimSpeed,
+    [MENUITEM_CUSTOM_UNIQUE_COLORS]  = sText_UniqueColors,
     [MENUITEM_CUSTOM_IV_VIEW]        = sText_IvView,
     [MENUITEM_CUSTOM_MON_ANIMATIONS] = sText_Animations,
     [MENUITEM_CUSTOM_CANCEL]         = gText_OptionMenuSave,
@@ -303,7 +307,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_CUSTOM_EXP_BAR:         return TRUE;
         case MENUITEM_CUSTOM_FONT:            return TRUE;
         case MENUITEM_CUSTOM_MATCHCALL:       return TRUE;
-        case MENUITEM_CUSTOM_MUSIC_STYLE:     return TRUE;
+        case MENUITEM_CUSTOM_ANIM_SPEED:      return TRUE;
         case MENUITEM_CUSTOM_UNIQUE_COLORS:   return TRUE;
         case MENUITEM_CUSTOM_IV_VIEW:         return TRUE;
         case MENUITEM_CUSTOM_MON_ANIMATIONS:  return TRUE;
@@ -353,7 +357,7 @@ static const u8 sText_Desc_BikeOn[]             = _("Enables the BIKE theme when
 static const u8 sText_Desc_FontType[]           = _("Choose the font design.");
 static const u8 sText_Desc_OverworldCallsOn[]   = _("TRAINERs will be able to call you,\noffering rematches and info.");
 static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.\nSpecial events will still occur.");
-static const u8 sText_Desc_MusicType[]          = _("Choose the music used.");
+static const u8 sText_Desc_AnimSpeed[]          = _("Choose the speed for battle\nanimations.");
 static const u8 sText_Desc_UniqueColorsOn[]     = _("Enables unique colors for\nPuppets.");
 static const u8 sText_Desc_UniqueColorsOff[]    = _("Disables unique colors for\nPuppets.");
 static const u8 sText_Desc_IvViewOn[]           = _("IVs can be viewed in the\nsummary.");
@@ -367,7 +371,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_CUSTOM_COUNT][
     [MENUITEM_CUSTOM_EXP_BAR]        = {sText_Desc_BattleExpBar,       sText_Empty},
     [MENUITEM_CUSTOM_FONT]           = {sText_Desc_FontType,           sText_Desc_FontType},
     [MENUITEM_CUSTOM_MATCHCALL]      = {sText_Desc_OverworldCallsOn,   sText_Desc_OverworldCallsOff},
-    [MENUITEM_CUSTOM_MUSIC_STYLE]    = {sText_Desc_MusicType,          sText_Empty},
+    [MENUITEM_CUSTOM_ANIM_SPEED]     = {sText_Desc_AnimSpeed,          sText_Empty},
     [MENUITEM_CUSTOM_UNIQUE_COLORS]  = {sText_Desc_UniqueColorsOn,     sText_Desc_UniqueColorsOff},
     [MENUITEM_CUSTOM_IV_VIEW]        = {sText_Desc_IvViewOn,           sText_Desc_IvViewOff},
     [MENUITEM_CUSTOM_MON_ANIMATIONS] = {sText_Desc_MonAnimationsOn,    sText_Desc_MonAnimationsOff},
@@ -396,7 +400,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledCustom[MENUITEM_CUSTOM
     [MENUITEM_CUSTOM_EXP_BAR]     = sText_Empty,
     [MENUITEM_CUSTOM_FONT]        = sText_Empty,
     [MENUITEM_CUSTOM_MATCHCALL]   = sText_Empty,
-    [MENUITEM_CUSTOM_MUSIC_STYLE] = sText_Empty,
+    [MENUITEM_CUSTOM_ANIM_SPEED]  = sText_Empty,
     [MENUITEM_CUSTOM_UNIQUE_COLORS] = sText_Empty,
     [MENUITEM_CUSTOM_IV_VIEW]     = sText_Empty,
     [MENUITEM_CUSTOM_MON_ANIMATIONS] = sText_Empty,
@@ -427,7 +431,7 @@ static const u8 *const OptionTextDescription(void)
         //else if (!CheckConditions(menuItem))
             //return sOptionMenuItemDescriptionsDisabledCustom[menuItem];
         selection = sOptions->sel_custom[menuItem];
-        if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_MUSIC_STYLE)
+        if (menuItem == MENUITEM_CUSTOM_HP_BAR || menuItem == MENUITEM_CUSTOM_EXP_BAR || menuItem == MENUITEM_CUSTOM_ANIM_SPEED)
             selection = 0;
         return sOptionMenuItemDescriptionsCustom[menuItem][selection];
     }
@@ -657,7 +661,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_custom[MENUITEM_CUSTOM_EXP_BAR]     = gSaveBlock2Ptr->optionsExpBarSpeed;
         sOptions->sel_custom[MENUITEM_CUSTOM_FONT]        = gSaveBlock2Ptr->optionsCurrentFont;
         sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
-        sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE] = gSaveBlock2Ptr->optionsMusicStyle;
+        sOptions->sel_custom[MENUITEM_CUSTOM_ANIM_SPEED]  = gSaveBlock2Ptr->optionsAnimSpeed;
         sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
         sOptions->sel_custom[MENUITEM_CUSTOM_IV_VIEW]     = gSaveBlock2Ptr->optionsSummaryIvView;
         sOptions->sel_custom[MENUITEM_CUSTOM_MON_ANIMATIONS] = gSaveBlock2Ptr->optionsMonAnimations;
@@ -848,7 +852,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->sel_custom[MENUITEM_CUSTOM_EXP_BAR];
     gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_custom[MENUITEM_CUSTOM_FONT];
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_custom[MENUITEM_CUSTOM_MATCHCALL];
-    gSaveBlock2Ptr->optionsMusicStyle       = sOptions->sel_custom[MENUITEM_CUSTOM_MUSIC_STYLE];
+    gSaveBlock2Ptr->optionsAnimSpeed        = sOptions->sel_custom[MENUITEM_CUSTOM_ANIM_SPEED];
     gSaveBlock2Ptr->optionsUniqueColors     = sOptions->sel_custom[MENUITEM_CUSTOM_UNIQUE_COLORS];
     gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->sel_custom[MENUITEM_CUSTOM_IV_VIEW];
     gSaveBlock2Ptr->optionsMonAnimations    = sOptions->sel_custom[MENUITEM_CUSTOM_MON_ANIMATIONS];
@@ -1187,14 +1191,17 @@ static void DrawChoices_FrameType(int selection, int y)
     DrawOptionMenuChoice(text, 128, y, 1, active);
 }
 
+static const u8 sText_FontEmerald[] = _("EMERALD");    //tx_optionsPlus
+static const u8 sText_FontFireRed[] = _("FRLG");        //tx_optionsPlus
+
 static void DrawChoices_Font(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_CUSTOM_FONT);
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_OptionFontEmerald, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_OptionFontFireRed, GetStringRightAlignXOffset(1, gText_OptionFontFireRed, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_FontEmerald, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_FontFireRed, GetStringRightAlignXOffset(1, sText_FontFireRed, 198), y, styles[1], active);
 }
 
 static void DrawChoices_MatchCall(int selection, int y)
@@ -1207,16 +1214,16 @@ static void DrawChoices_MatchCall(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static const u8 sText_MusicDefault[] = _("DEFAULT");
-static const u8 sText_MusicZGS[] = _("ZGS");
-static const u8 sText_MusicAlt[] = _("ALT");
-static const u8 sText_MusicVanilla[] = _("VANILLA");
-static const u8 *const sMusicStyleStrings[] = {sText_MusicDefault, sText_MusicZGS, sText_MusicAlt, sText_MusicVanilla};
+static const u8 sText_AnimSpeed1[] = _("1x");
+static const u8 sText_AnimSpeed2[] = _("2x");
+static const u8 sText_AnimSpeed3[] = _("3x");
+static const u8 sText_AnimSpeed4[] = _("4x");
+static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
 
-static void DrawChoices_MusicStyle(int selection, int y)
+static void DrawChoices_AnimSpeed(int selection, int y)
 {
-    bool8 active = CheckConditions(MENUITEM_CUSTOM_MUSIC_STYLE);
-    DrawChoices_Options_Four(sMusicStyleStrings, selection, y, active);
+    bool8 active = CheckConditions(MENUITEM_CUSTOM_ANIM_SPEED);
+    DrawChoices_Options_Four(sAnimSpeedStrings, selection, y, active);
 }
 
 static void DrawChoices_UniqueColors(int selection, int y)

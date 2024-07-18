@@ -1732,16 +1732,16 @@ static void CB2_HandleStartMultiBattle(void)
 
 void BattleMainCB2(void)
 {
-    u32 speedScale = Rogue_GetBattleSpeedScale(FALSE);
+    u32 speedScale = Rogue_GetBattleSpeedScale();
 
     // If we are processing a palette fade we need to temporarily fall back to 1x speed otherwise there is graphical corruption
-    if(PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
+    if (PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
         speedScale = 1;
 
     if (gBattleResults.caughtMonSpecies)
         speedScale = 1;
 
-    if(speedScale <= 1)
+    if (speedScale <= 1)
     {
         // Maintain OG order for compat
         AnimateSprites();
@@ -1758,7 +1758,7 @@ void BattleMainCB2(void)
         // Update select entries at higher speed
         // disable speed up during palette fades otherwise we run into issues with blending
         //(e.g. moves that change background like Psychic can get stuck or have their colours overflow)
-        for(s = 1; s < speedScale; ++s)
+        for (s = 1; s < speedScale; ++s)
         {
             AnimateSprites();
             RunTextPrinters();
@@ -5339,40 +5339,11 @@ static void HandleEndTurn_BattleWon(void)
 
         if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
         {
-            switch (gSaveBlock2Ptr->optionsMusicStyle)
-            {
-            case OPTIONS_MUSIC_STYLE_DEFAULT:
-                PlayBGM(MUS_VICTORY_GYM_LEADER);
-                break;
-            case OPTIONS_MUSIC_STYLE_ZGS:
-                PlayBGM(MUS_VICTORY_GYM_LEADER);
-                break;
-            case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                PlayBGM(MUS_VICTORY_GYM_LEADER);
-                break;
-            case OPTIONS_MUSIC_STYLE_VANILLA:
-                PlayBGM(MUS_VICTORY_GYM_LEADER);
-                break;
-            }
+            PlayBGM(MUS_VICTORY_GYM_LEADER);
         }
         else
         {
-            switch (gSaveBlock2Ptr->optionsMusicStyle)
-            {
-            case OPTIONS_MUSIC_STYLE_DEFAULT:
-                PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                break;
-            case OPTIONS_MUSIC_STYLE_ZGS:
-                PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                break;
-            case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                break;
-            case OPTIONS_MUSIC_STYLE_VANILLA:
-            default:
-                PlayBGM(MUS_VICTORY_TRAINER);
-                break;
-            }
+            PlayBGM(MUS_VICTORY_TRAINER);
         }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
@@ -5404,40 +5375,10 @@ static void HandleEndTurn_BattleWon(void)
                     PlayBGM(MUS_VICTORY_AQUA_MAGMA);
                     break;
                 case TRAINER_CLASS_LEADER:
-                    switch (gSaveBlock2Ptr->optionsMusicStyle)
-                    {
-                    case OPTIONS_MUSIC_STYLE_DEFAULT:
-                        PlayBGM(MUS_VICTORY_GYM_LEADER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_ZGS:
-                        PlayBGM(MUS_VICTORY_GYM_LEADER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                        PlayBGM(MUS_VICTORY_GYM_LEADER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_VANILLA:
-                    default:
-                        PlayBGM(MUS_VICTORY_GYM_LEADER);
-                        break;
-                    }
+                    PlayBGM(MUS_VICTORY_GYM_LEADER);
                     break;
                 default:
-                    switch (gSaveBlock2Ptr->optionsMusicStyle)
-                    {
-                    case OPTIONS_MUSIC_STYLE_DEFAULT:
-                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_ZGS:
-                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_ALTERNATE:
-                        PlayBGM(MUS_WLD_VICTORY_TRAINER);
-                        break;
-                    case OPTIONS_MUSIC_STYLE_VANILLA:
-                    default:
-                        PlayBGM(MUS_VICTORY_TRAINER);
-                        break;
-                    }
+                    PlayBGM(MUS_WLD_VICTORY_TRAINER);
                     break;
                 }
             }
