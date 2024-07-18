@@ -922,20 +922,20 @@ gText_PlayerWhitedOut::
 
 gText_FirstShouldRestoreMonsHealth::
 	.string "First, you should restore your\n"
-	.string "POKéMON to full health.$"
+	.string "Puppets to full health.$"
 
 gText_MonsHealedShouldBuyPotions::
-	.string "Your POKéMON have been healed\n"
+	.string "Your Puppets have been healed\n"
 	.string "to perfect health.\p"
-	.string "If your POKéMON's energy, HP,\n"
+	.string "If your Puppets' energy, HP,\n"
 	.string "is down, please come see us.\p"
 	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some POTIONS\l"
-	.string "at the POKéMON MART.\p"
+	.string "field, you should buy some Potions\l"
+	.string "at the Puppet Mart.\p"
 	.string "We hope you excel!$"
 
 gText_MonsHealed::
-	.string "Your POKéMON have been healed\n"
+	.string "Your Puppets have been healed\n"
 	.string "to perfect health.\p"
 	.string "We hope you excel!$"
 
