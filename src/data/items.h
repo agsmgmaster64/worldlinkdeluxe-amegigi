@@ -7135,7 +7135,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Kusanagi"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 200,
-        .holdEffect = HOLD_EFFECT_DEEP_SEA_TOOTH,
+        .holdEffect = HOLD_EFFECT_KUSANAGI,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises the Attack\n"
@@ -7143,7 +7143,6 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .effect = gItemEffect_EvoItem,
         .flingPower = 90,
         .iconPic = gItemIcon_Kusanagi,
         .iconPalette = gItemIconPalette_Kusanagi,
@@ -7153,7 +7152,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Yata Mirror"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 200,
-        .holdEffect = HOLD_EFFECT_DEEP_SEA_SCALE,
+        .holdEffect = HOLD_EFFECT_YATA_MIRROR,
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises the Defense\n"
@@ -7161,7 +7160,6 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_YataMirror,
         .iconPalette = gItemIconPalette_YataMirror,

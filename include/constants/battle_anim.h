@@ -579,6 +579,7 @@
 #define B_ANIM_FOG_CONTINUES            54
 #define B_ANIM_TERA_CHARGE              55
 #define B_ANIM_TERA_ACTIVATE            56
+#define B_ANIM_SIMPLE_HEAL              57
 
 // special animations table (gBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
