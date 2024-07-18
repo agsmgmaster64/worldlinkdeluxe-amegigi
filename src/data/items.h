@@ -1176,8 +1176,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_SodaPop,
         .flingPower = 30,
-        .iconPic = gItemIcon_PewterCrunchies,
-        .iconPalette = gItemIconPalette_PewterCrunchies,
+        .iconPic = gItemIcon_GeyserWater,
+        .iconPalette = gItemIconPalette_GeyserWater,
     },
 
     [ITEM_BEER_BOTTLE] =
@@ -1185,9 +1185,9 @@ const struct Item gItemsInfo[] =
         .name = _("Beer Bottle"),
         .price = 600,
         .description = COMPOUND_STRING(
-            "A bottle of water\n"
+            "A bottle of beer\n"
             "that restores HP\n"
-            "by 60 points."),
+            "by 100 points."),
         .holdEffectParam = 100,
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
@@ -1195,8 +1195,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_MoomooMilk,
         .flingPower = 30,
-        .iconPic = gItemIcon_RageCandyBar,
-        .iconPalette = gItemIconPalette_RageCandyBar,
+        .iconPic = gItemIcon_BeerBottle,
+        .iconPalette = gItemIconPalette_BeerBottle,
     },
 
     [ITEM_UNAGI_LUNCH] =
@@ -1208,15 +1208,15 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A meal with unagi\n"
             "that restores HP\n"
-            "by 60 points."),
+            "by 150 points."),
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_UnagiLunch,
         .flingPower = 30,
-        .iconPic = gItemIcon_OldGateau,
-        .iconPalette = gItemIconPalette_OldGateau,
+        .iconPic = gItemIcon_UnagiLunch,
+        .iconPalette = gItemIconPalette_UnagiLunch,
     },
 
     [ITEM_SAKE_GOURD] =
@@ -1233,8 +1233,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .effect = gItemEffect_MaxPotion,
         .flingPower = 30,
-        .iconPic = gItemIcon_Casteliacone,
-        .iconPalette = gItemIconPalette_Casteliacone,
+        .iconPic = gItemIcon_SakeGourd,
+        .iconPalette = gItemIconPalette_SakeGourd,
     },
 
     [ITEM_LUMIOSE_GALETTE] =
@@ -1264,8 +1264,8 @@ const struct Item gItemsInfo[] =
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
         .effect = gItemEffect_FullHeal,
         .flingPower = 30,
-        .iconPic = gItemIcon_ShalourSable,
-        .iconPalette = gItemIconPalette_ShalourSable,
+        .iconPic = gItemIcon_HeavenPeach,
+        .iconPalette = gItemIconPalette_HeavenPeach,
     },
 
     [ITEM_BIG_MALASADA] =
@@ -2588,7 +2588,7 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_GreenUFO,
+        .iconPic = gItemIcon_UFO,
         .iconPalette = gItemIconPalette_GreenUFO,
     },
 
@@ -2604,7 +2604,7 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_RedUFO,
+        .iconPic = gItemIcon_UFO,
         .iconPalette = gItemIconPalette_RedUFO,
     },
 
@@ -2620,7 +2620,7 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_BlueUFO,
+        .iconPic = gItemIcon_UFO,
         .iconPalette = gItemIconPalette_BlueUFO,
     },
 
@@ -3842,7 +3842,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_PowerHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_PowerHeart,
     },
 
@@ -3859,7 +3859,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_GuardHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_GuardHeart,
     },
 
@@ -3876,7 +3876,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_SwiftHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_SwiftHeart,
     },
 
@@ -3893,7 +3893,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_TechHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_TechHeart,
     },
 
@@ -3910,7 +3910,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_HelperHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_HelperHeart,
     },
 
@@ -3927,22 +3927,25 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_JustHeart,
+        .iconPic = gItemIcon_EvoHeart,
         .iconPalette = gItemIconPalette_JustHeart,
     },
 
     [ITEM_CHROME_HEART] =
     {
-        .name = _("Moon Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Chrome Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING(
+            "Brings a sense\n"
+            "of justice\n"
+            "to Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_MoonStone,
-        .iconPalette = gItemIconPalette_MoonStone,
+        .iconPic = gItemIcon_EvoHeart,
+        .iconPalette = gItemIconPalette_ChromeHeart,
     },
 
     [ITEM_SHINY_STONE] =
@@ -7103,15 +7106,15 @@ const struct Item gItemsInfo[] =
         .price = (I_PRICE >= GEN_7) ? 1000 : 500,
         .holdEffect = HOLD_EFFECT_DARK_RIBBON,
         .description = COMPOUND_STRING(
-            "A hold item that \n"
+            "A hold item that\n"
             "raises Attack for\n"
             "Hina's forms."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 90,
-        .iconPic = gItemIcon_ThickClub,
-        .iconPalette = gItemIconPalette_ThickClub,
+        .iconPic = gItemIcon_DarkRibbon,
+        .iconPalette = gItemIconPalette_DarkRibbon,
     },
 
     [ITEM_BIG_CLOUD] =
@@ -7127,8 +7130,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 40,
-        .iconPic = gItemIcon_LuckyPunch,
-        .iconPalette = gItemIconPalette_LuckyPunch,
+        .iconPic = gItemIcon_BigCloud,
+        .iconPalette = gItemIconPalette_BigCloud,
     },
 
     [ITEM_KUSANAGI] =
@@ -13989,7 +13992,6 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .effect = gItemEffect_Pokevial,
         .fieldUseFunc = ItemUseOutOfBattle_Pokevial,
-        .flingPower = 10,
         .iconPic = gItemIcon_Pokevial,
         .iconPalette = gItemIconPalette_Pokevial,
     },
@@ -14063,9 +14065,9 @@ const struct Item gItemsInfo[] =
         .name = _("Lantern"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A big axe that\n"
-            "can cut down\n"
-            "small trees."),
+            "A lantern that\n"
+            "can light up\n"
+            "dark areas."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -14111,8 +14113,8 @@ const struct Item gItemsInfo[] =
         .name = _("Scuba Gear"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A big axe that\n"
-            "can cut down\n"
+            "Some scuba gear\n"
+            "that can \n"
             "small trees."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -14131,7 +14133,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A hold item that\n"
             "raises the power of\n"
-            "Fairy-type moves."),
+            "Cosmic-type moves."),
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
