@@ -5343,7 +5343,7 @@ static void HandleEndTurn_BattleWon(void)
         }
         else
         {
-            PlayBGM(MUS_VICTORY_TRAINER);
+            PlayBGM(MUS_WLD_VICTORY_TRAINER);
         }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))

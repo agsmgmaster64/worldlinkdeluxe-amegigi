@@ -4400,7 +4400,7 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong
                     && !FlagGet(FLAG_OVERRIDE_MUSIC))
                 {
-                    PlayBGM(MUS_VICTORY_WILD);
+                    PlayBGM(MUS_WLD_VICTORY_WILD);
                     gBattleStruct->wildVictorySong++;
                 }
 
