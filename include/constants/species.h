@@ -945,8 +945,8 @@
 #define SPECIES_SPECTRIER                               897
 #define SPECIES_CALYREX                                 898
 #define SPECIES_WYRDEER                                 899
-#define SPECIES_KLEAVOR                                 900
-#define SPECIES_URSALUNA                                901
+#define SPECIES_KLEAVOR                                 900 // CSatsuki
+#define SPECIES_URSALUNA                                901 // PSatsuki
 #define SPECIES_BASCULEGION                             SPECIES_BASCULEGION_MALE
 #define SPECIES_BASCULEGION_MALE                        902
 #define SPECIES_SNEASLER                                903
