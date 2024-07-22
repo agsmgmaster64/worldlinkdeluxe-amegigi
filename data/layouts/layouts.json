@@ -2204,7 +2204,7 @@
       "height": 9,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/NewMauville_Entrance/border.bin",
       "blockdata_filepath": "data/layouts/NewMauville_Entrance/map.bin"
