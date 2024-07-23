@@ -483,7 +483,7 @@
 #define SPECIES_ROTOM                                   479
 #define SPECIES_UXIE                                    480 // Sasha
 #define SPECIES_MESPRIT                                 481
-#define SPECIES_AZELF                                   482
+#define SPECIES_CHIBI_CLOWNPIECE                        482
 #define SPECIES_ADVENT_CIRNO                            483
 #define SPECIES_ADVENT_REISEN                           484
 #define SPECIES_ADVENT_MEILING                          485

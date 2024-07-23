@@ -21,7 +21,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_WATER_ABSORB },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = ("CSeiran"),
         .cryId = CRY_WAKASAGIHIME,
@@ -55,7 +55,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .levelUpLearnset = sCWakasagihimeLevelUpLearnset,
         .teachableLearnset = sCWakasagihimeTeachableLearnset,
         .eggMoveLearnset = sCWakasagihimeEggMoveLearnset,
-        .formSpeciesIdTable = sCWakasagihimeFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_WAKASAGIHIME},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_WAKASAGIHIME}),
     },
@@ -78,7 +77,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_WATER_ABSORB },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = ("Seiran"),
         .cryId = CRY_WAKASAGIHIME,
@@ -111,7 +110,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(Wakasagihime)
         .levelUpLearnset = sWakasagihimeLevelUpLearnset,
         .teachableLearnset = sWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_ATTACK_SEIRAN] =
@@ -132,7 +130,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = ("ASeiran"),
         .cryId = CRY_WAKASAGIHIME,
@@ -165,7 +163,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihime)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sDWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_RINGO] =
@@ -186,7 +183,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_WAKASAGIHIME,
@@ -219,7 +216,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihime)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_NORMAL_RINGO] =
@@ -240,7 +236,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_WATER_ABSORB },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("CWakasagi", "CWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -274,9 +270,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .levelUpLearnset = sCWakasagihimeLevelUpLearnset,
         .teachableLearnset = sCWakasagihimeTeachableLearnset,
         .eggMoveLearnset = sCWakasagihimeEggMoveLearnset,
-        .formSpeciesIdTable = sCWakasagihimeFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_WAKASAGIHIME_GOLD},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_WAKASAGIHIME_GOLD}),
+
     },
 
     [SPECIES_HELPER_RINGO] =
@@ -297,7 +291,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_SWIFT_SWIM, ABILITY_WATER_VEIL, ABILITY_WATER_ABSORB },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("Wakasagi", "Wakasagihime"),
         .cryId = CRY_PORYGON,
@@ -330,7 +324,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(WakasagihimeGolden)
         .levelUpLearnset = sWakasagihimeLevelUpLearnset,
         .teachableLearnset = sWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_DOREMY] =
@@ -351,7 +344,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("DWakasagi", "DWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -384,7 +377,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sDWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_NORMAL_DOREMY] =
@@ -405,7 +397,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -438,7 +430,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_ATTACK_DOREMY] =
@@ -459,7 +450,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -492,7 +483,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_DEFENSE_DOREMY] =
@@ -513,7 +503,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -546,7 +536,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_SAGUME] =
@@ -567,7 +556,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -600,7 +589,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_NORMAL_SAGUME] =
@@ -621,7 +609,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -654,7 +642,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_PLACEHOLDER_SAGUME] =
@@ -675,7 +662,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -708,7 +695,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_CLOWNPIECE] =
@@ -719,7 +705,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .baseSpeed     = 75,
         .baseSpAttack  = 75,
         .baseSpDefense = 85,
-        .types = MON_TYPES(TYPE_WATER),
+        .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
         .expYield = 192,
         .evYield_HP = 2,
@@ -729,9 +715,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
-        .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
+        .speciesName = ("CClown") //HANDLE_EXPANDED_SPECIES_NAME("CClown", "CClownpiece"),
         .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_NINCADA,
         .categoryName = _("Trainee"),
@@ -746,23 +732,22 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .pokemonOffset = 21,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_DWakasagihimeGolden,
+        .frontPic = gMonFrontPic_CClownpiece,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_DWakasagihimeGolden,
+        .frontAnimFrames = sAnims_CClownpiece,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_DWakasagihimeGolden,
+        .backPic = gMonBackPic_CClownpiece,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 1,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_DWakasagihimeGolden,
-        .shinyPalette = gMonShinyPalette_DWakasagihimeGolden,
-        .iconSprite = gMonIcon_DWakasagihimeGolden,
+        .palette = gMonPalette_CClownpiece,
+        .shinyPalette = gMonShinyPalette_CClownpiece,
+        .iconSprite = gMonIcon_CClownpiece,
         .iconPalIndex = 0,
-        FOOTPRINT(DWakasagihimeGolden)
-        .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
-        .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
+        FOOTPRINT(CClownpiece)
+        .levelUpLearnset = sCClownpieceLevelUpLearnset,
+        .teachableLearnset = sCClownpieceTeachableLearnset,
     },
 
     [SPECIES_NORMAL_CLOWNPIECE] =
@@ -783,7 +768,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -816,10 +801,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
-    [SPECIES_PLACEHOLDER_CLOWNPIECE] =
+    [SPECIES_DEFENSE_CLOWNPIECE] =
     {
         .baseHP        = 115,
         .baseAttack    = 55,
@@ -837,7 +821,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -870,7 +854,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_JUNKO] =
@@ -891,7 +874,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -924,7 +907,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_NORMAL_JUNKO] =
@@ -945,7 +927,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -978,7 +960,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_PLACEHOLDER_JUNKO] =
@@ -999,7 +980,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -1032,7 +1013,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_HECATIA] =
@@ -1053,7 +1033,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -1086,7 +1066,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_NORMAL_HECATIA] =
@@ -1107,7 +1086,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -1140,7 +1119,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
     [SPECIES_HELPER_HECATIA] =
@@ -1161,7 +1139,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_WATER_1),
         .abilities = { ABILITY_STORM_DRAIN, ABILITY_WATER_VEIL, ABILITY_HYDRATION },
-        .sourceGame = SOURCE_DDC,
+        .sourceGame = SOURCE_LOLK,
         .noFlip = TRUE,
         .speciesName = HANDLE_EXPANDED_SPECIES_NAME("PWakasagi", "PWakasaghime"),
         .cryId = CRY_PORYGON,
@@ -1194,7 +1172,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         FOOTPRINT(DWakasagihimeGolden)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
-        .formSpeciesIdTable = sPWakasagihimeFormSpeciesIdTable,
     },
 
 #ifdef __INTELLISENSE__

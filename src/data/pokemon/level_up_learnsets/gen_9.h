@@ -7779,6 +7779,24 @@ static const struct LevelUpMove sAyakashiLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+static const struct LevelUpMove sClownpieceLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_FLAMETHROWER),
+    LEVEL_UP_MOVE(2, MOVE_RECOVER),
+    LEVEL_UP_MOVE(2, MOVE_SCARY_FACE),
+    LEVEL_UP_MOVE(2, MOVE_GUNK_SHOT),
+    LEVEL_UP_MOVE(2, MOVE_DRAWN_LINE),
+    LEVEL_UP_MOVE(2, MOVE_BRAVER),
+    LEVEL_UP_MOVE(45, MOVE_HARDEN),
+    LEVEL_UP_MOVE(48, MOVE_FURY_CUTTER),
+    LEVEL_UP_MOVE(51, MOVE_COUNTER),
+    LEVEL_UP_MOVE(54, MOVE_GUNK_SHOT),
+    LEVEL_UP_MOVE(58, MOVE_DRAWN_LINE),
+    LEVEL_UP_MOVE(62, MOVE_RECOVER),
+    LEVEL_UP_MOVE(66, MOVE_SCARY_FACE),
+    LEVEL_UP_MOVE(70, MOVE_BRAVER),
+    LEVEL_UP_END
+};
+
 #if P_FAMILY_BULBASAUR
 static const struct LevelUpMove sBulbasaurLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
