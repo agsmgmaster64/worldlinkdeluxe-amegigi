@@ -990,8 +990,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
 {
     u16 i;
     u16 species[DAYCARE_MON_COUNT];
-    u16 eggSpecies, parentSpecies;
-    bool8 hasMotherEverstone, hasFatherEverstone;
+    u16 eggSpecies;
 
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
     {
@@ -1008,22 +1007,11 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
         }
     }
 
-    hasMotherEverstone = ItemId_GetHoldEffect(GetBoxMonData(&daycare->mons[0].mon, MON_DATA_HELD_ITEM)) == HOLD_EFFECT_PREVENT_EVOLVE;
-    hasFatherEverstone = ItemId_GetHoldEffect(GetBoxMonData(&daycare->mons[1].mon, MON_DATA_HELD_ITEM)) == HOLD_EFFECT_PREVENT_EVOLVE;
-
-    if (hasMotherEverstone)
-        parentSpecies = species[parentSlots[0]];
-    else if (hasFatherEverstone && GET_BASE_SPECIES_ID(GetEggSpecies(species[parentSlots[0]])) == GET_BASE_SPECIES_ID(GetEggSpecies(species[parentSlots[1]])))
-        parentSpecies = species[parentSlots[1]];
-    else
-        parentSpecies = GET_BASE_SPECIES_ID(GetEggSpecies(species[parentSlots[0]]));
-
-    eggSpecies = GetEggSpecies(parentSpecies);
-
-    if (eggSpecies == SPECIES_SHANGHAI && daycare->offspringPersonality & EGG_GENDER_MALE)
-        eggSpecies = SPECIES_HOURAI;
-    else if (eggSpecies == SPECIES_HOURAI && !(daycare->offspringPersonality & EGG_GENDER_MALE))
+    eggSpecies = GetEggSpecies(species[parentSlots[0]]);
+    if (eggSpecies == SPECIES_HOURAI && daycare->offspringPersonality & EGG_GENDER_MALE)
         eggSpecies = SPECIES_SHANGHAI;
+    else if (eggSpecies == SPECIES_SHANGHAI && !(daycare->offspringPersonality & EGG_GENDER_MALE))
+        eggSpecies = SPECIES_HOURAI;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_FURFROU)
