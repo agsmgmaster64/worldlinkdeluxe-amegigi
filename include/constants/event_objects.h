@@ -373,12 +373,14 @@
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
 #define OBJ_EVENT_PAL_TAG_DEOXYS                  0x111E
 #define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
-#define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
-#define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
-#define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
-#define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_TAG_HAKOS_BAELZ             0x1124
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1125
+#define OBJ_EVENT_PAL_TAG_RG_BLUE                   0x1120
+#define OBJ_EVENT_PAL_TAG_RG_PINK                   0x1121
+#define OBJ_EVENT_PAL_TAG_RG_WHITE                0x1122
+#define OBJ_EVENT_PAL_TAG_RG_GREEN                0x1123
+#define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1124
+#define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1125
+#define OBJ_EVENT_PAL_TAG_HAKOS_BAELZ             0x1126
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1127
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

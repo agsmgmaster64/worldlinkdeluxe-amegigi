@@ -489,6 +489,17 @@ bool32 IsVirtualObjectInvisible(u8 virtualObjId);
 void SetVirtualObjectSpriteAnim(u8 virtualObjId, u8 animNum);
 bool32 IsVirtualObjectAnimating(u8 virtualObjId);
 
+void MovementType_RaiseHandAndStop(struct Sprite *);
+void MovementType_RaiseHandAndJump(struct Sprite *);
+void MovementType_RaiseHandAndSwim(struct Sprite *);
+
+bool8 MovementType_RaiseHandAndStop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+bool8 MovementType_RaiseHandAndStop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+bool8 MovementType_RaiseHandAndStop_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+bool8 MovementType_RaiseHandAndJump_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+bool8 MovementType_RaiseHandAndSwim_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+bool8 MovementType_RaiseHandAndMove_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 

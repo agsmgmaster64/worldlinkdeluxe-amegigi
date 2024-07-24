@@ -35,6 +35,7 @@
 #include "task.h"
 #include "trainer_see.h"
 #include "trainer_hill.h"
+#include "trig.h"
 #include "util.h"
 #include "wild_encounter.h"
 #include "constants/event_object_movement.h"
@@ -206,6 +207,10 @@ static bool8 AreElevationsCompatible(u8, u8);
 static u16 PackGraphicsId(const struct ObjectEventTemplate *template);
 static void CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(u16 graphicsId, u16 movementType, struct SpriteTemplate *spriteTemplate, const struct SubspriteTable **subspriteTables);
 
+static u8 MovementType_RaiseHandAndStop_Callback(struct ObjectEvent *, struct Sprite *);
+static u8 MovementType_RaiseHandAndJump_Callback(struct ObjectEvent *, struct Sprite *);
+static u8 MovementType_RaiseHandAndSwim_Callback(struct ObjectEvent *, struct Sprite *);
+
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
 const u8 gReflectionEffectPaletteMap[16] = {
@@ -332,6 +337,9 @@ static void (*const sMovementTypeCallbacks[])(struct Sprite *) =
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = MovementType_WalkSlowlyInPlace,
     [MOVEMENT_TYPE_FOLLOW_PLAYER] = MovementType_FollowPlayer,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_STOP] = MovementType_RaiseHandAndStop,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_JUMP] = MovementType_RaiseHandAndJump,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_SWIM] = MovementType_RaiseHandAndSwim,
 };
 
 static const bool8 sMovementTypeHasRange[NUM_MOVEMENT_TYPES] = {
@@ -460,6 +468,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP] = DIR_NORTH,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT] = DIR_WEST,
     [MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT] = DIR_EAST,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_STOP] = DIR_SOUTH,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_JUMP] = DIR_SOUTH,
+    [MOVEMENT_TYPE_RAISE_HAND_AND_SWIM] = DIR_SOUTH,
 };
 
 #include "data/object_events/object_event_graphics_info_pointers.h"
@@ -503,8 +514,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RedLeaf,               OBJ_EVENT_PAL_TAG_RED_LEAF},
     {gObjectEventPal_Deoxys,                OBJ_EVENT_PAL_TAG_DEOXYS},
     {gObjectEventPal_BirthIslandStone,      OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE},
-    {gObjectEventPal_HoOh,                  OBJ_EVENT_PAL_TAG_HO_OH},
-    {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
+    {gObjectEventPal_NpcBlue,               OBJ_EVENT_PAL_TAG_RG_BLUE},
+    {gObjectEventPal_NpcPink,               OBJ_EVENT_PAL_TAG_RG_PINK},
+    {gObjectEventPal_NpcWhite,              OBJ_EVENT_PAL_TAG_RG_WHITE},
+    {gObjectEventPal_NpcGreen,              OBJ_EVENT_PAL_TAG_RG_GREEN},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_HakosBaelz,            OBJ_EVENT_PAL_TAG_HAKOS_BAELZ},
@@ -10771,6 +10784,161 @@ u8 MovementAction_FlyDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *
 u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     return TRUE;
+}
+
+void MovementType_RaiseHandAndStop(struct Sprite *sprite)
+{
+    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, MovementType_RaiseHandAndStop_Callback);
+}
+
+void MovementType_RaiseHandAndJump(struct Sprite *sprite)
+{
+    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, MovementType_RaiseHandAndJump_Callback);
+}
+
+void MovementType_RaiseHandAndSwim(struct Sprite *sprite)
+{
+    UpdateObjectEventCurrentMovement(&gObjectEvents[sprite->data[0]], sprite, MovementType_RaiseHandAndSwim_Callback);
+}
+
+static u8 MovementType_RaiseHandAndStop_Callback(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return gMovementTypeFuncs_RaiseHandAndStop[sprite->data[1]](objectEvent, sprite);
+}
+
+static u8 MovementType_RaiseHandAndJump_Callback(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return gMovementTypeFuncs_RaiseHandAndJump[sprite->data[1]](objectEvent, sprite);
+}
+
+static u8 MovementType_RaiseHandAndSwim_Callback(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return gMovementTypeFuncs_RaiseHandAndSwim[sprite->data[1]](objectEvent, sprite);
+}
+
+bool8 MovementType_RaiseHandAndStop_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_RAISE_HAND_AND_STOP);
+    sprite->data[1] = 1;
+    return TRUE;
+}
+
+bool8 MovementType_RaiseHandAndStop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        sprite->data[1] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementType_RaiseHandAndStop_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    objectEvent->singleMovementActive = FALSE;
+    return FALSE;
+}
+
+bool8 MovementType_RaiseHandAndJump_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_RAISE_HAND_AND_JUMP);
+    sprite->data[1] = 1;
+    return FALSE;
+}
+
+bool8 MovementType_RaiseHandAndSwim_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    ClearObjectEventMovement(objectEvent, sprite);
+    ObjectEventSetSingleMovement(objectEvent, sprite, MOVEMENT_ACTION_RAISE_HAND_AND_SWIM);
+    sprite->data[1] = 1;
+    return FALSE;
+}
+
+bool8 MovementType_RaiseHandAndMove_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (ObjectEventExecSingleMovementAction(objectEvent, sprite))
+    {
+        sprite->data[1] = 0;
+    }
+    return FALSE;
+}
+
+static bool8 MovementAction_RaiseHand_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    StartSpriteAnim(sprite, ANIM_RAISE_HAND);
+    sprite->animPaused = FALSE;
+    objectEvent->disableAnim = FALSE;
+    sprite->data[2] = 1;
+    sprite->data[4] = 0;
+    sprite->data[5] = 0;
+    sprite->data[6] = 0;
+    sprite->data[7] = 0;
+    return FALSE;
+}
+
+static bool8 MovementAction_RaiseHandAndStop_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return sprite->animEnded;
+}
+
+static bool8 MovementAction_RaiseHandAndJump_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    switch (sprite->data[7])
+    {
+    case 0:
+        if((sprite->data[6] += 10) > 127)
+        {
+            sprite->data[6] = 0;
+            sprite->data[5]++;
+            sprite->data[7] = sprite->data[5];
+            StartSpriteAnim(sprite, ANIM_STD_FACE_SOUTH);
+            sprite->animPaused = FALSE;
+            objectEvent->disableAnim = FALSE;
+        }
+        sprite->y2 = -(3 * gSineTable[sprite->data[6]] >> 7);
+        objectEvent->singleMovementActive = sprite->y2 != 0;
+        return FALSE;
+    case 1:
+        if (++sprite->data[4] > 16)
+        {
+            sprite->data[4] = 0;
+            StartSpriteAnim(sprite, ANIM_RAISE_HAND);
+            sprite->animPaused = FALSE;
+            objectEvent->disableAnim = FALSE;
+            sprite->data[7] = 0;
+        }
+        else
+        {
+            objectEvent->singleMovementActive = FALSE;
+        }
+        return FALSE;
+    case 2:
+        objectEvent->singleMovementActive = FALSE;
+        if (++sprite->data[4] > 80)
+        {
+            sprite->data[4] = 0;
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+    return FALSE;
+}
+
+static bool8 MovementAction_RaiseHandAndSwim_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    bool8 ret;
+    sprite->data[7] = (sprite->data[7] + 4) & 0xFF;
+    sprite->x2 = gSineTable[sprite->data[7]] >> 7;
+    if (sprite->data[7] == 0)
+        ret = TRUE;
+    else
+        ret = FALSE;
+    return ret;
 }
 
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
