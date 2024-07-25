@@ -124,9 +124,9 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE { damagingMove = MOVE_WATER_GUN; }
     PARAMETRIZE { damagingMove = MOVE_VINE_WHIP; }
     PARAMETRIZE { damagingMove = MOVE_THUNDER_SHOCK; }
-    PARAMETRIZE { damagingMove = MOVE_CONFUSION; }
+    PARAMETRIZE { damagingMove = MOVE_PSYSHOT; }
     PARAMETRIZE { damagingMove = MOVE_ICE_BEAM; }
-    PARAMETRIZE { damagingMove = MOVE_DRAGON_BREATH; }
+    PARAMETRIZE { damagingMove = MOVE_DECISION; }
     PARAMETRIZE { damagingMove = MOVE_BITE; }
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 
@@ -192,9 +192,9 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE { damagingMove = MOVE_WATER_GUN; }
     PARAMETRIZE { damagingMove = MOVE_VINE_WHIP; }
     PARAMETRIZE { damagingMove = MOVE_THUNDER_SHOCK; }
-    PARAMETRIZE { damagingMove = MOVE_CONFUSION; }
+    PARAMETRIZE { damagingMove = MOVE_PSYSHOT; }
     PARAMETRIZE { damagingMove = MOVE_ICE_BEAM; }
-    PARAMETRIZE { damagingMove = MOVE_DRAGON_BREATH; }
+    PARAMETRIZE { damagingMove = MOVE_DECISION; }
     PARAMETRIZE { damagingMove = MOVE_BITE; }
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 

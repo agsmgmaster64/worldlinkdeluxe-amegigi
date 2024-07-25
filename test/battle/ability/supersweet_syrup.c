@@ -53,14 +53,14 @@ SINGLE_BATTLE_TEST("Supersweet Syrup can not further lower opponents evasion if 
         OPPONENT(SPECIES_ODDISH);
         OPPONENT(SPECIES_HYDRAPPLE) { Ability(ABILITY_SUPERSWEET_SYRUP); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_SWEET_SCENT); }
-        TURN { MOVE(opponent, MOVE_SWEET_SCENT); }
-        TURN { MOVE(opponent, MOVE_SWEET_SCENT); }
+        TURN { MOVE(opponent, MOVE_NATURE_POWER); }
+        TURN { MOVE(opponent, MOVE_NATURE_POWER); }
+        TURN { MOVE(opponent, MOVE_NATURE_POWER); }
         TURN { SWITCH(opponent, 1); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWEET_SCENT, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWEET_SCENT, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWEET_SCENT, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURE_POWER, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURE_POWER, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_NATURE_POWER, opponent);
         ABILITY_POPUP(opponent, ABILITY_SUPERSWEET_SYRUP);
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
