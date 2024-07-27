@@ -778,4 +778,14 @@ Debug_EventScript_SetTeraType_Text_Stellar:
 Debug_EventScript_SetTeraType_Text_Close:
 	.string "Close$"
 
+Debug_EventScript_EWRAMCounters::
+	callnative CheckEWRAMCounters
+	msgbox Debug_EventScript_EWRAMCounters_Text, MSGBOX_DEFAULT
+	release
+	end
+
+Debug_EventScript_EWRAMCounters_Text::
+	.string "Follower Steps: {STR_VAR_1}.\n"
+	.string "Fishing Chain: {STR_VAR_2}.$"
+
 .endif

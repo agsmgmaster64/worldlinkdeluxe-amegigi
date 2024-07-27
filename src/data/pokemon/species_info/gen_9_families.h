@@ -6278,57 +6278,57 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #endif //P_FAMILY_FEZANDIPITI
 
 #if P_FAMILY_OGERPON
-#define OGERPON_SPECIES_INFO(Form1, Form2, type, ability, color, iconpalette, isTeraform)            \
-    {                                                                                   \
-        .baseHP        = 80,                                                            \
-        .baseAttack    = 120,                                                           \
-        .baseDefense   = 84,                                                            \
-        .baseSpeed     = 110,                                                           \
-        .baseSpAttack  = 60,                                                            \
-        .baseSpDefense = 96,                                                            \
-        .types = MON_TYPES(TYPE_NATURE, type),                                           \
-        .forceTeraType = type,                                                          \
-        .catchRate = 5,                                                                 \
-        .expYield = 275,                                                                \
-        .evYield_Attack = 3,                                                            \
-        .genderRatio = MON_FEMALE,                                                      \
-        .eggCycles = 10,                                                                \
-        .friendship = STANDARD_FRIENDSHIP,                                              \
-        .growthRate = GROWTH_SLOW,                                                      \
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),                      \
-        .abilities = { ability, ABILITY_NONE },                                         \
-        .sourceGame = color,                                                             \
-        .speciesName = _("Ogerpon"),                                                    \
-        .cryId = CRY_PORYGON,                                                           \
-        .natDexNum = NATIONAL_DEX_OGERPON,                                              \
-        .categoryName = _("Mask"),                                                      \
-        .height = 12,                                                                   \
-        .weight = 398,                                                                  \
-        .description = gOgerpon##Form1##MaskPokedexText,                                \
-        .pokemonScale = 356,                                                            \
-        .pokemonOffset = 17,                                                            \
-        .trainerScale = 256,                                                            \
-        .trainerOffset = 0,                                                             \
-        .frontPic = gMonFrontPic_Ogerpon##Form1##Form2,                                 \
-        .frontPicSize = MON_COORDS_SIZE(64, 64),                                        \
-        .frontPicYOffset = 0,                                                           \
-        .frontAnimFrames = sAnims_Ogerpon,                                              \
-        /*.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,*/                                    \
-        .backPic = gMonBackPic_Ogerpon##Form1##Form2,                                   \
-        .backPicSize = MON_COORDS_SIZE(64, 64),                                         \
-        .backPicYOffset = 0,                                                            \
-        /*.backAnimId = BACK_ANIM_NONE,*/                                               \
-        .palette = gMonPalette_Ogerpon##Form1##Form2,                                   \
-        .shinyPalette = gMonShinyPalette_Ogerpon##Form1##Form2,                         \
-        .iconSprite = gMonIcon_Ogerpon##Form1##Mask,                                    \
-        .iconPalIndex = iconpalette,                                                    \
-        FOOTPRINT(Ogerpon)                                                              \
-        .levelUpLearnset = sOgerponLevelUpLearnset,                                     \
-        .teachableLearnset = sOgerponTeachableLearnset,                                 \
-        .formSpeciesIdTable = sOgerponFormSpeciesIdTable,                               \
-        .formChangeTable = sOgerponFormChangeTable,                                     \
-        .isLegendary = TRUE,                                                            \
-        .isTeraForm = isTeraform,                                                       \
+#define OGERPON_SPECIES_INFO(Form1, Form2, type, ability, color, iconpalette, isTeraform)   \
+    {                                                                                       \
+        .baseHP        = 80,                                                                \
+        .baseAttack    = 120,                                                               \
+        .baseDefense   = 84,                                                                \
+        .baseSpeed     = 110,                                                               \
+        .baseSpAttack  = 60,                                                                \
+        .baseSpDefense = 96,                                                                \
+        .types = MON_TYPES(TYPE_GRASS, type),                                               \
+        .forceTeraType = type,                                                              \
+        .catchRate = 5,                                                                     \
+        .expYield = 275,                                                                    \
+        .evYield_Attack = 3,                                                                \
+        .genderRatio = MON_FEMALE,                                                          \
+        .eggCycles = 10,                                                                    \
+        .friendship = STANDARD_FRIENDSHIP,                                                  \
+        .growthRate = GROWTH_SLOW,                                                          \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),                          \
+        .abilities = { ability, ABILITY_NONE },                                             \
+        .sourceGame = color,                                                                 \
+        .speciesName = _("Ogerpon"),                                                        \
+        .cryId = CRY_OGERPON,                                                               \
+        .natDexNum = NATIONAL_DEX_OGERPON,                                                  \
+        .categoryName = _("Mask"),                                                          \
+        .height = 12,                                                                       \
+        .weight = 398,                                                                      \
+        .description = gOgerpon##Form1##MaskPokedexText,                                    \
+        .pokemonScale = 356,                                                                \
+        .pokemonOffset = 17,                                                                \
+        .trainerScale = 256,                                                                \
+        .trainerOffset = 0,                                                                 \
+        .frontPic = gMonFrontPic_Ogerpon##Form1##Form2,                                     \
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                            \
+        .frontPicYOffset = 0,                                                               \
+        .frontAnimFrames = sAnims_Ogerpon,                                                  \
+        /*.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,*/                                        \
+        .backPic = gMonBackPic_Ogerpon##Form1##Form2,                                       \
+        .backPicSize = MON_COORDS_SIZE(64, 64),                                             \
+        .backPicYOffset = 0,                                                                \
+        /*.backAnimId = BACK_ANIM_NONE,*/                                                   \
+        .palette = gMonPalette_Ogerpon##Form1##Form2,                                       \
+        .shinyPalette = gMonShinyPalette_Ogerpon##Form1##Form2,                             \
+        .iconSprite = gMonIcon_Ogerpon##Form1##Mask,                                        \
+        .iconPalIndex = iconpalette,                                                        \
+        FOOTPRINT(Ogerpon)                                                                  \
+        .levelUpLearnset = sOgerponLevelUpLearnset,                                         \
+        .teachableLearnset = sOgerponTeachableLearnset,                                     \
+        .formSpeciesIdTable = sOgerponFormSpeciesIdTable,                                   \
+        .formChangeTable = sOgerponFormChangeTable,                                         \
+        .isLegendary = TRUE,                                                                \
+        .isTeraForm = isTeraform,                                                           \
     }
 
     [SPECIES_OGERPON_TEAL_MASK]             = OGERPON_SPECIES_INFO(Teal,        Mask,     TYPE_NATURE, ABILITY_DEFIANT,                        SOURCE_OTHER, 1, FALSE),
