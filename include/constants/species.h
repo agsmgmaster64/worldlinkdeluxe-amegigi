@@ -284,8 +284,8 @@
 #define SPECIES_NORMAL_SEKIBANKI                        280
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
-#define SPECIES_CHIBI_KAGEROU                                 283
-#define SPECIES_NORMAL_KAGEROU                              284
+#define SPECIES_CHIBI_KAGEROU                           283
+#define SPECIES_NORMAL_KAGEROU                            284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287

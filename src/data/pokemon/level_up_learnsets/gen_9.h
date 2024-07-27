@@ -5537,7 +5537,7 @@ static const struct LevelUpMove sBenbenLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sCYatsuhasiLevelUpLearnset[] = {
+static const struct LevelUpMove sCYatsuhashiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_ASTONISH),
     LEVEL_UP_MOVE(5, MOVE_LEER),
     LEVEL_UP_MOVE(9, MOVE_FAKE_OUT),

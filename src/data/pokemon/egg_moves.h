@@ -650,6 +650,94 @@ static const u16 sCNueEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCKyoukoEggMoveLearnset[] = {
+    MOVE_KNOCK_OFF,
+    MOVE_BODY_SLAM,
+    MOVE_LOVELY_KISS,
+    MOVE_TRI_ATTACK,
+    MOVE_HEAL_BELL,
+    MOVE_PERFORMANCE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCYoshikaEggMoveLearnset[] = {
+    MOVE_NIGHT_SLASH,
+    MOVE_DOUBLE_EDGE,
+    MOVE_CURSE,
+    MOVE_SHADOW_HIT,
+    MOVE_SCARY_FACE,
+    MOVE_SKULL_BASH,
+    MOVE_COERCE,
+    MOVE_OMINOUS_WIND,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCSeigaEggMoveLearnset[] = {
+    MOVE_WRAP,
+    MOVE_JAMMING,
+    MOVE_HYPER_BEAM,
+    MOVE_SILVER_WIND,
+    MOVE_HEARTS_EYE,
+    MOVE_ASSIST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCTojikoEggMoveLearnset[] = {
+    MOVE_VOLT_TACKLE,
+    MOVE_TAILWIND,
+    MOVE_WHIRLWIND,
+    MOVE_DARK_PULSE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCFutoEggMoveLearnset[] = {
+    MOVE_BODY_SLAM,
+    MOVE_FIRE_PUNCH,
+    MOVE_ANCIENT_POWER,
+    MOVE_MANA_BURST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCMikoEggMoveLearnset[] = {
+    MOVE_BATTLE_CHANT,
+    MOVE_FALSE_SWIPE,
+    MOVE_FURY_CUTTER,
+    MOVE_PSYCHO_BOOST,
+    MOVE_FOCUS_ENERGY,
+    MOVE_IMPRISON,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCMamizouEggMoveLearnset[] = {
+    MOVE_PRANK,
+    MOVE_MANA_BURST,
+    MOVE_HYPNOSIS,
+    MOVE_HYDRO_PUMP,
+    MOVE_SKY_ATTACK,
+    MOVE_HEAT_CLAW,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCSekibankiEggMoveLearnset[] = {
+    MOVE_SCREECH,
+    MOVE_OMINOUS_WIND,
+    MOVE_GUNK_SHOT,
+    MOVE_CALM_MIND,
+    MOVE_BLOCK,
+    MOVE_AMNESIA,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCKagerouEggMoveLearnset[] = {
+    MOVE_KNOCK_OFF,
+    MOVE_BOUNCE,
+    MOVE_FALSE_SWIPE,
+    MOVE_CROSS_POISON,
+    MOVE_EXTREME_SPEED,
+    MOVE_COUNTER,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCWakasagihimeEggMoveLearnset[] = {
     MOVE_AQUA_JET,
     MOVE_ASSIST,
@@ -657,6 +745,58 @@ static const u16 sCWakasagihimeEggMoveLearnset[] = {
     MOVE_FAKE_TEARS,
     MOVE_COVET,
     MOVE_AQUA_SHOWER,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCBenbenEggMoveLearnset[] = {
+    MOVE_CURSE,
+    MOVE_SHADOW_FORCE,
+    MOVE_WISH,
+    MOVE_BARRAGE,
+    MOVE_NATURE_SOUND,
+    MOVE_HEAL_BELL,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCYatsuhasiEggMoveLearnset[] = {
+    MOVE_CURSE,
+    MOVE_SHADOW_FORCE,
+    MOVE_SPITE,
+    MOVE_VITAL_THROW,
+    MOVE_FAKE_TEARS,
+    MOVE_HOWL,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCRaikoEggMoveLearnset[] = {
+    MOVE_OMINOUS_WIND,
+    MOVE_SWORDS_DANCE,
+    MOVE_DRAWN_LINE,
+    MOVE_TREMORS,
+    MOVE_TRI_ATTACK,
+    MOVE_VOLT_TACKLE,
+    MOVE_SNORE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCSeijaEggMoveLearnset[] = {
+    MOVE_FEINT,
+    MOVE_COVET,
+    MOVE_REVENGE,
+    MOVE_RECYCLE,
+    MOVE_NASTY_PLOT,
+    MOVE_COERCE,
+    //MOVE_DISTURBANCE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCShinyoumaruEggMoveLearnset[] = {
+    MOVE_DOUBLE_EDGE,
+    MOVE_BATON_PASS,
+    MOVE_PIN_MISSILE,
+    MOVE_VITAL_THROW,
+    MOVE_DRAWN_LINE,
+    MOVE_SANDSTORM,
     MOVE_UNAVAILABLE,
 };
 
