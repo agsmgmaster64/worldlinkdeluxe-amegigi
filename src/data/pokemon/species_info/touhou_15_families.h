@@ -90,22 +90,22 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .pokemonOffset = 2,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Wakasagihime,
+        .frontPic = gMonFrontPic_Seiran,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 3,
-        .frontAnimFrames = sAnims_Wakasagihime,
+        .frontAnimFrames = sAnims_Seiran,
         .frontAnimId = ANIM_H_SLIDE,
-        .backPic = gMonBackPic_Wakasagihime,
+        .backPic = gMonBackPic_Seiran,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_Wakasagihime,
-        .shinyPalette = gMonShinyPalette_Wakasagihime,
-        .iconSprite = gMonIcon_Wakasagihime,
+        .palette = gMonPalette_Seiran,
+        .shinyPalette = gMonShinyPalette_Seiran,
+        .iconSprite = gMonIcon_Seiran,
         .iconPalIndex = 0,
-        FOOTPRINT(Wakasagihime)
-        .levelUpLearnset = sWakasagihimeLevelUpLearnset,
-        .teachableLearnset = sWakasagihimeTeachableLearnset,
+        FOOTPRINT(Seiran)
+        .levelUpLearnset = sSeiranLevelUpLearnset,
+        .teachableLearnset = sSeiranTeachableLearnset,
     },
 
     [SPECIES_ATTACK_SEIRAN] =
@@ -267,10 +267,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
     {
         .baseHP        = 110,
         .baseAttack    = 80,
-        .baseDefense   = 100,
-        .baseSpeed     = 95,
-        .baseSpAttack  = 20,
-        .baseSpDefense = 95,
+        .baseDefense   = 90,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 85,
         .types = MON_TYPES(TYPE_BEAST, TYPE_DREAM),
         .catchRate = 45,
         .expYield = 180,
@@ -792,7 +792,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
     },
 
-    [SPECIES_DEFENSE_CLOWNPIECE] =
+    [SPECIES_HELPER_CLOWNPIECE] =
     {
         .baseHP        = 115,
         .baseAttack    = 55,
@@ -1110,7 +1110,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
     },
 
-    [SPECIES_HELPER_HECATIA] =
+    [SPECIES_ATTACK_HECATIA] =
     {
         .baseHP        = 115,
         .baseAttack    = 55,
