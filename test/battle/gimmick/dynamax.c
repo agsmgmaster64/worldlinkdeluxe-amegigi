@@ -832,8 +832,8 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Max Mindstorm sets up Psychic Terrain")
         OPPONENT(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_CHIBI_YUUGI);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_PSYCHIC, gimmick: GIMMICK_DYNAMAX); }
-        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_PSYCHIC); }
+        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST, gimmick: GIMMICK_DYNAMAX); }
+        TURN { MOVE(opponent, MOVE_EXTREME_SPEED); MOVE(player, MOVE_MANA_BURST); }
     } SCENE {
         MESSAGE("Foe Wobbuffet used Extreme Speed!");
         MESSAGE("Wobbuffet used Max Mindstorm!");
@@ -900,7 +900,7 @@ SINGLE_BATTLE_TEST("(DYNAMAX) G-Max Steelsurge sets up sharp steel")
         OPPONENT(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_HATTERENE);
     } WHEN {
-        TURN { MOVE(player, MOVE_IRON_HEAD, gimmick: GIMMICK_DYNAMAX); }
+        TURN { MOVE(player, MOVE_DRAWN_LINE, gimmick: GIMMICK_DYNAMAX); }
         TURN { SWITCH(opponent, 1); }
         TURN { } // wait out Dynamax
         TURN { MOVE(opponent, MOVE_DEFOG); }
@@ -1170,7 +1170,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Meltdown torments both opponents for 3 turns
         OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_NORMAL_KOSUZU) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_IRON_HEAD, target: opponentLeft, gimmick: GIMMICK_DYNAMAX); \
+        TURN { MOVE(playerLeft, MOVE_DRAWN_LINE, target: opponentLeft, gimmick: GIMMICK_DYNAMAX); \
                MOVE(opponentLeft, MOVE_SPLASH); MOVE(opponentRight, MOVE_SPLASH); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE, target: opponentLeft); \
                MOVE(opponentLeft, MOVE_SPLASH, allowed: FALSE); \
@@ -1407,7 +1407,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Depletion takes away 2 PP from the target's 
         OPPONENT(SPECIES_PLACEHOLD_RAIKO) { Ability(ABILITY_PRANKSTER); }
         OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_DRAGON_CLAW, target: opponentLeft, gimmick: GIMMICK_DYNAMAX); }
+        TURN { MOVE(playerLeft, MOVE_HEART_BREAK, target: opponentLeft, gimmick: GIMMICK_DYNAMAX); }
     } SCENE {
         MESSAGE("Foe Sableye used Celebrate!");
         MESSAGE("Duraludon used G-Max Depletion!");
@@ -1433,7 +1433,7 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max One Blow bypasses Max Guard for full damage"
                    MOVE(opponentLeft, MOVE_PROTECT, gimmick: GIMMICK_DYNAMAX); }
         else
             TURN { MOVE(playerLeft, MOVE_WICKED_BLOW, target: opponentLeft, gimmick: GIMMICK_DYNAMAX); \
-                   MOVE(opponentLeft, MOVE_PSYCHIC, target: playerLeft, gimmick: GIMMICK_DYNAMAX); }
+                   MOVE(opponentLeft, MOVE_MANA_BURST, target: playerLeft, gimmick: GIMMICK_DYNAMAX); }
     } SCENE {
         if (protect)
             MESSAGE("Foe Wobbuffet used Max Guard!");

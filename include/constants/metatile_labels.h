@@ -452,6 +452,29 @@
 #define METATILE_RG_General_YellowCaveIndent   0x193
 #define METATILE_RG_General_YellowCaveOpen     0x194
 
+// gTileset_RG_PokemonCenter
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Normal       0x2D0
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition1  0x30A
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition2  0x308
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Normal           0x2D8
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition1      0x312
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition2      0x310
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Normal           0x2D1
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition1      0x30B
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition2      0x309
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Normal               0x2D9
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition1          0x313
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition2          0x311
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Normal          0x2EB
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition1     0x31E
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition2     0x31C
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Normal              0x2E3
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition1         0x316
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition2         0x314
+#define METATILE_RG_PokemonCenter_Escalator_Top_Normal                  0x2E4
+#define METATILE_RG_PokemonCenter_Escalator_Top_Transition1             0x317
+#define METATILE_RG_PokemonCenter_Escalator_Top_Transition2             0x315
+
 // gTileset_RG_SeafoamIslands
 #define METATILE_RG_SeafoamIslands_CrackedIce    0x35A
 #define METATILE_RG_SeafoamIslands_IceHole       0x35B

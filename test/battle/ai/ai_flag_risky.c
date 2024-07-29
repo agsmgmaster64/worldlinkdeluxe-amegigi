@@ -13,10 +13,10 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY: AI will blindly Mirror Coat against specia
         ASSUME(gSpeciesInfo[SPECIES_TECH_KYOUKO].baseSpAttack == 85);
         ASSUME(gSpeciesInfo[SPECIES_TECH_KYOUKO].baseAttack == 65);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | aiRiskyFlag);
-        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Moves(MOVE_ENERGY_BALL); } 
+        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Moves(MOVE_ENERGY_LIGHT); } 
         OPPONENT(SPECIES_CASTFORM) { Level(20); Moves(MOVE_TACKLE, MOVE_MIRROR_COAT); }
     } WHEN {
-            TURN { MOVE(player, MOVE_ENERGY_BALL) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_MIRROR_COAT : MOVE_TACKLE); }
+            TURN { MOVE(player, MOVE_ENERGY_LIGHT) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_MIRROR_COAT : MOVE_TACKLE); }
     }
 }
 
@@ -49,10 +49,10 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_RISKY: AI will prioritize Revenge if slower")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_REVENGE].effect == EFFECT_REVENGE);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | aiRiskyFlag);
-        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Speed(4); Moves(MOVE_ENERGY_BALL); } 
+        PLAYER(SPECIES_TECH_KYOUKO) { Level(20); Speed(4); Moves(MOVE_ENERGY_LIGHT); } 
         OPPONENT(SPECIES_CASTFORM) { Level(19); Speed(3); Moves(MOVE_TACKLE, MOVE_REVENGE); }
     } WHEN {
-            TURN { MOVE(player, MOVE_ENERGY_BALL) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_REVENGE : MOVE_TACKLE); }
+            TURN { MOVE(player, MOVE_ENERGY_LIGHT) ; EXPECT_MOVE(opponent, aiRiskyFlag ? MOVE_REVENGE : MOVE_TACKLE); }
     }
 }
 

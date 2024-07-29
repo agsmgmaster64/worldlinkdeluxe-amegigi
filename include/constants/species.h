@@ -284,8 +284,8 @@
 #define SPECIES_NORMAL_SEKIBANKI                        280
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
-#define SPECIES_CHIBI_KAGEROU                                 283
-#define SPECIES_NORMAL_KAGEROU                              284
+#define SPECIES_CHIBI_KAGEROU                           283
+#define SPECIES_NORMAL_KAGEROU                            284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287
@@ -1701,6 +1701,10 @@
 #define SPECIES_MR_MIME_GALAR                           SPECIES_MR_MIME_GALARIAN
 #define SPECIES_MUK_ALOLA                               SPECIES_MUK_ALOLAN
 #define SPECIES_NINETALES_ALOLA                         SPECIES_NINETALES_ALOLAN
+#define SPECIES_OGERPON_TEAL                            SPECIES_OGERPON_TEAL_MASK
+#define SPECIES_OGERPON_WELLSPRING                      SPECIES_OGERPON_WELLSPRING_MASK
+#define SPECIES_OGERPON_HEARTHFLAME                     SPECIES_OGERPON_HEARTHFLAME_MASK
+#define SPECIES_OGERPON_CORNERSTONE                     SPECIES_OGERPON_CORNERSTONE_MASK
 #define SPECIES_ORBEETLE_GMAX                           SPECIES_ORBEETLE_GIGANTAMAX
 #define SPECIES_PERSIAN_ALOLA                           SPECIES_PERSIAN_ALOLAN
 #define SPECIES_PIKACHU_GMAX                            SPECIES_PIKACHU_GIGANTAMAX

@@ -75,10 +75,10 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the same type gives that type 2x 
         PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_PSYCHIC); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
-        TURN { MOVE(player, MOVE_PSYCHIC, gimmick: tera); }
+        TURN { MOVE(player, MOVE_MANA_BURST, gimmick: tera); }
     } SCENE {
         MESSAGE("Wobbuffet used Psychic!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_PSYCHIC, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_MANA_BURST, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
         // The jump from 1.5x STAB to 2.0x STAB is a 1.33x boost.
@@ -504,10 +504,10 @@ SINGLE_BATTLE_TEST("(TERA) Stellar type does not change the user's defensive pro
         PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
-        TURN { MOVE(player, MOVE_CELEBRATE, gimmick: tera); MOVE(opponent, MOVE_PSYCHIC); }
+        TURN { MOVE(player, MOVE_CELEBRATE, gimmick: tera); MOVE(opponent, MOVE_MANA_BURST); }
     } SCENE {
         MESSAGE("Foe Wobbuffet used Psychic!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_PSYCHIC, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_MANA_BURST, opponent);
         HP_BAR(player, captureDamage: &results[i].damage);
     } FINALLY {
         EXPECT_EQ(results[0].damage, results[1].damage);
