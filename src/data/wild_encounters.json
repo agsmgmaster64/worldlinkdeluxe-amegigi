@@ -542,12 +542,12 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_CHIBI_SEKIBANKI"
+                "species": "SPECIES_CHIBI_WAKASAGIHIME"
               },
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_CHIBI_SEKIBANKI"
+                "species": "SPECIES_CHIBI_WAKASAGIHIME"
               }
             ]
           },
@@ -9065,7 +9065,7 @@
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_CHIBI_KAGUYA"
+                "species": "SPECIES_CHIBI_HINA"
               },
               {
                 "min_level": 5,
