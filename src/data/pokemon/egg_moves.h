@@ -790,13 +790,12 @@ static const u16 sCSeijaEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sCShinyoumaruEggMoveLearnset[] = {
+static const u16 sCShinmyoumaruEggMoveLearnset[] = {
     MOVE_DOUBLE_EDGE,
     MOVE_BATON_PASS,
     MOVE_PIN_MISSILE,
     MOVE_VITAL_THROW,
     MOVE_DRAWN_LINE,
-    MOVE_SANDSTORM,
     MOVE_UNAVAILABLE,
 };
 

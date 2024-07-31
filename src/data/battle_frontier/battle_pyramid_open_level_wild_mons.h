@@ -31,7 +31,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round1[] =
         .moves = {MOVE_STUN_SPORE, MOVE_GIGA_DRAIN, MOVE_PROTECT, MOVE_NONE}
     },
     {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .lvl = 8,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_QUICK_ATTACK, MOVE_NONE}
@@ -129,7 +129,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round3[] =
         .moves = {MOVE_WILL_O_WISP, MOVE_QUICK_ATTACK, MOVE_FLAMETHROWER, MOVE_NONE}
     },
     {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .lvl = 6,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_FIRE_PUNCH, MOVE_HIGH_JUMP_KICK, MOVE_NONE, MOVE_NONE}
@@ -539,7 +539,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round11[] =
         .moves = {MOVE_SPORE, MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE}
     },
     {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .lvl = 8,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_FOCUS_PUNCH}

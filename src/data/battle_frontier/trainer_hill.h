@@ -197,7 +197,7 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                 .speechAfter = { EC_WORD_HUH_QUES, EC_WORD_TOMORROW, EC_WORD_SMELL, EC_WORD_ABSOLUTELY, EC_WORD_THOSE, EC_WORD_EXCL_EXCL },
                 .mons = {
                     [0] = {
-                        .species = SPECIES_ATTACK_SHINYOUMARU,
+                        .species = SPECIES_ATTACK_SHINMYOUMARU,
                         .heldItem = ITEM_CHERI_BERRY,
                         .moves = { MOVE_SPARK, MOVE_THUNDER_WAVE, MOVE_QUICK_ATTACK, MOVE_ROAR },
                         .hpEV = 120,
@@ -656,7 +656,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                 {
                     [0] =
                     {
-                        .species = SPECIES_CHIBI_SHINYOUMARU,
+                        .species = SPECIES_CHIBI_SHINMYOUMARU,
                         .heldItem = ITEM_FOCUS_BAND,
                         .moves = {MOVE_FOCUS_PUNCH, MOVE_PROTECT, MOVE_NONE, MOVE_NONE},
                         .hpEV = 252,
@@ -1086,7 +1086,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     },
                     [1] =
                     {
-                        .species = SPECIES_NORMAL_SHINYOUMARU,
+                        .species = SPECIES_NORMAL_SHINMYOUMARU,
                         .heldItem = ITEM_QUICK_CLAW,
                         .moves = {MOVE_PSYCH_UP, MOVE_HIGH_JUMP_KICK, MOVE_MEGA_KICK, MOVE_ROCK_SLIDE},
                         .hpEV = 252,
@@ -2697,7 +2697,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         },
                                     [4] =
                                         {
-                                            .species = SPECIES_DEFENSE_SHINYOUMARU,
+                                            .species = SPECIES_DEFENSE_SHINMYOUMARU,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_THUNDERBOLT, MOVE_HEADBUTT, MOVE_BITE, MOVE_RAIN_DANCE},
                                             .speedEV = 255,

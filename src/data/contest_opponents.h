@@ -146,7 +146,7 @@ const struct ContestWinner gDefaultContestWinners[] =
     [CONTEST_WINNER_HALL_1 - 1] = {
         .personality = 0,
         .trainerId = CONTEST_AI_TRAINER_ID,
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .monName = _("ELECTER"),
         .trainerName = _("EZRA"),
@@ -598,7 +598,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_CHANCE] = {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .nickname = _("RIKELEC"),
         .trainerName = _("CHANCE"),
         .trainerGfxId = OBJ_EVENT_GFX_RICH_BOY,
@@ -1030,7 +1030,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = CONTEST_AI_TRAINER_ID,
     },
     [CONTEST_OPPONENT_SUMMER] = {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .nickname = _("CHAMCHAM"),
         .trainerName = _("SUMMER"),
         .trainerGfxId = OBJ_EVENT_GFX_WOMAN_4,

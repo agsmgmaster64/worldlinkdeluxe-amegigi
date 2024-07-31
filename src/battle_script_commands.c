@@ -11144,7 +11144,8 @@ static void Cmd_setprotectlike(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_ITSELF;
             }
 
-            gDisableStructs[gBattlerAttacker].protectUses++;
+            if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                gDisableStructs[gBattlerAttacker].protectUses++;
             fail = FALSE;
         }
         else // Protects the whole side.
@@ -11154,21 +11155,24 @@ static void Cmd_setprotectlike(void)
             {
                 gSideStatuses[side] |= SIDE_STATUS_WIDE_GUARD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_QUICK_GUARD && !(gSideStatuses[side] & SIDE_STATUS_QUICK_GUARD))
             {
                 gSideStatuses[side] |= SIDE_STATUS_QUICK_GUARD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_CRAFTY_SHIELD && !(gSideStatuses[side] & SIDE_STATUS_CRAFTY_SHIELD))
             {
                 gSideStatuses[side] |= SIDE_STATUS_CRAFTY_SHIELD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_MAT_BLOCK && !(gSideStatuses[side] & SIDE_STATUS_MAT_BLOCK))
