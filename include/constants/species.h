@@ -1622,6 +1622,8 @@
 
 #define NUM_SPECIES SPECIES_EGG
 
+#define SPECIES_SHINY_TAG 5000
+
 // Competitive format aliases
 #define SPECIES_CHIBI_MINORIKO_SANNI                    SPECIES_CHIBI_MINORIKO_SANNIAN
 #define SPECIES_MINORIKO_SANNI                          SPECIES_NORMAL_MINORIKO_SANNIAN
