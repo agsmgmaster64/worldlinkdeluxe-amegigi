@@ -73,6 +73,14 @@
               9
             ]
           }
+        },
+        {
+          "type": "hidden_mons",
+          "encounter_rates": [
+            33,
+            33,
+            34
+          ]
         }
       ],
       "encounters": [
@@ -227,14 +235,14 @@
                 "species": "SPECIES_CHIBI_KOMACHI"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_CHIBI_KOMACHI"
+                "min_level": 20,
+                "max_level": 30,
+                "species": "SPECIES_CHIBI_HINA"
               },
               {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_CHIBI_HINA"
+                "min_level": 10,
+                "max_level": 20,
+                "species": "SPECIES_CHIBI_WAKASAGIHIME"
               },
               {
                 "min_level": 20,
@@ -248,12 +256,12 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 10,
+                "max_level": 5,
                 "species": "SPECIES_CHIBI_HINA"
               },
               {
                 "min_level": 5,
-                "max_level": 10,
+                "max_level": 5,
                 "species": "SPECIES_CHIBI_HINA"
               },
               {
@@ -402,12 +410,12 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 10,
+                "max_level": 5,
                 "species": "SPECIES_CHIBI_WAKASAGIHIME"
               },
               {
                 "min_level": 5,
-                "max_level": 10,
+                "max_level": 5,
                 "species": "SPECIES_CHIBI_MURASA"
               },
               {
@@ -9035,27 +9043,27 @@
               {
                 "min_level": 20,
                 "max_level": 30,
-                "species": "SPECIES_NORMAL_KANAKO"
+                "species": "SPECIES_CHIBI_KOMACHI"
               },
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_NORMAL_KANAKO"
+                "species": "SPECIES_CHIBI_KOMACHI"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_NORMAL_KANAKO"
+                "species": "SPECIES_CHIBI_HINA"
               },
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_KANAKO"
+                "species": "SPECIES_CHIBI_WAKASAGIHIME"
               },
               {
                 "min_level": 5,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_KANAKO"
+                "species": "SPECIES_CHIBI_WAKASAGIHIME"
               }
             ]
           },
@@ -9064,13 +9072,13 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 10,
+                "max_level": 5,
                 "species": "SPECIES_CHIBI_HINA"
               },
               {
                 "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_NORMAL_REISEN"
+                "max_level": 5,
+                "species": "SPECIES_CHIBI_HINA"
               },
               {
                 "min_level": 10,
