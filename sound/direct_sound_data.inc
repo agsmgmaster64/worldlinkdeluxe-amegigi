@@ -1011,3 +1011,19 @@ DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.align 2
 DirectSoundWaveData_touhou_death::
 	.incbin "sound/direct_sound_samples/touhou_death.bin"
+
+	.align 2
+DirectSoundWaveData_prosamples_15_dance_drums_kick::
+	.incbin "sound/direct_sound_samples/prosamples_15_dance_drums_kick.bin"
+
+	.align 2
+DirectSoundWaveData_drum_and_percussion_stick::
+	.incbin "sound/direct_sound_samples/drum_and_percussion_stick.bin"
+
+	.align 2
+DirectSoundWaveData_drill_dozer_bass_sample::
+	.incbin "sound/direct_sound_samples/drill_dozer_bass_sample.bin"
+
+	.align 2
+DirectSoundWaveData_drill_dozer_trumpet_sample::
+	.incbin "sound/direct_sound_samples/drill_dozer_trumpet_sample.bin"

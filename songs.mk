@@ -696,6 +696,9 @@ $(MID_SUBDIR)/mus_zgs_dark_blow_hole.s: %.s: %.mid
 $(MID_SUBDIR)/mus_zgs_agtlp.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_rg_vs_champion
 
+$(MID_SUBDIR)/mus_dd_skuller_drill_missile.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_dd_skuller_drill_missile
+
 $(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_sfx_rs_1 -P5
 
