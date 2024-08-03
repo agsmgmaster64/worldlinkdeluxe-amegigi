@@ -512,8 +512,9 @@
 #define MUS_ZGS_POKE_CENTER         577
 #define MUS_ZGS_DARK_BLOW_HOLE      578
 #define MUS_ZGS_AGTLP               579
+#define MUS_DD_SKULLER_DRILL_MISSILE  580
 
-#define END_MUS                     MUS_ZGS_AGTLP
+#define END_MUS                     MUS_DD_SKULLER_DRILL_MISSILE
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

@@ -3,6 +3,7 @@
 .include "sound/voicegroups/voicegroup_drums_frlg.inc"
 .include "sound/voicegroups/voicegroup_drums_emerald_1.inc"
 .include "sound/voicegroups/voicegroup_drums_emerald_2.inc"
+.include "sound/voicegroups/voicegroup_drums_dd.inc"
 .include "sound/voicegroups/voicegroup_piano.inc"
 .include "sound/voicegroups/voicegroup_strings.inc"
 .include "sound/voicegroups/voicegroup_trumpet.inc"
@@ -190,3 +191,4 @@
 .include "sound/voicegroups/voicegroup189.inc"
 .include "sound/voicegroups/voicegroup190.inc"
 .include "sound/voicegroups/voicegroup_zgs_main.inc"
+.include "sound/voicegroups/voicegroup_dd_skuller_drill_missile.inc"

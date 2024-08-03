@@ -16899,9 +16899,9 @@ Move_IVY_CUDGEL::
 	delay 6
 	call WoodHammerImpact
 	waitforvisualfinish
-        end
+	end
 IvyCudgelFire:
-        loadspritegfx ANIM_TAG_IVY_CUDGEL_FIRE
+	loadspritegfx ANIM_TAG_IVY_CUDGEL_FIRE
 	createsprite gIvyCudgelFireSpriteTemplate, ANIM_TARGET, 2
 	delay 60
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 3, 0, 12, 4
@@ -16910,9 +16910,9 @@ IvyCudgelFire:
 	delay 6
 	call WoodHammerImpact
 	waitforvisualfinish
-        end
+	end
 IvyCudgelRock:
-        loadspritegfx ANIM_TAG_IVY_CUDGEL_ROCK
+	loadspritegfx ANIM_TAG_IVY_CUDGEL_ROCK
 	createsprite gIvyCudgelRockSpriteTemplate, ANIM_TARGET, 2
 	delay 60
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 3, 0, 12, 4
@@ -16921,9 +16921,9 @@ IvyCudgelRock:
 	delay 6
 	call WoodHammerImpact
 	waitforvisualfinish
-        end
+	end
 IvyCudgelWater:
-        loadspritegfx ANIM_TAG_IVY_CUDGEL_WATER
+	loadspritegfx ANIM_TAG_IVY_CUDGEL_WATER
 	createsprite gIvyCudgelWaterSpriteTemplate, ANIM_TARGET, 2
 	delay 60
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 3, 0, 12, 4
@@ -16932,7 +16932,7 @@ IvyCudgelWater:
 	delay 6
 	call WoodHammerImpact
 	waitforvisualfinish
-        end
+	end
 
 Move_SPICY_EXTRACT::
 	loadspritegfx ANIM_TAG_SMALL_EMBER
@@ -16979,8 +16979,22 @@ Move_SPICY_EXTRACT::
 	waitforvisualfinish
 	end
 
-Move_TERA_BLAST::
 Move_AXE_KICK::
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 0, 20, 0, 0, 4
+	delay 7
+	createsprite gAxeKickSpriteTemplate, ANIM_TARGET, 3
+	delay 2
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 1, 0, 0, ANIM_TARGET, 1
+	createvisualtask AnimTask_SquishTargetShort, 2
+	waitforvisualfinish
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 1, 4
+	end
+
+Move_TERA_BLAST::
 Move_ORDER_UP::
 Move_SPIN_OUT::
 Move_POPULATION_BOMB::

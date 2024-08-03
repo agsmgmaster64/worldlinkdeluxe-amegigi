@@ -96,7 +96,7 @@ static const struct TrainerMon sParty_Marcel[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 29,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -369,7 +369,7 @@ static const struct TrainerMon sParty_Rose1[] = {
 static const struct TrainerMon sParty_Felix[] = {
     {
     .lvl = 43,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
@@ -842,7 +842,7 @@ static const struct TrainerMon sParty_Vincent[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 44,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -868,7 +868,7 @@ static const struct TrainerMon sParty_Wilton1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -971,7 +971,7 @@ static const struct TrainerMon sParty_Wilton2[] = {
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
     .lvl = 26,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
@@ -989,7 +989,7 @@ static const struct TrainerMon sParty_Wilton3[] = {
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
     .lvl = 29,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
@@ -1007,7 +1007,7 @@ static const struct TrainerMon sParty_Wilton4[] = {
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 32,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -1025,7 +1025,7 @@ static const struct TrainerMon sParty_Wilton5[] = {
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 35,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
@@ -1112,7 +1112,7 @@ static const struct TrainerMon sParty_Keira[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 45,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -1167,7 +1167,7 @@ static const struct TrainerMon sParty_Michelle[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 42,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -1648,7 +1648,7 @@ static const struct TrainerMon sParty_Mollie[] = {
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 33,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -2184,7 +2184,7 @@ static const struct TrainerMon sParty_Kirk[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SPARK, MOVE_LEER}
     },
     {
@@ -2229,7 +2229,7 @@ static const struct TrainerMon sParty_Shawn[] = {
 static const struct TrainerMon sParty_Fernando1[] = {
     {
     .lvl = 30,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .lvl = 30,
@@ -2971,18 +2971,18 @@ static const struct TrainerMon sParty_Jacki5[] = {
 static const struct TrainerMon sParty_Walter1[] = {
     {
     .lvl = 29,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
 static const struct TrainerMon sParty_Micah[] = {
     {
     .lvl = 44,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .lvl = 44,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -2997,7 +2997,7 @@ static const struct TrainerMon sParty_Walter2[] = {
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 34,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -3011,7 +3011,7 @@ static const struct TrainerMon sParty_Walter3[] = {
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 36,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_HEARTS_EYE, MOVE_ROAR}
     }
 };
@@ -3026,7 +3026,7 @@ static const struct TrainerMon sParty_Walter4[] = {
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 39,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_HEARTS_EYE, MOVE_NONE}
     }
 };
@@ -3047,7 +3047,7 @@ static const struct TrainerMon sParty_Walter5[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 41,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .moves = {MOVE_QUICK_ATTACK, MOVE_SPARK, MOVE_HEARTS_EYE, MOVE_ROAR}
     }
 };
@@ -3239,7 +3239,7 @@ static const struct TrainerMon sParty_Brawly1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 16,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_BULK_UP}
     },
@@ -3263,7 +3263,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 20,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SHOCK_WAVE, MOVE_LEER, MOVE_QUICK_ATTACK, MOVE_HOWL}
     },
@@ -3277,7 +3277,7 @@ static const struct TrainerMon sParty_Wattson1[] = {
     {
     .iv = TRAINER_PARTY_IVS(30, 30, 30, 30, 30, 30),
     .lvl = 24,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_HOWL}
     }
@@ -3495,7 +3495,7 @@ static const struct TrainerMon sParty_Jerry2[] = {
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 26,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -3508,7 +3508,7 @@ static const struct TrainerMon sParty_Jerry3[] = {
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 29,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -3521,7 +3521,7 @@ static const struct TrainerMon sParty_Jerry4[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 32,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     }
 };
 
@@ -3539,7 +3539,7 @@ static const struct TrainerMon sParty_Jerry5[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 34,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     }
 };
 
@@ -3955,7 +3955,7 @@ static const struct TrainerMon sParty_Vicky[] = {
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 18,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .moves = {MOVE_HIGH_JUMP_KICK, MOVE_MEDITATE, MOVE_PSYSHOT, MOVE_DETECT}
     }
 };
@@ -3964,7 +3964,7 @@ static const struct TrainerMon sParty_Shelby1[] = {
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 21,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
@@ -3977,7 +3977,7 @@ static const struct TrainerMon sParty_Shelby2[] = {
     {
     .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
     .lvl = 30,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
@@ -3990,7 +3990,7 @@ static const struct TrainerMon sParty_Shelby3[] = {
     {
     .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
     .lvl = 33,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
@@ -4003,7 +4003,7 @@ static const struct TrainerMon sParty_Shelby4[] = {
     {
     .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
     .lvl = 36,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
@@ -4016,7 +4016,7 @@ static const struct TrainerMon sParty_Shelby5[] = {
     {
     .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
     .lvl = 39,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
@@ -4217,7 +4217,7 @@ static const struct TrainerMon sParty_Timmy[] = {
     },
     {
     .lvl = 13,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     }
 };
 
@@ -4725,7 +4725,7 @@ static const struct TrainerMon sParty_Demetrius[] = {
     },
     {
     .lvl = 25,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     }
 };
 
@@ -5327,7 +5327,7 @@ static const struct TrainerMon sParty_Jocelyn[] = {
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 13,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -5335,7 +5335,7 @@ static const struct TrainerMon sParty_Laura[] = {
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 13,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -5343,7 +5343,7 @@ static const struct TrainerMon sParty_Cyndy1[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 18,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -5356,7 +5356,7 @@ static const struct TrainerMon sParty_Cora[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 27,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -5372,7 +5372,7 @@ static const struct TrainerMon sParty_Cyndy2[] = {
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
     .lvl = 26,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(13, 13, 13, 13, 13, 13),
@@ -5385,7 +5385,7 @@ static const struct TrainerMon sParty_Cyndy3[] = {
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
     .lvl = 29,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(14, 14, 14, 14, 14, 14),
@@ -5398,7 +5398,7 @@ static const struct TrainerMon sParty_Cyndy4[] = {
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
     .lvl = 32,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(15, 15, 15, 15, 15, 15),
@@ -5411,7 +5411,7 @@ static const struct TrainerMon sParty_Cyndy5[] = {
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
     .lvl = 35,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
@@ -6232,7 +6232,7 @@ static const struct TrainerMon sParty_Kayley[] = {
 static const struct TrainerMon sParty_Auron[] = {
     {
     .lvl = 33,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .lvl = 33,
@@ -6257,7 +6257,7 @@ static const struct TrainerMon sParty_Marley[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 34,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_BITE, MOVE_ROAR, MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT}
     }
@@ -6267,7 +6267,7 @@ static const struct TrainerMon sParty_Reyna[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 33,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
@@ -7273,7 +7273,7 @@ static const struct TrainerMon sParty_Lilith[] = {
     {
     .iv = TRAINER_PARTY_IVS(18, 18, 18, 18, 18, 18),
     .lvl = 13,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -7289,7 +7289,7 @@ static const struct TrainerMon sParty_Sylvia[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 36,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -7304,7 +7304,7 @@ static const struct TrainerMon sParty_Athena[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 32,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_QUICK_ATTACK, MOVE_NONE}
     },
@@ -8080,7 +8080,7 @@ static const struct TrainerMon sParty_DezAndLuke[] = {
     },
     {
     .lvl = 31,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -8178,13 +8178,13 @@ static const struct TrainerMon sParty_Vivian[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .moves = {MOVE_BURN_POWDER, MOVE_DETECT, MOVE_PSYSHOT, MOVE_THUNDER_PUNCH}
     },
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 17,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .moves = {MOVE_THUNDER_PUNCH, MOVE_DETECT, MOVE_PSYSHOT, MOVE_MEDITATE}
     }
 };
@@ -8193,7 +8193,7 @@ static const struct TrainerMon sParty_Danielle[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 23,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .moves = {MOVE_BURN_POWDER, MOVE_DETECT, MOVE_PSYSHOT, MOVE_FIRE_PUNCH}
     }
 };
@@ -8718,7 +8718,7 @@ static const struct TrainerMon sParty_JohnAndJay1[] = {
     {
     .iv = TRAINER_PARTY_IVS(24, 24, 24, 24, 24, 24),
     .lvl = 39,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_FIRE_PUNCH, MOVE_PSYCH_UP, MOVE_PROTECT}
     },
     {
@@ -8733,7 +8733,7 @@ static const struct TrainerMon sParty_JohnAndJay2[] = {
     {
     .iv = TRAINER_PARTY_IVS(25, 25, 25, 25, 25, 25),
     .lvl = 43,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_FIRE_PUNCH, MOVE_PSYCH_UP, MOVE_PROTECT}
     },
     {
@@ -8748,7 +8748,7 @@ static const struct TrainerMon sParty_JohnAndJay3[] = {
     {
     .iv = TRAINER_PARTY_IVS(26, 26, 26, 26, 26, 26),
     .lvl = 46,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_FIRE_PUNCH, MOVE_PSYCH_UP, MOVE_PROTECT}
     },
     {
@@ -8763,7 +8763,7 @@ static const struct TrainerMon sParty_JohnAndJay4[] = {
     {
     .iv = TRAINER_PARTY_IVS(27, 27, 27, 27, 27, 27),
     .lvl = 49,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_FIRE_PUNCH, MOVE_PSYCH_UP, MOVE_PROTECT}
     },
     {
@@ -8778,7 +8778,7 @@ static const struct TrainerMon sParty_JohnAndJay5[] = {
     {
     .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
     .lvl = 52,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .moves = {MOVE_MANA_BURST, MOVE_FIRE_PUNCH, MOVE_PSYCH_UP, MOVE_PROTECT}
     },
     {
@@ -8952,7 +8952,7 @@ static const struct TrainerMon sParty_Kaleb[] = {
 static const struct TrainerMon sParty_Joseph[] = {
     {
     .lvl = 14,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .lvl = 14,
@@ -9091,7 +9091,7 @@ static const struct TrainerMon sParty_Deandre[] = {
     },
     {
     .lvl = 14,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     }
 };
 
@@ -9333,7 +9333,7 @@ static const struct TrainerMon sParty_Carolina[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 24,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
@@ -9343,7 +9343,7 @@ static const struct TrainerMon sParty_Carolina[] = {
     {
     .iv = TRAINER_PARTY_IVS(6, 6, 6, 6, 6, 6),
     .lvl = 24,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -9449,7 +9449,7 @@ static const struct TrainerMon sParty_Alix[] = {
 static const struct TrainerMon sParty_Helene[] = {
     {
     .lvl = 26,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .lvl = 26,
@@ -9460,7 +9460,7 @@ static const struct TrainerMon sParty_Helene[] = {
 static const struct TrainerMon sParty_Marlene[] = {
     {
     .lvl = 18,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .lvl = 18,
@@ -9507,7 +9507,7 @@ static const struct TrainerMon sParty_Brandi[] = {
 static const struct TrainerMon sParty_Aisha[] = {
     {
     .lvl = 17,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     }
 };
 
@@ -9518,14 +9518,14 @@ static const struct TrainerMon sParty_Makayla[] = {
     },
     {
     .lvl = 33,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     }
 };
 
 static const struct TrainerMon sParty_Fabian[] = {
     {
     .lvl = 26,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     }
 };
 
@@ -9551,7 +9551,7 @@ static const struct TrainerMon sParty_Leonel[] = {
     {
     .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
     .lvl = 30,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .moves = {MOVE_THUNDER, MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_NONE}
     }
 };
@@ -9559,7 +9559,7 @@ static const struct TrainerMon sParty_Leonel[] = {
 static const struct TrainerMon sParty_Callie[] = {
     {
     .lvl = 28,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     },
     {
     .lvl = 28,
@@ -9602,7 +9602,7 @@ static const struct TrainerMon sParty_Myles[] = {
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 25,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -9625,7 +9625,7 @@ static const struct TrainerMon sParty_Pat[] = {
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 25,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -9846,7 +9846,7 @@ static const struct TrainerMon sParty_Brawly2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 33,
-    .species = SPECIES_CHIBI_SHINYOUMARU,
+    .species = SPECIES_CHIBI_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_MANA_BURST, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOCUS_PUNCH}
     },
@@ -9877,7 +9877,7 @@ static const struct TrainerMon sParty_Brawly3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 38,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_MANA_BURST, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_FOCUS_PUNCH}
     },
@@ -9915,7 +9915,7 @@ static const struct TrainerMon sParty_Brawly4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 43,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_MANA_BURST}
     },
@@ -9960,7 +9960,7 @@ static const struct TrainerMon sParty_Brawly5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 48,
-    .species = SPECIES_NORMAL_SHINYOUMARU,
+    .species = SPECIES_NORMAL_SHINMYOUMARU,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_FOCUS_PUNCH, MOVE_LIGHT_SCREEN, MOVE_REFLECT, MOVE_MANA_BURST}
     },
@@ -10005,7 +10005,7 @@ static const struct TrainerMon sParty_Wattson2[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 40,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
@@ -10043,7 +10043,7 @@ static const struct TrainerMon sParty_Wattson3[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 45,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
@@ -10081,7 +10081,7 @@ static const struct TrainerMon sParty_Wattson4[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 50,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
@@ -10126,7 +10126,7 @@ static const struct TrainerMon sParty_Wattson5[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 55,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     .heldItem = ITEM_SITRUS_BERRY,
     .moves = {MOVE_BITE, MOVE_THUNDER_WAVE, MOVE_THUNDER, MOVE_PROTECT}
     }
@@ -11418,12 +11418,12 @@ static const struct TrainerMon sParty_Fernando2[] = {
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 35,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
     .lvl = 35,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -11436,12 +11436,12 @@ static const struct TrainerMon sParty_Fernando3[] = {
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 37,
-    .species = SPECIES_ATTACK_SHINYOUMARU,
+    .species = SPECIES_ATTACK_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
     .lvl = 37,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -11454,12 +11454,12 @@ static const struct TrainerMon sParty_Fernando4[] = {
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 39,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
     .lvl = 39,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -11472,12 +11472,12 @@ static const struct TrainerMon sParty_Fernando5[] = {
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 41,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
     .lvl = 41,
-    .species = SPECIES_DEFENSE_SHINYOUMARU,
+    .species = SPECIES_DEFENSE_SHINMYOUMARU,
     },
     {
     .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),

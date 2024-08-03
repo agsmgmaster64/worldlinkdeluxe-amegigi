@@ -908,7 +908,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_CALM
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_1] = {
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_BITE, MOVE_SPARK, MOVE_ROAR, MOVE_FLASH},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 170, 0, 0),
@@ -1216,7 +1216,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .nature = NATURE_MILD
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_2] = {
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_SPARK, MOVE_BATTERY_CHARGE, MOVE_ROAR, MOVE_THUNDER_WAVE},
         .heldItem = ITEM_APICOT_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
@@ -1982,7 +1982,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .nature = NATURE_GENTLE
     },
     [VERDANTURF_TENT_MON_ELECTRIKE] = {
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_SHOCK_WAVE, MOVE_TACKLE, MOVE_BATTERY_CHARGE, MOVE_THUNDER_WAVE},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
@@ -2814,7 +2814,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .nature = NATURE_GENTLE
     },
     [FALLARBOR_TENT_MON_ELECTRIKE] = {
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_CRUNCH, MOVE_THUNDER_WAVE, MOVE_HOWL, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_SEA_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),

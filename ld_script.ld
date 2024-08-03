@@ -1240,6 +1240,7 @@ SECTIONS {
         sound/songs/midi/mus_zgs_poke_center.o(.rodata);
         sound/songs/midi/mus_zgs_dark_blow_hole.o(.rodata);
         sound/songs/midi/mus_zgs_agtlp.o(.rodata);
+        sound/songs/midi/mus_dd_skuller_drill_missile.o(.rodata);
     } > ROM =0
 
     lib_rodata :

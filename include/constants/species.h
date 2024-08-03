@@ -285,7 +285,7 @@
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
 #define SPECIES_CHIBI_KAGEROU                           283
-#define SPECIES_NORMAL_KAGEROU                            284
+#define SPECIES_NORMAL_KAGEROU                             284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287
@@ -308,10 +308,10 @@
 #define SPECIES_NORMAL_SEIJA                            304
 #define SPECIES_DEFENSE_SEIJA                           305
 #define SPECIES_PLACEHOLD_SEIJA                         306 // Placeholder
-#define SPECIES_CHIBI_SHINYOUMARU                       307
-#define SPECIES_NORMAL_SHINYOUMARU                      308
-#define SPECIES_ATTACK_SHINYOUMARU                      309
-#define SPECIES_DEFENSE_SHINYOUMARU                     310
+#define SPECIES_CHIBI_SHINMYOUMARU                      307
+#define SPECIES_NORMAL_SHINMYOUMARU                     308
+#define SPECIES_ATTACK_SHINMYOUMARU                     309
+#define SPECIES_DEFENSE_SHINMYOUMARU                    310
 #define SPECIES_CHIBI_SUIKA                             311
 #define SPECIES_NORMAL_SUIKA                            312
 #define SPECIES_ATTACK_SUIKA                            313
@@ -1623,6 +1623,8 @@
 #define SPECIES_EGG (SPECIES_MIMIKYU_TOTEM_BUSTED + 1)
 
 #define NUM_SPECIES SPECIES_EGG
+
+#define SPECIES_SHINY_TAG 5000
 
 // Competitive format aliases
 #define SPECIES_CHIBI_MINORIKO_SANNI                    SPECIES_CHIBI_MINORIKO_SANNIAN

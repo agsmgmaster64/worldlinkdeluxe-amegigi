@@ -5746,10 +5746,10 @@ static void Cmd_moveend(void)
                         gBattlescriptCurrInstr = BattleScript_TargetBurnHeal;
                         break;
                     case STATUS1_FREEZE:
-                        gBattlescriptCurrInstr = BattleScript_FrostbiteHealedViaFireMove;
+                        gBattlescriptCurrInstr = BattleScript_DefrostedViaFireMove;
                         break;
                     case STATUS1_FROSTBITE:
-                        gBattlescriptCurrInstr = BattleScript_DefrostedViaFireMove;
+                        gBattlescriptCurrInstr = BattleScript_FrostbiteHealedViaFireMove;
                         break;
                     case STATUS1_POISON:
                     case STATUS1_TOXIC_POISON:
@@ -11144,7 +11144,8 @@ static void Cmd_setprotectlike(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_ITSELF;
             }
 
-            gDisableStructs[gBattlerAttacker].protectUses++;
+            if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                gDisableStructs[gBattlerAttacker].protectUses++;
             fail = FALSE;
         }
         else // Protects the whole side.
@@ -11154,21 +11155,24 @@ static void Cmd_setprotectlike(void)
             {
                 gSideStatuses[side] |= SIDE_STATUS_WIDE_GUARD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_QUICK_GUARD && !(gSideStatuses[side] & SIDE_STATUS_QUICK_GUARD))
             {
                 gSideStatuses[side] |= SIDE_STATUS_QUICK_GUARD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_CRAFTY_SHIELD && !(gSideStatuses[side] & SIDE_STATUS_CRAFTY_SHIELD))
             {
                 gSideStatuses[side] |= SIDE_STATUS_CRAFTY_SHIELD;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_TEAM;
-                gDisableStructs[gBattlerAttacker].protectUses++;
+                if (gDisableStructs[gBattlerAttacker].protectUses < 3)
+                    gDisableStructs[gBattlerAttacker].protectUses++;
                 fail = FALSE;
             }
             else if (gCurrentMove == MOVE_MAT_BLOCK && !(gSideStatuses[side] & SIDE_STATUS_MAT_BLOCK))
@@ -11876,16 +11880,6 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
                 gBattlescriptCurrInstr = BattleScript_MirrorArmorReflect;
                 RecordAbilityBattle(battler, gBattleMons[battler].ability);
             }
-            return STAT_CHANGE_DIDNT_WORK;
-        }
-        else if (battlerAbility == ABILITY_ADVENT && flags == 0)
-        {
-            RecordAbilityBattle(battler, ABILITY_ADVENT);
-            return STAT_CHANGE_DIDNT_WORK;
-        }
-        else if (flags == 0 && battlerHoldEffect == HOLD_EFFECT_COVERT_CLOAK)
-        {
-            RecordItemEffectBattle(battler, HOLD_EFFECT_COVERT_CLOAK);
             return STAT_CHANGE_DIDNT_WORK;
         }
         else // try to decrease
@@ -13347,7 +13341,7 @@ static void Cmd_healpartystatus(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL;
 
         if (GetBattlerAbility(gBattlerAttacker) != ABILITY_SOUNDPROOF
-         || B_HEAL_BELL_SOUNDPROOF == GEN_5 || B_HEAL_BELL_SOUNDPROOF >= GEN_9)
+         || B_HEAL_BELL_SOUNDPROOF == GEN_5 || B_HEAL_BELL_SOUNDPROOF >= GEN_8)
         {
             gBattleMons[gBattlerAttacker].status1 = 0;
             gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
@@ -13387,7 +13381,7 @@ static void Cmd_healpartystatus(void)
                 bool32 isAttacker = gBattlerPartyIndexes[gBattlerAttacker] == i;
                 bool32 isDoublesPartner = gBattlerPartyIndexes[partner] == i && IsBattlerAlive(partner);
 
-                if (B_HEAL_BELL_SOUNDPROOF == GEN_5 || (isAttacker && B_HEAL_BELL_SOUNDPROOF >= GEN_9))
+                if (B_HEAL_BELL_SOUNDPROOF == GEN_5 || (isAttacker && B_HEAL_BELL_SOUNDPROOF >= GEN_8))
                     ability = ABILITY_NONE;
                 else if (B_HEAL_BELL_SOUNDPROOF > GEN_5 && !isAttacker && !isDoublesPartner)
                     ability = ABILITY_NONE;

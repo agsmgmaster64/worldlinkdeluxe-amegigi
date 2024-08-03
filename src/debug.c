@@ -4906,6 +4906,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_POKE_CENTER) \
     X(MUS_ZGS_DARK_BLOW_HOLE) \
     X(MUS_ZGS_AGTLP) \
+    X(MUS_DD_SKULLER_DRILL_MISSILE) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

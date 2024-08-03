@@ -351,7 +351,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_MEDITITE] = {
-        .species = SPECIES_CHIBI_SHINYOUMARU,
+        .species = SPECIES_CHIBI_SHINMYOUMARU,
         .moves = {MOVE_HIGH_JUMP_KICK, MOVE_MEDITATE, MOVE_SWAGGER, MOVE_PSYCH_UP},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
@@ -449,7 +449,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_QUIRKY
     },
     [FRONTIER_MON_ELECTRIKE] = {
-        .species = SPECIES_ATTACK_SHINYOUMARU,
+        .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_SPARK, MOVE_THUNDER_WAVE, MOVE_ROAR, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_CHERI_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
@@ -2612,7 +2612,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MEDICHAM_1] = {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .moves = {MOVE_MANA_BURST, MOVE_HIGH_JUMP_KICK, MOVE_CALM_MIND, MOVE_BATON_PASS},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
@@ -2752,7 +2752,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_MANECTRIC_1] = {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .moves = {MOVE_THUNDERBOLT, MOVE_FLASH, MOVE_QUICK_ATTACK, MOVE_ROAR},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -2804,7 +2804,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_NORMAL_MIKO,
         .moves = {MOVE_SURF, MOVE_RAIN_DANCE, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH},
         .heldItem = ITEM_SHELL_BELL,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_HYPNO_1] = {
@@ -2853,7 +2853,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_CHIBI_EIRIN,
         .moves = {MOVE_THUNDERBOLT, MOVE_THUNDER_WAVE, MOVE_BRICK_BREAK, MOVE_LIGHT_SCREEN},
         .heldItem = ITEM_CHERI_BERRY,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_TAUROS_1] = {
@@ -2909,7 +2909,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_NORMAL_EIRIN,
         .moves = {MOVE_FLAMETHROWER, MOVE_SMOKESCREEN, MOVE_BRICK_BREAK, MOVE_BARRIER},
         .heldItem = ITEM_RAWST_BERRY,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_RELAXED
     },
     [FRONTIER_MON_CRADILY_1] = {
@@ -3245,7 +3245,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_PLACEHOLD_TOYOHIME,
         .moves = {MOVE_HYDRO_PUMP, MOVE_ICY_WIND, MOVE_RECOVER, MOVE_MIRROR_COAT},
         .heldItem = ITEM_LUM_BERRY,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_ARCANINE_1] = {
@@ -3284,7 +3284,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MEDICHAM_2] = {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .moves = {MOVE_REVERSAL, MOVE_ENDURE, MOVE_MANA_BURST, MOVE_FAKE_OUT},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
@@ -3424,7 +3424,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_MANECTRIC_2] = {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .moves = {MOVE_THUNDER, MOVE_RAIN_DANCE, MOVE_CRUNCH, MOVE_ROAR},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -3714,7 +3714,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_NORMAL_LYRICA,
         .moves = {MOVE_TOXIC, MOVE_GIGA_DRAIN, MOVE_CONFUSE_RAY, MOVE_SURF},
         .heldItem = ITEM_BENTO_BOX,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_AERODACTYL_2] = {
@@ -3956,7 +3956,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MEDICHAM_3] = {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH, MOVE_FIRE_PUNCH},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -4096,7 +4096,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_BOLD
     },
     [FRONTIER_MON_MANECTRIC_3] = {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .moves = {MOVE_THUNDERBOLT, MOVE_STEEL_FIST, MOVE_THUNDER_WAVE, MOVE_ROAR},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -4628,7 +4628,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MEDICHAM_4] = {
-        .species = SPECIES_NORMAL_SHINYOUMARU,
+        .species = SPECIES_NORMAL_SHINMYOUMARU,
         .moves = {MOVE_MEGA_KICK, MOVE_MANA_BURST, MOVE_SHADOW_BALL, MOVE_ROCK_SLIDE},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
@@ -4768,7 +4768,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .nature = NATURE_DOCILE
     },
     [FRONTIER_MON_MANECTRIC_4] = {
-        .species = SPECIES_DEFENSE_SHINYOUMARU,
+        .species = SPECIES_DEFENSE_SHINMYOUMARU,
         .moves = {MOVE_THUNDERBOLT, MOVE_CRUNCH, MOVE_THUNDER_WAVE, MOVE_ROAR},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
@@ -5870,7 +5870,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_PLACEHOLD_ELLEN,
         .moves = {MOVE_EARTHQUAKE, MOVE_ICE_BEAM, MOVE_CURSE, MOVE_COUNTER},
         .heldItem = ITEM_BENTO_BOX,
-        .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
+        .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
         .nature = NATURE_BRAVE
     },
     [FRONTIER_MON_REGICE_6] = {

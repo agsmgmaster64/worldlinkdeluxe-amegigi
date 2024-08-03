@@ -829,7 +829,7 @@ static const u16 sAggronFormSpeciesIdTable[] = {
 
 #if P_FAMILY_MEDITITE
 static const u16 sMedichamFormSpeciesIdTable[] = {
-    SPECIES_NORMAL_SHINYOUMARU,
+    SPECIES_NORMAL_SHINMYOUMARU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MEDICHAM_MEGA,
 #endif
@@ -839,7 +839,7 @@ static const u16 sMedichamFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ELECTRIKE
 static const u16 sManectricFormSpeciesIdTable[] = {
-    SPECIES_DEFENSE_SHINYOUMARU,
+    SPECIES_DEFENSE_SHINMYOUMARU,
 #if P_MEGA_EVOLUTIONS
     SPECIES_MANECTRIC_MEGA,
 #endif

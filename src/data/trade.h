@@ -1038,7 +1038,7 @@ static const struct InGameTrade sIngameTrades[] =
     [INGAME_TRADE_MEOWTH] =
     {
         .nickname = _("りん"),
-        .species = SPECIES_CHIBI_RIN,
+        .species = SPECIES_KEDAMA,
         .level = 35,
         .ivs = {31, 31, 31, 31, 31, 31},
         .abilityNum = 2,

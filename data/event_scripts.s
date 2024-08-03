@@ -614,6 +614,7 @@ EventScript_AfterWhiteOutMomHeal::
 	lockall
 	applymovement LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
+	setspeakername gText_Mom
 	msgbox gText_HadQuiteAnExperienceTakeRest
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox gText_MomExplainHPGetPotions
@@ -930,8 +931,8 @@ gText_MonsHealedShouldBuyPotions::
 	.string "If your Puppets' energy, HP,\n"
 	.string "is down, please come see us.\p"
 	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some Potions\l"
-	.string "at the Puppet Mart.\p"
+	.string "field, you should buy some POTIONS\l"
+	.string "at the Puppet MART.\p"
 	.string "We hope you excel!$"
 
 gText_MonsHealed::
@@ -940,7 +941,7 @@ gText_MonsHealed::
 	.string "We hope you excel!$"
 
 gText_HadQuiteAnExperienceTakeRest::
-	.string "MOM: {PLAYER}!\n"
+	.string "{PLAYER}!\n"
 	.string "Welcome home.\p"
 	.string "It sounds like you had quite\n"
 	.string "an experience.\p"
@@ -948,17 +949,17 @@ gText_HadQuiteAnExperienceTakeRest::
 	.string "rest.$"
 
 gText_MomExplainHPGetPotions::
-	.string "MOM: Oh, good! You and your\n"
-	.string "POKéMON are looking great.\p"
+	.string "Oh, good! You and your\n"
+	.string "Puppets are looking great.\p"
 	.string "I just heard from PROF. BIRCH.\p"
-	.string "He said that POKéMON's energy is\n"
+	.string "He said that Puppets' energy is\n"
 	.string "measured in HP.\p"
-	.string "If your POKéMON lose their HP,\n"
+	.string "If your Puppets lose their HP,\n"
 	.string "you can restore them at any\l"
-	.string "POKéMON CENTER.\p"
+	.string "Puppet Center.\p"
 	.string "If you're going to travel far away,\n"
 	.string "the smart TRAINER stocks up on\l"
-	.string "POTIONS at the POKéMON MART.\p"
+	.string "POTIONS at the Puppet MART.\p"
 	.string "Make me proud, honey!\p"
 	.string "Take care!$"
 
