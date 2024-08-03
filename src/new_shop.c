@@ -213,7 +213,7 @@ static void Task_ReturnToItemListAfterOutfitPurchase(u8 taskId);
 static void Task_ReturnToItemListAfterDecorationPurchase(u8 taskId);
 static void Task_HandleShopMenuBuy(u8 taskId);
 static void Task_HandleShopMenuSell(u8 taskId);
-static void PrintMoneyLocal(u8 windowId, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy);
+static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy);
 static void UpdateItemData(void);
 static void Task_ReturnToItemListWaitMsg(u8 taskId);
 
@@ -1381,14 +1381,14 @@ static void BuyMenuInitWindows(void)
         if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
             BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
         else
-            PrintMoneyLocal(WIN_MULTI, 2*8, price, 84, COLORID_NORMAL, FALSE);
+            PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
 
         ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
         BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
     }
     else
     {
-        PrintMoneyLocal(WIN_MULTI, 2*8, price, 84, COLORID_NORMAL, FALSE);
+        PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
     }
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
@@ -1451,27 +1451,28 @@ static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 c
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
-const u8 sText_CoinsVar1[] = _("{UNK_SPACER}{STR_VAR_1}");
+const u8 sText_CoinsVar1[] = _("{STR_VAR_1}");
+const u8 sText_PokedollarVar1[] = _("¥{STR_VAR_1}");
 
-static void PrintMoneyLocal(u8 windowId, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy)
+static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy)
 {
     u8 *txtPtr;
     s32 strLength;
-    s32 x;
+    s32 temp;
+    u32 numDigits = CountDigits(amount);
+    u32 maxDigits = (numDigits > 7) ? MAX_MONEY_DIGITS: 7;
 
-    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_RIGHT_ALIGN, 6);
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_RIGHT_ALIGN, maxDigits);
 
-    strLength = 6 - StringLength(gStringVar1);
     txtPtr = gStringVar4;
-
-    while (strLength-- > 0)
-        *(txtPtr++) = CHAR_SPACER;
 
     if (sMartInfo.martType == MART_TYPE_CASINO)
         StringExpandPlaceholders(txtPtr, sText_CoinsVar1);
     else
         StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
-    x = GetStringRightAlignXOffset(FONT_NORMAL, txtPtr, width);
+    temp = GetStringRightAlignXOffset(FONT_NORMAL, txtPtr, width);
+    if (numDigits > 7)
+        PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_SMALL, width);
     AddTextPrinterParameterized4(windowId, FONT_SMALL, x, y, 0, 0, sShopBuyMenuTextColors[colorIdx], TEXT_SKIP_DRAW, gStringVar4);
     PutWindowTilemap(windowId);
     if (copy)
@@ -1481,9 +1482,9 @@ static void PrintMoneyLocal(u8 windowId, u8 y, u32 amount, u8 width, u8 colorIdx
 static void BuyMenuDrawGraphics(void)
 {
     if (sMartInfo.martType == MART_TYPE_CASINO)
-        PrintMoneyLocal(WIN_MONEY, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, 37, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
     else
-        PrintMoneyLocal(WIN_MONEY, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
+        PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -1531,14 +1532,14 @@ static void UpdateItemData(void)
             if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
                 BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
             else
-                PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
+                PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
 
             ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 4);
             BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), 4*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
         }
         else
         {
-            PrintMoneyLocal(WIN_MULTI, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
+            PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
         }
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
         FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
@@ -1617,7 +1618,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
             if (ItemId_GetImportance(sShopData->currentItemId))
             {
                 u32 price = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
-                ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
                 tItemCount = 1;
                 sShopData->totalCost = (price >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
                 BuyMenuDisplayMessage(taskId, sText_YouWantedVar1ThatllBeVar2, BuyMenuConfirmPurchase);
@@ -1662,7 +1663,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
         {
             const u8 *str;
             StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
-            ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+            ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
             if (sMartInfo.martType == MART_TYPE_DECOR)
                 str = sText_Var1IsItThatllBeVar2;
             else // MART_TYPE_DECOR2
@@ -1752,7 +1753,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             ClearWindowTilemap(WIN_QUANTITY_PRICE);
             CopyItemName(sShopData->currentItemId, gStringVar1);
             ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
-            ConvertIntToDecimalStringN(gStringVar3, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+            ConvertIntToDecimalStringN(gStringVar3, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
             FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
             if (tItemCount >= 2)
                 CopyItemNameHandlePlural(sShopData->currentItemId, gStringVar1, tItemCount);
@@ -1841,7 +1842,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
     RemoveMoney(&gSaveBlock1Ptr->money, sShopData->totalCost);
     PlaySE(SE_RG_SHOP);
     FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
-    PrintMoneyLocal(WIN_MONEY, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
+    PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
 
     if (sMartInfo.martType <= MART_TYPE_VARIABLE)
         gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
@@ -1859,7 +1860,7 @@ static void BuyMenuSubtractCoins(u8 taskId)
     RemoveCoins(sShopData->totalCost);
     PlaySE(SE_SHOP);
     FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
-    PrintMoneyLocal(WIN_MONEY, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
+    PrintMoneyLocal(WIN_MONEY, 37, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
 
     gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
 }
@@ -1944,7 +1945,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(0));
-    PrintMoneyLocal(WIN_QUANTITY_PRICE, 13, sShopData->totalCost, 56, COLORID_NORMAL, FALSE);
+    PrintMoneyLocal(WIN_QUANTITY_PRICE, 13, 13, sShopData->totalCost, 56, COLORID_NORMAL, FALSE);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, 29, 3, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
