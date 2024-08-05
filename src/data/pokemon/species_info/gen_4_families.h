@@ -631,69 +631,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBronzorTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_RINNOSUKE}),
     },
-
-    [SPECIES_RINNOSUKE] =
-    {
-        .baseHP        = 67,
-        .baseAttack    = 89,
-        .baseDefense   = 116,
-        .baseSpeed     = 33,
-        .baseSpAttack  = 79,
-        .baseSpDefense = 116,
-        .types = MON_TYPES(TYPE_STEEL, TYPE_REASON),
-        .catchRate = 90,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 175 : 188,
-        .evYield_Defense = 1,
-        .evYield_SpDefense = 1,
-        .itemRare = ITEM_MAID_UNIFORM,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_LEVITATE, ABILITY_HEATPROOF, ABILITY_HEAVY_METAL },
-        .sourceGame = SOURCE_LLS,
-        .speciesName = _("Bronzong"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_BRONZONG,
-        .categoryName = _("Bronze Bell"),
-        .height = 13,
-        .weight = 1870,
-        .description = COMPOUND_STRING(
-            "In ages past, this Pokémon was revered as\n"
-            "a bringer of rain. One caused a news stir\n"
-            "when it was dug up at a construction site\n"
-            "after a 2000-year sleep."),
-        .pokemonScale = 272,
-        .pokemonOffset = 3,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Bronzong,
-        .frontPicSize = MON_COORDS_SIZE(56, 56),
-        .frontPicYOffset = 6,
-        .frontAnimFrames = sAnims_Bronzong,
-        .frontAnimId = ANIM_V_SLIDE_WOBBLE_SMALL,
-        .enemyMonElevation = 7,
-        .backPic = gMonBackPic_Bronzong,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 6,
-        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
-        .palette = gMonPalette_Bronzong,
-        .shinyPalette = gMonShinyPalette_Bronzong,
-        .iconSprite = gMonIcon_Bronzong,
-        .iconPalIndex = 0,
-        FOOTPRINT(Bronzong)
-        OVERWORLD(
-            sPicTable_Bronzong,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gOverworldPalette_Bronzong,
-            gShinyOverworldPalette_Bronzong
-        )
-        .levelUpLearnset = sBronzongLevelUpLearnset,
-        .teachableLearnset = sBronzongTeachableLearnset,
-    },
 #endif //P_FAMILY_BRONZOR
 
 #if P_FAMILY_CHATOT

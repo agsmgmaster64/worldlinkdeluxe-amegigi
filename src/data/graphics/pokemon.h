@@ -25551,6 +25551,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Shinki[] = INCBIN_U8("graphics/pokemon/_add/th/shinki/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_Rinnosuke[] = INCBIN_U32("graphics/pokemon/_add/th/rinnosuke/anim_front.4bpp.lz");
+    const u32 gMonPalette_Rinnosuke[] = INCBIN_U32("graphics/pokemon/_add/th/rinnosuke/normal.gbapal.lz");
+    const u32 gMonBackPic_Rinnosuke[] = INCBIN_U32("graphics/pokemon/_add/th/rinnosuke/back.4bpp.lz");
+    const u32 gMonShinyPalette_Rinnosuke[] = INCBIN_U32("graphics/pokemon/_add/th/rinnosuke/shiny.gbapal.lz");
+    const u8 gMonIcon_Rinnosuke[] = INCBIN_U8("graphics/pokemon/_add/th/rinnosuke/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Rinnosuke[] = INCBIN_U8("graphics/pokemon/_add/th/rinnosuke/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

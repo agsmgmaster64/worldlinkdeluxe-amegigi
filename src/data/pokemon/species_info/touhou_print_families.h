@@ -1088,6 +1088,61 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .teachableLearnset = sKosuzuTeachableLearnset,
     },
 
+    [SPECIES_RINNOSUKE] =
+    {
+        .baseHP        = 65,
+        .baseAttack    = 75,
+        .baseDefense   = 85,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_DREAM),
+        .catchRate = 45,
+        .expYield = 129,
+        .evYield_HP = 1,
+        .evYield_Defense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_COLLECTOR, ABILITY_OBLIVIOUS },
+        .sourceGame = SOURCE_SPINOFF,
+        .noFlip = TRUE,
+        .speciesName = _("Rinnosuke"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_BRONZONG,
+        .categoryName = _("Bronze Bell"),
+        .height = 13,
+        .weight = 1870,
+        .description = COMPOUND_STRING(
+            "In ages past, this Pokémon was revered as\n"
+            "a bringer of rain. One caused a news stir\n"
+            "when it was dug up at a construction site\n"
+            "after a 2000-year sleep."),
+        .pokemonScale = 272,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Rinnosuke,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Rinnosuke,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Rinnosuke,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Rinnosuke,
+        .shinyPalette = gMonShinyPalette_Rinnosuke,
+        .iconSprite = gMonIcon_Rinnosuke,
+        .iconPalIndex = 0,
+        FOOTPRINT(Rinnosuke)
+        .levelUpLearnset = sRinnosukeLevelUpLearnset,
+        .teachableLearnset = sRinnosukeTeachableLearnset,
+        .eggMoveLearnset = sRinnosukeEggMoveLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

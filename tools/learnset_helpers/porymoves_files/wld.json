@@ -29676,6 +29676,102 @@
       "MOVE_MIMIC"
     ]
   },
+  "RINNOSUKE": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SWORDS_DANCE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SHADOW_HIT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_SUBSTITUTE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_MIRROR_COAT"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_IRON_DEFENSE"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_COVET"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_HARDEN"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_CHARGE_BEAM"
+      },
+      {
+        "Level": 18,
+        "Move": "MOVE_RECYCLE"
+      },
+      {
+        "Level": 24,
+        "Move": "MOVE_TRICK"
+      },
+      {
+        "Level": 31,
+        "Move": "MOVE_SONIC_BOOM"
+      },
+      {
+        "Level": 38,
+        "Move": "MOVE_DRAWN_LINE"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_FOCUS_BLAST"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_SONIC_BOOM",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_STEEL_FIST",
+      "MOVE_THUNDERBOLT",
+      "MOVE_THUNDER",
+      "MOVE_RETURN",
+      "MOVE_BRICK_BREAK",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FIRE_BLAST",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_MIND_BOMB",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_SWORDS_DANCE",
+      "MOVE_PSYCH_UP",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_CUT",
+      "MOVE_STRENGTH",
+      "MOVE_FLASH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
   "AD_CIRNO": {
     "LevelMoves": [
       {

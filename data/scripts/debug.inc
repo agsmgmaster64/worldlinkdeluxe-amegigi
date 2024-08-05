@@ -286,7 +286,9 @@ Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined:
 
 
 Debug_EventScript_Script_6::
-	release
+	lockall
+	ai_vs_ai_battle TRAINER_BILLY, TRAINER_CALVIN_1
+	releaseall
 	end
 
 Debug_EventScript_Script_7::
