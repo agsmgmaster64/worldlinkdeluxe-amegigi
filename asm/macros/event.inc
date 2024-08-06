@@ -1965,6 +1965,16 @@
 	.4byte \text
 	.endm
 
+	.macro buyonlymart pointer:req, useVariablePrices=FALSE
+	.byte 0xe9
+	.4byte \pointer
+	.2byte \useVariablePrices
+	.endm
+
+	.macro itemseller
+	.byte 0xea
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req

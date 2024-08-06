@@ -2548,6 +2548,31 @@ bool8 ScrCmd_setspeakername(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_buyonlymart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+    bool16 useVariablePrices = ScriptReadHalfword(ctx);
+
+    if (useVariablePrices)
+    {
+        NewShop_CreateBuyVariableMartMenu(ptr);
+    }
+    else
+    {
+        NewShop_CreateBuyOnlyMartMenu(ptr);
+    }
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+bool8 ScrCmd_itemseller(struct ScriptContext *ctx)
+{
+    NewShop_CreateSellOnlyMartMenu();
+    ScriptContext_Stop();
+    return TRUE;
+}
+
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     sIsScriptedWildDouble = TRUE;

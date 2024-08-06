@@ -79,12 +79,15 @@ enum {
 enum {
     MART_TYPE_NORMAL,
     MART_TYPE_VARIABLE,
+    MART_TYPE_BUY_ONLY,
+    MART_TYPE_BUY_VARIABLE,
     MART_TYPE_CASINO,
     MART_TYPE_DECOR,
     MART_TYPE_DECOR2,
     #ifdef MUDSKIP_OUTFIT_SYSTEM
     MART_TYPE_OUTFIT,
     #endif // MUDSKIP_OUTFIT_SYSTEM
+    MART_TYPE_SELL_ONLY,
 };
 
 // seller id
@@ -785,7 +788,7 @@ static void SetShopItemsForSale(const u16 *items)
         sMartInfo.itemCount++;
         i++;
 
-        if (sMartInfo.martType == MART_TYPE_VARIABLE)
+        if (sMartInfo.martType == MART_TYPE_VARIABLE || sMartInfo.martType == MART_TYPE_BUY_VARIABLE)
             i++;
     }
     sMartInfo.itemCount++; // for ITEM_NONE / DECOR_NONE
@@ -815,7 +818,7 @@ static void InitShopItemsForSale(void)
         itemList++;
         j++;
 
-        if (sMartInfo.martType == MART_TYPE_VARIABLE)
+        if (sMartInfo.martType == MART_TYPE_VARIABLE || sMartInfo.martType == MART_TYPE_BUY_VARIABLE)
         {
             *itemPriceList = sMartInfo.itemSource[i];
             DebugPrintf("InitShopItemsForSale \n"
@@ -897,8 +900,15 @@ static void Task_HandleShopMenuSell(u8 taskId)
 
 void CB2_ExitSellNewShopMenu(void)
 {
-    gFieldCallback = MapPostLoadHook_ReturnToShopMenu;
-    SetMainCallback2(CB2_ReturnToField);
+    if (sMartInfo.martType == MART_TYPE_SELL_ONLY)
+    {
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    }
+    else
+    {
+        gFieldCallback = MapPostLoadHook_ReturnToShopMenu;
+        SetMainCallback2(CB2_ReturnToField);
+    }
 }
 
 static void Task_HandleShopMenuQuit(u8 taskId)
@@ -1241,9 +1251,9 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
 
 static inline u32 BuyMenuGetItemPrice(u32 id)
 {
-    if (sMartInfo.martType == MART_TYPE_NORMAL)
+    if (sMartInfo.martType == MART_TYPE_NORMAL || sMartInfo.martType == MART_TYPE_BUY_ONLY)
         return ItemId_GetPrice(sMartInfo.itemList[id]);
-    else if (sMartInfo.martType == MART_TYPE_VARIABLE)
+    else if (sMartInfo.martType == MART_TYPE_VARIABLE || sMartInfo.martType == MART_TYPE_BUY_VARIABLE)
         return SearchItemListForPrice(sMartInfo.itemList[id]);
     else if (sMartInfo.martType == MART_TYPE_CASINO)
         return ItemId_GetCoinPrice(sMartInfo.itemList[id]);
@@ -1579,7 +1589,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u32 cost = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
-    if (sMartInfo.martType <= MART_TYPE_VARIABLE)
+    if (sMartInfo.martType <= MART_TYPE_BUY_VARIABLE)
         sShopData->totalCost = (cost >> IsPokeNewsActive(POKENEWS_SLATEPORT));
     else
         sShopData->totalCost = cost;
@@ -1612,7 +1622,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     else
     {
         PlaySE(SE_SELECT);
-        if (sMartInfo.martType <= MART_TYPE_VARIABLE)
+        if (sMartInfo.martType <= MART_TYPE_BUY_VARIABLE)
         {
             CopyItemName(sShopData->currentItemId, gStringVar1);
             if (ItemId_GetImportance(sShopData->currentItemId))
@@ -1676,7 +1686,8 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
 
 static inline void ExitBuyMenu(u8 taskId)
 {
-    gFieldCallback = MapPostLoadHook_ReturnToShopMenu;
+    if (sMartInfo.martType != MART_TYPE_BUY_ONLY && sMartInfo.martType != MART_TYPE_BUY_VARIABLE)
+        gFieldCallback = MapPostLoadHook_ReturnToShopMenu;
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_ExitBuyMenu;
 }
@@ -1784,7 +1795,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-    if (sMartInfo.martType <= MART_TYPE_VARIABLE)
+    if (sMartInfo.martType <= MART_TYPE_BUY_VARIABLE)
     {
         if (AddBagItem(sShopData->currentItemId, tItemCount) == TRUE)
         {
@@ -1844,7 +1855,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
     FillWindowPixelBuffer(WIN_MONEY, PIXEL_FILL(0));
     PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
 
-    if (sMartInfo.martType <= MART_TYPE_VARIABLE)
+    if (sMartInfo.martType <= MART_TYPE_BUY_VARIABLE)
         gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
     else if (sMartInfo.martType == MART_TYPE_OUTFIT)
@@ -1957,7 +1968,10 @@ static void Task_ExitBuyMenu(u8 taskId)
     if (!gPaletteFade.active)
     {
         BuyMenuFreeMemory();
-        SetMainCallback2(CB2_ReturnToField);
+        if (sMartInfo.martType == MART_TYPE_BUY_ONLY || sMartInfo.martType == MART_TYPE_BUY_VARIABLE)
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        else
+            SetMainCallback2(CB2_ReturnToField);
         DestroyTask(taskId);
     }
 }
@@ -2043,6 +2057,28 @@ void NewShop_CreateCasinoMartMenu(const u16 *itemsForSale)
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
     SetShopMenuCallback(ScriptContext_Enable);
+}
+
+void NewShop_CreateBuyOnlyMartMenu(const u16 *itemsForSale)
+{
+    sMartInfo.martType = MART_TYPE_BUY_ONLY;
+    SetShopItemsForSale(itemsForSale);
+    ClearItemPurchases();
+    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
+}
+
+void NewShop_CreateBuyVariableMartMenu(const u16 *itemsForSale)
+{
+    sMartInfo.martType = MART_TYPE_BUY_VARIABLE;
+    SetShopItemsForSale(itemsForSale);
+    ClearItemPurchases();
+    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
+}
+
+void NewShop_CreateSellOnlyMartMenu(void)
+{
+    sMartInfo.martType = MART_TYPE_SELL_ONLY;
+    CreateTask(Task_HandleShopMenuSell, 8);  //skip mart multichoice. go right to shop sell window
 }
 
 #endif // MUDSKIP_SHOP_UI
