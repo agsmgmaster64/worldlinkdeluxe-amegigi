@@ -285,7 +285,7 @@
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
 #define SPECIES_CHIBI_KAGEROU                           283
-#define SPECIES_NORMAL_KAGEROU                             284
+#define SPECIES_NORMAL_KAGEROU                            284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287
@@ -304,7 +304,7 @@
 #define SPECIES_NORMAL_RAIKO                            300
 #define SPECIES_ATTACK_RAIKO                            301
 #define SPECIES_PLACEHOLD_RAIKO                         302 // Placeholder
-#define SPECIES_CHIBI_SEIJA                             303 // Seija
+#define SPECIES_CHIBI_SEIJA                             303
 #define SPECIES_NORMAL_SEIJA                            304
 #define SPECIES_DEFENSE_SEIJA                           305
 #define SPECIES_PLACEHOLD_SEIJA                         306 // Placeholder

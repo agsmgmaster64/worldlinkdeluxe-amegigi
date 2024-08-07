@@ -758,7 +758,7 @@ static const u16 sCBenbenEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sCYatsuhasiEggMoveLearnset[] = {
+static const u16 sCYatsuhashiEggMoveLearnset[] = {
     MOVE_CURSE,
     MOVE_SHADOW_FORCE,
     MOVE_SPITE,
