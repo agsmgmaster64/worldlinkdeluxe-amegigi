@@ -5241,9 +5241,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             sPicTable_XerneasNeutral,
             SIZE_64x64,
             SHADOW_SIZE_M,
-            TRACKS_FOOT
-            //, gOverworldPalette_XerneasNeutral
-            //, gShinyOverworldPalette_XerneasNeutral
+            TRACKS_FOOT,
+            gOverworldPalette_XerneasNeutral,
+            gShinyOverworldPalette_XerneasNeutral
         )
         .isLegendary = TRUE,
         .isFrontierBanned = TRUE,
@@ -5298,7 +5298,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .iconPalIndex = 0,
         FOOTPRINT(Xerneas)
         OVERWORLD(
-            sPicTable_XerneasNeutral,
+            sPicTable_XerneasActive,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
