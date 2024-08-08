@@ -123,9 +123,9 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT_TYPE, player);
         MESSAGE("Arcanine's type changed to match the Foe Poliwrath's!");
     } THEN {
-        EXPECT_EQ(player->type1, TYPE_WATER);
-        EXPECT_EQ(player->type2, TYPE_DREAM);
-        EXPECT_EQ(player->type3, TYPE_MYSTERY);
+        EXPECT_EQ(player->types[0], TYPE_WATER);
+        EXPECT_EQ(player->types[1], TYPE_DREAM);
+        EXPECT_EQ(player->types[2], TYPE_MYSTERY);
     }
 }
 
@@ -145,13 +145,13 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT_TYPE, player);
         MESSAGE("Arcanine's type changed to match the Foe Sudowoodo's!");
     } THEN {
-        EXPECT_EQ(player->type1, TYPE_BEAST);
-        EXPECT_EQ(player->type2, TYPE_BEAST);
-        EXPECT_EQ(player->type3, TYPE_MYSTERY);
+        EXPECT_EQ(player->types[0], TYPE_BEAST);
+        EXPECT_EQ(player->types[1], TYPE_BEAST);
+        EXPECT_EQ(player->types[2], TYPE_MYSTERY);
     }
 }
 
-SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's type1 and type2 if the target only has a 3rd type")
+SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's types[0] and types[1] if the target only has a 3rd type")
 {
     ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] == TYPE_REASON);
     ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] == TYPE_REASON);
@@ -179,8 +179,8 @@ SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's type1 an
         ANIMATION(ANIM_TYPE_MOVE, MOVE_REFLECT_TYPE, player);
         MESSAGE("Wobbuffet's type changed to match the Foe Arcanine's!");
     } THEN {
-        EXPECT_EQ(player->type1, TYPE_ILLUSION);
-        EXPECT_EQ(player->type2, TYPE_ILLUSION);
-        EXPECT_EQ(player->type3, TYPE_NATURE);
+        EXPECT_EQ(player->types[0], TYPE_ILLUSION);
+        EXPECT_EQ(player->types[1], TYPE_ILLUSION);
+        EXPECT_EQ(player->types[2], TYPE_NATURE);
     }
 }

@@ -355,7 +355,11 @@ enum EvolutionMode {
 // Used as a signal for givemon to generate a default ability by personality.
 #define NUM_ABILITY_PERSONALITY 0xFF
 
+#if P_LEGENDARY_PERFECT_IVS >= GEN_6
 #define LEGENDARY_PERFECT_IV_COUNT 3
+#else
+#define LEGENDARY_PERFECT_IV_COUNT 0
+#endif
 
 // Types of Move Reminder + other tutors. Set to VAR_MOVE_MANAGER
 #define MOVE_REMINDER_NORMAL          0 // Normal behavior; attempts to learn level up moves prior to current level.
