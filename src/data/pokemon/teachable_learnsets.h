@@ -13388,6 +13388,10 @@ static const u16 sShinkiTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sAkyuuTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sRinnosukeTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_MULTI_PULSE,

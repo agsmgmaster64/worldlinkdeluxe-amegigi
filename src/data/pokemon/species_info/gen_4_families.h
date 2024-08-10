@@ -569,68 +569,6 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BUNEARY
 
 #if P_FAMILY_BRONZOR
-    [SPECIES_AKYUU] =
-    {
-        .baseHP        = 57,
-        .baseAttack    = 24,
-        .baseDefense   = 86,
-        .baseSpeed     = 23,
-        .baseSpAttack  = 24,
-        .baseSpDefense = 86,
-        .types = MON_TYPES(TYPE_STEEL, TYPE_REASON),
-        .catchRate = 255,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 60 : 72,
-        .evYield_Defense = 1,
-        .itemRare = ITEM_MAID_UNIFORM,
-        .genderRatio = MON_GENDERLESS,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_LEVITATE, ABILITY_HEATPROOF, ABILITY_HEAVY_METAL },
-        .sourceGame = SOURCE_LLS,
-        .speciesName = _("Bronzor"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_BRONZOR,
-        .categoryName = _("Bronze"),
-        .height = 5,
-        .weight = 605,
-        .description = COMPOUND_STRING(
-            "Implements shaped like it were discovered\n"
-            "in ancient tombs. There are researchers\n"
-            "who believe this Pokémon reflected like a\n"
-            "mirror in the distant past."),
-        .pokemonScale = 432,
-        .pokemonOffset = 13,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Bronzor,
-        .frontPicSize = MON_COORDS_SIZE(32, 40),
-        .frontPicYOffset = 14,
-        .frontAnimFrames = sAnims_Bronzor,
-        .frontAnimId = ANIM_H_SLIDE_WOBBLE,
-        .enemyMonElevation = 9,
-        .backPic = gMonBackPic_Bronzor,
-        .backPicSize = MON_COORDS_SIZE(40, 48),
-        .backPicYOffset = 9,
-        .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
-        .palette = gMonPalette_Bronzor,
-        .shinyPalette = gMonShinyPalette_Bronzor,
-        .iconSprite = gMonIcon_Bronzor,
-        .iconPalIndex = 0,
-        FOOTPRINT(Bronzor)
-        OVERWORLD(
-            sPicTable_Bronzor,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            gOverworldPalette_Bronzor,
-            gShinyOverworldPalette_Bronzor
-        )
-        .levelUpLearnset = sBronzorLevelUpLearnset,
-        .teachableLearnset = sBronzorTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 33, SPECIES_RINNOSUKE}),
-    },
 #endif //P_FAMILY_BRONZOR
 
 #if P_FAMILY_CHATOT

@@ -1705,7 +1705,8 @@ static void MoveSelectionDisplayPpString(u32 battler)
     static const u8 stabIcon[]   =  _("{PLUS}");
     static const u8 teraIcon[]   =  _("{CIRCLE_DOT}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    u32 moveType = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+    u32 moveType = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
     u8 *txtPtr;
 
     if (IS_BATTLER_OF_TYPE(battler, moveType) && !IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]))
@@ -1752,7 +1753,30 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     u8 type;
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
 
-    type = GetTypeBeforeUsingMove(moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    type = gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].type;
+
+    if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_TERA_BLAST)
+    {
+        if (IsGimmickSelected(battler, GIMMICK_TERA) || GetActiveGimmick(battler) == GIMMICK_TERA)
+            type = GetBattlerTeraType(battler);
+    }
+    // Max Guard is a Normal-type move
+    else if (gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].category == DAMAGE_CATEGORY_STATUS
+             && (GetActiveGimmick(battler) == GIMMICK_DYNAMAX || IsGimmickSelected(battler, GIMMICK_DYNAMAX)))
+    {
+        type = TYPE_ILLUSION;
+    }
+    else if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_TERA_STARSTORM)
+    {
+        if (gBattleMons[battler].species == SPECIES_TERAPAGOS_STELLAR
+        || (IsGimmickSelected(battler, GIMMICK_TERA) && gBattleMons[battler].species == SPECIES_TERAPAGOS_TERASTAL))
+            type = TYPE_STELLAR;
+    }
+    else if (P_SHOW_DYNAMIC_TYPES)
+    {
+        struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+        type = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    }
 
     txtPtr = StringCopy(gDisplayedStringBattle, gTypesInfo[type].name);
 
@@ -1762,50 +1786,6 @@ static void MoveSelectionDisplayMoveType(u32 battler)
         end = StringCopy(txtPtr, gText_MoveInterfaceSpecial);
     else
         end = StringCopy(txtPtr, gText_MoveInterfaceStatus);
-
-    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
-    type = gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].type;
-
-    if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_TERA_BLAST)
-    {
-        if (IsGimmickSelected(battler, GIMMICK_TERA) || GetActiveGimmick(battler) == GIMMICK_TERA)
-            type = GetBattlerTeraType(battler);
-            end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
-    else if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_IVY_CUDGEL)
-    {
-        speciesId = gBattleMons[battler].species;
-
-        if (speciesId == SPECIES_OGERPON_WELLSPRING_MASK || speciesId == SPECIES_OGERPON_WELLSPRING_MASK_TERA
-            || speciesId == SPECIES_OGERPON_HEARTHFLAME_MASK || speciesId == SPECIES_OGERPON_HEARTHFLAME_MASK_TERA
-            || speciesId == SPECIES_OGERPON_CORNERSTONE_MASK || speciesId == SPECIES_OGERPON_CORNERSTONE_MASK_TERA)
-            type = gBattleMons[battler].types[1];
-            end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
-    // Max Guard is a Normal-type move
-    else if (gMovesInfo[moveInfo->moves[gMoveSelectionCursor[battler]]].category == DAMAGE_CATEGORY_STATUS
-             && (GetActiveGimmick(battler) == GIMMICK_DYNAMAX || IsGimmickSelected(battler, GIMMICK_DYNAMAX)))
-    {
-        type = TYPE_NORMAL;
-        end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
-    else if (moveInfo->moves[gMoveSelectionCursor[battler]] == MOVE_TERA_STARSTORM)
-    {
-        if (gBattleMons[battler].species == SPECIES_TERAPAGOS_STELLAR
-        || (IsGimmickSelected(battler, GIMMICK_TERA) && gBattleMons[battler].species == SPECIES_TERAPAGOS_TERASTAL))
-            type = TYPE_STELLAR;
-            end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
-    else if (P_SHOW_DYNAMIC_TYPES)
-    {
-        struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-        type = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
-        end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
-    else
-    {
-        end = StringCopy(txtPtr, gTypesInfo[type].name);       
-    }
 
     PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);

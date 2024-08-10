@@ -1088,6 +1088,59 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .teachableLearnset = sKosuzuTeachableLearnset,
     },
 
+    [SPECIES_AKYUU] =
+    {
+        .baseHP        = 1,
+        .baseAttack    = 30,
+        .baseDefense   = 60,
+        .baseSpeed     = 85,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_EARTH, TYPE_STEEL),
+        .catchRate = 45,
+        .expYield = 108,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_TRACE, ABILITY_FOCUS },
+        .sourceGame = SOURCE_PRINT,
+        .noFlip = TRUE,
+        .speciesName = _("Akyuu"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_BRONZOR,
+        .categoryName = _("Bronze"),
+        .height = 5,
+        .weight = 605,
+        .description = COMPOUND_STRING(
+            "Implements shaped like it were discovered\n"
+            "in ancient tombs. There are researchers\n"
+            "who believe this Pokémon reflected like a\n"
+            "mirror in the distant past."),
+        .pokemonScale = 432,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Akyuu,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_Akyuu,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Akyuu,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Akyuu,
+        .shinyPalette = gMonShinyPalette_Akyuu,
+        .iconSprite = gMonIcon_Akyuu,
+        .iconPalIndex = 1,
+        FOOTPRINT(Akyuu)
+        .levelUpLearnset = sAkyuuLevelUpLearnset,
+        .teachableLearnset = sAkyuuTeachableLearnset,
+    },
+
     [SPECIES_RINNOSUKE] =
     {
         .baseHP        = 65,
@@ -1107,7 +1160,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
         .abilities = { ABILITY_COLLECTOR, ABILITY_OBLIVIOUS },
-        .sourceGame = SOURCE_SPINOFF,
+        .sourceGame = SOURCE_PRINT,
         .noFlip = TRUE,
         .speciesName = _("Rinnosuke"),
         .cryId = CRY_PORYGON,
