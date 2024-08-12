@@ -44,6 +44,7 @@
 #include "strings.h"
 #include "task.h"
 #include "text.h"
+#include "tilesets.h"
 #include "tv.h"
 #include "wallclock.h"
 #include "window.h"
@@ -969,6 +970,20 @@ void FieldShowRegionMap(void)
     SetMainCallback2(CB2_FieldShowRegionMap);
 }
 
+static bool32 IsBuildingPCTile(u32 tileId)
+{
+    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
+}
+
+static bool32 IsPlayerHousePCTile(u32 tileId)
+{
+    return gMapHeader.mapLayout->secondaryTileset == &gTileset_BrendansMaysHouse 
+        && (tileId == METATILE_BrendansMaysHouse_BrendanPC_On 
+            || tileId == METATILE_BrendansMaysHouse_BrendanPC_Off
+            || tileId == METATILE_BrendansMaysHouse_MayPC_On
+            || tileId == METATILE_BrendansMaysHouse_MayPC_Off);
+}
+
 static bool8 IsPlayerInFrontOfPC(void)
 {
     s16 x, y;
@@ -977,12 +992,16 @@ static bool8 IsPlayerInFrontOfPC(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     tileInFront = MapGridGetMetatileIdAt(x, y);
 
+<<<<<<< HEAD
     return (tileInFront == METATILE_BrendansMaysHouse_BrendanPC_On
          || tileInFront == METATILE_BrendansMaysHouse_BrendanPC_Off
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
          || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
          || tileInFront == METATILE_RG_Building_PCOn
          || tileInFront == METATILE_RG_Building_PCOff);
+=======
+    return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
 }
 
 // Task data for Task_PCTurnOnEffect and Task_LotteryCornerComputerEffect

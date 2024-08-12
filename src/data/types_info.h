@@ -60,6 +60,8 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_NormalTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = TRUE,
     },
     [TYPE_ILLUSION] =
     {
@@ -70,8 +72,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_STRIKE,
         .teraTypeRGBValue = RGB(10, 18, 27),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_IllusionTMHM,
         //.enhanceItem = ITEM_BRIDAL_GOWN,
+=======
+        .paletteTMHM = gItemIconPalette_NormalTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_SILK_SCARF,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_CHILAN_BERRY,
         //.gem = ITEM_NORMAL_GEM,
         //.zCrystal = ITEM_NORMALIUM_Z,
@@ -87,8 +96,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_KNUCKLE,
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_DreamTMHM,
         //.enhanceItem = ITEM_CHINA_DRESS,
+=======
+        .paletteTMHM = gItemIconPalette_FightingTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_BLACK_BELT,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_CHOPLE_BERRY,
         //.gem = ITEM_FIGHTING_GEM,
         //.zCrystal = ITEM_FIGHTINIUM_Z,
@@ -107,7 +123,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(31, 26, 7),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_FlyingTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_STEWARDESS,
+=======
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_SHARP_BEAK,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_COBA_BERRY,
         //.gem = ITEM_FLYING_GEM,
         //.zCrystal = ITEM_FLYINIUM_Z,
@@ -125,8 +147,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_OOZE,
         .teraTypeRGBValue = RGB(26, 10, 25), // custom
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_MiasmaTMHM,
         //.enhanceItem = ITEM_NURSE_OUTFIT,
+=======
+        .paletteTMHM = gItemIconPalette_PoisonTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_POISON_BARB,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_KEBIA_BERRY,
         //.gem = ITEM_POISON_GEM,
         //.zCrystal = ITEM_POISONIUM_Z,
@@ -144,8 +173,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_QUAKE,
         .teraTypeRGBValue = RGB(25, 23, 18),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_EarthTMHM,
         //.enhanceItem = ITEM_GYM_SUIT,
+=======
+        .paletteTMHM = gItemIconPalette_GroundTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_SOFT_SAND,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_SHUCA_BERRY,
         //.gem = ITEM_GROUND_GEM,
         //.zCrystal = ITEM_GROUNDIUM_Z,
@@ -163,8 +199,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_ROCKFALL,
         .teraTypeRGBValue = RGB(18, 16, 8),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_BeastTMHM,
         //.enhanceItem = ITEM_BUNNY_SUIT,
+=======
+        .paletteTMHM = gItemIconPalette_RockTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_HARD_STONE,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_CHARTI_BERRY,
         //.gem = ITEM_ROCK_GEM,
         //.zCrystal = ITEM_ROCKIUM_Z,
@@ -182,8 +225,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_FLUTTERBY,
         .teraTypeRGBValue = RGB(31, 15, 21),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_HeartTMHM,
         //.enhanceItem = ITEM_BLAZER,
+=======
+        .paletteTMHM = gItemIconPalette_BugTMHM,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_SILVER_POWDER,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_TANGA_BERRY,
         //.gem = ITEM_BUG_GEM,
         //.zCrystal = ITEM_BUGINIUM_Z,
@@ -202,7 +252,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(12, 10, 16),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_GhostTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_BURIAL_DRESS,
+=======
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_SPELL_TAG,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_KASIB_BERRY,
         //.gem = ITEM_GHOST_GEM,
         //.zCrystal = ITEM_GHOSTIUM_Z,
@@ -221,7 +277,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(19, 19, 20),
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_SteelTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_MAID_UNIFORM,
+=======
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_METAL_COAT,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_BABIRI_BERRY,
         //.gem = ITEM_STEEL_GEM,
         //.zCrystal = ITEM_STEELIUM_Z,
@@ -237,6 +299,8 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .palette = TYPE_ICON_PAL_3,
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = TRUE,
     },
     [TYPE_FIRE] =
     {
@@ -248,7 +312,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(31, 20, 11),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
         .paletteTMHM = gItemIconPalette_FireTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_GOTHIC_DRESS,
+=======
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_CHARCOAL,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_OCCA_BERRY,
         //.gem = ITEM_FIRE_GEM,
         //.zCrystal = ITEM_FIRIUM_Z,
@@ -267,7 +337,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(10, 18, 27),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
         .paletteTMHM = gItemIconPalette_WaterTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_SWIMSUIT,
+=======
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_MYSTIC_WATER,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_PASSHO_BERRY,
         //.gem = ITEM_WATER_GEM,
         //.zCrystal = ITEM_WATERIUM_Z,
@@ -285,8 +361,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_OVERGROWTH,
         .teraTypeRGBValue = RGB(12, 24, 11),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_NatureTMHM,
         //.enhanceItem = ITEM_CAMOUFLAGE,
+=======
+        .paletteTMHM = gItemIconPalette_GrassTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_MIRACLE_SEED,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_RINDO_BERRY,
         //.gem = ITEM_GRASS_GEM,
         //.zCrystal = ITEM_GRASSIUM_Z,
@@ -304,8 +387,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_LIGHTNING,
         .teraTypeRGBValue = RGB(30, 26, 7),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_WindTMHM,
         //.enhanceItem = ITEM_NINJA_SUIT,
+=======
+        .paletteTMHM = gItemIconPalette_ElectricTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_MAGNET,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_WACAN_BERRY,
         //.gem = ITEM_ELECTRIC_GEM,
         //.zCrystal = ITEM_ELECTRIUM_Z,
@@ -323,8 +413,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_MINDSTORM,
         .teraTypeRGBValue = RGB(31, 14, 15),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_ReasonTMHM,
         //.enhanceItem = ITEM_WITCHS_ROBE,
+=======
+        .paletteTMHM = gItemIconPalette_PsychicTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_TWISTED_SPOON,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_PAYAPA_BERRY,
         //.gem = ITEM_PSYCHIC_GEM,
         //.zCrystal = ITEM_PSYCHIUM_Z,
@@ -343,7 +440,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(14, 26, 25),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
         .paletteTMHM = gItemIconPalette_IceTMHM,
+<<<<<<< HEAD
         //.enhanceItem = ITEM_THICK_FUR,
+=======
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_NEVER_MELT_ICE,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_YACHE_BERRY,
         //.gem = ITEM_ICE_GEM,
         //.zCrystal = ITEM_ICIUM_Z,
@@ -361,8 +464,15 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_WYRMWIND,
         .teraTypeRGBValue = RGB(30, 26, 7),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_FaithTMHM,
         //.enhanceItem = ITEM_PRIESTESS,
+=======
+        .paletteTMHM = gItemIconPalette_DragonTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+        //.enhanceItem = ITEM_DRAGON_FANG,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.berry = ITEM_HABAN_BERRY,
         //.gem = ITEM_DRAGON_GEM,
         //.zCrystal = ITEM_DRAGONIUM_Z,
@@ -381,6 +491,8 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .teraTypeRGBValue = RGB(6, 5, 8),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
         .paletteTMHM = gItemIconPalette_DarkTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
         //.enhanceItem = ITEM_BLACK_GLASSES,
         //.berry = ITEM_COLBUR_BERRY,
         //.gem = ITEM_DARK_GEM,
@@ -399,7 +511,13 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_STARFALL,
         .teraTypeRGBValue = RGB(18, 6, 24),
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+<<<<<<< HEAD
         .paletteTMHM = gItemIconPalette_CosmicTMHM,
+=======
+        .paletteTMHM = gItemIconPalette_FairyTMHM,
+        .useSecondTypeIconPalette = TRUE,
+        .isSpecialCaseType = FALSE,
+>>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
         //.enhanceItem = ITEM_FAIRY_FEATHER,
         //.berry = ITEM_ROSELI_BERRY,
         //.gem = ITEM_FAIRY_GEM,
@@ -418,6 +536,8 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .maxMove = MOVE_MAX_STRIKE,
         .teraTypeRGBValue = RGB(10, 18, 27),
         .paletteTMHM = gItemIconPalette_NormalTMHM, // failsafe
+        .useSecondTypeIconPalette = FALSE,
+        .isSpecialCaseType = TRUE,
         // .teraShard = ITEM_STELLAR_TERA_SHARD,
     },
 };

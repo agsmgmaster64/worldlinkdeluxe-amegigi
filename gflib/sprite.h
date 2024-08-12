@@ -332,5 +332,7 @@ void ClearSpriteCopyRequests(void);
 void ResetAffineAnimData(void);
 u8 LoadUniqueSpritePalette(const struct SpritePalette *palette, u16 species, u32 personality, bool8 isShiny);
 u32 GetSpanPerImage(u32 shape, u32 size);
+void RequestSpriteFrameImageCopy(u16 index, u16 tileNum, const struct SpriteFrameImage *images);
+void SetSpriteOamFlipBits(struct Sprite *sprite, u8 hFlip, u8 vFlip);
 
 #endif //GUARD_SPRITE_H
