@@ -6236,7 +6236,7 @@ const u8 *GetMoveAnimationScript(u16 moveId)
     return gMovesInfo[moveId].battleAnimScript;
 }
 
-u8 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
+u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
 {
     u32 type = gMovesInfo[move].type;
     u32 species = GetMonData(mon, MON_DATA_SPECIES);
