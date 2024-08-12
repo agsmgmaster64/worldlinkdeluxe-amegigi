@@ -1782,13 +1782,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     else if (IS_MOVE_SPECIAL(moveInfo->moves[gMoveSelectionCursor[battler]]))
         end = StringCopy(txtPtr, gText_MoveInterfaceSpecial);
     else
-<<<<<<< HEAD
         end = StringCopy(txtPtr, gText_MoveInterfaceStatus);
-=======
-    {
-        end = StringCopy(txtPtr, gTypesInfo[type].name);
-    }
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
 
     PrependFontIdToFit(txtPtr, end, FONT_NORMAL, WindowWidthPx(B_WIN_MOVE_TYPE) - 25);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MOVE_TYPE);

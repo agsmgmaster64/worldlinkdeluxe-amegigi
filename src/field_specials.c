@@ -972,7 +972,7 @@ void FieldShowRegionMap(void)
 
 static bool32 IsBuildingPCTile(u32 tileId)
 {
-    return gMapHeader.mapLayout->primaryTileset == &gTileset_Building && (tileId == METATILE_Building_PC_On || tileId == METATILE_Building_PC_Off);
+    return gMapHeader.mapLayout->primaryTileset == &gTileset_RG_Building && (tileId == METATILE_RG_Building_PCOn || tileId == METATILE_RG_Building_PCOff);
 }
 
 static bool32 IsPlayerHousePCTile(u32 tileId)
@@ -992,16 +992,7 @@ static bool8 IsPlayerInFrontOfPC(void)
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     tileInFront = MapGridGetMetatileIdAt(x, y);
 
-<<<<<<< HEAD
-    return (tileInFront == METATILE_BrendansMaysHouse_BrendanPC_On
-         || tileInFront == METATILE_BrendansMaysHouse_BrendanPC_Off
-         || tileInFront == METATILE_BrendansMaysHouse_MayPC_On
-         || tileInFront == METATILE_BrendansMaysHouse_MayPC_Off
-         || tileInFront == METATILE_RG_Building_PCOn
-         || tileInFront == METATILE_RG_Building_PCOff);
-=======
     return IsBuildingPCTile(tileInFront) || IsPlayerHousePCTile(tileInFront);
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
 }
 
 // Task data for Task_PCTurnOnEffect and Task_LotteryCornerComputerEffect

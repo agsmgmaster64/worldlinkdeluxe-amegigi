@@ -8333,11 +8333,7 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
         else
         {
             targetBattler = SetRandomTarget(gBattlerAttacker);
-<<<<<<< HEAD
-            if (gMovesInfo[move].type == TYPE_WIND
-=======
-            if (moveType == TYPE_ELECTRIC
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
+            if (moveType == TYPE_WIND
                 && IsAbilityOnOpposingSide(gBattlerAttacker, ABILITY_LIGHTNING_ROD)
                 && GetBattlerAbility(targetBattler) != ABILITY_LIGHTNING_ROD)
             {
@@ -9784,13 +9780,6 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         if (gBattleMons[battlerDef].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && !usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
-<<<<<<< HEAD
-=======
-    case ABILITY_PURIFYING_SALT:
-        if (moveType == TYPE_GHOST)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
-        break;
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
     }
 
     // ally's abilities

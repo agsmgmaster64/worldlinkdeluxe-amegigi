@@ -15044,29 +15044,6 @@ static void Cmd_settypetoterrain(void)
 // Unused
 static void Cmd_unused236(void)
 {
-<<<<<<< HEAD
-=======
-    CMD_ARGS(const u8 *failInstr);
-
-    u32 battler = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gBattlerAttacker)));
-
-    if (IsDoubleBattle()
-        && !(gAbsentBattlerFlags & gBitTable[battler])
-        && gChosenActionByBattler[battler] == B_ACTION_USE_MOVE
-        && gMovesInfo[gChosenMoveByBattler[battler]].effect == EFFECT_PURSUIT)
-    {
-        gActionsByTurnOrder[battler] = B_ACTION_TRY_FINISH;
-        gCurrentMove = gChosenMoveByBattler[battler];
-        gBattlescriptCurrInstr = cmd->nextInstr;
-        gBattleScripting.animTurn = 1;
-        gBattleScripting.savedBattler = gBattlerAttacker;
-        gBattlerAttacker = battler;
-    }
-    else
-    {
-        gBattlescriptCurrInstr = cmd->failInstr;
-    }
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
 }
 
 static void Cmd_snatchsetbattlers(void)

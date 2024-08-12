@@ -5910,17 +5910,13 @@ void SetTypeBeforeUsingMove(u32 move, u32 battlerAtk)
     {
         gBattleStruct->dynamicMoveType = ItemId_GetSecondaryId(gBattleMons[battlerAtk].item) | F_DYNAMIC_TYPE_SET;
     }
-<<<<<<< HEAD
     else if (gMovesInfo[move].effect == EFFECT_MULTI_PULSE)
     {
         multiPulseType = GetTypeFromTypeBooster(holdEffect);
         if (multiPulseType)
             gBattleStruct->dynamicMoveType = multiPulseType | F_DYNAMIC_TYPE_SET;
     }
-    else if (gMovesInfo[move].effect == EFFECT_REVELATION_DANCE)
-=======
     else if (gMovesInfo[move].effect == EFFECT_REVELATION_DANCE && GetActiveGimmick(battlerAtk) != GIMMICK_Z_MOVE)
->>>>>>> c74ad262cb5e6a2267e0115a3554e8b4181f2c8e
     {
         if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA && GetBattlerTeraType(battlerAtk) != TYPE_STELLAR)
             gBattleStruct->dynamicMoveType = GetBattlerTeraType(battlerAtk);
