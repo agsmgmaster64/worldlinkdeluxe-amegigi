@@ -57,12 +57,12 @@ const struct Coords16 sTypeIconPositions[][2] =
 
 const union AnimCmd sSpriteAnim_TypeIcon_Normal[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_NORMAL), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_ILLUSION), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Fighting[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_FIGHTING), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_DREAM), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Flying[] =
@@ -72,22 +72,22 @@ const union AnimCmd sSpriteAnim_TypeIcon_Flying[] =
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Poison[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_POISON), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_MIASMA), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Ground[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_GROUND), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_EARTH), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Rock[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_ROCK), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_BEAST), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Bug[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_BUG), 0),
+    ANIMCMD_FRAME(TYPE_ICON_1_FRAME(TYPE_HEART), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Ghost[] =
@@ -118,17 +118,17 @@ const union AnimCmd sSpriteAnim_TypeIcon_Water[] =
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Grass[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_GRASS), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_NATURE), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Electric[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_ELECTRIC), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_WIND), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Psychic[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_PSYCHIC), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_REASON), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Ice[] =
@@ -138,7 +138,7 @@ const union AnimCmd sSpriteAnim_TypeIcon_Ice[] =
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Dragon[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_DRAGON), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_FAITH), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Dark[] =
@@ -148,32 +148,32 @@ const union AnimCmd sSpriteAnim_TypeIcon_Dark[] =
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Fairy[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_FAIRY), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_COSMIC), 0),
     ANIMCMD_END
 };
 
 const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
 {
     [TYPE_NONE] =       sSpriteAnim_TypeIcon_Mystery,
-    [TYPE_NORMAL] =     sSpriteAnim_TypeIcon_Normal,
-    [TYPE_FIGHTING] =   sSpriteAnim_TypeIcon_Fighting,
+    [TYPE_ILLUSION] =   sSpriteAnim_TypeIcon_Normal,
+    [TYPE_DREAM] =      sSpriteAnim_TypeIcon_Fighting,
     [TYPE_FLYING] =     sSpriteAnim_TypeIcon_Flying,
-    [TYPE_POISON] =     sSpriteAnim_TypeIcon_Poison,
-    [TYPE_GROUND] =     sSpriteAnim_TypeIcon_Ground,
-    [TYPE_ROCK] =       sSpriteAnim_TypeIcon_Rock,
-    [TYPE_BUG] =        sSpriteAnim_TypeIcon_Bug,
+    [TYPE_MIASMA] =     sSpriteAnim_TypeIcon_Poison,
+    [TYPE_EARTH] =      sSpriteAnim_TypeIcon_Ground,
+    [TYPE_BEAST] =      sSpriteAnim_TypeIcon_Rock,
+    [TYPE_HEART] =      sSpriteAnim_TypeIcon_Bug,
     [TYPE_GHOST] =      sSpriteAnim_TypeIcon_Ghost,
     [TYPE_STEEL] =      sSpriteAnim_TypeIcon_Steel,
     [TYPE_MYSTERY] =    sSpriteAnim_TypeIcon_Mystery,
     [TYPE_FIRE] =       sSpriteAnim_TypeIcon_Fire,
     [TYPE_WATER] =      sSpriteAnim_TypeIcon_Water,
-    [TYPE_GRASS] =      sSpriteAnim_TypeIcon_Grass,
-    [TYPE_ELECTRIC] =   sSpriteAnim_TypeIcon_Electric,
-    [TYPE_PSYCHIC] =    sSpriteAnim_TypeIcon_Psychic,
+    [TYPE_NATURE] =     sSpriteAnim_TypeIcon_Grass,
+    [TYPE_WIND] =       sSpriteAnim_TypeIcon_Electric,
+    [TYPE_REASON] =     sSpriteAnim_TypeIcon_Psychic,
     [TYPE_ICE] =        sSpriteAnim_TypeIcon_Ice,
-    [TYPE_DRAGON] =     sSpriteAnim_TypeIcon_Dragon,
+    [TYPE_FAITH] =      sSpriteAnim_TypeIcon_Dragon,
     [TYPE_DARK] =       sSpriteAnim_TypeIcon_Dark,
-    [TYPE_FAIRY] =      sSpriteAnim_TypeIcon_Fairy,
+    [TYPE_COSMIC] =     sSpriteAnim_TypeIcon_Fairy,
     [TYPE_STELLAR] =    sSpriteAnim_TypeIcon_Mystery,
 };
 
