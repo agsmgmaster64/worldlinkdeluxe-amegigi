@@ -1734,11 +1734,11 @@ u32 CheckTypeEffectiveness(u32 targetId, u16 move, u32 battler)
 static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
 {
     static const u8 normalIcon[] =  _("");
-    static const u8 superEffectiveIcon[] =  _("{UP_ARROW}");
-    static const u8 notVeryEffectiveIcon[] =  _("{DOWN_ARROW}");
+    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}");
+    static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}");
     static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
     static const u8 stabIcon[]   =  _("{PLUS}");
-    static const u8 teraIcon[]   =  _("{CIRCLE_DOT}");
+    static const u8 teraIcon[]   =  _("{UP_ARROW}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
     struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
     u32 typeEffectiveness = CheckTypeEffectiveness(targetId, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
