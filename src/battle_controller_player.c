@@ -13,6 +13,7 @@
 #include "battle_gimmick.h"
 #include "bg.h"
 #include "data.h"
+#include "dexnav.h"
 #include "item.h"
 #include "item_menu.h"
 #include "link.h"
@@ -410,7 +411,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         SwapHpBarsWithHpText();
     }
-    else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
+    else if (gSaveBlock2Ptr->optionsDebugMode == 0 && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, BUFFER_B, B_ACTION_DEBUG, 0);
         PlayerBufferExecCompleted(battler);
@@ -1730,6 +1731,17 @@ u32 CheckTypeEffectiveness(u32 targetId, u16 move, u32 battler)
     }
 }
 
+bool32 ShouldShowTypeEffectiveness(u32 targetId)
+{
+    if (gSaveBlock2Ptr->optionsEffectiveness == 1)
+        return FALSE;
+
+    if ((GetSearchLevel(SpeciesToNationalPokedexNum(gBattleMons[targetId].species)) > 1) && USE_DEXNAV_SEARCH_LEVELS)
+        return FALSE;
+
+    return TRUE;
+}
+
 static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
 {
     static const u8 noIcon[] =  _("");
@@ -1768,11 +1780,11 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
     switch (typeEffectiveness)
     {
     case COLOR_SUPER_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]))
+        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, superEffectiveIcon);
         break;
     case COLOR_NOT_VERY_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]))
+        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, notVeryEffectiveIcon);
         break;
     case COLOR_IMMUNE:
@@ -1780,7 +1792,7 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
         break;
     default:
     case COLOR_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]))
+        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, effectiveIcon);
         break;
     }

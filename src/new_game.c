@@ -106,6 +106,9 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsUniqueColors = 0;
     gSaveBlock2Ptr->optionsSummaryIvView = 1;
     gSaveBlock2Ptr->optionsMonAnimations = 1;
+    gSaveBlock2Ptr->optionsShowTypes = 0;
+    gSaveBlock2Ptr->optionsEffectiveness = 0;
+    gSaveBlock2Ptr->optionsDebugMode = 1;
 }
 
 static void ClearPokedexFlags(void)

@@ -526,6 +526,10 @@ struct SaveBlock2
              u32 optionsUniqueColors:1; //tx_optionsPlus
              u32 optionsSummaryIvView:1; //tx_optionsPlus
              u32 optionsMonAnimations:1; //tx_optionsPlus
+             u32 optionsEffectiveness:1;
+             u32 optionsShowTypes:1;
+             u32 optionsDebugMode:1;
+             u32 optionsUnused:29;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;

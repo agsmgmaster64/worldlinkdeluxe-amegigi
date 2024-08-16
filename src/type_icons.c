@@ -239,6 +239,9 @@ void LoadTypeIcons(u32 battler)
 {
     u32 position;
 
+    if (gSaveBlock2Ptr->optionsShowTypes == 1)
+        return;
+
     if (B_SHOW_TYPES == SHOW_TYPES_NEVER)
         return;
 

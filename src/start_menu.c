@@ -295,7 +295,7 @@ static void HideStartMenuDebug(void);
 
 static bool8 CanSetUpSecondaryStartMenu(void)
 {
-    if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
+    if (gSaveBlock2Ptr->optionsDebugMode == 0)
         return TRUE;
 
     if (FlagGet(FLAG_SYS_DEXNAV_GET) && FlagGet(FLAG_SYS_POKEDEX_GET))
@@ -396,7 +396,7 @@ static void BuildDebugStartMenu(void)
 
 static void BuildToolStartMenu(void)
 {
-    if (DEBUG_OVERWORLD_MENU == TRUE && DEBUG_OVERWORLD_IN_MENU == TRUE)
+    if (gSaveBlock2Ptr->optionsDebugMode == 0)
         AddStartMenuAction(MENU_ACTION_DEBUG);
     if (FlagGet(FLAG_SYS_DEXNAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
