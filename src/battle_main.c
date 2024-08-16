@@ -3170,8 +3170,6 @@ static void BattleStartClearSetData(void)
         gBattleStruct->itemLost[B_SIDE_PLAYER][i].originalItem = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
         gBattleStruct->itemLost[B_SIDE_OPPONENT][i].originalItem = GetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM);
         gPartyCriticalHits[i] = 0;
-        gBattleStruct->allowedToChangeFormInWeather[i][B_SIDE_PLAYER] = FALSE;
-        gBattleStruct->allowedToChangeFormInWeather[i][B_SIDE_OPPONENT] = FALSE;
     }
 
     gBattleStruct->swapDamageCategory = FALSE; // Photon Geyser, Shell Side Arm, Light That Burns the Sky
@@ -3277,6 +3275,7 @@ void SwitchInClearSetData(u32 battler)
     gBattleStruct->lastMoveFailed &= ~(gBitTable[battler]);
     gBattleStruct->palaceFlags &= ~(gBitTable[battler]);
     gBattleStruct->boosterEnergyActivates &= ~(gBitTable[battler]);
+    gBattleStruct->canPickupItem &= ~(1u << battler);
 
     for (i = 0; i < ARRAY_COUNT(gSideTimers); i++)
     {
@@ -5166,6 +5165,7 @@ static void TurnValuesCleanUp(bool8 var0)
                 if (gDisableStructs[i].rechargeTimer == 0)
                     gBattleMons[i].status2 &= ~STATUS2_RECHARGE;
             }
+            gBattleStruct->canPickupItem &= ~(1u << i);
         }
 
         if (gDisableStructs[i].substituteHP == 0)

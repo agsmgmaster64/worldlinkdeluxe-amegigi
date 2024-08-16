@@ -2070,7 +2070,7 @@ void IncrementRematchStepCounter(void)
 #if FREE_MATCH_CALL == FALSE
     if (!HasAtLeastFiveBadges())
         return;
-    
+
     if (IsVsSeekerEnabled())
         return;
 
