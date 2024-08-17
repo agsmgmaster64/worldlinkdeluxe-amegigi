@@ -445,7 +445,7 @@ static const u8 sText_Desc_UnitSystemImperial[] = _("Display Berry and Puppet we
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Display Berry and Puppet weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_OverworldCallsOn[]   = _("TRAINERs will be able to call you,\noffering rematches and info.");
 static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.\nSpecial events will still occur.");
-static const u8 sText_Desc_DebugModeOn[]        = _("WARNING! Please use at your own\n risk.");
+static const u8 sText_Desc_DebugModeOn[]        = _("WARNING! Please use at your own\nrisk.");
 static const u8 sText_Desc_DebugModeOff[]       = _("Enabling this option will enable\ndebug mode options.");
 
 static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][3] =
