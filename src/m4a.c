@@ -244,7 +244,7 @@ void m4aMPlayImmInit(struct MusicPlayerInfo *mplayInfo)
                 Clear64byte(track);
                 track->flags = MPT_FLG_EXIST;
                 track->bendRange = 2;
-                track->volX = 64;
+                track->volX = Rogue_ModifySoundVolume(mplayInfo, 64, ROGUE_SOUND_TYPE_REGULAR);
                 track->lfoSpeed = 22;
                 track->tone.type = 1;
             }
@@ -595,6 +595,12 @@ void MPlayStart(struct MusicPlayerInfo *mplayInfo, struct SongHeader *songHeader
     u8 unk_B;
     struct MusicPlayerTrack *track;
 
+    u8 volume = Rogue_ModifySoundVolume(mplayInfo, 64, ROGUE_SOUND_TYPE_REGULAR);
+    if (volume == 0)
+    {
+        songHeader = gSongTable[0].header;
+    }
+
     if (mplayInfo->ident != ID_NUMBER)
         return;
 
@@ -734,7 +740,7 @@ void FadeOutBody(struct MusicPlayerInfo *mplayInfo)
         {
             fadeOV = mplayInfo->fadeOV;
 
-            track->volX = (fadeOV >> FADE_VOL_SHIFT);
+            track->volX = Rogue_ModifySoundVolume(mplayInfo, (fadeOV >> FADE_VOL_SHIFT), ROGUE_SOUND_TYPE_REGULAR);
             track->flags |= MPT_FLG_VOLCHG;
         }
 
@@ -750,7 +756,7 @@ void TrkVolPitSet(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *tr
         s32 x;
         s32 y;
 
-        x = (u32)(track->vol * track->volX) >> 5;
+        x = (u32)(track->vol * Rogue_ModifySoundVolume(mplayInfo, track->volX, ROGUE_SOUND_TYPE_REGULAR)) >> 5;
 
         if (track->modT == 1)
             x = (u32)(x * (track->modM + 128)) >> 7;
@@ -1682,6 +1688,7 @@ start_song:
 void SetPokemonCryVolume(u8 val)
 {
     gPokemonCrySong.volumeValue = val & 0x7F;
+    gPokemonCrySong.volumeValue = Rogue_ModifySoundVolume(&gMPlayInfo_BGM, gPokemonCrySong.volumeValue, ROGUE_SOUND_TYPE_CRY);
 }
 
 void SetPokemonCryPanpot(s8 val)
@@ -1759,4 +1766,30 @@ void SetPokemonCryStereo(u32 val)
 void SetPokemonCryPriority(u8 val)
 {
     gPokemonCrySong.priority = val;
+}
+
+u8 Rogue_ModifySoundVolume(struct MusicPlayerInfo *mplayInfo, u8 volume, u16 soundType)
+{
+    // 10 is eqv of 100%
+    u8 audioLevel = 10;
+
+    switch (soundType)
+    {
+    case ROGUE_SOUND_TYPE_CRY:
+        audioLevel = gSaveBlock2Ptr->optionsVolumeCries;
+        break;
+    default:
+        if (mplayInfo == &gMPlayInfo_BGM)
+            audioLevel = gSaveBlock2Ptr->optionsVolumeBGM;
+        else
+            audioLevel = gSaveBlock2Ptr->optionsVolumeSFX;
+        break;
+    }
+
+    if (audioLevel != 10)
+    {
+        return (volume * audioLevel) / 10;
+    }
+
+    return volume;
 }

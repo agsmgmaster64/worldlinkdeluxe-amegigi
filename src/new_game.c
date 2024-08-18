@@ -98,17 +98,20 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsUnitSystem = UNITS_IMPERIAL;
-    gSaveBlock2Ptr->optionsHpBarSpeed = 0;  //tx_optionsPlus
-    gSaveBlock2Ptr->optionsExpBarSpeed = 0; //tx_optionsPlus
-    gSaveBlock2Ptr->optionsDisableMatchCall = 0;    //tx_optionsPlus
-    gSaveBlock2Ptr->optionsCurrentFont = 0;         //tx_optionsPlus
-    gSaveBlock2Ptr->optionsAnimSpeed = 0;         //tx_optionsPlus
+    gSaveBlock2Ptr->optionsHpBarSpeed = 0;
+    gSaveBlock2Ptr->optionsExpBarSpeed = 0;
+    gSaveBlock2Ptr->optionsDisableMatchCall = 0;
+    gSaveBlock2Ptr->optionsCurrentFont = 0;
+    gSaveBlock2Ptr->optionsAnimSpeed = OPTIONS_BATTLE_SCENE_1X;
     gSaveBlock2Ptr->optionsUniqueColors = 0;
     gSaveBlock2Ptr->optionsSummaryIvView = 1;
     gSaveBlock2Ptr->optionsMonAnimations = 1;
     gSaveBlock2Ptr->optionsShowTypes = 0;
     gSaveBlock2Ptr->optionsEffectiveness = 0;
     gSaveBlock2Ptr->optionsDebugMode = 1;
+    gSaveBlock2Ptr->optionsVolumeBGM = 10;
+    gSaveBlock2Ptr->optionsVolumeSFX = 10;
+    gSaveBlock2Ptr->optionsVolumeCries = 10;
 }
 
 static void ClearPokedexFlags(void)

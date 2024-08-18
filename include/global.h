@@ -518,8 +518,8 @@ struct SaveBlock2
              u32 optionsBattleSceneOff:1; // whether battle animations are disabled
              u32 regionMapZoom:1; // whether the map is zoomed in
              u32 optionsUnitSystem:1;   //tx_optionsPlus
-             u32 optionsHpBarSpeed:4;   //tx_optionsPlus
-             u32 optionsExpBarSpeed:4;  //tx_optionsPlus
+             u32 optionsHpBarSpeed:4;
+             u32 optionsExpBarSpeed:4;
              u32 optionsDisableMatchCall:1; //tx_optionsPlus
              u32 optionsCurrentFont:1;  //tx_optionsPlus
              u32 optionsAnimSpeed:3; //tx_optionsPlus
@@ -529,7 +529,10 @@ struct SaveBlock2
              u32 optionsEffectiveness:1;
              u32 optionsShowTypes:1;
              u32 optionsDebugMode:1;
-             u32 optionsUnused:29;
+             u32 optionsVolumeBGM:4;
+             u32 optionsVolumeSFX:4;
+             u32 optionsVolumeCries:4;
+             u32 optionsUnused:17;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x8];
     /*0x98*/ struct Time localTimeOffset;
