@@ -61,7 +61,7 @@ enum
     MENUITEM_MISC_MUSIC_VOLUME,
     MENUITEM_MISC_SFX_VOLUME,
     MENUITEM_MISC_CRIES_VOLUME,
-    MENUITEM_MISC_BUTTONMODE,
+    //MENUITEM_MISC_BUTTONMODE,
     MENUITEM_MISC_UNIT_SYSTEM,
     MENUITEM_MISC_MATCHCALL,
     MENUITEM_MISC_DEBUG_MODE,
@@ -197,7 +197,7 @@ static void DrawChoices_TextSpeed(int selection, int y);
 static void DrawChoices_BattleScene(int selection, int y);
 static void DrawChoices_BattleStyle(int selection, int y);
 static void DrawChoices_Sound(int selection, int y);
-static void DrawChoices_ButtonMode(int selection, int y);
+//static void DrawChoices_ButtonMode(int selection, int y);
 static void DrawChoices_BarSpeed(int selection, int y); //HP and EXP
 static void DrawChoices_UnitSystem(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
@@ -291,7 +291,7 @@ struct // MENU_MISC
     [MENUITEM_MISC_MUSIC_VOLUME] = {DrawChoices_MusicVolume, ProcessInput_MusicVolume},
     [MENUITEM_MISC_SFX_VOLUME]   = {DrawChoices_SFXVolume,   ProcessInput_SoundVolume},
     [MENUITEM_MISC_CRIES_VOLUME] = {DrawChoices_CriesVolume, ProcessInput_SoundVolume},
-    [MENUITEM_MISC_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
+    //[MENUITEM_MISC_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
     [MENUITEM_MISC_UNIT_SYSTEM]  = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
     [MENUITEM_MISC_MATCHCALL]    = {DrawChoices_MatchCall,   ProcessInput_Options_Two},
     [MENUITEM_MISC_DEBUG_MODE]   = {DrawChoices_DebugMode,   ProcessInput_Options_Two},
@@ -354,7 +354,7 @@ static const u8 *const sOptionMenuItemsNamesMisc[MENUITEM_MISC_COUNT] =
     [MENUITEM_MISC_MUSIC_VOLUME] = sText_MusicVolume,
     [MENUITEM_MISC_SFX_VOLUME]   = sText_SFXVolume,
     [MENUITEM_MISC_CRIES_VOLUME] = sText_CriesVolume,
-    [MENUITEM_MISC_BUTTONMODE]   = sText_ButtonMode,
+    //[MENUITEM_MISC_BUTTONMODE]   = sText_ButtonMode,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_UnitSystem,
     [MENUITEM_MISC_MATCHCALL]    = sText_MatchCalls,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_DebugMode,
@@ -420,7 +420,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_MISC_MUSIC_VOLUME:
         case MENUITEM_MISC_SFX_VOLUME:
         case MENUITEM_MISC_CRIES_VOLUME:
-        case MENUITEM_MISC_BUTTONMODE:
+        //case MENUITEM_MISC_BUTTONMODE:
         case MENUITEM_MISC_UNIT_SYSTEM:
         case MENUITEM_MISC_MATCHCALL:
         case MENUITEM_MISC_DEBUG_MODE:
@@ -488,6 +488,9 @@ static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][
 
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
+static const u8 sText_Desc_MusicVolume[]        = _("Adjust the volume of background music\nhere.");
+static const u8 sText_Desc_SFXVolume[]          = _("Adjust the volume of all sound effects\nand fanfares here.");
+static const u8 sText_Desc_CriesVolume[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
 static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
 static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
 static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
@@ -501,10 +504,10 @@ static const u8 sText_Desc_DebugModeOff[]       = _("Enabling this option will e
 static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][3] =
 {
     [MENUITEM_MISC_SOUND]        = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,       sText_Empty},
-    [MENUITEM_MISC_MUSIC_VOLUME] = {sText_Desc_SoundMono,            sText_Empty,       sText_Empty},
-    [MENUITEM_MISC_SFX_VOLUME]   = {sText_Desc_SoundMono,            sText_Empty,       sText_Empty},
-    [MENUITEM_MISC_CRIES_VOLUME] = {sText_Desc_SoundMono,            sText_Empty,       sText_Empty},
-    [MENUITEM_MISC_BUTTONMODE]   = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,     sText_Desc_ButtonMode_LA},
+    [MENUITEM_MISC_MUSIC_VOLUME] = {sText_Desc_MusicVolume,          sText_Empty,                  sText_Empty},
+    [MENUITEM_MISC_SFX_VOLUME]   = {sText_Desc_SFXVolume,            sText_Empty,                  sText_Empty},
+    [MENUITEM_MISC_CRIES_VOLUME] = {sText_Desc_CriesVolume,          sText_Empty,                  sText_Empty},
+    //[MENUITEM_MISC_BUTTONMODE]   = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,     sText_Desc_ButtonMode_LA},
     [MENUITEM_MISC_UNIT_SYSTEM]  = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,  sText_Empty},
     [MENUITEM_MISC_MATCHCALL]    = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff, sText_Empty},
     [MENUITEM_MISC_DEBUG_MODE]   = {sText_Desc_DebugModeOn,          sText_Desc_DebugModeOff,      sText_Empty},
@@ -554,7 +557,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMisc[MENUITEM_MISC_COU
     [MENUITEM_MISC_MUSIC_VOLUME] = sText_Empty,
     [MENUITEM_MISC_SFX_VOLUME]   = sText_Empty,
     [MENUITEM_MISC_CRIES_VOLUME] = sText_Empty,
-    [MENUITEM_MISC_BUTTONMODE]   = sText_Empty,
+    //[MENUITEM_MISC_BUTTONMODE]   = sText_Empty,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_Empty,
     [MENUITEM_MISC_MATCHCALL]    = sText_Empty,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_Desc_Disabled_DebugMode,
@@ -912,7 +915,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME] = gSaveBlock2Ptr->optionsVolumeBGM;
         sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME]   = gSaveBlock2Ptr->optionsVolumeSFX;
         sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME] = gSaveBlock2Ptr->optionsVolumeCries;
-        sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
+        //sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel_misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
         sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
@@ -1152,7 +1155,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME];
     gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME];
     gSaveBlock2Ptr->optionsVolumeCries      = sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME];
-    gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE];
+    //gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE];
     gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_misc[MENUITEM_MISC_MATCHCALL];
     gSaveBlock2Ptr->optionsDebugMode        = sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE];
@@ -1481,6 +1484,7 @@ static void DrawChoices_Sound(int selection, int y)
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1], active);
 }
 
+/*
 static void DrawChoices_ButtonMode(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MISC_BUTTONMODE);
@@ -1492,6 +1496,7 @@ static void DrawChoices_ButtonMode(int selection, int y)
     DrawOptionMenuChoice(gText_ButtonTypeLR, xMid, y, styles[1], active);
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 198), y, styles[2], active);
 }
+*/
 
 static const u8 sText_Normal[] = _("NORMAL");
 static void DrawChoices_BarSpeed(int selection, int y) //HP and EXP
