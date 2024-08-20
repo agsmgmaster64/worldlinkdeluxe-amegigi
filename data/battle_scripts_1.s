@@ -578,7 +578,7 @@ BattleScript_Teatimerod:
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TeatimeBuffer
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0x2, BattleScript_TeatimeBuffer
 	printfromtable gStatUpStringIds
-	waitmessage 0x40
+	waitmessage B_WAIT_TIME_LONG
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_TeatimeLoop
 	moveendcase MOVEEND_CLEAR_BITS
@@ -590,7 +590,7 @@ BattleScript_Teatimemotor:
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TeatimeBuffer
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0x2, BattleScript_TeatimeBuffer
 	printfromtable gStatUpStringIds
-	waitmessage 0x40
+	waitmessage B_WAIT_TIME_LONG
 	moveendto MOVEEND_NEXT_TARGET
 	jumpifnexttargetvalid BattleScript_TeatimeLoop
 	moveendcase MOVEEND_CLEAR_BITS
@@ -7181,7 +7181,7 @@ BattleScript_TargetFormChangeWithStringNoPopup::
 
 BattleScript_BattlerFormChangeWithStringEnd3::
 	pause 5
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	flushtextbox
 	handleformchange BS_SCRIPTING, 0
 	handleformchange BS_SCRIPTING, 1
@@ -8164,7 +8164,7 @@ BattleScript_DeltaStreamActivates::
 	end3
 
 BattleScript_ProtosynthesisActivates::
-	call BattleScript_AbilityPopUp
+	call BattleScript_AbilityPopUpScripting
 	printstring STRINGID_SUNLIGHTACTIVATEDABILITY
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_STATWASHEIGHTENED

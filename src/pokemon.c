@@ -1799,14 +1799,14 @@ u8 CountAliveMonsInBattle(u8 caseId, u32 battler)
     case BATTLE_ALIVE_EXCEPT_BATTLER:
         for (i = 0; i < MAX_BATTLERS_COUNT; i++)
         {
-            if (i != battler && !(gAbsentBattlerFlags & gBitTable[i]))
+            if (i != battler && !(gAbsentBattlerFlags & (1u << i)))
                 retVal++;
         }
         break;
     case BATTLE_ALIVE_SIDE:
         for (i = 0; i < MAX_BATTLERS_COUNT; i++)
         {
-            if (GetBattlerSide(i) == GetBattlerSide(battler) && !(gAbsentBattlerFlags & gBitTable[i]))
+            if (GetBattlerSide(i) == GetBattlerSide(battler) && !(gAbsentBattlerFlags & (1u << i)))
                 retVal++;
         }
         break;
@@ -1834,7 +1834,7 @@ u8 GetDefaultMoveTarget(u8 battlerId)
     }
     else
     {
-        if ((gAbsentBattlerFlags & gBitTable[opposing]))
+        if ((gAbsentBattlerFlags & (1u << opposing)))
             return GetBattlerAtPosition(BATTLE_PARTNER(opposing));
         else
             return GetBattlerAtPosition(opposing);
@@ -2283,7 +2283,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                     || boxMon->move2 == move
                     || boxMon->move3 == move
                     || boxMon->move4 == move)
-                    retVal |= gBitTable[i];
+                    retVal |= (1u << i);
                 i++;
             }
         }
@@ -4610,7 +4610,7 @@ void RandomlyGivePartyPokerus(struct Pokemon *party)
         }
         while (!GetMonData(mon, MON_DATA_SPECIES, 0) || GetMonData(mon, MON_DATA_IS_EGG, 0));
 
-        if (!(CheckPartyHasHadPokerus(party, gBitTable[rnd])))
+        if (!(CheckPartyHasHadPokerus(party, 1u << rnd)))
         {
             u8 rnd2;
 
@@ -6018,9 +6018,9 @@ void TrySpecialOverworldEvo(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u16 targetSpecies = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_OVERWORLD_SPECIAL, evoMethod, SPECIES_NONE);
-        if (targetSpecies != SPECIES_NONE && !(sTriedEvolving & gBitTable[i]))
+        if (targetSpecies != SPECIES_NONE && !(sTriedEvolving & (1u << i)))
         {
-            sTriedEvolving |= gBitTable[i];
+            sTriedEvolving |= 1u << i;
             if(gMain.callback2 == TrySpecialOverworldEvo) // This fixes small graphics glitches.
                 EvolutionScene(&gPlayerParty[i], targetSpecies, canStopEvo, i);
             else
