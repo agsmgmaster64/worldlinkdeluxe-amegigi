@@ -1736,7 +1736,7 @@ bool32 ShouldShowTypeEffectiveness(u32 targetId)
     if (gSaveBlock2Ptr->optionsEffectiveness == 1)
         return FALSE;
 
-    if ((GetSearchLevel(SpeciesToNationalPokedexNum(gBattleMons[targetId].species)) > 1) && USE_DEXNAV_SEARCH_LEVELS)
+    if ((GetSearchLevel(SpeciesToNationalPokedexNum(gBattleMons[targetId].species)) <= 1) && USE_DEXNAV_SEARCH_LEVELS)
         return FALSE;
 
     return TRUE;
