@@ -6333,9 +6333,8 @@ static void Cmd_moveend(void)
                     }
                 }
 
-                if (!(gBattleStruct->lastMoveFailed & gBitTable[gBattlerAttacker]
-                    || (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove
-                        && gBattleStruct->bouncedMoveIsUsed)))
+                if (!(gMoveResultFlags & (MOVE_RESULT_FAILED | MOVE_RESULT_DOESNT_AFFECT_FOE)
+                 || (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove && gBattleStruct->bouncedMoveIsUsed)))
                 {   // Sound move succeeds
                     // Set target for other Concerto mons; set bit so that mon cannot activate Concerto off of its own move
                     if (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
@@ -12619,7 +12618,7 @@ static void Cmd_updatestatusicon(void)
     {
         for (battler = gBattleControllerExecFlags; battler < gBattlersCount; battler++)
         {
-            if (!(gAbsentBattlerFlags & gBitTable[battler]))
+            if (!(gAbsentBattlerFlags & (1u << battler)))
             {
                 BtlController_EmitStatusIconUpdate(battler, BUFFER_A, gBattleMons[battler].status1, gBattleMons[battler].status2);
                 MarkBattlerForControllerExec(battler);
