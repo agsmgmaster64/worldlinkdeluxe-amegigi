@@ -400,11 +400,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_HIGH_STRENGTH] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
         .name = _("High Strength"),
-    #else
-        .name = _("HighStrength"),
-    #endif
         .description = COMPOUND_STRING("Prevents Attack reduction."),
         .aiRating = 3,
         .breakable = TRUE,
@@ -558,11 +554,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_MAGIC_BARRIER] =
     {
-    #if B_EXPANDED_ABILITY_NAMES == TRUE
         .name = _("Magic Barrier"),
-    #else
-        .name = _("MagicBarrier"),
-    #endif
         .description = COMPOUND_STRING("Prevents stat reduction."),
         .aiRating = 4,
         .breakable = TRUE,

@@ -1254,8 +1254,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_HEAVEN_PEACH] =
     {
-        .name = HANDLE_EXPANDED_ITEM_NAME("Heaven Peach", "Heavenly Peach"),
-        .pluralName = HANDLE_EXPANDED_ITEM_NAME("Heaven Peaches", "Heavenly Peaches"),
+        .name = _("Heavenly Peach"),
+        .pluralName = _("Heavenly Peaches"),
         .price = (I_PRICE >= GEN_7) ? 350 : 200,
         .description = sFullHealDesc,
         .pocket = POCKET_MEDICINE,

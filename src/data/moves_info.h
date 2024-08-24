@@ -6821,7 +6821,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BATTERY_CHARGE] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("Batt. Charge", "Battery Charge"),
+        .name = COMPOUND_STRING("Battery Charge"),
         .description = COMPOUND_STRING(
             "Charges power to raise the\n"
             "user's Sp. Atk."),
@@ -8095,7 +8095,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BINDING_VOICE] =
     {
-        .name = HANDLE_EXPANDED_MOVE_NAME("BindingVoice", "Binding Voice"),
+        .name = COMPOUND_STRING("Binding Voice"),
         .description = COMPOUND_STRING(
             "Emits a horrible screech\n"
             "that sharply lowers Sp. Def."),
@@ -18889,11 +18889,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "A user-hurting blast of\n"
             "amassed chlorophyll."),
-        .effect = EFFECT_MAX_HP_50_RECOIL,
-        .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 150 : 120,
+        .effect = EFFECT_HIT,
+        .power = 120,
         .type = TYPE_NATURE,
-        .accuracy = 95,
-        .pp = 5,
+        .accuracy = 100,
+        .recoil = 33,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,

@@ -1317,6 +1317,10 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
             cannotUse = TRUE;
         }
         break;
+    case EFFECT_ITEM_TAKE_DAMAGE:
+        if (hp == 0)
+            cannotUse = TRUE;
+        break;
     }
 
     if (failStr != NULL)

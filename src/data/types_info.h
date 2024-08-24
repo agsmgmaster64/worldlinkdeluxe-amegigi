@@ -65,7 +65,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     },
     [TYPE_ILLUSION] =
     {
-        .name = HANDLE_EXPANDED_TYPE_NAME("Illusn", "Illusion"),
+        .name = _("Illusion"),
         .generic = _("an Illusion move"),
         .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BREAKNECK_BLITZ,

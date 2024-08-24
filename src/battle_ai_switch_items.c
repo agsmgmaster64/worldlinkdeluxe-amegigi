@@ -2194,6 +2194,10 @@ static bool32 ShouldUseItem(u32 battler)
 
         switch (ItemId_GetBattleUsage(item))
         {
+        case EFFECT_ITEM_TAKE_DAMAGE:
+            if (Random() == 0)
+                shouldUse = TRUE;
+            break;
         case EFFECT_ITEM_HEAL_AND_CURE_STATUS:
             shouldUse = AI_ShouldHeal(battler, 0);
             break;

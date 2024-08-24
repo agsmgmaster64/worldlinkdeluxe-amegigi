@@ -22,7 +22,7 @@ EventScript_MovedTooFast::
     msgbox sText_TryMovingSlower, MSGBOX_SIGN
     end
 sText_TryMovingSlower:
-    .string "The Pokémon got away!\n"
+    .string "The Puppet got away!\n"
     .string "Try moving more slowly.$"
 
 
@@ -30,7 +30,7 @@ EventScript_PokemonGotAway::
     msgbox sText_PokemonGotAway, MSGBOX_SIGN
     end
 sText_PokemonGotAway:
-    .string "The Pokémon got away!$"
+    .string "The Puppet got away!$"
 
 
 EventScript_LostSignal::
@@ -45,4 +45,4 @@ EventScript_TooDark::
     msgbox sText_TooDark, MSGBOX_SIGN
     end
 sText_TooDark:
-    .string "It's too dark to search\nfor a Pokémon!$"
+    .string "It's too dark to search\nfor a Puppet!$"
