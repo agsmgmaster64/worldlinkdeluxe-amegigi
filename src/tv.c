@@ -2253,8 +2253,8 @@ u8 GetRibbonCount(struct Pokemon *pokemon)
     //nRibbons += GetMonData(pokemon, MON_DATA_SMART_RIBBON);
     //nRibbons += GetMonData(pokemon, MON_DATA_TOUGH_RIBBON);
     nRibbons += GetMonData(pokemon, MON_DATA_CHAMPION_RIBBON);
-    nRibbons += GetMonData(pokemon, MON_DATA_WINNING_RIBBON);
-    nRibbons += GetMonData(pokemon, MON_DATA_VICTORY_RIBBON);
+    //nRibbons += GetMonData(pokemon, MON_DATA_WINNING_RIBBON);
+    //nRibbons += GetMonData(pokemon, MON_DATA_VICTORY_RIBBON);
     //nRibbons += GetMonData(pokemon, MON_DATA_ARTIST_RIBBON);
     nRibbons += GetMonData(pokemon, MON_DATA_EFFORT_RIBBON);
     nRibbons += GetMonData(pokemon, MON_DATA_NATIONAL_RIBBON);
@@ -2269,8 +2269,8 @@ static u8 MonDataIdxToRibbon(u8 monDataIdx)
     //if (monDataIdx == MON_DATA_CUTE_RIBBON)     return CUTE_RIBBON_NORMAL;
     //if (monDataIdx == MON_DATA_SMART_RIBBON)    return SMART_RIBBON_NORMAL;
     //if (monDataIdx == MON_DATA_TOUGH_RIBBON)    return TOUGH_RIBBON_NORMAL;
-    if (monDataIdx == MON_DATA_WINNING_RIBBON)  return WINNING_RIBBON;
-    if (monDataIdx == MON_DATA_VICTORY_RIBBON)  return VICTORY_RIBBON;
+    //if (monDataIdx == MON_DATA_WINNING_RIBBON)  return WINNING_RIBBON;
+    //if (monDataIdx == MON_DATA_VICTORY_RIBBON)  return VICTORY_RIBBON;
     //if (monDataIdx == MON_DATA_ARTIST_RIBBON)   return ARTIST_RIBBON;
     if (monDataIdx == MON_DATA_EFFORT_RIBBON)   return EFFORT_RIBBON;
     if (monDataIdx == MON_DATA_NATIONAL_RIBBON) return NATIONAL_RIBBON;

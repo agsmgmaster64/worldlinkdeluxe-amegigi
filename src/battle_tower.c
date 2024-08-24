@@ -2777,28 +2777,7 @@ static void AwardBattleTowerRibbons(void)
     u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     u8 monCount = GetMonCountForBattleMode(battleMode);
 
-    if (lvlMode != FRONTIER_LVL_50)
-        ribbonType = MON_DATA_VICTORY_RIBBON;
-    else
-        ribbonType = MON_DATA_WINNING_RIBBON;
-
     gSpecialVar_Result = FALSE;
-
-    if (GetCurrentBattleTowerWinStreak(lvlMode, battleMode) > 55)
-    {
-        for (i = 0; i < monCount; i++)
-        {
-            partyIndex = gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1;
-            ribbons[i].partyIndex = partyIndex;
-            ribbons[i].count = 0;
-            if (!GetMonData(&gSaveBlock1Ptr->playerParty[partyIndex], ribbonType))
-            {
-                gSpecialVar_Result = TRUE;
-                SetMonData(&gSaveBlock1Ptr->playerParty[partyIndex], ribbonType, &gSpecialVar_Result);
-                ribbons[i].count = GetRibbonCount(&gSaveBlock1Ptr->playerParty[partyIndex]);
-            }
-        }
-    }
 
     if (gSpecialVar_Result)
     {

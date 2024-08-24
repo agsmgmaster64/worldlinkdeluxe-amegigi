@@ -3682,21 +3682,15 @@ static void BufferIvOrEvStats(u8 mode)
         PrintRightColumnStats();
         break;
     case 2:
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_HP);
-        BufferStat(gStringVar1, colorMod, hp, 0, 3);
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_ATK);
-        BufferStat(gStringVar2, colorMod, atk, 1, 7);
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_DEF);
-        BufferStat(gStringVar3, colorMod, def, 2, 7);
+        BufferStat(gStringVar1, 0, hp, 0, 3);
+        BufferStat(gStringVar2, 0, atk, 1, 7);
+        BufferStat(gStringVar3, 0, def, 2, 7);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutIV);
         PrintLeftColumnStats();
 
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPATK);
-        BufferStat(gStringVar1, colorMod, spA, 0, 3);
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPDEF);
-        BufferStat(gStringVar2, colorMod, spD, 1, 3);
-        colorMod = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HYPER_TRAINED_SPEED);
-        BufferStat(gStringVar3, colorMod, spe, 2, 3);
+        BufferStat(gStringVar1, 0, spA, 0, 3);
+        BufferStat(gStringVar2, 0, spD, 1, 3);
+        BufferStat(gStringVar3, 0, spe, 2, 3);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
         PrintRightColumnStats();
         break;

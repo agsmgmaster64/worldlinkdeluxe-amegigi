@@ -235,7 +235,6 @@ void CanHyperTrain(struct ScriptContext *ctx)
     u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
     if (stat < NUM_STATS
      && partyIndex < PARTY_SIZE
-     && !GetMonData(&gPlayerParty[partyIndex], MON_DATA_HYPER_TRAINED_HP + stat)
      && GetMonData(&gPlayerParty[partyIndex], MON_DATA_HP_IV + stat) < MAX_PER_STAT_IVS)
     {
         gSpecialVar_Result = TRUE;
@@ -252,8 +251,8 @@ void HyperTrain(struct ScriptContext *ctx)
     u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
     if (stat < NUM_STATS && partyIndex < PARTY_SIZE)
     {
-        bool32 data = TRUE;
-        SetMonData(&gPlayerParty[partyIndex], MON_DATA_HYPER_TRAINED_HP + stat, &data);
+        u32 data = MAX_PER_STAT_IVS;
+        SetMonData(&gPlayerParty[partyIndex], MON_DATA_HP_IV + stat, &data);
         CalculateMonStats(&gPlayerParty[partyIndex]);
     }
 }

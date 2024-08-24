@@ -119,17 +119,14 @@ struct BoxPokemon
              u16 hpIV:5;
     /*0x24*/ u32 experience:21;
              u32 metLevel:7;
-             u32 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
-             u32 hyperTrainedHP:1;
-             u32 hyperTrainedAttack:1;
-             u32 isShadow:1;
+             u32 pokerus:4;
     /*0x28*/ u8 markings:4;
              u8 compressedStatus:4;
     /*0x29*/ u8 ppBonuses;
     /*0x2A*/ u8 friendship;
     /*0x2B*/ u8 pokeball:6; // 63 balls.
-             u8 hyperTrainedDefense:1;
-             u8 hyperTrainedSpeed:1;
+             u8 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
+             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
     /*0x2C*/ u16 move1:11; // 2047 moves.
              u16 attackIV:5;
     /*0x2E*/ u16 move2:11; // 2047 moves.
@@ -139,9 +136,9 @@ struct BoxPokemon
     /*0x32*/ u16 move4:11; // 2047 moves.
              u16 spAttackIV:5;
     /*0x34*/ u8 pp1:7; // 127 PP.
-             u8 hyperTrainedSpAttack:1;
+             u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
     /*0x35*/ u8 pp2:7; // 127 PP.
-             u8 hyperTrainedSpDefense:1;
+             u8 isShadow:1;
     /*0x36*/ u8 pp3:7; // 127 PP.
              u8 isBadEgg:1;
     /*0x37*/ u8 pp4:7; // 127 PP.
@@ -153,12 +150,8 @@ struct BoxPokemon
     /*0x3C*/ u8 spAttackEV;
     /*0x3D*/ u8 spDefenseEV;
     /*0x3E*/ u8 spDefenseIV:5;
-             u8 winningRibbon:1;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-             u8 victoryRibbon:1;  // Given at the Battle Tower's Level 100 challenge by winning a set of seven battles that extends the current streak to 56 or more.
-             u8 championRibbon:1; // Given when defeating the Champion. Because both RSE and FRLG use it, later generations don't specify from which region it comes from.
-    /*0x3F*/ u8 pokerus:4;
              u8 dynamaxLevel:3;
-             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+    /*0x3F*/ u8 nickname13;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
 };
 
 struct Pokemon
