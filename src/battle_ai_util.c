@@ -4028,6 +4028,7 @@ void IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *
      || HasMoveEffect(battlerDef, EFFECT_POISON)
      || HasMoveEffect(battlerDef, EFFECT_PARALYZE)
      || HasMoveEffect(battlerDef, EFFECT_WILL_O_WISP)
+     || HasMoveEffect(battlerDef, EFFECT_SUB_ZERO)
      || HasMoveEffect(battlerDef, EFFECT_CONFUSE)
      || HasMoveEffect(battlerDef, EFFECT_LEECH_SEED))
         ADJUST_SCORE_PTR(GOOD_EFFECT);
