@@ -144,9 +144,9 @@ bool8 TryAddRoamer(u16 species, u8 level)
 void InitRoamer(void)
 {
     if (gSpecialVar_0x8004 == 0) // Red
-        TryAddRoamer(SPECIES_FINNEON, 40);
+        TryAddRoamer(SPECIES_MALE_SHINGYOKU, 40);
     else
-        TryAddRoamer(SPECIES_LUMINEON, 40);
+        TryAddRoamer(SPECIES_FEMALE_SHINGYOKU, 40);
 }
 
 void UpdateLocationHistoryForRoamer(void)

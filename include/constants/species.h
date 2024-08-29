@@ -285,7 +285,7 @@
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
 #define SPECIES_CHIBI_KAGEROU                           283
-#define SPECIES_NORMAL_KAGEROU                            284
+#define SPECIES_NORMAL_KAGEROU                           284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287
@@ -437,12 +437,12 @@
 #define SPECIES_CHIBI_SHINKI                            433
 #define SPECIES_NORMAL_SHINKI                           434
 #define SPECIES_PLACEHOLD_SHINKI                        435 // Placeholder
-#define SPECIES_AKYUU                                   436 // Akyuu
-#define SPECIES_RINNOSUKE                               437 // Rinnosuke
-#define SPECIES_BONSLY                                  438 // Youki
-#define SPECIES_MIME_JR                                 439 // Tori
-#define SPECIES_HAPPINY                                 440 // Namazu
-#define SPECIES_CHATOT                                  441 // Tensoku
+#define SPECIES_AKYUU                                   436
+#define SPECIES_RINNOSUKE                               437
+#define SPECIES_YOUKI                                   438
+#define SPECIES_TORI                                    439
+#define SPECIES_NAMAZU                                  440
+#define SPECIES_TENSOKU                                 441
 #define SPECIES_SPIRITOMB                               442 // Kongaara
 #define SPECIES_GIBLE                                   443
 #define SPECIES_GABITE                                  444
@@ -452,32 +452,32 @@
 #define SPECIES_LUCARIO                                 448 // Yuugenmagan
 #define SPECIES_HIPPOPOTAS                              449
 #define SPECIES_HIPPOWDON                               450
-#define SPECIES_SKORUPI                                 451 // Sariel
-#define SPECIES_DRAPION                                 452
-#define SPECIES_CROAGUNK                                453
-#define SPECIES_TOXICROAK                               454 // Shingyoku
-#define SPECIES_CARNIVINE                               455
-#define SPECIES_FINNEON                                 456
-#define SPECIES_LUMINEON                                457
-#define SPECIES_MANTYKE                                 458 // Elis
-#define SPECIES_SNOVER                                  459
-#define SPECIES_ABOMASNOW                               460
+#define SPECIES_CHIBI_SARIEL                            451
+#define SPECIES_NORMAL_SARIEL                           452
+#define SPECIES_SPEED_SARIEL                            453
+#define SPECIES_CHIBI_SHINGYOKU                         454
+#define SPECIES_ORIGIN_SHINGYOKU                        455
+#define SPECIES_MALE_SHINGYOKU                          456
+#define SPECIES_FEMALE_SHINGYOKU                        457
+#define SPECIES_CHIBI_ELIS                              458
+#define SPECIES_NORMAL_ELIS                             459
+#define SPECIES_PLACEHOLD_ELIS                          460 // Placeholder
 #define SPECIES_WEAVILE                                 461 // Mima
 #define SPECIES_MAGNEZONE                               462
 #define SPECIES_LICKILICKY                              463
-#define SPECIES_RHYPERIOR                               464 // Tenma
-#define SPECIES_TANGROWTH                               465
-#define SPECIES_ELECTIVIRE                              466
-#define SPECIES_MAGMORTAR                               467 // Sendai
-#define SPECIES_TOGEKISS                                468
-#define SPECIES_YANMEGA                                 469
-#define SPECIES_LEAFEON                                 470 // VIVIT
-#define SPECIES_GLACEON                                 471
-#define SPECIES_GLISCOR                                 472
-#define SPECIES_MAMOSWINE                               473 // Satsuki
-#define SPECIES_PORYGON_Z                               474
-#define SPECIES_GALLADE                                 475
-#define SPECIES_PROBOPASS                               476 // Isami
+#define SPECIES_CHIBI_TENMA                             464
+#define SPECIES_NORMAL_TENMA                            465
+#define SPECIES_SPEED_TENMA                             466
+#define SPECIES_CHIBI_SENDAI                            467
+#define SPECIES_NORMAL_SENDAI                           468
+#define SPECIES_TECH_SENDAI                             469
+#define SPECIES_CHIBI_VIVIT                             470
+#define SPECIES_NORMAL_VIVIT                            471
+#define SPECIES_ANGEL_VIVIT                             472
+#define SPECIES_CHIBI_SATSUKI                           473
+#define SPECIES_NORMAL_SATSUKI                          474
+#define SPECIES_PLACEHOLD_SATSUKI                       475 // Placeholder
+#define SPECIES_ISAMI                                   476
 #define SPECIES_DUSKNOIR                                477 // Mitori
 #define SPECIES_FROSLASS                                478
 #define SPECIES_ROTOM                                   479
@@ -502,14 +502,14 @@
 #define SPECIES_ADVENT_REIMU                            498
 #define SPECIES_ADVENT_REMILIA                          499
 #define SPECIES_EMBOAR                                  500 // JKSanae
-#define SPECIES_OSHAWOTT                                501 // Dark Alice
-#define SPECIES_DEWOTT                                  502 // AkiSisters
+#define SPECIES_DARK_ALICE                              501
+#define SPECIES_AKI_SISTERS                             502
 #define SPECIES_LAST_WORD_SUWAKO                        503
 #define SPECIES_LAST_WORD_UTSUHO                        504
-#define SPECIES_LAST_WORD_TENSHI                        505 // LTenshi
-#define SPECIES_LAST_WORD_LETTY                         506 // LLetty
+#define SPECIES_LAST_WORD_TENSHI                        505
+#define SPECIES_LAST_WORD_LETTY                         506
 #define SPECIES_LAST_WORD_KANAKO                        507
-#define SPECIES_STOUTLAND                               508 // Ayakashi
+#define SPECIES_AYAKASHI                                508
 #define SPECIES_PURRLOIN                                509 // Basiney
 #define SPECIES_LIEPARD                                 510
 #define SPECIES_PANSAGE                                 511

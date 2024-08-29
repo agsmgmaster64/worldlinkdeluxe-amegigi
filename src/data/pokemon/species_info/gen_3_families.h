@@ -448,7 +448,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif //P_MEGA_EVOLUTIONS
 
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_GALLADE] =
+    [SPECIES_PLACEHOLD_SATSUKI] =
     {
         .baseHP        = 68,
         .baseAttack    = 125,
@@ -581,7 +581,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 
 #if P_FAMILY_NOSEPASS
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_PROBOPASS] =
+    [SPECIES_ISAMI] =
     {
         .baseHP        = 60,
         .baseAttack    = 55,

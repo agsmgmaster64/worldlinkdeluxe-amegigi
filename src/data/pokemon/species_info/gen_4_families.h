@@ -572,7 +572,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_BRONZOR
 
 #if P_FAMILY_CHATOT
-    [SPECIES_CHATOT] =
+    [SPECIES_TENSOKU] =
     {
         .baseHP        = 76,
         .baseAttack    = 65,
@@ -1276,7 +1276,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_HIPPOPOTAS
 
 #if P_FAMILY_SKORUPI
-    [SPECIES_SKORUPI] =
+    [SPECIES_CHIBI_SARIEL] =
     {
         .baseHP        = 40,
         .baseAttack    = 50,
@@ -1335,10 +1335,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sSkorupiLevelUpLearnset,
         .teachableLearnset = sSkorupiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_DRAPION}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_SARIEL}),
     },
 
-    [SPECIES_DRAPION] =
+    [SPECIES_NORMAL_SARIEL] =
     {
         .baseHP        = 70,
         .baseAttack    = 90,
@@ -1401,7 +1401,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SKORUPI
 
 #if P_FAMILY_CROAGUNK
-    [SPECIES_CROAGUNK] =
+    [SPECIES_SPEED_SARIEL] =
     {
         .baseHP        = 48,
         .baseAttack    = 61,
@@ -1464,10 +1464,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sCroagunkLevelUpLearnset,
         .teachableLearnset = sCroagunkTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_TOXICROAK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_CHIBI_SHINGYOKU}),
     },
 
-    [SPECIES_TOXICROAK] =
+    [SPECIES_CHIBI_SHINGYOKU] =
     {
         .baseHP        = 83,
         .baseAttack    = 106,
@@ -1534,7 +1534,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CROAGUNK
 
 #if P_FAMILY_CARNIVINE
-    [SPECIES_CARNIVINE] =
+    [SPECIES_ORIGIN_SHINGYOKU] =
     {
         .baseHP        = 74,
         .baseAttack    = 100,
@@ -1597,7 +1597,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CARNIVINE
 
 #if P_FAMILY_FINNEON
-    [SPECIES_FINNEON] =
+    [SPECIES_MALE_SHINGYOKU] =
     {
         .baseHP        = 49,
         .baseAttack    = 49,
@@ -1659,10 +1659,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sFinneonLevelUpLearnset,
         .teachableLearnset = sFinneonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_LUMINEON}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_FEMALE_SHINGYOKU}),
     },
 
-    [SPECIES_LUMINEON] =
+    [SPECIES_FEMALE_SHINGYOKU] =
     {
         .baseHP        = 69,
         .baseAttack    = 69,
@@ -1728,7 +1728,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_FINNEON
 
 #if P_FAMILY_SNOVER
-    [SPECIES_SNOVER] =
+    [SPECIES_NORMAL_ELIS] =
     {
         .baseHP        = 60,
         .baseAttack    = 62,
@@ -1791,10 +1791,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sSnoverLevelUpLearnset,
         .teachableLearnset = sSnoverTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ABOMASNOW}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_PLACEHOLD_ELIS}),
     },
 
-    [SPECIES_ABOMASNOW] =
+    [SPECIES_PLACEHOLD_ELIS] =
     {
         .baseHP        = 90,
         .baseAttack    = 92,

@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Damage calculation matches Gen5+")
     PARAMETRIZE { expectedDamage = 168; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ICE_FANG].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_GLACEON) { Level(75); Attack(123); }
+        PLAYER(SPECIES_NORMAL_VIVIT) { Level(75); Attack(123); }
         OPPONENT(SPECIES_GARCHOMP) { Defense(163); }
     } WHEN {
         TURN {
@@ -63,7 +63,7 @@ SINGLE_BATTLE_TEST("Damage calculation matches Gen5+ (Muscle Band, crit)")
     PARAMETRIZE { expectedDamage = 268; }
     GIVEN {
         ASSUME(gMovesInfo[MOVE_ICE_FANG].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_GLACEON) { Level(75); Attack(123); Item(ITEM_MUSCLE_BAND); }
+        PLAYER(SPECIES_NORMAL_VIVIT) { Level(75); Attack(123); Item(ITEM_MUSCLE_BAND); }
         OPPONENT(SPECIES_GARCHOMP) { Defense(163); }
     } WHEN {
         TURN {

@@ -132,7 +132,7 @@ SINGLE_BATTLE_TEST("Dancer-called attacks have their type updated")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_REVELATION_DANCE].danceMove == TRUE);
         ASSUME(gMovesInfo[MOVE_REVELATION_DANCE].effect == EFFECT_REVELATION_DANCE);
-        PLAYER(SPECIES_TANGROWTH);
+        PLAYER(SPECIES_NORMAL_TENMA);
         OPPONENT(SPECIES_ORICORIO_BAILE);
     } WHEN {
         TURN { MOVE(player, MOVE_REVELATION_DANCE); }

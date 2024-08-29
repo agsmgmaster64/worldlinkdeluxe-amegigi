@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents non-volatile status conditions in sun")
         ASSUME(gMovesInfo[MOVE_HYPNOSIS].effect == EFFECT_SLEEP);
         ASSUME(gMovesInfo[MOVE_THUNDER_WAVE].effect == EFFECT_PARALYZE);
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_LEAFEON) { Ability(ABILITY_LEAF_GUARD); }
+        PLAYER(SPECIES_CHIBI_VIVIT) { Ability(ABILITY_LEAF_GUARD); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SUNNY_DAY); MOVE(opponent, move); }
@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents status conditions from Flame Orb and Tox
     GIVEN {
         ASSUME(gItemsInfo[ITEM_FLAME_ORB].holdEffect == HOLD_EFFECT_FLAME_ORB);
         ASSUME(gItemsInfo[ITEM_TOXIC_ORB].holdEffect == HOLD_EFFECT_TOXIC_ORB);
-        PLAYER(SPECIES_LEAFEON) { Ability(ABILITY_LEAF_GUARD); Item(item); }
+        PLAYER(SPECIES_CHIBI_VIVIT) { Ability(ABILITY_LEAF_GUARD); Item(item); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_SUNNY_DAY); }
@@ -58,7 +58,7 @@ SINGLE_BATTLE_TEST("Leaf Guard prevents Rest during sun")
     GIVEN {
         ASSUME(B_LEAF_GUARD_PREVENTS_REST >= GEN_5);
         ASSUME(gMovesInfo[MOVE_REST].effect == EFFECT_REST);
-        PLAYER(SPECIES_LEAFEON) { Ability(ABILITY_LEAF_GUARD); HP(100); MaxHP(200); }
+        PLAYER(SPECIES_CHIBI_VIVIT) { Ability(ABILITY_LEAF_GUARD); HP(100); MaxHP(200); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUNNY_DAY); MOVE(player, MOVE_REST); }

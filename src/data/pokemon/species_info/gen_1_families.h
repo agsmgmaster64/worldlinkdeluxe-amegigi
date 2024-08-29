@@ -3304,7 +3304,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_RHYHORN
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_RHYPERIOR] =
+    [SPECIES_CHIBI_TENMA] =
     {
         .baseHP        = 115,
         .baseAttack    = 140,
@@ -3378,7 +3378,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_CHANSEY
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_HAPPINY] =
+    [SPECIES_NAMAZU] =
     {
         .baseHP        = 100,
         .baseAttack    = 5,
@@ -3448,7 +3448,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_TANGELA
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_TANGROWTH] =
+    [SPECIES_NORMAL_TENMA] =
     {
         .baseHP        = 100,
         .baseAttack    = 100,
@@ -3573,7 +3573,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_MR_MIME
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_MIME_JR] =
+    [SPECIES_TORI] =
     {
         .baseHP        = 20,
         .baseAttack    = 25,
@@ -3896,7 +3896,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_GEN_2_CROSS_EVOS
 
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_ELECTIVIRE] =
+    [SPECIES_SPEED_TENMA] =
     {
         .baseHP        = 75,
         .baseAttack    = 123,
@@ -3967,7 +3967,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #if P_FAMILY_MAGMAR
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_MAGMORTAR] =
+    [SPECIES_CHIBI_SENDAI] =
     {
         .baseHP        = 75,
         .baseAttack    = 95,
@@ -4502,7 +4502,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_LEAFEON] =
+    [SPECIES_CHIBI_VIVIT] =
     {
         .baseHP        = 65,
         .baseAttack    = 110,
@@ -4562,7 +4562,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sLeafeonTeachableLearnset,
     },
 
-    [SPECIES_GLACEON] =
+    [SPECIES_NORMAL_VIVIT] =
     {
         .baseHP        = 65,
         .baseAttack    = 60,

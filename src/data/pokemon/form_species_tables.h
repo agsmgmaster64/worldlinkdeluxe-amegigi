@@ -35,6 +35,18 @@ static const u16 sMinorikoFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sCMomijiFormSpeciesIdTable[] = {
+    SPECIES_CHIBI_MOMIJI,
+    SPECIES_CHIBI_MOMIJI_SANNIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMomijiFormSpeciesIdTable[] = {
+    SPECIES_NORMAL_MOMIJI,
+    SPECIES_NORMAL_MOMIJI_SANNIAN,
+    FORM_SPECIES_END,
+};
+
 static const u16 sCWakasagihimeFormSpeciesIdTable[] = {
     SPECIES_CHIBI_WAKASAGIHIME,
     SPECIES_CHIBI_WAKASAGIHIME_GOLD,
@@ -788,7 +800,7 @@ static const u16 sGardevoirFormSpeciesIdTable[] = {
 
 #if P_GEN_4_CROSS_EVOS
 static const u16 sGalladeFormSpeciesIdTable[] = {
-    SPECIES_GALLADE,
+    SPECIES_PLACEHOLD_SATSUKI,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GALLADE_MEGA,
 #endif
@@ -1068,7 +1080,7 @@ static const u16 sLucarioFormSpeciesIdTable[] = {
 
 #if P_FAMILY_SNOVER
 static const u16 sAbomasnowFormSpeciesIdTable[] = {
-    SPECIES_ABOMASNOW,
+    SPECIES_PLACEHOLD_ELIS,
 #if P_MEGA_EVOLUTIONS
     SPECIES_ABOMASNOW_MEGA,
 #endif

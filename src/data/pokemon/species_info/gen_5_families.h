@@ -251,7 +251,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_TEPIG
 
 #if P_FAMILY_OSHAWOTT
-    [SPECIES_OSHAWOTT] =
+    [SPECIES_DARK_ALICE] =
     {
         .baseHP        = 55,
         .baseAttack    = 55,
@@ -309,10 +309,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sOshawottLevelUpLearnset,
         .teachableLearnset = sOshawottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_DEWOTT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 17, SPECIES_AKI_SISTERS}),
     },
 
-    [SPECIES_DEWOTT] =
+    [SPECIES_AKI_SISTERS] =
     {
         .baseHP        = 75,
         .baseAttack    = 75,
@@ -561,7 +561,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sLillipupTeachableLearnset,
     },
 
-    [SPECIES_STOUTLAND] =
+    [SPECIES_AYAKASHI] =
     {
         .baseHP        = 85,
         .baseAttack    = P_UPDATED_STATS >= GEN_6 ? 110 : 100,

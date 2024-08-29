@@ -244,7 +244,7 @@ SINGLE_BATTLE_TEST("Teatime triggers Motor Drive if it has been affected by Elec
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {
-        PLAYER(SPECIES_ELECTIVIRE) { Ability(ABILITY_MOTOR_DRIVE); Item(item); }
+        PLAYER(SPECIES_SPEED_TENMA) { Ability(ABILITY_MOTOR_DRIVE); Item(item); }
         OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LIECHI_BERRY); }
     } WHEN {
         TURN {

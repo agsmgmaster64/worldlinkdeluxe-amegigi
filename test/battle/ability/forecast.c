@@ -160,7 +160,7 @@ SINGLE_BATTLE_TEST("Forecast transforms Castform in weather from an ability")
     u32 species, ability;
     PARAMETRIZE { species = SPECIES_CHIBI_KANA; ability = ABILITY_DRIZZLE; }
     PARAMETRIZE { species = SPECIES_NORMAL_KANA; ability = ABILITY_DROUGHT; }
-    PARAMETRIZE { species = SPECIES_ABOMASNOW; ability = ABILITY_SNOW_WARNING; }
+    PARAMETRIZE { species = SPECIES_PLACEHOLD_ELIS; ability = ABILITY_SNOW_WARNING; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_KASEN) { Ability(ABILITY_FORECAST); }
         OPPONENT(SPECIES_CHIBI_YUUGI);

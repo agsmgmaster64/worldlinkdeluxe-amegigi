@@ -81,7 +81,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #define TOGEPI_FAMILY_TYPE (P_UPDATED_TYPES >= GEN_6 ? TYPE_COSMIC : TYPE_ILLUSION)
 
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_TOGEKISS] =
+    [SPECIES_NORMAL_SENDAI] =
     {
         .baseHP        = 85,
         .baseAttack    = 50,
@@ -215,7 +215,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_SUDOWOODO
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_BONSLY] =
+    [SPECIES_YOUKI] =
     {
         .baseHP        = 50,
         .baseAttack    = 80,
@@ -279,7 +279,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_YANMA
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_YANMEGA] =
+    [SPECIES_TECH_SENDAI] =
     {
         .baseHP        = 86,
         .baseAttack    = 76,
@@ -729,7 +729,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_GLIGAR
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_GLISCOR] =
+    [SPECIES_ANGEL_VIVIT] =
     {
         .baseHP        = 75,
         .baseAttack    = 95,
@@ -1310,7 +1310,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_SWINUB
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_MAMOSWINE] =
+    [SPECIES_CHIBI_SATSUKI] =
     {
         .baseHP        = 110,
         .baseAttack    = 130,
@@ -1519,7 +1519,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_MANTINE
 #if P_GEN_4_CROSS_EVOS
-    [SPECIES_MANTYKE] =
+    [SPECIES_CHIBI_ELIS] =
     {
         .baseHP        = 45,
         .baseAttack    = 20,
