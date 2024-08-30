@@ -64,11 +64,11 @@ static u8 CreateUseToolTask(void)
 
 static void Task_UseTool_Init(u8 taskId)
 {
-    u8 objEventId;
+    //u8 objEventId;
 
     LockPlayerFieldControls();
     gPlayerAvatar.preventStep = TRUE;
-    objEventId = gPlayerAvatar.objectEventId;
+    //objEventId = gPlayerAvatar.objectEventId;
 
         gFieldEffectArguments[1] = GetPlayerFacingDirection();
         if (gFieldEffectArguments[1] == DIR_SOUTH)
@@ -167,7 +167,7 @@ u32 CanUseSurfFromInteractedWater(void)
 
 u8 FldEff_UseSurfTool(void)
 {
-    u8 taskId = CreateTask(Task_SurfToolFieldEffect, 0);
+    CreateTask(Task_SurfToolFieldEffect, 0);
     Overworld_ClearSavedMusic();
     Overworld_ChangeMusicTo(MUS_WLD_SURF);
     return FALSE;

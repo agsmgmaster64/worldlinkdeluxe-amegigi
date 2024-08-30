@@ -1959,7 +1959,7 @@ void TryEnterContestMon(void)
 u16 HasMonWonThisContestBefore(void)
 {
     u16 hasRankRibbon = FALSE;
-    struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
+    //struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
     /*switch (gSpecialVar_ContestCategory)
     {
     case CONTEST_CATEGORY_COOL:
@@ -1989,7 +1989,7 @@ u16 HasMonWonThisContestBefore(void)
 
 void GiveMonContestRibbon(void)
 {
-    u8 ribbonData;
+    //u8 ribbonData;
 
     if (gContestFinalStandings[gContestPlayerMonIndex] != 0)
         return;

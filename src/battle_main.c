@@ -623,7 +623,7 @@ static void BufferPartyVsScreenHealth_AtStart(void)
     gBattleStruct->multiBuffer.linkBattlerHeader.vsScreenHealthFlagsHi |= FlagGet(FLAG_SYS_FRONTIER_PASS) << 7;
 }
 
-static void SetPlayerBerryDataInBattleStruct(void)
+static void UNUSED SetPlayerBerryDataInBattleStruct(void)
 {
     s32 i;
     struct BattleStruct *battleStruct = gBattleStruct;
@@ -659,7 +659,7 @@ static void SetPlayerBerryDataInBattleStruct(void)
     }
 }
 
-static void SetAllPlayersBerryData(void)
+static void UNUSED SetAllPlayersBerryData(void)
 {
     s32 i, j;
 

@@ -179,7 +179,7 @@ static void ScrollAll(int direction); // to bottom or top
 static int GetMiddleX(const u8 *txt1, const u8 *txt2, const u8 *txt3);
 static int XOptions_ProcessInput(int x, int selection);
 static int ProcessInput_Options_Two(int selection);
-static int ProcessInput_Options_Three(int selection);
+//static int ProcessInput_Options_Three(int selection);
 static int ProcessInput_Options_Four(int selection);
 static int ProcessInput_Options_Eleven(int selection);
 static int ProcessInput_FrameType(int selection);
@@ -576,8 +576,8 @@ static const u8 *const OptionTextDescription(void)
     case MENU_VISUALS:
         if (menuItem >= MENUITEM_VISUALS_COUNT) // safeguard to avoid compiler issues
             return sText_Empty;
-        else if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledVisuals[menuItem];
+        //else if (!CheckConditions(menuItem))
+            //return sOptionMenuItemDescriptionsDisabledVisuals[menuItem];
         selection = sOptions->sel_visuals[menuItem];
         if (menuItem == MENUITEM_VISUALS_TEXTSPEED || menuItem == MENUITEM_VISUALS_FRAMETYPE)
             selection = 0;
@@ -585,8 +585,8 @@ static const u8 *const OptionTextDescription(void)
     case MENU_BATTLE:
         if (menuItem >= MENUITEM_BATTLE_COUNT) // safeguard to avoid compiler issues
             return sText_Empty;
-        else if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
+        //else if (!CheckConditions(menuItem))
+            //return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
         selection = sOptions->sel_battle[menuItem];
         if (menuItem == MENUITEM_BATTLE_HP_BAR || menuItem == MENUITEM_BATTLE_EXP_BAR || menuItem == MENUITEM_BATTLE_ANIM_SPEED)
             selection = 0;
@@ -594,8 +594,8 @@ static const u8 *const OptionTextDescription(void)
     case MENU_MISC:
         if (menuItem >= MENUITEM_MISC_COUNT) // safeguard to avoid compiler issues
             return sText_Empty;
-        else if (!CheckConditions(menuItem))
-            return sOptionMenuItemDescriptionsDisabledMisc[menuItem];
+        //else if (!CheckConditions(menuItem))
+            //return sOptionMenuItemDescriptionsDisabledMisc[menuItem];
         selection = sOptions->sel_misc[menuItem];
         if (menuItem == MENUITEM_MISC_MUSIC_VOLUME || menuItem == MENUITEM_MISC_SFX_VOLUME || menuItem == MENUITEM_MISC_CRIES_VOLUME)
             selection = 0;
@@ -1286,10 +1286,10 @@ static int ProcessInput_Options_Two(int selection)
     return selection;
 }
 
-static int ProcessInput_Options_Three(int selection)
+/*static int ProcessInput_Options_Three(int selection)
 {
     return XOptions_ProcessInput(3, selection);
-}
+}*/
 
 static int ProcessInput_Options_Four(int selection)
 {

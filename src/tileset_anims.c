@@ -52,7 +52,7 @@ static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
 static void QueueAnimTiles_RG_General_Flower(u16);
 static void QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(u16);
-static void QueueAnimTiles_RG_General_SandWatersEdge(u16);
+//static void QueueAnimTiles_RG_General_SandWatersEdge(u16);
 static void QueueAnimTiles_RG_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Building_TVTurnedOn(u16);
 static void QueueAnimTiles_Rustboro_WindyWater(u16, u8);
@@ -805,11 +805,11 @@ static void QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(u16 timer)
     AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_Water_Current_LandWatersEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(416)), 48 * TILE_SIZE_4BPP);
 }
 
-static void QueueAnimTiles_RG_General_SandWatersEdge(u16 timer)
+/*static void QueueAnimTiles_RG_General_SandWatersEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(sTilesetAnims_RG_General_SandWatersEdge);
     AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_SandWatersEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(464)), 26 * TILE_SIZE_4BPP);
-}
+}*/
 
 static void QueueAnimTiles_RG_SilphCo_Fountain(u16 timer)
 {

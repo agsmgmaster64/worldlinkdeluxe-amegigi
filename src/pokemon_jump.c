@@ -4262,7 +4262,7 @@ static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRo
 #endif //FREE_POKEMON_JUMP
 }
 
-static void IncrementGamesWithMaxPlayers(void)
+static void UNUSED IncrementGamesWithMaxPlayers(void)
 {
 #if FREE_POKEMON_JUMP == FALSE
     struct PokemonJumpRecords *records = GetPokeJumpRecords();
@@ -4345,7 +4345,7 @@ static void Task_ShowPokemonJumpRecords(u8 taskId)
 #undef tState
 #undef tWindowId
 
-static void PrintRecordsText(u16 windowId, int width)
+static void UNUSED PrintRecordsText(u16 windowId, int width)
 {
 #if FREE_POKEMON_JUMP == FALSE
     int i, x;

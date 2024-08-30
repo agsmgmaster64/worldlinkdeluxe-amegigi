@@ -376,7 +376,7 @@ static void BuildNormalStartMenu(void)
         AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
-static void BuildDebugStartMenu(void)
+static void UNUSED BuildDebugStartMenu(void)
 {
     AddStartMenuAction(MENU_ACTION_DEBUG);
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)

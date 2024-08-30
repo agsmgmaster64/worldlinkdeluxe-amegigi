@@ -1090,7 +1090,7 @@ void PlayerSetAnimId(u8 movementActionId, u8 copyableMovement)
 }
 
 // slow
-static void PlayerGoSlow(u8 direction)
+static void UNUSED PlayerGoSlow(u8 direction)
 {
     PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
 }

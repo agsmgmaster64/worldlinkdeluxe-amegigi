@@ -1467,8 +1467,8 @@ const u8 sText_PokedollarVar1[] = _("¥{STR_VAR_1}");
 static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 colorIdx, bool32 copy)
 {
     u8 *txtPtr;
-    s32 strLength;
-    s32 temp;
+    //s32 strLength;
+    //s32 temp;
     u32 numDigits = CountDigits(amount);
     u32 maxDigits = (numDigits > 7) ? MAX_MONEY_DIGITS: 7;
 
@@ -1480,7 +1480,7 @@ static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 co
         StringExpandPlaceholders(txtPtr, sText_CoinsVar1);
     else
         StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
-    temp = GetStringRightAlignXOffset(FONT_NORMAL, txtPtr, width);
+    //temp = GetStringRightAlignXOffset(FONT_NORMAL, txtPtr, width);
     if (numDigits > 7)
         PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_SMALL, width);
     AddTextPrinterParameterized4(windowId, FONT_SMALL, x, y, 0, 0, sShopBuyMenuTextColors[colorIdx], TEXT_SKIP_DRAW, gStringVar4);
