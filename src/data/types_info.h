@@ -40,12 +40,6 @@ const uq4_12_t gTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES]
 #undef ______
 #undef X
 
-#if B_EXPANDED_TYPE_NAMES == TRUE
-#define HANDLE_EXPANDED_TYPE_NAME(_name, ...) _(DEFAULT(_name, __VA_ARGS__))
-#else
-#define HANDLE_EXPANDED_TYPE_NAME(_name, ...) _(_name)
-#endif
-
 // .generic is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
 // In this array there's commented-out data such as references to type-resist berries that would otherwise would go unused.
 // However, we figured this information would be useful for users that want to add their own types as a reminder of
@@ -451,7 +445,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     },
     [TYPE_STELLAR] =
     {
-        .name = HANDLE_EXPANDED_TYPE_NAME("Stellr", "Stellar"),
+        .name = _("Stellar"),
         .generic = _("a STELLAR move"),
         .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BREAKNECK_BLITZ,
