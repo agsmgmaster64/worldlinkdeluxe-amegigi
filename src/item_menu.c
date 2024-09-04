@@ -2384,7 +2384,7 @@ void DoWallyTutorialBagMenu(void)
 }
 
 #define tTimer data[8]
-#define WALLY_BAG_DELAY 102 // The number of frames between each action Wally takes in the bag
+#define WALLY_BAG_DELAY 80 // The number of frames between each action Wally takes in the bag
 
 static void Task_WallyTutorialBagMenu(u8 taskId)
 {
@@ -2395,7 +2395,7 @@ static void Task_WallyTutorialBagMenu(u8 taskId)
         switch (tTimer)
         {
         case WALLY_BAG_DELAY * 1:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BAG_POCKET);
             SwitchBagPocket(taskId, MENU_CURSOR_DELTA_RIGHT, FALSE);
             tTimer++;
             break;
