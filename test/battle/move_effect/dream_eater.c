@@ -39,10 +39,10 @@ SINGLE_BATTLE_TEST("Dream Eater fails on awake targets")
 
 SINGLE_BATTLE_TEST("Dream Eater fails if Heal Block applies")
 {
-    ASSUME(B_HEAL_BLOCKING >= GEN_6);
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(B_HEAL_BLOCKING >= GEN_6);
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEAL_BLOCK); MOVE(player, MOVE_DREAM_EATER); }
     } SCENE {

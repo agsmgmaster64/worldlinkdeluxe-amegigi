@@ -74,7 +74,7 @@
 #define CHAR_i_ACUTE           0x6F
 //
 #define CHAR_SPACER            0x77 // Empty space
-//
+#define CHAR_V_D_ARROW         0x78
 #define CHAR_UP_ARROW          0x79
 #define CHAR_DOWN_ARROW        0x7A
 #define CHAR_LEFT_ARROW        0x7B

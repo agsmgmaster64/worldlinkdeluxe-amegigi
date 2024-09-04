@@ -46,12 +46,12 @@ SINGLE_BATTLE_TEST("Triple Arrows makes the foe flinch 30% of the time")
 
 SINGLE_BATTLE_TEST("Triple Arrows lands a critical hit")
 {
-    ASSUME(B_CRIT_CHANCE >= GEN_7);
-    ASSUME(gMovesInfo[MOVE_TRIPLE_ARROWS].criticalHitStage == 1);
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(B_CRIT_CHANCE >= GEN_7);
+        ASSUME(gMovesInfo[MOVE_TRIPLE_ARROWS].criticalHitStage == 1);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS); }
     } SCENE {

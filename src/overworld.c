@@ -3388,7 +3388,7 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
 #define ITEM_ICON_Y     24
 #define ITEM_TAG        0x2722 //same as money label
 
-bool8 GetSetItemObtained(u16 item, u8 caseId)
+bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId)
 {    
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
     u8 index = item / 8;
@@ -3575,7 +3575,7 @@ static void DestroyItemIconSprite(void)
 #else
 void ScriptShowItemDescription(struct ScriptContext *ctx)
 {
-    u8 UNUSED headerType = ScriptReadByte(ctx);
+    (void) ScriptReadByte(ctx);
 }
 void ScriptHideItemDescription(struct ScriptContext *ctx)
 {
