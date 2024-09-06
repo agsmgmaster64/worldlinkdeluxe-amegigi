@@ -1077,12 +1077,13 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     weather = AI_GetWeather(aiData);
     if (weather & B_WEATHER_PRIMAL_ANY)
     {
-        switch (move)
+        switch (gMovesInfo[move].effect)
         {
-            case MOVE_SUNNY_DAY:
-            case MOVE_RAIN_DANCE:
-            case MOVE_HAIL:
-            case MOVE_SANDSTORM:
+            case EFFECT_SUNNY_DAY:
+            case EFFECT_RAIN_DANCE:
+            case EFFECT_HAIL:
+            case EFFECT_SNOWSCAPE:
+            case EFFECT_SANDSTORM:
                 RETURN_SCORE_MINUS(30);
         }
 
@@ -2478,17 +2479,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);    // target is already water-only
             break;
         case EFFECT_THIRD_TYPE:
-            switch (move)
-            {
-            case MOVE_TRICK_OR_TREAT:
-                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST) || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove) || GetActiveGimmick(battlerDef) == GIMMICK_TERA)
-                    ADJUST_SCORE(-10);
-                break;
-            case MOVE_FORESTS_CURSE:
-                if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_NATURE) || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove) || GetActiveGimmick(battlerDef) == GIMMICK_TERA)
-                    ADJUST_SCORE(-10);
-                break;
-            }
+            if (IS_BATTLER_OF_TYPE(battlerDef, gMovesInfo[move].argument) || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove) || GetActiveGimmick(battlerDef) == GIMMICK_TERA)
+                ADJUST_SCORE(-10);
             break;
         case EFFECT_HEAL_PULSE: // and floral healing
             if (!IS_TARGETING_PARTNER(battlerAtk, battlerDef)) // Don't heal enemies
@@ -2564,7 +2556,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                                                              | MOVE_TARGET_BOTH
                                                              | MOVE_TARGET_FOES_AND_ALLY
                                                              | MOVE_TARGET_OPPONENTS_FIELD)
-                      && instructedMove != MOVE_MIND_BLOWN && instructedMove != MOVE_STEEL_BEAM)
+                      && instructedMove != MOVE_MIND_BLOWN)
                         ADJUST_SCORE(-10); //Don't force the enemy to attack you again unless it can kill itself with Mind Blown
                     else if (instructedMove != MOVE_MIND_BLOWN)
                         ADJUST_SCORE(-5); //Do something better
@@ -2783,7 +2775,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_PERISH_SONG:
             if (!(gBattleMons[battlerDef].status2 & (STATUS2_ESCAPE_PREVENTION | STATUS2_WRAPPED)))
             {
-                if (IsTrappingMove(aiData->partnerMove) || predictedMove == MOVE_INGRAIN)
+                if (IsTrappingMove(aiData->partnerMove) || gMovesInfo[predictedMove].effect == EFFECT_INGRAIN)
                     ADJUST_SCORE(WEAK_EFFECT);
             }
             break;
@@ -5066,7 +5058,7 @@ static s32 AI_PreferBatonPass(u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_PROTECT:
-        if (gLastMoves[battlerAtk] == MOVE_PROTECT || gLastMoves[battlerAtk] == MOVE_DETECT)
+        if (gLastMoves[battlerAtk] == MOVE_DETECT)
             ADJUST_SCORE(-2);
         else
             ADJUST_SCORE(DECENT_EFFECT);

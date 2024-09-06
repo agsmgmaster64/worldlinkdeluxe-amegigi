@@ -16,6 +16,7 @@
 #include "trig.h"
 #include "util.h"
 #include "constants/abilities.h"
+#include "constants/battle_move_effects.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/moves.h"
@@ -6691,7 +6692,7 @@ static void AnimTask_AllySwitchDataSwap(u8 taskId)
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
     {
         u16 ability = GetBattlerAbility(i);
-        if (gChosenMoveByBattler[i] == MOVE_SNIPE_SHOT || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
+        if (gMovesInfo[gChosenMoveByBattler[i]].effect == EFFECT_SNIPE_SHOT || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
             gBattleStruct->moveTarget[i] ^= BIT_FLANK;
     }
 

@@ -599,7 +599,8 @@ static bool32 ShouldSwitchIfGameStatePrompt(u32 battler, bool32 emitResult)
         //Pass Wish Heal
 
         //Semi-Invulnerable
-        if (gStatuses3[opposingBattler] & STATUS3_SEMI_INVULNERABLE)
+        if ((gStatuses3[opposingBattler] & STATUS3_SEMI_INVULNERABLE)
+         || (gStatuses3[opposingBattler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(opposingBattler, B_WEATHER_SANDSTORM)))
         {
             if (FindMonThatAbsorbsOpponentsMove(battler, FALSE)) // Switch if absorber found. Note: FindMonThatAbsorbsOpponentsMove already provides id of the mon to switch into to gBattleStruct->AI_monToSwitchIntoId.
                 switchMon = TRUE, monIdChosen = TRUE;

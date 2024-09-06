@@ -2369,7 +2369,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "Digs underground the first\n"
             "turn and strikes next turn."),
         .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 80 : 60,
+        .power = 90,
         .type = TYPE_EARTH,
         .accuracy = 100,
         .pp = 10,
@@ -9278,21 +9278,25 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .battleAnimScript = Move_ACUPRESSURE,
     },
 
-    [MOVE_METAL_BURST] =
+    [MOVE_PREDATOR_STALK] =
     {
-        .name = COMPOUND_STRING("Metal Burst"),
+        .name = COMPOUND_STRING("Predator Stalk"),
         .description = COMPOUND_STRING(
             "Retaliates any hit with\n"
             "greater power."),
-        .effect = EFFECT_METAL_BURST,
-        .power = 1,
-        .type = TYPE_STEEL,
+        .effect = EFFECT_SEMI_INVULNERABLE,
+        .power = 120,
+        .type = TYPE_BEAST,
         .accuracy = 100,
         .pp = 10,
-        .target = MOVE_TARGET_DEPENDS,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .meFirstBanned = TRUE,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .assistBanned = TRUE,
+        .skyBattleBanned = TRUE,
+        .argument = TWO_TURN_ARG(STRINGID_PKMNDUGHOLE, COMPRESS_BITS(STATUS3_PREDATOR_STALK)),
         .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -17969,11 +17973,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "Fires a beam of steel from\n"
             "its body. It hurts the user."),
-        .effect = EFFECT_MAX_HP_50_RECOIL,
-        .power = 140,
+        .effect = EFFECT_HIT,
+        .power = 120,
         .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 5,
+        .accuracy = 100,
+        .recoil = 33,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,

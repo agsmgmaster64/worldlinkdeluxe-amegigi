@@ -9279,7 +9279,7 @@
       "MOVE_CURSE",
       "MOVE_DRAGON_RUSH",
       "MOVE_GUARD_SPLIT",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_ROCK_POLISH",
       "MOVE_SKULL_BASH"
     ],
@@ -9435,7 +9435,7 @@
       "MOVE_CURSE",
       "MOVE_DRAGON_RUSH",
       "MOVE_GUARD_SPLIT",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_ROCK_POLISH",
       "MOVE_SKULL_BASH"
     ],
@@ -24965,7 +24965,7 @@
     "EggMoves": [
       "MOVE_FEINT",
       "MOVE_FLATTER",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_RECOVER",
       "MOVE_SUCKER_PUNCH",
       "MOVE_TORMENT"
@@ -25181,7 +25181,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -25298,7 +25298,7 @@
       },
       {
         "Level": 76,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -25419,7 +25419,7 @@
       },
       {
         "Level": 88,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -36495,7 +36495,7 @@
       "MOVE_CURSE",
       "MOVE_DRAGON_RUSH",
       "MOVE_GUARD_SPLIT",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_ROCK_POLISH",
       "MOVE_SKULL_BASH"
     ],
@@ -38637,7 +38637,7 @@
       },
       {
         "Level": 64,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 72,
@@ -47320,7 +47320,7 @@
       },
       {
         "Level": 52,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -50933,7 +50933,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -51834,7 +51834,7 @@
       "MOVE_FIRST_IMPRESSION",
       "MOVE_FLAIL",
       "MOVE_INFESTATION",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_STRUGGLE_BUG"
     ],
     "TutorMoves": [
@@ -52521,7 +52521,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -66102,7 +66102,7 @@
       },
       {
         "Level": 49,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 56,
@@ -73572,7 +73572,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -75971,7 +75971,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 66,
@@ -76471,7 +76471,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -77889,7 +77889,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,

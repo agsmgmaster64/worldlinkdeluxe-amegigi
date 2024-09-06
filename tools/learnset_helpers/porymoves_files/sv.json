@@ -9403,7 +9403,7 @@
     "EggMoves": [
       "MOVE_COUNTER",
       "MOVE_CURSE",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_ROCK_POLISH",
       "MOVE_DRAGON_RUSH",
       "MOVE_GUARD_SPLIT"
@@ -27589,7 +27589,7 @@
     "EggMoves": [
       "MOVE_FEINT",
       "MOVE_FLATTER",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_RECOVER",
       "MOVE_SUCKER_PUNCH",
       "MOVE_TORMENT"
@@ -36641,7 +36641,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -36759,7 +36759,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 51,
@@ -43787,7 +43787,7 @@
       },
       {
         "Level": 64,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 72,
@@ -53011,7 +53011,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 15,
@@ -54260,7 +54260,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -66846,7 +66846,7 @@
       },
       {
         "Level": 49,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 56,
@@ -71294,7 +71294,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -72697,7 +72697,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 66,
@@ -73212,7 +73212,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 55,
@@ -82268,7 +82268,7 @@
     "EggMoves": [
       "MOVE_COIL",
       "MOVE_CURSE",
-      "MOVE_METAL_BURST"
+      "MOVE_PREDATOR_STALK"
     ],
     "TutorMoves": []
   },
@@ -83971,7 +83971,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -88200,7 +88200,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 66,
@@ -88832,7 +88832,7 @@
       },
       {
         "Level": 84,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 91,
@@ -89454,7 +89454,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -89494,7 +89494,7 @@
       "MOVE_RAPID_SPIN",
       "MOVE_IRON_DEFENSE",
       "MOVE_GYRO_BALL",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_DRAWN_LINE",
       "MOVE_SNOWSCAPE"
     ],

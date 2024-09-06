@@ -1013,7 +1013,7 @@ const u8* CancelMultiTurnMoves(u32 battler)
 
     // Clear battler's semi-invulnerable bits if they are not held by Sky Drop.
     if (!(gStatuses3[battler] & STATUS3_SKY_DROPPED))
-        gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE);
+        gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK);
 
     // Check to see if this Pokemon was in the middle of using Sky Drop. If so, release the target.
     if (gBattleStruct->skyDropTargets[battler] != 0xFF && !(gStatuses3[battler] & STATUS3_SKY_DROPPED))
@@ -2343,7 +2343,7 @@ u8 DoBattlerEndTurnEffects(void)
                   && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_BEAST)
                   && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_EARTH)
                   && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_STEEL)
-                  && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+                  && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_PREDATOR_STALK | STATUS3_UNDERWATER))
                   && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
             {
                 gBattleScripting.battler = battler;
@@ -6584,6 +6584,8 @@ bool32 IsBattlerTerrainAffected(u32 battler, u32 terrainFlag)
         return FALSE;
     else if (gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
         return FALSE;
+    else if (gStatuses3[battler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM))
+        return FALSE;
 
     return IsBattlerGrounded(battler);
 }
@@ -9136,6 +9138,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(u32 move, u32 battlerAtk, u32 
         break;
     case EFFECT_SOLAR_BEAM:
         if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        break;
+    case EFFECT_PREDATOR_STALK:
+        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SUN | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     case EFFECT_STOMPING_TANTRUM:

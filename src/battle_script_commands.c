@@ -1529,13 +1529,16 @@ static bool32 AccuracyCalcHelper(u16 move)
     // If the target is under the effects of Telekinesis, and the move isn't a OH-KO move, move hits.
     else if (gStatuses3[gBattlerTarget] & STATUS3_TELEKINESIS
              && !(gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE)
+             && !(gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM))
              && gMovesInfo[move].effect != EFFECT_OHKO)
     {
         JumpIfMoveFailed(7, move);
         return TRUE;
     }
 
-    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE && !(gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE))
+    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE
+     && !(gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE)
+     && !(gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM)))
     {
         JumpIfMoveFailed(7, move);
         return TRUE;
@@ -1544,7 +1547,8 @@ static bool32 AccuracyCalcHelper(u16 move)
     if ((gStatuses3[gBattlerTarget] & STATUS3_PHANTOM_FORCE)
     || ((gStatuses3[gBattlerTarget] & STATUS3_ON_AIR) && !(gMovesInfo[move].damagesAirborne || gMovesInfo[move].damagesAirborneDoubleDamage))
     || ((gStatuses3[gBattlerTarget] & STATUS3_UNDERGROUND) && !gMovesInfo[move].damagesUnderground)
-    || ((gStatuses3[gBattlerTarget] & STATUS3_UNDERWATER) && !gMovesInfo[move].damagesUnderwater))
+    || ((gStatuses3[gBattlerTarget] & STATUS3_UNDERWATER) && !gMovesInfo[move].damagesUnderwater)
+    || ((gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK) && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM)))
     {
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         JumpIfMoveFailed(7, move);
@@ -1723,6 +1727,8 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
         if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             gBattlescriptCurrInstr = nextInstr;
         else if (gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE))
+            gBattlescriptCurrInstr = failInstr;
+        else if (gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM))
             gBattlescriptCurrInstr = failInstr;
         else if (!JumpIfMoveAffectedByProtect(gCurrentMove))
             gBattlescriptCurrInstr = nextInstr;
@@ -3200,7 +3206,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
 
                     // If the confusion is activating due to being released from Sky Drop, go to "confused due to fatigue" script.
                     // Otherwise, do normal confusion script.
-                    if (gCurrentMove == MOVE_SKY_DROP)
+                    if (gMovesInfo[gCurrentMove].effect == EFFECT_SKY_DROP)
                     {
                         gBattleMons[gEffectBattler].status2 &= ~(STATUS2_LOCK_CONFUSE);
                         gBattlerAttacker = gEffectBattler;
@@ -5188,7 +5194,8 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
         MarkBattlerForControllerExec(battler);
         gBattlescriptCurrInstr = nextInstr;
     }
-    else if (gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
+    else if ((gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
+          || (gStatuses3[battler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM)))
     {
         gBattlescriptCurrInstr = nextInstr;
     }
@@ -5796,7 +5803,7 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ATTACKER_INVISIBLE: // make attacker sprite invisible
-            if (gStatuses3[gBattlerAttacker] & (STATUS3_SEMI_INVULNERABLE)
+            if (gStatuses3[gBattlerAttacker] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK)
                 && gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION))
             {
                 BtlController_EmitSpriteInvisibility(gBattlerAttacker, BUFFER_A, TRUE);
@@ -5808,12 +5815,12 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_ATTACKER_VISIBLE: // make attacker sprite visible
             if (gMoveResultFlags & MOVE_RESULT_NO_EFFECT
-                || !(gStatuses3[gBattlerAttacker] & (STATUS3_SEMI_INVULNERABLE))
+                || !(gStatuses3[gBattlerAttacker] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK))
                 || WasUnableToUseMove(gBattlerAttacker))
             {
                 BtlController_EmitSpriteInvisibility(gBattlerAttacker, BUFFER_A, FALSE);
                 MarkBattlerForControllerExec(gBattlerAttacker);
-                gStatuses3[gBattlerAttacker] &= ~STATUS3_SEMI_INVULNERABLE;
+                gStatuses3[gBattlerAttacker] &= ~(STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK);
                 gSpecialStatuses[gBattlerAttacker].restoredBattlerSprite = TRUE;
                 gBattleScripting.moveendState++;
                 return;
@@ -5822,11 +5829,11 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_TARGET_VISIBLE: // make target sprite visible
             if (!gSpecialStatuses[gBattlerTarget].restoredBattlerSprite && gBattlerTarget < gBattlersCount
-                && !(gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE))
+                && !(gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK)))
             {
                 BtlController_EmitSpriteInvisibility(gBattlerTarget, BUFFER_A, FALSE);
                 MarkBattlerForControllerExec(gBattlerTarget);
-                gStatuses3[gBattlerTarget] &= ~STATUS3_SEMI_INVULNERABLE;
+                gStatuses3[gBattlerTarget] &= ~(STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK);
                 gBattleScripting.moveendState++;
                 return;
             }
@@ -7965,7 +7972,7 @@ static void Cmd_statusanimation(void)
     if (gBattleControllerExecFlags == 0)
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
-        if (!(gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
+        if (!(gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK))
             && gDisableStructs[battler].substituteHP == 0
             && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
         {
@@ -7984,7 +7991,7 @@ static void Cmd_status2animation(void)
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
         u32 status2ToAnim = cmd->status2;
-        if (!(gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
+        if (!(gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK))
             && gDisableStructs[battler].substituteHP == 0
             && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
         {
@@ -8003,7 +8010,7 @@ static void Cmd_chosenstatusanimation(void)
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
         u32 wantedStatus = cmd->status;
-        if (!(gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
+        if (!(gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK))
             && gDisableStructs[battler].substituteHP == 0
             && !(gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION)))
         {
@@ -8842,6 +8849,8 @@ static bool32 IsRototillerAffected(u32 battler)
         return FALSE;   // Only grass types affected
     if (gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
         return FALSE;   // Rototiller doesn't affected semi-invulnerable battlers
+    if (gStatuses3[battler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM))
+        return FALSE;   // Rototiller doesn't affected semi-invulnerable battlers
     if (BlocksPrankster(MOVE_ROTOTILLER, gBattlerAttacker, battler, FALSE))
         return FALSE;
     return TRUE;
@@ -9237,6 +9246,7 @@ static void Cmd_various(void)
     {
         VARIOUS_ARGS(const u8 *failInstr);
         if ((gStatuses3[battler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
+            || (gStatuses3[battler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM))
             || BATTLER_MAX_HP(battler)
             || !gBattleMons[battler].hp
             || !(IsBattlerGrounded(battler)))
@@ -11016,7 +11026,7 @@ static void Cmd_setprotectlike(void)
                 gProtectStructs[gBattlerAttacker].endured = TRUE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BRACED_ITSELF;
             }
-            else if (gCurrentMove == MOVE_DETECT || gCurrentMove == MOVE_PROTECT)
+            else if (gCurrentMove == MOVE_DETECT)
             {
                 gProtectStructs[gBattlerAttacker].protected = TRUE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECTED_ITSELF;
@@ -12612,7 +12622,8 @@ static void Cmd_transformdataexecution(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
     if (gBattleMons[gBattlerTarget].status2 & STATUS2_TRANSFORMED
         || gBattleStruct->illusion[gBattlerTarget].on
-        || gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE)
+        || gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE
+        || (gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM)))
     {
         gMoveResultFlags |= MOVE_RESULT_FAILED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TRANSFORM_FAILED;
@@ -13998,6 +14009,7 @@ static void Cmd_trymemento(void)
     if (B_MEMENTO_FAIL >= GEN_4
       && (gBattleCommunication[MISS_TYPE] == B_MSG_PROTECTED
         || gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE
+        || (gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM))
         || IsBattlerProtected(gBattlerAttacker, gBattlerTarget, gCurrentMove)
         || DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)))
     {
@@ -17201,7 +17213,8 @@ void BS_TeatimeInvul(void)
     NATIVE_ARGS(u8 battler, const u8 *jumpInstr);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    if (ItemId_GetPocket(gBattleMons[battler].item) == POCKET_BERRIES && !(gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE)))
+    if (ItemId_GetPocket(gBattleMons[battler].item) == POCKET_BERRIES && !(gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE))
+     && !(gStatuses3[gBattlerTarget] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_SANDSTORM)))
         gBattlescriptCurrInstr = cmd->nextInstr;
     else
         gBattlescriptCurrInstr = cmd->jumpInstr;

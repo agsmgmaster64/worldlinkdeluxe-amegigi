@@ -12348,7 +12348,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SPLIT",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_SKULL_BASH",
       "MOVE_THUNDER_FANG"
@@ -12481,7 +12481,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SPLIT",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_SKULL_BASH",
       "MOVE_THUNDER_FANG"
@@ -33986,7 +33986,7 @@
       "MOVE_FLATTER",
       "MOVE_IMPRISON",
       "MOVE_CHARMING_LOOK",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_MOONLIGHT",
       "MOVE_RECOVER",
       "MOVE_SUCKER_PUNCH",
@@ -34108,7 +34108,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SWAP",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_MISTY_TERRAIN",
       "MOVE_POISON_FANG",
       "MOVE_POWER_UP_PUNCH",
@@ -34188,7 +34188,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -34305,7 +34305,7 @@
       },
       {
         "Level": 76,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -34423,7 +34423,7 @@
       },
       {
         "Level": 88,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -46010,7 +46010,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -46130,7 +46130,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 51,
@@ -52058,7 +52058,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SPLIT",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_SKULL_BASH",
       "MOVE_THUNDER_FANG"
@@ -54478,7 +54478,7 @@
       },
       {
         "Level": 72,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 80,
@@ -56035,7 +56035,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -56071,7 +56071,7 @@
       },
       {
         "Level": 26,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 29,

@@ -32530,7 +32530,7 @@
       },
       {
         "Level": 46,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -32650,7 +32650,7 @@
       },
       {
         "Level": 56,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -32771,7 +32771,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -43866,7 +43866,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 43,
@@ -43981,7 +43981,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 52,

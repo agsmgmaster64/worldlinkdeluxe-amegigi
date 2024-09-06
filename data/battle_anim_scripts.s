@@ -420,26 +420,7 @@ Move_ACUPRESSURE::
 	end
 
 Move_METAL_BURST::
-	loadspritegfx ANIM_TAG_ECLIPSING_ORB
-	loadspritegfx ANIM_TAG_RED_ORB
-	loopsewithpan SE_M_TRI_ATTACK, -64, 18, 3
-	createvisualtask AnimTask_SetGrayscaleOrOriginalPal, 5, ANIM_ATTACKER, FALSE
-	createvisualtask AnimTask_DefenseCurlDeformMon, 5
-	waitforvisualfinish
-	setarg 7, -1
-	playsewithpan SE_M_REFLECT, -64
-	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 11, ANIM_ATTACKER, 0
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 0
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 32
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 64
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 96
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 128
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 160
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 20, 192
-	createsprite gHiddenPowerOrbScatterSpriteTemplate, ANIM_TARGET, 2, 224
-	waitforvisualfinish
-	createvisualtask AnimTask_SetGrayscaleOrOriginalPal, 5, ANIM_ATTACKER, TRUE
-	waitforvisualfinish
+	choosetwoturnanim DigSetUp, DigUnleash
 	end
 
 Move_U_TURN::

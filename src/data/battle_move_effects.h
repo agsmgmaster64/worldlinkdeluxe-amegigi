@@ -797,6 +797,14 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .semiInvulnerableEffect = TRUE,
     },
 
+    [EFFECT_PREDATOR_STALK] =
+    {
+        .battleScript = BattleScript_EffectTwoTurnsAttack,
+        .battleTvScore = 3,
+        .twoTurnEffect = TRUE,
+        .semiInvulnerableEffect = TRUE,
+    },
+
     [EFFECT_MULTI_PULSE] =
     {
         .battleScript = BattleScript_EffectHit,

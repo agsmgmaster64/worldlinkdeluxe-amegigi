@@ -33151,7 +33151,7 @@
       "MOVE_FEINT",
       "MOVE_FLATTER",
       "MOVE_CHARMING_LOOK",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_MOONLIGHT",
       "MOVE_NASTY_PLOT",
       "MOVE_RECOVER",
@@ -33270,7 +33270,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SWAP",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_POISON_FANG",
       "MOVE_PUNISHMENT",
       "MOVE_SLAM",
@@ -33344,7 +33344,7 @@
       },
       {
         "Level": 53,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -33465,7 +33465,7 @@
       },
       {
         "Level": 67,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 4,
@@ -33595,7 +33595,7 @@
       },
       {
         "Level": 82,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -44877,7 +44877,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -44995,7 +44995,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 51,
@@ -52947,7 +52947,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 28,
@@ -68809,7 +68809,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -70361,7 +70361,7 @@
       },
       {
         "Level": 67,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 73,

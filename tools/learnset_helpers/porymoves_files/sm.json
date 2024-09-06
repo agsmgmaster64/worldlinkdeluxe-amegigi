@@ -12979,7 +12979,7 @@
       "MOVE_ICE_FANG",
       "MOVE_STEEL_FIST",
       "MOVE_MAGNITUDE",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_ROCK_CLIMB",
       "MOVE_ROTOTILLER",
@@ -13130,7 +13130,7 @@
       "MOVE_ICE_FANG",
       "MOVE_STEEL_FIST",
       "MOVE_MAGNITUDE",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_ROCK_CLIMB",
       "MOVE_ROTOTILLER",
@@ -35374,7 +35374,7 @@
       "MOVE_FLATTER",
       "MOVE_IMPRISON",
       "MOVE_CHARMING_LOOK",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_MOONLIGHT",
       "MOVE_NASTY_PLOT",
       "MOVE_RECOVER",
@@ -35517,7 +35517,7 @@
       "MOVE_FIRE_FANG",
       "MOVE_GUARD_SWAP",
       "MOVE_ICE_FANG",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_MISTY_TERRAIN",
       "MOVE_POISON_FANG",
       "MOVE_PUNISHMENT",
@@ -35601,7 +35601,7 @@
       },
       {
         "Level": 49,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -35728,7 +35728,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -35856,7 +35856,7 @@
       },
       {
         "Level": 63,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       }
     ],
     "PreEvoMoves": [],
@@ -48031,7 +48031,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 42,
@@ -48152,7 +48152,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 51,
@@ -54296,7 +54296,7 @@
       "MOVE_ICE_FANG",
       "MOVE_STEEL_FIST",
       "MOVE_MAGNITUDE",
-      "MOVE_METAL_BURST",
+      "MOVE_PREDATOR_STALK",
       "MOVE_REVERSAL",
       "MOVE_ROCK_CLIMB",
       "MOVE_ROTOTILLER",
@@ -56745,7 +56745,7 @@
       },
       {
         "Level": 24,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 28,
@@ -73241,7 +73241,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -74846,7 +74846,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -74898,7 +74898,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 61,
@@ -92011,7 +92011,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 47,
@@ -93876,7 +93876,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,
@@ -96105,7 +96105,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_METAL_BURST"
+        "Move": "MOVE_PREDATOR_STALK"
       },
       {
         "Level": 1,

@@ -1327,6 +1327,8 @@ bool32 AI_IsTerrainAffected(u32 battlerId, u32 flags)
 {
     if (gStatuses3[battlerId] & STATUS3_SEMI_INVULNERABLE)
         return FALSE;
+    else if (gStatuses3[battlerId] & STATUS3_PREDATOR_STALK && AI_GetWeather(AI_DATA) & B_WEATHER_SANDSTORM)
+        return FALSE;
     else if (!(gFieldStatuses & flags))
         return FALSE;
     return AI_IsBattlerGrounded(battlerId);
@@ -1397,14 +1399,14 @@ u32 AI_GetBattlerMoveTargetType(u32 battlerId, u32 move)
 
 bool32 IsAromaVeilProtectedMove(u32 move)
 {
-    switch (move)
+    switch (gMovesInfo[move].effect)
     {
-    case MOVE_DISABLE:
-    case MOVE_ATTRACT:
-    case MOVE_ENCORE:
-    case MOVE_TORMENT:
-    case MOVE_TAUNT:
-    case MOVE_HEAL_BLOCK:
+    case EFFECT_DISABLE:
+    case EFFECT_ATTRACT:
+    case EFFECT_ENCORE:
+    case EFFECT_TORMENT:
+    case EFFECT_TAUNT:
+    case EFFECT_HEAL_BLOCK:
         return TRUE;
     default:
         return FALSE;
@@ -1460,8 +1462,8 @@ bool32 IsMoveRedirectionPrevented(u32 move, u32 atkAbility)
     if (AI_THINKING_STRUCT->aiFlags[sBattler_AI] & AI_FLAG_NEGATE_UNAWARE)
         return FALSE;
 
-    if (move == MOVE_SKY_DROP
-      || move == MOVE_SNIPE_SHOT
+    if (gMovesInfo[move].effect == EFFECT_SKY_DROP
+      || gMovesInfo[move].effect == EFFECT_SNIPE_SHOT
       || atkAbility == ABILITY_PROPELLER_TAIL
       || atkAbility == ABILITY_STALWART)
         return TRUE;
@@ -1477,6 +1479,8 @@ bool32 IsSemiInvulnerable(u32 battlerDef, u32 move)
     else if (!gMovesInfo[move].damagesUnderwater && gStatuses3[battlerDef] & STATUS3_UNDERWATER)
         return TRUE;
     else if (!gMovesInfo[move].damagesUnderground && gStatuses3[battlerDef] & STATUS3_UNDERGROUND)
+        return TRUE;
+    else if (AI_GetWeather(AI_DATA) & B_WEATHER_SANDSTORM && gStatuses3[battlerDef] & STATUS3_PREDATOR_STALK)
         return TRUE;
     else
         return FALSE;
@@ -1566,6 +1570,7 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, u32 holdEffect)
       || IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
       || IS_BATTLER_OF_TYPE(battler, TYPE_EARTH)
       || HasMoveEffect(battler, EFFECT_SHORE_UP)
+      || HasMoveEffect(battler, EFFECT_PREDATOR_STALK)
       || HasMoveEffect(battler, EFFECT_WEATHER_BALL))
     {
         return TRUE;
