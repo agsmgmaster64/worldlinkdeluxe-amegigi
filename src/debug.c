@@ -69,7 +69,6 @@
 #include "save.h"
 #include "pokevial.h"
 
-#if DEBUG_OVERWORLD_MENU == TRUE
 // *******************************
 enum DebugMenu
 {
@@ -5367,5 +5366,3 @@ static void DebugAction_Util_CheckEWRAMCounters(u8 taskId)
 {
     Debug_DestroyMenu_Full_Script(taskId, Debug_EventScript_EWRAMCounters);
 }
-
-#endif //DEBUG_OVERWORLD_MENU == TRUE

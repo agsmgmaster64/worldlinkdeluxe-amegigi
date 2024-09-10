@@ -3265,7 +3265,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                 if (!RandomPercentage(RNG_FROZEN, 20))
                 {
                     gBattlescriptCurrInstr = BattleScript_MoveUsedIsFrozen;
-                    gHitMarker |= HITMARKER_NO_ATTACKSTRING;
+                    gHitMarker |= (HITMARKER_NO_ATTACKSTRING | HITMARKER_UNABLE_TO_USE_MOVE);
                 }
                 else // unfreeze
                 {
@@ -3532,6 +3532,7 @@ u8 AtkCanceller_UnableToUseMove(u32 moveType)
                     gProtectStructs[gBattlerAttacker].powderSelfDmg = TRUE;
                     gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                     gBattlescriptCurrInstr = BattleScript_MoveUsedPowder;
+                    gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                     effect = 1;
                 }
             }
@@ -11443,14 +11444,11 @@ bool32 IsBattlerWeatherAffected(u32 battler, u32 weatherFlags)
 // Possible return values are defined in battle.h following MOVE_TARGET_SELECTED
 u32 GetBattlerMoveTargetType(u32 battler, u32 move)
 {
-    if (gMovesInfo[move].effect == EFFECT_CURSE
-        && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    if (gMovesInfo[move].effect == EFFECT_CURSE && !IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
         return MOVE_TARGET_USER;
-    else if (gMovesInfo[move].effect == EFFECT_EXPANDING_FORCE
-        && IsBattlerTerrainAffected(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
+    if (gMovesInfo[move].effect == EFFECT_EXPANDING_FORCE && IsBattlerTerrainAffected(battler, STATUS_FIELD_PSYCHIC_TERRAIN))
         return MOVE_TARGET_BOTH;
-    else if (gMovesInfo[move].effect == EFFECT_TERA_STARSTORM
-        && gBattleMons[battler].species == SPECIES_TERAPAGOS_STELLAR)
+    if (gMovesInfo[move].effect == EFFECT_TERA_STARSTORM && gBattleMons[battler].species == SPECIES_TERAPAGOS_STELLAR)
         return MOVE_TARGET_BOTH;
 
     return gMovesInfo[move].target;
@@ -11812,5 +11810,10 @@ u32 GetMoveType(u32 move)
 {
     if (gMain.inBattle && gBattleStruct->dynamicMoveType)
         return gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
+    else if (B_UPDATED_MOVE_TYPES < GEN_5
+         && (move == MOVE_BEAT_UP
+          || move == MOVE_FUTURE_SIGHT
+          || move == MOVE_DOOM_DESIRE))
+          return TYPE_MYSTERY;
     return gMovesInfo[move].type;
 }

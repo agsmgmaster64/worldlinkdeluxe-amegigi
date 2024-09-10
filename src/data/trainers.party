@@ -1690,7 +1690,7 @@ Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 26
@@ -1706,7 +1706,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 29
@@ -1740,7 +1740,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 45
@@ -4592,7 +4592,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Setup First Turn
+AI: Basic Trainer / Force Setup First Turn
 Mugshot: Purple
 
 Goliath
@@ -9560,7 +9560,7 @@ Pic: Renko
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Chibi Kurumi
 Level: 5
@@ -10285,7 +10285,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 31
@@ -10313,7 +10313,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 37
@@ -10345,7 +10345,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Speed Flandre
 Level: 26
@@ -10363,7 +10363,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 28
@@ -10403,7 +10403,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Speed Flandre
 Level: 30
@@ -10439,7 +10439,7 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Speed Flandre
 Level: 36
@@ -10953,7 +10953,7 @@ Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 33
@@ -10987,7 +10987,7 @@ Pic: Maribel
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 13
@@ -12742,7 +12742,7 @@ Pic: Old Couple
 Gender: Male
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Setup First Turn
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Goliath
 Level: 49
