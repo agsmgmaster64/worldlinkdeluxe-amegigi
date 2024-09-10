@@ -180,7 +180,7 @@ static void (* const sScriptCmdTable[])(void) =
 
 static const u16 sMovesWithQuietBGM[] =
 {
-    MOVE_SING, MOVE_PERISH_SONG, MOVE_GRASS_WHISTLE
+    MOVE_SING, MOVE_PERISH_SONG, MOVE_NATURE_SOUND
 };
 
 static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
@@ -192,6 +192,7 @@ static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
     [B_ANIM_STATUS_SLP]         = gBattleAnimStatus_Sleep,
     [B_ANIM_STATUS_PRZ]         = gBattleAnimStatus_Paralysis,
     [B_ANIM_STATUS_FRZ]         = gBattleAnimStatus_Freeze,
+    [B_ANIM_STATUS_FRB]         = gBattleAnimStatus_Frostbite,
     [B_ANIM_STATUS_CURSED]      = gBattleAnimStatus_Curse,
     [B_ANIM_STATUS_NIGHTMARE]   = gBattleAnimStatus_Nightmare,
 };
@@ -243,6 +244,11 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_RAINBOW]                = gBattleAnimGeneral_Rainbow,
     [B_ANIM_SEA_OF_FIRE]            = gBattleAnimGeneral_SeaOfFire,
     [B_ANIM_SWAMP]                  = gBattleAnimGeneral_Swamp,
+    [B_ANIM_MON_SCARED]             = gBattleAnimGeneral_MonScared,
+    [B_ANIM_GHOST_GET_OUT]          = gBattleAnimGeneral_GhostGetOut,
+    [B_ANIM_SILPH_SCOPED]           = gBattleAnimGeneral_SilphScoped,
+    [B_ANIM_ROCK_THROW]             = gBattleAnimGeneral_SafariRockThrow,
+    [B_ANIM_SAFARI_REACTION]        = gBattleAnimGeneral_SafariReaction,
     [B_ANIM_TRICK_ROOM]             = gBattleAnimGeneral_TrickRoom,
     [B_ANIM_WONDER_ROOM]            = gBattleAnimGeneral_WonderRoom,
     [B_ANIM_MAGIC_ROOM]             = gBattleAnimGeneral_MagicRoom,
@@ -256,6 +262,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =
 {
     [B_ANIM_LVL_UP]                     = gBattleAnimSpecial_LevelUp,
+    [B_ANIM_LVL_UP_EVOLVE]              = gBattleAnimSpecial_LevelUpEvolve,
     [B_ANIM_SWITCH_OUT_PLAYER_MON]      = gBattleAnimSpecial_SwitchOutPlayerMon,
     [B_ANIM_SWITCH_OUT_OPPONENT_MON]    = gBattleAnimSpecial_SwitchOutOpponentMon,
     [B_ANIM_BALL_THROW]                 = gBattleAnimSpecial_BallThrow,
