@@ -905,6 +905,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CNitori,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_CNitori,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -913,6 +914,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CNitori,
         .iconSprite = gMonIcon_CNitori,
         .iconPalIndex = 0,
+        SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(CNitori)
         .levelUpLearnset = sCNitoriLevelUpLearnset,
         .teachableLearnset = sCNitoriTeachableLearnset,
@@ -964,6 +966,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Nitori,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Nitori,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -972,6 +975,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_Nitori,
         .iconSprite = gMonIcon_Nitori,
         .iconPalIndex = 0,
+        SHADOW(0, 13, SHADOW_SIZE_L)
         FOOTPRINT(Nitori)
         .levelUpLearnset = sNitoriLevelUpLearnset,
         .teachableLearnset = sNitoriTeachableLearnset,
@@ -1022,6 +1026,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_ANitori,
         .iconSprite = gMonIcon_ANitori,
         .iconPalIndex = 0,
+        SHADOW(0, 13, SHADOW_SIZE_L)
         FOOTPRINT(ANitori)
         .levelUpLearnset = sANitoriLevelUpLearnset,
         .teachableLearnset = sANitoriTeachableLearnset,
@@ -1068,6 +1073,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_TNitori,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_TNitori,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1076,6 +1082,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_TNitori,
         .iconSprite = gMonIcon_TNitori,
         .iconPalIndex = 0,
+        SHADOW(0, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(TNitori)
         .levelUpLearnset = sTNitoriLevelUpLearnset,
         .teachableLearnset = sTNitoriTeachableLearnset,

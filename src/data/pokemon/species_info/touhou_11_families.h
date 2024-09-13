@@ -698,6 +698,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CYuugi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_CYuugi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -706,6 +707,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_CYuugi,
         .iconSprite = gMonIcon_CYuugi,
         .iconPalIndex = 1,
+        SHADOW(1, 10, SHADOW_SIZE_M)
         FOOTPRINT(CYuugi)
         .levelUpLearnset = sCYuugiLevelUpLearnset,
         .teachableLearnset = sCYuugiTeachableLearnset,
@@ -756,6 +758,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Yuugi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_Yuugi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -764,6 +767,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_Yuugi,
         .iconSprite = gMonIcon_Yuugi,
         .iconPalIndex = 1,
+        SHADOW(2, 10, SHADOW_SIZE_L)
         FOOTPRINT(Yuugi)
         .levelUpLearnset = sYuugiLevelUpLearnset,
         .teachableLearnset = sYuugiTeachableLearnset,
@@ -807,9 +811,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_AYuugi,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_AYuugi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_AYuugi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -818,6 +823,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_AYuugi,
         .iconSprite = gMonIcon_AYuugi,
         .iconPalIndex = 1,
+        SHADOW(1, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(AYuugi)
         .levelUpLearnset = sAYuugiLevelUpLearnset,
         .teachableLearnset = sAYuugiTeachableLearnset,
@@ -864,6 +870,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_DYuugi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_DYuugi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -872,6 +879,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_DYuugi,
         .iconSprite = gMonIcon_DYuugi,
         .iconPalIndex = 1,
+        SHADOW(4, 13, SHADOW_SIZE_L)
         FOOTPRINT(DYuugi)
         .levelUpLearnset = sDYuugiLevelUpLearnset,
         .teachableLearnset = sDYuugiTeachableLearnset,

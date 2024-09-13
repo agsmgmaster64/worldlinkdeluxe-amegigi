@@ -1355,7 +1355,7 @@ static int ProcessInput_MusicVolume(int selection)
 
     gSaveBlock2Ptr->optionsVolumeBGM = selection;
 
-    if (refreshMus)
+    if (refreshMus || selection == 0)
         FadeOutAndPlayNewMapMusic(GetCurrentMapMusic(), 1);
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, (256 * selection / 10));
 

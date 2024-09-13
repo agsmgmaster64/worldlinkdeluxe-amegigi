@@ -538,6 +538,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontAnimFrames = sAnims_Tenshi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_Tenshi,
+        .enemyMonElevation = 2,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
@@ -545,6 +546,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_Tenshi,
         .iconSprite = gMonIcon_Tenshi,
         .iconPalIndex = 0,
+        SHADOW(0, 11, SHADOW_SIZE_M)
         FOOTPRINT(Tenshi)
         .levelUpLearnset = sTenshiLevelUpLearnset,
         .teachableLearnset = sTenshiTeachableLearnset,
@@ -587,9 +589,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .trainerOffset = 18,
         .frontPic = gMonFrontPic_ATenshi,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_ATenshi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_ATenshi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -598,6 +601,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_ATenshi,
         .iconSprite = gMonIcon_ATenshi,
         .iconPalIndex = 0,
+        SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(ATenshi)
         .levelUpLearnset = sATenshiLevelUpLearnset,
         .teachableLearnset = sATenshiTeachableLearnset,
@@ -640,10 +644,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_DTenshi,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_DTenshi,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 9,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_DTenshi,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -652,6 +656,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_DTenshi,
         .iconSprite = gMonIcon_DTenshi,
         .iconPalIndex = 0,
+        SHADOW(0, 14, SHADOW_SIZE_M)
         FOOTPRINT(DTenshi)
         .levelUpLearnset = sDTenshiLevelUpLearnset,
         .teachableLearnset = sDTenshiTeachableLearnset,
