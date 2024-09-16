@@ -63,6 +63,10 @@ void EnterSafariMode(void)
     sSafariZonePkblkUses = 0;
 }
 
+// just why did it have to be this way?
+// what have i gotten myself into?
+// would things have gone better had i gone the other path?
+
 void ExitSafariMode(void)
 {
     TryPutSafariFanClubOnAir(sSafariZoneCaughtMons, sSafariZonePkblkUses);
