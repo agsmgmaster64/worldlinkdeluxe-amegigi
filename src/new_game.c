@@ -228,6 +228,11 @@ void NewGameInitData(void)
     ResetItemFlags();
 }
 
+// apologies, just
+// i'm not sure where else to put my thoughts out at this point
+// it seems like no matter what i do
+// something has to get in the way
+
 static void ResetMiniGamesRecords(void)
 {
     CpuFill16(0, &gSaveBlock2Ptr->berryCrush, sizeof(struct BerryCrush));
