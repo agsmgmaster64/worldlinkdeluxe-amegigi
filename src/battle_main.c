@@ -384,10 +384,6 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     TRAINER_CLASS(THE_GUY, "The", 10, ITEM_FOUL_ORB),
 };
 
-// i can't seem to ever escape what is nearby me
-// i try to tell myself i can handle it but
-// i mean, i don't know
-
 static void (* const sTurnActionsFuncsTable[])(void) =
 {
     [B_ACTION_USE_MOVE]               = HandleAction_UseMove,
