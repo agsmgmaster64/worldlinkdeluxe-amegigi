@@ -174,10 +174,6 @@ static const match_call_text_data_t sMrStoneTextScripts[] = {
     { NULL,                     0xFFFF,                              0xFFFF }
 };
 
-// I want to build myself a better future for not just me, but my family
-// it's just, i feel shackled by who i'm with currently, people who don't really fully understand who i am
-// i want to keep going, i just don't feel like these circumstances will let me be able to progress at all
-
 static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
