@@ -198,48 +198,60 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 	msgbox RustboroCity_DevonCorp_3F_Text_RareRocksDisplay, MSGBOX_SIGN
 	end
 
+RustboroCity_DevonCorp_3F_Text_Researcher:
+	.string "Researcher$"
+
+RustboroCity_DevonCorp_3F_Text_TheNoise:
+	.string "The Noise$"
+
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
-	.string "I'm MR. STONE, the PRESIDENT of\n"
-	.string "the DEVON CORPORATION.\p"
+	.string "It's me, The Noise, president of the\n"
+	.string "Devon Corporation.\p"
 	.string "I'd just got word about you!\p"
-	.string "You saved our staff not just once,\n"
-	.string "but twice!\p"
-	.string "I have a favor to ask of an amazing\n"
-	.string "person like you.\p"
-	.string "I understand that you're delivering\n"
-	.string "a package to SLATEPORT's SHIPYARD.\p"
-	.string "Well, on the way, could you stop off in\n"
-	.string "DEWFORD TOWN?\p"
-	.string "I was hoping that you'd deliver a\n"
-	.string "LETTER to STEVEN in DEWFORD.$"
+	.string "You saved this researcher guy with\n"
+	.string "his goods here!\p"
+	.string "I heard he has a bit of a favor with\n"
+	.string "you delivering the package he had to\l"
+	.string "Slateport's Shipyard.\p"
+	.string "I have a favor of my own since you're\n"
+	.string "on the way there anyways.\p"
+	.string "There's a Letter I wrote to Hakos\n"
+	.string "Baelz that I've been meaning to\l"
+	.string "deliver but haven't.\p"
+	.string "She should be in Dreamford's icy cave,\n"
+	.string "last I checked.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
-	.string "MR. STONE: Now, you should know that\n"
-	.string "I am a great PRESIDENT.\p"
-	.string "So, I'd never be so cheap as to ask\n"
-	.string "a favor for nothing in return.\p"
-	.string "That's why I want you to have this!$"
+	.string "I do happen to have a little thing for\n"
+	.string "you as well for saving my little\p"
+	.string "researcher guy here.\n"
+	.string "This is all yours here!$"
 
 RustboroCity_DevonCorp_3F_Text_ReceivedPokenav:
-	.string "{PLAYER} received a POKéNAV.$"
+	.string "{PLAYER} received an iDollNav.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp:
-	.string "MR. STONE: That device…\p"
-	.string "It's a POKéMON NAVIGATOR, or POKéNAV\n"
+	.string "That device…\p"
+	.string "It's a Puppet Navigator, or iDollNav\n"
 	.string "for short.\p"
+	.string "You know, the naming itself needs a\n"
+	.string "bit of a renaming personally, but\l"
+	.string "oh well.\p"
 	.string "It's an indispensable tool for any\n"
-	.string "TRAINER on an adventure.\p"
-	.string "It has a map of the HOENN region.\p"
+	.string "Trainer on an adventure.\p"
+	.string "It has a map of the Hoenn region.\p"
 	.string "You can check the locations of\n"
-	.string "DEWFORD and SLATEPORT easily!\p"
-	.string "By the way, I've heard that sinister\n"
-	.string "criminals--MAGMA and AQUA, I believe--\l"
-	.string "have been making trouble far and wide.\p"
-	.string "I think it would be best if you rested\n"
-	.string "up before you go on your way.$"
+	.string "Dreamford and Slateport easily!\p"
+	.string "Oh yeah, I'm sure you came across an\n"
+	.string "Aqua Grunt from earlier.\p"
+	.string "They come from Team Aqua, and have beef\n"
+	.string "with Team Magma that's causing some\l"
+	.string "chaos around the region.\p"
+	.string "You should get some rest to prepare\n"
+	.string "yourself against these people.$"
 
 RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare:
-	.string "MR. STONE: Well, then, {PLAYER}{KUN},\n"
+	.string "Well, then, {PLAYER}{KUN},\n"
 	.string "go with caution and care!$"
 
 RustboroCity_DevonCorp_3F_Text_CountingOnYou:

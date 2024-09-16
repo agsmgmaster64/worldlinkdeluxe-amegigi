@@ -290,6 +290,7 @@ RustboroCity_EventScript_StolenGoodsTrigger4::
 	end
 
 RustboroCity_EventScript_StolenGoodsScene::
+	setspeakername RustboroCity_Text_Grunt
 	msgbox RustboroCity_Text_OutOfTheWay, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
@@ -469,6 +470,7 @@ RustboroCity_EventScript_DevonEmployee1::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_EventScript_ReturnGoodsSpokeToEmployee
+	setspeakername RustboroCity_Text_Researcher
 	msgbox RustboroCity_Text_ShadyCharacterTookOffTowardsTunnel, MSGBOX_DEFAULT
 	release
 	end
@@ -511,6 +513,7 @@ RustboroCity_EventScript_EmployeeAskToGetGoods::
 	setflag FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN
 	setvar VAR_RUSTBORO_CITY_STATE, 3
 	copyobjectxytoperm LOCALID_DEVON_EMPLOYEE
+	setspeakername RustboroCity_Text_Researcher
 	msgbox RustboroCity_Text_HelpMeIWasRobbed, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -600,9 +603,12 @@ RustboroCity_EventScript_ReturnGoods::
 	call_if_eq VAR_TEMP_1, 2, RustboroCity_EventScript_EmployeeFacePlayerDown2
 	call_if_eq VAR_TEMP_1, 3, RustboroCity_EventScript_EmployeeApproachPlayerDown2
 	call_if_eq VAR_TEMP_1, 4, RustboroCity_EventScript_EmployeeFacePlayerRight
+	setspeakername RustboroCity_Text_Researcher
 	msgbox RustboroCity_Text_YouGotItThankYou, MSGBOX_DEFAULT
+	hidespeakername
 	giveitem ITEM_GREAT_ORB
 	call_if_eq VAR_RESULT, FALSE, RustboroCity_EventScript_BagFull
+	setspeakername RustboroCity_Text_Researcher
 	msgbox RustboroCity_Text_PleaseComeWithMe, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RETURNED_DEVON_GOODS
@@ -615,6 +621,7 @@ RustboroCity_EventScript_ReturnGoods::
 	end
 
 RustboroCity_EventScript_BagFull::
+	setspeakername RustboroCity_Text_Researcher
 	msgbox RustboroCity_Text_YoureLoadedWithItems, MSGBOX_DEFAULT
 	return
 
@@ -833,6 +840,13 @@ RustboroCity_EventScript_RivalEncounter::
 	goto_if_eq VAR_RESULT, FEMALE, RustboroCity_EventScript_BrendanEncounter
 	end
 
+RustboroCity_EventScript_GigiEncounter::
+	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayBrineyHint
+	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_MayAskToBattle
+	setflag FLAG_MET_RIVAL_RUSTBORO
+	msgbox RustboroCity_Text_MayHiLetsRegister, MSGBOX_DEFAULT
+	end
+
 RustboroCity_EventScript_MayEncounter::
 	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayBrineyHint
 	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_MayAskToBattle
@@ -1022,6 +1036,15 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_Text_Grunt:
+	.string "Grunt$"
+
+RustboroCity_Text_Researcher:
+	.string "Researcher$"
+
+RustboroCity_Text_Researcher:
+	.string "Gigi$"
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The DEVON CORPORATION…\n"
 	.string "We all just shorten it to DEVON.\p"
@@ -1103,14 +1126,14 @@ RustboroCity_Text_OutOfTheWay:
 
 RustboroCity_Text_WaitDontTakeMyGoods:
 	.string "Wait! Pleeeaaase!\p"
-	.string "Don't take my GOODS!$"
+	.string "Don't take my Goods!$"
 
 RustboroCity_Text_HelpMeIWasRobbed:
 	.string "Oh, it's you!\p"
 	.string "You're that fantastic TRAINER who\n"
 	.string "helped me in PETALBURG WOODS!\p"
 	.string "Help me! I was robbed by TEAM AQUA!\n"
-	.string "I have to get the DEVON GOODS back!\p"
+	.string "I have to get the Devon Goods back!\p"
 	.string "If I don't…\n"
 	.string "I'm going to be in serious trouble.$"
 
@@ -1123,17 +1146,76 @@ RustboroCity_Text_YouGotItThankYou:
 	.string "The DEVON GOODS?\p"
 	.string "You did!\n"
 	.string "You got them back!\p"
-	.string "You really are a great TRAINER!\p"
+	.string "You really are a great Trainer!\p"
 	.string "I know! As my thanks, I'll give you\n"
-	.string "another GREAT BALL!$"
+	.string "another Great Orb!$"
 
 RustboroCity_Text_YoureLoadedWithItems:
 	.string "You're loaded with items.\n"
-	.string "I can't give you this GREAT BALL.$"
+	.string "I can't give you this Great Orb.$"
 
 RustboroCity_Text_PleaseComeWithMe:
 	.string "Excuse me, please!\n"
 	.string "Please come with me!$"
+
+RustboroCity_Text_GigiHiLetsRegister:
+	.string "Hey, you!\n"
+	.string "{PLAYER}{KUN}!, was it?\p"
+	.string "The name's Gigi Murin, and I heard\n"
+	.string "you made the Noiseboro leader run\l"
+	.string "away from being a Gym Leader!\p"
+	.string "I won't lie, that's might impressive\n"
+	.string "for someone that just started out\l"
+	.string "fairly recently!\p"
+	.string "You know what, how about we register\n"
+	.string "each other in the iDollNavs we have?\p"
+	.string "That way, I can get to know you a bit\n"
+	.string "better in the methods you pull!\p"
+	.string "… … … … … …$"
+
+RustboroCity_Text_RegisteredGigi:
+	.string "Registered Gigi\n"
+	.string "in the POKéNAV.$"
+
+RustboroCity_Text_GigiPassedBrineyWantToBattle:
+	.string "You're heading towards Dreamford,\n"
+	.string "huh?\p"
+	.string "I believe Murasa's back in business\n"
+	.string "for taking people rides to there.\p"
+	.string "Since we're here anyways, I want to\n"
+	.string "know how strong you are exactly,\l"
+	.string "if you're up for it, of course.$"
+
+RustboroCity_Text_GigiOhHaventRaisedPokemonEnough:
+	.string "Not feeling prepared for what's coming\n"
+	.string "up, huh?\p"
+	.string "I get it, I got you all of a sudden\n"
+	.string "here with wanting to battle you.\p"
+	.string "You should always be prepared though\n"
+	.string "for things like this, just so you're\l"
+	.string "not completely caught off-guard.$"
+
+RustboroCity_Text_GigiDefeat:
+	.string "Oh boy!\n"
+	.string "No wonder he ran away!$"
+
+RustboroCity_Text_GigiWantToBattle:
+	.string "Ready to face me now,\n"
+	.string "{PLAYER}?$"
+
+RustboroCity_Text_GigiImNotGoingToLose:
+	.string "Well, you should know, I may be on\n"
+	.string "your level in power, but I know much\l"
+	.string "more with what I'm doing!$"
+
+RustboroCity_Text_GigiMrBrineyHint:
+	.string "Well, you certainly are something I\n"
+	.string "haven't expected completely.\p"
+	.string "Let this be known though, we are now\n"
+	.string "officially rivals of your Gym\l"
+	.string "challenge here!\p"
+	.string "I'll have to prep up my Puppets here,\n"
+	.string "but may we meet again later.$"
 
 RustboroCity_Text_MayHiLetsRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"

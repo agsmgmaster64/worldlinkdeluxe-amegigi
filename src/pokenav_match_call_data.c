@@ -180,7 +180,7 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
     .mapSec = MAPSEC_RUSTBORO_CITY,
     .flag = 0xFFFF,
     .desc = COMPOUND_STRING("DEVON PRES"),
-    .name = COMPOUND_STRING("MR. STONE"),
+    .name = COMPOUND_STRING("The Noise"),
     .textData = sMrStoneTextScripts
 };
 
