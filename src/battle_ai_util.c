@@ -2849,6 +2849,10 @@ bool32 ShouldPivot(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32
     return DONT_PIVOT;
 }
 
+// i'm just trying what i can to make myself feel better
+// i'm not quite skilled on that front, but i'm trying what i can
+// i don't want it to go to worst case scenario
+
 bool32 CanKnockOffItem(u32 battler, u32 item)
 {
     if (item == ITEM_NONE)
