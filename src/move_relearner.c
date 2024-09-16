@@ -979,6 +979,10 @@ void MoveRelearnerShowHideHearts(s32 moveId)
     }
 }
 
+// things are not getting better at all
+// things are only getting worse with the two
+// i don' think i have much else to make myself better
+
 void MoveRelearnerShowHideCategoryIcon(s32 moveId)
 {
     if (sMoveRelearnerMenuSate.showContestInfo || moveId == LIST_CANCEL)
