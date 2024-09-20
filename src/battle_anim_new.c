@@ -102,7 +102,6 @@ static void SpriteCB_TripleArrowKick(struct Sprite* sprite);
 static void SpriteCB_MaxSteelspike(struct Sprite* sprite);
 static void AnimTask_MaxSteelspikeStep(u8 taskId);
 static void CreateSteelspikeSprite(struct Task* task);
-static void AnimMakingItRain(struct Sprite *sprite);
 
 // const data
 // general
@@ -2180,18 +2179,7 @@ const struct SpriteTemplate gSpiritShackleArrowTemplate =
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimSonicBoomProjectile
-};
-
-const struct SpriteTemplate gSpiritShackleChainTemplate =
-{
-    .tileTag = ANIM_TAG_CHAIN_LINK,
-    .paletteTag = ANIM_TAG_CHAIN_LINK,
-    .oam = &gOamData_AffineOff_ObjNormal_32x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimThunderWave
+    .callback = AnimTranslateStinger
 };
 
 //darkest lariat
@@ -7262,18 +7250,6 @@ const struct SpriteTemplate gBitterBladeImpactTemplate =
     .callback = AnimClawSlash
 };
 
-// Make It Rain
-const struct SpriteTemplate gMakingItRainTemplate =
-{
-    .tileTag = ANIM_TAG_COIN,
-    .paletteTag = ANIM_TAG_COIN,
-    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
-    .anims = gCoinAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimMakingItRain,
-};
-
 const struct SpriteTemplate gRedExplosionSpriteTemplate =
 {
     .tileTag = ANIM_TAG_RED_EXPLOSION,
@@ -7305,6 +7281,39 @@ const struct SpriteTemplate gMoonUpSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimWeatherBallUp,
+};
+
+const union AnimCmd gSproutAnimCmds[] =
+{
+    ANIMCMD_FRAME(96, 5),
+    ANIMCMD_END,
+};
+
+const union AnimCmd *const gSproutAnimTable[] =
+{
+    gSproutAnimCmds,
+};
+
+const struct SpriteTemplate gSproutGrowSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SPROUT,
+    .paletteTag = ANIM_TAG_SPROUT,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gSproutAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimSpriteOnMonPos,
+};
+
+const struct SpriteTemplate gFreezyFrostRisingSpearSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_ICICLE_SPEAR,
+    .paletteTag = ANIM_TAG_ICICLE_SPEAR,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_GeyserTarget
 };
 
 // functions
@@ -9408,51 +9417,6 @@ static void AnimTask_MaxSteelspikeStep(u8 taskId)
 		case 4:
 			DestroyAnimVisualTask(taskId);
 	}
-}
-
-static void CreateSteelspikeSprite(struct Task* task)
-{
-	u8 spriteId;
-	u16 x, y;
-
-	x = task->data[2] >> 3;
-	y = task->data[3] >> 3;
-	x += (task->data[12] * 8);
-
-	spriteId = CreateSprite(&gMaxSteelspikeSpriteTemplate, x, y, 35);
-	if (spriteId != MAX_SPRITES)
-	{
-		gSprites[spriteId].data[0] = 18;
-		gSprites[spriteId].data[2] = ((task->data[12] * 20) + x) + (task->data[1] * 3);
-		gSprites[spriteId].data[4] = y;
-		gSprites[spriteId].data[5] = -16 - (task->data[1] * 2);
-		gSprites[spriteId].data[7] = task->data[8] + 60;
-
-		PlaySE(SE_M_HARDEN);
-		task->data[11]++;
-	}
-
-	task->data[12] *= -1;
-}
-
-static void AnimMakingItRain(struct Sprite *sprite)
-{
-    if (gBattleAnimArgs[3] != 0)
-        SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);   //coin shower on target
-
-    sprite->x += gBattleAnimArgs[0];
-    sprite->y += 14;
-    StartSpriteAnim(sprite, gBattleAnimArgs[1]);
-    AnimateSprite(sprite);
-    sprite->data[0] = 0;
-    sprite->data[1] = 0;
-    sprite->data[2] = 4;
-    sprite->data[3] = 16;
-    sprite->data[4] = -70;
-    sprite->data[5] = gBattleAnimArgs[2];
-    StoreSpriteCallbackInData6(sprite, AnimFallingRock_Step);
-    sprite->callback = TranslateSpriteInEllipse;
-    sprite->callback(sprite);
 }
 
 void AnimTask_RandomBool(u8 taskId)
