@@ -2239,7 +2239,7 @@ PetalburgCity_Gym_EventScript_GymStatue::
 # 1120 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 # 1121 "data/maps/PetalburgCity_Gym/scripts.pory"
-	.string "DAD: Hm?\p"
+	.string "Hm?\p"
 # 1122 "data/maps/PetalburgCity_Gym/scripts.pory"
 	.string "Well, if it isn't {PLAYER}!\n"
 # 1123 "data/maps/PetalburgCity_Gym/scripts.pory"

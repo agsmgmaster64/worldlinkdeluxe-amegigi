@@ -32322,5 +32322,321 @@
     "TutorMoves": [
       "MOVE_MIMIC"
     ]
+  },
+  "C_AMELIA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SCREECH"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_BINDING_VOICE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_HYPNOSIS"
+      },
+      {
+        "Level": 43,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 46,
+        "Move": "MOVE_MANA_BURST"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_POISON_BOMB"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_LOCK_ON"
+      },
+      {
+        "Level": 58,
+        "Move": "MOVE_LUSTER_PURGE"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_LUNA_DIAL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_HEART_BREAK",
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_THUNDERBOLT",
+      "MOVE_RETURN",
+      "MOVE_MANA_BURST",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_POISON_BOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_CUT",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "AMELIA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SCREECH"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_BINDING_VOICE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_HYPNOSIS"
+      },
+      {
+        "Level": 43,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 46,
+        "Move": "MOVE_MANA_BURST"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_POISON_BOMB"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_LOCK_ON"
+      },
+      {
+        "Level": 58,
+        "Move": "MOVE_LUSTER_PURGE"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_LUNA_DIAL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_HEART_BREAK",
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_THUNDERBOLT",
+      "MOVE_RETURN",
+      "MOVE_MANA_BURST",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_POISON_BOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_CUT",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "H_AMELIA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SCREECH"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_BINDING_VOICE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_HYPNOSIS"
+      },
+      {
+        "Level": 43,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 46,
+        "Move": "MOVE_MANA_BURST"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_POISON_BOMB"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_LOCK_ON"
+      },
+      {
+        "Level": 58,
+        "Move": "MOVE_LUSTER_PURGE"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_LUNA_DIAL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_HEART_BREAK",
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_THUNDERBOLT",
+      "MOVE_RETURN",
+      "MOVE_MANA_BURST",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_POISON_BOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_CUT",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "T_AMELIA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SCREECH"
+      },
+      {
+        "Level": 37,
+        "Move": "MOVE_BINDING_VOICE"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_HYPNOSIS"
+      },
+      {
+        "Level": 43,
+        "Move": "MOVE_NASTY_PLOT"
+      },
+      {
+        "Level": 46,
+        "Move": "MOVE_MANA_BURST"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_POISON_BOMB"
+      },
+      {
+        "Level": 54,
+        "Move": "MOVE_LOCK_ON"
+      },
+      {
+        "Level": 58,
+        "Move": "MOVE_LUSTER_PURGE"
+      },
+      {
+        "Level": 62,
+        "Move": "MOVE_LUNA_DIAL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_HEART_BREAK",
+      "MOVE_CALM_MIND",
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_THUNDERBOLT",
+      "MOVE_RETURN",
+      "MOVE_MANA_BURST",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_POISON_BOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_CUT",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
   }
 }

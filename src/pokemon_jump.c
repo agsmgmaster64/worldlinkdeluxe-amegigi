@@ -458,7 +458,7 @@ static const struct PokemonJumpMons sPokeJumpMons[] =
     { .species = SPECIES_LAST_WORD_UTSUHO,                            .jumpType = JUMP_TYPE_FAST, },
     { .species = SPECIES_LAST_WORD_LETTY,                          .jumpType = JUMP_TYPE_FAST, },
     { .species = SPECIES_PURRLOIN,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PANSAGE,                           .jumpType = JUMP_TYPE_NORMAL, },
+    { .species = SPECIES_NORMAL_AMELIA,                           .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_PANSEAR,                           .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_PANPOUR,                           .jumpType = JUMP_TYPE_NORMAL, },
     { .species = SPECIES_ROGGENROLA,                        .jumpType = JUMP_TYPE_SLOW, },

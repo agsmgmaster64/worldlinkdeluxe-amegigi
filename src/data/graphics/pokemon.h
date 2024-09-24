@@ -25696,6 +25696,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Rinnosuke[] = INCBIN_U8("graphics/pokemon/_add/th/rinnosuke/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CAmelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CAmelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CAmelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CAmelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CAmelia[] = INCBIN_U8("graphics/pokemon/_add/etc/amelia/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CAmelia[] = INCBIN_U8("graphics/pokemon/_add/etc/amelia/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Amelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Amelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Amelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Amelia[] = INCBIN_U32("graphics/pokemon/_add/etc/amelia/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Amelia[] = INCBIN_U8("graphics/pokemon/_add/etc/amelia/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Amelia[] = INCBIN_U8("graphics/pokemon/_add/etc/amelia/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

@@ -511,8 +511,8 @@
 #define SPECIES_LAST_WORD_KANAKO                        507
 #define SPECIES_AYAKASHI                                508
 #define SPECIES_PURRLOIN                                509 // Basiney
-#define SPECIES_LIEPARD                                 510
-#define SPECIES_PANSAGE                                 511
+#define SPECIES_CHIBI_AMELIA                            510
+#define SPECIES_NORMAL_AMELIA                           511
 #define SPECIES_SIMISAGE                                512
 #define SPECIES_PANSEAR                                 513
 #define SPECIES_SIMISEAR                                514

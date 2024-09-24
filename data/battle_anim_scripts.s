@@ -34781,21 +34781,6 @@ gBattleAnimMove_MaxSteelspike::
 	goto gBattleAnimMove_HeavySlam
 	end
 
-@ Bugged
-gBattleAnimMove_MaxSteelSpike_Anim:
-	loadspritegfx ANIM_TAG_LARGE_SPIKE
-	createvisualtask AnimTask_DynamaxGrowth, 5, 1
-	waitforvisualfinish
-	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 14, RGB(0, 0, 0)
-	waitforvisualfinish
-	createvisualtask AnimTask_MaxSteelspike, 2
-	waitforvisualfinish
-	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
-	createvisualtask AnimTask_ShakeMon, 5, ANIM_TARGET, 8, 0, 20, 1
-	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 14, 0, RGB(0, 0, 0)
-	waitforvisualfinish
-	end
-
 gBattleAnimMove_GMaxTerror::
 gBattleAnimMove_MaxPhantasm::
 	createvisualtask AnimTask_DynamaxGrowth, 0x5, 0x1, 0x1

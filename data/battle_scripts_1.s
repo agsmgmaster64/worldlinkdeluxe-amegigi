@@ -5637,11 +5637,11 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	end2
 
 BattleScript_DoiseBattleWon::
-	trainerslidein BS_ATTACKER
+	trainerslidein BS_OPPONENT1
 	waitstate
 	printstring STRINGID_TRAINER1LOSETEXT
 	waitmessage B_WAIT_TIME_LONG
-	trainerslideout B_POSITION_OPPONENT_LEFT
+	trainerslideout BS_OPPONENT1
 	waitstate
 	playtrainerdefeatbgm BS_ATTACKER
 	printstring STRINGID_PLAYERDEFEATEDTRAINER1
