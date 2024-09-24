@@ -1405,3 +1405,18 @@ bool8 MetatileBehavior_IsSpinDown(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsSignpost(u8 metatileBehavior)
+{
+    return (metatileBehavior == MB_SIGNPOST);
+}
+
+bool8 MetatileBehavior_IsPokemonCenterSign(u8 metatileBehavior)
+{
+    return (metatileBehavior == MB_POKEMON_CENTER_SIGN);
+}
+
+bool8 MetatileBehavior_IsPokeMartSign(u8 metatileBehavior)
+{
+    return (metatileBehavior == MB_POKEMART_SIGN);
+}

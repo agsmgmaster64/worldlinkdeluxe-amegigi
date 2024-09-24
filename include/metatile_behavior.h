@@ -164,5 +164,8 @@ bool8 MetatileBehavior_IsSpinRight(u8);
 bool8 MetatileBehavior_IsSpinLeft(u8);
 bool8 MetatileBehavior_IsSpinUp(u8);
 bool8 MetatileBehavior_IsSpinDown(u8);
+bool8 MetatileBehavior_IsSignpost(u8);
+bool8 MetatileBehavior_IsPokemonCenterSign(u8);
+bool8 MetatileBehavior_IsPokeMartSign(u8);
 
 #endif // GUARD_METATILE_BEHAVIOR_H
