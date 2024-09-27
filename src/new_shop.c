@@ -624,8 +624,8 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 
 static const u8 sShopBuyMenuTextColors[][3] =
 {
-    [COLORID_NORMAL]      = {0, 1, 2},
-    [COLORID_BLACK]       = {0, 2, 3},
+    [COLORID_NORMAL]      = {0, 2, 3},
+    [COLORID_BLACK]       = {0, 1, 2},
 };
 
 static const struct SpriteSheet sDefaultCursor_SpriteSheet = {

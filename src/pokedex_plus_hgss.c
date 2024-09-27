@@ -4753,7 +4753,7 @@ static void DestroyCategoryIcon(void)
 //*        STATS                     *
 //*                                  *
 //************************************
-static const u8 sStatsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
+static const u8 sStatsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 
 static void StatsPage_PrintNavigationButtons(void)
 {
@@ -5857,7 +5857,7 @@ static void Task_SwitchScreensFromStatsScreen(u8 taskId)
 //*        EVOS                      *
 //*                                  *
 //************************************
-static const u8 sEvoFormsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
+static const u8 sEvoFormsPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 
 static void EvoFormsPage_PrintNavigationButtons(void)
 {
