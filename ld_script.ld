@@ -363,6 +363,7 @@ SECTIONS {
         src/dexnav.o(.text);
         src/ui_main_menu.o(.text);
         src/new_shop.o(.text);
+        src/quests.o(.text);
     } > ROM =0
 
     script_data :
@@ -734,6 +735,7 @@ SECTIONS {
         src/dexnav.o(.rodata);
         src/ui_main_menu.o(.rodata);
         src/new_shop.o(.rodata);
+        src/quests.o(.rodata);
     } > ROM =0
 
     song_data :

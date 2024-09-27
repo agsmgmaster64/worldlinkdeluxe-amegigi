@@ -43,6 +43,8 @@
 #include "text_window.h"
 #include "trainer_card.h"
 #include "window.h"
+#include "quests.h"
+#include "constants/songs.h"
 #include "union_room.h"
 #include "dexnav.h"
 #include "wild_encounter.h"
@@ -68,6 +70,7 @@ enum
     MENU_ACTION_PYRAMID_BAG,
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
+    MENU_ACTION_QUEST_MENU,
     MENU_ACTION_EXIT_RIGHT,
     MENU_ACTION_EXIT_LEFT
 };
@@ -119,6 +122,7 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
+static bool8 StartMenuQuestMenuCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -198,6 +202,7 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
 };
 
 static const u8 sText_MenuDebug[] = _("DEBUG");
+static const u8 sText_QuestMenu[] = _("QUESTS");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -218,6 +223,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,    {.u8_void = StartMenuDexNavCallback}},
     [MENU_ACTION_EXIT_RIGHT]      = {gText_MenuExitRight, {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_EXIT_LEFT]       = {gText_MenuExitLeft,  {.u8_void = StartMenuExitCallback}},
+    [MENU_ACTION_QUEST_MENU]      = {sText_QuestMenu,     {.u8_void = StartMenuQuestMenuCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -299,6 +305,9 @@ static bool8 CanSetUpSecondaryStartMenu(void)
         return TRUE;
 
     if (FlagGet(FLAG_SYS_DEXNAV_GET) && FlagGet(FLAG_SYS_POKEDEX_GET))
+        return TRUE;
+
+    if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
         return TRUE;
 
     return FALSE;
@@ -400,6 +409,8 @@ static void BuildToolStartMenu(void)
         AddStartMenuAction(MENU_ACTION_DEBUG);
     if (FlagGet(FLAG_SYS_DEXNAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
+    if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE)
+        AddStartMenuAction(MENU_ACTION_QUEST_MENU);
     AddStartMenuAction(MENU_ACTION_EXIT_LEFT);
 }
 
@@ -1581,5 +1592,11 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 static bool8 StartMenuDexNavCallback(void)
 {
     CreateTask(Task_OpenDexNavFromStartMenu, 0);
+    return TRUE;
+}
+
+static bool8 QuestMenuCallback(void)
+{
+    CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
     return TRUE;
 }
