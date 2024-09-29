@@ -410,8 +410,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
-    TRAINER_SPRITE(TRAINER_PIC_GIGI_MURIN, gTrainerFrontPic_GigiMurin, gTrainerFrontPic_GigiMurin),
-    TRAINER_SPRITE(TRAINER_PIC_DOISE, gTrainerFrontPic_Doise, gTrainerFrontPic_Doise),
+    TRAINER_SPRITE(TRAINER_PIC_GIGI_MURIN, gTrainerFrontPic_GigiMurin, gTrainerPalette_GigiMurin),
+    TRAINER_SPRITE(TRAINER_PIC_DOISE, gTrainerFrontPic_Doise, gTrainerPalette_Doise),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

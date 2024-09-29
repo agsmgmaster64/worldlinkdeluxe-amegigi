@@ -286,7 +286,7 @@ Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined:
 
 Debug_EventScript_Script_6::
 	lockall
-	ai_vs_ai_battle TRAINER_BILLY, TRAINER_CALVIN_1
+	startquest QUEST_1
 	releaseall
 	end
 

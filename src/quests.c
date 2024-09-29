@@ -241,13 +241,205 @@ static const u8 sText_AZ[] = _(" A-Z");
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
+//names
+const u8 gText_SideQuestName_1[] = _("Journey to Champion");
+const u8 gText_SideQuestName_2[] = _("Complete the iDollDex");
+const u8 gText_SideQuestName_3[] = _("Side Quest 3");
+const u8 gText_SideQuestName_4[] = _("Side Quest 4");
+const u8 gText_SideQuestName_5[] = _("Side Quest 5");
+const u8 gText_SideQuestName_6[] = _("Side Quest 6");
+const u8 gText_SideQuestName_7[] = _("Side Quest 7");
+const u8 gText_SideQuestName_8[] = _("Side Quest 8");
+const u8 gText_SideQuestName_9[] = _("Side Quest 9");
+const u8 gText_SideQuestName_10[] = _("Side Quest 10");
+const u8 gText_SideQuestName_11[] = _("Side Quest 11");
+const u8 gText_SideQuestName_12[] = _("Side Quest 12");
+const u8 gText_SideQuestName_13[] = _("Side Quest 13");
+const u8 gText_SideQuestName_14[] = _("Side Quest 14");
+const u8 gText_SideQuestName_15[] = _("Side Quest 15");
+const u8 gText_SideQuestName_16[] = _("Side Quest 16");
+const u8 gText_SideQuestName_17[] = _("Side Quest 17");
+const u8 gText_SideQuestName_18[] = _("Side Quest 18");
+const u8 gText_SideQuestName_19[] = _("Side Quest 19");
+const u8 gText_SideQuestName_20[] = _("Side Quest 20");
+const u8 gText_SideQuestName_21[] = _("Side Quest 21");
+const u8 gText_SideQuestName_22[] = _("Side Quest 22");
+const u8 gText_SideQuestName_23[] = _("Side Quest 23");
+const u8 gText_SideQuestName_24[] = _("Side Quest 24");
+const u8 gText_SideQuestName_25[] = _("Side Quest 25");
+const u8 gText_SideQuestName_26[] = _("Side Quest 26");
+const u8 gText_SideQuestName_27[] = _("Side Quest 27");
+const u8 gText_SideQuestName_28[] = _("Side Quest 28");
+const u8 gText_SideQuestName_29[] = _("Side Quest 29");
+const u8 gText_SideQuestName_30[] = _("Side Quest 30");
+
+//descriptions
+const u8 gText_SideQuestDesc_1[] = _("Description 1");
+const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_3[] = _("Description 3");
+const u8 gText_SideQuestDesc_4[] = _("Description 4");
+const u8 gText_SideQuestDesc_5[] = _("Description 5");
+const u8 gText_SideQuestDesc_6[] = _("Description 6");
+const u8 gText_SideQuestDesc_7[] = _("Description 7");
+const u8 gText_SideQuestDesc_8[] = _("Description 8");
+const u8 gText_SideQuestDesc_9[] = _("Description 9");
+const u8 gText_SideQuestDesc_10[] = _("Description 10");
+const u8 gText_SideQuestDesc_11[] = _("Description 11");
+const u8 gText_SideQuestDesc_12[] = _("Description 12");
+const u8 gText_SideQuestDesc_13[] = _("Description 13");
+const u8 gText_SideQuestDesc_14[] = _("Description 14");
+const u8 gText_SideQuestDesc_15[] = _("Description 15");
+const u8 gText_SideQuestDesc_16[] = _("Description 16");
+const u8 gText_SideQuestDesc_17[] = _("Description 17");
+const u8 gText_SideQuestDesc_18[] = _("Description 18");
+const u8 gText_SideQuestDesc_19[] = _("Description 19");
+const u8 gText_SideQuestDesc_20[] = _("Description 20");
+const u8 gText_SideQuestDesc_21[] = _("Description 21");
+const u8 gText_SideQuestDesc_22[] = _("Description 22");
+const u8 gText_SideQuestDesc_23[] = _("Description 23");
+const u8 gText_SideQuestDesc_24[] = _("Description 24");
+const u8 gText_SideQuestDesc_25[] = _("Description 25");
+const u8 gText_SideQuestDesc_26[] = _("Description 26");
+const u8 gText_SideQuestDesc_27[] = _("Description 27");
+const u8 gText_SideQuestDesc_28[] = _("Description 28");
+const u8 gText_SideQuestDesc_29[] = _("Description 29");
+const u8 gText_SideQuestDesc_30[] = _("Description 30");
+
+//completed quest description
+const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
+const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
+const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
+const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
+const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
+const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
+const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
+const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
+const u8 gText_SideQuestDoneDesc_9[] = _("Completed Quest 9");
+const u8 gText_SideQuestDoneDesc_10[] = _("Completed Quest 10");
+const u8 gText_SideQuestDoneDesc_11[] = _("Completed Quest 11");
+const u8 gText_SideQuestDoneDesc_12[] = _("Completed Quest 12");
+const u8 gText_SideQuestDoneDesc_13[] = _("Completed Quest 13");
+const u8 gText_SideQuestDoneDesc_14[] = _("Completed Quest 14");
+const u8 gText_SideQuestDoneDesc_15[] = _("Completed Quest 15");
+const u8 gText_SideQuestDoneDesc_16[] = _("Completed Quest 16");
+const u8 gText_SideQuestDoneDesc_17[] = _("Completed Quest 17");
+const u8 gText_SideQuestDoneDesc_18[] = _("Completed Quest 18");
+const u8 gText_SideQuestDoneDesc_19[] = _("Completed Quest 19");
+const u8 gText_SideQuestDoneDesc_20[] = _("Completed Quest 20");
+const u8 gText_SideQuestDoneDesc_21[] = _("Completed Quest 21");
+const u8 gText_SideQuestDoneDesc_22[] = _("Completed Quest 22");
+const u8 gText_SideQuestDoneDesc_23[] = _("Completed Quest 23");
+const u8 gText_SideQuestDoneDesc_24[] = _("Completed Quest 24");
+const u8 gText_SideQuestDoneDesc_25[] = _("Completed Quest 25");
+const u8 gText_SideQuestDoneDesc_26[] = _("Completed Quest 26");
+const u8 gText_SideQuestDoneDesc_27[] = _("Completed Quest 27");
+const u8 gText_SideQuestDoneDesc_28[] = _("Completed Quest 28");
+const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
+const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
+
+//map
+const u8 gText_SideQuestMap1[] = _("Map 1");
+const u8 gText_SideQuestMap2[] = _("Map 2");
+const u8 gText_SideQuestMap3[] = _("Map 3");
+const u8 gText_SideQuestMap4[] = _("Map 4");
+const u8 gText_SideQuestMap5[] = _("Map 5");
+const u8 gText_SideQuestMap6[] = _("Map 6");
+const u8 gText_SideQuestMap7[] = _("Map 7");
+const u8 gText_SideQuestMap8[] = _("Map 8");
+const u8 gText_SideQuestMap9[] = _("Map 9");
+const u8 gText_SideQuestMap10[] = _("Map 10");
+const u8 gText_SideQuestMap11[] = _("Map 11");
+const u8 gText_SideQuestMap12[] = _("Map 12");
+const u8 gText_SideQuestMap13[] = _("Map 13");
+const u8 gText_SideQuestMap14[] = _("Map 14");
+const u8 gText_SideQuestMap15[] = _("Map 15");
+const u8 gText_SideQuestMap16[] = _("Map 16");
+const u8 gText_SideQuestMap17[] = _("Map 17");
+const u8 gText_SideQuestMap18[] = _("Map 18");
+const u8 gText_SideQuestMap19[] = _("Map 19");
+const u8 gText_SideQuestMap20[] = _("Map 20");
+const u8 gText_SideQuestMap21[] = _("Map 21");
+const u8 gText_SideQuestMap22[] = _("Map 22");
+const u8 gText_SideQuestMap23[] = _("Map 23");
+const u8 gText_SideQuestMap24[] = _("Map 24");
+const u8 gText_SideQuestMap25[] = _("Map 25");
+const u8 gText_SideQuestMap26[] = _("Map 26");
+const u8 gText_SideQuestMap27[] = _("Map 27");
+const u8 gText_SideQuestMap28[] = _("Map 28");
+const u8 gText_SideQuestMap29[] = _("Map 29");
+const u8 gText_SideQuestMap30[] = _("Map 30");
+
+//subquests
+const u8 gText_SubQuestChampion_Gym1[] = _("A Rocky Start");
+const u8 gText_SubQuestChampion_Gym2[] = _("The Dark Turn");
+const u8 gText_SubQuestChampion_Gym3[] = _("Messing with Time");
+const u8 gText_SubQuestChampion_Gym4[] = _("Heating up Stakes");
+const u8 gText_SubQuestChampion_Gym5[] = _("Part 5");
+const u8 gText_SubQuestChampion_Gym6[] = _("Part 6");
+const u8 gText_SubQuestChampion_Gym7[] = _("Part 7");
+const u8 gText_SubQuestChampion_Gym8[] = _("Part 8");
+const u8 gText_SubQuestChampion_Elite4[] = _("Beating the Elites");
+
+const u8 gText_SubQuest2_Name1[] = _("Part 1");
+const u8 gText_SubQuest2_Name2[] = _("Part 2");
+const u8 gText_SubQuest2_Name3[] = _("Part 3");
+const u8 gText_SubQuest2_Name4[] = _("Part 4");
+const u8 gText_SubQuest2_Name5[] = _("Part 5");
+const u8 gText_SubQuest2_Name6[] = _("Part 6");
+const u8 gText_SubQuest2_Name7[] = _("Part 7");
+const u8 gText_SubQuest2_Name8[] = _("Part 8");
+const u8 gText_SubQuest2_Name9[] = _("Part 9");
+const u8 gText_SubQuest2_Name10[] = _("Part 10");
+const u8 gText_SubQuest2_Name11[] = _("Part 11");
+const u8 gText_SubQuest2_Name12[] = _("Part 12");
+const u8 gText_SubQuest2_Name13[] = _("Part 13");
+const u8 gText_SubQuest2_Name14[] = _("Part 14");
+const u8 gText_SubQuest2_Name15[] = _("Part 15");
+const u8 gText_SubQuest2_Name16[] = _("Part 16");
+const u8 gText_SubQuest2_Name17[] = _("Part 17");
+const u8 gText_SubQuest2_Name18[] = _("Part 18");
+const u8 gText_SubQuest2_Name19[] = _("Part 19");
+const u8 gText_SubQuest2_Name20[] = _("Part 20");
+
+const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
+const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
+const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
+const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
+const u8 gText_SubQuest1_Desc9[] = _("Description Sub 9");
+const u8 gText_SubQuest1_Desc10[] = _("Description Sub 10");
+
+const u8 gText_SubQuest2_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest2_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest2_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest2_Desc4[] = _("Description Sub 4");
+const u8 gText_SubQuest2_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest2_Desc6[] = _("Description Sub 6");
+const u8 gText_SubQuest2_Desc7[] = _("Description Sub 7");
+const u8 gText_SubQuest2_Desc8[] = _("Description Sub 8");
+const u8 gText_SubQuest2_Desc9[] = _("Description Sub 9");
+const u8 gText_SubQuest2_Desc10[] = _("Description Sub 10");
+const u8 gText_SubQuest2_Desc11[] = _("Description Sub 11");
+const u8 gText_SubQuest2_Desc12[] = _("Description Sub 12");
+const u8 gText_SubQuest2_Desc13[] = _("Description Sub 13");
+const u8 gText_SubQuest2_Desc14[] = _("Description Sub 14");
+const u8 gText_SubQuest2_Desc15[] = _("Description Sub 15");
+const u8 gText_SubQuest2_Desc16[] = _("Description Sub 16");
+const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
+const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
+const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
+const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
+
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
 static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 {
 	sub_quest(
 	      0,
-	      gText_SubQuest1_Name1,
+	      gText_SubQuestChampion_Gym1,
 	      gText_SubQuest1_Desc1,
 	      gText_SideQuestMap1,
 	      OBJ_EVENT_GFX_WALLY,
@@ -257,7 +449,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      1,
-	      gText_SubQuest1_Name2,
+	      gText_SubQuestChampion_Gym2,
 	      gText_SubQuest1_Desc2,
 	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
@@ -267,7 +459,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      2,
-	      gText_SubQuest1_Name3,
+	      gText_SubQuestChampion_Gym3,
 	      gText_SubQuest1_Desc3,
 	      gText_SideQuestMap3,
 	      OBJ_EVENT_GFX_WALLY,
@@ -277,7 +469,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      3,
-	      gText_SubQuest1_Name4,
+	      gText_SubQuestChampion_Gym4,
 	      gText_SubQuest1_Desc4,
 	      gText_SideQuestMap4,
 	      OBJ_EVENT_GFX_WALLY,
@@ -287,7 +479,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      4,
-	      gText_SubQuest1_Name5,
+	      gText_SubQuestChampion_Gym5,
 	      gText_SubQuest1_Desc5,
 	      gText_SideQuestMap5,
 	      OBJ_EVENT_GFX_WALLY,
@@ -297,7 +489,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      5,
-	      gText_SubQuest1_Name6,
+	      gText_SubQuestChampion_Gym6,
 	      gText_SubQuest1_Desc6,
 	      gText_SideQuestMap6,
 	      OBJ_EVENT_GFX_WALLY,
@@ -307,7 +499,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      6,
-	      gText_SubQuest1_Name7,
+	      gText_SubQuestChampion_Gym7,
 	      gText_SubQuest1_Desc7,
 	      gText_SideQuestMap7,
 	      OBJ_EVENT_GFX_WALLY,
@@ -317,7 +509,7 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      7,
-	      gText_SubQuest1_Name8,
+	      gText_SubQuestChampion_Gym8,
 	      gText_SubQuest1_Desc8,
 	      gText_SideQuestMap8,
 	      OBJ_EVENT_GFX_WALLY,
@@ -327,19 +519,9 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 
 	sub_quest(
 	      8,
-	      gText_SubQuest1_Name9,
+	      gText_SubQuestChampion_Elite4,
 	      gText_SubQuest1_Desc9,
 	      gText_SideQuestMap9,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      9,
-	      gText_SubQuest1_Name10,
-	      gText_SubQuest1_Desc10,
-	      gText_SideQuestMap10,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      sText_Found
@@ -443,7 +625,7 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name10,
 	      gText_SubQuest2_Desc10,
 	      gText_SideQuestMap10,
-	      SPECIES_HO_OH,
+	      SPECIES_ATTACK_SHINMYOUMARU,
 	      PKMN,
 	      sText_Caught
 
@@ -926,8 +1108,8 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Header of Quest Menu
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_DARK_GRAY,
-		TEXT_COLOR_TRANSPARENT
+		TEXT_COLOR_WHITE,
+		TEXT_COLOR_LIGHT_GRAY
 	},
 	{
 		//Reward state progress indicator
@@ -950,8 +1132,8 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Footer flavor text
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_WHITE,
-		TEXT_COLOR_TRANSPARENT
+		TEXT_COLOR_DARK_GRAY,
+		TEXT_COLOR_LIGHT_GRAY
 	},
 };
 
@@ -1638,9 +1820,9 @@ u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 	switch (caseId)
 	{
 		case FLAG_GET_COMPLETED:
-			return gSaveBlock2Ptr->subQuests[index] & mask;
+			return gSaveBlock3Ptr->subQuests[index] & mask;
 		case FLAG_SET_COMPLETED:
-			gSaveBlock2Ptr->subQuests[index] |= mask;
+			gSaveBlock3Ptr->subQuests[index] |= mask;
 			return 1;
 	}
 
@@ -1696,9 +1878,9 @@ u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 	switch (caseId)
 	{
 		case FLAG_GET_UNLOCKED:
-			return gSaveBlock2Ptr->questData[index] & mask;
+			return gSaveBlock3Ptr->questData[index] & mask;
 		case FLAG_SET_UNLOCKED:
-			gSaveBlock2Ptr->questData[index] |= mask;
+			gSaveBlock3Ptr->questData[index] |= mask;
 			return 1;
 		case FLAG_GET_INACTIVE:
 			bit2 = bit + 1;
@@ -1719,37 +1901,37 @@ u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 
 			mask2 = 1 << bit2;
 			mask3 = 1 << bit3;
-			return !(gSaveBlock2Ptr->questData[index] & mask) && \
-			       !(gSaveBlock2Ptr->questData[index2] & mask2) && \
-			       !(gSaveBlock2Ptr->questData[index3] & mask3);
+			return !(gSaveBlock3Ptr->questData[index] & mask) && \
+			       !(gSaveBlock3Ptr->questData[index2] & mask2) && \
+			       !(gSaveBlock3Ptr->questData[index3] & mask3);
 		case FLAG_GET_ACTIVE:
-			return gSaveBlock2Ptr->questData[index] & mask;
+			return gSaveBlock3Ptr->questData[index] & mask;
 		case FLAG_SET_ACTIVE:
-			gSaveBlock2Ptr->questData[index] |= mask;
+			gSaveBlock3Ptr->questData[index] |= mask;
 			return 1;
 		case FLAG_REMOVE_ACTIVE:
-			gSaveBlock2Ptr->questData[index] &= ~mask;
+			gSaveBlock3Ptr->questData[index] &= ~mask;
 			return 1;
 		case FLAG_GET_REWARD:
-			return gSaveBlock2Ptr->questData[index] & mask;
+			return gSaveBlock3Ptr->questData[index] & mask;
 		case FLAG_SET_REWARD:
-			gSaveBlock2Ptr->questData[index] |= mask;
+			gSaveBlock3Ptr->questData[index] |= mask;
 			return 1;
 		case FLAG_REMOVE_REWARD:
-			gSaveBlock2Ptr->questData[index] &= ~mask;
+			gSaveBlock3Ptr->questData[index] &= ~mask;
 			return 1;
 		case FLAG_GET_COMPLETED:
-			return gSaveBlock2Ptr->questData[index] & mask;
+			return gSaveBlock3Ptr->questData[index] & mask;
 		case FLAG_SET_COMPLETED:
-			gSaveBlock2Ptr->questData[index] |= mask;
+			gSaveBlock3Ptr->questData[index] |= mask;
 			return 1;
 		case FLAG_GET_FAVORITE:
-			return gSaveBlock2Ptr->questData[index] & mask;
+			return gSaveBlock3Ptr->questData[index] & mask;
 		case FLAG_SET_FAVORITE:
-			gSaveBlock2Ptr->questData[index] |= mask;
+			gSaveBlock3Ptr->questData[index] |= mask;
 			return 1;
 		case FLAG_REMOVE_FAVORITE:
-			gSaveBlock2Ptr->questData[index] &= ~mask;
+			gSaveBlock3Ptr->questData[index] &= ~mask;
 			return 1;
 	}
 	return -1;  //failure
@@ -2190,7 +2372,7 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 0xFFFFFFFF);
 				break;
 			default:
 				break;
@@ -2803,8 +2985,8 @@ void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId)
 
 void QuestMenu_ResetMenuSaveData(void)
 {
-	memset(&gSaveBlock2Ptr->questData, 0,
-	       sizeof(gSaveBlock2Ptr->questData));
-	memset(&gSaveBlock2Ptr->subQuests, 0,
-	       sizeof(gSaveBlock2Ptr->subQuests));
+	memset(&gSaveBlock3Ptr->questData, 0,
+	       sizeof(gSaveBlock3Ptr->questData));
+	memset(&gSaveBlock3Ptr->subQuests, 0,
+	       sizeof(gSaveBlock3Ptr->subQuests));
 }

@@ -33958,8 +33958,11 @@ F_TRAINER_FEMALE |
             },
             {
 #line 14134
+            .nickname = COMPOUND_STRING("Pearl"),
+#line 14134
             .species = SPECIES_CHIBI_AMELIA,
-            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 14134
+            .gender = TRAINER_MON_FEMALE,
 #line 14136
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 14135

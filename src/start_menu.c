@@ -1595,7 +1595,7 @@ static bool8 StartMenuDexNavCallback(void)
     return TRUE;
 }
 
-static bool8 QuestMenuCallback(void)
+static bool8 StartMenuQuestMenuCallback(void)
 {
     CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
     return TRUE;

@@ -39,7 +39,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CAmelia,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
+        .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_CAmelia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CAmelia,
@@ -50,7 +50,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .shinyPalette = gMonShinyPalette_CAmelia,
         .iconSprite = gMonIcon_CAmelia,
         .iconPalIndex = 1,
-        SHADOW(-1, 11, SHADOW_SIZE_M)
+        SHADOW(5, 6, SHADOW_SIZE_S)
         FOOTPRINT(CAmelia)
         .levelUpLearnset = sCAmeliaLevelUpLearnset,
         .teachableLearnset = sCAmeliaTeachableLearnset,
@@ -96,6 +96,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Amelia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Amelia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -104,7 +105,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .shinyPalette = gMonShinyPalette_Amelia,
         .iconSprite = gMonIcon_Amelia,
         .iconPalIndex = 1,
-        SHADOW(0, 3, SHADOW_SIZE_S)
+        SHADOW(2, 14, SHADOW_SIZE_M)
         FOOTPRINT(Amelia)
         .levelUpLearnset = sAmeliaLevelUpLearnset,
         .teachableLearnset = sAmeliaTeachableLearnset,
