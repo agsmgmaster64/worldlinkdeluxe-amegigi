@@ -2800,11 +2800,6 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_LASER_FOCUS:
-            if (gStatuses3[battler] & STATUS3_LASER_FOCUS)
-            {
-                if (gDisableStructs[battler].laserFocusTimer == 0 || --gDisableStructs[battler].laserFocusTimer == 0)
-                    gStatuses3[battler] &= ~STATUS3_LASER_FOCUS;
-            }
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_EMBARGO:

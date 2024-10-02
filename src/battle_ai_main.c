@@ -1986,12 +1986,6 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
-        case EFFECT_LASER_FOCUS:
-            if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS)
-                ADJUST_SCORE(-10);
-            else if (aiData->abilities[battlerDef] == ABILITY_SHELL_ARMOR || aiData->abilities[battlerDef] == ABILITY_GUARD_ARMOR)
-                ADJUST_SCORE(-8);
-            break;
         case EFFECT_SKETCH:
             if (gLastMoves[battlerDef] == MOVE_NONE)
                 ADJUST_SCORE(-10);
