@@ -272,7 +272,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 17,
+      "x": 16,
       "y": 45,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_MART",
@@ -552,7 +552,7 @@
     },
     {
       "type": "sign",
-      "x": 15,
+      "x": 14,
       "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -576,7 +576,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 15,
       "y": 45,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -592,8 +592,8 @@
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 19,
+      "x": 16,
+      "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_EventScript_DevonCorpSign"
