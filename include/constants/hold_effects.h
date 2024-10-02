@@ -160,9 +160,10 @@
 #define HOLD_EFFECT_COVERT_CLOAK        144
 #define HOLD_EFFECT_LOADED_DICE         145
 #define HOLD_EFFECT_BOOSTER_ENERGY      146
+#define HOLD_EFFECT_OGERPON_MASK        147
 
-#define HOLD_EFFECT_FROST_ORB           147
-#define HOLD_EFFECT_SCARLET_ROCK        148
+#define HOLD_EFFECT_FROST_ORB           148
+#define HOLD_EFFECT_SCARLET_ROCK        149
 
 // Gen2 hold effect
 #define HOLD_EFFECT_BERSERK_GENE        149
