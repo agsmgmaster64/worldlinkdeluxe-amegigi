@@ -286,7 +286,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 28,
+      "x": 29,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F",
@@ -300,7 +300,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 37,
+      "x": 38,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY_MART",
@@ -453,7 +453,7 @@
     },
     {
       "type": "sign",
-      "x": 29,
+      "x": 27,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -461,7 +461,7 @@
     },
     {
       "type": "sign",
-      "x": 38,
+      "x": 36,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -477,7 +477,7 @@
     },
     {
       "type": "sign",
-      "x": 30,
+      "x": 28,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -485,7 +485,7 @@
     },
     {
       "type": "sign",
-      "x": 39,
+      "x": 37,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
