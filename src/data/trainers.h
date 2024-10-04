@@ -22884,10 +22884,8 @@ F_TRAINER_FEMALE |
 #line 9561
         .trainerPic = TRAINER_PIC_RENKO,
         .encounterMusic_gender = 
-#line 9562
-F_TRAINER_FEMALE | 
 #line 9563
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9564
         .doubleBattle = FALSE,
 #line 9565
@@ -33944,7 +33942,7 @@ F_TRAINER_FEMALE |
 #line 14127
         .doubleBattle = FALSE,
 #line 14128
-        .aiFlags = AI_FLAG_SMART_TRAINER | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_SMART_TRAINER,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {

@@ -223,12 +223,12 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 	.string "It's just a note.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "Noiseboro City Puppet Gym\p"
+	.string "Noiseboro CITY POKéMON GYM\p"
 	.string "Noise's Certified Trainers:\n"
 	.string "Gigi$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "Noiseboro City Puppet Gym\p"
+	.string "Noiseboro CITY Puppet GYM\p"
 	.string "Noise's Certified Trainers:\n"
 	.string "Gigi, {PLAYER}$"
 
