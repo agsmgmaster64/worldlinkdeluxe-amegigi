@@ -449,7 +449,7 @@ RustboroCity_Gym_Text_RoxannePostBattle:
 # 225 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_GymStatue:
 # 226 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Noiseboro CITY POKéMON GYM\p"
+	.string "Noiseboro City Puppet Gym\p"
 # 227 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Noise's Certified Trainers:\n"
 # 228 "data/maps/RustboroCity_Gym/scripts.pory"
@@ -459,7 +459,7 @@ RustboroCity_Gym_Text_GymStatue:
 # 230 "data/maps/RustboroCity_Gym/scripts.pory"
 RustboroCity_Gym_Text_GymStatueCertified:
 # 231 "data/maps/RustboroCity_Gym/scripts.pory"
-	.string "Noiseboro CITY Puppet GYM\p"
+	.string "Noiseboro City Puppet Gym\p"
 # 232 "data/maps/RustboroCity_Gym/scripts.pory"
 	.string "Noise's Certified Trainers:\n"
 # 233 "data/maps/RustboroCity_Gym/scripts.pory"

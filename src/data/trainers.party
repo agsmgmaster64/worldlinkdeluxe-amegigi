@@ -9559,8 +9559,8 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: Renko
 Class: Rival
 Pic: Renko
-Gender: Male
-Music: Male
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
@@ -14125,7 +14125,7 @@ Pic: Gigi Murin
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon
 
 Chibi Meiling
 Level: 13
