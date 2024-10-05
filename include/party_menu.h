@@ -108,6 +108,7 @@ void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
 void ItemUseCB_UsePokevial(u8 taskId, TaskFunc task);
 void InitPartyMenuForPokevialFromField(u8 taskId);
+bool32 IsItemFlute(u16 item);
 
 // Start qol_field_moves
 // These are all moved from src/party_menu.c

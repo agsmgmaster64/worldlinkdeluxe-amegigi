@@ -5,8 +5,8 @@ SINGLE_BATTLE_TEST("Pastel Veil prevents Poison Sting poison")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN { MOVE(player, MOVE_POISON_STING); }
     } SCENE {
@@ -19,10 +19,10 @@ DOUBLE_BATTLE_TEST("Pastel Veil prevents Poison Sting poison on partner")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_POISON_STING, MOVE_EFFECT_POISON) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_POISON_STING, target: opponentRight); }
     } SCENE {
@@ -36,8 +36,8 @@ SINGLE_BATTLE_TEST("Pastel Veil immediately cures Mold Breaker poison")
     KNOWN_FAILING;
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); }
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -54,10 +54,10 @@ DOUBLE_BATTLE_TEST("Pastel Veil does not cure Mold Breaker poison on partner")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); }
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TOXIC, target: opponentRight); }
     } SCENE {
@@ -71,8 +71,8 @@ SINGLE_BATTLE_TEST("Pastel Veil prevents Toxic bad poison")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
@@ -87,10 +87,10 @@ DOUBLE_BATTLE_TEST("Pastel Veil prevents Toxic bad poison on partner")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TOXIC, target: opponentRight); }
     } SCENE {
@@ -105,9 +105,9 @@ SINGLE_BATTLE_TEST("Pastel Veil prevents Toxic Spikes poison")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC_SPIKES].effect == EFFECT_TOXIC_SPIKES);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(opponent, 1); }
@@ -121,11 +121,11 @@ DOUBLE_BATTLE_TEST("Pastel Veil prevents Toxic Spikes poison on partner")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_TOXIC_SPIKES].effect == EFFECT_TOXIC_SPIKES);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(opponentRight, 2); }
@@ -138,10 +138,10 @@ DOUBLE_BATTLE_TEST("Pastel Veil prevents Toxic Spikes poison on partner")
 DOUBLE_BATTLE_TEST("Pastel Veil cures partner's poison on initial switch in")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_POISON); }
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN {}
     } SCENE {
@@ -155,11 +155,11 @@ DOUBLE_BATTLE_TEST("Pastel Veil cures partner's poison on initial switch in")
 DOUBLE_BATTLE_TEST("Pastel Veil cures partner's poison on switch in")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_POISON); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_PONYTA_GALARIAN) { Ability(ABILITY_PASTEL_VEIL); }
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
+        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_PONYTA_GALAR) { Ability(ABILITY_PASTEL_VEIL); }
     } WHEN {
         TURN { SWITCH(opponentRight, 2); }
     } SCENE {

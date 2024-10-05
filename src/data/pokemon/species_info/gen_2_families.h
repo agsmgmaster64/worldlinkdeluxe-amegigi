@@ -13,7 +13,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif
 
 #if P_HISUIAN_FORMS
-    [SPECIES_TYPHLOSION_HISUIAN] =
+    [SPECIES_TYPHLOSION_HISUI] =
     {
         .baseHP        = 73,
         .baseAttack    = 84,
@@ -350,7 +350,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 
 #if P_FAMILY_WOOPER
 #if P_PALDEAN_FORMS
-    [SPECIES_WOOPER_PALDEAN] =
+    [SPECIES_WOOPER_PALDEA] =
     {
         .baseHP        = 55,
         .baseAttack    = 45,
@@ -565,8 +565,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     [SPECIES_UNOWN_X]     = UNOWN_MISC_INFO(X,               FALSE, 24, 24, 40, 40, 15 ),
     [SPECIES_UNOWN_Y]     = UNOWN_MISC_INFO(Y,               FALSE, 24, 32, 32, 48, 10 ),
     [SPECIES_UNOWN_Z]     = UNOWN_MISC_INFO(Z,               TRUE,  24, 32, 32, 48, 10 ),
-    [SPECIES_UNOWN_EMARK] = UNOWN_MISC_INFO(ExclamationMark, FALSE, 24, 40, 24, 56,  6 ),
-    [SPECIES_UNOWN_QMARK] = UNOWN_MISC_INFO(QuestionMark,    TRUE,  24, 40, 32, 56,  6 ),
+    [SPECIES_UNOWN_EXCLAMATION] = UNOWN_MISC_INFO(ExclamationMark, FALSE, 24, 40, 24, 56,  6 ),
+    [SPECIES_UNOWN_QUESTION] = UNOWN_MISC_INFO(QuestionMark,    TRUE,  24, 40, 32, 56,  6 ),
 #endif //P_FAMILY_UNOWN
 
 #if P_FAMILY_GIRAFARIG
@@ -839,7 +839,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif
 
 #if P_HISUIAN_FORMS
-    [SPECIES_QWILFISH_HISUIAN] =
+    [SPECIES_QWILFISH_HISUI] =
     {
         .baseHP        = 65,
         .baseAttack    = 95,
@@ -1093,13 +1093,19 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             gOverworldPalette_Weavile,
             gShinyOverworldPalette_Weavile
         )
+        OVERWORLD_FEMALE(
+            sPicTable_WeavileF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sWeavileLevelUpLearnset,
         .teachableLearnset = sWeavileTeachableLearnset,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
 #if P_HISUIAN_FORMS
-    [SPECIES_SNEASEL_HISUIAN] =
+    [SPECIES_SNEASEL_HISUI] =
     {
         .baseHP        = 55,
         .baseAttack    = 95,
@@ -1161,6 +1167,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             gOverworldPalette_SneaselHisuian,
             gShinyOverworldPalette_SneaselHisuian
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_SneaselHisuianF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .isHisuianForm = TRUE,
         .levelUpLearnset = sSneaselHisuianLevelUpLearnset,
@@ -1419,6 +1431,12 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             gOverworldPalette_Mamoswine,
             gShinyOverworldPalette_Mamoswine
         )
+        OVERWORLD_FEMALE(
+            sPicTable_MamoswineF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sMamoswineLevelUpLearnset,
         .teachableLearnset = sMamoswineTeachableLearnset,
     },
@@ -1437,7 +1455,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #define CORSOLA_DEFENSES (P_UPDATED_STATS >= GEN_7 ? 95 : 85)
 
 #if P_GALARIAN_FORMS
-    [SPECIES_CORSOLA_GALARIAN] =
+    [SPECIES_CORSOLA_GALAR] =
     {
         .baseHP        = CORSOLA_HP - 5,
         .baseAttack    = 55,

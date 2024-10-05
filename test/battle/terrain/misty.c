@@ -24,8 +24,8 @@ SINGLE_BATTLE_TEST("Misty Terrain activates Misty Seed and Mimicry")
     GIVEN {
         ASSUME(gItemsInfo[ITEM_MISTY_SEED].holdEffect == HOLD_EFFECT_SEEDS);
         ASSUME(gItemsInfo[ITEM_MISTY_SEED].holdEffectParam == HOLD_EFFECT_PARAM_MISTY_TERRAIN);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_MISTY_SEED); }
-        OPPONENT(SPECIES_STUNFISK_GALARIAN) { Ability(ABILITY_MIMICRY); }
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MISTY_SEED); }
+        OPPONENT(SPECIES_STUNFISK_GALAR) { Ability(ABILITY_MIMICRY); }
     } WHEN {
         TURN { MOVE(player, MOVE_MISTY_TERRAIN); }
     } SCENE {

@@ -624,11 +624,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sLechonkLevelUpLearnset,
         .teachableLearnset = sLechonkTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 18, SPECIES_OINKOLOGNE_MALE},
-                                {EVO_LEVEL_FEMALE, 18, SPECIES_OINKOLOGNE_FEMALE}),
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 18, SPECIES_OINKOLOGNE_M},
+                                {EVO_LEVEL_FEMALE, 18, SPECIES_OINKOLOGNE_F}),
     },
 
-    [SPECIES_OINKOLOGNE_MALE] =
+    [SPECIES_OINKOLOGNE_M] =
     {
         .baseHP        = 110,
         .baseAttack    = 100,
@@ -689,7 +689,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sOinkologneFormSpeciesIdTable,
     },
 
-    [SPECIES_OINKOLOGNE_FEMALE] =
+    [SPECIES_OINKOLOGNE_F] =
     {
         .baseHP        = 115,
         .baseAttack    = 90,
@@ -1249,11 +1249,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sTandemausLevelUpLearnset,
         .teachableLearnset = sTandemausTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_FAMILY_OF_FOUR, 25, SPECIES_MAUSHOLD_FAMILY_OF_FOUR},
-                                {EVO_LEVEL_FAMILY_OF_THREE, 25, SPECIES_MAUSHOLD_FAMILY_OF_THREE}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FAMILY_OF_FOUR, 25, SPECIES_MAUSHOLD_FOUR},
+                                {EVO_LEVEL_FAMILY_OF_THREE, 25, SPECIES_MAUSHOLD_THREE}),
     },
 
-    [SPECIES_MAUSHOLD_FAMILY_OF_THREE] =
+    [SPECIES_MAUSHOLD_THREE] =
     {
         .baseHP        = 74,
         .baseAttack    = 75,
@@ -1314,7 +1314,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .teachableLearnset = sMausholdTeachableLearnset,
         .formSpeciesIdTable = sMausholdFormSpeciesIdTable,
     },
-    [SPECIES_MAUSHOLD_FAMILY_OF_FOUR] =
+    [SPECIES_MAUSHOLD_FOUR] =
     {
         .baseHP        = 74,
         .baseAttack    = 75,
@@ -1690,7 +1690,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #endif //P_FAMILY_SMOLIV
 
 #if P_FAMILY_SQUAWKABILLY
-    [SPECIES_SQUAWKABILLY_GREEN_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_GREEN] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1752,7 +1752,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
     },
 
-    [SPECIES_SQUAWKABILLY_BLUE_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_BLUE] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1814,7 +1814,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
     },
 
-    [SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_YELLOW] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -1876,7 +1876,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
     },
 
-    [SPECIES_SQUAWKABILLY_WHITE_PLUMAGE] =
+    [SPECIES_SQUAWKABILLY_WHITE] =
     {
         .baseHP        = 82,
         .baseAttack    = 96,
@@ -7318,7 +7318,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             TRACKS_FOOT,
             gOverworldPalette_Fezandipiti,
             gShinyOverworldPalette_Fezandipiti
-        )        
+        )
         .isLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sFezandipitiLevelUpLearnset,
@@ -7390,15 +7390,15 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                                       \
     }
 
-    [SPECIES_OGERPON_TEAL_MASK]             = OGERPON_SPECIES_INFO(Teal,        Mask,     TYPE_NATURE, ABILITY_DEFIANT,                        SOURCE_OTHER, 1, FALSE),
-    [SPECIES_OGERPON_WELLSPRING_MASK]       = OGERPON_SPECIES_INFO(Wellspring,  Mask,     TYPE_WATER, ABILITY_WATER_ABSORB,                   SOURCE_OTHER,  0, FALSE),
-    [SPECIES_OGERPON_HEARTHFLAME_MASK]      = OGERPON_SPECIES_INFO(Hearthflame, Mask,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   SOURCE_OTHER,   0, FALSE),
-    [SPECIES_OGERPON_CORNERSTONE_MASK]      = OGERPON_SPECIES_INFO(Cornerstone, Mask,     TYPE_BEAST,  ABILITY_STURDY,                         SOURCE_OTHER,  0, FALSE),
+    [SPECIES_OGERPON_TEAL]             = OGERPON_SPECIES_INFO(Teal,        Mask,     TYPE_NATURE, ABILITY_DEFIANT,                        SOURCE_OTHER, 1, FALSE),
+    [SPECIES_OGERPON_WELLSPRING]       = OGERPON_SPECIES_INFO(Wellspring,  Mask,     TYPE_WATER, ABILITY_WATER_ABSORB,                   SOURCE_OTHER,  0, FALSE),
+    [SPECIES_OGERPON_HEARTHFLAME]      = OGERPON_SPECIES_INFO(Hearthflame, Mask,     TYPE_FIRE,  ABILITY_MOLD_BREAKER,                   SOURCE_OTHER,   0, FALSE),
+    [SPECIES_OGERPON_CORNERSTONE]      = OGERPON_SPECIES_INFO(Cornerstone, Mask,     TYPE_BEAST,  ABILITY_STURDY,                         SOURCE_OTHER,  0, FALSE),
 #if P_TERA_FORMS
-    [SPECIES_OGERPON_TEAL_MASK_TERA]        = OGERPON_SPECIES_INFO(Teal,        MaskTera, TYPE_NATURE, ABILITY_EMBODY_ASPECT_TEAL_MASK,        SOURCE_OTHER, 1, TRUE),
-    [SPECIES_OGERPON_WELLSPRING_MASK_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  MaskTera, TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  SOURCE_OTHER,  0, TRUE),
-    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = OGERPON_SPECIES_INFO(Hearthflame, MaskTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, SOURCE_OTHER,   0, TRUE),
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = OGERPON_SPECIES_INFO(Cornerstone, MaskTera, TYPE_BEAST,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, SOURCE_OTHER,  0, TRUE),
+    [SPECIES_OGERPON_TEAL_TERA]        = OGERPON_SPECIES_INFO(Teal,        MaskTera, TYPE_NATURE, ABILITY_EMBODY_ASPECT_TEAL_MASK,        SOURCE_OTHER, 1, TRUE),
+    [SPECIES_OGERPON_WELLSPRING_TERA]  = OGERPON_SPECIES_INFO(Wellspring,  MaskTera, TYPE_WATER, ABILITY_EMBODY_ASPECT_WELLSPRING_MASK,  SOURCE_OTHER,  0, TRUE),
+    [SPECIES_OGERPON_HEARTHFLAME_TERA] = OGERPON_SPECIES_INFO(Hearthflame, MaskTera, TYPE_FIRE,  ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK, SOURCE_OTHER,   0, TRUE),
+    [SPECIES_OGERPON_CORNERSTONE_TERA] = OGERPON_SPECIES_INFO(Cornerstone, MaskTera, TYPE_BEAST,  ABILITY_EMBODY_ASPECT_CORNERSTONE_MASK, SOURCE_OTHER,  0, TRUE),
 #endif //P_TERA_FORMS
 
 #endif //P_FAMILY_OGERPON

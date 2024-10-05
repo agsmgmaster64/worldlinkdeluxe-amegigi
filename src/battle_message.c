@@ -521,7 +521,7 @@ const u8 gText_EmptyString3[] = _("");
 static const u8 sText_PlayedFluteCatchyTune[] = _("{B_PLAYER_NAME} played the {B_LAST_ITEM}.\pNow, that's a catchy tune!");
 static const u8 sText_PlayedThe[] = _("{B_PLAYER_NAME} played the\n{B_LAST_ITEM}.");
 static const u8 sText_PkmnHearingFluteAwoke[] = _("The Puppet hearing the Flute\nawoke!");
-static const u8 sText_YouThrowABallNowRight[] = _("You throw a Orb now, right?\nI… I'll do my best!");
+static const u8 sText_YouThrowABallNowRight[] = _("You throw an Orb now, right?\nI… I'll do my best!");
 
 // early declaration of strings
 static const u8 sText_PkmnIncapableOfPower[];

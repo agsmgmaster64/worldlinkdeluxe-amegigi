@@ -1072,7 +1072,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     [SPECIES_SCATTERBUG_OCEAN]       = SCATTERBUG_SPECIES_INFO(OCEAN),
     [SPECIES_SCATTERBUG_JUNGLE]      = SCATTERBUG_SPECIES_INFO(JUNGLE),
     [SPECIES_SCATTERBUG_FANCY]       = SCATTERBUG_SPECIES_INFO(FANCY),
-    [SPECIES_SCATTERBUG_POKE_BALL]   = SCATTERBUG_SPECIES_INFO(POKE_BALL),
+    [SPECIES_SCATTERBUG_POKEBALL]   = SCATTERBUG_SPECIES_INFO(POKEBALL),
 
 #define SPEWPA_SPECIES_INFO(evolution)                                          \
     {                                                                           \
@@ -1153,7 +1153,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     [SPECIES_SPEWPA_OCEAN]       = SPEWPA_SPECIES_INFO(OCEAN),
     [SPECIES_SPEWPA_JUNGLE]      = SPEWPA_SPECIES_INFO(JUNGLE),
     [SPECIES_SPEWPA_FANCY]       = SPEWPA_SPECIES_INFO(FANCY),
-    [SPECIES_SPEWPA_POKE_BALL]   = SPEWPA_SPECIES_INFO(POKE_BALL),
+    [SPECIES_SPEWPA_POKEBALL]   = SPEWPA_SPECIES_INFO(POKEBALL),
 
 #define VIVILLON_MISC_INFO(form, color, iconPal)                                            \
         .baseHP        = 80,                                                                \
@@ -1384,7 +1384,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "This form is from a mysterious land.\n"
             "It scatters toxic color scales in battle."),
     },
-    [SPECIES_VIVILLON_POKE_BALL] =
+    [SPECIES_VIVILLON_POKEBALL] =
     {
         VIVILLON_MISC_INFO(PokeBall, SOURCE_HRTP, 2),
         .description = COMPOUND_STRING(
@@ -1521,6 +1521,12 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             gOverworldPalette_Pyroar,
             gShinyOverworldPalette_Pyroar
         )
+        OVERWORLD_FEMALE(
+            sPicTable_PyroarF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sPyroarLevelUpLearnset,
         .teachableLearnset = sPyroarTeachableLearnset,
     },
@@ -1582,9 +1588,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sFlabebeLevelUpLearnset,                             \
         .teachableLearnset = sFlabebeTeachableLearnset,                         \
         .formSpeciesIdTable = sFlabebeFormSpeciesIdTable,                       \
-        .evolutions = EVOLUTION({EVO_LEVEL, 19, SPECIES_FLOETTE_ ##FORM##_FLOWER})
+        .evolutions = EVOLUTION({EVO_LEVEL, 19, SPECIES_FLOETTE_ ##FORM})
 
-    [SPECIES_FLABEBE_RED_FLOWER] =
+    [SPECIES_FLABEBE_RED] =
     {
         FLABEBE_MISC_INFO(Red, RED, 1),
         .description = COMPOUND_STRING(
@@ -1593,7 +1599,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "begins flying around in search of a\n"
             "flower it likes."),
     },
-    [SPECIES_FLABEBE_YELLOW_FLOWER] =
+    [SPECIES_FLABEBE_YELLOW] =
     {
         FLABEBE_MISC_INFO(Yellow, YELLOW, 1),
         .description = COMPOUND_STRING(
@@ -1602,7 +1608,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "within flowers. This Pokémon is\n"
             "particularly fond of yellow flowers."),
     },
-    [SPECIES_FLABEBE_ORANGE_FLOWER] =
+    [SPECIES_FLABEBE_ORANGE] =
     {
         FLABEBE_MISC_INFO(Orange, ORANGE, 0),
         .description = COMPOUND_STRING(
@@ -1611,7 +1617,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "return. This Pokémon likes orange\n"
             "flowers best of all."),
     },
-    [SPECIES_FLABEBE_BLUE_FLOWER]   =
+    [SPECIES_FLABEBE_BLUE]   =
     {
         FLABEBE_MISC_INFO(Blue, BLUE, 0),
         .description = COMPOUND_STRING(
@@ -1620,7 +1626,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "power emanating from its flower\n"
             "and bobs along lightly through the air."),
     },
-    [SPECIES_FLABEBE_WHITE_FLOWER]  =
+    [SPECIES_FLABEBE_WHITE]  =
     {
         FLABEBE_MISC_INFO(White, WHITE, 1),
         .description = COMPOUND_STRING(
@@ -1687,10 +1693,10 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .backPicYOffset = 2,                                                                    \
         .levelUpLearnset = sFloetteLevelUpLearnset,                                             \
         .teachableLearnset = sFloetteTeachableLearnset,                                         \
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_FLORGES_ ##FORM##_FLOWER}),\
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SHINY_STONE, SPECIES_FLORGES_ ##FORM}),\
         FLOETTE_MISC_INFO(form, FORM, iconPal)
 
-    [SPECIES_FLOETTE_RED_FLOWER] =
+    [SPECIES_FLOETTE_RED] =
     {
         FLOETTE_NORMAL_INFO(Red, RED, 1),
         .description = COMPOUND_STRING(
@@ -1699,7 +1705,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "into flowers and draw forth their\n"
             "latent potential."),
     },
-    [SPECIES_FLOETTE_YELLOW_FLOWER] =
+    [SPECIES_FLOETTE_YELLOW] =
     {
         FLOETTE_NORMAL_INFO(Yellow, YELLOW, 1),
         .description = COMPOUND_STRING(
@@ -1708,7 +1714,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "This power then becomes the moves\n"
             "Floette uses to protect itself."),
     },
-    [SPECIES_FLOETTE_ORANGE_FLOWER] =
+    [SPECIES_FLOETTE_ORANGE] =
     {
         FLOETTE_NORMAL_INFO(Orange, ORANGE, 0),
         .description = COMPOUND_STRING(
@@ -1717,7 +1723,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "flowers, compared to flowers of other\n"
             "colors."),
     },
-    [SPECIES_FLOETTE_BLUE_FLOWER] =
+    [SPECIES_FLOETTE_BLUE] =
     {
         FLOETTE_NORMAL_INFO(Blue, BLUE, 0),
         .description = COMPOUND_STRING(
@@ -1726,7 +1732,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "will bring them back to its territory\n"
             "and care for them."),
     },
-    [SPECIES_FLOETTE_WHITE_FLOWER] =
+    [SPECIES_FLOETTE_WHITE] =
     {
         FLOETTE_NORMAL_INFO(White, WHITE, 1),
         .description = COMPOUND_STRING(
@@ -1735,7 +1741,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "without mercy. This Floette takes\n"
             "particularly good care of white flowers."),
     },
-    [SPECIES_FLOETTE_ETERNAL_FLOWER] =
+    [SPECIES_FLOETTE_ETERNAL] =
     {
         FLOETTE_MISC_INFO(Eternal, ETERNAL, 0),
         .baseHP        = 74,
@@ -1818,7 +1824,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sFlorgesTeachableLearnset,                         \
         .formSpeciesIdTable = sFlorgesFormSpeciesIdTable
 
-    [SPECIES_FLORGES_RED_FLOWER] =
+    [SPECIES_FLORGES_RED] =
     {
         FLORGES_MISC_INFO(Red, 0),
         .description = COMPOUND_STRING(
@@ -1827,7 +1833,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "draws forth the power of the red\n"
             "flowers around its neck."),
     },
-    [SPECIES_FLORGES_YELLOW_FLOWER] =
+    [SPECIES_FLORGES_YELLOW] =
     {
         FLORGES_MISC_INFO(Yellow, 1),
         .description = COMPOUND_STRING(
@@ -1836,7 +1842,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "ruthlessly punishes anyone who\n"
             "tramples on flowering plants."),
     },
-    [SPECIES_FLORGES_ORANGE_FLOWER] =
+    [SPECIES_FLORGES_ORANGE] =
     {
         FLORGES_MISC_INFO(Orange, 0),
         .description = COMPOUND_STRING(
@@ -1845,7 +1851,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "care for their castles' exquisite\n"
             "gardens."),
     },
-    [SPECIES_FLORGES_BLUE_FLOWER] =
+    [SPECIES_FLORGES_BLUE] =
     {
         FLORGES_MISC_INFO(Blue, 0),
         .description = COMPOUND_STRING(
@@ -1853,7 +1859,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "expensive in the past, so paintings\n"
             "of blue Florges are highly valuable."),
     },
-    [SPECIES_FLORGES_WHITE_FLOWER] =
+    [SPECIES_FLORGES_WHITE] =
     {
         FLORGES_MISC_INFO(White, 0),
         .description = COMPOUND_STRING(
@@ -2249,11 +2255,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sEspurrLevelUpLearnset,
         .teachableLearnset = sEspurrTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 25, SPECIES_MEOWSTIC_MALE},
-                                {EVO_LEVEL_FEMALE, 25, SPECIES_MEOWSTIC_FEMALE}),
+        .evolutions = EVOLUTION({EVO_LEVEL_MALE, 25, SPECIES_MEOWSTIC_M},
+                                {EVO_LEVEL_FEMALE, 25, SPECIES_MEOWSTIC_F}),
     },
 
-    [SPECIES_MEOWSTIC_MALE] =
+    [SPECIES_MEOWSTIC_M] =
     {
         .baseHP        = 74,
         .baseAttack    = 48,
@@ -2315,7 +2321,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .formSpeciesIdTable = sMeowsticFormSpeciesIdTable,
     },
 
-    [SPECIES_MEOWSTIC_FEMALE] =
+    [SPECIES_MEOWSTIC_F] =
     {
         .baseHP        = 74,
         .baseAttack    = 48,
@@ -4026,7 +4032,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sGoomyLevelUpLearnset,
         .teachableLearnset = sGoomyTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_SLIGGOO},
-                                {EVO_NONE, 0, SPECIES_SLIGGOO_HISUIAN}),
+                                {EVO_NONE, 0, SPECIES_SLIGGOO_HISUI}),
     },
 
     [SPECIES_SLIGGOO] =
@@ -4157,7 +4163,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #if P_HISUIAN_FORMS
-    [SPECIES_SLIGGOO_HISUIAN] =
+    [SPECIES_SLIGGOO_HISUI] =
     {
         .baseHP        = 58,
         .baseAttack    = 75,
@@ -4219,11 +4225,11 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sSliggooHisuianLevelUpLearnset,
         .teachableLearnset = sSliggooHisuianTeachableLearnset,
         .formSpeciesIdTable = sSliggooFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_RAIN, 50, SPECIES_GOODRA_HISUIAN},
-                                {EVO_LEVEL_FOG, 50, SPECIES_GOODRA_HISUIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL_RAIN, 50, SPECIES_GOODRA_HISUI},
+                                {EVO_LEVEL_FOG, 50, SPECIES_GOODRA_HISUI}),
     },
 
-    [SPECIES_GOODRA_HISUIAN] =
+    [SPECIES_GOODRA_HISUI] =
     {
         .baseHP        = 80,
         .baseAttack    = 100,
@@ -5054,7 +5060,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sBergmiteLevelUpLearnset,
         .teachableLearnset = sBergmiteTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG},
-                                {EVO_NONE, 0, SPECIES_AVALUGG_HISUIAN}),
+                                {EVO_NONE, 0, SPECIES_AVALUGG_HISUI}),
     },
 
     [SPECIES_AVALUGG] =
@@ -5120,7 +5126,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #if P_HISUIAN_FORMS
-    [SPECIES_AVALUGG_HISUIAN] =
+    [SPECIES_AVALUGG_HISUI] =
     {
         .baseHP        = 95,
         .baseAttack    = 127,
@@ -5512,7 +5518,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 #endif //P_FAMILY_YVELTAL
 
 #if P_FAMILY_ZYGARDE
-    [SPECIES_ZYGARDE_50_AURA_BREAK] =
+    [SPECIES_ZYGARDE_50] =
     {
         .baseHP        = 108,
         .baseAttack    = 100,

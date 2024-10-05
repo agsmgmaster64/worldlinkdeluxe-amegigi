@@ -50,8 +50,8 @@ SINGLE_BATTLE_TEST("Volt Absorb is only triggered once on multi strike moves")
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FURY_SWIPES].type == TYPE_ILLUSION);
         ASSUME(gMovesInfo[MOVE_FURY_SWIPES].effect == EFFECT_MULTI_HIT);
-        PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
-        OPPONENT(SPECIES_GRAVELER_ALOLAN) { Ability(ABILITY_GALVANIZE); }
+        PLAYER(SPECIES_JOLTEON) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
+        OPPONENT(SPECIES_GRAVELER_ALOLA) { Ability(ABILITY_GALVANIZE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_FURY_SWIPES); }
     } SCENE {
@@ -66,11 +66,11 @@ DOUBLE_BATTLE_TEST("Volt Absorb does not stop Electric Typed Explosion from dama
     s16 damage1, damage2;
     GIVEN {
         ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
-        ASSUME(gMovesInfo[MOVE_EXPLOSION].type == TYPE_ILLUSION);
-        PLAYER(SPECIES_ATTACK_MOKOU) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
-        PLAYER(SPECIES_SPEED_LILY_BLACK);
-        OPPONENT(SPECIES_GRAVELER_ALOLAN) { Ability(ABILITY_GALVANIZE); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        ASSUME(gMovesInfo[MOVE_EXPLOSION].type == TYPE_NORMAL);
+        PLAYER(SPECIES_JOLTEON) { Ability(ABILITY_VOLT_ABSORB); HP(1); MaxHP(100); }
+        PLAYER(SPECIES_ABRA);
+        OPPONENT(SPECIES_GRAVELER_ALOLA) { Ability(ABILITY_GALVANIZE); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_EXPLOSION); }
     } SCENE {

@@ -503,7 +503,7 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
     struct PlayerAvatar *playerAvatar = &gPlayerAvatar;
     u8 collision;
     u32 fieldMoveStatus; // qol_field_moves
-    
+
     // Check for sideways stairs onto ice movement.
     switch (direction)
     {
@@ -516,7 +516,7 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
         direction = DIR_EAST;
         break;
     }
-    
+
     collision = CheckForPlayerAvatarCollision(direction);
     // Start qol_field_moves
     fieldMoveStatus = CanUseWaterfall(direction);
@@ -754,7 +754,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerRunSlow(direction);
         else
             PlayerRun(direction);
-        
+
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
     }
@@ -821,7 +821,7 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
             return COLLISION_ROTATING_GATE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
-    
+
     return collision;
 }
 
@@ -2607,7 +2607,7 @@ u8 GetRightSideStairsDirection(u8 direction)
         if (direction > DIR_EAST)
             direction -= DIR_EAST;
         return direction;
-    }           
+    }
 }
 
 u8 GetLeftSideStairsDirection(u8 direction)
@@ -2630,11 +2630,11 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
     #if SLOW_MOVEMENT_ON_STAIRS == TRUE
         s16 x = objectEvent->currentCoords.x;
         s16 y = objectEvent->currentCoords.y;
-        
+
         // TODO followers on sideways stairs
         if (IsFollowerVisible() && GetFollowerObject() != NULL && (objectEvent->isPlayer || objectEvent->localId == OBJ_EVENT_ID_FOLLOWER))
             return FALSE;
-        
+
         switch (direction)
         {
         case DIR_NORTH:

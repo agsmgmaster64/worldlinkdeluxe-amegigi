@@ -193,7 +193,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
 #endif
 
 #if P_GALARIAN_FORMS
-    [SPECIES_ZIGZAGOON_GALARIAN] =
+    [SPECIES_ZIGZAGOON_GALAR] =
     {
         .baseHP        = 38,
         .baseAttack    = 30,
@@ -254,10 +254,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sZigzagoonGalarianLevelUpLearnset,
         .teachableLearnset = sZigzagoonGalarianTeachableLearnset,
         .formSpeciesIdTable = sZigzagoonFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LINOONE_GALARIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_LINOONE_GALAR}),
     },
 
-    [SPECIES_LINOONE_GALARIAN] =
+    [SPECIES_LINOONE_GALAR] =
     {
         .baseHP        = 78,
         .baseAttack    = 70,

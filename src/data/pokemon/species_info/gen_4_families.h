@@ -4,7 +4,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif
 
 #if P_FAMILY_BURMY
-    [SPECIES_BURMY_SANDY_CLOAK] =
+    [SPECIES_BURMY_SANDY] =
     {
         .baseHP        = 40,
         .baseAttack    = 29,
@@ -67,11 +67,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_SANDY_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_SANDY_CLOAK}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_SANDY},
+                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_SANDY}),
     },
 
-    [SPECIES_BURMY_TRASH_CLOAK] =
+    [SPECIES_BURMY_TRASH] =
     {
         .baseHP        = 40,
         .baseAttack    = 29,
@@ -134,11 +134,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
         .formChangeTable = sBurmyFormChangeTable,
-        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_TRASH_CLOAK},
-                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_TRASH_CLOAK}),
+        .evolutions = EVOLUTION({EVO_LEVEL_FEMALE, 20, SPECIES_WORMADAM_TRASH},
+                                {EVO_LEVEL_MALE, 20, SPECIES_MOTHIM_TRASH}),
     },
 
-    [SPECIES_WORMADAM_SANDY_CLOAK] =
+    [SPECIES_WORMADAM_SANDY] =
     {
         .baseHP        = 60,
         .baseAttack    = 79,
@@ -202,7 +202,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .formSpeciesIdTable = sWormadamFormSpeciesIdTable,
     },
 
-    [SPECIES_WORMADAM_TRASH_CLOAK] =
+    [SPECIES_WORMADAM_TRASH] =
     {
         .baseHP        = 60,
         .baseAttack    = 69,
@@ -328,8 +328,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .formSpeciesIdTable = sMothimFormSpeciesIdTable,                    \
     }
 
-    [SPECIES_MOTHIM_SANDY_CLOAK] = MOTHIM_SPECIES_INFO,
-    [SPECIES_MOTHIM_TRASH_CLOAK] = MOTHIM_SPECIES_INFO,
+    [SPECIES_MOTHIM_SANDY] = MOTHIM_SPECIES_INFO,
+    [SPECIES_MOTHIM_TRASH] = MOTHIM_SPECIES_INFO,
 #endif //P_FAMILY_BURMY
 
 #if P_FAMILY_CHERUBI
@@ -391,7 +391,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_CHERUBI
 
 #if P_FAMILY_SHELLOS
-    [SPECIES_SHELLOS_EAST_SEA] =
+    [SPECIES_SHELLOS_EAST] =
     {
         .baseHP        = 76,
         .baseAttack    = 48,
@@ -451,10 +451,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sShellosLevelUpLearnset,
         .teachableLearnset = sShellosTeachableLearnset,
         .formSpeciesIdTable = sShellosFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_EAST_SEA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_GASTRODON_EAST}),
     },
 
-    [SPECIES_GASTRODON_EAST_SEA] =
+    [SPECIES_GASTRODON_EAST] =
     {
         .baseHP        = 111,
         .baseAttack    = 83,
@@ -767,6 +767,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Gible,
             gShinyOverworldPalette_Gible
         )
+        OVERWORLD_FEMALE(
+            sPicTable_GibleF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sGibleLevelUpLearnset,
         .teachableLearnset = sGibleTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 24, SPECIES_GABITE}),
@@ -832,6 +838,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Gabite,
             gShinyOverworldPalette_Gabite
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_GabiteF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sGabiteLevelUpLearnset,
         .teachableLearnset = sGabiteTeachableLearnset,
@@ -902,6 +914,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Garchomp,
             gShinyOverworldPalette_Garchomp
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_GarchompF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sGarchompLevelUpLearnset,
         .teachableLearnset = sGarchompTeachableLearnset,
@@ -1219,6 +1237,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Hippopotas,
             gShinyOverworldPalette_Hippopotas
         )
+        OVERWORLD_FEMALE(
+            sPicTable_HippopotasF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sHippopotasLevelUpLearnset,
         .teachableLearnset = sHippopotasTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_HIPPOWDON}),
@@ -1286,6 +1310,10 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Hippowdon,
             gShinyOverworldPalette_Hippowdon
+        )
+        OVERWORLD_PAL_FEMALE(
+            gOverworldPalette_HippowdonF,
+            gShinyOverworldPalette_HippowdonF
         )
         .levelUpLearnset = sHippowdonLevelUpLearnset,
         .teachableLearnset = sHippowdonTeachableLearnset,
@@ -1482,6 +1510,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Croagunk,
             gShinyOverworldPalette_Croagunk
         )
+        OVERWORLD_FEMALE(
+            sPicTable_CroagunkF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sCroagunkLevelUpLearnset,
         .teachableLearnset = sCroagunkTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_CHIBI_SHINGYOKU}),
@@ -1548,6 +1582,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Toxicroak,
             gShinyOverworldPalette_Toxicroak
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_ToxicroakF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sToxicroakLevelUpLearnset,
         .teachableLearnset = sToxicroakTeachableLearnset,
@@ -1680,6 +1720,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Finneon,
             gShinyOverworldPalette_Finneon
         )
+        OVERWORLD_FEMALE(
+            sPicTable_FinneonF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sFinneonLevelUpLearnset,
         .teachableLearnset = sFinneonTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 31, SPECIES_FEMALE_SHINGYOKU}),
@@ -1745,6 +1791,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Lumineon,
             gShinyOverworldPalette_Lumineon
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_LumineonF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sLumineonLevelUpLearnset,
         .teachableLearnset = sLumineonTeachableLearnset,
@@ -1814,6 +1866,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Snover,
             gShinyOverworldPalette_Snover
         )
+        OVERWORLD_FEMALE(
+            sPicTable_SnoverF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
+        )
         .levelUpLearnset = sSnoverLevelUpLearnset,
         .teachableLearnset = sSnoverTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_PLACEHOLD_ELIS}),
@@ -1879,6 +1937,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             gOverworldPalette_Abomasnow,
             gShinyOverworldPalette_Abomasnow
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_AbomasnowF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT
         )
         .levelUpLearnset = sAbomasnowLevelUpLearnset,
         .teachableLearnset = sAbomasnowTeachableLearnset,

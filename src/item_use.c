@@ -689,50 +689,6 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
     }
 }
 
-void ItemUseOutOfBattle_PokeFlute(u8 taskId)
-{
-    bool8 wokeSomeoneUp = FALSE;
-    u8 i;
-
-    for (i = 0; i < CalculatePlayerPartyCount(); i++)
-    {
-        if (!ExecuteTableBasedItemEffect(&gPlayerParty[i], ITEM_AWAKENING, i, 0))
-            wokeSomeoneUp = TRUE;
-    }
-
-    if (wokeSomeoneUp)
-    {
-        if (!gTasks[taskId].tUsingRegisteredKeyItem)
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_PlayedPokeFlute, Task_PlayPokeFlute);
-        else
-            DisplayItemMessageOnField(taskId, gText_PlayedPokeFlute, Task_PlayPokeFlute);
-    }
-    else
-    {
-        if (!gTasks[taskId].tUsingRegisteredKeyItem)
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_PlayedPokeFluteCatchy, CloseItemMessage);
-        else
-            DisplayItemMessageOnField(taskId, gText_PlayedPokeFluteCatchy, Task_CloseCantUseKeyItemMessage);
-    }
-}
-
-static void Task_PlayPokeFlute(u8 taskId)
-{
-    PlayFanfareByFanfareNum(FANFARE_RG_POKE_FLUTE);
-    gTasks[taskId].func = Task_DisplayPokeFluteMessage;
-}
-
-static void Task_DisplayPokeFluteMessage(u8 taskId)
-{
-    if (WaitFanfare(FALSE))
-    {
-        if (!gTasks[taskId].tUsingRegisteredKeyItem)
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeFluteAwakenedMon, CloseItemMessage);
-        else
-            DisplayItemMessageOnField(taskId, gText_PokeFluteAwakenedMon, Task_CloseCantUseKeyItemMessage);
-    }
-}
-
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 {
     sItemUseOnFieldCB = Task_AccessPokemonBoxLink;
@@ -1345,15 +1301,7 @@ void ItemUseInBattle_BagMenu(u8 taskId)
     else
     {
         PlaySE(SE_SELECT);
-        // Exclude key items like Poke Flute from being removed from the bag
-        if (ItemId_GetPocket(gSpecialVar_ItemId) != POCKET_KEY_ITEMS)
-            RemoveUsedItem();
-        else
-        {
-            CopyItemName(gSpecialVar_ItemId, gStringVar2);
-            StringExpandPlaceholders(gStringVar4, gText_PlayerUsedVar2);
-        }
-        if (!(B_TRY_CATCH_TRAINER_BALL >= GEN_4 && (ItemId_GetBattleUsage(gSpecialVar_ItemId) == EFFECT_ITEM_THROW_BALL) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
+        if (!ItemId_GetImportance(gSpecialVar_ItemId) && !(B_TRY_CATCH_TRAINER_BALL >= GEN_4 && (ItemId_GetBattleUsage(gSpecialVar_ItemId) == EFFECT_ITEM_THROW_BALL) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
             RemoveUsedItem();
         ScheduleBgCopyTilemapToVram(2);
         if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
@@ -1783,6 +1731,65 @@ void FieldUseFunc_VsSeeker(u8 taskId)
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 {
     Task_CloseCantUseKeyItemMessage(taskId);
+}
+
+static void Task_DisplayPokeFluteMessage(u8 taskId)
+{
+    if (WaitFanfare(FALSE))
+    {
+        if (gTasks[taskId].data[3] == 0)
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeFluteAwakenedMon, CloseItemMessage);
+        else
+            DisplayItemMessageOnField(taskId, gText_PokeFluteAwakenedMon, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
+static void Task_PlayPokeFlute(u8 taskId)
+{
+    PlayFanfareByFanfareNum(FANFARE_RG_POKE_FLUTE);
+    gTasks[taskId].func = Task_DisplayPokeFluteMessage;
+}
+
+void ItemUseOutOfBattle_PokeFlute(u8 taskId)
+{
+    bool32 wokeSomeoneUp = FALSE;
+    u32 i;
+
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        if (!ExecuteTableBasedItemEffect(&gPlayerParty[i], ITEM_AWAKENING, i, 0))
+            wokeSomeoneUp = TRUE;
+    }
+
+    if (wokeSomeoneUp)
+    {
+        if (gTasks[taskId].data[3] == 0)
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PlayedPokeFlute, Task_PlayPokeFlute);
+        else
+            DisplayItemMessageOnField(taskId, gText_PlayedPokeFlute, Task_PlayPokeFlute);
+    }
+    else
+    {
+        if (gTasks[taskId].data[3] == 0)
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PlayedPokeFluteCatchy, CloseItemMessage);
+        else
+            DisplayItemMessageOnField(taskId, gText_PlayedPokeFluteCatchy, Task_CloseCantUseKeyItemMessage);
+    }
+}
+
+static void ItemUseOnFieldCB_TownMap(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_RegionMap);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TownMap(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_TownMap;
+    gFieldCallback = FieldCB_UseItemOnField;
+    gBagMenu->newScreenCallback = CB2_ReturnToField;
+    Task_FadeAndCloseBagMenu(taskId);
 }
 
 #undef tUsingRegisteredKeyItem
