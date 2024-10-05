@@ -1737,10 +1737,6 @@
 	callnative BS_CheckPokeFlute
 	.endm
 
-	.macro waitfanfare
-	callnative BS_WaitFanfare
-	.endm
-
 @ various command changed to more readable macros
 	.macro cancelmultiturnmoves battler:req
 	various \battler, VARIOUS_CANCEL_MULTI_TURN_MOVES
@@ -2329,10 +2325,6 @@
 	.macro swapstats stat:req
 	various BS_ATTACKER, VARIOUS_SWAP_STATS
 	.byte \stat
-	.endm
-
-	.macro checkpokeflute battler:req
-	various \battler, VARIOUS_CHECK_POKEFLUTE
 	.endm
 
 @ helpful macros

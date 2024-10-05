@@ -211,7 +211,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sHShizuhaTeachableLearnset,
     },
 
-    [SPECIES_CHIBI_SHIZUHA_SANNIAN] =
+    [SPECIES_CHIBI_SHIZUHA_SANNI] =
     {
         .baseHP        = 60,
         .baseAttack    = 35,
@@ -264,10 +264,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .levelUpLearnset = sCShizuhaSannianLevelUpLearnset,
         .teachableLearnset = sCShizuhaSannianTeachableLearnset,
         .formSpeciesIdTable = sCShizuhaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA_SANNIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA_SANNI}),
     },
 
-    [SPECIES_NORMAL_SHIZUHA_SANNIAN] =
+    [SPECIES_NORMAL_SHIZUHA_SANNI] =
     {
         .baseHP        = 80,
         .baseAttack    = 50,
@@ -531,7 +531,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sDMinorikoTeachableLearnset,
     },
 
-    [SPECIES_CHIBI_MINORIKO_SANNIAN] =
+    [SPECIES_CHIBI_MINORIKO_SANNI] =
     {
         .baseHP        = 70,
         .baseAttack    = 35,
@@ -584,10 +584,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .levelUpLearnset = sCMinorikoSannianLevelUpLearnset,
         .teachableLearnset = sCMinorikoSannianTeachableLearnset,
         .formSpeciesIdTable = sCMinorikoFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO_SANNIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO_SANNI}),
     },
 
-    [SPECIES_NORMAL_MINORIKO_SANNIAN] =
+    [SPECIES_NORMAL_MINORIKO_SANNI] =
     {
         .baseHP        = 90,
         .baseAttack    = 50,
@@ -1303,7 +1303,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sDMomijiTeachableLearnset,
     },
 
-    [SPECIES_CHIBI_MOMIJI_SANNIAN] =
+    [SPECIES_CHIBI_MOMIJI_SANNI] =
     {
         .baseHP        = 60,
         .baseAttack    = 55,
@@ -1354,10 +1354,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         FOOTPRINT(CMomiji)
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI_SANNIAN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI_SANNI}),
     },
 
-    [SPECIES_NORMAL_MOMIJI_SANNIAN] =
+    [SPECIES_NORMAL_MOMIJI_SANNI] =
     {
         .baseHP        = 90,
         .baseAttack    = 80,
