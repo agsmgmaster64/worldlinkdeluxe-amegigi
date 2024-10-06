@@ -438,19 +438,27 @@
 #define METATILE_RG_Building_TV_On   0x061
 
 // gTileset_RG_General
-#define METATILE_RG_General_BlueCaveIndent     0x19B
-#define METATILE_RG_General_BlueCaveOpen       0x19C
-#define METATILE_RG_General_Door               0x03D
-#define METATILE_RG_General_MuddySlope_Frame0  0x22B
-#define METATILE_RG_General_MuddySlope_Frame1  0x22C
-#define METATILE_RG_General_MuddySlope_Frame2  0x22D
-#define METATILE_RG_General_MuddySlope_Frame3  0x22E
-#define METATILE_RG_General_RedCaveIndent      0x18B
-#define METATILE_RG_General_RedCaveOpen        0x18C
-#define METATILE_RG_General_SlidingDoubleDoor  0x15B
-#define METATILE_RG_General_SlidingSingleDoor  0x062
-#define METATILE_RG_General_YellowCaveIndent   0x193
-#define METATILE_RG_General_YellowCaveOpen     0x194
+#define METATILE_RG_General_BlueCaveIndent       0x19B
+#define METATILE_RG_General_BlueCaveOpen         0x19C
+#define METATILE_RG_General_Door                 0x03D
+#define METATILE_RG_General_Grass                0x001
+#define METATILE_RG_General_Grass_TreeLeft       0x00E
+#define METATILE_RG_General_Grass_TreeRight      0x00F
+#define METATILE_RG_General_LongGrass            0x02C
+#define METATILE_RG_General_LongGrass_Root       0x012
+#define METATILE_RG_General_MuddySlope_Frame0    0x22B
+#define METATILE_RG_General_MuddySlope_Frame1    0x22C
+#define METATILE_RG_General_MuddySlope_Frame2    0x22D
+#define METATILE_RG_General_MuddySlope_Frame3    0x22E
+#define METATILE_RG_General_RedCaveIndent        0x18B
+#define METATILE_RG_General_RedCaveOpen          0x18C
+#define METATILE_RG_General_SlidingDoubleDoor    0x15B
+#define METATILE_RG_General_SlidingSingleDoor    0x062
+#define METATILE_RG_General_TallGrass            0x00D
+#define METATILE_RG_General_TallGrass_TreeLeft   0x00B
+#define METATILE_RG_General_TallGrass_TreeRight  0x00C
+#define METATILE_RG_General_YellowCaveIndent     0x193
+#define METATILE_RG_General_YellowCaveOpen       0x194
 
 // gTileset_RG_PokemonCenter
 #define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Normal       0x2D0
