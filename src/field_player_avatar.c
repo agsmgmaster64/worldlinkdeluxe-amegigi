@@ -502,7 +502,6 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
 {
     struct PlayerAvatar *playerAvatar = &gPlayerAvatar;
     u8 collision;
-    u32 fieldMoveStatus; // qol_field_moves
 
     // Check for sideways stairs onto ice movement.
     switch (direction)
@@ -519,9 +518,9 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
 
     collision = CheckForPlayerAvatarCollision(direction);
     // Start qol_field_moves
-    fieldMoveStatus = CanUseWaterfall(direction);
-    if (fieldMoveStatus)
-        return UseWaterfall(gPlayerAvatar, fieldMoveStatus);
+    //fieldMoveStatus = CanUseWaterfall(direction);
+    //if (fieldMoveStatus)
+        //return UseWaterfall(gPlayerAvatar, fieldMoveStatus);
     // End qol_field_moves
 
     playerAvatar->flags |= PLAYER_AVATAR_FLAG_FORCED_MOVE;
@@ -797,14 +796,9 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-    u32 fieldMoveStatus; // qol_field_moves
 
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
-
-    fieldMoveStatus = CanUseSurf(x,y,collision);
-    if (fieldMoveStatus)
-        return UseSurf(fieldMoveStatus);
 
     if (ShouldJumpLedge(x, y, direction))
     {

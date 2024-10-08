@@ -14,7 +14,6 @@ void Task_SurfToolFieldEffect(u8 taskId);
 
 void FldEff_UseFlashTool(void);
 u32 CanUseFlash(void);
-void TryUseFlash(void);
 
 u32 CanUseWaterfall(u8);
 bool32 CanUseWaterfallTool(void);
@@ -46,7 +45,5 @@ enum FlyToolSource
 };
 
 // https://github.com/PokemonSanFran/pokeemerald/wiki/QoL-Field-Moves#developer-options
-// When QOL_NO_MESSAGING is enabled, when the player uses a Field Move automatically for the first time on a map, a message or animation does not appear.
-#define QOL_NO_MESSAGING FALSE
 
 #endif // GUARD_QOL_FIELD_MOVES_H

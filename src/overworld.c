@@ -1112,18 +1112,12 @@ bool32 Overworld_IsBikingAllowed(void)
 // Flash level of 8 is fully black
 void SetDefaultFlashLevel(void)
 {
-    // Start qol_field_moves
-    if (CanUseFlash() && QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_FLASH);
-   // End qol_field_moves
-
     if (!gMapHeader.cave)
         gSaveBlock1Ptr->flashLevel = 0;
     else if (FlagGet(FLAG_SYS_USE_FLASH))
         gSaveBlock1Ptr->flashLevel = 0;
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
-    TryUseFlash(); // qol_field_moves
 }
 
 void SetFlashLevel(s32 flashLevel)

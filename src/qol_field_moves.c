@@ -39,11 +39,6 @@ static void LockPlayerAndLoadMon(void);
 static void FieldCallback_UseFlyTool(void);
 static void Task_UseFlyTool(void);
 
-static void SetUpFieldMove_UseFlash(u32);
-static void UseFlash(u32 fieldMoveStatus);
-static void FieldCallback_UseFlashTool(void);
-static void FieldCallback_UseFlashMove(void);
-
 static void Task_UseWaterfallTool(u8);
 static bool8 IsPlayerFacingWaterfall(void);
 
@@ -133,7 +128,7 @@ void ReturnToFieldOrBagFromFlyTool(void)
 
 void ResetFlyTool(void)
 {
-    VarSet(VAR_FLY_TOOL_SOURCE,0);
+    VarSet(VAR_FLY_TOOL_SOURCE, FLY_SOURCE_MOVE);
 }
 
 // Surf
@@ -199,8 +194,6 @@ u32 UseSurf(u32 fieldMoveStatus)
     HideMapNamePopUpWindow();
     ForcePlayerToPerformMovementAction();
     LockPlayerAndLoadMon();
-    if (QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_SURF);
 
     if (FlagGet(FLAG_SYS_USE_SURF))
         ScriptContext_SetupScript(EventScript_UseSurfFieldEffect);
@@ -240,33 +233,6 @@ void PushBoulderFromScript(void)
 
 // Flash
 
-static void SetUpFieldMove_UseFlash(u32 fieldMoveStatus)
-{
-    gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-
-    if (fieldMoveStatus == FIELD_MOVE_POKEMON)
-        gPostMenuFieldCallback = FieldCallback_UseFlashMove;
-    else if (fieldMoveStatus == FIELD_MOVE_TOOL)
-        gPostMenuFieldCallback = FieldCallback_UseFlashTool;
-}
-
-static void FieldCallback_UseFlashTool(void)
-{
-    u8 taskId = CreateUseToolTask();
-    gTasks[taskId].data[8] = (uintptr_t)FldEff_UseFlashTool >> 16;
-    gTasks[taskId].data[9] = (uintptr_t)FldEff_UseFlashTool;
-}
-
-static void FieldCallback_UseFlashMove(void)
-{
-    u8 taskId = CreateFieldMoveTask();
-    PartyHasMonLearnsKnowsFieldMove(MOVE_FLASH);
-    gFieldEffectArguments[0] = gSpecialVar_Result;
-
-    gTasks[taskId].data[8] = (uintptr_t)FldEff_UseFlash >> 16;
-    gTasks[taskId].data[9] = (uintptr_t)FldEff_UseFlash;
-}
-
 void FldEff_UseFlashTool(void)
 {
     HideMapNamePopUpWindow();
@@ -290,20 +256,6 @@ u32 CanUseFlash(void)
         return monHasMove ? FIELD_MOVE_POKEMON : FIELD_MOVE_TOOL;
     }
     return FIELD_MOVE_FAIL;
-}
-
-static void UseFlash(u32 fieldMoveStatus)
-{
-    HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
-    SetUpFieldMove_UseFlash(fieldMoveStatus);
-}
-
-void TryUseFlash(void)
-{
-    u32 fieldMoveStatus = CanUseFlash();
-    if (fieldMoveStatus)
-        UseFlash(fieldMoveStatus);
 }
 
 //Waterfall
@@ -354,8 +306,6 @@ u32 UseWaterfall(struct PlayerAvatar playerAvatar, u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
     LockPlayerAndLoadMon();
-    if (QOL_NO_MESSAGING)
-        FlagSet(FLAG_SYS_USE_WATERFALL);
 
     playerAvatar.runningState = MOVING;
 
