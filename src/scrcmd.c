@@ -2651,19 +2651,23 @@ bool8 ScrCmd_returnqueststate(struct ScriptContext *ctx)
 {
     u8 questId = VarGet(ScriptReadByte(ctx));
 
-    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_INACTIVE)){
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_INACTIVE))
+    {
         gSpecialVar_Result = FLAG_GET_INACTIVE;
         return FALSE;
     }
-    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE)){
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
+    {
         gSpecialVar_Result = FLAG_GET_ACTIVE;
         return FALSE;
     }
-    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD)){
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
+    {
         gSpecialVar_Result = FLAG_GET_REWARD;
         return FALSE;
     }
-    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED)){
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
+    {
         gSpecialVar_Result = FLAG_GET_COMPLETED;
         return FALSE;
     }
@@ -2680,10 +2684,10 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     switch (caseId)
     {
         case QUEST_MENU_COMPLETE_QUEST:
-            QuestMenu_GetSetSubquestState(parentId ,FLAG_SET_COMPLETED,childId);
+            QuestMenu_GetSetSubquestState(parentId ,FLAG_SET_COMPLETED, childId);
             break;
         case QUEST_MENU_CHECK_COMPLETE:
-            if (QuestMenu_GetSetSubquestState(parentId ,FLAG_GET_COMPLETED,childId))
+            if (QuestMenu_GetSetSubquestState(parentId, FLAG_GET_COMPLETED, childId))
                 gSpecialVar_Result = TRUE;
             else
                 gSpecialVar_Result = FALSE;
