@@ -441,6 +441,7 @@
 #define METATILE_RG_General_BlueCaveIndent       0x19B
 #define METATILE_RG_General_BlueCaveOpen         0x19C
 #define METATILE_RG_General_Door                 0x03D
+#define METATILE_RG_General_DoorAlt              0x03C
 #define METATILE_RG_General_Grass                0x001
 #define METATILE_RG_General_Grass_TreeLeft       0x00E
 #define METATILE_RG_General_Grass_TreeRight      0x00F

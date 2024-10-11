@@ -11,10 +11,12 @@
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_AQUA",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 23,
       "y": 19,
@@ -28,6 +30,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 23,
       "y": 10,
@@ -41,6 +44,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 3,
       "y": 13,
@@ -54,6 +58,7 @@
       "flag": "FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SUBMARINE_SHADOW",
       "x": 19,
       "y": 20,
@@ -67,6 +72,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_B2F_SUBMARINE_SHADOW"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 7,
       "y": 5,
@@ -80,6 +86,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 13,
       "y": 5,
@@ -185,5 +192,7 @@
       "script": "AquaHideout_B2F_EventScript_MattNoticePlayer"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }
