@@ -2571,6 +2571,21 @@
 	callnative ScriptHideItemDescription
 	.endm
 
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will stop the flow of time.
+	.macro pausefakertc
+	callnative Script_PauseFakeRtc
+	.endm
+
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will resume the flow of time.
+	.macro resumefakertc
+	callnative Script_ResumeFakeRtc
+	.endm
+
+	@ When OW_USE_FAKE_RTC and OW_FLAG_PAUSE_TIME is assigned, this macro will resume the flow of time if paused, and stop the flow of time otherwise.
+	.macro togglefakertc
+	callnative Script_ToggleFakeRtc
+	.endm
+
 	@ Remove all of specified item from the player's bag and return the number of removed items to VAR_RESULT
 	.macro removeallitem itemId:req
 	callnative ScrCmd_removeallitem
