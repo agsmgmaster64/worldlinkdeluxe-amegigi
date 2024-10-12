@@ -283,7 +283,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 28,
+      "x": 30,
       "y": 6,
       "elevation": 3,
       "item": "ITEM_GREEN_UFO",

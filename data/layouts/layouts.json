@@ -693,7 +693,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_Lab",
+      "secondary_tileset": "gTileset_RG_Lab",
       "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin"
     },
@@ -1101,7 +1101,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_RG_DepartmentStore",
       "border_filepath": "data/layouts/RustboroCity_DevonCorp_1F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_DevonCorp_1F/map.bin"
     },
@@ -1617,7 +1617,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
       "border_filepath": "data/layouts/PetalburgWoods/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgWoods/map.bin"
     },
@@ -3632,7 +3632,7 @@
       "height": 37,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MtPyre_Summit/border.bin",
       "blockdata_filepath": "data/layouts/MtPyre_Summit/map.bin"

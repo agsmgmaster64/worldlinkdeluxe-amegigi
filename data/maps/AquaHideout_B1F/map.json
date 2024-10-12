@@ -11,10 +11,12 @@
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_AQUA",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 28,
       "y": 16,
@@ -28,6 +30,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 6,
       "y": 6,
@@ -41,6 +44,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 29,
       "y": 12,
@@ -54,6 +58,7 @@
       "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 20,
       "y": 18,
@@ -67,6 +72,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_GRUNTS"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 15,
       "y": 9,
@@ -80,6 +86,7 @@
       "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 16,
       "y": 9,
@@ -93,6 +100,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 15,
       "y": 10,
@@ -106,6 +114,7 @@
       "flag": "FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 16,
       "y": 10,
@@ -119,6 +128,7 @@
       "flag": "FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 28,
       "y": 21,
@@ -309,6 +319,10 @@
       "dest_warp_id": "19"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

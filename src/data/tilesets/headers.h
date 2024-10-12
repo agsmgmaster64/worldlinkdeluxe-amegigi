@@ -990,3 +990,25 @@ const struct Tileset gTileset_RG_FanClubDaycare =
     .metatileAttributes = gMetatileAttributes_RG_FanClubDaycare,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RG_Lab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_Lab,
+    .palettes = gTilesetPalettes_RG_Lab,
+    .metatiles = gMetatiles_RG_Lab,
+    .metatileAttributes = gMetatileAttributes_RG_Lab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_DepartmentStore =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_DepartmentStore,
+    .palettes = gTilesetPalettes_RG_DepartmentStore,
+    .metatiles = gMetatiles_RG_DepartmentStore,
+    .metatileAttributes = gMetatileAttributes_RG_DepartmentStore,
+    .callback = NULL,
+};

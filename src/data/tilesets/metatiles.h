@@ -252,3 +252,9 @@ const u32 gMetatileAttributes_RG_School[] = INCBIN_U32("data/tilesets/frlg/secon
 
 const u16 gMetatiles_RG_FanClubDaycare[] = INCBIN_U16("data/tilesets/frlg/secondary/fan_club_daycare/metatiles.bin");
 const u32 gMetatileAttributes_RG_FanClubDaycare[] = INCBIN_U32("data/tilesets/frlg/secondary/fan_club_daycare/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_Lab[] = INCBIN_U16("data/tilesets/frlg/secondary/lab/metatiles.bin");
+const u32 gMetatileAttributes_RG_Lab[] = INCBIN_U32("data/tilesets/frlg/secondary/lab/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_DepartmentStore[] = INCBIN_U16("data/tilesets/frlg/secondary/department_store/metatiles.bin");
+const u32 gMetatileAttributes_RG_DepartmentStore[] = INCBIN_U32("data/tilesets/frlg/secondary/department_store/metatile_attributes.bin");
