@@ -2044,6 +2044,7 @@ const struct Item gItemsInfo[] =
             "A glass flute that\n"
             "awakens sleeping\n"
             "Puppets."),
+        .notConsumed = TRUE,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -2062,6 +2063,7 @@ const struct Item gItemsInfo[] =
             "A glass flute that\n"
             "snaps Puppets\n"
             "out of confusion."),
+        .notConsumed = TRUE,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2080,6 +2082,7 @@ const struct Item gItemsInfo[] =
             "A glass flute that\n"
             "snaps Puppets\n"
             "out of attraction."),
+        .notConsumed = TRUE,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -2101,6 +2104,7 @@ const struct Item gItemsInfo[] =
             "A glass flute that\n"
             "keeps away wild\n"
             "Puppets."),
+        .notConsumed = TRUE,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_BlackWhiteFlute,
@@ -2117,6 +2121,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A glass flute that\n"
             "lures wild Puppets."),
+        .notConsumed = TRUE,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_BlackWhiteFlute,
