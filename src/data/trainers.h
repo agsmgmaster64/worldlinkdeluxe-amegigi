@@ -11528,6 +11528,8 @@ F_TRAINER_FEMALE |
 #line 4862
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender = 
+#line 4863
+F_TRAINER_FEMALE | 
 #line 4864
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 4865
@@ -26574,16 +26576,16 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_1] =
     {
 #line 11064
-        .trainerName = _("Haley"),
+        .trainerName = _("Fairy"),
 #line 11065
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11066
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
 #line 11067
 F_TRAINER_FEMALE | 
 #line 11068
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11069
         .doubleBattle = FALSE,
 #line 11070
@@ -26703,16 +26705,16 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_2] =
     {
 #line 11115
-        .trainerName = _("HALEY"),
+        .trainerName = _("Fairy"),
 #line 11116
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11117
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
 #line 11118
 F_TRAINER_FEMALE | 
 #line 11119
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11120
         .doubleBattle = FALSE,
 #line 11121
@@ -26722,7 +26724,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11123
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11125
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -26732,7 +26734,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11127
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_CHIBI_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11129
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -26746,16 +26748,16 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_3] =
     {
 #line 11132
-        .trainerName = _("HALEY"),
+        .trainerName = _("Fairy"),
 #line 11133
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11134
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
 #line 11135
 F_TRAINER_FEMALE | 
 #line 11136
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11137
         .doubleBattle = FALSE,
 #line 11138
@@ -26765,7 +26767,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11140
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11142
             .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -26775,7 +26777,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11144
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_TECH_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11146
             .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -26789,16 +26791,16 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_4] =
     {
 #line 11149
-        .trainerName = _("HALEY"),
+        .trainerName = _("Fairy"),
 #line 11150
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11151
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
 #line 11152
 F_TRAINER_FEMALE | 
 #line 11153
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11154
         .doubleBattle = FALSE,
 #line 11155
@@ -26808,7 +26810,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11157
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11159
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -26818,7 +26820,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11161
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_TECH_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11163
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -26832,16 +26834,16 @@ F_TRAINER_FEMALE |
     [TRAINER_HALEY_5] =
     {
 #line 11166
-        .trainerName = _("HALEY"),
+        .trainerName = _("Fairy"),
 #line 11167
-        .trainerClass = TRAINER_CLASS_LASS,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11168
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
 #line 11169
 F_TRAINER_FEMALE | 
 #line 11170
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11171
         .doubleBattle = FALSE,
 #line 11172
@@ -26851,7 +26853,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11174
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11176
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -26861,7 +26863,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11178
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_TECH_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11180
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -26871,7 +26873,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11182
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_BLACK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11184
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -27303,14 +27305,16 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_1] =
     {
 #line 11357
-        .trainerName = _("James"),
+        .trainerName = _("Fairy"),
 #line 11358
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11359
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
+#line 11360
+F_TRAINER_FEMALE | 
 #line 11361
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11362
         .doubleBattle = FALSE,
 #line 11363
@@ -27344,14 +27348,16 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_2] =
     {
 #line 11374
-        .trainerName = _("JAMES"),
+        .trainerName = _("Fairy"),
 #line 11375
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11376
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
+#line 11377
+F_TRAINER_FEMALE | 
 #line 11378
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11379
         .doubleBattle = FALSE,
 #line 11380
@@ -27361,7 +27367,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11382
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_WHITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11384
             .iv = TRAINER_PARTY_IVS(1, 1, 1, 1, 1, 1),
@@ -27375,14 +27381,16 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_3] =
     {
 #line 11387
-        .trainerName = _("JAMES"),
+        .trainerName = _("Fairy"),
 #line 11388
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11389
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
+#line 11390
+F_TRAINER_FEMALE | 
 #line 11391
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11392
         .doubleBattle = FALSE,
 #line 11393
@@ -27392,7 +27400,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11395
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_WHITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11397
             .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -27402,7 +27410,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11399
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_BLACK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11401
             .iv = TRAINER_PARTY_IVS(2, 2, 2, 2, 2, 2),
@@ -27416,14 +27424,16 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_4] =
     {
 #line 11404
-        .trainerName = _("JAMES"),
+        .trainerName = _("Fairy"),
 #line 11405
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11406
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
+#line 11407
+F_TRAINER_FEMALE | 
 #line 11408
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11409
         .doubleBattle = FALSE,
 #line 11410
@@ -27433,7 +27443,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11412
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_WHITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11414
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -27443,7 +27453,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11416
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_BLACK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11418
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -27453,7 +27463,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11420
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11422
             .iv = TRAINER_PARTY_IVS(3, 3, 3, 3, 3, 3),
@@ -27467,14 +27477,16 @@ F_TRAINER_FEMALE |
     [TRAINER_JAMES_5] =
     {
 #line 11425
-        .trainerName = _("JAMES"),
+        .trainerName = _("Fairy"),
 #line 11426
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_SUNFLOWER_FAIRY,
 #line 11427
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerPic = TRAINER_PIC_SUNFLOWER_FAIRY,
         .encounterMusic_gender = 
+#line 11428
+F_TRAINER_FEMALE | 
 #line 11429
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_FAIRY,
 #line 11430
         .doubleBattle = FALSE,
 #line 11431
@@ -27484,7 +27496,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11433
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_WHITE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11435
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -27494,7 +27506,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11437
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_LILY_BLACK,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11439
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -27504,7 +27516,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11441
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_DAIYOUSEI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11443
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),
@@ -27514,7 +27526,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 11445
-            .species = SPECIES_GOLIATH,
+            .species = SPECIES_NORMAL_CIRNO,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11447
             .iv = TRAINER_PARTY_IVS(4, 4, 4, 4, 4, 4),

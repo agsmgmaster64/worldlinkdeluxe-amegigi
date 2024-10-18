@@ -699,6 +699,15 @@ $(MID_SUBDIR)/mus_zgs_agtlp.s: %.s: %.mid
 $(MID_SUBDIR)/mus_dd_skuller_drill_missile.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_dd_skuller_drill_missile
 
+$(MID_SUBDIR)/mus_zgs_encounter_fairy.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G143
+
+$(MID_SUBDIR)/mus_zgs_encounter_tengu.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G_zgs_main
+
+$(MID_SUBDIR)/mus_zgs_encounter_gym_leader.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G144
+
 $(MID_SUBDIR)/se_wld_faint.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G_sfx_rs_1 -P5
 

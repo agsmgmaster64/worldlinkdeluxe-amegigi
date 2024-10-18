@@ -11061,11 +11061,11 @@ Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===
-Name: Haley
-Class: Lass
-Pic: Lass
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
 Gender: Female
-Music: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
@@ -11112,74 +11112,74 @@ Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HALEY_2 ===
-Name: HALEY
-Class: Lass
-Pic: Lass
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
 Gender: Female
-Music: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Chibi Daiyousei
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Goliath
+Chibi Cirno
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_HALEY_3 ===
-Name: HALEY
-Class: Lass
-Pic: Lass
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
 Gender: Female
-Music: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Daiyousei
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Goliath
+Tech Cirno
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_HALEY_4 ===
-Name: HALEY
-Class: Lass
-Pic: Lass
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
 Gender: Female
-Music: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Daiyousei
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Goliath
+Tech Cirno
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_HALEY_5 ===
-Name: HALEY
-Class: Lass
-Pic: Lass
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
 Gender: Female
-Music: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Daiyousei
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Goliath
+Tech Cirno
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Goliath
+Normal Lily Black
 Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -11354,11 +11354,11 @@ Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_1 ===
-Name: James
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
+Gender: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
@@ -11371,78 +11371,78 @@ Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_2 ===
-Name: JAMES
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
+Gender: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Lily White
 Level: 27
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_JAMES_3 ===
-Name: JAMES
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
+Gender: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Lily White
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Goliath
+Normal Lily Black
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_JAMES_4 ===
-Name: JAMES
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
+Gender: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Lily White
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Goliath
+Normal Lily Black
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Goliath
+Normal Daiyousei
 Level: 31
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_JAMES_5 ===
-Name: JAMES
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: Fairy
+Class: Sunflower Fairy
+Pic: Sunflower Fairy
+Gender: Female
+Music: Fairy
 Double Battle: No
 AI: Check Bad Move
 
-Goliath
+Normal Lily White
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Goliath
+Normal Lily Black
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Goliath
+Normal Daiyousei
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Goliath
+Normal Cirno
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 

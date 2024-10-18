@@ -310,16 +310,16 @@ Route104_Text_BillyPostBattle:
 Route104_Text_HaleyIntro:
 	.string "Should I…\n"
 	.string "Or shouldn't I?\p"
-	.string "Okay, sure, I will battle!$"
+	.string "You know what? I'd win anyways.$"
 
 Route104_Text_HaleyDefeat:
-	.string "I shouldn't have battled…$"
+	.string "I underestimated your power…$"
 
 Route104_Text_HaleyPostBattle:
-	.string "If you're faced with a decision and\n"
-	.string "you let someone else choose for you,\l"
-	.string "you will regret it, however things\l"
-	.string "turn out.$"
+	.string "Maybe I shouldn't be so overconfident\n"
+	.string "with the team I have.\p"
+	.string "It definitely isn't strong enough\l"
+	.string "to beat you before.$"
 
 Route104_Text_HaleyRegister1:
 	.string "You're strong, but should I register\n"

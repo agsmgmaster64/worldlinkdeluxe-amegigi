@@ -170,6 +170,7 @@ const u32 gObjectEventPic_TuberMSwimming[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_Mom[] = INCBIN_U32("graphics/object_events/pics/people/mom.4bpp");
 const u32 gObjectEventPic_HakosBaelz[] = INCBIN_U32("graphics/object_events/pics/people/hakos_baelz.4bpp");
 const u16 gObjectEventPal_HakosBaelz[] = INCBIN_U16("graphics/object_events/palettes/hakos_baelz.gbapal");
+const u32 gObjectEventPic_SunflowerFairy[] = INCBIN_U32("graphics/object_events/pics/people/sunflower_fairy.4bpp");
 const u16 gObjectEventPal_Kyogre[] = INCBIN_U16("graphics/object_events/palettes/kyogre.gbapal");
 const u16 gObjectEventPal_KyogreReflection[] = INCBIN_U16("graphics/object_events/palettes/kyogre_reflection.gbapal");
 const u16 gObjectEventPal_Groudon[] = INCBIN_U16("graphics/object_events/palettes/groudon.gbapal");

@@ -843,154 +843,156 @@ PetalburgWoods_Text_ImOutOfPokeBalls:
 # 422 "data/maps/PetalburgWoods/scripts.pory"
 PetalburgWoods_Text_InstantlyPopularWithBugPokemon:
 # 423 "data/maps/PetalburgWoods/scripts.pory"
-	.string "If you take BUG POKéMON to school,\n"
+	.string "You, trainer!\n"
 # 424 "data/maps/PetalburgWoods/scripts.pory"
-	.string "you get to be instantly popular!$"
+	.string "Bet I can beat you with my team of\l"
 # 425 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "fairies!$"
 # 426 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_CantBePopularIfILose:
+
 # 427 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I can't be popular if I lose.$"
+PetalburgWoods_Text_CantBePopularIfILose:
 # 428 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "I lost the bet.$"
 # 429 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_PeopleRespectYou:
+
 # 430 "data/maps/PetalburgWoods/scripts.pory"
-	.string "If you have a big BUG POKéMON,\n"
+PetalburgWoods_Text_PeopleRespectYou:
 # 431 "data/maps/PetalburgWoods/scripts.pory"
-	.string "people respect you for it.$"
+	.string "If you have a big BUG POKéMON,\n"
 # 432 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "people respect you for it.$"
 # 433 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_IWantRematch1:
+
 # 434 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I want a rematch when my BUG\n"
+PetalburgWoods_Text_IWantRematch1:
 # 435 "data/maps/PetalburgWoods/scripts.pory"
-	.string "POKéMON grow up!\p"
+	.string "I want a rematch when my BUG\n"
 # 436 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I'm registering you in my POKéNAV!$"
-# 437 "data/maps/PetalburgWoods/scripts.pory"
-
-# 438 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_IWantRematch2:
-# 439 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I want a rematch when my BUG \n"
-# 440 "data/maps/PetalburgWoods/scripts.pory"
 	.string "POKéMON grow up!\p"
-# 441 "data/maps/PetalburgWoods/scripts.pory"
+# 437 "data/maps/PetalburgWoods/scripts.pory"
 	.string "I'm registering you in my POKéNAV!$"
+# 438 "data/maps/PetalburgWoods/scripts.pory"
+
+# 439 "data/maps/PetalburgWoods/scripts.pory"
+PetalburgWoods_Text_IWantRematch2:
+# 440 "data/maps/PetalburgWoods/scripts.pory"
+	.string "I want a rematch when my BUG \n"
+# 441 "data/maps/PetalburgWoods/scripts.pory"
+	.string "POKéMON grow up!\p"
 # 442 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "I'm registering you in my POKéNAV!$"
 # 443 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_MyPokemonHaveGrown:
+
 # 444 "data/maps/PetalburgWoods/scripts.pory"
-	.string "My BUG POKéMON have grown.\n"
+PetalburgWoods_Text_MyPokemonHaveGrown:
 # 445 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I'll be popular again.$"
+	.string "My BUG POKéMON have grown.\n"
 # 446 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "I'll be popular again.$"
 # 447 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_CantBePopularIfLose:
+
 # 448 "data/maps/PetalburgWoods/scripts.pory"
-	.string "I can't be popular if I lose.$"
+PetalburgWoods_Text_CantBePopularIfLose:
 # 449 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "I can't be popular if I lose.$"
 # 450 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_IveBeenTrainingHard:
+
 # 451 "data/maps/PetalburgWoods/scripts.pory"
-	.string "You get to be popular if you have\n"
+PetalburgWoods_Text_IveBeenTrainingHard:
 # 452 "data/maps/PetalburgWoods/scripts.pory"
-	.string "strong POKéMON, right?\l"
+	.string "You get to be popular if you have\n"
 # 453 "data/maps/PetalburgWoods/scripts.pory"
-	.string "So, I've been training hard.$"
+	.string "strong POKéMON, right?\l"
 # 454 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "So, I've been training hard.$"
 # 455 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_StayOutOfTallGrass:
+
 # 456 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Yo, there!\n"
+PetalburgWoods_Text_StayOutOfTallGrass:
 # 457 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Your POKéMON doing okay?\p"
+	.string "Yo, there!\n"
 # 458 "data/maps/PetalburgWoods/scripts.pory"
-	.string "If your POKéMON are weak and you want\n"
+	.string "Your POKéMON doing okay?\p"
 # 459 "data/maps/PetalburgWoods/scripts.pory"
-	.string "to avoid battles, you should stay out\l"
+	.string "If your POKéMON are weak and you want\n"
 # 460 "data/maps/PetalburgWoods/scripts.pory"
-	.string "of tall grass.$"
+	.string "to avoid battles, you should stay out\l"
 # 461 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "of tall grass.$"
 # 462 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_HiddenItemsExplanation:
+
 # 463 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Sometimes, there are things on the\n"
+PetalburgWoods_Text_HiddenItemsExplanation:
 # 464 "data/maps/PetalburgWoods/scripts.pory"
-	.string "ground even if you can't see them.\p"
+	.string "Sometimes, there are things on the\n"
 # 465 "data/maps/PetalburgWoods/scripts.pory"
-	.string "That's why I always check where I'm\n"
+	.string "ground even if you can't see them.\p"
 # 466 "data/maps/PetalburgWoods/scripts.pory"
-	.string "walking.$"
+	.string "That's why I always check where I'm\n"
 # 467 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "walking.$"
 # 468 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_TryUsingThisItem:
+
 # 469 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Oh, neat!\n"
+PetalburgWoods_Text_TryUsingThisItem:
 # 470 "data/maps/PetalburgWoods/scripts.pory"
-	.string "That's the BADGE from RUSTBORO GYM!\p"
+	.string "Oh, neat!\n"
 # 471 "data/maps/PetalburgWoods/scripts.pory"
-	.string "You must be a TRAINER.\n"
+	.string "That's the BADGE from RUSTBORO GYM!\p"
 # 472 "data/maps/PetalburgWoods/scripts.pory"
-	.string "You should try using this item.$"
+	.string "You must be a TRAINER.\n"
 # 473 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "You should try using this item.$"
 # 474 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_MiracleSeedExplanation:
+
 # 475 "data/maps/PetalburgWoods/scripts.pory"
-	.string "It's a MIRACLE SEED.\n"
+PetalburgWoods_Text_MiracleSeedExplanation:
 # 476 "data/maps/PetalburgWoods/scripts.pory"
-	.string "If a POKéMON holds that item, its\l"
+	.string "It's a MIRACLE SEED.\n"
 # 477 "data/maps/PetalburgWoods/scripts.pory"
-	.string "GRASS-type moves become stronger.\p"
+	.string "If a POKéMON holds that item, its\l"
 # 478 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Besides MIRACLE SEED, I think there are\n"
+	.string "GRASS-type moves become stronger.\p"
 # 479 "data/maps/PetalburgWoods/scripts.pory"
-	.string "other convenient items for POKéMON\l"
+	.string "Besides MIRACLE SEED, I think there are\n"
 # 480 "data/maps/PetalburgWoods/scripts.pory"
-	.string "to hold.$"
+	.string "other convenient items for POKéMON\l"
 # 481 "data/maps/PetalburgWoods/scripts.pory"
-
+	.string "to hold.$"
 # 482 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_TrainerTipsExperience:
-# 483 "data/maps/PetalburgWoods/scripts.pory"
-	.string "TRAINER TIPS\p"
-# 484 "data/maps/PetalburgWoods/scripts.pory"
-	.string "Any POKéMON that appears even once\n"
-# 485 "data/maps/PetalburgWoods/scripts.pory"
-	.string "in a battle is awarded EXP Points.\p"
-# 486 "data/maps/PetalburgWoods/scripts.pory"
-	.string "To raise a weak POKéMON, put it at the\n"
-# 487 "data/maps/PetalburgWoods/scripts.pory"
-	.string "left of the team list.\p"
-# 488 "data/maps/PetalburgWoods/scripts.pory"
-	.string "As soon as a battle starts, switch it\n"
-# 489 "data/maps/PetalburgWoods/scripts.pory"
-	.string "out. It will earn EXP Points without\l"
-# 490 "data/maps/PetalburgWoods/scripts.pory"
-	.string "being exposed to any harm.$"
-# 491 "data/maps/PetalburgWoods/scripts.pory"
 
-# 492 "data/maps/PetalburgWoods/scripts.pory"
-PetalburgWoods_Text_TrainerTipsPP:
-# 493 "data/maps/PetalburgWoods/scripts.pory"
+# 483 "data/maps/PetalburgWoods/scripts.pory"
+PetalburgWoods_Text_TrainerTipsExperience:
+# 484 "data/maps/PetalburgWoods/scripts.pory"
 	.string "TRAINER TIPS\p"
+# 485 "data/maps/PetalburgWoods/scripts.pory"
+	.string "Any POKéMON that appears even once\n"
+# 486 "data/maps/PetalburgWoods/scripts.pory"
+	.string "in a battle is awarded EXP Points.\p"
+# 487 "data/maps/PetalburgWoods/scripts.pory"
+	.string "To raise a weak POKéMON, put it at the\n"
+# 488 "data/maps/PetalburgWoods/scripts.pory"
+	.string "left of the team list.\p"
+# 489 "data/maps/PetalburgWoods/scripts.pory"
+	.string "As soon as a battle starts, switch it\n"
+# 490 "data/maps/PetalburgWoods/scripts.pory"
+	.string "out. It will earn EXP Points without\l"
+# 491 "data/maps/PetalburgWoods/scripts.pory"
+	.string "being exposed to any harm.$"
+# 492 "data/maps/PetalburgWoods/scripts.pory"
+
+# 493 "data/maps/PetalburgWoods/scripts.pory"
+PetalburgWoods_Text_TrainerTipsPP:
 # 494 "data/maps/PetalburgWoods/scripts.pory"
-	.string "In addition to Hit Points (HP), POKéMON\n"
+	.string "TRAINER TIPS\p"
 # 495 "data/maps/PetalburgWoods/scripts.pory"
-	.string "have Power Points (PP) that are used to\l"
+	.string "In addition to Hit Points (HP), POKéMON\n"
 # 496 "data/maps/PetalburgWoods/scripts.pory"
-	.string "make moves during battle.\p"
+	.string "have Power Points (PP) that are used to\l"
 # 497 "data/maps/PetalburgWoods/scripts.pory"
-	.string "If a POKéMON runs out of PP, it must be\n"
+	.string "make moves during battle.\p"
 # 498 "data/maps/PetalburgWoods/scripts.pory"
+	.string "If a POKéMON runs out of PP, it must be\n"
+# 499 "data/maps/PetalburgWoods/scripts.pory"
 	.string "taken to a POKéMON CENTER.$"

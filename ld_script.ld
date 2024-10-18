@@ -1243,6 +1243,9 @@ SECTIONS {
         sound/songs/midi/mus_zgs_dark_blow_hole.o(.rodata);
         sound/songs/midi/mus_zgs_agtlp.o(.rodata);
         sound/songs/midi/mus_dd_skuller_drill_missile.o(.rodata);
+        sound/songs/midi/mus_zgs_encounter_fairy.o(.rodata);
+        sound/songs/midi/mus_zgs_encounter_tengu.o(.rodata);
+        sound/songs/midi/mus_zgs_encounter_gym_leader.o(.rodata);
     } > ROM =0
 
     lib_rodata :

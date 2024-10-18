@@ -582,6 +582,9 @@ gSongTable::
 	song mus_zgs_dark_blow_hole, 0, 0
 	song mus_zgs_agtlp, 0, 0
 	song mus_dd_skuller_drill_missile, 0, 0
+	song mus_zgs_encounter_fairy, 0, 0
+	song mus_zgs_encounter_tengu, 0, 0
+	song mus_zgs_encounter_gym_leader, 0, 0
 
 	.align 2
 dummy_song_header:

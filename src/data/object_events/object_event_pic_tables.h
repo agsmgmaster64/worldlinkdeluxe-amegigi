@@ -1395,3 +1395,7 @@ static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
 static const struct SpriteFrameImage sPicTable_HakosBaelz[] = {
     overworld_ascending_frames(gObjectEventPic_HakosBaelz, 4, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_SunflowerFairy[] = {
+    overworld_ascending_frames(gObjectEventPic_SunflowerFairy, 2, 4),
+};

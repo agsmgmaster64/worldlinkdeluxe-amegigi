@@ -110,7 +110,9 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_GIGI_MURIN            93
 #define TRAINER_PIC_DOISE                 94
-#define TRAINER_PIC_COUNT                 95
+#define TRAINER_PIC_MISCHIEVOUS_FAIRY     95
+#define TRAINER_PIC_SUNFLOWER_FAIRY       96
+#define TRAINER_PIC_COUNT                 97
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_RENKO                  0
@@ -355,7 +357,9 @@
 #define TRAINER_CLASS_RS_PROTAG      0x41
 #define TRAINER_CLASS_HOLOLIVE_MEMBER 0x42
 #define TRAINER_CLASS_THE_GUY        0x43
-#define TRAINER_CLASS_COUNT          0x44
+#define TRAINER_CLASS_MISCHIEVOUS_FAIRY 0x44
+#define TRAINER_CLASS_SUNFLOWER_FAIRY 0x45
+#define TRAINER_CLASS_COUNT          0x46
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
@@ -371,6 +375,8 @@
 #define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+#define TRAINER_ENCOUNTER_MUSIC_FAIRY       14
+#define TRAINER_ENCOUNTER_MUSIC_TENGU       15
 
 #define F_TRAINER_FEMALE (1 << 7)
 

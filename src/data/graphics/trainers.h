@@ -286,6 +286,12 @@ const u32 gTrainerPalette_GigiMurin[] = INCBIN_U32("graphics/trainers/front_pics
 const u32 gTrainerFrontPic_Doise[] = INCBIN_U32("graphics/trainers/front_pics/doise.4bpp.lz");
 const u32 gTrainerPalette_Doise[] = INCBIN_U32("graphics/trainers/front_pics/doise.gbapal.lz");
 
+const u32 gTrainerFrontPic_MischievousFairy[] = INCBIN_U32("graphics/trainers/front_pics/mischievous_fairy.4bpp.lz");
+const u32 gTrainerPalette_MischievousFairy[] = INCBIN_U32("graphics/trainers/front_pics/mischievous_fairy.gbapal.lz");
+
+const u32 gTrainerFrontPic_SunflowerFairy[] = INCBIN_U32("graphics/trainers/front_pics/sunflower_fairy.4bpp.lz");
+const u32 gTrainerPalette_SunflowerFairy[] = INCBIN_U32("graphics/trainers/front_pics/sunflower_fairy.gbapal.lz");
+
 const u8 gTrainerBackPic_Renko[] = INCBIN_U8("graphics/trainers/back_pics/renko.4bpp");
 const u8 gTrainerBackPic_Maribel[] = INCBIN_U8("graphics/trainers/back_pics/maribel.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -412,6 +418,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_GIGI_MURIN, gTrainerFrontPic_GigiMurin, gTrainerPalette_GigiMurin),
     TRAINER_SPRITE(TRAINER_PIC_DOISE, gTrainerFrontPic_Doise, gTrainerPalette_Doise),
+    TRAINER_SPRITE(TRAINER_PIC_MISCHIEVOUS_FAIRY, gTrainerFrontPic_MischievousFairy, gTrainerPalette_MischievousFairy),
+    TRAINER_SPRITE(TRAINER_PIC_SUNFLOWER_FAIRY, gTrainerFrontPic_SunflowerFairy, gTrainerPalette_SunflowerFairy),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

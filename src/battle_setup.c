@@ -1703,6 +1703,9 @@ void PlayTrainerEncounterMusic(void)
         case TRAINER_ENCOUNTER_MUSIC_GIRL:
             music = MUS_ENCOUNTER_GIRL;
             break;
+        case TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS:
+            music = MUS_ENCOUNTER_SUSPICIOUS;
+            break;
         case TRAINER_ENCOUNTER_MUSIC_INTENSE:
             music = MUS_ENCOUNTER_INTENSE;
             break;
@@ -1732,6 +1735,12 @@ void PlayTrainerEncounterMusic(void)
             break;
         case TRAINER_ENCOUNTER_MUSIC_RICH:
             music = MUS_ENCOUNTER_RICH;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_FAIRY:
+            music = MUS_ZGS_ENCOUNTER_FAIRY;
+            break;
+        case TRAINER_ENCOUNTER_MUSIC_TENGU:
+            music = MUS_ZGS_ENCOUNTER_TENGU;
             break;
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;
