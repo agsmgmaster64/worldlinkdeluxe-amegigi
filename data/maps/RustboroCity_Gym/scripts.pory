@@ -4,8 +4,6 @@ RustboroCity_Gym_MapScripts::
 
 RustboroCity_Gym_EventScript_Roxanne::
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
 	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
 	release
@@ -185,7 +183,8 @@ RustboroCity_Gym_Text_RoxanneIntro:
 	.string "was brought here in such short notice\l"
 	.string "from The Noise, I will prove myself\l"
 	.string "to you just who I am exactly.\p"
-	.string "battle, and with which POKéMON?$"
+	.string "Now, let's see who is the real\n"
+	.string "faker here!{PLAY_BGM}{MUS_ZGS_ENCOUNTER_GYM_LEADER}$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
 	.string "Well I'll be…\n"
