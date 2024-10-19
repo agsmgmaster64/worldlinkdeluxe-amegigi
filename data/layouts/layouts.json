@@ -1568,8 +1568,8 @@
       "height": 33,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_Cave",
       "border_filepath": "data/layouts/DesertRuins/border.bin",
       "blockdata_filepath": "data/layouts/DesertRuins/map.bin"
     },
@@ -4604,7 +4604,7 @@
       "height": 10,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_RG_Building",
       "secondary_tileset": "gTileset_BattleTent",
       "border_filepath": "data/layouts/BattleTentLobby/border.bin",
       "blockdata_filepath": "data/layouts/BattleTentLobby/map.bin"
