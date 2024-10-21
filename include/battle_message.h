@@ -72,10 +72,6 @@
 #define B_TXT_DEF_NAME 0x39
 #define B_TXT_DEF_TEAM1 0x3A // Your/The opposing
 #define B_TXT_DEF_TEAM2 0x3B // your/the opposing
-#define B_TXT_ATK_NAME_WITH_PREFIX_DECAP 0x3C
-#define B_TXT_DEF_NAME_WITH_PREFIX_DECAP 0x3D
-#define B_TXT_EFF_NAME_WITH_PREFIX_DECAP 0x3E // EFF = short for gEffectBank
-#define B_TXT_SCR_ACTIVE_NAME_WITH_PREFIX_DECAP 0x3F
 // #define B_TXT_SELECTION_NAME2 0x3D no Illusion check - removed
 #define B_TXT_ATK_NAME_WITH_PREFIX2 0x3E //lowercase
 #define B_TXT_DEF_NAME_WITH_PREFIX2 0x3F //lowercase
