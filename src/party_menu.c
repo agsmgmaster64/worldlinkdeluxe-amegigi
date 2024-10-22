@@ -2959,9 +2959,9 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
-        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE
+        /*if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE
          || GetMonData(&mons[1], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MISC);
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MISC);*/
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
