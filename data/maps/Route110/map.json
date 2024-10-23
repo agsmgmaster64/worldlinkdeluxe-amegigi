@@ -62,8 +62,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 14,
-      "y": 69,
+      "x": 13,
+      "y": 68,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -216,8 +216,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 34,
-      "y": 40,
+      "x": 32,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -286,8 +286,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 30,
-      "y": 69,
+      "x": 9,
+      "y": 67,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -412,8 +412,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 34,
-      "y": 54,
+      "x": 37,
+      "y": 55,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -426,8 +426,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 34,
-      "y": 54,
+      "x": 37,
+      "y": 55,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -440,8 +440,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 33,
-      "y": 69,
+      "x": 13,
+      "y": 71,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -482,7 +482,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 10,
+      "x": 7,
       "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -497,7 +497,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 36,
-      "y": 40,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 1,
@@ -601,7 +601,7 @@
     },
     {
       "type": "trigger",
-      "x": 33,
+      "x": 37,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -610,7 +610,7 @@
     },
     {
       "type": "trigger",
-      "x": 34,
+      "x": 37,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -619,7 +619,7 @@
     },
     {
       "type": "trigger",
-      "x": 35,
+      "x": 37,
       "y": 56,
       "elevation": 3,
       "var": "VAR_ROUTE110_STATE",
@@ -736,8 +736,8 @@
     },
     {
       "type": "sign",
-      "x": 37,
-      "y": 70,
+      "x": 12,
+      "y": 68,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrainerTipsRegisterItems"
@@ -790,8 +790,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 37,
-      "y": 67,
+      "x": 34,
+      "y": 63,
       "elevation": 3,
       "item": "ITEM_FULL_HEAL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL",

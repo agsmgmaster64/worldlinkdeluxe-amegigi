@@ -848,6 +848,17 @@ const struct Tileset gTileset_RG_SeafoamIslands =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_RG_MtEmber =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_MtEmber,
+    .palettes = gTilesetPalettes_RG_MtEmber,
+    .metatiles = gMetatiles_RG_MtEmber,
+    .metatileAttributes = gMetatileAttributes_RG_MtEmber,
+    .callback = InitTilesetAnim_RG_MtEmber,
+};
+
 const struct Tileset gTileset_RG_Condominiums =
 {
     .isCompressed = TRUE,

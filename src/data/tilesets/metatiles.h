@@ -226,6 +226,9 @@ const u32 gMetatileAttributes_RG_Cave[] = INCBIN_U32("data/tilesets/frlg/seconda
 const u16 gMetatiles_RG_SeafoamIslands[] = INCBIN_U16("data/tilesets/frlg/secondary/seafoam_islands/metatiles.bin");
 const u32 gMetatileAttributes_RG_SeafoamIslands[] = INCBIN_U32("data/tilesets/frlg/secondary/seafoam_islands/metatile_attributes.bin");
 
+const u16 gMetatiles_RG_MtEmber[] = INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/metatiles.bin");
+const u32 gMetatileAttributes_RG_MtEmber[] = INCBIN_U32("data/tilesets/frlg/secondary/mt_ember/metatile_attributes.bin");
+
 const u16 gMetatiles_RG_GameCorner[] = INCBIN_U16("data/tilesets/frlg/secondary/game_corner/metatiles.bin");
 const u32 gMetatileAttributes_RG_GameCorner[] = INCBIN_U32("data/tilesets/frlg/secondary/game_corner/metatile_attributes.bin");
 

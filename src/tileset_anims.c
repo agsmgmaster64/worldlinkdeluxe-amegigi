@@ -239,6 +239,18 @@ static const u16 *const sTilesetAnims_RG_SilphCo_Fountain[] = {
     sTilesetAnims_RG_SilphCo_Fountain_Frame3
 };
 
+static const u16 sTilesetAnims_RG_MtEmber_Steam_Frame0[] = INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/anim/steam/0.4bpp");
+static const u16 sTilesetAnims_RG_MtEmber_Steam_Frame1[] = INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/anim/steam/1.4bpp");
+static const u16 sTilesetAnims_RG_MtEmber_Steam_Frame2[] = INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/anim/steam/2.4bpp");
+static const u16 sTilesetAnims_RG_MtEmber_Steam_Frame3[] = INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/anim/steam/3.4bpp");
+
+static const u16 *const sTilesetAnims_RG_MtEmber_Steam[] = {
+    sTilesetAnims_RG_MtEmber_Steam_Frame0,
+    sTilesetAnims_RG_MtEmber_Steam_Frame1,
+    sTilesetAnims_RG_MtEmber_Steam_Frame2,
+    sTilesetAnims_RG_MtEmber_Steam_Frame3
+};
+
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/1.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame2[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/2.4bpp");
@@ -826,6 +838,24 @@ void InitTilesetAnim_RG_SilphCo(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 160;
     sSecondaryTilesetAnimCallback = TilesetAnim_RG_SilphCo;
+}
+
+static void QueueAnimTiles_RG_MtEmber_Steam(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_RG_MtEmber_Steam[timer % ARRAY_COUNT(sTilesetAnims_RG_MtEmber_Steam)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(896)), 8 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_RG_MtEmber(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_RG_MtEmber_Steam(timer / 16);
+}
+
+void InitTilesetAnim_RG_MtEmber(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_RG_MtEmber;
 }
 
 void InitTilesetAnim_Petalburg(void)

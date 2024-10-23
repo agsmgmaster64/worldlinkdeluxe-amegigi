@@ -1679,6 +1679,28 @@ const u16 gTilesetPalettes_RG_SeafoamIslands[][16] =
     INCBIN_U16("data/tilesets/frlg/secondary/seafoam_islands/palettes/15.gbapal"),
 };
 
+const u32 gTilesetTiles_RG_MtEmber[] = INCBIN_U32("data/tilesets/frlg/secondary/mt_ember/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RG_MtEmber[][16] =
+{
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/15.gbapal"),
+};
+
 // Shared by SilphCo
 const u32 gTilesetTiles_RG_Condominiums[] = INCBIN_U32("data/tilesets/frlg/secondary/condominiums/tiles.4bpp.lz");
 
