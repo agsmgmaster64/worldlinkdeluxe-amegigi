@@ -4871,7 +4871,15 @@ u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
         }
         break;
     case MOVE_TUTOR_EGG_MOVES:
-        eggSpecies = GetEggSpecies(species);
+        switch (species)
+        {
+        case SPECIES_AKI_SISTERS:
+            eggSpecies = species;
+            break;
+        default:
+            eggSpecies = GetEggSpecies(species);
+            break;
+        }
         eggMoveLearnset = GetSpeciesEggMoves(eggSpecies);
 
         for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
@@ -4966,7 +4974,15 @@ u8 GetNumberOfRelearnableMoves(struct Pokemon *mon)
         }
         break;
     case MOVE_TUTOR_EGG_MOVES:
-        eggSpecies = GetEggSpecies(species);
+        switch (species)
+        {
+        case SPECIES_AKI_SISTERS:
+            eggSpecies = species;
+            break;
+        default:
+            eggSpecies = GetEggSpecies(species);
+            break;
+        }
         eggMoveLearnset = GetSpeciesEggMoves(eggSpecies);
 
         for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)

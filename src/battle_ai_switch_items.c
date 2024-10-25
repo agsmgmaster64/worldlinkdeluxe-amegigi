@@ -376,7 +376,6 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLORA_ABSORB;
     }
-    }
     else
     {
         return FALSE;
