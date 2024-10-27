@@ -22174,7 +22174,7 @@ static const u16 sTaurosPaldeaBlazeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sTaurosPaldeaAquaBreedTeachableLearnset[] = {
+static const u16 sTaurosPaldeaAquaTeachableLearnset[] = {
     MOVE_WATER_PULSE,
     MOVE_BULK_UP,
     MOVE_RAIN_DANCE,
