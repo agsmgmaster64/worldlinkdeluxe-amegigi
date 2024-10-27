@@ -1078,8 +1078,8 @@
 #define SPECIES_CHIBI_REISEN_OLD                        1019
 #define SPECIES_NORMAL_REISEN_OLD                       1020
 #define SPECIES_EXTRA_REISEN_OLD                        1021
-#define SPECIES_PIKACHU_WORLD_CAP                       1022
-#define SPECIES_ATTACK_NITORI_SPIKY_EARED               1023
+#define SPECIES_PIKACHU_WORLD                           1022
+#define SPECIES_PICHU_SPIKY_EARED                       1023
 #define SPECIES_UNOWN_B                                 1024
 #define SPECIES_UNOWN_C                                 1025
 #define SPECIES_UNOWN_D                                 1026

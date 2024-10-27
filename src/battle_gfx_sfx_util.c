@@ -978,7 +978,7 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u32 transformType,
 
         if (GetBattlerSide(battlerAtk) == B_SIDE_PLAYER)
         {
-            if (B_TRANSFORM_SHINY >= GEN_4 && trackEnemyPersonality)
+            if (B_TRANSFORM_SHINY >= GEN_4 && trackEnemyPersonality && !megaEvo)
             {
                 personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerDef]], MON_DATA_PERSONALITY);
                 isShiny = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerDef]], MON_DATA_IS_SHINY);
@@ -996,7 +996,7 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u32 transformType,
         }
         else
         {
-            if (B_TRANSFORM_SHINY >= GEN_4 && trackEnemyPersonality)
+            if (B_TRANSFORM_SHINY >= GEN_4 && trackEnemyPersonality && !megaEvo)
             {
                 personalityValue = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerDef]], MON_DATA_PERSONALITY);
                 isShiny = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerDef]], MON_DATA_IS_SHINY);
