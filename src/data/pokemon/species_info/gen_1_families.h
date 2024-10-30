@@ -3403,22 +3403,24 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerScale = 369,
         .trainerOffset = 7,
         .frontPic = gMonFrontPic_Rhyperior,
-        .frontPicFemale = gMonFrontPic_RhyperiorF,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_Rhyperior,
         .frontAnimId = ANIM_V_SHAKE_TWICE,
         .backPic = gMonBackPic_Rhyperior,
-        .backPicFemale = gMonBackPic_RhyperiorF,
         .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_V_SHAKE,
         .palette = gMonPalette_Rhyperior,
         .shinyPalette = gMonShinyPalette_Rhyperior,
         .iconSprite = gMonIcon_Rhyperior,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_RhyperiorF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_RhyperiorF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(2, 10, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Rhyperior)
         OVERWORLD(
@@ -3549,9 +3551,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerScale = 334,
         .trainerOffset = 4,
         .frontPic = gMonFrontPic_Tangrowth,
-        .frontPicFemale = gMonFrontPic_TangrowthF,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_Tangrowth,
         .frontAnimId = ANIM_H_STRETCH,
@@ -3563,6 +3563,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .shinyPalette = gMonShinyPalette_Tangrowth,
         .iconSprite = gMonIcon_Tangrowth,
         .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_TangrowthF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 9, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Tangrowth)
         OVERWORLD(
@@ -4585,26 +4589,28 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .trainerScale = 256,
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Eevee,
-        .frontPicFemale = gMonFrontPic_EeveeF,
         .frontPicSize = MON_COORDS_SIZE(40, 48),
-        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
         .frontPicYOffset = 11,
         .frontAnimFrames = sAnims_Eevee,
         .frontAnimId = ANIM_V_STRETCH,
         .backPic = gMonBackPic_Eevee,
-        .backPicFemale = gMonBackPic_EeveeF,
         .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
         .backPicYOffset = 10,
         .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
         .palette = gMonPalette_Eevee,
         .shinyPalette = gMonShinyPalette_Eevee,
         .iconSprite = gMonIcon_EeveePartner,
         .iconPalIndex = 2,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_EeveeF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(40, 48),
+        .backPicFemale = gMonBackPic_EeveeF,
+        .backPicSizeFemale = MON_COORDS_SIZE(56, 48),
     #if P_CUSTOM_GENDER_DIFF_ICONS == TRUE
         .iconSpriteFemale = gMonIcon_EeveePartnerF,
         .iconPalIndexFemale = 2,
     #endif
+#endif //P_GENDER_DIFFERENCES
         SHADOW(-2, 2, SHADOW_SIZE_S)
         FOOTPRINT(Eevee)
         OVERWORLD(
