@@ -41,9 +41,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CReimu,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 2,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CReimu,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_CReimu,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -52,6 +53,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_CReimu,
         .iconSprite = gMonIcon_CReimu,
         .iconPalIndex = 1,
+        SHADOW(-1, 12, SHADOW_SIZE_M)
         FOOTPRINT(CReimu)
         .levelUpLearnset = sCReimuLevelUpLearnset,
         .teachableLearnset = sCReimuTeachableLearnset,
@@ -102,6 +104,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Reimu,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Reimu,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -110,6 +113,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_Reimu,
         .iconSprite = gMonIcon_Reimu,
         .iconPalIndex = 1,
+        SHADOW(3, 13, SHADOW_SIZE_L)
         FOOTPRINT(Reimu)
         .levelUpLearnset = sReimuLevelUpLearnset,
         .teachableLearnset = sReimuTeachableLearnset,
