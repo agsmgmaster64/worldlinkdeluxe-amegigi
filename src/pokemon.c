@@ -112,8 +112,8 @@ static const struct CombinedMove sCombinedMoves[2] =
 // Assigns all Hoenn Dex Indexes to a National Dex Index
 static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
-    HOENN_TO_NATIONAL(CHIBI_REIMU),
-    HOENN_TO_NATIONAL(NORMAL_REIMU),
+    HOENN_TO_NATIONAL(CHIBI_NAZRIN),
+    HOENN_TO_NATIONAL(NORMAL_NAZRIN),
 };
 
 const struct SpindaSpot gSpindaSpotGraphics[] =
@@ -3996,6 +3996,13 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
                 break;
             case EVO_ITEM_HOLD:
                 if (heldItem == evolutions[i].param)
+                {
+                    targetSpecies = evolutions[i].targetSpecies;
+                    consumeItem = TRUE;
+                }
+                break;
+            case EVO_ITEM_LEVEL:
+                if (heldItem == evolutions[i].param && IsMonPastEvolutionLevel(mon))
                 {
                     targetSpecies = evolutions[i].targetSpecies;
                     consumeItem = TRUE;

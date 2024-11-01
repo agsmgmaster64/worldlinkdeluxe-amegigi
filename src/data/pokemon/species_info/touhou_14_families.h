@@ -471,7 +471,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CWakasagihime,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 7,
+        .frontPicYOffset = 6,
         .frontAnimFrames = sAnims_CWakasagihime,
         .frontAnimId = ANIM_V_JUMPS_H_JUMPS,
         .backPic = gMonBackPic_CWakasagihime,
@@ -482,6 +482,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .shinyPalette = gMonShinyPalette_CWakasagihime,
         .iconSprite = gMonIcon_CWakasagihime,
         .iconPalIndex = 0,
+        SHADOW(-2, 3, SHADOW_SIZE_M)
         FOOTPRINT(CWakasagihime)
         .levelUpLearnset = sCWakasagihimeLevelUpLearnset,
         .teachableLearnset = sCWakasagihimeTeachableLearnset,
@@ -528,9 +529,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Wakasagihime,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Wakasagihime,
         .frontAnimId = ANIM_H_SLIDE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_Wakasagihime,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -539,6 +541,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .shinyPalette = gMonShinyPalette_Wakasagihime,
         .iconSprite = gMonIcon_Wakasagihime,
         .iconPalIndex = 0,
+        SHADOW(0, 10, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Wakasagihime)
         .levelUpLearnset = sWakasagihimeLevelUpLearnset,
         .teachableLearnset = sWakasagihimeTeachableLearnset,

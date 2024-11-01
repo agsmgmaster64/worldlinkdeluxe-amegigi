@@ -515,7 +515,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_RUN_AWAY, ABILITY_NATURAL_CURE },
+        .abilities = { ABILITY_RUN_AWAY, ABILITY_NATURAL_CURE, ABILITY_FRIEND_GUARD },
         .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .speciesName = _("CDaiyousei"),
@@ -537,16 +537,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CDaiyousei,
-        .frontAnimId = ANIM_RISING_WOBBLE,
-        .enemyMonElevation = 4,
+        .frontAnimId = ANIM_ZIGZAG_FAST,
+        .enemyMonElevation = 6,
         .backPic = gMonBackPic_CDaiyousei,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_H_SHAKE,
         .palette = gMonPalette_CDaiyousei,
         .shinyPalette = gMonShinyPalette_CDaiyousei,
         .iconSprite = gMonIcon_CDaiyousei,
         .iconPalIndex = 0,
+        SHADOW(0, 15, SHADOW_SIZE_M)
         FOOTPRINT(CDaiyousei)
         .levelUpLearnset = sCDaiyouseiLevelUpLearnset,
         .teachableLearnset = sCDaiyouseiTeachableLearnset,
@@ -575,7 +576,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE, ABILITY_FRIEND_GUARD },
         .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .speciesName = _("Daiyousei"),
@@ -597,15 +598,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Daiyousei,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_H_SHAKE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Daiyousei,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Daiyousei,
         .shinyPalette = gMonShinyPalette_Daiyousei,
         .iconSprite = gMonIcon_Daiyousei,
         .iconPalIndex = 0,
+        SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Daiyousei)
         .levelUpLearnset = sDaiyouseiLevelUpLearnset,
         .teachableLearnset = sDaiyouseiTeachableLearnset,
@@ -628,7 +631,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE, ABILITY_FRIEND_GUARD },
         .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .speciesName = _("ADaiyousei"),
@@ -650,15 +653,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_ADaiyousei,
-        .frontAnimId = ANIM_H_SLIDE_WOBBLE,
+        .frontAnimId = ANIM_H_SHAKE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_ADaiyousei,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_ADaiyousei,
         .shinyPalette = gMonShinyPalette_ADaiyousei,
         .iconSprite = gMonIcon_ADaiyousei,
         .iconPalIndex = 0,
+        SHADOW(3, 13, SHADOW_SIZE_L)
         FOOTPRINT(ADaiyousei)
         .levelUpLearnset = sADaiyouseiLevelUpLearnset,
         .teachableLearnset = sADaiyouseiTeachableLearnset,
@@ -681,7 +686,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NATURAL_CURE, ABILITY_FRIEND_GUARD },
         .sourceGame = SOURCE_EOSD,
         .noFlip = TRUE,
         .speciesName = _("DDaiyousei"),
@@ -703,15 +708,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_DDaiyousei,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_H_SLIDE_SLOW,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_DDaiyousei,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_NONE,
+        .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_DDaiyousei,
         .shinyPalette = gMonShinyPalette_DDaiyousei,
         .iconSprite = gMonIcon_DDaiyousei,
         .iconPalIndex = 0,
+        SHADOW(-2, 12, SHADOW_SIZE_L)
         FOOTPRINT(DDaiyousei)
         .levelUpLearnset = sDDaiyouseiLevelUpLearnset,
         .teachableLearnset = sDDaiyouseiTeachableLearnset,
@@ -758,6 +765,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CCirno,
         .frontAnimId = ANIM_V_JUMPS_SMALL,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_CCirno,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -766,6 +774,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_CCirno,
         .iconSprite = gMonIcon_CCirno,
         .iconPalIndex = 1,
+        SHADOW(2, 11, SHADOW_SIZE_M)
         FOOTPRINT(CCirno)
         OVERWORLD(
             sPicTable_CCirno,
@@ -826,7 +835,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Cirno,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .enemyMonElevation = 6,
         .backPic = gMonBackPic_Cirno,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -835,6 +844,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_Cirno,
         .iconSprite = gMonIcon_Cirno,
         .iconPalIndex = 1,
+        SHADOW(0, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Cirno)
         OVERWORLD(
             sPicTable_Cirno,
@@ -888,7 +898,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SCirno,
         .frontAnimId = ANIM_FRONT_FLIP,
-        .enemyMonElevation = 7,
+        .enemyMonElevation = 9,
         .backPic = gMonBackPic_SCirno,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -897,6 +907,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_SCirno,
         .iconSprite = gMonIcon_SCirno,
         .iconPalIndex = 1,
+        SHADOW(0, 18, SHADOW_SIZE_L)
         FOOTPRINT(SCirno)
         OVERWORLD(
             sPicTable_SCirno,
@@ -952,6 +963,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TCirno,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_TCirno,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -960,6 +972,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_TCirno,
         .iconSprite = gMonIcon_TCirno,
         .iconPalIndex = 1,
+        SHADOW(4, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(TCirno)
         OVERWORLD(
             sPicTable_TCirno,
@@ -1066,8 +1079,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CRumia,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .frontAnimId = ANIM_SHAKE_GLOW_BLACK_SLOW,
+        .enemyMonElevation = 9,
         .backPic = gMonBackPic_CRumia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1076,6 +1089,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_CRumia,
         .iconSprite = gMonIcon_CRumia,
         .iconPalIndex = 1,
+        SHADOW(0, 18, SHADOW_SIZE_L)
         FOOTPRINT(CRumia)
         .levelUpLearnset = sCRumiaLevelUpLearnset,
         .teachableLearnset = sCRumiaTeachableLearnset,
@@ -1126,8 +1140,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Rumia,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .frontAnimId = ANIM_SHAKE_GLOW_BLACK_SLOW,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_Rumia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1136,6 +1150,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_Rumia,
         .iconSprite = gMonIcon_Rumia,
         .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Rumia)
         .levelUpLearnset = sRumiaLevelUpLearnset,
         .teachableLearnset = sRumiaTeachableLearnset,
@@ -1180,7 +1195,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_ARumia,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_SHAKE_GLOW_BLACK_SLOW,
         .enemyMonElevation = 6,
         .backPic = gMonBackPic_ARumia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
@@ -1190,6 +1205,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_ARumia,
         .iconSprite = gMonIcon_ARumia,
         .iconPalIndex = 1,
+        SHADOW(0, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(ARumia)
         .levelUpLearnset = sARumiaLevelUpLearnset,
         .teachableLearnset = sRumiaTeachableLearnset,
@@ -1235,7 +1251,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_SRumia,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .frontAnimId = ANIM_SHAKE_GLOW_BLACK_SLOW,
         .enemyMonElevation = 5,
         .backPic = gMonBackPic_SRumia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
@@ -1245,6 +1261,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_SRumia,
         .iconSprite = gMonIcon_SRumia,
         .iconPalIndex = 1,
+        SHADOW(-3, 14, SHADOW_SIZE_L)
         FOOTPRINT(SRumia)
         .levelUpLearnset = sSRumiaLevelUpLearnset,
         .teachableLearnset = sSRumiaTeachableLearnset,

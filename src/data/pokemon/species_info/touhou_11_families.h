@@ -271,6 +271,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_CYamame,
         .iconSprite = gMonIcon_CYamame,
         .iconPalIndex = 2,
+        NO_SHADOW
         FOOTPRINT(CYamame)
         .levelUpLearnset = sCYamameLevelUpLearnset,
         .teachableLearnset = sCYamameTeachableLearnset,
