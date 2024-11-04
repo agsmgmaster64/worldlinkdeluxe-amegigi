@@ -10138,23 +10138,6 @@ static void Cmd_various(void)
         gBattleMoveDamage = gMovesInfo[gCurrentMove].argument;
         break;
     }
-    case VARIOUS_TRY_HIT_SWITCH_TARGET:
-    {
-        VARIOUS_ARGS(const u8 *failInstr);
-        if (IsBattlerAlive(gBattlerAttacker)
-         && IsBattlerAlive(gBattlerTarget)
-         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-         && TARGET_TURN_DAMAGED)
-        {
-            gBattleScripting.switchCase = B_SWITCH_HIT;
-            gBattlescriptCurrInstr = cmd->nextInstr;
-        }
-        else
-        {
-            gBattlescriptCurrInstr = cmd->failInstr;
-        }
-        return;
-    }
     case VARIOUS_TRY_AUTOTOMIZE:
     {
         VARIOUS_ARGS(const u8 *failInstr);
@@ -11082,65 +11065,6 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
             return;
         }
-    case VARIOUS_CHECK_POKEFLUTE:
-    {
-        VARIOUS_ARGS();
-        u32 monToCheck = 0;
-        u32 status;
-        u16 species;
-        u8 abilityNum;
-
-        gBattleCommunication[MULTISTRING_CHOOSER] = 0;
-        for (i = 0; i < gBattlersCount; i++)
-        {
-            if (GetBattlerAbility(i) != ABILITY_SOUNDPROOF)
-            {
-                gBattleMons[i].status1 &= ~STATUS1_SLEEP;
-                gBattleMons[i].status2 &= ~STATUS2_NIGHTMARE;
-
-            }
-        }
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
-            abilityNum = GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM);
-            status = GetMonData(&gPlayerParty[i], MON_DATA_STATUS);
-            if (species != SPECIES_NONE
-             && species != SPECIES_EGG
-             && status & AILMENT_FNT
-             && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
-                monToCheck |= (1 << i);
-        }
-        if (monToCheck)
-        {
-            battler = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
-            status = 0;
-            BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
-            MarkBattlerForControllerExec(battler);
-            gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-        }
-        monToCheck = 0;
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES_OR_EGG);
-            abilityNum = GetMonData(&gEnemyParty[i], MON_DATA_ABILITY_NUM);
-            status = GetMonData(&gEnemyParty[i], MON_DATA_STATUS);
-
-            if (species != SPECIES_NONE
-             && species != SPECIES_EGG
-             && status & AILMENT_FNT
-             && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
-                monToCheck |= (1 << i);
-        }
-        if (monToCheck)
-        {
-            battler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
-            status = 0;
-            BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_STATUS_BATTLE, monToCheck, 4, &status);
-            MarkBattlerForControllerExec(battler);
-            gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-        }
-    }
     } // End of switch (cmd->id)
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -17446,6 +17370,26 @@ void BS_JumpIfBlockedBySoundproof(void)
     else
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+}
+
+void BS_TryHitSwitchTarget(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+
+    if (IsBattlerAlive(gBattlerAttacker)
+     && IsBattlerAlive(gBattlerTarget)
+     && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+     && TARGET_TURN_DAMAGED
+     && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT
+     /*&& GetBattlerAbility(gBattlerTarget) != ABILITY_GUARD_DOG*/)
+    {
+        gBattleScripting.switchCase = B_SWITCH_HIT;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
     }
 }
 
