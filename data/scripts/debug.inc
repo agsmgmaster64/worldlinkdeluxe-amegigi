@@ -286,8 +286,8 @@ Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined:
 
 Debug_EventScript_Script_6::
 	lockall
-	startquest QUEST_CHAMPION
-	releaseall
+	callnative StartNewPokeballCaseUI
+	waitstate
 	end
 
 Debug_EventScript_Script_7::

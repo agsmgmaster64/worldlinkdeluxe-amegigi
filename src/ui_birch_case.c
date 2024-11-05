@@ -86,10 +86,10 @@ enum Colors
 };
 static const u8 sMenuWindowFontColors[][3] = 
 {
-    [FONT_BLACK]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
-    [FONT_WHITE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,  TEXT_COLOR_DARK_GRAY},
-    [FONT_RED]   = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_RED,        TEXT_COLOR_LIGHT_GRAY},
-    [FONT_BLUE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_BLUE,       TEXT_COLOR_LIGHT_GRAY},
+    [FONT_BLACK]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,  TEXT_COLOR_DARK_GRAY},
+    [FONT_WHITE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
+    [FONT_RED]   = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_RED,        TEXT_COLOR_DARK_GRAY},
+    [FONT_BLUE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_BLUE,       TEXT_COLOR_DARK_GRAY},
 };
 
 
@@ -111,7 +111,8 @@ enum BallPositions
     BALL_BOTTOM_SECOND,
 };
 
-struct MonChoiceData{ // This is the format used to define a mon, everything left out will default to 0 and be blank or use the in game defaults
+struct MonChoiceData // This is the format used to define a mon, everything left out will default to 0 and be blank or use the in game defaults
+{
     u16 species; // Mon Species ID
     u8 level;   // Mon Level 5
     u16 item;   // Held item, just ITEM_POTION
@@ -124,7 +125,7 @@ struct MonChoiceData{ // This is the format used to define a mon, everything lef
     u16 moves[4]; // use format {MOVE_FIRE_BLAST, MOVE_SHEER_COLD, MOVE_NONE, MOVE_NONE}
     bool8 ggMaxFactor;      // only work in Expansion set to 0 otherwise or leave blank
     u8 teraType;            // only work in Expansion set to 0 otherwise or leave blank
-    bool8 isShinyExpansion; // only work in Expansion set to 0 otherwise or leave blank
+    bool8 isShiny; // only work in Expansion set to 0 otherwise or leave blank
 };
 
 //
@@ -132,17 +133,17 @@ struct MonChoiceData{ // This is the format used to define a mon, everything lef
 //
 static const struct MonChoiceData sStarterChoices[9] = 
 {
-    [BALL_TOP_FIRST]        = {SPECIES_MUDKIP, 5, ITEM_POTION, BALL_NET, NATURE_JOLLY, 1, MON_MALE, {255, 255, 0, 0, 0, 0}, {31, 31, 31, 31, 31, 31}, {MOVE_FIRE_BLAST, MOVE_SHEER_COLD, MOVE_WATER_GUN, MOVE_THUNDER}, 0, 0, 0},
-    [BALL_TOP_SECOND]       = {SPECIES_TREECKO, 5},
-    [BALL_MIDDLE_FIRST]     = {SPECIES_TORCHIC, 5},
+    [BALL_TOP_FIRST]        = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_SECOND]       = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_THIRD]        = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_FOURTH]       = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
 
-    [BALL_TOP_THIRD]        = {SPECIES_CHIKORITA, 5},
-    [BALL_TOP_FOURTH]       = {SPECIES_NONE, 5},
-    [BALL_MIDDLE_THIRD]     = {SPECIES_CYNDAQUIL, 5},
+    [BALL_MIDDLE_FIRST]     = {SPECIES_CHIBI_SANAE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_MIDDLE_SECOND]    = {SPECIES_CHIBI_REISEN, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_MIDDLE_THIRD]     = {SPECIES_CHIBI_ALICE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
 
-    [BALL_MIDDLE_SECOND]    = {SPECIES_BULBASAUR, 5},
-    [BALL_BOTTOM_FIRST]     = {SPECIES_CHARMANDER, 5},
-    [BALL_BOTTOM_SECOND]    = {SPECIES_NONE, 5},
+    [BALL_BOTTOM_FIRST]     = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_BOTTOM_SECOND]    = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
 };
 
 //==========EWRAM==========//
@@ -470,7 +471,7 @@ static void BirchCase_GiveMon() // Function that calls the GiveMon function pull
                 sStarterChoices[sBirchCaseDataPtr->handPosition].nature, sStarterChoices[sBirchCaseDataPtr->handPosition].abilityNum, \
                 sStarterChoices[sBirchCaseDataPtr->handPosition].gender, evs, ivs, moves, \
                 sStarterChoices[sBirchCaseDataPtr->handPosition].ggMaxFactor, sStarterChoices[sBirchCaseDataPtr->handPosition].teraType,\
-                sStarterChoices[sBirchCaseDataPtr->handPosition].isShinyExpansion);
+                sStarterChoices[sBirchCaseDataPtr->handPosition].isShiny);
 }
 
 //==========FUNCTIONS==========//
@@ -773,20 +774,12 @@ static void PrintTextToBottomBar(u8 textId)
 
     AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, FONT_NORMAL, x + 32, 1 + 2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gText_Dash);
 
-#ifdef POKEMON_EXPANSION
     StringCopy(&speciesNameArray[0], GetSpeciesName(species));
-#else
-    StringCopy(&speciesNameArray[0], &gSpeciesNames[species][0]);
-#endif
     AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, FONT_NORMAL, x + 40, 1 + 2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, &speciesNameArray[0]);
 
     if(textId != 2)
     {
-#ifdef POKEMON_EXPANSION
         speciesCategoryText = GetSpeciesCategory(species);
-#else
-        speciesCategoryText = GetPokedexCategoryName(dexNum);
-#endif
         AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, FONT_NARROW, x + 178 + GetStringCenterAlignXOffset(FONT_NARROW, speciesCategoryText, 52), y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, speciesCategoryText);
     }
 
