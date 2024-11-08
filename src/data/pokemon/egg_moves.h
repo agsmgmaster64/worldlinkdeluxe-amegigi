@@ -1285,3 +1285,13 @@ static const u16 sCMimaEggMoveLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sCClownpieceEggMoveLearnset[] = {
+    MOVE_POWER_WHIP,
+    MOVE_CHARM,
+    MOVE_CURSE,
+    MOVE_DEFENSE_CURL,
+    MOVE_COVET,
+    MOVE_IMPRISON,
+    MOVE_UNAVAILABLE,
+};

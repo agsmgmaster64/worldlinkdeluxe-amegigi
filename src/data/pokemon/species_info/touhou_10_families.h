@@ -240,8 +240,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .weight = 100,
         .description = COMPOUND_STRING(
             "During the winter, these Shizuhas scatter\n"
-            "all over her home region, sprinkling tiny\n"
-            "bits of ice on the leaves from trees."),
+            "all over their home region, sprinkling\n"
+            "tiny bits of ice on the leaves from trees."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -294,9 +294,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
-            "Due to these Shizuhas like the winter, the\n"
-            "Gensokyan Shizuhas doesn't get along with\n"
-            "them really well."),
+            "Due to these Shizuhas liking the winter,\n"
+            "the Gensokyan Shizuhas don't get along \n"
+            "with them very well."),
         .pokemonScale = 270,
         .pokemonOffset = 0,
         .trainerScale = 256,
