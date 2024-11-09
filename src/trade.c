@@ -4552,6 +4552,12 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
         SetMonData(pokemon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
     if (inGameTrade->ivs[5] <= 31)
         SetMonData(pokemon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
+    SetMonData(pokemon, MON_DATA_HP_EV, &inGameTrade->evs[0]);
+    SetMonData(pokemon, MON_DATA_ATK_EV, &inGameTrade->evs[1]);
+    SetMonData(pokemon, MON_DATA_DEF_EV, &inGameTrade->evs[2]);
+    SetMonData(pokemon, MON_DATA_SPEED_EV, &inGameTrade->evs[3]);
+    SetMonData(pokemon, MON_DATA_SPATK_EV, &inGameTrade->evs[4]);
+    SetMonData(pokemon, MON_DATA_SPDEF_EV, &inGameTrade->evs[5]);
     SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
     SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);

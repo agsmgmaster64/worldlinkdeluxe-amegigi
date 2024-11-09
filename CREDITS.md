@@ -6,11 +6,12 @@
 - **Millie Marteaux**: Making Touhoumon Purple and the World Link review on the Nitpick Zone, which this project takes some influence/guidance from
 - **Wysteria-Hysteria**: Making some footprints for the newer Touhou characters
 - **Derxwna Kasyla**: Making Touhoumon Essentials, which some ideas like Diva and Kosuzu's stats were lifted from
-- **ShinyRaichu**: Making Touhoumon Citrine which this project takes some ideas, Puppets, and mechanics off of
+- **ShinyRaichu**: Making Touhoumon Citrine which this project takes some ideas, Puppets, and mechanics off of, with permission of course
 - **Doesnt**: Making some sprites for the DDC Puppets as well as the basis for their stats
 - **Neotornado**: Helping out with tweaks to the DDC Puppets
 - **BonFlanCake**: Making some miscellaneous sprites including Puppet sprites
 - **TouhouDaMemes SM64**: Bringing me to my contribution to this project in the first place
+- **errorperson13**: Helping me out with some ideas as well as contributing to this project. Rest in peace, man.
 
 - **HemoglobinA1C**: Making the orignal Touhoumon Japanese hacks that this project is based off of, including sprites and stats
 - **Reimufate**: Creating a lot of music and cries used in this project
@@ -18,7 +19,8 @@
 
 - **psf**: Making the pokevial and HM Item branches used in this project
 - **BuffetSalt, Karathan**: Contributing to the pokevial feature branch
-- **Pyredrid, NobodySociety, Archie**: Contributing to the HM Items feature branch
+- **Pyredrid, NobodySociety**: Contributing to the HM Items feature branch
+- **Archie**: Making and contributing to some feature branches used here, like the continue screen
 - **TheXaman**: Making some feature branches like the Options Plus menu and DS-styled Party Screens used for this project
 - **Cookie Softcore**: Making the item sprites for the HM items
 - **Jaizu**: Making some resources for pokeemerald used in this project
@@ -28,6 +30,7 @@
 - **Kiy, usigusom , (), 黒インク**: Making the binary version of the DS-styled Party Screen which I tweaked the decomp version to more closely resemble
 - **ipatix**: Making the improved music engine used for this project
 - **tustin**: Making the name box branch used in this project
+- **mudskip**: Making the new shop UI used in this project
 
 - **haven**: Making Hex Maniac Advance, which was used for porting from the binary version, as well as helping out with the process
 
