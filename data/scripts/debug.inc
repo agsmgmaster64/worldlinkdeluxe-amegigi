@@ -218,7 +218,7 @@ Debug_EventScript_Script_4::
 
 Debug_EventScript_Script_5::
 	lockall
-	setvar VAR_0x8008, INGAME_TRADE_MEOWTH
+	setvar VAR_0x8008, INGAME_TRADE_HORSEA
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
@@ -228,10 +228,8 @@ Debug_EventScript_Script_5::
 	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Debug_EventScript_Script_5_DeclineTrade
-	copyvar VAR_0x8005, VAR_0x800A
-	specialvar VAR_RESULT, GetTradeSpecies
-	copyvar VAR_0x800B, VAR_RESULT
-	goto_if_ne VAR_RESULT, VAR_0x8009, Debug_EventScript_Script_5_NotRequestedMon
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, Debug_EventScript_Script_5_DeclineTrade
 	copyvar VAR_0x8004, VAR_0x8008
 	copyvar VAR_0x8005, VAR_0x800A
 	special CreateInGameTradePokemon

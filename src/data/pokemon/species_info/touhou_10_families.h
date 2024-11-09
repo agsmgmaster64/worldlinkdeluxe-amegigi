@@ -55,7 +55,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .eggMoveLearnset = sCShizuhaEggMoveLearnset,
         .formSpeciesIdTable = sCShizuhaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA},
-                                //{EVO_HEART, ITEM_CHROME_HEART, SPECIES_AkiSisters},
+                                {EVO_HEART, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS},
                                 {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_SHIZUHA},
                                 {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_SHIZUHA}),
     },
@@ -373,7 +373,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .eggMoveLearnset = sCMinorikoEggMoveLearnset,
         .formSpeciesIdTable = sCMinorikoFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO},
-                                //{EVO_HEART, ITEM_CHROME_HEART, SPECIES_AkiSisters},
+                                {EVO_HEART, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS},
                                 {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MINORIKO},
                                 {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MINORIKO}),
     },
@@ -559,9 +559,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 3,
         .weight = 100,
         .description = COMPOUND_STRING(
-            "She makes spices and seasonings.\n"
-            "Apparently, her spices and seasonings are\n"
-            "very popular in her home region."),
+            "These variations of Minorikos are known\n"
+            "for their spices made from plants, making\n"
+            "them popular in their home region."),
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
@@ -616,10 +616,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .height = 6,
         .weight = 250,
         .description = COMPOUND_STRING(
-            "She has some sort of rivalry with the\n"
-            "Gensokyan Minorikos outside of her home\n"
-            "region due to them being more popular than\n"
-            "her."),
+            "The Gensokyian Minorikos' popularity\n"
+            "outside the Sanni region has managed to\n"
+            "establish a rivalry between the Sannian\n"
+            "Minorikos in other regions."),
         .pokemonScale = 270,
         .pokemonOffset = 0,
         .trainerScale = 256,
@@ -642,6 +642,68 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .levelUpLearnset = sMinorikoSannianLevelUpLearnset,
         .teachableLearnset = sMinorikoSannianTeachableLearnset,
         .formSpeciesIdTable = sMinorikoFormSpeciesIdTable,
+    },
+
+    [SPECIES_AKI_SISTERS] =
+    {
+        .baseHP        = 75,
+        .baseAttack    = 75,
+        .baseDefense   = 60,
+        .baseSpeed     = 60,
+        .baseSpAttack  = 83,
+        .baseSpDefense = 60,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = 145,
+        .evYield_SpAttack = 2,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
+        .sourceGame = SOURCE_SOEW,
+        .speciesName = _("Dewott"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_DEWOTT,
+        .categoryName = _("Discipline"),
+        .height = 8,
+        .weight = 245,
+        .description = COMPOUND_STRING(
+            "Strict training and disclipine leads it\n"
+            "to master its flowing double-scalchop\n"
+            "technique. Scalchop techniques differ\n"
+            "from one Dewott to another."),
+        .pokemonScale = 366,
+        .pokemonOffset = 9,
+        .trainerScale = 257,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Dewott,
+        .frontPicSize = MON_COORDS_SIZE(40, 56),
+        .frontPicYOffset = 7,
+        .frontAnimFrames = sAnims_Dewott,
+        .frontAnimId = ANIM_H_VIBRATE,
+        .backPic = gMonBackPic_Dewott,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 5,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        .palette = gMonPalette_Dewott,
+        .shinyPalette = gMonShinyPalette_Dewott,
+        .iconSprite = gMonIcon_Dewott,
+        .iconPalIndex = 0,
+        SHADOW(-2, 6, SHADOW_SIZE_S)
+        FOOTPRINT(Dewott)
+        OVERWORLD(
+            sPicTable_Dewott,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            gOverworldPalette_Dewott,
+            gShinyOverworldPalette_Dewott
+        )
+        .levelUpLearnset = sDewottLevelUpLearnset,
+        .teachableLearnset = sDewottTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_NONE, 0, SPECIES_SAMUROTT_HISUI}),
     },
 
     [SPECIES_CHIBI_HINA] =

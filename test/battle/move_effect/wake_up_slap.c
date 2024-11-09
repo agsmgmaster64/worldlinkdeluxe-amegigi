@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Wake-Up Slap does not cure paralyzed pokemons behind substit
     PARAMETRIZE { ability = ABILITY_INFILTRATOR; }
     GIVEN {
         PLAYER(SPECIES_CROBAT) { Ability(ability); }
-        OPPONENT(SPECIES_SEISMITOAD);
+        OPPONENT(SPECIES_PLACEHOLD_HECATIA);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); MOVE(player, MOVE_SING); }
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_WAKE_UP_SLAP); }

@@ -1168,7 +1168,7 @@ static const u16 sSamurottFormSpeciesIdTable[] = {
 
 #if P_FAMILY_AUDINO
 static const u16 sAudinoFormSpeciesIdTable[] = {
-    SPECIES_AUDINO,
+    SPECIES_LILLIGANT,
 #if P_MEGA_EVOLUTIONS
     SPECIES_AUDINO_MEGA,
 #endif

@@ -518,36 +518,36 @@
 #define SPECIES_PURRLOIN                                509 // Basiney
 #define SPECIES_CHIBI_AMELIA                            510
 #define SPECIES_NORMAL_AMELIA                           511
-#define SPECIES_SIMISAGE                                512
-#define SPECIES_PANSEAR                                 513
+#define SPECIES_HELPER_AMELIA                           512
+#define SPECIES_PLACEHOLD_AMELIA                        513 // Placeholder
 #define SPECIES_CHIBI_SEIRAN                            514
 #define SPECIES_NORMAL_SEIRAN                           515
 #define SPECIES_ATTACK_SEIRAN                           516
-#define SPECIES_MUNNA                                   517
+#define SPECIES_PLACEHOLD_SEIRAN                        517 // Placeholder
 #define SPECIES_CHIBI_RINGO                             518
 #define SPECIES_NORMAL_RINGO                            519
 #define SPECIES_HELPER_RINGO                            520
-#define SPECIES_UNFEZANT                                521
+#define SPECIES_PLACEHOLD_RINGO                         521 // Placeholder
 #define SPECIES_CHIBI_DOREMY                            522
 #define SPECIES_NORMAL_DOREMY                           523
 #define SPECIES_ATTACK_DOREMY                           524
 #define SPECIES_DEFENSE_DOREMY                          525
 #define SPECIES_CHIBI_SAGUME                            526
 #define SPECIES_NORMAL_SAGUME                           527
-#define SPECIES_PLACEHOLDER_SAGUME                      528
-#define SPECIES_DRILBUR                                 529
+#define SPECIES_PLACEHOLDER_SAGUME                      528 // Placeholder
+#define SPECIES_PLACEHOLD2_SAGUME                       529 // Placeholder
 #define SPECIES_CHIBI_JUNKO                             530
 #define SPECIES_NORMAL_JUNKO                            531
-#define SPECIES_PLACEHOLDER_JUNKO                       532
-#define SPECIES_GURDURR                                 533
+#define SPECIES_PLACEHOLDER_JUNKO                       532 // Placeholder
+#define SPECIES_PLACEHOLD2_JUNKO                        533 // Placeholder
 #define SPECIES_CHIBI_HECATIA                           534
 #define SPECIES_NORMAL_HECATIA                          535
 #define SPECIES_ATTACK_HECATIA                          536
-#define SPECIES_SEISMITOAD                              537
+#define SPECIES_PLACEHOLD_HECATIA                       537 // Placeholder
 #define SPECIES_CHIBI_CLOWNPIECE                        538
-#define SPECIES_SAWK                                    539
-#define SPECIES_SEWADDLE                                540
-#define SPECIES_SWADLOON                                541
+#define SPECIES_NORMAL_CLOWNPIECE                       539
+#define SPECIES_HELPER_CLOWNPIECE                       540
+#define SPECIES_PLACEHOLD2_CLOWNPIECE                   541 // Placeholder
 #define SPECIES_LEAVANNY                                542
 #define SPECIES_VENIPEDE                                543
 #define SPECIES_WHIRLIPEDE                              544

@@ -5724,6 +5724,41 @@ static const struct LevelUpMove sDShinmyoumaruLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+static const struct LevelUpMove sCSeiranLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sSeiranLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sASeiranLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sCRingoLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sRingoLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sHRingoLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sCClownpieceLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_POUND),
+    LEVEL_UP_END
+};
+
 static const struct LevelUpMove sCSuikaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_KARATE_CHOP),
     LEVEL_UP_MOVE(5, MOVE_MINIMIZE),
@@ -7862,24 +7897,6 @@ static const struct LevelUpMove sAyakashiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(56, MOVE_REST),
     LEVEL_UP_MOVE(60, MOVE_POWER_WHIP),
     LEVEL_UP_MOVE(64, MOVE_FRENZY_PLANT),
-    LEVEL_UP_END
-};
-
-static const struct LevelUpMove sClownpieceLevelUpLearnset[] = {
-    LEVEL_UP_MOVE(1, MOVE_FLAMETHROWER),
-    LEVEL_UP_MOVE(2, MOVE_RECOVER),
-    LEVEL_UP_MOVE(2, MOVE_SCARY_FACE),
-    LEVEL_UP_MOVE(2, MOVE_GUNK_SHOT),
-    LEVEL_UP_MOVE(2, MOVE_DRAWN_LINE),
-    LEVEL_UP_MOVE(2, MOVE_BRAVER),
-    LEVEL_UP_MOVE(45, MOVE_HARDEN),
-    LEVEL_UP_MOVE(48, MOVE_FURY_CUTTER),
-    LEVEL_UP_MOVE(51, MOVE_COUNTER),
-    LEVEL_UP_MOVE(54, MOVE_GUNK_SHOT),
-    LEVEL_UP_MOVE(58, MOVE_DRAWN_LINE),
-    LEVEL_UP_MOVE(62, MOVE_RECOVER),
-    LEVEL_UP_MOVE(66, MOVE_SCARY_FACE),
-    LEVEL_UP_MOVE(70, MOVE_BRAVER),
     LEVEL_UP_END
 };
 

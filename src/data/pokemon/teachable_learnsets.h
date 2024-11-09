@@ -13661,7 +13661,31 @@ static const u16 sRinnosukeTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-static const u16 sClownpieceTeachableLearnset[] = {
+static const u16 sCSeiranTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sSeiranTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sASeiranTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCRingoTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sRingoTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHRingoTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCClownpieceTeachableLearnset[] = {
     MOVE_HEART_BREAK,
     MOVE_MULTI_PULSE,
     MOVE_LIGHT_SCREEN,
@@ -13687,6 +13711,10 @@ static const u16 sClownpieceTeachableLearnset[] = {
     MOVE_DECISION,
     MOVE_PSYCH_UP,
     MOVE_DARK_PULSE,
+    MOVE_FIRE_PUNCH,
+    MOVE_ICE_PUNCH,
+    MOVE_THUNDER_PUNCH,
+    MOVE_SLEEP_TALK,
     MOVE_DREAM_EATER,
     MOVE_SWAGGER,
     MOVE_SUBSTITUTE,

@@ -14,7 +14,7 @@ SINGLE_BATTLE_TEST("Smelling Salts does not cure paralyzed pokemons behind subst
     PARAMETRIZE { ability = ABILITY_INFILTRATOR; }
     GIVEN {
         PLAYER(SPECIES_CROBAT) { Ability(ability); }
-        OPPONENT(SPECIES_SEISMITOAD) { Status1(STATUS1_PARALYSIS); }
+        OPPONENT(SPECIES_PLACEHOLD_HECATIA) { Status1(STATUS1_PARALYSIS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); MOVE(player, MOVE_CELEBRATE); }
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_SMELLING_SALTS); }

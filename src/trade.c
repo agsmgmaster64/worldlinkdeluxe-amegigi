@@ -151,7 +151,9 @@ struct InGameTrade {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
     u16 species;
     u8 level;
+    u16 ball;
     u8 ivs[NUM_STATS];
+    u8 evs[NUM_STATS];
     u8 abilityNum;
     u32 otId;
     u32 personality;
@@ -4556,6 +4558,7 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     SetMonData(pokemon, MON_DATA_ABILITY_NUM, &inGameTrade->abilityNum);
     SetMonData(pokemon, MON_DATA_LANGUAGE, &inGameTrade->language);
     SetMonData(pokemon, MON_DATA_MET_LOCATION, &inGameTrade->metLocation);
+    SetMonData(pokemon, MON_DATA_POKEBALL, &inGameTrade->ball);
 
     mailNum = 0;
     if (inGameTrade->heldItem != ITEM_NONE)

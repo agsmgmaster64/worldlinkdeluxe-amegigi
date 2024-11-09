@@ -30408,6 +30408,60 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Amelia[] = INCBIN_U8("graphics/pokemon/_add/etc/amelia/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CSeiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CSeiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Seiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Seiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Seiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Seiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Seiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Seiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_ASeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/attack/anim_front.4bpp.lz");
+    const u32 gMonPalette_ASeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/attack/normal.gbapal.lz");
+    const u32 gMonBackPic_ASeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/attack/back.4bpp.lz");
+    const u32 gMonShinyPalette_ASeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/attack/shiny.gbapal.lz");
+    const u8 gMonIcon_ASeiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/attack/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_ASeiran[] = INCBIN_U8("graphics/pokemon/_add/th/seiran/attack/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/chibi/anim_front.4bpp.lz");
+    const u32 gMonPalette_CRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/chibi/normal.gbapal.lz");
+    const u32 gMonBackPic_CRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/chibi/back.4bpp.lz");
+    const u32 gMonShinyPalette_CRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/chibi/shiny.gbapal.lz");
+    const u8 gMonIcon_CRingo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CRingo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Ringo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Ringo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Ringo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Ringo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Ringo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Ringo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_HRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/helper/anim_front.4bpp.lz");
+    const u32 gMonPalette_HRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/helper/normal.gbapal.lz");
+    const u32 gMonBackPic_HRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/helper/back.4bpp.lz");
+    const u32 gMonShinyPalette_HRingo[] = INCBIN_U32("graphics/pokemon/_add/th/ringo/helper/shiny.gbapal.lz");
+    const u8 gMonIcon_HRingo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/helper/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_HRingo[] = INCBIN_U8("graphics/pokemon/_add/th/ringo/helper/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CClownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/chibi/anim_front.4bpp.lz");
     const u32 gMonPalette_CClownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/chibi/normal.gbapal.lz");
     const u32 gMonBackPic_CClownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/chibi/back.4bpp.lz");

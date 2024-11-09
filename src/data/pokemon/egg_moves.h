@@ -799,6 +799,32 @@ static const u16 sCShinmyoumaruEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCSeiranEggMoveLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCRingoEggMoveLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCDoremyEggMoveLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCSagumeEggMoveLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCClownpieceEggMoveLearnset[] = {
+    MOVE_POWER_WHIP,
+    MOVE_CHARM,
+    MOVE_CURSE,
+    MOVE_DEFENSE_CURL,
+    MOVE_COVET,
+    MOVE_IMPRISON,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCSuikaEggMoveLearnset[] = {
     MOVE_HAZE,
     MOVE_MIST,
@@ -1283,15 +1309,5 @@ static const u16 sCMimaEggMoveLearnset[] = {
     MOVE_SPIKES,
     MOVE_DISABLE,
     MOVE_SWIFT,
-    MOVE_UNAVAILABLE,
-};
-
-static const u16 sCClownpieceEggMoveLearnset[] = {
-    MOVE_POWER_WHIP,
-    MOVE_CHARM,
-    MOVE_CURSE,
-    MOVE_DEFENSE_CURL,
-    MOVE_COVET,
-    MOVE_IMPRISON,
     MOVE_UNAVAILABLE,
 };

@@ -133,10 +133,10 @@ struct MonChoiceData // This is the format used to define a mon, everything left
 //
 static const struct MonChoiceData sStarterChoices[9] = 
 {
-    [BALL_TOP_FIRST]        = {SPECIES_CHIBI_AYA, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-    [BALL_TOP_SECOND]       = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-    [BALL_TOP_THIRD]        = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-    [BALL_TOP_FOURTH]       = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_FIRST]        = {SPECIES_CHIBI_REIMU, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_SECOND]       = {SPECIES_CHIBI_MARISA, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_THIRD]        = {SPECIES_CHIBI_SAKUYA, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_FOURTH]       = {SPECIES_CHIBI_AYA, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
 
     [BALL_MIDDLE_FIRST]     = {SPECIES_CHIBI_SANAE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
     [BALL_MIDDLE_SECOND]    = {SPECIES_CHIBI_REISEN, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
@@ -144,6 +144,21 @@ static const struct MonChoiceData sStarterChoices[9] =
 
     [BALL_BOTTOM_FIRST]     = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
     [BALL_BOTTOM_SECOND]    = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+};
+
+static const struct MonChoiceData sStarterChoicesMeme[9] = 
+{
+    [BALL_TOP_FIRST]        = {SPECIES_AKYUU, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_SECOND]       = {SPECIES_KEDAMA, 5, ITEM_DESTINY_KNOT, BALL_POKE, NATURE_SERIOUS, 2, MON_GENDERLESS, {0, 0, 0, 0, 0, 0}, {31, 31, 31, 31, 31, 31}},
+    [BALL_TOP_THIRD]        = {SPECIES_CHIBI_AMELIA, 5, ITEM_BIG_PEARL, BALL_LUXURY, NATURE_MODEST, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_TOP_FOURTH]       = {SPECIES_CHIBI_YOUMU, 5, ITEM_MAID_UNIFORM, BALL_MASTER, NATURE_ADAMANT, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+
+    [BALL_MIDDLE_FIRST]     = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_MIDDLE_SECOND]    = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_MIDDLE_THIRD]     = {SPECIES_NONE, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+
+    [BALL_BOTTOM_FIRST]     = {SPECIES_CHIBI_KOISHI, 5, ITEM_ORAN_BERRY, BALL_STRANGE, NATURE_QUIRKY, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
+    [BALL_BOTTOM_SECOND]    = {SPECIES_CHIBI_SHINMYOUMARU, 5, ITEM_ORAN_BERRY, BALL_POKE, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
 };
 
 //==========EWRAM==========//
@@ -327,6 +342,15 @@ static void CursorCallback(struct Sprite *sprite)
     
 }
 
+u16 GetStarterChoiceSpecies(u32 index)
+{
+    u16 species = SPECIES_NONE;
+
+    species = sStarterChoices[index].species;
+
+    return species;
+}
+
 //
 //  Create The Hande Cursor Sprite
 //
@@ -336,17 +360,17 @@ static void CreateHandSprite()
     u16 x, y;
     struct SpriteCordsStruct current_position = {0,0};
 
-    for(i=0; i<9; i++)
+    for (i = 0; i < 9; i++)
     {
-        if(sStarterChoices[i].species == SPECIES_NONE) // Choose Non Empty Slot To Start In
+        if (GetStarterChoiceSpecies(i) == SPECIES_NONE) // Choose Non Empty Slot To Start In
             continue;
     
-        if(sBirchCaseDataPtr->handPosition <= 3)
+        if (sBirchCaseDataPtr->handPosition <= 3)
         {
             current_position = sBallSpriteCords[0][sBirchCaseDataPtr->handPosition];
             break;
         }
-        else if(sBirchCaseDataPtr->handPosition <= 6)  
+        else if (sBirchCaseDataPtr->handPosition <= 6)  
         {
             current_position = sBallSpriteCords[1][sBirchCaseDataPtr->handPosition - 4];
             break;
@@ -367,7 +391,7 @@ static void CreateHandSprite()
     gSprites[sBirchCaseDataPtr->handSpriteId].callback = CursorCallback;
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->handSpriteId], 2);
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[sBirchCaseDataPtr->handPosition]], 1);
-    SampleUi_DrawMonIcon(sStarterChoices[sBirchCaseDataPtr->handPosition].species);
+    SampleUi_DrawMonIcon(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition));
     
     return;
 }
@@ -392,7 +416,7 @@ static void CreatePokeballSprites()
     for(i=0; i<9; i++)
     {
         u16 x, y;
-        if(sStarterChoices[i].species == SPECIES_NONE)
+        if (GetStarterChoiceSpecies(i) == SPECIES_NONE)
             continue;
 
         if(i <= 3)
@@ -460,7 +484,7 @@ static void ChangePositionUpdateSpriteAnims(u16 oldPosition, u8 taskId) // turn 
     PrintTextToBottomBar(CHOOSE_MON);
 }
 
-static void BirchCase_GiveMon() // Function that calls the GiveMon function pulled from Expansion by Lunos and Ghoulslash
+static void BirchCase_GiveMon(void) // Function that calls the GiveMon function pulled from Expansion by Lunos and Ghoulslash
 {
     u8 *evs = (u8 *) sStarterChoices[sBirchCaseDataPtr->handPosition].evs;
     u8 *ivs = (u8 *) sStarterChoices[sBirchCaseDataPtr->handPosition].ivs;
@@ -725,9 +749,9 @@ static void BirchCase_InitWindows(void)
 //
 //  Text Printing Function
 //
-static const u8 sText_ChooseMon[] = _("Release a Pokémon!");
+static const u8 sText_ChooseMon[] = _("Release a Puppet!");
 static const u8 sText_AreYouSure[] = _("Are you sure?    {A_BUTTON} Yes  {B_BUTTON} No");
-static const u8 sText_RecievedMon[] = _("Give your Pokémon a Nickname?   {A_BUTTON} Yes  {B_BUTTON} No");
+static const u8 sText_RecievedMon[] = _("Give your Puppet a Nickname?   {A_BUTTON} Yes  {B_BUTTON} No");
 static void PrintTextToBottomBar(u8 textId)
 {
     u8 speciesNameArray[16];
@@ -737,7 +761,7 @@ static void PrintTextToBottomBar(u8 textId)
     u8 x = 1 + 4;
     u8 y = 1 + 18;
 
-    u16 species = sStarterChoices[sBirchCaseDataPtr->handPosition].species;
+    u16 species = GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition);
     u16 dexNum = SpeciesToNationalPokedexNum(species);    
 
     FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -759,7 +783,7 @@ static void PrintTextToBottomBar(u8 textId)
     } 
     AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, FONT_NORMAL, x, y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, mainBarAlternatingText);
 
-    if(sStarterChoices[sBirchCaseDataPtr->handPosition].species == SPECIES_NONE)
+    if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) == SPECIES_NONE)
     {
         PutWindowTilemap(WINDOW_BOTTOM_BAR);
         CopyWindowToVram(WINDOW_BOTTOM_BAR, 3);
@@ -799,8 +823,8 @@ static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing th
 {   
     if (gTasks[taskId].data[11] >= 4)
     {
-        if(sStarterChoices[sBirchCaseDataPtr->handPosition].species != SPECIES_NONE)
-            SampleUi_DrawMonIcon(sStarterChoices[sBirchCaseDataPtr->handPosition].species);
+        if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) != SPECIES_NONE)
+            SampleUi_DrawMonIcon(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition));
         gTasks[taskId].func = Task_BirchCaseMain;
         sBirchCaseDataPtr->movingSelector = FALSE;
         return;
@@ -976,7 +1000,7 @@ static void Task_BirchCaseMain(u8 taskId)
     }
     if(JOY_NEW(A_BUTTON))
     {
-        if(sStarterChoices[sBirchCaseDataPtr->handPosition].species != SPECIES_NONE) // If spot empty don't go to next control flow state
+        if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) != SPECIES_NONE) // If spot empty don't go to next control flow state
         {
             PlaySE(SE_SELECT);
             PrintTextToBottomBar(CONFIRM_SELECTION);
