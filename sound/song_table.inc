@@ -585,6 +585,9 @@ gSongTable::
 	song mus_zgs_encounter_fairy, 0, 0
 	song mus_zgs_encounter_tengu, 0, 0
 	song mus_zgs_encounter_gym_leader, 0, 0
+	song mus_wld_evolution_intro, 2, 2
+	song mus_wld_evolution, 0, 0
+	song mus_wld_evolved, 2, 2
 
 	.align 2
 dummy_song_header:

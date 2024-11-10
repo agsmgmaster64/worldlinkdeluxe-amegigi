@@ -516,6 +516,9 @@
 #define MUS_ZGS_ENCOUNTER_FAIRY     581
 #define MUS_ZGS_ENCOUNTER_TENGU     582
 #define MUS_ZGS_ENCOUNTER_GYM_LEADER 583
+#define MUS_WLD_EVOLUTION_INTRO     584
+#define MUS_WLD_EVOLUTION           585
+#define MUS_WLD_EVOLVED             586
 
 #define END_MUS                     MUS_ZGS_ENCOUNTER_GYM_LEADER
 

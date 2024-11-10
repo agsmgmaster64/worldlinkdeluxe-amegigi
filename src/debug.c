@@ -4909,6 +4909,9 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_ENCOUNTER_FAIRY) \
     X(MUS_ZGS_ENCOUNTER_TENGU) \
     X(MUS_ZGS_ENCOUNTER_GYM_LEADER) \
+    X(MUS_WLD_EVOLUTION_INTRO) \
+    X(MUS_WLD_EVOLUTION) \
+    X(MUS_WLD_EVOLVED) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

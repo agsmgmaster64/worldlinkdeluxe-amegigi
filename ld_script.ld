@@ -1248,6 +1248,9 @@ SECTIONS {
         sound/songs/midi/mus_zgs_encounter_fairy.o(.rodata);
         sound/songs/midi/mus_zgs_encounter_tengu.o(.rodata);
         sound/songs/midi/mus_zgs_encounter_gym_leader.o(.rodata);
+        sound/songs/midi/mus_wld_evolution_intro.o(.rodata);
+        sound/songs/midi/mus_wld_evolution.o(.rodata);
+        sound/songs/midi/mus_wld_evolved.o(.rodata);
     } > ROM =0
 
     lib_rodata :
