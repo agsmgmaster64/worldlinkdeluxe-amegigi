@@ -104,7 +104,7 @@ text RustboroCity_Text_GigiOhHaventRaisedPokemonEnough {
 }
 
 text RustboroCity_Text_GigiWantToBattle {
-	format("So how are you feeling now?\nUp for a test of your Puppets, {PLAYER}?")
+	format("So how are you feeling now?\NUp for a test of your Puppets, {PLAYER}?")
 }
 
 text RustboroCity_Text_GigiImNotGoingToLose {
@@ -114,7 +114,7 @@ text RustboroCity_Text_GigiImNotGoingToLose {
 
 text RustboroCity_Text_GigiMrBrineyHint {
 	format("Well, you certainly are much more than I expected at first.\p"
-	"Let this be known though, we are now officially rivals of the Gym Leader challenge!"
+	"Let this be known though, we are now officially rivals of the Gym Leader challenge!\p"
 	"I'll have to train my Puppets further now, but we shall meet again later!")
 }
 
