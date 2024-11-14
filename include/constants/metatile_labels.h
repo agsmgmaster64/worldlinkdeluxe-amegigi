@@ -268,9 +268,11 @@
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
 #define METATILE_Lavaridge_CaveEntrance_Top     0x256
+#define METATILE_Lavaridge_Grass_Bamboo         0x32A
 #define METATILE_Lavaridge_LavaField            0x271
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
+#define METATILE_Lavaridge_TallGrass_Bamboo     0x32B
 
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
@@ -443,6 +445,7 @@
 #define METATILE_RG_General_Door                 0x03D
 #define METATILE_RG_General_DoorAlt              0x03C
 #define METATILE_RG_General_Grass                0x001
+#define METATILE_RG_General_Grass_ShortTree      0x013
 #define METATILE_RG_General_Grass_TreeLeft       0x00E
 #define METATILE_RG_General_Grass_TreeRight      0x00F
 #define METATILE_RG_General_LongGrass            0x02C
@@ -456,6 +459,7 @@
 #define METATILE_RG_General_SlidingDoubleDoor    0x15B
 #define METATILE_RG_General_SlidingSingleDoor    0x062
 #define METATILE_RG_General_TallGrass            0x00D
+#define METATILE_RG_General_TallGrass_ShortTree  0x00A
 #define METATILE_RG_General_TallGrass_TreeLeft   0x00B
 #define METATILE_RG_General_TallGrass_TreeRight  0x00C
 #define METATILE_RG_General_YellowCaveIndent     0x193
