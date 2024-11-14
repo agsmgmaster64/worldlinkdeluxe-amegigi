@@ -221,6 +221,7 @@ struct SaveBlock3
 #endif
     u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
     u8 subQuests[SUB_FLAGS_COUNT];
+    u8 followerIndex;
 };
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

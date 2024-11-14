@@ -228,6 +228,7 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->dexNavChain = 0;
     ResetItemFlags();
     QuestMenu_ResetMenuSaveData();
+    gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
 }
 
 static void ResetMiniGamesRecords(void)
