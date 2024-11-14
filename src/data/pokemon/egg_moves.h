@@ -272,7 +272,6 @@ static const u16 sCWriggleEggMoveLearnset[] = {
 
 static const u16 sCMystiaEggMoveLearnset[] = {
     MOVE_NATURE_SOUND,
-    MOVE_SONIC_BOOM,
     MOVE_PERFORMANCE,
     MOVE_SCREECH,
     MOVE_SOFTBOILED,
@@ -577,7 +576,6 @@ static const u16 sCNazrinEggMoveLearnset[] = {
     MOVE_EXTRASENSORY,
     MOVE_TRICK,
     MOVE_KNOCK_OFF,
-    MOVE_SLEEP_TALK,
     MOVE_CONFUSE_RAY,
     MOVE_PAIN_SPLIT,
     MOVE_UNAVAILABLE,
@@ -950,11 +948,9 @@ static const u16 sCToyohimeEggMoveLearnset[] = {
 static const u16 sCTokikoEggMoveLearnset[] = {
     MOVE_FAKE_OUT,
     MOVE_FLAIL,
-    MOVE_BLIZZARD,
     MOVE_BELLY_DRUM,
     MOVE_HELPING_HAND,
     MOVE_ANCIENT_POWER,
-    MOVE_FIRE_BLAST,
     MOVE_UNAVAILABLE,
 };
 
