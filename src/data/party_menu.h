@@ -630,9 +630,9 @@ static const struct WindowTemplate sMailReadTakeWindowTemplate =
 static const struct WindowTemplate sMiscWindowTemplate =
 {
     .bg = 2,
-    .tilemapLeft = 19,
+    .tilemapLeft = 23,
     .tilemapTop = 13,
-    .width = 10,
+    .width = 6,
     .height = 6,
     .paletteNum = 14,
     .baseBlock = 0x1DF, //0x1DF
@@ -723,7 +723,7 @@ static const struct WindowTemplate sFollowerSetWindowTemplate =
     .width = 6,
     .height = 4,
     .paletteNum = 14,
-    .baseBlock = 0x39D,
+    .baseBlock = 0x1DF,
 };
 
 // Plain tilemaps for party menu slots.
