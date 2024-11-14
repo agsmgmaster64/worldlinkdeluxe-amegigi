@@ -6463,17 +6463,8 @@ bool32 TryPrimalReversion(u32 battler)
     if (GetBattlerHoldEffect(battler, FALSE) == HOLD_EFFECT_PRIMAL_ORB
      && GetBattleFormChangeTargetSpecies(battler, FORM_CHANGE_BATTLE_PRIMAL_REVERSION) != SPECIES_NONE)
     {
-        if (gBattlerAttacker == battler)
-        {
-            BattleScriptPushCursorAndCallback(BattleScript_PrimalReversion);
-        }
-        else
-        {
-            // edge case for scenarios like a switch-in after activated eject button
-            gBattleScripting.savedBattler = gBattlerAttacker;
-            gBattlerAttacker = battler;
-            BattleScriptPushCursorAndCallback(BattleScript_PrimalReversionRestoreAttacker);
-        }
+        gBattleScripting.battler = battler;
+        BattleScriptPushCursorAndCallback(BattleScript_PrimalReversion);
         return TRUE;
     }
     return FALSE;
@@ -10457,7 +10448,7 @@ static inline void MulByTypeEffectiveness(uq4_12_t *modifier, u32 move, u32 move
             mod = UQ_4_12(1.0);
     }
 
-    if (gBattleStruct->distortedTypeMatchups & (1u << battlerDef) || (AI_DATA->aiCalcInProgress && ShouldTeraShellDistortTypeMatchups(move, battlerDef)))
+    if (gSpecialStatuses[battlerDef].distortedTypeMatchups || (AI_DATA->aiCalcInProgress && ShouldTeraShellDistortTypeMatchups(move, battlerDef)))
     {
         mod = UQ_4_12(0.5);
         if (recordAbilities)
