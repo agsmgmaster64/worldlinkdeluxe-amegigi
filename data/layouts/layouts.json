@@ -3932,8 +3932,8 @@
       "height": 30,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeafoamIslands",
       "border_filepath": "data/layouts/ShoalCave_LowTideIceRoom/border.bin",
       "blockdata_filepath": "data/layouts/ShoalCave_LowTideIceRoom/map.bin"
     },
