@@ -2123,6 +2123,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_CYoumu,
         .iconPalIndex = 0,
         FOOTPRINT(CYoumu)
+        OVERWORLD_SET_ANIM(
+            sPicTable_CYoumu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_CYoumu,
+            gShinyOverworldPalette_CYoumu
+        )
         .levelUpLearnset = sCYoumuLevelUpLearnset,
         .teachableLearnset = sCYoumuTeachableLearnset,
         .eggMoveLearnset = sCYoumuEggMoveLearnset,
@@ -2181,6 +2190,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_Youmu,
         .iconPalIndex = 0,
         FOOTPRINT(Youmu)
+        OVERWORLD_SET_ANIM(
+            sPicTable_Youmu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Youmu,
+            gShinyOverworldPalette_Youmu
+        )
         .levelUpLearnset = sYoumuLevelUpLearnset,
         .teachableLearnset = sYoumuTeachableLearnset,
     },
@@ -2234,6 +2252,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_DYoumu,
         .iconPalIndex = 0,
         FOOTPRINT(DYoumu)
+        OVERWORLD_SET_ANIM(
+            sPicTable_DYoumu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_DYoumu,
+            gShinyOverworldPalette_DYoumu
+        )
         .levelUpLearnset = sDYoumuLevelUpLearnset,
         .teachableLearnset = sDYoumuTeachableLearnset,
     },
@@ -2287,6 +2314,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconSprite = gMonIcon_SYoumu,
         .iconPalIndex = 0,
         FOOTPRINT(SYoumu)
+        OVERWORLD_SET_ANIM(
+            sPicTable_SYoumu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_SYoumu,
+            gShinyOverworldPalette_SYoumu
+        )
         .levelUpLearnset = sSYoumuLevelUpLearnset,
         .teachableLearnset = sSYoumuTeachableLearnset,
     },

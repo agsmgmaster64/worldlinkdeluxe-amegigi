@@ -6661,6 +6661,22 @@ static const struct SpriteFrameImage sPicTable_HLilyWhite[] = {
     overworld_ascending_frames(gObjectEventPic_HLilyWhite, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_CYoumu[] = {
+    overworld_ascending_frames(gObjectEventPic_CYoumu, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Youmu[] = {
+    overworld_ascending_frames(gObjectEventPic_Youmu, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_DYoumu[] = {
+    overworld_ascending_frames(gObjectEventPic_DYoumu, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SYoumu[] = {
+    overworld_ascending_frames(gObjectEventPic_SYoumu, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CReisen[] = {
     overworld_ascending_frames(gObjectEventPic_CReisen, 4, 4),
 };
