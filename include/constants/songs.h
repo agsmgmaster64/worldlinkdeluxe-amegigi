@@ -520,7 +520,7 @@
 #define MUS_WLD_EVOLUTION           585
 #define MUS_WLD_EVOLVED             586
 
-#define END_MUS                     MUS_ZGS_ENCOUNTER_GYM_LEADER
+#define END_MUS                     MUS_WLD_EVOLVED
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
