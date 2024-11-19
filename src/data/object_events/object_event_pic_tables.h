@@ -1399,3 +1399,7 @@ static const struct SpriteFrameImage sPicTable_HakosBaelz[] = {
 static const struct SpriteFrameImage sPicTable_SunflowerFairy[] = {
     overworld_ascending_frames(gObjectEventPic_SunflowerFairy, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_GigiMurin[] = {
+    overworld_ascending_frames(gObjectEventPic_GigiMurin, 2, 4),
+};

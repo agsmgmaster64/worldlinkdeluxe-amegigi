@@ -4,6 +4,10 @@ Common_EventScript_SetupRivalGfxId::
 	goto_if_eq VAR_RESULT, FEMALE, EventScript_SetupRivalGfxIdMale
 	end
 
+Common_EventScript_SetupGigiGfxId::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_GIGI_MURIN
+	return
+
 EventScript_SetupRivalGfxIdFemale::
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
 	return

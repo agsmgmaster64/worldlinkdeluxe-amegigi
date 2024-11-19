@@ -1,7 +1,7 @@
 mapscripts RustboroCity_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setflag(FLAG_VISITED_RUSTBORO_CITY)
-		call(Common_EventScript_SetupRivalGfxId)
+		call(Common_EventScript_SetupGigiGfxId)
 		if (var(VAR_RUSTBORO_CITY_STATE) == 6) {
 			call(RustboroCity_EventScript_HideMapNamePopup)
 		}

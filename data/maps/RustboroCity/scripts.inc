@@ -9,7 +9,7 @@ RustboroCity_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/RustboroCity/scripts.pory"
 	setflag FLAG_VISITED_RUSTBORO_CITY
 # 4 "data/maps/RustboroCity/scripts.pory"
-	call Common_EventScript_SetupRivalGfxId
+	call Common_EventScript_SetupGigiGfxId
 # 5 "data/maps/RustboroCity/scripts.pory"
 	compare VAR_RUSTBORO_CITY_STATE, 6
 	goto_if_eq RustboroCity_MapScripts_MAP_SCRIPT_ON_TRANSITION_2

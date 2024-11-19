@@ -423,6 +423,9 @@ $(OBJEVENTGFXDIR)/people/hakos_baelz.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/sunflower_fairy.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/gigi_murin.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
