@@ -3011,7 +3011,6 @@ BattleScript_EffectAbsorb::
 	printfromtable gAbsorbDrainStringIds
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
-	tryfaintmon BS_TARGET
 	return
 
 BattleScript_EffectExplosion::
@@ -4136,6 +4135,7 @@ BattleScript_EffectMinimize::
 BattleScript_EffectCurse::
 	jumpiftype BS_ATTACKER, TYPE_GHOST, BattleScript_GhostCurse
 	attackcanceler
+	jumpiftype BS_ATTACKER, TYPE_GHOST, BattleScript_DoGhostCurse
 	attackstring
 	ppreduce
 	jumpifstat BS_ATTACKER, CMP_GREATER_THAN, STAT_SPEED, MIN_STAT_STAGE, BattleScript_CurseTrySpeed
