@@ -119,7 +119,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 79,
-      "y": 5,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -258,7 +258,7 @@
   ],
   "warp_events": [
     {
-      "x": 33,
+      "x": 34,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE113_GLASS_WORKSHOP",
