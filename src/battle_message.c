@@ -3388,6 +3388,18 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+    {
+        .trainerId = TRAINER_ROXANNE_1,
+        .isFrontierTrainer = FALSE,
+        .msgLastSwitchIn = COMPOUND_STRING("Uh oh."),
+        .msgLastLowHp = COMPOUND_STRING("I'm in danger."),
+    },
+    {
+        .trainerId = TRAINER_MAY_RUSTBORO_TREECKO,
+        .isFrontierTrainer = FALSE,
+        .msgLastSwitchIn = COMPOUND_STRING("You certainly are stronger than I thought!"),
+        .msgLastLowHp = COMPOUND_STRING("Getting close, huh?"),
+    },
 };
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)

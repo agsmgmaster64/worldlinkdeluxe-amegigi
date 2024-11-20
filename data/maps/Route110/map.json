@@ -104,8 +104,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 27,
-      "y": 24,
+      "x": 29,
+      "y": 10,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -146,8 +146,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
-      "x": 19,
-      "y": 31,
+      "x": 26,
+      "y": 15,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_LEFT_UP_RIGHT_DOWN",
       "movement_range_x": 10,
@@ -160,8 +160,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 30,
-      "y": 31,
+      "x": 29,
+      "y": 13,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -188,8 +188,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 3,
-      "y": 39,
+      "x": 18,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -202,8 +202,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 33,
-      "y": 15,
+      "x": 32,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -216,8 +216,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
-      "x": 32,
-      "y": 43,
+      "x": 24,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -440,8 +440,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 13,
-      "y": 71,
+      "x": 15,
+      "y": 70,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -454,7 +454,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 10,
+      "x": 13,
       "y": 76,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -482,8 +482,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
-      "x": 31,
-      "y": 35,
+      "x": 29,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -496,8 +496,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
-      "x": 36,
-      "y": 43,
+      "x": 25,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 1,
@@ -510,8 +510,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 34,
-      "y": 26,
+      "x": 23,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -538,8 +538,8 @@
   ],
   "warp_events": [
     {
-      "x": 35,
-      "y": 24,
+      "x": 9,
+      "y": 14,
       "elevation": 3,
       "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
       "dest_warp_id": "0"
@@ -566,8 +566,8 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 22,
-      "y": 92,
+      "x": 24,
+      "y": 93,
       "elevation": 0,
       "dest_map": "MAP_ROUTE110_SEASIDE_CYCLING_ROAD_SOUTH_ENTRANCE",
       "dest_warp_id": "0"
@@ -728,8 +728,8 @@
     },
     {
       "type": "sign",
-      "x": 33,
-      "y": 39,
+      "x": 23,
+      "y": 17,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrainerTipsPrlzSleep"
@@ -760,8 +760,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 35,
-      "y": 39,
+      "x": 16,
+      "y": 19,
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE",
@@ -770,8 +770,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 33,
-      "y": 45,
+      "x": 17,
+      "y": 19,
       "elevation": 3,
       "item": "ITEM_GREAT_ORB",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL",
