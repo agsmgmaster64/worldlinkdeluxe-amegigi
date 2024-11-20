@@ -37,7 +37,7 @@ Route113_EventScript_CheckSetAshWeather::
 # 19 "data/maps/Route113/scripts.pory"
 	goto_if_gt VAR_TEMP_0, 84, Route113_EventScript_DontSetAshWeather
 # 20 "data/maps/Route113/scripts.pory"
-	setweather WEATHER_VOLCANIC_ASH
+	setweather WEATHER_SNOW
 # 21 "data/maps/Route113/scripts.pory"
 	return
 # 22 "data/maps/Route113/scripts.pory"

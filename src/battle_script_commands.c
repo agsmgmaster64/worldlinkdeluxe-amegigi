@@ -5766,7 +5766,7 @@ static void Cmd_moveend(void)
                         gBattleMoveDamage = 1;
                     gBattleMoveDamage = GetDrainedBigRootHp(gBattlerAttacker, gBattleMoveDamage);
                     gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE;
-                    if (GetBattlerAbility(gBattlerTarget) == ABILITY_LIQUID_OOZE)
+                    if (GetBattlerAbility(gBattlerTarget) == ABILITY_STRANGE_MIST)
                     {
                         gBattleMoveDamage *= -1;
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABSORB_OOZE;
