@@ -11,7 +11,7 @@
 - **Neotornado**: Helping out with tweaks to the DDC Puppets
 - **BonFlanCake**: Making some miscellaneous sprites including Puppet sprites
 - **TouhouDaMemes SM64**: Bringing me to my contribution to this project in the first place
-- **errorperson13**: Helping me out with some ideas as well as contributing to this project. Rest in peace, man.
+- **errorperson13**: Helping me out with some ideas as well as contributing to this project..
 
 - **HemoglobinA1C**: Making the orignal Touhoumon Japanese hacks that this project is based off of, including sprites and stats
 - **Reimufate**: Creating a lot of music and cries used in this project
@@ -31,6 +31,7 @@
 - **ipatix**: Making the improved music engine used for this project
 - **tustin**: Making the name box branch used in this project
 - **mudskip**: Making the new shop UI used in this project
+- **Hecatia666**: Making some commissioned sprites used in this project
 
 - **haven**: Making Hex Maniac Advance, which was used for porting from the binary version, as well as helping out with the process
 
