@@ -739,8 +739,9 @@
 #define STRINGID_PKMNFROSTBITBY                       737
 #define STRINGID_FELTBETTERWITHABILITY                738
 #define STRINGID_TARGETFELTBETTERWITHABILITY          739
+#define STRINGID_HOLYSURROUNDSBATTLEFIELD             740
 
-#define BATTLESTRINGS_COUNT                           740
+#define BATTLESTRINGS_COUNT                           741
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

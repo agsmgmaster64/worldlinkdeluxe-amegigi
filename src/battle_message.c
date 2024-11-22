@@ -888,11 +888,12 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SILPHSCOPEUNVEILED]                   = COMPOUND_STRING("Silph Scope unveiled the Ghost's identity!"),
     [STRINGID_GHOSTWASMAROWAK]                      = COMPOUND_STRING("The Ghost was {B_OPPONENT_MON1_NAME}!\p"),
     [STRINGID_TERRAINBECOMESHOLY]                   = COMPOUND_STRING("The battlefield became holy!"),
-    [STRINGID_HOLYTERRAINENDS]                      = COMPOUND_STRING("The battlefield returned to normal."),
+    [STRINGID_HOLYTERRAINENDS]                      = COMPOUND_STRING("The holiness disappeared from the battlefield."),
     [STRINGID_HOLYTERRAINPREVENTS]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} surrounds itself with holy terrain!"),
     [STRINGID_PKMNFROSTBITBY]                       = COMPOUND_STRING("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_BUFF1} frostbit {B_EFF_NAME_WITH_PREFIX2}!"), //not in gen 5+, ability popup
     [STRINGID_FELTBETTERWITHABILITY]                = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} felt better with its {B_ATK_ABILITY}!"),
     [STRINGID_TARGETFELTBETTERWITHABILITY]          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} felt better with its {B_DEF_ABILITY}!"),
+    [STRINGID_HOLYSURROUNDSBATTLEFIELD]             = COMPOUND_STRING("Holiness surrounds the battlefield!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1298,7 +1299,7 @@ const u16 gWeatherStartsStringIds[] =
 
 const u16 gTerrainStartsStringIds[] =
 {
-    STRINGID_MISTSWIRLSAROUND, STRINGID_ELECTRICCURRENTISRUNNING, STRINGID_ISCOVEREDWITHGRASS, STRINGID_SEEMSWEIRD,
+    STRINGID_MISTSWIRLSAROUND, STRINGID_ELECTRICCURRENTISRUNNING, STRINGID_ISCOVEREDWITHGRASS, STRINGID_SEEMSWEIRD, STRINGID_HOLYSURROUNDSBATTLEFIELD
 };
 
 const u16 gPrimalWeatherBlocksStringIds[] =
@@ -1427,6 +1428,7 @@ const u8 gText_WhatWillPkmnDo2[] = _("What will\n{B_PLAYER_NAME} do?");
 const u8 gText_WhatWillWallyDo[] = _("What will\nWALLY do?");
 const u8 gText_LinkStandby[] = _("{PAUSE 16}Link standby…");
 const u8 gText_BattleMenu[] = _("Battle{CLEAR_TO 56}Bag\nPuppets{CLEAR_TO 56}Run");
+const u8 gText_TrainerBattleMenu[] = _("Battle{CLEAR_TO 56}Bag\nPuppets{CLEAR_TO 56}Forfeit");
 const u8 gText_SafariZoneMenu[] = _("Orb{CLEAR_TO 56}Bait\nRock{CLEAR_TO 56}Run");
 const u8 gText_MoveInterfacePP[] = _("PP ");
 const u8 gText_MoveInterfaceType[] = _("Type/");
