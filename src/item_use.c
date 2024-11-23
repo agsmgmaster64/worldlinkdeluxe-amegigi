@@ -67,6 +67,7 @@ static void PlayerFaceHiddenItem(u8);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
 static void Task_AccessPokemonBoxLink(u8);
+static void Task_AccessMusicPlayer(u8);
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
@@ -698,6 +699,18 @@ void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 static void Task_AccessPokemonBoxLink(u8 taskId)
 {
     ScriptContext_SetupScript(EventScript_AccessPokemonBoxLink);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_MusicPlayer(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessMusicPlayer;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+static void Task_AccessMusicPlayer(u8 taskId)
+{
+    ScriptContext_SetupScript(EventScript_AccessMusicPlayer);
     DestroyTask(taskId);
 }
 

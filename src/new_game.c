@@ -47,6 +47,7 @@
 #include "constants/map_groups.h"
 #include "quests.h"
 #include "constants/items.h"
+#include "music_player.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -229,6 +230,7 @@ void NewGameInitData(void)
     ResetItemFlags();
     QuestMenu_ResetMenuSaveData();
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
+    ResetAllPlayerMusic();
 }
 
 static void ResetMiniGamesRecords(void)

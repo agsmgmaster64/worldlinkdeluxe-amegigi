@@ -2677,3 +2677,38 @@
 	.2byte \dest
 	.endm
 
+	.macro setplayliststyle style:req
+	callnative SetPlaylistPresetStyle
+	.byte \style
+	.endm
+
+	.macro setoverworldplayermusic music:req
+	callnative SetOverworldPlayerMusic
+	.2byte \music
+	.endm
+
+	.macro setwildbattleplayermusic music:req
+	callnative SetWildBattlePlayerMusic
+	.2byte \music
+	.endm
+
+	.macro settrainerbattleplayermusic music:req
+	callnative SetTrainerBattlePlayerMusic
+	.2byte \music
+	.endm
+
+	.macro setvictoryplayermusic music:req
+	callnative SetVictoryPlayerMusic
+	.2byte \music
+	.endm
+
+	.macro turnmusicplayeroverrideon 
+	callnative PowerMusicPlayerOverride
+	.byte TRUE
+	.endm
+
+	.macro turnmusicplayeroverrideoff
+	callnative PowerMusicPlayerOverride
+	.byte FALSE
+	.endm
+

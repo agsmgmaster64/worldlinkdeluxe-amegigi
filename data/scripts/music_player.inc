@@ -1,0 +1,123 @@
+EventScript_AccessMusicPlayer::
+	lockall
+	message Eventscript_MusicPlayerMainMenu_Text_Intro
+	waitmessage
+EventScript_AccessMusicPlayerLoop:
+	call EventScript_SetupPlayerMainSettingMultichoice
+	goto_if_ge VAR_RESULT, 4, EventScript_PutAwayMusicPlayer
+	call_if_eq VAR_RESULT, 0, EventScript_MusicPlayer_RegionPlaylistSettings
+	call_if_eq VAR_RESULT, 1, EventScript_MusicPlayer_PlaceholderOption
+	call_if_eq VAR_RESULT, 2, EventScript_MusicPlayer_PlaceholderOption
+	call_if_eq VAR_RESULT, 3, EventScript_MusicPlayer_PlaceholderOption
+	message Eventscript_MusicPlayerMainMenu_Text_Return
+	waitmessage
+	goto EventScript_AccessMusicPlayerLoop
+
+EventScript_PutAwayMusicPlayer:
+	msgbox Eventscript_MusicPlayerMainMenu_Text_TurnOff
+	releaseall
+	end
+
+EventScript_MusicPlayer_RegionPlaylistSettings:
+	message Eventscript_RegionPlaylistMultichoice_Text_Placeholder
+	waitmessage
+	call EventScript_SetupRegionPlaylistsSettingMultichoice
+	goto_if_ge VAR_RESULT, PLAYLIST_SET_STYLE_COUNT, EventScript_MusicPlayer_RegionPlaylistSettings_Ret
+	call_if_eq VAR_RESULT, PLAYLIST_SET_STYLE_DEFAULT, EventScript_MusicPlayer_RegionPlaylist_Default
+	call_if_eq VAR_RESULT, PLAYLIST_SET_STYLE_REGULAR, EventScript_MusicPlayer_RegionPlaylist_Regular
+	call_if_eq VAR_RESULT, PLAYLIST_SET_STYLE_ZGS, EventScript_MusicPlayer_RegionPlaylist_ZGS
+	call_if_eq VAR_RESULT, PLAYLIST_SET_STYLE_ALTERNATE, EventScript_MusicPlayer_RegionPlaylist_ZGS2
+	call_if_eq VAR_RESULT, PLAYLIST_SET_STYLE_ALTERNATE2, EventScript_MusicPlayer_RegionPlaylist_Placeholder
+	goto EventScript_MusicPlayer_RegionPlaylistSettings
+EventScript_MusicPlayer_RegionPlaylistSettings_Ret:
+	return
+
+EventScript_MusicPlayer_RegionPlaylist_Default:
+	setplayliststyle PLAYLIST_SET_STYLE_DEFAULT
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_Default
+	return
+
+EventScript_MusicPlayer_RegionPlaylist_Regular:
+	setplayliststyle PLAYLIST_SET_STYLE_REGULAR
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe
+	return
+
+EventScript_MusicPlayer_RegionPlaylist_ZGS:
+	setplayliststyle PLAYLIST_SET_STYLE_ZGS
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_ZGS1
+	return
+
+EventScript_MusicPlayer_RegionPlaylist_ZGS2:
+	setplayliststyle PLAYLIST_SET_STYLE_ALTERNATE
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_ZGS2
+	return
+
+EventScript_MusicPlayer_RegionPlaylist_Placeholder:
+	setplayliststyle PLAYLIST_SET_STYLE_ALTERNATE2
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_Placeholder
+	return
+
+EventScript_MusicPlayer_PlaceholderOption:
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_Placeholder
+	return
+
+EventScript_SetupPlayerMainSettingMultichoice:
+	dynmultipush Eventscript_MainSettingMultichoice_Text_RegionPlaylists, 0
+	dynmultipush Eventscript_MainSettingMultichoice_Text_MusicOverrides, 1
+	dynmultipush Eventscript_MainSettingMultichoice_Text_OverrideSettings, 2
+	dynmultipush Eventscript_MainSettingMultichoice_Text_ResetAll, 3
+	dynmultipush Eventscript_MainSettingMultichoice_Text_PutAway, 4
+	dynmultistack 0, 0, FALSE, 5, FALSE, 0, NULL
+	return
+
+EventScript_SetupRegionPlaylistsSettingMultichoice:
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Default, PLAYLIST_SET_STYLE_COUNT
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe, PLAYLIST_SET_STYLE_REGULAR
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS1, PLAYLIST_SET_STYLE_ZGS
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS2, PLAYLIST_SET_STYLE_ALTERNATE
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Placeholder, PLAYLIST_SET_STYLE_ALTERNATE2
+	dynmultipush Eventscript_MainSettingMultichoice_Text_Back, PLAYLIST_SET_STYLE_COUNT
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
+	return
+
+Eventscript_MusicPlayerMainMenu_Text_Intro:
+	.string "Boot up.\nPlease choose.$"
+
+Eventscript_MusicPlayerMainMenu_Text_Return:
+	.string "Please choose.$"
+
+Eventscript_MusicPlayerMainMenu_Text_TurnOff:
+	.string "Standby.$"
+
+Eventscript_MainSettingMultichoice_Text_RegionPlaylists:
+	.string "Region Playlists$"
+
+Eventscript_MainSettingMultichoice_Text_MusicOverrides:
+	.string "Music Overrides$"
+
+Eventscript_MainSettingMultichoice_Text_OverrideSettings:
+	.string "Override Settings$"
+
+Eventscript_MainSettingMultichoice_Text_ResetAll:
+	.string "Reset All$"
+
+Eventscript_MainSettingMultichoice_Text_PutAway:
+	.string "Put Away$"
+
+Eventscript_RegionPlaylistMultichoice_Text_Default:
+	.string "Default$"
+
+Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe:
+	.string "World Link Deluxe$"
+
+Eventscript_RegionPlaylistMultichoice_Text_ZGS1:
+	.string "Zoku Gensokyo Scenario 1$"
+
+Eventscript_RegionPlaylistMultichoice_Text_ZGS2:
+	.string "Zoku Gensokyo Scenario 2$"
+
+Eventscript_RegionPlaylistMultichoice_Text_Placeholder:
+	.string "Placeholder$"
+
+Eventscript_MainSettingMultichoice_Text_Back:
+	.string "Go Back$"

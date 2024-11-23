@@ -30,6 +30,7 @@
 #include "caps.h"
 #include "m4a.h"
 #include "mail.h"
+#include "music_player.h"
 #include "event_data.h"
 #include "pokemon_storage_system.h"
 #include "task.h"
@@ -4614,7 +4615,7 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong
                     && !FlagGet(FLAG_OVERRIDE_MUSIC))
                 {
-                    PlayBGM(MUS_WLD_VICTORY_WILD);
+                    PlayVictoryMusic(MUSIC_PLAYER_VICTORY_WILD);
                     gBattleStruct->wildVictorySong++;
                 }
 
@@ -9786,7 +9787,7 @@ static void Cmd_various(void)
         {
             if (FlagGet(FLAG_DOISE_BATTLE))
             {
-                PlayBGM(MUS_VICTORY_GYM_LEADER);
+                PlayVictoryMusic(MUSIC_PLAYER_VICTORY_TRAINER);
             }
             else
             {

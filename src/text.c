@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "main.h"
+#include "music_player.h"
 #include "m4a.h"
 #include "palette.h"
 #include "sound.h"
@@ -1233,6 +1234,9 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             case EXT_CTRL_CODE_ENG:
                 textPrinter->japanese = FALSE;
                 return RENDER_REPEAT;
+            case EXT_CTRL_CODE_PLAY_CAUGHT_BGM:
+                PlayVictoryMusic(MUSIC_PLAYER_CAUGHT_MON);
+                return RENDER_UPDATE;
             }
             break;
         case CHAR_PROMPT_CLEAR:
@@ -1448,6 +1452,7 @@ static u32 UNUSED GetStringWidthFixedWidthFont(const u8 *str, u8 fontId, u8 lett
             case EXT_CTRL_CODE_FILL_WINDOW:
             case EXT_CTRL_CODE_JPN:
             case EXT_CTRL_CODE_ENG:
+            case EXT_CTRL_CODE_PLAY_CAUGHT_BGM:
             default:
                 break;
             }
@@ -1621,6 +1626,7 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
             case EXT_CTRL_CODE_PAUSE_UNTIL_PRESS:
             case EXT_CTRL_CODE_WAIT_SE:
             case EXT_CTRL_CODE_FILL_WINDOW:
+            case EXT_CTRL_CODE_PLAY_CAUGHT_BGM:
             default:
                 break;
             }
@@ -1765,6 +1771,7 @@ u8 RenderTextHandleBold(u8 *pixels, u8 fontId, u8 *str)
             case EXT_CTRL_CODE_FILL_WINDOW:
             case EXT_CTRL_CODE_JPN:
             case EXT_CTRL_CODE_ENG:
+            case EXT_CTRL_CODE_PLAY_CAUGHT_BGM:
             default:
                 continue;
             }

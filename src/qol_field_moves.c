@@ -15,6 +15,7 @@
 #include "item_use.h"
 #include "map_name_popup.h"
 #include "metatile_behavior.h"
+#include "music_player.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -164,7 +165,7 @@ u8 FldEff_UseSurfTool(void)
 {
     CreateTask(Task_SurfToolFieldEffect, 0);
     Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_WLD_SURF);
+    Overworld_ChangeMusicTo(GetSurfMusic());
     return FALSE;
 }
 

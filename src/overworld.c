@@ -39,6 +39,7 @@
 #include "metatile_behavior.h"
 #include "mirage_tower.h"
 #include "money.h"
+#include "music_player.h"
 #include "new_game.h"
 #include "palette.h"
 #include "play_time.h"
@@ -1298,7 +1299,7 @@ void Overworld_PlaySpecialMapMusic(void)
         }
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
         {
-            music = MUS_WLD_SURF;
+            music = GetSurfMusic();
         }
     }
 
@@ -1335,7 +1336,7 @@ static void TransitionMapMusic(void)
                 return;
             if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) && Overworld_MusicCanOverrideMapMusic())
             {
-                newMusic = MUS_WLD_SURF;
+                newMusic = GetSurfMusic();
             }
         }
         if (newMusic != currentMusic)

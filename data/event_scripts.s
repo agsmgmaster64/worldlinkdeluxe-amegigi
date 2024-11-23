@@ -1157,6 +1157,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/qol_field_move_scripts.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/scripts/music_player.inc"
     
 
 	.include "data/maps/EikiIsland_1/scripts.inc"

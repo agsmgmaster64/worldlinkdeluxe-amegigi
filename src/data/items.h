@@ -14630,4 +14630,21 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_MUSIC_PLAYER] =
+    {
+        .name = _("Music Player"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "This device grants\n"
+            "access to the {PKMN}\n"
+            "Storage System."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_MusicPlayer,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
 };

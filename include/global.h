@@ -201,6 +201,19 @@ struct Time
     /*0x04*/ s8 seconds;
 };
 
+struct SavedPlayerMusic
+{
+    bool16 isPlayerOn:1;
+    bool16 canOverrideBattleMusic:1;
+    bool16 muteBikeSurfMusic:1;
+    bool16 unused1:5;
+    u16 playlistPresetStyle:8;
+    u16 overworldMusic;
+    u16 wildBattleMusic;
+    u16 trainerBattleMusic;
+    u16 victoryMusic;
+};
+
 #include "constants/items.h"
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
@@ -219,9 +232,10 @@ struct SaveBlock3
 #if OW_USE_FAKE_RTC
     struct Time fakeRTC;
 #endif
+    u8 followerIndex;
+    struct SavedPlayerMusic savedPlayerMusic;
     u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
     u8 subQuests[SUB_FLAGS_COUNT];
-    u8 followerIndex;
 };
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

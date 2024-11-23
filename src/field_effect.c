@@ -16,6 +16,7 @@
 #include "mirage_tower.h"
 #include "menu.h"
 #include "metatile_behavior.h"
+#include "music_player.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -3011,7 +3012,7 @@ u8 FldEff_UseSurf(void)
     u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
     gTasks[taskId].tMonId = gFieldEffectArguments[0];
     Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_WLD_SURF);
+    Overworld_ChangeMusicTo(GetSurfMusic());
     return FALSE;
 }
 

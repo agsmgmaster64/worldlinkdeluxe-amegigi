@@ -5,6 +5,7 @@
 #include "fieldmap.h"
 #include "field_specials.h"
 #include "metatile_behavior.h"
+#include "music_player.h"
 #include "overworld.h"
 #include "sound.h"
 #include "constants/map_types.h"
@@ -1007,8 +1008,8 @@ void GetOnOffBike(u8 transitionFlags)
         SetPlayerAvatarTransitionFlags(transitionFlags);
         if (Overworld_MusicCanOverrideMapMusic())
         {
-            Overworld_SetSavedMusic(MUS_CYCLING);
-            Overworld_ChangeMusicTo(MUS_CYCLING);
+            Overworld_SetSavedMusic(GetBikeMusic());
+            Overworld_ChangeMusicTo(GetBikeMusic());
         }
     }
 }
