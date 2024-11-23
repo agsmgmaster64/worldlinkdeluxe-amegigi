@@ -2411,7 +2411,7 @@ u8 DoBattlerEndTurnEffects(void)
                 gBattleScripting.animArg2 = gBattlerAttacker;
                 gBattleMoveDamage = max(1, GetNonDynamaxMaxHP(battler) / 8);
                 gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE;
-                if (GetBattlerAbility(battler) == ABILITY_LIQUID_OOZE)
+                if (GetBattlerAbility(battler) == ABILITY_STRANGE_MIST)
                 {
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_OOZE;
                     BattleScriptExecute(BattleScript_LeechSeedTurnDrainLiquidOoze);
