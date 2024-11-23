@@ -4,11 +4,12 @@ EventScript_AccessMusicPlayer::
 	waitmessage
 EventScript_AccessMusicPlayerLoop:
 	call EventScript_SetupPlayerMainSettingMultichoice
-	goto_if_ge VAR_RESULT, 4, EventScript_PutAwayMusicPlayer
-	call_if_eq VAR_RESULT, 0, EventScript_MusicPlayer_RegionPlaylistSettings
-	call_if_eq VAR_RESULT, 1, EventScript_MusicPlayer_PlaceholderOption
+	goto_if_ge VAR_RESULT, 5, EventScript_PutAwayMusicPlayer
+	call_if_eq VAR_RESULT, 0, EventScript_MusicPlayer_PlaceholderOption
+	call_if_eq VAR_RESULT, 1, EventScript_MusicPlayer_RegionPlaylistSettings
 	call_if_eq VAR_RESULT, 2, EventScript_MusicPlayer_PlaceholderOption
 	call_if_eq VAR_RESULT, 3, EventScript_MusicPlayer_PlaceholderOption
+	call_if_eq VAR_RESULT, 4, EventScript_MusicPlayer_ResetAllSettings
 	message Eventscript_MusicPlayerMainMenu_Text_Return
 	waitmessage
 	goto EventScript_AccessMusicPlayerLoop
@@ -61,17 +62,26 @@ EventScript_MusicPlayer_PlaceholderOption:
 	msgbox Eventscript_RegionPlaylistMultichoice_Text_Placeholder
 	return
 
+EventScript_MusicPlayer_ResetAllSettings:
+	msgbox Eventscript_ResetAllPlayer_Text_ResetPrompt, MSGBOX_YESNO
+	goto_if_ge VAR_RESULT, 1, EventScript_MusicPlayer_ResetAllSettings_Ret
+	callnative ResetAllPlayerMusic
+	msgbox Eventscript_ResetAllPlayer_Text_SettingsReset
+EventScript_MusicPlayer_ResetAllSettings_Ret:
+	return
+
 EventScript_SetupPlayerMainSettingMultichoice:
-	dynmultipush Eventscript_MainSettingMultichoice_Text_RegionPlaylists, 0
-	dynmultipush Eventscript_MainSettingMultichoice_Text_MusicOverrides, 1
-	dynmultipush Eventscript_MainSettingMultichoice_Text_OverrideSettings, 2
-	dynmultipush Eventscript_MainSettingMultichoice_Text_ResetAll, 3
-	dynmultipush Eventscript_MainSettingMultichoice_Text_PutAway, 4
-	dynmultistack 0, 0, FALSE, 5, FALSE, 0, NULL
+	dynmultipush Eventscript_MainSettingMultichoice_Text_PlayMusic, 0
+	dynmultipush Eventscript_MainSettingMultichoice_Text_RegionPlaylists, 1
+	dynmultipush Eventscript_MainSettingMultichoice_Text_MusicOverrides, 2
+	dynmultipush Eventscript_MainSettingMultichoice_Text_OverrideSettings, 3
+	dynmultipush Eventscript_MainSettingMultichoice_Text_ResetAll, 4
+	dynmultipush Eventscript_MainSettingMultichoice_Text_PutAway, 5
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
 	return
 
 EventScript_SetupRegionPlaylistsSettingMultichoice:
-	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Default, PLAYLIST_SET_STYLE_COUNT
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Default, PLAYLIST_SET_STYLE_DEFAULT
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe, PLAYLIST_SET_STYLE_REGULAR
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS1, PLAYLIST_SET_STYLE_ZGS
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS2, PLAYLIST_SET_STYLE_ALTERNATE
@@ -89,6 +99,9 @@ Eventscript_MusicPlayerMainMenu_Text_Return:
 Eventscript_MusicPlayerMainMenu_Text_TurnOff:
 	.string "Standby.$"
 
+Eventscript_MainSettingMultichoice_Text_PlayMusic:
+	.string "Play Music$"
+
 Eventscript_MainSettingMultichoice_Text_RegionPlaylists:
 	.string "Region Playlists$"
 
@@ -103,6 +116,12 @@ Eventscript_MainSettingMultichoice_Text_ResetAll:
 
 Eventscript_MainSettingMultichoice_Text_PutAway:
 	.string "Put Away$"
+
+Eventscript_ResetAllPlayer_Text_ResetPrompt:
+	.string "Reset all settings?$"
+
+Eventscript_ResetAllPlayer_Text_SettingsReset:
+	.string "Settings reseted.$"
 
 Eventscript_RegionPlaylistMultichoice_Text_Default:
 	.string "Default$"
