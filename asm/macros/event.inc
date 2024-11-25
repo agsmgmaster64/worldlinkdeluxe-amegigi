@@ -2682,6 +2682,11 @@
 	.byte \style
 	.endm
 
+	.macro getplayliststyle var:req
+	callnative GetPlaylistPresetStyle
+	.2byte \var
+	.endm
+
 	.macro setoverworldplayermusic music:req
 	callnative SetOverworldPlayerMusic
 	.2byte \music

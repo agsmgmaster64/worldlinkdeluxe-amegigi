@@ -210,6 +210,13 @@ void SetPlaylistPresetStyle(struct ScriptContext *ctx)
         gSaveBlock3Ptr->savedPlayerMusic.playlistPresetStyle = playlistSet;
 }
 
+void GetPlaylistPresetStyle(struct ScriptContext *ctx)
+{
+    u16 variable = ScriptReadHalfword(ctx);
+    u16 musicStyle = gSaveBlock3Ptr->savedPlayerMusic.playlistPresetStyle;
+    VarSet(variable, musicStyle);
+}
+
 void SetOverworldPlayerMusic(struct ScriptContext *ctx)
 {
     u16 music = ScriptReadHalfword(ctx);

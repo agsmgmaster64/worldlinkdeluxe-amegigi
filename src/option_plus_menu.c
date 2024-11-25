@@ -339,7 +339,7 @@ static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_CANCEL]        = sText_OptionMenuSave,
 };
 
-static const u8 sText_Sound[]        = _("SOUND");
+static const u8 sText_Sound[]        = _("SPEAKERS");
 static const u8 sText_MusicVolume[]  = _("MUSIC VOLUME");
 static const u8 sText_SFXVolume[]    = _("SFX VOLUME");
 static const u8 sText_CriesVolume[]  = _("CRIES VOLUME");
@@ -517,7 +517,7 @@ static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][3] =
 // Disabled Descriptions
 static const u8 sText_Desc_Disabled_Textspeed[]     = _("Text can only be in a set\nspeed.");
 static const u8 sText_Desc_Disabled_FontType[]      = _("Fonts cannot be changed\ncurrectly.");
-static const u8 sText_Desc_Disabled_FrameType[]     = _("Only this text fram can be\nused.");
+static const u8 sText_Desc_Disabled_FrameType[]     = _("Only this text frame can be\nused.");
 static const u8 sText_Desc_Disabled_UniqueColors[]  = _("Unique colors cannot be enabled\ncurrently.");
 
 static const u8 *const sOptionMenuItemDescriptionsDisabledVisuals[MENUITEM_VISUALS_COUNT] =
