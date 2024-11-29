@@ -6032,7 +6032,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "based on the held item."),
         .power = 75,
         .effect = EFFECT_MULTI_PULSE,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 15,
         .target = MOVE_TARGET_SELECTED,
