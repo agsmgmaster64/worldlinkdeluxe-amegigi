@@ -6,6 +6,8 @@
 
 worldlinkdeluxe-amegigi is a decomp port of Touhou Puppet Play World Link Deluxe using pokeemerald-expansion based off of pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. It is currently a work-in-progress at the moment and should be treated as such.
 
+## Using pokeemerald-expansion
+
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
 You can phrase it as the following:
 ```
@@ -13,6 +15,8 @@ Based off RHH's pokeemerald-expansion 1.9.3 https://github.com/rh-hideout/pokeem
 ```
 
 Credits: [CREDITS.md](CREDITS.md)
+
+Please follow the instructions in `INSTALL.md` to get pokeemerald-expansion set up on your machine.
 
 ## What features are included?
 - ***IMPORTANT*❗❗ Read through these to learn what features you can toggle**:
