@@ -707,7 +707,8 @@ static const u8 sTextColors[][3] =
     {0, 1, 2},
     {0, 3, 4},
     {0, 5, 6},
-    {0, 7, 8}
+    {0, 7, 8},
+    {0, 2, 3}
 };
 
 static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
@@ -3076,7 +3077,7 @@ static void PrintPageNamesAndStats(void)
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, gText_Accuracy2, 0, 17, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_APPEAL_JAM, gText_Appeal, 0, 1, 0, 1);
     PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_APPEAL_JAM, gText_Jam, 0, 17, 0, 1);
-    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_PROMPT_RELEARN, gText_Relearn, 0, 4, 0, 0, FONT_SMALL);
+    PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_PROMPT_RELEARN, gText_Relearn, 0, 4, 0, 13, FONT_SMALL);
 }
 
 static void PutPageWindowTilemaps(u8 page)

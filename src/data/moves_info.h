@@ -6030,7 +6030,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .description = COMPOUND_STRING(
             "The move type varies\n"
             "based on the held item."),
-        .power = 80,
+        .power = 75,
         .effect = EFFECT_MULTI_PULSE,
         .type = TYPE_ILLUSION,
         .accuracy = 100,

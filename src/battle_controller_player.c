@@ -1788,7 +1788,8 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
             StringCopy(txtPtr, notVeryEffectiveIcon);
         break;
     case COLOR_IMMUNE:
-        StringCopy(txtPtr, immuneIcon);
+        if (ShouldShowTypeEffectiveness(targetId))
+            StringCopy(txtPtr, immuneIcon);
         break;
     default:
     case COLOR_EFFECTIVE:
