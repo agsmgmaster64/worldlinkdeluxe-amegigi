@@ -19737,7 +19737,7 @@ gBattleAnimMove_CharmingLook::
 
 gBattleAnimMove_RockThrow::
 	loadspritegfx ANIM_TAG_ROCKS
-        shakemonorterrain unused_anim_battler=ANIM_TARGET, velocity=6, shake_duration=1, duration=15, type=SHAKE_BG_Y
+	shakemonorterrain velocity=6, shake_duration=1, duration=15, type=SHAKE_BG_Y
 	createsprite gFallingRockSpriteTemplate, ANIM_TARGET, 2, 0, 1, 0, 0
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
 	delay 6
@@ -19759,7 +19759,7 @@ gBattleAnimMove_RockThrow::
 gBattleAnimMove_RockSlide::
 	loadspritegfx ANIM_TAG_ROCKS
 	monbg ANIM_DEF_PARTNER
-        shakemonorterrain velocity=7, shake_duration=1, duration=11, type=SHAKE_BG_Y
+	shakemonorterrain velocity=7, shake_duration=1, duration=11, type=SHAKE_BG_Y
 	createsprite gFallingRockSpriteTemplate, ANIM_TARGET, 2, -5, 1, -5, 1
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
 	delay 2
@@ -20553,7 +20553,7 @@ gBattleAnimMove_Barrage::
 	createvisualtask AnimTask_BarrageBall, 3
 	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
 	delay 24
-        shakemonorterrain velocity=8, shake_duration=1, duration=40, type=SHAKE_BG_Y
+	shakemonorterrain velocity=8, shake_duration=1, duration=40, type=SHAKE_BG_Y
 	createvisualtask AnimTask_ShakeMon, 3, ANIM_TARGET, 0, 4, 20, 1
 	createvisualtask AnimTask_ShakeMon, 3, ANIM_DEF_PARTNER, 0, 4, 20, 1
 	loopsewithpan SE_M_STRENGTH, SOUND_PAN_TARGET, 8, 2
@@ -21300,7 +21300,7 @@ gBattleAnimMove_Superpower::
 	createsprite gSuperpowerOrbSpriteTemplate, ANIM_TARGET, 2, ANIM_ATTACKER
 	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
 	delay 20
-        shakemonorterrain velocity=4, shake_duration=1, duration=180, type=SHAKE_BG_Y
+	shakemonorterrain velocity=4, shake_duration=1, duration=180, type=SHAKE_BG_Y
 	createvisualtask SoundTask_PlaySE2WithPanning, 5, SE_M_EARTHQUAKE, 0
 	delay 40
 	createsprite gSuperpowerRockSpriteTemplate, ANIM_ATTACKER, 41, 200, 96, 1, 120
@@ -22626,7 +22626,7 @@ SnoreEffect:
 	playsewithpan SE_M_SNORE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -7, -7, 7, ANIM_ATTACKER, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 7, 1
-        shakemonorterrain velocity=6, shake_duration=1, duration=14, type=SHAKE_BG_X, battler_selector=SHAKE_MON_ATTACKER
+	shakemonorterrain velocity=6, shake_duration=1, duration=14, type=SHAKE_BG_X, battler_selector=SHAKE_MON_ATTACKER
 	createsprite gSnoreZSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, -42, -38, 24, 0, 0
 	createsprite gSnoreZSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 0, -42, 24, 0, 0
 	createsprite gSnoreZSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 42, -38, 24, 0, 0
@@ -24706,7 +24706,7 @@ gBattleAnimMove_ToxicGas::
 	delay 40
 	loopsewithpan SE_M_MIST, SOUND_PAN_TARGET, 28, 6
 .if B_UPDATED_MOVE_DATA >= GEN_5
-	blendcolorcycle priority=2, selector=F_PAL_DEF_SIDE delay=6, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(26, 0, 26)
+	blendcolorcycle priority=2, selector=F_PAL_DEF_SIDE, delay=6, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(26, 0, 26)
 .else
 	blendcolorcycle priority=2, selector=F_PAL_TARGET, delay=6, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(26, 0, 26)
 .endif
@@ -28229,7 +28229,7 @@ gBattleAnimGeneral_SmokeballEscape::
 	blendoff
 	end
 
-gBattleAnimGeneral_HangedOn:
+gBattleAnimGeneral_HangedOn::
 	simplepaletteblend unused_subpriority_offset=0, selector=F_PAL_ATTACKER, delay=7, initial_blend_y=0, target_blend_y=9, color=RGB_RED
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_SlideMonForFocusBand, 5, 30, 128, 0, 1, 2, 0, 1
