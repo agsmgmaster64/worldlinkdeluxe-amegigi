@@ -2,6 +2,7 @@
 #define GUARD_CONSTANTS_ITEM_EFFECTS_H
 
 // field 0 masks
+#define ITEM0_HEXORB            0x1  // hexorb Branch
 #define ITEM0_DIRE_HIT          0x30 // Works the same way as the move Focus Energy.
 #define ITEM0_SACRED_ASH        0x40
 #define ITEM0_INFATUATION       0x80
@@ -94,5 +95,6 @@
 #define ITEM_EFFECT_HEAL_PP 21
 #define ITEM_EFFECT_NONE 22
 #define ITEM_EFFECT_POKEVIAL 23
+#define ITEM_EFFECT_HEXORB 24 //hexorb Branch
 
 #endif // GUARD_CONSTANTS_ITEM_EFFECTS_H

@@ -96,6 +96,10 @@ static void UsePokevialFieldNo(u8 taskId);
 static void UsePokevialYesNo(u8);
 static void UsePokevialYes(u8);
 void ItemUseOutOfBattle_Pokevial(u8);
+// Start hexorb Branch
+void ItemUseOutOfBattle_Hexorb(u8 taskId);
+void Task_OpenRegisteredHexorb(u8 taskId);
+// End hexorb Branch
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -1811,5 +1815,33 @@ void ItemUseOutOfBattle_Pokeball(u8 taskId)
     gBagMenu->newScreenCallback = CB2_ShowPartyMenuForItemUse;
     Task_FadeAndCloseBagMenu(taskId);
 }
+
+// Start hexorb Branch
+void ItemUseOutOfBattle_Hexorb(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_UseHexorb;
+
+    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+    {
+        SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_OpenRegisteredHexorb;
+    }
+}
+
+void Task_OpenRegisteredHexorb(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitPartyMenuForHexorbFromField(taskId);
+        DestroyTask(taskId);
+    }
+}
+// End hexorb Branch
 
 #undef tUsingRegisteredKeyItem

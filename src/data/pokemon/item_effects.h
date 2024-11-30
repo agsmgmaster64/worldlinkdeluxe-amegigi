@@ -185,6 +185,11 @@ const u8 gItemEffect_Pokevial[7] = {
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM4_HEAL_PP,
     [6] = ITEM6_HEAL_HP_FULL | ITEM6_HEAL_PP_FULL,
 };
+// Start hexorb branch
+const u8 gItemEffect_Hexorb[7] = {
+    [0] = ITEM0_HEXORB,
+};
+// End Hexorb branch
 
 #define VITAMIN_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 5, /* Friendship change, low */  \
