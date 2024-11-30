@@ -1805,4 +1805,11 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     Task_FadeAndCloseBagMenu(taskId);
 }
 
+void ItemUseOutOfBattle_Pokeball(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_Pokeball;
+    gBagMenu->newScreenCallback = CB2_ShowPartyMenuForItemUse;
+    Task_FadeAndCloseBagMenu(taskId);
+}
+
 #undef tUsingRegisteredKeyItem
