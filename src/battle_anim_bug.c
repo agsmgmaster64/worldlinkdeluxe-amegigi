@@ -193,7 +193,7 @@ const struct SpriteTemplate gTailGlowOrbSpriteTemplate =
 
 static void AnimMegahornHorn(struct Sprite *sprite)
 {
-    CMD_ARGS(x1, y1, x2, y2, duration);
+    ANIM_CMD_ARGS(x1, y1, x2, y2, duration);
 
     if (IsContest())
     {
@@ -223,7 +223,7 @@ static void AnimMegahornHorn(struct Sprite *sprite)
 
 static void AnimLeechLifeNeedle(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, duration);
+    ANIM_CMD_ARGS(x, y, duration);
 
     if (IsContest())
     {
@@ -252,7 +252,7 @@ static void AnimLeechLifeNeedle(struct Sprite *sprite)
 // arg 2: controls the left-to-right movement
 static void AnimTranslateWebThread(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, unk2, amplitude, targetsBoth);
+    ANIM_CMD_ARGS(x, y, unk2, amplitude, targetsBoth);
 
     if (IsContest())
         cmd->unk2 /= 2;
@@ -292,7 +292,7 @@ static void AnimTranslateWebThread_Step(struct Sprite *sprite)
 // Second stage of String Shot
 static void AnimStringWrap(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y);
+    ANIM_CMD_ARGS(x, y);
 
     SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);
     if (GetBattlerSide(gBattleAnimAttacker))
@@ -372,7 +372,7 @@ static void AnimSpiderWeb_End(struct Sprite *sprite)
 // initially rotated so that it appears to be traveling in a straight line.
 void AnimTranslateStinger(struct Sprite *sprite)
 {
-    CMD_ARGS(initialX, intialY, targetX, targetY, duration);
+    ANIM_CMD_ARGS(initialX, intialY, targetX, targetY, duration);
 
     s16 lVarX, lVarY;
     u16 rot;
@@ -420,7 +420,7 @@ void AnimTranslateStinger(struct Sprite *sprite)
 // Rotates sprite and moves it in an arc, so that it appears like a missle or arrow traveling.
 void AnimMissileArc(struct Sprite *sprite)
 {
-    CMD_ARGS(initialX, intialY, targetX, targetY, duration, waveAmplitude);
+    ANIM_CMD_ARGS(initialX, intialY, targetX, targetY, duration, waveAmplitude);
 
     InitSpritePosToAnimAttacker(sprite, TRUE);
 
@@ -476,7 +476,7 @@ void AnimMissileArc_Step(struct Sprite *sprite)
 
 static void AnimTailGlowOrb(struct Sprite *sprite)
 {
-    CMD_ARGS(relativeTo);
+    ANIM_CMD_ARGS(relativeTo);
 
     if (cmd->relativeTo == ANIM_ATTACKER)
     {

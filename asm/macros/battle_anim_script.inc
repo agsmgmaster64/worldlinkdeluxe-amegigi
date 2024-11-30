@@ -353,7 +353,7 @@
 	.endm
 
 @ createsprite wrappers
-@ The arguments are based on the CMD_ARGS of the callback associated with the template.
+@ The arguments are based on the ANIM_CMD_ARGS of the callback associated with the template.
 
 	.macro simplepaletteblend unused_anim_battler=ANIM_ATTACKER, unused_subpriority_offset=2, selector:req, delay:req, initial_blend_y:req, target_blend_y:req, color:req
 	createsprite gSimplePaletteBlendSpriteTemplate, \unused_anim_battler, \unused_subpriority_offset, \selector, \delay, \initial_blend_y, \target_blend_y, \color
@@ -489,7 +489,7 @@
 	.endm
 
 @ createvisualtask wrappers
-@ The arguments are based on the CMD_ARGS of the task.
+@ The arguments are based on the ANIM_CMD_ARGS of the task.
 
 	.macro metallicshine priority=5, permanent:req, color
 	.ifb \color

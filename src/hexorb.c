@@ -99,12 +99,12 @@ static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
     switch (status)
     {
         case STATUS1_TOXIC_POISON:
-            return (type == TYPE_STEEL || type == TYPE_POISON);
+            return (type == TYPE_STEEL || type == TYPE_MIASMA);
         case STATUS1_FREEZE:
         case STATUS1_FROSTBITE:
             return (type == TYPE_ICE);
         case STATUS1_PARALYSIS:
-            return (B_PARALYZE_ELECTRIC >= GEN_6 && type == TYPE_ELECTRIC);
+            return (B_PARALYZE_ELECTRIC >= GEN_6 && type == TYPE_WIND);
         case STATUS1_BURN:
             return (type == TYPE_FIRE);
         default:

@@ -272,7 +272,7 @@ static void AnimPunishment(struct Sprite *sprite)
 
 void AnimTask_AttackerFadeToInvisible(u8 taskId)
 {
-    CMD_ARGS(stepDelay);
+    ANIM_CMD_ARGS(stepDelay);
 
     int battler;
     gTasks[taskId].data[0] = cmd->stepDelay;
@@ -312,7 +312,7 @@ static void AnimTask_AttackerFadeToInvisible_Step(u8 taskId)
 
 void AnimTask_AttackerFadeFromInvisible(u8 taskId)
 {
-    CMD_ARGS(stepDelay);
+    ANIM_CMD_ARGS(stepDelay);
 
     gTasks[taskId].data[0] = cmd->stepDelay;
     gTasks[taskId].data[1] = BLDALPHA_BLEND(0, 16);
@@ -401,7 +401,7 @@ static void AnimUnusedBagSteal_Step(struct Sprite *sprite)
 // Move sprite inward for Bite/Crunch and Clamp
 void AnimBite(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, animation, xVelocity, yVelocity, halfDuration);
+    ANIM_CMD_ARGS(x, y, animation, xVelocity, yVelocity, halfDuration);
 
     sprite->x += cmd->x;
     sprite->y += cmd->y;
@@ -435,7 +435,7 @@ static void AnimBite_Step2(struct Sprite *sprite)
 // Launches a tear drop away from the battler. Used by Fake Tears
 void AnimTearDrop(struct Sprite *sprite)
 {
-    CMD_ARGS(relativeTo, type);
+    ANIM_CMD_ARGS(relativeTo, type);
 
     u8 battler;
     s8 xOffset;
@@ -889,7 +889,7 @@ void AnimTask_MementoHandleBg(u8 taskId)
 // Animates a deep slash from a claw. Used by Metal Claw, Dragon Claw, and Crush Claw
 void AnimClawSlash(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, animation);
+    ANIM_CMD_ARGS(x, y, animation);
 
     sprite->x += cmd->x;
     sprite->y += cmd->y;
@@ -903,7 +903,7 @@ void AnimClawSlash(struct Sprite *sprite)
 // Custom color argument is used in MOVE_POISON_TAIL to make the mon turn purplish/pinkish as if became cloaked in poison.
 void AnimTask_MetallicShine(u8 taskId)
 {
-    CMD_ARGS(permanent, useColor, color);
+    ANIM_CMD_ARGS(permanent, useColor, color);
 
     u16 species;
     u8 spriteId;
@@ -1020,7 +1020,7 @@ static void AnimTask_MetallicShine_Step(u8 taskId)
 // Changes battler's palette to either grayscale or original.
 void AnimTask_SetGrayscaleOrOriginalPal(u8 taskId)
 {
-    CMD_ARGS(battler, mode);
+    ANIM_CMD_ARGS(battler, mode);
 
     u8 spriteId;
     u8 battler;

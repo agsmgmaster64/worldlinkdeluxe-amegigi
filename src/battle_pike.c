@@ -817,7 +817,7 @@ bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
     u16 ability = GetMonAbility(mon);
     bool8 ret = FALSE;
 
-    if (ability == ABILITY_COMATOSE)
+    if (ability == ABILITY_COMATOSE || ability == ABILITY_LIFESTREAM)
         return TRUE;
 
     switch (status)

@@ -342,7 +342,7 @@ static void AnimMovePowerSwapGuardSwap(struct Sprite *sprite)
 // Moves a spinning duck around the mon's head.
 static void AnimConfusionDuck(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, waveOffset, wavePeriod, duration);
+    ANIM_CMD_ARGS(x, y, waveOffset, wavePeriod, duration);
 
     sprite->x += cmd->x;
     sprite->y += cmd->y;
@@ -382,7 +382,7 @@ static void AnimConfusionDuck_Step(struct Sprite *sprite)
 // Performs a simple color blend on a specified sprite.
 static void AnimSimplePaletteBlend(struct Sprite *sprite)
 {
-    CMD_ARGS(selector, delay, initialBlendY, targetBlendY, color);
+    ANIM_CMD_ARGS(selector, delay, initialBlendY, targetBlendY, color);
 
     u32 selectedPalettes = UnpackSelectedBattlePalettes(cmd->selector);
     BeginNormalPaletteFade(selectedPalettes, cmd->delay, cmd->initialBlendY, cmd->targetBlendY, cmd->color);
@@ -447,7 +447,7 @@ static void AnimSimplePaletteBlend_Step(struct Sprite *sprite)
 
 static void AnimComplexPaletteBlend(struct Sprite *sprite)
 {
-    CMD_ARGS(selector, delay, numBlends, color1, blendY1, color2, blendY2);
+    ANIM_CMD_ARGS(selector, delay, numBlends, color1, blendY1, color2, blendY2);
 
     u32 selectedPalettes;
 
@@ -519,7 +519,7 @@ static void AnimComplexPaletteBlend_Step2(struct Sprite *sprite)
 
 static void AnimCirclingSparkle(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y);
+    ANIM_CMD_ARGS(x, y);
 
     sprite->x += cmd->x;
     sprite->y += cmd->y;
@@ -550,7 +550,7 @@ static void AnimCirclingSparkle(struct Sprite *sprite)
 // Many uses of this task only set a tNumBlends of 2, which has the effect of blending to a color and back once
 void AnimTask_BlendColorCycle(u8 taskId)
 {
-    CMD_ARGS(selector, delay, numBlends, initialBlendY, targetBlendY, color);
+    ANIM_CMD_ARGS(selector, delay, numBlends, initialBlendY, targetBlendY, color);
 
     gTasks[taskId].tPalSelector = cmd->selector;
     gTasks[taskId].tDelay = cmd->delay;
@@ -612,7 +612,7 @@ static void AnimTask_BlendColorCycleLoop(u8 taskId)
 // See AnimTask_BlendColorCycle. Same, but excludes Attacker and Target
 void AnimTask_BlendColorCycleExclude(u8 taskId)
 {
-    CMD_ARGS(unk0, delay, numBlends, initialBlendY, targetBlendY, color);
+    ANIM_CMD_ARGS(unk0, delay, numBlends, initialBlendY, targetBlendY, color);
 
     int battler;
     u32 selectedPalettes = 0;
@@ -689,7 +689,7 @@ static void AnimTask_BlendColorCycleExcludeLoop(u8 taskId)
 // See AnimTask_BlendColorCycle. Same, but selects palette by ANIM_TAG_*
 void AnimTask_BlendColorCycleByTag(u8 taskId)
 {
-    CMD_ARGS(tag, delay, numBlends, initialBlendY, targetBlendY, color);
+    ANIM_CMD_ARGS(tag, delay, numBlends, initialBlendY, targetBlendY, color);
 
     gTasks[taskId].tPalTag = cmd->tag;
     gTasks[taskId].tDelay = cmd->delay;
@@ -771,7 +771,7 @@ static void AnimTask_BlendColorCycleByTagLoop(u8 taskId)
 #define tAnimTag   data[7]
 void AnimTask_FlashAnimTagWithColor(u8 taskId)
 {
-    CMD_ARGS(tag, delay, numBlends, color1, blendY1, color2, blendY2);
+    ANIM_CMD_ARGS(tag, delay, numBlends, color1, blendY1, color2, blendY2);
 
     u8 paletteIndex;
 
@@ -862,7 +862,7 @@ static void AnimTask_FlashAnimTagWithColor_Step2(u8 taskId)
 
 void AnimTask_InvertScreenColor(u8 taskId)
 {
-    CMD_ARGS(flagsBattlers);
+    ANIM_CMD_ARGS(flagsBattlers);
 
     u32 selectedPalettes = 0;
 
@@ -896,7 +896,7 @@ void AnimTask_InvertScreenColor(u8 taskId)
 #define tColorB        data[7]
 void AnimTask_TintPalettes(u8 taskId)
 {
-    CMD_ARGS(flagsScenery, flagsAttacker, flagsTarget, duration, r, g, b);
+    ANIM_CMD_ARGS(flagsScenery, flagsAttacker, flagsTarget, duration, r, g, b);
 
     u8 attackerBattler;
     u8 targetBattler;
@@ -960,7 +960,7 @@ void AnimTask_TintPalettes(u8 taskId)
 
 static void AnimShakeMonOrBattleTerrain(struct Sprite *sprite)
 {
-    CMD_ARGS(velocity, shakeDuration, duration, type, battlerSelector);
+    ANIM_CMD_ARGS(velocity, shakeDuration, duration, type, battlerSelector);
 
     sprite->invisible = TRUE;
     sprite->sShakeVelocity = -cmd->velocity;
@@ -1026,7 +1026,7 @@ static void AnimShakeMonOrBattleTerrain_Step(struct Sprite *sprite)
 static void AnimShakeMonOrBattleTerrain_UpdateCoordOffsetEnabled(void)
 {
     // Matches AnimShakeMonOrBattleTerrain.
-    CMD_ARGS(velocity, shakeDuration, duration, type, battlerSelector);
+    ANIM_CMD_ARGS(velocity, shakeDuration, duration, type, battlerSelector);
 
     gSprites[gBattlerSpriteIds[gBattleAnimAttacker]].coordOffsetEnabled = FALSE;
     gSprites[gBattlerSpriteIds[gBattleAnimTarget]].coordOffsetEnabled = FALSE;
@@ -1064,7 +1064,7 @@ static void AnimShakeMonOrBattleTerrain_UpdateCoordOffsetEnabled(void)
 // Can shake battle terrain back and forth on the X or down and back to original pos on Y (cant shake up from orig pos)
 void AnimTask_ShakeBattleTerrain(u8 taskId)
 {
-    CMD_ARGS(xOffset, yOffset, shakes, delay);
+    ANIM_CMD_ARGS(xOffset, yOffset, shakes, delay);
 
     gTasks[taskId].tXOffset = cmd->xOffset;
     gTasks[taskId].tYOffset = cmd->yOffset;
@@ -1113,7 +1113,7 @@ static void AnimTask_ShakeBattleTerrain_Step(u8 taskId)
 
 void AnimHitSplatBasic(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, relativeTo, animation);
+    ANIM_CMD_ARGS(x, y, relativeTo, animation);
 
     StartSpriteAffineAnim(sprite, cmd->animation);
     if (cmd->relativeTo == ANIM_ATTACKER)
@@ -1128,7 +1128,7 @@ void AnimHitSplatBasic(struct Sprite *sprite)
 // Same as basic hit splat but takes a length of time to persist for.
 static void AnimHitSplatPersistent(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, relativeTo, animation, duration);
+    ANIM_CMD_ARGS(x, y, relativeTo, animation, duration);
 
     StartSpriteAffineAnim(sprite, cmd->animation);
     if (cmd->relativeTo == ANIM_ATTACKER)
@@ -1146,7 +1146,7 @@ static void AnimHitSplatPersistent(struct Sprite *sprite)
 static void AnimHitSplatHandleInvert(struct Sprite *sprite)
 {
     // Matches AnimHitSplatBasic.
-    CMD_ARGS(x, y, relativeTo, animation);
+    ANIM_CMD_ARGS(x, y, relativeTo, animation);
 
     if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER && !IsContest())
         cmd->y = -cmd->y;
@@ -1156,7 +1156,7 @@ static void AnimHitSplatHandleInvert(struct Sprite *sprite)
 
 void AnimHitSplatRandom(struct Sprite *sprite)
 {
-    CMD_ARGS(relativeTo, animation);
+    ANIM_CMD_ARGS(relativeTo, animation);
 
     if (!InitSpritePosToAnimBattler(cmd->relativeTo, sprite, FALSE))
         return;
@@ -1171,7 +1171,7 @@ void AnimHitSplatRandom(struct Sprite *sprite)
 
 void AnimHitSplatOnMonEdge(struct Sprite *sprite)
 {
-    CMD_ARGS(relativeTo, x, y, animation);
+    ANIM_CMD_ARGS(relativeTo, x, y, animation);
 
     sprite->data[0] = GetAnimBattlerSpriteId(cmd->relativeTo);
     sprite->x = gSprites[sprite->data[0]].x + gSprites[sprite->data[0]].x2;
@@ -1185,7 +1185,7 @@ void AnimHitSplatOnMonEdge(struct Sprite *sprite)
 
 void AnimCrossImpact(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, relativeTo, duration);
+    ANIM_CMD_ARGS(x, y, relativeTo, duration);
 
     if (cmd->relativeTo == ANIM_ATTACKER)
         InitSpritePosToAnimAttacker(sprite, TRUE);
@@ -1199,7 +1199,7 @@ void AnimCrossImpact(struct Sprite *sprite)
 
 void AnimFlashingHitSplat(struct Sprite *sprite)
 {
-    CMD_ARGS(x, y, relativeTo, animation);
+    ANIM_CMD_ARGS(x, y, relativeTo, animation);
 
     StartSpriteAffineAnim(sprite, cmd->animation);
     if (cmd->relativeTo == ANIM_ATTACKER)
