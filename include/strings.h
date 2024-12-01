@@ -1036,7 +1036,7 @@ extern const u8 gText_DexSearchSourceTouhou18[];
 extern const u8 gText_DexSearchSourceTouhou19[];
 extern const u8 gText_DexSearchSourceTouhouSpinoff[];
 extern const u8 gText_DexSearchSourceTouhouPrint[];
-extern const u8 gText_DexSearchSourceHololive[];
+extern const u8 gText_DexSearchSourceVTubers[];
 extern const u8 gText_DexSearchSourceUndertale[];
 extern const u8 gText_DexSearchSourceDeltarune[];
 extern const u8 gText_DexSearchSourcePizzaTower[];

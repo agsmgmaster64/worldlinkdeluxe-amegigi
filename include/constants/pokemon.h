@@ -247,7 +247,7 @@
 #define SOURCE_UDOALG       18
 #define SOURCE_SPINOFF      19
 #define SOURCE_PRINT        20
-#define SOURCE_HOLOLIVE     21
+#define SOURCE_VTUBERS     21
 #define SOURCE_UNDERTALE    22
 #define SOURCE_DELTARUNE    23
 #define SOURCE_PIZZA_TOWER  24
