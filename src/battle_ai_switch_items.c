@@ -380,6 +380,10 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLORA_ABSORB;
     }
+    else if (gMovesInfo[predictedMove].soundMove || (isOpposingBattlerChargingOrInvulnerable && gMovesInfo[incomingMove].soundMove))
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SOUNDPROOF;
+    }
     else
     {
         return FALSE;
