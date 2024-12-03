@@ -724,24 +724,25 @@
 #define STRINGID_ELECTRICCURRENTISRUNNING             722
 #define STRINGID_SEEMSWEIRD                           723
 #define STRINGID_WAGGLINGAFINGER                      724
-#define STRINGID_PLAYERWHITEDOUT                      725
-#define STRINGID_PKMNPREVENTSFROSTBITEWITH            726
-#define STRINGID_PKMNALREADYHASFROSTBITE              727
-#define STRINGID_PKMNDROPPEDITEM                      728
-#define STRINGID_BAGISFULL                            729
-#define STRINGID_MONTOOSCAREDTOMOVE                   730
-#define STRINGID_GHOSTGETOUTGETOUT                    731
-#define STRINGID_SILPHSCOPEUNVEILED                   732
-#define STRINGID_GHOSTWASMAROWAK                      733
-#define STRINGID_TERRAINBECOMESHOLY                   734
-#define STRINGID_HOLYTERRAINENDS                      735
-#define STRINGID_HOLYTERRAINPREVENTS                  736
-#define STRINGID_PKMNFROSTBITBY                       737
-#define STRINGID_FELTBETTERWITHABILITY                738
-#define STRINGID_TARGETFELTBETTERWITHABILITY          739
-#define STRINGID_HOLYSURROUNDSBATTLEFIELD             740
+#define STRINGID_BLOCKEDBYSLEEPCLAUSE                 725
+#define STRINGID_PLAYERWHITEDOUT                      726
+#define STRINGID_PKMNPREVENTSFROSTBITEWITH            727
+#define STRINGID_PKMNALREADYHASFROSTBITE              728
+#define STRINGID_PKMNDROPPEDITEM                      729
+#define STRINGID_BAGISFULL                            730
+#define STRINGID_MONTOOSCAREDTOMOVE                   731
+#define STRINGID_GHOSTGETOUTGETOUT                    732
+#define STRINGID_SILPHSCOPEUNVEILED                   733
+#define STRINGID_GHOSTWASMAROWAK                      734
+#define STRINGID_TERRAINBECOMESHOLY                   735
+#define STRINGID_HOLYTERRAINENDS                      736
+#define STRINGID_HOLYTERRAINPREVENTS                  737
+#define STRINGID_PKMNFROSTBITBY                       738
+#define STRINGID_FELTBETTERWITHABILITY                739
+#define STRINGID_TARGETFELTBETTERWITHABILITY          740
+#define STRINGID_HOLYSURROUNDSBATTLEFIELD             741
 
-#define BATTLESTRINGS_COUNT                           741
+#define BATTLESTRINGS_COUNT                           742
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
