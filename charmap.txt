@@ -457,6 +457,20 @@ ENG = FC 16
 PAUSE_MUSIC = FC 17
 RESUME_MUSIC = FC 18
 PLAY_CAUGHT_BGM = FC 19
+CREATE_MUGSHOT = FC 1A
+DESTROY_MUGSHOT = FC 1B
+
+@ these are basically what include/constants/field_mugshots.h have
+@ but without the x_COUNT and x_NONE ones for strings
+
+@ mugshot stuff begins
+
+MUGSHOT_TEST = 01
+
+EMOTE_NORMAL = 00
+EMOTE_ALT = 01
+
+@ mugshot stuff ends
 
 @ fonts
 
