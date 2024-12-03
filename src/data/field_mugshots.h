@@ -13,6 +13,8 @@ struct MugshotGfx
 {
     const u32 *gfx;
     const u16 *pal;
+    u16 x;
+    u16 y;
 };
 
 static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
@@ -23,12 +25,16 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_TestNormal,
             .pal = sFieldMugshotPal_TestNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
         },
 
         [EMOTE_ALT] =
         {
             .gfx = sFieldMugshotGfx_TestAlt,
             .pal = sFieldMugshotPal_TestAlt,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
         },
     },
 
@@ -38,6 +44,8 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_AmeliaNormal,
             .pal = sFieldMugshotPal_AmeliaNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
         },
     },
 
@@ -47,6 +55,8 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_GigiNormal,
             .pal = sFieldMugshotPal_GigiNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
         },
     },
 };

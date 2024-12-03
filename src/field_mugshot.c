@@ -86,9 +86,23 @@ void _RemoveFieldMugshot(u8 slot)
     }
 }
 
+static void GetMugshotXCoord(u32 id, u32 emote)
+{
+    if (sFieldMugshots[id][emote].x != 0)
+        return sFieldMugshots[id][emote].x;
+    return MUGSHOT_X;
+}
+
+static void GetMugshotYCoord(u32 id, u32 emote)
+{
+    if (sFieldMugshots[id][emote].y != 0)
+        return sFieldMugshots[id][emote].y;
+    return MUGSHOT_Y;
+}
+
 void _CreateFieldMugshot(u32 id, u32 emote)
 {
-    _CreateFieldMugshotAt(id, emote, MUGSHOT_X, MUGSHOT_Y);
+    _CreateFieldMugshotAt(id, emote, GetMugshotXCoord(id, emote), GetMugshotYCoord(id, emote));
 }
 
 void _CreateFieldMugshotAt(u32 id, u32 emote, u32 mugshot_x, u32 mugshot_y)
