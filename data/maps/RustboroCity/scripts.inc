@@ -2092,7 +2092,7 @@ RustboroCity_Text_Gigi::
 
 RustboroCity_Text_GigiHiLetsRegister::
 # 85 "data/maps/RustboroCity/scripts.pory"
-	.string "Hey you!\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey you!\n"
 	.string "{PLAYER}, was it?\p"
 	.string "The name's Gigi Murin, and I head you\n"
 	.string "made the new Noiseboro gym leader run\l"
@@ -2109,16 +2109,16 @@ RustboroCity_Text_GigiHiLetsRegister::
 
 RustboroCity_Text_GigiPassedBrineyWantToBattle::
 # 94 "data/maps/RustboroCity/scripts.pory"
-	.string "You're heading towards Dreamford, huh?\p"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}You're heading towards Dreamford, huh?\p"
 	.string "I believe Murasa's all settled now in\n"
 	.string "being able to take people there again.\p"
 	.string "Since we're here anyways, I want to see\n"
 	.string "how strong you are exactly, if you're up\l"
-	.string "for it, of course.$"
+	.string "for it, of course.{DESTROY_MUGSHOT}$"
 
 RustboroCity_Text_GigiOhHaventRaisedPokemonEnough::
 # 100 "data/maps/RustboroCity/scripts.pory"
-	.string "Not feeling prepared for what's coming\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Not feeling prepared for what's coming\n"
 	.string "up, huh?\p"
 	.string "I get it, I got you all of a sudden here,\n"
 	.string "wanting to battle you immediately.\p"
@@ -2128,20 +2128,20 @@ RustboroCity_Text_GigiOhHaventRaisedPokemonEnough::
 
 RustboroCity_Text_GigiWantToBattle::
 # 106 "data/maps/RustboroCity/scripts.pory"
-	.string "So how are you feeling now?\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}So how are you feeling now?\n"
 	.string "Up for a test of your Puppets,\l"
-	.string "{PLAYER}?$"
+	.string "{PLAYER}?{DESTROY_MUGSHOT}$"
 
 RustboroCity_Text_GigiImNotGoingToLose::
 # 110 "data/maps/RustboroCity/scripts.pory"
-	.string "Well, you should know, you may be as\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you should know, you may be as\n"
 	.string "strong as me, but I know better about\l"
 	.string "what I'm doing!\p"
 	.string "Bring it on, {PLAYER}!$"
 
 RustboroCity_Text_GigiMrBrineyHint::
 # 115 "data/maps/RustboroCity/scripts.pory"
-	.string "Well, you certainly are much more than I\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you certainly are much more than I\n"
 	.string "expected at first.\p"
 	.string "Let this be known though, we are now\n"
 	.string "officially rivals of the Gym Leader\l"

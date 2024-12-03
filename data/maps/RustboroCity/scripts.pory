@@ -83,7 +83,7 @@ text RustboroCity_Text_Gigi {
 }
 
 text RustboroCity_Text_GigiHiLetsRegister {
-	format("Hey you!\n{PLAYER}, was it?\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey you!\n{PLAYER}, was it?\p"
 	"The name's Gigi Murin, and I head you made the new Noiseboro gym leader run away like a coward!\p"
 	"I won't lie, that's pretty impressive for someone who just started out fairly recently!\p"
 	"You know what, how about we register each other on that new iDollNav you just have?\p"
@@ -92,28 +92,28 @@ text RustboroCity_Text_GigiHiLetsRegister {
 }
 
 text RustboroCity_Text_GigiPassedBrineyWantToBattle {
-	format("You're heading towards Dreamford, huh?\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}You're heading towards Dreamford, huh?\p"
 	"I believe Murasa's all settled now in being able to take people there again.\p"
-	"Since we're here anyways, I want to see how strong you are exactly, if you're up for it, of course.")
+	"Since we're here anyways, I want to see how strong you are exactly, if you're up for it, of course.{DESTROY_MUGSHOT}")
 }
 
 text RustboroCity_Text_GigiOhHaventRaisedPokemonEnough {
-	format("Not feeling prepared for what's coming up, huh?\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Not feeling prepared for what's coming up, huh?\p"
 	"I get it, I got you all of a sudden here, wanting to battle you immediately.\p"
 	"I'll let you off for this once, but let it be known that I will be prepared to battle you!")
 }
 
 text RustboroCity_Text_GigiWantToBattle {
-	format("So how are you feeling now?\NUp for a test of your Puppets, {PLAYER}?")
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}So how are you feeling now?\NUp for a test of your Puppets, {PLAYER}?{DESTROY_MUGSHOT}")
 }
 
 text RustboroCity_Text_GigiImNotGoingToLose {
-	format("Well, you should know, you may be as strong as me, but I know better about what I'm doing!\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you should know, you may be as strong as me, but I know better about what I'm doing!\p"
 	"Bring it on, {PLAYER}!")
 }
 
 text RustboroCity_Text_GigiMrBrineyHint {
-	format("Well, you certainly are much more than I expected at first.\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you certainly are much more than I expected at first.\p"
 	"Let this be known though, we are now officially rivals of the Gym Leader challenge!\p"
 	"I'll have to train my Puppets further now, but we shall meet again later!")
 }

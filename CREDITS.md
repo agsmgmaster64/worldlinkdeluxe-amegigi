@@ -32,6 +32,7 @@
 - **tustin**: Making the name box branch used in this project
 - **mudskip**: Making the new shop UI used in this project
 - **Hecatia666**: Making some commissioned sprites used in this project
+- **PurrfectDoodle**: Making more commissioned sprites used in this project
 
 - **haven**: Making Hex Maniac Advance, which was used for porting from the binary version, as well as helping out with the process
 

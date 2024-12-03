@@ -2726,12 +2726,12 @@
 	@ 	removefieldmugshot
 
 	@ spawn a mugshot in the overworld at a specific coordinate
-	@ NOTE: this macro uses VAR_TEMP_E and VAR_TEMP_F as its parameter
-	@ so be careful if you use them in your script too!
-	.macro createfieldmugshot id:req, emote=0
+	.macro createfieldmugshot mugshot:req, emote=0 top=MUGSHOT_X left=MUGSHOT_Y
 	callnative CreateFieldMugshot
-	setorcopyvar VAR_TEMP_E, \id
-	setorcopyvar VAR_TEMP_F, \emote
+	.2byte \mugshot
+	.2byte \emote
+	.2byte \top
+	.2byte \left
 	.endm
 
 	@ destroys a mugshot in the overworld, if there is one

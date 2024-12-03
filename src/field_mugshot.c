@@ -16,11 +16,6 @@ static EWRAM_DATA u8 sFieldMugshotSlot = 0;
 #define TAG_MUGSHOT 0x9000
 #define TAG_MUGSHOT2 0x9001
 
-// don't remove the `+ 32`
-// otherwise your sprite will not be placed in the place you desire
-#define MUGSHOT_X 168 + 32
-#define MUGSHOT_Y 51  + 32
-
 static void SpriteCB_FieldMugshot(struct Sprite *s);
 
 static const struct OamData sFieldMugshot_Oam = {
@@ -66,12 +61,13 @@ void RemoveFieldMugshot(void)
     sIsFieldMugshotActive = FALSE;
 }
 
-void CreateFieldMugshot(void)
+void CreateFieldMugshot(struct ScriptContext *ctx)
 {
-    u16 id = VarGet(VAR_TEMP_E);
-    u16 emote = VarGet(VAR_TEMP_F);
-
-    _CreateFieldMugshot(id, emote);
+    u16 mugshotId = ScriptReadHalfword(ctx);
+    u16 emote = ScriptReadHalfword(ctx);
+    u16 x = ScriptReadHalfword(ctx);
+    u16 y = ScriptReadHalfword(ctx);
+    _CreateFieldMugshotAt(mugshotId, emote, x, y);
 }
 
 void _RemoveFieldMugshot(u8 slot)
@@ -92,9 +88,14 @@ void _RemoveFieldMugshot(u8 slot)
 
 void _CreateFieldMugshot(u32 id, u32 emote)
 {
+    _CreateFieldMugshotAt(id, emote, MUGSHOT_X, MUGSHOT_Y);
+}
+
+void _CreateFieldMugshotAt(u32 id, u32 emote, u32 mugshot_x, u32 mugshot_y)
+{
     u32 slot = sFieldMugshotSlot;
     struct SpriteTemplate temp = sFieldMugshot_SpriteTemplate;
-    struct CompressedSpriteSheet sheet = { .size=0x1000, .tag=slot+TAG_MUGSHOT };
+    struct CompressedSpriteSheet sheet = { .size = 0x1000, .tag = slot + TAG_MUGSHOT };
     struct SpritePalette pal = { .tag = sheet.tag };
 
     DebugPrintf("id: %u, emote: %u, sFieldMugshotSlot: %u", id, emote, slot);
@@ -118,7 +119,7 @@ void _CreateFieldMugshot(u32 id, u32 emote)
     LoadSpritePalette(&pal);
     LoadCompressedSpriteSheet(&sheet);
 
-    sFieldMugshotSpriteIds[slot] = CreateSprite(&temp, MUGSHOT_X, MUGSHOT_Y, 0);
+    sFieldMugshotSpriteIds[slot] = CreateSprite(&temp, mugshot_x, mugshot_y, 0);
     if (sFieldMugshotSpriteIds[slot] == SPRITE_NONE)
     {
         return;
