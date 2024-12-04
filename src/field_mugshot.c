@@ -86,14 +86,14 @@ void _RemoveFieldMugshot(u8 slot)
     }
 }
 
-static void GetMugshotXCoord(u32 id, u32 emote)
+static u32 GetMugshotXCoord(u32 id, u32 emote)
 {
     if (sFieldMugshots[id][emote].x != 0)
         return sFieldMugshots[id][emote].x;
     return MUGSHOT_X;
 }
 
-static void GetMugshotYCoord(u32 id, u32 emote)
+static u32 GetMugshotYCoord(u32 id, u32 emote)
 {
     if (sFieldMugshots[id][emote].y != 0)
         return sFieldMugshots[id][emote].y;

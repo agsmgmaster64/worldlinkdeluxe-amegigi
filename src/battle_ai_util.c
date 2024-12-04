@@ -294,9 +294,9 @@ bool32 IsBattlerTrapped(u32 battler, bool32 checkSwitch)
 
     if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
         return FALSE;
-    if (checkSwitch && holdEffect == HOLD_EFFECT_SHED_SHELL)
+    if (AI_DATA->abilities[battler] == ABILITY_RUN_AWAY)
         return FALSE;
-    else if (!checkSwitch && AI_DATA->abilities[battler] == ABILITY_RUN_AWAY)
+    else if (checkSwitch && holdEffect == HOLD_EFFECT_SHED_SHELL)
         return FALSE;
     else if (!checkSwitch && holdEffect == HOLD_EFFECT_CAN_ALWAYS_RUN)
         return FALSE;

@@ -6672,11 +6672,13 @@ u32 IsAbilityPreventingEscape(u32 battler)
     return 0;
 }
 
-bool32 CanBattlerEscape(u32 battler) // no ability check
+bool32 CanBattlerEscape(u32 battler)
 {
     if (gBattleStruct->commanderActive[battler] != SPECIES_NONE)
         return FALSE;
     else if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_SHED_SHELL)
+        return TRUE;
+    else if (GetBattlerAbility(battler) == ABILITY_RUN_AWAY)
         return TRUE;
     else if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
         return TRUE;
@@ -9371,7 +9373,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+        if (GetBattlerTurnOrderNum(battlerAtk) == gBattlersCount - 1 && gMovesInfo[move].effect != EFFECT_FUTURE_SIGHT)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:
@@ -12016,8 +12018,7 @@ u32 GetMoveType(u32 move)
         return gBattleStruct->dynamicMoveType & DYNAMIC_TYPE_MASK;
     else if (B_UPDATED_MOVE_TYPES < GEN_5
          && (move == MOVE_BEAT_UP
-          || move == MOVE_FUTURE_SIGHT
-          || move == MOVE_DOOM_DESIRE))
+          || gMovesInfo[move].effect == EFFECT_FUTURE_SIGHT))
           return TYPE_MYSTERY;
     return gMovesInfo[move].type;
 }
