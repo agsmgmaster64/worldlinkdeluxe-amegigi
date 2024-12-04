@@ -16,7 +16,7 @@ TEST("Nature independent from Hidden Nature")
             PARAMETRIZE { nature = i; hiddenNature = j; }
         }
     }
-    CreateMonWithNature(&mon, SPECIES_CHIBI_YUUGI, 100, 0, nature);
+    CreateMonWithNature(&mon, SPECIES_CHIBI_AMELIA, 100, 0, nature);
     SetMonData(&mon, MON_DATA_HIDDEN_NATURE, &hiddenNature);
     EXPECT_EQ(GetNature(&mon), nature);
     EXPECT_EQ(GetMonData(&mon, MON_DATA_HIDDEN_NATURE), hiddenNature);
@@ -27,10 +27,10 @@ TEST("Terastallization type defaults to primary or secondary type")
     u32 i, teraType;
     struct Pokemon mon;
     for (i = 0; i < 128; i++) PARAMETRIZE {}
-    CreateMon(&mon, SPECIES_PIDGEY, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&mon, SPECIES_CHIBI_MEDICINE, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
     teraType = GetMonData(&mon, MON_DATA_TERA_TYPE);
-    EXPECT(teraType == gSpeciesInfo[SPECIES_PIDGEY].types[0]
-        || teraType == gSpeciesInfo[SPECIES_PIDGEY].types[1]);
+    EXPECT(teraType == gSpeciesInfo[SPECIES_CHIBI_MEDICINE].types[0]
+        || teraType == gSpeciesInfo[SPECIES_CHIBI_MEDICINE].types[1]);
 }
 
 TEST("Terastallization type can be set to any type except TYPE_NONE")
@@ -41,7 +41,7 @@ TEST("Terastallization type can be set to any type except TYPE_NONE")
     {
         PARAMETRIZE { teraType = i; }
     }
-    CreateMon(&mon, SPECIES_CHIBI_YUUGI, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&mon, SPECIES_CHIBI_AMELIA, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
     SetMonData(&mon, MON_DATA_TERA_TYPE, &teraType);
     EXPECT_EQ(teraType, GetMonData(&mon, MON_DATA_TERA_TYPE));
 }
@@ -54,13 +54,13 @@ TEST("Terastallization type is reset to the default types when setting Tera Type
     {
         PARAMETRIZE { teraType = i; typeNone = TYPE_NONE; }
     }
-    CreateMon(&mon, SPECIES_PIDGEY, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&mon, SPECIES_CHIBI_MEDICINE, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
     SetMonData(&mon, MON_DATA_TERA_TYPE, &teraType);
     EXPECT_EQ(teraType, GetMonData(&mon, MON_DATA_TERA_TYPE));
     SetMonData(&mon, MON_DATA_TERA_TYPE, &typeNone);
     typeNone = GetMonData(&mon, MON_DATA_TERA_TYPE);
-    EXPECT(typeNone == gSpeciesInfo[SPECIES_PIDGEY].types[0]
-        || typeNone == gSpeciesInfo[SPECIES_PIDGEY].types[1]);
+    EXPECT(typeNone == gSpeciesInfo[SPECIES_CHIBI_MEDICINE].types[0]
+        || typeNone == gSpeciesInfo[SPECIES_CHIBI_MEDICINE].types[1]);
 }
 
 TEST("Shininess independent from PID and OTID")
@@ -76,44 +76,6 @@ TEST("Shininess independent from PID and OTID")
     EXPECT_EQ(pid, GetMonData(&mon, MON_DATA_PERSONALITY));
     EXPECT_EQ(otId, GetMonData(&mon, MON_DATA_OT_ID));
     EXPECT_EQ(!isShiny, GetMonData(&mon, MON_DATA_IS_SHINY));
-}
-
-TEST("Hyper Training increases stats without affecting IVs")
-{
-    u32 data, hp, atk, def, speed, spatk, spdef;
-    struct Pokemon mon;
-    CreateMon(&mon, SPECIES_CHIBI_YUUGI, 100, 3, TRUE, 0, OT_ID_PRESET, 0);
-
-    hp = GetMonData(&mon, MON_DATA_HP);
-    atk = GetMonData(&mon, MON_DATA_ATK);
-    def = GetMonData(&mon, MON_DATA_DEF);
-    speed = GetMonData(&mon, MON_DATA_SPEED);
-    spatk = GetMonData(&mon, MON_DATA_SPATK);
-    spdef = GetMonData(&mon, MON_DATA_SPDEF);
-
-    data = TRUE;
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_HP, &data);
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_ATK, &data);
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_DEF, &data);
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_SPEED, &data);
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_SPATK, &data);
-    SetMonData(&mon, MON_DATA_HYPER_TRAINED_SPDEF, &data);
-    CalculateMonStats(&mon);
-
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_HP_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_ATK_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_DEF_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_SPEED_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_SPATK_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_SPDEF_IV), 3);
-    EXPECT_EQ(GetMonData(&mon, MON_DATA_SPEED_IV), 3);
-
-    EXPECT_EQ(hp - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_HP));
-    EXPECT_EQ(atk - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_ATK));
-    EXPECT_EQ(def - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_DEF));
-    EXPECT_EQ(speed - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_SPEED));
-    EXPECT_EQ(spatk - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_SPATK));
-    EXPECT_EQ(spdef - 3 + MAX_PER_STAT_IVS, GetMonData(&mon, MON_DATA_SPDEF));
 }
 
 TEST("Status1 round-trips through BoxPokemon")
@@ -138,7 +100,7 @@ TEST("Status1 round-trips through BoxPokemon")
     EXPECT_EQ(GetMonData(&mon2, MON_DATA_STATUS), status1);
 }
 
-TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate stats")
+TEST("canhypertrain/hypertrain affect MON_DATA_*_IV and recalculate stats")
 {
     u32 atk;
     CreateMon(&gPlayerParty[0], SPECIES_CHIBI_YUUGI, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
@@ -153,14 +115,14 @@ TEST("canhypertrain/hypertrain affect MON_DATA_HYPER_TRAINED_* and recalculate s
         hypertrain STAT_ATK, 0;
         canhypertrain STAT_ATK, 0;
     );
-    EXPECT(GetMonData(&gPlayerParty[0], MON_DATA_HYPER_TRAINED_ATK));
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_ATK_IV), 31);
     EXPECT_EQ(atk + 31, GetMonData(&gPlayerParty[0], MON_DATA_ATK));
     EXPECT(!VarGet(VAR_RESULT));
 }
 
 TEST("hasgigantamaxfactor/togglegigantamaxfactor affect MON_DATA_GIGANTAMAX_FACTOR")
 {
-    CreateMon(&gPlayerParty[0], SPECIES_CHIBI_YUUGI, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_CHIBI_AMELIA, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
 
     RUN_OVERWORLD_SCRIPT(
         hasgigantamaxfactor 0;
@@ -203,10 +165,10 @@ TEST("givemon [simple]")
     ZeroPlayerPartyMons();
 
     RUN_OVERWORLD_SCRIPT(
-        givemon SPECIES_CHIBI_YUUGI, 100;
+        givemon SPECIES_CHIBI_AMELIA, 100;
     );
 
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_YUUGI);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_AMELIA);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 100);
 }
 
@@ -215,10 +177,10 @@ TEST("givemon [moves]")
     ZeroPlayerPartyMons();
 
     RUN_OVERWORLD_SCRIPT(
-        givemon SPECIES_CHIBI_YUUGI, 100, move1=MOVE_TACKLE, move2=MOVE_SPLASH, move3=MOVE_NONE, move4=MOVE_NONE;
+        givemon SPECIES_CHIBI_AMELIA, 100, move1=MOVE_TACKLE, move2=MOVE_SPLASH, move3=MOVE_NONE, move4=MOVE_NONE;
     );
 
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_YUUGI);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_AMELIA);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 100);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_MOVE1), MOVE_TACKLE);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_MOVE2), MOVE_SPLASH);
@@ -231,15 +193,15 @@ TEST("givemon [all]")
     ZeroPlayerPartyMons();
 
     RUN_OVERWORLD_SCRIPT(
-        givemon SPECIES_CHIBI_YUUGI, 100, item=ITEM_BENTO_BOX, ball=ITEM_MASTER_BALL, nature=NATURE_BOLD, abilityNum=2, gender=MON_MALE, hpEv=1, atkEv=2, defEv=3, speedEv=4, spAtkEv=5, spDefEv=6, hpIv=7, atkIv=8, defIv=9, speedIv=10, spAtkIv=11, spDefIv=12, move1=MOVE_TACKLE, move2=MOVE_SPLASH, move3=MOVE_CELEBRATE, move4=MOVE_EXPLOSION, isShiny=TRUE, ggMaxFactor=TRUE, teraType=TYPE_FIRE;
+        givemon SPECIES_CHIBI_AMELIA, 100, item=ITEM_BENTO_BOX, ball=ITEM_MASTER_ORB, nature=NATURE_BOLD, abilityNum=2, gender=MON_MALE, hpEv=1, atkEv=2, defEv=3, speedEv=4, spAtkEv=5, spDefEv=6, hpIv=7, atkIv=8, defIv=9, speedIv=10, spAtkIv=11, spDefIv=12, move1=MOVE_TACKLE, move2=MOVE_SPLASH, move3=MOVE_CELEBRATE, move4=MOVE_EXPLOSION, isShiny=TRUE, ggMaxFactor=TRUE, teraType=TYPE_FIRE;
     );
 
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_YUUGI);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 100);
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM), ITEM_LEFTOVERS);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM), ITEM_BENTO_BOX);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_POKEBALL), BALL_MASTER);
     EXPECT_EQ(GetNature(&gPlayerParty[0]), NATURE_BOLD);
-    EXPECT_EQ(GetMonAbility(&gPlayerParty[0]), gSpeciesInfo[SPECIES_CHIBI_YUUGI].abilities[2]);
+    EXPECT_EQ(GetMonAbility(&gPlayerParty[0]), gSpeciesInfo[SPECIES_CHIBI_AMELIA].abilities[2]);
     EXPECT_EQ(GetMonGender(&gPlayerParty[0]), MON_MALE);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HP_EV), 1);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_ATK_EV), 2);
@@ -266,10 +228,10 @@ TEST("givemon [vars]")
 {
     ZeroPlayerPartyMons();
 
-    VarSet(VAR_TEMP_C, SPECIES_CHIBI_YUUGI);
+    VarSet(VAR_TEMP_C, SPECIES_CHIBI_AMELIA);
     VarSet(VAR_TEMP_D, 100);
     VarSet(VAR_0x8000, ITEM_BENTO_BOX);
-    VarSet(VAR_0x8001, ITEM_MASTER_BALL);
+    VarSet(VAR_0x8001, ITEM_MASTER_ORB);
     VarSet(VAR_0x8002, NATURE_BOLD);
     VarSet(VAR_0x8003, 2);
     VarSet(VAR_0x8004, MON_MALE);
@@ -297,12 +259,12 @@ TEST("givemon [vars]")
         givemon VAR_TEMP_C, VAR_TEMP_D, item=VAR_0x8000, ball=VAR_0x8001, nature=VAR_0x8002, abilityNum=VAR_0x8003, gender=VAR_0x8004, hpEv=VAR_0x8005, atkEv=VAR_0x8006, defEv=VAR_0x8007, speedEv=VAR_0x8008, spAtkEv=VAR_0x8009, spDefEv=VAR_0x800A, hpIv=VAR_0x800B, atkIv=VAR_TEMP_0, defIv=VAR_TEMP_1, speedIv=VAR_TEMP_2, spAtkIv=VAR_TEMP_3, spDefIv=VAR_TEMP_4, move1=VAR_TEMP_5, move2=VAR_TEMP_6, move3=VAR_TEMP_7, move4=VAR_TEMP_8, isShiny=VAR_TEMP_9, ggMaxFactor=VAR_TEMP_A, teraType=VAR_TEMP_B;
     );
 
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_YUUGI);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_AMELIA);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_LEVEL), 100);
-    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM), ITEM_LEFTOVERS);
+    EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM), ITEM_BENTO_BOX);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_POKEBALL), BALL_MASTER);
     EXPECT_EQ(GetNature(&gPlayerParty[0]), NATURE_BOLD);
-    EXPECT_EQ(GetMonAbility(&gPlayerParty[0]), gSpeciesInfo[SPECIES_CHIBI_YUUGI].abilities[2]);
+    EXPECT_EQ(GetMonAbility(&gPlayerParty[0]), gSpeciesInfo[SPECIES_CHIBI_AMELIA].abilities[2]);
     EXPECT_EQ(GetMonGender(&gPlayerParty[0]), MON_MALE);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_HP_EV), 1);
     EXPECT_EQ(GetMonData(&gPlayerParty[0], MON_DATA_ATK_EV), 2);
@@ -327,12 +289,12 @@ TEST("givemon [vars]")
 
 TEST("checkteratype/setteratype work")
 {
-    CreateMon(&gPlayerParty[0], SPECIES_CHIBI_YUUGI, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_CHIBI_MEDICINE, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
 
     RUN_OVERWORLD_SCRIPT(
         checkteratype 0;
     );
-    EXPECT(VarGet(VAR_RESULT) == TYPE_PSYCHIC);
+    EXPECT(VarGet(VAR_RESULT) == TYPE_REASON);
 
     RUN_OVERWORLD_SCRIPT(
         setteratype TYPE_FIRE, 0;
@@ -346,12 +308,12 @@ TEST("createmon [simple]")
     ZeroPlayerPartyMons();
 
     RUN_OVERWORLD_SCRIPT(
-        createmon 1, 0, SPECIES_WOBBUFFET, 100;
-        createmon 1, 1, SPECIES_WYNAUT, 10;
+        createmon 1, 0, SPECIES_CHIBI_AMELIA, 100;
+        createmon 1, 1, SPECIES_CHIBI_MEDICINE, 10;
     );
 
-    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), SPECIES_WOBBUFFET);
+    EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), SPECIES_CHIBI_AMELIA);
     EXPECT_EQ(GetMonData(&gEnemyParty[0], MON_DATA_LEVEL), 100);
-    EXPECT_EQ(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES), SPECIES_WYNAUT);
+    EXPECT_EQ(GetMonData(&gEnemyParty[1], MON_DATA_SPECIES), SPECIES_CHIBI_MEDICINE);
     EXPECT_EQ(GetMonData(&gEnemyParty[1], MON_DATA_LEVEL), 10);
 }

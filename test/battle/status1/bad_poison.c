@@ -5,8 +5,8 @@ SINGLE_BATTLE_TEST("Bad poison deals 1/16th cumulative damage per turn")
 {
     u32 j;
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_TOXIC_POISON); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_TOXIC_POISON); }
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         for (j = 0; j < 4; j++)
             TURN {}
@@ -21,9 +21,9 @@ SINGLE_BATTLE_TEST("Bad poison cumulative damage resets on switch")
 {
     u32 j;
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_TOXIC_POISON); }
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_TOXIC_POISON); }
+        PLAYER(SPECIES_NORMAL_ALICE);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN {}
         TURN {}

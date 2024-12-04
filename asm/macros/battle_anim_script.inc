@@ -532,7 +532,6 @@
 	.endm
 
 	.macro invertscreencolor priority=2, scenery:req, attacker:req, target:req, def_partner=FALSE, atk_partner=FALSE
-	@ NOTE: These generate 0x000 or 0x101 to match, but the code checks for '& 0x100'.
 	createvisualtask AnimTask_InvertScreenColor, \priority, ((\scenery << 0) | (\attacker << 1) | (\target << 2) | (\def_partner << 3) | (\atk_partner << 4))
 	.endm
 

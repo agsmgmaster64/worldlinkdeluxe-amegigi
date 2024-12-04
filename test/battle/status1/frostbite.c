@@ -8,8 +8,8 @@ SINGLE_BATTLE_TEST("Frostbite reduces the special attack by 50 percent")
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWIFT); MOVE(player, MOVE_FLAME_WHEEL); }
         TURN { MOVE(opponent, MOVE_SWIFT); }
@@ -28,12 +28,12 @@ SINGLE_BATTLE_TEST("Frostbite deals 1/16th (Gen7+) or 1/8th damage to affected p
     s16 frostbiteDamage;
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN {}
     } SCENE {
-        MESSAGE("The opposing Wobbuffet was hurt by its frostbite!");
+        MESSAGE("The opposing DSatori was hurt by its frostbite!");
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_FRZ, opponent);
         HP_BAR(opponent, captureDamage: &frostbiteDamage);
    } THEN { EXPECT_EQ(frostbiteDamage, opponent->maxHP / ((B_BURN_DAMAGE >= GEN_7) ? 16 : 8)); }
@@ -44,24 +44,24 @@ SINGLE_BATTLE_TEST("Frostbite is healed if hit with a thawing move")
     u32 move;
 
     PARAMETRIZE { move = MOVE_FLAME_WHEEL; }
-    PARAMETRIZE { move = MOVE_SACRED_FIRE; }
     PARAMETRIZE { move = MOVE_FLARE_BLITZ; }
     PARAMETRIZE { move = MOVE_FUSION_FLARE; }
+    PARAMETRIZE { move = MOVE_MATCHA_GOTCHA; }
     PARAMETRIZE { move = MOVE_EMBER; }
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FROSTBITE); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
         if (move == MOVE_EMBER) {
             NONE_OF {
-                MESSAGE("The opposing Wobbuffet's frostbite was cured!");
+                MESSAGE("The opposing DSatori's frostbite was cured!");
             }
         } else {
-            MESSAGE("The opposing Wobbuffet's frostbite was cured!");
+            MESSAGE("The opposing DSatori's frostbite was cured!");
         }
    }
 }
@@ -71,25 +71,25 @@ SINGLE_BATTLE_TEST("Frostbite is healed when the user uses a thawing move")
     u32 move;
 
     PARAMETRIZE { move = MOVE_FLAME_WHEEL; }
-    PARAMETRIZE { move = MOVE_SACRED_FIRE; }
     PARAMETRIZE { move = MOVE_FLARE_BLITZ; }
     PARAMETRIZE { move = MOVE_FUSION_FLARE; }
+    PARAMETRIZE { move = MOVE_MATCHA_GOTCHA; }
     PARAMETRIZE { move = MOVE_EMBER; }
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_FROSTBITE); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FROSTBITE); }
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, player);
         HP_BAR(opponent);
         if (move == MOVE_EMBER) {
-            MESSAGE("Wobbuffet was hurt by its frostbite!");
+            MESSAGE("DSatori was hurt by its frostbite!");
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_FRZ, player);
         } else {
             NONE_OF {
-                MESSAGE("Wobbuffet was hurt by its frostbite!");
+                MESSAGE("DSatori was hurt by its frostbite!");
                 ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_FRZ, player);
             }
         }

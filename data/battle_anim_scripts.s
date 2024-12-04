@@ -25850,7 +25850,7 @@ gBattleAnimMove_Braver::
 	loopsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET, 10, 2
 	createsprite gKnockOffStrikeSpriteTemplate, ANIM_TARGET, 2, -16, -16
 	delay 8
-	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG | F_PAL_BATTLERS, 5, 1, RGB_WHITE, 10, RGB_BLACK, 0
+	complexpaletteblend selector=F_PAL_BG | F_PAL_BATTLERS, delay=5, num_blends=1, color1=RGB_WHITE, blend_y1=10, color2=RGB_BLACK, blend_y2=0
 	createbasichitsplatsprite ANIM_TARGET, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=0
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 1, -12, 10, 0, 3
 	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 5

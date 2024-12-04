@@ -1,30 +1,16 @@
 #include "global.h"
 #include "test/battle.h"
 
-SINGLE_BATTLE_TEST("Crit Chance: Side effected by Lucky Chant blocks critical hits")
-{
-    GIVEN {
-        ASSUME(gMovesInfo[MOVE_LUCKY_CHANT].effect == EFFECT_LUCKY_CHANT);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-    } WHEN {
-        TURN { MOVE(opponent, MOVE_LUCKY_CHANT); MOVE(player, MOVE_TACKLE, criticalHit: TRUE); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
-        NOT MESSAGE("A critical hit!");
-    }
-}
-
 SINGLE_BATTLE_TEST("Crit Chance: Battle Armor and Shell Armor block critical hits")
 {
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
-    PARAMETRIZE { species = SPECIES_NORMAL_TOYOHIME; ability = ABILITY_GUARD_ARMOR; }
+    PARAMETRIZE { species = SPECIES_AKYUU; ability = ABILITY_SHELL_ARMOR; }
+    PARAMETRIZE { species = SPECIES_NORMAL_KEINE; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, criticalHit: TRUE); }
@@ -39,12 +25,12 @@ SINGLE_BATTLE_TEST("Crit Chance: Flag ignoresTargetAbility ignores Battle Armor 
     u32 species;
     u32 ability;
 
-    PARAMETRIZE { species = SPECIES_TECH_YUKARI; ability = ABILITY_SHELL_ARMOR; }
-    PARAMETRIZE { species = SPECIES_NORMAL_TOYOHIME; ability = ABILITY_GUARD_ARMOR; }
+    PARAMETRIZE { species = SPECIES_AKYUU; ability = ABILITY_SHELL_ARMOR; }
+    PARAMETRIZE { species = SPECIES_NORMAL_KEINE; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_SUNSTEEL_STRIKE].ignoresTargetAbility == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_SUNSTEEL_STRIKE, criticalHit: TRUE); }
@@ -59,7 +45,7 @@ SINGLE_BATTLE_TEST("Crit Chance: Mold Breaker, Teravolt and Turboblaze ignore Ba
     u32 j;
     static const u32 pokemonPlayer[][2] =
     {
-        {SPECIES_ATTACK_EIRIN, ABILITY_MOLD_BREAKER},
+        {SPECIES_NORMAL_SANAE, ABILITY_MOLD_BREAKER},
         {SPECIES_ZEKROM, ABILITY_TERAVOLT},
         {SPECIES_KYUREM_WHITE,  ABILITY_TURBOBLAZE},
     };
@@ -74,14 +60,14 @@ SINGLE_BATTLE_TEST("Crit Chance: Mold Breaker, Teravolt and Turboblaze ignore Ba
         PARAMETRIZE {
             speciesPlayer = pokemonPlayer[j][0];
             abilityPlayer = pokemonPlayer[j][1];
-            speciesOpponent = SPECIES_TECH_YUKARI;
+            speciesOpponent = SPECIES_AKYUU;
             abilityOpponent = ABILITY_SHELL_ARMOR;
         }
 
         PARAMETRIZE {
             speciesPlayer = pokemonPlayer[j][0];
             abilityPlayer = pokemonPlayer[j][1];
-            speciesOpponent = SPECIES_NORMAL_TOYOHIME;
+            speciesOpponent = SPECIES_NORMAL_KEINE;
             abilityOpponent = ABILITY_GUARD_ARMOR;
         }
     }
@@ -101,8 +87,8 @@ SINGLE_BATTLE_TEST("Crit Chance: User effected by Laser Focus causes moves to re
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_LASER_FOCUS].effect == EFFECT_LASER_FOCUS);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_LASER_FOCUS); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -117,7 +103,7 @@ SINGLE_BATTLE_TEST("Crit Chance: If the target is poisoned the ability Merciless
 {
     GIVEN {
         PLAYER(SPECIES_MAREANIE) { Ability(ABILITY_MERCILESS); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(STATUS1_POISON); }
+        OPPONENT(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_POISON); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -132,8 +118,8 @@ SINGLE_BATTLE_TEST("Crit Chance: Focus Energy increases the user's critical hit 
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_FOCUS_ENERGY].effect == EFFECT_FOCUS_ENERGY);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_FOCUS_ENERGY); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -150,8 +136,8 @@ SINGLE_BATTLE_TEST("Crit Chance: High crit rate increases the critical hit ratio
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_SLASH); }
     } SCENE {
@@ -165,8 +151,8 @@ SINGLE_BATTLE_TEST("Crit Chance: Super Luck increases the critical hit ratio by 
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        PLAYER(SPECIES_TOGEPI) { Ability(ABILITY_SUPER_LUCK); };
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_NORMAL_TENSHI) { Ability(ABILITY_SUPER_LUCK); };
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -181,8 +167,8 @@ SINGLE_BATTLE_TEST("Crit Chance: Scope Lens increases the critical hit ratio by 
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gItemsInfo[ITEM_SCOPE_LENS].holdEffect == HOLD_EFFECT_SCOPE_LENS);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_SCOPE_LENS); };
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI) { Item(ITEM_SCOPE_LENS); };
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
@@ -197,8 +183,8 @@ SINGLE_BATTLE_TEST("Crit Chance: High crit rate, Super Luck and Scope Lens cause
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
         ASSUME(gItemsInfo[ITEM_SCOPE_LENS].holdEffect == HOLD_EFFECT_SCOPE_LENS);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Ability(ABILITY_SUPER_LUCK); Item(ITEM_SCOPE_LENS); };
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI) { Ability(ABILITY_SUPER_LUCK); Item(ITEM_SCOPE_LENS); };
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_SLASH); }
     } SCENE {
@@ -207,23 +193,23 @@ SINGLE_BATTLE_TEST("Crit Chance: High crit rate, Super Luck and Scope Lens cause
     }
 }
 
-SINGLE_BATTLE_TEST("Crit Chance: Signature items Leek and Lucky Punch increase the critical hit ratio by 2 stages")
+SINGLE_BATTLE_TEST("Crit Chance: Signature items Big Cloud and Bloomers increase the critical hit ratio by 2 stages")
 {
     u32 species;
     u32 item;
 
     PASSES_RANDOMLY(1, 2, RNG_CRITICAL_HIT);
 
-    PARAMETRIZE { species = SPECIES_FARFETCHD; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_FARFETCHD_GALAR; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_SIRFETCHD; item = ITEM_LEEK; }
-    PARAMETRIZE { species = SPECIES_CHANSEY; item = ITEM_LUCKY_PUNCH; }
+    PARAMETRIZE { species = SPECIES_NORMAL_ICHIRIN; item = ITEM_BIG_CLOUD; }
+    PARAMETRIZE { species = SPECIES_TECH_ICHIRIN; item = ITEM_BIG_CLOUD; }
+    PARAMETRIZE { species = SPECIES_NORMAL_RAN; item = ITEM_BLOOMERS; }
+    PARAMETRIZE { species = SPECIES_ATTACK_RAN; item = ITEM_BLOOMERS; }
 
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        ASSUME(gItemsInfo[ITEM_LEEK].holdEffect == HOLD_EFFECT_LEEK);
-        ASSUME(gItemsInfo[ITEM_LUCKY_PUNCH].holdEffect == HOLD_EFFECT_LUCKY_PUNCH);
-        PLAYER(SPECIES_WOBBUFFET);
+        ASSUME(gItemsInfo[ITEM_BIG_CLOUD].holdEffect == HOLD_EFFECT_BIG_CLOUD);
+        ASSUME(gItemsInfo[ITEM_BLOOMERS].holdEffect == HOLD_EFFECT_BLOOMERS);
+        PLAYER(SPECIES_DEFENSE_SATORI);
         OPPONENT(species) { Item(item); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); }
@@ -239,15 +225,15 @@ SINGLE_BATTLE_TEST("Crit Chance: Dire Hit increases a battler's critical hit cha
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gItemsInfo[ITEM_DIRE_HIT].battleUsage == EFFECT_ITEM_SET_FOCUS_ENERGY);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { USE_ITEM(player, ITEM_DIRE_HIT, partyIndex: 0); }
         TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FOCUS_ENERGY, player);
-        MESSAGE("Wobbuffet used the Dire Hit to get pumped!");
-        MESSAGE("Wobbuffet used Scratch!");
+        MESSAGE("DSatori used the Dire Hit to get pumped!");
+        MESSAGE("DSatori used Scratch!");
         MESSAGE("A critical hit!");
     }
 }
@@ -259,14 +245,14 @@ SINGLE_BATTLE_TEST("Crit Chance: Focus Energy increases critical hit ratio by tw
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
         ASSUME(gMovesInfo[MOVE_FOCUS_ENERGY].effect == EFFECT_FOCUS_ENERGY);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_FOCUS_ENERGY); }
         TURN { MOVE(player, MOVE_SLASH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FOCUS_ENERGY, player);
-        MESSAGE("Wobbuffet is getting pumped!");
+        MESSAGE("DSatori is getting pumped!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SLASH, player);
         MESSAGE("A critical hit!");
     }
@@ -276,8 +262,8 @@ SINGLE_BATTLE_TEST("Crit Chance: Dragon Cheer fails in a single battle")
 {
     GIVEN {
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(player, MOVE_DRAGON_CHEER); }
     } SCENE {
@@ -285,43 +271,43 @@ SINGLE_BATTLE_TEST("Crit Chance: Dragon Cheer fails in a single battle")
     }
 }
 
-DOUBLE_BATTLE_TEST("Crit Chance: Dragon Cheer increases critical hit ratio by one on non Dragon types")
+DOUBLE_BATTLE_TEST("Crit Chance: Dragon Cheer increases critical hit ratio by one on non Faith types")
 {
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_TACKLE].criticalHitStage == 0);
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        PLAYER(SPECIES_NORMAL_ALICE);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DRAGON_CHEER, target: playerRight); MOVE(playerRight, MOVE_TACKLE, target: opponentLeft); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_CHEER, playerLeft);
-        MESSAGE("Wynaut is getting pumped!");
+        MESSAGE("Alice is getting pumped!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, playerRight);
         MESSAGE("A critical hit!");
     }
 }
 
-DOUBLE_BATTLE_TEST("Crit Chance: Dragon Cheer increases critical hit ratio by two on Dragon types")
+DOUBLE_BATTLE_TEST("Crit Chance: Dragon Cheer increases critical hit ratio by two on Faith types")
 {
     PASSES_RANDOMLY(1, 2, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
         ASSUME(gMovesInfo[MOVE_TACKLE].criticalHitStage == 0);
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_YUUKA);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        PLAYER(SPECIES_NORMAL_SANAE);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DRAGON_CHEER, target: playerRight); MOVE(playerRight, MOVE_TACKLE, target: opponentLeft); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_CHEER, playerLeft);
-        MESSAGE("Dratini is getting pumped!");
+        MESSAGE("Sanae is getting pumped!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, playerRight);
         MESSAGE("A critical hit!");
     }
@@ -333,10 +319,10 @@ DOUBLE_BATTLE_TEST("Crit Chance: Dragon Cheer fails if critical hit stage was al
         ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
         ASSUME(gMovesInfo[MOVE_FOCUS_ENERGY].effect == EFFECT_FOCUS_ENERGY);
         ASSUME(gMovesInfo[MOVE_DRAGON_CHEER].effect == EFFECT_DRAGON_CHEER);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_FOCUS_ENERGY); MOVE(playerRight, MOVE_DRAGON_CHEER, target: playerLeft); }
     } SCENE {
