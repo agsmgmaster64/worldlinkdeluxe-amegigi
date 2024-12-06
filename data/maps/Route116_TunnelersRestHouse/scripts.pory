@@ -1,3 +1,100 @@
+
+const LOCALID_GIGI = 1
+const LOCALID_COOK = 2
+const LOCALID_BAELZ = 3
+
+script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
+	lock
+	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinIntro, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_HakosBaelzIntro, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiOutOfBudget, MSGBOX_DEFAULT)
+	closemessage
+	setspeakername(Route116_TunnelersRestHouse_Text_Player)
+	msgbox(Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Route116_TunnelersRestHouse_EventScript_MovePlayerInFront {
+	specialvar(VAR_RESULT, GetPlayerFacingDirection)
+	switch(var(VAR_RESULT)){
+		case DIR_WEST:
+			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront)
+		case DIR_EAST:
+			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront)
+		case DIR_SOUTH:
+			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront)
+	}
+	return
+}
+
+text Route116_TunnelersRestHouse_Text_Gigi {
+	"Gigi"
+}
+
+text Route116_TunnelersRestHouse_Text_Baelz {
+	"Baelz"
+}
+
+text Route116_TunnelersRestHouse_Text_Cook {
+	"Cook"
+}
+
+text Route116_TunnelersRestHouse_Text_Player {
+	"{PLAYER}"
+}
+
+text Route116_TunnelersRestHouse_Text_GigiMurinIntro {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}GI MURIN!\pThe name's Gigi Murin for you trainer.\pThis red one with me is my friend here.")
+}
+
+text Route116_TunnelersRestHouse_Text_HakosBaelzIntro {
+	format("{DESTROY_MUGSHOT}Wazzup!\pI am chaos, the end of ends.\pA steel rose trapped in an ice cage.\pYour best friend, Baelz Hakos.\pWITNESS ME!!\p"
+	"Why do I not have the fancy mugshot like you by the way, Gigi?")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiOutOfBudget {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}We didn't have the budget to afford a mugshot for you.\p"
+	"We could only afford mines, Ame's, and even the player's mugshot.")
+}
+
+text Route116_TunnelersRestHouse_Text_RenkoFrickinTalking {
+	format("{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_RENKO EMOTE_NORMAL}I guess I'm here.")
+}
+
+text Route116_TunnelersRestHouse_Text_MaribelFrickinTalking {
+	format("{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_MARIBEL EMOTE_NORMAL}Yeah, I'm here.")
+}
+
+movement Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront {
+	walk_down
+	walk_right
+	face_up
+}
+
+movement Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront {
+	walk_down
+	walk_left
+	face_up
+}
+
+movement Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront {
+	walk_left
+	walk_down
+	walk_right
+	face_up
+}
+
 raw `
 Route116_TunnelersRestHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route116_TunnelersRestHouse_OnTransition

@@ -9,6 +9,12 @@ static const u16 sFieldMugshotPal_AmeliaNormal[] = INCBIN_U16("graphics/field_mu
 static const u32 sFieldMugshotGfx_GigiNormal[] = INCBIN_U32("graphics/field_mugshots/gigi/normal.4bpp.lz");
 static const u16 sFieldMugshotPal_GigiNormal[] = INCBIN_U16("graphics/field_mugshots/gigi/normal.gbapal");
 
+static const u32 sFieldMugshotGfx_RenkoSerious[] = INCBIN_U32("graphics/field_mugshots/renko/serious.4bpp.lz");
+static const u16 sFieldMugshotPal_RenkoSerious[] = INCBIN_U16("graphics/field_mugshots/renko/serious.gbapal");
+
+static const u32 sFieldMugshotGfx_MaribelNormal[] = INCBIN_U32("graphics/field_mugshots/maribel/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_MaribelNormal[] = INCBIN_U16("graphics/field_mugshots/maribel/normal.gbapal");
+
 struct MugshotGfx
 {
     const u32 *gfx;
@@ -55,6 +61,35 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_GigiNormal,
             .pal = sFieldMugshotPal_GigiNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_RENKO] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_RenkoSerious,
+            .pal = sFieldMugshotPal_RenkoSerious,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT] =
+        {
+            .gfx = sFieldMugshotGfx_RenkoSerious,
+            .pal = sFieldMugshotPal_RenkoSerious,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_MARIBEL] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_MaribelNormal,
+            .pal = sFieldMugshotPal_MaribelNormal,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },

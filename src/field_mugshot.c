@@ -33,9 +33,11 @@ static const struct SpriteTemplate sFieldMugshot_SpriteTemplate = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+#define tInvisibility data[0]
+
 static void SpriteCB_FieldMugshot(struct Sprite *s)
 {
-    if (s->data[0] == TRUE)
+    if (s->tInvisibility == TRUE)
     {
         s->invisible = FALSE;
     }
@@ -48,12 +50,12 @@ static void SpriteCB_FieldMugshot(struct Sprite *s)
 void RemoveFieldMugshot(void)
 {
     ResetPreservedPalettesInWeather();
-    if (sFieldMugshotSpriteIds[0] != 0xFF)
+    if (sFieldMugshotSpriteIds[0] != SPRITE_NONE)
     {
         DestroySpriteAndFreeResources(&gSprites[sFieldMugshotSpriteIds[0]]);
         sFieldMugshotSpriteIds[0] = SPRITE_NONE;
     }
-    if (sFieldMugshotSpriteIds[1] != 0xFF)
+    if (sFieldMugshotSpriteIds[1] != SPRITE_NONE)
     {
         DestroySpriteAndFreeResources(&gSprites[sFieldMugshotSpriteIds[1]]);
         sFieldMugshotSpriteIds[1] = SPRITE_NONE;
@@ -75,12 +77,12 @@ void _RemoveFieldMugshot(u8 slot)
     ResetPreservedPalettesInWeather();
     if (sFieldMugshotSpriteIds[slot ^ 1] != SPRITE_NONE)
     {
-        gSprites[sFieldMugshotSpriteIds[slot ^ 1]].data[0] = FALSE; // same as setting visibility
+        gSprites[sFieldMugshotSpriteIds[slot ^ 1]].tInvisibility = FALSE; // same as setting visibility
     }
 
     if (sFieldMugshotSpriteIds[slot] != SPRITE_NONE)
     {
-        gSprites[sFieldMugshotSpriteIds[slot]].data[0] = FALSE; // same as setting visibility
+        gSprites[sFieldMugshotSpriteIds[slot]].tInvisibility = FALSE; // same as setting visibility
         DestroySpriteAndFreeResources(&gSprites[sFieldMugshotSpriteIds[slot]]);
         sFieldMugshotSpriteIds[slot] = SPRITE_NONE;
     }
@@ -139,7 +141,7 @@ void _CreateFieldMugshotAt(u32 id, u32 emote, u32 mugshot_x, u32 mugshot_y)
         return;
     }
     PreservePaletteInWeather(gSprites[sFieldMugshotSpriteIds[slot]].oam.paletteNum + 0x10);
-    gSprites[sFieldMugshotSpriteIds[slot]].data[0] = FALSE;
+    gSprites[sFieldMugshotSpriteIds[slot]].tInvisibility = FALSE;
     sIsFieldMugshotActive = TRUE;
     sFieldMugshotSlot ^= 1;
 }
@@ -159,3 +161,5 @@ void SetFieldMugshotSpriteId(u32 value)
     sFieldMugshotSpriteIds[0] = value;
     sFieldMugshotSpriteIds[1] = value;
 }
+
+#undef tInvisibility

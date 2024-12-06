@@ -10,7 +10,9 @@
 #define MUGSHOT_TEST    1
 #define MUGSHOT_AMELIA  2
 #define MUGSHOT_GIGI    3
-#define MUGSHOT_COUNT   4
+#define MUGSHOT_RENKO   4
+#define MUGSHOT_MARIBEL 5
+#define MUGSHOT_COUNT   6
 
 #define EMOTE_NORMAL  0
 #define EMOTE_ALT     1
