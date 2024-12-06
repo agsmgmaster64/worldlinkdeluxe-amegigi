@@ -38,17 +38,17 @@ static const struct PlaylistMusicList sPlaylistMusicList[PLAYLIST_SET_STYLE_COUN
         .eliteFourBattleMusic = MUS_ZGS_VS_SAKUYA,
         .championBattleMusic = MUS_ZGS_VS_CHAMPION,
         .surfMusic = MUS_ZGS_SURF,
-        .bikeMusic = MUS_RG_CYCLING,
+        .bikeMusic = MUS_ZGS_CYCLING,
     },
     [PLAYLIST_SET_STYLE_ALTERNATE] =
     {
         .wildBattleMusic = MUS_ZGS_VS_DREAM_WILD,
         .trainerBattleMusic = MUS_ZGS_VS_DREAM_TRAINER,
-        .gymLeaderBattleMusic = MUS_ZGS_VS_GYM_LEADER,
+        .gymLeaderBattleMusic = MUS_ZGS_VS_BYAKUREN,
         .eliteFourBattleMusic = MUS_ZGS_VS_SAKUYA,
-        .championBattleMusic = MUS_ZGS_VS_CHAMPION,
+        .championBattleMusic = MUS_ZGS_VS_REIMU,
         .surfMusic = MUS_ZGS_SURF,
-        .bikeMusic = MUS_RG_CYCLING,
+        .bikeMusic = MUS_ZGS_CYCLING,
     },
     [PLAYLIST_SET_STYLE_ALTERNATE2] = // placeholder
     {
@@ -171,7 +171,7 @@ void PlayVictoryMusic(u8 battleType)
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_WLD_VICTORY_GYM_LEADER);
             break;
         default:
             PlayBGM(MUS_WLD_VICTORY_TRAINER);

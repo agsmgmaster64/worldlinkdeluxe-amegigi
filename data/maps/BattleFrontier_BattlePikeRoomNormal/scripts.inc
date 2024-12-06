@@ -171,7 +171,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_WonHardBattle::
 # 86 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_RestoreToFullHealth, MSGBOX_DEFAULT
 # 87 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 88 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitfanfare
 # 89 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -415,7 +415,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_PreQueenHealOneMon::
 # 208 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealOne, MSGBOX_DEFAULT
 # 209 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 210 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitfanfare
 # 211 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -429,7 +429,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_PreQueenHealTwoMons::
 # 215 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ChoseRoomHealTwo, MSGBOX_DEFAULT
 # 216 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 217 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitfanfare
 # 218 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -453,7 +453,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_EnterFullHealRoom::
 # 227 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitmessage
 # 228 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 229 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitfanfare
 # 230 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
@@ -1119,7 +1119,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_HealNPC::
 # 560 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	call_if_eq VAR_RESULT, 1, BattleFrontier_BattlePikeRoomNormal_EventScript_WillRestoreOneMon
 # 561 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 562 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"
 	waitfanfare
 # 563 "data/maps/BattleFrontier_BattlePikeRoomNormal/scripts.pory"

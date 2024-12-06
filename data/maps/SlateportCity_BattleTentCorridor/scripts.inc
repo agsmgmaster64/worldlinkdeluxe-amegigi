@@ -119,7 +119,7 @@ SlateportCity_BattleTentCorridor_EventScript_ReturnToRoomFromBattle::
 # 60 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_LetUsRestoreMons, MSGBOX_DEFAULT
 # 61 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 62 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"
 	waitfanfare
 # 63 "data/maps/SlateportCity_BattleTentCorridor/scripts.pory"

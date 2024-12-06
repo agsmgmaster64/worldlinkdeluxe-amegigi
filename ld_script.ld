@@ -1253,6 +1253,16 @@ SECTIONS {
         sound/songs/midi/mus_wld_evolution_intro.o(.rodata);
         sound/songs/midi/mus_wld_evolution.o(.rodata);
         sound/songs/midi/mus_wld_evolved.o(.rodata);
+        sound/songs/midi/mus_wld_gym.o(.rodata);
+        sound/songs/midi/mus_wld_heal.o(.rodata);
+        sound/songs/midi/mus_wld_move_deleted.o(.rodata);
+        sound/songs/midi/mus_wld_victory_gym_leader.o(.rodata);
+        sound/songs/midi/mus_zgs_end_of_spring.o(.rodata);
+        sound/songs/midi/mus_zgs_paradise_deep_mountain.o(.rodata);
+        sound/songs/midi/mus_zgs_poke_flute.o(.rodata);
+        sound/songs/midi/mus_zgs_vs_byakuren.o(.rodata);
+        sound/songs/midi/mus_zgs_vs_reimu.o(.rodata);
+        sound/songs/midi/mus_zgs_cycling.o(.rodata);
     } > ROM =0
 
     lib_rodata :

@@ -139,7 +139,7 @@ BattleFrontier_BattleTowerBattleRoom_EventScript_DefeatedOpponent::
 # 70 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
 	msgbox BattleFrontier_BattleTowerBattleRoom_Text_RestoreMonsToFullHealth, MSGBOX_DEFAULT
 # 71 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 72 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"
 	waitfanfare
 # 73 "data/maps/BattleFrontier_BattleTowerBattleRoom/scripts.pory"

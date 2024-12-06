@@ -447,7 +447,7 @@ BattleFrontier_BattleDomePreBattleRoom_EventScript_ReturnFromBattle::
 # 224 "data/maps/BattleFrontier_BattleDomePreBattleRoom/scripts.pory"
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 225 "data/maps/BattleFrontier_BattleDomePreBattleRoom/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 226 "data/maps/BattleFrontier_BattleDomePreBattleRoom/scripts.pory"
 	waitfanfare
 # 227 "data/maps/BattleFrontier_BattleDomePreBattleRoom/scripts.pory"

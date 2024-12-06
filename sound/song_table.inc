@@ -588,6 +588,16 @@ gSongTable::
 	song mus_wld_evolution_intro, 2, 2
 	song mus_wld_evolution, 0, 0
 	song mus_wld_evolved, 2, 2
+	song mus_wld_gym, 0, 0
+	song mus_wld_heal, 2, 2
+	song mus_wld_move_deleted, 2, 2
+	song mus_wld_victory_gym_leader, 0, 0
+	song mus_zgs_end_of_spring, 0, 0
+	song mus_zgs_paradise_deep_mountain, 0, 0
+	song mus_zgs_poke_flute, 2, 2
+	song mus_zgs_vs_byakuren, 0, 0
+	song mus_zgs_vs_reimu, 0, 0
+	song mus_zgs_cycling, 0, 0
 
 	.align 2
 dummy_song_header:

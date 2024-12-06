@@ -5479,7 +5479,7 @@ static void HandleEndTurn_BattleWon(void)
 
         if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
         {
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_WLD_VICTORY_GYM_LEADER);
         }
         else
         {

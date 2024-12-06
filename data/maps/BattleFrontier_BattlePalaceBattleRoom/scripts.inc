@@ -177,7 +177,7 @@ BattleFrontier_BattlePalaceBattleRoom_EventScript_DefeatedOpponent::
 # 89 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 90 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 91 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"
 	waitfanfare
 # 92 "data/maps/BattleFrontier_BattlePalaceBattleRoom/scripts.pory"

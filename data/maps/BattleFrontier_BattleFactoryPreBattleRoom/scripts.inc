@@ -119,7 +119,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_ReturnToRoomFromBattle::
 # 60 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	msgbox BattleFrontier_BattleFactoryPreBattleRoom_Text_LetUsRestoreMons, MSGBOX_DEFAULT
 # 61 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	playfanfare MUS_HEAL
+	playfanfare MUS_WLD_HEAL
 # 62 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	waitfanfare
 # 63 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"

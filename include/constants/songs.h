@@ -519,8 +519,18 @@
 #define MUS_WLD_EVOLUTION_INTRO     584
 #define MUS_WLD_EVOLUTION           585
 #define MUS_WLD_EVOLVED             586
+#define MUS_WLD_GYM                 587
+#define MUS_WLD_HEAL                588
+#define MUS_WLD_MOVE_DELETED        589
+#define MUS_WLD_VICTORY_GYM_LEADER  590
+#define MUS_ZGS_END_OF_SPRING       591
+#define MUS_ZGS_PARADISE_DEEP_MOUNTAIN 592
+#define MUS_ZGS_POKE_FLUTE          593
+#define MUS_ZGS_VS_BYAKUREN         594
+#define MUS_ZGS_VS_REIMU            595
+#define MUS_ZGS_CYCLING             596
 
-#define END_MUS                     MUS_WLD_EVOLVED
+#define END_MUS                     MUS_ZGS_CYCLING
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
