@@ -70,17 +70,17 @@ DOUBLE_BATTLE_TEST("Matcha Gatcha recovers 50% of the damage dealt from both tar
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_MATCHA_GOTCHA].effect == EFFECT_ABSORB);
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_NORMAL_IKU) { HP(1); }
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_NORMAL_MURASA);
+        OPPONENT(SPECIES_NORMAL_MURASA);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_MATCHA_GOTCHA); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_MATCHA_GOTCHA, playerLeft);
         HP_BAR(opponentLeft, captureDamage: &damageLeft);
-        HP_BAR(playerLeft, captureDamage: &healedLeft);
         HP_BAR(opponentRight, captureDamage: &damageRight);
+        HP_BAR(playerLeft, captureDamage: &healedLeft);
         HP_BAR(playerLeft, captureDamage: &healedRight);
     } THEN {
         EXPECT_MUL_EQ(damageLeft, Q_4_12(-0.5), healedLeft);
