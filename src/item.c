@@ -991,3 +991,8 @@ u16 ItemId_GetCoinPrice(u16 itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].coinPrice;
 }
+
+u16 ItemId_GetBpPrice(u16 itemId)
+{
+    return gItemsInfo[SanitizeItemId(itemId)].bpPrice;
+}

@@ -6275,3 +6275,13 @@ u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
         return moveType;
     return gMovesInfo[move].type;
 }
+
+u16 GetMovePrice(u16 moveId)
+{
+    return gMovesInfo[moveId].price;
+}
+
+u16 GetMoveBpPrice(u16 moveId)
+{
+    return gMovesInfo[moveId].bpPrice;
+}

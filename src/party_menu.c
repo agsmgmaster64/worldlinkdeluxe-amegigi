@@ -43,6 +43,7 @@
 #include "menu_specialized.h"
 #include "metatile_behavior.h"
 #include "move_relearner.h"
+#include "new_shop.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -7624,6 +7625,11 @@ void ChooseMonForTradingBoard(u8 menuType, MainCallback callback)
 void ChooseMonForMoveTutor(void)
 {
     InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_MOVE_TUTOR, FALSE, PARTY_MSG_TEACH_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void ChooseMonForMoveTutorShop(void)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_MOVE_TUTOR, FALSE, PARTY_MSG_TEACH_WHICH_MON, Task_HandleChooseMonInput, CB2_InitBuyMenuAfterTutor);
 }
 
 void ChooseMonForWirelessMinigame(void)

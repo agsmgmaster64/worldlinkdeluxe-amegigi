@@ -11,6 +11,7 @@ struct Item
 {
     u32 price;
     u16 coinPrice;
+    u16 bpPrice;
     u16 secondaryId;
     ItemUseFunc fieldUseFunc;
     const u8 *description;
@@ -84,6 +85,7 @@ u8 ItemId_GetBattleUsage(u16 itemId);
 u32 ItemId_GetSecondaryId(u32 itemId);
 u32 ItemId_GetFlingPower(u32 itemId);
 u16 ItemId_GetCoinPrice(u16 itemId);
+u16 ItemId_GetBpPrice(u16 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
 

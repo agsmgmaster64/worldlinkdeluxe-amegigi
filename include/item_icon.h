@@ -13,5 +13,6 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId);
 u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u16 tilesTag, u16 paletteTag, u16 itemId);
 const void *GetItemIconPic(u16 itemId);
 const void *GetItemIconPalette(u16 itemId);
+u16 GetMoveTypeItemShopIcon(u16 move);
 
 #endif //GUARD_ITEM_ICON_H

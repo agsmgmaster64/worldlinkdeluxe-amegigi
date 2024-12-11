@@ -2590,6 +2590,24 @@ bool8 ScrCmd_itemseller(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_bpmart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+    bool16 isMoveTutor = ScriptReadHalfword(ctx);
+
+    if (isMoveTutor)
+    {
+        NewShop_CreateBpMoveTutorMenu(ptr);
+    }
+    else
+    {
+        NewShop_CreateBpMartMenu(ptr);
+    }
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     sIsScriptedWildDouble = TRUE;

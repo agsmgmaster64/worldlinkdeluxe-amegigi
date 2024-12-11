@@ -238,6 +238,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_questmenu                         @ 0xeb
     .4byte ScrCmd_subquestmenu                      @ 0xec
     .4byte ScrCmd_returnqueststate                  @ 0xed
+    .4byte ScrCmd_bpmart                            @ 0xee
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

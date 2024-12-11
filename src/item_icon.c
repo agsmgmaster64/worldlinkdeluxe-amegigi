@@ -189,3 +189,9 @@ const void *GetItemIconPalette(u16 itemId)
 
     return gItemsInfo[itemId].iconPalette;
 }
+
+u16 GetMoveTypeItemShopIcon(u16 move)
+{
+    u32 type = gMovesInfo[move].type;
+    return gTypesInfo[type].shopItem;
+}

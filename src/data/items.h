@@ -3876,6 +3876,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Power Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings attack\n"
             "potential to\n"
@@ -3893,6 +3894,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Guard Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings defensive\n"
             "potential to\n"
@@ -3910,6 +3912,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Swift Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings speedy\n"
             "potential to\n"
@@ -3927,6 +3930,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Tech Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings technical\n"
             "potential to\n"
@@ -3944,6 +3948,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Helper Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings support\n"
             "potential to\n"
@@ -3961,6 +3966,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Just Heart"),
         .price = 3000,
+        .bpPrice = 3,
         .description = COMPOUND_STRING(
             "Brings a sense\n"
             "of justice\n"
@@ -3978,6 +3984,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Chrome Heart"),
         .price = 3000,
+        .bpPrice = 5,
         .description = COMPOUND_STRING(
             "Brings a sense\n"
             "of justice\n"

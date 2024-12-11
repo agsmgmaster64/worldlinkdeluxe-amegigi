@@ -114,6 +114,7 @@ struct TypeInfo
     u16 isSpecialCaseType:1;
     u16 padding:12;
     const u32 *const paletteTMHM;
+    u16 shopItem;
     //u16 enhanceItem;
     //u16 berry;
     //u16 gem;

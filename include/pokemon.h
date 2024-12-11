@@ -439,6 +439,10 @@ struct MoveInfo
     // primary/secondary effects
     const struct AdditionalEffect *additionalEffects;
 
+    // price for move tutor shops
+    u16 price;
+    u16 bpPrice;
+
     // contest parameters
     u8 contestEffect;
     u8 contestCategory:3;
@@ -788,5 +792,7 @@ void HealBoxPokemon(struct BoxPokemon *boxMon);
 const u8 *GetMoveName(u16 moveId);
 const u8 *GetMoveAnimationScript(u16 moveId);
 u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler);
+u16 GetMovePrice(u16 moveId);
+u16 GetMoveBpPrice(u16 moveId);
 
 #endif // GUARD_POKEMON_H

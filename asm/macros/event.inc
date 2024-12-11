@@ -1995,7 +1995,7 @@
     .byte 0xed
     .byte \questId
     .endm
-    
+
     .macro openquestmenu
     questmenu 0 0
     .endm
@@ -2128,6 +2128,12 @@
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
+
+	.macro bpmart pointer:req, isMoveTutor=FALSE
+	.byte 0xee
+	.4byte \pointer
+	.2byte \isMoveTutor
+	.endm
 
 @ Supplementary
 
