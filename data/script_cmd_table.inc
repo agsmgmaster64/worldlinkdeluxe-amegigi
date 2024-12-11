@@ -231,14 +231,14 @@ gScriptCmdTable::
 	.4byte ScrCmd_dynmultichoice                    @ 0xe4
 	.4byte ScrCmd_dynmultipush                      @ 0xe5
 	.4byte ScrCmd_checkpartylearnknowsfieldmove     @ 0xe6
-	.4byte ScrCmd_casinopokemart                    @ 0xe7
+	.4byte ScrCmd_currencypokemart                  @ 0xe7
 	.4byte ScrCmd_setspeakername                    @ 0xe8
 	.4byte ScrCmd_buyonlymart                       @ 0xe9
 	.4byte ScrCmd_itemseller                        @ 0xea
 	.4byte ScrCmd_questmenu                         @ 0xeb
-    .4byte ScrCmd_subquestmenu                      @ 0xec
-    .4byte ScrCmd_returnqueststate                  @ 0xed
-    .4byte ScrCmd_bpmart                            @ 0xee
+	.4byte ScrCmd_subquestmenu                      @ 0xec
+	.4byte ScrCmd_returnqueststate                  @ 0xed
+	.4byte ScrCmd_movetutormart                     @ 0xee
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

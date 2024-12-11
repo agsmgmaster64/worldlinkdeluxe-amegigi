@@ -140,18 +140,19 @@ Debug_EventScript_Script_1::
 	lockall
 	message gText_HowMayIServeYou
 	waitmessage
-	casinopokemart Debug_EventScript_Script_1_Mart
+	battlepointpokemart Debug_EventScript_Script_1_Mart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	releaseall
 	end
 
+	.align 2
 Debug_EventScript_Script_1_Mart:
-	.2byte ITEM_HP_UP
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_IRON
-	.2byte ITEM_ZINC
-	.2byte ITEM_CARBOS
+	.2byte ITEM_POWER_HEART
+	.2byte ITEM_GUARD_HEART
+	.2byte ITEM_SWIFT_HEART
+	.2byte ITEM_TECH_HEART
+	.2byte ITEM_HELPER_HEART
+	.2byte ITEM_JUST_HEART
 	.2byte ITEM_NONE
 
 Debug_EventScript_Script_2::
@@ -284,9 +285,18 @@ Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined:
 
 Debug_EventScript_Script_6::
 	lockall
-	callnative StartNewPokeballCaseUI
-	waitstate
+	message gText_HowMayIServeYou
+	waitmessage
+	movetutormart Debug_EventScript_Script_6_Mart, TRUE
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	releaseall
 	end
+
+	.align 2
+Debug_EventScript_Script_6_Mart:
+	.2byte MOVE_SYNTHESIS
+	.2byte MOVE_HEAT_WAVE
+	.2byte MOVE_NONE
 
 Debug_EventScript_Script_7::
 	release

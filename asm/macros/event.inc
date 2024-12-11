@@ -1956,9 +1956,18 @@
 
 	@ End qol_field_moves
 
-	.macro casinopokemart pointer:req
+	.macro currencypokemart pointer:req, isBpMart:req
 	.byte 0xe7
 	.4byte \pointer
+	.2byte \isBpMart
+	.endm
+
+	.macro casinopokemart pointer:req
+	currencypokemart \pointer, FALSE
+	.endm
+
+	.macro battlepointpokemart pointer:req
+	currencypokemart \pointer, TRUE
 	.endm
 
 	@ Sets the text of the name box in the next-shown message box.
@@ -2129,10 +2138,10 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 
-	.macro bpmart pointer:req, isMoveTutor=FALSE
+	.macro movetutormart pointer:req, usesBp=FALSE
 	.byte 0xee
 	.4byte \pointer
-	.2byte \isMoveTutor
+	.2byte \usesBp
 	.endm
 
 @ Supplementary

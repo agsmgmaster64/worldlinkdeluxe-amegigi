@@ -735,11 +735,6 @@ const u8 sText_ThrowInPremierBall[] = _("I'll throw in\na Premier Orb,\ntoo.{PAU
 const u8 sText_ThrowInPremierBalls[] = _("I'll throw in\n{STR_VAR_1} Premier Orbs,\ntoo.{PAUSE_UNTIL_PRESS}");
 const u8 sText_WhichPokemon[] = _("Which Puppet would\nyou like to teach\n{STR_VAR_1} to?");
 
-static inline bool32 IsMartTypeMoney(u8 martType)
-{
-    return martType != MART_TYPE_CASINO && martType != MART_TYPE_BP_ITEMS && martType != MART_TYPE_BP_MOVES;
-}
-
 static inline bool32 IsMartTypeBp(u8 martType)
 {
     return martType == MART_TYPE_BP_ITEMS || martType == MART_TYPE_BP_MOVES;
@@ -748,6 +743,11 @@ static inline bool32 IsMartTypeBp(u8 martType)
 static inline bool32 IsMartTypeCasino(u8 martType)
 {
     return martType == MART_TYPE_CASINO;
+}
+
+static inline bool32 IsMartTypeMoney(u8 martType)
+{
+    return !IsMartTypeBp(martType) && !IsMartTypeCasino(martType);
 }
 
 static inline bool32 IsMartTypeItem(u8 martType)
@@ -759,6 +759,13 @@ static inline bool32 IsMartTypeMove(u8 martType)
 {
     return martType == MART_TYPE_BP_MOVES || martType == MART_TYPE_MOVES;
 }
+
+#ifdef MUDSKIP_OUTFIT_SYSTEM
+static inline bool32 IsMartTypeOutfit(u8 martType)
+{
+    return martType == MART_TYPE_OUTFIT;
+}
+#endif // MUDSKIP_OUTFIT_SYSTEM
 
 static inline bool32 CanMartTypeReturnToShopMenu(u8 martType)
 {
@@ -1133,7 +1140,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
         gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = ((row % 2) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
     }
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+    else if (IsMartTypeOutfit(sMartInfo.martType))
     {
         //! TODO: Fix coord of this
         u32 x, y;
@@ -1321,7 +1328,7 @@ static inline const u8 *BuyMenuGetItemName(u32 id)
     else if (IsMartTypeMove(sMartInfo.martType))
         return GetMoveName(sMartInfo.itemList[id]);
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+    else if (IsMartTypeOutfit(sMartInfo.martType))
         return gOutfits[sMartInfo.itemList[id]].name;
     #endif // MUDSKIP_OUTFIT_SYSTEM
     else
@@ -1335,7 +1342,7 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
     else if (IsMartTypeMove(sMartInfo.martType))
         return gMovesInfo[sMartInfo.itemList[id]].description;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+    else if (IsMartTypeOutfit(sMartInfo.martType))
         return gOutfits[sMartInfo.itemList[id]].desc;
     #endif // MUDSKIP_OUTFIT_SYSTEM
     else
@@ -1371,6 +1378,8 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
 
 static void LoadSellerMugshot(const u8 *gfx, const u16 *pal)
 {
+    if (IsMartTypeMove(sMartInfo.martType))
+        return;
     CopyToWindowPixelBuffer(WIN_MUGSHOT, gfx, 4992, 0);
     LoadPalette(pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
     PutWindowTilemap(WIN_MUGSHOT);
@@ -1608,20 +1617,27 @@ static void PrintMoneyLocal(u8 windowId, u8 x, u8 y, u32 amount, u8 width, u8 co
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
-const u8 sText_MoveStatsShop[] = _("Pwr{STR_VAR_1}Acc{STR_VAR_2}PP{STR_VAR_3}");
+const u8 sText_MoveStatsShop[] = _("Pwr{FONT_SMALL}{STR_VAR_1}{FONT_SMALL_NARROWER}{CLEAR_TO 31}Acc{FONT_SMALL}{STR_VAR_2}{FONT_SMALL_NARROWER}{CLEAR_TO 62}PP{FONT_SMALL}{STR_VAR_3}");
+const u8 sText_MoveStatsNone[] = _("  -");
 
 static void PrintMoveStatsLocal(u8 windowId, u8 x, u8 y, u8 width, u8 colorIdx, u32 move)
 {
     u8 *txtPtr;
 
-    ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar2, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    if (gMovesInfo[move].power != 0)
+        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    else
+        StringCopy(gStringVar1, sText_MoveStatsNone);
+    if (gMovesInfo[move].accuracy != 0)
+        ConvertIntToDecimalStringN(gStringVar2, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    else
+        StringCopy(gStringVar2, sText_MoveStatsNone);
     ConvertIntToDecimalStringN(gStringVar3, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
 
     txtPtr = gStringVar4;
 
     StringExpandPlaceholders(txtPtr, sText_MoveStatsShop);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL, x, y, 0, 0, sShopBuyMenuTextColors[colorIdx], TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROWER, x, y, 0, 0, sShopBuyMenuTextColors[colorIdx], TEXT_SKIP_DRAW, gStringVar4);
     PutWindowTilemap(windowId);
 }
 
@@ -1822,7 +1838,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
             BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
         }
         #ifdef MUDSKIP_OUTFIT_SYSTEM
-        else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+        else if (IsMartTypeOutfit(sMartInfo.martType))
         {
             BufferOutfitStrings(gStringVar1, sShopData->currentItemId, OUTFIT_BUFFER_NAME);
             ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
@@ -1990,7 +2006,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
         BuyMenuDisplayMessage(taskId, gStringVar2, BuyMenuStartTutor);
     }
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+    else if (IsMartTypeOutfit(sMartInfo.martType))
     {
         UnlockOutfit(sShopData->currentItemId);
         BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
@@ -2024,7 +2040,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
     if (IsMartTypeItem(sMartInfo.martType))
         gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
     #ifdef MUDSKIP_OUTFIT_SYSTEM
-    else if (sMartInfo.martType == MART_TYPE_OUTFIT)
+    else if (IsMartTypeOutfit(sMartInfo.martType))
         gTasks[taskId].func = Task_ReturnToItemListAfterOutfitPurchase;
     #endif // MUDSKIP_OUTFIT_SYSTEM
     else
@@ -2287,6 +2303,13 @@ void NewShop_CreateBpMartMenu(const u16 *itemsForSale)
 void NewShop_CreateBpMoveTutorMenu(const u16 *itemsForSale)
 {
     sMartInfo.martType = MART_TYPE_BP_MOVES;
+    SetShopItemsForSale(itemsForSale);
+    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
+}
+
+void NewShop_CreateMoveTutorMartMenu(const u16 *itemsForSale)
+{
+    sMartInfo.martType = MART_TYPE_MOVES;
     SetShopItemsForSale(itemsForSale);
     CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
 }

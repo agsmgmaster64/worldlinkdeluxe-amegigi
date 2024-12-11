@@ -3,6 +3,11 @@ const LOCALID_GIGI = 1
 const LOCALID_COOK = 2
 const LOCALID_BAELZ = 3
 
+const MULTI_BUY_ITEMS = 0
+const MULTI_BP_MOVES = 1
+const MULTI_SELL_ITEMS = 2
+const MULTI_NEVERMIND = 3
+
 script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	lock
 	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
@@ -38,6 +43,74 @@ script Route116_TunnelersRestHouse_EventScript_MovePlayerInFront {
 	return
 }
 
+script Route116_TunnelersRestHouse_EventScript_Cook {
+	lock
+	faceplayer
+	setspeakername(Route116_TunnelersRestHouse_Text_Cook)
+    message(Route116_TunnelersRestHouse_Text_CookTalk)
+    waitmessage
+    while {
+        call(Route116_TunnelersRestHouse_Cook_PrepareMultichoice)
+        if (var(VAR_RESULT) > MULTI_SELL_ITEMS) {
+            break
+        }
+        switch (var(VAR_RESULT)) {
+            case MULTI_BUY_ITEMS:
+                call(Route116_TunnelersRestHouse_Cook_ItemShop)
+            case MULTI_BP_MOVES:
+                call(Route116_TunnelersRestHouse_Cook_MoveShop)
+            case MULTI_SELL_ITEMS:
+                call(Route116_TunnelersRestHouse_Cook_SellItems)
+        }
+        message(Route116_TunnelersRestHouse_Text_CookTalkAgain)
+        waitmessage
+    }
+	release
+	end
+}
+
+script Route116_TunnelersRestHouse_Cook_PrepareMultichoice {
+    dynmultipush(Route116_TunnelersRestHouse_Text_BuyItems, MULTI_BUY_ITEMS)
+    dynmultipush(Route116_TunnelersRestHouse_Text_TeachMoves, MULTI_BP_MOVES)
+    dynmultipush(Route116_TunnelersRestHouse_Text_SellItems, MULTI_SELL_ITEMS)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, MULTI_NEVERMIND)
+    dynmultistack(0, 0, FALSE, 5, FALSE, MULTI_BUY_ITEMS, NULL)
+    return
+}
+
+script Route116_TunnelersRestHouse_Cook_ItemShop {
+    msgbox(Route116_TunnelersRestHouse_Text_CookItemShop)
+    buyonlymart(Route116_TunnelersRestHouse_Cook_ItemMart)
+    return
+}
+
+script Route116_TunnelersRestHouse_Cook_MoveShop {
+    msgbox(Route116_TunnelersRestHouse_Text_CookMoveTutor)
+	setvar(VAR_RESULT, 0)
+    movetutormart(Route116_TunnelersRestHouse_Cook_MoveTutor)
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox(Route116_TunnelersRestHouse_Text_CookLearnedMove)
+	}
+    return
+}
+
+script Route116_TunnelersRestHouse_Cook_SellItems {
+    msgbox(Route116_TunnelersRestHouse_Text_CookSellItems)
+    itemseller
+    return
+}
+
+mart Route116_TunnelersRestHouse_Cook_ItemMart {
+	ITEM_BENTO_BOX
+	ITEM_UNAGI_LUNCH
+	ITEM_HEAVEN_PEACH
+}
+
+mart Route116_TunnelersRestHouse_Cook_MoveTutor {
+    MOVE_CUT
+	MOVE_STRENGTH
+}
+
 text Route116_TunnelersRestHouse_Text_Gigi {
 	"Gigi"
 }
@@ -52,6 +125,22 @@ text Route116_TunnelersRestHouse_Text_Cook {
 
 text Route116_TunnelersRestHouse_Text_Player {
 	"{PLAYER}"
+}
+
+text Route116_TunnelersRestHouse_Text_BuyItems {
+	"Buy Items"
+}
+
+text Route116_TunnelersRestHouse_Text_TeachMoves {
+	"Teach Moves"
+}
+
+text Route116_TunnelersRestHouse_Text_SellItems {
+	"Sell Items"
+}
+
+text Route116_TunnelersRestHouse_Text_Nevermind {
+	"Nevermind"
 }
 
 text Route116_TunnelersRestHouse_Text_GigiMurinIntro {
@@ -74,6 +163,30 @@ text Route116_TunnelersRestHouse_Text_RenkoFrickinTalking {
 
 text Route116_TunnelersRestHouse_Text_MaribelFrickinTalking {
 	format("{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_MARIBEL EMOTE_NORMAL}Yeah, I'm here.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookTalk {
+	format("I have no idea why these people have brought me here specifically.\pI will say though, I do have some nice stuff for sale if you want.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookTalkAgain {
+	format("There are more stuff I have if you want.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookItemShop {
+	format("Take a look at my delicacies if you want to buy some.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookMoveTutor {
+	format("My lessons come at a fee, just so you're aware.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookSellItems {
+	format("Alright, let me see what you have available.")
+}
+
+text Route116_TunnelersRestHouse_Text_CookLearnedMove {
+	format("Your Puppet has learned the move I taught successfully.\nI will be taking my fee for this service here now.")
 }
 
 movement Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront {

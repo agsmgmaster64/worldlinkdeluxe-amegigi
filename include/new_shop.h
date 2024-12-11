@@ -20,6 +20,7 @@ void NewShop_CreateBuyVariableMartMenu(const u16 *);
 void NewShop_CreateSellOnlyMartMenu(void);
 void NewShop_CreateBpMartMenu(const u16 *);
 void NewShop_CreateBpMoveTutorMenu(const u16 *);
+void NewShop_CreateMoveTutorMartMenu(const u16 *);
 
 #endif // MUDSKIP_SHOP_UI
 

@@ -2549,11 +2549,20 @@ bool8 ScrCmd_pokevial(struct ScriptContext *ctx)
     return TRUE;
 }
 
-bool8 ScrCmd_casinopokemart(struct ScriptContext *ctx)
+bool8 ScrCmd_currencypokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
+    bool16 isBpMart = ScriptReadHalfword(ctx);
 
-    NewShop_CreateCasinoMartMenu(ptr);
+    if (isBpMart)
+    {
+        NewShop_CreateBpMartMenu(ptr);
+    }
+    else
+    {
+        NewShop_CreateCasinoMartMenu(ptr);
+    }
+
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2590,18 +2599,18 @@ bool8 ScrCmd_itemseller(struct ScriptContext *ctx)
     return TRUE;
 }
 
-bool8 ScrCmd_bpmart(struct ScriptContext *ctx)
+bool8 ScrCmd_movetutormart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
-    bool16 isMoveTutor = ScriptReadHalfword(ctx);
+    bool16 usesBp = ScriptReadHalfword(ctx);
 
-    if (isMoveTutor)
+    if (usesBp)
     {
         NewShop_CreateBpMoveTutorMenu(ptr);
     }
     else
     {
-        NewShop_CreateBpMartMenu(ptr);
+        NewShop_CreateMoveTutorMartMenu(ptr);
     }
 
     ScriptContext_Stop();
