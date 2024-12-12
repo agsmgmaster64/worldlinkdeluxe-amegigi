@@ -4,13 +4,6 @@
 
 worldlinkdeluxe-amegigi is a decomp port of Touhou Puppet Play World Link Deluxe using pokeemerald-expansion based off of pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. It is currently a work-in-progress at the moment and should be treated as such.
 
-## Unrelated Rambling
-Man
-
-no "I love Fauna", it simply fits better without it for the mood
-
-### Important: DO NOT use GitHub's "Download Zip" option. Using this option will not download the commit history required to update your expansion version or merge other feature branches. Instead, please read [this guide](https://github.com/Pawkkie/Team-Aquas-Asset-Repo/wiki/The-Basics-of-GitHub) to learn how to fork the repository and clone locally from there.
-
 ## Using pokeemerald-expansion
 
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
@@ -167,8 +160,10 @@ Please follow the instructions in `INSTALL.md` to get pokeemerald-expansion set 
     - All bugfixes from pret included.
     - Fixed overworld snow effect.
 
-There are some mechanics, moves and abilities that are missing and being developed. Check [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones) to see which ones.
+<!-- TODO: Too busy to fix, so I'll put it here -->
+### - Trainer Card shows Player's trainer pic for Link (Cable) Players
 
+## Credits
 
 ### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
 

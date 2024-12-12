@@ -159,4 +159,4 @@
 	.include "src/ui_birch_case.o"
 	.include "src/music_player.o"
 	.include "src/field_mugshot.o"
-
+	.include "src/outfit_menu.o"

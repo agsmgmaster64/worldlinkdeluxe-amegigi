@@ -366,6 +366,7 @@ SECTIONS {
         src/quests.o(.text);
         src/ui_birch_case.o(.text);
         src/music_player.o(.text);
+        src/outfit_menu.o(.text);
     } > ROM =0
 
     script_data :
@@ -740,6 +741,7 @@ SECTIONS {
         src/quests.o(.rodata);
         src/ui_birch_case.o(.rodata);
         src/music_player.o(.text);
+        src/outfit_menu.o(.rodata);
     } > ROM =0
 
     song_data :

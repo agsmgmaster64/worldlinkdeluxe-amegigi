@@ -2181,3 +2181,6 @@ const u32 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icon
 const u32 gItemIcon_Hexorb[] = INCBIN_U32("graphics/items/icons/hexorb.4bpp.lz");
 const u32 gItemIconPalette_Hexorb[] = INCBIN_U32("graphics/items/icon_palettes/hexorb.gbapal.lz");
 // End hexorb branch
+const u32 gItemIcon_OutfitBox[] = INCBIN_U32("graphics/items/icons/outfit_box.4bpp.lz");
+const u32 gItemIconPalette_OutfitBox[] = INCBIN_U32("graphics/items/icon_palettes/outfit_box.gbapal.lz");
+

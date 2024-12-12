@@ -17,6 +17,7 @@
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
+#include "constants/outfits.h"
 #include "constants/items.h"
 #include "config/save.h"
 #include "config/dexnav.h"
@@ -125,6 +126,7 @@
 #define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(POKEMON_SLOTS_NUMBER)
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
+#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(OUTFIT_COUNT)
 
 // This produces an error at compile-time if expr is zero.
 // It looks like file.c:line: size of array `id' is negative
@@ -234,6 +236,9 @@ struct SaveBlock3
 #endif
     u8 followerIndex;
     struct SavedPlayerMusic savedPlayerMusic;
+    u16 currOutfitId:4;
+    u16 playerBike:1;
+    u16 outfits[NUM_OUTFIT_OWNED_BYTES];
     u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
     u8 subQuests[SUB_FLAGS_COUNT];
 };
@@ -583,7 +588,7 @@ struct SaveBlock2
              u32 optionsVolumeCries:4;
              u32 optionsUnused:17;
     /*0x18*/ struct Pokedex pokedex;
-    /*0x90*/ u8 filler_90[0x8];
+    /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;
     /*0xA0*/ struct Time lastBerryTreeUpdate;
     /*0xA8*/ u32 gcnLinkFlags; // Read by Pokémon Colosseum/XD

@@ -5,7 +5,6 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys);
 bool32 PlayerIsMovingOnStairs(u8 direction);
 void ClearPlayerAvatarInfo(void);
 void SetPlayerAvatarExtraStateTransition(u16, u8);
-u8 GetPlayerAvatarGenderByGraphicsId(u16);
 bool8 TestPlayerAvatarFlags(u8);
 u8 GetPlayerAvatarSpriteId(void);
 void PlayerGetDestCoords(s16 *, s16 *);
@@ -35,14 +34,16 @@ bool8 TryPushBoulder(s16 x, s16 y, u8 direction); //qol_field_moves
 u8 PlayerGetElevation(void);
 void SetPlayerAvatarTransitionFlags(u16 transitionFlags);
 void CancelPlayerForcedMovement(void);
-void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender);
+void InitPlayerAvatar(s16 x, s16 y, u8 direction);
 void PlayerFreeze(void);
 void StopPlayerAvatar(void);
 void SetSpinStartFacingDir(u8);
 void GetXYCoordsOneStepInFrontOfPlayer(s16 *xPtr, s16 *yPtr);
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender);
+u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender);
+u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender);
+u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender);
 void SetPlayerAvatarFieldMove(void);
-void SetPlayerAvatarVsSeeker(void);
 u16 GetPlayerAvatarGraphicsIdByCurrentState(void);
 void SetPlayerAvatarStateMask(u8 flags);
 u16 GetPlayerAvatarGraphicsIdByStateId(u8 state);
@@ -73,5 +74,7 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction);
 //sideways stairs
 u8 GetRightSideStairsDirection(u8 direction);
 u8 GetLeftSideStairsDirection(u8 direction);
+void SetPlayerAvatarVsSeeker(void);
+u8 GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(u8 state, u8 linkId, u8 gender);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

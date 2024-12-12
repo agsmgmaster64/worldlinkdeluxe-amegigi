@@ -1019,11 +1019,12 @@
 
 #define ITEM_MUSIC_PLAYER 850
 #define ITEM_HEXORB 851 //hexorb Branch
+#define ITEM_OUTFIT_BOX 852
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 852
+#define ITEMS_COUNT 853
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

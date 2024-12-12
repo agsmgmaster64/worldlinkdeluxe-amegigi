@@ -14697,6 +14697,21 @@ const struct Item gItemsInfo[] =
         .effect = gItemEffect_Hexorb,
         .iconPic = gItemIcon_Hexorb,
         .iconPalette = gItemIconPalette_Hexorb,
-    }
+    },
 // End hexorb Branch
+    [ITEM_OUTFIT_BOX] =
+    {
+        .name = _("Outfit Box"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+             "A box for storing\n"
+             "your collections of\n"
+             "Outfits safely."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_OutfitBox,
+	    .iconPic = gItemIcon_OutfitBox,
+	    .iconPalette = gItemIconPalette_OutfitBox,
+    },
 };

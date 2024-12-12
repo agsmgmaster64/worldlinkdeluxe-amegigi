@@ -26,6 +26,8 @@
 #include "pokemon_icon.h"
 #include "trainer_pokemon_sprites.h"
 #include "contest_util.h"
+#include "data.h"
+#include "outfit_menu.h"
 #include "constants/songs.h"
 #include "constants/game_stat.h"
 #include "constants/battle_frontier.h"
@@ -778,6 +780,7 @@ static void TrainerCard_GenerateCardForPlayer(struct TrainerCard *trainerCard)
     trainerCard->monSpecies[5] = VarGet(VAR_TRAINER_CARD_MON_ICON_6);
 }
 
+//! TODO: Store the link player's current outfit id
 void TrainerCard_GenerateCardForLinkPlayer(struct TrainerCard *trainerCard)
 {
     memset(trainerCard, 0, 0x60);
@@ -1812,7 +1815,9 @@ static void CreateTrainerCardTrainerPic(void)
     }
     else
     {
-        CreateTrainerCardTrainerPicSprite(FacilityClassToPicIndex(sTrainerPicFacilityClass[sData->cardType][sData->trainerCard.gender]),
+        //! TODO: Support outfits on linking
+        u16 picId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, sData->trainerCard.gender, 0);
+        CreateTrainerCardTrainerPicSprite(picId,
                     TRUE,
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
