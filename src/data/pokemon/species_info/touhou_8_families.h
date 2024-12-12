@@ -264,6 +264,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CMystia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_CMystia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -273,6 +274,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_CMystia,
         .iconPalIndex = 0,
         FOOTPRINT(CMystia)
+        SHADOW(0, 11, SHADOW_SIZE_S)
         .levelUpLearnset = sCMystiaLevelUpLearnset,
         .teachableLearnset = sCMystiaTeachableLearnset,
         .eggMoveLearnset = sCMystiaEggMoveLearnset,
@@ -325,6 +327,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Mystia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Mystia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -334,6 +337,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_Mystia,
         .iconPalIndex = 0,
         FOOTPRINT(Mystia)
+        SHADOW(1, 12, SHADOW_SIZE_M)
         .levelUpLearnset = sMystiaLevelUpLearnset,
         .teachableLearnset = sMystiaTeachableLearnset,
     },
@@ -378,6 +382,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_AMystia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_AMystia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -387,6 +392,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_AMystia,
         .iconPalIndex = 0,
         FOOTPRINT(AMystia)
+        SHADOW(3, 12, SHADOW_SIZE_L)
         .levelUpLearnset = sAMystiaLevelUpLearnset,
         .teachableLearnset = sAMystiaTeachableLearnset,
     },
@@ -431,6 +437,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_HMystia,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_HMystia,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -440,6 +447,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconSprite = gMonIcon_HMystia,
         .iconPalIndex = 0,
         FOOTPRINT(HMystia)
+        SHADOW(2, 12, SHADOW_SIZE_M)
         .levelUpLearnset = sHMystiaLevelUpLearnset,
         .teachableLearnset = sHMystiaTeachableLearnset,
     },

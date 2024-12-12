@@ -119,17 +119,11 @@ PlayersHouse_2F_EventScript_SetWallClock::
 	return
 
 PlayersHouse_2F_Movement_MomEntersMale:
-	delay_8
-	walk_down
-	walk_in_place_faster_left
-	delay_16
-	delay_8
-	walk_left
+	face_right
 	step_end
 
 PlayersHouse_2F_Movement_MomExitsMale:
-	walk_right
-	walk_up
+	face_left
 	delay_8
 	step_end
 
@@ -403,6 +397,7 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 	end
 
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
+	walk_down
 	walk_down
 	walk_down
 	walk_left

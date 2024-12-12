@@ -756,6 +756,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_CHina,
         .iconPalIndex = 0,
         FOOTPRINT(CHina)
+        SHADOW(0, 9, SHADOW_SIZE_S)
         .levelUpLearnset = sCHinaLevelUpLearnset,
         .teachableLearnset = sCHinaTeachableLearnset,
         .eggMoveLearnset = sCHinaEggMoveLearnset,
@@ -806,6 +807,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Hina,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_Hina,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -815,6 +817,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_Hina,
         .iconPalIndex = 0,
         FOOTPRINT(Hina)
+        SHADOW(0, 13, SHADOW_SIZE_L)
         .levelUpLearnset = sHinaLevelUpLearnset,
         .teachableLearnset = sHinaTeachableLearnset,
     },
@@ -859,6 +862,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_AHina,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_AHina,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -868,6 +872,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_AHina,
         .iconPalIndex = 0,
         FOOTPRINT(AHina)
+        SHADOW(3, 13, SHADOW_SIZE_L)
         .levelUpLearnset = sAHinaLevelUpLearnset,
         .teachableLearnset = sAHinaTeachableLearnset,
     },
@@ -912,6 +917,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_DHina,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_DHina,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -921,6 +927,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DHina,
         .iconPalIndex = 0,
         FOOTPRINT(DHina)
+        SHADOW(-1, 12, SHADOW_SIZE_L)
         .levelUpLearnset = sDHinaLevelUpLearnset,
         .teachableLearnset = sDHinaTeachableLearnset,
     },
@@ -1190,6 +1197,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CMomiji,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_CMomiji,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1199,6 +1207,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_CMomiji,
         .iconPalIndex = 1,
         FOOTPRINT(CMomiji)
+        SHADOW(1, 10, SHADOW_SIZE_M)
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
         .eggMoveLearnset = sCMomijiEggMoveLearnset,
@@ -1246,6 +1255,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Momiji,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Momiji,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1255,6 +1265,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_Momiji,
         .iconPalIndex = 1,
         FOOTPRINT(Momiji)
+        SHADOW(5, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
         .levelUpLearnset = sMomijiLevelUpLearnset,
         .teachableLearnset = sMomijiTeachableLearnset,
     },
@@ -1299,6 +1310,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_DMomiji,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_DMomiji,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1308,6 +1320,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DMomiji,
         .iconPalIndex = 1,
         FOOTPRINT(DMomiji)
+        SHADOW(-5, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         .levelUpLearnset = sDMomijiLevelUpLearnset,
         .teachableLearnset = sDMomijiTeachableLearnset,
     },

@@ -257,7 +257,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CKagerou,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 6,
+        .frontPicYOffset = 3,
         .frontAnimFrames = sAnims_CKagerou,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CKagerou,
@@ -269,6 +269,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .iconSprite = gMonIcon_CKagerou,
         .iconPalIndex = 0,
         FOOTPRINT(CKagerou)
+        SHADOW(0, 6, SHADOW_SIZE_M)
         .levelUpLearnset = sCKagerouLevelUpLearnset,
         .teachableLearnset = sCKagerouTeachableLearnset,
         .eggMoveLearnset = sCKagerouEggMoveLearnset,
@@ -324,6 +325,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .iconSprite = gMonIcon_Kagerou,
         .iconPalIndex = 0,
         FOOTPRINT(Kagerou)
+        SHADOW(2, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
         .levelUpLearnset = sKagerouLevelUpLearnset,
         .teachableLearnset = sKagerouTeachableLearnset,
     },

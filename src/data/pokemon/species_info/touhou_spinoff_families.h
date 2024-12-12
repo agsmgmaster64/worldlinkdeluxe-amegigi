@@ -939,6 +939,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_CSunny,
         .iconPalIndex = 2,
         FOOTPRINT(CSunny)
+        SHADOW(0, 9, SHADOW_SIZE_M)
         .levelUpLearnset = sCSunnyLevelUpLearnset,
         .teachableLearnset = sCSunnyTeachableLearnset,
         .eggMoveLearnset = sCSunnyEggMoveLearnset,
@@ -989,6 +990,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Sunny,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_Sunny,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -998,6 +1000,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_Sunny,
         .iconPalIndex = 2,
         FOOTPRINT(Sunny)
+        SHADOW(0, 11, SHADOW_SIZE_M)
         .levelUpLearnset = sSunnyLevelUpLearnset,
         .teachableLearnset = sSunnyTeachableLearnset,
     },
@@ -1042,6 +1045,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_ASunny,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_ASunny,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1051,6 +1055,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_ASunny,
         .iconPalIndex = 2,
         FOOTPRINT(ASunny)
+        SHADOW(0, 13, SHADOW_SIZE_L)
         .levelUpLearnset = sASunnyLevelUpLearnset,
         .teachableLearnset = sASunnyTeachableLearnset,
     },
@@ -1092,9 +1097,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .trainerOffset = 1,
         .frontPic = gMonFrontPic_DSunny,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_DSunny,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_DSunny,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1104,6 +1110,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_DSunny,
         .iconPalIndex = 2,
         FOOTPRINT(DSunny)
+        SHADOW(0, 12, SHADOW_SIZE_L)
         .levelUpLearnset = sDSunnyLevelUpLearnset,
         .teachableLearnset = sDSunnyTeachableLearnset,
     },
@@ -1149,7 +1156,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_CLuna,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 7,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_CLuna,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1159,6 +1166,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconSprite = gMonIcon_CLuna,
         .iconPalIndex = 1,
         FOOTPRINT(CLuna)
+        SHADOW(2, 13, SHADOW_SIZE_M)
         .levelUpLearnset = sCLunaLevelUpLearnset,
         .teachableLearnset = sCLunaTeachableLearnset,
         .eggMoveLearnset = sCLunaEggMoveLearnset,

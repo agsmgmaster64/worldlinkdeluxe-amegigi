@@ -54,6 +54,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_CNazrin,
         .iconPalIndex = 1,
         FOOTPRINT(CNazrin)
+        SHADOW(-1, 9, SHADOW_SIZE_S)
         .levelUpLearnset = sCNazrinLevelUpLearnset,
         .teachableLearnset = sCNazrinTeachableLearnset,
         .eggMoveLearnset = sCNazrinEggMoveLearnset,
@@ -104,6 +105,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Nazrin,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Nazrin,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -113,6 +115,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_Nazrin,
         .iconPalIndex = 1,
         FOOTPRINT(Nazrin)
+        SHADOW(-1, 12, SHADOW_SIZE_M)
         .levelUpLearnset = sNazrinLevelUpLearnset,
         .teachableLearnset = sNazrinTeachableLearnset,
     },
@@ -155,9 +158,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_TNazrin,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_TNazrin,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_TNazrin,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -167,6 +171,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_TNazrin,
         .iconPalIndex = 1,
         FOOTPRINT(TNazrin)
+        SHADOW(0, 13, SHADOW_SIZE_M)
         .levelUpLearnset = sTNazrinLevelUpLearnset,
         .teachableLearnset = sTNazrinTeachableLearnset,
     },
@@ -209,9 +214,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .trainerOffset = 7,
         .frontPic = gMonFrontPic_HNazrin,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_HNazrin,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_HNazrin,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -221,6 +227,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_HNazrin,
         .iconPalIndex = 1,
         FOOTPRINT(HNazrin)
+        SHADOW(0, 11, SHADOW_SIZE_M)
         .levelUpLearnset = sHNazrinLevelUpLearnset,
         .teachableLearnset = sHNazrinTeachableLearnset,
     },

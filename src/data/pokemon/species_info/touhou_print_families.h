@@ -704,6 +704,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .iconSprite = gMonIcon_CTokiko,
         .iconPalIndex = 1,
         FOOTPRINT(CTokiko)
+        SHADOW(0, 13, SHADOW_SIZE_M)
         .levelUpLearnset = sCTokikoLevelUpLearnset,
         .teachableLearnset = sCTokikoTeachableLearnset,
         .eggMoveLearnset = sCTokikoEggMoveLearnset,
@@ -752,6 +753,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_Tokiko,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Tokiko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -761,6 +763,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .iconSprite = gMonIcon_Tokiko,
         .iconPalIndex = 1,
         FOOTPRINT(Tokiko)
+        SHADOW(5, 13, SHADOW_SIZE_L)
         .levelUpLearnset = sTokikoLevelUpLearnset,
         .teachableLearnset = sTokikoTeachableLearnset,
     },
@@ -805,6 +808,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_ATokiko,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_ATokiko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -814,6 +818,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .iconSprite = gMonIcon_ATokiko,
         .iconPalIndex = 1,
         FOOTPRINT(ATokiko)
+        SHADOW(-2, 12, SHADOW_SIZE_L)
         .levelUpLearnset = sATokikoLevelUpLearnset,
         .teachableLearnset = sATokikoTeachableLearnset,
     },
@@ -858,6 +863,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .frontPicYOffset = 2,
         .frontAnimFrames = sAnims_ATokiko,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_ATokiko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -867,6 +873,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .iconSprite = gMonIcon_ATokiko,
         .iconPalIndex = 1,
         FOOTPRINT(ATokiko)
+        SHADOW(-2, 12, SHADOW_SIZE_L)
         .levelUpLearnset = sATokikoLevelUpLearnset,
         .teachableLearnset = sATokikoTeachableLearnset,
     },
