@@ -287,16 +287,15 @@ Debug_EventScript_Script_6::
 	lockall
 	message gText_HowMayIServeYou
 	waitmessage
-	movetutormart Debug_EventScript_Script_6_Mart, TRUE
+	pokemartoutfit Debug_EventScript_Script_6_Mart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	releaseall
 	end
 
 	.align 2
 Debug_EventScript_Script_6_Mart:
-	.2byte MOVE_SYNTHESIS
-	.2byte MOVE_HEAT_WAVE
-	.2byte MOVE_NONE
+	.2byte OUTFIT_UNUSUAL_RED
+	.2byte OUTFIT_NONE
 
 Debug_EventScript_Script_7::
 	release

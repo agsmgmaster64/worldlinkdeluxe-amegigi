@@ -25,6 +25,7 @@
 #include "menu_helpers.h"
 #include "money.h"
 #include "overworld.h"
+#include "outfit_menu.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "scanline_effect.h"
@@ -2248,7 +2249,7 @@ void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 {
-    CreateNewShopMenu(MART_TYPE_OUTFIT);
+    CreateShopMenu(MART_TYPE_OUTFIT);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }

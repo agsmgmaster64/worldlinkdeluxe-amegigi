@@ -1413,7 +1413,7 @@ static void NamingScreen_NoIcon(void)
  *                gSaveBlock2Ptr->playerName,
  *                gSaveBlock2Ptr->playerGender,
  *                0, 
- *                gSaveBlock2Ptr->currOutfitId,
+ *                gSaveBlock3Ptr->currOutfitId,
  *                CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
  * 
  * You can specify a specific outfit too, like so:

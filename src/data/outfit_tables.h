@@ -1,15 +1,10 @@
+#include "global.h"
+#include "main.h"
+#include "data.h"
+#include "global.fieldmap.h"
 #include "constants/global.h"
 #include "constants/event_objects.h"
-
-#if MODERN == 0
-static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
-static const u8 sText_OutfitDesc_UsualGreen[] = _(
-    "The usual, but\nbasic OUTFIT.");
-
-static const u8 sText_OutfitName_UnusualRed[] = _("UNUSUAL RED");
-static const u8 sText_OutfitDesc_UnusualRed[] = _(
-    "Rather unusual,\nbut still basic\nOUTFIT.");
-#endif
+#include "constants/outfits.h"
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
 
@@ -37,7 +32,7 @@ static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphic
 #define OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_FISHING    OBJ_EVENT_GFX_BRENDAN_FISHING
 #define OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_WATERING   OBJ_EVENT_GFX_BRENDAN_WATERING
 #define OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_DECORATING OBJ_EVENT_GFX_BRENDAN_DECORATING
-#define OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_FIELD_MOVE OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
+#define OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_VS_SEEKER  OBJ_EVENT_GFX_BRENDAN_VS_SEEKER
 
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_NORMAL     OBJ_EVENT_GFX_LINK_RS_MAY
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_ACRO_BIKE  OBJ_EVENT_GFX_MAY_ACRO_BIKE
@@ -47,7 +42,7 @@ static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphic
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_FISHING    OBJ_EVENT_GFX_MAY_FISHING
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_WATERING   OBJ_EVENT_GFX_MAY_WATERING
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_DECORATING OBJ_EVENT_GFX_MAY_DECORATING
-#define OBJ_EVENT_GFX_OUTFIT_RS_MAY_FIELD_MOVE OBJ_EVENT_GFX_MAY_FIELD_MOVE
+#define OBJ_EVENT_GFX_OUTFIT_RS_MAY_VS_SEEKER  OBJ_EVENT_GFX_MAY_VS_SEEKER
 
 const struct Outfit gOutfits[OUTFIT_COUNT] =
 {
@@ -61,26 +56,16 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! DESC: prices for purchasing them.
         .prices = { 0, 0 },
 
-        //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
-        #if MODERN == 1
-        .name = COMPOUND_STRING("USUAL GREEN"),
-        #else
-        .name = sText_OutfitName_UsualGreen,
-        #endif
-
+        .name = COMPOUND_STRING("Hifuu Usual"),
         //! DESC: outfit's description
-        #if MODERN == 1
         .desc = COMPOUND_STRING("The usual, but\nbasic OUTFIT."),
-        #else
-        .desc = sText_OutfitDesc_UsualGreen,
-        #endif
 
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
+            [MALE] =   { TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO, },
+            [FEMALE] = { TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL, },
         },
 
         //! DESC: overworld avatars, consisting of: walking, cycling,
@@ -108,14 +93,16 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
                 [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
                 [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
                 [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_VS_SEEKER,
+                [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_BRENDAN_VS_SEEKER_BIKE
             },
             [FEMALE] = {
                 [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
                 [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
                 [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
                 [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_VS_SEEKER,
+                [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_MAY_VS_SEEKER_BIKE
             },
         },
 
@@ -129,49 +116,46 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     },
     [OUTFIT_UNUSUAL_RED] = {
         .isHidden = FALSE,
-        .prices = { 200, 500 },
-        #if MODERN == 1
-        .name = COMPOUND_STRING("UNUSUAL RED"),
-        .desc = COMPOUND_STRING("Rather unusual,\nbut still basic\nOUTFIT."),
-        #else
-        .name = sText_OutfitName_UnusualRed,
-        .desc = sText_OutfitDesc_UnusualRed,
-        #endif
+        .prices = { 200, 200 },
+        .name = COMPOUND_STRING("The Alternate"),
+        .desc = COMPOUND_STRING("The one you\ndidn't end up\nchoosing first."),
         .trainerPics = {
-            [MALE]   = {TRAINER_PIC_RS_BRENDAN, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN},
-            [FEMALE] = {TRAINER_PIC_RS_MAY, TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY}
+            [MALE]   = {TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL},
+            [FEMALE] = {TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO}
         },
         .avatarGfxIds = {
            [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_ACRO_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_UNDERWATER
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_ACRO_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
            },
            [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_OUTFIT_RS_MAY_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_OUTFIT_RS_MAY_ACRO_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_OUTFIT_RS_MAY_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_OUTFIT_RS_MAY_UNDERWATER
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
            },
         },
         .animGfxIds = {
             [MALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_OUTFIT_RS_BRENDAN_FIELD_MOVE
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_VS_SEEKER,
+                [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_MAY_VS_SEEKER_BIKE
             },
             [FEMALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_OUTFIT_RS_MAY_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_OUTFIT_RS_MAY_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_OUTFIT_RS_MAY_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_OUTFIT_RS_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_OUTFIT_RS_MAY_FIELD_MOVE
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_VS_SEEKER,
+                [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_BRENDAN_VS_SEEKER_BIKE
             },
         },
-        .iconsRM = { sRegionMapPlayerIcon_RSBrendanGfx, sRegionMapPlayerIcon_RSMayGfx },
+        .iconsRM = { sRegionMapPlayerIcon_MayGfx, sRegionMapPlayerIcon_BrendanGfx },
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
 };

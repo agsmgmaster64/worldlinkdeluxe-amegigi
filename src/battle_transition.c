@@ -2521,7 +2521,7 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
 {
     struct Sprite *opponentSprite, *playerSprite;
     u32 trainerPicId = GetTrainerPicFromId(gTrainerBattleOpponent_A);
-    u32 playerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
+    u32 playerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock3Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
     s16 opponentRotationScales = 0;
 
     gReservedSpritePaletteCount = 10;

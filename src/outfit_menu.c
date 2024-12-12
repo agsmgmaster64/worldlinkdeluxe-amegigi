@@ -362,10 +362,10 @@ void OpenOutfitMenu(MainCallback retCB)
         SetMainCallback2(retCB);
     }
     // measures for existing saves
-    if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE)
+    if (gSaveBlock3Ptr->currOutfitId == OUTFIT_NONE)
     {
         UnlockOutfit(DEFAULT_OUTFIT);
-        gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+        gSaveBlock3Ptr->currOutfitId = DEFAULT_OUTFIT;
     }
     sOutfitMenu->retCB = retCB;
     SetMainCallback2(CB2_SetupOutfitMenu);
@@ -526,8 +526,8 @@ static void SetupOutfitMenu_Windows(void)
 
 static void SetupOutfitMenu_PrintStr(void)
 {
-    PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].name);
-    PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].desc);
+    PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock3Ptr->currOutfitId].name);
+    PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock3Ptr->currOutfitId].desc);
 }
 
 static const u16 sTSShadowPal[] = INCBIN_U16("graphics/outfit_menu/shadow.gbapal");
@@ -746,7 +746,7 @@ static void SetupOutfitMenu_Grids(void)
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_RIGHT, TYPE_FAIL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_UP, TYPE_SCROLL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_DOWN, TYPE_SCROLL);
-    sOutfitMenu->grid->selectedItem = gSaveBlock2Ptr->currOutfitId - 1;
+    sOutfitMenu->grid->selectedItem = gSaveBlock3Ptr->currOutfitId - 1;
 }
 
 //! Similar to above, but without redrawing the frame
@@ -859,7 +859,7 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             {
                 PlaySE(SE_SUCCESS);
                 gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = FALSE;
-                gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                gSaveBlock3Ptr->currOutfitId = sOutfitMenu->idx;
             }
             else
             {
@@ -952,19 +952,19 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
     }
     else
     {
-        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE || gSaveBlock2Ptr->currOutfitId >= OUTFIT_COUNT)
+        if (gSaveBlock3Ptr->currOutfitId == OUTFIT_NONE || gSaveBlock3Ptr->currOutfitId >= OUTFIT_COUNT)
         {
-            gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+            gSaveBlock3Ptr->currOutfitId = DEFAULT_OUTFIT;
         }
 
         if (isFP)
         {
             return gSaveBlock2Ptr->playerGender ?
-                        gOutfits[gSaveBlock2Ptr->currOutfitId].iconsFP + 0x80 :
-                        gOutfits[gSaveBlock2Ptr->currOutfitId].iconsFP;
+                        gOutfits[gSaveBlock3Ptr->currOutfitId].iconsFP + 0x80 :
+                        gOutfits[gSaveBlock3Ptr->currOutfitId].iconsFP;
         }
         else
-            return gOutfits[gSaveBlock2Ptr->currOutfitId].iconsRM[gSaveBlock2Ptr->playerGender];
+            return gOutfits[gSaveBlock3Ptr->currOutfitId].iconsRM[gSaveBlock2Ptr->playerGender];
     }
 }
 
@@ -973,7 +973,7 @@ u16 *GetOutfitPointer(u16 id)
     if (id > OUTFIT_COUNT)
         return NULL;
     else
-        return &gSaveBlock2Ptr->outfits[id / 8];
+        return &gSaveBlock3Ptr->outfits[id / 8];
 }
 
 u16 UnlockOutfit(u16 id)
@@ -1018,7 +1018,7 @@ bool8 GetOutfitStatus(u16 id)
 
 bool8 IsPlayerWearingOutfit(u16 id)
 {
-    if (gSaveBlock2Ptr->currOutfitId == id)
+    if (gSaveBlock3Ptr->currOutfitId == id)
         return TRUE;
 
     return FALSE;
