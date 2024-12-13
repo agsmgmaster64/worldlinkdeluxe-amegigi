@@ -1,10 +1,10 @@
 #ifndef GUARD_CONSTANTS_EVENT_OBJECTS_H
 #define GUARD_CONSTANTS_EVENT_OBJECTS_H
 
-#define OBJ_EVENT_GFX_BRENDAN_NORMAL               0
+#define OBJ_EVENT_GFX_RENKO_NORMAL                 0
 #define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE            1
-#define OBJ_EVENT_GFX_BRENDAN_SURFING              2
-#define OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE           3
+#define OBJ_EVENT_GFX_RENKO_SURFING                2
+#define OBJ_EVENT_GFX_RENKO_FIELD_MOVE             3
 #define OBJ_EVENT_GFX_QUINTY_PLUMP                 4
 #define OBJ_EVENT_GFX_NINJA_BOY                    5
 #define OBJ_EVENT_GFX_TWIN                         6
@@ -64,7 +64,7 @@
 #define OBJ_EVENT_GFX_BERRY_TREE                  60
 #define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
 #define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
-#define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE           63
+#define OBJ_EVENT_GFX_RENKO_ACRO_BIKE             63
 #define OBJ_EVENT_GFX_PROF_BIRCH                  64
 #define OBJ_EVENT_GFX_MAN_4                       65
 #define OBJ_EVENT_GFX_MAN_5                       66
@@ -90,11 +90,11 @@
 #define OBJ_EVENT_GFX_BREAKABLE_ROCK              86
 #define OBJ_EVENT_GFX_PUSHABLE_BOULDER            87
 #define OBJ_EVENT_GFX_MR_BRINEYS_BOAT             88
-#define OBJ_EVENT_GFX_MAY_NORMAL                  89
+#define OBJ_EVENT_GFX_MARIBEL_NORMAL              89
 #define OBJ_EVENT_GFX_MAY_MACH_BIKE               90
-#define OBJ_EVENT_GFX_MAY_ACRO_BIKE               91
-#define OBJ_EVENT_GFX_MAY_SURFING                 92
-#define OBJ_EVENT_GFX_MAY_FIELD_MOVE              93
+#define OBJ_EVENT_GFX_MARIBEL_ACRO_BIKE           91
+#define OBJ_EVENT_GFX_MARIBEL_SURFING             92
+#define OBJ_EVENT_GFX_MARIBEL_FIELD_MOVE          93
 #define OBJ_EVENT_GFX_TRUCK                       94
 #define OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX       95
 #define OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY        96
@@ -112,8 +112,8 @@
 #define OBJ_EVENT_GFX_RIVAL_MAY_SURFING          108
 #define OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE       109
 #define OBJ_EVENT_GFX_CAMERAMAN                  110
-#define OBJ_EVENT_GFX_BRENDAN_UNDERWATER         111
-#define OBJ_EVENT_GFX_MAY_UNDERWATER             112
+#define OBJ_EVENT_GFX_RENKO_UNDERWATER           111
+#define OBJ_EVENT_GFX_MARIBEL_UNDERWATER         112
 #define OBJ_EVENT_GFX_MOVING_BOX                 113
 #define OBJ_EVENT_GFX_CABLE_CAR                  114
 #define OBJ_EVENT_GFX_SCIENTIST_2                115
@@ -138,8 +138,8 @@
 #define OBJ_EVENT_GFX_STEVEN                     134
 #define OBJ_EVENT_GFX_WALLY                      135
 #define OBJ_EVENT_GFX_LITTLE_BOY_3               136
-#define OBJ_EVENT_GFX_BRENDAN_FISHING            137
-#define OBJ_EVENT_GFX_MAY_FISHING                138
+#define OBJ_EVENT_GFX_RENKO_FISHING              137
+#define OBJ_EVENT_GFX_MARIBEL_FISHING            138
 #define OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN      139
 #define OBJ_EVENT_GFX_SS_TIDAL                   140
 #define OBJ_EVENT_GFX_SUBMARINE_SHADOW           141
@@ -192,10 +192,10 @@
 #define OBJ_EVENT_GFX_LATIOS                     188
 #define OBJ_EVENT_GFX_GAMEBOY_KID                189
 #define OBJ_EVENT_GFX_CONTEST_JUDGE              190
-#define OBJ_EVENT_GFX_BRENDAN_WATERING           191
-#define OBJ_EVENT_GFX_MAY_WATERING               192
-#define OBJ_EVENT_GFX_BRENDAN_DECORATING         193
-#define OBJ_EVENT_GFX_MAY_DECORATING             194
+#define OBJ_EVENT_GFX_RENKO_WATERING             191
+#define OBJ_EVENT_GFX_MARIBEL_WATERING           192
+#define OBJ_EVENT_GFX_RENKO_DECORATING           193
+#define OBJ_EVENT_GFX_MARIBEL_DECORATING         194
 #define OBJ_EVENT_GFX_ARCHIE                     195
 #define OBJ_EVENT_GFX_MAXIE                      196
 #define OBJ_EVENT_GFX_KYOGRE_FRONT               197
@@ -243,10 +243,10 @@
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
-#define OBJ_EVENT_GFX_BRENDAN_VS_SEEKER          242
-#define OBJ_EVENT_GFX_MAY_VS_SEEKER              243
-#define OBJ_EVENT_GFX_BRENDAN_VS_SEEKER_BIKE     244
-#define OBJ_EVENT_GFX_MAY_VS_SEEKER_BIKE         245
+#define OBJ_EVENT_GFX_RENKO_VS_SEEKER            242
+#define OBJ_EVENT_GFX_MARIBEL_VS_SEEKER          243
+#define OBJ_EVENT_GFX_RENKO_VS_SEEKER_BIKE       244
+#define OBJ_EVENT_GFX_MARIBEL_VS_SEEKER_BIKE     245
 #define OBJ_EVENT_GFX_HAKOS_BAELZ                246
 #define OBJ_EVENT_GFX_SUNFLOWER_FAIRY            247
 #define OBJ_EVENT_GFX_GIGI_MURIN                 248

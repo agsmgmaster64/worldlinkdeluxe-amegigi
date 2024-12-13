@@ -112,7 +112,9 @@
 #define TRAINER_PIC_DOISE                 94
 #define TRAINER_PIC_MISCHIEVOUS_FAIRY     95
 #define TRAINER_PIC_SUNFLOWER_FAIRY       96
-#define TRAINER_PIC_COUNT                 97
+#define TRAINER_PIC_RENKO_YOUNG           97
+#define TRAINER_PIC_MARIBEL_YOUNG         98
+#define TRAINER_PIC_COUNT                 99
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_RENKO                  0
@@ -123,6 +125,8 @@
 #define TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY      5
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
+#define TRAINER_BACK_PIC_RENKO_YOUNG            8
+#define TRAINER_BACK_PIC_MARIBEL_YOUNG          9
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

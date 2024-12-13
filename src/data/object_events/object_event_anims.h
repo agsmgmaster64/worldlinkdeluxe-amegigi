@@ -357,9 +357,9 @@ static const union AnimCmd sAnim_GoFastSouth[] =
 
 static const union AnimCmd sAnim_GoFastSouth_Asym[] =
 {
-    ANIMCMD_FRAME(3, 4),
-    ANIMCMD_FRAME(0, 4),
     ANIMCMD_FRAME(4, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(5, 4),
     ANIMCMD_FRAME(0, 4),
     ANIMCMD_JUMP(0),
 };
@@ -1341,6 +1341,14 @@ static const union AnimCmd *const sAnimTable_Standard_Asym[] = {
     [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestNorth,
     [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+    [ANIM_RUN_SOUTH] = sAnim_GoFastSouth_Asym,
+    [ANIM_RUN_NORTH] = sAnim_GoFastNorth_Asym,
+    [ANIM_RUN_WEST] = sAnim_GoFastWest_Asym,
+    [ANIM_RUN_EAST] = sAnim_GoFastEast_Asym,
+    [ANIM_SPIN_SOUTH] = sAnim_SpinSouth,
+    [ANIM_SPIN_NORTH] = sAnim_SpinNorth,
+    [ANIM_SPIN_WEST] = sAnim_SpinWest,
+    [ANIM_SPIN_EAST] = sAnim_SpinEast,
 };
 
 const union AnimCmd *const sAnimTable_Following[] = {

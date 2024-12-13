@@ -49,7 +49,7 @@ BattleFrontier_BattleTowerMultiCorridor_EventScript_SetObjGfx::
 # 25 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
 	goto_if_eq VAR_RESULT, FEMALE, BattleFrontier_BattleTowerMultiCorridor_EventScript_SetPlayerGfxFemale
 # 26 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_F, OBJ_EVENT_GFX_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_F, OBJ_EVENT_GFX_RENKO_NORMAL
 # 27 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
 	return
 # 28 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
@@ -57,7 +57,7 @@ BattleFrontier_BattleTowerMultiCorridor_EventScript_SetObjGfx::
 # 29 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
 BattleFrontier_BattleTowerMultiCorridor_EventScript_SetPlayerGfxFemale::
 # 30 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
-	setvar VAR_OBJ_GFX_ID_F, OBJ_EVENT_GFX_MAY_NORMAL
+	setvar VAR_OBJ_GFX_ID_F, OBJ_EVENT_GFX_MARIBEL_NORMAL
 # 31 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"
 	return
 # 32 "data/maps/BattleFrontier_BattleTowerMultiCorridor/scripts.pory"

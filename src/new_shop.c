@@ -1519,6 +1519,14 @@ static void BuyMenuInitWindows(void)
         PrintMoveStatsLocal(WIN_MULTI, 0, 4*8, 84, COLORID_NORMAL, move);
         PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
     }
+    else if (IsMartTypeOutfit(sMartInfo.martType))
+    {
+        u32 outfit = sMartInfo.itemList[0];
+        if (GetOutfitStatus(outfit))
+            BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
+        else
+            PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
+    }
     else
     {
         PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
@@ -1711,7 +1719,15 @@ static void UpdateItemData(void)
             BuyMenuPrint(WIN_MULTI, gTypesInfo[gMovesInfo[move].type].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
             PrintMoveStatsLocal(WIN_MULTI, 0, 4*8, 84, COLORID_NORMAL, move);
             PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
-        } 
+        }
+        else if (IsMartTypeOutfit(sMartInfo.martType))
+        {
+            u32 outfit = item;
+            if (GetOutfitStatus(outfit))
+                BuyMenuPrint(WIN_MULTI, gText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, gText_SoldOut, 80), 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
+            else
+                PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
+        }
         else
         {
             PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
@@ -1764,6 +1780,17 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
     if (IsMartTypeItem(sMartInfo.martType))
     {
         if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
+        {
+            PlaySE(SE_BOO);
+            gTasks[taskId].data[0] = 70;
+            BuyMenuDisplayMessage(taskId, sText_ThatItemIsSoldOut, Task_WaitMessage);
+            return;
+        }
+    }
+
+    if (IsMartTypeOutfit(sMartInfo.martType))
+    {
+        if (GetOutfitStatus(sShopData->currentItemId))
         {
             PlaySE(SE_BOO);
             gTasks[taskId].data[0] = 70;

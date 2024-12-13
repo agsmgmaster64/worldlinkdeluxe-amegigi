@@ -147,6 +147,8 @@ extern const struct SpriteFrameImage gBattlerPicTable_PlayerRight[];
 extern const struct SpriteFrameImage gBattlerPicTable_OpponentRight[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Renko[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Maribel[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_RenkoYoung[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_MaribelYoung[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Red[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_Leaf[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_RubySapphireBrendan[];

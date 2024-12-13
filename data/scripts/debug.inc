@@ -294,7 +294,10 @@ Debug_EventScript_Script_6::
 
 	.align 2
 Debug_EventScript_Script_6_Mart:
-	.2byte OUTFIT_UNUSUAL_RED
+	.2byte OUTFIT_THE_ALTERNATE
+	.2byte OUTFIT_YOUNG_START
+	.2byte OUTFIT_ALTERED_YOUTH
+	.2byte OUTFIT_GIGI_MURIN
 	.2byte OUTFIT_NONE
 
 Debug_EventScript_Script_7::

@@ -220,6 +220,12 @@ const u32 gTrainerPalette_Renko[] = INCBIN_U32("graphics/trainers/front_pics/ren
 const u32 gTrainerFrontPic_Maribel[] = INCBIN_U32("graphics/trainers/front_pics/maribel.4bpp.lz");
 const u32 gTrainerPalette_Maribel[] = INCBIN_U32("graphics/trainers/front_pics/maribel.gbapal.lz");
 
+const u32 gTrainerFrontPic_RenkoYoung[] = INCBIN_U32("graphics/trainers/front_pics/renko_young.4bpp.lz");
+const u32 gTrainerPalette_RenkoYoung[] = INCBIN_U32("graphics/trainers/front_pics/renko_young.gbapal.lz");
+
+const u32 gTrainerFrontPic_MaribelYoung[] = INCBIN_U32("graphics/trainers/front_pics/maribel_young.4bpp.lz");
+const u32 gTrainerPalette_MaribelYoung[] = INCBIN_U32("graphics/trainers/front_pics/maribel_young.gbapal.lz");
+
 const u32 gTrainerFrontPic_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.4bpp.lz");
 const u32 gTrainerPalette_BugCatcher[] = INCBIN_U32("graphics/trainers/front_pics/bug_catcher.gbapal.lz");
 
@@ -294,6 +300,8 @@ const u32 gTrainerPalette_SunflowerFairy[] = INCBIN_U32("graphics/trainers/front
 
 const u8 gTrainerBackPic_Renko[] = INCBIN_U8("graphics/trainers/back_pics/renko.4bpp");
 const u8 gTrainerBackPic_Maribel[] = INCBIN_U8("graphics/trainers/back_pics/maribel.4bpp");
+const u8 gTrainerBackPic_RenkoYoung[] = INCBIN_U8("graphics/trainers/back_pics/renko_young.4bpp");
+const u8 gTrainerBackPic_MaribelYoung[] = INCBIN_U8("graphics/trainers/back_pics/maribel_young.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf.4bpp");
 const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan_rs.4bpp");
@@ -306,6 +314,8 @@ const u32 gTrainerBackPicPalette_Leaf[] = INCBIN_U32("graphics/trainers/back_pic
 
 const u32 gTrainerBackPicPalette_Renko[] = INCBIN_U32("graphics/trainers/back_pics/renko.gbapal.lz");
 const u32 gTrainerBackPicPalette_Maribel[] = INCBIN_U32("graphics/trainers/back_pics/maribel.gbapal.lz");
+const u32 gTrainerBackPicPalette_RenkoYoung[] = INCBIN_U32("graphics/trainers/back_pics/renko_young.gbapal.lz");
+const u32 gTrainerBackPicPalette_MaribelYoung[] = INCBIN_U32("graphics/trainers/back_pics/maribel_young.gbapal.lz");
 
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
@@ -420,6 +430,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_DOISE, gTrainerFrontPic_Doise, gTrainerPalette_Doise),
     TRAINER_SPRITE(TRAINER_PIC_MISCHIEVOUS_FAIRY, gTrainerFrontPic_MischievousFairy, gTrainerPalette_MischievousFairy),
     TRAINER_SPRITE(TRAINER_PIC_SUNFLOWER_FAIRY, gTrainerFrontPic_SunflowerFairy, gTrainerPalette_SunflowerFairy),
+    TRAINER_SPRITE(TRAINER_PIC_RENKO_YOUNG, gTrainerFrontPic_RenkoYoung, gTrainerPalette_RenkoYoung),
+    TRAINER_SPRITE(TRAINER_PIC_MARIBEL_YOUNG, gTrainerFrontPic_MaribelYoung, gTrainerPalette_MaribelYoung),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
@@ -494,6 +506,24 @@ const struct SpriteFrameImage gTrainerBackPicTable_Maribel[] =
     {gTrainerBackPic_Maribel + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
 };
 
+const struct SpriteFrameImage gTrainerBackPicTable_RenkoYoung[] =
+{
+    {gTrainerBackPic_RenkoYoung + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_RenkoYoung + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_RenkoYoung + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_RenkoYoung + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_RenkoYoung + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
+};
+
+const struct SpriteFrameImage gTrainerBackPicTable_MaribelYoung[] =
+{
+    {gTrainerBackPic_MaribelYoung + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_MaribelYoung + TRAINER_PIC_SIZE * 1, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_MaribelYoung + TRAINER_PIC_SIZE * 2, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_MaribelYoung + TRAINER_PIC_SIZE * 3, TRAINER_PIC_SIZE},
+    {gTrainerBackPic_MaribelYoung + TRAINER_PIC_SIZE * 4, TRAINER_PIC_SIZE},
+};
+
 const struct SpriteFrameImage gTrainerBackPicTable_Red[] =
 {
     {gTrainerBackPic_Red + TRAINER_PIC_SIZE * 0, TRAINER_PIC_SIZE},
@@ -566,4 +596,6 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerBackPicTable_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerBackPicTable_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerBackPicTable_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RENKO_YOUNG, 5, gTrainerBackPic_RenkoYoung, gTrainerBackPicTable_RenkoYoung, gTrainerBackPicPalette_RenkoYoung, sBackAnims_Kanto),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_MARIBEL_YOUNG, 5, gTrainerBackPic_MaribelYoung, gTrainerBackPicTable_MaribelYoung, gTrainerBackPicPalette_MaribelYoung, sBackAnims_Kanto),
 };
