@@ -4,6 +4,7 @@
 #include "global.fieldmap.h"
 #include "constants/global.h"
 #include "constants/event_objects.h"
+#include "constants/field_mugshots.h"
 #include "constants/outfits.h"
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -44,6 +45,12 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .trainerPics = {
             [MALE] =   { TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO, },
             [FEMALE] = { TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL, },
+        },
+
+        //! DESC: mugshot IDs for the mugshot feature
+        .mugshotIds = {
+            [MALE] =   MUGSHOT_RENKO,
+            [FEMALE] = MUGSHOT_MARIBEL,
         },
 
         //! DESC: overworld avatars, consisting of: walking, cycling,
@@ -101,6 +108,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
             [MALE]   = {TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL},
             [FEMALE] = {TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO}
         },
+        .mugshotIds = {
+            [MALE] =   MUGSHOT_MARIBEL,
+            [FEMALE] = MUGSHOT_RENKO,
+        },
         .avatarGfxIds = {
            [MALE] = {
                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MARIBEL_NORMAL,
@@ -145,6 +156,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
             [MALE] =   { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
             [FEMALE] = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
         },
+        .mugshotIds = {
+            [MALE] =   MUGSHOT_RENKO,
+            [FEMALE] = MUGSHOT_MARIBEL,
+        },
         .avatarGfxIds = {
            [MALE] = {
                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_RENKO_NORMAL,
@@ -188,6 +203,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .trainerPics = {
             [MALE]   = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
             [FEMALE] = { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
+        },
+        .mugshotIds = {
+            [MALE] =   MUGSHOT_MARIBEL,
+            [FEMALE] = MUGSHOT_RENKO,
         },
         .avatarGfxIds = {
            [MALE] = {

@@ -6,6 +6,7 @@
 #include "field_weather.h"
 #include "field_message_box.h"
 #include "field_mugshot.h"
+#include "outfit_menu.h"
 #include "constants/field_mugshots.h"
 #include "data/field_mugshots.h"
 
@@ -94,18 +95,24 @@ void _RemoveFieldMugshot(u8 slot)
     }
 }
 
-static u32 GetMugshotXCoord(u32 id, u32 emote)
+static inline u32 GetMugshotXCoord(u32 id, u32 emote)
 {
     if (sFieldMugshots[id][emote].x != 0)
         return sFieldMugshots[id][emote].x;
     return MUGSHOT_X;
 }
 
-static u32 GetMugshotYCoord(u32 id, u32 emote)
+static inline u32 GetMugshotYCoord(u32 id, u32 emote)
 {
     if (sFieldMugshots[id][emote].y != 0)
         return sFieldMugshots[id][emote].y;
     return MUGSHOT_Y;
+}
+
+void _CreatePlayerFieldMugshot(u32 emote)
+{
+    u32 mugshotId = GetPlayerMugshotIdByOutfitGender(gSaveBlock3Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
+    _CreateFieldMugshotAt(mugshotId, emote, GetMugshotXCoord(mugshotId, emote), GetMugshotYCoord(mugshotId, emote));
 }
 
 void _CreateFieldMugshot(u32 id, u32 emote)

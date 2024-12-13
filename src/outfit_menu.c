@@ -941,6 +941,14 @@ u32 GetPlayerTrainerPicIdByOutfitGenderType(u32 outfitId, u32 gender, bool32 typ
         return gOutfits[0].trainerPics[gender][type];
 }
 
+u32 GetPlayerMugshotIdByOutfitGender(u32 outfitId, u32 gender)
+{
+    if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
+        return gOutfits[outfitId].mugshotIds[gender];
+    else
+        return gOutfits[0].mugshotIds[gender];
+}
+
 const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
 {
     if (which == PAL)
