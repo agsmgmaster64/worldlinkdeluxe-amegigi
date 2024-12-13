@@ -1,4 +1,5 @@
 #include "global.h"
+#include "main.h"
 #include "decompress.h"
 #include "sprite.h"
 #include "script.h"
