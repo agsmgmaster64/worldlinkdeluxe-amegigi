@@ -882,6 +882,28 @@ const struct Tileset gTileset_RG_MtEmber =
     .callback = InitTilesetAnim_RG_MtEmber,
 };
 
+const struct Tileset gTileset_RG_RockTunnel =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_RockTunnel,
+    .palettes = gTilesetPalettes_RG_RockTunnel,
+    .metatiles = gMetatiles_RG_RockTunnel,
+    .metatileAttributes = gMetatileAttributes_RG_RockTunnel,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_RG_DiglettsCave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_DiglettsCave,
+    .palettes = gTilesetPalettes_RG_DiglettsCave,
+    .metatiles = gMetatiles_RG_DiglettsCave,
+    .metatileAttributes = gMetatileAttributes_RG_DiglettsCave,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_RG_Condominiums =
 {
     .isCompressed = TRUE,

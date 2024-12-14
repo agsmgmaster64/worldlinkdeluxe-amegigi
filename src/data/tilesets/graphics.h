@@ -1701,6 +1701,50 @@ const u16 gTilesetPalettes_RG_MtEmber[][16] =
 	INCBIN_U16("data/tilesets/frlg/secondary/mt_ember/palettes/15.gbapal"),
 };
 
+const u32 gTilesetTiles_RG_RockTunnel[] = INCBIN_U32("data/tilesets/frlg/secondary/rock_tunnel/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RG_RockTunnel[][16] =
+{
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_RG_DiglettsCave[] = INCBIN_U32("data/tilesets/frlg/secondary/digletts_cave/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RG_DiglettsCave[][16] =
+{
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/digletts_cave/palettes/15.gbapal"),
+};
+
 // Shared by SilphCo
 const u32 gTilesetTiles_RG_Condominiums[] = INCBIN_U32("data/tilesets/frlg/secondary/condominiums/tiles.4bpp.lz");
 

@@ -542,13 +542,13 @@
       "y": 14,
       "elevation": 3,
       "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
-      "dest_warp_id": "0"
+      "dest_warp_id": "2"
     },
     {
       "x": 11,
       "y": 67,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE110_TRICK_HOUSE_ENTRANCE",
+      "dest_map": "MAP_NEW_MAUVILLE_ENTRANCE",
       "dest_warp_id": "0"
     },
     {
