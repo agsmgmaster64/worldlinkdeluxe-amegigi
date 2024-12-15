@@ -65,7 +65,7 @@ InsideOfTruck_EventScript_SetIntroFlagsMale::
 # 33 "data/maps/InsideOfTruck/scripts.pory"
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1
 # 34 "data/maps/InsideOfTruck/scripts.pory"
-	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 5, 10
 # 35 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 # 36 "data/maps/InsideOfTruck/scripts.pory"
@@ -91,7 +91,7 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 # 46 "data/maps/InsideOfTruck/scripts.pory"
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 1
 # 47 "data/maps/InsideOfTruck/scripts.pory"
-	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 14, 10
 # 48 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 # 49 "data/maps/InsideOfTruck/scripts.pory"
@@ -109,8 +109,8 @@ InsideOfTruck_EventScript_MovingBox::
 # 55 "data/maps/InsideOfTruck/scripts.pory"
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
 # 56 "data/maps/InsideOfTruck/scripts.pory"
-	.string "The box is printed with a POKéMON logo.\p"
+	.string "The box is printed with a Puppet logo.\p"
 # 57 "data/maps/InsideOfTruck/scripts.pory"
-	.string "It's a POKéMON brand moving and\n"
+	.string "It's a Puppet brand moving and\n"
 # 58 "data/maps/InsideOfTruck/scripts.pory"
 	.string "delivery service.$"
