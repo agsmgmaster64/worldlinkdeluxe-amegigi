@@ -840,8 +840,9 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_MOVE_ITEM_WHERE]        = COMPOUND_STRING("Move item to where?"),
     [PARTY_MSG_WHICH_APPLIANCE]        = gText_WhichAppliance,
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
-    [PARTY_MSG_DO_WHAT_WITH_FOLLOWER]  = gText_DoWhatWithFollower,
+    [PARTY_MSG_DO_WHAT_WITH_FOLLOWER]  = COMPOUND_STRING("Do what with {STR_VAR_1}?"),
     [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"), // hexorb Branch
+    [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = COMPOUND_STRING("Send which Puppet to the PC?"),
 };
 
 static const u8 *const sDescriptionStringTable[] =

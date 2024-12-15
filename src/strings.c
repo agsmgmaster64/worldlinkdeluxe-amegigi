@@ -283,7 +283,6 @@ const u8 gText_FollowerPreferred[] = _("{STR_VAR_1} is now\nyour preferred follo
 const u8 gText_FollowerDefaulted[] = _("{STR_VAR_1} is no longer\nthe preferred follower.{PAUSE_UNTIL_PRESS}");
 const u8 gText_FollowerFainted[] = _("Cannot set a fainted Puppet\nas your preferred follower!{PAUSE_UNTIL_PRESS}");
 const u8 gText_FollowerReturnedToBall[] = _("Returned {STR_VAR_1} to its orb.{PAUSE_UNTIL_PRESS}");
-const u8 gText_DoWhatWithFollower[] = _("Do what with {STR_VAR_1}?");
 const u8 gText_HP3[] = _("HP");
 const u8 gText_SpAtk3[] = _("SP. ATK");
 const u8 gText_SpDef3[] = _("SP. DEF");
