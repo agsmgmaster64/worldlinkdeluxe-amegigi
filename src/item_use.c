@@ -27,6 +27,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "metatile_behavior.h"
+#include "music_player.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -299,10 +300,14 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
     }
     else
     {
+        PlaySE(SE_BIKE_BELL);
         gSaveBlock3Ptr->playerBike = ItemId_GetSecondaryId(gSpecialVar_ItemId);
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
-        Overworld_SetSavedMusic(MUS_CYCLING);
-        Overworld_ChangeMusicTo(MUS_CYCLING);
+        if (Overworld_MusicCanOverrideMapMusic())
+        {
+            Overworld_SetSavedMusic(GetBikeMusic());
+            Overworld_ChangeMusicTo(GetBikeMusic());
+        }
     }
     ScriptUnfreezeObjectEvents();
     UnlockPlayerFieldControls();

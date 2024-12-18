@@ -1368,10 +1368,8 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
         return GetMoveBpPrice(sMartInfo.itemList[id]);
     case MART_TYPE_MOVES:
         return GetMovePrice(sMartInfo.itemList[id]);
-    #ifdef MUDSKIP_OUTFIT_SYSTEM
     case MART_TYPE_OUTFIT:
         return GetOutfitPrice(sMartInfo.itemList[id]);
-    #endif // MUDSKIP_OUTFIT_SYSTEM
     default:
         return gDecorations[sMartInfo.itemList[id]].price;
     }
@@ -2067,10 +2065,8 @@ static void BuyMenuSubtractMoney(u8 taskId)
 
     if (IsMartTypeItem(sMartInfo.martType))
         gTasks[taskId].func = Task_ReturnToItemListAfterItemPurchase;
-    #ifdef MUDSKIP_OUTFIT_SYSTEM
     else if (IsMartTypeOutfit(sMartInfo.martType))
         gTasks[taskId].func = Task_ReturnToItemListAfterOutfitPurchase;
-    #endif // MUDSKIP_OUTFIT_SYSTEM
     else
         gTasks[taskId].func = Task_ReturnToItemListAfterDecorationPurchase;
 }
@@ -2273,14 +2269,12 @@ void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
     SetShopMenuCallback(ScriptContext_Enable);
 }
 
-#ifdef MUDSKIP_OUTFIT_SYSTEM
 void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 {
     CreateShopMenu(MART_TYPE_OUTFIT);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
-#endif // MUDSKIP_OUTFIT_SYSTEM
 
 void NewShop_CreateVariablePokemartMenu(const u16 *itemsForSale)
 {
