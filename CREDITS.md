@@ -17,11 +17,12 @@
 - **Reimufate**: Creating a lot of music and cries used in this project
 - **KecleonTechno**: Creating more music and a few graphics used in the hack
 
-- **psf**: Making the pokevial and HM Item branches used in this project
+- **psf**: Making many of the feature branches used in this project
 - **BuffetSalt, Karathan**: Contributing to the pokevial feature branch
 - **Pyredrid, NobodySociety**: Contributing to the HM Items feature branch
 - **Archie**: Making and contributing to some feature branches used here, like the continue screen
 - **TheXaman**: Making some feature branches like the Options Plus menu and DS-styled Party Screens used for this project
+- **Kasenn**: Making some misc feature branches used in this project
 - **Cookie Softcore**: Making the item sprites for the HM items
 - **Jaizu**: Making some resources for pokeemerald used in this project
 - **CitrusBolt**: Making the Unique Colors implementation used here
@@ -30,7 +31,8 @@
 - **Kiy, usigusom , (), 黒インク**: Making the binary version of the DS-styled Party Screen which I tweaked the decomp version to more closely resemble
 - **ipatix**: Making the improved music engine used for this project
 - **tustin**: Making the name box branch used in this project
-- **mudskip**: Making the new shop UI used in this project
+- **mudskip**: Making the new shop UI used in this project along with the mugshot/portrait feature
+- **Horo**: Making the base of the type icons used in this project
 - **Hecatia666**: Making some commissioned sprites used in this project
 - **PurrfectDoodle**: Making more commissioned sprites used in this project
 

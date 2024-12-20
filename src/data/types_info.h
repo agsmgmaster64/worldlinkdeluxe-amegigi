@@ -50,7 +50,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("None"),
         .generic = _("a move"),
-        .palette = TYPE_ICON_PAL_3, // Uses TYPE_MYSTERY's icon
+        .palette = TYPE_ICON_PAL_1, // Uses TYPE_MYSTERY's icon
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_NormalTMHM,
@@ -62,7 +62,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Illusion"),
         .generic = _("an Illusion move"),
-        .palette = TYPE_ICON_PAL_3,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_BREAKNECK_BLITZ,
         .maxMove = MOVE_MAX_STRIKE,
         .teraTypeRGBValue = RGB(10, 18, 27),
@@ -82,7 +82,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Dream"),
         .generic = _("a Dream move"),
-        .palette = TYPE_ICON_PAL_1,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_ALL_OUT_PUMMELING,
         .maxMove = MOVE_MAX_KNUCKLE,
         .teraTypeRGBValue = RGB_WHITE,
@@ -126,7 +126,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Miasma"),
         .generic = _("a Miasma move"),
-        .palette = TYPE_ICON_PAL_2,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_ACID_DOWNPOUR,
         .maxMove = MOVE_MAX_OOZE,
         .teraTypeRGBValue = RGB(26, 10, 25), // custom
@@ -192,7 +192,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Heart"),
         .generic = _("a Heart move"),
-        .palette = TYPE_ICON_PAL_2,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_SAVAGE_SPIN_OUT,
         .maxMove = MOVE_MAX_FLUTTERBY,
         .teraTypeRGBValue = RGB(31, 15, 21),
@@ -236,7 +236,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Steel"),
         .generic = _("a Steel move"),
-        .palette = TYPE_ICON_PAL_1,
+        .palette = TYPE_ICON_PAL_2,
         .zMove = MOVE_CORKSCREW_CRASH,
         .maxMove = MOVE_MAX_STEELSPIKE,
         .teraTypeRGBValue = RGB(19, 19, 20),
@@ -261,6 +261,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .palette = TYPE_ICON_PAL_3,
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_SPECIAL,
+        .paletteTMHM = gItemIconPalette_NormalTMHM,
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = TRUE,
         .shopItem = ITEM_NONE,
@@ -313,7 +314,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Nature"),
         .generic = _("a Nature move"),
-        .palette = TYPE_ICON_PAL_3,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_BLOOM_DOOM,
         .maxMove = MOVE_MAX_OVERGROWTH,
         .teraTypeRGBValue = RGB(12, 24, 11),
@@ -335,7 +336,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Wind"),
         .generic = _("a Wind move"),
-        .palette = TYPE_ICON_PAL_3,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_GIGAVOLT_HAVOC,
         .maxMove = MOVE_MAX_LIGHTNING,
         .teraTypeRGBValue = RGB(30, 26, 7),
@@ -357,7 +358,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Reason"),
         .generic = _("a Reason move"),
-        .palette = TYPE_ICON_PAL_2,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_SHATTERED_PSYCHE,
         .maxMove = MOVE_MAX_MINDSTORM,
         .teraTypeRGBValue = RGB(31, 14, 15),
@@ -423,7 +424,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Dark"),
         .generic = _("a Dark move"),
-        .palette = TYPE_ICON_PAL_1,
+        .palette = TYPE_ICON_PAL_3,
         .zMove = MOVE_BLACK_HOLE_ECLIPSE,
         .maxMove = MOVE_MAX_DARKNESS,
         .teraTypeRGBValue = RGB(6, 5, 8),
@@ -467,7 +468,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("Stellar"),
         .generic = _("a STELLAR move"),
-        .palette = TYPE_ICON_PAL_3,
+        .palette = TYPE_ICON_PAL_1,
         .zMove = MOVE_BREAKNECK_BLITZ,
         .maxMove = MOVE_MAX_STRIKE,
         .teraTypeRGBValue = RGB(10, 18, 27),

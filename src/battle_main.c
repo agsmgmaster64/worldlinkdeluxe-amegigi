@@ -6020,8 +6020,6 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
     case EFFECT_MULTI_PULSE:
         if (GetTypeFromTypeBooster(holdEffect))
             return GetTypeFromTypeBooster(holdEffect);
-        else
-            return TYPE_ILLUSION;
         break;
     case EFFECT_REVELATION_DANCE:
         if (GetActiveGimmick(battler) != GIMMICK_Z_MOVE)
