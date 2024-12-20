@@ -256,6 +256,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayVSSeeker
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HakosBaelz;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SunflowerFairy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GigiMurin;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Larry;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_RENKO_NORMAL] =             &gObjectEventGraphicsInfo_BrendanNormal,
@@ -507,6 +508,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HAKOS_BAELZ] =              &gObjectEventGraphicsInfo_HakosBaelz,
     [OBJ_EVENT_GFX_SUNFLOWER_FAIRY] =          &gObjectEventGraphicsInfo_SunflowerFairy,
     [OBJ_EVENT_GFX_GIGI_MURIN] =               &gObjectEventGraphicsInfo_GigiMurin,
+    [OBJ_EVENT_GFX_LARRY] =                    &gObjectEventGraphicsInfo_Larry,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
