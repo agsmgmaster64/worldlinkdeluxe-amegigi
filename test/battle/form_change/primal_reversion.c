@@ -120,17 +120,17 @@ DOUBLE_BATTLE_TEST("Primal reversion's order is determined by Speed - player fas
 SINGLE_BATTLE_TEST("Primal reversion happens after a mon is sent out after a mon is fainted")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
-        PLAYER(SPECIES_CHIBI_YUUGI) {HP(1); }
-        PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(!IS_MOVE_STATUS(MOVE_TACKLE));
+        PLAYER(SPECIES_DEFENSE_SATORI) {HP(1); }
+        PLAYER(SPECIES_LAST_WORD_UTSUHO) { Item(ITEM_RED_ORB); }
+        OPPONENT(SPECIES_DEFENSE_SATORI);
     } WHEN {
         TURN { MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
-        MESSAGE("Wobbuffet fainted!");
+        MESSAGE("DSatori fainted!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_PRIMAL_REVERSION, player);
-        MESSAGE("Groudon's Primal Reversion! It reverted to its primal state!");
+        MESSAGE("LUtsuho's Primal Reversion! It reverted to its primal state!");
     } THEN {
         EXPECT_EQ(player->species, SPECIES_GROUDON_PRIMAL);
     }
@@ -156,7 +156,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a mon is switched in")
 SINGLE_BATTLE_TEST("Primal reversion happens after a switch-in caused by Eject Button")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
+        ASSUME(!IS_MOVE_STATUS(MOVE_TACKLE));
         ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
         PLAYER(SPECIES_CHIBI_YUUGI) {Item(ITEM_EJECT_BUTTON); }
         PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }
@@ -177,7 +177,7 @@ SINGLE_BATTLE_TEST("Primal reversion happens after a switch-in caused by Eject B
 SINGLE_BATTLE_TEST("Primal reversion happens after a switch-in caused by Red Card")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power != 0);
+        ASSUME(!IS_MOVE_STATUS(MOVE_TACKLE));
         ASSUME(gItemsInfo[ITEM_RED_CARD].holdEffect == HOLD_EFFECT_RED_CARD);
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_NORMAL_KANA) { Item(ITEM_RED_ORB); }

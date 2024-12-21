@@ -42,12 +42,12 @@ DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching
     PARAMETRIZE { target = playerRight; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_POUND].power != 0);
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(1); }
-        PLAYER(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
-        OPPONENT(SPECIES_NORMAL_KOSUZU) { Item(ITEM_POTION); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        ASSUME(!IS_MOVE_STATUS(MOVE_POUND));
+        PLAYER(SPECIES_DEFENSE_SATORI) { HP(1); }
+        PLAYER(SPECIES_DEFENSE_SATORI) { HP(1); }
+        PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
+        OPPONENT(SPECIES_WYNAUT) { Item(ITEM_POTION); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_POUND, target: target); SEND_OUT(target, 2); }
     } SCENE {
@@ -65,12 +65,12 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
     PARAMETRIZE { target = opponentRight; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_POUND].power != 0);
-        PLAYER(SPECIES_NORMAL_KOSUZU) { Item(ITEM_POTION); }
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); }
-        OPPONENT(SPECIES_CHIBI_MINORIKO) { Ability(ABILITY_FRISK); };
+        ASSUME(!IS_MOVE_STATUS(MOVE_POUND));
+        PLAYER(SPECIES_WYNAUT) { Item(ITEM_POTION); }
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_DEFENSE_SATORI) { HP(1); }
+        OPPONENT(SPECIES_DEFENSE_SATORI) { HP(1); }
+        OPPONENT(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_POUND, target: target); SEND_OUT(target, 2); }
     } SCENE {

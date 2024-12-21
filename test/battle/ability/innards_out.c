@@ -11,15 +11,15 @@ SINGLE_BATTLE_TEST("Innards Out deal dmg on fainting equal to the amount of dmg 
 
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(hp); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(70); SpAttack(1000); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI) { HP(70); SpAttack(1000); }
+        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
         ASSUME(gMovesInfo[MOVE_MANA_BURST].category == DAMAGE_CATEGORY_SPECIAL);
     } WHEN {
         TURN { MOVE(opponent, MOVE_MANA_BURST); SEND_OUT(player, 1); if (hp == 100) { SEND_OUT(opponent, 1); } }
     } SCENE {
-        MESSAGE("The opposing Wobbuffet used Psychic!");
+        MESSAGE("The opposing DSatori used Psychic!");
         HP_BAR(player, hp);
         ABILITY_POPUP(player, ABILITY_INNARDS_OUT);
         HP_BAR(opponent, hp);
@@ -30,9 +30,9 @@ SINGLE_BATTLE_TEST("Innards Out does not trigger after Gastro Acid has been used
 {
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
         ASSUME(gMovesInfo[MOVE_GASTRO_ACID].effect == EFFECT_GASTRO_ACID);
     } WHEN {
         TURN { MOVE(opponent, MOVE_GASTRO_ACID); }
@@ -53,9 +53,9 @@ SINGLE_BATTLE_TEST("Innards Out does not damage Magic Guard Pokemon")
 {
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_HELPER_SAKUYA) { Ability(ABILITY_MAGIC_GUARD); }
-        ASSUME(gMovesInfo[MOVE_MANA_BURST].power != 0);
+        PLAYER(SPECIES_DEFENSE_SATORI);
+        OPPONENT(SPECIES_CLEFABLE) { Ability(ABILITY_MAGIC_GUARD); }
+        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
     } WHEN {
         TURN { MOVE(opponent, MOVE_MANA_BURST); SEND_OUT(player, 1); }
     } SCENE {
