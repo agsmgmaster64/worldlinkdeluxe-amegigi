@@ -12,14 +12,17 @@ script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	lock
 	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
 	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
 	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
 	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinIntro, MSGBOX_DEFAULT)
 	closemessage
 	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
 	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
 	msgbox(Route116_TunnelersRestHouse_Text_HakosBaelzIntro, MSGBOX_DEFAULT)
 	closemessage
 	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
 	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
 	msgbox(Route116_TunnelersRestHouse_Text_GigiOutOfBudget, MSGBOX_DEFAULT)
 	closemessage
@@ -35,10 +38,13 @@ script Route116_TunnelersRestHouse_EventScript_MovePlayerInFront {
 	switch(var(VAR_RESULT)){
 		case DIR_WEST:
 			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront)
+			waitmovement(0)
 		case DIR_EAST:
 			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront)
+			waitmovement(0)
 		case DIR_SOUTH:
 			applymovement(OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront)
+			waitmovement(0)
 	}
 	return
 }
