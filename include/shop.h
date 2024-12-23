@@ -10,4 +10,12 @@ void CreateOutfitShopMenu(const u16 *);
 void CB2_ExitSellMenu(void);
 void CreateCoinsShopMenu(const u16 *);
 
+void CreateVariablePokemartMenu(const u16 *);
+void CreateBuyOnlyMartMenu(const u16 *);
+void CreateBuyVariableMartMenu(const u16 *);
+void CreateSellOnlyMartMenu(void);
+void CreateBpMartMenu(const u16 *);
+void CreateBpMoveTutorMenu(const u16 *);
+void CreateMoveTutorMartMenu(const u16 *);
+
 #endif // GUARD_SHOP_H

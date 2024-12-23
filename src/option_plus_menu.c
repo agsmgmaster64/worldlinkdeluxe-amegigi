@@ -37,6 +37,7 @@ enum
     MENUITEM_VISUALS_FRAMETYPE,
     MENUITEM_VISUALS_UNIQUE_COLORS,
     MENUITEM_VISUALS_ANIMATIONS,
+    MENUITEM_VISUALS_SHOP_STYLE,
     MENUITEM_VISUALS_CANCEL,
     MENUITEM_VISUALS_COUNT,
 };
@@ -210,6 +211,7 @@ static void DrawChoices_IvView(int selection, int y);
 static void DrawChoices_Effectiveness(int selection, int y);
 static void DrawChoices_ShowTypes(int selection, int y);
 static void DrawChoices_MonAnimations(int selection, int y);
+static void DrawChoices_ShopStyle(int selection, int y);
 static void DrawChoices_MusicVolume(int selection, int y);
 static void DrawChoices_SFXVolume(int selection, int y);
 static void DrawChoices_CriesVolume(int selection, int y);
@@ -261,6 +263,7 @@ struct // MENU_VISUALS
     [MENUITEM_VISUALS_FRAMETYPE]     = {DrawChoices_FrameType,     ProcessInput_FrameType},
     [MENUITEM_VISUALS_UNIQUE_COLORS] = {DrawChoices_UniqueColors,  ProcessInput_Options_Two},
     [MENUITEM_VISUALS_ANIMATIONS]    = {DrawChoices_MonAnimations, ProcessInput_Options_Two},
+    [MENUITEM_VISUALS_SHOP_STYLE]    = {DrawChoices_ShopStyle, ProcessInput_Options_Two},
     [MENUITEM_VISUALS_CANCEL]        = {NULL, NULL},
 };
 
@@ -306,6 +309,7 @@ static const u8 sText_Font[]         = _("FONT");
 static const u8 sText_Frame[]        = _("FRAME");
 static const u8 sText_UniqueColors[] = _("UNIQUE COLORS");
 static const u8 sText_Animations[]   = _("ANIMATIONS");
+static const u8 sText_ShopStyle[]    = _("SHOP STYLE");
 
 static const u8 *const sOptionMenuItemsNamesVisuals[MENUITEM_VISUALS_COUNT] =
 {
@@ -314,6 +318,7 @@ static const u8 *const sOptionMenuItemsNamesVisuals[MENUITEM_VISUALS_COUNT] =
     [MENUITEM_VISUALS_FRAMETYPE]     = sText_Frame,
     [MENUITEM_VISUALS_UNIQUE_COLORS] = sText_UniqueColors,
     [MENUITEM_VISUALS_ANIMATIONS]    = sText_Animations,
+    [MENUITEM_VISUALS_SHOP_STYLE]    = sText_ShopStyle,
     [MENUITEM_VISUALS_CANCEL]        = sText_OptionMenuSave,
 };
 
@@ -390,6 +395,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_VISUALS_FRAMETYPE:
         case MENUITEM_VISUALS_UNIQUE_COLORS:
         case MENUITEM_VISUALS_ANIMATIONS:
+        case MENUITEM_VISUALS_SHOP_STYLE:
         case MENUITEM_VISUALS_CANCEL:
         case MENUITEM_VISUALS_COUNT:
             return TRUE;
@@ -456,6 +462,7 @@ static const u8 *const sOptionMenuItemDescriptionsVisuals[MENUITEM_VISUALS_COUNT
     [MENUITEM_VISUALS_FRAMETYPE]     = {sText_Desc_FrameType,          sText_Empty},
     [MENUITEM_VISUALS_UNIQUE_COLORS] = {sText_Desc_UniqueColorsOn,     sText_Desc_UniqueColorsOff},
     [MENUITEM_VISUALS_ANIMATIONS]    = {sText_Desc_MonAnimationsOn,    sText_Desc_MonAnimationsOff},
+    [MENUITEM_VISUALS_SHOP_STYLE]    = {sText_Desc_MonAnimationsOn,    sText_Desc_MonAnimationsOff},
     [MENUITEM_VISUALS_CANCEL]        = {sText_Desc_Save,               sText_Empty},
 };
 
@@ -527,6 +534,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledVisuals[MENUITEM_VISUA
     [MENUITEM_VISUALS_FRAMETYPE]     = sText_Desc_Disabled_FrameType,
     [MENUITEM_VISUALS_UNIQUE_COLORS] = sText_Desc_Disabled_UniqueColors,
     [MENUITEM_VISUALS_ANIMATIONS]    = sText_Empty,
+    [MENUITEM_VISUALS_SHOP_STYLE]    = sText_Empty,
     [MENUITEM_VISUALS_CANCEL]        = sText_Empty,
 };
 
@@ -901,6 +909,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_visuals[MENUITEM_VISUALS_FONT]          = gSaveBlock2Ptr->optionsCurrentFont;
         sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
         sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS]    = gSaveBlock2Ptr->optionsMonAnimations;
+        sOptions->sel_visuals[MENUITEM_VISUALS_SHOP_STYLE]    = gSaveBlock2Ptr->optionsShopStyle;
 
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
@@ -1141,6 +1150,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_visuals[MENUITEM_VISUALS_FRAMETYPE];
     gSaveBlock2Ptr->optionsUniqueColors     = sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS];
     gSaveBlock2Ptr->optionsMonAnimations    = sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS];
+    gSaveBlock2Ptr->optionsShopStyle        = sOptions->sel_visuals[MENUITEM_VISUALS_SHOP_STYLE];
 
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
@@ -1704,6 +1714,16 @@ static void DrawChoices_ShowTypes(int selection, int y)
 static void DrawChoices_MonAnimations(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_VISUALS_ANIMATIONS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
+}
+
+static void DrawChoices_ShopStyle(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_VISUALS_SHOP_STYLE);
     u8 styles[2] = {0};
     styles[selection] = 1;
 
