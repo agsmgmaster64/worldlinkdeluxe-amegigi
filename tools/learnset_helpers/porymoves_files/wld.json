@@ -33028,6 +33028,102 @@
       "MOVE_MIMIC"
     ]
   },
+  "C_BIJOU": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_TACKLE"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_GROWL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_SANDSTORM",
+      "MOVE_ROCK_TOMB",
+      "MOVE_TORMENT",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_MIND_BOMB",
+      "MOVE_CHARGE_BEAM",
+      "MOVE_ENDURE",
+      "MOVE_SPIKES",
+      "MOVE_PSYCH_UP",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "BIJOU": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_TACKLE"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_GROWL"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SAFEGUARD",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_REFLECT",
+      "MOVE_SANDSTORM",
+      "MOVE_ROCK_TOMB",
+      "MOVE_TORMENT",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_MIND_BOMB",
+      "MOVE_CHARGE_BEAM",
+      "MOVE_ENDURE",
+      "MOVE_SPIKES",
+      "MOVE_PSYCH_UP",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SWAGGER",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
   "C_CLOWNPIECE": {
     "LevelMoves": [
       {

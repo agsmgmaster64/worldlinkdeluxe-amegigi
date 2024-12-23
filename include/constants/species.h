@@ -548,8 +548,8 @@
 #define SPECIES_NORMAL_CLOWNPIECE                       539
 #define SPECIES_HELPER_CLOWNPIECE                       540
 #define SPECIES_PLACEHOLD2_CLOWNPIECE                   541 // Placeholder
-#define SPECIES_LEAVANNY                                542
-#define SPECIES_VENIPEDE                                543
+#define SPECIES_CHIBI_BIJOU                             542
+#define SPECIES_NORMAL_BIJOU                            543
 #define SPECIES_WHIRLIPEDE                              544
 #define SPECIES_SCOLIPEDE                               545
 #define SPECIES_COTTONEE                                546

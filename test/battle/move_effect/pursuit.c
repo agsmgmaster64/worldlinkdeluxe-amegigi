@@ -585,7 +585,7 @@ SINGLE_BATTLE_TEST("Pursuit attacks a switching foe and switchin is correctly st
         PLAYER(SPECIES_ZIGZAGOON);
         PLAYER(SPECIES_AIPOM);
         PLAYER(SPECIES_ABRA);
-        PLAYER(SPECIES_VENIPEDE);
+        PLAYER(SPECIES_NORMAL_BIJOU);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { SWITCH(player, switchin); MOVE(opponent, MOVE_PURSUIT); }

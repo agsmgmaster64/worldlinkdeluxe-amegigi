@@ -1077,7 +1077,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         )
         .levelUpLearnset = sSwadloonLevelUpLearnset,
         .teachableLearnset = sSwadloonTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_FRIENDSHIP, 0, SPECIES_LEAVANNY}),
     },
 
     [SPECIES_CHIBI_JUNKO] =

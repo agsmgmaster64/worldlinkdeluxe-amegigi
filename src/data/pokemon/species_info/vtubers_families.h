@@ -111,6 +111,118 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .teachableLearnset = sAmeliaTeachableLearnset,
     },
 
+    [SPECIES_CHIBI_BIJOU] =
+    {
+        .baseHP        = 45,
+        .baseAttack    = 35,
+        .baseDefense   = 85,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 115,
+        .types = MON_TYPES(TYPE_EARTH, TYPE_HEART),
+        .catchRate = 150,
+        .expYield = 250,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_STURDY, ABILITY_CUTE_CHARM, ABILITY_SOLID_ROCK },
+        .sourceGame = SOURCE_VTUBERS,
+        .noFlip = TRUE,
+        .speciesName = _("CBijou"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_LEAVANNY,
+        .categoryName = _("Jewel"),
+        .height = 12,
+        .weight = 250,
+        .description = COMPOUND_STRING(
+            "It keeps its eggs warm with heat from\n"
+            "fermenting leaves. It also uses leaves to\n"
+            "weave warm wrappings for Sewaddle by\n"
+            "using the silk secreted from its mouth."),
+        .pokemonScale = 282,
+        .pokemonOffset = 3,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_CBijou,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_CBijou,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
+        .backPic = gMonBackPic_CBijou,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CBijou,
+        .shinyPalette = gMonShinyPalette_CBijou,
+        .iconSprite = gMonIcon_CBijou,
+        .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_S)
+        FOOTPRINT(CBijou)
+        .levelUpLearnset = sCBijouLevelUpLearnset,
+        .teachableLearnset = sCBijouTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_BIJOU}),
+    },
+
+    [SPECIES_NORMAL_BIJOU] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 60,
+        .baseDefense   = 110,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 140,
+        .types = MON_TYPES(TYPE_EARTH, TYPE_HEART),
+        .catchRate = 255,
+        .expYield = 52,
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_MINERAL),
+        .abilities = { ABILITY_STURDY, ABILITY_CUTE_CHARM, ABILITY_SOLID_ROCK },
+        .sourceGame = SOURCE_VTUBERS,
+        .noFlip = TRUE,
+        .speciesName = _("Bijou"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_VENIPEDE,
+        .categoryName = _("Jewel"),
+        .height = 4,
+        .weight = 500,
+        .description = COMPOUND_STRING(
+            "Using the feelers on its head and tail,\n"
+            "it picks up vibrations in the air to\n"
+            "determine its prey's location and state.\n"
+            "It is brutally aggressive."),
+        .pokemonScale = 491,
+        .pokemonOffset = 16,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Bijou,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_Bijou,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
+        .backPic = gMonBackPic_Bijou,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Bijou,
+        .shinyPalette = gMonShinyPalette_Bijou,
+        .iconSprite = gMonIcon_Bijou,
+        .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_S)
+        FOOTPRINT(Bijou)
+        .levelUpLearnset = sBijouLevelUpLearnset,
+        .teachableLearnset = sBijouTeachableLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

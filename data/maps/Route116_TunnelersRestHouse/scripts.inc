@@ -300,7 +300,7 @@ Route116_TunnelersRestHouse_EventScript_TunnelOpened::
 # 247 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
 # 248 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "That RUSTURF TUNNEL there…\p"
+	.string "That Noiseturf Tunnel there…\p"
 # 249 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "At first, we had a huge work crew boring\n"
 # 250 "data/maps/Route116_TunnelersRestHouse/scripts.pory"

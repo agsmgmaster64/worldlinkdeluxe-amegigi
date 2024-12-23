@@ -14738,7 +14738,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "diamonds. May up Defense."),
         .effect = EFFECT_HIT,
         .power = 100,
-        .type = TYPE_BEAST,
+        .type = TYPE_EARTH,
         .accuracy = 95,
         .pp = 5,
         .target = MOVE_TARGET_BOTH,
