@@ -64,6 +64,8 @@ enum
     //MENUITEM_MISC_BUTTONMODE,
     MENUITEM_MISC_UNIT_SYSTEM,
     MENUITEM_MISC_MATCHCALL,
+    MENUITEM_MISC_L_BUTTONMODE,
+    MENUITEM_MISC_R_BUTTONMODE,
     MENUITEM_MISC_DEBUG_MODE,
     MENUITEM_MISC_CANCEL,
     MENUITEM_MISC_COUNT,
@@ -213,6 +215,8 @@ static void DrawChoices_MonAnimations(int selection, int y);
 static void DrawChoices_MusicVolume(int selection, int y);
 static void DrawChoices_SFXVolume(int selection, int y);
 static void DrawChoices_CriesVolume(int selection, int y);
+static void DrawChoices_LButtonMode(int selection, int y);
+static void DrawChoices_RButtonMode(int selection, int y);
 static void DrawBgWindowFrames(void);
 
 // EWRAM vars
@@ -294,6 +298,8 @@ struct // MENU_MISC
     //[MENUITEM_MISC_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
     [MENUITEM_MISC_UNIT_SYSTEM]  = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
     [MENUITEM_MISC_MATCHCALL]    = {DrawChoices_MatchCall,   ProcessInput_Options_Two},
+    [MENUITEM_MISC_L_BUTTONMODE] = {DrawChoices_LButtonMode, ProcessInput_Options_Four},
+    [MENUITEM_MISC_R_BUTTONMODE] = {DrawChoices_RButtonMode, ProcessInput_Options_Four},
     [MENUITEM_MISC_DEBUG_MODE]   = {DrawChoices_DebugMode,   ProcessInput_Options_Two},
     [MENUITEM_MISC_CANCEL]       = {NULL, NULL},
 };
@@ -346,6 +352,8 @@ static const u8 sText_CriesVolume[]  = _("CRIES VOLUME");
 static const u8 sText_ButtonMode[]   = _("BUTTON MODE");
 static const u8 sText_UnitSystem[]   = _("UNIT SYSTEM");
 static const u8 sText_MatchCalls[]   = _("OVERWORLD CALLS");
+static const u8 sText_LButtonMode[]  = _("L BUTTON");
+static const u8 sText_RButtonMode[]  = _("R BUTTON");
 static const u8 sText_DebugMode[]    = _("DEBUG MODE");
 
 static const u8 *const sOptionMenuItemsNamesMisc[MENUITEM_MISC_COUNT] =
@@ -357,6 +365,8 @@ static const u8 *const sOptionMenuItemsNamesMisc[MENUITEM_MISC_COUNT] =
     //[MENUITEM_MISC_BUTTONMODE]   = sText_ButtonMode,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_UnitSystem,
     [MENUITEM_MISC_MATCHCALL]    = sText_MatchCalls,
+    [MENUITEM_MISC_L_BUTTONMODE] = sText_LButtonMode,
+    [MENUITEM_MISC_R_BUTTONMODE] = sText_RButtonMode,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_DebugMode,
     [MENUITEM_MISC_CANCEL]       = sText_OptionMenuSave,
 };
@@ -423,6 +433,8 @@ static bool8 CheckConditions(int selection)
         //case MENUITEM_MISC_BUTTONMODE:
         case MENUITEM_MISC_UNIT_SYSTEM:
         case MENUITEM_MISC_MATCHCALL:
+        case MENUITEM_MISC_L_BUTTONMODE:
+        case MENUITEM_MISC_R_BUTTONMODE:
         case MENUITEM_MISC_DEBUG_MODE:
         case MENUITEM_MISC_CANCEL:
         case MENUITEM_MISC_COUNT:
@@ -491,9 +503,14 @@ static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right aud
 static const u8 sText_Desc_MusicVolume[]        = _("Adjust the volume of background music\nhere.");
 static const u8 sText_Desc_SFXVolume[]          = _("Adjust the volume of all sound effects\nand fanfares here.");
 static const u8 sText_Desc_CriesVolume[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
-static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
-static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
-static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
+static const u8 sText_Desc_LButtonMode_None[]   = _("The L button works as normal.");
+static const u8 sText_Desc_LButtonMode_LA[]     = _("The L button acts as another A\nbutton for one-handed play.");
+static const u8 sText_Desc_LButtonMode_AutoRun[] = _("Running can be toggled by\nthe L Button.");
+static const u8 sText_Desc_LButtonMode_Register[] = _("An item registered can be used with\nthe L Button.");
+static const u8 sText_Desc_RButtonMode_None[]   = _("The R button works as normal.");
+static const u8 sText_Desc_RButtonMode_DexNav[] = _("When available, the R Button searches\nfor the registered DexNav species.");
+static const u8 sText_Desc_RButtonMode_Bike[]   = _("Bike modes can be toggled by\nthe R button.");
+static const u8 sText_Desc_RButtonMode_Register[] = _("An item registered can be used with\nthe R Button.");
 static const u8 sText_Desc_UnitSystemImperial[] = _("Display Berry and Puppet weight\nand size in pounds and inches.");
 static const u8 sText_Desc_UnitSystemMetric[]   = _("Display Berry and Puppet weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_OverworldCallsOn[]   = _("TRAINERs will be able to call you,\noffering rematches and info.");
@@ -501,17 +518,18 @@ static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.
 static const u8 sText_Desc_DebugModeOn[]        = _("WARNING! Please use at your own\nrisk.");
 static const u8 sText_Desc_DebugModeOff[]       = _("Enabling this option will enable\ndebug mode options.");
 
-static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][3] =
+static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][4] =
 {
-    [MENUITEM_MISC_SOUND]        = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,       sText_Empty},
-    [MENUITEM_MISC_MUSIC_VOLUME] = {sText_Desc_MusicVolume,          sText_Empty,                  sText_Empty},
-    [MENUITEM_MISC_SFX_VOLUME]   = {sText_Desc_SFXVolume,            sText_Empty,                  sText_Empty},
-    [MENUITEM_MISC_CRIES_VOLUME] = {sText_Desc_CriesVolume,          sText_Empty,                  sText_Empty},
-    //[MENUITEM_MISC_BUTTONMODE]   = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,     sText_Desc_ButtonMode_LA},
-    [MENUITEM_MISC_UNIT_SYSTEM]  = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,  sText_Empty},
-    [MENUITEM_MISC_MATCHCALL]    = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff, sText_Empty},
-    [MENUITEM_MISC_DEBUG_MODE]   = {sText_Desc_DebugModeOn,          sText_Desc_DebugModeOff,      sText_Empty},
-    [MENUITEM_MISC_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                  sText_Empty},
+    [MENUITEM_MISC_SOUND]        = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,        sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_MUSIC_VOLUME] = {sText_Desc_MusicVolume,          sText_Empty,                   sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_SFX_VOLUME]   = {sText_Desc_SFXVolume,            sText_Empty,                   sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_CRIES_VOLUME] = {sText_Desc_CriesVolume,          sText_Empty,                   sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_UNIT_SYSTEM]  = {sText_Desc_UnitSystemImperial,   sText_Desc_UnitSystemMetric,   sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_MATCHCALL]    = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff,  sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_L_BUTTONMODE] = {sText_Desc_LButtonMode_None,     sText_Desc_LButtonMode_LA,     sText_Desc_LButtonMode_AutoRun, sText_Desc_LButtonMode_Register},
+    [MENUITEM_MISC_R_BUTTONMODE] = {sText_Desc_RButtonMode_None,     sText_Desc_RButtonMode_DexNav, sText_Desc_RButtonMode_Bike,    sText_Desc_RButtonMode_Register},
+    [MENUITEM_MISC_DEBUG_MODE]   = {sText_Desc_DebugModeOn,          sText_Desc_DebugModeOff,       sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                   sText_Empty,                    sText_Empty},
 };
 
 // Disabled Descriptions
@@ -560,6 +578,8 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMisc[MENUITEM_MISC_COU
     //[MENUITEM_MISC_BUTTONMODE]   = sText_Empty,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_Empty,
     [MENUITEM_MISC_MATCHCALL]    = sText_Empty,
+    [MENUITEM_MISC_L_BUTTONMODE] = sText_Empty,
+    [MENUITEM_MISC_R_BUTTONMODE] = sText_Empty,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_Desc_Disabled_DebugMode,
     [MENUITEM_MISC_CANCEL]       = sText_Empty,
 };
@@ -918,6 +938,8 @@ void CB2_InitOptionPlusMenu(void)
         //sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel_misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
+        sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
+        sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
         sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
 
         sOptions->submenu = MENU_VISUALS;
@@ -1158,6 +1180,8 @@ static void Task_OptionMenuSave(u8 taskId)
     //gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE];
     gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_misc[MENUITEM_MISC_MATCHCALL];
+    gSaveBlock2Ptr->optionsLButtonMode      = sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE];
+    gSaveBlock2Ptr->optionsRButtonMode      = sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE];
     gSaveBlock2Ptr->optionsDebugMode        = sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
@@ -1709,6 +1733,58 @@ static void DrawChoices_MonAnimations(int selection, int y)
 
     DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
+}
+
+static const u8 sText_None[] = _("NONE");
+static const u8 sText_LEqualsA[] = _("L=A TURBO");
+static const u8 sText_AutoRun[] = _("AUTO-RUN");
+static const u8 sText_Register[] = _("REGISTER");
+static const u8 sText_DexNav[] = _("DEXNAV");
+static const u8 sText_BikeSwitch[] = _("BIKE SWITCH");
+static const u8 sText_Placeholder[] = _("WIP");
+
+static void DrawChoices_LButtonMode(int selection, int y) //HP and EXP
+{
+    bool8 active = CheckConditions(MENUITEM_MISC_L_BUTTONMODE);
+
+    switch (selection)
+    {
+    default:
+    case OPTIONS_L_BUTTON_MODE_NONE:
+        DrawOptionMenuChoice(sText_None, 104, y, 1, active);
+        break;
+    case OPTIONS_L_BUTTON_MODE_L_EQUALS_A:
+        DrawOptionMenuChoice(sText_LEqualsA, 104, y, 1, active);
+        break;
+    case OPTIONS_L_BUTTON_MODE_AUTO_RUN:
+        DrawOptionMenuChoice(sText_AutoRun, 104, y, 1, active);
+        break;
+    case OPTIONS_L_BUTTON_MODE_REGISTER:
+        DrawOptionMenuChoice(sText_Register, 104, y, 1, active);
+        break;
+    }
+}
+
+static void DrawChoices_RButtonMode(int selection, int y) //HP and EXP
+{
+    bool8 active = CheckConditions(MENUITEM_MISC_R_BUTTONMODE);
+
+    switch (selection)
+    {
+    default:
+    case OPTIONS_R_BUTTON_MODE_NONE:
+        DrawOptionMenuChoice(sText_None, 104, y, 1, active);
+        break;
+    case OPTIONS_R_BUTTON_MODE_DEXNAV_SEARCH:
+        DrawOptionMenuChoice(sText_DexNav, 104, y, 1, active);
+        break;
+    case OPTIONS_R_BUTTON_MODE_BIKE_SWITCH:
+        DrawOptionMenuChoice(sText_BikeSwitch, 104, y, 1, active);
+        break;
+    case OPTIONS_R_BUTTON_MODE_REGISTER:
+        DrawOptionMenuChoice(sText_Register, 104, y, 1, active);
+        break;
+    }
 }
 
 // Background tilemap

@@ -299,7 +299,6 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
 {
     gUnusedBikeCameraAheadPanback = FALSE;
 
-    gSaveBlock3Ptr->playerBike = MACH_BIKE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
     {
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
@@ -308,8 +307,13 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
     }
     else
     {
-        PlaySE(SE_BIKE_BELL);
-        gSaveBlock3Ptr->playerBike = ItemId_GetSecondaryId(gSpecialVar_ItemId);
+        if (gSpecialVar_ItemId != ITEM_BICYCLE)
+            gSaveBlock3Ptr->playerBike = ItemId_GetSecondaryId(gSpecialVar_ItemId);
+
+        if (gSaveBlock3Ptr->playerBike == MACH_BIKE)
+            PlaySE(SE_BIKE_BELL);
+        else
+            PlaySE(SE_BIKE_HOP);
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
         if (Overworld_MusicCanOverrideMapMusic())
         {

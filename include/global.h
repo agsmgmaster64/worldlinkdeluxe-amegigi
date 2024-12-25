@@ -238,6 +238,10 @@ struct SaveBlock3
     struct SavedPlayerMusic savedPlayerMusic;
     u16 currOutfitId:4;
     u16 playerBike:1;
+    u16 autoRun:1;
+    u16 unusedBits:10;
+    u16 registeredItemL;
+    u16 registeredItemR;
     u16 outfits[NUM_OUTFIT_OWNED_BYTES];
     u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
     u8 subQuests[SUB_FLAGS_COUNT];
@@ -586,7 +590,9 @@ struct SaveBlock2
              u32 optionsVolumeBGM:4;
              u32 optionsVolumeSFX:4;
              u32 optionsVolumeCries:4;
-             u32 optionsUnused:17;
+             u32 optionsLButtonMode:3;
+             u32 optionsRButtonMode:3;
+             u32 optionsUnused:11;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;
@@ -1073,7 +1079,7 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
+    /*0x496*/ u16 registeredItemSelect;
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560*/ struct ItemSlot bagPocket_Items[BAG_ITEMS_COUNT];
     /*0x5D8*/ struct ItemSlot bagPocket_KeyItems[BAG_KEYITEMS_COUNT];

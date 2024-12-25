@@ -117,6 +117,8 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsVolumeBGM = 10;
     gSaveBlock2Ptr->optionsVolumeSFX = 10;
     gSaveBlock2Ptr->optionsVolumeCries = 10;
+    gSaveBlock2Ptr->optionsRButtonMode = OPTIONS_R_BUTTON_MODE_NONE;
+    gSaveBlock2Ptr->optionsLButtonMode = OPTIONS_L_BUTTON_MODE_NONE;
 }
 
 static void ClearPokedexFlags(void)
@@ -211,7 +213,6 @@ void NewGameInitData(void)
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
     DeactivateAllRoamers();
-    gSaveBlock1Ptr->registeredItem = ITEM_NONE;
     ClearBag();
     NewGameInitPCItems();
     ClearPokeblocks();
@@ -242,6 +243,11 @@ void NewGameInitData(void)
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
     ResetAllPlayerMusic();
     ResetOutfitData();
+    gSaveBlock3Ptr->playerBike = MACH_BIKE;
+    gSaveBlock1Ptr->registeredItemSelect = ITEM_NONE;
+    gSaveBlock3Ptr->registeredItemL = ITEM_NONE;
+    gSaveBlock3Ptr->registeredItemR = ITEM_NONE;
+    gSaveBlock3Ptr->autoRun = FALSE;
 }
 
 static void ResetMiniGamesRecords(void)

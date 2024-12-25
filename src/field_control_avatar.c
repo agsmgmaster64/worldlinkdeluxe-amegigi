@@ -84,6 +84,7 @@ static void SetMsgSignPostAndVarFacing(u32 playerDirection);
 static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection);
 static u32 GetFacingSignpostType(u16 metatileBehvaior, u32 direction);
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition * position);
+static bool8 EnableAutoRun(void);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -96,7 +97,7 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
     input->pressedRButton = FALSE;
-    input->input_field_1_1 = FALSE;
+    input->pressedLButton = FALSE;
     input->input_field_1_2 = FALSE;
     input->input_field_1_3 = FALSE;
     input->dpadDirection = 0;
@@ -120,8 +121,10 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
                 input->pressedBButton = TRUE;
-            if (newKeys & R_BUTTON && !FlagGet(FLAG_SYS_DEXNAV_SEARCH))
+            if (newKeys & R_BUTTON)
                 input->pressedRButton = TRUE;
+            if (newKeys & L_BUTTON)
+                input->pressedLButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -148,7 +151,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;
 
-    if(DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
+    if (DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {
         if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
         {
@@ -230,15 +233,63 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    
+
     if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
-    
-    if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+
+    if (input->pressedSelectButton && UseRegisteredKeyItemOnField(0))
         return TRUE;
-    
-    if (input->pressedRButton && TryStartDexnavSearch())
-        return TRUE;
+
+    if (input->pressedLButton)
+    {
+        switch (gSaveBlock2Ptr->optionsLButtonMode)
+        {
+        case OPTIONS_L_BUTTON_MODE_AUTO_RUN:
+            if (EnableAutoRun())
+                return TRUE;
+            break;
+        case OPTIONS_L_BUTTON_MODE_REGISTER:
+            if (UseRegisteredKeyItemOnField(1))
+                return TRUE;
+            break;
+        default:
+            break;
+        }
+    }
+
+    if (input->pressedRButton)
+    {
+        switch (gSaveBlock2Ptr->optionsRButtonMode)
+        {
+        case OPTIONS_R_BUTTON_MODE_DEXNAV_SEARCH:
+            if (TryStartDexnavSearch())
+                return TRUE;
+            break;
+        case OPTIONS_R_BUTTON_MODE_BIKE_SWITCH:
+            if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+            {
+                if (gSaveBlock3Ptr->playerBike == MACH_BIKE)
+                {
+                    gSaveBlock3Ptr->playerBike = ACRO_BIKE;
+                    SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
+                    PlaySE(SE_BIKE_HOP);
+                }
+                else
+                {
+                    gSaveBlock3Ptr->playerBike = MACH_BIKE;
+                    SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
+                    PlaySE(SE_BIKE_BELL);
+                }
+            }
+            break;
+        case OPTIONS_R_BUTTON_MODE_REGISTER:
+            if (UseRegisteredKeyItemOnField(2))
+                return TRUE;
+            break;
+        default:
+            break;
+        }
+    }
 
     if(input->input_field_1_2 && DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {
@@ -1289,4 +1340,27 @@ void CancelSignPostMessageBox(struct FieldInput *input)
         return;
 
     CreateTask(Task_OpenStartMenu, 8);
+}
+
+extern const u8 EventScript_DisableAutoRun[];
+extern const u8 EventScript_EnableAutoRun[];
+
+static bool8 EnableAutoRun(void)
+{
+    if (!FlagGet(FLAG_SYS_B_DASH))
+        return FALSE;   //auto run unusable until you get running shoes
+
+    PlaySE(SE_SELECT);
+    if (gSaveBlock3Ptr->autoRun)
+    {
+        gSaveBlock3Ptr->autoRun = FALSE;
+        ScriptContext_SetupScript(EventScript_DisableAutoRun);
+    }
+    else
+    {
+        gSaveBlock3Ptr->autoRun = TRUE;
+        ScriptContext_SetupScript(EventScript_EnableAutoRun);
+    }
+
+    return TRUE;
 }
