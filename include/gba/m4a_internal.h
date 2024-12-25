@@ -214,6 +214,7 @@ struct SoundInfo
     u8 gap2[16];
     struct SoundChannel chans[MAX_DIRECTSOUND_CHANNELS];
     s8 ALIGNED(4) pcmBuffer[PCM_DMA_BUF_SIZE * 2];
+    u8 pad[0x10];
 };
 
 struct SongHeader
