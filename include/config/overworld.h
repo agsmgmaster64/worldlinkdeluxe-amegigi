@@ -114,6 +114,11 @@
 #define OW_UNION_DISABLE_CHECK           FALSE              // When TRUE, the nurse does not inform the player if there is a trainer waiting in the Union Room. This speeds up the loading of the Pokémon Center.
 #define OW_FLAG_MOVE_UNION_ROOM_CHECK    0                  // If this flag is set, the game will only check if players are in the Union Room while healing Pokémon, and not when players enter the Pokémon Center. This speeds up the loading of the Pokémon Center. This is ignored if OW_UNION_DISABLE_CHECK is TRUE.
 
+// Variable Rod
+#define OW_VAR_VARIABLE_ROD_USE_TECHNIQUE       VAR_TECHNIQUE_ROD     // If this var has a value, the game will use it to remember the used fishing technique.
+#define OW_FLAG_VARIABLE_ROD_GOOD_TECHNIQUE     FLAG_RECEIVED_GOOD_ROD     // If this flag is set, the game will unlock the 'good fishing technique'.
+#define OW_FLAG_VARIABLE_ROD_SUPER_TECHNIQUE    FLAG_RECEIVED_SUPER_ROD     // If this flag is set, the game will unlock the 'super fishing technique'.
+
 // Music
 #define OW_VAR_REGION_MUSIC               VAR_REGION_MUSIC     // Depending on the variable value, the music played will be based on which region the value is set to.
 
