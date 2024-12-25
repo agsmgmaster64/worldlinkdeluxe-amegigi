@@ -586,8 +586,7 @@ struct SaveBlock2
              u32 optionsVolumeBGM:4;
              u32 optionsVolumeSFX:4;
              u32 optionsVolumeCries:4;
-             u32 optionsShopStyle:1;
-             u32 optionsUnused:16;
+             u32 optionsUnused:17;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;

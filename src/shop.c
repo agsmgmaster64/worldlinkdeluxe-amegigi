@@ -1897,10 +1897,10 @@ void CreateDecorationShop2Menu(const u16 *itemsForSale)
 // casino pokemart
 void CreateCoinsShopMenu(const u16 *itemsForSale)
 {
-    sMartInfo.martType = MART_TYPE_CASINO;
+    CreateShopMenu(MART_TYPE_CASINO);
     SetShopItemsForSale(itemsForSale);
     ClearItemPurchases();
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
+    SetShopMenuCallback(ScriptContext_Enable);
 }
 
 void CreateOutfitShopMenu(const u16 *itemsForSale)
@@ -1908,58 +1908,6 @@ void CreateOutfitShopMenu(const u16 *itemsForSale)
     CreateShopMenu(MART_TYPE_OUTFIT);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
-}
-
-void CreateVariablePokemartMenu(const u16 *itemsForSale)
-{
-    CreateShopMenu(MART_TYPE_VARIABLE);
-    SetShopItemsForSale(itemsForSale);
-    ClearItemPurchases();
-    SetShopMenuCallback(ScriptContext_Enable);
-}
-
-void CreateBuyOnlyMartMenu(const u16 *itemsForSale)
-{
-    sMartInfo.martType = MART_TYPE_BUY_ONLY;
-    SetShopItemsForSale(itemsForSale);
-    ClearItemPurchases();
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
-}
-
-void CreateBuyVariableMartMenu(const u16 *itemsForSale)
-{
-    sMartInfo.martType = MART_TYPE_BUY_VARIABLE;
-    SetShopItemsForSale(itemsForSale);
-    ClearItemPurchases();
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
-}
-
-void CreateSellOnlyMartMenu(void)
-{
-    sMartInfo.martType = MART_TYPE_SELL_ONLY;
-    CreateTask(Task_HandleShopMenuSell, 8);  //skip mart multichoice. go right to shop sell window
-}
-
-void CreateBpMartMenu(const u16 *itemsForSale)
-{
-    sMartInfo.martType = MART_TYPE_BP_ITEMS;
-    SetShopItemsForSale(itemsForSale);
-    ClearItemPurchases();
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
-}
-
-void CreateBpMoveTutorMenu(const u16 *itemsForSale)
-{
-    sMartInfo.martType = MART_TYPE_BP_MOVES;
-    SetShopItemsForSale(itemsForSale);
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
-}
-
-void CreateMoveTutorMartMenu(const u16 *itemsForSale)
-{
-    sMartInfo.martType = MART_TYPE_MOVES;
-    SetShopItemsForSale(itemsForSale);
-    CreateTask(Task_HandleShopMenuBuy, 8);  //skip mart multichoice. go right to shop buy window
 }
 
 #undef tItemCount

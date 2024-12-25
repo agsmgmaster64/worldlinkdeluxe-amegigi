@@ -2067,27 +2067,13 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
     const void *ptr = (void *)ScriptReadWord(ctx);
     bool16 useVariablePrices = ScriptReadHalfword(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
+    if (useVariablePrices)
     {
-        if (useVariablePrices)
-        {
-            NewShop_CreateVariablePokemartMenu(ptr);
-        }
-        else
-        {
-            NewShop_CreatePokemartMenu(ptr);
-        }
+        NewShop_CreateVariablePokemartMenu(ptr);
     }
     else
     {
-        if (useVariablePrices)
-        {
-            NewShop_CreateVariablePokemartMenu(ptr);
-        }
-        else
-        {
-            CreatePokemartMenu(ptr);
-        }
+        NewShop_CreatePokemartMenu(ptr);
     }
 
     ScriptContext_Stop();
@@ -2098,10 +2084,7 @@ bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
-        NewShop_CreateDecorationShop1Menu(ptr);
-    else
-        CreateDecorationShop1Menu(ptr);
+    NewShop_CreateDecorationShop1Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2111,10 +2094,7 @@ bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
-        NewShop_CreateDecorationShop2Menu(ptr);
-    else
-        CreateDecorationShop2Menu(ptr);
+    NewShop_CreateDecorationShop2Menu(ptr);
     ScriptContext_Stop();
     return TRUE;
 }
@@ -2611,27 +2591,13 @@ bool8 ScrCmd_currencypokemart(struct ScriptContext *ctx)
     const void *ptr = (void *)ScriptReadWord(ctx);
     bool16 isBpMart = ScriptReadHalfword(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
+    if (isBpMart)
     {
-        if (isBpMart)
-        {
-            NewShop_CreateBpMartMenu(ptr);
-        }
-        else
-        {
-            NewShop_CreateCasinoMartMenu(ptr);
-        }
+        NewShop_CreateBpMartMenu(ptr);
     }
     else
     {
-        if (isBpMart)
-        {
-            CreateBpMartMenu(ptr);
-        }
-        else
-        {
-            CreateCoinsShopMenu(ptr);
-        }
+        NewShop_CreateCasinoMartMenu(ptr);
     }
 
     ScriptContext_Stop();
@@ -2650,27 +2616,13 @@ bool8 ScrCmd_buyonlymart(struct ScriptContext *ctx)
     const void *ptr = (void *)ScriptReadWord(ctx);
     bool16 useVariablePrices = ScriptReadHalfword(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
+    if (useVariablePrices)
     {
-        if (useVariablePrices)
-        {
-            NewShop_CreateBuyVariableMartMenu(ptr);
-        }
-        else
-        {
-            NewShop_CreateBuyOnlyMartMenu(ptr);
-        }
+        NewShop_CreateBuyVariableMartMenu(ptr);
     }
     else
     {
-        if (useVariablePrices)
-        {
-            CreateBuyVariableMartMenu(ptr);
-        }
-        else
-        {
-            CreateBuyOnlyMartMenu(ptr);
-        }
+        NewShop_CreateBuyOnlyMartMenu(ptr);
     }
 
     ScriptContext_Stop();
@@ -2689,27 +2641,13 @@ bool8 ScrCmd_movetutormart(struct ScriptContext *ctx)
     const void *ptr = (void *)ScriptReadWord(ctx);
     bool16 usesBp = ScriptReadHalfword(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
+    if (usesBp)
     {
-        if (usesBp)
-        {
-            NewShop_CreateBpMoveTutorMenu(ptr);
-        }
-        else
-        {
-            NewShop_CreateMoveTutorMartMenu(ptr);
-        }
+        NewShop_CreateBpMoveTutorMenu(ptr);
     }
     else
     {
-        if (usesBp)
-        {
-            CreateBpMoveTutorMenu(ptr);
-        }
-        else
-        {
-            CreateMoveTutorMartMenu(ptr);
-        }
+        NewShop_CreateMoveTutorMartMenu(ptr);
     }
 
     ScriptContext_Stop();
@@ -2730,10 +2668,11 @@ bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
-    if (gSaveBlock2Ptr->optionsShopStyle == FALSE)
-        NewShop_CreateOutfitShopMenu(ptr);
-    else
-        CreateOutfitShopMenu(ptr);
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateOutfitShopMenu(ptr);
+    #else
+    CreateOutfitShopMenu(ptr);
+    #endif // MUDSKIP_SHOP_UI
 
     ScriptContext_Stop();
     return TRUE;

@@ -117,7 +117,6 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsVolumeBGM = 10;
     gSaveBlock2Ptr->optionsVolumeSFX = 10;
     gSaveBlock2Ptr->optionsVolumeCries = 10;
-    gSaveBlock2Ptr->optionsShopStyle = 0;
 }
 
 static void ClearPokedexFlags(void)
