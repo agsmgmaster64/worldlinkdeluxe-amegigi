@@ -553,7 +553,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     [2] =
                     {
                         .species = SPECIES_PLACEHOLD_LUNASA,
-                        .heldItem = ITEM_CHINA_DRESS,
+                        .heldItem = ITEM_CHINESE_DRESS,
                         .moves = {MOVE_DYNAMIC_PUNCH, MOVE_MUD_SLAP, MOVE_COUNTER, MOVE_SCARY_FACE},
                         .hpEV = 255,
                         .attackEV = 255,
@@ -1342,7 +1342,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     [0] =
                     {
                         .species = SPECIES_ATTACK_KEINE,
-                        .heldItem = ITEM_NURSE_OUTFIT,
+                        .heldItem = ITEM_NURSE_UNIFORM,
                         .moves = {MOVE_TOXIC, MOVE_POISON_BOMB, MOVE_SMOKESCREEN, MOVE_HAZE},
                         .hpEV = 255,
                         .attackEV = 255,
@@ -2376,7 +2376,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                     [2] =
                                         {
                                             .species = SPECIES_TECH_PARSEE,
-                                            .heldItem = ITEM_CHINA_DRESS,
+                                            .heldItem = ITEM_CHINESE_DRESS,
                                             .moves = {MOVE_MULTI_PULSE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
                                             .hpEV = 255,
                                             .spAttackEV = 255,

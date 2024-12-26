@@ -213,7 +213,7 @@ SINGLE_BATTLE_TEST("Gem boosted Damage calculation")
     PARAMETRIZE { expectedDamage = 205; }
     PARAMETRIZE { expectedDamage = 204; }
     GIVEN {
-        PLAYER(SPECIES_MAKUHITA) { Item(ITEM_FIGHTING_GEM); }
+        PLAYER(SPECIES_MAKUHITA) { Item(ITEM_DREAM_CARD); }
         OPPONENT(SPECIES_MAKUHITA);
     } WHEN {
         TURN {

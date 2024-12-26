@@ -1022,7 +1022,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_TENTACOOL] = {
         .species = SPECIES_CHIBI_LYRICA,
         .moves = {MOVE_SCREECH, MOVE_BUBBLE_BEAM, MOVE_POISON_TEARS, MOVE_BARRIER},
-        .heldItem = ITEM_NURSE_OUTFIT,
+        .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -1036,7 +1036,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_MAGIKARP] = {
         .species = SPECIES_CHIBI_KAGUYA,
         .moves = {MOVE_TACKLE, MOVE_FLAIL, MOVE_SPLASH, MOVE_NONE},
-        .heldItem = ITEM_DRAGON_SCALE,
+        .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -1232,7 +1232,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_MACHOP] = {
         .species = SPECIES_HELPER_LUNASA,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_VITAL_THROW, MOVE_SEISMIC_TOSS, MOVE_FORESIGHT},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -1886,7 +1886,7 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
     [VERDANTURF_TENT_MON_SWALOT] = {
         .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_YAWN, MOVE_SLUDGE, MOVE_DISPERSE, MOVE_AMNESIA},
-        .heldItem = ITEM_NURSE_OUTFIT,
+        .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_BOLD
     },
@@ -2725,7 +2725,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     [FALLARBOR_TENT_MON_MAGIKARP] = {
         .species = SPECIES_CHIBI_KAGUYA,
         .moves = {MOVE_SPLASH, MOVE_TACKLE, MOVE_FLAIL, MOVE_NONE},
-        .heldItem = ITEM_DRAGON_SCALE,
+        .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_QUIRKY
     },
@@ -2739,7 +2739,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     [FALLARBOR_TENT_MON_MAKUHITA] = {
         .species = SPECIES_NORMAL_YATSUHASHI,
         .moves = {MOVE_DETECT, MOVE_ARM_THRUST, MOVE_FAKE_OUT, MOVE_SMELLING_SALTS},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_ADAMANT
     },

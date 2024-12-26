@@ -207,7 +207,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
 
     PARAMETRIZE {item = ITEM_FLAME_ORB; }
     PARAMETRIZE {item = ITEM_ICY_BALL; }
-    PARAMETRIZE {item = ITEM_NURSE_OUTFIT; }
+    PARAMETRIZE {item = ITEM_NURSE_UNIFORM; }
     PARAMETRIZE {item = ITEM_TOXIC_ORB; }
     PARAMETRIZE {item = ITEM_RAZOR_FANG; }
     PARAMETRIZE {item = ITEM_KINGS_ROCK; }
@@ -235,7 +235,7 @@ SINGLE_BATTLE_TEST("Fling applies special effects when throwing specific Items")
                 STATUS_ICON(opponent, STATUS1_PARALYSIS);
             }
             break;
-        case ITEM_NURSE_OUTFIT:
+        case ITEM_NURSE_UNIFORM:
             {
                 MESSAGE("The opposing Wobbuffet was poisoned!");
                 STATUS_ICON(opponent, STATUS1_POISON);
@@ -263,7 +263,7 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust")
 
     PARAMETRIZE {item = ITEM_FLAME_ORB; }
     PARAMETRIZE {item = ITEM_ICY_BALL; }
-    PARAMETRIZE {item = ITEM_NURSE_OUTFIT; }
+    PARAMETRIZE {item = ITEM_NURSE_UNIFORM; }
     PARAMETRIZE {item = ITEM_TOXIC_ORB; }
     PARAMETRIZE {item = ITEM_RAZOR_FANG; }
     PARAMETRIZE {item = ITEM_KINGS_ROCK; }
@@ -297,7 +297,7 @@ SINGLE_BATTLE_TEST("Fling's secondary effects are blocked by Shield Dust")
                 MESSAGE("The Light Ball was used up…");
             }
             break;
-        case ITEM_NURSE_OUTFIT:
+        case ITEM_NURSE_UNIFORM:
             {
                 NONE_OF {
                     MESSAGE("The opposing Wobbuffet was poisoned!");

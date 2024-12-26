@@ -284,11 +284,11 @@ SINGLE_BATTLE_TEST("Lumiose Galette heals a battler from any primary status")
     PARAMETRIZE { status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE { status = STATUS1_FROSTBITE; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_LUMIOSE_GALETTE].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_EIENTEI_POTION].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
         OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_LUMIOSE_GALETTE, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_EIENTEI_POTION, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");;
     } THEN {
@@ -330,11 +330,11 @@ SINGLE_BATTLE_TEST("Big Malasada heals a battler from any primary status")
     PARAMETRIZE { status = STATUS1_TOXIC_POISON; }
     PARAMETRIZE { status = STATUS1_FROSTBITE; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_BIG_MALASADA].battleUsage == EFFECT_ITEM_CURE_STATUS);
+        ASSUME(gItemsInfo[ITEM_REVIVAL_FLOWER].battleUsage == EFFECT_ITEM_CURE_STATUS);
         PLAYER(SPECIES_CHIBI_YUUGI) { Status1(status); }
         OPPONENT(SPECIES_NORMAL_KOSUZU);
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_BIG_MALASADA, partyIndex: 0); }
+        TURN { USE_ITEM(player, ITEM_REVIVAL_FLOWER, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet had its status healed!");
     } THEN {
@@ -375,9 +375,9 @@ SINGLE_BATTLE_TEST("Full Heal, Heal Powder and Local Specialties heal a battler 
     PARAMETRIZE { item = ITEM_BEER_BOTTLE; }
     PARAMETRIZE { item = ITEM_UNAGI_LUNCH; }
     PARAMETRIZE { item = ITEM_SAKE_GOURD; }
-    PARAMETRIZE { item = ITEM_LUMIOSE_GALETTE; }
+    PARAMETRIZE { item = ITEM_EIENTEI_POTION; }
     PARAMETRIZE { item = ITEM_HEAVEN_PEACH; }
-    PARAMETRIZE { item = ITEM_BIG_MALASADA; }
+    PARAMETRIZE { item = ITEM_REVIVAL_FLOWER; }
     PARAMETRIZE { item = ITEM_JUBILIFE_MUFFIN; }
     GIVEN {
         ASSUME(gItemsInfo[item].battleUsage == EFFECT_ITEM_CURE_STATUS);

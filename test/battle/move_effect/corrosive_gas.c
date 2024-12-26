@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas doesn't destroy the item of a Pokemon with the
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_CHEN) {Item(ITEM_NURSE_OUTFIT); Ability(ABILITY_COLLECTOR); }
+        OPPONENT(SPECIES_NORMAL_CHEN) {Item(ITEM_NURSE_UNIFORM); Ability(ABILITY_COLLECTOR); }
     } WHEN {
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
     } SCENE {
@@ -46,7 +46,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas doesn't destroy the item of a Pokemon with the
         ABILITY_POPUP(opponent, ABILITY_STICKY_HOLD);
         MESSAGE("The opposing Muk's Sticky Hold made Corrosive Gas ineffective!");
     } THEN {
-        EXPECT_EQ(opponent->item, ITEM_NURSE_OUTFIT);
+        EXPECT_EQ(opponent->item, ITEM_NURSE_UNIFORM);
     }
 }
 

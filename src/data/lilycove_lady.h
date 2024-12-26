@@ -437,7 +437,7 @@ static const u16 sFavorLadyAcceptedItems_Sticky[] =
 static const u16 sFavorLadyAcceptedItems_Pointy[] =
 {
     ITEM_QUICK_CLAW,
-    ITEM_NURSE_OUTFIT,
+    ITEM_NURSE_UNIFORM,
     ITEM_STEWARDESS,
     ITEM_PRIESTESS,
     ITEM_TAMATO_BERRY,

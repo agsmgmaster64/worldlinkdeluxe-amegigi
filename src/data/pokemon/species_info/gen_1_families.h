@@ -507,7 +507,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 248 : 223,
         .evYield_Attack = 2,
         .evYield_SpDefense = 1,
-        .itemRare = ITEM_NURSE_OUTFIT,
+        .itemRare = ITEM_NURSE_UNIFORM,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
@@ -2148,8 +2148,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sSlowpokeGalarLevelUpLearnset,
         .teachableLearnset = sSlowpokeGalarTeachableLearnset,
         .formSpeciesIdTable = sSlowpokeFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_GALARICA_CUFF, SPECIES_SLOWBRO_GALAR},
-                                {EVO_ITEM, ITEM_GALARICA_WREATH, SPECIES_SLOWKING_GALAR}),
     },
 
     [SPECIES_SLOWBRO_GALAR] =
@@ -3457,7 +3455,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .catchRate = 130,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 110 : 255,
         .evYield_HP = 1,
-        .itemCommon = ITEM_OVAL_STONE,
         .genderRatio = MON_FEMALE,
         .eggCycles = 40,
         .friendship = 140,
@@ -3505,8 +3502,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHappinyLevelUpLearnset,
         .teachableLearnset = sHappinyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM_HOLD_DAY, ITEM_OVAL_STONE, SPECIES_CHIBI_TEWI},
-                                {EVO_ITEM_DAY, ITEM_OVAL_STONE, SPECIES_CHIBI_TEWI}),
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -3997,7 +3992,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .expYield = 199,
     #endif
         .evYield_Attack = 3,
-        .itemRare = ITEM_ELECTIRIZER,
         .genderRatio = PERCENT_FEMALE(25),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
@@ -4069,7 +4063,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .expYield = 199,
     #endif
         .evYield_SpAttack = 3,
-        .itemRare = ITEM_MAGMARIZER,
         .genderRatio = PERCENT_FEMALE(25),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,

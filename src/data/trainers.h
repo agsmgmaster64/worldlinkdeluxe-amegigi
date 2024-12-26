@@ -7833,7 +7833,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_CHIBI_MERLIN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3310
-            .heldItem = ITEM_CHINA_DRESS,
+            .heldItem = ITEM_CHINESE_DRESS,
 #line 3312
             .iv = TRAINER_PARTY_IVS(17, 17, 17, 17, 17, 17),
 #line 3311

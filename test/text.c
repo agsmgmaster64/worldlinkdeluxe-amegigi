@@ -175,8 +175,6 @@ TEST("Item names fit on Pokemon Storage System")
     case ITEM_ELECTRIC_TERA_SHARD:
     case ITEM_FIGHTING_TERA_SHARD:
     case ITEM_PSYCHIC_TERA_SHARD:
-    case ITEM_UNREMARKABLE_TEACUP:
-    case ITEM_MASTERPIECE_TEACUP:
     case ITEM_TWICE_SPICED_RADISH:
         EXPECT_GT(GetStringWidth(fontId, gItemsInfo[item].name, 0), widthPx);
         break;
@@ -199,9 +197,6 @@ TEST("Item names fit on Pokemon Summary Screen")
     // All items explicitly listed here are too big to fit.
     switch (item)
     {
-    case ITEM_UNREMARKABLE_TEACUP:
-        EXPECT_GT(GetStringWidth(fontId, gItemsInfo[item].name, 0), widthPx);
-        break;
     default:
         EXPECT_LE(GetStringWidth(fontId, gItemsInfo[item].name, 0), widthPx);
         break;
@@ -574,7 +569,7 @@ TEST("Battle strings fit on the battle message window")
     u32 longStatName = STAT_EVASION;                            // 40 pixels.
     u32 longTypeName = TYPE_ELECTRIC;                           // 43 pixels.
     u32 longSpeciesName = SPECIES_SANDY_SHOCKS;                 // 47 pixels.
-    u32 longItemName = ITEM_UNREMARKABLE_TEACUP;                // 73 pixels.
+    u32 longItemName = ITEM_TWICE_SPICED_RADISH;                // 73 pixels.
     u8 boxName[9] = _("MMMMMMMM");                              // 54 pixels.
 
     // Set longest default player name, JOHNNY

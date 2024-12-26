@@ -374,7 +374,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_EKANS] = {
         .species = SPECIES_DEFENSE_MEILING,
         .moves = {MOVE_POISON_TEARS, MOVE_DIG, MOVE_SCREECH, MOVE_TORMENT},
-        .heldItem = ITEM_NURSE_OUTFIT,
+        .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_DOCILE
     },
@@ -570,7 +570,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_MANKEY] = {
         .species = SPECIES_CHIBI_LILY_WHITE,
         .moves = {MOVE_KARATE_CHOP, MOVE_LOW_KICK, MOVE_SCREECH, MOVE_SWAGGER},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_NAUGHTY
     },
@@ -892,7 +892,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_KOFFING] = {
         .species = SPECIES_NORMAL_KEINE,
         .moves = {MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_TORMENT, MOVE_HAZE},
-        .heldItem = ITEM_NURSE_OUTFIT,
+        .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_QUIRKY
     },
@@ -1634,7 +1634,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_HITMONLEE_1] = {
         .species = SPECIES_ATTACK_MYSTIA,
         .moves = {MOVE_ROLLING_KICK, MOVE_BRICK_BREAK, MOVE_FOCUS_ENERGY, MOVE_FACADE},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -1837,7 +1837,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_POLIWRATH_1] = {
         .species = SPECIES_ATTACK_LILY_BLACK,
         .moves = {MOVE_SUBMISSION, MOVE_DIG, MOVE_ROCK_TOMB, MOVE_BUBBLE_BEAM},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -1851,7 +1851,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_PINSIR_1] = {
         .species = SPECIES_ATTACK_EIRIN,
         .moves = {MOVE_SUBMISSION, MOVE_FOCUS_ENERGY, MOVE_SWORDS_DANCE, MOVE_REVENGE},
-        .heldItem = ITEM_CHINA_DRESS,
+        .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_NAUGHTY
     },
@@ -2943,7 +2943,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_MUK_1] = {
         .species = SPECIES_NORMAL_CHEN,
         .moves = {MOVE_POISON_BOMB, MOVE_BODY_SLAM, MOVE_SCREECH, MOVE_MINIMIZE},
-        .heldItem = ITEM_NURSE_OUTFIT,
+        .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },

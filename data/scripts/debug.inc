@@ -194,16 +194,14 @@ Debug_EventScript_Script_3_Text_ChoosePrintType::
 	.string "Please choose the print type.$"
 
 Debug_EventScript_Script_4::
-	giveitem ITEM_OLD_ROD
-	giveitem ITEM_GOOD_ROD
-	giveitem ITEM_SUPER_ROD
-	giveitem ITEM_DOWSING_MACHINE
+	giveitem ITEM_FISHING_ROD
+	giveitem ITEM_BICYCLE
+	giveitem ITEM_ITEMFINDER
 	giveitem ITEM_VS_SEEKER
 	giveitem ITEM_POKEMON_BOX_LINK
 	giveitem ITEM_COIN_CASE
 	giveitem ITEM_POWDER_JAR
 	giveitem ITEM_WAILMER_PAIL
-	giveitem ITEM_POKEBLOCK_CASE
 	giveitem ITEM_SOOT_SACK
 	giveitem ITEM_POKE_FLUTE
 	giveitem ITEM_BIG_AXE
@@ -214,6 +212,9 @@ Debug_EventScript_Script_4::
 	giveitem ITEM_PICKAXE
 	giveitem ITEM_SCUBA_GEAR
 	giveitem ITEM_TERA_ORB
+	giveitem ITEM_HEXORB
+	giveitem ITEM_OUTFIT_BOX
+	giveitem ITEM_MUSIC_PLAYER
 	release
 	end
 

@@ -3,13 +3,13 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gItemsInfo[ITEM_NORMAL_GEM].holdEffect == HOLD_EFFECT_GEMS);
+    ASSUME(gItemsInfo[ITEM_ILLUSION_CARD].holdEffect == HOLD_EFFECT_GEMS);
 }
 
 SINGLE_BATTLE_TEST("Gem is consumed when it corresponds to the type of a move")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ILLUSION_CARD); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER); }
@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Gem boost is only applied once")
 
     GIVEN {
         ASSUME(I_GEM_BOOST_POWER >= GEN_6);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ILLUSION_CARD); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Gem modifier is used for all hits of Multi Hit Moves")
     s16 secondHit;
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_NORMAL_GEM); };
+        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ILLUSION_CARD); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {
@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Gem modifier is used for all hits of Multi Hit Moves")
 SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed")
 {
     GIVEN {
-        PLAYER(SPECIES_ATTACK_RAIKO) { Ability(ABILITY_NORMALIZE); Item(ITEM_NORMAL_GEM); };
+        PLAYER(SPECIES_ATTACK_RAIKO) { Ability(ABILITY_NORMALIZE); Item(ITEM_ILLUSION_CARD); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN {

@@ -68,12 +68,12 @@ SINGLE_BATTLE_TEST("Corrosion can poison Poison- and Steel-type targets if it us
 {
     u16 heldItem;
 
-    PARAMETRIZE { heldItem = ITEM_NURSE_OUTFIT; }
+    PARAMETRIZE { heldItem = ITEM_NURSE_UNIFORM; }
     PARAMETRIZE { heldItem = ITEM_TOXIC_ORB; }
 
     GIVEN {
         ASSUME(gMovesInfo[MOVE_FLING].effect == EFFECT_FLING);
-        ASSUME(gItemsInfo[ITEM_NURSE_OUTFIT].holdEffect == HOLD_EFFECT_POISON_POWER);
+        ASSUME(gItemsInfo[ITEM_NURSE_UNIFORM].holdEffect == HOLD_EFFECT_POISON_POWER);
         ASSUME(gItemsInfo[ITEM_TOXIC_ORB].holdEffect == HOLD_EFFECT_TOXIC_ORB);
         PLAYER(SPECIES_SALANDIT) { Ability(ABILITY_CORROSION); Item(heldItem); }
         OPPONENT(SPECIES_ATTACK_FLANDRE);
@@ -83,7 +83,7 @@ SINGLE_BATTLE_TEST("Corrosion can poison Poison- and Steel-type targets if it us
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FLING, player);
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
-        if (heldItem == ITEM_NURSE_OUTFIT)
+        if (heldItem == ITEM_NURSE_UNIFORM)
             STATUS_ICON(opponent, poison: TRUE);
         else
             STATUS_ICON(opponent, badPoison: TRUE);
