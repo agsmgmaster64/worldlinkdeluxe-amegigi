@@ -481,11 +481,6 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
     }
 
     collision = CheckForPlayerAvatarCollision(direction);
-    // Start qol_field_moves
-    //fieldMoveStatus = CanUseWaterfall(direction);
-    //if (fieldMoveStatus)
-        //return UseWaterfall(gPlayerAvatar, fieldMoveStatus);
-    // End qol_field_moves
 
     playerAvatar->flags |= PLAYER_AVATAR_FLAG_FORCED_MOVE;
     if (collision)

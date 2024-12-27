@@ -11974,7 +11974,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_POKE_FLUTE] =
     {
-        .name = _("Poké Flute"),
+        .name = _("Toho Flute"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A sweet-sounding\n"
@@ -13093,9 +13093,9 @@ const struct Item gItemsInfo[] =
         .name = _("Surfboard"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A big axe that\n"
-            "can cut down\n"
-            "small trees."),
+            "A surfboard for\n"
+            "surfing on bodies\n"
+            "of water."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -13154,12 +13154,12 @@ const struct Item gItemsInfo[] =
 
     [ITEM_WATERFALL_TOOL] =
     {
-        .name = _("Pager"),
+        .name = _("Waterfall Tool"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A big axe that\n"
-            "can cut down\n"
-            "small trees."),
+            "\n"
+            "\n"
+            "waterfalls."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -13174,8 +13174,8 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "Some scuba gear\n"
-            "that can \n"
-            "small trees."),
+            "for diving down\n"
+            "the ocean."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,

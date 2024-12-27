@@ -199,22 +199,23 @@ Debug_EventScript_Script_4::
 	giveitem ITEM_ITEMFINDER
 	giveitem ITEM_VS_SEEKER
 	giveitem ITEM_POKEMON_BOX_LINK
-	giveitem ITEM_COIN_CASE
-	giveitem ITEM_POWDER_JAR
 	giveitem ITEM_WAILMER_PAIL
-	giveitem ITEM_SOOT_SACK
+	giveitem ITEM_TOHOVIAL
 	giveitem ITEM_POKE_FLUTE
-	giveitem ITEM_BIG_AXE
-	giveitem ITEM_SURFBOARD
-	giveitem ITEM_PAGER
-	giveitem ITEM_POWER_GLOVE
-	giveitem ITEM_LANTERN
-	giveitem ITEM_PICKAXE
-	giveitem ITEM_SCUBA_GEAR
-	giveitem ITEM_TERA_ORB
 	giveitem ITEM_HEXORB
 	giveitem ITEM_OUTFIT_BOX
 	giveitem ITEM_MUSIC_PLAYER
+	giveitem ITEM_COIN_CASE
+	giveitem ITEM_POWDER_JAR
+	giveitem ITEM_BIG_AXE
+	giveitem ITEM_PAGER
+	giveitem ITEM_SURFBOARD
+	giveitem ITEM_POWER_GLOVE
+	giveitem ITEM_LANTERN
+	giveitem ITEM_PICKAXE
+	giveitem ITEM_WATERFALL_TOOL
+	giveitem ITEM_SCUBA_GEAR
+	giveitem ITEM_TERA_ORB
 	release
 	end
 

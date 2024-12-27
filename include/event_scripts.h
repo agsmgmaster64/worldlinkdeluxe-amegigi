@@ -407,22 +407,13 @@ extern const u8 EventScript_UseRockSmash[];
 extern const u8 EventScript_UseDig[];
 
 //Start qol_field_moves
-extern const u8 EventScript_CutTreeDown[];
-extern const u8 EventScript_UseCut[];
-extern const u8 EventScript_UseCutTool[];
-extern const u8 EventScript_UseSurfMove[];
-extern const u8 EventScript_UseSurfTool[];
-extern const u8 EventScript_UseSurfFieldEffect[];
-extern const u8 EventScript_UseStrengthTool[];
-extern const u8 EventScript_UseFlashTool[];
-extern const u8 EventScript_SmashRock[];
-extern const u8 EventScript_UseRockSmash[];
-extern const u8 EventScript_UseRockSmashTool[];
-extern const u8 EventScript_UseWaterfallMon[];
+extern const u8 EventScript_UseBigAxe[];
+extern const u8 EventScript_UseSurfboard[];
+extern const u8 EventScript_UsePowerGlove[];
+extern const u8 EventScript_UseLantern[];
+extern const u8 EventScript_UsePickaxe[];
 extern const u8 EventScript_UseWaterfallTool[];
-extern const u8 EventScript_UseWaterfallFieldEffect[];
-extern const u8 EventScript_UseDiveTool[];
-extern const u8 EventScript_AskTeleportTool[];
+extern const u8 EventScript_UseScubaGear[];
 //End qol_field_moves
 
 //player pc

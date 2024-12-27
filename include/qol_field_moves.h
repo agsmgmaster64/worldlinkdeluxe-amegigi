@@ -8,7 +8,6 @@ void ResetFlyTool(void);
 
 u32 CanUseSurf(s16, s16, u8);
 u32 CanUseSurfFromInteractedWater(void);
-u32 UseSurf(u32);
 void RemoveRelevantSurfFieldEffect(void);
 void Task_SurfToolFieldEffect(u8 taskId);
 
@@ -17,7 +16,6 @@ u32 CanUseFlash(void);
 
 u32 CanUseWaterfall(u8);
 bool32 CanUseWaterfallTool(void);
-u32 UseWaterfall(struct PlayerAvatar, u32);
 void CreateUseWaterfallTask(void);
 u32 CanUseWaterfallFromInteractedWater(void);
 void RemoveRelevantWaterfallFieldEffect(void);
@@ -27,7 +25,6 @@ void RemoveRelevantDiveFieldEffect(void);
 u32 CanUseDiveDown(void);
 u32 CanUseDiveEmerge(void);
 
-void ClearFieldMoveFlags(void);
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 move);
 
 enum FieldMoveActionSource

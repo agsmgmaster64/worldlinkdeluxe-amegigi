@@ -1528,7 +1528,7 @@ void ItemUseOutOfBattle_CutTool(u8 taskId)
 void ItemUseOnFieldCB_CutTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseCutTool);
+    ScriptContext_SetupScript(EventScript_UseBigAxe);
     DestroyTask(taskId);
 }
 
@@ -1580,7 +1580,7 @@ void ItemUseOutOfBattle_SurfTool(u8 taskId)
 
 void ItemUseOnFieldCB_SurfTool(u8 taskId)
 {
-    ScriptContext_SetupScript(EventScript_UseSurfTool);
+    ScriptContext_SetupScript(EventScript_UseSurfboard);
     DestroyTask(taskId);
 }
 
@@ -1593,7 +1593,7 @@ void ItemUseOutOfBattle_StrengthTool(u8 taskId)
 void ItemUseOnFieldCB_StrengthTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseStrengthTool);
+    ScriptContext_SetupScript(EventScript_UsePowerGlove);
     DestroyTask(taskId);
 }
 
@@ -1629,7 +1629,7 @@ void ItemUseOutOfBattle_RockSmashTool(u8 taskId)
 void ItemUseOnFieldCB_RockSmashTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseRockSmashTool);
+    ScriptContext_SetupScript(EventScript_UsePickaxe);
     DestroyTask(taskId);
 }
 
@@ -1665,7 +1665,7 @@ void ItemUseOutOfBattle_DiveTool(u8 taskId)
 void ItemUseOnFieldCB_DiveTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseDiveTool);
+    ScriptContext_SetupScript(EventScript_UseScubaGear);
     DestroyTask(taskId);
 }
 
