@@ -1101,7 +1101,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_RG_DepartmentStore",
+      "secondary_tileset": "gTileset_RG_SilphCo",
       "border_filepath": "data/layouts/RustboroCity_DevonCorp_1F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_DevonCorp_1F/map.bin"
     },
@@ -1113,7 +1113,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_RG_SilphCo",
       "border_filepath": "data/layouts/RustboroCity_DevonCorp_2F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_DevonCorp_2F/map.bin"
     },
@@ -1169,11 +1169,11 @@
       "id": "LAYOUT_RUSTBORO_CITY_CUTTERS_HOUSE",
       "name": "RustboroCity_CuttersHouse_Layout",
       "width": 11,
-      "height": 9,
+      "height": 10,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_GenericBuilding1",
       "border_filepath": "data/layouts/RustboroCity_CuttersHouse/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_CuttersHouse/map.bin"
     },
@@ -4796,8 +4796,8 @@
       "height": 54,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Cave",
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_Cave",
       "border_filepath": "data/layouts/ArtisanCave_B1F/border.bin",
       "blockdata_filepath": "data/layouts/ArtisanCave_B1F/map.bin"
     },
@@ -4820,7 +4820,7 @@
       "height": 46,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/FarawayIsland_Entrance/border.bin",
       "blockdata_filepath": "data/layouts/FarawayIsland_Entrance/map.bin"
@@ -4832,7 +4832,7 @@
       "height": 26,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FarawayIsland_Interior/border.bin",
       "blockdata_filepath": "data/layouts/FarawayIsland_Interior/map.bin"
