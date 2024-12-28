@@ -220,7 +220,7 @@ bool8 IsPlayerFacingWaterfall(void)
 u32 CanUseWaterfall(u8 direction)
 {
     bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_WATERFALL);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_WATERFALL_TOOL, 1);
+    bool32 bagHasItem = CheckBagHasItem(ITEM_CLIMBING_GEAR, 1);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
     bool32 isPlayerPushedSouth = (direction == DIR_SOUTH);
 
@@ -379,6 +379,26 @@ static bool32 CanSpeciesLearnMoveLevelUp(u16 species, u16 move)
             return TRUE;
     }
     return FALSE;
+}
+
+u32 CanUseRockClimb(void)
+{
+    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_ROCK_CLIMB);
+    bool32 bagHasItem = CheckBagHasItem(ITEM_CLIMBING_GEAR, 1);
+    bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
+    s16 x, y;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+
+    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        if ((monHasMove && playerHasBadge))
+            return FIELD_MOVE_POKEMON;
+        else if (bagHasItem)
+            return FIELD_MOVE_TOOL;
+    }
+
+    return FIELD_MOVE_FAIL;
 }
 
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)

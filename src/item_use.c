@@ -1640,14 +1640,28 @@ void ItemUseOutOfBattle_WaterfallTool(u8 taskId)
         sItemUseOnFieldCB = ItemUseOnFieldCB_WaterfallTool;
         SetUpItemUseOnFieldCallback(taskId);
     }
+    else if (CanUseRockClimb())
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_RockClimbTool;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
     else
+    {
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
 }
 
 void ItemUseOnFieldCB_WaterfallTool(u8 taskId)
 {
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_UseWaterfallTool);
+    DestroyTask(taskId);
+}
+
+void ItemUseOnFieldCB_RockClimbTool(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UseRockClimbTool);
     DestroyTask(taskId);
 }
 

@@ -1369,6 +1369,14 @@ bool8 MetatileBehavior_IsTrainerHillTimer(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_ROCK_CLIMB)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool32 TestMetatileAttributeBit(u8 attr, u8 bitmask)
 {
     return sTileBitAttributes[attr] & bitmask;

@@ -424,10 +424,10 @@ EventScript_UseWaterfallTool::
 	goto EventScript_UseWaterfallTool_SkipCheck
 
 EventScript_CanUseWaterfallTool::
-	checkitem ITEM_WATERFALL_TOOL, 1
+	checkitem ITEM_CLIMBING_GEAR, 1
 	goto_if_ne VAR_RESULT, TRUE, EventScript_CantWaterfall
 EventScript_UseWaterfallTool_SkipCheck::
-	bufferitemname STR_VAR_2, ITEM_WATERFALL_TOOL
+	bufferitemname STR_VAR_2, ITEM_CLIMBING_GEAR
 	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
 	waitmessage
 EventScript_UseWaterfallFieldEffect::
@@ -514,6 +514,64 @@ EventScript_CantSurface::
 EventScript_EndSurface::
 	releaseall
 	end
+
+EventScript_UseRockClimb::
+	lockall
+	goto_if_unset FLAG_BADGE08_GET, EventScript_CanUseRockClimbTool
+	checkpartymove MOVE_ROCK_CLIMB
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockClimbOtherwise
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
+	buffermovename STR_VAR_2, MOVE_ROCK_CLIMB
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	closemessage
+EventScript_RockClimbCommon::
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB
+	waitstate
+EventScript_EndRockClimb::
+	releaseall
+	end
+
+EventScript_CanUseRockClimbOtherwise::
+	checkpartylearnknowsfieldmove MOVE_ROCK_CLIMB
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockClimbTool
+	setfieldeffectargument 0, VAR_RESULT
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	msgbox Text_WantToRockClimb, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndRockClimb
+	buffermovename STR_VAR_2, MOVE_ROCK_CLIMB
+	msgbox Text_MonAttemptedToUseFieldMove, MSGBOX_DEFAULT
+	closemessage
+	goto EventScript_RockClimbCommon
+
+EventScript_CanUseRockClimbTool::
+	checkitem ITEM_CLIMBING_GEAR, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CantRockClimb
+EventScript_UseRockClimbTool_SkipCheck::
+	bufferitemname STR_VAR_2, ITEM_CLIMBING_GEAR
+	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
+	waitmessage
+	dofieldeffect FLDEFF_USE_ROCK_CLIMB_TOOL
+	releaseall
+	end
+
+EventScript_CantRockClimb::
+	msgbox Text_CantRockClimb, MSGBOX_DEFAULT
+	goto EventScript_EndRockClimb
+
+Text_WantToRockClimb:
+	.string "The cliff is steep.\n"
+	.string "Would you like to use Rock Climb?$"
+
+Text_CantRockClimb:
+	.string "The cliff is steep.\n"
+	.string "A Puppet may be able to climb it.$"
+
+EventScript_UseRockClimbTool::
+	lock
+	goto EventScript_UseRockClimbTool_SkipCheck
 
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004

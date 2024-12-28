@@ -83,6 +83,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseSurfTool               @ FLDEFF_USE_SURF_TOOL
 	.4byte gFieldEffectScript_UseWaterfallTool          @ FLDEFF_USE_WATERFALL_TOOL
 	.4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
+	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
+	.4byte gFieldEffectScript_UseRockClimbTool          @ FLDEFF_USE_ROCK_CLIMB_TOOL
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -397,4 +399,12 @@ gFieldEffectScript_TracksSlither::
 
 gFieldEffectScript_CaveDust::
 	field_eff_loadfadedpal_callnative gSpritePalette_CaveDust FldEff_CaveDust
+	field_eff_end
+
+gFieldEffectScript_UseRockClimb::
+	field_eff_callnative FldEff_UseRockClimb
+	field_eff_end
+
+gFieldEffectScript_UseRockClimbTool::
+	field_eff_callnative FldEff_UseRockClimbTool
 	field_eff_end

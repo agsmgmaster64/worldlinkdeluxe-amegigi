@@ -25,6 +25,8 @@ void RemoveRelevantDiveFieldEffect(void);
 u32 CanUseDiveDown(void);
 u32 CanUseDiveEmerge(void);
 
+bool32 CanUseRockClimb(void);
+
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 move);
 
 enum FieldMoveActionSource

@@ -999,47 +999,29 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_HEXORB] = ARRAY_COUNT(sPartyMenuAction_Hexorb), // hexorb Branch
 };
 
-static const u16 sFieldMoves[FIELD_MOVES_COUNT + 1] =
-{
-    [FIELD_MOVE_CUT]          = MOVE_CUT,
-    [FIELD_MOVE_FLASH]        = MOVE_FLASH,
-    [FIELD_MOVE_ROCK_SMASH]   = MOVE_ROCK_SMASH,
-    [FIELD_MOVE_STRENGTH]     = MOVE_STRENGTH,
-    [FIELD_MOVE_SURF]         = MOVE_SURF,
-    [FIELD_MOVE_FLY]          = MOVE_FLY,
-    [FIELD_MOVE_DIVE]         = MOVE_DIVE,
-    [FIELD_MOVE_WATERFALL]    = MOVE_WATERFALL,
-    [FIELD_MOVE_TELEPORT]     = MOVE_TELEPORT,
-    [FIELD_MOVE_DIG]          = MOVE_DIG,
-    [FIELD_MOVE_SECRET_POWER] = MOVE_SECRET_POWER,
-    [FIELD_MOVE_MILK_DRINK]   = MOVE_MILK_DRINK,
-    [FIELD_MOVE_SOFT_BOILED]  = MOVE_SOFT_BOILED,
-    [FIELD_MOVE_NATURE_POWER]  = MOVE_NATURE_POWER,
-    // NOTE: This value is used as the terminal value for the table. There's no reason to do this, as the size of the table is known.
-    //       Whichever move shares this value (MOVE_SWORDS_DANCE by default) if present will be treated as the end of the array rather than a field move.
-    [FIELD_MOVES_COUNT]       = FIELD_MOVES_COUNT
-};
-
 struct
 {
+    u16 move;
     bool8 (*fieldMoveFunc)(void);
     u8 msgId;
-} static const sFieldMoveCursorCallbacks[FIELD_MOVES_COUNT] =
+    u16 flagCheck;
+} static const sFieldMovesInfo[FIELD_MOVES_COUNT] =
 {
-    [FIELD_MOVE_CUT]          = {SetUpFieldMove_Cut,         PARTY_MSG_NOTHING_TO_CUT},
-    [FIELD_MOVE_FLASH]        = {SetUpFieldMove_Flash,       PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_ROCK_SMASH]   = {SetUpFieldMove_RockSmash,   PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_STRENGTH]     = {SetUpFieldMove_Strength,    PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_SURF]         = {SetUpFieldMove_Surf,        PARTY_MSG_CANT_SURF_HERE},
-    [FIELD_MOVE_FLY]          = {SetUpFieldMove_Fly,         PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_DIVE]         = {SetUpFieldMove_Dive,        PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_WATERFALL]    = {SetUpFieldMove_Waterfall,   PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_TELEPORT]     = {SetUpFieldMove_Teleport,    PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_DIG]          = {SetUpFieldMove_Dig,         PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_SECRET_POWER] = {SetUpFieldMove_SecretPower, PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_MILK_DRINK]   = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
-    [FIELD_MOVE_SOFT_BOILED]  = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
-    [FIELD_MOVE_NATURE_POWER]  = {SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_CUT]          = {MOVE_CUT,          SetUpFieldMove_Cut,         PARTY_MSG_NOTHING_TO_CUT, FLAG_BADGE01_GET},
+    [FIELD_MOVE_FLASH]        = {MOVE_FLASH,        SetUpFieldMove_Flash,       PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE02_GET},
+    [FIELD_MOVE_ROCK_SMASH]   = {MOVE_ROCK_SMASH,   SetUpFieldMove_RockSmash,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE03_GET},
+    [FIELD_MOVE_STRENGTH]     = {MOVE_STRENGTH,     SetUpFieldMove_Strength,    PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE04_GET},
+    [FIELD_MOVE_SURF]         = {MOVE_SURF,         SetUpFieldMove_Surf,        PARTY_MSG_CANT_SURF_HERE, FLAG_BADGE05_GET},
+    [FIELD_MOVE_FLY]          = {MOVE_FLY,          SetUpFieldMove_Fly,         PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE06_GET},
+    [FIELD_MOVE_DIVE]         = {MOVE_DIVE,         SetUpFieldMove_Dive,        PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE07_GET},
+    [FIELD_MOVE_WATERFALL]    = {MOVE_WATERFALL,    SetUpFieldMove_Waterfall,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE08_GET},
+    [FIELD_MOVE_ROCK_CLIMB]   = {MOVE_ROCK_CLIMB,   SetUpFieldMove_RockClimb,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE08_GET},
+    [FIELD_MOVE_TELEPORT]     = {MOVE_TELEPORT,     SetUpFieldMove_Teleport,    PARTY_MSG_CANT_USE_HERE,  0},
+    [FIELD_MOVE_DIG]          = {MOVE_DIG,          SetUpFieldMove_Dig,         PARTY_MSG_CANT_USE_HERE,  0},
+    [FIELD_MOVE_SECRET_POWER] = {MOVE_SECRET_POWER, SetUpFieldMove_SecretPower, PARTY_MSG_CANT_USE_HERE,  0},
+    [FIELD_MOVE_MILK_DRINK]   = {MOVE_MILK_DRINK,   SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
+    [FIELD_MOVE_SOFT_BOILED]  = {MOVE_SOFT_BOILED,  SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
+    [FIELD_MOVE_NATURE_POWER] = {MOVE_NATURE_POWER, SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE,  0},
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =

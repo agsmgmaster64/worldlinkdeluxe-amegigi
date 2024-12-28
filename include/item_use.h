@@ -81,6 +81,8 @@ void ItemUseOnFieldCB_WaterfallTool(u8);
 void ItemUseOutOfBattle_DiveTool(u8);
 void ItemUseOnFieldCB_DiveTool(u8);
 
+void ItemUseOnFieldCB_RockClimbTool(u8);
+
 // End qol_field_moves
 
 enum {

@@ -213,7 +213,7 @@ Debug_EventScript_Script_4::
 	giveitem ITEM_POWER_GLOVE
 	giveitem ITEM_LANTERN
 	giveitem ITEM_PICKAXE
-	giveitem ITEM_WATERFALL_TOOL
+	giveitem ITEM_CLIMBING_GEAR
 	giveitem ITEM_SCUBA_GEAR
 	giveitem ITEM_TERA_ORB
 	release

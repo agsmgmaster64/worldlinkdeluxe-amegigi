@@ -164,6 +164,7 @@ enum {
     FIELD_MOVE_FLY,         // FLAG_BADGE06_GET
     FIELD_MOVE_DIVE,        // FLAG_BADGE07_GET
     FIELD_MOVE_WATERFALL,   // FLAG_BADGE08_GET
+    FIELD_MOVE_ROCK_CLIMB,
     FIELD_MOVE_TELEPORT,
     FIELD_MOVE_DIG,
     FIELD_MOVE_SECRET_POWER,
@@ -528,6 +529,7 @@ static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
+static bool8 SetUpFieldMove_RockClimb(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
@@ -2942,7 +2944,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
-            text = gMovesInfo[sFieldMoves[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES]].name;
+            text = gMovesInfo[sFieldMovesInfo[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES].move].name;
         else
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
@@ -3008,7 +3010,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     {
         for (j = 0; j != FIELD_MOVES_COUNT; j++)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
+            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMovesInfo[j].move)
             {
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
@@ -4443,7 +4445,7 @@ static void CursorCb_FieldMove(u8 taskId)
     const struct MapHeader *mapHeader;
 
     PlaySE(SE_SELECT);
-    if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc == NULL)
+    if (sFieldMovesInfo[fieldMove].fieldMoveFunc == NULL)
         return;
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
@@ -4453,19 +4455,19 @@ static void CursorCb_FieldMove(u8 taskId)
         if (fieldMove == FIELD_MOVE_MILK_DRINK || fieldMove == FIELD_MOVE_SOFT_BOILED)
             DisplayPartyMenuStdMessage(PARTY_MSG_CANT_USE_HERE);
         else
-            DisplayPartyMenuStdMessage(sFieldMoveCursorCallbacks[fieldMove].msgId);
+            DisplayPartyMenuStdMessage(sFieldMovesInfo[fieldMove].msgId);
 
         gTasks[taskId].func = Task_CancelAfterAorBPress;
     }
     else
     {
         // All field moves before WATERFALL are HMs.
-        if (fieldMove <= FIELD_MOVE_WATERFALL && FlagGet(FLAG_BADGE01_GET + fieldMove) != TRUE)
+        if (sFieldMovesInfo[fieldMove].flagCheck && FlagGet(sFieldMovesInfo[fieldMove].flagCheck) != TRUE)
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
-        else if (sFieldMoveCursorCallbacks[fieldMove].fieldMoveFunc() == TRUE)
+        else if (sFieldMovesInfo[fieldMove].fieldMoveFunc() == TRUE)
         {
             switch (fieldMove)
             {
@@ -4509,7 +4511,7 @@ static void CursorCb_FieldMove(u8 taskId)
                 DisplayCantUseFlashMessage();
                 break;
             default:
-                DisplayPartyMenuStdMessage(sFieldMoveCursorCallbacks[fieldMove].msgId);
+                DisplayPartyMenuStdMessage(sFieldMovesInfo[fieldMove].msgId);
                 break;
             }
             gTasks[taskId].func = Task_CancelAfterAorBPress;
@@ -8696,3 +8698,23 @@ void InitPartyMenuForHexorbFromField(u8 taskId)
 }
 // End hexorb Branch
 
+static void FieldCallback_RockClimb(void)
+{
+    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    FieldEffectStart(FLDEFF_USE_ROCK_CLIMB);
+}
+
+static bool8 SetUpFieldMove_RockClimb(void)
+{
+    s16 x, y;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_RockClimb;
+        return TRUE;
+    }
+
+    return FALSE;
+}

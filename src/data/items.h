@@ -13152,9 +13152,9 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_Pickaxe,
     },
 
-    [ITEM_WATERFALL_TOOL] =
+    [ITEM_CLIMBING_GEAR] =
     {
-        .name = _("Waterfall Tool"),
+        .name = _("Climbing Gear"),
         .price = 0,
         .description = COMPOUND_STRING(
             "\n"
