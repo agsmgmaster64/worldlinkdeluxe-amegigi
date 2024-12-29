@@ -4255,14 +4255,6 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     }
                 }
                 break;
-            case MOVE_EFFECT_ION_DELUGE:
-                if (!(gFieldStatuses & STATUS_FIELD_ION_DELUGE))
-                {
-                    gFieldStatuses |= STATUS_FIELD_ION_DELUGE;
-                    BattleScriptPush(gBattlescriptCurrInstr + 1);
-                    gBattlescriptCurrInstr = BattleScript_MoveEffectIonDeluge;
-                }
-                break;
             // TODO: The moves aromatherapy and heal bell need a refactor first
             // case MOVE_EFFECT_AROMATHERAPY:
             //     break;
@@ -4273,7 +4265,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 gBattlescriptCurrInstr = BattleScript_MoveEffectHaze;
                 break;
             case MOVE_EFFECT_LEECH_SEED:
-                if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS) && !(gStatuses3[gBattlerTarget] & STATUS3_LEECHSEED))
+                if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_NATURE) && !(gStatuses3[gBattlerTarget] & STATUS3_LEECHSEED))
                 {
                     gStatuses3[gBattlerTarget] |= gBattlerAttacker;
                     gStatuses3[gBattlerTarget] |= STATUS3_LEECHSEED;
