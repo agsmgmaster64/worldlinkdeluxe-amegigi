@@ -1,3 +1,84 @@
+const LOCALID_SHIORI = 2
+const LOCALID_RALSEI = 3
+
+mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) >= 6) {
+			goto(LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout)
+		}
+		if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) >= 4) {
+			goto(LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout)
+		}
+		if (var(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE) == 3) {
+			goto(LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter)
+		}
+    }
+	MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1: LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2: LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3: LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6: LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5: LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
+	]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_BIRCH_LAB_STATE, 0: LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveStarterEvent
+		VAR_BIRCH_LAB_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1: LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
+		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
+    ]
+}
+
+script LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveStarterEvent {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerMoveToShiori)
+	waitmovement(0)
+	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Shiori)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro)
+	callnative(StartNewPokeballCaseUI)
+	waitstate
+	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Shiori)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter)
+	setvar(VAR_LITTLEROOT_TOWN_STATE, 1)
+	setvar(VAR_BIRCH_LAB_STATE, 1)
+	releaseall
+	end
+}
+
+script LittlerootTown_ProfessorBirchsLab_EventScript_Shiori {
+	lock
+	faceplayer
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriGetRalsei)
+	release
+	end
+}
+
+movement LittlerootTown_ProfessorBirchsLab_Movement_PlayerMoveToShiori {
+	walk_up * 7
+	walk_right
+	face_up
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_Shiori {
+	"Shiori"
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_Ralsei {
+	"Ralsei"
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro {
+	format("Shiorin.")
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter {
+	format("Starter. Get Ralsei.")
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_ShioriGetRalsei {
+	format("Get Ralsei.")
+}
+
 raw `
 .set LOCALID_AIDE, 1
 .set LOCALID_BIRCH, 2
@@ -5,12 +86,6 @@ raw `
 .set LOCALID_BALL_CYNDAQUIL, 4
 .set LOCALID_BALL_TOTODILE, 5
 .set LOCALID_BALL_CHIKORITA, 6
-
-LittlerootTown_ProfessorBirchsLab_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_ProfessorBirchsLab_OnWarp
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_ProfessorBirchsLab_OnFrame
-	.byte 0
 
 	@ State descriptions for VAR_DEX_UPGRADE_JOHTO_STARTER_STATE
 	@ 1: Beat Elite Four, Dex upgrade ready
@@ -26,14 +101,6 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 	@ 3: Received starter in lab
 	@ 4: Defeated rival on Route 103
 	@ 5: Received pokedex
-
-LittlerootTown_ProfessorBirchsLab_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
-	call ProfBirch_EventScript_UpdateLocation
-	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout
-	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout
-	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter
-	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
 	specialvar VAR_RESULT, HasAllHoennMons
@@ -54,20 +121,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout::
 	setmaplayoutindex LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE
 	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
 	setobjectxyperm LOCALID_RIVAL, 5, 10
-	end
-
-LittlerootTown_ProfessorBirchsLab_OnWarp:
-	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_SetPlayerPosForReceiveStarter
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
-	.2byte 0
-
-LittlerootTown_ProfessorBirchsLab_EventScript_SetPlayerPosForReceiveStarter::
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade::
@@ -102,13 +155,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters::
 	turnobject LOCALID_RIVAL, DIR_EAST
 	setobjectxy LOCALID_RIVAL, 5, 5
 	end
-
-LittlerootTown_ProfessorBirchsLab_OnFrame:
-	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent
-	map_script_2 VAR_BIRCH_LAB_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
-	.2byte 0
 
 @ The starter is technically given prior to this on Route 101 by special ChooseStarter
 @ This is just where the game tells you its yours and lets you nickname it
@@ -489,7 +535,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GrassyPatchWaiting::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister::
-	goto_if_unset FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380, ProfBirch_EventScript_RatePokedexOrRegister
 	goto_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, ProfBirch_EventScript_RatePokedexOrRegister
 	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, ProfBirch_EventScript_RatePokedexOrRegister
 	goto_if_eq VAR_BIRCH_LAB_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_PokemonAwait

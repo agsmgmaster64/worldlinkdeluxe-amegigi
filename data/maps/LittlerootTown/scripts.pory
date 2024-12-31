@@ -21,8 +21,8 @@ script LittlerootTown_OnTransition {
     if (var(VAR_LITTLEROOT_INTRO_STATE) == 2) {
         setobjectxyperm(LOCALID_MOM, 16, 8)
     }
-    if (!flag(FLAG_RESCUED_BIRCH)) {
-        call(LittlerootTown_EventScript_SetTwinPos)
+    if (var(VAR_LITTLEROOT_TOWN_STATE) == 0) {
+        call(LittlerootTown_EventScript_SetTwinGuardingRoutePos)
     }
     if (var(VAR_LITTLEROOT_TOWN_STATE) == 3) {
         call(LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos)
@@ -49,15 +49,6 @@ script LittlerootTown_OnTransition {
         setvar(VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3)
     }
 	end
-}
-
-script LittlerootTown_EventScript_SetTwinPos {
-    if (var(VAR_LITTLEROOT_TOWN_STATE) == 0) {
-        goto(LittlerootTown_EventScript_SetTwinGuardingRoutePos)
-    }
-    setobjectxyperm(LOCALID_TWIN, 12, 1)
-    setobjectmovementtype(LOCALID_TWIN, MOVEMENT_TYPE_FACE_UP)
-    return
 }
 
 script LittlerootTown_EventScript_SetTwinGuardingRoutePos {
@@ -216,17 +207,13 @@ text LittlerootTown_Text_WaitPlayer {
 }
 
 text LittlerootTown_Text_WearTheseRunningShoes {
-	format("{PLAYER}! {PLAYER}! Did you introduce yourself to PROF. BIRCH?\p"
-	"Oh! What an adorable Puppet!\n"
-	"You got it from PROF. BIRCH. How nice!\p"
-	"You're your father's child, all right.\n"
+	format("{PLAYER}! {PLAYER}! Did you introduce yourself to Professor Shiori?\p"
+	"Oh! What an adorable Puppet!\N"
+	"You got it from Professor Shiori. How nice!\p"
+	"You're your father's child, all right.\N"
 	"You look good together with Puppets!\p"
-	"Here, honey! If you're going out on an adventure, wear these RUNNING SHOES.\p"
-	"They'll put a zip in your step!")
-}
-
-text LittlerootTown_Text_SwitchShoesWithRunningShoes {
-	format("{PLAYER} switched shoes with the RUNNING SHOES.")
+	"Here, honey! If you're going out on an adventure, have this fishing rod.\p"
+	"!")
 }
 
 text LittlerootTown_Text_ExplainRunningShoes {
@@ -1019,7 +1006,6 @@ LittlerootTown_EventScript_Mom::
 
 LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_MOM
-	setflag FLAG_SYS_B_DASH
 	setvar VAR_LITTLEROOT_TOWN_STATE, 4
 	release
 	end
@@ -1027,10 +1013,8 @@ LittlerootTown_EventScript_SetReceivedRunningShoes::
 LittlerootTown_EventScript_GiveRunningShoes::
 	setspeakername LittlerootTown_Text_MomSpeaker
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
 	hidespeakername
-	message LittlerootTown_Text_SwitchShoesWithRunningShoes
-	waitfanfare
+	giveitem ITEM_FISHING_ROD
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setspeakername LittlerootTown_Text_MomSpeaker
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
