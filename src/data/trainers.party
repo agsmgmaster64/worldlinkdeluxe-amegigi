@@ -3307,7 +3307,7 @@ Placehold Lunasa
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Chibi Merlin @ China Dress
+Chibi Merlin @ Chinese Dress
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -4797,6 +4797,7 @@ Music: Male
 Items: Potion / Potion
 Double Battle: No
 AI: Basic Trainer / Risky / Ace Pokemon
+Mugshot: Blue
 
 Chibi Suika
 Level: 12

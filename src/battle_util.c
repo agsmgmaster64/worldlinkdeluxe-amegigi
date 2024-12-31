@@ -4428,16 +4428,11 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect = (effect == 1) ? 2 : 0;
                 break;
             case STARTING_STATUS_HOLY_TERRAIN:
-                if (!(gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN))
-                {
-                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_HOLY;
-                    gFieldStatuses |= STATUS_FIELD_HOLY_TERRAIN;
-                    if (timerVal == 0)
-                        gFieldStatuses |= STATUS_FIELD_TERRAIN_PERMANENT;
-                    else
-                        gFieldTimers.terrainTimer = timerVal;
-                    effect = 2;
-                }
+                effect = SetStartingFieldStatus(STATUS_FIELD_HOLY_TERRAIN,
+                                                B_MSG_TERRAIN_SET_HOLY,
+                                                0,
+                                                &gFieldTimers.terrainTimer);
+                effect = (effect == 1) ? 2 : 0;
                 break;
             case STARTING_STATUS_TRICK_ROOM:
                 effect = SetStartingFieldStatus(STATUS_FIELD_TRICK_ROOM,

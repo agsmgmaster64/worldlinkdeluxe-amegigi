@@ -117,6 +117,8 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerMoveToShiori:
 	walk_up
 # 57 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_up
+# 57 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
+	walk_up
 # 58 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
 	walk_right
 # 59 "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.pory"
