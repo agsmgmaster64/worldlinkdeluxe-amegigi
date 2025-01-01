@@ -12196,7 +12196,7 @@ bool32 DoesDestinyBondFail(u32 battler)
 // This check has always to be the last in a condtion statement because of the recording of AI data.
 bool32 IsMoveEffectBlockedByTarget(u32 ability)
 {
-    if (ability == ABILITY_SHIELD_DUST)
+    if (ability == ABILITY_ADVENT)
     {
         RecordAbilityBattle(gBattlerTarget, ability);
         return TRUE;
