@@ -176,7 +176,7 @@
 #define METATILE_Fallarbor_AshGrass                  0x20A
 #define METATILE_Fallarbor_BrownCaveEntrance_Bottom  0x261
 #define METATILE_Fallarbor_BrownCaveEntrance_Top     0x259
-#define METATILE_Fallarbor_BrownCaveIndent           0x288
+#define METATILE_Fallarbor_BrownCaveIndent           0x808
 #define METATILE_Fallarbor_BrownCaveOpen             0x290
 #define METATILE_Fallarbor_BrownRockWall             0x265
 #define METATILE_Fallarbor_Door_BattleTent           0x36C
@@ -186,12 +186,12 @@
 #define METATILE_Fallarbor_RedCaveEntrance_Bottom    0x34F
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
-#define METATILE_Fallarbor_SnowGrass                 0x281
-#define METATILE_Fallarbor_SnowGrass_TreeLeft        0x286
-#define METATILE_Fallarbor_SnowGrass_TreeRight       0x287
-#define METATILE_Fallarbor_SnowTallGrass             0x282
-#define METATILE_Fallarbor_SnowTallGrass_TreeLeft    0x2B6
-#define METATILE_Fallarbor_SnowTallGrass_TreeRight   0x2B7
+#define METATILE_Fallarbor_SnowGrass                 0x801
+#define METATILE_Fallarbor_SnowGrass_TreeLeft        0x806
+#define METATILE_Fallarbor_SnowGrass_TreeRight       0x807
+#define METATILE_Fallarbor_SnowTallGrass             0x802
+#define METATILE_Fallarbor_SnowTallGrass_TreeLeft    0x836
+#define METATILE_Fallarbor_SnowTallGrass_TreeRight   0x837
 
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
@@ -274,11 +274,11 @@
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
 #define METATILE_Lavaridge_CaveEntrance_Top     0x256
-#define METATILE_Lavaridge_Grass_Bamboo         0x32A
+#define METATILE_Lavaridge_Grass_Bamboo         0x8AA
 #define METATILE_Lavaridge_LavaField            0x271
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
-#define METATILE_Lavaridge_TallGrass_Bamboo     0x32B
+#define METATILE_Lavaridge_TallGrass_Bamboo     0x8AB
 
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
@@ -446,61 +446,60 @@
 #define METATILE_RG_Building_TV_On   0x061
 
 // gTileset_RG_General
-#define METATILE_RG_General_BlueCaveIndent       0x19B
-#define METATILE_RG_General_BlueCaveOpen         0x19C
-#define METATILE_RG_General_Door                 0x03D
-#define METATILE_RG_General_DoorAlt              0x03C
-#define METATILE_RG_General_Grass                0x001
-#define METATILE_RG_General_Grass_ShortTree      0x013
-#define METATILE_RG_General_Grass_TreeLeft       0x00E
-#define METATILE_RG_General_Grass_TreeRight      0x00F
-#define METATILE_RG_General_LongGrass            0x02C
-#define METATILE_RG_General_LongGrass_Root       0x012
-#define METATILE_RG_General_MuddySlope_Frame0    0x22B
-#define METATILE_RG_General_MuddySlope_Frame1    0x22C
-#define METATILE_RG_General_MuddySlope_Frame2    0x22D
-#define METATILE_RG_General_MuddySlope_Frame3    0x22E
-#define METATILE_RG_General_RedCaveIndent        0x18B
-#define METATILE_RG_General_RedCaveOpen          0x18C
-#define METATILE_RG_General_SlidingDoubleDoor    0x15B
-#define METATILE_RG_General_SlidingSingleDoor    0x062
-#define METATILE_RG_General_TallGrass            0x00D
-#define METATILE_RG_General_TallGrass_ShortTree  0x00A
-#define METATILE_RG_General_TallGrass_TreeLeft   0x00B
-#define METATILE_RG_General_TallGrass_TreeRight  0x00C
-#define METATILE_RG_General_YellowCaveIndent     0x193
-#define METATILE_RG_General_YellowCaveOpen       0x194
+#define METATILE_RG_General_BlueCaveIndent            0x19B
+#define METATILE_RG_General_BlueCaveOpen              0x19C
+#define METATILE_RG_General_Door                      0x03D
+#define METATILE_RG_General_DoorAlt                   0x03C
+#define METATILE_RG_General_Grass                     0x001
+#define METATILE_RG_General_Grass_ShortTree           0x013
+#define METATILE_RG_General_Grass_TreeLeft            0x00E
+#define METATILE_RG_General_Grass_TreeRight           0x00F
+#define METATILE_RG_General_LongGrass                 0x02C
+#define METATILE_RG_General_LongGrass_Root            0x012
+#define METATILE_RG_General_LongGrass_Root_TreeLeft   0x258
+#define METATILE_RG_General_LongGrass_Root_TreeRight  0x259
+#define METATILE_RG_General_MuddySlope_Frame0         0x22B
+#define METATILE_RG_General_MuddySlope_Frame1         0x22C
+#define METATILE_RG_General_MuddySlope_Frame2         0x22D
+#define METATILE_RG_General_MuddySlope_Frame3         0x22E
+#define METATILE_RG_General_RedCaveIndent             0x18B
+#define METATILE_RG_General_RedCaveOpen               0x18C
+#define METATILE_RG_General_SlidingDoubleDoor         0x15B
+#define METATILE_RG_General_SlidingSingleDoor         0x062
+#define METATILE_RG_General_TallGrass                 0x00D
+#define METATILE_RG_General_TallGrass_ShortTree       0x00A
+#define METATILE_RG_General_TallGrass_TreeLeft        0x00B
+#define METATILE_RG_General_TallGrass_TreeRight       0x00C
+#define METATILE_RG_General_YellowCaveIndent          0x193
+#define METATILE_RG_General_YellowCaveOpen            0x194
 
 // gTileset_RG_PokemonCenter
-#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Normal       0x2D0
-#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition1  0x30A
-#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition2  0x308
-#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Normal           0x2D8
-#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition1      0x312
-#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition2      0x310
-#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Normal           0x2D1
-#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition1      0x30B
-#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition2      0x309
-#define METATILE_RG_PokemonCenter_Escalator_Bottom_Normal               0x2D9
-#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition1          0x313
-#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition2          0x311
-#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Normal          0x2EB
-#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition1     0x31E
-#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition2     0x31C
-#define METATILE_RG_PokemonCenter_Escalator_TopNext_Normal              0x2E3
-#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition1         0x316
-#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition2         0x314
-#define METATILE_RG_PokemonCenter_Escalator_Top_Normal                  0x2E4
-#define METATILE_RG_PokemonCenter_Escalator_Top_Transition1             0x317
-#define METATILE_RG_PokemonCenter_Escalator_Top_Transition2             0x315
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Normal       0x850
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition1  0x88A
+#define METATILE_RG_PokemonCenter_Escalator_BottomNextRail_Transition2  0x888
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Normal           0x858
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition1      0x892
+#define METATILE_RG_PokemonCenter_Escalator_BottomNext_Transition2      0x890
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Normal           0x851
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition1      0x88B
+#define METATILE_RG_PokemonCenter_Escalator_BottomRail_Transition2      0x889
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Normal               0x859
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition1          0x893
+#define METATILE_RG_PokemonCenter_Escalator_Bottom_Transition2          0x891
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Normal          0x86B
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition1     0x89E
+#define METATILE_RG_PokemonCenter_Escalator_TopNextRail_Transition2     0x89C
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Normal              0x863
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition1         0x896
+#define METATILE_RG_PokemonCenter_Escalator_TopNext_Transition2         0x894
+#define METATILE_RG_PokemonCenter_Escalator_Top_Normal                  0x864
+#define METATILE_RG_PokemonCenter_Escalator_Top_Transition1             0x897
+#define METATILE_RG_PokemonCenter_Escalator_Top_Transition2             0x895
 
 // gTileset_RG_SeafoamIslands
-#define METATILE_RG_SeafoamIslands_CrackedIce    0x35A
-#define METATILE_RG_SeafoamIslands_IceHole       0x35B
-#define METATILE_RG_SeafoamIslands_UncrackedIce  0x359
-
-// gTileset_RG_SeviiIslands123
-#define METATILE_RG_SeviiIslands123_Door  0x297
+#define METATILE_RG_SeafoamIslands_CrackedIce    0x8DA
+#define METATILE_RG_SeafoamIslands_IceHole       0x8DB
+#define METATILE_RG_SeafoamIslands_UncrackedIce  0x8D9
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F

@@ -294,7 +294,7 @@
     {
       "type": "hidden_item",
       "x": 40,
-      "y": 28,
+      "y": 29,
       "elevation": 3,
       "item": "ITEM_GREEN_UFO",
       "flag": "FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2",
