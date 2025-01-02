@@ -9,9 +9,9 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("White Herb restores stats when they're lowered")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_LEER].effect == EFFECT_DEFENSE_DOWN);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_LEER) == EFFECT_DEFENSE_DOWN);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_LEER); }
     } SCENE {
@@ -103,8 +103,8 @@ SINGLE_BATTLE_TEST("White Herb restores stats after all hits of a multi hit move
     PARAMETRIZE { species = SPECIES_DUGTRIO_ALOLA; ability = ABILITY_TANGLING_HAIR; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_DUAL_WINGBEAT].strikeCount == 2);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_WHITE_HERB); }
+        ASSUME(GetMoveStrikeCount(MOVE_DUAL_WINGBEAT) == 2);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_WHITE_HERB); }
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_DUAL_WINGBEAT); }
@@ -133,9 +133,9 @@ SINGLE_BATTLE_TEST("White Herb wont have time to activate if it is knocked off o
 
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_THIEF, MOVE_EFFECT_STEAL_ITEM) == TRUE);
-        ASSUME(gMovesInfo[MOVE_KNOCK_OFF].effect == EFFECT_KNOCK_OFF);
-        PLAYER(SPECIES_TECH_SATORI) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
+        PLAYER(SPECIES_SLUGMA) {  Ability(ABILITY_WEAK_ARMOR); Item(ITEM_WHITE_HERB); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {

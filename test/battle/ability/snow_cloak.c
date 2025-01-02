@@ -17,9 +17,9 @@ SINGLE_BATTLE_TEST("Snow Cloak increases evasion during hail")
 {
     PASSES_RANDOMLY(4, 5, RNG_ACCURACY);
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_POUND].accuracy == 100);
-        PLAYER(SPECIES_NORMAL_VIVIT) { Ability(ABILITY_SNOW_CLOAK); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveAccuracy(MOVE_POUND) == 100);
+        PLAYER(SPECIES_GLACEON) { Ability(ABILITY_SNOW_CLOAK); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HAIL); }
         TURN { MOVE(opponent, MOVE_POUND); }

@@ -29,6 +29,7 @@
 #include "main.h"
 #include "menu.h"
 #include "money.h"
+#include "move.h"
 #include "mystery_event_script.h"
 #include "outfit_menu.h"
 #include "palette.h"

@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Make It Rain lowers special attack by one stage")
     s16 damage[2];
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_MAKE_IT_RAIN].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_MAKE_IT_RAIN) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MAKE_IT_RAIN); }
         TURN { MOVE(player, MOVE_MAKE_IT_RAIN); }

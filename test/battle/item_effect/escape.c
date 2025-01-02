@@ -21,9 +21,9 @@ WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle")
 WILD_BATTLE_TEST("Poke Toy lets the player escape from a wild battle even if a move forbid them to")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CHARMING_LOOK].effect == EFFECT_MEAN_LOOK);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_MEAN_LOOK) == EFFECT_MEAN_LOOK);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_CHARMING_LOOK); }
         TURN { USE_ITEM(player, ITEM_POKE_TOY); }

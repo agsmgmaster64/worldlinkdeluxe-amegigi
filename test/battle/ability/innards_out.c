@@ -11,11 +11,11 @@ SINGLE_BATTLE_TEST("Innards Out deal dmg on fainting equal to the amount of dmg 
 
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(hp); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI) { HP(70); SpAttack(1000); }
-        OPPONENT(SPECIES_DEFENSE_SATORI);
-        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
-        ASSUME(gMovesInfo[MOVE_MANA_BURST].category == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { HP(70); SpAttack(1000); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        ASSUME(!IsBattleMoveStatus(MOVE_PSYCHIC));
+        ASSUME(GetMoveCategory(MOVE_PSYCHIC) == DAMAGE_CATEGORY_SPECIAL);
     } WHEN {
         TURN { MOVE(opponent, MOVE_MANA_BURST); SEND_OUT(player, 1); if (hp == 100) { SEND_OUT(opponent, 1); } }
     } SCENE {
@@ -30,10 +30,10 @@ SINGLE_BATTLE_TEST("Innards Out does not trigger after Gastro Acid has been used
 {
     GIVEN {
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI);
-        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
-        ASSUME(gMovesInfo[MOVE_GASTRO_ACID].effect == EFFECT_GASTRO_ACID);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        ASSUME(!IsBattleMoveStatus(MOVE_PSYCHIC));
+        ASSUME(GetMoveEffect(MOVE_GASTRO_ACID) == EFFECT_GASTRO_ACID);
     } WHEN {
         TURN { MOVE(opponent, MOVE_GASTRO_ACID); }
         TURN { MOVE(opponent, MOVE_MANA_BURST); SEND_OUT(player, 1); }
@@ -55,7 +55,7 @@ SINGLE_BATTLE_TEST("Innards Out does not damage Magic Guard Pokemon")
         PLAYER(SPECIES_PYUKUMUKU) { HP(1); Ability(ABILITY_INNARDS_OUT); }
         PLAYER(SPECIES_DEFENSE_SATORI);
         OPPONENT(SPECIES_CLEFABLE) { Ability(ABILITY_MAGIC_GUARD); }
-        ASSUME(!IS_MOVE_STATUS(MOVE_MANA_BURST));
+        ASSUME(!IsBattleMoveStatus(MOVE_PSYCHIC));
     } WHEN {
         TURN { MOVE(opponent, MOVE_MANA_BURST); SEND_OUT(player, 1); }
     } SCENE {

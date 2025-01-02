@@ -4,9 +4,9 @@
 SINGLE_BATTLE_TEST("Oblivious prevents Infatuation")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_ATTRACT].effect == EFFECT_ATTRACT);
-        PLAYER(SPECIES_PLACEHOLDER_LAYLA) { Ability(ABILITY_OBLIVIOUS); Gender(MON_MALE); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Gender(MON_FEMALE); }
+        ASSUME(GetMoveEffect(MOVE_ATTRACT) == EFFECT_ATTRACT);
+        PLAYER(SPECIES_SLOWPOKE) { Ability(ABILITY_OBLIVIOUS); Gender(MON_MALE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_FEMALE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ATTRACT); }
     } SCENE {
@@ -19,9 +19,9 @@ SINGLE_BATTLE_TEST("Oblivious prevents Infatuation")
 SINGLE_BATTLE_TEST("Oblivious prevents Captivate")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CAPTIVATE].effect == EFFECT_CAPTIVATE);
-        PLAYER(SPECIES_PLACEHOLDER_LAYLA) { Ability(ABILITY_OBLIVIOUS); Gender(MON_MALE); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Gender(MON_FEMALE); }
+        ASSUME(GetMoveEffect(MOVE_CAPTIVATE) == EFFECT_CAPTIVATE);
+        PLAYER(SPECIES_SLOWPOKE) { Ability(ABILITY_OBLIVIOUS); Gender(MON_MALE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Gender(MON_FEMALE); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ATTRACT); }
     } SCENE {
@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Oblivious prevents Captivate")
 SINGLE_BATTLE_TEST("Oblivious prevents Taunt")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TAUNT].effect == EFFECT_TAUNT);
+        ASSUME(GetMoveEffect(MOVE_TAUNT) == EFFECT_TAUNT);
         ASSUME(B_OBLIVIOUS_TAUNT >= GEN_6);
         PLAYER(SPECIES_PLACEHOLDER_LAYLA) { Ability(ABILITY_OBLIVIOUS); }
         OPPONENT(SPECIES_CHIBI_YUUGI);

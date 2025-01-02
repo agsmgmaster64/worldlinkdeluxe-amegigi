@@ -112,9 +112,9 @@ SINGLE_BATTLE_TEST("Metronome Item counts charging turn of moves for its attacki
     PARAMETRIZE {item = ITEM_NONE; }
     PARAMETRIZE {item = ITEM_METRONOME; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SOLAR_BEAM].effect == EFFECT_SOLAR_BEAM);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_SOLAR_BEAM) == EFFECT_SOLAR_BEAM);
+        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -134,9 +134,9 @@ SINGLE_BATTLE_TEST("Metronome Item doesn't increase damage per hit of multi-hit 
 {
     s16 damage[3];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_MAGIC_KNIFE].effect == EFFECT_MULTI_HIT);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_METRONOME); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_FURY_ATTACK) == EFFECT_MULTI_HIT);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_METRONOME); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_KNIFE); }
         TURN { MOVE(player, MOVE_MAGIC_KNIFE); }

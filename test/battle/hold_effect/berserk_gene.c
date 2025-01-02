@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Berserk Gene sharply raises attack at the start of a single 
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE, WITH_RNG(RNG_CONFUSION, FALSE)); }
     } SCENE {
@@ -37,11 +37,11 @@ DOUBLE_BATTLE_TEST("Berserk Gene sharply raises attack at the start of a double 
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(playerRight, MOVE_TACKLE, target:opponentLeft, WITH_RNG(RNG_CONFUSION, FALSE)); }
     } SCENE {
@@ -64,10 +64,10 @@ SINGLE_BATTLE_TEST("Berserk Gene activates on switch in", s16 damage)
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_WOBBUFFET) { Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { SWITCH(player, 1); }
         TURN { MOVE(player, MOVE_TACKLE, WITH_RNG(RNG_CONFUSION, FALSE)); }
@@ -91,7 +91,7 @@ SINGLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     PARAMETRIZE { item = ITEM_NONE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_SLOWBRO) { Ability(ABILITY_OWN_TEMPO); Item(item); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -122,7 +122,7 @@ DOUBLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
     PARAMETRIZE { item = ITEM_BERSERK_GENE; positionLeft = TRUE; }
     PARAMETRIZE { item = ITEM_BERSERK_GENE; positionLeft = FALSE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
         if (positionLeft) {
             PLAYER(SPECIES_CHIBI_YOUMU) { Ability(ABILITY_OWN_TEMPO); Item(item); }
             PLAYER(SPECIES_CHIBI_YUUGI);
@@ -156,7 +156,7 @@ DOUBLE_BATTLE_TEST("Berserk Gene does not confuse a Pokemon with Own Tempo but s
 SINGLE_BATTLE_TEST("Berserk Gene does not confuse on Misty Terrain but still raises attack sharply")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_TAPU_FINI) { Ability(ABILITY_MISTY_SURGE); Item(ITEM_BERSERK_GENE); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

@@ -92,9 +92,9 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing boosts moves of the same type to 60 BP
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_ABSORB].power == 20);
-        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_GRASS); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMovePower(MOVE_ABSORB) == 20);
+        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GRASS); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ABSORB, gimmick: tera); }
     } SCENE {
@@ -113,9 +113,9 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_MEGA_DRAIN].power == 40);
-        PLAYER(SPECIES_NORMAL_REISEN_II) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMovePower(MOVE_MEGA_DRAIN) == 40);
+        PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MEGA_DRAIN, gimmick: tera); }
     } SCENE {
@@ -393,10 +393,10 @@ SINGLE_BATTLE_TEST("(TERA) Double Shock does not remove the user's Electric type
 {
     s16 damage[4];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_DOUBLE_SHOCK].effect == EFFECT_FAIL_IF_NOT_ARG_TYPE);
-        PLAYER(SPECIES_ATTACK_NITORI) { TeraType(TYPE_ELECTRIC); }
-        PLAYER(SPECIES_CHIBI_YUUGI)
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_DOUBLE_SHOCK) == EFFECT_FAIL_IF_NOT_ARG_TYPE);
+        PLAYER(SPECIES_PICHU) { TeraType(TYPE_ELECTRIC); }
+        PLAYER(SPECIES_WOBBUFFET)
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_DOUBLE_SHOCK); MOVE(opponent, MOVE_RECOVER); }
         TURN { MOVE(player, MOVE_DOUBLE_SHOCK, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_RECOVER); }
@@ -608,10 +608,10 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar type boosts all moves
 {
     s16 damage[4];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_MEGA_DRAIN].power == 40);
-        ASSUME(gMovesInfo[MOVE_BUBBLE].power == 40);
-        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMovePower(MOVE_MEGA_DRAIN) == 40);
+        ASSUME(GetMovePower(MOVE_BUBBLE) == 40);
+        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MEGA_DRAIN); }
         TURN { MOVE(player, MOVE_MEGA_DRAIN, gimmick: GIMMICK_TERA); }
@@ -688,9 +688,9 @@ SINGLE_BATTLE_TEST("(TERA) Stellar type's one-time boost factors in dynamically-
 {
     s16 damage[4];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_WEATHER_BALL].type == TYPE_NORMAL);
-        PLAYER(SPECIES_CHIBI_SEKIBANKI) { Ability(ABILITY_DRIZZLE); TeraType(TYPE_STELLAR); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_WEATHER_BALL) == TYPE_NORMAL);
+        PLAYER(SPECIES_PELIPPER) { Ability(ABILITY_DRIZZLE); TeraType(TYPE_STELLAR); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_WEATHER_BALL, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_RECOVER); }
         TURN { MOVE(player, MOVE_TAKE_DOWN); MOVE(opponent, MOVE_RECOVER); }
@@ -731,8 +731,8 @@ SINGLE_BATTLE_TEST("(TERA) Terapagos retains the Stellar type boost at all times
     PARAMETRIZE { move = MOVE_TACKLE; }
     PARAMETRIZE { move = MOVE_MACH_PUNCH; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_NORMAL);
-        ASSUME(gMovesInfo[MOVE_MACH_PUNCH].type != TYPE_NORMAL);
+        ASSUME(GetMoveType(MOVE_TACKLE) == TYPE_NORMAL);
+        ASSUME(GetMoveType(MOVE_MACH_PUNCH) != TYPE_NORMAL);
         PLAYER(SPECIES_TERAPAGOS);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

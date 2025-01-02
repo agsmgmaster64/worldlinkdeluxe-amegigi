@@ -3,15 +3,15 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_TERA_BLAST].effect == EFFECT_TERA_BLAST);
+    ASSUME(GetMoveEffect(MOVE_TERA_BLAST) == EFFECT_TERA_BLAST);
 }
 
 SINGLE_BATTLE_TEST("Tera Blast changes from Normal-type to the user's Tera Type")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TERA_BLAST].type == TYPE_NORMAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_DARK); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_TERA_BLAST) == TYPE_NORMAL);
+        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_DARK); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); }
     } SCENE {

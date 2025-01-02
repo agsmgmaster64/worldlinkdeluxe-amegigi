@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_FLING].effect == EFFECT_FLING);
+    ASSUME(GetMoveEffect(MOVE_FLING) == EFFECT_FLING);
 }
 
 SINGLE_BATTLE_TEST("Fling fails if pokemon holds no item")
@@ -38,10 +38,10 @@ SINGLE_BATTLE_TEST("Fling fails if pokemon is under the effects of Embargo or Ma
     PARAMETRIZE {move = MOVE_MAGIC_ROOM; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_EMBARGO].effect == EFFECT_EMBARGO);
-        ASSUME(gMovesInfo[MOVE_MAGIC_ROOM].effect == EFFECT_MAGIC_ROOM);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_RAZOR_CLAW); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_EMBARGO) == EFFECT_EMBARGO);
+        ASSUME(GetMoveEffect(MOVE_MAGIC_ROOM) == EFFECT_MAGIC_ROOM);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RAZOR_CLAW); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, move); }
         TURN { MOVE(player, MOVE_FLING); }
@@ -83,9 +83,9 @@ SINGLE_BATTLE_TEST("Fling fails for pokemon with Klutz ability")
 SINGLE_BATTLE_TEST("Fling's thrown item can be regained with Recycle")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_RECYCLE].effect == EFFECT_RECYCLE);
-        PLAYER(SPECIES_CHIBI_YUUGI) {Item(ITEM_RAZOR_CLAW); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_RECYCLE) == EFFECT_RECYCLE);
+        PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_FLING);}
         TURN { MOVE(player, MOVE_RECYCLE);}
@@ -106,10 +106,10 @@ SINGLE_BATTLE_TEST("Fling's thrown item can be regained with Recycle")
 SINGLE_BATTLE_TEST("Fling - Item is lost even when there is no target")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SELF_DESTRUCT].effect == EFFECT_EXPLOSION);
-        PLAYER(SPECIES_CHIBI_YUUGI) {Item(ITEM_RAZOR_CLAW); Speed(2); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(5); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(5); }
+        ASSUME(GetMoveEffect(MOVE_SELF_DESTRUCT) == EFFECT_EXPLOSION);
+        PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) {Speed(5); }
+        OPPONENT(SPECIES_WOBBUFFET) {Speed(5); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SELF_DESTRUCT); MOVE(player, MOVE_FLING); SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_FLING); }
@@ -131,9 +131,9 @@ SINGLE_BATTLE_TEST("Fling - Item is lost even when there is no target")
 SINGLE_BATTLE_TEST("Fling - Item is lost when target protects itself")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_PROTECT].effect == EFFECT_PROTECT);
-        PLAYER(SPECIES_CHIBI_YUUGI) {Item(ITEM_RAZOR_CLAW); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_PROTECT) == EFFECT_PROTECT);
+        PLAYER(SPECIES_WOBBUFFET) {Item(ITEM_RAZOR_CLAW); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_PROTECT); MOVE(player, MOVE_FLING);}
         TURN { MOVE(player, MOVE_FLING); }
@@ -362,9 +362,9 @@ SINGLE_BATTLE_TEST("Fling - thrown berry's effect activates for the target even 
     PARAMETRIZE { item = ITEM_SALAC_BERRY; effect = HOLD_EFFECT_SPEED_UP; statId = STAT_SPEED; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FLING].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); Attack(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Status1(status1); HP(399); MaxHP(400); MovesWithPP({MOVE_CELEBRATE, 35}); }
+        ASSUME(GetMoveCategory(MOVE_FLING) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WOBBUFFET) { Item(item); Attack(1); }
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(status1); HP(399); MaxHP(400); MovesWithPP({MOVE_CELEBRATE, 35}); }
     } WHEN {
         TURN { MOVE(player, MOVE_FLING); }
     } SCENE {
@@ -441,7 +441,7 @@ SINGLE_BATTLE_TEST("Fling deals damage based on items fling power")
     s16 damage[2];
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CRUNCH].power == 80);
+        ASSUME(GetMovePower(MOVE_CRUNCH) == 80);
         ASSUME(gItemsInfo[ITEM_VENUSAURITE].flingPower == 80);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_VENUSAURITE); }
         OPPONENT(SPECIES_NORMAL_ELLEN);

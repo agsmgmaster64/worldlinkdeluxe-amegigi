@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_CONFIDE].effect == EFFECT_SPECIAL_ATTACK_DOWN);
+    ASSUME(GetMoveEffect(MOVE_CONFIDE) == EFFECT_SPECIAL_ATTACK_DOWN);
 }
 
 SINGLE_BATTLE_TEST("Confide lowers Special Attack", s16 damage)
@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Confide lowers Special Attack", s16 damage)
     PARAMETRIZE { lowerSpecialAttack = FALSE; }
     PARAMETRIZE { lowerSpecialAttack = TRUE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_GUST) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         if (lowerSpecialAttack) TURN { MOVE(player, MOVE_CONFIDE); }
         TURN { MOVE(opponent, MOVE_GUST); }

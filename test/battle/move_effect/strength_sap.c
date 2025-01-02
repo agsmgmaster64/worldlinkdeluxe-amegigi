@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_STRENGTH_SAP].effect == EFFECT_STRENGTH_SAP);
+    ASSUME(GetMoveEffect(MOVE_STRENGTH_SAP) == EFFECT_STRENGTH_SAP);
 }
 
 SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on target's Attack Stat", s16 hp)
@@ -69,10 +69,10 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
     }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_WORK_UP].effect == EFFECT_ATTACK_SPATK_UP);
-        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(50); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Attack(60); }
+        ASSUME(GetMoveEffect(MOVE_WORK_UP) == EFFECT_ATTACK_SPATK_UP);
+        ASSUME(GetMoveEffect(MOVE_GROWL) == EFFECT_ATTACK_DOWN);
+        PLAYER(SPECIES_WOBBUFFET) { HP(50); }
+        OPPONENT(SPECIES_WOBBUFFET) { Attack(60); }
     } WHEN {
         if (statStage > DEFAULT_STAT_STAGE) { // +
             for (j = statStage; j > DEFAULT_STAT_STAGE; j--) {
@@ -117,9 +117,9 @@ SINGLE_BATTLE_TEST("Strength Sap lowers Attack by 1 and restores HP based on tar
 SINGLE_BATTLE_TEST("Strength Sap fails if target is at -6 Atk")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CHARM].effect == EFFECT_ATTACK_DOWN_2);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_CHARM) == EFFECT_ATTACK_DOWN_2);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_CHARM); }
         TURN { MOVE(player, MOVE_CHARM); }

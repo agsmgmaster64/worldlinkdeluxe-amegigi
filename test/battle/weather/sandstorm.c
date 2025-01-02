@@ -23,9 +23,9 @@ SINGLE_BATTLE_TEST("Sandstorm multiplies the special defense of Rock-types by 1.
     PARAMETRIZE { move = MOVE_SANDSTORM; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SWIFT].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) ;
-        OPPONENT(SPECIES_CHIBI_RAIKO);
+        ASSUME(GetMoveCategory(MOVE_SWIFT) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET) ;
+        OPPONENT(SPECIES_NOSEPASS);
     } WHEN {
         TURN { MOVE(opponent, move); }
         TURN { MOVE(player, MOVE_SWIFT); }

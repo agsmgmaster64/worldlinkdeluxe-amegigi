@@ -108,12 +108,12 @@ SINGLE_BATTLE_TEST("Abilities replaced by Mega Evolution do not affect turn orde
 DOUBLE_BATTLE_TEST("Mega Evolution happens after switching, but before Focus Punch-like Moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FOCUS_PUNCH].effect == EFFECT_FOCUS_PUNCH);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_ATTACK_REIMU) { Item(ITEM_VENUSAURITE); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_FOCUS_PUNCH) == EFFECT_FOCUS_PUNCH);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_VENUSAUR) { Item(ITEM_VENUSAURITE); }
+        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { SWITCH(opponentRight, 2); MOVE(playerRight, MOVE_FOCUS_PUNCH, gimmick: GIMMICK_MEGA, target: opponentLeft); MOVE(playerLeft, MOVE_FOCUS_PUNCH, target: opponentLeft); }
         TURN {}
@@ -157,7 +157,7 @@ SINGLE_BATTLE_TEST("Regular Mega Evolution and Fervent Wish Mega Evolution can h
 SINGLE_BATTLE_TEST("Mega Evolved Pokemon do not change abilities after fainting")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CRUNCH].makesContact == TRUE);
+        ASSUME(MoveMakesContact(MOVE_CRUNCH) == TRUE);
         ASSUME(gSpeciesInfo[SPECIES_GARCHOMP_MEGA].abilities[0] != ABILITY_ROUGH_SKIN);
         ASSUME(gSpeciesInfo[SPECIES_GARCHOMP_MEGA].abilities[1] != ABILITY_ROUGH_SKIN);
         ASSUME(gSpeciesInfo[SPECIES_GARCHOMP_MEGA].abilities[2] != ABILITY_ROUGH_SKIN);

@@ -1,6 +1,20 @@
 #include "global.h"
 #include "test/battle.h"
 
+SINGLE_BATTLE_TEST("Crit Chance: Side effected by Lucky Chant blocks critical hits")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_LUCKY_CHANT) == EFFECT_LUCKY_CHANT);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_LUCKY_CHANT); MOVE(player, MOVE_TACKLE, criticalHit: TRUE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        NOT MESSAGE("A critical hit!");
+    }
+}
+
 SINGLE_BATTLE_TEST("Crit Chance: Battle Armor and Shell Armor block critical hits")
 {
     u32 species;
@@ -29,8 +43,8 @@ SINGLE_BATTLE_TEST("Crit Chance: Flag ignoresTargetAbility ignores Battle Armor 
     PARAMETRIZE { species = SPECIES_NORMAL_KEINE; ability = ABILITY_GUARD_ARMOR; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SUNSTEEL_STRIKE].ignoresTargetAbility == TRUE);
-        PLAYER(SPECIES_DEFENSE_SATORI);
+        ASSUME(MoveIgnoresTargetAbility(MOVE_SUNSTEEL_STRIKE));
+        PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(player, MOVE_SUNSTEEL_STRIKE, criticalHit: TRUE); }
@@ -86,9 +100,9 @@ SINGLE_BATTLE_TEST("Crit Chance: Mold Breaker, Teravolt and Turboblaze ignore Ba
 SINGLE_BATTLE_TEST("Crit Chance: User effected by Laser Focus causes moves to result in a critical hit")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_LASER_FOCUS].effect == EFFECT_LASER_FOCUS);
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(GetMoveEffect(MOVE_LASER_FOCUS) == EFFECT_LASER_FOCUS);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_LASER_FOCUS); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -117,9 +131,9 @@ SINGLE_BATTLE_TEST("Crit Chance: Focus Energy increases the user's critical hit 
     PASSES_RANDOMLY(1, 2, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        ASSUME(gMovesInfo[MOVE_FOCUS_ENERGY].effect == EFFECT_FOCUS_ENERGY);
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(GetMoveEffect(MOVE_FOCUS_ENERGY) == EFFECT_FOCUS_ENERGY);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_FOCUS_ENERGY); }
         TURN { MOVE(player, MOVE_TACKLE); }
@@ -135,9 +149,9 @@ SINGLE_BATTLE_TEST("Crit Chance: High crit rate increases the critical hit ratio
     PASSES_RANDOMLY(1, 8, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(GetMoveCriticalHitStage(MOVE_SLASH) == 1);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SLASH); }
     } SCENE {
@@ -181,7 +195,7 @@ SINGLE_BATTLE_TEST("Crit Chance: High crit rate, Super Luck and Scope Lens cause
 {
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
+        ASSUME(GetMoveCriticalHitStage(MOVE_SLASH) == 1);
         ASSUME(gItemsInfo[ITEM_SCOPE_LENS].holdEffect == HOLD_EFFECT_SCOPE_LENS);
         PLAYER(SPECIES_NORMAL_TENSHI) { Ability(ABILITY_SUPER_LUCK); Item(ITEM_SCOPE_LENS); };
         OPPONENT(SPECIES_DEFENSE_SATORI);
@@ -243,10 +257,10 @@ SINGLE_BATTLE_TEST("Crit Chance: Focus Energy increases critical hit ratio by tw
     PASSES_RANDOMLY(8, 8, RNG_CRITICAL_HIT);
     GIVEN {
         ASSUME(B_CRIT_CHANCE >= GEN_7);
-        ASSUME(gMovesInfo[MOVE_SLASH].criticalHitStage == 1);
-        ASSUME(gMovesInfo[MOVE_FOCUS_ENERGY].effect == EFFECT_FOCUS_ENERGY);
-        PLAYER(SPECIES_DEFENSE_SATORI);
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(GetMoveCriticalHitStage(MOVE_SLASH) == 1);
+        ASSUME(GetMoveEffect(MOVE_FOCUS_ENERGY) == EFFECT_FOCUS_ENERGY);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_FOCUS_ENERGY); }
         TURN { MOVE(player, MOVE_SLASH); }

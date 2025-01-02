@@ -17,9 +17,9 @@ SINGLE_BATTLE_TEST("Freeze has a 20% chance of being thawed")
 SINGLE_BATTLE_TEST("Freeze is thawed by opponent's Fire-type attacks")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_EMBER].type == TYPE_FIRE);
-        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FREEZE); }
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);
+        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_FREEZE); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_EMBER); MOVE(player, MOVE_CELEBRATE); }
     } SCENE {
@@ -32,9 +32,9 @@ SINGLE_BATTLE_TEST("Freeze is thawed by opponent's Fire-type attacks")
 SINGLE_BATTLE_TEST("Freeze is thawed by user's Flame Wheel")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FLAME_WHEEL].thawsUser);
-        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_FREEZE); }
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        ASSUME(MoveThawsUser(MOVE_FLAME_WHEEL));
+        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_FREEZE); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_FLAME_WHEEL); }
     } SCENE {

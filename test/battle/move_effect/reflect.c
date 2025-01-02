@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_REFLECT].effect == EFFECT_REFLECT);
+    ASSUME(GetMoveEffect(MOVE_REFLECT) == EFFECT_REFLECT);
 }
 
 SINGLE_BATTLE_TEST("Reflect reduces physical damage", s16 damage)
@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Reflect reduces physical damage", s16 damage)
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     PARAMETRIZE { move = MOVE_REFLECT; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, move); MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
@@ -30,9 +30,9 @@ SINGLE_BATTLE_TEST("Reflect applies for 5 turns")
 {
     s16 damage[6];
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_REFLECT); MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_TACKLE); }

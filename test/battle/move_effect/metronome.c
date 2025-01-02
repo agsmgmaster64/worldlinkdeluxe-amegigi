@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_METRONOME].effect == EFFECT_METRONOME);
+    ASSUME(GetMoveEffect(MOVE_METRONOME) == EFFECT_METRONOME);
 }
 
 SINGLE_BATTLE_TEST("Metronome picks a random move")
@@ -25,11 +25,11 @@ SINGLE_BATTLE_TEST("Metronome picks a random move")
 SINGLE_BATTLE_TEST("Metronome's called powder move fails against Grass Types")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_POISON_POWDER].powderMove);
-        ASSUME(gSpeciesInfo[SPECIES_NORMAL_TEWI].types[0] == TYPE_NATURE);
-        ASSUME(gMovesInfo[MOVE_POISON_POWDER].effect == EFFECT_POISON);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_TEWI);
+        ASSUME(IsPowderMove(MOVE_POISON_POWDER));
+        ASSUME(gSpeciesInfo[SPECIES_TANGELA].types[0] == TYPE_GRASS);
+        ASSUME(GetMoveEffect(MOVE_POISON_POWDER) == EFFECT_POISON);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_TANGELA);
     } WHEN {
         TURN { MOVE(player, MOVE_METRONOME, WITH_RNG(RNG_METRONOME, MOVE_POISON_POWDER)); }
     } SCENE {
@@ -45,9 +45,9 @@ SINGLE_BATTLE_TEST("Metronome's called powder move fails against Grass Types")
 SINGLE_BATTLE_TEST("Metronome's called multi-hit move hits multiple times")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_ROCK_BLAST].effect == EFFECT_MULTI_HIT);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_ROCK_BLAST) == EFFECT_MULTI_HIT);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_METRONOME, WITH_RNG(RNG_METRONOME, MOVE_ROCK_BLAST)); }
     } SCENE {

@@ -5193,7 +5193,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar3, moves_x, moves_y + 17);
 
     //Draw move type icon
-    SetTypeIconPosAndPal(gMovesInfo[move].type, moves_x + 146, moves_y + 17, 0);
+    SetTypeIconPosAndPal(GetMoveType(move), moves_x + 146, moves_y + 17, 0);
     SetSpriteInvisibility(1, TRUE);
 
     //Calculate and retrieve correct move from the arrays
@@ -5246,7 +5246,7 @@ static void PrintStatsScreen_Moves_Description(u8 taskId)
     move = sStatsMoves[selected];
 
     //Move description
-    StringCopy(gStringVar4, gMovesInfo[move].description);
+    StringCopy(gStringVar4, GetMoveDescription(move));
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_DESCRIPTION, gStringVar4, moves_x, moves_y);
 }
 
@@ -5271,22 +5271,25 @@ static void PrintStatsScreen_Moves_Bottom(u8 taskId)
     move = sStatsMoves[selected];
 
     //Power
-    if (gMovesInfo[move].power < 2)
+    u32 power = GetMovePower(move);
+    if (power < 2)
         StringCopy(gStringVar1, gText_ThreeDashes);
     else
-        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 3);
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1, moves_x + 30, moves_y);
     //Physical/Special/Status Category
     DestroyCategoryIcon();
     ShowCategoryIcon(GetBattleMoveCategory(move));
     //Accuracy
-    if (gMovesInfo[move].accuracy == 0)
+    u32 accuracy = GetMoveAccuracy(move);
+    if (accuracy == 0)
         StringCopy(gStringVar1, gText_ThreeDashes);
     else
-        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar1, accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 79, moves_y);
     //PP
-    ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    u32 pp = GetMovePP(move);
+    ConvertIntToDecimalStringN(gStringVar1, pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
     PrintStatsScreenTextSmall(WIN_STATS_MOVES_BOTTOM, gStringVar1,  moves_x + 119, moves_y);
 }
 

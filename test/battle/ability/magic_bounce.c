@@ -5,9 +5,9 @@
 SINGLE_BATTLE_TEST("Magic Bounce bounces back status moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
+        ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_TOXIC);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC); }
     } SCENE {
@@ -22,10 +22,10 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back status moves")
 SINGLE_BATTLE_TEST("Magic Bounce bounces back powder moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
-        ASSUME(gMovesInfo[MOVE_STUN_SPORE].effect == EFFECT_PARALYZE);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
+        ASSUME(IsPowderMove(MOVE_STUN_SPORE));
+        ASSUME(GetMoveEffect(MOVE_STUN_SPORE) == EFFECT_PARALYZE);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); }
     } SCENE {
@@ -40,10 +40,10 @@ SINGLE_BATTLE_TEST("Magic Bounce bounces back powder moves")
 SINGLE_BATTLE_TEST("Magic Bounce cannot bounce back powder moves against Grass Types")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_STUN_SPORE].powderMove);
-        ASSUME(gSpeciesInfo[SPECIES_ATTACK_FLANDRE].types[0] == TYPE_NATURE);
-        PLAYER(SPECIES_ATTACK_FLANDRE);
-        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
+        ASSUME(IsPowderMove(MOVE_STUN_SPORE));
+        ASSUME(gSpeciesInfo[SPECIES_ODDISH].types[0] == TYPE_GRASS);
+        PLAYER(SPECIES_ODDISH);
+        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {
         TURN { MOVE(player, MOVE_STUN_SPORE); }
     } SCENE {
@@ -59,12 +59,12 @@ SINGLE_BATTLE_TEST("Magic Bounce cannot bounce back powder moves against Grass T
 DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting both foes at two foes")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_LEER].effect == EFFECT_DEFENSE_DOWN);
-        ASSUME(gMovesInfo[MOVE_LEER].target == MOVE_TARGET_BOTH);
-        PLAYER(SPECIES_SPEED_LILY_BLACK);
-        PLAYER(SPECIES_CHIBI_LUNASA);
-        OPPONENT(SPECIES_SPEED_YAMAME) { Ability(ABILITY_MAGIC_BOUNCE); }
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        ASSUME(GetMoveEffect(MOVE_LEER) == EFFECT_DEFENSE_DOWN);
+        ASSUME(GetMoveTarget(MOVE_LEER) == MOVE_TARGET_BOTH);
+        PLAYER(SPECIES_ABRA);
+        PLAYER(SPECIES_KADABRA);
+        OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_LEER); }
     } SCENE {
@@ -92,7 +92,7 @@ DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting foes field")
                   battlerTwo = SPECIES_ESPEON; abilityBattlerTwo = ABILITY_MAGIC_BOUNCE; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_STEALTH_ROCK].target == MOVE_TARGET_OPPONENTS_FIELD);
+        ASSUME(GetMoveTarget(MOVE_STEALTH_ROCK) == MOVE_TARGET_OPPONENTS_FIELD);
         PLAYER(SPECIES_ABRA);
         PLAYER(SPECIES_KADABRA);
         OPPONENT(battlerOne) { Ability(abilityBattlerOne); }
@@ -118,7 +118,7 @@ DOUBLE_BATTLE_TEST("Magic Bounce bounces back moves hitting foes field")
 SINGLE_BATTLE_TEST("Magic Bounce bounced back status moves can not be bounced back by Magic Bounce")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TOXIC].effect == EFFECT_TOXIC);
+        ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_TOXIC);
         PLAYER(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
         OPPONENT(SPECIES_ESPEON) { Ability(ABILITY_MAGIC_BOUNCE); }
     } WHEN {

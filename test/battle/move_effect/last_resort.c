@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_LAST_RESORT].effect == EFFECT_LAST_RESORT);
+    ASSUME(GetMoveEffect(MOVE_LAST_RESORT) == EFFECT_LAST_RESORT);
 }
 
 SINGLE_BATTLE_TEST("Last Resort always fails if it's the only known move")
@@ -95,9 +95,9 @@ SINGLE_BATTLE_TEST("Last Resort works only when all of the known moves have been
 SINGLE_BATTLE_TEST("Last Resort works with Sleep Talk")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SLEEP_TALK].effect == EFFECT_SLEEP_TALK);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Moves(MOVE_LAST_RESORT, MOVE_SLEEP_TALK); Status1(STATUS1_SLEEP_TURN(3)); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_SLEEP_TALK) == EFFECT_SLEEP_TALK);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_LAST_RESORT, MOVE_SLEEP_TALK); Status1(STATUS1_SLEEP_TURN(3)); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SLEEP_TALK); }
         TURN { MOVE(player, MOVE_SLEEP_TALK); }

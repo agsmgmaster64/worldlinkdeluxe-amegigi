@@ -3,8 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-    ASSUME(gMovesInfo[MOVE_TRI_ATTACK].category == DAMAGE_CATEGORY_SPECIAL);
+    ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+    ASSUME(GetMoveCategory(MOVE_TRI_ATTACK) == DAMAGE_CATEGORY_SPECIAL);
 }
 
 SINGLE_BATTLE_TEST("Download raises Attack if player has lower Def than Sp. Def", s16 damage)
@@ -60,11 +60,11 @@ SINGLE_BATTLE_TEST("Download doesn't activate if target hasn't been sent out yet
     PARAMETRIZE { ability = ABILITY_TRACE; }
     PARAMETRIZE { ability = ABILITY_DOWNLOAD; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_EXPLOSION].effect == EFFECT_EXPLOSION);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(100); }
-        PLAYER(SPECIES_CHIBI_AYA) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { HP(1); Speed(100); }
-        OPPONENT(SPECIES_DEFENSE_ICHIRIN) { Ability(ability); Defense(100); SpDefense(200); Speed(200); }
+        ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); }
+        PLAYER(SPECIES_PORYGON) { Ability(ability); Defense(400); SpDefense(300); Speed(300); Attack(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
+        OPPONENT(SPECIES_PORYGON2) { Ability(ability); Defense(100); SpDefense(200); Speed(200); }
     } WHEN {
         TURN { MOVE(player, MOVE_EXPLOSION); SEND_OUT(player, 1); SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_TRI_ATTACK); }

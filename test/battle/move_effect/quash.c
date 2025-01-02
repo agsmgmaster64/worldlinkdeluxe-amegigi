@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_QUASH].effect == EFFECT_QUASH);
+    ASSUME(GetMoveEffect(MOVE_QUASH) == EFFECT_QUASH);
 }
 
 DOUBLE_BATTLE_TEST("Quash-affected target will move last in the priority bracket")
@@ -27,11 +27,11 @@ DOUBLE_BATTLE_TEST("Quash is not affected by dynamic speed")
 {
     GIVEN {
         ASSUME(B_RECALC_TURN_AFTER_ACTIONS >= GEN_8);
-        ASSUME(gMovesInfo[MOVE_TAILWIND].effect == EFFECT_TAILWIND);
-        PLAYER(SPECIES_ATTACK_SUIKA) { Speed(10); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(30); }
-        OPPONENT(SPECIES_CHIBI_YOSHIKA) { Speed(50); }
-        OPPONENT(SPECIES_NORMAL_KYOUKO) { Speed(40); }
+        ASSUME(GetMoveEffect(MOVE_TAILWIND) == EFFECT_TAILWIND);
+        PLAYER(SPECIES_VOLBEAT) { Speed(10); Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(30); }
+        OPPONENT(SPECIES_TORCHIC) { Speed(50); }
+        OPPONENT(SPECIES_TREECKO) { Speed(40); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_QUASH, target: opponentLeft);
                MOVE(opponentRight, MOVE_TAILWIND);
@@ -113,8 +113,8 @@ DOUBLE_BATTLE_TEST("Quash-affected mon that acted early via After You is not aff
 {
     GIVEN {
         ASSUME(B_RECALC_TURN_AFTER_ACTIONS >= GEN_8);
-        ASSUME(gMovesInfo[MOVE_TAILWIND].effect == EFFECT_TAILWIND);
-        ASSUME(gMovesInfo[MOVE_AFTER_YOU].effect == EFFECT_AFTER_YOU);
+        ASSUME(GetMoveEffect(MOVE_TAILWIND) == EFFECT_TAILWIND);
+        ASSUME(GetMoveEffect(MOVE_AFTER_YOU) == EFFECT_AFTER_YOU);
         PLAYER(SPECIES_VOLBEAT) { Speed(20); Ability(ABILITY_PRANKSTER); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(30); }
         OPPONENT(SPECIES_TORCHIC) { Speed(10); }

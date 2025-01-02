@@ -5,9 +5,9 @@ SINGLE_BATTLE_TEST("Stench has a 10% chance to flinch")
 {
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
-        PLAYER(SPECIES_CHIBI_CHEN) { Ability(ABILITY_JEALOUSY); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMovePower(MOVE_TACKLE) > 0);
+        PLAYER(SPECIES_GRIMER) { Ability(ABILITY_STENCH); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Stench does not stack with King's Rock")
     PASSES_RANDOMLY(1, 10, RNG_STENCH);
     GIVEN {
         ASSUME(gItemsInfo[ITEM_KINGS_ROCK].holdEffect == HOLD_EFFECT_FLINCH);
-        ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
+        ASSUME(GetMovePower(MOVE_TACKLE) > 0);
 
         PLAYER(SPECIES_CHIBI_CHEN) { Ability(ABILITY_JEALOUSY); Item(ITEM_KINGS_ROCK); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
@@ -34,7 +34,7 @@ SINGLE_BATTLE_TEST("Stench does not stack with King's Rock")
 DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
+        ASSUME(GetMovePower(MOVE_TACKLE) > 0);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
         PLAYER(SPECIES_CHIBI_YUUGI);
         PLAYER(SPECIES_NORMAL_KOSUZU);
@@ -58,7 +58,7 @@ DOUBLE_BATTLE_TEST("Stench only triggers if target takes damage")
 DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].power > 0);
+        ASSUME(GetMovePower(MOVE_TACKLE) > 0);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(20); }
         PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(10); }

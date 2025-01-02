@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_JUMP_KICK].effect == EFFECT_RECOIL_IF_MISS);
+    ASSUME(GetMoveEffect(MOVE_JUMP_KICK) == EFFECT_RECOIL_IF_MISS);
 }
 
 SINGLE_BATTLE_TEST("Jump Kick has 50% recoil on miss")
@@ -25,9 +25,9 @@ SINGLE_BATTLE_TEST("Jump Kick has 50% recoil on miss")
 SINGLE_BATTLE_TEST("Jump Kick has 50% recoil on protect")
 {
     GIVEN {
-        ASSUME(!gMovesInfo[MOVE_JUMP_KICK].ignoresProtect);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(!MoveIgnoresProtect(MOVE_JUMP_KICK));
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_PROTECT); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }
     } SCENE {
@@ -64,10 +64,10 @@ SINGLE_BATTLE_TEST("Jump Kick's recoil happens after Spiky Shield damage and Pok
     PARAMETRIZE { hp = maxHp / 8; faintOnSpiky = TRUE; } // Faints after Spiky Shield's recoil
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SPIKY_SHIELD].effect == EFFECT_PROTECT);
-        PLAYER(SPECIES_CHIBI_YUUGI) { HP(hp); MaxHP(maxHp); }
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_SPIKY_SHIELD) == EFFECT_PROTECT);
+        PLAYER(SPECIES_WOBBUFFET) { HP(hp); MaxHP(maxHp); }
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         if (!faintOnJumpKick && !faintOnSpiky) {
             TURN { MOVE(opponent, MOVE_SPIKY_SHIELD); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); }

@@ -42,9 +42,9 @@ DOUBLE_BATTLE_TEST("Frisk triggers for player in a Double Battle after switching
     PARAMETRIZE { target = playerRight; }
 
     GIVEN {
-        ASSUME(!IS_MOVE_STATUS(MOVE_POUND));
-        PLAYER(SPECIES_DEFENSE_SATORI) { HP(1); }
-        PLAYER(SPECIES_DEFENSE_SATORI) { HP(1); }
+        ASSUME(!IsBattleMoveStatus(MOVE_POUND));
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_FURRET) { Ability(ABILITY_FRISK); };
         OPPONENT(SPECIES_WYNAUT) { Item(ITEM_POTION); }
         OPPONENT(SPECIES_WYNAUT);
@@ -65,7 +65,7 @@ DOUBLE_BATTLE_TEST("Frisk triggers for opponent in a Double Battle after switchi
     PARAMETRIZE { target = opponentRight; }
 
     GIVEN {
-        ASSUME(!IS_MOVE_STATUS(MOVE_POUND));
+        ASSUME(!IsBattleMoveStatus(MOVE_POUND));
         PLAYER(SPECIES_WYNAUT) { Item(ITEM_POTION); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_DEFENSE_SATORI) { HP(1); }

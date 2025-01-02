@@ -60,10 +60,10 @@ SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self")
 SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].makesContact);
-        PLAYER(SPECIES_NORMAL_LETTY) { Ability(ABILITY_DAMP); }
-        OPPONENT(SPECIES_CHIBI_WRIGGLE) { Ability(ABILITY_AFTERMATH); HP(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(MoveMakesContact(MOVE_TACKLE));
+        PLAYER(SPECIES_PARAS) { Ability(ABILITY_DAMP); }
+        OPPONENT(SPECIES_VOLTORB) { Ability(ABILITY_AFTERMATH); HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(opponent, 1); }
     } SCENE {

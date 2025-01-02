@@ -4,9 +4,9 @@
 SINGLE_BATTLE_TEST("Population Bomb can hit ten times")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_POPULATION_BOMB].strikeCount == 10);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveStrikeCount(MOVE_POPULATION_BOMB) == 10);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_POPULATION_BOMB); }
     } SCENE {

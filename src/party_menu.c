@@ -2944,7 +2944,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
-            text = gMovesInfo[sFieldMovesInfo[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES].move].name;
+            text = GetMoveName(sFieldMovesInfo[sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES].move);
         else
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 

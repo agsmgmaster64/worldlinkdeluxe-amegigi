@@ -4,9 +4,9 @@
 // These tests cover all 3 effects: Stockpile, Spit up and Swallow.
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_COERCE].effect == EFFECT_STOCKPILE);
-    ASSUME(gMovesInfo[MOVE_SHADOW_DANCE].effect == EFFECT_SWALLOW);
-    ASSUME(gMovesInfo[MOVE_BRAVER].effect == EFFECT_SPIT_UP);
+    ASSUME(GetMoveEffect(MOVE_STOCKPILE) == EFFECT_STOCKPILE);
+    ASSUME(GetMoveEffect(MOVE_SWALLOW) == EFFECT_SWALLOW);
+    ASSUME(GetMoveEffect(MOVE_SPIT_UP) == EFFECT_SPIT_UP);
 }
 
 SINGLE_BATTLE_TEST("Stockpile's count can go up only to 3")
@@ -148,10 +148,10 @@ SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsic
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(2); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_GUST) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
     } WHEN {
         TURN { MOVE(player, move); MOVE(opponent, MOVE_TACKLE); }
         TURN { MOVE(opponent, MOVE_GUST); }
@@ -184,12 +184,12 @@ DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit U
     PARAMETRIZE { count = 3; move = MOVE_BRAVER; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
-        ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
-        ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); HP(399); MaxHP(400); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(3); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
+        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_GUST) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(4); HP(399); MaxHP(400); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(3); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_TACKLE, target: playerLeft); MOVE(opponentRight, MOVE_GUST, target: playerLeft); }
         TURN { MOVE(playerLeft, MOVE_COERCE); }

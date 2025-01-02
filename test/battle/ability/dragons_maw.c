@@ -14,11 +14,11 @@ SINGLE_BATTLE_TEST("Dragon's Maw increases Dragon-type move damage", s16 damage)
     PARAMETRIZE { move = MOVE_DECISION; ability = ABILITY_DRAGONS_MAW; }
 
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].type != TYPE_FAITH);
-        ASSUME(gMovesInfo[MOVE_HEART_BREAK].type == TYPE_FAITH);
-        ASSUME(gMovesInfo[MOVE_DECISION].type == TYPE_FAITH);
-        ASSUME(gMovesInfo[MOVE_HEART_BREAK].category == DAMAGE_CATEGORY_PHYSICAL);
-        ASSUME(gMovesInfo[MOVE_DECISION].category == DAMAGE_CATEGORY_SPECIAL);
+        ASSUME(GetMoveType(MOVE_TACKLE) != TYPE_DRAGON);
+        ASSUME(GetMoveType(MOVE_DRAGON_CLAW) == TYPE_DRAGON);
+        ASSUME(GetMoveType(MOVE_DRAGON_BREATH) == TYPE_DRAGON);
+        ASSUME(GetMoveCategory(MOVE_DRAGON_CLAW) == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_DRAGON_BREATH) == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_REGIDRAGO) { Ability(ability); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

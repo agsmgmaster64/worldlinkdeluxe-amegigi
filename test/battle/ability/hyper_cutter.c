@@ -29,9 +29,9 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate")
 SINGLE_BATTLE_TEST("Hyper Cutter prevents Attack stage reduction from moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
+        ASSUME(GetMoveEffect(MOVE_GROWL) == EFFECT_ATTACK_DOWN);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); }
     } SCENE {
@@ -43,9 +43,9 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents Attack stage reduction from moves")
 SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Attack reduction from burn")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_WILL_O_WISP].effect == EFFECT_WILL_O_WISP);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
+        ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_WILL_O_WISP);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_WILL_O_WISP); }
     } SCENE {
@@ -59,9 +59,9 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Attack reduction from burn")
 SINGLE_BATTLE_TEST("Hyper Cutter is ignored by Mold Breaker")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); }
-        OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
+        ASSUME(GetMoveEffect(MOVE_GROWL) == EFFECT_ATTACK_DOWN);
+        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL); }
     } SCENE {
@@ -97,10 +97,10 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Attack stage reduction from mov
 SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Topsy-Turvy")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
-        ASSUME(gMovesInfo[MOVE_TOPSY_TURVY].effect == EFFECT_TOPSY_TURVY);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
+        ASSUME(GetMoveEffect(MOVE_SWORDS_DANCE) == EFFECT_ATTACK_UP_2);
+        ASSUME(GetMoveEffect(MOVE_TOPSY_TURVY) == EFFECT_TOPSY_TURVY);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SWORDS_DANCE); MOVE(player, MOVE_TOPSY_TURVY); }
     } SCENE {
@@ -116,7 +116,7 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Topsy-Turvy")
 SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Spectral Thief from resetting positive Attack stage changes")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SWORDS_DANCE].effect == EFFECT_ATTACK_UP_2);
+        ASSUME(GetMoveEffect(MOVE_SWORDS_DANCE) == EFFECT_ATTACK_UP_2);
         ASSUME(MoveHasAdditionalEffect(MOVE_SPECTRAL_THIEF, MOVE_EFFECT_SPECTRAL_THIEF));
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
@@ -135,11 +135,11 @@ SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent Spectral Thief from resetting p
 SINGLE_BATTLE_TEST("Hyper Cutter doesn't prevent receiving negative Attack stage changes from Baton Pass")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
-        ASSUME(gMovesInfo[MOVE_BATON_PASS].effect == EFFECT_BATON_PASS);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
+        ASSUME(GetMoveEffect(MOVE_GROWL) == EFFECT_ATTACK_DOWN);
+        ASSUME(GetMoveEffect(MOVE_BATON_PASS) == EFFECT_BATON_PASS);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_KRABBY) { Ability(ABILITY_HYPER_CUTTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_GROWL);
                MOVE(opponent, MOVE_BATON_PASS);

@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_MANA_CHARGE].effect == EFFECT_SPECIAL_ATTACK_UP_3);
+    ASSUME(GetMoveEffect(MOVE_TAIL_GLOW) == EFFECT_SPECIAL_ATTACK_UP_3);
 }
 
 SINGLE_BATTLE_TEST("Tail Glow drastically raises Special Attack", s16 damage)
@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Tail Glow drastically raises Special Attack", s16 damage)
     PARAMETRIZE { raiseSpecialAttack = FALSE; }
     PARAMETRIZE { raiseSpecialAttack = TRUE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GUST].category == DAMAGE_CATEGORY_SPECIAL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveCategory(MOVE_GUST) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         if (raiseSpecialAttack) TURN { MOVE(player, MOVE_MANA_CHARGE); }
         TURN { MOVE(player, MOVE_GUST); }

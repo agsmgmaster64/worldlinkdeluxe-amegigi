@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_ION_DELUGE].effect == EFFECT_ION_DELUGE);
+    ASSUME(GetMoveEffect(MOVE_ION_DELUGE) == EFFECT_ION_DELUGE);
 }
 
 // For some reason SINGLE_BATTLE_TEST didn't catch these two issues.
@@ -51,9 +51,9 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
 SINGLE_BATTLE_TEST("Ion Deluge makes Normal type moves Electric type")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TACKLE].type == TYPE_ILLUSION);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_FLANDRE);
+        ASSUME(GetMoveType(MOVE_TACKLE) == TYPE_NORMAL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_GOLBAT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); MOVE(player, MOVE_TACKLE); }
     } SCENE {

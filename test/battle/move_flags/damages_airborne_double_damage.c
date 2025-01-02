@@ -7,9 +7,9 @@ SINGLE_BATTLE_TEST("Being airborne causes the target to take double damage from 
     PARAMETRIZE { useDive = FALSE; }
     PARAMETRIZE { useDive = TRUE; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_TWISTER].damagesAirborneDoubleDamage);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(2); }
+        ASSUME(MoveDamagesAirborneDoubleDamage(MOVE_TWISTER));
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(2); }
     } WHEN {
         if (useDive)
             TURN { MOVE(opponent, MOVE_FLY); MOVE(player, MOVE_TWISTER); }

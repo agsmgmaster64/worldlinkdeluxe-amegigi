@@ -383,10 +383,10 @@ SINGLE_BATTLE_TEST("Red Card does not activate if attacker's Sheer Force applied
 SINGLE_BATTLE_TEST("Red Card is consumed after dragged out replacement has its Speed lowered by Sticky Web")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_STICKY_WEB].effect == EFFECT_STICKY_WEB);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_NORMAL_KOSUZU) { Moves(MOVE_TACKLE); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_RED_CARD); }
+        ASSUME(GetMoveEffect(MOVE_STICKY_WEB) == EFFECT_STICKY_WEB);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT) { Moves(MOVE_TACKLE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_STICKY_WEB); }
         TURN { MOVE(player, MOVE_TACKLE); }

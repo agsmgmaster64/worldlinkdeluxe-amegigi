@@ -3,8 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gSpeciesInfo[SPECIES_TECH_YAMAME].types[0] == TYPE_DARK);
-    ASSUME(gMovesInfo[MOVE_CONFUSE_RAY].category == DAMAGE_CATEGORY_STATUS);
+    ASSUME(gSpeciesInfo[SPECIES_UMBREON].types[0] == TYPE_DARK);
+    ASSUME(GetMoveCategory(MOVE_CONFUSE_RAY) == DAMAGE_CATEGORY_STATUS);
 }
 
 SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon")
@@ -135,11 +135,11 @@ SINGLE_BATTLE_TEST("Prankster is blocked by Quick Guard in Gen5+")
 DOUBLE_BATTLE_TEST("Prankster-affected moves that target all Pokémon are successful regardless of the presence of Dark-type Pokémon")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_CAPTIVATE].target == MOVE_TARGET_BOTH);
-        PLAYER(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_TECH_YAMAME);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveTarget(MOVE_CAPTIVATE) == MOVE_TARGET_BOTH);
+        PLAYER(SPECIES_ILLUMISE) { Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_UMBREON);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CAPTIVATE); }
     } SCENE {

@@ -3,8 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_GIGATON_HAMMER].cantUseTwice == TRUE);
-    ASSUME(gMovesInfo[MOVE_BLOOD_MOON].cantUseTwice == TRUE);
+    ASSUME(MoveCantBeUsedTwice(MOVE_GIGATON_HAMMER) == TRUE);
+    ASSUME(MoveCantBeUsedTwice(MOVE_BLOOD_MOON) == TRUE);
 }
 
 SINGLE_BATTLE_TEST("Struggle will be used if slow Encore is used on moves with the cantUseTwice flag")
@@ -13,9 +13,9 @@ SINGLE_BATTLE_TEST("Struggle will be used if slow Encore is used on moves with t
     PARAMETRIZE { move = MOVE_GIGATON_HAMMER; }
     PARAMETRIZE { move = MOVE_BLOOD_MOON; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_ENCORE].effect == EFFECT_ENCORE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_ENCORE) == EFFECT_ENCORE);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, move); MOVE(opponent, MOVE_ENCORE); }
         TURN { FORCED_MOVE(player); }
@@ -32,9 +32,9 @@ SINGLE_BATTLE_TEST("Moves with the cantUseTwice flag strike again if fast encore
     PARAMETRIZE { move = MOVE_GIGATON_HAMMER; }
     PARAMETRIZE { move = MOVE_BLOOD_MOON; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_ENCORE].effect == EFFECT_ENCORE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveEffect(MOVE_ENCORE) == EFFECT_ENCORE);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, move); }
         TURN { MOVE(opponent, MOVE_ENCORE); FORCED_MOVE(player); }

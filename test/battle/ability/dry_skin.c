@@ -39,14 +39,14 @@ SINGLE_BATTLE_TEST("Dry Skin increases damage taken from Fire-type moves by 25%"
     PARAMETRIZE { ability = ABILITY_INFECTIOUS; }
     PARAMETRIZE { ability = ABILITY_DRY_SKIN; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_EMBER].type == TYPE_FIRE);
-        ASSUME(gMovesInfo[MOVE_EMBER].power == 40);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LETTY].types[0] == TYPE_HEART);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_LETTY].types[1] == TYPE_NATURE);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] == TYPE_REASON);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] == TYPE_REASON);
-        PLAYER(SPECIES_CHIBI_YUUGI) { SpAttack(71); }
-        OPPONENT(SPECIES_DEFENSE_LETTY) { Ability(ability); SpDefense(165); }
+        ASSUME(GetMoveType(MOVE_EMBER) == TYPE_FIRE);
+        ASSUME(GetMovePower(MOVE_EMBER) == 40);
+        ASSUME(gSpeciesInfo[SPECIES_PARASECT].types[0] == TYPE_BUG);
+        ASSUME(gSpeciesInfo[SPECIES_PARASECT].types[1] == TYPE_GRASS);
+        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_PSYCHIC);
+        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_PSYCHIC);
+        PLAYER(SPECIES_WOBBUFFET) { SpAttack(71); }
+        OPPONENT(SPECIES_PARASECT) { Ability(ability); SpDefense(165); }
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER); }
     } SCENE {
@@ -64,9 +64,9 @@ SINGLE_BATTLE_TEST("Dry Skin increases damage taken from Fire-type moves by 25%"
 SINGLE_BATTLE_TEST("Dry Skin heals 25% when hit by water type moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
-        PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_BUBBLE) == TYPE_WATER);
+        PLAYER(SPECIES_PARASECT) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {
@@ -79,9 +79,9 @@ SINGLE_BATTLE_TEST("Dry Skin heals 25% when hit by water type moves")
 SINGLE_BATTLE_TEST("Dry Skin does not activate if protected")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
-        PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_BUBBLE) == TYPE_WATER);
+        PLAYER(SPECIES_PARASECT) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_PROTECT); MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {
@@ -92,10 +92,10 @@ SINGLE_BATTLE_TEST("Dry Skin does not activate if protected")
 SINGLE_BATTLE_TEST("Dry Skin is only triggered once on multi strike moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_WATER_SHURIKEN].type == TYPE_WATER);
-        ASSUME(gMovesInfo[MOVE_WATER_SHURIKEN].effect == EFFECT_MULTI_HIT);
-        PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_WATER_SHURIKEN) == TYPE_WATER);
+        ASSUME(GetMoveEffect(MOVE_WATER_SHURIKEN) == EFFECT_MULTI_HIT);
+        PLAYER(SPECIES_PARASECT) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_WATER_SHURIKEN); }
     } SCENE {
@@ -111,9 +111,9 @@ SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activat
     PARAMETRIZE { item = ITEM_ABSORB_BULB; }
     PARAMETRIZE { item = ITEM_LUMINOUS_MOSS; }
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_BUBBLE].type == TYPE_WATER);
-        PLAYER(SPECIES_DEFENSE_LETTY) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetMoveType(MOVE_BUBBLE) == TYPE_WATER);
+        PLAYER(SPECIES_PARASECT) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_BUBBLE); }
     } SCENE {
