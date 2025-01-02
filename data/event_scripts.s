@@ -1167,3 +1167,9 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Yogyakarta/scripts.inc"
 	.include "data/maps/Yogyakarta/text.inc"
+
+	.include "data/maps/NorthPlain/scripts.inc"
+	.include "data/maps/NorthPlain/text.inc"
+
+	.include "data/maps/MtMerapi_Exterior/scripts.inc"
+	.include "data/maps/MtMerapi_Exterior/text.inc"

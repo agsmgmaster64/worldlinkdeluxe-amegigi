@@ -5328,6 +5328,30 @@
       "secondary_tileset": "gTileset_RG_SilphCo",
       "border_filepath": "data/layouts/MauvilleCity_GameCornerBasement/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_GameCornerBasement/map.bin"
+    },
+    {
+      "id": "LAYOUT_NORTH_PLAIN",
+      "name": "NorthPlain_Layout",
+      "width": 24,
+      "height": 100,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/NorthPlain/border.bin",
+      "blockdata_filepath": "data/layouts/NorthPlain/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_MERAPI_EXTERIOR",
+      "name": "MtMerapi_Exterior_Layout",
+      "width": 52,
+      "height": 62,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/MtMerapi_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/MtMerapi_Exterior/map.bin"
     }
   ]
 }

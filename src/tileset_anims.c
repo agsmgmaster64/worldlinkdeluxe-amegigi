@@ -813,7 +813,7 @@ static void QueueAnimTiles_RG_Building_TVTurnedOn(u16 timer)
 static void QueueAnimTiles_RG_General_Water_Current_LandWatersEdge(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(sTilesetAnims_RG_General_Water_Current_LandWatersEdge);
-    AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_Water_Current_LandWatersEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(416)), 60 * TILE_SIZE_4BPP);
+    AppendTilesetAnimToBuffer(sTilesetAnims_RG_General_Water_Current_LandWatersEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(416)), 56 * TILE_SIZE_4BPP);
 }
 
 /*static void QueueAnimTiles_RG_General_SandWatersEdge(u16 timer)
