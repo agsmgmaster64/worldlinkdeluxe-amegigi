@@ -1782,11 +1782,11 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
     switch (typeEffectiveness)
     {
     case COLOR_SUPER_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
+        if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, superEffectiveIcon);
         break;
     case COLOR_NOT_VERY_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
+        if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, notVeryEffectiveIcon);
         break;
     case COLOR_IMMUNE:
@@ -1795,7 +1795,7 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
         break;
     default:
     case COLOR_EFFECTIVE:
-        if (!IS_MOVE_STATUS(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
+        if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]) && ShouldShowTypeEffectiveness(targetId))
             StringCopy(txtPtr, effectiveIcon);
         break;
     }

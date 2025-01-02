@@ -6790,7 +6790,7 @@ static void AnimTask_AllySwitchDataSwap(u8 taskId)
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
     {
         u16 ability = GetBattlerAbility(i);
-        if (gMovesInfo[gChosenMoveByBattler[i]].effect == EFFECT_SNIPE_SHOT || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
+        if (GetMoveEffect(gChosenMoveByBattler[i]) == EFFECT_SNIPE_SHOT || ability == ABILITY_PROPELLER_TAIL || ability == ABILITY_STALWART)
             gBattleStruct->moveTarget[i] ^= BIT_FLANK;
     }
 

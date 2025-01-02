@@ -24,6 +24,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "money.h"
+#include "move.h"
 #include "overworld.h"
 #include "outfit_menu.h"
 #include "palette.h"
@@ -1341,7 +1342,7 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
     if (IsMartTypeItem(sMartInfo.martType))
         return ItemId_GetDescription(sMartInfo.itemList[id]);
     else if (IsMartTypeMove(sMartInfo.martType))
-        return gMovesInfo[sMartInfo.itemList[id]].description;
+        return GetMoveDescription(sMartInfo.itemList[id]);
     #ifdef MUDSKIP_OUTFIT_SYSTEM
     else if (IsMartTypeOutfit(sMartInfo.martType))
         return gOutfits[sMartInfo.itemList[id]].desc;
@@ -1513,7 +1514,7 @@ static void BuyMenuInitWindows(void)
     else if (IsMartTypeMove(sMartInfo.martType))
     {
         u32 move = sMartInfo.itemList[0];
-        BuyMenuPrint(WIN_MULTI, gTypesInfo[gMovesInfo[move].type].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
+        BuyMenuPrint(WIN_MULTI, gTypesInfo[GetMoveType(move)].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
         PrintMoveStatsLocal(WIN_MULTI, 0, 4*8, 84, COLORID_NORMAL, move);
         PrintMoneyLocal(WIN_MULTI, 41, 2*8, price, 84, COLORID_NORMAL, FALSE);
     }
@@ -1631,15 +1632,15 @@ static void PrintMoveStatsLocal(u8 windowId, u8 x, u8 y, u8 width, u8 colorIdx, 
 {
     u8 *txtPtr;
 
-    if (gMovesInfo[move].power != 0)
-        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    if (GetMovePower(move))
+        ConvertIntToDecimalStringN(gStringVar1, GetMovePower(move), STR_CONV_MODE_RIGHT_ALIGN, 3);
     else
         StringCopy(gStringVar1, sText_MoveStatsNone);
-    if (gMovesInfo[move].accuracy != 0)
-        ConvertIntToDecimalStringN(gStringVar2, gMovesInfo[move].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    if (GetMoveAccuracy(move))
+        ConvertIntToDecimalStringN(gStringVar2, GetMoveAccuracy(move), STR_CONV_MODE_RIGHT_ALIGN, 3);
     else
         StringCopy(gStringVar2, sText_MoveStatsNone);
-    ConvertIntToDecimalStringN(gStringVar3, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+    ConvertIntToDecimalStringN(gStringVar3, GetMovePP(move), STR_CONV_MODE_RIGHT_ALIGN, 2);
 
     txtPtr = gStringVar4;
 
@@ -1714,7 +1715,7 @@ static void UpdateItemData(void)
         else if (IsMartTypeMove(sMartInfo.martType))
         {
             u32 move = item;
-            BuyMenuPrint(WIN_MULTI, gTypesInfo[gMovesInfo[move].type].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
+            BuyMenuPrint(WIN_MULTI, gTypesInfo[GetMoveType(move)].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
             PrintMoveStatsLocal(WIN_MULTI, 0, 4*8, 84, COLORID_NORMAL, move);
             PrintMoneyLocal(WIN_MULTI, 41, 2*8, BuyMenuGetItemPrice(i), 84, COLORID_NORMAL, FALSE);
         }

@@ -128,6 +128,10 @@ struct MoveInfo
     // primary/secondary effects
     const struct AdditionalEffect *additionalEffects;
 
+    // price for move tutor shops
+    u16 price;
+    u16 bpPrice;
+
     // contest parameters
     u8 contestEffect;
     u8 contestCategory:3;
@@ -497,6 +501,16 @@ static inline u32 GetMoveMaxEffect(u32 moveId)
 static inline const struct AdditionalEffect *GetMoveAdditionalEffectById(u32 moveId, u32 effect)
 {
     return &gMovesInfo[SanitizeMoveId(moveId)].additionalEffects[effect];
+}
+
+static inline u32 GetMovePrice(u32 moveId)
+{
+    return gMovesInfo[moveId].price;
+}
+
+static inline u32 GetMoveBpPrice(u32 moveId)
+{
+    return gMovesInfo[moveId].bpPrice;
 }
 
 static inline u32 GetMoveContestEffect(u32 moveId)

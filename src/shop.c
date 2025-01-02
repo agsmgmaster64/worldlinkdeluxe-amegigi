@@ -785,7 +785,6 @@ static void BuyMenuSetListEntry(struct ListMenuItem *menuItem, u16 item, u8 *nam
 static void MoveTutorLoadMoveInfo(u32 item)
 {
     s32 x;
-    const struct MoveInfo *move;
     u8 buffer[32];
     const u8 *str;
     extern const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES];
@@ -807,14 +806,14 @@ static void MoveTutorLoadMoveInfo(u32 item)
         return;
     }
 
-    move = &gMovesInfo[item];
-    str = gTypesInfo[move->type].name;
+    u32 moveType = GetMoveType(item);
+    str = gTypesInfo[moveType].name;
     x = GetStringRightAlignXOffset(FONT_NARROW, str, 0);
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL); // adds Type name
 
-    str = gTypesInfo[move->type].name;
+    str = gTypesInfo[moveType].name;
     x = GetStringWidth(FONT_NARROW, str, 0) + GetStringRightAlignXOffset(FONT_NARROW, str, 0);
-    switch (move->category)
+    switch (GetMoveCategory(item))
     {
         case DAMAGE_CATEGORY_PHYSICAL:
             //str = gText_TutorPhysical;
@@ -829,34 +828,36 @@ static void MoveTutorLoadMoveInfo(u32 item)
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL); // adds Physical/Special/Status text
 
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPP, 0);
-    ConvertIntToDecimalStringN(buffer, move->pp, STR_CONV_MODE_LEFT_ALIGN, 2);
+    ConvertIntToDecimalStringN(buffer, GetMovePP(item), STR_CONV_MODE_LEFT_ALIGN, 2);
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL); // adds PP value
 
-    if (move->power < 2)
+    u32 movePower = GetMovePower(item);
+    if (movePower < 2)
     {
         str = gText_ThreeDashes;
     }
     else
     {
-        ConvertIntToDecimalStringN(buffer, move->power, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(buffer, movePower, STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPower, 0);
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL); // adds Power value
 
-    if (move->accuracy == 0)
+    u32 moveAccuracy = GetMoveAccuracy(item);
+    if (moveAccuracy == 0)
     {
         str = gText_ThreeDashes;
     }
     else
     {  
-        ConvertIntToDecimalStringN(buffer, move->accuracy, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(buffer, moveAccuracy, STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerAccuracy, 0);
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL); // adds Accuracy value
 
-    str = gMovesInfo[item].description;
+    str = GetMoveDescription(item);
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 65, 0, NULL);
 }
 
@@ -886,9 +887,9 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
             description = ItemId_GetDescription(item);
         else if (IsMartTypeMove(sMartInfo.martType))
         {
-            FormatTextByWidth(gStringVar3, 101, FONT_NARROW, gMovesInfo[item].description, GetFontAttribute(FONT_NARROW, FONTATTR_LETTER_SPACING));
+            FormatTextByWidth(gStringVar3, 101, FONT_NARROW, GetMoveDescription(item), GetFontAttribute(FONT_NARROW, FONTATTR_LETTER_SPACING));
             if (sNarrowerText == TRUE)
-                FormatTextByWidth(gStringVar3, 101, FONT_NARROWER, gMovesInfo[item].description, GetFontAttribute(FONT_NARROWER, FONTATTR_LETTER_SPACING));
+                FormatTextByWidth(gStringVar3, 101, FONT_NARROWER, GetMoveDescription(item), GetFontAttribute(FONT_NARROWER, FONTATTR_LETTER_SPACING));
             description = gStringVar3;
         }
         else if (IsMartTypeOutfit(sMartInfo.martType))
