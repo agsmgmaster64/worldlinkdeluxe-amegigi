@@ -57,6 +57,7 @@ static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
 static void ResetOutfitData(void);
+static void ResetDexNav(void);
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
 EWRAM_DATA bool8 gEnableContestDebugging = FALSE;
@@ -234,10 +235,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    memset(gSaveBlock1Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock1Ptr->dexNavSearchLevels));
-#endif
-    gSaveBlock1Ptr->dexNavChain = 0;
+    ResetDexNav();
     ResetItemFlags();
     QuestMenu_ResetMenuSaveData();
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
@@ -262,4 +260,12 @@ static void ResetItemFlags(void)
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
     memset(&gSaveBlock3Ptr->itemFlags, 0, sizeof(gSaveBlock3Ptr->itemFlags));
 #endif
+}
+
+static void ResetDexNav(void)
+{
+#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+    memset(gSaveBlock1Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock1Ptr->dexNavSearchLevels));
+#endif
+    gSaveBlock1Ptr->dexNavChain = 0;
 }

@@ -70,5 +70,4 @@ bool8 DiveFieldEffect_Init(struct Task *);
 bool8 DiveFieldEffect_TryWarp(struct Task *);
 // End qol_field_moves
 
-
 #endif // GUARD_FIELD_EFFECTS_H

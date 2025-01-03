@@ -263,7 +263,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         switch (gSaveBlock2Ptr->optionsRButtonMode)
         {
         case OPTIONS_R_BUTTON_MODE_DEXNAV_SEARCH:
-            if (TryStartDexnavSearch())
+            if (TryStartDexNavSearch())
                 return TRUE;
             break;
         case OPTIONS_R_BUTTON_MODE_BIKE_SWITCH:
