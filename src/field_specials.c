@@ -18,6 +18,7 @@
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "frontier_util.h"
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item_icon.h"
@@ -2889,7 +2890,7 @@ void UpdateBattlePointsWindow(void)
 {
     u8 string[32];
     u32 x;
-    StringCopy(ConvertIntToDecimalStringN(string, gSaveBlock2Ptr->frontier.battlePoints, STR_CONV_MODE_RIGHT_ALIGN, 4), gText_BP);
+    StringCopy(ConvertIntToDecimalStringN(string, GetBattlePoints(), STR_CONV_MODE_RIGHT_ALIGN, 4), gText_BP);
     x = GetStringRightAlignXOffset(FONT_NORMAL, string, 48);
     AddTextPrinterParameterized(sBattlePointsWindowId, FONT_NORMAL, string, x, 1, 0, NULL);
 }
@@ -2921,23 +2922,17 @@ void CloseBattlePointsWindow(void)
 
 void TakeFrontierBattlePoints(void)
 {
-    if (gSaveBlock2Ptr->frontier.battlePoints < gSpecialVar_0x8004)
-        gSaveBlock2Ptr->frontier.battlePoints = 0;
-    else
-        gSaveBlock2Ptr->frontier.battlePoints -= gSpecialVar_0x8004;
+    RemoveBattlePoints(gSpecialVar_0x8004);
 }
 
 void GiveFrontierBattlePoints(void)
 {
-    if (gSaveBlock2Ptr->frontier.battlePoints + gSpecialVar_0x8004 > MAX_BATTLE_FRONTIER_POINTS)
-        gSaveBlock2Ptr->frontier.battlePoints = MAX_BATTLE_FRONTIER_POINTS;
-    else
-        gSaveBlock2Ptr->frontier.battlePoints = gSaveBlock2Ptr->frontier.battlePoints + gSpecialVar_0x8004;
+    AddBattlePoints(gSpecialVar_0x8004);
 }
 
 u16 GetFrontierBattlePoints(void)
 {
-    return gSaveBlock2Ptr->frontier.battlePoints;
+    return GetBattlePoints();
 }
 
 void ShowFrontierExchangeCornerItemIconWindow(void)

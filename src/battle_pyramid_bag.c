@@ -803,7 +803,7 @@ static void MovePyramidBagItemSlotInList(u8 from, u8 to)
     }
 }
 
-static void CompactItems(void)
+void CompactItemsInPyramidBag(void)
 {
     u8 i, j;
     u16 *itemIds = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
@@ -836,7 +836,7 @@ void UpdatePyramidBagList(void)
     u16 i;
     u16 *itemIds = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
 
-    CompactItems();
+    CompactItemsInPyramidBag();
     gPyramidBagMenu->listMenuCount = 0;
     for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
     {

@@ -1902,10 +1902,8 @@ static void GiveBattlePoints(void)
     points = sBattlePointAwards[facility][battleMode][challengeNum];
     if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
         points += 10;
-    gSaveBlock2Ptr->frontier.battlePoints += points;
+    AddBattlePoints(points);
     ConvertIntToDecimalStringN(gStringVar1, points, STR_CONV_MODE_LEFT_ALIGN, 2);
-    if (gSaveBlock2Ptr->frontier.battlePoints > MAX_BATTLE_FRONTIER_POINTS)
-        gSaveBlock2Ptr->frontier.battlePoints = MAX_BATTLE_FRONTIER_POINTS;
 
     points = gSaveBlock2Ptr->frontier.cardBattlePoints;
     points += sBattlePointAwards[facility][battleMode][challengeNum];
@@ -1947,6 +1945,28 @@ bool8 RemoveBattlePoints(u16 toSub)
         return TRUE;
     }
     return FALSE;
+}
+
+bool8 AddBattlePoints(u16 toAdd)
+{
+    u16 newAmount;
+    u16 ownedBp = GetBattlePoints();
+    if (ownedBp >= MAX_BATTLE_FRONTIER_POINTS)
+        return FALSE;
+    // check overflow, can't have less coins than previously
+    if (ownedBp > ownedBp + toAdd)
+    {
+        newAmount = MAX_BATTLE_FRONTIER_POINTS;
+    }
+    else
+    {
+        ownedBp += toAdd;
+        if (ownedBp > MAX_BATTLE_FRONTIER_POINTS)
+            ownedBp = MAX_BATTLE_FRONTIER_POINTS;
+        newAmount = ownedBp;
+    }
+    SetBattlePoints(newAmount);
+    return TRUE;
 }
 
 static void GetFacilitySymbolCount(void)

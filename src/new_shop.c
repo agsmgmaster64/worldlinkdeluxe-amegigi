@@ -1632,12 +1632,15 @@ static void PrintMoveStatsLocal(u8 windowId, u8 x, u8 y, u8 width, u8 colorIdx, 
 {
     u8 *txtPtr;
 
-    if (GetMovePower(move))
-        ConvertIntToDecimalStringN(gStringVar1, GetMovePower(move), STR_CONV_MODE_RIGHT_ALIGN, 3);
+    u8 power = GetMovePower(move);
+    if (power)
+        ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_RIGHT_ALIGN, 3);
     else
         StringCopy(gStringVar1, sText_MoveStatsNone);
-    if (GetMoveAccuracy(move))
-        ConvertIntToDecimalStringN(gStringVar2, GetMoveAccuracy(move), STR_CONV_MODE_RIGHT_ALIGN, 3);
+
+    u8 accuracy = GetMoveAccuracy(move);
+    if (accuracy)
+        ConvertIntToDecimalStringN(gStringVar2, accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
     else
         StringCopy(gStringVar2, sText_MoveStatsNone);
     ConvertIntToDecimalStringN(gStringVar3, GetMovePP(move), STR_CONV_MODE_RIGHT_ALIGN, 2);

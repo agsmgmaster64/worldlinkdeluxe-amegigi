@@ -6,6 +6,8 @@
 #include "battle_dome.h"
 #include "battle_interface.h"
 #include "battle_message.h"
+#include "battle_pyramid.h"
+#include "battle_pyramid_bag.h"
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "battle_util.h"
@@ -14,6 +16,7 @@
 #include "bg.h"
 #include "data.h"
 #include "dexnav.h"
+#include "event_data.h"
 #include "item.h"
 #include "item_menu.h"
 #include "link.h"
@@ -210,44 +213,93 @@ static u16 GetPrevBall(u16 ballId)
 {
     u16 ballPrev;
     s32 i, j;
-    CompactItemsInBagPocket(&gBagPockets[BALLS_POCKET]);
-    for (i = 0; i < gBagPockets[BALLS_POCKET].capacity; i++)
+    if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
     {
-        if (ballId == gBagPockets[BALLS_POCKET].itemSlots[i].itemId)
+        u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
+        CompactItemsInPyramidBag();
+        ballPrev = ITEM_NONE;
+        for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
         {
-            if (i <= 0)
+            if (ballId == items[i])
             {
-                for (j = gBagPockets[BALLS_POCKET].capacity - 1; j >= 0; j--)
+                if (i <= 0)
                 {
-                    ballPrev = gBagPockets[BALLS_POCKET].itemSlots[j].itemId;
-                    if (ballPrev != ITEM_NONE)
-                        return ballPrev;
+                    for (j = PYRAMID_BAG_ITEMS_COUNT - 1; j >= 0; j--)
+                    {
+                        if (ItemId_GetPocket(items[j]) == POCKET_POKE_BALLS)
+                            return items[j];
+                    }
                 }
+                i--;
+                break;
             }
-            i--;
-            break;
         }
+
+        return items[i];
     }
-    return gBagPockets[BALLS_POCKET].itemSlots[i].itemId;
+    else
+    {
+        struct BagPocket *ballPocket = &gBagPockets[BALLS_POCKET];
+        CompactItemsInBagPocket(ballPocket);
+        for (i = 0; i < ballPocket->capacity; i++)
+        {
+            if (ballId == ballPocket->itemSlots[i].itemId)
+            {
+                if (i <= 0)
+                {
+                    for (j = ballPocket->capacity - 1; j >= 0; j--)
+                    {
+                        ballPrev = ballPocket->itemSlots[j].itemId;
+                        if (ballPrev != ITEM_NONE)
+                            return ballPrev;
+                    }
+                }
+                i--;
+                break;
+            }
+        }
+        return ballPocket->itemSlots[i].itemId;
+    }
 }
 
 static u32 GetNextBall(u32 ballId)
 {
     u32 ballNext = ITEM_NONE;
     s32 i;
-    CompactItemsInBagPocket(&gBagPockets[BALLS_POCKET]);
-    for (i = 1; i < gBagPockets[BALLS_POCKET].capacity; i++)
+    if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
     {
-        if (ballId == gBagPockets[BALLS_POCKET].itemSlots[i-1].itemId)
+        u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
+        CompactItemsInPyramidBag();
+        for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
         {
-            ballNext = gBagPockets[BALLS_POCKET].itemSlots[i].itemId;
-            break;
+            if (ballId == items[i-1] && ItemId_GetPocket(items[i]) == POCKET_POKE_BALLS)
+            {
+                ballNext = items[i];
+                break;
+            }
         }
+        if (ballNext == ITEM_NONE)
+            return items[0]; // Zeroth slot
+        else
+            return ballNext;
     }
-    if (ballNext == ITEM_NONE)
-        return gBagPockets[BALLS_POCKET].itemSlots[0].itemId; // Zeroth slot
     else
-        return ballNext;
+    {
+        struct BagPocket *ballPocket = &gBagPockets[BALLS_POCKET];
+        CompactItemsInBagPocket(ballPocket);
+        for (i = 1; i < ballPocket->capacity; i++)
+        {
+            if (ballId == ballPocket->itemSlots[i-1].itemId)
+            {
+                ballNext = ballPocket->itemSlots[i].itemId;
+                break;
+            }
+        }
+        if (ballNext == ITEM_NONE)
+            return ballPocket->itemSlots[0].itemId; // Zeroth slot
+        else
+            return ballNext;
+    }
 }
 
 static void HandleInputChooseAction(u32 battler)

@@ -4,7 +4,10 @@
 #include "pokemon.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
+#include "battle_pyramid.h"
+#include "battle_pyramid_bag.h"
 #include "battle_z_move.h"
+#include "event_data.h"
 #include "graphics.h"
 #include "sprite.h"
 #include "window.h"
@@ -2985,7 +2988,27 @@ void TryAddLastUsedBallItemSprites(void)
         u16 firstBall;
 
         // we have to compact the bag first bc it is typically only compacted when you open it
-        CompactItemsInBagPocket(&gBagPockets[BALLS_POCKET]);
+        if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
+        {
+            u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
+            u32 i;
+
+            CompactItemsInPyramidBag();
+            firstBall = ITEM_NONE;
+            for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
+            {
+                if (ItemId_GetPocket(items[i]) == POCKET_POKE_BALLS)
+                {
+                    firstBall = items[i];
+                    break;
+                }
+            }
+        }
+        else
+        {
+            CompactItemsInBagPocket(&gBagPockets[BALLS_POCKET]);
+            firstBall = gBagPockets[BALLS_POCKET].itemSlots[0].itemId;
+        }
 
         firstBall = gBagPockets[BALLS_POCKET].itemSlots[0].itemId;
         if (firstBall > ITEM_NONE)

@@ -62,6 +62,7 @@ extern struct PyramidBagMenuState gPyramidBagMenuState;
 void InitBattlePyramidBagCursorPosition(void);
 void CB2_PyramidBagMenuFromStartMenu(void);
 void CB2_ReturnToPyramidBagMenu(void);
+void CompactItemsInPyramidBag(void);
 void UpdatePyramidBagList(void);
 void UpdatePyramidBagCursorPos(void);
 void GoToBattlePyramidBagMenu(u8 location, void (*exitCallback)(void));

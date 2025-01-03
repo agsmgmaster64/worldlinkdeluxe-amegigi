@@ -12,6 +12,7 @@ u16 GetBattlePoints(void);
 bool8 IsEnoughBattlePoints(u16 cost);
 void SetBattlePoints(u16 pointAmount);
 bool8 RemoveBattlePoints(u16 toSub);
+bool8 AddBattlePoints(u16 toAdd);
 void ShowRankingHallRecordsWindow(void);
 void ScrollRankingHallRecordsWindow(void);
 void ClearRankingHallRecords(void);
