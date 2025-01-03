@@ -303,6 +303,9 @@ Debug_EventScript_Script_6_Mart:
 	.2byte OUTFIT_NONE
 
 Debug_EventScript_Script_7::
+	lockall
+	fadescreenswapbuffers FADE_TO_BLACK
+	special StartBerryCrushSolo
 	release
 	end
 

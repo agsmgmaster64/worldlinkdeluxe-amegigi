@@ -3,6 +3,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "battle_tower.h"
+#include "berry_crush.h"
 #include "cable_club.h"
 #include "data.h"
 #include "decoration.h"
@@ -4320,4 +4321,9 @@ void UseBlankMessageToCancelPokemonPic(void)
     u8 t = EOS;
     AddTextPrinterParameterized(0, FONT_NORMAL, &t, 0, 1, 0, NULL);
     ScriptMenu_HidePokemonPic();
+}
+
+void StartBerryCrushSolo(void)
+{
+    StartBerryCrush(CB2_LoadMap, TRUE);
 }
