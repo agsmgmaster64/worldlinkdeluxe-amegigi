@@ -64,6 +64,15 @@ struct QuestMenuStaticResources
     u16 storedRowPosition;
 };
 
+enum QuestColors
+{
+    QUESTCOLOR_HEADER,
+    QUESTCOLOR_QUEST_REWARD,
+    QUESTCOLOR_QUEST_DONE,
+    QUESTCOLOR_QUEST_ACTIVE,
+    QUESTCOLOR_FOOTER
+};
+
 // RAM
 EWRAM_DATA static struct QuestMenuResources *sStateDataPtr = NULL;
 EWRAM_DATA static u8 *sBg1TilemapBuffer = NULL;
@@ -1128,30 +1137,35 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
 //Font color combinations for printed text
 static const u8 sQuestMenuWindowFontColors[][4] =
 {
+    [QUESTCOLOR_HEADER] =
     {
         //Header of Quest Menu
         TEXT_COLOR_TRANSPARENT,
         TEXT_COLOR_WHITE,
-        TEXT_COLOR_LIGHT_GRAY
+        TEXT_DYNAMIC_COLOR_1
     },
+    [QUESTCOLOR_QUEST_REWARD] =
     {
         //Reward state progress indicator
         TEXT_COLOR_TRANSPARENT,
         TEXT_COLOR_RED,
-        TEXT_COLOR_TRANSPARENT
+        TEXT_COLOR_LIGHT_RED
     },
+    [QUESTCOLOR_QUEST_DONE] =
     {
         //Done state progress indicator
         TEXT_COLOR_TRANSPARENT,
         TEXT_COLOR_GREEN,
-        TEXT_COLOR_TRANSPARENT
+        TEXT_COLOR_LIGHT_GREEN
     },
+    [QUESTCOLOR_QUEST_ACTIVE] =
     {
         //Active state progress indicator
         TEXT_COLOR_TRANSPARENT,
         TEXT_COLOR_BLUE,
-        TEXT_COLOR_TRANSPARENT
+        TEXT_COLOR_LIGHT_BLUE
     },
+    [QUESTCOLOR_FOOTER] =
     {
         //Footer flavor text
         TEXT_COLOR_TRANSPARENT,
@@ -1684,10 +1698,10 @@ static void BuildMenuTemplate(void)
     gMultiuseListMenuTemplate.itemVerticalPadding = 2;
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-    gMultiuseListMenuTemplate.fontId = 2;
-    gMultiuseListMenuTemplate.cursorPal = 2;
-    gMultiuseListMenuTemplate.fillValue = 0;
-    gMultiuseListMenuTemplate.cursorShadowPal = 0;
+    gMultiuseListMenuTemplate.fontId = FONT_SHORT;
+    gMultiuseListMenuTemplate.cursorPal = TEXT_COLOR_WHITE;
+    gMultiuseListMenuTemplate.fillValue = TEXT_COLOR_TRANSPARENT;
+    gMultiuseListMenuTemplate.cursorShadowPal = TEXT_DYNAMIC_COLOR_1;
     gMultiuseListMenuTemplate.moveCursorFunc = MoveCursorFunc;
     gMultiuseListMenuTemplate.itemPrintFunc = GenerateStateAndPrint;
     gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD;
@@ -2191,10 +2205,10 @@ static void PrintDetailsForCancel()
 {
     FillWindowPixelBuffer(1, 0);
 
-    QuestMenu_AddTextPrinterParameterized(1, 2, sText_Empty, 2, 3, 2, 0, 0,
-                                          0);
-    QuestMenu_AddTextPrinterParameterized(1, 2, sText_Empty, 40, 19, 5, 0, 0,
-                                          0);
+    QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT, sText_Empty, 2, 3, 2, 0, 0,
+                                          QUESTCOLOR_HEADER);
+    QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT, sText_Empty, 40, 19, 5, 0, 0,
+                                          QUESTCOLOR_HEADER);
 
     QuestMenu_CreateSprite(-1, sStateDataPtr->spriteIconSlot, ITEM);
 }
@@ -2223,8 +2237,8 @@ void GenerateQuestLocation(s32 questId)
 void PrintQuestLocation(s32 questId)
 {
     FillWindowPixelBuffer(1, 0);
-    QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
-                                          4);
+    QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT, gStringVar4, 2, 3, 2, 0, 0,
+                                          QUESTCOLOR_FOOTER);
 }
 void GenerateQuestFlavorText(s32 questId)
 {
@@ -2268,8 +2282,8 @@ void UpdateQuestFlavorText(s32 questId)
 }
 void PrintQuestFlavorText(s32 questId)
 {
-    QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
-                                          4);
+    QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT, gStringVar3, 40, 19, 5, 0, 0,
+                                          QUESTCOLOR_FOOTER);
 }
 
 bool8 IsSubquestCompletedState(s32 questId)
@@ -2481,7 +2495,7 @@ u8 GenerateSubquestState(u8 questId)
         StringCopy(gStringVar4, sText_Empty);
     }
 
-    return 2;
+    return QUESTCOLOR_QUEST_DONE;
 }
 
 u8 GenerateQuestState(u8 questId)
@@ -2489,17 +2503,17 @@ u8 GenerateQuestState(u8 questId)
     if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
     {
         StringCopy(gStringVar4, sText_Complete);
-        return 2;
+        return QUESTCOLOR_QUEST_DONE;
     }
     else if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
     {
         StringCopy(gStringVar4, sText_Reward);
-        return 1;
+        return QUESTCOLOR_QUEST_REWARD;
     }
     else if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
     {
         StringCopy(gStringVar4, sText_Active);
-        return 3;
+        return QUESTCOLOR_QUEST_ACTIVE;
     }
     else
     {
@@ -2511,7 +2525,7 @@ u8 GenerateQuestState(u8 questId)
 
 void PrintQuestState(u8 windowId, u8 y, u8 colorIndex)
 {
-    QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0,
+    QuestMenu_AddTextPrinterParameterized(windowId, FONT_SMALL, gStringVar4, 200, y, 0,
                                           0, 0xFF, colorIndex);
 }
 
@@ -2623,18 +2637,18 @@ static void GenerateMenuContext(void)
 static void PrintNumQuests(void)
 {
     StringExpandPlaceholders(gStringVar4, sText_QuestNumberDisplay);
-    QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 1, 0, 1, 0,
-                                          0);
+    QuestMenu_AddTextPrinterParameterized(2, FONT_SMALL, gStringVar4, 167, 1, 0, 1, 0,
+                                          QUESTCOLOR_HEADER);
 }
 static void PrintMenuContext(void)
 {
-    QuestMenu_AddTextPrinterParameterized(2, 0,
-                                          questNameArray[QUEST_ARRAY_COUNT], 10, 1, 0, 1, 0, 0);
+    QuestMenu_AddTextPrinterParameterized(2, FONT_SMALL,
+                                          questNameArray[QUEST_ARRAY_COUNT], 10, 1, 0, 1, 0, QUESTCOLOR_HEADER);
 }
 static void PrintTypeFilterButton(void)
 {
-    QuestMenu_AddTextPrinterParameterized(2, 0, sText_Type, 198, 1,
-                                          0, 1, 0, 0);
+    QuestMenu_AddTextPrinterParameterized(2, FONT_SMALL, sText_Type, 198, 1,
+                                          0, 1, 0, QUESTCOLOR_HEADER);
 
 }
 
