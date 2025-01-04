@@ -40,10 +40,12 @@ const uq4_12_t gTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES]
 #undef ______
 #undef X
 
-// .generic is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
-// In this array there's commented-out data such as references to type-resist berries that would otherwise would go unused.
-// However, we figured this information would be useful for users that want to add their own types as a reminder of
-// what data would they need to add in order to have their new types be fully fledged like official types.
+// Notes regarding custom data:
+// - The "generic" field is large enough that the text for TYPE_ELECTRIC will exceed TEXT_BUFF_ARRAY_COUNT.
+// - In this array there's commented-out data such as references to type-resist berries that would otherwise would go unused.
+//   However, we figured this information would be useful for users that want to add their own types as a reminder of
+//   what data would they need to add in order to have their new types be fully fledged like official types.
+// - Changing "isHiddenPowerType" for any type will change the distribution of all Hidden Power types from vanilla.
 const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
 {
     [TYPE_NONE] =
@@ -57,6 +59,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = TRUE,
         .shopItem = ITEM_NONE,
+        .isHiddenPowerType = FALSE,
     },
     [TYPE_ILLUSION] =
     {
@@ -71,6 +74,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_BRIDAL_GOWN,
+        .isHiddenPowerType = FALSE,
         //.enhanceItem = ITEM_BRIDAL_GOWN,
         //.berry = ITEM_CHILAN_BERRY,
         //.gem = ITEM_ILLUSION_CARD,
@@ -91,6 +95,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_CHINESE_DRESS,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_CHINESE_DRESS,
         //.berry = ITEM_CHOPLE_BERRY,
         //.gem = ITEM_DREAM_CARD,
@@ -113,6 +118,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_STEWARDESS,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_STEWARDESS,
         //.berry = ITEM_COBA_BERRY,
         //.gem = ITEM_FLYING_GEM,
@@ -135,6 +141,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_NURSE_UNIFORM,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_NURSE_UNIFORM,
         //.berry = ITEM_KEBIA_BERRY,
         //.gem = ITEM_MIASMA_CARD,
@@ -157,6 +164,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_GYM_SUIT,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_GYM_SUIT,
         //.berry = ITEM_SHUCA_BERRY,
         //.gem = ITEM_EARTH_CARD,
@@ -179,6 +187,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_BUNNY_SUIT,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_BUNNY_SUIT,
         //.berry = ITEM_CHARTI_BERRY,
         //.gem = ITEM_ROCK_GEM,
@@ -201,6 +210,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_BLAZER,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_BLAZER,
         //.berry = ITEM_TANGA_BERRY,
         //.gem = ITEM_BUG_GEM,
@@ -223,6 +233,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_BURIAL_DRESS,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_BURIAL_DRESS,
         //.berry = ITEM_KASIB_BERRY,
         //.gem = ITEM_GHOST_GEM,
@@ -245,6 +256,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_MAID_UNIFORM,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_MAID_UNIFORM,
         //.berry = ITEM_BABIRI_BERRY,
         //.gem = ITEM_STEEL_GEM,
@@ -265,6 +277,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = TRUE,
         .shopItem = ITEM_NONE,
+        .isHiddenPowerType = FALSE,
     },
     [TYPE_FIRE] =
     {
@@ -279,6 +292,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_GOTHIC_DRESS,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_GOTHIC_DRESS,
         //.berry = ITEM_OCCA_BERRY,
         //.gem = ITEM_FIRE_CARD,
@@ -301,6 +315,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_SWIMSUIT,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_SWIMSUIT,
         //.berry = ITEM_PASSHO_BERRY,
         //.gem = ITEM_WATER_CARD,
@@ -323,6 +338,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_CAMOUFLAGE,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_CAMOUFLAGE,
         //.berry = ITEM_RINDO_BERRY,
         //.gem = ITEM_NATURE_CARD,
@@ -345,6 +361,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_NINJA_SUIT,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_NINJA_SUIT,
         //.berry = ITEM_WACAN_BERRY,
         //.gem = ITEM_WIND_CARD,
@@ -367,6 +384,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_WITCHS_ROBE,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_WITCHS_ROBE,
         //.berry = ITEM_PAYAPA_BERRY,
         //.gem = ITEM_PSYCHIC_GEM,
@@ -389,6 +407,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_THICK_FUR,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_THICK_FUR,
         //.berry = ITEM_YACHE_BERRY,
         //.gem = ITEM_ICE_CARD,
@@ -411,6 +430,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_PRIESTESS,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_PRIESTESS,
         //.berry = ITEM_HABAN_BERRY,
         //.gem = ITEM_DRAGON_GEM,
@@ -433,6 +453,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_BLACK_GLASSES,
+        .isHiddenPowerType = TRUE,
         //.enhanceItem = ITEM_BLACK_GLASSES,
         //.berry = ITEM_COLBUR_BERRY,
         //.gem = ITEM_DARK_GEM,
@@ -455,6 +476,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = TRUE,
         .isSpecialCaseType = FALSE,
         .shopItem = ITEM_FAIRY_FEATHER,
+        .isHiddenPowerType = FALSE,
         //.enhanceItem = ITEM_FAIRY_FEATHER,
         //.berry = ITEM_ROSELI_BERRY,
         //.gem = ITEM_COSMIC_CARD,
@@ -476,6 +498,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
         .useSecondTypeIconPalette = FALSE,
         .isSpecialCaseType = TRUE,
         .shopItem = ITEM_STELLAR_TERA_SHARD,
+        .isHiddenPowerType = FALSE,
         // .teraShard = ITEM_STELLAR_TERA_SHARD,
     },
 };
