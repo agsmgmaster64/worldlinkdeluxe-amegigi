@@ -85,6 +85,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
 	.4byte gFieldEffectScript_UseRockClimb              @ FLDEFF_USE_ROCK_CLIMB
 	.4byte gFieldEffectScript_UseRockClimbTool          @ FLDEFF_USE_ROCK_CLIMB_TOOL
+	.4byte gFieldEffectScript_SnowGrass                 @ FLDEFF_SNOW_GRASS
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -407,4 +408,8 @@ gFieldEffectScript_UseRockClimb::
 
 gFieldEffectScript_UseRockClimbTool::
 	field_eff_callnative FldEff_UseRockClimbTool
+	field_eff_end
+
+gFieldEffectScript_SnowGrass::
+	field_eff_loadfadedpal_callnative gSpritePalette_SnowGrass, FldEff_SnowGrass
 	field_eff_end

@@ -1393,7 +1393,7 @@ static const struct SpriteFrameImage sPicTable_CaveDust[] =
     overworld_frame(gFieldEffectObjectPic_CaveDust, 2, 2, 3),
 };
 const struct SpriteTemplate gFieldEffectObjectTemplate_CaveDust = {
-    .tileTag = 0xFFFF,
+    .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_CAVE_DUST,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_WaterSurfacing,
@@ -1403,3 +1403,23 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_CaveDust = {
 };
 
 const struct SpritePalette gSpritePalette_CaveDust = {gFieldEffectObjectPalette_CaveDust, FLDEFF_PAL_TAG_CAVE_DUST};
+
+const struct SpritePalette gSpritePalette_SnowGrass = {gFieldEffectObjectPalette_SnowGrass, FLDEFF_PAL_TAG_SNOW_GRASS};
+
+static const struct SpriteFrameImage sPicTable_SnowGrass[] = {
+    overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 3),
+    overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 4),
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_SnowGrass = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_SNOW_GRASS,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_TallGrass,
+    .images = sPicTable_SnowGrass,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateSnowGrassFieldEffect,
+};

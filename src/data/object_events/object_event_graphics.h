@@ -326,6 +326,7 @@ const u32 gFieldEffectObjectPic_Unknown17[] = INCBIN_U32("graphics/field_effects
 const u32 gFieldEffectObjectPic_UnusedGrass2[] = INCBIN_U32("graphics/field_effects/pics/unused_grass_2.4bpp");
 const u32 gFieldEffectObjectPic_LongGrass[] = INCBIN_U32("graphics/field_effects/pics/long_grass.4bpp");
 const u32 gFieldEffectObjectPic_TallGrass[] = INCBIN_U32("graphics/field_effects/pics/tall_grass.4bpp");
+const u32 gFieldEffectObjectPic_SnowGrass[] = INCBIN_U32("graphics/field_effects/pics/snow_grass.4bpp");
 const u32 gFieldEffectObjectPic_ShortGrass[] = INCBIN_U32("graphics/field_effects/pics/short_grass.4bpp");
 const u32 gFieldEffectObjectPic_SandFootprints[] = INCBIN_U32("graphics/field_effects/pics/sand_footprints.4bpp");
 const u32 gFieldEffectObjectPic_DeepSandFootprints[] = INCBIN_U32("graphics/field_effects/pics/deep_sand_footprints.4bpp");
@@ -479,3 +480,5 @@ const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pic
 
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
+
+const u16 gFieldEffectObjectPalette_SnowGrass[] = INCBIN_U16("graphics/field_effects/palettes/snow_grass.gbapal");
