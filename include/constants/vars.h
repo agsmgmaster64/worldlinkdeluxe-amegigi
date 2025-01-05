@@ -236,7 +236,7 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_TECHNIQUE_ROD                                0x40DB // Unused Var
+#define VAR_TECHNIQUE_ROD                                0x40DB
 #define VAR_TRAINER_CARD_MON_ICON_TINT_IDX               0x40DC
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_BATTLE_TERRAIN                               0x40DE

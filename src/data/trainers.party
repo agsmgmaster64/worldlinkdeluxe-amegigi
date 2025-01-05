@@ -14140,6 +14140,82 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psyshot
 - Taunt
 
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: Gigi
+Class: Hololive Member
+Pic: Gigi Murin
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer / Ace Pokemon
+Difficulty: Easy
+
+Chibi Meiling
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Pearl (Chibi Amelia) (F)
+Level: 15
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: Gigi
+Class: Hololive Member
+Pic: Gigi Murin
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Very Smart Trainer / Ace Pokemon
+Difficulty: Hard
+
+Chibi Meiling
+Adamant Nature
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+
+Pearl (Chibi Amelia) (F)
+Modest Nature
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Pound
+- Growl
+- Psyshot
+- Taunt
+
+=== TRAINER_MAY_RUSTBORO_TREECKO ===
+Name: Gigi
+Class: Hololive Member
+Pic: Gigi Murin
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Very Smart Trainer / Ace Pokemon
+Mugshot: Yellow
+Starting Status: Rainbow Opponent
+Difficulty: Lunatic
+
+Chibi Meiling
+Adamant Nature
+Level: 13
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 Atk / 252 Def / 6 HP
+
+Chibi Bijou
+Calm Nature
+Level: 14
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpD / 252 Def / 6 HP
+
+Pearl (Chibi Amelia) (F)
+Modest Nature
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 HP
+- Pound
+- Growl
+- Psyshot
+- Taunt
+
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
 Name: Maribel
 Class: Rival
