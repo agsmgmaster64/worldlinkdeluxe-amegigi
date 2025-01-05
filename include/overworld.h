@@ -68,6 +68,7 @@ extern u8 gTimeOfDay;
 extern u16 gTimeUpdateCounter;
 
 extern struct TimeBlendSettings currentTimeBlend;
+extern bool8 gSkipShowMonAnim;
 
 extern const struct UCoords32 gDirectionToVectors[];
 
