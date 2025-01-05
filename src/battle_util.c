@@ -372,7 +372,7 @@ void HandleAction_UseMove(void)
             gBattlerTarget = battler;
         }
     }
-	else if (IsDoubleBattle() && moveTarget & MOVE_TARGET_RANDOM)
+    else if (IsDoubleBattle() && moveTarget & MOVE_TARGET_RANDOM)
     {
         gBattlerTarget = SetRandomTarget(gBattlerAttacker);
         if (gAbsentBattlerFlags & (1u << gBattlerTarget)
@@ -388,7 +388,7 @@ void HandleAction_UseMove(void)
         else
             gBattlerTarget = gBattlerAttacker;
     }
-	else if (IsDoubleBattle() && moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+    else if (IsDoubleBattle() && moveTarget == MOVE_TARGET_FOES_AND_ALLY)
     {
         for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
         {
@@ -938,22 +938,22 @@ static void UNUSED MarkAllBattlersForControllerExec(void)
     else
     {
         for (i = 0; i < gBattlersCount; i++)
-            gBattleControllerExecFlags |= 1 << i;
+            gBattleControllerExecFlags |= 1u << i;
     }
 }
 
 bool32 IsBattlerMarkedForControllerExec(u32 battler)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-        return (gBattleControllerExecFlags & (1 << (battler + 28))) != 0;
+        return (gBattleControllerExecFlags & (1u << (battler + 28))) != 0;
     else
-        return (gBattleControllerExecFlags & (1 << battler)) != 0;
+        return (gBattleControllerExecFlags & (1u << battler)) != 0;
 }
 
 void MarkBattlerForControllerExec(u32 battler)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-        gBattleControllerExecFlags |= 1u << (32 - MAX_BATTLERS_COUNT);
+        gBattleControllerExecFlags |= 1u << (battler + 32 - MAX_BATTLERS_COUNT);
     else
         gBattleControllerExecFlags |= 1u << battler;
 }
@@ -6567,13 +6567,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_ICE_FACE:
-            if (IsBattlerWeatherAffected(battler, B_WEATHER_HAIL | B_WEATHER_SNOW) && gBattleMons[battler].species == SPECIES_EISCUE)
+        {
+            u32 battlerWeatherAffected = IsBattlerWeatherAffected(battler, B_WEATHER_HAIL | B_WEATHER_SNOW);
+            if (battlerWeatherAffected && gBattleMons[battler].species == SPECIES_EISCUE)
             {
                 // If Hail/Snow activates when in Eiscue is in base, prevent reversion when Eiscue Noice gets broken
                 gDisableStructs[battler].weatherAbilityDone = TRUE;
             }
             if (!gDisableStructs[battler].weatherAbilityDone
-             && IsBattlerWeatherAffected(battler, B_WEATHER_HAIL | B_WEATHER_SNOW)
+             && battlerWeatherAffected
              && gBattleMons[battler].species == SPECIES_EISCUE_NOICE
              && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED))
             {
@@ -6585,6 +6587,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        }
         case ABILITY_PROTOSYNTHESIS:
             if (!gDisableStructs[battler].weatherAbilityDone
              && (gBattleWeather & B_WEATHER_SUN) && WEATHER_HAS_EFFECT
