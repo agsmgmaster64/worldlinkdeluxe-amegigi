@@ -18,6 +18,14 @@
 #error "Invalid choice for B_EV_CAP_TYPE, must be one of [EV_CAP_NONE, EV_CAP_FLAG_LIST, EV_CAP_VARIABLE, EV_CAP_NO_GAIN]"
 #endif
 
+enum LevelCapDifficulties
+{
+    LEVEL_CAP_DIFFICULTY_NONE,
+    LEVEL_CAP_DIFFICULTY_SOFT_CAP,
+    LEVEL_CAP_DIFFICULTY_HARD_CAP,
+};
+
+enum LevelCapDifficulties GetLevelCapDifficulty(void);
 u32 GetCurrentLevelCap(void);
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue);
 u32 GetCurrentEVCap(void);

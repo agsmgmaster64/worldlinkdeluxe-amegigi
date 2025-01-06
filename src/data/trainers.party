@@ -4823,6 +4823,74 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Stomp
 - Rock Tomb
 
+=== TRAINER_ROXANNE_1 ===
+Name: Doise
+Class: Leader
+Pic: Doise
+Gender: Male
+Music: Male
+Items: Potion / Potion
+Double Battle: No
+AI: Smart Trainer / Risky / Ace Pokemon
+Mugshot: Blue
+Difficulty: Hard
+
+Chibi Suika
+Level: 12
+- Karate Chop
+- Growl
+- Seismic Toss
+- Rock Tomb
+
+Chibi Yuugi
+Level: 12
+- Karate Chop
+- Howl
+- Magnitude
+- Rock Tomb
+
+Chibi Tenshi @ Oran Berry
+Level: 15
+- Magnitude
+- Harden
+- Stomp
+- Rock Tomb
+
+=== TRAINER_ROXANNE_1 ===
+Name: Doise
+Class: Leader
+Pic: Doise
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
+Double Battle: No
+AI: Very Smart Trainer / Risky / Ace Pokemon
+Mugshot: Blue
+Starting Status: Psychic Terrain
+Difficulty: Lunatic
+
+Chibi Suika
+Level: 12
+- Karate Chop
+- Growl
+- Seismic Toss
+- Rock Tomb
+
+Chibi Yuugi
+Level: 12
+- Karate Chop
+- Howl
+- Magnitude
+- Rock Tomb
+
+Chibi Tenshi @ Oran Berry
+Level: 15
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Magnitude
+- Harden
+- Stomp
+- Rock Tomb
+
 === TRAINER_BRAWLY_1 ===
 Name: Susie
 Class: Leader
@@ -14165,7 +14233,7 @@ Pic: Gigi Murin
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Very Smart Trainer / Ace Pokemon
+AI: Smart Trainer / Ace Pokemon
 Difficulty: Hard
 
 Chibi Meiling
