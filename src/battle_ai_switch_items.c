@@ -20,6 +20,8 @@
 #include "constants/battle_move_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/species.h"
+#include "tx_randomizer_and_challenges.h"
 
 // this file's functions
 static bool32 HasSuperEffectiveMoveAgainstOpponents(u32 battler, bool32 noRng);
@@ -2085,6 +2087,9 @@ static bool32 ShouldUseItem(u32 battler)
     bool32 shouldUse = FALSE;
 
     if (IsAiVsAiBattle())
+        return FALSE;
+
+    if (gSaveBlock1Ptr->tx_Challenges_NoItemTrainer) //tx_randomizer_and_challenges
         return FALSE;
 
     // If teaming up with player and Pokemon is on the right, or Pokemon is currently held by Sky Drop

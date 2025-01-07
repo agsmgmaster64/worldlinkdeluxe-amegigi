@@ -73,7 +73,7 @@ enum {
     MON_DATA_CHAMPION_RIBBON,
     MON_DATA_WINNING_RIBBON,
     MON_DATA_VICTORY_RIBBON,
-    MON_DATA_EFFORT_RIBBON,
+    MON_DATA_NUZLOCKE_RIBBON,
     MON_DATA_NATIONAL_RIBBON,
     MON_DATA_KNOWN_MOVES,
     MON_DATA_RIBBON_COUNT,
@@ -120,7 +120,7 @@ struct BoxPokemon
     /*0x2A*/ u8 friendship;
     /*0x2B*/ u8 pokeball:6; // 63 balls.
              u8 nationalRibbon:1; // Given to purified Shadow Pokémon in Colosseum/XD.
-             u8 effortRibbon:1;   // Given at Slateport's market to Pokémon with maximum EVs.
+             u8 nuzlockeRibbon:1;
     /*0x2C*/ u16 move1:11; // 2047 moves.
              u16 attackIV:5;
     /*0x2E*/ u16 move2:11; // 2047 moves.

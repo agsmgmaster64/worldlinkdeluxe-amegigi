@@ -54,6 +54,8 @@
 #include "field_control_avatar.h"
 #include "region_map.h"
 // End qol_field_moves
+#include "tx_randomizer_and_challenges.h"
+#include "battle_setup.h" //tx_randomizer_and_challenges
 #include "constants/map_types.h"
 
 static void SetUpItemUseCallback(u8);
@@ -185,7 +187,7 @@ static void Task_CallItemUseOnFieldCallback(u8 taskId)
         sItemUseOnFieldCB(taskId);
 }
 
-static void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str)
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_randomizer_and_challenges
 {
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
@@ -1194,6 +1196,10 @@ static u32 GetBallThrowableState(void)
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
     //else if (FlagGet(B_FLAG_NO_CATCHING))
         //return BALL_THROW_UNABLE_DISABLED_FLAG;
+    else if (gNuzlockeIsCaptureBlocked) //tx_randomizer_and_challenges
+        return BALL_THROW_NUZLOCKE_ROUTE_BLOCK;
+    else if (gNuzlockeIsSpeciesClauseActive) //already have THIS_mon
+        return BALL_THROW_NUZLOCKE_ALREADY_CAUGHT;
 
     return BALL_THROW_ABLE;
 }
@@ -1203,9 +1209,11 @@ bool32 CanThrowBall(void)
     return (GetBallThrowableState() == BALL_THROW_ABLE);
 }
 
-static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Pokémon out there!\p");
-static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Pokémon in sight!\p");
-static const u8 sText_CantThrowPokeBall_Disabled[] = _("POKé BALLS cannot be used\nright now!\p");
+static const u8 sText_CantThrowPokeBall_TwoMons[] = _("Cannot throw a ball!\nThere are two Puppets out there!\p");
+static const u8 sText_CantThrowPokeBall_SemiInvulnerable[] = _("Cannot throw a ball!\nThere's no Puppets in sight!\p");
+static const u8 sText_CantThrowPokeBall_Disabled[] = _("Toho Orbs cannot be used\nright now!\p");
+static const u8 sText_NuzlockeCantThrowPokeBallRoute[] = _("You have already used your encounter\nfor this area!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_NuzlockeCantThrowPokeBallAlreadyCaught[] = _("You have already caught this Puppet!{PAUSE_UNTIL_PRESS}");
 void ItemUseInBattle_PokeBall(u8 taskId)
 {
     switch (GetBallThrowableState())
@@ -1241,6 +1249,18 @@ void ItemUseInBattle_PokeBall(u8 taskId)
             DisplayItemMessageInBattlePyramid(taskId, sText_CantThrowPokeBall_Disabled, Task_CloseBattlePyramidBagMessage);
         else
             DisplayItemMessage(taskId, FONT_NORMAL, sText_CantThrowPokeBall_Disabled, CloseItemMessage);
+        break;
+    case BALL_THROW_NUZLOCKE_ROUTE_BLOCK:
+        if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
+            DisplayItemMessageInBattlePyramid(taskId, sText_NuzlockeCantThrowPokeBallRoute, Task_CloseBattlePyramidBagMessage);
+        else
+            DisplayCannotUseItemMessage(taskId, FALSE, sText_NuzlockeCantThrowPokeBallRoute);
+        break;
+    case BALL_THROW_NUZLOCKE_ALREADY_CAUGHT:
+        if (InBattlePyramid() || FlagGet(FLAG_USE_PYRAMID_BAG))
+            DisplayItemMessageInBattlePyramid(taskId, sText_NuzlockeCantThrowPokeBallAlreadyCaught, Task_CloseBattlePyramidBagMessage);
+        else
+            DisplayCannotUseItemMessage(taskId, FALSE, sText_NuzlockeCantThrowPokeBallAlreadyCaught);
         break;
     }
 }
@@ -1323,6 +1343,14 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
             break;
         case BALL_THROW_UNABLE_DISABLED_FLAG:
             failStr = sText_CantThrowPokeBall_Disabled;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_NUZLOCKE_ROUTE_BLOCK:
+            failStr = sText_NuzlockeCantThrowPokeBallRoute;
+            cannotUse = TRUE;
+            break;
+        case BALL_THROW_NUZLOCKE_ALREADY_CAUGHT:
+            failStr = sText_NuzlockeCantThrowPokeBallAlreadyCaught;
             cannotUse = TRUE;
             break;
         }

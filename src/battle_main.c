@@ -74,6 +74,8 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "cable_club.h"
+#include "tx_randomizer_and_challenges.h"
+#include "overworld.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -4471,6 +4473,18 @@ static void HandleTurnActionSelectionState(void)
                         *(gBattleStruct->stateIdAfterSelScript + battler) = STATE_BEFORE_ACTION_CHOSEN;
                         return;
                     }
+                    else if (IsNuzlockeActive())
+                    {
+                        if (gNuzlockeIsCaptureBlocked)
+                            gSelectionBattleScripts[battler] = BattleScript_Safari_NuzlockeCaptureBlocked;
+                        else if (gNuzlockeIsSpeciesClauseActive) //already have THIS_mon
+                            gSelectionBattleScripts[battler] = BattleScript_Safari_SameSpeciesCaptureBlocked;
+
+                        gBattleCommunication[battler] = STATE_SELECTION_SCRIPT;
+                        *(gBattleStruct->selectionScriptFinished + battler) = FALSE;
+                        *(gBattleStruct->stateIdAfterSelScript + battler) = STATE_BEFORE_ACTION_CHOSEN;
+                        return;
+                    }
                     break;
                 case B_ACTION_CANCEL_PARTNER:
                     gBattleCommunication[battler] = STATE_WAIT_SET_BEFORE_ACTION;
@@ -5686,6 +5700,39 @@ static void HandleEndTurn_FinishBattle(void)
             && gBattleResults.shinyWildMon)
         {
             TryPutBreakingNewsOnAir();
+        }
+
+        //tx_difficulty_challenges
+        if (IsNuzlockeActive())
+        {
+            if (!(gBattleTypeFlags &(BATTLE_TYPE_LINK
+                                        | BATTLE_TYPE_LINK_IN_BATTLE
+                                        | BATTLE_TYPE_FIRST_BATTLE
+                                        | BATTLE_TYPE_WALLY_TUTORIAL
+                                        | BATTLE_TYPE_INGAME_PARTNER
+                                        | BATTLE_TYPE_TOWER_LINK_MULTI
+                                        | BATTLE_TYPE_RECORDED_LINK
+                                        | BATTLE_TYPE_FRONTIER)))
+                NuzlockeDeleteFaintedPartyPokemon();
+            if (!(gBattleTypeFlags & (BATTLE_TYPE_DOUBLE
+                                        | BATTLE_TYPE_LINK
+                                        | BATTLE_TYPE_TRAINER
+                                        | BATTLE_TYPE_FIRST_BATTLE
+                                        | BATTLE_TYPE_LINK_IN_BATTLE
+                                        | BATTLE_TYPE_MULTI
+                                        | BATTLE_TYPE_BATTLE_TOWER
+                                        | BATTLE_TYPE_WALLY_TUTORIAL
+                                        | BATTLE_TYPE_LEGENDARY
+                                        | BATTLE_TYPE_TWO_OPPONENTS
+                                        | BATTLE_TYPE_INGAME_PARTNER
+                                        | BATTLE_TYPE_TOWER_LINK_MULTI
+                                        | BATTLE_TYPE_RECORDED_LINK)))
+            {
+                if (!gNuzlockeIsSpeciesClauseActive)
+                    NuzlockeFlagSet(NuzlockeGetCurrentRegionMapSectionId());
+            }
+            gNuzlockeIsCaptureBlocked = FALSE;
+            gNuzlockeIsSpeciesClauseActive = FALSE;
         }
 
         RecordedBattle_SetPlaybackFinished();

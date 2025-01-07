@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
+#include "battle_setup.h" //tx_randomizer_and_challenges
 #include "berry.h"
 #include "data.h"
 #include "daycare.h"
@@ -30,6 +31,7 @@
 #include "pokevial.h"
 #include "constants/abilities.h"
 #include "wild_encounter.h"
+#include "tx_randomizer_and_challenges.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -121,6 +123,8 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
         heldItem[1] = item >> 8;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
+
+    SetNuzlockeChecks(); //tx_randomizer_and_challenges
 }
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {

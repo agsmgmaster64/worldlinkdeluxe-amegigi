@@ -50,6 +50,9 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "tx_randomizer_and_challenges.h"
+#include "pokedex.h" //tx_randomizer_and_challenges
+#include "constants/region_map_sections.h" //tx_randomizer_and_challenges
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -116,7 +119,11 @@ EWRAM_DATA static u8 *sTrainerBBattleScriptRetAddr = NULL;
 EWRAM_DATA static bool8 sShouldCheckTrainerBScript = FALSE;
 EWRAM_DATA static u8 sNoOfPossibleTrainerRetScripts = 0;
 
-// The first transition is used if the enemy Pokémon are lower level than our Pokémon.
+//tx_difficulty_options
+EWRAM_DATA u8 gNuzlockeIsCaptureBlocked = FALSE;
+EWRAM_DATA u8 gNuzlockeIsSpeciesClauseActive = FALSE;
+
+// The first transition is used if the enemy pokemon are lower level than our pokemon.
 // Otherwise, the second transition is used.
 static const u8 sBattleTransitionTable_Wild[][2] =
 {
@@ -459,6 +466,7 @@ static bool8 CheckIfGhostBattle(void)
 
 void BattleSetup_StartWildBattle(void)
 {
+    SetNuzlockeChecks(); //tx_randomizer_and_challenges
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else if (CheckIfGhostBattle())
@@ -2186,4 +2194,44 @@ u16 CountBattledRematchTeams(u16 trainerId)
     }
 
     return i;
+}
+
+//tx_randomizer_and_challenges
+u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species) // @Kurausukun
+{
+    u8 i;
+    if (!gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause)
+        return FALSE;
+    
+    //disable double catch
+    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+        return TRUE; //player already has this exact pokemon
+
+    return FALSE;
+}
+
+void SetNuzlockeChecks(void)
+{
+    if (IsNuzlockeActive())
+    {
+        gNuzlockeIsSpeciesClauseActive = NuzlockeIsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+
+        gNuzlockeIsCaptureBlocked = NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId());
+
+        if (IsMonShiny(&gEnemyParty[0]) && gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause)
+        {
+            gNuzlockeIsCaptureBlocked = FALSE;
+            gNuzlockeIsSpeciesClauseActive = FALSE;
+        }
+
+        #ifndef NDEBUG
+        MgbaPrintf(MGBA_LOG_DEBUG, "gNuzlockeIsCaptureBlocked=%d", gNuzlockeIsCaptureBlocked);
+        MgbaPrintf(MGBA_LOG_DEBUG, "gNuzlockeIsSpeciesClauseActive=%d", gNuzlockeIsSpeciesClauseActive);
+        #endif
+    }
+    else
+    {
+        gNuzlockeIsCaptureBlocked = FALSE;
+        gNuzlockeIsSpeciesClauseActive = FALSE;
+    }
 }

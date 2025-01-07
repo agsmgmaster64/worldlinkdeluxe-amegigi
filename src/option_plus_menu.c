@@ -502,7 +502,7 @@ static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all sp
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
 static const u8 sText_Desc_MusicVolume[]        = _("Adjust the volume of background music\nhere.");
 static const u8 sText_Desc_SFXVolume[]          = _("Adjust the volume of all sound effects\nand fanfares here.");
-static const u8 sText_Desc_CriesVolume[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
+static const u8 sText_Desc_CriesVolume[]        = _("Adjust the volume of all Puppet cries\nhere");
 static const u8 sText_Desc_LButtonMode_None[]   = _("The L button works as normal.");
 static const u8 sText_Desc_LButtonMode_LA[]     = _("The L button acts as another A\nbutton for one-handed play.");
 static const u8 sText_Desc_LButtonMode_AutoRun[] = _("Running can be toggled by\nthe L Button.");
@@ -591,36 +591,29 @@ static const u8 *const OptionTextDescription(void)
 
     switch (sOptions->submenu)
     {
-    default:
-        return sText_Empty;
     case MENU_VISUALS:
-        if (menuItem >= MENUITEM_VISUALS_COUNT) // safeguard to avoid compiler issues
-            return sText_Empty;
-        //else if (!CheckConditions(menuItem))
-            //return sOptionMenuItemDescriptionsDisabledVisuals[menuItem];
+        if (!CheckConditions(menuItem))
+            return sOptionMenuItemDescriptionsDisabledVisuals[menuItem];
         selection = sOptions->sel_visuals[menuItem];
         if (menuItem == MENUITEM_VISUALS_TEXTSPEED || menuItem == MENUITEM_VISUALS_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsVisuals[menuItem][selection];
     case MENU_BATTLE:
-        if (menuItem >= MENUITEM_BATTLE_COUNT) // safeguard to avoid compiler issues
-            return sText_Empty;
-        //else if (!CheckConditions(menuItem))
-            //return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
+        if (!CheckConditions(menuItem))
+            return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
         selection = sOptions->sel_battle[menuItem];
         if (menuItem == MENUITEM_BATTLE_HP_BAR || menuItem == MENUITEM_BATTLE_EXP_BAR || menuItem == MENUITEM_BATTLE_ANIM_SPEED)
             selection = 0;
         return sOptionMenuItemDescriptionsBattle[menuItem][selection];
     case MENU_MISC:
-        if (menuItem >= MENUITEM_MISC_COUNT) // safeguard to avoid compiler issues
-            return sText_Empty;
-        //else if (!CheckConditions(menuItem))
-            //return sOptionMenuItemDescriptionsDisabledMisc[menuItem];
+        if (!CheckConditions(menuItem))
+            return sOptionMenuItemDescriptionsDisabledMisc[menuItem];
         selection = sOptions->sel_misc[menuItem];
         if (menuItem == MENUITEM_MISC_MUSIC_VOLUME || menuItem == MENUITEM_MISC_SFX_VOLUME || menuItem == MENUITEM_MISC_CRIES_VOLUME)
             selection = 0;
         return sOptionMenuItemDescriptionsMisc[menuItem][selection];
     }
+    return 0;
 }
 
 static u8 MenuItemCount(void)

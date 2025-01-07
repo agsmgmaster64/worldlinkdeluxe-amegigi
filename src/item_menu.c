@@ -52,6 +52,7 @@
 #include "constants/items.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "tx_randomizer_and_challenges.h"
 
 #define TAG_POCKET_SCROLL_ARROW 110
 #define TAG_BAG_SCROLL_ARROW    111
@@ -2247,10 +2248,19 @@ static void ItemMenu_Cancel(u8 taskId)
     ReturnToItemList(taskId);
 }
 
+static const u8 sText_BattleRules_NoItems_Player[] = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
 static void ItemMenu_UseInBattle(u8 taskId)
 {
+    u16 type;
+    //tx_randomizer_and_challenges
+    if (gSaveBlock1Ptr->tx_Challenges_NoItemPlayer && ItemId_GetBattleUsage(gSpecialVar_ItemId) != EFFECT_ITEM_THROW_BALL)
+    {
+        DisplayCannotUseItemMessage(taskId, FALSE, sText_BattleRules_NoItems_Player);
+        return;
+    }
+
     // Safety check
-    u16 type = ItemId_GetType(gSpecialVar_ItemId);
+    type = ItemId_GetType(gSpecialVar_ItemId);
     if (!ItemId_GetBattleUsage(gSpecialVar_ItemId))
         return;
 

@@ -10175,3 +10175,11 @@ BattleScript_SleepClausePreventsEnd::
 	printstring STRINGID_BLOCKEDBYSLEEPCLAUSE
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+BattleScript_Safari_NuzlockeCaptureBlocked::
+	printselectionstring STRINGID_NUZLOCKECAPTUREBLOCKED
+	endselectionscript
+
+BattleScript_Safari_SameSpeciesCaptureBlocked::
+	printselectionstring STRINGID_SAMESPECIESCAPTUREBLOCKED
+	endselectionscript

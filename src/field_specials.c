@@ -1382,7 +1382,7 @@ bool8 FoundAbandonedShipRoom6Key(void)
 
 bool8 LeadMonHasEffortRibbon(void)
 {
-    return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_EFFORT_RIBBON, NULL);
+    return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_NUZLOCKE_RIBBON, NULL);
 }
 
 void GiveLeadMonEffortRibbon(void)
@@ -1393,9 +1393,9 @@ void GiveLeadMonEffortRibbon(void)
     FlagSet(FLAG_SYS_RIBBON_GET);
     ribbonSet = TRUE;
     leadMon = &gPlayerParty[GetLeadMonIndex()];
-    SetMonData(leadMon, MON_DATA_EFFORT_RIBBON, &ribbonSet);
+    SetMonData(leadMon, MON_DATA_NUZLOCKE_RIBBON, &ribbonSet);
     if (GetRibbonCount(leadMon) > NUM_CUTIES_RIBBONS)
-        TryPutSpotTheCutiesOnAir(leadMon, MON_DATA_EFFORT_RIBBON);
+        TryPutSpotTheCutiesOnAir(leadMon, MON_DATA_NUZLOCKE_RIBBON);
 }
 
 bool8 Special_AreLeadMonEVsMaxedOut(void)

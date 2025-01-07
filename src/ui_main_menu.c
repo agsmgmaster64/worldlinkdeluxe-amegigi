@@ -43,6 +43,7 @@
 #include "mystery_event_menu.h"
 #include "mystery_gift_menu.h"
 #include "link.h"
+#include "tx_randomizer_and_challenges.h"
 
 /*
  * 
@@ -348,7 +349,8 @@ void Task_OpenMainMenu(u8 taskId)
             case HAS_NO_SAVED_GAME:
             default:
                 gExitStairsMovementDisabled = FALSE;
-                SetMainCallback2(CB2_NewGameBirchSpeech_FromNewMainMenu);
+                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
+                SetMainCallback2(CB2_InitTxRandomizerChallengesMenu);
                 DestroyTask(taskId);
                 return;
             case HAS_SAVED_GAME:       
@@ -900,7 +902,8 @@ static void Task_MainMenuMain(u8 taskId)
                 break;
             case HW_WIN_NEW_GAME:
                 gExitStairsMovementDisabled = FALSE;
-                sMainMenuDataPtr->savedCallback = CB2_NewGameBirchSpeech_FromNewMainMenu;
+                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
+                sMainMenuDataPtr->savedCallback = CB2_InitTxRandomizerChallengesMenu;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;
             case HW_WIN_OPTIONS:

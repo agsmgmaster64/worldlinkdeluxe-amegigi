@@ -65,6 +65,8 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "tx_randomizer_and_challenges.h"
+#include "constants/party_menu.h" //tx_randomizer_and_challenges
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -2305,8 +2307,8 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_CHAMPION_RIBBON:
         retVal = boxMon->championRibbon;
         break;
-    case MON_DATA_EFFORT_RIBBON:
-        retVal = boxMon->effortRibbon;
+    case MON_DATA_NUZLOCKE_RIBBON:
+        retVal = boxMon->nuzlockeRibbon;
         break;
     case MON_DATA_NATIONAL_RIBBON:
         retVal = boxMon->nationalRibbon;
@@ -2347,7 +2349,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         if (boxMon->species && !boxMon->isEgg)
         {
             retVal += boxMon->championRibbon;
-            retVal += boxMon->effortRibbon;
+            retVal += boxMon->nuzlockeRibbon;
             retVal += boxMon->nationalRibbon;
         }
         break;
@@ -2356,7 +2358,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         if (boxMon->species && !boxMon->isEgg)
         {
             retVal = boxMon->championRibbon
-                | (boxMon->effortRibbon << 1)
+                | (boxMon->nuzlockeRibbon << 1)
                 | (boxMon->nationalRibbon << 2);
         }
         break;
@@ -2657,8 +2659,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     case MON_DATA_CHAMPION_RIBBON:
         SET8(boxMon->championRibbon);
         break;
-    case MON_DATA_EFFORT_RIBBON:
-        SET8(boxMon->effortRibbon);
+    case MON_DATA_NUZLOCKE_RIBBON:
+        SET8(boxMon->nuzlockeRibbon);
         break;
     case MON_DATA_NATIONAL_RIBBON:
         SET8(boxMon->nationalRibbon);
@@ -6251,6 +6253,7 @@ void HealBoxPokemon(struct BoxPokemon *boxMon)
 
     BoxMonRestorePP(boxMon);
 }
+
 u16 GetCryIdBySpecies(u16 species)
 {
     species = SanitizeSpeciesId(species);

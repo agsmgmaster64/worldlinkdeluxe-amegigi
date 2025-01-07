@@ -5,7 +5,7 @@
 #include "pokemon.h"
 
 
-u32 GetLevelCapDifficulty(void)
+enum LevelCapDifficulties GetLevelCapDifficulty(void)
 {
     if (!B_VAR_DIFFICULTY_CAP)
         return LEVEL_CAP_DIFFICULTY_NONE;

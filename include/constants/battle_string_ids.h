@@ -745,8 +745,10 @@
 #define STRINGID_HOLYSURROUNDSBATTLEFIELD             743
 #define STRINGID_SENDCAUGHTMONPARTYORBOX              744
 #define STRINGID_PKMNSENTTOPCAFTERCATCH               745
+#define STRINGID_NUZLOCKECAPTUREBLOCKED               746
+#define STRINGID_SAMESPECIESCAPTUREBLOCKED            747
 
-#define BATTLESTRINGS_COUNT                           746
+#define BATTLESTRINGS_COUNT                           748
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

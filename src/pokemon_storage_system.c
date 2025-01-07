@@ -44,6 +44,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/pokemon_icon.h"
+#include "tx_randomizer_and_challenges.h"
 
 /*
     NOTE: This file is large. Some general groups of functions have
@@ -108,6 +109,7 @@ enum {
     MSG_ITEM_IS_HELD,
     MSG_CHANGED_TO_ITEM,
     MSG_CANT_STORE_MAIL,
+    MSG_NUZLOCKE,
 };
 
 // IDs for how to resolve variables in the above messages
@@ -527,6 +529,7 @@ struct PokemonStorageSystemData
     u8 displayMonSpeciesName[36];
     u8 displayMonGenderLvlText[36];
     u8 displayMonItemName[36];
+    bool8 displayMonNuzlockeRibbon;
     bool8 (*monPlaceChangeFunc)(void);
     u8 monPlaceChangeState;
     u8 shiftBoxId;
@@ -680,7 +683,7 @@ static void PlaceMon(void);
 static void RefreshDisplayMon(void);
 static void SetMovingMonData(u8, u8);
 static void SetPlacedMonData(u8, u8);
-static void PurgeMonOrBoxMon(u8, u8);
+// static void PurgeMonOrBoxMon(u8, u8); //tx_randomizer_and_challenges
 static void SetShiftedMonData(u8, u8);
 static bool8 TryStorePartyMonInBox(u8);
 static void ResetSelectionAfterDeposit(void);
@@ -1123,6 +1126,7 @@ static const struct StorageMessage sMessages[] =
     [MSG_ITEM_IS_HELD]         = {COMPOUND_STRING("{DYNAMIC 0} is now held."),   MSG_VAR_ITEM_NAME},
     [MSG_CHANGED_TO_ITEM]      = {COMPOUND_STRING("Changed to {DYNAMIC 0}."),    MSG_VAR_ITEM_NAME},
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("MAIL can't be stored!"),      MSG_VAR_NONE},
+    [MSG_NUZLOCKE]             = {COMPOUND_STRING("{PKMN} fainted in Nuzlocke!"), MSG_VAR_NONE},
 };
 
 static const struct WindowTemplate sYesNoWindowTemplate =
@@ -2103,11 +2107,8 @@ static void InitStartingPosData(void)
 
 static void SetMonIconTransparency(void)
 {
-    if (sStorage->boxOption == OPTION_MOVE_ITEMS)
-    {
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
-    }
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_1D_MAP);
 }
 
@@ -2652,6 +2653,11 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             break;
         case MENU_PLACE:
+            if (sIsMonBeingMoved && sCursorArea == CURSOR_AREA_IN_PARTY && GetMonData(&sStorage->movingMon, MON_DATA_NUZLOCKE_RIBBON)) //tx_randomizer_and_challenges
+            {
+                sStorage->state = 7;
+                break;
+            }
             PlaySE(SE_SELECT);
             ClearBottomWindow();
             SetPokeStorageTask(Task_PlaceMon);
@@ -2660,6 +2666,10 @@ static void Task_OnSelectedMon(u8 taskId)
             if (!CanShiftMon())
             {
                 sStorage->state = 3;
+            }
+            else if (sIsMonBeingMoved && sCursorArea == CURSOR_AREA_IN_PARTY && GetMonData(&sStorage->movingMon, MON_DATA_NUZLOCKE_RIBBON)) //tx_randomizer_and_challenges
+            {
+                sStorage->state = 7;
             }
             else
             {
@@ -2721,6 +2731,11 @@ static void Task_OnSelectedMon(u8 taskId)
             SetPokeStorageTask(Task_TakeItemForMoving);
             break;
         case MENU_GIVE:
+            if (GetCurrentBoxMonData(sCursorPosition, MON_DATA_NUZLOCKE_RIBBON))
+            {
+                sStorage->state = 7;
+                break;
+            }
             PlaySE(SE_SELECT);
             SetPokeStorageTask(Task_GiveMovingItemToMon);
             break;
@@ -2732,6 +2747,11 @@ static void Task_OnSelectedMon(u8 taskId)
             SetPokeStorageTask(Task_SwitchSelectedItem);
             break;
         case MENU_GIVE_2:
+            if (GetCurrentBoxMonData(sCursorPosition, MON_DATA_NUZLOCKE_RIBBON))
+            {
+                sStorage->state = 7;
+                break;
+            }
             PlaySE(SE_SELECT);
             SetPokeStorageTask(Task_GiveItemFromBag);
             break;
@@ -2761,6 +2781,11 @@ static void Task_OnSelectedMon(u8 taskId)
             ClearBottomWindow();
             SetPokeStorageTask(Task_PokeStorageMain);
         }
+        break;
+    case 7: //tx_randomizer_and_challenges
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_NUZLOCKE);
+        sStorage->state = 6;
         break;
     }
 }
@@ -2843,6 +2868,16 @@ static void Task_WithdrawMon(u8 taskId)
         if (CalculatePlayerPartyCount() == PARTY_SIZE)
         {
             PrintMessage(MSG_PARTY_FULL);
+            sStorage->state = 1;
+        }
+        else if (GetCurrentBoxMonData(sCursorPosition, MON_DATA_NUZLOCKE_RIBBON)) //tx_randomizer_and_challenges
+        {
+            PrintMessage(MSG_NUZLOCKE);
+            sStorage->state = 1;
+        }
+        else if (sIsMonBeingMoved && GetMonData(&sStorage->movingMon, MON_DATA_NUZLOCKE_RIBBON))
+        {
+            PrintMessage(MSG_NUZLOCKE);
             sStorage->state = 1;
         }
         else
@@ -4043,6 +4078,20 @@ static void LoadDisplayMonGfx(u16 species, u32 pid)
         CpuCopy32(sStorage->tileBuffer, sStorage->displayMonTilePtr, MON_PIC_SIZE);
         LoadPalette(sStorage->displayMonPalBuffer, sStorage->displayMonPalOffset, PLTT_SIZE_4BPP);
         UniquePalette(sStorage->displayMonPalOffset, species, pid, sStorage->isShiny);
+        if (sStorage->displayMonNuzlockeRibbon)
+        {
+            if (TX_NUZLOCKE_CEMETERY_ICON_GRAY)
+            {
+                TintPalette_GrayScale2(&gPlttBufferUnfaded[sStorage->displayMonPalOffset], PLTT_SIZE_4BPP);
+                TintPalette_GrayScale2(&gPlttBufferFaded[sStorage->displayMonPalOffset], PLTT_SIZE_4BPP);
+            }
+            else
+                sStorage->displayMonSprite->oam.objMode = ST_OAM_OBJ_BLEND;
+        }
+        else
+        {
+            sStorage->displayMonSprite->oam.objMode = ST_OAM_OBJ_NORMAL;
+        }
         sStorage->displayMonSprite->invisible = FALSE;
     }
     else
@@ -4086,7 +4135,7 @@ static void UpdateWaveformAnimation(void)
 {
     u16 i;
 
-    if (sStorage->displayMonSpecies != SPECIES_NONE)
+    if (sStorage->displayMonSpecies != SPECIES_NONE && !sStorage->displayMonNuzlockeRibbon)
     {
         // Start waveform animation and color "Pkmn Data"
         TilemapUtil_SetRect(TILEMAPID_PKMN_DATA, 0, 0, 8, 2);
@@ -4522,6 +4571,9 @@ static void InitBoxMonSprites(u8 boxId)
             {
                 personality = GetBoxMonDataAt(boxId, boxPosition, MON_DATA_PERSONALITY);
                 sStorage->boxMonsSprites[count] = CreateMonIconSprite(species, personality, 8 * (3 * j) + 100, 8 * (3 * i) + 44, 2, 19 - j);
+                // Locked nuzlocke mons should be transparent
+                if (GetBoxMonDataAt(boxId, boxPosition, MON_DATA_NUZLOCKE_RIBBON))
+                    sStorage->boxMonsSprites[count]->oam.objMode = ST_OAM_OBJ_BLEND;
             }
             else
             {
@@ -4555,6 +4607,9 @@ static void CreateBoxMonIconAtPos(u8 boxPosition)
 
         sStorage->boxMonsSprites[boxPosition] = CreateMonIconSprite(species, personality, x, y, 2, 19 - (boxPosition % IN_BOX_COLUMNS));
         if (sStorage->boxOption == OPTION_MOVE_ITEMS)
+            sStorage->boxMonsSprites[boxPosition]->oam.objMode = ST_OAM_OBJ_BLEND;
+        // Locked nuzlocke mons should be transparent
+        if (GetCurrentBoxMonData(boxPosition, MON_DATA_NUZLOCKE_RIBBON))
             sStorage->boxMonsSprites[boxPosition]->oam.objMode = ST_OAM_OBJ_BLEND;
     }
 }
@@ -4659,6 +4714,9 @@ static u8 CreateBoxMonIconsInColumn(u8 column, u16 distance, s16 speed)
                     sStorage->boxMonsSprites[boxPosition]->sSpeed = speed;
                     sStorage->boxMonsSprites[boxPosition]->sScrollInDestX = xDest;
                     sStorage->boxMonsSprites[boxPosition]->callback = SpriteCB_BoxMonIconScrollIn;
+                    // Locked nuzlocke mons should be transparent
+                    if (GetBoxMonDataAt(sStorage->incomingBoxId, boxPosition, MON_DATA_NUZLOCKE_RIBBON))
+                        sStorage->boxMonsSprites[boxPosition]->oam.objMode = ST_OAM_OBJ_BLEND;
                     iconsCreated++;
                 }
             }
@@ -6480,7 +6538,7 @@ static void SetPlacedMonData(u8 boxId, u8 position)
     }
 }
 
-static void PurgeMonOrBoxMon(u8 boxId, u8 position)
+void PurgeMonOrBoxMon(u8 boxId, u8 position) //static //tx_randomizer_and_challenges
 {
     if (boxId == TOTAL_BOXES_COUNT)
         ZeroMonData(&gPlayerParty[position]);
@@ -7050,6 +7108,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             gender = GetMonGender(mon);
             sStorage->displayMonItemId = GetMonData(mon, MON_DATA_HELD_ITEM);
             sStorage->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
+            sStorage->displayMonNuzlockeRibbon = GetMonData(mon, MON_DATA_NUZLOCKE_RIBBON);
         }
     }
     else if (mode == MODE_BOX)
@@ -7076,6 +7135,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             gender = GetGenderFromSpeciesAndPersonality(sStorage->displayMonSpecies, sStorage->displayMonPersonality);
             sStorage->displayMonItemId = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM);
             sStorage->isShiny = isShiny;
+            sStorage->displayMonNuzlockeRibbon = GetBoxMonData(boxMon, MON_DATA_NUZLOCKE_RIBBON);
         }
     }
     else
@@ -10259,4 +10319,38 @@ void UpdateSpeciesSpritePSS(struct BoxPokemon *boxMon)
         }
     }
     sJustOpenedBag = FALSE;
+}
+
+//tx_randomizer_and_challenges
+// searches for first pokemon in PC starting at Box 1
+// returns index of that pokemon, or 420 (boxes count * in box count) for none found
+u16 GetFirstBoxPokemon(void) // @Kurausukun
+{
+    u16 i;
+    u16 j;
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SPECIES) != SPECIES_NONE &&
+            !GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_IS_EGG) && !GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_NUZLOCKE_RIBBON))
+            {
+                return (i * IN_BOX_COUNT) + j;
+            }
+        }
+    }
+    return IN_BOX_COUNT * TOTAL_BOXES_COUNT; // none found
+}
+
+void MoveFirstBoxPokemon(void) // @Kurausukun
+{
+    u16 position = GetFirstBoxPokemon();
+    if (position != IN_BOX_COUNT * TOTAL_BOXES_COUNT)
+    {
+        u16 boxNum = position / IN_BOX_COUNT;
+        u16 boxIndex = position - (boxNum * IN_BOX_COUNT);
+        BoxMonAtToMon(boxNum, boxIndex, &gPlayerParty[0]);
+        PurgeMonOrBoxMon(boxNum, boxIndex);
+    }
 }

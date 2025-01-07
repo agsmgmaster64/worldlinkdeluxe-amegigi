@@ -367,6 +367,8 @@ SECTIONS {
         src/ui_birch_case.o(.text);
         src/music_player.o(.text);
         src/outfit_menu.o(.text);
+        src/tx_rac_menu.o(.text);
+        src/tx_randomizer_and_challenges.o(.text);
     } > ROM =0
 
     script_data :
@@ -627,6 +629,7 @@ SECTIONS {
 		src/battle_ai_util.o(.rodata);
         src/trader.o(.rodata);
         src/starter_choose.o(.rodata);
+        src/event_data.o(.rodata);
         src/wallclock.o(.rodata);
         src/pokeblock.o(.rodata);
         src/fldeff_flash.o(.rodata);
@@ -742,6 +745,8 @@ SECTIONS {
         src/ui_birch_case.o(.rodata);
         src/music_player.o(.text);
         src/outfit_menu.o(.rodata);
+        src/tx_rac_menu.o(.rodata);
+        src/tx_randomizer_and_challenges.o(.rodata);
     } > ROM =0
 
     song_data :

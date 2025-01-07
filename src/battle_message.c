@@ -899,6 +899,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ITDOESNTAFFECTTWOFOES]                = COMPOUND_STRING("It doesn't affect {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}…"),
     [STRINGID_SENDCAUGHTMONPARTYORBOX]              = COMPOUND_STRING("Add {B_DEF_NAME} to your party?"),
     [STRINGID_PKMNSENTTOPCAFTERCATCH]               = COMPOUND_STRING("{STR_VAR_2} was sent to {B_PC_CREATOR_NAME} PC. It was placed in Box “{STR_VAR_1}"),
+    [STRINGID_NUZLOCKECAPTUREBLOCKED]               = COMPOUND_STRING("You have already used your encounter for this area!{PAUSE_UNTIL_PRESS}"),
+    [STRINGID_SAMESPECIESCAPTUREBLOCKED]            = COMPOUND_STRING("You have already caught this Puppet!{PAUSE_UNTIL_PRESS}"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

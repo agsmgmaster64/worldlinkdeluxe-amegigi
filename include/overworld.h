@@ -186,5 +186,6 @@ enum ItemObtainFlags
     FLAG_SET_ITEM_OBTAINED,
 };
 bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId);
+u8 NuzlockeGetCurrentRegionMapSectionId(void); //tx_randomizer_and_challenges
 
 #endif // GUARD_OVERWORLD_H
