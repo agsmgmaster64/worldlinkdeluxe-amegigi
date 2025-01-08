@@ -647,3 +647,8 @@ void Script_RequestWriteVar_Internal(u32 varId)
         return;
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 }
+
+bool32 Script_IsAnalyzingTrainerBattleEffects_Internal(void)
+{
+    return gScriptEffectContext->breakOn & SCREFF_TRAINERBATTLE;
+}

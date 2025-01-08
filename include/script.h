@@ -119,10 +119,16 @@ bool32 Script_HasNoEffect(const u8 *ptr);
 void Script_GotoBreak_Internal(void);
 void Script_RequestEffects_Internal(u32 effects);
 void Script_RequestWriteVar_Internal(u32 varId);
+bool32 Script_IsAnalyzingTrainerBattleEffects_Internal(void);
 
 static inline bool32 Script_IsAnalyzingEffects(void)
 {
     return gScriptEffectContext != NULL;
+}
+
+static inline bool32 Script_IsAnalyzingTrainerBattleEffects(void)
+{
+    return Script_IsAnalyzingEffects() && Script_IsAnalyzingTrainerBattleEffects_Internal();
 }
 
 #define RunScriptImmediatelyUntilEffect(effects, ptr, ctx) \
