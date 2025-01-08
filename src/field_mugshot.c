@@ -49,6 +49,13 @@ static void SpriteCB_FieldMugshot(struct Sprite *s)
     }
 }
 
+void Script_RemoveFieldMugshot(void)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    RemoveFieldMugshot();
+}
+
 void RemoveFieldMugshot(void)
 {
     u32 i;
@@ -71,12 +78,15 @@ void RemoveFieldMugshot(void)
     sIsFieldMugshotActive = FALSE;
 }
 
-void CreateFieldMugshot(struct ScriptContext *ctx)
+void Script_CreateFieldMugshot(struct ScriptContext *ctx)
 {
     u16 mugshotId = ScriptReadHalfword(ctx);
     u16 emote = ScriptReadHalfword(ctx);
     u16 x = ScriptReadHalfword(ctx);
     u16 y = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
     _CreateFieldMugshotAt(mugshotId, emote, x, y);
 }
 
