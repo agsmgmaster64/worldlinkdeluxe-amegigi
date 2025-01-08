@@ -19,31 +19,31 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #ifdef FORCE_RANDOMIZE_WILD_MON
                 return FORCE_RANDOMIZE_WILD_MON;
             #else
-                return FlagGet(RANDOMIZER_FLAG_WILD_MON);
+                return gSaveBlock1Ptr->tx_Random_WildPokemon;
             #endif
         case RANDOMIZE_FIELD_ITEMS:
             #ifdef FORCE_RANDOMIZE_FIELD_ITEMS
                 return FORCE_RANDOMIZE_FIELD_ITEMS;
             #else
-                return FlagGet(RANDOMIZER_FLAG_FIELD_ITEMS);
+                return gSaveBlock1Ptr->tx_Random_Items;
             #endif
         case RANDOMIZE_TRAINER_MON:
             #ifdef FORCE_RANDOMIZE_TRAINER_MON
                 return FORCE_RANDOMIZE_TRAINER_MON;
             #else
-                return FlagGet(RANDOMIZER_FLAG_TRAINER_MON);
+                return gSaveBlock1Ptr->tx_Random_Trainer;
             #endif
         case RANDOMIZE_FIXED_MON:
             #ifdef FORCE_RANDOMIZE_FIXED_MON
                 return FORCE_RANDOMIZE_FIXED_MON;
             #else
-                return FlagGet(RANDOMIZER_FLAG_FIXED_MON);
+                return gSaveBlock1Ptr->tx_Random_Static;
             #endif
         case RANDOMIZE_STARTERS:
             #ifdef FORCE_RANDOMIZE_STARTERS
                 return FORCE_RANDOMIZE_STARTERS;
             #else
-                return FlagGet(RANDOMIZER_FLAG_STARTERS);
+                return gSaveBlock1Ptr->tx_Random_Starter;
             #endif
         default:
             return FALSE;
@@ -291,8 +291,8 @@ static inline u16 GetSpeciesGroup(const struct SpeciesTable* table, u16 species)
     groupEntry = table->groupData[table->speciesToGroupIndex[species]];
 
     #ifndef NDEBUG
-        MgbaPrintf(MGBA_LOG_INFO, "GetSpeciesGroup: input %lu species %lu group %lu",
-            (unsigned long)species+1, (unsigned long)groupEntry.species, (unsigned long)groupEntry.group);
+        /*MgbaPrintf(MGBA_LOG_INFO, "GetSpeciesGroup: input %lu species %lu group %lu",
+            (unsigned long)species+1, (unsigned long)groupEntry.species, (unsigned long)groupEntry.group);*/
     #endif
 
     return groupEntry;
@@ -419,7 +419,7 @@ static void FillSpeciesGroupsBST(struct SpeciesTable* entries)
         entries->groupData[i] = group;
     }
 }
-
+/*
 static void FillSpeciesGroupsLegendary(struct SpeciesTable* entries)
 {
     u16 i;
@@ -432,30 +432,7 @@ static void FillSpeciesGroupsLegendary(struct SpeciesTable* entries)
             entries->groupData[i] = IsRandomizerLegendary(i);
     }
 }
-
-// This is a list of baby Pokémon that should not cause their evolution
-// to count as an evolved pokemon.
-// XXX: put this somewhere else?
-static const u16 sPreevolutionBabyMons[] =
-{
-    SPECIES_PICHU,
-    SPECIES_CLEFFA,
-    SPECIES_IGGLYBUFF,
-    SPECIES_TYROGUE,
-    SPECIES_SMOOCHUM,
-    SPECIES_ELEKID,
-    SPECIES_MAGBY,
-    SPECIES_AZURILL,
-    SPECIES_WYNAUT,
-    SPECIES_BUDEW,
-    SPECIES_CHINGLING,
-    SPECIES_BONSLY,
-    SPECIES_MIME_JR,
-    SPECIES_HAPPINY,
-    SPECIES_MUNCHLAX,
-    SPECIES_MANTYKE,
-};
-
+*/
 static void MarkEvolutions(struct SpeciesTable *entries, u16 species, u16 stage)
 {
     const struct Evolution *evos;
@@ -484,17 +461,6 @@ static void FillSpeciesGroupsEvolution(struct SpeciesTable* entries)
 
     // Step 0: zero everything
     memset(entries, 0, sizeof(sRamSpeciesTable.speciesTable));
-
-    // Step 1: pre-visit the special babies, and mark them as basic mons.
-    for (i = 0; i < ARRAY_COUNT(sPreevolutionBabyMons); i++)
-    {
-        u16 babyMonIndex = sPreevolutionBabyMons[i];
-        entries->groupIndexToSpecies[babyMonIndex] = babyMonIndex;
-        if(IsSpeciesPermitted(babyMonIndex))
-            entries->groupData[babyMonIndex] = 0;
-        else
-            entries->groupData[babyMonIndex] = GROUP_INVALID;
-    }
 
     for(i = 0; i < RANDOMIZER_SPECIES_COUNT; i++)
     {
@@ -538,9 +504,9 @@ static void BuildRandomizerSpeciesTable(enum RandomizerSpeciesMode mode)
 
     switch(mode)
     {
-        case MON_RANDOM_LEGEND_AWARE:
-            FillSpeciesGroupsLegendary(speciesTable);
-            break;
+        //case MON_RANDOM_LEGEND_AWARE:
+            //FillSpeciesGroupsLegendary(speciesTable);
+            //break;
         case MON_RANDOM_BST:
             FillSpeciesGroupsBST(speciesTable);
             break;

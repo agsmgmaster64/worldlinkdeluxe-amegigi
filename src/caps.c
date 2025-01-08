@@ -7,10 +7,7 @@
 
 enum LevelCapDifficulties GetLevelCapDifficulty(void)
 {
-    if (!B_VAR_DIFFICULTY_CAP)
-        return LEVEL_CAP_DIFFICULTY_NONE;
-
-    return VarGet(B_VAR_DIFFICULTY_CAP);
+    return gSaveBlock1Ptr->tx_Challenges_LevelCap;
 }
 
 u32 GetCurrentLevelCap(void)

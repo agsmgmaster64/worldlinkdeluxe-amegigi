@@ -1184,21 +1184,20 @@ struct SaveBlock1
         u32 tx_Challenges_NoItemTrainer:1;
 
         u32 tx_Challenges_LevelCap:2;
-        u32 tx_Random_IncludeLegendaries:1;//
-        u32 tx_Random_Starter:1;//
-        u32 tx_Random_Type:1;//
-        u32 tx_Random_Abilities:1;//
-        u32 tx_Random_Moves:1;//
-        u32 tx_Random_Trainer:1;//
+        u32 tx_Challenges_TrainerDifficulty:2;
+        u32 tx_Random_WildPokemon:1;
+        u32 tx_Random_Trainer:1;
+        u32 tx_Random_Static:1;
+        u32 tx_Random_Items:1;
 
+        u32 tx_Random_Starter:1;
+        u32 tx_Random_Abilities:1;//
+        u32 tx_Random_Type:1;//
+        u32 tx_Random_Moves:1;//
         u32 tx_Random_Chaos:1;//
-        u32 tx_Random_Static:1;//
-        u32 tx_Random_EvolutionMethods:1;//
-        u32 tx_Random_Starter_Stage2:1;//
         u32 tx_Random_TypeEffectiveness:1;//
         u32 tx_Random_Evolutions:1;//
-        u32 tx_Random_WildPokemon:1;//
-        u32 tx_Random_Items:1;//
+        u32 tx_Random_IncludeLegendaries:1;//
 
         u32 tx_Nuzlocke_Nicknaming:1;//
         u32 tx_Challenges_Mirror:1;//
@@ -1208,7 +1207,8 @@ struct SaveBlock1
         u32 tx_Challenges_BaseStatEqualizer:2;//
 
 
-        u32 tx_Challenges_ExpMultiplier:2;//
+        u32 tx_Random_Starter_Stage2:1;//
+        u32 tx_Random_EvolutionMethods:1;//
         u32 tx_Challenges_EvoLimit:2;//
         u32 tx_Challenges_TrainerScalingIVs:2;//
         u32 tx_Challenges_TrainerScalingEVs:2;//

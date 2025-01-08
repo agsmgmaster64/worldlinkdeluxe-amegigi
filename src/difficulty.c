@@ -6,21 +6,15 @@
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
-    if (!B_VAR_DIFFICULTY)
-        return DIFFICULTY_NORMAL;
-
-    return VarGet(B_VAR_DIFFICULTY);
+    return gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty;
 }
 
 void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
 {
-    if (!B_VAR_DIFFICULTY)
-        return;
-
     if (desiredDifficulty > DIFFICULTY_MAX)
         desiredDifficulty = DIFFICULTY_MAX;
 
-    VarSet(B_VAR_DIFFICULTY, desiredDifficulty);
+    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = desiredDifficulty;
 }
 
 enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)
@@ -56,9 +50,6 @@ void Script_IncreaseDifficulty(void)
 {
     enum DifficultyLevel currentDifficulty;
 
-    if (!B_VAR_DIFFICULTY)
-        return;
-
     currentDifficulty = GetCurrentDifficultyLevel();
 
     if (currentDifficulty++ > DIFFICULTY_MAX)
@@ -70,9 +61,6 @@ void Script_IncreaseDifficulty(void)
 void Script_DecreaseDifficulty(void)
 {
     enum DifficultyLevel currentDifficulty;
-
-    if (!B_VAR_DIFFICULTY)
-        return;
 
     currentDifficulty = GetCurrentDifficultyLevel();
 

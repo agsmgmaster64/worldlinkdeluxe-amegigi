@@ -4171,7 +4171,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .teachableLearnset = sSilvallyTeachableLearnset,                            \
         .formSpeciesIdTable = sSilvallyFormSpeciesIdTable,                          \
         .formChangeTable = sSilvallyFormChangeTable,                                \
-        .randomizerMode = (type == TYPE_NORMAL                                      \
+        .randomizerMode = (type == TYPE_ILLUSION                                      \
             ? MON_RANDOMIZER_NORMAL                                                 \
             : MON_RANDOMIZER_INVALID),                                              \
     }
