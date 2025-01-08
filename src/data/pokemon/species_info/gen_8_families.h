@@ -243,6 +243,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sRillaboomTeachableLearnset,
         .formSpeciesIdTable = sRillaboomFormSpeciesIdTable,
         .formChangeTable = sRillaboomFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_GROOKEY
@@ -489,6 +490,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCinderaceTeachableLearnset,
         .formSpeciesIdTable = sCinderaceFormSpeciesIdTable,
         .formChangeTable = sCinderaceFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SCORBUNNY
@@ -736,6 +738,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sInteleonTeachableLearnset,
         .formSpeciesIdTable = sInteleonFormSpeciesIdTable,
         .formChangeTable = sInteleonFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SOBBLE
@@ -1110,6 +1113,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCorviknightTeachableLearnset,
         .formSpeciesIdTable = sCorviknightFormSpeciesIdTable,
         .formChangeTable = sCorviknightFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_ROOKIDEE
@@ -1361,6 +1365,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sOrbeetleTeachableLearnset,
         .formSpeciesIdTable = sOrbeetleFormSpeciesIdTable,
         .formChangeTable = sOrbeetleFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_BLIPBUG
@@ -1919,6 +1924,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sDrednawTeachableLearnset,
         .formSpeciesIdTable = sDrednawFormSpeciesIdTable,
         .formChangeTable = sDrednawFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_CHEWTLE
@@ -2290,6 +2296,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCoalossalTeachableLearnset,
         .formSpeciesIdTable = sCoalossalFormSpeciesIdTable,
         .formChangeTable = sCoalossalFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_ROLYCOLY
@@ -2475,6 +2482,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sFlappleTeachableLearnset,
         .formSpeciesIdTable = sFlappleFormSpeciesIdTable,
         .formChangeTable = sFlappleFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 
@@ -2538,6 +2546,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sAppletunTeachableLearnset,
         .formSpeciesIdTable = sAppletunFormSpeciesIdTable,
         .formChangeTable = sAppletunFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -2595,6 +2604,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sAppletunTeachableLearnset,
         .formSpeciesIdTable = sAppletunFormSpeciesIdTable,
         .formChangeTable = sAppletunFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 
@@ -2903,6 +2913,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sSandacondaTeachableLearnset,
         .formSpeciesIdTable = sSandacondaFormSpeciesIdTable,
         .formChangeTable = sSandacondaFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SILICOBRA
@@ -3023,6 +3034,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCramorantTeachableLearnset,
         .formSpeciesIdTable = sCramorantFormSpeciesIdTable,
         .formChangeTable = sCramorantFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
     [SPECIES_CRAMORANT_GORGING] =
@@ -3078,6 +3090,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCramorantTeachableLearnset,
         .formSpeciesIdTable = sCramorantFormSpeciesIdTable,
         .formChangeTable = sCramorantFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_CRAMORANT
 
@@ -3331,6 +3344,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sToxtricityAmpedTeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
         .formChangeTable = sToxtricityAmpedFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -3384,6 +3398,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sToxtricityAmpedTeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
         .formChangeTable = sToxtricityAmpedFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 
@@ -3447,6 +3462,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sToxtricityLowKeyTeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
         .formChangeTable = sToxtricityAmpedFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -3500,6 +3516,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sToxtricityLowKeyTeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
         .formChangeTable = sToxtricityAmpedFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_TOXEL
@@ -3684,6 +3701,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCentiskorchTeachableLearnset,
         .formSpeciesIdTable = sCentiskorchFormSpeciesIdTable,
         .formChangeTable = sCentiskorchFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SIZZLIPEDE
@@ -3873,6 +3891,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sSinisteaLevelUpLearnset,
         .teachableLearnset = sSinisteaTeachableLearnset,
         .formSpeciesIdTable = sSinisteaFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
     },
 
     [SPECIES_SINISTEA_ANTIQUE] =
@@ -3936,6 +3955,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sSinisteaLevelUpLearnset,
         .teachableLearnset = sSinisteaTeachableLearnset,
         .formSpeciesIdTable = sSinisteaFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
     [SPECIES_POLTEAGEIST_PHONY] =
@@ -3998,6 +4018,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sPolteageistLevelUpLearnset,
         .teachableLearnset = sPolteageistTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
     },
 
     [SPECIES_POLTEAGEIST_ANTIQUE] =
@@ -4061,6 +4082,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sPolteageistLevelUpLearnset,
         .teachableLearnset = sPolteageistTeachableLearnset,
         .formSpeciesIdTable = sPolteageistFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_SINISTEA
 
@@ -4305,6 +4327,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sHattereneTeachableLearnset,
         .formSpeciesIdTable = sHattereneFormSpeciesIdTable,
         .formChangeTable = sHattereneFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_HATENNA
@@ -4552,6 +4575,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sGrimmsnarlTeachableLearnset,
         .formSpeciesIdTable = sGrimmsnarlFormSpeciesIdTable,
         .formChangeTable = sGrimmsnarlFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_IMPIDIMP
@@ -4646,7 +4670,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .abilities = { ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL },  \
         .sourceGame = color
 
-#define ALCREMIE_REGULAR_SPECIES_INFO(sweet, cream, color)                                      \
+#define ALCREMIE_REGULAR_SPECIES_INFO(sweet, cream, color, rzMode)                              \
     {                                                                                           \
         ALCREMIE_MISC_INFO(color),                                                              \
         .speciesName = _("Alcremie"),                                                           \
@@ -4687,71 +4711,72 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sAlcremieTeachableLearnset,                                        \
         .formSpeciesIdTable = sAlcremieFormSpeciesIdTable,                                      \
         .formChangeTable = sAlcremieFormChangeTable,                                            \
+        .randomizerMode = rzMode,                                                               \
     }
 
-    [SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM]  = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM]   = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM]  = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_BERRY_VANILLA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_BERRY_RUBY_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_BERRY_MATCHA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_BERRY_MINT_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_BERRY_LEMON_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_BERRY_SALTED_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_BERRY_RUBY_SWIRL]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_LOVE_VANILLA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_LOVE_RUBY_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_LOVE_MATCHA_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Love,       MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_LOVE_MINT_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_LOVE_LEMON_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Love,       LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_LOVE_SALTED_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Love,       SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_LOVE_RUBY_SWIRL]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_STAR_VANILLA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_STAR_RUBY_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_STAR_MATCHA_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Star,       MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_STAR_MINT_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_STAR_LEMON_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Star,       LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_STAR_SALTED_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Star,       SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_STAR_RUBY_SWIRL]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_CLOVER_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_CLOVER_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_CLOVER_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_CLOVER_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_FLOWER_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_FLOWER_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_FLOWER_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_FLOWER_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RainbowSwirl, SOURCE_PODD),
-    [SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     VanillaCream, SOURCE_POFV),
-    [SPECIES_ALCREMIE_RIBBON_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RubyCream,    SOURCE_MOF),
-    [SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     MatchaCream,  SOURCE_LLS),
-    [SPECIES_ALCREMIE_RIBBON_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     MintCream,    SOURCE_SOEW),
-    [SPECIES_ALCREMIE_RIBBON_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     LemonCream,   SOURCE_PODD),
-    [SPECIES_ALCREMIE_RIBBON_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     SaltedCream,  SOURCE_POFV),
-    [SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RubySwirl,    SOURCE_PODD),
-    [SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     CaramelSwirl, SOURCE_EOSD),
-    [SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RainbowSwirl, SOURCE_PODD),
+    [SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, VanillaCream, SOURCE_POFV, MON_RANDOMIZER_RANDOM_FORM),
+    [SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM]  = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM]   = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM]  = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL]    = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL] = ALCREMIE_REGULAR_SPECIES_INFO(Strawberry, RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_VANILLA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_RUBY_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_MATCHA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_MINT_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_LEMON_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_SALTED_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_RUBY_SWIRL]         = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL]      = ALCREMIE_REGULAR_SPECIES_INFO(Berry,      RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_VANILLA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_RUBY_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_MATCHA_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Love,       MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_MINT_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_LEMON_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Love,       LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_SALTED_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Love,       SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_RUBY_SWIRL]          = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Love,       RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_VANILLA_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_RUBY_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_MATCHA_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Star,       MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_MINT_CREAM]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_LEMON_CREAM]         = ALCREMIE_REGULAR_SPECIES_INFO(Star,       LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_SALTED_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Star,       SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_RUBY_SWIRL]          = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL]       = ALCREMIE_REGULAR_SPECIES_INFO(Star,       RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Clover,     RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Flower,     RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     VanillaCream, SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_RUBY_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RubyCream,    SOURCE_MOF,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     MatchaCream,  SOURCE_LLS,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_MINT_CREAM]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     MintCream,    SOURCE_SOEW,      MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_LEMON_CREAM]       = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     LemonCream,   SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_SALTED_CREAM]      = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     SaltedCream,  SOURCE_POFV,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL]        = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RubySwirl,    SOURCE_PODD,    MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     CaramelSwirl, SOURCE_EOSD,     MON_RANDOMIZER_INVALID),
+    [SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL]     = ALCREMIE_REGULAR_SPECIES_INFO(Ribbon,     RainbowSwirl, SOURCE_PODD,    MON_RANDOMIZER_INVALID),
 #if P_GIGANTAMAX_FORMS
     [SPECIES_ALCREMIE_GMAX] =
     {
@@ -4791,6 +4816,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sAlcremieTeachableLearnset,
         .formSpeciesIdTable = sAlcremieFormSpeciesIdTable,
         .formChangeTable = sAlcremieFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_MILCERY
@@ -5226,6 +5252,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sEiscueTeachableLearnset,
         .formSpeciesIdTable = sEiscueFormSpeciesIdTable,
         .formChangeTable = sEiscueFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_EISCUE
 
@@ -5290,6 +5317,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sIndeedeeMLevelUpLearnset,
         .teachableLearnset = sIndeedeeMTeachableLearnset,
         .formSpeciesIdTable = sIndeedeeFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
     },
 
     [SPECIES_INDEEDEE_F] =
@@ -5352,6 +5380,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sIndeedeeFLevelUpLearnset,
         .teachableLearnset = sIndeedeeFTeachableLearnset,
         .formSpeciesIdTable = sIndeedeeFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_INDEEDEE
 
@@ -5472,6 +5501,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sMorpekoTeachableLearnset,
         .formSpeciesIdTable = sMorpekoFormSpeciesIdTable,
         .formChangeTable = sMorpekoFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_MORPEKO
 
@@ -5658,6 +5688,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sCopperajahTeachableLearnset,
         .formSpeciesIdTable = sCopperajahFormSpeciesIdTable,
         .formChangeTable = sCopperajahFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_CUFANT
@@ -6031,6 +6062,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sDuraludonTeachableLearnset,
         .formSpeciesIdTable = sDuraludonFormSpeciesIdTable,
         .formChangeTable = sDuraludonFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 
@@ -6417,6 +6449,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sZacianTeachableLearnset,
         .formSpeciesIdTable = sZacianFormSpeciesIdTable,
         .formChangeTable = sZacianFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_ZACIAN
 
@@ -6551,6 +6584,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sZamazentaTeachableLearnset,
         .formSpeciesIdTable = sZamazentaFormSpeciesIdTable,
         .formChangeTable = sZamazentaFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_ZAMAZENTA
 
@@ -6677,6 +6711,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sEternatusLevelUpLearnset,
         .teachableLearnset = sEternatusTeachableLearnset,
         .formSpeciesIdTable = sEternatusFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_ETERNATUS
 
@@ -6810,6 +6845,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sUrshifuSingleStrikeTeachableLearnset,
         .formSpeciesIdTable = sUrshifuFormSpeciesIdTable,
         .formChangeTable = sUrshifuSingleStrikeFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -6868,6 +6904,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sUrshifuSingleStrikeLevelUpLearnset,
         .teachableLearnset = sUrshifuSingleStrikeTeachableLearnset,
         .formSpeciesIdTable = sUrshifuFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 
@@ -6934,6 +6971,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sUrshifuRapidStrikeTeachableLearnset,
         .formSpeciesIdTable = sUrshifuFormSpeciesIdTable,
         .formChangeTable = sUrshifuRapidStrikeFormChangeTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -6992,6 +7030,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sUrshifuRapidStrikeLevelUpLearnset,
         .teachableLearnset = sUrshifuRapidStrikeTeachableLearnset,
         .formSpeciesIdTable = sUrshifuFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_KUBFU
@@ -7061,6 +7100,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sZarudeLevelUpLearnset,
         .teachableLearnset = sZarudeTeachableLearnset,
         .formSpeciesIdTable = sZarudeFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
     },
     [SPECIES_ZARUDE_DADA] =
     {
@@ -7117,6 +7157,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sZarudeLevelUpLearnset,
         .teachableLearnset = sZarudeTeachableLearnset,
         .formSpeciesIdTable = sZarudeFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_ZARUDE
 
@@ -7512,6 +7553,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sCalyrexIceLevelUpLearnset,
         .teachableLearnset = sCalyrexIceTeachableLearnset,
         .formSpeciesIdTable = sCalyrexFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
     [SPECIES_CALYREX_SHADOW] =
@@ -7578,6 +7620,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sCalyrexShadowLevelUpLearnset,
         .teachableLearnset = sCalyrexShadowTeachableLearnset,
         .formSpeciesIdTable = sCalyrexFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_FUSION_FORMS
 #endif //P_FAMILY_CALYREX
@@ -7710,6 +7753,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sEnamorusLevelUpLearnset,
         .teachableLearnset = sEnamorusTeachableLearnset,
         .formSpeciesIdTable = sEnamorusFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID
     },
 #endif //P_FAMILY_ENAMORUS
 

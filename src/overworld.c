@@ -79,6 +79,7 @@
 #include "constants/weather.h"
 #include "tx_randomizer_and_challenges.h"
 #include "pokemon_storage_system.h" //tx_randomizer_and_challenges
+#include "randomizer.h"
 
 struct CableClubPlayer
 {
@@ -2083,6 +2084,10 @@ void CB2_ContinueSavedGame(void)
         LoadTrainerHillFloorObjectEventScripts();
     else
         LoadSaveblockObjEventScripts();
+
+    #if (RANDOMIZER_AVAILABLE == TRUE) && (RANDOMIZER_DYNAMIC_SPECIES == TRUE)
+        PreloadRandomizationTables();
+    #endif
 
     UnfreezeObjectEvents();
     DoTimeBasedEvents();
