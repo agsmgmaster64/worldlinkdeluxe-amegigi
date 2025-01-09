@@ -204,19 +204,33 @@ static const struct BgTemplate sOptionMenuBgTemplates[] =
     },
 };
 
+struct OptionsPlusOptions
+{
+    u8 visuals[MENUITEM_VISUALS_COUNT];
+    u8 battle[MENUITEM_BATTLE_COUNT];
+    u8 misc[MENUITEM_MISC_COUNT];
+};
+
+struct ChallengesOptions
+{
+    u8 randomizer[MENUITEM_RANDOM_COUNT];
+    u8 nuzlocke[MENUITEM_NUZLOCKE_COUNT];
+    u8 difficulty[MENUITEM_DIFFICULTY_COUNT];
+};
+
 struct OptionMenu
 {
     u8 submenu;
-    u8 sel_visuals[MENUITEM_VISUALS_COUNT];
-    u8 sel_battle[MENUITEM_BATTLE_COUNT];
-    u8 sel_misc[MENUITEM_MISC_COUNT];
-    u8 sel_randomizer[MENUITEM_RANDOM_COUNT];
-    u8 sel_nuzlocke[MENUITEM_NUZLOCKE_COUNT];
-    u8 sel_difficulty[MENUITEM_DIFFICULTY_COUNT];
+    union
+    {
+        struct OptionsPlusOptions optionsPlus;
+        struct ChallengesOptions challenges;
+    } selection;
     int menuCursor[MENU_COUNT];
     int visibleCursor[MENU_COUNT];
     u8 arrowTaskId;
     u8 gfxLoadState;
+    u8 optionMode;
 };
 
 struct OptionFuncs
@@ -626,32 +640,32 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_RANDOM_EVOLUTIONS_METHODS:
         case MENUITEM_RANDOM_TYPE_EFFEC:
         case MENUITEM_RANDOM_ITEMS:
-            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
+            return sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON];
         case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:
-            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
-                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC])
-                && !sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+            return sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC])
+                && !sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_CHAOS];
         case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:
-            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
-                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]);
+            return sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC]);
         case MENUITEM_RANDOM_CHAOS:
-            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
-                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
-                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
+            return sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_MOVES]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ABILITIES]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
+                || sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
         default:
             return TRUE;
         }
@@ -661,7 +675,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_NUZLOCKE_SPECIES_CLAUSE:
         case MENUITEM_NUZLOCKE_SHINY_CLAUSE:
         case MENUITEM_NUZLOCKE_DELETION:
-            return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
+            return sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
         default:
             return TRUE;
         }
@@ -965,38 +979,38 @@ static const u8 *const OptionTextDescription(void)
     case MENU_VISUALS:
         if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledVisuals[menuItem];
-        selection = sOptions->sel_visuals[menuItem];
+        selection = sOptions->selection.optionsPlus.visuals[menuItem];
         if (menuItem == MENUITEM_VISUALS_TEXTSPEED || menuItem == MENUITEM_VISUALS_FRAMETYPE)
             selection = 0;
         return sOptionMenuItemDescriptionsVisuals[menuItem][selection];
     case MENU_BATTLE:
         if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledBattle[menuItem];
-        selection = sOptions->sel_battle[menuItem];
+        selection = sOptions->selection.optionsPlus.battle[menuItem];
         if (menuItem == MENUITEM_BATTLE_HP_BAR || menuItem == MENUITEM_BATTLE_EXP_BAR || menuItem == MENUITEM_BATTLE_ANIM_SPEED)
             selection = 0;
         return sOptionMenuItemDescriptionsBattle[menuItem][selection];
     case MENU_MISC:
         if (!CheckConditions(menuItem))
             return sOptionMenuItemDescriptionsDisabledMisc[menuItem];
-        selection = sOptions->sel_misc[menuItem];
+        selection = sOptions->selection.optionsPlus.misc[menuItem];
         if (menuItem == MENUITEM_MISC_MUSIC_VOLUME || menuItem == MENUITEM_MISC_SFX_VOLUME || menuItem == MENUITEM_MISC_CRIES_VOLUME)
             selection = 0;
         return sOptionMenuItemDescriptionsMisc[menuItem][selection];
     case MENU_RANDOMIZER:
         if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledRandomizer[menuItem] != sText_Empty)
             return sOptionMenuItemDescriptionsDisabledRandomizer[menuItem];
-        selection = sOptions->sel_randomizer[menuItem];  
+        selection = sOptions->selection.challenges.randomizer[menuItem];  
         return sOptionMenuItemDescriptionsRandomizer[menuItem][selection];
     case MENU_NUZLOCKE:
         if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem] != sText_Empty)
             return sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem];
-        selection = sOptions->sel_nuzlocke[menuItem];
+        selection = sOptions->selection.challenges.nuzlocke[menuItem];
         return sOptionMenuItemDescriptionsNuzlocke[menuItem][selection];
     case MENU_DIFFICULTY:
         if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledDifficulty[menuItem] != sText_Empty)
             return sOptionMenuItemDescriptionsDisabledDifficulty[menuItem];
-        selection = sOptions->sel_difficulty[menuItem];
+        selection = sOptions->selection.challenges.difficulty[menuItem];
         return sOptionMenuItemDescriptionsDifficulty[menuItem][selection];
     }
     return sText_Empty;
@@ -1202,27 +1216,27 @@ static void DrawChoices(u32 id, int y) //right side draw function
     {
         case MENU_VISUALS:
             if (sItemFunctionsVisuals[id].drawChoices != NULL)
-                sItemFunctionsVisuals[id].drawChoices(sOptions->sel_visuals[id], y);
+                sItemFunctionsVisuals[id].drawChoices(sOptions->selection.optionsPlus.visuals[id], y);
             break;
         case MENU_BATTLE:
             if (sItemFunctionsBattle[id].drawChoices != NULL)
-                sItemFunctionsBattle[id].drawChoices(sOptions->sel_battle[id], y);
+                sItemFunctionsBattle[id].drawChoices(sOptions->selection.optionsPlus.battle[id], y);
             break;
         case MENU_MISC:
             if (sItemFunctionsMisc[id].drawChoices != NULL)
-                sItemFunctionsMisc[id].drawChoices(sOptions->sel_misc[id], y);
+                sItemFunctionsMisc[id].drawChoices(sOptions->selection.optionsPlus.misc[id], y);
             break;
         case MENU_RANDOMIZER:
             if (sItemFunctionsRandom[id].drawChoices != NULL)
-                sItemFunctionsRandom[id].drawChoices(sOptions->sel_randomizer[id], y);
+                sItemFunctionsRandom[id].drawChoices(sOptions->selection.challenges.randomizer[id], y);
             break;
         case MENU_NUZLOCKE:
             if (sItemFunctionsNuzlocke[id].drawChoices != NULL)
-                sItemFunctionsNuzlocke[id].drawChoices(sOptions->sel_nuzlocke[id], y);
+                sItemFunctionsNuzlocke[id].drawChoices(sOptions->selection.challenges.nuzlocke[id], y);
             break;
         case MENU_DIFFICULTY:
             if (sItemFunctionsDifficulty[id].drawChoices != NULL)
-                sItemFunctionsDifficulty[id].drawChoices(sOptions->sel_difficulty[id], y);
+                sItemFunctionsDifficulty[id].drawChoices(sOptions->selection.challenges.difficulty[id], y);
             break;
     }
 }
@@ -1281,31 +1295,30 @@ static void OptionsMenu_LoadOptions(u32 optionMode)
     {
     default:
     case MENUMODE_OPTIONSPLUS:
-        sOptions->sel_visuals[MENUITEM_VISUALS_TEXTSPEED]     = gSaveBlock2Ptr->optionsTextSpeed;
-        sOptions->sel_visuals[MENUITEM_VISUALS_FRAMETYPE]     = gSaveBlock2Ptr->optionsWindowFrameType;
-        sOptions->sel_visuals[MENUITEM_VISUALS_FONT]          = gSaveBlock2Ptr->optionsCurrentFont;
-        sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
-        sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS]    = gSaveBlock2Ptr->optionsMonAnimations;
+        sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_TEXTSPEED]     = gSaveBlock2Ptr->optionsTextSpeed;
+        sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FRAMETYPE]     = gSaveBlock2Ptr->optionsWindowFrameType;
+        sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FONT]          = gSaveBlock2Ptr->optionsCurrentFont;
+        sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
+        sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_ANIMATIONS]    = gSaveBlock2Ptr->optionsMonAnimations;
 
-        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
-        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
-        sOptions->sel_battle[MENUITEM_BATTLE_HP_BAR]        = gSaveBlock2Ptr->optionsHpBarSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_EXP_BAR]       = gSaveBlock2Ptr->optionsExpBarSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_ANIM_SPEED]    = gSaveBlock2Ptr->optionsAnimSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_IV_VIEW]       = gSaveBlock2Ptr->optionsSummaryIvView;
-        sOptions->sel_battle[MENUITEM_BATTLE_EFFECTIVENESS] = gSaveBlock2Ptr->optionsEffectiveness;
-        sOptions->sel_battle[MENUITEM_BATTLE_SHOW_TYPES]    = gSaveBlock2Ptr->optionsShowTypes;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_HP_BAR]        = gSaveBlock2Ptr->optionsHpBarSpeed;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EXP_BAR]       = gSaveBlock2Ptr->optionsExpBarSpeed;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_ANIM_SPEED]    = gSaveBlock2Ptr->optionsAnimSpeed;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_IV_VIEW]       = gSaveBlock2Ptr->optionsSummaryIvView;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EFFECTIVENESS] = gSaveBlock2Ptr->optionsEffectiveness;
+        sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_SHOW_TYPES]    = gSaveBlock2Ptr->optionsShowTypes;
 
-        sOptions->sel_misc[MENUITEM_MISC_SOUND]        = gSaveBlock2Ptr->optionsSound;
-        sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME] = gSaveBlock2Ptr->optionsVolumeBGM;
-        sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME]   = gSaveBlock2Ptr->optionsVolumeSFX;
-        sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME] = gSaveBlock2Ptr->optionsVolumeCries;
-        //sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
-        sOptions->sel_misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
-        sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SOUND]        = gSaveBlock2Ptr->optionsSound;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MUSIC_VOLUME] = gSaveBlock2Ptr->optionsVolumeBGM;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SFX_VOLUME]   = gSaveBlock2Ptr->optionsVolumeSFX;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_CRIES_VOLUME] = gSaveBlock2Ptr->optionsVolumeCries;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
+        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
 
         sOptions->submenu = MENU_VISUALS;
         break;
@@ -1352,46 +1365,46 @@ static void OptionsMenu_LoadOptions(u32 optionMode)
         gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
                
 
-        sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
         if (gSaveBlock1Ptr->tx_Random_Starter_Stage2)
-            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 2;
+            sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER] = 2;
         else if (gSaveBlock1Ptr->tx_Random_Starter)
-            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 1;
+            sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER] = 1;
         else
-            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 0;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]                  = gSaveBlock1Ptr->tx_Random_WildPokemon;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]                    = gSaveBlock1Ptr->tx_Random_Trainer;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]                     = gSaveBlock1Ptr->tx_Random_Static;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]    = !gSaveBlock1Ptr->tx_Random_Similar;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES]        = gSaveBlock1Ptr->tx_Random_IncludeLegendaries;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]                       = gSaveBlock1Ptr->tx_Random_Type;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]                      = gSaveBlock1Ptr->tx_Random_Moves;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]                  = gSaveBlock1Ptr->tx_Random_Abilities;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]                 = gSaveBlock1Ptr->tx_Random_Evolutions;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]         = gSaveBlock1Ptr->tx_Random_EvolutionMethods;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]                 = gSaveBlock1Ptr->tx_Random_TypeEffectiveness;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS]                      = gSaveBlock1Ptr->tx_Random_Items;
-        sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS]                      = gSaveBlock1Ptr->tx_Random_Chaos;
+            sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER] = 0;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN]                  = gSaveBlock1Ptr->tx_Random_WildPokemon;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER]                    = gSaveBlock1Ptr->tx_Random_Trainer;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC]                     = gSaveBlock1Ptr->tx_Random_Static;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]    = !gSaveBlock1Ptr->tx_Random_Similar;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES]        = gSaveBlock1Ptr->tx_Random_IncludeLegendaries;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE]                       = gSaveBlock1Ptr->tx_Random_Type;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_MOVES]                      = gSaveBlock1Ptr->tx_Random_Moves;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ABILITIES]                  = gSaveBlock1Ptr->tx_Random_Abilities;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS]                 = gSaveBlock1Ptr->tx_Random_Evolutions;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]         = gSaveBlock1Ptr->tx_Random_EvolutionMethods;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE_EFFEC]                 = gSaveBlock1Ptr->tx_Random_TypeEffectiveness;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ITEMS]                      = gSaveBlock1Ptr->tx_Random_Items;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_CHAOS]                      = gSaveBlock1Ptr->tx_Random_Chaos;
 
         // MENU_NUZLOCKE
         if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore)
-            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 2;
+            sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 2;
         else if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
-            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 1;
+            sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 1;
         else
-            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 0;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = gSaveBlock1Ptr->tx_Nuzlocke_Deletion;
+            sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 0;
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause;
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause;
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = gSaveBlock1Ptr->tx_Nuzlocke_Deletion;
         
         // MENU_DIFFICULTY
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY] = gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]      = gSaveBlock1Ptr->tx_Challenges_LevelCap;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]    = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
-        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY] = gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]      = gSaveBlock1Ptr->tx_Challenges_LevelCap;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]    = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
+        sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs;
 
         sOptions->submenu = MENU_RANDOMIZER;
         break;
@@ -1452,6 +1465,7 @@ static void CB2_InitOptionsMenu(u32 optionMode)
         ScanlineEffect_Stop();
         gMain.state++;
         sOptions->gfxLoadState = 0;
+        sOptions->optionMode = optionMode;
         break;
     case 3:
         if (OptionsMenu_LoadGraphics() == TRUE)
@@ -1648,102 +1662,102 @@ static void Task_OptionMenuProcessInput(u8 taskId)
         if (sOptions->submenu == MENU_VISUALS)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_visuals[cursor];
+            u8 previousOption = sOptions->selection.optionsPlus.visuals[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsVisuals[cursor].processInput != NULL)
                 {
-                    sOptions->sel_visuals[cursor] = sItemFunctionsVisuals[cursor].processInput(previousOption);
+                    sOptions->selection.optionsPlus.visuals[cursor] = sItemFunctionsVisuals[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_visuals[cursor])
+                if (previousOption != sOptions->selection.optionsPlus.visuals[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
         else if (sOptions->submenu == MENU_BATTLE)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_battle[cursor];
+            u8 previousOption = sOptions->selection.optionsPlus.battle[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsBattle[cursor].processInput != NULL)
                 {
-                    sOptions->sel_battle[cursor] = sItemFunctionsBattle[cursor].processInput(previousOption);
+                    sOptions->selection.optionsPlus.battle[cursor] = sItemFunctionsBattle[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_battle[cursor])
+                if (previousOption != sOptions->selection.optionsPlus.battle[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
         else if (sOptions->submenu == MENU_MISC)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_misc[cursor];
+            u8 previousOption = sOptions->selection.optionsPlus.misc[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsMisc[cursor].processInput != NULL)
                 {
-                    sOptions->sel_misc[cursor] = sItemFunctionsMisc[cursor].processInput(previousOption);
+                    sOptions->selection.optionsPlus.misc[cursor] = sItemFunctionsMisc[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_misc[cursor])
+                if (previousOption != sOptions->selection.optionsPlus.misc[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
         else if (sOptions->submenu == MENU_RANDOMIZER)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_randomizer[cursor];
+            u8 previousOption = sOptions->selection.challenges.randomizer[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsRandom[cursor].processInput != NULL)
                 {
-                    sOptions->sel_randomizer[cursor] = sItemFunctionsRandom[cursor].processInput(previousOption);
+                    sOptions->selection.challenges.randomizer[cursor] = sItemFunctionsRandom[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_randomizer[cursor])
+                if (previousOption != sOptions->selection.challenges.randomizer[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
         else if (sOptions->submenu == MENU_NUZLOCKE)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_nuzlocke[cursor];
+            u8 previousOption = sOptions->selection.challenges.nuzlocke[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsNuzlocke[cursor].processInput != NULL)
                 {
-                    sOptions->sel_nuzlocke[cursor] = sItemFunctionsNuzlocke[cursor].processInput(previousOption);
+                    sOptions->selection.challenges.nuzlocke[cursor] = sItemFunctionsNuzlocke[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_nuzlocke[cursor])
+                if (previousOption != sOptions->selection.challenges.nuzlocke[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
         else if (sOptions->submenu == MENU_DIFFICULTY)
         {
             int cursor = sOptions->menuCursor[sOptions->submenu];
-            u8 previousOption = sOptions->sel_difficulty[cursor];
+            u8 previousOption = sOptions->selection.challenges.difficulty[cursor];
             if (CheckConditions(cursor))
             {
                 if (sItemFunctionsDifficulty[cursor].processInput != NULL)
                 {
-                    sOptions->sel_difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
+                    sOptions->selection.challenges.difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
                     ReDrawAll();
                     DrawDescriptionText();
                 }
 
-                if (previousOption != sOptions->sel_difficulty[cursor])
+                if (previousOption != sOptions->selection.challenges.difficulty[cursor])
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
@@ -1776,30 +1790,30 @@ static void Task_OptionMenuProcessInput(u8 taskId)
 
 static void Task_OptionMenuSave(u8 taskId)
 {
-    gSaveBlock2Ptr->optionsTextSpeed        = sOptions->sel_visuals[MENUITEM_VISUALS_TEXTSPEED];
-    gSaveBlock2Ptr->optionsCurrentFont      = sOptions->sel_visuals[MENUITEM_VISUALS_FONT];
-    gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_visuals[MENUITEM_VISUALS_FRAMETYPE];
-    gSaveBlock2Ptr->optionsUniqueColors     = sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS];
-    gSaveBlock2Ptr->optionsMonAnimations    = sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS];
+    gSaveBlock2Ptr->optionsTextSpeed        = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_TEXTSPEED];
+    gSaveBlock2Ptr->optionsCurrentFont      = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FONT];
+    gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FRAMETYPE];
+    gSaveBlock2Ptr->optionsUniqueColors     = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_UNIQUE_COLORS];
+    gSaveBlock2Ptr->optionsMonAnimations    = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_ANIMATIONS];
 
-    gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
-    gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
-    gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->sel_battle[MENUITEM_BATTLE_HP_BAR];
-    gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->sel_battle[MENUITEM_BATTLE_EXP_BAR];
-    gSaveBlock2Ptr->optionsAnimSpeed        = sOptions->sel_battle[MENUITEM_BATTLE_ANIM_SPEED];
-    gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->sel_battle[MENUITEM_BATTLE_IV_VIEW];
-    gSaveBlock2Ptr->optionsEffectiveness    = sOptions->sel_battle[MENUITEM_BATTLE_EFFECTIVENESS];
-    gSaveBlock2Ptr->optionsShowTypes        = sOptions->sel_battle[MENUITEM_BATTLE_SHOW_TYPES];
+    gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESCENE];
+    gSaveBlock2Ptr->optionsBattleStyle      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESTYLE];
+    gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_HP_BAR];
+    gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EXP_BAR];
+    gSaveBlock2Ptr->optionsAnimSpeed        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_ANIM_SPEED];
+    gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_IV_VIEW];
+    gSaveBlock2Ptr->optionsEffectiveness    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EFFECTIVENESS];
+    gSaveBlock2Ptr->optionsShowTypes        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_SHOW_TYPES];
 
-    gSaveBlock2Ptr->optionsSound            = sOptions->sel_misc[MENUITEM_MISC_SOUND];
-    gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME];
-    gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME];
-    gSaveBlock2Ptr->optionsVolumeCries      = sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME];
-    gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM];
-    gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_misc[MENUITEM_MISC_MATCHCALL];
-    gSaveBlock2Ptr->optionsLButtonMode      = sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE];
-    gSaveBlock2Ptr->optionsRButtonMode      = sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE];
-    gSaveBlock2Ptr->optionsDebugMode        = sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE];
+    gSaveBlock2Ptr->optionsSound            = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SOUND];
+    gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MUSIC_VOLUME];
+    gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SFX_VOLUME];
+    gSaveBlock2Ptr->optionsVolumeCries      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_CRIES_VOLUME];
+    gSaveBlock2Ptr->optionsUnitSystem       = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_UNIT_SYSTEM];
+    gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL];
+    gSaveBlock2Ptr->optionsLButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE];
+    gSaveBlock2Ptr->optionsRButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE];
+    gSaveBlock2Ptr->optionsDebugMode        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE];
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -1808,7 +1822,7 @@ static void Task_OptionMenuSave(u8 taskId)
 static void SaveData_TxRandomizerAndChallenges(void)
 {
     // MENU_RANDOMIZER
-    switch (sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER])
+    switch (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER])
     {
     case 0:
         gSaveBlock1Ptr->tx_Random_Starter          = FALSE;
@@ -1823,22 +1837,22 @@ static void SaveData_TxRandomizerAndChallenges(void)
         gSaveBlock1Ptr->tx_Random_Starter_Stage2   = TRUE;
         break;
     }
-    if (sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
+    if (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
     {
-        gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN];
-        gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER];
-        gSaveBlock1Ptr->tx_Random_Static             = sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC];
-        gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
+        gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN];
+        gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER];
+        gSaveBlock1Ptr->tx_Random_Static             = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC];
+        gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
         gSaveBlock1Ptr->tx_Random_MapBased           = TX_RANDOM_MAP_BASED;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
-        gSaveBlock1Ptr->tx_Random_Type               = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE];
-        gSaveBlock1Ptr->tx_Random_Moves              = sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES];
-        gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES];
-        gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS];
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
-        gSaveBlock1Ptr->tx_Random_Items              = sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS];
-        gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
+        gSaveBlock1Ptr->tx_Random_Type               = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE];
+        gSaveBlock1Ptr->tx_Random_Moves              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_MOVES];
+        gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ABILITIES];
+        gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS];
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
+        gSaveBlock1Ptr->tx_Random_Items              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ITEMS];
+        gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_CHAOS];
     }
     else
     {
@@ -1857,7 +1871,7 @@ static void SaveData_TxRandomizerAndChallenges(void)
         gSaveBlock1Ptr->tx_Random_Chaos              = FALSE;
     } 
     //MENU_NUZLOCKE
-    switch (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
+    switch (sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
     {
     case 0:
         gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
@@ -1874,9 +1888,9 @@ static void SaveData_TxRandomizerAndChallenges(void)
     }
     if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
     {
-        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
-        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
-        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION];
+        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
+        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
+        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_DELETION];
     }
     else
     {
@@ -1885,13 +1899,13 @@ static void SaveData_TxRandomizerAndChallenges(void)
         gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = FALSE;
     }
     // MENU_DIFFICULTY
-    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY];
-    gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
-    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
-    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
-    gSaveBlock1Ptr->tx_Challenges_NoEVs         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS];
-    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
-    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY];
+    gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
+    gSaveBlock1Ptr->tx_Challenges_NoEVs         = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_NO_EVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
 }
 
 static void Task_RandomizerChallengesMenuSave(u8 taskId)
@@ -2614,7 +2628,7 @@ static void DrawChoices_Random_OffChaos(int selection, int y)
     DrawOptionMenuChoice(sText_Random_Chaos, GetStringRightAlignXOffset(1, sText_Random_Chaos, 198), y, styles[1], active);
 
     if (selection == 1)
-        sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL] = 1;
+        sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL] = 1;
 }
 
 static void DrawChoices_Nuzlocke_OnOff(int selection, int y, bool8 active)
@@ -2639,9 +2653,9 @@ static void DrawChoices_Challenges_Nuzlocke(int selection, int y)
 
     if (selection == 0)
     {
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE;
-        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION; 
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE;
+        sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION; 
     }
 }
 
