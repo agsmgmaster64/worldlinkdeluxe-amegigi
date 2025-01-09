@@ -160,6 +160,5 @@
 	.include "src/music_player.o"
 	.include "src/field_mugshot.o"
 	.include "src/outfit_menu.o"
-	.include "src/tx_rac_menu.o"
 	.include "src/tx_randomizer_and_challenges.o"
 	.include "src/starter_choose.o"

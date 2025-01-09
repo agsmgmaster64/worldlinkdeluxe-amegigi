@@ -40,6 +40,7 @@
 #include "title_screen.h"
 #include "main_menu.h"
 #include "option_menu.h"
+#include "option_plus_menu.h"
 #include "mystery_event_menu.h"
 #include "mystery_gift_menu.h"
 #include "link.h"
@@ -350,7 +351,7 @@ void Task_OpenMainMenu(u8 taskId)
             default:
                 gExitStairsMovementDisabled = FALSE;
                 gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
-                SetMainCallback2(CB2_InitTxRandomizerChallengesMenu);
+                SetMainCallback2(CB2_InitChallengesMenu);
                 DestroyTask(taskId);
                 return;
             case HAS_SAVED_GAME:       
@@ -903,12 +904,12 @@ static void Task_MainMenuMain(u8 taskId)
             case HW_WIN_NEW_GAME:
                 gExitStairsMovementDisabled = FALSE;
                 gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
-                sMainMenuDataPtr->savedCallback = CB2_InitTxRandomizerChallengesMenu;
+                sMainMenuDataPtr->savedCallback = CB2_InitChallengesMenu;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;
             case HW_WIN_OPTIONS:
                 gMain.savedCallback = CB2_ReinitMainMenu;
-                sMainMenuDataPtr->savedCallback = CB2_InitOptionMenu;
+                sMainMenuDataPtr->savedCallback = CB2_InitOptionPlusMenu;
                 break;
             case HW_WIN_MYSTERY_EVENT:
                 sMainMenuDataPtr->savedCallback = CB2_InitMysteryEventMenu;

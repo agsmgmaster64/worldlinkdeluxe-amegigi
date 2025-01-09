@@ -1,31 +1,42 @@
 #include "global.h"
-#include "option_plus_menu.h"
-#include "m4a.h"
 #include "main.h"
+#include "bg.h"
+#include "decompress.h"
+#include "difficulty.h"
+#include "gpu_regs.h"
+#include "international_string_util.h"
+#include "m4a.h"
+#include "malloc.h"
 #include "menu.h"
+#include "menu_helpers.h"
+#include "option_plus_menu.h"
 #include "scanline_effect.h"
 #include "sound.h"
 #include "palette.h"
 #include "sprite.h"
 #include "task.h"
-#include "malloc.h"
-#include "bg.h"
-#include "gpu_regs.h"
-#include "window.h"
 #include "text.h"
 #include "text_window.h"
-#include "international_string_util.h"
+#include "tx_randomizer_and_challenges.h"
+#include "window.h"
 #include "strings.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
-#include "menu_helpers.h"
-#include "decompress.h"
+
+enum
+{
+    MENUMODE_OPTIONSPLUS,
+    MENUMODE_CHALLENGES
+};
 
 enum
 {
     MENU_VISUALS,
     MENU_BATTLE,
     MENU_MISC,
+    MENU_RANDOMIZER,
+    MENU_NUZLOCKE,
+    MENU_DIFFICULTY,
     MENU_COUNT,
 };
 
@@ -61,7 +72,6 @@ enum
     MENUITEM_MISC_MUSIC_VOLUME,
     MENUITEM_MISC_SFX_VOLUME,
     MENUITEM_MISC_CRIES_VOLUME,
-    //MENUITEM_MISC_BUTTONMODE,
     MENUITEM_MISC_UNIT_SYSTEM,
     MENUITEM_MISC_MATCHCALL,
     MENUITEM_MISC_L_BUTTONMODE,
@@ -69,6 +79,50 @@ enum
     MENUITEM_MISC_DEBUG_MODE,
     MENUITEM_MISC_CANCEL,
     MENUITEM_MISC_COUNT,
+};
+
+enum
+{
+    MENUITEM_RANDOM_OFF_ON,
+    MENUITEM_RANDOM_STARTER,
+    MENUITEM_RANDOM_WILD_PKMN,
+    MENUITEM_RANDOM_TRAINER,
+    MENUITEM_RANDOM_STATIC,
+    MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL,
+    MENUITEM_RANDOM_INCLUDE_LEGENDARIES,
+    MENUITEM_RANDOM_TYPE,
+    MENUITEM_RANDOM_MOVES,
+    MENUITEM_RANDOM_ABILITIES,
+    MENUITEM_RANDOM_EVOLUTIONS,
+    MENUITEM_RANDOM_EVOLUTIONS_METHODS,
+    MENUITEM_RANDOM_TYPE_EFFEC,
+    MENUITEM_RANDOM_ITEMS,
+    MENUITEM_RANDOM_CHAOS,
+    MENUITEM_RANDOM_NEXT,
+    MENUITEM_RANDOM_COUNT,
+};
+
+enum
+{
+    MENUITEM_NUZLOCKE_NUZLOCKE,
+    MENUITEM_NUZLOCKE_SPECIES_CLAUSE,
+    MENUITEM_NUZLOCKE_SHINY_CLAUSE,
+    MENUITEM_NUZLOCKE_DELETION,
+    MENUITEM_NUZLOCKE_NEXT,
+    MENUITEM_NUZLOCKE_COUNT,
+};
+
+enum
+{
+    MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY,
+    MENUITEM_DIFFICULTY_LEVEL_CAP,
+    MENUITEM_DIFFICULTY_ITEM_PLAYER,
+    MENUITEM_DIFFICULTY_ITEM_TRAINER,
+    MENUITEM_DIFFICULTY_NO_EVS,
+    MENUITEM_DIFFICULTY_SCALING_IVS,
+    MENUITEM_DIFFICULTY_SCALING_EVS,
+    MENUITEM_DIFFICULTY_SAVE,
+    MENUITEM_DIFFICULTY_COUNT,
 };
 
 // Window Ids
@@ -81,7 +135,8 @@ enum
 
 static const struct WindowTemplate sOptionMenuWinTemplates[] =
 {
-    {//WIN_TOPBAR
+    [WIN_TOPBAR] =
+    {
         .bg = 1,
         .tilemapLeft = 0,
         .tilemapTop = 0,
@@ -90,7 +145,8 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .paletteNum = 1,
         .baseBlock = 2
     },
-    {//WIN_OPTIONS
+    [WIN_OPTIONS] =
+    {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 3,
@@ -99,7 +155,8 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .paletteNum = 1,
         .baseBlock = 62
     },
-    {//WIN_DESCRIPTION
+    [WIN_DESCRIPTION] =
+    {
         .bg = 1,
         .tilemapLeft = 2,
         .tilemapTop = 15,
@@ -153,10 +210,19 @@ struct OptionMenu
     u8 sel_visuals[MENUITEM_VISUALS_COUNT];
     u8 sel_battle[MENUITEM_BATTLE_COUNT];
     u8 sel_misc[MENUITEM_MISC_COUNT];
+    u8 sel_randomizer[MENUITEM_RANDOM_COUNT];
+    u8 sel_nuzlocke[MENUITEM_NUZLOCKE_COUNT];
+    u8 sel_difficulty[MENUITEM_DIFFICULTY_COUNT];
     int menuCursor[MENU_COUNT];
     int visibleCursor[MENU_COUNT];
     u8 arrowTaskId;
     u8 gfxLoadState;
+};
+
+struct OptionFuncs
+{
+    void (*drawChoices)(int selection, int y);
+    int (*processInput)(int selection);
 };
 
 #define Y_DIFF 16 // Difference in pixels between items.
@@ -175,13 +241,14 @@ static void HighlightOptionMenuItem(void);
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
+static void Task_RandomizerChallengesMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
 static void ScrollMenu(int direction);
 static void ScrollAll(int direction); // to bottom or top
 static int GetMiddleX(const u8 *txt1, const u8 *txt2, const u8 *txt3);
 static int XOptions_ProcessInput(int x, int selection);
 static int ProcessInput_Options_Two(int selection);
-//static int ProcessInput_Options_Three(int selection);
+static int ProcessInput_Options_Three(int selection);
 static int ProcessInput_Options_Four(int selection);
 static int ProcessInput_Options_Eleven(int selection);
 static int ProcessInput_FrameType(int selection);
@@ -195,11 +262,11 @@ static void DrawDescriptionText(void);
 static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 active);
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active);
 static void ReDrawAll(void);
+
 static void DrawChoices_TextSpeed(int selection, int y);
 static void DrawChoices_BattleScene(int selection, int y);
 static void DrawChoices_BattleStyle(int selection, int y);
 static void DrawChoices_Sound(int selection, int y);
-//static void DrawChoices_ButtonMode(int selection, int y);
 static void DrawChoices_BarSpeed(int selection, int y); //HP and EXP
 static void DrawChoices_UnitSystem(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
@@ -218,6 +285,39 @@ static void DrawChoices_CriesVolume(int selection, int y);
 static void DrawChoices_LButtonMode(int selection, int y);
 static void DrawChoices_RButtonMode(int selection, int y);
 static void DrawBgWindowFrames(void);
+
+static void DrawChoices_Random_OffOn(int selection, int y, bool8 active);
+static void DrawChoices_Random_OffRandom(int selection, int y, bool8 active);
+static void DrawChoices_Random_Toggle(int selection, int y);
+static void DrawChoices_Random_Starter(int selection, int y);
+static void DrawChoices_Random_WildPkmn(int selection, int y);
+static void DrawChoices_Random_Trainer(int selection, int y);
+static void DrawChoices_Random_Static(int selection, int y);
+static void DrawChoices_Random_EvoStages(int selection, int y);
+static void DrawChoices_Random_Legendaries(int selection, int y);
+static void DrawChoices_Random_Types(int selection, int y);
+static void DrawChoices_Random_Moves(int selection, int y);
+static void DrawChoices_Random_Abilities(int selection, int y);
+static void DrawChoices_Random_Evolutions(int selection, int y);
+static void DrawChoices_Random_EvolutionMethods(int selection, int y);
+static void DrawChoices_Random_TypeEffect(int selection, int y);
+static void DrawChoices_Random_Items(int selection, int y);
+static void DrawChoices_Random_OffChaos(int selection, int y);
+
+static void DrawChoices_Nuzlocke_OnOff(int selection, int y, bool8 active);
+static void DrawChoices_Challenges_Nuzlocke(int selection, int y);
+static void DrawChoices_Nuzlocke_SpeciesClause(int selection, int y);
+static void DrawChoices_Nuzlocke_ShinyClause(int selection, int y);
+static void DrawChoices_Nuzlocke_Deletion(int selection, int y);
+
+static void DrawChoices_Challenges_LevelCap(int selection, int y);
+static void DrawChoices_Challenges_TrainerDifficulties(int selection, int y);
+static void DrawChoices_Challenges_YesNo(int selection, int y, bool8 active);
+static void DrawChoices_Challenges_ItemsPlayer(int selection, int y);
+static void DrawChoices_Challenges_ItemsTrainer(int selection, int y);
+static void DrawChoices_Challenges_NoEVs(int selection, int y);
+static void DrawChoices_Challenges_ScalingIVs(int selection, int y);
+static void DrawChoices_Challenges_ScalingEVs(int selection, int y);
 
 // EWRAM vars
 EWRAM_DATA static struct OptionMenu *sOptions = NULL;
@@ -238,8 +338,8 @@ static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_options_plus/scroll_
 static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_options_plus/scroll_tiles.bin.lz");
 static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_options_plus/scroll_tiles.gbapal");
 
-#define TEXT_COLOR_OPTIONS_WHITE                1
-#define TEXT_COLOR_OPTIONS_GRAY_FG              2
+#define TEXT_COLOR_OPTIONS_GRAY_BG              1
+#define TEXT_COLOR_OPTIONS_WHITE                2
 #define TEXT_COLOR_OPTIONS_GRAY_SHADOW          3
 #define TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG        4
 #define TEXT_COLOR_OPTIONS_ORANGE_FG            5
@@ -254,11 +354,7 @@ static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_options_plus/scrol
 #define TEXT_COLOR_OPTIONS_RED_DARK_SHADOW      14
 
 // Menu draw and input functions
-struct // MENU_VISUALS
-{
-    void (*drawChoices)(int selection, int y);
-    int (*processInput)(int selection);
-} static const sItemFunctionsVisuals[MENUITEM_VISUALS_COUNT] =
+static const struct OptionFuncs sItemFunctionsVisuals[MENUITEM_VISUALS_COUNT] =
 {
     [MENUITEM_VISUALS_TEXTSPEED]     = {DrawChoices_TextSpeed,     ProcessInput_Options_Four},
     [MENUITEM_VISUALS_FONT]          = {DrawChoices_Font,          ProcessInput_Options_Two},
@@ -268,11 +364,7 @@ struct // MENU_VISUALS
     [MENUITEM_VISUALS_CANCEL]        = {NULL, NULL},
 };
 
-struct // MENU_BATTLE
-{
-    void (*drawChoices)(int selection, int y);
-    int (*processInput)(int selection);
-} static const sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
+static const struct OptionFuncs sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
 {
     [MENUITEM_BATTLE_BATTLESCENE]   = {DrawChoices_BattleScene,   ProcessInput_Options_Two},
     [MENUITEM_BATTLE_BATTLESTYLE]   = {DrawChoices_BattleStyle,   ProcessInput_Options_Two},
@@ -285,23 +377,59 @@ struct // MENU_BATTLE
     [MENUITEM_BATTLE_CANCEL]        = {NULL, NULL},
 };
 
-struct // MENU_MISC
-{
-    void (*drawChoices)(int selection, int y);
-    int (*processInput)(int selection);
-} static const sItemFunctionsMisc[MENUITEM_MISC_COUNT] =
+static const struct OptionFuncs sItemFunctionsMisc[MENUITEM_MISC_COUNT] =
 {
     [MENUITEM_MISC_SOUND]        = {DrawChoices_Sound,       ProcessInput_Options_Two},
     [MENUITEM_MISC_MUSIC_VOLUME] = {DrawChoices_MusicVolume, ProcessInput_MusicVolume},
     [MENUITEM_MISC_SFX_VOLUME]   = {DrawChoices_SFXVolume,   ProcessInput_SoundVolume},
     [MENUITEM_MISC_CRIES_VOLUME] = {DrawChoices_CriesVolume, ProcessInput_SoundVolume},
-    //[MENUITEM_MISC_BUTTONMODE]   = {DrawChoices_ButtonMode,  ProcessInput_Options_Three},
     [MENUITEM_MISC_UNIT_SYSTEM]  = {DrawChoices_UnitSystem,  ProcessInput_Options_Two},
     [MENUITEM_MISC_MATCHCALL]    = {DrawChoices_MatchCall,   ProcessInput_Options_Two},
     [MENUITEM_MISC_L_BUTTONMODE] = {DrawChoices_LButtonMode, ProcessInput_Options_Four},
     [MENUITEM_MISC_R_BUTTONMODE] = {DrawChoices_RButtonMode, ProcessInput_Options_Four},
     [MENUITEM_MISC_DEBUG_MODE]   = {DrawChoices_DebugMode,   ProcessInput_Options_Two},
     [MENUITEM_MISC_CANCEL]       = {NULL, NULL},
+};
+
+static const struct OptionFuncs sItemFunctionsRandom[MENUITEM_RANDOM_COUNT] =
+{
+    [MENUITEM_RANDOM_OFF_ON]                    = {DrawChoices_Random_Toggle,           ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_STARTER]                   = {DrawChoices_Random_Starter,          ProcessInput_Options_Three},
+    [MENUITEM_RANDOM_WILD_PKMN]                 = {DrawChoices_Random_WildPkmn,         ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_TRAINER]                   = {DrawChoices_Random_Trainer,          ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_STATIC]                    = {DrawChoices_Random_Static,           ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]   = {DrawChoices_Random_EvoStages,        ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_INCLUDE_LEGENDARIES]       = {DrawChoices_Random_Legendaries,      ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_TYPE]                      = {DrawChoices_Random_Types,            ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_MOVES]                     = {DrawChoices_Random_Moves,            ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_ABILITIES]                 = {DrawChoices_Random_Abilities,        ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_EVOLUTIONS]                = {DrawChoices_Random_Evolutions,       ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_EVOLUTIONS_METHODS]        = {DrawChoices_Random_EvolutionMethods, ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_TYPE_EFFEC]                = {DrawChoices_Random_TypeEffect,       ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_ITEMS]                     = {DrawChoices_Random_Items,            ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_CHAOS]                     = {DrawChoices_Random_OffChaos,         ProcessInput_Options_Two},
+    [MENUITEM_RANDOM_NEXT]                      = {NULL, NULL},
+};
+
+static const struct OptionFuncs sItemFunctionsNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
+{
+    [MENUITEM_NUZLOCKE_NUZLOCKE]        = {DrawChoices_Challenges_Nuzlocke,     ProcessInput_Options_Three},
+    [MENUITEM_NUZLOCKE_SPECIES_CLAUSE]  = {DrawChoices_Nuzlocke_SpeciesClause,  ProcessInput_Options_Two},
+    [MENUITEM_NUZLOCKE_SHINY_CLAUSE]    = {DrawChoices_Nuzlocke_ShinyClause,    ProcessInput_Options_Two},
+    [MENUITEM_NUZLOCKE_DELETION]        = {DrawChoices_Nuzlocke_Deletion,       ProcessInput_Options_Two},
+    [MENUITEM_NUZLOCKE_NEXT]            = {NULL, NULL},
+};
+
+static const struct OptionFuncs sItemFunctionsDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY]    = {DrawChoices_Challenges_TrainerDifficulties,    ProcessInput_Options_Four},
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = {DrawChoices_Challenges_LevelCap,         ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {DrawChoices_Challenges_ItemsPlayer,      ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {DrawChoices_Challenges_ItemsTrainer,     ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_NO_EVS]                = {DrawChoices_Challenges_NoEVs,            ProcessInput_Options_Two},
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {DrawChoices_Challenges_ScalingIVs,       ProcessInput_Options_Three},
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {DrawChoices_Challenges_ScalingEVs,       ProcessInput_Options_Four},
+    [MENUITEM_DIFFICULTY_SAVE] = {NULL, NULL},
 };
 
 // Menu left side option names text
@@ -312,6 +440,54 @@ static const u8 sText_Font[]         = _("FONT");
 static const u8 sText_Frame[]        = _("FRAME");
 static const u8 sText_UniqueColors[] = _("UNIQUE COLORS");
 static const u8 sText_Animations[]   = _("ANIMATIONS");
+static const u8 sText_BattleScene[]    = _("BATTLE SCENE");
+static const u8 sText_BattleStyle[]    = _("BATTLE STYLE");
+static const u8 sText_HpBar[]          = _("HP BAR");
+static const u8 sText_ExpBar[]         = _("EXP BAR");
+static const u8 sText_AnimSpeed[]      = _("ANIM. SPEED");
+static const u8 sText_IvView[]         = _("IV VIEW");
+static const u8 sText_Effectiveness[]  = _("EFFECTIVENESS");
+static const u8 sText_ShowTypes[]      = _("SHOW TYPES");
+static const u8 sText_Sound[]        = _("SPEAKERS");
+static const u8 sText_MusicVolume[]  = _("MUSIC VOLUME");
+static const u8 sText_SFXVolume[]    = _("SFX VOLUME");
+static const u8 sText_CriesVolume[]  = _("CRIES VOLUME");
+static const u8 sText_ButtonMode[]   = _("BUTTON MODE");
+static const u8 sText_UnitSystem[]   = _("UNIT SYSTEM");
+static const u8 sText_MatchCalls[]   = _("OVERWORLD CALLS");
+static const u8 sText_LButtonMode[]  = _("L BUTTON");
+static const u8 sText_RButtonMode[]  = _("R BUTTON");
+static const u8 sText_DebugMode[]    = _("DEBUG MODE");
+
+static const u8 sText_Randomizer[] =                _("RANDOMIZER");
+static const u8 sText_Starter[] =                   _("STARTER POKéMON");
+static const u8 sText_WildPkmn[] =                  _("WILD POKéMON");
+static const u8 sText_Trainer[] =                   _("TRAINER");
+static const u8 sText_Static[] =                    _("STATIC POKéMON");
+static const u8 sText_SimiliarEvolutionLevel[] =    _("BALANCE ON TIERS");
+static const u8 sText_InlcudeLegendaries[]=         _("LEGENDARIES");
+static const u8 sText_Type[] =                      _("TYPE");
+static const u8 sText_Moves[] =                     _("MOVES");
+static const u8 sText_Abilities[] =                 _("ABILTIES");
+static const u8 sText_Evolutions[] =                _("EVOLUTIONS");
+static const u8 sText_EvolutionMethods[] =          _("EVO LINES");
+static const u8 sText_TypeEff[] =                   _("EFFECTIVENESS");
+static const u8 sText_Items[] =                     _("ITEMS");
+static const u8 sText_Chaos[] =                     _("CHAOS MODE");
+static const u8 sText_Next[] =                      _("NEXT");
+static const u8 sText_Nuzlocke[]        = _("NUZLOCKE");
+static const u8 sText_SpeciesClause[]   = _("DUPES CLAUSE");
+static const u8 sText_ShinyClause[]     = _("SHINY CLAUSE");
+static const u8 sText_Nicknaming[]      = _("NICKNAMES");
+static const u8 sText_Deletion[]        = _("FAINTING");
+static const u8 sText_TrainerDifficulty[]   = _("TRAINERS");
+static const u8 sText_LevelCap[]            = _("LEVEL CAP");
+static const u8 sText_Items_Player[]        = _("PLAYER ITEMS");
+static const u8 sText_Items_Trainer[]       = _("TRAINER ITEMS");
+static const u8 sText_NoEVs[]               = _("PLAYER EVs");
+static const u8 sText_ScalingIVs[]          = _("TRAINER IVs");
+static const u8 sText_ScalingEVs[]          = _("TRAINER EVs");
+static const u8 sText_Save[]                = _("SAVE");
 
 static const u8 *const sOptionMenuItemsNamesVisuals[MENUITEM_VISUALS_COUNT] =
 {
@@ -322,15 +498,6 @@ static const u8 *const sOptionMenuItemsNamesVisuals[MENUITEM_VISUALS_COUNT] =
     [MENUITEM_VISUALS_ANIMATIONS]    = sText_Animations,
     [MENUITEM_VISUALS_CANCEL]        = sText_OptionMenuSave,
 };
-
-static const u8 sText_BattleScene[]    = _("BATTLE SCENE");
-static const u8 sText_BattleStyle[]    = _("BATTLE STYLE");
-static const u8 sText_HpBar[]          = _("HP BAR");
-static const u8 sText_ExpBar[]         = _("EXP BAR");
-static const u8 sText_AnimSpeed[]      = _("ANIM. SPEED");
-static const u8 sText_IvView[]         = _("IV VIEW");
-static const u8 sText_Effectiveness[]  = _("EFFECTIVENESS");
-static const u8 sText_ShowTypes[]      = _("SHOW TYPES");
 
 static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
 {
@@ -345,30 +512,59 @@ static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_CANCEL]        = sText_OptionMenuSave,
 };
 
-static const u8 sText_Sound[]        = _("SPEAKERS");
-static const u8 sText_MusicVolume[]  = _("MUSIC VOLUME");
-static const u8 sText_SFXVolume[]    = _("SFX VOLUME");
-static const u8 sText_CriesVolume[]  = _("CRIES VOLUME");
-static const u8 sText_ButtonMode[]   = _("BUTTON MODE");
-static const u8 sText_UnitSystem[]   = _("UNIT SYSTEM");
-static const u8 sText_MatchCalls[]   = _("OVERWORLD CALLS");
-static const u8 sText_LButtonMode[]  = _("L BUTTON");
-static const u8 sText_RButtonMode[]  = _("R BUTTON");
-static const u8 sText_DebugMode[]    = _("DEBUG MODE");
-
 static const u8 *const sOptionMenuItemsNamesMisc[MENUITEM_MISC_COUNT] =
 {
     [MENUITEM_MISC_SOUND]        = sText_Sound,
     [MENUITEM_MISC_MUSIC_VOLUME] = sText_MusicVolume,
     [MENUITEM_MISC_SFX_VOLUME]   = sText_SFXVolume,
     [MENUITEM_MISC_CRIES_VOLUME] = sText_CriesVolume,
-    //[MENUITEM_MISC_BUTTONMODE]   = sText_ButtonMode,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_UnitSystem,
     [MENUITEM_MISC_MATCHCALL]    = sText_MatchCalls,
     [MENUITEM_MISC_L_BUTTONMODE] = sText_LButtonMode,
     [MENUITEM_MISC_R_BUTTONMODE] = sText_RButtonMode,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_DebugMode,
     [MENUITEM_MISC_CANCEL]       = sText_OptionMenuSave,
+};
+
+static const u8 *const sOptionMenuItemsNamesRandom[MENUITEM_RANDOM_COUNT] =
+{
+    [MENUITEM_RANDOM_OFF_ON]                    = sText_Randomizer,
+    [MENUITEM_RANDOM_STARTER]                   = sText_Starter,
+    [MENUITEM_RANDOM_WILD_PKMN]                 = sText_WildPkmn,
+    [MENUITEM_RANDOM_TRAINER]                   = sText_Trainer,
+    [MENUITEM_RANDOM_STATIC]                    = sText_Static,
+    [MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]   = sText_SimiliarEvolutionLevel,
+    [MENUITEM_RANDOM_INCLUDE_LEGENDARIES]       = sText_InlcudeLegendaries,
+    [MENUITEM_RANDOM_TYPE]                      = sText_Type,
+    [MENUITEM_RANDOM_MOVES]                     = sText_Moves,
+    [MENUITEM_RANDOM_ABILITIES]                 = sText_Abilities,
+    [MENUITEM_RANDOM_EVOLUTIONS]                = sText_Evolutions,
+    [MENUITEM_RANDOM_EVOLUTIONS_METHODS]        = sText_EvolutionMethods,
+    [MENUITEM_RANDOM_TYPE_EFFEC]                = sText_TypeEff,
+    [MENUITEM_RANDOM_ITEMS]                     = sText_Items,
+    [MENUITEM_RANDOM_CHAOS]                     = sText_Chaos,
+    [MENUITEM_RANDOM_NEXT]                      = sText_Next,
+};
+
+static const u8 *const sOptionMenuItemsNamesNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
+{
+    [MENUITEM_NUZLOCKE_NUZLOCKE]        = sText_Nuzlocke,
+    [MENUITEM_NUZLOCKE_SPECIES_CLAUSE]  = sText_SpeciesClause,
+    [MENUITEM_NUZLOCKE_SHINY_CLAUSE]    = sText_ShinyClause,
+    [MENUITEM_NUZLOCKE_DELETION]        = sText_Deletion,
+    [MENUITEM_NUZLOCKE_NEXT]            = sText_Next,
+};
+
+static const u8 *const sOptionMenuItemsNamesDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY]    = sText_TrainerDifficulty,
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = sText_LevelCap,
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = sText_Items_Player,
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = sText_Items_Trainer,
+    [MENUITEM_DIFFICULTY_NO_EVS]                = sText_NoEVs,
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = sText_ScalingIVs,
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = sText_ScalingEVs,
+    [MENUITEM_DIFFICULTY_SAVE]                  = sText_Save,
 };
 
 static const u8 *OptionTextRight(u8 menuItem)
@@ -382,6 +578,12 @@ static const u8 *OptionTextRight(u8 menuItem)
         return sOptionMenuItemsNamesBattle[menuItem];
     case MENU_MISC:
         return sOptionMenuItemsNamesMisc[menuItem];
+    case MENU_RANDOMIZER:
+        return sOptionMenuItemsNamesRandom[menuItem];
+    case MENU_NUZLOCKE:
+        return sOptionMenuItemsNamesNuzlocke[menuItem];
+    case MENU_DIFFICULTY:
+        return sOptionMenuItemsNamesDifficulty[menuItem];
     }
 }
 
@@ -395,109 +597,106 @@ static bool8 CheckConditions(int selection)
     case MENU_VISUALS:
         switch(selection)
         {
-        case MENUITEM_VISUALS_TEXTSPEED:
-        case MENUITEM_VISUALS_FONT:
-        case MENUITEM_VISUALS_FRAMETYPE:
-        case MENUITEM_VISUALS_UNIQUE_COLORS:
-        case MENUITEM_VISUALS_ANIMATIONS:
-        case MENUITEM_VISUALS_CANCEL:
-        case MENUITEM_VISUALS_COUNT:
-            return TRUE;
         default:
-            return FALSE;
+            return TRUE;
         }
     case MENU_BATTLE:
         switch(selection)
         {
-        case MENUITEM_BATTLE_BATTLESCENE:
-        case MENUITEM_BATTLE_BATTLESTYLE:
-        case MENUITEM_BATTLE_HP_BAR:
-        case MENUITEM_BATTLE_EXP_BAR:
-        case MENUITEM_BATTLE_ANIM_SPEED:
-        case MENUITEM_BATTLE_IV_VIEW:
-        case MENUITEM_BATTLE_EFFECTIVENESS:
-        case MENUITEM_BATTLE_SHOW_TYPES:
-        case MENUITEM_BATTLE_CANCEL:
-        case MENUITEM_BATTLE_COUNT:
-            return TRUE;
         default:
-            return FALSE;
+            return TRUE;
         }
     case MENU_MISC:
         switch(selection)
         {
-        case MENUITEM_MISC_SOUND:
-        case MENUITEM_MISC_MUSIC_VOLUME:
-        case MENUITEM_MISC_SFX_VOLUME:
-        case MENUITEM_MISC_CRIES_VOLUME:
-        //case MENUITEM_MISC_BUTTONMODE:
-        case MENUITEM_MISC_UNIT_SYSTEM:
-        case MENUITEM_MISC_MATCHCALL:
-        case MENUITEM_MISC_L_BUTTONMODE:
-        case MENUITEM_MISC_R_BUTTONMODE:
-        case MENUITEM_MISC_DEBUG_MODE:
-        case MENUITEM_MISC_CANCEL:
-        case MENUITEM_MISC_COUNT:
-            return TRUE;
         default:
-            return FALSE;
+            return TRUE;
+        }
+    case MENU_RANDOMIZER:
+        switch(selection)
+        {
+        case MENUITEM_RANDOM_STARTER:
+        case MENUITEM_RANDOM_WILD_PKMN:
+        case MENUITEM_RANDOM_TRAINER:
+        case MENUITEM_RANDOM_STATIC:
+        case MENUITEM_RANDOM_TYPE:
+        case MENUITEM_RANDOM_MOVES:
+        case MENUITEM_RANDOM_ABILITIES:
+        case MENUITEM_RANDOM_EVOLUTIONS:
+        case MENUITEM_RANDOM_EVOLUTIONS_METHODS:
+        case MENUITEM_RANDOM_TYPE_EFFEC:
+        case MENUITEM_RANDOM_ITEMS:
+            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON];
+        case MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL:
+            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC])
+                && !sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+        case MENUITEM_RANDOM_INCLUDE_LEGENDARIES:
+            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]);
+        case MENUITEM_RANDOM_CHAOS:
+            return sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]
+                && (sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]
+                || sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]);
+        default:
+            return TRUE;
+        }
+    case MENU_NUZLOCKE:
+        switch(selection)
+        {
+        case MENUITEM_NUZLOCKE_SPECIES_CLAUSE:
+        case MENUITEM_NUZLOCKE_SHINY_CLAUSE:
+        case MENUITEM_NUZLOCKE_DELETION:
+            return sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE];
+        default:
+            return TRUE;
+        }
+    case MENU_DIFFICULTY:
+        switch(selection)
+        {
+        default:
+            return TRUE;
         }
     }
 }
 
 // Descriptions
 static const u8 sText_Empty[]                   = _("");
-static const u8 sText_Desc_Save[]               = _("Save your settings.");
-static const u8 sText_Desc_SurfOff[]            = _("Disables the SURF theme when\nusing SURF.");
-static const u8 sText_Desc_SurfOn[]             = _("Enables the SURF theme\nwhen using SURF.");
-static const u8 sText_Desc_BikeOff[]            = _("Disables the BIKE theme when\nusing the BIKE.");
-static const u8 sText_Desc_BikeOn[]             = _("Enables the BIKE theme when\nusing the BIKE.");
-
-static const u8 sText_Desc_TextSpeed[]          = _("Choose one of the four text-display\nspeeds.");
-static const u8 sText_Desc_FontType[]           = _("Choose the font design.");
-static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
-static const u8 sText_Desc_UniqueColorsOn[]     = _("Enables unique colors for\nPuppets.");
-static const u8 sText_Desc_UniqueColorsOff[]    = _("Disables unique colors for\nPuppets.");
-static const u8 sText_Desc_MonAnimationsOn[]    = _("Animations will play for\nPuppets.");
-static const u8 sText_Desc_MonAnimationsOff[]   = _("Animations are disabled\nfor Puppets.");
-
-static const u8 *const sOptionMenuItemDescriptionsVisuals[MENUITEM_VISUALS_COUNT][2] =
-{
-    [MENUITEM_VISUALS_TEXTSPEED]     = {sText_Desc_TextSpeed,          sText_Empty},
-    [MENUITEM_VISUALS_FONT]          = {sText_Desc_FontType,           sText_Desc_FontType},
-    [MENUITEM_VISUALS_FRAMETYPE]     = {sText_Desc_FrameType,          sText_Empty},
-    [MENUITEM_VISUALS_UNIQUE_COLORS] = {sText_Desc_UniqueColorsOn,     sText_Desc_UniqueColorsOff},
-    [MENUITEM_VISUALS_ANIMATIONS]    = {sText_Desc_MonAnimationsOn,    sText_Desc_MonAnimationsOff},
-    [MENUITEM_VISUALS_CANCEL]        = {sText_Desc_Save,               sText_Empty},
-};
-
-static const u8 sText_Desc_BattleScene_On[]     = _("Show the Puppet battle animations.");
-static const u8 sText_Desc_BattleScene_Off[]    = _("Skip the Puppet battle animations.");
-static const u8 sText_Desc_BattleStyle_Shift[]  = _("Get the option to switch your\nPuppet after the enemies faints.");
-static const u8 sText_Desc_BattleStyle_Set[]    = _("No free switch after fainting the\nenemy Puppets.");
-static const u8 sText_Desc_BattleHPBar[]        = _("Choose how fast the HP BAR will get\ndrained in battles.");
-static const u8 sText_Desc_BattleExpBar[]       = _("Choose how fast the EXP BAR will get\nfilled in battles.");
-static const u8 sText_Desc_AnimSpeed[]          = _("Choose the speed for battle\nanimations.");
+static const u8 sText_Desc_Options_Save[]               = _("Save your settings.");
+static const u8 sText_Desc_Visuals_TextSpeed[]          = _("Choose one of the four text-display\nspeeds.");
+static const u8 sText_Desc_Visuals_FontType[]           = _("Choose the font design.");
+static const u8 sText_Desc_Visuals_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
+static const u8 sText_Desc_Visuals_UniqueColorsOn[]     = _("Enables unique colors for\nPuppets.");
+static const u8 sText_Desc_Visuals_UniqueColorsOff[]    = _("Disables unique colors for\nPuppets.");
+static const u8 sText_Desc_Visuals_MonAnimationsOn[]    = _("Animations will play for\nPuppets.");
+static const u8 sText_Desc_Visuals_MonAnimationsOff[]   = _("Animations are disabled\nfor Puppets.");
+static const u8 sText_Desc_Battle_BattleScene_On[]     = _("Show the Puppet battle animations.");
+static const u8 sText_Desc_Battle_BattleScene_Off[]    = _("Skip the Puppet battle animations.");
+static const u8 sText_Desc_Battle_BattleStyle_Shift[]  = _("Get the option to switch your\nPuppet after the enemies faints.");
+static const u8 sText_Desc_Battle_BattleStyle_Set[]    = _("No free switch after fainting the\nenemy Puppets.");
+static const u8 sText_Desc_Battle_HpBar[]              = _("Choose how fast the HP BAR will get\ndrained in battles.");
+static const u8 sText_Desc_Battle_ExpBar[]             = _("Choose how fast the EXP BAR will get\nfilled in battles.");
+static const u8 sText_Desc_Battle_AnimSpeed[]          = _("Choose the speed for battle\nanimations.");
 static const u8 sText_Desc_IvViewOn[]           = _("IVs can be viewed in the\nsummary by pressing {A_BUTTON}.");
 static const u8 sText_Desc_IvViewOff[]          = _("IVs cannot be viewed in the\nsummary.");
-static const u8 sText_Desc_EffectivenessOn[]    = _("If foe was seen before, moves will\nshow effectiveness when selecting.");
-static const u8 sText_Desc_EffectivenessOff[]   = _("Moves won't show effectivenes\nwhen selecting.");
+static const u8 sText_Desc_Battle_EffectivenessOn[]    = _("If foe was seen before, moves will\nshow effectiveness when selecting.");
+static const u8 sText_Desc_Battle_EffectivenessOff[]   = _("Moves won't show effectivenes\nwhen selecting.");
 static const u8 sText_Desc_ShowTypesOn[]        = _("If foe was caught, their types will\nshow when selecting a move.");
 static const u8 sText_Desc_ShowTypesOff[]       = _("Puppet types will not be shown\nin battle.");
-
-static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][2] =
-{
-    [MENUITEM_BATTLE_BATTLESCENE]   = {sText_Desc_BattleScene_On,     sText_Desc_BattleScene_Off},
-    [MENUITEM_BATTLE_BATTLESTYLE]   = {sText_Desc_BattleStyle_Shift,  sText_Desc_BattleStyle_Set},
-    [MENUITEM_BATTLE_HP_BAR]        = {sText_Desc_BattleHPBar,        sText_Empty},
-    [MENUITEM_BATTLE_EXP_BAR]       = {sText_Desc_BattleExpBar,       sText_Empty},
-    [MENUITEM_BATTLE_ANIM_SPEED]    = {sText_Desc_AnimSpeed,          sText_Empty},
-    [MENUITEM_BATTLE_IV_VIEW]       = {sText_Desc_IvViewOn,           sText_Desc_IvViewOff},
-    [MENUITEM_BATTLE_EFFECTIVENESS] = {sText_Desc_EffectivenessOn,    sText_Desc_EffectivenessOff},
-    [MENUITEM_BATTLE_SHOW_TYPES]    = {sText_Desc_ShowTypesOn,        sText_Desc_ShowTypesOff},
-    [MENUITEM_BATTLE_CANCEL]        = {sText_Desc_Save,               sText_Empty},
-};
-
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
 static const u8 sText_Desc_MusicVolume[]        = _("Adjust the volume of background music\nhere.");
@@ -518,6 +717,96 @@ static const u8 sText_Desc_OverworldCallsOff[]  = _("You will not receive calls.
 static const u8 sText_Desc_DebugModeOn[]        = _("WARNING! Please use at your own\nrisk.");
 static const u8 sText_Desc_DebugModeOff[]       = _("Enabling this option will enable\ndebug mode options.");
 
+static const u8 sText_Desc_Randomizer_Off[]                  = _("Game will not be randomized.");
+static const u8 sText_Desc_Randomizer_On[]                   = _("Play the game randomized.\nSettings below!");
+static const u8 sText_Desc_Random_Starter_Off[]              = _("Standard starter Puppets.");
+static const u8 sText_Desc_Random_Starter_On[]               = _("Randomize starter Puppets.");
+static const u8 sText_Desc_Random_Starter_Stage2[]           = _("Randomize starter Puppets with\n3-stage Puppets.");
+static const u8 sText_Desc_Random_WildPokemon_Off[]          = _("Same wild encounter as in the\nbase game.");
+static const u8 sText_Desc_Random_WildPokemon_On[]           = _("Randomize wild Puppets.");
+static const u8 sText_Desc_Random_Trainer_Off[]              = _("Trainer will have their expected\nparty.");
+static const u8 sText_Desc_Random_Trainer_On[]               = _("Randomize enemy trainer parties.");
+static const u8 sText_Desc_Random_Static_Off[]               = _("Static encounter will be the same\nas in the base game.");
+static const u8 sText_Desc_Random_Static_On[]                = _("Randomize static encounter Puppets.");
+static const u8 sText_Desc_Random_BalanceTiers_Off[]         = _("Distribution of Puppets {COLOR 7}{COLOR 8}not balanced{COLOR 1}{COLOR 2}\naround their strength!");
+static const u8 sText_Desc_Random_BalanceTiers_On[]          = _("{PKMN} replaced with similar tiered ones.\nCurrently based on evo stages.");
+static const u8 sText_Desc_Random_IncludeLegendaries_Off[]   = _("Legendary Puppets will not be\nincluded and randomized.");
+static const u8 sText_Desc_Random_IncludeLegendaries_On[]    = _("Include legendary Puppets in\nrandomization!");
+static const u8 sText_Desc_Random_Types_Off[]                = _("Puppet types stay the same as in\nthe base game.");
+static const u8 sText_Desc_Random_Types_On[]                 = _("Randomize all Puppet types.");
+static const u8 sText_Desc_Random_Moves_Off[]                = _("Puppet moves stay the same as in\nthe base game.");
+static const u8 sText_Desc_Random_Moves_On[]                 = _("Randomize all Puppet moves.");
+static const u8 sText_Desc_Random_Abilities_Off[]            = _("Puppet abilities stay the same as in\nthe base game.");
+static const u8 sText_Desc_Random_Abilities_On[]             = _("Randomize all Puppet abilities.");
+static const u8 sText_Desc_Random_Evos_Off[]                 = _("Puppet evolutions stay the same as\nin the base game.");
+static const u8 sText_Desc_Random_Evos_On[]                  = _("Randomize all Puppet evolutions.");
+static const u8 sText_Desc_Random_Evo_Methods_Off[]          = _("The Puppets that can potentially\nevolve are unchanged.");
+static const u8 sText_Desc_Random_Evo_Methods_On[]           = _("Randomize evolution lines. Allows\nnew evolution lines to occur!");
+static const u8 sText_Desc_Random_Effectiveness_Off[]        = _("Type effectiveness chart will remain\nthe same as in the base game.");
+static const u8 sText_Desc_Random_Effectiveness_On[]         = _("Randomize type effectiveness.");
+static const u8 sText_Desc_Random_Items_Off[]                = _("All found or recieved items are the\nsame as in the base game.");
+static const u8 sText_Desc_Random_Items_On[]                 = _("Randomize found, hidden and revieved\nitems. Key items are excluded!");
+static const u8 sText_Desc_Random_ChaosMode_Off[]            = _("Chaos mode disabled.");
+static const u8 sText_Desc_Random_ChaosMode_On[]             = _("Every above choosen option will be\nvery chaotic. {COLOR 7}{COLOR 8}NOT recommended!");
+static const u8 sText_Desc_Random_Next[]                     = _("Continue to Nuzlocke options.");
+static const u8 sText_Desc_Nuzlocke_Base[]               = _("Nuzlocke mode is disabled.");
+static const u8 sText_Desc_Nuzlocke_Normal[]             = _("One catch per route! Fainted Puppets\ncan't be used anymore.");
+static const u8 sText_Desc_Nuzlocke_Hard[]               = _("Same rules as NORMAL but also\n{COLOR 7}{COLOR 8}deletes SAVE on battle loss!");
+static const u8 sText_Desc_Nuzlocke_SpeciesClause_Off[]  = _("The player always has to catch the\nfirst Puppet per route.");
+static const u8 sText_Desc_Nuzlocke_SpeciesClause_On[]   = _("Only not prior caught Puppets count\nas first encounter. {COLOR 7}{COLOR 8}RECOMMENDED!");
+static const u8 sText_Desc_Nuzlocke_ShinyClause_Off[]    = _("The player can only catch a shiny\nPuppet if it's the first encounter.");
+static const u8 sText_Desc_Nuzlocke_ShinyClause_On[]     = _("The player can always catch shiny\nPuppets. {COLOR 7}{COLOR 8}RECOMMENDED!");
+static const u8 sText_Desc_Nuzlocke_Nicknaming_Off[]     = _("Nicknames are optional.");
+static const u8 sText_Desc_Nuzlocke_Nicknaming_On[]      = _("Forces the player to nickname every\nPuppet. {COLOR 7}{COLOR 8}RECOMMENDED!");
+static const u8 sText_Desc_Nuzlocke_Deletion_Cemetery[]  = _("Fainted Puppets are send to the PC\nafter battle and can't be retrieved.");
+static const u8 sText_Desc_Nuzlocke_Deletion_Deletion[]  = _("Fainted Puppets are {COLOR 7}{COLOR 8}released{COLOR 1}{COLOR 2} after\nbattle!");
+static const u8 sText_Desc_Nuzlocke_Next[]               = _("Continue to difficulty options.");
+static const u8 sText_Desc_Difficulty_Party_Limit[]              = _("Limit the amount of POKéMON in the\nplayers party.");
+static const u8 sText_Desc_Difficulty_LevelCap_Base[]            = _("No level cap. Overleveling possible.\n");
+static const u8 sText_Desc_Difficulty_LevelCap_Normal[]          = _("Experience over the level cap\nis decreased significantly.");
+static const u8 sText_Desc_Difficulty_LevelCap_Hard[]            = _("Experience over the level cap\nis cut off.");
+static const u8 sText_Desc_Difficulty_TrainerDifficulty_Easy[]   = _("All trainers have easier teams\nincluding significant trainers.");
+static const u8 sText_Desc_Difficulty_TrainerDifficulty_Normal[] = _("All trainers have their regular\nintended teams.");
+static const u8 sText_Desc_Difficulty_TrainerDifficulty_Hard[]   = _("Trainers are smarter with better\nteams.");
+static const u8 sText_Desc_Difficulty_TrainerDifficulty_Lunatic[] = _("Trainers have unfair gimmicks\nand teams.");
+static const u8 sText_Desc_Difficulty_Items_Player_Yes[]         = _("The player can use battle items.");
+static const u8 sText_Desc_Difficulty_Items_Player_No[]          = _("The player can {COLOR 7}{COLOR 8}NOT use battle items.\nHold items are allowed!");
+static const u8 sText_Desc_Difficulty_Items_Trainer_Yes[]        = _("Enemy trainer can use battle items.");
+static const u8 sText_Desc_Difficulty_Items_Trainer_No[]         = _("Enemy trainer can {COLOR 7}{COLOR 8}NOT use battle\nitems.");
+static const u8 sText_Desc_Difficulty_NoEVs_Off[]                = _("The players' Puppets gain effort\nvalues as expected.");
+static const u8 sText_Desc_Difficulty_NoEVs_On[]                 = _("The players' Puppets do {COLOR 7}{COLOR 8}NOT{COLOR 1}{COLOR 2} gain\nany effort values!");
+static const u8 sText_Desc_Difficulty_ScalingIVs_Off[]           = _("The POKéMON of enemy Trainer have\nthe expected IVs.");
+static const u8 sText_Desc_Difficulty_ScalingIVs_Scaling[]       = _("The IVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Desc_Difficulty_ScalingIVs_Hard[]          = _("All Trainer POKéMON have perfect\nIVs!");
+static const u8 sText_Desc_Difficulty_ScalingEVs_Off[]           = _("The POKéMON of enemy Trainer have\nthe expected EVs.");
+static const u8 sText_Desc_Difficulty_ScalingEVs_Scaling[]       = _("The EVs of Trainer POKéMON increase\nwith gym badges!");
+static const u8 sText_Desc_Difficulty_ScalingEVs_Hard[]          = _("All Trainer POKéMON have high EVs!");
+static const u8 sText_Desc_Difficulty_ScalingEVs_Extreme[]       = _("All Trainer POKéMON have {COLOR 7}{COLOR 8}252 EVs!\nVery Hard!");
+static const u8 sText_Desc_Challenges_Save[]    = _("Save choices and continue...");
+
+static const u8 *const sOptionMenuItemDescriptionsVisuals[MENUITEM_VISUALS_COUNT][2] =
+{
+    [MENUITEM_VISUALS_TEXTSPEED]     = {sText_Desc_Visuals_TextSpeed,          sText_Empty},
+    [MENUITEM_VISUALS_FONT]          = {sText_Desc_Visuals_FontType,           sText_Desc_Visuals_FontType},
+    [MENUITEM_VISUALS_FRAMETYPE]     = {sText_Desc_Visuals_FrameType,          sText_Empty},
+    [MENUITEM_VISUALS_UNIQUE_COLORS] = {sText_Desc_Visuals_UniqueColorsOn,     sText_Desc_Visuals_UniqueColorsOff},
+    [MENUITEM_VISUALS_ANIMATIONS]    = {sText_Desc_Visuals_MonAnimationsOn,    sText_Desc_Visuals_MonAnimationsOff},
+    [MENUITEM_VISUALS_CANCEL]        = {sText_Desc_Options_Save,               sText_Empty},
+};
+
+static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][2] =
+{
+    [MENUITEM_BATTLE_BATTLESCENE]   = {sText_Desc_Battle_BattleScene_On,     sText_Desc_Battle_BattleScene_Off},
+    [MENUITEM_BATTLE_BATTLESTYLE]   = {sText_Desc_Battle_BattleStyle_Shift,  sText_Desc_Battle_BattleStyle_Set},
+    [MENUITEM_BATTLE_HP_BAR]        = {sText_Desc_Battle_HpBar,              sText_Empty},
+    [MENUITEM_BATTLE_EXP_BAR]       = {sText_Desc_Battle_ExpBar,             sText_Empty},
+    [MENUITEM_BATTLE_ANIM_SPEED]    = {sText_Desc_Battle_AnimSpeed,          sText_Empty},
+    [MENUITEM_BATTLE_IV_VIEW]       = {sText_Desc_IvViewOn,           sText_Desc_IvViewOff},
+    [MENUITEM_BATTLE_EFFECTIVENESS] = {sText_Desc_Battle_EffectivenessOn,    sText_Desc_Battle_EffectivenessOff},
+    [MENUITEM_BATTLE_SHOW_TYPES]    = {sText_Desc_ShowTypesOn,        sText_Desc_ShowTypesOff},
+    [MENUITEM_BATTLE_CANCEL]        = {sText_Desc_Options_Save,              sText_Empty},
+};
+
 static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][4] =
 {
     [MENUITEM_MISC_SOUND]        = {sText_Desc_SoundMono,            sText_Desc_SoundStereo,        sText_Empty,                    sText_Empty},
@@ -529,7 +818,48 @@ static const u8 *const sOptionMenuItemDescriptionsMisc[MENUITEM_MISC_COUNT][4] =
     [MENUITEM_MISC_L_BUTTONMODE] = {sText_Desc_LButtonMode_None,     sText_Desc_LButtonMode_LA,     sText_Desc_LButtonMode_AutoRun, sText_Desc_LButtonMode_Register},
     [MENUITEM_MISC_R_BUTTONMODE] = {sText_Desc_RButtonMode_None,     sText_Desc_RButtonMode_DexNav, sText_Desc_RButtonMode_Bike,    sText_Desc_RButtonMode_Register},
     [MENUITEM_MISC_DEBUG_MODE]   = {sText_Desc_DebugModeOn,          sText_Desc_DebugModeOff,       sText_Empty,                    sText_Empty},
-    [MENUITEM_MISC_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                   sText_Empty,                    sText_Empty},
+    [MENUITEM_MISC_CANCEL]       = {sText_Desc_Options_Save,         sText_Empty,                   sText_Empty,                    sText_Empty},
+};
+
+static const u8 *const sOptionMenuItemDescriptionsRandomizer[MENUITEM_RANDOM_COUNT][3] =
+{
+    [MENUITEM_RANDOM_OFF_ON]                    = {sText_Desc_Randomizer_Off,                    sText_Desc_Randomizer_On,                    sText_Empty},
+    [MENUITEM_RANDOM_STARTER]                   = {sText_Desc_Random_Starter_Off,                sText_Desc_Random_Starter_On,                sText_Desc_Random_Starter_Stage2},
+    [MENUITEM_RANDOM_WILD_PKMN]                 = {sText_Desc_Random_WildPokemon_Off,            sText_Desc_Random_WildPokemon_On,            sText_Empty},
+    [MENUITEM_RANDOM_TRAINER]                   = {sText_Desc_Random_Trainer_Off,                sText_Desc_Random_Trainer_On,                sText_Empty},
+    [MENUITEM_RANDOM_STATIC]                    = {sText_Desc_Random_Static_Off,                 sText_Desc_Random_Static_On,                 sText_Empty},
+    [MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]   = {sText_Desc_Random_BalanceTiers_On,            sText_Desc_Random_BalanceTiers_Off,          sText_Empty},
+    [MENUITEM_RANDOM_INCLUDE_LEGENDARIES]       = {sText_Desc_Random_IncludeLegendaries_Off,     sText_Desc_Random_IncludeLegendaries_On,     sText_Empty},
+    [MENUITEM_RANDOM_TYPE]                      = {sText_Desc_Random_Types_Off,                  sText_Desc_Random_Types_On,                  sText_Empty},
+    [MENUITEM_RANDOM_MOVES]                     = {sText_Desc_Random_Moves_Off,                  sText_Desc_Random_Moves_On,                  sText_Empty},
+    [MENUITEM_RANDOM_ABILITIES]                 = {sText_Desc_Random_Abilities_Off,              sText_Desc_Random_Abilities_On,              sText_Empty},
+    [MENUITEM_RANDOM_EVOLUTIONS]                = {sText_Desc_Random_Evos_Off,                   sText_Desc_Random_Evos_On,                   sText_Empty},
+    [MENUITEM_RANDOM_EVOLUTIONS_METHODS]        = {sText_Desc_Random_Evo_Methods_Off,            sText_Desc_Random_Evo_Methods_On,            sText_Empty},
+    [MENUITEM_RANDOM_TYPE_EFFEC]                = {sText_Desc_Random_Effectiveness_Off,          sText_Desc_Random_Effectiveness_On,          sText_Empty},
+    [MENUITEM_RANDOM_ITEMS]                     = {sText_Desc_Random_Items_Off,                  sText_Desc_Random_Items_On,                  sText_Empty},
+    [MENUITEM_RANDOM_CHAOS]                     = {sText_Desc_Random_ChaosMode_Off,              sText_Desc_Random_ChaosMode_On,              sText_Empty},
+    [MENUITEM_RANDOM_NEXT]                      = {sText_Desc_Random_Next,                       sText_Empty,                                 sText_Empty},
+};
+
+static const u8 *const sOptionMenuItemDescriptionsNuzlocke[MENUITEM_NUZLOCKE_COUNT][3] =
+{
+    [MENUITEM_NUZLOCKE_NUZLOCKE]            = {sText_Desc_Nuzlocke_Base,                 sText_Desc_Nuzlocke_Normal,                  sText_Desc_Nuzlocke_Hard},
+    [MENUITEM_NUZLOCKE_SPECIES_CLAUSE]      = {sText_Desc_Nuzlocke_SpeciesClause_On,     sText_Desc_Nuzlocke_SpeciesClause_Off,       sText_Empty},
+    [MENUITEM_NUZLOCKE_SHINY_CLAUSE]        = {sText_Desc_Nuzlocke_ShinyClause_On,       sText_Desc_Nuzlocke_ShinyClause_Off,         sText_Empty},
+    [MENUITEM_NUZLOCKE_DELETION]            = {sText_Desc_Nuzlocke_Deletion_Cemetery,    sText_Desc_Nuzlocke_Deletion_Deletion,       sText_Empty},
+    [MENUITEM_NUZLOCKE_NEXT]                = {sText_Desc_Nuzlocke_Next,                 sText_Empty,                                 sText_Empty},
+};
+
+static const u8 *const sOptionMenuItemDescriptionsDifficulty[MENUITEM_DIFFICULTY_COUNT][4] =
+{
+    [MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY]    = {sText_Desc_Difficulty_TrainerDifficulty_Easy, sText_Desc_Difficulty_TrainerDifficulty_Normal, sText_Desc_Difficulty_TrainerDifficulty_Hard, sText_Desc_Difficulty_TrainerDifficulty_Lunatic},
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = {sText_Desc_Difficulty_LevelCap_Base,          sText_Desc_Difficulty_LevelCap_Normal,          sText_Desc_Difficulty_LevelCap_Hard,          sText_Empty},
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = {sText_Desc_Difficulty_Items_Player_Yes,       sText_Desc_Difficulty_Items_Player_No,          sText_Empty,                                  sText_Empty},
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = {sText_Desc_Difficulty_Items_Trainer_Yes,      sText_Desc_Difficulty_Items_Trainer_No,         sText_Empty,                                  sText_Empty},
+    [MENUITEM_DIFFICULTY_NO_EVS]                = {sText_Desc_Difficulty_NoEVs_Off,              sText_Desc_Difficulty_NoEVs_On,                 sText_Empty,                                  sText_Empty},
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = {sText_Desc_Difficulty_ScalingIVs_Off,         sText_Desc_Difficulty_ScalingIVs_Scaling,       sText_Desc_Difficulty_ScalingIVs_Hard,        sText_Empty},
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = {sText_Desc_Difficulty_ScalingEVs_Off,         sText_Desc_Difficulty_ScalingEVs_Scaling,       sText_Desc_Difficulty_ScalingEVs_Hard,        sText_Desc_Difficulty_ScalingEVs_Extreme},
+    [MENUITEM_DIFFICULTY_SAVE]                  = {sText_Desc_Challenges_Save,                   sText_Empty,                                    sText_Empty,                                  sText_Empty},
 };
 
 // Disabled Descriptions
@@ -537,6 +867,15 @@ static const u8 sText_Desc_Disabled_Textspeed[]     = _("Text can only be in a s
 static const u8 sText_Desc_Disabled_FontType[]      = _("Fonts cannot be changed\ncurrectly.");
 static const u8 sText_Desc_Disabled_FrameType[]     = _("Only this text frame can be\nused.");
 static const u8 sText_Desc_Disabled_UniqueColors[]  = _("Unique colors cannot be enabled\ncurrently.");
+static const u8 sText_Desc_Disabled_BattleHPBar[]     = _("HP bar speed can only be in a\nset speed.");
+static const u8 sText_Desc_Disabled_BattleExpBar[]    = _("Exp bar speed can only be in a\nset speed.");
+static const u8 sText_Desc_Disabled_BattleAnimSpeed[] = _("Animation speed can only be in\na set speed.");
+static const u8 sText_Desc_Disabled_DebugMode[]    = _("Debug mode cannot be enabled\ncurrently.");
+
+static const u8 sText_Description_Disabled_Random_SimiliarEvolutionLevel[]  = _("Only usable with random starter,\nTrainer, wild or static Puppets.");
+static const u8 sText_Description_Disabled_Random_IncludeLegendaries[]      = _("Only usable with random starter,\nTrainer, wild or static Puppets.");
+static const u8 sText_Description_Disabled_Random_Chaos_Mode[]              = _("Only usable if other random options\nare activated.");
+static const u8 sText_Description_Disabled_Nuzlocke_Nuzlocke[]   = _("Only usable with Nuzlocke!");
 
 static const u8 *const sOptionMenuItemDescriptionsDisabledVisuals[MENUITEM_VISUALS_COUNT] =
 {
@@ -547,11 +886,6 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledVisuals[MENUITEM_VISUA
     [MENUITEM_VISUALS_ANIMATIONS]    = sText_Empty,
     [MENUITEM_VISUALS_CANCEL]        = sText_Empty,
 };
-
-// Disabled Custom
-static const u8 sText_Desc_Disabled_BattleHPBar[]     = _("HP bar speed can only be in a\nset speed.");
-static const u8 sText_Desc_Disabled_BattleExpBar[]    = _("Exp bar speed can only be in a\nset speed.");
-static const u8 sText_Desc_Disabled_BattleAnimSpeed[] = _("Animation speed can only be in\na set speed.");
 
 static const u8 *const sOptionMenuItemDescriptionsDisabledBattle[MENUITEM_BATTLE_COUNT] =
 {
@@ -566,22 +900,59 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledBattle[MENUITEM_BATTLE
     [MENUITEM_BATTLE_CANCEL]        = sText_Empty,
 };
 
-// Disabled Custom
-static const u8 sText_Desc_Disabled_DebugMode[]    = _("Debug mode cannot be enabled\ncurrently.");
-
 static const u8 *const sOptionMenuItemDescriptionsDisabledMisc[MENUITEM_MISC_COUNT] =
 {
     [MENUITEM_MISC_SOUND]        = sText_Empty,
     [MENUITEM_MISC_MUSIC_VOLUME] = sText_Empty,
     [MENUITEM_MISC_SFX_VOLUME]   = sText_Empty,
     [MENUITEM_MISC_CRIES_VOLUME] = sText_Empty,
-    //[MENUITEM_MISC_BUTTONMODE]   = sText_Empty,
     [MENUITEM_MISC_UNIT_SYSTEM]  = sText_Empty,
     [MENUITEM_MISC_MATCHCALL]    = sText_Empty,
     [MENUITEM_MISC_L_BUTTONMODE] = sText_Empty,
     [MENUITEM_MISC_R_BUTTONMODE] = sText_Empty,
     [MENUITEM_MISC_DEBUG_MODE]   = sText_Desc_Disabled_DebugMode,
     [MENUITEM_MISC_CANCEL]       = sText_Empty,
+};
+
+static const u8 *const sOptionMenuItemDescriptionsDisabledRandomizer[MENUITEM_RANDOM_COUNT] =
+{
+    [MENUITEM_RANDOM_OFF_ON]                    = sText_Empty,
+    [MENUITEM_RANDOM_STARTER]                   = sText_Empty,
+    [MENUITEM_RANDOM_WILD_PKMN]                 = sText_Empty,
+    [MENUITEM_RANDOM_TRAINER]                   = sText_Empty,
+    [MENUITEM_RANDOM_STATIC]                    = sText_Empty,
+    [MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]   = sText_Description_Disabled_Random_SimiliarEvolutionLevel,
+    [MENUITEM_RANDOM_INCLUDE_LEGENDARIES]       = sText_Description_Disabled_Random_IncludeLegendaries,
+    [MENUITEM_RANDOM_TYPE]                      = sText_Empty,
+    [MENUITEM_RANDOM_MOVES]                     = sText_Empty,
+    [MENUITEM_RANDOM_ABILITIES]                 = sText_Empty,
+    [MENUITEM_RANDOM_EVOLUTIONS]                = sText_Empty,
+    [MENUITEM_RANDOM_EVOLUTIONS_METHODS]        = sText_Empty,
+    [MENUITEM_RANDOM_TYPE_EFFEC]                = sText_Empty,
+    [MENUITEM_RANDOM_ITEMS]                     = sText_Empty,
+    [MENUITEM_RANDOM_CHAOS]                     = sText_Description_Disabled_Random_Chaos_Mode,
+    [MENUITEM_RANDOM_NEXT]                      = sText_Empty,
+};
+
+static const u8 *const sOptionMenuItemDescriptionsDisabledNuzlocke[MENUITEM_NUZLOCKE_COUNT] =
+{
+    [MENUITEM_NUZLOCKE_NUZLOCKE]            = sText_Empty,
+    [MENUITEM_NUZLOCKE_SPECIES_CLAUSE]      = sText_Description_Disabled_Nuzlocke_Nuzlocke,
+    [MENUITEM_NUZLOCKE_SHINY_CLAUSE]        = sText_Description_Disabled_Nuzlocke_Nuzlocke,
+    [MENUITEM_NUZLOCKE_DELETION]            = sText_Description_Disabled_Nuzlocke_Nuzlocke,
+    [MENUITEM_NUZLOCKE_NEXT]                = sText_Empty,
+};
+
+static const u8 *const sOptionMenuItemDescriptionsDisabledDifficulty[MENUITEM_DIFFICULTY_COUNT] =
+{
+    [MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY]    = sText_Empty,
+    [MENUITEM_DIFFICULTY_LEVEL_CAP]             = sText_Empty,
+    [MENUITEM_DIFFICULTY_ITEM_PLAYER]           = sText_Empty,
+    [MENUITEM_DIFFICULTY_ITEM_TRAINER]          = sText_Empty,
+    [MENUITEM_DIFFICULTY_NO_EVS]                = sText_Empty,
+    [MENUITEM_DIFFICULTY_SCALING_IVS]           = sText_Empty,
+    [MENUITEM_DIFFICULTY_SCALING_EVS]           = sText_Empty,
+    [MENUITEM_DIFFICULTY_SAVE]                  = sText_Empty,
 };
 
 static const u8 *const OptionTextDescription(void)
@@ -612,8 +983,23 @@ static const u8 *const OptionTextDescription(void)
         if (menuItem == MENUITEM_MISC_MUSIC_VOLUME || menuItem == MENUITEM_MISC_SFX_VOLUME || menuItem == MENUITEM_MISC_CRIES_VOLUME)
             selection = 0;
         return sOptionMenuItemDescriptionsMisc[menuItem][selection];
+    case MENU_RANDOMIZER:
+        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledRandomizer[menuItem] != sText_Empty)
+            return sOptionMenuItemDescriptionsDisabledRandomizer[menuItem];
+        selection = sOptions->sel_randomizer[menuItem];  
+        return sOptionMenuItemDescriptionsRandomizer[menuItem][selection];
+    case MENU_NUZLOCKE:
+        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem] != sText_Empty)
+            return sOptionMenuItemDescriptionsDisabledNuzlocke[menuItem];
+        selection = sOptions->sel_nuzlocke[menuItem];
+        return sOptionMenuItemDescriptionsNuzlocke[menuItem][selection];
+    case MENU_DIFFICULTY:
+        if (!CheckConditions(menuItem) && sOptionMenuItemDescriptionsDisabledDifficulty[menuItem] != sText_Empty)
+            return sOptionMenuItemDescriptionsDisabledDifficulty[menuItem];
+        selection = sOptions->sel_difficulty[menuItem];
+        return sOptionMenuItemDescriptionsDifficulty[menuItem][selection];
     }
-    return 0;
+    return sText_Empty;
 }
 
 static u8 MenuItemCount(void)
@@ -627,6 +1013,12 @@ static u8 MenuItemCount(void)
         return MENUITEM_BATTLE_COUNT;
     case MENU_MISC:
         return MENUITEM_MISC_COUNT;
+    case MENU_RANDOMIZER:
+        return MENUITEM_RANDOM_COUNT;
+    case MENU_NUZLOCKE:
+        return MENUITEM_NUZLOCKE_COUNT;
+    case MENU_DIFFICULTY:
+        return MENUITEM_DIFFICULTY_COUNT;
     }
 }
 
@@ -641,6 +1033,12 @@ static u8 MenuItemCancel(void)
         return MENUITEM_BATTLE_CANCEL;
     case MENU_MISC:
         return MENUITEM_MISC_CANCEL;
+    case MENU_RANDOMIZER:
+        return MENUITEM_RANDOM_NEXT;
+    case MENU_NUZLOCKE:
+        return MENUITEM_NUZLOCKE_NEXT;
+    case MENU_DIFFICULTY:
+        return MENUITEM_DIFFICULTY_SAVE;
     }
 }
 
@@ -659,6 +1057,7 @@ static void VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
+    ChangeBgX(3, 96, BG_COORD_ADD);
     ChangeBgY(3, 96, BG_COORD_ADD);
 }
 
@@ -672,9 +1071,20 @@ static const u8 sText_TopBar_Battle_Right[]  = _("{R_BUTTON}MISC");
 static const u8 sText_TopBar_Misc_Left[]     = _("{L_BUTTON}BATTLE");
 static const u8 sText_TopBar_Misc_Right[]    = _("{R_BUTTON}VISUALS");
 
+static const u8 sText_TopBar_Randomizer_Left[]  = _("{L_BUTTON}RANDOMIZER");
+static const u8 sText_TopBar_Nuzlocke_Left[]    = _("{L_BUTTON}NUZLOCKE");
+static const u8 sText_TopBar_Nuzlocke_Right[]   = _("{R_BUTTON}NUZLOCKE");
+static const u8 sText_TopBar_Difficulty_Right[] = _("{R_BUTTON}DIFFICULTY");
+static const u8 sText_TopBar_Randomizer[]       = _("RANDOMIZER");
+static const u8 sText_TopBar_Nuzlocke[]         = _("NUZLOCKE");
+static const u8 sText_TopBar_Difficulty[]       = _("DIFFICULTY");
+
 static void DrawTopBarText(void)
 {
-    const u8 color[3] = { 0, TEXT_COLOR_WHITE, TEXT_COLOR_OPTIONS_GRAY_FG };
+    const u8 color[3] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_OPTIONS_WHITE, TEXT_COLOR_OPTIONS_GRAY_BG };
+
+    int width = 0;
+    int right = 240 - GetStringWidth(FONT_SMALL, sText_TopBar_Randomizer_Left, 0) - 5;
 
     FillWindowPixelBuffer(WIN_TOPBAR, PIXEL_FILL(0));
     switch (sOptions->submenu)
@@ -693,6 +1103,22 @@ static void DrawTopBarText(void)
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, sText_TopBar_Misc);
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, sText_TopBar_Misc_Left);
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 187, 1, color, 0, sText_TopBar_Misc_Right);
+            break;
+        case MENU_RANDOMIZER:
+            width = GetStringWidth(FONT_SMALL, sText_TopBar_Randomizer, 0) / 2;
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 1, color, 0, sText_TopBar_Randomizer);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 1, color, 0, sText_TopBar_Nuzlocke_Right);
+            break;
+        case MENU_NUZLOCKE:
+            width = GetStringWidth(FONT_SMALL, sText_TopBar_Nuzlocke, 0) / 2;
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 1, color, 0, sText_TopBar_Randomizer_Left);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 1, color, 0, sText_TopBar_Nuzlocke);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, right, 1, color, 0, sText_TopBar_Difficulty_Right);
+            break;
+        case MENU_DIFFICULTY:
+            width = GetStringWidth(FONT_SMALL, sText_TopBar_Difficulty, 0) / 2;
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 5, 1, color, 0, sText_TopBar_Nuzlocke_Left);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 120 - width, 1, color, 0, sText_TopBar_Difficulty);
             break;
     }
     PutWindowTilemap(WIN_TOPBAR);
@@ -713,7 +1139,7 @@ static void DrawDescriptionText(void)
 {
     u8 color_gray[3];
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
-    color_gray[1] = TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_gray[1] = TEXT_COLOR_OPTIONS_WHITE;
     color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
         
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(1));
@@ -727,10 +1153,10 @@ static void DrawLeftSideOptionText(int selection, int y)
     u8 color_gray[3];
 
     color_yellow[0] = TEXT_COLOR_TRANSPARENT;
-    color_yellow[1] = TEXT_COLOR_WHITE;
-    color_yellow[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_yellow[1] = TEXT_COLOR_OPTIONS_WHITE;
+    color_yellow[2] = TEXT_COLOR_OPTIONS_GRAY_BG;
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
-    color_gray[1] = TEXT_COLOR_WHITE;
+    color_gray[1] = TEXT_COLOR_OPTIONS_GRAY_BG;
     color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
 
     if (CheckConditions(selection))
@@ -748,19 +1174,19 @@ static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen,
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
         color_red[1] = TEXT_COLOR_OPTIONS_ORANGE_FG;
-        color_red[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_red[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
         color_gray[1] = TEXT_COLOR_OPTIONS_WHITE;
-        color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
     }
     else
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
-        color_red[1] = TEXT_COLOR_OPTIONS_WHITE;
-        color_red[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_red[1] = TEXT_COLOR_OPTIONS_GRAY_BG;
+        color_red[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
-        color_gray[1] = TEXT_COLOR_OPTIONS_WHITE;
-        color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_gray[1] = TEXT_COLOR_OPTIONS_GRAY_BG;
+        color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
     }
 
 
@@ -785,6 +1211,18 @@ static void DrawChoices(u32 id, int y) //right side draw function
         case MENU_MISC:
             if (sItemFunctionsMisc[id].drawChoices != NULL)
                 sItemFunctionsMisc[id].drawChoices(sOptions->sel_misc[id], y);
+            break;
+        case MENU_RANDOMIZER:
+            if (sItemFunctionsRandom[id].drawChoices != NULL)
+                sItemFunctionsRandom[id].drawChoices(sOptions->sel_randomizer[id], y);
+            break;
+        case MENU_NUZLOCKE:
+            if (sItemFunctionsNuzlocke[id].drawChoices != NULL)
+                sItemFunctionsNuzlocke[id].drawChoices(sOptions->sel_nuzlocke[id], y);
+            break;
+        case MENU_DIFFICULTY:
+            if (sItemFunctionsDifficulty[id].drawChoices != NULL)
+                sItemFunctionsDifficulty[id].drawChoices(sOptions->sel_difficulty[id], y);
             break;
     }
 }
@@ -837,7 +1275,130 @@ static bool8 OptionsMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, 
     return FALSE;
 }
 
-void CB2_InitOptionPlusMenu(void)
+static void OptionsMenu_LoadOptions(u32 optionMode)
+{
+    switch (optionMode)
+    {
+    default:
+    case MENUMODE_OPTIONSPLUS:
+        sOptions->sel_visuals[MENUITEM_VISUALS_TEXTSPEED]     = gSaveBlock2Ptr->optionsTextSpeed;
+        sOptions->sel_visuals[MENUITEM_VISUALS_FRAMETYPE]     = gSaveBlock2Ptr->optionsWindowFrameType;
+        sOptions->sel_visuals[MENUITEM_VISUALS_FONT]          = gSaveBlock2Ptr->optionsCurrentFont;
+        sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
+        sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS]    = gSaveBlock2Ptr->optionsMonAnimations;
+
+        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
+        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
+        sOptions->sel_battle[MENUITEM_BATTLE_HP_BAR]        = gSaveBlock2Ptr->optionsHpBarSpeed;
+        sOptions->sel_battle[MENUITEM_BATTLE_EXP_BAR]       = gSaveBlock2Ptr->optionsExpBarSpeed;
+        sOptions->sel_battle[MENUITEM_BATTLE_ANIM_SPEED]    = gSaveBlock2Ptr->optionsAnimSpeed;
+        sOptions->sel_battle[MENUITEM_BATTLE_IV_VIEW]       = gSaveBlock2Ptr->optionsSummaryIvView;
+        sOptions->sel_battle[MENUITEM_BATTLE_EFFECTIVENESS] = gSaveBlock2Ptr->optionsEffectiveness;
+        sOptions->sel_battle[MENUITEM_BATTLE_SHOW_TYPES]    = gSaveBlock2Ptr->optionsShowTypes;
+
+        sOptions->sel_misc[MENUITEM_MISC_SOUND]        = gSaveBlock2Ptr->optionsSound;
+        sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME] = gSaveBlock2Ptr->optionsVolumeBGM;
+        sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME]   = gSaveBlock2Ptr->optionsVolumeSFX;
+        sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME] = gSaveBlock2Ptr->optionsVolumeCries;
+        //sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
+        sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
+        sOptions->sel_misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
+        sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
+        sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
+        sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
+
+        sOptions->submenu = MENU_VISUALS;
+        break;
+    case MENUMODE_CHALLENGES:
+        //tx_randomizer_and_challenges
+        gSaveBlock1Ptr->tx_Random_Starter                   = TX_RANDOM_STARTER;
+        gSaveBlock1Ptr->tx_Random_Starter_Stage2            = TX_RANDOM_STARTER_STAGE2;
+        gSaveBlock1Ptr->tx_Random_WildPokemon               = TX_RANDOM_WILD_POKEMON;
+        gSaveBlock1Ptr->tx_Random_Trainer                   = TX_RANDOM_TRAINER;
+        gSaveBlock1Ptr->tx_Random_Static                    = TX_RANDOM_STATIC;
+        gSaveBlock1Ptr->tx_Random_Similar                   = TX_RANDOM_SIMILAR;
+        gSaveBlock1Ptr->tx_Random_MapBased                  = TX_RANDOM_MAP_BASED;
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries        = TX_RANDOM_INCLUDE_LEGENDARIES;
+        gSaveBlock1Ptr->tx_Random_Type                      = TX_RANDOM_TYPE;
+        gSaveBlock1Ptr->tx_Random_Moves                     = TX_RANDOM_MOVES;
+        gSaveBlock1Ptr->tx_Random_Abilities                 = TX_RANDOM_ABILITIES;
+        gSaveBlock1Ptr->tx_Random_Evolutions                = TX_RANDOM_EVOLUTION;
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods          = TX_RANDOM_EVOLUTION_METHODE;
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness         = TX_RANDOM_TYPE_EFFECTIVENESS;
+        gSaveBlock1Ptr->tx_Random_Items                     = TX_RANDOM_ITEMS;
+        gSaveBlock1Ptr->tx_Random_Chaos                     = TX_RANDOM_CHAOS_MODE;
+        gSaveBlock1Ptr->tx_Random_OneForOne                 = TX_RANDOM_ONE_FOR_ONE;
+
+        gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_NUZLOCKE_NUZLOCKE;
+        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_NUZLOCKE_NUZLOCKE_HARDCORE;
+        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause           = TX_NUZLOCKE_SPECIES_CLAUSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause             = TX_NUZLOCKE_SHINY_CLAUSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_Deletion                = TX_NUZLOCKE_DELETION;
+    
+        gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_DIFFICULTY_PARTY_LIMIT;
+        gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_DIFFICULTY_LEVEL_CAP;
+        gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty     = DIFFICULTY_NORMAL;
+        gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_DIFFICULTY_NO_ITEM_PLAYER;
+        gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_DIFFICULTY_NO_ITEM_TRAINER;
+        gSaveBlock1Ptr->tx_Challenges_NoEVs                 = TX_DIFFICULTY_NO_EVS;
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
+        gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
+
+        gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
+        gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
+        gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
+        gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
+        gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
+               
+
+        sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON]                     = FALSE;
+        if (gSaveBlock1Ptr->tx_Random_Starter_Stage2)
+            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 2;
+        else if (gSaveBlock1Ptr->tx_Random_Starter)
+            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 1;
+        else
+            sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER] = 0;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN]                  = gSaveBlock1Ptr->tx_Random_WildPokemon;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER]                    = gSaveBlock1Ptr->tx_Random_Trainer;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC]                     = gSaveBlock1Ptr->tx_Random_Static;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL]    = !gSaveBlock1Ptr->tx_Random_Similar;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES]        = gSaveBlock1Ptr->tx_Random_IncludeLegendaries;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE]                       = gSaveBlock1Ptr->tx_Random_Type;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES]                      = gSaveBlock1Ptr->tx_Random_Moves;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES]                  = gSaveBlock1Ptr->tx_Random_Abilities;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS]                 = gSaveBlock1Ptr->tx_Random_Evolutions;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS]         = gSaveBlock1Ptr->tx_Random_EvolutionMethods;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC]                 = gSaveBlock1Ptr->tx_Random_TypeEffectiveness;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS]                      = gSaveBlock1Ptr->tx_Random_Items;
+        sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS]                      = gSaveBlock1Ptr->tx_Random_Chaos;
+
+        // MENU_NUZLOCKE
+        if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke && gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore)
+            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 2;
+        else if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
+            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 1;
+        else
+            sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE] = 0;
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause;
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause;
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = gSaveBlock1Ptr->tx_Nuzlocke_Deletion;
+        
+        // MENU_DIFFICULTY
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY] = gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP]      = gSaveBlock1Ptr->tx_Challenges_LevelCap;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER]    = gSaveBlock1Ptr->tx_Challenges_NoItemPlayer;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER]   = gSaveBlock1Ptr->tx_Challenges_NoItemTrainer;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS]         = gSaveBlock1Ptr->tx_Challenges_NoEVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs;
+        sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS]    = gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs;
+
+        sOptions->submenu = MENU_RANDOMIZER;
+        break;
+    }
+}
+
+static void CB2_InitOptionsMenu(u32 optionMode)
 {
     u32 i;
     switch (gMain.state)
@@ -909,33 +1470,7 @@ void CB2_InitOptionPlusMenu(void)
         gMain.state++;
         break;
     case 6:
-        sOptions->sel_visuals[MENUITEM_VISUALS_TEXTSPEED]     = gSaveBlock2Ptr->optionsTextSpeed;
-        sOptions->sel_visuals[MENUITEM_VISUALS_FRAMETYPE]     = gSaveBlock2Ptr->optionsWindowFrameType;
-        sOptions->sel_visuals[MENUITEM_VISUALS_FONT]          = gSaveBlock2Ptr->optionsCurrentFont;
-        sOptions->sel_visuals[MENUITEM_VISUALS_UNIQUE_COLORS] = gSaveBlock2Ptr->optionsUniqueColors;
-        sOptions->sel_visuals[MENUITEM_VISUALS_ANIMATIONS]    = gSaveBlock2Ptr->optionsMonAnimations;
-
-        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
-        sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
-        sOptions->sel_battle[MENUITEM_BATTLE_HP_BAR]        = gSaveBlock2Ptr->optionsHpBarSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_EXP_BAR]       = gSaveBlock2Ptr->optionsExpBarSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_ANIM_SPEED]    = gSaveBlock2Ptr->optionsAnimSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_IV_VIEW]       = gSaveBlock2Ptr->optionsSummaryIvView;
-        sOptions->sel_battle[MENUITEM_BATTLE_EFFECTIVENESS] = gSaveBlock2Ptr->optionsEffectiveness;
-        sOptions->sel_battle[MENUITEM_BATTLE_SHOW_TYPES]    = gSaveBlock2Ptr->optionsShowTypes;
-
-        sOptions->sel_misc[MENUITEM_MISC_SOUND]        = gSaveBlock2Ptr->optionsSound;
-        sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME] = gSaveBlock2Ptr->optionsVolumeBGM;
-        sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME]   = gSaveBlock2Ptr->optionsVolumeSFX;
-        sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME] = gSaveBlock2Ptr->optionsVolumeCries;
-        //sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE]   = gSaveBlock2Ptr->optionsButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM]  = gSaveBlock2Ptr->optionsUnitSystem;
-        sOptions->sel_misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
-        sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
-        sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
-
-        sOptions->submenu = MENU_VISUALS;
+        OptionsMenu_LoadOptions(optionMode);
 
         gMain.state++;
         break;
@@ -957,7 +1492,7 @@ void CB2_InitOptionPlusMenu(void)
     case 10:
         CreateTask(Task_OptionMenuFadeIn, 0);
         
-        sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MENUITEM_VISUALS_COUNT - 1, 110, 110, 0);
+        sOptions->arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 240 / 2, 20, 110, MenuItemCount() - 1, 110, 110, 0);
 
         for (i = 0; i < min(OPTIONS_ON_SCREEN, MenuItemCount()); i++)
             DrawChoices(i, i * Y_DIFF);
@@ -981,6 +1516,18 @@ void CB2_InitOptionPlusMenu(void)
         SetMainCallback2(MainCB2);
         return;
     }
+}
+
+void CB2_InitOptionPlusMenu(void)
+{
+    CB2_InitOptionsMenu(MENUMODE_OPTIONSPLUS);
+    return;
+}
+
+void CB2_InitChallengesMenu(void)
+{
+    CB2_InitOptionsMenu(MENUMODE_CHALLENGES);
+    return;
 }
 
 static void Task_OptionMenuFadeIn(u8 taskId)
@@ -1011,11 +1558,38 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         if (sOptions->menuCursor[sOptions->submenu] == MenuItemCancel())
-            gTasks[taskId].func = Task_OptionMenuSave;
+        {
+            switch (sOptions->submenu)
+            {
+            case MENU_VISUALS:
+            case MENU_BATTLE:
+            case MENU_MISC:
+                gTasks[taskId].func = Task_OptionMenuSave;
+                break;
+            case MENU_RANDOMIZER:
+            case MENU_NUZLOCKE:
+                sOptions->submenu++;
+                DrawTopBarText();
+                ReDrawAll();
+                HighlightOptionMenuItem();
+                DrawDescriptionText();
+                break;
+            case MENU_DIFFICULTY:
+                gTasks[taskId].func = Task_RandomizerChallengesMenuSave;
+                break;
+            }
+        }
     }
     else if (JOY_NEW(B_BUTTON))
     {
-        gTasks[taskId].func = Task_OptionMenuSave;
+        switch (sOptions->submenu)
+        {
+        case MENU_VISUALS:
+        case MENU_BATTLE:
+        case MENU_MISC:
+            gTasks[taskId].func = Task_OptionMenuSave;
+            break;
+        }
     }
     else if (JOY_NEW(DPAD_UP))
     {
@@ -1122,12 +1696,63 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                     DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
             }
         }
+        else if (sOptions->submenu == MENU_RANDOMIZER)
+        {
+            int cursor = sOptions->menuCursor[sOptions->submenu];
+            u8 previousOption = sOptions->sel_randomizer[cursor];
+            if (CheckConditions(cursor))
+            {
+                if (sItemFunctionsRandom[cursor].processInput != NULL)
+                {
+                    sOptions->sel_randomizer[cursor] = sItemFunctionsRandom[cursor].processInput(previousOption);
+                    ReDrawAll();
+                    DrawDescriptionText();
+                }
+
+                if (previousOption != sOptions->sel_randomizer[cursor])
+                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+            }
+        }
+        else if (sOptions->submenu == MENU_NUZLOCKE)
+        {
+            int cursor = sOptions->menuCursor[sOptions->submenu];
+            u8 previousOption = sOptions->sel_nuzlocke[cursor];
+            if (CheckConditions(cursor))
+            {
+                if (sItemFunctionsNuzlocke[cursor].processInput != NULL)
+                {
+                    sOptions->sel_nuzlocke[cursor] = sItemFunctionsNuzlocke[cursor].processInput(previousOption);
+                    ReDrawAll();
+                    DrawDescriptionText();
+                }
+
+                if (previousOption != sOptions->sel_nuzlocke[cursor])
+                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+            }
+        }
+        else if (sOptions->submenu == MENU_DIFFICULTY)
+        {
+            int cursor = sOptions->menuCursor[sOptions->submenu];
+            u8 previousOption = sOptions->sel_difficulty[cursor];
+            if (CheckConditions(cursor))
+            {
+                if (sItemFunctionsDifficulty[cursor].processInput != NULL)
+                {
+                    sOptions->sel_difficulty[cursor] = sItemFunctionsDifficulty[cursor].processInput(previousOption);
+                    ReDrawAll();
+                    DrawDescriptionText();
+                }
+
+                if (previousOption != sOptions->sel_difficulty[cursor])
+                    DrawChoices(cursor, sOptions->visibleCursor[sOptions->submenu] * Y_DIFF);
+            }
+        }
     }
     else if (JOY_NEW(R_BUTTON))
     {
         if (sOptions->submenu == MENU_MISC)
             sOptions->submenu = MENU_VISUALS;
-        else
+        else if (sOptions->submenu != MENU_DIFFICULTY)
             sOptions->submenu++;
 
         DrawTopBarText();
@@ -1139,7 +1764,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         if (sOptions->submenu == MENU_VISUALS)
             sOptions->submenu = MENU_MISC;
-        else
+        else if (sOptions->submenu != MENU_RANDOMIZER)
             sOptions->submenu--;
         
         DrawTopBarText();
@@ -1170,13 +1795,108 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->sel_misc[MENUITEM_MISC_MUSIC_VOLUME];
     gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->sel_misc[MENUITEM_MISC_SFX_VOLUME];
     gSaveBlock2Ptr->optionsVolumeCries      = sOptions->sel_misc[MENUITEM_MISC_CRIES_VOLUME];
-    //gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_misc[MENUITEM_MISC_BUTTONMODE];
     gSaveBlock2Ptr->optionsUnitSystem       = sOptions->sel_misc[MENUITEM_MISC_UNIT_SYSTEM];
     gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_misc[MENUITEM_MISC_MATCHCALL];
     gSaveBlock2Ptr->optionsLButtonMode      = sOptions->sel_misc[MENUITEM_MISC_L_BUTTONMODE];
     gSaveBlock2Ptr->optionsRButtonMode      = sOptions->sel_misc[MENUITEM_MISC_R_BUTTONMODE];
     gSaveBlock2Ptr->optionsDebugMode        = sOptions->sel_misc[MENUITEM_MISC_DEBUG_MODE];
 
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    gTasks[taskId].func = Task_OptionMenuFadeOut;
+}
+
+static void SaveData_TxRandomizerAndChallenges(void)
+{
+    // MENU_RANDOMIZER
+    switch (sOptions->sel_randomizer[MENUITEM_RANDOM_STARTER])
+    {
+    case 0:
+        gSaveBlock1Ptr->tx_Random_Starter          = FALSE;
+        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
+        break;
+    case 1:
+        gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
+        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
+        break;
+    case 2:
+        gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
+        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = TRUE;
+        break;
+    }
+    if (sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
+    {
+        gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->sel_randomizer[MENUITEM_RANDOM_WILD_PKMN];
+        gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->sel_randomizer[MENUITEM_RANDOM_TRAINER];
+        gSaveBlock1Ptr->tx_Random_Static             = sOptions->sel_randomizer[MENUITEM_RANDOM_STATIC];
+        gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
+        gSaveBlock1Ptr->tx_Random_MapBased           = TX_RANDOM_MAP_BASED;
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->sel_randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
+        gSaveBlock1Ptr->tx_Random_Type               = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE];
+        gSaveBlock1Ptr->tx_Random_Moves              = sOptions->sel_randomizer[MENUITEM_RANDOM_MOVES];
+        gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->sel_randomizer[MENUITEM_RANDOM_ABILITIES];
+        gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS];
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->sel_randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->sel_randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
+        gSaveBlock1Ptr->tx_Random_Items              = sOptions->sel_randomizer[MENUITEM_RANDOM_ITEMS];
+        gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->sel_randomizer[MENUITEM_RANDOM_CHAOS];
+    }
+    else
+    {
+        gSaveBlock1Ptr->tx_Random_WildPokemon        = FALSE;
+        gSaveBlock1Ptr->tx_Random_Trainer            = FALSE;
+        gSaveBlock1Ptr->tx_Random_Static             = FALSE;
+        gSaveBlock1Ptr->tx_Random_Similar            = FALSE;
+        gSaveBlock1Ptr->tx_Random_MapBased           = FALSE;
+        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = FALSE;
+        gSaveBlock1Ptr->tx_Random_Type               = FALSE;
+        gSaveBlock1Ptr->tx_Random_Moves              = FALSE;
+        gSaveBlock1Ptr->tx_Random_Abilities          = FALSE;
+        gSaveBlock1Ptr->tx_Random_Evolutions         = FALSE;
+        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = FALSE;
+        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = FALSE;
+        gSaveBlock1Ptr->tx_Random_Chaos              = FALSE;
+    } 
+    //MENU_NUZLOCKE
+    switch (sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
+    {
+    case 0:
+        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
+        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
+        break;
+    case 1:
+        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
+        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
+        break;
+    case 2:
+        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
+        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = TRUE;
+        break;
+    }
+    if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
+    {
+        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
+        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
+        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION];
+    }
+    else
+    {
+        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = FALSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = FALSE;
+        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = FALSE;
+    }
+    // MENU_DIFFICULTY
+    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY];
+    gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
+    gSaveBlock1Ptr->tx_Challenges_NoEVs         = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_NO_EVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->sel_difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
+}
+
+static void Task_RandomizerChallengesMenuSave(u8 taskId)
+{
+    SaveData_TxRandomizerAndChallenges();
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -1229,6 +1949,7 @@ static void ScrollMenu(int direction)
     DrawLeftSideOptionText(menuItem, (pos * Y_DIFF) + 1);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_GFX);
 }
+
 static void ScrollAll(int direction) // to bottom or top
 {
     int i, y, menuItem, pos;
@@ -1238,7 +1959,7 @@ static void ScrollAll(int direction) // to bottom or top
     scrollCount = MenuItemCount() - optionsToDraw;
 
     // Move items up/down
-    ScrollWindow(WIN_OPTIONS, direction, Y_DIFF * scrollCount, PIXEL_FILL(1));
+    ScrollWindow(WIN_OPTIONS, direction, Y_DIFF * scrollCount, PIXEL_FILL(0));
 
     // Clear moved items
     if (direction == 0)
@@ -1303,10 +2024,10 @@ static int ProcessInput_Options_Two(int selection)
     return selection;
 }
 
-/*static int ProcessInput_Options_Three(int selection)
+static int ProcessInput_Options_Three(int selection)
 {
     return XOptions_ProcessInput(3, selection);
-}*/
+}
 
 static int ProcessInput_Options_Four(int selection)
 {
@@ -1316,18 +2037,6 @@ static int ProcessInput_Options_Four(int selection)
 static int ProcessInput_Options_Eleven(int selection)
 {
     return XOptions_ProcessInput(11, selection);
-}
-
-// Process Input functions ****SPECIFIC****
-static int UNUSED ProcessInput_Sound(int selection)
-{
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
-    {
-        selection ^= 1;
-        SetPokemonCryStereo(selection);
-    }
-
-    return selection;
 }
 
 static int ProcessInput_FrameType(int selection)
@@ -1460,11 +2169,50 @@ static void ReDrawAll(void)
 
 static const u8 sText_On[] = _("ON");
 static const u8 sText_Off[] = _("OFF");
-
-// Process Input functions ****SPECIFIC****
 static const u8 sText_Faster[] = _("FASTER");
 static const u8 sText_Instant[] = _("INSTANT");
+static const u8 sText_Normal[] = _("NORMAL");
+static const u8 sText_ZeroPercent[] = _("0%{0x77}{0x77}");
+static const u8 sText_HundredPercent[] = _("100%");
+static const u8 sText_FontEmerald[] = _("EMERALD");    //tx_optionsPlus
+static const u8 sText_FontFireRed[] = _("FRLG");        //tx_optionsPlus
+static const u8 sText_AnimSpeed1[] = _("1x");
+static const u8 sText_AnimSpeed2[] = _("2x");
+static const u8 sText_AnimSpeed3[] = _("3x");
+static const u8 sText_AnimSpeed4[] = _("4x");
+static const u8 sText_None[] = _("NONE");
+static const u8 sText_LEqualsA[] = _("L=A TURBO");
+static const u8 sText_AutoRun[] = _("AUTO-RUN");
+static const u8 sText_Register[] = _("REGISTER");
+static const u8 sText_DexNav[] = _("DEXNAV");
+static const u8 sText_BikeSwitch[] = _("BIKE SWITCH");
+static const u8 sText_Placeholder[] = _("WIP");
+
+static const u8 sText_Random[]  = _("RANDOM");
+static const u8 sText_3Stage[]  = _("EVO");
+static const u8 sText_Random_Chaos[] = _("CHAOS");
+static const u8 sText_Challenges_Nuzlocke_Normal[]      = _("NORMAL");
+static const u8 sText_Challenges_Nuzlocke_Hardcore[]    = _("HARD");
+static const u8 sText_Nuzlocke_Cemetery[]  = _("CEMETERY");
+static const u8 sText_Nuzlocke_Deletion[]  = _("RELEASE");
+static const u8 sText_Yes[] = _("YES");
+static const u8 sText_No[]  = _("NO");
+static const u8 sText_ScalingIVsEVs_Scaling[]   = _("SCALE");
+static const u8 sText_ScalingIVsEVs_Hard[]      = _("HARD");
+static const u8 sText_ScalingIVsEVs_Extrem[]    = _("EXTREM");
+static const u8 sText_Challenges_LevelCap_Normal[]  = _("SOFT");
+static const u8 sText_Challenges_LevelCap_Hard[]    = _("HARD");
+static const u8 sText_Challenges_TrainerDifficulty_Easy[]    = _("EASY");
+static const u8 sText_Challenges_TrainerDifficulty_Normal[]  = _("NORMAL");
+static const u8 sText_Challenges_TrainerDifficulty_Hard[]    = _("HARD");
+static const u8 sText_Challenges_TrainerDifficulty_Lunatic[] = _("LUNATIC");
+
 static const u8 *const sTextSpeedStrings[] = {gText_TextSpeedSlow, gText_TextSpeedMid, gText_TextSpeedFast, sText_Faster};
+static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
+
+static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extrem};
+static const u8 *const sText_Challenges_TrainerDifficulty_Strings[] = {sText_Challenges_TrainerDifficulty_Easy, sText_Challenges_TrainerDifficulty_Normal, sText_Challenges_TrainerDifficulty_Hard, sText_Challenges_TrainerDifficulty_Lunatic};
+
 static void DrawChoices_TextSpeed(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_VISUALS_TEXTSPEED);
@@ -1501,21 +2249,6 @@ static void DrawChoices_Sound(int selection, int y)
     DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1], active);
 }
 
-/*
-static void DrawChoices_ButtonMode(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MISC_BUTTONMODE);
-    u8 styles[3] = {0};
-    int xMid = GetMiddleX(gText_ButtonTypeNormal, gText_ButtonTypeLR, gText_ButtonTypeLEqualsA);
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(gText_ButtonTypeNormal, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_ButtonTypeLR, xMid, y, styles[1], active);
-    DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 198), y, styles[2], active);
-}
-*/
-
-static const u8 sText_Normal[] = _("NORMAL");
 static void DrawChoices_BarSpeed(int selection, int y) //HP and EXP
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_EXP_BAR);
@@ -1531,9 +2264,6 @@ static void DrawChoices_BarSpeed(int selection, int y) //HP and EXP
     else
         DrawOptionMenuChoice(sText_Instant, 104, y, 1, active);
 }
-
-static const u8 sText_ZeroPercent[] = _("0%{0x77}{0x77}");
-static const u8 sText_HundredPercent[] = _("100%");
 
 static void DrawChoices_MusicVolume(int selection, int y) //HP and EXP
 {
@@ -1633,9 +2363,6 @@ static void DrawChoices_FrameType(int selection, int y)
     DrawOptionMenuChoice(text, 128, y, 1, active);
 }
 
-static const u8 sText_FontEmerald[] = _("EMERALD");    //tx_optionsPlus
-static const u8 sText_FontFireRed[] = _("FRLG");        //tx_optionsPlus
-
 static void DrawChoices_Font(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_VISUALS_FONT);
@@ -1665,12 +2392,6 @@ static void DrawChoices_DebugMode(int selection, int y)
     DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
 }
-
-static const u8 sText_AnimSpeed1[] = _("1x");
-static const u8 sText_AnimSpeed2[] = _("2x");
-static const u8 sText_AnimSpeed3[] = _("3x");
-static const u8 sText_AnimSpeed4[] = _("4x");
-static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
 
 static void DrawChoices_AnimSpeed(int selection, int y)
 {
@@ -1728,14 +2449,6 @@ static void DrawChoices_MonAnimations(int selection, int y)
     DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
 }
 
-static const u8 sText_None[] = _("NONE");
-static const u8 sText_LEqualsA[] = _("L=A TURBO");
-static const u8 sText_AutoRun[] = _("AUTO-RUN");
-static const u8 sText_Register[] = _("REGISTER");
-static const u8 sText_DexNav[] = _("DEXNAV");
-static const u8 sText_BikeSwitch[] = _("BIKE SWITCH");
-static const u8 sText_Placeholder[] = _("WIP");
-
 static void DrawChoices_LButtonMode(int selection, int y) //HP and EXP
 {
     bool8 active = CheckConditions(MENUITEM_MISC_L_BUTTONMODE);
@@ -1780,6 +2493,239 @@ static void DrawChoices_RButtonMode(int selection, int y) //HP and EXP
     }
 }
 
+static void DrawChoices_Random_OffOn(int selection, int y, bool8 active)
+{
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Random_OffRandom(int selection, int y, bool8 active)
+{
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);   
+    DrawOptionMenuChoice(sText_Random, GetStringRightAlignXOffset(1, sText_Random, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Random_Toggle(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_OFF_ON);
+    DrawChoices_Random_OffOn(selection, y, active);
+}
+
+static void DrawChoices_Random_Starter(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_STARTER);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(sText_Off, sText_Random, sText_3Stage);
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Random, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_3Stage, GetStringRightAlignXOffset(1, sText_3Stage, 198), y, styles[2], active);
+}
+static void DrawChoices_Random_WildPkmn(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_WILD_PKMN);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Trainer(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_TRAINER);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Static(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_STATIC);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_EvoStages(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Random_Legendaries(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_INCLUDE_LEGENDARIES);
+    DrawChoices_Random_OffOn(selection, y, active);
+}
+
+static void DrawChoices_Random_Types(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_TYPE);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Moves(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_MOVES);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Abilities(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_ABILITIES);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Evolutions(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_EVOLUTIONS);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_EvolutionMethods(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_EVOLUTIONS_METHODS);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_TypeEffect(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_TYPE_EFFEC);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_Items(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_ITEMS);
+    DrawChoices_Random_OffRandom(selection, y, active);
+}
+
+static void DrawChoices_Random_OffChaos(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_RANDOM_CHAOS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Random_Chaos, GetStringRightAlignXOffset(1, sText_Random_Chaos, 198), y, styles[1], active);
+
+    if (selection == 1)
+        sOptions->sel_randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL] = 1;
+}
+
+static void DrawChoices_Nuzlocke_OnOff(int selection, int y, bool8 active)
+{
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Challenges_Nuzlocke(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_NUZLOCKE_NUZLOCKE);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(sText_Off, sText_Challenges_Nuzlocke_Normal, sText_Challenges_Nuzlocke_Hardcore);
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Challenges_Nuzlocke_Normal, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_Challenges_Nuzlocke_Hardcore, GetStringRightAlignXOffset(1, sText_Challenges_Nuzlocke_Hardcore, 198), y, styles[2], active);
+
+    if (selection == 0)
+    {
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE]    = !TX_NUZLOCKE_SPECIES_CLAUSE;
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE]      = !TX_NUZLOCKE_SHINY_CLAUSE;
+        sOptions->sel_nuzlocke[MENUITEM_NUZLOCKE_DELETION]          = TX_NUZLOCKE_DELETION; 
+    }
+}
+
+static void DrawChoices_Nuzlocke_SpeciesClause(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_NUZLOCKE_SPECIES_CLAUSE);
+    DrawChoices_Nuzlocke_OnOff(selection, y, active);
+}
+
+static void DrawChoices_Nuzlocke_ShinyClause(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_NUZLOCKE_SHINY_CLAUSE);
+    DrawChoices_Nuzlocke_OnOff(selection, y, active);
+}
+
+static void DrawChoices_Nuzlocke_Deletion(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_NUZLOCKE_DELETION);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+    DrawOptionMenuChoice(sText_Nuzlocke_Cemetery, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Nuzlocke_Deletion, GetStringRightAlignXOffset(1, sText_Nuzlocke_Deletion, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Challenges_YesNo(int selection, int y, bool8 active)
+{
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Yes, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_No, GetStringRightAlignXOffset(1, sText_No, 198), y, styles[1], active);
+}
+static void DrawChoices_Challenges_ItemsPlayer(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_PLAYER);
+    DrawChoices_Challenges_YesNo(selection, y, active);
+}
+static void DrawChoices_Challenges_ItemsTrainer(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_ITEM_TRAINER);
+    DrawChoices_Challenges_YesNo(selection, y, active);
+}
+static void DrawChoices_Challenges_NoEVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_NO_EVS);
+    DrawChoices_Challenges_YesNo(selection, y, active);
+}
+
+static void DrawChoices_Challenges_ScalingIVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_SCALING_IVS);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard);
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_ScalingIVsEVs_Scaling, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_ScalingIVsEVs_Hard, GetStringRightAlignXOffset(1, sText_ScalingIVsEVs_Hard, 198), y, styles[2], active);
+}
+
+static void DrawChoices_Challenges_ScalingEVs(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_SCALING_EVS);
+    DrawChoices_Options_Four(sText_ScalingEVs_Strings, selection, y, active);
+}
+
+static void DrawChoices_Challenges_LevelCap(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_LEVEL_CAP);
+    u8 styles[3] = {0};
+    int xMid = GetMiddleX(sText_Off, sText_Challenges_LevelCap_Normal, sText_Challenges_LevelCap_Hard);
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Challenges_LevelCap_Normal, xMid, y, styles[1], active);
+    DrawOptionMenuChoice(sText_Challenges_LevelCap_Hard, GetStringRightAlignXOffset(1, sText_Challenges_LevelCap_Hard, 198), y, styles[2], active);
+}
+
+static void DrawChoices_Challenges_TrainerDifficulties(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY);
+    DrawOptionMenuChoice(sText_Challenges_TrainerDifficulty_Strings[selection], 104, y, 1, active);
+}
+
 // Background tilemap
 #define TILE_TOP_CORNER_L 0x1A2 // 418
 #define TILE_TOP_EDGE     0x1A3 // 419
@@ -1792,17 +2738,6 @@ static void DrawChoices_RButtonMode(int selection, int y) //HP and EXP
 
 static void DrawBgWindowFrames(void)
 {
-    //                     bg, tile,              x, y, width, height, palNum
-    // Option Texts window
-    //FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  2,  1,  1,  7);
-    //FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  2, 26,  1,  7);
-    //FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28,  2,  1,  1,  7);
-    //FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1,  3,  1, 16,  7);
-    //FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28,  3,  1, 16,  7);
-    //FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 13,  1,  1,  7);
-    //FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 13, 26,  1,  7);
-    //FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 13,  1,  1,  7);
-
     // Description window
     FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1, 14,  1,  1,  7);
     FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2, 14, 27,  1,  7);

@@ -154,12 +154,6 @@ static void VBlankCB(void)
 
 void CB2_InitOptionMenu(void)
 {
-    if (OPTION_PLUS_MENU)
-    {
-        CB2_InitOptionPlusMenu();
-        return;
-    }
-
     switch (gMain.state)
     {
     default:

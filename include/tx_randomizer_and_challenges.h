@@ -54,9 +54,6 @@
 #define TX_RANDOM_T_EVO_METH        5
 #define TX_RANDOM_T_STATIC          6
 
-void CB2_InitTxRandomizerChallengesMenu(void);
-void SaveData_TxRandomizerAndChallenges(void);
-
 bool8 IsNuzlockeActive(void);
 
 u8 NuzlockeFlagGet(u16 mapsec);
@@ -69,9 +66,6 @@ void PrintTXSaveData(void);
 
 // constants
 #define TX_MENU_ITEMS_PER_PAGE 6
-
-extern struct tx_randomizer_OptionsMenu *sRandomizerOptions;
-extern struct tx_challenges_OptionsMenu *sChallengesOptions;
 
 #define TX_EXP_MULTIPLER_ONLY_ON_NUZLOCKE_AND_RANDOMIZER FALSE
 

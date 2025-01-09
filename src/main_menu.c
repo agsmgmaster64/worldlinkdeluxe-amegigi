@@ -19,6 +19,7 @@
 #include "mystery_event_menu.h"
 #include "naming_screen.h"
 #include "option_menu.h"
+#include "option_plus_menu.h"
 #include "overworld.h"
 #include "palette.h"
 #include "pokeball.h"
@@ -1046,7 +1047,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 gExitStairsMovementDisabled = FALSE;
                 // gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
                 gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
-                SetMainCallback2(CB2_InitTxRandomizerChallengesMenu);
+                SetMainCallback2(CB2_InitChallengesMenu);
                 DestroyTask(taskId);
                 break;
             case ACTION_CONTINUE:
@@ -1058,7 +1059,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 break;
             case ACTION_OPTION:
                 gMain.savedCallback = CB2_ReinitMainMenu;
-                SetMainCallback2(CB2_InitOptionMenu);
+                SetMainCallback2(CB2_InitOptionPlusMenu);
                 DestroyTask(taskId);
                 break;
             case ACTION_MYSTERY_GIFT:

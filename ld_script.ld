@@ -367,7 +367,6 @@ SECTIONS {
         src/ui_birch_case.o(.text);
         src/music_player.o(.text);
         src/outfit_menu.o(.text);
-        src/tx_rac_menu.o(.text);
         src/tx_randomizer_and_challenges.o(.text);
     } > ROM =0
 
@@ -745,7 +744,6 @@ SECTIONS {
         src/ui_birch_case.o(.rodata);
         src/music_player.o(.text);
         src/outfit_menu.o(.rodata);
-        src/tx_rac_menu.o(.rodata);
         src/tx_randomizer_and_challenges.o(.rodata);
     } > ROM =0
 
