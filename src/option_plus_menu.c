@@ -255,7 +255,6 @@ static void HighlightOptionMenuItem(void);
 static void Task_OptionMenuFadeIn(u8 taskId);
 static void Task_OptionMenuProcessInput(u8 taskId);
 static void Task_OptionMenuSave(u8 taskId);
-static void Task_RandomizerChallengesMenuSave(u8 taskId);
 static void Task_OptionMenuFadeOut(u8 taskId);
 static void ScrollMenu(int direction);
 static void ScrollAll(int direction); // to bottom or top
@@ -1293,7 +1292,6 @@ static void OptionsMenu_LoadOptions(u32 optionMode)
 {
     switch (optionMode)
     {
-    default:
     case MENUMODE_OPTIONSPLUS:
         sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_TEXTSPEED]     = gSaveBlock2Ptr->optionsTextSpeed;
         sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FRAMETYPE]     = gSaveBlock2Ptr->optionsWindowFrameType;
@@ -1568,7 +1566,7 @@ static void Task_OptionMenuFadeIn(u8 taskId)
 
 static void Task_OptionMenuProcessInput(u8 taskId)
 {
-    u8 optionsToDraw = min(OPTIONS_ON_SCREEN , MenuItemCount());
+    u8 optionsToDraw = min(OPTIONS_ON_SCREEN, MenuItemCount());
     if (JOY_NEW(A_BUTTON))
     {
         if (sOptions->menuCursor[sOptions->submenu] == MenuItemCancel())
@@ -1578,6 +1576,7 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             case MENU_VISUALS:
             case MENU_BATTLE:
             case MENU_MISC:
+            case MENU_DIFFICULTY:
                 gTasks[taskId].func = Task_OptionMenuSave;
                 break;
             case MENU_RANDOMIZER:
@@ -1587,9 +1586,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
                 ReDrawAll();
                 HighlightOptionMenuItem();
                 DrawDescriptionText();
-                break;
-            case MENU_DIFFICULTY:
-                gTasks[taskId].func = Task_RandomizerChallengesMenuSave;
                 break;
             }
         }
@@ -1788,129 +1784,129 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     }
 }
 
+static void OptionsMenu_SaveOptions(void)
+{
+    switch (sOptions->optionMode)
+    {
+    case MENUMODE_OPTIONSPLUS:
+        gSaveBlock2Ptr->optionsTextSpeed        = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_TEXTSPEED];
+        gSaveBlock2Ptr->optionsCurrentFont      = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FONT];
+        gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FRAMETYPE];
+        gSaveBlock2Ptr->optionsUniqueColors     = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_UNIQUE_COLORS];
+        gSaveBlock2Ptr->optionsMonAnimations    = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_ANIMATIONS];
+
+        gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESCENE];
+        gSaveBlock2Ptr->optionsBattleStyle      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESTYLE];
+        gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_HP_BAR];
+        gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EXP_BAR];
+        gSaveBlock2Ptr->optionsAnimSpeed        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_ANIM_SPEED];
+        gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_IV_VIEW];
+        gSaveBlock2Ptr->optionsEffectiveness    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EFFECTIVENESS];
+        gSaveBlock2Ptr->optionsShowTypes        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_SHOW_TYPES];
+
+        gSaveBlock2Ptr->optionsSound            = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SOUND];
+        gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MUSIC_VOLUME];
+        gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SFX_VOLUME];
+        gSaveBlock2Ptr->optionsVolumeCries      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_CRIES_VOLUME];
+        gSaveBlock2Ptr->optionsUnitSystem       = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_UNIT_SYSTEM];
+        gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL];
+        gSaveBlock2Ptr->optionsLButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE];
+        gSaveBlock2Ptr->optionsRButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE];
+        gSaveBlock2Ptr->optionsDebugMode        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE];
+        break;
+    case MENUMODE_CHALLENGES:
+        // MENU_RANDOMIZER
+        switch (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER])
+        {
+        case 0:
+            gSaveBlock1Ptr->tx_Random_Starter          = FALSE;
+            gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
+            break;
+        case 1:
+            gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
+            gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
+            break;
+        case 2:
+            gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
+            gSaveBlock1Ptr->tx_Random_Starter_Stage2   = TRUE;
+            break;
+        }
+        if (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
+        {
+            gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN];
+            gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER];
+            gSaveBlock1Ptr->tx_Random_Static             = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC];
+            gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
+            gSaveBlock1Ptr->tx_Random_MapBased           = TX_RANDOM_MAP_BASED;
+            gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
+            gSaveBlock1Ptr->tx_Random_Type               = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE];
+            gSaveBlock1Ptr->tx_Random_Moves              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_MOVES];
+            gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ABILITIES];
+            gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS];
+            gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
+            gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
+            gSaveBlock1Ptr->tx_Random_Items              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ITEMS];
+            gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_CHAOS];
+        }
+        else
+        {
+            gSaveBlock1Ptr->tx_Random_WildPokemon        = FALSE;
+            gSaveBlock1Ptr->tx_Random_Trainer            = FALSE;
+            gSaveBlock1Ptr->tx_Random_Static             = FALSE;
+            gSaveBlock1Ptr->tx_Random_Similar            = FALSE;
+            gSaveBlock1Ptr->tx_Random_MapBased           = FALSE;
+            gSaveBlock1Ptr->tx_Random_IncludeLegendaries = FALSE;
+            gSaveBlock1Ptr->tx_Random_Type               = FALSE;
+            gSaveBlock1Ptr->tx_Random_Moves              = FALSE;
+            gSaveBlock1Ptr->tx_Random_Abilities          = FALSE;
+            gSaveBlock1Ptr->tx_Random_Evolutions         = FALSE;
+            gSaveBlock1Ptr->tx_Random_EvolutionMethods   = FALSE;
+            gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = FALSE;
+            gSaveBlock1Ptr->tx_Random_Chaos              = FALSE;
+        } 
+        //MENU_NUZLOCKE
+        switch (sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
+        {
+        case 0:
+            gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
+            gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
+            break;
+        case 1:
+            gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
+            gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
+            break;
+        case 2:
+            gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
+            gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = TRUE;
+            break;
+        }
+        if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
+        {
+            gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
+            gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
+            gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_DELETION];
+        }
+        else
+        {
+            gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = FALSE;
+            gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = FALSE;
+            gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = FALSE;
+        }
+        // MENU_DIFFICULTY
+        gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY];
+        gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
+        gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
+        gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
+        gSaveBlock1Ptr->tx_Challenges_NoEVs         = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_NO_EVS];
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
+        gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
+        break;
+    }
+}
+
 static void Task_OptionMenuSave(u8 taskId)
 {
-    gSaveBlock2Ptr->optionsTextSpeed        = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_TEXTSPEED];
-    gSaveBlock2Ptr->optionsCurrentFont      = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FONT];
-    gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_FRAMETYPE];
-    gSaveBlock2Ptr->optionsUniqueColors     = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_UNIQUE_COLORS];
-    gSaveBlock2Ptr->optionsMonAnimations    = sOptions->selection.optionsPlus.visuals[MENUITEM_VISUALS_ANIMATIONS];
-
-    gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESCENE];
-    gSaveBlock2Ptr->optionsBattleStyle      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_BATTLESTYLE];
-    gSaveBlock2Ptr->optionsHpBarSpeed       = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_HP_BAR];
-    gSaveBlock2Ptr->optionsExpBarSpeed      = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EXP_BAR];
-    gSaveBlock2Ptr->optionsAnimSpeed        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_ANIM_SPEED];
-    gSaveBlock2Ptr->optionsSummaryIvView    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_IV_VIEW];
-    gSaveBlock2Ptr->optionsEffectiveness    = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_EFFECTIVENESS];
-    gSaveBlock2Ptr->optionsShowTypes        = sOptions->selection.optionsPlus.battle[MENUITEM_BATTLE_SHOW_TYPES];
-
-    gSaveBlock2Ptr->optionsSound            = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SOUND];
-    gSaveBlock2Ptr->optionsVolumeBGM        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MUSIC_VOLUME];
-    gSaveBlock2Ptr->optionsVolumeSFX        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_SFX_VOLUME];
-    gSaveBlock2Ptr->optionsVolumeCries      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_CRIES_VOLUME];
-    gSaveBlock2Ptr->optionsUnitSystem       = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_UNIT_SYSTEM];
-    gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL];
-    gSaveBlock2Ptr->optionsLButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE];
-    gSaveBlock2Ptr->optionsRButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE];
-    gSaveBlock2Ptr->optionsDebugMode        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE];
-
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
-    gTasks[taskId].func = Task_OptionMenuFadeOut;
-}
-
-static void SaveData_TxRandomizerAndChallenges(void)
-{
-    // MENU_RANDOMIZER
-    switch (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER])
-    {
-    case 0:
-        gSaveBlock1Ptr->tx_Random_Starter          = FALSE;
-        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
-        break;
-    case 1:
-        gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
-        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = FALSE;
-        break;
-    case 2:
-        gSaveBlock1Ptr->tx_Random_Starter          = TRUE;
-        gSaveBlock1Ptr->tx_Random_Starter_Stage2   = TRUE;
-        break;
-    }
-    if (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
-    {
-        gSaveBlock1Ptr->tx_Random_WildPokemon        = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_WILD_PKMN];
-        gSaveBlock1Ptr->tx_Random_Trainer            = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TRAINER];
-        gSaveBlock1Ptr->tx_Random_Static             = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STATIC];
-        gSaveBlock1Ptr->tx_Random_Similar            = !sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_SIMILAR_EVOLUTION_LEVEL];
-        gSaveBlock1Ptr->tx_Random_MapBased           = TX_RANDOM_MAP_BASED;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_INCLUDE_LEGENDARIES];
-        gSaveBlock1Ptr->tx_Random_Type               = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE];
-        gSaveBlock1Ptr->tx_Random_Moves              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_MOVES];
-        gSaveBlock1Ptr->tx_Random_Abilities          = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ABILITIES];
-        gSaveBlock1Ptr->tx_Random_Evolutions         = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS];
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_EVOLUTIONS_METHODS];
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_TYPE_EFFEC];
-        gSaveBlock1Ptr->tx_Random_Items              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_ITEMS];
-        gSaveBlock1Ptr->tx_Random_Chaos              = sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_CHAOS];
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Random_WildPokemon        = FALSE;
-        gSaveBlock1Ptr->tx_Random_Trainer            = FALSE;
-        gSaveBlock1Ptr->tx_Random_Static             = FALSE;
-        gSaveBlock1Ptr->tx_Random_Similar            = FALSE;
-        gSaveBlock1Ptr->tx_Random_MapBased           = FALSE;
-        gSaveBlock1Ptr->tx_Random_IncludeLegendaries = FALSE;
-        gSaveBlock1Ptr->tx_Random_Type               = FALSE;
-        gSaveBlock1Ptr->tx_Random_Moves              = FALSE;
-        gSaveBlock1Ptr->tx_Random_Abilities          = FALSE;
-        gSaveBlock1Ptr->tx_Random_Evolutions         = FALSE;
-        gSaveBlock1Ptr->tx_Random_EvolutionMethods   = FALSE;
-        gSaveBlock1Ptr->tx_Random_TypeEffectiveness  = FALSE;
-        gSaveBlock1Ptr->tx_Random_Chaos              = FALSE;
-    } 
-    //MENU_NUZLOCKE
-    switch (sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_NUZLOCKE])
-    {
-    case 0:
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = FALSE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
-        break;
-    case 1:
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = FALSE;
-        break;
-    case 2:
-        gSaveBlock1Ptr->tx_Challenges_Nuzlocke          = TRUE;
-        gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore  = TRUE;
-        break;
-    }
-    if (gSaveBlock1Ptr->tx_Challenges_Nuzlocke)
-    {
-        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SPECIES_CLAUSE];
-        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = !sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_SHINY_CLAUSE];
-        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = sOptions->selection.challenges.nuzlocke[MENUITEM_NUZLOCKE_DELETION];
-    }
-    else
-    {
-        gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause   = FALSE;
-        gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause     = FALSE;
-        gSaveBlock1Ptr->tx_Nuzlocke_Deletion        = FALSE;
-    }
-    // MENU_DIFFICULTY
-    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_TRAINER_DIFFICULTY];
-    gSaveBlock1Ptr->tx_Challenges_LevelCap      = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_LEVEL_CAP];
-    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer  = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_PLAYER];
-    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_ITEM_TRAINER];
-    gSaveBlock1Ptr->tx_Challenges_NoEVs         = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_NO_EVS];
-    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_IVS];
-    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = sOptions->selection.challenges.difficulty[MENUITEM_DIFFICULTY_SCALING_EVS];
-}
-
-static void Task_RandomizerChallengesMenuSave(u8 taskId)
-{
-    SaveData_TxRandomizerAndChallenges();
+    OptionsMenu_SaveOptions();
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
