@@ -1046,7 +1046,7 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 // gPlttBufferFaded[0] = RGB_BLACK;
                 gExitStairsMovementDisabled = FALSE;
                 // gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
-                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
+                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromOptionsMenu;
                 SetMainCallback2(CB2_InitChallengesMenu);
                 DestroyTask(taskId);
                 break;
@@ -1252,7 +1252,7 @@ static void HighlightSelectedMainMenuItem(u8 menuType, u8 selectedMenuItem, s16 
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
 
-void CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions(void)
+void CB2_NewGameBirchSpeech_ReturnFromOptionsMenu(void)
 {
     u8 taskId;
     //u8 spriteId;

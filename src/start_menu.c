@@ -72,6 +72,7 @@ enum
     MENU_ACTION_DEBUG,
     MENU_ACTION_DEXNAV,
     MENU_ACTION_QUEST_MENU,
+    MENU_ACTION_CHALLENGES,
     MENU_ACTION_EXIT_RIGHT,
     MENU_ACTION_EXIT_LEFT
 };
@@ -124,6 +125,7 @@ static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
 static bool8 StartMenuQuestMenuCallback(void);
+static bool8 StartMenuChallengesCallback(void);
 
 // Menu callbacks
 static bool8 SaveStartCallback(void);
@@ -202,8 +204,9 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .baseBlock = 0x8
 };
 
-static const u8 sText_MenuDebug[] = _("DEBUG");
-static const u8 sText_QuestMenu[] = _("QUESTS");
+static const u8 sText_MenuDebug[] = _("Debug");
+static const u8 sText_QuestMenu[] = _("Quests");
+static const u8 sText_MenuChallenge[] = _("Challenges");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -225,6 +228,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_EXIT_RIGHT]      = {gText_MenuExitRight, {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_EXIT_LEFT]       = {gText_MenuExitLeft,  {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_QUEST_MENU]      = {sText_QuestMenu,     {.u8_void = StartMenuQuestMenuCallback}},
+    [MENU_ACTION_CHALLENGES]      = {sText_MenuChallenge, {.u8_void = StartMenuChallengesCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -411,6 +415,8 @@ static void BuildToolStartMenu(void)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
     if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_QUEST_MENU);
+    if (gSaveBlock2Ptr->optionsDebugMode == 0)
+        AddStartMenuAction(MENU_ACTION_CHALLENGES);
     AddStartMenuAction(MENU_ACTION_EXIT_LEFT);
 }
 
@@ -873,6 +879,22 @@ static bool8 StartMenuOptionCallback(void)
         RemoveExtraStartMenuWindows();
         CleanupOverworldWindowsAndTilemaps();
         SetMainCallback2(CB2_InitOptionPlusMenu); // Display option menu
+        gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
+
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 StartMenuChallengesCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_InitChallengesMenu);
         gMain.savedCallback = CB2_ReturnToFieldWithOpenMenu;
 
         return TRUE;

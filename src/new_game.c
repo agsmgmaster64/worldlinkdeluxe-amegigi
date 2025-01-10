@@ -255,6 +255,49 @@ void NewGameInitData(void)
     gSaveBlock3Ptr->autoRun = FALSE;
 }
 
+void ResetChallengesData(void)
+{
+    gSaveBlock1Ptr->tx_Random_Starter                   = TX_RANDOM_STARTER;
+    gSaveBlock1Ptr->tx_Random_Starter_Stage2            = TX_RANDOM_STARTER_STAGE2;
+    gSaveBlock1Ptr->tx_Random_WildPokemon               = TX_RANDOM_WILD_POKEMON;
+    gSaveBlock1Ptr->tx_Random_Trainer                   = TX_RANDOM_TRAINER;
+    gSaveBlock1Ptr->tx_Random_Static                    = TX_RANDOM_STATIC;
+    gSaveBlock1Ptr->tx_Random_Similar                   = TX_RANDOM_SIMILAR;
+    gSaveBlock1Ptr->tx_Random_MapBased                  = TX_RANDOM_MAP_BASED;
+    gSaveBlock1Ptr->tx_Random_IncludeLegendaries        = TX_RANDOM_INCLUDE_LEGENDARIES;
+    gSaveBlock1Ptr->tx_Random_Type                      = TX_RANDOM_TYPE;
+    gSaveBlock1Ptr->tx_Random_Moves                     = TX_RANDOM_MOVES;
+    gSaveBlock1Ptr->tx_Random_Abilities                 = TX_RANDOM_ABILITIES;
+    gSaveBlock1Ptr->tx_Random_Evolutions                = TX_RANDOM_EVOLUTION;
+    gSaveBlock1Ptr->tx_Random_EvolutionMethods          = TX_RANDOM_EVOLUTION_METHODE;
+    gSaveBlock1Ptr->tx_Random_TypeEffectiveness         = TX_RANDOM_TYPE_EFFECTIVENESS;
+    gSaveBlock1Ptr->tx_Random_Items                     = TX_RANDOM_ITEMS;
+    gSaveBlock1Ptr->tx_Random_Chaos                     = TX_RANDOM_CHAOS_MODE;
+    gSaveBlock1Ptr->tx_Random_OneForOne                 = TX_RANDOM_ONE_FOR_ONE;
+
+    gSaveBlock1Ptr->tx_Challenges_Nuzlocke              = TX_NUZLOCKE_NUZLOCKE;
+    gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore      = TX_NUZLOCKE_NUZLOCKE_HARDCORE;
+    gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause           = TX_NUZLOCKE_SPECIES_CLAUSE;
+    gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause             = TX_NUZLOCKE_SHINY_CLAUSE;
+    gSaveBlock1Ptr->tx_Nuzlocke_Deletion                = TX_NUZLOCKE_DELETION;
+
+    gSaveBlock1Ptr->tx_Challenges_PartyLimit            = TX_DIFFICULTY_PARTY_LIMIT;
+    gSaveBlock1Ptr->tx_Challenges_LevelCap              = TX_DIFFICULTY_LEVEL_CAP;
+    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty     = DIFFICULTY_NORMAL;
+    gSaveBlock1Ptr->tx_Challenges_NoItemPlayer          = TX_DIFFICULTY_NO_ITEM_PLAYER;
+    gSaveBlock1Ptr->tx_Challenges_NoItemTrainer         = TX_DIFFICULTY_NO_ITEM_TRAINER;
+    gSaveBlock1Ptr->tx_Challenges_NoEVs                 = TX_DIFFICULTY_NO_EVS;
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingIVs     = TX_DIFFICULTY_SCALING_IVS;
+    gSaveBlock1Ptr->tx_Challenges_TrainerScalingEVs     = TX_DIFFICULTY_SCALING_EVS;
+    gSaveBlock1Ptr->tx_Challenges_PkmnCenter            = TX_DIFFICULTY_PKMN_CENTER;
+
+    gSaveBlock1Ptr->tx_Challenges_EvoLimit              = TX_CHALLENGE_EVO_LIMIT;
+    gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge      = TX_CHALLENGE_TYPE;
+    gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer     = TX_CHALLENGE_BASE_STAT_EQUALIZER;
+    gSaveBlock1Ptr->tx_Challenges_Mirror                = TX_CHALLENGE_MIRROR;
+    gSaveBlock1Ptr->tx_Challenges_Mirror_Thief          = TX_CHALLENGE_MIRROR_THIEF;
+}
+
 static void ResetMiniGamesRecords(void)
 {
     CpuFill16(0, &gSaveBlock2Ptr->berryCrush, sizeof(struct BerryCrush));
