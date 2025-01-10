@@ -19,6 +19,7 @@
 #include "malloc.h"
 #include "menu.h"
 #include "menu_helpers.h"
+#include "new_game.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "scanline_effect.h"
@@ -218,10 +219,10 @@ static const u32 sIconBox_Gfx[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow.
 static const u16 sIconBox_PalFem[] = INCBIN_U16("graphics/ui_main_menu/icon_shadow_fem.gbapal");
 static const u32 sIconBox_GfxFem[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow_fem.4bpp.lz");
 
-static const u16 sBrendanMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/brendan_mugshot.gbapal");
-static const u32 sBrendanMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/brendan_mugshot.4bpp.lz");
-static const u16 sMayMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/may_mugshot.gbapal");
-static const u32 sMayMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/may_mugshot.4bpp.lz");
+static const u16 sRenkoMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/renko_mugshot.gbapal");
+static const u32 sRenkoMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/renko_mugshot.4bpp.lz");
+static const u16 sMaribelMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/maribel_mugshot.gbapal");
+static const u32 sMaribelMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/maribel_mugshot.4bpp.lz");
 
 
 //
@@ -236,29 +237,29 @@ static const struct OamData sOamData_Mugshot =
     .priority = 1,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_BrendanMugshot =
+static const struct CompressedSpriteSheet sSpriteSheet_RenkoMugshot =
 {
-    .data = sBrendanMugshot_Gfx,
+    .data = sRenkoMugshot_Gfx,
     .size = 64*64*1/2,
     .tag = TAG_MUGSHOT,
 };
 
-static const struct SpritePalette sSpritePal_BrendanMugshot =
+static const struct SpritePalette sSpritePal_RenkoMugshot =
 {
-    .data = sBrendanMugshot_Pal,
+    .data = sRenkoMugshot_Pal,
     .tag = TAG_MUGSHOT
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_MayMugshot =
+static const struct CompressedSpriteSheet sSpriteSheet_MaribelMugshot =
 {
-    .data = sMayMugshot_Gfx,
+    .data = sMaribelMugshot_Gfx,
     .size = 64*64*1/2,
     .tag = TAG_MUGSHOT,
 };
 
-static const struct SpritePalette sSpritePal_MayMugshot =
+static const struct SpritePalette sSpritePal_MaribelMugshot =
 {
-    .data = sMayMugshot_Pal,
+    .data = sMaribelMugshot_Pal,
     .tag = TAG_MUGSHOT
 };
 
@@ -350,8 +351,9 @@ void Task_OpenMainMenu(u8 taskId)
             case HAS_NO_SAVED_GAME:
             default:
                 gExitStairsMovementDisabled = FALSE;
-                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
-                SetMainCallback2(CB2_InitChallengesMenu);
+                ResetChallengesData();
+                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromOptionsMenu;
+                SetMainCallback2(CB2_InitOptionPlusMenu);
                 DestroyTask(taskId);
                 return;
             case HAS_SAVED_GAME:       
@@ -413,8 +415,8 @@ static void MainMenu_VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    ChangeBgX(2, 128, BG_COORD_SUB); // This controls the scrolling of the scroll bg, remove it to stop scrolling
-    ChangeBgY(2, 128, BG_COORD_SUB); // This controls the scrolling of the scroll bg, remove it to stop scrolling
+    ChangeBgX(3, 128, BG_COORD_ADD); // This controls the scrolling of the scroll bg, remove it to stop scrolling
+    ChangeBgY(3, 128, BG_COORD_ADD); // This controls the scrolling of the scroll bg, remove it to stop scrolling
 }
 
 //
@@ -653,16 +655,16 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
             LoadSpritePalette(&sSpritePal_IconBox);
-            LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
-            LoadSpritePalette(&sSpritePal_BrendanMugshot);
+            LoadCompressedSpriteSheet(&sSpriteSheet_RenkoMugshot);
+            LoadSpritePalette(&sSpritePal_RenkoMugshot);
             LoadPalette(sMainBgPalette, 0, 32);
         }
         else
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
             LoadSpritePalette(&sSpritePal_IconBoxFem);
-            LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
-            LoadSpritePalette(&sSpritePal_MayMugshot);
+            LoadCompressedSpriteSheet(&sSpriteSheet_MaribelMugshot);
+            LoadSpritePalette(&sSpritePal_MaribelMugshot);
             LoadPalette(sMainBgPaletteFem, 0, 32);
         }
         LoadPalette(sScrollBgPalette, 16, 32);
@@ -903,7 +905,8 @@ static void Task_MainMenuMain(u8 taskId)
                 break;
             case HW_WIN_NEW_GAME:
                 gExitStairsMovementDisabled = FALSE;
-                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromTxRandomizerChallengesOptions;
+                ResetChallengesData();
+                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromOptionsMenu;
                 sMainMenuDataPtr->savedCallback = CB2_InitChallengesMenu;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;
