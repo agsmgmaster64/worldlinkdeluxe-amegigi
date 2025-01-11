@@ -15,8 +15,6 @@ static void AnimSpinningDracoMeteor(struct Sprite *sprite);
 static void AnimSpinningDracoMeteorFinish(struct Sprite *sprite);
 static void AnimDracoMeteorRock_Step(struct Sprite *sprite);
 
-EWRAM_DATA static u16 sUnusedOverheatData[7] = {0};
-
 static const union AnimCmd sAnim_OutrageOverheatFire_0[] =
 {
     ANIMCMD_FRAME(0, 4),
@@ -612,7 +610,6 @@ void AnimOverheatFlame(struct Sprite *sprite)
 {
     ANIM_CMD_ARGS(speed, unk1, unk2, duration, y);
 
-    int i;
     int yAmplitude = (cmd->unk2 * 3) / 5;
     sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
     sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + cmd->y;
@@ -622,8 +619,6 @@ void AnimOverheatFlame(struct Sprite *sprite)
     sprite->y += sprite->data[2] * cmd->speed;
     sprite->data[3] = cmd->duration;
     sprite->callback = AnimOverheatFlame_Step;
-    for (i = 0; i < 7; i++)
-        sUnusedOverheatData[i] = sprite->data[i];
 }
 
 static void AnimOverheatFlame_Step(struct Sprite *sprite)

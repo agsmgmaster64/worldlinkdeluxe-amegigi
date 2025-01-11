@@ -79,14 +79,14 @@
 #define PARTY_MSG_DO_WHAT_WITH_ITEM         24
 #define PARTY_MSG_DO_WHAT_WITH_MAIL         25
 #define PARTY_MSG_ALREADY_HOLDING_ONE       26
-#define PARTY_MSG_MOVE_ITEM_WHERE           27
-#define PARTY_MSG_WHICH_APPLIANCE           28
-#define PARTY_MSG_CHOOSE_SECOND_FUSION      29
-#define PARTY_MSG_DO_WHAT_WITH_FOLLOWER     30
-#define PARTY_MSG_WHICH_STATUS              31 // hexorb Branch
-#define PARTY_MSG_MON_NOT_FOLLOWING         32
-#define PARTY_MSG_CHOOSE_MON_FOR_BOX        33
-
+#define PARTY_MSG_WHICH_APPLIANCE           27
+#define PARTY_MSG_CHOOSE_SECOND_FUSION      28
+#define PARTY_MSG_NO_POKEMON                29
+#define PARTY_MSG_MOVE_ITEM_WHERE           30
+#define PARTY_MSG_DO_WHAT_WITH_FOLLOWER     31
+#define PARTY_MSG_WHICH_STATUS              32
+#define PARTY_MSG_MON_NOT_FOLLOWING         33
+#define PARTY_MSG_CHOOSE_MON_FOR_BOX        34
 #define PARTY_MSG_NONE                      127
 
 // IDs for DisplayPartyPokemonDescriptionText, to display a message in the party pokemon's box
