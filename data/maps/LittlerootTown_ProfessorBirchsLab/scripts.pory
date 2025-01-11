@@ -35,10 +35,12 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveStarterEvent {
 	waitmovement(0)
 	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Shiori)
 	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro)
+	closemessage
 	callnative(StartNewPokeballCaseUI)
 	waitstate
 	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Shiori)
 	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter)
+	closemessage
 	setvar(VAR_LITTLEROOT_TOWN_STATE, 1)
 	setvar(VAR_BIRCH_LAB_STATE, 1)
 	releaseall
@@ -68,11 +70,24 @@ text LittlerootTown_ProfessorBirchsLab_Text_Ralsei {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro {
-	format("Shiorin.")
+	format("Shiorin! It's me, Shiori Novella, one of the professors in Littleroot here.\p"
+	"I heard you moved in from another region relatively nearby.\p"
+	"Must be pretty nice to move into this little strange region that we call home here.\p"
+	"Oh yeah, I mentioned myself being one of the professors here, did I?\p"
+	"Well, that's because I have a partner called Ralsei who's usually with me.\p"
+	"He and I .\p"
+	"He's out in the field right now though, think around Route 103, I believe?\p"
+	"Well, either way, I do have a whole briefcase of Puppets for you to choose one of.\p"
+	"I figured you'd need it to be able to get my partner out in the field, and you seem to be missing a little partner anyways.")
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter {
-	format("Starter. Get Ralsei.")
+	format("Oh yeah, I should mention, this Puppet follows you around outside its Orb as well.\p"
+	"It's pretty cute seeing the little Puppets follow their trainers around.\p"
+	"You can even set which Puppet you want in the party if you have more than one.\p"
+	"Speaking of, my partner Ralsei should have the Toho Orbs and Dex that have been brought just for you.\p"
+	"Like I said, he should be around Route 103 over above Oldale Town if I recall.\p"
+	"Tell him I, Shiori Novella, brought you to him to bring him back.")
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriGetRalsei {

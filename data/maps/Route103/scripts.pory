@@ -1,3 +1,78 @@
+const LOCALID_RALSEI = 2
+
+script Route103_EventScript_Ralsei {
+	lockall
+	msgbox(Route103_Text_MayRoute103Pokemon)
+	closemessage
+	playbgm(MUS_ENCOUNTER_MAY, TRUE)
+	applymovement(LOCALID_RALSEI, Common_Movement_FacePlayer)
+	waitmovement(0)
+	applymovement(LOCALID_RALSEI, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(LOCALID_RALSEI, Common_Movement_Delay48)
+	waitmovement(0)
+	msgbox(Route103_Text_MayLetsBattle)
+	trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated)
+	msgbox(Route103_Text_MayTimeToHeadBack)
+	closemessage
+	switch(var(VAR_FACING)) {
+		case DIR_SOUTH:
+			goto(Route103_EventScript_RalseiExitFacingSouth)
+		case DIR_NORTH:
+			goto(Route103_EventScript_RalseiExitFacingNorth)
+		case DIR_WEST:
+		case DIR_EAST:
+			goto(Route103_EventScript_RalseiExitFacingEastOrWest)
+	}
+	end
+
+}
+
+script Route103_EventScript_RalseiExitFacingNorth {
+	applymovement(OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingNorth)
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExitFacingNorth1)
+	waitmovement(0)
+	playse(SE_LEDGE)
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExitFacingNorth2)
+	waitmovement(0)
+	goto(Route103_EventScript_RalseiEnd)
+	end
+}
+
+script Route103_EventScript_RalseiExitFacingEastOrWest {
+	applymovement(OBJ_EVENT_ID_PLAYER, Route103_Movement_WatchRivalExitFacingEastOrWest)
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExit1)
+	waitmovement(0)
+	playse(SE_LEDGE)
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExit2)
+	waitmovement(0)
+	goto(Route103_EventScript_RalseiEnd)
+	end
+}
+
+script Route103_EventScript_RalseiExitFacingSouth {
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExit1)
+	waitmovement(0)
+	playse(SE_LEDGE)
+	applymovement(LOCALID_RALSEI, Route103_Movement_RivalExit2)
+	waitmovement(0)
+	goto(Route103_EventScript_RalseiEnd)
+	end
+}
+
+script Route103_EventScript_RalseiEnd {
+	removeobject(LOCALID_RALSEI)
+	setvar(VAR_BIRCH_LAB_STATE, 4)
+	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL)
+	setflag(FLAG_DEFEATED_RIVAL_ROUTE103)
+	setvar(VAR_OLDALE_RIVAL_STATE, 1)
+	clearflag(FLAG_HIDE_OLDALE_TOWN_RIVAL)
+	savebgm(MUS_DUMMY)
+	fadedefaultbgm
+	releaseall
+	end
+}
+
 raw `
 .set LOCALID_RIVAL, 2
 
@@ -7,7 +82,6 @@ Route103_MapScripts::
 	.byte 0
 
 Route103_OnTransition:
-	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
 	end
 
