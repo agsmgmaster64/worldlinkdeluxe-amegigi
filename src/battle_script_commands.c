@@ -6924,7 +6924,7 @@ static void Cmd_moveend(void)
                 u8 battler, nextConcerto = 0;
                 bool32 hasConcertoTriggered = FALSE;
 
-                for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+                for (battler = 0; battler < gBattlersCount; battler++)
                 {
                     if (gSpecialStatuses[battler].concertoUsedMove)
                     {
@@ -6945,7 +6945,7 @@ static void Cmd_moveend(void)
                         gBattleScripting.savedBattler |= (gBattlerAttacker << 4);
                         gSpecialStatuses[gBattlerAttacker].concertoUsedMove = TRUE;
                     }
-                    for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+                    for (battler = 0; battler < gBattlersCount; battler++)
                     {
                         if (GetBattlerAbility(battler) == ABILITY_CONCERTO && !gSpecialStatuses[battler].concertoUsedMove)
                         {

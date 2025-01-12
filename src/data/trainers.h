@@ -23465,7 +23465,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 9801
-            .species = SPECIES_CHIBI_KURUMI,
+            .species = SPECIES_CHIBI_ELLEN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 9803
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
