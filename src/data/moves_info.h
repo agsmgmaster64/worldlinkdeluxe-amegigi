@@ -855,7 +855,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
             "high critical-hit ratio."),
         .effect = EFFECT_HIT,
         .power = 50,
-        .type = TYPE_ILLUSION,
+        .type = TYPE_STEEL,
         .accuracy = 100,
         .criticalHitStage = 1,
         .pp = 25,
