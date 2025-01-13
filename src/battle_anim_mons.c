@@ -2089,22 +2089,24 @@ s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 attr)
     }
     else
     {
+        struct Pokemon *mon = GetPartyBattlerData(battlerId);
+
+        spriteInfo = gBattleSpritesDataPtr->battlerData;
+        if (!spriteInfo[battlerId].transformSpecies)
+        {
+            species = GetMonData(mon, MON_DATA_SPECIES);
+            personality = GetMonData(mon, MON_DATA_PERSONALITY);
+        }
+        else
+        {
+            species = spriteInfo[battlerId].transformSpecies;
+            personality = gTransformedPersonalities[battlerId];
+        }
+
+        species = SanitizeSpeciesId(species);
+
         if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
         {
-            spriteInfo = gBattleSpritesDataPtr->battlerData;
-            if (!spriteInfo[battlerId].transformSpecies)
-            {
-                species = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
-                personality = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_PERSONALITY);
-            }
-            else
-            {
-                species = spriteInfo[battlerId].transformSpecies;
-                personality = gTransformedPersonalities[battlerId];
-            }
-
-            species = SanitizeSpeciesId(species);
-
         #if P_GENDER_DIFFERENCES
             if (gSpeciesInfo[species].backPicFemale != NULL && IsPersonalityFemale(species, personality))
                 size = gSpeciesInfo[species].backPicSizeFemale;
@@ -2116,20 +2118,6 @@ s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 attr)
         }
         else
         {
-            spriteInfo = gBattleSpritesDataPtr->battlerData;
-            if (!spriteInfo[battlerId].transformSpecies)
-            {
-                species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES);
-                personality = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerId]], MON_DATA_PERSONALITY);
-            }
-            else
-            {
-                species = spriteInfo[battlerId].transformSpecies;
-                personality = gTransformedPersonalities[battlerId];
-            }
-
-            species = SanitizeSpeciesId(species);
-
         #if P_GENDER_DIFFERENCES
             if (gSpeciesInfo[species].frontPicFemale != NULL && IsPersonalityFemale(species, personality))
                 size = gSpeciesInfo[species].frontPicSizeFemale;
