@@ -246,6 +246,18 @@ struct OptionFuncs
     int (*processInput)(int selection);
 };
 
+#define MAX_DESCRIPTION_AMOUNT 4
+
+struct OptionInfo
+{
+    void (*drawChoices)(int selection, int y);
+    int (*processInput)(int selection);
+    const u8 *const optionName;
+    const u8 *const optionDescriptions[MAX_DESCRIPTION_AMOUNT];
+    bool8 dontScrollDescription;
+    const u8 *const optionDisabledDescription;
+};
+
 #define Y_DIFF 16 // Difference in pixels between items.
 #define OPTIONS_ON_SCREEN 5
 #define NUM_OPTIONS_FROM_BORDER 1
@@ -345,7 +357,6 @@ static EWRAM_DATA u8 *sBg2TilemapBuffer = NULL;
 static EWRAM_DATA u8 *sBg3TilemapBuffer = NULL;
 
 // const data
-static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equals_sign.4bpp"); // note: this is only used in the Japanese release
 static const u16 sOptionMenuBg_Pal[] = {RGB(17, 18, 31)};
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text_custom.gbapal");
 
@@ -382,6 +393,73 @@ static const struct OptionFuncs sItemFunctionsVisuals[MENUITEM_VISUALS_COUNT] =
     [MENUITEM_VISUALS_UNIQUE_COLORS] = {DrawChoices_UniqueColors,  ProcessInput_Options_Two},
     [MENUITEM_VISUALS_ANIMATIONS]    = {DrawChoices_MonAnimations, ProcessInput_Options_Two},
     [MENUITEM_VISUALS_CANCEL]        = {NULL, NULL},
+};
+
+static const struct OptionInfo sItemInfoVisuals[MENUITEM_VISUALS_COUNT] =
+{
+    [MENUITEM_VISUALS_TEXTSPEED] =
+    {
+        .drawChoices = DrawChoices_TextSpeed,
+        .processInput = ProcessInput_Options_Four,
+        .optionName = COMPOUND_STRING("TEXT SPEED"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Choose one of the four text-display\nspeeds."),
+        },
+        .dontScrollDescription = TRUE,
+        .optionDisabledDescription = COMPOUND_STRING("Text can only be in a set\nspeed."),
+    },
+    [MENUITEM_VISUALS_FONT] =
+    {
+        .drawChoices = DrawChoices_Font,
+        .processInput = ProcessInput_Options_Two,
+        .optionName = COMPOUND_STRING("FONT"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Choose the font design."),
+            COMPOUND_STRING("Choose the font design."),
+        },
+        .optionDisabledDescription = COMPOUND_STRING("Fonts cannot be changed\ncurrectly."),
+    },
+    [MENUITEM_VISUALS_FRAMETYPE] =
+    {
+        .drawChoices = DrawChoices_FrameType,
+        .processInput = ProcessInput_FrameType,
+        .optionName = COMPOUND_STRING("FRAME"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Choose the frame surrounding the\nwindows."),
+        },
+        .dontScrollDescription = TRUE,
+        .optionDisabledDescription = COMPOUND_STRING("Text can only be in a set\nspeed."),
+    },
+    [MENUITEM_VISUALS_UNIQUE_COLORS] =
+    {
+        .drawChoices = DrawChoices_UniqueColors,
+        .processInput = ProcessInput_Options_Two,
+        .optionName = COMPOUND_STRING("UNIQUE COLORS"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Enables unique colors for\nPuppets."),
+            COMPOUND_STRING("Disables unique colors for\nPuppets."),
+        },
+        .optionDisabledDescription = COMPOUND_STRING("Fonts cannot be changed\ncurrectly."),
+    },
+    [MENUITEM_VISUALS_ANIMATIONS] =
+    {
+        .drawChoices = DrawChoices_MonAnimations,
+        .processInput = ProcessInput_Options_Two,
+        .optionName = COMPOUND_STRING("ANIMATIONS"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Animations will play for\nPuppets."),
+            COMPOUND_STRING("Animations are disabled for\nPuppets."),
+        },
+        .optionDisabledDescription = COMPOUND_STRING(""),
+    },
+    [MENUITEM_VISUALS_CANCEL] =
+    {
+        .optionName = COMPOUND_STRING("SAVE"),
+        .optionDescriptions = {
+            COMPOUND_STRING("Save your settings."),
+        },
+        .optionDisabledDescription = COMPOUND_STRING(""),
+    },
 };
 
 static const struct OptionFuncs sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
@@ -2166,7 +2244,7 @@ static void DrawOptionMenuChoice(const u8 *text, u8 x, u8 y, u8 style, bool8 act
     if (style != 0)
         choosen = TRUE;
 
-    DrawRightSideChoiceText(text, x, y+1, choosen, active);
+    DrawRightSideChoiceText(text, x, y + 1, choosen, active);
 }
 
 static void DrawChoices_Options_Four(const u8 *const *const strings, int selection, int y, bool8 active)
