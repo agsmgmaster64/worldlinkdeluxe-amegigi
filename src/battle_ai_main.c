@@ -5286,7 +5286,7 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         ADJUST_SCORE(DECENT_EFFECT);
         if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_CHECK_BAD_MOVE)
         {
-            if (aiData->abilities[battlerDef] == ABILITY_WONDER_GUARD && effectiveness < AI_EFFECTIVENESS_x2)
+            if (aiData->abilities[battlerDef] == ABILITY_PLAY_GHOST && effectiveness < AI_EFFECTIVENESS_x2)
                 ADJUST_SCORE(10);
             if (HasDamagingMove(battlerDef) && !((gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE)
              || IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
