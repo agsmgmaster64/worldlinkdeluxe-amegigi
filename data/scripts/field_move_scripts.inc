@@ -28,7 +28,7 @@ EventScript_CutTreeDown::
 	end
 
 EventScript_CanUseCutOtherwise::
-	checkpartylearnknowsfieldmove MOVE_CUT
+	checkpartylearnknowsmove MOVE_CUT
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseBigAxe
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -137,7 +137,7 @@ EventScript_SmashRock::
 	end
 
 EventScript_CanUseRockSmashOtherwise::
-	checkpartylearnknowsfieldmove MOVE_ROCK_SMASH
+	checkpartylearnknowsmove MOVE_ROCK_SMASH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUsePickaxe
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -322,7 +322,7 @@ EventScript_ActivateStrength::
 	end
 
 EventScript_CanUseStrengthOtherwise::
-	checkpartylearnknowsfieldmove MOVE_STRENGTH
+	checkpartylearnknowsmove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseStrengthItem
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
@@ -409,7 +409,7 @@ EventScript_UseWaterfallMon::
 	goto EventScript_EndWaterfall
 
 EventScript_CanUseWaterfallOtherwise::
-	checkpartylearnknowsfieldmove MOVE_WATERFALL
+	checkpartylearnknowsmove MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseWaterfallTool
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -480,7 +480,7 @@ EventScript_EndDive::
 EventScript_CheckDiveToolAndParty::
 	checkitem ITEM_SCUBA_GEAR, 1
 	goto_if_eq VAR_RESULT, TRUE, EventScript_UseScubaGear
-	checkpartylearnknowsfieldmove MOVE_DIVE
+	checkpartylearnknowsmove MOVE_DIVE
 	return
 
 EventScript_UseScubaGear::
@@ -535,7 +535,7 @@ EventScript_EndRockClimb::
 	end
 
 EventScript_CanUseRockClimbOtherwise::
-	checkpartylearnknowsfieldmove MOVE_ROCK_CLIMB
+	checkpartylearnknowsmove MOVE_ROCK_CLIMB
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockClimbTool
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT

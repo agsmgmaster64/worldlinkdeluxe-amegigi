@@ -539,7 +539,7 @@ static void BardSing(struct Task *task, struct BardSong *song)
             break;
         case SOUND_STATE_SET_BASE:
             song->state = SOUND_STATE_PLAY;
-            if (template->songId < NUM_PHONEME_SONGS)
+            /*if (template->songId < NUM_PHONEME_SONGS)
             {
                 // Adjust the song volume for the current phoneme.
                 // In practice no phonemes use this, so volume here will always be BARD_SONG_BASE_VOLUME.
@@ -549,7 +549,7 @@ static void BardSing(struct Task *task, struct BardSong *song)
                 // Adjust the song pitch for the current phoneme.
                 song->pitch = BARD_SONG_BASE_PITCH + song->sounds[song->soundIndex].pitch;
                 m4aMPlayPitchControl(&gMPlayInfo_SE2, TRACKS_ALL, song->pitch);
-            }
+            }*/
             break;
         case SOUND_STATE_PLAY:
             // Modulate the volume and pitch to make it sound a little more like singing.

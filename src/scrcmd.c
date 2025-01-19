@@ -3006,7 +3006,7 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
 }
 
 // Start qol_field_moves
-bool8 ScrCmd_checkpartylearnknowsfieldmove(struct ScriptContext *ctx)
+bool8 ScrCmd_checkpartylearnknowsmove(struct ScriptContext *ctx)
 {
     u16 move = ScriptReadHalfword(ctx);
 

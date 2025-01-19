@@ -2391,7 +2391,7 @@ void DetermineSpriteType(s32 questId)
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
     u8 *ptr = &sItemMenuIconSpriteIds[10];
-    u8 spriteId = 0xFF;
+    u8 spriteId = MAX_SPRITES;
 
     if (ptr[idx] == 0xFF)
     {
@@ -2415,10 +2415,9 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
                 break;
         }
 
-        gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
-
         if (spriteId != MAX_SPRITES)
         {
+            gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
             ptr[idx] = spriteId;
 
             if (spriteType == ITEM)

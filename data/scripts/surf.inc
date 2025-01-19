@@ -17,7 +17,7 @@ EventScript_EndUseSurf::
 	end
 
 EventScript_CanUseSurfOtherwise::
-	checkpartylearnknowsfieldmove MOVE_SURF
+	checkpartylearnknowsmove MOVE_SURF
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseSurfTool
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT

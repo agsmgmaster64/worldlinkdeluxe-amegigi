@@ -4,54 +4,33 @@
 #include "constants/songs.h"
 
 // Indicates that the previous sound should be held.
-#define PREV_BARD_SOUND { .songId = NUM_PHONEME_SONGS }
+//#define PREV_BARD_SOUND { .songId = NUM_PHONEME_SONGS }
 
 // Invalid sound, indicates the end of the sounds for the word.
-#define NULL_BARD_SOUND { .songId = PHONEME_ID_NONE }
-
-#include "data/bard_music/pokemon.h"
-#include "data/bard_music/moves.h"
-#include "data/bard_music/trainer.h"
-#include "data/bard_music/status.h"
-#include "data/bard_music/battle.h"
-#include "data/bard_music/greetings.h"
-#include "data/bard_music/people.h"
-#include "data/bard_music/voices.h"
-#include "data/bard_music/speech.h"
-#include "data/bard_music/endings.h"
-#include "data/bard_music/feelings.h"
-#include "data/bard_music/conditions.h"
-#include "data/bard_music/actions.h"
-#include "data/bard_music/lifestyle.h"
-#include "data/bard_music/hobbies.h"
-#include "data/bard_music/time.h"
-#include "data/bard_music/misc.h"
-#include "data/bard_music/adjectives.h"
-#include "data/bard_music/events.h"
-#include "data/bard_music/trendysaying.h"
+//#define NULL_BARD_SOUND { .songId = PHONEME_ID_NONE }
 
 static const struct BardSoundTemplate (*const sBardSoundTemplatesTable[EC_NUM_GROUPS])[MAX_BARD_SOUNDS_PER_WORD] = {
     [EC_GROUP_POKEMON]          = NULL, // Handled by sBardSoundTemplates_Pokemon
-    [EC_GROUP_TRAINER]          = sBardSoundTemplates_Trainer,
-    [EC_GROUP_STATUS]           = sBardSoundTemplates_Status,
-    [EC_GROUP_BATTLE]           = sBardSoundTemplates_Battle,
-    [EC_GROUP_GREETINGS]        = sBardSoundTemplates_Greetings,
-    [EC_GROUP_PEOPLE]           = sBardSoundTemplates_People,
-    [EC_GROUP_VOICES]           = sBardSoundTemplates_Voices,
-    [EC_GROUP_SPEECH]           = sBardSoundTemplates_Speech,
-    [EC_GROUP_ENDINGS]          = sBardSoundTemplates_Endings,
-    [EC_GROUP_FEELINGS]         = sBardSoundTemplates_Feelings,
-    [EC_GROUP_CONDITIONS]       = sBardSoundTemplates_Conditions,
-    [EC_GROUP_ACTIONS]          = sBardSoundTemplates_Actions,
-    [EC_GROUP_LIFESTYLE]        = sBardSoundTemplates_Lifestyle,
-    [EC_GROUP_HOBBIES]          = sBardSoundTemplates_Hobbies,
-    [EC_GROUP_TIME]             = sBardSoundTemplates_Time,
-    [EC_GROUP_MISC]             = sBardSoundTemplates_Misc,
-    [EC_GROUP_ADJECTIVES]       = sBardSoundTemplates_Adjectives,
-    [EC_GROUP_EVENTS]           = sBardSoundTemplates_Events,
+    [EC_GROUP_TRAINER]          = NULL,
+    [EC_GROUP_STATUS]           = NULL,
+    [EC_GROUP_BATTLE]           = NULL,
+    [EC_GROUP_GREETINGS]        = NULL,
+    [EC_GROUP_PEOPLE]           = NULL,
+    [EC_GROUP_VOICES]           = NULL,
+    [EC_GROUP_SPEECH]           = NULL,
+    [EC_GROUP_ENDINGS]          = NULL,
+    [EC_GROUP_FEELINGS]         = NULL,
+    [EC_GROUP_CONDITIONS]       = NULL,
+    [EC_GROUP_ACTIONS]          = NULL,
+    [EC_GROUP_LIFESTYLE]        = NULL,
+    [EC_GROUP_HOBBIES]          = NULL,
+    [EC_GROUP_TIME]             = NULL,
+    [EC_GROUP_MISC]             = NULL,
+    [EC_GROUP_ADJECTIVES]       = NULL,
+    [EC_GROUP_EVENTS]           = NULL,
     [EC_GROUP_MOVE_1]           = NULL, // Handled by sBardSoundTemplates_Moves
     [EC_GROUP_MOVE_2]           = NULL, // Handled by sBardSoundTemplates_Moves
-    [EC_GROUP_TRENDY_SAYING]    = sBardSoundTemplates_TrendySaying,
+    [EC_GROUP_TRENDY_SAYING]    = NULL,
     [EC_GROUP_POKEMON_NATIONAL] = NULL, // Handled by sBardSoundTemplates_Pokemon
 };
 
@@ -120,70 +99,6 @@ static const s16 *const sPitchTables[NUM_BARD_PITCH_TABLES_PER_SIZE * 7] = {
 // If this fails, CalcWordSounds will likely read out of bounds for sPitchTables.
 STATIC_ASSERT(BASE_PITCH_TABLE_INDEX + (NUM_BARD_PITCH_TABLES_PER_SIZE-1) < ARRAY_COUNT(sPitchTables), NotEnoughPitchTablesForBardSounds)
 
-static const struct BardSoundTemplate sEmptyPhonemeTemplate[] = {
-    NULL_BARD_SOUND,
-    NULL_BARD_SOUND,
-    NULL_BARD_SOUND,
-    NULL_BARD_SOUND,
-    NULL_BARD_SOUND,
-    NULL_BARD_SOUND
-};
-
-static const int sPhonemeLengths[NUM_PHONEME_SONGS + 1] = {
-    [PHONEME_ID(PH_TRAP_BLEND)] = 9,
-    [PHONEME_ID(PH_TRAP_HELD)] = 22,
-    [PHONEME_ID(PH_TRAP_SOLO)] = 15,
-    [PHONEME_ID(PH_FACE_BLEND)] = 16,
-    [PHONEME_ID(PH_FACE_HELD)] = 39,
-    [PHONEME_ID(PH_FACE_SOLO)] = 21,
-    [PHONEME_ID(PH_CLOTH_BLEND)] = 9,
-    [PHONEME_ID(PH_CLOTH_HELD)] = 30,
-    [PHONEME_ID(PH_CLOTH_SOLO)] = 24,
-    [PHONEME_ID(PH_DRESS_BLEND)] = 15,
-    [PHONEME_ID(PH_DRESS_HELD)] = 25,
-    [PHONEME_ID(PH_DRESS_SOLO)] = 12,
-    [PHONEME_ID(PH_FLEECE_BLEND)] = 22,
-    [PHONEME_ID(PH_FLEECE_HELD)] = 45,
-    [PHONEME_ID(PH_FLEECE_SOLO)] = 24,
-    [PHONEME_ID(PH_KIT_BLEND)] = 15,
-    [PHONEME_ID(PH_KIT_HELD)] = 40,
-    [PHONEME_ID(PH_KIT_SOLO)] = 9,
-    [PHONEME_ID(PH_PRICE_BLEND)] = 21,
-    [PHONEME_ID(PH_PRICE_HELD)] = 42,
-    [PHONEME_ID(PH_PRICE_SOLO)] = 18,
-    [PHONEME_ID(PH_LOT_BLEND)] = 9,
-    [PHONEME_ID(PH_LOT_HELD)] = 22,
-    [PHONEME_ID(PH_LOT_SOLO)] = 15,
-    [PHONEME_ID(PH_GOAT_BLEND)] = 27,
-    [PHONEME_ID(PH_GOAT_HELD)] = 48,
-    [PHONEME_ID(PH_GOAT_SOLO)] = 18,
-    [PHONEME_ID(PH_THOUGHT_BLEND)] = 27,
-    [PHONEME_ID(PH_THOUGHT_HELD)] = 33,
-    [PHONEME_ID(PH_THOUGHT_SOLO)] = 24,
-    [PHONEME_ID(PH_CHOICE_BLEND)] = 25,
-    [PHONEME_ID(PH_CHOICE_HELD)] = 39,
-    [PHONEME_ID(PH_CHOICE_SOLO)] = 19,
-    [PHONEME_ID(PH_MOUTH_BLEND)] = 16,
-    [PHONEME_ID(PH_MOUTH_HELD)] = 54,
-    [PHONEME_ID(PH_MOUTH_SOLO)] = 18,
-    [PHONEME_ID(PH_FOOT_BLEND)] = 9,
-    [PHONEME_ID(PH_FOOT_HELD)] = 45,
-    [PHONEME_ID(PH_FOOT_SOLO)] = 15,
-    [PHONEME_ID(PH_GOOSE_BLEND)] = 12,
-    [PHONEME_ID(PH_GOOSE_HELD)] = 39,
-    [PHONEME_ID(PH_GOOSE_SOLO)] = 23,
-    [PHONEME_ID(PH_STRUT_BLEND)] = 5,
-    [PHONEME_ID(PH_STRUT_HELD)] = 45,
-    [PHONEME_ID(PH_STRUT_SOLO)] = 12,
-    [PHONEME_ID(PH_CURE_BLEND)] = 21,
-    [PHONEME_ID(PH_CURE_HELD)] = 48,
-    [PHONEME_ID(PH_CURE_SOLO)] = 12,
-    [PHONEME_ID(PH_NURSE_BLEND)] = 21,
-    [PHONEME_ID(PH_NURSE_HELD)] = 69,
-    [PHONEME_ID(PH_NURSE_SOLO)] = 18,
-    [NUM_PHONEME_SONGS] = 15, // This is the length that will be used by PREV_BARD_SOUND to hold the previous phoneme sound.
-};
-
 static s16 GetWordPitch(int tableIndex, int pitchIndex)
 {
     return sPitchTables[tableIndex][pitchIndex];
@@ -196,7 +111,7 @@ const struct BardSoundTemplate *GetWordSoundTemplates(u16 easyChatWord)
     const struct BardSoundTemplate (*ptr)[MAX_BARD_SOUNDS_PER_WORD];
 
     if (IsBardWordInvalid(easyChatWord))
-        return sEmptyPhonemeTemplate;
+        return NULL;
 
     category = EC_GROUP(easyChatWord);
     subword = EC_INDEX(easyChatWord);
@@ -226,7 +141,7 @@ void CalcWordSounds(struct BardSong *song, u16 pitchTableIndex)
     for (i = 0; i < MAX_BARD_SOUNDS_PER_WORD; i ++)
     {
         template = &song->soundTemplates[i];
-        if (template->songId != PHONEME_ID_NONE)
+        /*if (template->songId != PHONEME_ID_NONE)
         {
             // Calculate the length and pitch of each phoneme in this word.
             // A phoneme's length is always the same, and depends on the phoneme song and any adjustments in the template.
@@ -236,7 +151,7 @@ void CalcWordSounds(struct BardSong *song, u16 pitchTableIndex)
 
             // Add this phoneme's length to the total sound length for this word.
             song->length += song->sounds[i].length;
-        }
+        }*/
     }
     song->soundIndex = 0;
     song->voiceInflection = 0;
