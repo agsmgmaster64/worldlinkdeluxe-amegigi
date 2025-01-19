@@ -309,7 +309,7 @@ static bool8 CanSetUpSecondaryStartMenu(void)
     if (gSaveBlock2Ptr->optionsDebugMode == 0)
         return TRUE;
 
-    if (FlagGet(FLAG_SYS_DEXNAV_GET) && FlagGet(FLAG_SYS_POKEDEX_GET))
+    if (FlagGet(DN_FLAG_DEXNAV_GET) && FlagGet(FLAG_SYS_POKEDEX_GET))
         return TRUE;
 
     if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
