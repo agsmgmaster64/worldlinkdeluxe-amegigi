@@ -411,7 +411,7 @@ static void BuildToolStartMenu(void)
 {
     if (gSaveBlock2Ptr->optionsDebugMode == 0)
         AddStartMenuAction(MENU_ACTION_DEBUG);
-    if (FlagGet(FLAG_SYS_DEXNAV_GET) == TRUE)
+    if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
     if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_QUEST_MENU);
