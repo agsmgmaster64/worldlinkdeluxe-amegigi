@@ -166,6 +166,7 @@
 #define LEVEL_UP_MOVE_END  0xFFFF
 
 #define MAX_LEVEL_UP_MOVES       30
+#define MAX_RELEARNER_MOVES      max(MAX_LEVEL_UP_MOVES, 30)
 
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
@@ -366,7 +367,5 @@ enum EvolutionMode {
 #define MOVE_REMINDER_NORMAL          0 // Normal behavior; attempts to learn level up moves prior to current level.
 #define MOVE_REMINDER_LEARN_ALL_MOVES 1 // Gen 7 behavior.
 #define MOVE_TUTOR_EGG_MOVES          2 // Move Tutor returns egg moves
-
-#define MAX_RELEARNER_MOVES max(MAX_LEVEL_UP_MOVES, 30)
 
 #endif // GUARD_CONSTANTS_POKEMON_H
