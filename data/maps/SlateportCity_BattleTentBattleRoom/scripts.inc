@@ -210,3 +210,4 @@ SlateportCity_BattleTentBattleRoom_Movement_OpponentEnter:
 	walk_in_place_faster_left
 # 106 "data/maps/SlateportCity_BattleTentBattleRoom/scripts.pory"
 	step_end
+

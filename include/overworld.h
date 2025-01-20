@@ -46,8 +46,8 @@ struct LinkPlayerObjectEvent
 struct __attribute__((packed)) TimeBlendSettings
 {
     u16 weight:9;
-    u16 time1:3;
-    u16 time0:3;
+    u16 finalTimeOfDay:3;
+    u16 initialTimeOfDay:3;
     u16 unused:1;
     u16 altWeight;
 };
@@ -64,11 +64,11 @@ extern bool8 (*gFieldCallback2)(void);
 extern u8 gLocalLinkPlayerId;
 extern u8 gFieldLinkPlayerCount;
 extern bool8 gExitStairsMovementDisabled;
+extern bool8 gSkipShowMonAnim;
 extern u8 gTimeOfDay;
 extern u16 gTimeUpdateCounter;
 
 extern struct TimeBlendSettings currentTimeBlend;
-extern bool8 gSkipShowMonAnim;
 
 extern const struct UCoords32 gDirectionToVectors[];
 
