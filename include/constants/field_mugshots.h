@@ -12,7 +12,9 @@
 #define MUGSHOT_GIGI    3
 #define MUGSHOT_RENKO   4
 #define MUGSHOT_MARIBEL 5
-#define MUGSHOT_COUNT   6
+#define MUGSHOT_SHIORI  6
+#define MUGSHOT_BAELZ   7
+#define MUGSHOT_COUNT   8
 
 #define EMOTE_NORMAL  0
 #define EMOTE_ALT     1

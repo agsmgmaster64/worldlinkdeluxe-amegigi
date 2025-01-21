@@ -1,3 +1,7 @@
+#include "global.h"
+#include "main.h"
+#include "constants/field_mugshots.h"
+
 static const u32 sFieldMugshotGfx_TestNormal[] = INCBIN_U32("graphics/field_mugshots/test/normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_TestAlt[] = INCBIN_U32("graphics/field_mugshots/test/alt.4bpp.lz");
 static const u16 sFieldMugshotPal_TestNormal[] = INCBIN_U16("graphics/field_mugshots/amelia/normal.gbapal");
@@ -14,6 +18,12 @@ static const u16 sFieldMugshotPal_RenkoSerious[] = INCBIN_U16("graphics/field_mu
 
 static const u32 sFieldMugshotGfx_MaribelNormal[] = INCBIN_U32("graphics/field_mugshots/maribel/normal.4bpp.lz");
 static const u16 sFieldMugshotPal_MaribelNormal[] = INCBIN_U16("graphics/field_mugshots/maribel/normal.gbapal");
+
+static const u32 sFieldMugshotGfx_ShioriNormal[] = INCBIN_U32("graphics/field_mugshots/shiori/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_ShioriNormal[] = INCBIN_U16("graphics/field_mugshots/shiori/normal.gbapal");
+
+static const u32 sFieldMugshotGfx_BaelzNormal[] = INCBIN_U32("graphics/field_mugshots/baelz/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_BaelzNormal[] = INCBIN_U16("graphics/field_mugshots/baelz/normal.gbapal");
 
 struct MugshotGfx
 {
@@ -90,6 +100,28 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_MaribelNormal,
             .pal = sFieldMugshotPal_MaribelNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_SHIORI] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_ShioriNormal,
+            .pal = sFieldMugshotPal_ShioriNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_BAELZ] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzNormal,
+            .pal = sFieldMugshotPal_BaelzNormal,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },

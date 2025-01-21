@@ -138,12 +138,18 @@ Debug_EventScript_Text_DefensiveIVs:
 
 Debug_EventScript_Script_1::
 	lockall
-	message gText_HowMayIServeYou
-	waitmessage
+	msgbox Debug_EventScript_Script_1_TestMessage, MSGBOX_DEFAULT
+	closemessage
 	battlepointpokemart Debug_EventScript_Script_1_Mart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	releaseall
 	end
+
+Debug_EventScript_Script_1_TestMessage:
+	.string "{CREATE_MUGSHOT MUGSHOT_AMELIA EMOTE_NORMAL}Amelia\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Gigi\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_SHIORI EMOTE_NORMAL}Shiori\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Baelz\p$"
 
 	.align 2
 Debug_EventScript_Script_1_Mart:

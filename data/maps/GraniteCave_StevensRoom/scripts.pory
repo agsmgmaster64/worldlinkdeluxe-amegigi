@@ -1,49 +1,105 @@
+const LOCALID_BAELZ = 1
+
+script GraniteCave_StevensRoom_EventScript_Baelz {
+	lock
+	setspeakername(GraniteCave_StevensRoom_Text_HakosBaelzName)
+	call(GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlace)
+	msgbox(GraniteCave_StevensRoom_Text_BaelzIntro)
+	closemessage
+	call(GraniteCave_StevensRoom_EventScript_StevenFacePlayer)
+	setspeakername(GraniteCave_StevensRoom_Text_HakosBaelzName)
+	playse(SE_SUPER_EFFECTIVE)
+	msgbox(GraniteCave_StevensRoom_Text_WitnessMe)
+	hidespeakername
+	removefieldmugshot
+	setvar(VAR_0x8004, ITEM_LETTER)
+	call(Common_EventScript_PlayerHandedOverTheItem)
+	setflag(FLAG_DELIVERED_STEVEN_LETTER)
+	setspeakername(GraniteCave_StevensRoom_Text_HakosBaelzName)
+	msgbox(GraniteCave_StevensRoom_Text_ThankYouTakeThis)
+	hidespeakername
+	removefieldmugshot
+	giveitem(ITEM_TM_STEEL_WING)
+	if (!var(VAR_RESULT)) {
+		call(GraniteCave_StevensRoom_EventScript_BagFull)
+	}
+	setspeakername(GraniteCave_StevensRoom_Text_HakosBaelzName)
+	msgbox(GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister)
+	closemessage
+	delay(30)
+	playfanfare(MUS_REGISTER_MATCH_CALL)
+	msgbox(GraniteCave_StevensRoom_Text_RegisteredSteven)
+	waitfanfare
+	closemessage
+	delay(30)
+	setflag(FLAG_REGISTERED_STEVEN_POKENAV)
+	setspeakername(GraniteCave_StevensRoom_Text_HakosBaelzName)
+	msgbox(GraniteCave_StevensRoom_Text_IveGotToHurryAlong)
+	closemessage
+	switch(var(VAR_FACING)) {
+		case DIR_NORTH:
+			call(GraniteCave_StevensRoom_EventScript_StevenExitNorth)
+		case DIR_SOUTH:
+			call(GraniteCave_StevensRoom_EventScript_StevenExitSouth)
+		case DIR_WEST:
+		case DIR_EAST:
+			call(GraniteCave_StevensRoom_EventScript_StevenExitWestEast)
+	}
+	playse(SE_EXIT)
+	removeobject(LOCALID_BAELZ)
+	release
+	end
+}
+
+text GraniteCave_StevensRoom_Text_HakosBaelzName {
+	"Baelz"
+}
+
+text GraniteCave_StevensRoom_Text_BaelzIntro {
+	format("Wazzup!\p"
+	"I am Chaos, the end of ends.\p"
+	"A steel rose trapped in a cage of ice.\p"
+	"Your best friend, Baelz Hakos from Hololive EN.")
+}
+
+text GraniteCave_StevensRoom_Text_WitnessMe {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}WITNESS ME!\p"
+	"Wazzup, you need something from me?\p"
+	"Huh, a letter?")
+}
+
+text GraniteCave_StevensRoom_Text_ThankYouTakeThis {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Oh nice, a letter for me. Who sent this one here?\p"
+	"Huh, from Mr. Orange.\NI guess I should read what's in it.\p"
+	"You know what, before I read it, here's a little prize for delivering this for me.\p"
+	"It's a TM that I have for the move Steel Wing, a pretty nice move for your Puppets.")
+}
+
+text GraniteCave_StevensRoom_Text_OhBagIsFull { //this should never be reached at all, but I'm making a case for this anyways
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Oh wow, ")
+}
+
+text GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Alright, so let's see what Mr. Orange has to say.\p"
+	"Hmm, Team Aqua and Magma have been causing some unwanted chaos around their parts, and he needs me to take care of them?\p"
+	"Well, I'll see what I can do exactly with those guys there.\p"
+	"Either way, your Puppets do look like they can take care of a lot of trainers.\p"
+	"Maybe you should try out the renewed Puppet League, with my friend Kronii as the Champion.\p"
+	"You might even be able to beat her at her game.\p"
+	"I should probably register you in our iDollNavs, just so you can get more info about it.\p"
+	"… … … … … …")
+}
+
+text GraniteCave_StevensRoom_Text_IveGotToHurryAlong {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Well, I gotta figure out what to do with Team Aqua and Magma now.\p"
+	"With that being said, see you later then, {PLAYER}!")
+}
+
 raw `
 .set LOCALID_STEVEN, 1
 
 GraniteCave_StevensRoom_MapScripts::
 	.byte 0
-
-GraniteCave_StevensRoom_EventScript_Steven::
-	lock
-	setspeakername GraniteCave_StevensRoom_Text_HakosBaelzName
-	call GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlace
-	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
-	closemessage
-	call GraniteCave_StevensRoom_EventScript_StevenFacePlayer
-	setspeakername GraniteCave_StevensRoom_Text_HakosBaelzName
-	playse SE_SUPER_EFFECTIVE
-	msgbox GraniteCave_StevensRoom_Text_WitnessMe, MSGBOX_DEFAULT
-	hidespeakername
-	setvar VAR_0x8004, ITEM_LETTER
-	call Common_EventScript_PlayerHandedOverTheItem
-	setflag FLAG_DELIVERED_STEVEN_LETTER
-	setspeakername GraniteCave_StevensRoom_Text_HakosBaelzName
-	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
-	hidespeakername
-	giveitem ITEM_TM_STEEL_WING
-	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
-	setspeakername GraniteCave_StevensRoom_Text_HakosBaelzName
-	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
-	closemessage
-	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox GraniteCave_StevensRoom_Text_RegisteredSteven, MSGBOX_DEFAULT
-	waitfanfare
-	closemessage
-	delay 30
-	setflag FLAG_REGISTERED_STEVEN_POKENAV
-	setspeakername GraniteCave_StevensRoom_Text_HakosBaelzName
-	msgbox GraniteCave_StevensRoom_Text_IveGotToHurryAlong, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, GraniteCave_StevensRoom_EventScript_StevenExitNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, GraniteCave_StevensRoom_EventScript_StevenExitSouth
-	call_if_eq VAR_FACING, DIR_WEST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
-	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
-	playse SE_EXIT
-	removeobject LOCALID_STEVEN
-	release
-	end
 
 GraniteCave_StevensRoom_EventScript_StevenExitNorth::
 	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
@@ -148,52 +204,8 @@ GraniteCave_StevensRoom_EventScript_StevenFacePlayerWest::
 	turnobject LOCALID_STEVEN, DIR_EAST
 	return
 
-GraniteCave_StevensRoom_Text_HakosBaelzName:
-	.string "Baelz$"
-
-GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "Wazzup!\p"
-	.string "I am Chaos, the end of ends.\p"
-	.string "A steel rose trapped in a cage of\n"
-	.string "ice.\p"
-	.string "Your best friend, Baelz Hakos from\n"
-	.string "Hololive EN.$"
-
-GraniteCave_StevensRoom_Text_WitnessMe:
-	.string "WITNESS ME!\p"
-	.string "Wazzup, you need something from\n"
-	.string "me?\p"
-	.string "Huh, a letter?$"
-
-GraniteCave_StevensRoom_Text_ThankYouTakeThis:
-	.string "Oh nice, a letter for me. Who sent\n"
-	.string "this one here?\p"
-	.string "Huh, the Noise.\n"
-	.string "I guess that's nice of him?\p"
-	.string "You know what, since you came here,\n"
-	.string "you can have this little TM for\l"
-	.string "the move Steel Wing.$"
-
-GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "Now let's see what the letter has\n"
-	.string "inside.\p"
-	.string "If you keep training, you could even\n"
-	.string "become the CHAMPION of the POKéMON\l"
-	.string "LEAGUE one day. That's what I think.\p"
-	.string "I know, since we've gotten to know each\n"
-	.string "other, let's register one another in\l"
-	.string "our POKéNAVS.\p"
-	.string "… … … … … …$"
-
 GraniteCave_StevensRoom_Text_RegisteredSteven:
 	.string "Registered Baelz\n"
 	.string "in the iDollNav.$"
-
-GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
-
-GraniteCave_StevensRoom_Text_OhBagIsFull:
-	.string "Oh, your Bag is full…\n"
-	.string "That's too bad, then.$"
 
 `
