@@ -8,6 +8,38 @@ const MULTI_BP_MOVES = 1
 const MULTI_SELL_ITEMS = 2
 const MULTI_NEVERMIND = 3
 
+script Route116_TunnelersRestHouse_EventScript_BaelzFunEvent {
+	lock
+	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_BaelzInvested)
+	closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiBoughtIn)
+	closemessage
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_BaelzWhat)
+	closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiDefense)
+	closemessage
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_BaelzHuh)
+	closemessage
+	release
+	end
+}
+
 script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	lock
 	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
@@ -169,6 +201,33 @@ text Route116_TunnelersRestHouse_Text_RenkoFrickinTalking {
 
 text Route116_TunnelersRestHouse_Text_MaribelFrickinTalking {
 	format("{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_MARIBEL EMOTE_NORMAL}Yeah, I'm here.")
+}
+
+text Route116_TunnelersRestHouse_Text_BaelzInvested {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Wazzup!\p"
+	"I invested in Kronii coin, and now I was finally able to buy myself my own mugshot proper for you to see.\p"
+	"How cool is that for you, {PLAYER}?")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiBoughtIn {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Yo, you bought into the coin as well, Bae?\p"
+	"Good for you, bet you can even get {PLAYER} here to buy into it as well.\p"
+	"Just hope you didn't see Calli's video regarding the coin.")
+}
+
+text Route116_TunnelersRestHouse_Text_BaelzWhat {
+	format("Calli's video?\pYou mean she tried to expose it or something?")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiDefense {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Yeah, although I came in to her defense to keep the coin safe.\p"
+	"I think I did a pretty good job making my case, especially against her.\p"
+	"Gotta keep my coin's worth, you know?")
+}
+
+text Route116_TunnelersRestHouse_Text_BaelzHuh {
+	format("Huh.\p"
+	"{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Well, {PLAYER}, do you want some nice Kronii Coin?")
 }
 
 text Route116_TunnelersRestHouse_Text_CookTalk {

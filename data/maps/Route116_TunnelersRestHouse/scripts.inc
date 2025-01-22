@@ -1,119 +1,179 @@
-Route116_TunnelersRestHouse_EventScript_GigiFunEvent::
+Route116_TunnelersRestHouse_EventScript_BaelzFunEvent::
 # 12 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	lock
 # 13 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	call Route116_TunnelersRestHouse_EventScript_MovePlayerInFront
 # 14 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceDown
+	applymovement 3, Common_Movement_WalkInPlaceDown
 # 15 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 # 16 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	setspeakername Route116_TunnelersRestHouse_Text_Gigi
+	setspeakername Route116_TunnelersRestHouse_Text_Baelz
 # 17 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_GigiMurinIntro, MSGBOX_DEFAULT
+	msgbox Route116_TunnelersRestHouse_Text_BaelzInvested
 # 18 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	closemessage
 # 19 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	applymovement 3, Common_Movement_WalkInPlaceDown
+	applymovement 1, Common_Movement_WalkInPlaceDown
 # 20 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 # 21 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	setspeakername Route116_TunnelersRestHouse_Text_Baelz
+	setspeakername Route116_TunnelersRestHouse_Text_Gigi
 # 22 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_HakosBaelzIntro, MSGBOX_DEFAULT
+	msgbox Route116_TunnelersRestHouse_Text_GigiBoughtIn
 # 23 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	closemessage
 # 24 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	applymovement 1, Common_Movement_WalkInPlaceDown
+	applymovement 3, Common_Movement_WalkInPlaceDown
 # 25 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 # 26 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	setspeakername Route116_TunnelersRestHouse_Text_Gigi
+	setspeakername Route116_TunnelersRestHouse_Text_Baelz
 # 27 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_GigiOutOfBudget, MSGBOX_DEFAULT
+	msgbox Route116_TunnelersRestHouse_Text_BaelzWhat
 # 28 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	closemessage
 # 29 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	setspeakername Route116_TunnelersRestHouse_Text_Player
+	applymovement 1, Common_Movement_WalkInPlaceDown
 # 30 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT
+	waitmovement 0
 # 31 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	closemessage
+	setspeakername Route116_TunnelersRestHouse_Text_Gigi
 # 32 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_GigiDefense
+# 33 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 34 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	applymovement 3, Common_Movement_WalkInPlaceDown
+# 35 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	waitmovement 0
+# 36 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setspeakername Route116_TunnelersRestHouse_Text_Baelz
+# 37 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_BaelzWhat
+# 38 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 39 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	release
+	end
+
+
+Route116_TunnelersRestHouse_EventScript_GigiFunEvent::
+# 44 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	lock
+# 45 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	call Route116_TunnelersRestHouse_EventScript_MovePlayerInFront
+# 46 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceDown
+# 47 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	waitmovement 0
+# 48 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setspeakername Route116_TunnelersRestHouse_Text_Gigi
+# 49 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_GigiMurinIntro, MSGBOX_DEFAULT
+# 50 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 51 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	applymovement 3, Common_Movement_WalkInPlaceDown
+# 52 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	waitmovement 0
+# 53 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setspeakername Route116_TunnelersRestHouse_Text_Baelz
+# 54 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_HakosBaelzIntro, MSGBOX_DEFAULT
+# 55 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 56 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	applymovement 1, Common_Movement_WalkInPlaceDown
+# 57 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	waitmovement 0
+# 58 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setspeakername Route116_TunnelersRestHouse_Text_Gigi
+# 59 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_GigiOutOfBudget, MSGBOX_DEFAULT
+# 60 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 61 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setspeakername Route116_TunnelersRestHouse_Text_Player
+# 62 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT
+# 63 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	closemessage
+# 64 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	release
 	end
 
 
 Route116_TunnelersRestHouse_EventScript_MovePlayerInFront::
-# 37 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 69 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 38 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 70 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	switch VAR_RESULT
-# 39 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 71 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case DIR_WEST, Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_3
-# 42 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 74 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case DIR_EAST, Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_4
-# 45 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 77 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case DIR_SOUTH, Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_5
 Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_1:
 	return
 
 Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_3:
-# 40 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 72 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront
-# 41 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 73 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 	goto Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_1
 
 Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_4:
-# 43 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 75 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront
-# 44 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 76 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 	goto Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_1
 
 Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_5:
-# 46 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 78 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_PLAYER, Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront
-# 47 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 79 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmovement 0
 	goto Route116_TunnelersRestHouse_EventScript_MovePlayerInFront_1
 
 
 Route116_TunnelersRestHouse_EventScript_Cook::
-# 53 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 85 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	lock
-# 54 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 86 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	faceplayer
-# 55 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 87 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	setspeakername Route116_TunnelersRestHouse_Text_Cook
-# 56 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 88 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	message Route116_TunnelersRestHouse_Text_CookTalk
-# 57 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 89 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmessage
 Route116_TunnelersRestHouse_EventScript_Cook_2:
-# 59 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 91 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	call Route116_TunnelersRestHouse_Cook_PrepareMultichoice
-# 60 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 92 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_gt Route116_TunnelersRestHouse_EventScript_Cook_5
-# 63 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 95 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	switch VAR_RESULT
-# 64 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 96 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case 0, Route116_TunnelersRestHouse_EventScript_Cook_9
-# 66 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 98 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case 1, Route116_TunnelersRestHouse_EventScript_Cook_10
-# 68 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 100 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	case 2, Route116_TunnelersRestHouse_EventScript_Cook_11
 Route116_TunnelersRestHouse_EventScript_Cook_7:
-# 71 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 103 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	message Route116_TunnelersRestHouse_Text_CookTalkAgain
-# 72 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 104 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	waitmessage
 	goto Route116_TunnelersRestHouse_EventScript_Cook_2
 
 Route116_TunnelersRestHouse_EventScript_Cook_1:
-# 74 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 106 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	release
 	end
 
@@ -121,287 +181,287 @@ Route116_TunnelersRestHouse_EventScript_Cook_5:
 	goto Route116_TunnelersRestHouse_EventScript_Cook_1
 
 Route116_TunnelersRestHouse_EventScript_Cook_9:
-# 65 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 97 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	call Route116_TunnelersRestHouse_Cook_ItemShop
 	goto Route116_TunnelersRestHouse_EventScript_Cook_7
 
 Route116_TunnelersRestHouse_EventScript_Cook_10:
-# 67 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 99 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	call Route116_TunnelersRestHouse_Cook_MoveShop
 	goto Route116_TunnelersRestHouse_EventScript_Cook_7
 
 Route116_TunnelersRestHouse_EventScript_Cook_11:
-# 69 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 101 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	call Route116_TunnelersRestHouse_Cook_SellItems
 	goto Route116_TunnelersRestHouse_EventScript_Cook_7
 
 
 Route116_TunnelersRestHouse_Cook_PrepareMultichoice::
-# 79 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 111 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	dynmultipush Route116_TunnelersRestHouse_Text_BuyItems, 0
-# 80 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 112 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	dynmultipush Route116_TunnelersRestHouse_Text_TeachMoves, 1
-# 81 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 113 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	dynmultipush Route116_TunnelersRestHouse_Text_SellItems, 2
-# 82 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 114 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	dynmultipush Route116_TunnelersRestHouse_Text_Nevermind, 3
-# 83 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 115 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	dynmultistack 0, 0, FALSE, 5, FALSE, 0, NULL
 	return
 
 
 Route116_TunnelersRestHouse_Cook_ItemShop::
-# 88 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 120 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	msgbox Route116_TunnelersRestHouse_Text_CookItemShop
-# 89 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 121 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	buyonlymart Route116_TunnelersRestHouse_Cook_ItemMart
 	return
 
 
 Route116_TunnelersRestHouse_Cook_MoveShop::
-# 94 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 126 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	msgbox Route116_TunnelersRestHouse_Text_CookMoveTutor
-# 95 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 127 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	setvar VAR_RESULT, 0
-# 96 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 128 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	movetutormart Route116_TunnelersRestHouse_Cook_MoveTutor
-# 97 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 129 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route116_TunnelersRestHouse_Cook_MoveShop_2
 Route116_TunnelersRestHouse_Cook_MoveShop_1:
 	return
 
 Route116_TunnelersRestHouse_Cook_MoveShop_2:
-# 98 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 130 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	msgbox Route116_TunnelersRestHouse_Text_CookLearnedMove
 	goto Route116_TunnelersRestHouse_Cook_MoveShop_1
 
 
 Route116_TunnelersRestHouse_Cook_SellItems::
-# 104 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 136 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	msgbox Route116_TunnelersRestHouse_Text_CookSellItems
-# 105 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 137 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	itemseller
 	return
 
 
 	.align 2
-# 109 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 141 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 Route116_TunnelersRestHouse_Cook_ItemMart:
-# 110 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 142 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.2byte ITEM_BENTO_BOX
-# 111 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 143 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.2byte ITEM_UNAGI_LUNCH
-# 112 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 144 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.2byte ITEM_HEAVEN_PEACH
 	.2byte ITEM_NONE
 
 	.align 2
-# 115 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 147 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 Route116_TunnelersRestHouse_Cook_MoveTutor:
-# 116 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 148 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.2byte MOVE_CUT
-# 117 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 149 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.2byte MOVE_STRENGTH
 	.2byte ITEM_NONE
 
-# 198 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront:
-# 199 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_down
-# 200 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_right
-# 201 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	face_up
-	step_end
-
-# 204 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront:
-# 205 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_down
-# 206 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_left
-# 207 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	face_up
-	step_end
-
-# 210 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront:
-# 211 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_left
-# 212 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_down
-# 213 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	walk_right
-# 214 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	face_up
-	step_end
-
-# 217 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 218 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_MapScripts::
-# 219 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	map_script MAP_SCRIPT_ON_TRANSITION, Route116_TunnelersRestHouse_OnTransition
-# 220 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.byte 0
-# 221 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 222 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_OnTransition:
-# 223 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	setflag FLAG_LANDMARK_TUNNELERS_REST_HOUSE
-# 224 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	end
-# 225 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 226 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_EventScript_Tunneler1::
-# 227 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_WeHadToStopBoring, MSGBOX_NPC
-# 228 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	end
-# 229 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 230 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_EventScript_Tunneler2::
-# 231 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf, MSGBOX_NPC
-# 232 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	end
-# 233 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 234 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_EventScript_Tunneler3::
-# 235 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	lock
-# 236 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	faceplayer
-# 237 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, Route116_TunnelersRestHouse_EventScript_TunnelOpened
-# 238 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel, MSGBOX_DEFAULT
-# 239 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	release
-# 240 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	end
-# 241 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 242 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_EventScript_TunnelOpened::
-# 243 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough, MSGBOX_DEFAULT
-# 244 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	release
-# 245 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	end
-# 246 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
-# 247 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
-# 248 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "That Noiseturf Tunnel there…\p"
-# 249 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "At first, we had a huge work crew boring\n"
-# 250 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "through rock with the latest machinery.\l"
-# 251 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "But, we had to stop.\p"
-# 252 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "It turns out that we would have had\n"
-# 253 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "a negative effect on wild POKéMON in\l"
-# 254 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "the area.\p"
-# 255 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "So, we've got nothing to do but loll\n"
-# 256 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "around here doing nothing.$"
 # 257 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-
+Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront:
 # 258 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf:
+	walk_down
 # 259 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "There's a man digging his way to\n"
+	walk_right
 # 260 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "VERDANTURF all by his lonesome.\l"
-# 261 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "He's desperate to get through.\p"
-# 262 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "He says that if he digs little by little\n"
+	face_up
+	step_end
+
 # 263 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "without using machines, he won't\l"
+Route116_TunnelersRestHouse_Movement_PlayerMoveLeftToFront:
 # 264 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "disturb POKéMON, and he'll avoid\l"
+	walk_down
 # 265 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "harming the natural environment.\p"
+	walk_left
 # 266 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "I wonder if he made it through yet.$"
-# 267 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	face_up
+	step_end
 
-# 268 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel:
 # 269 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "To get to VERDANTURF without using\n"
+Route116_TunnelersRestHouse_Movement_PlayerMoveTheWayToFront:
 # 270 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "this TUNNEL, you'd have to cross the\l"
+	walk_left
 # 271 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "sea to DEWFORD, sail on to SLATEPORT,\l"
+	walk_down
 # 272 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "then travel through MAUVILLE.$"
+	walk_right
 # 273 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	face_up
+	step_end
 
-# 274 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough:
-# 275 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "Did you hear? The TUNNEL to VERDANTURF\n"
 # 276 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "has gone through!\p"
+
 # 277 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	.string "Sometimes, if you hope strongly enough,\n"
+Route116_TunnelersRestHouse_MapScripts::
 # 278 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, Route116_TunnelersRestHouse_OnTransition
+# 279 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.byte 0
+# 280 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 281 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_OnTransition:
+# 282 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	setflag FLAG_LANDMARK_TUNNELERS_REST_HOUSE
+# 283 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	end
+# 284 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 285 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_EventScript_Tunneler1::
+# 286 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_WeHadToStopBoring, MSGBOX_NPC
+# 287 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	end
+# 288 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 289 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_EventScript_Tunneler2::
+# 290 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf, MSGBOX_NPC
+# 291 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	end
+# 292 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 293 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_EventScript_Tunneler3::
+# 294 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	lock
+# 295 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	faceplayer
+# 296 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	goto_if_set FLAG_RUSTURF_TUNNEL_OPENED, Route116_TunnelersRestHouse_EventScript_TunnelOpened
+# 297 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel, MSGBOX_DEFAULT
+# 298 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	release
+# 299 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	end
+# 300 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 301 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_EventScript_TunnelOpened::
+# 302 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	msgbox Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough, MSGBOX_DEFAULT
+# 303 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	release
+# 304 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	end
+# 305 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 306 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
+# 307 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "That Noiseturf Tunnel there…\p"
+# 308 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "At first, we had a huge work crew boring\n"
+# 309 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "through rock with the latest machinery.\l"
+# 310 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "But, we had to stop.\p"
+# 311 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "It turns out that we would have had\n"
+# 312 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "a negative effect on wild POKéMON in\l"
+# 313 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "the area.\p"
+# 314 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "So, we've got nothing to do but loll\n"
+# 315 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "around here doing nothing.$"
+# 316 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 317 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_Text_ManDiggingHisWayToVerdanturf:
+# 318 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "There's a man digging his way to\n"
+# 319 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "VERDANTURF all by his lonesome.\l"
+# 320 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "He's desperate to get through.\p"
+# 321 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "He says that if he digs little by little\n"
+# 322 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "without using machines, he won't\l"
+# 323 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "disturb POKéMON, and he'll avoid\l"
+# 324 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "harming the natural environment.\p"
+# 325 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "I wonder if he made it through yet.$"
+# 326 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 327 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_Text_GetToVerdanturfWithoutTunnel:
+# 328 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "To get to VERDANTURF without using\n"
+# 329 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "this TUNNEL, you'd have to cross the\l"
+# 330 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "sea to DEWFORD, sail on to SLATEPORT,\l"
+# 331 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "then travel through MAUVILLE.$"
+# 332 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+
+# 333 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+Route116_TunnelersRestHouse_Text_TunnelHasGoneThrough:
+# 334 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "Did you hear? The TUNNEL to VERDANTURF\n"
+# 335 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "has gone through!\p"
+# 336 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "Sometimes, if you hope strongly enough,\n"
+# 337 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "dreams do come true.$"
 
 Route116_TunnelersRestHouse_Text_Gigi::
-# 120 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 152 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Gigi$"
 
 Route116_TunnelersRestHouse_Text_Baelz::
-# 124 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 156 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Baelz$"
 
 Route116_TunnelersRestHouse_Text_Cook::
-# 128 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 160 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Cook$"
 
 Route116_TunnelersRestHouse_Text_Player::
-# 132 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 164 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{PLAYER}$"
 
 Route116_TunnelersRestHouse_Text_BuyItems::
-# 136 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 168 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Buy Items$"
 
 Route116_TunnelersRestHouse_Text_TeachMoves::
-# 140 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 172 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Teach Moves$"
 
 Route116_TunnelersRestHouse_Text_SellItems::
-# 144 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 176 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Sell Items$"
 
 Route116_TunnelersRestHouse_Text_Nevermind::
-# 148 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 180 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Nevermind$"
 
 Route116_TunnelersRestHouse_Text_GigiMurinIntro::
-# 152 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 184 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}GI MURIN!\p"
 	.string "The name's Gigi Murin for you trainer.\p"
 	.string "This red one with me is my friend here.$"
 
 Route116_TunnelersRestHouse_Text_HakosBaelzIntro::
-# 156 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 188 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Wazzup!\p"
 	.string "I am chaos, the end of ends.\p"
 	.string "A steel rose trapped in an ice cage.\p"
@@ -411,48 +471,85 @@ Route116_TunnelersRestHouse_Text_HakosBaelzIntro::
 	.string "like you by the way, Gigi?$"
 
 Route116_TunnelersRestHouse_Text_GigiOutOfBudget::
-# 161 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 193 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}We didn't have the budget to afford a\n"
 	.string "mugshot for you.\p"
 	.string "We could only afford mines, Ame's, and\n"
 	.string "even the player's mugshot.$"
 
 Route116_TunnelersRestHouse_Text_RenkoFrickinTalking::
-# 166 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 198 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_RENKO EMOTE_NORMAL}I guess I'm here.$"
 
 Route116_TunnelersRestHouse_Text_MaribelFrickinTalking::
-# 170 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 202 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_MARIBEL EMOTE_NORMAL}Yeah, I'm here.$"
 
+Route116_TunnelersRestHouse_Text_BaelzInvested::
+# 206 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Wazzup!\p"
+	.string "I invested in Kronii coin, and now I was\n"
+	.string "finally able to buy myself my own\l"
+	.string "mugshot proper for you to see.\p"
+	.string "How cool is that for you, {PLAYER}?$"
+
+Route116_TunnelersRestHouse_Text_GigiBoughtIn::
+# 212 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Yo, you bought into the coin as well,\n"
+	.string "Bae?\p"
+	.string "Good for you, bet you can even get\n"
+	.string "{PLAYER} here to buy into it as well.\p"
+	.string "Just hope you didn't see Calli's video\n"
+	.string "regarding the coin.$"
+
+Route116_TunnelersRestHouse_Text_BaelzWhat::
+# 218 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "Calli's video?\p"
+	.string "You mean she tried to expose it or\n"
+	.string "something?$"
+
+Route116_TunnelersRestHouse_Text_GigiDefense::
+# 222 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Yeah, although I came in to her defense\n"
+	.string "to keep the coin safe.\p"
+	.string "I think I did a pretty good job making\n"
+	.string "my case, especially against her.\p"
+	.string "Gotta keep my coin's worth, you know?$"
+
+Route116_TunnelersRestHouse_Text_BaelzHuh::
+# 228 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+	.string "Huh.\p"
+	.string "{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Well, {PLAYER}, do you want some nice\n"
+	.string "Kronii Coin?$"
+
 Route116_TunnelersRestHouse_Text_CookTalk::
-# 174 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 233 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "I have no idea why these people have\n"
 	.string "brought me here specifically.\p"
 	.string "I will say though, I do have some nice\n"
 	.string "stuff for sale if you want.$"
 
 Route116_TunnelersRestHouse_Text_CookTalkAgain::
-# 178 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 237 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "There are more stuff I have if you want.$"
 
 Route116_TunnelersRestHouse_Text_CookItemShop::
-# 182 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 241 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Take a look at my delicacies if you want\n"
 	.string "to buy some.$"
 
 Route116_TunnelersRestHouse_Text_CookMoveTutor::
-# 186 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 245 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "My lessons come at a fee, just so you're\n"
 	.string "aware.$"
 
 Route116_TunnelersRestHouse_Text_CookSellItems::
-# 190 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 249 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Alright, let me see what you have\n"
 	.string "available.$"
 
 Route116_TunnelersRestHouse_Text_CookLearnedMove::
-# 194 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
+# 253 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	.string "Your Puppet has learned the move I\n"
 	.string "taught successfully.\n"
 	.string "I will be taking my fee for this service\l"
