@@ -3686,34 +3686,34 @@ static void Task_PrintSkillsPage(u8 taskId)
 
     switch (data[0])
     {
-    case 1:
+    case 0:
         PrintHeldItemName();
         break;
-    case 2:
+    case 1:
         PrintRibbonCount();
         break;
-    case 3:
+    case 2:
         PrintNatureColouredStatNames();
         break;
-    case 4:
+    case 3:
         ChangeStatLabel(SUMMARY_SKILLS_MODE_STATS);
         break;
-    case 5:
+    case 4:
         BufferLeftColumnStats();
         break;
-    case 6:
+    case 5:
         PrintLeftColumnStats();
         break;
-    case 7:
+    case 6:
         BufferRightColumnStats();
         break;
-    case 8:
+    case 7:
         PrintRightColumnStats();
         break;
-    case 9:
+    case 8:
         PrintExpPointsNextLevel();
         break;
-    case 10:
+    case 9:
         DestroyTask(taskId);
         return;
     }
@@ -3792,7 +3792,7 @@ static void BufferStat(u8 *dst, u8 statIndex, u32 stat, u32 strId, u32 n)
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     u8 *txtPtr;
 
-    if (statIndex == 0 || !SUMMARY_SCREEN_NATURE_COLORS || gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statDown)
+    if (statIndex == 0 || TRUE || gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statDown)
         txtPtr = StringCopy(dst, sTextNatureNeutral);
     else if (statIndex == gNaturesInfo[sMonSummaryScreen->summary.mintNature].statUp)
         txtPtr = StringCopy(dst, sTextNatureUp);
