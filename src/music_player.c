@@ -110,7 +110,7 @@ u16 GetLegndaryWildBattleMusic(u16 species)
     }
 }
 
-u16 GetTrainerBattleMusic(u8 trainerClass)
+u16 GetTrainerBattleMusic(enum TrainerClassID trainerClass)
 {
     u16 musicStyle = GetMusicStyle();
 
