@@ -8,7 +8,6 @@
 #include "music_player.h"
 #include "overworld.h"
 #include "sound.h"
-#include "constants/map_types.h"
 #include "constants/songs.h"
 #include "constants/items.h"
 

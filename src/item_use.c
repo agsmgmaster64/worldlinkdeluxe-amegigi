@@ -56,7 +56,6 @@
 // End qol_field_moves
 #include "tx_randomizer_and_challenges.h"
 #include "battle_setup.h" //tx_randomizer_and_challenges
-#include "constants/map_types.h"
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -1818,7 +1817,7 @@ static bool32 IsValidLocationForVsSeeker(void)
 {
     u16 mapGroup = gSaveBlock1Ptr->location.mapGroup;
     u16 mapNum = gSaveBlock1Ptr->location.mapNum;
-    u16 mapType = gMapHeader.mapType;
+    enum MapType mapType = gMapHeader.mapType;
 
     typedef struct {
         u16 mapGroup;

@@ -931,7 +931,7 @@ static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer 
 }
 
 //Battle background functions
-static void LoadBattleBg(u8 battleTerrain)
+static void LoadBattleBg(enum BattleTerrain battleTerrain)
 {
     LZDecompressVram(sBattleTerrainTable[battleTerrain].tileset, (void*)(BG_CHAR_ADDR(2)));
     LZDecompressVram(sBattleTerrainTable[battleTerrain].tilemap, (void*)(BG_SCREEN_ADDR(26)));
