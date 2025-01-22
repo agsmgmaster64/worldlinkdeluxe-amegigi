@@ -50,7 +50,7 @@ Route116_TunnelersRestHouse_EventScript_BaelzFunEvent::
 # 36 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	setspeakername Route116_TunnelersRestHouse_Text_Baelz
 # 37 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
-	msgbox Route116_TunnelersRestHouse_Text_BaelzWhat
+	msgbox Route116_TunnelersRestHouse_Text_BaelzHuh
 # 38 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
 	closemessage
 # 39 "data/maps/Route116_TunnelersRestHouse/scripts.pory"
