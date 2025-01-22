@@ -21,6 +21,7 @@
 #include "text_window.h"
 #include "trig.h"
 #include "window.h"
+#include "constants/map_types.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -932,7 +933,7 @@ static const struct {
     {MAP_BATTLE_SCENE_FRONTIER, BATTLE_TERRAIN_FRONTIER}
 };
 
-static enum BattleTerrain GetBattleTerrainByMapScene(enum MapBattleScene mapBattleScene)
+static u8 GetBattleTerrainByMapScene(u8 mapBattleScene)
 {
     int i;
     for (i = 0; i < NELEMS(sMapBattleSceneMapping); i++)
@@ -943,7 +944,7 @@ static enum BattleTerrain GetBattleTerrainByMapScene(enum MapBattleScene mapBatt
     return BATTLE_TERRAIN_PLAIN;
 }
 
-static void LoadBattleTerrainGfx(enum BattleTerrain terrain)
+static void LoadBattleTerrainGfx(u8 terrain)
 {
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;
@@ -953,7 +954,7 @@ static void LoadBattleTerrainGfx(enum BattleTerrain terrain)
     LoadCompressedPalette(sBattleTerrainTable[terrain].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
-static void LoadBattleTerrainEntryGfx(enum BattleTerrain terrain)
+static void LoadBattleTerrainEntryGfx(u8 terrain)
 {
     if (terrain >= NELEMS(sBattleTerrainTable))
         terrain = BATTLE_TERRAIN_PLAIN;
@@ -962,9 +963,9 @@ static void LoadBattleTerrainEntryGfx(enum BattleTerrain terrain)
     LZDecompressVram(sBattleTerrainTable[terrain].entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
-static enum BattleTerrain GetBattleTerrainOverride(void)
+static u8 GetBattleTerrainOverride(void)
 {
-    enum MapBattleScene battleScene;
+    u8 battleScene;
     if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
     {
         return BATTLE_TERRAIN_FRONTIER;
@@ -1001,7 +1002,7 @@ static enum BattleTerrain GetBattleTerrainOverride(void)
 }
 
 static void UNUSED CB2_UnusedBattleInit(void);
-static enum BattleTerrain GetBattleTerrainOverride(void);
+static u8 GetBattleTerrainOverride(void);
 
 static void UNUSED UnusedBattleInit(void)
 {
@@ -1392,7 +1393,7 @@ void DrawBattleEntryBackground(void)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         {
-            enum TrainerClassID trainerClass = GetTrainerClassFromId(gTrainerBattleOpponent_A);
+            u32 trainerClass = GetTrainerClassFromId(gTrainerBattleOpponent_A);
             if (trainerClass == TRAINER_CLASS_LEADER)
             {
                 LoadBattleTerrainEntryGfx(BATTLE_TERRAIN_BUILDING);
