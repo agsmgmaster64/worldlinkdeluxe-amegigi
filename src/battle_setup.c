@@ -2199,7 +2199,6 @@ u16 CountBattledRematchTeams(u16 trainerId)
 //tx_randomizer_and_challenges
 u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species) // @Kurausukun
 {
-    u8 i;
     if (!gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause)
         return FALSE;
     

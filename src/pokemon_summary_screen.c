@@ -1778,15 +1778,15 @@ static u8 IncrementSkillsStatsMode(u8 mode)
     switch (mode)
     {
     case SUMMARY_SKILLS_MODE_STATS:
-        if (P_SUMMARY_SCREEN_EV_ONLY)
-        {
-            sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_EVS;
-            return SUMMARY_SKILLS_MODE_EVS;
-        }
-        else 
+        if (gSaveBlock2Ptr->optionsSummaryIvView)
         {
             sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_IVS;
             return SUMMARY_SKILLS_MODE_IVS;
+        }
+        else 
+        {
+            sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_EVS;
+            return SUMMARY_SKILLS_MODE_EVS;
         }
 
     case SUMMARY_SKILLS_MODE_IVS:
@@ -4746,10 +4746,10 @@ static inline void ShowUtilityPrompt(s16 mode)
         {
             if (mode == SUMMARY_SKILLS_MODE_STATS)
             {
-                if (P_SUMMARY_SCREEN_EV_ONLY)
-                    promptText = gText_SkillPageEvs;
-                else
+                if (gSaveBlock2Ptr->optionsSummaryIvView)
                     promptText = gText_SkillPageIvs;
+                else
+                    promptText = gText_SkillPageEvs;
             }
             else if (mode == SUMMARY_SKILLS_MODE_IVS)
             {
