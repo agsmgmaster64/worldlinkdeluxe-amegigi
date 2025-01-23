@@ -1189,6 +1189,11 @@ extern const u32 gItemIcon_BlackGlasses[];
 extern const u32 gItemIconPalette_BlackTypeEnhancingItem[];
 extern const u32 gItemIcon_MaidUniform[];
 extern const u32 gItemIconPalette_MaidUniform[];
+// Alternate Type-boosting items
+extern const u32 gItemIcon_SharpSword[];
+extern const u32 gItemIconPalette_SharpSword[];
+extern const u32 gItemIcon_DubiousTome[];
+extern const u32 gItemIconPalette_DubiousTome[];
 // Choice Items
 extern const u32 gItemIcon_ChoiceBand[];
 extern const u32 gItemIconPalette_ChoiceBand[];

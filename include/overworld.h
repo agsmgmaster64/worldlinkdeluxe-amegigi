@@ -74,6 +74,7 @@ extern const struct UCoords32 gDirectionToVectors[];
 
 void DoWhiteOut(void);
 u32 ComputeWhiteOutMoneyLoss(void);
+u32 GetBadgeCount(void);
 void Overworld_ResetStateAfterFly(void);
 void Overworld_ResetStateAfterTeleport(void);
 void Overworld_ResetStateAfterDigEscRope(void);

@@ -7011,6 +7011,44 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MaidUniform,
     },
 
+// Alternate type-boosting items
+
+    [ITEM_SHARP_SWORD] =
+    {
+        .name = _("Sharp Sword"),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
+        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "A held item that\n"
+            "raises the power of\n"
+            "Steel-type moves."),
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_SharpSword,
+        .iconPalette = gItemIconPalette_SharpSword,
+    },
+
+    [ITEM_DUBIOUS_TOME] =
+    {
+        .name = _("Dubious Tome"),
+        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
+        .holdEffect = HOLD_EFFECT_DARK_POWER,
+        .holdEffectParam = TYPE_BOOST_PARAM,
+        .description = COMPOUND_STRING(
+            "A held item that\n"
+            "raises the power of\n"
+            "Dark-type moves."),
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .iconPic = gItemIcon_DubiousTome,
+        .iconPalette = gItemIconPalette_DubiousTome,
+    },
+
 // Choice Items
 
     [ITEM_CHOICE_BAND] =

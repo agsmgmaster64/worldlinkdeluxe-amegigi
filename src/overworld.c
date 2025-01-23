@@ -109,7 +109,6 @@ struct CableClubPlayer
 extern const struct MapLayout *const gMapLayouts[];
 extern const struct MapHeader *const *const gMapGroups[];
 
-static u32 GetBadgeCount(void);
 static u8 GetPlayerPartyHighestLevel(void);
 static void Overworld_ResetStateAfterWhiteOut(void);
 static void CB2_ReturnToFieldLocal(void);
@@ -420,7 +419,7 @@ u32 ComputeWhiteOutMoneyLoss(void)
     return losings;
 }
 
-static u32 GetBadgeCount(void)
+u32 GetBadgeCount(void)
 {
     u32 i, count = 0;
     for (i = 0; i < NELEMS(gBadgeFlags); i++)

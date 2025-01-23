@@ -1262,6 +1262,14 @@ const u32 gItemIconPalette_BlackTypeEnhancingItem[] = INCBIN_U32("graphics/items
 const u32 gItemIcon_MaidUniform[] = INCBIN_U32("graphics/items/icons/maid_uniform.4bpp.lz");
 const u32 gItemIconPalette_MaidUniform[] = INCBIN_U32("graphics/items/icon_palettes/maid_uniform.gbapal.lz");
 
+// Alternate type-boosting items
+
+const u32 gItemIcon_SharpSword[] = INCBIN_U32("graphics/items/icons/sharp_sword.4bpp.lz");
+const u32 gItemIconPalette_SharpSword[] = INCBIN_U32("graphics/items/icon_palettes/sharp_sword.gbapal.lz");
+
+const u32 gItemIcon_DubiousTome[] = INCBIN_U32("graphics/items/icons/dubious_tome.4bpp.lz");
+const u32 gItemIconPalette_DubiousTome[] = INCBIN_U32("graphics/items/icon_palettes/dubious_tome.gbapal.lz");
+
 // Choice Items
 
 const u32 gItemIcon_ChoiceBand[] = INCBIN_U32("graphics/items/icons/choice_band.4bpp.lz");

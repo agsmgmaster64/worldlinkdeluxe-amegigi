@@ -91,9 +91,7 @@ enum {
     MART_TYPE_BP_MOVES,
     MART_TYPE_DECOR,
     MART_TYPE_DECOR2,
-    #ifdef MUDSKIP_OUTFIT_SYSTEM
     MART_TYPE_OUTFIT,
-    #endif // MUDSKIP_OUTFIT_SYSTEM
     MART_TYPE_SELL_ONLY,
 };
 
@@ -783,6 +781,11 @@ static inline bool32 IsMartTypeMoneyItem(u8 martType)
     return martType <= MART_TYPE_BUY_VARIABLE;
 }
 
+static inline bool32 IsMartTypeSellable(u8 martType)
+{
+    return martType <= MART_TYPE_VARIABLE;
+}
+
 static u8 CreateShopMenu(u8 martType)
 {
     int numMenuItems;
@@ -791,7 +794,7 @@ static u8 CreateShopMenu(u8 martType)
     DebugPrintf("lastTalked: %d", gSpecialVar_LastTalked);
     sMartInfo.martType = martType;
 
-    if (martType <= MART_TYPE_VARIABLE)
+    if (IsMartTypeSellable(martType))
     {
         struct WindowTemplate winTemplate = sShopMenuWindowTemplates[WIN_BUY_SELL_QUIT];
         winTemplate.width = GetMaxWidthInMenuTable(sShopMenuActions_BuySellQuit, ARRAY_COUNT(sShopMenuActions_BuySellQuit));
@@ -822,24 +825,10 @@ static void SetShopMenuCallback(void (* callback)(void))
     sMartInfo.callback = callback;
 }
 
-static u8 GetNumberOfBadges(void)
-{
-    u16 badgeFlag;
-    u8 count = 0;
-    
-    for (badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++)
-    {
-        if (FlagGet(badgeFlag))
-            count++;
-    }
-    
-    return count;
-}
-
 static void SetShopItemsForSale(const u16 *items)
 {
     u32 i = 0;
-    u8 badgeCount = GetNumberOfBadges();
+    u32 badgeCount = GetBadgeCount();
 
     if (items == NULL)
         items = sShopInventories[badgeCount];
@@ -1265,7 +1254,7 @@ static void BuyMenuDecompressBgGraphics(void)
             DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuCoinGfx, 0, 9, 0);
         else if (IsMartTypeBp(sMartInfo.martType))
             DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuBpGfx, 0, 9, 0);
-        else
+        else // if (IsMartTypeMoney(sMartInfo.martType))
             DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, 9, 0);
         DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
         LZDecompressWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
@@ -1285,7 +1274,7 @@ static void BuyMenuDecompressBgGraphics(void)
                                             sSellers[i].menuBpGfx :
                                             sNewShopMenu_DefaultMenuBpGfx, 0, 9, 0);
     }
-    else
+    else // if (IsMartTypeMoney(sMartInfo.martType))
     {
         DecompressAndCopyTileDataToVram(2, sSellers[i].menuGfx ?
                                             sSellers[i].menuGfx :
@@ -1658,7 +1647,7 @@ static void BuyMenuDrawGraphics(void)
         PrintMoneyLocal(WIN_MONEY, 37, 0, GetCoins(), 84, COLORID_NORMAL, TRUE);
     else if (IsMartTypeBp(sMartInfo.martType))
         PrintMoneyLocal(WIN_MONEY, 37, 0, GetBattlePoints(), 84, COLORID_NORMAL, TRUE);
-    else
+    else // if (IsMartTypeMoney(sMartInfo.martType))
         PrintMoneyLocal(WIN_MONEY, 37, 0, GetMoney(&gSaveBlock1Ptr->money), 84, COLORID_NORMAL, TRUE);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
@@ -1839,7 +1828,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                     tItemCount = 1;
                     BuyMenuDisplayMessage(taskId, sText_YouWantedVar1ThatllBeVar2BP, BuyMenuConfirmPurchase);
                 }
-                else
+                else // if (IsMartTypeMoney(sMartInfo.martType))
                 {
                     u32 price = BuyMenuGetItemPrice(GridMenu_SelectedIndex(sShopData->gridItems));
                     ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
@@ -1863,7 +1852,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
             ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
             if (IsMartTypeBp(sMartInfo.martType))
                 StringExpandPlaceholders(gStringVar4, sText_YouWantTeachVar1ThatllBeVar2BP);
-            else
+            else // if (IsMartTypeMoney(sMartInfo.martType))
                 StringExpandPlaceholders(gStringVar4, sText_YouWantTeachVar1ThatllBeVar2);
             BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
         }
@@ -1941,7 +1930,7 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
         maxQuantity = GetCoins() / sShopData->totalCost;
     else if (IsMartTypeBp(sMartInfo.martType))
         maxQuantity = GetBattlePoints() / sShopData->totalCost;
-    else
+    else // if (IsMartTypeMoney(sMartInfo.martType))
         maxQuantity = GetMoney(&gSaveBlock1Ptr->money) / sShopData->totalCost;
 
     if (maxQuantity > MAX_BAG_ITEM_CAPACITY)
@@ -1984,7 +1973,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
                 BuyMenuDisplayMessage(taskId, sText_Var1AndYouWantedVar2Coins, BuyMenuConfirmPurchase);
             else if (IsMartTypeBp(sMartInfo.martType))
                 BuyMenuDisplayMessage(taskId, sText_Var1AndYouWantedVar2BP, BuyMenuConfirmPurchase);
-            else
+            else // if (IsMartTypeMoney(sMartInfo.martType))
                 BuyMenuDisplayMessage(taskId, sText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
         }
         else if (JOY_NEW(B_BUTTON))
@@ -2016,7 +2005,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
                 BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractBp);
             else if (IsMartTypeCasino(sMartInfo.martType))
                 BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractCoins);
-            else
+            else // if (IsMartTypeMoney(sMartInfo.martType))
                 BuyMenuDisplayMessage(taskId, gText_HereYouGoThankYou, BuyMenuSubtractMoney);
         }
         else
