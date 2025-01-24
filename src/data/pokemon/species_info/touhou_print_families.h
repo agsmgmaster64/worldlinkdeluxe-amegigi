@@ -1097,13 +1097,13 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
 
     [SPECIES_AKYUU] =
     {
-        .baseHP        = 1,
+        .baseHP        = 55,
         .baseAttack    = 30,
         .baseDefense   = 60,
         .baseSpeed     = 85,
         .baseSpAttack  = 30,
         .baseSpDefense = 100,
-        .types = MON_TYPES(TYPE_EARTH, TYPE_STEEL),
+        .types = MON_TYPES(TYPE_HEART, TYPE_REASON),
         .catchRate = 45,
         .expYield = 108,
         .evYield_SpDefense = 1,

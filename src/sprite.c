@@ -1613,7 +1613,7 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
             break;
 }
 
-u8 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u8 paletteNum)
+u32 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u32 paletteNum)
 {
     paletteNum = min(15, paletteNum);
     sSpritePaletteTags[paletteNum] = palette->tag;
