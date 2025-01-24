@@ -125,4 +125,7 @@
 // Music
 #define OW_VAR_REGION_MUSIC               VAR_REGION_MUSIC     // Depending on the variable value, the music played will be based on which region the value is set to.
 
+// Berry Blender
+#define BERRY_BLENDER_THROW_ALL_BERRIES_AT_ONCE TRUE        // This is a small little addition, that basically speeds up the animation where all players' berries are thrown into the blender. Self-explanatory I hope!
+
 #endif // GUARD_CONFIG_OVERWORLD_H
