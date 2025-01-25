@@ -76,5 +76,8 @@ u8 GetRightSideStairsDirection(u8 direction);
 u8 GetLeftSideStairsDirection(u8 direction);
 void SetPlayerAvatarVsSeeker(void);
 u8 GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(u8 state, u8 linkId, u8 gender);
+void AlignFishingAnimationFrames(void);
+void ResetPlayerAvatar(u8 gfxId);
+void Task_Fishing(u8);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

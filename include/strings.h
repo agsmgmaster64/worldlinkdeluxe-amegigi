@@ -2519,4 +2519,16 @@ extern const u8 gText_FollowerDefaulted[];
 extern const u8 gText_FollowerFainted[];
 extern const u8 gText_FollowerReturnedToBall[];
 
+// Fishing Minigame
+extern const u8 gText_ReelItIn[];
+extern const u8 gText_HelpfulTextHigher0[];
+extern const u8 gText_HelpfulTextHigher1[];
+extern const u8 gText_HelpfulTextHigher2[];
+extern const u8 gText_HelpfulTextLower0[];
+extern const u8 gText_HelpfulTextLower1[];
+extern const u8 gText_HelpfulTextLower2[];
+extern const u8 gText_FishingWantToQuit[];
+extern const u8 gText_ReeledInAPokemon[];
+extern const u8 gText_PokemonGotAway[];
+
 #endif // GUARD_STRINGS_H

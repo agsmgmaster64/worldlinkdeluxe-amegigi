@@ -41,7 +41,6 @@ extern const u8 EventScript_SprayWoreOff[];
 
 #define HEADER_NONE 0xFFFF
 
-static void UpdateChainFishingStreak(void);
 static bool8 IsWildLevelAllowedByRepel(u8 level);
 static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
@@ -801,7 +800,7 @@ u32 CalculateChainFishingShinyRolls(void)
     return (2 * min(gChainFishingDexNavStreak, FISHING_CHAIN_SHINY_STREAK_MAX));
 }
 
-static void UpdateChainFishingStreak(void)
+void UpdateChainFishingStreak(void)
 {
     if (!I_FISHING_CHAIN)
         return;
@@ -828,10 +827,7 @@ void FishingWildEncounter(u8 rod)
     {
         species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     }
-
-    IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
-    BattleSetup_StartWildBattle();
 }
 
 u16 GetLocalWildMon(bool8 *isWaterMon)
