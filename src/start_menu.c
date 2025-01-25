@@ -1622,3 +1622,11 @@ static bool8 StartMenuQuestMenuCallback(void)
     CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
     return TRUE;
 }
+
+void Script_ForceSaveGame(struct ScriptContext *ctx)
+{
+    SaveGame();
+    ShowSaveInfoWindow();
+    gMenuCallback = SaveCallback;
+    sSaveDialogCallback = SaveSavingMessageCallback;
+}
