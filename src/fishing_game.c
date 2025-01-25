@@ -90,7 +90,7 @@ const u32 gScoreMeterOWBehind_Gfx[] = INCBIN_U32("graphics/fishing_game/score_me
 
 static const u16 sFishBehavior[][6] =
 {
-    [SPECIES_MAGIKARP] = {
+    [SPECIES_CHIBI_HINA] = {
         2,   // Speed
         0,   // Speed Variability
         200, // Movement Delay
@@ -98,7 +98,7 @@ static const u16 sFishBehavior[][6] =
         10,  // Distance
         5    // Distance Variability
     },
-    [SPECIES_GOLDEEN] = {
+    [SPECIES_CHIBI_WAKASAGIHIME] = {
         7,   // Speed
         3,   // Speed Variability
         180, // Movement Delay
@@ -106,7 +106,7 @@ static const u16 sFishBehavior[][6] =
         70,  // Distance
         10   // Distance Variability
     },
-    [SPECIES_CORPHISH] = {
+    [SPECIES_CHIBI_NITORI] = {
         10,  // Speed
         3,   // Speed Variability
         50,  // Movement Delay
@@ -114,7 +114,7 @@ static const u16 sFishBehavior[][6] =
         5,   // Distance
         5    // Distance Variability
     },
-    [SPECIES_GYARADOS] = {
+    [SPECIES_NORMAL_HINA] = {
         12,  // Speed
         4,   // Speed Variability
         25,  // Movement Delay
@@ -122,7 +122,7 @@ static const u16 sFishBehavior[][6] =
         40,  // Distance
         30   // Distance Variability
     },
-    [SPECIES_TENTACOOL] = {
+    [SPECIES_CHIBI_MURASA] = {
         4,   // Speed
         1,   // Speed Variability
         5,   // Movement Delay
@@ -130,7 +130,7 @@ static const u16 sFishBehavior[][6] =
         30,  // Distance
         25   // Distance Variability
     },
-    [SPECIES_WAILMER] = {
+    [SPECIES_CHIBI_KOMACHI] = {
         7,   // Speed
         1,   // Speed Variability
         5,   // Movement Delay
