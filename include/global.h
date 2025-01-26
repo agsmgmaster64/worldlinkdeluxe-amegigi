@@ -592,7 +592,8 @@ struct SaveBlock2
              u32 optionsVolumeCries:4;
              u32 optionsLButtonMode:3;
              u32 optionsRButtonMode:3;
-             u32 optionsUnused:11;
+             u32 optionsOwSpeed:4;
+             u32 optionsUnused:7;
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;

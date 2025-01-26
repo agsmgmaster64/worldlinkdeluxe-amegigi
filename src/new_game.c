@@ -123,6 +123,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsVolumeCries = 10;
     gSaveBlock2Ptr->optionsRButtonMode = OPTIONS_R_BUTTON_MODE_NONE;
     gSaveBlock2Ptr->optionsLButtonMode = OPTIONS_L_BUTTON_MODE_NONE;
+    gSaveBlock2Ptr->optionsOwSpeed = OPTIONS_OVERWORLD_SPEED_1X;
 }
 
 static void ClearPokedexFlags(void)

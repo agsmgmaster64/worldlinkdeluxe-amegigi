@@ -1813,9 +1813,18 @@ void CB2_OverworldBasic(void)
 void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
+    u32 loops;
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+
+    for (loops = 0; loops < OverworldSpeedup_AdditionalIterations(TRUE); loops++)
+    {
+        AnimateSprites();
+        CameraUpdate();
+        UpdateCameraPanning();
+    }
+
     if (fading)
     {
         SetFieldVBlankCallback();
@@ -3582,6 +3591,31 @@ static void SpriteCB_LinkPlayer(struct Sprite *sprite)
     {
         sprite->invisible = ((sprite->data[7] & 4) >> 2);
         sprite->data[7]++;
+    }
+}
+
+u32 OverworldSpeedup_AdditionalIterations(bool32 overworld)
+{
+    if (overworld
+        && (JOY_HELD(R_BUTTON)
+        || (FlagGet(OW_FLAG_PREVENT_OVERWORLD_SPEEDUP) && OW_FLAG_PREVENT_OVERWORLD_SPEEDUP != 0)
+        || FlagGet(DN_FLAG_SEARCHING) // Other conditions when no speedup is wanted.
+        ))
+    {
+        return OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS;
+    }
+
+    switch (gSaveBlock2Ptr->optionsOwSpeed)
+    {
+    case OPTIONS_OVERWORLD_SPEED_8X:
+        return OPTIONS_OVERWORLD_SPEED_8X_EXTRA_ITERATIONS;
+    case OPTIONS_OVERWORLD_SPEED_4X:
+        return OPTIONS_OVERWORLD_SPEED_4X_EXTRA_ITERATIONS;
+    case OPTIONS_OVERWORLD_SPEED_2X:
+        return OPTIONS_OVERWORLD_SPEED_2X_EXTRA_ITERATIONS;
+    default:
+    case OPTIONS_OVERWORLD_SPEED_1X:
+        return OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS;
     }
 }
 
