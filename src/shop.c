@@ -1508,7 +1508,10 @@ static void Task_BuyHowManyDialogueInit(u8 taskId)
     BuyMenuPrintItemQuantityAndPrice(taskId);
     ScheduleBgCopyTilemapToVram(0);
 
-    if (IsMartTypeCasino(sMartInfo.martType))
+    // Avoid division by zero in-case something costs 0 pokedollars.
+    if (sShopData->totalCost == 0)
+        maxQuantity = MAX_BAG_ITEM_CAPACITY;
+    else if (IsMartTypeCasino(sMartInfo.martType))
         maxQuantity = GetCoins() / sShopData->totalCost;
     else if (IsMartTypeBp(sMartInfo.martType))
         maxQuantity = GetBattlePoints() / sShopData->totalCost;

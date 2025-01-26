@@ -1973,7 +1973,7 @@ void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerPicId, u8 battlerPosition
             gMultiuseSpriteTemplate = gMonSpritesGfxPtr->templates[battlerPosition];
         else
             gMultiuseSpriteTemplate = gBattlerSpriteTemplates[battlerPosition];
-        gMultiuseSpriteTemplate.anims = sAnims_Trainer;
+        gMultiuseSpriteTemplate.anims = gAnims_Trainer;
     }
 }
 
@@ -1985,7 +1985,7 @@ void SetMultiuseSpriteTemplateToTrainerFront(u16 trainerPicId, u8 battlerPositio
         gMultiuseSpriteTemplate = gBattlerSpriteTemplates[battlerPosition];
 
     gMultiuseSpriteTemplate.paletteTag = trainerPicId;
-    gMultiuseSpriteTemplate.anims = sAnims_Trainer;
+    gMultiuseSpriteTemplate.anims = gAnims_Trainer;
 }
 
 /* GameFreak called GetMonData with either 2 or 3 arguments, for type
