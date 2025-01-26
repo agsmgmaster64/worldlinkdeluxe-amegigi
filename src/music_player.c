@@ -156,7 +156,7 @@ void PlayVictoryMusic(u8 battleType)
     }
     else if (battleType == MUSIC_PLAYER_VICTORY_TRAINER)
     {
-        switch (GetTrainerClassFromId(gTrainerBattleOpponent_A))
+        switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:

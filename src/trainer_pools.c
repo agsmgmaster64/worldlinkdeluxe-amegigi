@@ -327,7 +327,7 @@ static void TestPrune(const struct Trainer *trainer, u8 *poolIndexArray, const s
 {
     //  Test function to demonstrate pruning
     for (u32 i = 0; i < trainer->poolSize; i++)
-        if (trainer->party[poolIndexArray[i]].species == SPECIES_WOBBUFFET)
+        if (trainer->party[poolIndexArray[i]].species == SPECIES_DEFENSE_SATORI)
             poolIndexArray[i] = POOL_SLOT_DISABLED;
 }
 

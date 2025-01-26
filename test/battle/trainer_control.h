@@ -29,7 +29,7 @@
 #line 9
             .nickname = COMPOUND_STRING("Bubbles"),
 #line 9
-            .species = SPECIES_CHIBI_YUUGI,
+            .species = SPECIES_WOBBUFFET,
 #line 9
             .gender = TRAINER_MON_FEMALE,
 #line 9
@@ -63,7 +63,7 @@
             },
             {
 #line 24
-            .species = SPECIES_CHIBI_YUUGI,
+            .species = SPECIES_WOBBUFFET,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 27
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -72,18 +72,16 @@
 #line 25
             .lvl = 5,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 29
-            .species = SPECIES_NORMAL_KOSUZU,
+            .species = SPECIES_WYNAUT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 31
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 30
             .lvl = 5,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -97,7 +95,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 36
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 38
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 39
@@ -114,7 +112,6 @@
 #line 43
             .lvl = 5,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -128,7 +125,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 48
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 50
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 51
@@ -145,7 +142,6 @@
 #line 55
             .lvl = 50,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -159,7 +155,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 60
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 62
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 63
@@ -176,7 +172,6 @@
 #line 67
             .lvl = 1,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -190,7 +185,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 72
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 74
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 75
@@ -207,7 +202,6 @@
 #line 79
             .lvl = 99,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -220,7 +214,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 84
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 86
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 87
@@ -239,7 +233,6 @@
 #line 91
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 92
@@ -250,7 +243,6 @@
 #line 93
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 94
@@ -261,7 +253,6 @@
 #line 95
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 96
@@ -272,7 +263,6 @@
 #line 97
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -285,7 +275,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 101
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 103
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 104
@@ -304,7 +294,6 @@
 #line 108
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 109
@@ -315,7 +304,6 @@
 #line 111
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 110
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -328,7 +316,6 @@
 #line 114
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 113
             .tags = MON_POOL_TAG_ACE,
             },
@@ -341,7 +328,6 @@
 #line 116
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 117
@@ -352,7 +338,6 @@
 #line 119
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 118
             .tags = MON_POOL_TAG_ACE,
             },
@@ -365,7 +350,6 @@
 #line 122
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 121
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -380,7 +364,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 126
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 128
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 129
@@ -401,7 +385,6 @@
 #line 135
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 134
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -414,7 +397,6 @@
 #line 138
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 137
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -427,7 +409,6 @@
 #line 141
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 140
             .tags = MON_POOL_TAG_LEAD | MON_POOL_TAG_WEATHER_SETTER,
             },
@@ -440,7 +421,6 @@
 #line 144
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 143
             .tags = MON_POOL_TAG_LEAD | MON_POOL_TAG_WEATHER_ABUSER,
             },
@@ -453,7 +433,6 @@
 #line 147
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 146
             .tags = MON_POOL_TAG_LEAD | MON_POOL_TAG_WEATHER_SETTER,
             },
@@ -466,7 +445,6 @@
 #line 150
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 149
             .tags = MON_POOL_TAG_LEAD | MON_POOL_TAG_WEATHER_ABUSER,
             },
@@ -479,7 +457,6 @@
 #line 153
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 152
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -492,7 +469,6 @@
 #line 156
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 155
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -505,7 +481,6 @@
 #line 158
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 159
@@ -516,7 +491,6 @@
 #line 160
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -529,7 +503,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 164
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 166
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 167
@@ -550,7 +524,6 @@
 #line 173
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 172
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -563,7 +536,6 @@
 #line 176
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 175
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -576,7 +548,6 @@
 #line 179
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 178
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -591,7 +562,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 183
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 185
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 186
@@ -614,7 +585,6 @@
 #line 192
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 193
@@ -625,7 +595,6 @@
 #line 195
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 194
             .tags = MON_POOL_TAG_LEAD,
             },
@@ -638,7 +607,6 @@
 #line 197
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
         },
     },
@@ -651,7 +619,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 201
         .trainerPic = TRAINER_PIC_RED,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 203
             TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 204
@@ -674,7 +642,6 @@
 #line 211
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 210
             .tags = MON_POOL_TAG_ACE,
             },
@@ -687,7 +654,6 @@
 #line 213
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },
             {
 #line 214
@@ -698,7 +664,6 @@
 #line 216
             .lvl = 100,
             .nature = NATURE_HARDY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 215
             .tags = MON_POOL_TAG_LEAD,
             },
