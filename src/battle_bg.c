@@ -1001,15 +1001,6 @@ static u8 GetBattleTerrainOverride(void)
     return GetBattleTerrainByMapScene(battleScene);
 }
 
-static void UNUSED CB2_UnusedBattleInit(void);
-static u8 GetBattleTerrainOverride(void);
-
-static void UNUSED CB2_UnusedBattleInit(void)
-{
-    AnimateSprites();
-    BuildOamBuffer();
-}
-
 void BattleInitBgsAndWindows(void)
 {
     ResetBgsAndClearDma3BusyFlags(0);
