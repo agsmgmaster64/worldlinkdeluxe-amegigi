@@ -1,5 +1,5 @@
 const LOCALID_SHIORI = 2
-const LOCALID_RALSEI = 3
+const LOCALID_RALSEI = 1
 
 mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -23,7 +23,7 @@ mapscripts LittlerootTown_ProfessorBirchsLab_MapScripts {
 	]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_BIRCH_LAB_STATE, 0: LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveStarterEvent
-		VAR_BIRCH_LAB_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
+		VAR_BIRCH_LAB_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveDexEvent
 		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1: LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
 		VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4: LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
     ]
@@ -47,6 +47,57 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveStarterEvent {
 	end
 }
 
+script LittlerootTown_ProfessorBirchsLab_EventScript_ShioriGiveDexEvent {
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerMoveToShiori)
+	waitmovement(0)
+	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Shiori)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_HeardYouBeatRivalTakePokedex)
+	closemessage
+	call(LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveDex)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(LOCALID_RALSEI, LittlerootTown_ProfessorBirchsLab_Movement_RalseiApproachPlayer)
+	waitmovement(0)
+	applymovement(OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft)
+	waitmovement(0)
+	call(LittlerootTown_ProfessorBirchsLab_EventScript_RalseiGiveTohoOrbs)
+	setvar(VAR_BIRCH_LAB_STATE, 5)
+	setflag(FLAG_ADVENTURE_STARTED)
+	setvar(VAR_OLDALE_TOWN_STATE, 1)
+	setvar(VAR_LITTLEROOT_RIVAL_STATE, 4)
+	setvar(VAR_LITTLEROOT_TOWN_STATE, 3)
+	setflag(FLAG_SYS_QUEST_MENU_GET)
+	startquest(QUEST_IDOLLDEX)
+	releaseall
+	end
+}
+
+script LittlerootTown_ProfessorBirchsLab_EventScript_ReceiveDex {
+	playfanfare(MUS_OBTAIN_ITEM)
+	message(LittlerootTown_ProfessorBirchsLab_Text_ReceivedPokedex)
+	waitfanfare
+	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_SYS_NATIONAL_DEX)
+	special(EnableNationalPokedex)
+	special(SetUnlockedPokedexFlags)
+	setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+	setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+	return
+}
+
+script LittlerootTown_ProfessorBirchsLab_EventScript_RalseiGiveTohoOrbs {
+	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Ralsei)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_MayGotPokedexTooTakeThese)
+	closemessage
+	giveitem(ITEM_TOHO_ORB, 5)
+	setspeakername(LittlerootTown_ProfessorBirchsLab_Text_Ralsei)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_CatchCutePokemonWithPokeBalls)
+	closemessage
+	setvar(VAR_RESULT, 0)
+	return
+}
+
 script LittlerootTown_ProfessorBirchsLab_EventScript_Shiori {
 	lock
 	faceplayer
@@ -61,6 +112,11 @@ movement LittlerootTown_ProfessorBirchsLab_Movement_PlayerMoveToShiori {
 	face_up
 }
 
+movement LittlerootTown_ProfessorBirchsLab_Movement_RalseiApproachPlayer {
+	walk_down
+	walk_right * 3
+}
+
 text LittlerootTown_ProfessorBirchsLab_Text_Shiori {
 	"Shiori"
 }
@@ -70,7 +126,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_Ralsei {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro {
-	format("Shiorin! It's me, Shiori Novella, one of the professors in Littleroot here.\p"
+	format("{CREATE_MUGSHOT MUGSHOT_SHIORI EMOTE_NORMAL}Shiorin! It's me, Shiori Novella, one of the professors in Littleroot here.\p"
 	"I heard you moved in from another region relatively nearby.\p"
 	"Must be pretty nice to move into this little strange region that we call home here.\p"
 	"Oh yeah, I mentioned myself being one of the professors here, did I?\p"
@@ -82,7 +138,7 @@ text LittlerootTown_ProfessorBirchsLab_Text_ShioriIntro {
 }
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter {
-	format("Oh yeah, I should mention, this Puppet follows you around outside its Orb as well.\p"
+	format("{CREATE_MUGSHOT MUGSHOT_SHIORI EMOTE_NORMAL}Oh yeah, I should mention, this Puppet follows you around outside its Orb as well.\p"
 	"It's pretty cute seeing the little Puppets follow their trainers around.\p"
 	"You can even set which Puppet you want in the party if you have more than one.\p"
 	"Speaking of, my partner Ralsei should have the Toho Orbs and Dex that have been brought just for you.\p"
