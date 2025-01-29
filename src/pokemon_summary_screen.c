@@ -159,7 +159,8 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u16 spdef; // 0x2A
         u16 speed; // 0x2C
         u16 item; // 0x2E
-        u16 friendship; // 0x30
+        u16 friendship:8; // 0x30
+        u16 affection:8; // 0x30
         u8 OTGender; // 0x32
         u8 nature; // 0x33
         u8 ppBonuses; // 0x34
@@ -276,7 +277,7 @@ static void PrintEggMemo(void);
 static void Task_PrintSkillsPage(u8);
 static void PrintHeldItemName(void);
 static void PrintSkillsPageText(void);
-static void PrintRibbonCount(void);
+static void PrintFriendship(void);
 static void BufferLeftColumnStats(void);
 static void PrintLeftColumnStats(void);
 static void BufferRightColumnStats(void);
@@ -317,7 +318,6 @@ static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void SummaryScreen_DestroyAnimDelayTask(void);
-
 static u8 GetNatureColourID(u8 nature, u8 statIndex);
 static void PrintNatureColouredStatNames(void);
 static bool32 ShouldShowMoveRelearner(void);
@@ -1538,6 +1538,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->metLevel = GetMonData(mon, MON_DATA_MET_LEVEL);
         sum->metGame = GetMonData(mon, MON_DATA_MET_GAME);
         sum->friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
+        sum->affection = GetMonAffectionHearts(mon);
         break;
     default:
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);
@@ -1694,28 +1695,22 @@ static void ClearStatLabel(u32 length, u32 statsCoordX, u32 statsCoordY)
 
 static void Task_HandleInput(u8 taskId)
 {
-    s16 *data = gTasks[taskId].data;
-
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
         if (JOY_NEW(DPAD_UP))
         {
-            data[3] = 0;
             ChangeSummaryPokemon(taskId, -1);
         }
         else if (JOY_NEW(DPAD_DOWN))
         {
-            data[3] = 0;
             ChangeSummaryPokemon(taskId, 1);
         }
         else if ((JOY_NEW(DPAD_LEFT)) || GetLRKeysPressed() == MENU_L_PRESSED)
         {
-            data[3] = 0;
             ChangePage(taskId, -1);
         }
         else if ((JOY_NEW(DPAD_RIGHT)) || GetLRKeysPressed() == MENU_R_PRESSED)
         {
-            data[3] = 0;
             ChangePage(taskId, 1);
         }
         else if (JOY_NEW(A_BUTTON))
@@ -3669,6 +3664,7 @@ static void PrintEggMemo(void)
 static void PrintSkillsPageText(void)
 {
     PrintHeldItemName();
+    PrintFriendship();
     PrintNatureColouredStatNames();
     if(ShouldShowIvEvPrompt())
         ShowUtilityPrompt(SUMMARY_SKILLS_MODE_STATS);
@@ -3685,8 +3681,11 @@ static void Task_PrintSkillsPage(u8 taskId)
 
     switch (data[0])
     {
-    case 1:
+    case 0:
         PrintHeldItemName();
+        break;
+    case 1:
+        PrintFriendship();
         break;
     case 2:
         PrintNatureColouredStatNames();
@@ -3737,23 +3736,29 @@ static void PrintHeldItemName(void)
     PrintTextOnWindowWithFont(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_HELD_ITEM), text, x, 1, 0, 0, fontId);
 }
 
-static void PrintRibbonCount(void)
+static void PrintFriendship(void)
 {
-    const u8 *text;
+    const u8 bgColour[] = _("{COLOR BLUE}{SHADOW DARK_GRAY}");
+    const u8 starIcon[] = _("0");
+    u8 *text;
     int x;
+    u16 i;
 
-    if (sMonSummaryScreen->summary.ribbonCount == 0)
+    text = StringCopy(gStringVar1, bgColour);
+
+    if (sMonSummaryScreen->summary.affection == 0)
     {
-        text = gText_None;
+        text = StringAppend(gStringVar1, gText_Dash);
     }
     else
     {
-        ConvertIntToDecimalStringN(gStringVar1, sMonSummaryScreen->summary.ribbonCount, STR_CONV_MODE_RIGHT_ALIGN, 2);
-        StringExpandPlaceholders(gStringVar4, gText_RibbonsVar1);
-        text = gStringVar4;
+        for (i = 0; i < sMonSummaryScreen->summary.affection; ++i)
+            text = StringAppend(text, starIcon);
     }
 
-    x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 70) + 6;
+    text = gStringVar1;
+
+    x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 70) + 4;
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), text, x, 1, 0, 0);
 }
 
@@ -3797,7 +3802,6 @@ static void BufferStat(u8 *dst, u8 statIndex, u32 stat, u32 strId, u32 n)
     else
         txtPtr = StringCopy(dst, sTextNatureNeutral);
 
-    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
     if (!P_SUMMARY_SCREEN_IV_EV_VALUES 
         && sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS)
         StringAppend(dst, GetLetterGrade(stat));
@@ -3832,15 +3836,10 @@ static const u8 *GetLetterGrade(u32 stat)
 
 static void BufferLeftColumnStats(void)
 {
-    u8 *currentHPString = Alloc(8);
-    u8 *maxHPString = Alloc(8);
-    u8 *attackString = Alloc(8);
-    u8 *defenseString = Alloc(8);
-
-    ConvertIntToDecimalStringN(currentHPString, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(maxHPString, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(attackString, sMonSummaryScreen->summary.atk, STR_CONV_MODE_RIGHT_ALIGN, 7);
-    ConvertIntToDecimalStringN(defenseString, sMonSummaryScreen->summary.def, STR_CONV_MODE_RIGHT_ALIGN, 7);
+    u8 *currentHPString = Alloc(20);
+    u8 *maxHPString = Alloc(20);
+    u8 *attackString = Alloc(20);
+    u8 *defenseString = Alloc(20);
 
     DynamicPlaceholderTextUtil_Reset();
 
@@ -3890,10 +3889,6 @@ static void PrintLeftColumnStats(void)
 
 static void BufferRightColumnStats(void)
 {
-    ConvertIntToDecimalStringN(gStringVar1, sMonSummaryScreen->summary.spatk, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar2, sMonSummaryScreen->summary.spdef, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar3, sMonSummaryScreen->summary.speed, STR_CONV_MODE_RIGHT_ALIGN, 3);
-
     DynamicPlaceholderTextUtil_Reset();
 
     BufferStat(gStringVar1, STAT_SPATK, sMonSummaryScreen->summary.spatk, 0, 3);
