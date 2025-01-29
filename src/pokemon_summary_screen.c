@@ -1778,7 +1778,7 @@ static u8 IncrementSkillsStatsMode(u8 mode)
     switch (mode)
     {
     case SUMMARY_SKILLS_MODE_STATS:
-        if (gSaveBlock2Ptr->optionsSummaryIvView)
+        if (!gSaveBlock2Ptr->optionsSummaryIvView)
         {
             sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_IVS;
             return SUMMARY_SKILLS_MODE_IVS;
@@ -3669,7 +3669,6 @@ static void PrintEggMemo(void)
 static void PrintSkillsPageText(void)
 {
     PrintHeldItemName();
-    PrintRibbonCount();
     PrintNatureColouredStatNames();
     if(ShouldShowIvEvPrompt())
         ShowUtilityPrompt(SUMMARY_SKILLS_MODE_STATS);
@@ -3686,11 +3685,8 @@ static void Task_PrintSkillsPage(u8 taskId)
 
     switch (data[0])
     {
-    case 0:
-        PrintHeldItemName();
-        break;
     case 1:
-        PrintRibbonCount();
+        PrintHeldItemName();
         break;
     case 2:
         PrintNatureColouredStatNames();
@@ -4746,7 +4742,7 @@ static inline void ShowUtilityPrompt(s16 mode)
         {
             if (mode == SUMMARY_SKILLS_MODE_STATS)
             {
-                if (gSaveBlock2Ptr->optionsSummaryIvView)
+                if (!gSaveBlock2Ptr->optionsSummaryIvView)
                     promptText = gText_SkillPageIvs;
                 else
                     promptText = gText_SkillPageEvs;
