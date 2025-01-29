@@ -702,11 +702,6 @@ static void DoMoveRelearnerMain(void)
                 }
                 gOriginSummaryScreenPage = 0;
             }
-            else if (FlagGet(FLAG_PARTY_MOVES))
-            {
-                CB2_ReturnToPartyMenuFromNicknameScreen();
-                FlagClear(FLAG_PARTY_MOVES);
-            }
             else
             {
                 SetMainCallback2(CB2_ReturnToField);

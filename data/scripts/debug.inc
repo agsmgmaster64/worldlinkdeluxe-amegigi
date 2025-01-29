@@ -310,8 +310,8 @@ Debug_EventScript_Script_6_Mart:
 
 Debug_EventScript_Script_7::
 	lockall
-	fadescreenswapbuffers FADE_TO_BLACK
-	special StartBerryCrushSolo
+	choose_mons
+	multi_2_vs_1 TRAINER_JOEY, Debug_EventScript_Script_5_Text_SkittySoMuchCuterThanImagined, PARTNER_STEVEN
 	release
 	end
 

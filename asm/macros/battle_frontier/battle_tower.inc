@@ -93,7 +93,7 @@
 	@Custom multi-battle commands
 
 	.macro choose_mons
-	fadescreen 1
+	fadescreen FADE_TO_BLACK
 	special ChooseHalfPartyForBattle @ choose 3 mons for battle
 	waitstate
 	.endm
