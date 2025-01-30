@@ -1015,6 +1015,10 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	msgbox LittlerootTown_Text_WearTheseRunningShoes, MSGBOX_DEFAULT
 	hidespeakername
 	giveitem ITEM_FISHING_ROD
+	giveitem ITEM_OUTFIT_BOX
+	unlockoutfit OUTFIT_THE_ALTERNATE
+	unlockoutfit OUTFIT_YOUNG_START
+	unlockoutfit OUTFIT_ALTERED_YOUTH
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setspeakername LittlerootTown_Text_MomSpeaker
 	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT

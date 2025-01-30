@@ -87,7 +87,7 @@ enum ColorId {
 };
 
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
-    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
+    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,  TEXT_DYNAMIC_COLOR_1},
     [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
 };
 
@@ -938,7 +938,7 @@ u32 GetPlayerTrainerPicIdByOutfitGenderType(u32 outfitId, u32 gender, bool32 typ
     if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
         return gOutfits[outfitId].trainerPics[gender][type];
     else
-        return gOutfits[0].trainerPics[gender][type];
+        return gOutfits[OUTFIT_NONE].trainerPics[gender][type];
 }
 
 u32 GetPlayerMugshotIdByOutfitGender(u32 outfitId, u32 gender)
@@ -946,7 +946,7 @@ u32 GetPlayerMugshotIdByOutfitGender(u32 outfitId, u32 gender)
     if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
         return gOutfits[outfitId].mugshotIds[gender];
     else
-        return gOutfits[0].mugshotIds[gender];
+        return gOutfits[OUTFIT_NONE].mugshotIds[gender];
 }
 
 const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)

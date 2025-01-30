@@ -30,11 +30,13 @@
 #include "task.h"
 #include "text_window.h"
 #include "overworld.h"
+#include "outfit_menu.h"
 #include "event_data.h"
 #include "constants/items.h"
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/field_mugshots.h"
 #include "pokemon_icon.h"
 #include "region_map.h"
 #include "pokedex.h"
@@ -187,6 +189,11 @@ struct HWWindowPosition {
     struct HighlightWindowCoords winv;
 };
 
+struct OutfitMugshot {
+    const struct CompressedSpriteSheet mugshotGfx;
+    const struct SpritePalette mugshotPal;
+};
+
 static const struct HWWindowPosition HWinCoords[6] = 
 {
     [HW_WIN_CONTINUE]        = {{7, 233},   {7, 89},},
@@ -223,6 +230,8 @@ static const u16 sRenkoMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/renko_m
 static const u32 sRenkoMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/renko_mugshot.4bpp.lz");
 static const u16 sMaribelMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/maribel_mugshot.gbapal");
 static const u32 sMaribelMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/maribel_mugshot.4bpp.lz");
+static const u16 sGigiMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/gigi_mugshot.gbapal");
+static const u32 sGigiMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/gigi_mugshot.4bpp.lz");
 
 
 //
@@ -260,6 +269,19 @@ static const struct CompressedSpriteSheet sSpriteSheet_MaribelMugshot =
 static const struct SpritePalette sSpritePal_MaribelMugshot =
 {
     .data = sMaribelMugshot_Pal,
+    .tag = TAG_MUGSHOT
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_GigiMugshot =
+{
+    .data = sGigiMugshot_Gfx,
+    .size = 64*64*1/2,
+    .tag = TAG_MUGSHOT,
+};
+
+static const struct SpritePalette sSpritePal_GigiMugshot =
+{
+    .data = sGigiMugshot_Pal,
     .tag = TAG_MUGSHOT
 };
 
@@ -338,6 +360,25 @@ static const struct SpriteTemplate sSpriteTemplate_IconBox =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
+};
+
+static const struct OutfitMugshot sOutfitMugshot[MUGSHOT_COUNT] =
+{
+    [MUGSHOT_RENKO] =
+    {
+        .mugshotGfx = sSpriteSheet_RenkoMugshot,
+        .mugshotPal = sSpritePal_RenkoMugshot,
+    },
+    [MUGSHOT_MARIBEL] =
+    {
+        .mugshotGfx = sSpriteSheet_MaribelMugshot,
+        .mugshotPal = sSpritePal_MaribelMugshot,
+    },
+    [MUGSHOT_GIGI] =
+    {
+        .mugshotGfx = sSpriteSheet_GigiMugshot,
+        .mugshotPal = sSpritePal_GigiMugshot,
+    },
 };
 
 //==========UI Initialization from Ghoulslash's UI Shell Branch==========//
@@ -607,6 +648,13 @@ static void MoveHWindowsWithInput(void) // Update GPU windows after selection is
     SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(HWinCoords[sSelectedOption].winv.left, HWinCoords[sSelectedOption].winv.right));
 }
 
+static void LoadOutfitBasedMugshot(void)
+{
+    u32 mugshotId = GetPlayerMugshotIdByOutfitGender(gSaveBlock3Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
+    LoadCompressedSpriteSheet(&sOutfitMugshot[mugshotId].mugshotGfx);
+    LoadSpritePalette(&sOutfitMugshot[mugshotId].mugshotPal);
+}
+
 static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spritesheets, and palettes
 {
     switch (sMainMenuDataPtr->gfxLoadState)
@@ -655,16 +703,14 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
             LoadSpritePalette(&sSpritePal_IconBox);
-            LoadCompressedSpriteSheet(&sSpriteSheet_RenkoMugshot);
-            LoadSpritePalette(&sSpritePal_RenkoMugshot);
+            LoadOutfitBasedMugshot();
             LoadPalette(sMainBgPalette, 0, 32);
         }
         else
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBoxFem);
             LoadSpritePalette(&sSpritePal_IconBoxFem);
-            LoadCompressedSpriteSheet(&sSpriteSheet_MaribelMugshot);
-            LoadSpritePalette(&sSpritePal_MaribelMugshot);
+            LoadOutfitBasedMugshot();
             LoadPalette(sMainBgPaletteFem, 0, 32);
         }
         LoadPalette(sScrollBgPalette, 16, 32);

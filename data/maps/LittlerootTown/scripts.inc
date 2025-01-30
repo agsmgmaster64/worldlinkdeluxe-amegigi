@@ -1791,18 +1791,26 @@ LittlerootTown_EventScript_GiveRunningShoes::
 # 1017 "data/maps/LittlerootTown/scripts.pory"
 	giveitem ITEM_FISHING_ROD
 # 1018 "data/maps/LittlerootTown/scripts.pory"
-	setflag FLAG_RECEIVED_RUNNING_SHOES
+	giveitem ITEM_OUTFIT_BOX
 # 1019 "data/maps/LittlerootTown/scripts.pory"
-	setspeakername LittlerootTown_Text_MomSpeaker
+	unlockoutfit OUTFIT_THE_ALTERNATE
 # 1020 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+	unlockoutfit OUTFIT_YOUNG_START
 # 1021 "data/maps/LittlerootTown/scripts.pory"
-	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+	unlockoutfit OUTFIT_ALTERED_YOUTH
 # 1022 "data/maps/LittlerootTown/scripts.pory"
-	closemessage
+	setflag FLAG_RECEIVED_RUNNING_SHOES
 # 1023 "data/maps/LittlerootTown/scripts.pory"
-	delay 30
+	setspeakername LittlerootTown_Text_MomSpeaker
 # 1024 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_Text_ExplainRunningShoes, MSGBOX_DEFAULT
+# 1025 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_Text_ComeHomeIfAnythingHappens, MSGBOX_DEFAULT
+# 1026 "data/maps/LittlerootTown/scripts.pory"
+	closemessage
+# 1027 "data/maps/LittlerootTown/scripts.pory"
+	delay 30
+# 1028 "data/maps/LittlerootTown/scripts.pory"
 	return
 
 LittlerootTown_Text_MomSpeaker::

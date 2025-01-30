@@ -38,7 +38,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! DESC: outfit's name
         .name = COMPOUND_STRING("Hifuu Usual"),
         //! DESC: outfit's description
-        .desc = COMPOUND_STRING("The usual, but\nbasic OUTFIT."),
+        .desc = COMPOUND_STRING("It's you!\nNormally,\nat least."),
 
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
@@ -151,7 +151,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .isHidden = FALSE,
         .prices = { 100, 100 },
         .name = COMPOUND_STRING("Young Start"),
-        .desc = COMPOUND_STRING("The usual, but\nbasic OUTFIT."),
+        .desc = COMPOUND_STRING("Back in the\ngood old days."),
         .trainerPics = {
             [MALE] =   { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
             [FEMALE] = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
@@ -199,7 +199,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .isHidden = FALSE,
         .prices = { 200, 200 },
         .name = COMPOUND_STRING("Altered Youth"),
-        .desc = COMPOUND_STRING("The one you\ndidn't end up\nchoosing first."),
+        .desc = COMPOUND_STRING("Stop lying\nabout your past."),
         .trainerPics = {
             [MALE]   = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
             [FEMALE] = { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
@@ -246,11 +246,15 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     [OUTFIT_GIGI_MURIN] = {
         .isHidden = TRUE,
         .prices = { 200, 200 },
-        .name = COMPOUND_STRING("Gigi Cosplay"),
+        .name = COMPOUND_STRING("Gigi Gremsplay"),
         .desc = COMPOUND_STRING("Cosplay of the\norange gremlin\nherself."),
         .trainerPics = {
             [MALE]   = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_RENKO },
             [FEMALE] = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_MARIBEL },
+        },
+        .mugshotIds = {
+            [MALE] =   MUGSHOT_GIGI,
+            [FEMALE] = MUGSHOT_GIGI,
         },
         .avatarGfxIds = {
            [MALE] = {

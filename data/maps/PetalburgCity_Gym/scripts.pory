@@ -1,3 +1,41 @@
+const LOCALID_LARRY = 1
+
+script PetalburgCity_Gym_EventScript_Larry {
+	lock
+	faceplayer
+	switch(var(VAR_PETALBURG_GYM_STATE)) {
+		case 2:
+			goto(PetalburgCity_Gym_EventScript_LarryNoBadges)
+	}
+	setspeakername(PetalburgCity_Gym_Text_LarryName)
+	msgbox(PetalburgCity_Gym_Text_LarryIntro)
+	closemessage
+	setvar(VAR_PETALBURG_GYM_STATE, 2)
+	startquest(QUEST_CHAMPION)
+	release
+	end
+}
+
+script PetalburgCity_Gym_EventScript_LarryNoBadges {
+	setspeakername(PetalburgCity_Gym_Text_LarryName)
+	msgbox(PetalburgCity_Gym_Text_LarryNoBadges)
+	closemessage
+	release
+	end
+}
+
+text PetalburgCity_Gym_Text_LarryName {
+	"Larry"
+}
+
+text PetalburgCity_Gym_Text_LarryIntro {
+	format("I say something.\pYou can progress now.")
+}
+
+text PetalburgCity_Gym_Text_LarryNoBadges {
+	format("Go to Noiseboro now.")
+}
+
 raw `
 .set LOCALID_NORMAN, 1
 .set LOCALID_WALLY, 10

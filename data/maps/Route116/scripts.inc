@@ -899,19 +899,19 @@ Route116_Text_RouteSignRustboro:
 # 450 "data/maps/Route116/scripts.pory"
 Route116_Text_RusturfTunnelSign:
 # 451 "data/maps/Route116/scripts.pory"
-	.string "RUSTURF TUNNEL\n"
+	.string "Noiseturf Mines\n"
 # 452 "data/maps/Route116/scripts.pory"
 	.string "“Linking RUSTBORO and VERDANTURF\p"
 # 453 "data/maps/Route116/scripts.pory"
-	.string "“The tunnel project has been\n"
+	.string "“Caution with the recent mining\n"
 # 454 "data/maps/Route116/scripts.pory"
-	.string "canceled.”$"
+	.string "project there.”$"
 # 455 "data/maps/Route116/scripts.pory"
 
 # 456 "data/maps/Route116/scripts.pory"
 Route116_Text_TunnelersRestHouse:
 # 457 "data/maps/Route116/scripts.pory"
-	.string "TUNNELER'S REST HOUSE$"
+	.string "funni hosue$"
 # 458 "data/maps/Route116/scripts.pory"
 
 # 459 "data/maps/Route116/scripts.pory"
