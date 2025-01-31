@@ -76,3 +76,8 @@
 - [Data Files](https://www.pokecommunity.com/showthread.php?t=417909)
 - [Complete FireRed Upgrade](https://github.com/Skeli789/Complete-Fire-Red-Upgrade)
 - [pokeemerald](https://github.com/pret/pokeemerald/)
+
+## Mega Evolution Overworld Sprite Credits:
+- [princess-phoenix](https://www.deviantart.com/princess-phoenix)
+- [larryturbo](https://www.deviantart.com/larryturbo)
+- [kidkatt](https://www.deviantart.com/kidkatt)

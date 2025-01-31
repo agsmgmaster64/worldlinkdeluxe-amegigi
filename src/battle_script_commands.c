@@ -1143,7 +1143,7 @@ bool32 ShouldTeraShellDistortTypeMatchups(u32 move, u32 battlerDef)
      && gBattleMons[battlerDef].species == SPECIES_TERAPAGOS_TERASTAL
      && gBattleMons[battlerDef].hp == gBattleMons[battlerDef].maxHP
      && !IsBattleMoveStatus(move)
-     && MoveResultHasEffect(battlerDef)
+     && !(gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_NO_EFFECT)
      && GetBattlerAbility(battlerDef) == ABILITY_TERA_SHELL)
         return TRUE;
 
@@ -1348,7 +1348,7 @@ static void Cmd_attackcanceler(void)
 
 static bool32 JumpIfMoveFailed(u8 adder, u16 move)
 {
-    if (!MoveResultHasEffect(gBattlerTarget))
+    if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
     {
         gLastLandedMoves[gBattlerTarget] = 0;
         gLastHitByType[gBattlerTarget] = 0;
@@ -2211,7 +2211,7 @@ static void Cmd_adjustdamage(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 
     if (gSpecialStatuses[gBattlerAttacker].gemBoost
-        && MoveResultHasEffect(gBattlerTarget)
+        && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
         && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
         && gBattleMons[gBattlerAttacker].item
         && moveEffect != EFFECT_PLEDGE
@@ -2526,7 +2526,7 @@ static void Cmd_healthbarupdate(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if (MoveResultHasEffect(battler) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
+    if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
         if (DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove) && gDisableStructs[battler].substituteHP && !(gHitMarker & HITMARKER_IGNORE_SUBSTITUTE))
         {
@@ -2570,7 +2570,7 @@ static void Cmd_datahpupdate(void)
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
 
-    if (MoveResultHasEffect(battler) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
+    if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT) || (gHitMarker & HITMARKER_PASSIVE_DAMAGE))
     {
         if (DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove) && gDisableStructs[battler].substituteHP && !(gHitMarker & HITMARKER_IGNORE_SUBSTITUTE))
         {
@@ -2698,7 +2698,7 @@ static void Cmd_critmessage(void)
 
     if (gBattleControllerExecFlags == 0)
     {
-        if (gSpecialStatuses[gBattlerTarget].criticalHit && MoveResultHasEffect(gBattlerTarget))
+        if (gSpecialStatuses[gBattlerTarget].criticalHit && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
         {
             PrepareStringBattle(STRINGID_CRITICALHIT, gBattlerAttacker);
 
@@ -2731,7 +2731,7 @@ static void Cmd_effectivenesssound(void)
         }
         moveResultFlags = UpdateEffectivenessResultFlagsForDoubleSpreadMoves(gBattleStruct->moveResultFlags[gBattlerTarget]);
     }
-    else if (MoveResultHasEffect(gBattlerTarget) && DoesBattlerNegateDamage(gBattlerTarget))
+    else if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT) && DoesBattlerNegateDamage(gBattlerTarget))
         moveResultFlags = 0;
 
     if (!(moveResultFlags & MOVE_RESULT_MISSED))
@@ -4366,7 +4366,7 @@ static void Cmd_setadditionaleffects(void)
 {
     CMD_ARGS();
 
-    if (MoveResultHasEffect(gBattlerTarget))
+    if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
     {
         u32 numAdditionalEffects = GetMoveAdditionalEffectCount(gCurrentMove);
         if (numAdditionalEffects > gBattleStruct->additionalEffectsCounter)
@@ -6025,7 +6025,7 @@ static void Cmd_moveend(void)
                 // Not strictly a protect effect, but works the same way
                 else if (gProtectStructs[gBattlerTarget].beakBlastCharge
                          && CanBeBurned(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
-                         && MoveResultHasEffect(gBattlerTarget))
+                         && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 {
                     gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
                     gBattleMons[gBattlerAttacker].status1 = STATUS1_BURN;
@@ -6048,7 +6048,7 @@ static void Cmd_moveend(void)
                     gBattleScripting.moveendState++;
                     break;
                 }
-                else if (IsBattlerAlive(gBattlerAttacker) && MoveResultHasEffect(gBattlerTarget))
+                else if (IsBattlerAlive(gBattlerAttacker) && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = max(1, (gBattleStruct->moveDamage[gBattlerTarget] * GetMoveAbsorbPercentage(gCurrentMove) / 100));
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetDrainedBigRootHp(gBattlerAttacker, gBattleStruct->moveDamage[gBattlerAttacker]);
@@ -6077,7 +6077,7 @@ static void Cmd_moveend(void)
                 && IsBattlerAlive(gBattlerTarget)
                 && gBattlerAttacker != gBattlerTarget
                 && GetBattlerSide(gBattlerAttacker) != GetBattlerSide(gBattlerTarget)
-                && MoveResultHasEffect(gBattlerTarget)
+                && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
                 && IsBattlerTurnDamaged(gBattlerTarget)
                 && !IsBattleMoveStatus(gCurrentMove)
                 && CompareStat(gBattlerTarget, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
@@ -6095,7 +6095,7 @@ static void Cmd_moveend(void)
                 && IsBattlerAlive(gBattlerTarget)
                 && gBattlerAttacker != gBattlerTarget
                 && (moveType == TYPE_FIRE || CanBurnHitThaw(gCurrentMove))
-                && MoveResultHasEffect(gBattlerTarget))
+                && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
             {
                 gBattleMons[gBattlerTarget].status1 &= ~STATUS1_FREEZE;
                 BtlController_EmitSetMonData(gBattlerTarget, BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].status1), &gBattleMons[gBattlerTarget].status1);
@@ -6108,7 +6108,7 @@ static void Cmd_moveend(void)
                 && IsBattlerAlive(gBattlerTarget)
                 && gBattlerAttacker != gBattlerTarget
                 && MoveThawsUser(originallyUsedMove)
-                && MoveResultHasEffect(gBattlerTarget))
+                && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
             {
                 gBattleMons[gBattlerTarget].status1 &= ~STATUS1_FROSTBITE;
                 BtlController_EmitSetMonData(gBattlerTarget, BUFFER_A, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].status1), &gBattleMons[gBattlerTarget].status1);
@@ -6128,7 +6128,7 @@ static void Cmd_moveend(void)
                 break;
             }
             else if (moveRecoil > 0
-                  && MoveResultHasEffect(gBattlerTarget)
+                  && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
                   && IsBattlerAlive(gBattlerAttacker)
                   && gBattleScripting.savedDmg != 0) // Some checks may be redundant alongside this one
             {
@@ -6351,7 +6351,7 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ATTACKER_VISIBLE: // make attacker sprite visible
-            if (!MoveResultHasEffect(gBattlerTarget)
+            if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT
                 || !(gStatuses3[gBattlerAttacker] & (STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK))
                 || WasUnableToUseMove(gBattlerAttacker))
             {
@@ -6379,7 +6379,7 @@ static void Cmd_moveend(void)
         case MOVEEND_NUM_HITS:
             if (gBattlerAttacker != gBattlerTarget
                 && GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS
-                && MoveResultHasEffect(gBattlerTarget)
+                && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
                 && IsBattlerTurnDamaged(gBattlerTarget))
             {
                 gBattleStruct->timesGotHit[GetBattlerSide(gBattlerTarget)][gBattlerPartyIndexes[gBattlerTarget]]++;
@@ -6488,7 +6488,7 @@ static void Cmd_moveend(void)
                 if (!(gHitMarker & HITMARKER_FAINTED(gBattlerTarget)))
                     gLastHitBy[gBattlerTarget] = gBattlerAttacker;
 
-                if (gHitMarker & HITMARKER_OBEYS && MoveResultHasEffect(gBattlerTarget))
+                if (gHitMarker & HITMARKER_OBEYS && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 {
                     if (gChosenMove == MOVE_UNAVAILABLE)
                     {
@@ -6514,7 +6514,7 @@ static void Cmd_moveend(void)
                 && gHitMarker & HITMARKER_OBEYS
                 && gBattlerAttacker != gBattlerTarget
                 && !(gHitMarker & HITMARKER_FAINTED(gBattlerTarget))
-                && MoveResultHasEffect(gBattlerTarget))
+                && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
             {
                 gBattleStruct->lastTakenMove[gBattlerTarget] = gChosenMove;
                 gBattleStruct->lastTakenMoveFrom[gBattlerTarget][gBattlerAttacker] = gChosenMove;
@@ -6526,7 +6526,7 @@ static void Cmd_moveend(void)
             u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
             // Set a flag if move hits either target (for throat spray that can't check damage)
             if (!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
-             && MoveResultHasEffect(gBattlerTarget))
+             && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 gProtectStructs[gBattlerAttacker].targetAffected = TRUE;
 
             gBattleStruct->battlerState[gBattlerAttacker].targetsDone[gBattlerTarget] = TRUE;
@@ -6587,7 +6587,7 @@ static void Cmd_moveend(void)
         }
         case MOVEEND_MULTIHIT_MOVE:
         {
-            if (MoveResultHasEffect(gBattlerTarget)
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
              && gMultiHitCounter
              && !(moveEffect == EFFECT_PRESENT && gBattleStruct->presentBasePower == 0)) // Silly edge case
@@ -6666,7 +6666,7 @@ static void Cmd_moveend(void)
               && !gSpecialStatuses[gBattlerAttacker].gemBoost   // In base game, gems are consumed after magician would activate.
               && !(gWishFutureKnock.knockedOffMons[GetBattlerSide(gBattlerTarget)] & (1u << gBattlerPartyIndexes[gBattlerTarget]))
               && !DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
-              && MoveResultHasEffect(gBattlerTarget)
+              && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
               && (GetBattlerAbility(gBattlerTarget) != ABILITY_COLLECTOR || !IsBattlerAlive(gBattlerTarget)))
             {
                 StealTargetItem(gBattlerAttacker, gBattlerTarget);
@@ -6839,7 +6839,7 @@ static void Cmd_moveend(void)
               && !(gWishFutureKnock.knockedOffMons[GetBattlerSide(gBattlerAttacker)] & (1u << gBattlerPartyIndexes[gBattlerAttacker]))   // But not knocked off
               && !(TestIfSheerForceAffected(gBattlerAttacker, gCurrentMove))  // Pickpocket doesn't activate for sheer force
               && IsMoveMakingContact(gCurrentMove, gBattlerAttacker)    // Pickpocket requires contact
-              && MoveResultHasEffect(gBattlerTarget))           // Obviously attack needs to have worked
+              && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))           // Obviously attack needs to have worked
             {
                 u8 battlers[4] = {0, 1, 2, 3};
                 SortBattlersBySpeed(battlers, FALSE); // Pickpocket activates for fastest mon without item
@@ -7023,8 +7023,8 @@ static void Cmd_moveend(void)
                 gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].concertoOriginalTarget & 0x3;
 
             if (B_RAMPAGE_CANCELLING >= GEN_5
-              && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH) // If we're rampaging
-              && !MoveResultHasEffect(gBattlerTarget)         // And it is unusable
+              && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH)           // If we're rampaging
+              && gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT  // And it is unusable
               && (gBattleMons[gBattlerAttacker].status2 & STATUS2_LOCK_CONFUSE) != STATUS2_LOCK_CONFUSE_TURN(1))  // And won't end this turn
                 CancelMultiTurnMoves(gBattlerAttacker); // Cancel it
 
@@ -7068,7 +7068,7 @@ static void Cmd_moveend(void)
                 gBattleStruct->pledgeMove = FALSE;
             if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
                 SetActiveGimmick(gBattlerAttacker, GIMMICK_NONE);
-            if (B_CHARGE >= GEN_9 && moveType == TYPE_WIND && (IsBattlerTurnDamaged(gBattlerTarget) || !MoveResultHasEffect(gBattlerTarget)))
+            if (B_CHARGE >= GEN_9 && moveType == TYPE_WIND && (IsBattlerTurnDamaged(gBattlerTarget) || gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 gStatuses3[gBattlerAttacker] &= ~(STATUS3_CHARGED_UP);
             memset(gQueuedStatBoosts, 0, sizeof(gQueuedStatBoosts));
             ClearDamageCalcResults();
@@ -8300,7 +8300,7 @@ static void Cmd_hitanimation(void)
     {
         u32 battler = GetBattlerForBattleScript(cmd->battler);
 
-        if (MoveResultHasEffect(battler))
+        if (!(gBattleStruct->moveResultFlags[battler] & MOVE_RESULT_NO_EFFECT))
         {
             if (!(gHitMarker & HITMARKER_IGNORE_SUBSTITUTE)
              || !(DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove))
@@ -9136,7 +9136,7 @@ static void Cmd_useitemonopponent(void)
 
 static bool32 HasAttackerFaintedTarget(void)
 {
-    if (MoveResultHasEffect(gBattlerTarget)
+    if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
         && !IsBattleMoveStatus(gCurrentMove)
         && (gLastHitBy[gBattlerTarget] == 0xFF || gLastHitBy[gBattlerTarget] == gBattlerAttacker)
         && gBattleStruct->moveTarget[gBattlerAttacker] == gBattlerTarget
@@ -11876,7 +11876,7 @@ static void Cmd_stockpile(void)
         }
         break;
     case 1: // Save def/sp def stats.
-        if (MoveResultHasEffect(gBattlerTarget))
+        if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
         {
             gDisableStructs[gBattlerAttacker].stockpileDef += gBattleMons[gBattlerAttacker].statStages[STAT_DEF] - gDisableStructs[gBattlerAttacker].stockpileBeforeDef;
             gDisableStructs[gBattlerAttacker].stockpileSpDef += gBattleMons[gBattlerAttacker].statStages[STAT_SPDEF] - gDisableStructs[gBattlerAttacker].stockpileBeforeSpDef;
@@ -13876,7 +13876,7 @@ static void Cmd_handlerollout(void)
 {
     CMD_ARGS();
 
-    if (!MoveResultHasEffect(gBattlerTarget))
+    if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
     {
         CancelMultiTurnMoves(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_MoveMissedPause;
@@ -13914,7 +13914,7 @@ static void Cmd_handlefurycutter(void)
 {
     CMD_ARGS();
 
-    if (!MoveResultHasEffect(gBattlerTarget))
+    if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
     {
         gDisableStructs[gBattlerAttacker].furyCutterCounter = 0;
         gBattlescriptCurrInstr = BattleScript_MoveMissedPause;
@@ -14961,7 +14961,7 @@ static void Cmd_tryswapabilities(void)
     }
     else
     {
-        if (!MoveResultHasEffect(gBattlerTarget) || (GetActiveGimmick(gBattlerTarget) == GIMMICK_DYNAMAX))
+        if (gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT || (GetActiveGimmick(gBattlerTarget) == GIMMICK_DYNAMAX))
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
@@ -15476,7 +15476,7 @@ static void Cmd_removelightscreenreflect(void)
         side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
 
     if (B_BRICK_BREAK >= GEN_5)
-        failed = !MoveResultHasEffect(gBattlerTarget);
+        failed = gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT;
     else
         failed = FALSE;
 
@@ -17615,7 +17615,7 @@ void BS_TryActivateGulpMissile(void)
 {
     NATIVE_ARGS();
 
-    if (MoveResultHasEffect(gBattlerTarget)
+    if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
         && IsBattlerTurnDamaged(gBattlerTarget)
         && gBattleMons[gBattlerTarget].species != SPECIES_CRAMORANT
@@ -17817,7 +17817,7 @@ void BS_TryHitSwitchTarget(void)
 
     if (IsBattlerAlive(gBattlerAttacker)
      && IsBattlerAlive(gBattlerTarget)
-     && MoveResultHasEffect(gBattlerTarget)
+     && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
      && IsBattlerTurnDamaged(gBattlerTarget)
      && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT
      /*&& GetBattlerAbility(gBattlerTarget) != ABILITY_GUARD_DOG*/)
