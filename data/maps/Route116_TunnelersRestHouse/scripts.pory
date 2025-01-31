@@ -1,6 +1,6 @@
 
 const LOCALID_GIGI = 1
-const LOCALID_COOK = 2
+const LOCALID_INA = 2
 const LOCALID_BAELZ = 3
 
 const MULTI_BUY_ITEMS = 0
@@ -60,6 +60,48 @@ script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	closemessage
 	setspeakername(Route116_TunnelersRestHouse_Text_Player)
 	msgbox(Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Route116_TunnelersRestHouse_EventScript_InaFunEvent {
+	lock
+	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
+	applymovement(LOCALID_INA, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
+    msgbox(Route116_TunnelersRestHouse_Text_InaWah)
+	closemessage
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_BaelzNoMugshots)
+	closemessage
+	applymovement(LOCALID_INA, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
+	msgbox(Route116_TunnelersRestHouse_Text_InaAdmit)
+	closemessage
+	applymovement(LOCALID_BAELZ, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
+	msgbox(Route116_TunnelersRestHouse_Text_BaelzCheerUp)
+	closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiCookie)
+	closemessage
+	applymovement(LOCALID_INA, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
+	msgbox(Route116_TunnelersRestHouse_Text_InaThankYou)
+	closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiLavaridge)
 	closemessage
 	release
 	end
@@ -157,6 +199,10 @@ text Route116_TunnelersRestHouse_Text_Baelz {
 	"Baelz"
 }
 
+text Route116_TunnelersRestHouse_Text_Ina {
+	"Ina"
+}
+
 text Route116_TunnelersRestHouse_Text_Cook {
 	"Cook"
 }
@@ -228,6 +274,44 @@ text Route116_TunnelersRestHouse_Text_GigiDefense {
 text Route116_TunnelersRestHouse_Text_BaelzHuh {
 	format("Huh.\p"
 	"{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Well, {PLAYER}, do you want some nice Kronii Coin?")
+}
+
+text Route116_TunnelersRestHouse_Text_InaWah {
+	format("Wah!\NHello there, {PLAYER}.\p"
+	"My name is Ina and I'm just visiting my friends here, Gigi and Bae.")
+}
+
+text Route116_TunnelersRestHouse_Text_BaelzNoMugshots {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Yo Ina, look at this nice mugshot I got here!\p"
+	"Looks pretty nice, doesn't it?")
+}
+
+text Route116_TunnelersRestHouse_Text_InaAdmit {
+	format("Huh.\p"
+	"I'll admit, it looks pretty nice, especially for you, Bae.\p"
+	"Too bad I don't have one though.\p"
+	"I don't have enough in me to make one right now.")
+}
+
+text Route116_TunnelersRestHouse_Text_BaelzCheerUp {
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Hey, cheer up, Ina.\p"
+	"You'll get one eventually as well, I'm sure of it.")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiCookie {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Oh yeah, Ina, I have some cookies for you, by the way.\p"
+	"Maybe this will cheer you up as well.")
+}
+
+text Route116_TunnelersRestHouse_Text_InaThankYou {
+	format("Thank you both.\p"
+	"I appreciate it, you guys looking after me as well.\p"
+	"What kind of cookie is it exactly anyways, Gigi?")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiLavaridge {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}I found these near Lavaridge, where someone called Mokou was giving them away.\p"
+	"Dunno why exactly, but I was nearby and she was giving them away, so I took a decent amount and I still have some left over.")
 }
 
 text Route116_TunnelersRestHouse_Text_CookTalk {
