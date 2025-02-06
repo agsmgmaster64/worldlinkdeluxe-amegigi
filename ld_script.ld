@@ -368,6 +368,7 @@ SECTIONS {
         src/music_player.o(.text);
         src/outfit_menu.o(.text);
         src/tx_randomizer_and_challenges.o(.text);
+        src/map_preview_screen.o(.text);
     } > ROM =0
 
     script_data :
@@ -745,6 +746,7 @@ SECTIONS {
         src/music_player.o(.text);
         src/outfit_menu.o(.rodata);
         src/tx_randomizer_and_challenges.o(.rodata);
+        src/map_preview_screen.o(.rodata);
     } > ROM =0
 
     song_data :
