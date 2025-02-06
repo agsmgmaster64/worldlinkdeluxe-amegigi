@@ -239,7 +239,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    //SetCurrentDifficultyLevel(DIFFICULTY_NORMAL); // handled via ResetChallengesData
     #if (RANDOMIZER_AVAILABLE == TRUE) && (RANDOMIZER_DYNAMIC_SPECIES == TRUE)
         PreloadRandomizationTables();
     #endif

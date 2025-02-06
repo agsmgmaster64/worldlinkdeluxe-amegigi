@@ -1767,10 +1767,10 @@ static void Task_OptionMenuProcessInput(u8 taskId)
     {
         int cursor;
         u8 previousOption;
+        cursor = sOptions->menuCursor[sOptions->submenu];
         switch (sOptions->optionMode)
         {
         case MENUMODE_OPTIONSPLUS:
-            cursor = sOptions->menuCursor[sOptions->submenu];
             switch (sOptions->submenu)
             {
             case OPTIONSPLUS_MENU_VISUALS:
@@ -1821,7 +1821,6 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             }
             break;
         case MENUMODE_CHALLENGES:
-            cursor = sOptions->menuCursor[sOptions->submenu];
             switch (sOptions->submenu)
             {
             case CHALLENGES_MENU_RANDOMIZER:

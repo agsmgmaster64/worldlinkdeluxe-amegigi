@@ -70,6 +70,13 @@ enum WindowIds
     WINDOW_MIDDLE,
 };
 
+enum
+{
+    UI_BG_TEXT,
+    UI_BG_MAIN,
+    UI_BG_SCROLL,
+};
+
 enum {
     HW_WIN_CONTINUE,
     HW_WIN_NEW_GAME,
@@ -120,32 +127,32 @@ static void Task_MainMenuWaitFadeIn(u8 taskId);
 static void Task_MainMenuMain(u8 taskId);
 static void MainMenu_InitializeGPUWindows(void);
 
-static void CreateMugshot();
-static void DestroyMugshot();
-static void CreateIconShadow();
-static void DestroyIconShadow();
+static void CreateMugshot(void);
+static void DestroyMugshot(void);
+static void CreateIconShadow(void);
+static void DestroyIconShadow(void);
 static u32 GetHPEggCyclePercent(u32 partyIndex);
-static void CreatePartyMonIcons();
-static void DestroyMonIcons();
+static void CreatePartyMonIcons(void);
+static void DestroyMonIcons(void);
 
 
 //==========Background and Window Data==========//
 static const struct BgTemplate sMainMenuBgTemplates[] =
 {
     {
-        .bg = 0,                // Text Background
+        .bg = UI_BG_TEXT,
         .charBaseIndex = 0,
         .mapBaseIndex = 31,
         .priority = 0
     }, 
     {
-        .bg = 1,                // Main Background
+        .bg = UI_BG_MAIN,
         .charBaseIndex = 3,
         .mapBaseIndex = 30,
         .priority = 2
     },
     {
-        .bg = 2,                // Scroll Background
+        .bg = UI_BG_SCROLL,
         .charBaseIndex = 2,
         .mapBaseIndex = 28,
         .priority = 2
@@ -156,7 +163,7 @@ static const struct WindowTemplate sMainMenuWindowTemplates[] =
 {
     [WINDOW_HEADER] = // Prints the Map and Playtime
     {
-        .bg = 0,            // which bg to print text on
+        .bg = UI_BG_TEXT,   // which bg to print text on
         .tilemapLeft = 10,  // position from left (per 8 pixels)
         .tilemapTop = 1,    // position from top (per 8 pixels)
         .width = 18,        // width (per 8 pixels)
@@ -167,7 +174,7 @@ static const struct WindowTemplate sMainMenuWindowTemplates[] =
 
     [WINDOW_MIDDLE] = // Prints the name, dex number, and badges
     {
-        .bg = 0,                   // which bg to print text on
+        .bg = UI_BG_TEXT,          // which bg to print text on
         .tilemapLeft = 8,          // position from left (per 8 pixels)
         .tilemapTop = 4,           // position from top (per 8 pixels)
         .width = 18,               // width (per 8 pixels)
@@ -456,8 +463,8 @@ static void MainMenu_VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    ChangeBgX(2, 128, BG_COORD_ADD); // This controls the scrolling of the scroll bg, remove it to stop scrolling
-    ChangeBgY(2, 128, BG_COORD_ADD); // This controls the scrolling of the scroll bg, remove it to stop scrolling
+    ChangeBgX(UI_BG_SCROLL, 128, BG_COORD_SUB); // This controls the scrolling of the scroll bg, remove it to stop scrolling
+    //ChangeBgY(UI_BG_SCROLL, 128, BG_COORD_ADD); // This controls the scrolling of the scroll bg, remove it to stop scrolling
 }
 
 //
@@ -603,19 +610,19 @@ static bool8 MainMenu_InitBgs(void)
     if (sBg1TilemapBuffer == NULL)
         return FALSE;
     memset(sBg1TilemapBuffer, 0, 0x800);
-    SetBgTilemapBuffer(1, sBg1TilemapBuffer);
-    ScheduleBgCopyTilemapToVram(1);
+    SetBgTilemapBuffer(UI_BG_MAIN, sBg1TilemapBuffer);
+    ScheduleBgCopyTilemapToVram(UI_BG_MAIN);
 
     sBg2TilemapBuffer = Alloc(0x800);
     if (sBg2TilemapBuffer == NULL)
         return FALSE;
     memset(sBg2TilemapBuffer, 0, 0x800);
-    SetBgTilemapBuffer(2, sBg2TilemapBuffer);
-    ScheduleBgCopyTilemapToVram(2);
+    SetBgTilemapBuffer(UI_BG_SCROLL, sBg2TilemapBuffer);
+    ScheduleBgCopyTilemapToVram(UI_BG_SCROLL);
 
-    ShowBg(0);
-    ShowBg(1);
-    ShowBg(2);
+    ShowBg(UI_BG_TEXT);
+    ShowBg(UI_BG_MAIN);
+    ShowBg(UI_BG_SCROLL);
     return TRUE;
 }
 
@@ -663,11 +670,11 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         ResetTempTileDataBuffers();
         if (gSaveBlock2Ptr->playerGender == MALE)
         {
-            DecompressAndCopyTileDataToVram(1, sMainBgTiles, 0, 0, 0);
+            DecompressAndCopyTileDataToVram(UI_BG_MAIN, sMainBgTiles, 0, 0, 0);
         }
         else
         {
-            DecompressAndCopyTileDataToVram(1, sMainBgTilesFem, 0, 0, 0);
+            DecompressAndCopyTileDataToVram(UI_BG_MAIN, sMainBgTilesFem, 0, 0, 0);
         }
         sMainMenuDataPtr->gfxLoadState++;
         break;
@@ -687,7 +694,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         break;
     case 2:
         ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(2, sScrollBgTiles, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(UI_BG_SCROLL, sScrollBgTiles, 0, 0, 0);
         sMainMenuDataPtr->gfxLoadState++;
         break;
     case 3:
@@ -728,7 +735,7 @@ static void MainMenu_InitWindows(void) // Init Text Windows
 {
     InitWindows(sMainMenuWindowTemplates);
     DeactivateAllTextPrinters();
-    ScheduleBgCopyTilemapToVram(0);
+    ScheduleBgCopyTilemapToVram(UI_BG_TEXT);
     
     FillWindowPixelBuffer(WINDOW_HEADER, 0);
     PutWindowTilemap(WINDOW_HEADER);
@@ -745,7 +752,7 @@ static void MainMenu_InitWindows(void) // Init Text Windows
 //
 //      Mugshot Functions
 //
-static void CreateMugshot()
+static void CreateMugshot(void)
 {
     sMainMenuDataPtr->mugshotSpriteId = CreateSprite(&sSpriteTemplate_Mugshot, 48, 56, 1);
     gSprites[sMainMenuDataPtr->mugshotSpriteId].invisible = FALSE;
@@ -754,7 +761,7 @@ static void CreateMugshot()
     return;
 }
 
-static void DestroyMugshot()
+static void DestroyMugshot(void)
 {
     DestroySprite(&gSprites[sMainMenuDataPtr->mugshotSpriteId]);
     sMainMenuDataPtr->mugshotSpriteId = SPRITE_NONE;
@@ -767,7 +774,7 @@ static void DestroyMugshot()
 #define ICON_BOX_1_START_Y          38
 #define ICON_BOX_X_DIFFERENCE       32
 #define ICON_BOX_Y_DIFFERENCE       32
-static void CreateIconShadow()
+static void CreateIconShadow(void)
 {
     u8 i = 0;
 
@@ -794,7 +801,7 @@ static void CreateIconShadow()
     return;
 }
 
-static void DestroyIconShadow()
+static void DestroyIconShadow(void)
 {
     u8 i = 0;
     for(i = 0; i < gPlayerPartyCount; i++)
@@ -813,7 +820,7 @@ static u32 GetHPEggCyclePercent(u32 partyIndex) // Random HP function from psf's
         return ((GetMonData(mon, MON_DATA_FRIENDSHIP)) * 100 / (gSpeciesInfo[GetMonData(mon,MON_DATA_SPECIES)].eggCycles));
 }
 
-static void CreatePartyMonIcons()
+static void CreatePartyMonIcons(void)
 {
     u8 i = 0;
     s16 x = ICON_BOX_1_START_X;
@@ -860,7 +867,7 @@ static void CreatePartyMonIcons()
     }
 }
 
-static void DestroyMonIcons()
+static void DestroyMonIcons(void)
 {
     u8 i = 0;
     for(i = 0; i < 6; i++)
@@ -914,11 +921,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     }
 
     // Print Badge Numbers if You Have Them
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
-    {
-        if (FlagGet(i))
-            badgeCount++;
-    } 
+    badgeCount = GetBadgeCount();
     ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
     AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
