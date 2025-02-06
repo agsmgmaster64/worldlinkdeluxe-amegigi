@@ -87,7 +87,7 @@ void Script_CreateFieldMugshot(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
-    _CreateFieldMugshotAt(mugshotId, emote, x, y);
+    CreateFieldMugshotAt(mugshotId, emote, x, y);
 }
 
 void _RemoveFieldMugshot(u8 slot)
@@ -120,18 +120,18 @@ static inline u32 GetMugshotYCoord(u32 id, u32 emote)
     return MUGSHOT_Y;
 }
 
-void _CreatePlayerFieldMugshot(u32 emote)
+void CreatePlayerFieldMugshot(u32 emote)
 {
     u32 mugshotId = GetPlayerMugshotIdByOutfitGender(gSaveBlock3Ptr->currOutfitId, gSaveBlock2Ptr->playerGender);
-    _CreateFieldMugshotAt(mugshotId, emote, GetMugshotXCoord(mugshotId, emote), GetMugshotYCoord(mugshotId, emote));
+    CreateFieldMugshotAt(mugshotId, emote, GetMugshotXCoord(mugshotId, emote), GetMugshotYCoord(mugshotId, emote));
 }
 
-void _CreateFieldMugshot(u32 id, u32 emote)
+void CreateFieldMugshot(u32 id, u32 emote)
 {
-    _CreateFieldMugshotAt(id, emote, GetMugshotXCoord(id, emote), GetMugshotYCoord(id, emote));
+    CreateFieldMugshotAt(id, emote, GetMugshotXCoord(id, emote), GetMugshotYCoord(id, emote));
 }
 
-void _CreateFieldMugshotAt(u32 id, u32 emote, u32 mugshot_x, u32 mugshot_y)
+void CreateFieldMugshotAt(u32 id, u32 emote, u32 mugshot_x, u32 mugshot_y)
 {
     u32 slot = sFieldMugshotSlot;
     struct SpriteTemplate temp = sFieldMugshot_SpriteTemplate;

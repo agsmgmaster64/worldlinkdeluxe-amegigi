@@ -256,6 +256,20 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_MONEAN_CHAMBER
+    },
+    [MPS_PETALBURG_WOODS] =
+    {
+        .mapsec = MAPSEC_PETALBURG_WOODS,
+        .type = MPS_TYPE_FADE_IN,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_VIRIDIAN_FOREST
+    },
+    [MPS_NOISETURF_MINES] =
+    {
+        .mapsec = MAPSEC_RUSTURF_TUNNEL,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_ROCK_TUNNEL
     }
 };
 
@@ -696,6 +710,8 @@ static void VblankCB_MapPreviewScript(void)
 
 void Script_MapPreview(void)
 {
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
     SetVBlankCallback(NULL);
     gMain.savedCallback = CB2_ReturnToFieldContinueScript;
     MapPreview_LoadGfx(gMapHeader.regionMapSectionId);

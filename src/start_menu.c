@@ -1625,6 +1625,8 @@ static bool8 StartMenuQuestMenuCallback(void)
 
 void Script_ForceSaveGame(struct ScriptContext *ctx)
 {
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+
     SaveGame();
     ShowSaveInfoWindow();
     gMenuCallback = SaveCallback;

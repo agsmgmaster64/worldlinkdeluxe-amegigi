@@ -2817,7 +2817,7 @@
 	@ 	removefieldmugshot
 
 	@ spawn a mugshot in the overworld at a specific coordinate
-	.macro createfieldmugshot mugshot:req, emote=0 top=MUGSHOT_X left=MUGSHOT_Y
+	.macro createfieldmugshot mugshot:req, emote=EMOTE_NORMAL top=MUGSHOT_X left=MUGSHOT_Y
 	callnative Script_CreateFieldMugshot, requests_effects=1
 	.2byte \mugshot
 	.2byte \emote
@@ -2848,7 +2848,7 @@
 	.endm
     
 	.macro forcesave
-	callnative Script_ForceSaveGame
+	callnative Script_ForceSaveGame, requests_effects=1
 	waitstate
 	.endm
 
@@ -2916,11 +2916,11 @@
 	@ Show a map preview for the current map with the WEATHER type.
 	.macro mappreview
 	fadescreen FADE_TO_BLACK
-	callnative Script_MapPreview
+	callnative Script_MapPreview, requests_effects=1
 	waitstate
 	.endm
 
 	@ Show the current map's name popup.
 	.macro mappopup
-	callnative Script_MapPopUp
+	callnative Script_MapPopUp, requests_effects=1
 	.endm

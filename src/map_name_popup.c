@@ -12,6 +12,7 @@
 #include "palette.h"
 #include "region_map.h"
 #include "rtc.h"
+#include "script.h"
 #include "start_menu.h"
 #include "string_util.h"
 #include "task.h"
@@ -663,5 +664,7 @@ static void LoadMapNamePopUpWindowBg(void)
 
 void Script_MapPopUp(void)
 {
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
     ShowMapNamePopup();
 }
