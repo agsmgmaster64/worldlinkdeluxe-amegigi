@@ -6289,7 +6289,7 @@ uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier)
 
 bool32 IsSpeciesRegionalForm(u32 species)
 {
-    return gSpeciesInfo[species].isAlolanForm
+    return gSpeciesInfo[species].isSannianForm
         || gSpeciesInfo[species].isGalarianForm
         || gSpeciesInfo[species].isHisuianForm
         || gSpeciesInfo[species].isPaldeanForm;
@@ -6299,7 +6299,7 @@ bool32 IsSpeciesRegionalFormFromRegion(u32 species, u32 region)
 {
     switch (region)
     {
-    case REGION_ALOLA:  return gSpeciesInfo[species].isAlolanForm;
+    case REGION_SANNI:  return gSpeciesInfo[species].isSannianForm;
     case REGION_GALAR:  return gSpeciesInfo[species].isGalarianForm;
     case REGION_HISUI:  return gSpeciesInfo[species].isHisuianForm;
     case REGION_PALDEA: return gSpeciesInfo[species].isPaldeanForm;
