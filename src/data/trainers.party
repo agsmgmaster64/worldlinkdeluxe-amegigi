@@ -14205,7 +14205,7 @@ Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pound
 - Growl
-- Psyshot
+- Toxic Gas
 - Taunt
 
 === TRAINER_MAY_RUSTBORO_TREECKO ===
@@ -14247,7 +14247,7 @@ Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pound
 - Growl
-- Psyshot
+- Toxic Gas
 - Taunt
 
 === TRAINER_MAY_RUSTBORO_TREECKO ===
@@ -14281,7 +14281,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 HP
 - Pound
 - Growl
-- Psyshot
+- Toxic Gas
 - Taunt
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===

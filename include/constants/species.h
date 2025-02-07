@@ -515,7 +515,7 @@
 #define SPECIES_LAST_WORD_LETTY                         506
 #define SPECIES_LAST_WORD_KANAKO                        507
 #define SPECIES_AYAKASHI                                508
-#define SPECIES_PURRLOIN                                509 // Basiney
+#define SPECIES_BASINEY                                 509 // Basiney
 #define SPECIES_CHIBI_AMELIA                            510
 #define SPECIES_NORMAL_AMELIA                           511
 #define SPECIES_HELPER_AMELIA                           512
@@ -550,9 +550,9 @@
 #define SPECIES_PLACEHOLD2_CLOWNPIECE                   541 // Placeholder
 #define SPECIES_CHIBI_BIJOU                             542
 #define SPECIES_NORMAL_BIJOU                            543
-#define SPECIES_WHIRLIPEDE                              544
-#define SPECIES_SCOLIPEDE                               545
-#define SPECIES_COTTONEE                                546
+#define SPECIES_PLACEHOLD_BIJOU                         544 // Placeholder
+#define SPECIES_CHIBI_KRONII                            545
+#define SPECIES_NORMAL_KRONII                           546
 #define SPECIES_WHIMSICOTT                              547
 #define SPECIES_PETILIL                                 548
 #define SPECIES_LILLIGANT                               549

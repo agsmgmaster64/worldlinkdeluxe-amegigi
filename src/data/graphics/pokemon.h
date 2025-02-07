@@ -30454,6 +30454,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Bijou[] = INCBIN_U8("graphics/pokemon/_add/etc/bijou/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_Kronii[] = INCBIN_U32("graphics/pokemon/_add/etc/kronii/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Kronii[] = INCBIN_U32("graphics/pokemon/_add/etc/kronii/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Kronii[] = INCBIN_U32("graphics/pokemon/_add/etc/kronii/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Kronii[] = INCBIN_U32("graphics/pokemon/_add/etc/kronii/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Kronii[] = INCBIN_U8("graphics/pokemon/_add/etc/kronii/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Kronii[] = INCBIN_U8("graphics/pokemon/_add/etc/kronii/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/anim_front.4bpp.lz");
     const u32 gMonPalette_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/normal.gbapal.lz");
     const u32 gMonBackPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/back.4bpp.lz");
