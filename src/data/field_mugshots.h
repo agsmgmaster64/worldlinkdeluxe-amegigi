@@ -25,6 +25,13 @@ static const u16 sFieldMugshotPal_ShioriNormal[] = INCBIN_U16("graphics/field_mu
 static const u32 sFieldMugshotGfx_BaelzNormal[] = INCBIN_U32("graphics/field_mugshots/baelz/normal.4bpp.lz");
 static const u16 sFieldMugshotPal_BaelzNormal[] = INCBIN_U16("graphics/field_mugshots/baelz/normal.gbapal");
 
+static const u32 sFieldMugshotGfx_SusieHappy[] = INCBIN_U32("graphics/field_mugshots/susie/happy.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieSlightSmile[] = INCBIN_U32("graphics/field_mugshots/susie/slight_smile.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieAnnoyed[] = INCBIN_U32("graphics/field_mugshots/susie/annoyed.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieSad[] = INCBIN_U32("graphics/field_mugshots/susie/sad.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieSerious[] = INCBIN_U32("graphics/field_mugshots/susie/serious.4bpp.lz");
+static const u16 sFieldMugshotPal_SusieGeneral[] = INCBIN_U16("graphics/field_mugshots/susie/happy.gbapal");
+
 struct MugshotGfx
 {
     const u32 *gfx;
@@ -45,7 +52,7 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .y = MUGSHOT_Y,
         },
 
-        [EMOTE_ALT] =
+        [EMOTE_HAPPY] =
         {
             .gfx = sFieldMugshotGfx_TestAlt,
             .pal = sFieldMugshotPal_TestAlt,
@@ -85,13 +92,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
-        [EMOTE_ALT] =
-        {
-            .gfx = sFieldMugshotGfx_RenkoSerious,
-            .pal = sFieldMugshotPal_RenkoSerious,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
     },
 
     [MUGSHOT_MARIBEL] =
@@ -122,6 +122,52 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_BaelzNormal,
             .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_SUSIE] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_SusieSlightSmile,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_SusieHappy,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SAD] =
+        {
+            .gfx = sFieldMugshotGfx_SusieSad,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SERIOUS] =
+        {
+            .gfx = sFieldMugshotGfx_SusieSerious,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ANNOYED] =
+        {
+            .gfx = sFieldMugshotGfx_SusieAnnoyed,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_SusieAnnoyed,
+            .pal = sFieldMugshotPal_SusieGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
