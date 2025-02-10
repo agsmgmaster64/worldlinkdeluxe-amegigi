@@ -641,6 +641,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_WHICH_STATUS]           = COMPOUND_STRING("Inflict which status?"), // hexorb Branch
     [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = COMPOUND_STRING("Send which Puppet to the PC?"),
     [PARTY_MSG_NO_POKEMON]             = COMPOUND_STRING("You have no POKéMON."),
+    [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = gText_SendWhichMonToPC,
 };
 
 static const u8 *const sDescriptionStringTable[] =

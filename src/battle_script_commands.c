@@ -302,6 +302,16 @@ static const u16 sTrappingMoves[NUM_TRAPPING_MOVES] =
 
 static const u16 sWhiteOutBadgeMoney[9] = { 8, 16, 24, 36, 48, 64, 80, 100, 120 };
 
+enum GiveCaughtMonStates
+{
+    GIVECAUGHTMON_CHECK_PARTY_SIZE,
+    GIVECAUGHTMON_ASK_ADD_TO_PARTY,
+    GIVECAUGHTMON_HANDLE_INPUT,
+    GIVECAUGHTMON_DO_CHOOSE_MON,
+    GIVECAUGHTMON_HANDLE_CHOSEN_MON,
+    GIVECAUGHTMON_GIVE_AND_SHOW_MSG,
+};
+
 #define STAT_CHANGE_WORKED      0
 #define STAT_CHANGE_DIDNT_WORK  1
 
@@ -4655,7 +4665,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 break;
             case MOVE_EFFECT_AROMATHERAPY:
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
-                gBattlescriptCurrInstr = BattleScript_EffectCureStatusAllies;
+                gBattlescriptCurrInstr = BattleScript_EffectHealBell_FromHeal;
                 break;
             case MOVE_EFFECT_RECYCLE_BERRIES:
             {
@@ -6488,7 +6498,7 @@ static void Cmd_moveend(void)
             break;
         }
         case MOVEEND_RAPID_SPIN:
-            if (gMovesInfo[gCurrentMove].effect == EFFECT_RAPID_SPIN
+            if (GetMoveEffect(gCurrentMove) == EFFECT_RAPID_SPIN
              && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
              && IsBattlerTurnDamaged(gBattlerTarget))
             {
@@ -6664,7 +6674,7 @@ static void Cmd_moveend(void)
                 gBattleScripting.moveendState++;
             break;
         case MOVEEND_HIT_SWITCH_TARGET:
-            if (gMovesInfo[gCurrentMove].effect == EFFECT_HIT_SWITCH_TARGET
+            if (GetMoveEffect(gCurrentMove) == EFFECT_HIT_SWITCH_TARGET
              && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
              && IsBattlerTurnDamaged(gBattlerTarget)
              && IsBattlerAlive(gBattlerTarget)
@@ -7108,7 +7118,7 @@ static void Cmd_moveend(void)
                             else // Eject Pack
                             {
                                 if (!gDisableStructs[gBattlerTarget].startEmergencyExit
-                                    && !(gMovesInfo[gCurrentMove].effect == EFFECT_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker)))
+                                    && !(GetMoveEffect(gCurrentMove) == EFFECT_PARTING_SHOT && CanBattlerSwitch(gBattlerAttacker)))
                                 {
                                     effect = TRUE;
                                     gBattleStruct->battlerState[battler].usedEjectItem = TRUE;
@@ -14026,106 +14036,87 @@ static void Cmd_healpartystatus(void)
 {
     CMD_ARGS();
 
-    u32 zero = 0;
+    u32 i, zero = 0;
     u32 partner = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gBattlerAttacker)));
     u8 toHeal = 0;
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
-    s32 i;
+    bool32 isSoundMove = IsSoundMove(gCurrentMove);
 
-    if (gCurrentMove == MOVE_HEAL_BELL)
+    if (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
+     || GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) >= GEN_8
+     || !(isSoundMove && GetBattlerAbility(gBattlerAttacker) == ABILITY_SOUNDPROOF))
     {
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL;
-
-        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_SOUNDPROOF
-         || B_HEAL_BELL_SOUNDPROOF == GEN_5 || B_HEAL_BELL_SOUNDPROOF >= GEN_8)
-        {
-            gBattleMons[gBattlerAttacker].status1 = 0;
-            gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
-        }
+        if (isSoundMove)
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL;
         else
-        {
-            RecordAbilityBattle(gBattlerAttacker, gBattleMons[gBattlerAttacker].ability);
-            gBattleCommunication[MULTISTRING_CHOOSER] |= B_MSG_BELL_SOUNDPROOF_ATTACKER;
-        }
-
-        gBattleScripting.battler = partner;
-
-        if (IsBattlerAlive(partner))
-        {
-            if (GetBattlerAbility(partner) != ABILITY_SOUNDPROOF || B_HEAL_BELL_SOUNDPROOF == GEN_5)
-            {
-                gBattleMons[partner].status1 = 0;
-                gBattleMons[partner].status2 &= ~STATUS2_NIGHTMARE;
-            }
-            else
-            {
-                RecordAbilityBattle(partner, gBattleMons[partner].ability);
-                gBattleCommunication[MULTISTRING_CHOOSER] |= B_MSG_BELL_SOUNDPROOF_PARTNER;
-            }
-        }
-
-        // Because the above MULTISTRING_CHOOSER are ORd, if both are set then it will be B_MSG_BELL_BOTH_SOUNDPROOF
-
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-            u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
-
-            if (species != SPECIES_NONE && species != SPECIES_EGG)
-            {
-                u16 ability;
-                bool32 isAttacker = gBattlerPartyIndexes[gBattlerAttacker] == i;
-                bool32 isDoublesPartner = gBattlerPartyIndexes[partner] == i && IsBattlerAlive(partner);
-
-                if (B_HEAL_BELL_SOUNDPROOF == GEN_5 || (isAttacker && B_HEAL_BELL_SOUNDPROOF >= GEN_8))
-                    ability = ABILITY_NONE;
-                else if (B_HEAL_BELL_SOUNDPROOF > GEN_5 && !isAttacker && !isDoublesPartner)
-                    ability = ABILITY_NONE;
-                else if (isAttacker)
-                    ability = GetBattlerAbility(gBattlerAttacker);
-                else if (isDoublesPartner)
-                    ability = GetBattlerAbility(partner);
-                else
-                {
-                    ability = GetAbilityBySpecies(species, abilityNum);
-                    #if TESTING
-                    if (gTestRunnerEnabled)
-                    {
-                        u32 side = GetBattlerSide(gBattlerAttacker);
-                        if (TestRunner_Battle_GetForcedAbility(side, i))
-                            ability = TestRunner_Battle_GetForcedAbility(side, i);
-                    }
-                    #endif
-                }
-
-                if (ability != ABILITY_SOUNDPROOF)
-                {
-                    toHeal |= (1 << i);
-                    TryDeactivateSleepClause(GetBattlerSide(gBattlerAttacker), i);
-                }
-            }
-        }
-    }
-    else // Aromatherapy
-    {
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SOOTHING_AROMA;
-        toHeal = (1 << PARTY_SIZE) - 1;
-
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            TryDeactivateSleepClause(GetBattlerSide(gBattlerAttacker), i);
-        }
-
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SOOTHING_AROMA;
         gBattleMons[gBattlerAttacker].status1 = 0;
         gBattleMons[gBattlerAttacker].status2 &= ~STATUS2_NIGHTMARE;
+    }
+    else
+    {
+        RecordAbilityBattle(gBattlerAttacker, gBattleMons[gBattlerAttacker].ability);
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL_SOUNDPROOF_ATTACKER;
+    }
 
-        if (IsDoubleBattle()
-            && !(gAbsentBattlerFlags & (1u <<partner)))
+    gBattleScripting.battler = partner;
+
+    if (IsBattlerAlive(partner))
+    {
+        if (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
+         || !(isSoundMove && GetBattlerAbility(partner) == ABILITY_SOUNDPROOF))
         {
             gBattleMons[partner].status1 = 0;
             gBattleMons[partner].status2 &= ~STATUS2_NIGHTMARE;
         }
+        else
+        {
+            RecordAbilityBattle(partner, gBattleMons[partner].ability);
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BELL_SOUNDPROOF_PARTNER;
+        }
+    }
 
+    // Because the above MULTISTRING_CHOOSER are ORd, if both are set then it will be B_MSG_BELL_BOTH_SOUNDPROOF
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
+        u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
+
+        if (species != SPECIES_NONE && species != SPECIES_EGG)
+        {
+            u16 ability;
+            bool32 isAttacker = gBattlerPartyIndexes[gBattlerAttacker] == i;
+            bool32 isDoublesPartner = gBattlerPartyIndexes[partner] == i && IsBattlerAlive(partner);
+
+            if (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) == GEN_5
+             || (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) >= GEN_8 && isAttacker))
+                ability = ABILITY_NONE;
+            else if (GetGenConfig(GEN_CONFIG_HEAL_BELL_SOUNDPROOF) > GEN_5 && !isAttacker && !isDoublesPartner)
+                ability = ABILITY_NONE;
+            else if (isAttacker)
+                ability = GetBattlerAbility(gBattlerAttacker);
+            else if (isDoublesPartner)
+                ability = GetBattlerAbility(partner);
+            else
+            {
+                ability = GetAbilityBySpecies(species, abilityNum);
+                #if TESTING
+                if (gTestRunnerEnabled)
+                {
+                    u32 side = GetBattlerSide(gBattlerAttacker);
+                    if (TestRunner_Battle_GetForcedAbility(side, i))
+                        ability = TestRunner_Battle_GetForcedAbility(side, i);
+                }
+                #endif
+            }
+
+            if (!(isSoundMove && ability == ABILITY_SOUNDPROOF))
+            {
+                toHeal |= (1 << i);
+                TryDeactivateSleepClause(GetBattlerSide(gBattlerAttacker), i);
+            }
+        }
     }
 
     if (toHeal)
@@ -16128,30 +16119,31 @@ static void Cmd_handleballthrow(void)
 static void Cmd_givecaughtmon(void)
 {
     CMD_ARGS(const u8 *passInstr);
+    enum GiveCaughtMonStates state = gBattleCommunication[MULTIUSE_STATE];
 
-    switch (gBattleCommunication[MULTIUSE_STATE])
+    switch (state)
     {
-    case 0:
-        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+    case GIVECAUGHTMON_CHECK_PARTY_SIZE:
+        if (CalculatePlayerPartyCount() == PARTY_SIZE && B_CATCH_SWAP_INTO_PARTY >= GEN_7)
         {
             PrepareStringBattle(STRINGID_SENDCAUGHTMONPARTYORBOX, gBattlerAttacker);
             gBattleCommunication[MSG_DISPLAY] = 1;
-            gBattleCommunication[MULTIUSE_STATE]++;
+            gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_ASK_ADD_TO_PARTY;
         }
         else
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_NO_MESSSAGE_SKIP;
-            gBattleCommunication[MULTIUSE_STATE] = 5;
+            gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
         }
         break;
-    case 1:
+    case GIVECAUGHTMON_ASK_ADD_TO_PARTY:
         HandleBattleWindow(YESNOBOX_X_Y, 0);
         BattlePutTextOnWindow(gText_BattleYesNoChoice, B_WIN_YESNO);
-        gBattleCommunication[MULTIUSE_STATE]++;
+        gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_HANDLE_INPUT;
         gBattleCommunication[CURSOR_POSITION] = 0;
         BattleCreateYesNoCursorAt(0);
         break;
-    case 2:
+    case GIVECAUGHTMON_HANDLE_INPUT:
         if (JOY_NEW(DPAD_UP) && gBattleCommunication[CURSOR_POSITION] != 0)
         {
             PlaySE(SE_SELECT);
@@ -16171,35 +16163,35 @@ static void Cmd_givecaughtmon(void)
             PlaySE(SE_SELECT);
             if (gBattleCommunication[CURSOR_POSITION] == 0)
             {
-                gBattleCommunication[MULTIUSE_STATE]++;
+                gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_DO_CHOOSE_MON;
             }
             else
             {
-                gBattleCommunication[MULTIUSE_STATE] = 5;
+                gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
             }
         }
         else if (JOY_NEW(B_BUTTON))
         {
             PlaySE(SE_SELECT);
-            gBattleCommunication[MULTIUSE_STATE] = 5;
+            gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
         }
         break;
-    case 3:
+    case GIVECAUGHTMON_DO_CHOOSE_MON:
         if (!gPaletteFade.active)
         {
             BtlController_EmitChoosePokemon(gBattlerAttacker, BUFFER_A, PARTY_ACTION_SEND_MON_TO_BOX, PARTY_SIZE, ABILITY_NONE, gBattleStruct->battlerPartyOrders[gBattlerAttacker]);
             MarkBattlerForControllerExec(gBattlerAttacker);
-            gBattleCommunication[MULTIUSE_STATE]++;
+            gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_HANDLE_CHOSEN_MON;
         }
         break;
-    case 4:
+    case GIVECAUGHTMON_HANDLE_CHOSEN_MON:
         if (gSelectedMonPartyId != PARTY_SIZE)
         {
             if (gSelectedMonPartyId > PARTY_SIZE)
             {
                 // Choosing Pokemon was cancelled
                 gSelectedMonPartyId = PARTY_SIZE;
-                gBattleCommunication[MULTIUSE_STATE]++;
+                gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
             }
             else
             {
@@ -16209,19 +16201,20 @@ static void Cmd_givecaughtmon(void)
                     GetMonNickname(&gPlayerParty[gSelectedMonPartyId], gStringVar2);
                     StringCopy(gStringVar1, GetBoxNamePtr(GetPCBoxToSendMon()));
                     ZeroMonData(&gPlayerParty[gSelectedMonPartyId]);
+                    gBattleStruct->itemLost[B_SIDE_PLAYER][gSelectedMonPartyId].originalItem = ITEM_NONE;
                     gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWAPPED_INTO_PARTY;
                     gSelectedMonPartyId = PARTY_SIZE;
-                    gBattleCommunication[MULTIUSE_STATE]++;
+                    gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
                 }
                 else
                 {
                     gSelectedMonPartyId = PARTY_SIZE;
-                    gBattleCommunication[MULTIUSE_STATE]++;
+                    gBattleCommunication[MULTIUSE_STATE] = GIVECAUGHTMON_GIVE_AND_SHOW_MSG;
                 }
             }
         }
         break;
-    case 5:
+    case GIVECAUGHTMON_GIVE_AND_SHOW_MSG:
         if (B_RESTORE_HELD_BATTLE_ITEMS >= GEN_9)
         {
             u16 lostItem = gBattleStruct->itemLost[B_SIDE_OPPONENT][gBattlerPartyIndexes[GetCatchingBattler()]].originalItem;

@@ -166,7 +166,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         playerMove = gBattleMons[opposingBattler].moves[i];
-        if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && gMovesInfo[playerMove].effect != EFFECT_FOCUS_PUNCH)
+        if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH)
         {
             damageTaken = AI_CalcDamage(playerMove, opposingBattler, battler, &effectiveness, FALSE, weather, DMG_ROLL_HIGHEST).expected;
             if (damageTaken > maxDamageTaken)
@@ -350,6 +350,9 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
 
     if (!(AI_THINKING_STRUCT->aiFlags[GetThinkingBattler(battler)] & AI_FLAG_SMART_SWITCHING))
         return FALSE;
+    if (gBattleStruct->prevTurnSpecies[battler] != gBattleMons[battler].species) // AI mon has changed, player's behaviour no longer reliable; note to override this if using AI_FLAG_PREDICT_MOVE
+        return FALSE; 
+
     if (HasSuperEffectiveMoveAgainstOpponents(battler, TRUE) && (RandomPercentage(RNG_AI_SWITCH_ABSORBING, 66) || AI_DATA->aiSwitchPredictionInProgress))
         return FALSE;
 
@@ -1702,7 +1705,7 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         playerMove = gBattleMons[opposingBattler].moves[i];
-        if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && gMovesInfo[playerMove].effect != EFFECT_FOCUS_PUNCH)
+        if (playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH)
         {
             damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, FALSE, DMG_ROLL_HIGHEST);
             if (damageTaken > maxDamageTaken)
