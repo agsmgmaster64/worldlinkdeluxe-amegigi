@@ -680,7 +680,8 @@ static const struct SpriteTemplate sCursor_SpriteTemplate = {
 };
 
 static const struct Seller sSellers[] = {
-    [SELLER_JERRY] = {
+    [SELLER_JERRY] =
+    {
         { .gfxId = OBJ_EVENT_GFX_MART_EMPLOYEE },
         .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Jerry,
         .mugshotPal = sNewShopMenu_SellerMugshotPal_Jerry,
@@ -695,7 +696,8 @@ static const struct Seller sSellers[] = {
         .cursorGfx = sNewShopMenu_SellerCursorGfx_Jerry,
         .cursorPal = sNewShopMenu_SellerCursorPal_Jerry,
     },
-    [SELLER_JENNIE] = {
+    [SELLER_JENNIE] =
+    {
         { .gfxId = OBJ_EVENT_GFX_WOMAN_3 },
         .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Jennie,
         .mugshotPal = sNewShopMenu_SellerMugshotPal_Jennie,

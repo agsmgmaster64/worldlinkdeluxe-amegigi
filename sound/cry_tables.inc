@@ -69,6 +69,13 @@ gCryTable::
 	cry Cry_Shou
 	cry Cry_Byakuren
 	cry Cry_Nue
+	cry Cry_Kyouko
+	cry Cry_Yoshika
+	cry Cry_Seiga
+	cry Cry_Tojiko
+	cry Cry_Futo
+	cry Cry_Miko
+	cry Cry_Mamizou
 	cry Cry_Wakasagihime
 	cry Cry_Suika
 	cry Cry_Iku
@@ -83,6 +90,8 @@ gCryTable::
 	cry Cry_Toyohime
 	cry Cry_Tokiko
 	cry Cry_Kosuzu
+	cry Cry_Akyuu
+	cry Cry_Rinnosuke
 	cry Cry_Advent_Cirno
 	cry Cry_Advent_Reisen
 	cry Cry_Advent_Meiling
@@ -170,6 +179,13 @@ gCryTable_Reverse::
 	cry_reverse Cry_Shou
 	cry_reverse Cry_Byakuren
 	cry_reverse Cry_Nue
+	cry_reverse Cry_Kyouko
+	cry_reverse Cry_Yoshika
+	cry_reverse Cry_Seiga
+	cry_reverse Cry_Tojiko
+	cry_reverse Cry_Futo
+	cry_reverse Cry_Miko
+	cry_reverse Cry_Mamizou
 	cry_reverse Cry_Wakasagihime
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
@@ -184,6 +200,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Toyohime
 	cry_reverse Cry_Tokiko
 	cry_reverse Cry_Kosuzu
+	cry_reverse Cry_Akyuu
+	cry_reverse Cry_Rinnosuke
 	cry_reverse Cry_Advent_Cirno
 	cry_reverse Cry_Advent_Reisen
 	cry_reverse Cry_Advent_Meiling
