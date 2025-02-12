@@ -25,14 +25,17 @@ SINGLE_BATTLE_TEST("Multi hit Moves hit the maximum amount with Skill Link")
     }
 }
 
-SINGLE_BATTLE_TEST("Multi hit Moves hit twice 35% of the time")
+SINGLE_BATTLE_TEST("Multi hit Moves hit twice 37.5/35% of the time")
 {
-    PASSES_RANDOMLY(35, 100, RNG_HITS);
+    u32 genConfig, passes, trials;
+    PARAMETRIZE { genConfig = GEN_4; passes = 3;  trials = 8; }
+    PARAMETRIZE { genConfig = GEN_5; passes = 7; trials = 20; }
+    PASSES_RANDOMLY(passes, trials, RNG_HITS);
 
     GIVEN {
-        ASSUME(B_MULTI_HIT_CHANCE >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        WITH_CONFIG(GEN_CONFIG_MULTI_HIT_CHANCE, genConfig);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BULLET_SEED); }
     } SCENE {
@@ -42,14 +45,17 @@ SINGLE_BATTLE_TEST("Multi hit Moves hit twice 35% of the time")
     }
 }
 
-SINGLE_BATTLE_TEST("Multi hit Moves hit thrice 35% of the time")
+SINGLE_BATTLE_TEST("Multi hit Moves hit thrice 37.5/35% of the time")
 {
-    PASSES_RANDOMLY(35, 100, RNG_HITS);
+    u32 genConfig, passes, trials;
+    PARAMETRIZE { genConfig = GEN_4; passes = 3; trials = 8; }
+    PARAMETRIZE { genConfig = GEN_5; passes = 7; trials = 20; }
+    PASSES_RANDOMLY(passes, trials, RNG_HITS);
 
     GIVEN {
-        ASSUME(B_MULTI_HIT_CHANCE >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        WITH_CONFIG(GEN_CONFIG_MULTI_HIT_CHANCE, genConfig);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BULLET_SEED); }
     } SCENE {
@@ -60,14 +66,17 @@ SINGLE_BATTLE_TEST("Multi hit Moves hit thrice 35% of the time")
     }
 }
 
-SINGLE_BATTLE_TEST("Multi hit Moves hit four times 15% of the time")
+SINGLE_BATTLE_TEST("Multi hit Moves hit four times 12.5/15% of the time")
 {
-    PASSES_RANDOMLY(15, 100, RNG_HITS);
+    u32 genConfig, passes, trials;
+    PARAMETRIZE { genConfig = GEN_4; passes = 1; trials = 8; }
+    PARAMETRIZE { genConfig = GEN_5; passes = 3; trials = 20; }
+    PASSES_RANDOMLY(passes, trials, RNG_HITS);
 
     GIVEN {
-        ASSUME(B_MULTI_HIT_CHANCE >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        WITH_CONFIG(GEN_CONFIG_MULTI_HIT_CHANCE, genConfig);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BULLET_SEED); }
     } SCENE {
@@ -79,14 +88,17 @@ SINGLE_BATTLE_TEST("Multi hit Moves hit four times 15% of the time")
     }
 }
 
-SINGLE_BATTLE_TEST("Multi hit Moves hit five times 15% of the time")
+SINGLE_BATTLE_TEST("Multi hit Moves hit five times 12.5/15% of the time")
 {
-    PASSES_RANDOMLY(15, 100, RNG_HITS);
+    u32 genConfig, passes, trials;
+    PARAMETRIZE { genConfig = GEN_4; passes = 1; trials = 8; }
+    PARAMETRIZE { genConfig = GEN_5; passes = 3; trials = 20; }
+    PASSES_RANDOMLY(passes, trials, RNG_HITS);
 
     GIVEN {
-        ASSUME(B_MULTI_HIT_CHANCE >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        WITH_CONFIG(GEN_CONFIG_MULTI_HIT_CHANCE, genConfig);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BULLET_SEED); }
     } SCENE {
