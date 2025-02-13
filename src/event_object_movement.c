@@ -2040,16 +2040,15 @@ struct Pokemon *GetFirstLiveMon(void)
         return NULL;
     if (j == OW_FOLLOWER_NOT_SET || InBattleFacilityOrContestHall())
     {
-        struct Pokemon *mon = &gPlayerParty[i];
-        if ((OW_MON_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_MON_ALLOWED_SPECIES))
-         || (OW_MON_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_MON_ALLOWED_MET_LVL))
-         || (OW_MON_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_MON_ALLOWED_MET_LOC)))
-        {
-            continue;
-        }
-
         for (i = 0; i < PARTY_SIZE; i++)
         {
+            struct Pokemon *mon = &gPlayerParty[i];
+            if ((OW_MON_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_MON_ALLOWED_SPECIES))
+             || (OW_MON_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_MON_ALLOWED_MET_LVL))
+             || (OW_MON_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_MON_ALLOWED_MET_LOC)))
+            {
+                continue;
+            }
             if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
                 return &gPlayerParty[i];
         }
