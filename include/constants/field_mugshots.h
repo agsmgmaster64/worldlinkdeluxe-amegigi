@@ -23,13 +23,14 @@
 #define EMOTE_SERIOUS   3
 #define EMOTE_ANNOYED   4
 #define EMOTE_ANGRY     5
-#define EMOTE_ALT_6     6
+#define EMOTE_DEADPAN   6
 #define EMOTE_ALT_7     7
 #define EMOTE_ALT_8     8
 #define EMOTE_ALT_9     9
 #define EMOTE_ALT_10    10
 #define EMOTE_ALT_11    11
 #define EMOTE_ALT_12    12
-#define EMOTE_COUNT     13
+#define EMOTE_ALT_13    13
+#define EMOTE_COUNT     14
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

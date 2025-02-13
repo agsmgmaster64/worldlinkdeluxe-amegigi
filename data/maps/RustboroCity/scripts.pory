@@ -24,7 +24,7 @@ script RustboroCity_EventScript_GigiEncounter {
 		goto(RustboroCity_EventScript_GigiAskToBattle)
 	}
 	setflag(FLAG_MET_RIVAL_RUSTBORO)
-	setspeakername(RustboroCity_Text_Gigi)
+	setspeakername(gText_Gigi)
 	msgbox(RustboroCity_Text_GigiHiLetsRegister)
 	closemessage
 	delay(30)
@@ -37,7 +37,7 @@ script RustboroCity_EventScript_GigiEncounter {
 	setvar(VAR_RUSTBORO_CITY_STATE, 8)
 	setvar(VAR_ROUTE104_STATE, 2)
 	setvar(VAR_0x8008, 0)
-	setspeakername(RustboroCity_Text_Gigi)
+	setspeakername(gText_Gigi)
 	msgbox(RustboroCity_Text_GigiPassedBrineyWantToBattle, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(RustboroCity_EventScript_BattleGigi)
@@ -50,7 +50,7 @@ script RustboroCity_EventScript_GigiEncounter {
 
 script RustboroCity_EventScript_GigiAskToBattle {
 	setvar(VAR_0x8008, 1)
-	setspeakername(RustboroCity_Text_Gigi)
+	setspeakername(gText_Gigi)
 	msgbox(RustboroCity_Text_GigiWantToBattle, MSGBOX_YESNO)
 	if (var(VAR_RESULT) == YES) {
 		goto(RustboroCity_EventScript_BattleGigi)
@@ -70,7 +70,7 @@ script RustboroCity_EventScript_BattleGigi {
 }
 
 script RustboroCity_EventScript_GigiBrineyHint {
-	setspeakername(RustboroCity_Text_Gigi)
+	setspeakername(gText_Gigi)
 	msgbox(RustboroCity_Text_GigiMrBrineyHint)
 	closemessage
 	if (var(VAR_0x8008) == 0) {
@@ -78,10 +78,6 @@ script RustboroCity_EventScript_GigiBrineyHint {
 	}
 	releaseall
 	end
-}
-
-text RustboroCity_Text_Gigi {
-	"Gigi"
 }
 
 text RustboroCity_Text_GigiHiLetsRegister {

@@ -30,6 +30,11 @@ static const u32 sFieldMugshotGfx_SusieSlightSmile[] = INCBIN_U32("graphics/fiel
 static const u32 sFieldMugshotGfx_SusieAnnoyed[] = INCBIN_U32("graphics/field_mugshots/susie/annoyed.4bpp.lz");
 static const u32 sFieldMugshotGfx_SusieSad[] = INCBIN_U32("graphics/field_mugshots/susie/sad.4bpp.lz");
 static const u32 sFieldMugshotGfx_SusieSerious[] = INCBIN_U32("graphics/field_mugshots/susie/serious.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieAngry[] = INCBIN_U32("graphics/field_mugshots/susie/angry.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieDeadpan[] = INCBIN_U32("graphics/field_mugshots/susie/deadpan.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieWhereAreWe[] = INCBIN_U32("graphics/field_mugshots/susie/where_are_we.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieLookAwaySerious[] = INCBIN_U32("graphics/field_mugshots/susie/look_away_serious.4bpp.lz");
+static const u32 sFieldMugshotGfx_SusieLookDownSerious[] = INCBIN_U32("graphics/field_mugshots/susie/look_down_serious.4bpp.lz");
 static const u16 sFieldMugshotPal_SusieGeneral[] = INCBIN_U16("graphics/field_mugshots/susie/happy.gbapal");
 
 struct MugshotGfx
@@ -166,7 +171,35 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         },
         [EMOTE_ANGRY] =
         {
-            .gfx = sFieldMugshotGfx_SusieAnnoyed,
+            .gfx = sFieldMugshotGfx_SusieAngry,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_DEADPAN] =
+        {
+            .gfx = sFieldMugshotGfx_SusieDeadpan,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_7] =
+        {
+            .gfx = sFieldMugshotGfx_SusieLookAwaySerious,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_8] =
+        {
+            .gfx = sFieldMugshotGfx_SusieLookDownSerious,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_9] =
+        {
+            .gfx = sFieldMugshotGfx_SusieWhereAreWe,
             .pal = sFieldMugshotPal_SusieGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
