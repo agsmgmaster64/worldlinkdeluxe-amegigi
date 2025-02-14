@@ -3481,13 +3481,6 @@ bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
     return FALSE;
 }
 
-void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
-{
-    u8 condition = ScriptReadByte(ctx);
-    if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
-        StopScript(ctx);
-}
-
 bool8 ScrFunc_hidefollower(struct ScriptContext *ctx)
 {
     bool16 wait = VarGet(ScriptReadHalfword(ctx));
@@ -3521,4 +3514,11 @@ bool8 ScrFunc_playtrainervoice(struct ScriptContext *ctx)
 
     PlayTrainerVoice(trainer, voiceLine);
     return FALSE;
+}
+
+void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
+{
+    u8 condition = ScriptReadByte(ctx);
+    if (ctx->breakOnTrainerBattle && sScriptConditionTable[condition][ctx->comparisonResult] == 1)
+        StopScript(ctx);
 }
