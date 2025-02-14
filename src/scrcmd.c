@@ -3511,3 +3511,14 @@ bool8 ScrFunc_hidefollower(struct ScriptContext *ctx)
     // execute next script command with no delay
     return TRUE;
 }
+
+bool8 ScrFunc_playtrainervoice(struct ScriptContext *ctx)
+{
+    u16 trainer = VarGet(ScriptReadHalfword(ctx));
+    u8 voiceLine = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    PlayTrainerVoice(trainer, voiceLine);
+    return FALSE;
+}

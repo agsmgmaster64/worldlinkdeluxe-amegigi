@@ -30,6 +30,8 @@ COMMON_DATA bool8 gDisableMusic = 0;
 extern struct ToneData gCryTable[];
 extern struct ToneData gCryTable_Reverse[];
 
+extern struct ToneData *const gTrainerVoiceTable[];
+
 static void Task_Fanfare(u8 taskId);
 static void CreateFanfareTask(void);
 static void RestoreBGMVolumeAfterPokemonCry(void);
@@ -609,4 +611,23 @@ bool8 IsSpecialSEPlaying(void)
     if (!(gMPlayInfo_SE3.status & MUSICPLAYER_STATUS_TRACK))
         return FALSE;
     return TRUE;
+}
+
+void PlayTrainerVoice(u16 trainer, u8 voiceLine)
+{
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
+
+    SetPokemonCryVolume(CRY_VOLUME);
+    SetPokemonCryPanpot(0);
+    SetPokemonCryPitch(15360);
+    SetPokemonCryLength(500);
+    SetPokemonCryProgress(0);
+    SetPokemonCryRelease(0);
+    SetPokemonCryChorus(0);
+    SetPokemonCryPriority(CRY_PRIORITY_NORMAL);
+
+    gMPlay_PokemonCry = SetPokemonCryTone(&gTrainerVoiceTable[trainer][voiceLine]);
+
+    gPokemonCryBGMDuckingCounter = 2;
+    RestoreBGMVolumeAfterPokemonCry();
 }

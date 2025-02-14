@@ -140,6 +140,9 @@ Debug_EventScript_Script_1::
 	lockall
 	msgbox Debug_EventScript_Script_1_TestMessage, MSGBOX_DEFAULT
 	closemessage
+	playtrainervoice TRAINER_VOICE_GIGI, 0
+	msgbox Debug_EventScript_Script_1_TestMessage2
+	closemessage
 	battlepointpokemart Debug_EventScript_Script_1_Mart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	releaseall
@@ -147,9 +150,11 @@ Debug_EventScript_Script_1::
 
 Debug_EventScript_Script_1_TestMessage:
 	.string "{CREATE_MUGSHOT MUGSHOT_AMELIA EMOTE_NORMAL}Amelia\p"
-	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Gigi\p"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_SHIORI EMOTE_NORMAL}Shiori\p"
-	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Baelz\p$"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Baelz$"
+
+Debug_EventScript_Script_1_TestMessage2:
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Gigi Laugh$"
 
 	.align 2
 Debug_EventScript_Script_1_Mart:

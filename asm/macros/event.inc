@@ -2930,3 +2930,11 @@
 	callnative ScrFunc_hidefollower, requests_effects=1
 	.2byte \wait
 	.endm
+
+	@ Plays the voice of the given trainer. Voice line is any VOICE_LINE* constant.
+	@ You can use waitmoncry to block script execution until the cry finishes.
+	.macro playtrainervoice trainer:req, voiceLine:req
+	callnative ScrFunc_playtrainervoice, requests_effects=1
+	.2byte \trainer
+	.byte \voiceLine
+	.endm

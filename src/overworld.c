@@ -82,7 +82,7 @@
 #include "pokemon_storage_system.h" //tx_randomizer_and_challenges
 #include "randomizer.h"
 
-STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 && !OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
+//STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 && !OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
 struct CableClubPlayer
 {

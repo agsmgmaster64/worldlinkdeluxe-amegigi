@@ -859,3 +859,11 @@ DirectSoundWaveData_drill_dozer_bass_sample::
 	.align 2
 DirectSoundWaveData_drill_dozer_trumpet_sample::
 	.incbin "sound/direct_sound_samples/drill_dozer_trumpet_sample.bin"
+
+	.align 2
+Voice_OakIntro::
+	.incbin "sound/direct_sound_samples/voice_lines/oak_intro.bin"
+
+	.align 2
+Voice_GigiLaugh::
+	.incbin "sound/direct_sound_samples/voice_lines/uncomp_gigi_voice_laugh.bin"
