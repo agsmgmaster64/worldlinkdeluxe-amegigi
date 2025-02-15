@@ -2,6 +2,7 @@
 const LOCALID_GIGI = 1
 const LOCALID_INA = 2
 const LOCALID_BAELZ = 3
+const LOCALID_NUE = 3
 
 const MULTI_BUY_ITEMS = 0
 const MULTI_BP_MOVES = 1
@@ -60,6 +61,49 @@ script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	closemessage
 	setspeakername(Route116_TunnelersRestHouse_Text_Player)
 	msgbox(Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT)
+	closemessage
+	release
+	end
+}
+
+script Route116_TunnelersRestHouse_EventScript_NueBogosBinted {
+	lock
+	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
+	applymovement(LOCALID_NUE, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
+	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
+	waitmoncry
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeakername(gText_Gigi)
+	playtrainervoice(TRAINER_VOICE_GIGI, 1)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinBogosBinted, MSGBOX_DEFAULT)
+	waitmoncry
+	closemessage
+	applymovement(LOCALID_NUE, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
+	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
+	waitmoncry
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeakername(gText_Gigi)
+	playtrainervoice(TRAINER_VOICE_GIGI, 1)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinBogosBinted, MSGBOX_DEFAULT)
+	waitmoncry
+	closemessage
+	applymovement(LOCALID_NUE, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
+	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
+	waitmoncry
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+	setspeakername(gText_Gigi)
+	playtrainervoice(TRAINER_VOICE_GIGI, 0)
+	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinLaugh, MSGBOX_DEFAULT)
+	waitmoncry
 	closemessage
 	release
 	end
@@ -312,6 +356,18 @@ text Route116_TunnelersRestHouse_Text_InaThankYou {
 text Route116_TunnelersRestHouse_Text_GigiLavaridge {
 	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}I found these near Lavaridge, where someone called Mokou was giving them away.\p"
 	"Dunno why exactly, but I was nearby and she was giving them away, so I took a decent amount and I still have some left over.")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiMurinBogosBinted {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Boat goes Binted?")
+}
+
+text Route116_TunnelersRestHouse_Text_GigiMurinLaugh {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}HAHAHAHAHAHA!!")
+}
+
+text Route116_TunnelersRestHouse_Text_NueBogosBinted {
+	format("Nuuu-e?")
 }
 
 text Route116_TunnelersRestHouse_Text_CookTalk {

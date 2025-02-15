@@ -6,6 +6,7 @@ gTestVoiceTable::
 	.align 2
 gGigiVoiceTable::
 	cry_uncomp Voice_GigiLaugh
+	cry_uncomp Voice_GigiBoatGoesBinted
 
 	.align 2
 gTrainerVoiceTable::

@@ -867,3 +867,7 @@ Voice_OakIntro::
 	.align 2
 Voice_GigiLaugh::
 	.incbin "sound/direct_sound_samples/voice_lines/uncomp_gigi_voice_laugh.bin"
+
+	.align 2
+Voice_GigiBoatGoesBinted::
+	.incbin "sound/direct_sound_samples/voice_lines/uncomp_gigi_boat_goes_binted.bin"

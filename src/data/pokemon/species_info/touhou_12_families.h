@@ -1376,7 +1376,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_CNue,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1386,6 +1386,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_CNue,
         .iconPalIndex = 1,
         FOOTPRINT(CNue)
+        OVERWORLD(
+            gObjectEventPic_CNue,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_CNue,
+            gShinyOverworldPalette_CNue
+        )
         .levelUpLearnset = sCNueLevelUpLearnset,
         .teachableLearnset = sCNueTeachableLearnset,
         .eggMoveLearnset = sCNueEggMoveLearnset,
@@ -1446,6 +1455,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_Nue,
         .iconPalIndex = 1,
         FOOTPRINT(Nue)
+        OVERWORLD(
+            gObjectEventPic_Nue,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Nue,
+            gShinyOverworldPalette_Nue
+        )
         .levelUpLearnset = sNueLevelUpLearnset,
         .teachableLearnset = sNueTeachableLearnset,
     },
@@ -1500,6 +1518,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_ANue,
         .iconPalIndex = 1,
         FOOTPRINT(ANue)
+        OVERWORLD(
+            gObjectEventPic_ANue,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_ANue,
+            gShinyOverworldPalette_ANue
+        )
         .levelUpLearnset = sANueLevelUpLearnset,
         .teachableLearnset = sANueTeachableLearnset,
     },
@@ -1555,6 +1582,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconSprite = gMonIcon_TNue,
         .iconPalIndex = 1,
         FOOTPRINT(TNue)
+        OVERWORLD(
+            gObjectEventPic_TNue,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_TNue,
+            gShinyOverworldPalette_TNue
+        )
         .levelUpLearnset = sTNueLevelUpLearnset,
         .teachableLearnset = sTNueTeachableLearnset,
     },
