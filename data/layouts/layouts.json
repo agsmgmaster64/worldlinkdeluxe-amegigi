@@ -3225,7 +3225,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_Facility",
+      "secondary_tileset": "gTileset_RG_SilphCo",
       "border_filepath": "data/layouts/RustboroCity_DevonCorp_3F/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_DevonCorp_3F/map.bin"
     },
