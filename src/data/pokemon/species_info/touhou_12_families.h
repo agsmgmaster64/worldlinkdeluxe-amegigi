@@ -53,8 +53,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_CNazrin,
         .iconSprite = gMonIcon_CNazrin,
         .iconPalIndex = 1,
-        FOOTPRINT(CNazrin)
         SHADOW(-1, 9, SHADOW_SIZE_S)
+        FOOTPRINT(CNazrin)
+        OVERWORLD(
+            gObjectEventPic_CNazrin,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CNazrin,
+            gShinyOverworldPalette_CNazrin
+        )
         .levelUpLearnset = sCNazrinLevelUpLearnset,
         .teachableLearnset = sCNazrinTeachableLearnset,
         .eggMoveLearnset = sCNazrinEggMoveLearnset,
@@ -114,8 +123,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_Nazrin,
         .iconSprite = gMonIcon_Nazrin,
         .iconPalIndex = 1,
-        FOOTPRINT(Nazrin)
         SHADOW(-1, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Nazrin)
+        OVERWORLD(
+            gObjectEventPic_Nazrin,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Nazrin,
+            gShinyOverworldPalette_Nazrin
+        )
         .levelUpLearnset = sNazrinLevelUpLearnset,
         .teachableLearnset = sNazrinTeachableLearnset,
     },
@@ -170,8 +188,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_TNazrin,
         .iconSprite = gMonIcon_TNazrin,
         .iconPalIndex = 1,
-        FOOTPRINT(TNazrin)
         SHADOW(0, 13, SHADOW_SIZE_M)
+        FOOTPRINT(TNazrin)
+        OVERWORLD(
+            gObjectEventPic_TNazrin,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_TNazrin,
+            gShinyOverworldPalette_TNazrin
+        )
         .levelUpLearnset = sTNazrinLevelUpLearnset,
         .teachableLearnset = sTNazrinTeachableLearnset,
     },
@@ -226,8 +253,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_HNazrin,
         .iconSprite = gMonIcon_HNazrin,
         .iconPalIndex = 1,
-        FOOTPRINT(HNazrin)
         SHADOW(0, 11, SHADOW_SIZE_M)
+        FOOTPRINT(HNazrin)
+        OVERWORLD(
+            gObjectEventPic_HNazrin,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_HNazrin,
+            gShinyOverworldPalette_HNazrin
+        )
         .levelUpLearnset = sHNazrinLevelUpLearnset,
         .teachableLearnset = sHNazrinTeachableLearnset,
     },

@@ -4478,6 +4478,18 @@ $(POKEMONGFXDIR)/exeggutor/alola/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/marowak/alola/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(POKEMONGFXDIR)/_add/th/daiyousei/chibi/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/daiyousei/normal/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/daiyousei/attack/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/daiyousei/defense/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(POKEMONGFXDIR)/_add/th/cirno/chibi/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -4526,16 +4538,25 @@ $(POKEMONGFXDIR)/_add/th/reisen/defense/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/_add/th/reisen/tech/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/star/chibi/overworld.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/momiji/chibi/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/star/normal/overworld.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/momiji/normal/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/star/attack/overworld.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/momiji/defense/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(POKEMONGFXDIR)/_add/th/star/helper/overworld.4bpp: %.4bpp: %.png
+$(POKEMONGFXDIR)/_add/th/nazrin/chibi/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/nazrin/normal/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/nazrin/tech/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/nazrin/helper/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/_add/th/nue/chibi/overworld.4bpp: %.4bpp: %.png
@@ -4548,6 +4569,27 @@ $(POKEMONGFXDIR)/_add/th/nue/attack/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/_add/th/nue/tech/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/chibi/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/normal/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/attack/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/star/helper/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/tokiko/chibi/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/tokiko/normal/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(POKEMONGFXDIR)/_add/th/tokiko/attack/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(POKEMONGFXDIR)/wooper/paldea/overworld.4bpp: %.4bpp: %.png

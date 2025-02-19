@@ -703,8 +703,17 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_CTokiko,
         .iconSprite = gMonIcon_CTokiko,
         .iconPalIndex = 1,
-        FOOTPRINT(CTokiko)
         SHADOW(0, 13, SHADOW_SIZE_M)
+        FOOTPRINT(CTokiko)
+        OVERWORLD(
+            gObjectEventPic_CTokiko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_CTokiko,
+            gShinyOverworldPalette_CTokiko
+        )
         .levelUpLearnset = sCTokikoLevelUpLearnset,
         .teachableLearnset = sCTokikoTeachableLearnset,
         .eggMoveLearnset = sCTokikoEggMoveLearnset,
@@ -762,8 +771,17 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_Tokiko,
         .iconSprite = gMonIcon_Tokiko,
         .iconPalIndex = 1,
-        FOOTPRINT(Tokiko)
         SHADOW(5, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Tokiko)
+        OVERWORLD(
+            gObjectEventPic_Tokiko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Tokiko,
+            gShinyOverworldPalette_Tokiko
+        )
         .levelUpLearnset = sTokikoLevelUpLearnset,
         .teachableLearnset = sTokikoTeachableLearnset,
     },
@@ -817,8 +835,17 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_ATokiko,
         .iconSprite = gMonIcon_ATokiko,
         .iconPalIndex = 1,
-        FOOTPRINT(ATokiko)
         SHADOW(-2, 12, SHADOW_SIZE_L)
+        FOOTPRINT(ATokiko)
+        OVERWORLD(
+            gObjectEventPic_ATokiko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_ATokiko,
+            gShinyOverworldPalette_ATokiko
+        )
         .levelUpLearnset = sATokikoLevelUpLearnset,
         .teachableLearnset = sATokikoTeachableLearnset,
     },
@@ -872,8 +899,17 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_ATokiko,
         .iconSprite = gMonIcon_ATokiko,
         .iconPalIndex = 1,
-        FOOTPRINT(ATokiko)
         SHADOW(-2, 12, SHADOW_SIZE_L)
+        FOOTPRINT(ATokiko)
+        OVERWORLD(
+            gObjectEventPic_ATokiko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_ATokiko,
+            gShinyOverworldPalette_ATokiko
+        )
         .levelUpLearnset = sATokikoLevelUpLearnset,
         .teachableLearnset = sATokikoTeachableLearnset,
     },

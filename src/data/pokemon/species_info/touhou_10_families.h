@@ -1206,8 +1206,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CMomiji,
         .iconSprite = gMonIcon_CMomiji,
         .iconPalIndex = 1,
-        FOOTPRINT(CMomiji)
         SHADOW(1, 10, SHADOW_SIZE_M)
+        FOOTPRINT(CMomiji)
+        OVERWORLD(
+            gObjectEventPic_CMomiji,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CMomiji,
+            gShinyOverworldPalette_CMomiji
+        )
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
         .eggMoveLearnset = sCMomijiEggMoveLearnset,
@@ -1264,8 +1273,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_Momiji,
         .iconSprite = gMonIcon_Momiji,
         .iconPalIndex = 1,
-        FOOTPRINT(Momiji)
         SHADOW(5, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Momiji)
+        OVERWORLD(
+            gObjectEventPic_Momiji,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Momiji,
+            gShinyOverworldPalette_Momiji
+        )
         .levelUpLearnset = sMomijiLevelUpLearnset,
         .teachableLearnset = sMomijiTeachableLearnset,
     },
@@ -1319,8 +1337,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_DMomiji,
         .iconSprite = gMonIcon_DMomiji,
         .iconPalIndex = 1,
-        FOOTPRINT(DMomiji)
         SHADOW(-5, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(DMomiji)
+        OVERWORLD(
+            gObjectEventPic_DMomiji,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DMomiji,
+            gShinyOverworldPalette_DMomiji
+        )
         .levelUpLearnset = sDMomijiLevelUpLearnset,
         .teachableLearnset = sDMomijiTeachableLearnset,
     },

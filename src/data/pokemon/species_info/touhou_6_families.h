@@ -549,6 +549,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconPalIndex = 0,
         SHADOW(0, 15, SHADOW_SIZE_M)
         FOOTPRINT(CDaiyousei)
+        OVERWORLD(
+            gObjectEventPic_CDaiyousei,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_CDaiyousei,
+            gShinyOverworldPalette_CDaiyousei
+        )
         .levelUpLearnset = sCDaiyouseiLevelUpLearnset,
         .teachableLearnset = sCDaiyouseiTeachableLearnset,
         .eggMoveLearnset = sCDaiyouseiEggMoveLearnset,
@@ -610,6 +619,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconPalIndex = 0,
         SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Daiyousei)
+        OVERWORLD(
+            gObjectEventPic_Daiyousei,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_Daiyousei,
+            gShinyOverworldPalette_Daiyousei
+        )
         .levelUpLearnset = sDaiyouseiLevelUpLearnset,
         .teachableLearnset = sDaiyouseiTeachableLearnset,
     },
@@ -665,6 +683,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconPalIndex = 0,
         SHADOW(3, 13, SHADOW_SIZE_L)
         FOOTPRINT(ADaiyousei)
+        OVERWORLD(
+            gObjectEventPic_ADaiyousei,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_ADaiyousei,
+            gShinyOverworldPalette_ADaiyousei
+        )
         .levelUpLearnset = sADaiyouseiLevelUpLearnset,
         .teachableLearnset = sADaiyouseiTeachableLearnset,
     },
@@ -720,6 +747,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .iconPalIndex = 0,
         SHADOW(-2, 12, SHADOW_SIZE_L)
         FOOTPRINT(DDaiyousei)
+        OVERWORLD(
+            gObjectEventPic_DDaiyousei,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following_Asym,
+            gOverworldPalette_DDaiyousei,
+            gShinyOverworldPalette_DDaiyousei
+        )
         .levelUpLearnset = sDDaiyouseiLevelUpLearnset,
         .teachableLearnset = sDDaiyouseiTeachableLearnset,
     },
