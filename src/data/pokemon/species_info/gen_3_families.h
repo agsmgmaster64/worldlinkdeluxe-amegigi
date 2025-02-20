@@ -56,7 +56,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Sceptile)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_SceptileMega,
+            sPicTable_SceptileMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -128,7 +128,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Blaziken)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_BlazikenMega,
+            sPicTable_BlazikenMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -200,7 +200,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Swampert)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_SwampertMega,
+            sPicTable_SwampertMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -279,7 +279,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(-5, 0, SHADOW_SIZE_M)
         FOOTPRINT(Zigzagoon)
         OVERWORLD(
-            gObjectEventPic_ZigzagoonGalar,
+            sPicTable_ZigzagoonGalar,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -344,7 +344,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(-4, 0, SHADOW_SIZE_L)
         FOOTPRINT(Linoone)
         OVERWORLD(
-            gObjectEventPic_LinooneGalar,
+            sPicTable_LinooneGalar,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -409,7 +409,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(2, 13, SHADOW_SIZE_M)
         FOOTPRINT(Obstagoon)
         OVERWORLD(
-            gObjectEventPic_Obstagoon,
+            sPicTable_Obstagoon,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -484,7 +484,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Gardevoir)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_GardevoirMega,
+            sPicTable_GardevoirMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -566,7 +566,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(4, 13, SHADOW_SIZE_L)
         FOOTPRINT(Gallade)
         OVERWORLD(
-            gObjectEventPic_Gallade,
+            sPicTable_Gallade,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -632,7 +632,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Gallade)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_GalladeMega,
+            sPicTable_GalladeMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -713,7 +713,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(-1, 13, SHADOW_SIZE_L)
         FOOTPRINT(Probopass)
         OVERWORLD(
-            gObjectEventPic_Probopass,
+            sPicTable_Probopass,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -780,7 +780,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Sableye)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_SableyeMega,
+            sPicTable_SableyeMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -859,7 +859,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Mawile)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_MawileMega,
+            sPicTable_MawileMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -932,7 +932,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Aggron)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_AggronMega,
+            sPicTable_AggronMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1004,7 +1004,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Medicham)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_MedichamMega,
+            sPicTable_MedichamMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1075,7 +1075,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Manectric)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_ManectricMega,
+            sPicTable_ManectricMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1149,7 +1149,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Sharpedo)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_SharpedoMega,
+            sPicTable_SharpedoMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -1222,7 +1222,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Camerupt)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_CameruptMega,
+            sPicTable_CameruptMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1295,7 +1295,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Altaria)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_AltariaMega,
+            sPicTable_AltariaMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -1376,7 +1376,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(0, 7, SHADOW_SIZE_S)
         FOOTPRINT(Castform)
         OVERWORLD(
-            gObjectEventPic_CastformSunny,
+            sPicTable_CastformSunny,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -1450,7 +1450,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(0, 7, SHADOW_SIZE_S)
         FOOTPRINT(Castform)
         OVERWORLD(
-            gObjectEventPic_CastformRainy,
+            sPicTable_CastformRainy,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -1524,7 +1524,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(0, 8, SHADOW_SIZE_S)
         FOOTPRINT(Castform)
         OVERWORLD(
-            gObjectEventPic_CastformSnowy,
+            sPicTable_CastformSnowy,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -1594,7 +1594,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Banette)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_BanetteMega,
+            sPicTable_BanetteMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1689,7 +1689,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(6, 13, SHADOW_SIZE_M)
         FOOTPRINT(Dusknoir)
         OVERWORLD(
-            gObjectEventPic_Dusknoir,
+            sPicTable_Dusknoir,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1757,7 +1757,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Absol)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_AbsolMega,
+            sPicTable_AbsolMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1829,7 +1829,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Glalie)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_GlalieMega,
+            sPicTable_GlalieMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1903,7 +1903,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(-1, 10, SHADOW_SIZE_S)
         FOOTPRINT(Froslass)
         OVERWORLD(
-            gObjectEventPic_Froslass,
+            sPicTable_Froslass,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1971,7 +1971,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Salamence)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_SalamenceMega,
+            sPicTable_SalamenceMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2043,7 +2043,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Metagross)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_MetagrossMega,
+            sPicTable_MetagrossMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2116,7 +2116,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Latias)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_LatiasMega,
+            sPicTable_LatiasMega,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -2191,7 +2191,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         FOOTPRINT(Latios)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            gObjectEventPic_LatiosMega,
+            sPicTable_LatiosMega,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -2273,7 +2273,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .iconPalIndex = 0,
         SHADOW(0, 14, SHADOW_SIZE_M)
         OVERWORLD(
-            gObjectEventPic_DeoxysAttack,
+            sPicTable_DeoxysAttack,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2344,7 +2344,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(0, 13, SHADOW_SIZE_M)
         FOOTPRINT(Deoxys)
         OVERWORLD(
-            gObjectEventPic_DeoxysDefense,
+            sPicTable_DeoxysDefense,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2415,7 +2415,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         SHADOW(3, 13, SHADOW_SIZE_M)
         FOOTPRINT(Deoxys)
         OVERWORLD(
-            gObjectEventPic_DeoxysSpeed,
+            sPicTable_DeoxysSpeed,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
