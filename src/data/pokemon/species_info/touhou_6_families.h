@@ -550,7 +550,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(0, 15, SHADOW_SIZE_M)
         FOOTPRINT(CDaiyousei)
         OVERWORLD(
-            gObjectEventPic_CDaiyousei,
+            sPicTable_CDaiyousei,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -620,7 +620,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Daiyousei)
         OVERWORLD(
-            gObjectEventPic_Daiyousei,
+            sPicTable_Daiyousei,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -684,7 +684,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(3, 13, SHADOW_SIZE_L)
         FOOTPRINT(ADaiyousei)
         OVERWORLD(
-            gObjectEventPic_ADaiyousei,
+            sPicTable_ADaiyousei,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -748,7 +748,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(-2, 12, SHADOW_SIZE_L)
         FOOTPRINT(DDaiyousei)
         OVERWORLD(
-            gObjectEventPic_DDaiyousei,
+            sPicTable_DDaiyousei,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -813,7 +813,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(2, 11, SHADOW_SIZE_M)
         FOOTPRINT(CCirno)
         OVERWORLD(
-            gObjectEventPic_CCirno,
+            sPicTable_CCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -884,7 +884,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(0, 15, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Cirno)
         OVERWORLD(
-            gObjectEventPic_Cirno,
+            sPicTable_Cirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -948,7 +948,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(0, 18, SHADOW_SIZE_L)
         FOOTPRINT(SCirno)
         OVERWORLD(
-            gObjectEventPic_SCirno,
+            sPicTable_SCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1014,7 +1014,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         SHADOW(4, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(TCirno)
         OVERWORLD(
-            gObjectEventPic_TCirno,
+            sPicTable_TCirno,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

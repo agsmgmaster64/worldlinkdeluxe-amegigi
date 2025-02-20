@@ -706,7 +706,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         SHADOW(0, 13, SHADOW_SIZE_M)
         FOOTPRINT(CTokiko)
         OVERWORLD(
-            gObjectEventPic_CTokiko,
+            sPicTable_CTokiko,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -774,7 +774,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         SHADOW(5, 13, SHADOW_SIZE_L)
         FOOTPRINT(Tokiko)
         OVERWORLD(
-            gObjectEventPic_Tokiko,
+            sPicTable_Tokiko,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -838,7 +838,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         SHADOW(-2, 12, SHADOW_SIZE_L)
         FOOTPRINT(ATokiko)
         OVERWORLD(
-            gObjectEventPic_ATokiko,
+            sPicTable_ATokiko,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -902,7 +902,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         SHADOW(-2, 12, SHADOW_SIZE_L)
         FOOTPRINT(ATokiko)
         OVERWORLD(
-            gObjectEventPic_ATokiko,
+            sPicTable_ATokiko,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

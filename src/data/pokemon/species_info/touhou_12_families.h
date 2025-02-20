@@ -56,7 +56,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         SHADOW(-1, 9, SHADOW_SIZE_S)
         FOOTPRINT(CNazrin)
         OVERWORLD(
-            gObjectEventPic_CNazrin,
+            sPicTable_CNazrin,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -126,7 +126,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         SHADOW(-1, 12, SHADOW_SIZE_M)
         FOOTPRINT(Nazrin)
         OVERWORLD(
-            gObjectEventPic_Nazrin,
+            sPicTable_Nazrin,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -191,7 +191,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         SHADOW(0, 13, SHADOW_SIZE_M)
         FOOTPRINT(TNazrin)
         OVERWORLD(
-            gObjectEventPic_TNazrin,
+            sPicTable_TNazrin,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -256,7 +256,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         SHADOW(0, 11, SHADOW_SIZE_M)
         FOOTPRINT(HNazrin)
         OVERWORLD(
-            gObjectEventPic_HNazrin,
+            sPicTable_HNazrin,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1423,7 +1423,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconPalIndex = 1,
         FOOTPRINT(CNue)
         OVERWORLD(
-            gObjectEventPic_CNue,
+            sPicTable_CNue,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1492,7 +1492,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconPalIndex = 1,
         FOOTPRINT(Nue)
         OVERWORLD(
-            gObjectEventPic_Nue,
+            sPicTable_Nue,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1555,7 +1555,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconPalIndex = 1,
         FOOTPRINT(ANue)
         OVERWORLD(
-            gObjectEventPic_ANue,
+            sPicTable_ANue,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1619,7 +1619,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .iconPalIndex = 1,
         FOOTPRINT(TNue)
         OVERWORLD(
-            gObjectEventPic_TNue,
+            sPicTable_TNue,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

@@ -694,7 +694,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         SHADOW(-2, 6, SHADOW_SIZE_S)
         FOOTPRINT(Dewott)
         OVERWORLD(
-            gObjectEventPic_Dewott,
+            sPicTable_Dewott,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1209,7 +1209,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         SHADOW(1, 10, SHADOW_SIZE_M)
         FOOTPRINT(CMomiji)
         OVERWORLD(
-            gObjectEventPic_CMomiji,
+            sPicTable_CMomiji,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1276,7 +1276,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         SHADOW(5, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Momiji)
         OVERWORLD(
-            gObjectEventPic_Momiji,
+            sPicTable_Momiji,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1340,7 +1340,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         SHADOW(-5, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(DMomiji)
         OVERWORLD(
-            gObjectEventPic_DMomiji,
+            sPicTable_DMomiji,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2218,7 +2218,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconPalIndex = 2,
         FOOTPRINT(Kyogre)
         OVERWORLD(
-            gObjectEventPic_Kyogre,
+            sPicTable_Kyogre,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -2343,7 +2343,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconPalIndex = 1,
         FOOTPRINT(Rayquaza)
         OVERWORLD(
-            gObjectEventPic_Rayquaza,
+            sPicTable_Rayquaza,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_NONE,

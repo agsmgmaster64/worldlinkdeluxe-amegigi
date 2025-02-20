@@ -1101,7 +1101,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconPalIndex = 1,
         FOOTPRINT(CReisen)
         OVERWORLD(
-            gObjectEventPic_CReisen,
+            sPicTable_CReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1168,7 +1168,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconPalIndex = 1,
         FOOTPRINT(Reisen)
         OVERWORLD(
-            gObjectEventPic_Reisen,
+            sPicTable_Reisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1230,7 +1230,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconPalIndex = 1,
         FOOTPRINT(DReisen)
         OVERWORLD(
-            gObjectEventPic_DReisen,
+            sPicTable_DReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1293,7 +1293,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .iconPalIndex = 1,
         FOOTPRINT(TReisen)
         OVERWORLD(
-            gObjectEventPic_TReisen,
+            sPicTable_TReisen,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

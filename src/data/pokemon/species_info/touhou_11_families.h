@@ -1864,7 +1864,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconPalIndex = 0,
         FOOTPRINT(Groudon)
         OVERWORLD(
-            gObjectEventPic_Groudon,
+            sPicTable_Groudon,
             SIZE_64x64,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

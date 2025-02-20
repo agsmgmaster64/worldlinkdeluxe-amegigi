@@ -1386,7 +1386,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconPalIndex = 0,
         FOOTPRINT(CStar)
         OVERWORLD(
-            gObjectEventPic_CStar,
+            sPicTable_CStar,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1453,7 +1453,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconPalIndex = 0,
         FOOTPRINT(Star)
         OVERWORLD(
-            gObjectEventPic_Star,
+            sPicTable_Star,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1515,7 +1515,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconPalIndex = 0,
         FOOTPRINT(AStar)
         OVERWORLD(
-            gObjectEventPic_AStar,
+            sPicTable_AStar,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -1577,7 +1577,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .iconPalIndex = 0,
         FOOTPRINT(HStar)
         OVERWORLD(
-            gObjectEventPic_HStar,
+            sPicTable_HStar,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,

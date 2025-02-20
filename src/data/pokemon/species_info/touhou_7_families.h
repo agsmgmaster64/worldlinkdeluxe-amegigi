@@ -766,7 +766,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         FOOTPRINT(CLilyWhite)
         OVERWORLD(
-            gObjectEventPic_CLilyWhite,
+            sPicTable_CLilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -834,7 +834,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         FOOTPRINT(LilyWhite)
         OVERWORLD(
-            gObjectEventPic_LilyWhite,
+            sPicTable_LilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -896,7 +896,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         FOOTPRINT(ALilyWhite)
         OVERWORLD(
-            gObjectEventPic_ALilyWhite,
+            sPicTable_ALilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -958,7 +958,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         FOOTPRINT(HLilyWhite)
         OVERWORLD(
-            gObjectEventPic_HLilyWhite,
+            sPicTable_HLilyWhite,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2128,7 +2128,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 0,
         FOOTPRINT(CYoumu)
         OVERWORLD(
-            gObjectEventPic_CYoumu,
+            sPicTable_CYoumu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2195,7 +2195,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 0,
         FOOTPRINT(Youmu)
         OVERWORLD(
-            gObjectEventPic_Youmu,
+            sPicTable_Youmu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2257,7 +2257,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 0,
         FOOTPRINT(DYoumu)
         OVERWORLD(
-            gObjectEventPic_DYoumu,
+            sPicTable_DYoumu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
@@ -2319,7 +2319,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 0,
         FOOTPRINT(SYoumu)
         OVERWORLD(
-            gObjectEventPic_SYoumu,
+            sPicTable_SYoumu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
