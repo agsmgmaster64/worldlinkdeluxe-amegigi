@@ -243,7 +243,7 @@ bool32 HandleMoveTargetRedirection(void)
     else if (IsDoubleBattle()
            && gSideTimers[side].followmeTimer == 0
            && (!IsBattleMoveStatus(gCurrentMove) || (moveTarget != MOVE_TARGET_USER && moveTarget != MOVE_TARGET_ALL_BATTLERS))
-           && ((ability != ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+           && ((ability != ABILITY_LIGHTNING_ROD && moveType == TYPE_WIND)
             || (ability != ABILITY_STORM_DRAIN && moveType == TYPE_WATER)))
     {
         // Find first battler that redirects the move (in turn order)
@@ -254,7 +254,7 @@ bool32 HandleMoveTargetRedirection(void)
             if ((B_REDIRECT_ABILITY_ALLIES >= GEN_4 || !IsAlly(gBattlerAttacker, battler))
                 && battler != gBattlerAttacker
                 && gBattleStruct->moveTarget[gBattlerAttacker] != battler
-                && ((ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_ELECTRIC)
+                && ((ability == ABILITY_LIGHTNING_ROD && moveType == TYPE_WIND)
                  || (ability == ABILITY_STORM_DRAIN && moveType == TYPE_WATER))
                 && GetBattlerTurnOrderNum(battler) < redirectorOrderNum
                 && moveEffect != EFFECT_SNIPE_SHOT
@@ -3225,9 +3225,13 @@ static void CancellerObedience(u32 *effect)
      && !(gHitMarker & HITMARKER_NO_PPDEDUCT) // Don't check obedience after first hit of multi target move or multi hit moves
      && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
     {
+        switch (obedienceResult)
+        {
+        case DISOBEYS_LOAFS:
             // Randomly select, then print a disobedient string
             // B_MSG_LOAFING, B_MSG_WONT_OBEY, B_MSG_TURNED_AWAY, or B_MSG_PRETEND_NOT_NOTICE
             gBattleCommunication[MULTISTRING_CHOOSER] = MOD(Random(), NUM_LOAF_STRINGS);
+            gBattlescriptCurrInstr = BattleScript_MoveUsedLoafingAround;
             gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
             break;
         case DISOBEYS_HITS_SELF:
