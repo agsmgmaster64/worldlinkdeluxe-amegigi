@@ -15,7 +15,8 @@
 #define MUGSHOT_SHIORI  6
 #define MUGSHOT_BAELZ   7
 #define MUGSHOT_SUSIE   8
-#define MUGSHOT_COUNT   9
+#define MUGSHOT_KRONII  9
+#define MUGSHOT_COUNT   10
 
 #define EMOTE_NORMAL    0
 #define EMOTE_HAPPY     1

@@ -205,4 +205,16 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .y = MUGSHOT_Y,
         },
     },
+
+    [MUGSHOT_KRONII] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_GigiNormal,
+            .pal = sFieldMugshotPal_GigiNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
 };
