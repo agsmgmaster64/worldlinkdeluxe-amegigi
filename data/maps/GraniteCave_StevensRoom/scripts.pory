@@ -59,15 +59,15 @@ text GraniteCave_StevensRoom_Text_BaelzIntro {
 }
 
 text GraniteCave_StevensRoom_Text_WitnessMe {
-	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}WITNESS ME!\p"
-	"Wazzup, you need something from me?\p"
-	"Huh, a letter?")
+	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_HAPPY}WITNESS ME!\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Wazzup, you need something from me?\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_SERIOUS}Huh, a letter?")
 }
 
 text GraniteCave_StevensRoom_Text_ThankYouTakeThis {
 	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Oh nice, a letter for me. Who sent this one here?\p"
-	"Huh, from Mr. Orange.\NI guess I should read what's in it.\p"
-	"You know what, before I read it, here's a little prize for delivering this for me.\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_SERIOUS}Huh, from Mr. Orange.\NI guess I should read what's in it.\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_HAPPY}You know what, before I read it, here's a little prize for delivering this for me.\p"
 	"It's a TM that I have for the move Steel Wing, a pretty nice move for your Puppets.")
 }
 
@@ -77,9 +77,9 @@ text GraniteCave_StevensRoom_Text_OhBagIsFull { //this should never be reached a
 
 text GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister {
 	format("{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Alright, so let's see what Mr. Orange has to say.\p"
-	"Hmm, Team Aqua and Magma have been causing some unwanted chaos around their parts, and he needs me to take care of them?\p"
-	"Well, I'll see what I can do exactly with those guys there.\p"
-	"Either way, your Puppets do look like they can take care of a lot of trainers.\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_SERIOUS}Hmm, Team Aqua and Magma have been causing some unwanted chaos around their parts, and he needs me to take care of them?\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Well, I'll see what I can do exactly with those guys there.\p"
+	"{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_HAPPY}Either way, your Puppets do look like they can take care of a lot of trainers.\p"
 	"Maybe you should try out the renewed Puppet League, with my friend Kronii as the Champion.\p"
 	"You might even be able to beat her at her game.\p"
 	"I should probably register you in our iDollNavs, just so you can get more info about it.\p"

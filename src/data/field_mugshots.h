@@ -11,6 +11,7 @@ static const u32 sFieldMugshotGfx_AmeliaNormal[] = INCBIN_U32("graphics/field_mu
 static const u16 sFieldMugshotPal_AmeliaNormal[] = INCBIN_U16("graphics/field_mugshots/amelia/normal.gbapal");
 
 static const u32 sFieldMugshotGfx_GigiNormal[] = INCBIN_U32("graphics/field_mugshots/gigi/normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_GigiHappy[] = INCBIN_U32("graphics/field_mugshots/gigi/colon_3.4bpp.lz");
 static const u16 sFieldMugshotPal_GigiNormal[] = INCBIN_U16("graphics/field_mugshots/gigi/normal.gbapal");
 
 static const u32 sFieldMugshotGfx_RenkoSerious[] = INCBIN_U32("graphics/field_mugshots/renko/serious.4bpp.lz");
@@ -23,6 +24,8 @@ static const u32 sFieldMugshotGfx_ShioriNormal[] = INCBIN_U32("graphics/field_mu
 static const u16 sFieldMugshotPal_ShioriNormal[] = INCBIN_U16("graphics/field_mugshots/shiori/normal.gbapal");
 
 static const u32 sFieldMugshotGfx_BaelzNormal[] = INCBIN_U32("graphics/field_mugshots/baelz/normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_BaelzHappy[] = INCBIN_U32("graphics/field_mugshots/baelz/happy.4bpp.lz");
+static const u32 sFieldMugshotGfx_BaelzSerious[] = INCBIN_U32("graphics/field_mugshots/baelz/serious.4bpp.lz");
 static const u16 sFieldMugshotPal_BaelzNormal[] = INCBIN_U16("graphics/field_mugshots/baelz/normal.gbapal");
 
 static const u32 sFieldMugshotGfx_SusieHappy[] = INCBIN_U32("graphics/field_mugshots/susie/happy.4bpp.lz");
@@ -86,6 +89,13 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_GigiHappy,
+            .pal = sFieldMugshotPal_GigiNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
     },
 
     [MUGSHOT_RENKO] =
@@ -126,6 +136,20 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_NORMAL] =
         {
             .gfx = sFieldMugshotGfx_BaelzNormal,
+            .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzHappy,
+            .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SERIOUS] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzSerious,
             .pal = sFieldMugshotPal_BaelzNormal,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
