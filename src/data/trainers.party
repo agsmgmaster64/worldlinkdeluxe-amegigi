@@ -14261,24 +14261,45 @@ AI: Very Smart Trainer / Ace Pokemon
 Mugshot: Yellow
 Starting Status: Rainbow Opponent
 Difficulty: Lunatic
+Party Size: 3
+Pool Rules: Basic
 
 Chibi Meiling
 Adamant Nature
 Level: 13
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 HP
+Tags: Lead
 
-Chibi Bijou
+Biboo (Chibi Bijou) @ Gym Suit
 Calm Nature
 Level: 14
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpD / 252 Def / 6 HP
 
-Pearl (Chibi Amelia) (F)
+Biboo (Chibi Bijou) @ Blazer
+Calm Nature
+Level: 14
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpD / 252 Def / 6 HP
+
+Pearl (Chibi Amelia) (F) @ Nurse Uniform
 Modest Nature
 Level: 15
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 SpA / 252 Spe / 6 HP
+Tags: Ace
+- Pound
+- Growl
+- Toxic Gas
+- Taunt
+
+Pearl (Chibi Amelia) (F) @ Bento Box
+Modest Nature
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 6 HP
+Tags: Ace
 - Pound
 - Growl
 - Toxic Gas
