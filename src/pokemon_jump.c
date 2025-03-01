@@ -58,12 +58,6 @@ enum {
 };
 
 enum {
-    JUMP_TYPE_NORMAL,
-    JUMP_TYPE_FAST,
-    JUMP_TYPE_SLOW,
-};
-
-enum {
     FUNC_GAME_INTRO,
     FUNC_WAIT_ROUND,
     FUNC_GAME_ROUND,
@@ -274,17 +268,11 @@ struct PokemonJump
     struct PokemonJump_Player *player;
 };
 
-struct PokemonJumpMons
-{
-    u16 species;
-    u16 jumpType;
-};
-
 static void InitGame(struct PokemonJump *);
 static void ResetForNewGame(struct PokemonJump *);
 static void InitPlayerAndJumpTypes(void);
 static void ResetPlayersForNewGame(void);
-static s16 GetPokemonJumpSpeciesIdx(u16 species);
+static s16 GetSpeciesPokemonJumpType(u16 species);
 static void InitJumpMonInfo(struct PokemonJump_MonInfo *, struct Pokemon *);
 static void CB2_PokemonJump(void);
 static void Task_StartPokemonJump(u8);
@@ -419,220 +407,6 @@ static inline void TruncateToFirstWordOnly(u8 *);
 EWRAM_DATA static struct PokemonJump *sPokemonJump = NULL;
 EWRAM_DATA static struct PokemonJumpGfx *sPokemonJumpGfx = NULL;
 
-/*
-    According to the clerk, the Pokémon allowed in
-    Pokémon Jump are all <= 28 inches, and do not
-    only swim, burrow, or fly.
-*/
-static const struct PokemonJumpMons sPokeJumpMons[] =
-{
-    { .species = SPECIES_NORMAL_BIJOU,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PETILIL,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SANDILE,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_DARUMAKA,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_DWEBBLE,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SCRAGGY,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ARCHEN,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_TRUBBISH,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ZORUA,                             .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_MINCCINO,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_CINCCINO,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_GOTHITA,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_GOTHORITA,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_DEERLING_SPRING,                   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_DEERLING_SUMMER,                   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_DEERLING_AUTUMN,                   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_DEERLING_WINTER,                   .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_KARRABLAST,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_FOONGUS,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_AMOONGUSS,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_JOLTIK,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_LITWICK,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_AXEW,                              .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_CUBCHOO,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SHELMET,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_STUNFISK,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_PAWNIARD,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_DURANT,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_CHESPIN,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_QUILLADIN,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_FENNEKIN,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_FROAKIE,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_FROGADIER,                         .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_BUNNELBY,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_POLAR,                  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_TUNDRA,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_CONTINENTAL,            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_GARDEN,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_ELEGANT,                .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_MEADOW,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_MODERN,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_MARINE,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_ARCHIPELAGO,            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_HIGH_PLAINS,            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_SANDSTORM,              .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_RIVER,                  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_MONSOON,                .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_SAVANNA,                .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_SUN,                    .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_OCEAN,                  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_JUNGLE,                 .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_FANCY,                  .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SCATTERBUG_POKEBALL,               .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SPEWPA_POLAR,                      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_TUNDRA,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_CONTINENTAL,                .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_GARDEN,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_ELEGANT,                    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_MEADOW,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_MODERN,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_MARINE,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_ARCHIPELAGO,                .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_HIGH_PLAINS,                .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_SANDSTORM,                  .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_RIVER,                      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_MONSOON,                    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_SAVANNA,                    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_SUN,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_OCEAN,                      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_JUNGLE,                     .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_FANCY,                      .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SPEWPA_POKEBALL,                   .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_LITLEO,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PANCHAM,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_ESPURR,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MEOWSTIC_M,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MEOWSTIC_F,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_BINACLE,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CLAUNCHER,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_HELIOPTILE,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_DEDENNE,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_GOOMY,                             .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ROWLET,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_DARTRIX,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_LITTEN,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_TORRACAT,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_POPPLIO,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_BRIONNE,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_YUNGOOS,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_GUMSHOOS,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_GRUBBIN,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CHARJABUG,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_CRABRAWLER,                        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ROCKRUFF,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ROCKRUFF_OWN_TEMPO,                .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MAREANIE,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_DEWPIDER,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_FOMANTIS,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_MORELULL,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SALANDIT,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_STUFFUL,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_BOUNSWEET,                         .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_STEENEE,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_WIMPOD,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_PYUKUMUKU,                         .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_KOMALA,                            .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_TOGEDEMARU,                        .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MIMIKYU_DISGUISED,                 .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MIMIKYU_BUSTED,                    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_JANGMO_O,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_MARSHADOW,                         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_MELTAN,                            .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_GROOKEY,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_THWACKEY,                          .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_SCORBUNNY,                         .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_RABOOT,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SOBBLE,                            .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_DRIZZILE,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SKWOVET,                           .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SKWOVET,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_BLIPBUG,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_DOTTLER,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_NICKIT,                            .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_GOSSIFLEUR,                        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ELDEGOSS,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_WOOLOO,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_CHEWTLE,                           .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_YAMPER,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_ROLYCOLY,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_APPLIN,                            .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_APPLETUN,                          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_TOXEL,                             .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_SIZZLIPEDE,                        .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_CLOBBOPUS,                         .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_HATENNA,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_HATTREM,                           .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_IMPIDIMP,                          .jumpType = JUMP_TYPE_FAST, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM, .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM,   .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM,  .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL,    .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL, .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL, .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_VANILLA_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_RUBY_CREAM,         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_MATCHA_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_MINT_CREAM,         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_LEMON_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_SALTED_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_RUBY_SWIRL,         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_VANILLA_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_RUBY_CREAM,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_MATCHA_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_MINT_CREAM,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_LEMON_CREAM,         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_SALTED_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_RUBY_SWIRL,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_VANILLA_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_RUBY_CREAM,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_MATCHA_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_MINT_CREAM,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_LEMON_CREAM,         .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_SALTED_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_RUBY_SWIRL,          .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_RUBY_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_MINT_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_LEMON_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_SALTED_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_RUBY_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_MINT_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_LEMON_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_SALTED_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_RUBY_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_MINT_CREAM,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_LEMON_CREAM,       .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_SALTED_CREAM,      .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL,        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL,     .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_PINCURCHIN,                        .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_SNOM,                              .jumpType = JUMP_TYPE_SLOW, },
-    { .species = SPECIES_MORPEKO_FULL_BELLY,                .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_MORPEKO_HANGRY,                    .jumpType = JUMP_TYPE_NORMAL, },
-    { .species = SPECIES_KUBFU,                             .jumpType = JUMP_TYPE_FAST, },
-};
-
 void StartPokemonJump(u16 partyId, MainCallback exitCallback)
 {
     u8 taskId;
@@ -717,12 +491,11 @@ static void ResetForNewGame(struct PokemonJump *jump)
 
 static void InitPlayerAndJumpTypes(void)
 {
-    int i, index;
+    int i;
 
     for (i = 0; i < MAX_RFU_PLAYERS; i++)
     {
-        index = GetPokemonJumpSpeciesIdx(sPokemonJump->monInfo[i].species);
-        sPokemonJump->players[i].monJumpType = sPokeJumpMons[index].jumpType;
+        sPokemonJump->players[i].monJumpType = GetSpeciesPokemonJumpType(sPokemonJump->monInfo[i].species);
     }
 
     sPokemonJump->player = &sPokemonJump->players[sPokemonJump->multiplayerId];
@@ -744,16 +517,9 @@ static void ResetPlayersForNewGame(void)
     }
 }
 
-static s16 GetPokemonJumpSpeciesIdx(u16 species)
+static s16 GetSpeciesPokemonJumpType(u16 species)
 {
-    u32 i;
-    for (i = 0; i < ARRAY_COUNT(sPokeJumpMons); i++)
-    {
-        if (sPokeJumpMons[i].species == species)
-            return i;
-    }
-
-    return -1; // species isnt allowed
+    return gSpeciesInfo[SanitizeSpeciesId(species)].pokemonJumpType;
 }
 
 static void InitJumpMonInfo(struct PokemonJump_MonInfo *monInfo, struct Pokemon *mon)
@@ -2064,24 +1830,24 @@ static void HandleMonState(void)
 
 static const s8 sJumpOffsets[][48] =
 {
-    [JUMP_TYPE_NORMAL] = { -3,  -6,  -8, -10, -13, -15, -17, -19,
-                          -21, -23, -25, -27, -28, -29,
-                          JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
-                          -28, -27, -26, -25, -23, -22, -20, -18,
-                          -17, -15, -13, -11,  -8,  -6,  -4,  -1},
+    [PKMN_JUMP_TYPE_NORMAL - 1] = { -3,  -6,  -8, -10, -13, -15, -17, -19,
+                                   -21, -23, -25, -27, -28, -29,
+                                   JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
+                                   -28, -27, -26, -25, -23, -22, -20, -18,
+                                   -17, -15, -13, -11,  -8,  -6,  -4,  -1},
 
-    [JUMP_TYPE_FAST]  = { -3,  -6,  -9, -11, -14, -16, -18, -20,
-                         -22, -24, -26, -28, -29,
-                         JUMP_PEAK, JUMP_PEAK,
-                         -28, -26, -24, -22, -20, -18, -16, -14,
-                         -11, -9,  -6,  -4,  -1},
+    [PKMN_JUMP_TYPE_FAST - 1]  = { -3,  -6,  -9, -11, -14, -16, -18, -20,
+                                  -22, -24, -26, -28, -29,
+                                  JUMP_PEAK, JUMP_PEAK,
+                                  -28, -26, -24, -22, -20, -18, -16, -14,
+                                  -11, -9,  -6,  -4,  -1},
 
-    [JUMP_TYPE_SLOW]  = { -3,  -6,  -9, -11, -13, -15, -17, -19,
-                         -21, -23, -25, -27, -28, -29,
-                         JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
-                         -29, -29, -28, -28, -27, -27, -26, -25,
-                         -24, -22, -20, -18, -16, -14, -12, -11,
-                          -9,  -6,  -4,  -1},
+    [PKMN_JUMP_TYPE_SLOW - 1]  = { -3,  -6,  -9, -11, -13, -15, -17, -19,
+                                  -21, -23, -25, -27, -28, -29,
+                                  JUMP_PEAK, JUMP_PEAK, JUMP_PEAK, JUMP_PEAK,
+                                  -29, -29, -28, -28, -27, -27, -26, -25,
+                                  -24, -22, -20, -18, -16, -14, -12, -11,
+                                   -9,  -6,  -4,  -1},
 };
 
 static void UpdateJump(int multiplayerId)
@@ -2116,7 +1882,7 @@ static void UpdateJump(int multiplayerId)
 
     jumpOffsetIdx -= 4;
     if (jumpOffsetIdx < (int)ARRAY_COUNT(sJumpOffsets[0]))
-        jumpOffset = sJumpOffsets[player->monJumpType][jumpOffsetIdx];
+        jumpOffset = sJumpOffsets[player->monJumpType - 1][jumpOffsetIdx];
     else
         jumpOffset = 0;
 
@@ -2447,7 +2213,7 @@ static u8 *GetPokeJumpPlayerName(u8 multiplayerId)
 
 bool32 IsSpeciesAllowedInPokemonJump(u16 species)
 {
-    return GetPokemonJumpSpeciesIdx(species) > -1;
+    return GetSpeciesPokemonJumpType(species) != PKMN_JUMP_TYPE_NONE;
 }
 
 void IsPokemonJumpSpeciesInParty(void)
