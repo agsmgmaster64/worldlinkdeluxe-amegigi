@@ -8,11 +8,14 @@ static const u16 sFieldMugshotPal_TestNormal[] = INCBIN_U16("graphics/field_mugs
 static const u16 sFieldMugshotPal_TestAlt[] = INCBIN_U16("graphics/field_mugshots/test/alt.gbapal");
 
 static const u32 sFieldMugshotGfx_AmeliaNormal[] = INCBIN_U32("graphics/field_mugshots/amelia/normal.4bpp.lz");
-static const u16 sFieldMugshotPal_AmeliaNormal[] = INCBIN_U16("graphics/field_mugshots/amelia/normal.gbapal");
+static const u16 sFieldMugshotPal_AmeliaGeneral[] = INCBIN_U16("graphics/field_mugshots/amelia/general.gbapal");
 
 static const u32 sFieldMugshotGfx_GigiNormal[] = INCBIN_U32("graphics/field_mugshots/gigi/normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_GigiHappy[] = INCBIN_U32("graphics/field_mugshots/gigi/colon_3.4bpp.lz");
-static const u16 sFieldMugshotPal_GigiNormal[] = INCBIN_U16("graphics/field_mugshots/gigi/normal.gbapal");
+static const u16 sFieldMugshotPal_GigiGeneral[] = INCBIN_U16("graphics/field_mugshots/gigi/general.gbapal");
+
+static const u32 sFieldMugshotGfx_KroniiNormal[] = INCBIN_U32("graphics/field_mugshots/kronii/normal.4bpp.lz");
+static const u16 sFieldMugshotPal_KroniiGeneral[] = INCBIN_U16("graphics/field_mugshots/kronii/general.gbapal");
 
 static const u32 sFieldMugshotGfx_RenkoSerious[] = INCBIN_U32("graphics/field_mugshots/renko/serious.4bpp.lz");
 static const u16 sFieldMugshotPal_RenkoSerious[] = INCBIN_U16("graphics/field_mugshots/renko/serious.gbapal");
@@ -74,7 +77,7 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_NORMAL] =
         {
             .gfx = sFieldMugshotGfx_AmeliaNormal,
-            .pal = sFieldMugshotPal_AmeliaNormal,
+            .pal = sFieldMugshotPal_AmeliaGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
@@ -85,14 +88,14 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_NORMAL] =
         {
             .gfx = sFieldMugshotGfx_GigiNormal,
-            .pal = sFieldMugshotPal_GigiNormal,
+            .pal = sFieldMugshotPal_GigiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
         [EMOTE_HAPPY] =
         {
             .gfx = sFieldMugshotGfx_GigiHappy,
-            .pal = sFieldMugshotPal_GigiNormal,
+            .pal = sFieldMugshotPal_GigiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
@@ -234,8 +237,8 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
     {
         [EMOTE_NORMAL] =
         {
-            .gfx = sFieldMugshotGfx_GigiNormal,
-            .pal = sFieldMugshotPal_GigiNormal,
+            .gfx = sFieldMugshotGfx_KroniiNormal,
+            .pal = sFieldMugshotPal_KroniiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
