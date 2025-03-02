@@ -1376,6 +1376,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_CStar,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1384,6 +1385,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_CStar,
         .iconSprite = gMonIcon_CStar,
         .iconPalIndex = 0,
+        SHADOW(4, 10, SHADOW_SIZE_M)
         FOOTPRINT(CStar)
         OVERWORLD(
             sPicTable_CStar,
@@ -1443,6 +1445,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Star,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1451,6 +1454,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_Star,
         .iconSprite = gMonIcon_Star,
         .iconPalIndex = 0,
+        SHADOW(1, 11, SHADOW_SIZE_L)
         FOOTPRINT(Star)
         OVERWORLD(
             sPicTable_Star,
@@ -1502,9 +1506,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_AStar,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_AStar,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1513,6 +1518,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_AStar,
         .iconSprite = gMonIcon_AStar,
         .iconPalIndex = 0,
+        SHADOW(2, 12, SHADOW_SIZE_L)
         FOOTPRINT(AStar)
         OVERWORLD(
             sPicTable_AStar,
@@ -1564,9 +1570,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_HStar,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_HStar,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1575,6 +1582,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_HStar,
         .iconSprite = gMonIcon_HStar,
         .iconPalIndex = 0,
+        SHADOW(1, 13, SHADOW_SIZE_L)
         FOOTPRINT(HStar)
         OVERWORLD(
             sPicTable_HStar,

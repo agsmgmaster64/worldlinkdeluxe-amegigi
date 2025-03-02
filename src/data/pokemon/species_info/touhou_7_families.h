@@ -764,6 +764,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_CLilyWhite,
         .iconSprite = gMonIcon_CLilyWhite,
         .iconPalIndex = 2,
+        SHADOW(0, 8, SHADOW_SIZE_S)
         FOOTPRINT(CLilyWhite)
         OVERWORLD(
             sPicTable_CLilyWhite,
@@ -832,6 +833,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_LilyWhite,
         .iconSprite = gMonIcon_LilyWhite,
         .iconPalIndex = 2,
+        SHADOW(2, 12, SHADOW_SIZE_L)
         FOOTPRINT(LilyWhite)
         OVERWORLD(
             sPicTable_LilyWhite,
@@ -886,6 +888,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_ALilyWhite,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -894,6 +897,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_ALilyWhite,
         .iconSprite = gMonIcon_ALilyWhite,
         .iconPalIndex = 2,
+        SHADOW(0, 13, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(ALilyWhite)
         OVERWORLD(
             sPicTable_ALilyWhite,
@@ -948,6 +952,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_HLilyWhite,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -956,6 +961,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_HLilyWhite,
         .iconSprite = gMonIcon_HLilyWhite,
         .iconPalIndex = 2,
+        SHADOW(0, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(HLilyWhite)
         OVERWORLD(
             sPicTable_HLilyWhite,
@@ -2870,6 +2876,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_CChen,
         .iconSprite = gMonIcon_CChen,
         .iconPalIndex = 2,
+        SHADOW(2, 8, SHADOW_SIZE_M)
         FOOTPRINT(CChen)
         .levelUpLearnset = sCChenLevelUpLearnset,
         .teachableLearnset = sCChenTeachableLearnset,
@@ -2922,6 +2929,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Chen,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -2930,6 +2938,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_Chen,
         .iconSprite = gMonIcon_Chen,
         .iconPalIndex = 2,
+        SHADOW(-2, 11, SHADOW_SIZE_L)
         FOOTPRINT(Chen)
         .levelUpLearnset = sChenLevelUpLearnset,
         .teachableLearnset = sChenTeachableLearnset,
@@ -2972,9 +2981,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_AChen,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_AChen,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -2983,6 +2993,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_AChen,
         .iconSprite = gMonIcon_AChen,
         .iconPalIndex = 2,
+        SHADOW(0, 11, SHADOW_SIZE_L)
         FOOTPRINT(AChen)
         .levelUpLearnset = sAChenLevelUpLearnset,
         .teachableLearnset = sAChenTeachableLearnset,
@@ -3025,10 +3036,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .trainerOffset = 1,
         .frontPic = gMonFrontPic_TChen,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 8,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 6,
+        .enemyMonElevation = 0,
         .backPic = gMonBackPic_TChen,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -3037,6 +3048,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_TChen,
         .iconSprite = gMonIcon_TChen,
         .iconPalIndex = 2,
+        SHADOW(1, 8, SHADOW_SIZE_M)
         FOOTPRINT(TChen)
         .levelUpLearnset = sTChenLevelUpLearnset,
         .teachableLearnset = sTChenTeachableLearnset,

@@ -275,6 +275,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .shinyPalette = gMonShinyPalette_CMedicine,
         .iconSprite = gMonIcon_CMedicine,
         .iconPalIndex = 1,
+        SHADOW(4, 7, SHADOW_SIZE_M)
         FOOTPRINT(CMedicine)
         .levelUpLearnset = sCMedicineLevelUpLearnset,
         .teachableLearnset = sCMedicineTeachableLearnset,
@@ -327,6 +328,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Medicine,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -335,6 +337,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .shinyPalette = gMonShinyPalette_Medicine,
         .iconSprite = gMonIcon_Medicine,
         .iconPalIndex = 1,
+        SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Medicine)
         .levelUpLearnset = sMedicineLevelUpLearnset,
         .teachableLearnset = sMedicineTeachableLearnset,
@@ -377,9 +380,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .trainerOffset = 11,
         .frontPic = gMonFrontPic_AMedicine,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 2,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_AMedicine,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -388,6 +392,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .shinyPalette = gMonShinyPalette_AMedicine,
         .iconSprite = gMonIcon_AMedicine,
         .iconPalIndex = 1,
+        SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(AMedicine)
         .levelUpLearnset = sAMedicineLevelUpLearnset,
         .teachableLearnset = sAMedicineTeachableLearnset,
@@ -431,9 +436,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .trainerOffset = 2,
         .frontPic = gMonFrontPic_SMedicine,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 2,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_SMedicine,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -442,6 +448,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .shinyPalette = gMonShinyPalette_SMedicine,
         .iconSprite = gMonIcon_SMedicine,
         .iconPalIndex = 1,
+        SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(SMedicine)
         .levelUpLearnset = sSMedicineLevelUpLearnset,
         .teachableLearnset = sSMedicineTeachableLearnset,
@@ -485,9 +492,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .trainerOffset = 3,
         .frontPic = gMonFrontPic_TMedicine,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_TMedicine,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -496,6 +504,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .shinyPalette = gMonShinyPalette_TMedicine,
         .iconSprite = gMonIcon_TMedicine,
         .iconPalIndex = 1,
+        SHADOW(0, 10, SHADOW_SIZE_L)
         FOOTPRINT(TMedicine)
         .levelUpLearnset = sTMedicineLevelUpLearnset,
         .teachableLearnset = sTMedicineTeachableLearnset,
