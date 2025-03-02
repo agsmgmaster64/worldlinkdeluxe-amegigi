@@ -1307,3 +1307,11 @@ static const u16 sCMimaEggMoveLearnset[] = {
     MOVE_SWIFT,
     MOVE_UNAVAILABLE,
 };
+
+static const u16 sBasineyEggMoveLearnset[] = {
+    MOVE_LEAF_STORM,
+    MOVE_HEAL_BELL,
+    MOVE_AROMATHERAPY,
+    MOVE_SCALD,
+    MOVE_UNAVAILABLE,
+};

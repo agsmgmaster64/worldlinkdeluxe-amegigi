@@ -391,6 +391,115 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .teachableLearnset = sKroniiTeachableLearnset,
     },
 
+    [SPECIES_BASINEY] =
+    {
+        .baseHP        = 250,
+        .baseAttack    = 5,
+        .baseDefense   = 65,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 35,
+        .baseSpDefense = 65,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 30,
+        .expYield = 395,
+        .evYield_HP = 2,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1),
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_NONE, ABILITY_HEALER },
+        .sourceGame = SOURCE_OTHER,
+        .speciesName = _("Basiney"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_PURRLOIN,
+        .categoryName = _("Basin"),
+        .height = 11,
+        .weight = 500,
+        .description = COMPOUND_STRING(
+            "Their deceptively cute act is the\n"
+            "perfect ruse. They steal from people for\n"
+            "fun, but their victims can't help but\n"
+            "forgive them."),
+        .pokemonScale = 491,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Basiney,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_GROW_VIBRATE,
+        .backPic = gMonBackPic_Basiney,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_Basiney,
+        .shinyPalette = gMonShinyPalette_Basiney,
+        .iconSprite = gMonIcon_Basiney,
+        .iconPalIndex = 4,
+        SHADOW(2, 5, SHADOW_SIZE_L)
+        FOOTPRINT(Basiney)
+        .levelUpLearnset = sBasineyLevelUpLearnset,
+        .teachableLearnset = sBasineyTeachableLearnset,
+        .eggMoveLearnset = sBasineyEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_CHROME_HEART, SPECIES_BLISSEA}),
+    },
+
+    [SPECIES_BLISSEA] =
+    {
+        .baseHP        = 255,
+        .baseAttack    = 10,
+        .baseDefense   = 80,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 55,
+        .baseSpDefense = 80,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 45,
+        .expYield = 608,
+        .evYield_HP = 3,
+        .genderRatio = MON_FEMALE,
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_RAIN_DISH, ABILITY_NONE, ABILITY_HEALER },
+        .sourceGame = SOURCE_OTHER,
+        .speciesName = _("Blissea"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_PETILIL,
+        .categoryName = _("Bulb"),
+        .height = 5,
+        .weight = 66,
+        .description = COMPOUND_STRING(
+            "By pruning the leaves on its head with\n"
+            "regularity, this Pokémon can be grown\n"
+            "into a fine plump shape. These bitter\n"
+            "leaves refresh those who eat them."),
+        .pokemonScale = 432,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Blissea,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_H_JUMPS_V_STRETCH,
+        .enemyMonElevation = 7,
+        .backPic = gMonBackPic_Blissea,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_STRETCH,
+        .palette = gMonPalette_Blissea,
+        .shinyPalette = gMonShinyPalette_Blissea,
+        .iconSprite = gMonIcon_Blissea,
+        .iconPalIndex = 4,
+        SHADOW(0, 8, SHADOW_SIZE_L)
+        FOOTPRINT(Blissea)
+        .levelUpLearnset = sBlisseaLevelUpLearnset,
+        .teachableLearnset = sBlisseaTeachableLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

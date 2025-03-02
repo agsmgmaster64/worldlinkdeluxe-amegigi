@@ -553,8 +553,8 @@
 #define SPECIES_PLACEHOLD_BIJOU                         544 // Placeholder
 #define SPECIES_CHIBI_KRONII                            545
 #define SPECIES_NORMAL_KRONII                           546
-#define SPECIES_WHIMSICOTT                              547
-#define SPECIES_PETILIL                                 548
+#define SPECIES_WHIMSICOTT                              547 // Placeholder
+#define SPECIES_BLISSEA                                 548
 #define SPECIES_LILLIGANT                               549
 #define SPECIES_BASCULIN                                SPECIES_BASCULIN_RED_STRIPED
 #define SPECIES_BASCULIN_RED_STRIPED                    550

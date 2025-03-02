@@ -7600,6 +7600,27 @@ static const struct LevelUpMove sKroniiLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+static const struct LevelUpMove sBasineyLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_RAIN_DANCE),
+    LEVEL_UP_MOVE(1, MOVE_COUNTER),
+    LEVEL_UP_MOVE(1, MOVE_MIRROR_COAT),
+    LEVEL_UP_MOVE(1, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(40, MOVE_SWAGGER),
+    LEVEL_UP_MOVE(40, MOVE_FLATTER),
+    LEVEL_UP_END
+};
+
+static const struct LevelUpMove sBlisseaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE(1, MOVE_RAIN_DANCE),
+    LEVEL_UP_MOVE(1, MOVE_COUNTER),
+    LEVEL_UP_MOVE(1, MOVE_MIRROR_COAT),
+    LEVEL_UP_MOVE(1, MOVE_WATER_PULSE),
+    LEVEL_UP_MOVE(40, MOVE_SWAGGER),
+    LEVEL_UP_MOVE(40, MOVE_FLATTER),
+    LEVEL_UP_MOVE(40, MOVE_RECOVER),
+    LEVEL_UP_END
+};
+
 static const struct LevelUpMove sShingyokuOLevelUpLearnset[] = {
     LEVEL_UP_MOVE(39, MOVE_CHARMING_LOOK),
     LEVEL_UP_MOVE(42, MOVE_EXTRASENSORY),

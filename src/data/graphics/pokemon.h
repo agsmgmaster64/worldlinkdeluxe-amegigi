@@ -30589,6 +30589,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Kronii[] = INCBIN_U8("graphics/pokemon/_add/etc/kronii/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_Basiney[] = INCBIN_U32("graphics/pokemon/basiney/anim_front.4bpp.lz");
+    const u32 gMonPalette_Basiney[] = INCBIN_U32("graphics/pokemon/basiney/normal.gbapal.lz");
+    const u32 gMonBackPic_Basiney[] = INCBIN_U32("graphics/pokemon/basiney/back.4bpp.lz");
+    const u32 gMonShinyPalette_Basiney[] = INCBIN_U32("graphics/pokemon/basiney/shiny.gbapal.lz");
+    const u8 gMonIcon_Basiney[] = INCBIN_U8("graphics/pokemon/basiney/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Basiney[] = INCBIN_U8("graphics/pokemon/basiney/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Blissea[] = INCBIN_U32("graphics/pokemon/blissea/anim_front.4bpp.lz");
+    const u32 gMonPalette_Blissea[] = INCBIN_U32("graphics/pokemon/blissea/normal.gbapal.lz");
+    const u32 gMonBackPic_Blissea[] = INCBIN_U32("graphics/pokemon/blissea/back.4bpp.lz");
+    const u32 gMonShinyPalette_Blissea[] = INCBIN_U32("graphics/pokemon/blissea/shiny.gbapal.lz");
+    const u8 gMonIcon_Blissea[] = INCBIN_U8("graphics/pokemon/blissea/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Blissea[] = INCBIN_U8("graphics/pokemon/blissea/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/anim_front.4bpp.lz");
     const u32 gMonPalette_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/normal.gbapal.lz");
     const u32 gMonBackPic_CSeiran[] = INCBIN_U32("graphics/pokemon/_add/th/seiran/chibi/back.4bpp.lz");
