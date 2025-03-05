@@ -185,7 +185,7 @@ def main():
     repo_tms = list(extract_repo_tms())
     repo_tutors = list(extract_repo_tutors())
     repo_teachables = set(filter(
-        lambda move: move not in set(repo_universals),
+        lambda move: move,
         chain(repo_tms, repo_tutors)
     ))
 
