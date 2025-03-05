@@ -2417,6 +2417,29 @@ BattleScript_EffectHealingWishRestore:
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_GivingHeartActivates::
+	printstring STRINGID_GIVINGHEARTCAMETRUE
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_WISH_HEAL
+	waitanimation
+	dmgtohalfattackerhp
+	manipulatedamage DMG_CHANGE_SIGN
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	clearstatus BS_ATTACKER
+	waitstate
+	updatestatusicon BS_ATTACKER
+	waitstate
+	printstring STRINGID_HEALINGWISHHEALED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_GivingHeartStore::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_GIVINGHEARTLASTWISH
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_EffectWorrySeed::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
@@ -5451,6 +5474,7 @@ BattleScript_FaintAttacker::
 	printstring STRINGID_ATTACKERFAINTED
 	@savebattleritem BS_ATTACKER
 	cleareffectsonfaint BS_ATTACKER
+	storegivingheart BS_ATTACKER
 	tryactivatesoulheart
 	tryactivatereceiver BS_ATTACKER
 	trytrainerslidefirstdownmsg BS_ATTACKER
@@ -5466,6 +5490,7 @@ BattleScript_FaintTarget::
 	@savebattleritem BS_TARGET
 	cleareffectsonfaint BS_TARGET
 	tryactivatefellstinger BS_ATTACKER
+	storegivingheart BS_TARGET
 	tryactivatesoulheart
 	tryactivatereceiver BS_TARGET
 	tryactivatemoxie BS_ATTACKER        @ and chilling neigh, as one ice rider
@@ -6420,6 +6445,21 @@ BattleScript_AngerShellRet:
 	restoreattacker
 	return
 
+BattleScript_DeterminatorActivates::
+	saveattacker
+	copybyte gBattlerAttacker, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	jumpifstat BS_TARGET, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_DeterminatorTryDef
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_RestoreAttackerButItFailed
+BattleScript_DeterminatorTryDef::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	modifybattlerstatstage BS_ATTACKER, STAT_DEF, INCREASE, 1, BattleScript_DeterminatorTrySpDef, ANIM_ON
+BattleScript_DeterminatorTrySpDef:
+	modifybattlerstatstage BS_ATTACKER, STAT_SPDEF, INCREASE, 1, BattleScript_DeterminatorRet, ANIM_ON
+BattleScript_DeterminatorRet:
+	restoreattacker
+	return
+
 BattleScript_WindPowerActivates::
 	call BattleScript_AbilityPopUp
 	setcharge BS_TARGET
@@ -7169,6 +7209,14 @@ BattleScript_MoveUsedIsAsleep::
 	waitmessage B_WAIT_TIME_LONG
 	statusanimation BS_ATTACKER
 	goto BattleScript_MoveEnd
+
+BattleScript_MoveUsedLucidDreaming::
+	printstring STRINGID_PKMNFASTASLEEP
+	waitmessage B_WAIT_TIME_LONG
+	statusanimation BS_ATTACKER
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_LONG
+	return
 
 BattleScript_MoveUsedWokeUp::
 	bicword gHitMarker, HITMARKER_WAKE_UP_CLEAR
@@ -8248,6 +8296,15 @@ BattleScript_PsychicSurgeActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_TERRAINBECOMESPSYCHIC
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
+	call BattleScript_ActivateTerrainEffects
+	end3
+
+BattleScript_HolySurgeActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TERRAINBECOMESHOLY
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG
 	call BattleScript_ActivateTerrainEffects

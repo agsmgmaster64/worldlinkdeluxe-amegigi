@@ -3180,9 +3180,19 @@ static void CancellerAsleep(u32 *effect)
                 u32 moveEffect = GetMoveEffect(gChosenMove);
                 if (moveEffect != EFFECT_SNORE && moveEffect != EFFECT_SLEEP_TALK)
                 {
-                    gBattlescriptCurrInstr = BattleScript_MoveUsedIsAsleep;
-                    gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
-                    *effect = 2;
+                    if (GetBattlerAbility(gBattlerAttacker) == ABILITY_LUCID_DREAMING)
+                    {
+                        BattleScriptPushCursor();
+                        gBattlerAbility = gBattlerAttacker;
+                        gBattlescriptCurrInstr = BattleScript_MoveUsedLucidDreaming;
+                        *effect = 2;
+                    }
+                    else
+                    {
+                        gBattlescriptCurrInstr = BattleScript_MoveUsedIsAsleep;
+                        gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
+                        *effect = 2;
+                    }
                 }
             }
             else
@@ -4850,17 +4860,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_AS_ONE_ICE_RIDER:
-        case ABILITY_AS_ONE_SHADOW_RIDER:
-            if (!gSpecialStatuses[battler].switchInAbilityDone)
-            {
-                gBattlerTarget = GetOppositeBattler(battler);
-                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_ASONE;
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
-                BattleScriptPushCursorAndCallback(BattleScript_ActivateAsOne);
-                effect++;
-            }
-            break;
         case ABILITY_CURIOUS_MEDICINE:
             if (!gSpecialStatuses[battler].switchInAbilityDone && IsDoubleBattle()
               && IsBattlerAlive(BATTLE_PARTNER(battler)) && TryResetBattlerStatChanges(BATTLE_PARTNER(battler)))
@@ -5013,6 +5012,15 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
+        case ABILITY_LUCID_DREAMING:
+            if (!gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_LUCIDDREAMING;
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
         case ABILITY_SCREEN_CLEANER:
             if (!gSpecialStatuses[battler].switchInAbilityDone && TryRemoveScreens(battler))
             {
@@ -5104,6 +5112,13 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             if (TryChangeBattleTerrain(battler, STATUS_FIELD_PSYCHIC_TERRAIN, &gFieldTimers.terrainTimer))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_PsychicSurgeActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_HOLY_SURGE:
+            if (TryChangeBattleTerrain(battler, STATUS_FIELD_HOLY_TERRAIN, &gFieldTimers.terrainTimer))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_HolySurgeActivates);
                 effect++;
             }
             break;
@@ -6085,27 +6100,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_SAND_SPIT:
-            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && IsBattlerTurnDamaged(gBattlerTarget)
-             && !(gBattleWeather & B_WEATHER_SANDSTORM && HasWeatherEffect()))
-            {
-                if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect())
-                {
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_BlockedByPrimalWeatherRet;
-                    effect++;
-                }
-                else if (TryChangeBattleWeather(battler, BATTLE_WEATHER_SANDSTORM, TRUE))
-                {
-                    gBattleScripting.battler = battler;
-                    BattleScriptPushCursor();
-                    gBattlescriptCurrInstr = BattleScript_SandSpitActivates;
-                    effect++;
-                }
-            }
-            break;
         case ABILITY_PERISH_BODY:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
@@ -6181,6 +6175,20 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             {
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_AngerShellActivates;
+                effect++;
+            }
+            break;
+        case ABILITY_DETERMINATOR:
+            if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && IsBattlerTurnDamaged(gBattlerTarget)
+             && (gMultiHitCounter == 0 || gMultiHitCounter == 1) // Activates after all hits from a multi-hit move.
+             && IsBattlerAlive(gBattlerTarget)
+             && HadMoreThanHalfHpNowDoesnt(gBattlerTarget)
+             && !(TestIfSheerForceAffected(gBattlerAttacker, gCurrentMove)))
+            {
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_DeterminatorActivates;
                 effect++;
             }
             break;
@@ -6697,8 +6705,7 @@ bool32 IsMoldBreakerTypeAbility(u32 battler, u32 ability)
     if (gStatuses3[battler] & STATUS3_GASTRO_ACID)
         return FALSE;
 
-    return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE
-        || (ability == ABILITY_MYCELIUM_MIGHT && IsBattleMoveStatus(gCurrentMove)));
+    return (ability == ABILITY_MOLD_BREAKER || ability == ABILITY_TERAVOLT || ability == ABILITY_TURBOBLAZE);
 }
 
 static inline bool32 CanBreakThroughAbility(u32 battlerAtk, u32 battlerDef, u32 ability)
@@ -9536,10 +9543,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
-    case ABILITY_STEELY_SPIRIT:
-        if (moveType == TYPE_STEEL)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;
     case ABILITY_SHARPNESS:
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9862,6 +9865,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     case ABILITY_GORILLA_TACTICS:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_CLEAR_VOICE:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
         break;
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].status2 & STATUS2_TRANSFORMED))
@@ -11425,9 +11432,7 @@ static bool32 TryRemoveScreens(u32 battler)
 
 static bool32 IsUnnerveAbilityOnOpposingSide(u32 battler)
 {
-    if (IsAbilityOnOpposingSide(battler, ABILITY_UNNERVE)
-      || IsAbilityOnOpposingSide(battler, ABILITY_AS_ONE_ICE_RIDER)
-      || IsAbilityOnOpposingSide(battler, ABILITY_AS_ONE_SHADOW_RIDER))
+    if (IsAbilityOnOpposingSide(battler, ABILITY_UNNERVE))
         return TRUE;
     return FALSE;
 }

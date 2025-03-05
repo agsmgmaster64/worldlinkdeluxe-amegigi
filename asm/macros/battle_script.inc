@@ -1744,6 +1744,12 @@
 	.byte \battler
 	.endm
 
+	@ Stores GivingHeart effect.
+	.macro storegivingheart battler:req
+	callnative BS_StoreGivingHeart
+	.byte \battler
+	.endm
+
 	.macro hitswitchtargetfailed
 	callnative BS_HitSwitchTargetFailed
 	.endm
@@ -2472,6 +2478,10 @@
 
 	.macro dmgtocurrattackerhp
 	manipulatedamage DMG_CURR_ATTACKER_HP
+	.endm
+
+	.macro dmgtohalfattackerhp
+	manipulatedamage DMG_HALF_ATTACKER_HP
 	.endm
 
 	.macro jumpifflowerveil jumpInstr:req

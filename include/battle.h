@@ -643,7 +643,8 @@ struct BattlerState
     u32 sleepClauseEffectExempt:1; // Stores whether effect should be exempt from triggering Sleep Clause (Effect Spore)
     u32 usedMicleBerry:1;
     u32 pursuitTarget:1;
-    u32 padding:17;
+    u32 storedGivingHeart:1;
+    u32 padding:16;
     // End of Word
 };
 

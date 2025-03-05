@@ -647,7 +647,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ASSAULTVESTDOESNTALLOW]               = COMPOUND_STRING("The effects of the {B_LAST_ITEM} prevent status moves from being used!\p"),
     [STRINGID_GRAVITYPREVENTSUSAGE]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE} because of gravity!\p"),
     [STRINGID_HEALBLOCKPREVENTSUSAGE]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was prevented from healing!\p"),
-    [STRINGID_NOTDONEYET]                           = COMPOUND_STRING("This move effect is not done yet!\p"),
+    [STRINGID_NOTDONEYET]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE}!\p"),
     [STRINGID_STICKYWEBUSED]                        = COMPOUND_STRING("A sticky web has been laid out on the ground around {B_DEF_TEAM2} team!"),
     [STRINGID_QUASHSUCCESS]                         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s move was postponed!"),
     [STRINGID_PKMNBLEWAWAYTOXICSPIKES]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew away Toxic Spikes!"),
@@ -907,6 +907,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PKMNSENTTOPCAFTERCATCH]               = gText_PkmnSentToPCAfterCatch,
     [STRINGID_NUZLOCKECAPTUREBLOCKED]               = COMPOUND_STRING("You have already used your encounter for this area!{PAUSE_UNTIL_PRESS}"),
     [STRINGID_SAMESPECIESCAPTUREBLOCKED]            = COMPOUND_STRING("You have already caught this Puppet!{PAUSE_UNTIL_PRESS}"),
+    [STRINGID_LUCIDDREAMINGENTERS]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is a sleepwalker!"),
+    [STRINGID_GIVINGHEARTCAMETRUE]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} became cloaked in mystical moonlight!"),
+    [STRINGID_GIVINGHEARTLASTWISH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s last wish generated a light!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1006,6 +1009,7 @@ const u16 gSwitchInAbilityStringIds[] =
     [B_MSG_SWITCHIN_CURIOUS_MEDICINE] = STRINGID_CURIOUSMEDICINEENTERS,
     [B_MSG_SWITCHIN_PASTEL_VEIL] = STRINGID_PASTELVEILENTERS,
     [B_MSG_SWITCHIN_NEUTRALIZING_GAS] = STRINGID_NEUTRALIZINGGASENTERS,
+    [B_MSG_SWITCHIN_LUCIDDREAMING] = STRINGID_LUCIDDREAMINGENTERS,
 };
 
 const u16 gMissStringIds[] =

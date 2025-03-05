@@ -8091,20 +8091,26 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     }
     // Healing Wish activates before hazards.
     // Starting from Gen8 - it heals only pokemon which can be healed. In gens 5,6,7 the effect activates anyways.
-    else if ((gBattleStruct->battlerState[battler].storedHealingWish || gBattleStruct->battlerState[battler].storedLunarDance)
+    else if ((gBattleStruct->battlerState[battler].storedHealingWish || gBattleStruct->battlerState[battler].storedLunarDance || gBattleStruct->battlerState[battler].storedGivingHeart)
         && (gBattleMons[battler].hp != gBattleMons[battler].maxHP || gBattleMons[battler].status1 != 0 || B_HEALING_WISH_SWITCH < GEN_8))
     {
-        if (gBattleStruct->battlerState[battler].storedHealingWish)
+        if (gBattleStruct->battlerState[battler].storedLunarDance)
+        {
+            BattleScriptPushCursor();
+            gBattlescriptCurrInstr = BattleScript_LunarDanceActivates;
+            gBattleStruct->battlerState[battler].storedLunarDance = FALSE;
+        }
+        else if (gBattleStruct->battlerState[battler].storedHealingWish)
         {
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_HealingWishActivates;
             gBattleStruct->battlerState[battler].storedHealingWish = FALSE;
         }
-        else // Lunar Dance
+        else // if (gBattleStruct->battlerState[battler].storedGivingHeart)
         {
             BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_LunarDanceActivates;
-            gBattleStruct->battlerState[battler].storedLunarDance = FALSE;
+            gBattlescriptCurrInstr = BattleScript_GivingHeartActivates;
+            gBattleStruct->battlerState[battler].storedGivingHeart = FALSE;
         }
     }
     else if (!(gDisableStructs[battler].spikesDone)
@@ -10498,9 +10504,7 @@ static void Cmd_various(void)
 
         u16 battlerAbility = GetBattlerAbility(battler);
 
-        if ((battlerAbility == ABILITY_MOXIE
-         || battlerAbility == ABILITY_CHILLING_NEIGH
-         || battlerAbility == ABILITY_AS_ONE_ICE_RIDER)
+        if ((battlerAbility == ABILITY_MOXIE)
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
           && CompareStat(gBattlerAttacker, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
@@ -10509,8 +10513,6 @@ static void Cmd_various(void)
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
             BattleScriptPush(cmd->nextInstr);
             gLastUsedAbility = battlerAbility;
-            if (battlerAbility == ABILITY_AS_ONE_ICE_RIDER)
-                gBattleScripting.abilityPopupOverwrite = gLastUsedAbility = ABILITY_CHILLING_NEIGH;
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -10522,8 +10524,7 @@ static void Cmd_various(void)
 
         u16 battlerAbility = GetBattlerAbility(battler);
 
-        if ((battlerAbility == ABILITY_GRIM_NEIGH
-         || battlerAbility == ABILITY_AS_ONE_SHADOW_RIDER)
+        if ((battlerAbility == ABILITY_AMBITION)
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
           && CompareStat(gBattlerAttacker, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
@@ -10532,8 +10533,6 @@ static void Cmd_various(void)
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
             BattleScriptPush(cmd->nextInstr);
             gLastUsedAbility = battlerAbility;
-            if (battlerAbility == ABILITY_AS_ONE_SHADOW_RIDER)
-                gBattleScripting.abilityPopupOverwrite = gLastUsedAbility = ABILITY_GRIM_NEIGH;
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -12030,6 +12029,9 @@ static void Cmd_manipulatedamage(void)
         break;
     case DMG_RECOIL_FROM_IMMUNE:
         gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
+        break;
+    case DMG_HALF_ATTACKER_HP:
+        gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
         break;
     }
 
@@ -18164,6 +18166,25 @@ void BS_StoreHealingWish(void)
     else
         gBattleStruct->battlerState[battler].storedHealingWish = TRUE;
     gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_StoreGivingHeart(void)
+{
+    NATIVE_ARGS(u8 battler);
+
+    u32 battler = GetBattlerForBattleScript(cmd->battler);
+    if (GetBattlerAbility(battler) == ABILITY_GIVING_HEART)
+    {
+        gLastUsedAbility = ABILITY_GIVING_HEART;
+        gBattleStruct->battlerState[battler].storedGivingHeart = TRUE;
+        gBattlerAbility = gBattleScripting.battler = battler;
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_GivingHeartStore;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
 }
 
 void BS_HitSwitchTargetFailed(void)

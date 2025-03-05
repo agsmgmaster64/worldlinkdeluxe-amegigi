@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("Ability Shield protects against Mycelium Might")
 
     GIVEN {
         PLAYER(SPECIES_VIGOROTH) { Ability(ABILITY_VITAL_SPIRIT); Item(item); }
-        OPPONENT(SPECIES_TOEDSCOOL) { Ability(ABILITY_MYCELIUM_MIGHT); }
+        OPPONENT(SPECIES_TOEDSCOOL) { Ability(ABILITY_AMBITION); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SPORE); MOVE(player, MOVE_SPORE); }
     } SCENE {

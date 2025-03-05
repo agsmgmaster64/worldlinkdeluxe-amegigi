@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own ber
     u16 mon;
     u16 ability;
     PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
     GIVEN {
         ASSUME(gItemsInfo[ITEM_RAWST_BERRY].holdEffect == HOLD_EFFECT_CURE_BRN);
         PLAYER(mon) { Ability(ability); }
@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural
     u16 mon;
     u16 ability;
     PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
         PLAYER(mon) { Ability(ability); }
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (player)")
     u16 mon;
     u16 ability;
     PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
     GIVEN {
         PLAYER(mon) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent)")
     u16 mon;
     u16 ability;
     PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon) { Ability(ability); }

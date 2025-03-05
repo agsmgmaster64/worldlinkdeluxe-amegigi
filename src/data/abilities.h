@@ -1912,11 +1912,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_STEELY_SPIRIT] =
+    [ABILITY_LUCID_DREAMING] =
     {
-        .name = _("Steely Spirit"),
-        .description = COMPOUND_STRING("Boosts ally's Steel moves."),
-        .aiRating = 2,
+        .name = _("Lucid Dreaming"),
+        .description = COMPOUND_STRING("Uses moves during sleep."),
+        .aiRating = 3,
     },
 
     [ABILITY_PERISH_BODY] =
@@ -2005,30 +2005,25 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
-    [ABILITY_CHILLING_NEIGH] =
+    [ABILITY_GIVING_HEART] =
     {
-        .name = _("Chilling Neigh"),
-        .description = COMPOUND_STRING("KOs boost Attack stat."),
-        .aiRating = 7,
+        .name = _("Giving Heart"),
+        .description = COMPOUND_STRING("Next member is healed."),
+        .aiRating = 6,
     },
 
-    [ABILITY_GRIM_NEIGH] =
+    [ABILITY_DETERMINATOR] =
     {
-        .name = _("Grim Neigh"),
-        .description = COMPOUND_STRING("KOs boost Sp. Atk stat."),
-        .aiRating = 7,
+        .name = _("Determinator"),
+        .description = COMPOUND_STRING("Defends at half HP."),
+        .aiRating = 4,
     },
 
-    [ABILITY_AS_ONE_ICE_RIDER] =
+    [ABILITY_HOLY_SURGE] =
     {
-        .name = _("As One"),
+        .name = _("Holy Surge"),
         .description = COMPOUND_STRING("Unnerve and Chilling Neigh."),
-        .aiRating = 10,
-        .cantBeCopied = TRUE,
-        .cantBeSwapped = TRUE,
-        .cantBeTraced = TRUE,
-        .cantBeSuppressed = TRUE,
-        .cantBeOverwritten = TRUE,
+        .aiRating = 8,
     },
 
     [ABILITY_AS_ONE_SHADOW_RIDER] =
@@ -2043,11 +2038,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeOverwritten = TRUE,
     },
 
-    [ABILITY_LINGERING_AROMA] =
+    [ABILITY_CLEAR_VOICE] =
     {
-        .name = _("Lingering Aroma"),
-        .description = COMPOUND_STRING("Spreads with contact."),
-        .aiRating = 5,
+        .name = _("Clear Voice"),
+        .description = COMPOUND_STRING("Sound moves go first."),
+        .aiRating = 6,
     },
 
     [ABILITY_SEED_SOWER] =
@@ -2281,10 +2276,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_MYCELIUM_MIGHT] =
+    [ABILITY_AMBITION] =
     {
-        .name = _("Mycelium Might"),
-        .description = COMPOUND_STRING("Status moves never fail."),
+        .name = _("Ambition"),
+        .description = COMPOUND_STRING("KOs raise Sp. Atk."),
         .aiRating = 2,
     },
 

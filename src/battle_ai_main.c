@@ -3610,6 +3610,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
               || HasMoveEffect(EFFECT_SNORE, battlerAtk)
               || aiData->abilities[battlerAtk] == ABILITY_MAINTENANCE
               || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
+              || aiData->abilities[battlerAtk] == ABILITY_LUCID_DREAMING
               || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
                 ADJUST_SCORE(GOOD_EFFECT);
         }

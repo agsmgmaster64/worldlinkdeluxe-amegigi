@@ -226,6 +226,7 @@ enum CmdVarious
 #define DMG_CURR_ATTACKER_HP    6
 #define DMG_BIG_ROOT            7
 #define DMG_RECOIL_FROM_IMMUNE  8  // Used to calculate recoil for the Gen 4 version of Jump Kick
+#define DMG_HALF_ATTACKER_HP    9
 
 // Cmd_jumpifcantswitch
 #define SWITCH_IGNORE_ESCAPE_PREVENTION   (1 << 7)

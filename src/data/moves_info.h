@@ -22,8 +22,8 @@
 // Shared Move Description entries
 
 const u8 gNotDoneYetDescription[] = _(
-    "This move can't be used. Its\n"
-    "effect is in development.");
+    "This move can't be used and\n"
+    "has to be forgotten.");
 
 static const u8 sNullDescription[] = _("");
 
@@ -12861,18 +12861,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Shoots boiling water at the\n"
             "foe. May inflict a burn."),
-        .effect = EFFECT_HIT,
-        .power = 80,
+        .effect = EFFECT_SUPER_EFFECTIVE_ON_ARG,
+        .power = 70,
         .type = TYPE_WATER,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .thawsUser = TRUE,
+        .argument = { .type = TYPE_ICE },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 30,
+            .chance = 10,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
