@@ -2380,6 +2380,10 @@
 	callnative BS_SwapStats
 	.byte \stat
 	.endm
+    
+	.macro restoresavedmove
+	callnative BS_RestoreSavedMove
+	.endm
 
 @ helpful macros
 	.macro setstatchanger stat:req, stages:req, down:req
