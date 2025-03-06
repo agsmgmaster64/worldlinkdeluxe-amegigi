@@ -724,7 +724,7 @@
       },
       {
         "Level": 27,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 30,
@@ -832,7 +832,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 40,
@@ -948,7 +948,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 42,
@@ -9841,7 +9841,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 48,
@@ -9939,7 +9939,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -15200,7 +15200,7 @@
       },
       {
         "Level": 55,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 60,
@@ -15313,7 +15313,7 @@
       },
       {
         "Level": 63,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 70,
@@ -23965,7 +23965,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -24596,11 +24596,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -36573,7 +36573,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 64,
@@ -41316,7 +41316,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -41369,7 +41369,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 5,
@@ -41477,7 +41477,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 5,

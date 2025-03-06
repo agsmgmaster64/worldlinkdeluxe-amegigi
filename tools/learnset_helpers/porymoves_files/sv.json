@@ -736,7 +736,7 @@
       },
       {
         "Level": 27,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 30,
@@ -847,7 +847,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 40,
@@ -952,7 +952,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 42,
@@ -7421,7 +7421,7 @@
       },
       {
         "Level": 44,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 48,
@@ -7481,7 +7481,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -19941,7 +19941,7 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -29073,7 +29073,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 64,
@@ -34521,7 +34521,7 @@
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",
       "MOVE_GROWTH",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
@@ -34630,7 +34630,7 @@
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",
       "MOVE_GROWTH",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
@@ -34769,7 +34769,7 @@
     "EggMoves": [
       "MOVE_DOUBLE_EDGE",
       "MOVE_GROWTH",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SUPERPOWER",
@@ -65949,7 +65949,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 50,
@@ -69014,7 +69014,7 @@
     "EggMoves": [
       "MOVE_DRAGON_TAIL",
       "MOVE_GASTRO_ACID",
-      "MOVE_SHELL_SMASH"
+      "MOVE_POWER_TRANCE"
     ],
     "TutorMoves": []
   },
@@ -69135,7 +69135,7 @@
     "EggMoves": [
       "MOVE_DRAGON_TAIL",
       "MOVE_GASTRO_ACID",
-      "MOVE_SHELL_SMASH"
+      "MOVE_POWER_TRANCE"
     ],
     "TutorMoves": []
   },
@@ -70478,7 +70478,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -70577,7 +70577,7 @@
       },
       {
         "Level": 60,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 66,

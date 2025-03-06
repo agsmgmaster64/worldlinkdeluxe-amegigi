@@ -9705,7 +9705,7 @@
       },
       {
         "Level": 56,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 61,
@@ -9796,7 +9796,7 @@
       "MOVE_IRON_DEFENSE",
       "MOVE_LEER",
       "MOVE_RAZOR_SHELL",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_TACKLE",
       "MOVE_WHIRLPOOL"
     ],
@@ -14997,7 +14997,7 @@
       },
       {
         "Level": 52,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 55,
@@ -15112,7 +15112,7 @@
       },
       {
         "Level": 67,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 75,
@@ -24237,7 +24237,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 44,
@@ -35680,7 +35680,7 @@
       },
       {
         "Level": 65,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -40303,7 +40303,7 @@
       },
       {
         "Level": 51,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -40398,7 +40398,7 @@
     "PreEvoMoves": [
       "MOVE_CLAMP",
       "MOVE_IRON_DEFENSE",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_WATER_GUN"
     ],
     "TMMoves": [
@@ -40495,7 +40495,7 @@
     "PreEvoMoves": [
       "MOVE_CLAMP",
       "MOVE_IRON_DEFENSE",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_WATER_GUN"
     ],
     "TMMoves": [
@@ -61100,7 +61100,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 41,
@@ -61162,7 +61162,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -61222,7 +61222,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 50,
@@ -61945,7 +61945,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 41,
@@ -62070,7 +62070,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 45,

@@ -1454,6 +1454,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_CMomiji,
         .iconPalIndex = 1,
         FOOTPRINT(CMomiji)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI_SANNI}),
@@ -1508,6 +1509,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_Momiji,
         .iconPalIndex = 1,
         FOOTPRINT(Momiji)
+        .isSannianForm = TRUE,
         .levelUpLearnset = sMomijiLevelUpLearnset,
         .teachableLearnset = sMomijiTeachableLearnset,
     },

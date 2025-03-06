@@ -11355,7 +11355,7 @@
       },
       {
         "Level": 56,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 61,
@@ -11416,7 +11416,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -17627,7 +17627,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 55,
@@ -17760,7 +17760,7 @@
       },
       {
         "Level": 67,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 75,
@@ -27792,7 +27792,7 @@
       },
       {
         "Level": 34,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 38,
@@ -28558,11 +28558,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -42244,7 +42244,7 @@
       },
       {
         "Level": 47,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 50,
@@ -47901,7 +47901,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       }
     ],
     "PreEvoMoves": [],
@@ -48014,7 +48014,7 @@
     "PreEvoMoves": [
       "MOVE_CLAMP",
       "MOVE_IRON_DEFENSE",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_WATER_GUN",
       "MOVE_IRON_DEFENSE"
     ],
@@ -48135,7 +48135,7 @@
     "PreEvoMoves": [
       "MOVE_CLAMP",
       "MOVE_IRON_DEFENSE",
-      "MOVE_SHELL_SMASH",
+      "MOVE_POWER_TRANCE",
       "MOVE_WATER_GUN",
       "MOVE_IRON_DEFENSE"
     ],
@@ -72449,7 +72449,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 41,
@@ -72517,7 +72517,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -72577,7 +72577,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 50,
@@ -73419,7 +73419,7 @@
       },
       {
         "Level": 38,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 41,
@@ -73557,7 +73557,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 45,
@@ -89487,7 +89487,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -89629,7 +89629,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 1,
@@ -100306,7 +100306,7 @@
       },
       {
         "Level": 45,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 50,
@@ -100513,7 +100513,7 @@
       },
       {
         "Level": 37,
-        "Move": "MOVE_SHELL_SMASH"
+        "Move": "MOVE_POWER_TRANCE"
       },
       {
         "Level": 41,

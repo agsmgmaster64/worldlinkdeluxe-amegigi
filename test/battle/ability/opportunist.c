@@ -15,15 +15,15 @@ SINGLE_BATTLE_TEST("Opportunist only copies foe's positive stat changes in a tur
         PLAYER(SPECIES_CHIBI_YUUGI) { Speed(4); }
         OPPONENT(SPECIES_ESPATHRA) { Speed(5); Ability(ability); }
     } WHEN {
-        TURN { MOVE(player, MOVE_SHELL_SMASH); }
+        TURN { MOVE(player, MOVE_POWER_TRANCE); }
         TURN { MOVE(opponent, MOVE_TACKLE); }
     } SCENE {
         if (ability == ABILITY_FRISK) {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_SHELL_SMASH, player);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_POWER_TRANCE, player);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
             HP_BAR(player, captureDamage: &results[i].damage);
         } else {
-            ANIMATION(ANIM_TYPE_MOVE, MOVE_SHELL_SMASH, player);
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_POWER_TRANCE, player);
             ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
             HP_BAR(player, captureDamage: &results[i].damage);
         }
