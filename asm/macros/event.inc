@@ -2528,6 +2528,21 @@
 	.2byte \slot
 	.endm
 
+	@ Sets VAR_RESULT to TRUE if stat can be unhyper trained, or to
+	@ FALSE otherwise.
+	.macro canunhypertrain stat:req, slot:req
+	callnative CanUnhyperTrain, requests_effects=1
+	.byte \stat
+	.2byte \slot
+	.endm
+
+	@ Unhyper Trains a stat.
+	.macro unhypertrain stat:req, slot:req
+	callnative UnhyperTrain, requests_effects=1
+	.byte \stat
+	.2byte \slot
+	.endm
+
 	@ Sets VAR_RESULT to TRUE if the Pokemon has the Gigantamax Factor,
 	@ or to FALSE otherwise.
 	.macro hasgigantamaxfactor slot:req

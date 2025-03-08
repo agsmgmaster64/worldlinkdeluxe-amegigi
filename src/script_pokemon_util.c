@@ -269,6 +269,40 @@ void HyperTrain(struct ScriptContext *ctx)
     }
 }
 
+void CanUnhyperTrain(struct ScriptContext *ctx)
+{
+    u32 stat = ScriptReadByte(ctx);
+    u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if (stat < NUM_STATS
+     && partyIndex < PARTY_SIZE
+     && GetMonData(&gPlayerParty[partyIndex], MON_DATA_HP_IV + stat) > 0)
+    {
+        gSpecialVar_Result = TRUE;
+    }
+    else
+    {
+        gSpecialVar_Result = FALSE;
+    }
+}
+
+void UnhyperTrain(struct ScriptContext *ctx)
+{
+    u32 stat = ScriptReadByte(ctx);
+    u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    if (stat < NUM_STATS && partyIndex < PARTY_SIZE)
+    {
+        u32 data = 0;
+        SetMonData(&gPlayerParty[partyIndex], MON_DATA_HP_IV + stat, &data);
+        CalculateMonStats(&gPlayerParty[partyIndex]);
+    }
+}
+
 void HasGigantamaxFactor(struct ScriptContext *ctx)
 {
     u32 partyIndex = VarGet(ScriptReadHalfword(ctx));
