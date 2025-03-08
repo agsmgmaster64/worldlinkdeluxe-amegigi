@@ -179,6 +179,7 @@ const u32 gObjectEventPic_InaArtist[] = INCBIN_U32("graphics/object_events/pics/
 const u16 gObjectEventPal_InaArtist[] = INCBIN_U16("graphics/object_events/palettes/ina_artist.gbapal");
 const u32 gObjectEventPic_Kronii[] = INCBIN_U32("graphics/object_events/pics/people/kronii.4bpp");
 const u16 gObjectEventPal_Kronii[] = INCBIN_U16("graphics/object_events/palettes/kronii.gbapal");
+const u32 gObjectEventPic_Murasa[] = INCBIN_U32("graphics/object_events/pics/people/murasa.4bpp");
 const u16 gObjectEventPal_Kyogre[] = INCBIN_U16("graphics/object_events/palettes/kyogre.gbapal");
 const u16 gObjectEventPal_KyogreReflection[] = INCBIN_U16("graphics/object_events/palettes/kyogre_reflection.gbapal");
 const u16 gObjectEventPal_Groudon[] = INCBIN_U16("graphics/object_events/palettes/groudon.gbapal");
