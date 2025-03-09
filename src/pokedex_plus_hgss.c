@@ -4379,7 +4379,7 @@ static void PrintCurrentSpeciesTypeInfo(u8 newEntry, u16 species)
     type2 = gSpeciesInfo[species].types[1];
 
     if (species == SPECIES_NONE)
-        type1 = type2 = TYPE_MYSTERY;
+        type1 = type2 = TYPE_NONE;
 
     if (type1 == type2)
     {

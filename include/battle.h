@@ -894,21 +894,21 @@ static inline bool32 IsBattleMoveRecoil(u32 move)
     ({ \
         u32 types[3]; \
         GetBattlerTypes(battlerId, FALSE, types); \
-        types[0] == TYPE_MYSTERY && types[1] == TYPE_MYSTERY && types[2] == TYPE_MYSTERY; \
+        types[0] == TYPE_NONE && types[1] == TYPE_NONE && types[2] == TYPE_NONE; \
     })
 
 #define SET_BATTLER_TYPE(battlerId, type)              \
 {                                                      \
     gBattleMons[battlerId].types[0] = type;            \
     gBattleMons[battlerId].types[1] = type;            \
-    gBattleMons[battlerId].types[2] = TYPE_MYSTERY;    \
+    gBattleMons[battlerId].types[2] = TYPE_NONE;    \
 }
 
 #define RESTORE_BATTLER_TYPE(battlerId)                                                        \
 {                                                                                              \
     gBattleMons[battlerId].types[0] = gSpeciesInfo[gBattleMons[battlerId].species].types[0];   \
     gBattleMons[battlerId].types[1] = gSpeciesInfo[gBattleMons[battlerId].species].types[1];   \
-    gBattleMons[battlerId].types[2] = TYPE_MYSTERY;                                            \
+    gBattleMons[battlerId].types[2] = TYPE_NONE;                                            \
 }
 
 #define IS_BATTLER_PROTECTED(battlerId)(gProtectStructs[battlerId].protected                                           \

@@ -1137,7 +1137,7 @@ bool32 ProteanTryChangeType(u32 battler, u32 ability, u32 move, u32 moveType)
       if ((ability == ABILITY_PROTEAN || ability == ABILITY_LIBERO)
          && !gDisableStructs[gBattlerAttacker].usedProteanLibero
          && (gBattleMons[battler].types[0] != moveType || gBattleMons[battler].types[1] != moveType
-             || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_MYSTERY))
+             || (gBattleMons[battler].types[2] != moveType && gBattleMons[battler].types[2] != TYPE_NONE))
          && move != MOVE_STRUGGLE
          && GetActiveGimmick(battler) != GIMMICK_TERA)
     {
@@ -7516,7 +7516,7 @@ static void Cmd_switchindataupdate(void)
 
     gBattleMons[battler].types[0] = gSpeciesInfo[gBattleMons[battler].species].types[0];
     gBattleMons[battler].types[1] = gSpeciesInfo[gBattleMons[battler].species].types[1];
-    gBattleMons[battler].types[2] = TYPE_MYSTERY;
+    gBattleMons[battler].types[2] = TYPE_NONE;
     gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
     #if TESTING
     if (gTestRunnerEnabled)
@@ -12936,13 +12936,6 @@ static void Cmd_tryconversiontypechange(void)
         {
             moveType = GetMoveType(gBattleMons[gBattlerAttacker].moves[moveChecked]);
 
-            if (moveType == TYPE_MYSTERY)
-            {
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                    moveType = TYPE_GHOST;
-                else
-                    moveType = TYPE_ILLUSION;
-            }
             if (moveType != gBattleMons[gBattlerAttacker].types[0]
                 && moveType != gBattleMons[gBattlerAttacker].types[1]
                 && moveType != gBattleMons[gBattlerAttacker].types[2])
@@ -12962,14 +12955,6 @@ static void Cmd_tryconversiontypechange(void)
                 while ((moveChecked = MOD(Random(), MAX_MON_MOVES)) >= validMoves);
 
                 moveType = GetMoveType(gBattleMons[gBattlerAttacker].moves[moveChecked]);
-
-                if (moveType == TYPE_MYSTERY)
-                {
-                    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                        moveType = TYPE_GHOST;
-                    else
-                        moveType = TYPE_ILLUSION;
-                }
             }
             while (moveType == gBattleMons[gBattlerAttacker].types[0] || moveType == gBattleMons[gBattlerAttacker].types[1] || moveType == gBattleMons[gBattlerAttacker].types[2]);
 
@@ -13618,7 +13603,7 @@ static void Cmd_settypetorandomresistance(void)
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
-        else if (gLastHitByType[gBattlerAttacker] == TYPE_STELLAR || gLastHitByType[gBattlerAttacker] == TYPE_MYSTERY)
+        else if (gLastHitByType[gBattlerAttacker] == TYPE_STELLAR || gLastHitByType[gBattlerAttacker] == TYPE_NONE)
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }
@@ -17447,21 +17432,21 @@ void BS_TryReflectType(void)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
-    else if (targetTypes[0] == TYPE_MYSTERY && targetTypes[1] == TYPE_MYSTERY && targetTypes[2] != TYPE_MYSTERY)
+    else if (targetTypes[0] == TYPE_NONE && targetTypes[1] == TYPE_NONE && targetTypes[2] != TYPE_NONE)
     {
         gBattleMons[gBattlerAttacker].types[0] = TYPE_ILLUSION;
         gBattleMons[gBattlerAttacker].types[1] = TYPE_ILLUSION;
         gBattleMons[gBattlerAttacker].types[2] = targetTypes[2];
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-    else if (targetTypes[0] == TYPE_MYSTERY && targetTypes[1] != TYPE_MYSTERY)
+    else if (targetTypes[0] == TYPE_NONE && targetTypes[1] != TYPE_NONE)
     {
         gBattleMons[gBattlerAttacker].types[0] = targetTypes[1];
         gBattleMons[gBattlerAttacker].types[1] = targetTypes[1];
         gBattleMons[gBattlerAttacker].types[2] = targetTypes[2];
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-    else if (targetTypes[0] != TYPE_MYSTERY && targetTypes[1] == TYPE_MYSTERY)
+    else if (targetTypes[0] != TYPE_NONE && targetTypes[1] == TYPE_NONE)
     {
         gBattleMons[gBattlerAttacker].types[0] = targetTypes[0];
         gBattleMons[gBattlerAttacker].types[1] = targetTypes[0];

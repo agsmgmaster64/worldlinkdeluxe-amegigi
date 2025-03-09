@@ -3251,7 +3251,7 @@ static void CancellerObedience(u32 *effect)
             struct DamageCalculationData damageCalcData;
             damageCalcData.battlerAtk = damageCalcData.battlerDef = gBattlerAttacker;
             damageCalcData.move = MOVE_NONE;
-            damageCalcData.moveType = TYPE_MYSTERY;
+            damageCalcData.moveType = TYPE_NONE;
             damageCalcData.isCrit = FALSE;
             damageCalcData.randomFactor = FALSE;
             damageCalcData.updateFlags = TRUE;
@@ -3428,7 +3428,7 @@ static void CancellerConfused(u32 *effect)
                 struct DamageCalculationData damageCalcData;
                 damageCalcData.battlerAtk = damageCalcData.battlerDef = gBattlerAttacker;
                 damageCalcData.move = MOVE_NONE;
-                damageCalcData.moveType = TYPE_MYSTERY;
+                damageCalcData.moveType = TYPE_NONE;
                 damageCalcData.isCrit = FALSE;
                 damageCalcData.randomFactor = FALSE;
                 damageCalcData.updateFlags = TRUE;
@@ -5851,7 +5851,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && IsBattlerTurnDamaged(gBattlerTarget)
              && !IS_BATTLER_OF_TYPE(battler, moveType)
              && moveType != TYPE_STELLAR
-             && moveType != TYPE_MYSTERY
+             && moveType != TYPE_NONE
              && IsBattlerAlive(battler))
             {
                 SET_BATTLER_TYPE(battler, moveType);
@@ -10158,7 +10158,7 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationDa
     u32 move = damageCalcData->move;
     u32 moveType = damageCalcData->moveType;
 
-    if (moveType == TYPE_MYSTERY)
+    if (moveType == TYPE_NONE)
         return UQ_4_12(1.0);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(battlerAtk), moveType))
         return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
@@ -10723,7 +10723,7 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(u32 move, u32 mov
     MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, defAbility, types[0], battlerAtk, recordAbilities);
     if (types[1] != types[0])
         MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, defAbility, types[1], battlerAtk, recordAbilities);
-    if (types[2] != TYPE_MYSTERY && types[2] != types[1] && types[2] != types[0])
+    if (types[2] != TYPE_NONE && types[2] != types[1] && types[2] != types[0])
         MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, defAbility, types[2], battlerAtk, recordAbilities);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
@@ -10785,7 +10785,7 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
 {
     uq4_12_t modifier = UQ_4_12(1.0);
 
-    if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
+    if (move != MOVE_STRUGGLE && moveType != TYPE_NONE)
     {
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
         if (GetMoveEffect(move) == EFFECT_TWO_TYPED_MOVE)
@@ -10802,7 +10802,7 @@ uq4_12_t CalcPartyMonTypeEffectivenessMultiplier(u16 move, u16 speciesDef, u16 a
     uq4_12_t modifier = UQ_4_12(1.0);
     u32 moveType = GetBattleMoveType(move);
 
-    if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
+    if (move != MOVE_STRUGGLE && moveType != TYPE_NONE)
     {
         MulByTypeEffectiveness(&modifier, move, moveType, 0, 0, gSpeciesInfo[speciesDef].types[0], 0, FALSE);
         if (gSpeciesInfo[speciesDef].types[1] != gSpeciesInfo[speciesDef].types[0])
@@ -10840,7 +10840,7 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
     u8 type1 = gSpeciesInfo[speciesDef].types[0];
     u8 type2 = gSpeciesInfo[speciesDef].types[1];
 
-    if (moveType != TYPE_MYSTERY)
+    if (moveType != TYPE_NONE)
     {
         MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, 0, type1, 0, FALSE);
         if (type2 != type1)
@@ -11266,9 +11266,9 @@ bool32 DoBattlersShareType(u32 battler1, u32 battler2)
     GetBattlerTypes(battler1, FALSE, types1);
     GetBattlerTypes(battler2, FALSE, types2);
 
-    if (types1[2] == TYPE_MYSTERY)
+    if (types1[2] == TYPE_NONE)
         types1[2] = types1[0];
-    if (types2[2] == TYPE_MYSTERY)
+    if (types2[2] == TYPE_NONE)
         types2[2] = types2[0];
 
     for (i = 0; i < 3; i++)
@@ -11830,7 +11830,7 @@ void CopyMonAbilityAndTypesToBattleMon(u32 battler, struct Pokemon *mon)
     gBattleMons[battler].ability = GetMonAbility(mon);
     gBattleMons[battler].types[0] = gSpeciesInfo[gBattleMons[battler].species].types[0];
     gBattleMons[battler].types[1] = gSpeciesInfo[gBattleMons[battler].species].types[1];
-    gBattleMons[battler].types[2] = TYPE_MYSTERY;
+    gBattleMons[battler].types[2] = TYPE_NONE;
 }
 
 void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
@@ -12077,11 +12077,11 @@ void GetBattlerTypes(u32 battler, bool32 ignoreTera, u32 types[static 3])
     if (!isTera && gDisableStructs[battler].roostActive)
     {
         if (types[0] == TYPE_FLYING && types[1] == TYPE_FLYING)
-            types[0] = types[1] = B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_ILLUSION : TYPE_MYSTERY;
+            types[0] = types[1] = B_ROOST_PURE_FLYING >= GEN_5 ? TYPE_ILLUSION : TYPE_NONE;
         else if (types[0] == TYPE_FLYING)
-            types[0] = TYPE_MYSTERY;
+            types[0] = TYPE_NONE;
         else if (types[1] == TYPE_FLYING)
-            types[1] = TYPE_MYSTERY;
+            types[1] = TYPE_NONE;
     }
 }
 
@@ -12100,7 +12100,7 @@ void RemoveBattlerType(u32 battler, u8 type)
     for (i = 0; i < 3; i++)
     {
         if (*(u8 *)(&gBattleMons[battler].types[0] + i) == type)
-            *(u8 *)(&gBattleMons[battler].types[0] + i) = TYPE_MYSTERY;
+            *(u8 *)(&gBattleMons[battler].types[0] + i) = TYPE_NONE;
     }
 }
 
@@ -12187,7 +12187,7 @@ u32 GetBattleMoveType(u32 move)
     else if (B_UPDATED_MOVE_TYPES < GEN_5
          && (move == MOVE_BEAT_UP
           || GetMoveEffect(move) == EFFECT_FUTURE_SIGHT))
-          return TYPE_MYSTERY;
+          return TYPE_NONE;
     return GetMoveType(move);
 }
 
