@@ -4395,6 +4395,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             case MOVE_EFFECT_GRASSY_TERRAIN:
             case MOVE_EFFECT_ELECTRIC_TERRAIN:
             case MOVE_EFFECT_PSYCHIC_TERRAIN:
+            case MOVE_EFFECT_HOLY_TERRAIN:
             {
                 u32 statusFlag = 0;
                 switch (gBattleScripting.moveEffect)
@@ -4414,6 +4415,10 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     case MOVE_EFFECT_PSYCHIC_TERRAIN:
                         statusFlag = STATUS_FIELD_PSYCHIC_TERRAIN;
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_PSYCHIC;
+                        break;
+                    case MOVE_EFFECT_HOLY_TERRAIN:
+                        statusFlag = STATUS_FIELD_HOLY_TERRAIN;
+                        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TERRAIN_SET_HOLY;
                         break;
                 }
                 if (!(gFieldStatuses & statusFlag) && statusFlag != 0)

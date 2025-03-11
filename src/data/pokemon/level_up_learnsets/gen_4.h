@@ -19207,7 +19207,7 @@ static const struct LevelUpMove sCalyrexLevelUpLearnset[] = {
 
 #if P_FUSION_FORMS
 static const struct LevelUpMove sCalyrexIceLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_GLACIAL_LANCE),
+    LEVEL_UP_MOVE( 1, MOVE_GLACIAL_BASH),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_KICK),

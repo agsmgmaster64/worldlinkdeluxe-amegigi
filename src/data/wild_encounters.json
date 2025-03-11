@@ -1398,7 +1398,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_CHIBI_ELLY"
+                "species": "SPECIES_CHIBI_KAGEROU"
               },
               {
                 "min_level": 7,
@@ -1413,17 +1413,17 @@
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_CHIBI_KAGEROU"
+                "species": "SPECIES_CHIBI_SHIZUHA"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_CHIBI_ELLY"
+                "species": "SPECIES_CHIBI_MINORIKO"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_CHIBI_KAGEROU"
+                "species": "SPECIES_CHIBI_SHIZUHA"
               },
               {
                 "min_level": 8,
