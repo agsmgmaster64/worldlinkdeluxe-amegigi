@@ -273,8 +273,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .shinyPalette = gMonShinyPalette_CMystia,
         .iconSprite = gMonIcon_CMystia,
         .iconPalIndex = 0,
-        FOOTPRINT(CMystia)
         SHADOW(0, 11, SHADOW_SIZE_S)
+        FOOTPRINT(CMystia)
+        OVERWORLD(
+            sPicTable_CMystia,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CMystia,
+            gShinyOverworldPalette_CMystia
+        )
         .levelUpLearnset = sCMystiaLevelUpLearnset,
         .teachableLearnset = sCMystiaTeachableLearnset,
         .eggMoveLearnset = sCMystiaEggMoveLearnset,
@@ -336,8 +345,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .shinyPalette = gMonShinyPalette_Mystia,
         .iconSprite = gMonIcon_Mystia,
         .iconPalIndex = 0,
-        FOOTPRINT(Mystia)
         SHADOW(1, 12, SHADOW_SIZE_M)
+        FOOTPRINT(Mystia)
+        OVERWORLD(
+            sPicTable_Mystia,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Mystia,
+            gShinyOverworldPalette_Mystia
+        )
         .levelUpLearnset = sMystiaLevelUpLearnset,
         .teachableLearnset = sMystiaTeachableLearnset,
     },
@@ -391,8 +409,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .shinyPalette = gMonShinyPalette_AMystia,
         .iconSprite = gMonIcon_AMystia,
         .iconPalIndex = 0,
-        FOOTPRINT(AMystia)
         SHADOW(3, 12, SHADOW_SIZE_L)
+        FOOTPRINT(AMystia)
+        OVERWORLD(
+            sPicTable_AMystia,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_AMystia,
+            gShinyOverworldPalette_AMystia
+        )
         .levelUpLearnset = sAMystiaLevelUpLearnset,
         .teachableLearnset = sAMystiaTeachableLearnset,
     },
@@ -446,8 +473,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .shinyPalette = gMonShinyPalette_HMystia,
         .iconSprite = gMonIcon_HMystia,
         .iconPalIndex = 0,
-        FOOTPRINT(HMystia)
         SHADOW(2, 12, SHADOW_SIZE_M)
+        FOOTPRINT(HMystia)
+        OVERWORLD(
+            sPicTable_HMystia,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_HMystia,
+            gShinyOverworldPalette_HMystia
+        )
         .levelUpLearnset = sHMystiaLevelUpLearnset,
         .teachableLearnset = sHMystiaTeachableLearnset,
     },

@@ -755,8 +755,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CHina,
         .iconSprite = gMonIcon_CHina,
         .iconPalIndex = 0,
-        FOOTPRINT(CHina)
         SHADOW(0, 9, SHADOW_SIZE_S)
+        FOOTPRINT(CHina)
+        OVERWORLD(
+            sPicTable_CHina,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CHina,
+            gShinyOverworldPalette_CHina
+        )
         .levelUpLearnset = sCHinaLevelUpLearnset,
         .teachableLearnset = sCHinaTeachableLearnset,
         .eggMoveLearnset = sCHinaEggMoveLearnset,
@@ -816,8 +825,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_Hina,
         .iconSprite = gMonIcon_Hina,
         .iconPalIndex = 0,
-        FOOTPRINT(Hina)
         SHADOW(0, 13, SHADOW_SIZE_L)
+        FOOTPRINT(Hina)
+        OVERWORLD(
+            sPicTable_Hina,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Hina,
+            gShinyOverworldPalette_Hina
+        )
         .levelUpLearnset = sHinaLevelUpLearnset,
         .teachableLearnset = sHinaTeachableLearnset,
     },
@@ -871,8 +889,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_AHina,
         .iconSprite = gMonIcon_AHina,
         .iconPalIndex = 0,
-        FOOTPRINT(AHina)
         SHADOW(3, 13, SHADOW_SIZE_L)
+        FOOTPRINT(AHina)
+        OVERWORLD(
+            sPicTable_AHina,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_AHina,
+            gShinyOverworldPalette_AHina
+        )
         .levelUpLearnset = sAHinaLevelUpLearnset,
         .teachableLearnset = sAHinaTeachableLearnset,
     },
@@ -926,8 +953,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_DHina,
         .iconSprite = gMonIcon_DHina,
         .iconPalIndex = 0,
-        FOOTPRINT(DHina)
         SHADOW(-1, 12, SHADOW_SIZE_L)
+        FOOTPRINT(DHina)
+        OVERWORLD(
+            sPicTable_DHina,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DHina,
+            gShinyOverworldPalette_DHina
+        )
         .levelUpLearnset = sDHinaLevelUpLearnset,
         .teachableLearnset = sDHinaTeachableLearnset,
     },

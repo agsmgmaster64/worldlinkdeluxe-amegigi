@@ -2878,6 +2878,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         SHADOW(2, 8, SHADOW_SIZE_M)
         FOOTPRINT(CChen)
+        OVERWORLD(
+            sPicTable_CChen,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CChen,
+            gShinyOverworldPalette_CChen
+        )
         .levelUpLearnset = sCChenLevelUpLearnset,
         .teachableLearnset = sCChenTeachableLearnset,
         .eggMoveLearnset = sCChenEggMoveLearnset,
@@ -2940,6 +2949,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         SHADOW(-2, 11, SHADOW_SIZE_L)
         FOOTPRINT(Chen)
+        OVERWORLD(
+            sPicTable_Chen,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Chen,
+            gShinyOverworldPalette_Chen
+        )
         .levelUpLearnset = sChenLevelUpLearnset,
         .teachableLearnset = sChenTeachableLearnset,
     },
@@ -2995,6 +3013,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         SHADOW(0, 11, SHADOW_SIZE_L)
         FOOTPRINT(AChen)
+        OVERWORLD(
+            sPicTable_AChen,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_AChen,
+            gShinyOverworldPalette_AChen
+        )
         .levelUpLearnset = sAChenLevelUpLearnset,
         .teachableLearnset = sAChenTeachableLearnset,
     },
@@ -3050,6 +3077,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .iconPalIndex = 2,
         SHADOW(1, 8, SHADOW_SIZE_M)
         FOOTPRINT(TChen)
+        OVERWORLD(
+            sPicTable_TChen,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_TChen,
+            gShinyOverworldPalette_TChen
+        )
         .levelUpLearnset = sTChenLevelUpLearnset,
         .teachableLearnset = sTChenTeachableLearnset,
     },

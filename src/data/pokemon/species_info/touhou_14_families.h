@@ -486,6 +486,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .iconPalIndex = 0,
         SHADOW(-2, 3, SHADOW_SIZE_M)
         FOOTPRINT(CWakasagihime)
+        OVERWORLD(
+            sPicTable_CWakasagihime,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CWakasagihime,
+            gShinyOverworldPalette_CWakasagihime
+        )
         .levelUpLearnset = sCWakasagihimeLevelUpLearnset,
         .teachableLearnset = sCWakasagihimeTeachableLearnset,
         .eggMoveLearnset = sCWakasagihimeEggMoveLearnset,
@@ -545,6 +554,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .iconPalIndex = 0,
         SHADOW(0, 10, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Wakasagihime)
+        OVERWORLD(
+            sPicTable_Wakasagihime,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Wakasagihime,
+            gShinyOverworldPalette_Wakasagihime
+        )
         .levelUpLearnset = sWakasagihimeLevelUpLearnset,
         .teachableLearnset = sWakasagihimeTeachableLearnset,
         .formSpeciesIdTable = sWakasagihimeFormSpeciesIdTable,
@@ -598,7 +616,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .shinyPalette = gMonShinyPalette_DWakasagihime,
         .iconSprite = gMonIcon_DWakasagihime,
         .iconPalIndex = 0,
+        SHADOW(0, 10, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(DWakasagihime)
+        OVERWORLD(
+            sPicTable_DWakasagihime,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_DWakasagihime,
+            gShinyOverworldPalette_DWakasagihime
+        )
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
         .formSpeciesIdTable = sDWakasagihimeFormSpeciesIdTable,
