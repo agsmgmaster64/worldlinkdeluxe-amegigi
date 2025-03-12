@@ -549,7 +549,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_BELDUM] = {
         .species = SPECIES_NORMAL_MEIRA,
         .moves = {MOVE_TAKE_DOWN, MOVE_NONE, MOVE_NONE, MOVE_NONE},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_HARDY
     },
@@ -2131,7 +2131,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_FURRET_2] = {
         .species = SPECIES_CHIBI_MINORIKO,
         .moves = {MOVE_TRICK, MOVE_FRUSTRATION, MOVE_SHADOW_BALL, MOVE_GUARD},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -2159,7 +2159,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_LINOONE_2] = {
         .species = SPECIES_NORMAL_TOJIKO,
         .moves = {MOVE_TRICK, MOVE_FRUSTRATION, MOVE_THUNDER_WAVE, MOVE_SAND_ATTACK},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
     },
@@ -2278,7 +2278,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_KECLEON_2] = {
         .species = SPECIES_NORMAL_KASEN,
         .moves = {MOVE_TRICK, MOVE_BRICK_BREAK, MOVE_SHADOW_BALL, MOVE_SKILL_SWAP},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 0),
         .nature = NATURE_DOCILE
     },
@@ -2467,7 +2467,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_ABSOL_2] = {
         .species = SPECIES_CHIBI_KOSUZU,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_AERIAL_ACE, MOVE_STEEL_FIST},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -3720,7 +3720,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_AERODACTYL_2] = {
         .species = SPECIES_NORMAL_MEDICINE,
         .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_ANCIENT_POWER},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -4007,7 +4007,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_MR_MIME_3] = {
         .species = SPECIES_NORMAL_REISEN_II,
         .moves = {MOVE_TRICK, MOVE_TORMENT, MOVE_MANA_BURST, MOVE_THUNDERBOLT},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
         .nature = NATURE_MODEST
     },
@@ -4175,7 +4175,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_ALAKAZAM_3] = {
         .species = SPECIES_NORMAL_LUNASA,
         .moves = {MOVE_TRICK, MOVE_DISABLE, MOVE_MANA_BURST, MOVE_SKILL_SWAP},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 252, 0),
         .nature = NATURE_MODEST
     },
@@ -4616,7 +4616,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_SLAKING_3] = {
         .species = SPECIES_DEFENSE_WAKASAGIHIME,
         .moves = {MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_AERIAL_ACE, MOVE_BRICK_BREAK},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
         .nature = NATURE_ADAMANT
     },
@@ -4651,7 +4651,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_GRANBULL_4] = {
         .species = SPECIES_ZOMBIE_FAIRY,
         .moves = {MOVE_MEGA_KICK, MOVE_EARTHQUAKE, MOVE_CRUNCH, MOVE_SHADOW_BALL},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
         .nature = NATURE_BRAVE
     },
@@ -4938,7 +4938,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_ARMALDO_4] = {
         .species = SPECIES_NORMAL_TOYOHIME,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },
@@ -5631,7 +5631,7 @@ const struct TrainerMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_URSARING_5] = {
         .species = SPECIES_DEFENSE_SATORI,
         .moves = {MOVE_MEGA_KICK, MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
         .nature = NATURE_ADAMANT
     },

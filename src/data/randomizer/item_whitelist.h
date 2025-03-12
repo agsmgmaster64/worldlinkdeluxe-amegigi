@@ -366,7 +366,7 @@ static const u16 sRandomizerItemWhitelist[] =
     ITEM_BLACK_GLASSES,
     ITEM_MAID_UNIFORM,
     // Choice Items
-    ITEM_CHOICE_BAND,
+    ITEM_CHOICE_RIBBON,
     ITEM_CHOICE_SPECS,
     ITEM_CHOICE_SCARF,
     // Status Orbs

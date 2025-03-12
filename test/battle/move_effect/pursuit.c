@@ -555,8 +555,8 @@ DOUBLE_BATTLE_TEST("Pursuited mon correctly switches out after it got hit and ac
 SINGLE_BATTLE_TEST("Pursuit becomes a locked move after being used on switch-out while holding a Choice Item")
 {
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHOICE_BAND); MovesWithPP({MOVE_PURSUIT, 1}, {MOVE_CELEBRATE, 10}, {MOVE_WATER_GUN, 10}, {MOVE_TACKLE, 10}); }
+        ASSUME(gItemsInfo[ITEM_CHOICE_RIBBON].holdEffect == HOLD_EFFECT_CHOICE_BAND);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHOICE_RIBBON); MovesWithPP({MOVE_PURSUIT, 1}, {MOVE_CELEBRATE, 10}, {MOVE_WATER_GUN, 10}, {MOVE_TACKLE, 10}); }
         OPPONENT(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

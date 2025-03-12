@@ -10108,7 +10108,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
         break;
     case HOLD_EFFECT_DOUBLE_SOUL:
         if (B_SOUL_DEW_BOOST < GEN_7
-         && (gBattleMons[battlerDef].species == SPECIES_NORMAL_KOTOHIME || gBattleMons[battlerDef].species == SPECIES_PLACEHOLD_KOTOHIME)
+         && (gBattleMons[battlerDef].species == SPECIES_MALE_SHINGYOKU || gBattleMons[battlerDef].species == SPECIES_FEMALE_SHINGYOKU)
          && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
          && !usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));

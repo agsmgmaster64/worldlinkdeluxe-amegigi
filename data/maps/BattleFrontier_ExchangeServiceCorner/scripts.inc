@@ -773,7 +773,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceBand::
 # 387 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	setvar VAR_0x8008, 64
 # 388 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
-	setvar VAR_0x8009, ITEM_CHOICE_BAND
+	setvar VAR_0x8009, ITEM_CHOICE_RIBBON
 # 389 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 # 390 "data/maps/BattleFrontier_ExchangeServiceCorner/scripts.pory"

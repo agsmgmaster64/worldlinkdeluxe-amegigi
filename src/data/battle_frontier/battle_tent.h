@@ -756,7 +756,7 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
     [SLATEPORT_TENT_MON_ZIGZAGOON_1] = {
         .species = SPECIES_CHIBI_TOJIKO,
         .moves = {MOVE_TACKLE, MOVE_CHARM, MOVE_BINDING_VOICE, MOVE_PIN_MISSILE},
-        .heldItem = ITEM_CHOICE_BAND,
+        .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
         .nature = NATURE_JOLLY
     },

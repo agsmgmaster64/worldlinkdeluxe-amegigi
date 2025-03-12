@@ -41,7 +41,7 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_QUICK_CLAW,
     ITEM_MENTAL_HERB,
     ITEM_BRIGHT_POWDER,
-    ITEM_CHOICE_BAND,
+    ITEM_CHOICE_RIBBON,
     ITEM_KINGS_ROCK,
     ITEM_FOCUS_BAND,
     ITEM_SCOPE_LENS,

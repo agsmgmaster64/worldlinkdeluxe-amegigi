@@ -4,7 +4,7 @@
 ASSUMPTIONS
 {
     ASSUME(gItemsInfo[ITEM_CHOICE_SPECS].holdEffect == HOLD_EFFECT_CHOICE_SPECS);
-    ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
+    ASSUME(gItemsInfo[ITEM_CHOICE_RIBBON].holdEffect == HOLD_EFFECT_CHOICE_BAND);
     ASSUME(gItemsInfo[ITEM_CHOICE_SCARF].holdEffect == HOLD_EFFECT_CHOICE_SCARF);
 }
 
@@ -14,7 +14,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon switch out after using a status move onc
 
     static const u32 choiceItems[] = {
         ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_RIBBON,
         ITEM_CHOICE_SCARF,
     };
 
@@ -50,7 +50,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon only consider their own status moves whe
     {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_RISKY | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES);
         PLAYER(SPECIES_ZIGZAGOON) { Speed(4); Moves(MOVE_TAIL_WHIP, MOVE_TACKLE); }
-        OPPONENT(SPECIES_ZIGZAGOON) { Speed(5); Moves(MOVE_TACKLE); Item(ITEM_CHOICE_BAND); }
+        OPPONENT(SPECIES_ZIGZAGOON) { Speed(5); Moves(MOVE_TACKLE); Item(ITEM_CHOICE_RIBBON); }
         OPPONENT(SPECIES_ZIGZAGOON) { Speed(5); Moves(MOVE_TACKLE); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, MOVE_TACKLE); MOVE(player, MOVE_TAIL_WHIP); }
@@ -65,7 +65,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon won't use stat boosting moves")
 
     static const u32 choiceItems[] = {
         ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_RIBBON,
         ITEM_CHOICE_SCARF,
     };
 
@@ -97,7 +97,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon won't use status move if they are the on
 
     static const u32 choiceItems[] = {
         ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_RIBBON,
         ITEM_CHOICE_SCARF,
     };
 
@@ -132,7 +132,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon won't use status move if they don't have
 
     static const u32 choiceItems[] = {
         ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_RIBBON,
         ITEM_CHOICE_SCARF,
     };
 
@@ -167,7 +167,7 @@ AI_SINGLE_BATTLE_TEST("Choiced Pokémon won't use status move if they are trappe
 
     static const u32 choiceItems[] = {
         ITEM_CHOICE_SPECS,
-        ITEM_CHOICE_BAND,
+        ITEM_CHOICE_RIBBON,
         ITEM_CHOICE_SCARF,
     };
 

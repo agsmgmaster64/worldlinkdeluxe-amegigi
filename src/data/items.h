@@ -6315,8 +6315,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_SoulDew,
-        .iconPalette = gItemIconPalette_SoulDew,
+        .iconPic = gItemIcon_DoubleSoul,
+        .iconPalette = gItemIconPalette_DoubleSoul,
     },
 
     [ITEM_QUICK_POWDER] =
@@ -7051,9 +7051,9 @@ const struct Item gItemsInfo[] =
 
 // Choice Items
 
-    [ITEM_CHOICE_BAND] =
+    [ITEM_CHOICE_RIBBON] =
     {
-        .name = _("Choice Band"),
+        .name = _("Choice Ribbon"),
         .price = (I_PRICE >= GEN_9) ? 100000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
         .holdEffect = HOLD_EFFECT_CHOICE_BAND,
         .description = COMPOUND_STRING(

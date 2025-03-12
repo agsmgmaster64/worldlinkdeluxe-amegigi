@@ -817,7 +817,7 @@ AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player'
     PARAMETRIZE { ability = ABILITY_BULLETPROOF;       playerMon = SPECIES_CHESNAUGHT;    aiMove = MOVE_BULLET_SEED; }
 
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
+        ASSUME(gItemsInfo[ITEM_CHOICE_RIBBON].holdEffect == HOLD_EFFECT_CHOICE_BAND);
         ASSUME(GetMovePriority(MOVE_QUICK_ATTACK) == 1);
         ASSUME(IsSoundMove(MOVE_BOOMBURST));
         ASSUME(IsBallisticMove(MOVE_BULLET_SEED));
@@ -825,7 +825,7 @@ AI_SINGLE_BATTLE_TEST("AI stays choice locked into moves in spite of the player'
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(playerMon) { Ability(ability); }
-        OPPONENT(SPECIES_SMEARGLE) { Item(ITEM_CHOICE_BAND); Moves(aiMove, MOVE_TACKLE); }
+        OPPONENT(SPECIES_SMEARGLE) { Item(ITEM_CHOICE_RIBBON); Moves(aiMove, MOVE_TACKLE); }
     } WHEN {
         TURN { SWITCH(player, 1); EXPECT_MOVE(opponent, aiMove); }
         TURN { EXPECT_MOVE(opponent, aiMove); }

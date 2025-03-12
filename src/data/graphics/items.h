@@ -1132,8 +1132,8 @@ const u32 gItemIconPalette_Kusanagi[] = INCBIN_U32("graphics/items/icon_palettes
 const u32 gItemIcon_YataMirror[] = INCBIN_U32("graphics/items/icons/yata_mirror.4bpp.lz");
 const u32 gItemIconPalette_YataMirror[] = INCBIN_U32("graphics/items/icon_palettes/yata_mirror.gbapal.lz");
 
-const u32 gItemIcon_SoulDew[] = INCBIN_U32("graphics/items/icons/soul_dew.4bpp.lz");
-const u32 gItemIconPalette_SoulDew[] = INCBIN_U32("graphics/items/icon_palettes/soul_dew.gbapal.lz");
+const u32 gItemIcon_DoubleSoul[] = INCBIN_U32("graphics/items/icons/double_soul.4bpp.lz");
+const u32 gItemIconPalette_DoubleSoul[] = INCBIN_U32("graphics/items/icon_palettes/double_soul.gbapal.lz");
 
 const u32 gItemIcon_AdamantOrb[] = INCBIN_U32("graphics/items/icons/adamant_orb.4bpp.lz");
 const u32 gItemIconPalette_AdamantOrb[] = INCBIN_U32("graphics/items/icon_palettes/adamant_orb.gbapal.lz");

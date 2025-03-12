@@ -76,7 +76,7 @@ SINGLE_BATTLE_TEST("Sleep Talk can still use moves with no PP")
 SINGLE_BATTLE_TEST("Sleep Talk can use moves while choiced into Sleep Talk")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHOICE_BAND); Status1(STATUS1_SLEEP); Moves(MOVE_SLEEP_TALK, MOVE_TACKLE, MOVE_FLY, MOVE_DIG); }
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHOICE_RIBBON); Status1(STATUS1_SLEEP); Moves(MOVE_SLEEP_TALK, MOVE_TACKLE, MOVE_FLY, MOVE_DIG); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SLEEP_TALK); }

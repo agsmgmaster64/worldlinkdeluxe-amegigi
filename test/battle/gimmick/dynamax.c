@@ -543,10 +543,10 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Pokemon with Gigantamax forms revert upon switchin
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Choice items", s16 damage)
 {
     u16 item;
-    PARAMETRIZE { item = ITEM_CHOICE_BAND; }
+    PARAMETRIZE { item = ITEM_CHOICE_RIBBON; }
     PARAMETRIZE { item = ITEM_NONE; }
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_CHOICE_BAND].holdEffect == HOLD_EFFECT_CHOICE_BAND);
+        ASSUME(gItemsInfo[ITEM_CHOICE_RIBBON].holdEffect == HOLD_EFFECT_CHOICE_BAND);
         PLAYER(SPECIES_CHIBI_YUUGI) { Item(item); };
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
