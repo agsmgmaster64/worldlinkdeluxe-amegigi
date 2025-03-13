@@ -1,0 +1,101 @@
+{
+  "id": "MAP_HOME_LIKE_CARPET",
+  "name": "HomeLikeCarpet",
+  "layout": "LAYOUT_HOME_LIKE_CARPET",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_HOUSE_LIKE_CARPET",
+      "offset": 22,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_APARTMENT_LIKE_CARPET",
+      "offset": -10,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_RESIDENTIAL_LIKE_CARPET",
+      "offset": 20,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ]
+}

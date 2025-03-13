@@ -1175,3 +1175,15 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/MtMerapi_Exterior/scripts.inc"
 	.include "data/maps/MtMerapi_Exterior/text.inc"
+
+	.include "data/maps/HouseLikeCarpet/scripts.inc"
+	.include "data/maps/HouseLikeCarpet/text.inc"
+
+	.include "data/maps/HomeLikeCarpet/scripts.inc"
+	.include "data/maps/HomeLikeCarpet/text.inc"
+
+	.include "data/maps/ApartmentLikeCarpet/scripts.inc"
+	.include "data/maps/ApartmentLikeCarpet/text.inc"
+
+	.include "data/maps/ResidentialLikeCarpet/scripts.inc"
+	.include "data/maps/ResidentialLikeCarpet/text.inc"

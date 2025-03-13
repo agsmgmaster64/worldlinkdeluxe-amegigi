@@ -96,7 +96,11 @@
     "EikiIsland_1",
     "Yogyakarta",
     "NorthPlain",
-    "MtMerapi_Exterior"
+    "MtMerapi_Exterior",
+    "HouseLikeCarpet",
+    "HomeLikeCarpet",
+    "ApartmentLikeCarpet",
+    "ResidentialLikeCarpet"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -5352,6 +5352,54 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MtMerapi_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/MtMerapi_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOUSE_LIKE_CARPET",
+      "name": "HouseLikeCarpet_Layout",
+      "width": 20,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
+      "border_filepath": "data/layouts/HouseLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/HouseLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_HOME_LIKE_CARPET",
+      "name": "HomeLikeCarpet_Layout",
+      "width": 20,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
+      "border_filepath": "data/layouts/HomeLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/HomeLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_APARTMENT_LIKE_CARPET",
+      "name": "ApartmentLikeCarpet_Layout",
+      "width": 40,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
+      "border_filepath": "data/layouts/ApartmentLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/ApartmentLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_RESIDENTIAL_LIKE_CARPET",
+      "name": "ResidentialLikeCarpet_Layout",
+      "width": 30,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
+      "border_filepath": "data/layouts/ResidentialLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/ResidentialLikeCarpet/map.bin"
     }
   ]
 }
