@@ -1187,3 +1187,15 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/ResidentialLikeCarpet/scripts.inc"
 	.include "data/maps/ResidentialLikeCarpet/text.inc"
+
+	.include "data/maps/CarpetCenter/scripts.inc"
+	.include "data/maps/CarpetCenter/text.inc"
+
+	.include "data/maps/CarpetMart/scripts.inc"
+	.include "data/maps/CarpetMart/text.inc"
+
+	.include "data/maps/VillaLikeCarpet/scripts.inc"
+	.include "data/maps/VillaLikeCarpet/text.inc"
+
+	.include "data/maps/CarpetPort/scripts.inc"
+	.include "data/maps/CarpetPort/text.inc"

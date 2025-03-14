@@ -1,0 +1,12 @@
+mapscripts CarpetMart_MapScripts {}
+
+script CarpetMart_EventScript_Clerk {
+	lock
+	faceplayer
+	message(gText_HowMayIServeYou)
+	waitmessage
+	pokemart
+	msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+	release
+	end
+}

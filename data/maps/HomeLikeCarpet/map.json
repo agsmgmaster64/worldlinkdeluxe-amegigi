@@ -2,11 +2,11 @@
   "id": "MAP_HOME_LIKE_CARPET",
   "name": "HomeLikeCarpet",
   "layout": "LAYOUT_HOME_LIKE_CARPET",
-  "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "music": "MUS_RG_SEVII_123",
+  "region_map_section": "MAPSEC_ONE_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": false,
@@ -31,21 +31,34 @@
     }
   ],
   "object_events": [
-
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
       "x": 4,
       "y": 25,
       "elevation": 0,
-      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_map": "MAP_CARPET_CENTER",
       "dest_warp_id": "0"
     },
     {
       "x": 14,
       "y": 25,
       "elevation": 0,
-      "dest_map": "MAP_HOME_LIKE_CARPET",
+      "dest_map": "MAP_CARPET_MART",
       "dest_warp_id": "0"
     },
     {
@@ -63,7 +76,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 5,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_HOME_LIKE_CARPET",
@@ -78,7 +91,42 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "NULL"
+    }
   ],
   "bg_events": [
     {

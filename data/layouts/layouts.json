@@ -5400,6 +5400,54 @@
       "secondary_tileset": "gTileset_RG_SeviiIslands123",
       "border_filepath": "data/layouts/ResidentialLikeCarpet/border.bin",
       "blockdata_filepath": "data/layouts/ResidentialLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARPET_CENTER",
+      "name": "CarpetCenter_Layout",
+      "width": 15,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PokemonCenter",
+      "border_filepath": "data/layouts/CarpetCenter/border.bin",
+      "blockdata_filepath": "data/layouts/CarpetCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARPET_MART",
+      "name": "CarpetMart_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_Mart",
+      "border_filepath": "data/layouts/CarpetMart/border.bin",
+      "blockdata_filepath": "data/layouts/CarpetMart/map.bin"
+    },
+    {
+      "id": "LAYOUT_VILLA_LIKE_CARPET",
+      "name": "VillaLikeCarpet_Layout",
+      "width": 40,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_SeviiIslands123",
+      "border_filepath": "data/layouts/VillaLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/VillaLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARPET_PORT",
+      "name": "CarpetPort_Layout",
+      "width": 17,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_IslandHarbor",
+      "border_filepath": "data/layouts/CarpetPort/border.bin",
+      "blockdata_filepath": "data/layouts/CarpetPort/map.bin"
     }
   ]
 }

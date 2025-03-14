@@ -267,3 +267,6 @@ const u32 gMetatileAttributes_RG_Lab[] = INCBIN_U32("data/tilesets/frlg/secondar
 
 const u16 gMetatiles_RG_DepartmentStore[] = INCBIN_U16("data/tilesets/frlg/secondary/department_store/metatiles.bin");
 const u32 gMetatileAttributes_RG_DepartmentStore[] = INCBIN_U32("data/tilesets/frlg/secondary/department_store/metatile_attributes.bin");
+
+const u16 gMetatiles_RG_IslandHarbor[] = INCBIN_U16("data/tilesets/frlg/secondary/island_harbor/metatiles.bin");
+const u32 gMetatileAttributes_RG_IslandHarbor[] = INCBIN_U32("data/tilesets/frlg/secondary/island_harbor/metatile_attributes.bin");

@@ -1,13 +1,13 @@
 {
-  "id": "MAP_RESIDENTIAL_LIKE_CARPET",
-  "name": "ResidentialLikeCarpet",
-  "layout": "LAYOUT_RESIDENTIAL_LIKE_CARPET",
-  "music": "MUS_ZGS_AGTLP",
-  "region_map_section": "MAPSEC_THREE_ISLE_PORT",
+  "id": "MAP_VILLA_LIKE_CARPET",
+  "name": "VillaLikeCarpet",
+  "layout": "LAYOUT_VILLA_LIKE_CARPET",
+  "music": "MUS_ZGS_PARADISE_DEEP_MOUNTAIN",
+  "region_map_section": "MAPSEC_BOND_BRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": true,
+  "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
@@ -15,9 +15,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_HOME_LIKE_CARPET",
-      "offset": -20,
-      "direction": "left"
+      "map": "MAP_HOUSE_LIKE_CARPET",
+      "offset": 22,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -25,10 +25,10 @@
   ],
   "warp_events": [
     {
-      "x": 22,
-      "y": 12,
+      "x": 17,
+      "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_CARPET_PORT",
+      "dest_map": "MAP_VILLA_LIKE_CARPET",
       "dest_warp_id": "0"
     }
   ],
@@ -38,8 +38,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 24,
-      "y": 7,
+      "x": 16,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
