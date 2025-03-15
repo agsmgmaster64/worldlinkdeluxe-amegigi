@@ -7857,7 +7857,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_ENDURE",
@@ -7979,7 +7979,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_ENDURE",
@@ -8111,7 +8111,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_ENDURE",
@@ -22509,7 +22509,7 @@
       },
       {
         "Level": 32,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,
@@ -22893,7 +22893,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 22,
@@ -25107,7 +25107,7 @@
       },
       {
         "Level": 39,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 42,
@@ -33332,7 +33332,7 @@
       },
       {
         "Level": 43,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 46,
@@ -33453,7 +33453,7 @@
       },
       {
         "Level": 51,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 56,
@@ -33583,7 +33583,7 @@
       },
       {
         "Level": 57,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 65,
@@ -57485,7 +57485,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_HEAVY_SLAM",
@@ -57595,7 +57595,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_HEAVY_SLAM",
@@ -57708,7 +57708,7 @@
       "MOVE_STRENGTH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_HEAVY_SLAM",
@@ -64132,7 +64132,7 @@
       "MOVE_FLASH_CANNON"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_ICE_SHARD",
       "MOVE_IMPRISON",
       "MOVE_IRON_DEFENSE",
@@ -64243,7 +64243,7 @@
       "MOVE_FLASH_CANNON"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_ICE_SHARD",
       "MOVE_IMPRISON",
       "MOVE_IRON_DEFENSE",
@@ -64360,7 +64360,7 @@
       "MOVE_FLASH_CANNON"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_ICE_SHARD",
       "MOVE_IMPRISON",
       "MOVE_IRON_DEFENSE",
@@ -65951,7 +65951,7 @@
       },
       {
         "Level": 31,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,
@@ -66052,7 +66052,7 @@
       },
       {
         "Level": 31,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,
@@ -66153,7 +66153,7 @@
       },
       {
         "Level": 31,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,

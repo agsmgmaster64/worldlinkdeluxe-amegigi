@@ -2646,6 +2646,7 @@ BattleScript_RoomServiceLoop_NextBattler:
 
 BattleScript_EffectWonderRoom::
 BattleScript_EffectMagicRoom::
+BattleScript_EffectInverseRoom::
 	attackcanceler
 	attackstring
 	ppreduce
@@ -5982,6 +5983,11 @@ BattleScript_WonderRoomEnds::
 
 BattleScript_MagicRoomEnds::
 	printstring STRINGID_MAGICROOMENDS
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_InverseRoomEnds::
+	printstring STRINGID_INVERSEROOMENDS
 	waitmessage B_WAIT_TIME_LONG
 	end2
 

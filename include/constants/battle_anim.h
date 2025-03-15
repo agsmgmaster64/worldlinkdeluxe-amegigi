@@ -532,6 +532,7 @@
 #define BG_RAINBOW 81
 #define BG_HOLY_TERRAIN 82
 #define BG_SWAMP 83
+#define BG_INVERSE_ROOM 84
 
 // table ids for general animations (sBattleAnims_General)
 #define B_ANIM_STATS_CHANGE             0
@@ -592,8 +593,9 @@
 #define B_ANIM_TERA_CHARGE              55
 #define B_ANIM_TERA_ACTIVATE            56
 #define B_ANIM_SIMPLE_HEAL              57
+#define B_ANIM_INVERSE_ROOM             58
 
-#define NUM_B_ANIMS_GENERAL             58
+#define NUM_B_ANIMS_GENERAL             59
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

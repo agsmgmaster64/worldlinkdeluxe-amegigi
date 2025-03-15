@@ -1629,6 +1629,7 @@ enum
     ENDTURN_TRICK_ROOM,
     ENDTURN_WONDER_ROOM,
     ENDTURN_MAGIC_ROOM,
+    ENDTURN_INVERSE_ROOM,
     ENDTURN_ELECTRIC_TERRAIN,
     ENDTURN_MISTY_TERRAIN,
     ENDTURN_GRASSY_TERRAIN,
@@ -1972,6 +1973,15 @@ u8 DoFieldEndTurnEffects(void)
             {
                 gFieldStatuses &= ~STATUS_FIELD_MAGIC_ROOM;
                 BattleScriptExecute(BattleScript_MagicRoomEnds);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
+            break;
+        case ENDTURN_INVERSE_ROOM:
+            if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM && gFieldTimers.inverseRoomTimer == gBattleTurnCounter)
+            {
+                gFieldStatuses &= ~STATUS_FIELD_INVERSE_ROOM;
+                BattleScriptExecute(BattleScript_InverseRoomEnds);
                 effect++;
             }
             gBattleStruct->turnCountersTracker++;
@@ -4602,6 +4612,12 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                                                 B_MSG_SET_WONDER_ROOM,
                                                 B_ANIM_WONDER_ROOM,
                                                 &gFieldTimers.wonderRoomTimer);
+                break;
+            case STARTING_STATUS_INVERSE_ROOM:
+                effect = SetStartingFieldStatus(STATUS_FIELD_INVERSE_ROOM,
+                                                B_MSG_SET_INVERSE_ROOM,
+                                                B_ANIM_INVERSE_ROOM,
+                                                &gFieldTimers.inverseRoomTimer);
                 break;
             case STARTING_STATUS_TAILWIND_PLAYER:
                 effect = SetStartingSideStatus(SIDE_STATUS_TAILWIND,
@@ -8909,7 +8925,7 @@ static bool32 IsBattlerGroundedInverseCheck(u32 battler, bool32 considerInverse)
         return FALSE;
     if ((AI_DATA->aiCalcInProgress ? AI_DATA->abilities[battler] : GetBattlerAbility(battler)) == ABILITY_LEVITATE)
         return FALSE;
-    if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE)))
+    if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE) || !(gFieldStatuses & STATUS_FIELD_INVERSE_ROOM)))
         return FALSE;
     return TRUE;
 }
@@ -10880,7 +10896,8 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, u8 moveType)
 
 uq4_12_t GetTypeModifier(u32 atkType, u32 defType)
 {
-    if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
+    if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
+     || (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM))
         return GetInverseTypeMultiplier(gTypeEffectivenessTable[atkType][defType]);
     return gTypeEffectivenessTable[atkType][defType];
 }

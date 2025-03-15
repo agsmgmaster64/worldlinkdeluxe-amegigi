@@ -266,12 +266,13 @@ enum TypeSideHazard
 #define STATUS_FIELD_MAGIC_ROOM                     (1 << 0)
 #define STATUS_FIELD_TRICK_ROOM                     (1 << 1)
 #define STATUS_FIELD_WONDER_ROOM                    (1 << 2)
-#define STATUS_FIELD_GRAVITY                        (1 << 3)
-#define STATUS_FIELD_GRASSY_TERRAIN                 (1 << 4)
-#define STATUS_FIELD_MISTY_TERRAIN                  (1 << 5)
-#define STATUS_FIELD_ELECTRIC_TERRAIN               (1 << 6)
-#define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 7)
-#define STATUS_FIELD_HOLY_TERRAIN                   (1 << 8)
+#define STATUS_FIELD_INVERSE_ROOM                   (1 << 3)
+#define STATUS_FIELD_GRAVITY                        (1 << 4)
+#define STATUS_FIELD_GRASSY_TERRAIN                 (1 << 5)
+#define STATUS_FIELD_MISTY_TERRAIN                  (1 << 6)
+#define STATUS_FIELD_ELECTRIC_TERRAIN               (1 << 7)
+#define STATUS_FIELD_PSYCHIC_TERRAIN                (1 << 8)
+#define STATUS_FIELD_HOLY_TERRAIN                   (1 << 9)
 
 #define STATUS_FIELD_TERRAIN_ANY        (STATUS_FIELD_GRASSY_TERRAIN | STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_PSYCHIC_TERRAIN | STATUS_FIELD_HOLY_TERRAIN)
 
@@ -609,6 +610,7 @@ enum StartingStatus
     STARTING_STATUS_TRICK_ROOM,
     STARTING_STATUS_MAGIC_ROOM,
     STARTING_STATUS_WONDER_ROOM,
+    STARTING_STATUS_INVERSE_ROOM,
     STARTING_STATUS_TAILWIND_PLAYER,
     STARTING_STATUS_TAILWIND_OPPONENT,
     STARTING_STATUS_RAINBOW_PLAYER,

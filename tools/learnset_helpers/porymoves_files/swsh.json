@@ -17257,7 +17257,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 12,
@@ -18830,7 +18830,7 @@
       },
       {
         "Level": 32,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,
@@ -25161,7 +25161,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 44,
@@ -25278,7 +25278,7 @@
       },
       {
         "Level": 46,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 52,
@@ -25399,7 +25399,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 56,
@@ -40561,7 +40561,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_TAKE_DOWN",
@@ -40663,7 +40663,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_TAKE_DOWN",
@@ -40769,7 +40769,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_GRAVITY",
       "MOVE_TAKE_DOWN",
@@ -45385,7 +45385,7 @@
       "MOVE_VENOM_DRENCH"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_HAZE",
       "MOVE_TREMORS",
@@ -45517,7 +45517,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_CURSE",
       "MOVE_HAZE",
       "MOVE_TREMORS",
@@ -46819,7 +46819,7 @@
     ],
     "EggMoves": [
       "MOVE_AURORA_VEIL",
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_EXPLOSION",
       "MOVE_ICE_SHARD",
       "MOVE_ICICLE_CRASH",
@@ -46916,7 +46916,7 @@
     ],
     "EggMoves": [
       "MOVE_AURORA_VEIL",
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_EXPLOSION",
       "MOVE_ICE_SHARD",
       "MOVE_ICICLE_CRASH",
@@ -47029,7 +47029,7 @@
     ],
     "EggMoves": [
       "MOVE_AURORA_VEIL",
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_EXPLOSION",
       "MOVE_ICE_SHARD",
       "MOVE_ICICLE_CRASH",
@@ -48248,7 +48248,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 24,
@@ -48337,7 +48337,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 24,
@@ -48435,7 +48435,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 24,
@@ -54831,7 +54831,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 12,
@@ -54929,7 +54929,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 12,
@@ -55079,7 +55079,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       }
     ],
     "PreEvoMoves": [],
@@ -65248,7 +65248,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 1,
@@ -65380,7 +65380,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 1,
@@ -66811,7 +66811,7 @@
       },
       {
         "Level": 30,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 35,
@@ -67182,7 +67182,7 @@
       },
       {
         "Level": 80,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 88,
@@ -67775,7 +67775,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 40,

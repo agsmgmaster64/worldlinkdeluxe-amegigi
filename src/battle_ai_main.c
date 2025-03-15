@@ -2397,6 +2397,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_INVERSE_ROOM:
+            if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_GRAVITY:
             if ((gFieldStatuses & STATUS_FIELD_GRAVITY
               && !IS_BATTLER_OF_TYPE(battlerAtk, TYPE_FLYING)
@@ -4951,6 +4955,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_TRICK_ROOM:
     case EFFECT_WONDER_ROOM:
     case EFFECT_MAGIC_ROOM:
+    case EFFECT_INVERSE_ROOM:
     case EFFECT_TAILWIND:
     case EFFECT_DRAGON_DANCE:
     case EFFECT_TIDY_UP:
@@ -5346,6 +5351,10 @@ static s32 AI_PowerfulStatus(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         break;
     case EFFECT_WONDER_ROOM:
         if (!(gFieldStatuses & STATUS_FIELD_WONDER_ROOM) && !HasMoveEffect(battlerDef, EFFECT_WONDER_ROOM))
+            ADJUST_SCORE(POWERFUL_STATUS_MOVE);
+        break;
+    case EFFECT_INVERSE_ROOM:
+        if (!(gFieldStatuses & STATUS_FIELD_INVERSE_ROOM) && !HasMoveEffect(battlerDef, EFFECT_INVERSE_ROOM))
             ADJUST_SCORE(POWERFUL_STATUS_MOVE);
         break;
     case EFFECT_GRAVITY:

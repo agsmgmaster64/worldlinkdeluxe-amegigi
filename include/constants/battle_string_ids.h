@@ -750,8 +750,10 @@
 #define STRINGID_LUCIDDREAMINGENTERS                  748
 #define STRINGID_GIVINGHEARTCAMETRUE                  749
 #define STRINGID_GIVINGHEARTLASTWISH                  750
+#define STRINGID_SWAPSTYPEEFFECTIVENESS               751
+#define STRINGID_INVERSEROOMENDS                      752
 
-#define BATTLESTRINGS_COUNT                           751
+#define BATTLESTRINGS_COUNT                           753
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
@@ -1047,11 +1049,12 @@
 #define B_MSG_SET_TRICK_ROOM        5
 #define B_MSG_SET_MAGIC_ROOM        6
 #define B_MSG_SET_WONDER_ROOM       7
-#define B_MSG_SET_TAILWIND          8
-#define B_MSG_SET_RAINBOW           9
-#define B_MSG_SET_SEA_OF_FIRE       10
-#define B_MSG_SET_SWAMP             11
-#define B_MSG_STARTING_STATUS_COUNT 12
+#define B_MSG_SET_INVERSE_ROOM      8
+#define B_MSG_SET_TAILWIND          9
+#define B_MSG_SET_RAINBOW           10
+#define B_MSG_SET_SEA_OF_FIRE       11
+#define B_MSG_SET_SWAMP             12
+#define B_MSG_STARTING_STATUS_COUNT 13
 
 
 // gWrappedStringIds

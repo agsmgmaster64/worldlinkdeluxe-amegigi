@@ -12189,24 +12189,21 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Venoshock,
     },
 
-    [MOVE_AUTOTOMIZE] =
+    [MOVE_INVERSE_ROOM] =
     {
-        .name = COMPOUND_STRING("Autotomize"),
+        .name = COMPOUND_STRING("Inverse Room"),
         .description = COMPOUND_STRING(
-            "Sheds additional weight to\n"
-            "sharply boost Speed."),
-        .effect = EFFECT_AUTOTOMIZE,
+            "Type effectiveness is\n"
+            "swapped for 5 turns."),
+        .effect = EFFECT_INVERSE_ROOM,
         .power = 0,
-        .type = TYPE_STEEL,
+        .type = TYPE_REASON,
         .accuracy = 0,
-        .pp = 15,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = -7,
         .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
         .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,

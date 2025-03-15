@@ -8040,7 +8040,7 @@
       "MOVE_ROCK_CLIMB"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_FLAIL",
@@ -8154,7 +8154,7 @@
       "MOVE_ROCK_CLIMB"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_FLAIL",
@@ -8280,7 +8280,7 @@
       "MOVE_ROCK_CLIMB"
     ],
     "EggMoves": [
-      "MOVE_AUTOTOMIZE",
+      "MOVE_INVERSE_ROOM",
       "MOVE_BLOCK",
       "MOVE_CURSE",
       "MOVE_FLAIL",
@@ -22774,7 +22774,7 @@
       },
       {
         "Level": 20,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 23,
@@ -22851,11 +22851,11 @@
     "LevelMoves": [
       {
         "Level": 0,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 1,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 1,
@@ -23288,7 +23288,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 12,
@@ -25484,7 +25484,7 @@
       },
       {
         "Level": 32,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 36,
@@ -34168,7 +34168,7 @@
       },
       {
         "Level": 40,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 44,
@@ -34285,7 +34285,7 @@
       },
       {
         "Level": 46,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 52,
@@ -34403,7 +34403,7 @@
       },
       {
         "Level": 48,
-        "Move": "MOVE_AUTOTOMIZE"
+        "Move": "MOVE_INVERSE_ROOM"
       },
       {
         "Level": 56,

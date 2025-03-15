@@ -283,6 +283,7 @@ struct FieldTimer
     u16 wonderRoomTimer;
     u16 magicRoomTimer;
     u16 trickRoomTimer;
+    u16 inverseRoomTimer;
     u16 terrainTimer;
     u16 gravityTimer;
 };

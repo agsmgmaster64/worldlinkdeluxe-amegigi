@@ -4129,6 +4129,18 @@ gBattleAnimGeneral_MagicRoom::
 	blendoff
 	end
 
+gBattleAnimMove_InverseRoom::
+	call InitRoomAnimation
+gBattleAnimGeneral_InverseRoom::
+	playsewithpan SE_M_SUPERSONIC, SOUND_PAN_TARGET
+	fadetobg BG_INVERSE_ROOM
+	waitbgfadein
+	delay 0x40
+	restorebg
+	waitbgfadein
+	blendoff
+	end
+
 gBattleAnimMove_SmackDown::
 	loadspritegfx ANIM_TAG_BLACK_BALL
 	loadspritegfx ANIM_TAG_IMPACT
