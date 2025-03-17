@@ -1909,7 +1909,8 @@ void CB2_WhiteOut(void)
     {
         FieldClearVBlankHBlankCallbacks();
         StopMapMusic();
-        if (gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore && !FlagGet(FLAG_IS_CHAMPION)) //tx_randomizer_and_challenges
+        if ((gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore && !FlagGet(FLAG_IS_CHAMPION))
+          || HOUSE_LIKE_CARPET) //tx_randomizer_and_challenges
         {
             ClearSaveData();
             DoSoftReset();
