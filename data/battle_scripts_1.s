@@ -3450,51 +3450,15 @@ BattleScript_EffectSuperFang::
 	damagetohalftargethp
 	goto BattleScript_HitFromAtkAnimation
 
-BattleScript_EffectRecoilIfMiss::
-	attackcanceler
-	accuracycheck BattleScript_MoveMissedDoDamage, ACC_CURR_MOVE
-.if B_CRASH_IF_TARGET_IMMUNE >= GEN_4
-	typecalc
-	jumpifmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_MoveMissedDoDamage
-.endif
-	goto BattleScript_HitFromAtkString
-BattleScript_MoveMissedDoDamage::
-	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_PrintMoveMissed
-	attackstring
-	ppreduce
-	pause B_WAIT_TIME_LONG
-	resultmessage
-	waitmessage B_WAIT_TIME_LONG
-.if B_CRASH_IF_TARGET_IMMUNE < GEN_4
-	jumpifmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_MoveEnd
-.endif
-	moveendcase MOVEEND_PROTECT_LIKE_EFFECT @ Spiky Shield's damage happens before recoil.
-	jumpifhasnohp BS_ATTACKER, BattleScript_MoveEnd
+BattleScript_RecoilIfMiss::
 	printstring STRINGID_PKMNCRASHED
 	waitmessage B_WAIT_TIME_LONG
-	damagecalc
-	typecalc
-	adjustdamage
-.if B_CRASH_IF_TARGET_IMMUNE == GEN_4
-	manipulatedamage DMG_RECOIL_FROM_IMMUNE
-.else
-	manipulatedamage DMG_RECOIL_FROM_MISS
-.endif
-.if B_CRASH_IF_TARGET_IMMUNE >= GEN_4
-	clearmoveresultflags MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE
-.else
-	clearmoveresultflags MOVE_RESULT_MISSED
-.endif
-	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
+	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_RecoilEnd
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_IGNORE_DISGUISE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	tryfaintmon BS_ATTACKER
-.if B_CRASH_IF_TARGET_IMMUNE >= GEN_4
-	setmoveresultflags MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE
-.else
-	setmoveresultflags MOVE_RESULT_MISSED
-.endif
-	goto BattleScript_MoveEnd
+	return
 
 BattleScript_EffectMist::
 	attackcanceler
@@ -7868,13 +7832,15 @@ BattleScript_ShedSkinActivates::
 	end3
 
 BattleScript_ActivateWeatherAbilities:
+	saveattacker
 	savetarget
-	setbyte gBattlerTarget, 0
+	setbyte gBattlerAttacker, 0
 BattleScript_ActivateWeatherAbilities_Loop:
-	copybyte sBATTLER, gBattlerTarget
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
 	activateweatherchangeabilities BS_TARGET
-	addbyte gBattlerTarget, 1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_ActivateWeatherAbilities_Loop
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_ActivateWeatherAbilities_Loop
+	restoreattacker
 	restoretarget
 	return
 
@@ -8238,7 +8204,7 @@ BattleScript_AttackWeakenedByStrongWinds::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
-BattleScript_MimicryActivates_End3::
+BattleScript_MimicryActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_BATTLERTYPECHANGEDTO
@@ -8264,16 +8230,18 @@ BattleScript_SnowWarningActivatesSnow::
 	end3
 
 BattleScript_ActivateTerrainEffects:
+	saveattacker
 	savetarget
-	setbyte gBattlerTarget, 0
+	setbyte gBattlerAttacker, 0
 BattleScript_ActivateTerrainSeed:
-	copybyte sBATTLER, gBattlerTarget
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
 	doterrainseed BS_TARGET, BattleScript_ActivateTerrainAbility
 	removeitem BS_TARGET
 BattleScript_ActivateTerrainAbility:
 	activateterrainchangeabilities BS_TARGET
-	addbyte gBattlerTarget, 0x1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_ActivateTerrainSeed
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_ActivateTerrainSeed
+	restoreattacker
 	restoretarget
 	return
 
@@ -9878,11 +9846,14 @@ BattleScript_NeutralizingGasExits::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_NEUTRALIZINGGASOVER
 	waitmessage B_WAIT_TIME_LONG
-	setbyte gBattlerTarget, 0
+	setbyte gBattlerAttacker, 0
 BattleScript_NeutralizingGasExitsLoop:
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
+	saveattacker
 	switchinabilities BS_TARGET
-	addbyte gBattlerTarget, 1
-	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_NeutralizingGasExitsLoop
+	restoreattacker
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_NeutralizingGasExitsLoop
 	restoreattacker
 	restoretarget
 	return

@@ -198,8 +198,7 @@ static void DoShadowFieldEffect(struct ObjectEvent *);
 static void SetJumpSpriteData(struct Sprite *, u8, u8, u8);
 static void SetWalkSlowSpriteData(struct Sprite *, u8);
 static bool8 UpdateWalkSlowAnim(struct Sprite *);
-static bool8 UpdateWalkOnStairsAnim(struct Sprite *);
-static bool8 UpdateRunOnStairsAnim(struct Sprite *);
+static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 static u8 DoJumpSpriteMovement(struct Sprite *);
 static u8 DoJumpSpecialSpriteMovement(struct Sprite *);
 static void CreateLevitateMovementTask(struct ObjectEvent *);
@@ -997,6 +996,13 @@ const u8 gFaceDirectionMovementActions[] = {
     [DIR_SOUTHEAST] = MOVEMENT_ACTION_FACE_RIGHT,
     [DIR_NORTHWEST] = MOVEMENT_ACTION_FACE_LEFT,
     [DIR_NORTHEAST] = MOVEMENT_ACTION_FACE_RIGHT
+};
+static const u8 gWalkSlowStairsMovementActions[] = {
+    [DIR_NONE]  = MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP,
+    [DIR_WEST]  = MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT,
+    [DIR_EAST]  = MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT,
 };
 const u8 gWalkSlowMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_WALK_SLOW_DOWN,
@@ -5806,13 +5812,13 @@ bool8 FollowablePlayerMovement_Step(struct ObjectEvent *objectEvent, struct Spri
     direction = GetDirectionToFace(x, y, targetX, targetY);
     // During a script, if player sidesteps or backsteps,
     // mirror player's direction instead
-    if (ArePlayerFieldControlsLocked()
-     && gObjectEvents[gPlayerAvatar.objectEventId].facingDirection != gObjectEvents[gPlayerAvatar.objectEventId].movementDirection)
+    if (ArePlayerFieldControlsLocked() &&
+        gObjectEvents[gPlayerAvatar.objectEventId].facingDirection != gObjectEvents[gPlayerAvatar.objectEventId].movementDirection)
     {
         direction = gObjectEvents[gPlayerAvatar.objectEventId].movementDirection;
         objectEvent->facingDirectionLocked = TRUE;
     }
-
+    
     MoveCoords(direction, &x, &y);
     GetCollisionAtCoords(objectEvent, x, y, direction); // Sets directionOverwrite for stairs
     if (GetLedgeJumpDirection(x, y, direction) != DIR_NONE)
@@ -5820,12 +5826,12 @@ bool8 FollowablePlayerMovement_Step(struct ObjectEvent *objectEvent, struct Spri
         // InitJumpRegular will set the proper speed
         ObjectEventSetSingleMovement(objectEvent, sprite, GetJump2MovementAction(direction));
     }
-    else if (playerAction >= MOVEMENT_ACTION_WALK_SLOW_DOWN && playerAction <= MOVEMENT_ACTION_WALK_SLOW_RIGHT)
+    else if (playerAction >= MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN && playerAction <= MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT)
     {
         if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH)) // on sideways stairs
             objectEvent->movementActionId = GetWalkNormalMovementAction(direction);
         else
-            ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkSlowMovementAction(direction));
+            ObjectEventSetSingleMovement(objectEvent, sprite, GetWalkSlowStairsMovementAction(direction));
     }
     else if (PlayerGetCopyableMovement() == COPY_MOVE_JUMP2)
     {
@@ -6677,13 +6683,13 @@ static u8 TryUpdateMovementActionOnStairs(struct ObjectEvent *objectEvent, u8 mo
     switch (movementActionId)
     {
         case MOVEMENT_ACTION_WALK_NORMAL_DOWN:
-            return MOVEMENT_ACTION_WALK_SLOW_DOWN;
+            return MOVEMENT_ACTION_WALK_SLOW_STAIRS_DOWN;
         case MOVEMENT_ACTION_WALK_NORMAL_UP:
-            return MOVEMENT_ACTION_WALK_SLOW_UP;
+            return MOVEMENT_ACTION_WALK_SLOW_STAIRS_UP;
         case MOVEMENT_ACTION_WALK_NORMAL_LEFT:
-            return MOVEMENT_ACTION_WALK_SLOW_LEFT;
+            return MOVEMENT_ACTION_WALK_SLOW_STAIRS_LEFT;
         case MOVEMENT_ACTION_WALK_NORMAL_RIGHT:
-            return MOVEMENT_ACTION_WALK_SLOW_RIGHT;
+            return MOVEMENT_ACTION_WALK_SLOW_STAIRS_RIGHT;
         default:
             return movementActionId;
     }
@@ -6812,6 +6818,7 @@ u8 name(u32 idx)\
 }
 
 dirn_to_anim(GetFaceDirectionMovementAction, gFaceDirectionMovementActions);
+dirn_to_anim(GetWalkSlowStairsMovementAction, gWalkSlowStairsMovementActions);
 dirn_to_anim(GetWalkSlowMovementAction, gWalkSlowMovementActions);
 dirn_to_anim(GetPlayerRunSlowMovementAction, gRunSlowMovementActions);
 dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
@@ -7153,7 +7160,7 @@ bool8 MovementAction_WalkSlowRight_Step1(struct ObjectEvent *objectEvent, struct
     }
     return FALSE;
 }
-
+/*
 bool8 UpdateWalkOnStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateWalkOnStairsAnim(sprite))
@@ -7199,7 +7206,7 @@ bool8 MovementAction_WalkOnStairsRight_Step0(struct ObjectEvent *objectEvent, st
     InitWalkSlow(objectEvent, sprite, DIR_EAST);
     return MovementAction_WalkOnStairs_Step1(objectEvent, sprite);
 }
-
+*/
 bool8 MovementAction_WalkNormalDiagonalUpLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitMovementNormal(objectEvent, sprite, DIR_NORTHWEST, MOVE_SPEED_NORMAL);
@@ -8249,7 +8256,7 @@ bool8 MovementAction_PlayerRunRight_Step1(struct ObjectEvent *objectEvent, struc
     }
     return FALSE;
 }
-
+/*
 static void InitRunOnStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction)
 {
     InitNpcForWalkSlow(objectEvent, sprite, direction);
@@ -8301,7 +8308,7 @@ bool8 MovementAction_PlayerRunOnStairsRight_Step0(struct ObjectEvent *objectEven
     InitRunOnStairs(objectEvent, sprite, DIR_SOUTH);
     return MovementAction_PlayerRunOnStairs_Step1(objectEvent, sprite);
 }
-
+*/
 void StartSpriteAnimInDirection(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 animNum)
 {
     SetAndStartSpriteAnim(sprite, animNum, 0);
@@ -10797,7 +10804,7 @@ static bool8 UpdateWalkSlowAnim(struct Sprite *sprite)
         return FALSE;
 }
 
-static bool8 UpdateWalkOnStairsAnim(struct Sprite *sprite)
+bool8 UpdateWalkSlowStairsAnim(struct Sprite *sprite)
 {
     if (++sprite->sTimer < 3)
     {
@@ -10806,25 +10813,6 @@ static bool8 UpdateWalkOnStairsAnim(struct Sprite *sprite)
     }
     else
         sprite->sTimer = 0;
-
-    if (sprite->sNumSteps > 15)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-static bool8 UpdateRunOnStairsAnim(struct Sprite *sprite)
-{
-    if ((++sprite->sTimer) & 1)
-    {
-        Step1(sprite, sprite->sDirection);
-        sprite->sNumSteps++;
-    }
-    else
-    {
-        Step2(sprite, sprite->sDirection);
-        sprite->sNumSteps += 2;
-    }
 
     if (sprite->sNumSteps > 15)
         return TRUE;
@@ -11780,6 +11768,88 @@ bool8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *objectE
 bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairsAnim(sprite))
+    {
+        ShiftStillObjectEventCoords(objectEvent);
+        objectEvent->triggerGroundEffectsOnStop = TRUE;
+        sprite->animPaused = TRUE;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowStairsUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitWalkSlow(objectEvent, sprite, DIR_NORTH);
+    return MovementAction_WalkSlowStairsUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkSlowStairsUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairs(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowStairsDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitWalkSlow(objectEvent, sprite, DIR_SOUTH);
+    return MovementAction_WalkSlowStairsDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkSlowStairsDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairs(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowStairsLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitWalkSlow(objectEvent, sprite, objectEvent->directionOverwrite);
+    else
+        InitWalkSlow(objectEvent, sprite, DIR_WEST);
+    return MovementAction_WalkSlowStairsLeft_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkSlowStairsLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairs(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowStairsRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitWalkSlow(objectEvent, sprite, objectEvent->directionOverwrite);
+    else
+        InitWalkSlow(objectEvent, sprite, DIR_EAST);
+    return MovementAction_WalkSlowStairsRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkSlowStairsRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairs(objectEvent, sprite))
     {
         sprite->data[2] = 2;
         return TRUE;
