@@ -370,7 +370,7 @@ extern const u8 gBattleAnimMove_Feint[];
 extern const u8 gBattleAnimMove_Pluck[];
 extern const u8 gBattleAnimMove_Tailwind[];
 extern const u8 gBattleAnimMove_Acupressure[];
-extern const u8 gBattleAnimMove_MetalBurst[];
+extern const u8 gBattleAnimMove_PredatorStalk[];
 extern const u8 gBattleAnimMove_UTurn[];
 extern const u8 gBattleAnimMove_CloseCombat[];
 extern const u8 gBattleAnimMove_Payback[];

@@ -991,7 +991,7 @@ const u8* CancelMultiTurnMoves(u32 battler)
 
     // Clear battler's semi-invulnerable bits if they are not held by Sky Drop.
     if (!(gStatuses3[battler] & STATUS3_SKY_DROPPED))
-        gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE | STATUS3_PREDATOR_STALK);
+        gStatuses3[battler] &= ~(STATUS3_SEMI_INVULNERABLE);
 
     // Check to see if this Pokemon was in the middle of using Sky Drop. If so, release the target.
     if (gBattleStruct->skyDropTargets[battler] != 0xFF && !(gStatuses3[battler] & STATUS3_SKY_DROPPED))
@@ -6870,8 +6870,6 @@ bool32 IsBattlerTerrainAffected(u32 battler, u32 terrainFlag)
     if (!(gFieldStatuses & terrainFlag))
         return FALSE;
     else if (gStatuses3[battler] & STATUS3_SEMI_INVULNERABLE)
-        return FALSE;
-    else if (gStatuses3[battler] & STATUS3_PREDATOR_STALK && IsBattlerWeatherAffected(battler, B_WEATHER_SANDSTORM))
         return FALSE;
 
     return IsBattlerGrounded(battler);

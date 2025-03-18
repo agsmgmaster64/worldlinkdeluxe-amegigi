@@ -912,6 +912,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_GIVINGHEARTLASTWISH]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s last wish generated a light!"),
     [STRINGID_SWAPSTYPEEFFECTIVENESS]               = COMPOUND_STRING("It created a bizarre area in which type effectiveness is swapped!"),
     [STRINGID_INVERSEROOMENDS]                      = COMPOUND_STRING("Inverse Room wore off, and type effectiveness returned to normal!"),
+    [STRINGID_CHARGEDVICIOUSAURA]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} charges its vicious aura!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

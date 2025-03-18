@@ -328,8 +328,61 @@ gBattleAnimMove_Acupressure::
 	call ElectricityEffect
 	end
 
-gBattleAnimMove_MetalBurst::
-	choosetwoturnanim DigSetUp, DigUnleash
+gBattleAnimMove_PredatorStalk::
+	choosetwoturnanim PredatorStalkSetUp, PredatorStalkUnleash
+	end
+PredatorStalkSetUp:
+	loadspritegfx ANIM_TAG_EYE_SPARKLE
+	simplepaletteblend selector=F_PAL_BG | F_PAL_ATK_SIDE | F_PAL_DEF_PARTNER, delay=3, initial_blend_y=0, target_blend_y=16, color=RGB_BLACK
+	waitforvisualfinish
+	createsprite gEyeSparkleSpriteTemplate, ANIM_ATTACKER, 0, -16, -8
+	createsprite gEyeSparkleSpriteTemplate, ANIM_ATTACKER, 0, 16, -8
+	playsewithpan SE_M_DETECT, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createvisualtask AnimTask_AttackerFadeToInvisible, 2, 1
+	waitforvisualfinish
+	simplepaletteblend selector=F_PAL_BG | F_PAL_ATK_SIDE | F_PAL_DEF_PARTNER, delay=3, initial_blend_y=16, target_blend_y=0, color=RGB_BLACK
+	end
+PredatorStalkUnleash:
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_THOUGHT_BUBBLE
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_SMALL_BUBBLES, 0, 4, 4, RGB(12, 11, 31)
+	monbg ANIM_ATTACKER
+	splitbgprio ANIM_ATTACKER
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	fadetobg BG_DARK
+	waitbgfadein
+	delay 10
+	playsewithpan SOUND_PAN_ATTACKER, 192
+	createvisualtask AnimTask_NightShadeClone, 5, 85
+	delay 40
+	createvisualtask AnimTask_RockMonBackAndForth, 5, ANIM_TARGET, 3, 2
+	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_TARGET, 12, 4
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=0
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=1
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=2
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=3
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=0
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=1
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=2
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=3
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=0
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=1
+	delay 4
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=2
+	createteardropsprite ANIM_TARGET, 2, relative_to=ANIM_TARGET, type=3
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	delay 1
+	restorebg
+	waitbgfadein
+	waitforvisualfinish
 	end
 
 @Credits: Skeli

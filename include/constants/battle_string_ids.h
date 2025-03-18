@@ -752,8 +752,9 @@
 #define STRINGID_GIVINGHEARTLASTWISH                  750
 #define STRINGID_SWAPSTYPEEFFECTIVENESS               751
 #define STRINGID_INVERSEROOMENDS                      752
+#define STRINGID_CHARGEDVICIOUSAURA                   753
 
-#define BATTLESTRINGS_COUNT                           753
+#define BATTLESTRINGS_COUNT                           754
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

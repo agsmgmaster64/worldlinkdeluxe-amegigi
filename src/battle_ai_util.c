@@ -1585,7 +1585,7 @@ bool32 IsSemiInvulnerable(u32 battlerDef, u32 move)
         return TRUE;
     else if (!MoveDamagesUnderground(move) && gStatuses3[battlerDef] & STATUS3_UNDERGROUND)
         return TRUE;
-    else if (AI_GetWeather() & B_WEATHER_SANDSTORM && gStatuses3[battlerDef] & STATUS3_PREDATOR_STALK)
+    else if (gStatuses3[battlerDef] & STATUS3_PREDATOR_STALK)
         return TRUE;
     else
         return FALSE;
