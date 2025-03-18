@@ -11973,7 +11973,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "A repulsive attack that may\n"
             "raise all stats."),
         .effect = EFFECT_HIT,
-        .power = 60,
+        .power = 70,
         .type = TYPE_GHOST,
         .accuracy = 100,
         .pp = 5,
@@ -12214,7 +12214,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "foes attack only the user."),
         .effect = EFFECT_FOLLOW_ME,
         .power = 0,
-        .type = TYPE_HEART,
+        .type = TYPE_NATURE,
         .accuracy = 0,
         .pp = 20,
         .target = MOVE_TARGET_USER,
