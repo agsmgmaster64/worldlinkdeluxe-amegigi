@@ -1961,7 +1961,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         if (P_SUMMARY_SCREEN_RENAME && sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
             ShowUtilityPrompt(SUMMARY_MODE_NORMAL);
         if (ShouldShowIvEvPrompt() && sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
-        {   
+        {
             sMonSummaryScreen->skillsPageMode = SUMMARY_SKILLS_MODE_STATS;
             ChangeStatLabel(SUMMARY_SKILLS_MODE_STATS);
         }
@@ -2109,7 +2109,7 @@ static void ChangePage(u8 taskId, s8 delta)
     CreateTextPrinterTask(sMonSummaryScreen->currPageIndex);
     HidePageSpecificSprites();
 
-    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS 
+    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS
         || (sMonSummaryScreen->currPageIndex + delta) == PSS_PAGE_SKILLS)
     {
         struct Pokemon *mon = &sMonSummaryScreen->currentMon;
@@ -2245,7 +2245,7 @@ static void SwitchToMoveSelection(u8 taskId)
     {
         if (ShouldShowMoveRelearner())
             ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_RELEARN);
-        
+
         ShowUtilityPrompt(SUMMARY_MODE_SELECT_MOVE);
     }
     else
@@ -3802,10 +3802,10 @@ static void BufferStat(u8 *dst, u8 statIndex, u32 stat, u32 strId, u32 n)
     else
         txtPtr = StringCopy(dst, sTextNatureNeutral);
 
-    if (!P_SUMMARY_SCREEN_IV_EV_VALUES 
+    if (!P_SUMMARY_SCREEN_IV_EV_VALUES
         && sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS)
         StringAppend(dst, GetLetterGrade(stat));
-    else 
+    else
         ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
 
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
@@ -3819,7 +3819,7 @@ static const u8 *GetLetterGrade(u32 stat)
     static const u8 gText_GradeB[] = _("B");
     static const u8 gText_GradeA[] = _("A");
     static const u8 gText_GradeS[] = _("S");
-    
+
     if (stat > 0 && stat <= 15)
         return gText_GradeD;
     else if (stat > 15 && stat <= 25)
@@ -3861,7 +3861,7 @@ static void BufferLeftColumnIvEvStats(void)
     u8 *hpIvEvString = Alloc(20);
     u8 *attackIvEvString = Alloc(20);
     u8 *defenseIvEvString = Alloc(20);
-    
+
     DynamicPlaceholderTextUtil_Reset();
 
     BufferStat(hpIvEvString, STAT_HP, sMonSummaryScreen->summary.currentHP, 0, 7);
@@ -3878,7 +3878,7 @@ static void BufferLeftColumnIvEvStats(void)
 static void PrintLeftColumnStats(void)
 {
     int x;
-    
+
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
         x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 46);
     else
@@ -3901,7 +3901,7 @@ static void BufferRightColumnStats(void)
 static void PrintRightColumnStats(void)
 {
     int x;
-    
+
     if (sMonSummaryScreen->skillsPageMode == SUMMARY_SKILLS_MODE_IVS && !P_SUMMARY_SCREEN_IV_EV_VALUES)
         x = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 20);
     else

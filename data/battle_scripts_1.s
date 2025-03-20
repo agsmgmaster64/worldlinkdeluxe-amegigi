@@ -844,10 +844,6 @@ BattleScript_FlingMissed:
 	ppreduce
 	goto BattleScript_MoveMissedPause
 
-BattleScript_EffectDynamicCategory::
-	setdynamicmovecategory
-	goto BattleScript_EffectHit
-
 BattleScript_EffectAuraWheel:: @ Aura Wheel can only be used by Morpeko
 	jumpifspecies BS_ATTACKER, SPECIES_MORPEKO_FULL_BELLY, BattleScript_EffectHit
 	jumpifspecies BS_ATTACKER, SPECIES_MORPEKO_HANGRY, BattleScript_EffectHit
@@ -5792,7 +5788,7 @@ BattleScript_ActionSwitch::
 
 BattleScript_DoSwitchOut::
 	switchoutabilities BS_ATTACKER
-	updatedynamax
+	undodynamax BS_ATTACKER
 	waitstate
 	returnatktoball
 	waitstate
@@ -9757,6 +9753,7 @@ BattleScript_EjectButtonActivates::
 	printstring STRINGID_EJECTBUTTONACTIVATE
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_SCRIPTING
+        undodynamax BS_SCRIPTING
 	makeinvisible BS_SCRIPTING
 	openpartyscreen BS_SCRIPTING, BattleScript_EjectButtonEnd
 	copybyte sSAVED_BATTLER, sBATTLER
@@ -10198,6 +10195,14 @@ BattleScript_EffectSteelsurge::
 BattleScript_DynamaxBegins::
 	flushtextbox
 	trytrainerslidedynamaxmsg
+	jumpifcangigantamax BS_ATTACKER, BattleScript_DynamaxBegins_GigantamaxString_01
+	printstring STRINGID_TIMETODYNAMAX
+	waitmessage B_WAIT_TIME_MED
+	goto BattleScript_DynamaxBegins_SwitchIn
+BattleScript_DynamaxBegins_GigantamaxString_01:
+	printstring STRINGID_TIMETOGIGANTAMAX
+	waitmessage B_WAIT_TIME_MED
+BattleScript_DynamaxBegins_SwitchIn:
 	returnatktoball
 	pause B_WAIT_TIME_SHORT
 	returntoball BS_SCRIPTING, TRUE
@@ -10205,6 +10210,15 @@ BattleScript_DynamaxBegins::
 	updatedynamax
 	playanimation BS_SCRIPTING, B_ANIM_DYNAMAX_GROWTH
 	waitanimation
+	jumpifbyteequal B_SHOW_DYNAMAX_MESSAGE, FALSE, BattleScript_DynamaxBegins_End3
+	jumpifcangigantamax BS_ATTACKER, BattleScript_DynamaxBegins_GigantamaxString_02
+	printstring STRINGID_PKMNDYNAMAXED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DynamaxBegins_End3
+BattleScript_DynamaxBegins_GigantamaxString_02:
+	printstring STRINGID_PKMNGIGANTAMAXED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DynamaxBegins_End3:
 	end3
 
 BattleScript_DynamaxEnds::
@@ -10213,6 +10227,13 @@ BattleScript_DynamaxEnds::
 	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
 	waitanimation
 	end2
+
+BattleScript_DynamaxEnds_Ret::
+	flushtextbox
+	updatedynamax
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
+	waitanimation
+	return
 
 BattleScript_MoveBlockedByDynamax::
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE

@@ -573,6 +573,7 @@ extern const u8 BattleScript_RemoveGenericType[];
 // dynamax and max raids
 extern const u8 BattleScript_DynamaxBegins[];
 extern const u8 BattleScript_DynamaxEnds[];
+extern const u8 BattleScript_DynamaxEnds_Ret[];
 extern const u8 BattleScript_MoveBlockedByDynamax[];
 
 // Battle move scripts
@@ -838,7 +839,6 @@ extern const u8 BattleScript_MoveEffectLeechSeed[];
 extern const u8 BattleScript_MoveEffectHaze[];
 extern const u8 BattleScript_EffectHyperspaceFury[];
 extern const u8 BattleScript_EffectAuraWheel[];
-extern const u8 BattleScript_EffectDynamicCategory[];
 extern const u8 BattleScript_EffectNoRetreat[];
 extern const u8 BattleScript_EffectTarShot[];
 extern const u8 BattleScript_EffectPoltergeist[];
