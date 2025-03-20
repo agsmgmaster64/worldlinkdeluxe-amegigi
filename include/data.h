@@ -42,7 +42,7 @@ struct TrainerSprite
 struct TrainerBacksprite
 {
     struct MonCoords coordinates;
-    struct SpriteSheet backPic;
+    struct CompressedSpriteSheet backPic;
     struct CompressedSpritePalette palette;
     const union AnimCmd *const *const animation;
 };

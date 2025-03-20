@@ -30,14 +30,15 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 
-#define GRID_COLS   1
-#define GRID_ROWS   4
+#define CURSOR_START_X (104 + 16)
+#define CURSOR_START_Y (24 + 16)
 
 enum BGs {
-    BG_MSGBOX = 0,
-    BG_TXT,
-    BG_MAIN,
-    BG_SCROLL
+    BG_0 = 0,
+    BG_1,
+    BG_2,
+    BG_MAX = 2,
+    BG_COUNT,
 };
 
 enum States {
@@ -56,22 +57,28 @@ enum States {
 };
 
 enum Windows {
-    WIN_INFO = 0,
+    WIN_NAME = 0,
+    WIN_DESC,
     WIN_MSGBOX,
+    WIN_OUTFIT_MAX = 2,
+    WIN_COUNT,
 };
 
 enum Sprites {
     GFX_OW = 0,
-    GFX_FTS, // front
-    GFX_BTS, // back
+    GFX_TS,
+    GFX_INDICATOR,
+    GFX_TS_SHADOW,
     GFX_CURSOR,
     GFX_COUNT,
 };
 
 enum SpriteTags {
     TAG_SCROLL_ARROWS = 0x9000,
-    TAG_INDICATOR,
-    TAG_CURSOR,
+    GFXTAG_SHADOW = 0x9001,
+    GFXTAG_INDICATOR = 0x9002,
+    PALTAG_SHADOW_INDICATOR = 0x9900,
+    PALTAG_CURSOR = 0x9920,
 };
 
 enum ColorId {
@@ -79,28 +86,21 @@ enum ColorId {
     COLORID_MSGBOX,
 };
 
-enum IndicatorAnimIds {
-    I_ANIM_NORMAL = 0,
-    I_ANIM_CURSOR
-};
-
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
-    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_DYNAMIC_COLOR_1},
+    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,  TEXT_DYNAMIC_COLOR_1},
     [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
 };
 
 typedef struct {
+    MainCallback retCB;
+    u8 idx;
+    u8 gfxState;
     u8 tilemapBuffers[2][BG_SCREEN_SIZE];
     u8 spriteIds[GFX_COUNT];
     struct GridMenu *grid;
     u8 *list;
     u8 listCount;
-    u8 currentOutfitSpriteIds[GRID_ROWS];
-    u8 slotId:1; // flipped each time its used, for trainer sprites
-    u8 unused:7;
-    u16 idx;
-    u8 gfxState;
-    MainCallback retCB;
+    u8 shadowSpriteIds[9];
 } OutfitMenuResources;
 
 static void CB2_SetupOutfitMenu(void);
@@ -153,8 +153,12 @@ static const u8 sText_OutfitError_Default[] = _(
 static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/main.4bpp");
 static const u16 sPalette[] = INCBIN_U16("graphics/outfit_menu/main.gbapal");
 static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.lz");
+static const u16 sScrollingBG_Tiles[] = INCBIN_U16("graphics/outfit_menu/scroll.4bpp");
+static const u16 sScrollingBG_Palette[] = INCBIN_U16("graphics/outfit_menu/scroll.gbapal");
 static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.lz");
 
+static const u16 sLockSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/lock.4bpp");
+static const u16 sLockIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/lock.gbapal");
 static const u16 sIndicatorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator.4bpp");
 static const u16 sIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator.gbapal");
 static const u16 sCursorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/cursor.4bpp");
@@ -164,40 +168,30 @@ static EWRAM_DATA OutfitMenuResources *sOutfitMenu = NULL;
 
 static const struct BgTemplate sBGTemplates[] =
 {
-    [BG_MSGBOX] =
+    [BG_0] =
     { //! UI
         .baseTile = 0,
-        .bg = BG_MSGBOX,
-        .charBaseIndex = 1,
-        .mapBaseIndex = 28,
-        .paletteMode = 0,
-        .priority = 0,
-        .screenSize = 0,
-    },
-    [BG_TXT] =
-    { //! UI
-        .baseTile = 0,
-        .bg = BG_TXT,
+        .bg = 0,
         .charBaseIndex = 1,
         .mapBaseIndex = 29,
         .paletteMode = 0,
         .priority = 1,
         .screenSize = 0,
     },
-    [BG_MAIN] =
+    [BG_1] =
     { //! BG
         .baseTile = 0,
-        .bg = BG_MAIN,
+        .bg = 1,
         .charBaseIndex = 0,
         .mapBaseIndex = 30,
         .paletteMode = 0,
         .priority = 2,
         .screenSize = 0,
     },
-    [BG_SCROLL] =
+    [BG_2] =
     { //! SCROLLING BG
         .baseTile = 0,
-        .bg = BG_SCROLL,
+        .bg = 2,
         .charBaseIndex = 0,
         .mapBaseIndex = 31,
         .paletteMode = 0,
@@ -208,59 +202,113 @@ static const struct BgTemplate sBGTemplates[] =
 
 static const struct WindowTemplate sWindowTemplates[] =
 {
-    [WIN_INFO] =
+    [WIN_NAME] =
     {
-        .bg = BG_TXT,
-        .tilemapLeft = 1,
-        .tilemapTop = 14,
-        .width = 23,
-        .height = 6,
-        .paletteNum = 0,
+        .bg = 0,
+        .tilemapLeft = 0,
+        .tilemapTop = 11,
+        .width = 12,
+        .height = 2,
+        .paletteNum = 15,
         .baseBlock = 1,
+    },
+    [WIN_DESC] =
+    {
+        .bg = 0,
+        .tilemapLeft = 0,
+        .tilemapTop = 13,
+        .width = 12,
+        .height = 6,
+        .paletteNum = 15,
+        .baseBlock = 25,
     },
     [WIN_MSGBOX] =
     {
-        .bg = BG_MSGBOX,
+        .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 15,
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 1+(23*6),
+        .baseBlock = 0x90,
     },
     DUMMY_WIN_TEMPLATE,
 };
 
-static const struct SpriteSheet sIndicator_SpriteSheet = {
+static const struct SpriteSheet sLockSpriteSheet = {
+    .data = sLockSprite_Gfx,
+    .size = 0x200,
+    .tag = GFXTAG_SHADOW,
+};
+
+static const struct SpritePalette sLockIndicatorSpritePalette = {
+    .data = sLockIndicatorSprite_Pal,
+    .tag = PALTAG_SHADOW_INDICATOR,
+};
+
+static const struct SpriteSheet sIndicatorSpriteSheet = {
     .data = sIndicatorSprite_Gfx,
-    .size = 16*32/2,
-    .tag = TAG_INDICATOR,
+    .size = 0x100,
+    .tag = GFXTAG_INDICATOR,
 };
 
-static const struct SpriteSheet sCursor_SpriteSheet = {
-    .data = sCursorSprite_Gfx,
-    .size = 32*32/2,
-    .tag = TAG_CURSOR,
+static const struct OamData sLockSpriteOamData = {
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_BLEND,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .priority = 2,
+    .shape = SPRITE_SHAPE(32x32),
+    .size = SPRITE_SIZE(32x32),
 };
 
-static const struct SpritePalette sIndicator_SpritePalette = {
-    .data = sIndicatorSprite_Pal,
-    .tag = TAG_INDICATOR,
-};
-
-static const struct CompressedSpritePalette sCursor_SpritePalette = {
-    .data = sCursorSprite_Pal,
-    .tag = TAG_CURSOR,
-};
-
-static const struct OamData sIndicator_SpriteOamData = {
+static const struct OamData sIndicatorSpriteOamData = {
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
     .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
     .shape = SPRITE_SHAPE(16x16),
     .size = SPRITE_SIZE(16x16),
-    .priority = 1,
+};
+
+static const struct SpriteTemplate sLockSpriteTemplate = {
+    .tileTag = GFXTAG_SHADOW,
+    .paletteTag = PALTAG_SHADOW_INDICATOR,
+    .callback = SpriteCallbackDummy,
+    .anims = gDummySpriteAnimTable,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .images = NULL,
+    .oam = &sLockSpriteOamData,
+};
+
+static const struct SpriteTemplate sIndicatorSpriteTemplate = {
+    .tileTag = GFXTAG_INDICATOR,
+    .paletteTag = PALTAG_SHADOW_INDICATOR,
+    .callback = SpriteCallbackDummy,
+    .anims = gDummySpriteAnimTable,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .images = NULL,
+    .oam = &sIndicatorSpriteOamData,
+};
+
+static const struct CompressedSpritePalette sCursor_SpritePalette = {
+    .data = sCursorSprite_Pal,
+    .tag = PALTAG_CURSOR,
+};
+
+static const union AnimCmd sCursorAnim[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd *const sCursorAnims[] = { sCursorAnim };
+
+static const struct SpriteFrameImage sCursorPicTable[] =
+{
+    overworld_frame(sCursorSprite_Gfx, 8, 8, 0),
+    overworld_frame(sCursorSprite_Gfx, 8, 8, 1),
 };
 
 static const struct OamData sCursor_SpriteOamData = {
@@ -268,56 +316,31 @@ static const struct OamData sCursor_SpriteOamData = {
     .objMode = ST_OAM_OBJ_NORMAL,
     .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(32x32),
-    .size = SPRITE_SIZE(32x32),
-    .priority = 2,
-};
-
-static const union AnimCmd sIndicator_NormalAnims[] = {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sIndicator_CursorAnims[] = {
-    ANIMCMD_FRAME(4, 30),
-    ANIMCMD_END
-};
-
-static const union AnimCmd *const sIndicator_Anims[] = {
-    [I_ANIM_NORMAL] = sIndicator_NormalAnims,
-    [I_ANIM_CURSOR] = sIndicator_CursorAnims,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 1,
 };
 
 static const struct SpriteTemplate sCursor_SpriteTemplate = {
-    .tileTag = TAG_CURSOR,
-    .paletteTag = TAG_CURSOR,
+    .tileTag = TAG_NONE,
+    .paletteTag = PALTAG_CURSOR,
     .callback = SpriteCallbackDummy,
-    .anims = gDummySpriteAnimTable,
+    .anims = sCursorAnims,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .images = NULL,
+    .images = sCursorPicTable,
     .oam = &sCursor_SpriteOamData,
-};
-
-static const struct SpriteTemplate sIndicator_SpriteTemplate = {
-    .tileTag = TAG_INDICATOR,
-    .paletteTag = TAG_INDICATOR,
-    .callback = SpriteCallbackDummy,
-    .anims = sIndicator_Anims,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .images = NULL,
-    .oam = &sIndicator_SpriteOamData,
 };
 
 /*
 _________________
 |_______________|
-|             |#|
-|             |#|
-|_____________|#|
-|_____________|#|
+|       | # # # |
+|       | # # # |
+|       | # # # |
+_________________
 */
-static const u8 sGridPosX[] = { (208 + 16) };
-static const u8 sGridPosY[] = { (20 + 16),   (52 + 16), (84 + 16), (116 + 16) };
+static const u8 sGridPosX[] = { (104 + 16), (152 + 16), (200 + 16) };
+static const u8 sGridPosY[] = { (24 + 16),   (72 + 16), (120 + 16) };
 
 void Task_OpenOutfitMenu(u8 taskId)
 {
@@ -384,6 +407,7 @@ static void CB2_SetupOutfitMenu(void)
     case STATE_LOADGRID:
         sOutfitMenu->listCount = BuildOutfitLists();
         SetupOutfitMenu_Grids();
+        sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
         gMain.state++;
         break;
     case STATE_LOADSPRITE:
@@ -423,8 +447,8 @@ static void VBlankCB_OutfitMenu(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
-    ChangeBgX(BG_SCROLL, 96, BG_COORD_SUB);
-    ChangeBgY(BG_SCROLL, 96, BG_COORD_SUB);
+    ChangeBgX(BG_2, 96, BG_COORD_SUB);
+    ChangeBgY(BG_2, 96, BG_COORD_SUB);
 }
 
 static void SetupOutfitMenu_BGs(void)
@@ -433,17 +457,16 @@ static void SetupOutfitMenu_BGs(void)
     ResetBgsAndClearDma3BusyFlags(0);
     ResetAllBgsCoordinates();
     InitBgsFromTemplates(0, sBGTemplates, ARRAY_COUNT(sBGTemplates));
-    SetBgTilemapBuffer(BG_MAIN, sOutfitMenu->tilemapBuffers[0]);
-    SetBgTilemapBuffer(BG_SCROLL, sOutfitMenu->tilemapBuffers[1]);
-    ScheduleBgCopyTilemapToVram(BG_MAIN);
-    ScheduleBgCopyTilemapToVram(BG_SCROLL);
+    SetBgTilemapBuffer(BG_1, sOutfitMenu->tilemapBuffers[0]);
+    SetBgTilemapBuffer(BG_2, sOutfitMenu->tilemapBuffers[1]);
+    ScheduleBgCopyTilemapToVram(BG_1);
+    ScheduleBgCopyTilemapToVram(BG_2);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
-    ShowBg(BG_MSGBOX);
-    ShowBg(BG_TXT);
-    ShowBg(BG_MAIN);
-    ShowBg(BG_SCROLL);
-    SetGpuReg(REG_OFFSET_BLDCNT, 0);
-    SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+    ShowBg(BG_0);
+    ShowBg(BG_1);
+    ShowBg(BG_2);
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
     SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
@@ -453,9 +476,10 @@ static bool32 SetupOutfitMenu_Graphics(void)
     {
     case 0:
         ResetTempTileDataBuffers();
-        LoadBgTiles(BG_MAIN, &sTiles, 96*72/2, 0x0);
-        LoadMessageBoxGfx(BG_MSGBOX, 0x100, BG_PLTT_ID(13));
-        LoadUserWindowBorderGfx(BG_MSGBOX, 0x10D, BG_PLTT_ID(14));
+        LoadBgTiles(BG_1, &sTiles, 2560, 0x0);
+        LoadBgTiles(BG_1, &sScrollingBG_Tiles, 320, 0x51);
+        LoadMessageBoxGfx(BG_0, 0x100, BG_PLTT_ID(13));
+        LoadUserWindowBorderGfx(BG_0, 0x10D, BG_PLTT_ID(14));
         sOutfitMenu->gfxState++;
         break;
     case 1:
@@ -477,9 +501,16 @@ static bool32 SetupOutfitMenu_Graphics(void)
     return FALSE;
 }
 
-static inline void PrintTexts(u8 winId, u8 font, u8 x, u8 y, u8 color, const u8 *str)
+static inline void FillWindow(u8 winId, u8 fillVal)
 {
-    AddTextPrinterParameterized4(winId, font, x, y, 0, 0, sFontColors[color], 0, str);
+    FillWindowPixelBuffer(winId, fillVal);
+    PutWindowTilemap(winId);
+}
+
+static inline void PrintTexts(u8 winId, u8 font, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 color, const u8 *str)
+{
+    AddTextPrinterParameterized4(winId, font, x, y, letterSpacing, lineSpacing, sFontColors[color], TEXT_SKIP_DRAW, str);
+    CopyWindowToVram(winId, COPYWIN_GFX);
 }
 
 static void SetupOutfitMenu_Windows(void)
@@ -487,71 +518,62 @@ static void SetupOutfitMenu_Windows(void)
     u32 i;
     InitWindows(sWindowTemplates);
     DeactivateAllTextPrinters();
-    for (i = 0; i < ARRAY_COUNT(sWindowTemplates); i++)
-    {
-        FillWindowPixelBuffer(i, PIXEL_FILL(0));
-        PutWindowTilemap(i);
-    }
+    for (i = 0; i < WIN_OUTFIT_MAX; i++)
+        FillWindow(i, PIXEL_FILL(0));
 
-    ScheduleBgCopyTilemapToVram(BG_MSGBOX);
-    ScheduleBgCopyTilemapToVram(BG_TXT);
+    ScheduleBgCopyTilemapToVram(BG_0);
 }
 
 static void SetupOutfitMenu_PrintStr(void)
 {
-    PrintTexts(WIN_INFO, FONT_NORMAL, 2, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].name);
-    PrintTexts(WIN_INFO, FONT_NORMAL, 2, 16, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].desc);
-    CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
+    PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock3Ptr->currOutfitId].name);
+    PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock3Ptr->currOutfitId].desc);
 }
 
+static const u16 sTSShadowPal[] = INCBIN_U16("graphics/outfit_menu/shadow.gbapal");
 static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool32 unlocked)
 {
-    u32 frontSpriteId = GetPlayerTrainerPicIdByOutfitGenderType(sOutfitMenu->idx, gSaveBlock2Ptr->playerGender, 0);
-    u32 backSpriteId = GetPlayerTrainerPicIdByOutfitGenderType(sOutfitMenu->idx, gSaveBlock2Ptr->playerGender, 1);
-    u32 frontPalSlot = sOutfitMenu->slotId ? 9 : 10;
-    u32 backPalSlot = sOutfitMenu->slotId ? 12 : 13;
+    u16 id = GetPlayerTrainerPicIdByOutfitGenderType(sOutfitMenu->idx, gSaveBlock2Ptr->playerGender, 0);
     if (update)
     {
-        FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_FTS]);
-        FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_BTS]);
+        FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS]);
+        FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
     }
 
-    sOutfitMenu->spriteIds[GFX_FTS] = CreateTrainerPicSprite(frontSpriteId, TRUE, 32+27, 32+32, frontPalSlot, TAG_NONE);
-    sOutfitMenu->spriteIds[GFX_BTS] = CreateTrainerPicSprite(backSpriteId, FALSE, 32+117, 32+32, backPalSlot, TAG_NONE);
-    LoadCompressedPalette(gTrainerBacksprites[backSpriteId].palette.data, OBJ_PLTT_ID(backPalSlot), PLTT_SIZE_4BPP);
-    gSprites[sOutfitMenu->spriteIds[GFX_BTS]].anims = gTrainerBacksprites[backSpriteId].animation;
-    StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_BTS]], 0);
+    sOutfitMenu->spriteIds[GFX_TS] = CreateTrainerPicSprite(id, TRUE, 48, 48, 9, TAG_NONE);
+    sOutfitMenu->spriteIds[GFX_TS_SHADOW] = CreateTrainerPicSprite(id, TRUE, 50, 48, 10, TAG_NONE);
+    LoadPalette(&sTSShadowPal, OBJ_PLTT_ID(10), PLTT_SIZE_4BPP);
+    gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.objMode = ST_OAM_OBJ_BLEND;
+    gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.priority = 2;
     if (!unlocked)
     {
         // bc we're directly tint to idx 1-15, skipping idx 0
         // there's no point of tinting idx 0
-
-        // front
-        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(frontPalSlot)+1], PLTT_SIZE_4BPP-1);
-        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(frontPalSlot)+1], &gPlttBufferFaded[OBJ_PLTT_ID(frontPalSlot)+1], PLTT_SIZE_4BPP-1);
-
-        // back
-        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(backPalSlot)+1], PLTT_SIZE_4BPP-1);
-        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(backPalSlot)+1], &gPlttBufferFaded[OBJ_PLTT_ID(backPalSlot)+1], PLTT_SIZE_4BPP-1);
+        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(9)+1], PLTT_SIZE_4BPP-1);
+        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(9)+1], &gPlttBufferFaded[OBJ_PLTT_ID(9)+1], PLTT_SIZE_4BPP-1);
     }
-    sOutfitMenu->slotId ^= 1;
+}
+
+static inline void SetupOutfitMenu_Sprites_DrawIndicatorSprite(void)
+{
+    LoadSpriteSheet(&sIndicatorSpriteSheet);
+    // the palette is sLockIndicatorSpritePalette
+    sOutfitMenu->spriteIds[GFX_INDICATOR] = CreateSprite(&sIndicatorSpriteTemplate, 16, 80, 0);
+    gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = IsPlayerWearingOutfit(sOutfitMenu->idx) ? FALSE : TRUE;
 }
 
 static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
 {
-    u32 row = sOutfitMenu->grid->selectedItem / sOutfitMenu->grid->maxCols;
-    u32 col = sOutfitMenu->grid->selectedItem % sOutfitMenu->grid->maxCols;
-    u32 x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-    u32 y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
-
-    LoadSpriteSheet(&sCursor_SpriteSheet);
     LoadCompressedSpritePalette(&sCursor_SpritePalette);
-    sOutfitMenu->spriteIds[GFX_CURSOR] = CreateSprite(&sCursor_SpriteTemplate, x, y, 2);
+    sOutfitMenu->spriteIds[GFX_CURSOR] = CreateSprite(&sCursor_SpriteTemplate, CURSOR_START_X, CURSOR_START_Y, 0);
+    StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_CURSOR]], 0);
+    UpdateCursorPosition();
 }
 
 static void SetupOutfitMenu_Sprites(void)
 {
     SetupOutfitMenu_Sprites_DrawTrainerSprite(FALSE, GetOutfitStatus(sOutfitMenu->idx));
+    SetupOutfitMenu_Sprites_DrawIndicatorSprite();
     SetupOutfitMenu_Sprites_DrawCursorSprite();
 }
 
@@ -573,56 +595,38 @@ static u32 CountAndFilterTotalOutfit(void)
     return i;
 }
 
-static void SpriteCB_Indicator(struct Sprite *s)
+static inline void ForAllCB_DrawOverworldShadowSprites(u32 idx, u32 col, u32 row)
 {
-    u32 idx = s->data[0];
-    u32 i = sOutfitMenu->list[sOutfitMenu->grid->topLeftItemIndex + idx];
-    if (i == gSaveBlock2Ptr->currOutfitId)
-    {
-        s->invisible = FALSE;
-    }
-    else
-    {
-        s->invisible = TRUE;
-    }
-
-    // use different anim when there's a cursor for cool immersion
-    if (idx == sOutfitMenu->grid->selectedItem && GetOutfitStatus(i))
-    {
-        StartSpriteAnimIfDifferent(s, I_ANIM_CURSOR);
-    }
-    else
-    {
-        StartSpriteAnimIfDifferent(s, I_ANIM_NORMAL);
-    }
-}
-
-static inline void ForEachCB_DrawIndicatorSprites(u32 idx, u32 col, u32 row)
-{
-    u32 x, y, i;
+    u32 x, y;
     if (idx >= sOutfitMenu->listCount)
         return;
 
-    i = sOutfitMenu->grid->topLeftItemIndex + idx;
-    x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-    y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
-    x -= 8, y -= 8;
-    sOutfitMenu->currentOutfitSpriteIds[idx] = CreateSprite(&sIndicator_SpriteTemplate, x, y, 0);
-    gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].data[0] = idx;
-    gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].callback = SpriteCB_Indicator;
+    x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]+8;
+    y = ((row % 3) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]+16;
+    sOutfitMenu->shadowSpriteIds[idx] = CreateSprite(&sLockSpriteTemplate, x, y, 2);
 }
 
-static void ForAllCb_DestroyIndicatorSprites(u32 idx, u32 col, u32 row)
+static inline void ForAllCB_HideOverworldShadowSpritesIfPossible(u32 idx, u32 col, u32 row)
 {
-    if (sOutfitMenu->currentOutfitSpriteIds[idx] == SPRITE_NONE)
-        return;
-
-    if (gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].inUse)
+    switch (idx)
     {
-        DestroySprite(&gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]]);
+    case 6:
+    case 7:
+    case 8:
+        // when scrolling, there's a chance where there's no overworld icon
+        // at the 7/8/9th index
+        if (sOutfitMenu->grid->iconSpriteIds[idx] == SPRITE_NONE)
+        {
+            gSprites[sOutfitMenu->shadowSpriteIds[idx]].invisible = TRUE;
+        }
+        else
+        {
+            gSprites[sOutfitMenu->shadowSpriteIds[idx]].invisible = FALSE;
+        }
+        break;
+    default:
+        break;
     }
-
-    sOutfitMenu->currentOutfitSpriteIds[idx] = SPRITE_NONE;
 }
 
 static void SpriteCB_Overworld(struct Sprite *s)
@@ -648,10 +652,10 @@ static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
         return;
 
     gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(i, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
-    x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-    y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
+    x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]+8;
+    y = ((row % 3) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]+16;
 
-    sOutfitMenu->grid->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfx, SpriteCB_Overworld, x, y, 0);
+    sOutfitMenu->grid->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfx, SpriteCB_Overworld, x, y, 1);
     gSprites[sOutfitMenu->grid->iconSpriteIds[idx]].data[0] = idx;
     if (!GetOutfitStatus(i))
     {
@@ -680,9 +684,8 @@ static void InputCB_UpDownScroll(void)
 {
     sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
     GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_FreeOutfitOverworlds);
-    GridMenu_ForAll(sOutfitMenu->grid, ForAllCb_DestroyIndicatorSprites);
     GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
-    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorSprites);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_HideOverworldShadowSpritesIfPossible);
     UpdateOutfitInfo();
     if (!IsSEPlaying())
         PlaySE(SE_RG_BAG_CURSOR);
@@ -698,6 +701,7 @@ static void InputCB_Move(void)
 
 static void InputCB_Fail(void)
 {
+    sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
     if (!IsSEPlaying())
         PlaySE(SE_BOO);
 }
@@ -726,42 +730,43 @@ static u32 BuildOutfitLists(void)
 
 static void SetupOutfitMenu_Grids(void)
 {
-    sOutfitMenu->grid = GridMenu_Init(GRID_COLS, GRID_ROWS, CountAndFilterTotalOutfit());
+    sOutfitMenu->grid = GridMenu_Init(3, 3, CountAndFilterTotalOutfit());
 
-    LoadSpriteSheet(&sIndicator_SpriteSheet);
-    LoadSpritePalette(&sIndicator_SpritePalette);
-
-    GridMenu_EnableVerticalWrapAround(sOutfitMenu->grid);
-    GridMenu_SetIndex(sOutfitMenu->grid, gSaveBlock2Ptr->currOutfitId - 1);
-    sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
-
+    LoadSpriteSheet(&sLockSpriteSheet);
+    LoadSpritePalette(&sLockIndicatorSpritePalette);
+    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_DrawOverworldShadowSprites);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_UP, TYPE_MOVE);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_DOWN, TYPE_MOVE);
+    GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_LEFT, TYPE_MOVE);
+    GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_RIGHT, TYPE_MOVE);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_UP, TYPE_FAIL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_DOWN, TYPE_FAIL);
+    GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_LEFT, TYPE_FAIL);
+    GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_RIGHT, TYPE_FAIL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_UP, TYPE_SCROLL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_DOWN, TYPE_SCROLL);
-    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
-    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorSprites);
+    sOutfitMenu->grid->selectedItem = gSaveBlock3Ptr->currOutfitId - 1;
 }
 
 //! Similar to above, but without redrawing the frame
 //! and also clean up the frame.
 static inline void UpdateOutfitInfo(void)
 {
-    FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
+    FillWindow(WIN_NAME, PIXEL_FILL(0));
+    FillWindow(WIN_DESC, PIXEL_FILL(0));
 
     if (GetOutfitStatus(sOutfitMenu->idx) == FALSE)
     {
-        PrintTexts(WIN_INFO, FONT_NORMAL, 2, 0, COLORID_NORMAL, sText_OutfitLocked);
-        PrintTexts(WIN_INFO, FONT_NORMAL, 2, 16, COLORID_NORMAL, sText_OutfitLocked);
+        PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
+        PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
     }
     else
     {
-        PrintTexts(WIN_INFO, FONT_NORMAL, 2, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
-        PrintTexts(WIN_INFO, FONT_NORMAL, 2, 16, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
+        PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
+        PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
     }
-    CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
+    gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = IsPlayerWearingOutfit(sOutfitMenu->idx) ? FALSE : TRUE;
 
     SetupOutfitMenu_Sprites_DrawTrainerSprite(TRUE, GetOutfitStatus(sOutfitMenu->idx));
 }
@@ -777,7 +782,7 @@ static void Task_WaitFadeInOutfitMenu(u8 taskId)
 
 static void Task_WaitMessage(u8 taskId)
 {
-    if (!IsTextPrinterActive(WIN_MSGBOX) && (JOY_NEW(A_BUTTON | B_BUTTON) || --gTasks[taskId].data[0] == 0))
+    if (--gTasks[taskId].data[0] == 0)
     {
         ClearDialogWindowAndFrame(WIN_MSGBOX, TRUE);
         UpdateOutfitInfo();
@@ -791,13 +796,10 @@ static inline void PrintDialogueBoxWithDescWin(const u8 *str, bool32 expandPlace
     DrawDialogFrameWithCustomTileAndPalette(WIN_MSGBOX, TRUE, 0x100, 13);
 
     if (expandPlaceholders)
-    {
         StringExpandPlaceholders(gStringVar4, str);
-    }
 
-    PrintTexts(WIN_MSGBOX, FONT_NORMAL, 0, 0, COLORID_MSGBOX, txt);
-    CopyWindowToVram(WIN_MSGBOX, COPYWIN_FULL);
-    gTasks[taskId].data[0] = 120;
+    PrintTexts(WIN_MSGBOX, FONT_NORMAL, 0, 0, 0, 0, COLORID_MSGBOX, txt);
+    gTasks[taskId].data[0] = 70;
     gTasks[taskId].func = Task_WaitMessage;
 }
 
@@ -831,13 +833,13 @@ static void UpdateCursorPosition(void)
 {
     u32 row = sOutfitMenu->grid->selectedItem / sOutfitMenu->grid->maxCols;
     u32 col = sOutfitMenu->grid->selectedItem % sOutfitMenu->grid->maxCols;
-    u32 x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
-    u32 y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
+    u32 x = CURSOR_START_X + (col * (8 * 6));
+    u32 y = CURSOR_START_Y + (row * (8 * 6));
     gSprites[sOutfitMenu->spriteIds[GFX_CURSOR]].x = x;
     gSprites[sOutfitMenu->spriteIds[GFX_CURSOR]].y = y;
 }
 
-#define PICK_BUTTONS  (DPAD_DOWN | DPAD_UP)
+#define PICK_BUTTONS  (DPAD_RIGHT | DPAD_LEFT)
 #define CLOSE_BUTTONS (B_BUTTON | START_BUTTON)
 
 static void Task_OutfitMenuHandleInput(u8 taskId)
@@ -846,6 +848,9 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
     if (JOY_NEW(CLOSE_BUTTONS))
         CloseOutfitMenu(taskId);
 
+    if (JOY_NEW(DPAD_ANY))
+        UpdateOutfitInfo();
+
     if (JOY_NEW(A_BUTTON))
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
@@ -853,7 +858,8 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             if (GetOutfitStatus(sOutfitMenu->idx))
             {
                 PlaySE(SE_SUCCESS);
-                gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = FALSE;
+                gSaveBlock3Ptr->currOutfitId = sOutfitMenu->idx;
             }
             else
             {
@@ -878,11 +884,12 @@ static void FreeOutfitMenuResources(void)
 {
     u32 i;
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_OW]]);
-    FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_FTS]);
-    FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_BTS]);
+    FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS]);
+    FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
+    DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]]);
     for (i = 0; i < sOutfitMenu->grid->maxSize; i++)
     {
-        DestroySprite(&gSprites[sOutfitMenu->currentOutfitSpriteIds[i]]);
+        DestroySprite(&gSprites[sOutfitMenu->shadowSpriteIds[i]]);
     }
     GridMenu_Destroy(sOutfitMenu->grid);
     TRY_FREE_AND_SET_NULL(sOutfitMenu->list);
