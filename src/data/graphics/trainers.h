@@ -581,7 +581,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_Steven[] =
     [trainerPic] =                                                                           \
     {                                                                                        \
         .coordinates = {.size = 8, .y_offset = yOffset},                                     \
-        .backPic = {(const u32 *)sprite, TRAINER_PIC_SIZE * ARRAY_COUNT(table), trainerPic}, \
+        .backPic = {sprite, TRAINER_PIC_SIZE * ARRAY_COUNT(table), trainerPic},              \
         .palette = {pal, trainerPic},                                                        \
         .animation = anim,                                                                   \
     }
