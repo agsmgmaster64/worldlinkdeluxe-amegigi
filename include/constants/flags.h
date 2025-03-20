@@ -678,7 +678,7 @@
 #define FLAG_DOISE_BATTLE  0x277
 #define FLAG_SUPPRESS_SPEAKER_NAME  0x278
 #define FLAG_EXP_SHARE_MODERN  0x279
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
+#define FLAG_NO_RUNNING  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
