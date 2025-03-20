@@ -328,7 +328,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .palette = gMonPalette_Kronii,
         .shinyPalette = gMonShinyPalette_Kronii,
         .iconSprite = gMonIcon_Kronii,
-        .iconPalIndex = 1,
+        .iconPalIndex = 3,
         SHADOW(0, 14, SHADOW_SIZE_S)
         FOOTPRINT(Kronii)
         .levelUpLearnset = sCKroniiLevelUpLearnset,
@@ -384,7 +384,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .palette = gMonPalette_Kronii,
         .shinyPalette = gMonShinyPalette_Kronii,
         .iconSprite = gMonIcon_Kronii,
-        .iconPalIndex = 1,
+        .iconPalIndex = 3,
         SHADOW(0, 14, SHADOW_SIZE_S)
         FOOTPRINT(Kronii)
         .levelUpLearnset = sKroniiLevelUpLearnset,
@@ -437,7 +437,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .palette = gMonPalette_Basiney,
         .shinyPalette = gMonShinyPalette_Basiney,
         .iconSprite = gMonIcon_Basiney,
-        .iconPalIndex = 4,
+        .iconPalIndex = 3,
         SHADOW(2, 5, SHADOW_SIZE_L)
         FOOTPRINT(Basiney)
         .levelUpLearnset = sBasineyLevelUpLearnset,
@@ -493,7 +493,7 @@ const struct SpeciesInfo gSpeciesInfoVtubers[] =
         .palette = gMonPalette_Blissea,
         .shinyPalette = gMonShinyPalette_Blissea,
         .iconSprite = gMonIcon_Blissea,
-        .iconPalIndex = 4,
+        .iconPalIndex = 3,
         SHADOW(0, 8, SHADOW_SIZE_L)
         FOOTPRINT(Blissea)
         .levelUpLearnset = sBlisseaLevelUpLearnset,
