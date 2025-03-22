@@ -1849,7 +1849,7 @@ static inline u32 GetHoldEffectCritChanceIncrease(u32 battler, u32 holdEffect)
     return critStageIncrease;
 }
 
-s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk)
+s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk, u32 holdEffectDef)
 {
     s32 critChance = 0;
 
@@ -1871,17 +1871,31 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
     }
 
-    if (critChance != CRITICAL_HIT_BLOCKED && (abilityDef == ABILITY_GUARD_ARMOR || abilityDef == ABILITY_SHELL_ARMOR))
+    if (critChance != CRITICAL_HIT_BLOCKED)
     {
-        // Record ability only if move had 100% chance to get a crit
-        if (recordAbility)
+        if (abilityDef == ABILITY_GUARD_ARMOR || abilityDef == ABILITY_SHELL_ARMOR)
         {
-            if (critChance == CRITICAL_HIT_ALWAYS)
-                RecordAbilityBattle(battlerDef, abilityDef);
-            else if (GetCriticalHitOdds(critChance) == 1)
-                RecordAbilityBattle(battlerDef, abilityDef);
+            // Record ability only if move had 100% chance to get a crit
+            if (recordAbility)
+            {
+                if (critChance == CRITICAL_HIT_ALWAYS)
+                    RecordAbilityBattle(battlerDef, abilityDef);
+                else if (GetCriticalHitOdds(critChance) == 1)
+                    RecordAbilityBattle(battlerDef, abilityDef);
+            }
+            critChance = CRITICAL_HIT_BLOCKED;
         }
-        critChance = CRITICAL_HIT_BLOCKED;
+        if (holdEffectDef == HOLD_EFFECT_LUCKY_SHIELD)
+        {
+            if (recordAbility)
+            {
+                if (critChance == CRITICAL_HIT_ALWAYS)
+                    RecordItemEffectBattle(battlerDef, holdEffectDef);
+                else if (GetCriticalHitOdds(critChance) == 1)
+                    RecordItemEffectBattle(battlerDef, holdEffectDef);
+            }
+            critChance = CRITICAL_HIT_BLOCKED;
+        }
     }
 
     return critChance;
@@ -1892,7 +1906,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
 // Threshold = Base Speed / 2
 // High crit move = 8 * (Base Speed / 2)
 // Focus Energy = 4 * (Base Speed / 2)
-s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk)
+s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk, u32 holdEffectDef)
 {
     s32 critChance = 0;
     s32 moveCritStage = GetMoveCriticalHitStage(gCurrentMove);
@@ -1932,6 +1946,12 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
             RecordAbilityBattle(battlerDef, abilityDef);
         critChance = CRITICAL_HIT_BLOCKED;
     }
+    else if (holdEffectDef == HOLD_EFFECT_LUCKY_SHIELD)
+    {
+        if (recordAbility)
+            RecordItemEffectBattle(battlerDef, holdEffectDef);
+        critChance = CRITICAL_HIT_BLOCKED;
+    }
 
     return critChance;
 }
@@ -1969,11 +1989,12 @@ static void Cmd_critcalc(void)
             continue;
 
         u32 abilityDef = GetBattlerAbility(battlerDef);
+        u32 holdEffectDef = GetBattlerHoldEffect(battlerDef, TRUE);
 
         if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_1)
-            gBattleStruct->critChance[battlerDef] = CalcCritChanceStageGen1(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk);
+            gBattleStruct->critChance[battlerDef] = CalcCritChanceStageGen1(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk, holdEffectDef);
         else
-            gBattleStruct->critChance[battlerDef] = CalcCritChanceStage(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk);
+            gBattleStruct->critChance[battlerDef] = CalcCritChanceStage(gBattlerAttacker, battlerDef, gCurrentMove, TRUE, abilityAtk, abilityDef, holdEffectAtk, holdEffectDef);
 
         if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
             gSpecialStatuses[battlerDef].criticalHit = FALSE;

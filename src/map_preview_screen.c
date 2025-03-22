@@ -88,175 +88,8 @@ static const u8 sAlteringCaveMapPreviewTilemap[] = INCBIN_U8("graphics/map_previ
 
 // If you set flagId to MPS_FLAG_NULL, it will not set a flag when visiting the map for the first time
 // and the duration will default to MPS_DURATION_NO_FLAG.
-static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
-    [MPS_VIRIDIAN_FOREST] = {
-        .mapsec = MAPSEC_VIRIDIAN_FOREST,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_VIRIDIAN_FOREST
-    },
-    [MPS_MT_MOON] = {
-        .mapsec = MAPSEC_MT_MOON,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MT_MOON
-    },
-    [MPS_DIGLETTS_CAVE] = {
-        .mapsec = MAPSEC_DIGLETTS_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_DIGLETTS_CAVE
-    },
-    [MPS_ROCK_TUNNEL] = {
-        .mapsec = MAPSEC_ROCK_TUNNEL,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCK_TUNNEL
-    },
-    [MPS_POKEMON_TOWER] = {
-        .mapsec = MAPSEC_POKEMON_TOWER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_POKEMON_TOWER
-    },
-    [MPS_SAFARI_ZONE] = {
-        .mapsec = MAPSEC_KANTO_SAFARI_ZONE,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_SAFARI_ZONE
-    },
-    [MPS_SEAFOAM_ISLANDS] = {
-        .mapsec = MAPSEC_SEAFOAM_ISLANDS,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_SEAFOAM_ISLANDS
-    },
-    [MPS_POKEMON_MANSION] = {
-        .mapsec = MAPSEC_POKEMON_MANSION,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_POKEMON_MANSION
-    },
-    [MPS_ROCKET_HIDEOUT] = {
-        .mapsec = MAPSEC_ROCKET_HIDEOUT,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCKET_HIDEOUT
-    },
-    [MPS_SILPH_CO] = {
-        .mapsec = MAPSEC_SILPH_CO,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_SILPH_CO
-    },
-    [MPS_VICTORY_ROAD] = {
-        .mapsec = MAPSEC_KANTO_VICTORY_ROAD,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_VICTORY_ROAD
-    },
-    [MPS_CERULEAN_CAVE] = {
-        .mapsec = MAPSEC_CERULEAN_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_CERULEAN_CAVE
-    },
-    [MPS_POWER_PLANT] = {
-        .mapsec = MAPSEC_POWER_PLANT,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_POWER_PLANT
-    },
-    [MPS_MT_EMBER] = {
-        .mapsec = MAPSEC_MT_EMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MT_EMBER
-    },
-    [MPS_ROCKET_WAREHOUSE] = {
-        .mapsec = MAPSEC_ROCKET_WAREHOUSE,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_ROCKET_WAREHOUSE
-    },
-    [MPS_MONEAN_CHAMBER] = {
-        .mapsec = MAPSEC_MONEAN_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_DOTTED_HOLE] = {
-        .mapsec = MAPSEC_DOTTED_HOLE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_DOTTED_HOLE
-    },
-    [MPS_BERRY_FOREST] = {
-        .mapsec = MAPSEC_BERRY_FOREST,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_BERRY_FOREST
-    },
-    [MPS_ICEFALL_CAVE] = {
-        .mapsec = MAPSEC_ICEFALL_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_ICEFALL_CAVE
-    },
-    [MPS_LOST_CAVE] = {
-        .mapsec = MAPSEC_LOST_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_LOST_CAVE
-    },
-    [MPS_ALTERING_CAVE] = {
-        .mapsec = MAPSEC_ALTERING_CAVE,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_ALTERING_CAVE
-    },
-    [MPS_PATTERN_BUSH] = {
-        .mapsec = MAPSEC_PATTERN_BUSH,
-        .type = MPS_TYPE_FADE_IN,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_VIRIDIAN_FOREST
-    },
-    [MPS_LIPTOO_CHAMBER] = {
-        .mapsec = MAPSEC_LIPTOO_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_WEEPTH_CHAMBER] = {
-        .mapsec = MAPSEC_WEEPTH_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_TDILFORD_CHAMBER] = {
-        .mapsec = MAPSEC_DILFORD_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_SCUFIB_CHAMBER] = {
-        .mapsec = MAPSEC_SCUFIB_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_RIXY_CHAMBER] = {
-        .mapsec = MAPSEC_RIXY_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
-    [MPS_VIAPOIS_CHAMBER] = {
-        .mapsec = MAPSEC_VIAPOIS_CHAMBER,
-        .type = MPS_TYPE_CAVE,
-        .flagId = MPS_FLAG_NULL,
-        .image = IMG_MONEAN_CHAMBER
-    },
+static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] =
+{
     [MPS_PETALBURG_WOODS] =
     {
         .mapsec = MAPSEC_PETALBURG_WOODS,
@@ -270,7 +103,14 @@ static const struct MapPreviewScreen sMapPreviewScreenData[MPS_COUNT] = {
         .type = MPS_TYPE_CAVE,
         .flagId = MPS_FLAG_NULL,
         .image = IMG_ROCK_TUNNEL
-    }
+    },
+    [MPS_GRANICE_CAVE] =
+    {
+        .mapsec = MAPSEC_GRANITE_CAVE,
+        .type = MPS_TYPE_CAVE,
+        .flagId = MPS_FLAG_NULL,
+        .image = IMG_SEAFOAM_ISLANDS
+    },
 };
 
 static const struct ImageData sMapPreviewImageData[IMG_COUNT] = {
