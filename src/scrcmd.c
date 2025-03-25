@@ -2531,7 +2531,6 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
     {
         NewShop_CreatePokemartMenu(ptr);
     }
-
     ScriptContext_Stop();
     return TRUE;
 }
