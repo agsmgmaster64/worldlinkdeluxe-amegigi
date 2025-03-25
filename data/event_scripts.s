@@ -1199,3 +1199,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CarpetPort/scripts.inc"
 	.include "data/maps/CarpetPort/text.inc"
+
+	.include "data/maps/CaveLikeCarpet/scripts.inc"
+	.include "data/maps/CaveLikeCarpet/text.inc"

@@ -5448,6 +5448,18 @@
       "secondary_tileset": "gTileset_RG_IslandHarbor",
       "border_filepath": "data/layouts/CarpetPort/border.bin",
       "blockdata_filepath": "data/layouts/CarpetPort/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAVE_LIKE_CARPET",
+      "name": "CaveLikeCarpet_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_RG_RockTunnel",
+      "border_filepath": "data/layouts/CaveLikeCarpet/border.bin",
+      "blockdata_filepath": "data/layouts/CaveLikeCarpet/map.bin"
     }
   ]
 }
