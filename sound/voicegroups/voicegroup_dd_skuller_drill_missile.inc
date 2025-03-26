@@ -1,7 +1,7 @@
 	.align 2
 voicegroup_dd_skuller_drill_missile::                                                                      @ Vocal | Type | Description
 	voice_keysplit_all voicegroup_drums_dd                                                                 @ 000 | Direct | Drum | GBA Drum
-	voice_keysplit voicegroup_piano, KeySplitTableDDPiano                                                  @ 001 | Direct | Multi | GBA Piano 1
+	voice_keysplit voicegroup_piano, KeySplitTable1                                                        @ 001 | Direct | Multi | GBA Piano 1
 	voice_directsound 60, 0, DirectSoundWaveData_drill_dozer_bass_sample, 255, 165, 128, 226               @ 002 | Direct | WIP
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 128, 180, 108, 209        @ 
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 255, 188, 128, 226        @ 
@@ -48,7 +48,7 @@ voicegroup_dd_skuller_drill_missile::                                           
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165               @
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 246, 0, 235                            @
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 127, 154, 235                       @
-	voice_keysplit voicegroup_strings, KeySplitTableDDStrings                                              @ 048 | Direct | Multi | GBA String
+	voice_keysplit voicegroup_strings, KeySplitTable2                                                      @ 048 | Direct | Multi | GBA String
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -56,7 +56,7 @@ voicegroup_dd_skuller_drill_missile::                                           
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 0                @
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup_trumpet, KeySplitTableDDTrumpet                                              @ 056 | Direct | Multi | GBA Trumpet
+	voice_keysplit voicegroup_trumpet, KeySplitTable3                                                      @ 056 | Direct | Multi | GBA Trumpet
 	voice_directsound 60, 0, DirectSoundWaveData_drill_dozer_trumpet_sample, 255, 165, 180, 216            @ 057 | Direct | WIP
 	voice_keysplit voicegroup_tuba, KeySplitTable4                                                         @
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

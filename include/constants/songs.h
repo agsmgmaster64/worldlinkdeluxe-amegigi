@@ -529,8 +529,9 @@
 #define MUS_ZGS_VS_BYAKUREN         594
 #define MUS_ZGS_VS_REIMU            595
 #define MUS_ZGS_CYCLING             596
+#define MUS_TPPE_VS_WILD            597
 
-#define END_MUS                     MUS_ZGS_CYCLING
+#define END_MUS                     MUS_TPPE_VS_WILD
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

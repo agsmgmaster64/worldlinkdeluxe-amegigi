@@ -76,3 +76,6 @@ ProgrammableWaveData_24::
 
 ProgrammableWaveData_25::
 	.incbin "sound/programmable_wave_samples/25.pcm"
+
+ProgrammableWaveData_TPPE_VS_Wild:: @ imported fr
+	.incbin "sound/programmable_wave_samples/tppe_vs_wild.pcm"

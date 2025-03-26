@@ -4331,6 +4331,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_VS_BYAKUREN) \
     X(MUS_ZGS_VS_REIMU) \
     X(MUS_ZGS_CYCLING) \
+    X(MUS_TPPE_VS_WILD) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

@@ -861,6 +861,10 @@ DirectSoundWaveData_drill_dozer_trumpet_sample::
 	.incbin "sound/direct_sound_samples/drill_dozer_trumpet_sample.bin"
 
 	.align 2
+DirectSoundWaveData_vs_wild_smol_sample::
+	.incbin "sound/direct_sound_samples/unknown_add/vs_wild_smol_sample.bin"
+
+	.align 2
 Voice_OakIntro::
 	.incbin "sound/direct_sound_samples/voice_lines/oak_intro.bin"
 

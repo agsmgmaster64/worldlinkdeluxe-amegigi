@@ -598,6 +598,7 @@ gSongTable::
 	song mus_zgs_vs_byakuren, 0, 0
 	song mus_zgs_vs_reimu, 0, 0
 	song mus_zgs_cycling, 0, 0
+	song mus_tppe_vs_wild, 0, 0
 
 	.align 2
 dummy_song_header:
