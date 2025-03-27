@@ -1171,7 +1171,7 @@ struct SaveBlock1
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     /*      */ struct Pokevial pokevial;
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-               u8 dexNavSearchLevels[NATIONAL_DEX_COUNT];
+               u8 dexNavSearchLevels[NUM_SPECIES];
 #endif //USE_DEXNAV_SEARCH_LEVELS
                u8 dexNavChain;
     /*0x3D88*/ u8 NuzlockeEncounterFlags[9]; //tx_randomizer_and_challenges

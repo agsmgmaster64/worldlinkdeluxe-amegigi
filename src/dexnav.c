@@ -2662,11 +2662,11 @@ u32 CalculateDexNavShinyRolls(void)
     return chainBonus + rndBonus;
 }
 
-void TryIncrementSpeciesSearchLevel(void)
+void TryIncrementSpeciesSearchLevel(u16 species)
 {
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock1Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
-        gSaveBlock1Ptr->dexNavSearchLevels[gDexNavSpecies]++;
+    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock1Ptr->dexNavSearchLevels[species] < 255)
+        gSaveBlock1Ptr->dexNavSearchLevels[species]++;
 #endif
 }
 

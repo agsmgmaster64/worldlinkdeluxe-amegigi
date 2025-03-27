@@ -7651,7 +7651,10 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_TRAINER_HILL
                                  | BATTLE_TYPE_FRONTIER
                                  | BATTLE_TYPE_GHOST)))
+    {
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+        TryIncrementSpeciesSearchLevel(gBattleMons[battler].species);    // encountering pokemon increments its search level
+    }
 
     gAbsentBattlerFlags &= ~(1u << battler);
 

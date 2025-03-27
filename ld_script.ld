@@ -1270,6 +1270,7 @@ SECTIONS {
         sound/songs/midi/mus_zgs_vs_byakuren.o(.rodata);
         sound/songs/midi/mus_zgs_vs_reimu.o(.rodata);
         sound/songs/midi/mus_zgs_cycling.o(.rodata);
+        sound/songs/midi/mus_tppe_vs_wild.o(.rodata);
     } > ROM =0
 
     lib_rodata :

@@ -3783,6 +3783,7 @@ static void DoBattleIntro(void)
                                           | BATTLE_TYPE_GHOST)))
                 {
                     HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                    TryIncrementSpeciesSearchLevel(gBattleMons[battler].species);    // encountering pokemon increments its search level
                 }
             }
 
@@ -5757,7 +5758,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
         if (gDexNavSpecies && (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT))
         {
             IncrementDexNavChain();
-            TryIncrementSpeciesSearchLevel();
+            //TryIncrementSpeciesSearchLevel();
         }
         else
             gSaveBlock1Ptr->dexNavChain = 0;

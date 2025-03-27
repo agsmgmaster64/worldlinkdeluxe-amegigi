@@ -515,7 +515,7 @@
 #define SPECIES_LAST_WORD_LETTY                         506
 #define SPECIES_LAST_WORD_KANAKO                        507
 #define SPECIES_AYAKASHI                                508
-#define SPECIES_BASINEY                                 509 // Basiney
+#define SPECIES_BASINEY                                 509
 #define SPECIES_CHIBI_AMELIA                            510
 #define SPECIES_NORMAL_AMELIA                           511
 #define SPECIES_HELPER_AMELIA                           512
@@ -556,13 +556,11 @@
 #define SPECIES_WHIMSICOTT                              547 // Placeholder
 #define SPECIES_BLISSEA                                 548
 #define SPECIES_LILLIGANT                               549
-#define SPECIES_BASCULIN                                SPECIES_BASCULIN_RED_STRIPED
 #define SPECIES_BASCULIN_RED_STRIPED                    550
 #define SPECIES_SANDILE                                 551
 #define SPECIES_KROKOROK                                552
 #define SPECIES_KROOKODILE                              553
 #define SPECIES_DARUMAKA                                554
-#define SPECIES_DARMANITAN                              SPECIES_DARMANITAN_STANDARD
 #define SPECIES_DARMANITAN_STANDARD                     555
 #define SPECIES_MARACTUS                                556
 #define SPECIES_DWEBBLE                                 557

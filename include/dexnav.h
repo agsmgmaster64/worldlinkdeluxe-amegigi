@@ -64,11 +64,11 @@
 #define DEXNAV_MASK_ENVIRONMENT     0xC000  // Last two bit
 
 //funcs
-u8 GetSearchLevel(u16 dexNum);
+u8 GetSearchLevel(u16 species);
 void EndDexNavSearch(u8 taskId);
 void Task_OpenDexNavFromStartMenu(u8 taskId);
 bool8 TryStartDexNavSearch(void);
-void TryIncrementSpeciesSearchLevel(void);
+void TryIncrementSpeciesSearchLevel(u16 species);
 void ResetDexNavSearch(void);
 bool8 TryFindHiddenPokemon(void);
 u32 CalculateDexNavShinyRolls(void);

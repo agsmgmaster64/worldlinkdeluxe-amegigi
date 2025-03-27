@@ -1620,7 +1620,7 @@ static void BuyMenuInitWindows(void)
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
     FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
-    BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+    BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
     LoadSellerMugshot(Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_GFX), Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_PAL));
 }
 
@@ -2238,7 +2238,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
                 ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
                 StringExpandPlaceholders(gStringVar2, str);
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 4, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
             }
 
             gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
