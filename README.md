@@ -9,7 +9,7 @@ worldlinkdeluxe-amegigi is a decomp port of Touhou Puppet Play World Link Deluxe
 If you use pokeemerald-expansion in your hack, please add RHH (Rom Hacking Hideout) to your credits list. Optionally, you can list the version used, so it can help players know what features to expect.
 You can phrase it as the following:
 ```
-Based off RHH's pokeemerald-expansion 1.11.0 https://github.com/rh-hideout/pokeemerald-expansion/
+Based off RHH's pokeemerald-expansion 1.11.1 https://github.com/rh-hideout/pokeemerald-expansion/
 ```
 
 Credits: [CREDITS.md](CREDITS.md)
@@ -32,7 +32,7 @@ With this, you'll get the latest version of pokeemerald-expansion, plus a couple
     - You can check in the debug menu's `Utilities -> Expansion Version` option.
     - If the option is not available, you possibly have version 1.6.2 or older. In that case, please check the [changelogs](docs/CHANGELOG.md) to determine your version based on the features available on your repository.
 - ***Important:*** If you are several versions behind, we recommend updating one minor version at a time, skipping directly to the latest patch version (eg, 1.5.3 -> 1.6.2 -> 1.7.4 and so on. Check the [online documentation site](https://rh-hideout.github.io/pokeemerald-expansion/CHANGELOG.html) to see the latest versions of each step.)
-- Once you have your remote set up, run the command `git pull RHH expansion/X.Y.Z`, replacing X, Y and Z with the digits of the respective version you want to update to (eg, to update to 1.9.3, use `git pull RHH expansion/1.9.3`).
+- Once you have your remote set up, run the command `git pull RHH expansion/X.Y.Z`, replacing X, Y and Z with the digits of the respective version you want to update to (eg, to update to 1.11.1, use `git pull RHH expansion/1.11.1`).
     - ***Important:*** If you are several versions behind, we recommend updating one minor version at a time, skipping directly to the latest patch version (eg, 1.5.3 -> 1.6.2 -> 1.7.4 and so on)
 - Alternatively, you can update to unreleased versions of the expansion.
     - ***master (stable):*** It contains unreleased **bugfixes** that will come in the next patch version. To merge, use `git pull RHH master`.

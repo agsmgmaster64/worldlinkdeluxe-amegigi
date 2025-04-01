@@ -298,7 +298,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
 {
     {
         .name = {_("サダヒロ"), _("ALANN"), _("ALAIN"), _("ADELFO"), _("CLAUS"), _("TEO")},
-        .otId = 0xBDC9,
+        .otId = 48585,
         .facilityClass = FACILITY_CLASS_BUG_CATCHER,
         .species = {SPECIES_CHIBI_FUTO, SPECIES_TECH_FUTO, SPECIES_TECH_SUIKA, SPECIES_CHIBI_MAMIZOU, SPECIES_PLACEHOLD_KAGEROU, SPECIES_CHIBI_BENBEN, SPECIES_NORMAL_BENBEN, SPECIES_ATTACK_EIRIN, SPECIES_SPEED_UTSUHO, SPECIES_ATTACK_SUIKA},
         .id = 0,
@@ -306,7 +306,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヒロオ"), _("LIONEL"), _("LIONEL"), _("CAIO"), _("LUDWIG"), _("LEO")},
-        .otId = 0xCF09,
+        .otId = 53001,
         .facilityClass = FACILITY_CLASS_YOUNGSTER,
         .species = {SPECIES_DEFENSE_MAMIZOU, SPECIES_DEFENSE_IKU, SPECIES_ATTACK_UTSUHO, SPECIES_DEFENSE_SHINMYOUMARU, SPECIES_NORMAL_HATATE, SPECIES_HELPER_YATSUHASHI, SPECIES_PLACEHOLD_SEIGA, SPECIES_NORMAL_MIKO, SPECIES_TECH_KOKORO, SPECIES_NORMAL_KOKORO},
         .id = 1,
@@ -314,7 +314,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ケイジ"), _("SONNY"), _("HERVE"), _("FEDRO"), _("WENZEL"), _("SANTI")},
-        .otId = 0x2E34,
+        .otId = 11828,
         .facilityClass = FACILITY_CLASS_SCHOOL_KID_M,
         .species = {SPECIES_NORMAL_TOJIKO, SPECIES_PLACEHOLD_SEIGA, SPECIES_NORMAL_KOKORO, SPECIES_CHIBI_STAR, SPECIES_NORMAL_STAR, SPECIES_NORMAL_REMILIA, SPECIES_NORMAL_KASEN, SPECIES_ATTACK_UTSUHO, SPECIES_DEFENSE_SHINMYOUMARU, SPECIES_CHIBI_MERLIN},
         .id = 2,
@@ -322,7 +322,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ユラ"), _("LAYLA"), _("LAYLA"), _("ASTRID"), _("SONJA"), _("LOLA")},
-        .otId = 0x84EF,
+        .otId = 34031,
         .facilityClass = FACILITY_CLASS_LASS,
         .species = {SPECIES_DEFENSE_IKU, SPECIES_CHIBI_SANAE, SPECIES_TECH_LUNA, SPECIES_TECH_ALICE, SPECIES_DEFENSE_SUNNY, SPECIES_NORMAL_LUNASA, SPECIES_PLACEHOLD_SEKIBANKI, SPECIES_ATTACK_TENSHI, SPECIES_TECH_HATATE, SPECIES_PLACEHOLD_SEIGA},
         .id = 3,
@@ -330,7 +330,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヨウカ"), _("MACY"), _("AMELIE"), _("CLEO"), _("MARIA"), _("ELISA")},
-        .otId = 0x1E43,
+        .otId = 7747,
         .facilityClass = FACILITY_CLASS_SCHOOL_KID_F,
         .species = {SPECIES_DEFENSE_REMILIA, SPECIES_NORMAL_TOJIKO, SPECIES_TECH_KOGASA, SPECIES_ATTACK_RAIKO, SPECIES_NORMAL_KOAKUMA, SPECIES_NORMAL_MEILING, SPECIES_CHIBI_REISEN_II, SPECIES_NORMAL_SHINMYOUMARU, SPECIES_CHIBI_MAMIZOU, SPECIES_CHIBI_FUTO},
         .id = 4,
@@ -338,7 +338,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ヤスシ"), _("DONTE"), _("BRAHIM"), _("GLAUCO"), _("JOSEF"), _("ROQUE")},
-        .otId = 0x379F,
+        .otId = 14239,
         .facilityClass = FACILITY_CLASS_RUNNING_TRIATHLETE_M,
         .species = {SPECIES_CHIBI_REISEN_II, SPECIES_NORMAL_YUYUKO, SPECIES_PLACEHOLD_SEIJA, SPECIES_DEFENSE_YOUMU, SPECIES_CHIBI_MERLIN, SPECIES_NORMAL_TOYOHIME, SPECIES_SPEED_UTSUHO, SPECIES_CHIBI_RAIKO, SPECIES_CHIBI_YATSUHASHI, SPECIES_PLACEHOLD_SEIGA},
         .id = 5,
@@ -346,7 +346,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ミサオ"), _("AMIRA"), _("LAURE"), _("DAFNE"), _("AMELIE"), _("LARA")},
-        .otId = 0xF555,
+        .otId = 62805,
         .facilityClass = FACILITY_CLASS_RUNNING_TRIATHLETE_F,
         .species = {SPECIES_CHIBI_REISEN_II, SPECIES_NORMAL_YUYUKO, SPECIES_DEFENSE_YOUMU, SPECIES_NORMAL_SHINMYOUMARU, SPECIES_PLACEHOLD_SEIGA, SPECIES_PLACEHOLD2_KOSUZU, SPECIES_CHIBI_LAYLA, SPECIES_NORMAL_WRIGGLE, SPECIES_CHIBI_SEKIBANKI, SPECIES_CHIBI_TENSHI},
         .id = 6,
@@ -354,7 +354,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("カズサ"), _("KALI"), _("JODIE"), _("ILENIA"), _("KARO"), _("ELSA")},
-        .otId = 0x8D26,
+        .otId = 36134,
         .facilityClass = FACILITY_CLASS_BEAUTY,
         .species = {SPECIES_NORMAL_REMILIA, SPECIES_NORMAL_LUNASA, SPECIES_PLACEHOLD_KYOUKO, SPECIES_CHIBI_MEIRA, SPECIES_TECH_ALICE, SPECIES_CHIBI_SEIJA, SPECIES_ATTACK_KEINE, SPECIES_NORMAL_NITORI, SPECIES_PLACEHOLD_SEKIBANKI, SPECIES_PLACEHOLD_TOYOHIME},
         .id = 7,
@@ -362,7 +362,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("スミレ"), _("ANNIE"), _("ANNIE"), _("IMELDA"), _("INES"), _("ROSA")},
-        .otId = 0x800C,
+        .otId = 32780,
         .facilityClass = FACILITY_CLASS_AROMA_LADY,
         .species = {SPECIES_PLACEHOLD_KYOUKO, SPECIES_CHIBI_LETTY, SPECIES_CHIBI_KANAKO, SPECIES_CHIBI_IKU, SPECIES_SPEED_KOISHI, SPECIES_DEFENSE_SUNNY, SPECIES_PLACEHOLD_KAGEROU, SPECIES_PLACEHOLD_TOYOHIME, SPECIES_TECH_LUNA, SPECIES_PLACEHOLD_YORIHIME},
         .id = 8,
@@ -370,7 +370,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("アキノリ"), _("DILLEN"), _("RENE"), _("INDRO"), _("DETLEF"), _("PEDRO")},
-        .otId = 0x469f,
+        .otId = 18079,
         .facilityClass = FACILITY_CLASS_HIKER,
         .species = {SPECIES_CHIBI_KOGASA, SPECIES_CHIBI_LAYLA, SPECIES_HELPER_YOSHIKA, SPECIES_CHIBI_HATATE, SPECIES_NORMAL_ICHIRIN, SPECIES_NORMAL_CHEN, SPECIES_CHIBI_MEIRA, SPECIES_ATTACK_TOKIKO, SPECIES_HELPER_STAR, SPECIES_HELPER_KEINE},
         .id = 9,
@@ -378,7 +378,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("トウゾウ"), _("DALLAS"), _("BRUNO"), _("LEARCO"), _("ANSGAR"), _("MANOLO")},
-        .otId = 0x71FC,
+        .otId = 29180,
         .facilityClass = FACILITY_CLASS_FISHERMAN,
         .species = {SPECIES_DEFENSE_REISEN, SPECIES_CHIBI_REISEN_II, SPECIES_TECH_ALICE, SPECIES_NORMAL_LYRICA, SPECIES_NORMAL_NAZRIN, SPECIES_PLACEHOLD_KIRISAME, SPECIES_PLACEHOLD2_KOSUZU, SPECIES_ATTACK_TENSHI, SPECIES_CHIBI_TENSHI, SPECIES_TECH_KOGASA},
         .id = 10,
@@ -386,7 +386,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("セイヤ"), _("FRANK"), _("FRANK"), _("OLINDO"), _("FRANK"), _("MAURO")},
-        .otId = 0xA39E,
+        .otId = 41886,
         .facilityClass = FACILITY_CLASS_SAILOR,
         .species = {SPECIES_NORMAL_YAMAME, SPECIES_CHIBI_REISEN_II, SPECIES_CHIBI_SEKIBANKI, SPECIES_TECH_KOKORO, SPECIES_ATTACK_TENSHI, SPECIES_NORMAL_KAGUYA, SPECIES_NORMAL_SEIGA, SPECIES_NORMAL_NITORI, SPECIES_NORMAL_KOKORO, SPECIES_ATTACK_UTSUHO},
         .id = 11,
@@ -394,7 +394,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("リュウジ"), _("LAMONT"), _("XAV"), _("ORFEO"), _("JÜRGEN"), _("JORGE")},
-        .otId = 0xE590,
+        .otId = 58768,
         .facilityClass = FACILITY_CLASS_GUITARIST,
         .species = {SPECIES_CHIBI_KOSUZU, SPECIES_DEFENSE_HINA, SPECIES_CHIBI_YATSUHASHI, SPECIES_DEFENSE_YOUMU, SPECIES_CHIBI_TENSHI, SPECIES_DEFENSE_SHINMYOUMARU, SPECIES_CHIBI_ELLEN, SPECIES_NORMAL_WRIGGLE, SPECIES_CHIBI_RAIKO, SPECIES_ATTACK_KEINE},
         .id = 12,
@@ -402,7 +402,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("カツアキ"), _("TYRESE"), _("ANDY"), _("PARIDE"), _("DAVID"), _("CHICHO")},
-        .otId = 0xD018,
+        .otId = 53272,
         .facilityClass = FACILITY_CLASS_BLACK_BELT,
         .species = {SPECIES_HELPER_YOSHIKA, SPECIES_CHIBI_LAYLA, SPECIES_CHIBI_MERLIN, SPECIES_HELPER_KEINE, SPECIES_HELPER_YATSUHASHI, SPECIES_PLACEHOLD_SEIJA, SPECIES_NORMAL_SHINMYOUMARU, SPECIES_CHIBI_STAR, SPECIES_NORMAL_WAKASAGIHIME, SPECIES_DEFENSE_WAKASAGIHIME},
         .id = 13,
@@ -410,7 +410,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("トシミツ"), _("DANTE"), _("DANTE"), _("RAOUL"), _("LOTHAR"), _("PABLO")},
-        .otId = 0xBC75,
+        .otId = 48245,
         .facilityClass = FACILITY_CLASS_RUIN_MANIAC,
         .species = {SPECIES_PLACEHOLD_KYOUKO, SPECIES_PLCEHOLDER1_KOAKUMA, SPECIES_DEFENSE_SUNNY, SPECIES_NORMAL_YORIHIME, SPECIES_NORMAL_TOYOHIME, SPECIES_DEFENSE_HINA, SPECIES_PLACEHOLD_YORIHIME, SPECIES_HELPER_STAR, SPECIES_ATTACK_STAR, SPECIES_CHIBI_LAYLA},
         .id = 14,
@@ -418,7 +418,7 @@ const struct ApprenticeTrainer gApprentices[NUM_APPRENTICES] =
     },
     {
         .name = {_("ローウェン"), _("ARTURO"), _("ARTURO"), _("ROMOLO"), _("BRIAN"), _("ARTURO")},
-        .otId = 0xFA02,
+        .otId = 64002,
         .facilityClass = FACILITY_CLASS_GENTLEMAN,
         .species = {SPECIES_CHIBI_KOSUZU, SPECIES_PLACEHOLD_SEIGA, SPECIES_NORMAL_LUNASA, SPECIES_PLACEHOLD_KASEN, SPECIES_NORMAL_REMILIA, SPECIES_NORMAL_YORIHIME, SPECIES_NORMAL_CHEN, SPECIES_CHIBI_MEIRA, SPECIES_PLACEHOLD_HAKUREI, SPECIES_NORMAL_TOKIKO},
         .id = 15,
