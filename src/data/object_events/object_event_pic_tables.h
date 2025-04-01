@@ -1420,3 +1420,7 @@ static const struct SpriteFrameImage sPicTable_Kronii[] = {
 static const struct SpriteFrameImage sPicTable_Murasa[] = {
     overworld_ascending_frames(gObjectEventPic_Murasa, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Lost[] = {
+    overworld_ascending_frames(gObjectEventPic_Lost, 2, 4),
+};

@@ -1,1 +1,13 @@
 mapscripts HouseLikeCarpet_MapScripts {}
+
+script HouseLikeCarpet_Event_LostGarbage {
+    lock
+    msgbox(HouseLikeCarpet_Text_Garbage)
+    release
+    end
+}
+
+text HouseLikeCarpet_Text_Garbage {
+    format("It's just garbage now.")
+}
+

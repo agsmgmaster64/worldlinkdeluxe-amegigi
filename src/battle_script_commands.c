@@ -48,6 +48,7 @@
 #include "data.h"
 #include "generational_changes.h"
 #include "move.h"
+#include "dexnav.h"
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
