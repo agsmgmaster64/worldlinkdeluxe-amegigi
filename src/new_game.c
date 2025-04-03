@@ -154,7 +154,10 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(INSIDE_OF_TRUCK), MAP_NUM(INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    if (HOUSE_LIKE_CARPET)
+        SetWarpDestination(MAP_GROUP(CARPET_PORT), MAP_NUM(CARPET_PORT), WARP_ID_NONE, -1, -1);
+    else
+        SetWarpDestination(MAP_GROUP(INSIDE_OF_TRUCK), MAP_NUM(INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
 }
 

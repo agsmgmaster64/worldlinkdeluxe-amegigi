@@ -986,6 +986,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Rin,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -994,6 +995,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .shinyPalette = gMonShinyPalette_Rin,
         .iconSprite = gMonIcon_Rin,
         .iconPalIndex = 0,
+        SHADOW(0, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Rin)
         .levelUpLearnset = sRinLevelUpLearnset,
         .teachableLearnset = sRinTeachableLearnset,

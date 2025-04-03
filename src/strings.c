@@ -518,6 +518,7 @@ const u8 gText_Phoebe[] = _("PHOEBE");
 const u8 gText_Glacia[] = _("GLACIA");
 const u8 gText_Gigi[] = _("Gigi");
 const u8 gText_Baelz[] = _("Baelz");
+const u8 gText_Kronii[] = _("Kronii");
 const u8 gText_Susie[] = _("Susie");
 const u8 gText_Info2[] = _("INFO");
 const u8 gText_CoolnessContest[] = _("COOLNESS CONTEST");

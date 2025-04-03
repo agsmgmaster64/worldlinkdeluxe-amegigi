@@ -1,1 +1,422 @@
-mapscripts ResidentialLikeCarpet_MapScripts {}
+const LOCALID_GIGI = 1
+const LOCALID_KRONII = 2
+
+mapscripts ResidentialLikeCarpet_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_HOUSE_LIKE_CARPET_STATE, 0: ResidentialLikeCarpet_Script_GigiKroniiIntro3
+    ]
+}
+
+script ResidentialLikeCarpet_Script_GigiKroniiIntro {
+    lockall
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiSoThisIsTrainer)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiSomeRandomTrainer)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiWhatMakesYouThink)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiMayHavePokedAround)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiHowDangerous)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiYouGotAnyOtherIdeas)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiWellNo)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+	playtrainervoice(TRAINER_VOICE_GIGI, 0)
+    msgbox(ResidentialLikeCarpet_Text_GigiBesidesGrabbedAll)
+    waitmoncry
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiOhMyGod)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiNoWeFightThem)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiWorstIdeasEver)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiRelaxHere)
+    closemessage
+	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_GIGI)
+    additem(ITEM_SURFBOARD)
+    additem(ITEM_MUSIC_PLAYER)
+    additem(ITEM_FULL_RESTORE, 8)
+    additem(ITEM_TOHO_ORB, 20)
+    setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_BADGE02_GET)
+    setflag(FLAG_BADGE03_GET)
+    setflag(FLAG_BADGE04_GET)
+    setflag(FLAG_BADGE05_GET)
+    setflag(FLAG_BADGE06_GET)
+    setflag(FLAG_BADGE07_GET)
+    setflag(FLAG_BADGE08_GET)
+    setflag(FLAG_SYS_POKEMON_GET)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    givemon(SPECIES_NORMAL_SANAE, 50, ITEM_BENTO_BOX, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_ALICE, 50, ITEM_ROCKY_HELMET, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REISEN, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REIMU, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_MARISA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_SAKUYA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playfanfare(MUS_OBTAIN_ITEM)
+    message(ResidentialLikeCarpet_Text_YouGotABunchOfStuff)
+	waitfanfare
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiTimeToFight)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiHopeThisWorks)
+    closemessage
+	trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, ResidentialLikeCarpet_Text_GigiSeeYoureStrong)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiSeeNatural)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    msgbox(ResidentialLikeCarpet_Text_KroniiHopeThisWorks)
+	trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_MUDKIP, ResidentialLikeCarpet_Text_GigiSeeYoureStrong)
+    setvar(VAR_HOUSE_LIKE_CARPET_STATE, 1)
+    releaseall
+    end
+}
+
+script ResidentialLikeCarpet_Script_GigiKroniiIntro2 {
+    lockall
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiGigiWhatThe)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiTalkingAbout)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiIRemember)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiMakingStuffUp)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiPowerUpPunch)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiInternet)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiNotSurprised)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiFineIllGive)
+    closemessage
+	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_GIGI)
+    additem(ITEM_SURFBOARD)
+    additem(ITEM_MUSIC_PLAYER)
+    additem(ITEM_FULL_RESTORE, 8)
+    additem(ITEM_TOHO_ORB, 20)
+    setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_BADGE02_GET)
+    setflag(FLAG_BADGE03_GET)
+    setflag(FLAG_BADGE04_GET)
+    setflag(FLAG_BADGE05_GET)
+    setflag(FLAG_BADGE06_GET)
+    setflag(FLAG_BADGE07_GET)
+    setflag(FLAG_BADGE08_GET)
+    setflag(FLAG_SYS_POKEMON_GET)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    givemon(SPECIES_NORMAL_SANAE, 50, ITEM_BENTO_BOX, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_ALICE, 50, ITEM_ROCKY_HELMET, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REISEN, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REIMU, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_MARISA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_SAKUYA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playfanfare(MUS_OBTAIN_ITEM)
+    message(ResidentialLikeCarpet_Text_YouGotABunchOfStuff)
+	waitfanfare
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiFightMe)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiKnowYoullWin)
+    closemessage
+	trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, ResidentialLikeCarpet_Text_GigiSeeYoureStrong)
+    setvar(VAR_HOUSE_LIKE_CARPET_STATE, 1)
+    releaseall
+    end
+}
+
+script ResidentialLikeCarpet_Script_GigiKroniiIntro3 {
+    lockall
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiNoGigiRemember)
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiPlayLeague)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiNotInvitation)
+    closemessage
+	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	waitmovement(0)
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiOkBet)
+    closemessage
+	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_GIGI)
+    additem(ITEM_SURFBOARD)
+    additem(ITEM_MUSIC_PLAYER)
+    additem(ITEM_FULL_RESTORE, 8)
+    additem(ITEM_TOHO_ORB, 20)
+    setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_BADGE02_GET)
+    setflag(FLAG_BADGE03_GET)
+    setflag(FLAG_BADGE04_GET)
+    setflag(FLAG_BADGE05_GET)
+    setflag(FLAG_BADGE06_GET)
+    setflag(FLAG_BADGE07_GET)
+    setflag(FLAG_BADGE08_GET)
+    setflag(FLAG_SYS_POKEMON_GET)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    givemon(SPECIES_NORMAL_SANAE, 50, ITEM_BENTO_BOX, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_ALICE, 50, ITEM_ROCKY_HELMET, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REISEN, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_REIMU, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_MARISA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    givemon(SPECIES_NORMAL_SAKUYA, 50, ITEM_SITRUS_BERRY, 1, NUM_NATURES, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+    playfanfare(MUS_OBTAIN_ITEM)
+    message(ResidentialLikeCarpet_Text_YouGotABunchOfStuff)
+	waitfanfare
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(ResidentialLikeCarpet_Text_GigiLosePlayLeague)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ResidentialLikeCarpet_Text_KroniiPleaseDontFail)
+    closemessage
+	trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_TORCHIC, ResidentialLikeCarpet_Text_GigiSeeYoureStrong)
+    setvar(VAR_HOUSE_LIKE_CARPET_STATE, 1)
+    releaseall
+    end
+}
+
+movement ResidentialLikeCarpet_Movement_GigiMoveToPlayer {
+    walk_down
+    walk_in_place_down
+}
+
+movement ResidentialLikeCarpet_Movement_KroniiMoveToPlayer {
+    walk_down * 2
+    walk_in_place_left
+}
+
+text ResidentialLikeCarpet_Text_KroniiSoThisIsTrainer {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}So this is the trainer we're deciding to have solve our problem, huh?")
+}
+
+text ResidentialLikeCarpet_Text_GigiSomeRandomTrainer {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Oh, them? I just brought some random trainer who was destined to be champion in another region.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiWhatMakesYouThink {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}And what made you think that?")
+}
+
+text ResidentialLikeCarpet_Text_GigiMayHavePokedAround {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, I make have poked a bit in your realm and saw some champion in the future.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiHowDangerous {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Gigi, what the frick? You know how dangerous it is to see in the future like that?")
+}
+
+text ResidentialLikeCarpet_Text_GigiYouGotAnyOtherIdeas {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Oh yeah? You got any brighter ideas to solve this problem in this little island here?")
+}
+
+text ResidentialLikeCarpet_Text_KroniiWellNo {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Well, no, not at the moment at least, but-")
+}
+
+text ResidentialLikeCarpet_Text_GigiBesidesGrabbedAll {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Besides, we didn't just gather these spare badges and money for nothing here.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiOhMyGod {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Oh my god, Gigi, you're not just gonna give it away to this trainer who doesn't even have any experience yet, are you?")
+}
+
+text ResidentialLikeCarpet_Text_GigiNoWeFightThem {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, no, we're gonna fight them as well to show how worthy they are of carrying such a team.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiWorstIdeasEver {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Gigi, this is probably one of the worst ideas you've ever come up.")
+}
+
+text ResidentialLikeCarpet_Text_GigiRelaxHere {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Relax, Kronii. You know what, {PLAYER}, here, have absolutely everything you would ever want here.")
+}
+
+text ResidentialLikeCarpet_Text_YouGotABunchOfStuff {
+    format("You were handed a bunch of items and Puppets by Gigi.")
+}
+
+text ResidentialLikeCarpet_Text_GigiTimeToFight {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Now, since you got everything you need, prepare to show your potential for battling now!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiHopeThisWorks {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}I hope this works Gigi, because I'm not gonna let this slide otherwise.")
+}
+
+text ResidentialLikeCarpet_Text_GigiSeeNatural {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}See Kronii? They're a natural at this already!\pThey can totally help us with what's going on here!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiFineChallenge {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}You know, this is certainly not what I hoped for today, but you show some potential there.\p"
+    "I hope you know what you're getting yourself into.")
+}
+
+text ResidentialLikeCarpet_Text_GigiSeeYoureStrong {
+    format("See, you're pretty strong after all!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiGigiWhatThe {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Gigi, what the hell, I could have sworn we did this thing before with the trainer here.")
+}
+
+text ResidentialLikeCarpet_Text_GigiTalkingAbout {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}What are you talking about? We just met this trainer here and we're gonna give them stuff to fight us!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiIRemember {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Didn't we do that already though? I remember we fought this trainer one-by-one here.")
+}
+
+text ResidentialLikeCarpet_Text_GigiMakingStuffUp {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Yeah, like you remember Power-Up Punch not being a pulse move here as well!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiPowerUpPunch {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Power-Up Punch isn't a pulse move though, it's a punching move, like the fists you have there.\p"
+    "What even made you think that was the case?")
+}
+
+text ResidentialLikeCarpet_Text_GigiInternet {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Something on the internet told me that the move was a pulse move.\p"
+    "You get it by upgrading Laser Focus at Lv 7.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiNotSurprised {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Why am I not surprised about what you said there?\p"
+    "Regardless, it's not even remotely close to true at all about what you said there.")
+}
+
+text ResidentialLikeCarpet_Text_GigiFineIllGive {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Fine, I'll give {PLAYER} here some stuff to challenge me with and hopefully win!\p"
+    "I lose and you're gonna be correct here!")
+}
+
+text ResidentialLikeCarpet_Text_GigiFightMe {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Alright, feast your eyes on the victor here already, because I'm gonna beat you up here!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiKnowYoullWin {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}You know what? I've seen you battle before, you can certainly take care of her no problem, I believe in you.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiNoGigiRemember {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}No, hold on. This already happened at least once before, I'm confident on that.\p"
+    "First time you just give {PLAYER} a bunch of stuff and we fight them one-on-one.\p"
+    "Then the next, the same thing happened but with you saying that Power-Up Punch is a pulse move for some reason.\p"
+    "My patience is running thin now, but at least there's no League of Legends in sight.")
+}
+
+text ResidentialLikeCarpet_Text_GigiPlayLeague {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Oh, so you do want to play League of Legends with me then, huh?\p"
+    "Such a beautiful woman you are here to consider having time together later on with my favorite game!")
+}
+
+text ResidentialLikeCarpet_Text_KroniiNotInvitation {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}That was not an invitation for me to play League.\p"
+    "I'd rather stay far away from playing that game if I can, and I don't need you to ruin that.")
+}
+
+text ResidentialLikeCarpet_Text_GigiOkBet {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}You know what, I bet if {PLAYER} here can beat me up here, you don't have to play League with me.\p"
+    "I got the stuff ready for them anyways, I just gotta actually give it to them.")
+}
+
+text ResidentialLikeCarpet_Text_GigiLosePlayLeague {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Let's make this clear, you lose, you have to play League with me as well.\p"
+    "It's only fair with how much stuff I've given you so far.")
+}
+
+text ResidentialLikeCarpet_Text_KroniiPleaseDontFail {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Please don't fail me this time. We both know what our doom is if you don't at least try.")
+}

@@ -1408,6 +1408,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_Meiling,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1416,6 +1417,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou6[] =
         .shinyPalette = gMonShinyPalette_Meiling,
         .iconSprite = gMonIcon_Meiling,
         .iconPalIndex = 0,
+        SHADOW(0, 14, SHADOW_SIZE_M)
         FOOTPRINT(Meiling)
         .levelUpLearnset = sMeilingLevelUpLearnset,
         .teachableLearnset = sMeilingTeachableLearnset,

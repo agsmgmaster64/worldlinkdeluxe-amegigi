@@ -594,6 +594,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Ichirin,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -602,6 +603,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_Ichirin,
         .iconSprite = gMonIcon_Ichirin,
         .iconPalIndex = 1,
+        SHADOW(1, 12, SHADOW_SIZE_L)
         FOOTPRINT(Ichirin)
         .levelUpLearnset = sIchirinLevelUpLearnset,
         .teachableLearnset = sIchirinTeachableLearnset,
@@ -1486,7 +1488,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_Nue,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1495,6 +1497,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_Nue,
         .iconSprite = gMonIcon_Nue,
         .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_L)
         FOOTPRINT(Nue)
         OVERWORLD(
             sPicTable_Nue,

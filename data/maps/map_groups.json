@@ -111,7 +111,8 @@
     "LittlerootTown_ProfessorBirchsLab",
     "CarpetCenter",
     "CarpetMart",
-    "CarpetPort"
+    "CarpetPort",
+    "CarpetTraining"
   ],
   "gMapGroup_IndoorOldale": [
     "OldaleTown_House1",

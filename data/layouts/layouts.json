@@ -5460,6 +5460,18 @@
       "secondary_tileset": "gTileset_RG_RockTunnel",
       "border_filepath": "data/layouts/CaveLikeCarpet/border.bin",
       "blockdata_filepath": "data/layouts/CaveLikeCarpet/map.bin"
+    },
+    {
+      "id": "LAYOUT_CARPET_TRAINING",
+      "name": "CarpetTraining_Layout",
+      "width": 12,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_GameCorner",
+      "border_filepath": "data/layouts/CarpetTraining/border.bin",
+      "blockdata_filepath": "data/layouts/CarpetTraining/map.bin"
     }
   ]
 }

@@ -956,7 +956,10 @@ static void Task_MainMenuMain(u8 taskId)
                 gExitStairsMovementDisabled = FALSE;
                 ResetChallengesData();
                 gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromOptionsMenu;
-                sMainMenuDataPtr->savedCallback = CB2_InitChallengesMenu;
+                if (HOUSE_LIKE_CARPET)
+                    sMainMenuDataPtr->savedCallback = CB2_InitOptionPlusMenu;
+                else
+                    sMainMenuDataPtr->savedCallback = CB2_InitChallengesMenu;
                 sSelectedOption = HW_WIN_CONTINUE;
                 break;
             case HW_WIN_OPTIONS:
