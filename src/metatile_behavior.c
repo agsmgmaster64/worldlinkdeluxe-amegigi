@@ -1547,3 +1547,19 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsFlipSwitchOn(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FLIPSWITCH_ON)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsFlipSwitchOff(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_FLIPSWITCH_OFF)
+        return TRUE;
+    else
+        return FALSE;
+}

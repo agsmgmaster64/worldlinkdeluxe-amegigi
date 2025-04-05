@@ -376,7 +376,12 @@
 #define METATILE_MossdeepGameCorner_CounterOpen_Top       0x22C
 
 // gTileset_MossdeepGym
-#define METATILE_MossdeepGym_YellowArrow_Right  0x250
+#define METATILE_MossdeepGym_FlipSwitchTileComplete  0x803
+#define METATILE_MossdeepGym_FlipSwitchTileOff       0x801
+#define METATILE_MossdeepGym_FlipSwitchTileOn        0x802
+#define METATILE_MossdeepGym_GreenSlideSouth         0x831
+#define METATILE_MossdeepGym_NormalTestTile          0x82A
+#define METATILE_MossdeepGym_YellowArrow_Right       0x250
 
 // gTileset_Pacifidlog
 #define METATILE_Pacifidlog_Door                               0x21A

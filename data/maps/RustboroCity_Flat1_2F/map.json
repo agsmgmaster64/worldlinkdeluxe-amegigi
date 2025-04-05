@@ -18,7 +18,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
-      "x": 4,
+      "x": 7,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -32,8 +32,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 9,
-      "y": 5,
+      "x": 3,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -46,8 +46,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SKITTY_DOLL",
-      "x": 9,
-      "y": 4,
+      "x": 3,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -60,8 +60,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TREECKO_DOLL",
-      "x": 10,
-      "y": 5,
+      "x": 2,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -74,8 +74,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TORCHIC_DOLL",
-      "x": 10,
-      "y": 6,
+      "x": 4,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -88,10 +88,10 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 8,
-      "y": 5,
+      "x": 4,
+      "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -102,8 +102,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MUDKIP_DOLL",
-      "x": 8,
-      "y": 6,
+      "x": 2,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -116,8 +116,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PIKACHU_DOLL",
-      "x": 9,
-      "y": 7,
+      "x": 3,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -130,8 +130,8 @@
   ],
   "warp_events": [
     {
-      "x": 2,
-      "y": 1,
+      "x": 12,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_FLAT1_1F",
       "dest_warp_id": "2"

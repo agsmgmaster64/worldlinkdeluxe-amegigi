@@ -60,8 +60,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 2,
-      "y": 1,
+      "x": 11,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_RUSTBORO_CITY_FLAT1_2F",
       "dest_warp_id": "0"

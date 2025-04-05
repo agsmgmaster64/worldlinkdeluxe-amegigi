@@ -1796,7 +1796,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BALL_FETCH] =
     {
         .name = _("Ball Fetch"),
-        .description = COMPOUND_STRING("Fetches failed Poké Ball."),
+        .description = COMPOUND_STRING("Fetches failed Toho Orbs."),
         .aiRating = 0,
     },
 

@@ -11,27 +11,61 @@ SootopolisCity_Gym_1F_OnTransition:
 	end
 
 SootopolisCity_Gym_1F_OnResume:
-	setstepcallback STEP_CB_SOOTOPOLIS_ICE
+	setstepcallback STEP_CB_FLIPSWITCH_TILE
 	end
 
 SootopolisCity_Gym_1F_OnLoad:
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
-	special SetSootopolisGymCrackedIceMetatiles
+	special SetFlipSwitchOnMetatiles
 	end
 
 SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles::
 	goto_if_lt VAR_ICE_STEP_COUNT, 8, SootopolisCity_Gym_1F_EventScript_StopCheckingStairs  @ All stairs ice
 	goto_if_lt VAR_ICE_STEP_COUNT, 28, SootopolisCity_Gym_1F_EventScript_OpenFirstStairs
 	goto_if_lt VAR_ICE_STEP_COUNT, 67, SootopolisCity_Gym_1F_EventScript_OpenFirstAndSecondStairs
-	setmetatile 8, 4, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 5, METATILE_SootopolisGym_Stairs, FALSE
+	setmetatile 8, 4, METATILE_MossdeepGym_NormalTestTile, FALSE
+	setmetatile 8, 5, METATILE_MossdeepGym_NormalTestTile, FALSE
 SootopolisCity_Gym_1F_EventScript_OpenFirstAndSecondStairs::
-	setmetatile 8, 10, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 11, METATILE_SootopolisGym_Stairs, FALSE
+	call SootopolisCity_Gym_1F_SetSecondFlipSwitchesComplete
+	setmetatile 8, 10, METATILE_MossdeepGym_NormalTestTile, FALSE
+	setmetatile 8, 11, METATILE_MossdeepGym_NormalTestTile, FALSE
 SootopolisCity_Gym_1F_EventScript_OpenFirstStairs::
-	setmetatile 8, 15, METATILE_SootopolisGym_Stairs, FALSE
-	setmetatile 8, 16, METATILE_SootopolisGym_Stairs, FALSE
+	call SootopolisCity_Gym_1F_SetFirstFlipSwitchesComplete
+	setmetatile 8, 15, METATILE_MossdeepGym_NormalTestTile, FALSE
+	setmetatile 8, 16, METATILE_MossdeepGym_NormalTestTile, FALSE
 SootopolisCity_Gym_1F_EventScript_StopCheckingStairs::
+	return
+
+SootopolisCity_Gym_1F_SetFirstFlipSwitchesComplete::
+	setmetatile 7, 18, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 7, 19, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 17, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 18, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 19, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 9, 17, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 9, 18, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	return
+
+SootopolisCity_Gym_1F_SetSecondFlipSwitchesComplete::
+	setmetatile 5, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 5, 13, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 5, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 6, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 6, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 7, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 7, 13, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 7, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 13, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 8, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 9, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 9, 13, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 9, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 10, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 10, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 11, 12, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 11, 13, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
+	setmetatile 11, 14, METATILE_MossdeepGym_FlipSwitchTileComplete, FALSE
 	return
 
 SootopolisCity_Gym_1F_OnFrame:
@@ -44,7 +78,7 @@ SootopolisCity_Gym_1F_OnFrame:
 SootopolisCity_Gym_1F_EventScript_UnlockFirstStairs::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
-	playse SE_ICE_STAIRS
+	playse SE_ROTATING_GATE
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
 	special DrawWholeMapView
 	end
@@ -52,7 +86,7 @@ SootopolisCity_Gym_1F_EventScript_UnlockFirstStairs::
 SootopolisCity_Gym_1F_EventScript_UnlockSecondStairs::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
-	playse SE_ICE_STAIRS
+	playse SE_ROTATING_GATE
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
 	special DrawWholeMapView
 	end
@@ -60,7 +94,7 @@ SootopolisCity_Gym_1F_EventScript_UnlockSecondStairs::
 SootopolisCity_Gym_1F_EventScript_UnlockThirdStairs::
 	addvar VAR_ICE_STEP_COUNT, 1
 	delay 40
-	playse SE_ICE_STAIRS
+	playse SE_ROTATING_GATE
 	call SootopolisCity_Gym_1F_EventScript_CheckSetStairMetatiles
 	special DrawWholeMapView
 	end

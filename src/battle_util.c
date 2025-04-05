@@ -9587,9 +9587,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             if (IsBattleMoveSpecial(move))
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
             break;
-        case ABILITY_POWER_SPOT:
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
-            break;
         }
     }
 

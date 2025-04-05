@@ -53,6 +53,7 @@ static void AshGrassPerStepCallback(u8);
 static void FortreeBridgePerStepCallback(u8);
 static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
+static void FlipSwitchPanelPerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
@@ -65,7 +66,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
-    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
+    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
+    [STEP_CB_FLIPSWITCH_TILE]   = FlipSwitchPanelPerStepCallback,
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -586,7 +588,8 @@ static void FortreeBridgePerStepCallback(u8 taskId)
 #define ICE_PUZZLE_WIDTH  (ICE_PUZZLE_R - ICE_PUZZLE_L + 1)
 #define ICE_PUZZLE_HEIGHT (ICE_PUZZLE_B - ICE_PUZZLE_T + 1)
 
-/*static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
+/*
+static bool32 CoordInIcePuzzleRegion(s16 x, s16 y)
 {
     if ((u16)(x - ICE_PUZZLE_L) < ICE_PUZZLE_WIDTH
      && (u16)(y - ICE_PUZZLE_T) < ICE_PUZZLE_HEIGHT
@@ -594,7 +597,15 @@ static void FortreeBridgePerStepCallback(u8 taskId)
         return TRUE;
     else
         return FALSE;
-}*/
+}
+
+static void MarkFlipSwitchCoordVisited(s16 x, s16 y, bool32 turnOn)
+{
+    if (CoordInIcePuzzleRegion(x, y))
+        *GetVarPointer(sSootopolisGymIceRowVars[y]) |= (1 << (x - ICE_PUZZLE_L));
+}
+
+*/
 
 static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
 {
@@ -609,7 +620,8 @@ static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
     }
 }
 
-/*static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
+/*
+static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
 {
     u16 var;
     if (!CoordInIcePuzzleRegion(x, y))
@@ -634,6 +646,23 @@ void SetSootopolisGymCrackedIceMetatiles(void)
             MapGridSetMetatileIdAt(x, y, METATILE_RG_SeafoamIslands_CrackedIce);
         }
     }
+}
+
+void SetFlipSwitchOnMetatiles(void)
+{
+/*
+    s32 x, y;
+    s32 width = gMapHeader.mapLayout->width;
+    s32 height = gMapHeader.mapLayout->height;
+    for (x = 0; x < width; x++)
+    {
+        for (y = 0; y < height; y++)
+        {
+            if (IsIcePuzzleCoordVisited(x, y) == TRUE)
+                MapGridSetMetatileIdAt(x + MAP_OFFSET, y + MAP_OFFSET, METATILE_SootopolisGym_Ice_Cracked);
+        }
+    }
+*/
 }
 
 #define tState data[1]
@@ -724,6 +753,100 @@ static void SootopolisGymIcePerStepCallback(u8 taskId)
 #undef tPrevY
 #undef tIceX
 #undef tIceY
+#undef tDelay
+
+#define tState        data[1]
+#define tPrevX        data[2]
+#define tPrevY        data[3]
+#define tFlipSwitchX  data[4]
+#define tFlipSwitchY  data[5]
+#define tDelay        data[6]
+
+static void FlipSwitchPanelPerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u16 tileBehavior;
+    u16 *flipSwtichStepCount;
+    s16 *data = gTasks[taskId].data;
+    switch (tState)
+    {
+    case 0:
+        PlayerGetDestCoords(&x, &y);
+        tPrevX = x;
+        tPrevY = y;
+        tState = 1;
+        break;
+    case 1:
+        PlayerGetDestCoords(&x, &y);
+        // End if player hasn't moved
+        if (x == tPrevX && y == tPrevY)
+            return;
+
+        tPrevX = x;
+        tPrevY = y;
+        tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+        flipSwtichStepCount = GetVarPointer(VAR_ICE_STEP_COUNT);
+        if (MetatileBehavior_IsFlipSwitchOff(tileBehavior) == TRUE)
+        {
+            // Off Switch, set to On
+            (*flipSwtichStepCount)++;
+            tDelay = 4;
+            tState = 2;
+            tFlipSwitchX = x;
+            tFlipSwitchY = y;
+        }
+        else if (MetatileBehavior_IsFlipSwitchOn(tileBehavior) == TRUE)
+        {
+            // On Switch, set to Off
+            (*flipSwtichStepCount)--;
+            tDelay = 4;
+            tState = 3;
+            tFlipSwitchX = x;
+            tFlipSwitchY = y;
+        }
+        break;
+    case 2:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            // Turn Switch On
+            x = tFlipSwitchX;
+            y = tFlipSwitchY;
+            PlaySE(SE_SWITCH);
+            MapGridSetMetatileIdAt(x, y, METATILE_MossdeepGym_FlipSwitchTileOn);
+            CurrentMapDrawMetatileAt(x, y);
+            //MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
+            tState = 1;
+        }
+        break;
+    case 3:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            // Turn Switch off
+            x = tFlipSwitchX;
+            y = tFlipSwitchY;
+            PlaySE(SE_CLICK);
+            MapGridSetMetatileIdAt(x, y, METATILE_MossdeepGym_FlipSwitchTileOff);
+            CurrentMapDrawMetatileAt(x, y);
+            //MarkIcePuzzleCoordVisited(x - MAP_OFFSET, y - MAP_OFFSET);
+            tState = 1;
+        }
+        break;
+    }
+}
+
+#undef tState
+#undef tPrevX
+#undef tPrevY
+#undef tFlipSwitchX
+#undef tFlipSwitchY
 #undef tDelay
 
 #define tPrevX data[1]
