@@ -1891,7 +1891,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .failsOnImposter = TRUE,
     },
 
-    [ABILITY_POWER_SPOT] =
+    [ABILITY_BLANK_CARD] =
     {
         .name = _("Power Spot"),
         .description = COMPOUND_STRING("Powers up ally moves."),
