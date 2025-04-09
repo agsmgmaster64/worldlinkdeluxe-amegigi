@@ -1424,3 +1424,7 @@ static const struct SpriteFrameImage sPicTable_Murasa[] = {
 static const struct SpriteFrameImage sPicTable_Lost[] = {
     overworld_ascending_frames(gObjectEventPic_Lost, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Nitori[] = {
+    overworld_ascending_frames(gObjectEventPic_Nitori, 2, 4),
+};

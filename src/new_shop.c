@@ -104,6 +104,7 @@ enum
     SELLER_NONE,
     SELLER_JERRY, // OBJ_EVENT_GFX_MART_EMPLOYEE
     SELLER_JENNIE, // OBJ_EVENT_GFX_WOMAN_3
+    SELLER_NITORI, // OBJ_EVENT_GFX_NITORI
     SELLER_COUNT,
 };
 
@@ -259,6 +260,18 @@ const u32 sNewShopMenu_SellerScrollPal_Jennie[] = INCBIN_U32("graphics/new_shop/
 const u32 sNewShopMenu_SellerScrollMap_Jennie[] = INCBIN_U32("graphics/new_shop/sellers/jennie/scroll.bin.lz");
 const u16 sNewShopMenu_SellerCursorGfx_Jennie[] = INCBIN_U16("graphics/new_shop/sellers/jennie/cursor.4bpp");
 const u32 sNewShopMenu_SellerCursorPal_Jennie[] = INCBIN_U32("graphics/new_shop/sellers/jennie/cursor.gbapal.lz");
+
+const u8 sNewShopMenu_SellerMugshotGfx_Nitori[] = INCBIN_U8("graphics/new_shop/sellers/nitori/mugshot.4bpp");
+const u16 sNewShopMenu_SellerMugshotPal_Nitori[] = INCBIN_U16("graphics/new_shop/sellers/nitori/mugshot.gbapal");
+const u32 sNewShopMenu_SellerMenuGfx_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/menu.4bpp.lz");
+const u32 sNewShopMenu_SellerMenuCoinGfx_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/menu_coin.4bpp.lz");
+const u32 sNewShopMenu_SellerMenuPal_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/menu.gbapal.lz");
+const u32 sNewShopMenu_SellerMenuMap_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/menu.bin.lz");
+const u32 sNewShopMenu_SellerScrollGfx_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/scroll.4bpp.lz");
+const u32 sNewShopMenu_SellerScrollPal_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/scroll.gbapal.lz");
+const u32 sNewShopMenu_SellerScrollMap_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/scroll.bin.lz");
+const u16 sNewShopMenu_SellerCursorGfx_Nitori[] = INCBIN_U16("graphics/new_shop/sellers/nitori/cursor.4bpp");
+const u32 sNewShopMenu_SellerCursorPal_Nitori[] = INCBIN_U32("graphics/new_shop/sellers/nitori/cursor.gbapal.lz");
 
 static void Task_ShopMenu(u8 taskId);
 static void Task_HandleShopMenuQuit(u8 taskId);
@@ -804,6 +817,23 @@ static const struct Seller sSellers[] = {
         .scrollMap = sNewShopMenu_SellerScrollMap_Jennie,
         .cursorGfx = sNewShopMenu_SellerCursorGfx_Jennie,
         .cursorPal = sNewShopMenu_SellerCursorPal_Jennie,
+    },
+    [SELLER_NITORI] =
+    {
+        { .gfxId = OBJ_EVENT_GFX_NITORI },
+        .mugshotGfx = sNewShopMenu_SellerMugshotGfx_Nitori,
+        .mugshotPal = sNewShopMenu_SellerMugshotPal_Nitori,
+        .menuTileOffset = 9,
+        .menuGfx = sNewShopMenu_SellerMenuGfx_Nitori,
+        .menuCoinGfx = sNewShopMenu_SellerMenuCoinGfx_Nitori,
+        .menuBpGfx = sNewShopMenu_SellerMenuCoinGfx_Nitori,
+        .menuPal = sNewShopMenu_SellerMenuPal_Nitori,
+        .menuMap = sNewShopMenu_SellerMenuMap_Nitori,
+        .scrollGfx = sNewShopMenu_SellerScrollGfx_Nitori,
+        .scrollPal = sNewShopMenu_SellerScrollPal_Nitori,
+        .scrollMap = sNewShopMenu_SellerScrollMap_Nitori,
+        .cursorGfx = sNewShopMenu_SellerCursorGfx_Nitori,
+        .cursorPal = sNewShopMenu_SellerCursorPal_Nitori,
     },
 };
 
