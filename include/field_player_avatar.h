@@ -79,5 +79,8 @@ u8 GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(u8 state, u8 linkId, u8
 void AlignFishingAnimationFrames(void);
 void ResetPlayerAvatar(u8 gfxId);
 void Task_Fishing(u8);
+void UpdateSpinData(void);
+void ResetSpinTimer(void);
+bool32 CanTriggerSpinEvolution();
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

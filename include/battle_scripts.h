@@ -607,8 +607,6 @@ extern const u8 BattleScript_EffectToxic[];
 extern const u8 BattleScript_EffectLightScreen[];
 extern const u8 BattleScript_EffectRest[];
 extern const u8 BattleScript_EffectOHKO[];
-extern const u8 BattleScript_EffectSuperFang[];
-extern const u8 BattleScript_EffectFixedDamageArg[];
 extern const u8 BattleScript_EffectHealBlock[];
 extern const u8 BattleScript_RecoilIfMiss[];
 extern const u8 BattleScript_EffectMist[];
@@ -643,8 +641,6 @@ extern const u8 BattleScript_EffectHoldHands[];
 extern const u8 BattleScript_EffectCelebrate[];
 extern const u8 BattleScript_EffectHappyHour[];
 extern const u8 BattleScript_EffectDisable[];
-extern const u8 BattleScript_EffectLevelDamage[];
-extern const u8 BattleScript_EffectPsywave[];
 extern const u8 BattleScript_EffectCounter[];
 extern const u8 BattleScript_EffectEncore[];
 extern const u8 BattleScript_EffectPainSplit[];
@@ -874,5 +870,7 @@ extern const u8 BattleScript_FickleBeamDoubled[];
 //tx_randomizer_and_challenges
 extern const u8 BattleScript_Safari_NuzlockeCaptureBlocked[];
 extern const u8 BattleScript_Safari_SameSpeciesCaptureBlocked[];
+extern const u8 BattleScript_QuestionForfeitBattle[];
+extern const u8 BattleScript_ForfeitBattleGaveMoney[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -817,6 +817,9 @@ struct
     [FIELD_MOVE_MILK_DRINK]   = {MOVE_MILK_DRINK,   SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
     [FIELD_MOVE_SOFT_BOILED]  = {MOVE_SOFT_BOILED,  SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
     [FIELD_MOVE_NATURE_POWER] = {MOVE_NATURE_POWER, SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE,  0},
+    #if OW_DEFOG_FIELD_MOVE == TRUE
+    [FIELD_MOVE_DEFOG]        = {MOVE_DEFOG,        SetUpFieldMove_Defog,       PARTY_MSG_CANT_USE_HERE,  0},
+    #endif
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =

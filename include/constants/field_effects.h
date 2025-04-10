@@ -82,6 +82,7 @@
 #define FLDEFF_USE_ROCK_CLIMB            77
 #define FLDEFF_USE_ROCK_CLIMB_TOOL       78
 #define FLDEFF_SNOW_GRASS                79
+#define FLDEFF_DEFOG                     80
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

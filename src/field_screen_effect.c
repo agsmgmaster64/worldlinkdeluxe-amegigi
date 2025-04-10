@@ -42,6 +42,7 @@
 #include "fldeff.h"
 #include "constants/metatile_behaviors.h"
 #include "m4a.h"
+#include "battle.h"
 
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
@@ -1349,6 +1350,21 @@ enum {
     FRLG_WHITEOUT_HEAL_SCRIPT,
 };
 
+static const u8 *GenerateRecoveryMessage(u8 taskId)
+{
+    bool32 forfeitTrainer = DidPlayerForfeitNormalTrainerBattle();
+    bool32 destinationIsPlayersHouse = (gTasks[taskId].tIsPlayerHouse == TRUE);
+
+    if (forfeitTrainer && destinationIsPlayersHouse)
+        return gText_PlayerRegroupHome;
+    else if (forfeitTrainer && !destinationIsPlayersHouse)
+        return gText_PlayerRegroupCenter;
+    else if (!forfeitTrainer && destinationIsPlayersHouse)
+        return gText_PlayerScurriedBackHome;
+    else
+        return gText_PlayerScurriedToCenter;
+}
+
 static void Task_RushInjuredPokemonToCenter(u8 taskId)
 {
     u32 windowId;
@@ -1368,7 +1384,8 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
         break;
     case FRLG_WHITEOUT_PRINT_MSG:
     {
-        const u8 *recoveryMessage = gTasks[taskId].tIsPlayerHouse == TRUE ? gText_PlayerScurriedBackHome : gText_PlayerScurriedToCenter;
+        const u8 *recoveryMessage = GenerateRecoveryMessage(taskId);
+
         if (PrintWhiteOutRecoveryMessage(taskId, recoveryMessage, 2, 8))
         {
             ObjectEventTurn(&gObjectEvents[gPlayerAvatar.objectEventId], DIR_NORTH);
