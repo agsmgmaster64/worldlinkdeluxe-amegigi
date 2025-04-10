@@ -106,6 +106,7 @@ static void Task_UpdateLvlInHealthbox(u8);
 static void PrintLinkStandbyMsg(void);
 
 static void ReloadMoveNames(u32 battler);
+static u32 CheckTypeEffectiveness(u32 targetId, u32 battler);
 static u32 CheckTargetTypeEffectiveness(u32 battler);
 
 static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
@@ -1751,7 +1752,7 @@ enum {
     EFFECTIVENESS_SUPER_EFFECTIVE,
 };
 
-bool32 ShouldShowTypeEffectiveness(u32 targetId)
+static bool32 ShouldShowTypeEffectiveness(u32 targetId)
 {
     if (gSaveBlock2Ptr->optionsEffectiveness == 1)
         return FALSE;
