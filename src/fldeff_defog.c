@@ -31,7 +31,7 @@ bool8 SetUpFieldMove_Defog(void)
 
 static void FieldCallback_Defog(void)
 {
-    gFieldEffectArguments[0] = GetCursorSelectionMonId();
+    gFieldEffectArguments[0] = (u32)GetCursorSelectionMonId();
     ScriptContext_SetupScript(EventScript_UseDefog);
 }
 

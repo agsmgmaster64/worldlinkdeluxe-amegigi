@@ -751,11 +751,11 @@ u16 RandomizeMon(enum RandomizerReason reason, enum RandomizerSpeciesMode mode, 
     }
 }
 
-u16 RandomizeWildEncounter(u16 species, u8 mapNum, u8 mapGroup, enum WildArea area, u8 slot)
+u16 RandomizeWildEncounter(u16 species, u8 mapNum, u8 mapGroup, enum WildPokemonArea area, u8 slot)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_WILD_MON))
     {
-        // Randomization is done based on the map number, the WildArea, and the encounter slot.
+        // Randomization is done based on the map number, the WildPokemonArea, and the encounter slot.
         // This means a distinct species can appear in each encounter slot.
         u32 seed;
         seed = ((u32)mapGroup) << 24;
