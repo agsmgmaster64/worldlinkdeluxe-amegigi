@@ -1743,10 +1743,10 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
 }
 
 enum {
-    EFFECTIVENESS_SUPER_EFFECTIVE,
-    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
     EFFECTIVENESS_NO_EFFECT,
+    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
     EFFECTIVENESS_NORMAL,
+    EFFECTIVENESS_SUPER_EFFECTIVE,
 };
 
 u32 CheckTypeEffectiveness(u32 targetId, u16 move, u32 battler)
@@ -1787,15 +1787,25 @@ bool32 ShouldShowTypeEffectiveness(u32 targetId)
     return TRUE;
 }
 
-// Currently missing the SV default behavior
 static u32 GetDefaultEffectivenessTarget(u32 battler)
 {
     u32 targetId = BATTLE_OPPOSITE(GetBattlerPosition(battler));
-    if (!IsDoubleBattle())
-        return targetId;
-    if (!IsBattlerAlive(targetId))
-        return BATTLE_PARTNER(targetId);
-    return targetId;
+    u32 partnerTargetId = BATTLE_PARTNER(targetId);
+    if (IsDoubleBattle())
+    {
+        if (!IsBattlerAlive(targetId))
+            return partnerTargetId;
+        if (IsBattlerAlive(partnerTargetId))
+        {
+            struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+            struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+            u32 foeEffectiveness = CheckTypeEffectiveness(targetId, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+            u32 partnerFoeEffectiveness = CheckTypeEffectiveness(partnerTargetId, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+            if (partnerFoeEffectiveness > foeEffectiveness)
+                return partnerTargetId;
+        }
+    }
+    return targetId; // fallthrough for any other circumstance
 }
 
 static void MoveSelectionDisplayMoveEffectiveness(u32 targetId, u32 battler)
