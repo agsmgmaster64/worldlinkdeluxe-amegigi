@@ -77,6 +77,8 @@ gCryTable::
 	cry Cry_Miko
 	cry Cry_Mamizou
 	cry Cry_Wakasagihime
+	cry Cry_Seiran
+	cry Cry_Ringo
 	cry Cry_Suika
 	cry Cry_Iku
 	cry Cry_Tenshi
@@ -187,6 +189,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Miko
 	cry_reverse Cry_Mamizou
 	cry_reverse Cry_Wakasagihime
+	cry_reverse Cry_Seiran
+	cry_reverse Cry_Ringo
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
 	cry_reverse Cry_Tenshi

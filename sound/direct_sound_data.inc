@@ -692,6 +692,14 @@ Cry_Wakasagihime::
 	.incbin "sound/direct_sound_samples/cries/wakasagihime.bin"
 
 	.align 2
+Cry_Seiran::
+	.incbin "sound/direct_sound_samples/cries/seiran.bin"
+
+	.align 2
+Cry_Ringo::
+	.incbin "sound/direct_sound_samples/cries/ringo.bin"
+
+	.align 2
 Cry_Suika::
 	.incbin "sound/direct_sound_samples/cries/suika.bin"
 

@@ -79,6 +79,8 @@ enum {
     CRY_MIKO,
     CRY_MAMIZOU,
     CRY_WAKASAGIHIME,
+    CRY_SEIRAN,
+    CRY_RINGO,
     CRY_SUIKA,
     CRY_IKU,
     CRY_TENSHI,
