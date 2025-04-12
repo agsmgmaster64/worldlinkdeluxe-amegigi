@@ -688,8 +688,20 @@ Cry_Mamizou::
 	.incbin "sound/direct_sound_samples/cries_add/mamizou.bin"
 
 	.align 2
+Cry_Sekibanki::
+	.incbin "sound/direct_sound_samples/cries/sekibanki.bin"
+
+	.align 2
+Cry_Kagerou::
+	.incbin "sound/direct_sound_samples/cries/kagerou.bin"
+
+	.align 2
 Cry_Wakasagihime::
 	.incbin "sound/direct_sound_samples/cries/wakasagihime.bin"
+
+	.align 2
+Cry_Shinmyoumaru::
+	.incbin "sound/direct_sound_samples/cries/shinmyoumaru.bin"
 
 	.align 2
 Cry_Seiran::
@@ -698,6 +710,26 @@ Cry_Seiran::
 	.align 2
 Cry_Ringo::
 	.incbin "sound/direct_sound_samples/cries/ringo.bin"
+
+	.align 2
+Cry_Doremy::
+	.incbin "sound/direct_sound_samples/cries/doremy.bin"
+
+	.align 2
+Cry_Sagume::
+	.incbin "sound/direct_sound_samples/cries/sagume.bin"
+
+	.align 2
+Cry_Clownpiece::
+	.incbin "sound/direct_sound_samples/cries/clownpiece.bin"
+
+	.align 2
+Cry_Junko::
+	.incbin "sound/direct_sound_samples/cries/junko.bin"
+
+	.align 2
+Cry_Hecatia::
+	.incbin "sound/direct_sound_samples/cries/hecatia.bin"
 
 	.align 2
 Cry_Suika::

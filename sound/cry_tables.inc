@@ -76,9 +76,17 @@ gCryTable::
 	cry Cry_Futo
 	cry Cry_Miko
 	cry Cry_Mamizou
+	cry Cry_Sekibanki
+	cry Cry_Kagerou
 	cry Cry_Wakasagihime
+	cry Cry_Shinmyoumaru
 	cry Cry_Seiran
 	cry Cry_Ringo
+	cry Cry_Doremy
+	cry Cry_Sagume
+	cry Cry_Clownpiece
+	cry Cry_Junko
+	cry Cry_Hecatia
 	cry Cry_Suika
 	cry Cry_Iku
 	cry Cry_Tenshi
@@ -188,9 +196,17 @@ gCryTable_Reverse::
 	cry_reverse Cry_Futo
 	cry_reverse Cry_Miko
 	cry_reverse Cry_Mamizou
+	cry_reverse Cry_Sekibanki
+	cry_reverse Cry_Kagerou
 	cry_reverse Cry_Wakasagihime
+	cry_reverse Cry_Shinmyoumaru
 	cry_reverse Cry_Seiran
 	cry_reverse Cry_Ringo
+	cry_reverse Cry_Doremy
+	cry_reverse Cry_Sagume
+	cry_reverse Cry_Clownpiece
+	cry_reverse Cry_Junko
+	cry_reverse Cry_Hecatia
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
 	cry_reverse Cry_Tenshi
