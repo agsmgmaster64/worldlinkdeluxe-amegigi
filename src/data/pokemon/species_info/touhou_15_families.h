@@ -5,11 +5,11 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
 
     [SPECIES_CHIBI_SEIRAN] =
     {
-        .baseHP        = 45,
+        .baseHP        = 50,
         .baseAttack    = 60,
         .baseDefense   = 45,
-        .baseSpeed     = 75,
-        .baseSpAttack  = 45,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 60,
         .baseSpDefense = 45,
         .types = MON_TYPES(TYPE_BEAST),
         .catchRate = 190,
@@ -30,7 +30,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .height = 8,
         .weight = 240,
         .description = COMPOUND_STRING(
-            "A moon rabbit considered disposable by the Lunarians."),
+            "A moon rabbit considered disposable\n"
+            "by the Lunarians."),
         .pokemonScale = 291,
         .pokemonOffset = 16,
         .trainerScale = 256,
@@ -84,8 +85,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .weight = 465,
         .description = COMPOUND_STRING(
             "She used to be a military infiltrator for\n"
-            "the Lunarians, but she has since quit that position\n"
-            "in favor of being a dango merchant."),
+            "the Lunarians, but she has since quit that\n"
+            "position in favor of being a dango\n"
+            "merchant."),
         .pokemonScale = 301,
         .pokemonOffset = 2,
         .trainerScale = 256,
@@ -939,20 +941,20 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .pokemonOffset = 21,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_DWakasagihimeGolden,
+        .frontPic = gMonFrontPic_Clownpiece,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 3,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_DWakasagihimeGolden,
+        .backPic = gMonBackPic_Clownpiece,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
         .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_DWakasagihimeGolden,
-        .shinyPalette = gMonShinyPalette_DWakasagihimeGolden,
-        .iconSprite = gMonIcon_DWakasagihimeGolden,
+        .palette = gMonPalette_Clownpiece,
+        .shinyPalette = gMonShinyPalette_Clownpiece,
+        .iconSprite = gMonIcon_Clownpiece,
         .iconPalIndex = 1,
-        FOOTPRINT(DWakasagihimeGolden)
+        FOOTPRINT(Clownpiece)
         .levelUpLearnset = sDWakasagihimeLevelUpLearnset,
         .teachableLearnset = sDWakasagihimeTeachableLearnset,
     },

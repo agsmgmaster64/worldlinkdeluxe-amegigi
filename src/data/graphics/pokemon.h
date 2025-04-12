@@ -30775,6 +30775,15 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_CClownpiece[] = INCBIN_U8("graphics/pokemon/_add/th/clownpiece/chibi/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_Clownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/normal/anim_front.4bpp.lz");
+    const u32 gMonPalette_Clownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/normal/normal.gbapal.lz");
+    const u32 gMonBackPic_Clownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/normal/back.4bpp.lz");
+    const u32 gMonShinyPalette_Clownpiece[] = INCBIN_U32("graphics/pokemon/_add/th/clownpiece/normal/shiny.gbapal.lz");
+    const u8 gMonIcon_Clownpiece[] = INCBIN_U8("graphics/pokemon/_add/th/clownpiece/normal/icon.4bpp");
+#if P_FOOTPRINTS //P_FOOTPRINTS
+    const u8 gMonFootprint_Clownpiece[] = INCBIN_U8("graphics/pokemon/_add/th/clownpiece/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
