@@ -12162,7 +12162,7 @@ bool8 IsMonBannedFromSkyBattles(u16 species)
     {
 #if B_SKY_BATTLE_STRICT_ELIGIBILITY == TRUE
         case SPECIES_PIDOVE:
-        case SPECIES_ARCHEN:
+        case SPECIES_PLACEHOLD_OKINA:
         case SPECIES_DUCKLETT:
         case SPECIES_RUFFLET:
         case SPECIES_VULLABY:

@@ -1168,7 +1168,7 @@ static const u16 sSamurottFormSpeciesIdTable[] = {
 
 #if P_FAMILY_AUDINO
 static const u16 sAudinoFormSpeciesIdTable[] = {
-    SPECIES_LILLIGANT,
+    SPECIES_CHIBI_ETERNITY,
 #if P_MEGA_EVOLUTIONS
     SPECIES_AUDINO_MEGA,
 #endif
@@ -1178,7 +1178,7 @@ static const u16 sAudinoFormSpeciesIdTable[] = {
 
 #if P_FAMILY_PETILIL
 static const u16 sLilligantFormSpeciesIdTable[] = {
-    SPECIES_LILLIGANT,
+    SPECIES_CHIBI_ETERNITY,
 #if P_HISUIAN_FORMS
     SPECIES_LILLIGANT_HISUI,
 #endif
@@ -1188,7 +1188,7 @@ static const u16 sLilligantFormSpeciesIdTable[] = {
 
 #if P_FAMILY_BASCULIN
 static const u16 sBasculinFormSpeciesIdTable[] = {
-    SPECIES_BASCULIN_RED_STRIPED,
+    SPECIES_NORMAL_ETERNITY,
     SPECIES_BASCULIN_BLUE_STRIPED,
     SPECIES_BASCULIN_WHITE_STRIPED,
     FORM_SPECIES_END,
@@ -1203,7 +1203,7 @@ static const u16 sBasculegionFormSpeciesIdTable[] = {
 
 #if P_FAMILY_DARUMAKA
 static const u16 sDarumakaFormSpeciesIdTable[] = {
-    SPECIES_DARUMAKA,
+    SPECIES_PLACEHOLD_AUNN,
 #if P_GALARIAN_FORMS
     SPECIES_DARUMAKA_GALAR,
 #endif
@@ -1211,7 +1211,7 @@ static const u16 sDarumakaFormSpeciesIdTable[] = {
 };
 
 static const u16 sDarmanitanFormSpeciesIdTable[] = {
-    SPECIES_DARMANITAN_STANDARD,
+    SPECIES_CHIBI_NARUMI,
     SPECIES_DARMANITAN_ZEN,
 #if P_GALARIAN_FORMS
     SPECIES_DARMANITAN_GALAR_STANDARD,
@@ -1223,7 +1223,7 @@ static const u16 sDarmanitanFormSpeciesIdTable[] = {
 
 #if P_FAMILY_YAMASK
 static const u16 sYamaskFormSpeciesIdTable[] = {
-    SPECIES_YAMASK,
+    SPECIES_NORMAL_TEIREIDA,
 #if P_GALARIAN_FORMS
     SPECIES_YAMASK_GALAR,
 #endif
@@ -1233,7 +1233,7 @@ static const u16 sYamaskFormSpeciesIdTable[] = {
 
 #if P_FAMILY_TRUBBISH
 static const u16 sGarbodorFormSpeciesIdTable[] = {
-    SPECIES_GARBODOR,
+    SPECIES_PLACEHOLD_NEMUNO,
 #if P_GIGANTAMAX_FORMS
     SPECIES_GARBODOR_GMAX,
 #endif

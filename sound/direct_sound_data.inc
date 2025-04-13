@@ -732,6 +732,10 @@ Cry_Hecatia::
 	.incbin "sound/direct_sound_samples/cries/hecatia.bin"
 
 	.align 2
+Cry_Narumi::
+	.incbin "sound/direct_sound_samples/cries/narumi.bin"
+
+	.align 2
 Cry_Suika::
 	.incbin "sound/direct_sound_samples/cries/suika.bin"
 

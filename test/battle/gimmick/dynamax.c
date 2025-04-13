@@ -1034,8 +1034,8 @@ DOUBLE_BATTLE_TEST("Dynamax: G-Max Stun Shock chooses statuses before considerin
         ASSUME(MoveHasAdditionalEffect(MOVE_G_MAX_STUN_SHOCK, MOVE_EFFECT_POISON_PARALYZE_SIDE));
         PLAYER(SPECIES_TOXTRICITY) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_TOXEL);
-        OPPONENT(SPECIES_GARBODOR);
-        OPPONENT(SPECIES_TRUBBISH);
+        OPPONENT(SPECIES_PLACEHOLD_NEMUNO);
+        OPPONENT(SPECIES_NORMAL_NEMUNO);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_NUZZLE, target: opponentLeft, gimmick: GIMMICK_DYNAMAX, \
                WITH_RNG(RNG_G_MAX_STUN_SHOCK, STATUS1_POISON)); }

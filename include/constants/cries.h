@@ -89,6 +89,7 @@ enum {
     CRY_CLOWNPIECE,
     CRY_JUNKO,
     CRY_HECATIA,
+    CRY_NARUMI,
     CRY_SUIKA,
     CRY_IKU,
     CRY_TENSHI,

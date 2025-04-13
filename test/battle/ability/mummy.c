@@ -5,8 +5,8 @@ SINGLE_BATTLE_TEST("Mummy/Lingering Aroma replace the attacker's ability on cont
 {
     u32 move, ability, species;
 
-    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_MUMMY; species = SPECIES_YAMASK; }
-    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_MUMMY; species = SPECIES_YAMASK;}
+    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_MUMMY; species = SPECIES_NORMAL_TEIREIDA; }
+    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_MUMMY; species = SPECIES_NORMAL_TEIREIDA;}
     PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
     PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
     GIVEN {
@@ -39,8 +39,8 @@ SINGLE_BATTLE_TEST("Mummy and Lingering Aroma don't replace each other")
 {
     u32 ability1, species1, ability2, species2;
 
-    PARAMETRIZE { ability1 = ability2 = ABILITY_MUMMY; species1 = species2 = SPECIES_YAMASK; }
-    PARAMETRIZE { ability1 = ABILITY_MUMMY; species1 = SPECIES_YAMASK; ability2 = ABILITY_CLEAR_VOICE; species2 = SPECIES_OINKOLOGNE; }
+    PARAMETRIZE { ability1 = ability2 = ABILITY_MUMMY; species1 = species2 = SPECIES_NORMAL_TEIREIDA; }
+    PARAMETRIZE { ability1 = ABILITY_MUMMY; species1 = SPECIES_NORMAL_TEIREIDA; ability2 = ABILITY_CLEAR_VOICE; species2 = SPECIES_OINKOLOGNE; }
     PARAMETRIZE { ability1 = ability2 = ABILITY_CLEAR_VOICE; species1 = species2 = SPECIES_OINKOLOGNE; }
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_AQUA_JET));
@@ -85,7 +85,7 @@ SINGLE_BATTLE_TEST("Mummy doesn't replace abilities that can't be suppressed")
     PARAMETRIZE { species = SPECIES_TATSUGIRI; ability = ABILITY_COMMANDER; }
 
     GIVEN {
-        PLAYER(SPECIES_YAMASK);
+        PLAYER(SPECIES_NORMAL_TEIREIDA);
         OPPONENT(species) { Ability(ability); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_AQUA_JET); }

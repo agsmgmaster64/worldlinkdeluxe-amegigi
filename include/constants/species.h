@@ -555,27 +555,27 @@
 #define SPECIES_NORMAL_KRONII                           546
 #define SPECIES_WHIMSICOTT                              547 // Placeholder
 #define SPECIES_BLISSEA                                 548
-#define SPECIES_LILLIGANT                               549
-#define SPECIES_BASCULIN_RED_STRIPED                    550
-#define SPECIES_SANDILE                                 551
-#define SPECIES_KROKOROK                                552
-#define SPECIES_KROOKODILE                              553
-#define SPECIES_DARUMAKA                                554
-#define SPECIES_DARMANITAN_STANDARD                     555
-#define SPECIES_MARACTUS                                556
-#define SPECIES_DWEBBLE                                 557
-#define SPECIES_CRUSTLE                                 558
-#define SPECIES_SCRAGGY                                 559
-#define SPECIES_SCRAFTY                                 560
-#define SPECIES_SIGILYPH                                561
-#define SPECIES_YAMASK                                  562
-#define SPECIES_COFAGRIGUS                              563
-#define SPECIES_TIRTOUGA                                564
-#define SPECIES_CARRACOSTA                              565
-#define SPECIES_ARCHEN                                  566
-#define SPECIES_ARCHEOPS                                567
-#define SPECIES_TRUBBISH                                568
-#define SPECIES_GARBODOR                                569
+#define SPECIES_CHIBI_ETERNITY                          549
+#define SPECIES_NORMAL_ETERNITY                         550
+#define SPECIES_PLACEHOLD_ETERNITY                      551 // Placeholder
+#define SPECIES_CHIBI_AUNN                              552
+#define SPECIES_NORMAL_AUNN                             553
+#define SPECIES_PLACEHOLD_AUNN                          554 // Placeholder
+#define SPECIES_CHIBI_NARUMI                            555
+#define SPECIES_NORMAL_NARUMI                           556
+#define SPECIES_PLACEHOLD_NARUMI                        557 // Placeholder
+#define SPECIES_CHIBI_SATONO                            558
+#define SPECIES_NORMAL_SATONO                           559
+#define SPECIES_PLACEHOLD_SATONO                        560 // Placeholder
+#define SPECIES_CHIBI_TEIREIDA                          561
+#define SPECIES_NORMAL_TEIREIDA                         562
+#define SPECIES_PLACEHOLD_TEIREIDA                      563 // Placeholder
+#define SPECIES_CHIBI_OKINA                             564
+#define SPECIES_NORMAL_OKINA                            565
+#define SPECIES_PLACEHOLD_OKINA                         566 // Placeholder
+#define SPECIES_CHIBI_NEMUNO                            567
+#define SPECIES_NORMAL_NEMUNO                           568
+#define SPECIES_PLACEHOLD_NEMUNO                        569 // Placeholder
 #define SPECIES_ZORUA                                   570
 #define SPECIES_ZOROARK                                 571
 #define SPECIES_MINCCINO                                572
@@ -591,9 +591,7 @@
 #define SPECIES_VANILLITE                               582
 #define SPECIES_VANILLISH                               583
 #define SPECIES_VANILLUXE                               584
-#define SPECIES_DEERLING                                SPECIES_DEERLING_SPRING
 #define SPECIES_DEERLING_SPRING                         585
-#define SPECIES_SAWSBUCK                                SPECIES_SAWSBUCK_SPRING
 #define SPECIES_SAWSBUCK_SPRING                         586
 #define SPECIES_EMOLGA                                  587
 #define SPECIES_KARRABLAST                              588

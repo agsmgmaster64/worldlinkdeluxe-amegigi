@@ -950,76 +950,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_COTTONEE
 
 #if P_FAMILY_PETILIL
-    [SPECIES_LILLIGANT] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_NATURE),
-        .catchRate = 75,
-        .expYield = 168,
-        .evYield_SpAttack = 2,
-        .itemRare = ITEM_ABSORB_BULB,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_OWN_TEMPO, ABILITY_LEAF_GUARD },
-        .sourceGame = SOURCE_OTHER,
-        .noFlip = TRUE,
-        .speciesName = _("Lilligant"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_LILLIGANT,
-        .categoryName = _("Flowering"),
-        .height = 11,
-        .weight = 163,
-        .description = COMPOUND_STRING(
-            "Even veteran Trainers face a challenge\n"
-            "in getting its beautiful flower to bloom.\n"
-            "It withers away if a trainer does not\n"
-            "take good care of it."),
-        .pokemonScale = 320,
-        .pokemonOffset = 7,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Lilligant,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 1,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 20),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Lilligant,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 8,
-        .backAnimId = BACK_ANIM_SHRINK_GROW,
-        .palette = gMonPalette_Lilligant,
-        .shinyPalette = gMonShinyPalette_Lilligant,
-        .iconSprite = gMonIcon_Lilligant,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-2, 13, SHADOW_SIZE_M)
-        FOOTPRINT(Lilligant)
-        OVERWORLD(
-            sPicTable_Lilligant,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Lilligant,
-            gShinyOverworldPalette_Lilligant
-        )
-        .levelUpLearnset = sLilligantLevelUpLearnset,
-        .teachableLearnset = sLilligantTeachableLearnset,
-        .formSpeciesIdTable = sLilligantFormSpeciesIdTable,
-    },
-
 #if P_HISUIAN_FORMS
     [SPECIES_LILLIGANT_HISUI] =
     {
@@ -1092,73 +1022,6 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_PETILIL
 
 #if P_FAMILY_BASCULIN
-    [SPECIES_BASCULIN_RED_STRIPED] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = 92,
-        .baseDefense   = 65,
-        .baseSpeed     = 98,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 190,
-        .expYield = 161,
-        .evYield_Speed = 2,
-        .itemRare = ITEM_KUSANAGI,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 40,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_2),
-        .abilities = { ABILITY_RECKLESS, ABILITY_ADAPTABILITY, ABILITY_MOLD_BREAKER },
-        .sourceGame = SOURCE_OTHER,
-        .speciesName = _("Basculin"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_BASCULIN,
-        .categoryName = _("Hostile"),
-        .height = 10,
-        .weight = 180,
-        .description = COMPOUND_STRING(
-            "It used to be a common food source. The\n"
-            "meat of red Basculin is on the fatty side\n"
-            "and it's more popular with the youth.\n"
-            "Its temperament is vicious and aggressive."),
-        .pokemonScale = 316,
-        .pokemonOffset = 7,
-        .trainerScale = 257,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_BasculinRedStriped,
-        .frontPicSize = MON_COORDS_SIZE(56, 40),
-        .frontPicYOffset = 13,
-        .frontAnimFrames = sAnims_Basculin,
-        .frontAnimId = ANIM_TIP_MOVE_FORWARD,
-        .enemyMonElevation = 6,
-        .backPic = gMonBackPic_BasculinRedStriped,
-        .backPicSize = MON_COORDS_SIZE(64, 48),
-        .backPicYOffset = 16,
-        .backAnimId = BACK_ANIM_JOLT_RIGHT,
-        .palette = gMonPalette_BasculinRedStriped,
-        .shinyPalette = gMonShinyPalette_BasculinRedStriped,
-        .iconSprite = gMonIcon_BasculinRedStriped,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(0, 4, SHADOW_SIZE_S)
-        FOOTPRINT(Basculin)
-        OVERWORLD(
-            sPicTable_BasculinRedStriped,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_BasculinRedStriped,
-            gShinyOverworldPalette_BasculinRedStriped
-        )
-        .levelUpLearnset = sBasculinLevelUpLearnset,
-        .teachableLearnset = sBasculinTeachableLearnset,
-        .formSpeciesIdTable = sBasculinFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
-    },
-
     [SPECIES_BASCULIN_BLUE_STRIPED] =
     {
         .baseHP        = 70,
@@ -1428,360 +1291,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_BASCULIN
 
 #if P_FAMILY_SANDILE
-    [SPECIES_SANDILE] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 72,
-        .baseDefense   = 35,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_EARTH, TYPE_DARK),
-        .catchRate = 180,
-        .expYield = 58,
-        .evYield_Attack = 1,
-        .itemRare = ITEM_BLACK_GLASSES,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
-        .sourceGame = SOURCE_EOSD,
-        .speciesName = _("Sandile"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_SANDILE,
-        .categoryName = _("Desert Croc"),
-        .height = 7,
-        .weight = 152,
-        .description = COMPOUND_STRING(
-            "It conceals itself in the sand and\n"
-            "chomps down on the legs of any prey\n"
-            "that unwarily walk over it. Its favorite\n"
-            "food is Trapinch."),
-        .pokemonScale = 365,
-        .pokemonOffset = 14,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Sandile,
-        .frontPicSize = MON_COORDS_SIZE(48, 32),
-        .frontPicYOffset = 18,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 20),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Sandile,
-        .backPicSize = MON_COORDS_SIZE(64, 32),
-        .backPicYOffset = 18,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_Sandile,
-        .shinyPalette = gMonShinyPalette_Sandile,
-        .iconSprite = gMonIcon_Sandile,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
-        SHADOW(4, -5, SHADOW_SIZE_M)
-        FOOTPRINT(Sandile)
-        OVERWORLD(
-            sPicTable_Sandile,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Sandile,
-            gShinyOverworldPalette_Sandile
-        )
-        .levelUpLearnset = sSandileLevelUpLearnset,
-        .teachableLearnset = sSandileTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 29, SPECIES_KROKOROK}),
-    },
-
-    [SPECIES_KROKOROK] =
-    {
-        .baseHP        = 60,
-        .baseAttack    = 82,
-        .baseDefense   = 45,
-        .baseSpeed     = 74,
-        .baseSpAttack  = 45,
-        .baseSpDefense = 45,
-        .types = MON_TYPES(TYPE_EARTH, TYPE_DARK),
-        .catchRate = 90,
-        .expYield = 123,
-        .evYield_Attack = 2,
-        .itemRare = ITEM_BLACK_GLASSES,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
-        .sourceGame = SOURCE_EOSD,
-        .speciesName = _("Krokorok"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_KROKOROK,
-        .categoryName = _("Desert Croc"),
-        .height = 10,
-        .weight = 334,
-        .description = COMPOUND_STRING(
-            "They move in groups of a few individuals.\n"
-            "Thanks to the special membrane covering\n"
-            "its eyes, it can see its surroundings\n"
-            "clearly, even in the dead of night."),
-        .pokemonScale = 305,
-        .pokemonOffset = 7,
-        .trainerScale = 257,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Krokorok,
-        .frontPicSize = MON_COORDS_SIZE(64, 56),
-        .frontPicYOffset = 4,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 40),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_V_STRETCH,
-        .backPic = gMonBackPic_Krokorok,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = 3,
-        .backAnimId = BACK_ANIM_V_STRETCH,
-        .palette = gMonPalette_Krokorok,
-        .shinyPalette = gMonShinyPalette_Krokorok,
-        .iconSprite = gMonIcon_Krokorok,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-2, 8, SHADOW_SIZE_M)
-        FOOTPRINT(Krokorok)
-        OVERWORLD(
-            sPicTable_Krokorok,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Krokorok,
-            gShinyOverworldPalette_Krokorok
-        )
-        .levelUpLearnset = sKrokorokLevelUpLearnset,
-        .teachableLearnset = sKrokorokTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_KROOKODILE}),
-    },
-
-    [SPECIES_KROOKODILE] =
-    {
-        .baseHP        = 95,
-        .baseAttack    = 117,
-        .baseDefense   = P_UPDATED_STATS >= GEN_6 ? 80 : 70,
-        .baseSpeed     = 92,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_EARTH, TYPE_DARK),
-        .catchRate = 45,
-    #if P_UPDATED_EXP_YIELDS >= GEN_8
-        .expYield = 260,
-    #elif P_UPDATED_EXP_YIELDS >= GEN_7
-        .expYield = 234,
-    #else
-        .expYield = 229,
-    #endif
-        .evYield_Attack = 3,
-        .itemCommon = ITEM_BLACK_GLASSES,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Krookodile"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_KROOKODILE,
-        .categoryName = _("Intimidate"),
-        .height = 15,
-        .weight = 963,
-        .description = COMPOUND_STRING(
-            "Very violent Pokémon, they never allow\n"
-            "their prey to escape. Their jaws are so\n"
-            "powerful, they can crush the body of\n"
-            "an automobile."),
-        .pokemonScale = 268,
-        .pokemonOffset = 2,
-        .trainerScale = 271,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Krookodile,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_SWING_CONCAVE_FAST_SHORT,
-        .backPic = gMonBackPic_Krookodile,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 6,
-        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
-        .palette = gMonPalette_Krookodile,
-        .shinyPalette = gMonShinyPalette_Krookodile,
-        .iconSprite = gMonIcon_Krookodile,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(3, 12, SHADOW_SIZE_L)
-        FOOTPRINT(Krookodile)
-        OVERWORLD(
-            sPicTable_Krookodile,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Krookodile,
-            gShinyOverworldPalette_Krookodile
-        )
-        .levelUpLearnset = sKrookodileLevelUpLearnset,
-        .teachableLearnset = sKrookodileTeachableLearnset,
-    },
 #endif //P_FAMILY_SANDILE
 
 #if P_FAMILY_DARUMAKA
-    [SPECIES_DARUMAKA] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = 90,
-        .baseDefense   = 45,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 15,
-        .baseSpDefense = 45,
-        .types = MON_TYPES(TYPE_FIRE),
-        .catchRate = 120,
-        .expYield = 63,
-        .evYield_Attack = 1,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_HUSTLE, ABILITY_NONE, ABILITY_INNER_FOCUS },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Darumaka"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_DARUMAKA,
-        .categoryName = _("Zen Charm"),
-        .height = 6,
-        .weight = 375,
-        .description = COMPOUND_STRING(
-            "When its internal fire is burning, it\n"
-            "cannot calm down and it runs around.\n"
-            "When the fire diminishes, it pulls its\n"
-            "limbs into its body and falls asleep."),
-        .pokemonScale = 422,
-        .pokemonOffset = 14,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Darumaka,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 13,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 50),
-            ANIMCMD_FRAME(1, 50),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_SWING_CONCAVE,
-        .backPic = gMonBackPic_Darumaka,
-        .backPicSize = MON_COORDS_SIZE(56, 48),
-        .backPicYOffset = 12,
-        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
-        .palette = gMonPalette_Darumaka,
-        .shinyPalette = gMonShinyPalette_Darumaka,
-        .iconSprite = gMonIcon_Darumaka,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
-        SHADOW(-3, 1, SHADOW_SIZE_S)
-        FOOTPRINT(Darumaka)
-        OVERWORLD(
-            sPicTable_Darumaka,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Darumaka,
-            gShinyOverworldPalette_Darumaka
-        )
-        .levelUpLearnset = sDarumakaLevelUpLearnset,
-        .teachableLearnset = sDarumakaTeachableLearnset,
-        .formSpeciesIdTable = sDarumakaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_DARMANITAN_STANDARD}),
-    },
-
-    [SPECIES_DARMANITAN_STANDARD] =
-    {
-        .baseHP        = 105,
-        .baseAttack    = 140,
-        .baseDefense   = 55,
-        .baseSpeed     = 95,
-        .baseSpAttack  = 30,
-        .baseSpDefense = 55,
-        .types = MON_TYPES(TYPE_FIRE),
-        .catchRate = 60,
-        .expYield = 168,
-        .evYield_Attack = 2,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_ZEN_MODE },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Darmanitan"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_DARMANITAN,
-        .categoryName = _("Blazing"),
-        .height = 13,
-        .weight = 929,
-        .description = COMPOUND_STRING(
-            "When one is injured in a fierce battle,\n"
-            "it transforms into a stone statue.\n"
-            "Then it meditates and sharpens its\n"
-            "mind and fights on mentally."),
-        .pokemonScale = 272,
-        .pokemonOffset = 3,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_DarmanitanStandard,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 2,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 20),
-        ),
-        .frontAnimId = ANIM_CIRCULAR_STRETCH_TWICE,
-        .backPic = gMonBackPic_DarmanitanStandard,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 2,
-        .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
-        .palette = gMonPalette_DarmanitanStandard,
-        .shinyPalette = gMonShinyPalette_DarmanitanStandard,
-        .iconSprite = gMonIcon_DarmanitanStandard,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(3, 5, SHADOW_SIZE_L)
-        FOOTPRINT(Darmanitan)
-        OVERWORLD(
-            sPicTable_DarmanitanStandard,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_DarmanitanStandard,
-            gShinyOverworldPalette_DarmanitanStandard
-        )
-        .levelUpLearnset = sDarmanitanLevelUpLearnset,
-        .teachableLearnset = sDarmanitanTeachableLearnset,
-        .formSpeciesIdTable = sDarmanitanFormSpeciesIdTable,
-        .formChangeTable = sDarmanitanFormChangeTable,
-    },
-
     [SPECIES_DARMANITAN_ZEN] =
     {
         .baseHP        = 105,
@@ -2035,229 +1547,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_DARUMAKA
 
 #if P_FAMILY_MARACTUS
-    [SPECIES_MARACTUS] =
-    {
-        .baseHP        = 75,
-        .baseAttack    = 86,
-        .baseDefense   = 67,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 106,
-        .baseSpDefense = 67,
-        .types = MON_TYPES(TYPE_NATURE),
-        .catchRate = 255,
-        .expYield = 161,
-        .evYield_SpAttack = 2,
-        .itemRare = ITEM_CAMOUFLAGE,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_WATER_ABSORB, ABILITY_CHLOROPHYLL, ABILITY_STORM_DRAIN },
-        .sourceGame = SOURCE_LLS,
-        .speciesName = _("Maractus"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_MARACTUS,
-        .categoryName = _("Cactus"),
-        .height = 10,
-        .weight = 280,
-        .description = COMPOUND_STRING(
-            "Arid regions are their habitat.\n"
-            "When it moves rhythmically, it makes a\n"
-            "sound similar to maracas, making the\n"
-            "surprised Pokémon flee."),
-        .pokemonScale = 305,
-        .pokemonOffset = 6,
-        .trainerScale = 257,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Maractus,
-        .frontPicSize = MON_COORDS_SIZE(56, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-            ANIMCMD_FRAME(1, 10),
-            ANIMCMD_FRAME(0, 10),
-        ),
-        .frontAnimId = ANIM_H_JUMPS_V_STRETCH,
-        .backPic = gMonBackPic_Maractus,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 2,
-        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
-        .palette = gMonPalette_Maractus,
-        .shinyPalette = gMonShinyPalette_Maractus,
-        .iconSprite = gMonIcon_Maractus,
-        .iconPalIndex = 1,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-1, 13, SHADOW_SIZE_S)
-        FOOTPRINT(Maractus)
-        OVERWORLD(
-            sPicTable_Maractus,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Maractus,
-            gShinyOverworldPalette_Maractus
-        )
-        .levelUpLearnset = sMaractusLevelUpLearnset,
-        .teachableLearnset = sMaractusTeachableLearnset,
-    },
 #endif //P_FAMILY_MARACTUS
 
 #if P_FAMILY_DWEBBLE
-    [SPECIES_DWEBBLE] =
-    {
-        .baseHP        = 50,
-        .baseAttack    = 65,
-        .baseDefense   = 85,
-        .baseSpeed     = 55,
-        .baseSpAttack  = 35,
-        .baseSpDefense = 35,
-        .types = MON_TYPES(TYPE_HEART, TYPE_BEAST),
-        .catchRate = 190,
-        .expYield = 65,
-        .evYield_Defense = 1,
-        .itemRare = ITEM_BUNNY_SUIT,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Dwebble"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_DWEBBLE,
-        .categoryName = _("Rock Inn"),
-        .height = 3,
-        .weight = 145,
-        .description = COMPOUND_STRING(
-            "It makes a hole in a stone of a suitable\n"
-            "size. If that rock breaks, the Pokémon\n"
-            "remains agitated until it locates\n"
-            "a replacement."),
-        .pokemonScale = 530,
-        .pokemonOffset = 15,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Dwebble,
-        .frontPicSize = MON_COORDS_SIZE(40, 40),
-        .frontPicYOffset = 14,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 50),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 5),
-            ANIMCMD_FRAME(1, 5),
-            ANIMCMD_FRAME(0, 1),
-        ),
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Dwebble,
-        .backPicSize = MON_COORDS_SIZE(56, 32),
-        .backPicYOffset = 17,
-        .backAnimId = BACK_ANIM_H_SLIDE,
-        .palette = gMonPalette_Dwebble,
-        .shinyPalette = gMonShinyPalette_Dwebble,
-        .iconSprite = gMonIcon_Dwebble,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
-        SHADOW(-1, -2, SHADOW_SIZE_S)
-        FOOTPRINT(Dwebble)
-        OVERWORLD(
-            sPicTable_Dwebble,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Dwebble,
-            gShinyOverworldPalette_Dwebble
-        )
-        .levelUpLearnset = sDwebbleLevelUpLearnset,
-        .teachableLearnset = sDwebbleTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_CRUSTLE}),
-    },
-
-    [SPECIES_CRUSTLE] =
-    {
-        .baseHP        = 70,
-        .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 105 : 95,
-        .baseDefense   = 125,
-        .baseSpeed     = 45,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 75,
-        .types = MON_TYPES(TYPE_HEART, TYPE_BEAST),
-        .catchRate = 75,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_7) ? 170 : 166,
-        .evYield_Defense = 2,
-        .itemRare = ITEM_BUNNY_SUIT,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STURDY, ABILITY_SHELL_ARMOR, ABILITY_WEAK_ARMOR },
-        .sourceGame = SOURCE_HRTP,
-        .speciesName = _("Crustle"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_CRUSTLE,
-        .categoryName = _("Stone Home"),
-        .height = 14,
-        .weight = 2000,
-        .description = COMPOUND_STRING(
-            "Competing for territory, Crustle fight\n"
-            "viciously. The one whose boulder is\n"
-            "broken is the loser of the battle and\n"
-            "begins to weaken."),
-        .pokemonScale = 265,
-        .pokemonOffset = 2,
-        .trainerScale = 262,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Crustle,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 2,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-            ANIMCMD_FRAME(1, 15),
-            ANIMCMD_FRAME(0, 15),
-        ),
-        .frontAnimId = ANIM_H_SLIDE_SLOW,
-        .backPic = gMonBackPic_Crustle,
-        .backPicSize = MON_COORDS_SIZE(64, 56),
-        .backPicYOffset = 9,
-        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
-        .palette = gMonPalette_Crustle,
-        .shinyPalette = gMonShinyPalette_Crustle,
-        .iconSprite = gMonIcon_Crustle,
-        .iconPalIndex = 2,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(1, 8, SHADOW_SIZE_L)
-        FOOTPRINT(Crustle)
-        OVERWORLD(
-            sPicTable_Crustle,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Crustle,
-            gShinyOverworldPalette_Crustle
-        )
-        .levelUpLearnset = sCrustleLevelUpLearnset,
-        .teachableLearnset = sCrustleTeachableLearnset,
-    },
 #endif //P_FAMILY_DWEBBLE
 
 #if P_FAMILY_SCRAGGY
-    [SPECIES_SCRAGGY] =
+    [SPECIES_NORMAL_SATONO] =
     {
         .baseHP        = 50,
         .baseAttack    = 75,
@@ -2323,10 +1619,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sScraggyLevelUpLearnset,
         .teachableLearnset = sScraggyTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 39, SPECIES_SCRAFTY}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 39, SPECIES_PLACEHOLD_SATONO}),
     },
 
-    [SPECIES_SCRAFTY] =
+    [SPECIES_PLACEHOLD_SATONO] =
     {
         .baseHP        = 65,
         .baseAttack    = 90,
@@ -2397,7 +1693,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_SCRAGGY
 
 #if P_FAMILY_SIGILYPH
-    [SPECIES_SIGILYPH] =
+    [SPECIES_CHIBI_TEIREIDA] =
     {
         .baseHP        = 72,
         .baseAttack    = 58,
@@ -2472,7 +1768,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_SIGILYPH
 
 #if P_FAMILY_YAMASK
-    [SPECIES_YAMASK] =
+    [SPECIES_NORMAL_TEIREIDA] =
     {
         .baseHP        = 38,
         .baseAttack    = 30,
@@ -2542,10 +1838,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sYamaskLevelUpLearnset,
         .teachableLearnset = sYamaskTeachableLearnset,
         .formSpeciesIdTable = sYamaskFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_COFAGRIGUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_PLACEHOLD_TEIREIDA}),
     },
 
-    [SPECIES_COFAGRIGUS] =
+    [SPECIES_PLACEHOLD_TEIREIDA] =
     {
         .baseHP        = 58,
         .baseAttack    = 50,
@@ -2747,7 +2043,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_YAMASK
 
 #if P_FAMILY_TIRTOUGA
-    [SPECIES_TIRTOUGA] =
+    [SPECIES_CHIBI_OKINA] =
     {
         .baseHP        = 54,
         .baseAttack    = 78,
@@ -2813,10 +2109,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sTirtougaLevelUpLearnset,
         .teachableLearnset = sTirtougaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_CARRACOSTA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_NORMAL_OKINA}),
     },
 
-    [SPECIES_CARRACOSTA] =
+    [SPECIES_NORMAL_OKINA] =
     {
         .baseHP        = 74,
         .baseAttack    = 108,
@@ -2892,7 +2188,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_TIRTOUGA
 
 #if P_FAMILY_ARCHEN
-    [SPECIES_ARCHEN] =
+    [SPECIES_PLACEHOLD_OKINA] =
     {
         .baseHP        = 55,
         .baseAttack    = 112,
@@ -2957,10 +2253,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sArchenLevelUpLearnset,
         .teachableLearnset = sArchenTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_ARCHEOPS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_CHIBI_NEMUNO}),
     },
 
-    [SPECIES_ARCHEOPS] =
+    [SPECIES_CHIBI_NEMUNO] =
     {
         .baseHP        = 75,
         .baseAttack    = 140,
@@ -3035,7 +2331,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_ARCHEN
 
 #if P_FAMILY_TRUBBISH
-    [SPECIES_TRUBBISH] =
+    [SPECIES_NORMAL_NEMUNO] =
     {
         .baseHP        = 50,
         .baseAttack    = 50,
@@ -3101,10 +2397,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sTrubbishLevelUpLearnset,
         .teachableLearnset = sTrubbishTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_GARBODOR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_PLACEHOLD_NEMUNO}),
     },
 
-    [SPECIES_GARBODOR] =
+    [SPECIES_PLACEHOLD_NEMUNO] =
     {
         .baseHP        = 80,
         .baseAttack    = 95,
