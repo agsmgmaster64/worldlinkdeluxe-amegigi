@@ -4833,16 +4833,21 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_IMPOSTER:
-            if (IsBattlerAlive(BATTLE_OPPOSITE(battler))
-                && !(gBattleMons[BATTLE_OPPOSITE(battler)].status2 & (STATUS2_TRANSFORMED | STATUS2_SUBSTITUTE))
-                && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
-                && !(gBattleStruct->illusion[BATTLE_OPPOSITE(battler)].on)
-                && !(gStatuses3[BATTLE_OPPOSITE(battler)] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER))
             {
-                gBattlerAttacker = battler;
-                gBattlerTarget = BATTLE_OPPOSITE(battler);
-                BattleScriptPushCursorAndCallback(BattleScript_ImposterActivates);
-                effect++;
+                u32 diagonalBattler = BATTLE_OPPOSITE(battler);  
+                if (IsDoubleBattle())  
+                    diagonalBattler = BATTLE_PARTNER(diagonalBattler);
+                if (IsBattlerAlive(diagonalBattler)
+                    && !(gBattleMons[diagonalBattler].status2 & (STATUS2_TRANSFORMED | STATUS2_SUBSTITUTE))
+                    && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
+                    && !(gBattleStruct->illusion[diagonalBattler].on)
+                    && !(gStatuses3[diagonalBattler] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER))
+                {
+                    gBattlerAttacker = battler;
+                    gBattlerTarget = diagonalBattler;
+                    BattleScriptPushCursorAndCallback(BattleScript_ImposterActivates);
+                    effect++;
+                }
             }
             break;
         case ABILITY_MOLD_BREAKER:
@@ -9544,22 +9549,22 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         break;
     case ABILITY_PIXILATE:
         if (moveType == TYPE_HEART && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_GALVANIZE:
         if (moveType == TYPE_WIND && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_REFRIGERATE:
         if (moveType == TYPE_ICE && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_AERILATE:
         if (moveType == TYPE_FLYING && gBattleStruct->ateBoost[battlerAtk])
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_NORMALIZE:
-        if (moveType == TYPE_ILLUSION && gBattleStruct->ateBoost[battlerAtk])
+        if (moveType == TYPE_ILLUSION && gBattleStruct->ateBoost[battlerAtk] && GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
     case ABILITY_PUNK_ROCK:

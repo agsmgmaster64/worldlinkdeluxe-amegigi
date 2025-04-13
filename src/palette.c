@@ -138,9 +138,9 @@ bool32 BeginNormalPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targ
             delay = 0;
         }
 
-        gPaletteFade_selectedPalettes = selectedPalettes;
+        gPaletteFadeSelectedPalettes = selectedPalettes;
         gPaletteFade.delayCounter = delay;
-        gPaletteFade_delay = delay;
+        gPaletteFadeDelay = delay;
         gPaletteFade.y = startY;
         gPaletteFade.targetY = targetY;
         gPaletteFade.blendColor = blendColor;
@@ -171,48 +171,44 @@ bool32 BeginTimeOfDayPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 t
     u8 temp;
 
     if (gPaletteFade.active)
-    {
         return FALSE;
-    }
-    else
+
+    gPaletteFade.deltaY = 2;
+
+    if (delay < 0)
     {
-        gPaletteFade.deltaY = 2;
-
-        if (delay < 0)
-        {
-            gPaletteFade.deltaY += (delay * -1);
-            delay = 0;
-        }
-
-        gPaletteFade_selectedPalettes = selectedPalettes;
-        gPaletteFade.delayCounter = delay;
-        gPaletteFade_delay = delay;
-        gPaletteFade.y = startY;
-        gPaletteFade.targetY = targetY;
-        gPaletteFade.active = 1;
-        gPaletteFade.mode = TIME_OF_DAY_FADE;
-
-        gPaletteFade.blendColor = color;
-        gPaletteFade.bld0 = bld0;
-        gPaletteFade.bld1 = bld1;
-        gPaletteFade.weight = weight;
-
-        if (startY < targetY)
-            gPaletteFade.yDec = 0;
-        else
-            gPaletteFade.yDec = 1;
-
-        UpdatePaletteFade();
-
-        temp = gPaletteFade.bufferTransferDisabled;
-        gPaletteFade.bufferTransferDisabled = 0;
-        CpuCopy32(gPlttBufferFaded, (void *)PLTT, PLTT_SIZE);
-        sPlttBufferTransferPending = 0;
-        if (gPaletteFade.mode == HARDWARE_FADE && gPaletteFade.active)
-            UpdateBlendRegisters();
-        gPaletteFade.bufferTransferDisabled = temp;
-        return TRUE;
+        gPaletteFade.deltaY += (delay * -1);
+        delay = 0;
     }
+
+    gPaletteFadeSelectedPalettes = selectedPalettes;
+    gPaletteFade.delayCounter = delay;
+    gPaletteFadeDelay = delay;
+    gPaletteFade.y = startY;
+    gPaletteFade.targetY = targetY;
+    gPaletteFade.active = 1;
+    gPaletteFade.mode = TIME_OF_DAY_FADE;
+
+    gPaletteFade.blendColor = color;
+    gPaletteFade.bld0 = bld0;
+    gPaletteFade.bld1 = bld1;
+    gPaletteFade.weight = weight;
+
+    if (startY < targetY)
+        gPaletteFade.yDec = 0;
+    else
+        gPaletteFade.yDec = 1;
+
+    UpdatePaletteFade();
+
+    temp = gPaletteFade.bufferTransferDisabled;
+    gPaletteFade.bufferTransferDisabled = 0;
+    CpuCopy32(gPlttBufferFaded, (void *)PLTT, PLTT_SIZE);
+    sPlttBufferTransferPending = 0;
+    if (gPaletteFade.mode == HARDWARE_FADE && gPaletteFade.active)
+        UpdateBlendRegisters();
+    gPaletteFade.bufferTransferDisabled = temp;
+    return TRUE;
 }
 
 void ResetPaletteFadeControl(void)
@@ -253,7 +249,7 @@ static u8 UpdateTimeOfDayPaletteFade(void)
 
     if (!gPaletteFade.objPaletteToggle)
     {
-        if (gPaletteFade.delayCounter < gPaletteFade_delay)
+        if (gPaletteFade.delayCounter < gPaletteFadeDelay)
         {
             gPaletteFade.delayCounter++;
             return PALETTE_FADE_STATUS_DELAY;
@@ -265,11 +261,11 @@ static u8 UpdateTimeOfDayPaletteFade(void)
 
     if (!gPaletteFade.objPaletteToggle)
     {
-        selectedPalettes = gPaletteFade_selectedPalettes;
+        selectedPalettes = gPaletteFadeSelectedPalettes;
     }
     else
     {
-        selectedPalettes = gPaletteFade_selectedPalettes >> 16;
+        selectedPalettes = gPaletteFadeSelectedPalettes >> 16;
         paletteOffset = 256;
     }
 
@@ -317,7 +313,7 @@ static u8 UpdateTimeOfDayPaletteFade(void)
     {
         if ((gPaletteFade.yDec && gPaletteFade.y == 0) || (!gPaletteFade.yDec && gPaletteFade.y == gPaletteFade.targetY))
         {
-            gPaletteFade_selectedPalettes = 0;
+            gPaletteFadeSelectedPalettes = 0;
             gPaletteFade.softwareFadeFinishing = 1;
         }
         else
@@ -326,16 +322,14 @@ static u8 UpdateTimeOfDayPaletteFade(void)
 
             if (!gPaletteFade.yDec)
             {
-                val = gPaletteFade.y;
-                val += gPaletteFade.deltaY;
+                val = gPaletteFade.y + gPaletteFade.deltaY;
                 if (val > gPaletteFade.targetY)
                     val = gPaletteFade.targetY;
                 gPaletteFade.y = val;
             }
             else
             {
-                val = gPaletteFade.y;
-                val -= gPaletteFade.deltaY;
+                val = gPaletteFade.y - gPaletteFade.deltaY;
                 if (val < 0)
                     val = 0;
                 gPaletteFade.y = val;
@@ -364,7 +358,7 @@ static u32 UpdateNormalPaletteFade(void)
     {
         if (!gPaletteFade.objPaletteToggle)
         {
-            if (gPaletteFade.delayCounter < gPaletteFade_delay)
+            if (gPaletteFade.delayCounter < gPaletteFadeDelay)
             {
                 gPaletteFade.delayCounter++;
                 return PALETTE_FADE_STATUS_DELAY;
@@ -376,11 +370,11 @@ static u32 UpdateNormalPaletteFade(void)
 
         if (!gPaletteFade.objPaletteToggle)
         {
-            selectedPalettes = gPaletteFade_selectedPalettes;
+            selectedPalettes = gPaletteFadeSelectedPalettes;
         }
         else
         {
-            selectedPalettes = gPaletteFade_selectedPalettes >> 16;
+            selectedPalettes = gPaletteFadeSelectedPalettes >> 16;
             paletteOffset = OBJ_PLTT_OFFSET;
         }
 
@@ -402,7 +396,7 @@ static u32 UpdateNormalPaletteFade(void)
         {
             if (gPaletteFade.y == gPaletteFade.targetY)
             {
-                gPaletteFade_selectedPalettes = 0;
+                gPaletteFadeSelectedPalettes = 0;
                 gPaletteFade.softwareFadeFinishing = TRUE;
             }
             else
@@ -499,7 +493,7 @@ void BeginFastPaletteFade(u32 submode)
 static void BeginFastPaletteFadeInternal(u32 submode)
 {
     gPaletteFade.y = 31;
-    gPaletteFade_submode = submode & 0x3F;
+    gPaletteFadeSubmode = submode & 0x3F;
     gPaletteFade.active = TRUE;
     gPaletteFade.mode = FAST_FADE;
 
@@ -542,7 +536,7 @@ static u32 UpdateFastPaletteFade(void)
         paletteOffsetEnd = OBJ_PLTT_OFFSET;
     }
 
-    switch (gPaletteFade_submode)
+    switch (gPaletteFadeSubmode)
     {
     case FAST_FADE_IN_FROM_WHITE:
         for (i = paletteOffsetStart; i < paletteOffsetEnd; i++)
@@ -647,7 +641,7 @@ static u32 UpdateFastPaletteFade(void)
 
     if (gPaletteFade.y == 0)
     {
-        switch (gPaletteFade_submode)
+        switch (gPaletteFadeSubmode)
         {
         case FAST_FADE_IN_FROM_WHITE:
         case FAST_FADE_IN_FROM_BLACK:
@@ -672,9 +666,9 @@ static u32 UpdateFastPaletteFade(void)
 
 void BeginHardwarePaletteFade(u32 blendCnt, u32 delay, u32 y, u32 targetY, u32 shouldResetBlendRegisters)
 {
-    gPaletteFade_blendCnt = blendCnt;
+    gPaletteFadeBlendCnt = blendCnt;
     gPaletteFade.delayCounter = delay;
-    gPaletteFade_delay = delay;
+    gPaletteFadeDelay = delay;
     gPaletteFade.y = y;
     gPaletteFade.targetY = targetY;
     gPaletteFade.active = TRUE;
@@ -693,7 +687,7 @@ static u32 UpdateHardwarePaletteFade(void)
     if (!gPaletteFade.active)
         return PALETTE_FADE_STATUS_DONE;
 
-    if (gPaletteFade.delayCounter < gPaletteFade_delay)
+    if (gPaletteFade.delayCounter < gPaletteFadeDelay)
     {
         gPaletteFade.delayCounter++;
         return PALETTE_FADE_STATUS_DELAY;
@@ -724,7 +718,8 @@ static u32 UpdateHardwarePaletteFade(void)
     {
         if (gPaletteFade.shouldResetBlendRegisters)
         {
-            gPaletteFade_blendCnt = 0;
+            // clear TGT1
+            gPaletteFadeBlendCnt &= ~0xFF;
             gPaletteFade.y = 0;
         }
         gPaletteFade.shouldResetBlendRegisters = FALSE;
@@ -735,15 +730,48 @@ static u32 UpdateHardwarePaletteFade(void)
     return gPaletteFade.active ? PALETTE_FADE_STATUS_ACTIVE : PALETTE_FADE_STATUS_DONE;
 }
 
+// Only called for hardware fades
 static void UpdateBlendRegisters(void)
 {
-    SetGpuReg(REG_OFFSET_BLDCNT, (u16)gPaletteFade_blendCnt);
+    SetGpuReg(REG_OFFSET_BLDCNT, (u16)gPaletteFadeBlendCnt);
     SetGpuReg(REG_OFFSET_BLDY, gPaletteFade.y);
+    // If fade-out, also adjust BLDALPHA and DISPCNT
+    if (!gPaletteFade.yDec)
+    {
+        u16 bldAlpha = GetGpuReg(REG_OFFSET_BLDALPHA);
+        u8 tgt1 = BLDALPHA_TGT1(bldAlpha);
+        u8 tgt2 = BLDALPHA_TGT2(bldAlpha);
+        u8 bldFade;
+
+        switch (gPaletteFadeBlendCnt & BLDCNT_EFFECT_EFF_MASK)
+        {
+        // FADE_TO_BLACK
+        case BLDCNT_EFFECT_DARKEN:
+            bldFade = BLDALPHA_TGT1(max(0, 16 - gPaletteFade.y));
+            SetGpuReg(REG_OFFSET_BLDALPHA,
+                      BLDALPHA_BLEND(min(tgt1, bldFade), min(tgt2, bldFade)));
+            break;
+        // FADE_TO_WHITE
+        case BLDCNT_EFFECT_LIGHTEN:
+            SetGpuReg(REG_OFFSET_BLDALPHA,
+                      BLDALPHA_BLEND(min(++tgt1, 31), min(++tgt2, 31)));
+            // cause display to show white when finished
+            // (otherwise blend-mode sprites will still be visible)
+            if (gPaletteFade.hardwareFadeFinishing && gPaletteFade.y >= 16)
+                SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_FORCED_BLANK);
+            break;
+        }
+    }
+    else
+    {
+        ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_FORCED_BLANK);
+    }
+
     if (gPaletteFade.hardwareFadeFinishing)
     {
         gPaletteFade.hardwareFadeFinishing = FALSE;
         gPaletteFade.mode = 0;
-        gPaletteFade_blendCnt = 0;
+        gPaletteFadeBlendCnt = 0;
         gPaletteFade.y = 0;
         gPaletteFade.active = FALSE;
     }
@@ -824,8 +852,8 @@ void BlendPalettes(u32 selectedPalettes, u8 coeff, u32 color)
 void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor)
 {
     s32 newR, newG, newB, defR, defG, defB;
-    u16 * src = gPlttBufferUnfaded + palOffset;
-    u16 * dst = gPlttBufferFaded + palOffset;
+    u16 *src = gPlttBufferUnfaded + palOffset;
+    u16 *dst = gPlttBufferFaded + palOffset;
     u32 defaultBlendColor = DEFAULT_LIGHT_COLOR;
     u16 *srcEnd = src + 16;
     u32 altBlendColor = *dst++ = *src++; // color 0 is copied through unchanged
@@ -1157,8 +1185,8 @@ void TintPalette_CustomTone(u16 *palette, u32 count, u16 rTone, u16 gTone, u16 b
 void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor)
 {
     s32 newR, newG, newB, rTone = 0, gTone = 0, bTone = 0;
-    u16 * src = gPlttBufferUnfaded + palOffset;
-    u16 * dst = gPlttBufferFaded + palOffset;
+    u16 *src = gPlttBufferUnfaded + palOffset;
+    u16 *dst = gPlttBufferFaded + palOffset;
     u32 defaultBlendColor = DEFAULT_LIGHT_COLOR;
     u16 *srcEnd = src + 16;
     u16 altBlendIndices = *dst++ = *src++; // color 0 is copied through unchanged
@@ -1223,6 +1251,8 @@ void TintPalette_RGB_Copy(u16 palOffset, u32 blendColor)
         altBlendIndices >>= 1;
     }
 }
+
+#undef DEFAULT_LIGHT_COLOR
 
 #define tCoeff       data[0]
 #define tCoeffTarget data[1]

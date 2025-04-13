@@ -53,6 +53,7 @@
 #include "menu.h"
 #include "pokemon_summary_screen.h"
 #include "type_icons.h"
+#include "pokedex.h"
 
 static void PlayerBufferExecCompleted(u32 battler);
 static void PlayerHandleLoadMonSprite(u32 battler);
@@ -560,7 +561,8 @@ void HandleInputChooseTarget(u32 battler)
                     i++;
                     break;
                 }
-                MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
+                if (B_SHOW_EFFECTIVENESS)
+                    MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
 
                 if (gAbsentBattlerFlags & (1u << gMultiUsePlayerCursor)
                  || !CanTargetBattler(battler, gMultiUsePlayerCursor, move)
@@ -610,7 +612,8 @@ void HandleInputChooseTarget(u32 battler)
                     i++;
                     break;
                 }
-                MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
+                if (B_SHOW_EFFECTIVENESS)
+                    MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
 
                 if (gAbsentBattlerFlags & (1u << gMultiUsePlayerCursor)
                  || !CanTargetBattler(battler, gMultiUsePlayerCursor, move)
@@ -809,7 +812,8 @@ void HandleInputChooseMove(u32 battler)
                 gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
             else
                 gMultiUsePlayerCursor = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
-            MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTypeEffectiveness(GetBattlerPosition(gMultiUsePlayerCursor), battler), battler);
 
             gSprites[gBattlerSpriteIds[gMultiUsePlayerCursor]].callback = SpriteCB_ShowAsMoveTarget;
             break;
@@ -846,7 +850,8 @@ void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
@@ -862,7 +867,8 @@ void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
@@ -877,7 +883,8 @@ void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
@@ -893,7 +900,8 @@ void HandleInputChooseMove(u32 battler)
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
             TryMoveSelectionDisplayMoveDescription(battler);
@@ -931,7 +939,8 @@ void HandleInputChooseMove(u32 battler)
             ClearStdWindowAndFrame(B_WIN_MOVE_DESCRIPTION, FALSE);
             CopyWindowToVram(B_WIN_MOVE_DESCRIPTION, COPYWIN_GFX);
             PlaySE(SE_SELECT);
-            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+            if (B_SHOW_EFFECTIVENESS)
+                MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
             MoveSelectionDisplayMoveType(battler);
         }
@@ -966,6 +975,8 @@ static void ReloadMoveNames(u32 battler)
         MoveSelectionDestroyCursorAt(battler);
         MoveSelectionDisplayMoveNames(battler);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        if (B_SHOW_EFFECTIVENESS)
+            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
         MoveSelectionDisplayPpNumber(battler);
         MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
         MoveSelectionDisplayMoveType(battler);
@@ -1119,7 +1130,10 @@ void HandleMoveSwitching(u32 battler)
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         gMoveSelectionCursor[battler] = gMultiUsePlayerCursor;
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-        MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+        if (B_SHOW_EFFECTIVENESS)
+            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+        else
+            MoveSelectionDisplayPpString(battler);
         MoveSelectionDisplayPpNumber(battler);
         MoveSelectionDisplayMoveType(battler);
         AssignUsableZMoves(battler, moveInfo->moves);
@@ -1130,7 +1144,10 @@ void HandleMoveSwitching(u32 battler)
         MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
-        MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+        if (B_SHOW_EFFECTIVENESS)
+            MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+        else
+            MoveSelectionDisplayPpString(battler);
         MoveSelectionDisplayPpNumber(battler);
         MoveSelectionDisplayMoveType(battler);
     }
@@ -1492,11 +1509,13 @@ static void Task_GiveExpToMon(u8 taskId)
         u8 level = GetMonData(mon, MON_DATA_LEVEL);
         u32 currExp = GetMonData(mon, MON_DATA_EXP);
         u32 nextLvlExp = gExperienceTables[gSpeciesInfo[species].growthRate][level + 1];
+        u32 expAfterGain = currExp + gainedExp;
         u32 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP);
 
-        if (currExp + gainedExp >= nextLvlExp)
+        if (expAfterGain >= nextLvlExp)
         {
-            SetMonData(mon, MON_DATA_EXP, &nextLvlExp);
+            SetMonData(mon, MON_DATA_EXP, (B_LEVEL_UP_NOTIFICATION >= GEN_9) ? &expAfterGain : &nextLvlExp);
+
             CalculateMonStats(mon);
 
             // Reapply Dynamax HP multiplier after stats are recalculated.
@@ -1504,7 +1523,7 @@ static void Task_GiveExpToMon(u8 taskId)
                 DynamaxModifyHPLevelUp(mon, battler, oldMaxHP);
 
             gainedExp -= nextLvlExp - currExp;
-            BtlController_EmitTwoReturnValues(battler, BUFFER_B, RET_VALUE_LEVELED_UP, gainedExp);
+            BtlController_EmitTwoReturnValues(battler, BUFFER_B, RET_VALUE_LEVELED_UP, (B_LEVEL_UP_NOTIFICATION >= GEN_9) ? 0 : gainedExp);
 
             if (IsDoubleBattle() == TRUE
              && (monId == gBattlerPartyIndexes[battler] || monId == gBattlerPartyIndexes[BATTLE_PARTNER(battler)]))
@@ -1548,7 +1567,7 @@ static void Task_PrepareToGiveExpWithExpBar(u8 taskId)
 
 static void Task_GiveExpWithExpBar(u8 taskId)
 {
-    u8 level;
+    u32 level, expAfterGain;
     u16 species;
     u32 oldMaxHP;
     s32 currExp, expOnNextLvl, newExpPoints;
@@ -1575,9 +1594,14 @@ static void Task_GiveExpWithExpBar(u8 taskId)
             oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP);
             expOnNextLvl = gExperienceTables[gSpeciesInfo[species].growthRate][level + 1];
 
-            if (currExp + gainedExp >= expOnNextLvl)
+            expAfterGain = currExp + gainedExp;
+            if (expAfterGain >= expOnNextLvl)
             {
-                SetMonData(mon, MON_DATA_EXP, &expOnNextLvl);
+                if (B_LEVEL_UP_NOTIFICATION >= GEN_9)
+                    SetMonData(mon, MON_DATA_EXP, &expAfterGain);
+                else
+                    SetMonData(mon, MON_DATA_EXP, &expOnNextLvl);
+
                 CalculateMonStats(mon);
 
                 // Reapply Dynamax HP multiplier after stats are recalculated.
@@ -1585,7 +1609,7 @@ static void Task_GiveExpWithExpBar(u8 taskId)
                     DynamaxModifyHPLevelUp(mon, battler, oldMaxHP);
 
                 gainedExp -= expOnNextLvl - currExp;
-                BtlController_EmitTwoReturnValues(battler, BUFFER_B, RET_VALUE_LEVELED_UP, gainedExp);
+                BtlController_EmitTwoReturnValues(battler, BUFFER_B, RET_VALUE_LEVELED_UP, (B_LEVEL_UP_NOTIFICATION >= GEN_9) ? 0 : gainedExp);
                 gTasks[taskId].func = Task_LaunchLvlUpAnim;
             }
             else
@@ -2352,7 +2376,10 @@ void InitMoveSelectionsVarsAndStrings(u32 battler)
     MoveSelectionDisplayMoveNames(battler);
     gMultiUsePlayerCursor = 0xFF;
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-    MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+    if (B_SHOW_EFFECTIVENESS)
+        MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
+    else
+        MoveSelectionDisplayPpString(battler);
     MoveSelectionDisplayPpNumber(battler);
     MoveSelectionDisplayMoveType(battler);
 }
