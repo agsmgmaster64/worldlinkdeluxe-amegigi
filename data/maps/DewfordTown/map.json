@@ -106,7 +106,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
+      "x": 5,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F",
@@ -149,7 +149,7 @@
     {
       "type": "sign",
       "x": 19,
-      "y": 18,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DewfordTown_EventScript_GymSign"

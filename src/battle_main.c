@@ -5647,6 +5647,7 @@ static void HandleEndTurn_FinishBattle(void)
                 else if (GetBattlerSide(battler) == B_SIDE_OPPONENT)
                 {
                     HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                    TryIncrementSpeciesSearchLevel(gBattleMons[battler].species);    // encountering pokemon increments its search level
                 }
             }
             TryPutPokemonTodayOnAir();
