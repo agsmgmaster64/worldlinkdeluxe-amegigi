@@ -163,3 +163,12 @@
 	.include "src/tx_randomizer_and_challenges.o"
 	.include "src/starter_choose.o"
 	.include "src/map_preview_screen.o"
+	.include "src/game_corner_gacha.o"
+	.include "src/rogue_voltorbflip.o"
+	.include "src/pinball.o"
+	.include "src/pachinko.o"
+	.include "src/block_stacker.o"
+	.include "src/derby.o"
+	.include "src/snake.o"
+	.include "src/flappybird.o"
+	

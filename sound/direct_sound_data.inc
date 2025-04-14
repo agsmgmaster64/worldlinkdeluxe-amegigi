@@ -919,3 +919,23 @@ Voice_GigiLaugh::
 	.align 2
 Voice_GigiBoatGoesBinted::
 	.incbin "sound/direct_sound_samples/voice_lines/uncomp_gigi_boat_goes_binted.bin"
+
+	.align 2
+DirectSoundWaveData_pinball_7_clav::
+	.incbin "sound/direct_sound_samples/pinball_7_clav.bin"
+
+	.align 2
+DirectSoundWaveData_pinball_11_vibraphone::
+	.incbin "sound/direct_sound_samples/pinball_11_vibraphone.bin"
+
+	.align 2
+DirectSoundWaveData_pinball_12_marimba::
+	.incbin "sound/direct_sound_samples/pinball_12_marimba.bin"
+
+	.align 2
+DirectSoundWaveData_pinball_16_drawbar_organ::
+	.incbin "sound/direct_sound_samples/pinball_16_drawbar_organ.bin"
+
+	.align 2
+DirectSoundWaveData_pinball_52_clarinet::
+	.incbin "sound/direct_sound_samples/pinball_52_clarinet.bin"

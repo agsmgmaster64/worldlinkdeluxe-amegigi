@@ -861,6 +861,8 @@ const u8 gText_PlayerRegroupCenter[] = _("{PLAYER} went running back to a POKéM
 const u8 gText_PlayerRegroupHome[] = _("{PLAYER} went running back home to regroup\nand reconsider their battle strategy…\p");
 const u8 gText_HatchedFromEgg[] = _("{STR_VAR_1} hatched from the EGG!");
 const u8 gText_NicknameHatchPrompt[] = _("Would you like to nickname the newly\nhatched {STR_VAR_1}?");
+const u8 gText_FromGacha[] = _("You got {STR_VAR_1}!");
+const u8 gText_NicknameGacha[] = _("Would you like to give {STR_VAR_1}\na nickname?");
 ALIGNED(4) const u8 gText_ReadyPickBerry[] = _("Are you ready to BERRY-CRUSH?\nPlease pick a BERRY for use.\p");
 ALIGNED(4) const u8 gText_WaitForAllChooseBerry[] = _("Please wait while each member\nchooses a BERRY.");
 ALIGNED(4) const u8 gText_EndedWithXUnitsPowder[] = _("{PAUSE_MUSIC}{PLAY_BGM MUS_LEVEL_UP}You ended up with {STR_VAR_1} units of\nsilky-smooth BERRY POWDER.{RESUME_MUSIC}\pYour total amount of BERRY POWDER\nis {STR_VAR_2}.\p");
@@ -1193,6 +1195,16 @@ const u8 gText_F700Players[] = _("{DYNAMIC 0} players");
 const u8 gText_F701Players[] = _("{DYNAMIC 1} players");
 const u8 gText_F702Players[] = _("{DYNAMIC 2} players");
 const u8 gText_F703Players[] = _("{DYNAMIC 3} players");
+//BlackJack
+const u8 gText_Bust[] = _("BUST!");
+const u8 gText_YouLose[] = _("You lose!");
+const u8 gText_YouWin[] = _("You win!");
+const u8 gText_Push[] = _("PUSH!");
+const u8 gText_BlackJack[] = _("BLACKJACK!");
+
+const u8 gText_Betting[] = _("Your current\nbet is ¥{STR_VAR_1}.");
+const u8 gText_NoBetting[] = _("Your current\nbet is ¥0.");
+const u8 gText_NoMoney[] = _("You do not have\nenough COINS.");
 
 const u8 *const gTextTable_Players[] = {
     gText_F700Players,

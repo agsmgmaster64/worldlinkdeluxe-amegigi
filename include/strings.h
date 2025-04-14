@@ -2529,4 +2529,15 @@ extern const u8 gText_PokemonGotAway[];
 // Switch Caught Mon into Party
 extern const u8 gText_CannotSendMonToBoxHM[];
 
+// Blackjack
+extern const u8 gText_Bust[];
+extern const u8 gText_YouLose[];
+extern const u8 gText_YouWin[];
+extern const u8 gText_Push[];
+extern const u8 gText_BlackJack[];
+
+extern const u8 gText_Betting[];
+extern const u8 gText_NoBetting[];
+extern const u8 gText_NoMoney[];
+
 #endif // GUARD_STRINGS_H
