@@ -4331,8 +4331,8 @@ static void UpdateDugtrioSprite(struct Sprite *sprite)
             break;
         case DUGTRIO_STATE_3ALIVE:
             StartSpriteAnim(sprite, 1);
-			PlayBGM(MUS_RG_ROCKET_HIDEOUT);
-			PlayCry_Normal(SPECIES_DUGTRIO, 0);
+			PlayBGM(MUS_CASINO_PLUS_6);
+			PlayCry_Normal(SPECIES_NORMAL_YAMAME, 0);
             break;
         case DUGTRIO_STATE_3ALIVE_HIT:
             StartSpriteAnim(sprite, 2);
@@ -4795,7 +4795,7 @@ static bool32 UpdateGengar(struct Gengar *gengar)
         if (--gengar->counter == 0)
         {
             gengar->graveyardState = GRAVEYARD_STATE_HAUNTER;
-			PlayBGM(MUS_RG_POKE_MANSION);
+			PlayBGM(MUS_CASINO_PLUS_4);
             for (i = 0; i < NUM_HAUNTER; i++)
                 InitGhost(&gengar->haunterGhosts[i], sInitialHaunterData[i], &sHaunterSpriteTemplate, i);
         }
@@ -4825,7 +4825,7 @@ static bool32 UpdateGengar(struct Gengar *gengar)
             gengarGhost->spriteId = CreateSprite(&sGengarSpriteTemplate, 80, 20, 5);
             gSprites[gengarGhost->spriteId].data[0] = gengarGhost->state;
             StartSpriteAnim(&gSprites[gengarGhost->spriteId], 0);
-			PlayCry_Normal(SPECIES_GENGAR, 0);
+			PlayCry_Normal(SPECIES_NORMAL_YUYUKO, 0);
         }
     case GRAVEYARD_STATE_GENGAR:
         UpdateGengarGhost(gengar);
@@ -5111,7 +5111,7 @@ static void CrumbleGravestones(struct Gengar *gengar)
 
     // Draw the 4 crumbled gravestone tiles to the background tilemap.
     u16 *tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
-	PlayBGM(MUS_RG_SILPH);
+	PlayBGM(MUS_CASINO_PLUS_8);
 	PlaySE(SE_M_ROCK_THROW);
     tilemap[0x67] = 0x5;
     tilemap[0x68] = 0x5;

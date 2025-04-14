@@ -193,4 +193,5 @@
 .include "sound/voicegroups/voicegroup_zgs_main.inc"
 .include "sound/voicegroups/voicegroup_dd_skuller_drill_missile.inc"
 .include "sound/voicegroups/voicegroup_wld_main.inc"
+.include "sound/voicegroups/voicegroup_casino_pinball.inc"
 .include "sound/trainer_voice_tables.inc"

@@ -1540,7 +1540,7 @@ static void FlappyBirdMain(u8 taskId)
 		case FLAPPY_INIT:
 			if ((sFlappy->timer == 5) && (sFlappy->timerDelay == 75)) // Butterfree
 			{
-				PlayCry_Normal(SPECIES_BUTTERFREE, 0);
+				PlayCry_Normal(SPECIES_NORMAL_DAIYOUSEI, 0);
 				gSprites[sFlappy->ButterfreeSpriteId].animNum = 1;
 				sFlappy->timerDelay--;
 			}

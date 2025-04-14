@@ -58,6 +58,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 25,
       "y": 5,
@@ -169,6 +170,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 9,
       "y": 3,
@@ -182,6 +184,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 21,
       "y": 7,
@@ -195,6 +198,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 21,
       "y": 11,
@@ -208,6 +212,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 23,
       "y": 3,
@@ -221,6 +226,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 13,
       "y": 2,
@@ -234,6 +240,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 16,
       "y": 2,
@@ -247,6 +254,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 15,
       "y": 15,
@@ -260,6 +268,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 27,
       "y": 2,
@@ -273,6 +282,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 26,
       "y": 7,
@@ -286,6 +296,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 26,
       "y": 11,
@@ -299,6 +310,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 17,
       "y": 13,
@@ -312,6 +324,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 2,
       "y": 3,
@@ -325,6 +338,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 17,
       "y": 21,
@@ -338,6 +352,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 5,
       "y": 15,
@@ -351,6 +366,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 7,
       "y": 8,
@@ -364,6 +380,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 27,
       "y": 16,
@@ -377,6 +394,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
       "x": 16,
       "y": 16,

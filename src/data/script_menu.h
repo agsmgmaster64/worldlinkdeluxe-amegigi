@@ -792,20 +792,20 @@ static const struct MenuAction MultichoiceList_Exit[] =
 
 static const struct MenuAction MultichoiceList_GCNew[] =
 {
-    {gText_RareCandy},
-	{gText_SStone},
-	{gText_MStone},
-	{gText_ChoiceB},
-	{gText_BrightP},
+    {COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
 	{gText_Exit},
 };
 
 static const struct MenuAction MultichoiceList_GCNew2[] =
 {
-	{gText_FStone},
-	{gText_TStone},
-	{gText_WStone},
-	{gText_LStone},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
+	{COMPOUND_STRING("")},
 	{gText_Exit},
 };
 

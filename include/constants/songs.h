@@ -530,8 +530,18 @@
 #define MUS_ZGS_VS_REIMU            595
 #define MUS_ZGS_CYCLING             596
 #define MUS_TPPE_VS_WILD            597
+#define MUS_HGSS_CASINO             598
+#define MUS_CASINO_PLUS_1           599
+#define MUS_CASINO_PLUS_2           600
+#define MUS_CASINO_PLUS_3           601
+#define MUS_CASINO_PLUS_4           602
+#define MUS_CASINO_PLUS_5           603
+#define MUS_CASINO_PLUS_6           604
+#define MUS_CASINO_PLUS_7           605
+#define MUS_CASINO_PLUS_8           606
+#define MUS_CASINO_PLUS_9           607
 
-#define END_MUS                     MUS_TPPE_VS_WILD
+#define END_MUS                     MUS_CASINO_PLUS_9
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

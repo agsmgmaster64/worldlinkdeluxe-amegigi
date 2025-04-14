@@ -4332,6 +4332,16 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_VS_REIMU) \
     X(MUS_ZGS_CYCLING) \
     X(MUS_TPPE_VS_WILD) \
+    X(MUS_HGSS_CASINO) \
+    X(MUS_CASINO_PLUS_1) \
+    X(MUS_CASINO_PLUS_2) \
+    X(MUS_CASINO_PLUS_3) \
+    X(MUS_CASINO_PLUS_4) \
+    X(MUS_CASINO_PLUS_5) \
+    X(MUS_CASINO_PLUS_6) \
+    X(MUS_CASINO_PLUS_7) \
+    X(MUS_CASINO_PLUS_8) \
+    X(MUS_CASINO_PLUS_9) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \

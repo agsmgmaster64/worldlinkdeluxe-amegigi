@@ -2153,7 +2153,7 @@ static void SnakeMain(u8 taskId)
 		case SNAKE_STATE_INIT:
 			if (!gPaletteFade.active)
 			{
-				PlayCry_Normal(SPECIES_ONIX, 0);
+				PlayCry_Normal(SPECIES_NORMAL_TENSHI, 0);
 				sSnake->timer = 75;
 				sSnake->state = SNAKE_ONIX_CRY;
 			}
