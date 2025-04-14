@@ -645,7 +645,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "secondary_tileset": "gTileset_RG_GenericBuilding1",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
     },
@@ -669,7 +669,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "secondary_tileset": "gTileset_RG_GenericBuilding1",
       "border_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_MaysHouse_1F/map.bin"
     },

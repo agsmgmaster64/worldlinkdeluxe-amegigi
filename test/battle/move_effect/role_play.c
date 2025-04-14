@@ -56,7 +56,7 @@ SINGLE_BATTLE_TEST("Role Play and Doodle fail if target's ability can't be copie
     PARAMETRIZE { species = SPECIES_CASTFORM; ability = ABILITY_FORECAST; }
     PARAMETRIZE { species = SPECIES_ARCEUS; ability = ABILITY_MULTITYPE; }
     PARAMETRIZE { species = SPECIES_CHERRIM; ability = ABILITY_FLOWER_GIFT; }
-    PARAMETRIZE { species = SPECIES_ZORUA; ability = ABILITY_ILLUSION; }
+    PARAMETRIZE { species = SPECIES_CHIBI_SUMIREKO; ability = ABILITY_ILLUSION; }
     PARAMETRIZE { species = SPECIES_DARMANITAN; ability = ABILITY_ZEN_MODE; }
     PARAMETRIZE { species = SPECIES_AEGISLASH; ability = ABILITY_STANCE_CHANGE; }
     PARAMETRIZE { species = SPECIES_MUK_ALOLA; ability = ABILITY_POWER_OF_ALCHEMY; }

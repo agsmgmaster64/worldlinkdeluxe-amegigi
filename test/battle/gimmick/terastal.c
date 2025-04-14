@@ -784,7 +784,7 @@ SINGLE_BATTLE_TEST("(TERA) Illusion breaks if the pokemon Terastalizes")
     PARAMETRIZE { species = SPECIES_TERAPAGOS; }
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     GIVEN {
-        PLAYER(SPECIES_ZOROARK) { TeraType(TYPE_DARK); }
+        PLAYER(SPECIES_NORMAL_SUMIREKO) { TeraType(TYPE_DARK); }
         PLAYER(species);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

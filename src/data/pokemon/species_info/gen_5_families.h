@@ -2537,7 +2537,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_TRUBBISH
 
 #if P_FAMILY_ZORUA
-    [SPECIES_ZORUA] =
+    [SPECIES_CHIBI_SUMIREKO] =
     {
         .baseHP        = 40,
         .baseAttack    = 65,
@@ -2605,10 +2605,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sZoruaLevelUpLearnset,
         .teachableLearnset = sZoruaTeachableLearnset,
         .formSpeciesIdTable = sZoruaFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ZOROARK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_NORMAL_SUMIREKO}),
     },
 
-    [SPECIES_ZOROARK] =
+    [SPECIES_NORMAL_SUMIREKO] =
     {
         .baseHP        = 60,
         .baseAttack    = 105,
@@ -2953,7 +2953,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_MINCCINO
 
 #if P_FAMILY_GOTHITA
-    [SPECIES_GOTHITA] =
+    [SPECIES_CHIBI_SHION] =
     {
         .baseHP        = 45,
         .baseAttack    = 30,
@@ -3023,10 +3023,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sGothitaLevelUpLearnset,
         .teachableLearnset = sGothitaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_GOTHORITA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_SHION}),
     },
 
-    [SPECIES_GOTHORITA] =
+    [SPECIES_NORMAL_SHION] =
     {
         .baseHP        = 60,
         .baseAttack    = 45,
@@ -3174,7 +3174,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_GOTHITA
 
 #if P_FAMILY_SOLOSIS
-    [SPECIES_SOLOSIS] =
+    [SPECIES_CHIBI_JOON] =
     {
         .baseHP        = 45,
         .baseAttack    = 30,
@@ -3242,10 +3242,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSolosisLevelUpLearnset,
         .teachableLearnset = sSolosisTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_DUOSION}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_JOON}),
     },
 
-    [SPECIES_DUOSION] =
+    [SPECIES_NORMAL_JOON] =
     {
         .baseHP        = 65,
         .baseAttack    = 40,
@@ -3387,7 +3387,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_SOLOSIS
 
 #if P_FAMILY_DUCKLETT
-    [SPECIES_DUCKLETT] =
+    [SPECIES_CHIBI_MIYOI] =
     {
         .baseHP        = 62,
         .baseAttack    = 44,
@@ -3456,10 +3456,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDucklettLevelUpLearnset,
         .teachableLearnset = sDucklettTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_SWANNA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_MIYOI}),
     },
 
-    [SPECIES_SWANNA] =
+    [SPECIES_NORMAL_MIYOI] =
     {
         .baseHP        = 75,
         .baseAttack    = 87,

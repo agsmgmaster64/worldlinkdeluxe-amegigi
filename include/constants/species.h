@@ -576,19 +576,19 @@
 #define SPECIES_CHIBI_NEMUNO                            567
 #define SPECIES_NORMAL_NEMUNO                           568
 #define SPECIES_PLACEHOLD_NEMUNO                        569 // Placeholder
-#define SPECIES_ZORUA                                   570
-#define SPECIES_ZOROARK                                 571
-#define SPECIES_MINCCINO                                572
-#define SPECIES_CINCCINO                                573
-#define SPECIES_GOTHITA                                 574
-#define SPECIES_GOTHORITA                               575
-#define SPECIES_GOTHITELLE                              576
-#define SPECIES_SOLOSIS                                 577
-#define SPECIES_DUOSION                                 578
-#define SPECIES_REUNICLUS                               579
-#define SPECIES_DUCKLETT                                580
-#define SPECIES_SWANNA                                  581
-#define SPECIES_VANILLITE                               582
+#define SPECIES_CHIBI_SUMIREKO                          570
+#define SPECIES_NORMAL_SUMIREKO                         571
+#define SPECIES_MINCCINO                                572 // Placeholder
+#define SPECIES_CINCCINO                                573 // Placeholder
+#define SPECIES_CHIBI_SHION                             574
+#define SPECIES_NORMAL_SHION                            575
+#define SPECIES_GOTHITELLE                              576 // Placeholder
+#define SPECIES_CHIBI_JOON                              577
+#define SPECIES_NORMAL_JOON                             578
+#define SPECIES_REUNICLUS                               579 // Placeholder
+#define SPECIES_CHIBI_MIYOI                             580
+#define SPECIES_NORMAL_MIYOI                            581
+#define SPECIES_VANILLITE                               582 // Placeholder
 #define SPECIES_VANILLISH                               583
 #define SPECIES_VANILLUXE                               584
 #define SPECIES_DEERLING_SPRING                         585

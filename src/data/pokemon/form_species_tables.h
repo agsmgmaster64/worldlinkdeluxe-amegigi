@@ -1243,7 +1243,7 @@ static const u16 sGarbodorFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ZORUA
 static const u16 sZoruaFormSpeciesIdTable[] = {
-    SPECIES_ZORUA,
+    SPECIES_CHIBI_SUMIREKO,
 #if P_HISUIAN_FORMS
     SPECIES_ZORUA_HISUI,
 #endif
@@ -1251,7 +1251,7 @@ static const u16 sZoruaFormSpeciesIdTable[] = {
 };
 
 static const u16 sZoroarkFormSpeciesIdTable[] = {
-    SPECIES_ZOROARK,
+    SPECIES_NORMAL_SUMIREKO,
 #if P_HISUIAN_FORMS
     SPECIES_ZOROARK_HISUI,
 #endif

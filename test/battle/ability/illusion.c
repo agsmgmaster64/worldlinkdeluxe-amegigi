@@ -5,7 +5,7 @@
 SINGLE_BATTLE_TEST("Illusion can only imitate Normal Form terapagos")
 {
     GIVEN {
-        PLAYER(SPECIES_ZOROARK) { Moves(MOVE_CELEBRATE); }
+        PLAYER(SPECIES_NORMAL_SUMIREKO) { Moves(MOVE_CELEBRATE); }
         PLAYER(SPECIES_TERAPAGOS) { Moves(MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
