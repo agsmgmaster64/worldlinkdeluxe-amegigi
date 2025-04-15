@@ -837,9 +837,9 @@ void StartBlockStacker(void)
 {
 	u8 taskId = 0;
     sBlockStacker = AllocZeroed(sizeof(struct BlockStacker));
-    taskId = CreateTask(FadeToBlockStackerScreen, 0);
+    //taskId = CreateTask(FadeToBlockStackerScreen, 0);
 }
-
+/*
 static void FadeToBlockStackerScreen(u8 taskId)
 {
 	switch (gTasks[taskId].data[0])
@@ -864,7 +864,7 @@ static void BlockStackerVBlankCallback(void)
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
 }
-
+*/
 static void BlockStackerMainCallback(void)
 {
     RunTasks();
@@ -873,7 +873,7 @@ static void BlockStackerMainCallback(void)
     RunTextPrinters();
     UpdatePaletteFade();
 }
-
+/*
 static void CreateHighlight(u8 num, u8 row)
 {
 	if ((sBlockStacker->HighlightSpriteIds[num] == 0) && (sBlockStacker->HighlightRow != 8))
@@ -2505,3 +2505,4 @@ static void InitBlockStackerScreen(void)
 	PlaySE(SE_MUGSHOT);
     CreateTask(BlockStackerMain, 1);
 }
+*/

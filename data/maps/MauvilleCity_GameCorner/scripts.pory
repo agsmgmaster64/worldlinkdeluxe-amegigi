@@ -821,8 +821,8 @@ MauvilleCity_GameCorner_EventScript_ChooseNewPrize2::
 
 MauvilleCity_GameCorner_EventScript_ChoiceBand::
 	setvar VAR_TEMP_1, 8
-	bufferitemname STR_VAR_1, ITEM_CHOICE_BAND
-	setvar VAR_0x8004, ITEM_CHOICE_BAND
+	bufferitemname STR_VAR_1, ITEM_CHOICE_RIBBON
+	setvar VAR_0x8004, ITEM_CHOICE_RIBBON
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 	
 MauvilleCity_GameCorner_EventScript_BrightPowder::
@@ -839,38 +839,38 @@ MauvilleCity_GameCorner_EventScript_RareCandy::
 	
 MauvilleCity_GameCorner_EventScript_SunStone::
 	setvar VAR_TEMP_1, 2
-	bufferitemname STR_VAR_1, ITEM_SUN_STONE
-	setvar VAR_0x8004, ITEM_SUN_STONE
+	bufferitemname STR_VAR_1, ITEM_JUST_HEART
+	setvar VAR_0x8004, ITEM_JUST_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 
 MauvilleCity_GameCorner_EventScript_MoonStone::
 	setvar VAR_TEMP_1, 3
-	bufferitemname STR_VAR_1, ITEM_MOON_STONE
-	setvar VAR_0x8004, ITEM_MOON_STONE
+	bufferitemname STR_VAR_1, ITEM_HELPER_HEART
+	setvar VAR_0x8004, ITEM_HELPER_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 
 MauvilleCity_GameCorner_EventScript_ThunderStone::
 	setvar VAR_TEMP_1, 5
-	bufferitemname STR_VAR_1, ITEM_THUNDER_STONE
-	setvar VAR_0x8004, ITEM_THUNDER_STONE
+	bufferitemname STR_VAR_1, ITEM_POWER_HEART
+	setvar VAR_0x8004, ITEM_POWER_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 
 MauvilleCity_GameCorner_EventScript_WaterStone::
 	setvar VAR_TEMP_1, 6
-	bufferitemname STR_VAR_1, ITEM_WATER_STONE
-	setvar VAR_0x8004, ITEM_WATER_STONE
+	bufferitemname STR_VAR_1, ITEM_GUARD_HEART
+	setvar VAR_0x8004, ITEM_GUARD_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 
 MauvilleCity_GameCorner_EventScript_LeafStone::
 	setvar VAR_TEMP_1, 7
-	bufferitemname STR_VAR_1, ITEM_LEAF_STONE
-	setvar VAR_0x8004, ITEM_LEAF_STONE
+	bufferitemname STR_VAR_1, ITEM_SWIFT_HEART
+	setvar VAR_0x8004, ITEM_SWIFT_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 
 MauvilleCity_GameCorner_EventScript_FireStone::
 	setvar VAR_TEMP_1, 4
-	bufferitemname STR_VAR_1, ITEM_FIRE_STONE
-	setvar VAR_0x8004, ITEM_FIRE_STONE
+	bufferitemname STR_VAR_1, ITEM_TECH_HEART
+	setvar VAR_0x8004, ITEM_TECH_HEART
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize	
 
 MauvilleCity_GameCorner_EventScript_ConfirmNewPrize::
@@ -906,10 +906,10 @@ MauvilleCity_GameCorner_EventScript_BuyBrightPowder::
 MauvilleCity_GameCorner_EventScript_BuyChoiceBand::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, CHOICEBAND_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
-	checkitemspace ITEM_CHOICE_BAND
+	checkitemspace ITEM_CHOICE_RIBBON
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 	removecoins CHOICEBAND_COINS
-	additem ITEM_CHOICE_BAND
+	additem ITEM_CHOICE_RIBBON
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -932,10 +932,10 @@ MauvilleCity_GameCorner_EventScript_BuyRareCandy::
 MauvilleCity_GameCorner_EventScript_BuySunStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, SUNSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
-	checkitemspace ITEM_SUN_STONE
+	checkitemspace ITEM_JUST_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 	removecoins SUNSTONE_COINS
-	additem ITEM_SUN_STONE
+	additem ITEM_JUST_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -945,10 +945,10 @@ MauvilleCity_GameCorner_EventScript_BuySunStone::
 MauvilleCity_GameCorner_EventScript_BuyMoonStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, MOONSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
-	checkitemspace ITEM_MOON_STONE
+	checkitemspace ITEM_HELPER_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 	removecoins MOONSTONE_COINS
-	additem ITEM_MOON_STONE
+	additem ITEM_HELPER_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -958,10 +958,10 @@ MauvilleCity_GameCorner_EventScript_BuyMoonStone::
 MauvilleCity_GameCorner_EventScript_BuyFireStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, FIRESTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
-	checkitemspace ITEM_FIRE_STONE
+	checkitemspace ITEM_POWER_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 	removecoins FIRESTONE_COINS
-	additem ITEM_FIRE_STONE
+	additem ITEM_POWER_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -971,10 +971,10 @@ MauvilleCity_GameCorner_EventScript_BuyFireStone::
 MauvilleCity_GameCorner_EventScript_BuyThunderStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, THUNDERSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
-	checkitemspace ITEM_THUNDER_STONE
+	checkitemspace ITEM_GUARD_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 	removecoins THUNDERSTONE_COINS
-	additem ITEM_THUNDER_STONE
+	additem ITEM_GUARD_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -984,10 +984,10 @@ MauvilleCity_GameCorner_EventScript_BuyThunderStone::
 MauvilleCity_GameCorner_EventScript_BuyWaterStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, WATERSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
-	checkitemspace ITEM_WATER_STONE
+	checkitemspace ITEM_SWIFT_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 	removecoins WATERSTONE_COINS
-	additem ITEM_WATER_STONE
+	additem ITEM_SWIFT_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -997,10 +997,10 @@ MauvilleCity_GameCorner_EventScript_BuyWaterStone::
 MauvilleCity_GameCorner_EventScript_BuyLeafStone::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, LEAFSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
-	checkitemspace ITEM_LEAF_STONE
+	checkitemspace ITEM_TECH_HEART
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 	removecoins LEAFSTONE_COINS
-	additem ITEM_LEAF_STONE
+	additem ITEM_TECH_HEART
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT

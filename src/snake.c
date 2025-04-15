@@ -354,8 +354,8 @@ static EWRAM_DATA struct Snake *sSnake = NULL;
 static EWRAM_DATA u8 sTextWindowId = 0;
 
 static void FadeToSnakeScreen(u8 taskId);
-static void InitSnakeScreen(void);
-static void DerbyVBlankCallback(void);
+//static void InitSnakeScreen(void);
+//static void DerbyVBlankCallback(void);
 
 static const u8 sTestText[] = _("TEST");
 
@@ -907,7 +907,7 @@ static void FadeToSnakeScreen(u8 taskId)
     case 1:
         if (!gPaletteFade.active)
         {
-            SetMainCallback2(InitSnakeScreen);
+            //SetMainCallback2(InitSnakeScreen);
             DestroyTask(taskId);
         }
         break;
@@ -929,7 +929,7 @@ static void SnakeMainCallback(void)
     RunTextPrinters();
     UpdatePaletteFade();
 }
-
+/*
 static void HandleInput(void)
 {
 	if (sSnake->ToggleButtons == 1) 
@@ -2385,3 +2385,4 @@ static void InitSnakeScreen(void)
     SetMainCallback2(SnakeMainCallback);
     CreateTask(SnakeMain, 1);
 }
+*/

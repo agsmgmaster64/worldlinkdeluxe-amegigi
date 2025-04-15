@@ -1645,9 +1645,9 @@ MauvilleCity_GameCorner_EventScript_ChoiceBand::
 # 823 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 8
 # 824 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_CHOICE_BAND
+	bufferitemname STR_VAR_1, ITEM_CHOICE_RIBBON
 # 825 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_CHOICE_BAND
+	setvar VAR_0x8004, ITEM_CHOICE_RIBBON
 # 826 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 827 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1681,9 +1681,9 @@ MauvilleCity_GameCorner_EventScript_SunStone::
 # 841 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 2
 # 842 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_SUN_STONE
+	bufferitemname STR_VAR_1, ITEM_JUST_HEART
 # 843 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_SUN_STONE
+	setvar VAR_0x8004, ITEM_JUST_HEART
 # 844 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 845 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1693,9 +1693,9 @@ MauvilleCity_GameCorner_EventScript_MoonStone::
 # 847 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 3
 # 848 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_MOON_STONE
+	bufferitemname STR_VAR_1, ITEM_HELPER_HEART
 # 849 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_MOON_STONE
+	setvar VAR_0x8004, ITEM_HELPER_HEART
 # 850 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 851 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1705,9 +1705,9 @@ MauvilleCity_GameCorner_EventScript_ThunderStone::
 # 853 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 5
 # 854 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_THUNDER_STONE
+	bufferitemname STR_VAR_1, ITEM_POWER_HEART
 # 855 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_THUNDER_STONE
+	setvar VAR_0x8004, ITEM_POWER_HEART
 # 856 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 857 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1717,9 +1717,9 @@ MauvilleCity_GameCorner_EventScript_WaterStone::
 # 859 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 6
 # 860 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_WATER_STONE
+	bufferitemname STR_VAR_1, ITEM_GUARD_HEART
 # 861 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_WATER_STONE
+	setvar VAR_0x8004, ITEM_GUARD_HEART
 # 862 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 863 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1729,9 +1729,9 @@ MauvilleCity_GameCorner_EventScript_LeafStone::
 # 865 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 7
 # 866 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_LEAF_STONE
+	bufferitemname STR_VAR_1, ITEM_SWIFT_HEART
 # 867 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_LEAF_STONE
+	setvar VAR_0x8004, ITEM_SWIFT_HEART
 # 868 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize
 # 869 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1741,9 +1741,9 @@ MauvilleCity_GameCorner_EventScript_FireStone::
 # 871 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_TEMP_1, 4
 # 872 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_FIRE_STONE
+	bufferitemname STR_VAR_1, ITEM_TECH_HEART
 # 873 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_0x8004, ITEM_FIRE_STONE
+	setvar VAR_0x8004, ITEM_TECH_HEART
 # 874 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto MauvilleCity_GameCorner_EventScript_ConfirmNewPrize	
 # 875 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1815,13 +1815,13 @@ MauvilleCity_GameCorner_EventScript_BuyChoiceBand::
 # 908 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, CHOICEBAND_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
 # 909 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_CHOICE_BAND
+	checkitemspace ITEM_CHOICE_RIBBON
 # 910 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 # 911 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins CHOICEBAND_COINS
 # 912 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_CHOICE_BAND
+	additem ITEM_CHOICE_RIBBON
 # 913 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 914 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1867,13 +1867,13 @@ MauvilleCity_GameCorner_EventScript_BuySunStone::
 # 934 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, SUNSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
 # 935 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_SUN_STONE
+	checkitemspace ITEM_JUST_HEART
 # 936 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 # 937 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins SUNSTONE_COINS
 # 938 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_SUN_STONE
+	additem ITEM_JUST_HEART
 # 939 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 940 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1893,13 +1893,13 @@ MauvilleCity_GameCorner_EventScript_BuyMoonStone::
 # 947 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, MOONSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew
 # 948 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_MOON_STONE
+	checkitemspace ITEM_HELPER_HEART
 # 949 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew
 # 950 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins MOONSTONE_COINS
 # 951 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_MOON_STONE
+	additem ITEM_HELPER_HEART
 # 952 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 953 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1919,13 +1919,13 @@ MauvilleCity_GameCorner_EventScript_BuyFireStone::
 # 960 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, FIRESTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
 # 961 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_FIRE_STONE
+	checkitemspace ITEM_POWER_HEART
 # 962 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 # 963 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins FIRESTONE_COINS
 # 964 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_FIRE_STONE
+	additem ITEM_POWER_HEART
 # 965 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 966 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1945,13 +1945,13 @@ MauvilleCity_GameCorner_EventScript_BuyThunderStone::
 # 973 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, THUNDERSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
 # 974 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_THUNDER_STONE
+	checkitemspace ITEM_GUARD_HEART
 # 975 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 # 976 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins THUNDERSTONE_COINS
 # 977 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_THUNDER_STONE
+	additem ITEM_GUARD_HEART
 # 978 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 979 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1971,13 +1971,13 @@ MauvilleCity_GameCorner_EventScript_BuyWaterStone::
 # 986 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, WATERSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
 # 987 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_WATER_STONE
+	checkitemspace ITEM_SWIFT_HEART
 # 988 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 # 989 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins WATERSTONE_COINS
 # 990 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_WATER_STONE
+	additem ITEM_SWIFT_HEART
 # 991 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 992 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1997,13 +1997,13 @@ MauvilleCity_GameCorner_EventScript_BuyLeafStone::
 # 999 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_lt VAR_TEMP_2, LEAFSTONE_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForNew2
 # 1000 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	checkitemspace ITEM_LEAF_STONE
+	checkitemspace ITEM_TECH_HEART
 # 1001 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForNew2
 # 1002 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	removecoins LEAFSTONE_COINS
 # 1003 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	additem ITEM_LEAF_STONE
+	additem ITEM_TECH_HEART
 # 1004 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 1005 "data/maps/MauvilleCity_GameCorner/scripts.pory"

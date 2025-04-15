@@ -1546,12 +1546,7 @@ static void CreateCreditSprites(void)
 
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_Interface) - 1; i++)  
     {
-        struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_Interface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
-        s.size = sSpriteSheets_Interface[i].size;
-        s.tag = sSpriteSheets_Interface[i].tag;
-        LoadSpriteSheet(&s);
+		LoadCompressedSpriteSheet(&sSpriteSheets_Interface[i]);
     }
 
     for (i = 0; i < MAX_COIN_DIGITS; i++)
@@ -1581,12 +1576,7 @@ static void CreatePlayerSprites(void)
 
     for (i = 0; i < ARRAY_COUNT(sSpriteSheets_PlayerInterface) - 1; i++)  
     {
-        struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheets_PlayerInterface[i].data, gDecompressionBuffer);
-        s.data = gDecompressionBuffer;
-        s.size = sSpriteSheets_PlayerInterface[i].size;
-        s.tag = sSpriteSheets_PlayerInterface[i].tag;
-        LoadSpriteSheet(&s);
+		LoadCompressedSpriteSheet(&sSpriteSheets_PlayerInterface[i]);
     }
 
     for (i = 0; i < 4; i++)
@@ -1598,39 +1588,21 @@ static void CreatePlayerSprites(void)
 
 static void CreateCTA(void)
 {
-		struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Press_A.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Press_A.size;
-		s.tag = GFXTAG_PRESS_A;
-		LoadSpriteSheet(&s);
-	
+	LoadCompressedSpriteSheet(&sSpriteSheet_Press_A);
 	sGacha->CTAspriteId = CreateSprite(&sSpriteTemplate_Press_A, 152, 116, 0);
 	gSprites[sGacha->CTAspriteId].animNum = 0; // Off
 }
 
 static void CreateArrows(void)
 {
-		struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Arrows.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Arrows.size;
-		s.tag = GFXTAG_ARROWS;
-		LoadSpriteSheet(&s);
-	
+	LoadCompressedSpriteSheet(&sSpriteSheet_Arrows);
 	sGacha->ArrowsSpriteId = CreateSprite(&sSpriteTemplate_Arrows, 207 + 24, 120, 0);
 	gSprites[sGacha->ArrowsSpriteId].animNum = 1; // Only Up
 }
 
 static void CreateLotteryJPN(void)
 {
-		struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Lottery_JPN.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Lottery_JPN.size;
-		s.tag = LOTTERY_JPN_GFX;
-		LoadSpriteSheet(&s);
-	
+	LoadCompressedSpriteSheet(&sSpriteSheet_Lottery_JPN);
 	sGacha->LotteryJPNspriteId = CreateSprite(&sSpriteTemplate_Lottery_JPN, 176, 32, 0);
 }
 
@@ -1640,14 +1612,8 @@ static void CreateHoppip(void)
 	s16 y = 56;
 	s16 x2 = x + 34;
 	s16 x3 = x + 68;
-	
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Hoppip.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Hoppip.size;
-		s.tag = GFXTAG_HOPPIP;
-		LoadSpriteSheet(&s);
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Hoppip);
 	sGacha->PokemonOneSpriteId = CreateSprite(&sSpriteTemplate_Hoppip, x, y, 0);
 	sGacha->PokemonTwoSpriteId = CreateSprite(&sSpriteTemplate_Hoppip, x2, y, 0);	
 	sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Hoppip, x3, y, 0);	
@@ -1659,14 +1625,8 @@ static void CreateElekid(void)
 	s16 y = 56 + 2;
 	s16 x2 = x + 34;
 	s16 x3 = x + 68;
-	
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Elekid.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Elekid.size;
-		s.tag = GFXTAG_ELEKID;
-		LoadSpriteSheet(&s);
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Elekid);
 	sGacha->PokemonOneSpriteId = CreateSprite(&sSpriteTemplate_Elekid, x, y, 0);
 	sGacha->PokemonTwoSpriteId = CreateSprite(&sSpriteTemplate_Elekid, x2, y, 0);
 	sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Elekid, x3, y, 0);	
@@ -1678,14 +1638,8 @@ static void CreateTeddiursa(void)
 	s16 y = 56;
 	s16 x2 = x + 34;
 	s16 x3 = x + 68;
-	
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Teddiursa.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Teddiursa.size;
-		s.tag = GFXTAG_TEDDIURSA;
-		LoadSpriteSheet(&s);
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Teddiursa);
 	sGacha->PokemonOneSpriteId = CreateSprite(&sSpriteTemplate_Teddiursa, x, y, 0);
 	sGacha->PokemonTwoSpriteId = CreateSprite(&sSpriteTemplate_Teddiursa, x2, y, 0);	
 	sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Teddiursa, x3, y, 0);
@@ -1697,14 +1651,8 @@ static void CreatePhanpy(void)
 	s16 y = 56;
 	s16 x2 = x + 34;
 	s16 x3 = x + 68;
-	
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Phanpy.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Phanpy.size;
-		s.tag = GFXTAG_PHANPY;
-		LoadSpriteSheet(&s);
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Phanpy);
 	sGacha->PokemonOneSpriteId = CreateSprite(&sSpriteTemplate_Phanpy, x, y, 0);
 	sGacha->PokemonTwoSpriteId = CreateSprite(&sSpriteTemplate_Phanpy, x2, y, 0);
 	sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Phanpy, x3, y, 0);
@@ -1716,14 +1664,8 @@ static void CreateBelossom(void)
 	s16 y = 56;
 	s16 x2 = x + 34;
 	s16 x3 = x + 68;
-	
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Belossom.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Belossom.size;
-		s.tag = GFXTAG_BELOSSOM;
-		LoadSpriteSheet(&s);
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Belossom);
 	sGacha->PokemonOneSpriteId = CreateSprite(&sSpriteTemplate_Belossom, x, y, 0);
 	sGacha->PokemonTwoSpriteId = CreateSprite(&sSpriteTemplate_Belossom, x2, y, 0);	
 	sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Belossom, x3, y, 0);
@@ -1732,13 +1674,7 @@ static void CreateBelossom(void)
 
 static void CreateDigitalText(void)
 {
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Digital_Text.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Digital_Text.size;
-		s.tag = DIGITAL_TEXT_GFX;
-		LoadSpriteSheet(&s);
-	
+    LoadCompressedSpriteSheet(&sSpriteSheet_Digital_Text);
 	sGacha->DigitalTextSpriteId = CreateSprite(&sSpriteTemplate_Digital_Text, 64, 25, 0);
 }
 
@@ -1748,54 +1684,27 @@ static void CreateCreditMenu(void)
 	s16 y = 128;
 	s16 x2 = x + 64;
 	u8 priority = 1;
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Menu_1);
 	if (sGacha->GachaId == 1) // Basic
 	{
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Menu_1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_1.size;
-		s.tag = GFXTAG_MENU_1;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Basic, x, y, priority);
-	gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
+        sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Basic, x, y, priority);
+        gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
 	}
 	else if (sGacha->GachaId == 2) // Great
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_1.size;
-		s.tag = GFXTAG_MENU_1;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Great, x, y, priority);
-	gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
+        sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Great, x, y, priority);
+        gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
 	}
 	else if (sGacha->GachaId == 3) // Ultra
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_1.size;
-		s.tag = GFXTAG_MENU_1;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Ultra, x, y, priority);
-	gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
+        sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Ultra, x, y, priority);
+        gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
 	}
 	else // Master
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_1.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_1.size;
-		s.tag = GFXTAG_MENU_1;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Master, x, y, priority);
-	gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
+        sGacha->CreditMenu1Id = CreateSprite(&sSpriteTemplate_Menu_1_Master, x, y, priority);
+        gSprites[sGacha->CreditMenu1Id].oam.priority = 1;
 	}
 }
 
@@ -1805,66 +1714,33 @@ static void CreatePlayerMenu(void)
 	s16 y = 128;
 	s16 x2 = x + 64;
 	u8 priority = 1;
-	
+
+    LoadCompressedSpriteSheet(&sSpriteSheet_Menu_2);
 	if (sGacha->GachaId == 1) // Basic
 	{
-	struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Menu_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_2.size;
-		s.tag = GFXTAG_MENU_2;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Basic, x2, y, priority);
-	gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
+        sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Basic, x2, y, priority);
+        gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
 	}
 	else if (sGacha->GachaId == 2) // Great
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_2.size;
-		s.tag = GFXTAG_MENU_2;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Great, x2, y, priority);
-	gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
+        sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Great, x2, y, priority);
+        gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
 	}
 	else if (sGacha->GachaId == 3) // Ultra
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_2.size;
-		s.tag = GFXTAG_MENU_2;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Ultra, x2, y, priority);
-	gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
+        sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Ultra, x2, y, priority);
+        gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
 	}
 	else // Master
 	{
-	struct SpriteSheet s;	
-        LZ77UnCompWram(sSpriteSheet_Menu_2.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Menu_2.size;
-		s.tag = GFXTAG_MENU_2;
-		LoadSpriteSheet(&s);
-	
-	sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Master, x2, y, priority);
-	gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
+        sGacha->CreditMenu2Id = CreateSprite(&sSpriteTemplate_Menu_2_Master, x2, y, priority);
+        gSprites[sGacha->CreditMenu2Id].oam.priority = 1;
 	}
 }
 
 static void CreateKnob(void)
 {
-		struct SpriteSheet s;
-        LZ77UnCompWram(sSpriteSheet_Knob.data, gDecompressionBuffer);
-		s.data = gDecompressionBuffer;
-		s.size = sSpriteSheet_Knob.size;
-		s.tag = KNOB_GFX;
-		LoadSpriteSheet(&s);
-	
+    LoadCompressedSpriteSheet(&sSpriteSheet_Knob);
 	sGacha->KnobSpriteId = CreateSprite(&sSpriteTemplate_Knob, 76, 128, 0);
 	gSprites[sGacha->KnobSpriteId].animNum = 0; // No Rotation
 }
@@ -1872,623 +1748,138 @@ static void CreateKnob(void)
 typedef struct  {
     int customNumber;
     u16 species;
-} SpeciesBasicA;
+} SpeciesGacha;
 
-static const SpeciesBasicA SpeciesBasicCommon[] = {
-    {0, SPECIES_SUNKERN},
-    {1, SPECIES_AZURILL},
-    {2, SPECIES_CATERPIE},
-    {3, SPECIES_WURMPLE},
-    {4, SPECIES_IGGLYBUFF},
-    {5, SPECIES_WOOPER},
-    {6, SPECIES_MAGIKARP},
-    {7, SPECIES_SENTRET},
-    {8, SPECIES_CLEFFA},
-    {9, SPECIES_POOCHYENA},
-    {10, SPECIES_LOTAD},
-    {11, SPECIES_SEEDOT},
-    {12, SPECIES_ZIGZAGOON},
-    {13, SPECIES_WHISMUR},
-    {14, SPECIES_ZUBAT},
-    {15, SPECIES_SPINARAK},
-    {16, SPECIES_HOPPIP},
-    {17, SPECIES_PIDGEY},
-    {18, SPECIES_RATTATA},
-    {19, SPECIES_SPEAROW},
-    {20, SPECIES_HOOTHOOT},
-    {21, SPECIES_LEDYBA},
-    {22, SPECIES_SURSKIT},
-    {23, SPECIES_TAILLOW},
-    {24, SPECIES_WINGULL},
-    {25, SPECIES_NIDORAN_M},
-    {26, SPECIES_NIDORAN_F},
-    {27, SPECIES_PARAS},
-    {28, SPECIES_SHROOMISH},
-    {29, SPECIES_POLIWAG},
-    {30, SPECIES_BELLSPROUT},
-    {31, SPECIES_VENONAT},
-    {32, SPECIES_SMOOCHUM},
-    {33, SPECIES_ODDISH},
-    {34, SPECIES_PSYDUCK},
-    {35, SPECIES_GOLDEEN},
-    {36, SPECIES_FEEBAS}
+static const SpeciesGacha SpeciesBasicCommon[] = {
+    {0, SPECIES_CHIBI_DAIYOUSEI},
+    {1, SPECIES_CHIBI_CIRNO},
+    {2, SPECIES_CHIBI_RUMIA},
+    {3, SPECIES_CHIBI_HINA},
+    {4, SPECIES_CHIBI_WAKASAGIHIME},
+    {5, SPECIES_CHIBI_KAGEROU},
+    {6, SPECIES_CHIBI_CHEN},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesBasicB;
-
-static const SpeciesBasicB SpeciesBasicUncommon[] = {
-    {0, SPECIES_METAPOD},
-    {1, SPECIES_KAKUNA},
-    {2, SPECIES_PICHU},
-    {3, SPECIES_SILCOON},
-    {4, SPECIES_CASCOON},
-    {5, SPECIES_MAKUHITA},
-    {6, SPECIES_MARILL},
-    {7, SPECIES_SLUGMA},
-    {8, SPECIES_SWINUB},
-    {9, SPECIES_DIGLETT},
-    {10, SPECIES_MAREEP},
-    {11, SPECIES_MEDITITE},
-    {12, SPECIES_EKANS},
-    {13, SPECIES_BARBOACH},
-    {14, SPECIES_HORSEA},
-    {15, SPECIES_SANDSHREW},
-    {16, SPECIES_GEODUDE},
-    {17, SPECIES_GULPIN},
-    {18, SPECIES_MANKEY},
-    {19, SPECIES_MACHOP},
-    {20, SPECIES_SHELLDER},
-    {21, SPECIES_GRIMER},
-    {22, SPECIES_VOLTORB},
-    {23, SPECIES_PLUSLE},
-    {24, SPECIES_MINUN},
-    {25, SPECIES_NATU},
-    {26, SPECIES_NINCADA},
-    {27, SPECIES_SPOINK}
+static const SpeciesGacha SpeciesBasicUncommon[] = {
+    {0, SPECIES_CHIBI_SHIZUHA},
+    {1, SPECIES_CHIBI_MINORIKO},
+    {2, SPECIES_CHIBI_SEKIBANKI},
+    {3, SPECIES_CHIBI_NITORI},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesBasicC;
-
-static const SpeciesBasicC SpeciesBasicRare[] = {
-    {0, SPECIES_RALTS},
-    {1, SPECIES_TYROGUE},
-    {2, SPECIES_SKITTY},
-    {3, SPECIES_SLAKOTH},
-    {4, SPECIES_MEOWTH},
-    {5, SPECIES_PINECO},
-    {6, SPECIES_TRAPINCH},
-    {7, SPECIES_SPHEAL},
-    {8, SPECIES_VULPIX},
-    {9, SPECIES_SNUBBULL},
-    {10, SPECIES_REMORAID},
-    {11, SPECIES_CORPHISH},
-    {12, SPECIES_ABRA},
-    {13, SPECIES_ELEKID},
-    {14, SPECIES_MAGBY},
-    {15, SPECIES_CORSOLA}
+static const SpeciesGacha SpeciesBasicRare[] = {
+    {0, SPECIES_CHIBI_TEWI},
+    {1, SPECIES_CHIBI_ELLY},
+    {2, SPECIES_CHIBI_KOMACHI},
+    {3, SPECIES_CHIBI_YAMAME},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesBasicD;
-
-static const SpeciesBasicD SpeciesBasicUltraRare[] = {
-    {0, SPECIES_TOGEPI},
-    {1, SPECIES_CHARMANDER},
-    {2, SPECIES_CYNDAQUIL},
-    {3, SPECIES_TREECKO},
-    {4, SPECIES_TORCHIC},
-    {5, SPECIES_MUDKIP},
-    {6, SPECIES_SQUIRTLE},
-    {7, SPECIES_TOTODILE},
-    {8, SPECIES_BULBASAUR},
-    {9, SPECIES_CHIKORITA},
-    {10, SPECIES_SHUCKLE}
+static const SpeciesGacha SpeciesBasicUltraRare[] = {
+    {0, SPECIES_CHIBI_ALICE},
+    {1, SPECIES_CHIBI_REISEN},
+    {2, SPECIES_CHIBI_SANAE},
+    {3, SPECIES_CHIBI_REIMU},
+    {4, SPECIES_CHIBI_MARISA},
+    {5, SPECIES_CHIBI_SAKUYA},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesGreatA;
-
-static const SpeciesGreatA SpeciesGreatCommon[] = {
-    {0, SPECIES_JIGGLYPUFF},
-    {1, SPECIES_CLEFAIRY},
-    {2, SPECIES_KIRLIA},
-    {3, SPECIES_ELECTRIKE},
-    {4, SPECIES_SHUPPET},
-    {5, SPECIES_DUSKULL},
-    {6, SPECIES_SHELLDER},
-    {7, SPECIES_MACHOP},
-    {8, SPECIES_MANKEY},
-    {9, SPECIES_GULPIN},
-    {10, SPECIES_MAREEP},
-    {11, SPECIES_PINECO},
-    {12, SPECIES_REMORAID},
-    {13, SPECIES_CARVANHA},
-    {14, SPECIES_NUMEL},
-    {15, SPECIES_CORPHISH},
-    {16, SPECIES_SWABLU},
-    {17, SPECIES_SLOWPOKE},
-    {18, SPECIES_PIKACHU},
-    {19, SPECIES_PSYDUCK},
-    {20, SPECIES_GRIMER},
-    {21, SPECIES_KRABBY},
-    {22, SPECIES_EXEGGCUTE},
-    {23, SPECIES_VOLTORB},
-    {24, SPECIES_NATU},
-    {25, SPECIES_PHANPY},
-    {26, SPECIES_ARON},
-    {27, SPECIES_SPOINK},
-    {28, SPECIES_TENTACOOL},
-    {29, SPECIES_KOFFING},
-    {30, SPECIES_SKIPLOOM},
-    {31, SPECIES_LOMBRE},
-    {32, SPECIES_NUZLEAF},
-    {33, SPECIES_RHYHORN},
-    {34, SPECIES_CLAMPERL},
-    {35, SPECIES_PIDGEOTTO},
-    {36, SPECIES_ELEKID},
-    {37, SPECIES_LOUDRED},
-    {38, SPECIES_NIDORINA},
-    {39, SPECIES_NIDORINO},
-    {40, SPECIES_MAGBY},
-    {41, SPECIES_POLIWHIRL},
-    {42, SPECIES_ONIX},
-    {43, SPECIES_GRAVELER},
-    {44, SPECIES_GLOOM},
-    {45, SPECIES_PLUSLE},
-    {46, SPECIES_MINUN},
-    {47, SPECIES_PONYTA},
-    {48, SPECIES_FURRET},
-    {49, SPECIES_LINOONE},
-    {50, SPECIES_SUNFLORA},
-    {51, SPECIES_CHIMECHO},
-    {52, SPECIES_QUAGSIRE},
-    {53, SPECIES_TAILLOW},
-    {54, SPECIES_PELIPPER},
-    {55, SPECIES_PERSIAN},
-    {56, SPECIES_SEADRA},
-    {57, SPECIES_NOCTOWL},
-    {58, SPECIES_SANDSLASH},
-    {59, SPECIES_VENOMOTH},
-    {60, SPECIES_SEAKING},
-    {61, SPECIES_GOLBAT},
-    {62, SPECIES_TYROGUE},
-    {63, SPECIES_TORKOAL},
-    {64, SPECIES_ELECTRODE}
+static const SpeciesGacha SpeciesGreatCommon[] = {
+    {0, SPECIES_CHIBI_DAIYOUSEI},
+    {1, SPECIES_CHIBI_CIRNO},
+    {2, SPECIES_CHIBI_RUMIA},
+    {3, SPECIES_CHIBI_HINA},
+    {4, SPECIES_CHIBI_WAKASAGIHIME},
+    {5, SPECIES_CHIBI_KAGEROU},
+    {6, SPECIES_CHIBI_CHEN},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesGreatB;
-
-static const SpeciesGreatB SpeciesGreatUncommon[] = {
-    {0, SPECIES_FEEBAS},
-    {1, SPECIES_BALTOY},
-    {2, SPECIES_SNORUNT},
-    {3, SPECIES_DODUO},
-    {4, SPECIES_GASTLY},
-    {5, SPECIES_ABRA},
-    {6, SPECIES_CUBONE},
-    {7, SPECIES_MAGNEMITE},
-    {8, SPECIES_SEEL},
-    {9, SPECIES_DROWZEE},
-    {10, SPECIES_CHINCHOU},
-    {11, SPECIES_TEDDIURSA},
-    {12, SPECIES_HOUNDOUR},
-    {13, SPECIES_CACNEA},
-    {14, SPECIES_GROWLITHE},
-    {15, SPECIES_SPINDA},
-    {16, SPECIES_FLAAFFY},
-    {17, SPECIES_CORSOLA},
-    {18, SPECIES_DELCATTY},
-    {19, SPECIES_DUSTOX},
-    {20, SPECIES_WEEPINBELL},
-    {21, SPECIES_LEDIAN},
-    {22, SPECIES_ARIADOS},
-    {23, SPECIES_BUTTERFREE},
-    {24, SPECIES_BEEDRILL},
-    {25, SPECIES_BEAUTIFLY},
-    {26, SPECIES_VOLBEAT},
-    {27, SPECIES_ILLUMISE},
-    {28, SPECIES_ROSELIA},
-    {29, SPECIES_WAILMER},
-    {30, SPECIES_MACHOKE},
-    {31, SPECIES_MURKROW},
-    {32, SPECIES_MAGCARGO},
-    {33, SPECIES_RATICATE},
-    {34, SPECIES_MASQUERAIN},
-    {35, SPECIES_MIGHTYENA},
-    {36, SPECIES_CASTFORM},
-    {37, SPECIES_GLIGAR},
-    {38, SPECIES_QWILFISH},
-    {39, SPECIES_TANGELA},
-    {40, SPECIES_VIGOROTH},
-    {41, SPECIES_FEAROW},
-    {42, SPECIES_PILOSWINE},
-    {43, SPECIES_PRIMEAPE},
-    {44, SPECIES_BRELOOM},
-    {45, SPECIES_TROPIUS},
-    {46, SPECIES_STANTLER},
-    {47, SPECIES_SWALOT},
-    {48, SPECIES_XATU},
-    {49, SPECIES_GRUMPIG},
-    {50, SPECIES_HARIYAMA},
-    {51, SPECIES_GOLDUCK}
+static const SpeciesGacha SpeciesGreatUncommon[] = {
+    {0, SPECIES_CHIBI_SHIZUHA},
+    {1, SPECIES_CHIBI_MINORIKO},
+    {2, SPECIES_CHIBI_SEKIBANKI},
+    {3, SPECIES_CHIBI_NITORI},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesGreatC;
-
-static const SpeciesGreatC SpeciesGreatRare[] = {
-    {0, SPECIES_DRATINI},
-    {1, SPECIES_LARVITAR},
-    {2, SPECIES_BAGON},
-    {3, SPECIES_TOGEPI},
-    {4, SPECIES_CHARMANDER},
-    {5, SPECIES_CYNDAQUIL},
-    {6, SPECIES_TREECKO},
-    {7, SPECIES_TORCHIC},
-    {8, SPECIES_MUDKIP},
-    {9, SPECIES_SQUIRTLE},
-    {10, SPECIES_TOTODILE},
-    {11, SPECIES_BULBASAUR},
-    {12, SPECIES_CHIKORITA},
-    {13, SPECIES_LUVDISC},
-    {14, SPECIES_STARYU},
-    {15, SPECIES_VIBRAVA},
-    {16, SPECIES_FARFETCHD},
-    {17, SPECIES_AIPOM},
-    {18, SPECIES_NOSEPASS},
-    {19, SPECIES_SABLEYE},
-    {20, SPECIES_MAWILE},
-    {21, SPECIES_YANMA},
-    {22, SPECIES_KADABRA},
-    {23, SPECIES_DUGTRIO},
-    {24, SPECIES_HAUNTER},
-    {25, SPECIES_SUDOWOODO},
-    {26, SPECIES_KECLEON},
-    {27, SPECIES_MEDICHAM},
-    {28, SPECIES_SEALEO},
-    {29, SPECIES_DUNSPARCE},
-    {30, SPECIES_SNEASEL},
-    {31, SPECIES_ZANGOOSE},
-    {32, SPECIES_SEVIPER},
-    {33, SPECIES_MANTINE},
-    {34, SPECIES_SKARMORY},
-    {35, SPECIES_OCTILLERY},
-    {36, SPECIES_RELICANTH},
-    {37, SPECIES_MILTANK},
-    {38, SPECIES_SCYTHER},
-    {39, SPECIES_PINSIR},
-    {40, SPECIES_SHUCKLE}
+static const SpeciesGacha SpeciesGreatRare[] = {
+    {0, SPECIES_CHIBI_TEWI},
+    {1, SPECIES_CHIBI_ELLY},
+    {2, SPECIES_CHIBI_KOMACHI},
+    {3, SPECIES_CHIBI_YAMAME},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesGreatD;
-
-static const SpeciesGreatD SpeciesGreatUltraRare[] = {
-    {0, SPECIES_WYNAUT},
-    {1, SPECIES_DELIBIRD},
-    {2, SPECIES_PORYGON},
-    {3, SPECIES_IVYSAUR},
-    {4, SPECIES_CHARMELEON},
-    {5, SPECIES_WARTORTLE},
-    {6, SPECIES_BAYLEEF},
-    {7, SPECIES_QUILAVA},
-    {8, SPECIES_CROCONAW},
-    {9, SPECIES_GROVYLE},
-    {10, SPECIES_COMBUSKEN},
-    {11, SPECIES_MARSHTOMP},
-    {12, SPECIES_PUPITAR},
-    {13, SPECIES_DRAGONAIR},
-    {14, SPECIES_SHELGON},
-    {15, SPECIES_METANG},
-    {16, SPECIES_MR_MIME},
-    {17, SPECIES_HERACROSS}
+static const SpeciesGacha SpeciesGreatUltraRare[] = {
+    {0, SPECIES_CHIBI_ALICE},
+    {1, SPECIES_CHIBI_REISEN},
+    {2, SPECIES_CHIBI_SANAE},
+    {3, SPECIES_CHIBI_REIMU},
+    {4, SPECIES_CHIBI_MARISA},
+    {5, SPECIES_CHIBI_SAKUYA},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesUltraA;
-
-static const SpeciesUltraA SpeciesUltraCommon[] = {
-    {0, SPECIES_KRABBY},
-    {1, SPECIES_EXEGGCUTE},
-    {2, SPECIES_MAGNEMITE},
-    {3, SPECIES_TEDDIURSA},
-    {4, SPECIES_ARIADOS},
-    {5, SPECIES_PARASECT},
-    {6, SPECIES_DUGTRIO},
-    {7, SPECIES_SUDOWOODO},
-    {8, SPECIES_MAGCARGO},
-    {9, SPECIES_MEDICHAM},
-    {10, SPECIES_SEALEO},
-    {11, SPECIES_MASQUERAIN},
-    {12, SPECIES_MIGHTYENA},
-    {13, SPECIES_LINOONE},
-    {14, SPECIES_CASTFORM},
-    {15, SPECIES_SUNFLORA},
-    {16, SPECIES_CHIMECHO},
-    {17, SPECIES_SWELLOW},
-    {18, SPECIES_PELIPPER},
-    {19, SPECIES_LAIRON},
-    {20, SPECIES_WIGGLYTUFF},
-    {21, SPECIES_ARBOK},
-    {22, SPECIES_KECLEON},
-    {23, SPECIES_FEAROW},
-    {24, SPECIES_SANDSLASH},
-    {25, SPECIES_SEAKING},
-    {26, SPECIES_NINJASK},
-    {27, SPECIES_ZANGOOSE},
-    {28, SPECIES_SEVIPER},
-    {29, SPECIES_DODRIO},
-    {30, SPECIES_LANTURN},
-    {31, SPECIES_JUMPLUFF},
-    {32, SPECIES_BRELOOM},
-    {33, SPECIES_SHARPEDO},
-    {34, SPECIES_CAMERUPT},
-    {35, SPECIES_SWALOT},
-    {36, SPECIES_CRAWDAUNT},
-    {37, SPECIES_XATU},
-    {38, SPECIES_TORKOAL},
-    {39, SPECIES_GRUMPIG},
-    {40, SPECIES_HARIYAMA},
-    {41, SPECIES_KINGLER},
-    {42, SPECIES_PIDGEOT},
-    {43, SPECIES_CLEFABLE},
-    {44, SPECIES_HYPNO},
-    {45, SPECIES_RAICHU},
-    {46, SPECIES_RHYDON},
-    {47, SPECIES_VILEPLUME},
-    {48, SPECIES_VICTREEBEL},
-    {49, SPECIES_BELLOSSOM},
-    {50, SPECIES_MILTANK},
-    {51, SPECIES_GOLEM},
-    {52, SPECIES_GOLDUCK},
-    {53, SPECIES_RAPIDASH},
-    {54, SPECIES_WAILORD},
-    {55, SPECIES_NIDOQUEEN},
-    {56, SPECIES_NIDOKING},
-    {57, SPECIES_NINETALES},
-    {58, SPECIES_MACHAMP},
-    {59, SPECIES_POLIWRATH},
-    {60, SPECIES_TENTACRUEL},
-    {61, SPECIES_EXEGGUTOR},
-    {62, SPECIES_CLOYSTER}
+static const SpeciesGacha SpeciesUltraCommon[] = {
+    {0, SPECIES_CHIBI_DAIYOUSEI},
+    {1, SPECIES_CHIBI_CIRNO},
+    {2, SPECIES_CHIBI_RUMIA},
+    {3, SPECIES_CHIBI_HINA},
+    {4, SPECIES_CHIBI_WAKASAGIHIME},
+    {5, SPECIES_CHIBI_KAGEROU},
+    {6, SPECIES_CHIBI_CHEN},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesUltraB;
-
-static const SpeciesUltraB SpeciesUltraUncommon[] = {
-    {0, SPECIES_DELIBIRD},
-    {1, SPECIES_LICKITUNG},
-    {2, SPECIES_YANMA},
-    {3, SPECIES_PORYGON},
-    {4, SPECIES_TOGETIC},
-    {5, SPECIES_AZUMARILL},
-    {6, SPECIES_MAROWAK},
-    {7, SPECIES_LUNATONE},
-    {8, SPECIES_SOLROCK},
-    {9, SPECIES_GRANBULL},
-    {10, SPECIES_HITMONLEE},
-    {11, SPECIES_HITMONCHAN},
-    {12, SPECIES_HITMONTOP},
-    {13, SPECIES_BANETTE},
-    {14, SPECIES_DUSCLOPS},
-    {15, SPECIES_MR_MIME},
-    {16, SPECIES_TROPIUS},
-    {17, SPECIES_MAGNETON},
-    {18, SPECIES_MANTINE},
-    {19, SPECIES_SKARMORY},
-    {20, SPECIES_WHISCASH},
-    {21, SPECIES_DEWGONG},
-    {22, SPECIES_MANECTRIC},
-    {23, SPECIES_OCTILLERY},
-    {24, SPECIES_GLALIE},
-    {25, SPECIES_SLOWBRO},
-    {26, SPECIES_WEEZING},
-    {27, SPECIES_ELECTABUZZ},
-    {28, SPECIES_SLOWKING},
-    {29, SPECIES_EXPLOUD},
-    {30, SPECIES_MAGMAR},
-    {31, SPECIES_MUK},
-    {32, SPECIES_SCYTHER},
-    {33, SPECIES_PINSIR},
-    {34, SPECIES_URSARING},
-    {35, SPECIES_HOUNDOOM},
-    {36, SPECIES_CLAYDOL},
-    {37, SPECIES_AMPHAROS},
-    {38, SPECIES_GARDEVOIR},
-    {39, SPECIES_ABSOL},
-    {40, SPECIES_CACTURNE},
-    {41, SPECIES_LUDICOLO},
-    {42, SPECIES_SHIFTRY},
-    {43, SPECIES_POLITOED},
-    {44, SPECIES_SCIZOR},
-    {45, SPECIES_HERACROSS},
-    {46, SPECIES_STEELIX},
-    {47, SPECIES_ALTARIA},
-    {48, SPECIES_RELICANTH},
-    {49, SPECIES_HUNTAIL},
-    {50, SPECIES_GOREBYSS}
+static const SpeciesGacha SpeciesUltraUncommon[] = {
+    {0, SPECIES_CHIBI_SHIZUHA},
+    {1, SPECIES_CHIBI_MINORIKO},
+    {2, SPECIES_CHIBI_SEKIBANKI},
+    {3, SPECIES_CHIBI_NITORI},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesUltraC;
-
-static const SpeciesUltraC SpeciesUltraRare[] = {
-    {0, SPECIES_DITTO},
-    {1, SPECIES_EEVEE},
-    {2, SPECIES_OMANYTE},
-    {3, SPECIES_KABUTO},
-    {4, SPECIES_LILEEP},
-    {5, SPECIES_ANORITH},
-    {6, SPECIES_WOBBUFFET},
-    {7, SPECIES_PUPITAR},
-    {8, SPECIES_DUNSPARCE},
-    {9, SPECIES_DRAGONAIR},
-    {10, SPECIES_SHELGON},
-    {11, SPECIES_METANG},
-    {12, SPECIES_MISDREAVUS},
-    {13, SPECIES_KANGASKHAN},
-    {14, SPECIES_TAUROS},
-    {15, SPECIES_ALAKAZAM},
-    {16, SPECIES_GENGAR},
-    {17, SPECIES_STARMIE},
-    {18, SPECIES_FLYGON},
-    {19, SPECIES_VAPOREON},
-    {20, SPECIES_JOLTEON},
-    {21, SPECIES_FLAREON},
-    {22, SPECIES_AGGRON},
-    {23, SPECIES_WALREIN},
-    {24, SPECIES_CROBAT},
-    {25, SPECIES_GYARADOS},
-    {26, SPECIES_KINGDRA},
-    {27, SPECIES_MILOTIC}
+static const SpeciesGacha SpeciesUltraRare[] = {
+    {0, SPECIES_CHIBI_TEWI},
+    {1, SPECIES_CHIBI_ELLY},
+    {2, SPECIES_CHIBI_KOMACHI},
+    {3, SPECIES_CHIBI_YAMAME},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesUltraD;
-
-static const SpeciesUltraD SpeciesUltraUltraRare[] = {
-    {0, SPECIES_SHEDINJA},
-    {1, SPECIES_SMEARGLE},
-    {2, SPECIES_CHANSEY},
-    {3, SPECIES_OMASTAR},
-    {4, SPECIES_KABUTOPS},
-    {5, SPECIES_CRADILY},
-    {6, SPECIES_ARMALDO},
-    {7, SPECIES_AERODACTYL},
-    {8, SPECIES_PORYGON2},
-    {9, SPECIES_VENUSAUR},
-    {10, SPECIES_MEGANIUM},
-    {11, SPECIES_ESPEON},
-    {12, SPECIES_UMBREON},
-    {13, SPECIES_BLASTOISE},
-    {14, SPECIES_FERALIGATR},
-    {15, SPECIES_SCEPTILE},
-    {16, SPECIES_BLAZIKEN},
-    {17, SPECIES_SWAMPERT},
-    {18, SPECIES_CHARIZARD},
-    {19, SPECIES_TYPHLOSION},
-    {20, SPECIES_LAPRAS},
-    {21, SPECIES_SNORLAX},
-    {22, SPECIES_ARCANINE},
-    {23, SPECIES_DRAGONITE},
-    {24, SPECIES_TYRANITAR},
-    {25, SPECIES_SALAMENCE},
-    {26, SPECIES_METAGROSS},
-    {27, SPECIES_SLAKING}
+static const SpeciesGacha SpeciesUltraUltraRare[] = {
+    {0, SPECIES_CHIBI_ALICE},
+    {1, SPECIES_CHIBI_REISEN},
+    {2, SPECIES_CHIBI_SANAE},
+    {3, SPECIES_CHIBI_REIMU},
+    {4, SPECIES_CHIBI_MARISA},
+    {5, SPECIES_CHIBI_SAKUYA},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesMasterA;
-
-static const SpeciesMasterA SpeciesMasterCommon[] = {
-    {0, SPECIES_DITTO},
-    {1, SPECIES_METANG},
-    {2, SPECIES_SHELGON},
-    {3, SPECIES_PUPITAR},
-    {4, SPECIES_DRAGONAIR},
-    {5, SPECIES_FLYGON},
-    {6, SPECIES_VENUSAUR},
-    {7, SPECIES_VAPOREON},
-    {8, SPECIES_JOLTEON},
-    {9, SPECIES_FLAREON},
-    {10, SPECIES_MEGANIUM},
-    {11, SPECIES_BLASTOISE},
-    {12, SPECIES_FERALIGATR},
-    {13, SPECIES_SCEPTILE},
-    {14, SPECIES_BLAZIKEN},
-    {15, SPECIES_SWAMPERT},
-    {16, SPECIES_CHARIZARD},
-    {17, SPECIES_TYPHLOSION}
+static const SpeciesGacha SpeciesMasterCommon[] = {
+    {0, SPECIES_CHIBI_DAIYOUSEI},
+    {1, SPECIES_CHIBI_CIRNO},
+    {2, SPECIES_CHIBI_RUMIA},
+    {3, SPECIES_CHIBI_HINA},
+    {4, SPECIES_CHIBI_WAKASAGIHIME},
+    {5, SPECIES_CHIBI_KAGEROU},
+    {6, SPECIES_CHIBI_CHEN},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesMasterB;
-
-static const SpeciesMasterB SpeciesMasterUncommon[] = {
-    {0, SPECIES_OMASTAR},
-    {1, SPECIES_KABUTOPS},
-    {2, SPECIES_CRADILY},
-    {3, SPECIES_ARMALDO},
-    {4, SPECIES_SHUCKLE},
-    {5, SPECIES_AERODACTYL},
-    {6, SPECIES_ESPEON},
-    {7, SPECIES_UMBREON},
-    {8, SPECIES_LAPRAS},
-    {9, SPECIES_SNORLAX},
-    {10, SPECIES_DRAGONITE},
-    {11, SPECIES_SALAMENCE},
-    {12, SPECIES_METAGROSS},
-    {13, SPECIES_SHEDINJA},
-    {14, SPECIES_SMEARGLE},
-    {15, SPECIES_UNOWN},
-    {16, SPECIES_BLISSEY}
+static const SpeciesGacha SpeciesMasterUncommon[] = {
+    {0, SPECIES_CHIBI_SHIZUHA},
+    {1, SPECIES_CHIBI_MINORIKO},
+    {2, SPECIES_CHIBI_SEKIBANKI},
+    {3, SPECIES_CHIBI_NITORI},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesMasterC;
-
-static const SpeciesMasterC SpeciesMasterRare[] = {
-    {0, SPECIES_ARTICUNO},
-    {1, SPECIES_ZAPDOS},
-    {2, SPECIES_MOLTRES},
-    {3, SPECIES_RAIKOU},
-    {4, SPECIES_ENTEI},
-    {5, SPECIES_SUICUNE},
-    {6, SPECIES_REGIROCK},
-    {7, SPECIES_REGICE},
-    {8, SPECIES_REGISTEEL},
-    {9, SPECIES_LATIAS},
-    {10, SPECIES_LATIOS}
+static const SpeciesGacha SpeciesMasterRare[] = {
+    {0, SPECIES_CHIBI_TEWI},
+    {1, SPECIES_CHIBI_ELLY},
+    {2, SPECIES_CHIBI_KOMACHI},
+    {3, SPECIES_CHIBI_YAMAME},
 };
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesMasterD;
-
-static const SpeciesMasterD SpeciesMasterUltraRare[] = {
-    {0, SPECIES_MEW},
-    {1, SPECIES_CELEBI},
-    {2, SPECIES_JIRACHI},
-    {3, SPECIES_DEOXYS},
-    {4, SPECIES_KYOGRE},
-    {5, SPECIES_GROUDON},
-    {6, SPECIES_MEWTWO},
-    {7, SPECIES_LUGIA},
-    {8, SPECIES_HO_OH},
-    {9, SPECIES_RAYQUAZA}
+static const SpeciesGacha SpeciesMasterUltraRare[] = {
+    {0, SPECIES_CHIBI_ALICE},
+    {1, SPECIES_CHIBI_REISEN},
+    {2, SPECIES_CHIBI_SANAE},
+    {3, SPECIES_CHIBI_REIMU},
+    {4, SPECIES_CHIBI_MARISA},
+    {5, SPECIES_CHIBI_SAKUYA},
 };
 
 static void ShowMessage(void)
@@ -3623,7 +3014,7 @@ void ShowFinalMessage(void)
     PutWindowTilemap(sTextWindowId);
     LoadUserWindowBorderGfx(sTextWindowId, 0x214, BG_PLTT_ID(14));
 	DrawStdWindowFrame(sTextWindowId, FALSE); 
-	StringCopy(gStringVar1, gSpeciesNames[sGacha->CalculatedSpecies]);
+	StringCopy(gStringVar1, GetSpeciesName(sGacha->CalculatedSpecies));
     StringExpandPlaceholders(gStringVar4, gText_FromGacha);
     AddTextPrinterParameterized(sTextWindowId, FONT_NORMAL, gStringVar4, 0, 1, 0, 0);
 	CopyWindowToVram(sTextWindowId, 3);
@@ -3850,23 +3241,23 @@ static void GachaMain(u8 taskId)
 				party = GiveMonToPlayer(&mon);
 				GetSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_SEEN);
 				HandleSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_CAUGHT, GetMonData(&mon, MON_DATA_PERSONALITY));
-				LoadCompressedSpritePalette(GetMonSpritePalStruct(&mon));
+                LoadCompressedUniqueSpritePaletteWithTag(GetMonFrontSpritePal(&mon), sGacha->CalculatedSpecies, GetMonData(&mon, MON_DATA_PERSONALITY), GetMonData(&mon, MON_DATA_IS_SHINY));
 				SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, pos);
 				sGacha->monSpriteId = CreateMonPicSprite_Affine(sGacha->CalculatedSpecies, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, 120, 60, 14, TAG_NONE);
 				gSprites[sGacha->monSpriteId].callback = SpriteCB_Null;
 				gSprites[sGacha->monSpriteId].oam.priority = 0;
 				gSprites[sGacha->monSpriteId].invisible = TRUE;
-				HandleLoadSpecialPokePic_2(&gMonFrontPicTable[sGacha->CalculatedSpecies],
-											gMonSpritesGfxPtr->sprites.ptr[pos],
-											sGacha->CalculatedSpecies,
-											GetMonData(&mon, MON_DATA_PERSONALITY));
+                HandleLoadSpecialPokePic(TRUE,
+                                         gMonSpritesGfxPtr->spritesGfx[pos],
+                                         sGacha->CalculatedSpecies,
+                                         GetMonData(&mon, MON_DATA_PERSONALITY));
 				sGacha->state++;
 			}
 		break;
 	case STATE_SHOW_NEW_MON:
 		
 		gSprites[sGacha->monSpriteId].x = 120;
-        gSprites[sGacha->monSpriteId].y = gMonFrontPicCoords[sGacha->CalculatedSpecies].y_offset + 56;
+        gSprites[sGacha->monSpriteId].y = gSpeciesInfo[sGacha->CalculatedSpecies].frontPicYOffset + 56;
         gSprites[sGacha->monSpriteId].x2 = 0;
         gSprites[sGacha->monSpriteId].y2 = 0;
         StartSpriteAnim(&gSprites[sGacha->monSpriteId], 0);
