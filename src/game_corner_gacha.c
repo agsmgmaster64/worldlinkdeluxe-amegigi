@@ -3037,7 +3037,6 @@ static void GachaMain(u8 taskId)
     u32 personality;
 	u8 party;
 	int pos = 0;
-	//struct Pokemon *mon = NULL;
 	struct Pokemon mon;
 	
 	pos = B_POSITION_OPPONENT_RIGHT;
@@ -3237,22 +3236,23 @@ static void GachaMain(u8 taskId)
 		break;
 	case STATE_POKEBALL_ARRIVE_WAIT:		
 		if (gSprites[sGacha->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
-			{	CreateMon(&mon, sGacha->CalculatedSpecies, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-				party = GiveMonToPlayer(&mon);
-				GetSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_SEEN);
-				HandleSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_CAUGHT, GetMonData(&mon, MON_DATA_PERSONALITY));
-                LoadCompressedUniqueSpritePaletteWithTag(GetMonFrontSpritePal(&mon), sGacha->CalculatedSpecies, GetMonData(&mon, MON_DATA_PERSONALITY), GetMonData(&mon, MON_DATA_IS_SHINY));
-				SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, pos);
-				sGacha->monSpriteId = CreateMonPicSprite_Affine(sGacha->CalculatedSpecies, SHINY_ODDS, 0, MON_PIC_AFFINE_FRONT, 120, 60, 14, TAG_NONE);
-				gSprites[sGacha->monSpriteId].callback = SpriteCB_Null;
-				gSprites[sGacha->monSpriteId].oam.priority = 0;
-				gSprites[sGacha->monSpriteId].invisible = TRUE;
-                HandleLoadSpecialPokePic(TRUE,
-                                         gMonSpritesGfxPtr->spritesGfx[pos],
-                                         sGacha->CalculatedSpecies,
-                                         GetMonData(&mon, MON_DATA_PERSONALITY));
-				sGacha->state++;
-			}
+        {
+            CreateMon(&mon, sGacha->CalculatedSpecies, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+            party = GiveMonToPlayer(&mon);
+            GetSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_SEEN);
+            HandleSetPokedexFlag(sGacha->CalculatedSpecies, FLAG_SET_CAUGHT, GetMonData(&mon, MON_DATA_PERSONALITY));
+            LoadCompressedUniqueSpritePaletteWithTag(GetMonFrontSpritePal(&mon), sGacha->CalculatedSpecies, GetMonData(&mon, MON_DATA_PERSONALITY), GetMonData(&mon, MON_DATA_IS_SHINY));
+            SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, pos);
+            sGacha->monSpriteId = CreateMonPicSprite_Affine(sGacha->CalculatedSpecies, GetMonData(&mon, MON_DATA_IS_SHINY), GetMonData(&mon, MON_DATA_PERSONALITY), MON_PIC_AFFINE_FRONT, 120, 60, 14, TAG_NONE);
+            gSprites[sGacha->monSpriteId].callback = SpriteCB_Null;
+            gSprites[sGacha->monSpriteId].oam.priority = 0;
+            gSprites[sGacha->monSpriteId].invisible = TRUE;
+            HandleLoadSpecialPokePic(TRUE,
+                                        gMonSpritesGfxPtr->spritesGfx[pos],
+                                        sGacha->CalculatedSpecies,
+                                        GetMonData(&mon, MON_DATA_PERSONALITY));
+            sGacha->state++;
+        }
 		break;
 	case STATE_SHOW_NEW_MON:
 		
