@@ -270,3 +270,6 @@ const u32 gMetatileAttributes_RG_DepartmentStore[] = INCBIN_U32("data/tilesets/f
 
 const u16 gMetatiles_RG_IslandHarbor[] = INCBIN_U16("data/tilesets/frlg/secondary/island_harbor/metatiles.bin");
 const u32 gMetatileAttributes_RG_IslandHarbor[] = INCBIN_U32("data/tilesets/frlg/secondary/island_harbor/metatile_attributes.bin");
+
+const u16 gMetatiles_WLDGameCorner[] = INCBIN_U16("data/tilesets/secondary/wldgame_corner/metatiles.bin");
+const u32 gMetatileAttributes_WLDGameCorner[] = INCBIN_U32("data/tilesets/secondary/wldgame_corner/metatile_attributes.bin");

@@ -1089,7 +1089,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_RG_GameCorner",
+      "secondary_tileset": "gTileset_WLDGameCorner",
       "border_filepath": "data/layouts/MauvilleCity_GameCorner/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleCity_GameCorner/map.bin"
     },

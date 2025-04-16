@@ -1061,3 +1061,14 @@ const struct Tileset gTileset_RG_IslandHarbor =
     .metatileAttributes = gMetatileAttributes_RG_IslandHarbor,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_WLDGameCorner =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_WLDGameCorner,
+    .palettes = gTilesetPalettes_WLDGameCorner,
+    .metatiles = gMetatiles_WLDGameCorner,
+    .metatileAttributes = gMetatileAttributes_WLDGameCorner,
+    .callback = NULL,
+};
