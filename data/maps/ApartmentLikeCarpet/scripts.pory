@@ -1,1 +1,69 @@
 mapscripts ApartmentLikeCarpet_MapScripts {}
+
+script ApartmentLikeCarpet_Script_Kronii {
+    lock
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_KroniiNice)
+    setspeakername(gText_Gigi)
+    msgbox(ApartmentLikeCarpet_Text_GigiYeah)
+    closemessage
+    delay(240)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_Kronii2)
+    setspeakername(gText_Gigi)
+    msgbox(ApartmentLikeCarpet_Text_Gigi2)
+    closemessage
+    delay(240)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_Kronii3)
+    setspeakername(gText_Gigi)
+    msgbox(ApartmentLikeCarpet_Text_Gigi3)
+    closemessage
+    delay(240)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_Kronii4)
+    setspeakername(gText_Gigi)
+    msgbox(ApartmentLikeCarpet_Text_Gigi4)
+    closemessage
+    delay(240)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_Kronii5)
+    release
+    end
+}
+
+text ApartmentLikeCarpet_Text_KroniiNice {
+    format("It's nice, isn't it, Gigi?")
+}
+
+text ApartmentLikeCarpet_Text_GigiYeah {
+    format("Yeah, I guess it is.")
+}
+
+text ApartmentLikeCarpet_Text_Kronii2 {
+    format("You know, I may be a bit of a pessimist myself, but I do feel like despite what's happening, things will be all good in the end.")
+}
+
+text ApartmentLikeCarpet_Text_Gigi2 {
+    format("You think so?")
+}
+
+text ApartmentLikeCarpet_Text_Kronii3 {
+    format("Yeah, I mean, yeah sure, there's some people around us that aren't gonna stick with us for long, but I know I can't stop it if they'll be happier with their new paths.")
+}
+
+text ApartmentLikeCarpet_Text_Gigi3 {
+    format("That seems fair, yeah.")
+}
+
+text ApartmentLikeCarpet_Text_Kronii4 {
+    format("You're pretty nice, Gigi. I may not always get along with you here, but you've always seen the best out of these situations here, even if they're not quite the most optimal.")
+}
+
+text ApartmentLikeCarpet_Text_Gigi4 {
+    format("Yeah.\pI mean, you are pretty cool yourself, putting aside your beauty and all.\p...\pShe'll be happier, and I hope you'll be happy as well.")
+}
+
+text ApartmentLikeCarpet_Text_Kronii5 {
+    format("Thank you, Gigi.")
+}
