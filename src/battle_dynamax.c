@@ -74,7 +74,7 @@ static const struct GMaxMove sGMaxMoveTable[] =
 bool32 CanDynamax(u32 battler)
 {
     u16 species = gBattleMons[battler].species;
-    u16 holdEffect = GetBattlerHoldEffect(battler, FALSE);
+    enum ItemHoldEffect holdEffect = GetBattlerHoldEffect(battler, FALSE);
 
     if (B_FLAG_DYNAMAX_BATTLE == 0 || (B_FLAG_DYNAMAX_BATTLE != 0 && !FlagGet(B_FLAG_DYNAMAX_BATTLE)))
         return FALSE;
@@ -183,7 +183,7 @@ void ActivateDynamax(u32 battler)
     // Set appropriate use flags.
     SetActiveGimmick(battler, GIMMICK_DYNAMAX);
     SetGimmickAsActivated(battler, GIMMICK_DYNAMAX);
-    gBattleStruct->dynamax.dynamaxTurns[battler] = DYNAMAX_TURNS_COUNT;
+    gBattleStruct->dynamax.dynamaxTurns[battler] = gBattleTurnCounter + DYNAMAX_TURNS_COUNT;
 
     // Substitute is removed upon Dynamaxing.
     gBattleMons[battler].status2 &= ~STATUS2_SUBSTITUTE;
@@ -214,7 +214,6 @@ void UndoDynamax(u32 battler)
 
     // Makes sure there are no Dynamax flags set, including on switch / faint.
     SetActiveGimmick(battler, GIMMICK_NONE);
-    gBattleStruct->dynamax.dynamaxTurns[battler] = 0;
 
     // Undo form change if needed.
     if (IsGigantamaxed(battler))
@@ -249,6 +248,8 @@ bool32 IsMoveBlockedByDynamax(u32 move)
         case EFFECT_HEAT_CRASH:
         case EFFECT_LOW_KICK:
             return TRUE;
+        default:
+            break;
     }
     return FALSE;
 }
@@ -432,6 +433,8 @@ static u32 GetMaxPowerTier(u32 move)
                 default:
                 case 21 ... 25:   return MAX_POWER_TIER_5;
             }
+        default:
+            break;
     }
 
     switch (GetMovePower(move))
