@@ -2840,9 +2840,9 @@ static void HandleBallPhysics(void)
     bool32 isFlipperColliding;
     bool32 isStaticColliding;
     bool32 isObjectColliding = FALSE;
-    u8 flipperCollisionNormal = 0;
-    u8 objectCollisionNormal = 0;
-    u8 staticCollisionNormal = 0;
+    u8 flipperCollisionNormal;
+    u8 objectCollisionNormal;
+    u8 staticCollisionNormal;
     u8 collisionNormal;
     u16 artificialYForce = 0;
     int collisionAmplification = 0;
@@ -3317,11 +3317,12 @@ static bool32 CheckStaticCollision(u8 gameType, struct Ball *ball, bool32 ballIs
 
 static u8 GetCollisionAttribute(u8 gameType, bool32 ballIsEntering, int index)
 {
-    const u8 *entranceCollisionMap = NULL;
-    const u8 *collisionMap = NULL;
+    const u8 *entranceCollisionMap;
+    const u8 *collisionMap;
 
     switch (gameType)
     {
+    default:
     case GAME_TYPE_MEOWTH:
         entranceCollisionMap = sMeowthStageEntranceBgCollisionMap;
         collisionMap = sMeowthStageBgCollisionMap;
@@ -3351,14 +3352,15 @@ static u8 GetCollisionMaskRow(u8 gameType, int collisionAttribute, int row)
     struct Flipper *flipper;
     int state;
     int offset;
-    const u8 *flipperStateMasks = NULL;
-    u8 mask = 0;
+    const u8 *flipperStateMasks;
+    u8 mask;
 
     if (collisionAttribute < 0xE0)
     {
-        const u8 *masks = NULL;
+        const u8 *masks;
         switch (gameType)
         {
+        default:
         case GAME_TYPE_MEOWTH:
             masks = sMeowthStageBgCollisionMasks;
             break;
@@ -4908,7 +4910,7 @@ static void UpdateGengarGhost(struct Gengar *gengar)
 
 static void UpdateGhost(struct Gengar *gengar, struct GraveyardGhost *ghost, u8 *numGhostHits, u8 nextState, int numGhosts)
 {
-	u8 multiplier = 1;
+	u8 multiplier = 0;
     struct Sprite *sprite = &gSprites[ghost->spriteId];
 	
 	if (numGhostHits == &gengar->numGastlyHits)
