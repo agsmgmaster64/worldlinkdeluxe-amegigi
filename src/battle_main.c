@@ -4054,8 +4054,6 @@ void BattleTurnPassed(void)
             gSideTimers[i].retaliateTimer--;
     }
 
-    gFieldStatuses &= ~STATUS_FIELD_ION_DELUGE;
-
     BattlePutTextOnWindow(gText_EmptyString3, B_WIN_MSG);
     AssignUsableGimmicks();
     SetShellSideArmCategory();

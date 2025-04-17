@@ -57,6 +57,7 @@ enum EndTurnResolutionOrder
     ENDTURN_MUD_SPORT,
     ENDTURN_WONDER_ROOM,
     ENDTURN_MAGIC_ROOM,
+    ENDTURN_INVERSE_ROOM,
     ENDTURN_TERRAIN,
     ENDTURN_THIRD_EVENT_BLOCK,
     ENDTURN_EMERGENCY_EXIT_4,
@@ -147,9 +148,6 @@ static bool32 HandleEndTurnVarious(u32 battler)
 
     gBattleStruct->endTurnEventsCounter++;
 
-    if (gFieldStatuses & STATUS_FIELD_FAIRY_LOCK && gFieldTimers.fairyLockTimer == gBattleTurnCounter)
-        gFieldStatuses &= ~STATUS_FIELD_FAIRY_LOCK;
-
     for (i = 0; i < NUM_BATTLE_SIDES; i++)
     {
         if (gSideStatuses[i] & SIDE_STATUS_DAMAGE_NON_TYPES && gSideTimers[i].damageNonTypesTimer == gBattleTurnCounter)
@@ -163,9 +161,6 @@ static bool32 HandleEndTurnVarious(u32 battler)
 
         if (gDisableStructs[i].chargeTimer && --gDisableStructs[i].chargeTimer == 0)
             gStatuses3[i] &= ~STATUS3_CHARGED_UP;
-
-        if (gStatuses3[i] & STATUS3_LASER_FOCUS && gDisableStructs[i].laserFocusTimer == gBattleTurnCounter)
-            gStatuses3[i] &= ~STATUS3_LASER_FOCUS;
 
         gBattleStruct->hpBefore[i] = gBattleMons[i].hp;
     }
@@ -227,8 +222,9 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && ability != ABILITY_SAND_FORCE
          && ability != ABILITY_SAND_RUSH
          && ability != ABILITY_OVERCOAT
-         && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
-         && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
+         && ability != ABILITY_SAND_STREAM
+         && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_BEAST, TYPE_EARTH, TYPE_STEEL)
+         && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER | STATUS3_PREDATOR_STALK))
          && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
          && !IsBattlerProtectedByMagicGuard(battler, ability))
         {
@@ -251,6 +247,8 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         {
             if (ability != ABILITY_SNOW_CLOAK
              && ability != ABILITY_OVERCOAT
+             && ability != ABILITY_SLUSH_RUSH
+             && ability != ABILITY_SNOW_WARNING
              && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
              && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
              && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
@@ -479,7 +477,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         {
         case ABILITY_HEALER:
         case ABILITY_HYDRATION:
-        case ABILITY_SHED_SKIN:
+        case ABILITY_MAINTENANCE:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
             break;
@@ -564,7 +562,7 @@ static bool32 HandleEndTurnLeechSeed(u32 battler)
         gBattleStruct->moveDamage[gBattlerAttacker] = max(1, GetNonDynamaxMaxHP(battler) / 8);
         gBattleStruct->moveDamage[gBattlerTarget] = GetDrainedBigRootHp(gBattlerAttacker, gBattleStruct->moveDamage[gBattlerAttacker]);
         gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE;
-        if (GetBattlerAbility(battler) == ABILITY_LIQUID_OOZE)
+        if (GetBattlerAbility(battler) == ABILITY_STRANGE_MIST)
         {
             gBattleStruct->moveDamage[gBattlerTarget] = gBattleStruct->moveDamage[gBattlerTarget] * -1;
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_OOZE;
@@ -1250,13 +1248,6 @@ static bool32 HandleEndTurnWaterSport(u32 battler)
 
     gBattleStruct->endTurnEventsCounter++;
 
-    if (gFieldStatuses & STATUS_FIELD_WATERSPORT && gFieldTimers.waterSportTimer == gBattleTurnCounter)
-    {
-        gFieldStatuses &= ~STATUS_FIELD_WATERSPORT;
-        BattleScriptExecute(BattleScript_WaterSportEnds);
-        effect = TRUE;
-    }
-
     return effect;
 }
 
@@ -1265,13 +1256,6 @@ static bool32 HandleEndTurnMudSport(u32 battler)
     bool32 effect = FALSE;
 
     gBattleStruct->endTurnEventsCounter++;
-
-    if (gFieldStatuses & STATUS_FIELD_MUDSPORT && gFieldTimers.mudSportTimer == gBattleTurnCounter)
-    {
-        gFieldStatuses &= ~STATUS_FIELD_MUDSPORT;
-        BattleScriptExecute(BattleScript_MudSportEnds);
-        effect = TRUE;
-    }
 
     return effect;
 }
@@ -1308,6 +1292,22 @@ static bool32 HandleEndTurnMagicRoom(u32 battler)
     return effect;
 }
 
+static bool32 HandleEndTurnInverseRoom(u32 battler)
+{
+    bool32 effect = FALSE;
+
+    gBattleStruct->endTurnEventsCounter++;
+
+    if (gFieldStatuses & STATUS_FIELD_INVERSE_ROOM && gFieldTimers.inverseRoomTimer == gBattleTurnCounter)
+    {
+        gFieldStatuses &= ~STATUS_FIELD_INVERSE_ROOM;
+        BattleScriptExecute(BattleScript_InverseRoomEnds);
+        effect = TRUE;
+    }
+
+    return effect;
+}
+
 static bool32 EndTurnTerrain(u32 terrainFlag, u32 stringTableId)
 {
     if (gFieldStatuses & terrainFlag && gFieldTimers.terrainTimer == gBattleTurnCounter)
@@ -1336,6 +1336,8 @@ static bool32 HandleEndTurnTerrain(u32 battler)
         effect = EndTurnTerrain(STATUS_FIELD_GRASSY_TERRAIN, B_MSG_TERRAIN_END_GRASSY);
     else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
         effect = EndTurnTerrain(STATUS_FIELD_PSYCHIC_TERRAIN, B_MSG_TERRAIN_END_PSYCHIC);
+    else if (gFieldStatuses & STATUS_FIELD_HOLY_TERRAIN)
+        effect = EndTurnTerrain(STATUS_FIELD_HOLY_TERRAIN, B_MSG_TERRAIN_END_HOLY);
 
     return effect;
 }
@@ -1403,7 +1405,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         u32 ability = GetBattlerAbility(battler);
         switch (ability)
         {
-        case ABILITY_TRUANT: // Not fully accurate but it has to be handled somehow. TODO: Find a better way.
+        case ABILITY_FRETFUL: // Not fully accurate but it has to be handled somehow. TODO: Find a better way.
         case ABILITY_CUD_CHEW:
         case ABILITY_SLOW_START:
         case ABILITY_BAD_DREAMS:
@@ -1427,6 +1429,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         case HOLD_EFFECT_FLAME_ORB:
         case HOLD_EFFECT_STICKY_BARB:
         case HOLD_EFFECT_TOXIC_ORB:
+        case HOLD_EFFECT_FROST_ORB:
             if (ItemBattleEffects(ITEMEFFECT_ORBS, battler, FALSE))
                 effect = TRUE;
             break;
@@ -1561,6 +1564,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_MUD_SPORT] = HandleEndTurnMudSport,
     [ENDTURN_WONDER_ROOM] = HandleEndTurnWonderRoom,
     [ENDTURN_MAGIC_ROOM] = HandleEndTurnMagicRoom,
+    [ENDTURN_INVERSE_ROOM] = HandleEndTurnInverseRoom,
     [ENDTURN_TERRAIN] = HandleEndTurnTerrain,
     [ENDTURN_THIRD_EVENT_BLOCK] = HandleEndTurnThirdEventBlock,
     [ENDTURN_EMERGENCY_EXIT_4] = HandleEndTurnEmergencyExit,

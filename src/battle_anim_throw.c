@@ -2763,10 +2763,7 @@ void AnimTask_SetAttackerTargetLeftPos(u8 taskId)
 
 void AnimTask_SafariGetReaction(u8 taskId)
 {
-    if (gBattleCommunication[MULTISTRING_CHOOSER] >= NUM_SAFARI_REACTIONS)
-        gBattleAnimArgs[7] = 0;
-    else
-        gBattleAnimArgs[7] = gBattleCommunication[MULTISTRING_CHOOSER];
+    gBattleAnimArgs[7] = gBattleCommunication[MULTISTRING_CHOOSER];
     
     DestroyAnimVisualTask(taskId);
 }

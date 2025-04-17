@@ -1341,7 +1341,7 @@ const u16 gInobedientStringIds[] =
     [B_MSG_INCAPABLE_OF_POWER] = STRINGID_PKMNINCAPABLEOFPOWER
 };
 
-const u16 gSafariReactionStringIds[NUM_SAFARI_REACTIONS] =
+const u16 gSafariReactionStringIds[] =
 {
     [B_MSG_MON_WATCHING] = STRINGID_PKMNWATCHINGCAREFULLY,
     [B_MSG_MON_ANGRY]    = STRINGID_PKMNANGRY,
