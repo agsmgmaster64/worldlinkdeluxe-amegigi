@@ -1,3 +1,79 @@
+script DewfordTown_Gym_EventScript_Diamond1 {
+	lockall
+	releaseall
+	playse(SE_SWITCH)
+	addvar(VAR_TEMP_A, 1)
+	if (var(VAR_TEMP_A) >= 5) {
+		call(DewfordTown_Gym_EventScript_ClearPuzzle1)
+		end
+	}
+	switch (var(VAR_TEMP_A)) {
+		case 1:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setflag(FLAG_TEMP_1)
+		case 2:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setflag(FLAG_TEMP_2)
+		case 3:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setflag(FLAG_TEMP_3)
+		case 4:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setflag(FLAG_TEMP_4)
+	}
+	end
+}
+
+script DewfordTown_Gym_EventScript_Spade1 {
+	lockall
+	releaseall
+	playse(SE_SWITCH)
+	addvar(VAR_TEMP_A, 1)
+	if (var(VAR_TEMP_A) >= 5) {
+		call(DewfordTown_Gym_EventScript_ClearPuzzle1)
+		end
+	}
+	switch (var(VAR_TEMP_A)) {
+		case 1:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setflag(FLAG_TEMP_5)
+		case 2:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setflag(FLAG_TEMP_6)
+		case 3:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setflag(FLAG_TEMP_7)
+		case 4:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setflag(FLAG_TEMP_8)
+	}
+	end
+}
+
+script DewfordTown_Gym_EventScript_Swap1 {
+	lockall
+	releaseall
+	playse(SE_SWITCH)
+	end
+}
+
+script DewfordTown_Gym_EventScript_ClearPuzzle1 {
+	setmetatile(3, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
+	setmetatile(4, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
+	setmetatile(5, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
+	setmetatile(6, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
+	clearflag(FLAG_TEMP_1)
+	clearflag(FLAG_TEMP_2)
+	clearflag(FLAG_TEMP_3)
+	clearflag(FLAG_TEMP_4)
+	clearflag(FLAG_TEMP_5)
+	clearflag(FLAG_TEMP_6)
+	clearflag(FLAG_TEMP_7)
+	clearflag(FLAG_TEMP_8)
+	setvar(VAR_TEMP_A, 0)
+	return
+}
+
 raw `
 DewfordTown_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_Gym_OnTransition
@@ -50,7 +126,7 @@ DewfordTown_Gym_EventScript_SetFlashLevel6::
 
 @ Darkest
 DewfordTown_Gym_EventScript_SetFlashLevel7::
-	setflashlevel 7
+	setflashlevel 0
 	return
 
 DewfordTown_Gym_EventScript_BrightenRoom::

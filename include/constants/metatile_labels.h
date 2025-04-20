@@ -143,6 +143,13 @@
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
 
+// gTileset_DewfordGym
+#define METATILE_DewfordGym_CardSymbolBlank     0x806
+#define METATILE_DewfordGym_CardSymbolClubs     0x802
+#define METATILE_DewfordGym_CardSymbolDiamonds  0x804
+#define METATILE_DewfordGym_CardSymbolHearts    0x803
+#define METATILE_DewfordGym_CardSymbolSpades    0x801
+
 // gTileset_EliteFour
 #define METATILE_EliteFour_EntryDoor_ClosedBottom    0x20E
 #define METATILE_EliteFour_EntryDoor_ClosedTop       0x206
