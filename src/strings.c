@@ -516,6 +516,7 @@ const u8 gText_Brawly[] = _("BRAWLY");
 const u8 gText_Winona[] = _("WINONA");
 const u8 gText_Phoebe[] = _("PHOEBE");
 const u8 gText_Glacia[] = _("GLACIA");
+const u8 gText_Amelia[] = _("Amelia");
 const u8 gText_Gigi[] = _("Gigi");
 const u8 gText_Baelz[] = _("Baelz");
 const u8 gText_Kronii[] = _("Kronii");

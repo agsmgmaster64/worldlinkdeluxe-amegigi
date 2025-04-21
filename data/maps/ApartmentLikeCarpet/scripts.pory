@@ -1,6 +1,10 @@
+const LOCALID_KRONII = 1
+const LOCALID_GIGI = 2
+
 mapscripts ApartmentLikeCarpet_MapScripts {}
 
 script ApartmentLikeCarpet_Script_Kronii {
+    goto(ApartmentLikeCarpet_Script_Kronii2)
     lock
     setspeakername(gText_Kronii)
     msgbox(ApartmentLikeCarpet_Text_KroniiNice)
@@ -28,6 +32,33 @@ script ApartmentLikeCarpet_Script_Kronii {
     delay(240)
     setspeakername(gText_Kronii)
     msgbox(ApartmentLikeCarpet_Text_Kronii5)
+    release
+    end
+}
+
+script ApartmentLikeCarpet_Script_Kronii2 {
+    lock
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_KroniiMiracle)
+    setspeakername(gText_Gigi)
+    msgbox(ApartmentLikeCarpet_Text_GigiYouNeverKnow)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_KroniiMaybeRight)
+    closemessage
+    delay(240)
+    playse(SE_POKENAV_CALL)
+    waitse
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_KroniiCall)
+    closemessage
+	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+    waitmovement(0)
+    setspeakername(gText_Kronii)
+    msgbox(ApartmentLikeCarpet_Text_KroniiHello)
+    closemessage
+    setspeakername(gText_Amelia)
+    msgbox(ApartmentLikeCarpet_Text_AmeliaImBack)
+    closemessage
     release
     end
 }
@@ -66,4 +97,28 @@ text ApartmentLikeCarpet_Text_Gigi4 {
 
 text ApartmentLikeCarpet_Text_Kronii5 {
     format("Thank you, Gigi.")
+}
+
+text ApartmentLikeCarpet_Text_KroniiMiracle {
+    format("You know, I wish a miracle would come to help us out here, considering what's been going on.")
+}
+
+text ApartmentLikeCarpet_Text_GigiYouNeverKnow {
+    format("Hey, you never know, a miracle might come anytime soon, even right now!")
+}
+
+text ApartmentLikeCarpet_Text_KroniiMaybeRight {
+    format("Ehh, you know what, maybe you're right, maybe something will come soon.")
+}
+
+text ApartmentLikeCarpet_Text_KroniiCall {
+    format("Huh? I'm getting a call from someone right now.")
+}
+
+text ApartmentLikeCarpet_Text_KroniiHello {
+    format("Hello?")
+}
+
+text ApartmentLikeCarpet_Text_AmeliaImBack {
+    format("{CREATE_MUGSHOT MUGSHOT_AMELIA EMOTE_NORMAL}I'm back, bros.")
 }

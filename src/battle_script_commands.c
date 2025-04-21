@@ -49,6 +49,7 @@
 #include "generational_changes.h"
 #include "move.h"
 #include "dexnav.h"
+#include "frontier_util.h"
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
@@ -9033,6 +9034,30 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     return moneyReward;
 }
 
+static u32 GetTrainerPointsToGive(u16 trainerId)
+{
+    u32 pointReward;
+    u8 trainerPoint = 0;
+
+    if (trainerId == TRAINER_SECRET_BASE)
+    {
+        pointReward = 20;
+    }
+    else
+    {
+        trainerPoint = gTrainerClasses[GetTrainerClassFromId(trainerId)].money ?: 5;
+
+        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+            pointReward = 4 * trainerPoint;
+        else if (IsDoubleBattle())
+            pointReward = 8 * trainerPoint;
+        else
+            pointReward = 4 * trainerPoint;
+    }
+
+    return pointReward;
+}
+
 static void Cmd_getmoneyreward(void)
 {
     CMD_ARGS(const u8 *noMoneyPtr);
@@ -9041,10 +9066,20 @@ static void Cmd_getmoneyreward(void)
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
-        moneyReward = GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentA);
-        if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-            moneyReward += GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentB);
-        AddMoney(&gSaveBlock1Ptr->money, moneyReward);
+        if (FlagGet(FLAG_POINT_BATTLE))
+        {
+            moneyReward = GetTrainerPointsToGive(TRAINER_BATTLE_PARAM.opponentA);
+            if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+                moneyReward += GetTrainerPointsToGive(TRAINER_BATTLE_PARAM.opponentB);
+            AddBattlePoints(moneyReward);
+        }
+        else
+        {
+            moneyReward = GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentA);
+            if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
+                moneyReward += GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentB);
+            AddMoney(&gSaveBlock1Ptr->money, moneyReward);
+        }
     }
     else
     {
@@ -18884,6 +18919,16 @@ void BS_JumpIfCanGigantamax(void)
 
     if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_GIGANTAMAX_FACTOR)
       && GetGMaxTargetSpecies(gBattleMons[battler].species) != SPECIES_NONE)
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_JumpIfPointBattle(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+
+    if (FlagGet(FLAG_POINT_BATTLE))
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;

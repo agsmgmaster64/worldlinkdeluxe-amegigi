@@ -670,6 +670,7 @@ extern const u8 gText_Brawly[];
 extern const u8 gText_Winona[];
 extern const u8 gText_Phoebe[];
 extern const u8 gText_Glacia[];
+extern const u8 gText_Amelia[];
 extern const u8 gText_Gigi[];
 extern const u8 gText_Kronii[];
 extern const u8 gText_Baelz[];
