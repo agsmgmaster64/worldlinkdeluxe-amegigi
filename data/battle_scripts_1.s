@@ -5546,6 +5546,7 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
+	jumpifpointbattle BattleScript_LocalBattleWonRewardPoints
 	getmoneyreward BattleScript_LocalTrainerBattleWonGotMoney
 BattleScript_LocalTrainerBattleWonGotMoney::
 	printstring STRINGID_PLAYERGOTMONEY
@@ -5554,6 +5555,13 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	pickup
 	end2
+
+BattleScript_LocalBattleWonRewardPoints::
+	getmoneyreward BattleScript_LocalTrainerBattleWonGotPoints
+BattleScript_LocalTrainerBattleWonGotPoints::
+	printstring STRINGID_PLAYERGOTPOINTS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PayDayMoneyAndPickUpItems
 
 BattleScript_DoiseBattleWon::
 	trainerslidein BS_OPPONENT1
