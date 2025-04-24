@@ -2277,7 +2277,7 @@ static void InitPinballScreen(void)
         CopyBgTilemapBufferToVram(PINBALL_BG_COVER);
         CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
-        ShowBg(PINBALL_BG_TEXT);
+        //ShowBg(PINBALL_BG_TEXT);
         ShowBg(PINBALL_BG_COVER);
         ShowBg(PINBALL_BG_BASE);
         gMain.state++;

@@ -4602,7 +4602,7 @@ static void DerbyMain(u8 taskId)
 	case DERBY_STATE_START_FADE:
 		if (!gPaletteFade.active)
 		{
-			PlayBGM(MUS_RG_CYCLING);
+			PlayBGM(MUS_ZGS_CYCLING);
 			InitRacetrack();
 			BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
 			sDerby->state = DERBY_STATE_FADEIN;

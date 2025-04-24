@@ -435,13 +435,11 @@ static u32 GetTimerTicks(u8 gameType);
 static void LoadBgGfx(u8 gameType);
 static void LoadSpriteGfx(u8 gameType);
 static void InitBallSprite(void);
-static void InitFlipperSprites(void);
 static void InitTimerSprites(void);
 static bool32 GameTypeUsesTimer(u8 gameType);
 static void GetTimerScreenCoords(u8 gameType, int *outX, int *outY);
 static void InitGameType(u8 gameType);
 static void InitMeowth(void);
-static void InitDiglett(void);
 static void InitSeel(void);
 static void InitGengar(void);
 static void PinballVBlankCallback(void);
@@ -470,9 +468,6 @@ static void ApplyGravity(struct Ball *ball);
 static void LimitVelocity(struct Ball *ball);
 static void HandleTilts(struct Ball *ball);
 static void HandleTilt(struct Ball *ball, struct Tilt *tilt, int xDelta, int yDelta, u32 buttonMask, bool8 artificalEnabled);
-static bool32 HandleFlippers(struct Ball *ball, u16 *outYForce, u8 *outCollisionNormal, int *outCollisionAmplification);
-static void UpdateFlipperState(struct Flipper *flipper);
-static bool32 CheckFlipperCollision(struct Ball *ball, struct Flipper *flipper, u16 *outYForce, u8 *outCollisionNormal, int *outCollisionAmplification);
 static void UpdatePosition(struct Ball *ball);
 static bool32 CheckStaticCollision(u8 gameType, struct Ball *ball, bool32 ballIsEntering, int stageTileWidth, int stageTileHeight, u8 *outCollisionNormal, u16 *outYForce);
 static u8 GetCollisionAttribute(u8 gameType, bool32 ballIsEntering, int index);
@@ -487,7 +482,6 @@ static void ApplyCollisionForces(struct Ball *ball, u16 flipperYForce, int colli
 static void UpdateCamera(void);
 static void UpdateTimer(void);
 static void HandleTimeRanOut(void);
-static void DisableFlippers(void);
 static void StartExitPinballGame(void);
 static void ExitPinballGame(void);
 static void UpdateBallSprite(struct Sprite *sprite);
@@ -508,10 +502,6 @@ static void UpdateMeowthJewelSprite(struct Sprite *sprite);
 static void UpdateMeowthJewelMultiplierSprite(struct Sprite *sprite);
 static void ResetMeowthJewels(struct Meowth *meowth);
 static void UpdateMeowthJewelSparkleSprite(struct Sprite *sprite);
-static bool32 UpdateDiglett(struct Diglett *diglett);
-static void UpdateDiglettTiles(u16 *tilemap, int index, struct Diglett *diglett);
-static void UpdateDiglettCollision(u8 *collisionMap, int index, bool32 solidCollision);
-static void UpdateDugtrioSprite(struct Sprite *sprite);
 static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification);
 static bool32 UpdateSeel(struct Seel *seel);
 static void ResetSeels(struct Seel *seel);
@@ -1771,16 +1761,6 @@ static const union AnimCmd *const sDugtrioAnimCmds[] = {
     sDugtrioAnimCmd_0Alive,
 };
 
-static const struct SpriteTemplate sDugtrioSpriteTemplate = {
-    .tileTag = TAG_DUGTRIO,
-    .paletteTag = TAG_DUGTRIO,
-    .oam = &sDugtrioOamData,
-    .anims = sDugtrioAnimCmds,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = UpdateDugtrioSprite,
-};
-
 static const struct OamData sSeelOamData = {
     .y = 0,
     .affineMode = ST_OAM_AFFINE_OFF,
@@ -2701,25 +2681,10 @@ static const s16 *const sTiltVelocityDeltas[] = {
     sTiltDownOnlyVelocityDeltas,
 };
 
-//void PlayMeowthPinballGame(void)
-//{
-//    PlayPinballGame(GAME_TYPE_MEOWTH);
-//}
-
 void PlayPachinko(void)
 {
     PlayPinballGame(GAME_TYPE_DIGLETT);
 }
-
-//void PlaySeelPinballGame(void)
-//{
-//    PlayPinballGame(GAME_TYPE_SEEL);
-//}
-
-//void PlayGengarPinballGame(void)
-//{
-//    PlayPinballGame(GAME_TYPE_GENGAR);
-//}
 
 static void SetPlayerDigits(u16 num)
 {
@@ -3543,7 +3508,6 @@ static void InitPinballScreen(void)
         LoadSpriteGfx(sPinballGame->gameType);
         InitPinballGame();
         InitBallSprite();
-        //InitFlipperSprites();
         InitTimerSprites();
         InitGameType(sPinballGame->gameType);
         //StartNewBall();
@@ -3664,16 +3628,6 @@ static void InitBallSprite(void)
 	gSprites[sPinballGame->ball.spriteId].invisible = TRUE;
 }
 
-static void InitFlipperSprites(void)
-{
-    //sPinballGame->rightFlipper.spriteId = CreateSprite(&sFlipperSpriteTemplate, 0, 0, 4);
-    //sPinballGame->leftFlipper.spriteId = CreateSprite(&sFlipperSpriteTemplate, 0, 0, 4);
-    //gSprites[sPinballGame->leftFlipper.spriteId].data[0] = FLIPPER_LEFT;
-    //gSprites[sPinballGame->rightFlipper.spriteId].data[0] = FLIPPER_RIGHT;
-    //StartSpriteAnim(&gSprites[sPinballGame->leftFlipper.spriteId], 0);
-    //StartSpriteAnim(&gSprites[sPinballGame->rightFlipper.spriteId], 3);
-}
-
 static void InitTimerSprites(void)
 {
     if (GameTypeUsesTimer(sPinballGame->gameType))
@@ -3733,9 +3687,6 @@ static void InitGameType(u8 gameType)
     case GAME_TYPE_MEOWTH:
         InitMeowth();
         break;
-    case GAME_TYPE_DIGLETT:
-        InitDiglett();
-        break;
     case GAME_TYPE_SEEL:
         InitSeel();
         break;
@@ -3760,19 +3711,6 @@ static void InitMeowth(void)
     meowth->sparkleSpriteId = CreateSprite(&sMeowthJewelSparkleSpriteTemplate, 0, 0, 6);
     StartSpriteAnim(&gSprites[meowth->spriteId], 0);
     StartSpriteAnim(&gSprites[meowth->sparkleSpriteId], 0);
-}
-
-static void InitDiglett(void)
-{
-    //struct Diglett *diglett = &sPinballGame->diglett;
-    //diglett->completed = FALSE;
-    //diglett->numDiglettsHit = 0;
-    //diglett->collisionMap = Alloc(ARRAY_COUNT(sDiglettStageBgCollisionMap) * sizeof(sDiglettStageBgCollisionMap[0]));
-    //memcpy(diglett->collisionMap, sDiglettStageBgCollisionMap, ARRAY_COUNT(sDiglettStageBgCollisionMap) * sizeof(sDiglettStageBgCollisionMap[0]));
-    //diglett->dugtrioSpriteId = CreateSprite(&sDugtrioSpriteTemplate, 80, 16, 5);
-    //diglett->dugtrioState = DUGTRIO_STATE_HIDDEN;
-    //gSprites[diglett->dugtrioSpriteId].data[0] = DUGTRIO_STATE_HIDDEN;
-    //StartSpriteAnim(&gSprites[diglett->dugtrioSpriteId], 0);
 }
 
 static void InitSeel(void)
@@ -4671,111 +4609,6 @@ static void HandleTilt(struct Ball *ball, struct Tilt *tilt, int xDelta, int yDe
     }
 }
 
-static bool32 HandleFlippers(struct Ball *ball, u16 *outYForce, u8 *outCollisionNormal, int *outCollisionAmplification)
-{
-    //bool32 collided;
-    //struct Flipper *flipper;
-
-    //UpdateFlipperState(&sPinballGame->rightFlipper);
-    //UpdateFlipperState(&sPinballGame->leftFlipper);
-    
-    //collided = CheckFlipperCollision(ball, &sPinballGame->rightFlipper, outYForce, outCollisionNormal, outCollisionAmplification);
-    //if (!collided)
-    //    collided = CheckFlipperCollision(ball, &sPinballGame->leftFlipper, outYForce, outCollisionNormal, outCollisionAmplification);
-
-    //return collided;
-    return FALSE;
-}
-
-#define FLIPPER_STATE_DELTA 0x0333
-
-static void UpdateFlipperState(struct Flipper *flipper)
-{
-    //int stateDelta;
-
-    //flipper->prevState = flipper->state;
-	
-	//if (!sPinballGame->flippersDisabled && (gMain.newKeys & A_BUTTON)) // A button rising edge
-    //{
-    //    PlaySE(SE_VEND); // Play sound effect
-    //}
-	//else if (!sPinballGame->flippersDisabled && (gMain.newKeys & B_BUTTON)) // A button rising edge
-    //{
-    //    PlaySE(SE_VEND); // Play sound effect
-    //}
-	//
-    //if (!sPinballGame->flippersDisabled && (gMain.heldKeys & (A_BUTTON | B_BUTTON)))
-    //{
-    //    if (flipper->state == 0x0FFF)
-    //        stateDelta = 0;
-    //    else
-    //        stateDelta = FLIPPER_STATE_DELTA;
-    //}
-    //else
-    //{
-    //    if (flipper->state == 0)
-    //        stateDelta = 0;
-    //    else
-    //        stateDelta = -FLIPPER_STATE_DELTA;
-    //}
-
-    //flipper->stateDelta = stateDelta;
-    //flipper->state += stateDelta;
-}
-
-static bool32 CheckFlipperCollision(struct Ball *ball, struct Flipper *flipper, u16 *outYForce, u8 *outCollisionNormal, int *outCollisionAmplification)
-{
-    //int curState, stateDelta;
-    //int offset;
-    //u32 collisionRadius, magnitude;
-    //u8 collisionNormal;
-    //int ballXPos = (ball->xPos >> 8);
-    //int ballYPos = (ball->yPos >> 8);
-    //int xOffset = ballXPos - flipper->xPos + 24;
-    //int yOffset = ballYPos - flipper->yPos + 16;
-    //
-    //if (xOffset < 0 || xOffset >= 48 || yOffset < 0 || yOffset >= 32)
-    //    return FALSE;
-    //
-    //*outYForce = 0;
-    //*outCollisionAmplification = 0;
-    //
-    //if (flipper->type == FLIPPER_RIGHT)
-    //    xOffset = 48 - xOffset;
-    //
-    //offset = xOffset * 32 + yOffset;
-    //collisionRadius = 0;
-    //
-    //stateDelta = flipper->prevState < flipper->state ? 1 : -1;
-    //curState = flipper->prevState >> 8;
-    //while (1)
-    ////{
-    ////    collisionRadius = sFlipperCollisionRadii[curState * 0x600 + offset];
-    //    if (collisionRadius != 0)
-    //        break;
-    //
-    //    if (curState == (flipper->state >> 8))
-    //        return FALSE;
-    //
-    //    curState += stateDelta;
-    //}
-    //
-    //collisionNormal = sFlipperCollisionNormalAngles[curState * 0x600 + offset];
-    //magnitude = sFlipperRadiusMagnitudes[collisionRadius];
-    //*outYForce = ((flipper->stateDelta * 4) * magnitude) >> 8;
-    //*outCollisionNormal = flipper->type == FLIPPER_LEFT ? collisionNormal : -collisionNormal;
-    //*outCollisionAmplification = 1;
-    //
-    //// Don't apply any y force if the ball is being forced downwards into the flipper
-    //if ((*outYForce) & 0x8000)
-    //{
-    //    *outYForce = 0;
-    //    *outCollisionAmplification = 0;
-    //}
-    //
-    return TRUE;
-}
-
 #define MAX_POS_UPDATE 0x04FF
 
 static void UpdatePosition(struct Ball *ball)
@@ -5224,7 +5057,6 @@ static void UpdateTimer(void)
             // Time has completely run out.
             // Disable the flippers, and play any ending
             // animation stuff.
-            DisableFlippers();
             HandleTimeRanOut();
         }
     }
@@ -5244,21 +5076,6 @@ static void HandleTimeRanOut(void)
     case GAME_TYPE_GENGAR:
         break;
     }
-}
-
-static void DisableFlippers(void)
-{
-    //int flipperPaletteIndex;
-    //sPinballGame->flippersDisabled = TRUE;
-
-    // Change the flippers' color to red.
-    //flipperPaletteIndex = IndexOfSpritePaletteTag(TAG_FLIPPER);
-	//gPlttBufferUnfaded[0x100 + flipperPaletteIndex * 0x10 + 1] = RGB(16, 16, 16);
-    //gPlttBufferUnfaded[0x100 + flipperPaletteIndex * 0x10 + 2] = RGB(22, 22, 22);
-    //gPlttBufferUnfaded[0x100 + flipperPaletteIndex * 0x10 + 3] = RGB(12, 12, 12);
-	//gPlttBufferFaded[0x100 + flipperPaletteIndex * 0x10 + 1] = RGB(16, 16, 16);
-    //gPlttBufferFaded[0x100 + flipperPaletteIndex * 0x10 + 2] = RGB(22, 22, 22);
-    //gPlttBufferFaded[0x100 + flipperPaletteIndex * 0x10 + 3] = RGB(12, 12, 12);
 }
 
 static void StartExitPinballGame(void)
@@ -5340,8 +5157,6 @@ static bool32 UpdateGameType(u8 gameType)
     {
     case GAME_TYPE_MEOWTH:
         return UpdateMeowth(&sPinballGame->meowth);
-    case GAME_TYPE_DIGLETT:
-        return UpdateDiglett(&sPinballGame->diglett);
     case GAME_TYPE_SEEL:
         return UpdateSeel(&sPinballGame->seel);
     case GAME_TYPE_GENGAR:
@@ -5785,209 +5600,6 @@ static void UpdateMeowthJewelSparkleSprite(struct Sprite *sprite)
     }
 }
 
-static bool32 UpdateDiglett(struct Diglett *diglett)
-{
-    u16 *tilemap;
-
-   // if (!diglett->initialized)
-   // {
-   //     if (gMain.vblankCounter1 & 1)
-   //     {
-   //         int index = sDiglettInitOrder[diglett->curInitIndex];
-   //         diglett->states[index] = DIGLETT_STATE_IDLE_0 + (Random() % 4);
-
-   //         tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
-   //         UpdateDiglettTiles(tilemap, index, diglett);
-   //         CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-   //         UpdateDiglettCollision(diglett->collisionMap, index, TRUE);
-   //
-   //         if (++diglett->curInitIndex == NUM_DIGLETTS)
-   //             diglett->initialized = TRUE;
-   //     }
-   // }
-   // else if (diglett->numDiglettsHit < NUM_DIGLETTS)
-   // {
-   //     // Update 4 digletts each frame.
-   //     int i;
-   //     for (i = 0; i < 4; i++)
-   //     {
-   //         int index = (diglett->curUpdateIndex + i) % NUM_DIGLETTS;
-   //         switch (diglett->states[index])
-   //         {
-   //         case DIGLETT_STATE_INIT:
-   //         case DIGLETT_STATE_HIDDEN:
-   //             break;
-   //         case DIGLETT_STATE_IDLE_0:
-   //             diglett->states[index] = DIGLETT_STATE_IDLE_1;
-   //             break;
-   //         case DIGLETT_STATE_IDLE_1:
-   //             diglett->states[index] = DIGLETT_STATE_IDLE_2;
-   //             break;
-   //         case DIGLETT_STATE_IDLE_2:
-   //             diglett->states[index] = DIGLETT_STATE_IDLE_3;
-   //             break;
-   //         case DIGLETT_STATE_IDLE_3:
-   //             diglett->states[index] = DIGLETT_STATE_IDLE_0;
-   //             break;
-   //         case DIGLETT_STATE_HIT_0:
-   //             diglett->states[index] = DIGLETT_STATE_HIT_1;
-	//			PlaySE(SE_BALLOON_YELLOW);
-   //             break;
-   //         case DIGLETT_STATE_HIT_1:
-   //             diglett->states[index] = DIGLETT_STATE_HIT_2;
-	//			//PlaySE(SE_BALLOON_YELLOW);
-   //             break;
-   //         case DIGLETT_STATE_HIT_2:
-   //             diglett->states[index] = DIGLETT_STATE_HIDDEN;
-   //             UpdateDiglettCollision(diglett->collisionMap, index, FALSE);
-   //             if (++diglett->numDiglettsHit == NUM_DIGLETTS)
-   //             {
-   //                 diglett->dugtrioState = DUGTRIO_STATE_3ALIVE;
-   //
-   //                 // Update the colision tilemap for the Dugtrio-occupied tiles.
-   //                 tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
-   //                 diglett->collisionMap[0x48] = 0x14;
-   //                 diglett->collisionMap[0x49] = 0x14;
-   //                 diglett->collisionMap[0x4A] = 0x14;
-   //                 diglett->collisionMap[0x4B] = 0x14;
-   //                 diglett->collisionMap[0x68] = 0x15;
-   //                 diglett->collisionMap[0x69] = 0x16;
-   //                 diglett->collisionMap[0x6A] = 0x17;
-   //                 diglett->collisionMap[0x6B] = 0x18;
-   //             }
-	//			VarSet(VAR_FLIP_WINNINGS, (diglett->numDiglettsHit * 3));
-	//			SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
-   //             break;
-   //         }
-   //
-   //         // Update bg tilemap for the new diglett states.
-   //         tilemap = GetBgTilemapBuffer(PINBALL_BG_BASE);
-   //         UpdateDiglettTiles(tilemap, index, diglett);
-   //     }
-   //
-   //     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
-   //     diglett->curUpdateIndex = (diglett->curUpdateIndex + 4) % NUM_DIGLETTS;
-   // }
-   // else
-   // {
-   //     // At this point, all the Digletts are hidden and Dugtrio is visible.
-   //     //struct Sprite *dugtrioSprite = &gSprites[diglett->dugtrioSpriteId];
-	//	//VarSet(VAR_FLIP_WINNINGS, 100);
-	//	//SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
-   //     //switch (diglett->dugtrioState)
-   //     //{
-   //     //case DUGTRIO_STATE_3ALIVE_HIT:
-   //     //    if (dugtrioSprite->animEnded)
-   //     //        diglett->dugtrioState = DUGTRIO_STATE_2ALIVE;
-   //     //    break;
-        //case DUGTRIO_STATE_2ALIVE_HIT:
-        //    if (dugtrioSprite->animEnded)
-        //        diglett->dugtrioState = DUGTRIO_STATE_1ALIVE;
-        //    break;
-        //case DUGTRIO_STATE_1ALIVE_HIT:
-        //    if (dugtrioSprite->animEnded)
-        //    {
-        //        diglett->dugtrioState = DUGTRIO_STATE_0ALIVE;
-        //        StartSpriteAnim(dugtrioSprite, 7);
-    //    //        DisableFlippers();
-    //    //        diglett->completed = TRUE;
-    //    //        return TRUE;
-    //    //    }
-    //    //    break;
-    //    //case DUGTRIO_STATE_0ALIVE:
-    //    //    if (dugtrioSprite->animEnded)
-    //    //        diglett->dugtrioState = DUGTRIO_STATE_COMPLETE;
-    //    //    return TRUE;
-    //    //}
-    //}
-    //
-    return FALSE;
-}
-
-static void UpdateDiglettTiles(u16 *tilemap, int index, struct Diglett *diglett)
-{
-    //int tileIndex = sDiglettCoords[index][0] + sDiglettCoords[index][1] * 32;
-    //tilemap[tileIndex]      = sDiglettStateTiles[diglett->states[index]][0];
-    //tilemap[tileIndex + 1]  = sDiglettStateTiles[diglett->states[index]][1];
-    //tilemap[tileIndex + 32] = sDiglettStateTiles[diglett->states[index]][2];
-    //tilemap[tileIndex + 33] = sDiglettStateTiles[diglett->states[index]][3];
-}   
-
-static void UpdateDiglettCollision(u8 *collisionMap, int index, bool32 solidCollision)
-{
-    int tileIndex = sDiglettCoords[index][0] + sDiglettCoords[index][1] * 32;
-    if (solidCollision)
-    {
-        collisionMap[tileIndex]      = 0x19;
-        collisionMap[tileIndex + 1]  = 0x19;
-        collisionMap[tileIndex + 32] = 0x1A;
-        collisionMap[tileIndex + 33] = 0x1B;
-    }
-    else
-    {
-        collisionMap[tileIndex]      = 0x2;
-        collisionMap[tileIndex + 1]  = 0x2;
-        collisionMap[tileIndex + 32] = 0x2;
-        collisionMap[tileIndex + 33] = 0x2;
-    }
-}
-
-static void UpdateDugtrioSprite(struct Sprite *sprite)
-{
-    //// data[0] = previous state
-    //struct Diglett *diglett = &sPinballGame->diglett;
-    //int prevState = sprite->data[0];
-    //int curState = diglett->dugtrioState;
-    //
-    //sprite->x2 = -sPinballGame->cameraScrollX;
-    //sprite->y2 = -sPinballGame->cameraScrollY;
-    //
-    //// Check if Dugtrio's state changed, and start the appropriate
-    //// sprite animation.
-    //if (prevState != curState)
-    //{
-    //    sprite->data[0] = curState;
-    //    switch (curState)
-    //    {
-    //    case DUGTRIO_STATE_HIDDEN:
-    //        StartSpriteAnim(sprite, 0);
-    //        break;
-    //    case DUGTRIO_STATE_3ALIVE:
-    //        StartSpriteAnim(sprite, 1);
-	//		PlayBGM(MUS_CASINO_PLUS_6);
-	//		PlayCry_Normal(SPECIES_DUGTRIO, 0);
-    //        break;
-    //    case DUGTRIO_STATE_3ALIVE_HIT:
-    //        StartSpriteAnim(sprite, 2);
-	//		PlaySE(SE_EFFECTIVE);
-    //        break;
-    //    case DUGTRIO_STATE_2ALIVE:
-    //        StartSpriteAnim(sprite, 3);
-    //        break;
-    //    case DUGTRIO_STATE_2ALIVE_HIT:
-    //        StartSpriteAnim(sprite, 4);
-	//		PlaySE(SE_EFFECTIVE);
-    //        break;
-    //    case DUGTRIO_STATE_1ALIVE:
-    //        StartSpriteAnim(sprite, 5);
-    //        break;
-    //    case DUGTRIO_STATE_1ALIVE_HIT:
-    //        StartSpriteAnim(sprite, 6);
-	//		PlayBGM(MUS_NONE);
-	//		VarSet(VAR_FLIP_WINNINGS, 200);
-	//		SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
-	//		PlaySE(SE_SUPER_EFFECTIVE);
-    //        break;
-    //    case DUGTRIO_STATE_0ALIVE:
-    //        StartSpriteAnim(sprite, 7);
-    //        break;
-    //    case DUGTRIO_STATE_COMPLETE:
-    //        StartSpriteAnim(sprite, 0);
-    //        break;
-    //    }
-    //}
-}
-
 static bool32 CheckSeelCollision(struct Ball *ball, struct Seel *seel, u32 ticks, u8 *outCollisionNormal, int *outCollisionAmplification)
 {
     int x, y;
@@ -6395,7 +6007,6 @@ static bool32 CheckGengarCollision(struct Ball *ball, struct Gengar *gengar, u32
         if (gengar->numGengarHits >= REQUIRED_GENGAR_HITS)
         {
             gengar->completed = TRUE;
-            DisableFlippers();
             gengarGhost->state = GENGAR_STATE_LEAVING;
             sPinballGame->waitExitScene = TRUE;
         }
