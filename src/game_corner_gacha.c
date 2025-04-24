@@ -1601,7 +1601,7 @@ static void CreateHoppip(void)
     sGacha->PokemonThreeSpriteId = CreateSprite(&sSpriteTemplate_Hoppip, x3, y, 0);    
 }
 
-static void CreateElekid(void)
+static UNUSED void CreateElekid(void)
 {
     s16 x = 142;
     s16 y = 56 + 2;
@@ -2815,7 +2815,6 @@ static void MoveCursor(int direction)
     struct Sprite *cursorSprite = &gSprites[sGacha->ArrowsSpriteId];
     int curX = cursorSprite->x;
     int destX = curX;
-    u16 num = sGacha->wager;
     
     // Move cursor left or right (X axis)
     if (direction == 1 || direction == 3)// Right or Left
