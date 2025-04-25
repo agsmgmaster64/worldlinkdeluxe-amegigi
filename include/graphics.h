@@ -722,6 +722,7 @@ extern const u32 gItemIconPalette_TechHeart[];
 extern const u32 gItemIconPalette_HelperHeart[];
 extern const u32 gItemIconPalette_JustHeart[];
 extern const u32 gItemIconPalette_ChromeHeart[];
+extern const u32 gItemIconPalette_NeutralHeart[];
 extern const u32 gItemIcon_ShinyStone[];
 extern const u32 gItemIconPalette_ShinyStone[];
 extern const u32 gItemIcon_DuskStone[];

@@ -552,6 +552,7 @@ const u32 gItemIconPalette_TechHeart[] = INCBIN_U32("graphics/items/icon_palette
 const u32 gItemIconPalette_HelperHeart[] = INCBIN_U32("graphics/items/icon_palettes/helper_heart.gbapal.lz");
 const u32 gItemIconPalette_JustHeart[] = INCBIN_U32("graphics/items/icon_palettes/just_heart.gbapal.lz");
 const u32 gItemIconPalette_ChromeHeart[] = INCBIN_U32("graphics/items/icon_palettes/moon_stone.gbapal.lz");
+const u32 gItemIconPalette_NeutralHeart[] = INCBIN_U32("graphics/items/icon_palettes/neutral_heart.gbapal.lz");
 
 const u32 gItemIcon_ShinyStone[] = INCBIN_U32("graphics/items/icons/shiny_stone.4bpp.lz");
 const u32 gItemIconPalette_ShinyStone[] = INCBIN_U32("graphics/items/icon_palettes/shiny_stone.gbapal.lz");

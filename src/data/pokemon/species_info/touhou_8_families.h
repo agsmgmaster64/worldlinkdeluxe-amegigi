@@ -57,8 +57,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCWriggleTeachableLearnset,
         .eggMoveLearnset = sCWriggleEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_WRIGGLE},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_WRIGGLE},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_WRIGGLE}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_WRIGGLE, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_WRIGGLE, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_WRIGGLE, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_WRIGGLE] =
@@ -288,9 +289,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCMystiaTeachableLearnset,
         .eggMoveLearnset = sCMystiaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MYSTIA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MYSTIA},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_MYSTIA},
-                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MYSTIA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MYSTIA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_MYSTIA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_MYSTIA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_MYSTIA, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_MYSTIA] =
@@ -595,9 +597,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCKeineTeachableLearnset,
         .eggMoveLearnset = sCKeineEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_KEINE},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KEINE},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_KEINE},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_KEINE}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KEINE, CONDITIONS({IF_PAST_LEVEL, 32})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KEINE, CONDITIONS({IF_PAST_LEVEL, 32})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_KEINE, CONDITIONS({IF_PAST_LEVEL, 32})},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_KEINE, CONDITIONS({IF_PAST_LEVEL, 32})}),
     },
 
     [SPECIES_NORMAL_KEINE] =
@@ -867,9 +870,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCTewiTeachableLearnset,
         .eggMoveLearnset = sCTewiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 26, SPECIES_NORMAL_TEWI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TEWI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_TEWI},
-                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_TEWI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TEWI, CONDITIONS({IF_PAST_LEVEL, 26})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_TEWI, CONDITIONS({IF_PAST_LEVEL, 26})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_TEWI, CONDITIONS({IF_PAST_LEVEL, 26})},
+                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_TEWI, CONDITIONS({IF_PAST_LEVEL, 26})}),
     },
 
     [SPECIES_NORMAL_TEWI] =
@@ -1149,9 +1153,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCReisenTeachableLearnset,
         .eggMoveLearnset = sCReisenEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_REISEN},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_REISEN},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_REISEN},
-                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_REISEN}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_REISEN, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_REISEN, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_REISEN, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_REISEN, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_REISEN] =
@@ -1448,8 +1453,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCEirinTeachableLearnset,
         .eggMoveLearnset = sCEirinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_EIRIN},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_EIRIN},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_EIRIN}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_EIRIN, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_EIRIN, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_EIRIN, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_EIRIN] =
@@ -1666,8 +1672,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCKaguyaTeachableLearnset,
         .eggMoveLearnset = sCKaguyaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_KAGUYA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KAGUYA},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_KAGUYA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KAGUYA, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KAGUYA, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_KAGUYA, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_KAGUYA] =
@@ -1880,9 +1887,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou8[] =
         .teachableLearnset = sCMokouTeachableLearnset,
         .eggMoveLearnset = sCMokouEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MOKOU},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MOKOU},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOKOU},
-                                {EVO_HEART, ITEM_JUST_HEART, SPECIES_ADVENT_MOKOU}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MOKOU, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_MOKOU, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOKOU, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_MOKOU, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_MOKOU] =

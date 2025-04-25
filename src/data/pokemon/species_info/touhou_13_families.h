@@ -55,7 +55,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCKyoukoLevelUpLearnset,
         .teachableLearnset = sCKyoukoTeachableLearnset,
         .eggMoveLearnset = sCKyoukoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_NORMAL_KYOUKO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_NORMAL_KYOUKO},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KYOUKO, CONDITIONS({IF_PAST_LEVEL, 27})}),
     },
 
     [SPECIES_NORMAL_KYOUKO] =
@@ -271,7 +272,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCYoshikaLevelUpLearnset,
         .teachableLearnset = sCYoshikaTeachableLearnset,
         .eggMoveLearnset = sCYoshikaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_YOSHIKA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_YOSHIKA},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_YOSHIKA, CONDITIONS({IF_PAST_LEVEL, 32})}),
     },
 
     [SPECIES_NORMAL_YOSHIKA] =
@@ -491,7 +493,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCSeigaLevelUpLearnset,
         .teachableLearnset = sCSeigaTeachableLearnset,
         .eggMoveLearnset = sCSeigaEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_SEIGA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_SEIGA},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SEIGA, CONDITIONS({IF_PAST_LEVEL, 32})}),
     },
 
     [SPECIES_NORMAL_SEIGA] =
@@ -705,7 +708,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCTojikoLevelUpLearnset,
         .teachableLearnset = sCTojikoTeachableLearnset,
         .eggMoveLearnset = sCTojikoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_TOJIKO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_TOJIKO},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TOJIKO, CONDITIONS({IF_PAST_LEVEL, 34})}),
     },
 
     [SPECIES_NORMAL_TOJIKO] =
@@ -922,7 +926,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCFutoLevelUpLearnset,
         .teachableLearnset = sCFutoTeachableLearnset,
         .eggMoveLearnset = sCFutoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_FUTO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_FUTO},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_FUTO, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_FUTO] =
@@ -1140,7 +1145,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCMikoLevelUpLearnset,
         .teachableLearnset = sCMikoTeachableLearnset,
         .eggMoveLearnset = sCMikoEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MIKO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_MIKO},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MIKO, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_MIKO] =
@@ -1361,7 +1367,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .levelUpLearnset = sCMamizouLevelUpLearnset,
         .teachableLearnset = sCMamizouTeachableLearnset,
         .eggMoveLearnset = sCMamizouEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_MAMIZOU}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_MAMIZOU},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MAMIZOU, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_MAMIZOU] =

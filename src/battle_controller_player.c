@@ -1627,7 +1627,7 @@ static void Task_LaunchLvlUpAnim(u8 taskId)
     if (IsDoubleBattle() == TRUE && monIndex == gBattlerPartyIndexes[BATTLE_PARTNER(battler)])
         battler ^= BIT_FLANK;
 
-    if (GetEvolutionTargetSpecies(&gPlayerParty[monIndex], EVO_MODE_NORMAL, 0, NULL, CHECK_EVO) != SPECIES_NONE)
+    if (IsMonPastEvolutionLevel(&gPlayerParty[monIndex]))
         InitAndLaunchSpecialAnimation(battler, battler, battler, B_ANIM_LVL_UP_EVOLVE);
     else
         InitAndLaunchSpecialAnimation(battler, battler, battler, B_ANIM_LVL_UP);

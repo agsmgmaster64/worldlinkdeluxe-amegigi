@@ -55,7 +55,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .teachableLearnset = sCSeiranTeachableLearnset,
         .eggMoveLearnset = sCSeiranEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SEIRAN},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SEIRAN}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SEIRAN, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_SEIRAN, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_SEIRAN] =

@@ -3838,6 +3838,11 @@ u32 GetGMaxTargetSpecies(u32 species)
     return species;
 }
 
+bool32 ShouldIgnoreLevelCondition(void)
+{
+    return FALSE;
+}
+
 bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct EvolutionParam *params, struct Pokemon *tradePartner, u32 partyId, bool32 *canStopEvo, enum EvoState evoState)
 {
     u32 i, j;
@@ -3853,7 +3858,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     bool32 removeHoldItem = FALSE;
     u32 removeBagItem = ITEM_NONE;
     u32 removeBagItemCount = 0;
-    u32 partnerSpecies, partnerHeldItem;
+    u32 partnerSpecies, partnerHeldItem, level;
     enum ItemHoldEffect partnerHoldEffect;
 
     if (tradePartner != NULL)
@@ -4075,6 +4080,11 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 if (canStopEvo != NULL)
                     *canStopEvo = FALSE;
             }
+            break;
+        case IF_PAST_LEVEL:
+            level = GetMonData(mon, MON_DATA_LEVEL, 0);
+            if (level >= params[i].arg1 || ShouldIgnoreLevelCondition())
+                currentCondition = TRUE;
             break;
         default:
         case CONDITIONS_END:

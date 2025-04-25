@@ -58,8 +58,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .teachableLearnset = sCAyaTeachableLearnset,
         .eggMoveLearnset = sCAyaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_AYA},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_AYA},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_AYA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_AYA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_AYA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_AYA, CONDITIONS({IF_PAST_LEVEL, 35})}),
     },
 
     [SPECIES_NORMAL_AYA] =
@@ -281,9 +282,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .teachableLearnset = sCMedicineTeachableLearnset,
         .eggMoveLearnset = sCMedicineEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MEDICINE},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MEDICINE},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_MEDICINE},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_MEDICINE}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MEDICINE, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_MEDICINE, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_MEDICINE, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_MEDICINE, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_MEDICINE] =
@@ -563,8 +565,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .teachableLearnset = sCYuukaTeachableLearnset,
         .eggMoveLearnset = sCYuukaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_YUUKA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUUKA},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_YUUKA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_YUUKA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_YUUKA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_YUUKA, CONDITIONS({IF_PAST_LEVEL, 35})}),
     },
 
     [SPECIES_NORMAL_YUUKA] =
@@ -780,8 +783,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .teachableLearnset = sCKomachiTeachableLearnset,
         .eggMoveLearnset = sCKomachiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_KOMACHI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KOMACHI},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_KOMACHI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KOMACHI, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KOMACHI, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_KOMACHI, CONDITIONS({IF_PAST_LEVEL, 35})}),
     },
 
     [SPECIES_NORMAL_KOMACHI] =
@@ -998,8 +1002,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .teachableLearnset = sCEikiTeachableLearnset,
         .eggMoveLearnset = sCEikiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_EIKI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_EIKI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_EIKI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_EIKI, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_EIKI, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_EIKI, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_EIKI] =

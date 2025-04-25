@@ -57,8 +57,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCSuikaTeachableLearnset,
         .eggMoveLearnset = sCSuikaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_SUIKA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUIKA},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SUIKA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SUIKA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_SUIKA, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_SUIKA, CONDITIONS({IF_PAST_LEVEL, 35})}),
     },
 
     [SPECIES_NORMAL_SUIKA] =
@@ -275,8 +276,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCIkuTeachableLearnset,
         .eggMoveLearnset = sCIkuEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_IKU},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_IKU},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_IKU}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_IKU, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_IKU, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_IKU, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_IKU] =
@@ -493,8 +495,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCTenshiTeachableLearnset,
         .eggMoveLearnset = sCTenshiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_TENSHI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TENSHI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_TENSHI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TENSHI, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_TENSHI, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_TENSHI, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_TENSHI] =
@@ -717,8 +720,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCHatateTeachableLearnset,
         .eggMoveLearnset = sCHatateEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_HATATE},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_HATATE},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_HATATE}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_HATATE, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_HATATE, CONDITIONS({IF_PAST_LEVEL, 35})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_HATATE, CONDITIONS({IF_PAST_LEVEL, 35})}),
     },
 
     [SPECIES_NORMAL_HATATE] =
@@ -944,8 +948,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCSunnyTeachableLearnset,
         .eggMoveLearnset = sCSunnyEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_SUNNY},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUNNY},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUNNY}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SUNNY, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_SUNNY, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUNNY, CONDITIONS({IF_PAST_LEVEL, 22})}),
     },
 
     [SPECIES_NORMAL_SUNNY] =
@@ -1171,8 +1176,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCLunaTeachableLearnset,
         .eggMoveLearnset = sCLunaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_LUNA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_LUNA},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_LUNA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_LUNA, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_LUNA, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_LUNA, CONDITIONS({IF_PAST_LEVEL, 22})}),
     },
 
     [SPECIES_NORMAL_LUNA] =
@@ -1400,8 +1406,9 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .teachableLearnset = sCStarTeachableLearnset,
         .eggMoveLearnset = sCStarEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_NORMAL_STAR},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_STAR},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_STAR}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_STAR, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_STAR, CONDITIONS({IF_PAST_LEVEL, 22})},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_STAR, CONDITIONS({IF_PAST_LEVEL, 22})}),
     },
 
     [SPECIES_NORMAL_STAR] =
@@ -1649,7 +1656,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .levelUpLearnset = sCKokoroLevelUpLearnset,
         .teachableLearnset = sCKokoroTeachableLearnset,
         .eggMoveLearnset = sCKokoroEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_KOKORO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_KOKORO},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KOKORO, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_KOKORO] =
@@ -1869,7 +1877,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .levelUpLearnset = sCKasenLevelUpLearnset,
         .teachableLearnset = sCKasenTeachableLearnset,
         .eggMoveLearnset = sCKasenEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KASEN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KASEN},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KASEN, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_KASEN] =

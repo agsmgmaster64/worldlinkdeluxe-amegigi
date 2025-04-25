@@ -56,7 +56,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCKisumeTeachableLearnset,
         .eggMoveLearnset = sCKisumeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_NORMAL_KISUME},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_KISUME}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KISUME, CONDITIONS({IF_PAST_LEVEL, 23})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_KISUME, CONDITIONS({IF_PAST_LEVEL, 23})}),
     },
 
     [SPECIES_NORMAL_KISUME] =
@@ -277,8 +278,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCYamameTeachableLearnset,
         .eggMoveLearnset = sCYamameEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_YAMAME},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YAMAME},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_YAMAME}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_YAMAME, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_YAMAME, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_YAMAME, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_YAMAME] =
@@ -498,8 +500,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCParseeTeachableLearnset,
         .eggMoveLearnset = sCParseeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_PARSEE},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_PARSEE},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_PARSEE}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_PARSEE, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_PARSEE, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_PARSEE, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_PARSEE] =
@@ -714,8 +717,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCYuugiTeachableLearnset,
         .eggMoveLearnset = sCYuugiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YUUGI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_YUUGI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUUGI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_YUUGI, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_YUUGI, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_YUUGI, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_YUUGI] =
@@ -938,10 +942,11 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .levelUpLearnset = sCRinLevelUpLearnset,
         .teachableLearnset = sCRinTeachableLearnset,
         .eggMoveLearnset = sCRinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_NINJASK, 34, SPECIES_NORMAL_RIN},
-                                {EVO_LEVEL_SHEDINJA, 34, SPECIES_ZOMBIE_FAIRY},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_RIN},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_RIN}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_RIN},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_RIN, CONDITIONS({IF_PAST_LEVEL, 34})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_RIN, CONDITIONS({IF_PAST_LEVEL, 34})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_RIN, CONDITIONS({IF_PAST_LEVEL, 34})},
+                                {EVO_SPLIT_FROM_EVO, 0, SPECIES_ZOMBIE_FAIRY}),
     },
 
     [SPECIES_NORMAL_RIN] =
@@ -1214,8 +1219,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCUtsuhoTeachableLearnset,
         .eggMoveLearnset = sCUtsuhoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_UTSUHO},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_UTSUHO},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_UTSUHO}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_UTSUHO, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_UTSUHO, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_UTSUHO, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_UTSUHO] =
@@ -1431,8 +1437,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .levelUpLearnset = sCSatoriLevelUpLearnset,
         .teachableLearnset = sCSatoriTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_SATORI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_SATORI},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SATORI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SATORI, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_SATORI, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_SATORI, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_SATORI] =
@@ -1651,8 +1658,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .teachableLearnset = sCKoishiTeachableLearnset,
         .eggMoveLearnset = sCKoishiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KOISHI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KOISHI},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_KOISHI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KOISHI, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KOISHI, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_KOISHI, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_KOISHI] =

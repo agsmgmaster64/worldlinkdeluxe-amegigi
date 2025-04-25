@@ -3702,18 +3702,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ChromeHeart,
     },
 
-    [ITEM_SHINY_STONE] =
+    [ITEM_NEUTRAL_HEART] =
     {
-        .name = _("Shiny Stone"),
-        .price = (I_PRICE >= GEN_7) ? 3000 : 2100,
-        .description = sEvolutionStoneDesc,
+        .name = _("Neutral Heart"),
+        .price = 3000,
+        .description = COMPOUND_STRING(
+            "Brings natural\n"
+            "potential\n"
+            "to Puppets."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
-        .iconPic = gItemIcon_ShinyStone,
-        .iconPalette = gItemIconPalette_ShinyStone,
+        .iconPic = gItemIcon_EvoHeart,
+        .iconPalette = gItemIconPalette_NeutralHeart,
     },
 
     [ITEM_DUSK_STONE] =

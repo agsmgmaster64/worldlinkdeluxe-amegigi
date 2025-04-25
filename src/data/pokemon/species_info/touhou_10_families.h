@@ -55,9 +55,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .eggMoveLearnset = sCShizuhaEggMoveLearnset,
         .formSpeciesIdTable = sCShizuhaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_SHIZUHA},
-                                {EVO_HEART, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_SHIZUHA},
-                                {EVO_HEART, ITEM_HELPER_HEART, SPECIES_HELPER_SHIZUHA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_SHIZUHA] =
@@ -373,9 +374,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .eggMoveLearnset = sCMinorikoEggMoveLearnset,
         .formSpeciesIdTable = sCMinorikoFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_MINORIKO},
-                                {EVO_HEART, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_MINORIKO},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MINORIKO}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_MINORIKO] =
@@ -770,8 +772,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCHinaTeachableLearnset,
         .eggMoveLearnset = sCHinaEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_HINA},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_HINA},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_HINA}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_HINA, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_HINA, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_HINA, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_HINA] =
@@ -1025,8 +1028,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCNitoriTeachableLearnset,
         .eggMoveLearnset = sCNitoriEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_NITORI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_NITORI},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_NITORI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_NITORI, CONDITIONS({IF_PAST_LEVEL, 32})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_NITORI, CONDITIONS({IF_PAST_LEVEL, 32})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_NITORI, CONDITIONS({IF_PAST_LEVEL, 32})}),
     },
 
     [SPECIES_NORMAL_NITORI] =
@@ -1257,7 +1261,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCMomijiTeachableLearnset,
         .eggMoveLearnset = sCMomijiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOMIJI}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MOMIJI, CONDITIONS({IF_PAST_LEVEL, 28})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOMIJI, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_MOMIJI] =
@@ -1604,9 +1609,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCSanaeTeachableLearnset,
         .eggMoveLearnset = sCSanaeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_SANAE},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SANAE},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_SANAE}/*,
-                                {EVO_HEART, ITEM_CHROME_HEART, SPECIES_JK_SANAE}*/),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SANAE, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_SANAE, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_SANAE, CONDITIONS({IF_PAST_LEVEL, 36})}/*,
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_JK_SANAE, CONDITIONS({IF_PAST_LEVEL, 36})}*/),
     },
 
     [SPECIES_NORMAL_SANAE] =
@@ -1823,8 +1829,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCKanakoTeachableLearnset,
         .eggMoveLearnset = sCKanakoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_KANAKO},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KANAKO},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_KANAKO}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KANAKO, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KANAKO, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_KANAKO, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_KANAKO] =
@@ -2041,8 +2048,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .teachableLearnset = sCSuwakoTeachableLearnset,
         .eggMoveLearnset = sCSuwakoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_SUWAKO},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_SUWAKO},
-                                {EVO_HEART, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUWAKO}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SUWAKO, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_SUWAKO, CONDITIONS({IF_PAST_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_SUWAKO, CONDITIONS({IF_PAST_LEVEL, 40})}),
     },
 
     [SPECIES_NORMAL_SUWAKO] =

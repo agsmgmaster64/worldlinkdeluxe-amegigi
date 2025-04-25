@@ -539,7 +539,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         .teachableLearnset = sCKazamiTeachableLearnset,
         .eggMoveLearnset = sCKazamiEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_NORMAL_KAZAMI},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_KAZAMI}),
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_KAZAMI}),
     },
 
     [SPECIES_NORMAL_KAZAMI] =

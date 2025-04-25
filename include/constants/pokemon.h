@@ -304,6 +304,7 @@ enum EvolutionConditions {
     IF_PID_MODULO_100_LT,               // The Pokémon's personality value's modulo by 100 is lower than the defined value.
     IF_MIN_OVERWORLD_STEPS,             // The Player has taken a specific amount of steps in the overworld with the Pokémon following them or in the first slot of the party.
     IF_BAG_ITEM_COUNT,                  // The Player has the specific amount of an item in the bag. It then removes those items.
+    IF_PAST_LEVEL,                      // The Pokémon is past the regular evolution level.
     CONDITIONS_END
 };
 
@@ -318,12 +319,6 @@ enum EvolutionMethods {
     EVO_BATTLE_END,             // Battle ends, doesn't need to level up
     EVO_SPIN                    // The player spins in the overworld
 };
-
-#if I_SHARDS_REQUIRE_LEVEL == TRUE
-    #define EVO_HEART EVO_ITEM_LEVEL
-#else
-    #define EVO_HEART EVO_ITEM
-#endif
 
 enum EvolutionMode {
     EVO_MODE_NORMAL,

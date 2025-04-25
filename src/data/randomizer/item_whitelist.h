@@ -234,7 +234,7 @@ static const u16 sRandomizerItemWhitelist[] =
     ITEM_HELPER_HEART,
     ITEM_JUST_HEART,
     ITEM_CHROME_HEART,
-    ITEM_SHINY_STONE,
+    ITEM_NEUTRAL_HEART,
     ITEM_DUSK_STONE,
     ITEM_DAWN_STONE,
     ITEM_UPGRADE,

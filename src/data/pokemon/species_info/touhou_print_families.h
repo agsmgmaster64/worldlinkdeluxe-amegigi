@@ -271,7 +271,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .teachableLearnset = sCYorihimeTeachableLearnset,
         .eggMoveLearnset = sCYorihimeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_NORMAL_YORIHIME},
-                                {EVO_HEART, ITEM_SWIFT_HEART, SPECIES_SPEED_YORIHIME}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TOYOHIME, CONDITIONS({IF_PAST_LEVEL, 38})},
+                                {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_YORIHIME, CONDITIONS({IF_PAST_LEVEL, 38})}),
     },
 
     [SPECIES_NORMAL_YORIHIME] =
@@ -490,7 +491,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .teachableLearnset = sCToyohimeTeachableLearnset,
         .eggMoveLearnset = sCToyohimeEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_TOYOHIME},
-                                {EVO_HEART, ITEM_TECH_HEART, SPECIES_TECH_TOYOHIME}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TOYOHIME, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_TOYOHIME, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_TOYOHIME] =
@@ -718,7 +720,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .teachableLearnset = sCTokikoTeachableLearnset,
         .eggMoveLearnset = sCTokikoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_TOKIKO},
-                                {EVO_HEART, ITEM_POWER_HEART, SPECIES_ATTACK_TOKIKO}),
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TOKIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
+                                {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_TOKIKO, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_TOKIKO] =
@@ -966,7 +969,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .levelUpLearnset = sCKosuzuLevelUpLearnset,
         .teachableLearnset = sCKosuzuTeachableLearnset,
         .eggMoveLearnset = sCKosuzuEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_KOSUZU}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_KOSUZU},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_KOSUZU, CONDITIONS({IF_PAST_LEVEL, 28})}),
     },
 
     [SPECIES_NORMAL_KOSUZU] =

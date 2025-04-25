@@ -473,7 +473,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou16[] =
         FOOTPRINT(CNarumi)
         .levelUpLearnset = sCNarumiLevelUpLearnset,
         .teachableLearnset = sCNarumiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_NARUMI}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_NORMAL_NARUMI},
+                                {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_NARUMI, CONDITIONS({IF_PAST_LEVEL, 34})}),
     },
 
     [SPECIES_NORMAL_NARUMI] =
