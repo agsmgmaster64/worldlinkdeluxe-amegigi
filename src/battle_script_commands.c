@@ -4722,7 +4722,6 @@ void SetMoveEffect(bool32 primary, bool32 certain)
 
 static bool32 CanApplyAdditionalEffect(const struct AdditionalEffect *additionalEffect)
 {
-    // Self-targeting move effects only apply after the last mon has been hit
     if (additionalEffect->self
      && NumAffectedSpreadMoveTargets() > 1
      && GetNextTarget(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove), TRUE) != MAX_BATTLERS_COUNT)
@@ -6428,7 +6427,6 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
             gEffectBattler = battlerDef;
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_MagicianActivates;
-            gSpecialStatuses[battlerAtk].preventLifeOrbDamage = TRUE;
             effect = TRUE;
         }
         break;
@@ -7404,6 +7402,9 @@ static void Cmd_moveend(void)
                     SortBattlersBySpeed(battlers, FALSE);
 
                 for (i = 0; i < gBattlersCount; i++)
+                    gProtectStructs[i].statFell = FALSE; // restore for every possible eject pack battler
+
+                for (i = 0; i < gBattlersCount; i++)
                 {
                     u32 battler = battlers[i];
 
@@ -7417,7 +7418,6 @@ static void Cmd_moveend(void)
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_EjectPackActivates;
                     AI_DATA->ejectPackSwitch = TRUE;
-                    gProtectStructs[battler].statFell = FALSE;
                     break; // Only the fastest Eject item activates
                 }
             }
@@ -7662,7 +7662,6 @@ static void Cmd_moveend(void)
             gProtectStructs[gBattlerAttacker].shellTrap = FALSE;
             gBattleStruct->ateBoost[gBattlerAttacker] = FALSE;
             gSpecialStatuses[gBattlerAttacker].gemBoost = FALSE;
-            gSpecialStatuses[gBattlerAttacker].preventLifeOrbDamage = 0;
             gSpecialStatuses[gBattlerTarget].berryReduced = FALSE;
             gSpecialStatuses[gBattlerTarget].distortedTypeMatchups = FALSE;
             gBattleScripting.moveEffect = 0;
@@ -8482,6 +8481,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     {
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_NEUTRALIZING_GAS;
         gSpecialStatuses[battler].announceNeutralizingGas = TRUE;
+        gDisableStructs[battler].neutralizingGas = TRUE;
         gBattlerAbility = battler;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_SwitchInAbilityMsgRet;
@@ -8552,13 +8552,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
         else if (IsBattlerAffectedByHazards(battler, TRUE))
         {
             i = GetBattlerAbility(battler);
-            if (!(gBattleMons[battler].status1 & STATUS1_ANY)
-                && !IS_BATTLER_OF_TYPE(battler, TYPE_STEEL)
-                && i != ABILITY_IMMUNITY
-                && i != ABILITY_LIFESTREAM
-                && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
-                && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
-                && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
+            if (CanBePoisoned(gBattlerAttacker, battler, i))
             {
                 if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2)
                     gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
@@ -12788,7 +12782,8 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             }
             else
             {
-                gProtectStructs[battler].statFell = TRUE;   // Eject pack, lash out
+                gProtectStructs[battler].statFell = TRUE;
+                gProtectStructs[battler].lashOutAffected = TRUE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = (gBattlerTarget == battler); // B_MSG_ATTACKER_STAT_FELL or B_MSG_DEFENDER_STAT_FELL
             }
         }
@@ -18946,6 +18941,130 @@ void BS_SetSteelsurge(void)
         gSideStatuses[targetSide] |= SIDE_STATUS_STEELSURGE;
         gSideTimers[targetSide].steelsurgeAmount = 1;
         gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+}
+
+void BS_JumpIfIntimidateAbilityPrevented(void)
+{
+    NATIVE_ARGS();
+
+    u32 hasAbility = FALSE;
+    u32 ability = GetBattlerAbility(gBattlerTarget);
+
+    switch (ability)
+    {
+    case ABILITY_INNER_FOCUS:
+    case ABILITY_SCRAPPY:
+    case ABILITY_OWN_TEMPO:
+    case ABILITY_OBLIVIOUS:
+        if (B_UPDATED_INTIMIDATE >= GEN_8)
+        {
+            hasAbility = TRUE;
+            gBattlescriptCurrInstr = BattleScript_IntimidatePrevented;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        break;
+    case ABILITY_GATE_KEEPER:
+        hasAbility = TRUE;
+        gBattlescriptCurrInstr = BattleScript_IntimidateInReverse;
+        break;
+    default:
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    }
+
+    if (hasAbility)
+    {
+        gLastUsedAbility = ability;
+        gBattlerAbility = gBattlerTarget;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+}
+
+void BS_JumpIfFascinateAbilityPrevented(void)
+{
+    NATIVE_ARGS();
+
+    u32 hasAbility = FALSE;
+    u32 ability = GetBattlerAbility(gBattlerTarget);
+
+    switch (ability)
+    {
+    case ABILITY_INNER_FOCUS:
+    case ABILITY_SCRAPPY:
+    case ABILITY_OWN_TEMPO:
+    case ABILITY_OBLIVIOUS:
+        if (B_UPDATED_INTIMIDATE >= GEN_8)
+        {
+            hasAbility = TRUE;
+            gBattlescriptCurrInstr = BattleScript_FascinatePrevented;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        break;
+    case ABILITY_GATE_KEEPER:
+        hasAbility = TRUE;
+        gBattlescriptCurrInstr = BattleScript_FascinateInReverse;
+        break;
+    default:
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    }
+
+    if (hasAbility)
+    {
+        gLastUsedAbility = ability;
+        gBattlerAbility = gBattlerTarget;
+        RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
+    }
+}
+
+void BS_TryIntimidatEjectpack(void)
+{
+    NATIVE_ARGS();
+
+    u32 affectedBattler = 0xFF;
+    u32 battler = BATTLE_OPPOSITE(gBattlerAttacker);
+    u32 partnerBattler = BATTLE_PARTNER(battler);
+
+    bool32 ejectPackBattler = CanEjectPackTrigger(gBattlerAttacker, battler, MOVE_NONE);
+    bool32 ejectPackPartnerBattler = CanEjectPackTrigger(gBattlerAttacker, partnerBattler, MOVE_NONE);
+
+    if (ejectPackBattler && ejectPackPartnerBattler)
+    {
+        u32 battlerSpeed = GetBattlerTotalSpeedStat(battler);
+        u32 partnerbattlerSpeed = GetBattlerTotalSpeedStat(partnerBattler);
+
+        if (battlerSpeed >= partnerbattlerSpeed)
+            affectedBattler = battler;
+        else
+            affectedBattler = partnerBattler;
+    }
+    else if (ejectPackBattler)
+    {
+        affectedBattler = battler;
+    }
+    else if (ejectPackPartnerBattler)
+    {
+        affectedBattler = partnerBattler;
+    }
+
+    gBattlescriptCurrInstr = cmd->nextInstr;
+    if (affectedBattler != 0xFF)
+    {
+        gProtectStructs[battler].statFell = FALSE;
+        gProtectStructs[partnerBattler].statFell = FALSE;
+        AI_DATA->ejectPackSwitch = TRUE;
+        gBattleScripting.battler = affectedBattler;
+        gLastUsedItem = gBattleMons[affectedBattler].item;
+        RecordItemEffectBattle(affectedBattler, HOLD_EFFECT_EJECT_PACK);
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_EjectPackActivate_Ret;
     }
 }
 

@@ -109,8 +109,8 @@ enum UtilDebugMenu
     #if RANDOMIZER_AVAILABLE == TRUE
     DEBUG_UTIL_MENU_ITEM_RANDOMIZER,
     #endif
-    DEBUG_UTIL_MENU_ITEM_STEVEN_MULTI,
     DEBUG_UTIL_MENU_ITEM_TIME_MENU,
+    DEBUG_UTIL_MENU_ITEM_STEVEN_MULTI // Please keep this at the bottom <3
 };
 
 enum TimeMenuDebugMenu

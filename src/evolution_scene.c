@@ -262,7 +262,7 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
                         currSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(currSpecies, isShiny, personality), OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(currSpecies, isShiny, personality), OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
     UniquePalette(OBJ_PLTT_ID(1), currSpecies, personality, isShiny);
     CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(1), gPlttBufferUnfaded + OBJ_PLTT_ID(1), PLTT_SIZE_4BPP);
 
@@ -279,7 +279,7 @@ void EvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, bool8 canStopEvo, u
                         postEvoSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
     UniquePalette(OBJ_PLTT_ID(2), postEvoSpecies, personality, isShiny);
     CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(2), gPlttBufferUnfaded + OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
@@ -358,7 +358,7 @@ static void CB2_EvolutionSceneLoadGraphics(void)
                         postEvoSpecies,
                         personality,
                         TRUE);
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
     UniquePalette(OBJ_PLTT_ID(2), postEvoSpecies, personality, isShiny);
     CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(2), gPlttBufferUnfaded + OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 
@@ -430,7 +430,7 @@ static void CB2_TradeEvolutionSceneLoadGraphics(void)
                                 postEvoSpecies,
                                 personality,
                                 TRUE);
-            LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+            LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
             UniquePalette(OBJ_PLTT_ID(2), postEvoSpecies, personality, isShiny);
             CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(2), gPlttBufferUnfaded + OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
             gMain.state++;
@@ -497,7 +497,7 @@ void TradeEvolutionScene(struct Pokemon *mon, u16 postEvoSpecies, u8 preEvoSprit
                         personality,
                         TRUE);
 
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
+    LoadPalette(GetMonSpritePalFromSpeciesAndPersonality(postEvoSpecies, isShiny, personality), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
     UniquePalette(OBJ_PLTT_ID(2), postEvoSpecies, personality, isShiny);
     CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(2), gPlttBufferUnfaded + OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
 

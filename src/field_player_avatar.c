@@ -15,6 +15,7 @@
 #include "fieldmap.h"
 #include "fishing_game.h"
 #include "m4a.h"
+#include "follower_npc.h"
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -38,6 +39,7 @@
 #include "constants/event_object_movement.h"
 #include "constants/field_effects.h"
 #include "constants/items.h"
+#include "constants/metatile_behaviors.h"
 #include "constants/moves.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -79,7 +81,6 @@ static bool8 TryInterruptObjectEventSpecialAnim(struct ObjectEvent *, u8);
 static void npc_clear_strange_bits(struct ObjectEvent *);
 static void MovePlayerAvatarUsingKeypadInput(u8, u16, u16);
 static void PlayerAllowForcedMovementIfMovingSameDirection();
-static bool8 TryDoMetatileBehaviorForcedMovement();
 static u8 GetForcedMovementByMetatileBehavior();
 
 static bool8 ForcedMovement_None(void);
@@ -447,7 +448,7 @@ static bool8 TryUpdatePlayerSpinDirection(void)
     return FALSE;
 }
 
-static bool8 TryDoMetatileBehaviorForcedMovement(void)
+bool8 TryDoMetatileBehaviorForcedMovement(void)
 {
     return sForcedMovementFuncs[GetForcedMovementByMetatileBehavior()]();
 }
@@ -527,6 +528,10 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
     {
         playerAvatar->runningState = MOVING;
         moveFunc(direction);
+        if (PlayerHasFollowerNPC() 
+         && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE 
+         && FindTaskIdByFunc(Task_MoveNPCFollowerAfterForcedMovement) == TASK_NONE)
+            CreateTask(Task_MoveNPCFollowerAfterForcedMovement, 3);
         return TRUE;
     }
 }
@@ -851,7 +856,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON || gSaveBlock3Ptr->autoRun) && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0)
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !FollowerNPCComingThroughDoor())
     {
         if (heldKeys & B_BUTTON && gSaveBlock3Ptr->autoRun == TRUE)
         {
@@ -950,7 +955,9 @@ static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
 {
     if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
      && MapGridGetElevationAt(x, y) == 3
-     && GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT)
+     && (GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT
+     || GetObjectEventIdByPosition(x, y, 3) == GetFollowerNPCObjectId()
+     ))
     {
         CreateStopSurfingTask(direction);
         return TRUE;
@@ -1229,6 +1236,22 @@ void PlayerOnBikeCollide(u8 direction)
 {
     PlayCollisionSoundIfNotFacingWarp(direction);
     PlayerSetAnimId(GetWalkInPlaceNormalMovementAction(direction), COPY_MOVE_WALK);
+    // Edge case: If the player stops at the top of a mud slide, but the NPC follower is still on a mud slide tile,
+    // move the follower into the player and hide them.
+    if (PlayerHasFollowerNPC())
+    {
+        struct ObjectEvent *npcFollower = &gObjectEvents[GetFollowerNPCObjectId()];
+        struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+        if (npcFollower->invisible == FALSE 
+         && player->currentMetatileBehavior != MB_MUDDY_SLOPE 
+         && npcFollower->currentMetatileBehavior == MB_MUDDY_SLOPE)
+        {
+            gPlayerAvatar.preventStep = TRUE;
+            ObjectEventSetHeldMovement(npcFollower, MOVEMENT_ACTION_WALK_FAST_UP);
+            CreateTask(Task_HideNPCFollowerAfterMovementFinish, 2);
+        }
+    }
 }
 
 void PlayerOnBikeCollideWithFarawayIslandMew(u8 direction)
@@ -1648,6 +1671,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction)
     gPlayerAvatar.objectEventId = objectEventId;
     gPlayerAvatar.spriteId = objectEvent->spriteId;
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_CONTROLLABLE | PLAYER_AVATAR_FLAG_ON_FOOT);
+    CreateFollowerNPCAvatar();
 }
 
 void SetPlayerInvisibility(bool8 invisible)
@@ -1896,6 +1920,7 @@ static void CreateStopSurfingTask(u8 direction)
     taskId = CreateTask(Task_StopSurfingInit, 0xFF);
     gTasks[taskId].data[0] = direction;
     Task_StopSurfingInit(taskId);
+    PrepareFollowerNPCDismountSurf();
 }
 
 static void Task_StopSurfingInit(u8 taskId)

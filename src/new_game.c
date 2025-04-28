@@ -54,6 +54,7 @@
 #include "difficulty.h"
 #include "tx_randomizer_and_challenges.h"
 #include "randomizer.h"
+#include "follower_npc.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -255,6 +256,7 @@ void NewGameInitData(void)
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
     ResetAllPlayerMusic();
     ResetOutfitData();
+    ClearFollowerNPCData();
     gSaveBlock3Ptr->playerBike = MACH_BIKE;
     gSaveBlock1Ptr->registeredItemSelect = ITEM_NONE;
     gSaveBlock3Ptr->registeredItemL = ITEM_NONE;

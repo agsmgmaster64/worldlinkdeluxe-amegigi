@@ -80,53 +80,6 @@ u32 LoadCompressedSpriteSheetByTemplate(const struct SpriteTemplate *template, s
     return ret;
 }
 
-u32 LoadCompressedSpriteSheetOverrideBuffer(const struct CompressedSpriteSheet *src, void *buffer)
-{
-    LZDecompressWram(src->data, buffer);
-    return DoLoadCompressedSpriteSheet(src, buffer);
-}
-
-u32 LoadCompressedSpritePalette(const struct CompressedSpritePalette *src)
-{
-    return LoadCompressedSpritePaletteWithTag(src->data, src->tag);
-}
-
-u32 LoadCompressedUniqueSpritePaletteWithTag(const u32 *pal, u16 species, u32 personality, bool8 isShiny)
-{
-    u32 index;
-    struct SpritePalette dest;
-    void *buffer = malloc_and_decompress(pal, NULL);
-
-    dest.data = buffer;
-    dest.tag = species;
-    index = LoadUniqueSpritePalette(&dest, species, personality, isShiny);
-    Free(buffer);
-    return index;
-}
-
-u32 LoadCompressedSpritePaletteWithTag(const u32 *pal, u16 tag)
-{
-    u32 index;
-    struct SpritePalette dest;
-    void *buffer = malloc_and_decompress(pal, NULL);
-
-    dest.data = buffer;
-    dest.tag = tag;
-    index = LoadSpritePalette(&dest);
-    Free(buffer);
-    return index;
-}
-
-void LoadCompressedSpritePaletteOverrideBuffer(const struct CompressedSpritePalette *src, void *buffer)
-{
-    struct SpritePalette dest;
-
-    LZ77UnCompWram(src->data, buffer);
-    dest.data = buffer;
-    dest.tag = src->tag;
-    LoadSpritePalette(&dest);
-}
-
 void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffer)
 {
     LZ77UnCompWram(src->data, buffer);
@@ -346,21 +299,6 @@ bool8 LoadCompressedSpriteSheetUsingHeap(const struct CompressedSpriteSheet *src
     dest.tag = src->tag;
 
     LoadSpriteSheet(&dest);
-    Free(buffer);
-    return FALSE;
-}
-
-bool8 LoadCompressedSpritePaletteUsingHeap(const struct CompressedSpritePalette *src)
-{
-    struct SpritePalette dest;
-    void *buffer;
-
-    buffer = AllocZeroed(src->data[0] >> 8);
-    LZ77UnCompWram(src->data, buffer);
-    dest.data = buffer;
-    dest.tag = src->tag;
-
-    LoadSpritePalette(&dest);
     Free(buffer);
     return FALSE;
 }

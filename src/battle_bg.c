@@ -951,7 +951,7 @@ static void LoadBattleTerrainGfx(u8 terrain)
     // Copy to bg3
     LZDecompressVram(sBattleTerrainTable[terrain].tileset, (void *)BG_CHAR_ADDR(2));
     LZDecompressVram(sBattleTerrainTable[terrain].tilemap, (void *)BG_SCREEN_ADDR(26));
-    LoadCompressedPalette(sBattleTerrainTable[terrain].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+    LoadPalette(sBattleTerrainTable[terrain].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
 static void LoadBattleTerrainEntryGfx(u8 terrain)
@@ -1036,7 +1036,7 @@ void LoadBattleMenuWindowGfx(void)
 {
     LoadUserWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
     LoadUserWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
-    LoadCompressedPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
+    LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
     {
@@ -1058,7 +1058,7 @@ void LoadBattleTextboxAndBackground(void)
     LZDecompressVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
-    LoadCompressedPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadBattleMenuWindowGfx();
     if (B_TERRAIN_BG_CHANGE == TRUE)
         DrawTerrainTypeBattleBackground();
@@ -1327,7 +1327,7 @@ void DrawBattleEntryBackground(void)
     {
         LZDecompressVram(gBattleVSFrame_Gfx, (void *)(BG_CHAR_ADDR(1)));
         LZDecompressVram(gVsLettersGfx, (void *)OBJ_VRAM0);
-        LoadCompressedPalette(gBattleVSFrame_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
+        LoadPalette(gBattleVSFrame_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
         SetBgAttribute(1, BG_ATTR_SCREENSIZE, 1);
         SetGpuReg(REG_OFFSET_BG1CNT, 0x5C04);
         CopyToBgTilemapBuffer(1, gBattleVSFrame_Tilemap, 0, 0);
@@ -1412,7 +1412,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         CopyBgTilemapBufferToVram(0);
         break;
     case 2:
-        LoadCompressedPalette(gBattleTextboxPalette, 0, 0x40);
+        LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         break;
     case 3:
         LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()].tileset, (void *)BG_CHAR_ADDR(2));
@@ -1421,7 +1421,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         LZDecompressVram(sBattleTerrainTable[GetBattleTerrainOverride()].tilemap, (void *)BG_SCREEN_ADDR(26));
         break;
     case 5:
-        LoadCompressedPalette(sBattleTerrainTable[GetBattleTerrainOverride()].palette, 0x20, 0x60);
+        LoadPalette(sBattleTerrainTable[GetBattleTerrainOverride()].palette, 0x20, 0x60);
         break;
     case 6:
         LoadBattleMenuWindowGfx();
