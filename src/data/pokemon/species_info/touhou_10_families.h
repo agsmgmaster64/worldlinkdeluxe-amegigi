@@ -1260,6 +1260,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .levelUpLearnset = sCMomijiLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
         .eggMoveLearnset = sCMomijiEggMoveLearnset,
+        .formSpeciesIdTable = sCMomijiFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI},
                                 {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MOMIJI, CONDITIONS({IF_PAST_LEVEL, 28})},
                                 {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_MOMIJI, CONDITIONS({IF_PAST_LEVEL, 28})}),
@@ -1327,6 +1328,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         )
         .levelUpLearnset = sMomijiLevelUpLearnset,
         .teachableLearnset = sMomijiTeachableLearnset,
+        .formSpeciesIdTable = sMomijiFormSpeciesIdTable,
     },
 
     [SPECIES_DEFENSE_MOMIJI] =
@@ -1496,8 +1498,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconPalIndex = 1,
         FOOTPRINT(CMomiji)
         .isSannianForm = TRUE,
-        .levelUpLearnset = sCMomijiLevelUpLearnset,
+        .levelUpLearnset = sCMomijiSannianLevelUpLearnset,
         .teachableLearnset = sCMomijiTeachableLearnset,
+        .formSpeciesIdTable = sCMomijiFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_NORMAL_MOMIJI_SANNI}),
     },
 
@@ -1551,8 +1554,9 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconPalIndex = 1,
         FOOTPRINT(Momiji)
         .isSannianForm = TRUE,
-        .levelUpLearnset = sMomijiLevelUpLearnset,
+        .levelUpLearnset = sMomijiSannianLevelUpLearnset,
         .teachableLearnset = sMomijiTeachableLearnset,
+        .formSpeciesIdTable = sMomijiFormSpeciesIdTable,
     },
 
     [SPECIES_CHIBI_SANAE] =

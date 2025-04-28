@@ -330,7 +330,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(Shanghai)
         .levelUpLearnset = sShanghaiLevelUpLearnset,
         .teachableLearnset = sShanghaiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH_SHANGHAI}),
     },
 
     [SPECIES_HOURAI] =
@@ -385,61 +385,64 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(Hourai)
         .levelUpLearnset = sHouraiLevelUpLearnset,
         .teachableLearnset = sHouraiTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH_HOURAI}),
     },
 
-    [SPECIES_GOLIATH] =
-    {
-        .baseHP        = 110,
-        .baseAttack    = 120,
-        .baseDefense   = 110,
-        .baseSpeed     = 50,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_REASON, TYPE_STEEL),
-        .catchRate = 45,
-        .expYield = 208,
-        .evYield_Attack = 3,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
-        .sourceGame = SOURCE_PCB,
-        .noFlip = TRUE,
-        .speciesName = _("Goliath"),
-        .cryId = CRY_ALICE_DOLL,
-        .natDexNum = NATIONAL_DEX_GOLIATH,
-        .categoryName = _("Big Doll"),
-        .height = 8,
-        .weight = 1000,
-        .description = COMPOUND_STRING(
-            "Because the triplets originally split from\n"
-            "one body, they think exactly alike.\n"
-            "They work cooperatively to burrow\n"
-            "endlessly through the ground."),
-        .pokemonScale = 270,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Goliath,
-        .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 0,
-        .frontAnimFrames = sAnims_GenericBlinkingAnim,
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Goliath,
-        .backPicSize = MON_COORDS_SIZE(64, 64),
-        .backPicYOffset = 0,
-        .backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_Goliath,
-        .shinyPalette = gMonShinyPalette_Goliath,
-        .iconSprite = gMonIcon_Goliath,
-        .iconPalIndex = 1,
-        FOOTPRINT(Goliath)
-        .levelUpLearnset = sGoliathLevelUpLearnset,
-        .teachableLearnset = sGoliathTeachableLearnset,
-    },
+    #define GOLIATH_SPECIES_INFO(rzMode)                                                                \
+    {                                                                                                   \
+        .baseHP        = 110,                                                                           \
+        .baseAttack    = 120,                                                                           \
+        .baseDefense   = 110,                                                                           \
+        .baseSpeed     = 50,                                                                            \
+        .baseSpAttack  = 60,                                                                            \
+        .baseSpDefense = 70,                                                                            \
+        .types = MON_TYPES(TYPE_REASON, TYPE_STEEL),                                                    \
+        .catchRate = 225,                                                                               \
+        .expYield = 208,                                                                                \
+        .evYield_Attack = 3,                                                                            \
+        .genderRatio = PERCENT_FEMALE(50),                                                              \
+        .eggCycles = 20,                                                                                \
+        .friendship = STANDARD_FRIENDSHIP,                                                              \
+        .growthRate = GROWTH_FAST,                                                                      \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),                                              \
+        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE, ABILITY_NONE },                             \
+        .sourceGame = SOURCE_PCB,                                                                       \
+        .noFlip = TRUE,                                                                                 \
+        .speciesName = _("Unown"),                                                                      \
+        .cryId = CRY_ALICE_DOLL,                                                                        \
+        .natDexNum = NATIONAL_DEX_GOLIATH,                                                              \
+        .categoryName = _("Symbol"),                                                                    \
+        .height = 5,                                                                                    \
+        .weight = 1000,                                                                                 \
+        .description = gUnownPokedexText,                                                               \
+        .pokemonScale = 411,                                                                            \
+        .pokemonOffset = 2,                                                                             \
+        .trainerScale = 256,                                                                            \
+        .trainerOffset = 0,                                                                             \
+        .frontPic = gMonFrontPic_Goliath,                                                               \
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                                        \
+        .frontPicYOffset = 0,                                                                           \
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,                                                  \
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,                                                        \
+        .enemyMonElevation = 0,                                                                         \
+        .backPic = gMonBackPic_Goliath,                                                                 \
+        .backPicSize = MON_COORDS_SIZE(64, 64),                                                         \
+        .backPicYOffset = 0,                                                                            \
+        .backAnimId = BACK_ANIM_NONE,                                                                   \
+        .palette = gMonPalette_Goliath,                                                                 \
+        .shinyPalette = gMonShinyPalette_Goliath,                                                       \
+        .iconSprite = gMonIcon_Goliath,                                                                 \
+        .iconPalIndex = 0,                                                                              \
+        SHADOW(0, 3, SHADOW_SIZE_S)                                                                     \
+        FOOTPRINT(Goliath)                                                                              \
+        .levelUpLearnset = sGoliathLevelUpLearnset,                                                     \
+        .teachableLearnset = sGoliathTeachableLearnset,                                                 \
+        .formSpeciesIdTable = sGoliathFormSpeciesIdTable,                                               \
+        .randomizerMode = rzMode                                                                        \
+    }
+
+    [SPECIES_GOLIATH_SHANGHAI] = GOLIATH_SPECIES_INFO(MON_RANDOMIZER_RANDOM_FORM),
+    [SPECIES_GOLIATH_HOURAI] = GOLIATH_SPECIES_INFO(MON_RANDOMIZER_INVALID),
 
     [SPECIES_CHIBI_ALICE] =
     {
@@ -498,8 +501,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
                                 {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})},
                                 {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})},
                                 {EVO_ITEM, ITEM_TECH_HEART, SPECIES_TECH_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})},
-                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})}/*,
-                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_DARK_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})}*/),
+                                {EVO_ITEM, ITEM_JUST_HEART, SPECIES_ADVENT_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_DARK_ALICE, CONDITIONS({IF_PAST_LEVEL, 36})}),
     },
 
     [SPECIES_NORMAL_ALICE] =
@@ -715,6 +718,61 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         FOOTPRINT(AdAlice)
         .levelUpLearnset = sAdAliceLevelUpLearnset,
         .teachableLearnset = sAdAliceTeachableLearnset,
+    },
+
+    [SPECIES_DARK_ALICE] =
+    {
+        .baseHP        = 90,
+        .baseAttack    = 50,
+        .baseDefense   = 85,
+        .baseSpeed     = 95,
+        .baseSpAttack  = 140,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_REASON, TYPE_DARK),
+        .catchRate = 3,
+        .expYield = 224,
+        .evYield_SpAttack = 3,
+        .itemCommon = ITEM_DUBIOUS_TOME,
+        .itemRare = ITEM_DUBIOUS_TOME,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_NONE },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Dark Alice"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_OSHAWOTT,
+        .categoryName = _("Sea Otter"),
+        .height = 5,
+        .weight = 59,
+        .description = COMPOUND_STRING(
+            "The scalchop on its stomach isn't just\n"
+            "used for battle, it can be used to break\n"
+            "open hard berries as well. It is made\n"
+            "from the same element as its claws."),
+        .pokemonScale = 432,
+        .pokemonOffset = 15,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_DarkAlice,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_DarkAlice,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_DarkAlice,
+        .shinyPalette = gMonShinyPalette_DarkAlice,
+        .iconSprite = gMonIcon_DarkAlice,
+        .iconPalIndex = 0,
+        FOOTPRINT(DarkAlice)
+        .levelUpLearnset = sDarkAliceLevelUpLearnset,
+        .teachableLearnset = sDarkAliceTeachableLearnset,
     },
 
     [SPECIES_CHIBI_LILY_WHITE] =

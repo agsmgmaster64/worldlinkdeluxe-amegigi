@@ -540,8 +540,10 @@
 #define MUS_CASINO_PLUS_7           605
 #define MUS_CASINO_PLUS_8           606
 #define MUS_CASINO_PLUS_9           607
+#define MUS_ZGS_BAMBOO_FOREST       608
+#define MUS_ZGS_MORIYA_SHRINE       609
 
-#define END_MUS                     MUS_CASINO_PLUS_9
+#define END_MUS                     MUS_ZGS_MORIYA_SHRINE
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

@@ -71,6 +71,12 @@ static const u16 sPWakasagihimeFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sGoliathFormSpeciesIdTable[] = {
+    SPECIES_GOLIATH_SHANGHAI,
+    SPECIES_GOLIATH_HOURAI,
+    FORM_SPECIES_END,
+};
+
 #if P_FAMILY_CHARMANDER
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_NORMAL_MARISA,
@@ -633,9 +639,6 @@ static const u16 sWooperFormSpeciesIdTable[] = {
 
 #if P_FAMILY_UNOWN
 static const u16 sUnownFormSpeciesIdTable[] = {
-    SPECIES_TECH_PARSEE,
-    SPECIES_UNOWN_B,
-    SPECIES_UNOWN_C,
     SPECIES_UNOWN_D,
     SPECIES_UNOWN_E,
     SPECIES_UNOWN_F,

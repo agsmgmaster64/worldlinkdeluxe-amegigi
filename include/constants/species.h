@@ -58,6 +58,7 @@
 #define SPECIES_SHANGHAI                                49
 #define SPECIES_HOURAI                                  50
 #define SPECIES_GOLIATH                                 51
+#define SPECIES_GOLIATH_SHANGHAI                        SPECIES_GOLIATH
 #define SPECIES_CHIBI_ALICE                             52
 #define SPECIES_NORMAL_ALICE                            53
 #define SPECIES_ATTACK_ALICE                            54
@@ -509,6 +510,7 @@
 #define SPECIES_EMBOAR                                  500 // JKSanae
 #define SPECIES_DARK_ALICE                              501
 #define SPECIES_AKI_SISTERS                             502
+#define SPECIES_AKI_SISTERS_SHIZUHA                     SPECIES_AKI_SISTERS
 #define SPECIES_LAST_WORD_SUWAKO                        503
 #define SPECIES_LAST_WORD_UTSUHO                        504
 #define SPECIES_LAST_WORD_TENSHI                        505
@@ -1076,8 +1078,8 @@
 #define SPECIES_EXTRA_REISEN_OLD                        1021
 #define SPECIES_PIKACHU_WORLD                           1022
 #define SPECIES_PICHU_SPIKY_EARED                       1023
-#define SPECIES_UNOWN_B                                 1024
-#define SPECIES_UNOWN_C                                 1025
+#define SPECIES_GOLIATH_HOURAI                          1024
+#define SPECIES_AKI_SISTERS_MINORIKO                    1025
 #define SPECIES_UNOWN_D                                 1026
 #define SPECIES_UNOWN_E                                 1027
 #define SPECIES_UNOWN_F                                 1028

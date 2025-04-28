@@ -4651,6 +4651,8 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_CASINO_PLUS_7) \
     X(MUS_CASINO_PLUS_8) \
     X(MUS_CASINO_PLUS_9) \
+    X(MUS_ZGS_BAMBOO_FOREST) \
+    X(MUS_ZGS_MORIYA_SHRINE) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \
