@@ -80,6 +80,12 @@ u32 LoadCompressedSpriteSheetByTemplate(const struct SpriteTemplate *template, s
     return ret;
 }
 
+u32 LoadCompressedSpriteSheetOverrideBuffer(const struct CompressedSpriteSheet *src, void *buffer)
+{
+    LZDecompressWram(src->data, buffer);
+    return DoLoadCompressedSpriteSheet(src, buffer);
+}
+
 void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffer)
 {
     LZ77UnCompWram(src->data, buffer);

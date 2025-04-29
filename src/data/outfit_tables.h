@@ -249,8 +249,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = COMPOUND_STRING("Gigi Gremsplay"),
         .desc = COMPOUND_STRING("Cosplay of the\norange gremlin\nherself."),
         .trainerPics = {
-            [MALE]   = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_RENKO },
-            [FEMALE] = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_MARIBEL },
+            [MALE]   = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_GIGI },
+            [FEMALE] = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_GIGI },
         },
         .mugshotIds = {
             [MALE] =   MUGSHOT_GIGI,

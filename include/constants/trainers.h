@@ -127,6 +127,8 @@
 #define TRAINER_BACK_PIC_STEVEN                 7
 #define TRAINER_BACK_PIC_RENKO_YOUNG            8
 #define TRAINER_BACK_PIC_MARIBEL_YOUNG          9
+#define TRAINER_BACK_PIC_GIGI                   10
+#define TRAINER_BACK_PIC_KRONII                 11
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

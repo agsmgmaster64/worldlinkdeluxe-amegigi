@@ -15,7 +15,7 @@
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 4
         .trainerPic = TRAINER_BACK_PIC_RENKO,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 6
             TRAINER_ENCOUNTER_MUSIC_MALE,
         .partySize = 0,
@@ -32,7 +32,7 @@
         .trainerClass = TRAINER_CLASS_RIVAL,
 #line 11
         .trainerPic = TRAINER_BACK_PIC_STEVEN,
-        .encounterMusic_gender = 
+        .encounterMusic_gender =
 #line 12
 F_TRAINER_FEMALE | 
 #line 13
@@ -98,6 +98,82 @@ F_TRAINER_FEMALE |
                 MOVE_PROTECT,
                 MOVE_SOLAR_BEAM,
                 MOVE_HEART_BREAK,
+            },
+            },
+        },
+    },
+#line 45
+    [DIFFICULTY_NORMAL][PARTNER_GIGI] =
+    {
+#line 46
+        .trainerName = _("Gigi"),
+#line 47
+        .trainerClass = TRAINER_CLASS_HOLOLIVE_MEMBER,
+#line 48
+        .trainerPic = TRAINER_BACK_PIC_GIGI,
+        .encounterMusic_gender =
+#line 49
+F_TRAINER_FEMALE | 
+#line 50
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 52
+            .species = SPECIES_NORMAL_MEDICINE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 55
+            .ev = TRAINER_PARTY_EVS(6, 0, 0, 252, 252, 0),
+#line 54
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 53
+            .lvl = 50,
+            .nature = NATURE_HARDY,
+            .moves = {
+#line 56
+                MOVE_LIGHT_SCREEN,
+                MOVE_MANA_BURST,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+            {
+#line 61
+            .species = SPECIES_NORMAL_NUE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 64
+            .ev = TRAINER_PARTY_EVS(6, 0, 0, 252, 252, 0),
+#line 63
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 62
+            .lvl = 50,
+            .nature = NATURE_HARDY,
+            .moves = {
+#line 65
+                MOVE_LIGHT_SCREEN,
+                MOVE_MANA_BURST,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
+            },
+            },
+            {
+#line 70
+            .species = SPECIES_NORMAL_MEILING,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 73
+            .ev = TRAINER_PARTY_EVS(6, 252, 0, 252, 0, 0),
+#line 72
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 71
+            .lvl = 50,
+            .nature = NATURE_HARDY,
+            .moves = {
+#line 74
+                MOVE_LIGHT_SCREEN,
+                MOVE_MANA_BURST,
+                MOVE_REFLECT,
+                MOVE_METAL_CLAW,
             },
             },
         },

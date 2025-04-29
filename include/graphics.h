@@ -1736,6 +1736,36 @@ extern const u32 gItemIcon_LustrousGlobe[];
 extern const u16 gItemIconPalette_LustrousGlobe[];
 extern const u32 gItemIcon_BerserkGene[];
 extern const u16 gItemIconPalette_BerserkGene[];
+extern const u32 gItemIcon_OutfitBox[];
+extern const u16 gItemIconPalette_OutfitBox[];
+
+// Pokevial
+extern const u32 gItemIcon_Pokevial0[];
+extern const u32 gItemIcon_Pokevial1[];
+extern const u32 gItemIcon_Pokevial2[];
+extern const u32 gItemIcon_Pokevial3[];
+extern const u32 gItemIcon_Pokevial4[];
+extern const u32 gItemIcon_Pokevial5[];
+extern const u32 gItemIcon_Pokevial6[];
+extern const u32 gItemIcon_Pokevial7[];
+extern const u32 gItemIcon_Pokevial8[];
+extern const u32 gItemIcon_Pokevial9[];
+extern const u32 gItemIcon_Pokevial[];
+
+extern const u16 gItemIconPalette_Pokevial[];
+
+extern const u32 gItemIcon_BigAxe[];
+extern const u16 gItemIconPalette_BigAxe[];
+extern const u32 gItemIcon_Surfboard[];
+extern const u16 gItemIconPalette_Surfboard[];
+extern const u32 gItemIcon_PowerGlove[];
+extern const u16 gItemIconPalette_PowerGlove[];
+extern const u32 gItemIcon_Lantern[];
+extern const u16 gItemIconPalette_Lantern[];
+extern const u32 gItemIcon_Pickaxe[];
+extern const u16 gItemIconPalette_Pickaxe[];
+extern const u32 gItemIcon_ScubaGear[];
+extern const u16 gItemIconPalette_ScubaGear[];
 
 extern const u32 gItemIcon_FairyFeather[];
 extern const u16 gItemIconPalette_FairyFeather[];
@@ -1913,6 +1943,18 @@ extern const u32 gBerryPic_Jaboca[];
 extern const u32 gBerryPic_Rowap[];
 extern const u32 gBerryPic_Kee[];
 extern const u32 gBerryPic_Maranga[];
+extern const u32 gBerryPic_Pumkin[];
+extern const u32 gBerryPic_Drash[];
+extern const u32 gBerryPic_Eggant[];
+extern const u32 gBerryPic_Strib[];
+extern const u32 gBerryPic_Turlan[];
+extern const u32 gBerryPic_Nutpea[];
+extern const u32 gBerryPic_Ionno[];
+extern const u32 gBerryPic_Kuo[];
+extern const u32 gBerryPic_Yago[];
+extern const u32 gBerryPic_Touga[];
+extern const u32 gBerryPic_Garlig[];
+extern const u32 gBerryPic_Topo[];
 extern const u16 gBerryPalette_Cheri[];
 extern const u16 gBerryPalette_Chesto[];
 extern const u16 gBerryPalette_Pecha[];

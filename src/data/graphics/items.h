@@ -1373,7 +1373,7 @@ const u32 gItemIcon_ScopeLens[] = INCBIN_U32("graphics/items/icons/scope_lens.4b
 const u16 gItemIconPalette_ScopeLens[] = INCBIN_U16("graphics/items/icon_palettes/scope_lens.gbapal");
 
 const u32 gItemIcon_BentoBox[] = INCBIN_U32("graphics/items/icons/bento_box.4bpp.lz");
-const u16 gItemIconPalette_BentoBox[] = u16("graphics/items/icon_palettes/bento_box.gbapal");
+const u16 gItemIconPalette_BentoBox[] = INCBIN_U16("graphics/items/icon_palettes/bento_box.gbapal");
 
 const u32 gItemIcon_ShellBell[] = INCBIN_U32("graphics/items/icons/shell_bell.4bpp.lz");
 
@@ -2131,7 +2131,7 @@ const u32 gItemIcon_Pokevial8[] = INCBIN_U32("graphics/items/icons/pokevial8.4bp
 const u32 gItemIcon_Pokevial9[] = INCBIN_U32("graphics/items/icons/pokevial9.4bpp.lz");
 const u32 gItemIcon_Pokevial[] = INCBIN_U32("graphics/items/icons/pokevial.4bpp.lz");
 
-const u16 gItemIconPalette_Pokevial[] = INCBIN_U32("graphics/items/icon_palettes/pokevial.gbapal");
+const u16 gItemIconPalette_Pokevial[] = INCBIN_U16("graphics/items/icon_palettes/pokevial.gbapal");
 
 const u32 gItemIcon_BigAxe[] = INCBIN_U32("graphics/items/icons/big_axe.4bpp.lz");
 const u16 gItemIconPalette_BigAxe[] = INCBIN_U16("graphics/items/icon_palettes/big_axe.gbapal");

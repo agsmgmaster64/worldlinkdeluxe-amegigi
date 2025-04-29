@@ -223,7 +223,7 @@ void RemoveMoneyLabelObject(void)
 void AddCoinLabelObject(u16 x, u16 y)
 {
     LoadCompressedSpriteSheet(&sSpriteSheet_CoinLabel);
-    LoadCompressedSpritePalette(&sSpritePalette_MoneyLabel);
+    LoadSpritePalette(&sSpritePalette_MoneyLabel);
     sMoneyLabelSpriteId = CreateSprite(&sSpriteTemplate_MoneyLabel, x, y, 0);
 }
 

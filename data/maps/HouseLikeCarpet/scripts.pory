@@ -1,3 +1,5 @@
+const LOCALID_GIGI = 1
+
 mapscripts HouseLikeCarpet_MapScripts {}
 
 script HouseLikeCarpet_Event_LostGarbage {
@@ -5,6 +7,75 @@ script HouseLikeCarpet_Event_LostGarbage {
     msgbox(HouseLikeCarpet_Text_Garbage)
     release
     end
+}
+
+script HouseLikeCarpet_Event_GigiStanding {
+    lock
+    faceplayer
+    setspeakername(gText_Gigi)
+    msgbox(HouseLikeCarpet_Text_GigiWantToFollow, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == 1) {
+        goto(HouseLikeCarpet_Event_GigiAcceptFollow)
+    }
+    msgbox(HouseLikeCarpet_Text_GigiAwwMan)
+    release
+    end
+}
+
+script HouseLikeCarpet_Event_GigiAcceptFollow {
+    msgbox(HouseLikeCarpet_Text_GigiYayFollow)
+    setfollower(LOCALID_GIGI, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI)
+    release
+    end
+}
+
+script HouseLikeCarpet_Event_GigiFollower {
+    lock
+    faceplayer
+    setspeakername(gText_Gigi)
+    msgbox(HouseLikeCarpet_Text_GigiFollowing, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == 1) {
+        goto(HouseLikeCarpet_Event_GigiBoatGoesBinted)
+    }
+    msgbox(HouseLikeCarpet_Text_GigiForYou)
+    closemessage
+    release
+    end
+}
+
+script HouseLikeCarpet_Event_GigiBoatGoesBinted {
+    closemessage
+    setspeakername(gText_Gigi)
+    playtrainervoice(TRAINER_VOICE_GIGI, 1)
+    msgbox(HouseLikeCarpet_Text_GigiBogosBinted)
+    waitmoncry
+    closemessage
+    release
+    end
+}
+
+text HouseLikeCarpet_Text_GigiWantToFollow {
+    format("Yo, mind if I follow you here?")
+}
+
+text HouseLikeCarpet_Text_GigiAwwMan {
+    format("Aww, man. But it would be pretty nice.")
+}
+
+text HouseLikeCarpet_Text_GigiYayFollow {
+    format("Yay, I get to follow you around!")
+}
+
+text HouseLikeCarpet_Text_GigiFollowing {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey, wanna hear me say something here?{DESTROY_MUGSHOT}")
+}
+
+text HouseLikeCarpet_Text_GigiForYou {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Aww, but it's just for you, {PLAYER}.")
+}
+
+text HouseLikeCarpet_Text_GigiBogosBinted {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Boat goes Binted?")
 }
 
 text HouseLikeCarpet_Text_Garbage {

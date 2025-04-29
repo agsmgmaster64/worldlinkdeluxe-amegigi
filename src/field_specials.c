@@ -200,7 +200,7 @@ u16 GetPlayerAvatarBike(void)
 {
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
     {
-        if (gSaveBlock3Ptr->playerBike != MACH_BIKE)
+        if (gSaveBlock3Ptr->playerBike == ACRO_BIKE)
             return 1;
         else
             return 2;

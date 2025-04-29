@@ -1604,6 +1604,14 @@ u32 LoadSpritePaletteWithTag(const u16 *pal, u16 tag)
     return LoadSpritePalette(&spritePal);
 }
 
+u32 LoadUniqueSpritePaletteWithTag(const u16 *pal, u16 species, u32 personality, bool8 isShiny)
+{
+    struct SpritePalette spritePal;
+    spritePal.data = pal;
+    spritePal.tag = species;
+    return LoadUniqueSpritePalette(&spritePal, species, personality, isShiny);
+}
+
 void LoadSpritePalettes(const struct SpritePalette *palettes)
 {
     u32 i;
@@ -1612,7 +1620,7 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
             break;
 }
 
-u32 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u32 paletteNum)
+u8 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u8 paletteNum)
 {
     paletteNum = min(15, paletteNum);
     sSpritePaletteTags[paletteNum] = palette->tag;

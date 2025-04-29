@@ -7943,7 +7943,7 @@ BattleScript_FascinateLoop:
 	jumpiftargetally BattleScript_FascinateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_FascinateLoopIncrement
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateLoopIncrement
-	@ jumpiffascinateabilityprevented
+	jumpiffascinateabilityprevented
 BattleScript_FascinateEffect:
 	copybyte sBATTLER, gBattlerAttacker
 	setstatchanger STAT_SPATK, 1, TRUE
@@ -7966,7 +7966,7 @@ BattleScript_FascinateEnd:
 	pause B_WAIT_TIME_MED
 	end3
 
-BattleScript_FascinatePrevented:
+BattleScript_FascinatePrevented::
 	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNPREVENTSSTATLOSSWITH
@@ -7986,7 +7986,7 @@ BattleScript_FascinateContrary_WontIncrease:
 	printstring STRINGID_TARGETSTATWONTGOHIGHER
 	goto BattleScript_FascinateEffect_WaitString
 
-BattleScript_FascinateInReverse:
+BattleScript_FascinateInReverse::
 	copybyte sBATTLER, gBattlerTarget
 	call BattleScript_AbilityPopUpTarget
 	pause B_WAIT_TIME_SHORT

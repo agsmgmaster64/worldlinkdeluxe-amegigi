@@ -785,7 +785,7 @@ static void AcroBikeTransition_WheelieLoweringMoving(u8 direction)
 
 void Bike_TryAcroBikeHistoryUpdate(u16 newKeys, u16 heldKeys)
 {
-    if (gSaveBlock3Ptr->playerBike != MACH_BIKE)
+    if (gSaveBlock3Ptr->playerBike == ACRO_BIKE)
         AcroBike_TryHistoryUpdate(newKeys, heldKeys);
 }
 
@@ -989,7 +989,7 @@ bool8 IsBikingDisallowedByPlayer(void)
 
 bool8 IsPlayerNotUsingAcroBikeOnBumpySlope(void)
 {
-    if (gSaveBlock3Ptr->playerBike != MACH_BIKE
+    if (gSaveBlock3Ptr->playerBike == ACRO_BIKE
         && MetatileBehavior_IsBumpySlope(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior))
         return FALSE;
     else
@@ -1053,7 +1053,7 @@ void Bike_HandleBumpySlopeJump(void)
     s16 x, y;
     u8 tileBehavior;
 
-    if (gSaveBlock3Ptr->playerBike != MACH_BIKE)
+    if (gSaveBlock3Ptr->playerBike == ACRO_BIKE)
     {
         PlayerGetDestCoords(&x, &y);
         tileBehavior = MapGridGetMetatileBehaviorAt(x, y);

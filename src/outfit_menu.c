@@ -162,7 +162,7 @@ static const u16 sLockIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/l
 static const u16 sIndicatorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator.4bpp");
 static const u16 sIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator.gbapal");
 static const u16 sCursorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/cursor.4bpp");
-static const u32 sCursorSprite_Pal[] = INCBIN_U32("graphics/outfit_menu/cursor.gbapal.lz");
+static const u16 sCursorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/cursor.gbapal");
 
 static EWRAM_DATA OutfitMenuResources *sOutfitMenu = NULL;
 
@@ -291,7 +291,7 @@ static const struct SpriteTemplate sIndicatorSpriteTemplate = {
     .oam = &sIndicatorSpriteOamData,
 };
 
-static const struct CompressedSpritePalette sCursor_SpritePalette = {
+static const struct SpritePalette sCursor_SpritePalette = {
     .data = sCursorSprite_Pal,
     .tag = PALTAG_CURSOR,
 };
@@ -564,7 +564,7 @@ static inline void SetupOutfitMenu_Sprites_DrawIndicatorSprite(void)
 
 static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
 {
-    LoadCompressedSpritePalette(&sCursor_SpritePalette);
+    LoadSpritePalette(&sCursor_SpritePalette);
     sOutfitMenu->spriteIds[GFX_CURSOR] = CreateSprite(&sCursor_SpriteTemplate, CURSOR_START_X, CURSOR_START_Y, 0);
     StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_CURSOR]], 0);
     UpdateCursorPosition();
