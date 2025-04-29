@@ -11,6 +11,7 @@ TYPESGFXDIR := graphics/types
 RAYQUAZAGFXDIR := graphics/rayquaza_scene
 ROULETTEGFXDIR := graphics/roulette
 SLOTMACHINEGFXDIR := graphics/slot_machine
+SLOTMACHINERGGFXDIR := graphics/slot_machine/firered
 PKNAVGFXDIR := graphics/pokenav
 PKNAVOPTIONSGFXDIR := graphics/pokenav/options
 WALLPAPERGFXDIR := graphics/pokemon_storage/wallpapers
@@ -445,6 +446,12 @@ $(BATTRANSGFXDIR)/frontier_square_4.4bpp: $(BATTRANSGFXDIR)/frontier_squares_bla
 $(SLOTMACHINEGFXDIR)/reel_time_gfx.4bpp: $(SLOTMACHINEGFXDIR)/reel_time_pikachu.4bpp \
                                          $(SLOTMACHINEGFXDIR)/reel_time_machine.4bpp
 	@cat $^ >$@
+
+$(SLOTMACHINEGFXDIR)/firered/combos_window.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 66 -Wnum_tiles
+
+$(SLOTMACHINEGFXDIR)/firered/bg.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 138 -Wnum_tiles
 
 graphics/birch_speech/unused_beauty.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 822 -Wnum_tiles

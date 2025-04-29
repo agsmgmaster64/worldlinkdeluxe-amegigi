@@ -1386,7 +1386,7 @@ MauvilleCity_GameCorner_EventScript_SlotMachine0::
 	setvar VAR_0x8004, 0
 	playbgm MUS_GAME_CORNER, FALSE
 	specialvar VAR_RESULT, GetSlotMachineId
-	playslotmachine VAR_RESULT
+	playslotmachine_rg VAR_RESULT
 	releaseall
 	end
 

@@ -49,6 +49,7 @@
 #include "script_pokemon_util.h"
 #include "shop.h"
 #include "slot_machine.h"
+#include "slot_machine_rg.h"
 #include "sound.h"
 #include "string_util.h"
 #include "text.h"
@@ -3532,6 +3533,17 @@ bool8 ScrFunc_playtrainervoice(struct ScriptContext *ctx)
 
     PlayTrainerVoice(trainer, voiceLine);
     return FALSE;
+}
+
+bool8 ScrFunc_playslotmachine_rg(struct ScriptContext *ctx)
+{
+    u8 machineId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    PlaySlotMachine_RG(machineId, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    ScriptContext_Stop();
+    return TRUE;
 }
 
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)

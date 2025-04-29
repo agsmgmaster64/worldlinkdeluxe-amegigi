@@ -137,121 +137,32 @@ struct Gacha {
     u8 PlayerSpriteIds[MAX_SPRITES_PLAYER];
     u8 CreditMenu1Id;
     u8 CreditMenu2Id;
-    u8 PokemonOne;
-    u8 PokemonTwo;
     u8 PokemonOneSpriteId;
     u8 PokemonTwoSpriteId;
     u8 PokemonThreeSpriteId;
-    u8 Odds; // Chance of new Pokemon
+    u8 newMonOdds;
     u8 ArrowsSpriteId;
     u8 CTAspriteId;
-    u8 exitToggle;
     u16 wager;
     u8 cursorPosition;
     u8 Trigger;
-    u8 Basic_CommonMax; // Total Number of Pokemon in each array
-    u8 Basic_UncommonMax;
-    u8 Basic_RareMax;
-    u8 Basic_UltraRareMax;
-    u8 Great_CommonMax;
-    u8 Great_UncommonMax;
-    u8 Great_RareMax;
-    u8 Great_UltraRareMax;
-    u8 Ultra_CommonMax;
-    u8 Ultra_UncommonMax;
-    u8 Ultra_RareMax;
-    u8 Ultra_UltraRareMax;
-    u8 Master_CommonMax;
-    u8 Master_UncommonMax;
-    u8 Master_RareMax;
-    u8 Master_UltraRareMax;
     u8 Rarity; // 0 = Common, 1 = Uncommon, 2 = Rare, 3 = Ultra Rare
-    u8 Basic_Common_Owned; // How Many Pokemon in the array does the Player Own
-    u8 Basic_Uncommon_Owned;
-    u8 Basic_Rare_Owned;
-    u8 Basic_UltraRare_Owned;
-    u8 Great_Common_Owned;
-    u8 Great_Uncommon_Owned;
-    u8 Great_Rare_Owned;
-    u8 Great_UltraRare_Owned;
-    u8 Ultra_Common_Owned;
-    u8 Ultra_Uncommon_Owned;
-    u8 Ultra_Rare_Owned;
-    u8 Ultra_UltraRare_Owned;
-    u8 Master_Common_Owned;
-    u8 Master_Uncommon_Owned;
-    u8 Master_Rare_Owned;
-    u8 Master_UltraRare_Owned;
-    u16 Basic_Total_Owned;
-    u16 Great_Total_Owned;
-    u16 Ultra_Total_Owned;
-    u16 Master_Total_Owned;
-    u16 Basic_Total_Max;
-    u16 Great_Total_Max;
-    u16 Ultra_Total_Max;
-    u16 Master_Total_Max;
+    u8 ownedCommon;
+    u8 ownedUncommon;
+    u8 ownedRare;
+    u8 ownedUltraRare;
     u8 commonChance;
     u8 uncommonChance;
     u8 rareChance;
     u8 ultraRareChance;
-    u8 IsNewPokemon;
-    u16 Temp_Total;
     u16 CalculatedSpecies;
     u8 bouncingPokeballSpriteId;
     u8 timer;
     u8 monSpriteId;
     u32 waitTimer;
-    u8 gachaState;
     u8 Input;
-    u8 textColor[3];
     struct Pokemon GachaMon;
 };    
-
-static EWRAM_DATA struct {
-    struct Pokemon tempMon; // Used as a temp variable when swapping Pokémon
-    u32 timer;
-    u32 monPersonalities[2];
-    u8 filler_70[2];
-    u8 playerFinishStatus;
-    u8 partnerFinishStatus;
-    u16 linkData[10];
-    u8 linkTimeoutZero1;
-    u8 linkTimeoutZero2;
-    u16 linkTimeoutTimer;
-    u16 neverRead_8C;
-    u8 monSpriteIds[2];
-    u8 connectionSpriteId1; // Multi-purpose sprite ids used during the transfer sequence
-    u8 connectionSpriteId2;
-    u8 cableEndSpriteId;
-    u8 scheduleLinkTransfer;
-    u16 state;
-    u8 filler_96[0x3C];
-    u8 releasePokeballSpriteId;
-    u8 bouncingPokeballSpriteId;
-    u16 texX;
-    u16 texY;
-    u16 neverRead_D8;
-    u16 neverRead_DA;
-    u16 scrX;
-    u16 scrY;
-    s16 bg1vofs;
-    s16 bg1hofs;
-    s16 bg2vofs;
-    s16 bg2hofs;
-    u16 sXY;
-    u16 gbaScale;
-    u16 alpha;
-    bool8 isLinkTrade;
-    u16 monSpecies[2];
-    u16 cachedMapMusic;
-    u8 textColors[3];
-    u8 filler_F9;
-    bool8 isCableTrade;
-    u8 wirelessWinLeft;
-    u8 wirelessWinTop;
-    u8 wirelessWinRight;
-    u8 wirelessWinBottom;
-} *sTradeAnim = NULL;
 
 extern const u8 gText_FromGacha[];
 extern const u8 gText_NicknameGacha[];
@@ -1871,7 +1782,7 @@ static void ShowMessage(void)
     PutWindowTilemap(sTextWindowId);
     LoadUserWindowBorderGfx(sTextWindowId, 0x214, BG_PLTT_ID(14));
     DrawStdWindowFrame(sTextWindowId, FALSE); 
-    bet = sGacha->Odds;
+    bet = sGacha->newMonOdds;
     ConvertUIntToDecimalStringN(gStringVar1, bet, STR_CONV_MODE_LEADING_ZEROS, 3);
     //gStringVar4[0] = '\0';
     StringExpandPlaceholders(gStringVar4, sMessageText);
@@ -1897,28 +1808,75 @@ static void StartTradeScreen(void)
     sGacha->state = STATE_FADE;
 }
 
+static u16 GetMaxAvailableGachaRaritySpecies(u32 gachaId, u32 rarity)
+{
+    // Get the number of available Pokémon based on rarity
+    switch (gachaId)
+    {
+    default:
+    case GACHA_BASIC:
+        switch (rarity)
+        {
+        default:
+        case RARITY_COMMON:
+            return ARRAY_COUNT(sSpeciesGachaBasicCommon);
+        case RARITY_UNCOMMON:
+            return ARRAY_COUNT(sSpeciesGachaBasicUncommon);
+        case RARITY_RARE:
+            return ARRAY_COUNT(sSpeciesGachaBasicRare);
+        case RARITY_ULTRA_RARE:
+            return ARRAY_COUNT(sSpeciesGachaBasicUltraRare);
+        }
+    case GACHA_GREAT:
+        switch (rarity)
+        {
+        default:
+        case RARITY_COMMON:
+            return ARRAY_COUNT(sSpeciesGreatCommon);
+        case RARITY_UNCOMMON:
+            return ARRAY_COUNT(sSpeciesGreatUncommon);
+        case RARITY_RARE:
+            return ARRAY_COUNT(sSpeciesGreatRare);
+        case RARITY_ULTRA_RARE:
+            return ARRAY_COUNT(sSpeciesGreatUltraRare);
+        }
+    case GACHA_ULTRA:
+        switch (rarity)
+        {
+        default:
+        case RARITY_COMMON:
+            return ARRAY_COUNT(sSpeciesUltraCommon);
+        case RARITY_UNCOMMON:
+            return ARRAY_COUNT(sSpeciesUltraUncommon);
+        case RARITY_RARE:
+            return ARRAY_COUNT(sSpeciesUltraRare);
+        case RARITY_ULTRA_RARE:
+            return ARRAY_COUNT(sSpeciesUltraUltraRare);
+        }
+    case GACHA_MASTER:
+        switch (rarity)
+        {
+        default:
+        case RARITY_COMMON:
+            return ARRAY_COUNT(sSpeciesMasterCommon);
+        case RARITY_UNCOMMON:
+            return ARRAY_COUNT(sSpeciesMasterUncommon);
+        case RARITY_RARE:
+            return ARRAY_COUNT(sSpeciesMasterRare);
+        case RARITY_ULTRA_RARE:
+            return ARRAY_COUNT(sSpeciesMasterUltraRare);
+        }
+    }
+    return 0; // failsafe
+}
+
 u16 GetGachaBasicSpecies(u16 randNum)
 {
     int i;
     u16 totalMax;
 
     // Use the pre-defined totalMax values based on the rarity
-    switch (sGacha->Rarity)
-    {
-    default:
-    case RARITY_COMMON:
-        totalMax = sGacha->Basic_CommonMax;
-        break;
-    case RARITY_UNCOMMON:
-        totalMax = sGacha->Basic_UncommonMax;
-        break;
-    case RARITY_RARE:
-        totalMax = sGacha->Basic_RareMax;
-        break;
-    case RARITY_ULTRA_RARE:
-        totalMax = sGacha->Basic_UltraRareMax;
-        break;
-    }
+    totalMax = GetMaxAvailableGachaRaritySpecies(GACHA_BASIC, sGacha->Rarity);
 
     // Check if the provided Number is valid
     if (randNum >= totalMax)
@@ -1967,22 +1925,7 @@ u16 GetGachaGreatSpecies(u16 randNum)
     u16 totalMax = 0;
 
     // Determine the totalMax based on rarity
-    switch (sGacha->Rarity)
-    {
-    default:
-    case RARITY_COMMON:
-        totalMax = sGacha->Great_CommonMax;
-        break;
-    case RARITY_UNCOMMON:
-        totalMax = sGacha->Great_UncommonMax;
-        break;
-    case RARITY_RARE:
-        totalMax = sGacha->Great_RareMax;
-        break;
-    case RARITY_ULTRA_RARE:
-        totalMax = sGacha->Great_UltraRareMax;
-        break;
-    }
+    totalMax = GetMaxAvailableGachaRaritySpecies(GACHA_GREAT, sGacha->Rarity);
 
     // Check if the provided Number is within the range
     if (randNum >= totalMax)
@@ -2031,22 +1974,7 @@ u16 GetGachaUltraSpecies(u16 randNum)
     u16 totalMax = 0;
 
     // Determine the totalMax based on rarity
-    switch (sGacha->Rarity)
-    {
-    default:
-    case RARITY_COMMON:
-        totalMax = sGacha->Ultra_CommonMax;
-        break;
-    case RARITY_UNCOMMON:
-        totalMax = sGacha->Ultra_UncommonMax;
-        break;
-    case RARITY_RARE:
-        totalMax = sGacha->Ultra_RareMax;
-        break;
-    case RARITY_ULTRA_RARE:
-        totalMax = sGacha->Ultra_UltraRareMax;
-        break;
-    }
+    totalMax = GetMaxAvailableGachaRaritySpecies(GACHA_ULTRA, sGacha->Rarity);
 
     // Check if the provided Number is within the range
     if (randNum >= totalMax)
@@ -2094,29 +2022,12 @@ u16 GetGachaMasterSpecies(u16 randNum)
     int i;
     u16 totalMax = 0;
 
-    // Determine the totalMax based on rarity
-    switch (sGacha->Rarity)
-    {
-    default:
-    case RARITY_COMMON:
-        totalMax = sGacha->Master_CommonMax;
-        break;
-    case RARITY_UNCOMMON:
-        totalMax = sGacha->Master_UncommonMax;
-        break;
-    case RARITY_RARE:
-        totalMax = sGacha->Master_RareMax;
-        break;
-    case RARITY_ULTRA_RARE:
-        totalMax = sGacha->Master_UltraRareMax;
-        break;
-    }
+    totalMax = GetMaxAvailableGachaRaritySpecies(GACHA_MASTER, sGacha->Rarity);
 
     // Check if the provided Number is within the range
     if (randNum >= totalMax)
         return -1;  // Return -1 if out of range
 
-    // Loop through the correct array based on rarity
     switch (sGacha->Rarity)
     {
     default:
@@ -2205,131 +2116,120 @@ static void GetPokemonOwned(void)
     u16 species;
     int nationalDexNo;
     int i;
-    
-    sGacha->Basic_Common_Owned = 0;
-    sGacha->Basic_Uncommon_Owned = 0;
-    sGacha->Basic_Rare_Owned = 0;
-    sGacha->Basic_UltraRare_Owned = 0;
-    sGacha->Great_Common_Owned = 0;
-    sGacha->Great_Uncommon_Owned = 0;
-    sGacha->Great_Rare_Owned = 0;
-    sGacha->Great_UltraRare_Owned = 0;
-    sGacha->Ultra_Common_Owned = 0;
-    sGacha->Ultra_Uncommon_Owned = 0;
-    sGacha->Ultra_Rare_Owned = 0;
-    sGacha->Ultra_UltraRare_Owned = 0;
-    sGacha->Master_Common_Owned = 0;
-    sGacha->Master_Uncommon_Owned = 0;
-    sGacha->Master_Rare_Owned = 0;
-    sGacha->Master_UltraRare_Owned = 0;
-    
-    // Basic
-    for (i = 0; i < sGacha->Basic_CommonMax; i++)
+
+    sGacha->ownedCommon = 0;
+    sGacha->ownedUncommon = 0;
+    sGacha->ownedRare = 0;
+    sGacha->ownedUltraRare = 0;
+
+    switch (sGacha->GachaId)
     {
-        species = sSpeciesGachaBasicCommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Basic_Common_Owned = (sGacha->Basic_Common_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+    default:
+    case GACHA_BASIC:
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicCommon); i++)
+        {
+            species = sSpeciesGachaBasicCommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicUncommon); i++)
+        {
+            species = sSpeciesGachaBasicUncommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicRare); i++)
+        {
+            species = sSpeciesGachaBasicRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicUltraRare); i++)
+        {
+            species = sSpeciesGachaBasicUltraRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        break;
+    case GACHA_GREAT:
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatCommon); i++)
+        {
+            species = sSpeciesGreatCommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatUncommon); i++)
+        {
+            species = sSpeciesGreatUncommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatRare); i++)
+        {
+            species = sSpeciesGreatRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatUltraRare); i++)
+        {
+            species = sSpeciesGreatUltraRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        break;
+    case GACHA_ULTRA:
+        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraCommon); i++)
+        {
+            species = sSpeciesUltraCommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraUncommon); i++)
+        {
+            species = sSpeciesUltraUncommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraRare); i++)
+        {
+            species = sSpeciesUltraRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraUltraRare); i++)
+        {
+            species = sSpeciesUltraUltraRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        break;
+    case GACHA_MASTER:
+        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterCommon); i++)
+        {
+            species = sSpeciesMasterCommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterUncommon); i++)
+        {
+            species = sSpeciesMasterUncommon[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterRare); i++)
+        {
+            species = sSpeciesMasterRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterUltraRare); i++)
+        {
+            species = sSpeciesMasterUltraRare[i].species;
+            nationalDexNo = SpeciesToNationalPokedexNum(species);
+            sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
+        }
+        break;
     }
-    for (i = 0; i < sGacha->Basic_UncommonMax; i++)
-    {
-        species = sSpeciesGachaBasicUncommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Basic_Uncommon_Owned = (sGacha->Basic_Uncommon_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Basic_RareMax; i++)
-    {
-        species = sSpeciesGachaBasicRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Basic_Rare_Owned = (sGacha->Basic_Rare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Basic_UltraRareMax; i++)
-    {
-        species = sSpeciesGachaBasicUltraRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Basic_UltraRare_Owned = (sGacha->Basic_UltraRare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    sGacha->Basic_Total_Owned = (sGacha->Basic_Common_Owned + sGacha->Basic_Uncommon_Owned + sGacha->Basic_Rare_Owned + sGacha->Basic_UltraRare_Owned);
-    
-    // Great
-    for (i = 0; i < sGacha->Great_CommonMax; i++)
-    {
-        species = sSpeciesGreatCommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Great_Common_Owned = (sGacha->Great_Common_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Great_UncommonMax; i++)
-    {
-        species = sSpeciesGreatUncommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Great_Uncommon_Owned = (sGacha->Great_Uncommon_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Great_RareMax; i++)
-    {
-        species = sSpeciesGreatRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Great_Rare_Owned = (sGacha->Great_Rare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Great_UltraRareMax; i++)
-    {
-        species = sSpeciesGreatUltraRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Great_UltraRare_Owned = (sGacha->Great_UltraRare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    sGacha->Great_Total_Owned = (sGacha->Great_Common_Owned + sGacha->Great_Uncommon_Owned + sGacha->Great_Rare_Owned + sGacha->Great_UltraRare_Owned);
-    
-    // Ultra
-    for (i = 0; i < sGacha->Ultra_CommonMax; i++)
-    {
-        species = sSpeciesUltraCommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Ultra_Common_Owned = (sGacha->Ultra_Common_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Ultra_UncommonMax; i++)
-    {
-        species = sSpeciesUltraUncommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Ultra_Uncommon_Owned = (sGacha->Ultra_Uncommon_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Ultra_RareMax; i++)
-    {
-        species = sSpeciesUltraRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Ultra_Rare_Owned = (sGacha->Ultra_Rare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Ultra_UltraRareMax; i++)
-    {
-        species = sSpeciesUltraUltraRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Ultra_UltraRare_Owned = (sGacha->Ultra_UltraRare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    sGacha->Ultra_Total_Owned = (sGacha->Ultra_Common_Owned + sGacha->Ultra_Uncommon_Owned + sGacha->Ultra_Rare_Owned + sGacha->Ultra_UltraRare_Owned);
-    
-    // Master
-    for (i = 0; i < sGacha->Master_CommonMax; i++)
-    {
-        species = sSpeciesMasterCommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Master_Common_Owned = (sGacha->Master_Common_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Master_UncommonMax; i++)
-    {
-        species = sSpeciesMasterUncommon[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Master_Uncommon_Owned = (sGacha->Master_Uncommon_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Master_RareMax; i++)
-    {
-        species = sSpeciesMasterRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Master_Rare_Owned = (sGacha->Master_Rare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    for (i = 0; i < sGacha->Master_UltraRareMax; i++)
-    {
-        species = sSpeciesMasterUltraRare[i].species;
-        nationalDexNo = SpeciesToNationalPokedexNum(species);
-        sGacha->Master_UltraRare_Owned = (sGacha->Master_UltraRare_Owned + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
-    }
-    sGacha->Master_Total_Owned = (sGacha->Master_Common_Owned + sGacha->Master_Uncommon_Owned + sGacha->Master_Rare_Owned + sGacha->Master_UltraRare_Owned);
 }
 
 u8 CalculateChanceForCategory(u16 owned, u16 available, u8 baseChance, u16 wager)
@@ -2408,99 +2308,23 @@ void DeterminePokemonRarityAndNewStatus(void)
             sGacha->Rarity = RARITY_ULTRA_RARE; // Ultra Rare
 
         // Get the number of available and owned Pokémon based on rarity
-        switch (sGacha->GachaId)
+        totalMax = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, sGacha->Rarity);
+        switch (sGacha->Rarity)
         {
         default:
-        case GACHA_BASIC:
-            switch (sGacha->Rarity)
-            {
-            default:
-            case RARITY_COMMON:
-                totalOwned = sGacha->Basic_Common_Owned;
-                totalMax = sGacha->Basic_CommonMax;
-                break;
-            case RARITY_UNCOMMON:
-                totalOwned = sGacha->Basic_Uncommon_Owned;
-                totalMax = sGacha->Basic_UncommonMax;
-                break;
-            case RARITY_RARE:
-                totalOwned = sGacha->Basic_Rare_Owned;
-                totalMax = sGacha->Basic_RareMax;
-                break;
-            case RARITY_ULTRA_RARE:
-                totalOwned = sGacha->Basic_UltraRare_Owned;
-                totalMax = sGacha->Basic_UltraRareMax;
-                break;
-            }
+        case RARITY_COMMON:
+            totalOwned = sGacha->ownedCommon;
             break;
-        case GACHA_GREAT:
-            switch (sGacha->Rarity)
-            {
-            default:
-            case RARITY_COMMON:
-                totalOwned = sGacha->Great_Common_Owned;
-                totalMax = sGacha->Great_CommonMax;
-                break;
-            case RARITY_UNCOMMON:
-                totalOwned = sGacha->Great_Uncommon_Owned;
-                totalMax = sGacha->Great_UncommonMax;
-                break;
-            case RARITY_RARE:
-                totalOwned = sGacha->Great_Rare_Owned;
-                totalMax = sGacha->Great_RareMax;
-                break;
-            case RARITY_ULTRA_RARE:
-                totalOwned = sGacha->Great_UltraRare_Owned;
-                totalMax = sGacha->Great_UltraRareMax;
-                break;
-            }
+        case RARITY_UNCOMMON:
+            totalOwned = sGacha->ownedUncommon;
             break;
-        case GACHA_ULTRA:
-            switch (sGacha->Rarity)
-            {
-            default:
-            case RARITY_COMMON:
-                totalOwned = sGacha->Ultra_Common_Owned;
-                totalMax = sGacha->Ultra_CommonMax;
-                break;
-            case RARITY_UNCOMMON:
-                totalOwned = sGacha->Ultra_Uncommon_Owned;
-                totalMax = sGacha->Ultra_UncommonMax;
-                break;
-            case RARITY_RARE:
-                totalOwned = sGacha->Ultra_Rare_Owned;
-                totalMax = sGacha->Ultra_RareMax;
-                break;
-            case RARITY_ULTRA_RARE:
-                totalOwned = sGacha->Ultra_UltraRare_Owned;
-                totalMax = sGacha->Ultra_UltraRareMax;
-                break;
-            }
+        case RARITY_RARE:
+            totalOwned = sGacha->ownedRare;
             break;
-        case GACHA_MASTER:
-            switch (sGacha->Rarity)
-            {
-            default:
-            case RARITY_COMMON:
-                totalOwned = sGacha->Master_Common_Owned;
-                totalMax = sGacha->Master_CommonMax;
-                break;
-            case RARITY_UNCOMMON:
-                totalOwned = sGacha->Master_Uncommon_Owned;
-                totalMax = sGacha->Master_UncommonMax;
-                break;
-            case RARITY_RARE:
-                totalOwned = sGacha->Master_Rare_Owned;
-                totalMax = sGacha->Master_RareMax;
-                break;
-            case RARITY_ULTRA_RARE:
-                totalOwned = sGacha->Master_UltraRare_Owned;
-                totalMax = sGacha->Master_UltraRareMax;
-                break;
-            }
+        case RARITY_ULTRA_RARE:
+            totalOwned = sGacha->ownedUltraRare;
             break;
         }
-        sGacha->Temp_Total = totalMax;
 
         // Calculate the total number of Pokémon the player doesn't own
         totalNotOwned = totalMax - totalOwned;
@@ -2515,7 +2339,7 @@ void DeterminePokemonRarityAndNewStatus(void)
         randomValue = Random() % 100;  // Generate random value between 0-99
 
         // Check if we should get a new Pokémon based on the odds
-        if (sGacha->Odds >= randomValue)
+        if (sGacha->newMonOdds >= randomValue)
         {
             // Loop until a new (not owned) Pokémon is found
             do {
@@ -2541,7 +2365,6 @@ void DeterminePokemonRarityAndNewStatus(void)
             } while (IsNotValidUnownedSpecies(species));  // Continue if owned (IsNotValidUnownedSpecies returns TRUE)
 
             // If we've broken out of the loop, we have a new Pokémon
-            sGacha->IsNewPokemon = 1;  // Mark as a new Pokémon
             sGacha->CalculatedSpecies = species;  // Store the species of the new Pokémon
             break;  // Exit the loop after finding a new Pokémon
         }
@@ -2572,7 +2395,6 @@ void DeterminePokemonRarityAndNewStatus(void)
             } while (IsNotValidOwnedSpecies(species));  // Continue if not owned
 
             // If we've broken out of the loop, we have an owned Pokémon
-            sGacha->IsNewPokemon = 0;  // Mark as an owned Pokémon
             sGacha->CalculatedSpecies = species;  // Store the species of the owned Pokémon
             break;  // Exit the loop after finding an owned Pokémon
         }
@@ -2581,13 +2403,9 @@ void DeterminePokemonRarityAndNewStatus(void)
 
 static void CalculatePullOdds(void)
 {
-    u16 totalCommonOwned;
     u16 totalCommonAvailable;
-    u16 totalUncommonOwned;
     u16 totalUncommonAvailable;
-    u16 totalRareOwned;
     u16 totalRareAvailable;
-    u16 totalUltraRareOwned;
     u16 totalUltraRareAvailable;
     u16 wager;
     u8 commonChance;
@@ -2596,74 +2414,18 @@ static void CalculatePullOdds(void)
     u8 ultraRareChance;
     u8 totalChance;
 
-    switch (sGacha->GachaId)
-    {
-    default:
-    case GACHA_BASIC:
-        // Variables to store the total numbers of owned and available Pokemon
-        totalCommonOwned = sGacha->Basic_Common_Owned;
-        totalCommonAvailable = sGacha->Basic_CommonMax;
-        
-        totalUncommonOwned = sGacha->Basic_Uncommon_Owned;
-        totalUncommonAvailable = sGacha->Basic_UncommonMax;
-        
-        totalRareOwned = sGacha->Basic_Rare_Owned;
-        totalRareAvailable = sGacha->Basic_RareMax;
-        
-        totalUltraRareOwned = sGacha->Basic_UltraRare_Owned;
-        totalUltraRareAvailable = sGacha->Basic_UltraRareMax;
-        break;
-    case GACHA_GREAT:
-        // Variables to store the total numbers of owned and available Pokemon
-        totalCommonOwned = sGacha->Great_Common_Owned;
-        totalCommonAvailable = sGacha->Great_CommonMax;
-        
-        totalUncommonOwned = sGacha->Great_Uncommon_Owned;
-        totalUncommonAvailable = sGacha->Great_UncommonMax;
-        
-        totalRareOwned = sGacha->Great_Rare_Owned;
-        totalRareAvailable = sGacha->Great_RareMax;
-        
-        totalUltraRareOwned = sGacha->Great_UltraRare_Owned;
-        totalUltraRareAvailable = sGacha->Great_UltraRareMax;
-        break;
-    case GACHA_ULTRA:
-        // Variables to store the total numbers of owned and available Pokemon
-        totalCommonOwned = sGacha->Ultra_Common_Owned;
-        totalCommonAvailable = sGacha->Ultra_CommonMax;
-        
-        totalUncommonOwned = sGacha->Ultra_Uncommon_Owned;
-        totalUncommonAvailable = sGacha->Ultra_UncommonMax;
-        
-        totalRareOwned = sGacha->Ultra_Rare_Owned;
-        totalRareAvailable = sGacha->Ultra_RareMax;
-        
-        totalUltraRareOwned = sGacha->Ultra_UltraRare_Owned;
-        totalUltraRareAvailable = sGacha->Ultra_UltraRareMax;
-        break;
-    case GACHA_MASTER:
-        // Variables to store the total numbers of owned and available Pokemon
-        totalCommonOwned = sGacha->Master_Common_Owned;
-        totalCommonAvailable = sGacha->Master_CommonMax;
-        
-        totalUncommonOwned = sGacha->Master_Uncommon_Owned;
-        totalUncommonAvailable = sGacha->Master_UncommonMax;
-        
-        totalRareOwned = sGacha->Master_Rare_Owned;
-        totalRareAvailable = sGacha->Master_RareMax;
-        
-        totalUltraRareOwned = sGacha->Master_UltraRare_Owned;
-        totalUltraRareAvailable = sGacha->Master_UltraRareMax;
-        break;
-    }
+    totalCommonAvailable = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, RARITY_COMMON);
+    totalUncommonAvailable = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, RARITY_UNCOMMON);
+    totalRareAvailable = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, RARITY_RARE);
+    totalUltraRareAvailable = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, RARITY_ULTRA_RARE);
 
     wager = sGacha->wager;  // Player's wager (0-9999)
 
     // Calculate the chance for each category
-    commonChance = CalculateChanceForCategory(totalCommonOwned, totalCommonAvailable, RARITY_COMMON_ODDS, wager);
-    uncommonChance = CalculateChanceForCategory(totalUncommonOwned, totalUncommonAvailable, RARITY_UNCOMMON_ODDS, wager);
-    rareChance = CalculateChanceForCategory(totalRareOwned, totalRareAvailable, RARITY_RARE_ODDS, wager);
-    ultraRareChance = CalculateChanceForCategory(totalUltraRareOwned, totalUltraRareAvailable, RARITY_ULTRA_RARE_ODDS, wager);
+    commonChance = CalculateChanceForCategory(sGacha->ownedCommon, totalCommonAvailable, RARITY_COMMON_ODDS, wager);
+    uncommonChance = CalculateChanceForCategory(sGacha->ownedUncommon, totalUncommonAvailable, RARITY_UNCOMMON_ODDS, wager);
+    rareChance = CalculateChanceForCategory(sGacha->ownedRare, totalRareAvailable, RARITY_RARE_ODDS, wager);
+    ultraRareChance = CalculateChanceForCategory(sGacha->ownedUltraRare, totalUltraRareAvailable, RARITY_ULTRA_RARE_ODDS, wager);
 
     sGacha->commonChance = commonChance;
     sGacha->uncommonChance = uncommonChance;
@@ -2674,9 +2436,9 @@ static void CalculatePullOdds(void)
     
     totalChance = commonChance + uncommonChance + rareChance + ultraRareChance;
     if (totalChance <= 100)
-        sGacha->Odds = commonChance + uncommonChance + rareChance + ultraRareChance;
+        sGacha->newMonOdds = commonChance + uncommonChance + rareChance + ultraRareChance;
     else
-        sGacha->Odds = 100;
+        sGacha->newMonOdds = 100;
 }
 
 static void AButton(void)
@@ -2802,7 +2564,7 @@ static void UpdateWagerDigit(int direction)
     {
         ResetMessage();
         //CalculatePullOdds();
-        sGacha->Odds = 0;
+        sGacha->newMonOdds = 0;
         sGacha->Trigger = 0;        
         gSprites[sGacha->CTAspriteId].animNum = 0; // Off
         //gSprites[sGacha->CTAspriteId].animPaused = TRUE;
@@ -2847,7 +2609,6 @@ static void ExitGacha(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         FREE_AND_SET_NULL(sGacha);
-        FREE_AND_SET_NULL(sTradeAnim);
     }
 }
 
@@ -2873,9 +2634,7 @@ static void HandleInput(void)
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            if (sGacha->exitToggle == 0) {
             sGacha->state = GACHA_STATE_START_EXIT;
-            }
         }
         else if (JOY_NEW(DPAD_UP))
         {
@@ -2894,10 +2653,6 @@ static void HandleInput(void)
             MoveCursor(3);
         }
     }
-}
-
-u8 GenerateRandomIV(void) {
-    return (Random() % 17) + 15;  // Random value between 15 and 31
 }
 
 static void RemoveGarbage(void)
@@ -2921,11 +2676,6 @@ static void RemoveGarbage(void)
     DestroySpriteAndFreeResources(&gSprites[sGacha->ArrowsSpriteId]);
     DestroySpriteAndFreeResources(&gSprites[sGacha->CTAspriteId]);
     ResetMessage();
-    sTradeAnim->bg1vofs = 0;
-    sTradeAnim->bg1hofs = 0;
-        
-    sTradeAnim->bg2vofs = 0;
-    sTradeAnim->bg2hofs = 0;
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
     SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(2) |
                                  BGCNT_CHARBASE(1) |
@@ -3252,36 +3002,14 @@ static void InitGachaScreen(void)
     CreatePlayerMenu();
     CreateLotteryJPN();
     
-    sGacha->Odds = 0;
+    sGacha->newMonOdds = 0;
     InitWindows(sGachaWinTemplates);
     LoadPalette(GetTextWindowPalette(2), 11 * 16, 32);
     ShowMessage();
-    
-    sGacha->exitToggle = 0;
+
     UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
-    sGacha->Basic_CommonMax = ARRAY_COUNT(sSpeciesGachaBasicCommon);
-    sGacha->Basic_UncommonMax = ARRAY_COUNT(sSpeciesGachaBasicUncommon);
-    sGacha->Basic_RareMax = ARRAY_COUNT(sSpeciesGachaBasicRare);
-    sGacha->Basic_UltraRareMax = ARRAY_COUNT(sSpeciesGachaBasicUltraRare);
-    sGacha->Great_CommonMax = ARRAY_COUNT(sSpeciesGreatCommon);
-    sGacha->Great_UncommonMax = ARRAY_COUNT(sSpeciesGreatUncommon);
-    sGacha->Great_RareMax = ARRAY_COUNT(sSpeciesGreatRare);
-    sGacha->Great_UltraRareMax = ARRAY_COUNT(sSpeciesGreatUltraRare);
-    sGacha->Ultra_CommonMax = ARRAY_COUNT(sSpeciesUltraCommon);
-    sGacha->Ultra_UncommonMax = ARRAY_COUNT(sSpeciesUltraUncommon);
-    sGacha->Ultra_RareMax = ARRAY_COUNT(sSpeciesUltraRare);
-    sGacha->Ultra_UltraRareMax = ARRAY_COUNT(sSpeciesUltraUltraRare);
-    sGacha->Master_CommonMax = ARRAY_COUNT(sSpeciesMasterCommon);
-    sGacha->Master_UncommonMax = ARRAY_COUNT(sSpeciesMasterUncommon);
-    sGacha->Master_RareMax = ARRAY_COUNT(sSpeciesMasterRare);
-    sGacha->Master_UltraRareMax = ARRAY_COUNT(sSpeciesMasterUltraRare);
-    sGacha->gachaState = 0;
     sGacha->waitTimer = 0;
     sGacha->Input = 0;
-    sGacha->Basic_Total_Max = (sGacha->Basic_CommonMax + sGacha->Basic_UncommonMax + sGacha->Basic_RareMax + sGacha->Basic_UltraRareMax);
-    sGacha->Great_Total_Max = (sGacha->Great_CommonMax + sGacha->Great_UncommonMax + sGacha->Great_RareMax + sGacha->Great_UltraRareMax);
-    sGacha->Ultra_Total_Max = (sGacha->Ultra_CommonMax + sGacha->Ultra_UncommonMax + sGacha->Ultra_RareMax + sGacha->Ultra_UltraRareMax);
-    sGacha->Master_Total_Max = (sGacha->Master_CommonMax + sGacha->Master_UncommonMax + sGacha->Master_RareMax + sGacha->Master_UltraRareMax);
     GetPokemonOwned();
     
     CopyBgTilemapBufferToVram(GACHA_BG_BASE);

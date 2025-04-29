@@ -2775,7 +2775,7 @@ MauvilleCity_GameCorner_EventScript_SlotMachine0::
 # 1388 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	specialvar VAR_RESULT, GetSlotMachineId
 # 1389 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playslotmachine VAR_RESULT
+	playslotmachine_rg VAR_RESULT
 # 1390 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	releaseall
 # 1391 "data/maps/MauvilleCity_GameCorner/scripts.pory"

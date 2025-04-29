@@ -1244,6 +1244,12 @@
 	.2byte \id
 	.endm
 
+	@ Starts up the slot machine minigame in FRLG. id is a SLOT_MACHINE_* value that influences probabilities of certain reel outcomes.
+	.macro playslotmachine_rg  id:req
+	callnative ScrFunc_playslotmachine_rg, requests_effects=1
+	.2byte \id
+	.endm
+
 	@ Sets a berry tree's berry and growth stage. treeId is any BERRY_TREE_* constant (an index into berryTrees in SaveBlock1),
 	@ berry is any ITEM_TO_BERRY(ITEM_BERRY_NAME) value, and growthStage is any BERRY_STAGE_* constant.
 	.macro setberrytree treeId:req, berry:req, growthStage:req
