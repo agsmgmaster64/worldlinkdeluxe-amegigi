@@ -214,7 +214,7 @@ void NewGameInitData(void)
     ClearBerryTrees();
     SetMoney(&gSaveBlock1Ptr->money, 3000);
     SetCoins(0);
-	GetNewDerby();
+    GetNewDerby();
     ResetLinkContestBoolean();
     ResetGameStats();
     ClearAllContestWinnerPics();

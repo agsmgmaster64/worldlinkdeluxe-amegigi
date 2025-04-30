@@ -523,8 +523,8 @@ static const u32 sBallPokeballGfx[] = INCBIN_U32("graphics/pinball/ball_pokeball
 static const u16 sBallPokeballPalette[] = INCBIN_U16("graphics/pinball/ball_pokeball.gbapal");
 static const u32 sFlipperGfx[] = INCBIN_U32("graphics/pinball/flipper.4bpp.lz");
 static const u16 sFlipperPalette[] = INCBIN_U16("graphics/pinball/flipper.gbapal");
-static const u8 sFlipperLeftMinigameCollisionMasks[][0x200] = {INCBIN_U8("graphics/pinball/flipper_left_masks_minigame.1bpp")};
-static const u8 sFlipperRightMinigameCollisionMasks[][0x200] = {INCBIN_U8("graphics/pinball/flipper_right_masks_minigame.1bpp")};
+static const u8 sFlipperLeftMinigameCollisionMasks[][0x200] = { INCBIN_U8("graphics/pinball/flipper_left_masks_minigame.1bpp"), };
+static const u8 sFlipperRightMinigameCollisionMasks[][0x200] = { INCBIN_U8("graphics/pinball/flipper_right_masks_minigame.1bpp"), };
 static const u32 sTimerDigitsGfx[] = INCBIN_U32("graphics/pinball/timer_digits.4bpp.lz");
 static const u16 sTimerDigitsPalette[] = INCBIN_U16("graphics/pinball/timer_digits.gbapal");
 
@@ -2803,8 +2803,8 @@ static void DrawMeowthScoreJewels(struct Meowth *meowth)
             tilemap[i] = sMeowthStageBgTilemap[i];
     }
 
-	VarSet(VAR_FLIP_WINNINGS, (meowth->score * 3));
-	SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+	VarSet(GAME_CORNER_VAR_WINNINGS, (meowth->score * 3));
+	SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
 }
 
@@ -2830,8 +2830,8 @@ static void DrawSeelScoreJewels(struct Seel *seel)
             tilemap[i] = sSeelStageBgTilemap[i];
         }
     }
-	VarSet(VAR_FLIP_WINNINGS, (seel->score * 4));
-	SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+	VarSet(GAME_CORNER_VAR_WINNINGS, (seel->score * 4));
+	SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
     CopyBgTilemapBufferToVram(PINBALL_BG_BASE);
 }
 
@@ -2885,7 +2885,7 @@ static void HandleBallPhysics(void)
 
     if ((ball->yPos >> 8) > 168)
     {
-        ball->yPos = 170 << 8;
+        ball->yPos == 170 << 8;
         LoseBall();
     }
 }
@@ -4225,12 +4225,12 @@ static bool32 UpdateDiglett(struct Diglett *diglett)
                     diglett->collisionMap[0x6B] = 0x18;
                 }
 				if (diglett->numDiglettsHit < NUM_DIGLETTS) {
-					VarSet(VAR_FLIP_WINNINGS, (diglett->numDiglettsHit * 3)); }
+					VarSet(GAME_CORNER_VAR_WINNINGS, (diglett->numDiglettsHit * 3)); }
 				else
 				{
-					VarSet(VAR_FLIP_WINNINGS, 100);
+					VarSet(GAME_CORNER_VAR_WINNINGS, 100);
 				}
-				SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+				SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
                 break;
             }
 
@@ -4268,8 +4268,8 @@ static bool32 UpdateDiglett(struct Diglett *diglett)
             break;
         case DUGTRIO_STATE_0ALIVE:
             if (dugtrioSprite->animEnded)
-				VarSet(VAR_FLIP_WINNINGS, 150);
-				SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+				VarSet(GAME_CORNER_VAR_WINNINGS, 150);
+				SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
                 diglett->dugtrioState = DUGTRIO_STATE_COMPLETE;
             return TRUE;
         }
@@ -4348,8 +4348,8 @@ static void UpdateDugtrioSprite(struct Sprite *sprite)
         case DUGTRIO_STATE_1ALIVE_HIT:
             StartSpriteAnim(sprite, 6);
 			PlayBGM(MUS_NONE);
-			VarSet(VAR_FLIP_WINNINGS, 150);
-			SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+			VarSet(GAME_CORNER_VAR_WINNINGS, 150);
+			SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
 			PlaySE(SE_SUPER_EFFECTIVE);
             break;
         case DUGTRIO_STATE_0ALIVE:
@@ -4951,8 +4951,8 @@ static void UpdateGhost(struct Gengar *gengar, struct GraveyardGhost *ghost, u8 
         if (sprite->animEnded)
         {
             (*numGhostHits)++;
-			VarSet(VAR_FLIP_WINNINGS, (VarGet(VAR_FLIP_WINNINGS) + multiplier));
-			SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+			VarSet(GAME_CORNER_VAR_WINNINGS, (VarGet(GAME_CORNER_VAR_WINNINGS) + multiplier));
+			SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
 			PlaySE(SE_M_TELEPORT);
             if (*numGhostHits >= REQUIRED_GHOST_HITS - (numGhosts - 1))
             {
@@ -5094,8 +5094,8 @@ static void UpdateGengarSprite(struct Sprite *sprite)
         case GENGAR_STATE_LEAVING:
             StartSpriteAnim(sprite, 4);
 			PlayBGM(MUS_NONE);
-			VarSet(VAR_FLIP_WINNINGS, 250);
-			SetPlayerDigits(VarGet(VAR_FLIP_WINNINGS));
+			VarSet(GAME_CORNER_VAR_WINNINGS, 250);
+			SetPlayerDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
 			PlaySE(SE_SUPER_EFFECTIVE);
             break;
         }

@@ -718,12 +718,12 @@ void CB2_ShowVoltorbFlip(void)
 	
 	LoadSpritePalettes(sSpritePalettes2);
 	CreateCreditSprites();
-	SetCreditDigits(VarGet(VAR_FLIP_WINNINGS));
+	SetCreditDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
 	//SetCreditDigits(9876);
-	sVflip->prevWinnings = VarGet(VAR_FLIP_WINNINGS);
+	sVflip->prevWinnings = VarGet(GAME_CORNER_VAR_WINNINGS);
 	sVflip->curWinnings = 0;
 	sVflip->winnings = 0;
-	SetCreditDigits(VarGet(VAR_FLIP_WINNINGS));
+	SetCreditDigits(VarGet(GAME_CORNER_VAR_WINNINGS));
 	LoadSpritePalette(&sCoinPalette);
 	CreateCoins();
 	
@@ -753,7 +753,7 @@ void CB2_ShowVoltorbFlip(void)
     SetVBlankCallback(VBlankCB);
     SetMainCallback2(MainCB2);
 
-    ResetVoltorbFlipCards(VarGet(VAR_FLIP_LEVEL));
+    ResetVoltorbFlipCards(VarGet(FLIP_VAR_LEVEL));
 
     CreateTask(Task_VoltorbFlipFadeIn, 0);
 }
@@ -782,7 +782,7 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         VarSet(VAR_RESULT, FALSE);
-		VarSet(VAR_FLIP_LEVEL, 0);
+		VarSet(FLIP_VAR_LEVEL, 0);
 
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_VoltorbFlipFadeOut;
@@ -792,7 +792,7 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     if(gameState == GAME_STATE_LOSE)
     {
         VarSet(VAR_RESULT, FALSE);
-		VarSet(VAR_FLIP_LEVEL, 0);
+		VarSet(FLIP_VAR_LEVEL, 0);
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
@@ -803,7 +803,7 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     {
         ShowAllCards();
         VarSet(VAR_RESULT, TRUE);
-		VarSet(VAR_FLIP_LEVEL, VAR_FLIP_LEVEL + 1);
+		VarSet(FLIP_VAR_LEVEL, FLIP_VAR_LEVEL + 1);
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
@@ -981,7 +981,7 @@ static void Task_VoltorbFlipVictory(u8 taskId)
     {
         if(WaitFanfare(FALSE))
         {
-			VarSet(VAR_FLIP_WINNINGS, sVflip->curWinnings);
+			VarSet(GAME_CORNER_VAR_WINNINGS, sVflip->curWinnings);
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_VoltorbFlipFadeOut;
         }
@@ -992,7 +992,7 @@ static void Task_VoltorbFlipLoss(u8 taskId)
 {
     if(!IsSEPlaying())
     {
-		VarSet(VAR_FLIP_WINNINGS, 0);
+		VarSet(GAME_CORNER_VAR_WINNINGS, 0);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_VoltorbFlipFadeOut;
     }

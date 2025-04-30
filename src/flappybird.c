@@ -1579,11 +1579,11 @@ static void FlappyBirdMain(u8 taskId)
 			if ((sFlappy->bg2ScrollX == 225) || ((sFlappy->bg2ScrollX == 98) && (sFlappy->Obstacle1Id != 0))) // Point
 			{
 				SoundEffect(sFlappy->SFX);
-				if (VarGet(VAR_FLIP_WINNINGS) < 9998) {
-					VarSet(VAR_FLIP_WINNINGS, VarGet(VAR_FLIP_WINNINGS) + 2); }
+				if (VarGet(GAME_CORNER_VAR_WINNINGS) < 9998) {
+					VarSet(GAME_CORNER_VAR_WINNINGS, VarGet(GAME_CORNER_VAR_WINNINGS) + 2); }
 				else
 				{
-					VarSet(VAR_FLIP_WINNINGS, 9999);
+					VarSet(GAME_CORNER_VAR_WINNINGS, 9999);
 				}
 				if (sFlappy->Points < 9999) {
 				sFlappy->Points++; }
@@ -1693,10 +1693,10 @@ static void FlappyBirdMain(u8 taskId)
 			gSprites[sFlappy->GameOverSpriteId].y = 80;
 			if (sFlappy->timerDelay == 0)
 			{
-				if (sFlappy->Points > VarGet(VAR_FLAPPY_HISCORE))
+				if (sFlappy->Points > VarGet(FLAPPY_VAR_HIGH_SCORE))
 				{
 					PlayFanfare(MUS_LEVEL_UP);
-					VarSet(VAR_FLAPPY_HISCORE, sFlappy->Points);
+					VarSet(FLAPPY_VAR_HIGH_SCORE, sFlappy->Points);
 					sFlappy->timerDelay = 100;
 					DestroySpriteAndFreeResources(&gSprites[sFlappy->GameOverSpriteId]);
 					CreateHiScore();
@@ -1771,7 +1771,7 @@ static void InitFlappyBirdScreen(void)
 	CreateCreditSprites();
 	SetCreditDigits(0);
 	CreateHiScoreSprites();
-	SetScoreDigits(VarGet(VAR_FLAPPY_HISCORE));
+	SetScoreDigits(VarGet(FLAPPY_VAR_HIGH_SCORE));
 	CreateScore();
 	CreateScore2();
 	CreateButterfree();
@@ -1785,7 +1785,7 @@ static void InitFlappyBirdScreen(void)
 	sFlappy->MAX_Y = 10;
 	sFlappy->Obstacle2Id = 0;
 	sFlappy->Obstacle2Id = 1;
-	VarSet(VAR_FLIP_WINNINGS, 0);
+	VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 	sFlappy->timer = 5;
 	sFlappy->timerDelay = 75;
 

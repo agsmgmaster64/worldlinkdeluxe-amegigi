@@ -2304,7 +2304,7 @@ static void BlockStackerMain(u8 taskId)
 			{
 				if (sBlockStacker->YesNo == 1) // No
 				{
-					VarSet(VAR_FLIP_WINNINGS, sBlockStacker->Winnings);
+					VarSet(GAME_CORNER_VAR_WINNINGS, sBlockStacker->Winnings);
 					sBlockStacker->state = STACKER_START_EXIT;
 				}
 				else
@@ -2319,7 +2319,7 @@ static void BlockStackerMain(u8 taskId)
 			sBlockStacker->GoDelay--;
 			if (sBlockStacker->GoDelay == 0)
 			{
-				VarSet(VAR_FLIP_WINNINGS, sBlockStacker->Winnings);
+				VarSet(GAME_CORNER_VAR_WINNINGS, sBlockStacker->Winnings);
 				sBlockStacker->state = STACKER_START_EXIT;
 			}
 			break;

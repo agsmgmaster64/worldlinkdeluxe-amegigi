@@ -1,4 +1,3 @@
-//#include "game_corner_blackjack.h"
 #include "game_corner_gacha.h"
 #include "global.h"
 #include "malloc.h"
@@ -161,11 +160,9 @@ struct Gacha {
     u8 monSpriteId;
     u32 waitTimer;
     u8 Input;
-    struct Pokemon GachaMon;
-};    
+};
 
-extern const u8 gText_FromGacha[];
-extern const u8 gText_NicknameGacha[];
+static const u8 sText_FromGacha[] = _("You got {STR_VAR_1}!");
 
 static const s8 sTradeBallVerticalVelocityTable[] =
 {
@@ -1269,16 +1266,16 @@ static void BGSetup(void)
     {
     default:
     case GACHA_BASIC:
-        LoadPalette(Gacha_BG_Basic_Pal, 0, sizeof(Gacha_BG_Basic_Pal));
+        LoadPalette(Gacha_BG_Basic_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_GREAT:
-        LoadPalette(Gacha_BG_Great_Pal, 0, sizeof(Gacha_BG_Great_Pal));
+        LoadPalette(Gacha_BG_Great_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_ULTRA:
-        LoadPalette(Gacha_BG_Ultra_Pal, 0, sizeof(Gacha_BG_Ultra_Pal));
+        LoadPalette(Gacha_BG_Ultra_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_MASTER:
-        LoadPalette(Gacha_BG_Master_Pal, 0, sizeof(Gacha_BG_Master_Pal));
+        LoadPalette(Gacha_BG_Master_Pal, 0, PLTT_SIZE_4BPP);
         break;
     }
 }
@@ -1292,7 +1289,7 @@ static void BGRed(void)
     DecompressAndLoadBgGfxUsingHeap(GACHA_BG_BASE, Gacha_BG_Red, size, 0, 0);
     CopyToBgTilemapBuffer(GACHA_BG_BASE, Gacha_BG_Red_Tilemap, 0, 0);
     ResetPaletteFade();
-    LoadPalette(Gacha_BG_Red_Pal, 0, sizeof(Gacha_BG_Red_Pal));
+    LoadPalette(Gacha_BG_Red_Pal, 0, PLTT_SIZE_4BPP);
 }
 
 static void Shake1(void)
@@ -1309,16 +1306,16 @@ static void Shake1(void)
     {
     default:
     case GACHA_BASIC:
-        LoadPalette(Gacha_BG_Basic_Pal, 0, sizeof(Gacha_BG_Basic_Pal));
+        LoadPalette(Gacha_BG_Basic_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_GREAT:
-        LoadPalette(Gacha_BG_Great_Pal, 0, sizeof(Gacha_BG_Great_Pal));
+        LoadPalette(Gacha_BG_Great_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_ULTRA:
-        LoadPalette(Gacha_BG_Ultra_Pal, 0, sizeof(Gacha_BG_Ultra_Pal));
+        LoadPalette(Gacha_BG_Ultra_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_MASTER:
-        LoadPalette(Gacha_BG_Master_Pal, 0, sizeof(Gacha_BG_Master_Pal));
+        LoadPalette(Gacha_BG_Master_Pal, 0, PLTT_SIZE_4BPP);
         break;
     }
 }
@@ -1337,16 +1334,16 @@ static void Shake2(void)
     {
     default:
     case GACHA_BASIC:
-        LoadPalette(Gacha_BG_Basic_Pal, 0, sizeof(Gacha_BG_Basic_Pal));
+        LoadPalette(Gacha_BG_Basic_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_GREAT:
-        LoadPalette(Gacha_BG_Great_Pal, 0, sizeof(Gacha_BG_Great_Pal));
+        LoadPalette(Gacha_BG_Great_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_ULTRA:
-        LoadPalette(Gacha_BG_Ultra_Pal, 0, sizeof(Gacha_BG_Ultra_Pal));
+        LoadPalette(Gacha_BG_Ultra_Pal, 0, PLTT_SIZE_4BPP);
         break;
     case GACHA_MASTER:
-        LoadPalette(Gacha_BG_Master_Pal, 0, sizeof(Gacha_BG_Master_Pal));
+        LoadPalette(Gacha_BG_Master_Pal, 0, PLTT_SIZE_4BPP);
         break;
     }
 }
@@ -2704,7 +2701,7 @@ void ShowFinalMessage(void)
     LoadUserWindowBorderGfx(sTextWindowId, 0x214, BG_PLTT_ID(14));
     DrawStdWindowFrame(sTextWindowId, FALSE); 
     StringCopy(gStringVar1, GetSpeciesName(sGacha->CalculatedSpecies));
-    StringExpandPlaceholders(gStringVar4, gText_FromGacha);
+    StringExpandPlaceholders(gStringVar4, sText_FromGacha);
     AddTextPrinterParameterized(sTextWindowId, FONT_NORMAL, gStringVar4, 0, 1, 0, 0);
     CopyWindowToVram(sTextWindowId, 3);
 }

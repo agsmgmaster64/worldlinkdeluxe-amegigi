@@ -2522,14 +2522,14 @@ void GetNewDerby(void)
     num1_5 = conditions[4];
     num1_6 = conditions[5];
 	
-	VarSet(VAR_RACER_1, (num100_1 * 100) + (num10_1 * 10) + num1_1);
-	VarSet(VAR_RACER_2, (num100_2 * 100) + (num10_2 * 10) + num1_2);
-	VarSet(VAR_RACER_3, (num100_3 * 100) + (num10_3 * 10) + num1_3);
-	VarSet(VAR_RACER_4, (num100_4 * 100) + (num10_4 * 10) + num1_4);
-	VarSet(VAR_RACER_5, (num100_5 * 100) + (num10_5 * 10) + num1_5);
-	VarSet(VAR_RACER_6, (num100_6 * 100) + (num10_6 * 10) + num1_6);
+	VarSet(DERBY_VAR_RACER_1, (num100_1 * 100) + (num10_1 * 10) + num1_1);
+	VarSet(DERBY_VAR_RACER_2, (num100_2 * 100) + (num10_2 * 10) + num1_2);
+	VarSet(DERBY_VAR_RACER_3, (num100_3 * 100) + (num10_3 * 10) + num1_3);
+	VarSet(DERBY_VAR_RACER_4, (num100_4 * 100) + (num10_4 * 10) + num1_4);
+	VarSet(DERBY_VAR_RACER_5, (num100_5 * 100) + (num10_5 * 10) + num1_5);
+	VarSet(DERBY_VAR_RACER_6, (num100_6 * 100) + (num10_6 * 10) + num1_6);
 	
-	VarSet(VAR_NEW_DERBY, 1);
+	FlagSet(DERBY_FLAG_RESET);
 }
 
 void InitiateRacers(void)
@@ -2537,37 +2537,37 @@ void InitiateRacers(void)
 	u32 number;
 	
 	// Species 1
-	number = VarGet(VAR_RACER_1);
+	number = VarGet(DERBY_VAR_RACER_1);
 	sDerby->Species_1 = number / 100;           // Hundreds place
     sDerby->Shiny_1 = (number / 10) % 10;     // Tens place
     sDerby->Condition_1 = number % 10;            // Ones place
 	
 	// Species 2
-	number = VarGet(VAR_RACER_2);
+	number = VarGet(DERBY_VAR_RACER_2);
 	sDerby->Species_2 = number / 100;           // Hundreds place
     sDerby->Shiny_2 = (number / 10) % 10;     // Tens place
     sDerby->Condition_2 = number % 10;            // Ones place
 	
 	// Species 3
-	number = VarGet(VAR_RACER_3);
+	number = VarGet(DERBY_VAR_RACER_3);
 	sDerby->Species_3 = number / 100;           // Hundreds place
     sDerby->Shiny_3 = (number / 10) % 10;     // Tens place
     sDerby->Condition_3 = number % 10;            // Ones place
 	
 	// Species 4
-	number = VarGet(VAR_RACER_4);
+	number = VarGet(DERBY_VAR_RACER_4);
 	sDerby->Species_4 = number / 100;           // Hundreds place
     sDerby->Shiny_4 = (number / 10) % 10;     // Tens place
     sDerby->Condition_4 = number % 10;            // Ones place
 	
 	// Species 5
-	number = VarGet(VAR_RACER_5);
+	number = VarGet(DERBY_VAR_RACER_5);
 	sDerby->Species_5 = number / 100;           // Hundreds place
     sDerby->Shiny_5 = (number / 10) % 10;     // Tens place
     sDerby->Condition_5 = number % 10;            // Ones place
 	
 	// Species 6
-	number = VarGet(VAR_RACER_6);
+	number = VarGet(DERBY_VAR_RACER_6);
 	sDerby->Species_6 = number / 100;           // Hundreds place
     sDerby->Shiny_6 = (number / 10) % 10;     // Tens place
     sDerby->Condition_6 = number % 10;            // Ones place
@@ -3281,7 +3281,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_1 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_1))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_1))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3289,7 +3289,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_1 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_1))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_1))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3297,7 +3297,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_1 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_1))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_1))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3305,7 +3305,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_1 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_1))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_1))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3316,7 +3316,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_2 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_2))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_2))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3324,7 +3324,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_2 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_2))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_2))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3332,7 +3332,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_2 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_2))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_2))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3340,7 +3340,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_2 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_2))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_2))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3351,7 +3351,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_3 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_3))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_3))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3359,7 +3359,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_3 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_3))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_3))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3367,7 +3367,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_3 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_3))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_3))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3375,7 +3375,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_3 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_3))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_3))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3386,7 +3386,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_4 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_4))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_4))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3394,7 +3394,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_4 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_4))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_4))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3402,7 +3402,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_4 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_4))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_4))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3410,7 +3410,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_4 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_4))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_4))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3421,7 +3421,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_5 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_5))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_5))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3429,7 +3429,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_5 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_5))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_5))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3437,7 +3437,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_5 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_5))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_5))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3445,7 +3445,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_5 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_5))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_5))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3456,7 +3456,7 @@ static void UpdateNicknames(void)
 		if (sDerby->Species_6 < 5) // Ponyta
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (PonytaNamesValues[i].ID == (VarGet(VAR_RACER_NAME_6))) {
+				if (PonytaNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_6))) {
 					ShowName(PonytaNamesValues[i].NameString);
 				}
 			}
@@ -3464,7 +3464,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_6 == 5) // Rattata
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RattataNamesValues[i].ID == (VarGet(VAR_RACER_NAME_6))) {
+				if (RattataNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_6))) {
 					ShowName(RattataNamesValues[i].NameString);
 				}
 			}
@@ -3472,7 +3472,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_6 == 6) // Rapidash
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (RapidashNamesValues[i].ID == (VarGet(VAR_RACER_NAME_6))) {
+				if (RapidashNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_6))) {
 					ShowName(RapidashNamesValues[i].NameString);
 				}
 			}
@@ -3480,7 +3480,7 @@ static void UpdateNicknames(void)
 		else if (sDerby->Species_6 == 7) // Feebas
 		{
 			for (i = 0; i < MAX_NAMES; i++) {
-				if (FeebasNamesValues[i].ID == (VarGet(VAR_RACER_NAME_6))) {
+				if (FeebasNamesValues[i].ID == (VarGet(DERBY_VAR_RACER_NAME_6))) {
 					ShowName(FeebasNamesValues[i].NameString);
 				}
 			}
@@ -3527,14 +3527,14 @@ static void SetNicknames(void)
     name6 = GetUniquePonytaName(sDerby->Species_6, previousNames);
     
     // Assign the unique names to the VARs
-    VarSet(VAR_RACER_NAME_1, name1);
-    VarSet(VAR_RACER_NAME_2, name2);
-    VarSet(VAR_RACER_NAME_3, name3);
-    VarSet(VAR_RACER_NAME_4, name4);
-    VarSet(VAR_RACER_NAME_5, name5);
-    VarSet(VAR_RACER_NAME_6, name6);
+    VarSet(DERBY_VAR_RACER_NAME_1, name1);
+    VarSet(DERBY_VAR_RACER_NAME_2, name2);
+    VarSet(DERBY_VAR_RACER_NAME_3, name3);
+    VarSet(DERBY_VAR_RACER_NAME_4, name4);
+    VarSet(DERBY_VAR_RACER_NAME_5, name5);
+    VarSet(DERBY_VAR_RACER_NAME_6, name6);
 	
-	VarSet(VAR_NICKNAME_TOGGLE, 1);
+	FlagSet(DERBY_FLAG_NICKNAME);
 }
 
 static void UpdatePokemonData(void)
@@ -3544,7 +3544,7 @@ static void UpdatePokemonData(void)
 	UpdateCondition();
 	UpdatePayout();
 	UpdateUI();
-	if (VarGet(VAR_NICKNAME_TOGGLE) == 0)
+	if (FlagGet(DERBY_FLAG_NICKNAME))
 	{
 		SetNicknames();
 	}
@@ -4472,7 +4472,6 @@ static void CreateCursor(void)
 		position = 0;
 		y = 40 + 16 + 16 + 16 + 16 + 16;
 	}
-
 	LoadCompressedSpriteSheet(&sSpriteSheet_Cursor);
 			
 	sDerby->CursorSpriteId = CreateSprite(&sSpriteTemplate_Cursor, 224, y, position);
@@ -4888,90 +4887,90 @@ static void DerbyMain(u8 taskId)
 				{
 					if (sDerby->place1 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place1 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				else if (sDerby->RacerSelected == 2)
 				{
 					if (sDerby->place2 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place2 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				else if (sDerby->RacerSelected == 3)
 				{
 					if (sDerby->place3 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place3 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				else if (sDerby->RacerSelected == 4)
 				{
 					if (sDerby->place4 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place4 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				else if (sDerby->RacerSelected == 5)
 				{
 					if (sDerby->place5 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place5 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				else if (sDerby->RacerSelected == 6)
 				{
 					if (sDerby->place6 == 2) // Win
 					{
-						VarSet(VAR_FLIP_WINNINGS, sDerby->PotentialWin);
+						VarSet(GAME_CORNER_VAR_WINNINGS, sDerby->PotentialWin);
 					}
 					else if (sDerby->place6 == 1) // Second
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0); // Lose
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0); // Lose
 					}
 					else
 					{
-						VarSet(VAR_FLIP_WINNINGS, 0);
+						VarSet(GAME_CORNER_VAR_WINNINGS, 0);
 					}
 				}
 				PlaySE(SE_APPLAUSE);
@@ -4980,8 +4979,8 @@ static void DerbyMain(u8 taskId)
 				LoadCompressedSpriteSheet(&sSpriteSheet_Clefairy);
 				
 				sDerby->ClefSpriteId = CreateSprite(&sSpriteTemplate_Clefairy, sDerby->CountdownX, sDerby->CountdownY, 0);
-				VarSet(VAR_NEW_DERBY, 0);
-				VarSet(VAR_NICKNAME_TOGGLE, 0);
+				FlagClear(DERBY_FLAG_RESET);
+				FlagClear(DERBY_FLAG_NICKNAME);
 				sDerby->delay = 120;
 				sDerby->state = DERBY_STATE_FINAL_DELAY;
 			}
@@ -5023,7 +5022,7 @@ static void InitDerbyScreen(void)
 	ResetSpriteData();
     FreeAllSpritePalettes();
 	
-	if (VarGet(VAR_NEW_DERBY) == 0)
+	if (FlagGet(DERBY_FLAG_RESET) == 0)
 	{
 		GetNewDerby();
 	}
