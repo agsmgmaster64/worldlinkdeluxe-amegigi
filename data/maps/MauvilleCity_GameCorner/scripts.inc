@@ -55,7 +55,7 @@ MauvilleCity_GameCorner_MapScripts::
 # 28 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 TrainerId_Onframe:
 # 29 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	map_script_2 VAR_TRAINER_ID_CHECK, 0, BouncerCheck
+	map_script_2 GAME_CORNER_VAR_ID_CHECK, 0, BouncerCheck
 # 30 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	.2byte 0
 # 31 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -87,7 +87,7 @@ BouncerCheck::
 # 44 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	closemessage
 # 45 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_TRAINER_ID_CHECK, 1
+	setvar GAME_CORNER_VAR_ID_CHECK, 1
 # 46 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	applymovement LOCALID_BOUNCER, Movement_Bouncer_Leave
 # 47 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -175,19 +175,19 @@ MauvilleCity_GameCorner_EventScript_Derby::
 # 88 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 89 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 90 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 91 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 92 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 93 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 94 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 95 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 96 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 97 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -245,19 +245,19 @@ MauvilleCity_GameCorner_EventScript_Snake::
 # 123 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 124 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 125 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 126 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 127 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 128 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 129 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 130 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 131 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 132 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -315,19 +315,19 @@ MauvilleCity_GameCorner_EventScript_FlappyBird::
 # 158 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 159 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 160 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 161 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 162 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 163 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 164 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 165 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 166 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 167 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -385,19 +385,19 @@ MauvilleCity_GameCorner_EventScript_BlockStacker::
 # 193 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 194 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 195 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 196 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 197 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 198 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 199 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 200 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 201 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 202 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -545,19 +545,19 @@ MauvilleCity_GameCorner_EventScript_PinballMeowth::
 # 273 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 274 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 275 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 276 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 277 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 278 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 279 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 280 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 281 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 282 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -615,19 +615,19 @@ MauvilleCity_GameCorner_EventScript_PinballDiglett::
 # 308 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 309 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 310 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 311 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 312 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 313 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 314 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 315 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 316 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 317 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -685,19 +685,19 @@ MauvilleCity_GameCorner_EventScript_PinballSeel::
 # 343 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 344 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 345 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 346 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 347 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 348 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 349 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 350 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 351 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 352 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -753,21 +753,21 @@ MauvilleCity_GameCorner_EventScript_PinballGengar::
 # 377 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	savebgm MUS_DUMMY
 # 378 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	goto_if_eq VAR_FLIP_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
+	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 # 379 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	fadedefaultbgm
 # 380 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 381 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
 # 382 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
 # 383 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	waitmessage
 # 384 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 385 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 386 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 387 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -817,7 +817,7 @@ MauvilleCity_GameCorner_EventScript_VoltorbFlip::
 # 409 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	playbgm MUS_HGSS_CASINO, FALSE
 # 410 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 411 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special Special_ViewVoltorbFlip
 # 412 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -841,7 +841,7 @@ VF_Come_Again::
 # 421 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox VF_Come_Again_Text, MSGBOX_DEFAULT
 # 422 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 423 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	releaseall
 # 424 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -853,7 +853,7 @@ VF_Go_On::
 # 427 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	showcoinsbox 1, 1
 # 428 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	buffernumberstring STR_VAR_1, VAR_FLIP_WINNINGS	
+	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS	
 # 429 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	msgbox MauvilleCity_GameCorner_Text_VF_Keep_Going, MSGBOX_YESNO
 # 430 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -885,11 +885,11 @@ VF_Loop::
 # 443 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 VF_Cash_Out::	
 # 444 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	addcoins VAR_FLIP_WINNINGS
+	addcoins GAME_CORNER_VAR_WINNINGS
 # 445 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_WINNINGS, 0
+	setvar GAME_CORNER_VAR_WINNINGS, 0
 # 446 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	setvar VAR_FLIP_LEVEL, 0
+	setvar FLIP_VAR_LEVEL, 0
 # 447 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	updatecoinsbox 1, 1
 # 448 "data/maps/MauvilleCity_GameCorner/scripts.pory"
