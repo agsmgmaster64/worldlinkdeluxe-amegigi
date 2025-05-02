@@ -19,6 +19,7 @@
 #include "battle_debug.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "config/fishing_game.h"
 #include "constants/abilities.h"
 #include "constants/game_stat.h"
 #include "constants/item.h"
@@ -947,7 +948,7 @@ void FishingWildEncounter(u8 rod)
     }
     
     SetPokemonAnglerSpecies(species);
-    if (!FISH_MINIGAME_ENABLED)
+    if (!FG_FISH_MINIGAME_ENABLED)
     {
         IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
         BattleSetup_StartWildBattle();

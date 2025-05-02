@@ -212,8 +212,12 @@ const u8 gText_HelpfulTextLower0[] = _("Uh oh!\nIt's about to escape!");
 const u8 gText_HelpfulTextLower1[] = _("It sure is a fighter!");
 const u8 gText_HelpfulTextLower2[] = _("Aw!\nYou almost had it.");
 const u8 gText_FishingWantToQuit[] = _("Do you want to let this one go?");
-const u8 gText_ReeledInAPokemon[] = _("You reeled in a Puppet!{PAUSE_UNTIL_PRESS}");
+const u8 gText_ReeledInAPokemon[] = _("{PLAYER} reeled in a Puppet!{PAUSE_UNTIL_PRESS}");
 const u8 gText_PokemonGotAway[] = _("Oh, no!\nThe Puppet got away…{PAUSE_UNTIL_PRESS}");
+const u8 gText_ReeledInTreasure[] = _("{PLAYER} reeled in a Treasure!");
+const u8 gText_FoundATreasureItem[] = _("{PLAYER} found one\n{STR_VAR_2}!");
+const u8 gText_PutTreasureInPocket[] = _("{PLAYER} put away the {STR_VAR_2}\nin the {STR_VAR_3} Pocket.");
+const u8 gText_NoRoomForTreasure[] = _("Too bad!\nThe Bag is full…");
 
 const u8 *const gBagMenu_ReturnToStrings[] =
 {
