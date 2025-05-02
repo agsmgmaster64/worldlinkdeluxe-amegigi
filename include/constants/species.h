@@ -1011,10 +1011,10 @@
 #define SPECIES_NORMAL_SHIZUHA_SANNI                    959
 #define SPECIES_CHIBI_MOMIJI_SANNI                      960
 #define SPECIES_NORMAL_MOMIJI_SANNI                     961
-#define SPECIES_NINETALES_ALOLA                         962
-#define SPECIES_DIGLETT_ALOLA                           963
-#define SPECIES_DUGTRIO_ALOLA                           964
-#define SPECIES_MEOWTH_ALOLA                            965
+#define SPECIES_SHANGHAI_SANNI                          962
+#define SPECIES_HOURAI_SANNI                            963
+#define SPECIES_GOLIATH_SANNI_ATTACK                    964
+#define SPECIES_GOLIATH_SANNI_DEFENSE                   965
 #define SPECIES_PERSIAN_ALOLA                           966
 #define SPECIES_GEODUDE_ALOLA                           967
 #define SPECIES_GRAVELER_ALOLA                          968

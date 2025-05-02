@@ -296,7 +296,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
+        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE, ABILITY_MAGIC_GUARD },
         .sourceGame = SOURCE_PCB,
         .noFlip = TRUE,
         .speciesName = _("Shanghai"),
@@ -319,6 +319,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
         .backPic = gMonBackPic_Shanghai,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -327,9 +328,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_Shanghai,
         .iconSprite = gMonIcon_Shanghai,
         .iconPalIndex = 1,
+        SHADOW(-3, 14, SHADOW_SIZE_S)
         FOOTPRINT(Shanghai)
         .levelUpLearnset = sShanghaiLevelUpLearnset,
         .teachableLearnset = sShanghaiTeachableLearnset,
+        .formSpeciesIdTable = sShanghaiFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH_SHANGHAI}),
     },
 
@@ -351,7 +355,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE },
+        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE, ABILITY_MAGIC_GUARD },
         .sourceGame = SOURCE_PCB,
         .noFlip = TRUE,
         .speciesName = _("Hourai"),
@@ -374,6 +378,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
         .backPic = gMonBackPic_Hourai,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -382,9 +387,12 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_Hourai,
         .iconSprite = gMonIcon_Hourai,
         .iconPalIndex = 1,
+        SHADOW(-5, 16, SHADOW_SIZE_S)
         FOOTPRINT(Hourai)
         .levelUpLearnset = sHouraiLevelUpLearnset,
         .teachableLearnset = sHouraiTeachableLearnset,
+        .formSpeciesIdTable = sHouraiFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH_HOURAI}),
     },
 
@@ -405,10 +413,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .friendship = STANDARD_FRIENDSHIP,                                                              \
         .growthRate = GROWTH_FAST,                                                                      \
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),                                              \
-        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE, ABILITY_NONE },                             \
+        .abilities = { ABILITY_STURDY, ABILITY_MAINTENANCE, ABILITY_MAGIC_GUARD },                      \
         .sourceGame = SOURCE_PCB,                                                                       \
         .noFlip = TRUE,                                                                                 \
-        .speciesName = _("Unown"),                                                                      \
+        .speciesName = _("Goliath"),                                                                    \
         .cryId = CRY_ALICE_DOLL,                                                                        \
         .natDexNum = NATIONAL_DEX_GOLIATH,                                                              \
         .categoryName = _("Symbol"),                                                                    \
@@ -424,7 +432,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,                                                                           \
         .frontAnimFrames = sAnims_GenericBlinkingAnim,                                                  \
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,                                                        \
-        .enemyMonElevation = 0,                                                                         \
+        .enemyMonElevation = 7,                                                                         \
         .backPic = gMonBackPic_Goliath,                                                                 \
         .backPicSize = MON_COORDS_SIZE(64, 64),                                                         \
         .backPicYOffset = 0,                                                                            \
@@ -432,8 +440,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .palette = gMonPalette_Goliath,                                                                 \
         .shinyPalette = gMonShinyPalette_Goliath,                                                       \
         .iconSprite = gMonIcon_Goliath,                                                                 \
-        .iconPalIndex = 0,                                                                              \
-        SHADOW(0, 3, SHADOW_SIZE_S)                                                                     \
+        .iconPalIndex = 1,                                                                              \
+        SHADOW(0, 15, SHADOW_SIZE_XL_BATTLE_ONLY)                                                       \
         FOOTPRINT(Goliath)                                                                              \
         .levelUpLearnset = sGoliathLevelUpLearnset,                                                     \
         .teachableLearnset = sGoliathTeachableLearnset,                                                 \
@@ -443,6 +451,242 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
 
     [SPECIES_GOLIATH_SHANGHAI] = GOLIATH_SPECIES_INFO(MON_RANDOMIZER_RANDOM_FORM),
     [SPECIES_GOLIATH_HOURAI] = GOLIATH_SPECIES_INFO(MON_RANDOMIZER_INVALID),
+
+    [SPECIES_SHANGHAI_SANNI] =
+    {
+        .baseHP        = 40,
+        .baseAttack    = 50,
+        .baseDefense   = 70,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_STEEL),
+        .catchRate = 200,
+        .expYield = 66,
+        .evYield_Defense = 1,
+        .itemRare = ITEM_LIECHI_BERRY,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_GUARD_ARMOR, ABILITY_MAINTENANCE, ABILITY_FILTER },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Shanghai"),
+        .cryId = CRY_ALICE_DOLL,
+        .natDexNum = NATIONAL_DEX_SHANGHAI,
+        .categoryName = _("Fox"),
+        .height = 11,
+        .weight = 100,
+        .description = COMPOUND_STRING(
+            "While it will guide travelers who get lost\n"
+            "on a snowy mountain down to the\n"
+            "mountain's base, it won't forgive anyone\n"
+            "who harms nature."),
+        .pokemonScale = 339,
+        .pokemonOffset = 10,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_ShanghaiSanni,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_ShanghaiSanni,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_ShanghaiSanni,
+        .shinyPalette = gMonShinyPalette_ShanghaiSanni,
+        .iconSprite = gMonIcon_ShanghaiSanni,
+        .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_S)
+        FOOTPRINT(ShanghaiSanni)
+        .isSannianForm = TRUE,
+        .levelUpLearnset = sShanghaiSanniLevelUpLearnset,
+        .teachableLearnset = sShanghaiSanniTeachableLearnset,
+        .formSpeciesIdTable = sShanghaiFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
+        .evolutions = EVOLUTION({EVO_LEVEL_BATTLE_ONLY, 25, SPECIES_GOLIATH_SANNI_DEFENSE}),
+    },
+
+    [SPECIES_HOURAI_SANNI] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 75,
+        .baseDefense   = 50,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_STEEL),
+        .catchRate = 200,
+        .expYield = 66,
+        .evYield_Defense = 1,
+        .itemRare = ITEM_PETAYA_BERRY,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_ADAPTABILITY, ABILITY_MAINTENANCE, ABILITY_DEFIANT },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Hourai"),
+        .cryId = CRY_ALICE_DOLL,
+        .natDexNum = NATIONAL_DEX_HOURAI,
+        .categoryName = _("Doll"),
+        .height = 2,
+        .weight = 100,
+        .description = COMPOUND_STRING(
+            "The metal-rich geology of its habitat\n"
+            "caused it to develop steel whiskers on its\n"
+            "head that change shape depending on its\n"
+            "mood and when communicating with others."),
+        .pokemonScale = 833,
+        .pokemonOffset = 25,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_HouraiSanni,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 8,
+        .backPic = gMonBackPic_HouraiSanni,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_HouraiSanni,
+        .shinyPalette = gMonShinyPalette_HouraiSanni,
+        .iconSprite = gMonIcon_HouraiSanni,
+        .iconPalIndex = 1,
+        SHADOW(2, 16, SHADOW_SIZE_S)
+        FOOTPRINT(HouraiSanni)
+        .isSannianForm = TRUE,
+        .levelUpLearnset = sHouraiSanniLevelUpLearnset,
+        .teachableLearnset = sHouraiSanniTeachableLearnset,
+        .formSpeciesIdTable = sHouraiFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
+        .evolutions = EVOLUTION({EVO_LEVEL_BATTLE_ONLY, 25, SPECIES_GOLIATH_SANNI_ATTACK}),
+    },
+
+    [SPECIES_GOLIATH_SANNI_ATTACK] =
+    {
+        .baseHP        = 110,
+        .baseAttack    = 105,
+        .baseDefense   = 70,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 55,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_DREAM),
+        .catchRate = 225,
+        .expYield = 208,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_MOXIE, ABILITY_MAINTENANCE, ABILITY_DEFIANT },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Goliath"),
+        .cryId = CRY_ALICE_DOLL,
+        .natDexNum = NATIONAL_DEX_GOLIATH,
+        .categoryName = _("Mole"),
+        .height = 7,
+        .weight = 1000,
+        .description = COMPOUND_STRING(
+            "Their beautiful, metallic whiskers create\n"
+            "a sort of protective helmet on\n"
+            "heir heads, and they also function\n"
+            "as highly precise sensors."),
+        .pokemonScale = 406,
+        .pokemonOffset = 18,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_GoliathSanniAttack,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
+        .backPic = gMonBackPic_GoliathSanniAttack,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GoliathSanniAttack,
+        .shinyPalette = gMonShinyPalette_GoliathSanniAttack,
+        .iconSprite = gMonIcon_GoliathSanniAttack,
+        .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(GoliathSanniAttack)
+        .isSannianForm = TRUE,
+        .levelUpLearnset = sGoliathSanniAttackLevelUpLearnset,
+        .teachableLearnset = sGoliathSanniAttackTeachableLearnset,
+        .formSpeciesIdTable = sGoliathFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
+    },
+
+    [SPECIES_GOLIATH_SANNI_DEFENSE] =
+    {
+        .baseHP        = 110,
+        .baseAttack    = 70,
+        .baseDefense   = 130,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 40,
+        .baseSpDefense = 100,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_DREAM),
+        .catchRate = 225,
+        .expYield = 208,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
+        .abilities = { ABILITY_MULTISCALE, ABILITY_MAINTENANCE, ABILITY_FILTER },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Goliath"),
+        .cryId = CRY_ALICE_DOLL,
+        .natDexNum = NATIONAL_DEX_GOLIATH,
+        .categoryName = _("Scratch Cat"),
+        .height = 4,
+        .weight = 1000,
+        .description = COMPOUND_STRING(
+            "It's accustomed to luxury because it used\n"
+            "to live with Alolan royalty. Highly smart\n"
+            "and proud, it's famously difficult to\n"
+            "handle, but that also makes it popular."),
+        .pokemonScale = 480,
+        .pokemonOffset = 19,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_GoliathSanniDefense,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
+        .backPic = gMonBackPic_GoliathSanniDefense,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_GoliathSanniDefense,
+        .shinyPalette = gMonShinyPalette_GoliathSanniDefense,
+        .iconSprite = gMonIcon_GoliathSanniDefense,
+        .iconPalIndex = 1,
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(GoliathSanniDefense)
+        .isSannianForm = TRUE,
+        .levelUpLearnset = sGoliathSanniDefenseLevelUpLearnset,
+        .teachableLearnset = sGoliathSanniDefenseTeachableLearnset,
+        .formSpeciesIdTable = sGoliathFormSpeciesIdTable,
+        .randomizerMode = MON_RANDOMIZER_INVALID,
+    },
 
     [SPECIES_CHIBI_ALICE] =
     {

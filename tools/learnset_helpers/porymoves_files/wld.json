@@ -1634,6 +1634,99 @@
       "MOVE_ROCK_SMASH"
     ]
   },
+  "SHANGHAI_SANNI": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_MULTI_PULSE",
+      "MOVE_DETECT",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "HOURAI_SANNI": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_MULTI_PULSE",
+      "MOVE_DETECT",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_ROCK_SMASH"],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "GOLIATH_SANNI_ATTACK": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_MULTI_PULSE",
+      "MOVE_DETECT",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_ROCK_SMASH"],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "GOLIATH_SANNI_DEFENSE": {
+    "LevelMoves": [],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_MULTI_PULSE",
+      "MOVE_DETECT",
+      "MOVE_RETURN",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_ENDURE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_ROCK_SMASH"],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
   "C_ALICE": {
     "LevelMoves": [],
     "PreEvoMoves": [],
@@ -12152,7 +12245,7 @@
       "MOVE_MIMIC"
     ]
   },
-  "C_MOMIJI_SANNIAN": {
+  "C_MOMIJI_SANNI": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
@@ -12176,7 +12269,7 @@
       "MOVE_MIMIC"
     ]
   },
-  "MOMIJI_SANNIAN": {
+  "MOMIJI_SANNI": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [

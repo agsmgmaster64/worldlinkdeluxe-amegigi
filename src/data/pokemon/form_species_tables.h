@@ -71,9 +71,23 @@ static const u16 sPWakasagihimeFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sShanghaiFormSpeciesIdTable[] = {
+    SPECIES_SHANGHAI,
+    SPECIES_SHANGHAI_SANNI,
+    FORM_SPECIES_END,
+};
+
+static const u16 sHouraiFormSpeciesIdTable[] = {
+    SPECIES_HOURAI,
+    SPECIES_HOURAI_SANNI,
+    FORM_SPECIES_END,
+};
+
 static const u16 sGoliathFormSpeciesIdTable[] = {
     SPECIES_GOLIATH_SHANGHAI,
     SPECIES_GOLIATH_HOURAI,
+    SPECIES_GOLIATH_SANNI_ATTACK,
+    SPECIES_GOLIATH_SANNI_DEFENSE,
     FORM_SPECIES_END,
 };
 
@@ -188,7 +202,7 @@ static const u16 sVulpixFormSpeciesIdTable[] = {
 static const u16 sNinetalesFormSpeciesIdTable[] = {
     SPECIES_NORMAL_REMILIA,
 #if P_ALOLAN_FORMS
-    SPECIES_NINETALES_ALOLA,
+    SPECIES_SHANGHAI_SANNI,
 #endif
     FORM_SPECIES_END,
 };
@@ -198,7 +212,7 @@ static const u16 sNinetalesFormSpeciesIdTable[] = {
 static const u16 sDiglettFormSpeciesIdTable[] = {
     SPECIES_HOURAI,
 #if P_ALOLAN_FORMS
-    SPECIES_DIGLETT_ALOLA,
+    SPECIES_HOURAI_SANNI,
 #endif
     FORM_SPECIES_END,
 };
@@ -206,7 +220,7 @@ static const u16 sDiglettFormSpeciesIdTable[] = {
 static const u16 sDugtrioFormSpeciesIdTable[] = {
     SPECIES_GOLIATH,
 #if P_ALOLAN_FORMS
-    SPECIES_DUGTRIO_ALOLA,
+    SPECIES_GOLIATH_SANNI_ATTACK,
 #endif
     FORM_SPECIES_END,
 };
@@ -216,7 +230,7 @@ static const u16 sDugtrioFormSpeciesIdTable[] = {
 static const u16 sMeowthFormSpeciesIdTable[] = {
     SPECIES_CHIBI_ALICE,
 #if P_ALOLAN_FORMS
-    SPECIES_MEOWTH_ALOLA,
+    SPECIES_GOLIATH_SANNI_DEFENSE,
 #endif
 #if P_GALARIAN_FORMS
     SPECIES_MEOWTH_GALAR,

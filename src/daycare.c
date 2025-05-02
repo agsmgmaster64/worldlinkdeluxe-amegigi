@@ -1031,11 +1031,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
 
     eggSpecies = GetEggSpecies(parentSpecies);
 
-    if (eggSpecies == SPECIES_SHANGHAI && daycare->offspringPersonality & EGG_GENDER_MALE)
-        eggSpecies = SPECIES_HOURAI;
-    else if (eggSpecies == SPECIES_HOURAI && !(daycare->offspringPersonality & EGG_GENDER_MALE))
-        eggSpecies = SPECIES_SHANGHAI;
-    else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
+    if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_ROTOM)
         eggSpecies = SPECIES_ROTOM;
     else if (GET_BASE_SPECIES_ID(eggSpecies) == SPECIES_SCATTERBUG)
         eggSpecies = P_SCATTERBUG_LINE_FORM_BREED;
