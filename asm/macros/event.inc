@@ -1212,10 +1212,30 @@
 
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
-	.macro pokemart products=NULL, useVariablePrices=FALSE
+	.macro pokemart products=NULL, shopType=NEW_SHOP_PRICE_TYPE_NORMAL
 	.byte SCR_OP_POKEMART
 	.4byte \products
-	.2byte \useVariablePrices
+	.2byte \shopType
+	.endm
+
+	@ Pokemart using coins for currency
+	.macro coinmart products:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_COINS
+	.endm
+
+	@ Pokemart using battle points for currency
+	.macro battlepointmart products:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_POINTS
+	.endm
+
+	.macro movetutormart pointer:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_MOVE
+	.endm
+
+	@ Opens the Pokemart system, offering the specified outfit products for sale.
+	@ Products should be a list of .2byte item values preceded by an .align 2
+	.macro pokemartoutfit products:req
+	pokemart \products, NEW_SHOP_PRICE_TYPE_OUTFIT
 	.endm
 
 	@ Used as the endpoint for a Pokemart item list
@@ -1232,7 +1252,7 @@
 	.4byte \products
 	.endm
 
-	@ Identical to pokemartdecoration, but with slight changes to the clerk dialogue. See uses of MART_TYPE_DECOR2.
+	@ Identical to pokemartdecoration, but with slight changes to the clerk dialogue. See uses of NEW_SHOP_TYPE_DECOR2.
 	.macro pokemartdecoration2 products:req
 	.byte SCR_OP_POKEMARTDECORATION2
 	.4byte \products
@@ -1961,30 +1981,10 @@
 
 	@ End qol_field_moves
 
-	.macro currencypokemart pointer:req, isBpMart:req
-	.byte SCR_OP_CURRENCYPOKEMART
-	.4byte \pointer
-	.2byte \isBpMart
-	.endm
-
-	.macro casinopokemart pointer:req
-	currencypokemart \pointer, FALSE
-	.endm
-
-	.macro battlepointpokemart pointer:req
-	currencypokemart \pointer, TRUE
-	.endm
-
 	@ Sets the text of the name box in the next-shown message box.
 	.macro setspeakername text:req
 	.byte SCR_OP_SETSPEAKERNAME
 	.4byte \text
-	.endm
-
-	.macro buyonlymart pointer:req, useVariablePrices=FALSE
-	.byte SCR_OP_BUYONLYMART
-	.4byte \pointer
-	.2byte \useVariablePrices
 	.endm
 
 	.macro itemseller
@@ -2143,12 +2143,6 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 
-	.macro movetutormart pointer:req, usesBp=FALSE
-	.byte SCR_OP_MOVETUTORMART
-	.4byte \pointer
-	.2byte \usesBp
-	.endm
-
 	@! Unlocks a locked outfit
 	.macro toggleoutfit outfitId:req, type:req
 	.byte SCR_OP_TOGGLEOUTFIT
@@ -2172,13 +2166,6 @@
 	stringvar \stringVarId
 	.2byte \outfitId
 	.byte \type
-	.endm
-
-	@ Opens the Pokemart system, offering the specified outfit products for sale.
-	@ Products should be a list of .2byte item values preceded by an .align 2
-	.macro pokemartoutfit products:req
-	.byte SCR_OP_POKEMARTOUTFIT
-	.4byte \products
 	.endm
 
 @ Supplementary

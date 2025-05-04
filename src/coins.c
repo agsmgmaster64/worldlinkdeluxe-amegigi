@@ -88,4 +88,3 @@ bool8 IsEnoughCoins(u16 cost)
     else
         return FALSE;
 }
-

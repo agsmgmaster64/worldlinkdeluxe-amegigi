@@ -987,12 +987,12 @@ u32 GetItemStatus2Mask(u16 itemId)
         return 0;
 }
 
-u16 ItemId_GetCoinPrice(u16 itemId)
+u32 ItemId_GetCoinPrice(u16 itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].coinPrice;
 }
 
-u16 ItemId_GetBpPrice(u16 itemId)
+u32 ItemId_GetBpPrice(u16 itemId)
 {
     return gItemsInfo[SanitizeItemId(itemId)].bpPrice;
 }

@@ -14,11 +14,11 @@ void NewShop_CreateOutfitShopMenu(const u16 *);
 #endif // MUDSKIP_OUTFIT_SYSTEM
 
 void NewShop_CreateVariablePokemartMenu(const u16 *);
-void NewShop_CreateCasinoMartMenu(const u16 *);
+void NewShop_CreateCoinPokemartMenu(const u16 *);
+void NewShop_CreatePointsPokemartMenu(const u16 *);
 void NewShop_CreateBuyOnlyMartMenu(const u16 *);
 void NewShop_CreateBuyVariableMartMenu(const u16 *);
 void NewShop_CreateSellOnlyMartMenu(void);
-void NewShop_CreateBpMartMenu(const u16 *);
 void NewShop_CreateBpMoveTutorMenu(const u16 *);
 void NewShop_CreateMoveTutorMartMenu(const u16 *);
 
