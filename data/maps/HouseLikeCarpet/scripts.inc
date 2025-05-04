@@ -41,7 +41,7 @@ HouseLikeCarpet_Event_GigiAcceptFollow::
 # 26 "data/maps/HouseLikeCarpet/scripts.pory"
 	msgbox HouseLikeCarpet_Text_GigiYayFollow
 # 27 "data/maps/HouseLikeCarpet/scripts.pory"
-	setfollower 1, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI
+	setfollowernpc 1, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI
 # 28 "data/maps/HouseLikeCarpet/scripts.pory"
 	release
 	end

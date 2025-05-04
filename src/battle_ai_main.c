@@ -4176,7 +4176,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_FROST_ORB:
-            if (!ShouldFreezeOrFrostbite(battlerAtk, battlerAtk) && CanGetFrostbite(battlerAtk, aiData->abilities[battlerDef]))
+            if (!ShouldFreezeOrFrostbite(battlerAtk, battlerAtk, aiData->abilities[battlerAtk]))
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_BLACK_SLUDGE:
@@ -4230,7 +4230,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                         ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case HOLD_EFFECT_FROST_ORB:
-                    if (ShouldFreezeOrFrostbite(battlerAtk, battlerAtk))
+                    if (ShouldFreezeOrFrostbite(battlerAtk, battlerAtk, aiData->abilities[battlerAtk]))
                         ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case HOLD_EFFECT_BLACK_SLUDGE:
@@ -4884,7 +4884,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
                                     ADJUST_SCORE(DECENT_EFFECT);
                                 break;
                             case HOLD_EFFECT_FROST_ORB:
-                                if (ShouldFreezeOrFrostbite(battlerAtk, battlerAtk))
+                                if (ShouldFreezeOrFrostbite(battlerAtk, battlerAtk, aiData->abilities[battlerAtk]))
                                     ADJUST_SCORE(DECENT_EFFECT);
                                 break;
                             case HOLD_EFFECT_BLACK_SLUDGE:

@@ -910,7 +910,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_SUB_ZERO] =
     {
-        .battleScript = BattleScript_EffectSubZero,
+        .battleScript = BattleScript_EffectNonVolatileStatus,
         .battleTvScore = 5,
         .encourageEncore = TRUE,
     },

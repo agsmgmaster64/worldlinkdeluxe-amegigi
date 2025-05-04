@@ -30,7 +30,13 @@ const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environme
 const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environment/cave/map.bin.lz");
 
+const u32 gBattleEnvironmentTiles_Plain[] = INCBIN_U32("graphics/battle_environment/plain/tiles.4bpp.lz");
 const u16 gBattleEnvironmentPalette_Plain[] = INCBIN_U16("graphics/battle_environment/plain/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Plain[] = INCBIN_U32("graphics/battle_environment/plain/map.bin.lz");
+//
+const u32 gBattleEnvironmentTiles_Ice[] = INCBIN_U32("graphics/battle_environment/ice/tiles.4bpp.lz");
+const u16 gBattleEnvironmentPalette_Ice[] = INCBIN_U16("graphics/battle_environment/ice/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Ice[] = INCBIN_U32("graphics/battle_environment/ice/map.bin.lz");
 
 const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_environment/building/tiles.4bpp.lz");
 const u16 gBattleEnvironmentPalette_Frontier[] = INCBIN_U16("graphics/battle_environment/stadium/battle_frontier.gbapal"); // this is also used for link battles

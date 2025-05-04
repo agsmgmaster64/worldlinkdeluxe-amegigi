@@ -24,7 +24,7 @@ script HouseLikeCarpet_Event_GigiStanding {
 
 script HouseLikeCarpet_Event_GigiAcceptFollow {
     msgbox(HouseLikeCarpet_Text_GigiYayFollow)
-    setfollower(LOCALID_GIGI, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI)
+    setfollowernpc(LOCALID_GIGI, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI)
     release
     end
 }

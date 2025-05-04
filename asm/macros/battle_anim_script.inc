@@ -374,9 +374,9 @@
 	.endif
 	.endif
 	.ifb \battler_selector
-	createsprite gShakeMonOrTerrainSpriteTemplate, \unused_anim_battler, \unused_subpriority_offset, \velocity, \shake_duration, \duration, \type
+	createsprite gShakeMonOrPlatformSpriteTemplate, \unused_anim_battler, \unused_subpriority_offset, \velocity, \shake_duration, \duration, \type
 	.else
-	createsprite gShakeMonOrTerrainSpriteTemplate, \unused_anim_battler, \unused_subpriority_offset, \velocity, \shake_duration, \duration, \type, \battler_selector
+	createsprite gShakeMonOrPlatformSpriteTemplate, \unused_anim_battler, \unused_subpriority_offset, \velocity, \shake_duration, \duration, \type, \battler_selector
 	.endif
 	.endm
 
@@ -540,7 +540,7 @@
 	.endm
 
 	.macro shakebattleterrain priority=2, x_offset:req, y_offset:req, shakes:req, delay:req
-	createvisualtask AnimTask_ShakeBattleTerrain, \priority, \x_offset, \y_offset, \shakes, \delay
+	createvisualtask AnimTask_ShakeBattlePlatforms, \priority, \x_offset, \y_offset, \shakes, \delay
 	.endm
 
 @ fixed-point constructors
