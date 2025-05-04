@@ -715,7 +715,7 @@ static void CB2_EndScriptedGhostBattle(void)
     }
 }
 
-u8 BattleSetup_GetTerrainId(void)
+u8 BattleSetup_GetEnvironmentId(void)
 {
     u16 tileBehavior;
     s16 x, y;
@@ -728,15 +728,15 @@ u8 BattleSetup_GetTerrainId(void)
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
     if (MetatileBehavior_IsTallGrass(tileBehavior))
-        return BATTLE_TERRAIN_GRASS;
+        return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
-        return BATTLE_TERRAIN_LONG_GRASS;
+        return BATTLE_ENVIRONMENT_LONG_GRASS;
     if (MetatileBehavior_IsSnowGrass(tileBehavior))
-        return BATTLE_TERRAIN_SNOW;
+        return BATTLE_ENVIRONMENT_SNOW;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_ENVIRONMENT_SAND;
     if (MetatileBehavior_IsIce(tileBehavior))
-        return BATTLE_TERRAIN_ICE;
+        return BATTLE_ENVIRONMENT_ICE;
 
     switch (gMapHeader.mapType)
     {
@@ -746,46 +746,46 @@ u8 BattleSetup_GetTerrainId(void)
         break;
     case MAP_TYPE_UNDERGROUND:
         if (MetatileBehavior_IsIndoorEncounter(tileBehavior))
-            return BATTLE_TERRAIN_BUILDING;
+            return BATTLE_ENVIRONMENT_BUILDING;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-            return BATTLE_TERRAIN_POND;
+            return BATTLE_ENVIRONMENT_POND;
         if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_1F))
          || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_B1F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_B1F))
          || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_B2F) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_B2F))
          || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(GRANITE_CAVE_STEVENS_ROOM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(GRANITE_CAVE_STEVENS_ROOM)))
-            return BATTLE_TERRAIN_ICE;
-        return BATTLE_TERRAIN_CAVE;
+            return BATTLE_ENVIRONMENT_ICE;
+        return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
-        return BATTLE_TERRAIN_BUILDING;
+        return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_UNDERWATER:
-        return BATTLE_TERRAIN_UNDERWATER;
+        return BATTLE_ENVIRONMENT_UNDERWATER;
     case MAP_TYPE_OCEAN_ROUTE:
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-            return BATTLE_TERRAIN_WATER;
-        return BATTLE_TERRAIN_PLAIN;
+            return BATTLE_ENVIRONMENT_WATER;
+        return BATTLE_ENVIRONMENT_PLAIN;
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
-        return BATTLE_TERRAIN_WATER;
+        return BATTLE_ENVIRONMENT_WATER;
     if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
-        return BATTLE_TERRAIN_POND;
+        return BATTLE_ENVIRONMENT_POND;
     if (MetatileBehavior_IsMountain(tileBehavior))
-        return BATTLE_TERRAIN_MOUNTAIN;
+        return BATTLE_ENVIRONMENT_MOUNTAIN;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         // Is BRIDGE_TYPE_POND_*?
         if (MetatileBehavior_GetBridgeType(tileBehavior) != BRIDGE_TYPE_OCEAN)
-            return BATTLE_TERRAIN_POND;
+            return BATTLE_ENVIRONMENT_POND;
 
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
-            return BATTLE_TERRAIN_WATER;
+            return BATTLE_ENVIRONMENT_WATER;
     }
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE113))
-        return BATTLE_TERRAIN_SNOW;
+        return BATTLE_ENVIRONMENT_SNOW;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
-        return BATTLE_TERRAIN_SAND;
+        return BATTLE_ENVIRONMENT_SAND;
 
-    return BATTLE_TERRAIN_PLAIN;
+    return BATTLE_ENVIRONMENT_PLAIN;
 }
 
 static u8 GetBattleTransitionTypeByMap(void)

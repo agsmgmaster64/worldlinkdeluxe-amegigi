@@ -208,7 +208,7 @@
 #define HITMARKER_NO_PPDEDUCT           (1 << 11)
 #define HITMARKER_UNUSED_2              (1 << 12)
 #define HITMARKER_STATUS_ABILITY_EFFECT (1 << 13)
-#define HITMARKER_SYNCHRONISE_EFFECT    (1 << 14)
+#define HITMARKER_SYNCHRONIZE_EFFECT    (1 << 14)
 #define HITMARKER_RUN                   (1 << 15)
 #define HITMARKER_IGNORE_DISGUISE       (1 << 16)
 #define HITMARKER_DISABLE_ANIMATION     (1 << 17)   // disable animations during battle scripts, e.g. for Bug Bite
@@ -467,45 +467,45 @@ enum MoveEffects
 #define MOVE_EFFECT_CERTAIN             0x4000
 #define MOVE_EFFECT_CONTINUE            0x8000
 
-// Battle terrain defines for gBattleTerrain.
-#define BATTLE_TERRAIN_GRASS            0
-#define BATTLE_TERRAIN_LONG_GRASS       1
-#define BATTLE_TERRAIN_SAND             2
-#define BATTLE_TERRAIN_UNDERWATER       3
-#define BATTLE_TERRAIN_WATER            4
-#define BATTLE_TERRAIN_POND             5
-#define BATTLE_TERRAIN_MOUNTAIN         6
-#define BATTLE_TERRAIN_CAVE             7
-#define BATTLE_TERRAIN_BUILDING         8
-#define BATTLE_TERRAIN_PLAIN            9
-// New battle terrains are used for Secret Power but not fully implemented.
-#define BATTLE_TERRAIN_SOARING          10
-#define BATTLE_TERRAIN_SKY_PILLAR       11
-#define BATTLE_TERRAIN_BURIAL_GROUND    12
-#define BATTLE_TERRAIN_PUDDLE           13
-#define BATTLE_TERRAIN_MARSH            14
-#define BATTLE_TERRAIN_SWAMP            15
-#define BATTLE_TERRAIN_SNOW             16
-#define BATTLE_TERRAIN_ICE              17
-#define BATTLE_TERRAIN_VOLCANO          18
-#define BATTLE_TERRAIN_DISTORTION_WORLD 19
-#define BATTLE_TERRAIN_SPACE            20
-#define BATTLE_TERRAIN_ULTRA_SPACE      21
-#define BATTLE_TERRAIN_FRONTIER         22
-#define BATTLE_TERRAIN_GYM              23
-#define BATTLE_TERRAIN_LEADER           24
-#define BATTLE_TERRAIN_MAGMA            25
-#define BATTLE_TERRAIN_AQUA             26
-#define BATTLE_TERRAIN_SIDNEY           27
-#define BATTLE_TERRAIN_PHOEBE           28
-#define BATTLE_TERRAIN_GLACIA           29
-#define BATTLE_TERRAIN_DRAKE            30
-#define BATTLE_TERRAIN_CHAMPION         31
-#define BATTLE_TERRAIN_GROUDON          32
-#define BATTLE_TERRAIN_KYOGRE           33
-#define BATTLE_TERRAIN_RAYQUAZA         34
+// Battle environment defines for gBattleEnvironment.
+#define BATTLE_ENVIRONMENT_GRASS            0
+#define BATTLE_ENVIRONMENT_LONG_GRASS       1
+#define BATTLE_ENVIRONMENT_SAND             2
+#define BATTLE_ENVIRONMENT_UNDERWATER       3
+#define BATTLE_ENVIRONMENT_WATER            4
+#define BATTLE_ENVIRONMENT_POND             5
+#define BATTLE_ENVIRONMENT_MOUNTAIN         6
+#define BATTLE_ENVIRONMENT_CAVE             7
+#define BATTLE_ENVIRONMENT_BUILDING         8
+#define BATTLE_ENVIRONMENT_PLAIN            9
+// New battle environments are used for Secret Power but not fully implemented.
+#define BATTLE_ENVIRONMENT_SOARING          10
+#define BATTLE_ENVIRONMENT_SKY_PILLAR       11
+#define BATTLE_ENVIRONMENT_BURIAL_GROUND    12
+#define BATTLE_ENVIRONMENT_PUDDLE           13
+#define BATTLE_ENVIRONMENT_MARSH            14
+#define BATTLE_ENVIRONMENT_SWAMP            15
+#define BATTLE_ENVIRONMENT_SNOW             16
+#define BATTLE_ENVIRONMENT_ICE              17
+#define BATTLE_ENVIRONMENT_VOLCANO          18
+#define BATTLE_ENVIRONMENT_DISTORTION_WORLD 19
+#define BATTLE_ENVIRONMENT_SPACE            20
+#define BATTLE_ENVIRONMENT_ULTRA_SPACE      21
+#define BATTLE_ENVIRONMENT_FRONTIER         22
+#define BATTLE_ENVIRONMENT_GYM              23
+#define BATTLE_ENVIRONMENT_LEADER           24
+#define BATTLE_ENVIRONMENT_MAGMA            25
+#define BATTLE_ENVIRONMENT_AQUA             26
+#define BATTLE_ENVIRONMENT_SIDNEY           27
+#define BATTLE_ENVIRONMENT_PHOEBE           28
+#define BATTLE_ENVIRONMENT_GLACIA           29
+#define BATTLE_ENVIRONMENT_DRAKE            30
+#define BATTLE_ENVIRONMENT_CHAMPION         31
+#define BATTLE_ENVIRONMENT_GROUDON          32
+#define BATTLE_ENVIRONMENT_KYOGRE           33
+#define BATTLE_ENVIRONMENT_RAYQUAZA         34
 
-#define BATTLE_TERRAIN_COUNT            35
+#define BATTLE_ENVIRONMENT_COUNT            35
 
 #define B_WAIT_TIME_LONG        (B_WAIT_TIME_MULTIPLIER * 4)
 #define B_WAIT_TIME_MED         (B_WAIT_TIME_MULTIPLIER * 3)

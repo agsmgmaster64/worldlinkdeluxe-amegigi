@@ -87,7 +87,7 @@ bool32 AI_IsSlower(u32 battlerAi, u32 battlerDef, u32 move)
 
 u32 GetAIChosenMove(u32 battlerId)
 {
-    return (gBattleMons[battlerId].moves[gAiBattleData->moveOrAction[battlerId]]);
+    return (gBattleMons[battlerId].moves[gAiBattleData->chosenMoveIndex[battlerId]]);
 }
 
 bool32 AI_RandLessThan(u32 val)
@@ -3121,7 +3121,7 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
 
 bool32 AI_CanPutToSleep(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!CanBeSlept(battlerDef, defAbility, BLOCKED_BY_SLEEP_CLAUSE)
+    if (!CanBeSlept(battlerAtk, battlerDef, defAbility, BLOCKED_BY_SLEEP_CLAUSE)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))   // shouldn't try to sleep mon that partner is trying to make sleep
         return FALSE;
@@ -3143,12 +3143,12 @@ static inline bool32 DoesBattlerBenefitFromAllVolatileStatus(u32 battler, u32 ab
 
 bool32 ShouldPoison(u32 battlerAtk, u32 battlerDef)
 {
-    u32 defAbility = AI_DATA->abilities[battlerDef];
+    u32 abilityDef = AI_DATA->abilities[battlerDef];
     // Battler can be poisoned and has move/ability that synergizes with being poisoned
-    if (CanBePoisoned(battlerAtk, battlerDef, defAbility) && (
-        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)
-        || defAbility == ABILITY_POISON_HEAL
-        || (defAbility == ABILITY_TOXIC_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))))
+    if (CanBePoisoned(battlerAtk, battlerDef, AI_DATA->abilities[battlerAtk], abilityDef) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)
+        || abilityDef == ABILITY_POISON_HEAL
+        || (abilityDef == ABILITY_TOXIC_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))))
     {
         if (battlerAtk == battlerDef) // Targeting self
             return TRUE;
@@ -3161,14 +3161,13 @@ bool32 ShouldPoison(u32 battlerAtk, u32 battlerDef)
         return TRUE;
 }
 
-bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef)
+bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
 {
-    u32 defAbility = AI_DATA->abilities[battlerDef];
     // Battler can be burned and has move/ability that synergizes with being burned
-    if (CanBeBurned(battlerDef, defAbility) && (
-        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)
-        || defAbility == ABILITY_HEATPROOF
-        || (defAbility == ABILITY_FLARE_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))))
+    if (CanBeBurned(battlerAtk, battlerDef, abilityDef) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)
+        || abilityDef == ABILITY_HEATPROOF
+        || (abilityDef == ABILITY_FLARE_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))))
     {
         if (battlerAtk == battlerDef) // Targeting self
             return TRUE;
@@ -3182,11 +3181,11 @@ bool32 ShouldBurn(u32 battlerAtk, u32 battlerDef)
         return TRUE;
 }
 
-bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef)
+bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
 {
     if (!B_USE_FROSTBITE)
     {
-        if (CanBeFrozen(battlerDef))
+        if (CanBeFrozen(battlerAtk, battlerDef, abilityDef))
         {
             if (battlerAtk == battlerDef) // Targeting self
                 return FALSE;
@@ -3197,17 +3196,16 @@ bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef)
     }
     else
     {
-        u32 defAbility = AI_DATA->abilities[battlerDef];
         // Battler can be frostbitten and has move/ability that synergizes with being frostbitten
-        if (CanBeFrozen(battlerDef) && 
-            DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility))
+        if (CanBeFrozen(battlerAtk, battlerDef, abilityDef)
+            && DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef))
         {
             if (battlerAtk == battlerDef) // Targeting self
                 return TRUE;
             else
                 return FALSE;
         }
-    
+
         if (battlerAtk == battlerDef)
             return FALSE;
         else
@@ -3215,12 +3213,11 @@ bool32 ShouldFreezeOrFrostbite(u32 battlerAtk, u32 battlerDef)
     }
 }
 
-bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef)
+bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
 {
-    u32 defAbility = AI_DATA->abilities[battlerDef];
     // Battler can be paralyzed and has move/ability that synergizes with being paralyzed
-    if (CanBeParalyzed(battlerDef, defAbility) && (
-        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, defAbility)))
+    if (CanBeParalyzed(battlerAtk, battlerDef, abilityDef) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)))
     {
         if (battlerAtk == battlerDef) // Targeting self
             return TRUE;
@@ -3235,14 +3232,10 @@ bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef)
 
 bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!CanBePoisoned(battlerAtk, battlerDef, GetBattlerAbility(battlerDef))
+    if (!CanBePoisoned(battlerAtk, battlerDef, AI_DATA->abilities[battlerAtk], defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))
-        return FALSE;
-    else if (defAbility != ABILITY_CORROSION && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_MIASMA, TYPE_STEEL))
-        return FALSE;
-    else if (IsValidDoubleBattle(battlerAtk) && AI_DATA->abilities[BATTLE_PARTNER(battlerDef)] == ABILITY_PASTEL_VEIL)
         return FALSE;
 
     return TRUE;
@@ -3250,9 +3243,8 @@ bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u3
 
 bool32 AI_CanParalyze(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
-    if (!CanBeParalyzed(battlerDef, defAbility)
+    if (!CanBeParalyzed(battlerAtk, battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == UQ_4_12(0.0)
-      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(BATTLE_PARTNER(battlerAtk), battlerDef, partnerMove))
         return FALSE;
@@ -3284,21 +3276,9 @@ bool32 AI_CanConfuse(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battler
     return TRUE;
 }
 
-bool32 AI_CanGetFrostbite(u32 battler, u32 ability)
-{
-    if (ability == ABILITY_FIRE_VEIL
-      || ability == ABILITY_COMATOSE
-      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-      || gBattleMons[battler].status1 & STATUS1_ANY
-      || IsAbilityStatusProtected(battler, ability)
-      || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
-        return FALSE;
-    return TRUE;
-}
-
 bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
 {
-    if (!CanBeBurned(battlerDef, defAbility)
+    if (!CanBeBurned(battlerAtk, battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
@@ -3310,7 +3290,7 @@ bool32 AI_CanBurn(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtk
 
 bool32 AI_CanGiveFrostbite(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
 {
-    if (!CanGetFrostbite(battlerDef, defAbility)
+    if (!CanGetFrostbite(battlerAtk, battlerDef, defAbility)
       || AI_DATA->effectiveness[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex] == UQ_4_12(0.0)
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
       || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
@@ -3799,20 +3779,20 @@ void FreeRestoreBattleMons(struct BattlePokemon *savedBattleMons)
 }
 
 // party logic
-s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, bool32 isPartyMonAttacker)
+s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, enum DamageCalcContext calcContext)
 {
     struct SimulatedDamage dmg;
     uq4_12_t effectiveness;
     struct BattlePokemon *savedBattleMons = AllocSaveBattleMons();
 
-    if (isPartyMonAttacker)
+    if (calcContext == AI_ATTACKING)
     {
         gBattleMons[battlerAtk] = switchinCandidate;
         AI_THINKING_STRUCT->saved[battlerDef].saved = TRUE;
         SetBattlerAiData(battlerAtk, AI_DATA); // set known opposing battler data
         AI_THINKING_STRUCT->saved[battlerDef].saved = FALSE;
     }
-    else
+    else if (calcContext == AI_DEFENDING)
     {
         gBattleMons[battlerDef] = switchinCandidate;
         AI_THINKING_STRUCT->saved[battlerAtk].saved = TRUE;
@@ -3821,13 +3801,31 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
     }
 
     dmg = AI_CalcDamage(move, battlerAtk, battlerDef, &effectiveness, FALSE, AI_GetWeather());
+
     // restores original gBattleMon struct
     FreeRestoreBattleMons(savedBattleMons);
 
-    if (isPartyMonAttacker)
+    if (calcContext == AI_ATTACKING)
+    {
         SetBattlerAiData(battlerAtk, AI_DATA);
-    else
+        if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_RISKY && !(AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE))
+            return dmg.maximum;
+        else if (AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE && !(AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_RISKY))
+            return dmg.minimum;
+        else
+            return dmg.median;
+    }
+
+    else if (calcContext == AI_DEFENDING)
+    {
         SetBattlerAiData(battlerDef, AI_DATA);
+        if (AI_THINKING_STRUCT->aiFlags[battlerDef] & AI_FLAG_RISKY && !(AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE))
+            return dmg.minimum;
+        else if (AI_THINKING_STRUCT->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE && !(AI_THINKING_STRUCT->aiFlags[battlerAtk] & AI_FLAG_RISKY))
+            return dmg.maximum;
+        else
+            return dmg.median;
+    }
 
     return dmg.median;
 }

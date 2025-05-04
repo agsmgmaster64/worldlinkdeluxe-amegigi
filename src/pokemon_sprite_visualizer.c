@@ -42,7 +42,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
-extern const struct BattleBackground sBattleTerrainTable[];
+extern const struct BattleBackground sBattleEnvironmentTable[];
 extern const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow;
 extern const struct CompressedSpriteSheet gSpriteSheet_EnemyShadowsSized;
 extern const struct SpriteTemplate gSpriteTemplate_EnemyShadow;
@@ -371,41 +371,41 @@ const u8 gFrontAnimNames[][34] =
 
 const u8 gBattleBackgroundTerrainNames[][26] =
 {
-    [BATTLE_TERRAIN_GRASS]            = _("GRASS                    "),
-    [BATTLE_TERRAIN_LONG_GRASS]       = _("LONG GRASS               "),
-    [BATTLE_TERRAIN_SAND]             = _("SAND                     "),
-    [BATTLE_TERRAIN_UNDERWATER]       = _("UNDERWATER               "),
-    [BATTLE_TERRAIN_WATER]            = _("WATER                    "),
-    [BATTLE_TERRAIN_POND]             = _("POND                     "),
-    [BATTLE_TERRAIN_MOUNTAIN]         = _("MOUNTAIN                 "),
-    [BATTLE_TERRAIN_CAVE]             = _("CAVE                     "),
-    [BATTLE_TERRAIN_BUILDING]         = _("BUILDING                 "),
-    [BATTLE_TERRAIN_PLAIN]            = _("PLAIN                    "),
-    [BATTLE_TERRAIN_SOARING]          = _("SOARING                  "),
-    [BATTLE_TERRAIN_SKY_PILLAR]       = _("SKY PILLAR               "),
-    [BATTLE_TERRAIN_BURIAL_GROUND]    = _("BURIAL GROUND            "),
-    [BATTLE_TERRAIN_PUDDLE]           = _("PUDDLE                   "),
-    [BATTLE_TERRAIN_MARSH]            = _("MARSH                    "),
-    [BATTLE_TERRAIN_SWAMP]            = _("SWAMP                    "),
-    [BATTLE_TERRAIN_SNOW]             = _("SNOW                     "),
-    [BATTLE_TERRAIN_ICE]              = _("ICE                      "),
-    [BATTLE_TERRAIN_VOLCANO]          = _("VOLCANO                  "),
-    [BATTLE_TERRAIN_DISTORTION_WORLD] = _("DISTORTION WORLD         "),
-    [BATTLE_TERRAIN_SPACE]            = _("SPACE                    "),
-    [BATTLE_TERRAIN_ULTRA_SPACE]      = _("ULTRA SPACE              "),
-    [BATTLE_TERRAIN_FRONTIER]         = _("FRONTIER                 "),
-    [BATTLE_TERRAIN_GYM]              = _("GYM                      "),
-    [BATTLE_TERRAIN_LEADER]           = _("LEADER                   "),
-    [BATTLE_TERRAIN_MAGMA]            = _("MAGMA                    "),
-    [BATTLE_TERRAIN_AQUA]             = _("AQUA                     "),
-    [BATTLE_TERRAIN_SIDNEY]           = _("SIDNEY                   "),
-    [BATTLE_TERRAIN_PHOEBE]           = _("PHOEBE                   "),
-    [BATTLE_TERRAIN_GLACIA]           = _("GLACIA                   "),
-    [BATTLE_TERRAIN_DRAKE]            = _("DRAKE                    "),
-    [BATTLE_TERRAIN_CHAMPION]         = _("CHAMPION                 "),
-    [BATTLE_TERRAIN_GROUDON]          = _("GROUDON                  "),
-    [BATTLE_TERRAIN_KYOGRE]           = _("KYOGRE                   "),
-    [BATTLE_TERRAIN_RAYQUAZA]         = _("RAYQUAZA                 "),
+    [BATTLE_ENVIRONMENT_GRASS]            = _("GRASS                    "),
+    [BATTLE_ENVIRONMENT_LONG_GRASS]       = _("LONG GRASS               "),
+    [BATTLE_ENVIRONMENT_SAND]             = _("SAND                     "),
+    [BATTLE_ENVIRONMENT_UNDERWATER]       = _("UNDERWATER               "),
+    [BATTLE_ENVIRONMENT_WATER]            = _("WATER                    "),
+    [BATTLE_ENVIRONMENT_POND]             = _("POND                     "),
+    [BATTLE_ENVIRONMENT_MOUNTAIN]         = _("MOUNTAIN                 "),
+    [BATTLE_ENVIRONMENT_CAVE]             = _("CAVE                     "),
+    [BATTLE_ENVIRONMENT_BUILDING]         = _("BUILDING                 "),
+    [BATTLE_ENVIRONMENT_PLAIN]            = _("PLAIN                    "),
+    [BATTLE_ENVIRONMENT_SOARING]          = _("SOARING                  "),
+    [BATTLE_ENVIRONMENT_SKY_PILLAR]       = _("SKY PILLAR               "),
+    [BATTLE_ENVIRONMENT_BURIAL_GROUND]    = _("BURIAL GROUND            "),
+    [BATTLE_ENVIRONMENT_PUDDLE]           = _("PUDDLE                   "),
+    [BATTLE_ENVIRONMENT_MARSH]            = _("MARSH                    "),
+    [BATTLE_ENVIRONMENT_SWAMP]            = _("SWAMP                    "),
+    [BATTLE_ENVIRONMENT_SNOW]             = _("SNOW                     "),
+    [BATTLE_ENVIRONMENT_ICE]              = _("ICE                      "),
+    [BATTLE_ENVIRONMENT_VOLCANO]          = _("VOLCANO                  "),
+    [BATTLE_ENVIRONMENT_DISTORTION_WORLD] = _("DISTORTION WORLD         "),
+    [BATTLE_ENVIRONMENT_SPACE]            = _("SPACE                    "),
+    [BATTLE_ENVIRONMENT_ULTRA_SPACE]      = _("ULTRA SPACE              "),
+    [BATTLE_ENVIRONMENT_FRONTIER]         = _("FRONTIER                 "),
+    [BATTLE_ENVIRONMENT_GYM]              = _("GYM                      "),
+    [BATTLE_ENVIRONMENT_LEADER]           = _("LEADER                   "),
+    [BATTLE_ENVIRONMENT_MAGMA]            = _("MAGMA                    "),
+    [BATTLE_ENVIRONMENT_AQUA]             = _("AQUA                     "),
+    [BATTLE_ENVIRONMENT_SIDNEY]           = _("SIDNEY                   "),
+    [BATTLE_ENVIRONMENT_PHOEBE]           = _("PHOEBE                   "),
+    [BATTLE_ENVIRONMENT_GLACIA]           = _("GLACIA                   "),
+    [BATTLE_ENVIRONMENT_DRAKE]            = _("DRAKE                    "),
+    [BATTLE_ENVIRONMENT_CHAMPION]         = _("CHAMPION                 "),
+    [BATTLE_ENVIRONMENT_GROUDON]          = _("GROUDON                  "),
+    [BATTLE_ENVIRONMENT_KYOGRE]           = _("KYOGRE                   "),
+    [BATTLE_ENVIRONMENT_RAYQUAZA]         = _("RAYQUAZA                 "),
 };
 const u8 sShadowSizeLabels[][4] =
 {
@@ -930,11 +930,11 @@ static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer 
 }
 
 //Battle background functions
-static void LoadBattleBg(u8 battleTerrain)
+static void LoadBattleBg(u8 battleEnvironment)
 {
-    LZDecompressVram(sBattleTerrainTable[battleTerrain].tileset, (void*)(BG_CHAR_ADDR(2)));
-    LZDecompressVram(sBattleTerrainTable[battleTerrain].tilemap, (void*)(BG_SCREEN_ADDR(26)));
-    LoadPalette(sBattleTerrainTable[battleTerrain].palette, 0x20, 0x60);
+    LZDecompressVram(sBattleEnvironmentTable[battleEnvironment].tileset, (void*)(BG_CHAR_ADDR(2)));
+    LZDecompressVram(sBattleEnvironmentTable[battleEnvironment].tilemap, (void*)(BG_SCREEN_ADDR(26)));
+    LoadPalette(sBattleEnvironmentTable[battleEnvironment].palette, 0x20, 0x60);
 }
 
 static void PrintBattleBgName(u8 taskId)
@@ -953,15 +953,15 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
 
     if (increment)
     {
-        if (data->battleTerrain == BATTLE_TERRAIN_RAYQUAZA)
-            data->battleTerrain = BATTLE_TERRAIN_GRASS;
+        if (data->battleTerrain == BATTLE_ENVIRONMENT_RAYQUAZA)
+            data->battleTerrain = BATTLE_ENVIRONMENT_GRASS;
         else
             data->battleTerrain += 1;
     }
     else
     {
-        if (data->battleTerrain == BATTLE_TERRAIN_GRASS)
-            data->battleTerrain = BATTLE_TERRAIN_RAYQUAZA;
+        if (data->battleTerrain == BATTLE_ENVIRONMENT_GRASS)
+            data->battleTerrain = BATTLE_ENVIRONMENT_RAYQUAZA;
         else
             data->battleTerrain -= 1;
     }
@@ -1151,7 +1151,7 @@ void CB2_Pokemon_Sprite_Visualizer(void)
 
             FillBgTilemapBufferRect(0, 0, 0, 0, 32, 20, 15);
             InitBgsFromTemplates(0, sBgTemplates, ARRAY_COUNT(sBgTemplates));
-            LoadBattleBg(BATTLE_TERRAIN_GRASS);
+            LoadBattleBg(BATTLE_ENVIRONMENT_GRASS);
 
             gMain.state++;
             break;

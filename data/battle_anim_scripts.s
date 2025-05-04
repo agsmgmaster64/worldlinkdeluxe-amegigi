@@ -1891,7 +1891,7 @@ gBattleAnimMove_Avalanche::
 	loadspritegfx ANIM_TAG_ROCKS
 	loadspritegfx ANIM_TAG_ICE_CHUNK
 	monbg ANIM_DEF_PARTNER
-	createsprite gShakeMonOrTerrainSpriteTemplate, ANIM_ATTACKER, 2, 7, 1, 11, 1
+	createsprite gShakeMonOrPlatformSpriteTemplate, ANIM_ATTACKER, 2, 7, 1, 11, 1
 	createsprite gAvalancheSpriteTemplate, ANIM_TARGET, 2, -5, 1, -5, 1
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
 	delay 2
@@ -12905,7 +12905,7 @@ gBattleAnimMove_GlitzyGlow::
 	createsprite gSynchronoiseYellowRingTemplate, ANIM_ATTACKER, 0, 25, 0, 0, 0, 0, 0, 1
 	delay 36
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 6, 1
-	createvisualtask AnimTask_ShakeBattleTerrain, 2, 1, 0, 6, 1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 2, 1, 0, 6, 1
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, 0 @Darken
 	waitforvisualfinish
@@ -13718,7 +13718,7 @@ OverdriveRings:
 	createsprite gHyperVoiceRingSpriteTemplate, ANIM_ATTACKER, 0, 0x2d, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 6, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 1, 0, 6, 1
-	createvisualtask AnimTask_ShakeBattleTerrain, 0x2, 0x1, 0x0, 0x6, 0x1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 0x2, 0x1, 0x0, 0x6, 0x1
 	createvisualtask SoundTask_WaitForCry, 0x5
 	return
 
@@ -14354,7 +14354,7 @@ gBattleAnimMove_RisingVoltage::
 	loadspritegfx ANIM_TAG_LIGHTNING
 	monbg ANIM_ATTACKER
 	setalpha 12, 8
-	createvisualtask AnimTask_GetBattleTerrain, 0x5,
+	createvisualtask AnimTask_GetBattleEnvironment, 0x5,
 	jumpargeq 0x0, BG_ELECTRIC_TERRAIN, ANIM_RISING_VOLTAGE_STRONGER
 ANIM_RISING_VOLTAGE_NORMAL:
 	createvisualtask AnimTask_BlendBattleAnimPal, 0x2, F_PAL_BG, 0x1, 0x0, 0x4, 0x0 @;To black
@@ -15335,7 +15335,7 @@ gBattleAnimMove_AstralBarrage::
 	setalpha 12, 8
 	fadetobg BG_GHOST
 	waitbgfadein
-	createsprite gShakeMonOrTerrainSpriteTemplate, ANIM_ATTACKER, 2, 4, 1, 180, 1
+	createsprite gShakeMonOrPlatformSpriteTemplate, ANIM_ATTACKER, 2, 4, 1, 180, 1
 	createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_FAINT_ATTACK, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 5, 20, 0, 5
 	createsprite gSuperpowerRockSpriteTemplate, ANIM_ATTACKER, 41, 200, 96, 1, 120
 	delay 8
@@ -16547,7 +16547,7 @@ gBattleAnimMove_AlluringVoice::
 	createsprite gHyperVoiceRingSpriteTemplate, ANIM_ATTACKER, 0, 45, 0, 0, 0, 0, 0, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 6, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 1, 0, 6, 1
-	createvisualtask AnimTask_ShakeBattleTerrain, 2, 1, 0, 6, 1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 2, 1, 0, 6, 1
 	createvisualtask SoundTask_WaitForCry, 5
 	delay 0xA
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 26, 1
@@ -17157,7 +17157,7 @@ TorchSongEffect:
 	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 5, ANIM_ATTACKER, 0
 	createsprite gHyperVoiceRingSpriteTemplate, ANIM_ATTACKER, 0, 45, 0, 0, 0, 0, 0, 1
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 6, 1
-	createvisualtask AnimTask_ShakeBattleTerrain, 2, 1, 0, 6, 1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 2, 1, 0, 6, 1
 	createvisualtask SoundTask_WaitForCry, 5
 	return
 
@@ -17638,7 +17638,7 @@ gBattleAnimMove_MakeItRain::
 	jumprettrue MakingItRainOnPlayer
 MakingItRainContinue:
 	waitbgfadeout
-	createsprite gShakeMonOrTerrainSpriteTemplate, ANIM_ATTACKER, 2, 7, 1, 11, 1
+	createsprite gShakeMonOrPlatformSpriteTemplate, ANIM_ATTACKER, 2, 7, 1, 11, 1
 	loopsewithpan SE_M_PAY_DAY, SOUND_PAN_TARGET, 8, 15
 	createsprite gMakingItRainTemplate, ANIM_TARGET, 2, -5, 0, -5, 1
 	delay 2
@@ -27542,42 +27542,42 @@ gBattleAnimMove_SecretPower::
 	jumpargeq 0, STATUS_FIELD_ELECTRIC_TERRAIN, gBattleAnimMove_ThunderShock
 	jumpargeq 0, STATUS_FIELD_PSYCHIC_TERRAIN,  gBattleAnimMove_Psyshot
 	jumpargeq 0, STATUS_FIELD_HOLY_TERRAIN,     gBattleAnimMove_Extrasensory
-	createvisualtask AnimTask_GetBattleTerrain, 5
-	jumpargeq 0, BATTLE_TERRAIN_GRASS,          gBattleAnimMove_NeedleArm
-	jumpargeq 0, BATTLE_TERRAIN_LONG_GRASS,     gBattleAnimMove_MagicalLeaf
-	jumpargeq 0, BATTLE_TERRAIN_SAND,           gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_TERRAIN_UNDERWATER,     gBattleAnimMove_Waterfall
-	jumpargeq 0, BATTLE_TERRAIN_WATER,          gBattleAnimMove_Surf
-	jumpargeq 0, BATTLE_TERRAIN_POND,           gBattleAnimMove_BubbleBeam
-	jumpargeq 0, BATTLE_TERRAIN_MOUNTAIN,       gBattleAnimMove_RockThrow
-	jumpargeq 0, BATTLE_TERRAIN_CAVE,           gBattleAnimMove_Bite
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       gBattleAnimMove_Strength
-	jumpargeq 0, BATTLE_TERRAIN_SOARING,        gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_TERRAIN_SKY_PILLAR,     gBattleAnimMove_Gust
-	jumpargeq 0, BATTLE_TERRAIN_BURIAL_GROUND,  gBattleAnimMove_ShadowSneak
-	jumpargeq 0, BATTLE_TERRAIN_PUDDLE,         gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_TERRAIN_MARSH,          gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_TERRAIN_SWAMP,          gBattleAnimMove_MudShot
-	jumpargeq 0, BATTLE_TERRAIN_ICE,            gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_TERRAIN_VOLCANO,        gBattleAnimMove_Incinerate
-	jumpargeq 0, BATTLE_TERRAIN_DISTORTION_WORLD, gBattleAnimMove_Pound
-	jumpargeq 0, BATTLE_TERRAIN_SPACE,          gBattleAnimMove_Swift
-	jumpargeq 0, BATTLE_TERRAIN_ULTRA_SPACE,    gBattleAnimMove_Psywave
+	createvisualtask AnimTask_GetBattleEnvironment, 5
+	jumpargeq 0, BATTLE_ENVIRONMENT_GRASS,          gBattleAnimMove_NeedleArm
+	jumpargeq 0, BATTLE_ENVIRONMENT_LONG_GRASS,     gBattleAnimMove_MagicalLeaf
+	jumpargeq 0, BATTLE_ENVIRONMENT_SAND,           gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_UNDERWATER,     gBattleAnimMove_Waterfall
+	jumpargeq 0, BATTLE_ENVIRONMENT_WATER,          gBattleAnimMove_Surf
+	jumpargeq 0, BATTLE_ENVIRONMENT_POND,           gBattleAnimMove_BubbleBeam
+	jumpargeq 0, BATTLE_ENVIRONMENT_MOUNTAIN,       gBattleAnimMove_RockThrow
+	jumpargeq 0, BATTLE_ENVIRONMENT_CAVE,           gBattleAnimMove_Bite
+	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_Strength
+	jumpargeq 0, BATTLE_ENVIRONMENT_SOARING,        gBattleAnimMove_Gust
+	jumpargeq 0, BATTLE_ENVIRONMENT_SKY_PILLAR,     gBattleAnimMove_Gust
+	jumpargeq 0, BATTLE_ENVIRONMENT_BURIAL_GROUND,  gBattleAnimMove_ShadowSneak
+	jumpargeq 0, BATTLE_ENVIRONMENT_PUDDLE,         gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_MARSH,          gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_SWAMP,          gBattleAnimMove_MudShot
+	jumpargeq 0, BATTLE_ENVIRONMENT_ICE,            gBattleAnimMove_IceShard
+	jumpargeq 0, BATTLE_ENVIRONMENT_VOLCANO,        gBattleAnimMove_Incinerate
+	jumpargeq 0, BATTLE_ENVIRONMENT_DISTORTION_WORLD, gBattleAnimMove_Pound
+	jumpargeq 0, BATTLE_ENVIRONMENT_SPACE,          gBattleAnimMove_Swift
+	jumpargeq 0, BATTLE_ENVIRONMENT_ULTRA_SPACE,    gBattleAnimMove_Psywave
 .if B_SECRET_POWER_ANIMATION >= GEN_7
-	jumpargeq 0, BATTLE_TERRAIN_SNOW,           gBattleAnimMove_IceShard
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       gBattleAnimMove_Braver
+	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_IceShard
+	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_Braver
 	goto gBattleAnimMove_Braver
 .elseif B_SECRET_POWER_ANIMATION >= GEN_6
-	jumpargeq 0, BATTLE_TERRAIN_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       gBattleAnimMove_BodySlam
+	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_BodySlam
 	goto gBattleAnimMove_BodySlam
 .elseif B_SECRET_POWER_ANIMATION >= GEN_4
-	jumpargeq 0, BATTLE_TERRAIN_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       gBattleAnimMove_BodySlam
+	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_BodySlam
 	goto gBattleAnimMove_MudSlap
 .else
-	jumpargeq 0, BATTLE_TERRAIN_SNOW,           gBattleAnimMove_Avalanche
-	jumpargeq 0, BATTLE_TERRAIN_BUILDING,       gBattleAnimMove_Strength
+	jumpargeq 0, BATTLE_ENVIRONMENT_SNOW,           gBattleAnimMove_Avalanche
+	jumpargeq 0, BATTLE_ENVIRONMENT_BUILDING,       gBattleAnimMove_Strength
 	goto gBattleAnimMove_Slam
 .endif
 

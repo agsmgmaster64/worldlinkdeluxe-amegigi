@@ -11,8 +11,8 @@ SINGLE_BATTLE_TEST("Hyper Cutter prevents intimidate")
         PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); }
         OPPONENT(SPECIES_DEFENSE_YUKARI) { Ability(ABILITY_HIGH_STRENGTH); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_TACKLE); }
-        TURN { SWITCH(player, 1); MOVE(opponent, MOVE_TACKLE); }
+        TURN { MOVE(opponent, MOVE_SCRATCH); }
+        TURN { SWITCH(player, 1); MOVE(opponent, MOVE_SCRATCH); }
 
     } SCENE {
         HP_BAR(player, captureDamage: &turnOneHit);
