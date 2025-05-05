@@ -1228,14 +1228,21 @@
 	pokemart \products, NEW_SHOP_PRICE_TYPE_POINTS
 	.endm
 
-	.macro movetutormart pointer:req
-	pokemart \products, NEW_SHOP_PRICE_TYPE_MOVE
+	.macro movetutormart products:req, shopType=NEW_SHOP_PRICE_TYPE_NORMAL
+	.byte SCR_OP_MOVETUTORMART
+	.4byte \products
+	.2byte \shopType
+	.endm
+
+	.macro movetutorpointmart products:req
+	movetutormart \products, NEW_SHOP_PRICE_TYPE_POINTS
 	.endm
 
 	@ Opens the Pokemart system, offering the specified outfit products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	.macro pokemartoutfit products:req
-	pokemart \products, NEW_SHOP_PRICE_TYPE_OUTFIT
+	.byte SCR_OP_POKEMARTOUTFIT
+	.4byte \products
 	.endm
 
 	@ Used as the endpoint for a Pokemart item list

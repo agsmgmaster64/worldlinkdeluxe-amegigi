@@ -27,8 +27,6 @@ struct Item
     u8 type;
     u8 battleUsage;
     u8 flingPower;
-    u16 coinPrice;
-    u16 bpPrice;
     const u32 *iconPic;
     const u16 *iconPalette;
 };
@@ -86,8 +84,6 @@ ItemUseFunc ItemId_GetFieldFunc(u16 itemId);
 u8 ItemId_GetBattleUsage(u16 itemId);
 u32 ItemId_GetSecondaryId(u32 itemId);
 u32 ItemId_GetFlingPower(u32 itemId);
-u16 ItemId_GetCoinPrice(u16 itemId);
-u16 ItemId_GetBpPrice(u16 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
 u32 ItemId_GetCoinPrice(u16 itemId);

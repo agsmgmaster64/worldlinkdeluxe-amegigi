@@ -253,18 +253,16 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush,                requests_effects=1  @ 0xe4
 	script_cmd_table_entry SCR_OP_POKEVIAL                      ScrCmd_pokevial,                    requests_effects=1  @ 0xe5
 	script_cmd_table_entry SCR_OP_CHECKPARTYLEARNKNOWSMOVE      ScrCmd_checkpartylearnknowsmove,    requests_effects=1  @ 0xe6
-	script_cmd_table_entry SCR_OP_CURRENCYPOKEMART              ScrCmd_currencypokemart,            requests_effects=1  @ 0xe7
-	script_cmd_table_entry SCR_OP_SETSPEAKERNAME                ScrCmd_setspeakername,              requests_effects=1  @ 0xe8
-	script_cmd_table_entry SCR_OP_BUYONLYMART                   ScrCmd_buyonlymart,                 requests_effects=1  @ 0xe9
+	script_cmd_table_entry SCR_OP_SETSPEAKERNAME                ScrCmd_setspeakername,              requests_effects=1  @ 0xe7
+	script_cmd_table_entry SCR_OP_MOVETUTORMART                 ScrCmd_movetutormart,               requests_effects=1  @ 0xe8
+	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit,              requests_effects=1  @ 0xe9
 	script_cmd_table_entry SCR_OP_ITEMSELLER                    ScrCmd_itemseller,                  requests_effects=1  @ 0xea
 	script_cmd_table_entry SCR_OP_QUESTMENU                     ScrCmd_questmenu,                   requests_effects=1  @ 0xeb
 	script_cmd_table_entry SCR_OP_SUBQUESTMENU                  ScrCmd_subquestmenu,                requests_effects=1  @ 0xec
 	script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate,            requests_effects=1  @ 0xed
-	script_cmd_table_entry SCR_OP_MOVETUTORMART                 ScrCmd_movetutormart,               requests_effects=1  @ 0xee
-	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit,                requests_effects=1  @ 0xef
-	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus,             requests_effects=1  @ 0xf0
-	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTRING            ScrCmd_bufferoutfitstr,             requests_effects=1  @ 0xf1
-	script_cmd_table_entry SCR_OP_POKEMARTOUTFIT                ScrCmd_pokemartoutfit,              requests_effects=1  @ 0xf2
+	script_cmd_table_entry SCR_OP_TOGGLEOUTFIT                  ScrCmd_toggleoutfit,                requests_effects=1  @ 0xee
+	script_cmd_table_entry SCR_OP_GETOUTFITSTATUS               ScrCmd_getoutfitstatus,             requests_effects=1  @ 0xef
+	script_cmd_table_entry SCR_OP_BUFFEROUTFITSTRING            ScrCmd_bufferoutfitstr,             requests_effects=1  @ 0xf0
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

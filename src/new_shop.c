@@ -225,7 +225,7 @@ static const u8 sText_ThrowInPremierBalls[] = _("I'll throw in\n{STR_VAR_1} Prem
 static const u32 sNewShopMenu_DefaultMenuGfx[] = INCBIN_U32("graphics/new_shop/menu.4bpp.lz");
 static const u32 sNewShopMenu_DefaultMenuCoinGfx[] = INCBIN_U32("graphics/new_shop/menu_coin.4bpp.lz");
 static const u32 sNewShopMenu_DefaultMenuPointGfx[] = INCBIN_U32("graphics/new_shop/menu_bp.4bpp.lz");
-static const u16 sNewShopMenu_DefaultMenuPal[] = INCBIN_U16("graphics/new_shop/menu.gbapal.lz");
+static const u16 sNewShopMenu_DefaultMenuPal[] = INCBIN_U16("graphics/new_shop/menu.gbapal");
 static const u32 sNewShopMenu_DefaultMenuTilemap[] = INCBIN_U32("graphics/new_shop/menu.bin.lz");
 static const u32 sNewShopMenu_DefaultScrollGfx[] = INCBIN_U32("graphics/new_shop/scroll.4bpp.lz");
 static const u32 sNewShopMenu_DefaultScrollTilemap[] = INCBIN_U32("graphics/new_shop/scroll.bin.lz");
@@ -833,12 +833,14 @@ static const struct Seller sSellers[] = {
 
 static inline bool32 IsMartTypePoints(u8 martType)
 {
-    return martType == NEW_SHOP_TYPE_POINTS || martType == NEW_SHOP_TYPE_MOVE_POINTS;
+    return martType == NEW_SHOP_TYPE_POINTS
+        || martType == NEW_SHOP_TYPE_MOVE_POINTS;
 }
 
 static inline bool32 IsMartTypeCoin(u8 martType)
 {
-    return martType == NEW_SHOP_TYPE_COINS;
+    return martType == NEW_SHOP_TYPE_COINS
+        || martType == NEW_SHOP_TYPE_MOVE_COINS;
 }
 
 static inline bool32 IsMartTypeMoney(u8 martType)
@@ -853,7 +855,10 @@ static inline bool32 IsMartTypeItem(u8 martType)
 
 static inline bool32 IsMartTypeMove(u8 martType)
 {
-    return martType == NEW_SHOP_TYPE_MOVE || martType == NEW_SHOP_TYPE_MOVE_POINTS;
+    return martType == NEW_SHOP_TYPE_MOVE
+        || martType == NEW_SHOP_TYPE_MOVE_VARIABLE
+        || martType == NEW_SHOP_TYPE_MOVE_COINS
+        || martType == NEW_SHOP_TYPE_MOVE_POINTS;
 }
 
 #ifdef MUDSKIP_OUTFIT_SYSTEM
@@ -872,7 +877,7 @@ static inline bool32 IsMartTypeMoneyItem(u8 martType)
 
 static inline bool32 CanMartTypeReturnToShopMenu(void)
 {
-    return sMartInfo.buyOnly;
+    return !sMartInfo.buyOnly;
 }
 
 static u8 CreateShopMenu(u8 martType)
@@ -881,6 +886,7 @@ static u8 CreateShopMenu(u8 martType)
 
     LockPlayerFieldControls();
     sMartInfo.martType = martType;
+    sMartInfo.buyOnly = FALSE;
 
     switch (sMartInfo.martType)
     {
@@ -1252,10 +1258,18 @@ void CB2_InitBuyMenuAfterTutor(void)
 {
     if (gSpecialVar_Result == TRUE)
     {
-        if (IsMartTypePoints(gSpecialVar_0x8009))
+        switch (gSpecialVar_0x8009)
+        {
+        case NEW_SHOP_TYPE_MOVE_POINTS:
             RemoveBattlePoints(gSpecialVar_0x8008);
-        else
+            break;
+        case NEW_SHOP_TYPE_MOVE_COINS:
+            RemoveCoins(gSpecialVar_0x8008);
+            break;
+        default:
             RemoveMoney(&gSaveBlock1Ptr->money, gSpecialVar_0x8008);
+            break;
+        }
     }
     // No point in trying to salvage going back to the buy menu
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
@@ -1318,8 +1332,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
             gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
             break;
         }
-        case NEW_SHOP_TYPE_MOVE:
-        case NEW_SHOP_TYPE_MOVE_POINTS:
+        case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
         {
             if (sMartInfo.itemList[i] == MOVE_NONE)
                 sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
@@ -1478,8 +1491,7 @@ static inline const u8 *BuyMenuGetItemName(u32 id)
             return gDecorations[sMartInfo.itemList[id]].name;
         default:
             return ItemId_GetName(sMartInfo.itemList[id]);
-        case NEW_SHOP_TYPE_MOVE:
-        case NEW_SHOP_TYPE_MOVE_POINTS:
+        case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             return GetMoveName(sMartInfo.itemList[id]);
         // custom
     #ifdef MUDSKIP_OUTFIT_SYSTEM
@@ -1498,8 +1510,7 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
         default:
             return ItemId_GetDescription(sMartInfo.itemList[id]);
         // custom
-        case NEW_SHOP_TYPE_MOVE:
-        case NEW_SHOP_TYPE_MOVE_POINTS:
+        case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             return GetMoveDescription(sMartInfo.itemList[id]);
     #ifdef MUDSKIP_OUTFIT_SYSTEM
         case NEW_SHOP_TYPE_OUTFIT:
@@ -1518,6 +1529,7 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
             return ItemId_GetPrice(sMartInfo.itemList[id]);
         // custom
         case NEW_SHOP_TYPE_VARIABLE:
+        case NEW_SHOP_TYPE_MOVE_VARIABLE:
             return SearchItemListForPrice(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_COINS:
             return ItemId_GetCoinPrice(sMartInfo.itemList[id]);
@@ -1599,11 +1611,10 @@ static void BuyMenuInitWindows(void)
     SpawnWindow(WIN_MUGSHOT);
     SpawnWindow(WIN_ITEM_DESCRIPTION);
 
-    BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("PRICE"), 0, ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+    if (!IsMartTypeMove(sMartInfo.martType))
+        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("PRICE"), 0, ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
     if (IsMartTypeItem(sMartInfo.martType))
-    {
-        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("IN BAG"), 0, ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-    }
+        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("IN BAG"), 0, ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
 
     UpdateItemData();
 
@@ -1759,16 +1770,16 @@ static void UpdateItemData(void)
     FillWindowPixelRect(WIN_MULTI, PIXEL_FILL(0), 32, ITEM_IN_BAG_Y, 84, 16);
     if (sMartInfo.itemList[GridMenu_SelectedIndex(sShopData->gridItems)] == ITEM_NONE)
     {
-        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Return to Field"), 0, 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
-        BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+        BuyMenuPrint(WIN_MULTI, COMPOUND_STRING("Return to Field"), 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
+        BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
 
         if (IsMartTypeItem(sMartInfo.martType))
         {
-            BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+            BuyMenuPrint(WIN_MULTI, strip, GetStringRightAlignXOffset(FONT_SMALL, strip, 80), ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
         }
 
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
-        BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_QuitShopping, 8, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+        BuyMenuPrint(WIN_ITEM_DESCRIPTION, gText_QuitShopping, 8, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
     }
     else
     {
@@ -1777,7 +1788,7 @@ static void UpdateItemData(void)
         u32 price = BuyMenuGetItemPrice(i);
         const u8 *desc = BuyMenuGetItemDesc(i);
 
-        BuyMenuPrint(WIN_MULTI, BuyMenuGetItemName(i), 0, ITEM_NAME_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+        BuyMenuPrint(WIN_MULTI, BuyMenuGetItemName(i), 0, ITEM_NAME_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
 
         switch (sMartInfo.martType)
         {
@@ -1789,16 +1800,16 @@ static void UpdateItemData(void)
                     const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
                     FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[i]), 0);
                     desc = gStringVar2;
-                    BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                    BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 }
 
                 if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
-                    BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                    BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 else
-                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
+                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_NORMAL, STR_CONV_MODE_LEFT_ALIGN, FALSE);
 
                 ConvertIntToDecimalStringN(gStringVar3, quantity, STR_CONV_MODE_RIGHT_ALIGN, 10);
-                BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                BuyMenuPrint(WIN_MULTI, gStringVar3, GetStringRightAlignXOffset(FONT_SMALL, gStringVar3, 80), ITEM_IN_BAG_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 break;
             }
         #ifdef MUDSKIP_OUTFIT_SYSTEM
@@ -1806,14 +1817,13 @@ static void UpdateItemData(void)
             {
                 u32 outfit = item;
                 if (GetOutfitStatus(outfit))
-                    BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+                    BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 else
-                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
+                    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_NORMAL, STR_CONV_MODE_LEFT_ALIGN, FALSE);
                 break;
             }
         #endif // MUDSKIP_OUTFIT_SYSTEM
-            case NEW_SHOP_TYPE_MOVE:
-            case NEW_SHOP_TYPE_MOVE_POINTS:
+            case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             {
                 u32 move = item;
                 BuyMenuPrint(WIN_MULTI, gTypesInfo[GetMoveType(move)].name, 0, 2*8, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
@@ -1823,14 +1833,14 @@ static void UpdateItemData(void)
             }
             case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             {
-                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
+                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_NORMAL, STR_CONV_MODE_LEFT_ALIGN, FALSE);
                 break;
             }
         }
 
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
         FormatTextByWidth(gStringVar2, 104, FONT_SMALL, desc, 0);
-        BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 8, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+        BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 8, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
     }
     CopyWindowToVram(WIN_MULTI, COPYWIN_FULL);
 }
@@ -1849,7 +1859,7 @@ static void UpdateCursorPosition(void)
 static void BuyMenuDisplayMessage(u8 taskId, const u8 *str, TaskFunc nextFunc)
 {
     StringExpandPlaceholders(gStringVar4, str);
-    BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar4, 8, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+    BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar4, 8, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
     gTasks[taskId].func = nextFunc;
 }
 
@@ -1944,6 +1954,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                     str = Shop_GetSellerMessage(SELLER_MSG_BUY_PROMPT_PLURAL);
                     BuyMenuDisplayMessage(taskId, str, Task_BuyHowManyDialogueInit);
                 }
+                break;
             }
             case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             {
@@ -1952,8 +1963,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                 BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
                 break;
             }
-            case NEW_SHOP_TYPE_MOVE:
-            case NEW_SHOP_TYPE_MOVE_POINTS:
+            case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             {
                 StringCopy(gStringVar1, GetMoveName(sShopData->currentItemId));
                 ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
@@ -2129,8 +2139,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             }
             break;
         }
-        case NEW_SHOP_TYPE_MOVE:
-        case NEW_SHOP_TYPE_MOVE_POINTS:
+        case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
         {
             // all this will be wiped out when going to the party menu, so store this in variables
             gSpecialVar_0x8005 = sShopData->currentItemId;
@@ -2264,7 +2273,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
                 FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
                 ConvertIntToDecimalStringN(gStringVar1, premierBallsToAdd, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
                 StringExpandPlaceholders(gStringVar2, str);
-                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 8, 0, TEXT_SKIP_DRAW, COLORID_BLACK, TRUE);
+                BuyMenuPrint(WIN_ITEM_DESCRIPTION, gStringVar2, 8, 0, TEXT_SKIP_DRAW, COLORID_NORMAL, TRUE);
                 gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
             }
             else
@@ -2295,9 +2304,9 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     x = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, sBuyMenuWindowTemplates[WIN_QUANTITY_PRICE].width * 8);
-    BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, x, 2, TEXT_SKIP_DRAW, COLORID_BLACK, FALSE);
+    BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, x, 2, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
 
-    PrintMoneyLocal(WIN_QUANTITY_PRICE, RIGHT_ALIGNED_X, 14, sShopData->totalCost, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
+    PrintMoneyLocal(WIN_QUANTITY_PRICE, RIGHT_ALIGNED_X, 14, sShopData->totalCost, COLORID_NORMAL, STR_CONV_MODE_LEFT_ALIGN, FALSE);
 
     CopyWindowToVram(WIN_QUANTITY_PRICE, COPYWIN_FULL);
 }
@@ -2428,9 +2437,23 @@ void NewShop_CreateSellOnlyMartMenu(void)
     CreateTask(Task_HandleShopMenuSell, 8);  //skip mart multichoice. go right to shop sell window
 }
 
-void NewShop_CreateBpMoveTutorMenu(const u16 *itemsForSale)
+void NewShop_CreateMoveTutorPointsMenu(const u16 *itemsForSale)
 {
     CreateShopMenu(NEW_SHOP_TYPE_MOVE_POINTS);
+    SetShopItemsForSale(itemsForSale);
+    SetShopMenuCallback(ScriptContext_Enable);
+}
+
+void NewShop_CreateMoveTutorVariableMenu(const u16 *itemsForSale)
+{
+    CreateShopMenu(NEW_SHOP_TYPE_MOVE_VARIABLE);
+    SetShopItemsForSale(itemsForSale);
+    SetShopMenuCallback(ScriptContext_Enable);
+}
+
+void NewShop_CreateMoveTutorCoinsMenu(const u16 *itemsForSale)
+{
+    CreateShopMenu(NEW_SHOP_TYPE_MOVE_COINS);
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }

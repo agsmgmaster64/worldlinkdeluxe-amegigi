@@ -19,8 +19,10 @@ void NewShop_CreatePointsPokemartMenu(const u16 *);
 void NewShop_CreateBuyOnlyMartMenu(const u16 *);
 void NewShop_CreateBuyVariableMartMenu(const u16 *);
 void NewShop_CreateSellOnlyMartMenu(void);
-void NewShop_CreateBpMoveTutorMenu(const u16 *);
 void NewShop_CreateMoveTutorMartMenu(const u16 *);
+void NewShop_CreateMoveTutorVariableMenu(const u16 *);
+void NewShop_CreateMoveTutorCoinsMenu(const u16 *);
+void NewShop_CreateMoveTutorPointsMenu(const u16 *);
 
 #endif // MUDSKIP_SHOP_UI
 

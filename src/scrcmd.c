@@ -2563,6 +2563,78 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_buyonlymart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+    bool16 useVariablePrices = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (useVariablePrices)
+    {
+        NewShop_CreateBuyVariableMartMenu(ptr);
+    }
+    else
+    {
+        NewShop_CreateBuyOnlyMartMenu(ptr);
+    }
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+bool8 ScrCmd_movetutormart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+    u16 shopType = ScriptReadHalfword(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    switch (shopType)
+    {
+    case NEW_SHOP_PRICE_TYPE_VARIABLE:
+        NewShop_CreateMoveTutorVariableMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_COINS:
+        NewShop_CreateMoveTutorCoinsMenu(ptr);
+        break;
+    case NEW_SHOP_PRICE_TYPE_POINTS:
+        NewShop_CreateMoveTutorPointsMenu(ptr);
+        break;
+    default:
+        NewShop_CreateMoveTutorMartMenu(ptr);
+        break;
+    }
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateOutfitShopMenu(ptr);
+    #else
+    CreateOutfitShopMenu(ptr);
+    #endif // MUDSKIP_SHOP_UI
+
+    ScriptContext_Stop();
+    return TRUE;
+}
+
+bool8 ScrCmd_itemseller(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    NewShop_CreateSellOnlyMartMenu();
+    ScriptContext_Stop();
+    return TRUE;
+}
+
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
@@ -3172,55 +3244,6 @@ bool8 ScrCmd_setspeakername(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_buyonlymart(struct ScriptContext *ctx)
-{
-    const void *ptr = (void *)ScriptReadWord(ctx);
-    bool16 useVariablePrices = ScriptReadHalfword(ctx);
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    if (useVariablePrices)
-    {
-        NewShop_CreateBuyVariableMartMenu(ptr);
-    }
-    else
-    {
-        NewShop_CreateBuyOnlyMartMenu(ptr);
-    }
-
-    ScriptContext_Stop();
-    return TRUE;
-}
-
-bool8 ScrCmd_itemseller(struct ScriptContext *ctx)
-{
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    NewShop_CreateSellOnlyMartMenu();
-    ScriptContext_Stop();
-    return TRUE;
-}
-
-bool8 ScrCmd_movetutormart(struct ScriptContext *ctx)
-{
-    const void *ptr = (void *)ScriptReadWord(ctx);
-    bool16 usesBp = ScriptReadHalfword(ctx);
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    if (usesBp)
-    {
-        NewShop_CreateBpMoveTutorMenu(ptr);
-    }
-    else
-    {
-        NewShop_CreateMoveTutorMartMenu(ptr);
-    }
-
-    ScriptContext_Stop();
-    return TRUE;
-}
-
 bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)
 {
     u8 strVarIdx = ScriptReadByte(ctx);
@@ -3230,22 +3253,6 @@ bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1);
 
     BufferOutfitStrings(sScriptStringVars[strVarIdx], outfit, type);
-    return TRUE;
-}
-
-bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
-{
-    const void *ptr = (void *)ScriptReadWord(ctx);
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    #ifdef MUDSKIP_SHOP_UI
-    NewShop_CreateOutfitShopMenu(ptr);
-    #else
-    CreateOutfitShopMenu(ptr);
-    #endif // MUDSKIP_SHOP_UI
-
-    ScriptContext_Stop();
     return TRUE;
 }
 

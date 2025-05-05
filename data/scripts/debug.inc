@@ -143,7 +143,8 @@ Debug_EventScript_Script_1::
 	playtrainervoice TRAINER_VOICE_GIGI, 0
 	msgbox Debug_EventScript_Script_1_TestMessage2
 	closemessage
-	battlepointpokemart Debug_EventScript_Script_1_Mart
+	coinmart Debug_EventScript_Script_1_Mart
+	movetutorpointmart Debug_EventScript_Script_1_Mart2
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -168,6 +169,12 @@ Debug_EventScript_Script_1_Mart:
 	.2byte ITEM_TECH_HEART
 	.2byte ITEM_HELPER_HEART
 	.2byte ITEM_JUST_HEART
+	.2byte ITEM_NONE
+
+	.align 2
+Debug_EventScript_Script_1_Mart2:
+	.2byte MOVE_SURF
+	.2byte MOVE_STRENGTH
 	.2byte ITEM_NONE
 
 Debug_EventScript_Script_2::
