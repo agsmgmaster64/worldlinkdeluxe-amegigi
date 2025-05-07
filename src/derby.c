@@ -229,6 +229,10 @@ static const u32 FeebasGFX[] = INCBIN_U32("graphics/pokemon/_add/th/wakasagihime
 static const u16 FeebasNormalPAL[] = INCBIN_U16("graphics/pokemon/_add/th/wakasagihime/chibi/normal.gbapal");
 static const u16 FeebasShinyPAL[] = INCBIN_U16("graphics/pokemon/_add/th/wakasagihime/chibi/shiny.gbapal");
 
+static const u32 GremGFX[] = INCBIN_U32("graphics/pokemon/_add/etc/grem/anim_front.4bpp.lz");
+static const u16 GremNormalPAL[] = INCBIN_U16("graphics/pokemon/_add/etc/grem/normal.gbapal");
+static const u16 GremShinyPAL[] = INCBIN_U16("graphics/pokemon/_add/etc/grem/shiny.gbapal");
+
 // Betting Menu Text
 
 // Pokemon Names
@@ -237,6 +241,7 @@ static const u32 Name_PonytaGFX[] = INCBIN_U32("graphics/derby/species_name/name
 static const u32 Name_RapidashGFX[] = INCBIN_U32("graphics/derby/species_name/name-rapidash.4bpp.lz");
 static const u32 Name_RattataGFX[] = INCBIN_U32("graphics/derby/species_name/name-rattata.4bpp.lz");
 static const u32 Name_FeebasGFX[] = INCBIN_U32("graphics/derby/species_name/name-feebas.4bpp.lz");
+static const u32 Name_GremGFX[] = INCBIN_U32("graphics/derby/species_name/name-grem.4bpp.lz");
 
 static const u16 TextPAL[] = INCBIN_U16("graphics/derby/bet_text.gbapal");
 
@@ -298,6 +303,7 @@ static const u32 Feebas_OW_GFX[] = INCBIN_U32("graphics/derby/feebas_ow.4bpp.lz"
 static const u32 Ponyta_OW_GFX[] = INCBIN_U32("graphics/derby/ponyta_ow.4bpp.lz");
 static const u32 Rattata_OW_GFX[] = INCBIN_U32("graphics/derby/rattata_ow.4bpp.lz");
 static const u32 Rapidash_OW_GFX[] = INCBIN_U32("graphics/derby/rapidash_ow.4bpp.lz");
+static const u32 Grem_OW_GFX[] = INCBIN_U32("graphics/derby/grem_ow.4bpp.lz");
 
 // Cursor
 
@@ -428,8 +434,8 @@ static const struct SpritePalette sSpritePalettes[] =
     { .data = PonytaShinyPAL,         .tag = PAL_PONYTA_SHINY },
     { .data = RapidashNormalPAL,     .tag = PAL_RAPIDASH },
     { .data = RapidashShinyPAL,         .tag = PAL_RAPIDASH_SHINY },
-    { .data = RattataNormalPAL,         .tag = PAL_RATTATA },
-    { .data = RattataShinyPAL,         .tag = PAL_RATTATA_SHINY },
+    { .data = GremNormalPAL,         .tag = PAL_RATTATA },
+    { .data = GremShinyPAL,         .tag = PAL_RATTATA_SHINY },
     { .data = FeebasNormalPAL,         .tag = PAL_FEEBAS },
     { .data = FeebasShinyPAL,         .tag = PAL_FEEBAS_SHINY },
     { .data = TextPAL,                 .tag = PAL_BET_MENU_TEXT },
@@ -660,7 +666,7 @@ static const struct SpriteTemplate sSpriteTemplate_Rapidash_OW_Shiny =
 
 static const struct CompressedSpriteSheet sSpriteSheet_Rattata_OW =
 {
-    .data = Rattata_OW_GFX,
+    .data = Grem_OW_GFX,
     .size = 0x200,
     .tag = GFX_RATTATA_OW,
 };
@@ -960,7 +966,7 @@ static const struct SpriteTemplate sSpriteTemplate_Name_Rapidash =
 
 static const struct CompressedSpriteSheet sSpriteSheet_Name_Rattata =
 {
-    .data = Name_RattataGFX,
+    .data = Name_GremGFX,
     .size = 0x400,
     .tag = GFX_NAME_RATTATA,
 };
@@ -1463,7 +1469,7 @@ static const struct SpriteTemplate sSpriteTemplate_RapidashShiny =
 
 static const struct CompressedSpriteSheet sSpriteSheet_Rattata =
 {
-    .data = RattataGFX,
+    .data = GremGFX,
     .size = 0x800,
     .tag = GFX_RATTATA,
 };
