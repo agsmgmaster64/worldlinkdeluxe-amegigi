@@ -5246,7 +5246,6 @@ BattleScript_FaintTarget::
 	printstring STRINGID_TARGETFAINTED
 	@savebattleritem BS_TARGET
 	cleareffectsonfaint BS_TARGET
-	tryactivatefellstinger BS_ATTACKER
 	storegivingheart BS_TARGET
 	tryactivatesoulheart
 	tryactivatereceiver BS_TARGET

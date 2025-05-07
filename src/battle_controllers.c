@@ -1998,7 +1998,7 @@ static bool8 ShouldDoSlideInAnim(u32 battler)
     )
         return FALSE;
 
-    if (GetFirstLiveMon() != &gPlayerParty[gBattlerPartyIndexes[battler]])
+    if (GetFirstLiveMon() != GetPartyBattlerData(battler))
         return FALSE;
 
     return TRUE;
@@ -2008,17 +2008,17 @@ void StartSendOutAnim(u32 battler, bool32 dontClearTransform, bool32 dontClearSu
 {
     u16 species;
     u32 side = GetBattlerSide(battler);
-    struct Pokemon *party = GetBattlerParty(battler);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
 
     ClearTemporarySpeciesSpriteData(battler, dontClearTransform, dontClearSubstituteBit);
     gBattlerPartyIndexes[battler] = gBattleResources->bufferA[battler][1];
     species = GetIllusionMonSpecies(battler);
     if (species == SPECIES_NONE)
-        species = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES);
+        species = GetMonData(mon, MON_DATA_SPECIES);
     gBattleControllerData[battler] = CreateInvisibleSpriteWithCallback(SpriteCB_WaitForBattlerBallReleaseAnim);
     // Load sprite for opponent only, player sprite is expected to be already loaded.
     if (side == B_SIDE_OPPONENT)
-        BattleLoadMonSpriteGfx(&party[gBattlerPartyIndexes[battler]], battler);
+        BattleLoadMonSpriteGfx(mon, battler);
     SetMultiuseSpriteTemplateToPokemon(species, GetBattlerPosition(battler));
 
     gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
@@ -2082,7 +2082,7 @@ static void Controller_FaintPlayerMon(u32 battler)
     u32 spriteId = gBattlerSpriteIds[battler];
     if (gSprites[spriteId].y + gSprites[spriteId].y2 > DISPLAY_HEIGHT)
     {
-        BattleGfxSfxDummy2(GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES));
+        BattleGfxSfxDummy2(GetMonData(GetPartyBattlerData(battler), MON_DATA_SPECIES));
         FreeOamMatrix(gSprites[spriteId].oam.matrixNum);
         DestroySprite(&gSprites[spriteId]);
         SetHealthboxSpriteInvisible(gHealthboxSpriteIds[battler]);
@@ -2173,7 +2173,7 @@ void Controller_WaitForHealthBar(u32 battler)
     else
     {
         if (GetBattlerSide(battler) == B_SIDE_PLAYER)
-            HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+            HandleLowHpMusicChange(GetPartyBattlerData(battler), battler);
         BattleControllerComplete(battler);
     }
 }
@@ -2281,9 +2281,9 @@ void BtlController_HandleGetMonData(u32 battler)
 void BtlController_HandleGetRawMonData(u32 battler)
 {
     struct BattlePokemon battleMon;
-    struct Pokemon *party = GetBattlerParty(battler);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
 
-    u8 *src = (u8 *)&party[gBattlerPartyIndexes[battler]] + gBattleResources->bufferA[battler][1];
+    u8 *src = (u8 *)mon + gBattleResources->bufferA[battler][1];
     u8 *dst = (u8 *)&battleMon + gBattleResources->bufferA[battler][1];
     u8 i;
 
@@ -2319,8 +2319,7 @@ void BtlController_HandleSetMonData(u32 battler)
 void BtlController_HandleSetRawMonData(u32 battler)
 {
     u32 i;
-    struct Pokemon *party = GetBattlerParty(battler);
-    u8 *dst = (u8 *)&party[gBattlerPartyIndexes[battler]] + gBattleResources->bufferA[battler][1];
+    u8 *dst = (u8 *)GetPartyBattlerData(battler) + gBattleResources->bufferA[battler][1];
 
     for (i = 0; i < gBattleResources->bufferA[battler][2]; i++)
         dst[i] = gBattleResources->bufferA[battler][3 + i];
@@ -2330,20 +2329,20 @@ void BtlController_HandleSetRawMonData(u32 battler)
 
 void BtlController_HandleLoadMonSprite(u32 battler, void (*controllerCallback)(u32 battler))
 {
-    struct Pokemon *party = GetBattlerParty(battler);
-    u16 species = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_SPECIES);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
     u32 y;
 
     if (GetBattlerPosition(battler) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_GHOST)
     {
-        DecompressGhostFrontPic(&party[gBattlerPartyIndexes[battler]], battler);
+        DecompressGhostFrontPic(mon, battler);
         y = GetGhostSpriteDefault_Y(battler);
         gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim = TRUE;
         gBattleSpritesDataPtr->healthBoxesData[battler].finishedShinyMonAnim = TRUE;
     }
     else
     {
-        BattleLoadMonSpriteGfx(&party[gBattlerPartyIndexes[battler]], battler);
+        BattleLoadMonSpriteGfx(mon, battler);
         y = GetBattlerSpriteDefault_Y(battler);
     }
     SetMultiuseSpriteTemplateToPokemon(species, GetBattlerPosition(battler));
@@ -2371,7 +2370,7 @@ void BtlController_HandleSwitchInAnim(u32 battler, bool32 isPlayerSide, void (*c
         ClearTemporarySpeciesSpriteData(battler, gBattleResources->bufferA[battler][2], gBattleResources->bufferA[battler][3]);
     gBattlerPartyIndexes[battler] = gBattleResources->bufferA[battler][1];
     if (isPlayerSide)
-        BattleLoadMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+        BattleLoadMonSpriteGfx(GetPartyBattlerData(battler), battler);
     StartSendOutAnim(battler, gBattleResources->bufferA[battler][2], gBattleResources->bufferA[battler][3], FALSE);
     gBattlerControllerFuncs[battler] = controllerCallback;
 }
@@ -2526,7 +2525,7 @@ void BtlController_HandleFaintAnimation(u32 battler)
             gBattleSpritesDataPtr->healthBoxesData[battler].animationState = 0;
             if (GetBattlerSide(battler) == B_SIDE_PLAYER)
             {
-                HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+                HandleLowHpMusicChange(GetPartyBattlerData(battler), battler);
                 gSprites[gBattlerSpriteIds[battler]].sSpeedX = 0;
                 gSprites[gBattlerSpriteIds[battler]].sSpeedY = 5;
                 PlaySE12WithPanning(SE_WLD_FAINT, SOUND_PAN_ATTACKER);
@@ -2623,12 +2622,12 @@ void BtlController_HandleHealthBarUpdate(u32 battler, bool32 updateHpText)
 {
     s32 maxHP, curHP;
     s16 hpVal;
-    struct Pokemon *party = GetBattlerParty(battler);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
 
     LoadBattleBarGfx(0);
     hpVal = gBattleResources->bufferA[battler][2] | (gBattleResources->bufferA[battler][3] << 8);
-    maxHP = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_MAX_HP);
-    curHP = GetMonData(&party[gBattlerPartyIndexes[battler]], MON_DATA_HP);
+    maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+    curHP = GetMonData(mon, MON_DATA_HP);
 
     if (hpVal != INSTANT_HP_BAR_DROP)
     {
@@ -2648,9 +2647,9 @@ void BtlController_HandleHealthBarUpdate(u32 battler, bool32 updateHpText)
 
 void DoStatusIconUpdate(u32 battler)
 {
-    struct Pokemon *party = GetBattlerParty(battler);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
 
-    UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &party[gBattlerPartyIndexes[battler]], HEALTHBOX_STATUS_ICON);
+    UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], mon, HEALTHBOX_STATUS_ICON);
     gBattleSpritesDataPtr->healthBoxesData[battler].statusAnimActive = 0;
     gBattlerControllerFuncs[battler] = Controller_WaitForStatusAnimation;
 }
@@ -2750,14 +2749,14 @@ void BtlController_HandleSpriteInvisibility(u32 battler)
 
 bool32 TwoPlayerIntroMons(u32 battler) // Double battle with both player pokemon active.
 {
-    return (IsDoubleBattle() && IsValidForBattle(&gPlayerParty[gBattlerPartyIndexes[battler ^ BIT_FLANK]]));
+    return (IsDoubleBattle() && IsValidForBattle(GetPartyBattlerData(battler ^ BIT_FLANK)));
 }
 
 bool32 TwoOpponentIntroMons(u32 battler) // Double battle with both opponent pokemon active.
 {
     return (IsDoubleBattle()
-            && IsValidForBattle(&gEnemyParty[gBattlerPartyIndexes[battler]])
-            && IsValidForBattle(&gEnemyParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]]));
+            && IsValidForBattle(GetPartyBattlerData(battler))
+            && IsValidForBattle(GetPartyBattlerData(BATTLE_PARTNER(battler))));
 }
 
 // Task data for Task_StartSendOutAnim
@@ -2857,7 +2856,7 @@ static void Task_StartSendOutAnim(u8 taskId)
 
             battlerPartner = battler ^ BIT_FLANK;
             gBattleResources->bufferA[battlerPartner][1] = gBattlerPartyIndexes[battlerPartner];
-            BattleLoadMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[battlerPartner]], battlerPartner);
+            BattleLoadMonSpriteGfx(GetPartyBattlerData(battlerPartner), battlerPartner);
             StartSendOutAnim(battlerPartner, FALSE, FALSE, ShouldDoSlideInAnim(battler));
         }
         else
@@ -2886,7 +2885,7 @@ static void SpriteCB_FreePlayerSpriteLoadMonSprite(struct Sprite *sprite)
     DestroySprite(sprite);
 
     // Load mon sprite
-    BattleLoadMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+    BattleLoadMonSpriteGfx(GetPartyBattlerData(battler), battler);
     StartSpriteAnim(&gSprites[gBattlerSpriteIds[battler]], 0);
 }
 

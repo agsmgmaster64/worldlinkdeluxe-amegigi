@@ -484,7 +484,7 @@ void HandleInputChooseTarget(u32 battler)
 {
     s32 i;
     static const u8 identities[MAX_BATTLERS_COUNT] = {B_POSITION_PLAYER_LEFT, B_POSITION_PLAYER_RIGHT, B_POSITION_OPPONENT_RIGHT, B_POSITION_OPPONENT_LEFT};
-    u16 move = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_MOVE1 + gMoveSelectionCursor[battler]);
+    u16 move = GetMonData(GetPartyBattlerData(battler), MON_DATA_MOVE1 + gMoveSelectionCursor[battler]);
     u16 moveTarget = GetBattlerMoveTargetType(battler, move);
 
     DoBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX, 15, 1);
@@ -1093,11 +1093,11 @@ void HandleMoveSwitching(u32 battler)
             {
                 for (i = 0; i < MAX_MON_MOVES; i++)
                 {
-                    moveStruct.moves[i] = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_MOVE1 + i);
-                    moveStruct.currentPp[i] = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_PP1 + i);
+                    moveStruct.moves[i] = GetMonData(GetPartyBattlerData(battler), MON_DATA_MOVE1 + i);
+                    moveStruct.currentPp[i] = GetMonData(GetPartyBattlerData(battler), MON_DATA_PP1 + i);
                 }
 
-                totalPPBonuses = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_PP_BONUSES);
+                totalPPBonuses = GetMonData(GetPartyBattlerData(battler), MON_DATA_PP_BONUSES);
                 for (i = 0; i < MAX_MON_MOVES; i++)
                     perMovePPBonuses[i] = (totalPPBonuses & (3 << (i * 2))) >> (i * 2);
 
@@ -1119,11 +1119,11 @@ void HandleMoveSwitching(u32 battler)
 
                 for (i = 0; i < MAX_MON_MOVES; i++)
                 {
-                    SetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_MOVE1 + i, &moveStruct.moves[i]);
-                    SetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_PP1 + i, &moveStruct.currentPp[i]);
+                    SetMonData(GetPartyBattlerData(battler), MON_DATA_MOVE1 + i, &moveStruct.moves[i]);
+                    SetMonData(GetPartyBattlerData(battler), MON_DATA_PP1 + i, &moveStruct.currentPp[i]);
                 }
 
-                SetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_PP_BONUSES, &totalPPBonuses);
+                SetMonData(GetPartyBattlerData(battler), MON_DATA_PP_BONUSES, &totalPPBonuses);
             }
         }
 
@@ -1316,10 +1316,10 @@ static void Intro_WaitForShinyAnimAndHealthbox(u32 battler)
         FreeSpriteTilesByTag(ANIM_TAG_GOLD_STARS);
         FreeSpritePaletteByTag(ANIM_TAG_GOLD_STARS);
 
-        HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+        HandleLowHpMusicChange(GetPartyBattlerData(battler), battler);
 
         if (TwoPlayerIntroMons(battler))
-            HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]], BATTLE_PARTNER(battler));
+            HandleLowHpMusicChange(GetPartyBattlerData(BATTLE_PARTNER(battler)), BATTLE_PARTNER(battler));
 
         gBattleSpritesDataPtr->healthBoxesData[battler].introEndDelay = 3;
         gBattlerControllerFuncs[battler] = Intro_DelayAndEnd;
@@ -1334,12 +1334,12 @@ static void Intro_TryShinyAnimShowHealthbox(u32 battler)
     // Start shiny animation if applicable for 1st Pokémon
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim
      && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
-        TryShinyAnimation(battler, &gPlayerParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
 
     // Start shiny animation if applicable for 2nd Pokémon
     if (!gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].triedShinyMonAnim
      && !gBattleSpritesDataPtr->healthBoxesData[BATTLE_PARTNER(battler)].ballAnimActive)
-        TryShinyAnimation(BATTLE_PARTNER(battler), &gPlayerParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]]);
+        TryShinyAnimation(BATTLE_PARTNER(battler), GetPartyBattlerData(BATTLE_PARTNER(battler)));
 
     // Show healthbox after ball anim
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive
@@ -1349,11 +1349,11 @@ static void Intro_TryShinyAnimShowHealthbox(u32 battler)
         {
             if (TwoPlayerIntroMons(battler) && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
             {
-                UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], &gPlayerParty[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]], HEALTHBOX_ALL);
+                UpdateHealthboxAttribute(gHealthboxSpriteIds[BATTLE_PARTNER(battler)], GetPartyBattlerData(BATTLE_PARTNER(battler)), HEALTHBOX_ALL);
                 StartHealthboxSlideIn(BATTLE_PARTNER(battler));
                 SetHealthboxSpriteVisible(gHealthboxSpriteIds[BATTLE_PARTNER(battler)]);
             }
-            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gPlayerParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+            UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
             StartHealthboxSlideIn(battler);
             SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
         }
@@ -1440,7 +1440,7 @@ static void SwitchIn_HandleSoundAndEnd(u32 battler)
         && !IsCryPlayingOrClearCrySongs())
     {
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
-        HandleLowHpMusicChange(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+        HandleLowHpMusicChange(GetPartyBattlerData(battler), battler);
         PlayerBufferExecCompleted(battler);
     }
 }
@@ -1450,14 +1450,14 @@ static void SwitchIn_TryShinyAnimShowHealthbox(u32 battler)
     // Start shiny animation if applicable
     if (!gBattleSpritesDataPtr->healthBoxesData[battler].triedShinyMonAnim
         && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
-        TryShinyAnimation(battler, &gPlayerParty[gBattlerPartyIndexes[battler]]);
+        TryShinyAnimation(battler, GetPartyBattlerData(battler));
 
     // Wait for ball anim, then show healthbox
     if (gSprites[gBattleControllerData[battler]].callback == SpriteCallbackDummy
      && !gBattleSpritesDataPtr->healthBoxesData[battler].ballAnimActive)
     {
         DestroySprite(&gSprites[gBattleControllerData[battler]]);
-        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], &gPlayerParty[gBattlerPartyIndexes[battler]], HEALTHBOX_ALL);
+        UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], GetPartyBattlerData(battler), HEALTHBOX_ALL);
         StartHealthboxSlideIn(battler);
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[battler]);
         gBattlerControllerFuncs[battler] = SwitchIn_CleanShinyAnimShowSubstitute;
@@ -1764,134 +1764,6 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
     }
 }
 
-enum {
-    EFFECTIVENESS_CANNOT_VIEW,
-    EFFECTIVENESS_NO_EFFECT,
-    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
-    EFFECTIVENESS_NORMAL,
-    EFFECTIVENESS_SUPER_EFFECTIVE,
-};
-
-static bool32 ShouldShowTypeEffectiveness(u32 targetId)
-{
-    if (gSaveBlock2Ptr->optionsEffectiveness == 1)
-        return FALSE;
-
-    if ((GetSearchLevel(gBattleMons[targetId].species) <= 1) && USE_DEXNAV_SEARCH_LEVELS)
-        return FALSE;
-
-    return TRUE;
-}
-
-static u32 CheckTypeEffectiveness(u32 targetId, u32 battler)
-{
-    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-    u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u32 moveType = CheckDynamicMoveType(mon, move, battler);
-    uq4_12_t modifier = CalcTypeEffectivenessMultiplier(move, moveType, battler, targetId, GetBattlerAbility(targetId), FALSE);
-
-    if (!ShouldShowTypeEffectiveness(targetId))
-        return EFFECTIVENESS_CANNOT_VIEW;
-
-    if (modifier == UQ_4_12(0.0))
-    {
-        return EFFECTIVENESS_NO_EFFECT; // No effect
-    }
-    else if (modifier <= UQ_4_12(0.5))
-    {
-        return EFFECTIVENESS_NOT_VERY_EFFECTIVE; // Not very effective
-    }
-    else if (modifier >= UQ_4_12(2.0))
-    {
-        return EFFECTIVENESS_SUPER_EFFECTIVE; // Super effective
-    }
-    else
-    {
-        return EFFECTIVENESS_NORMAL; // Normal effectiveness
-    }
-}
-
-static u32 CheckTargetTypeEffectiveness(u32 battler)
-{
-    u32 battlerFoe = BATTLE_OPPOSITE(GetBattlerPosition(battler));
-    u32 foeEffectiveness = CheckTypeEffectiveness(battlerFoe, battler);
-    
-    if (IsDoubleBattle())
-    {
-        u32 partnerFoe = BATTLE_PARTNER(battlerFoe);
-        u32 partnerFoeEffectiveness = CheckTypeEffectiveness(partnerFoe, battler);
-        if (!IsBattlerAlive(battlerFoe))
-            return partnerFoeEffectiveness;
-        if (IsBattlerAlive(battlerFoe) && IsBattlerAlive(partnerFoe)
-         && partnerFoeEffectiveness > foeEffectiveness)
-        {
-            return partnerFoeEffectiveness;
-        }
-    }
-    return foeEffectiveness; // fallthrough for any other circumstance
-}
-
-static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler)
-{
-    static const u8 noIcon[] =  _("");
-    static const u8 effectiveIcon[] =  _("{CIRCLE_HOLLOW}");
-    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}");
-    static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}");
-    static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
-    static const u8 teraIcon[] =  _("{UP_ARROW}");
-    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-    u32 moveType = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
-    u8 *txtPtr;
-
-    if (GetActiveGimmick(battler) == GIMMICK_TERA || IsGimmickSelected(battler, GIMMICK_TERA))
-    {
-        u32 teraType = GetBattlerTeraType(battler);
-        if (teraType == TYPE_STELLAR && IsTypeStellarBoosted(battler, moveType))
-        {
-            txtPtr = StringCopy(gDisplayedStringBattle, teraIcon);
-        }
-        else if (moveType == teraType)
-        {
-            txtPtr = StringCopy(gDisplayedStringBattle, teraIcon);
-        }
-        else
-        {
-            txtPtr = StringCopy(gDisplayedStringBattle, noIcon);
-        }
-    }
-    else
-    {
-        txtPtr = StringCopy(gDisplayedStringBattle, noIcon);
-    }
-
-    if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]))
-    {
-        switch (foeEffectiveness)
-        {
-        case EFFECTIVENESS_SUPER_EFFECTIVE:
-            StringCopy(txtPtr, superEffectiveIcon);
-            break;
-        case EFFECTIVENESS_NOT_VERY_EFFECTIVE:
-            StringCopy(txtPtr, notVeryEffectiveIcon);
-            break;
-        case EFFECTIVENESS_NO_EFFECT:
-            StringCopy(txtPtr, immuneIcon);
-            break;
-        case EFFECTIVENESS_NORMAL:
-            StringCopy(txtPtr, effectiveIcon);
-            break;
-        default:
-        case EFFECTIVENESS_CANNOT_VIEW:
-            StringCopy(txtPtr, noIcon);
-            break;
-        }
-    }
-
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
-}
-
 static void MoveSelectionDisplayPpNumber(u32 battler)
 {
     u8 *txtPtr;
@@ -1945,7 +1817,7 @@ static void MoveSelectionDisplayMoveType(u32 battler)
     }
     else if (P_SHOW_DYNAMIC_TYPES) // Non-vanilla changes to battle UI showing dynamic types
     {
-        struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+        struct Pokemon *mon = GetPartyBattlerData(battler);
         type = CheckDynamicMoveType(mon, move, battler);
     }
     end = StringCopy(txtPtr, gTypesInfo[type].name);
@@ -2069,7 +1941,7 @@ static void PrintLinkStandbyMsg(void)
 
 static void PlayerHandleLoadMonSprite(u32 battler)
 {
-    BattleLoadMonSpriteGfx(&gPlayerParty[gBattlerPartyIndexes[battler]], battler);
+    BattleLoadMonSpriteGfx(GetPartyBattlerData(battler), battler);
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
     gBattlerControllerFuncs[battler] = CompleteOnBattlerSpritePosX_0;
 }
@@ -2459,9 +2331,9 @@ void PlayerHandleExpUpdate(u32 battler)
 
 static void PlayerHandleStatusXor(u32 battler)
 {
-    u32 val = GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_STATUS) ^ gBattleResources->bufferA[battler][1];
+    u32 val = GetMonData(GetPartyBattlerData(battler), MON_DATA_STATUS) ^ gBattleResources->bufferA[battler][1];
 
-    SetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_STATUS, &val);
+    SetMonData(GetPartyBattlerData(battler), MON_DATA_STATUS, &val);
     PlayerBufferExecCompleted(battler);
 }
 
@@ -2606,4 +2478,123 @@ static void PlayerHandleBattleDebug(u32 battler)
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
     SetMainCallback2(CB2_BattleDebugMenu);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+}
+
+// Order based numerically, with EFFECTIVENESS_CANNOT_VIEW at 0 to always prioritize any other effectiveness during comparison
+enum
+{
+    EFFECTIVENESS_CANNOT_VIEW,
+    EFFECTIVENESS_NO_EFFECT,
+    EFFECTIVENESS_NOT_VERY_EFFECTIVE,
+    EFFECTIVENESS_NORMAL,
+    EFFECTIVENESS_SUPER_EFFECTIVE,
+};
+
+static bool32 ShouldShowTypeEffectiveness(u32 targetId)
+{
+    if (gSaveBlock2Ptr->optionsEffectiveness == 1)
+        return FALSE;
+
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[targetId].species), FLAG_GET_SEEN))
+        return FALSE;
+
+    return TRUE;
+}
+
+static u32 CheckTypeEffectiveness(u32 targetId, u32 battler)
+{
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    struct Pokemon *mon = GetPartyBattlerData(battler);
+    u32 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    u32 moveType = CheckDynamicMoveType(mon, move, battler);
+    uq4_12_t modifier = CalcTypeEffectivenessMultiplier(move, moveType, battler, targetId, GetBattlerAbility(targetId), FALSE);
+
+    if (!ShouldShowTypeEffectiveness(targetId))
+        return EFFECTIVENESS_CANNOT_VIEW;
+
+    if (modifier == UQ_4_12(0.0))
+        return EFFECTIVENESS_NO_EFFECT; // No effect
+    else if (modifier <= UQ_4_12(0.5))
+        return EFFECTIVENESS_NOT_VERY_EFFECTIVE; // Not very effective
+    else if (modifier >= UQ_4_12(2.0))
+        return EFFECTIVENESS_SUPER_EFFECTIVE; // Super effective
+    return EFFECTIVENESS_NORMAL; // Normal effectiveness
+}
+
+static u32 CheckTargetTypeEffectiveness(u32 battler)
+{
+    u32 battlerFoe = BATTLE_OPPOSITE(GetBattlerPosition(battler));
+    u32 foeEffectiveness = CheckTypeEffectiveness(battlerFoe, battler);
+    
+    if (IsDoubleBattle())
+    {
+        u32 partnerFoe = BATTLE_PARTNER(battlerFoe);
+        u32 partnerFoeEffectiveness = CheckTypeEffectiveness(partnerFoe, battler);
+        if (!IsBattlerAlive(battlerFoe))
+            return partnerFoeEffectiveness;
+        if (IsBattlerAlive(battlerFoe) && IsBattlerAlive(partnerFoe)
+         && partnerFoeEffectiveness > foeEffectiveness)
+            return partnerFoeEffectiveness;
+    }
+    return foeEffectiveness; // fallthrough for any other circumstance
+}
+
+static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 battler)
+{
+    static const u8 noIcon[] =  _("");
+    static const u8 effectiveIcon[] =  _("{CIRCLE_HOLLOW}");
+    static const u8 superEffectiveIcon[] =  _("{CIRCLE_DOT}");
+    static const u8 notVeryEffectiveIcon[] =  _("{TRIANGLE}");
+    static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
+    static const u8 teraIcon[] =  _("{UP_ARROW}");
+    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
+    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
+    u32 moveType = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    u8 *txtPtr;
+
+    if (GetActiveGimmick(battler) == GIMMICK_TERA || IsGimmickSelected(battler, GIMMICK_TERA))
+    {
+        u32 teraType = GetBattlerTeraType(battler);
+        if (teraType == TYPE_STELLAR && IsTypeStellarBoosted(battler, moveType))
+        {
+            txtPtr = StringCopy(gDisplayedStringBattle, teraIcon);
+        }
+        else if (moveType == teraType)
+        {
+            txtPtr = StringCopy(gDisplayedStringBattle, teraIcon);
+        }
+        else
+        {
+            txtPtr = StringCopy(gDisplayedStringBattle, noIcon);
+        }
+    }
+    else
+    {
+        txtPtr = StringCopy(gDisplayedStringBattle, noIcon);
+    }
+
+    if (!IsBattleMoveStatus(moveInfo->moves[gMoveSelectionCursor[battler]]))
+    {
+        switch (foeEffectiveness)
+        {
+        case EFFECTIVENESS_SUPER_EFFECTIVE:
+            StringCopy(txtPtr, superEffectiveIcon);
+            break;
+        case EFFECTIVENESS_NOT_VERY_EFFECTIVE:
+            StringCopy(txtPtr, notVeryEffectiveIcon);
+            break;
+        case EFFECTIVENESS_NO_EFFECT:
+            StringCopy(txtPtr, immuneIcon);
+            break;
+        case EFFECTIVENESS_NORMAL:
+            StringCopy(txtPtr, effectiveIcon);
+            break;
+        default:
+        case EFFECTIVENESS_CANNOT_VIEW:
+            StringCopy(txtPtr, noIcon);
+            break;
+        }
+    }
+
+    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
 }

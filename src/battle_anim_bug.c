@@ -295,7 +295,7 @@ static void AnimStringWrap(struct Sprite *sprite)
     ANIM_CMD_ARGS(x, y);
 
     SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);
-    if (GetBattlerSide(gBattleAnimAttacker))
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
         sprite->x -= cmd->x;
     else
         sprite->x += cmd->x;
@@ -383,7 +383,7 @@ void AnimTranslateStinger(struct Sprite *sprite)
     }
     else
     {
-        if (GetBattlerSide(gBattleAnimAttacker))
+        if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
         {
             cmd->targetX = -cmd->targetX;
             cmd->intialY = -cmd->intialY;
@@ -424,7 +424,7 @@ void AnimMissileArc(struct Sprite *sprite)
 
     InitSpritePosToAnimAttacker(sprite, TRUE);
 
-    if (GetBattlerSide(gBattleAnimAttacker))
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
         cmd->targetX = -cmd->targetX;
 
     sprite->data[0] = cmd->duration;
