@@ -9559,8 +9559,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .formChangeTable = sGenesectFormChangeTable,                                \
         .isMythical = TRUE,                                                         \
         .isFrontierBanned = TRUE,                                                   \
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT, \
-        .randomizerMode = rzMode,                                       \
+        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                               \
+        .randomizerMode = rzMode,                                                   \
     }
 
     [SPECIES_GENESECT]       = GENESECT_SPECIES_INFO(Genesect,           MON_RANDOMIZER_NORMAL ),

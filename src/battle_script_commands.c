@@ -7677,7 +7677,7 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[battler].types[0] = gSpeciesInfo[gBattleMons[battler].species].types[0];
     gBattleMons[battler].types[1] = gSpeciesInfo[gBattleMons[battler].species].types[1];
     gBattleMons[battler].types[2] = TYPE_NONE;
-    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
+    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum, gBattleMons[battler].cantRandomizeAbility);
     #if TESTING
     if (gTestRunnerEnabled)
     {
@@ -11087,20 +11087,13 @@ static void Cmd_various(void)
     case VARIOUS_HANDLE_TRAINER_SLIDE_MSG:
     {
         VARIOUS_ARGS(u8 case_);
-        if (cmd->case_ == 0)
-        {
-            // Save sprite IDs, because trainer slide in will overwrite gBattlerSpriteIds variable.
-            gBattleStruct->storeBattlerSpriteId = (gBattlerSpriteIds[battler] & 0xFF) | (gBattlerSpriteIds[BATTLE_PARTNER(battler)] << 8);
-        }
-        else if (cmd->case_ == 1)
+        if (cmd->case_ == PRINT_SLIDE_MESSAGE)
         {
             BtlController_EmitPrintString(battler, BUFFER_A, STRINGID_TRAINERSLIDE);
             MarkBattlerForControllerExec(battler);
         }
-        else
+        else if (cmd->case_ == RESTORE_BATTLER_SLIDE_CONTROL)
         {
-            gBattlerSpriteIds[BATTLE_PARTNER(battler)] = gBattleStruct->storeBattlerSpriteId >> 8;
-            gBattlerSpriteIds[battler] = gBattleStruct->storeBattlerSpriteId & 0xFF;
             if (IsBattlerAlive(battler))
             {
                 SetBattlerShadowSpriteCallback(battler, gBattleMons[battler].species);
@@ -13991,6 +13984,7 @@ static void Cmd_healpartystatus(void)
     {
         u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
         u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
+        u8 cantRandomizeAbility = GetMonData(&party[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
 
         if (species != SPECIES_NONE && species != SPECIES_EGG)
         {
@@ -14009,7 +14003,7 @@ static void Cmd_healpartystatus(void)
                 ability = GetBattlerAbility(partner);
             else
             {
-                ability = GetAbilityBySpecies(species, abilityNum);
+                ability = GetAbilityBySpecies(species, abilityNum, cantRandomizeAbility);
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
@@ -17261,7 +17255,7 @@ void BS_TryPokeFlute(void)
     NATIVE_ARGS(const u8 *jumpInstr);
     u32 monToCheck = 0;
     u32 shouldJump = 0;
-    u32 status, species, abilityNum, battler, i;
+    u32 status, species, abilityNum, battler, i, cantRandomize;
 
     for (i = 0; i < gBattlersCount; i++)
     {
@@ -17276,10 +17270,11 @@ void BS_TryPokeFlute(void)
         species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
         abilityNum = GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&gPlayerParty[i], MON_DATA_STATUS);
+        cantRandomize = GetMonData(&gPlayerParty[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
         if (species != SPECIES_NONE
          && species != SPECIES_EGG
          && status & AILMENT_FNT
-         && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+         && GetAbilityBySpecies(species, abilityNum, cantRandomize) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)
@@ -17296,11 +17291,12 @@ void BS_TryPokeFlute(void)
         species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES_OR_EGG);
         abilityNum = GetMonData(&gEnemyParty[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&gEnemyParty[i], MON_DATA_STATUS);
+        cantRandomize = GetMonData(&gEnemyParty[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
 
         if (species != SPECIES_NONE
          && species != SPECIES_EGG
          && status & AILMENT_FNT
-         && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+         && GetAbilityBySpecies(species, abilityNum, cantRandomize) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)
@@ -18238,7 +18234,7 @@ void BS_JumpIfCommanderActive(void)
 static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
 {
     s32 i;
-    u8 battler;
+    u8 battler, cantRandomizeAbility;
     u32 monToCheck, status;
     u16 species, abilityNum;
     monToCheck = 0;
@@ -18247,10 +18243,11 @@ static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
         species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
         abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&party[i], MON_DATA_STATUS);
+        cantRandomizeAbility = GetMonData(&party[i], MON_DATA_CANT_RANDOMIZE_ABILITY);
         if (species != SPECIES_NONE
             && species != SPECIES_EGG
             && status & AILMENT_FNT
-            && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            && GetAbilityBySpecies(species, abilityNum, cantRandomizeAbility) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)

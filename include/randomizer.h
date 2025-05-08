@@ -14,6 +14,11 @@
 //#include "constants/moves.h"
 
 #define RANDOMIZER_STREAM 17
+#define STARTER_AND_GIFT_MON_COUNT 11 // Raise this number accordingly to [gStarterAndGiftMonTable]
+#define EGG_MON_COUNT 2 // Raise this number accordingly to [gEggMonTable]
+
+extern const u16 gStarterAndGiftMonTable[];
+extern const u16 gEggMonTable[];
 
 enum RandomizerFeature
 {
@@ -31,8 +36,12 @@ enum RandomizerFeature
     RANDOMIZE_LEARNSET,
     // Randomization of fixed encounters.
     RANDOMIZE_FIXED_MON,
-    // Randomization of starter Pokémon species.
-    RANDOMIZE_STARTERS,
+    // Randomization of starter and gift Pokémon species.
+    RANDOMIZE_STARTER_AND_GIFT_MON,
+    // Randomization of egg Pokémon species.
+    RANDOMIZE_EGG_MON,
+    // Randomization of Pokémon abilities.
+    RANDOMIZE_ABILITIES,
 };
 
 enum RandomizerReason
@@ -44,7 +53,9 @@ enum RandomizerReason
     RANDOMIZER_REASON_SPECIES_TYPE,
     RANDOMIZER_REASON_LEARNSET,
     RANDOMIZER_REASON_FIELD_ITEM,
-    RANDOMIZER_REASON_STARTER,
+    RANDOMIZER_REASON_STARTER_AND_GIFT_MON,
+    RANDOMIZER_REASON_EGG,
+    RANDOMIZER_REASON_ABILITIES,
 };
 
 enum RandomizerOption {
@@ -109,8 +120,14 @@ u16 RandomizeTrainerMon(u16 trainerId, u8 slot, u8 totalMons, u16 species);
 
 u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId);
 
-// Given a starter slot and the list of original starters, returns the starter in that slot.
-u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters);
+// Given a starter/gift slot and the list of original starters/gifts, returns the random mon in that slot.
+u16 RandomizeStarterAndGiftMon(u16 originalSlot, const u16* originalStarterAndGiftMons);
+
+// Given a egg slot and the list of original egg mons, returns the random egg mon in that slot.
+u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons);
+
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {

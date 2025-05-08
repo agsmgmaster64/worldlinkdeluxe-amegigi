@@ -89,6 +89,7 @@ enum {
     MON_DATA_DYNAMAX_LEVEL,
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
+    MON_DATA_CANT_RANDOMIZE_ABILITY,
 };
 
 enum {
@@ -153,7 +154,8 @@ struct BoxPokemon
     /*0x3C*/ u8 spAttackEV;
     /*0x3D*/ u8 spDefenseEV;
     /*0x3E*/ u8 spDefenseIV:5;
-             u8 dynamaxLevel:3;
+             u8 dynamaxLevel:2;
+             u8 cantRandomizeAbility:1;
     /*0x3F*/ u8 nickname13;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
 };
 
@@ -234,6 +236,7 @@ struct BattlePokemon
     /*0x59*/ u8 metLevel;
     /*0x5A*/ u8 language;
     /*0x5B*/ bool8 isShiny;
+    /*0x5B*/ u8 cantRandomizeAbility;
 };
 
 struct EvolutionParam
@@ -601,7 +604,7 @@ u8 CalculateEnemyPartyCount(void);
 u8 CalculateEnemyPartyCountInSide(u32 battler);
 u8 GetMonsStateToDoubles(void);
 u8 GetMonsStateToDoubles_2(void);
-u16 GetAbilityBySpecies(u16 species, u8 abilityNum);
+u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility);
 u16 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord);
 u8 GetSecretBaseTrainerPicIndex(void);

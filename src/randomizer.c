@@ -10,6 +10,21 @@
 #include "script.h"
 #include "data.h"
 #include "data/randomizer/special_form_tables.h"
+#include "constants/abilities.h"
+#include "data/randomizer/ability_whitelist.h"
+#include "constants/abilities.h"
+
+// Add the mons you wish to be randomized when given as starter/gift mon to this list
+const u16 gStarterAndGiftMonTable[STARTER_AND_GIFT_MON_COUNT] =
+{
+    SPECIES_CHIBI_REIMU,
+};
+
+// Add the mons you wish to be randomized when given as egg mon to this list
+const u16 gEggMonTable[EGG_MON_COUNT] =
+{
+    SPECIES_PORYGON, 
+};
 
 bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 {
@@ -39,11 +54,17 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #else
                 return gSaveBlock1Ptr->tx_Random_Static;
             #endif
-        case RANDOMIZE_STARTERS:
-            #ifdef FORCE_RANDOMIZE_STARTERS
-                return FORCE_RANDOMIZE_STARTERS;
+        case RANDOMIZE_STARTER_AND_GIFT_MON:
+            #ifdef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
+                return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
             #else
                 return gSaveBlock1Ptr->tx_Random_Starter;
+            #endif
+        case RANDOMIZE_ABILITIES:
+            #ifdef FORCE_RANDOMIZE_ABILITIES
+                return FORCE_RANDOMIZE_ABILITIES;
+            #else
+                return gSaveBlock1Ptr->tx_Random_Abilities;
             #endif
         default:
             return FALSE;
@@ -419,11 +440,12 @@ static void FillSpeciesGroupsBST(struct SpeciesTable* entries)
         entries->groupData[i] = group;
     }
 }
+
 /*
 static void FillSpeciesGroupsLegendary(struct SpeciesTable* entries)
 {
     u16 i;
-    for(i = 0; i <= RANDOMIZER_SPECIES_COUNT; i++)
+    for(i = 0; i < RANDOMIZER_SPECIES_COUNT; i++)
     {
         entries->groupIndexToSpecies[i] = i;
         if (!IsSpeciesPermitted(i))
@@ -433,6 +455,7 @@ static void FillSpeciesGroupsLegendary(struct SpeciesTable* entries)
     }
 }
 */
+
 static void MarkEvolutions(struct SpeciesTable *entries, u16 species, u16 stage)
 {
     const struct Evolution *evos;
@@ -832,34 +855,98 @@ u16 RandomizeFixedEncounterMon(u16 species, u8 mapNum, u8 mapGroup, u8 localId)
     return species;
 }
 
-EWRAM_DATA static u32 sLastStarterRandomizerSeed = 0;
-EWRAM_DATA static u16 sRandomizedStarters[3] = {0};
+EWRAM_DATA static u32 sLastMonRandomizerSeed = 0;
+EWRAM_DATA static u16 sRandomizedMons[STARTER_AND_GIFT_MON_COUNT] = {0};
 
-u16 RandomizeStarter(u16 starterSlot, const u16* originalStarters)
+u16 RandomizeStarterAndGiftMon(u16 originalSlot, const u16* originalStarterAndGiftMons)
 {
-    if (RandomizerFeatureEnabled(RANDOMIZE_STARTERS))
+    if (RandomizerFeatureEnabled(RANDOMIZE_STARTER_AND_GIFT_MON))
     {
-        if (sLastStarterRandomizerSeed != GetRandomizerSeed() || sRandomizedStarters[0] == SPECIES_NONE)
+        if (sLastMonRandomizerSeed != GetRandomizerSeed() || sRandomizedMons[0] == SPECIES_NONE)
         {
             // The randomized starter table is stale or uninitialized. Fix that!
 
             // Hash the starter list so that which starters there are influences the seed.
             u32 starterHash = 5381;
             u32 i;
-            for (i = 0; i < 3; i++)
+            for (i = 0; i < STARTER_AND_GIFT_MON_COUNT; i++)
             {
-                u16 originalStarter = originalStarters[i];
+                u16 originalStarter = originalStarterAndGiftMons[i];
                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)originalStarter;
                 starterHash = ((starterHash << 5) + starterHash) ^ (u8)(originalStarter >> 8);
             }
 
-            GetUniqueMonList(RANDOMIZER_REASON_STARTER, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
-                starterHash, 0, 3, originalStarters, sRandomizedStarters);
+            GetUniqueMonList(RANDOMIZER_REASON_STARTER_AND_GIFT_MON, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
+                starterHash, 0, STARTER_AND_GIFT_MON_COUNT, originalStarterAndGiftMons, sRandomizedMons);
         }
-        return sRandomizedStarters[starterSlot];
+        return sRandomizedMons[originalSlot];
     }
 
-    return originalStarters[starterSlot];
+    return originalStarterAndGiftMons[originalSlot];
+}
+
+EWRAM_DATA static u32 sLastEggMonRandomizerSeed = 0;
+EWRAM_DATA static u16 sRandomizedEggMons[EGG_MON_COUNT] = {0};
+
+u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_EGG_MON))
+    {
+        if (sLastEggMonRandomizerSeed != GetRandomizerSeed() || sRandomizedEggMons[0] == SPECIES_NONE)
+        {
+            // The randomized egg table is stale or uninitialized. Fix that!
+
+            // Hash the egg list so that which eggs there are influences the seed.
+            u32 eggHash = 5381;
+            u32 i;
+            for (i = 0; i < EGG_MON_COUNT; i++)
+            {
+                u16 originalEgg = originalEggMons[i];
+                eggHash = ((eggHash << 5) + eggHash) ^ (u8)originalEgg;
+                eggHash = ((eggHash << 5) + eggHash) ^ (u8)(originalEgg >> 8);
+            }
+
+            GetUniqueMonList(RANDOMIZER_REASON_EGG, GetRandomizerOption(RANDOMIZER_OPTION_SPECIES_MODE),
+                eggHash, 0, EGG_MON_COUNT, originalEggMons, sRandomizedEggMons);
+        }
+        return sRandomizedEggMons[originalSlot];
+    }
+
+    return originalEggMons[originalSlot];
+}
+
+static inline bool32 IsAbilityIllegal(u16 ability)
+{
+    if (ability == ABILITY_NONE || ability == ABILITY_PLAY_GHOST)
+        return TRUE;
+    return FALSE;
+}
+
+// Given a species and an abilityNum, returns a replacement for that ability.
+u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_ABILITIES) && originalAbility != ABILITY_NONE)
+    {  
+        struct Sfc32State state;
+        u16 result;
+        u32 seed;
+
+        // Seed the generator using the species and the abilityNum 
+        seed = ((u32)species) << 8;
+        seed |= abilityNum;
+
+        state = RandomizerRandSeed(RANDOMIZER_REASON_ABILITIES, seed, species);
+
+        // Randomize abilities
+        do
+        {
+            result = sRandomizerAbilityWhitelist[RandomizerNextRange(&state, ABILITY_WHITELIST_SIZE)];
+        } while(IsAbilityIllegal(result));
+
+        return result;
+    }
+
+    return originalAbility;
 }
 
 #endif // RANDOMIZER_AVAILABLE

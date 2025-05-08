@@ -7167,6 +7167,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
+        .formSpeciesIdTable = sPoltchageistFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
     },
     [SPECIES_POLTCHAGEIST_ARTISAN] =
@@ -7231,6 +7232,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sPoltchageistLevelUpLearnset,
         .teachableLearnset = sPoltchageistTeachableLearnset,
+        .formSpeciesIdTable = sPoltchageistFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
@@ -7296,6 +7298,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sSinistchaLevelUpLearnset,
         .teachableLearnset = sSinistchaTeachableLearnset,
+        .formSpeciesIdTable = sSinistchaFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_SPECIAL_FORM,
     },
     [SPECIES_SINISTCHA_MASTERPIECE] =
@@ -7360,6 +7363,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sSinistchaLevelUpLearnset,
         .teachableLearnset = sSinistchaTeachableLearnset,
+        .formSpeciesIdTable = sSinistchaFormSpeciesIdTable,
         .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_POLTCHAGEIST
@@ -7629,7 +7633,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .isLegendary = TRUE,                                                                                            \
         .isTeraForm = isTeraform,                                                                                       \
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,                                                                   \
-        .randomizerMode = (!(isTeraform) && ((type) == TYPE_NATURE)) ? MON_RANDOMIZER_NORMAL : MON_RANDOMIZER_INVALID, \
+        .randomizerMode = (!(isTeraform) && ((type) == TYPE_NATURE))                                                     \
+        ? MON_RANDOMIZER_NORMAL : MON_RANDOMIZER_INVALID,                                                               \
     }
 
     [SPECIES_OGERPON_TEAL]             = OGERPON_SPECIES_INFO(Teal,        Teal,            TYPE_NATURE, ABILITY_DEFIANT,                        SOURCE_OTHER, 1, 7, 1, FALSE),

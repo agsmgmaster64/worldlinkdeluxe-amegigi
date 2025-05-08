@@ -355,7 +355,11 @@ u16 GetStarterPokemon(u16 chosenStarterId)
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
 
-    species = sStarterMon[chosenStarterId];
+    #if RANDOMIZER_AVAILABLE == TRUE
+        species = RandomizeStarterAndGiftMon(chosenStarterId, sStarterMon);
+    #else
+        species = sStarterMon[chosenStarterId];
+    #endif
 
     return species;
 }
