@@ -52,7 +52,7 @@ const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES] =
     {
         .name = _("None"),
         .generic = _("a move"),
-        .palette = TYPE_ICON_PAL_1, // Uses TYPE_MYSTERY's icon
+        .palette = TYPE_ICON_PAL_3, // Uses TYPE_MYSTERY's icon
         .teraTypeRGBValue = RGB_WHITE,
         .damageCategory = DAMAGE_CATEGORY_PHYSICAL,
         .paletteTMHM = gItemIconPalette_NormalTMHM,

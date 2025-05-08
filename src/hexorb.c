@@ -176,7 +176,7 @@ void Hexorb_ConstructTypeFailureMessage(struct Pokemon *mon, u32 status, enum He
 
 void Hexorb_ConstructAbilityFailureMessage(struct Pokemon* mon, u32 status)
 {
-    u32 ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ABILITY_NUM));
+    u32 ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ABILITY_NUM), GetMonData(mon, MON_DATA_CANT_RANDOMIZE_ABILITY));
 
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, gAbilitiesInfo[ability].name);
