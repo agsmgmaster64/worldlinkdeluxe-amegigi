@@ -561,43 +561,13 @@ gSongTable::
 	song mus_rg_slow_pallet, 0, 0
 	song mus_rg_teachy_tv_menu, 0, 0
 	song mus_wld_vs_wild, 0, 0
-	song mus_wld_vs_trainer, 0, 0
-	song mus_wld_vs_gym_leader, 0, 0
-	song mus_wld_vs_champion, 0, 0
 	song mus_wld_surf, 0, 0
-	song mus_wld_victory_trainer, 0, 0
-	song mus_wld_victory_wild, 0, 0
-	song mus_wld_caught_intro, 2, 2
-	song mus_wld_caught, 0, 0
-	song mus_zgs_vs_wild, 0, 0
-	song mus_zgs_vs_trainer, 0, 0
-	song mus_zgs_vs_gym_leader, 0, 0
-	song mus_zgs_vs_champion, 0, 0
-	song mus_zgs_vs_dream_wild, 0, 0
-	song mus_zgs_vs_dream_trainer, 0, 0
-	song mus_zgs_vs_sakuya, 0, 0
-	song mus_zgs_surf, 0, 0
-	song mus_zgs_eiki_island, 0, 0
-	song mus_zgs_poke_center, 0, 0
-	song mus_zgs_dark_blow_hole, 0, 0
-	song mus_zgs_agtlp, 0, 0
 	song mus_dd_skuller_drill_missile, 0, 0
-	song mus_zgs_encounter_fairy, 0, 0
-	song mus_zgs_encounter_tengu, 0, 0
-	song mus_zgs_encounter_gym_leader, 0, 0
 	song mus_wld_evolution_intro, 2, 2
 	song mus_wld_evolution, 0, 0
 	song mus_wld_evolved, 2, 2
-	song mus_wld_gym, 0, 0
 	song mus_wld_heal, 2, 2
 	song mus_wld_move_deleted, 2, 2
-	song mus_wld_victory_gym_leader, 0, 0
-	song mus_zgs_end_of_spring, 0, 0
-	song mus_zgs_paradise_deep_mountain, 0, 0
-	song mus_zgs_poke_flute, 2, 2
-	song mus_zgs_vs_byakuren, 0, 0
-	song mus_zgs_vs_reimu, 0, 0
-	song mus_zgs_cycling, 0, 0
 	song mus_tppe_vs_wild, 0, 0
 	song mus_hgss_casino, 0, 0
 	song mus_casino_plus_1, 0, 0
@@ -609,8 +579,84 @@ gSongTable::
 	song mus_casino_plus_7, 0, 0
 	song mus_casino_plus_8, 0, 0
 	song mus_casino_plus_9, 0, 0
+	song mus_zgs_follow_me, 0, 0
+	song mus_zgs_game_corner, 0, 0
+	song mus_zgs_rocket_hideout, 0, 0
+	song mus_wld_gym, 0, 0
+	song mus_zgs_jigglypuff, 2, 2
+	song mus_zgs_intro_fight, 0, 0
+	song mus_zgs_title, 0, 0
+	song mus_zgs_cinnabar, 0, 0
+	song mus_zgs_lavender, 0, 0
+	song mus_zgs_cycling, 0, 0
+	song mus_zgs_encounter_rocket, 0, 0
+	song mus_zgs_encounter_girl, 0, 0
+	song mus_zgs_encounter_boy, 0, 0
+	song mus_zgs_hall_of_fame, 0, 0
+	song mus_zgs_viridian_forest, 0, 0
+	song mus_zgs_mt_moon, 0, 0
+	song mus_zgs_poke_mansion, 0, 0
+	song mus_zgs_credits, 0, 0
+	song mus_zgs_route1, 0, 0
+	song mus_zgs_route24, 0, 0
+	song mus_zgs_route3, 0, 0
+	song mus_zgs_route11, 0, 0
+	song mus_zgs_victory_road, 0, 0
+	song mus_zgs_vs_gym_leader, 0, 0
+	song mus_zgs_vs_trainer, 0, 0
+	song mus_zgs_vs_wild, 0, 0
+	song mus_zgs_vs_champion, 0, 0
+	song mus_zgs_pallet, 0, 0
+	song mus_zgs_oak_lab, 0, 0
+	song mus_zgs_oak, 0, 0
+	song mus_zgs_poke_center, 0, 0
+	song mus_zgs_ss_anne, 0, 0
+	song mus_zgs_surf, 0, 0
+	song mus_zgs_poke_tower, 0, 0
+	song mus_zgs_silph, 0, 0
+	song mus_zgs_fuschia, 0, 0
+	song mus_zgs_celadon, 0, 0
+	song mus_wld_victory_trainer, 0, 0
+	song mus_wld_victory_wild, 0, 0
+	song mus_wld_victory_gym_leader, 0, 0
+	song mus_zgs_vermillion, 0, 0
+	song mus_zgs_pewter, 0, 0
+	song mus_zgs_encounter_rival, 0, 0
+	song mus_wld_caught_intro, 2, 2
+	song mus_wld_caught, 0, 0
+	song mus_zgs_city_of_flower, 0, 0
+	song mus_zgs_end_of_daylight, 0, 0
+	song mus_zgs_bell_of_avici, 0, 0
+	song mus_zgs_sevii_cave, 0, 0
+	song mus_zgs_sevii_route, 0, 0
+	song mus_zgs_sevii_dungeon, 0, 0
+	song mus_zgs_sevii_123, 0, 0
+	song mus_zgs_sevii_45, 0, 0
+	song mus_zgs_sevii_67, 0, 0
+	song mus_zgs_poke_flute, 2, 2
+	song mus_zgs_vs_mima, 0, 0
+	song mus_zgs_vs_sariel, 0, 0
+	song mus_zgs_vs_legend, 0, 0
+	song mus_zgs_encounter_gym_leader, 0, 0
+	song mus_zgs_encounter_deoxys, 0, 0
+	song mus_zgs_slow_pallet, 0, 0
+	song mus_zgs_paradise_deep_mountain, 0, 0
 	song mus_zgs_bamboo_forest, 0, 0
+	song mus_zgs_eiki_island, 0, 0
+	song mus_wld_vs_gym_leader, 0, 0
+	song mus_zgs_agtlp, 0, 0
+	song mus_zgs_encounter_fairy, 0, 0
+	song mus_zgs_encounter_tengu, 0, 0
+	song mus_wld_vs_trainer, 0, 0
 	song mus_zgs_moriya_shrine, 0, 0
+	song mus_zgs_dark_blow_hole, 0, 0
+	song mus_zgs_end_of_spring, 0, 0
+	song mus_zgs_vs_byakuren, 0, 0
+	song mus_zgs_vs_sakuya, 0, 0
+	song mus_wld_vs_champion, 0, 0
+	song mus_zgs_vs_reimu, 0, 0
+	song mus_zgs_vs_dream_wild, 0, 0
+	song mus_zgs_vs_dream_trainer, 0, 0
 
 	.align 2
 dummy_song_header:
