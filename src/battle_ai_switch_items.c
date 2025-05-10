@@ -768,6 +768,11 @@ static bool32 ShouldSwitchIfAbilityBenefit(u32 battler)
                 break;
 
             return FALSE;
+        
+        case ABILITY_ZERO_TO_HERO:
+            // Want to activate Palafin-Zero at all costs
+            if (gBattleMons[battler].species == SPECIES_PALAFIN_ZERO)
+                break;
 
         default:
             return FALSE;
@@ -2319,7 +2324,7 @@ static bool32 AiExpectsToFaintPlayer(u32 battler)
     if (gAiBattleData->actionFlee || gAiBattleData->choiceWatch)
         return FALSE; // AI not planning to use move
 
-    if (GetBattlerSide(target) != GetBattlerSide(battler)
+    if (!IsBattlerAlly(target, battler)
       && CanIndexMoveFaintTarget(battler, target, gAiBattleData->chosenMoveIndex[battler], AI_ATTACKING)
       && AI_IsFaster(battler, target, GetAIChosenMove(battler)))
     {
@@ -2385,11 +2390,11 @@ static bool32 ShouldUseItem(u32 battler)
                 shouldUse = TRUE;
             break;
         case EFFECT_ITEM_HEAL_AND_CURE_STATUS:
-            healAmount = GetHPHealAmount(itemEffects[GetItemEffectParamOffset(battler, item, 4, ITEM4_HEAL_HP)], GetPartyBattlerData(battler));
+            healAmount = GetHPHealAmount(itemEffects[GetItemEffectParamOffset(battler, item, 4, ITEM4_HEAL_HP)], GetBattlerMon(battler));
             shouldUse = AI_ShouldHeal(battler, healAmount);
             break;
         case EFFECT_ITEM_RESTORE_HP:
-            healAmount = GetHPHealAmount(itemEffects[GetItemEffectParamOffset(battler, item, 4, ITEM4_HEAL_HP)], GetPartyBattlerData(battler));
+            healAmount = GetHPHealAmount(itemEffects[GetItemEffectParamOffset(battler, item, 4, ITEM4_HEAL_HP)], GetBattlerMon(battler));
             shouldUse = AI_ShouldHeal(battler, healAmount);
             break;
         case EFFECT_ITEM_CURE_STATUS:
