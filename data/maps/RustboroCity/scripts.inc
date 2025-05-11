@@ -2134,7 +2134,7 @@ RustboroCity_Text_GigiWantToBattle::
 
 RustboroCity_Text_GigiImNotGoingToLose::
 # 108 "data/maps/RustboroCity/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you should know, you may be as\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Well, you should know, you may be as\n"
 	.string "strong as me, but I know better about\l"
 	.string "what I'm doing!\p"
 	.string "Bring it on, {PLAYER}!$"

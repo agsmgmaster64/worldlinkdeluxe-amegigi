@@ -12,10 +12,14 @@ static const u16 sFieldMugshotPal_AmeliaGeneral[] = INCBIN_U16("graphics/field_m
 
 static const u32 sFieldMugshotGfx_GigiNormal[] = INCBIN_U32("graphics/field_mugshots/gigi/normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_GigiHappy[] = INCBIN_U32("graphics/field_mugshots/gigi/colon_3.4bpp.lz");
+static const u32 sFieldMugshotGfx_GigiShadow[] = INCBIN_U32("graphics/field_mugshots/gigi/shadow.4bpp.lz");
+static const u32 sFieldMugshotGfx_GigiXParantheses[] = INCBIN_U32("graphics/field_mugshots/gigi/x_parantheses.4bpp.lz");
+static const u32 sFieldMugshotGfx_GigiXD[] = INCBIN_U32("graphics/field_mugshots/gigi/x_d.4bpp.lz");
 static const u16 sFieldMugshotPal_GigiGeneral[] = INCBIN_U16("graphics/field_mugshots/gigi/general.gbapal");
 
 static const u32 sFieldMugshotGfx_KroniiNormal[] = INCBIN_U32("graphics/field_mugshots/kronii/normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_KroniiSerious[] = INCBIN_U32("graphics/field_mugshots/kronii/serious.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiShadow[] = INCBIN_U32("graphics/field_mugshots/kronii/shadow.4bpp.lz");
 static const u16 sFieldMugshotPal_KroniiGeneral[] = INCBIN_U16("graphics/field_mugshots/kronii/general.gbapal");
 
 static const u32 sFieldMugshotGfx_RenkoSerious[] = INCBIN_U32("graphics/field_mugshots/renko/serious.4bpp.lz");
@@ -73,35 +77,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         },
     },
 
-    [MUGSHOT_AMELIA] =
-    {
-        [EMOTE_NORMAL] =
-        {
-            .gfx = sFieldMugshotGfx_AmeliaNormal,
-            .pal = sFieldMugshotPal_AmeliaGeneral,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-    },
-
-    [MUGSHOT_GIGI] =
-    {
-        [EMOTE_NORMAL] =
-        {
-            .gfx = sFieldMugshotGfx_GigiNormal,
-            .pal = sFieldMugshotPal_GigiGeneral,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-        [EMOTE_HAPPY] =
-        {
-            .gfx = sFieldMugshotGfx_GigiHappy,
-            .pal = sFieldMugshotPal_GigiGeneral,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-    },
-
     [MUGSHOT_RENKO] =
     {
         [EMOTE_NORMAL] =
@@ -119,42 +94,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_MaribelNormal,
             .pal = sFieldMugshotPal_MaribelNormal,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-    },
-
-    [MUGSHOT_SHIORI] =
-    {
-        [EMOTE_NORMAL] =
-        {
-            .gfx = sFieldMugshotGfx_ShioriNormal,
-            .pal = sFieldMugshotPal_ShioriNormal,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-    },
-
-    [MUGSHOT_BAELZ] =
-    {
-        [EMOTE_NORMAL] =
-        {
-            .gfx = sFieldMugshotGfx_BaelzNormal,
-            .pal = sFieldMugshotPal_BaelzNormal,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-        [EMOTE_HAPPY] =
-        {
-            .gfx = sFieldMugshotGfx_BaelzHappy,
-            .pal = sFieldMugshotPal_BaelzNormal,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
-        [EMOTE_SERIOUS] =
-        {
-            .gfx = sFieldMugshotGfx_BaelzSerious,
-            .pal = sFieldMugshotPal_BaelzNormal,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
@@ -211,13 +150,6 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
-        [EMOTE_ALT_7] =
-        {
-            .gfx = sFieldMugshotGfx_SusieLookAwaySerious,
-            .pal = sFieldMugshotPal_SusieGeneral,
-            .x = MUGSHOT_X,
-            .y = MUGSHOT_Y,
-        },
         [EMOTE_ALT_8] =
         {
             .gfx = sFieldMugshotGfx_SusieLookDownSerious,
@@ -229,6 +161,99 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_SusieWhereAreWe,
             .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_10] =
+        {
+            .gfx = sFieldMugshotGfx_SusieLookAwaySerious,
+            .pal = sFieldMugshotPal_SusieGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_AMELIA] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_AmeliaNormal,
+            .pal = sFieldMugshotPal_AmeliaGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_SHIORI] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_ShioriNormal,
+            .pal = sFieldMugshotPal_ShioriNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_BAELZ] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzNormal,
+            .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzHappy,
+            .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SERIOUS] =
+        {
+            .gfx = sFieldMugshotGfx_BaelzSerious,
+            .pal = sFieldMugshotPal_BaelzNormal,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+    },
+
+    [MUGSHOT_GIGI] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_GigiNormal,
+            .pal = sFieldMugshotPal_GigiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_GigiHappy,
+            .pal = sFieldMugshotPal_GigiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SHADOW] =
+        {
+            .gfx = sFieldMugshotGfx_GigiShadow,
+            .pal = sFieldMugshotPal_GigiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_8] =
+        {
+            .gfx = sFieldMugshotGfx_GigiXParantheses,
+            .pal = sFieldMugshotPal_GigiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_9] =
+        {
+            .gfx = sFieldMugshotGfx_GigiXD,
+            .pal = sFieldMugshotPal_GigiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
@@ -246,6 +271,13 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_KroniiSerious,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SHADOW] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiShadow,
             .pal = sFieldMugshotPal_KroniiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,

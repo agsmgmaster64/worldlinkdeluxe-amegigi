@@ -8,13 +8,13 @@
 
 #define MUGSHOT_NONE    0
 #define MUGSHOT_TEST    1
-#define MUGSHOT_AMELIA  2
-#define MUGSHOT_GIGI    3
-#define MUGSHOT_RENKO   4
-#define MUGSHOT_MARIBEL 5
+#define MUGSHOT_RENKO   2
+#define MUGSHOT_MARIBEL 3
+#define MUGSHOT_SUSIE   4
+#define MUGSHOT_AMELIA  5
 #define MUGSHOT_SHIORI  6
 #define MUGSHOT_BAELZ   7
-#define MUGSHOT_SUSIE   8
+#define MUGSHOT_GIGI    8
 #define MUGSHOT_KRONII  9
 #define MUGSHOT_COUNT   10
 
@@ -25,7 +25,7 @@
 #define EMOTE_ANNOYED   4
 #define EMOTE_ANGRY     5
 #define EMOTE_DEADPAN   6
-#define EMOTE_ALT_7     7
+#define EMOTE_SHADOW    7
 #define EMOTE_ALT_8     8
 #define EMOTE_ALT_9     9
 #define EMOTE_ALT_10    10

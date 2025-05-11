@@ -106,7 +106,7 @@ text RustboroCity_Text_GigiWantToBattle {
 }
 
 text RustboroCity_Text_GigiImNotGoingToLose {
-	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Well, you should know, you may be as strong as me, but I know better about what I'm doing!\p"
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Well, you should know, you may be as strong as me, but I know better about what I'm doing!\p"
 	"Bring it on, {PLAYER}!")
 }
 

@@ -140,9 +140,6 @@ Debug_EventScript_Script_1::
 	lockall
 	msgbox Debug_EventScript_Script_1_TestMessage, MSGBOX_DEFAULT
 	closemessage
-	playtrainervoice TRAINER_VOICE_GIGI, 0
-	msgbox Debug_EventScript_Script_1_TestMessage2
-	closemessage
 	coinmart Debug_EventScript_Script_1_Mart
 	movetutorpointmart Debug_EventScript_Script_1_Mart2
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
@@ -155,11 +152,14 @@ Debug_EventScript_Script_1_TestMessage:
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_NORMAL}Baelz Normal\p"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_SERIOUS}Baelz Serious\p"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_BAELZ EMOTE_HAPPY}Baelz Happy\p"
-	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}Kronii Normal$"
-
-Debug_EventScript_Script_1_TestMessage2:
-	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Gigi Laugh\p"
-	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Gigi Happy$"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}Kronii Normal\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Kronii Serious\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SHADOW}Kronii Shadow\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Gigi Normal\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Gigi OwO\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_ALT_8}Gigi X Smile\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_ALT_9}Gigi Laugh\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_SHADOW}Gigi Shadow$"
 
 	.align 2
 Debug_EventScript_Script_1_Mart:
