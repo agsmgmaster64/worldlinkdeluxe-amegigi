@@ -101,7 +101,21 @@ script LittlerootTown_ProfessorBirchsLab_EventScript_RalseiGiveTohoOrbs {
 script LittlerootTown_ProfessorBirchsLab_EventScript_Shiori {
 	lock
 	faceplayer
+	checkfollowernpc
+	if (var(VAR_RESULT) == TRUE) {
+		goto(LittlerootTown_ProfessorBirchsLab_EventScript_ShioriAnnoyingRedFlags)
+	}
 	msgbox(LittlerootTown_ProfessorBirchsLab_Text_ShioriGetRalsei)
+	release
+	end
+}
+
+script LittlerootTown_ProfessorBirchsLab_EventScript_ShioriAnnoyingRedFlags {
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_RedFlags)
+	closemessage
+	setspeakername(gText_Gigi)
+	msgbox(LittlerootTown_ProfessorBirchsLab_Text_GigiShiori)
+	closemessage
 	release
 	end
 }
@@ -148,6 +162,14 @@ text LittlerootTown_ProfessorBirchsLab_Text_ShioriAfterStarter {
 
 text LittlerootTown_ProfessorBirchsLab_Text_ShioriGetRalsei {
 	format("Get Ralsei.")
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_RedFlags {
+	format("Insert chat being annoying about Shiori and Gigi not being compatible because of Shiori having red flags.")
+}
+
+text LittlerootTown_ProfessorBirchsLab_Text_GigiShiori {
+	format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_ALT_9}Yo, I have no idea who's talking right now, but I feel like this weird NPC gives me Shiori vibes here.")
 }
 
 raw `
