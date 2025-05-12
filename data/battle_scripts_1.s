@@ -781,7 +781,7 @@ BattleScript_EffectFling::
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_MENTAL_HERB, BattleScript_FlingMentalHerb
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_MIASMA_POWER, BattleScript_FlingPoisonBarb
 	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_TOXIC_ORB, BattleScript_FlingToxicOrb
-	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_RESTORE_STATS, BattleScript_FlingWhiteHerb
+	jumpiflastuseditemholdeffect BS_ATTACKER, HOLD_EFFECT_WHITE_HERB, BattleScript_FlingWhiteHerb
 	goto BattleScript_FlingEnd
 BattleScript_EffectFlingConsumeBerry:
 	savebattleritem BS_TARGET
@@ -4602,7 +4602,10 @@ BattleScript_EffectSpitUp::
 	damagecalc
 	adjustdamage
 	stockpiletobasedamage BattleScript_SpitUpFail
-	goto BattleScript_HitFromAtkAnimation
+	call BattleScript_Hit_RetFromAtkAnimation
+	tryfaintmon BS_TARGET
+	removestockpilecounters
+	goto BattleScript_SpitUpEnd
 BattleScript_SpitUpFail::
 	checkparentalbondcounter 2, BattleScript_SpitUpEnd
 	pause B_WAIT_TIME_SHORT
@@ -4625,7 +4628,16 @@ BattleScript_EffectSwallow::
 	attackstring
 	ppreduce
 	stockpiletohpheal BattleScript_SwallowFail
-	goto BattleScript_PresentHealTarget
+	attackanimation
+	waitanimation
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	removestockpilecounters
+	goto BattleScript_MoveEnd
+
 
 BattleScript_SwallowFail::
 	pause B_WAIT_TIME_SHORT
