@@ -6386,8 +6386,8 @@ u32 CheckDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler)
 uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier)
 {
     if (inverseMultiplier)
-        return UQ_4_12(1.0/(1.5 + 0.1 * dynamaxLevel));
-    return UQ_4_12(1.5 + 0.1 * dynamaxLevel);
+        return UQ_4_12(1.0/(1.5 + 0.25 * dynamaxLevel));
+    return UQ_4_12(1.5 + 0.25 * dynamaxLevel);
 }
 
 bool32 IsSpeciesRegionalForm(u32 species)

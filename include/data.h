@@ -74,7 +74,7 @@ struct TrainerMon
     bool8 gigantamaxFactor:1;
     u8 shouldUseDynamax:1;
     u8 padding1:1;
-    u8 dynamaxLevel:3;
+    u8 dynamaxLevel:2;
     u8 padding2:5;
     u32 tags;
 };

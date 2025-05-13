@@ -156,7 +156,7 @@ struct BoxPokemon
     /*0x3E*/ u8 spDefenseIV:5;
              u8 dynamaxLevel:2;
              u8 cantRandomizeAbility:1;
-    /*0x3F*/ u8 nickname13;  // Given at the Battle Tower's Level 50 challenge by winning a set of seven battles that extends the current streak to 56 or more.
+    /*0x3F*/ u8 nickname13;
 };
 
 struct Pokemon

@@ -15,6 +15,10 @@ static const u16 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U16("graphics/pokenav/re
 
 static const u16 sRegionMapPlayerIcon_RSMayGfx[] = INCBIN_U16("graphics/pokenav/region_map/rs_may_icon.4bpp");
 
+static const u16 sRegionMapPlayerIcon_RenkoGfx[] = INCBIN_U16("graphics/pokenav/region_map/renko_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_MaribelGfx[] = INCBIN_U16("graphics/pokenav/region_map/maribel_icon.4bpp");
+static const u16 sRegionMapPlayerIcon_GigiGfx[] = INCBIN_U16("graphics/pokenav/region_map/gigi_icon.4bpp");
+
 //! TODO: Should the gfx here be seperated?
 
 static const u8 sFrontierPassPlayerIcons_BrendanMay_Gfx[] = INCBIN_U8("graphics/frontier_pass/map_heads.4bpp");
@@ -92,7 +96,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         },
 
         //! DESC: head icons gfx&pal for region map
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsRM = { sRegionMapPlayerIcon_RenkoGfx, sRegionMapPlayerIcon_MaribelGfx },
 
         //! DESC: head icons gfx&pal for frontier pass
         //! note that frontier pass needs to be in one sprite instead of two,
@@ -144,7 +148,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
                 [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_RENKO_VS_SEEKER_BIKE
             },
         },
-        .iconsRM = { sRegionMapPlayerIcon_MayGfx, sRegionMapPlayerIcon_BrendanGfx },
+        .iconsRM = { sRegionMapPlayerIcon_MaribelGfx, sRegionMapPlayerIcon_RenkoGfx },
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
     [OUTFIT_YOUNG_START] = {
@@ -192,7 +196,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
                 [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_MARIBEL_VS_SEEKER_BIKE
             },
         },
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsRM = { sRegionMapPlayerIcon_RenkoGfx, sRegionMapPlayerIcon_MaribelGfx },
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
     [OUTFIT_ALTERED_YOUTH] = {
@@ -240,7 +244,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
                 [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_RENKO_VS_SEEKER_BIKE
             },
         },
-        .iconsRM = { sRegionMapPlayerIcon_MayGfx, sRegionMapPlayerIcon_BrendanGfx },
+        .iconsRM = { sRegionMapPlayerIcon_MaribelGfx, sRegionMapPlayerIcon_RenkoGfx },
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
     [OUTFIT_GIGI_MURIN] = {
@@ -288,7 +292,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
                 [PLAYER_AVATAR_GFX_VSSEEKER_BIKE] = OBJ_EVENT_GFX_MARIBEL_VS_SEEKER_BIKE
             },
         },
-        .iconsRM = { sRegionMapPlayerIcon_MayGfx, sRegionMapPlayerIcon_BrendanGfx },
+        .iconsRM = { sRegionMapPlayerIcon_GigiGfx, sRegionMapPlayerIcon_GigiGfx },
         .iconsFP = sFrontierPassPlayerIcons_RSBrendanMay_Gfx,
     },
 };
