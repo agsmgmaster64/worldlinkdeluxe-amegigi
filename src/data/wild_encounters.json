@@ -2062,62 +2062,62 @@
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_NARUMI"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_LETTY"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_KOAKUMA"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_YAMAME"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_SPEED_LILY_BLACK"
+                "species": "SPECIES_CHIBI_KISUME"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_CIRNO"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_NARUMI"
               },
               {
                 "min_level": 7,
                 "max_level": 7,
-                "species": "SPECIES_HELPER_LYRICA"
+                "species": "SPECIES_CHIBI_MAI"
               },
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_HELPER_LYRICA"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_HELPER_LYRICA"
+                "species": "SPECIES_CHIBI_MAI"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_HELPER_LYRICA"
+                "species": "SPECIES_CHIBI_PARSEE"
               }
             ]
           }
@@ -2131,62 +2131,62 @@
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_LETTY"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_KOAKUMA"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_NARUMI"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_SPEED_LILY_BLACK"
+                "species": "SPECIES_CHIBI_MAI"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_CIRNO"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_NORMAL_YATSUHASHI"
+                "species": "SPECIES_CHIBI_NARUMI"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_KISUME"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_KISUME"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_PARSEE"
               }
             ]
           }
@@ -2530,62 +2530,62 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_MAI"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_LETTY"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_CHIBI_FLANDRE"
+                "species": "SPECIES_CHIBI_RUMIA"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_NORMAL_SEIJA"
+                "species": "SPECIES_CHIBI_CIRNO"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_SPEED_LILY_BLACK"
+                "species": "SPECIES_CHIBI_MAI"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_LETTY"
               },
               {
                 "min_level": 11,
                 "max_level": 11,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_NARUMI"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_YUMEMI"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_PARSEE"
               },
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_PLACEHOLD_RAIKO"
+                "species": "SPECIES_CHIBI_YUMEMI"
               }
             ]
           },

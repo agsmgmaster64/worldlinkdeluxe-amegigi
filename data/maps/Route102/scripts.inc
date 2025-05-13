@@ -201,20 +201,20 @@ Route102_Text_CatchWholeBunchOfPokemon:
 # 101 "data/maps/Route102/scripts.pory"
 	.string "I'm going to catch a whole bunch of\n"
 # 102 "data/maps/Route102/scripts.pory"
-	.string "POKéMON!$"
+	.string "Puppets!$"
 # 103 "data/maps/Route102/scripts.pory"
 
 # 104 "data/maps/Route102/scripts.pory"
 Route102_Text_RouteSignOldale:
 # 105 "data/maps/Route102/scripts.pory"
-	.string "ROUTE 102\n"
+	.string "Route 102\n"
 # 106 "data/maps/Route102/scripts.pory"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+	.string "{RIGHT_ARROW} Oldale Town$"
 # 107 "data/maps/Route102/scripts.pory"
 
 # 108 "data/maps/Route102/scripts.pory"
 Route102_Text_RouteSignPetalburg:
 # 109 "data/maps/Route102/scripts.pory"
-	.string "ROUTE 102\n"
+	.string "Route 102\n"
 # 110 "data/maps/Route102/scripts.pory"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
+	.string "{LEFT_ARROW} Petalburg City$"

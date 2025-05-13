@@ -1918,20 +1918,20 @@ LittlerootTown_Text_GoodLuckCatchingPokemon::
 
 LittlerootTown_Text_TownSign::
 # 272 "data/maps/LittlerootTown/scripts.pory"
-	.string "LITTLEROOT TOWN\n"
+	.string "Littleroot Town\n"
 	.string "“A town that can't be shaded any hue.”$"
 
 LittlerootTown_Text_ProfBirchsLab::
 # 277 "data/maps/LittlerootTown/scripts.pory"
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "PROF. BIRCH'S Puppet Lab$"
 
 LittlerootTown_Text_PlayersHouse::
 # 281 "data/maps/LittlerootTown/scripts.pory"
-	.string "{PLAYER}'s HOUSE$"
+	.string "{PLAYER}'s House$"
 
 LittlerootTown_Text_ProfBirchsHouse::
 # 285 "data/maps/LittlerootTown/scripts.pory"
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. BIRCH'S House$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab::
 # 289 "data/maps/LittlerootTown/scripts.pory"

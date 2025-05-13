@@ -1,6 +1,6 @@
 Route102_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
+	.string "If you have Puppets with you, then\n"
+	.string "you're an official Puppet Trainer!\l"
 	.string "You can't say no to my challenge!$"
 
 Route102_Text_CalvinDefeated:
@@ -15,15 +15,15 @@ Route102_Text_CalvinRegister:
 	.string "I've been working hard at this since\n"
 	.string "I saw you before.\p"
 	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
+	.string "you register me in your iDollNav?$"
 
 Route102_Text_CalvinRegisterShort:
 	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
+	.string "you register me in your iDollNav?$"
 
 Route102_Text_CalvinRematchIntro:
 	.string "Ever since I lost to you, I desperately\n"
-	.string "trained my POKéMON.\l"
+	.string "trained my Puppets.\l"
 	.string "You can't say no to my challenge!$"
 
 Route102_Text_CalvinRematchDefeated:
@@ -35,7 +35,7 @@ Route102_Text_CalvinRematchPostBattle:
 	.string "I'll get stronger, too.$"
 
 Route102_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
+	.string "Did you just become a Trainer?\n"
 	.string "We're both beginners!$"
 
 Route102_Text_AllenDefeated:
@@ -54,12 +54,12 @@ Route102_Text_RickDefeated:
 	.string "Ow! Down and out!$"
 
 Route102_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
+	.string "If you lock eyes with a Trainer,\n"
 	.string "you have to challenge! It's a rule!$"
 
 Route102_Text_TianaIntro:
 	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
+	.string "to be the best Trainer.\p"
 	.string "Help me further my career!$"
 
 Route102_Text_TianaDefeated:
@@ -67,7 +67,7 @@ Route102_Text_TianaDefeated:
 
 Route102_Text_TianaPostBattle:
 	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "I have to catch more Puppets.$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
@@ -81,79 +81,79 @@ Route103_Text_DaisyPostBattle:
 	.string "healing that works with fragrances.$"
 
 Route103_Text_AmyIntro:
-	.string "AMY: I'm AMY.\n"
-	.string "And this is my little sister LIV.\l"
+	.string "Amy: I'm Amy.\n"
+	.string "And this is my little sister Liv.\l"
 	.string "We battle together!$"
 
 Route103_Text_AmyDefeated:
-	.string "AMY: Uh-oh, we lost.$"
+	.string "Amy: Uh-oh, we lost.$"
 
 Route103_Text_AmyPostBattle:
-	.string "AMY: You have to think about all\n"
+	.string "Amy: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
 	.string "against two TRAINERS.$"
 
 Route103_Text_AmyNotEnoughPokemon:
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
+	.string "Amy: Uh-oh, you have only one\n"
+	.string "Puppet with you.\l"
 	.string "You can't battle us like that.$"
 
 Route103_Text_LivIntro:
-	.string "LIV: We battle together as one\n"
+	.string "Liv: We battle together as one\n"
 	.string "team.$"
 
 Route103_Text_LivDefeated:
-	.string "LIV: Oh, we lost, big sister…$"
+	.string "Liv: Oh, we lost, big sister…$"
 
 Route103_Text_LivPostBattle:
-	.string "LIV: We work perfectly together,\n"
+	.string "Liv: We work perfectly together,\n"
 	.string "me and my big sister…\p"
 	.string "But we still lost…$"
 
 Route103_Text_AmyLivRegister:
-	.string "LIV: Really, we're a lot better…\n"
+	.string "Liv: Really, we're a lot better…\n"
 	.string "It's true! We'll show you next time!$"
 
 Route103_Text_LivNotEnoughPokemon:
-	.string "LIV: If you want to battle us,\n"
+	.string "Liv: If you want to battle us,\n"
 	.string "you have to have two POKéMON!\l"
 	.string "It's not fair if you don't!$"
 
 Route103_Text_AmyRematchIntro:
-	.string "AMY: I'm AMY.\n"
-	.string "And this is my little sister LIV.\l"
+	.string "Amy: I'm Amy.\n"
+	.string "And this is my little sister Liv.\l"
 	.string "We battle together!$"
 
 Route103_Text_AmyRematchDefeated:
-	.string "AMY: Aww, boo!\n"
+	.string "Amy: Aww, boo!\n"
 	.string "We couldn't win again…$"
 
 Route103_Text_AmyRematchPostBattle:
-	.string "AMY: You have to think about all\n"
+	.string "Amy: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
-	.string "against two TRAINERS.$"
+	.string "against two Trainers.$"
 
 Route103_Text_AmyRematchNotEnoughPokemon:
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
+	.string "Amy: Uh-oh, you have only one\n"
+	.string "Puppet with you.\l"
 	.string "You can't battle us like that.$"
 
 Route103_Text_LivRematchIntro:
-	.string "LIV: We battle together as one\n"
+	.string "Liv: We battle together as one\n"
 	.string "team.$"
 
 Route103_Text_LivRematchDefeated:
-	.string "LIV: Awww, we lost again…\n"
+	.string "Liv: Awww, we lost again…\n"
 	.string "Big sister…$"
 
 Route103_Text_LivRematchPostBattle:
-	.string "LIV: We work perfectly together,\n"
+	.string "Liv: We work perfectly together,\n"
 	.string "me and my big sister…\p"
 	.string "But why did we lose again?$"
 
 Route103_Text_LivRematchNotEnoughPokemon:
 	.string "LIV: If you want to battle us, you\n"
-	.string "have to have two POKéMON!\l"
+	.string "have to have two Puppets!\l"
 	.string "It's not fair if you don't!$"
 
 Route103_Text_AndrewIntro:
@@ -170,32 +170,32 @@ Route103_Text_AndrewPostBattle:
 	.string "Grrrrr…$"
 
 Route103_Text_MiguelIntro:
-	.string "My POKéMON is delightfully adorable!\n"
+	.string "My Puppet is delightfully adorable!\n"
 	.string "Don't be shy--I'll show you!$"
 
 Route103_Text_MiguelDefeated:
 	.string "Oh, my gosh!\n"
-	.string "My darling POKéMON!$"
+	.string "My darling Puppet!$"
 
 Route103_Text_MiguelPostBattle:
-	.string "My delightful POKéMON looks darling\n"
+	.string "My delightful Puppet looks darling\n"
 	.string "even when it's fainted!$"
 
 Route103_Text_MiguelRegister:
 	.string "I'll get you to come out and look in\n"
-	.string "on my delightful POKéMON again!$"
+	.string "on my delightful Puppet again!$"
 
 Route103_Text_MiguelRematchIntro:
 	.string "Hi, you! My delightfully adorable\n"
-	.string "POKéMON has become more darling!$"
+	.string "Puppet has become more darling!$"
 
 Route103_Text_MiguelRematchDefeated:
 	.string "Oh!\n"
-	.string "My darling POKéMON!$"
+	.string "My darling Puppet!$"
 
 Route103_Text_MiguelRematchPostBattle:
 	.string "The more I spend time with it,\n"
-	.string "the more adorable my POKéMON becomes.$"
+	.string "the more adorable my Puppet becomes.$"
 
 Route103_Text_PeteIntro:
 	.string "This sort of distance…\n"

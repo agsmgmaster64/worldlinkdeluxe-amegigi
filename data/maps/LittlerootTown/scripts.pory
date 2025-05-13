@@ -270,20 +270,20 @@ text LittlerootTown_Text_GoodLuckCatchingPokemon {
 }
 
 text LittlerootTown_Text_TownSign {
-	format("LITTLEROOT TOWN\n"
+	format("Littleroot Town\n"
 	"“A town that can't be shaded any hue.”")
 }
 
 text LittlerootTown_Text_ProfBirchsLab {
-	format("PROF. BIRCH'S POKéMON LAB")
+	format("PROF. BIRCH'S Puppet Lab")
 }
 
 text LittlerootTown_Text_PlayersHouse {
-	format("{PLAYER}'s HOUSE")
+	format("{PLAYER}'s House")
 }
 
 text LittlerootTown_Text_ProfBirchsHouse {
-	format("PROF. BIRCH'S HOUSE")
+	format("PROF. BIRCH'S House")
 }
 
 text LittlerootTown_Text_BirchSomethingToShowYouAtLab {

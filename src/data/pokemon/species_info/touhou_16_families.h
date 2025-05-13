@@ -206,7 +206,6 @@ const struct SpeciesInfo gSpeciesInfoTouhou16[] =
         )
         .levelUpLearnset = sSandileLevelUpLearnset,
         .teachableLearnset = sSandileTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 29, SPECIES_CHIBI_AUNN}),
     },
 
     [SPECIES_CHIBI_AUNN] =
