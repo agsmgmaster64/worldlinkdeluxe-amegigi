@@ -269,8 +269,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .shinyPalette = gMonShinyPalette_CKagerou,
         .iconSprite = gMonIcon_CKagerou,
         .iconPalIndex = 0,
-        FOOTPRINT(CKagerou)
         SHADOW(0, 6, SHADOW_SIZE_M)
+        FOOTPRINT(CKagerou)
+        OVERWORLD(
+            sPicTable_CKagerou,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CKagerou,
+            gShinyOverworldPalette_CKagerou
+        )
         .levelUpLearnset = sCKagerouLevelUpLearnset,
         .teachableLearnset = sCKagerouTeachableLearnset,
         .eggMoveLearnset = sCKagerouEggMoveLearnset,
@@ -326,8 +335,17 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .shinyPalette = gMonShinyPalette_Kagerou,
         .iconSprite = gMonIcon_Kagerou,
         .iconPalIndex = 0,
-        FOOTPRINT(Kagerou)
         SHADOW(2, 8, SHADOW_SIZE_XL_BATTLE_ONLY)
+        FOOTPRINT(Kagerou)
+        OVERWORLD(
+            sPicTable_Kagerou,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Kagerou,
+            gShinyOverworldPalette_Kagerou
+        )
         .levelUpLearnset = sKagerouLevelUpLearnset,
         .teachableLearnset = sKagerouTeachableLearnset,
     },

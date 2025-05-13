@@ -278,6 +278,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .iconPalIndex = 1,
         SHADOW(4, 7, SHADOW_SIZE_M)
         FOOTPRINT(CMedicine)
+        OVERWORLD(
+            sPicTable_CMedicine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CMedicine,
+            gShinyOverworldPalette_CMedicine
+        )
         .levelUpLearnset = sCMedicineLevelUpLearnset,
         .teachableLearnset = sCMedicineTeachableLearnset,
         .eggMoveLearnset = sCMedicineEggMoveLearnset,
@@ -341,6 +350,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .iconPalIndex = 1,
         SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Medicine)
+        OVERWORLD(
+            sPicTable_Medicine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Medicine,
+            gShinyOverworldPalette_Medicine
+        )
         .levelUpLearnset = sMedicineLevelUpLearnset,
         .teachableLearnset = sMedicineTeachableLearnset,
     },
@@ -396,6 +414,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .iconPalIndex = 1,
         SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(AMedicine)
+        OVERWORLD(
+            sPicTable_AMedicine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_AMedicine,
+            gShinyOverworldPalette_AMedicine
+        )
         .levelUpLearnset = sAMedicineLevelUpLearnset,
         .teachableLearnset = sAMedicineTeachableLearnset,
     },
@@ -452,6 +479,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .iconPalIndex = 1,
         SHADOW(0, 12, SHADOW_SIZE_L)
         FOOTPRINT(SMedicine)
+        OVERWORLD(
+            sPicTable_SMedicine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_SMedicine,
+            gShinyOverworldPalette_SMedicine
+        )
         .levelUpLearnset = sSMedicineLevelUpLearnset,
         .teachableLearnset = sSMedicineTeachableLearnset,
     },
@@ -508,6 +544,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou9[] =
         .iconPalIndex = 1,
         SHADOW(0, 10, SHADOW_SIZE_L)
         FOOTPRINT(TMedicine)
+        OVERWORLD(
+            sPicTable_TMedicine,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_TMedicine,
+            gShinyOverworldPalette_TMedicine
+        )
         .levelUpLearnset = sTMedicineLevelUpLearnset,
         .teachableLearnset = sTMedicineTeachableLearnset,
     },
