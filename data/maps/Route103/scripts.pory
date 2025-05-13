@@ -2,7 +2,7 @@ const LOCALID_RALSEI = 2
 
 script Route103_EventScript_Ralsei {
 	lockall
-	msgbox(Route103_Text_MayRoute103Pokemon)
+	msgbox(Route103_Text_RalseiRoute103Pokemon)
 	closemessage
 	playbgm(MUS_ENCOUNTER_MAY, TRUE)
 	applymovement(LOCALID_RALSEI, Common_Movement_FacePlayer)
@@ -11,9 +11,10 @@ script Route103_EventScript_Ralsei {
 	waitmovement(0)
 	applymovement(LOCALID_RALSEI, Common_Movement_Delay48)
 	waitmovement(0)
-	msgbox(Route103_Text_MayLetsBattle)
-	trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_MayDefeated)
-	msgbox(Route103_Text_MayTimeToHeadBack)
+	msgbox(Route103_Text_RalseiLetsBattle)
+	closemessage
+	trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_RalseiDefeated)
+	msgbox(Route103_Text_RalseiTimeToHeadBack)
 	closemessage
 	switch(var(VAR_FACING)) {
 		case DIR_SOUTH:
@@ -73,6 +74,27 @@ script Route103_EventScript_RalseiEnd {
 	end
 }
 
+text Route103_Text_RalseiRoute103Pokemon {
+	format("Now, what did Shiori want me to find in here again?")
+}
+
+text Route103_Text_RalseiLetsBattle {
+	format("Oh hello there, what are you doing here?\p"
+	"I see, so you're {PLAYER}\Nand my partner Shiori has sent you to retrieve me back, huh?\p"
+	"She even trusted you with your own Puppet as well, that's pretty nice.\p"
+	"Forgive me, but may I test your skills here to see if you're worthy of holding that Puppet there?\p"
+	"I promise not to be too hard on you with this battle here, since this must be your first trainer battle here.")
+}
+
+text Route103_Text_RalseiDefeated {
+	format("Good job!\nYou managed to beat me here!")
+}
+
+text Route103_Text_RalseiTimeToHeadBack {
+	format("I see you carry great potential within, even if you are new to this whole Puppet thing.\p"
+	"No wonder Shiori trusted you with this Puppet that you have with you.\p"
+	"Very well, I guess I'll have to go back to the Lab to see what Shiori wants me to do.")
+}
 raw `
 .set LOCALID_RIVAL, 2
 

@@ -55,7 +55,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 # 28 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_EventScript_MoveMartEmployee::
 # 29 "data/maps/OldaleTown/scripts.pory"
-	setobjectxyperm LOCALID_MART_EMPLOYEE, 13, 14
+	setobjectxyperm LOCALID_MART_EMPLOYEE, 12, 14
 # 30 "data/maps/OldaleTown/scripts.pory"
 	setobjectmovementtype LOCALID_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 # 31 "data/maps/OldaleTown/scripts.pory"
@@ -703,7 +703,7 @@ OldaleTown_Text_IWorkAtPokemonMart:
 # 352 "data/maps/OldaleTown/scripts.pory"
 	.string "Hi!\n"
 # 353 "data/maps/OldaleTown/scripts.pory"
-	.string "I work at a POKéMON MART.\p"
+	.string "I work at a Puppet Mart.\p"
 # 354 "data/maps/OldaleTown/scripts.pory"
 	.string "Can I get you to come with me?$"
 # 355 "data/maps/OldaleTown/scripts.pory"
@@ -711,13 +711,13 @@ OldaleTown_Text_IWorkAtPokemonMart:
 # 356 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_ThisIsAPokemonMart:
 # 357 "data/maps/OldaleTown/scripts.pory"
-	.string "This is a POKéMON MART.\n"
+	.string "This is a Puppet Mart.\n"
 # 358 "data/maps/OldaleTown/scripts.pory"
 	.string "Just look for our blue roof.\p"
 # 359 "data/maps/OldaleTown/scripts.pory"
 	.string "We sell a variety of goods including\n"
 # 360 "data/maps/OldaleTown/scripts.pory"
-	.string "POKé BALLS for catching POKéMON.\p"
+	.string "Toho Orbs for catching Puppets.\p"
 # 361 "data/maps/OldaleTown/scripts.pory"
 	.string "Here, I'd like you to have this as\n"
 # 362 "data/maps/OldaleTown/scripts.pory"
@@ -727,9 +727,9 @@ OldaleTown_Text_ThisIsAPokemonMart:
 # 364 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_PotionExplanation:
 # 365 "data/maps/OldaleTown/scripts.pory"
-	.string "A POTION can be used anytime, so it's\n"
+	.string "A Potion can be used anytime, so it's\n"
 # 366 "data/maps/OldaleTown/scripts.pory"
-	.string "even more useful than a POKéMON CENTER\l"
+	.string "even more useful than a Puppet Center\l"
 # 367 "data/maps/OldaleTown/scripts.pory"
 	.string "in certain situations.$"
 # 368 "data/maps/OldaleTown/scripts.pory"
@@ -797,6 +797,6 @@ OldaleTown_Text_BrendanLetsGoBack:
 # 399 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_Text_TownSign:
 # 400 "data/maps/OldaleTown/scripts.pory"
-	.string "OLDALE TOWN\n"
+	.string "Oldale Town\n"
 # 401 "data/maps/OldaleTown/scripts.pory"
 	.string "“Where things start off scarce.”$"

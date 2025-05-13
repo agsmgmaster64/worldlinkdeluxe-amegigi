@@ -11,6 +11,7 @@ script PetalburgCity_Gym_EventScript_Larry {
 	msgbox(PetalburgCity_Gym_Text_LarryIntro)
 	closemessage
 	setvar(VAR_PETALBURG_GYM_STATE, 2)
+	setvar(VAR_PETALBURG_CITY_STATE, 3)
 	startquest(QUEST_CHAMPION)
 	release
 	end

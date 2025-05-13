@@ -672,9 +672,11 @@ extern const u8 gText_Phoebe[];
 extern const u8 gText_Glacia[];
 extern const u8 gText_Amelia[];
 extern const u8 gText_Gigi[];
+extern const u8 gText_Shiori[];
 extern const u8 gText_Kronii[];
 extern const u8 gText_Baelz[];
 extern const u8 gText_Susie[];
+extern const u8 gText_Ralsei[];
 
 extern const u8 gText_MoveRelearnerPkmnLearnedMove[];
 extern const u8 gText_MoveRelearnerPkmnTryingToLearnMove[];
