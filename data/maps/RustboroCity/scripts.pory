@@ -1,3 +1,5 @@
+const LOCALID_GIGI = 14
+
 mapscripts RustboroCity_MapScripts {
 	MAP_SCRIPT_ON_TRANSITION {
 		setflag(FLAG_VISITED_RUSTBORO_CITY)
@@ -14,6 +16,16 @@ mapscripts RustboroCity_MapScripts {
 	MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_RUSTBORO_CITY_STATE, 6: RustboroCity_EventScript_ScientistAddMatchCall
 	]
+}
+
+script RustboroCity_EventScript_Gigi {
+	lockall
+	if (!flag(FLAG_MET_RIVAL_RUSTBORO)) {
+		call(RustboroCity_EventScript_PlayRivalMusic)
+	}
+	applymovement(LOCALID_GIGI, Common_Movement_FacePlayer)
+	waitmovement(0)
+	goto(RustboroCity_EventScript_GigiEncounter)
 }
 
 script RustboroCity_EventScript_GigiEncounter {
