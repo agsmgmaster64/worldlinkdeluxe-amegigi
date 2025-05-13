@@ -7156,8 +7156,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
-        .iconPic = gItemIcon_QuestionMark,
-        .iconPalette = gItemIconPalette_QuestionMark,
+        .iconPic = gItemIcon_FrostOrb,
+        .iconPalette = gItemIconPalette_FrostOrb,
     },
 
 // Weather Rocks
@@ -9732,7 +9732,7 @@ const struct Item gItemsInfo[] =
         .name = _("Ionno Berry"),
         .pluralName = _("Ionno Berries"),
         .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .holdEffect = HOLD_EFFECT_RESTORE_STATS,
+        .holdEffect = HOLD_EFFECT_WHITE_HERB,
         .description = COMPOUND_STRING(
             "A berry that\n"
             "restores any\n"

@@ -1290,6 +1290,9 @@ const u16 gItemIconPalette_FlameOrb[] = INCBIN_U16("graphics/items/icon_palettes
 const u32 gItemIcon_ToxicOrb[] = INCBIN_U32("graphics/items/icons/toxic_orb.4bpp.lz");
 const u16 gItemIconPalette_ToxicOrb[] = INCBIN_U16("graphics/items/icon_palettes/toxic_orb.gbapal");
 
+const u32 gItemIcon_FrostOrb[] = INCBIN_U32("graphics/items/icons/frost_orb.4bpp.lz");
+const u16 gItemIconPalette_FrostOrb[] = INCBIN_U16("graphics/items/icon_palettes/frost_orb.gbapal");
+
 // Weather Rocks
 
 const u32 gItemIcon_DampRock[] = INCBIN_U32("graphics/items/icons/damp_rock.4bpp.lz");
