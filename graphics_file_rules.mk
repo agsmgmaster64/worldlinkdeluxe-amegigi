@@ -27,6 +27,8 @@ TITLESCREENGFXDIR := graphics/title_screen
 types := none illusion dream flying miasma earth beast heart ghost steel mystery fire water nature wind reason ice faith dark cosmic stellar
 contest_types := cool beauty cute smart tough
 
+reel_icons_rg := regular_7 rocket cirno mystia cherries wriggle rumia
+
 ### Tilesets ###
 
 $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
@@ -450,11 +452,14 @@ $(SLOTMACHINEGFXDIR)/reel_time_gfx.4bpp: $(SLOTMACHINEGFXDIR)/reel_time_pikachu.
                                          $(SLOTMACHINEGFXDIR)/reel_time_machine.4bpp
 	@cat $^ >$@
 
-$(SLOTMACHINEGFXDIR)/firered/combos_window.4bpp: %.4bpp: %.png
+$(SLOTMACHINERGGFXDIR)/combos_window.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 66 -Wnum_tiles
 
-$(SLOTMACHINEGFXDIR)/firered/bg.4bpp: %.4bpp: %.png
+$(SLOTMACHINERGGFXDIR)/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 138 -Wnum_tiles
+
+$(SLOTMACHINERGGFXDIR)/reel_icons.4bpp: $(reel_icons_rg:%=$(SLOTMACHINERGGFXDIR)/%.4bpp)
+	@cat $^ >$@
 
 graphics/birch_speech/unused_beauty.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 822 -Wnum_tiles

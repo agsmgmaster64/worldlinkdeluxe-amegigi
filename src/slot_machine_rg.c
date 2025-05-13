@@ -56,11 +56,11 @@ enum {
 enum {
     ICON_7,
     ICON_ROCKET,
-    ICON_PIKACHU,
-    ICON_PSYDUCK,   // Psyduck in FR, Slowpoke in LG
+    ICON_CIRNO,
+    ICON_MYSTIA,
     ICON_CHERRIES,
-    ICON_MAGNEMITE, // Magnemite in FR, Voltorb in LG
-    ICON_SHELLDER,  // Shellder in FR, Staryu in LG
+    ICON_WRIGGLE,
+    ICON_RUMIA,
 };
 
 enum {
@@ -327,69 +327,69 @@ static const u16 sReelBiasChances[][NUM_PAYOUT_TYPES] = {
 static const u8 sReelIconAnimByReelAndPos[NUM_REELS][REEL_LENGTH] = {
     {
         ICON_7,
-        ICON_PSYDUCK,
+        ICON_MYSTIA,
         ICON_CHERRIES,
         ICON_ROCKET,
-        ICON_PIKACHU,
-        ICON_SHELLDER,
-        ICON_PIKACHU,
-        ICON_MAGNEMITE,
+        ICON_CIRNO,
+        ICON_RUMIA,
+        ICON_CIRNO,
+        ICON_WRIGGLE,
         ICON_7,
-        ICON_SHELLDER,
-        ICON_PSYDUCK,
+        ICON_RUMIA,
+        ICON_MYSTIA,
         ICON_ROCKET,
         ICON_CHERRIES,
-        ICON_PIKACHU,
-        ICON_SHELLDER,
+        ICON_CIRNO,
+        ICON_RUMIA,
         ICON_7,
-        ICON_MAGNEMITE,
-        ICON_PIKACHU,
+        ICON_WRIGGLE,
+        ICON_CIRNO,
         ICON_ROCKET,
-        ICON_SHELLDER,
-        ICON_PIKACHU
+        ICON_RUMIA,
+        ICON_CIRNO
     }, {
         ICON_7,
-        ICON_MAGNEMITE,
+        ICON_WRIGGLE,
         ICON_CHERRIES,
-        ICON_PSYDUCK,
+        ICON_MYSTIA,
         ICON_ROCKET,
-        ICON_MAGNEMITE,
+        ICON_WRIGGLE,
         ICON_CHERRIES,
-        ICON_PSYDUCK,
-        ICON_PIKACHU,
-        ICON_MAGNEMITE,
+        ICON_MYSTIA,
+        ICON_CIRNO,
+        ICON_WRIGGLE,
         ICON_CHERRIES,
-        ICON_PSYDUCK,
+        ICON_MYSTIA,
         ICON_7,
-        ICON_MAGNEMITE,
+        ICON_WRIGGLE,
         ICON_CHERRIES,
         ICON_ROCKET,
-        ICON_PSYDUCK,
-        ICON_SHELLDER,
-        ICON_MAGNEMITE,
-        ICON_PSYDUCK,
+        ICON_MYSTIA,
+        ICON_RUMIA,
+        ICON_WRIGGLE,
+        ICON_MYSTIA,
         ICON_CHERRIES
     }, {
         ICON_7,
-        ICON_PSYDUCK,
-        ICON_SHELLDER,
-        ICON_MAGNEMITE,
-        ICON_PIKACHU,
-        ICON_PSYDUCK,
-        ICON_SHELLDER,
-        ICON_MAGNEMITE,
-        ICON_PIKACHU,
-        ICON_PSYDUCK,
-        ICON_MAGNEMITE,
-        ICON_SHELLDER,
-        ICON_PIKACHU,
-        ICON_PSYDUCK,
-        ICON_MAGNEMITE,
-        ICON_SHELLDER,
-        ICON_PIKACHU,
-        ICON_PSYDUCK,
-        ICON_MAGNEMITE,
-        ICON_SHELLDER,
+        ICON_MYSTIA,
+        ICON_RUMIA,
+        ICON_WRIGGLE,
+        ICON_CIRNO,
+        ICON_MYSTIA,
+        ICON_RUMIA,
+        ICON_WRIGGLE,
+        ICON_CIRNO,
+        ICON_MYSTIA,
+        ICON_WRIGGLE,
+        ICON_RUMIA,
+        ICON_CIRNO,
+        ICON_MYSTIA,
+        ICON_WRIGGLE,
+        ICON_RUMIA,
+        ICON_CIRNO,
+        ICON_MYSTIA,
+        ICON_WRIGGLE,
+        ICON_RUMIA,
         ICON_ROCKET
     },
 };
@@ -404,9 +404,13 @@ static const u16 sPayoutTable[] = {
     [PAYOUT_7]         = 300
 };
 
-static const u16 sReelIcons_Pal[][128] =
+static const u16 sReelIcons_Pal[][16] =
 {
-    INCBIN_U16("graphics/slot_machine/firered/reel_icons.gbapal")
+    INCBIN_U16("graphics/slot_machine/firered/reel_icon_cirno.gbapal"),
+    INCBIN_U16("graphics/slot_machine/firered/reel_icon_mystia.gbapal"),
+    INCBIN_U16("graphics/slot_machine/firered/reel_icon_7_cherries.gbapal"),
+    INCBIN_U16("graphics/slot_machine/firered/reel_icon_wriggle.gbapal"),
+    INCBIN_U16("graphics/slot_machine/firered/reel_icon_rumia.gbapal"),
 };
 static const u32 sReelIcons_Tiles[]   = INCBIN_U32("graphics/slot_machine/firered/reel_icons.4bpp.lz");
 static const u16 sClefairy_Pal[]      = INCBIN_U16("graphics/slot_machine/firered/clefairy.gbapal");
@@ -434,11 +438,11 @@ static const struct SpritePalette sSpritePalettes[] = {
 static const u16 sReelIconPaletteTags[] = {
     [ICON_7]         = PALTAG_REEL_ICONS_2,
     [ICON_ROCKET]    = PALTAG_REEL_ICONS_2,
-    [ICON_PIKACHU]   = PALTAG_REEL_ICONS_0,
-    [ICON_PSYDUCK]   = PALTAG_REEL_ICONS_0,
+    [ICON_CIRNO]     = PALTAG_REEL_ICONS_0,
+    [ICON_MYSTIA]    = PALTAG_REEL_ICONS_1,
     [ICON_CHERRIES]  = PALTAG_REEL_ICONS_2,
-    [ICON_MAGNEMITE] = PALTAG_REEL_ICONS_4,
-    [ICON_SHELLDER]  = PALTAG_REEL_ICONS_3,
+    [ICON_WRIGGLE]   = PALTAG_REEL_ICONS_3,
+    [ICON_RUMIA]     = PALTAG_REEL_ICONS_4,
 };
 
 static const u16 sReelIconAffineParams[] = {
@@ -535,25 +539,16 @@ static const union AnimCmd sAnimCmd_ReelIcon_Shellder_2[] = {
 static const union AnimCmd *const sAnimTable_ReelIcons[] = {
     [ICON_7]         = sAnimCmd_ReelIcon_7,
     [ICON_ROCKET]    = sAnimCmd_ReelIcon_Rocket,
-    [ICON_PIKACHU]   = sAnimCmd_ReelIcon_Pikachu,
-    [ICON_PSYDUCK]   = sAnimCmd_ReelIcon_Psyduck,
+    [ICON_CIRNO]     = sAnimCmd_ReelIcon_Pikachu,
+    [ICON_MYSTIA]    = sAnimCmd_ReelIcon_Psyduck,
     [ICON_CHERRIES]  = sAnimCmd_ReelIcon_Cherries,
-    [ICON_MAGNEMITE] = sAnimCmd_ReelIcon_Magnemite,
-    [ICON_SHELLDER]  = sAnimCmd_ReelIcon_Shellder,
+    [ICON_WRIGGLE]   = sAnimCmd_ReelIcon_Magnemite,
+    [ICON_RUMIA]     = sAnimCmd_ReelIcon_Shellder,
     sAnimCmd_ReelIcon_Pikachu_2,
     sAnimCmd_ReelIcon_Psyduck_2,
     sAnimCmd_ReelIcon_Cherries_2,
     sAnimCmd_ReelIcon_Magnemite_2,
     sAnimCmd_ReelIcon_Shellder_2
-};
-
-static const union AffineAnimCmd sAffineAnimCmd_ReelIcons_Unused[] = {
-    AFFINEANIMCMD_FRAME(0x100, 0x100, 0, 1),
-    AFFINEANIMCMD_END
-};
-
-static const union AffineAnimCmd *const sAffineAnimTable_ReelIcons_Unused[] = {
-    sAffineAnimCmd_ReelIcons_Unused
 };
 
 static const struct SpriteTemplate sSpriteTemplate_ReelIcons = {
@@ -1639,9 +1634,9 @@ static bool32 TestReelIconAttribute(s32 attr, s32 icon)
     case PAYOUT_CHERRIES3:
         return icon == ICON_CHERRIES ? TRUE : FALSE;
     case PAYOUT_MAGSHELL:
-        return icon == ICON_MAGNEMITE || icon == ICON_SHELLDER ? TRUE : FALSE;
+        return icon == ICON_WRIGGLE || icon == ICON_RUMIA ? TRUE : FALSE;
     case PAYOUT_PIKAPSY:
-        return icon == ICON_PIKACHU || icon == ICON_PSYDUCK ? TRUE : FALSE;
+        return icon == ICON_CIRNO || icon == ICON_MYSTIA ? TRUE : FALSE;
     case PAYOUT_ROCKET:
         return icon == ICON_ROCKET ? TRUE : FALSE;
     case PAYOUT_7:
@@ -1658,11 +1653,11 @@ static u8 ReelIconToPayoutRank(s32 iconId)
     default:
     case ICON_CHERRIES:
         return PAYOUT_CHERRIES2;
-    case ICON_MAGNEMITE:
-    case ICON_SHELLDER:
+    case ICON_WRIGGLE:
+    case ICON_RUMIA:
         return PAYOUT_MAGSHELL;
-    case ICON_PIKACHU:
-    case ICON_PSYDUCK:
+    case ICON_CIRNO:
+    case ICON_MYSTIA:
         return PAYOUT_PIKAPSY;
     case ICON_ROCKET:
         return PAYOUT_ROCKET;
