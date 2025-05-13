@@ -201,7 +201,7 @@ static void AnimMegahornHorn(struct Sprite *sprite)
         cmd->x2 = -cmd->x2;
         cmd->x1 = -cmd->x1;
     }
-    else if (GetBattlerSide(gBattleAnimTarget) == B_SIDE_PLAYER)
+    else if (IsOnPlayerSide(gBattleAnimTarget))
     {
         StartSpriteAffineAnim(sprite, 1);
         cmd->y1 = -cmd->y1;
@@ -230,7 +230,7 @@ static void AnimLeechLifeNeedle(struct Sprite *sprite)
         cmd->x = -cmd->x;
         StartSpriteAffineAnim(sprite, 2);
     }
-    else if (GetBattlerSide(gBattleAnimTarget) == B_SIDE_PLAYER)
+    else if (IsOnPlayerSide(gBattleAnimTarget))
     {
         cmd->y = -cmd->y;
         cmd->x = -cmd->x;
@@ -295,13 +295,13 @@ static void AnimStringWrap(struct Sprite *sprite)
     ANIM_CMD_ARGS(x, y);
 
     SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);
-    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
+    if (!IsOnPlayerSide(gBattleAnimAttacker))
         sprite->x -= cmd->x;
     else
         sprite->x += cmd->x;
 
     sprite->y += cmd->y;
-    if (GetBattlerSide(gBattleAnimTarget) == B_SIDE_PLAYER)
+    if (IsOnPlayerSide(gBattleAnimTarget))
         sprite->y += 8;
 
     sprite->callback = AnimStringWrap_Step;
@@ -332,7 +332,7 @@ void AnimSpiderWeb(struct Sprite *sprite)
     if (gBattleAnimArgs[2])
         SetAverageBattlerPositions(gBattleAnimTarget, FALSE, &sprite->x, &sprite->y);
 
-    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
+    if (!IsOnPlayerSide(gBattleAnimAttacker))
         sprite->x -= gBattleAnimArgs[0];
     else
         sprite->x += gBattleAnimArgs[0];
@@ -383,7 +383,7 @@ void AnimTranslateStinger(struct Sprite *sprite)
     }
     else
     {
-        if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
+        if (!IsOnPlayerSide(gBattleAnimAttacker))
         {
             cmd->targetX = -cmd->targetX;
             cmd->intialY = -cmd->intialY;
@@ -424,7 +424,7 @@ void AnimMissileArc(struct Sprite *sprite)
 
     InitSpritePosToAnimAttacker(sprite, TRUE);
 
-    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_OPPONENT)
+    if (!IsOnPlayerSide(gBattleAnimAttacker))
         cmd->targetX = -cmd->targetX;
 
     sprite->data[0] = cmd->duration;

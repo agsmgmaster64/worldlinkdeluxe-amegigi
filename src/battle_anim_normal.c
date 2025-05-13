@@ -347,7 +347,7 @@ static void AnimConfusionDuck(struct Sprite *sprite)
     sprite->x += cmd->x;
     sprite->y += cmd->y;
     sprite->data[0] = cmd->waveOffset;
-    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER)
+    if (!IsOnPlayerSide(gBattleAnimAttacker))
     {
         sprite->data[1] = -cmd->wavePeriod;
         sprite->data[4] = 1;
@@ -1152,7 +1152,7 @@ static void AnimHitSplatHandleInvert(struct Sprite *sprite)
     // Matches AnimHitSplatBasic.
     ANIM_CMD_ARGS(x, y, relativeTo, animation);
 
-    if (GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER && !IsContest())
+    if (!IsOnPlayerSide(gBattleAnimAttacker) && !IsContest())
         cmd->y = -cmd->y;
 
     AnimHitSplatBasic(sprite);
