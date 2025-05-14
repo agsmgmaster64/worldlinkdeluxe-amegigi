@@ -753,7 +753,10 @@ void CB2_ShowVoltorbFlip(void)
     SetVBlankCallback(VBlankCB);
     SetMainCallback2(MainCB2);
 
-    ResetVoltorbFlipCards(VarGet(FLIP_VAR_LEVEL));
+    if (FLIP_VAR_LEVEL != 0)
+        ResetVoltorbFlipCards(VarGet(FLIP_VAR_LEVEL));
+    else
+        ResetVoltorbFlipCards(0);
 
     CreateTask(Task_VoltorbFlipFadeIn, 0);
 }
@@ -782,7 +785,8 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         VarSet(VAR_RESULT, FALSE);
-		VarSet(FLIP_VAR_LEVEL, 0);
+        if (FLIP_VAR_LEVEL != 0)
+		    VarSet(FLIP_VAR_LEVEL, 0);
 
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_VoltorbFlipFadeOut;
@@ -792,7 +796,8 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     if(gameState == GAME_STATE_LOSE)
     {
         VarSet(VAR_RESULT, FALSE);
-		VarSet(FLIP_VAR_LEVEL, 0);
+        if (FLIP_VAR_LEVEL != 0)
+		    VarSet(FLIP_VAR_LEVEL, 0);
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
@@ -803,7 +808,8 @@ static void Task_VoltorbFlipWaitForKeyPress(u8 taskId)
     {
         ShowAllCards();
         VarSet(VAR_RESULT, TRUE);
-		VarSet(FLIP_VAR_LEVEL, FLIP_VAR_LEVEL + 1);
+        if (FLIP_VAR_LEVEL != 0)
+		    VarSet(FLIP_VAR_LEVEL, (VarGet(FLIP_VAR_LEVEL) + 1));
 
         gSprites[sVoltorbFlipState->outlineSprite].invisible = TRUE;
         gSprites[sVoltorbFlipState->pointerSprite].invisible = TRUE;
