@@ -826,13 +826,6 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .semiInvulnerableEffect = TRUE,
     },
 
-    [EFFECT_MULTI_PULSE] =
-    {
-        .battleScript = BattleScript_EffectHit,
-        .battleTvScore = 1,
-        .encourageEncore = TRUE,
-    },
-
     [EFFECT_SOFTBOILED] =
     {
         .battleScript = BattleScript_EffectSoftboiled,

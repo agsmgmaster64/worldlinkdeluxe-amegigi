@@ -5882,7 +5882,6 @@ bool32 TrySetAteType(u32 move, u32 battlerAtk, u32 attackerAbility)
         break;
     case EFFECT_HIDDEN_POWER:
     case EFFECT_WEATHER_BALL:
-    case EFFECT_MULTI_PULSE:
     case EFFECT_NATURAL_GIFT:
     case EFFECT_CHANGE_TYPE_ON_ITEM:
     case EFFECT_REVELATION_DANCE:
@@ -6033,10 +6032,6 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
         if (holdEffect == GetMoveEffectArg_HoldEffect(move))
             return ItemId_GetSecondaryId(heldItem);
         break;
-    case EFFECT_MULTI_PULSE:
-        if (GetTypeFromTypeBooster(holdEffect))
-            return GetTypeFromTypeBooster(holdEffect);
-        break;
     case EFFECT_REVELATION_DANCE:
         if (GetActiveGimmick(battler) != GIMMICK_Z_MOVE)
         {
@@ -6147,7 +6142,6 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
     else if (moveType != TYPE_ILLUSION
           && moveEffect != EFFECT_HIDDEN_POWER
           && moveEffect != EFFECT_WEATHER_BALL
-          && moveEffect != EFFECT_MULTI_PULSE
           && ability == ABILITY_NORMALIZE
           && GetActiveGimmick(battler) != GIMMICK_Z_MOVE)
     {
