@@ -87,7 +87,13 @@ gCryTable::
 	cry Cry_Clownpiece
 	cry Cry_Junko
 	cry Cry_Hecatia
+	cry Cry_Eternity
+	cry Cry_Nemuno
+	cry Cry_Aunn
 	cry Cry_Narumi
+	cry Cry_Teireida
+	cry Cry_Satono
+	cry Cry_Okina
 	cry Cry_Suika
 	cry Cry_Iku
 	cry Cry_Tenshi
@@ -208,7 +214,13 @@ gCryTable_Reverse::
 	cry_reverse Cry_Clownpiece
 	cry_reverse Cry_Junko
 	cry_reverse Cry_Hecatia
+	cry_reverse Cry_Eternity
+	cry_reverse Cry_Nemuno
+	cry_reverse Cry_Aunn
 	cry_reverse Cry_Narumi
+	cry_reverse Cry_Teireida
+	cry_reverse Cry_Satono
+	cry_reverse Cry_Okina
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
 	cry_reverse Cry_Tenshi

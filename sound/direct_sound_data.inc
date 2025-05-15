@@ -732,8 +732,32 @@ Cry_Hecatia::
 	.incbin "sound/direct_sound_samples/cries/hecatia.bin"
 
 	.align 2
+Cry_Eternity::
+	.incbin "sound/direct_sound_samples/cries/eternity.bin"
+
+	.align 2
+Cry_Nemuno::
+	.incbin "sound/direct_sound_samples/cries/nemuno.bin"
+
+	.align 2
+Cry_Aunn::
+	.incbin "sound/direct_sound_samples/cries/aunn.bin"
+
+	.align 2
 Cry_Narumi::
 	.incbin "sound/direct_sound_samples/cries/narumi.bin"
+
+	.align 2
+Cry_Teireida::
+	.incbin "sound/direct_sound_samples/cries/teireida.bin"
+
+	.align 2
+Cry_Satono::
+	.incbin "sound/direct_sound_samples/cries/satono.bin"
+
+	.align 2
+Cry_Okina::
+	.incbin "sound/direct_sound_samples/cries/okina.bin"
 
 	.align 2
 Cry_Suika::
