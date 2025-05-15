@@ -6346,12 +6346,13 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Sea Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_WATER_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = 20,
         .description = sSeaIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_WATER,
         .flingPower = 10,
         .iconPic = gItemIcon_SeaIncense,
         .iconPalette = gItemIconPalette_SeaIncense,
@@ -6379,12 +6380,13 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Odd Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_REASON_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = 20,
         .description = sOddIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_REASON,
         .flingPower = 10,
         .iconPic = gItemIcon_OddIncense,
         .iconPalette = gItemIconPalette_OddIncense,
@@ -6394,12 +6396,13 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Rock Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_BEAST_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = 20,
         .description = sRockIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_BEAST,
         .flingPower = 10,
         .iconPic = gItemIcon_RockIncense,
         .iconPalette = gItemIconPalette_RockIncense,
@@ -6424,12 +6427,13 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Wave Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_WATER_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = 20,
         .description = sSeaIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_WATER,
         .flingPower = 10,
         .iconPic = gItemIcon_WaveIncense,
         .iconPalette = gItemIconPalette_WaveIncense,
@@ -6439,12 +6443,13 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Rose Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
-        .holdEffect = HOLD_EFFECT_NATURE_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = 20,
         .description = sRoseIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_NATURE,
         .flingPower = 10,
         .iconPic = gItemIcon_RoseIncense,
         .iconPalette = gItemIconPalette_RoseIncense,
@@ -6705,7 +6710,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Bridal Gown"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_ILLUSION_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6714,6 +6719,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_ILLUSION,
         .flingPower = 10,
         .iconPic = gItemIcon_BridalGown,
         .iconPalette = gItemIconPalette_BridalGown,
@@ -6724,7 +6730,7 @@ const struct Item gItemsInfo[] =
         .name = _("Gothic Dress"),
         .pluralName = _("Gothic Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 9800),
-        .holdEffect = HOLD_EFFECT_FIRE_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6733,6 +6739,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_FIRE,
         .flingPower = 30,
         .iconPic = gItemIcon_GothicDress,
         .iconPalette = gItemIconPalette_GothicDress,
@@ -6742,7 +6749,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Swimsuit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_WATER_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6751,6 +6758,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_WATER,
         .flingPower = 30,
         .iconPic = gItemIcon_Swimsuit,
         .iconPalette = gItemIconPalette_Swimsuit,
@@ -6760,7 +6768,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Ninja Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_WIND_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6769,6 +6777,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_WIND,
         .flingPower = 30,
         .iconPic = gItemIcon_NinjaSuit,
         .iconPalette = gItemIconPalette_NinjaSuit,
@@ -6778,7 +6787,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Camouflage"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_NATURE_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6787,6 +6796,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_NATURE,
         .flingPower = 30,
         .iconPic = gItemIcon_Camouflage,
         .iconPalette = gItemIconPalette_Camouflage,
@@ -6797,7 +6807,7 @@ const struct Item gItemsInfo[] =
         .name = _("Thick Fur"),
         .pluralName = _("Thick Fur"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_ICE_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6806,6 +6816,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_ICE,
         .flingPower = 30,
         .iconPic = gItemIcon_ThickFur,
         .iconPalette = gItemIconPalette_ThickFur,
@@ -6816,7 +6827,7 @@ const struct Item gItemsInfo[] =
         .name = _("Chinese Dress"),
         .pluralName = _("Chinese Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_DREAM_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6825,6 +6836,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_DREAM,
         .flingPower = 30,
         .iconPic = gItemIcon_ChinaDress,
         .iconPalette = gItemIconPalette_ChinaDress,
@@ -6834,7 +6846,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Nurse Uniform"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_MIASMA_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6843,6 +6855,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_MIASMA,
         .flingPower = 70,
         .iconPic = gItemIcon_NurseOutfit,
         .iconPalette = gItemIconPalette_NurseOutfit,
@@ -6852,7 +6865,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Gym Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_EARTH_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6861,6 +6874,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_EARTH,
         .flingPower = 10,
         .iconPic = gItemIcon_GymSuit,
         .iconPalette = gItemIconPalette_GymSuit,
@@ -6871,7 +6885,7 @@ const struct Item gItemsInfo[] =
         .name = _("Stewardess"),
         .pluralName = _("Stewardesses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_FLYING_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6880,6 +6894,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_FLYING,
         .flingPower = 50,
         .iconPic = gItemIcon_Stewardess,
         .iconPalette = gItemIconPalette_Stewardess,
@@ -6889,7 +6904,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Witch's Robe"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_REASON_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6898,6 +6913,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_REASON,
         .flingPower = 30,
         .iconPic = gItemIcon_WitchsRobe,
         .iconPalette = gItemIconPalette_WitchsRobe,
@@ -6907,7 +6923,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Blazer"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_HEART_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6916,6 +6932,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_HEART,
         .flingPower = 10,
         .iconPic = gItemIcon_Blazer,
         .iconPalette = gItemIconPalette_Blazer,
@@ -6925,7 +6942,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Bunny Suit"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_BEAST_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6934,6 +6951,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_BEAST,
         .flingPower = 100,
         .iconPic = gItemIcon_BunnySuit,
         .iconPalette = gItemIconPalette_BunnySuit,
@@ -6944,7 +6962,7 @@ const struct Item gItemsInfo[] =
         .name = _("Burial Dress"),
         .pluralName = _("Burial Dresses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_GHOST_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6953,6 +6971,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_GHOST,
         .flingPower = 30,
         .iconPic = gItemIcon_BurialDress,
         .iconPalette = gItemIconPalette_BurialDress,
@@ -6963,7 +6982,7 @@ const struct Item gItemsInfo[] =
         .name = _("Priestess"),
         .pluralName = _("Priestesses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_FAITH_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6972,6 +6991,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_FAITH,
         .flingPower = 70,
         .iconPic = gItemIcon_Priestess,
         .iconPalette = gItemIconPalette_Priestess,
@@ -6982,7 +7002,7 @@ const struct Item gItemsInfo[] =
         .name = _("Black Glasses"),
         .pluralName = _("Black Glasses"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_DARK_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -6991,6 +7011,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_DARK,
         .flingPower = 30,
         .iconPic = gItemIcon_BlackGlasses,
         .iconPalette = gItemIconPalette_BlackTypeEnhancingItem,
@@ -7000,7 +7021,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Maid Uniform"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
-        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A costume that\n"
@@ -7009,6 +7030,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_STEEL,
         .flingPower = 30,
         .iconPic = gItemIcon_MaidUniform,
         .iconPalette = gItemIconPalette_MaidUniform,
@@ -7020,7 +7042,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Sharp Sword"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 2000 : 100),
-        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A held item that\n"
@@ -7029,6 +7051,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_STEEL,
         .flingPower = 30,
         .iconPic = gItemIcon_SharpSword,
         .iconPalette = gItemIconPalette_SharpSword,
@@ -7038,7 +7061,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Dubious Tome"),
         .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 1000 : 100),
-        .holdEffect = HOLD_EFFECT_DARK_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A held item that\n"
@@ -7047,6 +7070,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_DARK,
         .flingPower = 30,
         .iconPic = gItemIcon_DubiousTome,
         .iconPalette = gItemIconPalette_DubiousTome,
@@ -13254,7 +13278,7 @@ const struct Item gItemsInfo[] =
     {
         .name = _("Fairy Feather"),
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_COSMIC_POWER,
+        .holdEffect = HOLD_EFFECT_TYPE_POWER,
         .holdEffectParam = TYPE_BOOST_PARAM,
         .description = COMPOUND_STRING(
             "A hold item that\n"
@@ -13263,6 +13287,7 @@ const struct Item gItemsInfo[] =
         .pocket = POCKET_BATTLE_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_COSMIC,
         .flingPower = 10,
         .iconPic = gItemIcon_FairyFeather,
         .iconPalette = gItemIconPalette_FairyFeather,
