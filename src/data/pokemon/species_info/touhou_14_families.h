@@ -243,10 +243,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("CKagerou"),
         .cryId = CRY_KAGEROU,
-        .natDexNum = NATIONAL_DEX_SURSKIT,
+        .natDexNum = NATIONAL_DEX_CHIBI_KAGEROU,
         .categoryName = _("Pond Skater"),
         .height = 5,
-        .weight = 17,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "They gather on puddles after evening\n"
             "downpours, gliding across the surface\n"
@@ -309,10 +309,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("Kagerou"),
         .cryId = CRY_KAGEROU,
-        .natDexNum = NATIONAL_DEX_MASQUERAIN,
+        .natDexNum = NATIONAL_DEX_NORMAL_KAGEROU,
         .categoryName = _("Eyeball"),
         .height = 8,
-        .weight = 36,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It intimidates foes with the large eyelike\n"
             "patterns on its antennae. Because it can't\n"
@@ -372,10 +372,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("HKagerou"),
         .cryId = CRY_KAGEROU,
-        .natDexNum = NATIONAL_DEX_SHROOMISH,
+        .natDexNum = NATIONAL_DEX_HELPER_KAGEROU,
         .categoryName = _("Mushroom"),
         .height = 4,
-        .weight = 45,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It loves to eat damp, composted soil in\n"
             "forests. If you enter a forest after a\n"
@@ -425,10 +425,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("PKagerou"),
         .cryId = CRY_KAGEROU,
-        .natDexNum = NATIONAL_DEX_BRELOOM,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_KAGEROU,
         .categoryName = _("Mushroom"),
         .height = 12,
-        .weight = 392,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "It scatters spores from holes in the cap\n"
             "on its head. It loves warm and humid\n"
@@ -465,7 +465,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .baseSpAttack  = 70,
         .baseSpDefense = 50,
         .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 190,
+        .catchRate = 200,
         .expYield = 66,
         .evYield_SpAttack = 1,
         .genderRatio = PERCENT_FEMALE(50),
@@ -478,10 +478,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("CWakasagihime"),
         .cryId = CRY_WAKASAGIHIME,
-        .natDexNum = NATIONAL_DEX_SLAKOTH,
+        .natDexNum = NATIONAL_DEX_CHIBI_WAKASAGIHIME,
         .categoryName = _("Slacker"),
         .height = 8,
-        .weight = 240,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It sleeps virtually all day and night long.\n"
             "It doesn't change its nest its entire life,\n"
@@ -546,10 +546,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("Wakasagihime"),
         .cryId = CRY_WAKASAGIHIME,
-        .natDexNum = NATIONAL_DEX_VIGOROTH,
+        .natDexNum = NATIONAL_DEX_NORMAL_WAKASAGIHIME,
         .categoryName = _("Wild Monkey"),
         .height = 14,
-        .weight = 465,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It can't keep still because its blood boils\n"
             "with energy. It runs through the fields\n"
@@ -611,10 +611,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("DWakasagihime"),
         .cryId = CRY_WAKASAGIHIME,
-        .natDexNum = NATIONAL_DEX_SLAKING,
+        .natDexNum = NATIONAL_DEX_DEFENSE_WAKASAGIHIME,
         .categoryName = _("Lazy"),
         .height = 20,
-        .weight = 1305,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Hordes of Slaking gather around trees\n"
             "when fruits come into season. They wait\n"
@@ -675,10 +675,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("PWakasagihime"),
         .cryId = CRY_WAKASAGIHIME,
-        .natDexNum = NATIONAL_DEX_NINCADA,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_WAKASAGIHIME,
         .categoryName = _("Trainee"),
         .height = 5,
-        .weight = 55,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It makes its nest at the roots of a mighty\n"
             "tree. Using its whiskerlike antennae, it\n"
@@ -729,7 +729,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("CWakasagihime"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_SLAKOTH,
+        .natDexNum = NATIONAL_DEX_CHIBI_WAKASAGIHIME,
         .categoryName = _("Slacker"),
         .height = 8,
         .weight = 240,
@@ -787,7 +787,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("Wakasagihime"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VIGOROTH,
+        .natDexNum = NATIONAL_DEX_NORMAL_WAKASAGIHIME,
         .categoryName = _("Wild Monkey"),
         .height = 14,
         .weight = 465,
@@ -841,7 +841,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("DWakasagihime"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_SLAKING,
+        .natDexNum = NATIONAL_DEX_DEFENSE_WAKASAGIHIME,
         .categoryName = _("Lazy"),
         .height = 20,
         .weight = 1305,
@@ -895,7 +895,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou14[] =
         .noFlip = TRUE,
         .speciesName = _("PWakasagihime"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_NINCADA,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_WAKASAGIHIME,
         .categoryName = _("Trainee"),
         .height = 5,
         .weight = 55,

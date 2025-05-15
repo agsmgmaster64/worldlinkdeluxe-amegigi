@@ -244,7 +244,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         .natDexNum = NATIONAL_DEX_LUVDISC,
         .categoryName = _("Rendezvous"),
         .height = 6,
-        .weight = 87,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Luvdisc make the branches of Corsola\n"
             "their nests. There is a custom from long\n"
@@ -299,7 +299,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         .natDexNum = NATIONAL_DEX_BAGON,
         .categoryName = _("Rock Head"),
         .height = 6,
-        .weight = 421,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "Although it is small, this Pokémon is very\n"
             "powerful because its body is a bundle of\n"
@@ -353,7 +353,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou2[] =
         .natDexNum = NATIONAL_DEX_SHELGON,
         .categoryName = _("Endurance"),
         .height = 11,
-        .weight = 1105,
+        .weight = 1500,
         .description = COMPOUND_STRING(
             "It hardly eats while it awaits evolution.\n"
             "It becomes hardier by enduring hunger.\n"

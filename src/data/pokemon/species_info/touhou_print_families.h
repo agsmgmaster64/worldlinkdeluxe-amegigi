@@ -673,7 +673,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_LIMBER, ABILITY_EARLY_BIRD },
+        .abilities = { ABILITY_LIMBER, ABILITY_EARLY_BIRD, ABILITY_TINTED_LENS },
         .sourceGame = SOURCE_PRINT,
         .noFlip = TRUE,
         .speciesName = _("CTokiko"),
@@ -681,7 +681,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_CHIBI_TOKIKO,
         .categoryName = _("Requiem"),
         .height = 8,
-        .weight = 150,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "A glare from its single scarlet eye makes\n"
             "even burly grown-ups freeze in utter fear.\n"
@@ -742,7 +742,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_LIMBER, ABILITY_EARLY_BIRD },
+        .abilities = { ABILITY_LIMBER, ABILITY_EARLY_BIRD, ABILITY_TINTED_LENS },
         .sourceGame = SOURCE_PRINT,
         .noFlip = TRUE,
         .speciesName = _("Tokiko"),
@@ -750,7 +750,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_NORMAL_TOKIKO,
         .categoryName = _("Beckon"),
         .height = 16,
-        .weight = 306,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It is thought that its body is hollow with\n"
             "only a spectral ball of fire burning inside.\n"
@@ -806,7 +806,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_LIMBER, ABILITY_GUTS },
+        .abilities = { ABILITY_LIMBER, ABILITY_GUTS, ABILITY_DEFIANT },
         .sourceGame = SOURCE_PRINT,
         .noFlip = TRUE,
         .speciesName = _("ATokiko"),
@@ -814,7 +814,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_ATTACK_TOKIKO,
         .categoryName = _("Fruit"),
         .height = 20,
-        .weight = 1000,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It flies by flapping its broad leaves.\n"
             "The bunch of fruit that grows around its\n"
@@ -870,7 +870,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_LIMBER, ABILITY_GUTS },
+        .abilities = { ABILITY_LIMBER, ABILITY_GUTS, ABILITY_DEFIANT },
         .sourceGame = SOURCE_PRINT,
         .noFlip = TRUE,
         .speciesName = _("PTokiko"),
@@ -878,7 +878,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_PLACEHOLD_TOKIKO,
         .categoryName = _("Wind Chime"),
         .height = 6,
-        .weight = 10,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "They fly about very actively when the hot\n"
             "season arrives. They communicate among\n"
@@ -942,7 +942,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_CHIBI_KOSUZU,
         .categoryName = _("Disaster"),
         .height = 12,
-        .weight = 470,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "It sharply senses even subtle changes in\n"
             "the sky and the land to predict natural\n"
@@ -999,7 +999,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .natDexNum = NATIONAL_DEX_NORMAL_KOSUZU,
         .categoryName = _("Bright"),
         .height = 6,
-        .weight = 140,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Wynaut loves to eat sweet fruits.\n"
             "It cleverly picks fruits using its earlike\n"

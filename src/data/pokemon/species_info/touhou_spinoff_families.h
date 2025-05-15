@@ -942,8 +942,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_CSunny,
         .iconSprite = gMonIcon_CSunny,
         .iconPalIndex = 2,
-        FOOTPRINT(CSunny)
         SHADOW(0, 9, SHADOW_SIZE_M)
+        FOOTPRINT(CSunny)
         .levelUpLearnset = sCSunnyLevelUpLearnset,
         .teachableLearnset = sCSunnyTeachableLearnset,
         .eggMoveLearnset = sCSunnyEggMoveLearnset,
@@ -1004,8 +1004,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_Sunny,
         .iconSprite = gMonIcon_Sunny,
         .iconPalIndex = 2,
-        FOOTPRINT(Sunny)
         SHADOW(0, 11, SHADOW_SIZE_M)
+        FOOTPRINT(Sunny)
         .levelUpLearnset = sSunnyLevelUpLearnset,
         .teachableLearnset = sSunnyTeachableLearnset,
     },
@@ -1059,8 +1059,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_ASunny,
         .iconSprite = gMonIcon_ASunny,
         .iconPalIndex = 2,
-        FOOTPRINT(ASunny)
         SHADOW(0, 13, SHADOW_SIZE_L)
+        FOOTPRINT(ASunny)
         .levelUpLearnset = sASunnyLevelUpLearnset,
         .teachableLearnset = sASunnyTeachableLearnset,
     },
@@ -1114,8 +1114,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_DSunny,
         .iconSprite = gMonIcon_DSunny,
         .iconPalIndex = 2,
-        FOOTPRINT(DSunny)
         SHADOW(0, 12, SHADOW_SIZE_L)
+        FOOTPRINT(DSunny)
         .levelUpLearnset = sDSunnyLevelUpLearnset,
         .teachableLearnset = sDSunnyTeachableLearnset,
     },
@@ -1170,8 +1170,8 @@ const struct SpeciesInfo gSpeciesInfoTouhouSpinoff[] =
         .shinyPalette = gMonShinyPalette_CLuna,
         .iconSprite = gMonIcon_CLuna,
         .iconPalIndex = 1,
-        FOOTPRINT(CLuna)
         SHADOW(2, 13, SHADOW_SIZE_M)
+        FOOTPRINT(CLuna)
         .levelUpLearnset = sCLunaLevelUpLearnset,
         .teachableLearnset = sCLunaTeachableLearnset,
         .eggMoveLearnset = sCLunaEggMoveLearnset,

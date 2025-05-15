@@ -129,7 +129,6 @@ enum BattleMoveEffects
     EFFECT_BEAT_UP,
     EFFECT_SEMI_INVULNERABLE,
     EFFECT_PREDATOR_STALK,
-    EFFECT_MULTI_PULSE,
     EFFECT_SOFTBOILED, // differences vs Recover - can be used outside of battle to restore HP
     EFFECT_FIRST_TURN_ONLY,
     EFFECT_UPROAR,

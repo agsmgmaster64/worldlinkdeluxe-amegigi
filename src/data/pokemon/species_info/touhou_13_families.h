@@ -12,7 +12,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .baseSpAttack  = 60,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_BEAST),
-        .catchRate = 190,
+        .catchRate = 255,
         .expYield = 68,
         .evYield_SpDefense = 1,
         .genderRatio = PERCENT_FEMALE(50),
@@ -25,10 +25,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .noFlip = TRUE,
         .speciesName = _("CKyouko"),
         .cryId = CRY_KYOUKO,
-        .natDexNum = NATIONAL_DEX_CELEBI,
+        .natDexNum = NATIONAL_DEX_CHIBI_KYOUKO,
         .categoryName = _("Time Travel"),
         .height = 6,
-        .weight = 50,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "This Pokémon came from the future by\n"
             "crossing over time. It is thought that so\n"
@@ -81,10 +81,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .noFlip = TRUE,
         .speciesName = _("Kyouko"),
         .cryId = CRY_KYOUKO,
-        .natDexNum = NATIONAL_DEX_TREECKO,
+        .natDexNum = NATIONAL_DEX_NORMAL_KYOUKO,
         .categoryName = _("Wood Gecko"),
         .height = 5,
-        .weight = 50,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "It makes its nest in a giant tree in the\n"
             "forest. It ferociously guards against\n"
@@ -134,10 +134,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .noFlip = TRUE,
         .speciesName = _("TKyouko"),
         .cryId = CRY_KYOUKO,
-        .natDexNum = NATIONAL_DEX_GROVYLE,
+        .natDexNum = NATIONAL_DEX_TECH_KYOUKO,
         .categoryName = _("Wood Gecko"),
         .height = 9,
-        .weight = 216,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "Leaves grow out of this Pokémon's body.\n"
             "They help obscure a Grovyle from the eyes\n"
@@ -187,10 +187,10 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .noFlip = TRUE,
         .speciesName = _("PKyouko"),
         .cryId = CRY_KYOUKO,
-        .natDexNum = NATIONAL_DEX_SCEPTILE,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_KYOUKO,
         .categoryName = _("Forest"),
         .height = 17,
-        .weight = 522,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "In the jungle, its power is without equal.\n"
             "This Pokémon carefully grows trees and\n"

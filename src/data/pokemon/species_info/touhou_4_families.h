@@ -28,7 +28,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         .natDexNum = NATIONAL_DEX_STARAVIA,
         .categoryName = _("Starling"),
         .height = 6,
-        .weight = 155,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Recognizing their own weakness, they\n"
             "maintain huge flocks. Fierce scuffles\n"
@@ -83,7 +83,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         .natDexNum = NATIONAL_DEX_STARAPTOR,
         .categoryName = _("Predator"),
         .height = 12,
-        .weight = 249,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "When Staravia evolve into Staraptor,\n"
             "they leave the flock to live alone. It has\n"
@@ -136,7 +136,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou4[] =
         .natDexNum = NATIONAL_DEX_BIDOOF,
         .categoryName = _("Plump Mouse"),
         .height = 5,
-        .weight = 200,
+        .weight = 250,
         .description = COMPOUND_STRING(
             "A comparison revealed that Bidoof's front\n"
             "teeth grow at the same rate as Rattata's.\n"

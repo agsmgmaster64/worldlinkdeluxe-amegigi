@@ -28,7 +28,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         .natDexNum = NATIONAL_DEX_METAGROSS,
         .categoryName = _("Iron Leg"),
         .height = 16,
-        .weight = 5500,
+        .weight = 100,
         .description = COMPOUND_STRING(
             "Metagross has four brains that are joined\n"
             "by a complex neural network. As a result of\n"
@@ -83,7 +83,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         .natDexNum = NATIONAL_DEX_REGIROCK,
         .categoryName = _("Rock Peak"),
         .height = 17,
-        .weight = 2300,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "A Pokémon that is made entirely of rocks\n"
             "and boulders. If parts of its body chip off\n"
@@ -136,7 +136,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         .natDexNum = NATIONAL_DEX_REGICE,
         .categoryName = _("Iceberg"),
         .height = 18,
-        .weight = 1750,
+        .weight = 500,
         .description = COMPOUND_STRING(
             "Its entire body is made of Antarctic ice.\n"
             "After extensive studies, researchers\n"
