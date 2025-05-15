@@ -18,7 +18,7 @@ bool8 IsNuzlockeActive(void)
     if (FlagGet(FLAG_IS_CHAMPION))          //Player is champion and Nuzlocke stopped
         return FALSE;
 
-    return gSaveBlock1Ptr->tx_Challenges_Nuzlocke;
+    return gSaveBlock2Ptr->tx_Challenges_Nuzlocke;
 }
 
 // Nuzlocke code
@@ -150,7 +150,7 @@ u8 NuzlockeFlagGet(u16 mapsec) // @Kurausukun
 
 void NuzlockeDeletePartyMon(u8 position)
 {
-    if (!gSaveBlock1Ptr->tx_Nuzlocke_Deletion)
+    if (!gSaveBlock2Ptr->tx_Nuzlocke_Deletion)
     {
         struct Pokemon *pokemon = &gPlayerParty[position];
         u8 val[1] = {TRUE};
@@ -193,38 +193,38 @@ void PrintTXSaveData(void)
 {
     #ifndef NDEBUG
     
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_WildPokemon"          , gSaveBlock1Ptr->tx_Random_WildPokemon);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Trainer"              , gSaveBlock1Ptr->tx_Random_Trainer);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Similar"              , gSaveBlock1Ptr->tx_Random_Similar);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_MapBased"             , gSaveBlock1Ptr->tx_Random_MapBased);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_IncludeLegendaries"   , gSaveBlock1Ptr->tx_Random_IncludeLegendaries);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Type"                 , gSaveBlock1Ptr->tx_Random_Type);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Moves"                , gSaveBlock1Ptr->tx_Random_Moves);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Abilities"            , gSaveBlock1Ptr->tx_Random_Abilities);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Evolutions"           , gSaveBlock1Ptr->tx_Random_Evolutions);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_EvolutionMethods"     , gSaveBlock1Ptr->tx_Random_EvolutionMethods);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_TypeEffectiveness"    , gSaveBlock1Ptr->tx_Random_TypeEffectiveness);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Items"                , gSaveBlock1Ptr->tx_Random_Items);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Chaos"                , gSaveBlock1Ptr->tx_Random_Chaos);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_OneForOne"            , gSaveBlock1Ptr->tx_Random_OneForOne);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_WildPokemon"          , gSaveBlock2Ptr->tx_Random_WildPokemon);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Trainer"              , gSaveBlock2Ptr->tx_Random_Trainer);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Similar"              , gSaveBlock2Ptr->tx_Random_Similar);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_MapBased"             , gSaveBlock2Ptr->tx_Random_MapBased);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_IncludeLegendaries"   , gSaveBlock2Ptr->tx_Random_IncludeLegendaries);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Type"                 , gSaveBlock2Ptr->tx_Random_Type);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Moves"                , gSaveBlock2Ptr->tx_Random_Moves);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Abilities"            , gSaveBlock2Ptr->tx_Random_Abilities);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Evolutions"           , gSaveBlock2Ptr->tx_Random_Evolutions);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_EvolutionMethods"     , gSaveBlock2Ptr->tx_Random_EvolutionMethods);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_TypeEffectiveness"    , gSaveBlock2Ptr->tx_Random_TypeEffectiveness);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Items"                , gSaveBlock2Ptr->tx_Random_Items);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_Chaos"                , gSaveBlock2Ptr->tx_Random_Chaos);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Random_OneForOne"            , gSaveBlock2Ptr->tx_Random_OneForOne);
 
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Nuzlocke"         , gSaveBlock1Ptr->tx_Challenges_Nuzlocke);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NuzlockeHardcore" , gSaveBlock1Ptr->tx_Challenges_NuzlockeHardcore);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_SpeciesClause"      , gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_ShinyClause"        , gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_Nicknaming"         , gSaveBlock1Ptr->tx_Nuzlocke_Nicknaming);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Nuzlocke"         , gSaveBlock2Ptr->tx_Challenges_Nuzlocke);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NuzlockeHardcore" , gSaveBlock2Ptr->tx_Challenges_NuzlockeHardcore);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_SpeciesClause"      , gSaveBlock2Ptr->tx_Nuzlocke_SpeciesClause);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_ShinyClause"        , gSaveBlock2Ptr->tx_Nuzlocke_ShinyClause);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Nuzlocke_Nicknaming"         , gSaveBlock2Ptr->tx_Nuzlocke_Nicknaming);
 
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_PartyLimit"       , gSaveBlock1Ptr->tx_Challenges_PartyLimit);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_LevelCap"         , gSaveBlock1Ptr->tx_Challenges_LevelCap);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_TrainerDifficulty"    , gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NoItemPlayer"     , gSaveBlock1Ptr->tx_Challenges_NoItemPlayer);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NoItemTrainer"    , gSaveBlock1Ptr->tx_Challenges_NoItemTrainer);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_PkmnCenter"       , gSaveBlock1Ptr->tx_Challenges_PkmnCenter);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_PartyLimit"       , gSaveBlock2Ptr->tx_Challenges_PartyLimit);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_LevelCap"         , gSaveBlock2Ptr->tx_Challenges_LevelCap);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_TrainerDifficulty"    , gSaveBlock2Ptr->tx_Challenges_TrainerDifficulty);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NoItemPlayer"     , gSaveBlock2Ptr->tx_Challenges_NoItemPlayer);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_NoItemTrainer"    , gSaveBlock2Ptr->tx_Challenges_NoItemTrainer);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_PkmnCenter"       , gSaveBlock2Ptr->tx_Challenges_PkmnCenter);
 
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_EvoLimit"         , gSaveBlock1Ptr->tx_Challenges_EvoLimit);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_OneTypeChallenge" , gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_BaseStatEqualizer", gSaveBlock1Ptr->tx_Challenges_BaseStatEqualizer);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Mirror"           , gSaveBlock1Ptr->tx_Challenges_Mirror);
-    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Mirror_Thief"     , gSaveBlock1Ptr->tx_Challenges_Mirror_Thief);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_EvoLimit"         , gSaveBlock2Ptr->tx_Challenges_EvoLimit);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_OneTypeChallenge" , gSaveBlock2Ptr->tx_Challenges_OneTypeChallenge);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_BaseStatEqualizer", gSaveBlock2Ptr->tx_Challenges_BaseStatEqualizer);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Mirror"           , gSaveBlock2Ptr->tx_Challenges_Mirror);
+    MgbaPrintf(MGBA_LOG_DEBUG, "%d tx_Challenges_Mirror_Thief"     , gSaveBlock2Ptr->tx_Challenges_Mirror_Thief);
     #endif
 }

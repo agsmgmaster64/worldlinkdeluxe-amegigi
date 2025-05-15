@@ -34,37 +34,37 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #ifdef FORCE_RANDOMIZE_WILD_MON
                 return FORCE_RANDOMIZE_WILD_MON;
             #else
-                return gSaveBlock1Ptr->tx_Random_WildPokemon;
+                return gSaveBlock2Ptr->tx_Random_WildPokemon;
             #endif
         case RANDOMIZE_FIELD_ITEMS:
             #ifdef FORCE_RANDOMIZE_FIELD_ITEMS
                 return FORCE_RANDOMIZE_FIELD_ITEMS;
             #else
-                return gSaveBlock1Ptr->tx_Random_Items;
+                return gSaveBlock2Ptr->tx_Random_Items;
             #endif
         case RANDOMIZE_TRAINER_MON:
             #ifdef FORCE_RANDOMIZE_TRAINER_MON
                 return FORCE_RANDOMIZE_TRAINER_MON;
             #else
-                return gSaveBlock1Ptr->tx_Random_Trainer;
+                return gSaveBlock2Ptr->tx_Random_Trainer;
             #endif
         case RANDOMIZE_FIXED_MON:
             #ifdef FORCE_RANDOMIZE_FIXED_MON
                 return FORCE_RANDOMIZE_FIXED_MON;
             #else
-                return gSaveBlock1Ptr->tx_Random_Static;
+                return gSaveBlock2Ptr->tx_Random_Static;
             #endif
         case RANDOMIZE_STARTER_AND_GIFT_MON:
             #ifdef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
                 return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
             #else
-                return gSaveBlock1Ptr->tx_Random_Starter;
+                return gSaveBlock2Ptr->tx_Random_Starter;
             #endif
         case RANDOMIZE_ABILITIES:
             #ifdef FORCE_RANDOMIZE_ABILITIES
                 return FORCE_RANDOMIZE_ABILITIES;
             #else
-                return gSaveBlock1Ptr->tx_Random_Abilities;
+                return gSaveBlock2Ptr->tx_Random_Abilities;
             #endif
         default:
             return FALSE;

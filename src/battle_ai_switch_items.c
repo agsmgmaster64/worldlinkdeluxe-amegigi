@@ -2341,7 +2341,7 @@ static bool32 ShouldUseItem(u32 battler)
     if (IsAiVsAiBattle())
         return FALSE;
 
-    if (gSaveBlock1Ptr->tx_Challenges_NoItemTrainer) //tx_randomizer_and_challenges
+    if (gSaveBlock2Ptr->tx_Challenges_NoItemTrainer) //tx_randomizer_and_challenges
         return FALSE;
 
     // If teaming up with player and Pokemon is on the right, or Pokemon is currently held by Sky Drop

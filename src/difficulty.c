@@ -6,7 +6,7 @@
 
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
-    return gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty;
+    return gSaveBlock2Ptr->tx_Challenges_TrainerDifficulty;
 }
 
 void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
@@ -14,7 +14,7 @@ void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
     if (desiredDifficulty > DIFFICULTY_MAX)
         desiredDifficulty = DIFFICULTY_MAX;
 
-    gSaveBlock1Ptr->tx_Challenges_TrainerDifficulty = desiredDifficulty;
+    gSaveBlock2Ptr->tx_Challenges_TrainerDifficulty = desiredDifficulty;
 }
 
 enum DifficultyLevel GetBattlePartnerDifficultyLevel(u16 partnerId)

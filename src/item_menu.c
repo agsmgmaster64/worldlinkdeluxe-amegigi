@@ -2253,7 +2253,7 @@ static void ItemMenu_UseInBattle(u8 taskId)
 {
     u16 type;
     //tx_randomizer_and_challenges
-    if (gSaveBlock1Ptr->tx_Challenges_NoItemPlayer && ItemId_GetBattleUsage(gSpecialVar_ItemId) != EFFECT_ITEM_THROW_BALL)
+    if (gSaveBlock2Ptr->tx_Challenges_NoItemPlayer && ItemId_GetBattleUsage(gSpecialVar_ItemId) != EFFECT_ITEM_THROW_BALL)
     {
         DisplayCannotUseItemMessage(taskId, FALSE, sText_BattleRules_NoItems_Player);
         return;

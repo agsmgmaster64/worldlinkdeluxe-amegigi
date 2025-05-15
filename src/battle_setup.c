@@ -2061,7 +2061,7 @@ u16 CountBattledRematchTeams(u16 trainerId)
 //tx_randomizer_and_challenges
 u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species) // @Kurausukun
 {
-    if (!gSaveBlock1Ptr->tx_Nuzlocke_SpeciesClause)
+    if (!gSaveBlock2Ptr->tx_Nuzlocke_SpeciesClause)
         return FALSE;
     
     //disable double catch
@@ -2079,7 +2079,7 @@ void SetNuzlockeChecks(void)
 
         gNuzlockeIsCaptureBlocked = NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId());
 
-        if (IsMonShiny(&gEnemyParty[0]) && gSaveBlock1Ptr->tx_Nuzlocke_ShinyClause)
+        if (IsMonShiny(&gEnemyParty[0]) && gSaveBlock2Ptr->tx_Nuzlocke_ShinyClause)
         {
             gNuzlockeIsCaptureBlocked = FALSE;
             gNuzlockeIsSpeciesClauseActive = FALSE;

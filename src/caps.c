@@ -10,7 +10,7 @@ enum LevelCapDifficulties GetLevelCapDifficulty(void)
     if (HOUSE_LIKE_CARPET)
         return LEVEL_CAP_DIFFICULTY_HARD_CAP;
 
-    return gSaveBlock1Ptr->tx_Challenges_LevelCap;
+    return gSaveBlock2Ptr->tx_Challenges_LevelCap;
 }
 
 u32 GetCurrentLevelCap(void)
