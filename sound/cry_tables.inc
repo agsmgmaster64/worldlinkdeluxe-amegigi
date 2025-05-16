@@ -109,6 +109,10 @@ gCryTable::
 	cry Cry_Kosuzu
 	cry Cry_Akyuu
 	cry Cry_Rinnosuke
+	cry Cry_Tenma
+	cry Cry_Sendai
+	cry Cry_Dark_Alice
+	cry Cry_Aki_Sisters
 	cry Cry_Advent_Cirno
 	cry Cry_Advent_Reisen
 	cry Cry_Advent_Meiling
@@ -236,6 +240,10 @@ gCryTable_Reverse::
 	cry_reverse Cry_Kosuzu
 	cry_reverse Cry_Akyuu
 	cry_reverse Cry_Rinnosuke
+	cry_reverse Cry_Tenma
+	cry_reverse Cry_Sendai
+	cry_reverse Cry_Dark_Alice
+	cry_reverse Cry_Aki_Sisters
 	cry_reverse Cry_Advent_Cirno
 	cry_reverse Cry_Advent_Reisen
 	cry_reverse Cry_Advent_Meiling

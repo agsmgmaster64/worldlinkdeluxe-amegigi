@@ -820,6 +820,22 @@ Cry_Rinnosuke::
 	.incbin "sound/direct_sound_samples/cries_add/rinnosuke.bin"
 
 	.align 2
+Cry_Tenma::
+	.incbin "sound/direct_sound_samples/cries/tenma.bin"
+
+	.align 2
+Cry_Sendai::
+	.incbin "sound/direct_sound_samples/cries/sendai.bin"
+
+	.align 2
+Cry_Dark_Alice::
+	.incbin "sound/direct_sound_samples/cries/dark_alice.bin"
+
+	.align 2
+Cry_Aki_Sisters::
+	.incbin "sound/direct_sound_samples/cries/aki_sisters.bin"
+
+	.align 2
 Cry_Advent_Cirno::
 	.incbin "sound/direct_sound_samples/cries_add/advent_cirno.bin"
 
