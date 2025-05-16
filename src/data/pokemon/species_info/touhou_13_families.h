@@ -43,6 +43,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_CKyouko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -51,6 +52,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .shinyPalette = gMonShinyPalette_CKyouko,
         .iconSprite = gMonIcon_CKyouko,
         .iconPalIndex = 0,
+        SHADOW(-1, 13, SHADOW_SIZE_S)
         FOOTPRINT(CKyouko)
         .levelUpLearnset = sCKyoukoLevelUpLearnset,
         .teachableLearnset = sCKyoukoTeachableLearnset,
@@ -99,6 +101,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_Kyouko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -107,6 +110,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .shinyPalette = gMonShinyPalette_Kyouko,
         .iconSprite = gMonIcon_Kyouko,
         .iconPalIndex = 0,
+        SHADOW(2, 14, SHADOW_SIZE_M)
         FOOTPRINT(Kyouko)
         .levelUpLearnset = sKyoukoLevelUpLearnset,
         .teachableLearnset = sKyoukoTeachableLearnset,

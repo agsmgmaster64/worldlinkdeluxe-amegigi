@@ -761,6 +761,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_CMurasa,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -769,6 +770,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_CMurasa,
         .iconSprite = gMonIcon_CMurasa,
         .iconPalIndex = 0,
+        SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(CMurasa)
         .levelUpLearnset = sCMurasaLevelUpLearnset,
         .teachableLearnset = sCMurasaTeachableLearnset,
@@ -821,6 +823,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Murasa,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -829,6 +832,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_Murasa,
         .iconSprite = gMonIcon_Murasa,
         .iconPalIndex = 0,
+        SHADOW(2, 13, SHADOW_SIZE_M)
         FOOTPRINT(Murasa)
         .levelUpLearnset = sMurasaLevelUpLearnset,
         .teachableLearnset = sMurasaTeachableLearnset,
@@ -874,6 +878,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_AMurasa,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -882,6 +887,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_AMurasa,
         .iconSprite = gMonIcon_AMurasa,
         .iconPalIndex = 0,
+        SHADOW(2, 14, SHADOW_SIZE_L)
         FOOTPRINT(AMurasa)
         .levelUpLearnset = sAMurasaLevelUpLearnset,
         .teachableLearnset = sAMurasaTeachableLearnset,
@@ -927,6 +933,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_DMurasa,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -935,6 +942,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou12[] =
         .shinyPalette = gMonShinyPalette_DMurasa,
         .iconSprite = gMonIcon_DMurasa,
         .iconPalIndex = 0,
+        SHADOW(0, 14, SHADOW_SIZE_L)
         FOOTPRINT(DMurasa)
         .levelUpLearnset = sDMurasaLevelUpLearnset,
         .teachableLearnset = sDMurasaTeachableLearnset,

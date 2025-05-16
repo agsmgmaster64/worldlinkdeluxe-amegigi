@@ -954,7 +954,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CKosuzu,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 4,
+        .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CKosuzu,
@@ -965,6 +965,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_CKosuzu,
         .iconSprite = gMonIcon_CKosuzu,
         .iconPalIndex = 2,
+        SHADOW(-2, 7, SHADOW_SIZE_M)
         FOOTPRINT(CKosuzu)
         .levelUpLearnset = sCKosuzuLevelUpLearnset,
         .teachableLearnset = sCKosuzuTeachableLearnset,
@@ -1011,9 +1012,10 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_Kosuzu,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 1,
+        .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_Kosuzu,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1022,6 +1024,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .shinyPalette = gMonShinyPalette_Kosuzu,
         .iconSprite = gMonIcon_Kosuzu,
         .iconPalIndex = 2,
+        SHADOW(-1, 11, SHADOW_SIZE_M)
         FOOTPRINT(Kosuzu)
         .levelUpLearnset = sKosuzuLevelUpLearnset,
         .teachableLearnset = sKosuzuTeachableLearnset,

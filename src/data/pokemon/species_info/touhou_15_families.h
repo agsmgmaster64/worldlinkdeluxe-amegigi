@@ -252,7 +252,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .trainerOffset = 0,
         .frontPic = gMonFrontPic_CRingo,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
-        .frontPicYOffset = 3,
+        .frontPicYOffset = 1,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CRingo,
@@ -263,6 +263,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .shinyPalette = gMonShinyPalette_CRingo,
         .iconSprite = gMonIcon_CRingo,
         .iconPalIndex = 2,
+        SHADOW(0, 7, SHADOW_SIZE_S)
         FOOTPRINT(CRingo)
         .levelUpLearnset = sCRingoLevelUpLearnset,
         .teachableLearnset = sCRingoTeachableLearnset,

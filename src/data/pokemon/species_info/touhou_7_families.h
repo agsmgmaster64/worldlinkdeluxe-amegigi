@@ -396,7 +396,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GOLIATH_HOURAI}),
     },
 
-    #define GOLIATH_SPECIES_INFO(rzMode)                                                                \
+#define GOLIATH_SPECIES_INFO(rzMode)                                                                    \
     {                                                                                                   \
         .baseHP        = 110,                                                                           \
         .baseAttack    = 120,                                                                           \
@@ -1323,6 +1323,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_CLilyBlack,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1331,6 +1332,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_CLilyBlack,
         .iconSprite = gMonIcon_CLilyBlack,
         .iconPalIndex = 2,
+        SHADOW(0, 13, SHADOW_SIZE_S)
         FOOTPRINT(CLilyBlack)
         .levelUpLearnset = sCLilyBlackLevelUpLearnset,
         .teachableLearnset = sCLilyBlackTeachableLearnset,
@@ -1383,7 +1385,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 4,
+        .enemyMonElevation = 7,
         .backPic = gMonBackPic_LilyBlack,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1392,6 +1394,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_LilyBlack,
         .iconSprite = gMonIcon_LilyBlack,
         .iconPalIndex = 2,
+        SHADOW(0, 15, SHADOW_SIZE_L)
         FOOTPRINT(LilyBlack)
         .levelUpLearnset = sLilyBlackLevelUpLearnset,
         .teachableLearnset = sLilyBlackTeachableLearnset,
@@ -1437,6 +1440,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 6,
         .backPic = gMonBackPic_ALilyBlack,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1445,6 +1449,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_ALilyBlack,
         .iconSprite = gMonIcon_ALilyBlack,
         .iconPalIndex = 2,
+        SHADOW(0, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(ALilyBlack)
         .levelUpLearnset = sALilyBlackLevelUpLearnset,
         .teachableLearnset = sALilyBlackTeachableLearnset,
@@ -1490,6 +1495,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 5,
         .backPic = gMonBackPic_SLilyBlack,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -1498,6 +1504,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .shinyPalette = gMonShinyPalette_SLilyBlack,
         .iconSprite = gMonIcon_SLilyBlack,
         .iconPalIndex = 2,
+        SHADOW(-1, 14, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(SLilyBlack)
         .levelUpLearnset = sSLilyBlackLevelUpLearnset,
         .teachableLearnset = sSLilyBlackTeachableLearnset,

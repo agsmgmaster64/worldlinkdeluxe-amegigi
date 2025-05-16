@@ -35,6 +35,12 @@ static const u16 sMinorikoFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sAkiSistersFormSpeciesIdTable[] = {
+    SPECIES_AKI_SISTERS_SHIZUHA,
+    SPECIES_AKI_SISTERS_MINORIKO,
+    FORM_SPECIES_END,
+};
+
 static const u16 sCMomijiFormSpeciesIdTable[] = {
     SPECIES_CHIBI_MOMIJI,
     SPECIES_CHIBI_MOMIJI_SANNI,

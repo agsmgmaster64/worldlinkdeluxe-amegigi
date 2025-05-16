@@ -41,6 +41,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_CShizuha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -49,6 +50,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CShizuha,
         .iconSprite = gMonIcon_CShizuha,
         .iconPalIndex = 2,
+        SHADOW(0, 11, SHADOW_SIZE_S)
         FOOTPRINT(CShizuha)
         .levelUpLearnset = sCShizuhaLevelUpLearnset,
         .teachableLearnset = sCShizuhaTeachableLearnset,
@@ -58,7 +60,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
                                 {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
                                 {EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_SPEED_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
                                 {EVO_ITEM, ITEM_HELPER_HEART, SPECIES_HELPER_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})},
-                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS, CONDITIONS({IF_PAST_LEVEL, 25})}),
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS_SHIZUHA, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_SHIZUHA] =
@@ -98,6 +100,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Shizuha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -106,6 +109,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_Shizuha,
         .iconSprite = gMonIcon_Shizuha,
         .iconPalIndex = 2,
+        SHADOW(1, 12, SHADOW_SIZE_M)
         FOOTPRINT(Shizuha)
         .levelUpLearnset = sShizuhaLevelUpLearnset,
         .teachableLearnset = sShizuhaTeachableLearnset,
@@ -149,6 +153,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_SShizuha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -157,6 +162,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_SShizuha,
         .iconSprite = gMonIcon_SShizuha,
         .iconPalIndex = 2,
+        NO_SHADOW
         FOOTPRINT(SShizuha)
         .levelUpLearnset = sSShizuhaLevelUpLearnset,
         .teachableLearnset = sSShizuhaTeachableLearnset,
@@ -199,6 +205,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_HShizuha,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -207,6 +214,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_HShizuha,
         .iconSprite = gMonIcon_HShizuha,
         .iconPalIndex = 2,
+        NO_SHADOW
         FOOTPRINT(HShizuha)
         .levelUpLearnset = sHShizuhaLevelUpLearnset,
         .teachableLearnset = sHShizuhaTeachableLearnset,
@@ -252,6 +260,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_CShizuhaSannian,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -260,6 +269,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CShizuhaSannian,
         .iconSprite = gMonIcon_CShizuhaSannian,
         .iconPalIndex = 1,
+        SHADOW(0, 10, SHADOW_SIZE_S)
         FOOTPRINT(CShizuhaSannian)
         .isSannianForm = TRUE,
         .levelUpLearnset = sCShizuhaSannianLevelUpLearnset,
@@ -307,6 +317,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_ShizuhaSannian,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -315,6 +326,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_ShizuhaSannian,
         .iconSprite = gMonIcon_ShizuhaSannian,
         .iconPalIndex = 1,
+        SHADOW(1, 12, SHADOW_SIZE_M)
         FOOTPRINT(ShizuhaSannian)
         .isSannianForm = TRUE,
         .levelUpLearnset = sShizuhaSannianLevelUpLearnset,
@@ -368,6 +380,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CMinoriko,
         .iconSprite = gMonIcon_CMinoriko,
         .iconPalIndex = 2,
+        SHADOW(0, 8, SHADOW_SIZE_M)
         FOOTPRINT(CMinoriko)
         .levelUpLearnset = sCMinorikoLevelUpLearnset,
         .teachableLearnset = sCMinorikoTeachableLearnset,
@@ -377,7 +390,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
                                 {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
                                 {EVO_ITEM, ITEM_POWER_HEART, SPECIES_ATTACK_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
                                 {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})},
-                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS, CONDITIONS({IF_PAST_LEVEL, 25})}),
+                                {EVO_ITEM, ITEM_CHROME_HEART, SPECIES_AKI_SISTERS_MINORIKO, CONDITIONS({IF_PAST_LEVEL, 25})}),
     },
 
     [SPECIES_NORMAL_MINORIKO] =
@@ -419,6 +432,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 4,
         .backPic = gMonBackPic_Minoriko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -427,6 +441,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_Minoriko,
         .iconSprite = gMonIcon_Minoriko,
         .iconPalIndex = 2,
+        SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(Minoriko)
         .levelUpLearnset = sMinorikoLevelUpLearnset,
         .teachableLearnset = sMinorikoTeachableLearnset,
@@ -470,6 +485,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 2,
         .backPic = gMonBackPic_AMinoriko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -478,6 +494,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_AMinoriko,
         .iconSprite = gMonIcon_AMinoriko,
         .iconPalIndex = 2,
+        NO_SHADOW
         FOOTPRINT(AMinoriko)
         .levelUpLearnset = sAMinorikoLevelUpLearnset,
         .teachableLearnset = sAMinorikoTeachableLearnset,
@@ -520,6 +537,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 1,
         .backPic = gMonBackPic_DMinoriko,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -528,6 +546,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_DMinoriko,
         .iconSprite = gMonIcon_DMinoriko,
         .iconPalIndex = 2,
+        NO_SHADOW
         FOOTPRINT(DMinoriko)
         .levelUpLearnset = sDMinorikoLevelUpLearnset,
         .teachableLearnset = sDMinorikoTeachableLearnset,
@@ -581,6 +600,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_CMinorikoSannian,
         .iconSprite = gMonIcon_CMinorikoSannian,
         .iconPalIndex = 2,
+        SHADOW(-1, 8, SHADOW_SIZE_M)
         FOOTPRINT(CMinorikoSannian)
         .isSannianForm = TRUE,
         .levelUpLearnset = sCMinorikoSannianLevelUpLearnset,
@@ -631,6 +651,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .frontPicYOffset = 0,
         .frontAnimFrames = sAnims_GenericBlinkingAnim,
         .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .enemyMonElevation = 3,
         .backPic = gMonBackPic_MinorikoSannian,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 0,
@@ -639,6 +660,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .shinyPalette = gMonShinyPalette_MinorikoSannian,
         .iconSprite = gMonIcon_MinorikoSannian,
         .iconPalIndex = 2,
+        SHADOW(3, 12, SHADOW_SIZE_L)
         FOOTPRINT(MinorikoSannian)
         .isSannianForm = TRUE,
         .levelUpLearnset = sMinorikoSannianLevelUpLearnset,
@@ -646,67 +668,61 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .formSpeciesIdTable = sMinorikoFormSpeciesIdTable,
     },
 
-    [SPECIES_AKI_SISTERS] =
-    {
-        .baseHP        = 75,
-        .baseAttack    = 75,
-        .baseDefense   = 60,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 83,
-        .baseSpDefense = 60,
-        .types = MON_TYPES(TYPE_WATER),
-        .catchRate = 45,
-        .expYield = 145,
-        .evYield_SpAttack = 2,
-        .genderRatio = PERCENT_FEMALE(12.5),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TORRENT, ABILITY_NONE, ABILITY_SHELL_ARMOR },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Dewott"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_DEWOTT,
-        .categoryName = _("Discipline"),
-        .height = 8,
-        .weight = 245,
-        .description = COMPOUND_STRING(
-            "Strict training and disclipine leads it\n"
-            "to master its flowing double-scalchop\n"
-            "technique. Scalchop techniques differ\n"
-            "from one Dewott to another."),
-        .pokemonScale = 366,
-        .pokemonOffset = 9,
-        .trainerScale = 257,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Dewott,
-        .frontPicSize = MON_COORDS_SIZE(40, 56),
-        .frontPicYOffset = 7,
-        .frontAnimFrames = sAnims_GenericBlinkingAnim,
-        .frontAnimId = ANIM_H_VIBRATE,
-        .backPic = gMonBackPic_Dewott,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = 5,
-        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
-        .palette = gMonPalette_Dewott,
-        .shinyPalette = gMonShinyPalette_Dewott,
-        .iconSprite = gMonIcon_Dewott,
-        .iconPalIndex = 0,
-        SHADOW(-2, 6, SHADOW_SIZE_S)
-        FOOTPRINT(Dewott)
-        OVERWORLD(
-            sPicTable_Dewott,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Dewott,
-            gShinyOverworldPalette_Dewott
-        )
-        .levelUpLearnset = sDewottLevelUpLearnset,
-        .teachableLearnset = sDewottTeachableLearnset,
-    },
+#define AKI_SISTERS_SPECIES_INFO(rzMode)                                                \
+    {                                                                                   \
+        .baseHP        = 75,                                                            \
+        .baseAttack    = 125,                                                           \
+        .baseDefense   = 70,                                                            \
+        .baseSpeed     = 70,                                                            \
+        .baseSpAttack  = 60,                                                            \
+        .baseSpDefense = 120,                                                           \
+        .types = MON_TYPES(TYPE_NATURE, TYPE_EARTH),                                    \
+        .catchRate = 45,                                                                \
+        .expYield = 180,                                                                \
+        .evYield_Attack = 3,                                                            \
+        .genderRatio = PERCENT_FEMALE(50),                                              \
+        .eggCycles = 20,                                                                \
+        .friendship = STANDARD_FRIENDSHIP,                                              \
+        .growthRate = GROWTH_FAST,                                                      \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_GRASS),             \
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_OVERGROW, ABILITY_DEFIANT },        \
+        .sourceGame = SOURCE_MOF,                                                       \
+        .noFlip = TRUE,                                                                 \
+        .speciesName = _("AkiSisters"),                                                 \
+        .cryId = CRY_PORYGON,                                                           \
+        .natDexNum = NATIONAL_DEX_AKI_SISTERS,                                          \
+        .categoryName = _("Sisters"),                                                   \
+        .height = 8,                                                                    \
+        .weight = 500,                                                                  \
+        .description = gUnownPokedexText,                                               \
+        .pokemonScale = 366,                                                            \
+        .pokemonOffset = 9,                                                             \
+        .trainerScale = 257,                                                            \
+        .trainerOffset = 0,                                                             \
+        .frontPic = gMonFrontPic_AkiSisters,                                            \
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                        \
+        .frontPicYOffset = 0,                                                           \
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,                                  \
+        .enemyMonElevation = 3,                                                         \
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,                                        \
+        .backPic = gMonBackPic_AkiSisters,                                              \
+        .backPicSize = MON_COORDS_SIZE(64, 64),                                         \
+        .backPicYOffset = 0,                                                            \
+        .backAnimId = BACK_ANIM_NONE,                                                   \
+        .palette = gMonPalette_AkiSisters,                                              \
+        .shinyPalette = gMonShinyPalette_AkiSisters,                                    \
+        .iconSprite = gMonIcon_AkiSisters,                                              \
+        .iconPalIndex = 2,                                                              \
+        SHADOW(-1, 11, SHADOW_SIZE_XL_BATTLE_ONLY)                                      \
+        FOOTPRINT(AkiSisters)                                                           \
+        .levelUpLearnset = sAkiSistersLevelUpLearnset,                                  \
+        .teachableLearnset = sAkiSistersTeachableLearnset,                              \
+        .formSpeciesIdTable = sAkiSistersFormSpeciesIdTable,                            \
+        .randomizerMode = rzMode                                                        \
+    }
+
+    [SPECIES_AKI_SISTERS_SHIZUHA] = AKI_SISTERS_SPECIES_INFO(MON_RANDOMIZER_RANDOM_FORM),
+    [SPECIES_AKI_SISTERS_MINORIKO] = AKI_SISTERS_SPECIES_INFO(MON_RANDOMIZER_INVALID),
 
     [SPECIES_CHIBI_HINA] =
     {
