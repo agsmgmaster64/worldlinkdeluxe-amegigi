@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Damage calculation matches Gen5+")
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_ICE_FANG) == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_GLACEON) { Level(75); Attack(123); }
-        OPPONENT(SPECIES_GARCHOMP) { Defense(163); }
+        OPPONENT(SPECIES_CHIBI_KIKURI) { Defense(163); }
     } WHEN {
         TURN {
             MOVE(player, MOVE_ICE_FANG, WITH_RNG(RNG_DAMAGE_MODIFIER, i));
@@ -64,7 +64,7 @@ SINGLE_BATTLE_TEST("Damage calculation matches Gen5+ (Muscle Band, crit)")
     GIVEN {
         ASSUME(GetMoveCategory(MOVE_ICE_FANG) == DAMAGE_CATEGORY_PHYSICAL);
         PLAYER(SPECIES_GLACEON) { Level(75); Attack(123); Item(ITEM_MUSCLE_BAND); }
-        OPPONENT(SPECIES_GARCHOMP) { Defense(163); }
+        OPPONENT(SPECIES_CHIBI_KIKURI) { Defense(163); }
     } WHEN {
         TURN {
             MOVE(player, MOVE_ICE_FANG, WITH_RNG(RNG_DAMAGE_MODIFIER, i), criticalHit: TRUE);

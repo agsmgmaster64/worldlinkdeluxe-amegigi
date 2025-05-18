@@ -452,12 +452,12 @@
 #define SPECIES_SPIRITOMB                               442 // Kongaara
 #define SPECIES_GIBLE                                   443
 #define SPECIES_GABITE                                  444
-#define SPECIES_GARCHOMP                                445 // Kikuri
-#define SPECIES_MUNCHLAX                                446
-#define SPECIES_RIOLU                                   447
-#define SPECIES_LUCARIO                                 448 // Yuugenmagan
-#define SPECIES_HIPPOPOTAS                              449
-#define SPECIES_HIPPOWDON                               450
+#define SPECIES_CHIBI_KIKURI                            445
+#define SPECIES_NORMAL_KIKURI                           446
+#define SPECIES_PLACEHOLD_KIKURI                        447 // Placeholder
+#define SPECIES_CHIBI_YUUGENMAGAN                       448
+#define SPECIES_NORMAL_YUUGENMAGAN                      449
+#define SPECIES_PLACEHOLD_YUUGENMAGAN                   450 // Placeholder
 #define SPECIES_CHIBI_SARIEL                            451
 #define SPECIES_NORMAL_SARIEL                           452
 #define SPECIES_SPEED_SARIEL                            453
@@ -468,9 +468,9 @@
 #define SPECIES_CHIBI_ELIS                              458
 #define SPECIES_NORMAL_ELIS                             459
 #define SPECIES_PLACEHOLD_ELIS                          460 // Placeholder
-#define SPECIES_WEAVILE                                 461 // Mima
-#define SPECIES_MAGNEZONE                               462
-#define SPECIES_LICKILICKY                              463
+#define SPECIES_CHIBI_MIMA                              461
+#define SPECIES_NORMAL_MIMA                             462
+#define SPECIES_PLACEHOLD_MIMA                          463 // Placeholder
 #define SPECIES_CHIBI_TENMA                             464
 #define SPECIES_NORMAL_TENMA                            465
 #define SPECIES_SPEED_TENMA                             466
@@ -507,7 +507,7 @@
 #define SPECIES_ADVENT_EIRIN                            497
 #define SPECIES_ADVENT_REIMU                            498
 #define SPECIES_ADVENT_REMILIA                          499
-#define SPECIES_EMBOAR                                  500 // JKSanae
+#define SPECIES_JK_SANAE                                500
 #define SPECIES_DARK_ALICE                              501
 #define SPECIES_AKI_SISTERS                             502
 #define SPECIES_AKI_SISTERS_SHIZUHA                     SPECIES_AKI_SISTERS

@@ -7677,7 +7677,7 @@ static const struct LevelUpMove sKikuriLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sYuugenmaLevelUpLearnset[] = {
+static const struct LevelUpMove sYuugenmaganLevelUpLearnset[] = {
     LEVEL_UP_MOVE(2, MOVE_EXPLOSION),
     LEVEL_UP_MOVE(3, MOVE_DISABLE),
     LEVEL_UP_MOVE(3, MOVE_BARRIER),
@@ -8111,7 +8111,7 @@ static const struct LevelUpMove sCKonngaraLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sCYuugenmaLevelUpLearnset[] = {
+static const struct LevelUpMove sCYuugenmaganLevelUpLearnset[] = {
     LEVEL_UP_MOVE(1, MOVE_POISON_TEARS),
     LEVEL_UP_MOVE(5, MOVE_SMOKESCREEN),
     LEVEL_UP_MOVE(11, MOVE_NIGHT_SHADE),

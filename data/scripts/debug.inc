@@ -212,6 +212,7 @@ Debug_EventScript_Script_3_UpdateTrainerCard::
 	release
 	end
 
+
 Debug_EventScript_Script_3_Text_ChoosePrintType::
 	.string "Please choose the print type.$"
 

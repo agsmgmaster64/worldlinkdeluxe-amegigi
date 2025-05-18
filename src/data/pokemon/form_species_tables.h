@@ -1083,7 +1083,7 @@ static const u16 sLopunnyFormSpeciesIdTable[] = {
 
 #if P_FAMILY_GIBLE
 static const u16 sGarchompFormSpeciesIdTable[] = {
-    SPECIES_GARCHOMP,
+    SPECIES_CHIBI_KIKURI,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GARCHOMP_MEGA,
 #endif
@@ -1093,7 +1093,7 @@ static const u16 sGarchompFormSpeciesIdTable[] = {
 
 #if P_FAMILY_RIOLU
 static const u16 sLucarioFormSpeciesIdTable[] = {
-    SPECIES_LUCARIO,
+    SPECIES_CHIBI_YUUGENMAGAN,
 #if P_MEGA_EVOLUTIONS
     SPECIES_LUCARIO_MEGA,
 #endif

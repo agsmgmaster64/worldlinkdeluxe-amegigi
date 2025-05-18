@@ -53,7 +53,7 @@ SINGLE_BATTLE_TEST("Starf Berry randomly raises the holder's Attack, Defense, Sp
 SINGLE_BATTLE_TEST("Starf Berry randomly raises the holder's Attack, Defense, Sp. Atk, Sp. Def, or Speed by two stages when the holder's HP drop to 1/2 or below if it has Gluttony")
 {
     GIVEN {
-        PLAYER(SPECIES_MUNCHLAX) { Item(ITEM_STARF_BERRY); HP(201); MaxHP(400); Ability(ABILITY_GLUTTONY); }
+        PLAYER(SPECIES_NORMAL_KIKURI) { Item(ITEM_STARF_BERRY); HP(201); MaxHP(400); Ability(ABILITY_GLUTTONY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }

@@ -16,7 +16,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SEQUENCE_SWITCHING: AI will always switch after a
         OPPONENT(SPECIES_MACHAMP) { Level(5); }
         OPPONENT(SPECIES_MANKEY) { Level(5); }
         OPPONENT(SPECIES_PRIMEAPE) { Level(5); }
-        OPPONENT(SPECIES_MAGNEZONE) { Level(100); }
+        OPPONENT(SPECIES_NORMAL_MIMA) { Level(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_WING_ATTACK); }
         if (aiSequenceSwitchingFlag) {
@@ -93,7 +93,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SEQUENCE_SWITCHING: AI will always switch into lo
         OPPONENT(SPECIES_MACHOP) { Level(3); Moves(move); }
         OPPONENT(SPECIES_MACHOP) { Level(4); Moves(move); }
         OPPONENT(SPECIES_MACHOP) { Level(5); Moves(move); }
-        OPPONENT(SPECIES_MAGNEZONE) { Level(100); Moves(move); }
+        OPPONENT(SPECIES_NORMAL_MIMA) { Level(100); Moves(move); }
     } WHEN {
         if (aiSequenceSwitchingFlag) {
             TURN { EXPECT_MOVE(opponent, move) ; EXPECT_SEND_OUT(opponent, 1); }

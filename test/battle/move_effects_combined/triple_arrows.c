@@ -85,7 +85,7 @@ SINGLE_BATTLE_TEST("Triple Arrows's flinching is prevented by Inner Focus")
 {
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_RIOLU) { Ability(ABILITY_INNER_FOCUS); }
+        OPPONENT(SPECIES_PLACEHOLD_KIKURI) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(player, MOVE_TRIPLE_ARROWS);
                MOVE(opponent, MOVE_SCRATCH);
