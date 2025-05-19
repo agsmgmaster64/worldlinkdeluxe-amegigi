@@ -18,7 +18,12 @@ static const u32 sFieldMugshotGfx_GigiXD[] = INCBIN_U32("graphics/field_mugshots
 static const u16 sFieldMugshotPal_GigiGeneral[] = INCBIN_U16("graphics/field_mugshots/gigi/general.gbapal");
 
 static const u32 sFieldMugshotGfx_KroniiNormal[] = INCBIN_U32("graphics/field_mugshots/kronii/normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiHappy[] = INCBIN_U32("graphics/field_mugshots/kronii/happy.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiAnnoyed[] = INCBIN_U32("graphics/field_mugshots/kronii/annoyed.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiSad[] = INCBIN_U32("graphics/field_mugshots/kronii/sad.4bpp.lz");
 static const u32 sFieldMugshotGfx_KroniiSerious[] = INCBIN_U32("graphics/field_mugshots/kronii/serious.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiAngry[] = INCBIN_U32("graphics/field_mugshots/kronii/angry.4bpp.lz");
+static const u32 sFieldMugshotGfx_KroniiDeadpan[] = INCBIN_U32("graphics/field_mugshots/kronii/deadpan.4bpp.lz");
 static const u32 sFieldMugshotGfx_KroniiShadow[] = INCBIN_U32("graphics/field_mugshots/kronii/shadow.4bpp.lz");
 static const u16 sFieldMugshotPal_KroniiGeneral[] = INCBIN_U16("graphics/field_mugshots/kronii/general.gbapal");
 
@@ -268,9 +273,44 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
         },
+        [EMOTE_HAPPY] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiHappy,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_SAD] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiSad,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_KroniiSerious,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ANNOYED] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiAnnoyed,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ANGRY] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiAngry,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_DEADPAN] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiDeadpan,
             .pal = sFieldMugshotPal_KroniiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,

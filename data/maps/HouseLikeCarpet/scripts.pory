@@ -35,7 +35,7 @@ script HouseLikeCarpet_Event_GigiFollower {
     setspeakername(gText_Gigi)
     msgbox(HouseLikeCarpet_Text_GigiFollowing, MSGBOX_YESNO)
     if (var(VAR_RESULT) == 1) {
-        goto(HouseLikeCarpet_Event_GigiBoatGoesBinted)
+        goto(HouseLikeCarpet_Event_CallKronii)
     }
     msgbox(HouseLikeCarpet_Text_GigiForYou)
     closemessage
@@ -54,6 +54,25 @@ script HouseLikeCarpet_Event_GigiBoatGoesBinted {
     end
 }
 
+script HouseLikeCarpet_Event_CallKronii {
+    closemessage
+    playse(SE_POKENAV_CALL)
+    waitse
+    setspeakername(gText_Kronii)
+    msgbox(HouseLikeCarpet_Text_KroniiHeyaGigi)
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(HouseLikeCarpet_Text_GigiMetalCapLie)
+    closemessage
+    setspeakername(gText_Kronii)
+    msgbox(HouseLikeCarpet_Text_KroniiDang)
+    closemessage
+    playse(SE_POKENAV_HANG_UP)
+    waitse
+    release
+    end
+}
+
 text HouseLikeCarpet_Text_GigiWantToFollow {
     format("Yo, mind if I follow you here?")
 }
@@ -67,7 +86,7 @@ text HouseLikeCarpet_Text_GigiYayFollow {
 }
 
 text HouseLikeCarpet_Text_GigiFollowing {
-    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey, wanna hear me say something here?{DESTROY_MUGSHOT}")
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey, should I call Kronii right now?{DESTROY_MUGSHOT}")
 }
 
 text HouseLikeCarpet_Text_GigiForYou {
@@ -76,6 +95,23 @@ text HouseLikeCarpet_Text_GigiForYou {
 
 text HouseLikeCarpet_Text_GigiBogosBinted {
     format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Boat goes Binted?")
+}
+
+text HouseLikeCarpet_Text_KroniiHeyaGigi {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_HAPPY}Heya, what's up Gigi, you need me for something?\p"
+    "I was just about to go skydiving with just a metal cap here.")
+}
+
+text HouseLikeCarpet_Text_GigiMetalCapLie {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_ALT_9}Hey Kronii, did you know that the metal cap doesn't actually make you invincible when using it?\p"
+    "It doesn't even protect you from fall damage at all!")
+}
+
+text HouseLikeCarpet_Text_KroniiDang {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}…\p"
+    "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_DEADPAN}…\p"
+    "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SAD}…\p"
+    "I've been lied to, haven't I?")
 }
 
 text HouseLikeCarpet_Text_Garbage {
