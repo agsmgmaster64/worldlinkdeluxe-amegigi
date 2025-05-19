@@ -588,8 +588,9 @@
 #define MUS_ZGS_VS_REIMU            653
 #define MUS_ZGS_VS_DREAM_WILD       654
 #define MUS_ZGS_VS_DREAM_TRAINER    655
+#define MUS_WLD_GAME_CORNER         656
 
-#define END_MUS                     MUS_ZGS_VS_DREAM_TRAINER
+#define END_MUS                     MUS_WLD_GAME_CORNER
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

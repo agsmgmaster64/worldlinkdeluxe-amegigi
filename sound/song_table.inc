@@ -657,6 +657,7 @@ gSongTable::
 	song mus_zgs_vs_reimu, 0, 0
 	song mus_zgs_vs_dream_wild, 0, 0
 	song mus_zgs_vs_dream_trainer, 0, 0
+	song mus_wld_game_corner, 0, 0
 
 	.align 2
 dummy_song_header:

@@ -4745,6 +4745,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ZGS_VS_REIMU) \
     X(MUS_ZGS_VS_DREAM_WILD) \
     X(MUS_ZGS_VS_DREAM_TRAINER) \
+    X(MUS_WLD_GAME_CORNER) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \
