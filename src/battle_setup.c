@@ -1409,25 +1409,6 @@ static void CB2_EndTrainerBattle(void)
         DowngradeBadPoison();
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
-    else if (FlagGet(FLAG_SCRIPTED_LOSS))
-    {
-        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
-        {
-            gSpecialVar_Result = TRUE;
-            HealPlayerParty();
-            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-            SetBattledTrainersFlags();
-            RegisterTrainerInMatchCall();
-        }
-        else
-        {
-            gSpecialVar_Result = FALSE;
-            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-            DowngradeBadPoison();
-            SetBattledTrainersFlags();
-            RegisterTrainerInMatchCall();
-        }
-    }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
         if (InBattlePyramid() || InTrainerHillChallenge() || (!NoAliveMonsForPlayer()) || FlagGet(B_FLAG_NO_WHITEOUT))

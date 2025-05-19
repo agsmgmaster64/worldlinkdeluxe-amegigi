@@ -2410,7 +2410,7 @@ void BtlController_HandleLoadMonSprite(u32 battler, void (*controllerCallback)(u
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
     u32 y;
 
-    if (GetBattlerPosition(battler) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_GHOST)
+    if (!IsOnPlayerSide(battler) && gBattleTypeFlags & BATTLE_TYPE_GHOST)
     {
         DecompressGhostFrontPic(mon, battler);
         y = GetGhostSpriteDefault_Y(battler);
