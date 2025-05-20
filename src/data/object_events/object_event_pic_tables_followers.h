@@ -6884,6 +6884,13 @@ static const struct SpriteFrameImage sPicTable_TNue[] = {
     overworld_ascending_frames(gObjectEventPic_TNue, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_CKyouko[] = {
+    overworld_ascending_frames(gObjectEventPic_CKyouko, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Kyouko[] = {
+    overworld_ascending_frames(gObjectEventPic_Kyouko, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_CKagerou[] = {
     overworld_ascending_frames(gObjectEventPic_CKagerou, 4, 4),
 };
@@ -6899,6 +6906,13 @@ static const struct SpriteFrameImage sPicTable_Wakasagihime[] = {
 };
 static const struct SpriteFrameImage sPicTable_DWakasagihime[] = {
     overworld_ascending_frames(gObjectEventPic_DWakasagihime, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CAunn[] = {
+    overworld_ascending_frames(gObjectEventPic_CAunn, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_Aunn[] = {
+    overworld_ascending_frames(gObjectEventPic_Aunn, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_CStar[] = {

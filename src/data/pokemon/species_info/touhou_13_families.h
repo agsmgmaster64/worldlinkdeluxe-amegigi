@@ -54,6 +54,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .iconPalIndex = 0,
         SHADOW(-1, 13, SHADOW_SIZE_S)
         FOOTPRINT(CKyouko)
+        OVERWORLD(
+            sPicTable_CKyouko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CKyouko,
+            gShinyOverworldPalette_CKyouko
+        )
         .levelUpLearnset = sCKyoukoLevelUpLearnset,
         .teachableLearnset = sCKyoukoTeachableLearnset,
         .eggMoveLearnset = sCKyoukoEggMoveLearnset,
@@ -112,6 +121,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou13[] =
         .iconPalIndex = 0,
         SHADOW(2, 14, SHADOW_SIZE_M)
         FOOTPRINT(Kyouko)
+        OVERWORLD(
+            sPicTable_Kyouko,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Kyouko,
+            gShinyOverworldPalette_Kyouko
+        )
         .levelUpLearnset = sKyoukoLevelUpLearnset,
         .teachableLearnset = sKyoukoTeachableLearnset,
     },

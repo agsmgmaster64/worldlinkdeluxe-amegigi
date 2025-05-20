@@ -434,6 +434,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou16[] =
         .iconPalIndex = 2,
         SHADOW(0, 12, SHADOW_SIZE_M)
         FOOTPRINT(CAunn)
+        OVERWORLD(
+            sPicTable_CAunn,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_CAunn,
+            gShinyOverworldPalette_CAunn
+        )
         .levelUpLearnset = sCAunnLevelUpLearnset,
         .teachableLearnset = sCAunnTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_NORMAL_AUNN},
@@ -490,6 +499,15 @@ const struct SpeciesInfo gSpeciesInfoTouhou16[] =
         .iconPalIndex = 2,
         SHADOW(0, 15, SHADOW_SIZE_L)
         FOOTPRINT(Aunn)
+        OVERWORLD(
+            sPicTable_Aunn,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Aunn,
+            gShinyOverworldPalette_Aunn
+        )
         .levelUpLearnset = sAunnLevelUpLearnset,
         .teachableLearnset = sAunnTeachableLearnset,
     },
