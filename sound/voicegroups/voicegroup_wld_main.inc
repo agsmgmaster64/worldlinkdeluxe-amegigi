@@ -36,7 +36,7 @@ voicegroup_wld_main::                                                           
 	voice_square_2_alt 60, 0, 3, 0, 4, 4, 4
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 188                   @ 035 | Direct | GBA Fretless Bass
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 165, 180, 216                     @ 036 | Direct | GBA Slap Bass
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99                      @ 036 | Direct | GBA Slap Bass
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115                      @ 038 | Direct | GBA Synth Bass
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 127                     @ 039 | Direct | GBA Sampled Square
