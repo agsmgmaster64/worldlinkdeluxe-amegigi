@@ -57,8 +57,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 51,
-      "y": 14,
+      "x": 54,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -99,7 +99,7 @@
   ],
   "warp_events": [
     {
-      "x": 48,
+      "x": 47,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_GRANITE_CAVE_1F",
