@@ -4057,7 +4057,6 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             {
                 currentCondition = TRUE;
             }
-
             break;
         case IF_KNOWS_MOVE_TYPE:
             for (j = 0; j < MAX_MON_MOVES; j++)

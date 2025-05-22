@@ -6574,6 +6574,7 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_FIRST_MOVE_BLOCK:
             if ((gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_1ST_HIT && IsBattlerAlive(gBattlerTarget))
+             || gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT
              || gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
             {
                 gBattleScripting.moveendState++;
@@ -6590,8 +6591,7 @@ static void Cmd_moveend(void)
                 if (IsBattlerTurnDamaged(gBattlerTarget)
                  && IsBattlerAlive(gBattlerTarget)
                  && IsBattlerAlive(gBattlerAttacker)
-                 && !(gStatuses3[BATTLE_PARTNER(gBattlerTarget)] & STATUS3_COMMANDER)
-                 && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_1ST_HIT)
+                 && !(gStatuses3[BATTLE_PARTNER(gBattlerTarget)] & STATUS3_COMMANDER))
                 {
                     u32 targetAbility = GetBattlerAbility(gBattlerTarget);
                     /*if (targetAbility == ABILITY_GUARD_DOG)
