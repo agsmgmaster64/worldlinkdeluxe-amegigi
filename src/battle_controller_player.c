@@ -38,6 +38,7 @@
 #include "window.h"
 #include "line_break.h"
 #include "outfit_menu.h"
+#include "ui_battle_menu.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
 #include "constants/battle_partner.h"
@@ -2466,7 +2467,7 @@ static void Controller_WaitForDebug(u32 battler)
 static void PlayerHandleBattleDebug(u32 battler)
 {
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
-    SetMainCallback2(CB2_BattleDebugMenu);
+    UI_Battle_Menu_Init(BattleMainCB2);
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
 }
 
