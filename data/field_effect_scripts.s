@@ -87,7 +87,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_UseRockClimbTool          @ FLDEFF_USE_ROCK_CLIMB_TOOL
 	.4byte gFieldEffectScript_SnowGrass                 @ FLDEFF_SNOW_GRASS
 	.4byte gFieldEffectScript_Defog                     @ FLDEFF_DEFOG
-    
+
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
 	field_eff_end

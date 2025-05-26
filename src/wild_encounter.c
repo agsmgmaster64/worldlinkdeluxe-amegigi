@@ -857,7 +857,7 @@ bool8 SweetScentWildEncounter(void)
         if (metatileEncounterType == TILE_ENCOUNTER_LAND)
         {
             timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_LAND);
-            
+
             if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo == NULL)
                 return FALSE;
 
