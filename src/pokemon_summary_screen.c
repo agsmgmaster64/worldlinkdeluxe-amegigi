@@ -190,7 +190,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 handleDeoxys;
     s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or Pokémon data
-    u8 unk_filler4[6];
+    u8 isEnemyMon;
     u8 categoryIconSpriteId;
 } *sMonSummaryScreen = NULL;
 
@@ -270,6 +270,7 @@ static void BufferNatureString(void);
 static void GetMetLevelString(u8 *);
 static bool8 DoesMonOTMatchOwner(void);
 static bool8 IsInGamePartnerMon(void);
+static bool8 IsEnemyMon(void);
 static void PrintEggOTName(void);
 static void PrintEggOTID(void);
 static void PrintEggState(void);
@@ -1196,6 +1197,11 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     else
         sMonSummaryScreen->isBoxMon = FALSE;
 
+    if (mode == SUMMARY_MODE_LOCK_ENEMY)
+        sMonSummaryScreen->isEnemyMon = TRUE;
+    else
+        sMonSummaryScreen->isEnemyMon = FALSE;
+
     switch (mode)
     {
     case SUMMARY_MODE_NORMAL:
@@ -1207,6 +1213,7 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
         sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2;
         break;
     case SUMMARY_MODE_LOCK_MOVES:
+    case SUMMARY_MODE_LOCK_ENEMY:
         sMonSummaryScreen->minPageIndex = 0;
         sMonSummaryScreen->maxPageIndex = PSS_PAGE_COUNT - 2;
         sMonSummaryScreen->lockMovesFlag = TRUE;
@@ -3440,7 +3447,7 @@ static void Task_PrintInfoPage(u8 taskId)
 static void PrintMonOTName(void)
 {
     int x, windowId;
-    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
+    if (!InBattleFactory() && !InSlateportBattleTent() && !IsEnemyMon())
     {
         windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ORIGINAL_TRAINER);
         PrintTextOnWindow(windowId, gText_OTSlash, 0, 1, 0, 1);
@@ -3455,7 +3462,7 @@ static void PrintMonOTName(void)
 static void PrintMonOTID(void)
 {
     int xPos;
-    if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
+    if (!InBattleFactory() && !InSlateportBattleTent() && !IsEnemyMon())
     {
         ConvertIntToDecimalStringN(StringCopy(gStringVar1, gText_IDNumber2), (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
         xPos = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar1, 56);
@@ -3492,7 +3499,7 @@ static void BufferMonTrainerMemo(void)
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(7, sText_EndParentheses);
     }
 
-    if (InBattleFactory() == TRUE || InSlateportBattleTent() == TRUE || IsInGamePartnerMon() == TRUE)
+    if (InBattleFactory() || InSlateportBattleTent() || IsInGamePartnerMon() || IsEnemyMon())
     {
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, gText_XNature);
     }
@@ -3596,6 +3603,13 @@ static bool8 IsInGamePartnerMon(void)
         if (sMonSummaryScreen->curMonIndex == 1 || sMonSummaryScreen->curMonIndex == 4 || sMonSummaryScreen->curMonIndex == 5)
             return TRUE;
     }
+    return FALSE;
+}
+
+static bool8 IsEnemyMon(void)
+{
+    if (sMonSummaryScreen->isEnemyMon == TRUE)
+        return TRUE;
     return FALSE;
 }
 
