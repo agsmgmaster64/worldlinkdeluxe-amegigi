@@ -227,7 +227,7 @@ static u16 GetPrevBall(u16 ballId)
                 {
                     for (j = PYRAMID_BAG_ITEMS_COUNT - 1; j >= 0; j--)
                     {
-                        if (ItemId_GetPocket(items[j]) == POCKET_POKE_BALLS)
+                        if (GetItemPocket(items[j]) == POCKET_POKE_BALLS)
                             return items[j];
                     }
                 }
@@ -273,7 +273,7 @@ static u32 GetNextBall(u32 ballId)
         CompactItemsInPyramidBag();
         for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
         {
-            if (ballId == items[i-1] && ItemId_GetPocket(items[i]) == POCKET_POKE_BALLS)
+            if (ballId == items[i-1] && GetItemPocket(items[i]) == POCKET_POKE_BALLS)
             {
                 ballNext = items[i];
                 break;
@@ -2539,8 +2539,8 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
     static const u8 immuneIcon[] =  _("{BIG_MULT_X}");
     static const u8 teraIcon[] =  _("{UP_ARROW}");
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleResources->bufferA[battler][4]);
-    struct Pokemon *mon = &gPlayerParty[gBattlerPartyIndexes[battler]];
-    u32 moveType = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler);
+    struct Pokemon *mon = GetBattlerMon(battler);
+    u32 moveType = CheckDynamicMoveType(mon, moveInfo->moves[gMoveSelectionCursor[battler]], battler, MON_IN_BATTLE);
     u8 *txtPtr;
 
     if (GetActiveGimmick(battler) == GIMMICK_TERA || IsGimmickSelected(battler, GIMMICK_TERA))

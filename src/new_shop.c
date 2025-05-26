@@ -1490,7 +1490,7 @@ static inline const u8 *BuyMenuGetItemName(u32 id)
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].name;
         default:
-            return ItemId_GetName(sMartInfo.itemList[id]);
+            return GetItemName(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             return GetMoveName(sMartInfo.itemList[id]);
         // custom
@@ -1508,7 +1508,7 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].description;
         default:
-            return ItemId_GetDescription(sMartInfo.itemList[id]);
+            return GetItemDescription(sMartInfo.itemList[id]);
         // custom
         case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             return GetMoveDescription(sMartInfo.itemList[id]);
@@ -1526,15 +1526,15 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].price;
         default:
-            return ItemId_GetPrice(sMartInfo.itemList[id]);
+            return GetItemPrice(sMartInfo.itemList[id]);
         // custom
         case NEW_SHOP_TYPE_VARIABLE:
         case NEW_SHOP_TYPE_MOVE_VARIABLE:
             return SearchItemListForPrice(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_COINS:
-            return ItemId_GetCoinPrice(sMartInfo.itemList[id]);
+            return GetItemCoinPrice(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_POINTS:
-            return ItemId_GetBpPrice(sMartInfo.itemList[id]);
+            return GetItemBpPrice(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_MOVE:
             return GetMovePrice(sMartInfo.itemList[id]);
         case NEW_SHOP_TYPE_MOVE_POINTS:
@@ -1795,15 +1795,15 @@ static void UpdateItemData(void)
             default:
             {
                 u16 quantity = CountTotalItemQuantityInBag(item);
-                if (ItemId_GetPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
+                if (GetItemPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
                 {
                     const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-                    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, ItemId_GetDescription(sMartInfo.itemList[i]), 0);
+                    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, GetItemDescription(sMartInfo.itemList[i]), 0);
                     desc = gStringVar2;
                     BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 }
 
-                if (ItemId_GetImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
+                if (GetItemImportance(item) && (CheckBagHasItem(item, 1) || CheckPCHasItem(item, 1)))
                     BuyMenuPrint(WIN_MULTI, sText_SoldOut, GetStringRightAlignXOffset(FONT_SMALL, sText_SoldOut, 80), ITEM_PRICE_Y, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 else
                     PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_NORMAL, STR_CONV_MODE_LEFT_ALIGN, FALSE);
@@ -1877,7 +1877,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
 
     if (IsMartTypeItem(sMartInfo.martType))
     {
-        if (ItemId_GetImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
+        if (GetItemImportance(sShopData->currentItemId) && (CheckBagHasItem(sShopData->currentItemId, 1) || CheckPCHasItem(sShopData->currentItemId, 1)))
         {
             PlaySE(SE_BOO);
             str = Shop_GetSellerMessage(SELLER_MSG_BUY_FAIL_SOLD_OUT);
@@ -1932,7 +1932,7 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
             default:
             {
                 CopyItemName(sShopData->currentItemId, gStringVar1);
-                if (ItemId_GetImportance(sShopData->currentItemId))
+                if (GetItemImportance(sShopData->currentItemId))
                 {
                     if (IsMartTypeMoney(sMartInfo.martType))
                     {
@@ -2238,7 +2238,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (IsMartTypeItem(sMartInfo.martType) && ItemId_GetPocket(sShopData->currentItemId) == POCKET_POKE_BALLS)
+    if (IsMartTypeItem(sMartInfo.martType) && GetItemPocket(sShopData->currentItemId) == POCKET_POKE_BALLS)
     {
         if (IsTextPrinterActive(WIN_ITEM_DESCRIPTION))
         {
@@ -2252,7 +2252,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 
             if (premierBallsToAdd >= 1
              && ((I_PREMIER_BALL_BONUS <= GEN_7 && sShopData->currentItemId == ITEM_TOHO_ORB)
-             || (I_PREMIER_BALL_BONUS >= GEN_8 && (ItemId_GetPocket(sShopData->currentItemId) == POCKET_POKE_BALLS))))
+             || (I_PREMIER_BALL_BONUS >= GEN_8 && (GetItemPocket(sShopData->currentItemId) == POCKET_POKE_BALLS))))
             {
                 u32 spaceAvailable = GetFreeSpaceForItemInBag(ITEM_PREMIER_ORB);
                 if (spaceAvailable < premierBallsToAdd)

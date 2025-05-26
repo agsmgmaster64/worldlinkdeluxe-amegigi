@@ -1637,7 +1637,8 @@ static void PrintMoveInfo(u16 move, u8 x, u8 y, u8 moveIdx)
     //Sets move type depending on the mon ability/stats
     moveType = CheckDynamicMoveType(GetBattlerMon(sMenuDataPtr->battlerId),
                                     move,
-                                    sMenuDataPtr->battlerId);
+                                    sMenuDataPtr->battlerId,
+                                    MON_IN_BATTLE);
 
     //Sets move power depending on the mon ability/stats
     //movePower = CalcMoveBasePowerAfterModifiers(move, 0, sMenuDataPtr->battlerId, target, moveType, FALSE);

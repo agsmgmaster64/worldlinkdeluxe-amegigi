@@ -206,7 +206,7 @@ u16 RandomizerRandRange(enum RandomizerReason reason, u32 data1, u32 data2, u16 
 // Utility functions for the field item randomizer.
 static inline bool32 IsItemTMHM(u16 itemId)
 {
-    return ItemId_GetPocket(itemId) == POCKET_TM_HM;
+    return GetItemPocket(itemId) == POCKET_TM_HM;
 }
 
 static inline bool32 IsItemHM(u16 itemId)
@@ -216,7 +216,7 @@ static inline bool32 IsItemHM(u16 itemId)
 
 static inline bool32 IsKeyItem(u16 itemId)
 {
-    return ItemId_GetPocket(itemId) == POCKET_KEY_ITEMS;
+    return GetItemPocket(itemId) == POCKET_KEY_ITEMS;
 }
 
 // Don't randomize HMs or key items, that can make the game unwinnable.

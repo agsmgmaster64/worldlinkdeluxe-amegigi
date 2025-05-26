@@ -625,7 +625,7 @@ static void CopyBagItemName(u8 *dst, u16 itemId)
         CopyItemName(itemId, gStringVar2);
         StringExpandPlaceholders(dst, gText_NumberItem_TMBerry);
     }
-    else if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
+    else if (GetItemPocket(itemId) == POCKET_TM_HM)
     {
         StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
         if (itemId >= ITEM_HM01)
@@ -696,7 +696,7 @@ static void PrintItemQuantity(u8 windowId, u32 itemIndex, u8 y)
     if (itemId >= ITEM_HM01 && itemId <= ITEM_HM08)
         BlitBitmapToWindow(windowId, gBagMenuHMIcon_Gfx, 8, y - 1, 16, 16);
 
-    if (ItemId_GetImportance(itemId) == FALSE)
+    if (GetItemImportance(itemId) == FALSE)
     {
         ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_PYRAMID_ITEM_DIGITS);
         StringExpandPlaceholders(gStringVar4, gText_xVar1);

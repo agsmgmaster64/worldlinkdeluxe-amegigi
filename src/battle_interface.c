@@ -3080,7 +3080,7 @@ void TryAddLastUsedBallItemSprites(void)
             firstBall = ITEM_NONE;
             for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
             {
-                if (ItemId_GetPocket(items[i]) == POCKET_POKE_BALLS)
+                if (GetItemPocket(items[i]) == POCKET_POKE_BALLS)
                 {
                     firstBall = items[i];
                     break;
