@@ -230,7 +230,7 @@ static void TurnNPCIntoFollower(u32 localId, u32 followerFlags, u32 setScript, c
             npc = *GetObjectEventTemplateByLocalIdAndMap(GetFollowerNPCData(FNPC_DATA_MAP_ID), gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
             npc.movementType = 0;
             npc.script = script;
-            npc.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+            npc.localId = LOCALID_NPC_FOLLOWER;
             SetFollowerNPCData(FNPC_DATA_OBJ_ID, TrySpawnObjectEventTemplate(&npc, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, npcX, npcY));
             follower = &gObjectEvents[GetFollowerNPCData(FNPC_DATA_OBJ_ID)];
             MoveObjectEventToMapCoords(follower, npcX, npcY);
@@ -960,7 +960,7 @@ void SetFollowerNPCSprite(u32 spriteIndex)
     clone = *GetObjectEventTemplateByLocalIdAndMap(GetFollowerNPCData(FNPC_DATA_MAP_ID), GetFollowerNPCData(FNPC_DATA_MAP_NUM), GetFollowerNPCData(FNPC_DATA_MAP_GROUP));
     clone.graphicsId = newGraphicsId;
     clone.movementType = 0;
-    clone.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+    clone.localId = LOCALID_NPC_FOLLOWER;
     SetFollowerNPCData(FNPC_DATA_OBJ_ID, TrySpawnObjectEventTemplate(&clone, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, clone.x, clone.y));
     if (GetFollowerNPCData(FNPC_DATA_OBJ_ID) != OBJECT_EVENTS_COUNT)
     {
@@ -1141,7 +1141,7 @@ void CreateFollowerNPCAvatar(void)
     clone.x = player->currentCoords.x - 7;
     clone.y = player->currentCoords.y - 7;
     clone.movementType = 0;
-    clone.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+    clone.localId = LOCALID_NPC_FOLLOWER;
 
     switch (GetPlayerFacingDirection())
     {
@@ -1684,7 +1684,7 @@ void ScriptHideNPCFollower(struct ScriptContext *ctx)
         if (walkSpeed > 3)
             walkSpeed = 3;
 
-        ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npc->mapGroup, npc->mapNum, FollowerNPCHideMovementsSpeedTable[direction][walkSpeed]);
+        ScriptMovement_StartObjectMovementScript(LOCALID_NPC_FOLLOWER, npc->mapGroup, npc->mapNum, FollowerNPCHideMovementsSpeedTable[direction][walkSpeed]);
         SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
     }
 }

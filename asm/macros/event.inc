@@ -2611,7 +2611,7 @@
 	.macro hidefollowernpc speed=1
 	callnative ScriptHideNPCFollower
 	.byte \speed
-	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
+	waitmovement LOCALID_NPC_FOLLOWER
 	callnative HideNPCFollower
 	.endm
 
