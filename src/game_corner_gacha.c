@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "bg.h"
 #include "coins.h"
+#include "caps.h"
 #include "data.h"
 #include "daycare.h"
 #include "decompress.h"
@@ -2706,11 +2707,9 @@ void ShowFinalMessage(void)
     CopyWindowToVram(sTextWindowId, 3);
 }
 
-
-static void GachaMain(u8 taskId)
+static inline u16 GetSpeciesGachaLevel(void)
 {
-    u16 level;
-    u32 pos = B_POSITION_OPPONENT_RIGHT;
+    u16 level, levelCap;
 
     if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
     {
@@ -2752,7 +2751,22 @@ static void GachaMain(u8 taskId)
     {
         level = (Random() % 5) + 2;
     }
-    
+
+    levelCap = GetCurrentLevelCap();
+
+    if (level > levelCap)
+        return levelCap;
+
+    return level;
+}
+
+static void GachaMain(u8 taskId)
+{
+    u16 level;
+    u32 pos = B_POSITION_OPPONENT_RIGHT;
+
+    level = GetSpeciesGachaLevel();
+
     switch (sGacha->state)
     {
     case GACHA_STATE_INIT:
