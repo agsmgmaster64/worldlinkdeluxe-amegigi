@@ -230,7 +230,7 @@ static void TurnNPCIntoFollower(u32 localId, u32 followerFlags, u32 setScript, c
             npc = *GetObjectEventTemplateByLocalIdAndMap(GetFollowerNPCData(FNPC_DATA_MAP_ID), gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
             npc.movementType = 0;
             npc.script = script;
-            npc.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+            npc.localId = LOCALID_NPC_FOLLOWER;
             SetFollowerNPCData(FNPC_DATA_OBJ_ID, TrySpawnObjectEventTemplate(&npc, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, npcX, npcY));
             follower = &gObjectEvents[GetFollowerNPCData(FNPC_DATA_OBJ_ID)];
             MoveObjectEventToMapCoords(follower, npcX, npcY);
@@ -955,7 +955,7 @@ void SetFollowerNPCSprite(u32 spriteIndex)
     clone = *GetObjectEventTemplateByLocalIdAndMap(GetFollowerNPCData(FNPC_DATA_MAP_ID), GetFollowerNPCData(FNPC_DATA_MAP_NUM), GetFollowerNPCData(FNPC_DATA_MAP_GROUP));
     clone.graphicsId = newGraphicsId;
     clone.movementType = 0;
-    clone.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+    clone.localId = LOCALID_NPC_FOLLOWER;
     SetFollowerNPCData(FNPC_DATA_OBJ_ID, TrySpawnObjectEventTemplate(&clone, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, clone.x, clone.y));
     if (GetFollowerNPCData(FNPC_DATA_OBJ_ID) != OBJECT_EVENTS_COUNT)
     {
@@ -1016,6 +1016,17 @@ void NPCFollow(struct ObjectEvent *npc, u32 state, bool32 ignoreScriptActive)
     // Don't follow during a script.
     else if (ArePlayerFieldControlsLocked() && !ignoreScriptActive)
         return;
+
+    // If the follower's object has been removed, create a new one and set it to reappear.
+    if (!follower->active)
+    {
+        CreateFollowerNPCAvatar();
+        SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
+    }
+
+    // Restore post warp behavior after setobjectxy.
+    if (GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) == FNPC_DOOR_NO_POS_SET)
+        SetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR, FNPC_DOOR_NONE);
 
     // Follower changes to normal sprite after getting off surf blob.
     if (GetFollowerNPCData(FNPC_DATA_CURRENT_SPRITE) == FOLLOWER_NPC_SPRITE_INDEX_SURF && !CheckFollowerNPCFlag(PLAYER_AVATAR_FLAG_SURFING) && follower->fieldEffectSpriteId == 0)
@@ -1125,7 +1136,7 @@ void CreateFollowerNPCAvatar(void)
     clone.x = player->currentCoords.x - 7;
     clone.y = player->currentCoords.y - 7;
     clone.movementType = 0;
-    clone.localId = OBJ_EVENT_ID_NPC_FOLLOWER;
+    clone.localId = LOCALID_NPC_FOLLOWER;
 
     switch (GetPlayerFacingDirection())
     {
@@ -1243,7 +1254,6 @@ void FollowerNPC_WarpSetEnd(void)
 {
     struct ObjectEvent *player;
     struct ObjectEvent *follower;
-    u32 toY;
 
     if (!PlayerHasFollowerNPC())
         return;
@@ -1251,11 +1261,20 @@ void FollowerNPC_WarpSetEnd(void)
     player = &gObjectEvents[gPlayerAvatar.objectEventId];
     follower = &gObjectEvents[GetFollowerNPCObjectId()];
 
-    SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
     PlayerLogCoordinates(player);
 
-    toY = GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) == FNPC_DOOR_NEEDS_TO_EXIT ? (player->currentCoords.y - 1) : player->currentCoords.y;
-    MoveObjectEventToMapCoords(follower, player->currentCoords.x, toY);
+    // Skip setting position if setobjectxy was used during ON_WARP_INTO_MAP_TABLE.
+    if (GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) == FNPC_DOOR_NO_POS_SET)
+    {
+        SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_NONE);
+        SetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR, FNPC_DOOR_NONE);
+    }
+    else
+    {
+        u32 toY = GetFollowerNPCData(FNPC_DATA_COME_OUT_DOOR) == FNPC_DOOR_NEEDS_TO_EXIT ? (player->currentCoords.y - 1) : player->currentCoords.y;
+        MoveObjectEventToMapCoords(follower, player->currentCoords.x, toY);
+        SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
+    }
 
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
         SetFollowerNPCSprite(FOLLOWER_NPC_SPRITE_INDEX_NORMAL);
@@ -1654,7 +1673,7 @@ void ScriptHideNPCFollower(struct ScriptContext *ctx)
         if (walkSpeed > 3)
             walkSpeed = 3;
 
-        ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npc->mapGroup, npc->mapNum, FollowerNPCHideMovementsSpeedTable[direction][walkSpeed]);
+        ScriptMovement_StartObjectMovementScript(LOCALID_NPC_FOLLOWER, npc->mapGroup, npc->mapNum, FollowerNPCHideMovementsSpeedTable[direction][walkSpeed]);
         SetFollowerNPCData(FNPC_DATA_WARP_END, FNPC_WARP_REAPPEAR);
     }
 }

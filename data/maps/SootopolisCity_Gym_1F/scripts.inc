@@ -207,7 +207,7 @@ SootopolisCity_Gym_1F_EventScript_FallThroughIce::
 # 104 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	delay 20
 # 105 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, SootopolisCity_Gym_1F_Movement_FallThroughIce
+	applymovement LOCALID_PLAYER, SootopolisCity_Gym_1F_Movement_FallThroughIce
 # 106 "data/maps/SootopolisCity_Gym_1F/scripts.pory"
 	waitmovement 0
 # 107 "data/maps/SootopolisCity_Gym_1F/scripts.pory"

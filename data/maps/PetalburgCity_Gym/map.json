@@ -16,6 +16,7 @@
   "connections": 0,
   "object_events": [
     {
+      "local_id": "LOCALID_PETALBURG_GYM_LARRY",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LARRY",
       "x": 4,
@@ -143,6 +144,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_PETALBURG_GYM_WALLY",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 4,
       "y": 111,
@@ -157,6 +159,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_PETALBURG_GYM_WALLYS_DAD",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 1,
       "y": 7,

@@ -1,6 +1,4 @@
 raw `
-.set LOCALID_BOUNCER, 23
-
 MauvilleCity_GameCorner_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, TrainerId_Onframe
 	.byte 0
@@ -33,19 +31,19 @@ TrainerId_Onframe:
 	
 BouncerCheck::
 	lockall
-	applymovement LOCALID_BOUNCER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_GAME_CORNER_BOUNCER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_BOUNCER, Common_Movement_ExclamationMark
+	applymovement LOCALID_GAME_CORNER_BOUNCER, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_BOUNCER, Common_Movement_Delay48
+	applymovement LOCALID_GAME_CORNER_BOUNCER, Common_Movement_Delay48
 	waitmovement 0
-	applymovement LOCALID_BOUNCER, Movement_Bouncer_Approach
+	applymovement LOCALID_GAME_CORNER_BOUNCER, Movement_Bouncer_Approach
 	waitmovement 0
 	msgbox MauvilleCity_GameCorner_Text_Bouncer1, MSGBOX_DEFAULT
 	closemessage
 	setvar GAME_CORNER_VAR_ID_CHECK, 1
-	applymovement LOCALID_BOUNCER, Movement_Bouncer_Leave
+	applymovement LOCALID_GAME_CORNER_BOUNCER, Movement_Bouncer_Leave
 	waitmovement 0
 	releaseall
 	end	

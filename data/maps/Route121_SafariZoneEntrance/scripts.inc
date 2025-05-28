@@ -21,7 +21,7 @@ Route121_SafariZoneEntrance_EventScript_ExitSafariZone::
 # 11 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	lockall
 # 12 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route121_SafariZoneEntrance_Movement_ExitSafariZone
+	applymovement LOCALID_PLAYER, Route121_SafariZoneEntrance_Movement_ExitSafariZone
 # 13 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmovement 0
 # 14 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -95,7 +95,7 @@ Route121_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 # 48 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	lockall
 # 49 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 # 50 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmovement 0
 # 51 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -147,7 +147,7 @@ Route121_SafariZoneEntrance_EventScript_TryEnterSafariZone::
 # 74 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	hidemoneybox
 # 75 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route121_SafariZoneEntrance_Movement_EnterSafariZone
+	applymovement LOCALID_PLAYER, Route121_SafariZoneEntrance_Movement_EnterSafariZone
 # 76 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmovement 0
 # 77 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
@@ -215,7 +215,7 @@ Route121_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter::
 # 108 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	hidemoneybox
 # 109 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Route121_SafariZoneEntrance_Movement_BackAwayFromCounter
+	applymovement LOCALID_PLAYER, Route121_SafariZoneEntrance_Movement_BackAwayFromCounter
 # 110 "data/maps/Route121_SafariZoneEntrance/scripts.pory"
 	waitmovement 0
 # 111 "data/maps/Route121_SafariZoneEntrance/scripts.pory"

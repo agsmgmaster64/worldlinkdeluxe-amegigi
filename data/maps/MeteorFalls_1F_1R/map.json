@@ -73,6 +73,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_METEOR_FALLS_MAGMA_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 12,
       "y": 20,
@@ -87,6 +88,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_METEOR_FALLS_MAGMA_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 14,
       "y": 21,
@@ -101,6 +103,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_METEOR_FALLS_ARCHIE",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
       "x": 6,
       "y": 20,
@@ -115,6 +118,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_METEOR_FALLS_AQUA_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 6,
       "y": 20,
@@ -129,6 +133,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_METEOR_FALLS_AQUA_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 6,
       "y": 21,

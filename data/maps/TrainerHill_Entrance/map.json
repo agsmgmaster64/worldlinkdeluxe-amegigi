@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_TRAINER_HILL_ATTENDANT",
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "x": 11,
       "y": 6,
@@ -31,6 +32,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_TRAINER_HILL_NURSE",
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 4,
       "y": 9,
@@ -59,6 +61,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_TRAINER_HILL_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 5,
       "y": 14,
@@ -73,6 +76,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_TRAINER_HILL_MAN",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 14,
       "y": 15,

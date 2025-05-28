@@ -1,5 +1,3 @@
-const LOCALID_BAELZ = 1
-
 script GraniteCave_StevensRoom_EventScript_Baelz {
 	lock
 	setspeakername(gText_Baelz)
@@ -44,7 +42,7 @@ script GraniteCave_StevensRoom_EventScript_Baelz {
 			call(GraniteCave_StevensRoom_EventScript_StevenExitWestEast)
 	}
 	playse(SE_EXIT)
-	removeobject(LOCALID_BAELZ)
+	removeobject(LOCALID_GRANITE_CAVE_BAELZ)
 	release
 	end
 }
@@ -90,25 +88,23 @@ text GraniteCave_StevensRoom_Text_IveGotToHurryAlong {
 }
 
 raw `
-.set LOCALID_STEVEN, 1
-
 GraniteCave_StevensRoom_MapScripts::
 	.byte 0
 
 GraniteCave_StevensRoom_EventScript_StevenExitNorth::
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, GraniteCave_StevensRoom_Movement_StevenExit
 	waitmovement 0
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
-	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
+	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, GraniteCave_StevensRoom_Movement_StevenExit
 	waitmovement 0
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenExitSouth::
-	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
+	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, GraniteCave_StevensRoom_Movement_StevenExitSouth
 	waitmovement 0
 	return
 
@@ -154,19 +150,19 @@ GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlace::
 	return
 
 GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceNorth::
-	applymovement LOCALID_STEVEN, GraniteCave_StevensRoom_Movement_WalkInPlaceUp
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, GraniteCave_StevensRoom_Movement_WalkInPlaceUp
 	return
 
 GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceSouth::
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, Common_Movement_WalkInPlaceDown
 	return
 
 GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceEast::
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, Common_Movement_WalkInPlaceLeft
 	return
 
 GraniteCave_StevensRoom_EventScript_BaelzWalkAwayInPlaceWest::
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_GRANITE_CAVE_BAELZ, Common_Movement_WalkInPlaceRight
 	return
 
 GraniteCave_StevensRoom_Movement_WalkInPlaceUp::
@@ -183,19 +179,19 @@ GraniteCave_StevensRoom_EventScript_StevenFacePlayer::
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenFacePlayerNorth::
-	turnobject LOCALID_STEVEN, DIR_SOUTH
+	turnobject LOCALID_GRANITE_CAVE_BAELZ, DIR_SOUTH
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenFacePlayerSouth::
-	turnobject LOCALID_STEVEN, DIR_NORTH
+	turnobject LOCALID_GRANITE_CAVE_BAELZ, DIR_NORTH
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenFacePlayerEast::
-	turnobject LOCALID_STEVEN, DIR_WEST
+	turnobject LOCALID_GRANITE_CAVE_BAELZ, DIR_WEST
 	return
 
 GraniteCave_StevensRoom_EventScript_StevenFacePlayerWest::
-	turnobject LOCALID_STEVEN, DIR_EAST
+	turnobject LOCALID_GRANITE_CAVE_BAELZ, DIR_EAST
 	return
 
 GraniteCave_StevensRoom_Text_RegisteredSteven:

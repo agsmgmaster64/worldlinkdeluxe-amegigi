@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_2F_RICH_BOY",
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 6,
       "y": 2,
@@ -31,6 +32,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_2F_GENTLEMAN",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 11,
       "y": 8,
@@ -45,6 +47,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_2F_SCIENTIST",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
       "x": 5,
       "y": 6,
@@ -59,6 +62,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_2F_STEVEN",
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 1,
       "y": 8,
@@ -73,6 +77,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_GRUNT_6",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 12,
       "y": 2,
@@ -87,6 +92,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_GRUNT_5",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 13,
       "y": 3,
@@ -101,6 +107,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_GRUNT_7",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 14,
       "y": 2,
@@ -115,6 +122,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_TABITHA",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 0,
       "y": 8,
@@ -129,6 +137,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_SPACE_CENTER_MAXIE",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 1,
       "y": 9,

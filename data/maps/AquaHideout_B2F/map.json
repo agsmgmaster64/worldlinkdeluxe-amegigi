@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_AQUA_HIDEOUT_MATT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 23,
       "y": 19,
@@ -59,6 +60,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_AQUA_HIDEOUT_SUBMARINE",
       "graphics_id": "OBJ_EVENT_GFX_SUBMARINE_SHADOW",
       "x": 19,
       "y": 20,

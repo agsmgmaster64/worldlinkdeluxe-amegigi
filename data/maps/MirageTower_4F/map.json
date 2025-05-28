@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_MIRAGE_ROOT_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 5,
       "y": 4,
@@ -31,6 +32,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MIRAGE_CLAW_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 7,
       "y": 4,

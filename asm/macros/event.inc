@@ -627,10 +627,10 @@
 	.endm
 
 	@ Blocks script execution until the movements being applied to the specified (localId) object finish.
-	@ If localId is 0, then the id of the last-moved object will be used instead. If the specified object
-	@ is not currently being manipulated with applymovement, then this command does nothing.
+	@ If localId is LOCALID_NONE (0), then the id of the last-moved object will be used instead.
+	@ If the specified object is not currently being manipulated with applymovement, then this command does nothing.
 	@ If no map is specified, then the current map is used.
-	.macro waitmovement localId:req, map
+	.macro waitmovement localId=LOCALID_NONE, map
 		.ifb \map
 			.byte SCR_OP_WAITMOVEMENT
 			.2byte \localId
@@ -3115,7 +3115,7 @@
 	.macro hidefollowernpc speed=1
 	callnative ScriptHideNPCFollower
 	.byte \speed
-	waitmovement OBJ_EVENT_ID_NPC_FOLLOWER
+	waitmovement LOCALID_NPC_FOLLOWER
 	callnative HideNPCFollower
 	.endm
 

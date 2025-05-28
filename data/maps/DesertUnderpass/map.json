@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_UNDERPASS_FOSSIL",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 132,
       "y": 10,

@@ -159,6 +159,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 44,
       "y": 23,
@@ -173,6 +174,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 44,
       "y": 24,
@@ -187,6 +189,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_GRUNT_3",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 44,
       "y": 25,
@@ -201,6 +204,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_GRUNT_4",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 44,
       "y": 26,
@@ -215,6 +219,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_MAXIE",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 45,
       "y": 25,
@@ -243,6 +248,7 @@
     },
     {
       "type": "object",
+      "local_id": "LOCALID_MOSSDEEP_SCOTT",
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
       "x": 61,
       "y": 29,

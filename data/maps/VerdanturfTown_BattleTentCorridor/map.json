@@ -17,6 +17,7 @@
   "object_events": [
     {
       "type": "object",
+      "local_id": "LOCALID_VERDANTURF_TENT_CORRIDOR_ATTENDANT",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 2,
       "y": 6,

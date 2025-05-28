@@ -42,7 +42,8 @@ enum FollowerNPCSpriteTypes
 enum FollowerNPCDoorStairsStates
 {
     FNPC_DOOR_NONE,
-    FNPC_DOOR_NEEDS_TO_EXIT
+    FNPC_DOOR_NEEDS_TO_EXIT,
+    FNPC_DOOR_NO_POS_SET
 };
 
 enum FollowerNPCWarpEndStates
