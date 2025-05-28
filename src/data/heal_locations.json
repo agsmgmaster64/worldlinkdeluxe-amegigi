@@ -131,6 +131,12 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_CARPET_TOWN",
+      "map": "MAP_HOME_LIKE_CARPET",
+      "x": 3,
+      "y": 52
     }
   ]
 }

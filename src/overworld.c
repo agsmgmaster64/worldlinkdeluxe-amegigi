@@ -1565,17 +1565,17 @@ u8 NuzlockeGetCurrentRegionMapSectionId(void) //tx_randomizer_and_challenges @Ku
     {
         switch(gSaveBlock1Ptr->location.mapNum)
         {
-        case MAP_NUM(SAFARI_ZONE_SOUTH):
+        case MAP_NUM(MAP_SAFARI_ZONE_SOUTH):
             return MAPSEC_SAFARI_ZONE_AREA1;
-        case MAP_NUM(SAFARI_ZONE_SOUTHWEST):
+        case MAP_NUM(MAP_SAFARI_ZONE_SOUTHWEST):
             return MAPSEC_SAFARI_ZONE_AREA2;
-        case MAP_NUM(SAFARI_ZONE_NORTHWEST):
+        case MAP_NUM(MAP_SAFARI_ZONE_NORTHWEST):
             return MAPSEC_SAFARI_ZONE_AREA3;
-        case MAP_NUM(SAFARI_ZONE_NORTH):
+        case MAP_NUM(MAP_SAFARI_ZONE_NORTH):
             return MAPSEC_SAFARI_ZONE_AREA4;
-        case MAP_NUM(SAFARI_ZONE_SOUTHEAST):
+        case MAP_NUM(MAP_SAFARI_ZONE_SOUTHEAST):
             return MAPSEC_SAFARI_ZONE_AREA5;
-        case MAP_NUM(SAFARI_ZONE_NORTHEAST):
+        case MAP_NUM(MAP_SAFARI_ZONE_NORTHEAST):
             return MAPSEC_SAFARI_ZONE_AREA6;
         }
     }

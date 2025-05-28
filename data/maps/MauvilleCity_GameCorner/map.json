@@ -324,6 +324,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_GAME_CORNER_BOUNCER",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
       "x": 17,

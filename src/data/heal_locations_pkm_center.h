@@ -142,8 +142,8 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
     },
     [HEAL_LOCATION_CARPET_TOWN - 1] =
     {
-        .group = MAP_GROUP(CARPET_CENTER),
-        .map = MAP_NUM(CARPET_CENTER),
+        .mapGroup = MAP_GROUP(MAP_CARPET_CENTER),
+        .mapNum = MAP_NUM(MAP_CARPET_CENTER),
         DEFAULT_POKEMON_CENTER_COORDS,
     },
 };

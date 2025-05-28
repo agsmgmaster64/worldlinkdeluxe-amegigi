@@ -63,82 +63,74 @@ FortreeCity_DecorationShop_PokemartDecor_Desks:
 # 32 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_HARD_DESK
 # 33 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	.2byte DECOR_NONE
+	pokemartlistend
 # 34 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	release
+
 # 35 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	end
-# 36 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-
-# 37 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 FortreeCity_DecorationShop_EventScript_ClerkChairs::
-# 38 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 36 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	lock
-# 39 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 37 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	faceplayer
-# 40 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 38 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	message gText_HowMayIServeYou
-# 41 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 39 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	waitmessage
-# 42 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 40 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	pokemartdecoration FortreeCity_DecorationShop_PokemartDecor_Chairs
-# 43 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 41 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 42 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+	release
+# 43 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+	end
 # 44 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	release
+
 # 45 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	end
-# 46 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-
-# 47 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.align 2
-# 48 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 46 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 FortreeCity_DecorationShop_PokemartDecor_Chairs:
-# 49 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 47 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_SMALL_CHAIR
-# 50 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 48 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_POKEMON_CHAIR
-# 51 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 49 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_HEAVY_CHAIR
-# 52 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 50 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_RAGGED_CHAIR
-# 53 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 51 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_COMFORT_CHAIR
-# 54 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 52 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_BRICK_CHAIR
-# 55 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 53 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_CAMP_CHAIR
-# 56 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 54 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.2byte DECOR_HARD_CHAIR
+# 55 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+	pokemartlistend
+# 56 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+
 # 57 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	.2byte DECOR_NONE
-# 58 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	release
-# 59 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-	end
-# 60 "data/maps/FortreeCity_DecorationShop/scripts.pory"
-
-# 61 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 FortreeCity_DecorationShop_Text_MerchandiseSentToPC:
-# 62 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 58 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "Merchandise you buy here is sent to\n"
-# 63 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 59 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "your own PC.\p"
-# 64 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 60 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "That's fantastic! I wish they could\n"
-# 65 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 61 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "also deliver me home like that.$"
-# 66 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 62 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 
-# 67 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 63 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 FortreeCity_DecorationShop_Text_BuyingDeskForDolls:
-# 68 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 64 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "I'm buying a pretty desk and I'm\n"
-# 69 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 65 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "putting my cute DOLLS on it.\p"
-# 70 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 66 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "If I don't, when I decorate my\n"
-# 71 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 67 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "SECRET BASE, my DOLLS will get\l"
-# 72 "data/maps/FortreeCity_DecorationShop/scripts.pory"
+# 68 "data/maps/FortreeCity_DecorationShop/scripts.pory"
 	.string "dirty or poked with splinters.$"

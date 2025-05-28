@@ -10,6 +10,14 @@ enum {
     MAPSEC_COUNT
 };
 
+//tx_difficulty_challenges
+#define MAPSEC_SAFARI_ZONE_AREA1            0xF7
+#define MAPSEC_SAFARI_ZONE_AREA2            0xF8
+#define MAPSEC_SAFARI_ZONE_AREA3            0xF9
+#define MAPSEC_SAFARI_ZONE_AREA4            0xFA
+#define MAPSEC_SAFARI_ZONE_AREA5            0xFB
+#define MAPSEC_SAFARI_ZONE_AREA6            0xFC
+
 // Special location IDs that use the same value space as MAPSECs.
 #define METLOC_SPECIAL_EGG         0xFD
 #define METLOC_IN_GAME_TRADE       0xFE

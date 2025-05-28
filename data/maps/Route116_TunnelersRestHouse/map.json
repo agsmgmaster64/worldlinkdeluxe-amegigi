@@ -16,6 +16,7 @@
   "connections": 0,
   "object_events": [
     {
+      "local_id": "LOCALID_REST_HOUSE_GIGI",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIGI_MURIN",
       "x": 4,
@@ -30,6 +31,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_REST_HOUSE_INA",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_INA_ARTIST",
       "x": 2,
@@ -44,6 +46,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_REST_HOUSE_NUE",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHIBI_NUE)",
       "x": 5,
@@ -58,6 +61,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_REST_HOUSE_KRONII",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KRONII",
       "x": 3,

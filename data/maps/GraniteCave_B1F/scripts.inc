@@ -43,7 +43,7 @@ GraniteCave_B1F_EventScript_FallDownHole::
 # 22 "data/maps/GraniteCave_B1F/scripts.pory"
 	delay 20
 # 23 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, GraniteCave_B1F_Movement_SetInvisible
+	applymovement LOCALID_PLAYER, GraniteCave_B1F_Movement_SetInvisible
 # 24 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement 0
 # 25 "data/maps/GraniteCave_B1F/scripts.pory"
