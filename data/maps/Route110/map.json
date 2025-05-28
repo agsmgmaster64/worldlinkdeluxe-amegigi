@@ -312,8 +312,8 @@
       "flag": "FLAG_ITEM_ROUTE_110_RARE_CANDY"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CHALLENGE_BIKER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 23,
       "y": 17,
@@ -411,8 +411,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE110_RIVAL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 37,
       "y": 55,
@@ -426,8 +426,8 @@
       "flag": "FLAG_HIDE_ROUTE_110_RIVAL"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
       "x": 37,
       "y": 55,
@@ -525,8 +525,8 @@
       "flag": "FLAG_ITEM_ROUTE_110_ELIXIR"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE110_BIRCH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 9,
       "y": 77,

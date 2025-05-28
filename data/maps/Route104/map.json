@@ -116,8 +116,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE104_BOAT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 12,
       "y": 54,
@@ -131,8 +131,8 @@
       "flag": "FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE104_BRINEY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 12,
       "y": 51,
@@ -496,8 +496,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_ROUTE104_RIVAL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 17,
       "y": 50,

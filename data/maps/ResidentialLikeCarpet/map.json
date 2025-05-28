@@ -22,6 +22,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_RESIDENTIAL_GIGI",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIGI_MURIN",
       "x": 22,
@@ -36,6 +37,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_RESIDENTIAL_KRONII",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KRONII",
       "x": 23,
@@ -59,9 +61,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

@@ -13,11 +13,11 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_EXPERT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 31,
       "y": 18,
@@ -31,8 +31,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_WOMAN_2",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 47,
       "y": 33,
@@ -46,8 +46,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_KIRI",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
       "x": 9,
       "y": 43,
@@ -61,8 +61,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_NINJA_BOY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 51,
       "y": 14,
@@ -76,8 +76,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_BOY_1",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 43,
       "y": 26,
@@ -105,8 +105,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_STEVEN",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
       "x": 20,
       "y": 36,
@@ -120,8 +120,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_WOMAN_1",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 49,
       "y": 34,
@@ -135,8 +135,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_GROUDON",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GROUDON_SIDE",
       "x": 28,
       "y": 44,
@@ -150,8 +150,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_KYOGRE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE_SIDE",
       "x": 34,
       "y": 44,
@@ -165,8 +165,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_RAYQUAZA",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA",
       "x": 31,
       "y": 41,
@@ -180,8 +180,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_MANIAC",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 17,
       "y": 44,
@@ -195,8 +195,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_GIRL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 14,
       "y": 42,
@@ -210,8 +210,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_BLACK_BELT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 17,
       "y": 40,
@@ -225,8 +225,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_BOY_2",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
       "x": 19,
       "y": 37,
@@ -240,8 +240,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_MAXIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 29,
       "y": 33,
@@ -255,8 +255,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_ARCHIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
       "x": 31,
       "y": 33,
@@ -270,8 +270,8 @@
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SOOTOPOLIS_WALLACE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLACE",
       "x": 31,
       "y": 18,
@@ -378,9 +378,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

@@ -1,6 +1,3 @@
-const LOCALID_GIGI = 1
-const LOCALID_KRONII = 2
-
 mapscripts ResidentialLikeCarpet_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_HOUSE_LIKE_CARPET_STATE, 0: ResidentialLikeCarpet_Script_GigiKroniiIntro3
@@ -9,71 +6,71 @@ mapscripts ResidentialLikeCarpet_MapScripts {
 
 script ResidentialLikeCarpet_Script_GigiKroniiIntro {
     lockall
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiSoThisIsTrainer)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiSomeRandomTrainer)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiWhatMakesYouThink)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiMayHavePokedAround)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiHowDangerous)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiYouGotAnyOtherIdeas)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiWellNo)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
 	playtrainervoice(TRAINER_VOICE_GIGI, 0)
     msgbox(ResidentialLikeCarpet_Text_GigiBesidesGrabbedAll)
     waitmoncry
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiOhMyGod)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiNoWeFightThem)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiWorstIdeasEver)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiRelaxHere)
     closemessage
-	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
-    waitmovement(LOCALID_GIGI)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_RESIDENTIAL_GIGI)
     additem(ITEM_SURFBOARD)
     additem(ITEM_MUSIC_PLAYER)
     additem(ITEM_FULL_RESTORE, 8)
@@ -101,7 +98,7 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro {
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiTimeToFight)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiHopeThisWorks)
@@ -110,7 +107,7 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro {
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiSeeNatural)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     msgbox(ResidentialLikeCarpet_Text_KroniiHopeThisWorks)
 	trainerbattle_no_intro(TRAINER_MAY_RUSTBORO_MUDKIP, ResidentialLikeCarpet_Text_GigiSeeYoureStrong)
@@ -121,49 +118,49 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro {
 
 script ResidentialLikeCarpet_Script_GigiKroniiIntro2 {
     lockall
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiGigiWhatThe)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiTalkingAbout)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiIRemember)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiMakingStuffUp)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiPowerUpPunch)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiInternet)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiNotSurprised)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiFineIllGive)
     closemessage
-	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
-    waitmovement(LOCALID_GIGI)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_RESIDENTIAL_GIGI)
     additem(ITEM_SURFBOARD)
     additem(ITEM_MUSIC_PLAYER)
     additem(ITEM_FULL_RESTORE, 8)
@@ -191,7 +188,7 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro2 {
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiFightMe)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiKnowYoullWin)
@@ -204,7 +201,7 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro2 {
 
 script ResidentialLikeCarpet_Script_GigiKroniiIntro3 {
     lockall
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiNoGigiRemember)
@@ -212,19 +209,19 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro3 {
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiPlayLeague)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceLeft)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceLeft)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiNotInvitation)
     closemessage
-	applymovement(LOCALID_GIGI, Common_Movement_WalkInPlaceRight)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, Common_Movement_WalkInPlaceRight)
 	waitmovement(0)
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiOkBet)
     closemessage
-	applymovement(LOCALID_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
-    waitmovement(LOCALID_GIGI)
+	applymovement(LOCALID_RESIDENTIAL_GIGI, ResidentialLikeCarpet_Movement_GigiMoveToPlayer)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
+    waitmovement(LOCALID_RESIDENTIAL_GIGI)
     additem(ITEM_SURFBOARD)
     additem(ITEM_MUSIC_PLAYER)
     additem(ITEM_FULL_RESTORE, 8)
@@ -252,7 +249,7 @@ script ResidentialLikeCarpet_Script_GigiKroniiIntro3 {
     setspeakername(gText_Gigi)
     msgbox(ResidentialLikeCarpet_Text_GigiLosePlayLeague)
     closemessage
-	applymovement(LOCALID_KRONII, Common_Movement_WalkInPlaceDown)
+	applymovement(LOCALID_RESIDENTIAL_KRONII, Common_Movement_WalkInPlaceDown)
 	waitmovement(0)
     setspeakername(gText_Kronii)
     msgbox(ResidentialLikeCarpet_Text_KroniiPleaseDontFail)

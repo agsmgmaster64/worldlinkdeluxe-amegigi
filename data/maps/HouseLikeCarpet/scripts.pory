@@ -1,5 +1,3 @@
-const LOCALID_GIGI = 1
-
 mapscripts HouseLikeCarpet_MapScripts {}
 
 script HouseLikeCarpet_Event_LostGarbage {
@@ -24,7 +22,7 @@ script HouseLikeCarpet_Event_GigiStanding {
 
 script HouseLikeCarpet_Event_GigiAcceptFollow {
     msgbox(HouseLikeCarpet_Text_GigiYayFollow)
-    setfollowernpc(LOCALID_GIGI, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI)
+    setfollowernpc(LOCALID_HOUSE_GIGI, FOLLOWER_NPC_FLAG_ALL_LAND, HouseLikeCarpet_Event_GigiFollower, PARTNER_GIGI)
     release
     end
 }
