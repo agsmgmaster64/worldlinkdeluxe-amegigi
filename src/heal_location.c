@@ -82,7 +82,7 @@ u32 GetHealNpcLocalId(u32 healLocationId)
     if (healLocationId == HEAL_LOCATION_NONE || healLocationId >= NUM_HEAL_LOCATIONS)
         return 0;
 
-    return sHealNpcLocalId[healLocationId - 1];
+    return sWhiteoutRespawnHealerNpcIds[healLocationId - 1];
 }
 
 void SetWhiteoutRespawnWarpAndHealerNPC(struct WarpData *warp)
