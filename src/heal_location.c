@@ -97,10 +97,10 @@ void SetWhiteoutRespawnWarpAndHealerNPC(struct WarpData *warp)
         return;
     }
 
-    pkmCenterHealLocation = sHealLocationsPokemonCenter[healLocationId - 1];
-    warp->mapGroup = pkmCenterHealLocation.mapGroup;
-    warp->mapNum = pkmCenterHealLocation.mapNum;
+    warp->mapGroup = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][0];
+    warp->mapNum = sWhiteoutRespawnHealCenterMapIdxs[healLocationId - 1][1];
     warp->warpId = WARP_ID_NONE;
+    pkmCenterHealLocation = sHealLocationsPokemonCenter[healLocationId - 1];
     warp->x = pkmCenterHealLocation.x;
     warp->y = pkmCenterHealLocation.y;
     gSpecialVar_LastTalked = healNpcLocalId;
