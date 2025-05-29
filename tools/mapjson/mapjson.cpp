@@ -528,6 +528,8 @@ string generate_map_constants_text(string groups_filepath, Json groups_data) {
 
     text << get_include_guard_start(guard_name) << get_generated_warning("data/maps/map_groups.json", false);
 
+    text << "//\n// DO NOT MODIFY THIS FILE! It is auto-generated from data/maps/map_groups.json\n//\n\n";
+
     int group_num = 0;
     vector<int> map_count_vec; //DEBUG
 

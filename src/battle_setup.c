@@ -1117,7 +1117,7 @@ void SetMapVarsToTrainerA(void)
 
 void SetMapVarsToTrainerB(void)
 {
-    if (TRAINER_BATTLE_PARAM.objEventLocalIdB != 0)
+    if (TRAINER_BATTLE_PARAM.objEventLocalIdB != LOCALID_NONE)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdB;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(TRAINER_BATTLE_PARAM.objEventLocalIdB, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
