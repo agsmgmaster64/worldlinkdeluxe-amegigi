@@ -204,8 +204,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_FRONTIER_SUDOWOODO",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SUDOWOODO",
       "x": 54,
       "y": 62,
@@ -487,9 +487,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

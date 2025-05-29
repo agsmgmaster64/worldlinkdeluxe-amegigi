@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_BIRCHS_LAB_RALSEI",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
       "x": 3,
       "y": 6,
@@ -61,8 +61,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_BIRCHS_LAB_CYNDAQUIL_BALL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 6,
       "y": 8,
@@ -76,8 +76,8 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_BIRCHS_LAB_TOTODILE_BALL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 6,
       "y": 8,
@@ -91,8 +91,8 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_BIRCHS_LAB_CHIKORITA_BALL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 6,
       "y": 8,
@@ -122,9 +122,7 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
