@@ -949,8 +949,8 @@ static void LoadBattleEnvironmentGfx(u8 environment)
     if (environment >= NELEMS(sBattleEnvironmentTable))
         environment = BATTLE_ENVIRONMENT_PLAIN;
     // Copy to bg3
-    LZDecompressVram(sBattleEnvironmentTable[environment].tileset, (void *)BG_CHAR_ADDR(2));
-    LZDecompressVram(sBattleEnvironmentTable[environment].tilemap, (void *)BG_SCREEN_ADDR(26));
+    DecompressDataWithHeaderVram(sBattleEnvironmentTable[environment].tileset, (void *)BG_CHAR_ADDR(2));
+    DecompressDataWithHeaderVram(sBattleEnvironmentTable[environment].tilemap, (void *)BG_SCREEN_ADDR(26));
     LoadPalette(sBattleEnvironmentTable[environment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
@@ -959,8 +959,8 @@ static void LoadBattleEnvironmentEntryGfx(u8 environment)
     if (environment >= NELEMS(sBattleEnvironmentTable))
         environment = BATTLE_ENVIRONMENT_PLAIN;
     // Copy to bg1
-    LZDecompressVram(sBattleEnvironmentTable[environment].entryTileset, (void *)BG_CHAR_ADDR(1));
-    LZDecompressVram(sBattleEnvironmentTable[environment].entryTilemap, (void *)BG_SCREEN_ADDR(28));
+    DecompressDataWithHeaderVram(sBattleEnvironmentTable[environment].entryTileset, (void *)BG_CHAR_ADDR(1));
+    DecompressDataWithHeaderVram(sBattleEnvironmentTable[environment].entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
 static u8 GetBattleEnvironmentOverride(void)
@@ -1055,7 +1055,7 @@ void DrawMainBattleBackground(void)
 
 void LoadBattleTextboxAndBackground(void)
 {
-    LZDecompressVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
+    DecompressDataWithHeaderVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
     LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
@@ -1325,8 +1325,8 @@ void DrawBattleEntryBackground(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
-        LZDecompressVram(gBattleVSFrame_Gfx, (void *)(BG_CHAR_ADDR(1)));
-        LZDecompressVram(gVsLettersGfx, (void *)OBJ_VRAM0);
+        DecompressDataWithHeaderVram(gBattleVSFrame_Gfx, (void *)(BG_CHAR_ADDR(1)));
+        DecompressDataWithHeaderVram(gVsLettersGfx, (void *)OBJ_VRAM0);
         LoadPalette(gBattleVSFrame_Pal, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
         SetBgAttribute(1, BG_ATTR_SCREENSIZE, 1);
         SetGpuReg(REG_OFFSET_BG1CNT, 0x5C04);
@@ -1411,7 +1411,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
     switch (caseId)
     {
     case 0:
-        LZDecompressVram(gBattleTextboxTiles, (void*)(BG_CHAR_ADDR(0)));
+        DecompressDataWithHeaderVram(gBattleTextboxTiles, (void*)(BG_CHAR_ADDR(0)));
         break;
     case 1:
         CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
@@ -1421,10 +1421,10 @@ bool8 LoadChosenBattleElement(u8 caseId)
         LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         break;
     case 3:
-        LZDecompressVram(sBattleEnvironmentTable[GetBattleEnvironmentOverride()].tileset, (void *)BG_CHAR_ADDR(2));
+        DecompressDataWithHeaderVram(sBattleEnvironmentTable[GetBattleEnvironmentOverride()].tileset, (void *)BG_CHAR_ADDR(2));
         break;
     case 4:
-        LZDecompressVram(sBattleEnvironmentTable[GetBattleEnvironmentOverride()].tilemap, (void *)BG_SCREEN_ADDR(26));
+        DecompressDataWithHeaderVram(sBattleEnvironmentTable[GetBattleEnvironmentOverride()].tilemap, (void *)BG_SCREEN_ADDR(26));
         break;
     case 5:
         LoadPalette(sBattleEnvironmentTable[GetBattleEnvironmentOverride()].palette, 0x20, 0x60);

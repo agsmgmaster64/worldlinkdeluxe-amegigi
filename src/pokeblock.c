@@ -651,7 +651,7 @@ static bool8 LoadPokeblockMenuGfx(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(gMenuPokeblock_Tilemap, sPokeblockMenu->tilemap);
+            DecompressDataWithHeaderWram(gMenuPokeblock_Tilemap, sPokeblockMenu->tilemap);
             sPokeblockMenu->gfxState++;
         }
         break;
