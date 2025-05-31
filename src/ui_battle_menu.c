@@ -311,7 +311,7 @@ static const struct WindowTemplate sMenuWindowTemplates[] =
     },
 };
 
-static const u32 sMenuTiles[]      = INCBIN_U32("graphics/ui_menus/battle_menu/tiles.4bpp.lz");
+static const u32 sMenuTiles[]      = INCBIN_U32("graphics/ui_menus/battle_menu/tiles.4bpp.smol");
 static const u8 sStatDownArrow[]   = INCBIN_U8("graphics/ui_menus/battle_menu/stat_down_arrow.4bpp");
 static const u8 sStatUpArrow[]     = INCBIN_U8("graphics/ui_menus/battle_menu/stat_up_arrow.4bpp");
 static const u8 sCheck[]           = INCBIN_U8("graphics/ui_menus/battle_menu/check.4bpp");
@@ -325,19 +325,19 @@ static const u16 sMenuPalette_Green[]  = INCBIN_U16("graphics/ui_menus/battle_me
 static const u16 sMenuPalette_Red[]    = INCBIN_U16("graphics/ui_menus/battle_menu/palette_red.gbapal");
 
 //Battler Tabs
-static const u32 sMenu_Tilemap_Singles_Battler_Status[]     = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_battler_status.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Battler_Status[]     = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_battler_status.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Battler_Status[]     = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_battler_status.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Battler_Status[]     = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_battler_status.bin.smolTM");
 //
-static const u32 sMenu_Tilemap_Singles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_battler_abilities.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_battler_abilities.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_battler_abilities.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Battler_Abilities[]  = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_battler_abilities.bin.smolTM");
 //Field Tabs
-static const u32 sMenu_Tilemap_Singles_Field[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_field.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Field[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_field.bin.lz");
-static const u32 sMenu_Tilemap_Party_Info[]                 = INCBIN_U32("graphics/ui_menus/battle_menu/tilemap_field_party.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Party_Info[]         = INCBIN_U32("graphics/ui_menus/battle_menu/tilemap_doubles_field_party.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Field[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_field.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Field[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_field.bin.smolTM");
+static const u32 sMenu_Tilemap_Party_Info[]                 = INCBIN_U32("graphics/ui_menus/battle_menu/tilemap_field_party.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Party_Info[]         = INCBIN_U32("graphics/ui_menus/battle_menu/tilemap_doubles_field_party.bin.smolTM");
 //
-static const u32 sMenu_Tilemap_Singles_Speed[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_field_speed.bin.lz");
-static const u32 sMenu_Tilemap_Doubles_Speed[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_field_speed.bin.lz");
+static const u32 sMenu_Tilemap_Singles_Speed[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_singles_field_speed.bin.smolTM");
+static const u32 sMenu_Tilemap_Doubles_Speed[]              = INCBIN_U32("graphics/ui_menus/battle_menu/titlemap_doubles_field_speed.bin.smolTM");
 
 enum Colors
 {
@@ -913,22 +913,22 @@ void LoadTilemapFromMode(void)
         {
         case TAB_STATS:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
             break;
         case TAB_ABILITIES:
         case TAB_MOVES:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Abilities, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Abilities, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Abilities, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Abilities, sBg1TilemapBuffer);
             break;
         default:
             if(sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
             break;
         }
     }
@@ -938,17 +938,17 @@ void LoadTilemapFromMode(void)
         {
         case TAB_PARTY:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Party_Info, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Party_Info, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Party_Info, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Party_Info, sBg1TilemapBuffer);
             break;
         case TAB_FIELD:
         case TAB_PLAYER_SIDE:
         case TAB_ENEMY_SIDE:
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Field, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Field, sBg1TilemapBuffer);
             break;
         }
     }
@@ -1006,9 +1006,9 @@ static bool8 Menu_LoadGraphics(void)
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
             if (sMenuDataPtr->isDoubleBattle)
-                LZDecompressWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Doubles_Battler_Status, sBg1TilemapBuffer);
             else
-                LZDecompressWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
+                DecompressDataWithHeaderWram(sMenu_Tilemap_Singles_Battler_Status, sBg1TilemapBuffer);
             sMenuDataPtr->gfxLoadState++;
         }
         break;
@@ -1077,7 +1077,7 @@ static const u8 statorder[NUM_BATTLE_STATS] = {
 #define TAG_ICON_PARTY_PLAYER 4135
 #define TAG_ICON_PARTY_ENEMY  TAG_ICON_PARTY_PLAYER + PARTY_SIZE
 
-static const u32 gBattleFieldIconForest_Gfx[] = INCBIN_U32("graphics/ui_menus/battle_menu/fields/forest.4bpp.lz");
+static const u32 gBattleFieldIconForest_Gfx[] = INCBIN_U32("graphics/ui_menus/battle_menu/fields/forest.4bpp.smol");
 static const u16 gBattleFieldIconForest_Pal[] = INCBIN_U16("graphics/ui_menus/battle_menu/fields/forest.gbapal");
 
 static const struct SpritePalette sBattleMenuFieldIconSpritePalette_Forest[] =
@@ -1136,7 +1136,7 @@ static void SpriteCB_PartyMons(struct Sprite *sprite)
         sprite->invisible = FALSE;
 }
 
-static const u32 gBattleSelector_Gfx[] = INCBIN_U32("graphics/ui_menus/battle_menu/fields/selector.4bpp.lz");
+static const u32 gBattleSelector_Gfx[] = INCBIN_U32("graphics/ui_menus/battle_menu/fields/selector.4bpp.smol");
 static const u16 gBattleSelector_Pal[] = INCBIN_U16("graphics/ui_menus/battle_menu/fields/selector.gbapal");
 
 static const struct SpritePalette sBattleMenuSelectorSpritePalette[] =

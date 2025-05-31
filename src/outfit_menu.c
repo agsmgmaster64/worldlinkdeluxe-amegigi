@@ -152,10 +152,10 @@ static const u8 sText_OutfitError_Default[] = _(
 
 static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/main.4bpp");
 static const u16 sPalette[] = INCBIN_U16("graphics/outfit_menu/main.gbapal");
-static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.lz");
+static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.smolTM");
 static const u16 sScrollingBG_Tiles[] = INCBIN_U16("graphics/outfit_menu/scroll.4bpp");
 static const u16 sScrollingBG_Palette[] = INCBIN_U16("graphics/outfit_menu/scroll.gbapal");
-static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.lz");
+static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.smolTM");
 
 static const u16 sLockSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/lock.4bpp");
 static const u16 sLockIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/lock.gbapal");
@@ -485,8 +485,8 @@ static bool32 SetupOutfitMenu_Graphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
-            LZDecompressWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
+            DecompressDataWithHeaderWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
+            DecompressDataWithHeaderWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
             sOutfitMenu->gfxState++;
         }
         break;

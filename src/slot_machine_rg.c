@@ -412,11 +412,11 @@ static const u16 sReelIcons_Pal[][16] =
     INCBIN_U16("graphics/slot_machine/firered/reel_icon_wriggle.gbapal"),
     INCBIN_U16("graphics/slot_machine/firered/reel_icon_rumia.gbapal"),
 };
-static const u32 sReelIcons_Tiles[]   = INCBIN_U32("graphics/slot_machine/firered/reel_icons.4bpp.lz");
+static const u32 sReelIcons_Tiles[]   = INCBIN_U32("graphics/slot_machine/firered/reel_icons.4bpp.smol");
 static const u16 sClefairy_Pal[]      = INCBIN_U16("graphics/slot_machine/firered/clefairy.gbapal");
-static const u32 sClefairy_Tiles[]    = INCBIN_U32("graphics/slot_machine/firered/clefairy.4bpp.lz");
+static const u32 sClefairy_Tiles[]    = INCBIN_U32("graphics/slot_machine/firered/clefairy.4bpp.smol");
 static const u16 sDigits_Pal[]        = INCBIN_U16("graphics/slot_machine/firered/digits.gbapal");
-static const u32 sDigits_Tiles[]      = INCBIN_U32("graphics/slot_machine/firered/digits.4bpp.lz");
+static const u32 sDigits_Tiles[]      = INCBIN_U32("graphics/slot_machine/firered/digits.4bpp.smol");
 
 static const struct CompressedSpriteSheet sSpriteSheets[] = {
     {.data = sReelIcons_Tiles, .size = 0xe00, .tag = GFXTAG_REEL_ICONS},
@@ -733,8 +733,8 @@ static const u16 sBg_Pal[][16] =
     INCBIN_U16("graphics/slot_machine/firered/bg_pal4.gbapal"),
     INCBIN_U16("graphics/slot_machine/firered/bg_pal5.gbapal"),
 };
-static const u32 sBg_Tiles[]               = INCBIN_U32("graphics/slot_machine/firered/bg.4bpp.lz");
-static const u32 sBg_Tilemap[]             = INCBIN_U32("graphics/slot_machine/firered/bg.bin.lz");
+static const u32 sBg_Tiles[]               = INCBIN_U32("graphics/slot_machine/firered/bg.4bpp.smol");
+static const u32 sBg_Tilemap[]             = INCBIN_U32("graphics/slot_machine/firered/bg.bin.smolTM");
 static const u16 sBgPal_MatchLines[]       = INCBIN_U16("graphics/slot_machine/firered/match_lines.gbapal");
 static const u16 sBgPal_PayoutLight[][16] =
 {
@@ -742,10 +742,10 @@ static const u16 sBgPal_PayoutLight[][16] =
     INCBIN_U16("graphics/slot_machine/firered/payout_lights_2.gbapal"),
     INCBIN_U16("graphics/slot_machine/firered/payout_lights_3.gbapal"),
 };
-static const u32 sButtonPressed_Tiles[]    = INCBIN_U32("graphics/slot_machine/firered/button_pressed.4bpp.lz");
+static const u32 sButtonPressed_Tiles[]    = INCBIN_U32("graphics/slot_machine/firered/button_pressed.4bpp.smol");
 static const u16 sCombosWindow_Pal[]       = INCBIN_U16("graphics/slot_machine/firered/combos_window.gbapal");
-static const u32 sCombosWindow_Tiles[]     = INCBIN_U32("graphics/slot_machine/firered/combos_window.4bpp.lz");
-static const u32 sCombosWindow_Tilemap[]   = INCBIN_U32("graphics/slot_machine/firered/combos_window.bin.lz");
+static const u32 sCombosWindow_Tiles[]     = INCBIN_U32("graphics/slot_machine/firered/combos_window.4bpp.smol");
+static const u32 sCombosWindow_Tilemap[]   = INCBIN_U32("graphics/slot_machine/firered/combos_window.bin.smolTM");
 
 static const struct BgTemplate sBgTemplates[] = {
     {
