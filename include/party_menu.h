@@ -127,4 +127,9 @@ void ItemUseCB_UseHexorb(u8 taskId, TaskFunc task);
 void InitPartyMenuForHexorbFromField(u8 taskId);
 // End hexorb Branch
 
+bool32 SetUpFieldMove_Surf(void);
+bool32 SetUpFieldMove_Fly(void);
+bool32 SetUpFieldMove_Waterfall(void);
+bool32 SetUpFieldMove_Dive(void);
+
 #endif // GUARD_PARTY_MENU_H

@@ -792,34 +792,6 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_HEXORB] = ARRAY_COUNT(sPartyMenuAction_Hexorb), // hexorb Branch
 };
 
-struct
-{
-    u16 move;
-    bool8 (*fieldMoveFunc)(void);
-    u8 msgId;
-    u16 flagCheck;
-} static const sFieldMovesInfo[FIELD_MOVES_COUNT] =
-{
-    [FIELD_MOVE_CUT]          = {MOVE_CUT,          SetUpFieldMove_Cut,         PARTY_MSG_NOTHING_TO_CUT, FLAG_BADGE01_GET},
-    [FIELD_MOVE_FLASH]        = {MOVE_FLASH,        SetUpFieldMove_Flash,       PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE02_GET},
-    [FIELD_MOVE_ROCK_SMASH]   = {MOVE_ROCK_SMASH,   SetUpFieldMove_RockSmash,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE03_GET},
-    [FIELD_MOVE_STRENGTH]     = {MOVE_STRENGTH,     SetUpFieldMove_Strength,    PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE04_GET},
-    [FIELD_MOVE_SURF]         = {MOVE_SURF,         SetUpFieldMove_Surf,        PARTY_MSG_CANT_SURF_HERE, FLAG_BADGE05_GET},
-    [FIELD_MOVE_FLY]          = {MOVE_FLY,          SetUpFieldMove_Fly,         PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE06_GET},
-    [FIELD_MOVE_DIVE]         = {MOVE_DIVE,         SetUpFieldMove_Dive,        PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE07_GET},
-    [FIELD_MOVE_WATERFALL]    = {MOVE_WATERFALL,    SetUpFieldMove_Waterfall,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE08_GET},
-    [FIELD_MOVE_ROCK_CLIMB]   = {MOVE_ROCK_CLIMB,   SetUpFieldMove_RockClimb,   PARTY_MSG_CANT_USE_HERE,  FLAG_BADGE08_GET},
-    [FIELD_MOVE_TELEPORT]     = {MOVE_TELEPORT,     SetUpFieldMove_Teleport,    PARTY_MSG_CANT_USE_HERE,  0},
-    [FIELD_MOVE_DIG]          = {MOVE_DIG,          SetUpFieldMove_Dig,         PARTY_MSG_CANT_USE_HERE,  0},
-    [FIELD_MOVE_SECRET_POWER] = {MOVE_SECRET_POWER, SetUpFieldMove_SecretPower, PARTY_MSG_CANT_USE_HERE,  0},
-    [FIELD_MOVE_MILK_DRINK]   = {MOVE_MILK_DRINK,   SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
-    [FIELD_MOVE_SOFT_BOILED]  = {MOVE_SOFT_BOILED,  SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP,  0},
-    [FIELD_MOVE_NATURE_POWER] = {MOVE_NATURE_POWER, SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE,  0},
-    #if OW_DEFOG_FIELD_MOVE == TRUE
-    [FIELD_MOVE_DEFOG]        = {MOVE_DEFOG,        SetUpFieldMove_Defog,       PARTY_MSG_CANT_USE_HERE,  0},
-    #endif
-};
-
 static const u8 *const sUnionRoomTradeMessages[] =
 {
     [UR_TRADE_MSG_NOT_MON_PARTNER_WANTS - 1]       = gText_NotPkmnOtherTrainerWants,

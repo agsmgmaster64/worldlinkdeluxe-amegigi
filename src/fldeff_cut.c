@@ -161,12 +161,7 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
 
 // code
 
-static u32 MetatileAtCoordsIsGrassTile(int x, int y)
-{
-    return TestMetatileAttributeBit(MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_TERRAIN), TILE_TERRAIN_GRASS);
-}
-
-bool8 SetUpFieldMove_Cut(void)
+bool32 SetUpFieldMove_Cut(void)
 {
     s32 x, y;
     u32 i, j;

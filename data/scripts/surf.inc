@@ -1,5 +1,5 @@
 EventScript_UseSurf::
-	checkpartymove MOVE_SURF
+	checkfieldmove FIELD_MOVE_SURF
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseSurfOtherwise
 EventScript_DoSurf::
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -17,7 +17,7 @@ EventScript_EndUseSurf::
 	end
 
 EventScript_CanUseSurfOtherwise::
-	checkpartylearnknowsmove MOVE_SURF
+	partycheckfieldmove FIELD_MOVE_SURF
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseSurfTool
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT

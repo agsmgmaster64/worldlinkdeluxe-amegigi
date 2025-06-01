@@ -1,8 +1,7 @@
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
-	goto_if_unset FLAG_BADGE01_GET, EventScript_CanUseBigAxe
-	checkpartymove MOVE_CUT
+	checkfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseCutOtherwise
 EventScript_DoCut::
 	setfieldeffectargument 0, VAR_RESULT
@@ -28,7 +27,7 @@ EventScript_CutTreeDown::
 	end
 
 EventScript_CanUseCutOtherwise::
-	checkpartylearnknowsmove MOVE_CUT
+	partycheckfieldmove FIELD_MOVE_CUT, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseBigAxe
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -104,8 +103,7 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	goto_if_unset FLAG_BADGE03_GET, EventScript_CanUsePickaxe
-	checkpartymove MOVE_ROCK_SMASH
+	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockSmashOtherwise
 EventScript_DoRockSmash::
 	setfieldeffectargument 0, VAR_RESULT
@@ -137,7 +135,7 @@ EventScript_SmashRock::
 	end
 
 EventScript_CanUseRockSmashOtherwise::
-	checkpartylearnknowsmove MOVE_ROCK_SMASH
+	partycheckfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUsePickaxe
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -300,8 +298,7 @@ Text_CantSmash:
 EventScript_StrengthBoulder::
 	lockall
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	goto_if_unset FLAG_BADGE04_GET, EventScript_CanUseStrengthItem
-	checkpartymove MOVE_STRENGTH
+	checkfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseStrengthOtherwise
 EventScript_DoStrength::
 	setfieldeffectargument 0, VAR_RESULT
@@ -318,7 +315,7 @@ EventScript_ActivateStrength::
 	end
 
 EventScript_CanUseStrengthOtherwise::
-	checkpartylearnknowsmove MOVE_STRENGTH
+	partycheckfieldmove FIELD_MOVE_STRENGTH, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseStrengthItem
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
@@ -391,7 +388,7 @@ Text_StrengthActivated:
 
 EventScript_UseWaterfall::
 	lockall
-	checkpartymove MOVE_WATERFALL
+	checkfieldmove FIELD_MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseWaterfallOtherwise
 EventScript_DoWaterfall::
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -407,7 +404,7 @@ EventScript_UseWaterfallMon::
 	goto EventScript_EndWaterfall
 
 EventScript_CanUseWaterfallOtherwise::
-	checkpartylearnknowsmove MOVE_WATERFALL
+	partycheckfieldmove FIELD_MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseWaterfallTool
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -454,7 +451,7 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-	checkpartymove MOVE_DIVE
+	checkfieldmove FIELD_MOVE_DIVE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -482,7 +479,7 @@ EventScript_EndDive::
 EventScript_CheckDiveToolAndParty::
 	checkitem ITEM_SCUBA_GEAR, 1
 	goto_if_eq VAR_RESULT, TRUE, EventScript_UseScubaGear
-	checkpartylearnknowsmove MOVE_DIVE
+	partycheckfieldmove FIELD_MOVE_DIVE
 	return
 
 EventScript_UseScubaGear::
@@ -495,7 +492,7 @@ EventScript_UseScubaGear::
 
 EventScript_UseDiveUnderwater::
 	lockall
-	checkpartymove MOVE_DIVE
+	checkfieldmove FIELD_MOVE_DIVE, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -522,8 +519,7 @@ EventScript_NoSurface::
 
 EventScript_UseRockClimb::
 	lockall
-	goto_if_unset FLAG_BADGE08_GET, EventScript_CanUseRockClimbTool
-	checkpartymove MOVE_ROCK_CLIMB
+	checkfieldmove FIELD_MOVE_ROCK_CLIMB, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockClimbOtherwise
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -540,7 +536,7 @@ EventScript_EndRockClimb::
 	end
 
 EventScript_CanUseRockClimbOtherwise::
-	checkpartylearnknowsmove MOVE_ROCK_CLIMB
+	partycheckfieldmove FIELD_MOVE_ROCK_CLIMB, TRUE
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CanUseRockClimbTool
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
