@@ -1639,7 +1639,7 @@ void ItemUseOnFieldCB_StrengthTool(u8 taskId)
 
 void ItemUseOutOfBattle_FlashTool(u8 taskId)
 {
-    if (CanUseFlash())
+    if (CanUseFlashTool())
     {
         sItemUseOnFieldCB = ItemUseOnFieldCB_FlashTool;
         SetUpItemUseOnFieldCallback(taskId);
@@ -1680,7 +1680,7 @@ void ItemUseOutOfBattle_WaterfallTool(u8 taskId)
         sItemUseOnFieldCB = ItemUseOnFieldCB_WaterfallTool;
         SetUpItemUseOnFieldCallback(taskId);
     }
-    else if (CanUseRockClimb())
+    else if (CanUseRockClimbTool())
     {
         sItemUseOnFieldCB = ItemUseOnFieldCB_RockClimbTool;
         SetUpItemUseOnFieldCallback(taskId);

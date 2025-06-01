@@ -2048,9 +2048,10 @@
 	@ If so, VAR_RESULT is set to the
 	@ (zero-indexed) slot number of the first Pokemon that knows the move. If not, VAR_RESULT is set to PARTY_SIZE.
 	@ VAR_0x8004 is also set to this Pokemon's species.
-	.macro checkpartylearnknowsmove move:req
-	.byte SCR_OP_CHECKPARTYLEARNKNOWSMOVE
-	.2byte \move
+	.macro partycheckfieldmove fieldMove:req, checkUnlocked=FALSE
+	.byte SCR_OP_PARTYCHECKFIELDMOVE
+	.byte \fieldMove
+	.byte \checkUnlocked
 	.endm
 
 	@ End qol_field_moves

@@ -3165,13 +3165,14 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
 }
 
 // Start qol_field_moves
-bool8 ScrCmd_checkpartylearnknowsmove(struct ScriptContext *ctx)
+bool8 ScrCmd_partycheckfieldmove(struct ScriptContext *ctx)
 {
-    u16 move = ScriptReadHalfword(ctx);
+    enum FieldMove fieldMove = ScriptReadByte(ctx);
+    bool32 doUnlockedCheck = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1);
 
-    PartyHasMonLearnsKnowsFieldMove(move);
+    PartyCanUseFieldMove(fieldMove, doUnlockedCheck);
 
     return FALSE;
 }

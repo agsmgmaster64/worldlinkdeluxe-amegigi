@@ -6,15 +6,13 @@ bool32 IsFlyToolUsed(void);
 void ReturnToFieldOrBagFromFlyTool(void);
 void ResetFlyTool(void);
 
-u32 CanUseSurf(s16, s16, u8);
 u32 CanUseSurfFromInteractedWater(void);
 void RemoveRelevantSurfFieldEffect(void);
 void Task_SurfToolFieldEffect(u8 taskId);
 
 void FldEff_UseFlashTool(void);
-u32 CanUseFlash(void);
+u32 CanUseFlashTool(void);
 
-u32 CanUseWaterfall(u8);
 bool32 CanUseWaterfallTool(void);
 void CreateUseWaterfallTask(void);
 u32 CanUseWaterfallFromInteractedWater(void);
@@ -25,16 +23,9 @@ void RemoveRelevantDiveFieldEffect(void);
 u32 CanUseDiveDown(void);
 u32 CanUseDiveEmerge(void);
 
-bool32 CanUseRockClimb(void);
+bool32 CanUseRockClimbTool(void);
 
-bool32 PartyHasMonLearnsKnowsFieldMove(u16 move);
-
-enum FieldMoveActionSource
-{
-    FIELD_MOVE_FAIL,
-    FIELD_MOVE_POKEMON,
-    FIELD_MOVE_TOOL
-};
+bool32 PartyCanUseFieldMove(u32 move, bool32 doUnlockedCheck);
 
 enum FlyToolSource
 {

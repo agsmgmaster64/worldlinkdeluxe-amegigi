@@ -4,6 +4,7 @@
 #include "event_scripts.h"
 #include "field_effect.h"
 #include "field_control_avatar.h"
+#include "field_move.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
@@ -37,7 +38,6 @@ static void FieldCallback_UseFlyTool(void);
 static void Task_UseFlyTool(void);
 
 static void Task_UseWaterfallTool(u8);
-static bool8 IsPlayerFacingWaterfall(void);
 
 static void Task_UseDiveTool(u8);
 
@@ -47,6 +47,13 @@ static bool32 SetMonResultVariables(u32 partyIndex, u32 species);
 #define tState      data[0]
 #define tFallOffset data[1]
 #define tTotalFall  data[2]
+
+static inline u32 GetFieldMoveUsage(u32 fieldMove, u32 item)
+{
+    if (PartyCanUseFieldMove(fieldMove, TRUE) || CheckBagHasItem(item, 1))
+        return TRUE;
+    return FALSE;
+}
 
 // Fly
 void ReturnToFieldFromFlyToolMapSelect(void)
@@ -93,35 +100,14 @@ void ResetFlyTool(void)
     VarSet(VAR_FLY_TOOL_SOURCE, FLY_SOURCE_MOVE);
 }
 
-// Surf
-u32 CanUseSurf(s16 x, s16 y, u8 collision)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_SURF);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_SURFBOARD, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE05_GET);
-    bool32 collisionHasMismatch = (collision == COLLISION_ELEVATION_MISMATCH);
-
-    if (IsPlayerFacingSurfableFishableWater()
-     && collisionHasMismatch
-     && (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-     && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT)
-    {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
-    }
-
-    return FIELD_MOVE_FAIL;
-}
-
 u32 CanUseSurfFromInteractedWater(void)
 {
-    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-    s16 x = playerObjEvent->currentCoords.x;
-    s16 y = playerObjEvent->currentCoords.y;
+    if (IsPlayerFacingSurfableFishableWater())
+    {
+        return GetFieldMoveUsage(FIELD_MOVE_SURF, ITEM_SURFBOARD);
+    }
 
-    return CanUseSurf(x, y, COLLISION_ELEVATION_MISMATCH);
+    return FALSE;
 }
 
 u8 FldEff_UseSurfTool(void)
@@ -177,33 +163,32 @@ void FldEff_UseFlashTool(void)
     ScriptContext_SetupScript(EventScript_UseLantern);
 }
 
-u32 CanUseFlash(void)
+u32 CanUseFlashTool(void)
 {
     bool32 playerIsInCave = (gMapHeader.cave == TRUE);
     bool32 mapIsNotLit = (GetFlashLevel() == (gMaxFlashLevel - 1));
     bool32 playerHasUsedFlash = FlagGet(FLAG_SYS_USE_FLASH);
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_FLASH);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE02_GET);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_LANTERN, 1);
 
     if (playerIsInCave && mapIsNotLit && !playerHasUsedFlash)
     {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
+        return TRUE;
     }
-    return FIELD_MOVE_FAIL;
+    return FALSE;
 }
 
 //Waterfall
 
 u32 CanUseWaterfallFromInteractedWater(void)
 {
-    return CanUseWaterfall(DIR_SOUTH);
+    if (IsPlayerSurfingNorth())
+    {
+        return GetFieldMoveUsage(FIELD_MOVE_WATERFALL, ITEM_CLIMBING_GEAR);
+    }
+
+    return FALSE;
 }
 
-bool8 IsPlayerFacingWaterfall(void)
+u32 CanUseWaterfallTool(void)
 {
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     s16 x = playerObjEvent->currentCoords.x;
@@ -211,35 +196,13 @@ bool8 IsPlayerFacingWaterfall(void)
 
     MoveCoords(playerObjEvent->facingDirection, &x, &y);
     if (GetCollisionAtCoords(playerObjEvent, x, y, playerObjEvent->facingDirection) == COLLISION_NONE
-     && MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y)))
-        return TRUE;
-    else
-       return FALSE;
-}
-
-u32 CanUseWaterfall(u8 direction)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_WATERFALL);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_CLIMBING_GEAR, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
-    bool32 isPlayerPushedSouth = (direction == DIR_SOUTH);
-
-    if (IsPlayerFacingWaterfall()
-     && IsPlayerSurfingNorth()
-     && isPlayerPushedSouth)
+     && MetatileBehavior_IsWaterfall(MapGridGetMetatileBehaviorAt(x, y))
+     && IsPlayerSurfingNorth())
     {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
+        return TRUE;
     }
 
-    return FIELD_MOVE_FAIL;
-}
-
-u32 CanUseWaterfallTool(void)
-{
-    return CanUseWaterfall(DIR_SOUTH);
+    return FALSE;
 }
 
 static bool8 WaterfallToolFieldEffect_ContinueRideOrEnd(struct Task *task, struct ObjectEvent *objectEvent)
@@ -299,39 +262,22 @@ void RemoveRelevantWaterfallFieldEffect(void)
 
 u32 CanUseDiveDown(void)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_DIVE);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_SCUBA_GEAR, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE07_GET);
-    bool32 diveWarpSuccessful = (TrySetDiveWarp() == 2);
-
-    if (diveWarpSuccessful)
+    if (TrySetDiveWarp() == 2)
     {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
+        return GetFieldMoveUsage(FIELD_MOVE_DIVE, ITEM_SCUBA_GEAR);
     }
 
-    return FIELD_MOVE_FAIL;
+    return FALSE;
 }
 
 u32 CanUseDiveEmerge(void)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_DIVE);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_SCUBA_GEAR, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE07_GET);
-    bool32 diveWarpSuccessful = (TrySetDiveWarp() == 1);
-    bool32 playerisUnderwater = (gMapHeader.mapType == MAP_TYPE_UNDERWATER);
-
-    if (diveWarpSuccessful && playerisUnderwater)
+    if (TrySetDiveWarp() == 1 && gMapHeader.mapType == MAP_TYPE_UNDERWATER)
     {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
+        return GetFieldMoveUsage(FIELD_MOVE_DIVE, ITEM_SCUBA_GEAR);
     }
 
-    return FIELD_MOVE_FAIL;
+    return FALSE;
 }
 
 
@@ -368,6 +314,20 @@ void RemoveRelevantDiveFieldEffect(void)
     }
 }
 
+u32 CanUseRockClimbTool(void)
+{
+    s16 x, y;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+
+    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 static bool32 CanSpeciesLearnMoveLevelUp(u16 species, u16 move)
 {
     const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(species);
@@ -381,32 +341,16 @@ static bool32 CanSpeciesLearnMoveLevelUp(u16 species, u16 move)
     return FALSE;
 }
 
-u32 CanUseRockClimb(void)
-{
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(MOVE_ROCK_CLIMB);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_CLIMBING_GEAR, 1);
-    bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
-    s16 x, y;
-
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-
-    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
-    {
-        if ((monHasMove && playerHasBadge))
-            return FIELD_MOVE_POKEMON;
-        else if (bagHasItem)
-            return FIELD_MOVE_TOOL;
-    }
-
-    return FIELD_MOVE_FAIL;
-}
-
-bool32 PartyHasMonLearnsKnowsFieldMove(u16 move)
+bool32 PartyCanUseFieldMove(u32 fieldMove, bool32 doUnlockedCheck)
 {
     struct Pokemon *mon;
-    u32 species, i, monCanLearn;
+    u32 species, i, monCanLearn, move, canUseMove;
     gSpecialVar_Result = PARTY_SIZE;
     gSpecialVar_0x8004 = 0;
+    move = FieldMove_GetMoveId(fieldMove);
+
+    if (doUnlockedCheck && !IsFieldMoveUnlocked(fieldMove))
+        return FALSE;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
