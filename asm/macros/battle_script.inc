@@ -2462,10 +2462,6 @@
 	manipulatedamage DMG_FULL_ATTACKER_HP
 	.endm
 
-	.macro dmgtocurrattackerhp
-	manipulatedamage DMG_CURR_ATTACKER_HP
-	.endm
-
 	.macro dmgtohalfattackerhp
 	manipulatedamage DMG_HALF_ATTACKER_HP
 	.endm
