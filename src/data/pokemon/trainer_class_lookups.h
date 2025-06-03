@@ -100,7 +100,7 @@ const u16 gTrainerPicToTrainerBackPic[] =
     [TRAINER_BACK_PIC_KRONII] = TRAINER_PIC_RENKO,
 };
 
-const u16 gFacilityClassToTrainerClass[] =
+const enum TrainerClassID gFacilityClassToTrainerClass[] =
 {
     [FACILITY_CLASS_HIKER] = TRAINER_CLASS_HIKER,
     [FACILITY_CLASS_AQUA_GRUNT_M] = TRAINER_CLASS_TEAM_AQUA,

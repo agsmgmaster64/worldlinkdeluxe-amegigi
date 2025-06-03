@@ -162,8 +162,8 @@ void CB2_DoChangeMap(void)
 static bool8 TryDoMapTransition(void)
 {
     u8 i;
-    u8 fromType = GetLastUsedWarpMapType();
-    u8 toType = GetCurrentMapType();
+    enum MapType fromType = GetLastUsedWarpMapType();
+    enum MapType toType = GetCurrentMapType();
 
     if (GetLastUsedWarpMapSectionId() != gMapHeader.regionMapSectionId && (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_CAVE) == TRUE || MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_BASIC) == TRUE))
     {
