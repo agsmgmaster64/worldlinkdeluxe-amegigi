@@ -71,6 +71,28 @@ script HouseLikeCarpet_Event_CallKronii {
     end
 }
 
+script HouseLikeCarpet_Event_KroniiDeltarune {
+    lock
+    faceplayer
+    setspeakername(gText_Kronii)
+    msgbox(HouseLikeCarpet_Text_KroniiWhatsUpGigi)
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(HouseLikeCarpet_Text_GigiDeltaruneTomorrow)
+    closemessage
+    setspeakername(gText_Kronii)
+    msgbox(HouseLikeCarpet_Text_KroniiWaitTomorrow)
+    closemessage
+    setspeakername(gText_Gigi)
+    msgbox(HouseLikeCarpet_Text_GigiInDeltarune)
+    closemessage
+    setspeakername(gText_Kronii)
+    msgbox(HouseLikeCarpet_Text_KroniiCanIBeInIt)
+    closemessage
+    release
+    end
+}
+
 text HouseLikeCarpet_Text_GigiWantToFollow {
     format("Yo, mind if I follow you here?")
 }
@@ -110,6 +132,31 @@ text HouseLikeCarpet_Text_KroniiDang {
     "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_DEADPAN}…\p"
     "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SAD}…\p"
     "I've been lied to, haven't I?")
+}
+
+text HouseLikeCarpet_Text_KroniiWhatsUpGigi {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_HAPPY}Heya, what's up Gigi? I'm just hanging around in this unusual place here.\p"
+    "It's pretty calm here, I won't lie.")
+}
+
+text HouseLikeCarpet_Text_GigiDeltaruneTomorrow {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Deltarune tomorrow, Kronii!\p"
+    "Toby Fox is releasing Deltarune in a few hours from now!")
+}
+
+text HouseLikeCarpet_Text_KroniiWaitTomorrow {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_ALT_9}Wait, frick, I almost forgot, Deltarune is just in a couple hours from today, huh?"
+    "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Actually hold on, didn't Toby Fox mention your name in his latest tweets?")
+}
+
+text HouseLikeCarpet_Text_GigiInDeltarune {
+    format("{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Yep, I'm gonna be in Deltarune soon, doing a bunch of shenanigans with the Fun Gang.\p"
+    "Bet you feel kinda jealous for me being in the game, huh Kronii?")
+}
+
+text HouseLikeCarpet_Text_KroniiCanIBeInIt {
+    format("{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SAD}…\p"
+    "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_DEADPAN}You think you can convince Toby Fox to add me in as well?")
 }
 
 text HouseLikeCarpet_Text_Garbage {

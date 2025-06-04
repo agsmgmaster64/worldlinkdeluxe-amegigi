@@ -575,6 +575,7 @@ static bool8 MainMenu_DoGfxSetup(void)
             gMain.state++;
         break;
     case 4:
+        DebugPrintfLevel(MGBA_LOG_DEBUG, "You made it past MainMenu_LoadGraphics");
         LoadMessageBoxAndBorderGfx();
         MainMenu_InitWindows();
         gMain.state++;
@@ -706,7 +707,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         break;
     case 4:
     {
-        if(gSaveBlock2Ptr->playerGender == MALE)
+        if (gSaveBlock2Ptr->playerGender == MALE)
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
             LoadSpritePalette(&sSpritePal_IconBox);

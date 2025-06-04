@@ -126,39 +126,79 @@ HouseLikeCarpet_Event_CallKronii::
 	end
 
 
+HouseLikeCarpet_Event_KroniiDeltarune::
+# 75 "data/maps/HouseLikeCarpet/scripts.pory"
+	lock
+# 76 "data/maps/HouseLikeCarpet/scripts.pory"
+	faceplayer
+# 77 "data/maps/HouseLikeCarpet/scripts.pory"
+	setspeakername gText_Kronii
+# 78 "data/maps/HouseLikeCarpet/scripts.pory"
+	msgbox HouseLikeCarpet_Text_KroniiWhatsUpGigi
+# 79 "data/maps/HouseLikeCarpet/scripts.pory"
+	closemessage
+# 80 "data/maps/HouseLikeCarpet/scripts.pory"
+	setspeakername gText_Gigi
+# 81 "data/maps/HouseLikeCarpet/scripts.pory"
+	msgbox HouseLikeCarpet_Text_GigiDeltaruneTomorrow
+# 82 "data/maps/HouseLikeCarpet/scripts.pory"
+	closemessage
+# 83 "data/maps/HouseLikeCarpet/scripts.pory"
+	setspeakername gText_Kronii
+# 84 "data/maps/HouseLikeCarpet/scripts.pory"
+	msgbox HouseLikeCarpet_Text_KroniiWaitTomorrow
+# 85 "data/maps/HouseLikeCarpet/scripts.pory"
+	closemessage
+# 86 "data/maps/HouseLikeCarpet/scripts.pory"
+	setspeakername gText_Gigi
+# 87 "data/maps/HouseLikeCarpet/scripts.pory"
+	msgbox HouseLikeCarpet_Text_GigiInDeltarune
+# 88 "data/maps/HouseLikeCarpet/scripts.pory"
+	closemessage
+# 89 "data/maps/HouseLikeCarpet/scripts.pory"
+	setspeakername gText_Kronii
+# 90 "data/maps/HouseLikeCarpet/scripts.pory"
+	msgbox HouseLikeCarpet_Text_KroniiCanIBeInIt
+# 91 "data/maps/HouseLikeCarpet/scripts.pory"
+	closemessage
+# 92 "data/maps/HouseLikeCarpet/scripts.pory"
+	release
+	end
+
+
 HouseLikeCarpet_Text_GigiWantToFollow::
-# 74 "data/maps/HouseLikeCarpet/scripts.pory"
+# 96 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "Yo, mind if I follow you here?$"
 
 HouseLikeCarpet_Text_GigiAwwMan::
-# 78 "data/maps/HouseLikeCarpet/scripts.pory"
+# 100 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "Aww, man. But it would be pretty nice.$"
 
 HouseLikeCarpet_Text_GigiYayFollow::
-# 82 "data/maps/HouseLikeCarpet/scripts.pory"
+# 104 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "Yay, I get to follow you around!$"
 
 HouseLikeCarpet_Text_GigiFollowing::
-# 86 "data/maps/HouseLikeCarpet/scripts.pory"
+# 108 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Hey, should I call Kronii right now?{DESTROY_MUGSHOT}$"
 
 HouseLikeCarpet_Text_GigiForYou::
-# 90 "data/maps/HouseLikeCarpet/scripts.pory"
+# 112 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_NORMAL}Aww, but it's just for you, {PLAYER}.$"
 
 HouseLikeCarpet_Text_GigiBogosBinted::
-# 94 "data/maps/HouseLikeCarpet/scripts.pory"
+# 116 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Boat goes Binted?$"
 
 HouseLikeCarpet_Text_KroniiHeyaGigi::
-# 98 "data/maps/HouseLikeCarpet/scripts.pory"
+# 120 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_HAPPY}Heya, what's up Gigi, you need me for\n"
 	.string "something?\p"
 	.string "I was just about to go skydiving with\n"
 	.string "just a metal cap here.$"
 
 HouseLikeCarpet_Text_GigiMetalCapLie::
-# 103 "data/maps/HouseLikeCarpet/scripts.pory"
+# 125 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_ALT_9}Hey Kronii, did you know that the metal\n"
 	.string "cap doesn't actually make you\l"
 	.string "invincible when using it?\p"
@@ -166,12 +206,45 @@ HouseLikeCarpet_Text_GigiMetalCapLie::
 	.string "damage at all!$"
 
 HouseLikeCarpet_Text_KroniiDang::
-# 108 "data/maps/HouseLikeCarpet/scripts.pory"
+# 130 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_NORMAL}…\p"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_DEADPAN}…\p"
 	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SAD}…\p"
 	.string "I've been lied to, haven't I?$"
 
+HouseLikeCarpet_Text_KroniiWhatsUpGigi::
+# 137 "data/maps/HouseLikeCarpet/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_HAPPY}Heya, what's up Gigi? I'm just hanging\n"
+	.string "around in this unusual place here.\p"
+	.string "It's pretty calm here, I won't lie.$"
+
+HouseLikeCarpet_Text_GigiDeltaruneTomorrow::
+# 142 "data/maps/HouseLikeCarpet/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Deltarune tomorrow, Kronii!\p"
+	.string "Toby Fox is releasing Deltarune in a few\n"
+	.string "hours from now!$"
+
+HouseLikeCarpet_Text_KroniiWaitTomorrow::
+# 147 "data/maps/HouseLikeCarpet/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_ALT_9}Wait, frick, I almost forgot, Deltarune\n"
+	.string "is just in a couple hours from today,\l"
+	.string "huh? {DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SERIOUS}Actually hold on, didn't Toby Fox\l"
+	.string "mention your name in his latest tweets?$"
+
+HouseLikeCarpet_Text_GigiInDeltarune::
+# 152 "data/maps/HouseLikeCarpet/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_GIGI EMOTE_HAPPY}Yep, I'm gonna be in Deltarune soon,\n"
+	.string "doing a bunch of shenanigans with the\l"
+	.string "Fun Gang.\p"
+	.string "Bet you feel kinda jealous for me being\n"
+	.string "in the game, huh Kronii?$"
+
+HouseLikeCarpet_Text_KroniiCanIBeInIt::
+# 157 "data/maps/HouseLikeCarpet/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_SAD}…\p"
+	.string "{DESTROY_MUGSHOT}{CREATE_MUGSHOT MUGSHOT_KRONII EMOTE_DEADPAN}You think you can convince Toby Fox to\n"
+	.string "add me in as well?$"
+
 HouseLikeCarpet_Text_Garbage::
-# 115 "data/maps/HouseLikeCarpet/scripts.pory"
+# 162 "data/maps/HouseLikeCarpet/scripts.pory"
 	.string "It's just garbage now.$"

@@ -24,6 +24,7 @@ static const u32 sFieldMugshotGfx_KroniiSad[] = INCBIN_U32("graphics/field_mugsh
 static const u32 sFieldMugshotGfx_KroniiSerious[] = INCBIN_U32("graphics/field_mugshots/kronii/serious.4bpp.smol");
 static const u32 sFieldMugshotGfx_KroniiAngry[] = INCBIN_U32("graphics/field_mugshots/kronii/angry.4bpp.smol");
 static const u32 sFieldMugshotGfx_KroniiDeadpan[] = INCBIN_U32("graphics/field_mugshots/kronii/deadpan.4bpp.smol");
+static const u32 sFieldMugshotGfx_KroniiShocked[] = INCBIN_U32("graphics/field_mugshots/kronii/shocked.4bpp.smol");
 static const u32 sFieldMugshotGfx_KroniiShadow[] = INCBIN_U32("graphics/field_mugshots/kronii/shadow.4bpp.smol");
 static const u16 sFieldMugshotPal_KroniiGeneral[] = INCBIN_U16("graphics/field_mugshots/kronii/general.gbapal");
 
@@ -318,6 +319,13 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_SHADOW] =
         {
             .gfx = sFieldMugshotGfx_KroniiShadow,
+            .pal = sFieldMugshotPal_KroniiGeneral,
+            .x = MUGSHOT_X,
+            .y = MUGSHOT_Y,
+        },
+        [EMOTE_ALT_9] =
+        {
+            .gfx = sFieldMugshotGfx_KroniiShocked,
             .pal = sFieldMugshotPal_KroniiGeneral,
             .x = MUGSHOT_X,
             .y = MUGSHOT_Y,
