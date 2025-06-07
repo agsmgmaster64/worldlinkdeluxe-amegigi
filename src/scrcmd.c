@@ -2580,13 +2580,17 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
     u16 shopType = ScriptReadHalfword(ctx);
+    u16 buyOnly = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     switch (shopType)
     {
     case NEW_SHOP_PRICE_TYPE_VARIABLE:
-        NewShop_CreateVariablePokemartMenu(ptr);
+        if (buyOnly)
+            NewShop_CreateBuyVariableMartMenu(ptr);
+        else
+            NewShop_CreateVariablePokemartMenu(ptr);
         break;
     case NEW_SHOP_PRICE_TYPE_COINS:
         NewShop_CreateCoinPokemartMenu(ptr);
@@ -2595,29 +2599,12 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
         NewShop_CreatePointsPokemartMenu(ptr);
         break;
     default:
-        NewShop_CreatePokemartMenu(ptr);
+        if (buyOnly)
+            NewShop_CreateBuyOnlyMartMenu(ptr);
+        else
+            NewShop_CreatePokemartMenu(ptr);
         break;
     }
-    ScriptContext_Stop();
-    return TRUE;
-}
-
-bool8 ScrCmd_buyonlymart(struct ScriptContext *ctx)
-{
-    const void *ptr = (void *)ScriptReadWord(ctx);
-    bool16 useVariablePrices = ScriptReadHalfword(ctx);
-
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    if (useVariablePrices)
-    {
-        NewShop_CreateBuyVariableMartMenu(ptr);
-    }
-    else
-    {
-        NewShop_CreateBuyOnlyMartMenu(ptr);
-    }
-
     ScriptContext_Stop();
     return TRUE;
 }
