@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_ION_DELUGE) == EFFECT_ION_DELUGE);
+    ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
 }
 
 // For some reason SINGLE_BATTLE_TEST didn't catch these two issues.
@@ -13,7 +13,7 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_NORMAL_NITORI) { Ability(ABILITY_VOLT_ABSORB); HP(1); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_ION_DELUGE); }
+        TURN { MOVE(opponent, MOVE_DEBT_SPIRAL); }
     } SCENE {
         MESSAGE("The wild Lanturn used Ion Deluge!");
         NONE_OF {
@@ -35,7 +35,7 @@ WILD_BATTLE_TEST("Ion Deluge works the same way as always when used by a mon wit
         PLAYER(SPECIES_CHIBI_YUUGI);
         OPPONENT(SPECIES_ZEBSTRIKA) { Ability(ability); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_ION_DELUGE); }
+        TURN { MOVE(opponent, MOVE_DEBT_SPIRAL); }
     } SCENE {
         MESSAGE("The wild Zebstrika used Ion Deluge!");
         NONE_OF {
@@ -55,7 +55,7 @@ SINGLE_BATTLE_TEST("Ion Deluge makes Normal type moves Electric type")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_GOLBAT);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_ION_DELUGE); MOVE(player, MOVE_SCRATCH); }
+        TURN { MOVE(opponent, MOVE_DEBT_SPIRAL); MOVE(player, MOVE_SCRATCH); }
     } SCENE {
         MESSAGE("The opposing Golbat used Ion Deluge!");
         MESSAGE("A deluge of ions showers the battlefield!");

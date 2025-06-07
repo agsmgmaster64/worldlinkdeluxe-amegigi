@@ -572,7 +572,7 @@ extern const u8 gBattleAnimMove_FellStinger[];
 extern const u8 gBattleAnimMove_PhantomForce[];
 extern const u8 gBattleAnimMove_TrickOrTreat[];
 extern const u8 gBattleAnimMove_NobleRoar[];
-extern const u8 gBattleAnimMove_IonDeluge[];
+extern const u8 gBattleAnimMove_DebtSpiral[];
 extern const u8 gBattleAnimMove_ParabolicCharge[];
 extern const u8 gBattleAnimMove_ForestsCurse[];
 extern const u8 gBattleAnimMove_PetalBlizzard[];

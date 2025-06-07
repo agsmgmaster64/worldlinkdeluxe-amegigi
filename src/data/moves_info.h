@@ -14548,28 +14548,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_NobleRoar,
     },
 
-    [MOVE_ION_DELUGE] =
+    [MOVE_DEBT_SPIRAL] =
     {
-        .name = COMPOUND_STRING("Ion Deluge"),
+        .name = COMPOUND_STRING("Debt Spiral"),
         .description = COMPOUND_STRING(
-            "Electrifies Normal-type\n"
-            "moves with charged atoms."),
-        .effect = EFFECT_ION_DELUGE,
-        .power = 0,
-        .type = TYPE_WIND,
-        .accuracy = 0,
-        .pp = 25,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 1,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPATK_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
+            "A fierce attack that uses\n"
+            "up some of your money."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_MIASMA,
+        .accuracy = 100,
+        .pp = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_DEBT_SPIRAL,
+        }),
         .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_IonDeluge,
+        .battleAnimScript = gBattleAnimMove_DebtSpiral,
     },
 
     [MOVE_PARABOLIC_CHARGE] =

@@ -12373,7 +12373,7 @@ static const struct LevelUpMove sBlitzleLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sZebstrikaLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ION_DELUGE),
+    LEVEL_UP_MOVE( 1, MOVE_DEBT_SPIRAL),
     LEVEL_UP_MOVE( 1, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_BATTERY_CHARGE),
@@ -12390,7 +12390,7 @@ static const struct LevelUpMove sZebstrikaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(42, MOVE_AGILITY),
     LEVEL_UP_MOVE(47, MOVE_WILD_CHARGE),
     LEVEL_UP_MOVE(53, MOVE_THRASH),
-    LEVEL_UP_MOVE(58, MOVE_ION_DELUGE),
+    LEVEL_UP_MOVE(58, MOVE_DEBT_SPIRAL),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_BLITZLE
@@ -14174,7 +14174,7 @@ static const struct LevelUpMove sEelektrossLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE( 1, MOVE_GASTRO_ACID),
     LEVEL_UP_MOVE( 1, MOVE_COIL),
-    LEVEL_UP_MOVE( 1, MOVE_ION_DELUGE),
+    LEVEL_UP_MOVE( 1, MOVE_DEBT_SPIRAL),
     LEVEL_UP_MOVE( 1, MOVE_CRUSH_CLAW),
     LEVEL_UP_MOVE( 1, MOVE_HEADBUTT),
     LEVEL_UP_MOVE( 1, MOVE_POISON_TEARS),

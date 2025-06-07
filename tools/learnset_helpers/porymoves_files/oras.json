@@ -22144,7 +22144,7 @@
       },
       {
         "Level": 47,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 50,
@@ -22292,7 +22292,7 @@
       },
       {
         "Level": 54,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 58,
@@ -23504,7 +23504,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 1,
@@ -54204,7 +54204,7 @@
       "MOVE_FLAIL",
       "MOVE_FLATTER",
       "MOVE_GUARD",
-      "MOVE_ION_DELUGE",
+      "MOVE_DEBT_SPIRAL",
       "MOVE_STEEL_FIST",
       "MOVE_TREMORS",
       "MOVE_TAIL_WHIP"
@@ -60644,7 +60644,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 1,
@@ -68316,7 +68316,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 1,
@@ -68384,7 +68384,7 @@
       },
       {
         "Level": 58,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       }
     ],
     "PreEvoMoves": [],
@@ -76934,7 +76934,7 @@
       "MOVE_BATON_PASS",
       "MOVE_CHARM",
       "MOVE_COVET",
-      "MOVE_ION_DELUGE",
+      "MOVE_DEBT_SPIRAL",
       "MOVE_STEEL_FIST",
       "MOVE_ROOST",
       "MOVE_SHOCK_WAVE",
@@ -78880,7 +78880,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_ION_DELUGE"
+        "Move": "MOVE_DEBT_SPIRAL"
       },
       {
         "Level": 1,

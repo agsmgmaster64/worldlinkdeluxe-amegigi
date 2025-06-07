@@ -913,6 +913,7 @@ static const u8 *const sMoveEffectBS_Ptrs[] =
     [MOVE_EFFECT_PAYDAY]           = BattleScript_MoveEffectPayDay,
     [MOVE_EFFECT_WRAP]             = BattleScript_MoveEffectWrap,
     [MOVE_EFFECT_FROSTBITE]        = BattleScript_MoveEffectFrostbite,
+    [MOVE_EFFECT_DEBT_SPIRAL]      = BattleScript_MoveEffectDebtSpiral,
 };
 
 static const struct WindowTemplate sUnusedWinTemplate =
@@ -3293,6 +3294,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
     case MOVE_EFFECT_PAYDAY:
     case MOVE_EFFECT_BUG_BITE:
     case MOVE_EFFECT_STEAL_ITEM:
+    case MOVE_EFFECT_DEBT_SPIRAL:
         activateAfterFaint = TRUE;
         break;
     }
@@ -3454,6 +3456,31 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                     {
                         BattleScriptPush(gBattlescriptCurrInstr + 1);
                         gBattlescriptCurrInstr = BattleScript_MoveEffectPayDay;
+                    }
+                    else
+                        gBattlescriptCurrInstr++;
+                }
+                else
+                {
+                    gBattlescriptCurrInstr++;
+                }
+                break;
+            case MOVE_EFFECT_DEBT_SPIRAL:
+                // Don't scatter coins on the second hit of Parental Bond
+                if (IsOnPlayerSide(gBattlerAttacker) && gSpecialStatuses[gBattlerAttacker].parentalBondState != PARENTAL_BOND_2ND_HIT)
+                {
+                    u16 debtSpiral = gDebtSpiralMoney;
+                    u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
+                    gDebtSpiralMoney += (gBattleMons[gBattlerAttacker].level * 20);
+                    if (debtSpiral > gDebtSpiralMoney)
+                        gDebtSpiralMoney = 0xFFFF;
+
+                    // For a move that hits multiple targets (i.e. Make it Rain)
+                    // we only want to print the message on the final hit
+                    if (!(NumAffectedSpreadMoveTargets() > 1 && GetNextTarget(moveTarget, TRUE) != MAX_BATTLERS_COUNT))
+                    {
+                        BattleScriptPush(gBattlescriptCurrInstr + 1);
+                        gBattlescriptCurrInstr = BattleScript_MoveEffectDebtSpiral;
                     }
                     else
                         gBattlescriptCurrInstr++;
@@ -12913,15 +12940,28 @@ static void Cmd_givepaydaymoney(void)
 {
     CMD_ARGS();
 
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && gPaydayMoney != 0)
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && (gPaydayMoney != 0 || gDebtSpiralMoney != 0 || gPaydayMoney != gDebtSpiralMoney))
     {
-        u32 bonusMoney = gPaydayMoney * gBattleStruct->moneyMultiplier;
-        AddMoney(&gSaveBlock1Ptr->money, bonusMoney);
+        s32 bonusMoney = gPaydayMoney - gDebtSpiralMoney;
+        if (bonusMoney > 0)
+        {
+            AddMoney(&gSaveBlock1Ptr->money, bonusMoney);
 
-        PREPARE_HWORD_NUMBER_BUFFER(gBattleTextBuff1, 5, bonusMoney)
+            PREPARE_HWORD_NUMBER_BUFFER(gBattleTextBuff1, 5, bonusMoney)
 
-        BattleScriptPush(cmd->nextInstr);
-        gBattlescriptCurrInstr = BattleScript_PrintPayDayMoneyString;
+            BattleScriptPush(cmd->nextInstr);
+            gBattlescriptCurrInstr = BattleScript_PrintPayDayMoneyString;
+        }
+        else
+        {
+            bonusMoney *= -1;
+            RemoveMoney(&gSaveBlock1Ptr->money, bonusMoney);
+
+            PREPARE_HWORD_NUMBER_BUFFER(gBattleTextBuff1, 5, bonusMoney)
+
+            BattleScriptPush(cmd->nextInstr);
+            gBattlescriptCurrInstr = BattleScript_PrintDebtSpiralMoneyString;
+        }
     }
     else
     {

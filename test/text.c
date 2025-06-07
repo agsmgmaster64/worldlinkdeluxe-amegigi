@@ -680,6 +680,7 @@ TEST("Battle strings fit on the battle message window")
     case STRINGID_PLAYERWHITEOUT2:
     case STRINGID_PLAYERPICKEDUPMONEY:
     case STRINGID_PLAYERPAIDPRIZEMONEY:
+    case STRINGID_DEBTSPIRALDEPLETION:
         PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 6, sixDigitNines);
         break;
     // Buffer "99" to B_BUFF1

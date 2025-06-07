@@ -9,15 +9,15 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Ion Duldge turns normal moves into electric for the remainder of the current turn")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_ION_DELUGE) == EFFECT_ION_DELUGE);
+        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
         PLAYER(SPECIES_KRABBY);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_ION_DELUGE); MOVE(opponent, MOVE_SCRATCH); }
+        TURN { MOVE(player, MOVE_DEBT_SPIRAL); MOVE(opponent, MOVE_SCRATCH); }
         TURN { MOVE(opponent, MOVE_SCRATCH); }
     } SCENE {
         MESSAGE("Krabby used Ion Deluge!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_ION_DELUGE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_DEBT_SPIRAL, player);
         MESSAGE("A deluge of ions showers the battlefield!");
         MESSAGE("The opposing Wobbuffet used Scratch!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);

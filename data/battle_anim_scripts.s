@@ -7728,18 +7728,36 @@ gBattleAnimMove_NobleRoar::
 	delay 20
 	end
 
-gBattleAnimMove_IonDeluge::
-	loadspritegfx ANIM_TAG_IONS
-	loopsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER, 10, 12
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 4, RGB_YELLOW
+gBattleAnimMove_DebtSpiral::
+	loadspritegfx ANIM_TAG_COIN
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	call DizzyPunchLunge
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, 16, 8, 20, 1, 0
+	createbasichitsplatsprite ANIM_ATTACKER, 4, x=16, y=0, relative_to=ANIM_TARGET, animation=1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, 160, -32
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, -256, -40
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, 128, -16
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, 416, -38
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, -128, -22
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, 16, 8, -384, -31
+	delay 10
+	call DizzyPunchLunge
+	createsprite gFistFootSpriteTemplate, ANIM_TARGET, 5, -16, -8, 20, 1, 0
+	createbasichitsplatsprite ANIM_ATTACKER, 4, x=-16, y=-16, relative_to=ANIM_TARGET, animation=1
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, 160, -32
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, -256, -40
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, 128, -16
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, 416, -38
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, -128, -22
+	createsprite gDebtSpiralSpriteTemplate, ANIM_TARGET, 3, -16, -8, -384, -31
 	waitforvisualfinish
-	createvisualtask AnimTask_CreateIons, 2, 0, 3, 120
-	createvisualtask AnimTask_CreateIons, 2, 0, 3, 120
-	delay 120
-	delay 30
-	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB_YELLOW
-	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
 	end
 
 gBattleAnimMove_ParabolicCharge::
