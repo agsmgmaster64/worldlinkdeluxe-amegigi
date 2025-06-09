@@ -8957,37 +8957,31 @@ GeomancyRageBuff:
 	delay 1
 	return
 
-gBattleAnimMove_MagneticFlux::
-	loadspritegfx ANIM_TAG_THIN_RING @uproar
-	loadspritegfx ANIM_TAG_SPARK_2 @ElectricityEffect
-	loadspritegfx ANIM_TAG_SMALL_EMBER @yellow color
-	createvisualtask AnimTask_BlendBattleAnimPal 10, (F_PAL_TARGET | F_PAL_ATK_SIDE), 2, 0, 9, 0x243B
-	loopsewithpan SE_M_TRI_ATTACK, SOUND_PAN_ATTACKER, 0x12, 0x3
-	createvisualtask AnimTask_DefenseCurlDeformMon, 0x5
-	call MagneticFluxSparks1
-	delay 10
-	call MagneticFluxSparks2
-	delay 10
-	call MagneticFluxSparks1
-	delay 10
-	createsprite gMagneticFluxUproarTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x0, 0x0, 0x1f, 0x8
-	call MagneticFluxSparks2
+gBattleAnimMove_ThirdEye::
+	loadspritegfx ANIM_TAG_TEAL_ALERT
+	loadspritegfx ANIM_TAG_ORBS
+	setalpha 11, 5
+	monbg_static ANIM_DEF_PARTNER
+	splitbgprio_all
+	simplepaletteblend selector=F_PAL_BG, delay=1, initial_blend_y=0, target_blend_y=12, color=RGB(21, 0, 21)
 	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal 10, (F_PAL_TARGET | F_PAL_ATK_SIDE), 2, 9, 0, 0x243B
+	playsewithpan SE_M_LEER, SOUND_PAN_TARGET
+	call MindReaderEyeSpikeEffect
+	panse SE_M_MINIMIZE, SOUND_PAN_TARGET, SOUND_PAN_ATTACKER, -3, 0
+	createvisualtask AnimTask_ShrinkTargetCopy, 5, 128, 24
+	delay 15
+	createsprite gMimicOrbSpriteTemplate, ANIM_TARGET, 2, -12, 24
+	delay 10
+	setarg 7, 0xFFFF
 	waitforvisualfinish
+	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
+	blendcolorcycle priority=2, selector=F_PAL_ATTACKER, delay=0, num_blends=2, initial_blend_y=0, target_blend_y=11, color=RGB_WHITE
+	waitforvisualfinish
+	simplepaletteblend selector=F_PAL_BG, delay=1, initial_blend_y=12, target_blend_y=0, color=RGB(21, 0, 21)
+	waitforvisualfinish
+	clearmonbg_static ANIM_DEF_PARTNER
+	blendoff
 	end
-MagneticFluxSparks1:
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 32, 0x18, 190, 12, ANIM_ATTACKER, 1, 0
-	delay 0
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 80, 0x18, 22, 12, ANIM_ATTACKER, 1, 0
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 156, 0x18, 121, 13, ANIM_ATTACKER, 1, 1
-	return
-MagneticFluxSparks2:
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 100, 0x18, 60, 10, ANIM_ATTACKER, 1, 0
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 170, 0x18, 42, 11, ANIM_ATTACKER, 1, 1
-	delay 0
-	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 238, 0x18, 165, 10, ANIM_ATTACKER, 1, 1
-	return
 
 gBattleAnimMove_HappyHour::
 	loadspritegfx ANIM_TAG_COIN

@@ -3894,6 +3894,17 @@ BattleScript_EffectSketch::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectThirdEye::
+	attackcanceler
+	attackstring
+	ppreduce
+	copymovepermanentlydeleteothers BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_THIRDEYE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectSleepTalk::
 	attackcanceler
 	jumpifability BS_ATTACKER, ABILITY_COMATOSE, BattleScript_SleepTalkIsAsleep

@@ -1833,6 +1833,11 @@
 	.4byte \jumpInstr
 	.endm
 
+	.macro copymovepermanentlydeleteothers failInstr:req
+	callnative BS_CopyMovePermanentlyDeleteOthers
+	.4byte \failInstr
+	.endm
+
 	.macro jumpifpointbattle jumpInstr:req
 	callnative BS_JumpIfPointBattle
 	.4byte \jumpInstr

@@ -665,6 +665,7 @@ extern const u8 BattleScript_EffectSnore[];
 extern const u8 BattleScript_EffectConversion2[];
 extern const u8 BattleScript_EffectLockOn[];
 extern const u8 BattleScript_EffectSketch[];
+extern const u8 BattleScript_EffectThirdEye[];
 extern const u8 BattleScript_EffectSleepTalk[];
 extern const u8 BattleScript_EffectDestinyBond[];
 extern const u8 BattleScript_EffectSpite[];

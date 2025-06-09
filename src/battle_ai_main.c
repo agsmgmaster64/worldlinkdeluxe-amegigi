@@ -5994,7 +5994,6 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     case EFFECT_ENDURE:
     case EFFECT_HAZE:
     case EFFECT_TOPSY_TURVY:
-    case EFFECT_ION_DELUGE:
     case EFFECT_MAGIC_COAT:
     case EFFECT_SNATCH:
         ADJUST_SCORE(-BEST_EFFECT);

@@ -15363,30 +15363,37 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Geomancy,
     },
 
-    [MOVE_MAGNETIC_FLUX] =
+    [MOVE_THIRD_EYE] =
     {
-        .name = COMPOUND_STRING("Magnetic Flux"),
+        .name = COMPOUND_STRING("Third Eye"),
         .description = COMPOUND_STRING(
-            "Boosts the defenses of\n"
-            "those with Plus or Minus."),
-        .effect = EFFECT_MAGNETIC_FLUX,
+            "Copies the foe's last move\n"
+            "but forgets all others."),
+        .effect = EFFECT_THIRD_EYE,
         .power = 0,
-        .type = TYPE_WIND,
+        .type = TYPE_HEART,
         .accuracy = 0,
-        .pp = 20,
-        .target = MOVE_TARGET_USER,
+        .pp = 1,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
-        .snatchAffected = TRUE,
+        .zMove = { .effect = Z_EFFECT_ALL_STATS_UP_1 },
         .ignoresProtect = TRUE,
         .ignoresSubstitute = TRUE,
         .mirrorMoveBanned = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .sleepTalkBanned = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .sketchBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_MagneticFlux,
+        .battleAnimScript = gBattleAnimMove_ThirdEye,
     },
 
     [MOVE_HAPPY_HOUR] =

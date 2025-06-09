@@ -1411,9 +1411,9 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
-    [EFFECT_ION_DELUGE] =
+    [EFFECT_THIRD_EYE] =
     {
-        .battleScript = BattleScript_EffectDoNothing,
+        .battleScript = BattleScript_EffectThirdEye,
         .battleTvScore = 0, // TODO: Assign points
     },
 

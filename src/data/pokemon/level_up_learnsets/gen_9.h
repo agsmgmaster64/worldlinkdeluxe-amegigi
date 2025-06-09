@@ -10547,7 +10547,7 @@ static const struct LevelUpMove sMagnetonLevelUpLearnset[] = {
 static const struct LevelUpMove sMagnezoneLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ELECTRIC_TERRAIN),
     LEVEL_UP_MOVE( 1, MOVE_MIRROR_COAT),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
@@ -11059,7 +11059,7 @@ static const struct LevelUpMove sVoltorbLevelUpLearnset[] = {
 static const struct LevelUpMove sElectrodeLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_EERIE_IMPULSE),
     LEVEL_UP_MOVE( 1, MOVE_BATTERY_CHARGE),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 9, MOVE_SPARK),
@@ -12797,7 +12797,7 @@ static const struct LevelUpMove sZapdosLevelUpLearnset[] = {
     LEVEL_UP_MOVE(50, MOVE_RAIN_DANCE),
     LEVEL_UP_MOVE(55, MOVE_THUNDER),
     LEVEL_UP_MOVE(60, MOVE_DETECT),
-    LEVEL_UP_MOVE(65, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(65, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE(70, MOVE_ZAP_CANNON),
     LEVEL_UP_END
 };
@@ -13532,7 +13532,7 @@ static const struct LevelUpMove sAmpharosLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_DRAGON_PULSE),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE(11, MOVE_COTTON_SPORE),
     LEVEL_UP_MOVE(16, MOVE_BATTERY_CHARGE),
@@ -16193,7 +16193,7 @@ static const struct LevelUpMove sNosepassLevelUpLearnset[] = {
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sProbopassLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_TRI_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_MAGNET_RISE),
     LEVEL_UP_MOVE( 1, MOVE_GRAVITY),
     LEVEL_UP_MOVE( 1, MOVE_BLOCK),
@@ -22075,7 +22075,7 @@ static const struct LevelUpMove sKlangLevelUpLearnset[] = {
 
 static const struct LevelUpMove sKlinklangLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_GEAR_UP),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 1, MOVE_VISE_GRIP),
     LEVEL_UP_MOVE( 1, MOVE_BIND),
@@ -26373,7 +26373,7 @@ static const struct LevelUpMove sMagearnaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 6, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE(12, MOVE_TREMORS),
     LEVEL_UP_MOVE(18, MOVE_IRON_DEFENSE),
-    LEVEL_UP_MOVE(24, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(24, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE(30, MOVE_PSYBEAM),
     LEVEL_UP_MOVE(36, MOVE_AURORA_BEAM),
     LEVEL_UP_MOVE(42, MOVE_LOCK_ON),
@@ -27296,7 +27296,7 @@ static const struct LevelUpMove sToxtricityLowKeyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_POISON_JAB),
     LEVEL_UP_MOVE(44, MOVE_OVERDRIVE),
     LEVEL_UP_MOVE(48, MOVE_BOOMBURST),
-    LEVEL_UP_MOVE(52, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(52, MOVE_THIRD_EYE),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_TOXEL
@@ -29888,7 +29888,7 @@ static const struct LevelUpMove sSandyShocksLevelUpLearnset[] = {
     LEVEL_UP_MOVE(70, MOVE_MIRROR_COAT),
     LEVEL_UP_MOVE(77, MOVE_GRAVITY),
     LEVEL_UP_MOVE(84, MOVE_ZAP_CANNON),
-    LEVEL_UP_MOVE(91, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(91, MOVE_THIRD_EYE),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_SANDY_SHOCKS

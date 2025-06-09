@@ -9,7 +9,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Ion Duldge turns normal moves into electric for the remainder of the current turn")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
+        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_THIRD_EYE);
         PLAYER(SPECIES_KRABBY);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {

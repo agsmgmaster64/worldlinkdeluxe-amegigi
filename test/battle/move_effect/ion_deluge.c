@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
+    ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_THIRD_EYE);
 }
 
 // For some reason SINGLE_BATTLE_TEST didn't catch these two issues.

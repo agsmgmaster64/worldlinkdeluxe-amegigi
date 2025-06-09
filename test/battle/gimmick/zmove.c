@@ -39,7 +39,7 @@ SINGLE_BATTLE_TEST("(Z-MOVE) Z-Moves are affected by Ion Deluge")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_SCRATCH) == TYPE_NORMAL);
-        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
+        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_THIRD_EYE);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMALIUM_Z); }
         OPPONENT(SPECIES_SWELLOW);
     } WHEN {

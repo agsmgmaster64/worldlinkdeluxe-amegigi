@@ -9570,7 +9570,7 @@ static const struct LevelUpMove sMagnezoneLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE( 1, MOVE_BARRIER),
     LEVEL_UP_MOVE( 1, MOVE_ELECTRIC_TERRAIN),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_MIRROR_COAT),
     LEVEL_UP_MOVE( 1, MOVE_JAMMING),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
@@ -10130,7 +10130,7 @@ static const struct LevelUpMove sVoltorbLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sElectrodeLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_BATTERY_CHARGE),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_SONIC_BOOM),
@@ -11860,7 +11860,7 @@ static const struct LevelUpMove sZapdosLevelUpLearnset[] = {
     LEVEL_UP_MOVE(71, MOVE_DRILL_PECK),
     LEVEL_UP_MOVE(78, MOVE_THUNDER),
     LEVEL_UP_MOVE(85, MOVE_ROOST),
-    LEVEL_UP_MOVE(92, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(92, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE(99, MOVE_ZAP_CANNON),
     LEVEL_UP_END
 };
@@ -12642,7 +12642,7 @@ static const struct LevelUpMove sAmpharosLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_THUNDER_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_PUNCH),
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_DEBT_SPIRAL),
     LEVEL_UP_MOVE( 1, MOVE_DRAGON_PULSE),
     LEVEL_UP_MOVE( 1, MOVE_FIRE_PUNCH),
@@ -15364,7 +15364,7 @@ static const struct LevelUpMove sNosepassLevelUpLearnset[] = {
 static const struct LevelUpMove sProbopassLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TRI_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_MAGNET_RISE),
     LEVEL_UP_MOVE( 1, MOVE_GRAVITY),
     LEVEL_UP_MOVE( 1, MOVE_WIDE_GUARD),
@@ -21582,8 +21582,8 @@ static const struct LevelUpMove sKlangLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sKlinklangLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 0, MOVE_MAGNETIC_FLUX),
-    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 0, MOVE_THIRD_EYE),
+    LEVEL_UP_MOVE( 1, MOVE_THIRD_EYE),
     LEVEL_UP_MOVE( 1, MOVE_GEAR_UP),
     LEVEL_UP_MOVE( 1, MOVE_VISE_GRIP),
     LEVEL_UP_MOVE( 1, MOVE_BATTERY_CHARGE),
@@ -27168,7 +27168,7 @@ static const struct LevelUpMove sToxtricityLowKeyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(40, MOVE_POISON_JAB),
     LEVEL_UP_MOVE(44, MOVE_OVERDRIVE),
     LEVEL_UP_MOVE(48, MOVE_BOOMBURST),
-    LEVEL_UP_MOVE(52, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(52, MOVE_THIRD_EYE),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_TOXEL
@@ -29767,7 +29767,7 @@ static const struct LevelUpMove sSandyShocksLevelUpLearnset[] = {
     LEVEL_UP_MOVE(70, MOVE_MIRROR_COAT),
     LEVEL_UP_MOVE(77, MOVE_GRAVITY),
     LEVEL_UP_MOVE(84, MOVE_ZAP_CANNON),
-    LEVEL_UP_MOVE(91, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE(91, MOVE_THIRD_EYE),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_SANDY_SHOCKS

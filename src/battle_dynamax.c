@@ -228,7 +228,6 @@ bool32 IsMoveBlockedByMaxGuard(u32 move)
         case MOVE_BLOCK:
         case MOVE_FLOWER_SHIELD:
         case MOVE_GEAR_UP:
-        case MOVE_MAGNETIC_FLUX:
         case MOVE_PHANTOM_FORCE:
         case MOVE_PSYCH_UP:
         case MOVE_SHADOW_FORCE:

@@ -605,7 +605,7 @@ extern const u8 gBattleAnimMove_EerieImpulse[];
 extern const u8 gBattleAnimMove_VenomDrench[];
 extern const u8 gBattleAnimMove_Powder[];
 extern const u8 gBattleAnimMove_Geomancy[];
-extern const u8 gBattleAnimMove_MagneticFlux[];
+extern const u8 gBattleAnimMove_ThirdEye[];
 extern const u8 gBattleAnimMove_HappyHour[];
 extern const u8 gBattleAnimMove_ElectricTerrain[];
 extern const u8 gBattleAnimMove_DazzlingGleam[];

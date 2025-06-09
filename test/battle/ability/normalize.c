@@ -162,7 +162,7 @@ SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Ion Delu
     PARAMETRIZE { ability = ABILITY_NORMALIZE;      genConfig = GEN_6; }
 
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_ION_DELUGE);
+        ASSUME(GetMoveEffect(MOVE_DEBT_SPIRAL) == EFFECT_THIRD_EYE);
         WITH_CONFIG(GEN_CONFIG_ATE_MULTIPLIER, genConfig);
         PLAYER(SPECIES_SKITTY) { Ability(ability); Moves(MOVE_WATER_GUN); }
         OPPONENT(SPECIES_WOBBUFFET);

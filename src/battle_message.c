@@ -902,6 +902,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_HOLYSURROUNDSBATTLEFIELD]             = COMPOUND_STRING("Holiness surrounds the battlefield!"),
     [STRINGID_POVERTYSCATTERED]                     = COMPOUND_STRING("Financial assets were consumed!"),
     [STRINGID_DEBTSPIRALDEPLETION]                  = COMPOUND_STRING("You used up ¥{B_BUFF1} for premium attack costs…\p"),
+    [STRINGID_THIRDEYE]                             = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} learned {B_BUFF1}!"),
     [STRINGID_BLOCKEDBYSLEEPCLAUSE]                 = COMPOUND_STRING("Sleep Clause kept {B_DEF_NAME_WITH_PREFIX2} awake!"),
     [STRINGID_SUPEREFFECTIVETWOFOES]                = COMPOUND_STRING("It's super effective on {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}!"),
     [STRINGID_NOTVERYEFFECTIVETWOFOES]              = COMPOUND_STRING("It's not very effective on {B_DEF_NAME_WITH_PREFIX2} and {B_DEF_PARTNER_NAME}!"),

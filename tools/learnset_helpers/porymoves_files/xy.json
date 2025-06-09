@@ -11546,7 +11546,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MAGNETIC_FLUX"
+        "Move": "MOVE_THIRD_EYE"
       },
       {
         "Level": 1,
@@ -21040,7 +21040,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MAGNETIC_FLUX"
+        "Move": "MOVE_THIRD_EYE"
       },
       {
         "Level": 1,
@@ -53601,7 +53601,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_MAGNETIC_FLUX"
+        "Move": "MOVE_THIRD_EYE"
       },
       {
         "Level": 1,
@@ -70228,7 +70228,7 @@
     "LevelMoves": [
       {
         "Level": 1,
-        "Move": "MOVE_MAGNETIC_FLUX"
+        "Move": "MOVE_THIRD_EYE"
       },
       {
         "Level": 1,
@@ -70308,7 +70308,7 @@
       },
       {
         "Level": 76,
-        "Move": "MOVE_MAGNETIC_FLUX"
+        "Move": "MOVE_THIRD_EYE"
       }
     ],
     "PreEvoMoves": [],
