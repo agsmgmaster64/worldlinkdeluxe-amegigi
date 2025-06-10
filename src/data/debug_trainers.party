@@ -14,11 +14,11 @@ Start Debug Battle action is selected.
 === DEBUG_TRAINER_PLAYER ===
 Name: Player
 Class: Pkmn Trainer 1
-Pic: Brendan
+Pic: Renko
 Gender: Male
 Music: Male
 
-Buffie (Wobbuffet)
+Spamton (Normal Kronii)
 Brave Nature
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -33,21 +33,21 @@ Name: Debugger
 AI: Basic Trainer
 Class: Rival
 Battle Type: Singles
-Pic: Steven
+Pic: Gigi Murin
 Gender: Male
 Music: Male
 
-Metang
+Normal Nue
 Brave Nature
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 Atk / 252 Def / 6 SpA
 - Light Screen
-- Psychic
+- Mana Burst
 - Reflect
 - Metal Claw
 
-Skarmory
+Normal Medicine
 Impish Nature
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -57,7 +57,7 @@ EVs: 252 HP / 6 SpA / 252 SpD
 - Protect
 - Steel Wing
 
-Aggron
+Normal Amelia
 Adamant Nature
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -65,4 +65,4 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Thunder
 - Protect
 - Solar Beam
-- Dragon Claw
+- Heart Break
