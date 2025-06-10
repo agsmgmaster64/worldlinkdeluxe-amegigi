@@ -25,9 +25,9 @@ SINGLE_BATTLE_TEST("Thunder Shock cannot paralyze an Electric-type")
 {
     GIVEN {
         ASSUME(B_PARALYZE_ELECTRIC >= GEN_6);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOAKUMA].types[0] == TYPE_WIND);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_KOAKUMA);
+        ASSUME(GetSpeciesType(SPECIES_PIKACHU, 0) == TYPE_ELECTRIC);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_PIKACHU);
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK); }
     } SCENE {
@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Body Slam shouldn't paralyze Normal-types")
 #endif
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_HELPER_EIRIN].types[0] == TYPE_ILLUSION);
+        ASSUME(GetSpeciesType(SPECIES_TAUROS, 0) == TYPE_NORMAL);
         ASSUME(MoveHasAdditionalEffect(MOVE_BODY_SLAM, MOVE_EFFECT_PARALYSIS) == TRUE);
         ASSUME(GetMoveType(MOVE_BODY_SLAM) == TYPE_NORMAL);
         PLAYER(SPECIES_TAUROS);

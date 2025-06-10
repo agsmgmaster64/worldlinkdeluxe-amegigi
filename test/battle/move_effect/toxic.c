@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Toxic cannot miss if used by a Poison-type")
     PARAMETRIZE { species = SPECIES_DEFENSE_PATCHOULI; hit = TRUE; }
     GIVEN {
         ASSUME(B_TOXIC_NEVER_MISS >= GEN_6);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_PATCHOULI].types[0] == TYPE_MIASMA);
+        ASSUME(GetSpeciesType(SPECIES_NIDORAN_M, 0) == TYPE_POISON);
         PLAYER(species);
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {

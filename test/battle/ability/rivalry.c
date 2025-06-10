@@ -61,8 +61,8 @@ SINGLE_BATTLE_TEST("Rivalry doesn't modify power if the attacker is genderless",
     PARAMETRIZE { species = SPECIES_ATTACK_PATCHOULI; ability = ABILITY_RIVALRY; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_AYA].abilities[0] == ABILITY_TRACE);
-        PLAYER(SPECIES_CHIBI_AYA) { Ability(ABILITY_TRACE); } // No genderless mon naturally gets Rivalry
+        ASSUME(GetSpeciesAbility(SPECIES_PORYGON, 0) == ABILITY_TRACE);
+        PLAYER(SPECIES_PORYGON) { Ability(ABILITY_TRACE); } // No genderless mon naturally gets Rivalry
         OPPONENT(species) { Ability(ability); };
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }

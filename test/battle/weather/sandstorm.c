@@ -43,10 +43,10 @@ SINGLE_BATTLE_TEST("Sandstorm damage does not hurt Ground, Rock, and Steel-type 
     PARAMETRIZE { mon = SPECIES_CHIBI_RAIKO; }
     PARAMETRIZE { mon = SPECIES_CHIBI_KOTOHIME; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_PLCEHOLDER1_KOAKUMA].types[0] == TYPE_EARTH);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_RAIKO].types[0] == TYPE_BEAST);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOTOHIME].types[0] == TYPE_STEEL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_SANDSLASH, 0) == TYPE_GROUND);
+        ASSUME(GetSpeciesType(SPECIES_NOSEPASS, 0) == TYPE_ROCK);
+        ASSUME(GetSpeciesType(SPECIES_REGISTEEL, 0) == TYPE_STEEL);
+        PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon);
     } WHEN {
         TURN { MOVE(player, MOVE_SANDSTORM); }
@@ -97,8 +97,8 @@ SINGLE_BATTLE_TEST("Sandstorm damage rounds properly when maxHP < 16")
 
 SINGLE_BATTLE_TEST("Sandstorm doesn't do damage when weather is negated")
 {
-    u32 type1 = gSpeciesInfo[SPECIES_STOUTLAND].types[0];
-    u32 type2 = gSpeciesInfo[SPECIES_STOUTLAND].types[1];
+    u32 type1 = GetSpeciesType(SPECIES_STOUTLAND, 0);
+    u32 type2 = GetSpeciesType(SPECIES_STOUTLAND, 1);
     GIVEN {
         ASSUME(type1 != TYPE_ROCK && type2 != TYPE_ROCK);
         ASSUME(type1 != TYPE_GROUND && type2 != TYPE_GROUND);

@@ -25,9 +25,9 @@ SINGLE_BATTLE_TEST("Poison cannot be inflicted on Poison and Steel-type Pokémon
     PARAMETRIZE { mon = SPECIES_CHIBI_KOTOHIME; }
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_TWINEEDLE, MOVE_EFFECT_POISON) == TRUE);
-        ASSUME(gSpeciesInfo[SPECIES_NIDORAN_M].types[0] == TYPE_POISON);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOTOHIME].types[0] == TYPE_STEEL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_NIDORAN_M, 0) == TYPE_POISON);
+        ASSUME(GetSpeciesType(SPECIES_REGISTEEL, 0) == TYPE_STEEL);
+        PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon);
     } WHEN {
         TURN { MOVE(player, MOVE_SEAL_NEEDLE); }

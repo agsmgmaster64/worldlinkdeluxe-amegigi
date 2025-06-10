@@ -7977,7 +7977,7 @@ void SpriteCB_RandomCentredHits(struct Sprite *sprite)
 
     StartSpriteAffineAnim(sprite, gBattleAnimArgs[1]);
 
-    if (gBattleAnimArgs[0] == 0)
+    if (gBattleAnimArgs[0] == ANIM_ATTACKER)
     {
         if (IsDoubleBattle())
             InitSpritePosToAnimAttackersCentre(sprite, FALSE);

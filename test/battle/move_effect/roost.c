@@ -4,8 +4,8 @@
 ASSUMPTIONS
 {
     ASSUME(GetMoveEffect(MOVE_ROOST) == EFFECT_ROOST);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] != TYPE_FLYING);
-    ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] != TYPE_FLYING);
+    ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) != TYPE_FLYING);
+    ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) != TYPE_FLYING);
     // One attack of each type to verify typelessness
     ASSUME(GetMoveType(MOVE_POUND) == TYPE_NORMAL);
     ASSUME(GetMoveType(MOVE_KARATE_CHOP) == TYPE_FIGHTING);
@@ -85,10 +85,10 @@ SINGLE_BATTLE_TEST("Roost recovers 50% of the user's Max HP")
 SINGLE_BATTLE_TEST("Roost suppresses the user's Flying-typing this turn, then restores it at the end of the turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[0] == TYPE_STEEL);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_KOGASA].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_CHIBI_KOGASA) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_SKARMORY, 0) == TYPE_STEEL);
+        ASSUME(GetSpeciesType(SPECIES_SKARMORY, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_SKARMORY) { HP(50); MaxHP(100); Ability(ABILITY_STURDY); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_EARTHQUAKE); }
         TURN { MOVE(opponent, MOVE_EARTHQUAKE); }
@@ -131,8 +131,8 @@ SINGLE_BATTLE_TEST("Roost, if used by a Flying/Flying type, treats the user as a
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[0] == TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_TORNADUS].types[1] == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_TORNADUS, 0) == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_TORNADUS, 1) == TYPE_FLYING);
         PLAYER(SPECIES_TORNADUS) { HP(50); MaxHP(100); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
@@ -199,10 +199,10 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
     PARAMETRIZE { damagingMove = MOVE_DISARMING_VOICE; }
 
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUKA].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_CHIBI_YUUKA) { HP(300); MaxHP(400); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_MOLTRES, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_MOLTRES, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_MOLTRES) { HP(300); MaxHP(400); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BURN_UP); }
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, damagingMove); }
@@ -228,12 +228,12 @@ SINGLE_BATTLE_TEST("Roost, if used by a Mystery/Flying type, treats the user as 
 DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_NORMAL_KASEN].types[0] != TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_NORMAL_KASEN].types[1] != TYPE_FLYING);
-        PLAYER(SPECIES_NORMAL_KASEN) { Speed(40); HP(150); Ability(ABILITY_MYSTERIOUS); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10); }
-        OPPONENT(SPECIES_TECH_CIRNO) { Speed(30); }
-        OPPONENT(SPECIES_HELPER_KOAKUMA) { Speed(20); }
+        ASSUME(GetSpeciesType(SPECIES_KECLEON, 0) != TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_KECLEON, 1) != TYPE_FLYING);
+        PLAYER(SPECIES_KECLEON) { Speed(40); HP(150); Ability(ABILITY_COLOR_CHANGE); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
+        OPPONENT(SPECIES_PIDGEY) { Speed(30); }
+        OPPONENT(SPECIES_SANDSHREW) { Speed(20); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_ROOST);
                MOVE(opponentLeft, MOVE_GUST, target: playerLeft);
@@ -255,9 +255,9 @@ DOUBLE_BATTLE_TEST("Roost suppresses the user's not-yet-aquired Flying-type this
 SINGLE_BATTLE_TEST("Roost prevents a Flying-type user from being protected by Delta Stream")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_PLACEHOLD_KANA].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_PLACEHOLD_KANA) { HP(1); Ability(ABILITY_DELTA_STREAM); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_RAYQUAZA, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_RAYQUAZA) { HP(1); Ability(ABILITY_DELTA_STREAM); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_ICE_BEAM); }
     } SCENE {
@@ -272,10 +272,10 @@ SINGLE_BATTLE_TEST("Roost prevents a Flying-type user from being protected by De
 SINGLE_BATTLE_TEST("Roost does not undo other type-changing effects at the end of the turn")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[0] == TYPE_ILLUSION);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_DEFENSE_MAMIZOU) { HP(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_SWELLOW) { HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_SOAK); }
         TURN { MOVE(opponent, MOVE_VINE_WHIP); }
@@ -296,10 +296,10 @@ SINGLE_BATTLE_TEST("Roost does not undo other type-changing effects at the end o
 SINGLE_BATTLE_TEST("Roost's effect is lifted after Grassy Terrain's healing")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[0] == TYPE_ILLUSION);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_DEFENSE_MAMIZOU) { HP(1); Ability(ABILITY_GRASSY_SURGE); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_SWELLOW) { HP(1); Ability(ABILITY_GRASSY_SURGE); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); }
     } SCENE {
@@ -315,12 +315,12 @@ SINGLE_BATTLE_TEST("Roost's effect is lifted after Grassy Terrain's healing")
 SINGLE_BATTLE_TEST("Roost's suppression prevents Reflect Type from copying any Flying typing")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[0] == TYPE_ILLUSION);
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MAMIZOU].types[1] == TYPE_FLYING);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[0] == TYPE_REASON);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_YUUGI].types[1] == TYPE_REASON);
-        PLAYER(SPECIES_DEFENSE_MAMIZOU) { HP(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 0) == TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_SWELLOW, 1) == TYPE_FLYING);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) == TYPE_PSYCHIC);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) == TYPE_PSYCHIC);
+        PLAYER(SPECIES_SWELLOW) { HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ROOST); MOVE(opponent, MOVE_REFLECT_TYPE); }
         TURN { MOVE(player, MOVE_EARTHQUAKE); MOVE(opponent, MOVE_REFLECT_TYPE); }

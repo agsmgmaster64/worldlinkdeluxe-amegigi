@@ -97,17 +97,17 @@ SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
     u32 move2 = MOVE_CELEBRATE;
     bool32 airborne;
 
-    ASSUME(gSpeciesInfo[SPECIES_TECH_CIRNO].types[1] == TYPE_FLYING);
-    PARAMETRIZE { species = SPECIES_TECH_CIRNO; airborne = TRUE; }
-    PARAMETRIZE { species = SPECIES_TECH_CIRNO; item = ITEM_IRON_BALL; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_GRAVITY; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_TECH_CIRNO; move1 = MOVE_INGRAIN; airborne = FALSE; }
+    ASSUME(GetSpeciesType(SPECIES_PIDGEY, 1) == TYPE_FLYING);
+    PARAMETRIZE { species = SPECIES_PIDGEY; airborne = TRUE; }
+    PARAMETRIZE { species = SPECIES_PIDGEY; item = ITEM_IRON_BALL; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_PIDGEY; move1 = MOVE_GRAVITY; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_PIDGEY; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
-    ASSUME(gSpeciesInfo[SPECIES_TECH_PARSEE].abilities[0] == ABILITY_LEVITATE);
-    PARAMETRIZE { species = SPECIES_TECH_PARSEE; airborne = TRUE; }
-    PARAMETRIZE { species = SPECIES_TECH_PARSEE; item = ITEM_IRON_BALL; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_GRAVITY; airborne = FALSE; }
-    PARAMETRIZE { species = SPECIES_TECH_PARSEE; move1 = MOVE_INGRAIN; airborne = FALSE; }
+    ASSUME(GetSpeciesAbility(SPECIES_UNOWN, 0) == ABILITY_LEVITATE);
+    PARAMETRIZE { species = SPECIES_UNOWN; airborne = TRUE; }
+    PARAMETRIZE { species = SPECIES_UNOWN; item = ITEM_IRON_BALL; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_GRAVITY; airborne = FALSE; }
+    PARAMETRIZE { species = SPECIES_UNOWN; move1 = MOVE_INGRAIN; airborne = FALSE; }
 
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; airborne = TRUE; }
     PARAMETRIZE { move1 = MOVE_MAGNET_RISE; item = ITEM_IRON_BALL; airborne = FALSE; }
@@ -139,10 +139,10 @@ SINGLE_BATTLE_TEST("Toxic Spikes do not poison airborne Pokemon")
 SINGLE_BATTLE_TEST("Toxic Spikes do not affect Steel-types")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_ATTACK_RIN].types[0] == TYPE_STEEL);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_ATTACK_RIN);
+        ASSUME(GetSpeciesType(SPECIES_STEELIX, 0) == TYPE_STEEL);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_STEELIX);
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); }
         TURN { SWITCH(opponent, 1); }
@@ -163,11 +163,11 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by grounded Poison-type Pokémon on
     PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; move = MOVE_GRAVITY; grounded = TRUE; }
     PARAMETRIZE { species = SPECIES_CHIBI_FLANDRE; move = MOVE_INGRAIN; grounded = TRUE; }
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MEILING].types[0] == TYPE_MIASMA);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[0] == TYPE_MIASMA);
-        ASSUME(gSpeciesInfo[SPECIES_CHIBI_FLANDRE].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        ASSUME(GetSpeciesType(SPECIES_EKANS, 0) == TYPE_POISON);
+        ASSUME(GetSpeciesType(SPECIES_ZUBAT, 0) == TYPE_POISON);
+        ASSUME(GetSpeciesType(SPECIES_ZUBAT, 1) == TYPE_FLYING);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(species) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); MOVE(opponent, move); }
@@ -190,10 +190,10 @@ SINGLE_BATTLE_TEST("Toxic Spikes are removed by grounded Poison-type Pokémon on
 SINGLE_BATTLE_TEST("Toxic Spikes are not removed by Poison-type Pokémon affected by Magnet Rise on switch in")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_DEFENSE_MEILING].types[0] == TYPE_MIASMA);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_DEFENSE_MEILING);
+        ASSUME(GetSpeciesType(SPECIES_EKANS, 0) == TYPE_POISON);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_EKANS);
     } WHEN {
         TURN { MOVE(opponent, MOVE_MAGNET_RISE); }
         TURN { MOVE(player, MOVE_TOXIC_SPIKES); MOVE(opponent, MOVE_BATON_PASS); SEND_OUT(opponent, 1); }
