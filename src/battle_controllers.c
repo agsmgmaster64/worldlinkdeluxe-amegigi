@@ -2103,15 +2103,15 @@ void StartSendOutAnim(u32 battler, bool32 dontClearTransform, bool32 dontClearSu
     // it spawns, not after.
     // i don't get why either, the outfit system only changes the trainer id
     // stuff.. so this is what i can do best for it.
-    s32 x = (side == B_SIDE_PLAYER && doSlideIn) ? -33 : GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+    //s32 x = (side == B_SIDE_PLAYER && doSlideIn) ? -33 : GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
     gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
-                                        x,
+                                        GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2), //x,
                                         GetBattlerSpriteDefault_Y(battler),
                                         GetBattlerSpriteSubpriority(battler));
-    if (x == -33)
+    /*if (x == -33)
     {
         gSprites[gBattlerSpriteIds[battler]].data[5] = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
-    }
+    }*/
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
