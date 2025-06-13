@@ -2238,7 +2238,7 @@
 	@! Buffers either the name or the description strings of an outfit
 	@! to a str var
 	.macro bufferoutfitstr stringVarId:req, outfitId:req, type:req
-	.byte SCR_OP_BUFFEROUTFITSTRING
+	.byte SCR_OP_BUFFEROUTFITSTR
 	stringvar \stringVarId
 	.2byte \outfitId
 	.byte \type
