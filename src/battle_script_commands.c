@@ -2087,18 +2087,18 @@ static void Cmd_critcalc(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-static inline void CalculateAndSetMoveDamage(struct DamageCalculationData *damageCalcData, u32 battlerDef)
+static inline void CalculateAndSetMoveDamage(struct DamageContext *ctx)
 {
-    SetDynamicMoveCategory(gBattlerAttacker, battlerDef, gCurrentMove);
-    damageCalcData->battlerDef = battlerDef;
-    damageCalcData->isCrit = gSpecialStatuses[battlerDef].criticalHit;
-    gBattleStruct->moveDamage[battlerDef] = CalculateMoveDamage(damageCalcData, 0);
+    SetDynamicMoveCategory(gBattlerAttacker, ctx->battlerDef, gCurrentMove);
+    ctx->isCrit = gSpecialStatuses[ctx->battlerDef].criticalHit;
+    ctx->fixedBasePower = 0;
+    gBattleStruct->moveDamage[ctx->battlerDef] = CalculateMoveDamage(ctx);
 
     // Slighly hacky but we need to check move result flags for distortion match-up as well but it can only be done after damage calcs
-    if (gSpecialStatuses[battlerDef].distortedTypeMatchups && gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_NO_EFFECT)
+    if (gSpecialStatuses[ctx->battlerDef].distortedTypeMatchups && gBattleStruct->moveResultFlags[ctx->battlerDef] & MOVE_RESULT_NO_EFFECT)
     {
-        gSpecialStatuses[battlerDef].distortedTypeMatchups = FALSE;
-        gSpecialStatuses[battlerDef].teraShellAbilityDone = FALSE;
+        gSpecialStatuses[ctx->battlerDef].distortedTypeMatchups = FALSE;
+        gSpecialStatuses[ctx->battlerDef].teraShellAbilityDone = FALSE;
     }
 }
 
@@ -2114,12 +2114,12 @@ static void Cmd_damagecalc(void)
 
     u32 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove);
 
-    struct DamageCalculationData damageCalcData;
-    damageCalcData.battlerAtk = gBattlerAttacker;
-    damageCalcData.move = gCurrentMove;
-    damageCalcData.moveType = GetBattleMoveType(gCurrentMove);
-    damageCalcData.randomFactor = TRUE;
-    damageCalcData.updateFlags = TRUE;
+    struct DamageContext ctx;
+    ctx.battlerAtk = gBattlerAttacker;
+    ctx.move = gCurrentMove;
+    ctx.moveType = GetBattleMoveType(gCurrentMove);
+    ctx.randomFactor = TRUE;
+    ctx.updateFlags = TRUE;
 
     if (IsSpreadMove(moveTarget))
     {
@@ -2131,12 +2131,14 @@ static void Cmd_damagecalc(void)
              || gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_NO_EFFECT)
                 continue;
 
-            CalculateAndSetMoveDamage(&damageCalcData, battlerDef);
+            ctx.battlerDef = battlerDef;
+            CalculateAndSetMoveDamage(&ctx);
         }
     }
     else
     {
-        CalculateAndSetMoveDamage(&damageCalcData, gBattlerTarget);
+        ctx.battlerDef = gBattlerTarget;
+        CalculateAndSetMoveDamage(&ctx);
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -6767,7 +6769,6 @@ static void Cmd_moveend(void)
             }
             enum BattleMoveEffects originalEffect = GetMoveEffect(originallyUsedMove);
             if (!(gAbsentBattlerFlags & (1u << gBattlerAttacker))
-                && !gBattleStruct->battlerState[gBattlerAttacker].absent
                 && originalEffect != EFFECT_BATON_PASS && originalEffect != EFFECT_HEALING_WISH)
             {
                 if (gHitMarker & HITMARKER_OBEYS)
@@ -6811,7 +6812,6 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_MIRROR_MOVE: // mirror move
             if (!(gAbsentBattlerFlags & (1u << gBattlerAttacker))
-                && !gBattleStruct->battlerState[gBattlerAttacker].absent
                 && !IsMoveMirrorMoveBanned(originallyUsedMove)
                 && gHitMarker & HITMARKER_OBEYS
                 && gBattlerAttacker != gBattlerTarget
@@ -7025,6 +7025,15 @@ static void Cmd_moveend(void)
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
                     BattleScriptCall(BattleScript_MaxHp50Recoil);
+                    effect = TRUE;
+                }
+                break;
+            case EFFECT_CHLOROBLAST:
+                if (IsBattlerTurnDamaged(gBattlerTarget) && IsBattlerAlive(gBattlerAttacker))
+                {
+                    gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MoveEffectRecoil;
                     effect = TRUE;
                 }
                 break;
@@ -7428,6 +7437,12 @@ static void Cmd_moveend(void)
                 SetActiveGimmick(gBattlerAttacker, GIMMICK_NONE);
             if (B_CHARGE >= GEN_9 && moveType == TYPE_WIND && (IsBattlerTurnDamaged(gBattlerTarget) || gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
                 gStatuses3[gBattlerAttacker] &= ~(STATUS3_CHARGED_UP);
+            // check if Stellar type boost should be used up
+            if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_TERA
+             && GetBattlerTeraType(gBattlerAttacker) == TYPE_STELLAR
+             && GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS
+             && IsTypeStellarBoosted(gBattlerAttacker, moveType))
+                ExpendTypeStellarBoost(gBattlerAttacker, moveType);
             memset(gQueuedStatBoosts, 0, sizeof(gQueuedStatBoosts));
 
             for (i = 0; i < gBattlersCount; i++)
@@ -7962,7 +7977,16 @@ static void Cmd_openpartyscreen(void)
             {
                 if (((1u << i) & hitmarkerFaintBits))
                 {
-                    if (i > 1 && ((1u << BATTLE_PARTNER(i)) & hitmarkerFaintBits))
+                    u32 skipPartnerCheck = FALSE;
+                    if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS
+                     && GetBattlerSide(i) == B_SIDE_OPPONENT
+                     && TRAINER_BATTLE_PARAM.opponentB != TRAINER_NONE)
+                        skipPartnerCheck = TRUE;
+
+                    // In a 1v2 Double Battle if trainer A didn't have any more mons left
+                    // the battler for trainer B wasn't being registered to be send out.
+                    // Likely reason is because hitmarkerFaintBits was not set for battler 1 due to it being missing for a turn or cleared somewhere
+                    if (!skipPartnerCheck && i > 1 && ((1u << BATTLE_PARTNER(i)) & hitmarkerFaintBits))
                         continue;
 
                     battler = i;
