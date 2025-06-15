@@ -5,7 +5,7 @@
 
 void Task_OpenStartMenuFullScreen(u8 taskId);
 void StartMenuFull_Init(MainCallback callback);
-bool32 ShouldShowFullScreenStartMenu(void)
+bool32 ShouldShowFullScreenStartMenu(void);
 
 
 #endif // GUARD_UI_MENU_H

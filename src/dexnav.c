@@ -2362,7 +2362,7 @@ static void DexNav_RunSetup(void)
 }
 
 // Entry point for the dexnav GUI
-static void DexNavGuiInit(MainCallback callback)
+void DexNavGuiInit(MainCallback callback)
 {
     if ((sDexNavUiDataPtr = AllocZeroed(sizeof(struct DexNavGUI))) == NULL)
     {
