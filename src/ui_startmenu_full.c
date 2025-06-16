@@ -1604,9 +1604,11 @@ static void Task_StartMenuFullMain(u8 taskId)
 
 }
 
-bool32 ShouldShowFullScreenStartMenu(void)
+bool32 ShouldHideFullScreenStartMenu(void)
 {
     if (GetSafariZoneFlag() || InBattlePyramid() || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
-        return FALSE;
-    return TRUE;
+        return TRUE;
+    if (!gSaveBlock2Ptr->optionsFullStartMenu)
+        return TRUE;
+    return FALSE;
 }

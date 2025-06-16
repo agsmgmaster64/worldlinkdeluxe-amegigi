@@ -3887,7 +3887,7 @@ void CB2_ReturnToFullScreenStartMenu(void)
 {
     FieldClearVBlankHBlankCallbacks();
 
-    if (!ShouldShowFullScreenStartMenu())
+    if (ShouldHideFullScreenStartMenu())
     {
         SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
         return;

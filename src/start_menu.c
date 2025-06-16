@@ -680,7 +680,7 @@ void ShowStartMenu(void)
         LockPlayerFieldControls();
         return;
     }
-    if (!ShouldShowFullScreenStartMenu())
+    if (ShouldHideFullScreenStartMenu())
     {
         CreateStartMenuTask(Task_ShowStartMenu);
         LockPlayerFieldControls();
@@ -1062,7 +1062,7 @@ static bool8 SaveCallback(void)
     case SAVE_IN_PROGRESS:
         return FALSE;
     case SAVE_CANCELED: // Back to start menu
-        if (!ShouldShowFullScreenStartMenu())
+        if (ShouldHideFullScreenStartMenu())
         {
             ClearDialogWindowAndFrameToTransparent(0, FALSE);
             InitStartMenu();
