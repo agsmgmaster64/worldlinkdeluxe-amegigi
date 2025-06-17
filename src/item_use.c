@@ -317,6 +317,7 @@ static void ItemUseOnFieldCB_Bike(u8 taskId)
     }
     else
     {
+        EndORASDowsing();
         if (gSpecialVar_ItemId != ITEM_BICYCLE)
             gSaveBlock3Ptr->playerBike = GetItemSecondaryId(gSpecialVar_ItemId);
 
@@ -766,7 +767,11 @@ static void Task_UseORASDowsingMachine(u8 taskId)
     else
     {
         if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
-            GetOnOffBike(0);
+        {
+            SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+            Overworld_ClearSavedMusic();
+            Overworld_PlaySpecialMapMusic();
+        }
 
         StartORASDowseFieldEffect();
     }
