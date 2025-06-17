@@ -1220,30 +1220,6 @@ static void PrintSaveConfirmToWindow()
 }
 
 
-//
-//  Print Time, Location, Day of Week and Time Indicator
-//
-static const u8 sText_Sunday[] = _("Sun.");
-static const u8 sText_Monday[] = _("Mon.");
-static const u8 sText_Tuesday[] = _("Tues.");
-static const u8 sText_Wednesday[] = _("Wed.");
-static const u8 sText_Thursday[] = _("Thurs.");
-static const u8 sText_Friday[] = _("Fri.");
-static const u8 sText_Saturday[] = _("Sat.");
-static const u8 * const sDayOfWeekStrings[7] =
-{
-    sText_Sunday,
-    sText_Monday,
-    sText_Tuesday,
-    sText_Wednesday,
-    sText_Thursday,
-    sText_Friday,
-    sText_Saturday,
-};
-
-static const u8 sText_AM[] = _("AM");
-static const u8 sText_PM[] = _("PM");
-
 static void PrintMapNameAndTime(void) //this code is ripped froom different parts of pokeemerald and is a mess because of that, but it all works
 {
     u8 mapDisplayHeader[24];
@@ -1251,12 +1227,6 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     u8 x;
     const u8 *str, *suffix = NULL;
     u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
-
-    u16 hours;
-    u16 minutes;
-    u16 dayOfWeek;
-    s32 width;
-    u32 y, totalWidth;
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
@@ -1267,71 +1237,6 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
     AddTextPrinterParameterized(WINDOW_TOP_BAR, FONT_NARROW, mapDisplayHeader, x + 152, 1, TEXT_SKIP_DRAW, NULL); // Print Map Name
-
-    RtcCalcLocalTime();
-
-    hours = gLocalTime.hours;
-
-#if (FLAG_CLOCK_MODE != 0)
-    if (FlagGet(FLAG_CLOCK_MODE)) // true: 12-hours, false: 24-hours
-    {
-        if (gLocalTime.hours < 12)
-        {
-            hours = (gLocalTime.hours == 0) ? 12 : gLocalTime.hours;
-            suffix = sText_AM;
-        }
-        else if (gLocalTime.hours == 12)
-        {
-            hours = 12;
-            if (suffix == sText_AM)
-                suffix = sText_PM;
-        }
-        else
-        {
-            hours = gLocalTime.hours - 12;
-            suffix = sText_PM;
-        }
-    }
-#endif
-
-    minutes = gLocalTime.minutes;
-    dayOfWeek = gLocalTime.days % 7;
-    if (hours > 999)
-        hours = 999;
-    if (minutes > 59)
-        minutes = 59;
-    width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
-    x = 64;
-    y = 1;
-
-    if(dayOfWeek == 2) // adjust x position if dayofweek Thurs/Tues because the words are longer
-        x += 8;
-    if(dayOfWeek == 4)
-        x += 12;
-
-    totalWidth = width + 30;
-    x -= totalWidth;
-
-    str = sDayOfWeekStrings[dayOfWeek];
-
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, 10, y, sTimeTextColors, TEXT_SKIP_DRAW, str); //print dayof week
-    ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4); //these three print the time, you can put the colon to only print half the time to flash it if you want
-    x += 18;
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gText_Colon2);
-    x += width;
-    ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
-
-#if (FLAG_CLOCK_MODE != 0)
-    if (suffix != NULL)
-    {
-        width = GetStringWidth(FONT_NORMAL, gStringVar4, 0) + 3; // CHAR_SPACE is 3 pixels wide
-        x += width;
-        StringExpandPlaceholders(gStringVar4, suffix);
-        AddTextPrinterParameterized3(WINDOW_TOP_BAR, FONT_NORMAL, x, y, sTimeTextColors, TEXT_SKIP_DRAW, gStringVar4);
-    }
-#endif
 
     PutWindowTilemap(WINDOW_TOP_BAR);
     CopyWindowToVram(WINDOW_TOP_BAR, COPYWIN_FULL);
