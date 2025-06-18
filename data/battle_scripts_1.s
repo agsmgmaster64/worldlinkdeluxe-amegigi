@@ -7871,7 +7871,7 @@ BattleScript_FascinateLoop:
 	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_FascinateLoopIncrement
 	jumpiftargetally BattleScript_FascinateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_FascinateLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_FascinateLoopIncrement
+	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_FascinateLoopIncrement
 	jumpiffascinateabilityprevented
 BattleScript_FascinateEffect:
 	copybyte sBATTLER, gBattlerAttacker
