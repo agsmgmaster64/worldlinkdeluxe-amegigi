@@ -2370,7 +2370,7 @@ static void Task_ItemContext_Sell(u8 taskId)
     if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
     {
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
-        StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem);
+        StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem); // Edit this pls
         DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
     }
     else
@@ -2384,7 +2384,7 @@ static void Task_ItemContext_Sell(u8 taskId)
         else
         {
             CopyItemName(gSpecialVar_ItemId, gStringVar2);
-            StringExpandPlaceholders(gStringVar4, gText_HowManyToSell);
+            StringExpandPlaceholders(gStringVar4, gText_HowManyToSell); // Edit this pls
             DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, InitSellHowManyInput);
         }
     }
@@ -2397,7 +2397,7 @@ static void DisplaySellItemPriceAndConfirm(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     ConvertIntToDecimalStringN(gStringVar1, (GetItemPrice(gSpecialVar_ItemId) / ITEM_SELL_FACTOR) * tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
-    StringExpandPlaceholders(gStringVar4, gText_ICanPayVar1);
+    StringExpandPlaceholders(gStringVar4, gText_ICanPayVar1); // Edit this pls
     DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, AskSellItems);
 }
 
@@ -2457,7 +2457,7 @@ static void ConfirmSell(u8 taskId)
 
     CopyItemName(gSpecialVar_ItemId, gStringVar2);
     ConvertIntToDecimalStringN(gStringVar1, (GetItemPrice(gSpecialVar_ItemId) / ITEM_SELL_FACTOR) * tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
-    StringExpandPlaceholders(gStringVar4, gText_TurnedOverVar1ForVar2);
+    StringExpandPlaceholders(gStringVar4, gText_TurnedOverVar1ForVar2); // Edit this pls
     DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, SellItem);
 }
 
