@@ -7629,14 +7629,10 @@ BattleScript_IntimidateInReverse::
 
 BattleScript_FascinateActivates::
 	savetarget
-.if B_ABILITY_POP_UP == TRUE
-	showabilitypopup BS_ATTACKER
-	pause B_WAIT_TIME_LONG
+	call BattleScript_AbilityPopUp
 	destroyabilitypopup
-.endif
 	setbyte gBattlerTarget, 0
 BattleScript_FascinateLoop:
-	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_FascinateLoopIncrement
 	jumpiftargetally BattleScript_FascinateLoopIncrement
 	jumpifabsent BS_TARGET, BattleScript_FascinateLoopIncrement
 	jumpifvolatile BS_TARGET, VOLATILE_SUBSTITUTE, BattleScript_FascinateLoopIncrement
@@ -7663,7 +7659,6 @@ BattleScript_FascinateLoopIncrement:
 	destroyabilitypopup
 	restoretarget
 	pause B_WAIT_TIME_MED
-	tryintimidateejectpack
 	end3
 
 BattleScript_FascinatePrevented::
