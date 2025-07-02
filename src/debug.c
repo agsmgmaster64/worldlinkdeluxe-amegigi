@@ -57,6 +57,7 @@
 #include "task.h"
 #include "pokemon_summary_screen.h"
 #include "wild_encounter.h"
+#include "outfit_menu.h"
 #include "constants/abilities.h"
 #include "constants/battle_ai.h"
 #include "constants/battle_frontier.h"
@@ -95,6 +96,7 @@ enum FlagsVarsDebugMenu
 {
     DEBUG_FLAGVAR_MENU_ITEM_FLAGS,
     DEBUG_FLAGVAR_MENU_ITEM_VARS,
+    DEBUG_FLAGVAR_MENU_ITEM_OUTFITS,
     DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_ALL,
     DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_RESET,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX,
@@ -111,7 +113,6 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
-    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TERASTALIZE,
 };
 
@@ -248,6 +249,8 @@ static void DebugAction_FlagsVars_FlagsSelect(u8 taskId);
 static void DebugAction_FlagsVars_Vars(u8 taskId);
 static void DebugAction_FlagsVars_Select(u8 taskId);
 static void DebugAction_FlagsVars_SetValue(u8 taskId);
+static void DebugAction_FlagsVars_Outfits(u8 taskId);
+static void DebugAction_FlagsVars_OutfitsSelect(u8 taskId);
 static void DebugAction_FlagsVars_PokedexFlags_All(u8 taskId);
 static void DebugAction_FlagsVars_PokedexFlags_Reset(u8 taskId);
 static void DebugAction_FlagsVars_SwitchDex(u8 taskId);
@@ -612,6 +615,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
 {
     [DEBUG_FLAGVAR_MENU_ITEM_FLAGS]                = { COMPOUND_STRING("Set Flag XYZ…"),                     DebugAction_FlagsVars_Flags },
     [DEBUG_FLAGVAR_MENU_ITEM_VARS]                 = { COMPOUND_STRING("Set Var XYZ…"),                      DebugAction_FlagsVars_Vars },
+    [DEBUG_FLAGVAR_MENU_ITEM_OUTFITS]              = { COMPOUND_STRING("Set Outfit XYZ…"),                   DebugAction_FlagsVars_Outfits },
     [DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_ALL]         = { COMPOUND_STRING("Pokédex Flags All"),                 DebugAction_FlagsVars_PokedexFlags_All },
     [DEBUG_FLAGVAR_MENU_ITEM_DEXFLAGS_RESET]       = { COMPOUND_STRING("Pokédex Flags Reset"),               DebugAction_FlagsVars_PokedexFlags_Reset },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_POKEDEX]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Pokédex"),         DebugAction_FlagsVars_SwitchDex },
@@ -628,7 +632,6 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = { COMPOUND_STRING("Toggle {STR_VAR_1}Trainer See OFF"), DebugAction_FlagsVars_TrainerSeeOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Bag Use OFF"),     DebugAction_FlagsVars_BagUseOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Catching OFF"),    DebugAction_FlagsVars_CatchingOnOff },
-    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Dynamax"),         DebugAction_FlagsVars_ToggleDynamax },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TERASTALIZE]   = { COMPOUND_STRING("Toggle {STR_VAR_1}Terastal"),        DebugAction_FlagsVars_ToggleTerastalize },
     { NULL }
 };
@@ -1039,11 +1042,6 @@ static u8 Debug_CheckToggleFlags(u8 id)
             result = FlagGet(B_FLAG_NO_CATCHING);
             break;
     #endif
-    #if B_FLAG_DYNAMAX_BATTLE != 0
-        case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_DYNAMAX:
-            result = FlagGet(B_FLAG_DYNAMAX_BATTLE);
-            break;
-    #endif
     #if B_FLAG_TERA_ORB_CHARGED != 0
         case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TERASTALIZE:
             result = FlagGet(B_FLAG_TERA_ORB_CHARGED);
@@ -1098,10 +1096,11 @@ static void Debug_GenerateListMenuNames(u32 totalItems)
 static void Debug_RefreshListMenu(u8 taskId)
 {
     u8 totalItems = 0;
+    u32 i;
 
     if (sDebugMenuListData->listId == 1)
     {
-        for (u32 i = 0; i < ARRAY_COUNT(sDebugMenu_Actions_Flags); i++)
+        for (i = 0; i < ARRAY_COUNT(sDebugMenu_Actions_Flags); i++)
         {
             sDebugMenuListData->listItems[i].id = i;
             sDebugMenuListData->listItems[i].name = sDebugMenu_Actions_Flags[i].text;
@@ -1192,7 +1191,7 @@ static void DebugTask_HandleMenuInput_FlagsVars(u8 taskId)
         PlaySE(SE_SELECT);
         if ((func = sDebugMenu_Actions_Flags[input].action) != NULL)
         {
-            if (input == DEBUG_FLAGVAR_MENU_ITEM_FLAGS || input == DEBUG_FLAGVAR_MENU_ITEM_VARS)
+            if (input == DEBUG_FLAGVAR_MENU_ITEM_FLAGS || input == DEBUG_FLAGVAR_MENU_ITEM_VARS || input == DEBUG_FLAGVAR_MENU_ITEM_OUTFITS)
             {
                 Debug_RedrawListMenu(taskId);
                 func(taskId, sDebugMenu_Actions_Flags[input].actionParams);
@@ -2026,6 +2025,61 @@ static void DebugAction_FlagsVars_SetValue(u8 taskId)
 }
 
 #undef tVarValue
+
+static void Debug_Display_OutfitInfo(u32 outfit, u32 digit, u8 windowId)
+{
+    ConvertIntToDecimalStringN(gStringVar1, outfit, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_FLAGS);
+    ConvertIntToHexStringN(gStringVar2, outfit, STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringExpandPlaceholders(gStringVar1, COMPOUND_STRING("{STR_VAR_1}{CLEAR_TO 90}\n0x{STR_VAR_2}{CLEAR_TO 90}"));
+    if (GetOutfitStatus(outfit))
+        StringCopyPadded(gStringVar2, sDebugText_True, CHAR_SPACE, 15);
+    else
+        StringCopyPadded(gStringVar2, sDebugText_False, CHAR_SPACE, 15);
+    StringCopy(gStringVar3, gText_DigitIndicator[digit]);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Outfit: {STR_VAR_1}{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}\n{STR_VAR_3}"));
+    AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
+}
+
+static void DebugAction_FlagsVars_Outfits(u8 taskId)
+{
+    ClearStdWindowAndFrame(gTasks[taskId].tWindowId, TRUE);
+    RemoveWindow(gTasks[taskId].tWindowId);
+
+    HideMapNamePopUpWindow();
+    LoadMessageBoxAndBorderGfx();
+    u8 windowId = AddWindow(&sDebugMenuWindowTemplateExtra);
+    DrawStdWindowFrame(windowId, TRUE);
+
+    // Display initial flag
+    Debug_Display_FlagInfo(OUTFIT_BEGIN, GetOutfitStatus(OUTFIT_BEGIN), windowId);
+
+    gTasks[taskId].func = DebugAction_FlagsVars_OutfitsSelect;
+    gTasks[taskId].tSubWindowId = windowId;
+    gTasks[taskId].tInput = OUTFIT_BEGIN;
+    gTasks[taskId].tDigit = FALSE;
+}
+
+static void DebugAction_FlagsVars_OutfitsSelect(u8 taskId)
+{
+    if (JOY_NEW(A_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        ToggleOutfit(gTasks[taskId].tInput);
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        DebugAction_DestroyExtraWindow(taskId);
+        return;
+    }
+
+    Debug_HandleInput_Numeric(taskId, 1, OUTFIT_END, DEBUG_NUMBER_DIGITS_FLAGS);
+
+    if (JOY_NEW(DPAD_ANY) || JOY_NEW(A_BUTTON))
+    {
+        Debug_Display_OutfitInfo(gTasks[taskId].tInput, gTasks[taskId].tDigit, gTasks[taskId].tSubWindowId);
+    }
+}
 
 static void DebugAction_FlagsVars_PokedexFlags_All(u8 taskId)
 {
