@@ -4286,7 +4286,7 @@ BattleScript_EffectPsychUp::
 	attackcanceler
 	attackstring
 	ppreduce
-	copyfoestats BattleScript_ButItFailed
+	copyfoestats
 	attackanimation
 	waitanimation
 	printstring STRINGID_PKMNCOPIEDSTATCHANGES
