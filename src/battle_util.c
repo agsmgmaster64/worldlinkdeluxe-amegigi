@@ -2436,6 +2436,11 @@ static enum MoveCanceller CancellerMultihitMoves(void)
         {
             gMultiHitCounter = GetMoveStrikeCount(gCurrentMove);
 
+            if (gBattleMoveEffects[GetMoveEffect(gCurrentMove)].twoTurnEffect
+             && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
+             && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_POWER_HERB)
+                gMultiHitCounter = 0;
+
             if (GetMoveEffect(gCurrentMove) == EFFECT_DRAGON_DARTS
              && !IsAffectedByFollowMe(gBattlerAttacker, GetBattlerSide(gBattlerTarget), gCurrentMove)
              && CanTargetPartner(gBattlerAttacker, gBattlerTarget)
@@ -9414,6 +9419,9 @@ static inline s32 DoFixedDamageMoveCalc(struct DamageContext *ctx)
         break;
     case EFFECT_FIXED_PERCENT_DAMAGE:
         dmg = GetNonDynamaxHP(ctx->battlerDef) * GetMoveDamagePercentage(ctx->move) / 100;
+        break;
+    case EFFECT_GROUP_PRANK:
+        dmg = GetNonDynamaxHP(ctx->battlerDef) * 50 / 100; // argument is already used up by the two-turn messages
         break;
     case EFFECT_FINAL_GAMBIT:
         dmg = GetNonDynamaxHP(ctx->battlerAtk);

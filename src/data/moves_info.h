@@ -5774,8 +5774,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .damagePercentage = 50 },
         .ignoresKingsRock = (B_UPDATED_MOVE_FLAGS == GEN_3 || B_UPDATED_MOVE_FLAGS == GEN_4),
-        .metronomeBanned = B_UPDATED_MOVE_FLAGS >= GEN_8,
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
@@ -15249,29 +15249,27 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SpikyShield,
     },
 
-    [MOVE_AROMATIC_MIST] =
+    [MOVE_GROUP_PRANK] =
     {
-        .name = COMPOUND_STRING("Aromatic Mist"),
+        .name = COMPOUND_STRING("Group Prank"),
         .description = COMPOUND_STRING(
-            "Raises the Sp. Def of a\n"
-            "partner Puppet."),
-        .effect = EFFECT_AROMATIC_MIST,
-        .power = 0,
-        .type = TYPE_COSMIC,
-        .accuracy = 0,
-        .pp = 20,
-        .target = MOVE_TARGET_ALLY,
+            "A prank as a gift that cuts\n"
+            "half the foe's HP."),
+        .effect = EFFECT_GROUP_PRANK,
+        .power = 1,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPDEF_UP_2 },
-        .ignoresProtect = TRUE,
-        .ignoresSubstitute = TRUE,
-        .mirrorMoveBanned = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .strikeCount = 2,
+        .argument.twoTurnAttack = { .stringId = STRINGID_SCHEMING },
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_AromaticMist,
+        .battleAnimScript = gBattleAnimMove_GroupPrank,
     },
 
     [MOVE_EERIE_IMPULSE] =

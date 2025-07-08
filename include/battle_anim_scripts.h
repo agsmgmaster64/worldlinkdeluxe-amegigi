@@ -600,7 +600,7 @@ extern const u8 gBattleAnimMove_HyperspaceHole[];
 extern const u8 gBattleAnimMove_WaterShuriken[];
 extern const u8 gBattleAnimMove_MysticalFire[];
 extern const u8 gBattleAnimMove_SpikyShield[];
-extern const u8 gBattleAnimMove_AromaticMist[];
+extern const u8 gBattleAnimMove_GroupPrank[];
 extern const u8 gBattleAnimMove_EerieImpulse[];
 extern const u8 gBattleAnimMove_VenomDrench[];
 extern const u8 gBattleAnimMove_Powder[];

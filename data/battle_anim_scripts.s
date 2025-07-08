@@ -8697,22 +8697,40 @@ gBattleAnimMove_SpikyShield::
 	clearmonbg ANIM_ATK_PARTNER
 	end
 
-gBattleAnimMove_AromaticMist::
-	loadspritegfx ANIM_TAG_PINK_PETAL
-	playsewithpan SE_M_SWEET_SCENT, SOUND_PAN_ATTACKER
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 8, RGB(29, 19, 27)
-	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 0x64, 0x0, 0x64
-	delay 25
-	setpan 0x0
-	call SweetScentEffect
-	createsprite gSweetScentPetalSpriteTemplate, ANIM_ATTACKER, 2, 0x37, 0x0
-	setpan SOUND_PAN_TARGET
-	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_DEF_SIDE, 1, 5, 5, 13, RGB(31, 21, 21)
-	call SweetScentEffect
-	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 8, 0, RGB(29, 19, 27)
+gBattleAnimMove_GroupPrank::
+	choosetwoturnanim GroupPrankSetup, GroupPrankAttackSecond
+
+GroupPrankSetup::
+	loadspritegfx ANIM_TAG_ITEM_BAG
+	createsprite gVerticalDipSpriteTemplate, ANIM_ATTACKER, 2, 8, 1, 0
+	delay 8
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gGroupPrankUpSpriteTemplate, ANIM_ATTACKER, 2
 	waitforvisualfinish
 	end
+
+GroupPrankAttackSecond::
+	loadspritegfx ANIM_TAG_EXPLOSION
+	loadspritegfx ANIM_TAG_ITEM_BAG
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	createsprite gGroupPrankFallSpriteTemplate, ANIM_TARGET, 2, 0, -96, 0, 32, 25, 0
+    waitforvisualfinish
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 0, 0, 1, 1
+	delay 6
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 24, -24, 1, 1
+	delay 6
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, -16, 16, 1, 1
+	delay 6
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, -24, -12, 1, 1
+	delay 6
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 16, 16, 1, 1
+	end
+
 
 gBattleAnimMove_EerieImpulse::
 	loadspritegfx ANIM_TAG_THIN_RING  @hypervoice circle
