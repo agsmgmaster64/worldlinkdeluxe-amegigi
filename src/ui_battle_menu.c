@@ -483,23 +483,23 @@ void UI_Battle_Menu_Init(MainCallback callback)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SPIKES:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_SPIKES)
+            if(IsHazardOnSide(B_SIDE_PLAYER, HAZARDS_SPIKES))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TOXIC_SPIKES:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_TOXIC_SPIKES)
+            if(IsHazardOnSide(B_SIDE_PLAYER, HAZARDS_TOXIC_SPIKES))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEALTH_ROCK:
-            if(gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_STEALTH_ROCK)
+            if(IsHazardOnSide(B_SIDE_PLAYER, HAZARDS_STEALTH_ROCK))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEEL_SURGE:
-            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_STEELSURGE)
+            if (IsHazardOnSide(B_SIDE_PLAYER, HAZARDS_STEELSURGE))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STICKY_WEB:
-            if (gSideStatuses[B_SIDE_PLAYER] & SIDE_STATUS_STICKY_WEB)
+            if (IsHazardOnSide(B_SIDE_PLAYER, HAZARDS_STICKY_WEB))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SAFEGUARD:
@@ -554,23 +554,23 @@ void UI_Battle_Menu_Init(MainCallback callback)
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SPIKES:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_SPIKES)
+            if(IsHazardOnSide(B_SIDE_OPPONENT, HAZARDS_SPIKES))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_TOXIC_SPIKES:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_TOXIC_SPIKES)
+            if(IsHazardOnSide(B_SIDE_OPPONENT, HAZARDS_TOXIC_SPIKES))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEALTH_ROCK:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEALTH_ROCK)
+            if(IsHazardOnSide(B_SIDE_OPPONENT, HAZARDS_STEALTH_ROCK))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STEEL_SURGE:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STEELSURGE)
+            if(IsHazardOnSide(B_SIDE_OPPONENT, HAZARDS_STEELSURGE))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_STICKY_WEB:
-            if(gSideStatuses[B_SIDE_OPPONENT] & SIDE_STATUS_STICKY_WEB)
+            if(IsHazardOnSide(B_SIDE_OPPONENT, HAZARDS_STICKY_WEB))
                 isExtraInfoShown = TRUE;
             break;
         case SIDE_INFO_SAFEGUARD:
