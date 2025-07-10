@@ -788,6 +788,7 @@ extern const u8 BattleScript_EffectHolyTerrain[];
 extern const u8 BattleScript_EffectAttackAccUp[];
 extern const u8 BattleScript_EffectAttackSpAttackUp[];
 extern const u8 BattleScript_EffectMeFirst[];
+extern const u8 BattleScript_EffectDemonBook[];
 extern const u8 BattleScript_EffectQuiverDance[];
 extern const u8 BattleScript_EffectCoil[];
 extern const u8 BattleScript_EffectElectrify[];

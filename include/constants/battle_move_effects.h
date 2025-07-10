@@ -352,6 +352,7 @@ enum BattleMoveEffects
     EFFECT_SMACK_DOWN,
     EFFECT_LIFE_DEW,
     EFFECT_GROUP_PRANK,
+    EFFECT_DEMON_BOOK,
     EFFECT_ICE_SPINNER, // Removes terrain unless attacker is removed from field either by fainting or ejected out
     EFFECT_STEEL_ROLLER, // Will fail if there is no terrain up but removes it regardless if attacker is removed from field or not
     NUM_BATTLE_MOVE_EFFECTS,

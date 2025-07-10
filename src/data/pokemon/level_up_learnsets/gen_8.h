@@ -16447,7 +16447,7 @@ static const struct LevelUpMove sGoodraHisuiLevelUpLearnset[] = {
 
 #if P_FAMILY_KLEFKI
 static const struct LevelUpMove sKlefkiLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_FAIRY_LOCK),
+    LEVEL_UP_MOVE( 1, MOVE_DEMON_BOOK),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 4, MOVE_TACKLE),
     LEVEL_UP_MOVE( 8, MOVE_FAIRY_WIND),

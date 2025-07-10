@@ -2239,6 +2239,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .twoTurnEffect = TRUE,
     },
 
+    [EFFECT_DEMON_BOOK] =
+    {
+        .battleScript = BattleScript_EffectDemonBook,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
     [EFFECT_ICE_SPINNER] =
     {
         .battleScript = BattleScript_EffectHit,

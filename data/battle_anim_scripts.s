@@ -8401,7 +8401,7 @@ Boomburst_Doubles:
 	createsprite gExplosionSpriteTemplate, ANIM_ATTACKER, 3, 16, 16, 1, 1
 	goto Boomburst_Last
 
-gBattleAnimMove_FairyLock::
+gBattleAnimMove_DemonBook::
 	loadspritegfx ANIM_TAG_FAIRY_LOCK_CHAINS
 	setalpha 8, 8
 	monbg ANIM_ATK_PARTNER

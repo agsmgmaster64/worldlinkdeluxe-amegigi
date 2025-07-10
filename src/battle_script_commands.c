@@ -18630,6 +18630,81 @@ void BS_JumpIfPointBattle(void)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+// The order of this is assumed to be the same as the types
+static const u16 sDemonBookMoves[] = {
+    MOVE_FACADE,
+    MOVE_BRICK_BREAK,
+    MOVE_DRILL_PECK,
+    MOVE_POISON_JAB,
+    MOVE_ROCK_SLIDE,
+    MOVE_CRUNCH, // 80 Beast Physical
+    MOVE_HEADBUTT,
+    MOVE_SHADOW_HIT, // 70 Ghost Physical
+    MOVE_DRAWN_LINE, // 90 Steel Physical
+    MOVE_SECRET_POWER, // 70 Illusion Special
+    MOVE_FIRE_PUNCH,
+    MOVE_WATERFALL,
+    MOVE_SEED_BOMB,
+    MOVE_THUNDER_PUNCH,
+    MOVE_ZEN_HEADBUTT,
+    MOVE_ICE_PUNCH,
+    MOVE_FORCE_PALM,
+    MOVE_FRUSTRATION,
+};
+
+void BS_TryDemonBook(void)
+{
+    NATIVE_ARGS();
+
+    struct DamageContext ctx;
+
+    u32 i = 0;
+    u16 moveUsed = MOVE_NONE;
+    u16 highestDamage = 0;
+    s32 calcDamage;
+
+    ctx.battlerAtk = gBattlerAttacker;
+    ctx.battlerDef = gBattlerTarget;
+    ctx.randomFactor = TRUE; // All the other factors won't be factored in otherwise
+    ctx.updateFlags = FALSE;
+    ctx.isCrit = FALSE;
+    ctx.fixedBasePower = 0;
+
+    // Try to look for a move that deals the most damage with almost everything in mind
+    for (i = 0; i < ARRAY_COUNT(sDemonBookMoves); i++)
+    {
+        ctx.move = sDemonBookMoves[i];
+        ctx.moveType = CheckDynamicMoveType(GetBattlerMon(ctx.battlerAtk), ctx.move, ctx.battlerAtk, MON_IN_BATTLE);
+        calcDamage = CalculateMoveDamage(&ctx);
+
+        if (CanAbilityAbsorbMove(ctx.battlerAtk, ctx.battlerDef, GetBattlerAbility(ctx.battlerDef), ctx.move, ctx.moveType, CHECK_TRIGGER))
+            calcDamage = 0;
+
+        if (calcDamage > highestDamage)
+        {
+            moveUsed = ctx.move;
+            highestDamage = calcDamage;
+        }
+    }
+
+    // somehow didn't find one that does more than 0
+    if (moveUsed == MOVE_NONE)
+        moveUsed = sDemonBookMoves[Random() % ARRAY_COUNT(sDemonBookMoves)];
+
+    if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
+    {
+        gBattleStruct->zmove.baseMoves[gBattlerAttacker] = moveUsed;
+        gCalledMove = GetTypeBasedZMove(moveUsed);
+    }
+    else
+    {
+        gCalledMove = moveUsed;
+    }
+
+    gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_JumpIfLastUsedItemHoldEffect(void)
 {
     NATIVE_ARGS(u8 holdEffect, u16 secondaryId, const u8 *jumpInstr);

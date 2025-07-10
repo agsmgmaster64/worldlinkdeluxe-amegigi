@@ -590,7 +590,7 @@ extern const u8 gBattleAnimMove_PlayRough[];
 extern const u8 gBattleAnimMove_FairyWind[];
 extern const u8 gBattleAnimMove_Moonblast[];
 extern const u8 gBattleAnimMove_Boomburst[];
-extern const u8 gBattleAnimMove_FairyLock[];
+extern const u8 gBattleAnimMove_DemonBook[];
 extern const u8 gBattleAnimMove_KingsShield[];
 extern const u8 gBattleAnimMove_PlayNice[];
 extern const u8 gBattleAnimMove_Confide[];

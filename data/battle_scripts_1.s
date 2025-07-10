@@ -2078,6 +2078,14 @@ BattleScript_EffectMeFirst::
 	waitanimation
 	jumptocalledmove TRUE
 
+BattleScript_EffectDemonBook::
+	attackcanceler
+	attackstring
+	trydemonbook
+	attackanimation
+	waitanimation
+	jumptocalledmove TRUE
+
 BattleScript_EffectAttackSpAttackUp::
 	attackcanceler
 	attackstring
