@@ -1512,7 +1512,6 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
             moveType = GetBattleMoveType(move),
             moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, move);
         bool32 calcSpreadMove = IsSpreadMove(moveTarget) && !IsBattleMoveStatus(move);
-        u32 battlerDef;
 
         for (battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
         {

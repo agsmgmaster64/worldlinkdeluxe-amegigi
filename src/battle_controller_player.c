@@ -2371,7 +2371,7 @@ static void Controller_WaitForDebug(u32 battler)
 static void PlayerHandleBattleDebug(u32 battler)
 {
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
-    if (gSaveBlock2Ptr->optionsBattleMenu != 4)
+    if (gSaveBlock2Ptr->optionsBattleMenu != 3)
     {
         FreeAllWindowBuffers();
         UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);

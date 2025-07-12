@@ -2503,13 +2503,13 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
  * FG = ForeGround
  * SH = SHadow
  */
-#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 2
-#define ABILITY_POP_UP_BATTLER_FG_TXTCLR 7
-#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 1
+#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 4
+#define ABILITY_POP_UP_BATTLER_FG_TXTCLR 1
+#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 2
 
-#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 7
-#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 9
-#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 1
+#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 6
+#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 1
+#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 7
 
 #define sState          data[0]
 #define sAutoDestroy    data[1]
