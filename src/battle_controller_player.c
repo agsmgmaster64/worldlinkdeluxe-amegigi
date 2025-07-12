@@ -456,7 +456,7 @@ static void HandleInputChooseAction(u32 battler)
     {
         SwapHpBarsWithHpText();
     }
-    else if (gSaveBlock2Ptr->optionsDebugMode == 0 && JOY_NEW(SELECT_BUTTON))
+    else if (gSaveBlock2Ptr->optionsBattleMenu && JOY_NEW(SELECT_BUTTON))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
         BtlController_Complete(battler);
@@ -2371,9 +2371,15 @@ static void Controller_WaitForDebug(u32 battler)
 static void PlayerHandleBattleDebug(u32 battler)
 {
     BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
-    //FreeAllWindowBuffers();
-    //UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);
-    SetMainCallback2(CB2_BattleDebugMenu);
+    if (gSaveBlock2Ptr->optionsBattleMenu != 4)
+    {
+        FreeAllWindowBuffers();
+        UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);
+    }
+    else
+    {
+        SetMainCallback2(CB2_BattleDebugMenu);
+    }
     gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
 }
 
