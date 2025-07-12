@@ -132,6 +132,15 @@ bool32 IsAiBattlerAware(u32 battlerId)
     return BattlerHasAi(battlerId);
 }
 
+bool32 IsAiBattlerAssumingStab()
+{
+    if (gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_LEFT] & AI_FLAG_ASSUME_STAB
+     || gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_RIGHT] & AI_FLAG_ASSUME_STAB)
+        return TRUE;
+
+    return FALSE;
+}
+
 bool32 IsAiBattlerPredictingAbility(u32 battlerId)
 {
     if (gAiThinkingStruct->aiFlags[B_POSITION_OPPONENT_LEFT] & AI_FLAG_WEIGH_ABILITY_PREDICTION
@@ -367,7 +376,9 @@ bool32 AI_CanBattlerEscape(u32 battler)
 
 bool32 IsBattlerTrapped(u32 battlerAtk, u32 battlerDef)
 {
-    if (gBattleMons[battlerDef].status2 & (STATUS2_ESCAPE_PREVENTION | STATUS2_WRAPPED))
+    if (gBattleMons[battlerDef].volatiles.wrapped)
+        return TRUE;
+    if (gBattleMons[battlerDef].volatiles.escapePrevention)
         return TRUE;
     if (gStatuses3[battlerDef] & (STATUS3_ROOTED | STATUS3_SKY_DROPPED))
         return TRUE;
@@ -1428,8 +1439,8 @@ s32 AI_DecideKnownAbilityForTurn(u32 battlerId)
     if (gDisableStructs[battlerId].overwrittenAbility)
         return gDisableStructs[battlerId].overwrittenAbility;
 
-    // The AI knows its own ability.
-    if (IsAiBattlerAware(battlerId))
+    // The AI knows its own ability, and omniscience handling
+    if (IsAiBattlerAware(battlerId) || (IsAiBattlerAssumingStab() && ASSUME_STAB_SEES_ABILITY))
         return knownAbility;
 
     // Check neutralizing gas, gastro acid
@@ -1879,7 +1890,9 @@ bool32 ShouldSetSnow(u32 battler, u32 ability, enum ItemHoldEffect holdEffect)
 bool32 IsBattlerDamagedByStatus(u32 battler)
 {
     return gBattleMons[battler].status1 & STATUS1_DAMAGING
-        || gBattleMons[battler].status2 & (STATUS2_WRAPPED | STATUS2_NIGHTMARE | STATUS2_CURSED)
+        || gBattleMons[battler].volatiles.wrapped
+        || gBattleMons[battler].volatiles.nightmare
+        || gBattleMons[battler].volatiles.cursed
         || gStatuses3[battler] & (STATUS3_PERISH_SONG | STATUS3_LEECHSEED)
         || gStatuses4[battler] & (STATUS4_SALT_CURE)
         || gSideStatuses[GetBattlerSide(battler)] & (SIDE_STATUS_SEA_OF_FIRE | SIDE_STATUS_DAMAGE_NON_TYPES);
@@ -2024,7 +2037,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, u32 stat)
             tempScore += WEAK_EFFECT;
         if (gStatuses3[battlerDef] & STATUS3_ROOTED)
             tempScore += WEAK_EFFECT;
-        if (gBattleMons[battlerDef].status2 & STATUS2_CURSED)
+        if (gBattleMons[battlerDef].volatiles.cursed)
             tempScore += WEAK_EFFECT;
         break;
     case STAT_EVASION:
@@ -2034,7 +2047,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, u32 stat)
             tempScore += WEAK_EFFECT;
         if (gStatuses3[battlerDef] & STATUS3_ROOTED)
             tempScore += WEAK_EFFECT;
-        if (gBattleMons[battlerDef].status2 & STATUS2_CURSED)
+        if (gBattleMons[battlerDef].volatiles.cursed)
             tempScore += WEAK_EFFECT;
         break;
     }
@@ -2798,7 +2811,7 @@ static u32 GetLeechSeedDamage(u32 battlerId)
 static u32 GetNightmareDamage(u32 battlerId)
 {
     u32 damage = 0;
-    if ((gBattleMons[battlerId].status2 & STATUS2_NIGHTMARE) && gBattleMons[battlerId].status1 & STATUS1_SLEEP)
+    if (gBattleMons[battlerId].volatiles.nightmare && gBattleMons[battlerId].status1 & STATUS1_SLEEP)
     {
         damage = GetNonDynamaxMaxHP(battlerId) / 4;
         if (damage == 0)
@@ -2810,7 +2823,7 @@ static u32 GetNightmareDamage(u32 battlerId)
 static u32 GetCurseDamage(u32 battlerId)
 {
     u32 damage = 0;
-    if (gBattleMons[battlerId].status2 & STATUS2_CURSED)
+    if (gBattleMons[battlerId].volatiles.cursed)
     {
         damage = GetNonDynamaxMaxHP(battlerId) / 4;
         if (damage == 0)
@@ -2824,7 +2837,7 @@ static u32 GetTrapDamage(u32 battlerId)
     // ai has no knowledge about turns remaining
     u32 damage = 0;
     enum ItemHoldEffect holdEffect = gAiLogicData->holdEffects[gBattleStruct->wrappedBy[battlerId]];
-    if (gBattleMons[battlerId].status2 & STATUS2_WRAPPED)
+    if (gBattleMons[battlerId].volatiles.wrapped)
     {
         if (holdEffect == HOLD_EFFECT_BINDING_BAND)
             damage = GetNonDynamaxMaxHP(battlerId) / (B_BINDING_DAMAGE >= GEN_6 ? 6 : 8);
@@ -3232,7 +3245,7 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
     if (gBattleMons[battler].status1 & STATUS1_SLEEP && !HasMoveWithEffect(battler, EFFECT_SLEEP_TALK))
         return TRUE;
 
-    if (gBattleMons[battler].status2 & STATUS2_RECHARGE || (ability == ABILITY_FRETFUL && gDisableStructs[battler].truantCounter != 0))
+    if (gBattleMons[battler].volatiles.recharge || (ability == ABILITY_FRETFUL && gDisableStructs[battler].truantCounter != 0))
         return TRUE;
 
     return FALSE;
@@ -3372,7 +3385,7 @@ bool32 AI_CanParalyze(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, 
 
 bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability)
 {
-    if ((gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+    if (gBattleMons[battlerDef].volatiles.confusionTurns > 0
      || (ability == ABILITY_OWN_TEMPO && !DoesBattlerIgnoreAbilityChecks(battlerAtk, gAiLogicData->abilities[battlerAtk], move))
      || IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN)
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
@@ -3421,7 +3434,7 @@ bool32 AI_CanGiveFrostbite(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 b
 
 bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, u32 defAbility)
 {
-    if ((gBattleMons[battlerDef].status2 & STATUS2_INFATUATION)
+    if (gBattleMons[battlerDef].volatiles.infatuation
       || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
       || defAbility == ABILITY_OBLIVIOUS
       || !AreBattlersOfOppositeGender(battlerAtk, battlerDef)
@@ -3441,8 +3454,8 @@ u32 ShouldTryToFlinch(u32 battlerAtk, u32 battlerDef, u32 atkAbility, u32 defAbi
     }
     else if ((atkAbility == ABILITY_SERENE_GRACE
       || gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
-      || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
-      || gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+      || gBattleMons[battlerDef].volatiles.infatuation
+      || gBattleMons[battlerDef].volatiles.confusionTurns > 0)
       || ((AI_IsFaster(battlerAtk, battlerDef, move)) && CanTargetFaintAi(battlerDef, battlerAtk)))
     {
         return 2;   // good idea to flinch
@@ -4358,8 +4371,8 @@ void IncreaseParalyzeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
         if ((defSpeed >= atkSpeed && defSpeed / 2 < atkSpeed) // You'll go first after paralyzing foe
           || IsPowerBasedOnStatus(battlerAtk, EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_PARALYSIS)
           || (HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)) // filter out Fake Out
-          || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
-          || gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+          || gBattleMons[battlerDef].volatiles.infatuation
+          || gBattleMons[battlerDef].volatiles.confusionTurns > 0)
             ADJUST_SCORE_PTR(GOOD_EFFECT);
         else
             ADJUST_SCORE_PTR(DECENT_EFFECT);
@@ -4397,7 +4410,7 @@ void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
       && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CURE_STATUS)
     {
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
-          || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
+          || gBattleMons[battlerDef].volatiles.infatuation
           || (gAiLogicData->abilities[battlerAtk] == ABILITY_SERENE_GRACE && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
             ADJUST_SCORE_PTR(GOOD_EFFECT);
         else
@@ -4802,9 +4815,9 @@ void IncreaseTidyUpScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
     if (AreAnyHazardsOnSide(GetBattlerSide(battlerDef)) && CountUsablePartyMons(battlerDef) != 0)
         ADJUST_SCORE_PTR(-2);
 
-    if (gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE && AI_IsFaster(battlerAtk, battlerDef, move))
+    if (gBattleMons[battlerAtk].volatiles.substitute && AI_IsFaster(battlerAtk, battlerDef, move))
         ADJUST_SCORE_PTR(-10);
-    if (gBattleMons[battlerDef].status2 & STATUS2_SUBSTITUTE)
+    if (gBattleMons[battlerDef].volatiles.substitute)
         ADJUST_SCORE_PTR(GOOD_EFFECT);
 
     if (gStatuses3[battlerAtk] & STATUS3_LEECHSEED)
@@ -5276,7 +5289,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
     case ABILITY_FRIEND_GUARD:
     case ABILITY_VICTORY_STAR:
         if (IsDoubleBattle() && IsBattlerAlive(BATTLE_PARTNER(battler)) && aiData->abilities[BATTLE_PARTNER(battler)] != ability)
-            return GOOD_EFFECT;
+            return BEST_EFFECT;
         break;
     case ABILITY_GUTS:
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL) && gBattleMons[battler].status1 & (STATUS1_CAN_MOVE))
@@ -5292,7 +5305,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
     case ABILITY_VITAL_SPIRIT:
         if (HasMoveWithEffect(battler, EFFECT_REST))
             return WORST_EFFECT;
-        return NO_INCREASE;
+        break;
     case ABILITY_INTIMIDATE:
     {
         u32 abilityDef = aiData->abilities[FOE(battler)];
@@ -5332,6 +5345,8 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
             return WEAK_EFFECT;
         if (gBattleMons[battler].status1 & (STATUS1_TOXIC_POISON))
             return BEST_EFFECT;
+        if (gBattleMons[battler].status1 & STATUS1_ANY)
+            return NO_INCREASE;
         break;
     // Also used to Simple Beam SIMPLE_BEAM.
     case ABILITY_SIMPLE:
@@ -5351,11 +5366,13 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, u32 ability, struct AiLogicData
                 return NO_INCREASE;
         }
         return GOOD_EFFECT;
+    case ABILITY_NONE:
+        return NO_INCREASE;
     default:
         break;
     }
 
-    return NO_INCREASE;
+    return WEAK_EFFECT;
 }
 
 u32 GetThinkingBattler(u32 battler)

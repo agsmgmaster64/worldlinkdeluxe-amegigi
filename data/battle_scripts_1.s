@@ -1328,7 +1328,7 @@ BattleScript_EffectPowder::
 	attackstring
 	ppreduce
 	jumpifvolatile BS_TARGET, VOLATILE_POWDER, BattleScript_ButItFailed
-	setpowder BS_TARGET
+	setvolatile BS_TARGET, VOLATILE_POWDER
 	attackanimation
 	waitanimation
 	printstring STRINGID_COVEREDINPOWDER
@@ -3965,7 +3965,7 @@ BattleScript_EffectForesight::
 	ppreduce
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	jumpifvolatile BS_TARGET, VOLATILE_FORESIGHT, BattleScript_ButItFailed
-	setforesight
+	setvolatile BS_TARGET, VOLATILE_FORESIGHT
 BattleScript_IdentifiedFoe:
 	attackanimation
 	waitanimation
@@ -4062,7 +4062,7 @@ BattleScript_TryDestinyKnotTarget:
 	infatuatewithbattler BS_TARGET, BS_ATTACKER
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT
 	waitanimation
-	status2animation BS_TARGET, STATUS2_INFATUATION
+	volatileanimation BS_TARGET, VOLATILE_INFATUATION
 	waitanimation
 	printstring STRINGID_DESTINYKNOTACTIVATES
 	waitmessage B_WAIT_TIME_LONG
@@ -4074,7 +4074,7 @@ BattleScript_TryDestinyKnotAttacker:
 	infatuatewithbattler BS_ATTACKER, BS_TARGET
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT
 	waitanimation
-	status2animation BS_ATTACKER, STATUS2_INFATUATION
+	volatileanimation BS_ATTACKER, VOLATILE_INFATUATION
 	waitanimation
 	printstring STRINGID_DESTINYKNOTACTIVATES
 	waitmessage B_WAIT_TIME_LONG
@@ -6957,7 +6957,7 @@ BattleScript_PrintUproarOverTurns::
 	end2
 
 BattleScript_ThrashConfuses::
-	chosenstatus2animation BS_ATTACKER, STATUS2_CONFUSION
+	volatileanimation BS_ATTACKER, VOLATILE_CONFUSION
 	printstring STRINGID_PKMNFATIGUECONFUSION
 	waitmessage B_WAIT_TIME_LONG
 	end2
@@ -6965,7 +6965,7 @@ BattleScript_ThrashConfuses::
 BattleScript_MoveUsedIsConfused::
 	printstring STRINGID_PKMNISCONFUSED
 	waitmessage B_WAIT_TIME_LONG
-	status2animation BS_ATTACKER, STATUS2_CONFUSION
+	volatileanimation BS_ATTACKER, VOLATILE_CONFUSION
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, FALSE, BattleScript_MoveUsedIsConfusedRet
 BattleScript_DoSelfConfusionDmg::
 	cancelmultiturnmoves BS_ATTACKER
@@ -6991,7 +6991,7 @@ BattleScript_MoveUsedPowder::
 	ppreduce
 	pause B_WAIT_TIME_SHORT
 	cancelmultiturnmoves BS_ATTACKER
-	status2animation BS_ATTACKER, STATUS2_POWDER
+	volatileanimation BS_ATTACKER, VOLATILE_POWDER
 	waitanimation
 	effectivenesssound
 	hitanimation BS_ATTACKER
@@ -7034,7 +7034,7 @@ BattleScript_WrapEnds::
 BattleScript_MoveUsedIsInLove::
 	printstring STRINGID_PKMNINLOVE
 	waitmessage B_WAIT_TIME_LONG
-	status2animation BS_ATTACKER, STATUS2_INFATUATION
+	volatileanimation BS_ATTACKER, VOLATILE_INFATUATION
 	return
 
 BattleScript_MoveUsedIsInLoveCantAttack::
@@ -7045,13 +7045,13 @@ BattleScript_MoveUsedIsInLoveCantAttack::
 BattleScript_NightmareTurnDmg::
 	printstring STRINGID_PKMNLOCKEDINNIGHTMARE
 	waitmessage B_WAIT_TIME_LONG
-	status2animation BS_ATTACKER, STATUS2_NIGHTMARE
+	volatileanimation BS_ATTACKER, VOLATILE_NIGHTMARE
 	goto BattleScript_DoTurnDmg
 
 BattleScript_CurseTurnDmg::
 	printstring STRINGID_PKMNAFFLICTEDBYCURSE
 	waitmessage B_WAIT_TIME_LONG
-	status2animation BS_ATTACKER, STATUS2_CURSED
+	volatileanimation BS_ATTACKER, VOLATILE_CURSED
 	goto BattleScript_DoTurnDmg
 
 BattleScript_TargetPRLZHeal::
@@ -7226,7 +7226,7 @@ BattleScript_MoveEffectWrap::
 	return
 
 BattleScript_MoveEffectConfusion::
-	chosenstatus2animation BS_EFFECT_BATTLER, STATUS2_CONFUSION
+	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
 	printstring STRINGID_PKMNWASCONFUSED
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -7293,7 +7293,7 @@ BattleScript_AbilityPopUp::
 	tryactivateabilityshield BS_ABILITY_BATTLER
 	.if B_ABILITY_POP_UP == TRUE
 	showabilitypopup BS_ABILITY_BATTLER
-	pause 40
+	pause B_WAIT_TIME_SHORT
 	.endif
 	recordability BS_ABILITY_BATTLER
 	sethword sABILITY_OVERWRITE, 0
@@ -7306,13 +7306,13 @@ BattleScript_AbilityPopUpScripting:
 BattleScript_AbilityPopUpOverwriteThenNormal:
 	setbyte sFIXED_ABILITY_POPUP, TRUE
 	showabilitypopup BS_ABILITY_BATTLER
-	pause 60
+	pause B_WAIT_TIME_SHORT
 	sethword sABILITY_OVERWRITE, 0
 	updateabilitypopup BS_ABILITY_BATTLER
-	pause 20
+	pause B_WAIT_TIME_SHORT
 	recordability BS_ABILITY_BATTLER
 	destroyabilitypopup
-	pause 40
+	setbyte sFIXED_ABILITY_POPUP, FALSE
 	return
 
 BattleScript_SpeedBoostActivates::
@@ -7541,7 +7541,6 @@ BattleScript_TryIntimidateHoldEffectsRet:
 BattleScript_IntimidateActivates::
 	savetarget
 	call BattleScript_AbilityPopUp
-	destroyabilitypopup
 	setbyte gBattlerTarget, 0
 BattleScript_IntimidateLoop:
 	jumpiftargetally BattleScript_IntimidateLoopIncrement
@@ -7597,7 +7596,6 @@ BattleScript_IntimidateInReverse::
 BattleScript_FascinateActivates::
 	savetarget
 	call BattleScript_AbilityPopUp
-	destroyabilitypopup
 	setbyte gBattlerTarget, 0
 BattleScript_FascinateLoop:
 	jumpiftargetally BattleScript_FascinateLoopIncrement
@@ -8170,8 +8168,8 @@ BattleScript_CursedBodyActivates::
 
 BattleScript_MummyActivates::
 .if B_ABILITY_POP_UP == TRUE
-	call BattleScript_AbilityPopUpTarget
 	setbyte sFIXED_ABILITY_POPUP, TRUE
+	call BattleScript_AbilityPopUpTarget
 	copybyte gBattlerAbility, gBattlerAttacker
 	copyhword sABILITY_OVERWRITE, gLastUsedAbility
 	call BattleScript_AbilityPopUpOverwriteThenNormal
@@ -8402,7 +8400,7 @@ BattleScript_BanefulBunkerEffect::
 
 BattleScript_CuteCharmActivates::
 	call BattleScript_AbilityPopUp
-	status2animation BS_ATTACKER, STATUS2_INFATUATION
+	volatileanimation BS_ATTACKER, VOLATILE_INFATUATION
 	printstring STRINGID_PKMNSXINFATUATEDY
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryDestinyKnotTarget
@@ -9657,9 +9655,9 @@ BattleScript_EffectConfuseSide::
 BattleScript_ConfuseSideLoop:
 	jumpifabsent BS_TARGET, BattleScript_ConfuseSideIncrement
 	trysetconfusion BattleScript_ConfuseSideIncrement
-	status2animation BS_EFFECT_BATTLER, STATUS2_CONFUSION
+	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
 BattleScript_ConfuseSidePrintMessage:
-	printfromtable gStatus2StringIds
+	printstring STRINGID_PKMNWASCONFUSED
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_ConfuseSideIncrement:
 	jumpifbytenotequal gBattlerTarget, sBATTLER, BattleScript_ConfuseSideEnd
@@ -9679,9 +9677,9 @@ BattleScript_EffectInfatuateSide::
 BattleScript_InfatuateSideLoop:
 	jumpifabsent BS_TARGET, BattleScript_InfatuateSideIncrement
 	trysetinfatuation BattleScript_InfatuateSideIncrement
-	status2animation BS_EFFECT_BATTLER, STATUS2_INFATUATION
+	volatileanimation BS_EFFECT_BATTLER, VOLATILE_INFATUATION
 BattleScript_InfatuateSidePrintMessage:
-	printfromtable gStatus2StringIds
+	printstring STRINGID_PKMNFELLINLOVE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_InfatuateSideIncrement:
 	jumpifbytenotequal gBattlerTarget, sBATTLER, BattleScript_InfatuateSideEnd
@@ -9697,7 +9695,7 @@ BattleScript_TormentSideLoop:
 	jumpifabsent BS_TARGET, BattleScript_TormentSideIncrement
 	trysettorment BattleScript_TormentSideIncrement
 BattleScript_TormentSidePrintMessage:
-	printfromtable gStatus2StringIds
+	printstring STRINGID_PKMNSUBJECTEDTOTORMENT
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_TormentSideIncrement:
 	jumpifbytenotequal gBattlerTarget, sBATTLER, BattleScript_TormentSideEnd
@@ -9718,7 +9716,7 @@ BattleScript_MeanLookSideLoop:
 	jumpifabsent BS_TARGET, BattleScript_MeanLookSideIncrement
 	trysetescapeprevention BattleScript_MeanLookSideIncrement
 BattleScript_MeanLookSidePrintMessage:
-	printfromtable gStatus2StringIds
+	printstring STRINGID_TARGETCANTESCAPENOW
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_MeanLookSideIncrement:
 	jumpifbytenotequal gBattlerTarget, sBATTLER, BattleScript_MeanLookSideEnd
