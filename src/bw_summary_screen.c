@@ -419,15 +419,15 @@ static const u8 sText_None[]                                = _("NONE");
 #endif
 
 // bg gfx
-const u32 sSummaryScreen_Gfx_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.4bpp.lz");
+const u32 sSummaryScreen_Gfx_BW[]                           = INCBIN_U32("graphics/summary_screen/bw/tiles.4bpp.smol");
 const u16 sSummaryScreen_Pal_BW[]                           = INCBIN_U16("graphics/summary_screen/bw/tiles.gbapal");
-const u32 sSummaryPage_ScrollBG_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/scroll_bg.bin.lz");
-const u32 sSummaryPage_Info_Tilemap_BW[]                    = INCBIN_U32("graphics/summary_screen/bw/page_info.bin.lz");
-const u32 sSummaryPage_Skills_Tilemap_BW[]                  = INCBIN_U32("graphics/summary_screen/bw/page_skills.bin.lz");
-const u32 sSummaryPage_BattleMoves_Tilemap_BW[]             = INCBIN_U32("graphics/summary_screen/bw/page_battle_moves.bin.lz");
-const u32 sSummaryPage_ContestMoves_Tilemap_BW[]            = INCBIN_U32("graphics/summary_screen/bw/page_contest_moves.bin.lz");
-const u32 sSummaryEffect_Battle_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/effect_battle.bin.lz");
-const u32 sSummaryEffect_Contest_Tilemap_BW[]               = INCBIN_U32("graphics/summary_screen/bw/effect_contest.bin.lz");
+const u32 sSummaryPage_ScrollBG_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/scroll_bg.bin.smolTM");
+const u32 sSummaryPage_Info_Tilemap_BW[]                    = INCBIN_U32("graphics/summary_screen/bw/page_info.bin.smolTM");
+const u32 sSummaryPage_Skills_Tilemap_BW[]                  = INCBIN_U32("graphics/summary_screen/bw/page_skills.bin.smolTM");
+const u32 sSummaryPage_BattleMoves_Tilemap_BW[]             = INCBIN_U32("graphics/summary_screen/bw/page_battle_moves.bin.smolTM");
+const u32 sSummaryPage_ContestMoves_Tilemap_BW[]            = INCBIN_U32("graphics/summary_screen/bw/page_contest_moves.bin.smolTM");
+const u32 sSummaryEffect_Battle_Tilemap_BW[]                = INCBIN_U32("graphics/summary_screen/bw/effect_battle.bin.smolTM");
+const u32 sSummaryEffect_Contest_Tilemap_BW[]               = INCBIN_U32("graphics/summary_screen/bw/effect_contest.bin.smolTM");
 const u16 sSummaryScreen_PPTextPalette_BW[]                 = INCBIN_U16("graphics/summary_screen/bw/text_pp.gbapal");
 
 // sprite gfx
@@ -437,26 +437,26 @@ static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
 };
 
 #if BW_SUMMARY_BW_TYPE_ICONS == TRUE
-static const u32 sMoveTypes_Gfx_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.4bpp.lz");
+static const u32 sMoveTypes_Gfx_BW[]                        = INCBIN_U32("graphics/types_bw/move_types_bw.4bpp.smol");
 static const u16 sMoveTypes_Pal_BW[]                        = INCBIN_U16("graphics/types_bw/move_types_bw.gbapal");
 #endif
-static const u32 sTeraTypes_Gfx[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.lz");
-static const u32 sSummaryMoveSelect_Gfx_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.4bpp.lz");
+static const u32 sTeraTypes_Gfx[]                           = INCBIN_U32("graphics/types_bw/tera/tera_types_bw.4bpp.smol");
+static const u32 sSummaryMoveSelect_Gfx_BW[]                = INCBIN_U32("graphics/summary_screen/bw/move_select.4bpp.smol");
 static const u16 sSummaryMoveSelect_Pal_BW[]                = INCBIN_U16("graphics/summary_screen/bw/move_select.gbapal");
 static const u16 sMarkings_Pal_BW[]                         = INCBIN_U16("graphics/summary_screen/bw/markings.gbapal");
-static const u32 sShinyIcon_Gfx_BW[]                        = INCBIN_U32("graphics/summary_screen/bw/shiny_icon.4bpp.lz");
-static const u32 sPokerusCuredIcon_Gfx_BW[]                 = INCBIN_U32("graphics/summary_screen/bw/pokerus_cured_icon.4bpp.lz");
+static const u32 sShinyIcon_Gfx_BW[]                        = INCBIN_U32("graphics/summary_screen/bw/shiny_icon.4bpp.smol");
+static const u32 sPokerusCuredIcon_Gfx_BW[]                 = INCBIN_U32("graphics/summary_screen/bw/pokerus_cured_icon.4bpp.smol");
 static const u16 sCategoryIcons_Pal[]                       = INCBIN_U16("graphics/summary_screen/bw/category_icons.gbapal");
-static const u32 sCategoryIcons_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/category_icons.4bpp.lz");
+static const u32 sCategoryIcons_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/category_icons.4bpp.smol");
 static const u16 sStatGrades_Pal[]                          = INCBIN_U16("graphics/summary_screen/bw/stat_grades.gbapal");
-static const u32 sStatGrades_Gfx[]                          = INCBIN_U32("graphics/summary_screen/bw/stat_grades.4bpp.lz");
+static const u32 sStatGrades_Gfx[]                          = INCBIN_U32("graphics/summary_screen/bw/stat_grades.4bpp.smol");
 static const u16 sFriendshipIcon_Pal[]                      = INCBIN_U16("graphics/summary_screen/bw/heart.gbapal");
-static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.lz");
+static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/bw/heart.4bpp.smol");
 // rave note: yeah I know doing this with a sprite is mad jank, but I promise I have my reasons
 #if BW_SUMMARY_DECAP == TRUE
-static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt_decap.4bpp.lz");
+static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt_decap.4bpp.smol");
 #else
-static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt.4bpp.lz");
+static const u32 sRelearnPrompt_Gfx[]                       = INCBIN_U32("graphics/summary_screen/bw/relearn_prompt.4bpp.smol");
 #endif
 
 static const struct BgTemplate sBgTemplates[] =
@@ -1121,11 +1121,11 @@ static const union AnimCmd sSpriteAnim_TypeNone[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeNormal[] = {
-    ANIMCMD_FRAME(TYPE_NORMAL * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_ILLUSION * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFighting[] = {
-    ANIMCMD_FRAME(TYPE_FIGHTING * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_DREAM * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFlying[] = {
@@ -1133,19 +1133,19 @@ static const union AnimCmd sSpriteAnim_TypeFlying[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypePoison[] = {
-    ANIMCMD_FRAME(TYPE_POISON * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_MIASMA * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGround[] = {
-    ANIMCMD_FRAME(TYPE_GROUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_EARTH * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeRock[] = {
-    ANIMCMD_FRAME(TYPE_ROCK * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_BEAST * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeBug[] = {
-    ANIMCMD_FRAME(TYPE_BUG * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_HEART * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGhost[] = {
@@ -1169,15 +1169,15 @@ static const union AnimCmd sSpriteAnim_TypeWater[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeGrass[] = {
-    ANIMCMD_FRAME(TYPE_GRASS * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_NATURE * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeElectric[] = {
-    ANIMCMD_FRAME(TYPE_ELECTRIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_WIND * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypePsychic[] = {
-    ANIMCMD_FRAME(TYPE_PSYCHIC * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_REASON * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeIce[] = {
@@ -1185,7 +1185,7 @@ static const union AnimCmd sSpriteAnim_TypeIce[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeDragon[] = {
-    ANIMCMD_FRAME(TYPE_DRAGON * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_FAITH * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeDark[] = {
@@ -1193,7 +1193,7 @@ static const union AnimCmd sSpriteAnim_TypeDark[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeFairy[] = {
-    ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_COSMIC * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TypeStellar[] = {
@@ -1223,25 +1223,25 @@ static const union AnimCmd sSpriteAnim_CategoryTough[] = {
 
 static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] = {
     [TYPE_NONE] = sSpriteAnim_TypeNone,
-    [TYPE_NORMAL] = sSpriteAnim_TypeNormal,
-    [TYPE_FIGHTING] = sSpriteAnim_TypeFighting,
+    [TYPE_ILLUSION] = sSpriteAnim_TypeNormal,
+    [TYPE_DREAM] = sSpriteAnim_TypeFighting,
     [TYPE_FLYING] = sSpriteAnim_TypeFlying,
-    [TYPE_POISON] = sSpriteAnim_TypePoison,
-    [TYPE_GROUND] = sSpriteAnim_TypeGround,
-    [TYPE_ROCK] = sSpriteAnim_TypeRock,
-    [TYPE_BUG] = sSpriteAnim_TypeBug,
+    [TYPE_MIASMA] = sSpriteAnim_TypePoison,
+    [TYPE_EARTH] = sSpriteAnim_TypeGround,
+    [TYPE_BEAST] = sSpriteAnim_TypeRock,
+    [TYPE_HEART] = sSpriteAnim_TypeBug,
     [TYPE_GHOST] = sSpriteAnim_TypeGhost,
     [TYPE_STEEL] = sSpriteAnim_TypeSteel,
     [TYPE_MYSTERY] = sSpriteAnim_TypeMystery,
     [TYPE_FIRE] = sSpriteAnim_TypeFire,
     [TYPE_WATER] = sSpriteAnim_TypeWater,
-    [TYPE_GRASS] = sSpriteAnim_TypeGrass,
-    [TYPE_ELECTRIC] = sSpriteAnim_TypeElectric,
-    [TYPE_PSYCHIC] = sSpriteAnim_TypePsychic,
+    [TYPE_NATURE] = sSpriteAnim_TypeGrass,
+    [TYPE_WIND] = sSpriteAnim_TypeElectric,
+    [TYPE_REASON] = sSpriteAnim_TypePsychic,
     [TYPE_ICE] = sSpriteAnim_TypeIce,
-    [TYPE_DRAGON] = sSpriteAnim_TypeDragon,
+    [TYPE_FAITH] = sSpriteAnim_TypeDragon,
     [TYPE_DARK] = sSpriteAnim_TypeDark,
-    [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
+    [TYPE_COSMIC] = sSpriteAnim_TypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = sSpriteAnim_CategoryCool,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = sSpriteAnim_CategoryBeauty,
@@ -1286,11 +1286,11 @@ static const union AnimCmd sSpriteAnim_TeraTypeNone[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeNormal[] = {
-    ANIMCMD_FRAME(TYPE_NORMAL * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_ILLUSION * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeFighting[] = {
-    ANIMCMD_FRAME(TYPE_FIGHTING * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_DREAM * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeFlying[] = {
@@ -1298,19 +1298,19 @@ static const union AnimCmd sSpriteAnim_TeraTypeFlying[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypePoison[] = {
-    ANIMCMD_FRAME(TYPE_POISON * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_MIASMA * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeGround[] = {
-    ANIMCMD_FRAME(TYPE_GROUND * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_EARTH * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeRock[] = {
-    ANIMCMD_FRAME(TYPE_ROCK * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_BEAST * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeBug[] = {
-    ANIMCMD_FRAME(TYPE_BUG * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_HEART * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeGhost[] = {
@@ -1334,15 +1334,15 @@ static const union AnimCmd sSpriteAnim_TeraTypeWater[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeGrass[] = {
-    ANIMCMD_FRAME(TYPE_GRASS * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_NATURE * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeElectric[] = {
-    ANIMCMD_FRAME(TYPE_ELECTRIC * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_WIND * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypePsychic[] = {
-    ANIMCMD_FRAME(TYPE_PSYCHIC * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_REASON * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeIce[] = {
@@ -1350,7 +1350,7 @@ static const union AnimCmd sSpriteAnim_TeraTypeIce[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeDragon[] = {
-    ANIMCMD_FRAME(TYPE_DRAGON * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_FAITH * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeDark[] = {
@@ -1358,7 +1358,7 @@ static const union AnimCmd sSpriteAnim_TeraTypeDark[] = {
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeFairy[] = {
-    ANIMCMD_FRAME(TYPE_FAIRY * 4, 0, FALSE, FALSE),
+    ANIMCMD_FRAME(TYPE_COSMIC * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 static const union AnimCmd sSpriteAnim_TeraTypeStellar[] = {
@@ -1368,25 +1368,25 @@ static const union AnimCmd sSpriteAnim_TeraTypeStellar[] = {
 
 static const union AnimCmd *const sSpriteAnimTable_TeraType[NUMBER_OF_MON_TYPES] = {
     [TYPE_NONE] = sSpriteAnim_TeraTypeNone,
-    [TYPE_NORMAL] = sSpriteAnim_TeraTypeNormal,
-    [TYPE_FIGHTING] = sSpriteAnim_TeraTypeFighting,
+    [TYPE_ILLUSION] = sSpriteAnim_TeraTypeNormal,
+    [TYPE_DREAM] = sSpriteAnim_TeraTypeFighting,
     [TYPE_FLYING] = sSpriteAnim_TeraTypeFlying,
-    [TYPE_POISON] = sSpriteAnim_TeraTypePoison,
-    [TYPE_GROUND] = sSpriteAnim_TeraTypeGround,
-    [TYPE_ROCK] = sSpriteAnim_TeraTypeRock,
-    [TYPE_BUG] = sSpriteAnim_TeraTypeBug,
+    [TYPE_MIASMA] = sSpriteAnim_TeraTypePoison,
+    [TYPE_EARTH] = sSpriteAnim_TeraTypeGround,
+    [TYPE_BEAST] = sSpriteAnim_TeraTypeRock,
+    [TYPE_HEART] = sSpriteAnim_TeraTypeBug,
     [TYPE_GHOST] = sSpriteAnim_TeraTypeGhost,
     [TYPE_STEEL] = sSpriteAnim_TeraTypeSteel,
     [TYPE_MYSTERY] = sSpriteAnim_TeraTypeMystery,
     [TYPE_FIRE] = sSpriteAnim_TeraTypeFire,
     [TYPE_WATER] = sSpriteAnim_TeraTypeWater,
-    [TYPE_GRASS] = sSpriteAnim_TeraTypeGrass,
-    [TYPE_ELECTRIC] = sSpriteAnim_TeraTypeElectric,
-    [TYPE_PSYCHIC] = sSpriteAnim_TeraTypePsychic,
+    [TYPE_NATURE] = sSpriteAnim_TeraTypeGrass,
+    [TYPE_WIND] = sSpriteAnim_TeraTypeElectric,
+    [TYPE_REASON] = sSpriteAnim_TeraTypePsychic,
     [TYPE_ICE] = sSpriteAnim_TeraTypeIce,
-    [TYPE_DRAGON] = sSpriteAnim_TeraTypeDragon,
+    [TYPE_FAITH] = sSpriteAnim_TeraTypeDragon,
     [TYPE_DARK] = sSpriteAnim_TeraTypeDark,
-    [TYPE_FAIRY] = sSpriteAnim_TeraTypeFairy,
+    [TYPE_COSMIC] = sSpriteAnim_TeraTypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TeraTypeStellar
 };
 
@@ -1584,7 +1584,7 @@ static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
 };
 
 #if BW_SUMMARY_BW_STATUS_ICONS == TRUE
-static const u32 sStatusGfx_Icons[] = INCBIN_U32("graphics/summary_screen/bw/status_icons.4bpp.lz");
+static const u32 sStatusGfx_Icons[] = INCBIN_U32("graphics/summary_screen/bw/status_icons.4bpp.smol");
 static const u16 sStatusPal_Icons[] = INCBIN_U16("graphics/summary_screen/bw/status_icons.gbapal");
 #endif
 
@@ -2032,32 +2032,32 @@ static bool8 DecompressGraphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != 1)
         {
-            LZDecompressWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_INFO]);
+            DecompressDataWithHeaderWram(sSummaryPage_Info_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_INFO]);
             sMonSummaryScreen->switchCounter++;
         }
         break;
     case 2:
-        LZDecompressWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_SKILLS]);
+        DecompressDataWithHeaderWram(sSummaryPage_Skills_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_SKILLS]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 3:
-        LZDecompressWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_BATTLE_MOVES]);
+        DecompressDataWithHeaderWram(sSummaryPage_BattleMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_BATTLE_MOVES]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 4:
-        LZDecompressWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_CONTEST_MOVES]);
+        DecompressDataWithHeaderWram(sSummaryPage_ContestMoves_Tilemap_BW, sMonSummaryScreen->bg2TilemapBuffers[PSS_PAGE_CONTEST_MOVES]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 5:
-        LZDecompressWram(sSummaryEffect_Battle_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_BATTLE]);
+        DecompressDataWithHeaderWram(sSummaryEffect_Battle_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_BATTLE]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LZDecompressWram(sSummaryEffect_Contest_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_CONTEST]);
+        DecompressDataWithHeaderWram(sSummaryEffect_Contest_Tilemap_BW, sMonSummaryScreen->bg1TilemapBuffers[PSS_EFFECT_CONTEST]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 7:
-        LZDecompressWram(sSummaryPage_ScrollBG_Tilemap_BW, sMonSummaryScreen->bg3TilemapBuffers);
+        DecompressDataWithHeaderWram(sSummaryPage_ScrollBG_Tilemap_BW, sMonSummaryScreen->bg3TilemapBuffers);
         sMonSummaryScreen->switchCounter++;
         break;
     case 8:
@@ -3620,17 +3620,14 @@ static void PrintEggInfo(void)
 
 static void PrintGenderSymbol(struct Pokemon *mon, u16 species)
 {
-    if (species != SPECIES_NIDORAN_M && species != SPECIES_NIDORAN_F)
+    switch (GetMonGender(mon))
     {
-        switch (GetMonGender(mon))
-        {
-        case MON_MALE:
-            PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_MaleSymbol, 70, 1, 0, 3);
-            break;
-        case MON_FEMALE:
-            PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_FemaleSymbol, 70, 1, 0, 4);
-            break;
-        }
+    case MON_MALE:
+        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_MaleSymbol, 70, 1, 0, 3);
+        break;
+    case MON_FEMALE:
+        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_FemaleSymbol, 70, 1, 0, 4);
+        break;
     }
 }
 
@@ -3990,13 +3987,13 @@ static void PrintMonOTID(void)
 
 static void PrintMonAbilityName(void)
 {
-    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum, FALSE);
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 4, 2, 0, 0);
 }
 
 static void PrintMonAbilityDescription(void)
 {
-    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum, FALSE);
     PrintTextOnWindow_BW_Font(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 4, 15, 0, 0);
 }
 
@@ -4236,13 +4233,7 @@ static void PrintHeldItemName(void)
     const u8 *text;
     u32 fontId;
 
-    if (sMonSummaryScreen->summary.item == ITEM_ENIGMA_BERRY_E_READER
-        && IsMultiBattle() == TRUE
-        && (sMonSummaryScreen->curMonIndex == 1 || sMonSummaryScreen->curMonIndex == 4 || sMonSummaryScreen->curMonIndex == 5))
-    {
-        text = GetItemName(ITEM_ENIGMA_BERRY_E_READER);
-    }
-    else if (sMonSummaryScreen->summary.item == ITEM_NONE)
+    if (sMonSummaryScreen->summary.item == ITEM_NONE)
     {
         text = sText_None;
     }
