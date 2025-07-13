@@ -30,11 +30,17 @@ const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environme
 const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environment/cave/map.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_Plain[] = INCBIN_U32("graphics/battle_environment/plain/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Plain[] = INCBIN_U16("graphics/battle_environment/plain/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Plain[] = INCBIN_U32("graphics/battle_environment/plain/map.bin.smolTM");
 
 const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_environment/building/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Frontier[] = INCBIN_U16("graphics/battle_environment/stadium/battle_frontier.gbapal"); // this is also used for link battles
 const u32 gBattleEnvironmentTilemap_Building[] = INCBIN_U32("graphics/battle_environment/building/map.bin.smolTM");
+
+const u32 gBattleEnvironmentTiles_Ice[] = INCBIN_U32("graphics/battle_environment/ice/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_Ice[] = INCBIN_U16("graphics/battle_environment/ice/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Ice[] = INCBIN_U32("graphics/battle_environment/ice/map.bin.smolTM");
 
 #define ENVIRONMENT_BACKGROUND(background)                      \
 {                                                               \
@@ -49,51 +55,39 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
 {
     [BATTLE_ENVIRONMENT_GRASS] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_6
-        .naturePower = MOVE_ENERGY_BALL,
-    #elif B_NATURE_POWER_MOVES >= GEN_4
-        .naturePower = MOVE_SEED_BOMB,
-    #else
-        .naturePower = MOVE_STUN_SPORE,
-    #endif
-        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
-        .camouflageType = TYPE_GRASS,
+        .naturePower = MOVE_ENERGY_LIGHT,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
+        .camouflageType = TYPE_NATURE,
         .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_LONG_GRASS] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_6
-        .naturePower = MOVE_ENERGY_BALL,
-    #elif B_NATURE_POWER_MOVES >= GEN_4
-        .naturePower = MOVE_SEED_BOMB,
-    #else
-        .naturePower = MOVE_RAZOR_LEAF,
-    #endif
+        .naturePower = MOVE_ENERGY_LIGHT,
         .secretPowerEffect = MOVE_EFFECT_SLEEP,
-        .camouflageType = TYPE_GRASS,
+        .camouflageType = TYPE_NATURE,
         .background = ENVIRONMENT_BACKGROUND(LongGrass),
     },
 
     [BATTLE_ENVIRONMENT_SAND] =
     {
-        .naturePower = B_NATURE_POWER_MOVES >= GEN_6 ? MOVE_EARTH_POWER : MOVE_EARTHQUAKE,
+        .naturePower = MOVE_EARTH_POWER,
         .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_EARTH,
         .background = ENVIRONMENT_BACKGROUND(Sand),
     },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
     {
         .naturePower = MOVE_HYDRO_PUMP,
-        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_6 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_DEF_MINUS_1,
+        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
         .background = ENVIRONMENT_BACKGROUND(Underwater),
     },
 
     [BATTLE_ENVIRONMENT_WATER] =
     {
-        .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_HYDRO_PUMP : MOVE_SURF,
+        .naturePower = MOVE_HYDRO_PUMP,
         .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
         .background = ENVIRONMENT_BACKGROUND(Water),
@@ -101,71 +95,45 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
 
     [BATTLE_ENVIRONMENT_POND] =
     {
-        .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_HYDRO_PUMP : MOVE_BUBBLE_BEAM,
-        .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_ATK_MINUS_1 : MOVE_EFFECT_SPD_MINUS_1,
+        .naturePower = MOVE_HYDRO_PUMP,
+        .secretPowerEffect = MOVE_EFFECT_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
         .background = ENVIRONMENT_BACKGROUND(PondWater),
     },
 
     [BATTLE_ENVIRONMENT_MOUNTAIN] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_EARTH_POWER,
-    #elif B_NATURE_POWER_MOVES >= GEN_5
-        .naturePower = MOVE_EARTHQUAKE,
-    #else
-        .naturePower = MOVE_ROCK_SLIDE,
-    #endif
-    #if B_SECRET_POWER_EFFECT >= GEN_5
         .secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
-    #elif B_SECRET_POWER_EFFECT >= GEN_4
-        .secretPowerEffect = MOVE_EFFECT_FLINCH,
-    #else
-        .secretPowerEffect = MOVE_EFFECT_CONFUSION,
-    #endif
-        .camouflageType = B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK,
+        .camouflageType = TYPE_EARTH,
         .background = ENVIRONMENT_BACKGROUND(Rock),
     },
 
     [BATTLE_ENVIRONMENT_CAVE] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_EARTH_POWER,
-    #elif B_NATURE_POWER_MOVES >= GEN_5
-        .naturePower = MOVE_EARTHQUAKE,
-    #elif B_NATURE_POWER_MOVES >= GEN_4
-        .naturePower = MOVE_ROCK_SLIDE,
-    #else
-        .naturePower = MOVE_SHADOW_BALL,
-    #endif
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
-        .camouflageType = TYPE_ROCK,
+        .camouflageType = TYPE_BEAST,
         .background = ENVIRONMENT_BACKGROUND(Cave),
     },
 
     [BATTLE_ENVIRONMENT_BUILDING] =
     {
-        .naturePower = B_NATURE_POWER_MOVES >= GEN_4 ? MOVE_TRI_ATTACK : MOVE_SWIFT,
+        .naturePower = MOVE_TRI_ATTACK,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
-        .camouflageType = TYPE_NORMAL,
+        .camouflageType = TYPE_ILLUSION,
         .background = ENVIRONMENT_BACKGROUND(Building),
     },
 
     [BATTLE_ENVIRONMENT_PLAIN] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_6
         .naturePower = MOVE_TRI_ATTACK,
-    #elif B_NATURE_POWER_MOVES >= GEN_4
-        .naturePower = MOVE_EARTHQUAKE,
-    #else
-        .naturePower = MOVE_SWIFT,
-    #endif
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
-        .camouflageType = B_CAMOUFLAGE_TYPES >= GEN_4 ? TYPE_GROUND : TYPE_NORMAL,
+        .camouflageType = TYPE_EARTH,
         .background =
         {
-            .tileset = gBattleEnvironmentTiles_Building,
-            .tilemap = gBattleEnvironmentTilemap_Building,
+            .tileset = gBattleEnvironmentTiles_Plain,
+            .tilemap = gBattleEnvironmentTilemap_Plain,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
             .palette = gBattleEnvironmentPalette_Plain,
@@ -333,6 +301,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_AIR_SLASH,
         .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
         .camouflageType = TYPE_FLYING,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_SKY_PILLAR] =
@@ -340,6 +309,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_AIR_SLASH,
         .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
         .camouflageType = TYPE_FLYING,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_BURIAL_GROUND] =
@@ -347,40 +317,39 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_SHADOW_BALL,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
         .camouflageType = TYPE_GHOST,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_PUDDLE] =
     {
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_5 ? MOVE_EFFECT_SPD_MINUS_1 : MOVE_EFFECT_ACC_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_EARTH,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_MARSH] =
     {
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_EARTH,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_SWAMP] =
     {
         .naturePower = MOVE_MUD_BOMB,
         .secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
-        .camouflageType = TYPE_GROUND,
+        .camouflageType = TYPE_EARTH,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_SNOW] =
     {
-    #if B_NATURE_POWER_MOVES >= GEN_7
         .naturePower = MOVE_ICE_BEAM,
-    #elif B_NATURE_POWER_MOVES >= GEN_6
-        .naturePower = MOVE_FROST_BREATH,
-    #else
-        .naturePower = MOVE_BLIZZARD,
-    #endif
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
         .camouflageType = TYPE_ICE,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_ICE] =
@@ -388,6 +357,14 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_ICE_BEAM,
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
         .camouflageType = TYPE_ICE,
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Ice,
+            .tilemap = gBattleEnvironmentTilemap_Ice,
+            .entryTileset = gBattleEnvironmentAnimTiles_Cave,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Cave,
+            .palette = gBattleEnvironmentPalette_Ice,
+        },
     },
 
     [BATTLE_ENVIRONMENT_VOLCANO] =
@@ -395,27 +372,31 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .naturePower = MOVE_LAVA_PLUME,
         .secretPowerEffect = MOVE_EFFECT_BURN,
         .camouflageType = TYPE_FIRE,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_DISTORTION_WORLD] =
     {
         .naturePower = MOVE_TRI_ATTACK,
         .secretPowerEffect = MOVE_EFFECT_PARALYSIS,
-        .camouflageType = TYPE_NORMAL,
+        .camouflageType = TYPE_ILLUSION,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_SPACE] =
     {
         .naturePower = MOVE_DRACO_METEOR,
         .secretPowerEffect = MOVE_EFFECT_FLINCH,
-        .camouflageType = TYPE_DRAGON,
+        .camouflageType = TYPE_COSMIC,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 
     [BATTLE_ENVIRONMENT_ULTRA_SPACE] =
     {
         .naturePower = MOVE_PSYSHOCK,
         .secretPowerEffect = MOVE_EFFECT_DEF_MINUS_1,
-        .camouflageType = TYPE_PSYCHIC,
+        .camouflageType = TYPE_COSMIC,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
     },
 };
 
