@@ -621,7 +621,6 @@ static EWRAM_DATA struct ListBuffer1 *sListBuffer1 = 0;
 static EWRAM_DATA struct ListBuffer2 *sListBuffer2 = 0;
 EWRAM_DATA u16 gSpecialVar_ItemId = 0;
 static EWRAM_DATA struct TempWallyBag *sTempWallyBag = 0;
-static EWRAM_DATA bool8 sRegisterSubMenu = FALSE;
 
 void ResetBagScrollPositions(void)
 {
@@ -993,10 +992,6 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
             // Get HM number
             ConvertIntToDecimalStringN(gStringVar1, GetItemTMHMIndex(itemId) - NUM_TECHNICAL_MACHINES, STR_CONV_MODE_LEADING_ZEROS, 1);
             StringExpandPlaceholders(dest, gText_NumberItem_HM);
-        }
-        else if (itemId == ITEM_TM100)
-        {
-            StringExpandPlaceholders(dest, gText_NumberItem_TM100);
         }
         else
         {
@@ -1722,11 +1717,11 @@ static void OpenContextMenu(u8 taskId)
                 break;
             case POCKET_KEY_ITEMS:
                 gBagMenu->contextMenuItemsPtr = gBagMenu->contextMenuItemsBuffer;
-                if (sRegisterSubMenu)
+                if (gBagMenu->registerSubMenu)
                 {
                     gBagMenu->contextMenuNumItems = NELEMS(sContextMenu_RegisterKeyItem);
                     memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenu_RegisterKeyItem, sizeof(sContextMenu_RegisterKeyItem));
-                    sRegisterSubMenu = FALSE;
+                    gBagMenu->registerSubMenu = FALSE;
                 }
                 else if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_CannotUse)
                 {
@@ -2091,31 +2086,31 @@ static void ResetRegisteredItem(u16 item)
 
 static void ItemMenu_FinishRegister(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
-    u16* scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
-    u16* cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
+    s16 *data = gTasks[taskId].data;
+    u16 *scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
+    u16 *cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
 
-    DestroyListMenuTask(data[0], scrollPos, cursorPos);
+    DestroyListMenuTask(tListTaskId, scrollPos, cursorPos);
     LoadBagItemListBuffers(gBagPosition.pocket);
-    data[0] = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, *scrollPos, *cursorPos);
     ScheduleBgCopyTilemapToVram(0);
     ItemMenu_Cancel(taskId);
 }
 
 static void ItemMenu_Register(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
-    u16* scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
-    u16* cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
+    s16 *data = gTasks[taskId].data;
+    u16 *scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
+    u16 *cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
     int listPosition;
 
     RemoveContextWindow();
-    sRegisterSubMenu = TRUE;
-    listPosition = ListMenu_ProcessInput(data[0]);
-    ListMenuGetScrollAndRow(data[0], scrollPos, cursorPos);
+    gBagMenu->registerSubMenu = TRUE;
+    listPosition = ListMenu_ProcessInput(tListTaskId);
+    ListMenuGetScrollAndRow(tListTaskId, scrollPos, cursorPos);
     BagDestroyPocketScrollArrowPair();
-    BagMenu_PrintCursor(data[0], 2);
-    data[1] = listPosition;
+    BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
+    tListPosition = listPosition;
     data[2] = GetBagItemId(gBagPosition.pocket, listPosition);
     gSpecialVar_ItemId = GetBagItemId(gBagPosition.pocket, listPosition);
     sContextMenuFuncs[gBagPosition.location](taskId);
@@ -2154,7 +2149,7 @@ static void ItemMenu_RegisterR(u8 taskId)
 static void ItemMenu_Deselect(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
-    int listPosition = ListMenu_ProcessInput(data[0]);
+    int listPosition = ListMenu_ProcessInput(tListTaskId);
 
     ResetRegisteredItem(GetBagItemId(gBagPosition.pocket, listPosition));
     gTasks[taskId].func = ItemMenu_FinishRegister;
@@ -2234,7 +2229,7 @@ static void ItemMenu_Cancel(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    sRegisterSubMenu = FALSE;
+    gBagMenu->registerSubMenu = FALSE;
     RemoveContextWindow();
     PrintItemDescription(tListPosition);
     ScheduleBgCopyTilemapToVram(0);

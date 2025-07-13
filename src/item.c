@@ -64,7 +64,9 @@ const struct TmHmIndexKey gTMHMItemMoveIds[NUM_ALL_MACHINES + 1] =
 static void (*const sBagPocket_GetSetSlotDataFuncs[])(struct BagPocket *pocket, u32 pocketPos, u16 *itemId, u16 *quantity, bool32 isSetting) =
 {
     [POCKET_ITEMS] = BagPocket_GetSetSlotDataGeneric,
+    [POCKET_MEDICINE] = BagPocket_GetSetSlotDataGeneric,
     [POCKET_KEY_ITEMS] = BagPocket_GetSetSlotDataGeneric,
+    [POCKET_BATTLE_ITEMS] = BagPocket_GetSetSlotDataGeneric,
     [POCKET_POKE_BALLS] = BagPocket_GetSetSlotDataGeneric,
     [POCKET_TM_HM] = BagPocket_GetSetSlotDataGeneric,
     [POCKET_BERRIES] = BagPocket_GetSetSlotDataGeneric,
