@@ -387,8 +387,8 @@ static const u8 sMovesPPLayout[]                            = _("{PP}{CLEAR_TO 3
 #if BW_SUMMARY_DECAP == TRUE
 static const u8 sText_Cancel[]                              = _("Cancel");
 static const u8 sText_Switch[]                              = _("Switch");
-static const u8 sText_PkmnInfo[]                            = _("Pokémon Info");
-static const u8 sText_PkmnSkills[]                          = _("Pokémon Skills");
+static const u8 sText_PkmnInfo[]                            = _("Puppet Info");
+static const u8 sText_PkmnSkills[]                          = _("Puppet Skills");
 static const u8 sText_BattleMoves[]                         = _("Battle Moves");
 static const u8 sText_ContestMoves[]                        = _("Contest Moves");
 static const u8 sText_Info[]                                = _("Info");
@@ -398,7 +398,7 @@ static const u8 sText_ViewStats[]                           = _("View Stats");
 static const u8 sText_ViewIVs_Graded[]                      = _("See Innate");
 static const u8 sText_ViewEVs_Graded[]                      = _("See Effort");
 static const u8 sText_NextLv[]                              = _("Next Lv.");
-static const u8 sText_RentalPkmn[]                          = _("Rental Pokémon");
+static const u8 sText_RentalPkmn[]                          = _("Rental Puppet");
 static const u8 sText_None[]                                = _("None");
 #else
 static const u8 sText_Cancel[]                              = _("CANCEL");
@@ -3623,10 +3623,10 @@ static void PrintGenderSymbol(struct Pokemon *mon, u16 species)
     switch (GetMonGender(mon))
     {
     case MON_MALE:
-        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_MaleSymbol, 70, 1, 0, 3);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_YinSymbol, 70, 1, 0, 3);
         break;
     case MON_FEMALE:
-        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_FemaleSymbol, 70, 1, 0, 4);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME_GENDER_LEVEL, gText_YangSymbol, 70, 1, 0, 4);
         break;
     }
 }
@@ -4269,7 +4269,7 @@ static void UNUSED PrintRibbonCount(void)
 
 static void BufferStat(u8 *dst, s8 statIndex, u32 stat, u32 strId, u32 align)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
+    static const u8 sTextNatureDown[] = _("{COLOR}{DYNAMIC_COLOR2}");
     static const u8 sTextNatureUp[] = _("{COLOR}{05}");
     static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
     static const u8 sTextUpArrow[] = _(" {UP_ARROW}");
