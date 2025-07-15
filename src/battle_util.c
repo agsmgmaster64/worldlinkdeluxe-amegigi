@@ -286,7 +286,6 @@ bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
         || (!IsBattlerAlive(gSideTimers[defSide].followmeTarget) && !IsDragonDartsSecondHit(effect))
         || effect == EFFECT_SNIPE_SHOT
         || effect == EFFECT_SKY_DROP
-        || IsAbilityAndRecord(battlerAtk, ability, ABILITY_PROPELLER_TAIL)
         || IsAbilityAndRecord(battlerAtk, ability, ABILITY_STALWART))
         return FALSE;
 
@@ -335,7 +334,6 @@ bool32 HandleMoveTargetRedirection(void)
                 && GetBattlerTurnOrderNum(battler) < redirectorOrderNum
                 && moveEffect != EFFECT_SNIPE_SHOT
                 && moveEffect != EFFECT_PLEDGE
-                && !IsAbilityAndRecord(gBattlerAttacker, abilityAtk, ABILITY_PROPELLER_TAIL)
                 && !IsAbilityAndRecord(gBattlerAttacker, abilityAtk, ABILITY_STALWART))
             {
                 redirectorOrderNum = GetBattlerTurnOrderNum(battler);
@@ -4865,13 +4863,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 }
             }
             break;
-        case ABILITY_SEED_SOWER:
-            if (!gProtectStructs[gBattlerAttacker].confusionSelfDmg
+        case ABILITY_FOUL_AROMA:
+            if (IsBattlerAlive(gBattlerAttacker)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && CanBeConfused(gBattlerAttacker)
+             && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), move)
              && IsBattlerTurnDamaged(gBattlerTarget)
-             && IsBattlerAlive(gBattlerTarget)
-             && TryChangeBattleTerrain(gBattlerTarget, STATUS_FIELD_GRASSY_TERRAIN, &gFieldTimers.terrainTimer))
+             && RandomPercentage(RNG_FOUL_AROMA, 30))
             {
-                BattleScriptCall(BattleScript_SeedSowerActivates);
+                gEffectBattler = gBattlerAttacker;
+                gBattleScripting.battler = gBattlerTarget;
+                gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_AbilityStatusEffect);
                 effect++;
             }
             break;
@@ -4945,22 +4949,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_LEAF_SPICE:
-            if (IsBattlerAlive(gBattlerTarget)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeBurned(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerTarget))
-             && moveType == TYPE_NATURE
-             && IsBattlerTurnDamaged(gBattlerTarget) // Need to actually hit the target
-             && RandomPercentage(RNG_LEAF_SPICE, 30))
-            {
-                gEffectBattler = gBattlerTarget;
-                gBattleScripting.battler = gBattlerAttacker;
-                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptCall(BattleScript_AbilityStatusEffect);
-                effect++;
-            }
-            break;
         case ABILITY_TOXIC_CHAIN:
             if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT)
              && IsBattlerAlive(gBattlerTarget)
@@ -5010,6 +4998,22 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptCall(BattleScript_AbilityStatusEffect);
                 gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                effect++;
+            }
+            break;
+        case ABILITY_LEAF_SPICE:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && CanBeBurned(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerTarget))
+             && moveType == TYPE_NATURE
+             && IsBattlerTurnDamaged(gBattlerTarget) // Need to actually hit the target
+             && RandomPercentage(RNG_LEAF_SPICE, 30))
+            {
+                gEffectBattler = gBattlerTarget;
+                gBattleScripting.battler = gBattlerAttacker;
+                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_AbilityStatusEffect);
                 effect++;
             }
             break;

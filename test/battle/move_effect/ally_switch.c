@@ -94,7 +94,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect moves done by pokemon with Sta
 {
     u16 ability;
     PARAMETRIZE { ability = ABILITY_STALWART; }
-    PARAMETRIZE { ability = ABILITY_PROPELLER_TAIL; }
+    PARAMETRIZE { ability = ABILITY_FOUL_AROMA; }
     PARAMETRIZE { ability = ABILITY_TELEPATHY; }
 
     GIVEN {
@@ -111,7 +111,7 @@ DOUBLE_BATTLE_TEST("Ally Switch does not redirect moves done by pokemon with Sta
 
         MESSAGE("The opposing Kadabra used Scratch!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponentLeft);
-        HP_BAR((ability == ABILITY_STALWART || ability == ABILITY_PROPELLER_TAIL) ? playerLeft : playerRight);
+        HP_BAR((ability == ABILITY_STALWART || ability == ABILITY_FOUL_AROMA) ? playerLeft : playerRight);
     }
 }
 

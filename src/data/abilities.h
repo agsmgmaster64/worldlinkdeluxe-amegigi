@@ -1807,7 +1807,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_PROPELLER_TAIL] =
+    [ABILITY_THING1] =
     {
         .name = _("Propeller Tail"),
         .description = COMPOUND_STRING("Ignores foe's redirection."),
@@ -2040,10 +2040,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
-    [ABILITY_SEED_SOWER] =
+    [ABILITY_FOUL_AROMA] =
     {
-        .name = _("Seed Sower"),
-        .description = COMPOUND_STRING("Affects terrain when hit."),
+        .name = _("Foul Aroma"),
+        .description = COMPOUND_STRING("Confuses foe on contact."),
         .aiRating = 5,
     },
 

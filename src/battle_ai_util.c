@@ -1759,7 +1759,6 @@ bool32 IsMoveRedirectionPrevented(u32 battlerAtk, u32 move, u32 atkAbility)
     enum BattleMoveEffects effect = GetMoveEffect(move);
     if (effect == EFFECT_SKY_DROP
       || effect == EFFECT_SNIPE_SHOT
-      || atkAbility == ABILITY_PROPELLER_TAIL
       || atkAbility == ABILITY_STALWART)
         return TRUE;
     return FALSE;
