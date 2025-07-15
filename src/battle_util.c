@@ -8778,6 +8778,14 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             }
         }
         break;
+    case ABILITY_YIN_AND_YANG:
+        if (gBattleMons[battlerAtk].attack == gBattleMons[battlerDef].spAttack)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        else if ((gBattleMons[battlerAtk].attack > gBattleMons[battlerDef].spAttack) && IsBattleMoveSpecial(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        else if ((gBattleMons[battlerAtk].attack < gBattleMons[battlerDef].spAttack) && IsBattleMovePhysical(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     }
 
     // target's abilities

@@ -2026,16 +2026,11 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
-    [ABILITY_AS_ONE_SHADOW_RIDER] =
+    [ABILITY_YIN_AND_YANG] =
     {
-        .name = _("As One"),
-        .description = COMPOUND_STRING("Unnerve and Grim Neigh."),
+        .name = _("Yin and Yang"),
+        .description = COMPOUND_STRING("Boosts lower attack stat."),
         .aiRating = 10,
-        .cantBeCopied = TRUE,
-        .cantBeSwapped = TRUE,
-        .cantBeTraced = TRUE,
-        .cantBeSuppressed = TRUE,
-        .cantBeOverwritten = TRUE,
     },
 
     [ABILITY_CLEAR_VOICE] =
