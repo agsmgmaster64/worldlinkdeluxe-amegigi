@@ -3559,7 +3559,7 @@ bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef, u32 move)
 bool32 ShouldFakeOut(u32 battlerAtk, u32 battlerDef, u32 move)
 {
     if ((!gDisableStructs[battlerAtk].isFirstTurn && MoveHasAdditionalEffectWithChance(move, MOVE_EFFECT_FLINCH, 100))
-    || gAiLogicData->abilities[battlerAtk] == ABILITY_GORILLA_TACTICS
+    || gAiLogicData->abilities[battlerAtk] == ABILITY_ONI_TACTICS
     || gAiLogicData->holdEffects[battlerAtk] == HOLD_EFFECT_CHOICE_BAND
     || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_COVERT_CLOAK
     || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)

@@ -7413,6 +7413,15 @@ BattleScript_TraceActivates::
 	switchinabilities BS_SCRIPTING
 	end3
 
+BattleScript_BlankCardActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUpScripting
+	printstring STRINGID_BLANKCARDACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	settracedability BS_SCRIPTING
+	switchinabilities BS_SCRIPTING
+	end3
+
 BattleScript_ReceiverActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_RECEIVERABILITYTAKEOVER

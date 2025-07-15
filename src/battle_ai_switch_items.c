@@ -167,7 +167,7 @@ static bool32 AI_DoesChoiceEffectBlockMove(u32 battler, u32 move)
     // Choice locked into something else
     if (gAiLogicData->lastUsedMove[battler] != MOVE_NONE && gAiLogicData->lastUsedMove[battler] != move
     && ((HOLD_EFFECT_CHOICE(GetBattlerHoldEffect(battler, FALSE)) && IsBattlerItemEnabled(battler))
-        || gBattleMons[battler].ability == ABILITY_GORILLA_TACTICS))
+        || gBattleMons[battler].ability == ABILITY_ONI_TACTICS))
         return TRUE;
     return FALSE;
 }

@@ -360,7 +360,7 @@ static inline bool32 CanShowMenuInfo(u32 isEnemyMon)
 {
     if (!isEnemyMon)
         return TRUE;
-    if (sMenuDataPtr->canShowEnemyInfo == 2)
+    if (sMenuDataPtr->canShowEnemyInfo)
         return TRUE;
     return FALSE;
 }

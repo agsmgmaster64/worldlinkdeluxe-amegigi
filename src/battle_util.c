@@ -1492,7 +1492,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
             limitations++;
         }
     }
-    if (DYNAMAX_BYPASS_CHECK && (GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS) && *choicedMove != MOVE_NONE
+    if (DYNAMAX_BYPASS_CHECK && (GetBattlerAbility(battler) == ABILITY_ONI_TACTICS) && *choicedMove != MOVE_NONE
               && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
         gCurrentMove = *choicedMove;
@@ -1599,7 +1599,7 @@ u32 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_STUFF_CHEEKS && moveEffect == EFFECT_STUFF_CHEEKS && GetItemPocket(gBattleMons[battler].item) != POCKET_BERRIES)
             unusableMoves |= 1u << i;
         // Gorilla Tactics
-        else if (check & MOVE_LIMITATION_CHOICE_ITEM && GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
+        else if (check & MOVE_LIMITATION_CHOICE_ITEM && GetBattlerAbility(battler) == ABILITY_ONI_TACTICS && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
             unusableMoves |= 1u << i;
         // Can't Use Twice flag
         else if (check & MOVE_LIMITATION_CANT_USE_TWICE && MoveCantBeUsedTwice(move) && move == gLastResultingMoves[battler])
@@ -3581,6 +3581,48 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 }
             }
             break;
+        case ABILITY_BLANK_CARD:
+            {
+                struct Pokemon *donor;
+                struct Pokemon *party;
+                u32 slot, newAbility;
+
+                if (gSpecialStatuses[battler].switchInAbilityDone)
+                    break;
+
+                slot = PARTY_SIZE;
+                newAbility = ABILITY_NONE;
+                party = GetBattlerParty(battler);
+
+                DebugPrintfLevel(MGBA_LOG_DEBUG, "Attempting to start loop");
+                for (i = PARTY_SIZE - 1; i > 0; i--)
+                {
+                    if (GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
+                        && !GetMonData(&party[i], MON_DATA_IS_EGG)
+                        && gBattlerPartyIndexes[battler] != i)
+                    {
+                        slot = i;
+                        break;
+                    }
+                }
+
+                DebugPrintfLevel(MGBA_LOG_DEBUG, "Slot ID: %d", slot);
+                if (slot != PARTY_SIZE)
+                {
+                    donor = &party[slot];
+                    newAbility = GetMonAbility(donor);
+                    if (!gAbilitiesInfo[newAbility].cantBeCopied)
+                        effect++;
+                }
+
+                if (effect != 0)
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_BlankCardActivates);
+                    gBattleStruct->tracedAbility[battler] = gLastUsedAbility = newAbility;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility)
+                }
+            }
+            break;
         case ABILITY_IMPOSTER:
             {
                 u32 diagonalBattler = BATTLE_OPPOSITE(battler);
@@ -4181,7 +4223,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 effect++;
             }
             break;
-        case ABILITY_BLANK_CARD:
         case ABILITY_COMMANDER:
             partner = BATTLE_PARTNER(battler);
             if (!gSpecialStatuses[battler].switchInAbilityDone
@@ -8457,6 +8498,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_ILLUSION && gBattleStruct->ateBoost[battlerAtk] && GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case ABILITY_CONSECRATE:
+        if (moveType == TYPE_FAITH && gBattleStruct->ateBoost[battlerAtk])
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+        break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -8752,7 +8797,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         if (moveType == TYPE_NATURE && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_ICE))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_GORILLA_TACTICS:
+    case ABILITY_ONI_TACTICS:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;

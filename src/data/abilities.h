@@ -1807,10 +1807,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_THING1] =
+    [ABILITY_CONSECRATE] =
     {
-        .name = _("Propeller Tail"),
-        .description = COMPOUND_STRING("Ignores foe's redirection."),
+        .name = _("Consecrate"),
+        .description = COMPOUND_STRING("Illusion moves become Faith."),
         .aiRating = 2,
     },
 
@@ -1893,9 +1893,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_BLANK_CARD] =
     {
-        .name = _("Power Spot"),
-        .description = COMPOUND_STRING("Powers up ally moves."),
+        .name = _("Blank Card"),
+        .description = COMPOUND_STRING("Copies member's ability."),
         .aiRating = 2,
+        .cantBeCopied = TRUE,
     },
 
     [ABILITY_MIMICRY] =
@@ -1933,9 +1934,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 2,
     },
 
-    [ABILITY_GORILLA_TACTICS] =
+    [ABILITY_ONI_TACTICS] =
     {
-        .name = _("Gorilla Tactics"),
+        .name = _("Oni Tactics"),
         .description = COMPOUND_STRING("Ups Attack and locks move."),
         .aiRating = 4,
     },
