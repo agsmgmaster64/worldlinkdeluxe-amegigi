@@ -8,6 +8,7 @@
 #include "battle_script_commands.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
+#include "bw_summary_screen.h"
 #include "data.h"
 #include "decompress.h"
 #include "event_data.h"
@@ -183,6 +184,7 @@ struct MenuResources
     u8 partyMenuSelectorID_Y;
     bool8 isDoubleBattle;
     bool8 partyIconsCreated;
+    bool8 canShowEnemyInfo;
 };
 
 enum WindowIds
@@ -243,7 +245,7 @@ static EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
 
 //==========STATIC=DEFINES==========//
 static void Battle_Menu_RunSetup(void);
-static bool8 Menu_DoGfxSetup(void);
+static bool32 Menu_DoGfxSetup(void);
 static bool8 Menu_InitBgs(void);
 static void Menu_FadeAndBail(void);
 static bool8 Menu_LoadGraphics(void);
@@ -354,6 +356,15 @@ static const u8 sMenuWindowFontColors[][3] =
 
 //==========FUNCTIONS==========//
 // UI loader template
+static inline bool32 CanShowMenuInfo(u32 isEnemyMon)
+{
+    if (!isEnemyMon)
+        return TRUE;
+    if (sMenuDataPtr->canShowEnemyInfo == 2)
+        return TRUE;
+    return FALSE;
+}
+
 void Task_OpenBattleMenuFromStartMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
@@ -381,6 +392,11 @@ void UI_Battle_Menu_Init(MainCallback callback)
         sMenuDataPtr->isDoubleBattle = TRUE;
     else
         sMenuDataPtr->isDoubleBattle = FALSE;
+    
+    if (gSaveBlock2Ptr->optionsBattleMenu == 2)
+        sMenuDataPtr->canShowEnemyInfo = TRUE;
+    else
+        sMenuDataPtr->canShowEnemyInfo = FALSE;
     
     sMenuDataPtr->gfxLoadState          = 0;
     sMenuDataPtr->moveModeId            = 0;
@@ -773,7 +789,7 @@ static void Battle_Menu_RunSetup(void)
 {
     while (TRUE)
     {
-        if (Menu_DoGfxSetup() == TRUE)
+        if (Menu_DoGfxSetup())
             break;
     }
 }
@@ -801,7 +817,7 @@ static void Menu_VBlankCB(void)
 #define POKEMON_ICON_3_Y (0 * 8)  + (2 * 8)
 #define POKEMON_ICON_4_Y (16 * 8) + (2 * 8)
 
-static bool8 Menu_DoGfxSetup(void)
+static bool32 Menu_DoGfxSetup(void)
 {
     switch (gMain.state)
     {
@@ -1237,16 +1253,23 @@ static void PrintStatsTab(void)
 {
     u8 i, j;
     u8 x, y, x2, y2;
+    u8 battler = sMenuDataPtr->battlerId;
     u8 windowId = WINDOW_1;
     u8 colorIdx = FONT_BLACK;
-    u16 species = gBattleMons[sMenuDataPtr->battlerId].species;
-    u8 gender = GetGenderFromSpeciesAndPersonality(species, gBattleMons[sMenuDataPtr->battlerId].personality);
+    u16 species = gBattleMons[battler].species;
+    u8 gender = GetGenderFromSpeciesAndPersonality(species, gBattleMons[battler].personality);
     u8 statStage;
     bool8 statStageUp = FALSE;
     u8 numtypes = 1;
-    u8 nature;
+    u32 nature, isEnemyMon;
+    u32 types[3];
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    if (!IsOnPlayerSide(battler))
+        isEnemyMon = TRUE;
+    else
+        isEnemyMon = FALSE;
 
     //Title
     x  = 9;
@@ -1276,29 +1299,30 @@ static void PrintStatsTab(void)
     }
     //Pokemon Level
     x++;
-    ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].level, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].level, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringExpandPlaceholders(gStringVar4, gText_NewLevelSymbol);
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
     //Pokemon Types
     y++;
     x = 9;
-    StringCopy(gStringVar1, gTypesInfo[gBattleMons[sMenuDataPtr->battlerId].types[0]].name);
+    GetBattlerTypes(battler, TRUE, types);
+    StringCopy(gStringVar1, gTypesInfo[types[0]].name);
     //Check if there is a second type
-    if (gBattleMons[sMenuDataPtr->battlerId].types[0] != gBattleMons[sMenuDataPtr->battlerId].types[1])
+    if (types[0] != types[1])
     {
         numtypes++;
-        StringCopy(gStringVar2, gTypesInfo[gBattleMons[sMenuDataPtr->battlerId].types[1]].name);
+        StringCopy(gStringVar2, gTypesInfo[types[1]].name);
     }
     //Check if there is a third type
-    if (gBattleMons[sMenuDataPtr->battlerId].types[2] != TYPE_NONE
-     && gBattleMons[sMenuDataPtr->battlerId].types[2] != gBattleMons[sMenuDataPtr->battlerId].types[0]
-     && gBattleMons[sMenuDataPtr->battlerId].types[2] != gBattleMons[sMenuDataPtr->battlerId].types[1])
+    if (types[2] != TYPE_NONE
+     && types[2] != types[0]
+     && types[2] != types[1])
     {
         numtypes++;
         if (numtypes == 2)
-            StringCopy(gStringVar2, gTypesInfo[gBattleMons[sMenuDataPtr->battlerId].types[2]].name);
+            StringCopy(gStringVar2, gTypesInfo[types[2]].name);
         else
-            StringCopy(gStringVar3, gTypesInfo[gBattleMons[sMenuDataPtr->battlerId].types[2]].name);
+            StringCopy(gStringVar3, gTypesInfo[types[2]].name);
     }   
 
     switch(numtypes)
@@ -1315,23 +1339,24 @@ static void PrintStatsTab(void)
     }
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
 
-    //Held Item
-    y = y +2;
-    if(gBattleMons[sMenuDataPtr->battlerId].item != ITEM_NONE)
-        CopyItemName(gBattleMons[sMenuDataPtr->battlerId].item, gStringVar1);
-    else
-        StringCopy(gStringVar1, sText_None);
-    StringExpandPlaceholders(gStringVar4, sText_Title_Held_Item);
-    //StringCopy(gStringVar1, ItemId_GetDescription(gBattleMons[sMenuDataPtr->battlerId].item));
-    StringExpandPlaceholders(gStringVar4, sText_Title_Held_Item);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
+    if (CanShowMenuInfo(isEnemyMon))
+    {
+        //Held Item
+        y = y +2;
+        if (gBattleMons[battler].item != ITEM_NONE)
+            CopyItemName(gBattleMons[battler].item, gStringVar1);
+        else
+            StringCopy(gStringVar1, sText_None);
+        StringExpandPlaceholders(gStringVar4, sText_Title_Held_Item);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
 
-    //Item Icon
-    x  = 26 + 1;
-    x2 = 4;
-    y  = 4  + 3;
-    ShowItemIcon(gBattleMons[sMenuDataPtr->battlerId].item, (x * 8) + x2, (y * 8) + y2);
-    x2 = 0;
+        //Item Icon
+        x = 26 + 1;
+        x2 = 4;
+        y = 4 + 3;
+        ShowItemIcon(gBattleMons[battler].item, (x * 8) + x2, (y * 8) + y2);
+        x2 = 0;
+    }
 
     //Stat Drops & Ups
     x = 9;
@@ -1364,7 +1389,7 @@ static void PrintStatsTab(void)
     y = 9;
     for (i = 0; i < NUM_BATTLE_STATS - 1; i++)
     {    
-        statStage = gBattleMons[sMenuDataPtr->battlerId].statStages[statorder[i + 1]];//HP is not taken into account
+        statStage = gBattleMons[battler].statStages[statorder[i + 1]];//HP is not taken into account
         if (statStage != DEFAULT_STAT_STAGE)
         {
             if (statStage > DEFAULT_STAT_STAGE)
@@ -1398,96 +1423,99 @@ static void PrintStatsTab(void)
         BlitBitmapToWindow(windowId, sStatUpArrow, ((x + i) * 8) + x2, (y * 8), 8, 8);
     }*/
 
-    //Stat names
-    x  = 20;
-    y  = 9;
-    //HP
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_StatHP);
-    ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].hp, STR_CONV_MODE_LEFT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar2, gBattleMons[sMenuDataPtr->battlerId].maxHP, STR_CONV_MODE_LEFT_ALIGN, 3);
-    StringExpandPlaceholders(gStringVar4, sText_HP);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
-    y++;
-    //Attack
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Attack);
-	ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].attack, STR_CONV_MODE_LEFT_ALIGN, 5);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
-    y++;
-    //Defense
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Defense);
-	ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].defense, STR_CONV_MODE_LEFT_ALIGN, 5);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
-    y++;
-    //Special Attack
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_SpecialAttack);
-	ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].spAttack, STR_CONV_MODE_LEFT_ALIGN, 5);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
-    y++;
-    //Special Defense
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_SpecialDefense);
-	ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].spDefense, STR_CONV_MODE_LEFT_ALIGN, 5);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
-    y++;
-    //Speed
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Speed);
-	ConvertIntToDecimalStringN(gStringVar1, gBattleMons[sMenuDataPtr->battlerId].speed, STR_CONV_MODE_LEFT_ALIGN, 5);
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
-
-    //Nature
-    x = 20;
-    y = 16;
-
-    nature = GetMonData(GetBattlerMon(sMenuDataPtr->battlerId), MON_DATA_HIDDEN_NATURE, NULL);
-
-    StringCopy(gStringVar1, gNaturesInfo[nature].name);
-    if (gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
+    if (CanShowMenuInfo(isEnemyMon))
     {
-        //No Stat Up or Down
-        StringExpandPlaceholders(gStringVar4, sText_Title_Nature_NoStat);
-    }
-    else
-    {
-        switch(gNaturesInfo[nature].statUp)
-        {
-        case STAT_ATK:
-            StringCopy(gStringVar2, sText_Attack);
-            break;
-        case STAT_DEF:
-            StringCopy(gStringVar2, sText_Defense);
-            break;
-        case STAT_SPATK:
-            StringCopy(gStringVar2, sText_SpecialAttack);
-            break;
-        case STAT_SPDEF:
-            StringCopy(gStringVar2, sText_SpecialDefense);
-            break;
-        case STAT_SPEED:
-            StringCopy(gStringVar2, sText_Speed);
-            break;
-        }
+        //Stat names
+        x  = 20;
+        y  = 9;
+        //HP
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_StatHP);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].hp, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar2, gBattleMons[battler].maxHP, STR_CONV_MODE_LEFT_ALIGN, 3);
+        StringExpandPlaceholders(gStringVar4, sText_HP);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
+        y++;
+        //Attack
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Attack);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].attack, STR_CONV_MODE_LEFT_ALIGN, 5);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
+        y++;
+        //Defense
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Defense);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].defense, STR_CONV_MODE_LEFT_ALIGN, 5);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
+        y++;
+        //Special Attack
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_SpecialAttack);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].spAttack, STR_CONV_MODE_LEFT_ALIGN, 5);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
+        y++;
+        //Special Defense
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_SpecialDefense);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].spDefense, STR_CONV_MODE_LEFT_ALIGN, 5);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
+        y++;
+        //Speed
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Speed);
+        ConvertIntToDecimalStringN(gStringVar1, gBattleMons[battler].speed, STR_CONV_MODE_LEFT_ALIGN, 5);
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, ((x + 3) * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar1);
 
-        switch(gNaturesInfo[nature].statDown)
+        //Nature
+        x = 20;
+        y = 16;
+
+        nature = GetMonData(GetBattlerMon(battler), MON_DATA_HIDDEN_NATURE, NULL);
+
+        StringCopy(gStringVar1, gNaturesInfo[nature].name);
+        if (gNaturesInfo[nature].statUp == gNaturesInfo[nature].statDown)
         {
-        case STAT_ATK:
-            StringCopy(gStringVar3, sText_Attack);
-            break;
-        case STAT_DEF:
-            StringCopy(gStringVar3, sText_Defense);
-            break;
-        case STAT_SPATK:
-            StringCopy(gStringVar3, sText_SpecialAttack);
-            break;
-        case STAT_SPDEF:
-            StringCopy(gStringVar3, sText_SpecialDefense);
-            break;
-        case STAT_SPEED:
-            StringCopy(gStringVar3, sText_Speed);
-            break;
+            //No Stat Up or Down
+            StringExpandPlaceholders(gStringVar4, sText_Title_Nature_NoStat);
         }
-        StringExpandPlaceholders(gStringVar4, sText_Title_Nature);
+        else
+        {
+            switch (gNaturesInfo[nature].statUp)
+            {
+            case STAT_ATK:
+                StringCopy(gStringVar2, sText_Attack);
+                break;
+            case STAT_DEF:
+                StringCopy(gStringVar2, sText_Defense);
+                break;
+            case STAT_SPATK:
+                StringCopy(gStringVar2, sText_SpecialAttack);
+                break;
+            case STAT_SPDEF:
+                StringCopy(gStringVar2, sText_SpecialDefense);
+                break;
+            case STAT_SPEED:
+                StringCopy(gStringVar2, sText_Speed);
+                break;
+            }
+
+            switch (gNaturesInfo[nature].statDown)
+            {
+            case STAT_ATK:
+                StringCopy(gStringVar3, sText_Attack);
+                break;
+            case STAT_DEF:
+                StringCopy(gStringVar3, sText_Defense);
+                break;
+            case STAT_SPATK:
+                StringCopy(gStringVar3, sText_SpecialAttack);
+                break;
+            case STAT_SPDEF:
+                StringCopy(gStringVar3, sText_SpecialDefense);
+                break;
+            case STAT_SPEED:
+                StringCopy(gStringVar3, sText_Speed);
+                break;
+            }
+            StringExpandPlaceholders(gStringVar4, sText_Title_Nature);
+        }
+        
+        AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
     }
-    
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gStringVar4);
 
     PutWindowTilemap(windowId);
     CopyWindowToVram(windowId, 3);
@@ -1848,8 +1876,8 @@ const u8 sText_Title_Status_Cursed_Description[]           = _("Loses 1/4 of its
                                                                "end of each turn, the curse will\n"
                                                                "remain until the Puppet leaves.");
 const u8 sText_Title_Status_Foresight[]                    = _("Foresighted");
-const u8 sText_Title_Status_Foresight_Description[]        = _("Enables to be hit by Normal or\n"
-                                                               "Fighting-type moves if it's a\n"
+const u8 sText_Title_Status_Foresight_Description[]        = _("Enables to be hit by Dark or\n"
+                                                               "Illusion-type moves if it's a\n"
                                                                "Ghost-type, ignores evasiveness.");
 const u8 sText_Title_Status_Defense_Curl[]                 = _("Defense Curl");
 const u8 sText_Title_Status_Defense_Curl_Description[]     = _("Doubles the power of the user's\n"
@@ -3511,7 +3539,7 @@ static void StartSummaryScreen(u8 taskId)
     if (PARTY_MENU_SUMMARY_LOCK_MONS)
         partyCount = 0; //To remove being able to change mons in the summary screen
 
-    if (species != SPECIES_NONE)
+    if (species != SPECIES_NONE && CanShowMenuInfo(isEnemyMon))
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         FreeAllWindowBuffers();
@@ -3519,9 +3547,9 @@ static void StartSummaryScreen(u8 taskId)
         sTempSavedCallback = sMenuDataPtr->savedCallback;
         Menu_FreeResources();
         if (!isEnemyMon)
-            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
         else
-            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
     }
     else
     {
@@ -3553,7 +3581,7 @@ static void StartSummaryScreenForSpecificMon(u8 taskId)
         isEnemyMon = TRUE;
     }
 
-    if (species != SPECIES_NONE)
+    if (species != SPECIES_NONE && CanShowMenuInfo(isEnemyMon))
     {
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
         FreeAllWindowBuffers();
@@ -3561,9 +3589,9 @@ static void StartSummaryScreenForSpecificMon(u8 taskId)
         sTempSavedCallback = sMenuDataPtr->savedCallback;
         Menu_FreeResources();
         if (!isEnemyMon)
-            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
         else
-            ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
     }
     else
     {
@@ -3745,7 +3773,7 @@ static void Task_MenuMain(u8 taskId)
             }
             break;
         default: //Battlers
-            if (sMenuDataPtr->tabId != 0)
+            if (sMenuDataPtr->tabId != TAB_STATS)
                 sMenuDataPtr->tabId--;
             else
                 sMenuDataPtr->tabId = NUM_TABS - 1;
@@ -3780,7 +3808,7 @@ static void Task_MenuMain(u8 taskId)
             if (sMenuDataPtr->tabId != NUM_TABS - 1)
                 sMenuDataPtr->tabId++;
             else
-                sMenuDataPtr->tabId = 0;
+                sMenuDataPtr->tabId = TAB_STATS;
             SetUIBattler();
             PrintPage();
             break;
