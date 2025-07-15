@@ -3594,7 +3594,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 newAbility = ABILITY_NONE;
                 party = GetBattlerParty(battler);
 
-                DebugPrintfLevel(MGBA_LOG_DEBUG, "Attempting to start loop");
+                // Gather the last party member available
                 for (i = PARTY_SIZE - 1; i > 0; i--)
                 {
                     if (GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
@@ -3606,7 +3606,6 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                     }
                 }
 
-                DebugPrintfLevel(MGBA_LOG_DEBUG, "Slot ID: %d", slot);
                 if (slot != PARTY_SIZE)
                 {
                     donor = &party[slot];
