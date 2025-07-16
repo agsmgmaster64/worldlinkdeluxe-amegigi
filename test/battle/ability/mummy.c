@@ -5,8 +5,8 @@ SINGLE_BATTLE_TEST("Mummy/Lingering Aroma replace the attacker's ability on cont
 {
     u32 move, ability, species;
 
-    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_MUMMY; species = SPECIES_NORMAL_TEIREIDA; }
-    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_MUMMY; species = SPECIES_NORMAL_TEIREIDA;}
+    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_CONTAGION; species = SPECIES_NORMAL_TEIREIDA; }
+    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_CONTAGION; species = SPECIES_NORMAL_TEIREIDA;}
     PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
     PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
     GIVEN {
@@ -19,14 +19,14 @@ SINGLE_BATTLE_TEST("Mummy/Lingering Aroma replace the attacker's ability on cont
     } SCENE {
         if (MoveMakesContact(move)) {
             ABILITY_POPUP(opponent, ability);
-            if (ability == ABILITY_MUMMY)
+            if (ability == ABILITY_CONTAGION)
                 MESSAGE("Wobbuffet acquired Mummy!");
             else
                 MESSAGE("Wobbuffet acquired Lingering Aroma!");
         } else {
             NONE_OF {
                 ABILITY_POPUP(opponent, ability);
-                if (ability == ABILITY_MUMMY)
+                if (ability == ABILITY_CONTAGION)
                     MESSAGE("Wobbuffet acquired Mummy!");
                 else
                     MESSAGE("Wobbuffet acquired Lingering Aroma!");
@@ -39,8 +39,8 @@ SINGLE_BATTLE_TEST("Mummy and Lingering Aroma don't replace each other")
 {
     u32 ability1, species1, ability2, species2;
 
-    PARAMETRIZE { ability1 = ability2 = ABILITY_MUMMY; species1 = species2 = SPECIES_NORMAL_TEIREIDA; }
-    PARAMETRIZE { ability1 = ABILITY_MUMMY; species1 = SPECIES_NORMAL_TEIREIDA; ability2 = ABILITY_CLEAR_VOICE; species2 = SPECIES_OINKOLOGNE; }
+    PARAMETRIZE { ability1 = ability2 = ABILITY_CONTAGION; species1 = species2 = SPECIES_NORMAL_TEIREIDA; }
+    PARAMETRIZE { ability1 = ABILITY_CONTAGION; species1 = SPECIES_NORMAL_TEIREIDA; ability2 = ABILITY_CLEAR_VOICE; species2 = SPECIES_OINKOLOGNE; }
     PARAMETRIZE { ability1 = ability2 = ABILITY_CLEAR_VOICE; species1 = species2 = SPECIES_OINKOLOGNE; }
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_AQUA_JET));
@@ -92,7 +92,7 @@ SINGLE_BATTLE_TEST("Mummy doesn't replace abilities that can't be suppressed")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_AQUA_JET, opponent);
         NONE_OF {
-            ABILITY_POPUP(opponent, ABILITY_MUMMY);
+            ABILITY_POPUP(opponent, ABILITY_CONTAGION);
         }
     }
 }

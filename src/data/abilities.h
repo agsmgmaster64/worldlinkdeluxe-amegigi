@@ -842,7 +842,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_SCRAPPY] =
     {
         .name = _("Scrappy"),
-        .description = COMPOUND_STRING("Hits Ghost-type Pokémon."),
+        .description = COMPOUND_STRING("Hits Ghost-type Puppets."),
         .aiRating = 6,
     },
 
@@ -926,7 +926,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BAD_DREAMS] =
     {
         .name = _("Bad Dreams"),
-        .description = COMPOUND_STRING("Damages sleeping Pokémon."),
+        .description = COMPOUND_STRING("Damages sleeping Puppets."),
         .aiRating = 4,
     },
 
@@ -983,7 +983,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_HEALER] =
     {
         .name = _("Healer"),
-        .description = COMPOUND_STRING("Heals partner Pokémon."),
+        .description = COMPOUND_STRING("Heals partner Puppet."),
         .aiRating = 0,
     },
 
@@ -1140,9 +1140,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
-    [ABILITY_MUMMY] =
+    [ABILITY_CONTAGION] =
     {
-        .name = _("Mummy"),
+        .name = _("Contagion"),
         .description = COMPOUND_STRING("Spreads with contact."),
         .aiRating = 5,
     },
@@ -1855,10 +1855,10 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .breakable = TRUE,
     },
 
-    [ABILITY_SAND_SPIT] =
+    [ABILITY_SUNBATHING] =
     {
-        .name = _("Sand Spit"),
-        .description = COMPOUND_STRING("Creates a sandstorm if hit."),
+        .name = _("Sunbathing"),
+        .description = COMPOUND_STRING("Cures status in sun."),
         .aiRating = 5,
     },
 

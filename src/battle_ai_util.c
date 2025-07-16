@@ -1927,6 +1927,7 @@ bool32 ShouldSetSun(u32 battlerAtk, u32 atkAbility, enum ItemHoldEffect holdEffe
       || atkAbility == ABILITY_LEAF_GUARD
       || atkAbility == ABILITY_SOLAR_POWER
       || atkAbility == ABILITY_HARVEST
+      || atkAbility == ABILITY_SUNBATHING
       || HasMoveWithEffect(battlerAtk, EFFECT_SOLAR_BEAM)
       || HasMoveWithEffect(battlerAtk, EFFECT_MORNING_SUN)
       || HasMoveWithEffect(battlerAtk, EFFECT_SYNTHESIS)
