@@ -3858,17 +3858,20 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_STRENGTH_SAP:
-        u32 atkStat = gBattleMons[battlerDef].attack;
-        u32 atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
-        atkStat *= gStatStageRatios[atkStage][0];
-        atkStat /= gStatStageRatios[atkStage][1];
-        u32 healPercent = atkStat * 100 / gBattleMons[battlerAtk].maxHP;
-        if (ShouldRecover(battlerAtk, battlerDef, move, healPercent))
         {
-            ADJUST_SCORE(GOOD_EFFECT);
-            if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
-                ADJUST_SCORE(WEAK_EFFECT);
+            u32 atkStat = gBattleMons[battlerDef].attack;
+            u32 atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
+            atkStat *= gStatStageRatios[atkStage][0];
+            atkStat /= gStatStageRatios[atkStage][1];
+            u32 healPercent = atkStat * 100 / gBattleMons[battlerAtk].maxHP;
+            if (ShouldRecover(battlerAtk, battlerDef, move, healPercent))
+            {
+                ADJUST_SCORE(GOOD_EFFECT);
+                if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+                    ADJUST_SCORE(WEAK_EFFECT);
+            }
         }
+        break;
     case EFFECT_EXPLOSION:
     case EFFECT_MISTY_EXPLOSION:
     case EFFECT_MEMENTO:
