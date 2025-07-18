@@ -7266,6 +7266,23 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_IcyRock,
     },
 
+    [ITEM_SCARLET_ROCK] =
+    {
+        .name = _("Scarlet Rock"),
+        .price = (I_PRICE >= GEN_9) ? 8000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .holdEffect = HOLD_EFFECT_SCARLET_ROCK,
+        .description = COMPOUND_STRING(
+            "Extends the length\n"
+            "of weather moves if\n"
+            "used by the holder."),
+        .pocket = POCKET_BATTLE_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+        .iconPic = gItemIcon_SmoothRock,
+        .iconPalette = gItemIconPalette_SmoothRock,
+    },
+
 // Terrain Seeds
 
     [ITEM_ELECTRIC_SEED] =

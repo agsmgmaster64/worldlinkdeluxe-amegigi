@@ -44,7 +44,7 @@ static void ParametrizeMovesAndSpecies(u32 j, u32 *pMove, u32 *pSpecies)
     else if (gMovesInfo[j].effect == EFFECT_MAGNETIC_FLUX || gMovesInfo[j].effect == EFFECT_GEAR_UP) // User needs to have Plus
     {
         *pMove = j;
-        *pSpecies = SPECIES_KLINKLANG;
+        *pSpecies = SPECIES_CHIBI_SAKI;
     }
     else if (gMovesInfo[j].effect == EFFECT_PLACEHOLDER) // Ignore placeholder *pMoves
     {
@@ -383,7 +383,7 @@ SINGLE_BATTLE_TEST("Move Animations don't leak when used - Singles (player to op
             HP(9997); MaxHP(9999); Item(ITEM_ORAN_BERRY);
             if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
             if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-            if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+            if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
         }
         PLAYER(SPECIES_WOBBUFFET)   {
             Gender(MON_MALE); MaxHP(9999); Moves(MOVE_POUND);
@@ -421,7 +421,7 @@ SINGLE_BATTLE_TEST("Move Animations don't leak when used - Singles (opponent to 
             HP(9997); MaxHP(9999); Item(ITEM_ORAN_BERRY);
             if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
             if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-            if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+            if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
         }
         OPPONENT(SPECIES_WOBBUFFET)   {
             Gender(MON_MALE); MaxHP(9999); Moves(MOVE_POUND);
@@ -464,7 +464,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             if (attacker == playerLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(species) {
@@ -473,7 +473,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(SPECIES_WOBBUFFET) {
@@ -522,7 +522,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentLeft
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -530,7 +530,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentLeft
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -581,7 +581,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             if (attacker == playerLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(species) {
@@ -589,7 +589,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             if (attacker == playerRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(SPECIES_WOBBUFFET) {
@@ -640,7 +640,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -648,7 +648,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -699,7 +699,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == playerLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(species) {
@@ -707,7 +707,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == playerRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(SPECIES_WOBBUFFET) {
@@ -758,7 +758,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentLeft
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -766,7 +766,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentLeft
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -817,7 +817,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == playerLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(species) {
@@ -825,7 +825,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == playerRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         PLAYER(SPECIES_WOBBUFFET) {
@@ -876,7 +876,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -884,7 +884,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -936,7 +936,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -944,7 +944,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerLeft t
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -995,7 +995,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -1003,7 +1003,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (playerRight 
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -1054,7 +1054,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentleft
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -1062,7 +1062,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentleft
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -1113,7 +1113,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentLeft) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(species) {
@@ -1121,7 +1121,7 @@ DOUBLE_BATTLE_TEST("Move Animations don't leak when used - Doubles (opponentRigh
             if (attacker == opponentRight) {
                 if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
                 if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-                if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+                if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
             }
         }
         OPPONENT(SPECIES_WOBBUFFET) {
@@ -1168,7 +1168,7 @@ SINGLE_BATTLE_TEST("Move Animations occur before their stat change animations - 
             HP(9997); MaxHP(9999); Item(ITEM_ORAN_BERRY);
             if (species == SPECIES_WOBBUFFET) Gender(MON_FEMALE);
             if (gMovesInfo[move].effect == EFFECT_LAST_RESORT) Moves(move, MOVE_POUND);
-            if (species == SPECIES_KLINKLANG) Ability(ABILITY_PLUS);
+            if (species == SPECIES_CHIBI_SAKI) Ability(ABILITY_PLUS);
         }
         PLAYER(SPECIES_WOBBUFFET)   {
             Gender(MON_MALE); MaxHP(9999); Moves(MOVE_POUND);

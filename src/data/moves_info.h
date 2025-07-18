@@ -14854,7 +14854,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "for 5 turns. Blocks status."),
         .effect = EFFECT_MISTY_TERRAIN,
         .power = 0,
-        .type = TYPE_COSMIC,
+        .type = TYPE_HEART,
         .accuracy = 0,
         .pp = 10,
         .target = MOVE_TARGET_ALL_BATTLERS,
