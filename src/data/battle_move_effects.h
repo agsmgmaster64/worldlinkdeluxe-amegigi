@@ -1799,12 +1799,6 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .twoTurnEffect = TRUE,
     },
 
-    [EFFECT_FAIRY_LOCK] =
-    {
-        .battleScript = BattleScript_EffectFairyLock,
-        .battleTvScore = 0, // TODO: Assign points
-    },
-
     [EFFECT_ALLY_SWITCH] =
     {
         .battleScript = BattleScript_EffectAllySwitch,

@@ -4956,10 +4956,6 @@ case EFFECT_GUARD_SPLIT:
         if (CountPositiveStatStages(battlerDef) > CountNegativeStatStages(battlerDef))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
-    case EFFECT_FAIRY_LOCK:
-        if (ShouldTrap(battlerAtk, battlerDef, move))
-            ADJUST_SCORE(BEST_EFFECT);
-        break;
     case EFFECT_QUASH:
         if (isDoubleBattle && AI_IsSlower(BATTLE_PARTNER(battlerAtk), battlerDef, aiData->partnerMove))
             ADJUST_SCORE(DECENT_EFFECT); // Attacker partner wouldn't go before target

@@ -2583,7 +2583,6 @@ bool32 IsTrappingMove(u32 move)
     switch (GetMoveEffect(move))
     {
     case EFFECT_MEAN_LOOK:
-    case EFFECT_FAIRY_LOCK:
     //case EFFECT_NO_RETREAT:   // TODO
         return TRUE;
     default:
