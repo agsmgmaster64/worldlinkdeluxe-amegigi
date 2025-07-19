@@ -248,7 +248,7 @@ Debug_EventScript_Script_4::
 
 Debug_EventScript_Script_5::
 	lockall
-	setvar VAR_0x8008, INGAME_TRADE_HORSEA
+	setvar VAR_0x8008, INGAME_TRADE_MEOWTH
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
