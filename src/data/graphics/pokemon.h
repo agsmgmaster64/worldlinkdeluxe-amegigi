@@ -31230,6 +31230,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Narumi[] = INCBIN_U8("graphics/pokemon/_add/th/narumi/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
+    const u32 gMonFrontPic_CSaki[] = INCBIN_U32("graphics/pokemon/_add/th/saki/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CSaki[] = INCBIN_U16("graphics/pokemon/_add/th/saki/chibi/normal.gbapal");
+    const u32 gMonBackPic_CSaki[] = INCBIN_U32("graphics/pokemon/_add/th/saki/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CSaki[] = INCBIN_U16("graphics/pokemon/_add/th/saki/chibi/shiny.gbapal");
+    const u8 gMonIcon_CSaki[] = INCBIN_U8("graphics/pokemon/_add/th/saki/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CSaki[] = INCBIN_U8("graphics/pokemon/_add/th/saki/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_Saki[] = INCBIN_U32("graphics/pokemon/_add/th/saki/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_Saki[] = INCBIN_U16("graphics/pokemon/_add/th/saki/normal/normal.gbapal");
+    const u32 gMonBackPic_Saki[] = INCBIN_U32("graphics/pokemon/_add/th/saki/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_Saki[] = INCBIN_U16("graphics/pokemon/_add/th/saki/normal/shiny.gbapal");
+    const u8 gMonIcon_Saki[] = INCBIN_U8("graphics/pokemon/_add/th/saki/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Saki[] = INCBIN_U8("graphics/pokemon/_add/th/saki/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CTakane[] = INCBIN_U32("graphics/pokemon/_add/th/takane/chibi/anim_front.4bpp.smol");
     const u16 gMonPalette_CTakane[] = INCBIN_U16("graphics/pokemon/_add/th/takane/chibi/normal.gbapal");
     const u32 gMonBackPic_CTakane[] = INCBIN_U32("graphics/pokemon/_add/th/takane/chibi/back.4bpp.smol");

@@ -760,6 +760,10 @@ Cry_Okina::
 	.incbin "sound/direct_sound_samples/cries/okina.bin"
 
 	.align 2
+Cry_Saki::
+	.incbin "sound/direct_sound_samples/cries/saki.bin"
+
+	.align 2
 Cry_Takane::
 	.incbin "sound/direct_sound_samples/cries/takane.bin"
 

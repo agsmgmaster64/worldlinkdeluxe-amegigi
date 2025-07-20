@@ -94,6 +94,7 @@ gCryTable::
 	cry Cry_Teireida
 	cry Cry_Satono
 	cry Cry_Okina
+	cry Cry_Saki
 	cry Cry_Takane
 	cry Cry_Suika
 	cry Cry_Iku
@@ -226,6 +227,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Teireida
 	cry_reverse Cry_Satono
 	cry_reverse Cry_Okina
+	cry_reverse Cry_Saki
 	cry_reverse Cry_Takane
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
