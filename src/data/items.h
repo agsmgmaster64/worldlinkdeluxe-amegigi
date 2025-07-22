@@ -179,6 +179,10 @@ const struct Item gItemsInfo[] =
             "A tool used for\n"
             "catching wild\n"
             "Puppets."),
+        .descriptionLong = COMPOUND_STRING(
+            "An Orb thrown to catch a wild\n"
+            "Puppet. It is designed in a\n"
+            "capsule style."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -196,6 +200,10 @@ const struct Item gItemsInfo[] =
             "A good Orb with a\n"
             "higher catch rate\n"
             "than a Toho Orb."),
+        .descriptionLong = COMPOUND_STRING(
+            "A good, quality Orb that offers\n"
+            "a higher Puppet catch rate than\n"
+            "a standard Toho Orb."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -213,6 +221,10 @@ const struct Item gItemsInfo[] =
             "A better Orb with\n"
             "a higher catch rate\n"
             "than a Great Orb."),
+        .descriptionLong = COMPOUND_STRING(
+            "A very high-grade Orb that offers\n"
+            "a higher Puppet catch rate than\n"
+            "a Great Orb."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -1957,6 +1969,10 @@ const struct Item gItemsInfo[] =
             "Raises the level\n"
             "of a Puppet by\n"
             "one."),
+        .descriptionLong = COMPOUND_STRING(
+            "A candy that is packed with energy.\n"
+            "It raises the level of a Puppet\n"
+            "by one."),
         .pocket = POCKET_MEDICINE,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,

@@ -52,6 +52,7 @@ struct Item
     u16 secondaryId;
     ItemUseFunc fieldUseFunc;
     const u8 *description;
+    const u8 *descriptionLong;
     const u8 *effect;
     u8 name[ITEM_NAME_LENGTH];
     u8 pluralName[ITEM_NAME_PLURAL_LENGTH];
@@ -181,6 +182,7 @@ const u8 *GetItemEffect(u32 itemId);
 u32 GetItemHoldEffect(u32 itemId);
 u32 GetItemHoldEffectParam(u32 itemId);
 const u8 *GetItemDescription(u16 itemId);
+const u8 *GetItemLongDescription(u16 itemId);
 u8 GetItemImportance(u16 itemId);
 u8 GetItemConsumability(u16 itemId);
 enum Pocket GetItemPocket(u16 itemId);
