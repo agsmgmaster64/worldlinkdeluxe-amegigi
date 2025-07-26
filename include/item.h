@@ -6,6 +6,8 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/tms_hms.h"
+#include "constants/item_effects.h"
+#include "constants/hold_effects.h"
 
 /* Expands to:
  * enum
@@ -246,5 +248,6 @@ bool32 ItemHasVolatileFlag(u16 itemId, enum Volatile volatile);
 u32 GetItemCoinPrice(u16 itemId);
 u32 GetItemBpPrice(u16 itemId);
 u32 GetItemSellPrice(u32 itemId);
+bool32 IsHoldEffectChoice(enum ItemHoldEffect holdEffect);
 
 #endif // GUARD_ITEM_H
