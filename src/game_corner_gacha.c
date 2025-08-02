@@ -2916,7 +2916,7 @@ static void InitGachaScreen(void)
     
     sGacha->newMonOdds = 0;
     InitWindows(sGachaWinTemplates);
-    LoadPalette(GetTextWindowPalette(2), 11 * 16, 32);
+    LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), 32);
     ShowMessage();
 
     UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
