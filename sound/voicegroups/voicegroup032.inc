@@ -1,7 +1,7 @@
 	.align 2
 voicegroup032::
-	voice_keysplit_all voicegroup_drums_petalburg
-	voice_keysplit voicegroup_piano, KeySplitTable1
+	voice_keysplit_all voicegroup_route110_drumset
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

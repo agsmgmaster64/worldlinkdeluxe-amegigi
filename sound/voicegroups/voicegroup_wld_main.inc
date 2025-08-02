@@ -1,7 +1,7 @@
-	.align 2                                                                                               @ World Link Deluxe Main Voicegroup
-voicegroup_wld_main::                                                                                            @ Vocal | Type | Description
-	voice_keysplit_all voicegroup_drums_frlg                                                               @ 000 | Direct | Drum | GBA Drum
-	voice_keysplit voicegroup_piano, KeySplitTable1                                                        @ 001 | Direct | Multi | GBA Piano 1
+ @ World Link Deluxe Main Voicegroup
+ voice_group wld_main::                                                                                            @ Vocal | Type | Description
+	voice_keysplit_all voicegroup_frlg_drumset                                                               @ 000 | Direct | Drum | GBA Drum
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano                                                        @ 001 | Direct | Multi | GBA Piano 1
 	voice_directsound 60, 0, DirectSoundWaveData_steinway_b_piano, 128, 204, 51, 242                       @ 002 | Direct | GBA Piano 2
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 128, 180, 108, 209        @ 003 | Direct | GBA Electric Piano 1
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 255, 188, 128, 226        @ 004 | Direct | GBA Electric Piano 1
@@ -48,7 +48,7 @@ voicegroup_wld_main::                                                           
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165               @ 045 | Direct | GBA Pizzicato
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 246, 0, 235                            @ 046 | Direct | GBA Harp
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 127, 154, 235                       @ 047 | Direct | GBA Timpani
-	voice_keysplit voicegroup_strings, KeySplitTable2                                                      @ 048 | Direct | Multi | GBA String
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings                                                      @ 048 | Direct | Multi | GBA String
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -58,9 +58,9 @@ voicegroup_wld_main::                                                           
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup_trumpet, KeySplitTable3                                                      @ 056 | Direct | Multi | GBA Trumpet
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup_tuba, KeySplitTable4                                                         @ 058 | Direct | Multi | GBA Tuba
+	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba                                                         @ 058 | Direct | Multi | GBA Tuba
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup_french_horn, KeySplitTable5                                                  @ 060 | Direct | Multi | GBA French Horn
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn                                                  @ 060 | Direct | Multi | GBA French Horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 127    @ 062 | Direct | GBA Distortion Guitar 2
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
