@@ -158,7 +158,7 @@
 	.byte 2  @ 106
 	.byte 2  @ 107
 
-.set KeySplitTable3, . - 36
+.set keysplit_trumpet, . - 36
 	.byte 0  @ 36
 	.byte 0  @ 37
 	.byte 0  @ 38

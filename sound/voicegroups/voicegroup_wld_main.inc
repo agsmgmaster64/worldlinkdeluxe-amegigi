@@ -56,7 +56,7 @@
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 0                @ 053 | Direct | GBA Choir Ahhs
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_keysplit voicegroup_trumpet, KeySplitTable3                                                      @ 056 | Direct | Multi | GBA Trumpet
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet                                                      @ 056 | Direct | Multi | GBA Trumpet
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba                                                         @ 058 | Direct | Multi | GBA Tuba
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0

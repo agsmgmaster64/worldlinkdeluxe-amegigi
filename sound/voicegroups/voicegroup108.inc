@@ -1,6 +1,6 @@
 	.align 2
 voicegroup108::
-	voice_keysplit_all voicegroup_drums_emerald_2
+	voice_keysplit_all voicegroup_emerald_drumset_2
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
