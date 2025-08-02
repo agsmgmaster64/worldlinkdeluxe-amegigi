@@ -175,13 +175,13 @@ static void Task_DrawEscalator(u8 taskId)
             SetEscalatorMetatile(taskId, sEscalatorMetatiles_BottomRail, 0);
             break;
         case 2:
-            SetEscalatorMetatile(taskId, sEscalatorMetatiles_BottomNext, MAPGRID_COLLISION_MASK);
+            SetEscalatorMetatile(taskId, sEscalatorMetatiles_BottomNext, MAPGRID_IMPASSABLE);
             break;
         case 3:
             SetEscalatorMetatile(taskId, sEscalatorMetatiles_Bottom, 0);
             break;
         case 4:
-            SetEscalatorMetatile(taskId, sEscalatorMetatiles_TopNext, MAPGRID_COLLISION_MASK);
+            SetEscalatorMetatile(taskId, sEscalatorMetatiles_TopNext, MAPGRID_IMPASSABLE);
             break;
         case 5:
             SetEscalatorMetatile(taskId, sEscalatorMetatiles_Top, 0);

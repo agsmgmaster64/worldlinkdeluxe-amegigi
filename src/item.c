@@ -228,7 +228,7 @@ bool32 CheckBagHasItem(u16 itemId, u16 count)
 {
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return FALSE;
-    if (InBattlePyramid() || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
         return CheckPyramidBagHasItem(itemId, count);
 
     return BagPocket_CheckHasItem(&gBagPockets[GetItemPocket(itemId)], itemId, count);
@@ -259,7 +259,7 @@ bool32 CheckBagHasSpace(u16 itemId, u16 count)
     if (GetItemPocket(itemId) >= POCKETS_COUNT)
         return FALSE;
 
-    if (InBattlePyramid() || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
         return CheckPyramidBagHasSpace(itemId, count);
 
     return GetFreeSpaceForItemInBag(itemId) >= count;
@@ -360,7 +360,7 @@ bool32 AddBagItem(u16 itemId, u16 count)
         return FALSE;
 
     // check Battle Pyramid Bag
-    if (InBattlePyramid() || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
         return AddPyramidBagItem(itemId, count);
 
     return BagPocket_AddItem(&gBagPockets[GetItemPocket(itemId)], itemId, count);
@@ -413,7 +413,7 @@ bool32 RemoveBagItem(u16 itemId, u16 count)
         return FALSE;
 
     // check Battle Pyramid Bag
-    if (InBattlePyramid() || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) || FlagGet(FLAG_USE_PYRAMID_BAG))
         return RemovePyramidBagItem(itemId, count);
 
     return BagPocket_RemoveItem(&gBagPockets[GetItemPocket(itemId)], itemId, count);

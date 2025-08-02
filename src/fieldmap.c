@@ -88,7 +88,7 @@ static inline u16 GetBorderBlockAt(int x, int y)
     yPrime += 8 * mapLayout->borderHeight;
     yPrime %= mapLayout->borderHeight;
 
-    return (mapLayout->border[xPrime + yPrime * mapLayout->borderWidth] | MAPGRID_COLLISION_MASK);
+    return (mapLayout->border[xPrime + yPrime * mapLayout->borderWidth] | MAPGRID_IMPASSABLE);
 }
 
 #define AreCoordsWithinMapGridBounds(x, y) (x >= 0 && x < gBackupMapLayout.width && y >= 0 && y < gBackupMapLayout.height)
@@ -381,7 +381,7 @@ u8 MapGridGetElevationAt(int x, int y)
     if (block == MAPGRID_UNDEFINED)
         return 0;
 
-    return block >> MAPGRID_ELEVATION_SHIFT;
+    return UNPACK_ELEVATION(block);
 }
 
 u8 MapGridGetCollisionAt(int x, int y)
@@ -391,7 +391,7 @@ u8 MapGridGetCollisionAt(int x, int y)
     if (block == MAPGRID_UNDEFINED)
         return TRUE;
 
-    return (block & MAPGRID_COLLISION_MASK) >> MAPGRID_COLLISION_SHIFT;
+    return UNPACK_COLLISION(block);
 }
 
 u32 MapGridGetMetatileIdAt(int x, int y)
@@ -399,9 +399,9 @@ u32 MapGridGetMetatileIdAt(int x, int y)
     u16 block = GetMapGridBlockAt(x, y);
 
     if (block == MAPGRID_UNDEFINED)
-        return GetBorderBlockAt(x, y) & MAPGRID_METATILE_ID_MASK;
+        return UNPACK_METATILE(GetBorderBlockAt(x, y));
 
-    return block & MAPGRID_METATILE_ID_MASK;
+    return UNPACK_METATILE(block);
 }
 
 u32 ExtractMetatileAttribute(u32 attributes, u8 attributeType)
@@ -434,6 +434,8 @@ void MapGridSetMetatileIdAt(int x, int y, u16 metatile)
     if (AreCoordsWithinMapGridBounds(x, y))
     {
         i = x + y * gBackupMapLayout.width;
+
+        // Elevation is ignored in the argument, but copy metatile ID and collision
         gBackupMapLayout.map[i] = (gBackupMapLayout.map[i] & MAPGRID_ELEVATION_MASK) | (metatile & ~MAPGRID_ELEVATION_MASK);
     }
 }
@@ -887,7 +889,7 @@ static bool8 SkipCopyingMetatileFromSavedMap(u16 *mapBlock, u16 mapWidth, u8 yMo
     else
         mapBlock += mapWidth;
 
-    if (IsLargeBreakableDecoration(*mapBlock & MAPGRID_METATILE_ID_MASK, yMode) == TRUE)
+    if (IsLargeBreakableDecoration(UNPACK_METATILE(*mapBlock), yMode) == TRUE)
         return TRUE;
     return FALSE;
 }

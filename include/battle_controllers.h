@@ -418,6 +418,7 @@ u32 Rogue_GetBattleSpeedScale(void);
 
 void TrySetBattlerShadowSpriteCallback(u32 battler);
 
+void AnimateMonAfterPokeBallFail(u32 battler);
 void TryShinyAnimAfterMonAnim(u32 battler);
 void WaitForMonAnimAfterLoad(u32 battler);
 void BtlController_HandleSwitchInWaitAndEnd(u32 battler);

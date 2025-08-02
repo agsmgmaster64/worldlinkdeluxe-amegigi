@@ -2838,6 +2838,15 @@ u32 Rogue_GetBattleSpeedScale(void)
     return 1;
 }
 
+void AnimateMonAfterPokeBallFail(u32 battler)
+{
+    if (B_ANIMATE_MON_AFTER_FAILED_POKEBALL == FALSE)
+        return;
+    
+    LaunchKOAnimation(battler, ReturnAnimIdForBattler(TRUE, battler), TRUE);
+    TryShinyAnimation(gBattlerTarget, GetBattlerMon(gBattlerTarget));
+}
+
 static void AnimateMonAfterKnockout(u32 battler)
 {
     if (B_ANIMATE_MON_AFTER_KO == FALSE)
