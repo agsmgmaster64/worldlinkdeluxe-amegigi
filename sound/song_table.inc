@@ -614,7 +614,7 @@ gSongTable::
 	song mus_zgs_surf, 0, 0
 	song mus_zgs_poke_tower, 0, 0
 	song mus_zgs_silph, 0, 0
-	song mus_zgs_fuschia, 0, 0
+	song mus_zgs_fuchsia, 0, 0
 	song mus_zgs_celadon, 0, 0
 	song mus_wld_victory_trainer, 0, 0
 	song mus_wld_victory_wild, 0, 0

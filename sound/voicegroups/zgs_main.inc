@@ -1,7 +1,6 @@
- @ World Link Deluxe Main Voicegroup
- voice_group wld_main::                                                                                            @ Vocal | Type | Description
-	voice_keysplit_all voicegroup_frlg_drumset                                                               @ 000 | Direct | Drum | GBA Drum
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano                                                        @ 001 | Direct | Multi | GBA Piano 1
+voice_group zgs_main                                                                                       @ Vocal | Type | Description
+	voice_keysplit_all voicegroup_frlg_drumset                                                             @ 000 | Direct | Drum | GBA Drum
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano                                               @ 001 | Direct | Multi | GBA Piano 1
 	voice_directsound 60, 0, DirectSoundWaveData_steinway_b_piano, 128, 204, 51, 242                       @ 002 | Direct | GBA Piano 2
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 128, 180, 108, 209        @ 003 | Direct | GBA Electric Piano 1
 	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 255, 188, 128, 226        @ 004 | Direct | GBA Electric Piano 1
@@ -36,7 +35,7 @@
 	voice_square_2_alt 60, 0, 3, 0, 4, 4, 4
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 188                   @ 035 | Direct | GBA Fretless Bass
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99                      @ 036 | Direct | GBA Slap Bass
+	voice_directsound 60, 0, DirectSoundWaveData_unused_sc88pro_unison_slap, 255, 165, 180, 216            @ 036 | Direct | GBA Unison Bass
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115                      @ 038 | Direct | GBA Synth Bass
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 255, 0, 255, 127                     @ 039 | Direct | GBA Sampled Square

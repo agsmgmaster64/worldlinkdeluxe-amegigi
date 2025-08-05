@@ -5,7 +5,7 @@
 .include "sound/voicegroups/drumsets/frlg.inc"
 .include "sound/voicegroups/drumsets/emerald_1.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
-.include "sound/voicegroups/voicegroup_drums_dd.inc"
+.include "sound/voicegroups/drumsets/drill_dozer.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -136,12 +136,11 @@
 .include "sound/voicegroups/rs_sfx_2.inc"
 .include "sound/cry_tables.inc"
 .include "sound/voicegroups/frlg_sfx.inc"
-.include "sound/voicegroups/bard.inc"
 .include "sound/voicegroups/unused_2.inc" @ used by unused GSC radio tower takeover test track in RS
-.include "sound/voicegroups/voicegroup_zgs_main.inc"
-.include "sound/voicegroups/voicegroup_dd_skuller_drill_missile.inc"
-.include "sound/voicegroups/voicegroup_wld_main.inc"
-.include "sound/voicegroups/voicegroup_casino_pinball.inc"
+.include "sound/voicegroups/zgs_main.inc"
+.include "sound/voicegroups/dd_skuller_drill_missile.inc"
+.include "sound/voicegroups/wld_main.inc"
+.include "sound/voicegroups/casino_pinball.inc"
 .include "sound/trainer_voice_tables.inc"
 
 @ FRLG
