@@ -898,6 +898,18 @@ Cry_Advent_Youmu::
 	.align 2
 Cry_Advent_Yuyuko::
 	.incbin "sound/direct_sound_samples/cries_add/advent_yuyuko.bin"
+
+	.align 2
+Cry_Petrified::
+	.incbin "sound/direct_sound_samples/cries/petrified.bin"
+
+	.align 2
+Cry_Basiney::
+	.incbin "sound/direct_sound_samples/cries/basiney.bin"
+
+	.align 2
+Cry_Blissea::
+	.incbin "sound/direct_sound_samples/cries/blissea.bin"
 .endif @ P_CRIES_ENABLED
 
 	.align 2

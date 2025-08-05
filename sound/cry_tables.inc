@@ -129,6 +129,9 @@ gCryTable::
 	cry Cry_Advent_Chen
 	cry Cry_Advent_Youmu
 	cry Cry_Advent_Yuyuko
+	cry Cry_Petrified
+	cry Cry_Basiney
+	cry Cry_Blissea
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -262,4 +265,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Advent_Chen
 	cry_reverse Cry_Advent_Youmu
 	cry_reverse Cry_Advent_Yuyuko
+	cry_reverse Cry_Petrified
+	cry_reverse Cry_Basiney
+	cry_reverse Cry_Blissea
 .endif @ P_CRIES_ENABLED
