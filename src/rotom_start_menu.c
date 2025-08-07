@@ -153,6 +153,7 @@ static void RotomPhone_RotomRealityMenu_TimerUpdates(u8 taskId);
 
 static void RotomPhone_SaveScreen_SetupCB(void);
 static void Task_RotomPhone_SaveScreen_WaitFadeIn(u8 taskId);
+static void Task_RotomPhone_SaveScreen_WaitSaveGame(u8 taskId);
 static void Task_RotomPhone_SaveScreen_WaitFadeAndExit(u8 taskId);
 
 static bool32 RotomPhone_SaveScreen_InitBgs(void);
@@ -188,9 +189,7 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_RotomReality(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void);
-static bool32 RotomPhone_StartMenu_UnlockedFunc_Shortcut(void);
 
-static void RotomPhone_StartMenu_SelectedFunc_Shortcut(void);
 static void RotomPhone_StartMenu_SelectedFunc_Pokedex(void);
 static void RotomPhone_StartMenu_SelectedFunc_Pokemon(void);
 static void RotomPhone_StartMenu_SelectedFunc_Bag(void);
@@ -2212,6 +2211,26 @@ static void RotomPhone_StartMenu_DoCleanUpAndDestroyTask(u8 taskId, bool32 overw
     DestroyTask(taskId);
 }
 
+static void Task_RotomPhone_StartMenu_WaitSaveGame(u8 taskId)
+{
+    if (!FuncIsActiveTask(SaveGameTask))
+    {
+        if (!RotomPhone_StartMenu_IsRotomReality())
+        { 
+            ClearDialogWindowAndFrameToTransparent(0, TRUE);
+            ScriptUnfreezeObjectEvents();
+            UnlockPlayerFieldControls();
+            SoftResetInBattlePyramid();
+            DestroyTask(taskId);
+        }
+        else
+        {
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            gTasks[taskId].func = Task_RotomPhone_SaveScreen_WaitFadeAndExit;
+        }
+    }
+}
+
 static void RotomPhone_OverworldMenu_HandleDPAD(u8 taskId)
 {
     enum RotomPhone_Overworld_Options optionCurrent = RP_OW_OPTION_1;
@@ -2763,7 +2782,7 @@ static void Task_RotomPhone_RotomRealityMenu_HandleMainInput(u8 taskId)
     tRotomMessageSoundEffect = MUS_DUMMY;
     RotomPhone_RotomRealityMenu_TimerUpdates(taskId);
     
-    if (JOY_NEW(B_BUTTON))
+    if (JOY_NEW(B_BUTTON | START_BUTTON))
     {
         gTasks[taskId].func = Task_RotomPhone_RotomRealityMenu_WaitFadeAndExitGracefully;
         RotomPhone_StartMenu_RotomShutdownPreparation(taskId, FALSE);
@@ -2773,7 +2792,7 @@ static void Task_RotomPhone_RotomRealityMenu_HandleMainInput(u8 taskId)
     {
         RotomPhone_RotomRealityMenu_HandleDPAD(taskId);
     }
-    if (JOY_NEW(A_BUTTON | START_BUTTON))
+    if (JOY_NEW(A_BUTTON))
     {
         if (menuSelectedRotomReality != RP_MENU_SAVE)
         {
@@ -3346,28 +3365,17 @@ static void Task_RotomPhone_SaveScreen_WaitFadeIn(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        gTasks[taskId].func = Task_RotomPhone_StartMenu_WaitSaveGame;
+        gTasks[taskId].func = Task_RotomPhone_SaveScreen_WaitSaveGame;
         SaveGame();
     }
 }
 
-static void Task_RotomPhone_StartMenu_WaitSaveGame(u8 taskId)
+static void Task_RotomPhone_SaveScreen_WaitSaveGame(u8 taskId)
 {
     if (!FuncIsActiveTask(SaveGameTask))
     {
-        if (!RotomPhone_StartMenu_IsRotomReality())
-        { 
-            ClearDialogWindowAndFrameToTransparent(0, TRUE);
-            ScriptUnfreezeObjectEvents();
-            UnlockPlayerFieldControls();
-            SoftResetInBattlePyramid();
-            DestroyTask(taskId);
-        }
-        else
-        {
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            gTasks[taskId].func = Task_RotomPhone_SaveScreen_WaitFadeAndExit;
-        }
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_RotomPhone_SaveScreen_WaitFadeAndExit;
     }
 }
 
