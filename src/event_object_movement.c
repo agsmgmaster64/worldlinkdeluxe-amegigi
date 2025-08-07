@@ -1103,15 +1103,15 @@ const u8 gJumpMovementActions[] = {
     MOVEMENT_ACTION_JUMP_RIGHT,
 };
 const u8 gJumpSpecialMovementActions[] = {
-    [DIR_NONE] = MOVEMENT_ACTION_JUMP_SPECIAL_DOWN,
-    [DIR_SOUTH] = MOVEMENT_ACTION_JUMP_SPECIAL_DOWN,
-    [DIR_NORTH] = MOVEMENT_ACTION_JUMP_SPECIAL_UP,
-    [DIR_WEST] = MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
-    [DIR_EAST] = MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
-    [DIR_SOUTHWEST] = MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
-    [DIR_NORTHWEST] = MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
-    [DIR_NORTHEAST] = MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
-    [DIR_SOUTHEAST] = MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_DOWN,
+    MOVEMENT_ACTION_JUMP_SPECIAL_DOWN,
+    MOVEMENT_ACTION_JUMP_SPECIAL_UP,
+    MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_LEFT,
+    MOVEMENT_ACTION_JUMP_SPECIAL_RIGHT,
 };
 const u8 gWalkInPlaceSlowMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_WALK_IN_PLACE_SLOW_DOWN,
@@ -11773,6 +11773,35 @@ bool8 MovementActionFunc_RunSlow_Step1(struct ObjectEvent *objectEvent, struct S
     return FALSE;
 }
 
+static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairsAnim(sprite))
+    {
+        ShiftStillObjectEventCoords(objectEvent);
+        objectEvent->triggerGroundEffectsOnStop = TRUE;
+        sprite->animPaused = TRUE;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_WalkSlowStairsUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitWalkSlow(objectEvent, sprite, DIR_NORTH);
+    return MovementAction_WalkSlowStairsUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkSlowStairsUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateWalkSlowStairs(objectEvent, sprite))
+    {
+        sprite->data[2] = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// fast diagonal
 bool8 MovementAction_WalkFastDiagonalUpLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     InitMovementNormal(objectEvent, sprite, DIR_NORTHWEST, 1);
@@ -11800,34 +11829,6 @@ bool8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *objectE
 bool8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (UpdateMovementNormal(objectEvent, sprite))
-    {
-        sprite->data[2] = 2;
-        return TRUE;
-    }
-    return FALSE;
-}
-
-static bool8 UpdateWalkSlowStairs(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (UpdateWalkSlowStairsAnim(sprite))
-    {
-        ShiftStillObjectEventCoords(objectEvent);
-        objectEvent->triggerGroundEffectsOnStop = TRUE;
-        sprite->animPaused = TRUE;
-        return TRUE;
-    }
-    return FALSE;
-}
-
-bool8 MovementAction_WalkSlowStairsUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    InitWalkSlow(objectEvent, sprite, DIR_NORTH);
-    return MovementAction_WalkSlowStairsUp_Step1(objectEvent, sprite);
-}
-
-bool8 MovementAction_WalkSlowStairsUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
-{
-    if (UpdateWalkSlowStairs(objectEvent, sprite))
     {
         sprite->data[2] = 2;
         return TRUE;

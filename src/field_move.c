@@ -48,6 +48,13 @@ static bool32 IsFieldMoveUnlocked_Waterfall(void)
     return FlagGet(FLAG_BADGE08_GET);
 }
 
+#if OW_ROCK_CLIMB_FIELD_MOVE == TRUE
+static bool32 IsFieldMoveUnlocked_RockClimb(void)
+{
+    return TRUE;
+}
+#endif
+
 static bool32 IsFieldMoveUnlocked_Teleport(void)
 {
     return TRUE;
@@ -211,7 +218,15 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .moveID = MOVE_ROCK_CLIMB,
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
-
+#if OW_ROCK_CLIMB_FIELD_MOVE == TRUE
+    [FIELD_MOVE_ROCK_CLIMB] =
+    {
+        .fieldMoveFunc = SetUpFieldMove_RockClimb,
+        .isUnlockedFunc = IsFieldMoveUnlocked_RockClimb,
+        .moveID = MOVE_ROCK_CLIMB,
+        .partyMsgID = PARTY_MSG_CANT_USE_HERE,
+    },
+#endif
 #if OW_DEFOG_FIELD_MOVE == TRUE
     [FIELD_MOVE_DEFOG] =
     {
@@ -221,5 +236,4 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .partyMsgID = PARTY_MSG_CANT_USE_HERE,
     },
 #endif
-
 };

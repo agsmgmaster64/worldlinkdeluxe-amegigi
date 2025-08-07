@@ -513,6 +513,7 @@ static void Task_RetryHexorbAfterFailedStatus(u8);
 static void Task_RetryHexorbAfterFailedMon(u8);
 static void DisplayHexorbMessageAndScheduleTask(u8, const u8*, TaskFunc, bool32);
 static void Task_HideFollowerNPCForTeleport(u8);
+static void FieldCallback_RockClimb(void);
 
 // static const data
 #include "data/party_menu.h"
@@ -4489,6 +4490,21 @@ bool32 SetUpFieldMove_Waterfall(void)
         gPostMenuFieldCallback = FieldCallback_Waterfall;
         return TRUE;
     }
+    return FALSE;
+}
+
+bool32 SetUpFieldMove_RockClimb(void)
+{
+    s16 x, y;
+
+    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
+    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
+    {
+        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        gPostMenuFieldCallback = FieldCallback_RockClimb;
+        return TRUE;
+    }
+    
     return FALSE;
 }
 
@@ -8576,17 +8592,3 @@ static void FieldCallback_RockClimb(void)
     FieldEffectStart(FLDEFF_USE_ROCK_CLIMB);
 }
 
-bool32 SetUpFieldMove_RockClimb(void)
-{
-    s16 x, y;
-
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    if (MetatileBehavior_IsRockClimbable(MapGridGetMetatileBehaviorAt(x, y)))
-    {
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_RockClimb;
-        return TRUE;
-    }
-
-    return FALSE;
-}
