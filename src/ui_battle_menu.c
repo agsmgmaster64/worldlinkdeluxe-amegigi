@@ -728,11 +728,7 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SEMI_INVULNERABLE:
-                if (gStatuses3[j] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER)
-                    isExtraInfoShown = TRUE;
-                break;
-            case STATUS_INFO_ELECTRIFIED:
-                if(gStatuses4[j] & STATUS4_ELECTRIFIED)
+                if (IsSemiInvulnerable(j, EXCLUDE_COMMANDER))
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_PROTOSYNTHESIS:

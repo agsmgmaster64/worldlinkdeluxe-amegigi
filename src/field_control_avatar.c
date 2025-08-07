@@ -598,8 +598,6 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_Questionnaire;
     if (MetatileBehavior_IsTrainerHillTimer(metatileBehavior) == TRUE)
         return EventScript_TrainerHillTimer;
-    if (MetatileBehavior_IsRockClimbable(metatileBehavior) == TRUE && !IsRockClimbActive())
-        return EventScript_UseRockClimb;
     if (MetatileBehavior_IsPokeMartSign(metatileBehavior) == TRUE)
     {
         if (direction != DIR_NORTH)

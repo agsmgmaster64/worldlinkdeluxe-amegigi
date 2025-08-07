@@ -9676,7 +9676,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .instructBanned = TRUE,
         .assistBanned = TRUE,
         .skyBattleBanned = TRUE,
-        .argument.twoTurnAttack = { .stringId = STRINGID_CHARGEDVICIOUSAURA, .status = COMPRESS_BITS(STATUS3_PREDATOR_STALK) },
+        .argument.twoTurnAttack = { .stringId = STRINGID_CHARGEDVICIOUSAURA, .status = STATE_PREDATOR_STALK },
         .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
