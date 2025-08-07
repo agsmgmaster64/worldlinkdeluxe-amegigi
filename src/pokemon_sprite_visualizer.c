@@ -1955,7 +1955,7 @@ static void Exit_PokemonSpriteVisualizer(u8 taskId)
         Free(data);
         FreeMonSpritesGfx();
         DestroyTask(taskId);
-        SetMainCallback2(CB2_ReturnToFullScreenStartMenu);
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
         m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0x100);
     }
 }

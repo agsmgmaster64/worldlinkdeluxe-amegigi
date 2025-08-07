@@ -52,6 +52,7 @@
 #include "battle_pyramid_bag.h"
 #include "safari_zone.h"
 #include "field_specials.h"
+#include "rotom_start_menu.h"
 
 static void Task_ExitNonAnimDoor(u8);
 static void Task_ExitNonDoor(u8);
@@ -479,8 +480,9 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
 void ReturnToFieldOpenStartMenu(void)
 {
     FadeInFromBlack();
-    CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
+    //CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
     LockPlayerFieldControls();
+    RotomPhone_StartMenu_Open(FALSE);
 }
 
 bool8 FieldCB_ReturnToFieldOpenStartMenu(void)

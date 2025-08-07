@@ -53,6 +53,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "ui_startmenu_full.h"
+#include "rotom_start_menu.h"
 
 // Menu actions
 enum
@@ -629,10 +630,12 @@ static void CreateStartMenuTask(TaskFunc followupFunc)
 
 static bool8 FieldCB_ReturnToFieldStartMenu(void)
 {
+    /*
     if (InitStartMenuStep() == FALSE)
     {
         return FALSE;
     }
+    */
 
     ReturnToFieldOpenStartMenu();
     return TRUE;
@@ -672,12 +675,6 @@ void ShowStartMenu(void)
         FreezeObjectEvents();
         PlayerFreeze();
         StopPlayerAvatar();
-    }
-    else
-    {
-        CreateStartMenuTask(Task_ShowStartMenu);
-        LockPlayerFieldControls();
-        return;
     }
     if (ShouldHideFullScreenStartMenu())
     {
@@ -1061,13 +1058,10 @@ static bool8 SaveCallback(void)
     case SAVE_IN_PROGRESS:
         return FALSE;
     case SAVE_CANCELED: // Back to start menu
-        if (ShouldHideFullScreenStartMenu())
-        {
-            ClearDialogWindowAndFrameToTransparent(0, FALSE);
-            InitStartMenu();
-            gMenuCallback = HandleStartMenuInput;
-            return FALSE;
-        }
+        ClearDialogWindowAndFrameToTransparent(0, FALSE);
+        InitStartMenu();
+        gMenuCallback = HandleStartMenuInput;
+        return FALSE;
     case SAVE_SUCCESS:
     case SAVE_ERROR:    // Close start menu
         ClearDialogWindowAndFrameToTransparent(0, TRUE);

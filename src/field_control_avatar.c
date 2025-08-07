@@ -251,8 +251,12 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         switch (gSaveBlock2Ptr->optionsLButtonMode)
         {
         case OPTIONS_L_BUTTON_MODE_AUTO_RUN:
-            if (EnableAutoRun())
-                return TRUE;
+            //if (EnableAutoRun())
+                //return TRUE;
+            PlaySE(SE_WIN_OPEN);
+            FreezeObjectEvents();
+            Debug_ShowMainMenu();
+            return TRUE;
             break;
         case OPTIONS_L_BUTTON_MODE_REGISTER:
             if (UseRegisteredKeyItemOnField(1))
@@ -1344,7 +1348,7 @@ static void Task_OpenStartMenu(u8 taskId)
         return;
 
     PlaySE(SE_WIN_OPEN);
-    ShowStartMenu();
+    RotomPhone_StartMenu_Open(TRUE);
     DestroyTask(taskId);
 }
 
