@@ -147,7 +147,6 @@ static void RotomPhone_RotomRealityMenu_PrintMenuName(void);
 
 static void RotomPhone_RotomRealityMenu_LoadSprites(void);
 static void RotomPhone_RotomRealityMenu_CreateIconSprites(void);
-static void RotomPhone_RotomRealityMenu_CreateShortcutIcon(void);
 static void RotomPhone_RotomRealityMenu_CreateCursorSprite(void);
 static void RotomPhone_RotomRealityMenu_TimerUpdates(u8 taskId);
 
@@ -189,7 +188,6 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_RotomReality(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void);
-static bool32 RotomPhone_StartMenu_UnlockedFunc_Clock(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Shortcut(void);
 
 static void RotomPhone_StartMenu_SelectedFunc_Shortcut(void);
@@ -203,7 +201,6 @@ static void RotomPhone_StartMenu_SelectedFunc_Settings(void);
 static void RotomPhone_StartMenu_SelectedFunc_SafariFlag(void);
 static void RotomPhone_StartMenu_SelectedFunc_RotomReality(void);
 static void RotomPhone_StartMenu_SelectedFunc_DexNav(void);
-static void RotomPhone_StartMenu_SelectedFunc_Clock(void);
 static void RotomPhone_StartMenu_SelectedFunc_Daycare(void);
 
 
@@ -492,15 +489,13 @@ static const u8 sRotomPhone_StartMenu_FontColours[][3] =
 enum RotomPhone_MenuItems
 {
     RP_MENU_ROTOM_REALITY,
-    RP_MENU_FLAG,
-    RP_MENU_SHORTCUT,
-    RP_MENU_CLOCK,
+    RP_MENU_RETIRE,
     RP_MENU_POKEDEX,
     RP_MENU_PARTY,
-    RP_MENU_DAYCARE,
     RP_MENU_BAG,
     RP_MENU_DEXNAV,
     RP_MENU_POKENAV,
+    RP_MENU_DAYCARE,
     RP_MENU_TRAINER_CARD,
     RP_MENU_SAVE,
     RP_MENU_OPTIONS,
@@ -508,11 +503,6 @@ enum RotomPhone_MenuItems
 };
 #define RP_MENU_FIRST_OPTION RP_MENU_COUNT - RP_MENU_COUNT
 #define RP_MENU_LAST_OPTION  RP_MENU_COUNT - 1
-static enum RotomPhone_MenuItems RotomPhone_StartMenu_GetShortcutOption(void)
-{
-    return RP_MENU_POKEDEX;
-}
-#define RP_GET_SHORTCUT_OPTION RotomPhone_StartMenu_GetShortcutOption()
 
 enum RotomPhone_Overworld_Options
 {
@@ -779,7 +769,7 @@ struct RotomPhone_StartMenu_State
 static EWRAM_DATA struct RotomPhone_StartMenu_State *sRotomPhone_StartMenu = NULL;
 
 // Separate memory allocation so it persist between destroying of menu.
-static EWRAM_DATA enum RotomPhone_MenuItems menuSelectedOverworld;
+static EWRAM_DATA enum RotomPhone_MenuItems sMenuSelectedOverworld;
 static EWRAM_DATA enum RotomPhone_MenuItems menuSelectedRotomReality;
 static EWRAM_DATA enum RotomPhone_FaceExpressions rotomFaceExpression;
 static EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
@@ -1208,8 +1198,8 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
 {
     [RP_MENU_POKEDEX] =
     {
-        .menuName = COMPOUND_STRING("Pokédex"),
-        .rotomSpeech = COMPOUND_STRING("to open the Pokédex?"),
+        .menuName = COMPOUND_STRING("iDollDex"),
+        .rotomSpeech = COMPOUND_STRING("to open the iDollDex?"),
         .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Pokedex,
         .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Pokedex,
         .owIconPalSlot = PAL_ICON_RED,
@@ -1252,8 +1242,8 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
     },
     [RP_MENU_POKENAV] =
     {
-        .menuName = COMPOUND_STRING("PokéNav"),
-        .rotomSpeech = COMPOUND_STRING("to browse the PokéNav?"),
+        .menuName = COMPOUND_STRING("iDollNav"),
+        .rotomSpeech = COMPOUND_STRING("to browse the iDollNav?"),
         .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_PokeNav,
         .selectedFunc = RotomPhone_StartMenu_SelectedFunc_PokeNav,
         .owIconPalSlot = PAL_ICON_ORANGE,
@@ -1273,7 +1263,7 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
     [RP_MENU_SAVE] =
     {
         .menuName = COMPOUND_STRING("Save"),
-        .rotomSpeech = COMPOUND_STRING("to write in your Journal?"),
+        .rotomSpeech = COMPOUND_STRING("to save your game?"),
         .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Save,
         .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Save,
         .owIconPalSlot = PAL_ICON_PURPLE,
@@ -1292,7 +1282,7 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
         .rrAnim = RP_ICON_ANIM_EIGHT,
         .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
     },
-    [RP_MENU_FLAG] =
+    [RP_MENU_RETIRE] =
     {
         .menuName = COMPOUND_STRING("Retire"),
         .rotomSpeech = COMPOUND_STRING("to end the Safari?"),
@@ -1311,24 +1301,6 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
         .owIconPalSlot = PAL_ICON_MONOCHROME,
         .owAnim = RP_ICON_ANIM_ONE,
         .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
-    },
-    [RP_MENU_CLOCK] =
-    {
-        .menuName = COMPOUND_STRING("Clock"),
-        .rotomSpeech = COMPOUND_STRING("to check the time?"),
-        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Clock,
-        .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Clock,
-        .owIconPalSlot = PAL_ICON_MONOCHROME,
-        .owAnim = RP_ICON_ANIM_THREE,
-        .rrAnim = RP_ICON_ANIM_ONE,
-        .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
-    },
-    [RP_MENU_SHORTCUT] =
-    {
-        .menuName = COMPOUND_STRING("Shortcut"),
-        .rotomSpeech = COMPOUND_STRING("Shortcut Action"),
-        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Shortcut,
-        .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Shortcut,
     },
     [RP_MENU_DAYCARE] =
     {
@@ -1483,8 +1455,8 @@ static void RotomPhone_OverworldMenu_ContinueInit(bool32 firstInit)
     RotomPhone_OverworldMenu_CreateFlipPhoneWindow();
     ScheduleBgCopyTilemapToVram(0);
 
-    if (!sRotomPhoneOptions[menuSelectedOverworld].unlockedFunc || !sRotomPhoneOptions[menuSelectedOverworld].unlockedFunc())
-        menuSelectedOverworld = RotomPhone_StartMenu_SetFirstSelectedMenu();
+    if (!sRotomPhoneOptions[sMenuSelectedOverworld].unlockedFunc || !sRotomPhoneOptions[sMenuSelectedOverworld].unlockedFunc())
+        sMenuSelectedOverworld = RotomPhone_StartMenu_SetFirstSelectedMenu();
 
     if (firstInit)
         gTasks[taskId].func = Task_RotomPhone_OverworldMenu_HandleMainInput;
@@ -1571,10 +1543,7 @@ static void RotomPhone_OverworldMenu_CreateIconSprite(enum RotomPhone_MenuItems 
     u32 iconRow;
     u32 iconColumn;
     u32 animNum;
-    if (menuItem != RP_MENU_SHORTCUT)
-        animNum = sRotomPhoneOptions[menuItem].owAnim;
-    else
-        animNum = sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].owAnim;
+    animNum = sRotomPhoneOptions[menuItem].owAnim;
 
     if (!RP_CONFIG_USE_ROTOM_PHONE)
     {
@@ -2070,7 +2039,7 @@ static void RotomPhone_OverworldMenu_UpdateMenuPrompt(u8 taskId)
     {
         u8 textBuffer[80];
 
-        if (sRotomPhoneOptions[menuSelectedOverworld].rotomSpeech == NULL)
+        if (sRotomPhoneOptions[sMenuSelectedOverworld].rotomSpeech == NULL)
         {
             StringCopy(textBuffer, COMPOUND_STRING("Invalid Option"));
             RotomPhone_OverworldMenu_PrintRotomSpeech(textBuffer, FALSE, TRUE);
@@ -2082,18 +2051,13 @@ static void RotomPhone_OverworldMenu_UpdateMenuPrompt(u8 taskId)
         else
             StringCopy(textBuffer, COMPOUND_STRING("Do you want "));
         
-        if (menuSelectedOverworld == RP_MENU_SHORTCUT)
-            StringAppend(textBuffer, sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].rotomSpeech);
-        else
-            StringAppend(textBuffer, sRotomPhoneOptions[menuSelectedOverworld].rotomSpeech);
+        StringAppend(textBuffer, sRotomPhoneOptions[sMenuSelectedOverworld].rotomSpeech);
         RotomPhone_OverworldMenu_PrintRotomSpeech(textBuffer, FALSE, TRUE);
     }
     else
     {
         u8 menuName[24];
-        StringCopy(menuName, sRotomPhoneOptions[menuSelectedOverworld].menuName);
-        if (!StringCompare(menuName, sRotomPhoneOptions[RP_MENU_SHORTCUT].menuName))
-            StringCopy(menuName, sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].menuName);
+        StringCopy(menuName, sRotomPhoneOptions[sMenuSelectedOverworld].menuName);
 
         fontId = GetFontIdToFit(menuName, FONT_SHORT, 0, sWindowTemplate_FlipPhone.width * 8);
         FillWindowPixelBuffer(sRotomPhone_StartMenu->menuOverworldFlipPhoneWindowId, PIXEL_FILL(OW_FLIP_PHONE_TEXT_BG_COLOUR));
@@ -2256,7 +2220,7 @@ static void RotomPhone_OverworldMenu_HandleDPAD(u8 taskId)
 
     for (enum RotomPhone_Overworld_Options i = RP_OW_OPTION_1; i < RP_OW_OPTION_COUNT; i++)
     {
-        if (sRotomPhone_StartMenu->menuOverworldOptions[i] == menuSelectedOverworld)
+        if (sRotomPhone_StartMenu->menuOverworldOptions[i] == sMenuSelectedOverworld)
         {
             optionCurrent = i;
             break;
@@ -2284,13 +2248,13 @@ static void RotomPhone_OverworldMenu_HandleDPAD(u8 taskId)
         return;
     }
 
-    if (menuSelectedOverworld != sRotomPhone_StartMenu->menuOverworldOptions[nextIndex]
+    if (sMenuSelectedOverworld != sRotomPhone_StartMenu->menuOverworldOptions[nextIndex]
         && sRotomPhone_StartMenu->menuOverworldLoading == FALSE && !gPaletteFade.active)
         RotomPhone_OverworldMenu_LoadIconSpritePalette(FALSE);
     
     gComfyAnims[tPhoneHighlightComfyAnimId].config.data.spring.to = Q_24_8(FADE_COLOUR_MAX);
     gComfyAnims[tPhoneHighlightComfyAnimId].position = 0;
-    menuSelectedOverworld = sRotomPhone_StartMenu->menuOverworldOptions[nextIndex];
+    sMenuSelectedOverworld = sRotomPhone_StartMenu->menuOverworldOptions[nextIndex];
     if (RP_CONFIG_USE_ROTOM_PHONE)
         tRotomMessageSoundEffect = SE_SELECT;
     else
@@ -2384,11 +2348,8 @@ static void RotomPhone_OverworldMenu_UpdateIconPaletteFade(u8 taskId)
     if (gPaletteFade.active)
         return;
     
-    u32 iconPal = sRotomPhoneOptions[menuSelectedOverworld].owIconPalSlot;
+    u32 iconPal = sRotomPhoneOptions[sMenuSelectedOverworld].owIconPalSlot;
 
-    if (menuSelectedOverworld == RP_MENU_SHORTCUT)
-        iconPal = sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].owIconPalSlot;
-    
     TryAdvanceComfyAnim(&gComfyAnims[tPhoneHighlightComfyAnimId]);
     u32 frameNum = ReadComfyAnimValueSmooth(&gComfyAnims[tPhoneHighlightComfyAnimId]);
     RotomPhone_StartMenu_UpdateSpriteFadeColours(
@@ -2417,9 +2378,9 @@ static void Task_RotomPhone_OverworldMenu_HandleMainInput(u8 taskId)
     {
         if (sRotomPhone_StartMenu->menuOverworldLoading == FALSE)
         {
-            if (menuSelectedOverworld == RP_MENU_ROTOM_REALITY)
+            if (sMenuSelectedOverworld == RP_MENU_ROTOM_REALITY)
                 FadeScreen(FADE_TO_WHITE, 0);
-            else if (menuSelectedOverworld != RP_MENU_SAVE && menuSelectedOverworld != RP_MENU_FLAG && menuSelectedOverworld != RP_MENU_CLOCK)
+            else if (sMenuSelectedOverworld != RP_MENU_SAVE && sMenuSelectedOverworld != RP_MENU_RETIRE)
                 FadeScreen(FADE_TO_BLACK, 0);
             
             PlaySE(SE_BALL_TRAY_ENTER);
@@ -2445,9 +2406,9 @@ static void Task_RotomPhone_OverworldMenu_HandleMainInput(u8 taskId)
     {
         RotomPhone_OverworldMenu_HandleDPAD(taskId);
     }
-    else if (sRotomPhone_StartMenu->menuOverworldLoading == TRUE && sRotomPhoneOptions[menuSelectedOverworld].selectedFunc)
+    else if (sRotomPhone_StartMenu->menuOverworldLoading == TRUE && sRotomPhoneOptions[sMenuSelectedOverworld].selectedFunc)
     {
-        sRotomPhoneOptions[menuSelectedOverworld].selectedFunc();
+        sRotomPhoneOptions[sMenuSelectedOverworld].selectedFunc();
     }
 
     if (tRotomMessageSoundEffect && !IsSEPlaying())
@@ -2647,7 +2608,6 @@ static void RotomPhone_RotomRealityMenu_SetupCB(void)
         RotomPhone_RotomRealityMenu_LoadSprites();
         RotomPhone_StartMenu_CreateRotomFaceSprite(FALSE);
         RotomPhone_RotomRealityMenu_CreateIconSprites();
-        RotomPhone_RotomRealityMenu_CreateShortcutIcon();
         RotomPhone_RotomRealityMenu_CreateCursorSprite();
         gMain.state++;
         break;
@@ -2815,16 +2775,6 @@ static void Task_RotomPhone_RotomRealityMenu_HandleMainInput(u8 taskId)
     }
     if (JOY_NEW(A_BUTTON | START_BUTTON))
     {
-        if (JOY_NEW(START_BUTTON) && RP_CONFIG_ROTOM_REALITY_SHORTCUT)
-        {
-            menuSelectedRotomReality = RP_GET_SHORTCUT_OPTION;
-            RotomPhone_RotomRealityMenu_PrintMenuName();
-        }
-        else if (JOY_NEW(START_BUTTON) && !RP_CONFIG_ROTOM_REALITY_SHORTCUT)
-        {
-            return;
-        }
-        
         if (menuSelectedRotomReality != RP_MENU_SAVE)
         {
             PlaySE(SE_BALL_TRAY_ENTER);
@@ -3105,16 +3055,8 @@ static void RotomPhone_RotomRealityMenu_CreateIconSprites(void)
             enum RotomPhone_RotomReality_Options optionSlot = RP_RR_OPTION_1 + drawn;
             const struct SpriteTemplate *spriteTemplate;
 
-            if (menuId != RP_MENU_SHORTCUT)
-            {
-                animNum = menuOption->rrAnim;
-                spriteTemplate = menuOption->rrSpriteTemplate;
-            }
-            else
-            {
-                animNum = sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].rrAnim;
-                spriteTemplate = sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].rrSpriteTemplate;
-            }
+            animNum = menuOption->rrAnim;
+            spriteTemplate = menuOption->rrSpriteTemplate;
 
             sRotomPhone_StartMenu->menuRotomRealityIconSpriteId[optionSlot] = CreateSprite(
                 spriteTemplate,
@@ -3134,56 +3076,6 @@ static void RotomPhone_RotomRealityMenu_CreateIconSprites(void)
         sRotomPhone_StartMenu->menuRotomRealityOptions[drawn] = RP_MENU_COUNT;
     }
 }
-
-#define SHORTCUT_ICON_X_OFFSET 12
-#define SHORTCUT_ICON_Y_OFFSET 11
-static void RotomPhone_RotomRealityMenu_ShortcutIconCallback(struct Sprite *sprite)
-{
-    s32 xOffset;
-    u32 optionCurrent;
-
-    for (enum RotomPhone_RotomReality_Options i = RP_RR_OPTION_1; i < RP_RR_OPTION_COUNT; i++)
-    {
-        if (sRotomPhone_StartMenu->menuRotomRealityOptions[i] == RP_GET_SHORTCUT_OPTION)
-        {
-            optionCurrent = i;
-
-            switch (optionCurrent)
-            {
-                case RP_RR_OPTION_3:
-                case RP_RR_OPTION_4:
-                case RP_RR_OPTION_7:
-                case RP_RR_OPTION_8:
-                case RP_RR_OPTION_10:
-                    xOffset = -SHORTCUT_ICON_X_OFFSET;
-                    break;
-                
-                default:
-                    xOffset = SHORTCUT_ICON_X_OFFSET;
-                    break;
-            }
-            
-            sprite->x = sRotomRealityOptionInfo[i].x + xOffset;
-            sprite->y = sRotomRealityOptionInfo[i].y - SHORTCUT_ICON_Y_OFFSET;
-            sprite->invisible = FALSE;
-
-            return;
-        }
-    }
-
-    sprite->invisible = TRUE;
-}
-
-static void RotomPhone_RotomRealityMenu_CreateShortcutIcon(void)
-{
-    if (!RP_CONFIG_ROTOM_REALITY_SHORTCUT)
-        return;
-    
-    sRotomPhone_StartMenu->menuRotomRealityShortcutIconSpriteId = CreateSprite(&sSpriteTemplate_RotomRealityShortcutIcon, 0, 0, 1);
-    gSprites[sRotomPhone_StartMenu->menuRotomRealityShortcutIconSpriteId].callback = RotomPhone_RotomRealityMenu_ShortcutIconCallback;
-}
-#undef SHORTCUT_ICON_X_OFFSET
-#undef SHORTCUT_ICON_Y_OFFSET
 
 #define ROTOM_CURSOR_X_OFFSET 10
 #define ROTOM_CURSOR_Y_OFFSET 6
@@ -3234,7 +3126,7 @@ static void RotomPhone_RotomRealityMenu_CreateCursorSprite(void)
     u8 x;
     u8 y;
     u8 xOffset;
-    LoadMonIconPalette(SPECIES_ROTOM);
+    LoadMonIconPalette(SPECIES_KEDAMA);
 
     for (enum RotomPhone_RotomReality_Options i = RP_RR_OPTION_1; i < RP_RR_OPTION_COUNT; i++)
     {
@@ -3262,7 +3154,7 @@ static void RotomPhone_RotomRealityMenu_CreateCursorSprite(void)
     
     x = sRotomRealityOptionInfo[optionCurrent].x + xOffset;
     y = sRotomRealityOptionInfo[optionCurrent].y + ROTOM_CURSOR_Y_OFFSET;
-    sRotomPhone_StartMenu->menuRotomRealityCursorSpriteId = CreateMonIcon(SPECIES_ROTOM, RotomPhone_RotomRealityMenu_CursorCallback,
+    sRotomPhone_StartMenu->menuRotomRealityCursorSpriteId = CreateMonIcon(SPECIES_KEDAMA, RotomPhone_RotomRealityMenu_CursorCallback,
         x,
         y,
         0, Random32()
@@ -3805,10 +3697,7 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_PokeNav(void)
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void)
 {
-    if (!RotomPhone_StartMenu_IsRotomReality())
-        return !GetSafariZoneFlag();
-    else
-        return TRUE;
+    return !GetSafariZoneFlag();
 }
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void)
@@ -3829,32 +3718,11 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_RotomReality(void)
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void)
 {
-    if (!RotomPhone_StartMenu_IsRotomReality() && !GetSafariZoneFlag())
-        return FALSE;
-    else
-        return FlagGet(DN_FLAG_DEXNAV_GET);
-}
-
-static bool32 RotomPhone_StartMenu_UnlockedFunc_Clock(void)
-{
-    if (!RP_CONFIG_USE_ROTOM_PHONE || (RotomPhone_StartMenu_IsRotomReality()))
-        return TRUE;
-    else
-        return FALSE;
-}
-
-static bool32 RotomPhone_StartMenu_UnlockedFunc_Shortcut(void)
-{
-    if (RP_CONFIG_USE_ROTOM_PHONE && (!RotomPhone_StartMenu_IsRotomReality()) && !GetSafariZoneFlag())
-        return TRUE;
-    else
-        return FALSE;
-}
-
-
-static void RotomPhone_StartMenu_SelectedFunc_Shortcut(void)
-{
-    sRotomPhoneOptions[RP_GET_SHORTCUT_OPTION].selectedFunc();
+    if (FlagGet(DN_FLAG_DEXNAV_GET))
+    {
+        return RotomPhone_StartMenu_IsRotomReality() || GetSafariZoneFlag();
+    }
+    return FALSE;
 }
 
 static void RotomPhone_StartMenu_SelectedFunc_Pokedex(void)
@@ -3960,33 +3828,6 @@ static void RotomPhone_StartMenu_SelectedFunc_DexNav(void)
         RotomPhone_StartMenu_DoCleanUpAndChangeTaskFunc(FindTaskIdByFunc(Task_RotomPhone_OverworldMenu_HandleMainInput), Task_OpenDexNavFromStartMenu);
     else
         RotomPhone_StartMenu_DoCleanUpAndCreateTask(Task_OpenDexNavFromStartMenu, 0);
-}
-
-static void RotomPhone_StartMenu_SelectedFunc_Clock(void)
-{
-    if (!RotomPhone_StartMenu_IsRotomReality())
-    {
-        u8 taskId = FindTaskIdByFunc(Task_RotomPhone_OverworldMenu_HandleMainInput);
-        if (taskId == TASK_NONE)
-            return;
-        
-        u8 time[24];
-        RtcCalcLocalTime();
-        FormatDecimalTimeWithoutSeconds(time, gLocalTime.hours, gLocalTime.minutes, RP_CONFIG_24_HOUR_MODE);
-        u8 fontId = GetFontIdToFit(time, FONT_SHORT, 0, sWindowTemplate_FlipPhone.width * 8);
-        FillWindowPixelBuffer(sRotomPhone_StartMenu->menuOverworldFlipPhoneWindowId, PIXEL_FILL(OW_FLIP_PHONE_TEXT_BG_COLOUR));
-        AddTextPrinterParameterized4(sRotomPhone_StartMenu->menuOverworldFlipPhoneWindowId, fontId,
-        GetStringCenterAlignXOffset(fontId, time, sWindowTemplate_FlipPhone.width * 8),
-        ROTOM_SPEECH_BOTTOM_ROW_Y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_OW_FLIP_PHONE], TEXT_SKIP_DRAW, time);
-        CopyWindowToVram(sRotomPhone_StartMenu->menuOverworldFlipPhoneWindowId, COPYWIN_GFX);
-        tRotomMessageSoundEffect = SE_BALL_TRAY_EXIT;
-        tRotomUpdateTimer = ROTOM_PHONE_OW_MESSGAGE_TIMER;
-        sRotomPhone_StartMenu->menuOverworldLoading = FALSE;
-    }
-    else
-    {
-        RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_ViewWallClock);
-    }
 }
 
 static void RotomPhone_StartMenu_SelectedFunc_Daycare(void)
