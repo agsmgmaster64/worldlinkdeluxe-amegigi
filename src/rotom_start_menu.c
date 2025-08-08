@@ -3,6 +3,7 @@
 #include "option_menu.h"
 #include "bg.h"
 #include "battle_pyramid.h"
+#include "battle_pyramid_bag.h"
 #include "daycare.h"
 #include "decompress.h"
 #include "dexnav.h"
@@ -184,6 +185,7 @@ static bool32 UNUSED RotomPhone_StartMenu_UnlockedFunc_Unlocked_Overworld(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Unlocked_RotomReality(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Pokedex(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Pokemon(void);
+static bool32 RotomPhone_StartMenu_UnlockedFunc_Bag(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_PokeNav(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void);
@@ -1232,7 +1234,7 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
     {
         .menuName = COMPOUND_STRING("Bag"),
         .rotomSpeech = COMPOUND_STRING("to look through your Bag?"),
-        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Unlocked,
+        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Bag,
         .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Bag,
         .owIconPalSlot = PAL_ICON_BLUE,
         .owAnim = RP_ICON_ANIM_SEVEN,
@@ -3687,6 +3689,8 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_Unlocked_RotomReality(void)
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Pokedex(void)
 {
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || IsOverworldLinkActive() || InUnionRoom() || InMultiPartnerRoom())
+        return FALSE;
     return FlagGet(FLAG_SYS_POKEDEX_GET);
 }
 
@@ -3695,9 +3699,16 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_Pokemon(void)
     return FlagGet(FLAG_SYS_POKEMON_GET);
 }
 
+static bool32 RotomPhone_StartMenu_UnlockedFunc_Bag(void)
+{
+    if (InBattlePike() || InMultiPartnerRoom())
+        return FALSE;
+    return TRUE;
+}
+
 static bool32 RotomPhone_StartMenu_UnlockedFunc_PokeNav(void)
 {
-    if (!RotomPhone_StartMenu_IsRotomReality())
+    if (!RotomPhone_StartMenu_IsRotomReality() || InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InMultiPartnerRoom())
         return FALSE;
     else
         return FlagGet(FLAG_SYS_POKENAV_GET);
@@ -3705,7 +3716,9 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_PokeNav(void)
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void)
 {
-    return !GetSafariZoneFlag();
+    if (GetSafariZoneFlag() || InBattlePike() || IsOverworldLinkActive() || InUnionRoom() || InMultiPartnerRoom())
+        return FALSE;
+    return TRUE;
 }
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void)
@@ -3718,16 +3731,17 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void)
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_RotomReality(void)
 {
-    if (!RotomPhone_StartMenu_IsRotomReality())
-        return FlagGet(FLAG_SYS_POKEDEX_GET) && !GetSafariZoneFlag();
-    else
+    if (RotomPhone_StartMenu_IsRotomReality() || GetSafariZoneFlag() || InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InMultiPartnerRoom())
         return FALSE;
+    return FlagGet(FLAG_SYS_POKEDEX_GET);
 }
 
 static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void)
 {
     if (FlagGet(DN_FLAG_DEXNAV_GET))
     {
+        if (InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || IsOverworldLinkActive() || InUnionRoom() || InMultiPartnerRoom())
+            return FALSE;
         return RotomPhone_StartMenu_IsRotomReality() || GetSafariZoneFlag();
     }
     return FALSE;
@@ -3745,7 +3759,10 @@ static void RotomPhone_StartMenu_SelectedFunc_Pokemon(void)
 
 static void RotomPhone_StartMenu_SelectedFunc_Bag(void)
 {
-    RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_BagMenuFromStartMenu);
+    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
+        RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_PyramidBagMenuFromStartMenu)
+    else
+        RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_BagMenuFromStartMenu);
 }
 
 static void RotomPhone_StartMenu_SelectedFunc_PokeNav(void)

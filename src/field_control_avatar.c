@@ -250,13 +250,15 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     {
         switch (gSaveBlock2Ptr->optionsLButtonMode)
         {
-        case OPTIONS_L_BUTTON_MODE_AUTO_RUN:
-            //if (EnableAutoRun())
-                //return TRUE;
+        case OPTIONS_L_BUTTON_MODE_DEBUG_MENU:
             PlaySE(SE_WIN_OPEN);
             FreezeObjectEvents();
             Debug_ShowMainMenu();
             return TRUE;
+            break;
+        case OPTIONS_L_BUTTON_MODE_AUTO_RUN:
+            if (EnableAutoRun())
+                return TRUE;
             break;
         case OPTIONS_L_BUTTON_MODE_REGISTER:
             if (UseRegisteredKeyItemOnField(1))
