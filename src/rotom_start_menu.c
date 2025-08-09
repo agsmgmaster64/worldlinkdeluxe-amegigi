@@ -2,6 +2,7 @@
 #include "global.h"
 #include "option_menu.h"
 #include "bg.h"
+#include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "daycare.h"
@@ -12,11 +13,13 @@
 #include "event_object_lock.h"
 #include "fake_rtc.h"
 #include "field_player_avatar.h"
+#include "field_specials.h"
 #include "field_weather.h"
 #include "frontier_pass.h"
 #include "gpu_regs.h"
 #include "international_string_util.h"
 #include "item_menu.h"
+#include "link.h"
 #include "m4a.h"
 #include "malloc.h"
 #include "map_name_popup.h"
@@ -3760,7 +3763,7 @@ static void RotomPhone_StartMenu_SelectedFunc_Pokemon(void)
 static void RotomPhone_StartMenu_SelectedFunc_Bag(void)
 {
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
-        RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_PyramidBagMenuFromStartMenu)
+        RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_PyramidBagMenuFromStartMenu);
     else
         RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_BagMenuFromStartMenu);
 }

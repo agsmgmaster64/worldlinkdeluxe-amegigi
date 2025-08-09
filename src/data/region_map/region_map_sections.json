@@ -693,8 +693,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name": ""
+      "height": 1
     },
     {
       "id": "MAPSEC_PALLET_TOWN",
@@ -746,8 +745,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_10_POKECENTER",
@@ -755,8 +753,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_1",
@@ -880,8 +877,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_DIGLETTS_CAVE",
@@ -893,8 +889,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_ROCKET_HIDEOUT",
@@ -914,8 +909,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_POKEMON_LEAGUE",
@@ -1091,8 +1085,7 @@
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1,
-      "name_clone": true
+      "height": 1
     },
     {
       "id": "MAPSEC_DOTTED_HOLE",

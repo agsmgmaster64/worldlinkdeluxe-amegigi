@@ -71,8 +71,8 @@
 #define METATILE_BattlePike_Curtain_Stage3_Tile6  0x2BC
 
 // gTileset_BattlePyramid
-#define METATILE_BattlePyramid_Exit   0x28E
-#define METATILE_BattlePyramid_Floor  0x28D
+#define METATILE_BattlePyramid_Exit   0x80D
+#define METATILE_BattlePyramid_Floor  0x80B
 
 // gTileset_BattleTent
 #define METATILE_BattleTent_Door  0x26B

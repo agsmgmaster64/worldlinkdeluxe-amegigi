@@ -11,11 +11,13 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": false,
+  "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_PYRAMID_TOP_ATTENDANT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 17,
       "y": 11,
@@ -30,6 +32,7 @@
     },
     {
       "local_id": "LOCALID_BRANDON",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRANDON",
       "x": 17,
       "y": 7,
