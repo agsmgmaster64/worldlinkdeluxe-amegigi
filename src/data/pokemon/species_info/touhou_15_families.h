@@ -900,7 +900,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou15[] =
         .palette = gMonPalette_CClownpiece,
         .shinyPalette = gMonShinyPalette_CClownpiece,
         .iconSprite = gMonIcon_CClownpiece,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         FOOTPRINT(CClownpiece)
         .levelUpLearnset = sCClownpieceLevelUpLearnset,
         .teachableLearnset = sCClownpieceTeachableLearnset,

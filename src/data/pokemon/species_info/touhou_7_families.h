@@ -3140,7 +3140,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .palette = gMonPalette_AdYuyuko,
         .shinyPalette = gMonShinyPalette_AdYuyuko,
         .iconSprite = gMonIcon_AdYuyuko,
-        .iconPalIndex = 0,
+        .iconPalIndex = 1,
         FOOTPRINT(AdYuyuko)
         .levelUpLearnset = sAdYuyukoLevelUpLearnset,
         .teachableLearnset = sAdYuyukoTeachableLearnset,
