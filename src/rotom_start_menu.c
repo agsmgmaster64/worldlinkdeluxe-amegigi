@@ -1298,8 +1298,8 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
     },
     [RP_MENU_ROTOM_REALITY] =
     {
-        .menuName = COMPOUND_STRING("Rotom Reality"),
-        .rotomSpeech = COMPOUND_STRING("to enter Rotom Reality?"),
+        .menuName = COMPOUND_STRING("Star Realm"),
+        .rotomSpeech = COMPOUND_STRING("to enter Star Realm?"),
         .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_RotomReality,
         .selectedFunc = RotomPhone_StartMenu_SelectedFunc_RotomReality,
         .owIconPalSlot = PAL_ICON_MONOCHROME,

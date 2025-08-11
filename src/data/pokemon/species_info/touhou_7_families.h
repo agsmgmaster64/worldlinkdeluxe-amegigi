@@ -4008,6 +4008,59 @@ const struct SpeciesInfo gSpeciesInfoTouhou7[] =
         .teachableLearnset = sAdYukariTeachableLearnset,
     },
 
+    [SPECIES_YOUKI] =
+    {
+        .baseHP        = 55,
+        .baseAttack    = 135,
+        .baseDefense   = 85,
+        .baseSpeed     = 135,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 70,
+        .types = MON_TYPES(TYPE_STEEL, TYPE_GHOST),
+        .catchRate = 45,
+        .expYield = 162,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE, EGG_GROUP_FIELD),
+        .abilities = { ABILITY_INNER_FOCUS, ABILITY_INSOMNIA },
+        .sourceGame = SOURCE_PCB,
+        .noFlip = TRUE,
+        .speciesName = _("Youki"),
+        .cryId = CRY_PORYGON,
+        .natDexNum = NATIONAL_DEX_BONSLY,
+        .categoryName = _("Bonsai"),
+        .height = 5,
+        .weight = 150,
+        .description = COMPOUND_STRING(
+            "Bonsly prefers an arid atmosphere.\n"
+            "In order to adjust the level of fluids\n"
+            "in its body, it exudes water from its eyes.\n"
+            "This makes it appear to be crying."),
+        .pokemonScale = 432,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Youki,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        .frontAnimFrames = sAnims_GenericBlinkingAnim,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Youki,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Youki,
+        .shinyPalette = gMonShinyPalette_Youki,
+        .iconSprite = gMonIcon_Youki,
+        .iconPalIndex = 0,
+        FOOTPRINT(Youki)
+        .levelUpLearnset = sYoukiLevelUpLearnset,
+        .teachableLearnset = sYoukiTeachableLearnset,
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

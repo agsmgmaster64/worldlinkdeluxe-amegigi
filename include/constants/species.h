@@ -449,9 +449,9 @@
 #define SPECIES_TORI                                    439
 #define SPECIES_NAMAZU                                  440
 #define SPECIES_TENSOKU                                 441
-#define SPECIES_SPIRITOMB                               442 // Kongaara
-#define SPECIES_GIBLE                                   443
-#define SPECIES_GABITE                                  444
+#define SPECIES_CHIBI_KONNGARA                          442
+#define SPECIES_NORMAL_KONNGARA                         443
+#define SPECIES_PLACEHOLD_KONNGARA                      444 // Placeholder
 #define SPECIES_CHIBI_KIKURI                            445
 #define SPECIES_NORMAL_KIKURI                           446
 #define SPECIES_PLACEHOLD_KIKURI                        447 // Placeholder
@@ -507,7 +507,7 @@
 #define SPECIES_ADVENT_EIRIN                            497
 #define SPECIES_ADVENT_REIMU                            498
 #define SPECIES_ADVENT_REMILIA                          499
-#define SPECIES_JK_SANAE                                500
+#define SPECIES_JOSHI_KOSEI_SANAE                       500
 #define SPECIES_DARK_ALICE                              501
 #define SPECIES_AKI_SISTERS                             502
 #define SPECIES_AKI_SISTERS_SHIZUHA                     SPECIES_AKI_SISTERS

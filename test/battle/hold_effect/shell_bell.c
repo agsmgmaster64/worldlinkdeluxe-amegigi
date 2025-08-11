@@ -84,7 +84,7 @@ SINGLE_BATTLE_TEST("Shell Bell activates after Rough Skin")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_SHELL_BELL); }
-        OPPONENT(SPECIES_GIBLE) { Ability(ABILITY_ROUGH_SKIN); }
+        OPPONENT(SPECIES_NORMAL_KONNGARA) { Ability(ABILITY_ROUGH_SKIN); }
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
