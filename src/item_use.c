@@ -65,6 +65,7 @@
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
 static void Task_CallItemUseOnFieldCallback(u8);
+static void Task_PartyMenuItemUseFromField(u8);
 static void Task_UseItemfinder(u8);
 static void Task_CloseItemfinderMessage(u8);
 static void Task_HiddenItemNearby(u8);
@@ -159,15 +160,25 @@ static const struct YesNoFuncTable sUseTMHMYesNoFuncTable =
 static void SetUpItemUseCallback(u8 taskId)
 {
     u8 type = GetItemType(gSpecialVar_ItemId) - 1;
-    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
+    
+    if (gTasks[taskId].tUsingRegisteredKeyItem && type == (ITEM_USE_PARTY_MENU - 1))
     {
-        gPyramidBagMenu->newScreenCallback = sItemUseCallbacks[type];
-        CloseBattlePyramidBag(taskId);
+        FadeScreen(FADE_TO_BLACK, 0);
+        gPartyMenu.data1 = DATA1_PARTY_MENU_FROM_FIELD;
+        gTasks[taskId].func = Task_PartyMenuItemUseFromField;
     }
     else
     {
-        gBagMenu->newScreenCallback = sItemUseCallbacks[type];
-        Task_FadeAndCloseBagMenu(taskId);
+        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
+        {
+            gPyramidBagMenu->newScreenCallback = sItemUseCallbacks[type];
+            CloseBattlePyramidBag(taskId);
+        }
+        else
+        {
+            gBagMenu->newScreenCallback = sItemUseCallbacks[type];
+            Task_FadeAndCloseBagMenu(taskId);
+        }
     }
 }
 
@@ -196,7 +207,17 @@ static void Task_CallItemUseOnFieldCallback(u8 taskId)
         sItemUseOnFieldCB(taskId);
 }
 
-void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str) //static //tx_randomizer_and_challenges
+static void Task_PartyMenuItemUseFromField(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_ShowPartyMenuForItemUse);
+        DestroyTask(taskId);
+    }
+}
+
+void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyItemOnField, const u8 *str)
 {
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
@@ -1676,77 +1697,37 @@ void ItemUseInBattle_BagMenu(u8 taskId)
 
 void ItemUseOutOfBattle_FormChange(u8 taskId)
 {
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gItemUseCB = ItemUseCB_FormChange;
-        gTasks[taskId].data[0] = FALSE;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else
-    {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    gItemUseCB = ItemUseCB_FormChange;
+    gTasks[taskId].data[0] = FALSE;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8 taskId)
 {
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gItemUseCB = ItemUseCB_FormChange_ConsumedOnUse;
-        gTasks[taskId].data[0] = TRUE;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else
-    {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    gItemUseCB = ItemUseCB_FormChange_ConsumedOnUse;
+    gTasks[taskId].data[0] = TRUE;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_RotomCatalog(u8 taskId)
 {
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gItemUseCB = ItemUseCB_RotomCatalog;
-        gTasks[taskId].data[0] = TRUE;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else
-    {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    gItemUseCB = ItemUseCB_RotomCatalog;
+    gTasks[taskId].data[0] = TRUE;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_ZygardeCube(u8 taskId)
 {
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gItemUseCB = ItemUseCB_ZygardeCube;
-        gTasks[taskId].data[0] = TRUE;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else
-    {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    gItemUseCB = ItemUseCB_ZygardeCube;
+    gTasks[taskId].data[0] = TRUE;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_Fusion(u8 taskId)
 {
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gItemUseCB = ItemUseCB_Fusion;
-        gTasks[taskId].data[0] = FALSE;
-        SetUpItemUseCallback(taskId);
-    }
-    else
-    {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    gItemUseCB = ItemUseCB_Fusion;
+    gTasks[taskId].data[0] = FALSE;
+    SetUpItemUseCallback(taskId);
 }
 
 void Task_UseHoneyOnField(u8 taskId)
@@ -2208,8 +2189,7 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
     }
     else
     {
-        // TODO: handle key items with callbacks to menus allow to be used by registering them.
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+        gTasks[taskId].func = ItemUseOnFieldCB_TownMap;
     }
 }
 
