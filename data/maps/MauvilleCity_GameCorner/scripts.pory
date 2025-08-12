@@ -81,7 +81,7 @@ MauvilleCity_GameCorner_EventScript_Derby::
 	msgbox MauvilleCity_GameCorner_Text_Derby, MSGBOX_YESNO
 	closemessage
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_GameCorner_CancelBJ
-	playbgm MUS_RG_PEWTER, FALSE
+	playbgm MUS_ZGS_PEWTER, FALSE
 	special StartDerby
 	waitstate
 	savebgm MUS_DUMMY
@@ -460,7 +460,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Basic::
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoCoinCase
 	setvar VAR_0x8004, 1
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 	special StartGacha
 	waitstate
 	savebgm MUS_DUMMY
@@ -474,7 +474,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Great::
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoCoinCase
 	setvar VAR_0x8004, 2
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 	special StartGacha
 	waitstate
 	savebgm MUS_DUMMY
@@ -487,7 +487,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Ultra::
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoCoinCase
 	setvar VAR_0x8004, 3
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 	special StartGacha
 	waitstate
 	savebgm MUS_DUMMY
@@ -500,7 +500,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Master::
 	checkitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoCoinCase
 	setvar VAR_0x8004, 4
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 	special StartGacha
 	waitstate
 	savebgm MUS_DUMMY

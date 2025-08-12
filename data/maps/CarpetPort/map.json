@@ -2,7 +2,7 @@
   "id": "MAP_CARPET_PORT",
   "name": "CarpetPort",
   "layout": "LAYOUT_CARPET_PORT",
-  "music": "MUS_RG_SEVII_123",
+  "music": "MUS_ZGS_SEVII_123",
   "region_map_section": "MAPSEC_THREE_ISLE_PORT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

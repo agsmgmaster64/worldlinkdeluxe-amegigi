@@ -269,7 +269,7 @@ BattleFrontier_BattleTowerMultiBattleRoom_EventScript_RestoreParty::
 # 135 "data/maps/BattleFrontier_BattleTowerMultiBattleRoom/scripts.pory"
 	call_if_eq VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_LINK_MULTIS, BattleFrontier_BattleTowerMultiBattleRoom_EventScript_ReconnectLink
 # 136 "data/maps/BattleFrontier_BattleTowerMultiBattleRoom/scripts.pory"
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 # 137 "data/maps/BattleFrontier_BattleTowerMultiBattleRoom/scripts.pory"
 	waitfanfare
 # 138 "data/maps/BattleFrontier_BattleTowerMultiBattleRoom/scripts.pory"

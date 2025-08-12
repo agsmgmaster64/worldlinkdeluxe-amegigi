@@ -147,7 +147,7 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 # 74 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 75 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 # 76 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"
 	waitfanfare
 # 77 "data/maps/SlateportCity_OceanicMuseum_2F/scripts.pory"

@@ -2,7 +2,7 @@
   "id": "MAP_MAUVILLE_CITY_GAME_CORNER_BASEMENT",
   "name": "MauvilleCity_GameCornerBasement",
   "layout": "LAYOUT_MAUVILLE_CITY_GAME_CORNER_BASEMENT",
-  "music": "MUS_RG_ROCKET_HIDEOUT",
+  "music": "MUS_ZGS_ROCKET_HIDEOUT",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

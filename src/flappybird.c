@@ -1491,7 +1491,7 @@ static void FlappyBirdMain(u8 taskId)
             {
                 DestroySpriteAndFreeResources(&gSprites[sFlappy->StartSpriteId]);
                 gSprites[sFlappy->TrailSpriteId].invisible = FALSE;
-                PlayBGM(MUS_RG_CELADON);
+                PlayBGM(MUS_ZGS_CELADON);
                 sFlappy->state = FLAPPY_INPUT;
             }
             break;

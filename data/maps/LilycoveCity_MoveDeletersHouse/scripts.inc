@@ -77,7 +77,7 @@ LilycoveCity_MoveDeletersHouse_EventScript_TryForgetMove::
 # 39 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
 	special MoveDeleterForgetMove
 # 40 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
-	playfanfare MUS_WLD_MOVE_DELETED
+	playfanfare MUS_ZGS_MOVE_DELETED
 # 41 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"
 	waitfanfare
 # 42 "data/maps/LilycoveCity_MoveDeletersHouse/scripts.pory"

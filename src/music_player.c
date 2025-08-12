@@ -13,20 +13,20 @@ static const struct PlaylistMusicList sPlaylistMusicList[PLAYLIST_SET_STYLE_COUN
     [PLAYLIST_SET_STYLE_DEFAULT] =
     {
         .wildBattleMusic = MUS_WLD_VS_WILD,
-        .trainerBattleMusic = MUS_WLD_VS_TRAINER,
-        .gymLeaderBattleMusic = MUS_WLD_VS_GYM_LEADER,
+        .trainerBattleMusic = MUS_ZGS_VS_AYA_REMATCH,
+        .gymLeaderBattleMusic = MUS_ZGS_VS_EIKI,
         .eliteFourBattleMusic = MUS_VS_ELITE_FOUR,
-        .championBattleMusic = MUS_WLD_VS_CHAMPION,
+        .championBattleMusic = MUS_ZGS_VS_MARISA_REMATCH,
         .surfMusic = MUS_WLD_SURF,
         .bikeMusic = MUS_CYCLING,
     },
     [PLAYLIST_SET_STYLE_REGULAR] = // duplicate of first for ability to override to this set
     {
         .wildBattleMusic = MUS_WLD_VS_WILD,
-        .trainerBattleMusic = MUS_WLD_VS_TRAINER,
-        .gymLeaderBattleMusic = MUS_WLD_VS_GYM_LEADER,
+        .trainerBattleMusic = MUS_ZGS_VS_AYA_REMATCH,
+        .gymLeaderBattleMusic = MUS_ZGS_VS_EIKI,
         .eliteFourBattleMusic = MUS_VS_ELITE_FOUR,
-        .championBattleMusic = MUS_WLD_VS_CHAMPION,
+        .championBattleMusic = MUS_ZGS_VS_MARISA_REMATCH,
         .surfMusic = MUS_WLD_SURF,
         .bikeMusic = MUS_CYCLING,
     },
@@ -58,7 +58,7 @@ static const struct PlaylistMusicList sPlaylistMusicList[PLAYLIST_SET_STYLE_COUN
         .eliteFourBattleMusic = MUS_ZGS_VS_SAKUYA,
         .championBattleMusic = MUS_ZGS_VS_CHAMPION,
         .surfMusic = MUS_ZGS_SURF,
-        .bikeMusic = MUS_RG_CYCLING,
+        .bikeMusic = MUS_ZGS_CYCLING,
     },
 };
 
@@ -106,7 +106,7 @@ u16 GetLegndaryWildBattleMusic(u16 species)
     case SPECIES_REGIDRAGO:
         return MUS_VS_REGI;
     default:
-        return MUS_RG_VS_LEGEND;
+        return MUS_ZGS_VS_LEGEND;
     }
 }
 
@@ -171,20 +171,20 @@ void PlayVictoryMusic(u8 battleType)
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_WLD_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_ZGS_VICTORY_GYM_LEADER);
             break;
         default:
-            PlayBGM(MUS_WLD_VICTORY_TRAINER);
+            PlayBGM(MUS_ZGS_VICTORY_TRAINER);
             break;
         }
     }
     else if (battleType == MUSIC_PLAYER_CAUGHT_MON)
     {
-        PlayBGM(MUS_WLD_CAUGHT);
+        PlayBGM(MUS_ZGS_CAUGHT);
     }
     else
     {
-        PlayBGM(MUS_WLD_VICTORY_WILD);
+        PlayBGM(MUS_ZGS_VICTORY_WILD);
     }
     
 }

@@ -187,7 +187,7 @@ FallarborTown_BattleTentBattleRoom_EventScript_IncrementBattleNum::
 # 94 "data/maps/FallarborTown_BattleTentBattleRoom/scripts.pory"
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 95 "data/maps/FallarborTown_BattleTentBattleRoom/scripts.pory"
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 # 96 "data/maps/FallarborTown_BattleTentBattleRoom/scripts.pory"
 	waitfanfare
 # 97 "data/maps/FallarborTown_BattleTentBattleRoom/scripts.pory"

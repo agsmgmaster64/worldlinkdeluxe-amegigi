@@ -2133,7 +2133,7 @@ static void BlockStackerMain(u8 taskId)
             else if (sBlockStacker->CurrentRow == 8)
             {
                 CreateLevel_8();
-                PlayBGM(MUS_RG_SEVII_ROUTE);
+                PlayBGM(MUS_ZGS_SEVII_ROUTE);
             }
             UpdateLives();
             sBlockStacker->ToggleButtons = 1;

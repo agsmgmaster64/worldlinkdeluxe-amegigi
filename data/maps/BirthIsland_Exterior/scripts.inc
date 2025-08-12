@@ -147,7 +147,7 @@ BirthIsland_Exterior_EventScript_Deoxys::
 # 74 "data/maps/BirthIsland_Exterior/scripts.pory"
 	dofieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
 # 75 "data/maps/BirthIsland_Exterior/scripts.pory"
-	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	playbgm MUS_ZGS_ENCOUNTER_DEOXYS, FALSE
 # 76 "data/maps/BirthIsland_Exterior/scripts.pory"
 	waitfieldeffect FLDEFF_DESTROY_DEOXYS_ROCK
 # 77 "data/maps/BirthIsland_Exterior/scripts.pory"

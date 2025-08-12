@@ -5493,11 +5493,11 @@ static void HandleEndTurn_BattleWon(void)
 
         if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
         {
-            PlayBGM(MUS_WLD_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_ZGS_VICTORY_GYM_LEADER);
         }
         else
         {
-            PlayBGM(MUS_WLD_VICTORY_TRAINER);
+            PlayBGM(MUS_ZGS_VICTORY_TRAINER);
         }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))

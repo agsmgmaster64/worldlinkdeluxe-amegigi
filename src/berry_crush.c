@@ -2422,7 +2422,7 @@ static u32 Cmd_SignalReadyToBegin(struct BerryCrushGame *game, u8 *args)
     case 1:
         if (IsLinkTaskFinished() || game->solo)
         {
-            PlayNewMapMusic(MUS_RG_GAME_CORNER);
+            PlayNewMapMusic(MUS_ZGS_GAME_CORNER);
             RunOrScheduleCommand(CMD_ASK_PICK_BERRY, SCHEDULE_CMD, NULL);
             game->gameState = STATE_PICK_BERRY;
             game->cmdState = 0;

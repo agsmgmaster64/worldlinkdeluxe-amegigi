@@ -2,7 +2,7 @@
   "id": "MAP_HOME_LIKE_CARPET",
   "name": "HomeLikeCarpet",
   "layout": "LAYOUT_HOME_LIKE_CARPET",
-  "music": "MUS_RG_SEVII_123",
+  "music": "MUS_ZGS_SEVII_123",
   "region_map_section": "MAPSEC_ONE_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

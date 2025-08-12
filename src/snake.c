@@ -1869,7 +1869,7 @@ static void SnakeMain(u8 taskId)
             if (sSnake->timer == 0)
             {
                 DestroySpriteAndFreeResources(&gSprites[sSnake->StartSpriteId]);
-                PlayBGM(MUS_RG_VICTORY_ROAD);
+                PlayBGM(MUS_ZGS_VICTORY_ROAD);
                 sSnake->state = SNAKE_STATE_MOVEMENT_LOOP;
             }
             else

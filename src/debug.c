@@ -3820,89 +3820,121 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_VS_RIVAL)                 \
     X(MUS_VS_ELITE_FOUR)            \
     X(MUS_VS_AQUA_MAGMA_LEADER)     \
-    X(MUS_RG_FOLLOW_ME)             \
-    X(MUS_RG_GAME_CORNER)           \
-    X(MUS_RG_ROCKET_HIDEOUT)        \
-    X(MUS_RG_GYM)                   \
-    X(MUS_RG_JIGGLYPUFF)            \
-    X(MUS_RG_INTRO_FIGHT)           \
-    X(MUS_RG_TITLE)                 \
-    X(MUS_RG_CINNABAR)              \
-    X(MUS_RG_LAVENDER)              \
+    X(MUS_ZGS_FOLLOW_ME)             \
+    X(MUS_ZGS_GAME_CORNER)           \
+    X(MUS_ZGS_ROCKET_HIDEOUT)        \
+    X(MUS_ZGS_GYM)                   \
+    X(MUS_ZGS_JIGGLYPUFF)            \
+    X(MUS_ZGS_INTRO_FIGHT)           \
+    X(MUS_ZGS_TITLE)                 \
+    X(MUS_ZGS_CINNABAR)              \
+    X(MUS_ZGS_LAVENDER)              \
     X(MUS_RG_HEAL)                  \
-    X(MUS_RG_CYCLING)               \
-    X(MUS_RG_ENCOUNTER_ROCKET)      \
-    X(MUS_RG_ENCOUNTER_GIRL)        \
-    X(MUS_RG_ENCOUNTER_BOY)         \
-    X(MUS_RG_HALL_OF_FAME)          \
-    X(MUS_RG_VIRIDIAN_FOREST)       \
-    X(MUS_RG_MT_MOON)               \
-    X(MUS_RG_POKE_MANSION)          \
-    X(MUS_RG_CREDITS)               \
-    X(MUS_RG_ROUTE1)                \
-    X(MUS_RG_ROUTE24)               \
-    X(MUS_RG_ROUTE3)                \
-    X(MUS_RG_ROUTE11)               \
-    X(MUS_RG_VICTORY_ROAD)          \
-    X(MUS_RG_VS_GYM_LEADER)         \
-    X(MUS_RG_VS_TRAINER)            \
-    X(MUS_RG_VS_WILD)               \
-    X(MUS_RG_VS_CHAMPION)           \
-    X(MUS_RG_PALLET)                \
-    X(MUS_RG_OAK_LAB)               \
-    X(MUS_RG_OAK)                   \
-    X(MUS_RG_POKE_CENTER)           \
-    X(MUS_RG_SS_ANNE)               \
-    X(MUS_RG_SURF)                  \
-    X(MUS_RG_POKE_TOWER)            \
-    X(MUS_RG_SILPH)                 \
-    X(MUS_RG_FUCHSIA)               \
-    X(MUS_RG_CELADON)               \
-    X(MUS_RG_VICTORY_TRAINER)       \
-    X(MUS_RG_VICTORY_WILD)          \
-    X(MUS_RG_VICTORY_GYM_LEADER)    \
-    X(MUS_RG_VERMILLION)            \
-    X(MUS_RG_PEWTER)                \
-    X(MUS_RG_ENCOUNTER_RIVAL)       \
+    X(MUS_ZGS_CYCLING)               \
+    X(MUS_ZGS_ENCOUNTER_ROCKET)      \
+    X(MUS_ZGS_ENCOUNTER_GIRL)        \
+    X(MUS_ZGS_ENCOUNTER_BOY)         \
+    X(MUS_ZGS_HALL_OF_FAME)          \
+    X(MUS_ZGS_VIRIDIAN_FOREST)       \
+    X(MUS_ZGS_MT_MOON)               \
+    X(MUS_ZGS_POKE_MANSION)          \
+    X(MUS_ZGS_CREDITS)               \
+    X(MUS_ZGS_ROUTE1)                \
+    X(MUS_ZGS_ROUTE24)               \
+    X(MUS_ZGS_ROUTE3)                \
+    X(MUS_ZGS_ROUTE11)               \
+    X(MUS_ZGS_VICTORY_ROAD)          \
+    X(MUS_ZGS_VS_GYM_LEADER)         \
+    X(MUS_ZGS_VS_TRAINER)            \
+    X(MUS_ZGS_VS_WILD)               \
+    X(MUS_ZGS_VS_CHAMPION)           \
+    X(MUS_ZGS_PALLET)                \
+    X(MUS_ZGS_OAK_LAB)               \
+    X(MUS_ZGS_OAK)                   \
+    X(MUS_ZGS_POKE_CENTER)           \
+    X(MUS_ZGS_SS_ANNE)               \
+    X(MUS_ZGS_SURF)                  \
+    X(MUS_ZGS_POKE_TOWER)            \
+    X(MUS_ZGS_SILPH)                 \
+    X(MUS_ZGS_FUCHSIA)               \
+    X(MUS_ZGS_CELADON)               \
+    X(MUS_ZGS_VICTORY_TRAINER)       \
+    X(MUS_ZGS_VICTORY_WILD)          \
+    X(MUS_ZGS_VICTORY_GYM_LEADER)    \
+    X(MUS_ZGS_VERMILLION)            \
+    X(MUS_ZGS_PEWTER)                \
+    X(MUS_ZGS_ENCOUNTER_RIVAL)       \
     X(MUS_RG_RIVAL_EXIT)            \
     X(MUS_RG_DEX_RATING)            \
     X(MUS_RG_OBTAIN_KEY_ITEM)       \
-    X(MUS_RG_CAUGHT_INTRO)          \
+    X(MUS_ZGS_CAUGHT_INTRO)          \
     X(MUS_RG_PHOTO)                 \
     X(MUS_RG_GAME_FREAK)            \
-    X(MUS_RG_CAUGHT)                \
+    X(MUS_ZGS_CAUGHT)                \
     X(MUS_RG_NEW_GAME_INSTRUCT)     \
     X(MUS_RG_NEW_GAME_INTRO)        \
     X(MUS_RG_NEW_GAME_EXIT)         \
-    X(MUS_RG_POKE_JUMP)             \
-    X(MUS_RG_UNION_ROOM)            \
+    X(MUS_ZGS_CITY_OF_FLOWER)             \
+    X(MUS_ZGS_END_OF_DAYLIGHT)            \
     X(MUS_RG_NET_CENTER)            \
     X(MUS_RG_MYSTERY_GIFT)          \
-    X(MUS_RG_BERRY_PICK)            \
-    X(MUS_RG_SEVII_CAVE)            \
+    X(MUS_ZGS_BELL_OF_AVICI)            \
+    X(MUS_ZGS_SEVII_CAVE)            \
     X(MUS_RG_TEACHY_TV_SHOW)        \
-    X(MUS_RG_SEVII_ROUTE)           \
-    X(MUS_RG_SEVII_DUNGEON)         \
-    X(MUS_RG_SEVII_123)             \
-    X(MUS_RG_SEVII_45)              \
-    X(MUS_RG_SEVII_67)              \
-    X(MUS_RG_POKE_FLUTE)            \
-    X(MUS_RG_VS_DEOXYS)             \
-    X(MUS_RG_VS_MEWTWO)             \
-    X(MUS_RG_VS_LEGEND)             \
-    X(MUS_RG_ENCOUNTER_GYM_LEADER)  \
-    X(MUS_RG_ENCOUNTER_DEOXYS)      \
+    X(MUS_ZGS_SEVII_ROUTE)           \
+    X(MUS_ZGS_SEVII_DUNGEON)         \
+    X(MUS_ZGS_SEVII_123)             \
+    X(MUS_ZGS_SEVII_45)              \
+    X(MUS_ZGS_SEVII_67)              \
+    X(MUS_ZGS_POKE_FLUTE)            \
+    X(MUS_ZGS_VS_MIMA)             \
+    X(MUS_ZGS_VS_SARIEL)             \
+    X(MUS_ZGS_VS_LEGEND)             \
+    X(MUS_ZGS_ENCOUNTER_GYM_LEADER)  \
+    X(MUS_ZGS_ENCOUNTER_DEOXYS)      \
     X(MUS_RG_TRAINER_TOWER)         \
-    X(MUS_RG_SLOW_PALLET)           \
+    X(MUS_ZGS_SLOW_PALLET)           \
     X(MUS_RG_TEACHY_TV_MENU)        \
+    X(MUS_ZGS_VS_AYA)               \
+    X(MUS_ZGS_MARISA_SCENE) \
+    X(MUS_ZGS_ENCOUNTER_MEILING) \
+    X(MUS_ZGS_SCARLET_DEVIL_MANSION) \
+    X(MUS_ZGS_PATCHOULI_LIBRARY) \
+    X(MUS_ZGS_MEGAMARI_OPENING) \
+    X(MUS_ZGS_PRISMRIVER_MANSION) \
+    X(MUS_ZGS_ENCOUNTER_PRISMRIVER) \
+    X(MUS_ZGS_PARADISE_DEEP_MOUNTAIN) \
+    X(MUS_ZGS_ENCOUNTER_NITORI) \
+    X(MUS_ZGS_ENCOUNTER_ALICE) \
+    X(MUS_ZGS_VS_MARISA) \
+    X(MUS_ZGS_MEGAMARI_OPENING_ALT) \
+    X(MUS_ZGS_VS_YUYUKO) \
+    X(MUS_ZGS_BAMBOO_FOREST) \
+    X(MUS_ZGS_VS_KAGUYA) \
+    X(MUS_ZGS_EIKI_ISLAND) \
+    X(MUS_ZGS_VS_EIKI) \
+    X(MUS_ZGS_AGTLP) \
+    X(MUS_ZGS_ENCOUNTER_FAIRY) \
+    X(MUS_ZGS_ENCOUNTER_TENGU) \
+    X(MUS_ZGS_VS_AYA_REMATCH) \
+    X(MUS_ZGS_MORIYA_SHRINE) \
+    X(MUS_ZGS_DARK_BLOW_HOLE) \
+    X(MUS_ZGS_END_OF_SPRING) \
+    X(MUS_ZGS_VS_BYAKUREN) \
+    X(MUS_ZGS_VS_SAKUYA) \
+    X(MUS_ZGS_VS_MARISA_REMATCH) \
+    X(MUS_ZGS_VS_REIMU) \
+    X(MUS_ZGS_VS_DREAM_WILD) \
+    X(MUS_ZGS_VS_DREAM_TRAINER) \
+    X(MUS_WLD_GAME_CORNER) \
     X(MUS_WLD_VS_WILD) \
     X(MUS_WLD_SURF) \
     X(MUS_DD_SKULLER_DRILL_MISSILE) \
-    X(MUS_WLD_EVOLUTION_INTRO) \
-    X(MUS_WLD_EVOLUTION) \
-    X(MUS_WLD_EVOLVED) \
-    X(MUS_WLD_HEAL) \
-    X(MUS_WLD_MOVE_DELETED) \
+    X(MUS_ZGS_EVOLUTION_INTRO) \
+    X(MUS_ZGS_EVOLUTION) \
+    X(MUS_ZGS_EVOLVED) \
+    X(MUS_ZGS_HEAL) \
+    X(MUS_ZGS_MOVE_DELETED) \
     X(MUS_TPPE_VS_WILD) \
     X(MUS_HGSS_CASINO) \
     X(MUS_CASINO_PLUS_1) \
@@ -3914,85 +3946,6 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_CASINO_PLUS_7) \
     X(MUS_CASINO_PLUS_8) \
     X(MUS_CASINO_PLUS_9) \
-    X(MUS_ZGS_FOLLOW_ME) \
-    X(MUS_ZGS_GAME_CORNER) \
-    X(MUS_ZGS_ROCKET_HIDEOUT) \
-    X(MUS_WLD_GYM) \
-    X(MUS_ZGS_JIGGLYPUFF) \
-    X(MUS_ZGS_INTRO_FIGHT) \
-    X(MUS_ZGS_TITLE) \
-    X(MUS_ZGS_CINNABAR) \
-    X(MUS_ZGS_LAVENDER) \
-    X(MUS_ZGS_CYCLING) \
-    X(MUS_ZGS_ENCOUNTER_ROCKET) \
-    X(MUS_ZGS_ENCOUNTER_GIRL) \
-    X(MUS_ZGS_ENCOUNTER_BOY) \
-    X(MUS_ZGS_HALL_OF_FAME) \
-    X(MUS_ZGS_VIRIDIAN_FOREST) \
-    X(MUS_ZGS_MT_MOON) \
-    X(MUS_ZGS_POKE_MANSION) \
-    X(MUS_ZGS_CREDITS) \
-    X(MUS_ZGS_ROUTE1) \
-    X(MUS_ZGS_ROUTE24) \
-    X(MUS_ZGS_ROUTE3) \
-    X(MUS_ZGS_ROUTE11) \
-    X(MUS_ZGS_VICTORY_ROAD) \
-    X(MUS_ZGS_VS_GYM_LEADER) \
-    X(MUS_ZGS_VS_TRAINER) \
-    X(MUS_ZGS_VS_WILD) \
-    X(MUS_ZGS_VS_CHAMPION) \
-    X(MUS_ZGS_PALLET) \
-    X(MUS_ZGS_OAK_LAB) \
-    X(MUS_ZGS_OAK) \
-    X(MUS_ZGS_POKE_CENTER) \
-    X(MUS_ZGS_SS_ANNE) \
-    X(MUS_ZGS_SURF) \
-    X(MUS_ZGS_POKE_TOWER) \
-    X(MUS_ZGS_SILPH) \
-    X(MUS_ZGS_FUCHSIA) \
-    X(MUS_ZGS_CELADON) \
-    X(MUS_WLD_VICTORY_TRAINER) \
-    X(MUS_WLD_VICTORY_WILD) \
-    X(MUS_WLD_VICTORY_GYM_LEADER) \
-    X(MUS_ZGS_VERMILLION) \
-    X(MUS_ZGS_PEWTER) \
-    X(MUS_ZGS_ENCOUNTER_RIVAL) \
-    X(MUS_WLD_CAUGHT_INTRO) \
-    X(MUS_WLD_CAUGHT) \
-    X(MUS_ZGS_CITY_OF_FLOWER) \
-    X(MUS_ZGS_END_OF_DAYLIGHT) \
-    X(MUS_ZGS_BELL_OF_AVICI) \
-    X(MUS_ZGS_SEVII_CAVE) \
-    X(MUS_ZGS_SEVII_ROUTE) \
-    X(MUS_ZGS_SEVII_DUNGEON) \
-    X(MUS_ZGS_SEVII_123) \
-    X(MUS_ZGS_SEVII_45) \
-    X(MUS_ZGS_SEVII_67) \
-    X(MUS_ZGS_POKE_FLUTE) \
-    X(MUS_ZGS_VS_MIMA) \
-    X(MUS_ZGS_VS_SARIEL) \
-    X(MUS_ZGS_VS_LEGEND) \
-    X(MUS_ZGS_ENCOUNTER_GYM_LEADER) \
-    X(MUS_ZGS_ENCOUNTER_DEOXYS) \
-    X(MUS_ZGS_SLOW_PALLET) \
-    X(MUS_ZGS_PARADISE_DEEP_MOUNTAIN) \
-    X(MUS_ZGS_BAMBOO_FOREST) \
-    X(MUS_ZGS_EIKI_ISLAND) \
-    X(MUS_WLD_VS_GYM_LEADER) \
-    X(MUS_ZGS_AGTLP) \
-    X(MUS_ZGS_ENCOUNTER_FAIRY) \
-    X(MUS_ZGS_ENCOUNTER_TENGU) \
-    X(MUS_WLD_VS_TRAINER) \
-    X(MUS_ZGS_MORIYA_SHRINE) \
-    X(MUS_ZGS_DARK_BLOW_HOLE) \
-    X(MUS_ZGS_END_OF_SPRING) \
-    X(MUS_ZGS_VS_BYAKUREN) \
-    X(MUS_ZGS_VS_SAKUYA) \
-    X(MUS_WLD_VS_CHAMPION) \
-    X(MUS_ZGS_VS_REIMU) \
-    X(MUS_ZGS_VS_DREAM_WILD) \
-    X(MUS_ZGS_VS_DREAM_TRAINER) \
-    X(MUS_WLD_GAME_CORNER) \
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

@@ -697,7 +697,7 @@ static void Task_EvolutionScene(u8 taskId)
     case EVOSTATE_INTRO_SOUND:
         if (EvoScene_IsMonAnimFinished(sEvoStructPtr->preEvoSpriteId))
         {
-            PlaySE(MUS_WLD_EVOLUTION_INTRO);
+            PlaySE(MUS_ZGS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
@@ -705,7 +705,7 @@ static void Task_EvolutionScene(u8 taskId)
         if (!IsSEPlaying())
         {
             // Start music, fade background to black
-            PlayNewMapMusic(MUS_WLD_EVOLUTION);
+            PlayNewMapMusic(MUS_ZGS_EVOLUTION);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -781,7 +781,7 @@ static void Task_EvolutionScene(u8 taskId)
         {
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             BattlePutTextOnWindow(gStringVar4, B_WIN_MSG);
-            PlayBGM(MUS_WLD_EVOLVED);
+            PlayBGM(MUS_ZGS_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (void *)(&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
@@ -1132,15 +1132,15 @@ static void Task_TradeEvolutionScene(u8 taskId)
     case T_EVOSTATE_INTRO_SOUND:
         if (IsCryFinished())
         {
-            m4aSongNumStop(MUS_WLD_EVOLUTION);
-            PlaySE(MUS_WLD_EVOLUTION_INTRO);
+            m4aSongNumStop(MUS_ZGS_EVOLUTION);
+            PlaySE(MUS_ZGS_EVOLUTION_INTRO);
             gTasks[taskId].tState++;
         }
         break;
     case T_EVOSTATE_START_MUSIC:
         if (!IsSEPlaying())
         {
-            PlayBGM(MUS_WLD_EVOLUTION);
+            PlayBGM(MUS_ZGS_EVOLUTION);
             gTasks[taskId].tState++;
             BeginNormalPaletteFade(0x1C, 4, 0, 0x10, RGB_BLACK);
         }
@@ -1211,7 +1211,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
         {
             StringExpandPlaceholders(gStringVar4, gText_CongratsPkmnEvolved);
             DrawTextOnTradeWindow(0, gStringVar4, 1);
-            PlayFanfare(MUS_WLD_EVOLVED);
+            PlayFanfare(MUS_ZGS_EVOLVED);
             gTasks[taskId].tState++;
             SetMonData(mon, MON_DATA_SPECIES, (&gTasks[taskId].tPostEvoSpecies));
             CalculateMonStats(mon);
@@ -1243,7 +1243,7 @@ static void Task_TradeEvolutionScene(u8 taskId)
             }
             else
             {
-                PlayBGM(MUS_WLD_EVOLUTION);
+                PlayBGM(MUS_ZGS_EVOLUTION);
                 DrawTextOnTradeWindow(0, gText_CommunicationStandby5, 1);
                 gTasks[taskId].tState++;
             }

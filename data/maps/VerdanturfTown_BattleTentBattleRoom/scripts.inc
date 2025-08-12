@@ -147,7 +147,7 @@ VerdanturfTown_BattleTentBattleRoom_EventScript_DefeatedOpponent::
 # 74 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
 # 75 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 # 76 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"
 	waitfanfare
 # 77 "data/maps/VerdanturfTown_BattleTentBattleRoom/scripts.pory"

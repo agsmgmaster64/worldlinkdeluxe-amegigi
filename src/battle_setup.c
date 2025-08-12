@@ -559,11 +559,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_ATTACK:
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_ZGS_VS_MIMA);
         break;
     //case SPECIES_ATTACK_NUE:
     //case SPECIES_TECH_NUE:
-        //CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        //CreateBattleStartTask(B_TRANSITION_BLUR, MUS_ZGS_VS_LEGEND);
         //break;
     //case SPECIES_NORMAL_KOMACHI:
         //CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);

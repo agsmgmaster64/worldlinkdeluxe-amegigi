@@ -772,7 +772,7 @@ Common_EventScript_PlayGymBadgeFanfare::
 
 Common_EventScript_OutOfCenterPartyHeal::
 	fadescreenswapbuffers FADE_TO_BLACK
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 	waitfanfare
 	special HealPlayerParty
 	callnative UpdateFollowingPokemon

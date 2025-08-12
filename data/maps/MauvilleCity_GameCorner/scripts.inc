@@ -165,7 +165,7 @@ MauvilleCity_GameCorner_EventScript_Derby::
 # 83 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_GameCorner_CancelBJ
 # 84 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playbgm MUS_RG_PEWTER, FALSE
+	playbgm MUS_ZGS_PEWTER, FALSE
 # 85 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special StartDerby
 # 86 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -923,7 +923,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Basic::
 # 462 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_0x8004, 1
 # 463 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 # 464 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special StartGacha
 # 465 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -951,7 +951,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Great::
 # 476 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_0x8004, 2
 # 477 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 # 478 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special StartGacha
 # 479 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -977,7 +977,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Ultra::
 # 489 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_0x8004, 3
 # 490 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 # 491 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special StartGacha
 # 492 "data/maps/MauvilleCity_GameCorner/scripts.pory"
@@ -1003,7 +1003,7 @@ MauvilleCity_GameCorner_EventScript_Gacha_Master::
 # 502 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	setvar VAR_0x8004, 4
 # 503 "data/maps/MauvilleCity_GameCorner/scripts.pory"
-	playbgm MUS_RG_CINNABAR, FALSE
+	playbgm MUS_ZGS_CINNABAR, FALSE
 # 504 "data/maps/MauvilleCity_GameCorner/scripts.pory"
 	special StartGacha
 # 505 "data/maps/MauvilleCity_GameCorner/scripts.pory"

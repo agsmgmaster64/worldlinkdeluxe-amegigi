@@ -72,7 +72,7 @@ VerdanturfTown_BattleTentBattleRoom_EventScript_DefeatedOpponent::
 	special LoadPlayerParty
 	special SavePlayerParty
 	frontier_setpartyorder FRONTIER_PARTY_SIZE
-	playfanfare MUS_WLD_HEAL
+	playfanfare MUS_ZGS_HEAL
 	waitfanfare
 	special HealPlayerParty
 
