@@ -31234,22 +31234,58 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonFootprint_Junko[] = INCBIN_U8("graphics/pokemon/_add/th/junko/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
-    const u32 gMonFrontPic_CHecatia[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/chibi/anim_front.4bpp.smol");
-    const u16 gMonPalette_CHecatia[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/chibi/normal.gbapal");
-    const u32 gMonBackPic_CHecatia[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/chibi/back.4bpp.smol");
-    const u16 gMonShinyPalette_CHecatia[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/chibi/shiny.gbapal");
-    const u8 gMonIcon_CHecatia[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/chibi/icon.4bpp");
+    const u32 gMonFrontPic_CHecatiaOtherworld[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/otherworld/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CHecatiaOtherworld[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/otherworld/chibi/normal.gbapal");
+    const u32 gMonBackPic_CHecatiaOtherworld[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/otherworld/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CHecatiaOtherworld[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/otherworld/chibi/shiny.gbapal");
+    const u8 gMonIcon_CHecatiaOtherworld[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/otherworld/chibi/icon.4bpp");
 #if P_FOOTPRINTS
-    const u8 gMonFootprint_CHecatia[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/chibi/footprint.1bpp");
+    const u8 gMonFootprint_CHecatiaOtherworld[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/otherworld/chibi/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
-    const u32 gMonFrontPic_Hecatia[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/normal/anim_front.4bpp.smol");
-    const u16 gMonPalette_Hecatia[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/normal/normal.gbapal");
-    const u32 gMonBackPic_Hecatia[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/normal/back.4bpp.smol");
-    const u16 gMonShinyPalette_Hecatia[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/normal/shiny.gbapal");
-    const u8 gMonIcon_Hecatia[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/normal/icon.4bpp");
+    const u32 gMonFrontPic_HecatiaOtherworld[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/otherworld/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_HecatiaOtherworld[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/otherworld/normal/normal.gbapal");
+    const u32 gMonBackPic_HecatiaOtherworld[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/otherworld/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_HecatiaOtherworld[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/otherworld/normal/shiny.gbapal");
+    const u8 gMonIcon_HecatiaOtherworld[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/otherworld/normal/icon.4bpp");
 #if P_FOOTPRINTS
-    const u8 gMonFootprint_Hecatia[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/normal/footprint.1bpp");
+    const u8 gMonFootprint_HecatiaOtherworld[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/otherworld/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CHecatiaEarth[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/earth/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CHecatiaEarth[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/earth/chibi/normal.gbapal");
+    const u32 gMonBackPic_CHecatiaEarth[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/earth/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CHecatiaEarth[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/earth/chibi/shiny.gbapal");
+    const u8 gMonIcon_CHecatiaEarth[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/earth/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CHecatiaEarth[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/earth/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_HecatiaEarth[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/earth/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_HecatiaEarth[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/earth/normal/normal.gbapal");
+    const u32 gMonBackPic_HecatiaEarth[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/earth/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_HecatiaEarth[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/earth/normal/shiny.gbapal");
+    const u8 gMonIcon_HecatiaEarth[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/earth/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_HecatiaEarth[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/earth/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CHecatiaMoon[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/moon/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CHecatiaMoon[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/moon/chibi/normal.gbapal");
+    const u32 gMonBackPic_CHecatiaMoon[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/moon/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CHecatiaMoon[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/moon/chibi/shiny.gbapal");
+    const u8 gMonIcon_CHecatiaMoon[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/moon/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CHecatiaMoon[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/moon/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_HecatiaMoon[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/moon/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_HecatiaMoon[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/moon/normal/normal.gbapal");
+    const u32 gMonBackPic_HecatiaMoon[] = INCBIN_U32("graphics/pokemon/_add/th/hecatia/moon/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_HecatiaMoon[] = INCBIN_U16("graphics/pokemon/_add/th/hecatia/moon/normal/shiny.gbapal");
+    const u8 gMonIcon_HecatiaMoon[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/moon/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_HecatiaMoon[] = INCBIN_U8("graphics/pokemon/_add/th/hecatia/moon/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
     const u32 gMonFrontPic_CEternity[] = INCBIN_U32("graphics/pokemon/_add/th/eternity/chibi/anim_front.4bpp.smol");

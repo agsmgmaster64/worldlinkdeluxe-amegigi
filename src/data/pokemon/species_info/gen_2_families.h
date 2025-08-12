@@ -354,10 +354,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .randomizerMode = rzMode,                                                                       \
     }
 
-    [SPECIES_UNOWN_D]           = UNOWN_MISC_INFO(D,           TRUE,  32, 32, 40, 48,  8,  MON_RANDOMIZER_INVALID ),
-    [SPECIES_UNOWN_E]           = UNOWN_MISC_INFO(E,           TRUE,  32, 32, 40, 48, 10,  MON_RANDOMIZER_INVALID ),
-    [SPECIES_UNOWN_F]           = UNOWN_MISC_INFO(F,           TRUE,  32, 32, 48, 48, 10,  MON_RANDOMIZER_INVALID ),
-    [SPECIES_UNOWN_G]           = UNOWN_MISC_INFO(G,           TRUE,  24, 40, 40, 56,  5,  MON_RANDOMIZER_INVALID ),
     [SPECIES_UNOWN_H]           = UNOWN_MISC_INFO(H,           TRUE,  32, 32, 48, 48,  8,  MON_RANDOMIZER_INVALID ),
     [SPECIES_UNOWN_I]           = UNOWN_MISC_INFO(I,           FALSE, 24, 32, 24, 56,  7,  MON_RANDOMIZER_INVALID ),
     [SPECIES_UNOWN_J]           = UNOWN_MISC_INFO(J,           TRUE,  24, 32, 32, 48,  9,  MON_RANDOMIZER_INVALID ),

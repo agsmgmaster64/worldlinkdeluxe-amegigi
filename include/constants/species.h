@@ -542,8 +542,10 @@
 #define SPECIES_NORMAL_JUNKO                            531
 #define SPECIES_PLACEHOLDER_JUNKO                       532 // Placeholder
 #define SPECIES_PLACEHOLD2_JUNKO                        533 // Placeholder
-#define SPECIES_CHIBI_HECATIA                           534
-#define SPECIES_NORMAL_HECATIA                          535
+#define SPECIES_CHIBI_HECATIA_OTHERWORLD                534
+#define SPECIES_CHIBI_HECATIA                           SPECIES_CHIBI_HECATIA_OTHERWORLD
+#define SPECIES_NORMAL_HECATIA_OTHERWORLD               535
+#define SPECIES_NORMAL_HECATIA                          SPECIES_NORMAL_HECATIA_OTHERWORLD
 #define SPECIES_ATTACK_HECATIA                          536
 #define SPECIES_PLACEHOLD_HECATIA                       537 // Placeholder
 #define SPECIES_CHIBI_CLOWNPIECE                        538
@@ -1080,10 +1082,10 @@
 #define SPECIES_PICHU_SPIKY_EARED                       1023
 #define SPECIES_GOLIATH_HOURAI                          1024
 #define SPECIES_AKI_SISTERS_MINORIKO                    1025
-#define SPECIES_UNOWN_D                                 1026
-#define SPECIES_UNOWN_E                                 1027
-#define SPECIES_UNOWN_F                                 1028
-#define SPECIES_UNOWN_G                                 1029
+#define SPECIES_CHIBI_HECATIA_EARTH                     1026
+#define SPECIES_CHIBI_HECATIA_MOON                      1027
+#define SPECIES_NORMAL_HECATIA_EARTH                    1028
+#define SPECIES_NORMAL_HECATIA_MOON                     1029
 #define SPECIES_UNOWN_H                                 1030
 #define SPECIES_UNOWN_I                                 1031
 #define SPECIES_UNOWN_J                                 1032

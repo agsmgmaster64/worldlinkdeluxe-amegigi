@@ -15297,6 +15297,82 @@ static const u16 sClownpieceTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCHecatiaTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHecatiaOtherworldTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHecatiaEarthTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sHecatiaMoonTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCEternityTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_DETECT,

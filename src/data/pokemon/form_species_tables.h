@@ -97,6 +97,20 @@ static const u16 sGoliathFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sCHecatiaFormSpeciesIdTable[] = {
+    SPECIES_CHIBI_HECATIA_OTHERWORLD,
+    SPECIES_CHIBI_HECATIA_EARTH,
+    SPECIES_CHIBI_HECATIA_MOON,
+    FORM_SPECIES_END,
+};
+
+static const u16 sHecatiaFormSpeciesIdTable[] = {
+    SPECIES_NORMAL_HECATIA_OTHERWORLD,
+    SPECIES_NORMAL_HECATIA_EARTH,
+    SPECIES_NORMAL_HECATIA_MOON,
+    FORM_SPECIES_END,
+};
+
 #if P_FAMILY_CHARMANDER
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_NORMAL_MARISA,
@@ -659,10 +673,6 @@ static const u16 sWooperFormSpeciesIdTable[] = {
 
 #if P_FAMILY_UNOWN
 static const u16 sUnownFormSpeciesIdTable[] = {
-    SPECIES_UNOWN_D,
-    SPECIES_UNOWN_E,
-    SPECIES_UNOWN_F,
-    SPECIES_UNOWN_G,
     SPECIES_UNOWN_H,
     SPECIES_UNOWN_I,
     SPECIES_UNOWN_J,
