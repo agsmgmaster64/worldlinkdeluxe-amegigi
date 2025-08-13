@@ -36714,5 +36714,311 @@
     "TutorMoves": [
       "MOVE_MIMIC"
     ]
+  },
+  "L_SUWAKO": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_TREMORS"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_ICE_PUNCH"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_HYDRO_PUMP"
+      },
+      {
+        "Level": 25,
+        "Move": "MOVE_MYSTIC_WATER"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_CALM_MIND"
+      },
+      {
+        "Level": 35,
+        "Move": "MOVE_EARTHQUAKE"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_BODY_SLAM"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_AQUA_SHOWER"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_EARTH_POWER"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_HYDRO_CANNON"
+      },
+      {
+        "Level": 75,
+        "Move": "MOVE_EXTRASENSORY"
+      },
+      {
+        "Level": 85,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 95,
+        "Move": "MOVE_POUND"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FOCUS_PUNCH",
+      "MOVE_WATER_PULSE",
+      "MOVE_CALM_MIND",
+      "MOVE_ROAR",
+      "MOVE_TOXIC",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_ICE_BEAM",
+      "MOVE_BLIZZARD",
+      "MOVE_DETECT",
+      "MOVE_RAIN_DANCE",
+      "MOVE_SAFEGUARD",
+      "MOVE_STEEL_FIST",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_DIG",
+      "MOVE_SHADOW_BALL",
+      "MOVE_BRICK_BREAK",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_ROCK_TOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_CHILLING_WATER",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_PSYCH_UP",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_SURF",
+      "MOVE_ROCK_SMASH",
+      "MOVE_WATERFALL"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "L_UTSUHO": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_FIRE_PUNCH"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_FIRE_BLAST"
+      },
+      {
+        "Level": 25,
+        "Move": "MOVE_WILL_O_WISP"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_FLAMETHROWER"
+      },
+      {
+        "Level": 35,
+        "Move": "MOVE_EXPLOSION"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_SKY_ATTACK"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_ERUPTION"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_HEAT_WAVE"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_BLAST_BURN"
+      },
+      {
+        "Level": 75,
+        "Move": "MOVE_SACRED_FIRE"
+      },
+      {
+        "Level": 85,
+        "Move": "MOVE_FLARE_BLITZ"
+      },
+      {
+        "Level": 95,
+        "Move": "MOVE_POUND"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_CALM_MIND",
+      "MOVE_ROAR",
+      "MOVE_MULTI_PULSE",
+      "MOVE_SUNNY_DAY",
+      "MOVE_TAUNT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_DETECT",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_SHADOW_BALL",
+      "MOVE_FLAMETHROWER",
+      "MOVE_POISON_BOMB",
+      "MOVE_FIRE_BLAST",
+      "MOVE_RAZOR_WIND",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_STEEL_WING",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENDURE",
+      "MOVE_WILL_O_WISP",
+      "MOVE_EXPLOSION",
+      "MOVE_PSYCH_UP",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_SLEEP_TALK",
+      "MOVE_SWAGGER",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLY",
+      "MOVE_FLASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
+  },
+  "L_KANAKO": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 5,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_THUNDER_PUNCH"
+      },
+      {
+        "Level": 20,
+        "Move": "MOVE_DISCHARGE"
+      },
+      {
+        "Level": 25,
+        "Move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "Level": 30,
+        "Move": "MOVE_THUNDERBOLT"
+      },
+      {
+        "Level": 35,
+        "Move": "MOVE_SILVER_WIND"
+      },
+      {
+        "Level": 45,
+        "Move": "MOVE_SMELLING_SALTS"
+      },
+      {
+        "Level": 50,
+        "Move": "MOVE_THUNDER"
+      },
+      {
+        "Level": 60,
+        "Move": "MOVE_EXTRASENSORY"
+      },
+      {
+        "Level": 65,
+        "Move": "MOVE_AEROBLAST"
+      },
+      {
+        "Level": 75,
+        "Move": "MOVE_VOLT_TACKLE"
+      },
+      {
+        "Level": 85,
+        "Move": "MOVE_POUND"
+      },
+      {
+        "Level": 95,
+        "Move": "MOVE_POUND"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_FOCUS_PUNCH",
+      "MOVE_CALM_MIND",
+      "MOVE_MULTI_PULSE",
+      "MOVE_TAUNT",
+      "MOVE_DETECT",
+      "MOVE_STEEL_FIST",
+      "MOVE_THUNDERBOLT",
+      "MOVE_THUNDER",
+      "MOVE_EARTHQUAKE",
+      "MOVE_RETURN",
+      "MOVE_BRICK_BREAK",
+      "MOVE_DOUBLE_TEAM",
+      "MOVE_ROCK_TOMB",
+      "MOVE_FACADE",
+      "MOVE_SECRET_POWER",
+      "MOVE_REST",
+      "MOVE_ATTRACT",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_ENERGY_LIGHT",
+      "MOVE_ENDURE",
+      "MOVE_DECISION",
+      "MOVE_CURSE",
+      "MOVE_SLEEP_TALK",
+      "MOVE_POISON_JAB",
+      "MOVE_BODY_SLAM",
+      "MOVE_SUBSTITUTE",
+      "MOVE_METRONOME",
+      "MOVE_TERA_BLAST",
+      "MOVE_FLY",
+      "MOVE_STRENGTH",
+      "MOVE_FLASH",
+      "MOVE_ROCK_SMASH"
+    ],
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_MIMIC"
+    ]
   }
 }

@@ -12,6 +12,25 @@ static const struct FormChange sCHecatiaFormChangeTable[] = {
     {FORM_CHANGE_TERMINATOR},
 };
 
+static const struct FormChange sLSuwakoFormChangeTable[] = {
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_KYOGRE_PRIMAL, ITEM_BLUE_ORB},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sLUtsuhoFormChangeTable[] = {
+#if P_PRIMAL_REVERSIONS
+    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_GROUDON_PRIMAL, ITEM_RED_ORB},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sLKanakoFormChangeTable[] = {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE,    SPECIES_RAYQUAZA_MEGA, MOVE_DRAGON_ASCENT},
+#endif
+    {FORM_CHANGE_TERMINATOR},
+};
+
 #if P_FAMILY_BULBASAUR
 static const struct FormChange sVenusaurFormChangeTable[] = {
 #if P_MEGA_EVOLUTIONS
@@ -492,30 +511,12 @@ static const struct FormChange sLatiosFormChangeTable[] = {
 #endif //P_FAMILY_LATIOS
 
 #if P_FAMILY_KYOGRE
-static const struct FormChange sLSuwakoFormChangeTable[] = {
-#if P_PRIMAL_REVERSIONS
-    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_KYOGRE_PRIMAL, ITEM_BLUE_ORB},
-#endif
-    {FORM_CHANGE_TERMINATOR},
-};
 #endif //P_FAMILY_KYOGRE
 
 #if P_FAMILY_GROUDON
-static const struct FormChange sLUtsuhoFormChangeTable[] = {
-#if P_PRIMAL_REVERSIONS
-    {FORM_CHANGE_BATTLE_PRIMAL_REVERSION,   SPECIES_GROUDON_PRIMAL, ITEM_RED_ORB},
-#endif
-    {FORM_CHANGE_TERMINATOR},
-};
 #endif //P_FAMILY_GROUDON
 
 #if P_FAMILY_RAYQUAZA
-static const struct FormChange sLKanakoFormChangeTable[] = {
-#if P_MEGA_EVOLUTIONS
-    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE,    SPECIES_RAYQUAZA_MEGA, MOVE_DRAGON_ASCENT},
-#endif
-    {FORM_CHANGE_TERMINATOR},
-};
 #endif //P_FAMILY_RAYQUAZA
 
 #if P_FAMILY_DEOXYS
