@@ -5,7 +5,7 @@ static const u16 terrainData[][2] =
 {
     { MOVE_ELECTRIC_TERRAIN, TYPE_ELECTRIC, },
     { MOVE_PSYCHIC_TERRAIN,  TYPE_PSYCHIC, },
-    { MOVE_GRASSY_TERRAIN,   TYPE_GRASS, },
+    { MOVE_GRASSY_TERRAIN,   TYPE_NATURE, },
     { MOVE_MISTY_TERRAIN,    TYPE_FAIRY, },
 };
 

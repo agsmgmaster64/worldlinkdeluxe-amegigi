@@ -37,7 +37,7 @@ SINGLE_BATTLE_TEST("Tera Blast has correct effectiveness for every Tera Type")
     PARAMETRIZE { species = SPECIES_GASTLY;    type = TYPE_NORMAL;   }
     PARAMETRIZE { species = SPECIES_GASTLY;    type = TYPE_GHOST;    }
     PARAMETRIZE { species = SPECIES_GASTLY;    type = TYPE_PSYCHIC;  }
-    PARAMETRIZE { species = SPECIES_TOTODILE;  type = TYPE_GRASS;    }
+    PARAMETRIZE { species = SPECIES_TOTODILE;  type = TYPE_NATURE;    }
     PARAMETRIZE { species = SPECIES_TOTODILE;  type = TYPE_ELECTRIC; }
     PARAMETRIZE { species = SPECIES_DRATINI;   type = TYPE_DRAGON;   }
     PARAMETRIZE { species = SPECIES_DRATINI;   type = TYPE_FAIRY;    }
@@ -46,8 +46,8 @@ SINGLE_BATTLE_TEST("Tera Blast has correct effectiveness for every Tera Type")
     PARAMETRIZE { species = SPECIES_ABRA;      type = TYPE_DARK;     }
 
     GIVEN {
-        ASSUME(GetSpeciesType(SPECIES_CHIKORITA, 0) == TYPE_GRASS);
-        ASSUME(GetSpeciesType(SPECIES_CHIKORITA, 1) == TYPE_GRASS);
+        ASSUME(GetSpeciesType(SPECIES_CHIKORITA, 0) == TYPE_NATURE);
+        ASSUME(GetSpeciesType(SPECIES_CHIKORITA, 1) == TYPE_NATURE);
         ASSUME(GetSpeciesType(SPECIES_CYNDAQUIL, 0) == TYPE_FIRE);
         ASSUME(GetSpeciesType(SPECIES_CYNDAQUIL, 1) == TYPE_FIRE);
         ASSUME(GetSpeciesType(SPECIES_GASTLY, 0) == TYPE_GHOST);

@@ -310,7 +310,7 @@ SINGLE_BATTLE_TEST("(Z-MOVE) Z-Nature Power transforms into different Z-Moves ba
     u32 zMove = MOVE_NONE;
     PARAMETRIZE { terrainMove = MOVE_ELECTRIC_TERRAIN;  zMove = gTypesInfo[TYPE_ELECTRIC].zMove; }
     PARAMETRIZE { terrainMove = MOVE_PSYCHIC_TERRAIN;   zMove = gTypesInfo[TYPE_PSYCHIC].zMove; }
-    PARAMETRIZE { terrainMove = MOVE_GRASSY_TERRAIN;    zMove = gTypesInfo[TYPE_GRASS].zMove; }
+    PARAMETRIZE { terrainMove = MOVE_GRASSY_TERRAIN;    zMove = gTypesInfo[TYPE_NATURE].zMove; }
     PARAMETRIZE { terrainMove = MOVE_MISTY_TERRAIN;     zMove = gTypesInfo[TYPE_FAIRY].zMove; }
     GIVEN {
         ASSUME(GetMoveType(MOVE_NATURE_POWER) == TYPE_NORMAL);

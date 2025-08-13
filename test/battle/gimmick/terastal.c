@@ -93,7 +93,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing boosts moves of the same type to 60 BP
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
         ASSUME(GetMovePower(MOVE_ABSORB) == 20);
-        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GRASS); }
+        PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_NATURE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_ABSORB, gimmick: tera); }
@@ -114,7 +114,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
         ASSUME(GetMovePower(MOVE_MEGA_DRAIN) == 40);
-        PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
+        PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_NATURE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MEGA_DRAIN, gimmick: tera); }
@@ -213,7 +213,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization changes type effectiveness", s16 dam
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_GRASS); }
+        PLAYER(SPECIES_CHIBI_YUUGI) { TeraType(TYPE_NATURE); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE, gimmick: tera); MOVE(opponent, MOVE_WATER_GUN); }
@@ -642,7 +642,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar type boosts all moves
 SINGLE_BATTLE_TEST("(TERA) Protean cannot change the type of a Terastallized Pokemon")
 {
     GIVEN {
-        PLAYER(SPECIES_GRENINJA) { Ability(ABILITY_PROTEAN); TeraType(TYPE_GRASS); }
+        PLAYER(SPECIES_GRENINJA) { Ability(ABILITY_PROTEAN); TeraType(TYPE_NATURE); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
     } WHEN {
         TURN { MOVE(player, MOVE_BUBBLE, gimmick: GIMMICK_TERA);
@@ -839,7 +839,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly")
     PARAMETRIZE { type = TYPE_MYSTERY; }
     PARAMETRIZE { type = TYPE_FIRE; }
     PARAMETRIZE { type = TYPE_WATER; }
-    PARAMETRIZE { type = TYPE_GRASS; }
+    PARAMETRIZE { type = TYPE_NATURE; }
     PARAMETRIZE { type = TYPE_ELECTRIC; }
     PARAMETRIZE { type = TYPE_PSYCHIC; }
     PARAMETRIZE { type = TYPE_ICE; }
@@ -871,7 +871,7 @@ SINGLE_BATTLE_TEST("(TERA) All type indicators function correctly - Opponent")
     PARAMETRIZE { type = TYPE_MYSTERY; }
     PARAMETRIZE { type = TYPE_FIRE; }
     PARAMETRIZE { type = TYPE_WATER; }
-    PARAMETRIZE { type = TYPE_GRASS; }
+    PARAMETRIZE { type = TYPE_NATURE; }
     PARAMETRIZE { type = TYPE_ELECTRIC; }
     PARAMETRIZE { type = TYPE_PSYCHIC; }
     PARAMETRIZE { type = TYPE_ICE; }

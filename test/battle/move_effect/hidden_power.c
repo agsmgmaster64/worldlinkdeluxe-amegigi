@@ -16,7 +16,7 @@ ASSUMPTIONS
     ASSUME(gTypesInfo[TYPE_MYSTERY].isHiddenPowerType == FALSE);
     ASSUME(gTypesInfo[TYPE_FIRE].isHiddenPowerType == TRUE);
     ASSUME(gTypesInfo[TYPE_WATER].isHiddenPowerType == TRUE);
-    ASSUME(gTypesInfo[TYPE_GRASS].isHiddenPowerType == TRUE);
+    ASSUME(gTypesInfo[TYPE_NATURE].isHiddenPowerType == TRUE);
     ASSUME(gTypesInfo[TYPE_ELECTRIC].isHiddenPowerType == TRUE);
     ASSUME(gTypesInfo[TYPE_PSYCHIC].isHiddenPowerType == TRUE);
     ASSUME(gTypesInfo[TYPE_ICE].isHiddenPowerType == TRUE);
@@ -41,14 +41,14 @@ SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
     PARAMETRIZE { type = TYPE_FIGHTING; hidden = TRUE;  foeType = TYPE_DARK;    foeSpecies = SPECIES_UMBREON;   foeItem = ITEM_CHOPLE_BERRY; hp = 31; atk = 15; def = 30; spAtk = 30; spDef = 30; speed = 30; }
     PARAMETRIZE { type = TYPE_FIGHTING; hidden = TRUE;  foeType = TYPE_DARK;    foeSpecies = SPECIES_UMBREON;   foeItem = ITEM_CHOPLE_BERRY; hp = 30; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 30; }
     PARAMETRIZE { type = TYPE_FIGHTING; hidden = TRUE;  foeType = TYPE_DARK;    foeSpecies = SPECIES_UMBREON;   foeItem = ITEM_CHOPLE_BERRY; hp = 31; atk = 31; def = 30; spAtk = 30; spDef = 30; speed = 30; }
-    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk =  2; def = 31; spAtk = 30; spDef = 30; speed = 30; }
-    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 15; def = 31; spAtk = 30; spDef = 30; speed = 30; }
-    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 30; }
-    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 31; def = 31; spAtk = 30; spDef = 30; speed = 30; }
-    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 30; atk =  2; def = 31; spAtk = 30; spDef = 30; speed = 31; }
-    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 31; atk = 15; def = 30; spAtk = 30; spDef = 30; speed = 31; }
-    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 30; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 31; }
-    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 31; atk = 31; def = 30; spAtk = 30; spDef = 30; speed = 31; }
+    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk =  2; def = 31; spAtk = 30; spDef = 30; speed = 30; }
+    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 15; def = 31; spAtk = 30; spDef = 30; speed = 30; }
+    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 30; }
+    PARAMETRIZE { type = TYPE_FLYING;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_COBA_BERRY;   hp = 31; atk = 31; def = 31; spAtk = 30; spDef = 30; speed = 30; }
+    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 30; atk =  2; def = 31; spAtk = 30; spDef = 30; speed = 31; }
+    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 31; atk = 15; def = 30; spAtk = 30; spDef = 30; speed = 31; }
+    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 30; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 31; }
+    PARAMETRIZE { type = TYPE_POISON;   hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_KEBIA_BERRY;  hp = 31; atk = 31; def = 30; spAtk = 30; spDef = 30; speed = 31; }
     PARAMETRIZE { type = TYPE_GROUND;   hidden = TRUE;  foeType = TYPE_STEEL;   foeSpecies = SPECIES_NORMAL_KEIKI;     foeItem = ITEM_SHUCA_BERRY;  hp = 31; atk =  2; def = 31; spAtk = 30; spDef = 30; speed = 31; }
     PARAMETRIZE { type = TYPE_GROUND;   hidden = TRUE;  foeType = TYPE_STEEL;   foeSpecies = SPECIES_NORMAL_KEIKI;     foeItem = ITEM_SHUCA_BERRY;  hp = 31; atk = 15; def = 31; spAtk = 30; spDef = 30; speed = 31; }
     PARAMETRIZE { type = TYPE_GROUND;   hidden = TRUE;  foeType = TYPE_STEEL;   foeSpecies = SPECIES_NORMAL_KEIKI;     foeItem = ITEM_SHUCA_BERRY;  hp = 31; atk = 22; def = 31; spAtk = 30; spDef = 30; speed = 31; }
@@ -69,18 +69,18 @@ SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
     PARAMETRIZE { type = TYPE_STEEL;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_BABIRI_BERRY; hp = 31; atk = 15; def = 31; spAtk = 31; spDef = 30; speed = 31; }
     PARAMETRIZE { type = TYPE_STEEL;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_BABIRI_BERRY; hp = 31; atk = 22; def = 30; spAtk = 30; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_STEEL;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_BABIRI_BERRY; hp = 31; atk = 31; def = 31; spAtk = 31; spDef = 30; speed = 31; }
-    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk =  2; def = 31; spAtk = 30; spDef = 31; speed = 30; }
-    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 15; def = 30; spAtk = 30; spDef = 31; speed = 30; }
-    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 22; def = 31; spAtk = 30; spDef = 31; speed = 30; }
-    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 31; def = 30; spAtk = 30; spDef = 31; speed = 30; }
+    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk =  2; def = 31; spAtk = 30; spDef = 31; speed = 30; }
+    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 15; def = 30; spAtk = 30; spDef = 31; speed = 30; }
+    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 22; def = 31; spAtk = 30; spDef = 31; speed = 30; }
+    PARAMETRIZE { type = TYPE_FIRE;     hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_OCCA_BERRY;   hp = 31; atk = 31; def = 30; spAtk = 30; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_WATER;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_PASSHO_BERRY; hp = 31; atk =  2; def = 30; spAtk = 30; spDef = 31; speed = 31; }
     PARAMETRIZE { type = TYPE_WATER;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_PASSHO_BERRY; hp = 31; atk = 15; def = 31; spAtk = 30; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_WATER;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_PASSHO_BERRY; hp = 31; atk = 22; def = 30; spAtk = 30; spDef = 31; speed = 31; }
     PARAMETRIZE { type = TYPE_WATER;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_PASSHO_BERRY; hp = 31; atk = 31; def = 31; spAtk = 30; spDef = 31; speed = 30; }
-    PARAMETRIZE { type = TYPE_GRASS;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk =  2; def = 31; spAtk = 30; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_GRASS;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 15; def = 31; spAtk = 30; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_GRASS;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 22; def = 31; spAtk = 30; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_GRASS;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 31; def = 31; spAtk = 30; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_NATURE;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk =  2; def = 31; spAtk = 30; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_NATURE;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 15; def = 31; spAtk = 30; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_NATURE;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 22; def = 31; spAtk = 30; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_NATURE;    hidden = TRUE;  foeType = TYPE_ROCK;    foeSpecies = SPECIES_NOSEPASS;  foeItem = ITEM_RINDO_BERRY;  hp = 30; atk = 31; def = 31; spAtk = 30; spDef = 31; speed = 31; }
     PARAMETRIZE { type = TYPE_ELECTRIC; hidden = TRUE;  foeType = TYPE_WATER;   foeSpecies = SPECIES_SQUIRTLE;  foeItem = ITEM_WACAN_BERRY;  hp = 31; atk =  2; def = 30; spAtk = 31; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_ELECTRIC; hidden = TRUE;  foeType = TYPE_WATER;   foeSpecies = SPECIES_SQUIRTLE;  foeItem = ITEM_WACAN_BERRY;  hp = 30; atk = 15; def = 30; spAtk = 31; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_ELECTRIC; hidden = TRUE;  foeType = TYPE_WATER;   foeSpecies = SPECIES_SQUIRTLE;  foeItem = ITEM_WACAN_BERRY;  hp = 31; atk = 22; def = 30; spAtk = 31; spDef = 31; speed = 30; }
@@ -89,10 +89,10 @@ SINGLE_BATTLE_TEST("Hidden Power's type is determined by IVs")
     PARAMETRIZE { type = TYPE_PSYCHIC;  hidden = TRUE;  foeType = TYPE_POISON;  foeSpecies = SPECIES_KOFFING;   foeItem = ITEM_PAYAPA_BERRY; hp = 30; atk = 15; def = 31; spAtk = 31; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_PSYCHIC;  hidden = TRUE;  foeType = TYPE_POISON;  foeSpecies = SPECIES_KOFFING;   foeItem = ITEM_PAYAPA_BERRY; hp = 31; atk = 22; def = 31; spAtk = 31; spDef = 31; speed = 30; }
     PARAMETRIZE { type = TYPE_PSYCHIC;  hidden = TRUE;  foeType = TYPE_POISON;  foeSpecies = SPECIES_KOFFING;   foeItem = ITEM_PAYAPA_BERRY; hp = 30; atk = 31; def = 31; spAtk = 31; spDef = 31; speed = 30; }
-    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk =  2; def = 30; spAtk = 31; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 15; def = 30; spAtk = 31; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 22; def = 30; spAtk = 31; spDef = 31; speed = 31; }
-    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_GRASS;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 31; def = 30; spAtk = 31; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk =  2; def = 30; spAtk = 31; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 15; def = 30; spAtk = 31; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 22; def = 30; spAtk = 31; spDef = 31; speed = 31; }
+    PARAMETRIZE { type = TYPE_ICE;      hidden = TRUE;  foeType = TYPE_NATURE;   foeSpecies = SPECIES_TANGELA;   foeItem = ITEM_YACHE_BERRY;  hp = 30; atk = 31; def = 30; spAtk = 31; spDef = 31; speed = 31; }
     PARAMETRIZE { type = TYPE_MYSTERY;  hidden = FALSE; }
     PARAMETRIZE { type = TYPE_DRAGON;   hidden = TRUE;  foeType = TYPE_DRAGON;  foeSpecies = SPECIES_DRATINI;   foeItem = ITEM_HABAN_BERRY;  hp = 30; atk =  2; def = 31; spAtk = 31; spDef = 31; speed = 31; }
     PARAMETRIZE { type = TYPE_DRAGON;   hidden = TRUE;  foeType = TYPE_DRAGON;  foeSpecies = SPECIES_DRATINI;   foeItem = ITEM_HABAN_BERRY;  hp = 30; atk = 15; def = 31; spAtk = 31; spDef = 31; speed = 31; }
