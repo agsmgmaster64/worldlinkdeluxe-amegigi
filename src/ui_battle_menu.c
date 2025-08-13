@@ -672,59 +672,59 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_LEECHSEED:
-                if (gStatuses3[j] & STATUS3_LEECHSEED)
+                if (gBattleMons[j].volatiles.leechSeed)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_PERISH_SONG:
-                if (gStatuses3[j] & STATUS3_PERISH_SONG)
+                if (gBattleMons[j].volatiles.perishSong)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_MINIMIZED:
-                if (gStatuses3[j] & STATUS3_MINIMIZED)
+                if (gBattleMons[j].volatiles.minimize)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_CHARGED_UP:
-                if (gStatuses3[j] & STATUS3_CHARGED_UP)
+                if (gBattleMons[j].volatiles.charge)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_ROOTED:
-                if (gStatuses3[j] & STATUS3_ROOTED)
+                if (gBattleMons[j].volatiles.root)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_YAWN:
-                if(gStatuses3[j] & STATUS3_YAWN)
+                if(gBattleMons[j].volatiles.yawn)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_GRUDGE:
-                if(gStatuses3[j] & STATUS3_GRUDGE)
+                if(gBattleMons[j].volatiles.grudge)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_GASTRO_ACID:
-                if(gStatuses3[j] & STATUS3_GASTRO_ACID)
+                if(gBattleMons[j].volatiles.gastroAcid)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_EMBARGO:
-                if(gStatuses3[j] & STATUS3_EMBARGO)
+                if(gBattleMons[j].volatiles.embargo)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SMACKED_DOWN:
-                if(gStatuses3[j] & STATUS3_SMACKED_DOWN)
+                if(gBattleMons[j].volatiles.smackDown)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_MIRACLE_EYED:
-                if(gStatuses3[j] & STATUS3_MIRACLE_EYED)
+                if(gBattleMons[j].volatiles.miracleEye)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_HEAL_BLOCKED:
-                if(gStatuses3[j] & STATUS3_HEAL_BLOCK)
+                if(gBattleMons[j].volatiles.healBlock)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_AQUA_RING:
-                if(gStatuses3[j] & STATUS3_AQUA_RING)
+                if(gBattleMons[j].volatiles.aquaRing)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_MAGNET_RISE:
-                if(gStatuses3[j] & STATUS3_MAGNET_RISE)
+                if(gBattleMons[j].volatiles.magnetRise)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_SEMI_INVULNERABLE:
@@ -740,7 +740,7 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                     break;
             case STATUS_INFO_COMMANDED:
-                if (gStatuses3[j] & STATUS3_COMMANDER)
+                if (gBattleMons[j].volatiles.semiInvulnerable == STATE_COMMANDER)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_WRAPPED:
@@ -2236,7 +2236,7 @@ static void PrintStatusTab(void)
                 printedInfo = TRUE;
             break;
             case STATUS_INFO_LEECHSEED:{
-                u8 seedUser = gStatuses3[sMenuDataPtr->battlerId] & STATUS3_LEECHSEED_BATTLER;
+                u8 seedUser = gBattleMons[sMenuDataPtr->battlerId].volatiles.leechSeed - 1;
                 u16 species  = gBattleMons[seedUser].species;
 
                 StringCopy(gStringVar1, GetSpeciesName(species));
@@ -2306,7 +2306,7 @@ static void PrintStatusTab(void)
                 //Turns Left
                 StringCopy(gStringVar1, sText_Title_Field_Turns_Left);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 2), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
-                turnsLeft = 1 + (gStatuses3[sMenuDataPtr->battlerId] & STATUS3_YAWN_TURN(0));
+                turnsLeft = 1 + (gBattleMons[sMenuDataPtr->battlerId].volatiles.yawn);
                 ConvertIntToDecimalStringN(gStringVar1, turnsLeft, STR_CONV_MODE_LEFT_ALIGN, 4);
                 AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 3), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
 
