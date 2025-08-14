@@ -700,6 +700,22 @@ Cry_Wakasagihime::
 	.incbin "sound/direct_sound_samples/cries/wakasagihime.bin"
 
 	.align 2
+Cry_Benben::
+	.incbin "sound/direct_sound_samples/cries/benben.bin"
+
+	.align 2
+Cry_Yatsuhashi::
+	.incbin "sound/direct_sound_samples/cries/yatsuhashi.bin"
+
+	.align 2
+Cry_Raiko::
+	.incbin "sound/direct_sound_samples/cries/raiko.bin"
+
+	.align 2
+Cry_Seija::
+	.incbin "sound/direct_sound_samples/cries/seija.bin"
+
+	.align 2
 Cry_Shinmyoumaru::
 	.incbin "sound/direct_sound_samples/cries/shinmyoumaru.bin"
 
@@ -820,6 +836,114 @@ Cry_Kosuzu::
 	.incbin "sound/direct_sound_samples/cries/kosuzu.bin"
 
 	.align 2
+Cry_Hakurei::
+	.incbin "sound/direct_sound_samples/cries/hakurei.bin"
+
+	.align 2
+Cry_Kirisame::
+	.incbin "sound/direct_sound_samples/cries/kirisame.bin"
+
+	.align 2
+Cry_Genji::
+	.incbin "sound/direct_sound_samples/cries/genji.bin"
+
+	.align 2
+Cry_Rika::
+	.incbin "sound/direct_sound_samples/cries/rika.bin"
+
+	.align 2
+Cry_Meira::
+	.incbin "sound/direct_sound_samples/cries/meira.bin"
+
+	.align 2
+Cry_Ellen::
+	.incbin "sound/direct_sound_samples/cries/ellen.bin"
+
+	.align 2
+Cry_Kotohime::
+	.incbin "sound/direct_sound_samples/cries/kotohime.bin"
+
+	.align 2
+Cry_Kana::
+	.incbin "sound/direct_sound_samples/cries/kana.bin"
+
+	.align 2
+Cry_Rikako::
+	.incbin "sound/direct_sound_samples/cries/rikako.bin"
+
+	.align 2
+Cry_Chiyuri::
+	.incbin "sound/direct_sound_samples/cries/chiyuri.bin"
+
+	.align 2
+Cry_Yumemi::
+	.incbin "sound/direct_sound_samples/cries/yumemi.bin"
+
+	.align 2
+Cry_Kedama::
+	.incbin "sound/direct_sound_samples/cries/kedama.bin"
+
+	.align 2
+Cry_Ruukoto::
+	.incbin "sound/direct_sound_samples/cries/ruukoto.bin"
+
+	.align 2
+Cry_Mimi_Chan::
+	.incbin "sound/direct_sound_samples/cries/mimi_chan.bin"
+
+	.align 2
+Cry_Orange::
+	.incbin "sound/direct_sound_samples/cries/orange.bin"
+
+	.align 2
+Cry_Kurumi::
+	.incbin "sound/direct_sound_samples/cries/kurumi.bin"
+
+	.align 2
+Cry_Elly::
+	.incbin "sound/direct_sound_samples/cries/elly.bin"
+
+	.align 2
+Cry_Kazami::
+	.incbin "sound/direct_sound_samples/cries/kazami.bin"
+
+	.align 2
+Cry_Mugetsu::
+	.incbin "sound/direct_sound_samples/cries/mugetsu.bin"
+
+	.align 2
+Cry_Gengetsu::
+	.incbin "sound/direct_sound_samples/cries/gengetsu.bin"
+
+	.align 2
+Cry_Sara::
+	.incbin "sound/direct_sound_samples/cries/sara.bin"
+
+	.align 2
+Cry_Louise::
+	.incbin "sound/direct_sound_samples/cries/louise.bin"
+
+	.align 2
+Cry_Margatroid::
+	.incbin "sound/direct_sound_samples/cries/margatroid.bin"
+
+	.align 2
+Cry_Yuki::
+	.incbin "sound/direct_sound_samples/cries/yuki.bin"
+
+	.align 2
+Cry_Mai::
+	.incbin "sound/direct_sound_samples/cries/mai.bin"
+
+	.align 2
+Cry_Yumeko::
+	.incbin "sound/direct_sound_samples/cries/yumeko.bin"
+
+	.align 2
+Cry_Shinki::
+	.incbin "sound/direct_sound_samples/cries/shinki.bin"
+
+	.align 2
 Cry_Akyuu::
 	.incbin "sound/direct_sound_samples/cries_add/akyuu.bin"
 
@@ -832,8 +956,56 @@ Cry_Tenma::
 	.incbin "sound/direct_sound_samples/cries/tenma.bin"
 
 	.align 2
+Cry_Youki::
+	.incbin "sound/direct_sound_samples/cries/youki.bin"
+
+	.align 2
+Cry_Tori::
+	.incbin "sound/direct_sound_samples/cries/tori.bin"
+
+	.align 2
+Cry_Namazu::
+	.incbin "sound/direct_sound_samples/cries/namazu.bin"
+
+	.align 2
+Cry_Tensoku::
+	.incbin "sound/direct_sound_samples/cries/tensoku.bin"
+
+	.align 2
+Cry_Konngara::
+	.incbin "sound/direct_sound_samples/cries/konngara.bin"
+
+	.align 2
+Cry_Kikuri::
+	.incbin "sound/direct_sound_samples/cries/kikuri.bin"
+
+	.align 2
+Cry_Yuugenmagan::
+	.incbin "sound/direct_sound_samples/cries/yuugenmagan.bin"
+
+	.align 2
+Cry_Sariel::
+	.incbin "sound/direct_sound_samples/cries/sariel.bin"
+
+	.align 2
+Cry_Shingyoku::
+	.incbin "sound/direct_sound_samples/cries/shingyoku.bin"
+
+	.align 2
+Cry_Elis::
+	.incbin "sound/direct_sound_samples/cries/elis.bin"
+
+	.align 2
+Cry_Mima::
+	.incbin "sound/direct_sound_samples/cries/mima.bin"
+
+	.align 2
 Cry_Sendai::
 	.incbin "sound/direct_sound_samples/cries/sendai.bin"
+
+	.align 2
+Cry_Joshi_Kosei_Sanae::
+	.incbin "sound/direct_sound_samples/cries/joshi_kosei_sanae.bin"
 
 	.align 2
 Cry_Dark_Alice::

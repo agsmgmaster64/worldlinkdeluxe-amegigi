@@ -79,6 +79,10 @@ gCryTable::
 	cry Cry_Sekibanki
 	cry Cry_Kagerou
 	cry Cry_Wakasagihime
+	cry Cry_Benben
+	cry Cry_Yatsuhashi
+	cry Cry_Raiko
+	cry Cry_Seija
 	cry Cry_Shinmyoumaru
 	cry Cry_Seiran
 	cry Cry_Ringo
@@ -109,10 +113,49 @@ gCryTable::
 	cry Cry_Toyohime
 	cry Cry_Tokiko
 	cry Cry_Kosuzu
+	cry Cry_Hakurei
+	cry Cry_Kirisame
+	cry Cry_Genji
+	cry Cry_Rika
+	cry Cry_Meira
+	cry Cry_Ellen
+	cry Cry_Kotohime
+	cry Cry_Kana
+	cry Cry_Rikako
+	cry Cry_Chiyuri
+	cry Cry_Yumemi
+	cry Cry_Kedama
+	cry Cry_Ruukoto
+	cry Cry_Mimi_Chan
+	cry Cry_Orange
+	cry Cry_Kurumi
+	cry Cry_Elly
+	cry Cry_Kazami
+	cry Cry_Mugetsu
+	cry Cry_Gengetsu
+	cry Cry_Sara
+	cry Cry_Louise
+	cry Cry_Margatroid
+	cry Cry_Yuki
+	cry Cry_Mai
+	cry Cry_Yumeko
+	cry Cry_Shinki
 	cry Cry_Akyuu
 	cry Cry_Rinnosuke
+	cry Cry_Youki
+	cry Cry_Tori
+	cry Cry_Namazu
+	cry Cry_Tensoku
+	cry Cry_Konngara
+	cry Cry_Kikuri
+	cry Cry_Yuugenmagan
+	cry Cry_Sariel
+	cry Cry_Shingyoku
+	cry Cry_Elis
+	cry Cry_Mima
 	cry Cry_Tenma
 	cry Cry_Sendai
+	cry Cry_Joshi_Kosei_Sanae
 	cry Cry_Dark_Alice
 	cry Cry_Aki_Sisters
 	cry Cry_Advent_Cirno
@@ -215,6 +258,10 @@ gCryTable_Reverse::
 	cry_reverse Cry_Sekibanki
 	cry_reverse Cry_Kagerou
 	cry_reverse Cry_Wakasagihime
+	cry_reverse Cry_Benben
+	cry_reverse Cry_Yatsuhashi
+	cry_reverse Cry_Raiko
+	cry_reverse Cry_Seija
 	cry_reverse Cry_Shinmyoumaru
 	cry_reverse Cry_Seiran
 	cry_reverse Cry_Ringo
@@ -245,10 +292,49 @@ gCryTable_Reverse::
 	cry_reverse Cry_Toyohime
 	cry_reverse Cry_Tokiko
 	cry_reverse Cry_Kosuzu
+	cry_reverse Cry_Hakurei
+	cry_reverse Cry_Kirisame
+	cry_reverse Cry_Genji
+	cry_reverse Cry_Rika
+	cry_reverse Cry_Meira
+	cry_reverse Cry_Ellen
+	cry_reverse Cry_Kotohime
+	cry_reverse Cry_Kana
+	cry_reverse Cry_Rikako
+	cry_reverse Cry_Chiyuri
+	cry_reverse Cry_Yumemi
+	cry_reverse Cry_Kedama
+	cry_reverse Cry_Ruukoto
+	cry_reverse Cry_Mimi_Chan
+	cry_reverse Cry_Orange
+	cry_reverse Cry_Kurumi
+	cry_reverse Cry_Elly
+	cry_reverse Cry_Kazami
+	cry_reverse Cry_Mugetsu
+	cry_reverse Cry_Gengetsu
+	cry_reverse Cry_Sara
+	cry_reverse Cry_Louise
+	cry_reverse Cry_Margatroid
+	cry_reverse Cry_Yuki
+	cry_reverse Cry_Mai
+	cry_reverse Cry_Yumeko
+	cry_reverse Cry_Shinki
 	cry_reverse Cry_Akyuu
 	cry_reverse Cry_Rinnosuke
+	cry_reverse Cry_Youki
+	cry_reverse Cry_Tori
+	cry_reverse Cry_Namazu
+	cry_reverse Cry_Tensoku
+	cry_reverse Cry_Konngara
+	cry_reverse Cry_Kikuri
+	cry_reverse Cry_Yuugenmagan
+	cry_reverse Cry_Sariel
+	cry_reverse Cry_Shingyoku
+	cry_reverse Cry_Elis
+	cry_reverse Cry_Mima
 	cry_reverse Cry_Tenma
 	cry_reverse Cry_Sendai
+	cry_reverse Cry_Joshi_Kosei_Sanae
 	cry_reverse Cry_Dark_Alice
 	cry_reverse Cry_Aki_Sisters
 	cry_reverse Cry_Advent_Cirno
