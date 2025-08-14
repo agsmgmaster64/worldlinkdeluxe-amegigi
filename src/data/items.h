@@ -290,6 +290,10 @@ const struct Item gItemsInfo[] =
             "A rather cheap\n"
             "Orb with a much\n"
             "lower catch rate."),
+        .descriptionLong = COMPOUND_STRING(
+            "A rather cheap Orb that has\n"
+            "a lower Puppet catch rate than\n"
+            "a standard Toho Orb."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -693,11 +697,11 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
             "a Puppet by\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "60 points."),
-        #else
             "50 points."),
-        #endif
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type wound medicine.\n"
+            "It restores the HP of one Puppet\n"
+            "by 50 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -717,11 +721,11 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Restores the HP of\n"
             "a Puppet by\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "120 points."),
-        #else
             "200 points."),
-        #endif
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type wound medicine.\n"
+            "It restores the HP of one Puppet\n"
+            "by 200 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -741,6 +745,10 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Fully restores the\n"
             "HP of a Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type wound medicine.\n"
+            "It fully restores the HP of one\n"
+            "Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -761,6 +769,10 @@ const struct Item gItemsInfo[] =
             "Fully restores the\n"
             "HP and status of a\n"
             "Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A medicine that fully restores the\n"
+            "HP and heals any status problems\n"
+            "of one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -780,6 +792,10 @@ const struct Item gItemsInfo[] =
             "Revives a fainted\n"
             "Puppet with half\n"
             "its HP."),
+        .descriptionLong = COMPOUND_STRING(
+            "A medicine that revives a fainted\n"
+            "Puppet, restoring HP by half the\n"
+            "maximum amount."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -796,6 +812,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Max Revive"),
         .price = 4000,
         .description = sMaxReviveDesc,
+        .descriptionLong = COMPOUND_STRING(
+            "A medicine that revives a fainted\n"
+            "Puppet, restoring HP fully."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -815,6 +834,10 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A mineral water\n"
             "that restores HP\n"
+            "by 50 points."),
+        .descriptionLong = COMPOUND_STRING(
+            "Water with a high mineral content.\n"
+            "It restores the HP of one Puppet\n"
             "by 50 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
@@ -836,6 +859,10 @@ const struct Item gItemsInfo[] =
             "A fizzy soda drink\n"
             "that restores HP\n"
             "by 60 points."),
+        .descriptionLong = COMPOUND_STRING(
+            "A fizzy soda drink.\n"
+            "It restores the HP of one Puppet\n"
+            "by 60 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -855,6 +882,10 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A very sweet drink\n"
             "that restores HP\n"
+            "by 80 points."),
+        .descriptionLong = COMPOUND_STRING(
+            "A very sweet drink.\n"
+            "It restores the HP of one Puppet\n"
             "by 80 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
@@ -877,6 +908,10 @@ const struct Item gItemsInfo[] =
             "A nutritious milk\n"
             "that restores HP\n"
             "by 100 points."),
+        .descriptionLong = COMPOUND_STRING(
+            "Highly nutritious milk.\n"
+            "It restores the HP of one Puppet\n"
+            "by 100 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -896,11 +931,11 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A bitter powder\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 60 points."),
-        #else
             "by 50 points."),
-        #endif
+        .descriptionLong = COMPOUND_STRING(
+            "A very bitter medicine powder.\n"
+            "It restores the HP of one Puppet\n"
+            "by 50 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -919,11 +954,11 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "A bitter root\n"
             "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 120 points."),
-        #else
             "by 200 points."),
-        #endif
+        .descriptionLong = COMPOUND_STRING(
+            "A very bitter root.\n"
+            "It restores the HP of one Puppet\n"
+            "by 200 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -944,6 +979,10 @@ const struct Item gItemsInfo[] =
             "A bitter powder\n"
             "that heals all\n"
             "status problems."),
+        .descriptionLong = COMPOUND_STRING(
+            "A very bitter medicine powder.\n"
+            "It heals all the status problems of\n"
+            "one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -963,6 +1002,10 @@ const struct Item gItemsInfo[] =
             "A very bitter herb\n"
             "that revives a\n"
             "fainted Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A very bitter medicinal herb.\n"
+            "It revives a fainted Puppet,\n"
+            "restoring HP fully."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -981,6 +1024,10 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Heals a poisoned\n"
             "Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It heals one Puppet from a\n"
+            "poisoning."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -999,6 +1046,10 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Heals a paralyzed\n"
             "Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It heals one Puppet from\n"
+            "paralysis."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1017,6 +1068,9 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Heals Puppets\n"
             "of a burn."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It heals one Puppet of a burn."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1035,6 +1089,9 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Defrosts a frozen\n"
             "Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It defrosts a frozen Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1053,6 +1110,9 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Awakens a sleeping\n"
             "Puppet."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It awakens a sleeping Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1069,6 +1129,10 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Full Heal"),
         .price = (I_PRICE >= GEN_7) ? 400 : 600,
         .description = sFullHealDesc,
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type medicine.\n"
+            "It heals all the status problems of\n"
+            "one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STATUS_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1089,6 +1153,9 @@ const struct Item gItemsInfo[] =
             "Restores the PP\n"
             "of a selected move\n"
             "by 10."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores a selected move's PP by\n"
+            "10 points for one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_PP_RECOVERY,
         .type = ITEM_USE_PARTY_MENU_MOVES,
@@ -1109,6 +1176,9 @@ const struct Item gItemsInfo[] =
             "Fully restores the\n"
             "PP of a selected\n"
             "move."),
+        .descriptionLong = COMPOUND_STRING(
+            "Fully restores a selected move's PP\n"
+            "for one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_PP_RECOVERY,
         .type = ITEM_USE_PARTY_MENU_MOVES,
@@ -1128,6 +1198,9 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Restores the PP\n"
             "of all moves by 10."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores the PP of all moves for\n"
+            "one Puppet by 10 points each."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_PP_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -1148,6 +1221,9 @@ const struct Item gItemsInfo[] =
             "Fully restores the\n"
             "PP of a Puppet's\n"
             "moves."),
+        .descriptionLong = COMPOUND_STRING(
+            "Fully restores the PP of all moves\n"
+            "for one Puppet."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_PP_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
@@ -2305,6 +2381,9 @@ const struct Item gItemsInfo[] =
             "Repels weak wild\n"
             "Puppets for 100\n"
             "steps."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents weak wild Puppets from\n"
+            "appearing for 100 steps."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
@@ -2323,6 +2402,9 @@ const struct Item gItemsInfo[] =
             "Repels weak wild\n"
             "Puppets for 200\n"
             "steps."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents weak wild Puppets from\n"
+            "appearing for 200 steps."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
@@ -2341,6 +2423,9 @@ const struct Item gItemsInfo[] =
             "Repels weak wild\n"
             "Puppets for 250\n"
             "steps."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents weak wild Puppets from\n"
+            "appearing for 250 steps."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
