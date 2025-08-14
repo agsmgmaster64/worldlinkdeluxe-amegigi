@@ -1508,6 +1508,8 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].description;
         default:
+            if (GetItemLongDescription(sMartInfo.itemList[id]) != NULL)
+                return GetItemLongDescription(sMartInfo.itemList[id]);
             return GetItemDescription(sMartInfo.itemList[id]);
         // custom
         case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
@@ -1798,7 +1800,7 @@ static void UpdateItemData(void)
                 if (GetItemPocket(item) == POCKET_TM_HM && item != ITEM_NONE)
                 {
                     const u8 *move = GetMoveName(ItemIdToBattleMoveId(item));
-                    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, GetItemDescription(sMartInfo.itemList[i]), 0);
+                    FormatTextByWidth(gStringVar2, 80, FONT_SMALL, desc, 0);
                     desc = gStringVar2;
                     BuyMenuPrint(WIN_MULTI, move, GetStringRightAlignXOffset(FONT_SMALL, move, 80), 0, TEXT_SKIP_DRAW, COLORID_NORMAL, FALSE);
                 }

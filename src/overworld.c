@@ -3701,7 +3701,12 @@ static u8 ReformatItemDescription(u16 item, u8 *dest)
     u8 count = 0;
     u8 numLines = 1;
     u8 maxChars = 32;
-    u8 *desc = (u8 *)GetItemDescription(item);
+    u8 *desc;
+
+    if (GetItemLongDescription(item) != NULL)
+        desc = (u8 *)GetItemLongDescription(item);
+    else
+        desc = (u8 *)GetItemDescription(item);
 
     while (*desc != EOS)
     {
@@ -3753,6 +3758,7 @@ void ScriptShowItemDescription(struct ScriptContext *ctx)
     struct WindowTemplate template;
     u16 item = gSpecialVar_0x8006;
     u8 textY;
+    s16 numLines, windowHeight;
     u8 *dst;
     bool8 handleFlash = FALSE;
 
@@ -3770,18 +3776,31 @@ void ScriptShowItemDescription(struct ScriptContext *ctx)
         return; //no box if item obtained previously
     }
 
-    SetWindowTemplateFields(&template, 0, 1, 1, 28, 3, 15, 8);
+    numLines = ReformatItemDescription(item, dst);
+
+	if (numLines == 1)
+	{
+		textY = 4;
+		windowHeight = 3;
+	}
+	else if (numLines >= 3)
+	{
+		textY = 0;
+		windowHeight = 5;
+	}
+	else
+	{
+		textY = 0;
+		windowHeight = 4;
+	}
+
+    SetWindowTemplateFields(&template, 0, 1, 1, 28, windowHeight, 15, 8);
     sHeaderBoxWindowId = AddWindow(&template);
     FillWindowPixelBuffer(sHeaderBoxWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeaderBoxWindowId);
     CopyWindowToVram(sHeaderBoxWindowId, 3);
     SetStandardWindowBorderStyle(sHeaderBoxWindowId, FALSE);
     DrawStdFrameWithCustomTileAndPalette(sHeaderBoxWindowId, FALSE, 0x214, 14);
-
-    if (ReformatItemDescription(item, dst) == 1)
-        textY = 4;
-    else
-        textY = 0;
 
     ShowItemIconSprite(item, TRUE, handleFlash);
     AddTextPrinterParameterized(sHeaderBoxWindowId, 0, dst, ITEM_ICON_X + 2, textY, 0, NULL);

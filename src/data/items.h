@@ -245,9 +245,13 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Master Orb"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "The best Ball that\n"
+            "The best Orb that\n"
             "catches a Puppet\n"
             "without fail."),
+        .descriptionLong = COMPOUND_STRING(
+            "The best Orb with the ultimate\n"
+            "performance. It will catch any wild\n"
+            "Puppet without fail."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -265,6 +269,10 @@ const struct Item gItemsInfo[] =
             "A rare Orb made\n"
             "in commemoration\n"
             "of some event."),
+        .descriptionLong = COMPOUND_STRING(
+            "A rare Orb that has been\n"
+            "specially made to commemorate an\n"
+            "event of some sort."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
@@ -662,6 +670,10 @@ const struct Item gItemsInfo[] =
             "Restores the HP of\n"
             "a Puppet by\n"
             "20 points."),
+        .descriptionLong = COMPOUND_STRING(
+            "A spray-type wound medicine.\n"
+            "It restores the HP of one Puppet\n"
+            "by 20 points."),
         .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
