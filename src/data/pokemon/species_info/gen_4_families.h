@@ -642,7 +642,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .sourceGame = SOURCE_SOEW,
         .speciesName = _("Garchomp"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_GARCHOMP,
+        .natDexNum = NATIONAL_DEX_CHIBI_KIKURI,
         .categoryName = _("Mach"),
         .height = 19,
         .weight = 950,
@@ -716,7 +716,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .sourceGame = SOURCE_SOEW,
         .speciesName = _("Lucario"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_LUCARIO,
+        .natDexNum = NATIONAL_DEX_CHIBI_YUUGENMAGAN,
         .categoryName = _("Aura"),
         .height = 13,
         .weight = 575,
@@ -791,7 +791,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .sourceGame = SOURCE_POFV,
         .speciesName = _("Abomasnow"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_ABOMASNOW,
+        .natDexNum = NATIONAL_DEX_PLACEHOLD_ELIS,
         .categoryName = _("Frost Tree"),
         .height = 27,
         .weight = 1850,
@@ -842,7 +842,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_SNOVER
 
 #if P_FAMILY_ROTOM
-    [SPECIES_ROTOM] =
+    [SPECIES_PLACEHOLD_MITORI] =
     {
         .baseHP        = 50,
         .baseAttack    = 50,
@@ -1311,7 +1311,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_ROTOM
 
 #if P_FAMILY_UXIE
-    [SPECIES_UXIE] =
+    [SPECIES_CHIBI_SASHA] =
     {
         .baseHP        = 75,
         .baseAttack    = 75,
@@ -1390,7 +1390,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_UXIE
 
 #if P_FAMILY_MESPRIT
-    [SPECIES_MESPRIT] =
+    [SPECIES_NORMAL_SASHA] =
     {
         .baseHP        = 80,
         .baseAttack    = 105,
@@ -1475,7 +1475,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #endif //P_FAMILY_MESPRIT
 
 #if P_FAMILY_AZELF
-    [SPECIES_AZELF] =
+    [SPECIES_PLACEHOLD_SASHA] =
     {
         .baseHP        = 75,
         .baseAttack    = 125,

@@ -97,7 +97,7 @@ DOUBLE_BATTLE_TEST("Aroma Veil protects the Pokémon's side from Cursed Body")
         ASSUME(MoveMakesContact(MOVE_PECK));
         PLAYER(SPECIES_AROMATISSE) { Ability(ABILITY_AROMA_VEIL); }
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_JELLICENT) { Ability(ABILITY_CURSED_BODY); }
+        OPPONENT(SPECIES_NORMAL_YACHIE) { Ability(ABILITY_CURSED_BODY); }
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_PECK, target: opponentLeft); MOVE(playerRight, MOVE_PECK, target: opponentLeft); }

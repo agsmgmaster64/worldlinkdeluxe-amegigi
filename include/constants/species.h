@@ -291,7 +291,7 @@
 #define SPECIES_TECH_SEKIBANKI                          281
 #define SPECIES_PLACEHOLD_SEKIBANKI                     282 // Placeholder
 #define SPECIES_CHIBI_KAGEROU                           283
-#define SPECIES_NORMAL_KAGEROU                           284
+#define SPECIES_NORMAL_KAGEROU                          284
 #define SPECIES_HELPER_KAGEROU                          285
 #define SPECIES_PLACEHOLD_KAGEROU                       286 // Placeholder
 #define SPECIES_CHIBI_WAKASAGIHIME                      287
@@ -462,7 +462,7 @@
 #define SPECIES_NORMAL_SARIEL                           452
 #define SPECIES_SPEED_SARIEL                            453
 #define SPECIES_CHIBI_SHINGYOKU                         454
-#define SPECIES_ORIGIN_SHINGYOKU                        455
+#define SPECIES_ORB_SHINGYOKU                        455
 #define SPECIES_MALE_SHINGYOKU                          456
 #define SPECIES_FEMALE_SHINGYOKU                        457
 #define SPECIES_CHIBI_ELIS                              458
@@ -484,12 +484,12 @@
 #define SPECIES_NORMAL_SATSUKI                          474
 #define SPECIES_PLACEHOLD_SATSUKI                       475 // Placeholder
 #define SPECIES_ISAMI                                   476
-#define SPECIES_DUSKNOIR                                477 // Mitori
-#define SPECIES_FROSLASS                                478
-#define SPECIES_ROTOM                                   479
-#define SPECIES_UXIE                                    480 // Sasha
-#define SPECIES_MESPRIT                                 481
-#define SPECIES_AZELF                                   482
+#define SPECIES_CHIBI_MITORI                            477
+#define SPECIES_NORMAL_MITORI                           478
+#define SPECIES_PLACEHOLD_MITORI                        479 // Placeholder
+#define SPECIES_CHIBI_SASHA                             480
+#define SPECIES_NORMAL_SASHA                            481
+#define SPECIES_PLACEHOLD_SASHA                         482 // Placeholder
 #define SPECIES_ADVENT_CIRNO                            483
 #define SPECIES_ADVENT_REISEN                           484
 #define SPECIES_ADVENT_MEILING                          485
@@ -557,7 +557,7 @@
 #define SPECIES_PLACEHOLD_BIJOU                         544 // Placeholder
 #define SPECIES_CHIBI_KRONII                            545
 #define SPECIES_NORMAL_KRONII                           546
-#define SPECIES_WHIMSICOTT                              547 // Placeholder
+#define SPECIES_PLACEHOLD_KRONII                        547 // Placeholder
 #define SPECIES_BLISSEA                                 548
 #define SPECIES_CHIBI_ETERNITY                          549
 #define SPECIES_NORMAL_ETERNITY                         550
@@ -582,44 +582,44 @@
 #define SPECIES_PLACEHOLD_NEMUNO                        569 // Placeholder
 #define SPECIES_CHIBI_SUMIREKO                          570
 #define SPECIES_NORMAL_SUMIREKO                         571
-#define SPECIES_MINCCINO                                572 // Placeholder
-#define SPECIES_CINCCINO                                573 // Placeholder
+#define SPECIES_ATTACK_SUMIREKO                         572
+#define SPECIES_TECH_SUMIREKO                           573
 #define SPECIES_CHIBI_SHION                             574
 #define SPECIES_NORMAL_SHION                            575
-#define SPECIES_GOTHITELLE                              576 // Placeholder
+#define SPECIES_PLACEHOLD_SHION                         576 // Placeholder
 #define SPECIES_CHIBI_JOON                              577
 #define SPECIES_NORMAL_JOON                             578
-#define SPECIES_REUNICLUS                               579 // Placeholder
+#define SPECIES_PLACEHOLD_JOON                          579 // Placeholder
 #define SPECIES_CHIBI_MIYOI                             580
 #define SPECIES_NORMAL_MIYOI                            581
-#define SPECIES_VANILLITE                               582 // Placeholder
+#define SPECIES_PLACEHOLD_MIYOI                         582 // Placeholder
 #define SPECIES_CHIBI_EIKA                              583
 #define SPECIES_NORMAL_EIKA                             584
-#define SPECIES_DEERLING_SPRING                         585 // Placeholder
-#define SPECIES_SAWSBUCK_SPRING                         586 // Urumi
-#define SPECIES_EMOLGA                                  587
-#define SPECIES_KARRABLAST                              588
+#define SPECIES_PLACEHOLD_EIKA                          585 // Placeholder
+#define SPECIES_CHIBI_URUMI                             586
+#define SPECIES_NORMAL_URUMI                            587
+#define SPECIES_PLACEHOLD_URUMI                         588 // Placeholder
 #define SPECIES_CHIBI_KUTAKA                            589
 #define SPECIES_NORMAL_KUTAKA                           590
-#define SPECIES_AMOONGUSS                               591 // Placeholder
-#define SPECIES_FRILLISH                                592 // Yachie
-#define SPECIES_JELLICENT                               593
-#define SPECIES_ALOMOMOLA                               594
-#define SPECIES_JOLTIK                                  595 // Mayumi
-#define SPECIES_GALVANTULA                              596
-#define SPECIES_FERROSEED                               597
+#define SPECIES_PLACEHOLD_KUTAKA                        591 // Placeholder
+#define SPECIES_CHIBI_YACHIE                            592
+#define SPECIES_NORMAL_YACHIE                           593
+#define SPECIES_PLACEHOLD_YACHIE                        594 // Placeholder
+#define SPECIES_CHIBI_MAYUMI                            595
+#define SPECIES_NORMAL_MAYUMI                           596
+#define SPECIES_PLACEHOLD_MAYUMI                        597 // Placeholder
 #define SPECIES_CHIBI_KEIKI                             598
 #define SPECIES_NORMAL_KEIKI                            599
-#define SPECIES_KLANG                                   600 // Placeholder
+#define SPECIES_PLACEHOLD_KEIKI                         600 // Placeholder
 #define SPECIES_CHIBI_SAKI                              601
 #define SPECIES_NORMAL_SAKI                             602
-#define SPECIES_EELEKTRIK                               603 // Placeholder
-#define SPECIES_EELEKTROSS                              604 // Yuuma
-#define SPECIES_ELGYEM                                  605
-#define SPECIES_BEHEEYEM                                606
-#define SPECIES_LITWICK                                 607 // Mike (Deltarune)
-#define SPECIES_LAMPENT                                 608
-#define SPECIES_CHANDELURE                              609
+#define SPECIES_PLACEHOLD_SAKI                          603 // Placeholder
+#define SPECIES_CHIBI_YUUMA                             604
+#define SPECIES_NORMAL_YUUMA                            605
+#define SPECIES_PLACEHOLD_YUUMA                         606 // Placeholder
+#define SPECIES_CHIBI_MIKE                              607
+#define SPECIES_NORMAL_MIKE                             608
+#define SPECIES_PLACEHOLD_MIKE                          609 // Placeholder
 #define SPECIES_CHIBI_TAKANE                            610
 #define SPECIES_NORMAL_TAKANE                           611
 #define SPECIES_DEFENSE_TAKANE                          612

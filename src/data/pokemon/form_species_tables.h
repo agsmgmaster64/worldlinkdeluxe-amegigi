@@ -1123,7 +1123,7 @@ static const u16 sAbomasnowFormSpeciesIdTable[] = {
 
 #if P_FAMILY_ROTOM
 static const u16 sRotomFormSpeciesIdTable[] = {
-    SPECIES_ROTOM,
+    SPECIES_PLACEHOLD_MITORI,
     SPECIES_ROTOM_HEAT,
     SPECIES_ROTOM_WASH,
     SPECIES_ROTOM_FROST,
@@ -1294,7 +1294,7 @@ static const u16 sZoroarkFormSpeciesIdTable[] = {
 
 #if P_FAMILY_DEERLING
 static const u16 sDeerlingFormSpeciesIdTable[] = {
-    SPECIES_DEERLING_SPRING,
+    SPECIES_PLACEHOLD_EIKA,
     SPECIES_DEERLING_SUMMER,
     SPECIES_DEERLING_AUTUMN,
     SPECIES_DEERLING_WINTER,
@@ -1302,7 +1302,7 @@ static const u16 sDeerlingFormSpeciesIdTable[] = {
 };
 
 static const u16 sSawsbuckFormSpeciesIdTable[] = {
-    SPECIES_SAWSBUCK_SPRING,
+    SPECIES_CHIBI_URUMI,
     SPECIES_SAWSBUCK_SUMMER,
     SPECIES_SAWSBUCK_AUTUMN,
     SPECIES_SAWSBUCK_WINTER,

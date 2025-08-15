@@ -234,7 +234,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .sourceGame = SOURCE_SOEW,
         .speciesName = _("Samurott"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_SAMUROTT,
+        .natDexNum = NATIONAL_DEX_LAST_WORD_SUWAKO,
         .categoryName = _("Formidable"),
         .height = 15,
         .weight = 582,
@@ -721,7 +721,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     #define COTTONEE_FAMILY_TYPES { TYPE_NATURE, TYPE_NATURE }
 #endif
 
-    [SPECIES_WHIMSICOTT] =
+    [SPECIES_PLACEHOLD_KRONII] =
     {
         .baseHP        = 60,
         .baseAttack    = 67,
@@ -1407,7 +1407,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .sourceGame = SOURCE_MS,
         .speciesName = _("Yamask"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_YAMASK,
+        .natDexNum = NATIONAL_DEX_NORMAL_TEIREIDA,
         .categoryName = _("Spirit"),
         .height = 5,
         .weight = 15,
@@ -1860,7 +1860,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_ZORUA
 
 #if P_FAMILY_MINCCINO
-    [SPECIES_MINCCINO] =
+    [SPECIES_ATTACK_SUMIREKO] =
     {
         .baseHP        = 55,
         .baseAttack    = 50,
@@ -1925,10 +1925,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sMinccinoLevelUpLearnset,
         .teachableLearnset = sMinccinoTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_CINCCINO}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_TECH_SUMIREKO}),
     },
 
-    [SPECIES_CINCCINO] =
+    [SPECIES_TECH_SUMIREKO] =
     {
         .baseHP        = 75,
         .baseAttack    = 95,
@@ -2144,10 +2144,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sGothoritaLevelUpLearnset,
         .teachableLearnset = sGothoritaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_GOTHITELLE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_PLACEHOLD_SHION}),
     },
 
-    [SPECIES_GOTHITELLE] =
+    [SPECIES_PLACEHOLD_SHION] =
     {
         .baseHP        = 70,
         .baseAttack    = 55,
@@ -2359,10 +2359,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDuosionLevelUpLearnset,
         .teachableLearnset = sDuosionTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_REUNICLUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_PLACEHOLD_JOON}),
     },
 
-    [SPECIES_REUNICLUS] =
+    [SPECIES_PLACEHOLD_JOON] =
     {
         .baseHP        = 110,
         .baseAttack    = 65,
@@ -2574,7 +2574,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_DUCKLETT
 
 #if P_FAMILY_VANILLITE
-    [SPECIES_VANILLITE] =
+    [SPECIES_PLACEHOLD_MIYOI] =
     {
         .baseHP        = 36,
         .baseAttack    = 50,
@@ -2675,7 +2675,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .sourceGame = SOURCE_POFV,
         .speciesName = _("Vanillish"),
         .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_VANILLISH,
+        .natDexNum = NATIONAL_DEX_CHIBI_EIKA,
         .categoryName = _("Icy Snow"),
         .height = 11,
         .weight = 410,
@@ -2796,7 +2796,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_VANILLITE
 
 #if P_FAMILY_DEERLING
-    [SPECIES_DEERLING_SPRING] =
+    [SPECIES_PLACEHOLD_EIKA] =
     {
         .baseHP        = 60,
         .baseAttack    = 60,
@@ -2858,7 +2858,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sDeerlingLevelUpLearnset,
         .teachableLearnset = sDeerlingTeachableLearnset,
         .formSpeciesIdTable = sDeerlingFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_SAWSBUCK_SPRING}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_CHIBI_URUMI}),
         .randomizerMode = MON_RANDOMIZER_RANDOM_FORM,
     },
 
@@ -3060,7 +3060,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .randomizerMode = MON_RANDOMIZER_INVALID
     },
 
-    [SPECIES_SAWSBUCK_SPRING] =
+    [SPECIES_CHIBI_URUMI] =
     {
         .baseHP        = 80,
         .baseAttack    = 100,
@@ -3323,7 +3323,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_DEERLING
 
 #if P_FAMILY_EMOLGA
-    [SPECIES_EMOLGA] =
+    [SPECIES_NORMAL_URUMI] =
     {
         .baseHP        = 55,
         .baseAttack    = 75,
@@ -3394,7 +3394,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_EMOLGA
 
 #if P_FAMILY_KARRABLAST
-    [SPECIES_KARRABLAST] =
+    [SPECIES_PLACEHOLD_URUMI] =
     {
         .baseHP        = 50,
         .baseAttack    = 75,
@@ -3599,10 +3599,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sFoongusLevelUpLearnset,
         .teachableLearnset = sFoongusTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 39, SPECIES_AMOONGUSS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 39, SPECIES_PLACEHOLD_KUTAKA}),
     },
 
-    [SPECIES_AMOONGUSS] =
+    [SPECIES_PLACEHOLD_KUTAKA] =
     {
         .baseHP        = 114,
         .baseAttack    = 85,
@@ -3677,7 +3677,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_FOONGUS
 
 #if P_FAMILY_FRILLISH
-    [SPECIES_FRILLISH] =
+    [SPECIES_CHIBI_YACHIE] =
     {
         .baseHP        = 55,
         .baseAttack    = 40,
@@ -3762,10 +3762,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sFrillishLevelUpLearnset,
         .teachableLearnset = sFrillishTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_JELLICENT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_NORMAL_YACHIE}),
     },
 
-    [SPECIES_JELLICENT] =
+    [SPECIES_NORMAL_YACHIE] =
     {
         .baseHP        = 100,
         .baseAttack    = 60,
@@ -3855,7 +3855,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_FRILLISH
 
 #if P_FAMILY_ALOMOMOLA
-    [SPECIES_ALOMOMOLA] =
+    [SPECIES_PLACEHOLD_YACHIE] =
     {
         .baseHP        = 165,
         .baseAttack    = 75,
@@ -3924,7 +3924,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_ALOMOMOLA
 
 #if P_FAMILY_JOLTIK
-    [SPECIES_JOLTIK] =
+    [SPECIES_CHIBI_MAYUMI] =
     {
         .baseHP        = 50,
         .baseAttack    = 47,
@@ -3991,10 +3991,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sJoltikLevelUpLearnset,
         .teachableLearnset = sJoltikTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_GALVANTULA}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_MAYUMI}),
     },
 
-    [SPECIES_GALVANTULA] =
+    [SPECIES_NORMAL_MAYUMI] =
     {
         .baseHP        = 70,
         .baseAttack    = 77,
@@ -4068,7 +4068,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_JOLTIK
 
 #if P_FAMILY_FERROSEED
-    [SPECIES_FERROSEED] =
+    [SPECIES_PLACEHOLD_MAYUMI] =
     {
         .baseHP        = 44,
         .baseAttack    = 50,
@@ -4284,10 +4284,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sKlinkLevelUpLearnset,
         .teachableLearnset = sKlinkTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_KLANG}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_PLACEHOLD_KEIKI}),
     },
 
-    [SPECIES_KLANG] =
+    [SPECIES_PLACEHOLD_KEIKI] =
     {
         .baseHP        = 60,
         .baseAttack    = 80,
@@ -4359,78 +4359,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_KLINK
 
 #if P_FAMILY_TYNAMO
-    [SPECIES_EELEKTRIK] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 85,
-        .baseDefense   = 70,
-        .baseSpeed     = 40,
-        .baseSpAttack  = 75,
-        .baseSpDefense = 70,
-        .types = MON_TYPES(TYPE_WIND),
-        .catchRate = 60,
-        .expYield = 142,
-        .evYield_Attack = 2,
-        .genderRatio = PERCENT_FEMALE(50),
-        .eggCycles = 20,
-        .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
-        .sourceGame = SOURCE_SOEW,
-        .speciesName = _("Eelektrik"),
-        .cryId = CRY_PORYGON,
-        .natDexNum = NATIONAL_DEX_EELEKTRIK,
-        .categoryName = _("EleFish"),
-        .height = 12,
-        .weight = 220,
-        .description = COMPOUND_STRING(
-            "These Pokémon have a big appetite.\n"
-            "It wraps itself around its prey and\n"
-            "paralyzes it with electricity from the\n"
-            "round spots on its sides. Then it chomps."),
-        .pokemonScale = 282,
-        .pokemonOffset = 4,
-        .trainerScale = 256,
-        .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Eelektrik,
-        .frontPicSize = MON_COORDS_SIZE(48, 64),
-        .frontPicYOffset = 6,
-        .frontAnimFrames = ANIM_FRAMES(
-            ANIMCMD_FRAME(0, 4),
-            ANIMCMD_FRAME(1, 25),
-            ANIMCMD_FRAME(0, 4),
-            ANIMCMD_FRAME(1, 25),
-            ANIMCMD_FRAME(0, 4),
-        ),
-        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .enemyMonElevation = 8,
-        .backPic = gMonBackPic_Eelektrik,
-        .backPicSize = MON_COORDS_SIZE(56, 64),
-        .backPicYOffset = 4,
-        .backAnimId = BACK_ANIM_SHRINK_GROW,
-        .palette = gMonPalette_Eelektrik,
-        .shinyPalette = gMonShinyPalette_Eelektrik,
-        .iconSprite = gMonIcon_Eelektrik,
-        .iconPalIndex = 0,
-        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
-        SHADOW(-1, 13, SHADOW_SIZE_S)
-        FOOTPRINT(Eelektrik)
-        OVERWORLD(
-            sPicTable_Eelektrik,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_Eelektrik,
-            gShinyOverworldPalette_Eelektrik
-        )
-        .levelUpLearnset = sEelektrikLevelUpLearnset,
-        .teachableLearnset = sEelektrikTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_EELEKTROSS}),
-    },
-
-    [SPECIES_EELEKTROSS] =
+    [SPECIES_CHIBI_YUUMA] =
     {
         .baseHP        = 85,
         .baseAttack    = 115,
@@ -4503,7 +4432,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_TYNAMO
 
 #if P_FAMILY_ELGYEM
-    [SPECIES_ELGYEM] =
+    [SPECIES_NORMAL_YUUMA] =
     {
         .baseHP        = 55,
         .baseAttack    = 55,
@@ -4573,10 +4502,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sElgyemLevelUpLearnset,
         .teachableLearnset = sElgyemTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_BEHEEYEM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_PLACEHOLD_YUUMA}),
     },
 
-    [SPECIES_BEHEEYEM] =
+    [SPECIES_PLACEHOLD_YUUMA] =
     {
         .baseHP        = 75,
         .baseAttack    = 75,
@@ -4644,7 +4573,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #endif //P_FAMILY_ELGYEM
 
 #if P_FAMILY_LITWICK
-    [SPECIES_LITWICK] =
+    [SPECIES_CHIBI_MIKE] =
     {
         .baseHP        = 50,
         .baseAttack    = 30,
@@ -4715,10 +4644,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sLitwickLevelUpLearnset,
         .teachableLearnset = sLitwickTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_LAMPENT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 41, SPECIES_NORMAL_MIKE}),
     },
 
-    [SPECIES_LAMPENT] =
+    [SPECIES_NORMAL_MIKE] =
     {
         .baseHP        = 60,
         .baseAttack    = 40,
@@ -4789,10 +4718,10 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sLampentLevelUpLearnset,
         .teachableLearnset = sLampentTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_CHANDELURE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_PLACEHOLD_MIKE}),
     },
 
-    [SPECIES_CHANDELURE] =
+    [SPECIES_PLACEHOLD_MIKE] =
     {
         .baseHP        = 60,
         .baseAttack    = 55,
@@ -5080,7 +5009,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sShelmetLevelUpLearnset,
         .teachableLearnset = sShelmetTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_ACCELGOR, CONDITIONS({IF_TRADE_PARTNER_SPECIES, SPECIES_KARRABLAST})}),
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_ACCELGOR, CONDITIONS({IF_TRADE_PARTNER_SPECIES, SPECIES_PLACEHOLD_URUMI})}),
     },
 
     [SPECIES_ACCELGOR] =

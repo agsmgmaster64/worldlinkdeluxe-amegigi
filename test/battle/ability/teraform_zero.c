@@ -42,7 +42,7 @@ SINGLE_BATTLE_TEST("Teraform Zero can be replaced")
         ASSUME(GetMoveEffect(MOVE_WORRY_SEED) == EFFECT_WORRY_SEED);
         ASSUME(GetMoveEffect(MOVE_REST) == EFFECT_REST);
         PLAYER(SPECIES_TERAPAGOS);
-        OPPONENT(SPECIES_WHIMSICOTT) { Ability(ABILITY_PRANKSTER); }
+        OPPONENT(SPECIES_PLACEHOLD_KRONII) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_WORRY_SEED); MOVE(player, MOVE_REST, gimmick: GIMMICK_TERA); }
     } SCENE {

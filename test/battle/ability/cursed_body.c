@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Cursed Body triggers 30% of the time")
     PASSES_RANDOMLY(3, 10, RNG_CURSED_BODY);
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_FRILLISH) { Ability(ABILITY_CURSED_BODY); }
+        OPPONENT(SPECIES_CHIBI_YACHIE) { Ability(ABILITY_CURSED_BODY); }
     } WHEN {
         TURN { MOVE(player, MOVE_AQUA_JET); }
     } SCENE {
