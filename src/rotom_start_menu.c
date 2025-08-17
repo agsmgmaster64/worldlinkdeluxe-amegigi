@@ -31,6 +31,7 @@
 #include "pokedex.h"
 #include "pokemon_icon.h"
 #include "pokenav.h"
+#include "quests.h"
 #include "random.h"
 #include "region_map.h"
 #include "rtc.h"
@@ -194,6 +195,7 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_Save(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_SafariFlag(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_RotomReality(void);
 static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void);
+static bool32 RotomPhone_StartMenu_UnlockedFunc_Quests(void);
 
 static void RotomPhone_StartMenu_SelectedFunc_Pokedex(void);
 static void RotomPhone_StartMenu_SelectedFunc_Pokemon(void);
@@ -205,6 +207,7 @@ static void RotomPhone_StartMenu_SelectedFunc_Settings(void);
 static void RotomPhone_StartMenu_SelectedFunc_SafariFlag(void);
 static void RotomPhone_StartMenu_SelectedFunc_RotomReality(void);
 static void RotomPhone_StartMenu_SelectedFunc_DexNav(void);
+static void RotomPhone_StartMenu_SelectedFunc_Quests(void);
 static void RotomPhone_StartMenu_SelectedFunc_Daycare(void);
 
 
@@ -460,13 +463,13 @@ static void SpriteCB_RotomPhone_OverworldMenu_RotomFace_Unload(struct Sprite* sp
 
 
 #define OW_FLIP_PHONE_TEXT_BG_COLOUR       12
-#define OW_FLIP_PHONE_TEXT_FG_COLOUR       1
+#define OW_FLIP_PHONE_TEXT_FG_COLOUR       15
 #define OW_FLIP_PHONE_TEXT_SHADOW_COLOUR   10
-#define OW_ROTOM_PHONE_TEXT_BG_COLOUR      14
-#define OW_ROTOM_PHONE_TEXT_FG_COLOUR      1
+#define OW_ROTOM_PHONE_TEXT_BG_COLOUR      12
+#define OW_ROTOM_PHONE_TEXT_FG_COLOUR      15
 #define OW_ROTOM_PHONE_TEXT_SHADOW_COLOUR  10
 #define RR_ROTOM_PHONE_TEXT_BG_COLOUR      14
-#define RR_ROTOM_PHONE_TEXT_FG_COLOUR      1
+#define RR_ROTOM_PHONE_TEXT_FG_COLOUR      15
 #define RR_ROTOM_PHONE_TEXT_SHADOW_COLOUR  10
 enum FontColor
 {
@@ -494,6 +497,7 @@ enum RotomPhone_MenuItems
 {
     RP_MENU_ROTOM_REALITY,
     RP_MENU_RETIRE,
+    RP_MENU_QUESTS,
     RP_MENU_POKEDEX,
     RP_MENU_PARTY,
     RP_MENU_BAG,
@@ -1306,6 +1310,17 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
         .owAnim = RP_ICON_ANIM_ONE,
         .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
     },
+    [RP_MENU_QUESTS] =
+    {
+        .menuName = COMPOUND_STRING("Quests"),
+        .rotomSpeech = COMPOUND_STRING("to check on quests?"),
+        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Quests,
+        .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Quests,
+        .owIconPalSlot = PAL_ICON_MONOCHROME,
+        .owAnim = RP_ICON_ANIM_THREE,
+        .rrAnim = RP_ICON_ANIM_ONE,
+        .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
+    },
     [RP_MENU_DAYCARE] =
     {
         .menuName = COMPOUND_STRING("Daycare"),
@@ -1902,10 +1917,8 @@ static void RotomPhone_OverworldMenu_PrintTime(u8 taskId)
 
     RtcCalcLocalTime();
     FormatDecimalTimeWithoutSeconds(time, gLocalTime.hours, gLocalTime.minutes, RP_CONFIG_24_HOUR_MODE);
-    StringCopy(textBuffer, COMPOUND_STRING("It is "));
+    StringCopy(textBuffer, COMPOUND_STRING("It is currently "));
     StringAppend(textBuffer, time);
-    StringAppend(textBuffer, COMPOUND_STRING(" on "));
-    StringAppend(textBuffer, sRotomPhone_Overworld_DayNames[(gLocalTime.days % WEEKDAY_COUNT)]);
     StringAppend(textBuffer, COMPOUND_STRING("."));
     RotomPhone_OverworldMenu_PrintRotomSpeech(textBuffer, TRUE, TRUE);
     tRotomUpdateMessage = RotomPhone_OverworldMenu_GetRandomMessage();
@@ -3750,6 +3763,13 @@ static bool32 RotomPhone_StartMenu_UnlockedFunc_DexNav(void)
     return FALSE;
 }
 
+static bool32 RotomPhone_StartMenu_UnlockedFunc_Quests(void)
+{
+    if (RotomPhone_StartMenu_IsRotomReality())
+        return FlagGet(FLAG_SYS_QUEST_MENU_GET);
+    return FALSE;
+}
+
 static void RotomPhone_StartMenu_SelectedFunc_Pokedex(void)
 {
     RotomPhone_StartMenu_DoCleanUpAndChangeCallback(CB2_OpenPokedex);
@@ -3856,6 +3876,14 @@ static void RotomPhone_StartMenu_SelectedFunc_DexNav(void)
         RotomPhone_StartMenu_DoCleanUpAndChangeTaskFunc(FindTaskIdByFunc(Task_RotomPhone_OverworldMenu_HandleMainInput), Task_OpenDexNavFromStartMenu);
     else
         RotomPhone_StartMenu_DoCleanUpAndCreateTask(Task_OpenDexNavFromStartMenu, 0);
+}
+
+static void RotomPhone_StartMenu_SelectedFunc_Quests(void)
+{
+    if (!RotomPhone_StartMenu_IsRotomReality())
+        RotomPhone_StartMenu_DoCleanUpAndChangeTaskFunc(FindTaskIdByFunc(Task_RotomPhone_OverworldMenu_HandleMainInput), Task_QuestMenu_OpenFromStartMenu);
+    else
+        RotomPhone_StartMenu_DoCleanUpAndCreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
 }
 
 static void RotomPhone_StartMenu_SelectedFunc_Daycare(void)

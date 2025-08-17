@@ -58,7 +58,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou18[] =
         FOOTPRINT(CTakane)
         .levelUpLearnset = sCTakaneLevelUpLearnset,
         .teachableLearnset = sCTakaneTeachableLearnset,
-        .eggMoveLearnset = sCNitoriEggMoveLearnset,
+        // .eggMoveLearnset = sCTakaneEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_NORMAL_TAKANE},
                                 {EVO_ITEM, ITEM_NEUTRAL_HEART, SPECIES_NORMAL_TAKANE, CONDITIONS({IF_PAST_LEVEL, 32})},
                                 {EVO_ITEM, ITEM_GUARD_HEART, SPECIES_DEFENSE_TAKANE, CONDITIONS({IF_PAST_LEVEL, 32})},
