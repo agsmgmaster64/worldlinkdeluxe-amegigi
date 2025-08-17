@@ -1272,10 +1272,6 @@ void UpdatePocketItemList(enum Pocket pocketId)
     struct BagPocket *pocket = &gBagPockets[pocketId];
     switch (pocketId)
     {
-    case POCKET_TM_HM:
-    case POCKET_BERRIES:
-        SortItemsInBag(pocket, SORT_BY_INDEX);
-        break;
     default:
         CompactItemsInBagPocket(pocketId);
         break;
@@ -1617,10 +1613,7 @@ static bool8 CanSwapItems(void)
     if (gBagPosition.location == ITEMMENULOCATION_FIELD
      || gBagPosition.location == ITEMMENULOCATION_BATTLE)
     {
-        // TMHMs and berries are numbered, and so may not be swapped
-        if (gBagPosition.pocket != POCKET_TM_HM
-         && gBagPosition.pocket != POCKET_BERRIES)
-            return TRUE;
+        return TRUE;
     }
     return FALSE;
 }
