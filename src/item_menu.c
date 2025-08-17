@@ -303,7 +303,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
-    .fontId = FONT_NARROW,
+    .fontId = FONT_NORMAL,
     .cursorKind = CURSOR_BLACK_ARROW
 };
 
@@ -315,12 +315,12 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_GIVE]              = {gMenuText_Give,               {ItemMenu_Give}},
     [ACTION_CANCEL]            = {gText_Cancel2,                {ItemMenu_Cancel}},
     [ACTION_BATTLE_USE]        = {gMenuText_Use,                {ItemMenu_UseInBattle}},
-    [ACTION_CHECK]             = {COMPOUND_STRING("CHECK"),     {ItemMenu_UseOutOfBattle}},
+    [ACTION_CHECK]             = {COMPOUND_STRING("Check"),     {ItemMenu_UseOutOfBattle}},
     [ACTION_WALK]              = {COMPOUND_STRING("Walk"),      {ItemMenu_UseOutOfBattle}},
     [ACTION_DESELECT]          = {COMPOUND_STRING("Deselect"),  {ItemMenu_Deselect}},
-    [ACTION_CHECK_TAG]         = {COMPOUND_STRING("CHECK TAG"), {ItemMenu_CheckTag}},
+    [ACTION_CHECK_TAG]         = {COMPOUND_STRING("Check Tag"), {ItemMenu_CheckTag}},
     [ACTION_CONFIRM]           = {gMenuText_Confirm,            {Task_FadeAndCloseBagMenu}},
-    [ACTION_SHOW]              = {COMPOUND_STRING("SHOW"),      {ItemMenu_Show}},
+    [ACTION_SHOW]              = {COMPOUND_STRING("Show"),      {ItemMenu_Show}},
     [ACTION_GIVE_FAVOR_LADY]   = {gMenuText_Give2,              {ItemMenu_GiveFavorLady}},
     [ACTION_CONFIRM_QUIZ_LADY] = {gMenuText_Confirm,            {ItemMenu_ConfirmQuizLady}},
     [ACTION_SWITCH_BIKE]       = {COMPOUND_STRING("Switch"),    {ItemMenu_SwitchBike}},
@@ -337,60 +337,76 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_DUMMY]             = {gText_EmptyString2, {NULL}}
 };
 
-// these are all 2D arrays with a width of 2 but are represented as 1D arrays
-// ACTION_DUMMY is used to represent blank spaces
 static const u8 sContextMenuItems_ItemsPocket[] = {
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_TOSS,        ACTION_CANCEL
+    ACTION_USE,
+    ACTION_GIVE,
+    ACTION_TOSS,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_KeyItemsPocket[] = {
-    ACTION_USE,         ACTION_REGISTER,
-    ACTION_DUMMY,       ACTION_CANCEL
+    ACTION_USE,
+    ACTION_REGISTER,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_Bike[] = {
-    ACTION_USE,         ACTION_REGISTER,
-    ACTION_SWITCH_BIKE, ACTION_CANCEL
+    ACTION_USE,
+    ACTION_REGISTER,
+    ACTION_SWITCH_BIKE,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenu_RegisterKeyItem[] = {
-    ACTION_SELECT_BUTTON,   ACTION_L_BUTTON,
-    ACTION_R_BUTTON,        ACTION_CANCEL
+    ACTION_SELECT_BUTTON,
+    ACTION_L_BUTTON,
+    ACTION_R_BUTTON,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BallsPocket[] = {
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_TOSS,        ACTION_CANCEL
+    ACTION_USE,
+    ACTION_GIVE,
+    ACTION_TOSS,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_TmHmPocket[] = {
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_DUMMY,       ACTION_CANCEL
+    ACTION_USE,
+    ACTION_GIVE,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BerriesPocket[] = {
-    ACTION_CHECK_TAG,   ACTION_DUMMY,
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_TOSS,        ACTION_CANCEL
+    ACTION_USE,
+    ACTION_CHECK_TAG,
+    ACTION_GIVE,
+    ACTION_TOSS,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_MedicinePocket[] = {
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_TOSS,        ACTION_CANCEL
+    ACTION_USE,
+    ACTION_GIVE,
+    ACTION_TOSS,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BattleItemsPocket[] = {
-    ACTION_USE,         ACTION_GIVE,
-    ACTION_TOSS,        ACTION_CANCEL
+    ACTION_USE,
+    ACTION_GIVE,
+    ACTION_TOSS,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_BattleUse[] = {
-    ACTION_BATTLE_USE,  ACTION_CANCEL
+    ACTION_BATTLE_USE,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_Give[] = {
-    ACTION_GIVE,        ACTION_CANCEL
+    ACTION_GIVE,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_Cancel[] = {
@@ -398,34 +414,43 @@ static const u8 sContextMenuItems_Cancel[] = {
 };
 
 static const u8 sContextMenuItems_BerryBlenderCrush[] = {
-    ACTION_CONFIRM,     ACTION_CHECK_TAG,
-    ACTION_DUMMY,       ACTION_CANCEL
+    ACTION_CONFIRM,
+    ACTION_CHECK_TAG,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_Apprentice[] = {
-    ACTION_SHOW,        ACTION_CANCEL
+    ACTION_SHOW,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_FavorLady[] = {
-    ACTION_GIVE_FAVOR_LADY, ACTION_CANCEL
+    ACTION_GIVE_FAVOR_LADY,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_QuizLady[] = {
-    ACTION_CONFIRM_QUIZ_LADY, ACTION_CANCEL
+    ACTION_CONFIRM_QUIZ_LADY,
+    ACTION_CANCEL
 };
 
 static const u8 sContextMenuItems_OldVariableRod[] = {
-    ACTION_OLD_TECHNIQUE,   ACTION_REGISTER,
-    ACTION_DUMMY,           ACTION_CANCEL
+    ACTION_REGISTER,
+    ACTION_OLD_TECHNIQUE,
+    ACTION_CANCEL
 };
 static const u8 sContextMenuItems_GoodVariableRod[] = {
-    ACTION_OLD_TECHNIQUE,   ACTION_REGISTER,
-    ACTION_GOOD_TECHNIQUE,  ACTION_CANCEL
+    ACTION_REGISTER,
+    ACTION_OLD_TECHNIQUE,
+    ACTION_GOOD_TECHNIQUE,
+    ACTION_CANCEL
 };
 static const u8 sContextMenuItems_SuperVariableRod[] = {
-    ACTION_OLD_TECHNIQUE,   ACTION_REGISTER,
-    ACTION_GOOD_TECHNIQUE,  ACTION_DUMMY,
-    ACTION_SUPER_TECHNIQUE, ACTION_CANCEL
+    ACTION_REGISTER,
+    ACTION_OLD_TECHNIQUE,
+    ACTION_GOOD_TECHNIQUE,
+    ACTION_SUPER_TECHNIQUE,
+    ACTION_CANCEL
 };
 
 static const TaskFunc sContextMenuFuncs[] = {
@@ -451,17 +476,22 @@ static const struct YesNoFuncTable sYesNoSellItemFunctions = {ConfirmSell, Cance
 
 static const struct ScrollArrowsTemplate sBagScrollArrowsTemplate = {
     .firstArrowType = SCROLL_ARROW_LEFT,
-    .firstX = 28,
-    .firstY = 16,
+    .firstX = 8,
+    .firstY = 72,
     .secondArrowType = SCROLL_ARROW_RIGHT,
-    .secondX = 100,
-    .secondY = 16,
+    .secondX = 72,
+    .secondY = 72,
     .fullyUpThreshold = -1,
     .fullyDownThreshold = -1,
     .tileTag = TAG_BAG_SCROLL_ARROW,
     .palTag = TAG_BAG_SCROLL_ARROW,
     .palNum = 0,
 };
+
+#define BAG_LIST_TILES_WIDTH  18
+#define BAG_LIST_TILES_HEIGHT 12
+
+static const u16 sItemListTilemap[BAG_LIST_TILES_WIDTH * BAG_LIST_TILES_HEIGHT] = INCBIN_U16("graphics/bag/list.bin");
 
 static const u8 sRegisteredSelect_Gfx[] = INCBIN_U8("graphics/bag/select_button.4bpp");
 static const u8 sRegisteredLButton_Gfx[] = INCBIN_U8("graphics/bag/l_button.4bpp");
@@ -488,48 +518,48 @@ static const struct WindowTemplate sDefaultBagWindows[] =
 {
     [WIN_ITEM_LIST] = {
         .bg = 0,
-        .tilemapLeft = 14,
+        .tilemapLeft = 11,
         .tilemapTop = 1,
-        .width = 15,
+        .width = 18,
         .height = 12,
         .paletteNum = 1,
         .baseBlock = 0x27,
     },
     [WIN_DESCRIPTION] = {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 5,
         .tilemapTop = 14,
         .width = 25,
         .height = 6,
         .paletteNum = 1,
-        .baseBlock = 0xDC,
+        .baseBlock = 0x100,
     },
     [WIN_POCKET_NAME] = {
         .bg = 0,
-        .tilemapLeft = 4,
+        .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 8,
         .height = 2,
         .paletteNum = 1,
-        .baseBlock = 0x1A8,
+        .baseBlock = 0x1CC,
     },
     [WIN_TMHM_INFO_ICONS] = {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 5,
         .tilemapTop = 14,
         .width = 5,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x172,
+        .baseBlock = 0x196,
     },
     [WIN_TMHM_INFO] = {
         .bg = 0,
-        .tilemapLeft = 7,
+        .tilemapLeft = 11,
         .tilemapTop = 14,
         .width = 4,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x190,
+        .baseBlock = 0x1B4,
     },
     [WIN_MESSAGE] = {
         .bg = 1,
@@ -538,7 +568,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B8,
+        .baseBlock = 0x1DC,
     },
     DUMMY_WIN_TEMPLATE,
 };
@@ -552,7 +582,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 7,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
     },
     [ITEMWIN_1x2] = {
         .bg = 1,
@@ -561,25 +591,34 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 7,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
     },
-    [ITEMWIN_2x2] = {
+    [ITEMWIN_1x3] = {
         .bg = 1,
-        .tilemapLeft = 15,
-        .tilemapTop = 15,
-        .width = 14,
-        .height = 4,
-        .paletteNum = 15,
-        .baseBlock = 0x224,
-    },
-    [ITEMWIN_2x3] = {
-        .bg = 1,
-        .tilemapLeft = 15,
+        .tilemapLeft = 22,
         .tilemapTop = 13,
-        .width = 14,
+        .width = 7,
         .height = 6,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
+    },
+    [ITEMWIN_1x4] = {
+        .bg = 1,
+        .tilemapLeft = 22,
+        .tilemapTop = 11,
+        .width = 7,
+        .height = 8,
+        .paletteNum = 15,
+        .baseBlock = 0x248,
+    },
+    [ITEMWIN_1x5] = {
+        .bg = 1,
+        .tilemapLeft = 22,
+        .tilemapTop = 9,
+        .width = 7,
+        .height = 10,
+        .paletteNum = 15,
+        .baseBlock = 0x248,
     },
     [ITEMWIN_MESSAGE] = {
         .bg = 1,
@@ -588,7 +627,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 27,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x1B8,
+        .baseBlock = 0x1DC,
     },
     [ITEMWIN_YESNO_LOW] = { // Yes/No tucked in corner, for toss confirm
         .bg = 1,
@@ -597,7 +636,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
     },
     [ITEMWIN_YESNO_HIGH] = { // Yes/No higher up, positioned above a lower message box
         .bg = 1,
@@ -606,7 +645,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 4,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
     },
     [ITEMWIN_QUANTITY] = { // Used for quantity of items to Toss/Deposit
         .bg = 1,
@@ -615,7 +654,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 5,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x224,
+        .baseBlock = 0x248,
     },
     [ITEMWIN_QUANTITY_WIDE] = { // Used for quantity and price of items to Sell
         .bg = 1,
@@ -624,7 +663,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x24C,
+        .baseBlock = 0x270,
     },
     [ITEMWIN_MONEY] = {
         .bg = 1,
@@ -633,7 +672,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x238,
+        .baseBlock = 0x25C,
     },
 };
 
@@ -1008,7 +1047,7 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
     {
     case POCKET_TM_HM:
         end = StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
-        PrependFontIdToFit(gStringVar2, end, FONT_NARROW, 61);
+        PrependFontIdToFit(gStringVar2, end, FONT_NORMAL, 71);
         if (GetItemTMHMIndex(itemId) > NUM_TECHNICAL_MACHINES)
         {
             // Get HM number
@@ -1025,12 +1064,12 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
     case POCKET_BERRIES:
         ConvertIntToDecimalStringN(gStringVar1, itemId - FIRST_BERRY_INDEX + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
         end = CopyItemName(itemId, gStringVar2);
-        PrependFontIdToFit(gStringVar2, end, FONT_NARROW, 61);
+        PrependFontIdToFit(gStringVar2, end, FONT_NORMAL, 71);
         StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
         break;
     default:
         end = CopyItemName(itemId, dest);
-        PrependFontIdToFit(dest, end, FONT_NARROW, 88);
+        PrependFontIdToFit(dest, end, FONT_NORMAL, 100);
         break;
     }
 }
@@ -1081,7 +1120,7 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
             // Print item quantity
             ConvertIntToDecimalStringN(gStringVar1, itemSlot.quantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS);
             StringExpandPlaceholders(gStringVar4, gText_xVar1);
-            offset = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 119);
+            offset = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 133);
             BagMenu_Print(windowId, FONT_NARROW, gStringVar4, offset, y, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
         }
         else
@@ -1138,8 +1177,8 @@ static void CreatePocketScrollArrowPair(void)
     if (gBagMenu->pocketScrollArrowsTask == TASK_NONE)
         gBagMenu->pocketScrollArrowsTask = AddScrollIndicatorArrowPairParameterized(
             SCROLL_ARROW_UP,
-            172,
-            10,
+            160,
+            8,
             104,
             gBagMenu->numItemStacks[gBagPosition.pocket] - gBagMenu->numShownItems[gBagPosition.pocket],
             TAG_POCKET_SCROLL_ARROW,
@@ -1498,11 +1537,11 @@ static void SwitchBagPocket(u8 taskId, s16 deltaBagPocketId, bool16 skipEraseLis
     }
     DrawPocketIndicatorSquare(gBagPosition.pocket, FALSE);
     DrawPocketIndicatorSquare(newPocket, TRUE);
-    FillBgTilemapBufferRect_Palette0(2, 11, 14, 1, 15, 12);
+    FillBgTilemapBufferRect_Palette0(2, 11, 11, 1, 18, 12);
     ScheduleBgCopyTilemapToVram(2);
     SetBagVisualPocketId(newPocket, TRUE);
-    RemoveBagSprite(ITEMMENUSPRITE_BALL);
-    AddSwitchPocketRotatingBallSprite(deltaBagPocketId);
+    //RemoveBagSprite(ITEMMENUSPRITE_BALL);
+    //AddSwitchPocketRotatingBallSprite(deltaBagPocketId);
     SetTaskFuncWithFollowupFunc(taskId, Task_SwitchBagPocket, gTasks[taskId].func);
 }
 
@@ -1556,18 +1595,19 @@ static void Task_SwitchBagPocket(u8 taskId)
 
 // The background of the item list is a lighter color than the surrounding menu
 // When the pocket is switched this lighter background is redrawn row by row
+// row of 0 is the bottom row in the list, up to BAG_LIST_TILES_HEIGHT at the top
 static void DrawItemListBgRow(u8 y)
 {
-    FillBgTilemapBufferRect_Palette0(2, 17, 14, y + 1, 15, 1);
+    CopyToBgTilemapBufferRect(2, &sItemListTilemap[(BAG_LIST_TILES_HEIGHT - y - 1) * BAG_LIST_TILES_WIDTH], 11, BAG_LIST_TILES_HEIGHT - y, BAG_LIST_TILES_WIDTH, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
 static void DrawPocketIndicatorSquare(u8 x, bool8 isCurrentPocket)
 {
     if (!isCurrentPocket)
-        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 5, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 1, 3, 1, 1);
     else
-        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 5, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 1, 3, 1, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -1862,14 +1902,25 @@ static void OpenContextMenu(u8 taskId)
         FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
         BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 0, 0, 0, 0, COLORID_DESCRIPTION);
     }
-    if (gBagMenu->contextMenuNumItems == 1)
+    switch (gBagMenu->contextMenuNumItems)
+    {
+    case 1:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x1));
-    else if (gBagMenu->contextMenuNumItems == 2)
+        break;
+    case 2:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x2));
-    else if (gBagMenu->contextMenuNumItems == 4)
-        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x2), 2, 2);
-    else
-        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x3), 2, 3);
+        break;
+    case 3:
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x3));
+        break;
+    default:
+    case 4:
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x4));
+        break;
+    case 5:
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x5));
+        break;
+    }
 }
 
 static void PrintContextMenuItems(u8 windowId)
@@ -1890,10 +1941,7 @@ static void Task_ItemContext_Normal(u8 taskId)
 
     // Context menu width is never greater than 2 columns, so if
     // there are more than 2 items then there are multiple rows
-    if (gBagMenu->contextMenuNumItems <= 2)
-        gTasks[taskId].func = Task_ItemContext_SingleRow;
-    else
-        gTasks[taskId].func = Task_ItemContext_MultipleRows;
+    gTasks[taskId].func = Task_ItemContext_SingleRow;
 }
 
 static void Task_ItemContext_SingleRow(u8 taskId)
@@ -1924,7 +1972,7 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         s8 cursorPos = Menu_GetCursorPos();
         if (JOY_NEW(DPAD_UP))
         {
-            if (cursorPos > 0 && IsValidContextMenuPos(cursorPos - 2))
+            if (cursorPos > 0 && IsValidContextMenuPos(cursorPos - 1))
             {
                 PlaySE(SE_SELECT);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_UP);
@@ -1932,26 +1980,10 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         }
         else if (JOY_NEW(DPAD_DOWN))
         {
-            if (cursorPos < (gBagMenu->contextMenuNumItems - 2) && IsValidContextMenuPos(cursorPos + 2))
+            if (cursorPos < (gBagMenu->contextMenuNumItems - 1) && IsValidContextMenuPos(cursorPos + 1))
             {
                 PlaySE(SE_SELECT);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_DOWN);
-            }
-        }
-        else if (JOY_NEW(DPAD_LEFT) || GetLRKeysPressed() == MENU_L_PRESSED)
-        {
-            if ((cursorPos & 1) && IsValidContextMenuPos(cursorPos - 1))
-            {
-                PlaySE(SE_SELECT);
-                ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_LEFT, MENU_CURSOR_DELTA_NONE);
-            }
-        }
-        else if (JOY_NEW(DPAD_RIGHT) || GetLRKeysPressed() == MENU_R_PRESSED)
-        {
-            if (!(cursorPos & 1) && IsValidContextMenuPos(cursorPos + 1))
-            {
-                PlaySE(SE_SELECT);
-                ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_RIGHT, MENU_CURSOR_DELTA_NONE);
             }
         }
         else if (JOY_NEW(A_BUTTON))
@@ -1980,14 +2012,25 @@ static bool8 IsValidContextMenuPos(s8 cursorPos)
 
 static void RemoveContextWindow(void)
 {
-    if (gBagMenu->contextMenuNumItems == 1)
+    switch (gBagMenu->contextMenuNumItems)
+    {
+    case 1:
         BagMenu_RemoveWindow(ITEMWIN_1x1);
-    else if (gBagMenu->contextMenuNumItems == 2)
+        break;
+    case 2:
         BagMenu_RemoveWindow(ITEMWIN_1x2);
-    else if (gBagMenu->contextMenuNumItems == 4)
-        BagMenu_RemoveWindow(ITEMWIN_2x2);
-    else
-        BagMenu_RemoveWindow(ITEMWIN_2x3);
+        break;
+    case 3:
+        BagMenu_RemoveWindow(ITEMWIN_1x3);
+        break;
+    default:
+    case 4:
+        BagMenu_RemoveWindow(ITEMWIN_1x4);
+        break;
+    case 5:
+        BagMenu_RemoveWindow(ITEMWIN_1x5);
+        break;
+    }
 }
 
 static void ItemMenu_UseOutOfBattle(u8 taskId)
@@ -2983,7 +3026,6 @@ static const u8 sBagMenuSortPokeBalls[] =
 {
     ACTION_BY_NAME,
     ACTION_BY_AMOUNT,
-    ACTION_DUMMY,
     ACTION_CANCEL,
 };
 
@@ -3026,21 +3068,24 @@ static void AddBagSortSubMenu(void)
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
     BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 0, 0, 0, 0, COLORID_DESCRIPTION);
 
-    if (gBagMenu->contextMenuNumItems == 2)
+    switch (gBagMenu->contextMenuNumItems)
+    {
+    case 2:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x2));
-    else if (gBagMenu->contextMenuNumItems == 4)
-        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x2), 2, 2);
-    else
-        PrintContextMenuItemGrid(BagMenu_AddWindow(ITEMWIN_2x3), 2, 3);
+        break;
+    case 3:
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x3));
+        break;
+    case 4:
+        PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x4));
+        break;
+    }
 }
 
 static void Task_LoadBagSortOptions(u8 taskId)
 {
     AddBagSortSubMenu();
-    if (gBagMenu->contextMenuNumItems <= 2)
-        gTasks[taskId].func = Task_ItemContext_SingleRow;
-    else
-        gTasks[taskId].func = Task_ItemContext_MultipleRows;
+    gTasks[taskId].func = Task_ItemContext_SingleRow;
 }
 
 #define tSortType data[2]
@@ -3098,7 +3143,7 @@ static void Task_SortFinish(u8 taskId)
 {
     if (gMain.newKeys & (A_BUTTON | B_BUTTON))
     {
-        RemoveItemMessageWindow(4);
+        RemoveItemMessageWindow(ITEMWIN_MESSAGE);
         ReturnToItemList(taskId);
     }
 }

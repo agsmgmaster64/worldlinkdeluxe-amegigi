@@ -26,8 +26,9 @@ enum {
 enum {
     ITEMWIN_1x1,
     ITEMWIN_1x2,
-    ITEMWIN_2x2,
-    ITEMWIN_2x3,
+    ITEMWIN_1x3,
+    ITEMWIN_1x4,
+    ITEMWIN_1x5,
     ITEMWIN_MESSAGE,
     ITEMWIN_YESNO_LOW,
     ITEMWIN_YESNO_HIGH,
