@@ -50,8 +50,6 @@ enum
 {
     GACHA_STATE_INIT,
     GACHA_STATE_PROCESS_INPUT,
-    GACHA_STATE_COMPLETED_WAIT_FOR_SOUND,
-    GACHA_STATE_PROCESS_COMPLETED_INPUT,
     GACHA_STATE_START_EXIT,
     GACHA_STATE_EXIT,
     STATE_INIT_A,
@@ -77,10 +75,7 @@ enum
     STATE_NEW_MON_MSG,
     NEW_1,
     NEW_2,
-    NEW_3,
-    NEW_4,
-    NEW_5,
-    NEW_6,
+    STATE_SET_EXIT,
 };
 
 enum {
@@ -2921,18 +2916,6 @@ static void ExitGacha(void)
     }
 }
 
-static void HandleInput_GachaComplete(void)
-{
-    if (IsFanfareTaskInactive())
-    {
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            gSpecialVar_Result = 1;
-            sGacha->state = GACHA_STATE_START_EXIT;
-        }
-    }
-}
-
 static void HandleInput(void)
 {
     if (JOY_NEW(A_BUTTON))
@@ -3066,15 +3049,6 @@ static void GachaMain(u8 taskId)
         break;
     case GACHA_STATE_PROCESS_INPUT:
         HandleInput();
-        break;
-    case GACHA_STATE_COMPLETED_WAIT_FOR_SOUND:
-        if (IsSEPlaying())
-            break;
-
-        PlayFanfare(MUS_SLOTS_WIN);
-        sGacha->state = GACHA_STATE_PROCESS_COMPLETED_INPUT;
-    case GACHA_STATE_PROCESS_COMPLETED_INPUT:
-        HandleInput_GachaComplete();
         break;
     case GACHA_STATE_START_EXIT:
         StartExitGacha();
@@ -3243,11 +3217,7 @@ static void GachaMain(u8 taskId)
         if (IsFanfareTaskInactive())
             sGacha->state++;
         break;
-    case NEW_3: // Twice?
-        if (IsFanfareTaskInactive())
-            sGacha->state++;
-        break;
-    case NEW_4:
+    case STATE_SET_EXIT:
         // Ready the nickname prompt
         if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE)
         {
