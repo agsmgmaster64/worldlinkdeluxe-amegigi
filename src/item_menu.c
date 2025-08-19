@@ -352,8 +352,8 @@ static const u8 sContextMenuItems_KeyItemsPocket[] = {
 
 static const u8 sContextMenuItems_Bike[] = {
     ACTION_USE,
-    ACTION_REGISTER,
     ACTION_SWITCH_BIKE,
+    ACTION_REGISTER,
     ACTION_CANCEL
 };
 
@@ -435,23 +435,23 @@ static const u8 sContextMenuItems_QuizLady[] = {
 };
 
 static const u8 sContextMenuItems_OldVariableRod[] = {
-    ACTION_REGISTER,
     ACTION_OLD_TECHNIQUE,
+    ACTION_REGISTER,
     ACTION_CANCEL
 };
 static const u8 sContextMenuItems_GoodVariableRod[] = {
-    ACTION_REGISTER,
     ACTION_OLD_TECHNIQUE,
     ACTION_GOOD_TECHNIQUE,
+    ACTION_REGISTER,
     ACTION_CANCEL
 };
 static const u8 sContextMenuItems_SuperVariableRod[] = {
-    ACTION_REGISTER,
     ACTION_OLD_TECHNIQUE,
     ACTION_GOOD_TECHNIQUE,
     ACTION_SUPER_TECHNIQUE,
+    ACTION_REGISTER,
     ACTION_CANCEL
-};
+};//
 
 static const TaskFunc sContextMenuFuncs[] = {
     [ITEMMENULOCATION_FIELD] =                  Task_ItemContext_Normal,
@@ -1127,13 +1127,13 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
         {
             // Print registered icon
             if (gSaveBlock1Ptr->registeredItemSelect != ITEM_NONE && gSaveBlock1Ptr->registeredItemSelect == itemSlot.itemId)
-                BlitBitmapToWindow(windowId, sRegisteredSelect_Gfx, 96, y - 1, 24, 16);
+                BlitBitmapToWindow(windowId, sRegisteredSelect_Gfx, 112, y - 1, 24, 16);
 
             if (gSaveBlock3Ptr->registeredItemL != ITEM_NONE && gSaveBlock3Ptr->registeredItemL == itemSlot.itemId)
-                BlitBitmapToWindow(windowId, sRegisteredLButton_Gfx, 96, y - 1, 24, 16);
+                BlitBitmapToWindow(windowId, sRegisteredLButton_Gfx, 112, y - 1, 24, 16);
 
             if (gSaveBlock3Ptr->registeredItemR != ITEM_NONE && gSaveBlock3Ptr->registeredItemR == itemSlot.itemId)
-                BlitBitmapToWindow(windowId, sRegisteredRButton_Gfx, 96, y - 1, 24, 16);
+                BlitBitmapToWindow(windowId, sRegisteredRButton_Gfx, 112, y - 1, 24, 16);
         }
     }
 }
@@ -1601,9 +1601,9 @@ static void DrawItemListBgRow(u8 y)
 static void DrawPocketIndicatorSquare(u8 x, bool8 isCurrentPocket)
 {
     if (!isCurrentPocket)
-        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 1, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x1017, x + 2, 3, 1, 1);
     else
-        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 1, 3, 1, 1);
+        FillBgTilemapBufferRect_Palette0(2, 0x102B, x + 2, 3, 1, 1);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -1854,7 +1854,7 @@ static void OpenContextMenu(u8 taskId)
                 if (gSaveBlock1Ptr->registeredItemSelect == gSpecialVar_ItemId
                  || gSaveBlock3Ptr->registeredItemL == gSpecialVar_ItemId
                  || gSaveBlock3Ptr->registeredItemR == gSpecialVar_ItemId)
-                    gBagMenu->contextMenuItemsBuffer[1] = ACTION_DESELECT;
+                    gBagMenu->contextMenuItemsBuffer[gBagMenu->contextMenuNumItems - 2] = ACTION_DESELECT;
                 break;
             case POCKET_POKE_BALLS:
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_BallsPocket;
@@ -1897,6 +1897,7 @@ static void OpenContextMenu(u8 taskId)
     }
     switch (gBagMenu->contextMenuNumItems)
     {
+    default:
     case 1:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x1));
         break;
@@ -1906,7 +1907,6 @@ static void OpenContextMenu(u8 taskId)
     case 3:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x3));
         break;
-    default:
     case 4:
         PrintContextMenuItems(BagMenu_AddWindow(ITEMWIN_1x4));
         break;
@@ -3012,12 +3012,14 @@ static const u8 sBagMenuSortItems[] =
 static const u8 sBagMenuSortKeyItems[] =
 {
     ACTION_BY_NAME,
+    ACTION_BY_TYPE,
     ACTION_CANCEL,
 };
 
 static const u8 sBagMenuSortPokeBalls[] =
 {
     ACTION_BY_NAME,
+    ACTION_BY_TYPE,
     ACTION_BY_AMOUNT,
     ACTION_CANCEL,
 };
@@ -3263,7 +3265,7 @@ static s32 CompareItemsByType(enum Pocket pocketId, struct ItemSlot item1, struc
     else if (type1 > type2)
         return 1;
 
-    return CompareItemsAlphabetically(pocketId, item1, item2); // Items are of same type so sort alphabetically
+    return CompareItemsByIndex(pocketId, item1, item2); // Items are of same type so sort by index
 }
 
 static s32 CompareItemsByIndex(enum Pocket pocketId, struct ItemSlot item1, struct ItemSlot item2)
@@ -3281,12 +3283,11 @@ static s32 CompareItemsByIndex(enum Pocket pocketId, struct ItemSlot item1, stru
         index1 = GetItemTMHMIndex(item1.itemId);
         index2 = GetItemTMHMIndex(item2.itemId);
         break;
+    default:
     case POCKET_BERRIES: // To do - requires #7305
         index1 = item1.itemId;
         index2 = item2.itemId;
         break;
-    default:
-        return 0;
     }
 
     if (index1 < index2)
