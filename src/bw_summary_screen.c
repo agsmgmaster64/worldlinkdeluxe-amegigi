@@ -20,6 +20,7 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "link.h"
+#include "learn_move.h"
 #include "m4a.h"
 #include "malloc.h"
 #include "menu.h"
@@ -2254,6 +2255,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);        
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
+        VarSet(VAR_MOVE_MANAGER, MOVE_REMINDER_CHECK_ALL_MOVES);
         sMonSummaryScreen->relearnableMovesNum = P_SUMMARY_SCREEN_MOVE_RELEARNER ? GetNumberOfRelearnableMoves(mon) : 0;
         return TRUE;
     }
@@ -2495,7 +2497,7 @@ static void Task_HandleInput(u8 taskId)
                 && ShouldShowMoveRelearner()
                 && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES))
         {
-            sMonSummaryScreen->callback = CB2_InitLearnMove;
+            sMonSummaryScreen->callback = CB2_MoveRelearner_Init;
             gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
             gOriginSummaryScreenPage = sMonSummaryScreen->currPageIndex;
             StopPokemonAnimations();
