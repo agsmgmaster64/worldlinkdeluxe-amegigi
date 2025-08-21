@@ -35,6 +35,7 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "item_menu.h"
+#include "item_pc_rg.h"
 #include "item_use.h"
 #include "caps.h"
 #include "link.h"
@@ -443,6 +444,7 @@ static void CB2_WriteMailToGiveMonFromBag(void);
 static void GiveItemToSelectedMon(u8);
 static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8);
 static void CB2_ReturnToPartyOrBagMenuFromWritingMail(void);
+static void RemoveItemToGiveFromBag(u16 item);
 static bool8 ReturnGiveItemToBagOrPC(u16);
 static void Task_DisplayGaveMailFromBagMessage(u8);
 static void Task_HandleSwitchItemsFromBagYesNoInput(u8);
@@ -7159,6 +7161,12 @@ void CB2_ChooseMonToGiveItem(void)
     gPartyMenu.bagItem = gSpecialVar_ItemId;
 }
 
+void CB2_ChooseMonToGiveItem_ItemPc_RG(void)
+{
+    InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_GIVE_PC_ITEM, FALSE, PARTY_MSG_GIVE_TO_WHICH_MON, Task_HandleChooseMonInput, CB2_ReturnToItemPcMenu_RG);
+    gPartyMenu.bagItem = ItemPc_RG_GetItemIdBySlotId(ItemPc_RG_GetCursorPosition());
+}
+
 static void TryGiveItemOrMailToSelectedMon(u8 taskId)
 {
     sPartyMenuItemId = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM);
@@ -7181,7 +7189,7 @@ static void GiveItemOrMailToSelectedMon(u8 taskId)
 {
     if (ItemIsMail(gPartyMenu.bagItem))
     {
-        RemoveBagItem(gPartyMenu.bagItem, 1);
+        RemoveItemToGiveFromBag(gPartyMenu.bagItem);
         sPartyMenuInternal->exitCallback = CB2_WriteMailToGiveMonFromBag;
         Task_ClosePartyMenu(taskId);
     }
@@ -7200,7 +7208,7 @@ static void GiveItemToSelectedMon(u8 taskId)
         item = gPartyMenu.bagItem;
         DisplayGaveHeldItemMessage(&gPlayerParty[gPartyMenu.slotId], item, FALSE, 1);
         GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], item);
-        RemoveBagItem(item, 1);
+        RemoveItemToGiveFromBag(item);
         gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
     }
 }
@@ -7279,7 +7287,7 @@ static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
     {
     case 0: // Yes, switch items
         item = gPartyMenu.bagItem;
-        RemoveBagItem(item, 1);
+        RemoveItemToGiveFromBag(item);
         if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
             ReturnGiveItemToBagOrPC(item);
@@ -7313,6 +7321,14 @@ static void DisplayItemMustBeRemovedFirstMessage(u8 taskId)
     DisplayPartyMenuMessage(gText_RemoveMailBeforeItem, TRUE);
     ScheduleBgCopyTilemapToVram(2);
     gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+}
+
+static void RemoveItemToGiveFromBag(u16 item)
+{
+    if (gPartyMenu.action == PARTY_ACTION_GIVE_PC_ITEM)
+        RemovePCItem(item, 1);
+    else
+        RemoveBagItem(item, 1);
 }
 
 // Returns FALSE if there was no space to return the item

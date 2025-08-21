@@ -480,19 +480,11 @@ static void NONNULL BagPocket_CompactItems(struct BagPocket *pocket)
     }
 }
 
-void RemovePCItem(u8 index, u16 count)
+void RemovePCItem(u16 itemId, u16 count)
 {
     struct BagPocket dummyPocket = DUMMY_PC_BAG_POCKET;
 
-    // Get id, quantity at slot
-    struct ItemSlot tempItem = BagPocket_GetSlotData(&dummyPocket, index);
-
-    // Remove quantity
-    BagPocket_SetSlotItemIdAndCount(&dummyPocket, index, tempItem.itemId, tempItem.quantity - count);
-
-    // Compact if necessary
-    if (tempItem.quantity == 0)
-        BagPocket_CompactItems(&dummyPocket);
+    BagPocket_RemoveItem(&dummyPocket, itemId, count);
 }
 
 void CompactPCItems(void)

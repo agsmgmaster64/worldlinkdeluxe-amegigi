@@ -80,6 +80,7 @@ void ItemUseCB_Fusion(u8 taskId, TaskFunc task);
 u8 GetItemEffectType(u16 item);
 void CB2_PartyMenuFromStartMenu(void);
 void CB2_ChooseMonToGiveItem(void);
+void CB2_ChooseMonToGiveItem_ItemPc_RG(void);
 void ChooseMonToGiveMailFromMailbox(void);
 void InitChooseHalfPartyForBattle(u8 unused);
 void ClearSelectedPartyOrder(void);
