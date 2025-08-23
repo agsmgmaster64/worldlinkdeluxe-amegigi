@@ -1287,9 +1287,9 @@ static void Task_NormalContextMenu_HandleInput(u8 taskId)
         input = Menu_ProcessInputNoWrap();
         switch (input)
         {
-        case LIST_CANCEL:
+        case MENU_B_PRESSED:
             break;
-        case LIST_NOTHING_CHOSEN:
+        case MENU_NOTHING_CHOSEN:
             PlaySE(SE_SELECT);
             sContextMenuActions[BP_ACTION_EXIT].func.void_u8(taskId);
             break;
