@@ -72,6 +72,7 @@ enum {
     ITEM_PC_COLORID_DARK_GRAY,
     ITEM_PC_COLORID_LIGHT_GRAY,
     ITEM_PC_COLORID_WHITE_2,
+    ITEM_PC_COLOR_CURSOR_ERASE = 0xFF
 };
 
 enum {
@@ -103,7 +104,7 @@ struct ItemPcStaticResources
 static EWRAM_DATA struct ItemPcResources * sItemPcRGResources = NULL;
 static EWRAM_DATA u8 * sBg1TilemapBuffer = NULL;
 static EWRAM_DATA struct ListMenuItem * sListMenuItems = NULL;
-static EWRAM_DATA struct ItemPcStaticResources sListMenuState = {};
+static EWRAM_DATA struct ItemPcStaticResources sItemPcRGStaticResources = {};
 static EWRAM_DATA u8 sSubmenuWindowIds[ITEM_PC_SUBWINDOW_COUNT] = {};
 static EWRAM_DATA u8 sItemMenuIconSpriteIds[SPR_COUNT] = {};
 
@@ -383,8 +384,8 @@ void ItemPc_RG_Init(u8 hasNoCallback, MainCallback callback)
     }
     if (!hasNoCallback)
     {
-        sListMenuState.savedCallback = callback;
-        sListMenuState.scroll = sListMenuState.row = 0;
+        sItemPcRGStaticResources.savedCallback = callback;
+        sItemPcRGStaticResources.scroll = sItemPcRGStaticResources.row = 0;
     }
     sItemPcRGResources->moveModeOrigPos = NOT_SWAPPING;
     sItemPcRGResources->itemIconSlot = 0;
@@ -507,7 +508,7 @@ static bool8 ItemPc_DoGfxSetup(void)
         break;
     case 15:
         taskId = CreateTask(Task_ItemPcMain, 0);
-        gTasks[taskId].tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
+        gTasks[taskId].tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
         gMain.state++;
         break;
     case 16:
@@ -515,14 +516,14 @@ static bool8 ItemPc_DoGfxSetup(void)
         gMain.state++;
         break;
     case 17:
-        if (sListMenuState.initialized)
+        if (sItemPcRGStaticResources.initialized)
         {
             BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
         }
         gMain.state++;
         break;
     case 18:
-        if (sListMenuState.initialized)
+        if (sItemPcRGStaticResources.initialized)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         }
@@ -558,7 +559,7 @@ static void Task_ItemPcWaitFadeAndBail(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        SetMainCallback2(sListMenuState.savedCallback);
+        SetMainCallback2(sItemPcRGStaticResources.savedCallback);
         ItemPc_FreeResources();
         DestroyTask(taskId);
     }
@@ -699,7 +700,7 @@ static void ItemPc_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
         if (sItemPcRGResources->moveModeOrigPos == (u8)itemId)
             ItemPc_PrintOrRemoveCursorAt(y, ITEM_PC_COLORID_LIGHT_GRAY);
         else
-            ItemPc_PrintOrRemoveCursorAt(y, 0xFF);
+            ItemPc_PrintOrRemoveCursorAt(y, ITEM_PC_COLOR_CURSOR_ERASE);
     }
     if (itemId != LIST_CANCEL)
     {
@@ -717,7 +718,7 @@ static void ItemPc_PrintOrRemoveCursor(u8 listMenuId, u8 colorIdx)
 
 static void ItemPc_PrintOrRemoveCursorAt(u8 y, u8 colorIdx)
 {
-    if (colorIdx == 0xFF)
+    if (colorIdx == ITEM_PC_COLOR_CURSOR_ERASE)
     {
         u8 maxWidth = GetFontAttribute(FONT_SHORT, FONTATTR_MAX_LETTER_WIDTH);
         u8 maxHeight = GetFontAttribute(FONT_SHORT, FONTATTR_MAX_LETTER_HEIGHT);
@@ -736,7 +737,7 @@ static void ItemPc_PrintWithdrawItem(void)
 
 static void ItemPc_PlaceTopMenuScrollIndicatorArrows(void)
 {
-    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 128, 8, 104, sItemPcRGResources->nItems - sItemPcRGResources->maxShowed + 1, TAG_ARROWS, TAG_ARROWS, &sListMenuState.scroll);
+    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 128, 8, 104, sItemPcRGResources->nItems - sItemPcRGResources->maxShowed + 1, TAG_ARROWS, TAG_ARROWS, &sItemPcRGStaticResources.scroll);
 }
 
 static void ItemPc_PlaceWithdrawQuantityScrollIndicatorArrows(void)
@@ -756,14 +757,14 @@ static void ItemPc_RemoveScrollIndicatorArrowPair(void)
 
 static void ItemPc_SetCursorPosition(void)
 {
-    if (sListMenuState.scroll != 0 && sListMenuState.scroll + sItemPcRGResources->maxShowed > sItemPcRGResources->nItems + 1)
-        sListMenuState.scroll = (sItemPcRGResources->nItems + 1) - sItemPcRGResources->maxShowed;
-    if (sListMenuState.scroll + sListMenuState.row >= sItemPcRGResources->nItems + 1)
+    if (sItemPcRGStaticResources.scroll != 0 && sItemPcRGStaticResources.scroll + sItemPcRGResources->maxShowed > sItemPcRGResources->nItems + 1)
+        sItemPcRGStaticResources.scroll = (sItemPcRGResources->nItems + 1) - sItemPcRGResources->maxShowed;
+    if (sItemPcRGStaticResources.scroll + sItemPcRGStaticResources.row >= sItemPcRGResources->nItems + 1)
     {
         if (sItemPcRGResources->nItems + 1 < 2)
-            sListMenuState.row = 0;
+            sItemPcRGStaticResources.row = 0;
         else
-            sListMenuState.row = sItemPcRGResources->nItems;
+            sItemPcRGStaticResources.row = sItemPcRGResources->nItems;
     }
 }
 
@@ -783,7 +784,7 @@ static void ItemPc_FreeResources(void)
 
 static void Task_ItemPcTurnOff1(u8 taskId)
 {
-    if (sListMenuState.initialized)
+    if (sItemPcRGStaticResources.initialized)
     {
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     }
@@ -801,11 +802,11 @@ static void Task_ItemPcTurnOff2(u8 taskId)
 
     if (!gPaletteFade.active && !IsComputerScreenCloseEffectActive())
     {
-        DestroyListMenuTask(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+        DestroyListMenuTask(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
         if (sItemPcRGResources->savedCallback != NULL)
             SetMainCallback2(sItemPcRGResources->savedCallback);
         else
-            SetMainCallback2(sListMenuState.savedCallback);
+            SetMainCallback2(sItemPcRGStaticResources.savedCallback);
         ItemPc_RemoveScrollIndicatorArrowPair();
         ItemPc_FreeResources();
         DestroyTask(taskId);
@@ -814,7 +815,7 @@ static void Task_ItemPcTurnOff2(u8 taskId)
 
 u8 ItemPc_RG_GetCursorPosition(void)
 {
-    return sListMenuState.scroll + sListMenuState.row;
+    return sItemPcRGStaticResources.scroll + sItemPcRGStaticResources.row;
 }
 
 u16 ItemPc_RG_GetItemIdBySlotId(u16 idx)
@@ -845,11 +846,11 @@ static void ItemPc_SetScrollPosition(void)
 {
     u8 i;
 
-    if (sListMenuState.row > 3)
+    if (sItemPcRGStaticResources.row > 3)
     {
-        for (i = 0; i <= sListMenuState.row - 3; sListMenuState.row--, sListMenuState.scroll++, i++)
+        for (i = 0; i <= sItemPcRGStaticResources.row - 3; sItemPcRGStaticResources.row--, sItemPcRGStaticResources.scroll++, i++)
         {
-            if (sListMenuState.scroll + sItemPcRGResources->maxShowed == sItemPcRGResources->nItems + 1)
+            if (sItemPcRGStaticResources.scroll + sItemPcRGResources->maxShowed == sItemPcRGResources->nItems + 1)
                 break;
         }
     }
@@ -863,7 +864,7 @@ static void ItemPc_SetMessageWindowPalette(int palIdx)
 
 void ItemPc_RG_SetInitializedFlag(bool8 flag)
 {
-    sListMenuState.initialized = flag;
+    sItemPcRGStaticResources.initialized = flag;
 }
 
 static void Task_ItemPcMain(u8 taskId)
@@ -886,7 +887,7 @@ static void Task_ItemPcMain(u8 taskId)
             }
         }
         input = ListMenu_ProcessInput(tListTaskId);
-        ListMenuGetScrollAndRow(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+        ListMenuGetScrollAndRow(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
         switch (input)
         {
         case LIST_NOTHING_CHOSEN:
@@ -939,19 +940,19 @@ static void Task_ItemPcMoveItemModeRun(u8 taskId)
     s16 * data = gTasks[taskId].data;
 
     ListMenu_ProcessInput(tListTaskId);
-    ListMenuGetScrollAndRow(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+    ListMenuGetScrollAndRow(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
     ItemPc_UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(tListTaskId));
     if (JOY_NEW(A_BUTTON | SELECT_BUTTON))
     {
         PlaySE(SE_SELECT);
         sItemPcRGResources->moveModeOrigPos = NOT_SWAPPING;
-        ItemPc_InsertItemIntoNewSlot(taskId, sListMenuState.scroll + sListMenuState.row);
+        ItemPc_InsertItemIntoNewSlot(taskId, sItemPcRGStaticResources.scroll + sItemPcRGStaticResources.row);
     }
     else if (JOY_NEW(B_BUTTON))
     {
         PlaySE(SE_SELECT);
         sItemPcRGResources->moveModeOrigPos = NOT_SWAPPING;
-        ItemPc_MoveItemModeCancel(taskId, sListMenuState.scroll + sListMenuState.row);
+        ItemPc_MoveItemModeCancel(taskId, sItemPcRGStaticResources.scroll + sItemPcRGStaticResources.row);
     }
 }
 
@@ -965,11 +966,11 @@ static void ItemPc_InsertItemIntoNewSlot(u8 taskId, u32 pos)
     else
     {
         MoveItemSlotInPC(gSaveBlock1Ptr->pcItems, tPosition, pos);
-        DestroyListMenuTask(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+        DestroyListMenuTask(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
         if (tPosition < pos)
-            sListMenuState.row--;
+            sItemPcRGStaticResources.row--;
         ItemPc_BuildListMenuTemplate();
-        tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
+        tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
         ItemPc_SetSwapLineInvisibility(TRUE);
         gTasks[taskId].func = Task_ItemPcMain;
     }
@@ -979,11 +980,11 @@ static void ItemPc_MoveItemModeCancel(u8 taskId, u32 pos)
 {
     s16 * data = gTasks[taskId].data;
 
-    DestroyListMenuTask(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+    DestroyListMenuTask(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
     if (tPosition < pos)
-        sListMenuState.row--;
+        sItemPcRGStaticResources.row--;
     ItemPc_BuildListMenuTemplate();
-    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
     ItemPc_SetSwapLineInvisibility(TRUE);
     gTasks[taskId].func = Task_ItemPcMain;
 }
@@ -1009,11 +1010,11 @@ static void Task_ItemPcSubmenuRun(u8 taskId)
     s8 input = Menu_ProcessInputNoWrap();
     switch (input)
     {
-    case LIST_NOTHING_CHOSEN:
+    case MENU_B_PRESSED:
         PlaySE(SE_SELECT);
         Task_ItemPcCancel(taskId);
         break;
-    case LIST_CANCEL:
+    case MENU_NOTHING_CHOSEN:
         break;
     default:
         PlaySE(SE_SELECT);
@@ -1097,11 +1098,11 @@ static void Task_ItemPcCleanUpWithdraw(u8 taskId)
 
     ItemPc_DestroySubwindow(ITEM_PC_SUBWINDOW_WITHDRAW);
     PutWindowTilemap(ITEM_PC_WINDOW_DESCRIPTION);
-    DestroyListMenuTask(tListTaskId, &sListMenuState.scroll, &sListMenuState.row);
+    DestroyListMenuTask(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
     ItemPc_CountPcItems();
     ItemPc_SetCursorPosition();
     ItemPc_BuildListMenuTemplate();
-    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
     ScheduleBgCopyTilemapToVram(0);
     ItemPc_ReturnFromSubmenu(taskId);
 }
