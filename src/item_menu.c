@@ -5,6 +5,7 @@
 #include "battle_pyramid.h"
 #include "frontier_util.h"
 #include "battle_pyramid_bag.h"
+#include "berry_pouch.h"
 #include "berry_tag_screen.h"
 #include "bg.h"
 #include "data.h"
@@ -35,6 +36,7 @@
 #include "player_pc.h"
 #include "pokemon.h"
 #include "pokemon_summary_screen.h"
+#include "pokemon_storage_system.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "shop.h"
@@ -1500,6 +1502,9 @@ static void ChangeBagPocketId(u8 *bagPocketId, s8 deltaBagPocketId)
         *bagPocketId = POCKETS_COUNT - 1;
     else
         *bagPocketId += deltaBagPocketId;
+
+    if (BP_REMOVE_BERRY_POCKET_FROM_BAG && *bagPocketId == POCKET_BERRIES)
+        *bagPocketId += deltaBagPocketId;
 }
 
 static void SwitchBagPocket(u8 taskId, s16 deltaBagPocketId, bool16 skipEraseList)
@@ -2331,6 +2336,11 @@ static void ItemMenu_Cancel(u8 taskId)
     ReturnToItemList(taskId);
 }
 
+static void InitBerryPouchFromBattle(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMBATTLE, CB2_BagMenuFromBattle);
+}
+
 static const u8 sText_BattleRules_NoItems_Player[] = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
 static void ItemMenu_UseInBattle(u8 taskId)
 {
@@ -2340,6 +2350,12 @@ static void ItemMenu_UseInBattle(u8 taskId)
     {
         DisplayCannotUseItemMessage(taskId, FALSE, sText_BattleRules_NoItems_Player);
         return;
+    }
+
+    if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = InitBerryPouchFromBattle;
+        Task_FadeAndCloseBagMenu(taskId);
     }
 
     // Safety check
@@ -2361,11 +2377,21 @@ void CB2_ReturnToBagMenuPocket(void)
     GoToBagMenu(ITEMMENULOCATION_LAST, POCKETS_COUNT, NULL);
 }
 
+static void GoToBerryPouch_Give(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMPARTYGIVE, CB2_SelectBagItemToGive);
+}
+
 static void Task_ItemContext_GiveToParty(u8 taskId)
 {
     if (!IsWritingMailAllowed(gSpecialVar_ItemId))
     {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_Give;
+        Task_FadeAndCloseBagMenu(taskId);
     }
     else if (gBagPosition.pocket != POCKET_KEY_ITEMS && !GetItemImportance(gSpecialVar_ItemId))
     {
@@ -2377,15 +2403,36 @@ static void Task_ItemContext_GiveToParty(u8 taskId)
     }
 }
 
+static void ReturnToBagMenuFromSubmenu_PCBox(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_PCBOX, POCKETS_COUNT, CB2_ReturnToPokeStorage);
+}
+
+static void GoToBerryPouch_PCBox(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMPOKEMONSTORAGEPC, ReturnToBagMenuFromSubmenu_PCBox);
+}
+
 // Selected item to give to a Pokémon in PC storage
 static void Task_ItemContext_GiveToPC(u8 taskId)
 {
     if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
+    {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_PCBox;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
     else if (gBagPosition.pocket != POCKET_KEY_ITEMS && !GetItemImportance(gSpecialVar_ItemId))
+    {
         gTasks[taskId].func = Task_FadeAndCloseBagMenu;
+    }
     else
+    {
         PrintItemCantBeHeld(taskId);
+    }
 }
 
 #define tUsingRegisteredKeyItem data[3] // See usage in item_use.c
@@ -2450,11 +2497,21 @@ bool8 UseRegisteredKeyItemOnField(u8 button)
 
 #undef tUsingRegisteredKeyItem
 
+static void GoToBerryPouch_Sell(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMMARTSELL, CB2_GoToSellMenu);
+}
+
 static void Task_ItemContext_Sell(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
+    if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_Sell;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
     {
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem); // Edit this pls

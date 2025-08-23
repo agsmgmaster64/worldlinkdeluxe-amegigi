@@ -1,6 +1,7 @@
 #include "global.h"
 #include "item.h"
 #include "berry.h"
+#include "berry_pouch.h"
 #include "pokeball.h"
 #include "string_util.h"
 #include "text.h"
@@ -345,6 +346,15 @@ static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, u16 itemId, u1
         {
             if (tempPocketSlotQuantities[itemAddIndex] > 0)
                 BagPocket_SetSlotItemIdAndCount(pocket, itemAddIndex, itemId, tempPocketSlotQuantities[itemAddIndex]);
+        }
+    }
+
+    if (BP_ADD_BERRY_POUCH_WITH_BERRIES)
+    {
+        if (pocket->id == POCKET_BERRIES)
+        {
+            if (!CheckBagHasItem(ITEM_BERRY_POUCH, 1))
+                AddBagItem(ITEM_BERRY_POUCH, 1);
         }
     }
 

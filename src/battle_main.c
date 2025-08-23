@@ -4382,6 +4382,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     else
                     {
+                        gBattleStruct->itemPartyIndex[battler] = gBattlerPartyIndexes[battler];
                         BtlController_EmitChooseItem(battler, B_COMM_TO_CONTROLLER, gBattleStruct->battlerPartyOrders[battler]);
                         MarkBattlerForControllerExec(battler);
                     }
