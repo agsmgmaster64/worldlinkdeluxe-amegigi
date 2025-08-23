@@ -112,10 +112,11 @@ enum {
     BP_COLORID_DARK_GARY,
     BP_COLORID_LIGHT_GRAY,
     BP_COLORID_TEXT,
+    BP_COLOR_CURSOR_ERASE = 0xFF
 };
 
-static EWRAM_DATA struct BerryPouchStruct *sBerryPouch = NULL;
-static EWRAM_DATA struct BerryPouchStaticStruct sBerryPouchSaved = {};
+static EWRAM_DATA struct BerryPouchStruct *sBerryPouchDynamicResources = NULL;
+static EWRAM_DATA struct BerryPouchStaticStruct sBerryPouchStaticResources = {};
 static EWRAM_DATA struct ListMenuItem *sListMenuItems = NULL;
 static EWRAM_DATA u8 * sListMenuStrbuf = NULL;
 static EWRAM_DATA const u8 * sContextMenuOptions = NULL;
@@ -573,29 +574,31 @@ static const struct SpriteTemplate sSpriteTemplate_BerryPouch = {
 #define tQuantity       data[2]
 #define tItemCount      data[8]
 
-void InitBerryPouch(u8 type, void (*savedCallback)(void))
+void InitBerryPouch(u8 type, void (*savedCallback)(void), u8 allowSelect)
 {
     u8 i;
 
-    sBerryPouch = Alloc(sizeof(struct BerryPouchStruct));
-    if (sBerryPouch == NULL)
+    sBerryPouchDynamicResources = Alloc(sizeof(struct BerryPouchStruct));
+    if (sBerryPouchDynamicResources == NULL)
     {
         SetMainCallback2(savedCallback);
     }
     else
     {
         sIsInBerryPouch = TRUE;
-        if (type != BERRYPOUCH_NA)
-            sBerryPouchSaved.type = type;
+        if (type != BERRYPOUCH_REOPENING)
+            sBerryPouchStaticResources.type = type;
+        if (allowSelect != BERRYPOUCH_KEEP_PREV)
+            sBerryPouchStaticResources.allowSelect = allowSelect;
         if (savedCallback != NULL)
-            sBerryPouchSaved.savedCallback = savedCallback;
-        sBerryPouch->exitCallback = NULL;
-        sBerryPouch->itemMenuIconId = 0;
-        sBerryPouchSaved.listMenuScrollOffset = gBagPosition.scrollPosition[POCKET_BERRIES];
-        sBerryPouchSaved.listMenuSelectedRow = gBagPosition.cursorPosition[POCKET_BERRIES];
-        sBerryPouch->indicatorTaskId = TASK_NONE;
+            sBerryPouchStaticResources.savedCallback = savedCallback;
+        sBerryPouchDynamicResources->exitCallback = NULL;
+        sBerryPouchDynamicResources->itemMenuIconId = 0;
+        sBerryPouchStaticResources.listMenuScrollOffset = gBagPosition.scrollPosition[POCKET_BERRIES];
+        sBerryPouchStaticResources.listMenuSelectedRow = gBagPosition.cursorPosition[POCKET_BERRIES];
+        sBerryPouchDynamicResources->indicatorTaskId = TASK_NONE;
         for (i = 0; i < 4; i++)
-            sBerryPouch->data[i] = 0;
+            sBerryPouchDynamicResources->data[i] = 0;
         gTextFlags.autoScroll = FALSE;
         gSpecialVar_ItemId = ITEM_NONE;
         SetMainCallback2(CB2_InitBerryPouch);
@@ -669,7 +672,7 @@ static bool8 RunBerryPouchInit(void)
         break;
     case 7:
         BerryPouchInitBgs();
-        sBerryPouch->data[0] = 0;
+        sBerryPouchDynamicResources->data[0] = 0;
         gMain.state++;
         break;
     case 8:
@@ -704,7 +707,7 @@ static bool8 RunBerryPouchInit(void)
         break;
     case 14:
         taskId = CreateTask(Task_BerryPouchMain, 0);
-        gTasks[taskId].tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchSaved.listMenuScrollOffset, sBerryPouchSaved.listMenuSelectedRow);
+        gTasks[taskId].tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
         gTasks[taskId].tItemCount = 0;
         gMain.state++;
         break;
@@ -745,7 +748,7 @@ static void Task_AbortBerryPouchLoading_WaitFade(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        SetMainCallback2(sBerryPouchSaved.savedCallback);
+        SetMainCallback2(sBerryPouchStaticResources.savedCallback);
         BerryPouch_DestroyResources();
         DestroyTask(taskId);
     }
@@ -754,10 +757,10 @@ static void Task_AbortBerryPouchLoading_WaitFade(u8 taskId)
 static void BerryPouchInitBgs(void)
 {
     ResetAllBgsCoordinatesAndBgCntRegs();
-    memset(sBerryPouch->bg1TilemapBuffer, 0, BG_SCREEN_SIZE);
+    memset(sBerryPouchDynamicResources->bg1TilemapBuffer, 0, BG_SCREEN_SIZE);
     ResetBgsAndClearDma3BusyFlags(FALSE);
     InitBgsFromTemplates(0, sBgTemplates, NELEMS(sBgTemplates));
-    SetBgTilemapBuffer(1, sBerryPouch->bg1TilemapBuffer);
+    SetBgTilemapBuffer(1, sBerryPouchDynamicResources->bg1TilemapBuffer);
     ScheduleBgCopyTilemapToVram(1);
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
@@ -768,33 +771,33 @@ static void BerryPouchInitBgs(void)
 
 static bool8 BerryPouchLoadGfx(void)
 {
-    switch (sBerryPouch->data[0])
+    switch (sBerryPouchDynamicResources->data[0])
     {
     case 0:
         ResetTempTileDataBuffers();
         DecompressAndCopyTileDataToVram(1, sBerryPouchBgGfx, 0, 0, 0);
-        sBerryPouch->data[0]++;
+        sBerryPouchDynamicResources->data[0]++;
         break;
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            DecompressDataWithHeaderWram(sBerryPouchBg1Tilemap, sBerryPouch->bg1TilemapBuffer);
-            sBerryPouch->data[0]++;
+            DecompressDataWithHeaderWram(sBerryPouchBg1Tilemap, sBerryPouchDynamicResources->bg1TilemapBuffer);
+            sBerryPouchDynamicResources->data[0]++;
         }
         break;
     case 2:
         LoadPalette(sBerryPouchBgPals, BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
         if (gSaveBlock2Ptr->playerGender != MALE)
             LoadPalette(sBerryPouchBgPal0FemaleOverride, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
-        sBerryPouch->data[0]++;
+        sBerryPouchDynamicResources->data[0]++;
         break;
     case 3:
         LoadCompressedSpriteSheet(&sBerryPouchSpriteSheet);
-        sBerryPouch->data[0]++;
+        sBerryPouchDynamicResources->data[0]++;
         break;
     default:
         LoadSpritePalette(&sBerryPouchSpritePal);
-        sBerryPouch->data[0] = 0;
+        sBerryPouchDynamicResources->data[0] = 0;
         return TRUE;
     }
 
@@ -806,7 +809,7 @@ static bool8 AllocateListMenuBuffers(void)
     sListMenuItems = Alloc((BAG_BERRIES_COUNT + 1) * sizeof(struct ListMenuItem));
     if (sListMenuItems == NULL)
         return FALSE;
-    sListMenuStrbuf = Alloc(sBerryPouch->listMenuNumItems * 28);
+    sListMenuStrbuf = Alloc(sBerryPouchDynamicResources->listMenuNumItems * 28);
     if (sListMenuStrbuf == NULL)
         return FALSE;
     return TRUE;
@@ -820,7 +823,7 @@ static inline u16 GetBerryPouchItemIdByPosition(u32 index)
 static void SetUpListMenuTemplate(void)
 {
     u16 i;
-    for (i = 0; i < sBerryPouch->listMenuNumItems; i++)
+    for (i = 0; i < sBerryPouchDynamicResources->listMenuNumItems; i++)
     {
         GetBerryNameAndIndexForMenu(&sListMenuStrbuf[i * 28], GetBerryPouchItemIdByPosition(i));
         sListMenuItems[i].name = &sListMenuStrbuf[i * 28];
@@ -829,10 +832,10 @@ static void SetUpListMenuTemplate(void)
     sListMenuItems[i].name = sText_Close;
     sListMenuItems[i].id = i;
     gMultiuseListMenuTemplate.items = sListMenuItems;
-    if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-        gMultiuseListMenuTemplate.totalItems = sBerryPouch->listMenuNumItems + 1;
+    if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+        gMultiuseListMenuTemplate.totalItems = sBerryPouchDynamicResources->listMenuNumItems + 1;
     else
-        gMultiuseListMenuTemplate.totalItems = sBerryPouch->listMenuNumItems;
+        gMultiuseListMenuTemplate.totalItems = sBerryPouchDynamicResources->listMenuNumItems;
     gMultiuseListMenuTemplate.windowId = BP_WINDOW_BERRY_LIST;
     gMultiuseListMenuTemplate.header_X = 0;
     gMultiuseListMenuTemplate.item_X = 9;
@@ -840,7 +843,7 @@ static void SetUpListMenuTemplate(void)
     gMultiuseListMenuTemplate.lettersSpacing = 0;
     gMultiuseListMenuTemplate.itemVerticalPadding = 2;
     gMultiuseListMenuTemplate.upText_Y = 2;
-    gMultiuseListMenuTemplate.maxShowed = sBerryPouch->listMenuMaxShowed;
+    gMultiuseListMenuTemplate.maxShowed = sBerryPouchDynamicResources->listMenuMaxShowed;
     gMultiuseListMenuTemplate.fontId = FONT_SHORT;
     gMultiuseListMenuTemplate.cursorPal = TEXT_COLOR_BP_DARK_GRAY;
     gMultiuseListMenuTemplate.fillValue = TEXT_COLOR_BP_TRANSPARENT;
@@ -876,19 +879,19 @@ static void BerryPouchMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         PlaySE(SE_RG_BAG_CURSOR);
         StartBerryPouchSpriteWobbleAnim();
     }
-    DestroyBerryPouchItemIcon(sBerryPouch->itemMenuIconId ^ 1);
-    if (sBerryPouch->listMenuNumItems != itemIndex)
-        CreateBerryPouchItemIcon(GetBerryPouchItemIdByPosition(itemIndex), sBerryPouch->itemMenuIconId);
+    DestroyBerryPouchItemIcon(sBerryPouchDynamicResources->itemMenuIconId ^ 1);
+    if (sBerryPouchDynamicResources->listMenuNumItems != itemIndex)
+        CreateBerryPouchItemIcon(GetBerryPouchItemIdByPosition(itemIndex), sBerryPouchDynamicResources->itemMenuIconId);
     else
-        CreateBerryPouchItemIcon(ITEM_LIST_END, sBerryPouch->itemMenuIconId);
-    sBerryPouch->itemMenuIconId ^= 1;
+        CreateBerryPouchItemIcon(ITEM_LIST_END, sBerryPouchDynamicResources->itemMenuIconId);
+    sBerryPouchDynamicResources->itemMenuIconId ^= 1;
     PrintSelectedBerryDescription(itemIndex);
 }
 
 static void BerryPouchItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 {
     u16 itemQuantity;
-    if (itemId != LIST_CANCEL && sBerryPouch->listMenuNumItems != itemId)
+    if (itemId != LIST_CANCEL && sBerryPouchDynamicResources->listMenuNumItems != itemId)
     {
         itemQuantity = GetBagItemQuantity(POCKET_BERRIES, itemId);
         ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS);
@@ -906,7 +909,7 @@ static void BerryPouchSetArrowCursorAt(u8 y, u8 colorIdx)
 {
     u8 width;
     u8 height;
-    if (colorIdx == 0xFF)
+    if (colorIdx == BP_COLOR_CURSOR_ERASE)
     {
         width = GetMenuCursorDimensionByFont(FONT_SHORT, 0);
         height = GetMenuCursorDimensionByFont(FONT_SHORT, 1);
@@ -922,7 +925,7 @@ static void BerryPouchSetArrowCursorAt(u8 y, u8 colorIdx)
 static void PrintSelectedBerryDescription(s32 itemIdx)
 {
     const u8 * str;
-    if (itemIdx != sBerryPouch->listMenuNumItems)
+    if (itemIdx != sBerryPouchDynamicResources->listMenuNumItems)
     {
         str = GetItemLongDescription(GetBerryPouchItemIdByPosition(itemIdx));
         if (str == NULL)
@@ -944,30 +947,30 @@ static void SetDescriptionWindowBorderPalette(s32 pal)
 
 static void CreateScrollIndicatorArrows_BerryPouchList(void)
 {
-    if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-        sBerryPouch->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sBerryPouch->listMenuNumItems - sBerryPouch->listMenuMaxShowed + 1, 110, 110, &sBerryPouchSaved.listMenuScrollOffset);
+    if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+        sBerryPouchDynamicResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sBerryPouchDynamicResources->listMenuNumItems - sBerryPouchDynamicResources->listMenuMaxShowed + 1, 110, 110, &sBerryPouchStaticResources.listMenuScrollOffset);
     else
-        sBerryPouch->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sBerryPouch->listMenuNumItems - sBerryPouch->listMenuMaxShowed, 110, 110, &sBerryPouchSaved.listMenuScrollOffset);
+        sBerryPouchDynamicResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 160, 8, 120, sBerryPouchDynamicResources->listMenuNumItems - sBerryPouchDynamicResources->listMenuMaxShowed, 110, 110, &sBerryPouchStaticResources.listMenuScrollOffset);
 }
 
 static void CreateScrollIndicatorArrows_TossQuantity(void)
 {
-    sBerryPouch->indicatorOffset = 1;
-    sBerryPouch->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 212, 120, 152, 2, 110, 110, &sBerryPouch->indicatorOffset);
+    sBerryPouchDynamicResources->indicatorOffset = 1;
+    sBerryPouchDynamicResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 212, 120, 152, 2, 110, 110, &sBerryPouchDynamicResources->indicatorOffset);
 }
 
 static void CreateScrollIndicatorArrows_SellQuantity(void)
 {
-    sBerryPouch->indicatorOffset = 1;
-    sBerryPouch->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 152, 72, 104, 2, 110, 110, &sBerryPouch->indicatorOffset);
+    sBerryPouchDynamicResources->indicatorOffset = 1;
+    sBerryPouchDynamicResources->indicatorTaskId = AddScrollIndicatorArrowPairParameterized(2, 152, 72, 104, 2, 110, 110, &sBerryPouchDynamicResources->indicatorOffset);
 }
 
 static void DestroyScrollIndicatorArrows(void)
 {
-    if (sBerryPouch->indicatorTaskId != TASK_NONE)
+    if (sBerryPouchDynamicResources->indicatorTaskId != TASK_NONE)
     {
-        RemoveScrollIndicatorArrowPair(sBerryPouch->indicatorTaskId);
-        sBerryPouch->indicatorTaskId = TASK_NONE;
+        RemoveScrollIndicatorArrowPair(sBerryPouchDynamicResources->indicatorTaskId);
+        sBerryPouchDynamicResources->indicatorTaskId = TASK_NONE;
     }
 }
 
@@ -979,25 +982,25 @@ static void PrintBerryPouchHeaderCentered(void)
 
 void BerryPouch_CursorResetToTop(void)
 {
-    sBerryPouchSaved.listMenuSelectedRow = 0;
-    sBerryPouchSaved.listMenuScrollOffset = 0;
+    sBerryPouchStaticResources.listMenuSelectedRow = 0;
+    sBerryPouchStaticResources.listMenuScrollOffset = 0;
 }
 
 static void SanitizeListMenuSelectionParams(void)
 {
     s32 itemCount;
-    if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-        itemCount = sBerryPouch->listMenuNumItems + 1;
+    if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+        itemCount = sBerryPouchDynamicResources->listMenuNumItems + 1;
     else
-        itemCount = sBerryPouch->listMenuNumItems;
-    if (sBerryPouchSaved.listMenuScrollOffset != 0 && sBerryPouchSaved.listMenuScrollOffset + sBerryPouch->listMenuMaxShowed > itemCount)
-        sBerryPouchSaved.listMenuScrollOffset = itemCount - sBerryPouch->listMenuMaxShowed;
-    if (sBerryPouchSaved.listMenuScrollOffset + sBerryPouchSaved.listMenuSelectedRow >= itemCount)
+        itemCount = sBerryPouchDynamicResources->listMenuNumItems;
+    if (sBerryPouchStaticResources.listMenuScrollOffset != 0 && sBerryPouchStaticResources.listMenuScrollOffset + sBerryPouchDynamicResources->listMenuMaxShowed > itemCount)
+        sBerryPouchStaticResources.listMenuScrollOffset = itemCount - sBerryPouchDynamicResources->listMenuMaxShowed;
+    if (sBerryPouchStaticResources.listMenuScrollOffset + sBerryPouchStaticResources.listMenuSelectedRow >= itemCount)
     {
         if (itemCount == 0 || itemCount == 1)
-            sBerryPouchSaved.listMenuSelectedRow = 0;
+            sBerryPouchStaticResources.listMenuSelectedRow = 0;
         else
-            sBerryPouchSaved.listMenuSelectedRow = itemCount - 1;
+            sBerryPouchStaticResources.listMenuSelectedRow = itemCount - 1;
     }
 }
 
@@ -1005,15 +1008,15 @@ static void UpdateListMenuScrollOffset(void)
 {
     u8 lim;
     u8 i;
-    if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-        lim = sBerryPouch->listMenuNumItems + 1;
+    if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+        lim = sBerryPouchDynamicResources->listMenuNumItems + 1;
     else
-        lim = sBerryPouch->listMenuNumItems;
-    if (sBerryPouchSaved.listMenuSelectedRow > 4)
+        lim = sBerryPouchDynamicResources->listMenuNumItems;
+    if (sBerryPouchStaticResources.listMenuSelectedRow > 4)
     {
-        for (i = 0; i <= sBerryPouchSaved.listMenuSelectedRow - 4; sBerryPouchSaved.listMenuSelectedRow--, sBerryPouchSaved.listMenuScrollOffset++, i++)
+        for (i = 0; i <= sBerryPouchStaticResources.listMenuSelectedRow - 4; sBerryPouchStaticResources.listMenuSelectedRow--, sBerryPouchStaticResources.listMenuScrollOffset++, i++)
         {
-            if (sBerryPouchSaved.listMenuScrollOffset + sBerryPouch->listMenuMaxShowed == lim)
+            if (sBerryPouchStaticResources.listMenuScrollOffset + sBerryPouchDynamicResources->listMenuMaxShowed == lim)
                 break;
         }
     }
@@ -1021,8 +1024,8 @@ static void UpdateListMenuScrollOffset(void)
 
 static void BerryPouch_DestroyResources(void)
 {
-    if (sBerryPouch != NULL)
-        Free(sBerryPouch);
+    if (sBerryPouchDynamicResources != NULL)
+        Free(sBerryPouchDynamicResources);
     if (sListMenuItems != NULL)
         Free(sListMenuItems);
     if (sListMenuStrbuf != NULL)
@@ -1033,8 +1036,8 @@ static void BerryPouch_DestroyResources(void)
 void BerryPouch_StartFadeToExitCallback(u8 taskId)
 {
     BeginNormalPaletteFade(PALETTES_ALL, -2, 0, 16, RGB_BLACK);
-    gBagPosition.scrollPosition[POCKET_BERRIES] = sBerryPouchSaved.listMenuScrollOffset;
-    gBagPosition.cursorPosition[POCKET_BERRIES] = sBerryPouchSaved.listMenuSelectedRow;
+    gBagPosition.scrollPosition[POCKET_BERRIES] = sBerryPouchStaticResources.listMenuScrollOffset;
+    gBagPosition.cursorPosition[POCKET_BERRIES] = sBerryPouchStaticResources.listMenuSelectedRow;
     gTasks[taskId].func = Task_BerryPouchFadeToExitCallback;
 }
 
@@ -1043,11 +1046,11 @@ static void Task_BerryPouchFadeToExitCallback(u8 taskId)
     s16 * data = gTasks[taskId].data;
     if (!gPaletteFade.active)
     {
-        DestroyListMenuTask(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
-        if (sBerryPouch->exitCallback != NULL)
-            SetMainCallback2(sBerryPouch->exitCallback);
+        DestroyListMenuTask(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
+        if (sBerryPouchDynamicResources->exitCallback != NULL)
+            SetMainCallback2(sBerryPouchDynamicResources->exitCallback);
         else
-            SetMainCallback2(sBerryPouchSaved.savedCallback);
+            SetMainCallback2(sBerryPouchStaticResources.savedCallback);
         DestroyScrollIndicatorArrows();
         BerryPouch_DestroyResources();
         DestroyTask(taskId);
@@ -1061,25 +1064,25 @@ static void SortAndCountBerries(void)
     CompactItemsInBagPocket(POCKET_BERRIES);
     //SortItemsInBag(pocket, SORT_BY_INDEX);
 
-    sBerryPouch->listMenuNumItems = 0;
+    sBerryPouchDynamicResources->listMenuNumItems = 0;
 
     for (u32 i = 0; i < pocket->capacity && GetBerryPouchItemIdByPosition(i); i++)
-        sBerryPouch->listMenuNumItems++;
+        sBerryPouchDynamicResources->listMenuNumItems++;
 
-    if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-        itemCount = sBerryPouch->listMenuNumItems + 1;
+    if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+        itemCount = sBerryPouchDynamicResources->listMenuNumItems + 1;
     else
-        itemCount = sBerryPouch->listMenuNumItems;
+        itemCount = sBerryPouchDynamicResources->listMenuNumItems;
 
     if (itemCount > 7)
-        sBerryPouch->listMenuMaxShowed = 7;
+        sBerryPouchDynamicResources->listMenuMaxShowed = 7;
     else
-        sBerryPouch->listMenuMaxShowed = itemCount;
+        sBerryPouchDynamicResources->listMenuMaxShowed = itemCount;
 }
 
 void BerryPouch_SetExitCallback(void (*callback)(void))
 {
-    sBerryPouch->exitCallback = callback;
+    sBerryPouchDynamicResources->exitCallback = callback;
 }
 
 void InitTossQuantitySelectUI(u8 taskId, const u8 * str)
@@ -1108,8 +1111,8 @@ static void PrintxQuantityOnWindow(u8 whichWindow, s16 quantity, u8 ndigits)
 static inline bool32 CanMoveItemsBerryPouch(void)
 {
     // Swaps can only be done from the field or in battle (as opposed to while selling items, for example)
-    if (sBerryPouchSaved.type == BERRYPOUCH_FROMFIELD
-     || sBerryPouchSaved.type == BERRYPOUCH_FROMBATTLE)
+    if (sBerryPouchStaticResources.type == BERRYPOUCH_FROMFIELD
+     || sBerryPouchStaticResources.type == BERRYPOUCH_FROMBATTLE)
     {
         return TRUE;
     }
@@ -1126,7 +1129,7 @@ static void Task_BerryPouchMain(u8 taskId)
         {
             if (JOY_NEW(START_BUTTON))
             {
-                if ((sBerryPouch->listMenuNumItems - 1) <= 1) //can't sort with 0 or 1 item in bag
+                if ((sBerryPouchDynamicResources->listMenuNumItems - 1) <= 1) //can't sort with 0 or 1 item in bag
                 {
                     PlaySE(SE_FAILURE);
                     DisplayItemMessageInBerryPouch(taskId, FONT_SHORT, sText_NothingToSort, Task_WaitButtonBeforeDialogueWindowDestruction);
@@ -1135,7 +1138,7 @@ static void Task_BerryPouchMain(u8 taskId)
                 {
                     menuInput = ListMenu_ProcessInput(tListTaskId);
                     tListPosition = menuInput;
-                    if (menuInput != sBerryPouch->listMenuNumItems)
+                    if (menuInput != sBerryPouchDynamicResources->listMenuNumItems)
                     {
                         gSpecialVar_ItemId = GetBerryPouchItemIdByPosition(menuInput);
                         tQuantity = GetBagItemQuantity(POCKET_BERRIES, menuInput);
@@ -1145,52 +1148,61 @@ static void Task_BerryPouchMain(u8 taskId)
                     DestroyScrollIndicatorArrows();
                     SetDescriptionWindowBorderPalette(1);
                     BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_LIGHT_GRAY);
-                    ListMenuGetScrollAndRow(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
+                    ListMenuGetScrollAndRow(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
                     gTasks[taskId].func = Task_SortContextMenu;
                     return;
                 }
             }
         }
         menuInput = ListMenu_ProcessInput(tListTaskId);
-        ListMenuGetScrollAndRow(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
-        switch (menuInput)
+        ListMenuGetScrollAndRow(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
+        if (JOY_NEW(SELECT_BUTTON) && sBerryPouchStaticResources.allowSelect == TRUE)
         {
-        case LIST_NOTHING_CHOSEN:
-            return;
-        case LIST_CANCEL:
-            if (sBerryPouchSaved.type != BERRYPOUCH_FROMBERRYCRUSH)
-            {
-                PlaySE(SE_SELECT);
-                gSpecialVar_ItemId = 0;
-                sIsInBerryPouch = FALSE;
-                BerryPouch_StartFadeToExitCallback(taskId);
-            }
-            break;
-        default:
             PlaySE(SE_SELECT);
-            if (sBerryPouchSaved.type == BERRYPOUCH_FROMBERRYCRUSH)
+            gSpecialVar_ItemId = 0;
+            BerryPouch_StartFadeToExitCallback(taskId);
+        }
+        else
+        {
+            switch (menuInput)
             {
-                gSpecialVar_ItemId = GetBerryPouchItemIdByPosition(menuInput);
-                sIsInBerryPouch = FALSE;
-                BerryPouch_StartFadeToExitCallback(taskId);
+            case LIST_NOTHING_CHOSEN:
+                return;
+            case LIST_CANCEL:
+                if (sBerryPouchStaticResources.type != BERRYPOUCH_FROMBERRYCRUSH)
+                {
+                    PlaySE(SE_SELECT);
+                    gSpecialVar_ItemId = 0;
+                    sIsInBerryPouch = FALSE;
+                    BerryPouch_StartFadeToExitCallback(taskId);
+                }
+                break;
+            default:
+                PlaySE(SE_SELECT);
+                if (sBerryPouchStaticResources.type == BERRYPOUCH_FROMBERRYCRUSH)
+                {
+                    gSpecialVar_ItemId = GetBerryPouchItemIdByPosition(menuInput);
+                    sIsInBerryPouch = FALSE;
+                    BerryPouch_StartFadeToExitCallback(taskId);
+                }
+                else if (menuInput == sBerryPouchDynamicResources->listMenuNumItems)
+                {
+                    gSpecialVar_ItemId = 0;
+                    sIsInBerryPouch = FALSE;
+                    BerryPouch_StartFadeToExitCallback(taskId);
+                }
+                else
+                {
+                    DestroyScrollIndicatorArrows();
+                    SetDescriptionWindowBorderPalette(1);
+                    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_LIGHT_GRAY);
+                    tListPosition = menuInput;
+                    tQuantity = GetBagItemQuantity(POCKET_BERRIES, menuInput);
+                    gSpecialVar_ItemId = GetBerryPouchItemIdByPosition(menuInput);
+                    gTasks[taskId].func = sBerryPouchContextMenuTasks[sBerryPouchStaticResources.type];
+                }
+                break;
             }
-            else if (menuInput == sBerryPouch->listMenuNumItems)
-            {
-                gSpecialVar_ItemId = 0;
-                sIsInBerryPouch = FALSE;
-                BerryPouch_StartFadeToExitCallback(taskId);
-            }
-            else
-            {
-                DestroyScrollIndicatorArrows();
-                SetDescriptionWindowBorderPalette(1);
-                BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_LIGHT_GRAY);
-                tListPosition = menuInput;
-                tQuantity = GetBagItemQuantity(POCKET_BERRIES, menuInput);
-                gSpecialVar_ItemId = GetBerryPouchItemIdByPosition(menuInput);
-                gTasks[taskId].func = sBerryPouchContextMenuTasks[sBerryPouchSaved.type];
-            }
-            break;
         }
     }
 }
@@ -1208,7 +1220,7 @@ static void CreateNormalContextMenu(u8 taskId)
     u8 windowId;
     u8 windowId2;
 
-    if (sBerryPouchSaved.type == BERRYPOUCH_FROMBATTLE)
+    if (sBerryPouchStaticResources.type == BERRYPOUCH_FROMBATTLE)
     {
         if (GetItemBattleUsage(gSpecialVar_ItemId))
         {
@@ -1310,7 +1322,7 @@ static void BerryPouch_BattleUse_BagMenu(u8 taskId)
         if (!GetItemImportance(gSpecialVar_ItemId) && !(B_TRY_CATCH_TRAINER_BALL >= GEN_4 && (GetItemBattleUsage(gSpecialVar_ItemId) == EFFECT_ITEM_THROW_BALL) && (gBattleTypeFlags & BATTLE_TYPE_TRAINER)))
             BerryPouch_RemoveUsedItem();
         sIsInBerryPouch = FALSE;
-        sBerryPouch->exitCallback = CB2_SetUpReshowBattleScreenAfterMenu2;
+        sBerryPouchDynamicResources->exitCallback = CB2_SetUpReshowBattleScreenAfterMenu2;
         gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
     }
 }
@@ -1318,7 +1330,7 @@ static void BerryPouch_BattleUse_BagMenu(u8 taskId)
 static void BerryPouch_BattleUse_ShowPartyMenu(u8 taskId)
 {
     sIsInBerryPouch = FALSE;
-    sBerryPouch->exitCallback = ChooseMonForInBattleItem_BerryPouch;
+    sBerryPouchDynamicResources->exitCallback = ChooseMonForInBattleItem_BerryPouch;
     gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
 }
 
@@ -1342,7 +1354,7 @@ static void Task_BerryPouch_Use(u8 taskId)
     PutWindowTilemap(BP_WINDOW_DESCRIPTION);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(2);
-    if (sBerryPouchSaved.type == BERRYPOUCH_FROMBATTLE)
+    if (sBerryPouchStaticResources.type == BERRYPOUCH_FROMBATTLE)
     {
         // Safety check
         u16 type = GetItemType(gSpecialVar_ItemId);
@@ -1460,11 +1472,11 @@ static void Task_WaitButtonThenTossBerries(u8 taskId)
         PlaySE(SE_SELECT);
         RemoveBagItem(gSpecialVar_ItemId, tItemCount);
         DestroyVariableWindow(BP_VAR_WINDOW_THREW_AWAY);
-        DestroyListMenuTask(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
+        DestroyListMenuTask(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
         SortAndCountBerries();
         SanitizeListMenuSelectionParams();
         SetUpListMenuTemplate();
-        tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchSaved.listMenuScrollOffset, sBerryPouchSaved.listMenuSelectedRow);
+        tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
         PutWindowTilemap(BP_WINDOW_DESCRIPTION);
         ScheduleBgCopyTilemapToVram(0);
         BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
@@ -1486,7 +1498,7 @@ static void Task_BerryPouch_Give(u8 taskId)
     }
     else
     {
-        sBerryPouch->exitCallback = CB2_ChooseMonToGiveItem;
+        sBerryPouchDynamicResources->exitCallback = CB2_ChooseMonToGiveItem;
         gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
     }
 }
@@ -1509,11 +1521,11 @@ void Task_BerryPouch_DestroyDialogueWindowAndRefreshListMenu(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
     TryDestroyVariableWindow(BP_VAR_WINDOW_MESSAGE);
-    DestroyListMenuTask(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
+    DestroyListMenuTask(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
     SortAndCountBerries();
     SanitizeListMenuSelectionParams();
     SetUpListMenuTemplate();
-    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchSaved.listMenuScrollOffset, sBerryPouchSaved.listMenuSelectedRow);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
     ScheduleBgCopyTilemapToVram(0);
     BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
     Task_CleanUpAndReturnToMain(taskId);
@@ -1560,11 +1572,11 @@ static void Task_BerryPouchSortItems(u8 taskId)
     ScheduleBgCopyTilemapToVram(2);
 
     SortItemsInBag(&gBagPockets[POCKET_BERRIES], tSortType);
-    DestroyListMenuTask(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
+    DestroyListMenuTask(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
     SortAndCountBerries();
     SanitizeListMenuSelectionParams();
     SetUpListMenuTemplate();
-    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchSaved.listMenuScrollOffset, sBerryPouchSaved.listMenuSelectedRow);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
     ScheduleBgCopyTilemapToVram(0);
 
     StringCopy(gStringVar1, sSortTypeStrings[tSortType]);
@@ -1582,21 +1594,21 @@ static void Task_BerryPouch_CheckTag(u8 taskId)
     PutWindowTilemap(BP_WINDOW_DESCRIPTION);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(2);
-    sBerryPouch->exitCallback = DoBerryTagScreenFromPouch;
+    sBerryPouchDynamicResources->exitCallback = DoBerryTagScreenFromPouch;
     gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
 }
 
 static void Task_ContextMenu_FromPartyGiveMenu(u8 taskId)
 {
     sIsInBerryPouch = FALSE;
-    sBerryPouch->exitCallback = CB2_GiveHoldItem;
+    sBerryPouchDynamicResources->exitCallback = CB2_GiveHoldItem;
     gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
 }
 
 static void Task_ContextMenu_FromPokemonPC(u8 taskId)
 {
     sIsInBerryPouch = FALSE;
-    sBerryPouch->exitCallback = CB2_ReturnToPokeStorage;
+    sBerryPouchDynamicResources->exitCallback = CB2_ReturnToPokeStorage;
     gTasks[taskId].func = BerryPouch_StartFadeToExitCallback;
 }
 
@@ -1722,11 +1734,11 @@ static void Task_SellBerries_PlaySfxAndRemoveBerries(u8 taskId)
     PlaySE(SE_RG_SHOP);
     RemoveBagItem(gSpecialVar_ItemId, tItemCount);
     AddMoney(&gSaveBlock1Ptr->money, GetItemSellPrice(gSpecialVar_ItemId) * tItemCount);
-    DestroyListMenuTask(tListTaskId, &sBerryPouchSaved.listMenuScrollOffset, &sBerryPouchSaved.listMenuSelectedRow);
+    DestroyListMenuTask(tListTaskId, &sBerryPouchStaticResources.listMenuScrollOffset, &sBerryPouchStaticResources.listMenuSelectedRow);
     SortAndCountBerries();
     SanitizeListMenuSelectionParams();
     SetUpListMenuTemplate();
-    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchSaved.listMenuScrollOffset, sBerryPouchSaved.listMenuSelectedRow);
+    tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
     BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_LIGHT_GRAY);
     PrintMoneyAmountInMoneyBox(GetVariableWindowId(BP_VAR_WINDOW_MONEY), GetMoney(&gSaveBlock1Ptr->money), 0);
     gTasks[taskId].func = Task_SellBerries_WaitButton;
@@ -1895,7 +1907,7 @@ static void CreateBerryPouchItemIcon(u16 itemId, u8 idx)
         {
             spriteIds[idx] = spriteId;
             gSprites[spriteId].x2 = 24;
-            gSprites[spriteId].y2 = 147; // This value is the only difference from CreateItemMenuIcon
+            gSprites[spriteId].y2 = 147;
         }
     }
 }

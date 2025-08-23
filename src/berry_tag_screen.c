@@ -577,7 +577,7 @@ static void PrepareToCloseBerryTagScreen(u8 taskId)
 
 static void CB2_ReturnToBerryPouchMenu(void)
 {
-    InitBerryPouch(BERRYPOUCH_NA, NULL);
+    InitBerryPouch(BERRYPOUCH_REOPENING, NULL, BERRYPOUCH_KEEP_PREV);
 }
 
 static void Task_CloseBerryTagScreen(u8 taskId)

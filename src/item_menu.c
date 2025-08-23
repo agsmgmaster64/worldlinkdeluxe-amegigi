@@ -2338,7 +2338,7 @@ static void ItemMenu_Cancel(u8 taskId)
 
 static void InitBerryPouchFromBattle(void)
 {
-    InitBerryPouch(BERRYPOUCH_FROMBATTLE, CB2_BagMenuFromBattle);
+    InitBerryPouch(BERRYPOUCH_FROMBATTLE, CB2_BagMenuFromBattle, FALSE);
 }
 
 static const u8 sText_BattleRules_NoItems_Player[] = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
@@ -2379,7 +2379,7 @@ void CB2_ReturnToBagMenuPocket(void)
 
 static void GoToBerryPouch_Give(void)
 {
-    InitBerryPouch(BERRYPOUCH_FROMPARTYGIVE, CB2_SelectBagItemToGive);
+    InitBerryPouch(BERRYPOUCH_FROMPARTYGIVE, CB2_SelectBagItemToGive, FALSE);
 }
 
 static void Task_ItemContext_GiveToParty(u8 taskId)
@@ -2410,7 +2410,7 @@ static void ReturnToBagMenuFromSubmenu_PCBox(void)
 
 static void GoToBerryPouch_PCBox(void)
 {
-    InitBerryPouch(BERRYPOUCH_FROMPOKEMONSTORAGEPC, ReturnToBagMenuFromSubmenu_PCBox);
+    InitBerryPouch(BERRYPOUCH_FROMPOKEMONSTORAGEPC, ReturnToBagMenuFromSubmenu_PCBox, FALSE);
 }
 
 // Selected item to give to a Pokémon in PC storage
@@ -2499,7 +2499,7 @@ bool8 UseRegisteredKeyItemOnField(u8 button)
 
 static void GoToBerryPouch_Sell(void)
 {
-    InitBerryPouch(BERRYPOUCH_FROMMARTSELL, CB2_GoToSellMenu);
+    InitBerryPouch(BERRYPOUCH_FROMMARTSELL, CB2_GoToSellMenu, FALSE);
 }
 
 static void Task_ItemContext_Sell(u8 taskId)

@@ -4887,7 +4887,7 @@ void CB2_ShowPartyMenuForItemUse(void)
 
 static void CB2_ReturnToBerryPouchMenu(void)
 {
-    InitBerryPouch(BERRYPOUCH_NA, NULL);
+    InitBerryPouch(BERRYPOUCH_REOPENING, NULL, BERRYPOUCH_KEEP_PREV);
 }
 
 static void CB2_ReturnToBagMenu(void)
