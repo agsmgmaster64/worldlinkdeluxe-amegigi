@@ -46,6 +46,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "text_window.h"
+#include "tm_case.h"
 #include "menu_helpers.h"
 #include "window.h"
 #include "apprentice.h"
@@ -2377,6 +2378,11 @@ void CB2_ReturnToBagMenuPocket(void)
     GoToBagMenu(ITEMMENULOCATION_LAST, POCKETS_COUNT, NULL);
 }
 
+static void GoToTMCase_Give(void)
+{
+    InitTMCase(TMCASE_GIVE_PARTY, CB2_SelectBagItemToGive, FALSE);
+}
+
 static void GoToBerryPouch_Give(void)
 {
     InitBerryPouch(BERRYPOUCH_FROMPARTYGIVE, CB2_SelectBagItemToGive, FALSE);
@@ -2387,6 +2393,11 @@ static void Task_ItemContext_GiveToParty(u8 taskId)
     if (!IsWritingMailAllowed(gSpecialVar_ItemId))
     {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
+    }
+    else if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_Give;
+        Task_FadeAndCloseBagMenu(taskId);
     }
     else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
     {
@@ -2408,6 +2419,11 @@ static void ReturnToBagMenuFromSubmenu_PCBox(void)
     GoToBagMenu(ITEMMENULOCATION_PCBOX, POCKETS_COUNT, CB2_ReturnToPokeStorage);
 }
 
+static void GoToTMCase_PCBox(void)
+{
+    InitTMCase(TMCASE_GIVE_PC, ReturnToBagMenuFromSubmenu_PCBox, FALSE);
+}
+
 static void GoToBerryPouch_PCBox(void)
 {
     InitBerryPouch(BERRYPOUCH_FROMPOKEMONSTORAGEPC, ReturnToBagMenuFromSubmenu_PCBox, FALSE);
@@ -2419,6 +2435,11 @@ static void Task_ItemContext_GiveToPC(u8 taskId)
     if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
     {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
+    }
+    else if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_PCBox;
+        Task_FadeAndCloseBagMenu(taskId);
     }
     else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
     {
@@ -2497,6 +2518,11 @@ bool8 UseRegisteredKeyItemOnField(u8 button)
 
 #undef tUsingRegisteredKeyItem
 
+static void GoToTMCase_Sell(void)
+{
+    InitTMCase(TMCASE_SELL, CB2_GoToSellMenu, FALSE);
+}
+
 static void GoToBerryPouch_Sell(void)
 {
     InitBerryPouch(BERRYPOUCH_FROMMARTSELL, CB2_GoToSellMenu, FALSE);
@@ -2506,7 +2532,12 @@ static void Task_ItemContext_Sell(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_Sell;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
     {
         gBagMenu->newScreenCallback = GoToBerryPouch_Sell;
         Task_FadeAndCloseBagMenu(taskId);

@@ -1160,6 +1160,7 @@ static void Task_BerryPouchMain(u8 taskId)
         {
             PlaySE(SE_SELECT);
             gSpecialVar_ItemId = 0;
+            sIsInBerryPouch = FALSE;
             BerryPouch_StartFadeToExitCallback(taskId);
         }
         else
@@ -1617,7 +1618,7 @@ static void Task_ContextMenu_Sell(u8 taskId)
     s16 * data = gTasks[taskId].data;
     if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
     {
-        CopyItemName(gSpecialVar_ItemId, gStringVar1);
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem);
         DisplayItemMessageInBerryPouch(taskId, FONT_SHORT, gStringVar4, Task_BerryPouch_DestroyDialogueWindowAndRefreshListMenu);
     }

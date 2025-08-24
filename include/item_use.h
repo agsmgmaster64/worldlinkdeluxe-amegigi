@@ -82,6 +82,7 @@ void ItemUseOnFieldCB_WaterfallTool(u8 taskId);
 void ItemUseOutOfBattle_DiveTool(u8 taskId);
 void ItemUseOnFieldCB_DiveTool(u8 taskId);
 
+void ItemUseOutOfBattle_TmCase(u8 taskId);
 void ItemUseOutOfBattle_BerryPouch(u8 taskId);
 
 void ItemUseOnFieldCB_RockClimbTool(u8);

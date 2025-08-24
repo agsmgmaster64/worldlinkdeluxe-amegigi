@@ -70,6 +70,7 @@
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
+#include "tm_case.h"
 #include "trade.h"
 #include "union_room.h"
 #include "window.h"
@@ -4885,6 +4886,11 @@ void CB2_ShowPartyMenuForItemUse(void)
     InitPartyMenu(menuType, partyLayout, PARTY_ACTION_USE_ITEM, TRUE, msgId, task, callback);
 }
 
+static void CB2_ReturnToTMCaseMenu(void)
+{
+    InitTMCase(TMCASE_REOPENING, NULL, TMCASE_KEEP_PREV);
+}
+
 static void CB2_ReturnToBerryPouchMenu(void)
 {
     InitBerryPouch(BERRYPOUCH_REOPENING, NULL, BERRYPOUCH_KEEP_PREV);
@@ -4894,6 +4900,8 @@ static void CB2_ReturnToBagMenu(void)
 {
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
         GoToBattlePyramidBagMenu(PYRAMIDBAG_LOC_PREV, gPyramidBagMenuState.exitCallback);
+    else if (CheckIfInTMCase())
+        CB2_ReturnToTMCaseMenu();
     else if (CheckIfInBerryPouch())
         CB2_ReturnToBerryPouchMenu();
     else
@@ -7166,6 +7174,8 @@ void CB2_ChooseMonToGiveItem(void)
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
         callback = CB2_ReturnToPyramidBagMenu;
+    else if (CheckIfInTMCase())
+        callback = CB2_ReturnToTMCaseMenu;
     else if (CheckIfInBerryPouch())
         callback = CB2_ReturnToBerryPouchMenu;
     else

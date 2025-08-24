@@ -42,6 +42,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
+#include "tm_case.h"
 #include "vs_seeker.h"
 #include "outfit_menu.h"
 #include "constants/event_bg.h"
@@ -1967,6 +1968,36 @@ void ItemUseOutOfBattle_BerryPouch(u8 taskId)
         gFieldCallback = FieldCB_ReturnToFieldNoScript;
         FadeScreen(FADE_TO_BLACK, 0);
         gTasks[taskId].func = Task_OpenRegisteredBerryPouch;
+    }
+}
+
+static void InitTmCaseFromBag(void)
+{
+    InitTMCase(TMCASE_FIELD, CB2_BagMenuFromStartMenu, FALSE);
+}
+
+static void Task_OpenRegisteredTmCase(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        InitTMCase(TMCASE_FIELD, CB2_ReturnToField, TRUE);
+        DestroyTask(taskId);
+    }
+}
+
+void ItemUseOutOfBattle_TmCase(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        gBagMenu->newScreenCallback = InitTmCaseFromBag;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_OpenRegisteredTmCase;
     }
 }
 
