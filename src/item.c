@@ -349,6 +349,15 @@ static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, u16 itemId, u1
         }
     }
 
+    if (TMCASE_ADD_TM_CASE_WITH_TMS)
+    {
+        if (pocket->id == POCKET_TM_HM)
+        {
+            if (!CheckBagHasItem(ITEM_TM_CASE, 1))
+                AddBagItem(ITEM_TM_CASE, 1);
+        }
+    }
+
     if (BP_ADD_BERRY_POUCH_WITH_BERRIES)
     {
         if (pocket->id == POCKET_BERRIES)

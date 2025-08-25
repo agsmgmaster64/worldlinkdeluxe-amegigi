@@ -10758,7 +10758,7 @@ const struct Item gItemsInfo[] =
             "that damages all\n"
             "types except Ice."),
         #endif
-        .importance = FALSE,
+        .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,

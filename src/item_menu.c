@@ -1497,14 +1497,11 @@ static u8 GetSwitchBagPocketDirection(void)
 
 static void ChangeBagPocketId(u8 *bagPocketId, s8 deltaBagPocketId)
 {
-    if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKETS_COUNT - 1)
+    if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKET_MAX_SCROLL)
         *bagPocketId = 0;
     else if (deltaBagPocketId == MENU_CURSOR_DELTA_LEFT && *bagPocketId == 0)
-        *bagPocketId = POCKETS_COUNT - 1;
+        *bagPocketId = POCKET_MAX_SCROLL;
     else
-        *bagPocketId += deltaBagPocketId;
-
-    if (BP_REMOVE_BERRY_POCKET_FROM_BAG && *bagPocketId == POCKET_BERRIES)
         *bagPocketId += deltaBagPocketId;
 }
 
@@ -3370,6 +3367,18 @@ static s32 CompareItemsByIndex(enum Pocket pocketId, struct ItemSlot item1, stru
     case POCKET_TM_HM:
         index1 = GetItemTMHMIndex(item1.itemId);
         index2 = GetItemTMHMIndex(item2.itemId);
+        if (TMCASE_HMS_FIRST)
+        {
+            if (index1 > NUM_TECHNICAL_MACHINES)
+                index1 -= NUM_TECHNICAL_MACHINES;
+            else
+                index1 += NUM_HIDDEN_MACHINES;
+
+            if (index2 > NUM_TECHNICAL_MACHINES)
+                index2 -= NUM_TECHNICAL_MACHINES;
+            else
+                index2 += NUM_HIDDEN_MACHINES;
+        }
         break;
     default:
     case POCKET_BERRIES: // To do - requires #7305

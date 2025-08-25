@@ -263,8 +263,9 @@ static ALIGNED(4) const u16 sPal3Override[] = {RGB(8, 8, 8), RGB(30, 16, 6)};
 #define TEXT_COLOR_TMCASE_TRANSPARENT 0
 #define TEXT_COLOR_TMCASE_DARK_GRAY 1
 #define TEXT_COLOR_TMCASE_WHITE 2
-#define TEXT_COLOR_TMCASE_DARKER_GRAY 3
 #define TEXT_COLOR_TMCASE_LIGHT_GRAY 10
+#define TEXT_COLOR_TMCASE_MESSAGE_NORMAL 2
+#define TEXT_COLOR_TMCASE_MESSAGE_SHADOW 3
 
 static const u8 sTextColors[][3] =
 {
@@ -272,7 +273,7 @@ static const u8 sTextColors[][3] =
     [COLOR_DARK]            = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_DARK_GRAY, TEXT_COLOR_TMCASE_LIGHT_GRAY},
     [COLOR_CURSOR_SELECTED] = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_LIGHT_GRAY, TEXT_COLOR_TMCASE_DARK_GRAY},
     [COLOR_MOVE_INFO]       = {TEXT_COLOR_TMCASE_TRANSPARENT, 14, 10},
-    [COLOR_MESSAGE]         = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_WHITE, TEXT_COLOR_TMCASE_DARKER_GRAY},
+    [COLOR_MESSAGE]         = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_MESSAGE_NORMAL, TEXT_COLOR_TMCASE_MESSAGE_SHADOW},
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
@@ -554,6 +555,7 @@ static bool8 DoSetUpTMCaseUI(void)
             gMain.state++;
         break;
     case 9:
+        SortItemsInBag(&gBagPockets[POCKET_TM_HM], SORT_BY_INDEX);
         gMain.state++;
         break;
     case 10:
@@ -1546,10 +1548,13 @@ static void SetDiscSpritePosition(struct Sprite *sprite, u8 tmIdx)
     }
     else
     {
-        if (tmIdx > NUM_TECHNICAL_MACHINES)
-            tmIdx -= NUM_TECHNICAL_MACHINES;
-        else
-            tmIdx += NUM_HIDDEN_MACHINES;
+        if (TMCASE_HMS_FIRST)
+        {
+            if (tmIdx > NUM_TECHNICAL_MACHINES)
+                tmIdx -= NUM_TECHNICAL_MACHINES;
+            else
+                tmIdx += NUM_HIDDEN_MACHINES;
+        }
 
         x = DISC_BASE_X - Q_24_8_TO_INT(Q_24_8(14 * tmIdx) / (NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES));
         y = DISC_BASE_Y + Q_24_8_TO_INT(Q_24_8(8 * tmIdx) / (NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES));

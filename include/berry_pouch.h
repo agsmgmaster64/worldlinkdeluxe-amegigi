@@ -14,9 +14,6 @@ enum BerryPouchType
     BERRYPOUCH_REOPENING
 };
 
-#define BP_REMOVE_BERRY_POCKET_FROM_BAG             FALSE
-#define BP_ADD_BERRY_POUCH_WITH_BERRIES             FALSE
-
 // Alternative value for 'allowSelectClose' argument to InitTMCase.
 // Indicates that the previous value should be preserved
 #define BERRYPOUCH_KEEP_PREV 0xFF

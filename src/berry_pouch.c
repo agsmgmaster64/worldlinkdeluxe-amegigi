@@ -10,6 +10,7 @@
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "item_menu.h"
+#include "item_menu_icons_rg.h"
 #include "item_icon.h"
 #include "menu.h"
 #include "menu_helpers.h"
@@ -96,18 +97,6 @@ enum
 };
 
 enum {
-    TAG_SWAP_LINE = 100,
-    TAG_ITEM_ICON,
-    TAG_ITEM_ICON_ALT,
-};
-
-enum {
-    SPR_ITEM_ICON,
-    SPR_ITEM_ICON_ALT,
-    SPR_COUNT
-};
-
-enum {
     BP_COLORID_WHITE,
     BP_COLORID_DARK_GARY,
     BP_COLORID_LIGHT_GRAY,
@@ -123,7 +112,6 @@ static EWRAM_DATA const u8 * sContextMenuOptions = NULL;
 static EWRAM_DATA u8 sContextMenuNumOptions = 0;
 static ALIGNED(4) EWRAM_DATA u8 sVariableWindowIds[BP_VAR_WINDOW_COUNT] = {};
 static ALIGNED(4) EWRAM_DATA u8 sBerryPouchSpriteId = 0;
-static EWRAM_DATA u8 sItemMenuIconSpriteIds[SPR_COUNT] = {};
 static EWRAM_DATA u8 sIsInBerryPouch = FALSE;
 
 static void CB2_InitBerryPouch(void);
@@ -190,9 +178,6 @@ static void PrintMoneyInWin2(void);
 static void CreateBerryPouchSprite(void);
 static void StartBerryPouchSpriteWobbleAnim(void);
 static void SpriteCB_BerryPouchWaitWobbleAnim(struct Sprite *sprite);
-static void ResetBerryPouchItemIconState(void);
-static void DestroyBerryPouchItemIcon(u8 idx);
-static void CreateBerryPouchItemIcon(u16 itemId, u8 idx);
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -512,15 +497,16 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
 #define TEXT_COLOR_BP_TRANSPARENT 0
 #define TEXT_COLOR_BP_DARK_GRAY 1
 #define TEXT_COLOR_BP_WHITE 2
-#define TEXT_COLOR_BP_DARKER_GRAY 3
 #define TEXT_COLOR_BP_LIGHT_GRAY 10
+#define TEXT_COLOR_BP_MESSAGE_NORMAL 2
+#define TEXT_COLOR_BP_MESSAGE_SHADOW 3
 
 static const u8 sTextColors[][3] =
 {
     [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, TEXT_COLOR_BP_DARK_GRAY },
     [BP_COLORID_DARK_GARY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, TEXT_COLOR_BP_LIGHT_GRAY },
     [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, TEXT_COLOR_BP_DARK_GRAY },
-    [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, TEXT_COLOR_BP_DARKER_GRAY },
+    [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_MESSAGE_NORMAL, TEXT_COLOR_BP_MESSAGE_SHADOW },
 };
 
 static const struct OamData sOamData = {
@@ -662,7 +648,7 @@ static bool8 RunBerryPouchInit(void)
         gMain.state++;
         break;
     case 5:
-        ResetBerryPouchItemIconState();
+        ItemRG_ResetItemMenuIconState();
         gMain.state++;
         break;
     case 6:
@@ -879,7 +865,7 @@ static void BerryPouchMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         PlaySE(SE_RG_BAG_CURSOR);
         StartBerryPouchSpriteWobbleAnim();
     }
-    DestroyBerryPouchItemIcon(sBerryPouchDynamicResources->itemMenuIconId ^ 1);
+    ItemRG_EraseItemIcon(sBerryPouchDynamicResources->itemMenuIconId ^ 1);
     if (sBerryPouchDynamicResources->listMenuNumItems != itemIndex)
         CreateBerryPouchItemIcon(GetBerryPouchItemIdByPosition(itemIndex), sBerryPouchDynamicResources->itemMenuIconId);
     else
@@ -1288,9 +1274,9 @@ static void Task_NormalContextMenu_HandleInput(u8 taskId)
         input = Menu_ProcessInputNoWrap();
         switch (input)
         {
-        case MENU_B_PRESSED:
-            break;
         case MENU_NOTHING_CHOSEN:
+            break;
+        case MENU_B_PRESSED:
             PlaySE(SE_SELECT);
             sContextMenuActions[BP_ACTION_EXIT].func.void_u8(taskId);
             break;
@@ -1871,45 +1857,6 @@ static void SpriteCB_BerryPouchWaitWobbleAnim(struct Sprite *sprite)
     {
         StartSpriteAffineAnim(sprite, 0);
         sprite->callback = SpriteCallbackDummy;
-    }
-}
-
-static void ResetBerryPouchItemIconState(void)
-{
-    u16 i;
-
-    for (i = 0; i < SPR_COUNT; i++)
-        sItemMenuIconSpriteIds[i] = SPRITE_NONE;
-}
-
-static void DestroyBerryPouchItemIcon(u8 idx)
-{
-    u8 * spriteIds = &sItemMenuIconSpriteIds[SPR_ITEM_ICON];
-
-    if (spriteIds[idx] != SPRITE_NONE)
-    {
-        DestroySpriteAndFreeResources(&gSprites[spriteIds[idx]]);
-        spriteIds[idx] = SPRITE_NONE;
-    }
-}
-
-static void CreateBerryPouchItemIcon(u16 itemId, u8 idx)
-{
-    u8 * spriteIds = &sItemMenuIconSpriteIds[SPR_ITEM_ICON];
-    u8 spriteId;
-
-    if (spriteIds[idx] == SPRITE_NONE)
-    {
-        // Either TAG_ITEM_ICON or TAG_ITEM_ICON_ALT
-        FreeSpriteTilesByTag(TAG_ITEM_ICON + idx);
-        FreeSpritePaletteByTag(TAG_ITEM_ICON + idx);
-        spriteId = AddItemIconSprite(TAG_ITEM_ICON + idx, TAG_ITEM_ICON + idx, itemId);
-        if (spriteId != MAX_SPRITES)
-        {
-            spriteIds[idx] = spriteId;
-            gSprites[spriteId].x2 = 24;
-            gSprites[spriteId].y2 = 147;
-        }
     }
 }
 

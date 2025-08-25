@@ -11,6 +11,7 @@
 #include "list_menu.h"
 #include "item_pc_rg.h"
 #include "item_use.h"
+#include "item_menu_icons_rg.h"
 #include "link.h"
 #include "malloc.h"
 #include "menu.h"
@@ -28,28 +29,6 @@
 #include "constants/items.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
-
-#define NUM_SWAP_LINE_SPRITES 9
-
-enum {
-    TAG_SWAP_LINE = 100,
-    TAG_ITEM_ICON,
-    TAG_ITEM_ICON_ALT,
-    TAG_ARROWS = 110,
-};
-
-enum {
-    ANIM_SWAP_LINE_START,
-    ANIM_SWAP_LINE_MID,
-    ANIM_SWAP_LINE_END,
-};
-
-enum {
-    SPR_SWAP_LINE_START,
-    SPR_ITEM_ICON = SPR_SWAP_LINE_START + NUM_SWAP_LINE_SPRITES,
-    SPR_ITEM_ICON_ALT,
-    SPR_COUNT
-};
 
 enum {
     ITEM_PC_WINDOW_ITEM_LIST,
@@ -71,7 +50,7 @@ enum {
     ITEM_PC_COLORID_WHITE,
     ITEM_PC_COLORID_DARK_GRAY,
     ITEM_PC_COLORID_LIGHT_GRAY,
-    ITEM_PC_COLORID_WHITE_2,
+    ITEM_PC_COLORID_MESSAGE,
     ITEM_PC_COLOR_CURSOR_ERASE = 0xFF
 };
 
@@ -106,7 +85,6 @@ static EWRAM_DATA u8 * sBg1TilemapBuffer = NULL;
 static EWRAM_DATA struct ListMenuItem * sListMenuItems = NULL;
 static EWRAM_DATA struct ItemPcStaticResources sItemPcRGStaticResources = {};
 static EWRAM_DATA u8 sSubmenuWindowIds[ITEM_PC_SUBWINDOW_COUNT] = {};
-static EWRAM_DATA u8 sItemMenuIconSpriteIds[SPR_COUNT] = {};
 
 extern const struct CompressedSpriteSheet sBagSwapSpriteSheet;
 extern const struct SpritePalette sBagSwapSpritePalette;
@@ -150,12 +128,6 @@ static void Task_ItemPcCancel(u8 taskId);
 static void ItemPc_InitWindows(void);
 static void ItemPc_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
 static void ItemPc_SetBorderStyleOnWindow(u8 windowId);
-static void ItemPc_ResetItemMenuIconState(void);
-static void ItemPc_CreateSwapLine(void);
-static void ItemPc_SetSwapLineInvisibility(bool8 invisible);
-static void ItemPc_UpdateSwapLinePos(s16 x, u16 y);
-static void ItemPc_DrawItemIcon(u16 itemId, u8 idx);
-static void ItemPc_EraseItemIcon(u8 idx);
 static u8 ItemPc_GetOrCreateSubwindow(u8 idx);
 static void ItemPc_DestroySubwindow(u8 idx);
 static void ItemPc_PrintOnMessageWithContinueTask(u8 taskId, const u8 * str, TaskFunc taskFunc);
@@ -193,15 +165,16 @@ static const struct MenuAction sItemPcSubmenuOptions[] =
 #define TEXT_COLOR_ITEM_PC_TRANSPARENT 0
 #define TEXT_COLOR_ITEM_PC_DARK_GRAY 1
 #define TEXT_COLOR_ITEM_PC_WHITE 2
-#define TEXT_COLOR_ITEM_PC_DARKER_GRAY 3
 #define TEXT_COLOR_ITEM_PC_LIGHT_GRAY 10
+#define TEXT_COLOR_ITEM_PC_MESSAGE_NORMAL 2
+#define TEXT_COLOR_ITEM_PC_MESSAGE_SHADOW 3
 
 static const u8 sTextColors[][3] =
 {
     [ITEM_PC_COLORID_WHITE]      = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_WHITE, TEXT_COLOR_ITEM_PC_DARK_GRAY},
     [ITEM_PC_COLORID_DARK_GRAY]  = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_DARK_GRAY, TEXT_COLOR_ITEM_PC_LIGHT_GRAY},
     [ITEM_PC_COLORID_LIGHT_GRAY] = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_LIGHT_GRAY, TEXT_COLOR_ITEM_PC_DARK_GRAY},
-    [ITEM_PC_COLORID_WHITE_2]    = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_WHITE, TEXT_COLOR_ITEM_PC_DARKER_GRAY}
+    [ITEM_PC_COLORID_MESSAGE]    = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_MESSAGE_NORMAL, TEXT_COLOR_ITEM_PC_MESSAGE_SHADOW}
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
@@ -307,63 +280,6 @@ static const u8 sItemPcTiles[] = INCBIN_U8("graphics/item_pc_rg/bg.4bpp.smol");
 static const u16 sItemPcBgPals[] = INCBIN_U16("graphics/item_pc_rg/bg.gbapal");
 static const u32 sItemPcTilemap[] = INCBIN_U32("graphics/item_pc_rg/bg.bin.smolTM");
 
-static const struct OamData sOamData_SwapLine = 
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(16x16),
-    .size = SPRITE_SIZE(16x16),
-    .priority = 1,
-    .paletteNum = 1
-};
-
-static const union AnimCmd sAnim_SwapLine_Start[] = 
-{
-    ANIMCMD_FRAME(0, 0),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnim_SwapLine_Mid[] = 
-{
-    ANIMCMD_FRAME(4, 0),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnim_SwapLine_End[] = 
-{
-    ANIMCMD_FRAME(0, 0, .hFlip = TRUE),
-    ANIMCMD_END
-};
-
-static const union AnimCmd *const sAnims_SwapLine[] = {
-    [ANIM_SWAP_LINE_START] = sAnim_SwapLine_Start,
-    [ANIM_SWAP_LINE_MID]   = sAnim_SwapLine_Mid,
-    [ANIM_SWAP_LINE_END]   = sAnim_SwapLine_End
-};
-
-const struct CompressedSpriteSheet sBagSwapSpriteSheet =
-{
-    .data = gSwapLineGfx,
-    .size = 0x100,
-    .tag = TAG_SWAP_LINE
-};
-
-const struct SpritePalette sBagSwapSpritePalette =
-{
-    .data = gSwapLinePal,
-    .tag = TAG_SWAP_LINE
-};
-
-static const struct SpriteTemplate sSpriteTemplate_SwapLine =
-{
-    .tileTag = TAG_SWAP_LINE,
-    .paletteTag = TAG_SWAP_LINE,
-    .oam = &sOamData_SwapLine,
-    .anims = sAnims_SwapLine,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
-};
-
 #define tListTaskId     data[0]
 #define tPosition       data[1]
 #define tMaxQuantity    data[2]
@@ -452,7 +368,7 @@ static bool8 ItemPc_DoGfxSetup(void)
         gMain.state++;
         break;
     case 5:
-        ItemPc_ResetItemMenuIconState();
+        ItemRG_ResetItemMenuIconState();
         gMain.state++;
         break;
     case 6:
@@ -503,7 +419,7 @@ static bool8 ItemPc_DoGfxSetup(void)
         gMain.state++;
         break;
     case 14:
-        ItemPc_CreateSwapLine();
+        ItemRG_CreateSwapLine();
         gMain.state++;
         break;
     case 15:
@@ -673,18 +589,18 @@ static void ItemPc_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListMe
 
     if (sItemPcRGResources->moveModeOrigPos == NOT_SWAPPING)
     {
-        ItemPc_EraseItemIcon(sItemPcRGResources->itemIconSlot ^ 1);
+        ItemRG_EraseItemIcon(sItemPcRGResources->itemIconSlot ^ 1);
         if (itemIndex != LIST_CANCEL)
         {
             itemId = ItemPc_RG_GetItemIdBySlotId(itemIndex);
-            ItemPc_DrawItemIcon(itemId, sItemPcRGResources->itemIconSlot);
+            ItemRG_DrawItemIcon(itemId, sItemPcRGResources->itemIconSlot);
             desc = GetItemLongDescription(itemId);
             if (desc == NULL)
                 desc = GetItemDescription(itemId);
         }
         else
         {
-            ItemPc_DrawItemIcon(ITEM_LIST_END, sItemPcRGResources->itemIconSlot);
+            ItemRG_DrawItemIcon(ITEM_LIST_END, sItemPcRGResources->itemIconSlot);
             desc = sText_ReturnToPC;
         }
         sItemPcRGResources->itemIconSlot ^= 1;
@@ -737,13 +653,13 @@ static void ItemPc_PrintWithdrawItem(void)
 
 static void ItemPc_PlaceTopMenuScrollIndicatorArrows(void)
 {
-    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 128, 8, 104, sItemPcRGResources->nItems - sItemPcRGResources->maxShowed + 1, TAG_ARROWS, TAG_ARROWS, &sItemPcRGStaticResources.scroll);
+    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 128, 8, 104, sItemPcRGResources->nItems - sItemPcRGResources->maxShowed + 1, 110, 110, &sItemPcRGStaticResources.scroll);
 }
 
 static void ItemPc_PlaceWithdrawQuantityScrollIndicatorArrows(void)
 {
     sItemPcRGResources->withdrawQuantitySubmenuCursorPos = 1;
-    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 212, 120, 152, 2, TAG_ARROWS, TAG_ARROWS, &sItemPcRGResources->withdrawQuantitySubmenuCursorPos);
+    sItemPcRGResources->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 212, 120, 152, 2, 110, 110, &sItemPcRGResources->withdrawQuantitySubmenuCursorPos);
 }
 
 static void ItemPc_RemoveScrollIndicatorArrowPair(void)
@@ -929,8 +845,8 @@ static void ItemPc_MoveItemModeInit(u8 taskId, s16 pos)
     StringExpandPlaceholders(gStringVar4, sText_WhereShouldTheStrVar1BePlaced);
     FillWindowPixelBuffer(ITEM_PC_WINDOW_DESCRIPTION, 0x00);
     ItemPc_AddTextPrinterParameterized(ITEM_PC_WINDOW_DESCRIPTION, FONT_SHORT, gStringVar4, 0, 3, 2, 3, 0, ITEM_PC_COLORID_WHITE);
-    ItemPc_UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(tListTaskId));
-    ItemPc_SetSwapLineInvisibility(FALSE);
+    ItemRG_UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(tListTaskId));
+    ItemRG_SetSwapLineInvisibility(FALSE);
     ItemPc_PrintOrRemoveCursor(tListTaskId, ITEM_PC_COLORID_LIGHT_GRAY);
     gTasks[taskId].func = Task_ItemPcMoveItemModeRun;
 }
@@ -941,7 +857,7 @@ static void Task_ItemPcMoveItemModeRun(u8 taskId)
 
     ListMenu_ProcessInput(tListTaskId);
     ListMenuGetScrollAndRow(tListTaskId, &sItemPcRGStaticResources.scroll, &sItemPcRGStaticResources.row);
-    ItemPc_UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(tListTaskId));
+    ItemRG_UpdateSwapLinePos(-32, ListMenuGetYCoordForPrintingArrowCursor(tListTaskId));
     if (JOY_NEW(A_BUTTON | SELECT_BUTTON))
     {
         PlaySE(SE_SELECT);
@@ -971,7 +887,7 @@ static void ItemPc_InsertItemIntoNewSlot(u8 taskId, u32 pos)
             sItemPcRGStaticResources.row--;
         ItemPc_BuildListMenuTemplate();
         tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
-        ItemPc_SetSwapLineInvisibility(TRUE);
+        ItemRG_SetSwapLineInvisibility(TRUE);
         gTasks[taskId].func = Task_ItemPcMain;
     }
 }
@@ -985,7 +901,7 @@ static void ItemPc_MoveItemModeCancel(u8 taskId, u32 pos)
         sItemPcRGStaticResources.row--;
     ItemPc_BuildListMenuTemplate();
     tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sItemPcRGStaticResources.scroll, sItemPcRGStaticResources.row);
-    ItemPc_SetSwapLineInvisibility(TRUE);
+    ItemRG_SetSwapLineInvisibility(TRUE);
     gTasks[taskId].func = Task_ItemPcMain;
 }
 
@@ -1000,7 +916,7 @@ static void Task_ItemPcSubmenuInit(u8 taskId)
     InitMenuNormal(ITEM_PC_WINDOW_ITEM_OPTIONS, FONT_SHORT, 0, 2, GetFontAttribute(FONT_SHORT, FONTATTR_MAX_LETTER_HEIGHT) + 2, 3, 0);
     CopyItemName(ItemPc_RG_GetItemIdBySlotId(tPosition), gStringVar1);
     StringExpandPlaceholders(gStringVar4, gText_Var1IsSelected);
-    ItemPc_AddTextPrinterParameterized(windowId, FONT_SHORT, gStringVar4, 0, 2, 1, 0, 0, ITEM_PC_COLORID_WHITE_2);
+    ItemPc_AddTextPrinterParameterized(windowId, FONT_SHORT, gStringVar4, 0, 2, 1, 0, 0, ITEM_PC_COLORID_MESSAGE);
     ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].func = Task_ItemPcSubmenuRun;
 }
@@ -1117,7 +1033,7 @@ static void ItemPc_WithdrawMultipleInitWindow(u16 slotId)
     ConvertIntToDecimalStringN(gStringVar1, 1, STR_CONV_MODE_LEADING_ZEROS, 3);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     ItemPc_SetBorderStyleOnWindow(ITEM_PC_WINDOW_WITHDRAW_AMOUNT);
-    ItemPc_AddTextPrinterParameterized(ITEM_PC_WINDOW_WITHDRAW_AMOUNT, FONT_SMALL, gStringVar4, 8, 10, 1, 0, 0, ITEM_PC_COLORID_WHITE_2);
+    ItemPc_AddTextPrinterParameterized(ITEM_PC_WINDOW_WITHDRAW_AMOUNT, FONT_SMALL, gStringVar4, 8, 10, 1, 0, 0, ITEM_PC_COLORID_MESSAGE);
     ScheduleBgCopyTilemapToVram(0);
 }
 
@@ -1126,7 +1042,7 @@ static void UpdateWithdrawQuantityDisplay(s16 quantity)
     FillWindowPixelRect(ITEM_PC_WINDOW_WITHDRAW_AMOUNT, PIXEL_FILL(1), 10, 10, 28, 12);
     ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, 3);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    ItemPc_AddTextPrinterParameterized(ITEM_PC_WINDOW_WITHDRAW_AMOUNT, FONT_SMALL, gStringVar4, 8, 10, 1, 0, 0, ITEM_PC_COLORID_WHITE_2);
+    ItemPc_AddTextPrinterParameterized(ITEM_PC_WINDOW_WITHDRAW_AMOUNT, FONT_SMALL, gStringVar4, 8, 10, 1, 0, 0, ITEM_PC_COLORID_MESSAGE);
 }
 
 static void Task_ItemPcHandleWithdrawMultiple(u8 taskId)
@@ -1241,89 +1157,6 @@ static void ItemPc_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 
 static void ItemPc_SetBorderStyleOnWindow(u8 windowId)
 {
     DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, 0x3C0, 14);
-}
-
-static void ItemPc_ResetItemMenuIconState(void)
-{
-    u16 i;
-
-    for (i = 0; i < SPR_COUNT; i++)
-        sItemMenuIconSpriteIds[i] = SPRITE_NONE;
-}
-
-static void ItemPc_CreateSwapLine(void)
-{
-    u8 i;
-    u8 * spriteIds = &sItemMenuIconSpriteIds[SPR_SWAP_LINE_START];
-
-    for (i = 0; i < NUM_SWAP_LINE_SPRITES; i++)
-    {
-        spriteIds[i] = CreateSprite(&sSpriteTemplate_SwapLine, i * 16 + 96, 7, 0);
-        switch (i)
-        {
-        case 0:
-            // ANIM_SWAP_LINE_START, by default
-            break;
-        case NUM_SWAP_LINE_SPRITES - 1:
-            StartSpriteAnim(&gSprites[spriteIds[i]], ANIM_SWAP_LINE_END);
-            break;
-        default:
-            StartSpriteAnim(&gSprites[spriteIds[i]], ANIM_SWAP_LINE_MID);
-            break;
-        }
-        gSprites[spriteIds[i]].invisible = TRUE;
-    }
-}
-
-static void ItemPc_SetSwapLineInvisibility(bool8 invisible)
-{
-    u8 i;
-    u8 * spriteIds = &sItemMenuIconSpriteIds[SPR_SWAP_LINE_START];
-
-    for (i = 0; i < NUM_SWAP_LINE_SPRITES; i++)
-        gSprites[spriteIds[i]].invisible = invisible;
-}
-
-static void ItemPc_UpdateSwapLinePos(s16 x, u16 y)
-{
-    u8 i;
-    u8 * spriteIds = &sItemMenuIconSpriteIds[SPR_SWAP_LINE_START];
-
-    for (i = 0; i < NUM_SWAP_LINE_SPRITES; i++)
-    {
-        gSprites[spriteIds[i]].x2 = x;
-        gSprites[spriteIds[i]].y = y + 7;
-    }
-}
-
-static void ItemPc_DrawItemIcon(u16 itemId, u8 idx)
-{
-    u8 spriteId;
-    u8 *spriteIds = &sItemMenuIconSpriteIds[SPR_ITEM_ICON];
-
-    if (spriteIds[idx] == SPRITE_NONE)
-    {
-        FreeSpriteTilesByTag(TAG_ITEM_ICON + idx);
-        FreeSpritePaletteByTag(TAG_ITEM_ICON + idx);
-        spriteId = AddItemIconSprite(TAG_ITEM_ICON + idx, TAG_ITEM_ICON + idx, itemId);
-        if (spriteId != MAX_SPRITES)
-        {
-            spriteIds[idx] = spriteId;
-            gSprites[spriteId].oam.priority = 0;
-            gSprites[spriteId].x2 = 24;
-            gSprites[spriteId].y2 = 140;
-        }
-    }
-}
-
-static void ItemPc_EraseItemIcon(u8 idx)
-{
-    u8 *spriteIds = &sItemMenuIconSpriteIds[SPR_ITEM_ICON];
-    if (spriteIds[idx] != SPRITE_NONE)
-    {
-        DestroySpriteAndFreeResources(&gSprites[spriteIds[idx]]);
-        spriteIds[idx] = SPRITE_NONE;
-    }
 }
 
 static u8 ItemPc_GetOrCreateSubwindow(u8 idx)
