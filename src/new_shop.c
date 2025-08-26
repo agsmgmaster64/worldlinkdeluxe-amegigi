@@ -1508,9 +1508,7 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
         case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
             return gDecorations[sMartInfo.itemList[id]].description;
         default:
-            if (GetItemLongDescription(sMartInfo.itemList[id]) != NULL)
-                return GetItemLongDescription(sMartInfo.itemList[id]);
-            return GetItemDescription(sMartInfo.itemList[id]);
+            return GetItemLongDescription(sMartInfo.itemList[id]);
         // custom
         case NEW_SHOP_TYPE_MOVE ... NEW_SHOP_TYPE_MOVE_POINTS:
             return GetMoveDescription(sMartInfo.itemList[id]);

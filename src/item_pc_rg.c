@@ -196,7 +196,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 14,
         .width = 25,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x0229
     },
     [ITEM_PC_WINDOW_WITHDRAW_ITEM] =
@@ -236,7 +236,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 11,
+        .paletteNum = 13,
         .baseBlock = 0x016f
     },
     DUMMY_WIN_TEMPLATE
@@ -251,7 +251,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 14,
+        .paletteNum = 15,
         .baseBlock = 0x0137
     },
     [ITEM_PC_SUBWINDOW_HOW_MANY] =
@@ -261,7 +261,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 16,
         .height = 4,
-        .paletteNum = 14,
+        .paletteNum = 15,
         .baseBlock = 0x0137
     },
     [ITEM_PC_SUBWINDOW_WITHDRAW] =
@@ -271,7 +271,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 23,
         .height = 4,
-        .paletteNum = 14,
+        .paletteNum = 15,
         .baseBlock = 0x009b
     }
 };
@@ -595,8 +595,6 @@ static void ItemPc_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListMe
             itemId = ItemPc_RG_GetItemIdBySlotId(itemIndex);
             ItemRG_DrawItemIcon(itemId, sItemPcRGResources->itemIconSlot);
             desc = GetItemLongDescription(itemId);
-            if (desc == NULL)
-                desc = GetItemDescription(itemId);
         }
         else
         {
@@ -1136,8 +1134,7 @@ static void ItemPc_InitWindows(void)
     InitWindows(sWindowTemplates);
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(ITEM_PC_WINDOW_ITEM_LIST, 0x3C0, BG_PLTT_ID(14));
-    LoadMessageBoxGfx(ITEM_PC_WINDOW_ITEM_LIST, 0x3A3, BG_PLTT_ID(11));
-    LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(13), PLTT_SIZE_4BPP);
+    LoadMessageBoxGfx(ITEM_PC_WINDOW_ITEM_LIST, 0x3A3, BG_PLTT_ID(13));
     LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     for (i = ITEM_PC_WINDOW_ITEM_LIST; i < ITEM_PC_WINDOW_WITHDRAW_AMOUNT; i++)
     {
@@ -1180,7 +1177,7 @@ static void ItemPc_DestroySubwindow(u8 idx)
 
 static void ItemPc_PrintOnMessageWithContinueTask(u8 taskId, const u8 * str, TaskFunc taskFunc)
 {
-    DisplayMessageAndContinueTask(taskId, ITEM_PC_WINDOW_MESSAGE, 0x3A3, 0x0B, FONT_SHORT, GetPlayerTextSpeedDelay(), str, taskFunc);
+    DisplayMessageAndContinueTask(taskId, ITEM_PC_WINDOW_MESSAGE, 0x3A3, 13, FONT_SHORT, GetPlayerTextSpeedDelay(), str, taskFunc);
     ScheduleBgCopyTilemapToVram(0);
 }
 

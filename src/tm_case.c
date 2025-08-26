@@ -175,7 +175,8 @@ static void SwapDisc(u8 spriteId, u16 itemId);
 static void SpriteCB_SwapDisc(struct Sprite *sprite);
 static void LoadDiscTypePalettes(void);
 
-static const struct BgTemplate sBGTemplates[] = {
+static const struct BgTemplate sBGTemplates[] =
+{
     {
         .bg = 0,
         .charBaseIndex = 0,
@@ -184,7 +185,8 @@ static const struct BgTemplate sBGTemplates[] = {
         .paletteMode = 0,
         .priority = 1,
         .baseTile = 0x000
-    }, {
+    },
+    {
         .bg = 1,
         .charBaseIndex = 0,
         .mapBaseIndex = 30,
@@ -192,7 +194,8 @@ static const struct BgTemplate sBGTemplates[] = {
         .paletteMode = 0,
         .priority = 0,
         .baseTile = 0x000
-    }, {
+    },
+    {
         .bg = 2,
         .charBaseIndex = 0,
         .mapBaseIndex = 29,
@@ -205,14 +208,16 @@ static const struct BgTemplate sBGTemplates[] = {
 
 // The list of functions to run when a TM/HM is selected.
 // What happens when one is selected depends on how the player arrived at the TM case
-static void (*const sSelectTMActionTasks[])(u8 taskId) = {
+static void (*const sSelectTMActionTasks[])(u8 taskId) =
+{
     [TMCASE_FIELD]      = Task_SelectedTMHM_Field,
     [TMCASE_GIVE_PARTY] = Task_SelectedTMHM_GiveParty,
     [TMCASE_SELL]       = Task_SelectedTMHM_Sell,
     [TMCASE_GIVE_PC]    = Task_SelectedTMHM_GivePC
 };
 
-static const struct MenuAction sMenuActions[] = {
+static const struct MenuAction sMenuActions[] =
+{
     [ACTION_USE]  = {COMPOUND_STRING("Use"),  {Action_Use} },
     [ACTION_GIVE] = {COMPOUND_STRING("Give"), {Action_Give} },
     [ACTION_EXIT] = {COMPOUND_STRING("Exit"), {Action_Exit} },
@@ -295,19 +300,21 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 12,
         .width = 18,
         .height = 8,
-        .paletteNum = 10,
+        .paletteNum = 15,
         .baseBlock = 0x13f
     },
-    [WIN_SELECTED_MSG] = {
+    [WIN_SELECTED_MSG] =
+    {
         .bg = 1,
         .tilemapLeft = 5,
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x1f9
     },
-    [WIN_TITLE] = {
+    [WIN_TITLE] =
+    {
         .bg = 0,
         .tilemapLeft = 0,
         .tilemapTop = 1,
@@ -316,7 +323,8 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0x235
     },
-    [WIN_MOVE_INFO_LABELS] = {
+    [WIN_MOVE_INFO_LABELS] =
+    {
         .bg = 0,
         .tilemapLeft = 1,
         .tilemapTop = 13,
@@ -325,7 +333,8 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 12,
         .baseBlock = 0x249
     },
-    [WIN_MOVE_INFO] = {
+    [WIN_MOVE_INFO] =
+    {
         .bg = 0,
         .tilemapLeft = 7,
         .tilemapTop = 13,
@@ -334,16 +343,18 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 12,
         .baseBlock = 0x267
     },
-    [WIN_MESSAGE] = {
+    [WIN_MESSAGE] =
+    {
         .bg = 1,
         .tilemapLeft = 2,
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 11,
+        .paletteNum = 13,
         .baseBlock = 0x285
     },
-    [WIN_SELL_QUANTITY] = {
+    [WIN_SELL_QUANTITY] =
+    {
         .bg = 1,
         .tilemapLeft = 17,
         .tilemapTop = 9,
@@ -352,13 +363,14 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 15,
         .baseBlock = 0x2ed
     },
-    [WIN_MONEY] = {
+    [WIN_MONEY] =
+    {
         .bg = 1,
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x31d
     },
     DUMMY_WIN_TEMPLATE
@@ -776,7 +788,7 @@ static void PrintDescription(s32 itemIndex)
 {
     const u8 * str;
     if (itemIndex != LIST_CANCEL)
-        str = GetItemDescription(GetTMCaseItemIdByPosition(itemIndex));
+        str = GetItemLongDescription(GetTMCaseItemIdByPosition(itemIndex));
     else
         str = sText_TMCaseWillBePutAway;
     FillWindowPixelBuffer(WIN_DESCRIPTION, 0);
@@ -1366,12 +1378,11 @@ static void InitWindowTemplatesAndPals(void)
 
     InitWindows(sWindowTemplates);
     DeactivateAllTextPrinters();
-    LoadMessageBoxGfx(0, 0x64, BG_PLTT_ID(11));
-    LoadUserWindowBorderGfx(0, 0x78, BG_PLTT_ID(13));
+    LoadMessageBoxGfx(0, 0x64, BG_PLTT_ID(13));
+    LoadUserWindowBorderGfx(0, 0x78, BG_PLTT_ID(14));
     LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(10), PLTT_SIZE_4BPP);
-    LoadPalette(sPal3Override, BG_PLTT_ID(15) + 6, sizeof(sPal3Override));
     LoadPalette(sPal3Override, BG_PLTT_ID(13) + 6, sizeof(sPal3Override));
+    LoadPalette(sPal3Override, BG_PLTT_ID(15) + 6, sizeof(sPal3Override));
     ListMenuLoadStdPalAt(BG_PLTT_ID(12), 1);
     for (i = 0; i < ARRAY_COUNT(sWindowTemplates) - 1; i++)
         FillWindowPixelBuffer(i, 0x00);
@@ -1390,12 +1401,12 @@ static void TMCase_Print(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 
 
 static void TMCase_SetWindowBorder2(u8 windowId)
 {
-    DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, 0x78, 13);
+    DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, 0x78, 14);
 }
 
 static void PrintMessageWithFollowupTask(u8 taskId, u8 fontId, const u8 * str, TaskFunc func)
 {
-    DisplayMessageAndContinueTask(taskId, WIN_MESSAGE, 0x64, 0x0B, fontId, GetPlayerTextSpeedDelay(), str, func);
+    DisplayMessageAndContinueTask(taskId, WIN_MESSAGE, 0x64, 13, fontId, GetPlayerTextSpeedDelay(), str, func);
     ScheduleBgCopyTilemapToVram(1);
 }
 
@@ -1475,13 +1486,13 @@ static void PlaceHMTileInWindow(u8 windowId, u8 x, u8 y)
 
 static void PrintPlayersMoney(void)
 {
-    PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 120, 13, GetMoney(&gSaveBlock1Ptr->money));
+    PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 120, 14, GetMoney(&gSaveBlock1Ptr->money));
     AddMoneyLabelObject(19, 11);
 }
 
 static void HandleCreateYesNoMenu(u8 taskId, const struct YesNoFuncTable *ptrs)
 {
-    CreateYesNoMenuWithCallbacks(taskId, &sYesNoWindowTemplate, FONT_SHORT, 0, 2, 91, 13, ptrs);
+    CreateYesNoMenuWithCallbacks(taskId, &sYesNoWindowTemplate, FONT_SHORT, 0, 2, 0x78, 14, ptrs);
 }
 
 static u8 AddContextMenu(u8 * windowId, u8 windowIndex)

@@ -843,6 +843,8 @@ const u8 *GetItemDescription(u16 itemId)
 
 const u8 *GetItemLongDescription(u16 itemId)
 {
+    if (gItemsInfo[SanitizeItemId(itemId)].descriptionLong == NULL)
+        return gItemsInfo[SanitizeItemId(itemId)].description;
     return gItemsInfo[SanitizeItemId(itemId)].descriptionLong;
 }
 

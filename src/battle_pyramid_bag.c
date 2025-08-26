@@ -707,8 +707,6 @@ static void PrintItemDescription(s32 listMenuId)
     if (listMenuId != LIST_CANCEL)
     {
         desc = GetItemLongDescription(gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode][listMenuId]);
-        if (desc == NULL)
-            desc = GetItemDescription(gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode][listMenuId]);
     }
     else
     {

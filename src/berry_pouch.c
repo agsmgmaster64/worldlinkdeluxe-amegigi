@@ -369,7 +369,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 12,
+        .paletteNum = 15,
         .baseBlock = 0x201
     },
     [BP_VAR_WINDOW_TOSS_YESNO] =
@@ -399,7 +399,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 13,
         .baseBlock = 0x231
     },
     [BP_VAR_WINDOW_BERRY_SELECTED] =
@@ -409,7 +409,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 12,
+        .paletteNum = 15,
         .baseBlock = 0x231
     },
     [BP_VAR_WINDOW_TOSS_ASK] =
@@ -419,7 +419,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 12,
+        .paletteNum = 15,
         .baseBlock = 0x269
     },
     [BP_VAR_WINDOW_TOSS_SELECT] =
@@ -429,7 +429,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 16,
         .height = 4,
-        .paletteNum = 12,
+        .paletteNum = 15,
         .baseBlock = 0x2a5
     },
     [BP_VAR_WINDOW_THREW_AWAY] =
@@ -439,7 +439,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 23,
         .height = 4,
-        .paletteNum = 12,
+        .paletteNum = 15,
         .baseBlock = 0x2e5
     },
     [BP_VAR_WINDOW_OPTIONS_1] =
@@ -914,8 +914,6 @@ static void PrintSelectedBerryDescription(s32 itemIdx)
     if (itemIdx != sBerryPouchDynamicResources->listMenuNumItems)
     {
         str = GetItemLongDescription(GetBerryPouchItemIdByPosition(itemIdx));
-        if (str == NULL)
-            str = GetItemDescription(GetBerryPouchItemIdByPosition(itemIdx));
     }
     else
     {
@@ -1750,7 +1748,6 @@ static void BerryPouchInitWindows(void)
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(BP_WINDOW_BERRY_LIST, 0x001, BG_PLTT_ID(14));
     LoadMessageBoxGfx(BP_WINDOW_BERRY_LIST, 0x013, BG_PLTT_ID(13));
-    LoadUserWindowBorderGfx(BP_WINDOW_BERRY_LIST, 0x00A, BG_PLTT_ID(12));
     LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     for (i = BP_WINDOW_BERRY_LIST; i < BP_WINDOW_COUNT; i++)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
@@ -1774,10 +1771,7 @@ static u8 GetOrCreateVariableWindow(u8 winIdx)
     if (retval == WINDOW_NONE)
     {
         sVariableWindowIds[winIdx] = AddWindow(&sWindowTemplates_Variable[winIdx]);
-        if (winIdx == BP_VAR_WINDOW_MONEY || winIdx == BP_VAR_WINDOW_BERRY_SELECTED || winIdx == BP_VAR_WINDOW_TOSS_ASK || winIdx == BP_VAR_WINDOW_TOSS_SELECT || winIdx == BP_VAR_WINDOW_THREW_AWAY)
-            DrawStdFrameWithCustomTileAndPalette(sVariableWindowIds[winIdx], FALSE, 0x00A, 12);
-        else
-            DrawStdFrameWithCustomTileAndPalette(sVariableWindowIds[winIdx], FALSE, 0x001, 14);
+        DrawStdFrameWithCustomTileAndPalette(sVariableWindowIds[winIdx], FALSE, 0x001, 14);
         ScheduleBgCopyTilemapToVram(2);
         retval = sVariableWindowIds[winIdx];
     }
@@ -1816,7 +1810,7 @@ void DisplayItemMessageInBerryPouch(u8 taskId, u8 fontId, const u8 * str, TaskFu
 {
     if (sVariableWindowIds[BP_VAR_WINDOW_MESSAGE] == WINDOW_NONE)
         sVariableWindowIds[BP_VAR_WINDOW_MESSAGE] = AddWindow(&sWindowTemplates_Variable[BP_VAR_WINDOW_MESSAGE]);
-    DisplayMessageAndContinueTask(taskId, sVariableWindowIds[BP_VAR_WINDOW_MESSAGE], 0x013, 0xD, fontId, GetPlayerTextSpeedDelay(), str, followUpFunc);
+    DisplayMessageAndContinueTask(taskId, sVariableWindowIds[BP_VAR_WINDOW_MESSAGE], 0x013, 13, fontId, GetPlayerTextSpeedDelay(), str, followUpFunc);
     ScheduleBgCopyTilemapToVram(2);
 }
 
@@ -1832,7 +1826,7 @@ static void CreateSellYesNoMenu(u8 taskId, const struct YesNoFuncTable *ptrs)
 
 static void PrintMoneyInWin2(void)
 {
-    PrintMoneyAmountInMoneyBoxWithBorder(GetOrCreateVariableWindow(BP_VAR_WINDOW_MONEY), 0x00A, 14, GetMoney(&gSaveBlock1Ptr->money));
+    PrintMoneyAmountInMoneyBoxWithBorder(GetOrCreateVariableWindow(BP_VAR_WINDOW_MONEY), 0x001, 14, GetMoney(&gSaveBlock1Ptr->money));
     AddMoneyLabelObject(19, 11);
 }
 

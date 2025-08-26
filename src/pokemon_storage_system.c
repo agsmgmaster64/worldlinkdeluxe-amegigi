@@ -9376,14 +9376,10 @@ static void PrintItemDescription(void)
     if (IsMovingItem())
     {
         description = GetItemLongDescription(sStorage->movingItemId);
-        if (description == NULL)
-            description = GetItemDescription(sStorage->movingItemId);
     }
     else
     {
         description = GetItemLongDescription(sStorage->displayMonItemId);
-        if (description == NULL)
-            description = GetItemDescription(sStorage->displayMonItemId);
     }
 
     FillWindowPixelBuffer(WIN_ITEM_DESC, PIXEL_FILL(1));
