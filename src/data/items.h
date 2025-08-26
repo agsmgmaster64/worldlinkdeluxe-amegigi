@@ -7623,6 +7623,10 @@ const struct Item gItemsInfo[] =
             "A bizarre orb that\n"
             "inflicts a burn on\n"
             "holder in battle."),
+        .descriptionLong = COMPOUND_STRING(
+            "An item to be held by a Puppet.\n"
+            "It is a bizzare orb that inflicts a\n"
+            "burn on the holder in battle."),
         .pocket = POCKET_BATTLE_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -7641,6 +7645,10 @@ const struct Item gItemsInfo[] =
             "A bizarre orb that\n"
             "badly poisons the\n"
             "holder in battle."),
+        .descriptionLong = COMPOUND_STRING(
+            "An item to be held by a Puppet.\n"
+            "It is a bizzare orb that badly\n"
+            "poisons the holder in battle."),
         .pocket = POCKET_BATTLE_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -7659,6 +7667,10 @@ const struct Item gItemsInfo[] =
             "A bizarre orb that\n"
             "gives the holder in\n"
             "battle frostbite."),
+        .descriptionLong = COMPOUND_STRING(
+            "An item to be held by a Puppet.\n"
+            "It is a bizzare orb that gives the\n"
+            "holder frostbite in battle."),
         .pocket = POCKET_BATTLE_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
