@@ -542,8 +542,9 @@
 #define MUS_CASINO_PLUS_7           607
 #define MUS_CASINO_PLUS_8           608
 #define MUS_CASINO_PLUS_9           609
+#define MUS_DD_UNDERWATER           610
 
-#define END_MUS                     MUS_CASINO_PLUS_9
+#define END_MUS                     MUS_DD_UNDERWATER
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

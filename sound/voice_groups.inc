@@ -139,6 +139,7 @@
 .include "sound/voicegroups/unused_2.inc" @ used by unused GSC radio tower takeover test track in RS
 .include "sound/voicegroups/zgs_main.inc"
 .include "sound/voicegroups/dd_skuller_drill_missile.inc"
+.include "sound/voicegroups/dd_underwater.inc"
 .include "sound/voicegroups/wld_main.inc"
 .include "sound/voicegroups/casino_pinball.inc"
 .include "sound/trainer_voice_tables.inc"
