@@ -107,6 +107,8 @@ enum {
     ACTION_BY_TYPE,
     ACTION_BY_AMOUNT,
     ACTION_BY_INDEX,
+    ACTION_OPEN,
+    ACTION_BATTLE_OPEN,
     ACTION_DUMMY,
 };
 
@@ -243,6 +245,7 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
+static const u8 sText_BlueText[] = _("{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 TRANSPARENT LIGHT_GRAY}{STR_VAR_2}");
 
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);
@@ -337,6 +340,8 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_BY_TYPE]           = {COMPOUND_STRING("Type"),      {ItemMenu_SortByType}},
     [ACTION_BY_AMOUNT]         = {COMPOUND_STRING("Amount"),    {ItemMenu_SortByAmount}},
     [ACTION_BY_INDEX]          = {COMPOUND_STRING("Index"),     {ItemMenu_SortByIndex}},
+    [ACTION_OPEN]              = {COMPOUND_STRING("Open"),      {ItemMenu_UseOutOfBattle}},
+    [ACTION_BATTLE_OPEN]       = {COMPOUND_STRING("Open"),      {ItemMenu_UseInBattle}},
     [ACTION_DUMMY]             = {gText_EmptyString2, {NULL}}
 };
 
@@ -357,6 +362,17 @@ static const u8 sContextMenuItems_Bike[] = {
     ACTION_USE,
     ACTION_SWITCH_BIKE,
     ACTION_REGISTER,
+    ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BerryPouchTMCase[] = {
+    ACTION_OPEN,
+    ACTION_REGISTER,
+    ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BerryPouchTMCaseOpen[] = {
+    ACTION_OPEN,
     ACTION_CANCEL
 };
 
@@ -399,6 +415,11 @@ static const u8 sContextMenuItems_BattleItemsPocket[] = {
     ACTION_USE,
     ACTION_GIVE,
     ACTION_TOSS,
+    ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BattleBerryPouch[] = {
+    ACTION_BATTLE_OPEN,
     ACTION_CANCEL
 };
 
@@ -1071,7 +1092,15 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
         break;
     default:
-        end = CopyItemName(itemId, dest);
+        if (itemId == ITEM_TM_CASE || itemId == ITEM_BERRY_POUCH)
+        {
+            CopyItemName(itemId, gStringVar2);
+            end = StringExpandPlaceholders(dest, sText_BlueText);
+        }
+        else
+        {
+            end = CopyItemName(itemId, dest);
+        }
         PrependFontIdToFit(dest, end, FONT_NORMAL, 100);
         break;
     }
@@ -1724,7 +1753,12 @@ static void OpenContextMenu(u8 taskId)
     {
     case ITEMMENULOCATION_BATTLE:
     case ITEMMENULOCATION_WALLY:
-        if (GetItemBattleUsage(gSpecialVar_ItemId))
+        if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+        {
+            gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleUse;
+            gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleUse);
+        }
+        else if (GetItemBattleUsage(gSpecialVar_ItemId))
         {
             gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleUse;
             gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleUse);
@@ -1784,7 +1818,12 @@ static void OpenContextMenu(u8 taskId)
     default:
         if (MenuHelpers_IsLinkActive() == TRUE || InUnionRoom() == TRUE)
         {
-            if (gBagPosition.pocket == POCKET_KEY_ITEMS)
+            if (gSpecialVar_ItemId == ITEM_TM_CASE || gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+            {
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerryPouchTMCaseOpen;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerryPouchTMCaseOpen);
+            }
+            else if (gBagPosition.pocket == POCKET_KEY_ITEMS)
             {
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_Cancel;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_Cancel);
@@ -1825,6 +1864,11 @@ static void OpenContextMenu(u8 taskId)
                     memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_Bike, sizeof(sContextMenuItems_Bike));
                     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
                         gBagMenu->contextMenuItemsBuffer[0] = ACTION_WALK;
+                }
+                else if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_TmCase || GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_BerryPouch)
+                {
+                    gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerryPouchTMCase);
+                    memcpy(&gBagMenu->contextMenuItemsBuffer, &sContextMenuItems_BerryPouchTMCase, sizeof(sContextMenuItems_BerryPouchTMCase));
                 }
                 else if (GetItemFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_VariableRod)
                 {
