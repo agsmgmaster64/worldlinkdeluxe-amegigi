@@ -13,11 +13,11 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_RUSTURF_TUNNEL_WANDAS_BF",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 23,
       "y": 5,
@@ -88,8 +88,8 @@
       "flag": "FLAG_HIDE_RUSTURF_TUNNEL_BRINEY"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_RUSTURF_TUNNEL_GRUNT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 14,
       "y": 5,
@@ -146,8 +146,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_RUSTURF_TUNNEL_WANDA",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 25,
       "y": 4,
@@ -231,7 +231,5 @@
       "script": "RusturfTunnel_EventScript_TunnelBlockagePos3"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

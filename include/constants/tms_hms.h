@@ -87,7 +87,7 @@
     F(SLEEP_TALK) \
     F(POISON_JAB) \
     F(DREAM_EATER) \
-    F(MIND_BLOWN) \
+    F(TRAILBLAZE) \
     F(SWAGGER) \
     F(BODY_SLAM) \
     F(U_TURN) \
@@ -96,8 +96,6 @@
     F(TRICK_ROOM) \
     F(TERA_BLAST)
 
-// todo
-// change MIND_BLOWN
 
 #define FOREACH_HM(F) \
     F(CUT) \

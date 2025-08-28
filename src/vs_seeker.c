@@ -586,7 +586,7 @@ bool32 IsVsSeekerEnabled(void)
     if (I_VS_SEEKER_CHARGING == 0)
         return FALSE;
 
-    return (CheckBagHasItem(ITEM_VS_SEEKER, 1));
+    return TRUE;
 }
 
 static bool8 ObjectEventIdIsSane(u8 objectEventId)

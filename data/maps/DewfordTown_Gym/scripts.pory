@@ -1,3 +1,9 @@
+const PUZZLE_TILE_NONE = 0
+const PUZZLE_TILE_SPADE = 1
+const PUZZLE_TILE_DIAMOND = 2
+const PUZZLE_TILE_CLUB = 3
+const PUZZLE_TILE_HEART = 4
+
 script DewfordTown_Gym_EventScript_Diamond1 {
 	lockall
 	releaseall
@@ -10,16 +16,20 @@ script DewfordTown_Gym_EventScript_Diamond1 {
 	switch (var(VAR_TEMP_A)) {
 		case 1:
 			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
-			setflag(FLAG_TEMP_1)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
 		case 2:
 			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
-			setflag(FLAG_TEMP_2)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
 		case 3:
 			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
-			setflag(FLAG_TEMP_3)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
 		case 4:
 			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
-			setflag(FLAG_TEMP_4)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
 	}
 	end
 }
@@ -36,16 +46,20 @@ script DewfordTown_Gym_EventScript_Spade1 {
 	switch (var(VAR_TEMP_A)) {
 		case 1:
 			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
-			setflag(FLAG_TEMP_5)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
 		case 2:
 			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
-			setflag(FLAG_TEMP_6)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
 		case 3:
 			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
-			setflag(FLAG_TEMP_7)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
 		case 4:
 			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
-			setflag(FLAG_TEMP_8)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
 	}
 	end
 }
@@ -54,6 +68,78 @@ script DewfordTown_Gym_EventScript_Swap1 {
 	lockall
 	releaseall
 	playse(SE_SWITCH)
+	switch (var(VAR_TEMP_4)) {
+		case PUZZLE_TILE_SPADE:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolClubs, TRUE)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_CLUB)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_DIAMOND:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolHearts, TRUE)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_HEART)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_CLUB:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_HEART:
+			setmetatile(3, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setvar(VAR_TEMP_4, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
+	}
+	switch (var(VAR_TEMP_5)) {
+		case PUZZLE_TILE_SPADE:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolClubs, TRUE)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_CLUB)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_DIAMOND:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolHearts, TRUE)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_HEART)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_CLUB:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_HEART:
+			setmetatile(4, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setvar(VAR_TEMP_5, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
+	}
+	switch (var(VAR_TEMP_6)) {
+		case PUZZLE_TILE_SPADE:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolClubs, TRUE)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_CLUB)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_DIAMOND:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolHearts, TRUE)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_HEART)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_CLUB:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_HEART:
+			setmetatile(5, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setvar(VAR_TEMP_6, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
+	}
+	switch (var(VAR_TEMP_7)) {
+		case PUZZLE_TILE_SPADE:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolClubs, TRUE)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_CLUB)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_DIAMOND:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolHearts, TRUE)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_HEART)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_CLUB:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolSpades, TRUE)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_SPADE)
+			special(DrawWholeMapView)
+		case PUZZLE_TILE_HEART:
+			setmetatile(6, 20, METATILE_DewfordGym_CardSymbolDiamonds, TRUE)
+			setvar(VAR_TEMP_7, PUZZLE_TILE_DIAMOND)
+			special(DrawWholeMapView)
+	}
 	end
 }
 
@@ -62,15 +148,12 @@ script DewfordTown_Gym_EventScript_ClearPuzzle1 {
 	setmetatile(4, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
 	setmetatile(5, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
 	setmetatile(6, 20, METATILE_DewfordGym_CardSymbolBlank, TRUE)
-	clearflag(FLAG_TEMP_1)
-	clearflag(FLAG_TEMP_2)
-	clearflag(FLAG_TEMP_3)
-	clearflag(FLAG_TEMP_4)
-	clearflag(FLAG_TEMP_5)
-	clearflag(FLAG_TEMP_6)
-	clearflag(FLAG_TEMP_7)
-	clearflag(FLAG_TEMP_8)
+	setvar(VAR_TEMP_4, PUZZLE_TILE_NONE)
+	setvar(VAR_TEMP_5, PUZZLE_TILE_NONE)
+	setvar(VAR_TEMP_6, PUZZLE_TILE_NONE)
+	setvar(VAR_TEMP_7, PUZZLE_TILE_NONE)
 	setvar(VAR_TEMP_A, 0)
+	special(DrawWholeMapView)
 	return
 }
 

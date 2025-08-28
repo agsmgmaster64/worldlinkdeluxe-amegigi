@@ -89,7 +89,7 @@
 // - MOVE_SLEEP_TALK                                   //
 // - MOVE_POISON_JAB                                   //
 // - MOVE_DREAM_EATER                                  //
-// - MOVE_MIND_BLOWN                                   //
+// - MOVE_TRAILBLAZE                                   //
 // - MOVE_SWAGGER                                      //
 // - MOVE_BODY_SLAM                                    //
 // - MOVE_U_TURN                                       //
@@ -15748,6 +15748,7 @@ static const u16 sBulbasaurTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -15792,6 +15793,7 @@ static const u16 sIvysaurTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -15838,6 +15840,7 @@ static const u16 sVenusaurTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BULBASAUR
@@ -16663,6 +16666,7 @@ static const u16 sEkansTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -16702,6 +16706,7 @@ static const u16 sArbokTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_EKANS
@@ -16749,6 +16754,7 @@ static const u16 sPichuTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -16804,6 +16810,7 @@ static const u16 sPikachuTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -16860,6 +16867,7 @@ static const u16 sRaichuTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -16909,6 +16917,7 @@ static const u16 sRaichuAlolaTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -17859,6 +17868,7 @@ static const u16 sIgglybuffTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -17935,6 +17945,7 @@ static const u16 sJigglypuffTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18011,6 +18022,7 @@ static const u16 sWigglytuffTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18162,6 +18174,7 @@ static const u16 sOddishTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -18196,6 +18209,7 @@ static const u16 sGloomTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -18232,6 +18246,7 @@ static const u16 sVileplumeTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -18267,6 +18282,7 @@ static const u16 sBellossomTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_2_CROSS_EVOS
@@ -18611,6 +18627,7 @@ static const u16 sMeowthTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18663,6 +18680,7 @@ static const u16 sPersianTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18707,6 +18725,7 @@ static const u16 sMeowthAlolaTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18751,6 +18770,7 @@ static const u16 sPersianAlolaTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18788,6 +18808,7 @@ static const u16 sMeowthGalarTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -18823,6 +18844,7 @@ static const u16 sPerrserkerTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -18883,6 +18905,7 @@ static const u16 sPsyduckTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -18943,6 +18966,7 @@ static const u16 sGolduckTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -19831,6 +19855,7 @@ static const u16 sBellsproutTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -19867,6 +19892,7 @@ static const u16 sWeepinbellTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -19903,6 +19929,7 @@ static const u16 sVictreebelTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BELLSPROUT
@@ -20933,6 +20960,7 @@ static const u16 sDodrioTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_DODUO
@@ -21616,6 +21644,7 @@ static const u16 sDrowzeeTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -21674,6 +21703,7 @@ static const u16 sHypnoTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -22036,6 +22066,7 @@ static const u16 sExeggutorAlolaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -22345,6 +22376,7 @@ static const u16 sHitmonchanTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -22948,6 +22980,7 @@ static const u16 sChanseyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -23027,6 +23060,7 @@ static const u16 sBlisseyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -23557,6 +23591,7 @@ static const u16 sScytherTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -23602,6 +23637,7 @@ static const u16 sScizorTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -23633,6 +23669,7 @@ static const u16 sKleavorTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -23802,6 +23839,7 @@ static const u16 sElekidTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -23859,6 +23897,7 @@ static const u16 sElectabuzzTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -23917,6 +23956,7 @@ static const u16 sElectivireTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -24163,6 +24203,7 @@ static const u16 sTaurosTeachableLearnset[] = {
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -24190,6 +24231,7 @@ static const u16 sTaurosPaldeaCombatTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -24216,6 +24258,7 @@ static const u16 sTaurosPaldeaBlazeTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -24242,6 +24285,7 @@ static const u16 sTaurosPaldeaAquaTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -24394,6 +24438,7 @@ static const u16 sEeveeTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -24438,6 +24483,7 @@ static const u16 sVaporeonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -24485,6 +24531,7 @@ static const u16 sJolteonTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -24525,6 +24572,7 @@ static const u16 sFlareonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -24571,6 +24619,7 @@ static const u16 sEspeonTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -24621,6 +24670,7 @@ static const u16 sUmbreonTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_2_CROSS_EVOS
@@ -24666,6 +24716,7 @@ static const u16 sLeafeonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -24708,6 +24759,7 @@ static const u16 sGlaceonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -24753,6 +24805,7 @@ static const u16 sSylveonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_6_CROSS_EVOS
@@ -25170,6 +25223,7 @@ static const u16 sMunchlaxTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -25238,6 +25292,7 @@ static const u16 sSnorlaxTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -25387,6 +25442,7 @@ static const u16 sZapdosGalarTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -25708,6 +25764,7 @@ static const u16 sMewtwoTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WATER_PULSE,
     MOVE_WILL_O_WISP,
@@ -25870,6 +25927,7 @@ static const u16 sChikoritaTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -25912,6 +25970,7 @@ static const u16 sBayleefTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -25955,6 +26014,7 @@ static const u16 sMeganiumTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CHIKORITA
@@ -26188,6 +26248,7 @@ static const u16 sTotodileTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -26245,6 +26306,7 @@ static const u16 sCroconawTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -26304,6 +26366,7 @@ static const u16 sFeraligatrTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -26361,6 +26424,7 @@ static const u16 sSentretTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
@@ -26419,6 +26483,7 @@ static const u16 sFurretTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
@@ -26635,6 +26700,7 @@ static const u16 sSpinarakTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -26669,6 +26735,7 @@ static const u16 sAriadosTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SPINARAK
@@ -27048,6 +27115,7 @@ static const u16 sMareepTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -27102,6 +27170,7 @@ static const u16 sFlaaffyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -27157,6 +27226,7 @@ static const u16 sAmpharosTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -27245,6 +27315,7 @@ static const u16 sMarillTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -27297,6 +27368,7 @@ static const u16 sAzumarillTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -27342,6 +27414,7 @@ static const u16 sBonslyTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -27397,6 +27470,7 @@ static const u16 sSudowoodoTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -27437,6 +27511,7 @@ static const u16 sHoppipTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -27475,6 +27550,7 @@ static const u16 sSkiploomTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -27513,6 +27589,7 @@ static const u16 sJumpluffTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -27575,6 +27652,7 @@ static const u16 sAipomTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -27628,6 +27706,7 @@ static const u16 sAmbipomTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -27668,6 +27747,7 @@ static const u16 sSunkernTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -27703,6 +27783,7 @@ static const u16 sSunfloraTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SUNKERN
@@ -27832,6 +27913,7 @@ static const u16 sWooperTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -27891,6 +27973,7 @@ static const u16 sQuagsireTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -27923,6 +28006,7 @@ static const u16 sWooperPaldeaTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -27952,6 +28036,7 @@ static const u16 sClodsireTeachableLearnset[] = {
     MOVE_SURF,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -28217,6 +28302,7 @@ static const u16 sGirafarigTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -28252,6 +28338,7 @@ static const u16 sFarigirafTeachableLearnset[] = {
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -28618,6 +28705,7 @@ static const u16 sSnubbullTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -28684,6 +28772,7 @@ static const u16 sGranbullTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -28883,6 +28972,7 @@ static const u16 sHeracrossTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_HERACROSS
@@ -28947,6 +29037,7 @@ static const u16 sSneaselTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -29008,6 +29099,7 @@ static const u16 sWeavileTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -29044,6 +29136,7 @@ static const u16 sSneaselHisuiTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -29080,6 +29173,7 @@ static const u16 sSneaslerTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -29141,6 +29235,7 @@ static const u16 sTeddiursaTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -29200,6 +29295,7 @@ static const u16 sUrsaringTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -29244,6 +29340,7 @@ static const u16 sUrsalunaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -29281,6 +29378,7 @@ static const u16 sUrsalunaBloodmoonTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_8_CROSS_EVOS
@@ -29406,6 +29504,7 @@ static const u16 sSwinubTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -29447,6 +29546,7 @@ static const u16 sPiloswineTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -29487,6 +29587,7 @@ static const u16 sMamoswineTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_4_CROSS_EVOS
@@ -29750,6 +29851,7 @@ static const u16 sDelibirdTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -29924,6 +30026,7 @@ static const u16 sHoundourTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -29970,6 +30073,7 @@ static const u16 sHoundoomTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -30011,6 +30115,7 @@ static const u16 sPhanpyTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -30051,6 +30156,7 @@ static const u16 sDonphanTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -30104,6 +30210,7 @@ static const u16 sStantlerTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -30141,6 +30248,7 @@ static const u16 sWyrdeerTeachableLearnset[] = {
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -30258,6 +30366,7 @@ static const u16 sRaikouTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -30303,6 +30412,7 @@ static const u16 sEnteiTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -30351,6 +30461,7 @@ static const u16 sSuicuneTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -30734,6 +30845,7 @@ static const u16 sTreeckoTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -30789,6 +30901,7 @@ static const u16 sGrovyleTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -30848,6 +30961,7 @@ static const u16 sSceptileTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_TREECKO
@@ -31201,6 +31315,7 @@ static const u16 sPoochyenaTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -31241,6 +31356,7 @@ static const u16 sMightyenaTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_POOCHYENA
@@ -31568,6 +31684,7 @@ static const u16 sLotadTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -31621,6 +31738,7 @@ static const u16 sLombreTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -31679,6 +31797,7 @@ static const u16 sLudicoloTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -31723,6 +31842,7 @@ static const u16 sSeedotTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -31779,6 +31899,7 @@ static const u16 sNuzleafTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -31838,6 +31959,7 @@ static const u16 sShiftryTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -32537,6 +32659,7 @@ static const u16 sVigorothTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -32605,6 +32728,7 @@ static const u16 sSlakingTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -33505,6 +33629,7 @@ static const u16 sMedititeTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -33567,6 +33692,7 @@ static const u16 sMedichamTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -33693,6 +33819,7 @@ static const u16 sPlusleTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -33739,6 +33866,7 @@ static const u16 sMinunTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -33796,6 +33924,7 @@ static const u16 sVolbeatTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -33849,6 +33978,7 @@ static const u16 sIllumiseTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -34267,6 +34397,7 @@ static const u16 sNumelTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -34310,6 +34441,7 @@ static const u16 sCameruptTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -34403,6 +34535,7 @@ static const u16 sSpoinkTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -34468,6 +34601,7 @@ static const u16 sGrumpigTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -34713,6 +34847,7 @@ static const u16 sCacneaTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -34769,6 +34904,7 @@ static const u16 sCacturneTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CACNEA
@@ -34807,6 +34943,7 @@ static const u16 sSwabluTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -34851,6 +34988,7 @@ static const u16 sAltariaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -34971,6 +35109,7 @@ static const u16 sSeviperTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SEVIPER
@@ -35786,6 +35925,7 @@ static const u16 sBanetteTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -36001,6 +36141,7 @@ static const u16 sTropiusTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -36201,6 +36342,7 @@ static const u16 sSnoruntTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -36243,6 +36385,7 @@ static const u16 sGlalieTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -36293,6 +36436,7 @@ static const u16 sFroslassTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WATER_PULSE,
     MOVE_WILL_O_WISP,
@@ -36784,6 +36928,7 @@ static const u16 sMetangTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -36836,6 +36981,7 @@ static const u16 sMetagrossTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -37680,6 +37826,7 @@ static const u16 sTurtwigTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -37719,6 +37866,7 @@ static const u16 sGrotleTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -37762,6 +37910,7 @@ static const u16 sTorterraTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_TURTWIG
@@ -38292,6 +38441,7 @@ static const u16 sKricketuneTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_KRICKETOT
@@ -38331,6 +38481,7 @@ static const u16 sShinxTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -38369,6 +38520,7 @@ static const u16 sLuxioTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -38408,6 +38560,7 @@ static const u16 sLuxrayTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -38459,6 +38612,7 @@ static const u16 sCranidosTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -38513,6 +38667,7 @@ static const u16 sRampardosTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CRANIDOS
@@ -38560,6 +38715,7 @@ static const u16 sShieldonTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -38606,6 +38762,7 @@ static const u16 sBastiodonTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SHIELDON
@@ -38838,6 +38995,7 @@ static const u16 sPachirisuTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_U_TURN,
     MOVE_VOLT_SWITCH,
@@ -39416,6 +39574,7 @@ static const u16 sStunkyTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -39462,6 +39621,7 @@ static const u16 sSkuntankTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_STUNKY
@@ -39814,6 +39974,7 @@ static const u16 sRioluTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -39868,6 +40029,7 @@ static const u16 sLucarioTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -40285,6 +40447,7 @@ static const u16 sSnoverTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -40336,6 +40499,7 @@ static const u16 sAbomasnowTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -41030,6 +41194,7 @@ static const u16 sShayminLandTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -41061,6 +41226,7 @@ static const u16 sShayminSkyTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SHAYMIN
@@ -41139,6 +41305,7 @@ static const u16 sArceusTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -41235,6 +41402,7 @@ static const u16 sSnivyTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -41274,6 +41442,7 @@ static const u16 sServineTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -41316,6 +41485,7 @@ static const u16 sSerperiorTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SNIVY
@@ -41355,6 +41525,7 @@ static const u16 sTepigTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -41403,6 +41574,7 @@ static const u16 sPigniteTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -41452,6 +41624,7 @@ static const u16 sEmboarTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -42303,6 +42476,7 @@ static const u16 sBlitzleTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -42339,6 +42513,7 @@ static const u16 sZebstrikaTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -43002,6 +43177,7 @@ static const u16 sSewaddleTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -43036,6 +43212,7 @@ static const u16 sSwadloonTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -43077,6 +43254,7 @@ static const u16 sLeavannyTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SEWADDLE
@@ -43270,6 +43448,7 @@ static const u16 sPetililTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -43301,6 +43480,7 @@ static const u16 sLilligantTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -43327,6 +43507,7 @@ static const u16 sLilligantHisuiTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_HISUIAN_FORMS
@@ -43871,6 +44052,7 @@ static const u16 sScraggyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -43926,6 +44108,7 @@ static const u16 sScraftyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SCRAGGY
@@ -44518,6 +44701,7 @@ static const u16 sMinccinoTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -44556,6 +44740,7 @@ static const u16 sCinccinoTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -44879,6 +45064,7 @@ static const u16 sDucklettTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -44910,6 +45096,7 @@ static const u16 sSwannaTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -45033,6 +45220,7 @@ static const u16 sDeerlingTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -45071,6 +45259,7 @@ static const u16 sSawsbuckTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_DEERLING
@@ -45875,6 +46064,7 @@ static const u16 sChandelureTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -45922,6 +46112,7 @@ static const u16 sAxewTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -45965,6 +46156,7 @@ static const u16 sFraxureTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -46013,6 +46205,7 @@ static const u16 sHaxorusTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_AXEW
@@ -46056,6 +46249,7 @@ static const u16 sCubchooTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -46107,6 +46301,7 @@ static const u16 sBearticTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -46311,6 +46506,7 @@ static const u16 sMienfooTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -46355,6 +46551,7 @@ static const u16 sMienshaoTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -47071,6 +47268,7 @@ static const u16 sLarvestaTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -47108,6 +47306,7 @@ static const u16 sVolcaronaTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -47234,6 +47433,7 @@ static const u16 sVirizionTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_VIRIZION
@@ -47566,6 +47766,7 @@ static const u16 sKeldeoTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
@@ -47720,6 +47921,7 @@ static const u16 sChespinTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -47774,6 +47976,7 @@ static const u16 sQuilladinTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -47833,6 +48036,7 @@ static const u16 sChesnaughtTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -48007,6 +48211,7 @@ static const u16 sFroakieTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -48053,6 +48258,7 @@ static const u16 sFrogadierTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -48100,6 +48306,7 @@ static const u16 sGreninjaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
@@ -48397,6 +48604,7 @@ static const u16 sLitleoTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -48437,6 +48645,7 @@ static const u16 sPyroarTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -48472,6 +48681,7 @@ static const u16 sFlabebeTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -48506,6 +48716,7 @@ static const u16 sFloetteTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -48540,6 +48751,7 @@ static const u16 sFloetteEternalTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -48573,6 +48785,7 @@ static const u16 sFlorgesTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FLABEBE
@@ -48615,6 +48828,7 @@ static const u16 sSkiddoTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -48657,6 +48871,7 @@ static const u16 sGogoatTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -48887,6 +49102,7 @@ static const u16 sMeowsticMTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -48933,6 +49149,7 @@ static const u16 sMeowsticFTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -49256,6 +49473,7 @@ static const u16 sMalamarTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -49804,6 +50022,7 @@ static const u16 sHawluchaTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -49844,6 +50063,7 @@ static const u16 sDedenneTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
@@ -50153,6 +50373,7 @@ static const u16 sPhantumpTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -50201,6 +50422,7 @@ static const u16 sTrevenantTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -50829,6 +51051,7 @@ static const u16 sRowletTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -50864,6 +51087,7 @@ static const u16 sDartrixTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -50900,6 +51124,7 @@ static const u16 sDecidueyeTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -50935,6 +51160,7 @@ static const u16 sDecidueyeHisuiTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -50967,6 +51193,7 @@ static const u16 sLittenTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -50997,6 +51224,7 @@ static const u16 sTorracatTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -51040,6 +51268,7 @@ static const u16 sIncineroarTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -51261,6 +51490,7 @@ static const u16 sYungoosTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -51303,6 +51533,7 @@ static const u16 sGumshoosTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -51511,6 +51742,7 @@ static const u16 sOricorioTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -51546,6 +51778,7 @@ static const u16 sCutieflyTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -51580,6 +51813,7 @@ static const u16 sRibombeeTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -51612,6 +51846,7 @@ static const u16 sRockruffTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -51645,6 +51880,7 @@ static const u16 sLycanrocMiddayTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -51686,6 +51922,7 @@ static const u16 sLycanrocMidnightTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -51718,6 +51955,7 @@ static const u16 sLycanrocDuskTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ROCKRUFF
@@ -51907,6 +52145,7 @@ static const u16 sDewpiderTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -51940,6 +52179,7 @@ static const u16 sAraquanidTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -51975,6 +52215,7 @@ static const u16 sFomantisTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -52009,6 +52250,7 @@ static const u16 sLurantisTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FOMANTIS
@@ -52110,6 +52352,7 @@ static const u16 sSalanditTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -52148,6 +52391,7 @@ static const u16 sSalazzleTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
 };
@@ -52258,6 +52502,7 @@ static const u16 sBounsweetTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -52287,6 +52532,7 @@ static const u16 sSteeneeTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -52318,6 +52564,7 @@ static const u16 sTsareenaTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -52352,6 +52599,7 @@ static const u16 sComfeyTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
@@ -52402,6 +52650,7 @@ static const u16 sOranguruTeachableLearnset[] = {
     MOVE_THUNDER,
     MOVE_THUNDERBOLT,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -52451,6 +52700,7 @@ static const u16 sPassimianTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -52770,6 +53020,7 @@ static const u16 sKomalaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
@@ -52893,6 +53144,7 @@ static const u16 sMimikyuTeachableLearnset[] = {
     MOVE_THUNDERBOLT,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -53864,7 +54116,6 @@ static const u16 sBlacephalonTeachableLearnset[] = {
     MOVE_INCINERATE,
     MOVE_LIGHT_SCREEN,
     MOVE_MANA_BURST,
-    MOVE_MIND_BLOWN,
     MOVE_MULTI_PULSE,
     MOVE_PAYBACK,
     MOVE_RECYCLE,
@@ -53992,6 +54243,7 @@ static const u16 sGrookeyTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -54023,6 +54275,7 @@ static const u16 sThwackeyTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -54059,6 +54312,7 @@ static const u16 sRillaboomTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -54083,6 +54337,7 @@ static const u16 sScorbunnyTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -54107,6 +54362,7 @@ static const u16 sRabootTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -54136,6 +54392,7 @@ static const u16 sCinderaceTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -54250,6 +54507,7 @@ static const u16 sSkwovetTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -54280,6 +54538,7 @@ static const u16 sGreedentTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -54751,6 +55010,7 @@ static const u16 sFlappleTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
@@ -54781,6 +55041,7 @@ static const u16 sAppletunTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -54993,6 +55254,7 @@ static const u16 sToxtricityAmpedTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -55029,6 +55291,7 @@ static const u16 sToxtricityLowKeyTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
@@ -55276,6 +55539,7 @@ static const u16 sImpidimpTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -55303,6 +55567,7 @@ static const u16 sMorgremTeachableLearnset[] = {
     MOVE_THIEF,
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -55338,6 +55603,7 @@ static const u16 sGrimmsnarlTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TORMENT,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_IMPIDIMP
@@ -55409,6 +55675,7 @@ static const u16 sFalinksTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FALINKS
@@ -55947,6 +56214,7 @@ static const u16 sZacianTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ZACIAN
@@ -55975,6 +56243,7 @@ static const u16 sZamazentaTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_SWIFT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ZAMAZENTA
@@ -56074,6 +56343,7 @@ static const u16 sUrshifuSingleStrikeTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56115,6 +56385,7 @@ static const u16 sUrshifuRapidStrikeTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATERFALL,
     MOVE_UNAVAILABLE,
@@ -56156,6 +56427,7 @@ static const u16 sZarudeTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56229,6 +56501,7 @@ static const u16 sGlastrierTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_GLASTRIER
@@ -56322,6 +56595,7 @@ static const u16 sCalyrexIceTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TORMENT,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -56405,6 +56679,7 @@ static const u16 sSprigatitoTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56426,6 +56701,7 @@ static const u16 sFloragatoTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56456,6 +56732,7 @@ static const u16 sMeowscaradaTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_THUNDER_PUNCH,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
@@ -56614,6 +56891,7 @@ static const u16 sLechonkTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -56635,6 +56913,7 @@ static const u16 sOinkologneTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_LECHONK
@@ -56659,6 +56938,7 @@ static const u16 sTarountulaTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -56685,6 +56965,7 @@ static const u16 sSpidopsTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56703,6 +56984,7 @@ static const u16 sNymbleTeachableLearnset[] = {
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56726,6 +57008,7 @@ static const u16 sLokixTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -56851,6 +57134,7 @@ static const u16 sMausholdTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_THUNDER_WAVE,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
@@ -56875,6 +57159,7 @@ static const u16 sFidoughTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -56895,6 +57180,7 @@ static const u16 sDachsbunTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_FIDOUGH
@@ -56915,6 +57201,7 @@ static const u16 sSmolivTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -56933,6 +57220,7 @@ static const u16 sDollivTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -56958,6 +57246,7 @@ static const u16 sArbolivaTeachableLearnset[] = {
     MOVE_SWIFT,
     MOVE_TACKLE,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_SMOLIV
@@ -57235,6 +57524,7 @@ static const u16 sMaschiffTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 
@@ -57258,6 +57548,7 @@ static const u16 sMabosstiffTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_MASCHIFF
@@ -57285,6 +57576,7 @@ static const u16 sShroodleTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -57312,6 +57604,7 @@ static const u16 sGrafaiaiTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -57334,6 +57627,7 @@ static const u16 sBramblinTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -57354,6 +57648,7 @@ static const u16 sBrambleghastTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -57381,6 +57676,7 @@ static const u16 sToedscoolTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -57406,6 +57702,7 @@ static const u16 sToedscruelTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
@@ -57433,6 +57730,7 @@ static const u16 sKlawfTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_KLAWF
@@ -57452,6 +57750,7 @@ static const u16 sCapsakidTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_UNAVAILABLE,
 };
@@ -57472,6 +57771,7 @@ static const u16 sScovillainTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_TREMORS,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -57846,6 +58146,7 @@ static const u16 sCyclizarTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_THUNDERBOLT,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -58192,6 +58493,7 @@ static const u16 sBruteBonnetTeachableLearnset[] = {
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
     MOVE_THIEF,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BRUTE_BONNET
@@ -58238,6 +58540,7 @@ static const u16 sSlitherWingTeachableLearnset[] = {
     MOVE_SUBSTITUTE,
     MOVE_SUNNY_DAY,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_WILL_O_WISP,
     MOVE_UNAVAILABLE,
@@ -58569,6 +58872,7 @@ static const u16 sWoChienTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_WO_CHIEN
@@ -58821,6 +59125,7 @@ static const u16 sIronLeavesTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_IRON_LEAVES
@@ -58921,6 +59226,7 @@ static const u16 sMunkidoriTeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_THIEF,
     MOVE_TOXIC,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };
@@ -58980,6 +59286,7 @@ static const u16 sOgerponTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TAUNT,
     MOVE_TERA_BLAST,
+    MOVE_TRAILBLAZE,
     MOVE_U_TURN,
     MOVE_UNAVAILABLE,
 };

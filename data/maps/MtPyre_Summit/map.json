@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "type": "object",
@@ -30,8 +30,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_ARCHIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
       "x": 23,
       "y": 6,
@@ -45,8 +45,8 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_OLD_LADY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 23,
       "y": 5,
@@ -60,8 +60,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_GRUNT_1",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 21,
       "y": 15,
@@ -75,8 +75,8 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_GRUNT_2",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 25,
       "y": 18,
@@ -90,8 +90,8 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_GRUNT_3",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 21,
       "y": 11,
@@ -105,8 +105,8 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_GRUNT_4",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
       "x": 25,
       "y": 11,
@@ -120,8 +120,8 @@
       "flag": "FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MT_PYRE_SUMMIT_MAXIE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 23,
       "y": 6,

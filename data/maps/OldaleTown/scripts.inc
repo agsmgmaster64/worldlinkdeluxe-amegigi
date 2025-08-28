@@ -47,7 +47,7 @@ OldaleTown_EventScript_BlockWestEntrance::
 # 24 "data/maps/OldaleTown/scripts.pory"
 OldaleTown_EventScript_MoveMartEmployee::
 # 25 "data/maps/OldaleTown/scripts.pory"
-	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 13, 14
+	setobjectxyperm LOCALID_OLDALE_MART_EMPLOYEE, 12, 14
 # 26 "data/maps/OldaleTown/scripts.pory"
 	setobjectmovementtype LOCALID_OLDALE_MART_EMPLOYEE, MOVEMENT_TYPE_FACE_DOWN
 # 27 "data/maps/OldaleTown/scripts.pory"
