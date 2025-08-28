@@ -947,7 +947,6 @@ extern const u8 gBattleAnimStatus_Infatuation[];
 extern const u8 gBattleAnimStatus_Sleep[];
 extern const u8 gBattleAnimStatus_Paralysis[];
 extern const u8 gBattleAnimStatus_Freeze[];
-extern const u8 gBattleAnimStatus_Frostbite[];
 extern const u8 gBattleAnimStatus_Curse[];
 extern const u8 gBattleAnimStatus_Nightmare[];
 extern const u8 gBattleAnimStatus_Frostbite[];

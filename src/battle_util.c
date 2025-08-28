@@ -8896,14 +8896,6 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
                 RecordAbilityBattle(battlerDef, ABILITY_WALL_OF_ICE);
         }
         break;
-    case ABILITY_PURIFYING_SALT:
-        if (moveType == TYPE_GHOST)
-        {
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
-            if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ABILITY_PURIFYING_SALT);
-        }
-        break;
     }
 
     // ally's abilities

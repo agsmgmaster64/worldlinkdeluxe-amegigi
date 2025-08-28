@@ -193,7 +193,6 @@ static const u8* const sBattleAnims_StatusConditions[NUM_B_ANIMS_STATUS] =
     [B_ANIM_STATUS_SLP]         = gBattleAnimStatus_Sleep,
     [B_ANIM_STATUS_PRZ]         = gBattleAnimStatus_Paralysis,
     [B_ANIM_STATUS_FRZ]         = gBattleAnimStatus_Freeze,
-    [B_ANIM_STATUS_FRB]         = gBattleAnimStatus_Frostbite,
     [B_ANIM_STATUS_CURSED]      = gBattleAnimStatus_Curse,
     [B_ANIM_STATUS_NIGHTMARE]   = gBattleAnimStatus_Nightmare,
     [B_ANIM_STATUS_FRB]         = gBattleAnimStatus_Frostbite,

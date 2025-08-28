@@ -31126,23 +31126,6 @@ gBattleAnimStatus_Freeze::
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-gBattleAnimStatus_Frostbite::
-	loadspritegfx ANIM_TAG_ICE_CRYSTALS @Ice
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 20, 2
-	createsprite gIceCrystalHitLargeSpriteTemplate, ANIM_TARGET, 2, -10, -10, 0
-	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
-	delay 4
-	createsprite gIceCrystalHitSmallSpriteTemplate, ANIM_TARGET, 2, 10, 20, 0
-	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
-	delay 4
-	createsprite gIceCrystalHitLargeSpriteTemplate, ANIM_TARGET, 2, -5, 10, 0
-	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
-	delay 4
-	createsprite gIceCrystalHitSmallSpriteTemplate, ANIM_TARGET, 2, 17, -12, 0x0
-	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
-	waitforvisualfinish 
-	end
-
 gBattleAnimStatus_Curse::
 	loadspritegfx ANIM_TAG_GHOSTLY_SPIRIT
 	monbg ANIM_DEF_PARTNER
