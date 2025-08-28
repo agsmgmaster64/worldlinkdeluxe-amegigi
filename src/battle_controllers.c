@@ -13,9 +13,11 @@
 #include "cable_club.h"
 #include "event_object_movement.h"
 #include "event_data.h"
+#include "item.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "m4a.h"
+#include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "recorded_battle.h"
@@ -26,6 +28,7 @@
 #include "util.h"
 #include "text.h"
 #include "constants/abilities.h"
+#include "constants/item_effects.h"
 #include "constants/songs.h"
 #include "overworld.h"
 #include "pokemon_animation.h"
@@ -3054,5 +3057,48 @@ void BtlController_HandleSwitchInTryShinyAnim(u32 battler)
         {
             gBattlerControllerFuncs[battler] = BtlController_HandleSwitchInShowHealthbox;
         }
+    }
+}
+
+void UpdateFriendshipFromXItem(u32 battler)
+{
+    struct Pokemon *party = GetBattlerParty(battler);
+
+    u8 friendship;
+    gBattleResources->bufferA[battler][1] = REQUEST_FRIENDSHIP_BATTLE;
+    GetBattlerMonData(battler, party, gBattlerPartyIndexes[battler], &friendship);
+
+    u16 heldItem;
+    gBattleResources->bufferA[battler][1] = REQUEST_HELDITEM_BATTLE;
+    GetBattlerMonData(battler, party, gBattlerPartyIndexes[battler], (u8*)&heldItem);
+
+    if (friendship < X_ITEM_MAX_FRIENDSHIP)
+    {
+        if (GetItemHoldEffect(heldItem) == HOLD_EFFECT_FRIENDSHIP_UP)
+            friendship += 150 * X_ITEM_FRIENDSHIP_INCREASE / 100;
+        else
+            friendship += X_ITEM_FRIENDSHIP_INCREASE;
+
+        u8 pokeball;
+        gBattleResources->bufferA[battler][1] = REQUEST_POKEBALL_BATTLE;
+        GetBattlerMonData(battler, party, gBattlerPartyIndexes[battler], &pokeball);
+
+        if (pokeball == BALL_LUXURY)
+            friendship++;
+
+        u8 metLocation;
+        gBattleResources->bufferA[battler][1] = REQUEST_MET_LOCATION_BATTLE;
+        GetBattlerMonData(battler, party, gBattlerPartyIndexes[battler], &metLocation);
+
+        if (metLocation == GetCurrentRegionMapSectionId())
+            friendship++;
+
+        if (friendship > MAX_FRIENDSHIP)
+            friendship = MAX_FRIENDSHIP;
+
+        gBattleMons[battler].friendship = friendship;
+        gBattleResources->bufferA[battler][3] = friendship;
+        gBattleResources->bufferA[battler][1] = REQUEST_FRIENDSHIP_BATTLE;
+        SetBattlerMonData(battler, GetBattlerParty(battler), gBattlerPartyIndexes[battler]);
     }
 }
