@@ -307,9 +307,6 @@ static void HideStartMenuDebug(void);
 
 static bool8 CanSetUpSecondaryStartMenu(void)
 {
-    if (gSaveBlock2Ptr->optionsDebugMode == 0)
-        return TRUE;
-
     if (FlagGet(DN_FLAG_DEXNAV_GET) && FlagGet(FLAG_SYS_POKEDEX_GET))
         return TRUE;
 
@@ -410,14 +407,10 @@ static void UNUSED BuildDebugStartMenu(void)
 
 static void BuildToolStartMenu(void)
 {
-    if (gSaveBlock2Ptr->optionsDebugMode == 0)
-        AddStartMenuAction(MENU_ACTION_DEBUG);
     if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_DEXNAV);
     if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE)
         AddStartMenuAction(MENU_ACTION_QUEST_MENU);
-    if (gSaveBlock2Ptr->optionsDebugMode == 0)
-        AddStartMenuAction(MENU_ACTION_CHALLENGES);
     AddStartMenuAction(MENU_ACTION_EXIT_LEFT);
 }
 

@@ -104,7 +104,6 @@ static void InitPlayerTrainerId(void)
 
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_LR;
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
@@ -114,7 +113,6 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsUnitSystem = UNITS_IMPERIAL;
     gSaveBlock2Ptr->optionsHpBarSpeed = 0;
     gSaveBlock2Ptr->optionsExpBarSpeed = 0;
-    gSaveBlock2Ptr->optionsDisableMatchCall = 0;
     gSaveBlock2Ptr->optionsCurrentFont = 0;
     gSaveBlock2Ptr->optionsAnimSpeed = OPTIONS_BATTLE_SCENE_1X;
     gSaveBlock2Ptr->optionsUniqueColors = 0;
@@ -122,7 +120,6 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsMonAnimations = 1;
     gSaveBlock2Ptr->optionsShowTypes = 0;
     gSaveBlock2Ptr->optionsEffectiveness = 0;
-    gSaveBlock2Ptr->optionsDebugMode = 1;
     gSaveBlock2Ptr->optionsVolumeBGM = 10;
     gSaveBlock2Ptr->optionsVolumeSFX = 10;
     gSaveBlock2Ptr->optionsVolumeCries = 10;

@@ -84,9 +84,6 @@ enum
     MENUITEM_MISC_L_BUTTONMODE,
     MENUITEM_MISC_R_BUTTONMODE,
     MENUITEM_MISC_OVERWORLD_SPEED,
-    MENUITEM_MISC_MATCHCALL,
-    MENUITEM_MISC_START_MENU,
-    MENUITEM_MISC_DEBUG_MODE,
     MENUITEM_MISC_CANCEL,
     MENUITEM_MISC_COUNT,
 };
@@ -307,8 +304,6 @@ static void DrawChoices_UnitSystem(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
 static void DrawChoices_MatchCall(int selection, int y);
-static void DrawChoices_StartMenu(int selection, int y);
-static void DrawChoices_DebugMode(int selection, int y);
 static void DrawChoices_AnimSpeed(int selection, int y);
 static void DrawChoices_UniqueColors(int selection, int y);
 static void DrawChoices_IvView(int selection, int y);
@@ -559,10 +554,10 @@ static const struct OptionInfo sItemInfoBattle[MENUITEM_BATTLE_COUNT] =
         .processInput = ProcessInput_Options_Four,
         .optionName = COMPOUND_STRING("SELECT MENU"),
         .optionDescriptions = {
-            COMPOUND_STRING("NONE"),
-            COMPOUND_STRING("REGULAR"),
-            COMPOUND_STRING("PLUS"),
-            COMPOUND_STRING("DEBUG"),
+            COMPOUND_STRING("Pressing select will do nothing\nin-battle."),
+            COMPOUND_STRING("Pressing select will pull up a\nmenu for the battle state."),
+            COMPOUND_STRING("Pressing select will pull up a\nmenu with everything viewable."),
+            COMPOUND_STRING("You found the other debug menu\noption here!"),
         },
         .optionDisabledDescription = sText_Empty,
     },
@@ -641,7 +636,7 @@ static const struct OptionInfo sItemInfoMisc[MENUITEM_MISC_COUNT] =
         .optionName = COMPOUND_STRING("L BUTTON"),
         .optionDescriptions = {
             COMPOUND_STRING("The L button works as normal."),
-            COMPOUND_STRING("The L button acts as another A\nbutton for one-handed play."),
+            COMPOUND_STRING("Congrats! You found the hidden\ndebug option here."),
             COMPOUND_STRING("Running can be toggled by\nthe L Button."),
             COMPOUND_STRING("An item registered can be used with\nthe L Button."),
         },
@@ -670,39 +665,6 @@ static const struct OptionInfo sItemInfoMisc[MENUITEM_MISC_COUNT] =
         },
         .dontScrollDescription = TRUE,
         .optionDisabledDescription = sText_Empty,
-    },
-    [MENUITEM_MISC_MATCHCALL] =
-    {
-        .drawChoices = DrawChoices_MatchCall,
-        .processInput = ProcessInput_Options_Two,
-        .optionName = COMPOUND_STRING("OVERWORLD CALLS"),
-        .optionDescriptions = {
-            COMPOUND_STRING("Trainers will be able to call you,\noffering rematches and info."),
-            COMPOUND_STRING("You will not receive calls.\nSpecial events will still occur."),
-        },
-        .optionDisabledDescription = sText_Empty,
-    },
-    [MENUITEM_MISC_START_MENU] =
-    {
-        .drawChoices = DrawChoices_StartMenu,
-        .processInput = ProcessInput_Options_Two,
-        .optionName = COMPOUND_STRING("START MENU"),
-        .optionDescriptions = {
-            COMPOUND_STRING("ORIGINAL"),
-            COMPOUND_STRING("FULL"),
-        },
-        .optionDisabledDescription = sText_Empty,
-    },
-    [MENUITEM_MISC_DEBUG_MODE] =
-    {
-        .drawChoices = DrawChoices_DebugMode,
-        .processInput = ProcessInput_Options_Two,
-        .optionName = COMPOUND_STRING("DEBUG MODE"),
-        .optionDescriptions = {
-            COMPOUND_STRING("WARNING! Please use at your own\nrisk."),
-            COMPOUND_STRING("Enabling this option will enable\ndebug mode options."),
-        },
-        .optionDisabledDescription = COMPOUND_STRING("Debug mode cannot be enabled\ncurrently."),
     },
     [MENUITEM_MISC_CANCEL] =
     {
@@ -1498,9 +1460,6 @@ static void OptionsMenu_LoadOptions(u32 optionMode)
         sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE] = gSaveBlock2Ptr->optionsLButtonMode;
         sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE] = gSaveBlock2Ptr->optionsRButtonMode;
         sOptions->selection.optionsPlus.misc[MENUITEM_MISC_OVERWORLD_SPEED] = gSaveBlock2Ptr->optionsOwSpeed;
-        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL]    = gSaveBlock2Ptr->optionsDisableMatchCall;
-        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE]   = gSaveBlock2Ptr->optionsDebugMode;
-        sOptions->selection.optionsPlus.misc[MENUITEM_MISC_START_MENU]   = gSaveBlock2Ptr->optionsFullStartMenu;
 
         sOptions->submenu = 0;
         break;
@@ -1976,9 +1935,6 @@ static void OptionsMenu_SaveOptions(void)
         gSaveBlock2Ptr->optionsLButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_L_BUTTONMODE];
         gSaveBlock2Ptr->optionsRButtonMode      = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_R_BUTTONMODE];
         gSaveBlock2Ptr->optionsOwSpeed          = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_OVERWORLD_SPEED];
-        gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_MATCHCALL];
-        gSaveBlock2Ptr->optionsDebugMode        = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_DEBUG_MODE];
-        gSaveBlock2Ptr->optionsFullStartMenu    = sOptions->selection.optionsPlus.misc[MENUITEM_MISC_START_MENU];
         break;
     case MENUMODE_CHALLENGES:
         switch (sOptions->selection.challenges.randomizer[MENUITEM_RANDOM_STARTER])
@@ -2362,8 +2318,10 @@ static const u8 sText_Register[] = _("REGISTER");
 static const u8 sText_DexNav[] = _("DEXNAV");
 static const u8 sText_BikeSwitch[] = _("BIKE SWITCH");
 static const u8 sText_Placeholder[] = _("WIP");
-static const u8 sText_Fullscreen[] = _("FULL");
-static const u8 sText_Original[] = _("CLASSIC");
+static const u8 sText_SelectNone[] = _("NONE");
+static const u8 sText_SelectNormal[] = _("NORMAL");
+static const u8 sText_SelectPlus[] = _("PLUS");
+static const u8 sText_SelectDebug[] = _("DEBUG");
 
 static const u8 sText_Random[]  = _("RANDOM");
 static const u8 sText_3Stage[]  = _("EVO");
@@ -2386,6 +2344,7 @@ static const u8 sText_Challenges_TrainerDifficulty_Lunatic[] = _("LUNATIC");
 
 static const u8 *const sTextSpeedStrings[] = {gText_TextSpeedSlow, gText_TextSpeedMid, gText_TextSpeedFast, sText_Faster};
 static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
+static const u8 *const sBattleSelectStrings[] = {sText_SelectNone, sText_SelectNormal, sText_SelectPlus, sText_SelectDebug};
 
 static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extreme};
 static const u8 *const sText_Challenges_TrainerDifficulty_Strings[] = {sText_Challenges_TrainerDifficulty_Easy, sText_Challenges_TrainerDifficulty_Normal, sText_Challenges_TrainerDifficulty_Hard, sText_Challenges_TrainerDifficulty_Lunatic};
@@ -2550,36 +2509,6 @@ static void DrawChoices_Font(int selection, int y)
     DrawOptionMenuChoice(sText_FontFireRed, GetStringRightAlignXOffset(1, sText_FontFireRed, 198), y, styles[1], active);
 }
 
-static void DrawChoices_MatchCall(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MISC_MATCHCALL);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
-    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
-}
-
-static void DrawChoices_StartMenu(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MISC_START_MENU);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(sText_Original, 104, y, styles[0], active);
-    DrawOptionMenuChoice(sText_Fullscreen, GetStringRightAlignXOffset(1, sText_Fullscreen, 198), y, styles[1], active);
-}
-
-static void DrawChoices_DebugMode(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MISC_DEBUG_MODE);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
-    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
-}
-
 static void DrawChoices_AnimSpeed(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_ANIM_SPEED);
@@ -2629,7 +2558,7 @@ static void DrawChoices_ShowTypes(int selection, int y)
 static void DrawChoices_BattleMenu(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_BATTLEMENU);
-    DrawChoices_Options_Four(sAnimSpeedStrings, selection, y, active);
+    DrawChoices_Options_Four(sBattleSelectStrings, selection, y, active);
 }
 
 static void DrawChoices_MonAnimations(int selection, int y)

@@ -604,8 +604,7 @@ struct SaveBlock2
     /*0x10*/ u8 playTimeMinutes;
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
-    /*0x13*/ u32 optionsButtonMode:3;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
-    /*0x14*/ u32 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
+    /*0x13*/ u32 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
              u32 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u32 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u32 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
@@ -614,7 +613,6 @@ struct SaveBlock2
              u32 optionsUnitSystem:1;   //tx_optionsPlus
              u32 optionsHpBarSpeed:4;
              u32 optionsExpBarSpeed:4;
-             u32 optionsDisableMatchCall:1; //tx_optionsPlus
              u32 optionsCurrentFont:1;  //tx_optionsPlus
              u32 optionsAnimSpeed:3; //tx_optionsPlus
              u32 optionsUniqueColors:1; //tx_optionsPlus
@@ -622,16 +620,14 @@ struct SaveBlock2
              u32 optionsMonAnimations:1; //tx_optionsPlus
              u32 optionsEffectiveness:1;
              u32 optionsShowTypes:1;
-             u32 optionsDebugMode:1;
              u32 optionsVolumeBGM:4;
              u32 optionsVolumeSFX:4;
              u32 optionsVolumeCries:4;
              u32 optionsLButtonMode:3;
              u32 optionsRButtonMode:3;
              u32 optionsOwSpeed:4;
-             u32 optionsFullStartMenu:1;
              u32 optionsBattleMenu:2;
-             u32 optionsUnused:4;
+             u32 optionsUnused:10;
              u32 tx_Challenges_Nuzlocke:1;
              u32 tx_Challenges_NuzlockeHardcore:1;
              u32 tx_Nuzlocke_SpeciesClause:1;

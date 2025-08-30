@@ -1513,7 +1513,5 @@ bool32 ShouldHideFullScreenStartMenu(void)
 {
     if (GetSafariZoneFlag() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || InBattlePike() || InUnionRoom() || InMultiPartnerRoom())
         return TRUE;
-    if (!gSaveBlock2Ptr->optionsFullStartMenu)
-        return TRUE;
     return FALSE;
 }
