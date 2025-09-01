@@ -99,7 +99,7 @@
   ],
   "warp_events": [
     {
-      "x": 45,
+      "x": 44,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_GRANITE_CAVE_1F",
@@ -110,7 +110,7 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 38,
+      "x": 37,
       "y": 11,
       "elevation": 3,
       "item": "ITEM_TOHO_ORB",
