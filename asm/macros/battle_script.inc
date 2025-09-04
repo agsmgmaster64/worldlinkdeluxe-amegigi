@@ -1817,10 +1817,6 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro trydemonbook
-	callnative BS_TryDemonBook
-	.endm
-
 	.macro jumpiflastuseditemholdeffect holdEffect:req, secondaryId:req, jumpInstr:req
 	callnative BS_JumpIfLastUsedItemHoldEffect
 	.byte \holdEffect
