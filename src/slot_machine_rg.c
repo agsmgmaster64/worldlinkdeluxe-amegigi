@@ -798,7 +798,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 0,
         .width = 30,
         .height = 2,
-        .paletteNum = 14,
+        .paletteNum = 15,
         .baseBlock = 0x013
     },
     DUMMY_WIN_TEMPLATE
@@ -2032,8 +2032,7 @@ static bool8 SlotsTask_GraphicsInit(u8 * state, struct SlotMachineSetupTaskData 
         LoadPalette(sBgPal_MatchLines, BG_PLTT_ID(PALSLOT_LINE_BET), sizeof(sBgPal_MatchLines));
         LoadPalette(sCombosWindow_Pal, BG_PLTT_ID(7), sizeof(sCombosWindow_Pal));
         SetBackdropColor(RGB(30, 30, 31), pal);
-        LoadUserWindowBorderGfx(0, 0xA, BG_PLTT_ID(13));
-        LoadUserWindowBorderGfx(0, 0x1, BG_PLTT_ID(15));
+        LoadUserWindowBorderGfx(0, 0xA, BG_PLTT_ID(14));
 
         SetBgTilemapBuffer(0, ptr->bg0TilemapBuffer);
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 2, 32, 30);
@@ -2041,7 +2040,7 @@ static bool8 SlotsTask_GraphicsInit(u8 * state, struct SlotMachineSetupTaskData 
         DecompressAndCopyTileDataToVram(1, sCombosWindow_Tilemap, 0, 0, 1);
         CopyBgTilemapBufferToVram(1);
 
-        LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+        LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(15), PLTT_SIZE_4BPP);
         FillWindowPixelBuffer(1, 0xFF);
         PutWindowTilemap(1);
 
@@ -2321,7 +2320,7 @@ static void Slot_PrintOnWindow0(const u8 * str)
 {
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     PutWindowTilemap(0);
-    DrawTextBorderOuter(0, 0x001, 15);
+    DrawTextBorderOuter(0, 0xA, 14);
     AddTextPrinterParameterized5(0, FONT_NORMAL, str, 1, 2, TEXT_SKIP_DRAW, NULL, 1, 2);
 }
 
@@ -2446,7 +2445,7 @@ static void SignalStopWinningLineFlashTask(void)
 
 static void Slot_CreateYesNoMenu(u8 cursorPos)
 {
-    CreateYesNoMenu(&sYesNoWindowTemplate, 10, 13, cursorPos);
+    CreateYesNoMenu(&sYesNoWindowTemplate, 0xA, 14, cursorPos);
     Menu_MoveCursorNoWrapAround(cursorPos);
     GetSlotMachineSetupTaskDataPtr()->yesNoMenuActive = TRUE;
 }
