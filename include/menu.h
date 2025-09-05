@@ -11,8 +11,6 @@
 #define STD_WINDOW_PALETTE_SIZE PLTT_SIZEOF(10)
 #define STD_WINDOW_BASE_TILE_NUM 0x214
 
-#define DLW_WIN_PLATE_SIZE  8
-
 #define MENU_NOTHING_CHOSEN -2
 #define MENU_B_PRESSED -1
 
@@ -61,13 +59,10 @@ void InitTextBoxGfxAndPrinters(void);
 u16 RunTextPrintersAndIsPrinter0Active(void);
 void LoadMessageBoxAndBorderGfx(void);
 void DrawDialogueFrame(u8 windowId, bool8 copyToVram);
-void DrawDialogueFrameWithNameplate(u8 windowId, bool8 copyToVram);
 void ClearStdWindowAndFrame(u8 windowId, bool8 copyToVram);
 u16 AddTextPrinterParameterized2(u8 windowId, u8 fontId, const u8 *str, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor);
 void PrintPlayerNameOnWindow(u8 windowId, const u8 *src, u16 x, u16 y);
 void ClearDialogWindowAndFrame(u8 windowId, bool8 copyToVram);
-u32 GetDialogFramePlateWidth(void);
-void FillDialogFramePlate(void);
 void SetStandardWindowBorderStyle(u8 windowId, bool8 copyToVram);
 void DisplayYesNoMenuDefaultYes(void);
 u32 GetPlayerTextSpeed(void);

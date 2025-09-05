@@ -14,8 +14,6 @@
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
 
-EWRAM_DATA const u8* gSpeakerName = NULL;
-
 static void ExpandStringAndStartDrawFieldMessage(const u8 *, bool32);
 static void StartDrawFieldMessage(void);
 
@@ -44,16 +42,7 @@ static void Task_DrawFieldMessage(u8 taskId)
             task->tState++;
             break;
         case 1:
-            if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME))
-            {
-                DrawDialogueFrameWithNameplate(0, TRUE);
-                PutWindowTilemap(1);
-                CopyWindowToVram(1, COPYWIN_FULL);
-            }
-            else
-            {
-                DrawDialogueFrame(0, TRUE);
-            } 
+            DrawDialogueFrame(0, TRUE);
             task->tState++;
             break;
         case 2:
@@ -137,26 +126,6 @@ bool8 ShowFieldMessageFromBuffer(void)
 
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
-    if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME))
-    {
-        u32 strLen = GetStringWidth(FONT_SMALL, gSpeakerName, -1);
-        if (strLen > 0)
-        {
-            strLen = GetDialogFramePlateWidth() / 2 - strLen / 2;
-            gNamePlateBuffer[0] = EXT_CTRL_CODE_BEGIN;
-            gNamePlateBuffer[1] = EXT_CTRL_CODE_CLEAR_TO;
-            gNamePlateBuffer[2] = strLen;
-            StringExpandPlaceholders(&gNamePlateBuffer[3], gSpeakerName);
-        }
-        else
-        {
-            StringExpandPlaceholders(&gNamePlateBuffer[0], gSpeakerName);
-        }
-        FillDialogFramePlate();
-        AddTextPrinterParameterized2(1, FONT_SMALL, gNamePlateBuffer, 0, NULL, 2, 0, 3);
-        PutWindowTilemap(1);
-        CopyWindowToVram(1, COPYWIN_FULL);
-    }
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
@@ -177,7 +146,6 @@ void HideFieldMessageBox(void)
     DestroyTask_DrawFieldMessage();
     ClearDialogWindowAndFrame(0, TRUE);
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
-    gSpeakerName = NULL;
     if (IsFieldMugshotActive())
     {
         gSprites[GetFieldMugshotSpriteId()].data[0] = FALSE;
@@ -208,9 +176,4 @@ void StopFieldMessage(void)
 {
     DestroyTask_DrawFieldMessage();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
-}
-
-void SetSpeakerName(const u8* name)
-{
-    gSpeakerName = name;
 }
