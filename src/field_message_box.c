@@ -10,6 +10,7 @@
 #include "script.h"
 #include "field_mugshot.h"
 #include "sprite.h"
+#include "field_name_box.h"
 
 static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
@@ -42,9 +43,14 @@ static void Task_DrawFieldMessage(u8 taskId)
             task->tState++;
             break;
         case 1:
+        {
+            u32 nameboxWinId = GetNameboxWindowId();
             DrawDialogueFrame(0, TRUE);
+            if (nameboxWinId != WINDOW_NONE)
+                DrawNamebox(nameboxWinId, TRUE);
             task->tState++;
             break;
+        }
         case 2:
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)
             {
@@ -126,6 +132,7 @@ bool8 ShowFieldMessageFromBuffer(void)
 
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
+    TrySpawnNamebox();
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
@@ -145,6 +152,7 @@ void HideFieldMessageBox(void)
 {
     DestroyTask_DrawFieldMessage();
     ClearDialogWindowAndFrame(0, TRUE);
+    DestroyNamebox();
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
     if (IsFieldMugshotActive())
     {
