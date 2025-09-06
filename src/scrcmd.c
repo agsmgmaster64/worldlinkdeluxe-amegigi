@@ -66,6 +66,7 @@
 #include "constants/event_objects.h"
 #include "pokevial.h"
 #include "randomizer.h"
+#include "field_name_box.h"
 #include "constants/map_types.h"
 #include "constants/new_shop.h"
 
@@ -3262,11 +3263,9 @@ bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 
 bool8 ScrCmd_setspeakername(struct ScriptContext *ctx)
 {
-    const u8 *name = (const u8 *)ScriptReadWord(ctx);
-
     Script_RequestEffects(SCREFF_V1);
 
-    //SetSpeakerName(name);
+    SetSpeaker(ctx);
     return FALSE;
 }
 

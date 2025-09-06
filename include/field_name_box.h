@@ -10,7 +10,7 @@ void DestroyNamebox(void);
 void FillNamebox(void);
 void DrawNamebox(u32 windowId, bool32 copyToVram);
 void ClearNamebox(u32 windowId, bool32 copyToVram);
-void SetSpeakerName(const u8 *name);
+void SetSpeaker(struct ScriptContext *ctx);
 u32 GetNameboxWidth(void);
 void TrySpawnAndShowNamebox(const u8 *speaker);
 
