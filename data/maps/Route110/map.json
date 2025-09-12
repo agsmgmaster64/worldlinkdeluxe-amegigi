@@ -411,36 +411,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_ROUTE110_RIVAL",
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 37,
-      "y": 55,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL"
-    },
-    {
-      "local_id": "LOCALID_ROUTE110_RIVAL_ON_BIKE",
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_VAR_3",
-      "x": 37,
-      "y": 55,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE"
-    },
-    {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 15,
@@ -587,8 +557,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 35,
-      "y": 87,
+      "x": 36,
+      "y": 86,
       "elevation": 3,
       "var": "VAR_CYCLING_CHALLENGE_STATE",
       "var_value": "2",
@@ -597,38 +567,11 @@
     {
       "type": "trigger",
       "x": 35,
-      "y": 87,
+      "y": 86,
       "elevation": 3,
       "var": "VAR_CYCLING_CHALLENGE_STATE",
       "var_value": "2",
       "script": "Route110_EventScript_CyclingChallengeEnd"
-    },
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 56,
-      "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
-      "var_value": "0",
-      "script": "Route110_EventScript_RivalTrigger1"
-    },
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 56,
-      "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
-      "var_value": "0",
-      "script": "Route110_EventScript_RivalTrigger2"
-    },
-    {
-      "type": "trigger",
-      "x": 37,
-      "y": 56,
-      "elevation": 3,
-      "var": "VAR_ROUTE110_STATE",
-      "var_value": "0",
-      "script": "Route110_EventScript_RivalTrigger3"
     },
     {
       "type": "trigger",
@@ -670,16 +613,16 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 12,
-      "y": 68,
+      "x": 16,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_VandalizedSign"
     },
     {
       "type": "sign",
-      "x": 14,
-      "y": 19,
+      "x": 18,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_SeasideParkingSign"
@@ -702,8 +645,8 @@
     },
     {
       "type": "sign",
-      "x": 7,
-      "y": 79,
+      "x": 8,
+      "y": 67,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_Route103Sign"
@@ -718,14 +661,14 @@
     },
     {
       "type": "secret_base",
-      "x": 35,
+      "x": 32,
       "y": 20,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE3_1"
     },
     {
       "type": "secret_base",
-      "x": 35,
+      "x": 31,
       "y": 20,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE4_1"
@@ -740,16 +683,16 @@
     },
     {
       "type": "sign",
-      "x": 16,
-      "y": 16,
+      "x": 7,
+      "y": 79,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrainerTipsRegisterItems"
     },
     {
       "type": "sign",
-      "x": 8,
-      "y": 67,
+      "x": 12,
+      "y": 68,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route110_EventScript_TrickHouseSign"

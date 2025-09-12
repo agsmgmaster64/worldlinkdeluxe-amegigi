@@ -1,9 +1,4 @@
 
-const MULTI_BUY_ITEMS = 0
-const MULTI_BP_MOVES = 1
-const MULTI_SELL_ITEMS = 2
-const MULTI_NEVERMIND = 3
-
 const MULTI_GREEN_UFO = 0
 const MULTI_RED_UFO = 1
 const MULTI_BLUE_UFO = 2
@@ -30,116 +25,33 @@ const BLUE_PEARL_STRING = 3
 const BLUE_ULTRA_ORBS = 4
 const BLUE_CANCEL = 5
 
+const EVO_HEART_POWER = 0
+const EVO_HEART_GUARD = 1
+const EVO_HEART_SWIFT = 2
+const EVO_HEART_TECH = 3
+const EVO_HEART_HELPER = 4
+const EVO_HEART_JUST = 5
+const EVO_HEART_NEUTRAL = 6
+const EVO_HEART_CANCEL = 7
+
 const TUTOR_ALL_LEVEL = 0
 const TUTOR_EGG_MOVE = 1
 const TUTOR_CANCEL = 2
 
 script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 	lock
-	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinIntro, MSGBOX_DEFAULT)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
-	msgbox(Route116_TunnelersRestHouse_Text_HakosBaelzIntro, MSGBOX_DEFAULT)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiOutOfBudget, MSGBOX_DEFAULT)
-	closemessage
-	setspeakername(Route116_TunnelersRestHouse_Text_Player)
-	msgbox(Route116_TunnelersRestHouse_Text_RenkoFrickinTalking, MSGBOX_DEFAULT)
-	closemessage
 	release
 	end
 }
 
 script Route116_TunnelersRestHouse_EventScript_NueBogosBinted {
 	lock
-	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceLeft)
-	waitmovement(0)
-	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
-	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
-	waitmoncry
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceRight)
-	waitmovement(0)
-	setspeakername(gText_Gigi)
-	playtrainervoice(TRAINER_VOICE_GIGI, 1)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinBogosBinted, MSGBOX_DEFAULT)
-	waitmoncry
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceLeft)
-	waitmovement(0)
-	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
-	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
-	waitmoncry
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceRight)
-	waitmovement(0)
-	setspeakername(gText_Gigi)
-	playtrainervoice(TRAINER_VOICE_GIGI, 1)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinBogosBinted, MSGBOX_DEFAULT)
-	waitmoncry
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceLeft)
-	waitmovement(0)
-	playmoncry(SPECIES_CHIBI_NUE, CRY_MODE_NORMAL)
-	msgbox(Route116_TunnelersRestHouse_Text_NueBogosBinted, MSGBOX_DEFAULT)
-	waitmoncry
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceRight)
-	waitmovement(0)
-	setspeakername(gText_Gigi)
-	playtrainervoice(TRAINER_VOICE_GIGI, 0)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiMurinLaugh, MSGBOX_DEFAULT)
-	waitmoncry
-	closemessage
 	release
 	end
 }
 
 script Route116_TunnelersRestHouse_EventScript_InaFunEvent {
 	lock
-	call(Route116_TunnelersRestHouse_EventScript_MovePlayerInFront)
-	applymovement(LOCALID_REST_HOUSE_INA, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
-    msgbox(Route116_TunnelersRestHouse_Text_InaWah)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
-	msgbox(Route116_TunnelersRestHouse_Text_BaelzNoMugshots)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_INA, Common_Movement_WalkInPlaceRight)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
-	msgbox(Route116_TunnelersRestHouse_Text_InaAdmit)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_NUE, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Baelz)
-	msgbox(Route116_TunnelersRestHouse_Text_BaelzCheerUp)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiCookie)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_INA, Common_Movement_WalkInPlaceRight)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Ina)
-	msgbox(Route116_TunnelersRestHouse_Text_InaThankYou)
-	closemessage
-	applymovement(LOCALID_REST_HOUSE_GIGI, Common_Movement_WalkInPlaceDown)
-	waitmovement(0)
-	setspeakername(Route116_TunnelersRestHouse_Text_Gigi)
-	msgbox(Route116_TunnelersRestHouse_Text_GigiLavaridge)
-	closemessage
 	release
 	end
 }
@@ -163,15 +75,29 @@ script Route116_TunnelersRestHouse_EventScript_MovePlayerInFront {
 script Route116_TunnelersRestHouse_EventScript_UFOTrader {
 	lock
 	faceplayer
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
     msgbox(Route116_TunnelersRestHouse_Text_UFOTraderIntro)
-	if (checkitem(ITEM_GREEN_UFO) == FALSE && checkitem(ITEM_RED_UFO) == FALSE && checkitem(ITEM_BLUE_UFO) == FALSE) {
-		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNoUFOs)
+	if (!checkitem(ITEM_GREEN_UFO) && !checkitem(ITEM_RED_UFO) && !checkitem(ITEM_BLUE_UFO)) {
+		msgbox(format("Hmm, I don't sense any UFOs with you right now.\pDo let me know when you get some though, I'll do some skills to get some."))
+		release
+		end
 	}
     message(Route116_TunnelersRestHouse_Text_UFOTraderHaveUFOs)
     waitmessage
     while {
-        call(Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoice)
+		if (checkitem(ITEM_GREEN_UFO)) {
+			dynmultipush(Route116_TunnelersRestHouse_Text_GreenUFO, MULTI_GREEN_UFO)
+		}
+		if (checkitem(ITEM_RED_UFO)) {
+			dynmultipush(Route116_TunnelersRestHouse_Text_RedUFO, MULTI_RED_UFO)
+		}
+		if (checkitem(ITEM_BLUE_UFO)) {
+			dynmultipush(Route116_TunnelersRestHouse_Text_BlueUFO, MULTI_BLUE_UFO)
+		}
+		if (checkitem(ITEM_GREEN_UFO, 2) || checkitem(ITEM_RED_UFO) || checkitem(ITEM_BLUE_UFO)) {
+			dynmultipush("Exchange UFOs", MULTI_EXCHANGE_UFO)
+		}
+		dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, MULTI_UFO_CANCEL)
+		dynmultistack(0, 0, FALSE, 5, FALSE, MULTI_GREEN_UFO, NULL)
         if (var(VAR_RESULT) > MULTI_EXCHANGE_UFO) {
             break
         }
@@ -185,45 +111,25 @@ script Route116_TunnelersRestHouse_EventScript_UFOTrader {
             case MULTI_EXCHANGE_UFO:
                 call(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeUFO)
         }
-		if (checkitem(ITEM_GREEN_UFO) == FALSE && checkitem(ITEM_RED_UFO) == FALSE && checkitem(ITEM_BLUE_UFO) == FALSE) {
+		if (!checkitem(ITEM_GREEN_UFO) && !checkitem(ITEM_RED_UFO) && !checkitem(ITEM_BLUE_UFO)) {
 			break
 		}
         message(Route116_TunnelersRestHouse_Text_UFOTraderHaveUFOs)
         waitmessage
     }
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderOutro)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Well, if you have any UFOs, know I am the guy who will take them for whatever you want."))
 	release
 	end
-}
-
-script Route116_TunnelersRestHouse_EventScript_UFOTraderNoUFOs {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderNoUFOs)
-	release
-	end
-}
-
-script Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoice {
-	if (checkitem(ITEM_GREEN_UFO) == TRUE) {
-    	dynmultipush(Route116_TunnelersRestHouse_Text_GreenUFO, MULTI_GREEN_UFO)
-	}
-	if (checkitem(ITEM_RED_UFO) == TRUE) {
-    	dynmultipush(Route116_TunnelersRestHouse_Text_RedUFO, MULTI_RED_UFO)
-	}
-	if (checkitem(ITEM_BLUE_UFO) == TRUE) {
-    	dynmultipush(Route116_TunnelersRestHouse_Text_BlueUFO, MULTI_BLUE_UFO)
-	}
-	if (checkitem(ITEM_GREEN_UFO, 2) == TRUE || checkitem(ITEM_RED_UFO) == TRUE || checkitem(ITEM_BLUE_UFO) == TRUE) {
-		dynmultipush(Route116_TunnelersRestHouse_Text_ExchangeUFOs, MULTI_EXCHANGE_UFO)
-	}
-    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, MULTI_UFO_CANCEL)
-    dynmultistack(0, 0, FALSE, 5, FALSE, MULTI_GREEN_UFO, NULL)
-    return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderGreenUFO {
-	message(Route116_TunnelersRestHouse_Text_UFOTraderGreenUFO)
+	message(format("{SPEAKER NAME_UFO_TRADER}That's a nice-looking Green UFO there.\pI can give you these for the Green UFO."))
 	waitmessage
-	call(Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceGreen)
+    dynmultipush("Worsen 1 IV", GREEN_IV_WORSE)
+    dynmultipush("Pearl", GREEN_PEARL)
+    dynmultipush("5 Toho Orbs", GREEN_TOHO_ORBS)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, GREEN_CANCEL)
+    dynmultistack(0, 0, FALSE, 5, FALSE, GREEN_IV_WORSE, NULL)
     if (var(VAR_RESULT) > GREEN_TOHO_ORBS) {
         return
     }
@@ -237,8 +143,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderGreenUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_PEARL)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_PEARL)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -250,8 +155,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderGreenUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_TOHO_ORB, 5)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_TOHO_ORB, 5)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -260,23 +164,13 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderGreenUFO {
 	}
 	removeitem(ITEM_GREEN_UFO)
 	bufferitemname(STR_VAR_1, ITEM_GREEN_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderNotEnoughSpace)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Hmm, you don't seem to have enough space for the exchange of the UFO there.\pSorry, I wanna be fair to you at least."))
 	return
-}
-
-script Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceGreen {
-    dynmultipush(Route116_TunnelersRestHouse_Text_Worsen1IV, GREEN_IV_WORSE)
-    dynmultipush(Route116_TunnelersRestHouse_Text_Pearl, GREEN_PEARL)
-    dynmultipush(Route116_TunnelersRestHouse_Text_TohoOrbs, GREEN_TOHO_ORBS)
-    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, GREEN_CANCEL)
-    dynmultistack(0, 0, FALSE, 5, FALSE, GREEN_IV_WORSE, NULL)
-    return
 }
 
 script Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceStat {
@@ -314,8 +208,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_HP, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_HP, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_HP, VAR_0x8004)
@@ -324,8 +217,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_ATK, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_ATK, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_ATK, VAR_0x8004)
@@ -334,8 +226,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_DEF, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_DEF, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_DEF, VAR_0x8004)
@@ -344,8 +235,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_SPEED, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_SPEED, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_SPEED, VAR_0x8004)
@@ -354,8 +244,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_SPATK, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_SPATK, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_SPATK, VAR_0x8004)
@@ -364,29 +253,34 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderWorsenIV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canunhypertrain(STAT_SPDEF, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canunhypertrain(STAT_SPDEF, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			unhypertrain(STAT_SPDEF, VAR_0x8004)
     }
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderWorsenSpecificStat)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Alright, let me just try and worsen this IV here.\pAnd there, your Puppet now has the lowest potential for that stat there."))
 	removeitem(ITEM_GREEN_UFO)
 	bufferitemname(STR_VAR_1, ITEM_GREEN_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderAlreadyIdealStat)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Hmm, this Puppet already has the ideal stat you want.\pHey, at least you don't have to waste one of your UFOs there."))
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderRedUFO {
-	message(Route116_TunnelersRestHouse_Text_UFOTraderRedUFO)
+	message(format("{SPEAKER NAME_UFO_TRADER}That is a very good-looking Red UFO in your hands.\pI can give you these for the Red UFO."))
 	waitmessage
-	call(Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceRed)
+    dynmultipush("Evo Heart", RED_EVO_HEART)
+    dynmultipush("Ability Capsule", RED_ABILITY_CAPSULE)
+    dynmultipush("Nature Mint", RED_NATURE_MINT)
+    dynmultipush("Perfect 1 IV", RED_IV_PERFECT)
+    dynmultipush("Big Pearl", RED_BIG_PEARL)
+    dynmultipush("5 Great Orbs", RED_GREAT_ORBS)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, RED_CANCEL)
+    dynmultistack(0, 0, FALSE, 5, FALSE, RED_EVO_HEART, NULL)
     if (var(VAR_RESULT) > RED_GREAT_ORBS) {
         return
     }
@@ -399,8 +293,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderRedUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_ABILITY_CAPSULE)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_ABILITY_CAPSULE)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -415,8 +308,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderRedUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_BIG_PEARL)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_BIG_PEARL)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -428,8 +320,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderRedUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_GREAT_ORB, 5)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_GREAT_ORB, 5)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -438,21 +329,115 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderRedUFO {
 	}
 	removeitem(ITEM_RED_UFO)
 	bufferitemname(STR_VAR_1, ITEM_RED_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
-script Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceRed {
-    dynmultipush(Route116_TunnelersRestHouse_Text_EvoHeart, RED_EVO_HEART)
-    dynmultipush(Route116_TunnelersRestHouse_Text_AbilityCapsule, RED_ABILITY_CAPSULE)
-    dynmultipush(Route116_TunnelersRestHouse_Text_NatureMint, RED_NATURE_MINT)
-    dynmultipush(Route116_TunnelersRestHouse_Text_Perfect1IV, RED_IV_PERFECT)
-    dynmultipush(Route116_TunnelersRestHouse_Text_BigPearl, RED_BIG_PEARL)
-    dynmultipush(Route116_TunnelersRestHouse_Text_GreatOrbs, RED_GREAT_ORBS)
-    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, RED_CANCEL)
-    dynmultistack(0, 0, FALSE, 5, FALSE, RED_EVO_HEART, NULL)
-    return
+script Route116_TunnelersRestHouse_EventScript_UFOTraderEvoHeart {
+	message(Route116_TunnelersRestHouse_Text_UFOTraderWhichStatShouldModify)
+	waitmessage
+    dynmultipush("Power Heart", EVO_HEART_POWER)
+    dynmultipush("Guard Heart", EVO_HEART_GUARD)
+    dynmultipush("Swift Heart", EVO_HEART_SWIFT)
+    dynmultipush("Tech Heart", EVO_HEART_TECH)
+    dynmultipush("Helper Heart", EVO_HEART_HELPER)
+    dynmultipush("Just Heart", EVO_HEART_JUST)
+    dynmultipush("Neutral Heart", EVO_HEART_NEUTRAL)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, EVO_HEART_CANCEL)
+    dynmultistack(0, 0, FALSE, 5, FALSE, EVO_HEART_POWER, NULL)
+    if (var(VAR_RESULT) > EVO_HEART_NEUTRAL) {
+        return
+    }
+	switch (var(VAR_RESULT)) {
+		case EVO_HEART_POWER:
+			bufferitemname(STR_VAR_1, ITEM_POWER_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_POWER_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_POWER_HEART)
+		case EVO_HEART_GUARD:
+			bufferitemname(STR_VAR_1, ITEM_GUARD_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_GUARD_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_GUARD_HEART)
+		case EVO_HEART_SWIFT:
+			bufferitemname(STR_VAR_1, ITEM_SWIFT_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_SWIFT_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_SWIFT_HEART)
+		case EVO_HEART_TECH:
+			bufferitemname(STR_VAR_1, ITEM_TECH_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_TECH_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_TECH_HEART)
+		case EVO_HEART_HELPER:
+			bufferitemname(STR_VAR_1, ITEM_HELPER_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_HELPER_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_HELPER_HEART)
+		case EVO_HEART_JUST:
+			bufferitemname(STR_VAR_1, ITEM_JUST_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_JUST_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_JUST_HEART)
+		case EVO_HEART_NEUTRAL:
+			bufferitemname(STR_VAR_1, ITEM_JUST_HEART)
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
+			if (var(VAR_RESULT) != YES) {
+				return
+			}
+			if (!checkitemspace(ITEM_JUST_HEART)) {
+				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+			}
+			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+			hidespeakername
+			giveitem(ITEM_JUST_HEART)
+    }
+	removeitem(ITEM_RED_UFO)
+	bufferitemname(STR_VAR_1, ITEM_RED_UFO)
+	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
+	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
@@ -478,8 +463,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_HP, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_HP, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_HP, VAR_0x8004)
@@ -488,8 +472,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_ATK, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_ATK, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_ATK, VAR_0x8004)
@@ -498,8 +481,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_DEF, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_DEF, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_DEF, VAR_0x8004)
@@ -508,8 +490,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_SPEED, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_SPEED, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_SPEED, VAR_0x8004)
@@ -518,8 +499,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_SPATK, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_SPATK, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_SPATK, VAR_0x8004)
@@ -528,24 +508,28 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfect1IV {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			canhypertrain(STAT_SPDEF, VAR_0x8004)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!canhypertrain(STAT_SPDEF, VAR_0x8004)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderAlreadyIdealStat)
 			}
 			hypertrain(STAT_SPDEF, VAR_0x8004)
     }
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderPerfectSpecificStat)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Alright, let me just try and perfect this IV here.\pAnd there, your Puppet now has perfected their potential!"))
 	removeitem(ITEM_RED_UFO)
 	bufferitemname(STR_VAR_1, ITEM_RED_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderBlueUFO {
-	message(Route116_TunnelersRestHouse_Text_UFOTraderBlueUFO)
+	message(format("{SPEAKER NAME_UFO_TRADER}Oh my, that is a beautiful Blue UFO that you have, I must have it myself.\pI can give you these for the Blue UFO."))
 	waitmessage
-	call(Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceBlue)
+    dynmultipush("Teach Moves", BLUE_TUTOR)
+    dynmultipush("Ability Patch", BLUE_ABILITY_PATCH)
+    dynmultipush("Perfect All IVs", BLUE_ALL_IV_PERFECT)
+    dynmultipush("Pearl String", BLUE_PEARL_STRING)
+    dynmultipush("5 Ultra Orbs", BLUE_ULTRA_ORBS)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, BLUE_CANCEL)
+    dynmultistack(0, 0, FALSE, 5, FALSE, BLUE_TUTOR, NULL)
     if (var(VAR_RESULT) > BLUE_ULTRA_ORBS) {
         return
     }
@@ -559,22 +543,21 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderBlueUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_ABILITY_PATCH)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_ABILITY_PATCH)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
 			hidespeakername
 			giveitem(ITEM_ABILITY_PATCH)
 		case BLUE_ALL_IV_PERFECT:
+			goto(Route116_TunnelersRestHouse_EventScript_UFOTraderPerfectAllIV)
 		case BLUE_PEARL_STRING:
 			bufferitemname(STR_VAR_1, ITEM_PEARL_STRING)
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY, MSGBOX_YESNO)
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_PEARL_STRING)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_PEARL_STRING)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -586,8 +569,7 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderBlueUFO {
 			if (var(VAR_RESULT) != YES) {
 				return
 			}
-			checkitemspace(ITEM_ULTRA_ORB, 5)
-			if (var(VAR_RESULT) != TRUE) {
+			if (!checkitemspace(ITEM_ULTRA_ORB, 5)) {
 				goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 			}
 			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
@@ -596,27 +578,15 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderBlueUFO {
 	}
 	removeitem(ITEM_BLUE_UFO)
 	bufferitemname(STR_VAR_1, ITEM_BLUE_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
-script Route116_TunnelersRestHouse_UFOTrader_PrepareMultichoiceBlue {
-    dynmultipush(Route116_TunnelersRestHouse_Text_TeachMoves, BLUE_TUTOR)
-    dynmultipush(Route116_TunnelersRestHouse_Text_AbilityPatch, BLUE_ABILITY_PATCH)
-    dynmultipush(Route116_TunnelersRestHouse_Text_PerfectAllIVs, BLUE_ALL_IV_PERFECT)
-    dynmultipush(Route116_TunnelersRestHouse_Text_PearlString, BLUE_PEARL_STRING)
-    dynmultipush(Route116_TunnelersRestHouse_Text_UltraOrbs, BLUE_ULTRA_ORBS)
-    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, BLUE_CANCEL)
-    dynmultistack(0, 0, FALSE, 5, FALSE, BLUE_TUTOR, NULL)
-    return
-}
-
 script Route116_TunnelersRestHouse_EventScript_UFOTraderTutor {
-	message(Route116_TunnelersRestHouse_Text_UFOTraderShouldTeach)
+	message(format("{SPEAKER NAME_UFO_TRADER}What type of moves should I teach then?"))
 	waitmessage
-    dynmultipush(Route116_TunnelersRestHouse_Text_AnyLevelUp, TUTOR_ALL_LEVEL)
-    dynmultipush(Route116_TunnelersRestHouse_Text_EggMoves, TUTOR_EGG_MOVE)
+    dynmultipush("Any Level-Up", TUTOR_ALL_LEVEL)
+    dynmultipush("Egg Moves", TUTOR_EGG_MOVE)
     dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, TUTOR_CANCEL)
     dynmultistack(0, 0, FALSE, 5, FALSE, TUTOR_ALL_LEVEL, NULL)
     if (var(VAR_RESULT) > TUTOR_EGG_MOVE) {
@@ -625,10 +595,10 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderTutor {
 	switch (var(VAR_RESULT)) {
 		case TUTOR_ALL_LEVEL:
 			setvar(VAR_MOVE_MANAGER, MOVE_REMINDER_LEARN_ALL_MOVES)
-			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderTeachAnyMove, MSGBOX_YESNO)
+			msgbox(format("{SPEAKER NAME_UFO_TRADER}So you want me to teach a Puppet any move it naturally learns?"), MSGBOX_YESNO)
 		case TUTOR_EGG_MOVE:
 			setvar(VAR_MOVE_MANAGER, MOVE_TUTOR_EGG_MOVES)
-			msgbox(Route116_TunnelersRestHouse_Text_UFOTraderTeachEggMove, MSGBOX_YESNO)
+			msgbox(format("{SPEAKER NAME_UFO_TRADER}So you want me to teach a Puppet an egg move?"), MSGBOX_YESNO)
     }
 	if (var(VAR_RESULT) != YES) {
 		return
@@ -641,53 +611,81 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderTutor {
 	}
 	special(IsSelectedMonEgg)
 	if (var(VAR_RESULT) == TRUE) {
-		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderShowEgg)
+		msgbox(format("{SPEAKER NAME_UFO_TRADER}That's an egg. It hasn't even hatched for me to be able to teach any moves at all!"))
+		return
 	}
 	if (var(VAR_0x8005) == 0) {
-		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderCantTeachPuppet)
+		msgbox(format("{SPEAKER NAME_UFO_TRADER}Hmm, this Puppet doesn't have any moves I can teach of this specific kind.\pSorry, I wanna be fair with getting your UFOs at least."))
+		return
 	}
 	special(TeachMoveRelearnerMove)
 	waitstate
 	if (var(VAR_0x8004) == 0) {
 		return
 	}
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderTaughtMove)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}And there, the move is now taught to your Puppet!"))
 	removeitem(ITEM_BLUE_UFO)
 	bufferitemname(STR_VAR_1, ITEM_BLUE_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
-script Route116_TunnelersRestHouse_EventScript_UFOTraderCantTeachPuppet {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderCantTeach)
+script Route116_TunnelersRestHouse_EventScript_UFOTraderPerfectAllIV {
+	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderSeePuppet)
+	special(ChoosePartyMon)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		return
+	}
+	special(IsSelectedMonEgg)
+	if (var(VAR_RESULT) == TRUE) {
+		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderShowEgg)
+	}
+	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderHPPerfect, MSGBOX_YESNO)
+	if (var(VAR_RESULT) != YES) {
+		return
+	}
+	if (!canhypertrain(STAT_HP, VAR_0x8004) && !canhypertrain(STAT_ATK, VAR_0x8004) && !canhypertrain(STAT_DEF, VAR_0x8004) && !canhypertrain(STAT_SPEED, VAR_0x8004) && !canhypertrain(STAT_SPATK, VAR_0x8004) && !canhypertrain(STAT_SPDEF, VAR_0x8004)) {
+		msgbox(format("{SPEAKER NAME_UFO_TRADER}Hmm, it seems like this Puppet has already reached its max potential already."))
+		return
+	}
+	hypertrain(STAT_HP, VAR_0x8004)
+	hypertrain(STAT_ATK, VAR_0x8004)
+	hypertrain(STAT_DEF, VAR_0x8004)
+	hypertrain(STAT_SPEED, VAR_0x8004)
+	hypertrain(STAT_SPATK, VAR_0x8004)
+	hypertrain(STAT_SPDEF, VAR_0x8004)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}Alright, let me just try and perfect all the IVs here.\pAnd there, your Puppet now has perfected their potential!"))
+	removeitem(ITEM_BLUE_UFO)
+	bufferitemname(STR_VAR_1, ITEM_BLUE_UFO)
+	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderShowEgg {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderShowEgg)
+	msgbox(format("That's an egg. I don't even know what the stats of the egg will be."))
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeUFO {
-	if (checkitem(ITEM_RED_UFO) == FALSE && checkitem(ITEM_BLUE_UFO) == FALSE) {
+	if (!checkitem(ITEM_RED_UFO) && !checkitem(ITEM_BLUE_UFO)) {
 		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeGreenUFO)
 	}
-	if (checkitem(ITEM_GREEN_UFO, 2) == FALSE && checkitem(ITEM_BLUE_UFO) == FALSE) {
+	if (!checkitem(ITEM_GREEN_UFO, 2) && !checkitem(ITEM_BLUE_UFO)) {
 		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFO)
 	}
-	if (checkitem(ITEM_GREEN_UFO, 2) == FALSE && checkitem(ITEM_RED_UFO) == FALSE) {
+	if (!checkitem(ITEM_GREEN_UFO, 2) && !checkitem(ITEM_RED_UFO)) {
 		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeBlueUFO)
 	}
-	message(Route116_TunnelersRestHouse_Text_UFOTraderExchangeLook)
+	message(format("{SPEAKER NAME_UFO_TRADER}Hmm, which type of UFO are you going to exchange exactly?"))
 	waitmessage
-	if (checkitem(ITEM_GREEN_UFO, 2) == TRUE) {
+	if (checkitem(ITEM_GREEN_UFO, 2)) {
     	dynmultipush(Route116_TunnelersRestHouse_Text_GreenUFO, MULTI_GREEN_UFO)
 	}
-	if (checkitem(ITEM_RED_UFO) == TRUE) {
+	if (checkitem(ITEM_RED_UFO)) {
     	dynmultipush(Route116_TunnelersRestHouse_Text_RedUFO, MULTI_RED_UFO)
 	}
-	if (checkitem(ITEM_BLUE_UFO) == TRUE) {
+	if (checkitem(ITEM_BLUE_UFO)) {
     	dynmultipush(Route116_TunnelersRestHouse_Text_BlueUFO, MULTI_BLUE_UFO)
 	}
     dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, MULTI_UFO_CANCEL)
@@ -707,12 +705,11 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeUFO {
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeGreenUFO {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderRedUFOFor2GreenUFOs, MSGBOX_YESNO)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}I can give you a single Red UFO for 2 Green UFOs then."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) != YES) {
 		return
 	}
-	checkitemspace(ITEM_RED_UFO)
-	if (var(VAR_RESULT) != TRUE) {
+	if (!checkitemspace(ITEM_RED_UFO)) {
 		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 	}
 	bufferitemname(STR_VAR_1, ITEM_RED_UFO)
@@ -721,22 +718,74 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeGreenUFO {
 	giveitem(ITEM_RED_UFO)
 	removeitem(ITEM_GREEN_UFO, 2)
 	bufferitemnameplural(STR_VAR_1, ITEM_GREEN_UFO, 2)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFO {
+	if (!checkitem(ITEM_RED_UFO, 2)) {
+    	goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFOForGreen)
+	}
+	message(format("{SPEAKER NAME_UFO_TRADER}Hmm, what type of UFO do you want to exchange for the Red UFO?"))
+	waitmessage
+	dynmultipush(Route116_TunnelersRestHouse_Text_GreenUFO, MULTI_GREEN_UFO)
+	dynmultipush(Route116_TunnelersRestHouse_Text_BlueUFO, MULTI_BLUE_UFO)
+    dynmultipush(Route116_TunnelersRestHouse_Text_Nevermind, MULTI_UFO_CANCEL)
+    dynmultistack(0, 0, FALSE, 5, FALSE, MULTI_GREEN_UFO, NULL)
+	if (var(VAR_RESULT) > MULTI_BLUE_UFO) {
+		return
+	}
+	switch (var(VAR_RESULT)) {
+		case MULTI_GREEN_UFO:
+			goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFOForGreen)
+		case MULTI_BLUE_UFO:
+			goto(Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFOForBlue)
+	}
+	return
+}
+
+script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFOForGreen {
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}I can give you 2 Green UFOs for a single Red UFO then."), MSGBOX_YESNO)
+	if (var(VAR_RESULT) != YES) {
+		return
+	}
+	if (!checkitemspace(ITEM_GREEN_UFO, 2)) {
+		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+	}
+	bufferitemnameplural(STR_VAR_1, ITEM_GREEN_UFO, 2)
+	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+	hidespeakername
+	giveitem(ITEM_GREEN_UFO, 2)
+	removeitem(ITEM_RED_UFO)
+	bufferitemname(STR_VAR_1, ITEM_RED_UFO)
+	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
+	return
+}
+
+script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeRedUFOForBlue {
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}I can give you a single Blue UFO for 2 Red UFOs then."), MSGBOX_YESNO)
+	if (var(VAR_RESULT) != YES) {
+		return
+	}
+	if (!checkitemspace(ITEM_BLUE_UFO)) {
+		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
+	}
+	bufferitemname(STR_VAR_1, ITEM_BLUE_UFO)
+	msgbox(Route116_TunnelersRestHouse_Text_UFOTraderGiveItem)
+	hidespeakername
+	giveitem(ITEM_BLUE_UFO)
+	removeitem(ITEM_RED_UFO, 2)
+	bufferitemnameplural(STR_VAR_1, ITEM_RED_UFO, 2)
+	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
 
 script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeBlueUFO {
-	msgbox(Route116_TunnelersRestHouse_Text_UFOTrader2RedUFOsForBlueUFO, MSGBOX_YESNO)
+	msgbox(format("{SPEAKER NAME_UFO_TRADER}I can give you 2 Red UFOs for a single Blue UFO then."), MSGBOX_YESNO)
 	if (var(VAR_RESULT) != YES) {
 		return
 	}
-	checkitemspace(ITEM_RED_UFO, 2)
-	if (var(VAR_RESULT) != TRUE) {
+	if (!checkitemspace(ITEM_RED_UFO, 2)) {
 		goto(Route116_TunnelersRestHouse_EventScript_UFOTraderNotEnoughSpace)
 	}
 	bufferitemnameplural(STR_VAR_1, ITEM_RED_UFO, 2)
@@ -745,7 +794,6 @@ script Route116_TunnelersRestHouse_EventScript_UFOTraderExchangeBlueUFO {
 	giveitem(ITEM_RED_UFO, 2)
 	removeitem(ITEM_BLUE_UFO)
 	bufferitemname(STR_VAR_1, ITEM_BLUE_UFO)
-	setspeakername(Route116_TunnelersRestHouse_Text_UFOTrader)
 	msgbox(Route116_TunnelersRestHouse_Text_TakeUfo)
 	return
 }
@@ -762,24 +810,8 @@ text Route116_TunnelersRestHouse_Text_Ina {
 	"Ina"
 }
 
-text Route116_TunnelersRestHouse_Text_Cook {
-	"Cook"
-}
-
 text Route116_TunnelersRestHouse_Text_Player {
 	"{PLAYER}"
-}
-
-text Route116_TunnelersRestHouse_Text_BuyItems {
-	"Buy Items"
-}
-
-text Route116_TunnelersRestHouse_Text_TeachMoves {
-	"Teach Moves"
-}
-
-text Route116_TunnelersRestHouse_Text_SellItems {
-	"Sell Items"
 }
 
 text Route116_TunnelersRestHouse_Text_Nevermind {
@@ -798,125 +830,33 @@ text Route116_TunnelersRestHouse_Text_BlueUFO {
 	"Blue UFO"
 }
 
-text Route116_TunnelersRestHouse_Text_ExchangeUFOs {
-	"Exchange UFOs"
-}
-
 text Route116_TunnelersRestHouse_Text_UFOTrader {
 	"UFO Trader"
 }
 
-text Route116_TunnelersRestHouse_Text_Worsen1IV {
-	"Worsen 1 IV"
-}
-
-text Route116_TunnelersRestHouse_Text_Pearl {
-	"Pearl"
-}
-
-text Route116_TunnelersRestHouse_Text_TohoOrbs {
-	"5 Toho Orbs"
-}
-
-text Route116_TunnelersRestHouse_Text_EvoHeart {
-	"Evo Heart"
-}
-
-text Route116_TunnelersRestHouse_Text_AbilityCapsule {
-	"Ability Capsule"
-}
-
-text Route116_TunnelersRestHouse_Text_NatureMint {
-	"Nature Mint"
-}
-
-text Route116_TunnelersRestHouse_Text_Perfect1IV {
-	"Perfect 1 IV"
-}
-
-text Route116_TunnelersRestHouse_Text_BigPearl {
-	"Big Pearl"
-}
-
-text Route116_TunnelersRestHouse_Text_GreatOrbs {
-	"5 Great Orbs"
-}
-
-text Route116_TunnelersRestHouse_Text_AbilityPatch {
-	"Ability Patch"
-}
-
-text Route116_TunnelersRestHouse_Text_PerfectAllIVs {
-	"Perfect All IVs"
-}
-
-text Route116_TunnelersRestHouse_Text_PearlString {
-	"Pearl String"
-}
-
-text Route116_TunnelersRestHouse_Text_UltraOrbs {
-	"5 Ultra Orbs"
-}
-
-text Route116_TunnelersRestHouse_Text_AnyLevelUp {
-	"Any Level-Up"
-}
-
-text Route116_TunnelersRestHouse_Text_EggMoves {
-	"Egg Moves"
-}
-
 text Route116_TunnelersRestHouse_Text_UFOTraderIntro {
-	format("Hey, the name's UFO Trader here!\pI just love collecting UFOs, but I can never seem to get enough of them.\pI'll do anything reasonable for me to get those UFOs.\p"
+	format("{SPEAKER NAME_UFO_TRADER}Hey, the name's UFO Trader here!\pI just love collecting UFOs, but I can never seem to get enough of them.\pI'll do anything reasonable for me to get those UFOs.\p"
 	"Whether you want items or for me to use one of my skills, I'll do it for those UFOs!")
 }
 
-text Route116_TunnelersRestHouse_Text_UFOTraderNoUFOs {
-	format("Hmm, I don't sense any UFOs with you right now.\pDo let me know when you get some though, I'll do some skills to get some.")
-}
-
 text Route116_TunnelersRestHouse_Text_UFOTraderHaveUFOs {
-	format("You seem to have some UFOs with you right now.\pYou mind letting me have a look at them?")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderGreenUFO {
-	format("That's a nice-looking Green UFO there.\pI can give you these for the Green UFO.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderRedUFO {
-	format("That is a very good-looking Red UFO in your hands.\pI can give you these for the Red UFO.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderBlueUFO {
-	format("Oh my, that is a beautiful Blue UFO that you have, I must have it myself.\pI can give you these for the Blue UFO.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderOutro {
-	format("Well, if you have any UFOs, know I am the guy who will take them for whatever you want.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderNotEnoughSpace {
-	format("Hmm, you don't seem to have enough space for the exchange of the UFO there.\pSorry, I wanna be fair to you at least.")
+	format("{SPEAKER NAME_UFO_TRADER}You seem to have some UFOs with you right now.\pYou mind letting me have a look at them?")
 }
 
 text Route116_TunnelersRestHouse_Text_UFOTraderSoYouWantXForY {
-	format("So you want the {STR_VAR_1}\Nfor a {STR_VAR_2}?")
+	format("{SPEAKER NAME_UFO_TRADER}So you want the {STR_VAR_1}\Nfor a {STR_VAR_2}?")
 }
 
 text Route116_TunnelersRestHouse_Text_UFOTraderGiveItem {
-	format("Alright, here's your\N{STR_VAR_1}.")
+	format("{SPEAKER NAME_UFO_TRADER}Alright, here's your\N{STR_VAR_1}.")
 }
 
 text Route116_TunnelersRestHouse_Text_TakeUfo {
-	format("I'll take the {STR_VAR_1} then, thank you very much.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderShouldTeach {
-	format("What type of moves should I teach then?")
+	format("{SPEAKER NAME_UFO_TRADER}I'll take the {STR_VAR_1} then, thank you very much.")
 }
 
 text Route116_TunnelersRestHouse_Text_UFOTraderWhichStatShouldModify {
-	format("Alright, which stat should I modify?")
+	format("{SPEAKER NAME_UFO_TRADER}Alright, which stat should I modify?")
 }
 
 text Route116_TunnelersRestHouse_Text_UFOTraderHPWorse {
@@ -967,56 +907,8 @@ text Route116_TunnelersRestHouse_Text_UFOTraderSpDefensePerfect {
 	format("Hmm, I'll perfect the Sp. Def IV of this Puppet for a Green UFO then.")
 }
 
-text Route116_TunnelersRestHouse_Text_UFOTraderWorsenSpecificStat {
-	format("Alright, let me just try and worsen this IV here.\pAnd there, your Puppet now has the lowest potential for that stat there.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderPerfectSpecificStat {
-	format("Alright, let me just try and perfect this IV here.\pAnd there, your Puppet now has perfected their potential!")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderAlreadyIdealStat {
-	format("Hmm, this Puppet already has the ideal stat you want.\pHey, at least you don't have to waste one of your UFOs there.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderTeachAnyMove {
-	format("So you want me to teach a Puppet any move it naturally learns?")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderTeachEggMove {
-	format("So you want me to teach a Puppet an egg move?")
-}
-
 text Route116_TunnelersRestHouse_Text_UFOTraderSeePuppet {
-	format("Alright, let me see the Puppet in question.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderTryTeachMove {
-	format("So which move should I teach the Puppet then?")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderTaughtMove {
-	format("And there, the move is now taught to your Puppet!")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderShowEgg {
-	format("That's an egg. It hasn't even hatched for me to be able to teach any moves at all!")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderCantTeach {
-	format("Hmm, this Puppet doesn't have any moves I can teach of this specific kind.\pSorry, I wanna be fair with getting your UFOs at least.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderExchangeLook {
-	format("Hmm, which type of UFO are you going to exchange exactly?")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTraderRedUFOFor2GreenUFOs {
-	format("I can give you a single Red UFO for 2 Green UFOs then.")
-}
-
-text Route116_TunnelersRestHouse_Text_UFOTrader2RedUFOsForBlueUFO {
-	format("I can give you 2 Red UFOs for a single Blue UFO then.")
+	format("{SPEAKER NAME_UFO_TRADER}Alright, let me see the Puppet in question.")
 }
 
 text Route116_TunnelersRestHouse_Text_GigiMurinIntro {
@@ -1116,30 +1008,6 @@ text Route116_TunnelersRestHouse_Text_GigiMurinLaugh {
 
 text Route116_TunnelersRestHouse_Text_NueBogosBinted {
 	format("Nuuu-e?")
-}
-
-text Route116_TunnelersRestHouse_Text_CookTalk {
-	format("I have no idea why these people have brought me here specifically.\pI will say though, I do have some nice stuff for sale if you want.")
-}
-
-text Route116_TunnelersRestHouse_Text_CookTalkAgain {
-	format("There are more stuff I have if you want.")
-}
-
-text Route116_TunnelersRestHouse_Text_CookItemShop {
-	format("Take a look at my delicacies if you want to buy some.")
-}
-
-text Route116_TunnelersRestHouse_Text_CookMoveTutor {
-	format("My lessons come at a fee, just so you're aware.")
-}
-
-text Route116_TunnelersRestHouse_Text_CookSellItems {
-	format("Alright, let me see what you have available.")
-}
-
-text Route116_TunnelersRestHouse_Text_CookLearnedMove {
-	format("Your Puppet has learned the move I taught successfully.\nI will be taking my fee for this service here now.")
 }
 
 movement Route116_TunnelersRestHouse_Movement_PlayerMoveRightToFront {

@@ -1072,3 +1072,36 @@ const struct Tileset gTileset_WLDGameCorner =
     .metatileAttributes = gMetatileAttributes_WLDGameCorner,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Slateport2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Slateport2,
+    .palettes = gTilesetPalettes_Slateport2,
+    .metatiles = gMetatiles_Slateport2,
+    .metatileAttributes = gMetatileAttributes_Slateport2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Verdanturf =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Verdanturf,
+    .palettes = gTilesetPalettes_Verdanturf,
+    .metatiles = gMetatiles_Verdanturf,
+    .metatileAttributes = gMetatileAttributes_Verdanturf,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Desert =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Desert,
+    .palettes = gTilesetPalettes_Desert,
+    .metatiles = gMetatiles_Desert,
+    .metatileAttributes = gMetatileAttributes_Desert,
+    .callback = NULL,
+};

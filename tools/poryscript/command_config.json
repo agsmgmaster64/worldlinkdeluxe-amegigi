@@ -90,6 +90,12 @@
     "checkmodernfatefulencounter": {
       "var_name": "VAR_RESULT"
     },
+    "canhypertrain": {
+      "var_name": "VAR_RESULT"
+    },
+    "canunhypertrain": {
+      "var_name": "VAR_RESULT"
+    },
     "msgbox": {
       "var_name": "VAR_RESULT"
     }

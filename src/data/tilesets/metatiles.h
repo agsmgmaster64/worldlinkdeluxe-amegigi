@@ -273,3 +273,12 @@ const u32 gMetatileAttributes_RG_IslandHarbor[] = INCBIN_U32("data/tilesets/frlg
 
 const u16 gMetatiles_WLDGameCorner[] = INCBIN_U16("data/tilesets/secondary/wldgame_corner/metatiles.bin");
 const u32 gMetatileAttributes_WLDGameCorner[] = INCBIN_U32("data/tilesets/secondary/wldgame_corner/metatile_attributes.bin");
+
+const u16 gMetatiles_Slateport2[] = INCBIN_U16("data/tilesets/secondary/slateport_2/metatiles.bin");
+const u32 gMetatileAttributes_Slateport2[] = INCBIN_U32("data/tilesets/secondary/slateport_2/metatile_attributes.bin");
+
+const u16 gMetatiles_Verdanturf[] = INCBIN_U16("data/tilesets/secondary/verdanturf/metatiles.bin");
+const u32 gMetatileAttributes_Verdanturf[] = INCBIN_U32("data/tilesets/secondary/verdanturf/metatile_attributes.bin");
+
+const u16 gMetatiles_Desert[] = INCBIN_U16("data/tilesets/secondary/desert/metatiles.bin");
+const u32 gMetatileAttributes_Desert[] = INCBIN_U32("data/tilesets/secondary/desert/metatile_attributes.bin");

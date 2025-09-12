@@ -470,7 +470,8 @@ DESTROY_MUGSHOT = FC 1C
 NAME_NONE = 00
 NAME_MOM = 01
 NAME_PLAYER = 02
-NAME_COUNT = 03
+NAME_UFO_TRADER = 05
+NAME_COUNT = 1E
 
 @ these are basically what include/constants/field_mugshots.h have
 @ but without the x_COUNT and x_NONE ones for strings
