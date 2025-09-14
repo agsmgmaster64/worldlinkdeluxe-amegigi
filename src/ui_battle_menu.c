@@ -185,6 +185,9 @@ struct MenuResources
     bool8 isDoubleBattle;
     bool8 partyIconsCreated;
     bool8 canShowEnemyInfo;
+    u8 partyCount;
+    u8 currMonId;
+    bool8 isEnemyMon;
 };
 
 enum WindowIds
@@ -363,16 +366,6 @@ static inline bool32 CanShowMenuInfo(u32 isEnemyMon)
     if (sMenuDataPtr->canShowEnemyInfo)
         return TRUE;
     return FALSE;
-}
-
-void Task_OpenBattleMenuFromStartMenu(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        CleanupOverworldWindowsAndTilemaps();
-        UI_Battle_Menu_Init(CB2_ReturnToFieldWithOpenMenu);
-        DestroyTask(taskId);
-    }
 }
 
 // This is our main initialization function if you want to call the menu from elsewhere
@@ -829,6 +822,7 @@ static bool32 Menu_DoGfxSetup(void)
         ResetPaletteFade();
         ResetSpriteData();
         ResetTasks();
+        gPaletteFade.bufferTransferDisabled = TRUE;
         gMain.state++;
         break;
     case 2:
@@ -853,12 +847,6 @@ static bool32 Menu_DoGfxSetup(void)
         gMain.state++;
         break;
     case 5:
-        CreateTask(Task_MenuWaitFadeIn, 0);
-        BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-        gMain.state++;
-        break;
-    case 6:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
         //Start 
         ShowSpeciesIcon(0);
         ShowSpeciesIcon(1);
@@ -870,6 +858,19 @@ static bool32 Menu_DoGfxSetup(void)
         PrintPage();
         CreateSelectorSprite();
         ShowFieldIcon();
+        gMain.state++;
+        break;
+    case 6:
+        CreateTask(Task_MenuWaitFadeIn, 0);
+        gMain.state++;
+        break;
+    case 7:
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gPaletteFade.bufferTransferDisabled = FALSE;
+        gMain.state++;
+        break;
+    case 8:
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
         gMain.state++;
         break;
     default:
@@ -896,7 +897,6 @@ static void Menu_FreeResources(void)
 void LoadTilemapFromMode(void)
 {
     try_free(sBg1TilemapBuffer);
-    sBg1TilemapBuffer == NULL;
 
     sBg1TilemapBuffer = Alloc(0x800);
 
@@ -971,7 +971,7 @@ static void Task_MenuWaitFadeAndBail(u8 taskId)
 
 static void Menu_FadeAndBail(void)
 {
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     CreateTask(Task_MenuWaitFadeAndBail, 0);
     SetVBlankCallback(Menu_VBlankCB);
     SetMainCallback2(Menu_MainCB);
@@ -3504,6 +3504,25 @@ static void PrintPage(void)
 #define PARTY_TAB_NUM_MONS_Y 4
 #define PARTY_MENU_SUMMARY_LOCK_MONS FALSE
 
+static void TransitionToSummaryScreen(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        bool8 isEnemyMon = sMenuDataPtr->isEnemyMon;
+        bool8 currMonId = sMenuDataPtr->currMonId;
+        bool8 partyCount = sMenuDataPtr->partyCount;
+
+        FreeAllWindowBuffers();
+        DestroyTask(taskId);
+        sTempSavedCallback = sMenuDataPtr->savedCallback;
+        Menu_FreeResources();
+        if (!isEnemyMon)
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+        else
+            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+    }
+}
+
 static void StartSummaryScreen(u8 taskId)
 {
     u8 currMonId = sMenuDataPtr->partyMenuSelectorID_X + (sMenuDataPtr->partyMenuSelectorID_Y * PARTY_TAB_NUM_MONS_X);
@@ -3537,15 +3556,11 @@ static void StartSummaryScreen(u8 taskId)
 
     if (species != SPECIES_NONE && CanShowMenuInfo(isEnemyMon))
     {
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
-        FreeAllWindowBuffers();
-        DestroyTask(taskId);
-        sTempSavedCallback = sMenuDataPtr->savedCallback;
-        Menu_FreeResources();
-        if (!isEnemyMon)
-            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
-        else
-            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        sMenuDataPtr->currMonId = currMonId;
+        sMenuDataPtr->partyCount = partyCount;
+        sMenuDataPtr->isEnemyMon = isEnemyMon;
+        gTasks[taskId].func = TransitionToSummaryScreen;
     }
     else
     {
@@ -3579,15 +3594,11 @@ static void StartSummaryScreenForSpecificMon(u8 taskId)
 
     if (species != SPECIES_NONE && CanShowMenuInfo(isEnemyMon))
     {
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
-        FreeAllWindowBuffers();
-        DestroyTask(taskId);
-        sTempSavedCallback = sMenuDataPtr->savedCallback;
-        Menu_FreeResources();
-        if (!isEnemyMon)
-            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, gPlayerParty, currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
-        else
-            ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_ENEMY, gEnemyParty,  currMonId, partyCount, CB2_SetUpReshowBattleMenuAfterSummaryScreen);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+        sMenuDataPtr->currMonId = currMonId;
+        sMenuDataPtr->partyCount = partyCount;
+        sMenuDataPtr->isEnemyMon = isEnemyMon;
+        gTasks[taskId].func = TransitionToSummaryScreen;
     }
     else
     {
@@ -3625,7 +3636,7 @@ static void Task_MenuMain(u8 taskId)
         else
         {
             PlaySE(SE_PC_OFF);
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
             gTasks[taskId].func = Task_MenuTurnOff;
         }
     }
@@ -3680,7 +3691,7 @@ static void Task_MenuMain(u8 taskId)
                 break;
             default:
                 PlaySE(SE_PC_OFF);
-                BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
                 gTasks[taskId].func = Task_MenuTurnOff;
                 break;
             }

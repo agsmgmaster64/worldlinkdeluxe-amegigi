@@ -307,7 +307,7 @@ static void HandleInputChooseAction(u32 battler)
 
     if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == TRUE)
     {
-        if (!gLastUsedBallMenuPresent)
+        if (!gLastUsedBallMenuPresent || gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
         {
             gBattleStruct->ackBallUseBtn = FALSE;
         }
@@ -2371,19 +2371,28 @@ static void Controller_WaitForDebug(u32 battler)
     }
 }
 
-static void PlayerHandleBattleDebug(u32 battler)
+static void Controller_WaitToTransitionStatusMenu(u32 battler)
 {
-    BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
-    if (gSaveBlock2Ptr->optionsBattleMenu != 3)
+    if (!gPaletteFade.active)
     {
         FreeAllWindowBuffers();
         UI_Battle_Menu_Init(ReshowBattleScreenAfterMenu);
+        gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
+    }
+}
+
+static void PlayerHandleBattleDebug(u32 battler)
+{
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+    if (gSaveBlock2Ptr->optionsBattleMenu != 3)
+    {
+        gBattlerControllerFuncs[battler] = Controller_WaitToTransitionStatusMenu;
     }
     else
     {
         SetMainCallback2(CB2_BattleDebugMenu);
+        gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
     }
-    gBattlerControllerFuncs[battler] = Controller_WaitForDebug;
 }
 
 // Order based numerically, with EFFECTIVENESS_CANNOT_VIEW at 0 to always prioritize any other effectiveness during comparison
