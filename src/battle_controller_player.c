@@ -206,91 +206,44 @@ static u16 GetPrevBall(u16 ballId)
 {
     u16 ballPrev;
     s32 i, j;
-    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
+    CompactItemsInBagPocket(POCKET_POKE_BALLS);
+    for (i = 0; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
     {
-        u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
-        CompactItemsInPyramidBag();
-        ballPrev = ITEM_NONE;
-        for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
+        if (ballId == GetBagItemId(POCKET_POKE_BALLS, i))
         {
-            if (ballId == items[i])
+            if (i <= 0)
             {
-                if (i <= 0)
+                for (j = gBagPockets[POCKET_POKE_BALLS].capacity - 1; j >= 0; j--)
                 {
-                    for (j = PYRAMID_BAG_ITEMS_COUNT - 1; j >= 0; j--)
-                    {
-                        if (GetItemPocket(items[j]) == POCKET_POKE_BALLS)
-                            return items[j];
-                    }
+                    ballPrev = GetBagItemId(POCKET_POKE_BALLS, j);
+                    if (ballPrev != ITEM_NONE)
+                        return ballPrev;
                 }
-                i--;
-                break;
             }
+            i--;
+            break;
         }
-
-        return items[i];
     }
-    else
-    {
-        CompactItemsInBagPocket(POCKET_POKE_BALLS);
-        for (i = 0; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
-        {
-            if (ballId == GetBagItemId(POCKET_POKE_BALLS, i))
-            {
-                if (i <= 0)
-                {
-                    for (j = gBagPockets[POCKET_POKE_BALLS].capacity - 1; j >= 0; j--)
-                    {
-                        ballPrev = GetBagItemId(POCKET_POKE_BALLS, j);
-                        if (ballPrev != ITEM_NONE)
-                            return ballPrev;
-                    }
-                }
-                i--;
-                break;
-            }
-        }
-        return GetBagItemId(POCKET_POKE_BALLS, i);
-    }
+    return GetBagItemId(POCKET_POKE_BALLS, i);
 }
 
 static u32 GetNextBall(u32 ballId)
 {
     u32 ballNext = ITEM_NONE;
     s32 i;
-    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
+    CompactItemsInBagPocket(POCKET_POKE_BALLS);
+    for (i = 1; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
     {
-        u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
-        CompactItemsInPyramidBag();
-        for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
+        if (ballId == GetBagItemId(POCKET_POKE_BALLS, i-1))
         {
-            if (ballId == items[i-1] && GetItemPocket(items[i]) == POCKET_POKE_BALLS)
-            {
-                ballNext = items[i];
-                break;
-            }
+            ballNext = GetBagItemId(POCKET_POKE_BALLS, i);
+            break;
         }
-        if (ballNext == ITEM_NONE)
-            return items[0]; // Zeroth slot
-        else
-            return ballNext;
     }
+    if (ballNext == ITEM_NONE)
+        return GetBagItemId(POCKET_POKE_BALLS, 0); // Zeroth slot
     else
-    {
-        CompactItemsInBagPocket(POCKET_POKE_BALLS);
-        for (i = 1; i < gBagPockets[POCKET_POKE_BALLS].capacity; i++)
-        {
-            if (ballId == GetBagItemId(POCKET_POKE_BALLS, i-1))
-            {
-                ballNext = GetBagItemId(POCKET_POKE_BALLS, i);
-                break;
-            }
-        }
-        if (ballNext == ITEM_NONE)
-            return GetBagItemId(POCKET_POKE_BALLS, 0); // Zeroth slot
-        else
-            return ballNext;
-    }
+        return ballNext;
 }
 
 static void HandleInputChooseAction(u32 battler)
@@ -2383,6 +2336,7 @@ static void Controller_WaitToTransitionStatusMenu(u32 battler)
 
 static void PlayerHandleBattleDebug(u32 battler)
 {
+    PlaySE(SE_PC_LOGIN);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     if (gSaveBlock2Ptr->optionsBattleMenu != 3)
     {

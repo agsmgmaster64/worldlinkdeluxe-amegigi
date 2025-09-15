@@ -1240,7 +1240,7 @@ static void FadeToGachaScreen(u8 taskId)
     switch (gTasks[taskId].data[0])
     {
     case 0:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].data[0]++;
         break;
     case 1:
@@ -2928,7 +2928,7 @@ static void InitGachaScreen(void)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_BG2_ON);
     ShowBg(GACHA_BG_BASE);
     ShowBg(GACHA_MENUS);
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetVBlankCallback(GachaVBlankCallback);
     SetMainCallback2(GachaMainCallback);
     CreateTask(GachaMain, 1);

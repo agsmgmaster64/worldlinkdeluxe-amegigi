@@ -3024,28 +3024,9 @@ void TryAddLastUsedBallItemSprites(void)
         u16 firstBall;
 
         // we have to compact the bag first bc it is typically only compacted when you open it
-        if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_USE_PYRAMID_BAG))
-        {
-            u16 *items = gSaveBlock2Ptr->frontier.pyramidBag.itemId[gSaveBlock2Ptr->frontier.lvlMode];
-            u32 i;
+        CompactItemsInBagPocket(POCKET_POKE_BALLS);
 
-            CompactItemsInPyramidBag();
-            firstBall = ITEM_NONE;
-            for (i = 0; i < PYRAMID_BAG_ITEMS_COUNT; i++)
-            {
-                if (GetItemPocket(items[i]) == POCKET_POKE_BALLS)
-                {
-                    firstBall = items[i];
-                    break;
-                }
-            }
-        }
-        else
-        {
-            CompactItemsInBagPocket(POCKET_POKE_BALLS);
-            firstBall = GetBagItemId(POCKET_POKE_BALLS, 0);
-        }
-
+        firstBall = GetBagItemId(POCKET_POKE_BALLS, 0);
         if (firstBall > ITEM_NONE)
             gBallToDisplay = firstBall;
     }
