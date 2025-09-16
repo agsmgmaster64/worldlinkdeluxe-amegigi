@@ -87,6 +87,7 @@ MauvilleCity_GameCorner_EventScript_Derby::
 	waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
+MauvilleCity_GameCorner_EventScript_CheckWinnings::
 	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 	showcoinsbox 1, 1
 	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
@@ -97,8 +98,11 @@ MauvilleCity_GameCorner_EventScript_Derby::
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	delay 40
+MauvilleCity_GameCorner_CancelVF::
 	hidecoinsbox 0, 5
+MauvilleCity_GameCorner_CancelBJ::
 	closemessage
+MauvilleCity_GameCorner_NoWin::
 	releaseall
 	end
 	
@@ -122,21 +126,8 @@ MauvilleCity_GameCorner_EventScript_Snake::
 	waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end	
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_FlappyBird::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -157,21 +148,8 @@ MauvilleCity_GameCorner_EventScript_FlappyBird::
 	waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end		
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_BlockStacker::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -192,20 +170,7 @@ MauvilleCity_GameCorner_EventScript_BlockStacker::
     waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
 
 BlockStacker_Not_Enough::
 	msgbox BS_Not_Enough, MSGBOX_DEFAULT
@@ -272,21 +237,8 @@ MauvilleCity_GameCorner_EventScript_PinballMeowth::
     waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_PinballDiglett::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -307,21 +259,8 @@ MauvilleCity_GameCorner_EventScript_PinballDiglett::
     waitstate
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_PinballSeel::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -342,21 +281,8 @@ MauvilleCity_GameCorner_EventScript_PinballSeel::
     waitstate 
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end	
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_PinballGengar::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -376,22 +302,9 @@ MauvilleCity_GameCorner_EventScript_PinballGengar::
 	callnative PlayGengarPinballGame
     waitstate
 	savebgm MUS_DUMMY
-	goto_if_eq GAME_CORNER_VAR_WINNINGS, 0, MauvilleCity_GameCorner_NoWin
 	fadedefaultbgm
-	showcoinsbox 1, 1
-	buffernumberstring STR_VAR_1, GAME_CORNER_VAR_WINNINGS
-	msgbox PB_YOU_WON_TEXT, MSGBOX_DEFAULT
-	waitmessage
-	addcoins GAME_CORNER_VAR_WINNINGS
-	setvar GAME_CORNER_VAR_WINNINGS, 0
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	delay 40
-	hidecoinsbox 0, 5
-	closemessage
-	releaseall
-	end	
-	
+	goto MauvilleCity_GameCorner_EventScript_CheckWinnings
+
 MauvilleCity_GameCorner_EventScript_VoltorbFlip::
 	lockall
 	checkitem ITEM_COIN_CASE
@@ -515,21 +428,6 @@ MauvilleCity_GameCorner_EventScript_Gacha_Master::
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoCoinCase
 	setvar VAR_0x8004, 4
 	call MauvilleCity_GameCorner_EventScript_GachaCommon
-	releaseall
-	end
-
-MauvilleCity_GameCorner_CancelBJ::
-	closemessage
-	releaseall
-	end
-	
-MauvilleCity_GameCorner_NoWin::
-	releaseall
-	end	
-	
-MauvilleCity_GameCorner_CancelVF::
-	hidecoinsbox 0, 5
-	closemessage
 	releaseall
 	end
 
