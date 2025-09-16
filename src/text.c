@@ -1301,12 +1301,12 @@ static u16 RenderText(struct TextPrinter *textPrinter)
                 RemoveFieldMugshot();
                 return RENDER_REPEAT;
             case EXT_CTRL_CODE_SPEAKER:
-            {
-                enum SpeakerNames name = *textPrinter->printerTemplate.currentChar++;
-                TrySpawnAndShowNamebox(gSpeakerNamesTable[name]);
+                {
+                    enum SpeakerNames name = *textPrinter->printerTemplate.currentChar++;
+                    TrySpawnAndShowNamebox(gSpeakerNamesTable[name]);
 
-                return RENDER_REPEAT;
-            }
+                    return RENDER_REPEAT;
+                }
             }
             break;
         case CHAR_PROMPT_CLEAR:
