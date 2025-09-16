@@ -153,7 +153,7 @@ struct Derby {
     u8 uiSpriteId;
     u8 Arrow1SpriteId;
     u8 Arrow2SpriteId;
-    u8 CreditIconSpriteId;
+    u8 CreditIconSpriteId[2];
     u8 CreditSpriteIds[MAX_SPRITES_CREDIT];
     u8 BetSpriteIds[MAX_SPRITES_BET];
     u8 PotentialSpriteIds[MAX_SPRITES_POTENTIAL];
@@ -187,6 +187,7 @@ struct Derby {
 };    
 
 static EWRAM_DATA struct Derby *sDerby = NULL;
+static EWRAM_DATA u8 *sDerbyBgBuffer = NULL;
 
 static void FadeToDerbyScreen(u8 taskId);
 static void InitDerbyScreen(void);
@@ -785,14 +786,11 @@ static const struct SpriteTemplate sSpriteTemplate_CreditDigit =
     .callback = SpriteCallbackDummy
 };
 
-static const struct CompressedSpriteSheet sSpriteSheets_BetInterface[] =
+static const struct CompressedSpriteSheet sSpriteSheets_BetInterface =
 {
-    {
-        .data = Digits_2_Gfx,
-        .size = 0x280,
-        .tag = GFX_BET_DIGITS
-    },
-    {}
+    .data = Digits_2_Gfx,
+    .size = 0x280,
+    .tag = GFX_BET_DIGITS
 };
 
 static const struct SpriteTemplate sSpriteTemplate_BetDigit =
@@ -806,14 +804,11 @@ static const struct SpriteTemplate sSpriteTemplate_BetDigit =
     .callback = SpriteCallbackDummy
 };
 
-static const struct CompressedSpriteSheet sSpriteSheets_PotentialInterface[] =
+static const struct CompressedSpriteSheet sSpriteSheets_PotentialInterface =
 {
-    {
-        .data = Digits_2_Gfx,
-        .size = 0x280,
-        .tag = GFX_POTENTIAL_DIGITS
-    },
-    {}
+    .data = Digits_2_Gfx,
+    .size = 0x280,
+    .tag = GFX_POTENTIAL_DIGITS
 };
 
 static const struct SpriteTemplate sSpriteTemplate_PotentialDigit =
@@ -929,6 +924,16 @@ static const struct OamData sOamData_Menu_Data =
     .priority = 0,
 };
 
+static const struct OamData sOamData_MenuShort_Data =
+{
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .shape = SPRITE_SHAPE(32x32),
+    .size = SPRITE_SIZE(32x32),
+    .tileNum = 0,
+    .priority = 0,
+};
+
 static const struct SpriteTemplate sSpriteTemplate_Name_Ponyta =
 {
     .tileTag = GFX_NAME_PONYTA,
@@ -997,7 +1002,7 @@ static const struct SpriteTemplate sSpriteTemplate_Name_Feebas =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_1 =
 {
     .data = Payout_1_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_1,
 };
 
@@ -1005,7 +1010,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_1 =
 {
     .tileTag = GFX_PAYOUT_1,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1015,7 +1020,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_1 =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_2 =
 {
     .data = Payout_2_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_2,
 };
 
@@ -1023,7 +1028,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_2 =
 {
     .tileTag = GFX_PAYOUT_2,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1033,7 +1038,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_2 =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_3 =
 {
     .data = Payout_3_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_3,
 };
 
@@ -1041,7 +1046,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_3 =
 {
     .tileTag = GFX_PAYOUT_3,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1051,7 +1056,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_3 =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_4 =
 {
     .data = Payout_4_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_4,
 };
 
@@ -1059,7 +1064,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_4 =
 {
     .tileTag = GFX_PAYOUT_4,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1069,7 +1074,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_4 =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_5 =
 {
     .data = Payout_5_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_5,
 };
 
@@ -1077,7 +1082,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_5 =
 {
     .tileTag = GFX_PAYOUT_5,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1087,7 +1092,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_5 =
 static const struct CompressedSpriteSheet sSpriteSheet_Payout_6 =
 {
     .data = Payout_6_GFX,
-    .size = 0x400,
+    .size = 0x200,
     .tag = GFX_PAYOUT_6,
 };
 
@@ -1095,7 +1100,7 @@ static const struct SpriteTemplate sSpriteTemplate_Payout_6 =
 {
     .tileTag = GFX_PAYOUT_6,
     .paletteTag = PAL_BET_MENU_TEXT,
-    .oam = &sOamData_Menu_Data,
+    .oam = &sOamData_MenuShort_Data,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -1522,6 +1527,7 @@ static const struct SpriteTemplate sSpriteTemplate_FeebasShiny =
 void StartDerby(void)
 {
     sDerby = AllocZeroed(sizeof(struct Derby));
+    sDerbyBgBuffer = AllocZeroed(BG_SCREEN_SIZE);
     CreateTask(FadeToDerbyScreen, 0);
 }
 
@@ -2075,15 +2081,33 @@ static void UpdatePokemonSprites(void)
 static void CreateMenuData(void)
 {
     LoadCompressedSpriteSheet(&sSpriteSheet_Name_Ponyta);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rattata);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rapidash);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Name_Feebas);
     sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Ponyta, 164, 60, 0);
 
     LoadCompressedSpriteSheet(&sSpriteSheet_Condition_1);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Condition_2);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Condition_3);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Condition_4);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Condition_5);
     sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_1, 164, 93, 0);
 
     LoadCompressedSpriteSheet(&sSpriteSheet_Payout_1);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_2);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_3);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_4);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_5);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_6);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Payout_7);
     sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_1, 164, 124, 0);
 
     LoadCompressedSpriteSheet(&sSpriteSheet_UI_1);
+    LoadCompressedSpriteSheet(&sSpriteSheet_UI_2);
+    LoadCompressedSpriteSheet(&sSpriteSheet_UI_3);
+    LoadCompressedSpriteSheet(&sSpriteSheet_UI_4);
+    LoadCompressedSpriteSheet(&sSpriteSheet_UI_5);
+    LoadCompressedSpriteSheet(&sSpriteSheet_UI_6);
     sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_1, 64, 64, 0);
 }
 
@@ -2093,25 +2117,25 @@ static void UpdatePokemonSpeciesNames(void)
 
     species = sDerby->racerSpecies[sDerby->MenuPosition];
 
-    DestroySpriteAndFreeResources(&gSprites[sDerby->SpeciesNameSpriteId]);
+    DestroySprite(&gSprites[sDerby->SpeciesNameSpriteId]);
     LoadSpritePalettes(sSpritePalettes);
 
     switch (species)
     {
     default:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Name_Ponyta);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Ponyta);
         sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Ponyta, 164, 60, 0);
         break;
     case DERBY_SPECIES_RATTATA:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rattata);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rattata);
         sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Rattata, 164, 60, 0);
         break;
     case DERBY_SPECIES_RAPIDASH:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rapidash);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rapidash);
         sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Rapidash, 164, 60, 0);
         break;
     case DERBY_SPECIES_FEEBAS:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Name_Feebas);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Feebas);
         sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Feebas, 164, 60, 0);
         break;
     }
@@ -2123,29 +2147,29 @@ static void UpdateCondition(void)
     
     stars = sDerby->racerCondition[sDerby->MenuPosition];
 
-    DestroySpriteAndFreeResources(&gSprites[sDerby->ConditionSpriteId]);
+    DestroySprite(&gSprites[sDerby->ConditionSpriteId]);
     LoadSpritePalettes(sSpritePalettes);
 
     switch (stars)
     {
     case CONDITION_1_STAR:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Condition_1);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Condition_1);
         sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_1, 164, 93, 0);
         break;
     case CONDITION_2_STAR:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Condition_2);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Condition_2);
         sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_2, 164, 93, 0);
         break;
     case CONDITION_3_STAR:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Condition_3);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Condition_3);
         sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_3, 164, 93, 0);
         break;
     case CONDITION_4_STAR:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Condition_4);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Condition_4);
         sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_4, 164, 93, 0);
         break;
     case CONDITION_5_STAR:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Condition_5);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Condition_5);
         sDerby->ConditionSpriteId = CreateSprite(&sSpriteTemplate_Condition_5, 164, 93, 0);
         break;
     }
@@ -2160,37 +2184,37 @@ static void UpdatePayout(void)
     
     multi = sDerby->racerSpeedPay[sDerby->MenuPosition];
     
-    DestroySpriteAndFreeResources(&gSprites[sDerby->PayoutSpriteId]);
+    DestroySprite(&gSprites[sDerby->PayoutSpriteId]);
     LoadSpritePalettes(sSpritePalettes);
 
     switch (multi)
     {
     case BET_MULTIPLIER_1_1:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_1);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_1);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_1, 164, y, 0);
         break;
     case BET_MULTIPLIER_1_2:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_2);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_2);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_2, 164, y, 0);
         break;
     case BET_MULTIPLIER_1_3:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_3);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_3);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_3, 164, y, 0);
         break;
     case BET_MULTIPLIER_1_5:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_4);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_4);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_4, 164, y, 0);
         break;
     case BET_MULTIPLIER_2_0:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_5);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_5);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_5, 164, y, 0);
         break;
     case BET_MULTIPLIER_3_0:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_6);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_6);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_6, 164, y, 0);
         break;
     case BET_MULTIPLIER_JACKPOT:
-        LoadCompressedSpriteSheet(&sSpriteSheet_Payout_7);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Payout_7);
         sDerby->PayoutSpriteId = CreateSprite(&sSpriteTemplate_Payout_7, 164, y, 0);
         break;
     }
@@ -2198,37 +2222,37 @@ static void UpdatePayout(void)
 
 static void UpdateUI(void)
 {
-    DestroySpriteAndFreeResources(&gSprites[sDerby->uiSpriteId]);
+    DestroySprite(&gSprites[sDerby->uiSpriteId]);
     LoadSpritePalettes(sSpritePalettes);
     
     if (sDerby->MenuPosition == 0)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_1);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_1);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_1, 64, 64, 0);
     }
     else if (sDerby->MenuPosition == 1)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_2);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_2);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_2, 64, 64, 0);
     }
     else if (sDerby->MenuPosition == 2)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_3);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_3);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_3, 64, 64, 0);
     }
     else if (sDerby->MenuPosition == 3)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_4);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_4);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_4, 64, 64, 0);
     }
     else if (sDerby->MenuPosition == 4)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_5);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_5);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_5, 64, 64, 0);
     }
     else if (sDerby->MenuPosition == 5)
     {
-        LoadCompressedSpriteSheet(&sSpriteSheet_UI_6);
+        //LoadCompressedSpriteSheet(&sSpriteSheet_UI_6);
         sDerby->uiSpriteId = CreateSprite(&sSpriteTemplate_UI_6, 64, 64, 0);
     }
 }
@@ -2244,14 +2268,14 @@ static void CreateCreditIcon(void)
 {
     LoadSpritePalettes(sSpritePalettes);
     LoadCompressedSpriteSheet(&sSpriteSheet_Credit_Icon);
-    sDerby->CreditIconSpriteId = CreateSprite(&sSpriteTemplate_Credit_Icon, 28, 126, 0);
+    sDerby->CreditIconSpriteId[0] = CreateSprite(&sSpriteTemplate_Credit_Icon, 28, 126, 0);
 }
 
 static void CreateCreditIconRed(void)
 {
     LoadSpritePalettes(sSpritePalettes);
     LoadCompressedSpriteSheet(&sSpriteSheet_Credit_Icon_Red);
-    sDerby->CreditIconSpriteId = CreateSprite(&sSpriteTemplate_Credit_Icon_Red, 28, 126, 0);
+    sDerby->CreditIconSpriteId[1] = CreateSprite(&sSpriteTemplate_Credit_Icon_Red, 28, 126, 0);
 }
 
 static void CreateArrows(void)
@@ -2419,10 +2443,7 @@ static void CreateBetSprites(void)
 {
     u8 i;
 
-    for (i = 0; i < ARRAY_COUNT(sSpriteSheets_BetInterface) - 1; i++)  
-    {
-        LoadCompressedSpriteSheet(&sSpriteSheets_BetInterface[i]);
-    }
+    LoadCompressedSpriteSheet(&sSpriteSheets_BetInterface);
 
     for (i = 0; i < 4; i++)
     {
@@ -2467,10 +2488,7 @@ static void CreatePotentialSprites(void)
 {
     u8 i;
 
-    for (i = 0; i < ARRAY_COUNT(sSpriteSheets_PotentialInterface) - 1; i++)  
-    {
-        LoadCompressedSpriteSheet(&sSpriteSheets_PotentialInterface[i]);
-    }
+    LoadCompressedSpriteSheet(&sSpriteSheets_PotentialInterface);
 
     for (i = 0; i < 4; i++)
     {
@@ -2555,6 +2573,7 @@ static void ExitDerby(void)
     {
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         FREE_AND_SET_NULL(sDerby);
+        FREE_AND_SET_NULL(sDerbyBgBuffer);
     }
 }
 
@@ -2617,8 +2636,8 @@ static void UpdateBetBG(void)
 {
     if (sDerby->Menu == 0)
     {
-        InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
-        SetBgTilemapBuffer(DERBY_BG_BASE, AllocZeroed(BG_SCREEN_SIZE));
+        //InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
+        //SetBgTilemapBuffer(DERBY_BG_BASE, sDerbyBgBuffer);
         DecompressAndLoadBgGfxUsingHeap(DERBY_BG_BASE, Derby_BG_Bet_Img_2, 0x1940, 0, 0);
         CopyToBgTilemapBuffer(DERBY_BG_BASE, Derby_BG_Bet_Tilemap_2, 0, 0);
         ResetPaletteFade();
@@ -2628,8 +2647,8 @@ static void UpdateBetBG(void)
     }
     else if (sDerby->Menu == 1)
     {
-        InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
-        SetBgTilemapBuffer(DERBY_BG_BASE, AllocZeroed(BG_SCREEN_SIZE));
+        //InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
+        //SetBgTilemapBuffer(DERBY_BG_BASE, sDerbyBgBuffer);
         DecompressAndLoadBgGfxUsingHeap(DERBY_BG_BASE, Derby_BG_Bet_Img, 0x1940, 0, 0);
         CopyToBgTilemapBuffer(DERBY_BG_BASE, Derby_BG_Bet_Tilemap, 0, 0);
         ResetPaletteFade();
@@ -2643,9 +2662,9 @@ static void HideBetSprites(void)
 {
     if (sDerby->Menu == 0)
     {
-        DestroySpriteAndFreeResources(&gSprites[sDerby->CreditIconSpriteId]);
-        CreateCreditIconRed();
-        CreateP10();
+        gSprites[sDerby->CreditIconSpriteId[0]].invisible = TRUE;
+        gSprites[sDerby->P10SpriteId].invisible = FALSE;
+        gSprites[sDerby->CreditIconSpriteId[1]].invisible = FALSE;
         
         gSprites[sDerby->SpeciesNameSpriteId].invisible = TRUE;
         gSprites[sDerby->ConditionSpriteId].invisible = TRUE;
@@ -2665,9 +2684,9 @@ static void HideBetSprites(void)
     }
     else if (sDerby->Menu == 1)
     {
-        DestroySpriteAndFreeResources(&gSprites[sDerby->P10SpriteId]);
-        DestroySpriteAndFreeResources(&gSprites[sDerby->CreditIconSpriteId]);
-        CreateCreditIcon();
+        gSprites[sDerby->CreditIconSpriteId[0]].invisible = FALSE;
+        gSprites[sDerby->P10SpriteId].invisible = TRUE;
+        gSprites[sDerby->CreditIconSpriteId[1]].invisible = TRUE;
         
         gSprites[sDerby->PotentialSpriteIds[0]].invisible = TRUE;
         gSprites[sDerby->PotentialSpriteIds[1]].invisible = TRUE;
@@ -3005,7 +3024,7 @@ static void InitRacetrack(void)
     ResetBgsAndClearDma3BusyFlags(0);
     ResetTempTileDataBuffers();
     InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
-    SetBgTilemapBuffer(DERBY_BG_BASE, AllocZeroed(BG_SCREEN_SIZE));
+    SetBgTilemapBuffer(DERBY_BG_BASE, sDerbyBgBuffer);
     DecompressAndLoadBgGfxUsingHeap(DERBY_BG_BASE, Derby_Race_Img, 0x1940, 0, 0);
     CopyToBgTilemapBuffer(DERBY_BG_BASE, Derby_Race_Tilemap, 0, 0);
     ResetPaletteFade();
@@ -3488,7 +3507,7 @@ static void InitDerbyScreen(void)
     ResetBgsAndClearDma3BusyFlags(0);
     ResetTempTileDataBuffers();
     InitBgsFromTemplates(0, sDerbyBGtemplates, ARRAY_COUNT(sDerbyBGtemplates));
-    SetBgTilemapBuffer(DERBY_BG_BASE, AllocZeroed(BG_SCREEN_SIZE));
+    SetBgTilemapBuffer(DERBY_BG_BASE, sDerbyBgBuffer);
     DecompressAndLoadBgGfxUsingHeap(DERBY_BG_BASE, Derby_BG_Bet_Img, 0x1940, 0, 0);
     CopyToBgTilemapBuffer(DERBY_BG_BASE, Derby_BG_Bet_Tilemap, 0, 0);
     ResetPaletteFade();
@@ -3511,6 +3530,10 @@ static void InitDerbyScreen(void)
     CreateMenuData();
     CreateArrows();
     CreateCreditIcon();
+    CreateCreditIconRed();
+    CreateP10();
+    gSprites[sDerby->P10SpriteId].invisible = TRUE;
+    gSprites[sDerby->CreditIconSpriteId[1]].invisible = TRUE;
     CreateCreditSprites();
     SetCreditDigits(GetCoins());
     CreateBetSprites();
