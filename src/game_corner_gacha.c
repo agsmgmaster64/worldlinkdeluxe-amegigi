@@ -151,6 +151,7 @@ struct Gacha {
     u16 CalculatedSpecies;
     u16 wager;
     u32 waitTimer;
+    u8 canGiveMon;
 };    
 
 static const u8 sText_FromGacha[] = _("You got {STR_VAR_1}!");
@@ -2853,7 +2854,7 @@ static void UpdateWagerDigit(int direction)
         break;
     }
 
-    if (sGacha->wager >= minWager)
+    if (sGacha->wager >= minWager && sGacha->canGiveMon)
     {
         ResetMessage();
         CalculatePullOdds();
@@ -2920,7 +2921,7 @@ static void HandleInput(void)
     }
     else if (JOY_NEW(B_BUTTON))
     {
-        gSpecialVar_Result = FALSE;
+        gSpecialVar_Result = MON_CANT_GIVE;
         sGacha->state = GACHA_STATE_START_EXIT;
     }
     else if (JOY_NEW(DPAD_UP))
@@ -3170,7 +3171,8 @@ static void GachaMain(u8 taskId)
         if (gSprites[sGacha->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
             CreateMon(&gEnemyParty[0], sGacha->CalculatedSpecies, GetSpeciesGachaLevel(), USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-            GiveMonToPlayer(&gEnemyParty[0]);
+            gSpecialVar_Result = GiveMonToPlayer(&gEnemyParty[0]);
+            VarSet(VAR_TEMP_TRANSFERRED_SPECIES, sGacha->CalculatedSpecies);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_SEEN);
             HandleSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_CAUGHT, GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY));
             LoadPalette(GetMonFrontSpritePal(&gEnemyParty[0]), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
@@ -3220,7 +3222,6 @@ static void GachaMain(u8 taskId)
         {
             FlagSet(FLAG_SYS_POKEMON_GET);
         }
-        gSpecialVar_Result = TRUE;
         sGacha->state = GACHA_STATE_START_EXIT;
         break;
     }
@@ -3287,13 +3288,14 @@ static bool32 GachaGfxSetup(void)
     case 4:
         sGacha->newMonOdds = 0;
         InitWindows(sGachaWinTemplates);
-        LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), 32);
+        LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), PLTT_SIZE_4BPP);
         ShowMessage();
         gMain.state++;
         break;
     case 5:
         UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
         sGacha->waitTimer = 0;
+        sGacha->canGiveMon = !IsPlayerPartyAndPokemonStorageFull();
         GetPokemonOwned();
         gMain.state++;
         break;
