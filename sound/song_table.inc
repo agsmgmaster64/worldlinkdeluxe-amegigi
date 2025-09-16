@@ -612,6 +612,7 @@ gSongTable::
 	song mus_casino_plus_8, 0, 0
 	song mus_casino_plus_9, 0, 0
 	song mus_dd_underwater, 0, 0
+	song mus_casino_plus_gacha, 0, 0
 
 	.align 2
 dummy_song_header:

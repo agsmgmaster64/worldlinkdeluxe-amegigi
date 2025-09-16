@@ -142,6 +142,7 @@
 .include "sound/voicegroups/dd_underwater.inc"
 .include "sound/voicegroups/wld_main.inc"
 .include "sound/voicegroups/casino_pinball.inc"
+.include "sound/voicegroups/casino_gacha.inc"
 .include "sound/trainer_voice_tables.inc"
 
 @ FRLG

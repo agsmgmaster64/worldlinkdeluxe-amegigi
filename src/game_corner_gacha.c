@@ -50,8 +50,6 @@ enum
 {
     GACHA_STATE_INIT,
     GACHA_STATE_PROCESS_INPUT,
-    GACHA_STATE_COMPLETED_WAIT_FOR_SOUND,
-    GACHA_STATE_PROCESS_COMPLETED_INPUT,
     GACHA_STATE_START_EXIT,
     GACHA_STATE_EXIT,
     STATE_INIT_A,
@@ -77,10 +75,7 @@ enum
     STATE_NEW_MON_MSG,
     NEW_1,
     NEW_2,
-    NEW_3,
-    NEW_4,
-    NEW_5,
-    NEW_6,
+    STATE_SET_EXIT,
 };
 
 enum {
@@ -156,6 +151,7 @@ struct Gacha {
     u16 CalculatedSpecies;
     u16 wager;
     u32 waitTimer;
+    u8 canGiveMon;
 };    
 
 static const u8 sText_FromGacha[] = _("You got {STR_VAR_1}!");
@@ -1812,13 +1808,13 @@ static void ResetMessage(void)
 
 static void StartExitGacha(void)
 {
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     sGacha->state = GACHA_STATE_EXIT;
 }
 
 static void StartTradeScreen(void)
 {
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     sGacha->state = STATE_FADE;
 }
 
@@ -2469,12 +2465,11 @@ static void UpdateWagerDigit(int direction)
         break;
     }
 
-    if (sGacha->wager >= minWager)
+    if (sGacha->wager >= minWager && sGacha->canGiveMon)
     {
         ResetMessage();
         CalculatePullOdds();
         sGacha->canBetWager = TRUE;
-        //gSprites[sGacha->CTAspriteId].animPaused = FALSE;
         gSprites[sGacha->CTAspriteId].animNum = 1; // On
         ShowMessage();
     }
@@ -2485,7 +2480,6 @@ static void UpdateWagerDigit(int direction)
         sGacha->newMonOdds = 0;
         sGacha->canBetWager = FALSE;        
         gSprites[sGacha->CTAspriteId].animNum = 0; // Off
-        //gSprites[sGacha->CTAspriteId].animPaused = TRUE;
         ShowMessage();
     }
 }
@@ -2530,18 +2524,6 @@ static void ExitGacha(void)
     }
 }
 
-static void HandleInput_GachaComplete(void)
-{
-    if (IsFanfareTaskInactive())
-    {
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            gSpecialVar_Result = 1;
-            sGacha->state = GACHA_STATE_START_EXIT;
-        }
-    }
-}
-
 static void HandleInput(void)
 {
     if (JOY_NEW(A_BUTTON))
@@ -2550,6 +2532,7 @@ static void HandleInput(void)
     }
     else if (JOY_NEW(B_BUTTON))
     {
+        gSpecialVar_Result = MON_CANT_GIVE;
         sGacha->state = GACHA_STATE_START_EXIT;
     }
     else if (JOY_NEW(DPAD_UP))
@@ -2676,15 +2659,6 @@ static void GachaMain(u8 taskId)
     case GACHA_STATE_PROCESS_INPUT:
         HandleInput();
         break;
-    case GACHA_STATE_COMPLETED_WAIT_FOR_SOUND:
-        if (IsSEPlaying())
-            break;
-
-        PlayFanfare(MUS_SLOTS_WIN);
-        sGacha->state = GACHA_STATE_PROCESS_COMPLETED_INPUT;
-    case GACHA_STATE_PROCESS_COMPLETED_INPUT:
-        HandleInput_GachaComplete();
-        break;
     case GACHA_STATE_START_EXIT:
         StartExitGacha();
         break;
@@ -2808,17 +2782,18 @@ static void GachaMain(u8 taskId)
         if (gSprites[sGacha->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
             CreateMon(&gEnemyParty[0], sGacha->CalculatedSpecies, GetSpeciesGachaLevel(), USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-            GiveMonToPlayer(&gEnemyParty[0]);
+            gSpecialVar_Result = GiveMonToPlayer(&gEnemyParty[0]);
+            VarSet(VAR_TEMP_TRANSFERRED_SPECIES, sGacha->CalculatedSpecies);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_SEEN);
             HandleSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_CAUGHT, GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY));
             LoadUniqueSpritePaletteWithTag(GetMonFrontSpritePal(&gEnemyParty[0]), sGacha->CalculatedSpecies, GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY), GetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY));
-            SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, B_POSITION_OPPONENT_RIGHT);
+            SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, B_POSITION_OPPONENT_LEFT);
             sGacha->monSpriteId = CreateMonPicSprite_Affine(sGacha->CalculatedSpecies, GetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY), GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY), MON_PIC_AFFINE_FRONT, 120, 60, 14, TAG_NONE);
             gSprites[sGacha->monSpriteId].callback = SpriteCB_Null;
             gSprites[sGacha->monSpriteId].oam.priority = 0;
             gSprites[sGacha->monSpriteId].invisible = TRUE;
             HandleLoadSpecialPokePic(TRUE,
-                                        gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_RIGHT],
+                                        gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],
                                         sGacha->CalculatedSpecies,
                                         GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY));
             sGacha->state++;
@@ -2852,11 +2827,7 @@ static void GachaMain(u8 taskId)
         if (IsFanfareTaskInactive())
             sGacha->state++;
         break;
-    case NEW_3: // Twice?
-        if (IsFanfareTaskInactive())
-            sGacha->state++;
-        break;
-    case NEW_4:
+    case STATE_SET_EXIT:
         // Ready the nickname prompt
         if (!FlagGet(FLAG_SYS_POKEMON_GET))
         {
@@ -2867,70 +2838,113 @@ static void GachaMain(u8 taskId)
     }
 }
 
-static void InitGachaScreen(void)
-{    
-    sGacha->GachaId = gSpecialVar_0x8004;
-
-    SetVBlankCallback(NULL);
-    ResetAllBgsCoordinates();
-    ResetVramOamAndBgCntRegs();
-    ResetBgsAndClearDma3BusyFlags(0);
-    ResetTempTileDataBuffers();
-
-    BGSetup();
-
-    ResetSpriteData();
-    FreeAllSpritePalettes();
-
-    switch (sGacha->GachaId)
+static bool32 GachaGfxSetup(void)
+{
+    switch (gMain.state)
     {
-    default:
-    case GACHA_BASIC:
-        LoadSpritePalettes(sSpritePalettesBasic);
-        CreateHoppip();
-        break;
-    case GACHA_GREAT:
-        LoadSpritePalettes(sSpritePalettesGreat);
-        CreatePhanpy();
-        break;
-    case GACHA_ULTRA:
-        LoadSpritePalettes(sSpritePalettesUltra);
-        CreateTeddiursa();
-        break;
-    case GACHA_MASTER:
-        LoadSpritePalettes(sSpritePalettesMaster);
-        CreateBelossom();
-        break;
-    }
-    CreateArrows();
-    CreateCTA();
-    CreateDigitalText();    
-    CreateKnob();
-    CreateCreditSprites();
-    CreatePlayerSprites();
-    SetCreditDigits(GetCoins());
-    SetPlayerDigits(0);    
-    CreateCreditMenu();    
-    CreatePlayerMenu();
-    CreateLotteryJPN();
-    
-    sGacha->newMonOdds = 0;
-    InitWindows(sGachaWinTemplates);
-    LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), 32);
-    ShowMessage();
+    case 0:
+        sGacha->GachaId = gSpecialVar_0x8004;
 
-    UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
-    sGacha->waitTimer = 0;
-    GetPokemonOwned();
-    
-    CopyBgTilemapBufferToVram(GACHA_BG_BASE);
-    CopyBgTilemapBufferToVram(GACHA_MENUS);
-    SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_BG2_ON);
-    ShowBg(GACHA_BG_BASE);
-    ShowBg(GACHA_MENUS);
-    BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-    SetVBlankCallback(GachaVBlankCallback);
-    SetMainCallback2(GachaMainCallback);
-    CreateTask(GachaMain, 1);
+        SetVBlankCallback(NULL);
+        ResetAllBgsCoordinates();
+        ResetVramOamAndBgCntRegs();
+        ResetBgsAndClearDma3BusyFlags(0);
+        ResetTempTileDataBuffers();
+        ResetSpriteData();
+        FreeAllSpritePalettes();
+        gPaletteFade.bufferTransferDisabled = TRUE;
+        gMain.state++;
+        break;
+    case 1:
+        BGSetup();
+        gMain.state++;
+        break;
+    case 2:
+        switch (sGacha->GachaId)
+        {
+        default:
+        case GACHA_BASIC:
+            LoadSpritePalettes(sSpritePalettesBasic);
+            CreateHoppip();
+            break;
+        case GACHA_GREAT:
+            LoadSpritePalettes(sSpritePalettesGreat);
+            CreatePhanpy();
+            break;
+        case GACHA_ULTRA:
+            LoadSpritePalettes(sSpritePalettesUltra);
+            CreateTeddiursa();
+            break;
+        case GACHA_MASTER:
+            LoadSpritePalettes(sSpritePalettesMaster);
+            CreateBelossom();
+            break;
+        }
+        gMain.state++;
+        break;
+    case 3:
+        CreateArrows();
+        CreateCTA();
+        CreateDigitalText();    
+        CreateKnob();
+        CreateCreditSprites();
+        CreatePlayerSprites();
+        SetCreditDigits(GetCoins());
+        SetPlayerDigits(0);    
+        CreateCreditMenu();    
+        CreatePlayerMenu();
+        CreateLotteryJPN();
+        gMain.state++;
+        break;
+    case 4:
+        sGacha->newMonOdds = 0;
+        InitWindows(sGachaWinTemplates);
+        LoadPalette(GetTextWindowPalette(2), BG_PLTT_ID(11), PLTT_SIZE_4BPP);
+        ShowMessage();
+        gMain.state++;
+        break;
+    case 5:
+        UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
+        sGacha->waitTimer = 0;
+        sGacha->canGiveMon = !IsPlayerPartyAndPokemonStorageFull();
+        GetPokemonOwned();
+        gMain.state++;
+        break;
+    case 6:
+        CopyBgTilemapBufferToVram(GACHA_BG_BASE);
+        CopyBgTilemapBufferToVram(GACHA_MENUS);
+        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | DISPCNT_BG2_ON);
+        ShowBg(GACHA_BG_BASE);
+        ShowBg(GACHA_MENUS);
+        gMain.state++;
+        break;
+    case 7:
+        CreateTask(GachaMain, 1);
+        gMain.state++;
+        break;
+    case 8:
+        BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
+        gPaletteFade.bufferTransferDisabled = FALSE;
+        gMain.state++;
+        break;
+    case 9:
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+        gMain.state++;
+        break;
+    default:
+        SetVBlankCallback(GachaVBlankCallback);
+        SetMainCallback2(GachaMainCallback);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static void InitGachaScreen(void)
+{
+    while (TRUE)
+    {
+        if (GachaGfxSetup())
+            break;
+    }
 }
 
