@@ -1225,8 +1225,6 @@ static void PrintMapNameAndTime(void) //this code is ripped froom different part
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr;
     u8 x;
-    const u8 *str, *suffix = NULL;
-    u8 sTimeTextColors[] = {TEXT_COLOR_TRANSPARENT, 2, 3};
 
     FillWindowPixelBuffer(WINDOW_TOP_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 

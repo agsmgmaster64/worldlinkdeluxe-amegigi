@@ -303,7 +303,6 @@ static void DrawChoices_BarSpeed(int selection, int y); //HP and EXP
 static void DrawChoices_UnitSystem(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
 static void DrawChoices_FrameType(int selection, int y);
-static void DrawChoices_MatchCall(int selection, int y);
 static void DrawChoices_AnimSpeed(int selection, int y);
 static void DrawChoices_UniqueColors(int selection, int y);
 static void DrawChoices_IvView(int selection, int y);

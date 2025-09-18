@@ -178,9 +178,9 @@ static void DoItemSwap(u8);
 static void CancelItemSwap(u8);
 static void PrintTMHMMoveData(u16);
 static void PrintContextMenuItems(u8);
-static void PrintContextMenuItemGrid(u8, u8, u8);
+//static void PrintContextMenuItemGrid(u8, u8, u8);
 static void Task_ItemContext_SingleRow(u8);
-static void Task_ItemContext_MultipleRows(u8);
+//static void Task_ItemContext_MultipleRows(u8);
 static bool8 IsValidContextMenuPos(s8);
 static void BagMenu_RemoveWindow(u8);
 static void PrintThereIsNoPokemon(u8);
@@ -1967,7 +1967,7 @@ static void PrintContextMenuItems(u8 windowId)
     InitMenuInUpperLeftCornerNormal(windowId, gBagMenu->contextMenuNumItems, 0);
 }
 
-static void PrintContextMenuItemGrid(u8 windowId, u8 columns, u8 rows)
+static UNUSED void PrintContextMenuItemGrid(u8 windowId, u8 columns, u8 rows)
 {
     PrintMenuActionGrid(windowId, FONT_NARROW, 8, 1, 56, columns, rows, sItemMenuActions, gBagMenu->contextMenuItemsPtr);
     InitMenuActionGrid(windowId, 56, columns, rows, 0);
@@ -2003,7 +2003,7 @@ static void Task_ItemContext_SingleRow(u8 taskId)
     }
 }
 
-static void Task_ItemContext_MultipleRows(u8 taskId)
+static UNUSED void Task_ItemContext_MultipleRows(u8 taskId)
 {
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
     {
