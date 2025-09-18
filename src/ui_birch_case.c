@@ -130,11 +130,11 @@ struct MonChoiceData // This is the format used to define a mon, everything left
 
 
 // doing this because it's tedious to put it in otherwise to allow randomness properly
-#define GENERIC_STARTER(s, l, i) \
+#define GENERIC_STARTER(speciesG, levelG, itemG) \
 { \
-    .species = s, \
-    .level = l, \
-    .item = i, \
+    .species = speciesG, \
+    .level = levelG, \
+    .item = itemG, \
     .ball = BALL_POKE, \
     .nature = NUM_NATURES, \
     .abilityNum = NUM_ABILITY_PERSONALITY, \
@@ -356,19 +356,100 @@ static void CursorCallback(struct Sprite *sprite)
     
 }
 
-u16 GetStarterChoiceSpecies(u32 index)
+static inline u16 GetStarterChoiceSpecies(u32 index)
 {
-    u16 species = SPECIES_NONE;
-
-    species = sStarterChoices[index].species;
+    u16 species = sStarterChoices[index].species;
 
     return species;
+}
+
+static inline u8 GetStarterChoiceLevel(u32 index)
+{
+    u8 level = sStarterChoices[index].level;
+
+    return level;
+}
+
+static inline u16 GetStarterChoiceItem(u32 index)
+{
+    u16 item = sStarterChoices[index].item;
+
+    return item;
+}
+
+static inline u8 GetStarterChoiceBall(u32 index)
+{
+    u8 ball = sStarterChoices[index].ball;
+
+    return ball;
+}
+
+static inline u8 GetStarterChoiceNature(u32 index)
+{
+    u8 nature = sStarterChoices[index].nature;
+
+    return nature;
+}
+
+static inline u8 GetStarterChoiceAbilityNum(u32 index)
+{
+    u8 abilityNum = sStarterChoices[index].abilityNum;
+
+    return abilityNum;
+}
+
+static inline u8 GetStarterChoiceGender(u32 index)
+{
+    u8 gender = sStarterChoices[index].gender;
+
+    return gender;
+}
+
+static inline u8 *GetStarterChoiceEVs(u32 index)
+{
+    u8 *evs = (u8 *) sStarterChoices[index].evs;
+
+    return evs;
+}
+
+static inline u8 *GetStarterChoiceIVs(u32 index)
+{
+    u8 *ivs = (u8 *) sStarterChoices[index].ivs;
+
+    return ivs;
+}
+
+static inline u16 *GetStarterChoiceMoves(u32 index)
+{
+    u16 *moves = (u16 *) sStarterChoices[index].moves;
+
+    return moves;
+}
+
+static inline bool8 GetStarterChoiceGgMaxFactor(u32 index)
+{
+    bool8 ggMaxFactor = sStarterChoices[index].ggMaxFactor;
+
+    return ggMaxFactor;
+}
+
+static inline u8 GetStarterChoiceTeraType(u32 index)
+{
+    u8 teraType = sStarterChoices[index].teraType;
+
+    return teraType;
+}
+static inline bool8 GetStarterChoiceIsShiny(u32 index)
+{
+    bool8 isShiny = sStarterChoices[index].isShiny;
+
+    return isShiny;
 }
 
 //
 //  Create The Hande Cursor Sprite
 //
-static void CreateHandSprite()
+static void CreateHandSprite(void)
 {
     u16 i = 0;
     u16 x, y;
@@ -410,7 +491,7 @@ static void CreateHandSprite()
     return;
 }
 
-static void DestroyHandSprite()
+static void DestroyHandSprite(void)
 {
     u8 i = 0;
     for(i = 0; i < 9; i++)
@@ -423,7 +504,7 @@ static void DestroyHandSprite()
 //
 //  Create The Pokeball Sprites For Each Slot if Not SPECIES_NONE
 //
-static void CreatePokeballSprites()
+static void CreatePokeballSprites(void)
 {
     u16 i = 0;
 
@@ -500,16 +581,20 @@ static void ChangePositionUpdateSpriteAnims(u16 oldPosition, u8 taskId) // turn 
 
 static void BirchCase_GiveMon(void) // Function that calls the GiveMon function pulled from Expansion by Lunos and Ghoulslash
 {
-    u8 *evs = (u8 *) sStarterChoices[sBirchCaseDataPtr->handPosition].evs;
-    u8 *ivs = (u8 *) sStarterChoices[sBirchCaseDataPtr->handPosition].ivs;
-    u16 *moves = (u16 *) sStarterChoices[sBirchCaseDataPtr->handPosition].moves;
     FlagSet(FLAG_SYS_POKEMON_GET);
-    gSpecialVar_Result = BirchCase_GiveMonParameterized(sStarterChoices[sBirchCaseDataPtr->handPosition].species, sStarterChoices[sBirchCaseDataPtr->handPosition].level, \
-                sStarterChoices[sBirchCaseDataPtr->handPosition].item, sStarterChoices[sBirchCaseDataPtr->handPosition].ball, \
-                sStarterChoices[sBirchCaseDataPtr->handPosition].nature, sStarterChoices[sBirchCaseDataPtr->handPosition].abilityNum, \
-                sStarterChoices[sBirchCaseDataPtr->handPosition].gender, evs, ivs, moves, \
-                sStarterChoices[sBirchCaseDataPtr->handPosition].ggMaxFactor, sStarterChoices[sBirchCaseDataPtr->handPosition].teraType,\
-                sStarterChoices[sBirchCaseDataPtr->handPosition].isShiny);
+    gSpecialVar_Result = BirchCase_GiveMonParameterized(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceLevel(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceItem(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceBall(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceNature(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceAbilityNum(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceGender(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceEVs(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceIVs(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceMoves(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceGgMaxFactor(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceTeraType(sBirchCaseDataPtr->handPosition),
+                GetStarterChoiceIsShiny(sBirchCaseDataPtr->handPosition));
 }
 
 //==========FUNCTIONS==========//

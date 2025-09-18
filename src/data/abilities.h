@@ -20,6 +20,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Drizzle"),
         .description = COMPOUND_STRING("Summons rain in battle."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet makes it rain when it\n"
+            "enters a battle."),
         .aiRating = 9,
     },
 
@@ -27,6 +30,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Speed Boost"),
         .description = COMPOUND_STRING("Gradually boosts Speed."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's Speed stat is boosted\n"
+            "every turn."),
         .aiRating = 9,
     },
 
@@ -34,6 +40,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Guard Armor"),
         .description = COMPOUND_STRING("Blocks critical hits."),
+        .descriptionLong = COMPOUND_STRING(
+            "Hard armor protects the Puppet from\n"
+            "critical hits."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -42,6 +51,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Sturdy"),
         .description = COMPOUND_STRING("Negates 1-hit KO attacks."),
+        .descriptionLong = COMPOUND_STRING(
+            "It cannot be knocked out by a single\n"
+            "hit as long as its HP is full."),
         .aiRating = 6,
         .breakable = TRUE,
     },
@@ -58,6 +70,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Limber"),
         .description = COMPOUND_STRING("Prevents paralysis."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's limber body prevents\n"
+            "it from being paralyzed."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -66,6 +81,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Sand Veil"),
         .description = COMPOUND_STRING("Ups evasion in a sandstorm."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Pokémon's evasiveness in\n"
+            "a sandstorm."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -81,6 +99,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Volt Absorb"),
         .description = COMPOUND_STRING("Turns electricity into HP."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores HP if hit by a Wind-type\n"
+            "move instead of taking damage."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -89,6 +110,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Water Absorb"),
         .description = COMPOUND_STRING("Changes water into HP."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores HP if hit by a Water-type\n"
+            "move instead of taking damage."),
         .aiRating = 7,
         .breakable = TRUE,
     },
@@ -112,6 +136,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Focus"),
         .description = COMPOUND_STRING("Raises accuracy."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's increased focus boosts\n"
+            "its accuracy."),
         .aiRating = 7,
     },
 
@@ -119,6 +146,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Insomnia"),
         .description = COMPOUND_STRING("Prevents sleep."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's insomnia prevents it\n"
+            "from falling asleep."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -158,6 +188,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Own Tempo"),
         .description = COMPOUND_STRING("Prevents confusion."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents the Puppet from becoming\n"
+            "confused."),
         .aiRating = 3,
         .breakable = TRUE,
     },
@@ -166,6 +199,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Gate Keeper"),
         .description = COMPOUND_STRING("Firmly anchors the body."),
+        .descriptionLong = COMPOUND_STRING(
+            "Negates all moves and items that\n"
+            "force switching out."),
         .aiRating = 2,
         .breakable = TRUE,
     },
@@ -188,6 +224,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Doll Wall"),
         .description = COMPOUND_STRING("Hurts to touch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Inflicts damage on the attacker\n"
+            "upon contact with its doll wall."),
         .aiRating = 6,
     },
 
@@ -195,6 +234,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Play Ghost"),
         .description = COMPOUND_STRING("Only “Supereffective” hits."),
+        .descriptionLong = COMPOUND_STRING(
+            "Its mysterious power only lets\n"
+            "supereffective moves hit the Puppet."),
         .aiRating = 10,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -227,6 +269,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Hakurei Miko"),
         .description = COMPOUND_STRING("Prevents stat reduction."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents other Puppets from\n"
+            "lowering its stats."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -235,6 +280,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Natural Cure"),
         .description = COMPOUND_STRING("Heals upon switching out."),
+        .descriptionLong = COMPOUND_STRING(
+            "All status conditions heal when the\n"
+            "Puppet switches out."),
         .aiRating = 7,
     },
 
@@ -250,6 +298,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Serene Grace"),
         .description = COMPOUND_STRING("Promotes added effects."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the likelihood of additional\n"
+            "effects occurring when attacking."),
         .aiRating = 8,
     },
 
@@ -257,6 +308,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Swift Swim"),
         .description = COMPOUND_STRING("Raises Speed in rain."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Puppet's Speed stat in\n"
+            "rain."),
         .aiRating = 6,
     },
 
@@ -264,6 +318,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Chlorophyll"),
         .description = COMPOUND_STRING("Raises Speed in sunshine."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Puppet's Speed stat in\n"
+            "harsh sunlight."),
         .aiRating = 6,
     },
 
@@ -294,6 +351,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Poison Body"),
         .description = COMPOUND_STRING("Poisons foe on contact."),
+        .descriptionLong = COMPOUND_STRING(
+            "Contact with the Puppet may poison\n"
+            "the attacker."),
         .aiRating = 4,
     },
 
@@ -309,6 +369,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Fire Veil"),
         .description = COMPOUND_STRING("Prevents frostbite."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's fire veil prevents it\n"
+            "from being frostbit."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -317,6 +380,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Water Veil"),
         .description = COMPOUND_STRING("Prevents burns."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's water veil prevents it\n"
+            "from being burned."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -369,6 +435,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Early Bird"),
         .description = COMPOUND_STRING("Awakens quickly from sleep."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet awakens from sleep twice\n"
+            "as fast and heals a little."),
         .aiRating = 4,
     },
 
@@ -376,6 +445,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flame Body"),
         .description = COMPOUND_STRING("Burns the foe on contact."),
+        .descriptionLong = COMPOUND_STRING(
+            "Contact with the Puppet may burn\n"
+            "the attacker."),
         .aiRating = 4,
     },
 
@@ -383,6 +455,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Run Away"),
         .description = COMPOUND_STRING("Makes escaping easier."),
+        .descriptionLong = COMPOUND_STRING(
+            "Enables a sure getaway from the\n"
+            "field."),
         .aiRating = 0,
     },
 
@@ -390,6 +465,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Keen Eye"),
         .description = COMPOUND_STRING("Prevents loss of accuracy."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet's keen eyes prevent its\n"
+            "accuracy from being lowered."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -406,6 +484,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Pickup"),
         .description = COMPOUND_STRING("May pick up items."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet may pick up items used\n"
+            "in and outside of battle."),
         .aiRating = 1,
     },
 
@@ -421,6 +502,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Hustle"),
         .description = COMPOUND_STRING("Trades accuracy for power."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Puppet's Attack stat but\n"
+            "lowers its accuracy."),
         .aiRating = 7,
     },
 
@@ -428,6 +512,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Cute Charm"),
         .description = COMPOUND_STRING("Infatuates on contact."),
+        .descriptionLong = COMPOUND_STRING(
+            "Contact with the Puppet may cause\n"
+            "infatuation."),
         .aiRating = 2,
     },
 
@@ -473,6 +560,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Guts"),
         .description = COMPOUND_STRING("Ups Attack if suffering."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Attack stat if the\n"
+            "Puppet has a status condition."),
         .aiRating = 6,
     },
 
@@ -480,6 +570,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Spring Charm"),
         .description = COMPOUND_STRING("Ups Defense if suffering."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Defense stat if the\n"
+            "Puppet has a status condition."),
         .aiRating = 5,
         .breakable = TRUE,
     },
@@ -488,6 +581,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Strange Mist"),
         .description = COMPOUND_STRING("Draining causes injury."),
+        .descriptionLong = COMPOUND_STRING(
+            "The strange mist damages attackers\n"
+            "that use HP-draining moves."),
         .aiRating = 3,
     },
 
@@ -495,6 +591,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Overgrow"),
         .description = COMPOUND_STRING("Ups Nature moves in a pinch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up Nature-type moves when\n"
+            "the Puppet's HP is low."),
         .aiRating = 5,
     },
 
@@ -502,6 +601,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Blaze"),
         .description = COMPOUND_STRING("Ups Fire moves in a pinch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up Fire-type moves when the\n"
+            "Puppet's HP is low."),
         .aiRating = 5,
     },
 
@@ -509,6 +611,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Torrent"),
         .description = COMPOUND_STRING("Ups Water moves in a pinch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up Water-type moves when the\n"
+            "Puppet's HP is low."),
         .aiRating = 5,
     },
 
@@ -516,6 +621,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Inner Power"),
         .description = COMPOUND_STRING("Ups Dream moves in a pinch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up Dream-type moves when the\n"
+            "Puppet's HP is low."),
         .aiRating = 5,
     },
 
@@ -544,6 +652,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Vital Spirit"),
         .description = COMPOUND_STRING("Prevents sleep."),
+        .descriptionLong = COMPOUND_STRING(
+            "The Puppet is full of vitality, which\n"
+            "prevents it from falling asleep."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -552,6 +663,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Magic Barrier"),
         .description = COMPOUND_STRING("Prevents stat reduction."),
+        .descriptionLong = COMPOUND_STRING(
+            "Prevents other Puppets from\n"
+            "lowering its stats."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -605,6 +719,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Steadfast"),
         .description = COMPOUND_STRING("Flinching raises Speed."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Speed stat each time the\n"
+            "Puppet flinches."),
         .aiRating = 2,
     },
 
@@ -620,6 +737,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Gluttony"),
         .description = COMPOUND_STRING("Eats Berries early."),
+        .descriptionLong = COMPOUND_STRING(
+            "Makes the Puppet eat a held Berry\n"
+            "earlier than usual."),
         .aiRating = 3,
     },
 
@@ -693,6 +813,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Skill Link"),
         .description = COMPOUND_STRING("Multi-hit moves hit 5 times."),
+        .descriptionLong = COMPOUND_STRING(
+            "Maximizes the number of times\n"
+            "multistrike moves hit."),
         .aiRating = 7,
     },
 
@@ -728,6 +851,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Sniper"),
         .description = COMPOUND_STRING("Boosts critical hits."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up moves if they become\n"
+            "critical hits when attacking."),
         .aiRating = 3,
     },
 
@@ -991,6 +1117,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Friend Guard"),
         .description = COMPOUND_STRING("Lowers damage to partner."),
+        .descriptionLong = COMPOUND_STRING(
+            "Reduces damage done to allies."),
         .aiRating = 0,
         .breakable = TRUE,
     },
@@ -1044,6 +1172,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Harvest"),
         .description = COMPOUND_STRING("May recycle a used Berry."),
+        .descriptionLong = COMPOUND_STRING(
+            "May create another Berry after one\n"
+            "is used."),
         .aiRating = 5,
     },
 
@@ -1074,6 +1205,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Poison Touch"),
         .description = COMPOUND_STRING("Poisons foe on contact."),
+        .descriptionLong = COMPOUND_STRING(
+            "May poison a target when the Puppet\n"
+            "makes contact."),
         .aiRating = 4,
     },
 
@@ -1188,6 +1322,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Prankster"),
         .description = COMPOUND_STRING("Status moves go first."),
+        .descriptionLong = COMPOUND_STRING(
+            "Gives priority to the Puppet's\n"
+            "status moves."),
         .aiRating = 8,
     },
 
@@ -1859,6 +1996,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Sunbathing"),
         .description = COMPOUND_STRING("Cures status in sun."),
+        .descriptionLong = COMPOUND_STRING(
+            "Cures the Puppet's status conditions\n"
+            "in harsh sunlight."),
         .aiRating = 5,
     },
 
@@ -1917,6 +2057,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Lucid Dreaming"),
         .description = COMPOUND_STRING("Uses moves during sleep."),
+        .descriptionLong = COMPOUND_STRING(
+            "Allows the Puppet to attack while\n"
+            "asleep."),
         .aiRating = 3,
     },
 
@@ -1945,6 +2088,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Neutralizing Gas"),
         .description = COMPOUND_STRING("All Abilities are nullified."),
+        .descriptionLong = COMPOUND_STRING(
+            "While the Puppet is in battle, all\n"
+            "other abilities are nullified."),
         .aiRating = 5,
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
@@ -2045,6 +2191,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Foul Aroma"),
         .description = COMPOUND_STRING("Confuses foe on contact."),
+        .descriptionLong = COMPOUND_STRING(
+            "Contact with the Puppet may confuse\n"
+            "the attacker."),
         .aiRating = 5,
     },
 
@@ -2052,6 +2201,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flame Absorb"),
         .description = COMPOUND_STRING("Turns fire into HP."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores HP if hit by a Fire-type\n"
+            "move instead of taking damage."),
         .aiRating = 4,
         .breakable = TRUE,
     },
@@ -2075,6 +2227,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Leaf Spice"),
         .description = COMPOUND_STRING("Nature moves may burn."),
+        .descriptionLong = COMPOUND_STRING(
+            "May burn a target if it hits with a\n"
+            "Nature-type move."),
         .aiRating = 5,
     },
 
@@ -2090,6 +2245,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Cold Heart"),
         .description = COMPOUND_STRING("Ups Ice moves in a pinch."),
+        .descriptionLong = COMPOUND_STRING(
+            "Powers up Ice-type moves when the\n"
+            "Puppet's HP is low."),
         .aiRating = 5,
     },
 
@@ -2097,6 +2255,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Nature Frost"),
         .description = COMPOUND_STRING("Ups Nature-type moves."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts effectiveness and power of\n"
+            "Nature-type moves."),
         .aiRating = 6,
     },
 
@@ -2205,6 +2366,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Unwavering"),
         .description = COMPOUND_STRING("Ups Sp. Atk if suffering."),
+        .descriptionLong = COMPOUND_STRING(
+            "Boosts the Special Attack stat if\n"
+            "the Puppet has a status condition."),
         .aiRating = 8,
     },
 
@@ -2212,6 +2376,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Fascinate"),
         .description = COMPOUND_STRING("Lowers the foe's Sp. Atk."),
+        .descriptionLong = COMPOUND_STRING(
+            "Lowers the opposing Puppet's Special\n"
+            "Attack stat upon entering battle."),
         .aiRating = 8,
     },
 
@@ -2268,6 +2435,9 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flora Absorb"),
         .description = COMPOUND_STRING("Turns nature into HP."),
+        .descriptionLong = COMPOUND_STRING(
+            "Restores HP if hit by a Nature-type\n"
+            "move instead of taking damage."),
         .aiRating = 7,
         .breakable = TRUE,
     },

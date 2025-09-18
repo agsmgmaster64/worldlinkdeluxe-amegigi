@@ -1221,7 +1221,7 @@ static void ShowItemIcon(u16 itemId, u8 x, u8 y)
 const u8 sText_Title_Nothing[]    = _("");
 
 const u8 sText_Title_Battler_Stats[]     = _("Puppet Stats");
-const u8 sText_Title_Battler_Ability[]   = _("Abilities Info");
+const u8 sText_Title_Battler_Ability[]   = _("Effects Info");
 const u8 sText_Title_Battler_Moves[]     = _("Moves Info");
 const u8 sText_Title_Battler_Status[]    = _("Puppet Status");
 const u8 sText_Title_Field_Party[]       = _("Party Info");
@@ -1519,13 +1519,20 @@ static void PrintStatsTab(void)
 
 
 const u8 sText_PrintAbilityTab_Ability[] = _("Ability");
+const u8 sText_PrintAbilityTab_HeldItem[] = _("Held Item");
 #define SPACE_BETWEEN_ABILITY_AND_NAME (8 * 8)
+#define SPACE_BETWEEN_ABILITIES 3
 static void PrintAbilityTab(void)
 {
     u8 x, y, x2, y2;
     u8 windowId = WINDOW_1;
     u8 colorIdx = FONT_BLACK;
     u16 ability = gBattleMons[sMenuDataPtr->battlerId].ability;
+    u16 heldItem = gBattleMons[sMenuDataPtr->battlerId].item;
+    const u8 *heldItemDescription = GetItemLongDescription(heldItem); 
+    const u8 *abilityDescription = gAbilitiesInfo[ability].descriptionLong;
+    if (abilityDescription == NULL)
+        abilityDescription = gAbilitiesInfo[ability].description;
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
@@ -1549,7 +1556,17 @@ static void PrintAbilityTab(void)
     AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + SPACE_BETWEEN_ABILITY_AND_NAME, (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gAbilitiesInfo[ability].name);
 	// Description ---------------------------------------------------------------------------------------------------
     y++;
-    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2 + 4, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gAbilitiesInfo[ability].description);
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2 + 4, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, abilityDescription);
+
+    // Held item
+    y = y + SPACE_BETWEEN_ABILITIES;
+    //Title
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, sText_PrintAbilityTab_HeldItem);
+    // Name ---------------------------------------------------------------------------------------------------
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + SPACE_BETWEEN_ABILITY_AND_NAME, (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, GetItemName(heldItem));
+    // Description ---------------------------------------------------------------------------------------------------
+    y++;
+    AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, (y * 8) + y2, 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, heldItemDescription);
 
     PutWindowTilemap(windowId);
     CopyWindowToVram(windowId, 3);

@@ -3438,7 +3438,7 @@ bool32 IsBattlerIncapacitated(u32 battler, u32 ability)
     if ((gBattleMons[battler].status1 & STATUS1_FREEZE) && !HasThawingMove(battler))
         return TRUE;    // if battler has thawing move we assume they will definitely use it, and thus being frozen should be neglected
 
-    if (gBattleMons[battler].status1 & STATUS1_SLEEP && !HasMoveWithEffect(battler, EFFECT_SLEEP_TALK))
+    if (gBattleMons[battler].status1 & STATUS1_SLEEP && !(HasMoveWithEffect(battler, EFFECT_SLEEP_TALK) || ability == ABILITY_LUCID_DREAMING))
         return TRUE;
 
     if (gBattleMons[battler].volatiles.recharge || (ability == ABILITY_FRETFUL && gDisableStructs[battler].truantCounter != 0))
@@ -4854,7 +4854,7 @@ void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
         return;
 
     if ((HasMoveWithEffect(battlerAtk, EFFECT_DREAM_EATER) || HasMoveWithEffect(battlerAtk, EFFECT_NIGHTMARE))
-      && !(HasMoveWithEffect(battlerDef, EFFECT_SNORE) || HasMoveWithEffect(battlerDef, EFFECT_SLEEP_TALK)))
+      && !(HasMoveWithEffect(battlerDef, EFFECT_SNORE) || HasMoveWithEffect(battlerDef, EFFECT_SLEEP_TALK) || gAiLogicData->abilities[battlerDef] == ABILITY_LUCID_DREAMING))
         ADJUST_SCORE_PTR(WEAK_EFFECT);
 
     if (IsPowerBasedOnStatus(battlerAtk, EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_SLEEP)

@@ -5279,9 +5279,9 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         case ABILITY_FOUL_AROMA:
             if (IsBattlerAlive(gBattlerAttacker)
              && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && CanBeConfused(gBattlerAttacker)
              && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), move)
              && IsBattlerTurnDamaged(gBattlerTarget)
+             && CanBeConfused(gBattlerAttacker)
              && RandomPercentage(RNG_FOUL_AROMA, 30))
             {
                 gEffectBattler = gBattlerAttacker;
@@ -8840,6 +8840,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
+    case ABILITY_CLEAR_VOICE:
+        if (IsSoundMove(move))
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
+        break;
     case ABILITY_SHARPNESS:
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -9148,10 +9152,6 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     case ABILITY_ONI_TACTICS:
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-        break;
-    case ABILITY_CLEAR_VOICE:
-        if (IsSoundMove(move))
-            modifier = uq4_12_multiply(modifier, UQ_4_12(1.1));
         break;
     case ABILITY_PROTOSYNTHESIS:
         if (!(gBattleMons[battlerAtk].volatiles.transformed))

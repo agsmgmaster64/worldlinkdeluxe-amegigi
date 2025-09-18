@@ -4008,7 +4008,10 @@ static void PrintMonAbilityName(void)
 static void PrintMonAbilityDescription(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum, FALSE);
-    PrintTextOnWindow_BW_Font(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 4, 15, 0, 0);
+    const u8 *description = gAbilitiesInfo[ability].descriptionLong;
+    if (description == NULL)
+        description = gAbilitiesInfo[ability].description;
+    PrintTextOnWindow_BW_Font(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), description, 4, 15, 0, 0);
 }
 
 static void BufferMonTrainerMemo(void)
