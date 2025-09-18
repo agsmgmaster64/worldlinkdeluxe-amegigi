@@ -7,25 +7,34 @@ ASSUMPTIONS
     ASSUME(GetMoveCategory(MOVE_CONFUSE_RAY) == DAMAGE_CATEGORY_STATUS);
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon")
+SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon (Gen7+)")
 {
+    u32 gen;
+    PARAMETRIZE { gen = GEN_6; }
+    PARAMETRIZE { gen = GEN_7; }
     GIVEN {
-        PLAYER(SPECIES_TECH_YAMAME);
-        OPPONENT(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
+        WITH_CONFIG(GEN_CONFIG_PRANKSTER_DARK_TYPES, gen);
+        PLAYER(SPECIES_UMBREON);
+        OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
-        MESSAGE("It doesn't affect Umbreon…");
+        if (gen == GEN_6) {
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
+        } else {
+            NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
+            MESSAGE("It doesn't affect Umbreon…");
+        }
     }
 }
 
 SINGLE_BATTLE_TEST("Prankster-affected moves don't affect Dark-type Pokémon after they switch-in")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_TECH_YAMAME);
-        OPPONENT(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
+        WITH_CONFIG(GEN_CONFIG_PRANKSTER_DARK_TYPES, GEN_7);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_UMBREON);
+        OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
@@ -49,39 +58,62 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves affect Ally Dark-type Pokémon")
     }
 }
 
-SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark-type Pokémon")
+SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark-type Pokémon (Gen 7+)")
 {
+    u32 gen;
+    PARAMETRIZE { gen = GEN_6; }
+    PARAMETRIZE { gen = GEN_7; }
     GIVEN {
-        PLAYER(SPECIES_TECH_YAMAME);
-        OPPONENT(SPECIES_ATTACK_SUIKA) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Moves(MOVE_CONFUSE_RAY); };
+        WITH_CONFIG(GEN_CONFIG_PRANKSTER_DARK_TYPES, gen);
+        PLAYER(SPECIES_UMBREON);
+        OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CONFUSE_RAY); };
     } WHEN {
         TURN { MOVE(opponent, MOVE_ASSIST); }
     } SCENE {
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
-        MESSAGE("It doesn't affect Umbreon…");
+        if (gen == GEN_6) {
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
+        } else {
+            NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, opponent);
+            MESSAGE("It doesn't affect Umbreon…");
+        }
     }
 }
 
 // Tested on Showdown, even though Bulbapedia says otherwise.
 DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect Dark-type Pokémon")
 {
+    u32 gen;
+    PARAMETRIZE { gen = GEN_6; }
+    PARAMETRIZE { gen = GEN_7; }
     GIVEN {
-        PLAYER(SPECIES_ATTACK_SUIKA) { Speed(20); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10);}
-        OPPONENT(SPECIES_TECH_YAMAME) { Speed(1); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(1); }
+        WITH_CONFIG(GEN_CONFIG_PRANKSTER_DARK_TYPES, gen);
+        PLAYER(SPECIES_VOLBEAT) { Speed(20); Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(10);}
+        OPPONENT(SPECIES_UMBREON) { Speed(15); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_UMBREON) { Speed(1); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_CONFUSE_RAY, target: opponentLeft);
+               MOVE(opponentLeft, MOVE_U_TURN, target: playerRight, WITH_RNG(RNG_CONFUSION, FALSE));
+               SEND_OUT(opponentLeft, 2);
                MOVE(playerRight, MOVE_INSTRUCT, target: playerLeft);
         }
     } SCENE {
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
-        MESSAGE("It doesn't affect the opposing Umbreon…");
+        if (gen == GEN_6) {
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
+        } else {
+            NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
+            MESSAGE("It doesn't affect the opposing Umbreon…");
+        }
         MESSAGE("Wobbuffet used Instruct!");
         MESSAGE("Volbeat used Confuse Ray!");
-        NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
-        MESSAGE("It doesn't affect the opposing Umbreon…");
+        if (gen == GEN_6) {
+            ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
+        } else {
+            NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_CONFUSE_RAY, playerLeft);
+            MESSAGE("It doesn't affect the opposing Umbreon…");
+        }
     }
 }
 
@@ -171,8 +203,9 @@ SINGLE_BATTLE_TEST("Prankster-affected moves which are reflected by Magic Coat c
     PARAMETRIZE { sableyeAbility = ABILITY_KEEN_EYE; }
 
     GIVEN {
-        PLAYER(SPECIES_PLACEHOLD_RAIKO) { Ability(sableyeAbility); }
-        OPPONENT(SPECIES_CHIBI_PARSEE) { Ability(ABILITY_PRANKSTER); }
+        WITH_CONFIG(GEN_CONFIG_PRANKSTER_DARK_TYPES, GEN_7);
+        PLAYER(SPECIES_SABLEYE) { Ability(sableyeAbility); }
+        OPPONENT(SPECIES_MURKROW) { Ability(ABILITY_PRANKSTER); }
     } WHEN {
         TURN { MOVE(player, MOVE_MAGIC_COAT); MOVE(opponent, MOVE_CONFUSE_RAY); }
     } SCENE {
