@@ -659,11 +659,6 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battler)
     LoadPalette(paletteData, paletteOffset, PLTT_SIZE_4BPP);
     LoadPalette(paletteData, BG_PLTT_ID(8) + BG_PLTT_ID(battler), PLTT_SIZE_4BPP);
 
-    UniquePalette(paletteOffset, species, personalityValue, isShiny);
-    CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);
-    UniquePalette(0x80 + battler * 16, species, personalityValue, isShiny);
-    CpuCopy32(gPlttBufferFaded + 0x80 + battler * 16, gPlttBufferUnfaded + 0x80 + battler * 16, 32);
-
     // transform's pink color
     if (gBattleSpritesDataPtr->battlerData[battler].transformSpecies != SPECIES_NONE)
     {
@@ -967,8 +962,6 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u32 transformType,
         paletteOffset = OBJ_PLTT_ID(battlerAtk);
         paletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, isShiny, personalityValue);
         LoadPalette(paletteData, paletteOffset, PLTT_SIZE_4BPP);
-        UniquePalette(paletteOffset, GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_SPECIES), personalityValue, isShiny);
-        CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, PLTT_SIZE_4BPP);
         gSprites[gBattlerSpriteIds[battlerAtk]].y = GetBattlerSpriteDefault_Y(battlerAtk);
         StartSpriteAnim(&gSprites[gBattlerSpriteIds[battlerAtk]], 0);
         SetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_NICKNAME, GetSpeciesName(targetSpecies));
@@ -1016,9 +1009,6 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, u32 transformType,
     paletteOffset = OBJ_PLTT_ID(battlerAtk);
     paletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, isShiny, personalityValue);
     LoadPalette(paletteData, paletteOffset, PLTT_SIZE_4BPP);
-    UniquePalette(paletteOffset, targetSpecies, personalityValue, isShiny);
-    CpuCopy32(gPlttBufferFaded + paletteOffset, gPlttBufferUnfaded + paletteOffset, 32);
-
 
     if (!transformType)
     {

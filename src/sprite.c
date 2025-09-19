@@ -1609,14 +1609,6 @@ u32 LoadSpritePaletteWithTag(const u16 *pal, u16 tag)
     return LoadSpritePalette(&spritePal);
 }
 
-u32 LoadUniqueSpritePaletteWithTag(const u16 *pal, u16 species, u32 personality, bool8 isShiny)
-{
-    struct SpritePalette spritePal;
-    spritePal.data = pal;
-    spritePal.tag = species;
-    return LoadUniqueSpritePalette(&spritePal, species, personality, isShiny);
-}
-
 void LoadSpritePalettes(const struct SpritePalette *palettes)
 {
     u32 i;
@@ -1774,29 +1766,6 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
     }
 
     return 0;
-}
-
-u8 LoadUniqueSpritePalette(const struct SpritePalette *palette, u16 species, u32 personality, bool8 isShiny)
-{
-    u8 index = IndexOfSpritePaletteTag(palette->tag);
-
-    //if (index != 0xFF)
-    //    return index;
-
-    index = IndexOfSpritePaletteTag(0xFFFF);
-
-    if (index == 0xFF)
-    {
-        return 0xFF;
-    }
-    else
-    {
-        sSpritePaletteTags[index] = palette->tag;
-        DoLoadSpritePalette(palette->data, PLTT_ID(index));
-        UniquePalette(OBJ_PLTT_ID(index), species, personality, isShiny);
-        CpuCopy32(gPlttBufferFaded + OBJ_PLTT_ID(index), gPlttBufferUnfaded + OBJ_PLTT_ID(index), 32);
-        return index;
-    }
 }
 
 static const u8 sSpanPerImage[4][4] =

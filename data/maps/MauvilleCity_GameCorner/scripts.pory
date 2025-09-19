@@ -1430,6 +1430,92 @@ MauvilleCity_GameCorner_EventScript_NoCoinCase2::
 	releaseall
 	end
 
+MauvilleCity_GameCorner_EventScript_PhotoPrinter::
+	lockall
+	showmoneybox 0, 0
+	msgbox MauvilleCity_GameCorner_Text_TryPokemonPrinter, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MauvilleCity_GameCorner_EventScript_DeclinePhoto
+	checkmoney 50
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NotEnoughMoneyForPhoto
+	playse SE_SHOP
+	removemoney 50
+	updatemoneybox
+	waitse
+	message MauvilleCity_GameCorner_Text_ChoosePrintType
+	waitmessage
+	multichoice 21, 0, MULTICHOICE_TRAINER_CARD_ICON_TINT, TRUE
+	switch VAR_RESULT
+	case 0, MauvilleCity_GameCorner_EventScript_PrintTypeNormal
+	case 1, MauvilleCity_GameCorner_EventScript_PrintTypeBlack
+	case 2, MauvilleCity_GameCorner_EventScript_PrintTypePink
+	case 3, MauvilleCity_GameCorner_EventScript_PrintTypeSepia
+	end
+
+MauvilleCity_GameCorner_EventScript_PrintTypeNormal::
+	setvar VAR_0x8004, MON_ICON_TINT_NORMAL
+	goto MauvilleCity_GameCorner_EventScript_PrintPhoto
+	end
+
+MauvilleCity_GameCorner_EventScript_PrintTypeBlack::
+	setvar VAR_0x8004, MON_ICON_TINT_BLACK
+	goto MauvilleCity_GameCorner_EventScript_PrintPhoto
+	end
+
+MauvilleCity_GameCorner_EventScript_PrintTypePink::
+	setvar VAR_0x8004, MON_ICON_TINT_PINK
+	goto MauvilleCity_GameCorner_EventScript_PrintPhoto
+	end
+
+MauvilleCity_GameCorner_EventScript_PrintTypeSepia::
+	setvar VAR_0x8004, MON_ICON_TINT_SEPIA
+	goto MauvilleCity_GameCorner_EventScript_PrintPhoto
+	end
+
+MauvilleCity_GameCorner_EventScript_PrintPhoto::
+	message MauvilleCity_GameCorner_Text_BigSmileForPhoto
+	waitmessage
+	playse MUS_PHOTO
+	dofieldeffect FLDEFF_PHOTO_FLASH
+	delay 60
+	special UpdateTrainerCardPhotoIcons
+	msgbox MauvilleCity_GameCorner_Text_PrintIsReadyCheckTrainerCard
+	hidemoneybox
+	releaseall
+	end
+
+MauvilleCity_GameCorner_EventScript_DeclinePhoto::
+	hidemoneybox
+	releaseall
+	end
+
+MauvilleCity_GameCorner_EventScript_NotEnoughMoneyForPhoto::
+	msgbox MauvilleCity_GameCorner_Text_DontHaveEnoughMoney
+	hidemoneybox
+	releaseall
+	end
+
+MauvilleCity_GameCorner_Text_TryPokemonPrinter::
+	.string "It's a Puppet Printer!\p"
+	.string "It can put a print of your Puppets\n"
+	.string "on the back of your Trainer Card.\p"
+	.string "It costs only ¥50.\n"
+	.string "Would you like to try it?$"
+
+MauvilleCity_GameCorner_Text_DontHaveEnoughMoney::
+	.string "You don't have enough money.$"
+
+MauvilleCity_GameCorner_Text_ChoosePrintType::
+	.string "Please choose the print type.$"
+
+MauvilleCity_GameCorner_Text_BigSmileForPhoto::
+	.string "A big smile for the photo, please!\n"
+	.string "Three… Two… One…\p"
+	.string "Flash!$"
+
+MauvilleCity_GameCorner_Text_PrintIsReadyCheckTrainerCard::
+	.string "Your Puppet print is ready!\n"
+	.string "Check your Trainer Card.$"
+
 MauvilleCity_GameCorner_Text_ThisIsMauvilleGameCorner:
 	.string "This is MAUVILLE GAME CORNER.$"
 
