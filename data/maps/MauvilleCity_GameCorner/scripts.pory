@@ -1443,7 +1443,7 @@ MauvilleCity_GameCorner_EventScript_PhotoPrinter::
 	waitse
 	message MauvilleCity_GameCorner_Text_ChoosePrintType
 	waitmessage
-	multichoice 21, 0, MULTICHOICE_TRAINER_CARD_ICON_TINT, TRUE
+	multichoice 21, 0, MULTI_TRAINER_CARD_ICON_TINT, TRUE
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_PrintTypeNormal
 	case 1, MauvilleCity_GameCorner_EventScript_PrintTypeBlack
@@ -1474,8 +1474,8 @@ MauvilleCity_GameCorner_EventScript_PrintTypeSepia::
 MauvilleCity_GameCorner_EventScript_PrintPhoto::
 	message MauvilleCity_GameCorner_Text_BigSmileForPhoto
 	waitmessage
-	playse MUS_PHOTO
-	dofieldeffect FLDEFF_PHOTO_FLASH
+	playse MUS_RG_PHOTO
+	@dofieldeffect FLDEFF_PHOTO_FLASH
 	delay 60
 	special UpdateTrainerCardPhotoIcons
 	msgbox MauvilleCity_GameCorner_Text_PrintIsReadyCheckTrainerCard
@@ -1500,9 +1500,6 @@ MauvilleCity_GameCorner_Text_TryPokemonPrinter::
 	.string "on the back of your Trainer Card.\p"
 	.string "It costs only ¥50.\n"
 	.string "Would you like to try it?$"
-
-MauvilleCity_GameCorner_Text_DontHaveEnoughMoney::
-	.string "You don't have enough money.$"
 
 MauvilleCity_GameCorner_Text_ChoosePrintType::
 	.string "Please choose the print type.$"

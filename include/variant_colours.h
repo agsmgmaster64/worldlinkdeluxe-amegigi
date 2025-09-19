@@ -3,18 +3,18 @@
 
 struct PaletteVariant
 {
-  u8 start : 4;        // Start index of palette customisation range
-  u8 length : 4;       // Length of customisation range
-  u8 hue_amount : 3;   // Index into hue table [0,10,20,30,45,60,90,180]
-  u8 chr_amount : 2;   // Index into chroma table [0,5,10,25]
-  u8 lum_amount : 2;   // Index into luma table [0,5,10,25]
-  u8 sv_down_only : 1; // If set, switch from +/- to "down only" for both C & L (C: -2*chr, L: -2*lum)
+    u8 start : 4;        // Start index of palette customisation range
+    u8 length : 4;       // Length of customisation range
+    u8 hue_amount : 3;   // Index into hue table [0,10,20,30,45,60,90,180]
+    u8 chr_amount : 2;   // Index into chroma table [0,5,10,25]
+    u8 lum_amount : 2;   // Index into luma table [0,5,10,25]
+    u8 sv_down_only : 1; // If set, switch from +/- to "down only" for both C & L (C: -2*chr, L: -2*lum)
 };
 
 struct SpeciesVariant
 {
-  struct PaletteVariant pv1;
-  struct PaletteVariant pv2;
+    struct PaletteVariant pv1;
+    struct PaletteVariant pv2;
 };
 
 // Precomputed hue-amount table
@@ -53,62 +53,54 @@ void ApplyMonSpeciesVariantToPaletteBuffer(u32 species, bool8 shiny, u32 PID, u1
     : /*(v)==25*/ 3))
 
 #define PAL1(s, l)  \
-  .pv1.start = (s), \
-  .pv1.length = (l)
+    .pv1.start = (s), \
+    .pv1.length = (l)
 
 #define PAL2(s, l)  \
-  .pv2.start = (s), \
-  .pv2.length = (l)
+    .pv2.start = (s), \
+    .pv2.length = (l)
 
 #define HCL1(h, s, v, f)          \
-  .pv1.hue_amount = HUE_INDEX(h), \
-  .pv1.chr_amount = CHR_INDEX(s), \
-  .pv1.lum_amount = LUM_INDEX(v), \
-  .pv1.sv_down_only = (f)
+    .pv1.hue_amount = HUE_INDEX(h), \
+    .pv1.chr_amount = CHR_INDEX(s), \
+    .pv1.lum_amount = LUM_INDEX(v), \
+    .pv1.sv_down_only = (f)
 
 #define HCL2(h, s, v, f)          \
-  .pv2.hue_amount = HUE_INDEX(h), \
-  .pv2.chr_amount = CHR_INDEX(s), \
-  .pv2.lum_amount = LUM_INDEX(v), \
-  .pv2.sv_down_only = (f)
+    .pv2.hue_amount = HUE_INDEX(h), \
+    .pv2.chr_amount = CHR_INDEX(s), \
+    .pv2.lum_amount = LUM_INDEX(v), \
+    .pv2.sv_down_only = (f)
 
 #define DEFAULT_SPECIES_VARIANT \
-  {                             \
-      PAL1(1, 15),              \
-      HCL1(10, 0, 0, FALSE),    \
-  }
+{                             \
+    PAL1(1, 15),              \
+    HCL1(10, 0, 0, FALSE),    \
+}
 
 static const struct SpeciesVariant gSpeciesVariants[NUM_SPECIES] = {
-    [SPECIES_POOCHYENA] = {
-        PAL1(1, 5),
-        HCL1(0, 25, 5, FALSE),
+    [SPECIES_CHIBI_REIMU] = {
+        PAL1(2, 3),
+        HCL1(30, 15, 0, FALSE),
+        PAL2(5, 3),
+        HCL2(90, 5, 25, FALSE),
     },
-    [SPECIES_MIGHTYENA] = {
-        PAL1(1, 5),
-        HCL1(0, 25, 5, FALSE),
-    },
-    [SPECIES_ZIGZAGOON] = {
-        PAL1(5, 8),
-        HCL1(10, 25, 5, FALSE),
-    },
-    [SPECIES_LINOONE] = {
+    [SPECIES_NORMAL_REIMU] = {
         PAL1(1, 3),
-        HCL1(10, 25, 5, FALSE),
+        HCL1(30, 15, 0, FALSE),
+        PAL2(5, 3),
+        HCL2(90, 5, 25, FALSE),
     },
-    [SPECIES_WURMPLE] = {
-        PAL1(1, 4),
-        HCL1(30, 5, 0, TRUE),
+    [SPECIES_ATTACK_REIMU] = {
+        PAL1(2, 3),
+        HCL1(30, 15, 0, FALSE),
+        PAL2(11, 3),
+        HCL2(90, 5, 25, FALSE),
     },
-    [SPECIES_SMEARGLE] = {
-        PAL1(8, 6),
-        HCL1(360, 0, 0, FALSE),
-        PAL2(1, 6),
-        HCL2(10, 5, 5, TRUE),
-    },
-        [SPECIES_TYRANITAR] = {
-      PAL1(11, 3),
-      HCL1(30, 25, 0, TRUE),
-      PAL2(1, 5),
-      HCL2(0, 0, 10, FALSE),
+    [SPECIES_DEFENSE_REIMU] = {
+        PAL1(1, 3),
+        HCL1(30, 15, 0, FALSE),
+        PAL2(8, 3),
+        HCL2(90, 5, 25, FALSE),
     },
 };
