@@ -103,4 +103,28 @@ static const struct SpeciesVariant gSpeciesVariants[NUM_SPECIES] = {
         PAL2(8, 3),
         HCL2(90, 5, 25, FALSE),
     },
+    [SPECIES_CHIBI_ALICE] = {
+        PAL1(3, 3),
+        HCL1(0, 15, 15, FALSE),
+        PAL2(6, 3),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_NORMAL_ALICE] = {
+        PAL1(3, 3),
+        HCL1(0, 15, 15, FALSE),
+        PAL2(6, 3),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_ATTACK_ALICE] = {
+        PAL1(3, 3),
+        HCL1(0, 15, 15, FALSE),
+        PAL2(6, 3),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_TECH_ALICE] = {
+        PAL1(3, 3),
+        HCL1(0, 15, 15, FALSE),
+        PAL2(6, 3),
+        HCL2(45, 15, 0, FALSE),
+    },
 };

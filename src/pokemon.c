@@ -5331,7 +5331,7 @@ const u16 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny,
     static u16 sVariantPal[16];
     if (gSaveBlock2Ptr->optionsUniqueColors == 1)
         return base;
-    CpuCopy16(base, sVariantPal, sizeof(sVariantPal));
+    CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
     ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, personality, sVariantPal);
     return sVariantPal;
 }
@@ -5342,7 +5342,7 @@ const u16 *GetMonSpritePalFromSpecies(u16 species, bool32 isShiny, bool32 isFema
     static u16 sVariantPal[16];
     if (gSaveBlock2Ptr->optionsUniqueColors == 1)
         return base;
-    CpuCopy16(base, sVariantPal, sizeof(sVariantPal));
+    CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
     ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, 0x00000000, sVariantPal);
     return sVariantPal;
 }

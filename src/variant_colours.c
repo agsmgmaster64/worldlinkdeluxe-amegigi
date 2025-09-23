@@ -281,7 +281,7 @@ void ApplyPaletteVariantToPaletteBuffer(u16 pal16[16], const struct PaletteVaria
         return;
 
     u8 iStart = ClampU8(start, 0, 15);
-    u8 iEnd = ClampU8((u16)start + (u16)len, 0, 15);
+    u8 iEnd = ClampU8((u16)start + (u16)len, 0, 16); // 16 is a valid number since it is not greater than itself
 
     // Derive shifts/directions from the 16-bit PRN
     u32 rnd = (u32)prn16;
@@ -324,6 +324,24 @@ void ApplyPaletteVariantToPaletteBuffer(u16 pal16[16], const struct PaletteVaria
     }
 }
 
+void ApplyPaletteVariantToPaletteBuffer2(u16 pal16[16])
+{
+    u8 iStart = 1;
+    u8 iEnd = 15;
+
+    for (u8 i = iStart; i <= iEnd; i++)
+    {
+        u8 r5, g5, b5, h, c, l;
+        Rgb555Unpack(pal16[i], &r5, &g5, &b5);
+        Rgb5ToOklch(r5, g5, b5, &l, &c, &h);
+
+        c = 0;
+
+        OklchToRgb5(l, c, h, &r5, &g5, &b5);
+        pal16[i] = Rgb555Pack(r5, g5, b5);
+    }
+}
+
 void ApplyCustomRestrictionToPaletteBuffer(u8 hMin, u8 hMax, u8 cMin, u8 cMax, u8 lMin, u8 lMax, u16 pal16[16])
 {
 
@@ -344,6 +362,8 @@ void ApplyCustomRestrictionToPaletteBuffer(u8 hMin, u8 hMax, u8 cMin, u8 cMax, u
 
 void ApplyMonSpeciesVariantToPaletteBuffer(u32 species, bool8 shiny, u32 originalPID, u16 pal16[16])
 {
+    ApplyPaletteVariantToPaletteBuffer2(pal16);
+    /*
     const struct SpeciesVariant *sv = GetSpeciesVariants(species);
     if (sv == NULL)
         return;
@@ -361,4 +381,5 @@ void ApplyMonSpeciesVariantToPaletteBuffer(u32 species, bool8 shiny, u32 origina
         u16 prn2 = (u16)BITS(originalPID, 16, 16);
         ApplyPaletteVariantToPaletteBuffer(pal16, &sv->pv2, prn2);
     }
+    */
 }
