@@ -2238,7 +2238,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, u32 stat)
 
 bool32 BattlerStatCanRise(u32 battler, u32 battlerAbility, u32 stat)
 {
-    if (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN))
+    if (IsBattlerTerrainAffected(battler, battlerAbility, gAiLogicData->holdEffects[battler], STATUS_FIELD_HOLY_TERRAIN))
         return FALSE;
     if ((gBattleMons[battler].statStages[stat] < MAX_STAT_STAGE && battlerAbility != ABILITY_CONTRARY)
       || (battlerAbility == ABILITY_CONTRARY && gBattleMons[battler].statStages[stat] > MIN_STAT_STAGE))

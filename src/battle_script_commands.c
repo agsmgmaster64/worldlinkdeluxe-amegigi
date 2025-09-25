@@ -10311,7 +10311,7 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, u32 statId, union StatChan
     }
     else // stat increase
     {
-        if (IsBattlerTerrainAffected(battler, STATUS_FIELD_HOLY_TERRAIN)
+        if (IsBattlerTerrainAffected(battler, battlerAbility, battlerHoldEffect, STATUS_FIELD_HOLY_TERRAIN)
          && battlerAbility != ABILITY_HAKUREI_MIKO
          && flags.certain)
         {
