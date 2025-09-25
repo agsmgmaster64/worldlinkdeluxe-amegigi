@@ -1,37 +1,19 @@
-raw `
-Route101_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	.byte 0
+mapscripts Route101_MapScripts {}
 
-Route101_OnTransition:
+script Route101_EventScript_Youngster {
+	msgbox(format("If Puppets get tired, take them to a Puppet Center.\p"
+		"There's a Puppet Center in Oldale Town right close by."), MSGBOX_NPC)
 	end
+}
 
-Route101_EventScript_Youngster::
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
+script Route101_EventScript_Boy {
+	msgbox(format("Wild Puppets will jump out at you in tall grass.\p"
+		"If you want to catch Puppets, you have to go into the tall grass and search."), MSGBOX_NPC)
 	end
+}
 
-Route101_EventScript_Boy::
-	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
+script Route101_EventScript_RouteSign {
+	msgbox(format("Route 101\N"
+		"{UP_ARROW} Oldale Town$"), MSGBOX_SIGN)
 	end
-
-Route101_EventScript_RouteSign::
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-	end
-
-Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If Puppets get tired, take them to\n"
-	.string "a Puppet Center.\p"
-	.string "There's a Puppet Center in Oldale\n"
-	.string "Town right close by.$"
-
-Route101_Text_WildPokemonInTallGrass:
-	.string "Wild Puppets will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch Puppets, you have\n"
-	.string "to go into the tall grass and search.$"
-
-Route101_Text_RouteSign:
-	.string "Route 101\n"
-	.string "{UP_ARROW} Oldale Town$"
-
-`
+}

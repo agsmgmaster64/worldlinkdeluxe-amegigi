@@ -1,6 +1,28 @@
+const SHIORI_LAB_STATE_INTRO = 0
+const SHIORI_LAB_STATE_GOT_STARTER = 1
+const SHIORI_LAB_STATE_AKYUU_RETURN = 4
+const SHIORI_LAB_STATE_GOT_DEX = 5
+
+const AKYUU_103_STATE_LOOKING = 0
+const AKYUU_103_STATE_RETURN = 1
+
+mapscripts Route103_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		call(ProfBirch_EventScript_UpdateLocation)
+		end
+	}
+	MAP_SCRIPT_ON_LOAD {
+		if (flag(FLAG_SYS_GAME_CLEAR)) {
+			setmetatile(45, 5, METATILE_General_CaveEntrance_Top, TRUE)
+			setmetatile(45, 6, METATILE_General_CaveEntrance_Bottom, FALSE)
+		}
+		end
+	}
+}
+
 script Route103_EventScript_Ralsei {
 	lockall
-	msgbox(Route103_Text_RalseiRoute103Pokemon)
+	msgbox(format("Now, what did Shiori want me to find in here again?"))
 	closemessage
 	playbgm(MUS_ENCOUNTER_MAY, TRUE)
 	applymovement(LOCALID_ROUTE103_RALSEI, Common_Movement_FacePlayer)
@@ -9,10 +31,16 @@ script Route103_EventScript_Ralsei {
 	waitmovement(0)
 	applymovement(LOCALID_ROUTE103_RALSEI, Common_Movement_Delay48)
 	waitmovement(0)
-	msgbox(Route103_Text_RalseiLetsBattle)
+	msgbox(format("Oh hello there, what are you doing here?\p"
+		"I see, so you're {PLAYER}\Nand my partner Shiori has sent you to retrieve me back, huh?\p"
+		"She even trusted you with your own Puppet as well, that's pretty nice.\p"
+		"Forgive me, but may I test your skills here to see if you're worthy of holding that Puppet there?\p"
+		"I promise not to be too hard on you with this battle here, since this must be your first trainer battle here."))
 	closemessage
-	trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, Route103_Text_RalseiDefeated)
-	msgbox(Route103_Text_RalseiTimeToHeadBack)
+	trainerbattle_no_intro(TRAINER_MAY_ROUTE_103_TREECKO, "Good job!\nYou managed to beat me here!")
+	msgbox(format("I see you carry great potential within, even if you are new to this whole Puppet thing.\p"
+		"No wonder Shiori trusted you with this Puppet that you have with you.\p"
+		"Very well, I guess I'll have to go back to the Lab to see what Shiori wants me to do."))
 	closemessage
 	switch(var(VAR_FACING)) {
 		case DIR_SOUTH:
@@ -61,10 +89,10 @@ script Route103_EventScript_RalseiExitFacingSouth {
 
 script Route103_EventScript_RalseiEnd {
 	removeobject(LOCALID_ROUTE103_RALSEI)
-	setvar(VAR_BIRCH_LAB_STATE, 4)
+	setvar(VAR_BIRCH_LAB_STATE, SHIORI_LAB_STATE_AKYUU_RETURN)
 	clearflag(FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL)
 	setflag(FLAG_DEFEATED_RIVAL_ROUTE103)
-	setvar(VAR_OLDALE_RIVAL_STATE, 1)
+	setvar(VAR_OLDALE_RIVAL_STATE, AKYUU_103_STATE_RETURN)
 	clearflag(FLAG_HIDE_OLDALE_TOWN_RIVAL)
 	savebgm(MUS_DUMMY)
 	fadedefaultbgm
@@ -72,46 +100,7 @@ script Route103_EventScript_RalseiEnd {
 	end
 }
 
-text Route103_Text_RalseiRoute103Pokemon {
-	format("Now, what did Shiori want me to find in here again?")
-}
-
-text Route103_Text_RalseiLetsBattle {
-	format("Oh hello there, what are you doing here?\p"
-	"I see, so you're {PLAYER}\Nand my partner Shiori has sent you to retrieve me back, huh?\p"
-	"She even trusted you with your own Puppet as well, that's pretty nice.\p"
-	"Forgive me, but may I test your skills here to see if you're worthy of holding that Puppet there?\p"
-	"I promise not to be too hard on you with this battle here, since this must be your first trainer battle here.")
-}
-
-text Route103_Text_RalseiDefeated {
-	format("Good job!\nYou managed to beat me here!")
-}
-
-text Route103_Text_RalseiTimeToHeadBack {
-	format("I see you carry great potential within, even if you are new to this whole Puppet thing.\p"
-	"No wonder Shiori trusted you with this Puppet that you have with you.\p"
-	"Very well, I guess I'll have to go back to the Lab to see what Shiori wants me to do.")
-}
 raw `
-Route103_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route103_OnTransition
-	map_script MAP_SCRIPT_ON_LOAD, Route103_OnLoad
-	.byte 0
-
-Route103_OnTransition:
-	call ProfBirch_EventScript_UpdateLocation
-	end
-
-Route103_OnLoad:
-	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
-	end
-
-Route103_EventScript_OpenAlteringCave::
-	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, TRUE
-	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, FALSE
-	return
-
 Route103_Movement_RivalExitFacingNorth1:
 	walk_left
 	walk_down

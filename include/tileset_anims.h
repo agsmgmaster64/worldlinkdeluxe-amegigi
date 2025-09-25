@@ -27,6 +27,7 @@ void InitTilesetAnim_Building(void);
 void InitTilesetAnim_RG_Building(void);
 void InitTilesetAnim_Cave(void);
 void InitTilesetAnim_RG_MtEmber(void);
+void InitTilesetAnim_RG_RockTunnel(void);
 void InitTilesetAnim_BikeShop(void);
 void InitTilesetAnim_Underwater(void);
 void InitTilesetAnim_SootopolisGym(void);

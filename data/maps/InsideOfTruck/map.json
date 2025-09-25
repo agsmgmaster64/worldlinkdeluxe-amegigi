@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_TRUCK_BOX_TOP",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
       "x": 0,
       "y": 0,
@@ -31,8 +31,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_TRUCK_BOX_BOTTOM_L",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
       "x": 0,
       "y": 3,
@@ -46,8 +46,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_TRUCK_BOX_BOTTOM_R",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
       "x": 2,
       "y": 3,

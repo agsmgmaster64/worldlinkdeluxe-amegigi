@@ -872,7 +872,7 @@ const struct Tileset gTileset_RG_RockTunnel =
     .palettes = gTilesetPalettes_RG_RockTunnel,
     .metatiles = gMetatiles_RG_RockTunnel,
     .metatileAttributes = gMetatileAttributes_RG_RockTunnel,
-    .callback = NULL,
+    .callback = InitTilesetAnim_RG_RockTunnel,
 };
 
 const struct Tileset gTileset_RG_DiglettsCave =

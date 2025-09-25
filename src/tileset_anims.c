@@ -267,6 +267,18 @@ static const u16 *const sTilesetAnims_RG_MtEmber_Steam[] = {
     sTilesetAnims_RG_MtEmber_Steam_Frame3
 };
 
+static const u16 sTilesetAnims_RG_RockTunnel_Waves_Frame0[] = INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/anim/waves/0.4bpp");
+static const u16 sTilesetAnims_RG_RockTunnel_Waves_Frame1[] = INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/anim/waves/1.4bpp");
+static const u16 sTilesetAnims_RG_RockTunnel_Waves_Frame2[] = INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/anim/waves/2.4bpp");
+static const u16 sTilesetAnims_RG_RockTunnel_Waves_Frame3[] = INCBIN_U16("data/tilesets/frlg/secondary/rock_tunnel/anim/waves/3.4bpp");
+
+static const u16 *const sTilesetAnims_RG_RockTunnel_Waves[] = {
+    sTilesetAnims_RG_RockTunnel_Waves_Frame0,
+    sTilesetAnims_RG_RockTunnel_Waves_Frame1,
+    sTilesetAnims_RG_RockTunnel_Waves_Frame2,
+    sTilesetAnims_RG_RockTunnel_Waves_Frame3
+};
+
 const u16 gTilesetAnims_Lavaridge_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/0.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/1.4bpp");
 const u16 gTilesetAnims_Lavaridge_Steam_Frame2[] = INCBIN_U16("data/tilesets/secondary/lavaridge/anim/steam/2.4bpp");
@@ -872,6 +884,24 @@ void InitTilesetAnim_RG_MtEmber(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 256;
     sSecondaryTilesetAnimCallback = TilesetAnim_RG_MtEmber;
+}
+
+static void QueueAnimTiles_RG_RockTunnel_Waves(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_RG_RockTunnel_Waves[timer % ARRAY_COUNT(sTilesetAnims_RG_RockTunnel_Waves)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(870)), 8 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_RG_RockTunnel(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_RG_RockTunnel_Waves(timer / 16);
+}
+
+void InitTilesetAnim_RG_RockTunnel(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_RG_RockTunnel;
 }
 
 static void QueueAnimTiles_Mauville_Game_Corner_Lights(u16 timer)

@@ -13,11 +13,11 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
       "x": 15,
       "y": 12,
@@ -31,8 +31,8 @@
       "flag": "FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_BIRTH_ISLAND_DEOXYS",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_DEOXYS",
       "x": 15,
       "y": 3,
@@ -55,10 +55,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

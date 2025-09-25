@@ -9793,7 +9793,7 @@ Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
-Name: Maribel
+Name: Akyuu
 Class: Rival
 Pic: Maribel
 Gender: Female
@@ -9801,9 +9801,11 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Chibi Momiji
+Akyuu
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Growl
 
 === TRAINER_MAY_ROUTE_110_TREECKO ===
 Name: Maribel

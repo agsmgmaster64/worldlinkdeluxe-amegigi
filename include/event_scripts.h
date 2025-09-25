@@ -422,7 +422,6 @@ extern const u8 EventScript_UseRockClimbTool[];
 
 //player pc
 extern const u8 LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC[];
-extern const u8 LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC[];
 
 // Mauville Old Man (Giddy)
 extern const u8 GiddyText_Is[];
@@ -555,7 +554,6 @@ extern const u8 MauvilleCity_PokemonCenter_1F_Text_HotSpringsAction[];
 extern const u8 MauvilleCity_PokemonCenter_1F_Text_HotSpringsStory[];
 
 extern const u8 LittlerootTown_BrendansHouse_2F_EventScript_PC[];
-extern const u8 LittlerootTown_MaysHouse_2F_EventScript_PC[];
 extern const u8 EventScript_PC[];
 extern const u8 EventScript_AccessPokemonBoxLink[];
 extern const u8 EventScript_AccessMusicPlayer[];
