@@ -13,7 +13,7 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "type": "object",
@@ -86,8 +86,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_WALDAS_DAD",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 4,
       "y": 4,
@@ -138,10 +138,6 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

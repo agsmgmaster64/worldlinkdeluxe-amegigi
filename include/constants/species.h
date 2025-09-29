@@ -589,7 +589,7 @@
 #define SPECIES_PLACEHOLD_SHION                         576 // Placeholder
 #define SPECIES_CHIBI_JOON                              577
 #define SPECIES_NORMAL_JOON                             578
-#define SPECIES_PLACEHOLD_JOON                          579 // Placeholder
+#define SPECIES_ATTACK_JOON                          579 // Placeholder
 #define SPECIES_CHIBI_MIYOI                             580
 #define SPECIES_NORMAL_MIYOI                            581
 #define SPECIES_PLACEHOLD_MIYOI                         582 // Placeholder

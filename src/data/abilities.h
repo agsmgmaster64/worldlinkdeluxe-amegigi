@@ -987,7 +987,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 3,
     },
 
-    [ABILITY_SOLID_ROCK] =
+    [ABILITY_GLAMOROUS] =
     {
         .name = _("Solid Rock"),
         .description = COMPOUND_STRING("Weakens “supereffective”."),

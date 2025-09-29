@@ -9625,7 +9625,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         }
         break;
     case ABILITY_FILTER:
-    case ABILITY_SOLID_ROCK:
+    case ABILITY_GLAMOROUS:
     case ABILITY_PRISM_ARMOR:
         if (ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
         {

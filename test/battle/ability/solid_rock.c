@@ -5,7 +5,7 @@ SINGLE_BATTLE_TEST("Solid Rock reduces damage to Super Effective moves by 0.75",
 {
     u32 ability;
     PARAMETRIZE { ability = ABILITY_STURDY; }
-    PARAMETRIZE { ability = ABILITY_SOLID_ROCK; }
+    PARAMETRIZE { ability = ABILITY_GLAMOROUS; }
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_CARRACOSTA].types[0] == TYPE_WATER);
         ASSUME(gSpeciesInfo[SPECIES_CARRACOSTA].types[1] == TYPE_ROCK);

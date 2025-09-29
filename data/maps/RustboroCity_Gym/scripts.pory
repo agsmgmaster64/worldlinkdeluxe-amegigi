@@ -1,37 +1,45 @@
-raw `
-RustboroCity_Gym_MapScripts::
-	.byte 0
+mapscripts RustboroCity_Gym_MapScripts {}
 
-RustboroCity_Gym_EventScript_Roxanne::
-	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
-	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, RustboroCity_Gym_EventScript_GiveRockTomb
-	msgbox RustboroCity_Gym_Text_RoxannePostBattle, MSGBOX_DEFAULT
+script RustboroCity_Gym_EventScript_Roxanne {
+	trainerbattle_single(TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC)
+	if (!flag(FLAG_RECEIVED_TM_ROCK_TOMB)) {
+		goto(RustboroCity_Gym_EventScript_GiveRockTomb)
+	}
+	msgbox(RustboroCity_Gym_Text_RoxannePostBattle)
 	release
 	end
+}
 
-RustboroCity_Gym_EventScript_RoxanneDefeated::
+script RustboroCity_Gym_EventScript_RoxanneDefeated {
 	hidespeakername
-	message RustboroCity_Gym_Text_ReceivedStoneBadge
+	message(RustboroCity_Gym_Text_ReceivedStoneBadge)
 	waitmessage
-	call Common_EventScript_PlayGymBadgeFanfare
-	msgbox RustboroCity_Gym_Text_StoneBadgeInfoTakeThis, MSGBOX_DEFAULT
-	setflag FLAG_DEFEATED_RUSTBORO_GYM
-	setflag FLAG_BADGE01_GET
-	setvar VAR_RUSTBORO_CITY_STATE, 1
-	addvar VAR_PETALBURG_GYM_STATE, 1
-	setvar VAR_0x8008, 1
-	call Common_EventScript_SetGymTrainers
-	call_if_eq VAR_PETALBURG_GYM_STATE, 6, Common_EventScript_ReadyPetalburgGymForBattle
-	goto RustboroCity_Gym_EventScript_GiveRockTomb
-	end
+	call(Common_EventScript_PlayGymBadgeFanfare)
+	msgbox(RustboroCity_Gym_Text_StoneBadgeInfoTakeThis)
+	setflag(FLAG_DEFEATED_RUSTBORO_GYM)
+	setflag(FLAG_BADGE01_GET)
+	setvar(VAR_RUSTBORO_CITY_STATE, 1)
+	addvar(VAR_PETALBURG_GYM_STATE, 1)
+	setvar(VAR_0x8008, 1)
+	call(Common_EventScript_SetGymTrainers)
+	if (var(VAR_PETALBURG_GYM_STATE) == 6) {
+		call(Common_EventScript_ReadyPetalburgGymForBattle)
+	}
+	goto(RustboroCity_Gym_EventScript_GiveRockTomb)
+}
 
-RustboroCity_Gym_EventScript_GiveRockTomb::
-	giveitem ITEM_TM_ROCK_TOMB
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM_ROCK_TOMB
-	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
+script RustboroCity_Gym_EventScript_GiveRockTomb {
+	giveitem(ITEM_TM_ROCK_TOMB)
+	if (!var(VAR_RESULT)) {
+		goto(Common_EventScript_ShowBagIsFull)
+	}
+	setflag(FLAG_RECEIVED_TM_ROCK_TOMB)
+	msgbox(RustboroCity_Gym_Text_ExplainRockTomb)
 	release
 	end
+}
+
+raw `
 
 RustboroCity_Gym_EventScript_RoxanneRematch::
 	trainerbattle_rematch_double TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxannePreRematch, RustboroCity_Gym_Text_RoxanneRematchDefeat, RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
@@ -93,13 +101,6 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	pokenavcall RustboroCity_Gym_Text_RoxanneRegisterCall
 	waitmessage
 	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox RustboroCity_Gym_Text_RegisteredRoxanne, MSGBOX_DEFAULT
-	waitfanfare
-	closemessage
-	delay 30
-	setflag FLAG_ENABLE_ROXANNE_MATCH_CALL
-	clearflag FLAG_ENABLE_ROXANNE_FIRST_CALL
 	releaseall
 	end
 
@@ -234,17 +235,7 @@ RustboroCity_Gym_Text_GymStatueCertified:
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … …\n"
 	.string "… … … … … Beep!\p"
-	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
-	.string "This is ROXANNE of RUSTBORO CITY.\p"
-	.string "I heard from BRAWLY that you're\n"
-	.string "moving up through the ranks of\l"
-	.string "TRAINERS at an incredible clip.\p"
-	.string "Well, I'd rather not think that\n"
-	.string "I can't beat you.\p"
-	.string "I promise, I will shape up my GYM\n"
-	.string "so that you may challenge us again.\p"
-	.string "I hope you'll be looking forward to\n"
-	.string "that occasion as much as me!\p"
+	.string "But nobody came…\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 

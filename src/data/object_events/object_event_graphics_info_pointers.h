@@ -266,6 +266,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hiker2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Engineer;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kindler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SuperNerd;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BugCatcher2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Twin2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_RENKO_NORMAL] =             &gObjectEventGraphicsInfo_BrendanNormal,
@@ -527,6 +533,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ENGINEER] =                 &gObjectEventGraphicsInfo_Engineer,
     [OBJ_EVENT_GFX_KINDLER] =                  &gObjectEventGraphicsInfo_Kindler,
     [OBJ_EVENT_GFX_SUPER_NERD] =               &gObjectEventGraphicsInfo_SuperNerd,
+    [OBJ_EVENT_GFX_LASS_2] =                   &gObjectEventGraphicsInfo_Lass2,
+    [OBJ_EVENT_GFX_BUG_CATCHER_2] =            &gObjectEventGraphicsInfo_BugCatcher2,
+    [OBJ_EVENT_GFX_TWIN_2] =                   &gObjectEventGraphicsInfo_Twin2,
+    [OBJ_EVENT_GFX_SCHOOL_KID_F] =             &gObjectEventGraphicsInfo_SchoolKidF,
+    [OBJ_EVENT_GFX_RICH_BOY_2] =               &gObjectEventGraphicsInfo_RichBoy2,
+    [OBJ_EVENT_GFX_LADY] =                     &gObjectEventGraphicsInfo_Lady,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
