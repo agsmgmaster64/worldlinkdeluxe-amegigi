@@ -362,8 +362,9 @@ void ApplyCustomRestrictionToPaletteBuffer(u8 hMin, u8 hMax, u8 cMin, u8 cMax, u
 
 void ApplyMonSpeciesVariantToPaletteBuffer(u32 species, bool8 shiny, u32 originalPID, u16 pal16[16])
 {
-    ApplyPaletteVariantToPaletteBuffer2(pal16);
     /*
+    ApplyPaletteVariantToPaletteBuffer2(pal16);
+    */
     const struct SpeciesVariant *sv = GetSpeciesVariants(species);
     if (sv == NULL)
         return;
@@ -381,5 +382,4 @@ void ApplyMonSpeciesVariantToPaletteBuffer(u32 species, bool8 shiny, u32 origina
         u16 prn2 = (u16)BITS(originalPID, 16, 16);
         ApplyPaletteVariantToPaletteBuffer(pal16, &sv->pv2, prn2);
     }
-    */
 }

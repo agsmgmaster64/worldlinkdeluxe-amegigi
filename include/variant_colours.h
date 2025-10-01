@@ -127,4 +127,46 @@ static const struct SpeciesVariant gSpeciesVariants[NUM_SPECIES] = {
         PAL2(6, 3),
         HCL2(45, 15, 0, FALSE),
     },
+    [SPECIES_CHIBI_NAZRIN] = {
+        PAL1(10, 4),
+        HCL1(90, 5, 25, FALSE),
+        PAL2(1, 2),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_NORMAL_NAZRIN] = {
+        PAL1(11, 4),
+        HCL1(90, 5, 25, FALSE),
+        PAL2(1, 2),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_TECH_NAZRIN] = {
+        PAL1(11, 4),
+        HCL1(90, 5, 25, FALSE),
+        PAL2(1, 2),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_HELPER_NAZRIN] = {
+        PAL1(11, 4),
+        HCL1(90, 5, 25, FALSE),
+        PAL2(1, 2),
+        HCL2(45, 15, 0, FALSE),
+    },
+    [SPECIES_CHIBI_TOKIKO] = {
+        PAL1(1, 3),
+        HCL1(45, 15, 0, FALSE),
+        PAL2(5, 4),
+        HCL2(90, 5, 25, FALSE),
+    },
+    [SPECIES_NORMAL_TOKIKO] = {
+        PAL1(1, 3),
+        HCL1(45, 15, 0, FALSE),
+        PAL2(5, 4),
+        HCL2(90, 5, 25, FALSE),
+    },
+    [SPECIES_ATTACK_TOKIKO] = {
+        PAL1(1, 3),
+        HCL1(45, 15, 0, FALSE),
+        PAL2(5, 4),
+        HCL2(90, 5, 25, FALSE),
+    },
 };
