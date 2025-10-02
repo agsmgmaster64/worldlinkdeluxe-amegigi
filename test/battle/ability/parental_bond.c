@@ -105,9 +105,10 @@ DOUBLE_BATTLE_TEST("Parental Bond does not convert multi-target moves into a two
 
 SINGLE_BATTLE_TEST("Parental Bond-converted moves only hit once on Lightning Rod/Storm Drain mons")
 {
-    u16 move, species, ability, type;
-    PARAMETRIZE { move = MOVE_THUNDERBOLT; ability = ABILITY_LIGHTNING_ROD; species = SPECIES_RAICHU; type = TYPE_WIND; }
-    PARAMETRIZE { move = MOVE_SURF; ability = ABILITY_STORM_DRAIN; species = SPECIES_SPEED_YORIHIME; type = TYPE_WATER; }
+    u16 move, species, type;
+    enum Ability ability;
+    PARAMETRIZE { move = MOVE_THUNDERBOLT; ability = ABILITY_LIGHTNING_ROD; species = SPECIES_RAICHU; type = TYPE_ELECTRIC; }
+    PARAMETRIZE { move = MOVE_SURF; ability = ABILITY_STORM_DRAIN; species = SPECIES_LILEEP; type = TYPE_WATER; }
     GIVEN {
         ASSUME(GetMoveStrikeCount(move) < 2);
         ASSUME(GetMoveType(move) == type);

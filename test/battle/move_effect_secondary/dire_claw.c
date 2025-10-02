@@ -65,7 +65,8 @@ SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze poison/electric types respe
 SINGLE_BATTLE_TEST("Dire Claw cannot poison/paralyze/cause to fall asleep Pokémon with abilities preventing respective statuses")
 {
     u8 statusAnim;
-    u16 species, ability;
+    u16 species;
+    enum Ability ability;
     u32 rng;
     PARAMETRIZE { statusAnim = B_ANIM_STATUS_PRZ; rng = MOVE_EFFECT_PARALYSIS; species = SPECIES_NORMAL_KOAKUMA; ability = ABILITY_LIGHTNING_ROD; }
     PARAMETRIZE { statusAnim = B_ANIM_STATUS_PRZ; rng = MOVE_EFFECT_PARALYSIS; species = SPECIES_ATTACK_MOKOU; ability = ABILITY_VOLT_ABSORB; }

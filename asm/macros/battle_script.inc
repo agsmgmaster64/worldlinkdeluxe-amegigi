@@ -697,10 +697,10 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryhealhalfhealth failInstr:req, battler:req
+	.macro tryhealhalfhealth battler:req, failInstr:req
 	.byte 0x7b
-	.4byte \failInstr
 	.byte \battler
+	.4byte \failInstr
 	.endm
 
 	.macro trymirrormove
@@ -1012,8 +1012,9 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryrestorehpberry
+	.macro tryrestorehpberry battler:req
 	.byte 0xbb
+	.byte \battler
 	.endm
 
 	.macro halvehp failInstr:req
@@ -1375,11 +1376,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro itemstatchangeeffects battler:req
-	callnative BS_RunStatChangeItems
-	.byte \battler
-	.endm
-
 	.macro allyswitchswapbattlers
 	callnative BS_AllySwitchSwapBattler
 	.endm
@@ -1434,7 +1430,7 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro setpledgestatus battler:req sidestatus:req
+	.macro setpledgestatus battler:req, sidestatus:req
 	callnative BS_SetPledgeStatus
 	.byte \battler
 	.4byte \sidestatus

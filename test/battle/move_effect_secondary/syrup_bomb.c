@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Syrup Bomb is prevented by Bulletproof")
 SINGLE_BATTLE_TEST("Sticky Syrup speed reduction is prevented by Clear Body, White Smoke or Full Metal Body")
 {
     u32 species;
-    u32 ability;
+    enum Ability ability;
 
     PARAMETRIZE { species = SPECIES_NORMAL_MEIRA; ability = ABILITY_HAKUREI_MIKO; }
     PARAMETRIZE { species = SPECIES_NORMAL_HATATE; ability = ABILITY_MAGIC_BARRIER; }

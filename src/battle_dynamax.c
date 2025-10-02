@@ -74,7 +74,7 @@ static const struct GMaxMove sGMaxMoveTable[] =
 bool32 CanDynamax(u32 battler)
 {
     u16 species = GetBattlerVisualSpecies(battler);
-    enum ItemHoldEffect holdEffect = GetBattlerHoldEffect(battler, FALSE);
+    enum ItemHoldEffect holdEffect = GetBattlerHoldEffectIgnoreNegation(battler);
 
     if (B_FLAG_DYNAMAX_BATTLE == 0 || (B_FLAG_DYNAMAX_BATTLE != 0 && !FlagGet(B_FLAG_DYNAMAX_BATTLE)))
         return FALSE;

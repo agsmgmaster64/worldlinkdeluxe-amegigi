@@ -20,8 +20,9 @@ DOUBLE_BATTLE_TEST("Stalwart ignores redirection from Follow-Me")
 
 DOUBLE_BATTLE_TEST("Stalwart stops Lightning Rod and Storm Drain from redirecting moves")
 {
-    u32 ability, species;
-    PARAMETRIZE { ability = ABILITY_STORM_DRAIN; species = SPECIES_FEMALE_SHINGYOKU; }
+    enum Ability ability;
+    u32 species;
+    PARAMETRIZE { ability = ABILITY_STORM_DRAIN; species = SPECIES_LUMINEON; }
     PARAMETRIZE { ability = ABILITY_LIGHTNING_ROD; species = SPECIES_RAICHU; }
     GIVEN {
         ASSUME(GetMoveType(MOVE_SPARK) == TYPE_ELECTRIC);

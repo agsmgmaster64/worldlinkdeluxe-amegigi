@@ -1440,8 +1440,8 @@ static u32 GetBallThrowableState(void)
         return BALL_THROW_UNABLE_NO_ROOM;
     else if (B_SEMI_INVULNERABLE_CATCH >= GEN_4 &&  IsSemiInvulnerable(GetCatchingBattler(), CHECK_ALL))
         return BALL_THROW_UNABLE_SEMI_INVULNERABLE;
-    //else if (FlagGet(B_FLAG_NO_CATCHING))
-        //return BALL_THROW_UNABLE_DISABLED_FLAG;
+    else if (/*FlagGet(B_FLAG_NO_CATCHING) || */!IsAllowedToUseBag())
+        return BALL_THROW_UNABLE_DISABLED_FLAG;
     else if (gNuzlockeIsCaptureBlocked) //tx_randomizer_and_challenges
         return BALL_THROW_NUZLOCKE_ROUTE_BLOCK;
     else if (gNuzlockeIsSpeciesClauseActive) //already have THIS_mon

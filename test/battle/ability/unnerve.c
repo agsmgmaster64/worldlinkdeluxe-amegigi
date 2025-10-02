@@ -5,9 +5,9 @@
 SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own berries")
 {
     u16 mon;
-    u16 ability;
-    PARAMETRIZE { mon = SPECIES_CHIBI_MAYUMI, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
+    enum Ability ability;
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         ASSUME(gItemsInfo[ITEM_RAWST_BERRY].holdEffect == HOLD_EFFECT_CURE_BRN);
         PLAYER(mon) { Ability(ability); }
@@ -24,9 +24,9 @@ SINGLE_BATTLE_TEST("Unnerve prevents opposing Pokémon from eating their own ber
 SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural Gift")
 {
     u16 mon;
-    u16 ability;
-    PARAMETRIZE { mon = SPECIES_CHIBI_MAYUMI, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
+    enum Ability ability;
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_NATURAL_GIFT) == EFFECT_NATURAL_GIFT);
         PLAYER(mon) { Ability(ability); }
@@ -42,9 +42,9 @@ SINGLE_BATTLE_TEST("Unnerve doesn't prevent opposing Pokémon from using Natural
 SINGLE_BATTLE_TEST("Unnerve prints the correct string (player)")
 {
     u16 mon;
-    u16 ability;
-    PARAMETRIZE { mon = SPECIES_CHIBI_MAYUMI, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
+    enum Ability ability;
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(mon) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET);
@@ -59,9 +59,9 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (player)")
 SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent)")
 {
     u16 mon;
-    u16 ability;
-    PARAMETRIZE { mon = SPECIES_CHIBI_MAYUMI, ability = ABILITY_UNNERVE; }
-    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_HOLY_SURGE; }
+    enum Ability ability;
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
+    PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(mon) { Ability(ability); }
@@ -76,8 +76,8 @@ SINGLE_BATTLE_TEST("Unnerve prints the correct string (opponent)")
 SINGLE_BATTLE_TEST("Unnerve activates only once per switch-in")
 {
     u16 mon;
-    u16 ability;
-    PARAMETRIZE { mon = SPECIES_CHIBI_MAYUMI, ability = ABILITY_UNNERVE; }
+    enum Ability ability;
+    PARAMETRIZE { mon = SPECIES_JOLTIK, ability = ABILITY_UNNERVE; }
     PARAMETRIZE { mon = SPECIES_CALYREX_ICE, ability = ABILITY_AS_ONE_ICE_RIDER; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
