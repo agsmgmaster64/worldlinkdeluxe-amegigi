@@ -3344,6 +3344,40 @@ BattleScript_EffectThirdEye::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectAegisMerge::
+	attackcanceler
+	trysetvolatile BS_ATTACKER, VOLATILE_ROOT, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNPLANTEDROOTS
+	waitmessage B_WAIT_TIME_LONG
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_AegisMergeTryDef
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_AegisMergeEnd
+BattleScript_AegisMergeTryDef::
+	setstatchanger STAT_DEF, 3, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_AegisMergeTrySpDef, BIT_SPDEF
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_AegisMergeTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AegisMergeTrySpDef::
+	setstatchanger STAT_SPDEF, 3, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_AegisMergeEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_AegisMergeEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AegisMergeEnd:
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectMoodSwing::
+	attackcanceler
+	trymoodswing BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	statbuffchange BS_ATTACKER, STAT_CHANGE_CERTAIN, BattleScript_MoveEnd
+	printstring STRINGID_ATTACKERSSTATROSE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectDestinyBond::
 	attackcanceler
 	setvolatile BS_ATTACKER, VOLATILE_DESTINY_BOND, 2

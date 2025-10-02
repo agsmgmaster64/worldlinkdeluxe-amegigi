@@ -16686,6 +16686,32 @@ void BS_TryAcupressure(void)
     }
 }
 
+void BS_TryMoodSwing(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 bits = 0;
+    for (u32 stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+    {
+        if (CompareStat(gBattlerTarget, stat, MAX_STAT_STAGE, CMP_LESS_THAN))
+            bits |= 1u << stat;
+    }
+    if (bits)
+    {
+        u32 statId;
+        do
+        {
+            statId = (Random() % (NUM_BATTLE_STATS - 1)) + 1;
+        } while (!(bits & (1u << statId)));
+
+        SET_STATCHANGER(statId, 1, FALSE);
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+}
+
 void BS_CancelMultiTurnMoves(void)
 {
     NATIVE_ARGS();

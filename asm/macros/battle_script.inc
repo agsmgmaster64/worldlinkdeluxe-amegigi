@@ -2021,6 +2021,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro trymoodswing failInstr:req
+	callnative BS_TryMoodSwing
+	.4byte \failInstr
+	.endm
+
 	.macro cancelmultiturnmoves
 	callnative BS_CancelMultiTurnMoves
 	.endm
