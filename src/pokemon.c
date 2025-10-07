@@ -21,6 +21,7 @@
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "fishing.h"
 #include "follower_npc.h"
 #include "graphics.h"
 #include "item.h"
@@ -39,6 +40,7 @@
 #include "pokemon_summary_screen.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
+#include "randomizer.h"
 #include "recorded_battle.h"
 #include "regions.h"
 #include "rtc.h"
@@ -70,7 +72,6 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
-#include "wild_encounter.h"
 #include "tx_randomizer_and_challenges.h"
 #include "constants/party_menu.h" //tx_randomizer_and_challenges
 
@@ -900,8 +901,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                 totalRerolls += I_SHINY_CHARM_ADDITIONAL_ROLLS;
             if (LURE_STEP_COUNT != 0)
                 totalRerolls += 1;
-            if (I_FISHING_CHAIN && gIsFishingEncounter)
-                totalRerolls += CalculateChainFishingShinyRolls();
+            totalRerolls += CalculateChainFishingShinyRolls();
             if (gDexNavSpecies)
                 totalRerolls += CalculateDexNavShinyRolls();
 
@@ -4212,7 +4212,7 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
     case EVO_MODE_ITEM_CHECK:
         for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
         {
-            bool32 conditionMet = FALSE;
+            bool32 conditionsMet = FALSE;
             if (SanitizeSpeciesId(evolutions[i].targetSpecies) == SPECIES_NONE)
                 continue;
 
@@ -4220,11 +4220,11 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             {
             case EVO_ITEM:
                 if (evolutions[i].param == evolutionItem)
-                    conditionMet = TRUE;
+                    conditionsMet = TRUE;
                 break;
             }
 
-            if (conditionMet && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, PARTY_SIZE, canStopEvo, evoState))
+            if (conditionsMet && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, PARTY_SIZE, canStopEvo, evoState))
             {
                 // All checks passed, so stop checking the rest of the evolutions.
                 // This is different from vanilla where the loop continues.
@@ -4246,9 +4246,9 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
 
             switch (evolutions[i].method)
             {
-                case EVO_BATTLE_END:
-                    conditionsMet = TRUE;
-                    break;
+            case EVO_BATTLE_END:
+                conditionsMet = TRUE;
+                break;
             }
 
             if (conditionsMet && DoesMonMeetAdditionalConditions(mon, evolutions[i].params, NULL, evolutionItem, canStopEvo, evoState))
@@ -4274,7 +4274,6 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             case EVO_SPIN:
                 if (gSpecialVar_0x8000 == evolutions[i].param)
                     conditionsMet = TRUE;
-
                 break;
             }
 
@@ -5777,6 +5776,14 @@ bool8 CheckBattleTypeGhost(struct Pokemon *mon, u8 battlerId)
             return TRUE;
     }
     return FALSE;
+}
+
+void HandleSetPokedexFlagFromMon(struct Pokemon *mon, u32 caseId)
+{
+    u32 personality = GetMonData(mon, MON_DATA_PERSONALITY);
+    enum NationalDexOrder nationalNum = SpeciesToNationalPokedexNum(GetMonData(mon, MON_DATA_SPECIES));
+
+    HandleSetPokedexFlag(nationalNum, caseId, personality);
 }
 
 bool8 HasTwoFramesAnimation(u16 species)

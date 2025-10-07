@@ -149,10 +149,11 @@ DOUBLE_BATTLE_TEST("Powder fails if target is already affected by Powder")
     }
 }
 
-SINGLE_BATTLE_TEST("Powder fails if the target is Grass type")
+SINGLE_BATTLE_TEST("Powder fails if the target is Grass type (Gen6+)")
 {
     GIVEN {
-        ASSUME(GetSpeciesType(SPECIES_VENUSAUR, 0) == TYPE_NATURE || GetSpeciesType(SPECIES_VENUSAUR, 1) == TYPE_NATURE);
+        WITH_CONFIG(GEN_CONFIG_POWDER_GRASS, GEN_6);
+        ASSUME(GetSpeciesType(SPECIES_VENUSAUR, 0) == TYPE_GRASS || GetSpeciesType(SPECIES_VENUSAUR, 1) == TYPE_GRASS);
         PLAYER(SPECIES_VENUSAUR);
         OPPONENT(SPECIES_VIVILLON);
     } WHEN {
@@ -164,9 +165,10 @@ SINGLE_BATTLE_TEST("Powder fails if the target is Grass type")
     }
 }
 
-SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat")
+SINGLE_BATTLE_TEST("Powder fails if the target has Overcoat (Gen6+)")
 {
     GIVEN {
+        WITH_CONFIG(GEN_CONFIG_POWDER_GRASS, GEN_6);
         PLAYER(SPECIES_FORRETRESS) { Ability(ABILITY_OVERCOAT); }
         OPPONENT(SPECIES_VIVILLON);
     } WHEN {
