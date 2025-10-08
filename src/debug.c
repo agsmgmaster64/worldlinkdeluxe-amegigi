@@ -4387,9 +4387,10 @@ static void DebugAction_Party_HealParty(u8 taskId)
 void DebugNative_GetAbilityNames(void)
 {
     u32 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
-    StringCopy(gStringVar1, gAbilitiesInfo[GetAbilityBySpecies(species, 0)].name);
-    StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(species, 1)].name);
-    StringCopy(gStringVar3, gAbilitiesInfo[GetAbilityBySpecies(species, 2)].name);
+    u32 cantRandomize = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_CANT_RANDOMIZE_ABILITY);
+    StringCopy(gStringVar1, gAbilitiesInfo[GetAbilityBySpecies(species, 0, cantRandomize)].name);
+    StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(species, 1, cantRandomize)].name);
+    StringCopy(gStringVar3, gAbilitiesInfo[GetAbilityBySpecies(species, 2, cantRandomize)].name);
 }
 
 #define tPartyId               data[5]
