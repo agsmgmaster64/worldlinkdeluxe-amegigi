@@ -241,6 +241,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
         .breakable = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_LEVITATE] =
@@ -539,6 +540,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_COLLECTOR] =
@@ -1037,6 +1039,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_FLOWER_GIFT] =
@@ -1047,6 +1050,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,
         .breakable = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_BAD_DREAMS] =
@@ -1256,6 +1260,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeCopied = TRUE,
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_IMPOSTER] =
@@ -1265,6 +1270,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 9,
         .cantBeCopied = TRUE,
         .cantBeTraced = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_INFILTRATOR] =
@@ -1351,6 +1357,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
         .cantBeSuppressed = B_UPDATED_ABILITY_DATA >= GEN_7,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_VICTORY_STAR] =
@@ -1464,6 +1471,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_GALE_WINGS] =
@@ -1617,6 +1625,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_STAKEOUT] =
@@ -1699,6 +1708,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_DISGUISE] =
@@ -1713,6 +1723,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_BATTLE_BOND] =
@@ -1725,6 +1736,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_POWER_CONSTRUCT] =
@@ -1737,6 +1749,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_CORROSION] =
@@ -1756,6 +1769,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_QUEENLY_MAJESTY] =
@@ -1852,6 +1866,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_ELECTRIC_SURGE] =
@@ -1968,6 +1983,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_STALWART] =
@@ -2029,6 +2045,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeOverwritten = TRUE,
         .breakable = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_BLANK_CARD] =
@@ -2115,6 +2132,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_QUICK_DRAW] =
@@ -2279,6 +2297,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_COMMANDER] =
@@ -2291,6 +2310,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeTraced = TRUE,
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_ELECTROMORPHOSIS] =
@@ -2473,6 +2493,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_EMBODY_ASPECT_HEARTHFLAME_MASK] =
@@ -2484,6 +2505,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_EMBODY_ASPECT_WELLSPRING_MASK] =
@@ -2506,6 +2528,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_TOXIC_CHAIN] =
@@ -2533,6 +2556,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSuppressed = TRUE,
         .cantBeOverwritten = TRUE,
         .failsOnImposter = TRUE,
+        .randomizerBlacklist = TRUE,
     },
 
     [ABILITY_TERA_SHELL] =

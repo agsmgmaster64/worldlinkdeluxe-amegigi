@@ -11,8 +11,6 @@
 #include "data.h"
 #include "data/randomizer/special_form_tables.h"
 #include "constants/abilities.h"
-#include "data/randomizer/ability_whitelist.h"
-#include "constants/abilities.h"
 
 // Add the mons you wish to be randomized when given as starter/gift mon to this list
 const u16 gStarterAndGiftMonTable[STARTER_AND_GIFT_MON_COUNT] =
@@ -917,7 +915,7 @@ u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons)
 
 static inline bool32 IsAbilityIllegal(u16 ability)
 {
-    if (ability == ABILITY_NONE || ability == ABILITY_PLAY_GHOST)
+    if (ability == ABILITY_NONE || gAbilitiesInfo[ability].randomizerBlacklist)
         return TRUE;
     return FALSE;
 }
@@ -940,7 +938,7 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
         // Randomize abilities
         do
         {
-            result = sRandomizerAbilityWhitelist[RandomizerNextRange(&state, ABILITY_WHITELIST_SIZE)];
+            result = RandomizerNextRange(&state, ABILITIES_COUNT);
         } while(IsAbilityIllegal(result));
 
         return result;
