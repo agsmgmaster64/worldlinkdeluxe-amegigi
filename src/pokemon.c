@@ -62,7 +62,6 @@
 #include "constants/cries.h"
 #include "constants/event_objects.h"
 #include "constants/form_change_types.h"
-#include "constants/hold_effects.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
@@ -3872,7 +3871,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u32 removeBagItem = ITEM_NONE;
     u32 removeBagItemCount = 0;
     u32 partnerSpecies, partnerHeldItem, level;
-    enum ItemHoldEffect partnerHoldEffect;
+    enum HoldEffect partnerHoldEffect;
 
     if (tradePartner != NULL)
     {

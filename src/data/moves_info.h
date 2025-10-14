@@ -21511,7 +21511,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Mew attacks with full force.\n"
             "Psychically charges terrain."),
-        .effect = EFFECT_HIT_SET_TERRAIN,
+        .effect = EFFECT_HIT,
         .power = 185,
         .type = TYPE_REASON,
         .accuracy = 0,
@@ -21519,8 +21519,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .moveProperty = STATUS_FIELD_PSYCHIC_TERRAIN },
         .battleAnimScript = gBattleAnimMove_GenesisSupernova,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PSYCHIC_TERRAIN,
+            .chance = 100,
+        }),
     },
     [MOVE_SINISTER_ARROW_RAID] =
     {
