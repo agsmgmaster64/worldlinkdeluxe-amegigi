@@ -218,7 +218,7 @@ static enum ItemEffect TryKingsRock(u32 battlerAtk, u32 battlerDef, u32 item)
      && !MoveIgnoresKingsRock(gCurrentMove)
      && IsBattlerAlive(battlerDef)
      && RandomPercentage(RNG_HOLD_EFFECT_FLINCH, holdEffectParam)
-     && ability != ABILITY_STENCH)
+     /*&& ability != ABILITY_JEALOUSY*/)
     {
         gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
         BattleScriptPushCursor();
@@ -330,7 +330,7 @@ static enum ItemEffect TryCellBattery(u32 battlerDef)
 
     if (IsBattlerAlive(battlerDef)
      && IsBattlerTurnDamaged(battlerDef)
-     && GetBattleMoveType(gCurrentMove) == TYPE_ELECTRIC)
+     && GetBattleMoveType(gCurrentMove) == TYPE_WIND)
     {
         BattleScriptCall(BattleScript_TargetItemStatRaise);
         SET_STATCHANGER(STAT_ATK, 1, FALSE);
@@ -654,6 +654,21 @@ static enum ItemEffect TryFlameOrb(u32 battler)
     {
         gBattleMons[battler].status1 = STATUS1_BURN;
         BattleScriptExecute(BattleScript_FlameOrb);
+        effect = ITEM_STATUS_CHANGE;
+    }
+
+    return effect;
+}
+
+static enum ItemEffect TryFrostOrb(u32 battler)
+{
+    enum ItemEffect effect = ITEM_NO_EFFECT;
+    enum Ability ability = GetBattlerAbility(battler);
+
+    if (CanGetFrostbite(battler, battler, ability))
+    {
+        gBattleMons[battler].status1 = STATUS1_FROSTBITE;
+        BattleScriptExecute(BattleScript_FrostOrb);
         effect = ITEM_STATUS_CHANGE;
     }
 
@@ -1193,11 +1208,14 @@ enum ItemEffect ItemBattleEffects(u32 itemBattler, u32 battler, enum HoldEffect 
     case HOLD_EFFECT_FLAME_ORB:
         effect = TryFlameOrb(itemBattler);
         break;
+    case HOLD_EFFECT_FROST_ORB:
+        effect = TryFrostOrb(itemBattler);
+        break;
     case HOLD_EFFECT_LEFTOVERS:
         effect = TryLeftovers(itemBattler, holdEffect);
         break;
     case HOLD_EFFECT_BLACK_SLUDGE:
-        if (IS_BATTLER_OF_TYPE(itemBattler, TYPE_POISON))
+        if (IS_BATTLER_OF_TYPE(itemBattler, TYPE_MIASMA))
             effect = TryLeftovers(itemBattler, holdEffect);
         else
             effect = TryBlackSludge(itemBattler, holdEffect);

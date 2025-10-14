@@ -4038,9 +4038,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
      {
         if (!AI_IsAbilityOnSide(battlerAtk, ABILITY_AROMA_VEIL)
          || IsMoldBreakerTypeAbility(battlerDef, aiData->abilities[battlerDef])
-         || aiData->abilities[battlerDef] == ABILITY_MYCELIUM_MIGHT
-         || IsMoldBreakerTypeAbility(BATTLE_PARTNER(battlerDef), aiData->abilities[BATTLE_PARTNER(battlerDef)])
-         || aiData->abilities[BATTLE_PARTNER(battlerDef)] == ABILITY_MYCELIUM_MIGHT)
+         || IsMoldBreakerTypeAbility(BATTLE_PARTNER(battlerDef), aiData->abilities[BATTLE_PARTNER(battlerDef)]))
             return score;
      }
 
@@ -5926,7 +5924,7 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 {
                     if (ShouldCureStatus(battlerAtk, battlerDef, aiData))
                         ADJUST_SCORE(DECENT_EFFECT);
-                    else if (aiData->holdEffects[battlerDef] == HOLD_EFFECT_FLAME_ORB || aiData->holdEffects[battlerDef] == HOLD_EFFECT_TOXIC_ORB)
+                    else if (aiData->holdEffects[battlerDef] == HOLD_EFFECT_FLAME_ORB || aiData->holdEffects[battlerDef] == HOLD_EFFECT_TOXIC_ORB || aiData->holdEffects[battlerDef] == HOLD_EFFECT_FROST_ORB)
                         ADJUST_SCORE(WEAK_EFFECT);
                     else
                         ADJUST_SCORE(BAD_EFFECT);

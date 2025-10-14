@@ -206,15 +206,15 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
     },
 
-    [HOLD_EFFECT_SOUL_DEW] =
+    [HOLD_EFFECT_DOUBLE_SOUL] =
     {
     },
 
-    [HOLD_EFFECT_DEEP_SEA_TOOTH] =
+    [HOLD_EFFECT_KUSANAGI] =
     {
     },
 
-    [HOLD_EFFECT_DEEP_SEA_SCALE] =
+    [HOLD_EFFECT_YATA_MIRROR] =
     {
     },
 
@@ -247,7 +247,23 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     {
     },
 
-    [HOLD_EFFECT_LIGHT_BALL] =
+    [HOLD_EFFECT_ICY_BALL] =
+    {
+    },
+
+    [HOLD_EFFECT_ASSIST_BALL] =
+    {
+    },
+
+    [HOLD_EFFECT_MUSIC_BALL] =
+    {
+    },
+
+    [HOLD_EFFECT_GLOW_BALL] =
+    {
+    },
+
+    [HOLD_EFFECT_DARK_BALL] =
     {
     },
 
@@ -264,19 +280,15 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .lifeOrbShellBell = TRUE,
     },
 
-    [HOLD_EFFECT_LUCKY_PUNCH] =
+    [HOLD_EFFECT_BIG_CLOUD] =
     {
     },
 
-    [HOLD_EFFECT_METAL_POWDER] =
+    [HOLD_EFFECT_DARK_RIBBON] =
     {
     },
 
-    [HOLD_EFFECT_THICK_CLUB] =
-    {
-    },
-
-    [HOLD_EFFECT_LEEK] =
+    [HOLD_EFFECT_BLOOMERS] =
     {
     },
 
@@ -301,6 +313,10 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     },
 
     [HOLD_EFFECT_ICY_ROCK] =
+    {
+    },
+
+    [HOLD_EFFECT_SCARLET_ROCK] =
     {
     },
 
@@ -367,6 +383,11 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
         .orbs = TRUE,
     },
 
+    [HOLD_EFFECT_FROST_ORB] =
+    {
+        .orbs = TRUE,
+    },
+
     [HOLD_EFFECT_STICKY_BARB] =
     {
         .onTargetAfterHit = TRUE,
@@ -391,18 +412,6 @@ const struct HoldEffectInfo gHoldEffectsInfo[HOLD_EFFECT_COUNT] =
     },
 
     [HOLD_EFFECT_QUICK_POWDER] =
-    {
-    },
-
-    [HOLD_EFFECT_ADAMANT_ORB] =
-    {
-    },
-
-    [HOLD_EFFECT_LUSTROUS_ORB] =
-    {
-    },
-
-    [HOLD_EFFECT_GRISEOUS_ORB] =
     {
     },
 

@@ -5514,18 +5514,14 @@ BattleScript_AngerShellRet:
 	return
 
 BattleScript_DeterminatorActivates::
-	saveattacker
-	copybyte gBattlerAttacker, gBattlerTarget
 	call BattleScript_AbilityPopUp
-	jumpifstat BS_TARGET, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_DeterminatorTryDef
-	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_RestoreAttackerButItFailed
+	jumpifstat BS_EFFECT_BATTLER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_DeterminatorTryDef
+	jumpifstat BS_EFFECT_BATTLER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_RestoreAttackerButItFailed
 BattleScript_DeterminatorTryDef::
-	setbyte sSTAT_ANIM_PLAYED, FALSE
-	modifybattlerstatstage BS_ATTACKER, STAT_DEF, INCREASE, 1, BattleScript_DeterminatorTrySpDef, ANIM_ON
+	modifybattlerstatstage BS_EFFECT_BATTLER, STAT_DEF, INCREASE, 1, BattleScript_DeterminatorTrySpDef, ANIM_ON
 BattleScript_DeterminatorTrySpDef:
-	modifybattlerstatstage BS_ATTACKER, STAT_SPDEF, INCREASE, 1, BattleScript_DeterminatorRet, ANIM_ON
+	modifybattlerstatstage BS_EFFECT_BATTLER, STAT_SPDEF, INCREASE, 1, BattleScript_DeterminatorRet, ANIM_ON
 BattleScript_DeterminatorRet:
-	restoreattacker
 	return
 
 BattleScript_WindPowerActivates::
