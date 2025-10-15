@@ -405,11 +405,11 @@ Cry_Terapagos::
 
 	.align 2
 Cry_Reimu::
-	.incbin "sound/direct_sound_samples/cries_add/reimu.bin"
+	.incbin "sound/direct_sound_samples/cries/reimu.bin"
 
 	.align 2
 Cry_Marisa::
-	.incbin "sound/direct_sound_samples/cries_add/marisa.bin"
+	.incbin "sound/direct_sound_samples/cries/marisa.bin"
 
 	.align 2
 Cry_Daiyousei::
@@ -469,19 +469,19 @@ Cry_LilyBlack::
 
 	.align 2
 Cry_Lunasa::
-	.incbin "sound/direct_sound_samples/cries_add/lunasa.bin"
+	.incbin "sound/direct_sound_samples/cries/lunasa.bin"
 
 	.align 2
 Cry_Merlin::
-	.incbin "sound/direct_sound_samples/cries_add/merlin.bin"
+	.incbin "sound/direct_sound_samples/cries/merlin.bin"
 
 	.align 2
 Cry_Lyrica::
-	.incbin "sound/direct_sound_samples/cries_add/lyrica.bin"
+	.incbin "sound/direct_sound_samples/cries/lyrica.bin"
 
 	.align 2
 Cry_Layla::
-	.incbin "sound/direct_sound_samples/cries_add/layla.bin"
+	.incbin "sound/direct_sound_samples/cries/layla.bin"
 
 	.align 2
 Cry_Youmu::
@@ -489,7 +489,7 @@ Cry_Youmu::
 
 	.align 2
 Cry_Yuyuko::
-	.incbin "sound/direct_sound_samples/cries_add/yuyuko.bin"
+	.incbin "sound/direct_sound_samples/cries/yuyuko.bin"
 
 	.align 2
 Cry_Chen::
@@ -497,7 +497,7 @@ Cry_Chen::
 
 	.align 2
 Cry_Ran::
-	.incbin "sound/direct_sound_samples/cries_add/ran.bin"
+	.incbin "sound/direct_sound_samples/cries/ran.bin"
 
 	.align 2
 Cry_Yukari::
@@ -505,7 +505,7 @@ Cry_Yukari::
 
 	.align 2
 Cry_Wriggle::
-	.incbin "sound/direct_sound_samples/cries_add/wriggle.bin"
+	.incbin "sound/direct_sound_samples/cries/wriggle.bin"
 
 	.align 2
 Cry_Mystia::
@@ -521,7 +521,7 @@ Cry_KeineBeast::
 
 	.align 2
 Cry_Tewi::
-	.incbin "sound/direct_sound_samples/cries_add/tewi.bin"
+	.incbin "sound/direct_sound_samples/cries/tewi.bin"
 
 	.align 2
 Cry_Reisen::
@@ -529,15 +529,15 @@ Cry_Reisen::
 
 	.align 2
 Cry_ReisenII::
-	.incbin "sound/direct_sound_samples/cries_add/reisen_ii.bin"
+	.incbin "sound/direct_sound_samples/cries/reisen_ii.bin"
 
 	.align 2
 Cry_Eirin::
-	.incbin "sound/direct_sound_samples/cries_add/eirin.bin"
+	.incbin "sound/direct_sound_samples/cries/eirin.bin"
 
 	.align 2
 Cry_Kaguya::
-	.incbin "sound/direct_sound_samples/cries_add/kaguya.bin"
+	.incbin "sound/direct_sound_samples/cries/kaguya.bin"
 
 	.align 2
 Cry_Mokou::
@@ -545,7 +545,7 @@ Cry_Mokou::
 
 	.align 2
 Cry_Aya::
-	.incbin "sound/direct_sound_samples/cries_add/aya.bin"
+	.incbin "sound/direct_sound_samples/cries/aya.bin"
 
 	.align 2
 Cry_Medicine::
@@ -553,15 +553,15 @@ Cry_Medicine::
 
 	.align 2
 Cry_Yuuka::
-	.incbin "sound/direct_sound_samples/cries_add/yuuka.bin"
+	.incbin "sound/direct_sound_samples/cries/yuuka.bin"
 
 	.align 2
 Cry_Komachi::
-	.incbin "sound/direct_sound_samples/cries_add/komachi.bin"
+	.incbin "sound/direct_sound_samples/cries/komachi.bin"
 
 	.align 2
 Cry_Eiki::
-	.incbin "sound/direct_sound_samples/cries_add/eiki.bin"
+	.incbin "sound/direct_sound_samples/cries/eiki.bin"
 
 	.align 2
 Cry_Shizuha::
@@ -573,11 +573,11 @@ Cry_Minoriko::
 
 	.align 2
 Cry_Hina::
-	.incbin "sound/direct_sound_samples/cries_add/hina.bin"
+	.incbin "sound/direct_sound_samples/cries/hina.bin"
 
 	.align 2
 Cry_Nitori::
-	.incbin "sound/direct_sound_samples/cries_add/nitori.bin"
+	.incbin "sound/direct_sound_samples/cries/nitori.bin"
 
 	.align 2
 Cry_Momiji::
@@ -589,15 +589,15 @@ Cry_Sanae::
 
 	.align 2
 Cry_Kanako::
-	.incbin "sound/direct_sound_samples/cries_add/kanako.bin"
+	.incbin "sound/direct_sound_samples/cries/kanako.bin"
 
 	.align 2
 Cry_Suwako::
-	.incbin "sound/direct_sound_samples/cries_add/suwako.bin"
+	.incbin "sound/direct_sound_samples/cries/suwako.bin"
 
 	.align 2
 Cry_Kisume::
-	.incbin "sound/direct_sound_samples/cries_add/kisume.bin"
+	.incbin "sound/direct_sound_samples/cries/kisume.bin"
 
 	.align 2
 Cry_Yamame::
@@ -605,7 +605,7 @@ Cry_Yamame::
 
 	.align 2
 Cry_Parsee::
-	.incbin "sound/direct_sound_samples/cries_add/parsee.bin"
+	.incbin "sound/direct_sound_samples/cries/parsee.bin"
 
 	.align 2
 Cry_Yuugi::
@@ -613,19 +613,19 @@ Cry_Yuugi::
 
 	.align 2
 Cry_Rin::
-	.incbin "sound/direct_sound_samples/cries_add/rin.bin"
+	.incbin "sound/direct_sound_samples/cries/rin.bin"
 
 	.align 2
 Cry_ZFairy::
-	.incbin "sound/direct_sound_samples/cries_add/zombie_fairy.bin"
+	.incbin "sound/direct_sound_samples/cries/zombie_fairy.bin"
 
 	.align 2
 Cry_Utsuho::
-	.incbin "sound/direct_sound_samples/cries_add/utsuho.bin"
+	.incbin "sound/direct_sound_samples/cries/utsuho.bin"
 
 	.align 2
 Cry_Satori::
-	.incbin "sound/direct_sound_samples/cries_add/satori.bin"
+	.incbin "sound/direct_sound_samples/cries/satori.bin"
 
 	.align 2
 Cry_Koishi::
@@ -637,55 +637,55 @@ Cry_Nazrin::
 
 	.align 2
 Cry_Kogasa::
-	.incbin "sound/direct_sound_samples/cries_add/kogasa.bin"
+	.incbin "sound/direct_sound_samples/cries/kogasa.bin"
 
 	.align 2
 Cry_Ichirin::
-	.incbin "sound/direct_sound_samples/cries_add/ichirin.bin"
+	.incbin "sound/direct_sound_samples/cries/ichirin.bin"
 
 	.align 2
 Cry_Murasa::
-	.incbin "sound/direct_sound_samples/cries_add/murasa.bin"
+	.incbin "sound/direct_sound_samples/cries/murasa.bin"
 
 	.align 2
 Cry_Shou::
-	.incbin "sound/direct_sound_samples/cries_add/shou.bin"
+	.incbin "sound/direct_sound_samples/cries/shou.bin"
 
 	.align 2
 Cry_Byakuren::
-	.incbin "sound/direct_sound_samples/cries_add/byakuren.bin"
+	.incbin "sound/direct_sound_samples/cries/byakuren.bin"
 
 	.align 2
 Cry_Nue::
-	.incbin "sound/direct_sound_samples/cries_add/nue.bin"
+	.incbin "sound/direct_sound_samples/cries/nue.bin"
 
 	.align 2
 Cry_Kyouko::
-	.incbin "sound/direct_sound_samples/cries_add/kyouko.bin"
+	.incbin "sound/direct_sound_samples/cries/kyouko.bin"
 
 	.align 2
 Cry_Yoshika::
-	.incbin "sound/direct_sound_samples/cries_add/yoshika.bin"
+	.incbin "sound/direct_sound_samples/cries/yoshika.bin"
 
 	.align 2
 Cry_Seiga::
-	.incbin "sound/direct_sound_samples/cries_add/seiga.bin"
+	.incbin "sound/direct_sound_samples/cries/seiga.bin"
 
 	.align 2
 Cry_Tojiko::
-	.incbin "sound/direct_sound_samples/cries_add/tojiko.bin"
+	.incbin "sound/direct_sound_samples/cries/tojiko.bin"
 
 	.align 2
 Cry_Futo::
-	.incbin "sound/direct_sound_samples/cries_add/futo.bin"
+	.incbin "sound/direct_sound_samples/cries/futo.bin"
 
 	.align 2
 Cry_Miko::
-	.incbin "sound/direct_sound_samples/cries_add/miko.bin"
+	.incbin "sound/direct_sound_samples/cries/miko.bin"
 
 	.align 2
 Cry_Mamizou::
-	.incbin "sound/direct_sound_samples/cries_add/mamizou.bin"
+	.incbin "sound/direct_sound_samples/cries/mamizou.bin"
 
 	.align 2
 Cry_Sekibanki::
@@ -793,7 +793,7 @@ Cry_Iku::
 
 	.align 2
 Cry_Tenshi::
-	.incbin "sound/direct_sound_samples/cries_add/tenshi.bin"
+	.incbin "sound/direct_sound_samples/cries/tenshi.bin"
 
 	.align 2
 Cry_Hatate::
@@ -801,15 +801,15 @@ Cry_Hatate::
 
 	.align 2
 Cry_Sunny::
-	.incbin "sound/direct_sound_samples/cries_add/sunny.bin"
+	.incbin "sound/direct_sound_samples/cries/sunny.bin"
 
 	.align 2
 Cry_Luna::
-	.incbin "sound/direct_sound_samples/cries_add/luna.bin"
+	.incbin "sound/direct_sound_samples/cries/luna.bin"
 
 	.align 2
 Cry_Star::
-	.incbin "sound/direct_sound_samples/cries_add/star.bin"
+	.incbin "sound/direct_sound_samples/cries/star.bin"
 
 	.align 2
 Cry_Kokoro::
@@ -817,7 +817,7 @@ Cry_Kokoro::
 
 	.align 2
 Cry_Kasen::
-	.incbin "sound/direct_sound_samples/cries_add/kasen.bin"
+	.incbin "sound/direct_sound_samples/cries/kasen.bin"
 
 	.align 2
 Cry_Yorihime::
@@ -825,7 +825,7 @@ Cry_Yorihime::
 
 	.align 2
 Cry_Toyohime::
-	.incbin "sound/direct_sound_samples/cries_add/toyohime.bin"
+	.incbin "sound/direct_sound_samples/cries/toyohime.bin"
 
 	.align 2
 Cry_Tokiko::
@@ -945,11 +945,11 @@ Cry_Shinki::
 
 	.align 2
 Cry_Akyuu::
-	.incbin "sound/direct_sound_samples/cries_add/akyuu.bin"
+	.incbin "sound/direct_sound_samples/cries/akyuu.bin"
 
 	.align 2
 Cry_Rinnosuke::
-	.incbin "sound/direct_sound_samples/cries_add/rinnosuke.bin"
+	.incbin "sound/direct_sound_samples/cries/rinnosuke.bin"
 
 	.align 2
 Cry_Tenma::
@@ -1017,27 +1017,27 @@ Cry_Aki_Sisters::
 
 	.align 2
 Cry_Advent_Cirno::
-	.incbin "sound/direct_sound_samples/cries_add/advent_cirno.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_cirno.bin"
 
 	.align 2
 Cry_Advent_Reisen::
-	.incbin "sound/direct_sound_samples/cries_add/advent_reisen.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_reisen.bin"
 
 	.align 2
 Cry_Advent_Meiling::
-	.incbin "sound/direct_sound_samples/cries_add/advent_meiling.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_meiling.bin"
 
 	.align 2
 Cry_Advent_Mystia::
-	.incbin "sound/direct_sound_samples/cries_add/advent_mystia.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_mystia.bin"
 
 	.align 2
 Cry_Advent_Letty::
-	.incbin "sound/direct_sound_samples/cries_add/advent_letty.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_letty.bin"
 
 	.align 2
 Cry_Advent_Tewi::
-	.incbin "sound/direct_sound_samples/cries_add/advent_tewi.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_tewi.bin"
 
 	.align 2
 Cry_Advent_Marisa::
@@ -1045,31 +1045,31 @@ Cry_Advent_Marisa::
 
 	.align 2
 Cry_Advent_Alice::
-	.incbin "sound/direct_sound_samples/cries_add/advent_alice.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_alice.bin"
 
 	.align 2
 Cry_Advent_Mokou::
-	.incbin "sound/direct_sound_samples/cries_add/advent_mokou.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_mokou.bin"
 
 	.align 2
 Cry_Advent_Yukari::
-	.incbin "sound/direct_sound_samples/cries_add/advent_yukari.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_yukari.bin"
 
 	.align 2
 Cry_Advent_Ran::
-	.incbin "sound/direct_sound_samples/cries_add/advent_ran.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_ran.bin"
 
 	.align 2
 Cry_Advent_Chen::
-	.incbin "sound/direct_sound_samples/cries_add/advent_chen.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_chen.bin"
 
 	.align 2
 Cry_Advent_Youmu::
-	.incbin "sound/direct_sound_samples/cries_add/advent_youmu.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_youmu.bin"
 
 	.align 2
 Cry_Advent_Yuyuko::
-	.incbin "sound/direct_sound_samples/cries_add/advent_yuyuko.bin"
+	.incbin "sound/direct_sound_samples/cries/advent_yuyuko.bin"
 
 	.align 2
 Cry_Petrified::
