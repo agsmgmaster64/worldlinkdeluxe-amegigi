@@ -98,8 +98,22 @@ gCryTable::
 	cry Cry_Teireida
 	cry Cry_Satono
 	cry Cry_Okina
+	cry Cry_Eika
+	cry Cry_Urumi
+	cry Cry_Kutaka
+	cry Cry_Yachie
+	cry Cry_Mayumi
+	cry Cry_Keiki
 	cry Cry_Saki
+	cry Cry_Yuuma
+	cry Cry_Mike
 	cry Cry_Takane
+	cry Cry_Sannyo
+	cry Cry_Misumaru
+	cry Cry_Tsukasa
+	cry Cry_Megumu
+	cry Cry_Chimata
+	cry Cry_Momoyo
 	cry Cry_Suika
 	cry Cry_Iku
 	cry Cry_Tenshi
@@ -109,10 +123,14 @@ gCryTable::
 	cry Cry_Star
 	cry Cry_Kokoro
 	cry Cry_Kasen
+	cry Cry_Sumireko
+	cry Cry_Joon
+	cry Cry_Shion
 	cry Cry_Yorihime
 	cry Cry_Toyohime
 	cry Cry_Tokiko
 	cry Cry_Kosuzu
+	cry Cry_Miyoi
 	cry Cry_Hakurei
 	cry Cry_Kirisame
 	cry Cry_Genji
@@ -155,6 +173,11 @@ gCryTable::
 	cry Cry_Mima
 	cry Cry_Tenma
 	cry Cry_Sendai
+	cry Cry_Vivit
+	cry Cry_Satsuki
+	cry Cry_Isami
+	cry Cry_Mitori
+	cry Cry_Sasha
 	cry Cry_Joshi_Kosei_Sanae
 	cry Cry_Dark_Alice
 	cry Cry_Aki_Sisters
@@ -172,6 +195,7 @@ gCryTable::
 	cry Cry_Advent_Chen
 	cry Cry_Advent_Youmu
 	cry Cry_Advent_Yuyuko
+	cry Cry_Advent_Eirin
 	cry Cry_Petrified
 	cry Cry_Basiney
 	cry Cry_Blissea
@@ -277,8 +301,22 @@ gCryTable_Reverse::
 	cry_reverse Cry_Teireida
 	cry_reverse Cry_Satono
 	cry_reverse Cry_Okina
+	cry_reverse Cry_Eika
+	cry_reverse Cry_Urumi
+	cry_reverse Cry_Kutaka
+	cry_reverse Cry_Yachie
+	cry_reverse Cry_Mayumi
+	cry_reverse Cry_Keiki
 	cry_reverse Cry_Saki
+	cry_reverse Cry_Yuuma
+	cry_reverse Cry_Mike
 	cry_reverse Cry_Takane
+	cry_reverse Cry_Sannyo
+	cry_reverse Cry_Misumaru
+	cry_reverse Cry_Tsukasa
+	cry_reverse Cry_Megumu
+	cry_reverse Cry_Chimata
+	cry_reverse Cry_Momoyo
 	cry_reverse Cry_Suika
 	cry_reverse Cry_Iku
 	cry_reverse Cry_Tenshi
@@ -288,10 +326,14 @@ gCryTable_Reverse::
 	cry_reverse Cry_Star
 	cry_reverse Cry_Kokoro
 	cry_reverse Cry_Kasen
+	cry_reverse Cry_Sumireko
+	cry_reverse Cry_Joon
+	cry_reverse Cry_Shion
 	cry_reverse Cry_Yorihime
 	cry_reverse Cry_Toyohime
 	cry_reverse Cry_Tokiko
 	cry_reverse Cry_Kosuzu
+	cry_reverse Cry_Miyoi
 	cry_reverse Cry_Hakurei
 	cry_reverse Cry_Kirisame
 	cry_reverse Cry_Genji
@@ -334,6 +376,11 @@ gCryTable_Reverse::
 	cry_reverse Cry_Mima
 	cry_reverse Cry_Tenma
 	cry_reverse Cry_Sendai
+	cry_reverse Cry_Vivit
+	cry_reverse Cry_Satsuki
+	cry_reverse Cry_Isami
+	cry_reverse Cry_Mitori
+	cry_reverse Cry_Sasha
 	cry_reverse Cry_Joshi_Kosei_Sanae
 	cry_reverse Cry_Dark_Alice
 	cry_reverse Cry_Aki_Sisters
@@ -351,6 +398,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Advent_Chen
 	cry_reverse Cry_Advent_Youmu
 	cry_reverse Cry_Advent_Yuyuko
+	cry_reverse Cry_Advent_Eirin
 	cry_reverse Cry_Petrified
 	cry_reverse Cry_Basiney
 	cry_reverse Cry_Blissea
