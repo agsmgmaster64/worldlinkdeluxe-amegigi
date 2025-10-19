@@ -4096,8 +4096,7 @@ static void UNUSED HighlightScreenSelectBarItem(u8 selectedScreen, u16 unused)
 #define tSpecies       data[1]
 #define tPalTimer      data[2]
 #define tMonSpriteId   data[3]
-#define tOtIdLo        data[12]
-#define tOtIdHi        data[13]
+#define tIsShiny       data[13]
 #define tPersonalityLo data[14]
 #define tPersonalityHi data[15]
 
@@ -4222,7 +4221,7 @@ static void Task_ExitCaughtMonPage(u8 taskId)
     if (!gPaletteFade.active)
     {
         u16 species;
-        u32 otId;
+        bool32 isShiny;
         u32 personality;
         u8 paletteNum;
         const u16 *paletteData;
@@ -4238,10 +4237,10 @@ static void Task_ExitCaughtMonPage(u8 taskId)
             Free(buffer);
 
         species = gTasks[taskId].tSpecies;
-        otId = ((u16)gTasks[taskId].tOtIdHi << 16) | (u16)gTasks[taskId].tOtIdLo;
+        isShiny = (bool8)gTasks[taskId].tIsShiny;
         personality = ((u16)gTasks[taskId].tPersonalityHi << 16) | (u16)gTasks[taskId].tPersonalityLo;
         paletteNum = gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum;
-        paletteData = GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality);
+        paletteData = GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality);
         LoadPalette(paletteData, OBJ_PLTT_ID(paletteNum), PLTT_SIZE_4BPP);
 
         if (sPokedexView)
@@ -4271,8 +4270,7 @@ static void SpriteCB_SlideCaughtMonToCenter(struct Sprite *sprite)
 #undef tDexNum
 #undef tPalTimer
 #undef tMonSpriteId
-#undef tOtIdLo
-#undef tOtIdHi
+#undef tIsShiny
 #undef tPersonalityLo
 #undef tPersonalityHi
 

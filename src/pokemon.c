@@ -5302,7 +5302,18 @@ const u16 *GetMonFrontSpritePal(struct Pokemon *mon)
     return GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality);
 }
 
-static const u16 *GetMonSpritePalFromSpeciesInternal(u16 species, bool32 isShiny, bool32 isFemale)
+const u16 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny, u32 personality)
+{
+    const u16 *base = GetMonSpritePalFromSpecies(species, isShiny, IsPersonalityFemale(species, personality));
+    static u16 sVariantPal[16];
+    if (gSaveBlock2Ptr->optionsUniqueColors == 1)
+        return base;
+    CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
+    ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, personality, sVariantPal);
+    return sVariantPal;
+}
+
+const u16 *GetMonSpritePalFromSpecies(u16 species, bool32 isShiny, bool32 isFemale)
 {
     species = SanitizeSpeciesId(species);
 
@@ -5330,28 +5341,6 @@ static const u16 *GetMonSpritePalFromSpeciesInternal(u16 species, bool32 isShiny
         else
             return gSpeciesInfo[SPECIES_NONE].palette;
     }
-}
-
-const u16 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny, u32 personality)
-{
-    const u16 *base = GetMonSpritePalFromSpeciesInternal(species, isShiny, IsPersonalityFemale(species, personality));
-    static u16 sVariantPal[16];
-    if (gSaveBlock2Ptr->optionsUniqueColors == 1)
-        return base;
-    CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
-    ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, personality, sVariantPal);
-    return sVariantPal;
-}
-
-const u16 *GetMonSpritePalFromSpecies(u16 species, bool32 isShiny, bool32 isFemale)
-{
-    const u16 *base = GetMonSpritePalFromSpeciesInternal(species, isShiny, isFemale);
-    static u16 sVariantPal[16];
-    if (gSaveBlock2Ptr->optionsUniqueColors == 1)
-        return base;
-    CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
-    ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, 0x00000000, sVariantPal);
-    return sVariantPal;
 }
 
 #define OR_MOVE_IS_HM(_hm) || (move == MOVE_##_hm)
