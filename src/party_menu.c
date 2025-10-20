@@ -6769,7 +6769,7 @@ static void Task_TryItemUseFusionChange(u8 taskId)
                 {
                     DeleteInvalidFusionMoves(mon, gTasks[taskId].fusionResult);
                     if (!DoesMonHaveAnyMoves(mon))
-                        FormChangeTeachMove(taskId, MOVE_CONFUSION, gTasks[taskId].firstFusionSlot);
+                        FormChangeTeachMove(taskId, MOVE_PSYSHOT, gTasks[taskId].firstFusionSlot);
                 }
             }
             gTasks[taskId].tState++;

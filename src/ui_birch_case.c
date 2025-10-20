@@ -125,7 +125,7 @@ struct MonChoiceData // This is the format used to define a mon, everything left
     u16 moves[4]; // use format {MOVE_FIRE_BLAST, MOVE_SHEER_COLD, MOVE_NONE, MOVE_NONE}
     bool8 ggMaxFactor;      // only work in Expansion set to 0 otherwise or leave blank
     u8 teraType;            // only work in Expansion set to 0 otherwise or leave blank
-    bool8 isShiny; // only work in Expansion set to 0 otherwise or leave blank
+    u8 shinyMode; // only work in Expansion set to 0 otherwise or leave blank
 };
 
 
@@ -139,6 +139,7 @@ struct MonChoiceData // This is the format used to define a mon, everything left
     .nature = NUM_NATURES, \
     .abilityNum = NUM_ABILITY_PERSONALITY, \
     .gender = MON_GENDERLESS, \
+    .shinyMode = SHINY_MODE_RANDOM, \
     .ivs = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1}, \
 }
 
@@ -439,11 +440,11 @@ static inline u8 GetStarterChoiceTeraType(u32 index)
 
     return teraType;
 }
-static inline bool8 GetStarterChoiceIsShiny(u32 index)
+static inline u8 GetStarterChoiceShinyMode(u32 index)
 {
-    bool8 isShiny = sStarterChoices[index].isShiny;
+    u8 shinyMode = sStarterChoices[index].shinyMode;
 
-    return isShiny;
+    return shinyMode;
 }
 
 //
@@ -594,7 +595,7 @@ static void BirchCase_GiveMon(void) // Function that calls the GiveMon function 
                 GetStarterChoiceMoves(sBirchCaseDataPtr->handPosition),
                 GetStarterChoiceGgMaxFactor(sBirchCaseDataPtr->handPosition),
                 GetStarterChoiceTeraType(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceIsShiny(sBirchCaseDataPtr->handPosition));
+                GetStarterChoiceShinyMode(sBirchCaseDataPtr->handPosition));
 }
 
 //==========FUNCTIONS==========//
