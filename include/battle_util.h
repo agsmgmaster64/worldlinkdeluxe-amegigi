@@ -174,8 +174,9 @@ struct BattleContext
     u32 battlerAtk:3;
     u32 battlerDef:3;
     u32 currentMove:16;
-    enum BattleMoveEffects moveEffect:10;
-    enum Ability ability[MAX_BATTLERS_COUNT];
+    u32 padding:10;
+    enum Ability abilities[MAX_BATTLERS_COUNT];
+    enum HoldEffect holdEffects[MAX_BATTLERS_COUNT];
 };
 
 enum SleepClauseBlock
@@ -422,5 +423,6 @@ void RemoveAbilityFlags(u32 battler);
 bool32 IsDazzlingAbility(enum Ability ability);
 bool32 IsAllowedToUseBag(void);
 bool32 IsAnyTargetTurnDamaged(u32 battlerAtk);
+bool32 IsMimikyuDisguised(u32 battler);
 
 #endif // GUARD_BATTLE_UTIL_H
