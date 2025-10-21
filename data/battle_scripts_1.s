@@ -7711,6 +7711,18 @@ BattleScript_GooeyActivates::
 	swapattackerwithtarget
 	return
 
+BattleScript_DourEchoActivatesAtk::
+	waitstate
+	call BattleScript_AbilityPopUp
+	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_ATK_MINUS_1
+	return
+
+BattleScript_DourEchoActivatesSpAtk::
+	waitstate
+	call BattleScript_AbilityPopUp
+	seteffectsecondary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_SP_ATK_MINUS_1
+	return
+
 BattleScript_AbilityStatusEffect::
 	waitstate
 	call BattleScript_AbilityPopUp

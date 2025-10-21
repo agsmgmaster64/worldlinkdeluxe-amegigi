@@ -2590,4 +2590,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_DOUR_ECHO] =
+    {
+        .name = _("Dour Echo"),
+        .description = COMPOUND_STRING("Confuses poisoned foes."),
+        .aiRating = 8,
+    },
 };

@@ -5444,6 +5444,38 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, enum Ability ability, u32 spec
                 BattleScriptCall(BattleScript_AbilityStatusEffect);
                 effect++;
             }
+            break;
+        case ABILITY_DOUR_ECHO:
+            if (IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && gBattlerAttacker != gBattlerTarget
+             && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_MISSED)
+             && IsSoundMove(gCurrentMove))
+            {
+                if (gBattleMons[gBattlerTarget].attack < gBattleMons[gBattlerTarget].spAttack)
+                {
+                    if (CompareStat(gBattlerTarget, STAT_SPATK, MIN_STAT_STAGE, CMP_GREATER_THAN) || GetBattlerAbility(gBattlerTarget) == ABILITY_MIRROR_ARMOR)
+                    {
+                        SET_STATCHANGER(STAT_SPATK, 1, TRUE);
+                        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                        BattleScriptCall(BattleScript_DourEchoActivatesSpAtk);
+                        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                        effect++;
+                    }
+                }
+                else
+                {
+                    if (CompareStat(gBattlerTarget, STAT_ATK, MIN_STAT_STAGE, CMP_GREATER_THAN) || GetBattlerAbility(gBattlerTarget) == ABILITY_MIRROR_ARMOR)
+                    {
+                        SET_STATCHANGER(STAT_ATK, 1, TRUE);
+                        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                        BattleScriptCall(BattleScript_DourEchoActivatesAtk);
+                        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
+                        effect++;
+                    }
+                }
+            }
+            break;
         default:
             break;
         }
