@@ -2282,7 +2282,7 @@ static void SetSelectMoveTilemaps(void)
 
 #define TILE_BLACK_SQUARE           0x00B5
 #define TILE_INACTIVE_SQUARE_TOP    0x0002
-#define TILE_INACTIVE_SQUARE_BOTTOM BG_TILE_V_FLIP(TILE_INACTIVE_SQUARE_TOP)
+#define TILE_INACTIVE_SQUARE_BOTTOM 0x0008
 
 static void HideInactivePageDots(void)
 {
@@ -3506,8 +3506,8 @@ static void OverrideHPBarPalette(void)
 }
 
 #define EXP_BAR_TILEMAP_START 0x1F4
-#define EXP_BAR_TILE_EMPTY    0x2100
-#define EXP_BAR_TILE_FULL     0x2108
+#define EXP_BAR_TILE_EMPTY    0x100
+#define EXP_BAR_TILE_FULL     0x108
 
 static void DrawExperienceProgressBar(struct Pokemon *unused)
 {
@@ -4579,25 +4579,25 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
 
     if (moveIndex != MOVE_NONE)
     {
-        if (gMovesInfo[moveIndex].power < 2)
+        if (GetMovePower(moveIndex) < 2)
         {
             text = gText_ThreeDashes;
         }
         else
         {
-            ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            ConvertIntToDecimalStringN(gStringVar1, GetMovePower(moveIndex), STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
 
         PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, 2, 4, 0, 0);
 
-        if (gMovesInfo[moveIndex].accuracy == 0)
+        if (GetMoveAccuracy(moveIndex) == 0)
         {
             text = gText_ThreeDashes;
         }
         else
         {
-            ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[moveIndex].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+            ConvertIntToDecimalStringN(gStringVar1, GetMoveAccuracy(moveIndex), STR_CONV_MODE_RIGHT_ALIGN, 3);
             text = gStringVar1;
         }
 
@@ -4694,8 +4694,8 @@ static void PrintMoveDetails(u16 move)
 
             if (BW_SUMMARY_AUTO_FORMAT_MOVE_DESCRIPTIONS)
             {
-                if (gMovesInfo[move].effect != EFFECT_PLACEHOLDER)
-                    FormatTextByWidth(desc, 119, FONT_BW_SUMMARY_SCREEN, gMovesInfo[move].description, GetFontAttribute(FONT_BW_SUMMARY_SCREEN, FONTATTR_LETTER_SPACING));
+                if (GetMoveEffect(move) != EFFECT_PLACEHOLDER)
+                    FormatTextByWidth(desc, 119, FONT_BW_SUMMARY_SCREEN, GetMoveDescription(move), GetFontAttribute(FONT_BW_SUMMARY_SCREEN, FONTATTR_LETTER_SPACING));
                 else
                     FormatTextByWidth(desc, 119, FONT_BW_SUMMARY_SCREEN, gNotDoneYetDescription, GetFontAttribute(FONT_BW_SUMMARY_SCREEN, FONTATTR_LETTER_SPACING));
 
@@ -4703,8 +4703,8 @@ static void PrintMoveDetails(u16 move)
             }
             else
             {
-                if (gMovesInfo[move].effect != EFFECT_PLACEHOLDER)
-                    PrintTextOnWindow_BW_Font(windowId, gMovesInfo[move].description, 2, 0, 0, 0);
+                if (GetMoveEffect(move) != EFFECT_PLACEHOLDER)
+                    PrintTextOnWindow_BW_Font(windowId, GetMoveDescription(move), 2, 0, 0, 0);
                 else
                     PrintTextOnWindow_BW_Font(windowId, gNotDoneYetDescription, 2, 0, 0, 0);
             }
@@ -4757,7 +4757,7 @@ static void PrintNewMoveDetailsOrCancelText(void)
         else
             PrintTextOnWindowToFitPx_WithFont(windowId1, GetMoveName(move), 3, 114, 0, 12, FONT_SMALL, WindowWidthPx(windowId1) - 3);
 
-        ConvertIntToDecimalStringN(gStringVar1, gMovesInfo[move].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+        ConvertIntToDecimalStringN(gStringVar1, GetMovePP(move), STR_CONV_MODE_RIGHT_ALIGN, 2);
         DynamicPlaceholderTextUtil_Reset();
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar1);
@@ -5013,7 +5013,7 @@ static void SetMoveTypeIcons(void)
         {
             enum MonState state = gMain.inBattle ? MON_IN_BATTLE : MON_OUTSIDE_BATTLE;
             type = P_SHOW_DYNAMIC_TYPES ? CheckDynamicMoveType(&sMonSummaryScreen->currentMon, move, 0, state) : GetMoveType(move);
-            SetTypeSpritePosAndPal(type, 8, 16 + (i * 28), i + SPRITE_ARR_ID_TYPE);
+            SetTypeSpritePosAndPal(type, 8, 18 + (i * 28), i + SPRITE_ARR_ID_TYPE);
         }
         else
         {
@@ -5030,7 +5030,7 @@ static void SetContestMoveTypeIcons(void)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (summary->moves[i] != MOVE_NONE)
-            SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gMovesInfo[summary->moves[i]].contestCategory, 8, 16 + (i * 28), i + SPRITE_ARR_ID_TYPE);
+            SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + GetMoveContestCategory(summary->moves[i]), 8, 18 + (i * 28), i + SPRITE_ARR_ID_TYPE);
         else
             SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
     }
@@ -5054,7 +5054,7 @@ static void SetNewMoveTypeIcon(void)
         }
         else
         {
-            SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gMovesInfo[move].contestCategory, 8, 128, SPRITE_ARR_ID_TYPE + 4);
+            SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + GetMoveContestCategory(move), 8, 128, SPRITE_ARR_ID_TYPE + 4);
         }
     }
 }
