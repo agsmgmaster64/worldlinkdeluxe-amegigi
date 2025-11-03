@@ -1959,9 +1959,9 @@ void TryEnterContestMon(void)
 
 u16 HasMonWonThisContestBefore(void)
 {
-    u16 hasRankRibbon = FALSE;
-    //struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
-    /*switch (gSpecialVar_ContestCategory)
+    bool32 hasRankRibbon = FALSE;
+    /*struct Pokemon *mon = &gPlayerParty[gContestMonPartyIndex];
+    switch (gSpecialVar_ContestCategory)
     {
     case CONTEST_CATEGORY_COOL:
         if (GetMonData(mon, MON_DATA_COOL_RIBBON) > gSpecialVar_ContestRank)

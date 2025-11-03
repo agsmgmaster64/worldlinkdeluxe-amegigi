@@ -852,9 +852,9 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
-    [EFFECT_WORRY_SEED] =
+    [EFFECT_OVERWRITE_ABILITY] =
     {
-        .battleScript = BattleScript_EffectWorrySeed,
+        .battleScript = BattleScript_EffectOverwriteAbility,
         .battleTvScore = 0, // TODO: Assign points
         .encourageEncore = TRUE,
     },
@@ -1402,13 +1402,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
     },
-
-    [EFFECT_SIMPLE_BEAM] =
-    {
-        .battleScript = BattleScript_EffectSimpleBeam,
-        .battleTvScore = 0, // TODO: Assign points
-    },
-
+    
     [EFFECT_ENTRAINMENT] =
     {
         .battleScript = BattleScript_EffectEntrainment,

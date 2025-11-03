@@ -88,6 +88,8 @@ void ItemUseOutOfBattle_BerryPouch(u8 taskId);
 void ItemUseOnFieldCB_RockClimbTool(u8);
 
 // End qol_field_moves
+bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
+u8 GetDirectionToHiddenItem(s16, s16);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
@@ -102,9 +104,5 @@ enum {
 bool32 CanThrowBall(void);
 bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon);
 void ItemUseOutOfBattle_Hexorb(u8 taskId); // Hexorb
-
-void ResumeORASDowseFieldEffect(void);
-void UpdateDowseState(struct Sprite *sprite);
-void ClearDowsingColor(struct Sprite *sprite);
 
 #endif // GUARD_ITEM_USE_H

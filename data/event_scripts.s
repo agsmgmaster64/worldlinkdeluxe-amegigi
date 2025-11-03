@@ -1212,3 +1212,4 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CarpetTraining/scripts.inc"
 	.include "data/maps/CarpetTraining/text.inc"
+	.include "data/scripts/battle_frontier.inc"

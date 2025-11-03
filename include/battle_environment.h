@@ -4,10 +4,11 @@
 #include "constants/battle.h"
 #include "battle_bg.h"
 
-struct BattleEnvironment {
+struct BattleEnvironment
+{
     u16 naturePower;
     u16 secretPowerEffect;
-    u8 camouflageType;
+    enum Type camouflageType;
     struct BattleBackground background;
 };
 

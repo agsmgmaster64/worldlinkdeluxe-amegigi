@@ -2,28 +2,31 @@
 #define GUARD_CONSTANTS_POKEMON_H
 
 // Pokémon types
-#define TYPE_NONE             0
-#define TYPE_ILLUSION         1
-#define TYPE_DREAM            2
-#define TYPE_FLYING           3
-#define TYPE_MIASMA           4
-#define TYPE_EARTH            5
-#define TYPE_BEAST            6
-#define TYPE_HEART            7
-#define TYPE_GHOST            8
-#define TYPE_STEEL            9
-#define TYPE_MYSTERY          10
-#define TYPE_FIRE             11
-#define TYPE_WATER            12
-#define TYPE_NATURE           13
-#define TYPE_WIND             14
-#define TYPE_REASON           15
-#define TYPE_ICE              16
-#define TYPE_FAITH            17
-#define TYPE_DARK             18
-#define TYPE_COSMIC           19
-#define TYPE_STELLAR          20
-#define NUMBER_OF_MON_TYPES   21
+enum __attribute__((packed)) Type
+{
+    TYPE_NONE = 0,
+    TYPE_ILLUSION = 1,
+    TYPE_DREAM = 2,
+    TYPE_FLYING = 3,
+    TYPE_MIASMA = 4,
+    TYPE_EARTH = 5,
+    TYPE_BEAST = 6,
+    TYPE_HEART = 7,
+    TYPE_GHOST = 8,
+    TYPE_STEEL = 9,
+    TYPE_MYSTERY = 10,
+    TYPE_FIRE = 11,
+    TYPE_WATER = 12,
+    TYPE_NATURE = 13,
+    TYPE_WIND = 14,
+    TYPE_REASON = 15,
+    TYPE_ICE = 16,
+    TYPE_FAITH = 17,
+    TYPE_DARK = 18,
+    TYPE_COSMIC = 19,
+    TYPE_STELLAR = 20,
+    NUMBER_OF_MON_TYPES
+};
 
 // Type icon palettes for summary / HGSS Dex / DexNav
 #define TYPE_ICON_PAL_1     13
@@ -79,16 +82,18 @@
 #define NUM_NATURES     25
 
 // Pokémon Stats
-#define STAT_HP      0
-#define STAT_ATK     1
-#define STAT_DEF     2
-#define STAT_SPEED   3
-#define STAT_SPATK   4
-#define STAT_SPDEF   5
-#define NUM_STATS    6
-
-#define STAT_ACC     6 // Only in battles.
-#define STAT_EVASION 7 // Only in battles.
+enum __attribute__((packed)) Stat
+{
+    STAT_HP,
+    STAT_ATK,
+    STAT_DEF,
+    STAT_SPEED,
+    STAT_SPATK,
+    STAT_SPDEF,
+    NUM_STATS,
+    STAT_ACC = NUM_STATS, // Only in battles.
+    STAT_EVASION,         // Only in battles.
+};
 
 #define NUM_NATURE_STATS (NUM_STATS - 1) // excludes HP
 #define NUM_BATTLE_STATS (NUM_STATS + 2) // includes Accuracy and Evasion
@@ -214,7 +219,7 @@
 #define EV_ITEM_RAISE_LIMIT ((I_VITAMIN_EV_CAP >= GEN_8) ? MAX_PER_STAT_EVS : 100)
 
 // Move category defines.
-enum DamageCategory
+enum __attribute__((packed)) DamageCategory
 {
     DAMAGE_CATEGORY_PHYSICAL,
     DAMAGE_CATEGORY_SPECIAL,

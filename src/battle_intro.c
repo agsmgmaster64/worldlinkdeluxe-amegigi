@@ -136,6 +136,9 @@ void HandleIntroSlide(u8 environment)
     }
     else
     {
+        if (environment >= NELEMS(sBattleIntroSlideFuncs)
+         || sBattleIntroSlideFuncs[environment] == NULL)
+            environment = BATTLE_ENVIRONMENT_PLAIN;
         taskId = CreateTask(sBattleIntroSlideFuncs[environment], 0);
     }
 

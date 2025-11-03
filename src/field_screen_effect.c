@@ -27,6 +27,7 @@
 #include "mirage_tower.h"
 #include "metatile_behavior.h"
 #include "palette.h"
+#include "oras_dowse.h"
 #include "overworld.h"
 #include "scanline_effect.h"
 #include "script.h"

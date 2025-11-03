@@ -2973,7 +2973,7 @@
 
 	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.
 	.macro hidefollower wait=1
-	callnative ScrFunc_hidefollower, requests_effects=1
+	.byte SCR_OP_HIDEFOLLOWER
 	.2byte \wait
 	.endm
 
@@ -3170,6 +3170,6 @@
 	@ The next shown message/msgbox will include a namebox, if the provided string is not NULL.
 	@ An SP_NAME_* constant can also be used, it'll take the name from gSpeakerNamesTable instead.
 	.macro setspeaker name:req
-	callnative SetSpeaker
+	callnative SetSpeakerName
 	.4byte \name
 	.endm

@@ -20,6 +20,7 @@
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "music_player.h"
+#include "oras_dowse.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
