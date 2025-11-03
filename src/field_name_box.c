@@ -176,7 +176,7 @@ static void WindowFunc_ClearNamebox(u8 bg, u8 L, u8 T, u8 w, u8 h, u8 p)
     FillBgTilemapBufferRect(bg, 0, L - 1, T, w + 2, h, 0); // palette doesn't matter
 }
 
-void SetSpeaker(struct ScriptContext *ctx)
+void SetSpeakerName(struct ScriptContext *ctx)
 {
     u32 arg = ScriptReadWord(ctx);
     const u8 *speaker = NULL;

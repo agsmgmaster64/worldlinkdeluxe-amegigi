@@ -1258,7 +1258,7 @@ static void PrintStatsTab(void)
     bool8 statStageUp = FALSE;
     u8 numtypes = 1;
     u32 nature, isEnemyMon;
-    u32 types[3];
+    enum Type types[3];
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
 
@@ -1487,6 +1487,8 @@ static void PrintStatsTab(void)
             case STAT_SPEED:
                 StringCopy(gStringVar2, sText_Speed);
                 break;
+            default:
+                break;
             }
 
             switch (gNaturesInfo[nature].statDown)
@@ -1505,6 +1507,8 @@ static void PrintStatsTab(void)
                 break;
             case STAT_SPEED:
                 StringCopy(gStringVar3, sText_Speed);
+                break;
+            default:
                 break;
             }
             StringExpandPlaceholders(gStringVar4, sText_Title_Nature);

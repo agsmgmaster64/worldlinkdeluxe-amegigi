@@ -9,6 +9,7 @@
 #include "field_player_avatar.h"
 #include "fldeff.h"
 #include "item_use.h"
+#include "overworld.h"
 #include "palette.h"
 #include "script.h"
 #include "sound.h"
@@ -262,7 +263,11 @@ void Task_UseORASDowsingMachine(u8 taskId)
     else
     {
         if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
-            GetOnOffBike(0);
+        {
+            SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+            Overworld_ClearSavedMusic();
+            Overworld_PlaySpecialMapMusic();
+        }
 
         StartORASDowseFieldEffect();
     }
