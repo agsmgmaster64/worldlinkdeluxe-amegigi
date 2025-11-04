@@ -444,10 +444,7 @@ Text_CantWaterfall:
 
 Text_WantToWaterfall:
 	.string "It's a large waterfall.\n"
-	.string "Would you like to use WATERFALL?$"
-
-Text_MonUsedWaterfall:
-	.string "{STR_VAR_1} used WATERFALL.$"
+	.string "Would you like to use Waterfall?$"
 
 EventScript_UseDive::
 	lockall
@@ -459,7 +456,8 @@ EventScript_UseDive::
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToDive, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	buffermovename STR_VAR_2, MOVE_DIVE
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	hidefollowernpc
 	setfieldeffectargument 0, VAR_0x8004
 	setfieldeffectargument 1, 1
@@ -484,6 +482,12 @@ EventScript_CheckDiveToolAndParty::
 
 EventScript_UseScubaGear::
 	lockall
+	goto EventScript_UseDiveItem_SkipCheck
+
+EventScript_CanUseDiveItem::
+	checkitem ITEM_SCUBA_GEAR, 1
+	goto_if_ne VAR_RESULT, TRUE, EventScript_CantDive
+EventScript_UseDiveItem_SkipCheck::
 	bufferitemname STR_VAR_2, ITEM_SCUBA_GEAR
 	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
 	waitmessage
@@ -499,7 +503,8 @@ EventScript_UseDiveUnderwater::
 	setfieldeffectargument 1, 1
 	msgbox Text_WantToSurface, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
+	buffermovename STR_VAR_2, MOVE_DIVE
+	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	hidefollowernpc
 	dofieldeffect FLDEFF_USE_DIVE
 	goto EventScript_EndSurface
