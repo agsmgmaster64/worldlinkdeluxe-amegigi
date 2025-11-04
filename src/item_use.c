@@ -132,7 +132,7 @@ static const u8 sText_PlayedPokeFlute[] = _("Played the Toho Flute.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The Toho Flute awakened sleeping\nPuppets.{PAUSE_UNTIL_PRESS}");
 
 // EWRAM variables
-EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
+EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;
 
 // Below is set TRUE by UseRegisteredKeyItemOnField
 #define tUsingRegisteredKeyItem  data[3]
