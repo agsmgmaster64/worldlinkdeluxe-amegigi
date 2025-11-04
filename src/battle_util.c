@@ -2099,6 +2099,7 @@ static enum MoveCanceller CancellerPowerPoints(struct BattleContext *ctx)
     if (gBattleMons[ctx->battlerAtk].pp[gCurrMovePos] == 0
      && ctx->currentMove != MOVE_STRUGGLE
      && !gSpecialStatuses[ctx->battlerAtk].dancerUsedMove
+     && !gSpecialStatuses[ctx->battlerAtk].concertoUsedMove
      && !gBattleMons[ctx->battlerAtk].volatiles.multipleTurns)
     {
         gBattlescriptCurrInstr = BattleScript_NoPPForMove;
@@ -2477,7 +2478,8 @@ static enum MoveCanceller CancellerStanceChangeTwo(struct BattleContext *ctx)
 static enum MoveCanceller CancellerAttackstring(struct BattleContext *ctx)
 {
     BattleScriptCall(BattleScript_Attackstring);
-    if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove)
+    if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove
+     && !gSpecialStatuses[gBattlerAttacker].concertoUsedMove)
         gLastPrintedMoves[gBattlerAttacker] = gChosenMove;
     return MOVE_STEP_BREAK;
 }
@@ -2486,6 +2488,7 @@ static enum MoveCanceller CancellerPPDeduction(struct BattleContext *ctx)
 {
     if (gBattleMons[ctx->battlerAtk].volatiles.multipleTurns
      || gSpecialStatuses[ctx->battlerAtk].dancerUsedMove
+     || gSpecialStatuses[ctx->battlerAtk].concertoUsedMove
      || ctx->currentMove == MOVE_STRUGGLE)
         return MOVE_STEP_SUCCESS;
 
@@ -5474,7 +5477,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                         SET_STATCHANGER(STAT_SPATK, 1, TRUE);
                         PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                         BattleScriptCall(BattleScript_DourEchoActivatesSpAtk);
-                        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
                         effect++;
                     }
                 }
@@ -5485,7 +5487,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                         SET_STATCHANGER(STAT_ATK, 1, TRUE);
                         PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                         BattleScriptCall(BattleScript_DourEchoActivatesAtk);
-                        gHitMarker |= HITMARKER_STATUS_ABILITY_EFFECT;
                         effect++;
                     }
                 }

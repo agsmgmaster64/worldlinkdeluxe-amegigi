@@ -4451,7 +4451,7 @@ BattleScript_FaintBattler::
 	tryrevertweatherform
 	flushtextbox
 	waitanimation
-	storegivingheart BS_SCRIPTING
+	storegivingheart BS_FAINTED
 	tryactivatesoulheart
 	tryactivatereceiver BS_FAINTED
 	trytrainerslidemsgfirstoff BS_FAINTED
