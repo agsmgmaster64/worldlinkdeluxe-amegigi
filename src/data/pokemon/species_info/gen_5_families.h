@@ -209,6 +209,82 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sPigniteLevelUpLearnset,
         .teachableLearnset = sPigniteTeachableLearnset,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_EMBOAR_MEGA] =
+    {
+        .baseHP        = 110,
+        .baseAttack    = 148,
+        .baseDefense   = 75,
+        .baseSpeed     = 75,
+        .baseSpAttack  = 110,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_FIRE, TYPE_FIGHTING),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 264 : 238,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(12.5),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_BLAZE, ABILITY_NONE, ABILITY_RECKLESS },
+        .bodyColor = BODY_COLOR_RED,
+        .noFlip = TRUE,
+        .speciesName = _("Emboar"),
+        .cryId = CRY_EMBOAR, // CRY_EMBOAR_MEGA,
+        .natDexNum = NATIONAL_DEX_EMBOAR,
+        .categoryName = _("Fire Pig"),
+        .height = 18,
+        .weight = 1803,
+        .description = COMPOUND_STRING(
+            "Brandishing a blazing flame\n"
+            "shaped like a serpentine spear,\n"
+            "it rushes in to save its\n"
+            "imperiled allies."),
+        .frontPic = gMonFrontPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(QuestionMark)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+    #if OW_BATTLE_ONLY_FORMS
+        .overworldData = {
+            .tileTag = TAG_NONE,
+            .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
+            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+            .size = 512,
+            .width = 32,
+            .height = 32,
+            .paletteSlot = PALSLOT_NPC_1,
+            .shadowSize = SHADOW_SIZE_M,
+            .inanimate = FALSE,
+            .compressed = COMP,
+            .tracks = TRACKS_FOOT,
+            .oam = &gObjectEventBaseOam_32x32,
+            .subspriteTables = sOamTables_32x32,
+            .anims = sAnimTable_Following,
+            .images = sPicTable_Substitute,
+            .affineAnims = gDummySpriteAffineAnimTable,
+        },
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sEmboarLevelUpLearnset,
+        .teachableLearnset = sEmboarTeachableLearnset,
+        .formSpeciesIdTable = sEmboarFormSpeciesIdTable,
+        .formChangeTable = sEmboarFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TEPIG
 
 #if P_FAMILY_OSHAWOTT
@@ -4218,7 +4294,84 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sEelektrossLevelUpLearnset,
         .teachableLearnset = sEelektrossTeachableLearnset,
+        .formSpeciesIdTable = sEelektrossFormSpeciesIdTable,
+        .formChangeTable = sEelektrossFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_EELEKTROSS_MEGA] =
+    {
+        .baseHP        = 85,
+        .baseAttack    = 145,
+        .baseDefense   = 80,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 90,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 30,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 258 : 232,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Eelektross"),
+        .cryId = CRY_EELEKTROSS, // CRY_EELEKTROSS_MEGA,
+        .natDexNum = NATIONAL_DEX_EELEKTROSS,
+        .categoryName = _("EleFish"),
+        .height = 30,
+        .weight = 1800,
+        .description = COMPOUND_STRING(
+            "It now generates 10 times the\n"
+            "electricity it did before Mega\n"
+            "Evolving. It discharges this energy\n"
+            "from its false Eelektrik made of mucus."),
+        .frontPic = gMonFrontPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(QuestionMark)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+    #if OW_BATTLE_ONLY_FORMS
+        .overworldData = {
+            .tileTag = TAG_NONE,
+            .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
+            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+            .size = 512,
+            .width = 32,
+            .height = 32,
+            .paletteSlot = PALSLOT_NPC_1,
+            .shadowSize = SHADOW_SIZE_M,
+            .inanimate = FALSE,
+            .compressed = COMP,
+            .tracks = TRACKS_FOOT,
+            .oam = &gObjectEventBaseOam_32x32,
+            .subspriteTables = sOamTables_32x32,
+            .anims = sAnimTable_Following,
+            .images = sPicTable_Substitute,
+            .affineAnims = gDummySpriteAffineAnimTable,
+        },
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sEelektrossLevelUpLearnset,
+        .teachableLearnset = sEelektrossTeachableLearnset,
+        .formSpeciesIdTable = sEelektrossFormSpeciesIdTable,
+        .formChangeTable = sEelektrossFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_TYNAMO
 
 #if P_FAMILY_ELGYEM
@@ -4581,7 +4734,84 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sChandelureLevelUpLearnset,
         .teachableLearnset = sChandelureTeachableLearnset,
+        .formSpeciesIdTable = sChandelureFormSpeciesIdTable,
+        .formChangeTable = sChandelureFormChangeTable,
     },
+
+#if P_GEN_9_MEGA_EVOLUTIONS
+    [SPECIES_CHANDELURE_MEGA] =
+    {
+        .baseHP        = 60,
+        .baseAttack    = 75,
+        .baseDefense   = 110,
+        .baseSpeed     = 90,
+        .baseSpAttack  = 175,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_GHOST, TYPE_FIRE),
+        .catchRate = 45,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 260 : 234,
+        .evYield_SpAttack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY, ABILITY_INFILTRATOR },
+        .bodyColor = BODY_COLOR_BLACK,
+        .speciesName = _("Chandelure"),
+        .cryId = CRY_CHANDELURE, // CRY_CHANDELURE_MEGA,
+        .natDexNum = NATIONAL_DEX_CHANDELURE,
+        .categoryName = _("Luring"),
+        .height = 25,
+        .weight = 696,
+        .description = COMPOUND_STRING(
+            "One of its eyes is a window linking\n"
+            "our world with the afterlife.\n"
+            "This Pokémon draws in hatred and\n"
+            "converts it into power."),
+        .frontPic = gMonFrontPic_CircledQuestionMark,
+        .frontPicSize = MON_COORDS_SIZE(40, 40),
+        .frontPicYOffset = 12,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_CircledQuestionMark,
+        .backPicSize = MON_COORDS_SIZE(40, 40),
+        .backPicYOffset = 12,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_CircledQuestionMark,
+        .shinyPalette = gMonShinyPalette_CircledQuestionMark,
+        .iconSprite = gMonIcon_QuestionMark,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        FOOTPRINT(QuestionMark)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
+    #if OW_BATTLE_ONLY_FORMS
+        .overworldData = {
+            .tileTag = TAG_NONE,
+            .paletteTag = OBJ_EVENT_PAL_TAG_SUBSTITUTE,
+            .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+            .size = 512,
+            .width = 32,
+            .height = 32,
+            .paletteSlot = PALSLOT_NPC_1,
+            .shadowSize = SHADOW_SIZE_M,
+            .inanimate = FALSE,
+            .compressed = COMP,
+            .tracks = TRACKS_FOOT,
+            .oam = &gObjectEventBaseOam_32x32,
+            .subspriteTables = sOamTables_32x32,
+            .anims = sAnimTable_Following,
+            .images = sPicTable_Substitute,
+            .affineAnims = gDummySpriteAffineAnimTable,
+        },
+    #endif //OW_BATTLE_ONLY_FORMS
+        .isMegaEvolution = TRUE,
+        .levelUpLearnset = sChandelureLevelUpLearnset,
+        .teachableLearnset = sChandelureTeachableLearnset,
+        .formSpeciesIdTable = sChandelureFormSpeciesIdTable,
+        .formChangeTable = sChandelureFormChangeTable,
+    },
+#endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_LITWICK
 
 #if P_FAMILY_CUBCHOO
