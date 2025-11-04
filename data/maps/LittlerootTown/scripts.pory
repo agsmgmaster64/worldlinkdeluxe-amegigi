@@ -94,7 +94,7 @@ mapscripts LittlerootTown_MapScripts {
 			waitmovement(0)
 			setflag(FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE)
 			setvar(VAR_LITTLEROOT_INTRO_STATE, INTRO_STATE_INSIDE_HOME)
-			hideobjectat(LOCALID_PLAYER, 0)
+			hideplayer
 			closedoor(PLAYER_DOOR_X, PLAYER_DOOR_Y)
 			waitdooranim
 			clearflag(FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN)

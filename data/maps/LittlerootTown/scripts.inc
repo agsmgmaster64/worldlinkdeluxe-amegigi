@@ -139,7 +139,7 @@ LittlerootTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 # 96 "data/maps/LittlerootTown/scripts.pory"
 	setvar VAR_LITTLEROOT_INTRO_STATE, 3
 # 97 "data/maps/LittlerootTown/scripts.pory"
-	hideobjectat LOCALID_PLAYER, 0
+	hideplayer
 # 98 "data/maps/LittlerootTown/scripts.pory"
 	closedoor 7, 8
 # 99 "data/maps/LittlerootTown/scripts.pory"
