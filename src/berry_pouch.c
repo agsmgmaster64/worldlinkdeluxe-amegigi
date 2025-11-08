@@ -511,8 +511,8 @@ static const u8 sTextColors[][3] =
 
 static const struct OamData sOamData = {
     .affineMode = ST_OAM_AFFINE_NORMAL,
-    .shape = ST_OAM_SQUARE,
-    .size = ST_OAM_SIZE_3,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
     .priority = 1
 };
 
