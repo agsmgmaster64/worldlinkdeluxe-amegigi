@@ -179,7 +179,6 @@ enum
 static const u8 *GetHealthboxElementGfxPtr(u8);
 static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *, u32, u32, u32, u32 *);
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *, u32, u32, u32, u32 *, u32);
-static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 fontId);
 
 static void RemoveWindowOnHealthbox(u32 windowId);
 static void UpdateHpTextInHealthboxInDoubles(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp, s16 maxHp);
@@ -908,16 +907,15 @@ void InitBattlerHealthboxCoords(u8 battler)
     UpdateSpritePos(gHealthboxSpriteIds[battler], x, y);
 }
 
-static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl, u8 gender)
+static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
 {
     u32 windowId, spriteTileNum;
     u8 *windowTileData;
-    u8 text[32];
+    u8 text[16];
     u32 xPos;
     u8 *objVram;
     u8 battler = gSprites[healthboxSpriteId].hMain_Battler;
 
-    /*
     // Don't print Lv char if mon has a gimmick with an indicator active.
     if (GetIndicatorPalTag(battler) != TAG_NONE)
     {
@@ -928,27 +926,15 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl, u8 gender)
     }
     else
     {
-    */
-    switch (gender)
-    {
-    default:
-        StringCopy(text, gText_HealthboxGender_None);
-        break;
-    case MON_MALE:
-        StringCopy(text, gText_HealthboxGender_Yin);
-        break;
-    case MON_FEMALE:
-        StringCopy(text, gText_HealthboxGender_Yang);
-        break;
+        text[0] = CHAR_EXTRA_SYMBOL;
+        text[1] = CHAR_LV_2;
+
+        objVram = ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
+        xPos = 5 * (3 - (objVram - (text + 2)));
+        UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
     }
 
-    StringAppend(text, COMPOUND_STRING("{COLOR_HIGHLIGHT_SHADOW 3 0 9}{LV}{COLOR_HIGHLIGHT_SHADOW 3 0 1}"));
-    objVram = ConvertIntToDecimalStringN(text + StringLength(text), lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
-    xPos = 0;
-    UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
-    //}
-
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxWithFont(text, xPos, 2, 0, &windowId, FONT_OUTLINED_NARROW);
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 3, 2, &windowId);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     if (IsOnPlayerSide(battler))
@@ -1746,7 +1732,6 @@ void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     StringGet_Nickname(nickname);
     ptr = StringAppend(gDisplayedStringBattle, nickname);
 
-    /*
     gender = GetMonGender(mon);
 
     if (CheckBattleTypeGhost(mon, gSprites[healthboxSpriteId].hMain_Battler))
@@ -1764,10 +1749,8 @@ void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
         StringCopy(ptr, gText_HealthboxGender_Yang);
         break;
     }
-    */
 
-    u32 len = (GetBattlerSide(gSprites[healthboxSpriteId].hMain_Battler) == B_SIDE_PLAYER) ? 64 : 55;
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 2, 0, &windowId, len);
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 3, 2, &windowId, 55);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
@@ -2032,7 +2015,7 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
         u8 isDoubles = GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES;
 
         if (elementId == HEALTHBOX_LEVEL || elementId == HEALTHBOX_ALL)
-            UpdateLvlInHealthbox(healthboxSpriteId, GetMonData(mon, MON_DATA_LEVEL), GetMonGender(mon));
+            UpdateLvlInHealthbox(healthboxSpriteId, GetMonData(mon, MON_DATA_LEVEL));
 
         if (elementId == HEALTHBOX_ALL)
             UpdateHpTextInHealthbox(healthboxSpriteId, HP_BOTH, currHp, maxHp);
@@ -2077,7 +2060,7 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
     else
     {
         if (elementId == HEALTHBOX_LEVEL || elementId == HEALTHBOX_ALL)
-            UpdateLvlInHealthbox(healthboxSpriteId, GetMonData(mon, MON_DATA_LEVEL), GetMonGender(mon));
+            UpdateLvlInHealthbox(healthboxSpriteId, GetMonData(mon, MON_DATA_LEVEL));
         if (gBattleSpritesDataPtr->battlerData[battler].hpNumbersNoBars)
         {
             if (elementId == HEALTHBOX_ALL)
@@ -2462,7 +2445,7 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
 
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxToFit(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId, u32 width)
 {
-    u32 fontId = GetOutlineFontIdToFit(str, width);
+    u32 fontId = GetFontIdToFit(str, FONT_SMALL, 0, width);
     return AddTextPrinterAndCreateWindowOnHealthboxWithFont(str, x, y, bgColor, windowId, fontId);
 }
 
