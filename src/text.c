@@ -33,6 +33,8 @@ static u16 FontFunc_Narrower(struct TextPrinter *);
 static u16 FontFunc_SmallNarrower(struct TextPrinter *);
 static u16 FontFunc_ShortNarrow(struct TextPrinter *);
 static u16 FontFunc_ShortNarrower(struct TextPrinter *);
+static u16 FontFunc_Outlined(struct TextPrinter *textPrinter);
+static u16 FontFunc_OutlinedNarrow(struct TextPrinter *textPrinter);
 static void DecompressGlyph_Small(u16, bool32);
 static void DecompressGlyph_Normal(u16, bool32);
 static void DecompressGlyph_Short(u16, bool32);
@@ -43,6 +45,8 @@ static void DecompressGlyph_Narrower(u16, bool32);
 static void DecompressGlyph_SmallNarrower(u16, bool32);
 static void DecompressGlyph_ShortNarrow(u16, bool32);
 static void DecompressGlyph_ShortNarrower(u16, bool32);
+static void DecompressGlyph_Outlined(u16, bool32);
+static void DecompressGlyph_OutlinedNarrow(u16, bool32);
 static u32 GetGlyphWidth_Small(u16, bool32);
 static u32 GetGlyphWidth_Normal(u16, bool32);
 static u32 GetGlyphWidth_Short(u16, bool32);
@@ -52,6 +56,8 @@ static u32 GetGlyphWidth_Narrower(u16, bool32);
 static u32 GetGlyphWidth_SmallNarrower(u16, bool32);
 static u32 GetGlyphWidth_ShortNarrow(u16, bool32);
 static u32 GetGlyphWidth_ShortNarrower(u16, bool32);
+static u32 GetGlyphWidth_Outlined(u16, bool32);
+static u32 GetGlyphWidth_OutlinedNarrow(u16, bool32);
 
 static EWRAM_DATA struct TextPrinter sTempTextPrinter = {0};
 static EWRAM_DATA struct TextPrinter sTextPrinters[WINDOWS_MAX] = {0};
@@ -108,6 +114,8 @@ static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
     { FONT_SHORT_NARROW,   GetGlyphWidth_ShortNarrow },
     { FONT_BW_SUMMARY_SCREEN, GetGlyphWidth_Short },
     { FONT_SHORT_NARROWER, GetGlyphWidth_ShortNarrower },
+    { FONT_OUTLINED,       GetGlyphWidth_Outlined },
+    { FONT_OUTLINED_NARROW, GetGlyphWidth_OutlinedNarrow },
 };
 
 struct
@@ -286,6 +294,28 @@ static const struct FontInfo sFontInfos[] =
         .bgColor = 1,
         .shadowColor = 3,
     },
+    [FONT_OUTLINED] =
+    {
+        .fontFunction = FontFunc_Outlined,
+        .maxLetterWidth = 11,
+        .maxLetterHeight = 15,
+        .letterSpacing = -1,
+        .lineSpacing = 0,
+        .fgColor = 2,
+        .bgColor = 1,
+        .shadowColor = 3,
+    },
+    [FONT_OUTLINED_NARROW] =
+    {
+        .fontFunction = FontFunc_OutlinedNarrow,
+        .maxLetterWidth = 11,
+        .maxLetterHeight = 15,
+        .letterSpacing = -1,
+        .lineSpacing = 0,
+        .fgColor = 2,
+        .bgColor = 1,
+        .shadowColor = 3,
+    },
 };
 
 static const u8 sMenuCursorDimensions[][2] =
@@ -305,6 +335,8 @@ static const u8 sMenuCursorDimensions[][2] =
     [FONT_SHORT_NARROW]   = { 8,  14 },
     [FONT_BW_SUMMARY_SCREEN] = { 8,  14 },
     [FONT_SHORT_NARROWER] = { 8,  14 },
+    [FONT_OUTLINED]       = {},
+    [FONT_OUTLINED_NARROW] = {},
 };
 
 // these three arrays are most for readability, ie instead of returning a magic number 8
@@ -1003,6 +1035,30 @@ static u16 FontFunc_ShortNarrower(struct TextPrinter *textPrinter)
     return RenderText(textPrinter);
 }
 
+static u16 FontFunc_Outlined(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
+
+    if (subStruct->hasFontIdBeenSet == FALSE)
+    {
+        subStruct->fontId = FONT_OUTLINED;
+        subStruct->hasFontIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
+static u16 FontFunc_OutlinedNarrow(struct TextPrinter *textPrinter)
+{
+    struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
+
+    if (subStruct->hasFontIdBeenSet == FALSE)
+    {
+        subStruct->fontId = FONT_OUTLINED_NARROW;
+        subStruct->hasFontIdBeenSet = TRUE;
+    }
+    return RenderText(textPrinter);
+}
+
 void TextPrinterInitDownArrowCounters(struct TextPrinter *textPrinter)
 {
     struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
@@ -1423,6 +1479,12 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             break;
         case FONT_BRAILLE:
             break;
+        case FONT_OUTLINED:
+            DecompressGlyph_Outlined(currChar, textPrinter->japanese);
+            break;
+        case FONT_OUTLINED_NARROW:
+            DecompressGlyph_OutlinedNarrow(currChar, textPrinter->japanese);
+            break;
         }
 
         CopyGlyphToWindow(textPrinter);
@@ -1439,10 +1501,18 @@ static u16 RenderText(struct TextPrinter *textPrinter)
         }
         else
         {
-            if (textPrinter->japanese)
-                textPrinter->printerTemplate.currentX += (gCurGlyph.width + textPrinter->printerTemplate.letterSpacing);
+            // merge together each chars
+            if (textPrinter->printerTemplate.fontId == FONT_OUTLINED || textPrinter->printerTemplate.fontId == FONT_OUTLINED_NARROW)
+            {
+                textPrinter->printerTemplate.currentX += gCurGlyph.width + (-1);
+            }
             else
-                textPrinter->printerTemplate.currentX += gCurGlyph.width;
+            {
+                if (textPrinter->japanese)
+                    textPrinter->printerTemplate.currentX += (gCurGlyph.width + textPrinter->printerTemplate.letterSpacing);
+                else
+                    textPrinter->printerTemplate.currentX += gCurGlyph.width;
+            }
         }
         if (repeats == 2)
         {
@@ -1744,7 +1814,7 @@ s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
                 func = GetFontWidthFunc(*++str);
                 if (func == NULL)
                     return 0;
-                if (letterSpacing == -1)
+                if (letterSpacing == -1 && (fontId != FONT_OUTLINED || fontId != FONT_OUTLINED_NARROW))
                     localLetterSpacing = GetFontAttribute(*str, FONTATTR_LETTER_SPACING);
                 break;
             case EXT_CTRL_CODE_CLEAR:
@@ -2586,4 +2656,76 @@ u8 *WrapFontIdToFit(u8 *start, u8 *end, u32 fontId, u32 width)
     {
         return end;
     }
+}
+
+static void DecompressGlyph_Outlined(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+
+    glyphs = gFontOutlinedLatinGlyphs + (0x20 * glyphId);
+    gCurGlyph.width = gFontOutlinedLatinGlyphWidths[glyphId];
+
+    if (gCurGlyph.width <= 8)
+    {
+        DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
+        DecompressGlyphTile(glyphs + 0x10, gCurGlyph.gfxBufferBottom);
+    }
+    else
+    {
+        DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
+        DecompressGlyphTile(glyphs + 0x8, gCurGlyph.gfxBufferTop + 8);
+
+        DecompressGlyphTile(glyphs + 0x10, gCurGlyph.gfxBufferBottom);
+        DecompressGlyphTile(glyphs + 0x18, gCurGlyph.gfxBufferBottom + 8);
+    }
+
+    gCurGlyph.height = 15;
+}
+
+static u32 GetGlyphWidth_Outlined(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+        return 8;
+    else
+        return gFontOutlinedLatinGlyphWidths[glyphId];
+}
+
+static void DecompressGlyph_OutlinedNarrow(u16 glyphId, bool32 isJapanese)
+{
+    const u16 *glyphs;
+
+    glyphs = gFontOutlinedNarrowLatinGlyphs + (0x20 * glyphId);
+    gCurGlyph.width = gFontOutlinedNarrowLatinGlyphWidths[glyphId];
+
+    if (gCurGlyph.width <= 8)
+    {
+        DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
+        DecompressGlyphTile(glyphs + 0x10, gCurGlyph.gfxBufferBottom);
+    }
+    else
+    {
+        DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
+        DecompressGlyphTile(glyphs + 0x8, gCurGlyph.gfxBufferTop + 8);
+
+        DecompressGlyphTile(glyphs + 0x10, gCurGlyph.gfxBufferBottom);
+        DecompressGlyphTile(glyphs + 0x18, gCurGlyph.gfxBufferBottom + 8);
+    }
+
+    gCurGlyph.height = 15;
+}
+
+static u32 GetGlyphWidth_OutlinedNarrow(u16 glyphId, bool32 isJapanese)
+{
+    if (isJapanese == TRUE)
+        return 8;
+    else
+        return gFontOutlinedNarrowLatinGlyphWidths[glyphId];
+}
+
+u32 GetOutlineFontIdToFit(const u8 *str, u32 widthPx)
+{
+    if (GetStringWidth(FONT_OUTLINED, str, -1) <= widthPx)
+        return FONT_OUTLINED;
+
+    return FONT_OUTLINED_NARROW;
 }
