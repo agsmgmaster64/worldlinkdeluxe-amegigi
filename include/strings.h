@@ -2534,6 +2534,10 @@ extern const u8 gText_PlayerRegroupCenter[];
 extern const u8 gText_PlayerRegroupHome[];
 
 extern const u8 gText_Relearn[]; // move relearner from summary screen
+extern const u8 gText_Relearn_LevelUp[];
+extern const u8 gText_Relearn_Egg[];
+extern const u8 gText_Relearn_TM[];
+extern const u8 gText_Relearn_Tutor[];
 extern const u8 gText_Rename[]; // change nickname from summary screen
 
 // Follower party menu
@@ -2557,6 +2561,11 @@ extern const u8 gText_ReeledInTreasure[];
 extern const u8 gText_FoundATreasureItem[];
 extern const u8 gText_PutTreasureInPocket[];
 extern const u8 gText_NoRoomForTreasure[];
+
+extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
+extern const u8 MoveRelearner_Text_EggMoveLWR[];
+extern const u8 MoveRelearner_Text_TMMoveLWR[];
+extern const u8 MoveRelearner_Text_TutorMoveLWR[];
 
 // Switch Caught Mon into Party
 extern const u8 gText_CannotSendMonToBoxHM[];

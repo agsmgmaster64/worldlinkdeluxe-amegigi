@@ -500,6 +500,8 @@ u16 GetEggSpecies(u16 species)
         found = FALSE;
         for (j = 1; j < NUM_SPECIES; j++)
         {
+            if (!IsSpeciesEnabled(j))
+                continue;
             const struct Evolution *evolutions = GetSpeciesEvolutions(j);
             if (evolutions == NULL)
                 continue;
