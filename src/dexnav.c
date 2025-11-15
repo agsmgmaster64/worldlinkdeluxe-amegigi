@@ -2,6 +2,7 @@
 #include "battle_main.h"
 #include "battle_setup.h"
 #include "bg.h"
+#include "contest.h"
 #include "data.h"
 #include "daycare.h"
 #include "decompress.h"
@@ -2130,15 +2131,6 @@ static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
     gSprites[sDexNavUiDataPtr->typeIconSpriteIds[spriteArrayId]].invisible = invisible;
 }
 
-static const u8 sContestCategoryToOamPaletteNum[CONTEST_CATEGORIES_COUNT] =
-{
-    [CONTEST_CATEGORY_COOL] = TYPE_ICON_PAL_1,
-    [CONTEST_CATEGORY_BEAUTY] = TYPE_ICON_PAL_2,
-    [CONTEST_CATEGORY_CUTE] = TYPE_ICON_PAL_2,
-    [CONTEST_CATEGORY_SMART] = TYPE_ICON_PAL_3,
-    [CONTEST_CATEGORY_TOUGH] = TYPE_ICON_PAL_1,
-};
-
 static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
 {
     struct Sprite *sprite;
@@ -2148,7 +2140,7 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
     if (typeId < NUMBER_OF_MON_TYPES)
         sprite->oam.paletteNum = gTypesInfo[typeId].palette;
     else
-        sprite->oam.paletteNum = sContestCategoryToOamPaletteNum[typeId - NUMBER_OF_MON_TYPES];
+        sprite->oam.paletteNum = gContestCategoryInfo[typeId - NUMBER_OF_MON_TYPES].palette;
     sprite->x = x + 16;
     sprite->y = y + 8;
     SetSpriteInvisibility(spriteArrayId, FALSE);

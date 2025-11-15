@@ -4456,8 +4456,8 @@ static void HandleTurnActionSelectionState(void)
                             gSelectionBattleScripts[battler] = BattleScript_Safari_SameSpeciesCaptureBlocked;
 
                         gBattleCommunication[battler] = STATE_SELECTION_SCRIPT;
-                        *(gBattleStruct->selectionScriptFinished + battler) = FALSE;
-                        *(gBattleStruct->stateIdAfterSelScript + battler) = STATE_BEFORE_ACTION_CHOSEN;
+                        gBattleStruct->battlerState[battler].selectionScriptFinished = FALSE;
+                        gBattleStruct->stateIdAfterSelScript[battler] = STATE_BEFORE_ACTION_CHOSEN;
                         return;
                     }
                     break;

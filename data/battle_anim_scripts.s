@@ -31621,7 +31621,7 @@ gBattleAnimGeneral_SilphScoped::
 	monbg ANIM_ATTACKER
 	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_MINIMIZE, SOUND_PAN_ATTACKER, 48
-	createvisualtask AnimTask_TransformMon, 2, 255, 0
+	createvisualtask AnimTask_TransformMon, 2, 255
 	waitsound
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
