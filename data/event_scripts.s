@@ -3,6 +3,7 @@
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
+#include "constants/apricorn_tree.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_dome.h"
@@ -1213,3 +1214,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CarpetTraining/scripts.inc"
 	.include "data/maps/CarpetTraining/text.inc"
 	.include "data/scripts/battle_frontier.inc"
+	.include "data/scripts/apricorn_tree.inc"
