@@ -2299,11 +2299,22 @@ static void ReDrawAll(void)
 
 static const u8 sText_On[] = _("ON");
 static const u8 sText_Off[] = _("OFF");
+static const u8 sText_Slow[] = _("SLOW");
+static const u8 sText_Medium[] = _("MEDIUM");
+static const u8 sText_Fast[] = _("FAST");
 static const u8 sText_Faster[] = _("FASTER");
 static const u8 sText_Instant[] = _("INSTANT");
+static const u8 sText_Shift[] = _("SHIFT");
+static const u8 sText_Set[] = _("SET");
 static const u8 sText_Normal[] = _("NORMAL");
 static const u8 sText_ZeroPercent[] = _("0%{0x77}{0x77}");
 static const u8 sText_HundredPercent[] = _("100%");
+static const u8 sText_Mono[] = _("MONO");
+static const u8 sText_Stereo[] = _("STEREO");
+static const u8 sText_Metric[] = _("METRIC");
+static const u8 sText_Imperial[] = _("IMPERIAL");
+static const u8 sText_FrameType[] = _("TYPE");
+static const u8 sText_FrameTypeNumber[] = _("");
 static const u8 sText_FontEmerald[] = _("EMERALD");    //tx_optionsPlus
 static const u8 sText_FontFireRed[] = _("FRLG");        //tx_optionsPlus
 static const u8 sText_AnimSpeed1[] = _("1x");
@@ -2341,7 +2352,7 @@ static const u8 sText_Challenges_TrainerDifficulty_Normal[]  = _("NORMAL");
 static const u8 sText_Challenges_TrainerDifficulty_Hard[]    = _("HARD");
 static const u8 sText_Challenges_TrainerDifficulty_Lunatic[] = _("LUNATIC");
 
-static const u8 *const sTextSpeedStrings[] = {gText_TextSpeedSlow, gText_TextSpeedMid, gText_TextSpeedFast, sText_Faster};
+static const u8 *const sTextSpeedStrings[] = {sText_Slow, sText_Medium, sText_Fast, sText_Faster};
 static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
 static const u8 *const sBattleSelectStrings[] = {sText_SelectNone, sText_SelectNormal, sText_SelectPlus, sText_SelectDebug};
 
@@ -2370,8 +2381,8 @@ static void DrawChoices_BattleStyle(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_BattleStyleShift, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_Shift, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Set, GetStringRightAlignXOffset(FONT_NORMAL, sText_Set, 198), y, styles[1], active);
 }
 
 static void DrawChoices_Sound(int selection, int y)
@@ -2380,8 +2391,8 @@ static void DrawChoices_Sound(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_SoundMono, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_SoundStereo, GetStringRightAlignXOffset(FONT_NORMAL, gText_SoundStereo, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_Mono, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Stereo, GetStringRightAlignXOffset(FONT_NORMAL, sText_Stereo, 198), y, styles[1], active);
 }
 
 static void DrawChoices_BarSpeed(int selection, int y) //HP and EXP
@@ -2462,8 +2473,8 @@ static void DrawChoices_UnitSystem(int selection, int y)
     u8 styles[2] = {0};
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_UnitSystemImperial, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_UnitSystemMetric, GetStringRightAlignXOffset(1, gText_UnitSystemMetric, 198), y, styles[1], active);
+    DrawOptionMenuChoice(sText_Imperial, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Metric, GetStringRightAlignXOffset(1, sText_Metric, 198), y, styles[1], active);
 }
 
 static void DrawChoices_FrameType(int selection, int y)
@@ -2473,8 +2484,8 @@ static void DrawChoices_FrameType(int selection, int y)
     u8 n = selection + 1;
     u16 i;
 
-    for (i = 0; gText_FrameTypeNumber[i] != EOS && i <= 5; i++)
-        text[i] = gText_FrameTypeNumber[i];
+    for (i = 0; sText_FrameTypeNumber[i] != EOS && i <= 5; i++)
+        text[i] = sText_FrameTypeNumber[i];
 
     // Convert a number to decimal string
     if (n / 10 != 0)
@@ -2494,7 +2505,7 @@ static void DrawChoices_FrameType(int selection, int y)
 
     text[i] = EOS;
 
-    DrawOptionMenuChoice(gText_FrameType, 104, y, 0, active);
+    DrawOptionMenuChoice(sText_FrameType, 104, y, 0, active);
     DrawOptionMenuChoice(text, 128, y, 1, active);
 }
 
