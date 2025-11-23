@@ -1830,7 +1830,6 @@
 
 	.macro setmoveeffect effect:req
 	sethword sMOVE_EFFECT, \effect
-	sethword sSAVED_MOVE_EFFECT, \effect
 	.endm
 
 	.macro sethword dst:req, value:req

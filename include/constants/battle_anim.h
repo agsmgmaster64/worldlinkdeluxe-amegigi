@@ -533,10 +533,11 @@
 #define BG_STEEL_BEAM_OPPONENT 78
 #define BG_STEEL_BEAM_PLAYER 79
 #define BG_CHLOROBLAST 80
-#define BG_RAINBOW 81
-#define BG_HOLY_TERRAIN 82
+#define BG_RAINBOW_PLAYER 81
+#define BG_RAINBOW_OPPONENT 82
 #define BG_SWAMP 83
-#define BG_INVERSE_ROOM 84
+#define BG_HOLY_TERRAIN 84
+#define BG_INVERSE_ROOM 85
 
 // table ids for general animations (sBattleAnims_General)
 #define B_ANIM_STATS_CHANGE             0

@@ -2187,7 +2187,6 @@ bool8 ObjectMovingOnRockStairs(struct ObjectEvent *objectEvent, u8 direction)
         s16 x = objectEvent->currentCoords.x;
         s16 y = objectEvent->currentCoords.y;
 
-        // TODO followers on sideways stairs
         if (IsFollowerVisible() && GetFollowerObject() != NULL && (objectEvent->isPlayer || objectEvent->localId == LOCALID_FOLLOWER))
             return FALSE;
 
