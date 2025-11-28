@@ -2300,7 +2300,7 @@ static void ReDrawAll(void)
 static const u8 sText_On[] = _("ON");
 static const u8 sText_Off[] = _("OFF");
 static const u8 sText_Slow[] = _("SLOW");
-static const u8 sText_Medium[] = _("MEDIUM");
+static const u8 sText_Medium[] = _("MID");
 static const u8 sText_Fast[] = _("FAST");
 static const u8 sText_Faster[] = _("FASTER");
 static const u8 sText_Instant[] = _("INSTANT");
@@ -2317,10 +2317,10 @@ static const u8 sText_FrameType[] = _("TYPE");
 static const u8 sText_FrameTypeNumber[] = _("");
 static const u8 sText_FontEmerald[] = _("EMERALD");    //tx_optionsPlus
 static const u8 sText_FontFireRed[] = _("FRLG");        //tx_optionsPlus
-static const u8 sText_AnimSpeed1[] = _("1x");
-static const u8 sText_AnimSpeed2[] = _("2x");
-static const u8 sText_AnimSpeed3[] = _("3x");
-static const u8 sText_AnimSpeed4[] = _("4x");
+static const u8 sText_1x[] = _("1x");
+static const u8 sText_2x[] = _("2x");
+static const u8 sText_3x[] = _("3x");
+static const u8 sText_4x[] = _("4x");
 static const u8 sText_None[] = _("NONE");
 static const u8 sText_LEqualsA[] = _("L=A TURBO");
 static const u8 sText_AutoRun[] = _("AUTO-RUN");
@@ -2353,7 +2353,6 @@ static const u8 sText_Challenges_TrainerDifficulty_Hard[]    = _("HARD");
 static const u8 sText_Challenges_TrainerDifficulty_Lunatic[] = _("LUNATIC");
 
 static const u8 *const sTextSpeedStrings[] = {sText_Slow, sText_Medium, sText_Fast, sText_Faster};
-static const u8 *const sAnimSpeedStrings[] = {sText_AnimSpeed1, sText_AnimSpeed2, sText_AnimSpeed3, sText_AnimSpeed4};
 static const u8 *const sBattleSelectStrings[] = {sText_SelectNone, sText_SelectNormal, sText_SelectPlus, sText_SelectDebug};
 
 static const u8 *const sText_ScalingEVs_Strings[] = {sText_Off, sText_ScalingIVsEVs_Scaling, sText_ScalingIVsEVs_Hard, sText_ScalingIVsEVs_Extreme};
@@ -2522,7 +2521,16 @@ static void DrawChoices_Font(int selection, int y)
 static void DrawChoices_AnimSpeed(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_ANIM_SPEED);
-    DrawChoices_Options_Four(sAnimSpeedStrings, selection, y, active);
+    u8 styles[4] = {0};
+    int xSpacer;
+
+    styles[selection] = 1;
+    xSpacer = (GetStringRightAlignXOffset(1, sText_4x, 198) - 104) / 3;
+
+    DrawOptionMenuChoice(sText_1x, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_2x, 104 + xSpacer, y, styles[1], active);
+    DrawOptionMenuChoice(sText_3x, 104 + 2 * xSpacer, y, styles[2], active);
+    DrawOptionMenuChoice(sText_4x, GetStringRightAlignXOffset(1, sText_4x, 198), y, styles[3], active);
 }
 
 static void DrawChoices_UniqueColors(int selection, int y)
@@ -2628,7 +2636,16 @@ static void DrawChoices_RButtonMode(int selection, int y) //HP and EXP
 static void DrawChoices_OverworldSpeed(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_MISC_OVERWORLD_SPEED);
-    DrawChoices_Options_Four(sAnimSpeedStrings, selection, y, active);
+    u8 styles[4] = {0};
+    int xSpacer;
+
+    styles[selection] = 1;
+    xSpacer = (GetStringRightAlignXOffset(1, sText_4x, 198) - 104) / 3;
+
+    DrawOptionMenuChoice(sText_1x, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_2x, 104 + xSpacer, y, styles[1], active);
+    DrawOptionMenuChoice(sText_3x, 104 + 2 * xSpacer, y, styles[2], active);
+    DrawOptionMenuChoice(sText_4x, GetStringRightAlignXOffset(1, sText_4x, 198), y, styles[3], active);
 }
 
 static void DrawChoices_Random_OffOn(int selection, int y, bool8 active)
