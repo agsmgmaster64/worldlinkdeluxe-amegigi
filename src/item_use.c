@@ -78,7 +78,6 @@ static void PlayerFaceHiddenItem(u8);
 static void CheckForHiddenItemsInMapConnection(u8);
 static void Task_OpenRegisteredPokeblockCase(u8);
 static void Task_AccessPokemonBoxLink(u8);
-static void Task_AccessMusicPlayer(u8);
 static void ItemUseOnFieldCB_Bike(u8);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_VariableRod(u8);
@@ -841,16 +840,34 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
     DestroyTask(taskId);
 }
 
-void ItemUseOutOfBattle_MusicPlayer(u8 taskId)
+static void MusicPlayerInitFromBag(void)
 {
-    sItemUseOnFieldCB = Task_AccessMusicPlayer;
-    SetUpItemUseOnFieldCallback(taskId);
+    MP3Player_Init(CB2_BagMenuFromStartMenu);
 }
 
-static void Task_AccessMusicPlayer(u8 taskId)
+static void Task_OpenRegisteredMusicPlayer(u8 taskId)
 {
-    ScriptContext_SetupScript(EventScript_AccessMusicPlayer);
-    DestroyTask(taskId);
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        MP3Player_Init(CB2_ReturnToField);
+        DestroyTask(taskId);
+    }
+}
+
+void ItemUseOutOfBattle_MusicPlayer(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        gBagMenu->newScreenCallback = MusicPlayerInitFromBag;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_OpenRegisteredMusicPlayer;
+    }
 }
 
 void ItemUseOutOfBattle_CoinCase(u8 taskId)

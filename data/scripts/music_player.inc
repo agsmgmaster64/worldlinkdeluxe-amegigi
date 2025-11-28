@@ -67,6 +67,11 @@ EventScript_MusicPlayer_PlaceholderOption:
 	msgbox Eventscript_RegionPlaylistMultichoice_Text_Placeholder
 	return
 
+EventScript_MusicPlayer_PlayMusic:
+	setvar VAR_0x8008, 0
+	msgbox Eventscript_RegionPlaylistMultichoice_Text_Placeholder
+	return
+
 EventScript_MusicPlayer_ResetAllSettings:
 	setvar VAR_0x8008, 4
 	msgbox Eventscript_ResetAllPlayer_Text_ResetPrompt, MSGBOX_YESNO
@@ -99,6 +104,16 @@ EventScript_SetupRegionPlaylistsSettingMultichoice:
 	return
 
 EventScript_MusicTrackListMultichoice:
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Default, 0
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe, 1
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS1, 2
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS2, 3
+	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Placeholder, 4
+	dynmultipush Eventscript_MainSettingMultichoice_Text_Back, 5
+	dynmultistack 0, 0, FALSE, 3, FALSE, VAR_0x800A, NULL
+	return
+
+EventScript_MusicOverridesListMultichoice:
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_Default, 0
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_WorldLinkDeluxe, 1
 	dynmultipush Eventscript_RegionPlaylistMultichoice_Text_ZGS1, 2
@@ -158,6 +173,15 @@ Eventscript_RegionPlaylistMultichoice_Text_Placeholder:
 
 Eventscript_MainSettingMultichoice_Text_Back:
 	.string "Go Back$"
+
+Eventscript_MusicOverrideMultichoice_Text_OverrideOverworld:
+	.string "Toggle Override$"
+
+Eventscript_MusicOverrideMultichoice_Text_OverrideBattle:
+	.string "Override Battle$"
+
+Eventscript_MusicOverrideMultichoice_Text_OverrideBikeSurf:
+	.string "Override Bike/Surf$"
 
 Eventscript_OverrideSettingMultichoice_Text_Override:
 	.string "Go Back$"
