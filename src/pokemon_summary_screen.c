@@ -1969,7 +1969,7 @@ bool32 CheckRelearnerStateFlag(enum MoveRelearnerStates state)
 
 void TryUpdateRelearnType(enum IncrDecrUpdateValues delta)
 {
-    u32 moveCount;
+    u32 moveCount = 0;
     u32 zeroCounter = 0;
     enum MoveRelearnerStates state = gMoveRelearnerState;
 

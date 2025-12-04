@@ -120,7 +120,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_RAIN_DOWNPOUR:
         if (ability == ABILITY_DRY_SKIN || ability == ABILITY_RAIN_DISH)
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
         }
         break;
@@ -128,7 +128,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_SUN_PRIMAL:
         if (ability == ABILITY_DRY_SKIN || ability == ABILITY_SOLAR_POWER)
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
         }
         break;
@@ -155,7 +155,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
     case BATTLE_WEATHER_SNOW:
         if (ability == ABILITY_ICE_BODY)
         {
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
         }
         else if (currBattleWeather == BATTLE_WEATHER_HAIL)
@@ -193,12 +193,8 @@ static bool32 HandleEndTurnEmergencyExit(u32 battler)
     {
         gBattlerAbility = battler;
         gLastUsedAbility = ability;
-
-        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-            BattleScriptExecute(BattleScript_EmergencyExitEnd2);
-        else
-            BattleScriptExecute(BattleScript_EmergencyExitWildEnd2);
-
+        gBattleScripting.battler = battler;
+        BattleScriptExecute(BattleScript_EmergencyExitEnd2);
         effect = TRUE;
     }
 
@@ -382,7 +378,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         case ABILITY_HYDRATION:
         case ABILITY_SUNBATHING:
         case ABILITY_MAINTENANCE:
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
             break;
         default:
@@ -1287,7 +1283,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         case ABILITY_MOODY:
         case ABILITY_PICKUP:
         case ABILITY_SPEED_BOOST:
-            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+            if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
             break;
         default:
@@ -1340,7 +1336,7 @@ static bool32 HandleEndTurnFormChangeAbilities(u32 battler)
     case ABILITY_SHIELDS_DOWN:
     case ABILITY_ZEN_MODE:
     case ABILITY_HUNGER_SWITCH:
-        if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
+        if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
             effect = TRUE;
     default:
         break;
