@@ -155,7 +155,6 @@ static const struct SpriteTemplate sSpriteTemplate_CutGrass =
     .oam = &sOamData_CutGrass,
     .anims = sSpriteAnimTable_CutGrass,
     .images = sSpriteImageTable_CutGrass,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = CutGrassSpriteCallback1,
 };
 

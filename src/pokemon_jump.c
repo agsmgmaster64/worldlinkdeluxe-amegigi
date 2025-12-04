@@ -2272,10 +2272,6 @@ static const struct SpriteTemplate sSpriteTemplate_JumpMon =
     .tileTag = TAG_MON1,
     .paletteTag = TAG_MON1,
     .oam = &sOamData_JumpMon,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static const s16 sVineYCoords[VINE_SPRITES_PER_SIDE][NUM_VINESTATES] =
@@ -2463,9 +2459,6 @@ static const struct SpriteTemplate sSpriteTemplate_Vine1 =
     .paletteTag = PALTAG_1,
     .oam = &sOamData_Vine16x32,
     .anims = sAnims_Vine,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Vine2 =
@@ -2474,9 +2467,6 @@ static const struct SpriteTemplate sSpriteTemplate_Vine2 =
     .paletteTag = PALTAG_1,
     .oam = &sOamData_Vine32x32,
     .anims = sAnims_VineTall,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Vine3 =
@@ -2485,9 +2475,6 @@ static const struct SpriteTemplate sSpriteTemplate_Vine3 =
     .paletteTag = PALTAG_1,
     .oam = &sOamData_Vine32x16,
     .anims = sAnims_Vine,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static const struct SpriteTemplate sSpriteTemplate_Vine4 =
@@ -2496,9 +2483,6 @@ static const struct SpriteTemplate sSpriteTemplate_Vine4 =
     .paletteTag = PALTAG_1,
     .oam = &sOamData_Vine32x16,
     .anims = sAnims_Vine,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static const struct OamData sOamData_Star =
@@ -2547,9 +2531,6 @@ static const struct SpriteTemplate sSpriteTemplate_Star =
     .paletteTag = PALTAG_1,
     .oam = &sOamData_Star,
     .anims = sAnims_Star,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 static void LoadSpriteSheetsAndPalettes(struct PokemonJumpGfx *jumpGfx)
