@@ -194,6 +194,14 @@ static bool32 FirstEventBlockEvents(struct BattleContext *ctx)
         {
             effect = FALSE;
         }
+        else if (gBattleStruct->battlerState[battler].storedLunarDance)
+        {
+            gBattleStruct->battlerState[battler].storedLunarDance = FALSE;
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler));
+            gBattleScripting.battler = battler;
+            BattleScriptCall(BattleScript_LunarDanceActivates);
+            effect = TRUE;
+        }
         else if (gBattleStruct->battlerState[battler].storedHealingWish)
         {
             gBattleStruct->battlerState[battler].storedHealingWish = FALSE;
@@ -202,12 +210,12 @@ static bool32 FirstEventBlockEvents(struct BattleContext *ctx)
             BattleScriptCall(BattleScript_HealingWishActivates);
             effect = TRUE;
         }
-        else if (gBattleStruct->battlerState[battler].storedLunarDance)
+        else if (gBattleStruct->battlerState[battler].storedGivingHeart)
         {
-            gBattleStruct->battlerState[battler].storedLunarDance = FALSE;
-            SetHealAmount(battler, GetNonDynamaxMaxHP(battler));
+            gBattleStruct->battlerState[battler].storedGivingHeart = FALSE;
+            SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 2);
             gBattleScripting.battler = battler;
-            BattleScriptCall(BattleScript_LunarDanceActivates);
+            BattleScriptCall(BattleScript_GivingHeartActivates);
             effect = TRUE;
         }
         else if (gBattleStruct->zmove.healReplacement & 1u << battler)
@@ -316,7 +324,7 @@ static bool32 TryHazardsOnSwitchIn(u32 battler, enum Ability ability, enum HoldE
         {
             effect = FALSE;
         }
-        else if (IS_BATTLER_OF_TYPE(battler, TYPE_POISON)) // Absorb the toxic spikes.
+        else if (IS_BATTLER_OF_TYPE(battler, TYPE_MIASMA)) // Absorb the toxic spikes.
         {
             gSideTimers[side].toxicSpikesAmount = 0;
             RemoveHazardFromField(side, HAZARDS_TOXIC_SPIKES);

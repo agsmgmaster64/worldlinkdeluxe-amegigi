@@ -28,15 +28,15 @@ $(CRY_BIN_DIR)/%.bin: $(CRY_SUBDIR)/%.wav
 
 # Uncompressed cries
 $(CRY_BIN_DIR)/uncomp_%.bin: $(CRY_SUBDIR)/uncomp_%.aif 
-	$(AIF) $< $@
+	$(WAV2AGB) -b -l 1 --no-pad $< $@
 
 # Compressed voices
-$(VOICE_BIN_DIR)/%.bin: $(VOICE_SUBDIR)/%.aif 
-	$(AIF) $< $@ --compress
+$(VOICE_BIN_DIR)/%.bin: $(VOICE_SUBDIR)/%.wav 
+	$(WAV2AGB) -b -c -l 1 --no-pad $< $@
 
 # Uncompressed voices
 $(VOICE_BIN_DIR)/uncomp_%.bin: $(VOICE_SUBDIR)/uncomp_%.aif 
-	$(AIF) $< $@
+	$(WAV2AGB) -b -l 1 --no-pad $< $@
 
 # Uncompressed sounds
 $(SOUND_BIN_DIR)/%.bin: sound/%.wav 

@@ -2040,15 +2040,13 @@ BattleScript_EffectHealingWishRestore:
 BattleScript_GivingHeartActivates::
 	printstring STRINGID_GIVINGHEARTCAMETRUE
 	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_ATTACKER, B_ANIM_WISH_HEAL
+	playanimation BS_SCRIPTING, B_ANIM_WISH_HEAL
 	waitanimation
-	dmgtohalfattackerhp
-	manipulatedamage DMG_CHANGE_SIGN
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	clearstatus
+	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	clearstatus BS_SCRIPTING
 	waitstate
-	updatestatusicon BS_ATTACKER
+	updatestatusicon BS_SCRIPTING
 	waitstate
 	printstring STRINGID_HEALINGWISHHEALED
 	waitmessage B_WAIT_TIME_LONG
