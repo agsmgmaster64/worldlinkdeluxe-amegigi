@@ -437,8 +437,6 @@ const struct SpriteTemplate gBurnPowderParticleSpriteTemplate =
     .paletteTag = ANIM_TAG_BURN_POWDER,
     .oam = &gOamData_AffineOff_ObjNormal_8x16,
     .anims = gPowderParticlesAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMovePowderParticle,
 };
 

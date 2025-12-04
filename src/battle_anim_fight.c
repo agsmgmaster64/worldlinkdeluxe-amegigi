@@ -200,9 +200,6 @@ const struct SpriteTemplate gDebtSpiralSpriteTemplate =
     .tileTag = ANIM_TAG_COIN,
     .paletteTag = ANIM_TAG_COIN,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimDizzyPunchDuck,
 };
 

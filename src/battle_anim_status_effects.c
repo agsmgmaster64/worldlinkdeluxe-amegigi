@@ -86,8 +86,6 @@ const struct SpriteTemplate gGroupPrankUpSpriteTemplate =
     .paletteTag = ANIM_TAG_ITEM_BAG,
     .oam = &gOamData_AffineOff_ObjNormal_32x32,
     .anims = sAnims_WeatherBallNormal,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimWeatherBallUp,
 };
 
@@ -96,9 +94,6 @@ const struct SpriteTemplate gGroupPrankFallSpriteTemplate =
     .tileTag = ANIM_TAG_ITEM_BAG,
     .paletteTag = ANIM_TAG_ITEM_BAG,
     .oam = &gOamData_AffineNormal_ObjNormal_32x32,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimApollon2,
 };
 
