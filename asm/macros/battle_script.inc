@@ -1470,9 +1470,8 @@
 	.4byte \ptr
 	.endm
 
-	.macro jumpifcantloseitem battler:req, ptr:req
+	.macro jumpifcantloseitem ptr:req
 	callnative BS_JumpIfCantLoseItem
-	.byte \battler
 	.4byte \ptr
 	.endm
 

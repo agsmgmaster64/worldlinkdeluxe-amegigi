@@ -600,8 +600,10 @@
 #define B_ANIM_SIMPLE_HEAL              57
 #define B_ANIM_INVERSE_ROOM             58
 #define B_ANIM_POWER_CONSTRUCT          59
+#define B_ANIM_SWAP_TO_SUBSTITUTE       60
+#define B_ANIM_SWAP_FROM_SUBSTITUTE     61
 
-#define NUM_B_ANIMS_GENERAL             60
+#define NUM_B_ANIMS_GENERAL             62
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

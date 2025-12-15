@@ -259,6 +259,7 @@ void NewGameInitData(void)
         PreloadRandomizationTables();
     #endif
     ResetItemFlags();
+    gSpecialVar_MonBoxId = 0xFF;
     ResetDexNav();
     QuestMenu_ResetMenuSaveData();
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;

@@ -758,490 +758,560 @@ const struct TrainerMon gSlateportBattleTentMons[NUM_SLATEPORT_TENT_MONS] =
         .moves = {MOVE_TACKLE, MOVE_CHARM, MOVE_BINDING_VOICE, MOVE_PIN_MISSILE},
         .heldItem = ITEM_CHOICE_RIBBON,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ZIGZAGOON_2] = {
         .species = SPECIES_CHIBI_TOJIKO,
         .moves = {MOVE_DIG, MOVE_SUB_ZERO, MOVE_TAIL_WHIP, MOVE_REST},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_BEAUTIFLY] = {
         .species = SPECIES_CHIBI_FUTO,
         .moves = {MOVE_STUN_SPORE, MOVE_MEGA_DRAIN, MOVE_GUST, MOVE_HARDEN},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_DUSTOX] = {
         .species = SPECIES_TECH_FUTO,
         .moves = {MOVE_POISON_STING, MOVE_MOONLIGHT, MOVE_PROTECT, MOVE_GUST},
         .heldItem = ITEM_ORAN_BERRY,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 0, 128, 128),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_WAILMER_1] = {
         .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_TREMORS, MOVE_CURSE, MOVE_GROWL, MOVE_WHIRLPOOL},
         .heldItem = ITEM_RAWST_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_WAILMER_2] = {
         .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_TREMORS, MOVE_GROWL, MOVE_WHIRLPOOL, MOVE_WATER_PULSE},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MARILL_1] = {
         .species = SPECIES_NORMAL_KANAKO,
         .moves = {MOVE_TREMORS, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
         .heldItem = ITEM_WHITE_HERB,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_WINGULL_1] = {
         .species = SPECIES_PLACEHOLD_MAMIZOU,
         .moves = {MOVE_JAMMING, MOVE_GROWL, MOVE_WING_ATTACK, MOVE_STEEL_WING},
         .heldItem = ITEM_MAID_UNIFORM,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
-        .nature = NATURE_NAIVE
+        .nature = NATURE_NAIVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_PELIPPER_1] = {
         .species = SPECIES_CHIBI_SEKIBANKI,
         .moves = {MOVE_TWISTER, MOVE_SPLASHING, MOVE_GROWL, MOVE_WING_ATTACK},
         .heldItem = ITEM_PRIESTESS,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_CACNEA_1] = {
         .species = SPECIES_CHIBI_LUNA,
         .moves = {MOVE_SANDSTORM, MOVE_LEER, MOVE_LEECH_SEED, MOVE_PIN_MISSILE},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_LOMBRE_1] = {
         .species = SPECIES_CHIBI_MIKO,
         .moves = {MOVE_ASTONISH, MOVE_WATER_GUN, MOVE_FAKE_OUT, MOVE_ABSORB},
         .heldItem = ITEM_CAMOUFLAGE,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_LOTAD] = {
         .species = SPECIES_PLACEHOLD_FUTO,
         .moves = {MOVE_SYNTHESIS, MOVE_NATURE_POWER, MOVE_RAIN_DANCE, MOVE_MEGA_DRAIN},
         .heldItem = ITEM_SWIMSUIT,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 170, 0),
-        .nature = NATURE_DOCILE
+        .nature = NATURE_DOCILE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SEEDOT] = {
         .species = SPECIES_ATTACK_MIKO,
         .moves = {MOVE_SUNNY_DAY, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_BURN_POWDER},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_NUZLEAF] = {
         .species = SPECIES_DEFENSE_MIKO,
         .moves = {MOVE_FAKE_OUT, MOVE_NATURE_POWER, MOVE_HARDEN, MOVE_ATTRACT},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_NINJASK_1] = {
         .species = SPECIES_CHIBI_BENBEN,
         .moves = {MOVE_FURY_CUTTER, MOVE_SCREECH, MOVE_SWORDS_DANCE, MOVE_DOUBLE_TEAM},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(102, 0, 102, 102, 102, 102),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_NINJASK_2] = {
         .species = SPECIES_CHIBI_BENBEN,
         .moves = {MOVE_FURY_CUTTER, MOVE_DOUBLE_TEAM, MOVE_SCREECH, MOVE_SAND_ATTACK},
         .heldItem = ITEM_BLAZER,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_GRAVELER] = {
         .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_SUB_ZERO, MOVE_BLOCK, MOVE_ROCK_TOMB, MOVE_MAGNITUDE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_BALTOY] = {
         .species = SPECIES_CHIBI_YORIHIME,
         .moves = {MOVE_SELF_DESTRUCT, MOVE_ANCIENT_POWER, MOVE_PSYBEAM, MOVE_REFLECT},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_NAIVE
+        .nature = NATURE_NAIVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MIGHTYENA_1] = {
         .species = SPECIES_PLACEHOLD_SEIGA,
         .moves = {MOVE_BITE, MOVE_ROAR, MOVE_SWAGGER, MOVE_TACKLE},
         .heldItem = ITEM_BLACK_GLASSES,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
-        .nature = NATURE_CALM
+        .nature = NATURE_CALM,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MIGHTYENA_2] = {
         .species = SPECIES_PLACEHOLD_SEIGA,
         .moves = {MOVE_BINDING_VOICE, MOVE_HOWL, MOVE_SAND_ATTACK, MOVE_POISON_FANG},
         .heldItem = ITEM_SHELL_BELL,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_LINOONE] = {
         .species = SPECIES_NORMAL_TOJIKO,
         .moves = {MOVE_HEADBUTT, MOVE_TICKLE, MOVE_TAIL_WHIP, MOVE_REST},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_GOLDEEN] = {
         .species = SPECIES_NORMAL_REISEN,
         .moves = {MOVE_SPLASHING, MOVE_KNIFE_THROW, MOVE_WATERFALL, MOVE_JAMMING},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
-        .nature = NATURE_CALM
+        .nature = NATURE_CALM,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_1] = {
         .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_BITE, MOVE_SPARK, MOVE_ROAR, MOVE_FLASH},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 170, 0, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_VOLTORB] = {
         .species = SPECIES_CHIBI_WRIGGLE,
         .moves = {MOVE_SPARK, MOVE_TREMORS, MOVE_BATTERY_CHARGE, MOVE_SCREECH},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 252, 252),
-        .nature = NATURE_MILD
+        .nature = NATURE_MILD,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ARON_1] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_DIG, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_ENDEAVOR},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ARON_2] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_MUD_SLAP, MOVE_STEEL_FIST, MOVE_HARDEN, MOVE_ROAR},
         .heldItem = ITEM_LEPPA_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 0, 170, 170),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_TRAPINCH_1] = {
         .species = SPECIES_NORMAL_SUNNY,
         .moves = {MOVE_BODY_SLAM, MOVE_FOCUS_ENERGY, MOVE_SAND_TOMB, MOVE_SAND_ATTACK},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_CACNEA_2] = {
         .species = SPECIES_CHIBI_LUNA,
         .moves = {MOVE_INGRAIN, MOVE_SANDSTORM, MOVE_POISON_STING, MOVE_DESTINY_BOND},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_TAILLOW] = {
         .species = SPECIES_NORMAL_MAMIZOU,
         .moves = {MOVE_GROWL, MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_ENDEAVOR},
         .heldItem = ITEM_STEWARDESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SWELLOW] = {
         .species = SPECIES_DEFENSE_MAMIZOU,
         .moves = {MOVE_JAMMING, MOVE_GROWL, MOVE_FOCUS_ENERGY, MOVE_PECK},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_GOLBAT_1] = {
         .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_ASTONISH, MOVE_GUST, MOVE_CHARMING_LOOK, MOVE_CONFUSE_RAY},
         .heldItem = ITEM_BURIAL_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 170, 0, 170),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_LOUDRED] = {
         .species = SPECIES_PLACEHOLD_BENBEN,
         .moves = {MOVE_ASTONISH, MOVE_SCREECH, MOVE_PERFORMANCE, MOVE_JAMMING},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SPINDA] = {
         .species = SPECIES_CHIBI_SUNNY,
         .moves = {MOVE_DIZZY_PUNCH, MOVE_FEINT_ATTACK, MOVE_HYPNOSIS, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MAGNEMITE] = {
         .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_BINDING_VOICE, MOVE_JAMMING, MOVE_THUNDER_WAVE, MOVE_SPARK},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_SERIOUS
+        .nature = NATURE_SERIOUS,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_WHISMUR] = {
         .species = SPECIES_DEFENSE_BENBEN,
         .moves = {MOVE_REST, MOVE_SLEEP_TALK, MOVE_HOWL, MOVE_BODY_SLAM},
         .heldItem = ITEM_BRIDAL_GOWN,
         .ev = TRAINER_PARTY_EVS(128, 128, 128, 0, 0, 128),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MAKUHITA] = {
         .species = SPECIES_NORMAL_YATSUHASHI,
         .moves = {MOVE_SAND_ATTACK, MOVE_KNOCK_OFF, MOVE_ARM_THRUST, MOVE_BELLY_DRUM},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_NUMEL_1] = {
         .species = SPECIES_DEFENSE_TENSHI,
         .moves = {MOVE_EMBER, MOVE_TAKE_DOWN, MOVE_GROWL, MOVE_FOCUS_ENERGY},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_BARBOACH] = {
         .species = SPECIES_CHIBI_KOKORO,
         .moves = {MOVE_MAGNITUDE, MOVE_SUB_ZERO, MOVE_SPLASHING, MOVE_WATER_GUN},
         .heldItem = ITEM_SEA_INCENSE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_TENTACOOL] = {
         .species = SPECIES_CHIBI_LYRICA,
         .moves = {MOVE_SCREECH, MOVE_BUBBLE_BEAM, MOVE_POISON_TEARS, MOVE_BARRIER},
         .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_VIGOROTH] = {
         .species = SPECIES_NORMAL_WAKASAGIHIME,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_FURY_SWIPES, MOVE_ENDURE, MOVE_YAWN},
         .heldItem = ITEM_AGUAV_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MAGIKARP] = {
         .species = SPECIES_CHIBI_KAGUYA,
         .moves = {MOVE_TACKLE, MOVE_FLAIL, MOVE_SPLASH, MOVE_NONE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SEVIPER_1] = {
         .species = SPECIES_NORMAL_STAR,
         .moves = {MOVE_LICK, MOVE_POISON_FANG, MOVE_GLARE, MOVE_WRAP},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SOLROCK] = {
         .species = SPECIES_HELPER_STAR,
         .moves = {MOVE_ROCK_THROW, MOVE_HARDEN, MOVE_PSYWAVE, MOVE_TACKLE},
         .heldItem = ITEM_BUNNY_SUIT,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_KECLEON_1] = {
         .species = SPECIES_NORMAL_KASEN,
         .moves = {MOVE_PSYBEAM, MOVE_SUBSTITUTE, MOVE_THIEF, MOVE_TAIL_WHIP},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_KECLEON_2] = {
         .species = SPECIES_NORMAL_KASEN,
         .moves = {MOVE_FEINT_ATTACK, MOVE_ASTONISH, MOVE_LICK, MOVE_SCREECH},
         .heldItem = ITEM_IAPAPA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
-        .nature = NATURE_CALM
+        .nature = NATURE_CALM,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SHROOMISH_1] = {
         .species = SPECIES_HELPER_KAGEROU,
         .moves = {MOVE_STUN_SPORE, MOVE_TACKLE, MOVE_LEECH_SEED, MOVE_MEGA_DRAIN},
         .heldItem = ITEM_PERSIM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SHROOMISH_2] = {
         .species = SPECIES_HELPER_KAGEROU,
         .moves = {MOVE_ABSORB, MOVE_STUN_SPORE, MOVE_SPORE, MOVE_LEECH_SEED},
         .heldItem = ITEM_FIGY_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 0),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_LOMBRE_2] = {
         .species = SPECIES_CHIBI_MIKO,
         .moves = {MOVE_NATURE_POWER, MOVE_ASTONISH, MOVE_GROWL, MOVE_ABSORB},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_NUMEL_2] = {
         .species = SPECIES_DEFENSE_TENSHI,
         .moves = {MOVE_EMBER, MOVE_GROWL, MOVE_EARTHQUAKE, MOVE_SUNNY_DAY},
         .heldItem = ITEM_GOTHIC_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_TRAPINCH_2] = {
         .species = SPECIES_NORMAL_SUNNY,
         .moves = {MOVE_FEINT_ATTACK, MOVE_DIG, MOVE_BITE, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_PELIPPER_2] = {
         .species = SPECIES_CHIBI_SEKIBANKI,
         .moves = {MOVE_WING_ATTACK, MOVE_JAMMING, MOVE_MIST, MOVE_AGILITY},
         .heldItem = ITEM_WIKI_BERRY,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 128, 0, 128),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_WINGULL_2] = {
         .species = SPECIES_PLACEHOLD_MAMIZOU,
         .moves = {MOVE_WATER_GUN, MOVE_JAMMING, MOVE_GROWL, MOVE_ICY_WIND},
         .heldItem = ITEM_THICK_FUR,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MARILL_2] = {
         .species = SPECIES_NORMAL_KANAKO,
         .moves = {MOVE_DOUBLE_EDGE, MOVE_RAIN_DANCE, MOVE_TAIL_WHIP, MOVE_WATER_GUN},
         .heldItem = ITEM_GANLON_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SKITTY] = {
         .species = SPECIES_NORMAL_RAIKO,
         .moves = {MOVE_ASSIST, MOVE_ATTRACT, MOVE_SING, MOVE_CHARM},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_CAREFUL
+        .nature = NATURE_CAREFUL,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SEVIPER_2] = {
         .species = SPECIES_NORMAL_STAR,
         .moves = {MOVE_SWAGGER, MOVE_WRAP, MOVE_POISON_TAIL, MOVE_HAZE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 0, 170, 170),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_GOLBAT_2] = {
         .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_POISON_FANG},
         .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
-        .nature = NATURE_HARDY
+        .nature = NATURE_HARDY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_RALTS] = {
         .species = SPECIES_NORMAL_SEKIBANKI,
         .moves = {MOVE_HYPNOSIS, MOVE_IMPRISON, MOVE_MANA_BURST, MOVE_DREAM_EATER},
         .heldItem = ITEM_MAGO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SANDSHREW] = {
         .species = SPECIES_HELPER_KOAKUMA,
         .moves = {MOVE_SLASH, MOVE_SAND_ATTACK, MOVE_SAND_TOMB, MOVE_DEFENSE_CURL},
         .heldItem = ITEM_GYM_SUIT,
         .ev = NULL,
-        .nature = NATURE_HARDY
+        .nature = NATURE_HARDY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SWALOT] = {
         .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_YAWN, MOVE_SLUDGE, MOVE_ENCORE, MOVE_POUND},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_VOLBEAT] = {
         .species = SPECIES_ATTACK_SUIKA,
         .moves = {MOVE_TACKLE, MOVE_CONFUSE_RAY, MOVE_QUICK_ATTACK, MOVE_DOUBLE_TEAM},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
-        .nature = NATURE_HARDY
+        .nature = NATURE_HARDY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ILLUMISE] = {
         .species = SPECIES_TECH_SUIKA,
         .moves = {MOVE_CHARM, MOVE_TACKLE, MOVE_ENCORE, MOVE_MOONLIGHT},
         .heldItem = ITEM_CHERI_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_KADABRA] = {
         .species = SPECIES_CHIBI_LUNASA,
         .moves = {MOVE_DISABLE, MOVE_PSYSHOT, MOVE_REFLECT, MOVE_RECOVER},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_KIRLIA] = {
         .species = SPECIES_TECH_SEKIBANKI,
         .moves = {MOVE_CALM_MIND, MOVE_PSYSHOT, MOVE_DOUBLE_TEAM, MOVE_GROWL},
         .heldItem = ITEM_WITCHS_ROBE,
         .ev = TRAINER_PARTY_EVS(128, 128, 128, 0, 0, 128),
-        .nature = NATURE_CAREFUL
+        .nature = NATURE_CAREFUL,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_BRELOOM] = {
         .species = SPECIES_PLACEHOLD_KAGEROU,
         .moves = {MOVE_ABSORB, MOVE_TACKLE, MOVE_STUN_SPORE, MOVE_MEGA_DRAIN},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_NAIVE
+        .nature = NATURE_NAIVE,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_PLUSLE_1] = {
         .species = SPECIES_CHIBI_SUIKA,
         .moves = {MOVE_SPARK, MOVE_ENCORE, MOVE_THUNDER_WAVE, MOVE_GROWL},
         .heldItem = ITEM_LIECHI_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_PLUSLE_2] = {
         .species = SPECIES_CHIBI_SUIKA,
         .moves = {MOVE_SPARK, MOVE_FAKE_TEARS, MOVE_SUBSTITUTE, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_PECHA_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MILD
+        .nature = NATURE_MILD,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_ELECTRIKE_2] = {
         .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_SPARK, MOVE_BATTERY_CHARGE, MOVE_ROAR, MOVE_THUNDER_WAVE},
         .heldItem = ITEM_APICOT_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_SWABLU] = {
         .species = SPECIES_ATTACK_LUNA,
         .moves = {MOVE_SING, MOVE_PECK, MOVE_STEEL_WING, MOVE_SAFEGUARD},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MACHOP] = {
         .species = SPECIES_HELPER_LUNASA,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_VITAL_THROW, MOVE_SEISMIC_TOSS, MOVE_FORESIGHT},
         .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [SLATEPORT_TENT_MON_MACHOKE] = {
         .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_FOCUS_ENERGY, MOVE_LEER, MOVE_KARATE_CHOP, MOVE_FORESIGHT},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     }
 };
 
@@ -1811,315 +1881,360 @@ const struct TrainerMon gVerdanturfBattleTentMons[NUM_VERDANTURF_TENT_MONS] =
         .moves = {MOVE_ROAR, MOVE_THIEF, MOVE_BITE, MOVE_HOWL},
         .heldItem = ITEM_BLACK_GLASSES,
         .ev = TRAINER_PARTY_EVS(102, 102, 102, 102, 0, 102),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_ZIGZAGOON] = {
         .species = SPECIES_CHIBI_TOJIKO,
         .moves = {MOVE_COVET, MOVE_GROWL, MOVE_PIN_MISSILE, MOVE_SUB_ZERO},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_DUSTOX] = {
         .species = SPECIES_TECH_FUTO,
         .moves = {MOVE_PSYSHOT, MOVE_MOONLIGHT, MOVE_PROTECT, MOVE_FLASH},
         .heldItem = ITEM_BLAZER,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 170, 170, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_TAILLOW] = {
         .species = SPECIES_NORMAL_MAMIZOU,
         .moves = {MOVE_AGILITY, MOVE_DOUBLE_TEAM, MOVE_WING_ATTACK, MOVE_GROWL},
         .heldItem = ITEM_ORAN_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
-        .nature = NATURE_RELAXED
+        .nature = NATURE_RELAXED,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SHROOMISH] = {
         .species = SPECIES_HELPER_KAGEROU,
         .moves = {MOVE_HEADBUTT, MOVE_STUN_SPORE, MOVE_LEECH_SEED, MOVE_FLASH},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
-        .nature = NATURE_RASH
+        .nature = NATURE_RASH,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MACHOP] = {
         .species = SPECIES_HELPER_LUNASA,
         .moves = {MOVE_LOW_KICK, MOVE_LEER, MOVE_FOCUS_ENERGY, MOVE_ENCORE},
         .heldItem = ITEM_PERSIM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 170, 0, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MAGIKARP] = {
         .species = SPECIES_CHIBI_KAGUYA,
         .moves = {MOVE_SPLASH, MOVE_FLAIL, MOVE_TACKLE, MOVE_NONE},
         .heldItem = ITEM_BRIDAL_GOWN,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 0),
-        .nature = NATURE_HARDY
+        .nature = NATURE_HARDY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_BARBOACH] = {
         .species = SPECIES_CHIBI_KOKORO,
         .moves = {MOVE_MUD_SLAP, MOVE_WATER_GUN, MOVE_RAIN_DANCE, MOVE_SPARK},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
-        .nature = NATURE_HASTY
+        .nature = NATURE_HASTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_WINGULL] = {
         .species = SPECIES_PLACEHOLD_MAMIZOU,
         .moves = {MOVE_ATTRACT, MOVE_TWISTER, MOVE_WING_ATTACK, MOVE_JAMMING},
         .heldItem = ITEM_PRIESTESS,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_ARON_1] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_ENDEAVOR, MOVE_METAL_CLAW, MOVE_TACKLE, MOVE_ATTRACT},
         .heldItem = ITEM_PECHA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
-        .nature = NATURE_HARDY
+        .nature = NATURE_HARDY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_NUMEL_1] = {
         .species = SPECIES_DEFENSE_TENSHI,
         .moves = {MOVE_EMBER, MOVE_ROCK_SLIDE, MOVE_TREMORS, MOVE_GROWL},
         .heldItem = ITEM_GOTHIC_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_SASSY
+        .nature = NATURE_SASSY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SWALOT] = {
         .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_YAWN, MOVE_SLUDGE, MOVE_DISPERSE, MOVE_AMNESIA},
         .heldItem = ITEM_NURSE_UNIFORM,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_BOLD
+        .nature = NATURE_BOLD,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_KECLEON] = {
         .species = SPECIES_NORMAL_KASEN,
         .moves = {MOVE_SUBSTITUTE, MOVE_FEINT_ATTACK, MOVE_DOUBLE_TEAM, MOVE_BIND},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_QUIET
+        .nature = NATURE_QUIET,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_BALTOY] = {
         .species = SPECIES_CHIBI_YORIHIME,
         .moves = {MOVE_SANDSTORM, MOVE_FLASH, MOVE_SELF_DESTRUCT, MOVE_HARDEN},
         .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_NINJASK] = {
         .species = SPECIES_CHIBI_BENBEN,
         .moves = {MOVE_DIG, MOVE_SCREECH, MOVE_SWORDS_DANCE, MOVE_LEECH_LIFE},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(102, 0, 102, 102, 102, 102),
-        .nature = NATURE_SASSY
+        .nature = NATURE_SASSY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MAKUHITA] = {
         .species = SPECIES_NORMAL_YATSUHASHI,
         .moves = {MOVE_BULK_UP, MOVE_ARM_THRUST, MOVE_SMELLING_SALTS, MOVE_SAND_ATTACK},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SWABLU] = {
         .species = SPECIES_ATTACK_LUNA,
         .moves = {MOVE_REFRESH, MOVE_SAFEGUARD, MOVE_ATTRACT, MOVE_MIRROR_MOVE},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MILD
+        .nature = NATURE_MILD,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_GOLDEEN_1] = {
         .species = SPECIES_NORMAL_REISEN,
         .moves = {MOVE_WATERFALL, MOVE_SUB_ZERO, MOVE_JAMMING, MOVE_DOUBLE_TEAM},
         .heldItem = ITEM_SWIMSUIT,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_GENTLE
+        .nature = NATURE_GENTLE,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_LOTAD] = {
         .species = SPECIES_PLACEHOLD_FUTO,
         .moves = {MOVE_GROWL, MOVE_WATER_GUN, MOVE_MEGA_DRAIN, MOVE_PROTECT},
         .heldItem = ITEM_IAPAPA_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_NUMEL_2] = {
         .species = SPECIES_DEFENSE_TENSHI,
         .moves = {MOVE_MAGNITUDE, MOVE_EMBER, MOVE_GROWL, MOVE_DEFENSE_CURL},
         .heldItem = ITEM_GOTHIC_DRESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_RELAXED
+        .nature = NATURE_RELAXED,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_LINOONE] = {
         .species = SPECIES_NORMAL_TOJIKO,
         .moves = {MOVE_HEADBUTT, MOVE_TICKLE, MOVE_PROTECT, MOVE_REST},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(128, 128, 128, 0, 0, 128),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SEVIPER] = {
         .species = SPECIES_NORMAL_STAR,
         .moves = {MOVE_WRAP, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SWAGGER},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 0, 170, 170),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SKARMORY] = {
         .species = SPECIES_CHIBI_KOGASA,
         .moves = {MOVE_AIR_CUTTER, MOVE_SANDSTORM, MOVE_LEER, MOVE_AGILITY},
         .heldItem = ITEM_MACHO_BRACE,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
-        .nature = NATURE_BASHFUL
+        .nature = NATURE_BASHFUL,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SWELLOW] = {
         .species = SPECIES_DEFENSE_MAMIZOU,
         .moves = {MOVE_AGILITY, MOVE_WING_ATTACK, MOVE_DOUBLE_TEAM, MOVE_JAMMING},
         .heldItem = ITEM_STEWARDESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_GOLDEEN_2] = {
         .species = SPECIES_NORMAL_REISEN,
         .moves = {MOVE_PECK, MOVE_JAMMING, MOVE_PSYBEAM, MOVE_RAIN_DANCE},
         .heldItem = ITEM_KINGS_ROCK,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
-        .nature = NATURE_GENTLE
+        .nature = NATURE_GENTLE,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_ELECTRIKE] = {
         .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_SHOCK_WAVE, MOVE_TACKLE, MOVE_BATTERY_CHARGE, MOVE_THUNDER_WAVE},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_MILD
+        .nature = NATURE_MILD,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_NUZLEAF] = {
         .species = SPECIES_DEFENSE_MIKO,
         .moves = {MOVE_SUNNY_DAY, MOVE_TORMENT, MOVE_FAKE_OUT, MOVE_THIEF},
         .heldItem = ITEM_BLACK_GLASSES,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 0, 128, 128),
-        .nature = NATURE_BOLD
+        .nature = NATURE_BOLD,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_ARON_2] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_TAKE_DOWN, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_ATTRACT},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MIGHTYENA] = {
         .species = SPECIES_PLACEHOLD_SEIGA,
         .moves = {MOVE_HOWL, MOVE_TAKE_DOWN, MOVE_BINDING_VOICE, MOVE_SAND_ATTACK},
         .heldItem = ITEM_KINGS_ROCK,
         .ev = TRAINER_PARTY_EVS(170, 170, 170, 0, 0, 0),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_SOLROCK] = {
         .species = SPECIES_HELPER_STAR,
         .moves = {MOVE_HARDEN, MOVE_FIRE_SPIN, MOVE_MIMIC, MOVE_PSYWAVE},
         .heldItem = ITEM_WITCHS_ROBE,
         .ev = TRAINER_PARTY_EVS(0, 128, 128, 0, 128, 128),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_GRAVELER] = {
         .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_TREMORS, MOVE_ROCK_SMASH, MOVE_SANDSTORM, MOVE_BLOCK},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_KADABRA] = {
         .species = SPECIES_CHIBI_LUNASA,
         .moves = {MOVE_ENCORE, MOVE_PSYBEAM, MOVE_DISABLE, MOVE_LUNA_DIAL},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(170, 0, 0, 170, 170, 0),
-        .nature = NATURE_QUIET
+        .nature = NATURE_QUIET,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_VOLTORB] = {
         .species = SPECIES_CHIBI_WRIGGLE,
         .moves = {MOVE_PROTECT, MOVE_SELF_DESTRUCT, MOVE_SPARK, MOVE_SCREECH},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_BASHFUL
+        .nature = NATURE_BASHFUL,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MAGNEMITE] = {
         .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_BINDING_VOICE, MOVE_JAMMING, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(84, 84, 84, 84, 84, 84),
-        .nature = NATURE_SERIOUS
+        .nature = NATURE_SERIOUS,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_PELIPPER] = {
         .species = SPECIES_CHIBI_SEKIBANKI,
         .moves = {MOVE_WING_ATTACK, MOVE_MIST, MOVE_AGILITY, MOVE_PROTECT},
         .heldItem = ITEM_FIGY_BERRY,
         .ev = NULL,
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_LOUDRED] = {
         .species = SPECIES_PLACEHOLD_BENBEN,
         .moves = {MOVE_HOWL, MOVE_PERFORMANCE, MOVE_REST, MOVE_SCREECH},
         .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_CALM
+        .nature = NATURE_CALM,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MARILL] = {
         .species = SPECIES_NORMAL_KANAKO,
         .moves = {MOVE_TREMORS, MOVE_DEFENSE_CURL, MOVE_TAIL_WHIP, MOVE_BUBBLE_BEAM},
         .heldItem = ITEM_RAWST_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_TRAPINCH] = {
         .species = SPECIES_NORMAL_SUNNY,
         .moves = {MOVE_DIG, MOVE_ROCK_TOMB, MOVE_SANDSTORM, MOVE_FEINT_ATTACK},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_TENTACOOL] = {
         .species = SPECIES_CHIBI_LYRICA,
         .moves = {MOVE_SCREECH, MOVE_CONFUSE_RAY, MOVE_WRAP, MOVE_ATTRACT},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_RELAXED
+        .nature = NATURE_RELAXED,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_VIGOROTH] = {
         .species = SPECIES_NORMAL_WAKASAGIHIME,
         .moves = {MOVE_ENCORE, MOVE_SLACK_OFF, MOVE_YAWN, MOVE_SECRET_POWER},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(0, 170, 170, 0, 0, 170),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_WAILMER] = {
         .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_WATER_PULSE, MOVE_TREMORS, MOVE_CURSE, MOVE_PROTECT},
         .heldItem = ITEM_WHITE_HERB,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 0),
-        .nature = NATURE_RELAXED
+        .nature = NATURE_RELAXED,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_ILLUMISE] = {
         .species = SPECIES_TECH_SUIKA,
         .moves = {MOVE_TACKLE, MOVE_NATURE_POWER, MOVE_WISH, MOVE_ENCORE},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_MACHOKE] = {
         .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_LEER, MOVE_KARATE_CHOP, MOVE_BULK_UP, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_CALM
+        .nature = NATURE_CALM,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_WHISMUR] = {
         .species = SPECIES_DEFENSE_BENBEN,
         .moves = {MOVE_SECRET_POWER, MOVE_JAMMING, MOVE_STOMP, MOVE_ROAR},
         .heldItem = ITEM_RAWST_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [VERDANTURF_TENT_MON_CACNEA] = {
         .species = SPECIES_CHIBI_LUNA,
         .moves = {MOVE_INGRAIN, MOVE_LEECH_SEED, MOVE_NEEDLE_ARM, MOVE_GROWTH},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_SERIOUS
+        .nature = NATURE_SERIOUS,
+        .ball = BALL_POKE
     }
 };
 
@@ -2692,314 +2807,359 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
         .moves = {MOVE_GROWL, MOVE_FLAMETHROWER, MOVE_TACKLE, MOVE_SUNNY_DAY},
         .heldItem = ITEM_GOTHIC_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_QUIET
+        .nature = NATURE_QUIET,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_LINOONE_1] = {
         .species = SPECIES_NORMAL_TOJIKO,
         .moves = {MOVE_BINDING_VOICE, MOVE_COVET, MOVE_ROCK_SMASH, MOVE_CHARM},
         .heldItem = ITEM_BRIDAL_GOWN,
         .ev = TRAINER_PARTY_EVS(0, 0, 252, 0, 0, 252),
-        .nature = NATURE_SASSY
+        .nature = NATURE_SASSY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_PLUSLE] = {
         .species = SPECIES_CHIBI_SUIKA,
         .moves = {MOVE_SPARK, MOVE_GROWL, MOVE_QUICK_ATTACK, MOVE_FAKE_TEARS},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_POOCHYENA] = {
         .species = SPECIES_SPEED_SEIGA,
         .moves = {MOVE_YAWN, MOVE_BINDING_VOICE, MOVE_HOWL, MOVE_FRUSTRATION},
         .heldItem = ITEM_LEPPA_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_NAUGHTY
+        .nature = NATURE_NAUGHTY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_KECLEON] = {
         .species = SPECIES_NORMAL_KASEN,
         .moves = {MOVE_LICK, MOVE_SLASH, MOVE_FEINT_ATTACK, MOVE_PSYBEAM},
         .heldItem = ITEM_WIKI_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MAGIKARP] = {
         .species = SPECIES_CHIBI_KAGUYA,
         .moves = {MOVE_SPLASH, MOVE_TACKLE, MOVE_FLAIL, MOVE_NONE},
         .heldItem = ITEM_NONE,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SOLROCK] = {
         .species = SPECIES_HELPER_STAR,
         .moves = {MOVE_ROCK_THROW, MOVE_FLASH, MOVE_SANDSTORM, MOVE_PSYWAVE},
         .heldItem = ITEM_BUNNY_SUIT,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_SASSY
+        .nature = NATURE_SASSY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MAKUHITA] = {
         .species = SPECIES_NORMAL_YATSUHASHI,
         .moves = {MOVE_DETECT, MOVE_ARM_THRUST, MOVE_FAKE_OUT, MOVE_SMELLING_SALTS},
         .heldItem = ITEM_CHINESE_DRESS,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MACHOKE] = {
         .species = SPECIES_PLACEHOLD_LUNASA,
         .moves = {MOVE_COUNTER, MOVE_REVENGE, MOVE_BULK_UP, MOVE_FOCUS_ENERGY},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
-        .nature = NATURE_NAIVE
+        .nature = NATURE_NAIVE,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_NINCADA] = {
         .species = SPECIES_PLACEHOLD_WAKASAGIHIME,
         .moves = {MOVE_FURY_SWIPES, MOVE_ENDURE, MOVE_MUD_SLAP, MOVE_DIG},
         .heldItem = ITEM_LUM_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_SERIOUS
+        .nature = NATURE_SERIOUS,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_BEAUTIFLY] = {
         .species = SPECIES_CHIBI_FUTO,
         .moves = {MOVE_FLASH, MOVE_MORNING_SUN, MOVE_HARDEN, MOVE_MEGA_DRAIN},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(0, 128, 128, 128, 0, 128),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_DUSTOX] = {
         .species = SPECIES_TECH_FUTO,
         .moves = {MOVE_MOONLIGHT, MOVE_HARDEN, MOVE_POISON_STING, MOVE_PSYBEAM},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(0, 0, 170, 170, 0, 170),
-        .nature = NATURE_DOCILE
+        .nature = NATURE_DOCILE,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_ILLUMISE] = {
         .species = SPECIES_TECH_SUIKA,
         .moves = {MOVE_METRONOME, MOVE_FLATTER, MOVE_WISH, MOVE_ATTRACT},
         .heldItem = ITEM_SALAC_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 252, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_VOLBEAT] = {
         .species = SPECIES_ATTACK_SUIKA,
         .moves = {MOVE_TACKLE, MOVE_MOONLIGHT, MOVE_SIGNAL_BEAM, MOVE_MANA_CHARGE},
         .heldItem = ITEM_LEPPA_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_NINJASK_1] = {
         .species = SPECIES_CHIBI_BENBEN,
         .moves = {MOVE_DOUBLE_TEAM, MOVE_PROTECT, MOVE_DIG, MOVE_SAND_ATTACK},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 128, 0, 128),
-        .nature = NATURE_TIMID
+        .nature = NATURE_TIMID,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_NINJASK_2] = {
         .species = SPECIES_CHIBI_BENBEN,
         .moves = {MOVE_SWORDS_DANCE, MOVE_CUT, MOVE_FURY_CUTTER, MOVE_LEECH_LIFE},
         .heldItem = ITEM_BLAZER,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_ARON_1] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_METAL_CLAW, MOVE_PROTECT, MOVE_SHOCK_WAVE, MOVE_BINDING_VOICE},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 170, 0),
-        .nature = NATURE_LONELY
+        .nature = NATURE_LONELY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_ARON_2] = {
         .species = SPECIES_NORMAL_SEIJA,
         .moves = {MOVE_SECRET_POWER, MOVE_METAL_CLAW, MOVE_IRON_DEFENSE, MOVE_MUD_SLAP},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_GENTLE
+        .nature = NATURE_GENTLE,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_ELECTRIKE] = {
         .species = SPECIES_ATTACK_SHINMYOUMARU,
         .moves = {MOVE_CRUNCH, MOVE_THUNDER_WAVE, MOVE_HOWL, MOVE_QUICK_ATTACK},
         .heldItem = ITEM_SEA_INCENSE,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 170, 0),
-        .nature = NATURE_HASTY
+        .nature = NATURE_HASTY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MAGNEMITE] = {
         .species = SPECIES_NORMAL_YOUMU,
         .moves = {MOVE_THUNDER_WAVE, MOVE_JAMMING, MOVE_ENDURE, MOVE_SPARK},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_QUIET
+        .nature = NATURE_QUIET,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_VOLTORB] = {
         .species = SPECIES_CHIBI_WRIGGLE,
         .moves = {MOVE_BATTERY_CHARGE, MOVE_SPARK, MOVE_SCREECH, MOVE_SONIC_BOOM},
         .heldItem = ITEM_ASPEAR_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_WHISMUR] = {
         .species = SPECIES_DEFENSE_BENBEN,
         .moves = {MOVE_REST, MOVE_SLEEP_TALK, MOVE_HYPER_VOICE, MOVE_ATTRACT},
         .heldItem = ITEM_LAX_INCENSE,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_LOUDRED] = {
         .species = SPECIES_PLACEHOLD_BENBEN,
         .moves = {MOVE_STOMP, MOVE_REST, MOVE_SCREECH, MOVE_PERFORMANCE},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_LINOONE_2] = {
         .species = SPECIES_NORMAL_TOJIKO,
         .moves = {MOVE_FURY_SWIPES, MOVE_SAND_ATTACK, MOVE_SHOCK_WAVE, MOVE_GROWL},
         .heldItem = ITEM_NINJA_SUIT,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MIGHTYENA] = {
         .species = SPECIES_PLACEHOLD_SEIGA,
         .moves = {MOVE_SAND_ATTACK, MOVE_HOWL, MOVE_SWAGGER, MOVE_SECRET_POWER},
         .heldItem = ITEM_KINGS_ROCK,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 170, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SWABLU] = {
         .species = SPECIES_ATTACK_LUNA,
         .moves = {MOVE_TAKE_DOWN, MOVE_SING, MOVE_GROWL, MOVE_SAFEGUARD},
         .heldItem = ITEM_FOCUS_BAND,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_QUIRKY
+        .nature = NATURE_QUIRKY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SKARMORY] = {
         .species = SPECIES_CHIBI_KOGASA,
         .moves = {MOVE_AGILITY, MOVE_STEEL_WING, MOVE_SAND_ATTACK, MOVE_TORMENT},
         .heldItem = ITEM_MAID_UNIFORM,
         .ev = TRAINER_PARTY_EVS(170, 170, 0, 0, 0, 170),
-        .nature = NATURE_BOLD
+        .nature = NATURE_BOLD,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_GOLBAT] = {
         .species = SPECIES_NORMAL_FLANDRE,
         .moves = {MOVE_CONFUSE_RAY, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_SUBSTITUTE},
         .heldItem = ITEM_PETAYA_BERRY,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_BOLD
+        .nature = NATURE_BOLD,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_WINGULL] = {
         .species = SPECIES_PLACEHOLD_MAMIZOU,
         .moves = {MOVE_WING_ATTACK, MOVE_HAIL, MOVE_DOUBLE_TEAM, MOVE_JAMMING},
         .heldItem = ITEM_RAWST_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_PELIPPER] = {
         .species = SPECIES_CHIBI_SEKIBANKI,
         .moves = {MOVE_TWISTER, MOVE_ICY_WIND, MOVE_DOUBLE_TEAM, MOVE_WATER_GUN},
         .heldItem = ITEM_PRIESTESS,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_BARBOACH] = {
         .species = SPECIES_CHIBI_KOKORO,
         .moves = {MOVE_SPARK, MOVE_WATER_GUN, MOVE_EARTHQUAKE, MOVE_SPLASHING},
         .heldItem = ITEM_LIECHI_BERRY,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
-        .nature = NATURE_MODEST
+        .nature = NATURE_MODEST,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_WAILMER] = {
         .species = SPECIES_NORMAL_TENSHI,
         .moves = {MOVE_WATER_PULSE, MOVE_RAIN_DANCE, MOVE_SPLASH, MOVE_CURSE},
         .heldItem = ITEM_KINGS_ROCK,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_QUIET
+        .nature = NATURE_QUIET,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_MARILL] = {
         .species = SPECIES_NORMAL_KANAKO,
         .moves = {MOVE_DEFENSE_CURL, MOVE_TREMORS, MOVE_BUBBLE_BEAM, MOVE_ATTRACT},
         .heldItem = ITEM_BUNNY_SUIT,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_GOLDEEN_1] = {
         .species = SPECIES_NORMAL_REISEN,
         .moves = {MOVE_WATERFALL, MOVE_RAIN_DANCE, MOVE_FLAIL, MOVE_PROTECT},
         .heldItem = ITEM_GANLON_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 0),
-        .nature = NATURE_HASTY
+        .nature = NATURE_HASTY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_GOLDEEN_2] = {
         .species = SPECIES_NORMAL_REISEN,
         .moves = {MOVE_SLEEP_TALK, MOVE_SCULPTURE, MOVE_REST, MOVE_JAMMING},
         .heldItem = ITEM_MENTAL_HERB,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_CAREFUL
+        .nature = NATURE_CAREFUL,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_TRAPINCH] = {
         .species = SPECIES_NORMAL_SUNNY,
         .moves = {MOVE_RETURN, MOVE_SAND_ATTACK, MOVE_ATTRACT, MOVE_STRENGTH},
         .heldItem = ITEM_MAGO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_BALTOY] = {
         .species = SPECIES_CHIBI_YORIHIME,
         .moves = {MOVE_SELF_DESTRUCT, MOVE_SANDSTORM, MOVE_RAPID_SPIN, MOVE_MIMIC},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(0, 170, 0, 170, 0, 170),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_GRAVELER] = {
         .species = SPECIES_PLACEHOLDER_LYRICA,
         .moves = {MOVE_ROCK_BLAST, MOVE_DEFENSE_CURL, MOVE_MAGNITUDE, MOVE_SUB_ZERO},
         .heldItem = ITEM_BUNNY_SUIT,
         .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 0, 252),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SANDSHREW] = {
         .species = SPECIES_HELPER_KOAKUMA,
         .moves = {MOVE_SAND_TOMB, MOVE_SANDSTORM, MOVE_DOUBLE_TEAM, MOVE_FOCUS_PUNCH},
         .heldItem = ITEM_GYM_SUIT,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_JOLLY
+        .nature = NATURE_JOLLY,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SWALOT] = {
         .species = SPECIES_DEFENSE_IKU,
         .moves = {MOVE_YAWN, MOVE_ENCORE, MOVE_BULLET_SEED, MOVE_SLUDGE},
         .heldItem = ITEM_SCOPE_LENS,
         .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
-        .nature = NATURE_BRAVE
+        .nature = NATURE_BRAVE,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_SHROOMISH] = {
         .species = SPECIES_HELPER_KAGEROU,
         .moves = {MOVE_HEADBUTT, MOVE_SPORE, MOVE_SWAGGER, MOVE_LEECH_SEED},
         .heldItem = ITEM_QUICK_CLAW,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_IMPISH
+        .nature = NATURE_IMPISH,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_KIRLIA] = {
         .species = SPECIES_TECH_SEKIBANKI,
         .moves = {MOVE_HYPNOSIS, MOVE_GROWL, MOVE_ATTRACT, MOVE_DREAM_EATER},
         .heldItem = ITEM_SITRUS_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_LOMBRE] = {
         .species = SPECIES_CHIBI_MIKO,
         .moves = {MOVE_NATURE_POWER, MOVE_WATER_GUN, MOVE_RAIN_DANCE, MOVE_FLASH},
         .heldItem = ITEM_BENTO_BOX,
         .ev = TRAINER_PARTY_EVS(170, 0, 170, 0, 0, 170),
-        .nature = NATURE_BASHFUL
+        .nature = NATURE_BASHFUL,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_NUZLEAF] = {
         .species = SPECIES_DEFENSE_MIKO,
         .moves = {MOVE_NATURE_POWER, MOVE_TORMENT, MOVE_SWAGGER, MOVE_REST},
         .heldItem = ITEM_CHESTO_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     },
     [FALLARBOR_TENT_MON_CACNEA] = {
         .species = SPECIES_CHIBI_LUNA,
         .moves = {MOVE_SANDSTORM, MOVE_NEEDLE_ARM, MOVE_TEETER_DANCE, MOVE_LEECH_SEED},
         .heldItem = ITEM_BRIGHT_POWDER,
         .ev = TRAINER_PARTY_EVS(128, 0, 128, 128, 0, 128),
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_ADAMANT,
+        .ball = BALL_POKE
     }
 };

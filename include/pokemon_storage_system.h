@@ -77,6 +77,7 @@ bool32 IsWaldaPhraseEmpty(void);
 
 void EnterPokeStorage(u8 boxOption);
 u32 CountPartyNonEggMons(void);
+void ChooseBoxMon(void);
 
 //tx_randomizer_and_challenges
 void PurgeMonOrBoxMon(u8 boxId, u8 position);
