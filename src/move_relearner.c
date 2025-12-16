@@ -12,6 +12,7 @@
 #include "gpu_regs.h"
 #include "item.h"
 #include "move_relearner.h"
+#include "move_relearner_rg.h"
 #include "list_menu.h"
 #include "malloc.h"
 #include "menu.h"
@@ -395,6 +396,11 @@ static void Task_WaitForFadeOut(u8 taskId)
 
 void CB2_InitLearnMove(void)
 {
+    if (P_USE_FRLG_RELEARNER_MENU)
+    {
+        CB2_InitLearnMove_RG();
+        return;
+    }
     ResetSpriteData();
     FreeAllSpritePalettes();
     ResetTasks();

@@ -20,7 +20,6 @@
 #include "international_string_util.h"
 #include "item.h"
 #include "link.h"
-#include "learn_move.h"
 #include "m4a.h"
 #include "malloc.h"
 #include "menu.h"
