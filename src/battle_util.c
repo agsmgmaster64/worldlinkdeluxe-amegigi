@@ -8975,7 +8975,7 @@ s32 CalcCritChanceStage(struct BattleContext *ctx)
 {
     s32 critChance = 0;
 
-    if (gSideStatuses[ctx->battlerDef] & SIDE_STATUS_LUCKY_CHANT)
+    if (gSideStatuses[GetBattlerSide(ctx->abilityDef)] & SIDE_STATUS_LUCKY_CHANT)
     {
         critChance = CRITICAL_HIT_BLOCKED;
     }
@@ -9066,7 +9066,7 @@ s32 CalcCritChanceStageGen1(struct BattleContext *ctx)
         critChance = 255;
 
     // Prevented crits
-    if (gSideStatuses[ctx->battlerDef] & SIDE_STATUS_LUCKY_CHANT)
+    if (gSideStatuses[GetBattlerSide(ctx->abilityDef)] & SIDE_STATUS_LUCKY_CHANT)
         critChance = CRITICAL_HIT_BLOCKED;
     else if (ctx->abilityDef == ABILITY_GUARD_ARMOR || ctx->abilityDef == ABILITY_SHELL_ARMOR)
     {

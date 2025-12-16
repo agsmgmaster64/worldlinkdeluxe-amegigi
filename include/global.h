@@ -222,9 +222,9 @@ struct SavedPlayerMusic
     bool16 unused1:5;
     u16 playlistPresetStyle:8;
     u16 overworldMusic;
-    u16 wildBattleMusic;
-    u16 trainerBattleMusic;
-    u16 victoryMusic;
+    u16 wildBattleSavedMusic;
+    u16 trainerBattleSavedMusic;
+    u16 victorySavedMusic;
 };
 
 struct NPCFollowerPadding

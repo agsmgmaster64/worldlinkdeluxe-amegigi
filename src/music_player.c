@@ -653,16 +653,16 @@ u16 GetRegularWildBattleMusic(void)
 {
     u16 musicStyle = GetMusicStyle();
 
-    if (gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic)
-        return gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic;
-   
+    if (gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic != MUS_NONE)
+        return gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic;
+
     return sPlaylistMusicList[musicStyle].wildBattleMusic;
 }
 
 u16 GetLegndaryWildBattleMusic(u16 species)
 {
-    if (gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic)
-        return gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic;
+    if (gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic != MUS_NONE)
+        return gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic;
 
     switch (species)
     {
@@ -683,8 +683,8 @@ u16 GetTrainerBattleMusic(u8 trainerClass)
 {
     u16 musicStyle = GetMusicStyle();
 
-    if (gSaveBlock3Ptr->savedPlayerMusic.trainerBattleMusic)
-        return gSaveBlock3Ptr->savedPlayerMusic.trainerBattleMusic;
+    if (gSaveBlock3Ptr->savedPlayerMusic.trainerBattleSavedMusic != MUS_NONE)
+        return gSaveBlock3Ptr->savedPlayerMusic.trainerBattleSavedMusic;
 
     switch (trainerClass)
     {
@@ -719,9 +719,9 @@ u16 GetTrainerBattleMusic(u8 trainerClass)
 
 void PlayVictoryMusic(u8 battleType)
 {
-    if (gSaveBlock3Ptr->savedPlayerMusic.victoryMusic)
+    if (gSaveBlock3Ptr->savedPlayerMusic.victorySavedMusic != MUS_NONE)
     {
-        PlayBGM(gSaveBlock3Ptr->savedPlayerMusic.victoryMusic);
+        PlayBGM(gSaveBlock3Ptr->savedPlayerMusic.victorySavedMusic);
     }
     else if (battleType == MUSIC_PLAYER_VICTORY_TRAINER)
     {
@@ -795,19 +795,19 @@ void SetOverworldPlayerMusic(struct ScriptContext *ctx)
 void SetWildBattlePlayerMusic(struct ScriptContext *ctx)
 {
     u16 track = ScriptReadHalfword(ctx);
-    gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic = sMP3PlayerTrackInfo[track].trackId;
+    gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic = sMP3PlayerTrackInfo[track].trackId;
 }
 
 void SetTrainerBattlePlayerMusic(struct ScriptContext *ctx)
 {
     u16 track = ScriptReadHalfword(ctx);
-    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleMusic = sMP3PlayerTrackInfo[track].trackId;
+    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleSavedMusic = sMP3PlayerTrackInfo[track].trackId;
 }
 
 void SetVictoryPlayerMusic(struct ScriptContext *ctx)
 {
     u16 track = ScriptReadHalfword(ctx);
-    gSaveBlock3Ptr->savedPlayerMusic.victoryMusic = sMP3PlayerTrackInfo[track].trackId;
+    gSaveBlock3Ptr->savedPlayerMusic.victorySavedMusic = sMP3PlayerTrackInfo[track].trackId;
 }
 
 void PowerMP3PlayerOverride(struct ScriptContext *ctx)
@@ -834,9 +834,9 @@ void ResetOverridePlayerMusic(void)
     gSaveBlock3Ptr->savedPlayerMusic.canOverrideBattleMusic = FALSE;
     gSaveBlock3Ptr->savedPlayerMusic.muteBikeSurfMusic = FALSE;
     gSaveBlock3Ptr->savedPlayerMusic.overworldMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.victoryMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleSavedMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.victorySavedMusic = MUS_NONE;
 }
 
 void ResetAllPlayerMusic(void)
@@ -846,7 +846,7 @@ void ResetAllPlayerMusic(void)
     gSaveBlock3Ptr->savedPlayerMusic.muteBikeSurfMusic = FALSE;
     gSaveBlock3Ptr->savedPlayerMusic.playlistPresetStyle = PLAYLIST_SET_STYLE_DEFAULT;
     gSaveBlock3Ptr->savedPlayerMusic.overworldMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.wildBattleMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleMusic = MUS_NONE;
-    gSaveBlock3Ptr->savedPlayerMusic.victoryMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.wildBattleSavedMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.trainerBattleSavedMusic = MUS_NONE;
+    gSaveBlock3Ptr->savedPlayerMusic.victorySavedMusic = MUS_NONE;
 }
