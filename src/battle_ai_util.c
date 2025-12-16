@@ -1255,11 +1255,11 @@ static bool32 AI_IsMoveEffectInMinus(u32 battlerAtk, u32 battlerDef, u32 move, s
             return TRUE;
         break;
     case EFFECT_ABSORB:
-        if (abilityDef == ABILITY_LIQUID_OOZE)
+        if (abilityDef == ABILITY_STRANGE_MIST)
             return TRUE;
         break;
     case EFFECT_DREAM_EATER:
-        if (abilityDef == ABILITY_LIQUID_OOZE && GetConfig(CONFIG_DREAM_EATER_LIQUID_OOZE) >= GEN_5)
+        if (abilityDef == ABILITY_STRANGE_MIST && GetConfig(CONFIG_DREAM_EATER_LIQUID_OOZE) >= GEN_5)
             return TRUE;
         break;
     default:
@@ -1966,7 +1966,6 @@ u32 AI_GetSwitchinFieldStatus(struct BattlePokemon battleMon)
     switch(ability)
     {
     case ABILITY_ELECTRIC_SURGE:
-    case ABILITY_HADRON_ENGINE:
         return SwitchinChangeBattleTerrain(STATUS_FIELD_ELECTRIC_TERRAIN, startingFieldStatus);
     case ABILITY_GRASSY_SURGE:
         return SwitchinChangeBattleTerrain(STATUS_FIELD_GRASSY_TERRAIN, startingFieldStatus);
@@ -1974,6 +1973,8 @@ u32 AI_GetSwitchinFieldStatus(struct BattlePokemon battleMon)
         return SwitchinChangeBattleTerrain(STATUS_FIELD_MISTY_TERRAIN, startingFieldStatus);
     case ABILITY_PSYCHIC_SURGE:
         return SwitchinChangeBattleTerrain(STATUS_FIELD_PSYCHIC_TERRAIN, startingFieldStatus);
+    case ABILITY_HOLY_SURGE:
+        return SwitchinChangeBattleTerrain(STATUS_FIELD_HOLY_TERRAIN, startingFieldStatus);
     default:
         return startingFieldStatus;
     }
@@ -2443,7 +2444,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
 
 bool32 BattlerStatCanRise(u32 battler, enum Ability battlerAbility, enum Stat stat)
 {
-    if (IsBattlerTerrainAffected(battler, battlerAbility, gAiLogicData->holdEffects[battler], STATUS_FIELD_HOLY_TERRAIN))
+    if (IsHolyTerrainAffected(battler, battlerAbility, gAiLogicData->holdEffects[battler], gFieldStatuses))
         return FALSE;
     if ((gBattleMons[battler].statStages[stat] < MAX_STAT_STAGE && battlerAbility != ABILITY_CONTRARY)
       || (battlerAbility == ABILITY_CONTRARY && gBattleMons[battler].statStages[stat] > MIN_STAT_STAGE))
@@ -3975,7 +3976,7 @@ bool32 ShouldAbsorb(u32 battlerAtk, u32 battlerDef, u32 move)
     if (gBattleMons[battlerAtk].volatiles.healBlock)
         healAmount = 0;
 
-    if (gAiLogicData->abilities[battlerDef] == ABILITY_LIQUID_OOZE)
+    if (gAiLogicData->abilities[battlerDef] == ABILITY_STRANGE_MIST)
         return FALSE;
     if (IsBattlerAtMaxHp(battlerAtk) && (aiIsFaster || GetMoveCategory(GetIncomingMove(battlerAtk, battlerDef, gAiLogicData)) == DAMAGE_CATEGORY_STATUS))
         return FALSE;

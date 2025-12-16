@@ -2011,7 +2011,7 @@ static enum MoveCanceler CancelerAsleepOrFrozen(struct BattleContext *ctx)
             {
                 if (moveEffect != EFFECT_SNORE && moveEffect != EFFECT_SLEEP_TALK)
                 {
-                    if (IsAbilityAndRecord(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk], ABILITY_LUCID_DREAMING))
+                    if (IsAbilityAndRecord(ctx->battlerAtk, ctx->abilityAtk, ABILITY_LUCID_DREAMING))
                     {
                         gBattlerAbility = ctx->battlerAtk;
                         BattleScriptCall(BattleScript_MoveUsedLucidDreaming);
@@ -4038,16 +4038,6 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
             gStartingStatuses.sharpSteelOpponent = FALSE;
             if (effect)
                 return TRUE;
-        }
-        else if (gBattleStruct->startingStatus & STARTING_STATUS_HOLY_TERRAIN)
-        {
-            effect = SetStartingFieldStatus(
-                        STATUS_FIELD_HOLY_TERRAIN,
-                        B_MSG_TERRAIN_SET_HOLY,
-                        0,
-                        &gFieldTimers.terrainTimer);
-            gBattleStruct->startingStatus &= ~STARTING_STATUS_HOLY_TERRAIN;
-            isTerrain = TRUE;
         }
         if (effect)
         {
@@ -7739,7 +7729,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct BattleContext *ctx)
         break;
     case ABILITY_CONSECRATE:
         if (moveType == TYPE_FAITH && gBattleStruct->battlerState[battlerAtk].ateBoost)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetConfig(CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
@@ -11764,7 +11754,7 @@ static const u16 sDemonBookMoves[] = {
 
 static u32 GetDemonBookMove(struct BattleContext *ctx)
 {
-    struct DamageContext dmgCtx;
+    struct BattleContext dmgCtx;
 
     u32 i = 0;
     u16 moveUsed = MOVE_NONE;
@@ -11773,6 +11763,7 @@ static u32 GetDemonBookMove(struct BattleContext *ctx)
 
     dmgCtx.battlerAtk = ctx->battlerAtk;
     dmgCtx.battlerDef = ctx->battlerDef;
+    dmgCtx.abilityDef = ctx->abilityDef;
     dmgCtx.randomFactor = TRUE; // All the other factors won't be factored in otherwise
     dmgCtx.updateFlags = FALSE;
     dmgCtx.isCrit = FALSE;
@@ -11785,7 +11776,7 @@ static u32 GetDemonBookMove(struct BattleContext *ctx)
         dmgCtx.moveType = CheckDynamicMoveType(GetBattlerMon(dmgCtx.battlerAtk), dmgCtx.move, dmgCtx.battlerAtk, MON_IN_BATTLE);
         calcDamage = CalculateMoveDamage(&dmgCtx);
 
-        if (CanAbilityAbsorbMove(dmgCtx.battlerAtk, dmgCtx.battlerDef, GetBattlerAbility(dmgCtx.battlerDef), dmgCtx.move, dmgCtx.moveType, CHECK_TRIGGER))
+        if (CanAbilityAbsorbMove(dmgCtx.battlerAtk, dmgCtx.battlerDef, dmgCtx.abilityDef, dmgCtx.move, dmgCtx.moveType, CHECK_TRIGGER))
             calcDamage = 0;
 
         if (calcDamage > highestDamage)

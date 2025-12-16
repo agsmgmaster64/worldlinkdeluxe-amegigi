@@ -139,7 +139,7 @@ BattleFrontier_Lounge7_EventScript_Softboiled::
 # 70 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 16
 # 71 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_SOFT_BOILED
+	setvar VAR_ITEM_ID, MOVE_SOFT_BOILED
 # 72 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 73 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -151,7 +151,7 @@ BattleFrontier_Lounge7_EventScript_SeismicToss::
 # 76 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 77 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_SEISMIC_TOSS
+	setvar VAR_ITEM_ID, MOVE_SEISMIC_TOSS
 # 78 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 79 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -163,7 +163,7 @@ BattleFrontier_Lounge7_EventScript_DreamEater::
 # 82 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 83 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 84 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 85 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -175,7 +175,7 @@ BattleFrontier_Lounge7_EventScript_MegaPunch::
 # 88 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 89 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_MEGA_PUNCH
+	setvar VAR_ITEM_ID, MOVE_MEGA_PUNCH
 # 90 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 91 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -187,7 +187,7 @@ BattleFrontier_Lounge7_EventScript_MegaKick::
 # 94 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 95 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_MEGA_KICK
+	setvar VAR_ITEM_ID, MOVE_MEGA_KICK
 # 96 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 97 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -199,7 +199,7 @@ BattleFrontier_Lounge7_EventScript_BodySlam::
 # 100 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 101 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 102 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 103 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -211,7 +211,7 @@ BattleFrontier_Lounge7_EventScript_RockSlide::
 # 106 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 107 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_ROCK_SLIDE
+	setvar VAR_ITEM_ID, MOVE_ROCK_SLIDE
 # 108 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 109 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -223,7 +223,7 @@ BattleFrontier_Lounge7_EventScript_Counter::
 # 112 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 113 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 114 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 115 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -235,7 +235,7 @@ BattleFrontier_Lounge7_EventScript_ThunderWave::
 # 118 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 119 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 120 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 121 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -247,7 +247,7 @@ BattleFrontier_Lounge7_EventScript_SwordsDance::
 # 124 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 125 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 126 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 127 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -387,7 +387,7 @@ BattleFrontier_Lounge7_EventScript_DefenseCurl::
 # 194 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 16
 # 195 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_DEFENSE_CURL
+	setvar VAR_ITEM_ID, MOVE_DEFENSE_CURL
 # 196 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 197 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -399,7 +399,7 @@ BattleFrontier_Lounge7_EventScript_Snore::
 # 200 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 201 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_SNORE
+	setvar VAR_ITEM_ID, MOVE_SNORE
 # 202 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 203 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -411,7 +411,7 @@ BattleFrontier_Lounge7_EventScript_MudSlap::
 # 206 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 207 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_MUD_SLAP
+	setvar VAR_ITEM_ID, MOVE_MUD_SLAP
 # 208 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 209 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -423,7 +423,7 @@ BattleFrontier_Lounge7_EventScript_Swift::
 # 212 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 213 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_SWIFT
+	setvar VAR_ITEM_ID, MOVE_SWIFT
 # 214 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 215 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -435,7 +435,7 @@ BattleFrontier_Lounge7_EventScript_IcyWind::
 # 218 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 24
 # 219 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 220 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 221 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -447,7 +447,7 @@ BattleFrontier_Lounge7_EventScript_Endure::
 # 224 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 225 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 226 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 227 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -459,7 +459,7 @@ BattleFrontier_Lounge7_EventScript_PsychUp::
 # 230 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 231 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 232 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 233 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -471,7 +471,7 @@ BattleFrontier_Lounge7_EventScript_IcePunch::
 # 236 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 237 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 238 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 239 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -483,7 +483,7 @@ BattleFrontier_Lounge7_EventScript_ThunderPunch::
 # 242 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 243 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 244 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 245 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -495,7 +495,7 @@ BattleFrontier_Lounge7_EventScript_FirePunch::
 # 248 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	setvar VAR_0x8008, 48
 # 249 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	setvar VAR_0x8005, MOVE_TACKLE
+	setvar VAR_ITEM_ID, MOVE_TACKLE
 # 250 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 # 251 "data/maps/BattleFrontier_Lounge7/scripts.pory"
@@ -567,426 +567,440 @@ BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 # 284 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	special CloseBattleFrontierTutorWindow
 # 285 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	special ChooseMonForMoveTutor
+	special ChooseBoxMon
 # 286 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	waitstate
 # 287 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_Lounge7_EventScript_CancelChooseMon
+	special IsSelectedMonEgg
 # 288 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	msgbox BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
+	goto_if_eq VAR_RESULT, TRUE, MoveTutor_EggCantForgetMoves
 # 289 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	copyvar VAR_0x8004, VAR_0x8008
+	special CanTeachMoveBoxMon
 # 290 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	special TakeFrontierBattlePoints
+	goto_if_eq VAR_RESULT, 1, MoveTutor_CantLearnMove
 # 291 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	release
+	goto_if_eq VAR_RESULT, 2, MoveTutor_AlreadyKnowsMove
 # 292 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	end
+	goto_if_eq VAR_RESULT, 3, MoveTutor_EggCantForgetMoves
 # 293 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	waitstate
 # 294 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_EventScript_ChooseNewMove::
+	goto_if_eq VAR_RESULT, 4, BattleFrontier_Lounge7_EventScript_CancelChooseMon
 # 295 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove
+	msgbox BattleFrontier_Lounge7_Text_IllTakeBattlePoints, MSGBOX_DEFAULT
 # 296 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	goto BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
+	copyvar VAR_0x8004, VAR_0x8008
 # 297 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	end
+	special TakeFrontierBattlePoints
 # 298 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	release
 # 299 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_EventScript_Sailor::
+	end
 # 300 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	msgbox BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong, MSGBOX_NPC
+
 # 301 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	end
+BattleFrontier_Lounge7_EventScript_ChooseNewMove::
 # 302 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	goto_if_eq VAR_TEMP_FRONTIER_TUTOR_ID, 0, BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove
 # 303 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_EventScript_Gentleman::
+	goto BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove
 # 304 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	msgbox BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful, MSGBOX_NPC
-# 305 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	end
+# 305 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
 # 306 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+BattleFrontier_Lounge7_EventScript_Sailor::
 # 307 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_LeftTutorIntro:
+	msgbox BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong, MSGBOX_NPC
 # 308 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Buhahaha!\p"
+	end
 # 309 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "You couldn't tell it from looking now,\n"
+
 # 310 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "but I used to be one tough TRAINER.\p"
+BattleFrontier_Lounge7_EventScript_Gentleman::
 # 311 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I had a reputation as the toughest\n"
+	msgbox BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful, MSGBOX_NPC
 # 312 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "BEAUTY around, I tell you!\p"
+	end
 # 313 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "… … … … … …\p"
+
 # 314 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "What is it now?\n"
+BattleFrontier_Lounge7_Text_LeftTutorIntro:
 # 315 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "You don't believe me.\p"
-# 316 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I'm not like that blowhard woman over\n"
-# 317 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "there. I'm actually talented!\p"
-# 318 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Let me prove it to you.\n"
-# 319 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I can teach your POKéMON special and\l"
-# 320 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "yet cute moves.\p"
-# 321 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "But my lessons don't come free.\n"
-# 322 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "How about paying for the moves I teach\l"
-# 323 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "with a wee bit of Battle Points?$"
-# 324 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 325 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack:
-# 326 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Buhahaha!\p"
-# 327 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Are you back to learn special and\n"
-# 328 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "yet cute POKéMON moves?$"
-# 329 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 330 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_TeachWhichMove:
-# 331 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Fine, fine, look here!\n"
-# 332 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Which move should I teach?$"
-# 333 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 334 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints:
-# 335 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "The move {STR_VAR_1}, is it?\n"
-# 336 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "That will be {STR_VAR_2} Battle Points, okay?$"
-# 337 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 338 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_TeachMoveToWhichMon:
-# 339 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Fine, fine, now pick the POKéMON\n"
-# 340 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I should teach the move to.$"
-# 341 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 342 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_HaventGotEnoughPoints:
-# 343 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "What the…\n"
-# 344 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "You haven't got enough Battle Points!$"
-# 345 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 346 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_IllTakeBattlePoints:
-# 347 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Do you see how skilled I am now?\n"
-# 348 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I'll take your Battle Points, thanks!$"
-# 349 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 350 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_YouDontWantTo:
-# 351 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "What's that?\n"
-# 352 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "You don't want to…\p"
-# 353 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "If you want to see how skilled I am,\n"
-# 354 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "you come see me anytime!$"
-# 355 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
-# 356 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_RightTutorIntro:
-# 357 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Ihihihi!\p"
-# 358 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I know it's hard to see now, but I used\n"
-# 359 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "to be one fantastic TRAINER.\p"
-# 360 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I had a reputation as the most\n"
-# 361 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "invincible SWIMMER around, I tell you!\p"
-# 362 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 316 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "You couldn't tell it from looking now,\n"
+# 317 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "but I used to be one tough TRAINER.\p"
+# 318 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I had a reputation as the toughest\n"
+# 319 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "BEAUTY around, I tell you!\p"
+# 320 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "… … … … … …\p"
-# 363 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "What's wrong?\n"
-# 364 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 321 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "What is it now?\n"
+# 322 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "You don't believe me.\p"
-# 365 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I'm not like that buffoonish woman over\n"
-# 366 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "there. I'm actually experienced!\p"
-# 367 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I can prove it to you.\n"
-# 368 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "I can teach your POKéMON hard and\l"
-# 369 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "yet pretty moves.\p"
-# 370 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 323 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I'm not like that blowhard woman over\n"
+# 324 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "there. I'm actually talented!\p"
+# 325 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Let me prove it to you.\n"
+# 326 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I can teach your POKéMON special and\l"
+# 327 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "yet cute moves.\p"
+# 328 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "But my lessons don't come free.\n"
-# 371 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 329 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "How about paying for the moves I teach\l"
-# 372 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 330 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "with a wee bit of Battle Points?$"
-# 373 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 331 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 
-# 374 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
-# 375 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+# 332 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_LeftTutorWelcomeBack:
+# 333 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Buhahaha!\p"
+# 334 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Are you back to learn special and\n"
+# 335 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "yet cute POKéMON moves?$"
+# 336 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 337 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_TeachWhichMove:
+# 338 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Fine, fine, look here!\n"
+# 339 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Which move should I teach?$"
+# 340 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 341 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_MoveWillBeXBattlePoints:
+# 342 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "The move {STR_VAR_1}, is it?\n"
+# 343 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "That will be {STR_VAR_2} Battle Points, okay?$"
+# 344 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 345 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_TeachMoveToWhichMon:
+# 346 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Fine, fine, now pick the POKéMON\n"
+# 347 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I should teach the move to.$"
+# 348 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 349 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_HaventGotEnoughPoints:
+# 350 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "What the…\n"
+# 351 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "You haven't got enough Battle Points!$"
+# 352 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 353 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_IllTakeBattlePoints:
+# 354 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "Do you see how skilled I am now?\n"
+# 355 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I'll take your Battle Points, thanks!$"
+# 356 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 357 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_YouDontWantTo:
+# 358 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "What's that?\n"
+# 359 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "You don't want to…\p"
+# 360 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "If you want to see how skilled I am,\n"
+# 361 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "you come see me anytime!$"
+# 362 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 363 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_RightTutorIntro:
+# 364 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "Ihihihi!\p"
+# 365 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I know it's hard to see now, but I used\n"
+# 366 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "to be one fantastic TRAINER.\p"
+# 367 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I had a reputation as the most\n"
+# 368 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "invincible SWIMMER around, I tell you!\p"
+# 369 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "… … … … … …\p"
+# 370 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "What's wrong?\n"
+# 371 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "You don't believe me.\p"
+# 372 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I'm not like that buffoonish woman over\n"
+# 373 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "there. I'm actually experienced!\p"
+# 374 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I can prove it to you.\n"
+# 375 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "I can teach your POKéMON hard and\l"
 # 376 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Have you come to learn hard and\n"
+	.string "yet pretty moves.\p"
 # 377 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "yet pretty POKéMON moves?$"
+	.string "But my lessons don't come free.\n"
 # 378 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "How about paying for the moves I teach\l"
 # 379 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong:
+	.string "with a wee bit of Battle Points?$"
 # 380 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Those ladies, the way they bad-mouth\n"
+
 # 381 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "each other, you probably think that\l"
+BattleFrontier_Lounge7_Text_RightTutorWelcomeBack:
 # 382 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "they don't get along.\p"
+	.string "Ihihihi!\p"
 # 383 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "But if that were true, they wouldn't\n"
+	.string "Have you come to learn hard and\n"
 # 384 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "stay out here together, would they?$"
+	.string "yet pretty POKéMON moves?$"
 # 385 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 
 # 386 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful:
+BattleFrontier_Lounge7_Text_ThinkLadiesDontGetAlong:
 # 387 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "When I was just a wee YOUNGSTER,\n"
+	.string "Those ladies, the way they bad-mouth\n"
 # 388 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "those ladies were strong and beautiful.\p"
+	.string "each other, you probably think that\l"
 # 389 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "They were idols among us TRAINERS.\p"
+	.string "they don't get along.\p"
 # 390 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Even now, age hasn't dulled their\n"
+	.string "But if that were true, they wouldn't\n"
 # 391 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "abilities.\p"
+	.string "stay out here together, would they?$"
 # 392 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "In fact, their POKéMON moves have\n"
+
 # 393 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "grown even more polished.\p"
+BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful:
 # 394 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "But… For some reason, I can't help\n"
+	.string "When I was just a wee YOUNGSTER,\n"
 # 395 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "but feel this…\p"
+	.string "those ladies were strong and beautiful.\p"
 # 396 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Time is so cruel…$"
+	.string "They were idols among us TRAINERS.\p"
 # 397 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "Even now, age hasn't dulled their\n"
 # 398 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_SoftboiledDesc::
+	.string "abilities.\p"
 # 399 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Recovers up to\n"
+	.string "In fact, their POKéMON moves have\n"
 # 400 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "half the user's\n"
+	.string "grown even more polished.\p"
 # 401 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "maximum HP.$"
+	.string "But… For some reason, I can't help\n"
 # 402 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "but feel this…\p"
 # 403 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_SeismicTossDesc::
+	.string "Time is so cruel…$"
 # 404 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Inflicts damage\n"
+
 # 405 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "identical to the\n"
+BattleFrontier_Lounge7_Text_SoftboiledDesc::
 # 406 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "user's level.$"
+	.string "Recovers up to\n"
 # 407 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "half the user's\n"
 # 408 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_DreamEaterDesc::
+	.string "maximum HP.$"
 # 409 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Recovers half the\n"
+
 # 410 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "damage inflicted\n"
+BattleFrontier_Lounge7_Text_SeismicTossDesc::
 # 411 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "on a sleeping foe.$"
+	.string "Inflicts damage\n"
 # 412 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "identical to the\n"
 # 413 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_MegaPunchDesc::
+	.string "user's level.$"
 # 414 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A strong punch\n"
+
 # 415 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "thrown with\n"
+BattleFrontier_Lounge7_Text_DreamEaterDesc::
 # 416 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "incredible power.$"
+	.string "Recovers half the\n"
 # 417 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "damage inflicted\n"
 # 418 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_MegaKickDesc::
+	.string "on a sleeping foe.$"
 # 419 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "An extremely\n"
+
 # 420 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "powerful kick with\n"
+BattleFrontier_Lounge7_Text_MegaPunchDesc::
 # 421 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "intense force.$"
+	.string "A strong punch\n"
 # 422 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "thrown with\n"
 # 423 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_BodySlamDesc::
+	.string "incredible power.$"
 # 424 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A full-body slam\n"
+
 # 425 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that may cause\n"
+BattleFrontier_Lounge7_Text_MegaKickDesc::
 # 426 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "paralysis.$"
+	.string "An extremely\n"
 # 427 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "powerful kick with\n"
 # 428 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_RockSlideDesc::
+	.string "intense force.$"
 # 429 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Large boulders\n"
+
 # 430 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "are hurled. May\n"
+BattleFrontier_Lounge7_Text_BodySlamDesc::
 # 431 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "cause flinching.$"
+	.string "A full-body slam\n"
 # 432 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "that may cause\n"
 # 433 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_CounterDesc::
+	.string "paralysis.$"
 # 434 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Retaliates any\n"
+
 # 435 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "physical hit with\n"
+BattleFrontier_Lounge7_Text_RockSlideDesc::
 # 436 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "double the power.$"
+	.string "Large boulders\n"
 # 437 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "are hurled. May\n"
 # 438 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_ThunderWaveDesc::
+	.string "cause flinching.$"
 # 439 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A weak jolt of\n"
+
 # 440 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "electricity that\n"
+BattleFrontier_Lounge7_Text_CounterDesc::
 # 441 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "paralyzes the foe.$"
+	.string "Retaliates any\n"
 # 442 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "physical hit with\n"
 # 443 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_SwordsDanceDesc::
+	.string "double the power.$"
 # 444 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A fighting dance\n"
+
 # 445 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that sharply\n"
+BattleFrontier_Lounge7_Text_ThunderWaveDesc::
 # 446 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "raises ATTACK.$"
+	.string "A weak jolt of\n"
 # 447 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "electricity that\n"
 # 448 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_DefenseCurlDesc::
+	.string "paralyzes the foe.$"
 # 449 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Curls up to con-\n"
+
 # 450 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "ceal weak spots\n"
+BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 # 451 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "and raise DEFENSE.$"
+	.string "A fighting dance\n"
 # 452 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "that sharply\n"
 # 453 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_SnoreDesc::
+	.string "raises ATTACK.$"
 # 454 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A loud attack\n"
+
 # 455 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that can be used\n"
+BattleFrontier_Lounge7_Text_DefenseCurlDesc::
 # 456 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "only while asleep.$"
+	.string "Curls up to con-\n"
 # 457 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "ceal weak spots\n"
 # 458 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_MudSlapDesc::
+	.string "and raise DEFENSE.$"
 # 459 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Hurls mud in the\n"
+
 # 460 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "foe's face to re-\n"
+BattleFrontier_Lounge7_Text_SnoreDesc::
 # 461 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "duce its accuracy.$"
+	.string "A loud attack\n"
 # 462 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "that can be used\n"
 # 463 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_SwiftDesc::
+	.string "only while asleep.$"
 # 464 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Sprays star-\n"
+
 # 465 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "shaped rays\n"
+BattleFrontier_Lounge7_Text_MudSlapDesc::
 # 466 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that never miss.$"
+	.string "Hurls mud in the\n"
 # 467 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "foe's face to re-\n"
 # 468 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_IcyWindDesc::
+	.string "duce its accuracy.$"
 # 469 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A chilling attack\n"
+
 # 470 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that lowers the\n"
+BattleFrontier_Lounge7_Text_SwiftDesc::
 # 471 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "foe's SPEED.$"
+	.string "Sprays star-\n"
 # 472 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "shaped rays\n"
 # 473 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_EndureDesc::
+	.string "that never miss.$"
 # 474 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Endures any at-\n"
+
 # 475 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "tack for 1 turn,\n"
+BattleFrontier_Lounge7_Text_IcyWindDesc::
 # 476 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "leaving 1HP.$"
+	.string "A chilling attack\n"
 # 477 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "that lowers the\n"
 # 478 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_PsychUpDesc::
+	.string "foe's SPEED.$"
 # 479 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "Copies the foe's\n"
+
 # 480 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "effect(s) and\n"
+BattleFrontier_Lounge7_Text_EndureDesc::
 # 481 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "gives to the user.$"
+	.string "Endures any at-\n"
 # 482 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "tack for 1 turn,\n"
 # 483 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_IcePunchDesc::
+	.string "leaving 1HP.$"
 # 484 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "An icy punch\n"
+
 # 485 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that may\n"
+BattleFrontier_Lounge7_Text_PsychUpDesc::
 # 486 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "freeze the foe.$"
+	.string "Copies the foe's\n"
 # 487 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-
+	.string "effect(s) and\n"
 # 488 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_ThunderPunchDesc::
+	.string "gives to the user.$"
 # 489 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "An electrified\n"
-# 490 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "punch that may\n"
-# 491 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "paralyze the foe.$"
-# 492 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 
+# 490 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_IcePunchDesc::
+# 491 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "An icy punch\n"
+# 492 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "that may\n"
 # 493 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-BattleFrontier_Lounge7_Text_FirePunchDesc::
+	.string "freeze the foe.$"
 # 494 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "A fiery punch\n"
+
 # 495 "data/maps/BattleFrontier_Lounge7/scripts.pory"
-	.string "that may burn\n"
+BattleFrontier_Lounge7_Text_ThunderPunchDesc::
 # 496 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "An electrified\n"
+# 497 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "punch that may\n"
+# 498 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "paralyze the foe.$"
+# 499 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+
+# 500 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+BattleFrontier_Lounge7_Text_FirePunchDesc::
+# 501 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "A fiery punch\n"
+# 502 "data/maps/BattleFrontier_Lounge7/scripts.pory"
+	.string "that may burn\n"
+# 503 "data/maps/BattleFrontier_Lounge7/scripts.pory"
 	.string "the foe.$"

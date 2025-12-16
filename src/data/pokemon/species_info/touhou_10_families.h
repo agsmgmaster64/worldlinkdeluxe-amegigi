@@ -2341,7 +2341,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DSuwako,
         .iconPalIndex = 1,
         FOOTPRINT(DSuwako)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLSuwakoLevelUpLearnset,
         .teachableLearnset = sLSuwakoTeachableLearnset,
@@ -2397,7 +2397,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DSuwako,
         .iconPalIndex = 1,
         FOOTPRINT(DSuwako)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isPrimalReversion = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLSuwakoLevelUpLearnset,
@@ -2455,7 +2455,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DKanako,
         .iconPalIndex = 1,
         FOOTPRINT(DKanako)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLKanakoLevelUpLearnset,
         .teachableLearnset = sLKanakoTeachableLearnset,
@@ -2512,7 +2512,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou10[] =
         .iconSprite = gMonIcon_DKanako,
         .iconPalIndex = 1,
         FOOTPRINT(DKanako)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isMegaEvolution = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLKanakoLevelUpLearnset,

@@ -7044,8 +7044,8 @@ static void Cmd_moveend(void)
                     }
                 }
 
-                if (!(gBattleStruct->moveResultFlags[gBattlerTarget] & (MOVE_RESULT_FAILED | MOVE_RESULT_DOESNT_AFFECT_FOE)
-                 || (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE && !hasConcertoTriggered)
+                if (!(!IsAnyTargetAffected()
+                 || (gBattleStruct->unableToUseMove && !hasConcertoTriggered)
                  || (!gSpecialStatuses[gBattlerAttacker].concertoUsedMove && gBattleStruct->bouncedMoveIsUsed)))
                 {   // Sound move succeeds
                     // Set target for other Concerto mons; set bit so that mon cannot activate Concerto off of its own move
@@ -10062,7 +10062,7 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
     }
     else // stat increase
     {
-        if (IsBattlerTerrainAffected(battler, battlerAbility, battlerHoldEffect, STATUS_FIELD_HOLY_TERRAIN)
+        if (IsHolyTerrainAffected(battler, battlerAbility, battlerHoldEffect, gFieldStatuses)
          && battlerAbility != ABILITY_HAKUREI_MIKO
          && flags.certain)
         {
@@ -15988,7 +15988,7 @@ void BS_JumpIfFascinateAbilityPrevented(void)
     case ABILITY_SCRAPPY:
     case ABILITY_OWN_TEMPO:
     case ABILITY_OBLIVIOUS:
-        if (GetGenConfig(GEN_CONFIG_UPDATED_INTIMIDATE) >= GEN_8)
+        if (GetConfig(CONFIG_UPDATED_INTIMIDATE) >= GEN_8)
         {
             hasAbility = TRUE;
             gBattlescriptCurrInstr = BattleScript_FascinatePrevented;

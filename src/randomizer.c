@@ -288,7 +288,8 @@ void FindHiddenItemRandomize_NativeCall(struct ScriptContext *ctx)
 // Both legendary and mythical Pokémon are included in this category.
 static inline bool32 IsRandomizerLegendary(u16 species)
 {
-    return gSpeciesInfo[species].isLegendary
+    return gSpeciesInfo[species].isRestrictedLegendary
+        || gSpeciesInfo[species].isSubLegendary
         || gSpeciesInfo[species].isMythical
         || gSpeciesInfo[species].isUltraBeast;
 }

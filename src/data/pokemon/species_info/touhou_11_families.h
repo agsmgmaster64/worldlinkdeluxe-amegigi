@@ -1875,7 +1875,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconSprite = gMonIcon_SUtsuho,
         .iconPalIndex = 0,
         FOOTPRINT(SUtsuho)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLUtsuhoLevelUpLearnset,
         .teachableLearnset = sLUtsuhoTeachableLearnset,
@@ -1932,7 +1932,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconSprite = gMonIcon_SUtsuho,
         .iconPalIndex = 0,
         FOOTPRINT(SUtsuho)
-        .isLegendary = TRUE,
+        .isRestrictedLegendary = TRUE,
         .isPrimalReversion = TRUE,
         .isFrontierBanned = TRUE,
         .levelUpLearnset = sLUtsuhoLevelUpLearnset,

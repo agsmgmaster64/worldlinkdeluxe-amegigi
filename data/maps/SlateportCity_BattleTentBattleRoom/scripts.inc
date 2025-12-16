@@ -119,7 +119,7 @@ SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom::
 # 60 "data/maps/SlateportCity_BattleTentBattleRoom/scripts.pory"
 	special HealPlayerParty
 # 61 "data/maps/SlateportCity_BattleTentBattleRoom/scripts.pory"
-	dofacilitytrainerbattle FACILITY_BATTLE_PYRAMID
+	dofacilitytrainerbattle FACILITY_BATTLE_FACTORY
 # 62 "data/maps/SlateportCity_BattleTentBattleRoom/scripts.pory"
 	waitstate
 # 63 "data/maps/SlateportCity_BattleTentBattleRoom/scripts.pory"
