@@ -2521,8 +2521,11 @@ static void Task_HandleInput(u8 taskId)
             if (P_SUMMARY_SCREEN_MOVE_RELEARNER && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES) && !gMain.inBattle)
             {
                 TryUpdateRelearnType(TRY_INCREMENT);
-                PlaySE(SE_SELECT);
-                ShowMoveRelearner();
+                if (ShouldShowMoveRelearner())
+                {
+                    PlaySE(SE_SELECT);
+                    ShowMoveRelearner();
+                }
             }
         }
         else if (GetLRKeysPressed() == MENU_L_PRESSED) // L means decrease. Level <- Egg <- TM <- Tutor
@@ -2530,8 +2533,11 @@ static void Task_HandleInput(u8 taskId)
             if (P_SUMMARY_SCREEN_MOVE_RELEARNER && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES || sMonSummaryScreen->currPageIndex == PSS_PAGE_CONTEST_MOVES) && !gMain.inBattle)
             {
                 TryUpdateRelearnType(TRY_DECREMENT);
-                PlaySE(SE_SELECT);
-                ShowMoveRelearner();
+                if (ShouldShowMoveRelearner())
+                {
+                    PlaySE(SE_SELECT);
+                    ShowMoveRelearner();
+                }
             }
         }
     }
