@@ -254,24 +254,7 @@ Debug_EventScript_Script_4::
 
 Debug_EventScript_Script_5::
 	lockall
-	setvar VAR_0x8008, INGAME_TRADE_MEOWTH
-	copyvar VAR_0x8004, VAR_0x8008
-	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-	copyvar VAR_0x8009, VAR_RESULT
-	msgbox Debug_EventScript_Script_5_Text_WouldYouLikeToTrade, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Debug_EventScript_Script_5_DeclineTrade
-	special ChoosePartyMon
-	waitstate
-	copyvar VAR_0x800A, VAR_0x8004
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Debug_EventScript_Script_5_DeclineTrade
-	special IsSelectedMonEgg
-	goto_if_eq VAR_RESULT, TRUE, Debug_EventScript_Script_5_DeclineTrade
-	copyvar VAR_0x8004, VAR_0x8008
-	copyvar VAR_0x8005, VAR_0x800A
-	special CreateInGameTradePokemon
-	special DoInGameTradeScene
-	waitstate
-	msgbox Debug_EventScript_Script_5_Text_PromiseIllBeGoodToIt, MSGBOX_DEFAULT
+	ingame_trade INGAME_TRADE_MEOWTH, Debug_EventScript_Script_5_Text_WouldYouLikeToTrade, Debug_EventScript_Script_5_DeclineTrade, Debug_EventScript_Script_5_NotRequestedMon, Debug_EventScript_Script_5_Text_PromiseIllBeGoodToIt
 	releaseall
 	end
 

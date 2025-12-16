@@ -121,12 +121,6 @@ void ItemUseCB_Pokeball(u8 taskId, TaskFunc task);
 // These are all moved from src/party_menu.c
 u8 CanTeachMove(struct Pokemon *mon, u16 move);
 
-enum {
-    CAN_LEARN_MOVE,
-    CANNOT_LEARN_MOVE,
-    ALREADY_KNOWS_MOVE,
-    CANNOT_LEARN_MOVE_IS_EGG
-};
 // End qol_field_moves
 
 // Start hexorb Branch
