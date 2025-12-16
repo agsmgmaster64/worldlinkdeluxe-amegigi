@@ -2584,6 +2584,9 @@ static void TryUpdateRelearnType(enum IncrDecrUpdateValues delta)
     u32 zeroCounter = 0;
     enum MoveRelearnerStates state = gMoveRelearnerState;
 
+    if (sMonSummaryScreen->isBoxMon)
+        return;
+
     // just in case everything is off, default to level up moves
     if ((!P_ENABLE_MOVE_RELEARNERS
         && !P_TM_MOVES_RELEARNER
