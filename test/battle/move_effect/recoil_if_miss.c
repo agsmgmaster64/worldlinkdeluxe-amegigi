@@ -41,10 +41,10 @@ SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick has 50% recoil on protect")
 SINGLE_BATTLE_TEST("Recoil if miss: Jump Kick has no recoil if no target")
 {
     GIVEN {
-        ASSUME(B_HEALING_WISH_SWITCH >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        WITH_CONFIG(CONFIG_HEALING_WISH_SWITCH, GEN_5);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_HEALING_WISH); MOVE(player, MOVE_JUMP_KICK, hit: FALSE); SEND_OUT(opponent, 1); }
     } SCENE {
@@ -154,4 +154,3 @@ SINGLE_BATTLE_TEST("Recoil if miss: Disguise doesn't prevent crash damage from J
         }
     }
 }
-

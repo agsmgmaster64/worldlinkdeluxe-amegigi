@@ -6300,7 +6300,8 @@ static void Cmd_moveend(void)
             enum BattleMoveEffects originalEffect = GetMoveEffect(originallyUsedMove);
             if (IsBattlerAlive(gBattlerAttacker)
              && originalEffect != EFFECT_BATON_PASS
-             && originalEffect != EFFECT_HEALING_WISH)
+             && originalEffect != EFFECT_HEALING_WISH
+             && originalEffect != EFFECT_LUNAR_DANCE)
             {
                 if (!gBattleStruct->unableToUseMove)
                 {
@@ -15445,7 +15446,7 @@ void BS_StoreHealingWish(void)
     NATIVE_ARGS(u8 battler);
 
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    if (gCurrentMove == MOVE_LUNAR_DANCE)
+    if (GetMoveEffect(gCurrentMove) == EFFECT_LUNAR_DANCE)
         gBattleStruct->battlerState[battler].storedLunarDance = TRUE;
     else
         gBattleStruct->battlerState[battler].storedHealingWish = TRUE;
