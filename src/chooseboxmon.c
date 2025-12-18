@@ -6,6 +6,7 @@
 #include "field_weather.h"
 #include "menu.h"
 #include "move.h"
+#include "move_relearner.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -37,6 +38,7 @@ static u32 IsNotEgg(struct BoxPokemon *boxmon);
 static u32 IsMatchingSpecies(struct BoxPokemon *boxmon);
 static u32 CanMonDeleteMove(struct BoxPokemon *boxmon);
 static u32 CanMonLearnMove(struct BoxPokemon *boxmon);
+static u32 CanMonRelearnMoves(struct BoxPokemon *boxmon);
 
 static const struct PcMonSelection sPcMonSelectionTypes[] =
 {
@@ -45,7 +47,7 @@ static const struct PcMonSelection sPcMonSelectionTypes[] =
     [SELECT_PC_MON_DAYCARE] = {ChooseSendDaycareMon, IsNotEgg, NULL, TRUE},
     [SELECT_PC_MON_MOVE_TUTOR] = {ChooseMonForMoveTutor, CanMonLearnMove, MoveTutor_AfterChooseBoxMon, FALSE},
     [SELECT_PC_MON_MOVE_DELETER] = {ChoosePartyMon, CanMonDeleteMove, NULL, FALSE},
-    [SELECT_PC_MON_MOVE_RELEARNER] = {ChooseMonForMoveRelearner, IsNotEgg, NULL, TRUE}
+    [SELECT_PC_MON_MOVE_RELEARNER] = {ChooseMonForMoveRelearner, CanMonRelearnMoves, NULL, TRUE}
 };
 
 static u32 NoFilter(struct BoxPokemon *boxmon)
@@ -87,6 +89,24 @@ static u32 CanMonLearnMove(struct BoxPokemon *boxmon)
     return CANNOT_LEARN_MOVE;
 }
 
+static u32 CanMonRelearnMoves(struct BoxPokemon *boxmon)
+{
+    bool32 canRelearn = FALSE;
+    if (GetBoxMonData(boxmon, MON_DATA_IS_EGG))
+    {
+        gSpecialVar_0x8005 = FALSE;
+        return INVALID_MON;
+    }
+    switch (gMoveRelearnerState)
+    {
+    default:
+    case MOVE_RELEARNER_LEVEL_UP_MOVES:
+        canRelearn = HasRelearnerLevelUpMoves(boxmon);
+    }
+    gSpecialVar_0x8005 = canRelearn;
+    return canRelearn;
+}
+
 u32 IsBoxMonExcluded(struct BoxPokemon *boxmon)
 {
     return sPcMonSelectionTypes[sSelectionType].isMonInvalid(boxmon);
@@ -96,7 +116,7 @@ bool32 CanBoxMonBeSelected(struct BoxPokemon *boxmon)
 {
     if (!sPcMonSelectionTypes[sSelectionType].isStrict)
         return TRUE;
-    return IsBoxMonExcluded(boxmon);
+    return !IsBoxMonExcluded(boxmon);
 }
 
 static void Task_ChooseBoxMon(u8 taskId)

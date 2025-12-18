@@ -1111,22 +1111,22 @@ static void DisplayPartyPokemonDataForContest(u8 slot)
 
 static void DisplayPartyPokemonDataForRelearner(u8 slot)
 {
-    struct Pokemon *mon = &gPlayerParty[slot];
+    struct BoxPokemon *boxMon = &gPlayerParty[slot].box;
     bool32 hasMoves = FALSE;
 
     switch (gMoveRelearnerState)
     {
     case MOVE_RELEARNER_EGG_MOVES:
-        hasMoves = HasRelearnerEggMoves(mon);
+        hasMoves = HasRelearnerEggMoves(boxMon);
         break;
     case MOVE_RELEARNER_TM_MOVES:
-        hasMoves = HasRelearnerTMMoves(mon);
+        hasMoves = HasRelearnerTMMoves(boxMon);
         break;
     case MOVE_RELEARNER_TUTOR_MOVES:
-        hasMoves = HasRelearnerTutorMoves(mon);
+        hasMoves = HasRelearnerTutorMoves(boxMon);
         break;
     default:
-        hasMoves = HasRelearnerLevelUpMoves(mon);
+        hasMoves = HasRelearnerLevelUpMoves(boxMon);
         break;
     }
 
@@ -2926,8 +2926,8 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     if (P_PARTY_MOVE_RELEARNER
      && (GetMonData(&mons[slotId], MON_DATA_SPECIES)
-     && (HasRelearnerLevelUpMoves(&mons[slotId]) || HasRelearnerEggMoves(&mons[slotId])
-     || HasRelearnerTMMoves(&mons[slotId]) || HasRelearnerTutorMoves(&mons[slotId]))))
+     && (HasRelearnerLevelUpMoves(&mons[slotId].box) || HasRelearnerEggMoves(&mons[slotId].box)
+     || HasRelearnerTMMoves(&mons[slotId].box) || HasRelearnerTutorMoves(&mons[slotId].box))))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUB_MOVES);
 
     // Add field moves to action list
@@ -2964,24 +2964,24 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
 static void SetPartyMonLearnMoveSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerLevelUpMoves(&mons[slotId]))
+    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerLevelUpMoves(&mons[slotId].box))
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_LEVEL_UP_MOVES);
 
     if (P_ENABLE_MOVE_RELEARNERS || (P_FLAG_EGG_MOVES != 0 && FlagGet(P_FLAG_EGG_MOVES)))
     {
-	    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerEggMoves(&mons[slotId]))
+	    if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerEggMoves(&mons[slotId].box))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_EGG_MOVES);
     }
 
     if (P_ENABLE_MOVE_RELEARNERS || P_TM_MOVES_RELEARNER)
     {
-        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerTMMoves(&mons[slotId]))
+        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerTMMoves(&mons[slotId].box))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TM_MOVES);
     }
 
     if (P_ENABLE_MOVE_RELEARNERS || (P_FLAG_TUTOR_MOVES != 0 && FlagGet(P_FLAG_TUTOR_MOVES)))
     {
-        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerTutorMoves(&mons[slotId]))
+        if (GetMonData(&mons[slotId], MON_DATA_SPECIES) != SPECIES_NONE && HasRelearnerTutorMoves(&mons[slotId].box))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_TUTOR_MOVES);
     }
 
@@ -8324,19 +8324,20 @@ static void CB2_ChooseMonForMoveRelearner(void)
     }
     else
     {
+        struct BoxPokemon *boxMon = &gPlayerParty[gSpecialVar_0x8004].box;
         switch(gMoveRelearnerState)
         {
         case MOVE_RELEARNER_EGG_MOVES:
-            gSpecialVar_0x8005 = HasRelearnerEggMoves(&gPlayerParty[gSpecialVar_0x8004]);
+            gSpecialVar_0x8005 = HasRelearnerEggMoves(boxMon);
             break;
         case MOVE_RELEARNER_TM_MOVES:
-            gSpecialVar_0x8005 = HasRelearnerTMMoves(&gPlayerParty[gSpecialVar_0x8004]);
+            gSpecialVar_0x8005 = HasRelearnerTMMoves(boxMon);
             break;
         case MOVE_RELEARNER_TUTOR_MOVES:
-            gSpecialVar_0x8005 = HasRelearnerTutorMoves(&gPlayerParty[gSpecialVar_0x8004]);
+            gSpecialVar_0x8005 = HasRelearnerTutorMoves(boxMon);
             break;
         default:
-            gSpecialVar_0x8005 = HasRelearnerLevelUpMoves(&gPlayerParty[gSpecialVar_0x8004]);
+            gSpecialVar_0x8005 = HasRelearnerLevelUpMoves(boxMon);
             break;
         }
     }

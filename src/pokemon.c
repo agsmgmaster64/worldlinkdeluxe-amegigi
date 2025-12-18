@@ -5062,12 +5062,12 @@ static void SortMovesAlphabetically(u16 *moves, u32 numMoves)
         QuickSortMoves(moves, 0, numMoves - 1);
 }
 
-u8 GetRelearnerLevelUpMoves(struct BoxPokemon *mon, u16 *moves)
+u32 GetRelearnerLevelUpMoves(struct BoxPokemon *mon, u16 *moves)
 {
-    u16 learnedMoves[MAX_MON_MOVES] = {0};
-    u8 numMoves = 0;
-    u16 species = GetBoxMonData(mon, MON_DATA_SPECIES, 0);
-    u8 level = (P_ENABLE_ALL_LEVEL_UP_MOVES ? MAX_LEVEL : GetBoxMonData(mon, MON_DATA_LEVEL, 0));
+    u32 learnedMoves[MAX_MON_MOVES] = {0};
+    u32 numMoves = 0;
+    u32 species = GetBoxMonData(mon, MON_DATA_SPECIES, 0);
+    u32 level = (P_ENABLE_ALL_LEVEL_UP_MOVES ? MAX_LEVEL : GetLevelFromBoxMonExp(mon));
 
     for (u8 i = 0; i < MAX_MON_MOVES; i++)
         learnedMoves[i] = GetBoxMonData(mon, MON_DATA_MOVE1 + i, 0);
@@ -5270,9 +5270,9 @@ static inline bool32 DoesMonHaveMove(const u16 *moves, u16 move)
     return FALSE;
 }
 
-bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon)
+bool32 HasRelearnerLevelUpMoves(struct BoxPokemon *mon)
 {
-    u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+    u32 species = GetBoxMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
 
     if (species == SPECIES_EGG)
         return FALSE;
@@ -5280,9 +5280,9 @@ bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon)
     u16 learnedMoves[MAX_MON_MOVES];
 
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
-        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+        learnedMoves[i] = GetBoxMonData(mon, MON_DATA_MOVE1 + i, 0);
 
-    u32 level = (P_ENABLE_ALL_LEVEL_UP_MOVES ? MAX_LEVEL : GetMonData(mon, MON_DATA_LEVEL, 0));
+    u32 level = (P_ENABLE_ALL_LEVEL_UP_MOVES ? MAX_LEVEL : GetLevelFromBoxMonExp(mon));
 
     do
     {
@@ -5304,12 +5304,12 @@ bool32 HasRelearnerLevelUpMoves(struct Pokemon *mon)
     return FALSE;
 }
 
-bool32 HasRelearnerEggMoves(struct Pokemon *mon)
+bool32 HasRelearnerEggMoves(struct BoxPokemon *mon)
 {
     if (!FlagGet(P_FLAG_EGG_MOVES) && !P_ENABLE_MOVE_RELEARNERS)
         return FALSE;
 
-    u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+    u32 species = GetBoxMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
 
     if (species == SPECIES_EGG)
         return FALSE;
@@ -5317,7 +5317,7 @@ bool32 HasRelearnerEggMoves(struct Pokemon *mon)
     u16 learnedMoves[MAX_MON_MOVES];
 
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
-        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+        learnedMoves[i] = GetBoxMonData(mon, MON_DATA_MOVE1 + i, 0);
 
     while (GetSpeciesPreEvolution(species) != SPECIES_NONE)
         species = GetSpeciesPreEvolution(species);
@@ -5335,12 +5335,12 @@ bool32 HasRelearnerEggMoves(struct Pokemon *mon)
     return FALSE;
 }
 
-bool32 HasRelearnerTMMoves(struct Pokemon *mon)
+bool32 HasRelearnerTMMoves(struct BoxPokemon *mon)
 {
     if (!P_TM_MOVES_RELEARNER)
         return FALSE;
 
-    u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+    u32 species = GetBoxMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
 
     if (species == SPECIES_EGG)
         return FALSE;
@@ -5348,7 +5348,7 @@ bool32 HasRelearnerTMMoves(struct Pokemon *mon)
     u16 learnedMoves[MAX_MON_MOVES];
 
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
-        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+        learnedMoves[i] = GetBoxMonData(mon, MON_DATA_MOVE1 + i, 0);
 
     for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
     {
@@ -5371,13 +5371,13 @@ bool32 HasRelearnerTMMoves(struct Pokemon *mon)
     return FALSE;
 }
 
-bool32 HasRelearnerTutorMoves(struct Pokemon *mon)
+bool32 HasRelearnerTutorMoves(struct BoxPokemon *mon)
 {
     if (!FlagGet(P_FLAG_TUTOR_MOVES) && !P_ENABLE_MOVE_RELEARNERS)
         return FALSE;
 
 #if P_TUTOR_MOVES_ARRAY
-    u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
+    u32 species = GetBoxMonData(mon, MON_DATA_SPECIES_OR_EGG, 0);
 
     if (species == SPECIES_EGG)
         return FALSE;
@@ -5385,7 +5385,7 @@ bool32 HasRelearnerTutorMoves(struct Pokemon *mon)
     u16 learnedMoves[MAX_MON_MOVES];
 
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
-        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+        learnedMoves[i] = GetBoxMonData(mon, MON_DATA_MOVE1 + i, 0);
 
     for (u32 i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
     {

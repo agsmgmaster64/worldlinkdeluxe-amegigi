@@ -2556,18 +2556,18 @@ static void Task_HandleInput(u8 taskId)
 
 static bool32 HasAnyRelearnableMoves(enum MoveRelearnerStates state)
 {
-    struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+    struct BoxPokemon *boxMon = &sMonSummaryScreen->currentMon.box;
 
     switch (state)
     {
         case MOVE_RELEARNER_EGG_MOVES:
-            return HasRelearnerEggMoves(mon);
+            return HasRelearnerEggMoves(boxMon);
         case MOVE_RELEARNER_TM_MOVES:
-            return HasRelearnerTMMoves(mon);
+            return HasRelearnerTMMoves(boxMon);
         case MOVE_RELEARNER_TUTOR_MOVES:
-            return HasRelearnerTutorMoves(mon);
+            return HasRelearnerTutorMoves(boxMon);
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
-            return HasRelearnerLevelUpMoves(mon);
+            return HasRelearnerLevelUpMoves(boxMon);
         default:
             return FALSE;
     }
