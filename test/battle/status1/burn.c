@@ -7,19 +7,22 @@ ASSUMPTIONS
     ASSUME(GetMoveNonVolatileStatus(MOVE_WILL_O_WISP) == MOVE_EFFECT_BURN);
 }
 
-SINGLE_BATTLE_TEST("Burn deals 1/16th (Gen7+) or 1/8th damage per turn")
+SINGLE_BATTLE_TEST("Burn deals 1/8th damage (Gen1-6) or 1/16th (Gen7+) per turn")
 {
-    u32 j;
+    u32 j, config, value;
+    PARAMETRIZE { config = GEN_7; value = 16; }
+    PARAMETRIZE { config = GEN_6; value = 8; }
     GIVEN {
-        PLAYER(SPECIES_DEFENSE_SATORI) { Status1(STATUS1_BURN); }
-        OPPONENT(SPECIES_DEFENSE_SATORI);
+        WITH_CONFIG(CONFIG_BURN_DAMAGE, config);
+        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         for (j = 0; j < 4; j++)
             TURN {}
     } SCENE {
         s32 maxHP = GetMonData(&PLAYER_PARTY[0], MON_DATA_MAX_HP);
         for (j = 0; j < 4; j++)
-            HP_BAR(player, damage: maxHP / ((B_BURN_DAMAGE >= GEN_7) ? 16 : 8));
+            HP_BAR(player, damage: maxHP / value);
     }
 }
 

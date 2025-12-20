@@ -205,8 +205,9 @@ SINGLE_BATTLE_TEST("Teatime triggers Lightning Rod if it has been affected by El
     PARAMETRIZE { move = MOVE_PLASMA_FISTS; item = ITEM_NONE; }
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_KOAKUMA) { Ability(ABILITY_LIGHTNING_ROD); Item(item); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_LIECHI_BERRY); }
+        WITH_CONFIG(CONFIG_REDIRECT_ABILITY_IMMUNITY, GEN_5);
+        PLAYER(SPECIES_PIKACHU) { Ability(ABILITY_LIGHTNING_ROD); Item(item); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LIECHI_BERRY); }
     } WHEN {
         TURN {
             MOVE(player, move);
