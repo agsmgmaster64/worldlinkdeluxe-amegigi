@@ -679,7 +679,7 @@
 #define FLAG_GIGI_FOLLOWER  0x27C
 #define FLAG_ORAS_DOWSE  0x27D
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
+#define FLAG_BANK_SAVE_MONEY  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag

@@ -3023,6 +3023,23 @@
 	.byte \difficulty
 	.endm
 
+	.macro transfermoneyprocess isDeposit:req
+	callnative Script_TransferBankMoney
+	.byte \isDeposit
+	.endm
+
+	.macro bankwithdrawmoney
+	callnative BankWithdrawMoneyPullMenu
+	waitstate
+	transfermoneyprocess TRUE
+	.endm
+
+	.macro bankdepositmoney
+	callnative BankDepositMoneyPullMenu
+	waitstate
+	transfermoneyprocess FALSE
+	.endm
+
 	.macro forcesave
 	callnative Script_ForceSaveGame, requests_effects=1
 	waitstate

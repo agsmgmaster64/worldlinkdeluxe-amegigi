@@ -46,12 +46,14 @@ script Route116_TunnelersRestHouse_EventScript_GigiFunEvent {
 
 script Route116_TunnelersRestHouse_EventScript_NueBogosBinted {
 	lock
+	bankwithdrawmoney
 	release
 	end
 }
 
 script Route116_TunnelersRestHouse_EventScript_InaFunEvent {
 	lock
+	bankdepositmoney
 	release
 	end
 }

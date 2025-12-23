@@ -57,6 +57,7 @@
 #include "follower_npc.h"
 #include "string_util.h"
 #include "strings.h"
+#include "bank_money.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -222,6 +223,7 @@ void NewGameInitData(void)
     ClearBerryTrees();
     SetMoney(&gSaveBlock1Ptr->money, 3000);
     SetCoins(0);
+    SetBankMoney(0);
     GetNewDerby();
     ResetLinkContestBoolean();
     ResetGameStats();

@@ -4499,7 +4499,7 @@ BattleScript_LocalBattleWonLoseTexts::
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
 	jumpifpointbattle BattleScript_LocalBattleWonRewardPoints
-	getmoneyreward BattleScript_LocalTrainerBattleWonGotMoney
+	getmoneyreward BattleScript_LocalTrainerBattleWonGotMoney, BattleScript_LocalTrainerBattleWonGotMoneyBankSave
 BattleScript_LocalTrainerBattleWonGotMoney::
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
@@ -4507,6 +4507,13 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	givepaydaymoney
 	pickup
 	end2
+
+BattleScript_LocalTrainerBattleWonGotMoneyBankSave::
+	printstring STRINGID_PLAYERGOTMONEY
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_SAVEDFORBANK
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PayDayMoneyAndPickUpItems
 
 BattleScript_LocalBattleWonRewardPoints::
 	getmoneyreward BattleScript_LocalTrainerBattleWonGotPoints

@@ -27,6 +27,7 @@
 #include "main.h"
 #include "palette.h"
 #include "money.h"
+#include "bank_money.h"
 #include "malloc.h"
 #include "bg.h"
 #include "string_util.h"
@@ -8175,9 +8176,10 @@ static u32 GetTrainerPointsToGive(u16 trainerId)
 
 static void Cmd_getmoneyreward(void)
 {
-    CMD_ARGS(const u8 *noMoneyPtr);
+    CMD_ARGS(const u8 *noMoneyPtr, const u8 *savingMoneyPtr);
 
     u32 moneyReward;
+    u32 savedBankMoney = 0;
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
@@ -8190,10 +8192,22 @@ static void Cmd_getmoneyreward(void)
         }
         else
         {
+            u32 keptMoney;
             moneyReward = GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentA);
             if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
                 moneyReward += GetTrainerMoneyToGive(TRAINER_BATTLE_PARAM.opponentB);
-            AddMoney(&gSaveBlock1Ptr->money, moneyReward);
+
+            if (IsSavingMoney())
+            {
+                savedBankMoney = moneyReward / 4;
+                keptMoney = moneyReward - savedBankMoney;
+                AddMoney(&gSaveBlock1Ptr->money, keptMoney);
+                AddBankMoney(savedBankMoney);
+            }
+            else
+            {
+                AddMoney(&gSaveBlock1Ptr->money, moneyReward);
+            }
         }
     }
     else
@@ -8203,9 +8217,21 @@ static void Cmd_getmoneyreward(void)
 
     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, moneyReward);
     if (moneyReward)
-        gBattlescriptCurrInstr = cmd->nextInstr;
+    {
+        if (IsSavingMoney())
+        {
+            PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff2, 5, savedBankMoney);
+            gBattlescriptCurrInstr = cmd->savingMoneyPtr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+    }
     else
+    {
         gBattlescriptCurrInstr = cmd->noMoneyPtr;
+    }
 }
 
 // Command is never used
