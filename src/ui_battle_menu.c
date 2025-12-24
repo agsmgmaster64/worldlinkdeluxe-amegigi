@@ -626,7 +626,7 @@ void UI_Battle_Menu_Init(MainCallback callback)
                     isExtraInfoShown = TRUE;
                 break;
             case STATUS_INFO_FUTURE_SIGHT:
-                if (gWishFutureKnock.futureSightCounter[j] != 0)
+                if (gBattleStruct->futureSight[j].counter != 0)
                     isExtraInfoShown = TRUE;
             case STATUS_INFO_UPROAR:
                 if (gBattleMons[j].volatiles.uproarTurns)
@@ -2139,13 +2139,13 @@ static void PrintStatusTab(void)
             //Turns Left
             StringCopy(gStringVar1, sText_Title_Field_Turns_Left);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 2), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
-            turnsLeft = gWishFutureKnock.futureSightCounter[sMenuDataPtr->battlerId];
+            turnsLeft = gBattleStruct->futureSight[sMenuDataPtr->battlerId].counter;
             ConvertIntToDecimalStringN(gStringVar1, turnsLeft, STR_CONV_MODE_LEFT_ALIGN, 4);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 3), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
 
             //Description
             //StringCopy(gStringVar1, GetSpeciesName(gBattleMons[gWishFutureKnock.futureSightAttacker[sMenuDataPtr->battlerId]].species));
-            StringCopy(gStringVar2, GetMoveName(gWishFutureKnock.futureSightMove[sMenuDataPtr->battlerId]));
+            StringCopy(gStringVar2, GetMoveName(gBattleStruct->futureSight[sMenuDataPtr->battlerId].move));
             //ConvertIntToDecimalStringN(gStringVar3, gWishFutureKnock.futureSightPower[sMenuDataPtr->battlerId], STR_CONV_MODE_LEFT_ALIGN, 4);
             StringExpandPlaceholders(gStringVar4, sText_Title_Status_IncomingAttack_Description);
             AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2, ((y + 1) * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_BLACK], 0xFF, gStringVar4);
@@ -2708,10 +2708,10 @@ static void PrintFieldTab(void)
                 if (gBattleWeather & B_WEATHER_ANY)
                 {
                     //Turns Left
-                    if (gWishFutureKnock.weatherDuration != 0)
+                    if (gBattleStruct->weatherDuration != 0)
                     {
                         AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 2), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, sText_Title_Field_Turns_Left);
-                        ConvertIntToDecimalStringN(gStringVar1, gWishFutureKnock.weatherDuration, STR_CONV_MODE_LEFT_ALIGN, 4);
+                        ConvertIntToDecimalStringN(gStringVar1, gBattleStruct->weatherDuration, STR_CONV_MODE_LEFT_ALIGN, 4);
                         AddTextPrinterParameterized4(windowId, FONT_SMALL_NARROW, (x * 8) + x2 + (SPACE_BETWEEN_LINES_FIELD * 3), (y * 8) + y2, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, gStringVar1);
                     }
 
