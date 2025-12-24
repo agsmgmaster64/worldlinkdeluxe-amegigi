@@ -6,5 +6,6 @@ void SetBankMoney(u32 toSet);
 void AddBankMoney(u32 toAdd);
 void RemoveBankMoney(u32 toSub);
 bool32 IsSavingMoney(void);
+void ApplyBankMoneyInterest(u32 daysSince);
 
 #endif // GUARD_BANK_MONEY_H

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "main.h"
+#include "bank_money.h"
 #include "money.h"
 #include "debug.h"
 #include "event_data.h"
@@ -127,6 +128,18 @@ void Script_TransferBankMoney(struct ScriptContext *ctx)
     u8 isDeposit = ScriptReadByte(ctx);
 
     TransferBankMoney(isDeposit);
+}
+
+void ApplyBankMoneyInterest(u32 days)
+{
+    u32 interest = GetBankMoney() / 10;
+
+    interest = interest * days;
+
+    if (interest == 0)
+        interest = 1;
+
+    AddBankMoney(interest);
 }
 
 bool32 IsSavingMoney(void)
