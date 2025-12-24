@@ -3031,13 +3031,13 @@
 	.macro bankwithdrawmoney
 	callnative BankWithdrawMoneyPullMenu
 	waitstate
-	transfermoneyprocess TRUE
+	transfermoneyprocess FALSE
 	.endm
 
 	.macro bankdepositmoney
 	callnative BankDepositMoneyPullMenu
 	waitstate
-	transfermoneyprocess FALSE
+	transfermoneyprocess TRUE
 	.endm
 
 	.macro forcesave

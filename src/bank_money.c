@@ -112,13 +112,13 @@ void TransferBankMoney(u32 isDeposit)
 {
     if (isDeposit)
     {
-        RemoveBankMoney(sMoneyToProcess);
-        AddMoney(&gSaveBlock1Ptr->money, sMoneyToProcess);
+        AddBankMoney(sMoneyToProcess);
+        RemoveMoney(&gSaveBlock1Ptr->money, sMoneyToProcess);
     }
     else
     {
-        AddBankMoney(sMoneyToProcess);
-        RemoveMoney(&gSaveBlock1Ptr->money, sMoneyToProcess);
+        RemoveBankMoney(sMoneyToProcess);
+        AddMoney(&gSaveBlock1Ptr->money, sMoneyToProcess);
     }
 }
 
@@ -178,20 +178,20 @@ static void Bank_DestroyExtraWindow(u8 taskId)
 static void BankDisplayWithdrawAmount(u32 quantity, u32 digit, u8 windowId)
 {
     StringCopy(gStringVar2, sText_DigitIndicator[digit]);
-    ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, MAX_MONEY_DIGITS);
+    ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_MONEY_DIGITS);
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
-    ConvertIntToDecimalStringN(gStringVar3, GetBankMoney(), STR_CONV_MODE_LEADING_ZEROS, MAX_MONEY_DIGITS);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Bank: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\nWithdraw:{STR_VAR_2}{CLEAR_TO 90}"));
+    ConvertIntToDecimalStringN(gStringVar3, GetBankMoney(), STR_CONV_MODE_RIGHT_ALIGN, MAX_MONEY_DIGITS);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Bank: {STR_VAR_3}\nWithdraw:{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
     AddTextPrinterParameterized(windowId, FONT_SHORT, gStringVar4, 0, 0, 0, NULL);
 }
 
 static void BankDisplayDepositAmount(u32 quantity, u32 digit, u8 windowId)
 {
     StringCopy(gStringVar2, sText_DigitIndicator[digit]);
-    ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, MAX_MONEY_DIGITS);
+    ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_MONEY_DIGITS);
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
-    ConvertIntToDecimalStringN(gStringVar3, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_LEADING_ZEROS, MAX_MONEY_DIGITS);
-    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Player: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\nDeposit:{STR_VAR_2}{CLEAR_TO 90}"));
+    ConvertIntToDecimalStringN(gStringVar3, GetMoney(&gSaveBlock1Ptr->money), STR_CONV_MODE_RIGHT_ALIGN, MAX_MONEY_DIGITS);
+    StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Player: {STR_VAR_3}\nDeposit:{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
     AddTextPrinterParameterized(windowId, FONT_SHORT, gStringVar4, 0, 0, 0, NULL);
 }
 
