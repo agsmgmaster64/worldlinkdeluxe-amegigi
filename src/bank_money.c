@@ -134,12 +134,12 @@ void ApplyBankMoneyInterest(u32 days)
 {
     u32 interest = GetBankMoney() / 10;
 
-    interest = interest * days;
+    if (interest != 0)
+    {
+        interest = interest * days;
 
-    if (interest == 0)
-        interest = 1;
-
-    AddBankMoney(interest);
+        AddBankMoney(interest);
+    }
 }
 
 bool32 IsSavingMoney(void)
