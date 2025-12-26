@@ -2072,7 +2072,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "10",
@@ -2150,7 +2150,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "10",
@@ -2234,7 +2234,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "10",
@@ -4668,7 +4668,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "12",
@@ -4754,7 +4754,7 @@
       },
       {
         "Level": "8",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "12",
@@ -11344,7 +11344,7 @@
       },
       {
         "Level": "12",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "16",
@@ -11408,7 +11408,7 @@
       },
       {
         "Level": "12",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "16",
@@ -11476,7 +11476,7 @@
       },
       {
         "Level": "12",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "16",
@@ -14047,7 +14047,7 @@
       },
       {
         "Level": "10",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "TMMoves": [
@@ -14074,7 +14074,7 @@
       },
       {
         "Level": "10",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "12",
@@ -15883,7 +15883,7 @@
       },
       {
         "Level": "9",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "12",
@@ -15961,7 +15961,7 @@
       },
       {
         "Level": "9",
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": "12",

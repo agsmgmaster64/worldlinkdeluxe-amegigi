@@ -357,7 +357,7 @@ struct SpeciesInfo /*0xC4*/
     u32 isRestrictedLegendary:1;
     u32 isSubLegendary:1;
     u32 isMythical:1;
-    u32 isUltraBeast:1;
+    u32 isSpawn:1;
     u32 isParadox:1;
     u32 isTotem:1;
     u32 isMegaEvolution:1;

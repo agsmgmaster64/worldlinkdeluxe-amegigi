@@ -1815,6 +1815,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
+    const u32 gMonFrontPic_CMedicineSanni[] = INCBIN_U32("graphics/pokemon/_add/th/medicine/sanni/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CMedicineSanni[] = INCBIN_U16("graphics/pokemon/_add/th/medicine/sanni/chibi/normal.gbapal");
+    const u32 gMonBackPic_CMedicineSanni[] = INCBIN_U32("graphics/pokemon/_add/th/medicine/sanni/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CMedicineSanni[] = INCBIN_U16("graphics/pokemon/_add/th/medicine/sanni/chibi/shiny.gbapal");
+    const u8 gMonIcon_CMedicineSanni[] = INCBIN_U8("graphics/pokemon/_add/th/medicine/sanni/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CMedicineSanni[] = INCBIN_U8("graphics/pokemon/_add/th/medicine/sanni/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_MedicineSanni[] = INCBIN_U32("graphics/pokemon/_add/th/medicine/sanni/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_MedicineSanni[] = INCBIN_U16("graphics/pokemon/_add/th/medicine/sanni/normal/normal.gbapal");
+    const u32 gMonBackPic_MedicineSanni[] = INCBIN_U32("graphics/pokemon/_add/th/medicine/sanni/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_MedicineSanni[] = INCBIN_U16("graphics/pokemon/_add/th/medicine/sanni/normal/shiny.gbapal");
+    const u8 gMonIcon_MedicineSanni[] = INCBIN_U8("graphics/pokemon/_add/th/medicine/sanni/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_MedicineSanni[] = INCBIN_U8("graphics/pokemon/_add/th/medicine/sanni/normal/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_CYuuka[] = INCBIN_U32("graphics/pokemon/_add/th/yuuka/chibi/anim_front.4bpp.smol");
     const u16 gMonPalette_CYuuka[] = INCBIN_U16("graphics/pokemon/_add/th/yuuka/chibi/normal.gbapal");
     const u32 gMonBackPic_CYuuka[] = INCBIN_U32("graphics/pokemon/_add/th/yuuka/chibi/back.4bpp.smol");
@@ -2348,6 +2366,24 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u8 gMonIcon_TKisume[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/tech/icon.4bpp");
 #if P_FOOTPRINTS
     const u8 gMonFootprint_TKisume[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/tech/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_CKisumeSanni[] = INCBIN_U32("graphics/pokemon/_add/th/kisume/sanni/chibi/anim_front.4bpp.smol");
+    const u16 gMonPalette_CKisumeSanni[] = INCBIN_U16("graphics/pokemon/_add/th/kisume/sanni/chibi/normal.gbapal");
+    const u32 gMonBackPic_CKisumeSanni[] = INCBIN_U32("graphics/pokemon/_add/th/kisume/sanni/chibi/back.4bpp.smol");
+    const u16 gMonShinyPalette_CKisumeSanni[] = INCBIN_U16("graphics/pokemon/_add/th/kisume/sanni/chibi/shiny.gbapal");
+    const u8 gMonIcon_CKisumeSanni[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/sanni/chibi/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_CKisumeSanni[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/sanni/chibi/footprint.1bpp");
+#endif //P_FOOTPRINTS
+
+    const u32 gMonFrontPic_KisumeSanni[] = INCBIN_U32("graphics/pokemon/_add/th/kisume/sanni/normal/anim_front.4bpp.smol");
+    const u16 gMonPalette_KisumeSanni[] = INCBIN_U16("graphics/pokemon/_add/th/kisume/sanni/normal/normal.gbapal");
+    const u32 gMonBackPic_KisumeSanni[] = INCBIN_U32("graphics/pokemon/_add/th/kisume/sanni/normal/back.4bpp.smol");
+    const u16 gMonShinyPalette_KisumeSanni[] = INCBIN_U16("graphics/pokemon/_add/th/kisume/sanni/normal/shiny.gbapal");
+    const u8 gMonIcon_KisumeSanni[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/sanni/normal/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_KisumeSanni[] = INCBIN_U8("graphics/pokemon/_add/th/kisume/sanni/normal/footprint.1bpp");
 #endif //P_FOOTPRINTS
 
     const u32 gMonFrontPic_CYamame[] = INCBIN_U32("graphics/pokemon/_add/th/yamame/chibi/anim_front.4bpp.smol");

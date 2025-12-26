@@ -290,8 +290,7 @@ static inline bool32 IsRandomizerLegendary(u16 species)
 {
     return gSpeciesInfo[species].isRestrictedLegendary
         || gSpeciesInfo[species].isSubLegendary
-        || gSpeciesInfo[species].isMythical
-        || gSpeciesInfo[species].isUltraBeast;
+        || gSpeciesInfo[species].isMythical;
 }
 
 struct SpeciesTable

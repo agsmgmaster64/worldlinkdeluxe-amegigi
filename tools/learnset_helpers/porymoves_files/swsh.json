@@ -17766,7 +17766,7 @@
       "MOVE_COVET",
       "MOVE_DEFENSE_CURL",
       "MOVE_FINAL_GAMBIT",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_KNOCK_OFF",
       "MOVE_NATURE_POWER",
       "MOVE_TOXIC"
@@ -47883,7 +47883,7 @@
     ],
     "EggMoves": [
       "MOVE_DOUBLE_TEAM",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_LUNGE",
       "MOVE_POISON_STING",
       "MOVE_STRUGGLE_BUG"
@@ -48000,7 +48000,7 @@
     ],
     "EggMoves": [
       "MOVE_DOUBLE_TEAM",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_LUNGE",
       "MOVE_POISON_STING",
       "MOVE_STRUGGLE_BUG"
@@ -51833,7 +51833,7 @@
     "EggMoves": [
       "MOVE_FIRST_IMPRESSION",
       "MOVE_FLAIL",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_PREDATOR_STALK",
       "MOVE_STRUGGLE_BUG"
     ],
@@ -61712,7 +61712,7 @@
     ],
     "EggMoves": [
       "MOVE_HAZE",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SHADOW_DANCE"
@@ -61818,7 +61818,7 @@
     ],
     "EggMoves": [
       "MOVE_HAZE",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SHADOW_DANCE"
@@ -62032,7 +62032,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 4,
@@ -62134,7 +62134,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,
@@ -69746,7 +69746,7 @@
     "PreEvoMoves": [],
     "TMMoves": [],
     "EggMoves": [
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_RECOVER",
       "MOVE_STICKY_WEB",
       "MOVE_JAMMING"
@@ -69825,7 +69825,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_RECOVER",
       "MOVE_STICKY_WEB",
       "MOVE_JAMMING"
@@ -69949,7 +69949,7 @@
       "MOVE_BODY_PRESS"
     ],
     "EggMoves": [
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_RECOVER",
       "MOVE_STICKY_WEB",
       "MOVE_JAMMING"
@@ -74760,7 +74760,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -76040,7 +76040,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,
@@ -76096,7 +76096,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,
@@ -76234,7 +76234,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,

@@ -43,7 +43,7 @@ SINGLE_BATTLE_TEST("Shield Dust blocks secondary effects")
 SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
 {
     u16 move;
-    PARAMETRIZE { move = MOVE_INFESTATION; }
+    PARAMETRIZE { move = MOVE_ALLURING_SPIN; }
     PARAMETRIZE { move = MOVE_THOUSAND_ARROWS; }
     PARAMETRIZE { move = MOVE_JAW_LOCK; }
     PARAMETRIZE { move = MOVE_PAY_DAY; }
@@ -51,7 +51,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_THOUSAND_ARROWS) == EFFECT_SMACK_DOWN);
         ASSUME(GetMoveEffect(MOVE_SMACK_DOWN) == EFFECT_SMACK_DOWN);
-        ASSUME(MoveHasAdditionalEffectWithChance(MOVE_INFESTATION, MOVE_EFFECT_WRAP, 0) == TRUE);
+        ASSUME(MoveHasAdditionalEffectWithChance(MOVE_ALLURING_SPIN, MOVE_EFFECT_WRAP, 0) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_JAW_LOCK, MOVE_EFFECT_TRAP_BOTH, 0) == TRUE);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_PAY_DAY, MOVE_EFFECT_PAYDAY, 0) == TRUE);
         PLAYER(SPECIES_WOBBUFFET);
@@ -63,7 +63,7 @@ SINGLE_BATTLE_TEST("Shield Dust does not block primary effects")
         HP_BAR(opponent);
         switch (move)
         {
-            case MOVE_INFESTATION:
+            case MOVE_ALLURING_SPIN:
                 MESSAGE("The opposing Vivillon has been afflicted with an infestation by Wobbuffet!");
                 break;
             case MOVE_THOUSAND_ARROWS:

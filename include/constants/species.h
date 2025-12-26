@@ -1017,10 +1017,10 @@
 #define SPECIES_HOURAI_SANNI                            963
 #define SPECIES_GOLIATH_SANNI_ATTACK                    964
 #define SPECIES_GOLIATH_SANNI_DEFENSE                   965
-#define SPECIES_PERSIAN_ALOLA                           966
-#define SPECIES_GEODUDE_ALOLA                           967
-#define SPECIES_GRAVELER_ALOLA                          968
-#define SPECIES_GOLEM_ALOLA                             969
+#define SPECIES_CHIBI_MEDICINE_SANNI                    966
+#define SPECIES_NORMAL_MEDICINE_SANNI                   967
+#define SPECIES_CHIBI_KISUME_SANNI                      968
+#define SPECIES_NORMAL_KISUME_SANNI                     969
 #define SPECIES_GRIMER_ALOLA                            970
 #define SPECIES_MUK_ALOLA                               971
 #define SPECIES_EXEGGUTOR_ALOLA                         972

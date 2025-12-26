@@ -14542,7 +14542,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -14675,7 +14675,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -28503,7 +28503,7 @@
       },
       {
         "Level": 47,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "PreEvoMoves": [],
@@ -28630,7 +28630,7 @@
       },
       {
         "Level": 47,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "PreEvoMoves": [],
@@ -51142,7 +51142,7 @@
       "MOVE_POISON_STING",
       "MOVE_DOUBLE_TEAM",
       "MOVE_STRUGGLE_BUG",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_LUNGE"
     ],
     "TutorMoves": []
@@ -51251,7 +51251,7 @@
     ],
     "EggMoves": [
       "MOVE_DOUBLE_TEAM",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_LUNGE",
       "MOVE_POISON_STING",
       "MOVE_STRUGGLE_BUG"
@@ -64354,7 +64354,7 @@
     ],
     "EggMoves": [
       "MOVE_HAZE",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SHADOW_DANCE"
@@ -64459,7 +64459,7 @@
     ],
     "EggMoves": [
       "MOVE_HAZE",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_BRAVER",
       "MOVE_COERCE",
       "MOVE_SHADOW_DANCE"
@@ -64681,7 +64681,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 4,
@@ -64793,7 +64793,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -72290,7 +72290,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -73197,7 +73197,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "PreEvoMoves": [],
@@ -73236,7 +73236,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,
@@ -73378,7 +73378,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 6,
@@ -80124,7 +80124,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 21,
@@ -80229,7 +80229,7 @@
       },
       {
         "Level": 17,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 21,
@@ -87804,7 +87804,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,
@@ -87864,7 +87864,7 @@
       }
     ],
     "PreEvoMoves": [
-      "MOVE_INFESTATION"
+      "MOVE_ALLURING_SPIN"
     ],
     "TMMoves": [
       "MOVE_TAKE_DOWN",
@@ -88705,7 +88705,7 @@
       },
       {
         "Level": 1,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 1,

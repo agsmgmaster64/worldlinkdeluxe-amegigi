@@ -5262,6 +5262,44 @@ static const u16 sTMedicineTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+static const u16 sCMedicineSanniTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sMedicineSanniTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
 static const u16 sCYuukaTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BRICK_BREAK,
@@ -7036,6 +7074,44 @@ static const u16 sTKisumeTeachableLearnset[] = {
     MOVE_WATERFALL,
     MOVE_WATER_PULSE,
     MOVE_WILL_O_WISP,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sCKisumeSanniTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sKisumeSanniTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_DETECT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_METRONOME,
+    MOVE_MIMIC,
+    MOVE_MULTI_PULSE,
+    MOVE_REST,
+    MOVE_RETURN,
+    MOVE_SAFEGUARD,
+    MOVE_SECRET_POWER,
+    MOVE_SLEEP_TALK,
+    MOVE_SUBSTITUTE,
+    MOVE_TACKLE,
+    MOVE_TERA_BLAST,
     MOVE_UNAVAILABLE,
 };
 

@@ -15709,14 +15709,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_HoldBack,
     },
 
-    [MOVE_INFESTATION] =
+    [MOVE_ALLURING_SPIN] =
     {
-        .name = COMPOUND_STRING("Infestation"),
+        .name = COMPOUND_STRING("Alluring Spin"),
         .description = COMPOUND_STRING(
-            "The foe is infested and\n"
-            "attacked for "BINDING_TURNS" turns."),
-        .effect = EFFECT_HIT,
-        .power = 20,
+            "Spinning on ground, hits. Goes\n"
+            "first on Misty Terrain."),
+        .effect = EFFECT_ALLURING_SPIN,
+        .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 55 : 70,
         .type = TYPE_HEART,
         .accuracy = 100,
         .pp = 20,
@@ -15724,10 +15724,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_WRAP,
-            .multistring.wrapped = B_MSG_WRAPPED_INFESTATION,
-        }),
+        .skyBattleBanned = B_EXTRAPOLATED_MOVE_FLAGS,
         .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,

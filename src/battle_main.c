@@ -4849,6 +4849,12 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
     {
         priority++;
     }
+    else if (GetMoveEffect(move) == EFFECT_ALLURING_SPIN
+          && IsMistyTerrainAffected(battler, ability, GetBattlerHoldEffect(battler), gFieldStatuses)
+          && GetActiveGimmick(gBattlerAttacker) != GIMMICK_DYNAMAX && !IsGimmickSelected(battler, GIMMICK_DYNAMAX))
+    {
+        priority++;
+    }
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
     {
         priority += 3;

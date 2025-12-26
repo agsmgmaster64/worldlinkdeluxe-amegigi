@@ -13164,7 +13164,7 @@ static void Cmd_handleballthrow(void)
         else
             catchRate = gSpeciesInfo[gBattleMons[gBattlerTarget].species].catchRate;
 
-        if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
+        if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isSpawn)
         {
             if (ballId == BALL_BEAST)
                 ballMultiplier = 500;

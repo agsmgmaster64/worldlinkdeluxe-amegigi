@@ -18618,7 +18618,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -18752,7 +18752,7 @@
       },
       {
         "Level": 8,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 12,
@@ -24004,7 +24004,7 @@
       "MOVE_DEFENSE_CURL",
       "MOVE_FINAL_GAMBIT",
       "MOVE_HELPING_HAND",
-      "MOVE_INFESTATION",
+      "MOVE_ALLURING_SPIN",
       "MOVE_KNOCK_OFF",
       "MOVE_MUD_SLAP",
       "MOVE_ROCK_BLAST",
@@ -35289,7 +35289,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "PreEvoMoves": [],
@@ -35400,7 +35400,7 @@
       },
       {
         "Level": 50,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       }
     ],
     "PreEvoMoves": [],
@@ -46279,7 +46279,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 38,
@@ -55964,7 +55964,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 38,
@@ -56083,7 +56083,7 @@
       },
       {
         "Level": 35,
-        "Move": "MOVE_INFESTATION"
+        "Move": "MOVE_ALLURING_SPIN"
       },
       {
         "Level": 38,
