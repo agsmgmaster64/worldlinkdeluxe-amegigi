@@ -1187,6 +1187,7 @@ const struct SpeciesInfo gSpeciesInfoTouhouPrint[] =
         .iconSprite = gMonIcon_Akyuu,
         .iconPalIndex = 1,
         FOOTPRINT(Akyuu)
+        .teachingType = ALL_TEACHABLES,
         .levelUpLearnset = sAkyuuLevelUpLearnset,
         .teachableLearnset = sAkyuuTeachableLearnset,
     },

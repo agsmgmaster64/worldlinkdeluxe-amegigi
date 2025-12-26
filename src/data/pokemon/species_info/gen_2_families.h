@@ -347,9 +347,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             gOverworldPalette_Unown,                                                                    \
             gShinyOverworldPalette_Unown,                                                               \
         )                                                                                               \
+        .teachingType = TM_ILLITERATE,                                                                  \
         .levelUpLearnset = sUnownLevelUpLearnset,                                                       \
         .teachableLearnset = sUnownTeachableLearnset,                                                   \
-        .tmIlliterate = TRUE,                                                                           \
         .formSpeciesIdTable = sUnownFormSpeciesIdTable,                                                 \
         .randomizerMode = rzMode,                                                                       \
     }

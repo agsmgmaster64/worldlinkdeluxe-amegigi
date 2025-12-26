@@ -64,7 +64,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_BurmySandy,
             gShinyOverworldPalette_BurmySandy
         )
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sBurmyLevelUpLearnset,
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,
@@ -134,7 +134,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_BurmyTrash,
             gShinyOverworldPalette_BurmyTrash
         )
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sBurmyLevelUpLearnset,
         .teachableLearnset = sBurmyTeachableLearnset,
         .formSpeciesIdTable = sBurmyFormSpeciesIdTable,

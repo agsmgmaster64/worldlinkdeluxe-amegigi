@@ -1545,7 +1545,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconSprite = gMonIcon_CSatori,
         .iconPalIndex = 1,
         FOOTPRINT(CSatori)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sCSatoriLevelUpLearnset,
         .teachableLearnset = sCSatoriTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_NORMAL_SATORI},
@@ -1656,7 +1656,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou11[] =
         .iconSprite = gMonIcon_DSatori,
         .iconPalIndex = 1,
         FOOTPRINT(DSatori)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sDSatoriLevelUpLearnset,
         .teachableLearnset = sDSatoriTeachableLearnset,
     },

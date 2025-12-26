@@ -1024,7 +1024,7 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         .iconSprite = gMonIcon_Kedama,
         .iconPalIndex = 0,
         FOOTPRINT(Kedama)
-        .tmIlliterate = TRUE,
+        .teachingType = TM_ILLITERATE,
         .levelUpLearnset = sKedamaLevelUpLearnset,
         .teachableLearnset = sKedamaTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SWIFT_HEART, SPECIES_MIMI_CHAN},
