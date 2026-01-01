@@ -1929,11 +1929,15 @@ bool32 CheckRelearnerStateFlag(enum MoveRelearnerStates state)
     case MOVE_RELEARNER_LEVEL_UP_MOVES:
         return TRUE;
     case MOVE_RELEARNER_EGG_MOVES:
-        return FlagGet(P_FLAG_EGG_MOVES);
+        if (P_FLAG_EGG_MOVES != 0)
+            return FlagGet(P_FLAG_EGG_MOVES);
+        return FALSE;
     case MOVE_RELEARNER_TM_MOVES:
         return P_TM_MOVES_RELEARNER;
     case MOVE_RELEARNER_TUTOR_MOVES:
-        return FlagGet(P_FLAG_TUTOR_MOVES);
+        if (P_FLAG_TUTOR_MOVES != 0)
+            return FlagGet(P_FLAG_TUTOR_MOVES);
+        return FALSE;
     default:
         return FALSE;
     }

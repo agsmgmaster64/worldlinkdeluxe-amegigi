@@ -2561,11 +2561,15 @@ static bool32 HasAnyRelearnableMoves(enum MoveRelearnerStates state)
     switch (state)
     {
         case MOVE_RELEARNER_EGG_MOVES:
-            return HasRelearnerEggMoves(boxMon);
+            if (P_FLAG_TUTOR_MOVES != 0 && FlagGet(P_FLAG_TUTOR_MOVES))
+                return HasRelearnerEggMoves(boxMon);
+            return FALSE;
         case MOVE_RELEARNER_TM_MOVES:
             return HasRelearnerTMMoves(boxMon);
         case MOVE_RELEARNER_TUTOR_MOVES:
-            return HasRelearnerTutorMoves(boxMon);
+            if (P_FLAG_EGG_MOVES != 0 && FlagGet(P_FLAG_EGG_MOVES))
+                return HasRelearnerTutorMoves(boxMon);
+            return FALSE;
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
             return HasRelearnerLevelUpMoves(boxMon);
         default:
@@ -2597,8 +2601,8 @@ static void TryUpdateRelearnType(enum IncrDecrUpdateValues delta)
     // just in case everything is off, default to level up moves
     if ((!P_ENABLE_MOVE_RELEARNERS
         && !P_TM_MOVES_RELEARNER
-        && !FlagGet(P_FLAG_EGG_MOVES)
-        && !FlagGet(P_FLAG_TUTOR_MOVES)))
+        && !(P_FLAG_EGG_MOVES != 0 && FlagGet(P_FLAG_EGG_MOVES))
+        && !(P_FLAG_TUTOR_MOVES != 0 && FlagGet(P_FLAG_TUTOR_MOVES))))
     {
         sMonSummaryScreen->hasRelearnableMoves = HasAnyRelearnableMoves(MOVE_RELEARNER_LEVEL_UP_MOVES);
         return;
@@ -2887,6 +2891,7 @@ static void ChangePage(u8 taskId, s8 delta)
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     s16 *data = gTasks[taskId].data;
     u32 currPageIndex;
+    u32 oldPageIndex;
 
     if (summary->isEgg)
         return;

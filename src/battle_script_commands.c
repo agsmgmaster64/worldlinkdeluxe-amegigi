@@ -14644,11 +14644,7 @@ void BS_TryEarlyBirdHeal(void)
 
     if (battlerAbility == ABILITY_EARLY_BIRD && !IsBattlerAtMaxHp(battler) && !gBattleMons[gBattlerAttacker].volatiles.healBlock)
     {
-        gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 4;
-        if (gBattleStruct->moveDamage[battler] == 0)
-            gBattleStruct->moveDamage[battler] = 1;
-        gBattleStruct->moveDamage[battler] *= -1;
-
+        SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 4);
         gBattlescriptCurrInstr = cmd->nextInstr;
         gLastUsedAbility = ABILITY_EARLY_BIRD;
         RecordAbilityBattle(battler, gLastUsedAbility);
