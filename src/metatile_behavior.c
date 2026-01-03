@@ -1,5 +1,7 @@
 #include "global.h"
 #include "metatile_behavior.h"
+#include "event_data.h"
+#include "event_object_movement.h"
 #include "constants/metatile_behaviors.h"
 
 #define TILE_FLAG_HAS_ENCOUNTERS (1 << 0)
@@ -116,6 +118,30 @@ bool8 MetatileBehavior_HasFeebas(u8 metatileBehavior)
 bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ICE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsElectricity(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_ELECTRICITY)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsTileWater(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_TILE_WATER)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsOranges(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_ORANGES)
         return TRUE;
     else
         return FALSE;
@@ -241,6 +267,8 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
      || metatileBehavior == MB_ICE
      || metatileBehavior == MB_SECRET_BASE_JUMP_MAT
      || metatileBehavior == MB_SECRET_BASE_SPIN_MAT
+     || metatileBehavior == MB_ELECTRICITY
+     || metatileBehavior == MB_TILE_WATER
      || (metatileBehavior >= MB_SPIN_RIGHT && metatileBehavior <= MB_SPIN_DOWN))
         return TRUE;
     else
@@ -757,6 +785,7 @@ bool8 MetatileBehavior_IsUnableToEmerge(u8 metatileBehavior)
 bool8 MetatileBehavior_IsShallowFlowingWater(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SHALLOW_WATER
+     || metatileBehavior == MB_TILE_WATER
      || metatileBehavior == MB_STAIRS_OUTSIDE_ABANDONED_SHIP
      || metatileBehavior == MB_SHOAL_CAVE_ENTRANCE)
         return TRUE;
@@ -1382,25 +1411,9 @@ bool32 TestMetatileAttributeBit(u8 attr, u8 bitmask)
     return sTileBitAttributes[attr] & bitmask;
 }
 
-bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_SPIN_RIGHT)
-        return TRUE;
-    else
-        return FALSE;
-}
-
 bool8 MetatileBehavior_IsDirectionalUpRightStairWarp(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_UP_RIGHT_STAIR_WARP)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-bool8 MetatileBehavior_IsSpinLeft(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_SPIN_LEFT)
         return TRUE;
     else
         return FALSE;
@@ -1414,14 +1427,6 @@ bool8 MetatileBehavior_IsDirectionalUpLeftStairWarp(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 MetatileBehavior_IsSpinUp(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_SPIN_UP)
-        return TRUE;
-    else
-        return FALSE;
-}
-
 bool8 MetatileBehavior_IsDirectionalDownRightStairWarp(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_DOWN_RIGHT_STAIR_WARP)
@@ -1430,9 +1435,41 @@ bool8 MetatileBehavior_IsDirectionalDownRightStairWarp(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsSpinRight(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SPIN_RIGHT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSpinLeft(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SPIN_LEFT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSpinUp(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_SPIN_UP)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsSpinDown(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SPIN_DOWN)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsStopSpinning(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_STOP_SPINNING)
         return TRUE;
     else
         return FALSE;

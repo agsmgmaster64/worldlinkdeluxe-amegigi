@@ -49,7 +49,7 @@
 #include "constants/trainer_types.h"
 #include "constants/metatile_behaviors.h"
 
-#define NUM_FORCED_MOVEMENTS 22
+#define NUM_FORCED_MOVEMENTS 24
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
 enum SpinDirection
@@ -106,6 +106,9 @@ static bool8 ForcedMovement_SlideEast(void);
 static bool8 ForcedMovement_MatJump(void);
 static bool8 ForcedMovement_MatSpin(void);
 static bool8 ForcedMovement_MuddySlope(void);
+static bool8 ForcedMovement_Electricity(void);
+static bool8 ForcedMovement_TileWater(void);
+static bool8 ForcedMovement_SlideBack(void);
 
 static void MovePlayerNotOnBike(u8, u16);
 static u8 CheckMovementInputNotOnBike(u8);
@@ -191,6 +194,8 @@ static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
     MetatileBehavior_IsSecretBaseJumpMat,
     MetatileBehavior_IsSecretBaseSpinMat,
     MetatileBehavior_IsMuddySlope,
+    MetatileBehavior_IsElectricity,
+    MetatileBehavior_IsTileWater,
 };
 
 // + 1 for ForcedMovement_None, which is excluded above
@@ -219,6 +224,8 @@ static bool8 (*const sForcedMovementFuncs[NUM_FORCED_MOVEMENTS + 1])(void) =
     ForcedMovement_MatJump,
     ForcedMovement_MatSpin,
     ForcedMovement_MuddySlope,
+    ForcedMovement_Electricity,
+    ForcedMovement_TileWater,
 };
 
 static void (*const sPlayerNotOnBikeFuncs[])(u8, u16) =
@@ -436,7 +443,7 @@ static bool8 TryUpdatePlayerSpinDirection(void)
         if (playerObjEvent->heldMovementFinished)
         {
             u32 playerMetatileBehavior = playerObjEvent->currentMetatileBehavior;
-            if (playerMetatileBehavior == MB_STOP_SPINNING)
+            if (MetatileBehavior_IsStopSpinning(playerMetatileBehavior))
                 return FALSE;
             if (playerMetatileBehavior >= MB_SPIN_RIGHT && playerMetatileBehavior <= MB_SPIN_DOWN)
                 gPlayerAvatar.lastSpinTile = playerMetatileBehavior;
@@ -667,6 +674,51 @@ static bool8 ForcedMovement_MuddySlope(void)
     {
         return FALSE;
     }
+}
+
+static bool8 ForcedMovement_Electricity(void)
+{
+    PlaySE(SE_M_THUNDER_WAVE);
+    return ForcedMovement_SlideBack();
+}
+
+static bool8 ForcedMovement_TileWater(void)
+{
+    switch (VarGet(VAR_TILE_WATER))
+    {
+    case TILE_WATER_CHOMP:
+        PlaySE(SE_M_BITE);
+        return ForcedMovement_SlideBack();
+    case TILE_WATER_SLIPPERY:
+        return ForcedMovement_Slip();
+    }
+    return FALSE;
+}
+
+static bool8 ForcedMovement_SlideBack(void)
+{
+    struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    u32 playerDirection = playerObjEvent->movementDirection;
+    u32 slideDirection;
+
+    switch (playerDirection)
+    {
+    default:
+    case DIR_NORTH:
+        slideDirection = DIR_SOUTH;
+        break;
+    case DIR_SOUTH:
+        slideDirection = DIR_NORTH;
+        break;
+    case DIR_EAST:
+        slideDirection = DIR_WEST;
+        break;
+    case DIR_WEST:
+        slideDirection = DIR_EAST;
+        break;
+    }
+    return ForcedMovement_Slide(slideDirection, PlayerWalkFast);
 }
 
 static void MovePlayerNotOnBike(u8 direction, u16 heldKeys)

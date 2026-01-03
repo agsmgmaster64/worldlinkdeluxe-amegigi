@@ -2,6 +2,7 @@
 #include "bike.h"
 #include "clock.h"
 #include "event_data.h"
+#include "event_object_movement.h"
 #include "field_camera.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
@@ -54,6 +55,7 @@ static void FortreeBridgePerStepCallback(u8);
 static void PacifidlogBridgePerStepCallback(u8);
 static void SootopolisGymIcePerStepCallback(u8);
 static void FlipSwitchPanelPerStepCallback(u8);
+static void UTTilePuzzlePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
@@ -68,6 +70,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
     [STEP_CB_FLIPSWITCH_TILE]   = FlipSwitchPanelPerStepCallback,
+    [STEP_CB_UT_TILE_PUZZLE]    = UTTilePuzzlePerStepCallback,
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -847,6 +850,86 @@ static void FlipSwitchPanelPerStepCallback(u8 taskId)
 #undef tPrevY
 #undef tFlipSwitchX
 #undef tFlipSwitchY
+#undef tDelay
+
+#define tState        data[1]
+#define tPrevX        data[2]
+#define tPrevY        data[3]
+#define tDelay        data[4]
+
+enum {
+    TILE_STEP_GET_COORDS,
+    TILE_STEP_CHECK_COORDS,
+    TILE_STEP_ORANGES,
+    TILE_STEP_SLIPPERY,
+    TILE_STEP_CLEAR,
+};
+
+static void UTTilePuzzlePerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u16 tileBehavior;
+    s16 *data = gTasks[taskId].data;
+    switch (tState)
+    {
+    case TILE_STEP_GET_COORDS:
+        PlayerGetDestCoords(&x, &y);
+        tPrevX = x;
+        tPrevY = y;
+        tState = TILE_STEP_CHECK_COORDS;
+        break;
+    case TILE_STEP_CHECK_COORDS:
+        PlayerGetDestCoords(&x, &y);
+        // End if player hasn't moved
+        if (x == tPrevX && y == tPrevY)
+            return;
+
+        tPrevX = x;
+        tPrevY = y;
+        tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+        if (MetatileBehavior_IsTrickHouseSlipperyFloor(tileBehavior))
+        {
+            VarSet(VAR_TILE_WATER, TILE_WATER_SLIPPERY);
+            tDelay = 4;
+            tState = TILE_STEP_SLIPPERY;
+        }
+        else if (MetatileBehavior_IsOranges(tileBehavior))
+        {
+            VarSet(VAR_TILE_WATER, TILE_WATER_CHOMP);
+            tDelay = 4;
+            tState = TILE_STEP_ORANGES;
+        }
+        else if (MetatileBehavior_IsStopSpinning(tileBehavior))
+        {
+            VarSet(VAR_TILE_WATER, TILE_WATER_NONE);
+        }
+        break;
+    case TILE_STEP_SLIPPERY:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            tState = TILE_STEP_CHECK_COORDS;
+        }
+    case TILE_STEP_ORANGES:
+        if (tDelay != 0)
+        {
+            tDelay--;
+        }
+        else
+        {
+            PlaySE(SE_PIN);
+            tState = TILE_STEP_CHECK_COORDS;
+        }
+    }
+}
+
+#undef tState
+#undef tPrevX
+#undef tPrevY
 #undef tDelay
 
 #define tPrevX data[1]
