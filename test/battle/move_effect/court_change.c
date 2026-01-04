@@ -81,12 +81,13 @@ DOUBLE_BATTLE_TEST("Court Change swaps entry hazards used by the player")
 DOUBLE_BATTLE_TEST("Court Change used by the player swaps Mist, Safeguard, Aurora Veil, Reflect, Light Screen, Tailwind")
 {
     GIVEN {
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        PLAYER(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        WITH_CONFIG(CONFIG_TAILWIND_TURNS, GEN_5);
+        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_WYNAUT);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_SNOWSCAPE); MOVE(opponentLeft, MOVE_MIST); MOVE(opponentRight, MOVE_SAFEGUARD); }
         TURN { MOVE(opponentLeft, MOVE_AURORA_VEIL); MOVE(opponentRight, MOVE_REFLECT); }
@@ -119,12 +120,13 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps Mist, Safeguard, Auror
 DOUBLE_BATTLE_TEST("Court Change used by the opponent swaps Mist, Safeguard, Aurora Veil, Reflect, Light Screen, Tailwind")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
-        OPPONENT(SPECIES_NORMAL_KOSUZU);
+        WITH_CONFIG(CONFIG_TAILWIND_TURNS, GEN_5);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(opponentLeft, MOVE_SNOWSCAPE); MOVE(playerLeft, MOVE_MIST); MOVE(playerRight, MOVE_SAFEGUARD); }
         TURN { MOVE(playerLeft, MOVE_AURORA_VEIL); MOVE(playerRight, MOVE_REFLECT); }
@@ -246,4 +248,3 @@ AI_SINGLE_BATTLE_TEST("AI uses Court Change")
             TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_COURT_CHANGE); }
     }
 }
-

@@ -6,12 +6,15 @@ ASSUMPTIONS
     ASSUME(GetMoveEffect(MOVE_TAILWIND) == EFFECT_TAILWIND);
 }
 
-SINGLE_BATTLE_TEST("Tailwind applies for 4 turns")
+SINGLE_BATTLE_TEST("Tailwind applies for 3 turns (Gen4) or 4 turns (Gen5+)")
 {
+    u32 config;
+    PARAMETRIZE { config = GEN_4; }
+    PARAMETRIZE { config = GEN_5; }
     GIVEN {
-        ASSUME(B_TAILWIND_TURNS >= GEN_5);
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(10); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(15); }
+        WITH_CONFIG(CONFIG_TAILWIND_TURNS, config);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(15); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_TAILWIND); }
         TURN {}
@@ -28,8 +31,10 @@ SINGLE_BATTLE_TEST("Tailwind applies for 4 turns")
         MESSAGE("Wobbuffet used Celebrate!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
 
-        MESSAGE("Wobbuffet used Celebrate!");
-        MESSAGE("The opposing Wobbuffet used Celebrate!");
+        if (config >= GEN_5) {
+            MESSAGE("Wobbuffet used Celebrate!");
+            MESSAGE("The opposing Wobbuffet used Celebrate!");
+        }
 
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         MESSAGE("Wobbuffet used Celebrate!");
