@@ -205,7 +205,7 @@ static u32 PlayerPartnerGetTrainerBackPicId(enum DifficultyLevel difficulty)
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
         trainerPicId = gBattlePartners[difficulty][gPartnerTrainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerBackPic;
     else
-        trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_BRENDAN;
+        trainerPicId = gSaveBlock2Ptr->playerGender + TRAINER_BACK_PIC_RENKO;
 
     return trainerPicId;
 }

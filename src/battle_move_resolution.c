@@ -148,7 +148,7 @@ static enum MoveEndResult MoveEnd_Absorb(void)
             s32 healAmount = (gBattleStruct->moveDamage[gBattlerTarget] * GetMoveAbsorbPercentage(gCurrentMove) / 100);
             healAmount = GetDrainedBigRootHp(gBattlerAttacker, healAmount);
             if ((moveEffect == EFFECT_DREAM_EATER && GetConfig(CONFIG_DREAM_EATER_LIQUID_OOZE) < GEN_5)
-                || GetBattlerAbility(gBattlerTarget) != ABILITY_LIQUID_OOZE)
+                || GetBattlerAbility(gBattlerTarget) != ABILITY_STRANGE_MIST)
             {
                 SetHealAmount(gBattlerAttacker, healAmount);
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_ABSORB;
@@ -174,7 +174,6 @@ static enum MoveEndResult MoveEnd_Absorb(void)
             s32 recoil = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
             SetPassiveDamageAmount(gBattlerAttacker, recoil);
             gSpecialStatuses[gBattlerAttacker].mindBlownRecoil = TRUE;
-            TryUpdateEvolutionTracker(IF_RECOIL_DAMAGE_GE, gBattleStruct->passiveHpUpdate[gBattlerAttacker], MOVE_NONE);
             BattleScriptCall(BattleScript_MaxHp50Recoil);
             result = MOVEEND_STEP_RUN_SCRIPT;
         }
@@ -455,7 +454,6 @@ static enum MoveEndResult MoveEnd_FaintBlock(void)
             break;
         case FAINT_BLOCK_FAINT_TARGET:
             gBattlerFainted = gBattlerTarget;
-            TryUpdateEvolutionTracker(IF_DEFEAT_X_WITH_ITEMS, 1, MOVE_NONE);
             TryDeactivateSleepClause(GetBattlerSide(gBattlerTarget), gBattlerPartyIndexes[gBattlerTarget]);
             gHitMarker |= HITMARKER_FAINTED(gBattlerTarget);
             gBattleStruct->eventState.faintedAction = 0;
@@ -857,7 +855,7 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
         {
             u32 side = GetBattlerSide(gBattlerTarget);
 
-            if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+            if (GetBattlerAbility(gBattlerTarget) == ABILITY_COLLECTOR)
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptCall(BattleScript_StickyHoldActivatesRet);
@@ -867,7 +865,7 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
 
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
             gBattleMons[gBattlerTarget].item = 0;
-            if (gBattleMons[gBattlerTarget].ability != ABILITY_GORILLA_TACTICS)
+            if (gBattleMons[gBattlerTarget].ability != ABILITY_ONI_TACTICS)
                 gBattleStruct->choicedMove[gBattlerTarget] = MOVE_NONE;
             CheckSetUnburden(gBattlerTarget);
 
@@ -897,7 +895,7 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
         {
             result = MOVEEND_STEP_CONTINUE;
         }
-        else if (GetBattlerAbility(gBattlerTarget) == ABILITY_STICKY_HOLD)
+        else if (GetBattlerAbility(gBattlerTarget) == ABILITY_COLLECTOR)
         {
             BattleScriptCall(BattleScript_NoItemSteal);
             gLastUsedAbility = gBattleMons[gBattlerTarget].ability;
@@ -926,10 +924,8 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
          && gBattleMons[BATTLE_PARTNER(gBattlerTarget)].volatiles.semiInvulnerable != STATE_COMMANDER)
         {
             u32 targetAbility = GetBattlerAbility(gBattlerTarget);
-            if (targetAbility == ABILITY_GUARD_DOG)
-                break;
 
-            if (targetAbility == ABILITY_SUCTION_CUPS)
+            if (targetAbility == ABILITY_GATE_KEEPER)
             {
                 BattleScriptCall(BattleScript_AbilityPreventsPhasingOutRet);
             }
@@ -993,7 +989,6 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
                 break;
 
             SetPassiveDamageAmount(gBattlerAttacker, gBattleScripting.savedDmg * max(1, GetMoveRecoil(gCurrentMove)) / 100);
-            TryUpdateEvolutionTracker(IF_RECOIL_DAMAGE_GE, gBattleStruct->passiveHpUpdate[gBattlerAttacker], MOVE_NONE);
             BattleScriptCall(BattleScript_MoveEffectRecoil);
             result = MOVEEND_STEP_RUN_SCRIPT;
         }
@@ -1008,7 +1003,6 @@ static enum MoveEndResult MoveEnd_MoveBlock(void)
 
             s32 recoil = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
             SetPassiveDamageAmount(gBattlerAttacker, recoil);
-            TryUpdateEvolutionTracker(IF_RECOIL_DAMAGE_GE, gBattleStruct->passiveHpUpdate[gBattlerAttacker], MOVE_NONE);
             BattleScriptCall(BattleScript_MoveEffectRecoil);
             result = MOVEEND_STEP_RUN_SCRIPT;
         }
@@ -1183,7 +1177,6 @@ static enum MoveEndResult MoveEnd_RedCard(void)
             gEffectBattler = gBattlerAttacker;
             BattleScriptPushCursor();
             if (gBattleStruct->battlerState[gBattlerAttacker].commanderSpecies != SPECIES_NONE
-             || GetBattlerAbility(gBattlerAttacker) == ABILITY_GUARD_DOG
              || GetActiveGimmick(gBattlerAttacker) == GIMMICK_DYNAMAX)
                 gBattlescriptCurrInstr = BattleScript_RedCardActivationNoSwitch;
             else
@@ -1513,7 +1506,7 @@ static enum MoveEndResult MoveEnd_Pickpocket(void)
             {
                 gBattlerTarget = gBattlerAbility = battler;
                 // Battle scripting is super brittle so we shall do the item exchange now (if possible)
-                if (GetBattlerAbility(gBattlerAttacker) != ABILITY_STICKY_HOLD)
+                if (GetBattlerAbility(gBattlerAttacker) != ABILITY_COLLECTOR)
                     StealTargetItem(gBattlerTarget, gBattlerAttacker);  // Target takes attacker's item
 
                 gEffectBattler = gBattlerAttacker;
@@ -1609,10 +1602,6 @@ static enum MoveEndResult MoveEnd_ClearBits(void)
         gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].instructedChosenTarget & 0x3;
     if (gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget)
         gBattleStruct->moveTarget[gBattlerAttacker] = gSpecialStatuses[gBattlerAttacker].dancerOriginalTarget & 0x3;
-
-    // If the Pokémon needs to keep track of move usage for its evolutions, do it
-    if (originallyUsedMove != MOVE_NONE)
-        TryUpdateEvolutionTracker(IF_USED_MOVE_X_TIMES, 1, originallyUsedMove);
 
     if (B_RAMPAGE_CANCELLING >= GEN_5
       && MoveHasAdditionalEffectSelf(gCurrentMove, MOVE_EFFECT_THRASH)           // If we're rampaging
@@ -1880,7 +1869,7 @@ static void TryClearChargeVolatile(u32 moveType)
     if (B_CHARGE < GEN_9) // Prior to gen9, charge is cleared during the end turn
         return;
 
-    if (moveType == TYPE_ELECTRIC && gBattleMons[gBattlerAttacker].volatiles.chargeTimer == 1)
+    if (moveType == TYPE_WIND && gBattleMons[gBattlerAttacker].volatiles.chargeTimer == 1)
         gBattleMons[gBattlerAttacker].volatiles.chargeTimer = 0;
 
     for (u32 battler = 0; battler < gBattlersCount; battler++)
