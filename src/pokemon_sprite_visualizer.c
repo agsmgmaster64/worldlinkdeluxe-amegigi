@@ -339,7 +339,7 @@ const u8 gFrontAnimNames[][34] =
     [ANIM_SHAKE_GLOW_PURPLE_SLOW]            = _("SHAKE GLOW PURPLE SLOW"),
 };
 
-const u8 gBattleBackgroundTerrainNames[][26] =
+const u8 gBattleEnvironmentBackgroundNames[][BATTLE_ENVIRONMENT_COUNT] =
 {
     [BATTLE_ENVIRONMENT_GRASS]            = _("GRASS                    "),
     [BATTLE_ENVIRONMENT_LONG_GRASS]       = _("LONG GRASS               "),
@@ -904,8 +904,8 @@ static void LoadAndCreateEnemyShadowSpriteCustom(struct PokemonSpriteVisualizer 
 //Battle background functions
 static void LoadBattleBg(enum BattleEnvironments battleEnvironment)
 {
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tileset, (void*)(BG_CHAR_ADDR(2)));
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void*)(BG_SCREEN_ADDR(26)));
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tileset, (void *)(BG_CHAR_ADDR(2)));
+    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[battleEnvironment].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
     LoadPalette(gBattleEnvironmentInfo[battleEnvironment].background.palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
@@ -915,7 +915,7 @@ static void PrintBattleBgName(u8 taskId)
     u8 fontId = 0;
     u8 text[30+1];
 
-    StringCopy(text, gBattleBackgroundTerrainNames[data->battleEnvironment]);
+    StringCopy(text, gBattleEnvironmentBackgroundNames[data->battleEnvironment]);
     AddTextPrinterParameterized(WIN_BOTTOM_RIGHT, fontId, text, 0, 24, 0, NULL);
 }
 
@@ -1223,9 +1223,6 @@ void CB2_Pokemon_Sprite_Visualizer(void)
             data->animIdBack = GetSpeciesBackAnimSet(species) + 1;
             data->animIdFront = gSpeciesInfo[data->currentmonId].frontAnimId;
             UpdateMonAnimNames(taskId);
-
-            //BattleNg Name
-            PrintBattleBgName(taskId);
 
             //Footprint
             DrawFootprint(WIN_FOOTPRINT, species);

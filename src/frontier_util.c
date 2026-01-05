@@ -2590,7 +2590,7 @@ void SaveGameFrontier(void)
 }
 
 // Frontier Brain functions.
-u8 GetFrontierBrainTrainerPicIndex(void)
+enum TrainerPicID GetFrontierBrainTrainerPicIndex(void)
 {
     s32 facility;
 

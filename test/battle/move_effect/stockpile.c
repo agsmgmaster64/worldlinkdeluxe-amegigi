@@ -58,9 +58,9 @@ SINGLE_BATTLE_TEST("Stockpile's def and spDef stat increases aren't incremented 
 
 SINGLE_BATTLE_TEST("Spit Up and Swallow don't work if used without Stockpile")
 {
-    u32 move;
-    PARAMETRIZE { move = MOVE_SHADOW_DANCE; }
-    PARAMETRIZE { move = MOVE_BRAVER; }
+    enum Move move;
+    PARAMETRIZE { move = MOVE_SWALLOW; }
+    PARAMETRIZE { move = MOVE_SPIT_UP; }
     GIVEN {
         PLAYER(SPECIES_CHIBI_YUUGI) { HP(10), MaxHP(400); }
         OPPONENT(SPECIES_CHIBI_YUUGI);
@@ -165,8 +165,8 @@ SINGLE_BATTLE_TEST("Swallow heals HP depending on Stockpile's count", s16 hpHeal
 
 SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsical, s16 dmgSpecial)
 {
-    u16 move;
-    PARAMETRIZE { move = MOVE_COERCE; }
+    enum Move move;
+    PARAMETRIZE { move = MOVE_STOCKPILE; }
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
@@ -200,10 +200,10 @@ SINGLE_BATTLE_TEST("Stockpile temporarily raises Def and Sp. Def", s16 dmgPyhsic
 DOUBLE_BATTLE_TEST("Stockpile's Def and Sp. Def boost is lost after using Spit Up or Swallow", s16 dmgPyhsicalBefore, s16 dmgPhysicalAfter, s16 dmgSpecialBefore, s16 dmgSpecialAfter)
 {
     u8 count;
-    u16 move;
-    PARAMETRIZE { count = 1; move = MOVE_BRAVER; }
-    PARAMETRIZE { count = 2; move = MOVE_SHADOW_DANCE; }
-    PARAMETRIZE { count = 3; move = MOVE_BRAVER; }
+    enum Move move;
+    PARAMETRIZE { count = 1; move = MOVE_SPIT_UP; }
+    PARAMETRIZE { count = 2; move = MOVE_SWALLOW; }
+    PARAMETRIZE { count = 3; move = MOVE_SPIT_UP; }
     GIVEN {
         ASSUME(B_STOCKPILE_RAISES_DEFS >= GEN_4);
         ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);

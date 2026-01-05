@@ -713,9 +713,8 @@
 	.byte 0x7c
 	.endm
 
-	.macro setfieldweather weather:req
+	.macro setfieldweather
 	.byte 0x7d
-	.byte \weather
 	.endm
 
 	.macro setreflect

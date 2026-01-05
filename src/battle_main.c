@@ -4798,7 +4798,7 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
 
 s32 GetChosenMovePriority(u32 battler, enum Ability ability)
 {
-    u16 move;
+    enum Move move;
 
     gProtectStructs[battler].pranksterElevated = FALSE;
     if (gProtectStructs[battler].noValidMoves)
@@ -4809,7 +4809,7 @@ s32 GetChosenMovePriority(u32 battler, enum Ability ability)
     return GetBattleMovePriority(battler, ability, move);
 }
 
-s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
+s32 GetBattleMovePriority(u32 battler, enum Ability ability, enum Move move)
 {
     s32 priority = 0;
 
@@ -5841,7 +5841,7 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
-enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
+enum Type TrySetAteType(enum Move move, u32 battlerAtk, enum Ability attackerAbility)
 {
     enum Type ateType = TYPE_NONE;
 
@@ -5892,7 +5892,7 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
 }
 
 // Returns TYPE_NONE if type doesn't change.
-enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState state)
+enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, u32 battler, enum MonState state)
 {
     enum Type moveType = GetMoveType(move);
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
@@ -6132,7 +6132,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
     return TYPE_NONE;
 }
 
-void SetTypeBeforeUsingMove(u32 move, u32 battler)
+void SetTypeBeforeUsingMove(enum Move move, u32 battler)
 {
     enum Type moveType;
     u32 heldItem = gBattleMons[battler].item;

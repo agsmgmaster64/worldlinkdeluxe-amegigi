@@ -955,7 +955,7 @@ static void UNUSED BtlController_EmitPause(u32 battler, u32 bufferId, u8 toWait,
     PrepareBufferDataTransfer(battler, bufferId, gBattleResources->transferBuffer, toWait * 3 + 2);
 }
 
-void BtlController_EmitMoveAnimation(u32 battler, u32 bufferId, u16 move, u8 turnOfMove, u16 movePower, s32 dmg, u8 friendship, u8 multihit)
+void BtlController_EmitMoveAnimation(u32 battler, u32 bufferId, enum Move move, u8 turnOfMove, u16 movePower, s32 dmg, u8 friendship, u8 multihit)
 {
     gBattleResources->transferBuffer[0] = CONTROLLER_MOVEANIMATION;
     gBattleResources->transferBuffer[1] = move;
@@ -2338,7 +2338,7 @@ void BtlController_HandleReturnMonToBall(u32 battler)
 
 #define sSpeedX data[0]
 
-void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 isFrontPic, s16 xPos, s16 yPos, s32 subpriority)
+void BtlController_HandleDrawTrainerPic(u32 battler, enum TrainerPicID trainerPicId, bool32 isFrontPic, s16 xPos, s16 yPos, s32 subpriority)
 {
     if (!IsOnPlayerSide(battler)) // Always the front sprite for the opponent.
     {
@@ -2403,7 +2403,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
     gBattlerControllerFuncs[battler] = Controller_WaitForTrainerPic;
 }
 
-void BtlController_HandleTrainerSlide(u32 battler, u32 trainerPicId)
+void BtlController_HandleTrainerSlide(u32 battler, enum TrainerPicID trainerPicId)
 {
     if (IsOnPlayerSide(battler))
     {
