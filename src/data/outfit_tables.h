@@ -47,8 +47,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO, },
-            [FEMALE] = { TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL, },
+            [MALE] =   { TRAINER_PIC_FRONT_RENKO, TRAINER_PIC_BACK_RENKO, },
+            [FEMALE] = { TRAINER_PIC_FRONT_MARIBEL, TRAINER_PIC_BACK_MARIBEL, },
         },
 
         //! DESC: mugshot IDs for the mugshot feature
@@ -109,8 +109,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = COMPOUND_STRING("The Alternate"),
         .desc = COMPOUND_STRING("The one you\ndidn't end up\nchoosing first."),
         .trainerPics = {
-            [MALE]   = {TRAINER_PIC_MARIBEL, TRAINER_BACK_PIC_MARIBEL},
-            [FEMALE] = {TRAINER_PIC_RENKO, TRAINER_BACK_PIC_RENKO}
+            [MALE]   = {TRAINER_PIC_FRONT_MARIBEL, TRAINER_PIC_BACK_MARIBEL},
+            [FEMALE] = {TRAINER_PIC_FRONT_RENKO, TRAINER_PIC_BACK_RENKO}
         },
         .mugshotIds = {
             [MALE] =   MUGSHOT_MARIBEL,
@@ -157,8 +157,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = COMPOUND_STRING("Young Start"),
         .desc = COMPOUND_STRING("Back in the\ngood old days."),
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
-            [FEMALE] = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
+            [MALE] =   { TRAINER_PIC_FRONT_RENKO_YOUNG, TRAINER_PIC_BACK_RENKO_YOUNG, },
+            [FEMALE] = { TRAINER_PIC_FRONT_MARIBEL_YOUNG, TRAINER_PIC_BACK_MARIBEL_YOUNG, },
         },
         .mugshotIds = {
             [MALE] =   MUGSHOT_RENKO,
@@ -205,8 +205,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = COMPOUND_STRING("Altered Youth"),
         .desc = COMPOUND_STRING("Stop lying\nabout your past."),
         .trainerPics = {
-            [MALE]   = { TRAINER_PIC_MARIBEL_YOUNG, TRAINER_BACK_PIC_MARIBEL_YOUNG, },
-            [FEMALE] = { TRAINER_PIC_RENKO_YOUNG, TRAINER_BACK_PIC_RENKO_YOUNG, },
+            [MALE]   = { TRAINER_PIC_FRONT_MARIBEL_YOUNG, TRAINER_PIC_BACK_MARIBEL_YOUNG, },
+            [FEMALE] = { TRAINER_PIC_FRONT_RENKO_YOUNG, TRAINER_PIC_BACK_RENKO_YOUNG, },
         },
         .mugshotIds = {
             [MALE] =   MUGSHOT_MARIBEL,
@@ -253,8 +253,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = COMPOUND_STRING("Gigi Gremsplay"),
         .desc = COMPOUND_STRING("Cosplay of the\norange gremlin\nherself."),
         .trainerPics = {
-            [MALE]   = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_GIGI },
-            [FEMALE] = { TRAINER_PIC_GIGI_MURIN, TRAINER_BACK_PIC_GIGI },
+            [MALE]   = { TRAINER_PIC_FRONT_GIGI_MURIN, TRAINER_PIC_BACK_GIGI },
+            [FEMALE] = { TRAINER_PIC_FRONT_GIGI_MURIN, TRAINER_PIC_BACK_GIGI },
         },
         .mugshotIds = {
             [MALE] =   MUGSHOT_GIGI,
