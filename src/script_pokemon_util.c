@@ -524,7 +524,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
 
 u32 BirchCase_GiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, u16 *moves, bool8 ggMaxFactor, u8 teraType, u8 shinyMode)
 {
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, ggMaxFactor, teraType, 0);
+    return ScriptGiveMonParameterized(B_SIDE_PLAYER, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, ggMaxFactor, teraType, 0);
 }
 
 u32 ScriptGiveMon(u16 species, u8 level, u16 item)
