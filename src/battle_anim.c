@@ -428,7 +428,7 @@ void LaunchBattleAnimation(u32 animType, u32 animId)
                     sBattleAnimScriptPtr = gBattleAnimMove_ThunderShock;
                     break;
                 case STATUS_FIELD_PSYCHIC_TERRAIN:
-                    sBattleAnimScriptPtr = gBattleAnimMove_Confusion;
+                    sBattleAnimScriptPtr = gBattleAnimMove_Psyshot;
                     break;
                 }
             }

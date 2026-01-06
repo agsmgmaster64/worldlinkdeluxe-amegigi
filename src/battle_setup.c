@@ -499,7 +499,10 @@ void StartScriptedGhostBattle(void)
     {
         gBattleTypeFlags = BATTLE_TYPE_GHOST | BATTLE_TYPE_GHOST_UNVEILED;
         if (gSpecialVar_0x8004 == 0 || gSpecialVar_0x8004 >= NUM_SPECIES) //Default is Marowak
-            CreateMonWithGenderNatureLetter(&gEnemyParty[0], SPECIES_NORMAL_MYSTIA, 30, 31, MON_FEMALE, NATURE_SERIOUS, 0);
+        {
+            u32 personality = GetMonPersonality(SPECIES_NORMAL_MYSTIA, MON_FEMALE, NATURE_SERIOUS, RANDOM_UNOWN_LETTER);
+            CreateMonWithIVs(&gEnemyParty[0], SPECIES_NORMAL_MYSTIA, 30, personality, OTID_STRUCT_PLAYER_ID, 31);
+        }
     }
     else
     {

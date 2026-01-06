@@ -120,8 +120,8 @@ struct MonChoiceData // This is the format used to define a mon, everything left
     u8 nature; // NATURE_JOLLY, NATURE_ETC...
     u8 abilityNum; // this is either 0/1 in vanilla or 0/1/2 in Expansion, its the ability num your mon uses from its possible abilities, not the ability constant itself
     u8 gender; // MON_MALE, MON_FEMALE, MON_GENDERLESS
-    u8 evs[6]; // use format {255, 255, 0, 0, 0, 0}
-    u8 ivs[6]; // use format {31, 31, 31, 31, 31, 31}
+    u16 evs[6]; // use format {255, 255, 0, 0, 0, 0}
+    u16 ivs[6]; // use format {31, 31, 31, 31, 31, 31}
     u16 moves[4]; // use format {MOVE_FIRE_BLAST, MOVE_SHEER_COLD, MOVE_NONE, MOVE_NONE}
     bool8 ggMaxFactor;      // only work in Expansion set to 0 otherwise or leave blank
     u8 teraType;            // only work in Expansion set to 0 otherwise or leave blank
@@ -406,16 +406,16 @@ static inline u8 GetStarterChoiceGender(u32 index)
     return gender;
 }
 
-static inline u8 *GetStarterChoiceEVs(u32 index)
+static inline u16 *GetStarterChoiceEVs(u32 index)
 {
-    u8 *evs = (u8 *) sStarterChoices[index].evs;
+    u16 *evs = (u16 *) sStarterChoices[index].evs;
 
     return evs;
 }
 
-static inline u8 *GetStarterChoiceIVs(u32 index)
+static inline u16 *GetStarterChoiceIVs(u32 index)
 {
-    u8 *ivs = (u8 *) sStarterChoices[index].ivs;
+    u16 *ivs = (u16 *) sStarterChoices[index].ivs;
 
     return ivs;
 }
