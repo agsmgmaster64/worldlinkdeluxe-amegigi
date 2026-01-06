@@ -12,9 +12,9 @@ SINGLE_BATTLE_TEST("Clear Amulet prevents Intimidate")
     s16 turnTwoHit;
 
     GIVEN {
-        PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_MAINTENANCE); };
-        PLAYER(SPECIES_DEFENSE_MEILING) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_CLEAR_AMULET); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); }
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_CLEAR_AMULET); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_SCRATCH); }
@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Clear Amulet prevents stat reducing effects")
         ASSUME(GetMoveEffect(MOVE_SWEET_SCENT) == (B_UPDATED_MOVE_DATA >= GEN_6 ? EFFECT_EVASION_DOWN_2 : EFFECT_EVASION_DOWN));
         ASSUME(GetMoveEffect(MOVE_SAND_ATTACK) == EFFECT_ACCURACY_DOWN);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_CLEAR_AMULET); };
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_CLEAR_AMULET); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {
@@ -77,8 +77,8 @@ SINGLE_BATTLE_TEST("Clear Amulet prevents secondary effects that reduce stats")
         ASSUME(MoveHasAdditionalEffect(MOVE_SNARL, MOVE_EFFECT_SP_ATK_MINUS_1) == TRUE);
         ASSUME(MoveHasAdditionalEffect(MOVE_MANA_BURST, MOVE_EFFECT_SP_DEF_MINUS_1) == TRUE);
         ASSUME(MoveHasAdditionalEffect(MOVE_MUD_SLAP, MOVE_EFFECT_ACC_MINUS_1) == TRUE);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_CLEAR_AMULET); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_CLEAR_AMULET); }
     } WHEN {
         TURN { MOVE(player, move); }
     } SCENE {

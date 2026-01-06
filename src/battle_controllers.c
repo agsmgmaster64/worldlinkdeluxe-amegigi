@@ -21,13 +21,15 @@
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "pokemon_animation.h"
 #include "recorded_battle.h"
 #include "string_util.h"
 #include "sound.h"
 #include "task.h"
 #include "test_runner.h"
-#include "util.h"
 #include "text.h"
+#include "util.h"
+#include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/item_effects.h"
 #include "constants/songs.h"
@@ -35,7 +37,6 @@
 #include "test/battle.h"
 #include "test/test.h"
 #include "test/test_runner_battle.h"
-#include "pokemon_animation.h"
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;
@@ -154,12 +155,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     BattleAI_SetupFlags();
 
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
-    {
-        ZeroEnemyPartyMons();
-        CreateMon(&gEnemyParty[0], SPECIES_CHIBI_NAZRIN, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-        i = 0;
-        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
-    }
+        CreateWildMon(SPECIES_CHIBI_NAZRIN, 2);
 }
 
 void InitBattleControllers(void)
@@ -2025,7 +2021,7 @@ static void Controller_FaintOpponentMon(u32 battler)
 
 static void Controller_DoMoveAnimation(u32 battler)
 {
-    u16 move = gBattleResources->bufferA[battler][1] | (gBattleResources->bufferA[battler][2] << 8);
+    enum Move move = gBattleResources->bufferA[battler][1] | (gBattleResources->bufferA[battler][2] << 8);
 
     switch (gBattleSpritesDataPtr->healthBoxesData[battler].animationState)
     {

@@ -7,8 +7,8 @@ SINGLE_BATTLE_TEST("Tera Shell makes all moves against Terapagos not very effect
     PARAMETRIZE { hp = 100; }
     PARAMETRIZE { hp = 99; }
     GIVEN {
-        PLAYER(SPECIES_TERAPAGOS_TERASTAL) { Ability(ABILITY_TERA_SHELL); HP(hp); MaxHP(100);}
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_TERAPAGOS_TERASTAL) { Ability(ABILITY_TERA_SHELL); HP(hp); MaxHP(100); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }
     } SCENE {

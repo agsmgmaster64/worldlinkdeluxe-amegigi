@@ -7,10 +7,10 @@ SINGLE_BATTLE_TEST("Mummy/Lingering Aroma replace the attacker's ability on cont
     u32 species;
     enum Ability ability;
 
-    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_CONTAGION; species = SPECIES_NORMAL_TEIREIDA; }
-    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_CONTAGION; species = SPECIES_NORMAL_TEIREIDA;}
-    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
-    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_CLEAR_VOICE; species = SPECIES_OINKOLOGNE; }
+    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_MUMMY; species = SPECIES_YAMASK; }
+    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_MUMMY; species = SPECIES_YAMASK; }
+    PARAMETRIZE { move = MOVE_AQUA_JET; ability = ABILITY_LINGERING_AROMA; species = SPECIES_OINKOLOGNE; }
+    PARAMETRIZE { move = MOVE_WATER_GUN; ability = ABILITY_LINGERING_AROMA; species = SPECIES_OINKOLOGNE; }
     GIVEN {
         ASSUME(MoveMakesContact(MOVE_AQUA_JET));
         ASSUME(!MoveMakesContact(MOVE_WATER_GUN));

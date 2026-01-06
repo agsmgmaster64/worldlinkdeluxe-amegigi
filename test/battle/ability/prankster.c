@@ -67,7 +67,7 @@ SINGLE_BATTLE_TEST("Prankster-affected moves called via Assist don't affect Dark
         WITH_CONFIG(CONFIG_PRANKSTER_DARK_TYPES, gen);
         PLAYER(SPECIES_UMBREON);
         OPPONENT(SPECIES_VOLBEAT) { Ability(ABILITY_PRANKSTER); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CONFUSE_RAY); };
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CONFUSE_RAY); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ASSIST); }
     } SCENE {
@@ -89,7 +89,7 @@ DOUBLE_BATTLE_TEST("Prankster-affected moves called via Instruct do not affect D
     GIVEN {
         WITH_CONFIG(CONFIG_PRANKSTER_DARK_TYPES, gen);
         PLAYER(SPECIES_VOLBEAT) { Speed(20); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(10);}
+        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
         OPPONENT(SPECIES_UMBREON) { Speed(15); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
         OPPONENT(SPECIES_UMBREON) { Speed(1); }
@@ -133,10 +133,10 @@ SINGLE_BATTLE_TEST("Prankster increases the priority of moves by 1")
 DOUBLE_BATTLE_TEST("Moves called via Prankster-affected After you affect Dark-type Pokémon")
 {
     GIVEN {
-        PLAYER(SPECIES_ATTACK_SUIKA) { Speed(1); Ability(ABILITY_PRANKSTER); }
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(1);}
-        OPPONENT(SPECIES_TECH_YAMAME) { Speed(10); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Speed(10); }
+        PLAYER(SPECIES_VOLBEAT) { Speed(1); Ability(ABILITY_PRANKSTER); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_UMBREON) { Speed(10); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(10); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_AFTER_YOU, target: playerRight);
                MOVE(playerRight, MOVE_CONFUSE_RAY, target: opponentLeft);

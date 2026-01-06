@@ -9,8 +9,8 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Gem is consumed when it corresponds to the type of a move")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ILLUSION_CARD); };
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_EMBER); }
         TURN { MOVE(player, MOVE_SCRATCH); }
@@ -60,7 +60,7 @@ SINGLE_BATTLE_TEST("Gem boost is only applied once")
     s16 normalHit;
 
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); };
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }
@@ -86,8 +86,8 @@ SINGLE_BATTLE_TEST("Gem modifier is used for all hits of Multi Hit Moves")
     s16 secondHit;
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { Item(ITEM_ILLUSION_CARD); };
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_NORMAL_GEM); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
             MOVE(player, MOVE_DOUBLE_HIT);
@@ -105,8 +105,8 @@ SINGLE_BATTLE_TEST("Gem modifier is used for all hits of Multi Hit Moves")
 SINGLE_BATTLE_TEST("Gem is consumed if the move type is changed")
 {
     GIVEN {
-        PLAYER(SPECIES_ATTACK_RAIKO) { Ability(ABILITY_NORMALIZE); Item(ITEM_ILLUSION_CARD); };
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_DELCATTY) { Ability(ABILITY_NORMALIZE); Item(ITEM_NORMAL_GEM); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
             MOVE(player, MOVE_FEINT_ATTACK);

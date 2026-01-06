@@ -33,8 +33,8 @@ SINGLE_BATTLE_TEST("Mycelium Might will respect the speed if both battlers have 
 SINGLE_BATTLE_TEST("Mycelium Might ignores opposing abilities")
 {
     GIVEN {
-        PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_AMBITION); }
-        OPPONENT(SPECIES_NORMAL_MEIRA) { Speed(1); Ability(ABILITY_HAKUREI_MIKO);}
+        PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_MYCELIUM_MIGHT); }
+        OPPONENT(SPECIES_BELDUM) { Speed(1); Ability(ABILITY_CLEAR_BODY); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_SCREECH); }
     } SCENE {
@@ -50,8 +50,8 @@ SINGLE_BATTLE_TEST("Mycelium Might vs Stall action order depends on speed")
     PARAMETRIZE { speed = 99; }
     PARAMETRIZE { speed = 101; }
     GIVEN {
-        PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_AMBITION); }
-        OPPONENT(SPECIES_PLACEHOLD_RAIKO) { Speed(speed); Ability(ABILITY_STALL);}
+        PLAYER(SPECIES_TOEDSCOOL) { Speed(100); Ability(ABILITY_MYCELIUM_MIGHT); }
+        OPPONENT(SPECIES_SABLEYE) { Speed(speed); Ability(ABILITY_STALL); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_CELEBRATE); }
     } SCENE {

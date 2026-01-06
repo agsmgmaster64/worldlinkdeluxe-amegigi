@@ -40,8 +40,8 @@ SINGLE_BATTLE_TEST("Purifying Salt halves damage from dynamic Ghost-type moves",
 SINGLE_BATTLE_TEST("Purifying Salt makes Rest fail")
 {
     GIVEN {
-        PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_LIFESTREAM); HP(1); MaxHP(100);}
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_GARGANACL) { Ability(ABILITY_PURIFYING_SALT); HP(1); MaxHP(100); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_REST); }
     } SCENE {

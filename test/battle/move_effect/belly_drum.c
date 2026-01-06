@@ -47,8 +47,8 @@ SINGLE_BATTLE_TEST("Belly Drum maximizes the user's Attack stat", s16 damage)
 SINGLE_BATTLE_TEST("Belly Drum fails if user's current HP is half or less than half its maximum")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI) { MaxHP(100); HP(50);}
-        OPPONENT(SPECIES_CHIBI_YUUGI);
+        PLAYER(SPECIES_WOBBUFFET) { MaxHP(100); HP(50); }
+        OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_BELLY_DRUM); }
     } SCENE {

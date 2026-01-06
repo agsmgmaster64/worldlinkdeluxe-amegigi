@@ -8,9 +8,9 @@ SINGLE_BATTLE_TEST("Inner Focus doesn't prevent intimidate (Gen3-7)")
 
     GIVEN {
         WITH_CONFIG(CONFIG_UPDATED_INTIMIDATE, GEN_7);
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); };
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); }
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_SCRATCH); }
@@ -35,9 +35,9 @@ SINGLE_BATTLE_TEST("Inner Focus prevents intimidate (Gen8+)")
 
     GIVEN {
         WITH_CONFIG(CONFIG_UPDATED_INTIMIDATE, GEN_8);
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); };
-        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); };
-        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); };
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_SHED_SKIN); }
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SCRATCH); }
         TURN { SWITCH(player, 1); MOVE(opponent, MOVE_SCRATCH); }
@@ -57,8 +57,8 @@ SINGLE_BATTLE_TEST("Inner Focus prevents intimidate (Gen8+)")
 SINGLE_BATTLE_TEST("Inner Focus prevents flinching")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT);
                MOVE(opponent, MOVE_SCRATCH);
@@ -73,8 +73,8 @@ SINGLE_BATTLE_TEST("Inner Focus prevents flinching")
 SINGLE_BATTLE_TEST("Mold Breaker ignores Inner Focus")
 {
     GIVEN {
-        PLAYER(SPECIES_ATTACK_EIRIN) { Ability(ABILITY_MOLD_BREAKER); };
-        OPPONENT(SPECIES_CHIBI_FLANDRE) { Ability(ABILITY_INNER_FOCUS); };
+        PLAYER(SPECIES_PINSIR) { Ability(ABILITY_MOLD_BREAKER); }
+        OPPONENT(SPECIES_ZUBAT) { Ability(ABILITY_INNER_FOCUS); }
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT); }
     } SCENE {

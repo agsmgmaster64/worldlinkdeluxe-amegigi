@@ -91,8 +91,8 @@ SINGLE_BATTLE_TEST("Knock Off deals additional damage to opponents holding an it
     PARAMETRIZE { item = ITEM_BENTO_BOX; }
 
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(item); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(item); }
     } WHEN {
         TURN { MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -114,8 +114,8 @@ SINGLE_BATTLE_TEST("Knock Off deals additional damage to opponents holding an it
 SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute")
 {
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_BENTO_BOX); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -130,7 +130,7 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items through Substitute even if i
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(4); HP(4); Item(ITEM_LEFTOVERS); };
+        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(4); HP(4); Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_SUBSTITUTE); MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -146,7 +146,7 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items through Protect")
 {
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); };
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_PROTECT); MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {
@@ -165,7 +165,7 @@ SINGLE_BATTLE_TEST("Knock Off does not remove items if target is immune")
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
         ASSUME(GetSpeciesType(SPECIES_DONPHAN, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_DONPHAN, 1) == TYPE_GROUND);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_DONPHAN) { Item(ITEM_LEFTOVERS); };
+        OPPONENT(SPECIES_DONPHAN) { Item(ITEM_LEFTOVERS); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_ELECTRIFY); MOVE(player, MOVE_KNOCK_OFF); }
     } SCENE {

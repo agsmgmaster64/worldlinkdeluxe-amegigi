@@ -60,10 +60,10 @@ DOUBLE_BATTLE_TEST("Stench doesn't trigger if partner uses a move")
     GIVEN {
         ASSUME(GetMovePower(MOVE_SCRATCH) > 0);
         ASSUME(MoveHasAdditionalEffectWithChance(MOVE_FAKE_OUT, MOVE_EFFECT_FLINCH, 100));
-        PLAYER(SPECIES_CHIBI_YUUGI) { Speed(20); }
-        PLAYER(SPECIES_NORMAL_KOSUZU) { Speed(10); }
-        OPPONENT(SPECIES_CHIBI_CHEN) { Speed(100); Ability(ABILITY_JEALOUSY); }
-        OPPONENT(SPECIES_CHIBI_YUUGI) {Speed(50); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(20); }
+        PLAYER(SPECIES_WYNAUT) { Speed(10); }
+        OPPONENT(SPECIES_GRIMER) { Speed(100); Ability(ABILITY_STENCH); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(50); }
     } WHEN {
         TURN {
             MOVE(playerLeft, MOVE_FAKE_OUT, target: opponentLeft);

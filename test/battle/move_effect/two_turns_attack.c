@@ -304,8 +304,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in a Sandstorm", s16 damage)
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     PARAMETRIZE { move = MOVE_SANDSTORM; }
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); }
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -322,8 +322,8 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in a Sandstorm", s16 damage)
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     PARAMETRIZE { move = MOVE_SANDSTORM; }
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); }
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }
@@ -340,8 +340,8 @@ SINGLE_BATTLE_TEST("Solar Beam's power is halved in Hail", s16 damage)
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     PARAMETRIZE { move = MOVE_HAIL; }
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); }
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BEAM); }
         TURN { SKIP_TURN(player); }
@@ -358,8 +358,8 @@ SINGLE_BATTLE_TEST("Solar Blade's power is halved in Hail", s16 damage)
     PARAMETRIZE { move = MOVE_CELEBRATE; }
     PARAMETRIZE { move = MOVE_HAIL; }
     GIVEN {
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI) { Item(ITEM_SAFETY_GOGGLES); };
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_SAFETY_GOGGLES); }
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLAR_BLADE); }
         TURN { SKIP_TURN(player); }
