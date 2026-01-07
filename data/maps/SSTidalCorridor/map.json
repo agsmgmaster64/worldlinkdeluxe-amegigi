@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_SS_TIDAL_EXIT_SAILOR",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 1,
       "y": 11,
@@ -73,8 +73,8 @@
       "flag": "FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_SS_TIDAL_SCOTT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
       "x": 9,
       "y": 10,
@@ -153,9 +153,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

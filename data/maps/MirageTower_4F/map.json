@@ -13,11 +13,11 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_MIRAGE_ROOT_FOSSIL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 5,
       "y": 4,
@@ -31,8 +31,8 @@
       "flag": "FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_MIRAGE_CLAW_FOSSIL",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
       "x": 7,
       "y": 4,
@@ -69,10 +69,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

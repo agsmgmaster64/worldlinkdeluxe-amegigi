@@ -13,7 +13,8 @@
   "show_map_name": true,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_FRONTIER",
-  "connections": 0,
+  "connections": null,
+  "shared_scripts_map": "SecretBase",
   "object_events": [
     {
       "type": "object",
@@ -235,11 +236,6 @@
       "dest_warp_id": "WARP_ID_SECRET_BASE"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ],
-  "shared_scripts_map": "SecretBase"
+  "coord_events": [],
+  "bg_events": []
 }
