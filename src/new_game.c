@@ -116,11 +116,11 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsExpBarSpeed = 0;
     gSaveBlock2Ptr->optionsCurrentFont = 0;
     gSaveBlock2Ptr->optionsAnimSpeed = OPTIONS_BATTLE_SCENE_1X;
-    gSaveBlock2Ptr->optionsUniqueColors = 0;
-    gSaveBlock2Ptr->optionsSummaryIvView = 1;
-    gSaveBlock2Ptr->optionsMonAnimations = 1;
-    gSaveBlock2Ptr->optionsShowTypes = 0;
-    gSaveBlock2Ptr->optionsEffectiveness = 0;
+    gSaveBlock2Ptr->optionsUniqueColors = OPTIONS_GENERAL_ON;
+    gSaveBlock2Ptr->optionsSummaryIvView = OPTIONS_GENERAL_OFF;
+    gSaveBlock2Ptr->optionsMonAnimations = OPTIONS_GENERAL_OFF;
+    gSaveBlock2Ptr->optionsShowTypes = OPTIONS_GENERAL_ON;
+    gSaveBlock2Ptr->optionsEffectiveness = OPTIONS_GENERAL_ON;
     gSaveBlock2Ptr->optionsVolumeBGM = 10;
     gSaveBlock2Ptr->optionsVolumeSFX = 10;
     gSaveBlock2Ptr->optionsVolumeCries = 10;

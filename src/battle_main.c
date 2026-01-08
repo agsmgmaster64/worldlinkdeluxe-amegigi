@@ -2819,7 +2819,7 @@ void SpriteCB_OpponentMonFromBall(struct Sprite *sprite)
     {
         if (!(gHitMarker & HITMARKER_NO_ANIMATIONS) || gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
         {
-            if (HasTwoFramesAnimation(sprite->sSpeciesId) && gSaveBlock2Ptr->optionsMonAnimations == 0)
+            if (HasTwoFramesAnimation(sprite->sSpeciesId) && gSaveBlock2Ptr->optionsMonAnimations == OPTIONS_GENERAL_ON)
                 StartSpriteAnim(sprite, 1);
         }
         BattleAnimateFrontSprite(sprite, sprite->sSpeciesId, TRUE, 1);

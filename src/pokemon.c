@@ -5209,7 +5209,7 @@ const u16 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny,
 {
     const u16 *base = GetMonSpritePalFromSpeciesIsEgg(species, isShiny, IsPersonalityFemale(species, personality), FALSE);
     static u16 sVariantPal[16];
-    if (gSaveBlock2Ptr->optionsUniqueColors == 1)
+    if (gSaveBlock2Ptr->optionsUniqueColors == OPTIONS_GENERAL_OFF)
         return base;
     CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
     ApplyMonSpeciesVariantToPaletteBuffer(species, isShiny, personality, sVariantPal);
@@ -5220,7 +5220,7 @@ const u16 *GetMonSpritePalFromSpeciesAndPersonalityIsEgg(u16 species, bool32 isS
 {
     const u16 *base = GetMonSpritePalFromSpeciesIsEgg(species, isShiny, IsPersonalityFemale(species, personality), isEgg);
     static u16 sVariantPal[16];
-    if (isEgg || gSaveBlock2Ptr->optionsUniqueColors == 1)
+    if (isEgg || gSaveBlock2Ptr->optionsUniqueColors == OPTIONS_GENERAL_OFF)
         return base;
     CpuCopy16(base, sVariantPal, PLTT_SIZE_4BPP);
     return sVariantPal;
@@ -5501,7 +5501,7 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
         pan = 0;
         break;
     }
-    if ((panModeAnimFlag & SKIP_FRONT_ANIM) || gSaveBlock2Ptr->optionsMonAnimations == 1)
+    if ((panModeAnimFlag & SKIP_FRONT_ANIM) || gSaveBlock2Ptr->optionsMonAnimations == OPTIONS_GENERAL_OFF)
     {
         // No animation, only check if cry needs to be played
         if (!noCry)
@@ -5535,7 +5535,7 @@ void DoMonFrontSpriteAnimation(struct Sprite *sprite, u16 species, bool8 noCry, 
 
 void PokemonSummaryDoMonAnimation(struct Sprite *sprite, u16 species, bool8 oneFrame, bool32 isShadow)
 {
-    if (gSaveBlock2Ptr->optionsMonAnimations == 1)
+    if (gSaveBlock2Ptr->optionsMonAnimations == OPTIONS_GENERAL_OFF)
     {
         sprite->callback = SpriteCallbackDummy;
     }
@@ -5577,7 +5577,7 @@ void StopPokemonAnimationDelayTask(void)
 void BattleAnimateBackSprite(struct Sprite *sprite, u16 species)
 {
     if ((gHitMarker & HITMARKER_NO_ANIMATIONS && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
-     || gSaveBlock2Ptr->optionsMonAnimations == 1)
+     || gSaveBlock2Ptr->optionsMonAnimations == OPTIONS_GENERAL_OFF)
     {
         sprite->callback = SpriteCallbackDummy;
     }

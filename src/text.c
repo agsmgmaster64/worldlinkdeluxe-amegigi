@@ -1,21 +1,21 @@
 #include "global.h"
 #include "battle.h"
-#include "music_player.h"
 #include "blit.h"
 #include "dynamic_placeholder_text_util.h"
 #include "event_data.h"
+#include "field_mugshot.h"
 #include "field_name_box.h"
 #include "fonts.h"
 #include "m4a.h"
 #include "main.h"
 #include "malloc.h"
 #include "menu.h"
+#include "music_player.h"
 #include "palette.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
 #include "text.h"
-#include "field_mugshot.h"
 #include "window.h"
 #include "constants/songs.h"
 #include "constants/speaker_names.h"
@@ -1187,7 +1187,6 @@ static u16 FontFunc_Narrower(struct TextPrinter *textPrinter)
     return RenderText(textPrinter);
 }
 
-
 static u16 FontFunc_SmallNarrower(struct TextPrinter *textPrinter)
 {
     if (textPrinter->hasFontIdBeenSet == FALSE)
@@ -1435,6 +1434,11 @@ static u16 RenderText(struct TextPrinter *textPrinter)
             }
             return RENDER_UPDATE;
         }
+
+        if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED) && gTextFlags.autoScroll)
+            textPrinter->delayCounter = 3;
+        else
+            textPrinter->delayCounter = textPrinter->textSpeed;
 
         currChar = *textPrinter->printerTemplate.currentChar;
         textPrinter->printerTemplate.currentChar++;
@@ -2370,7 +2374,7 @@ static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
 
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x4)) + (0x8 * (glyphId % 0x10));
             DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
@@ -2391,7 +2395,7 @@ static void DecompressGlyph_Narrow(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNarrowLatinGlyphs + (0x20 * glyphId);
             gCurGlyph.width = gFontNarrowLatinGlyphWidths[glyphId];
@@ -2423,14 +2427,14 @@ static u32 GetGlyphWidth_Narrow(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
-            return gFontShortJapaneseGlyphWidths[glyphId];
-        else
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return 8;
+        else
+            return gFontShortJapaneseGlyphWidths[glyphId];
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return gFontNarrowLatinGlyphWidths[glyphId];
         else
             return gFontShortNarrowLatinGlyphWidths[glyphId];
@@ -2529,7 +2533,7 @@ static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
 
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x4)) + (0x8 * (glyphId % 0x10));
             DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
@@ -2550,7 +2554,7 @@ static void DecompressGlyph_Normal(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNormalLatinGlyphs + (0x20 * glyphId);
             gCurGlyph.width = gFontNormalLatinGlyphWidths[glyphId];
@@ -2582,14 +2586,14 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
-            return gFontShortJapaneseGlyphWidths[glyphId];
-        else
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return 8;
+        else
+            return gFontShortJapaneseGlyphWidths[glyphId];
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return gFontNormalLatinGlyphWidths[glyphId];
         else
             return gFontShortLatinGlyphWidths[glyphId];
@@ -2613,7 +2617,7 @@ static void DecompressGlyph_Narrower(u16 glyphId, bool32 isJapanese)
 
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNormalJapaneseGlyphs + (0x100 * (glyphId >> 0x4)) + (0x8 * (glyphId % 0x10));
             DecompressGlyphTile(glyphs, gCurGlyph.gfxBufferTop);
@@ -2634,7 +2638,7 @@ static void DecompressGlyph_Narrower(u16 glyphId, bool32 isJapanese)
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
         {
             glyphs = gFontNarrowerLatinGlyphs + (0x20 * glyphId);
             gCurGlyph.width = gFontNarrowerLatinGlyphWidths[glyphId];
@@ -2666,14 +2670,14 @@ static u32 GetGlyphWidth_Narrower(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
-            return gFontShortJapaneseGlyphWidths[glyphId];
-        else
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return 8;
+        else
+            return gFontShortJapaneseGlyphWidths[glyphId];
     }
     else
     {
-        if (gSaveBlock2Ptr->optionsCurrentFont == 0)
+        if (gSaveBlock2Ptr->optionsCurrentFont == OPTIONS_FONT_EMERALD)
             return gFontNarrowerLatinGlyphWidths[glyphId];
         else
             return gFontShortNarrowerLatinGlyphWidths[glyphId];
