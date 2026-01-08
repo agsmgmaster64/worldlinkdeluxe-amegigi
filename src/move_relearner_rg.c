@@ -396,7 +396,7 @@ static void CB2_InitLearnMoveReturnFromSelectMove(void)
 
 static void CB2_MoveRelearner(void)
 {
-    if (!IsTextPrinterActive(RELEARN_WINDOW_MESSAGE))
+    if (!IsTextPrinterActiveOnWindow(RELEARN_WINDOW_MESSAGE))
         DoMoveRelearnerMain();
     if (sMoveRelearnerStruct->scheduleMoveInfoUpdate)
     {
