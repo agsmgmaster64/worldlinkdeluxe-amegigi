@@ -2346,7 +2346,7 @@ static u32 Cmd_PrintMessage(struct BerryCrushGame *game, u8 *args)
         CopyWindowToVram(0, COPYWIN_FULL);
         break;
     case 1:
-        if (!IsTextPrinterActive(0))
+        if (!IsTextPrinterActiveOnWindow(0))
         {
             // If no wait keys are given, skip
             // waiting state below
@@ -3681,7 +3681,7 @@ static u32 Cmd_StopGame(struct BerryCrushGame *game, u8 *args)
         }
         break;
     case 1:
-        if (IsTextPrinterActive(0))
+        if (IsTextPrinterActiveOnWindow(0))
             return 0;
         game->gfx.counter = 120;
         break;

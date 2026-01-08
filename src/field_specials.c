@@ -3708,7 +3708,7 @@ static void Task_LinkRetireStatusWithBattleTowerPartner(u8 taskId)
         gTasks[taskId].tState++;
         break;
     case 6:
-        if (!IsTextPrinterActive(0))
+        if (!IsTextPrinterActiveOnWindow(0))
             gTasks[taskId].tState++;
         break;
     case 7:
@@ -4414,7 +4414,7 @@ static const struct MoveLearnUI sMoveLearnUI =
 
 static void Task_LearnMove(u8 taskId)
 {
-    if (IsTextPrinterActive(0))
+    if (IsTextPrinterActiveOnWindow(0))
         return;
     gTasks[taskId].tState = LearnMove(&sMoveLearnUI, taskId);
 }
