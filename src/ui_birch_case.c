@@ -21,6 +21,7 @@
 #include "menu_helpers.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "random.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "sound.h"
@@ -111,11 +112,25 @@ enum BallPositions
     BALL_BOTTOM_SECOND,
 };
 
+enum StarterChoice
+{
+    STARTER_NONE,
+    STARTER_GENERIC_REIMU,
+    STARTER_GENERIC_MARISA,
+    STARTER_GENERIC_SAKUYA,
+    STARTER_GENERIC_AYA,
+    STARTER_GENERIC_SANAE,
+    STARTER_GENERIC_REISEN,
+    STARTER_GENERIC_ALICE,
+    STARTER_COUNT,
+};
+
 struct MonChoiceData // This is the format used to define a mon, everything left out will default to 0 and be blank or use the in game defaults
 {
     u16 species; // Mon Species ID
     u8 level;   // Mon Level 5
     u16 item;   // Held item, just ITEM_POTION
+    bool8 isRandom;   // Held item, just ITEM_POTION
     u8 ball; // this ballid does not change the design of the ball in the case, only in summary/throwing out to battle 
     u8 nature; // NATURE_JOLLY, NATURE_ETC...
     u8 abilityNum; // this is either 0/1 in vanilla or 0/1/2 in Expansion, its the ability num your mon uses from its possible abilities, not the ability constant itself
@@ -135,45 +150,37 @@ struct MonChoiceData // This is the format used to define a mon, everything left
     .species = speciesG, \
     .level = levelG, \
     .item = itemG, \
-    .ball = BALL_POKE, \
-    .nature = NUM_NATURES, \
-    .abilityNum = NUM_ABILITY_PERSONALITY, \
-    .gender = MON_GENDERLESS, \
-    .shinyMode = SHINY_MODE_RANDOM, \
-    .ivs = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1}, \
+    .isRandom = TRUE, \
 }
+
+static const struct MonChoiceData sStarterChoiceInfo[STARTER_COUNT] =
+{
+    [STARTER_NONE] = { 0 },
+    [STARTER_GENERIC_REIMU]  = GENERIC_STARTER(SPECIES_CHIBI_REIMU, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_MARISA] = GENERIC_STARTER(SPECIES_CHIBI_MARISA, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_SAKUYA] = GENERIC_STARTER(SPECIES_CHIBI_SAKUYA, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_AYA]    = GENERIC_STARTER(SPECIES_CHIBI_AYA, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_SANAE]  = GENERIC_STARTER(SPECIES_CHIBI_SANAE, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_REISEN] = GENERIC_STARTER(SPECIES_CHIBI_REISEN, 5, ITEM_ORAN_BERRY),
+    [STARTER_GENERIC_ALICE]  = GENERIC_STARTER(SPECIES_CHIBI_ALICE, 5, ITEM_ORAN_BERRY),
+};
 
 //
 //  Making Changes Here Changes The Options In The UI. This is where you define your mons
 //
-static const struct MonChoiceData sStarterChoices[9] = 
+static enum StarterChoice sStarterChoicesNormal[9] = 
 {
-    [BALL_TOP_FIRST]        = GENERIC_STARTER(SPECIES_CHIBI_REIMU, 5, ITEM_ORAN_BERRY),
-    [BALL_TOP_SECOND]       = GENERIC_STARTER(SPECIES_CHIBI_MARISA, 5, ITEM_ORAN_BERRY),
-    [BALL_TOP_THIRD]        = GENERIC_STARTER(SPECIES_CHIBI_SAKUYA, 5, ITEM_ORAN_BERRY),
-    [BALL_TOP_FOURTH]       = GENERIC_STARTER(SPECIES_CHIBI_AYA, 5, ITEM_ORAN_BERRY),
+    [BALL_TOP_FIRST]        = STARTER_GENERIC_REIMU,
+    [BALL_TOP_SECOND]       = STARTER_GENERIC_MARISA,
+    [BALL_TOP_THIRD]        = STARTER_GENERIC_SAKUYA,
+    [BALL_TOP_FOURTH]       = STARTER_GENERIC_AYA,
 
-    [BALL_MIDDLE_FIRST]     = GENERIC_STARTER(SPECIES_CHIBI_SANAE, 5, ITEM_ORAN_BERRY),
-    [BALL_MIDDLE_SECOND]    = GENERIC_STARTER(SPECIES_CHIBI_REISEN, 5, ITEM_ORAN_BERRY),
-    [BALL_MIDDLE_THIRD]     = GENERIC_STARTER(SPECIES_CHIBI_ALICE, 5, ITEM_ORAN_BERRY),
+    [BALL_MIDDLE_FIRST]     = STARTER_GENERIC_SANAE,
+    [BALL_MIDDLE_SECOND]    = STARTER_GENERIC_REISEN,
+    [BALL_MIDDLE_THIRD]     = STARTER_GENERIC_ALICE,
 
-    [BALL_BOTTOM_FIRST]     = GENERIC_STARTER(SPECIES_NONE, 5, ITEM_ORAN_BERRY),
-    [BALL_BOTTOM_SECOND]    = GENERIC_STARTER(SPECIES_NONE, 5, ITEM_ORAN_BERRY),
-};
-
-static const struct MonChoiceData sStarterChoicesMeme[9] = 
-{
-    [BALL_TOP_FIRST]        = GENERIC_STARTER(SPECIES_AKYUU, 5, ITEM_ORAN_BERRY),
-    [BALL_TOP_SECOND]       = {SPECIES_KEDAMA, 5, ITEM_DESTINY_KNOT, BALL_POKE, NATURE_SERIOUS, 2, MON_GENDERLESS, {0, 0, 0, 0, 0, 0}, {31, 31, 31, 31, 31, 31}},
-    [BALL_TOP_THIRD]        = {SPECIES_CHIBI_AMELIA, 5, ITEM_BIG_PEARL, BALL_LUXURY, NATURE_MODEST, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-    [BALL_TOP_FOURTH]       = {SPECIES_CHIBI_YOUMU, 5, ITEM_MAID_UNIFORM, BALL_MASTER, NATURE_ADAMANT, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-
-    [BALL_MIDDLE_FIRST]     = GENERIC_STARTER(SPECIES_NONE, 5, ITEM_ORAN_BERRY),
-    [BALL_MIDDLE_SECOND]    = GENERIC_STARTER(SPECIES_NONE, 5, ITEM_ORAN_BERRY),
-    [BALL_MIDDLE_THIRD]     = GENERIC_STARTER(SPECIES_NONE, 5, ITEM_ORAN_BERRY),
-
-    [BALL_BOTTOM_FIRST]     = {SPECIES_CHIBI_KOISHI, 5, ITEM_ORAN_BERRY, BALL_STRANGE, NATURE_QUIRKY, NUM_ABILITY_PERSONALITY, MON_GENDERLESS},
-    [BALL_BOTTOM_SECOND]    = GENERIC_STARTER(SPECIES_CHIBI_SHINMYOUMARU, 5, ITEM_ORAN_BERRY),
+    [BALL_BOTTOM_FIRST]     = STARTER_NONE,
+    [BALL_BOTTOM_SECOND]    = STARTER_NONE,
 };
 
 //==========EWRAM==========//
@@ -357,92 +364,111 @@ static void CursorCallback(struct Sprite *sprite)
     
 }
 
-static inline u16 GetStarterChoiceSpecies(u32 index)
+static inline bool32 CheckIfStarterChoiceExists(enum StarterChoice starterChoice)
 {
-    u16 species = sStarterChoices[index].species;
+    return starterChoice != STARTER_NONE;
+}
+
+static inline enum StarterChoice GetStarterChoiceIndex(u32 index)
+{
+    enum StarterChoice starterChoice = sStarterChoicesNormal[index];
+
+    return starterChoice;
+}
+
+static inline u16 GetStarterChoiceSpecies(enum StarterChoice starterChoice)
+{
+    u16 species = sStarterChoiceInfo[starterChoice].species;
 
     return species;
 }
 
-static inline u8 GetStarterChoiceLevel(u32 index)
+static inline u8 GetStarterChoiceLevel(enum StarterChoice starterChoice)
 {
-    u8 level = sStarterChoices[index].level;
+    u8 level = sStarterChoiceInfo[starterChoice].level;
 
     return level;
 }
 
-static inline u16 GetStarterChoiceItem(u32 index)
+static inline u16 GetStarterChoiceItem(enum StarterChoice starterChoice)
 {
-    u16 item = sStarterChoices[index].item;
+    u16 item = sStarterChoiceInfo[starterChoice].item;
 
     return item;
 }
 
-static inline u8 GetStarterChoiceBall(u32 index)
+static inline bool32 ShouldGenerateStarterRandom(enum StarterChoice starterChoice)
 {
-    u8 ball = sStarterChoices[index].ball;
+    bool32 species = sStarterChoiceInfo[starterChoice].isRandom;
+
+    return species;
+}
+
+static inline u8 GetStarterChoiceBall(enum StarterChoice starterChoice)
+{
+    u8 ball = sStarterChoiceInfo[starterChoice].ball;
 
     return ball;
 }
 
-static inline u8 GetStarterChoiceNature(u32 index)
+static inline u8 GetStarterChoiceNature(enum StarterChoice starterChoice)
 {
-    u8 nature = sStarterChoices[index].nature;
+    u8 nature = sStarterChoiceInfo[starterChoice].nature;
 
     return nature;
 }
 
-static inline u8 GetStarterChoiceAbilityNum(u32 index)
+static inline u8 GetStarterChoiceAbilityNum(enum StarterChoice starterChoice)
 {
-    u8 abilityNum = sStarterChoices[index].abilityNum;
+    u8 abilityNum = sStarterChoiceInfo[starterChoice].abilityNum;
 
     return abilityNum;
 }
 
-static inline u8 GetStarterChoiceGender(u32 index)
+static inline u8 GetStarterChoiceGender(enum StarterChoice starterChoice)
 {
-    u8 gender = sStarterChoices[index].gender;
+    u8 gender = sStarterChoiceInfo[starterChoice].gender;
 
     return gender;
 }
 
-static inline u16 *GetStarterChoiceEVs(u32 index)
+static inline u16 *GetStarterChoiceEVs(enum StarterChoice starterChoice)
 {
-    u16 *evs = (u16 *) sStarterChoices[index].evs;
+    u16 *evs = (u16 *) sStarterChoiceInfo[starterChoice].evs;
 
     return evs;
 }
 
-static inline u16 *GetStarterChoiceIVs(u32 index)
+static inline u16 *GetStarterChoiceIVs(enum StarterChoice starterChoice)
 {
-    u16 *ivs = (u16 *) sStarterChoices[index].ivs;
+    u16 *ivs = (u16 *) sStarterChoiceInfo[starterChoice].ivs;
 
     return ivs;
 }
 
-static inline u16 *GetStarterChoiceMoves(u32 index)
+static inline u16 *GetStarterChoiceMoves(enum StarterChoice starterChoice)
 {
-    u16 *moves = (u16 *) sStarterChoices[index].moves;
+    u16 *moves = (u16 *) sStarterChoiceInfo[starterChoice].moves;
 
     return moves;
 }
 
-static inline bool8 GetStarterChoiceGgMaxFactor(u32 index)
+static inline bool8 GetStarterChoiceGgMaxFactor(enum StarterChoice starterChoice)
 {
-    bool8 ggMaxFactor = sStarterChoices[index].ggMaxFactor;
+    bool8 ggMaxFactor = sStarterChoiceInfo[starterChoice].ggMaxFactor;
 
     return ggMaxFactor;
 }
 
-static inline u8 GetStarterChoiceTeraType(u32 index)
+static inline u8 GetStarterChoiceTeraType(enum StarterChoice starterChoice)
 {
-    u8 teraType = sStarterChoices[index].teraType;
+    u8 teraType = sStarterChoiceInfo[starterChoice].teraType;
 
     return teraType;
 }
-static inline u8 GetStarterChoiceShinyMode(u32 index)
+static inline u8 GetStarterChoiceShinyMode(enum StarterChoice starterChoice)
 {
-    u8 shinyMode = sStarterChoices[index].shinyMode;
+    u8 shinyMode = sStarterChoiceInfo[starterChoice].shinyMode;
 
     return shinyMode;
 }
@@ -455,10 +481,12 @@ static void CreateHandSprite(void)
     u16 i = 0;
     u16 x, y;
     struct SpriteCordsStruct current_position = {0,0};
+    enum StarterChoice starterChoice;
 
     for (i = 0; i < 9; i++)
     {
-        if (GetStarterChoiceSpecies(i) == SPECIES_NONE) // Choose Non Empty Slot To Start In
+        starterChoice = GetStarterChoiceIndex(i);
+        if (!CheckIfStarterChoiceExists(starterChoice)) // Choose Non Empty Slot To Start In
             continue;
     
         if (sBirchCaseDataPtr->handPosition <= 3)
@@ -487,9 +515,8 @@ static void CreateHandSprite(void)
     gSprites[sBirchCaseDataPtr->handSpriteId].callback = CursorCallback;
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->handSpriteId], 2);
     StartSpriteAnim(&gSprites[sBirchCaseDataPtr->pokeballSpriteIds[sBirchCaseDataPtr->handPosition]], 1);
-    SampleUi_DrawMonIcon(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition));
-    
-    return;
+    starterChoice = GetStarterChoiceIndex(sBirchCaseDataPtr->handPosition);
+    SampleUi_DrawMonIcon(GetStarterChoiceSpecies(starterChoice));
 }
 
 static void DestroyHandSprite(void)
@@ -509,10 +536,11 @@ static void CreatePokeballSprites(void)
 {
     u16 i = 0;
 
-    for(i=0; i<9; i++)
+    for(i = 0; i < 9; i++)
     {
         u16 x, y;
-        if (GetStarterChoiceSpecies(i) == SPECIES_NONE)
+        enum StarterChoice starterChoice = GetStarterChoiceIndex(i);
+        if (!CheckIfStarterChoiceExists(starterChoice))
             continue;
 
         if(i <= 3)
@@ -580,22 +608,33 @@ static void ChangePositionUpdateSpriteAnims(u16 oldPosition, u8 taskId) // turn 
     PrintTextToBottomBar(CHOOSE_MON);
 }
 
+static u32 BirchCase_GiveStarterMon(enum StarterChoice starterChoice)
+{
+    u32 species = GetStarterChoiceSpecies(starterChoice);
+    u32 level = GetStarterChoiceLevel(starterChoice);
+    u32 item = GetStarterChoiceItem(starterChoice);
+    if (ShouldGenerateStarterRandom(starterChoice))
+    {
+        return ScriptGiveMon(species, level, item);
+    }
+    return BirchCase_GiveMonParameterized(species, level, item,
+        GetStarterChoiceBall(starterChoice),
+        GetStarterChoiceNature(starterChoice),
+        GetStarterChoiceAbilityNum(starterChoice),
+        GetStarterChoiceGender(starterChoice),
+        GetStarterChoiceEVs(starterChoice),
+        GetStarterChoiceIVs(starterChoice),
+        GetStarterChoiceMoves(starterChoice),
+        GetStarterChoiceGgMaxFactor(starterChoice),
+        GetStarterChoiceTeraType(starterChoice),
+        GetStarterChoiceShinyMode(starterChoice));
+}
+
 static void BirchCase_GiveMon(void) // Function that calls the GiveMon function pulled from Expansion by Lunos and Ghoulslash
 {
+    enum StarterChoice starterChoice = GetStarterChoiceIndex(sBirchCaseDataPtr->handPosition);
     FlagSet(FLAG_SYS_POKEMON_GET);
-    gSpecialVar_Result = BirchCase_GiveMonParameterized(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceLevel(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceItem(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceBall(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceNature(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceAbilityNum(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceGender(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceEVs(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceIVs(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceMoves(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceGgMaxFactor(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceTeraType(sBirchCaseDataPtr->handPosition),
-                GetStarterChoiceShinyMode(sBirchCaseDataPtr->handPosition));
+    gSpecialVar_Result = BirchCase_GiveStarterMon(starterChoice);
 }
 
 //==========FUNCTIONS==========//
@@ -861,7 +900,8 @@ static void PrintTextToBottomBar(u8 textId)
     u8 x = 1 + 4;
     u8 y = 1 + 18;
 
-    u16 species = GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition);
+    enum StarterChoice starterChoice = GetStarterChoiceIndex(sBirchCaseDataPtr->handPosition);
+    u16 species = GetStarterChoiceSpecies(starterChoice);
     u16 dexNum = SpeciesToNationalPokedexNum(species);    
 
     FillWindowPixelBuffer(WINDOW_BOTTOM_BAR, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
@@ -883,7 +923,7 @@ static void PrintTextToBottomBar(u8 textId)
     } 
     AddTextPrinterParameterized4(WINDOW_BOTTOM_BAR, FONT_NORMAL, x, y, 0, 0, sMenuWindowFontColors[FONT_WHITE], 0xFF, mainBarAlternatingText);
 
-    if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) == SPECIES_NONE)
+    if (!CheckIfStarterChoiceExists(starterChoice))
     {
         PutWindowTilemap(WINDOW_BOTTOM_BAR);
         CopyWindowToVram(WINDOW_BOTTOM_BAR, 3);
@@ -923,8 +963,9 @@ static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing th
 {   
     if (gTasks[taskId].data[11] >= 4)
     {
-        if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) != SPECIES_NONE)
-            SampleUi_DrawMonIcon(GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition));
+        enum StarterChoice starterChoice = GetStarterChoiceIndex(sBirchCaseDataPtr->handPosition);
+        if (CheckIfStarterChoiceExists(starterChoice))
+            SampleUi_DrawMonIcon(GetStarterChoiceSpecies(starterChoice));
         gTasks[taskId].func = Task_BirchCaseMain;
         sBirchCaseDataPtr->movingSelector = FALSE;
         return;
@@ -1100,7 +1141,8 @@ static void Task_BirchCaseMain(u8 taskId)
     }
     if(JOY_NEW(A_BUTTON))
     {
-        if (GetStarterChoiceSpecies(sBirchCaseDataPtr->handPosition) != SPECIES_NONE) // If spot empty don't go to next control flow state
+        enum StarterChoice starterChoice = GetStarterChoiceIndex(sBirchCaseDataPtr->handPosition);
+        if (CheckIfStarterChoiceExists(starterChoice)) // If spot empty don't go to next control flow state
         {
             PlaySE(SE_SELECT);
             PrintTextToBottomBar(CONFIRM_SELECTION);
