@@ -13,6 +13,7 @@
 #include "event_object_lock.h"
 #include "fake_rtc.h"
 #include "field_player_avatar.h"
+#include "field_screen_effect.h"
 #include "field_specials.h"
 #include "field_weather.h"
 #include "frontier_pass.h"
@@ -208,7 +209,6 @@ static void RotomPhone_StartMenu_SelectedFunc_SafariFlag(void);
 static void RotomPhone_StartMenu_SelectedFunc_RotomReality(void);
 static void RotomPhone_StartMenu_SelectedFunc_DexNav(void);
 static void RotomPhone_StartMenu_SelectedFunc_Quests(void);
-static void RotomPhone_StartMenu_SelectedFunc_Daycare(void);
 
 
 // Init Rotom Start Menu
@@ -225,6 +225,16 @@ void RotomPhone_StartMenu_Open(bool32 firstInit)
     {
         RotomPhone_RotomRealityMenu_Init();
     }
+}
+
+bool32 RotomPhone_StartMenu_ReturnRotomReality(void)
+{
+    if (RotomPhone_StartMenu_IsRotomReality())
+    {
+        RotomPhone_StartMenu_Open(FALSE);
+        return TRUE;
+    }
+    return FALSE;
 }
 
 
@@ -244,8 +254,6 @@ static const u32 sRotomPhone_RotomRealityMenuIconsGfx_Two[] =   INCBIN_U32("grap
 static const u16 sRotomPhone_RotomRealityMenuIconsPal_Two[] =   INCBIN_U16("graphics/rotom_start_menu/rotom_reality/icons_2.gbapal");
 static const u32 sRotomPhone_RotomRealityMenuShortcutGfx[] =    INCBIN_U32("graphics/rotom_start_menu/rotom_reality/shortcut.4bpp.smol");
 static const u16 sRotomPhone_RotomRealityMenuShortcutPal[] =    INCBIN_U16("graphics/rotom_start_menu/rotom_reality/shortcut.gbapal");
-static const u32 sRotomPhone_DaycareCompatability_Gfx[] =       INCBIN_U32("graphics/rotom_start_menu/rotom_reality/panel/daycare/heart.4bpp.smol");
-static const u16 sRotomPhone_DaycareCompatability_Pal[] =       INCBIN_U16("graphics/rotom_start_menu/rotom_reality/panel/daycare/heart.gbapal");
 
 static const u16 sRotomPhone_StartMenuRotomFaceIconsPal[] =     INCBIN_U16("graphics/rotom_start_menu/rotom_face.gbapal");
 static const u32 sRotomPhone_StartMenuRotomFaceGfx[] =          INCBIN_U32("graphics/rotom_start_menu/rotom_face.4bpp.smol");
@@ -503,7 +511,6 @@ enum RotomPhone_MenuItems
     RP_MENU_BAG,
     RP_MENU_DEXNAV,
     RP_MENU_POKENAV,
-    RP_MENU_DAYCARE,
     RP_MENU_TRAINER_CARD,
     RP_MENU_SAVE,
     RP_MENU_OPTIONS,
@@ -736,16 +743,6 @@ enum RotomPhone_RotomReality_SlidingPanelWindows
     RP_RR_PANEL_WIN_SIX,
     RP_RR_PANEL_WIN_COUNT,
 };
-
-enum RotomPhone_RotomReality_DaycareCompatabilityAnims
-{
-    RP_DAYCARE_COMPATABILITY_ANIM_NON,
-    RP_DAYCARE_COMPATABILITY_ANIM_LOW,
-    RP_DAYCARE_COMPATABILITY_ANIM_MED,
-    RP_DAYCARE_COMPATABILITY_ANIM_MAX,
-    RP_DAYCARE_COMPATABILITY_ANIM_COUNT,
-};
-
 
 struct RotomPhone_StartMenu_State
 {
@@ -1111,46 +1108,6 @@ static const struct SpriteTemplate sSpriteTemplate_RotomRealityShortcutIcon = {
     .callback = SpriteCallbackDummy,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_CompatabilityIcon = {
-    .data = sRotomPhone_DaycareCompatability_Gfx,
-    .size = 32 * 32 * RP_DAYCARE_COMPATABILITY_ANIM_COUNT / 2,
-    .tag = TAG_PHONE_RR_DAYCARE_ICON,
-};
-
-static const struct OamData sOam_IconDaycareCompatatbility = {
-    .size = SPRITE_SIZE(32x32),
-    .shape = SPRITE_SHAPE(32x32),
-    .priority = 0,
-};
-
-static const union AnimCmd sAnim_IconDaycareCompatatbility_Not[] = {
-    ANIMCMD_FRAME(0, 0),
-    ANIMCMD_JUMP(0),
-};
-
-static const union AnimCmd sAnim_IconDaycareCompatatbility_Low[] = {
-    ANIMCMD_FRAME(16, 0),
-    ANIMCMD_JUMP(0),
-};
-
-static const union AnimCmd sAnim_IconDaycareCompatatbility_Med[] = {
-    ANIMCMD_FRAME(32, 0),
-    ANIMCMD_JUMP(0),
-};
-
-static const union AnimCmd sAnim_IconDaycareCompatatbility_Max[] = {
-    ANIMCMD_FRAME(48, 0),
-    ANIMCMD_JUMP(0),
-};
-
-static const union AnimCmd *const sAnims_IconDaycareCompatatbility[] =
-{
-    sAnim_IconDaycareCompatatbility_Not,
-    sAnim_IconDaycareCompatatbility_Low,
-    sAnim_IconDaycareCompatatbility_Med,
-    sAnim_IconDaycareCompatatbility_Max,
-};
-
 static const struct SpriteTemplate sSpriteTemplate_OverworldIcon = {
     .tileTag = TAG_PHONE_OW_ICON_GFX,
     .paletteTag = TAG_ROTOM_FACE_ICON_PAL,
@@ -1319,15 +1276,6 @@ static const struct RotomPhone_MenuOptions sRotomPhoneOptions[RP_MENU_COUNT] =
         .owIconPalSlot = PAL_ICON_MONOCHROME,
         .owAnim = RP_ICON_ANIM_THREE,
         .rrAnim = RP_ICON_ANIM_ONE,
-        .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
-    },
-    [RP_MENU_DAYCARE] =
-    {
-        .menuName = COMPOUND_STRING("Daycare"),
-        .unlockedFunc = RotomPhone_StartMenu_UnlockedFunc_Unlocked_RotomReality,
-        .selectedFunc = RotomPhone_StartMenu_SelectedFunc_Daycare,
-        .rotomRealityPanel = TRUE,
-        .rrAnim = RP_ICON_ANIM_NINE,
         .rrSpriteTemplate = &sSpriteTemplate_RotomRealityIcons_One,
     },
 };
@@ -3886,307 +3834,6 @@ static void RotomPhone_StartMenu_SelectedFunc_Quests(void)
         RotomPhone_StartMenu_DoCleanUpAndCreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
 }
 
-static void RotomPhone_StartMenu_SelectedFunc_Daycare(void)
-{
-    #define MON_ONE 0
-    #define MON_TWO 1
-
-    #define MON_ICON_Y 220
-    #define EGG_COMPATABILITY_ICON_Y 210
-    #define MON_ICON_ONE_X 60
-    #define MON_ICON_TWO_X 180
-    #define MON_COMPATABILITY_ICON_X (MON_ICON_ONE_X + MON_ICON_TWO_X) / 2
-    #define MON_ICON_PAL_SLOT_COMPATABILITY_ICON 0
-
-    #define WIN_WIDTH 8
-    #define WIN_HEIGHT 4
-    #define WIN_TOP 22
-
-    #define WIN_WIDTH_NO_MONS 18
-    #define WIN_HEIGHT_NO_MONS 4
-    #define WIN_TOP_NO_MONS 23
-
-    #define TEXT_LINE_SPACE 14
-    
-    u8 windowId;
-
-    if (RotomPhone_StartMenu_IsRotomReality() && sRotomPhone_StartMenu->menuRotomRealityPanelOpen == FALSE)
-    {
-        u8 textBuffer[0x80];
-        u8 fontId;
-        u8 y;
-
-        if (GetDaycareState() == DAYCARE_NO_MONS)
-        {
-            struct WindowTemplate winTemplate = CreateWindowTemplate(
-                2,
-                6,
-                WIN_TOP_NO_MONS,
-                WIN_WIDTH_NO_MONS,
-                WIN_HEIGHT_NO_MONS,
-                PHONE_BG_PAL_SLOT,
-                ROTOM_ROTOM_REALITY_NEXT_WIN_BASE_BLOCK
-            );
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE] = AddWindow(&winTemplate);
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(RR_ROTOM_PHONE_TEXT_BG_COLOUR));
-            PutWindowTilemap(windowId);
-
-            y = 0;
-            StringCopy(textBuffer, COMPOUND_STRING("Leave a Pokémon in the Daycare"));
-            fontId = GetFontIdToFit(textBuffer, FONT_SMALL_NARROW, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                GetStringCenterAlignXOffset(fontId, textBuffer, WIN_WIDTH_NO_MONS * 8),
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            y += TEXT_LINE_SPACE;
-            StringCopy(textBuffer, COMPOUND_STRING("to use this app."));
-            fontId = GetFontIdToFit(textBuffer, FONT_SMALL_NARROW, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                GetStringCenterAlignXOffset(fontId, textBuffer, WIN_WIDTH_NO_MONS * 8),
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-            return;
-        }
-
-        struct DaycareMon *daycareMonOne = &gSaveBlock1Ptr->daycare.mons[MON_ONE];
-        struct DaycareMon *daycareMonTwo = &gSaveBlock1Ptr->daycare.mons[MON_TWO];
-        struct BoxPokemon *daycareBoxMonOne = &daycareMonOne->mon;
-        struct BoxPokemon *daycareBoxMonTwo = &daycareMonTwo->mon;
-        u16 speciesOne = GetBoxMonData(daycareBoxMonOne, MON_DATA_SPECIES);
-        u16 speciesTwo = GetBoxMonData(daycareBoxMonTwo, MON_DATA_SPECIES);
-        u8 levelGain[2];
-        u8 level[3];
-        u8 nickname[POKEMON_NAME_LENGTH + 1];
-        u8 animId;
-
-        LoadMonIconPalettes();
-
-        if (GetDaycareState() != DAYCARE_NO_MONS)
-        {
-            u32 monOneLevel = GetLevelAfterDaycareSteps(daycareBoxMonOne, daycareMonOne->steps);
-            u32 monOneLevelGain = GetNumLevelsGainedFromSteps(daycareMonOne);
-            GetBoxMonData(daycareBoxMonOne, MON_DATA_NICKNAME, nickname);
-
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_ONE] =
-                CreateMonIcon(speciesOne, SpriteCB_MonIcon, MON_ICON_ONE_X, MON_ICON_Y, 4, 0);
-            gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_ONE]].oam.priority = 0;
-
-            ConvertIntToDecimalStringN(level, monOneLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
-            ConvertIntToDecimalStringN(levelGain, monOneLevelGain, STR_CONV_MODE_LEFT_ALIGN, 2);
-
-            struct WindowTemplate winTemplate = CreateWindowTemplate(
-                2,
-                4,
-                WIN_TOP,
-                WIN_WIDTH,
-                WIN_HEIGHT,
-                PHONE_BG_PAL_SLOT,
-                ROTOM_ROTOM_REALITY_NEXT_WIN_BASE_BLOCK
-            );
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE] = AddWindow(&winTemplate);
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(RR_ROTOM_PHONE_TEXT_BG_COLOUR));
-            PutWindowTilemap(windowId);
-
-            y = 0;
-            StringCopy(textBuffer, nickname);
-            fontId = GetFontIdToFit(textBuffer, FONT_SHORT, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                0,
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            y += TEXT_LINE_SPACE;
-            StringCopy(textBuffer, COMPOUND_STRING("Level: "));
-            StringAppend(textBuffer, level);
-            StringAppend(textBuffer, COMPOUND_STRING(" (+"));
-            StringAppend(textBuffer, levelGain);
-            StringAppend(textBuffer, COMPOUND_STRING(")"));
-            fontId = GetFontIdToFit(textBuffer, FONT_SMALL_NARROW, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                0,
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-        }
-
-        if (GetDaycareState() != DAYCARE_NO_MONS && GetDaycareState() != DAYCARE_ONE_MON)
-        {
-            u32 monTwoLevel = GetLevelAfterDaycareSteps(daycareBoxMonTwo, daycareMonTwo->steps);
-            u32 monTwoLevelGain = GetNumLevelsGainedFromSteps(daycareMonTwo);
-            GetBoxMonData(daycareBoxMonTwo, MON_DATA_NICKNAME, nickname);
-
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_TWO] =
-                CreateMonIcon(speciesTwo, SpriteCB_MonIcon, MON_ICON_TWO_X, MON_ICON_Y, 4, 0);
-            gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_TWO]].oam.priority = 0;
-
-            ConvertIntToDecimalStringN(level, monTwoLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
-            ConvertIntToDecimalStringN(levelGain, monTwoLevelGain, STR_CONV_MODE_LEFT_ALIGN, 2);
-
-            struct WindowTemplate winTemplate = CreateWindowTemplate(
-                2,
-                18,
-                WIN_TOP,
-                WIN_WIDTH,
-                WIN_HEIGHT,
-                PHONE_BG_PAL_SLOT,
-                ROTOM_ROTOM_REALITY_NEXT_WIN_BASE_BLOCK + (WIN_WIDTH * WIN_HEIGHT)
-            );
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_TWO] = AddWindow(&winTemplate);
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_TWO];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(RR_ROTOM_PHONE_TEXT_BG_COLOUR));
-            PutWindowTilemap(windowId);
-
-            y = 0;
-            StringCopy(textBuffer, nickname);
-            fontId = GetFontIdToFit(textBuffer, FONT_SHORT, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                GetStringRightAlignXOffset(fontId, textBuffer, WIN_WIDTH * 8),
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            y += TEXT_LINE_SPACE;
-            StringCopy(textBuffer, COMPOUND_STRING("Level: "));
-            StringAppend(textBuffer, level);
-            StringAppend(textBuffer, COMPOUND_STRING(" (+"));
-            StringAppend(textBuffer, levelGain);
-            StringAppend(textBuffer, COMPOUND_STRING(")"));
-            fontId = GetFontIdToFit(textBuffer, FONT_SMALL_NARROW, 0, winTemplate.width * 8);
-            AddTextPrinterParameterized4(windowId, fontId,
-                GetStringRightAlignXOffset(fontId, textBuffer, WIN_WIDTH * 8),
-                y, 0, 0, sRotomPhone_StartMenu_FontColours[FONT_RR_ROTOM_PHONE], TEXT_SKIP_DRAW, textBuffer
-            );
-
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-        }
-
-        if (GetDaycareState() == DAYCARE_TWO_MONS)
-        {
-            struct SpritePalette iconCompatatbilityPal =
-            {
-                .data = sRotomPhone_DaycareCompatability_Pal,
-                .tag = gMonIconPaletteTable[MON_ICON_PAL_SLOT_COMPATABILITY_ICON].tag,
-            };
-
-            struct SpriteTemplate iconCompatatbility_SpriteTemplate =
-            {
-                .tileTag = TAG_PHONE_RR_DAYCARE_ICON,
-                .paletteTag = gMonIconPaletteTable[MON_ICON_PAL_SLOT_COMPATABILITY_ICON].tag,
-                .oam = &sOam_IconDaycareCompatatbility,
-                .callback = SpriteCallbackDummy,
-                .anims = sAnims_IconDaycareCompatatbility,
-                .affineAnims = gDummySpriteAffineAnimTable,
-            };
-
-            LoadCompressedSpriteSheet(&sSpriteSheet_CompatabilityIcon);
-            LoadSpritePalette(&iconCompatatbilityPal);
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE] =
-                CreateSprite(&iconCompatatbility_SpriteTemplate, MON_COMPATABILITY_ICON_X, EGG_COMPATABILITY_ICON_Y, 0);
-            gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE]].oam.priority = 0;
-
-            switch (GetDaycareCompatibilityScore(&gSaveBlock1Ptr->daycare))
-            {
-            case PARENTS_INCOMPATIBLE:
-                animId = RP_DAYCARE_COMPATABILITY_ANIM_NON;
-                break;
-            
-            case PARENTS_LOW_COMPATIBILITY:
-                animId = RP_DAYCARE_COMPATABILITY_ANIM_LOW;
-                break;
-            
-            case PARENTS_MED_COMPATIBILITY:
-                animId = RP_DAYCARE_COMPATABILITY_ANIM_MED;
-                break;
-            
-            case PARENTS_MAX_COMPATIBILITY:
-            default:
-                animId = RP_DAYCARE_COMPATABILITY_ANIM_MAX;
-                break;
-            }
-            StartSpriteAnim(&gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE]], animId);
-        }
-
-        if (GetDaycareState() == DAYCARE_EGG_WAITING)
-        {
-            void (*spriteCB)(struct Sprite *sprite);
-            if (Random() % 2 == TRUE)
-                spriteCB = SpriteCB_MonIcon;
-            else
-                spriteCB = SpriteCB_MonIcon;
-
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE] =
-                CreateMonIcon(SPECIES_EGG, spriteCB, MON_COMPATABILITY_ICON_X, EGG_COMPATABILITY_ICON_Y, 4, 0);
-            gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE]].oam.priority = 0;
-        }
-    }
-    else if (RotomPhone_StartMenu_IsRotomReality() && sRotomPhone_StartMenu->menuRotomRealityPanelOpen == TRUE)
-    {
-        if (GetDaycareState() == DAYCARE_NO_MONS)
-        {
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-            RemoveWindow(windowId);
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE] = WINDOW_NONE;
-            return;
-        }
-
-        FreeMonIconPalettes();
-
-        if (GetDaycareState() != DAYCARE_NO_MONS)
-        {
-            FreeAndDestroyMonIconSprite(&gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_ONE]]);
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_ONE] = SPRITE_NONE;
-
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-            RemoveWindow(windowId);
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_ONE] = WINDOW_NONE;
-        }
-
-        if (GetDaycareState() != DAYCARE_NO_MONS && GetDaycareState() != DAYCARE_ONE_MON)
-        {
-            FreeAndDestroyMonIconSprite(&gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_TWO]]);
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_TWO] = SPRITE_NONE;
-
-            windowId = sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_TWO];
-            FillWindowPixelBuffer(windowId, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
-            CopyWindowToVram(windowId, COPYWIN_FULL);
-            RemoveWindow(windowId);
-            sRotomPhone_StartMenu->menuRotomRealityPanelWindowId[RP_RR_PANEL_WIN_TWO] = WINDOW_NONE;
-        }
-
-        if (GetDaycareState() == DAYCARE_TWO_MONS || GetDaycareState() == DAYCARE_EGG_WAITING)
-        {
-            FreeAndDestroyMonIconSprite(&gSprites[sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE]]);
-            sRotomPhone_StartMenu->menuRotomRealityPanelSpriteId[RP_RR_PANEL_SPRITE_THREE] = SPRITE_NONE;
-        }
-    }
-    #undef MON_ONE
-    #undef MON_TWO
-
-    #undef MON_ICON_Y
-    #undef EGG_COMPATABILITY_ICON_Y
-    #undef MON_ICON_ONE_X
-    #undef MON_ICON_TWO_X
-    #undef MON_ICON_PAL_SLOT_COMPATABILITY_ICON
-    
-    #undef WIN_WIDTH
-    #undef WIN_HEIGHT
-    #undef WIN_TOP
-
-    #undef WIN_WIDTH_NO_MONS
-    #undef WIN_HEIGHT_NO_MONS
-    #undef WIN_TOP_NO_MONS
-
-    #undef TEXT_LINE_SPACE
-}
 #undef PHONE_OFFSCREEN_Y
 #undef TAG_ROTOM_FACE_GFX
 #undef TAG_PHONE_OW_ICON_GFX

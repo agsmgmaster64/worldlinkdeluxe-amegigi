@@ -56,6 +56,7 @@
 #include "random.h"
 #include "roamer.h"
 #include "rotating_gate.h"
+#include "rotom_start_menu.h"
 #include "rtc.h"
 #include "safari_zone.h"
 #include "save.h"
@@ -2053,8 +2054,11 @@ void CB2_ReturnToFieldFromMultiplayer(void)
 void CB2_ReturnToFieldWithOpenMenu(void)
 {
     FieldClearVBlankHBlankCallbacks();
-    gFieldCallback2 = FieldCB_ReturnToFieldOpenStartMenu;
-    CB2_ReturnToField();
+    if (!RotomPhone_StartMenu_ReturnRotomReality())
+    {
+        gFieldCallback2 = FieldCB_ReturnToFieldOpenStartMenu;
+        CB2_ReturnToField();
+    }
 }
 
 void CB2_ReturnToFieldContinueScript(void)

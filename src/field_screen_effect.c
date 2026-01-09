@@ -486,7 +486,6 @@ static void Task_WaitForFadeShowStartMenu(u8 taskId)
 void ReturnToFieldOpenStartMenu(void)
 {
     FadeInFromBlack();
-    //CreateTask(Task_WaitForFadeShowStartMenu, 0x50);
     LockPlayerFieldControls();
     RotomPhone_StartMenu_Open(FALSE);
 }
