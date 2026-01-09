@@ -4590,6 +4590,7 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     struct Pokemon *pokemon = &gEnemyParty[0];
 
     CreateMon(pokemon, inGameTrade->species, inGameTrade->level, inGameTrade->personality, OTID_STRUCT_PRESET(inGameTrade->otId));
+    GiveMonInitialMoveset(pokemon);
 
     if (inGameTrade->ivs[0] <= 31)
         SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
@@ -4642,6 +4643,7 @@ static void CreateRareWonderTradePokemonInternal(u8 rareWonderTradeId)
     struct Pokemon *pokemon = &gEnemyParty[0];
 
     CreateMon(pokemon, wonderTrade->species, wonderTrade->level, wonderTrade->personality, OTID_STRUCT_PRESET(wonderTrade->otId));
+    GiveMonInitialMoveset(pokemon);
 
     SetMonData(pokemon, MON_DATA_HP_IV, &wonderTrade->ivs[0]);
     SetMonData(pokemon, MON_DATA_ATK_IV, &wonderTrade->ivs[1]);
