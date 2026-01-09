@@ -168,6 +168,24 @@ struct InGameTrade {
     u16 requestedSpecies;
 };
 
+struct RareWonderTrade {
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
+    u16 species;
+    u8 level;
+    u16 ball;
+    u8 ivs[NUM_STATS];
+    u8 evs[NUM_STATS];
+    u8 abilityNum;
+    u32 otId;
+    u32 personality;
+    u16 heldItem;
+    u8 otName[TRAINER_NAME_LENGTH + 1];
+    u8 otGender;
+    u8 language;
+    u8 metLevel;
+    u8 metLocation;
+};
+
 static EWRAM_DATA u8 *sMenuTextTileBuffer = NULL;
 
 // Bytes 0-2 are used for the player's name text
@@ -4613,6 +4631,42 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
         {
             SetMonData(pokemon, MON_DATA_HELD_ITEM, &inGameTrade->heldItem);
         }
+    }
+    CalculateMonStats(&gEnemyParty[0]);
+}
+
+static void CreateRareWonderTradePokemonInternal(u8 rareWonderTradeId)
+{
+    const struct RareWonderTrade *wonderTrade = &sRareWonderTradeInfo[rareWonderTradeId];
+
+    struct Pokemon *pokemon = &gEnemyParty[0];
+
+    CreateMon(pokemon, wonderTrade->species, wonderTrade->level, wonderTrade->personality, OTID_STRUCT_PRESET(wonderTrade->otId));
+
+    SetMonData(pokemon, MON_DATA_HP_IV, &wonderTrade->ivs[0]);
+    SetMonData(pokemon, MON_DATA_ATK_IV, &wonderTrade->ivs[1]);
+    SetMonData(pokemon, MON_DATA_DEF_IV, &wonderTrade->ivs[2]);
+    SetMonData(pokemon, MON_DATA_SPEED_IV, &wonderTrade->ivs[3]);
+    SetMonData(pokemon, MON_DATA_SPATK_IV, &wonderTrade->ivs[4]);
+    SetMonData(pokemon, MON_DATA_SPDEF_IV, &wonderTrade->ivs[5]);
+    SetMonData(pokemon, MON_DATA_HP_EV, &wonderTrade->evs[0]);
+    SetMonData(pokemon, MON_DATA_ATK_EV, &wonderTrade->evs[1]);
+    SetMonData(pokemon, MON_DATA_DEF_EV, &wonderTrade->evs[2]);
+    SetMonData(pokemon, MON_DATA_SPEED_EV, &wonderTrade->evs[3]);
+    SetMonData(pokemon, MON_DATA_SPATK_EV, &wonderTrade->evs[4]);
+    SetMonData(pokemon, MON_DATA_SPDEF_EV, &wonderTrade->evs[5]);
+    SetMonData(pokemon, MON_DATA_NICKNAME, wonderTrade->nickname);
+    SetMonData(pokemon, MON_DATA_OT_NAME, wonderTrade->otName);
+    SetMonData(pokemon, MON_DATA_OT_GENDER, &wonderTrade->otGender);
+    SetMonData(pokemon, MON_DATA_ABILITY_NUM, &wonderTrade->abilityNum);
+    SetMonData(pokemon, MON_DATA_LANGUAGE, &wonderTrade->language);
+    SetMonData(pokemon, MON_DATA_MET_LEVEL, &wonderTrade->metLevel);
+    SetMonData(pokemon, MON_DATA_MET_LOCATION, &wonderTrade->metLocation);
+    SetMonData(pokemon, MON_DATA_POKEBALL, &wonderTrade->ball);
+
+    if (wonderTrade->heldItem != ITEM_NONE)
+    {
+        SetMonData(pokemon, MON_DATA_HELD_ITEM, &wonderTrade->heldItem);
     }
     CalculateMonStats(&gEnemyParty[0]);
 }

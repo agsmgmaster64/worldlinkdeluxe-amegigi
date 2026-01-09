@@ -1077,6 +1077,44 @@ static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =
     }
 };
 
+static const struct RareWonderTrade sRareWonderTradeInfo[] =
+{
+    [WONDER_TRADE_JP_KEDAMA] =
+    {
+        .nickname = _("りん"),
+        .species = SPECIES_KEDAMA,
+        .level = 35,
+        .ball = BALL_POKE,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 2,
+        .otId = 91481,
+        .personality = 0x8B,
+        .heldItem = ITEM_DESTINY_KNOT,
+        .otName = _("ミうイドソ"),
+        .otGender = FEMALE,
+        .language = LANGUAGE_JAPANESE,
+        .metLevel = 35,
+        .metLocation = METLOC_IN_GAME_TRADE,
+    },
+    [WONDER_TRADE_ERROR_KOISHI] =
+    {
+        .nickname = _("Rock"),
+        .species = SPECIES_CHIBI_KOISHI,
+        .level = 29,
+        .ball = BALL_SAFARI,
+        .ivs = {4, 10, 28, 6, 0, 31},
+        .abilityNum = 1,
+        .otId = 0x8B87DD0A, // TID 56586
+        .personality = 0x7811C8AF, // Relaxed / Yin
+        .heldItem = ITEM_NUGGET,
+        .otName = _("Loop"), // errorperson
+        .otGender = MALE,
+        .language = LANGUAGE_ENGLISH,
+        .metLevel = 29,
+        .metLocation = MAPSEC_SAFARI_ZONE,
+    },
+};
+
 static const struct WindowTemplate sTradeSequenceWindowTemplates[] =
 {
     {

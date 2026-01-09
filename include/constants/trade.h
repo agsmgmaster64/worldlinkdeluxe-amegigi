@@ -13,6 +13,13 @@ enum InGameTradeID
     INGAME_TRADE_MEOWTH,
 };
 
+// Wonder Trade IDs
+enum WonderTradeRareIDs
+{
+    WONDER_TRADE_JP_KEDAMA,
+    WONDER_TRADE_ERROR_KOISHI,
+};
+
 // Return values for CanTradeSelectedMon and CanSpinTradeMon
 #define CAN_TRADE_MON              0
 #define CANT_TRADE_LAST_MON        1
