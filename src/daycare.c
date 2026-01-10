@@ -286,12 +286,11 @@ void StoreSelectedPokemonInDaycare(void)
     }
     else
     {
-        u32 monId = GetCursorSelectionMonId();
-        if (gSaveBlock3Ptr->followerIndex == monId)
+        if (gSaveBlock3Ptr->followerIndex == gSpecialVar_0x8004)
             gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
-        else if (gSaveBlock3Ptr->followerIndex < PARTY_SIZE && monId < gSaveBlock3Ptr->followerIndex)
+        else if (gSaveBlock3Ptr->followerIndex < PARTY_SIZE && gSpecialVar_0x8004 < gSaveBlock3Ptr->followerIndex)
             gSaveBlock3Ptr->followerIndex--;
-        mon = &gPlayerParty[monId];
+        mon = &gPlayerParty[gSpecialVar_0x8004];
     }
     StorePokemonInEmptyDaycareSlot(mon, &gSaveBlock1Ptr->daycare);
     if (gSpecialVar_0x8004 == PC_MON_CHOSEN)

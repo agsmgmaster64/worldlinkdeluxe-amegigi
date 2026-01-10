@@ -4904,7 +4904,6 @@ u32 GetRelearnerEggMoves(struct BoxPokemon *mon, u16 *moves)
         return 0;
 
     u32 numMoves = 0;
-
     while (GetSpeciesPreEvolution(species) != SPECIES_NONE)
         species = GetSpeciesPreEvolution(species);
 

@@ -268,6 +268,11 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
         return REPLACE_MOVE_1;
 
     case REPLACE_MOVE_1:
+        u32 slot = GetMoveSlotToReplace();
+        RemoveBoxMonPPBonus(boxmon, slot);
+        u32 pp = GetMovePP(move);
+        SetBoxMonData(boxmon, MON_DATA_MOVE1 + slot, &move);
+        SetBoxMonData(boxmon, MON_DATA_PP1 + slot, &pp);
         GetBoxMonNickname(boxmon, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(move));
         gSpecialVar_Result = TRUE;
@@ -282,7 +287,7 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
         return LEARN_MOVE_END;
 
     default:
-        // TODO: assertf then fallthrough.
+        assertf(FALSE, "Unknown LearnMove state %d\nEnding move learning ...", state);
     case LEARN_MOVE_END:
         ui->endTask(taskId);
         return LEARN_MOVE_END;
