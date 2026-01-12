@@ -474,7 +474,7 @@ void HandleInputChooseTarget(u32 battler)
         {
             do
             {
-                u8 currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
+                enum BattlerPosition currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
 
                 for (i = 0; i < MAX_BATTLERS_COUNT; i++)
                 {
@@ -499,6 +499,8 @@ void HandleInputChooseTarget(u32 battler)
                 case B_POSITION_OPPONENT_LEFT:
                 case B_POSITION_OPPONENT_RIGHT:
                     i++;
+                    break;
+                default:
                     break;
                 }
                 if (B_SHOW_EFFECTIVENESS)
@@ -525,7 +527,7 @@ void HandleInputChooseTarget(u32 battler)
         {
             do
             {
-                u8 currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
+                enum BattlerPosition currSelIdentity = GetBattlerPosition(gMultiUsePlayerCursor);
 
                 for (i = 0; i < MAX_BATTLERS_COUNT; i++)
                 {
@@ -550,6 +552,8 @@ void HandleInputChooseTarget(u32 battler)
                 case B_POSITION_OPPONENT_LEFT:
                 case B_POSITION_OPPONENT_RIGHT:
                     i++;
+                    break;
+                default:
                     break;
                 }
                 if (B_SHOW_EFFECTIVENESS)

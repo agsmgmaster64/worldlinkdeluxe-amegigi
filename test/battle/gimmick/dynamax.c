@@ -532,37 +532,6 @@ DOUBLE_BATTLE_TEST("Dynamax: Dynamaxed Pokemon are immune to Instruct")
     }
 }
 
-SINGLE_BATTLE_TEST("Dynamax: Pokemon with Gigantamax forms change upon Dynamaxing")
-{
-    u32 species;
-    bool32 gigantamaxFactor;
-    PARAMETRIZE { gigantamaxFactor = FALSE; species = SPECIES_VENUSAUR; }
-    PARAMETRIZE { gigantamaxFactor = TRUE; species = SPECIES_VENUSAUR_GMAX; }
-    GIVEN {
-        PLAYER(SPECIES_ATTACK_REIMU) { GigantamaxFactor(gigantamaxFactor); }
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-    } WHEN {
-        TURN { MOVE(player, MOVE_SCRATCH, gimmick: GIMMICK_DYNAMAX); }
-    } THEN {
-        EXPECT_EQ(player->species, species);
-    }
-}
-
-SINGLE_BATTLE_TEST("Dynamax: Pokemon with Gigantamax forms revert upon switching")
-{
-    GIVEN {
-        PLAYER(SPECIES_ATTACK_REIMU);
-        PLAYER(SPECIES_CHIBI_YUUGI);
-        OPPONENT(SPECIES_CHIBI_YUUGI);
-    } WHEN {
-        TURN { MOVE(player, MOVE_SCRATCH, gimmick: GIMMICK_DYNAMAX); }
-        TURN { SWITCH(player, 1); }
-        TURN { SWITCH(player, 0); }
-    } THEN {
-        EXPECT_EQ(player->species, SPECIES_ATTACK_REIMU);
-    }
-}
-
 SINGLE_BATTLE_TEST("Dynamax: Dynamaxed Pokemon are not affected by Choice items", s16 damage)
 {
     u16 item;

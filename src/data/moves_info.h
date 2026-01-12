@@ -4352,7 +4352,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #else
             .description = COMPOUND_STRING(
                 "A triangular field of energy\n"
-                "is created and launched.");
+                "is created and launched."),
         #endif
         .effect = EFFECT_HIT,
         .power = 80,

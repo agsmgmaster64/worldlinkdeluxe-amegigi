@@ -719,7 +719,7 @@ bool32 TryRunFromBattle(u32 battler)
         gProtectStructs[battler].fleeType = FLEE_ITEM;
         effect++;
     }
-    else if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    else if (GetConfig(CONFIG_GHOSTS_ESCAPE) >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
     {
         effect++;
     }
@@ -2822,7 +2822,27 @@ static enum MoveCanceler CancelerMoveFailure(struct BattleContext *ctx)
             battleScript = BattleScript_ButItFailed;
         break;
     case EFFECT_PROTECT:
-        // TODO
+    case EFFECT_ENDURE:
+        TryResetConsecutiveUseCounter(gBattlerAttacker);
+        if (IsLastMonToMove(ctx->battlerAtk))
+        {
+            battleScript = BattleScript_ButItFailed;
+        }
+        else
+        {
+            u32 protectMethod = GetMoveProtectMethod(ctx->move);
+            bool32 canUseProtectSecondTime = CanUseMoveConsecutively(ctx->battlerAtk);
+            bool32 canUseWideGuard = (GetConfig(CONFIG_WIDE_GUARD) >= GEN_6 && protectMethod == PROTECT_WIDE_GUARD);
+            bool32 canUseQuickGuard = (GetConfig(CONFIG_QUICK_GUARD) >= GEN_6 && protectMethod == PROTECT_QUICK_GUARD);
+
+            if (!canUseProtectSecondTime && !canUseWideGuard && !canUseQuickGuard)
+                battleScript = BattleScript_ButItFailed;
+        }
+        if (battleScript != NULL)
+        {
+            gBattleMons[gBattlerAttacker].volatiles.consecutiveMoveUses = 0;
+            gBattleStruct->battlerState[gBattlerAttacker].stompingTantrumTimer = 2;
+        }
         break;
     case EFFECT_REST:
         if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_SLEEP
@@ -5067,7 +5087,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 break;
             case ABILITY_MAINTENANCE:
                 if ((gBattleMons[battler].status1 & STATUS1_ANY)
-                 && (B_ABILITY_TRIGGER_CHANCE == GEN_4 ? RandomPercentage(RNG_SHED_SKIN, 30) : RandomChance(RNG_SHED_SKIN, 1, 3)))
+                 && (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) == GEN_4 ? RandomPercentage(RNG_SHED_SKIN, 30) : RandomChance(RNG_SHED_SKIN, 1, 3)))
                 {
                 ABILITY_HEAL_MON_STATUS:
                     if (gBattleMons[battler].status1 & (STATUS1_POISON | STATUS1_TOXIC_POISON))
@@ -5499,7 +5519,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             {
                 u32 poison, paralysis, sleep;
 
-                if (B_ABILITY_TRIGGER_CHANCE >= GEN_5)
+                if (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_5)
                 {
                     poison = 9;
                     paralysis = 19;
@@ -5511,7 +5531,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 }
                 sleep = 30;
 
-                i = RandomUniform(RNG_EFFECT_SPORE, 0, B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? 99 : 299);
+                i = RandomUniform(RNG_EFFECT_SPORE, 0, GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? 99 : 299);
                 if (i < poison)
                     goto POISON_POINT;
                 if (i < paralysis)
@@ -5537,7 +5557,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
         }
             break;
         case ABILITY_POISON_BODY:
-            if (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_POISON_POINT, 30) : RandomChance(RNG_POISON_POINT, 1, 3))
+            if (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? RandomPercentage(RNG_POISON_POINT, 30) : RandomChance(RNG_POISON_POINT, 1, 3))
             POISON_POINT:
             {
                 enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
@@ -5557,7 +5577,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             }
             break;
         case ABILITY_STATIC:
-            if (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_STATIC, 30) : RandomChance(RNG_STATIC, 1, 3))
+            if (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? RandomPercentage(RNG_STATIC, 30) : RandomChance(RNG_STATIC, 1, 3))
             STATIC:
             {
                 enum Ability abilityAtk = GetBattlerAbility(gBattlerAttacker);
@@ -5582,7 +5602,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
              && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
              && IsBattlerTurnDamaged(gBattlerTarget)
              && CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
-             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
+             && (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
             {
                 gEffectBattler = gBattlerAttacker;
                 gBattleScripting.battler = gBattlerTarget;
@@ -5597,7 +5617,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
              && !gBattleStruct->unableToUseMove
              && IsBattlerTurnDamaged(gBattlerTarget)
              && IsBattlerAlive(gBattlerTarget)
-             && (B_ABILITY_TRIGGER_CHANCE >= GEN_4 ? RandomPercentage(RNG_CUTE_CHARM, 30) : RandomChance(RNG_CUTE_CHARM, 1, 3))
+             && (GetConfig(CONFIG_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? RandomPercentage(RNG_CUTE_CHARM, 30) : RandomChance(RNG_CUTE_CHARM, 1, 3))
              && !(gBattleMons[gBattlerAttacker].volatiles.infatuation)
              && AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget)
              && !IsAbilityAndRecord(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), ABILITY_OBLIVIOUS)
@@ -6447,7 +6467,7 @@ u32 IsAbilityOnFieldExcept(u32 battler, enum Ability ability)
 
 u32 IsAbilityPreventingEscape(u32 battler)
 {
-    if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    if (GetConfig(CONFIG_GHOSTS_ESCAPE) >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
         return 0;
 
     bool32 isBattlerGrounded = IsBattlerGrounded(battler, GetBattlerAbility(battler), GetBattlerHoldEffect(battler));
@@ -6475,7 +6495,7 @@ bool32 CanBattlerEscape(u32 battler)
 {
     if (gBattleStruct->battlerState[battler].commanderSpecies != SPECIES_NONE)
         return FALSE;
-    else if (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
+    else if (GetConfig(CONFIG_GHOSTS_ESCAPE) >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GHOST))
         return TRUE;
     else if (gBattleMons[battler].volatiles.escapePrevention)
         return FALSE;
@@ -9256,14 +9276,14 @@ static inline s32 DoFutureSightAttackDamageCalcVars(struct BattleContext *ctx)
 
     struct Pokemon *party = GetBattlerParty(battlerAtk);
     struct Pokemon *partyMon = &party[gBattleStruct->futureSight[battlerDef].partyIndex];
-    u32 partyMonLevel = GetMonData(partyMon, MON_DATA_LEVEL, NULL);
-    u32 partyMonSpecies = GetMonData(partyMon, MON_DATA_SPECIES, NULL);
+    u32 partyMonLevel = GetMonData(partyMon, MON_DATA_LEVEL);
+    u32 partyMonSpecies = GetMonData(partyMon, MON_DATA_SPECIES);
     gBattleMovePower = GetMovePower(move);
 
     if (IsBattleMovePhysical(move))
-        userFinalAttack = GetMonData(partyMon, MON_DATA_ATK, NULL);
+        userFinalAttack = GetMonData(partyMon, MON_DATA_ATK);
     else
-        userFinalAttack = GetMonData(partyMon, MON_DATA_SPATK, NULL);
+        userFinalAttack = GetMonData(partyMon, MON_DATA_SPATK);
 
     targetFinalDefense = CalcDefenseStat(ctx);
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, partyMonLevel, targetFinalDefense);
@@ -10202,7 +10222,7 @@ bool32 TryRevertPartyMonFormChange(u32 partyIndex)
      bool32 changedForm = FALSE;
 
     // Appeared in battle and didn't faint
-    if (gBattleStruct->partyState[B_SIDE_PLAYER][partyIndex].sentOut && GetMonData(&gPlayerParty[partyIndex], MON_DATA_HP, NULL) != 0)
+    if (gBattleStruct->partyState[B_SIDE_PLAYER][partyIndex].sentOut && GetMonData(&gPlayerParty[partyIndex], MON_DATA_HP) != 0)
         changedForm = TryFormChange(partyIndex, B_SIDE_PLAYER, FORM_CHANGE_END_BATTLE_ENVIRONMENT);
 
     if (!changedForm)
@@ -11167,7 +11187,7 @@ bool32 MoveIsAffectedBySheerForce(enum Move move)
 bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES);
-    u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
+    u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
 
     bool8 hasLevitateAbility = GetSpeciesAbility(species, monAbilityNum) == ABILITY_LEVITATE;
     bool8 isFlyingType = GetSpeciesType(species, 0) == TYPE_FLYING || GetSpeciesType(species, 1) == TYPE_FLYING;
@@ -12449,3 +12469,51 @@ bool32 ChangeOrderTargetAfterAttacker(void)
     }
     return TRUE;
 }
+
+static const u16 sProtectSuccessRates[] =
+{
+    USHRT_MAX,
+    USHRT_MAX / 2,
+    USHRT_MAX / 4,
+    USHRT_MAX / 8
+};
+
+static const u16 sGen5ProtectSuccessRates[] =
+{
+    USHRT_MAX,
+    USHRT_MAX / 3,
+    USHRT_MAX / 9,
+    USHRT_MAX / 27
+};
+
+bool32 CanUseMoveConsecutively(u32 battler)
+{
+    u32 moveUses = gBattleMons[battler].volatiles.consecutiveMoveUses;
+    if (moveUses >= ARRAY_COUNT(sProtectSuccessRates))
+        moveUses = ARRAY_COUNT(sProtectSuccessRates) - 1;
+
+    u32 successRate = sGen5ProtectSuccessRates[moveUses];
+    if (B_PROTECT_FAILURE_RATE < GEN_5)
+        successRate = sProtectSuccessRates[moveUses];
+
+    return successRate >= RandomUniform(RNG_PROTECT_FAIL, 0, USHRT_MAX);
+}
+
+// Used for Protect, Endure and Ally switch
+void TryResetConsecutiveUseCounter(u32 battler)
+{
+    u32 lastMove = gLastResultingMoves[battler];
+    if (lastMove == MOVE_UNAVAILABLE)
+    {
+        gBattleMons[battler].volatiles.consecutiveMoveUses = 0;
+        return;
+    }
+
+    enum BattleMoveEffects lastEffect = GetMoveEffect(lastMove);
+    if (!gBattleMoveEffects[lastEffect].usesProtectCounter)
+    {
+        if (GetConfig(CONFIG_ALLY_SWITCH_FAIL_CHANCE) < GEN_9 || lastEffect != EFFECT_ALLY_SWITCH)
+            gBattleMons[battler].volatiles.consecutiveMoveUses = 0;
+    }
+}
+

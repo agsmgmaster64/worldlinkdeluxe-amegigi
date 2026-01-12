@@ -91,6 +91,22 @@ static const u8 sMewtwoniteDesc[]     = _("This stone enables\n"
                                           "Mewtwo to Mega\n"
                                           "Evolve in battle.");
 
+static const u8 sRaichuniteDesc[]     = _("This stone enables\n"
+                                          "Raichu to Mega\n"
+                                          "Evolve in battle.");
+
+static const u8 sAbsoliteDesc[]       = _("This stone enables\n"
+                                          "Absol to Mega\n"
+                                          "Evolve in battle.");
+
+static const u8 sGarchompiteDesc[]    = _("This stone enables\n"
+                                          "Garchomp to Mega\n"
+                                          "Evolve in battle.");
+
+static const u8 sLucarioniteDesc[]    = _("This stone enables\n"
+                                          "Lucario to Mega\n"
+                                          "Evolve in battle.");
+
 static const u8 sSeaIncenseDesc[]     = _("A hold item that\n"
                                           "slightly boosts\n"
                                           "Water-type moves.");
@@ -5673,10 +5689,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Absolite"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Absol to Mega\n"
-            "Evolve in battle."),
+        .description = sAbsoliteDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
@@ -5799,10 +5812,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Garchompite"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Garchomp to Mega\n"
-            "Evolve in battle."),
+        .description = sGarchompiteDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
@@ -5817,10 +5827,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Lucarionite"),
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = COMPOUND_STRING(
-            "This stone enables\n"
-            "Lucario to Mega\n"
-            "Evolve in battle."),
+        .description = sLucarioniteDesc,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MEGA_STONE,
         .type = ITEM_USE_BAG_MENU,
@@ -6851,7 +6858,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Sea Incense"),
         .price = (I_PRICE >= GEN_7) ? 2000 : 9600,
         .holdEffect = HOLD_EFFECT_TYPE_POWER,
-        .holdEffectParam = 20,
+        .holdEffectParam = I_TYPE_BOOST_POWER >= GEN_4 ? 20 : 5,
         .description = sSeaIncenseDesc,
         .pocket = POCKET_BATTLE_ITEMS,
         .sortType = ITEM_TYPE_INCENSE,

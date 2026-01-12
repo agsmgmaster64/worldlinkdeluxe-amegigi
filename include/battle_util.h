@@ -470,5 +470,7 @@ void ResetStartingStatuses(void);
 bool32 IsUsableWhileAsleepEffect(enum BattleMoveEffects effect);
 void SetWrapTurns(u32 battler, enum HoldEffect holdEffect);
 bool32 ChangeOrderTargetAfterAttacker(void);
+bool32 CanUseMoveConsecutively(u32 battler);
+void TryResetConsecutiveUseCounter(u32 battler);
 
 #endif // GUARD_BATTLE_UTIL_H

@@ -35,6 +35,5 @@ SINGLE_BATTLE_TEST("Shaymin-Sky reverts to Shaymin-Land when frozen or frostbitt
             EXPECT_EQ(player->species, SPECIES_ADVENT_YUKARI);
         else
             EXPECT_EQ(player->species, SPECIES_SHAYMIN_SKY);
-
     }
 }
