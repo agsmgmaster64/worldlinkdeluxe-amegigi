@@ -470,14 +470,14 @@
     {
       "type": "secret_base",
       "x": 7,
-      "y": 20,
+      "y": 19,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE2_4"
     },
     {
       "type": "secret_base",
       "x": 8,
-      "y": 20,
+      "y": 19,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE3_3"
     },

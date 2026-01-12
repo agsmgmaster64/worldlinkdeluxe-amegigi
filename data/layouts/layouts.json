@@ -124,7 +124,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 22,
+      "width": 26,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
@@ -197,7 +197,7 @@
       "id": "LAYOUT_ROUTE101",
       "name": "Route101_Layout",
       "width": 24,
-      "height": 20,
+      "height": 32,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
@@ -4724,7 +4724,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/SafariZone_Northeast/border.bin",
       "blockdata_filepath": "data/layouts/SafariZone_Northeast/map.bin"
@@ -4736,7 +4736,7 @@
       "height": 40,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_RG_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/SafariZone_Southeast/border.bin",
       "blockdata_filepath": "data/layouts/SafariZone_Southeast/map.bin"

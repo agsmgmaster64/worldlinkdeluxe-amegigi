@@ -80,6 +80,10 @@ static const u16 sCutGrassMetatileMapping[][2] = {
         [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
     },
     {
+        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrassInner,
+        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
+    },
+    {
         [CUT_GRASS_BOTTOM] = METATILE_Fortree_SecretBase_LongGrass_BottomLeft,
         [CUT_GRASS_TOP]    = METATILE_Fortree_SecretBase_LongGrass_TopLeft
     },

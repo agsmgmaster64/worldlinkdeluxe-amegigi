@@ -13,7 +13,7 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_GYM",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_PETALBURG_GYM_LARRY",
@@ -143,8 +143,8 @@
       "flag": "FLAG_HIDE_PETALBURG_GYM_GREETER"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_PETALBURG_GYM_WALLY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 4,
       "y": 111,
@@ -158,8 +158,8 @@
       "flag": "FLAG_HIDE_PETALBURG_GYM_WALLY"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_PETALBURG_GYM_WALLYS_DAD",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 1,
       "y": 7,
@@ -441,9 +441,7 @@
       "dest_warp_id": "33"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

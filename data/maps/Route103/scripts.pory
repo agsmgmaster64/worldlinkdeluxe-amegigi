@@ -100,6 +100,11 @@ script Route103_EventScript_RalseiEnd {
 	end
 }
 
+script Route103_EventScript_RouteSign {
+	msgbox(format("Ocean Split\n{DOWN_ARROW} Oldale Town"), MSGBOX_SIGN)
+	end
+}
+
 raw `
 Route103_Movement_RivalExitFacingNorth1:
 	walk_left
@@ -146,10 +151,6 @@ Route103_EventScript_Boy::
 
 Route103_EventScript_Man::
 	msgbox Route103_Text_ShortcutToOldale, MSGBOX_NPC
-	end
-
-Route103_EventScript_RouteSign::
-	msgbox Route103_Text_RouteSign, MSGBOX_SIGN
 	end
 
 Route103_EventScript_Daisy::
@@ -247,9 +248,5 @@ Route103_Text_ShortcutToOldale:
 	.string "If you cross the sea from here,\n"
 	.string "it'll be a shortcut to Oldale Town.\p"
 	.string "Fufufu, that's useful, isn't it?$"
-
-Route103_Text_RouteSign:
-	.string "Route 103\n"
-	.string "{DOWN_ARROW} Oldale Town$"
 
 `

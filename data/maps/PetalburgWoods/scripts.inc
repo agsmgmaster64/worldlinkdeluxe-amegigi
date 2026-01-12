@@ -701,7 +701,7 @@ PetalburgWoods_Text_IWasGoingToAmbushYou:
 # 351 "data/maps/PetalburgWoods/scripts.pory"
 	.string "I was going to ambush you, but you\n"
 # 352 "data/maps/PetalburgWoods/scripts.pory"
-	.string "had to dawdle in Petalburg Woods\l"
+	.string "had to dawdle in Fairylake Woods\l"
 # 353 "data/maps/PetalburgWoods/scripts.pory"
 	.string "forever, didn't you?\p"
 # 354 "data/maps/PetalburgWoods/scripts.pory"

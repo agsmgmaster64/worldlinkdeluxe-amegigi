@@ -467,6 +467,7 @@
 #define METATILE_RG_General_Grass_TreeLeft            0x00E
 #define METATILE_RG_General_Grass_TreeRight           0x00F
 #define METATILE_RG_General_LongGrass                 0x02C
+#define METATILE_RG_General_LongGrassInner            0x02D
 #define METATILE_RG_General_LongGrass_Root            0x012
 #define METATILE_RG_General_LongGrass_Root_TreeLeft   0x258
 #define METATILE_RG_General_LongGrass_Root_TreeRight  0x259

@@ -638,15 +638,15 @@ PetalburgCity_Text_AreYouRookieTrainer:
 # 380 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_Text_ThisIsPetalburgGym:
 # 381 "data/maps/PetalburgCity/scripts.pory"
-	.string "See? This is PETALBURG CITY's GYM.$"
+	.string "See? This is Treepeak City's Gym.$"
 # 382 "data/maps/PetalburgCity/scripts.pory"
 
 # 383 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_Text_ThisIsGymSign:
 # 384 "data/maps/PetalburgCity/scripts.pory"
-	.string "This is the GYM's sign. Look for it\n"
+	.string "This is the Gym's sign. Look for it\n"
 # 385 "data/maps/PetalburgCity/scripts.pory"
-	.string "whenever you're looking for a GYM.$"
+	.string "whenever you're looking for a Gym.$"
 # 386 "data/maps/PetalburgCity/scripts.pory"
 
 # 387 "data/maps/PetalburgCity/scripts.pory"
@@ -678,9 +678,9 @@ PetalburgCity_Text_FullPartyExplanation:
 # 400 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_Text_GymSign:
 # 401 "data/maps/PetalburgCity/scripts.pory"
-	.string "PETALBURG CITY POKéMON GYM\n"
+	.string "Treepeak City Puppet Gym\n"
 # 402 "data/maps/PetalburgCity/scripts.pory"
-	.string "LEADER: NORMAN\l"
+	.string "Leader: Larry\l"
 # 403 "data/maps/PetalburgCity/scripts.pory"
 	.string "“A man in pursuit of power!”$"
 # 404 "data/maps/PetalburgCity/scripts.pory"
@@ -688,7 +688,7 @@ PetalburgCity_Text_GymSign:
 # 405 "data/maps/PetalburgCity/scripts.pory"
 PetalburgCity_Text_CitySign:
 # 406 "data/maps/PetalburgCity/scripts.pory"
-	.string "PETALBURG CITY\n"
+	.string "Treepeak City\n"
 # 407 "data/maps/PetalburgCity/scripts.pory"
 	.string "“Where people mingle with nature.”$"
 # 408 "data/maps/PetalburgCity/scripts.pory"

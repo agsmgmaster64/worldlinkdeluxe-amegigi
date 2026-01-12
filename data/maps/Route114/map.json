@@ -56,7 +56,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_2",
       "x": 15,
       "y": 72,
       "elevation": 7,
@@ -70,7 +70,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER_2",
       "x": 30,
       "y": 80,
       "elevation": 5,
@@ -141,8 +141,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 7,
-      "y": 15,
+      "x": 8,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,

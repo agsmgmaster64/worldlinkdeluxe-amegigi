@@ -34,7 +34,7 @@
     },
     {
       "id": "MAPSEC_FALLARBOR_TOWN",
-      "name": "FALLARBOR TOWN",
+      "name": "Winterburr Town",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -58,7 +58,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_CITY",
-      "name": "Petalburg City",
+      "name": "Treepeak City",
       "x": 1,
       "y": 9,
       "width": 1,
@@ -146,7 +146,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_103",
-      "name": "Route 103",
+      "name": "Ocean Split",
       "x": 4,
       "y": 8,
       "width": 4,
@@ -154,7 +154,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_104",
-      "name": "Route 104",
+      "name": "Nature Path",
       "x": 0,
       "y": 7,
       "width": 1,
@@ -186,7 +186,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_108",
-      "name": "Route 108",
+      "name": "Drifted Rocks",
       "x": 6,
       "y": 14,
       "width": 2,
@@ -194,7 +194,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_109",
-      "name": "Route 109",
+      "name": "Sunny Waters",
       "x": 8,
       "y": 12,
       "width": 1,
@@ -210,7 +210,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_111",
-      "name": "Route 111",
+      "name": "Dusty Sands",
       "x": 8,
       "y": 0,
       "width": 1,
@@ -218,7 +218,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_112",
-      "name": "Route 112",
+      "name": "Heated Cliffs",
       "x": 6,
       "y": 3,
       "width": 2,
@@ -226,7 +226,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_113",
-      "name": "Route 113",
+      "name": "Frosted Path",
       "x": 4,
       "y": 0,
       "width": 4,
@@ -234,7 +234,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_114",
-      "name": "Route 114",
+      "name": "Meteor Frost",
       "x": 1,
       "y": 0,
       "width": 2,
@@ -242,7 +242,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_115",
-      "name": "Route 115",
+      "name": "Outer Rocks",
       "x": 0,
       "y": 2,
       "width": 1,
@@ -474,7 +474,7 @@
     },
     {
       "id": "MAPSEC_PETALBURG_WOODS",
-      "name": "Petalburg Woods",
+      "name": "Fairylake Woods",
       "x": 0,
       "y": 8,
       "width": 1,
