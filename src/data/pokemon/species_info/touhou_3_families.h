@@ -572,7 +572,8 @@ const struct SpeciesInfo gSpeciesInfoTouhou3[] =
         .categoryName = _("DNA"),
         .height = 17,
         .weight = 608,
-        .description = gDeoxysNormalPokedexText,
+        .description = COMPOUND_STRING(
+            "."),
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 290,
