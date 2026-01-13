@@ -72,16 +72,28 @@ static const u16 sCutGrassMetatileMapping[][2] = {
         [CUT_GRASS_TOP]    = METATILE_RG_General_Grass_TreeRight
     },
     {
-        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass_Root,
-        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
-    },
-    {
         [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass,
         [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
     },
     {
         [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrassInner,
         [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
+    },
+    {
+        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass_Root,
+        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
+    },
+    {
+        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass_Root_ShortTree,
+        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass_ShortTree
+    },
+    {
+        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass_Root_TreeLeft,
+        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass_TreeLeft
+    },
+    {
+        [CUT_GRASS_BOTTOM] = METATILE_RG_General_LongGrass_Root_TreeRight,
+        [CUT_GRASS_TOP]    = METATILE_RG_General_Grass_TreeRight
     },
     {
         [CUT_GRASS_BOTTOM] = METATILE_Fortree_SecretBase_LongGrass_BottomLeft,
@@ -106,10 +118,6 @@ static const u16 sCutGrassMetatileMapping[][2] = {
     {
         [CUT_GRASS_BOTTOM] = METATILE_Lavaridge_TallGrass_Bamboo,
         [CUT_GRASS_TOP]    = METATILE_RG_General_Grass
-    },
-    {
-        [CUT_GRASS_BOTTOM] = METATILE_General_TallGrass_TreeUp,
-        [CUT_GRASS_TOP]    = METATILE_General_Grass_TreeUp
     },
     {
         [CUT_GRASS_BOTTOM] = 0xFFFF,

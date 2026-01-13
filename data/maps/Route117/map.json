@@ -21,7 +21,7 @@
     },
     {
       "map": "MAP_MAUVILLE_CITY",
-      "offset": -7,
+      "offset": -8,
       "direction": "right"
     }
   ],
@@ -58,7 +58,7 @@
       "local_id": "LOCALID_DAYCARE_MAN",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 47,
+      "x": 45,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -282,7 +282,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 43,
+      "x": 42,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -296,7 +296,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 42,
+      "x": 41,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -367,7 +367,7 @@
       "local_id": "LOCALID_DAYCARE_MON_0",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 47,
+      "x": 52,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -382,7 +382,7 @@
       "local_id": "LOCALID_DAYCARE_MON_1",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
-      "x": 49,
+      "x": 54,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -396,7 +396,7 @@
   ],
   "warp_events": [
     {
-      "x": 51,
+      "x": 49,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE117_POKEMON_DAY_CARE",
@@ -423,7 +423,7 @@
     },
     {
       "type": "sign",
-      "x": 49,
+      "x": 47,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

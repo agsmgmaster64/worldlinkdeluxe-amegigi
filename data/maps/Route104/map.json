@@ -499,7 +499,7 @@
       "local_id": "LOCALID_ROUTE104_RIVAL",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 17,
+      "x": 16,
       "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -513,7 +513,7 @@
   ],
   "warp_events": [
     {
-      "x": 17,
+      "x": 16,
       "y": 50,
       "elevation": 0,
       "dest_map": "MAP_ROUTE104_MR_BRINEYS_HOUSE",
@@ -569,17 +569,7 @@
       "dest_warp_id": "5"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 51,
-      "elevation": 3,
-      "var": "VAR_ROUTE104_STATE",
-      "var_value": "1",
-      "script": "Route104_EventScript_RivalTrigger"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

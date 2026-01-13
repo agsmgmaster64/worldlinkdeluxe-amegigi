@@ -469,12 +469,9 @@
 #define METATILE_RG_General_LongGrass                 0x02C
 #define METATILE_RG_General_LongGrassInner            0x02D
 #define METATILE_RG_General_LongGrass_Root            0x012
+#define METATILE_RG_General_LongGrass_Root_ShortTree  0x020
 #define METATILE_RG_General_LongGrass_Root_TreeLeft   0x258
 #define METATILE_RG_General_LongGrass_Root_TreeRight  0x259
-#define METATILE_RG_General_MuddySlope_Frame0         0x22B
-#define METATILE_RG_General_MuddySlope_Frame1         0x22C
-#define METATILE_RG_General_MuddySlope_Frame2         0x22D
-#define METATILE_RG_General_MuddySlope_Frame3         0x22E
 #define METATILE_RG_General_RedCaveIndent             0x18B
 #define METATILE_RG_General_RedCaveOpen               0x18C
 #define METATILE_RG_General_SlidingDoubleDoor         0x15B
@@ -798,6 +795,7 @@
 #define METATILE_Shop_Laptop2_Normal  0x2A5
 
 // gTileset_Slateport
+#define METATILE_Slateport_BlueDoor         0x8FC
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
