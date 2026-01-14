@@ -1046,6 +1046,7 @@ extern const u32 gItemIcon_AssistBall[];
 extern const u16 gItemIconPalette_AssistBall[];
 extern const u32 gItemIcon_DittoPowder[];
 extern const u32 gItemIcon_Bone[];
+extern const u16 gItemIconPalette_Bone[];
 extern const u32 gItemIcon_Sand[];
 extern const u16 gItemIconPalette_QuickPowder[];
 extern const u32 gItemIcon_YataMirror[];

@@ -15281,7 +15281,7 @@ static bool32 IsRototillerAffected(u32 battler, u32 move)
         return FALSE;
     if (!IsBattlerGrounded(battler, GetBattlerAbility(battler), GetBattlerHoldEffect(battler)))
         return FALSE;   // Only grounded battlers affected
-    if (!IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
+    if (!IS_BATTLER_OF_TYPE(battler, TYPE_NATURE))
         return FALSE;   // Only grass types affected
     return TRUE;
 }

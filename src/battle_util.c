@@ -4068,7 +4068,7 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
     switch (ctx->abilityDef)
     {
     case ABILITY_VOLT_ABSORB:
-        if (ctx->moveType == TYPE_ELECTRIC)
+        if (ctx->moveType == TYPE_WIND)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
         break;
     case ABILITY_WATER_ABSORB:
@@ -4076,16 +4076,24 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
         if (ctx->moveType == TYPE_WATER)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
         break;
-    case ABILITY_EARTH_EATER:
-        if (ctx->moveType == TYPE_GROUND)
+    case ABILITY_FLAME_ABSORB:
+        if (ctx->moveType == TYPE_FIRE)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
         break;
+    case ABILITY_FLORA_ABSORB:
+        if (ctx->moveType == TYPE_NATURE)
+            battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
+        break;
+    //case ABILITY_EARTH_EATER:
+        //if (ctx->moveType == TYPE_EARTH)
+            //battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
+        //break;
     case ABILITY_MOTOR_DRIVE:
-        if (ctx->moveType == TYPE_ELECTRIC)
+        if (ctx->moveType == TYPE_WIND)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPEED, 1);
         break;
     case ABILITY_LIGHTNING_ROD:
-        if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && ctx->moveType == TYPE_ELECTRIC)
+        if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && ctx->moveType == TYPE_WIND)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPATK, 1);
         break;
     case ABILITY_STORM_DRAIN:
@@ -4093,12 +4101,8 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPATK, 1);
         break;
     case ABILITY_SAP_SIPPER:
-        if (ctx->moveType == TYPE_GRASS)
+        if (ctx->moveType == TYPE_NATURE)
             battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_ATK, 1);
-        break;
-    case ABILITY_WELL_BAKED_BODY:
-        if (ctx->moveType == TYPE_FIRE)
-            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_DEF, 2);
         break;
     case ABILITY_WIND_RIDER:
         if (IsWindMove(ctx->move))
@@ -4106,7 +4110,7 @@ bool32 CanAbilityAbsorbMove(struct BattleContext *ctx)
         break;
     case ABILITY_FLASH_FIRE:
         if (ctx->moveType == TYPE_FIRE && (B_FLASH_FIRE_FROZEN >= GEN_5 || !(gBattleMons[ctx->battlerDef].status1 & STATUS1_FREEZE)))
-            battleScript = AbsorbedByFlashFire(ctx->battlerDef);
+            battleScript = AbsorbedByStatIncreaseAbility(ctx->battlerDef, ctx->abilityDef, STAT_SPATK, 1);
         break;
     case ABILITY_SOUNDPROOF:
         if (IsSoundMove(ctx->move))
@@ -12684,6 +12688,7 @@ static enum Move GetDemonBookMove(struct BattleContext *ctx)
     dmgCtx.updateFlags = FALSE;
     dmgCtx.isCrit = FALSE;
     dmgCtx.fixedBasePower = 0;
+    dmgCtx.runScript = FALSE;
 
     // Try to look for a move that deals the most damage with almost everything in mind
     for (i = 0; i < ARRAY_COUNT(sDemonBookMoves); i++)
@@ -12692,7 +12697,7 @@ static enum Move GetDemonBookMove(struct BattleContext *ctx)
         dmgCtx.moveType = CheckDynamicMoveType(GetBattlerMon(dmgCtx.battlerAtk), dmgCtx.move, dmgCtx.battlerAtk, MON_IN_BATTLE);
         calcDamage = CalculateMoveDamage(&dmgCtx);
 
-        if (CanAbilityAbsorbMove(dmgCtx.battlerAtk, dmgCtx.battlerDef, dmgCtx.abilityDef, dmgCtx.move, dmgCtx.moveType, CHECK_TRIGGER))
+        if (CanAbilityAbsorbMove(&dmgCtx))
             calcDamage = 0;
 
         if (calcDamage > highestDamage)
@@ -12715,9 +12720,6 @@ void RemoveAbilityFlags(u32 battler)
 
     switch (GetBattlerAbility(battler))
     {
-    case ABILITY_FLASH_FIRE:
-        gBattleMons[battler].volatiles.flashFireBoosted = FALSE;
-        break;
     case ABILITY_VESSEL_OF_RUIN:
         gBattleMons[battler].volatiles.vesselOfRuin = FALSE;
         break;

@@ -846,7 +846,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_PREDATOR_STALK] =
     {
-        .battleScript = BattleScript_EffectTwoTurnsAttack,
+        .battleScript = BattleScript_EffectHit,
         .battleTvScore = 3,
         .twoTurnEffect = TRUE,
         .semiInvulnerableEffect = TRUE,
@@ -2233,7 +2233,7 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_GROUP_PRANK] =
     {
-        .battleScript = BattleScript_EffectTwoTurnsAttack,
+        .battleScript = BattleScript_EffectHit,
         .battleTvScore = 0, // TODO: Assign points
         .twoTurnEffect = TRUE,
     },
