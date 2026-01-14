@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_RECEPTIONIST",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "x": 14,
       "y": 2,
@@ -31,8 +31,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_LINK_RECEPTIONIST",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TEALA",
       "x": 15,
       "y": 2,
@@ -46,8 +46,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_2_LEADER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 26,
       "y": 9,
@@ -61,8 +61,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_ARTIST",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 9,
       "y": 1,
@@ -132,8 +132,8 @@
       "flag": "FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_3_PARTICIPANT_1",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 23,
       "y": 8,
@@ -147,8 +147,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_2_PARTICIPANT",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 28,
       "y": 9,
@@ -162,8 +162,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_LINK_ARTIST",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 21,
       "y": 1,
@@ -219,8 +219,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_3_LEADER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 22,
       "y": 9,
@@ -234,8 +234,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_BLEND_MASTER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 26,
       "y": 5,
@@ -249,8 +249,8 @@
       "flag": "FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_3_PARTICIPANT_2",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 24,
       "y": 9,
@@ -406,9 +406,7 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

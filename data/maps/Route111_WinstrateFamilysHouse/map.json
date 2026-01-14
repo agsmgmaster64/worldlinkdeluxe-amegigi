@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_WINSTRATE_HOUSE_VIVI",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 7,
       "y": 5,
@@ -31,8 +31,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_WINSTRATE_HOUSE_VICTOR",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 4,
       "y": 5,
@@ -46,8 +46,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_WINSTRATE_HOUSE_VICTORIA",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 7,
       "y": 4,
@@ -61,8 +61,8 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "local_id": "LOCALID_WINSTRATE_HOUSE_VICKY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 4,
       "y": 4,
@@ -78,24 +78,20 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 5,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE111",
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE111",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

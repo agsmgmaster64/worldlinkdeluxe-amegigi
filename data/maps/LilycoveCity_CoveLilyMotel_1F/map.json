@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_MOTEL_OWNER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 10,
       "y": 3,
@@ -65,7 +65,5 @@
       "script": "LilycoveCity_CoveLilyMotel_1F_EventScript_BlockingTV"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

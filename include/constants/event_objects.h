@@ -269,12 +269,17 @@
 #define OBJ_EVENT_GFX_SCHOOL_KID_F               262
 #define OBJ_EVENT_GFX_RICH_BOY_2                 263
 #define OBJ_EVENT_GFX_LADY                       264
-#define OBJ_EVENT_GFX_APRICORN_TREE              265
+#define OBJ_EVENT_GFX_PSYCHIC_F                  265
+#define OBJ_EVENT_GFX_BLACK_BELT_2               266
+#define OBJ_EVENT_GFX_AROMA_LADY                 267
+#define OBJ_EVENT_GFX_BATTLE_GIRL                268
+#define OBJ_EVENT_GFX_BIRD_KEEPER                269
+#define OBJ_EVENT_GFX_APRICORN_TREE              270
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        266
+#define NUM_OBJ_EVENT_GFX                        271
 
 
 // These are dynamic object gfx ids.
@@ -421,7 +426,12 @@
 #define OBJ_EVENT_PAL_TAG_SCHOOL_KID_F            0x1131
 #define OBJ_EVENT_PAL_TAG_RICH_BOY                0x1132
 #define OBJ_EVENT_PAL_TAG_LADY                    0x1133
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1134
+#define OBJ_EVENT_PAL_TAG_PSYCHIC_F               0x1134
+#define OBJ_EVENT_PAL_TAG_BLACK_BELT              0x1135
+#define OBJ_EVENT_PAL_TAG_AROMA_LADY              0x1136
+#define OBJ_EVENT_PAL_TAG_BATTLE_GIRL             0x1137
+#define OBJ_EVENT_PAL_TAG_BIRD_KEEPER             0x1138
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x114F
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

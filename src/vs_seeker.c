@@ -630,95 +630,13 @@ static u8 GetRandomFaceDirectionMovementType()
 }
 
 #if FREE_MATCH_CALL == FALSE
-static bool32 IsRegularLandTrainer(u8 graphicsId)
-{
-    u32 i;
-    u16 regularTrainersOnLand[] =
-    {
-        OBJ_EVENT_GFX_BUG_CATCHER,
-        OBJ_EVENT_GFX_CAMPER,
-        OBJ_EVENT_GFX_HIKER,
-        OBJ_EVENT_GFX_LASS,
-        OBJ_EVENT_GFX_LITTLE_GIRL,
-        OBJ_EVENT_GFX_SAILOR,
-        OBJ_EVENT_GFX_SUNFLOWER_FAIRY,
-        OBJ_EVENT_GFX_TUBER_F,
-        OBJ_EVENT_GFX_WOMAN_1,
-        OBJ_EVENT_GFX_WOMAN_2,
-        OBJ_EVENT_GFX_YOUNGSTER
-    };
-
-    for (i = 0; i < ARRAY_COUNT(regularTrainersOnLand); i++)
-    {
-        if (graphicsId == regularTrainersOnLand[i])
-            return TRUE;
-    }
-    return FALSE;
-}
-
-static bool32 IsRegularWaterTrainer(u8 graphicsId)
-{
-    u32 i;
-    u16 regularTrainersInWater[] =
-    {
-        OBJ_EVENT_GFX_SWIMMER_F,
-        OBJ_EVENT_GFX_SWIMMER_M,
-        OBJ_EVENT_GFX_TUBER_M_SWIMMING
-    };
-
-    for (i = 0; i < ARRAY_COUNT(regularTrainersInWater); i++)
-    {
-        if (graphicsId == regularTrainersInWater[i])
-            return TRUE;
-    }
-    return FALSE;
-}
-
-static bool32 HasRaiseHandSprite(u8 graphicsId)
-{
-    u32 i;
-    u16 rematchSpriteTrainers[] =
-    {
-        OBJ_EVENT_GFX_BUG_CATCHER,
-        OBJ_EVENT_GFX_CAMPER,
-        OBJ_EVENT_GFX_EXPERT_M,
-        OBJ_EVENT_GFX_FISHERMAN,
-        OBJ_EVENT_GFX_GENTLEMAN,
-        OBJ_EVENT_GFX_HIKER,
-        OBJ_EVENT_GFX_LASS,
-        OBJ_EVENT_GFX_LITTLE_GIRL,
-        OBJ_EVENT_GFX_SAILOR,
-        OBJ_EVENT_GFX_SUNFLOWER_FAIRY,
-        OBJ_EVENT_GFX_SWIMMER_F,
-        OBJ_EVENT_GFX_SWIMMER_M,
-        OBJ_EVENT_GFX_TUBER_F,
-        OBJ_EVENT_GFX_TUBER_M,
-        OBJ_EVENT_GFX_TUBER_M_SWIMMING,
-        OBJ_EVENT_GFX_WOMAN_1,
-        OBJ_EVENT_GFX_WOMAN_2,
-        OBJ_EVENT_GFX_YOUNGSTER
-    };
-
-    for (i = 0; i < ARRAY_COUNT(rematchSpriteTrainers); i++)
-    {
-        if (graphicsId == rematchSpriteTrainers[i])
-            return TRUE;
-    }
-    return FALSE;
-}
-
 static u8 GetResponseMovementTypeFromTrainerGraphicsId(u8 graphicsId)
 {
-    if (!HasRaiseHandSprite(graphicsId))
+    const struct ObjectEventGraphicsInfo *graphicsInfo;
+    graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
+    if (graphicsInfo->rematchMovement == 0) // don't create a shadow at all
         return MOVEMENT_TYPE_ROTATE_CLOCKWISE;
-
-    if (IsRegularLandTrainer(graphicsId))
-        return MOVEMENT_TYPE_RAISE_HAND_AND_JUMP;
-
-    if (IsRegularWaterTrainer(graphicsId))
-        return MOVEMENT_TYPE_RAISE_HAND_AND_SWIM;
-
-    return MOVEMENT_TYPE_FACE_DOWN;
+    return graphicsInfo->rematchMovement;
 }
 #endif //FREE_MATCH_CALL
 

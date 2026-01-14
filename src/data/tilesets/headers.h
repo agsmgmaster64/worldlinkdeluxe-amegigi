@@ -1051,6 +1051,17 @@ const struct Tileset gTileset_RG_DepartmentStore =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_RG_RestaurantHotel =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RG_RestaurantHotel,
+    .palettes = gTilesetPalettes_RG_RestaurantHotel,
+    .metatiles = gMetatiles_RG_RestaurantHotel,
+    .metatileAttributes = gMetatileAttributes_RG_RestaurantHotel,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_RG_IslandHarbor =
 {
     .isCompressed = TRUE,

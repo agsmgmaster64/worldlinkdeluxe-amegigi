@@ -56,7 +56,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_2",
       "x": 27,
       "y": 53,
       "elevation": 3,
@@ -112,7 +112,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
       "x": 15,
       "y": 50,
       "elevation": 3,
@@ -126,7 +126,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_2",
       "x": 19,
       "y": 15,
       "elevation": 3,
@@ -140,7 +140,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
       "x": 24,
       "y": 62,
       "elevation": 3,
@@ -280,7 +280,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
       "x": 15,
       "y": 7,
       "elevation": 3,
@@ -294,7 +294,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
       "x": 10,
       "y": 7,
       "elevation": 3,
@@ -308,7 +308,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
       "x": 28,
       "y": 62,
       "elevation": 3,

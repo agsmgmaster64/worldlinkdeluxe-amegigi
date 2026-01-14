@@ -321,7 +321,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Desert",
       "border_filepath": "data/layouts/Route111/border.bin",
       "blockdata_filepath": "data/layouts/Route111/map.bin"
     },
@@ -940,12 +940,12 @@
     {
       "id": "LAYOUT_PETALBURG_CITY_GYM",
       "name": "PetalburgCity_Gym_Layout",
-      "width": 9,
-      "height": 113,
+      "width": 16,
+      "height": 25,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_RG_PewterGym",
+      "secondary_tileset": "gTileset_RG_RestaurantHotel",
       "border_filepath": "data/layouts/PetalburgCity_Gym/border.bin",
       "blockdata_filepath": "data/layouts/PetalburgCity_Gym/map.bin"
     },
@@ -1137,7 +1137,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_Building",
-      "secondary_tileset": "gTileset_RG_School",
+      "secondary_tileset": "gTileset_RG_RestaurantHotel",
       "border_filepath": "data/layouts/RustboroCity_PokemonSchool/border.bin",
       "blockdata_filepath": "data/layouts/RustboroCity_PokemonSchool/map.bin"
     },

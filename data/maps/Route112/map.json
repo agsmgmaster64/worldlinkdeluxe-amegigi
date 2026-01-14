@@ -203,7 +203,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_KINDLER",
       "x": 31,
       "y": 7,
       "elevation": 3,
@@ -217,7 +217,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_AROMA_LADY",
       "x": 31,
       "y": 11,
       "elevation": 3,

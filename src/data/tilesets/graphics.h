@@ -2077,6 +2077,28 @@ const u16 gTilesetPalettes_RG_IslandHarbor[][16] =
 	INCBIN_U16("data/tilesets/frlg/secondary/island_harbor/palettes/15.gbapal"),
 };
 
+const u32 gTilesetTiles_RG_RestaurantHotel[] = INCBIN_U32("data/tilesets/frlg/secondary/restaurant_hotel/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_RG_RestaurantHotel[][16] =
+{
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/12.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/13.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/14.gbapal"),
+	INCBIN_U16("data/tilesets/frlg/secondary/restaurant_hotel/palettes/15.gbapal"),
+};
+
 const u16 gTilesetPalettes_WLDGameCorner[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/wldgame_corner/palettes/00.gbapal"),

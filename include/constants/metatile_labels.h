@@ -278,14 +278,15 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
 // gTileset_Lavaridge
-#define METATILE_Lavaridge_AshGrass             0x207
-#define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
-#define METATILE_Lavaridge_CaveEntrance_Top     0x256
-#define METATILE_Lavaridge_Grass_Bamboo         0x8AA
-#define METATILE_Lavaridge_LavaField            0x271
-#define METATILE_Lavaridge_NormalGrass          0x206
-#define METATILE_Lavaridge_RockWall             0x274
-#define METATILE_Lavaridge_TallGrass_Bamboo     0x8AB
+#define METATILE_Lavaridge_AshGrass               0x207
+#define METATILE_Lavaridge_CaveEntrance_Bottom    0x25E
+#define METATILE_Lavaridge_CaveEntrance_Top       0x256
+#define METATILE_Lavaridge_Grass_Bamboo           0x8AA
+#define METATILE_Lavaridge_LavaField              0x271
+#define METATILE_Lavaridge_LongGrass_Root_Bamboo  0x8CC
+#define METATILE_Lavaridge_NormalGrass            0x206
+#define METATILE_Lavaridge_RockWall               0x274
+#define METATILE_Lavaridge_TallGrass_Bamboo       0x8AB
 
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
