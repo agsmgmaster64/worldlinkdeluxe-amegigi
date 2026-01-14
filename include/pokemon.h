@@ -27,7 +27,6 @@ enum MonData {
     MON_DATA_STATUS,
     MON_DATA_OT_ID,
     MON_DATA_LANGUAGE,
-    MON_DATA_SANITY_IS_BAD_EGG,
     MON_DATA_SANITY_HAS_SPECIES,
     MON_DATA_SANITY_IS_EGG,
     MON_DATA_OT_NAME,
@@ -113,10 +112,7 @@ struct BoxPokemon
     /*0x14*/ u8 metLocation;
     /*0x15*/ u8 language:3;
              u8 hiddenNatureModifier:5; // 31 natures.
-    /*0x16*/ u8 hasSpecies:1;
-             u8 isEgg:1;
-			 u8 abilityNum:2;
-             u8 metGame:4;
+    /*0x16*/ u8 pokerus;
     /*0x17*/ u8 otName[PLAYER_NAME_LENGTH];
     /*0x1E*/ u16 hpLost:14; // 16383 HP.
              u16 shinyModifier:1;
@@ -127,7 +123,7 @@ struct BoxPokemon
              u16 hpIV:5;
     /*0x24*/ u32 experience:21;
              u32 metLevel:7;
-             u32 pokerus:4;
+             u32 metGame:4;
     /*0x28*/ u8 markings:4;
              u8 compressedStatus:4;
     /*0x29*/ u8 ppBonuses;
@@ -148,9 +144,9 @@ struct BoxPokemon
     /*0x35*/ u8 pp2:7; // 127 PP.
              u8 isShadow:1;
     /*0x36*/ u8 pp3:7; // 127 PP.
-             u8 isBadEgg:1;
+             u8 isEgg:1;
     /*0x37*/ u8 pp4:7; // 127 PP.
-             u8 gigantamaxFactor:1;
+             u8 hasSpecies:1;
     /*0x38*/ u8 hpEV;
     /*0x39*/ u8 attackEV;
     /*0x3A*/ u8 defenseEV;
@@ -158,7 +154,7 @@ struct BoxPokemon
     /*0x3C*/ u8 spAttackEV;
     /*0x3D*/ u8 spDefenseEV;
     /*0x3E*/ u8 spDefenseIV:5;
-             u8 dynamaxLevel:2;
+             u8 abilityNum:2;
              u8 cantRandomizeAbility:1;
     /*0x3F*/ u8 nickname13;
 };

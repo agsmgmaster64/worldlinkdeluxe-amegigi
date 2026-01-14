@@ -164,7 +164,6 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 OTGender; // 0x32
         u8 nature; // 0x33
         u8 ppBonuses; // 0x34
-        u8 sanity; // 0x35
         u8 OTName[17]; // 0x36
         u32 OTID; // 0x48
         enum Type teraType;
@@ -1535,12 +1534,8 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
         sum->item = GetMonData(mon, MON_DATA_HELD_ITEM);
         sum->pid = GetMonData(mon, MON_DATA_PERSONALITY);
-        sum->sanity = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
 
-        if (sum->sanity)
-            sum->isEgg = TRUE;
-        else
-            sum->isEgg = GetMonData(mon, MON_DATA_IS_EGG);
+        sum->isEgg = GetMonData(mon, MON_DATA_IS_EGG);
 
         break;
     case 1:
@@ -3803,9 +3798,7 @@ static void PrintEggState(void)
     const u8 *text;
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
 
-    if (sMonSummaryScreen->summary.sanity == TRUE)
-        text = gText_EggWillTakeALongTime;
-    else if (sum->friendship == 0 && IsNuzlockeActive())
+    if (sum->friendship == 0 && IsNuzlockeActive())
         text = gText_EggReadyToHatch_Nuzlocke;
     else if (sum->friendship <= 5)
         text = gText_EggAboutToHatch;
@@ -3824,21 +3817,14 @@ static void PrintEggMemo(void)
     const u8 *text;
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
 
-    if (sMonSummaryScreen->summary.sanity != 1)
-    {
-        if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
-            text = gText_PeculiarEggNicePlace;
-        else if (DoesMonOTMatchOwner() == FALSE)
-            text = gText_PeculiarEggTrade;
-        else if (sum->metLocation == METLOC_SPECIAL_EGG)
-            text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
-        else
-            text = gText_OddEggFoundByCouple;
-    }
+    if (sum->metLocation == METLOC_FATEFUL_ENCOUNTER)
+        text = gText_PeculiarEggNicePlace;
+    else if (DoesMonOTMatchOwner() == FALSE)
+        text = gText_PeculiarEggTrade;
+    else if (sum->metLocation == METLOC_SPECIAL_EGG)
+        text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
     else
-    {
         text = gText_OddEggFoundByCouple;
-    }
 
     PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), text, 0, 1, 0, 0);
 }

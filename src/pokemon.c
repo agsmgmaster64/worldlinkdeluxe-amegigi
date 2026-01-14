@@ -1884,17 +1884,9 @@ u32 GetMonData2(struct Pokemon *mon, s32 field)
 }
 
 
-static ALWAYS_INLINE bool32 IsBadEgg(struct BoxPokemon *boxMon)
-{
-    if (boxMon->isBadEgg)
-        return TRUE;
-
-    return FALSE;
-}
-
 static ALWAYS_INLINE bool32 IsEggOrBadEgg(struct BoxPokemon *boxMon)
 {
-    return boxMon->isEgg || IsBadEgg(boxMon);
+    return boxMon->isEgg;
 }
 
 /* GameFreak called GetBoxMonData with either 2 or 3 arguments, for type
@@ -1922,9 +1914,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         break;
     case MON_DATA_LANGUAGE:
         retVal = boxMon->language;
-        break;
-    case MON_DATA_SANITY_IS_BAD_EGG:
-        retVal = boxMon->isBadEgg;
         break;
     case MON_DATA_SANITY_HAS_SPECIES:
         retVal = boxMon->hasSpecies;
@@ -1963,15 +1952,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_NICKNAME:
     case MON_DATA_NICKNAME10:
     {
-        if (IsBadEgg(boxMon))
-        {
-            for (retVal = 0;
-                retVal < POKEMON_NAME_LENGTH && gText_BadEgg[retVal] != EOS;
-                data[retVal] = gText_BadEgg[retVal], retVal++) {}
-
-            data[retVal] = EOS;
-        }
-        else if (boxMon->isEgg)
+        if (boxMon->isEgg)
         {
             StringCopy(data, gText_EggNickname);
             retVal = StringLength(data);
@@ -2047,7 +2028,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         break;
     }
     case MON_DATA_SPECIES:
-        retVal = IsBadEgg(boxMon) ? SPECIES_EGG : boxMon->species;
+        retVal = boxMon->species;
         break;
     case MON_DATA_HELD_ITEM:
         retVal = boxMon->heldItem;
@@ -2207,10 +2188,10 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = boxMon->isShadow;
         break;
     case MON_DATA_DYNAMAX_LEVEL:
-        retVal = boxMon->dynamaxLevel;
+        retVal = MAX_DYNAMAX_LEVEL;
         break;
     case MON_DATA_GIGANTAMAX_FACTOR:
-        retVal = boxMon->gigantamaxFactor;
+        retVal = TRUE;
         break;
     case MON_DATA_TERA_TYPE:
     {
@@ -2343,9 +2324,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
     case MON_DATA_LANGUAGE:
         SET8(boxMon->language);
-        break;
-    case MON_DATA_SANITY_IS_BAD_EGG:
-        SET8(boxMon->isBadEgg);
         break;
     case MON_DATA_SANITY_HAS_SPECIES:
         SET8(boxMon->hasSpecies);
@@ -2532,10 +2510,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         SET8(boxMon->isShadow);
         break;
     case MON_DATA_DYNAMAX_LEVEL:
-        SET8(boxMon->dynamaxLevel);
         break;
     case MON_DATA_GIGANTAMAX_FACTOR:
-        SET8(boxMon->gigantamaxFactor);
         break;
     case MON_DATA_TERA_TYPE:
         SET8(boxMon->teraType);
