@@ -1026,5 +1026,4 @@ extern const u8 gBattleAnimSpecial_SubstituteToMon[];
 extern const u8 gBattleAnimSpecial_MonToSubstitute[];
 extern const u8 gBattleAnimSpecial_CriticalCaptureBallThrow[];
 
-
 #endif // GUARD_BATTLE_ANIM_SCRIPTS_H
