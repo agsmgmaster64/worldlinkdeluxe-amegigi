@@ -3615,6 +3615,7 @@ void SetMoveEffect(u32 battlerAtk, u32 effectBattler, enum MoveEffect moveEffect
             }
         }
         break;
+    }
     case MOVE_EFFECT_BREAK_SCREEN:
         if (B_BRICK_BREAK >= GEN_4)
         	i = GetBattlerSide(gBattlerTarget); // From Gen 4 onwards, Brick Break can remove screens on the user's side if used on an ally
@@ -3699,11 +3700,8 @@ void SetMoveEffect(u32 battlerAtk, u32 effectBattler, enum MoveEffect moveEffect
             }
         }
         break;
-
-
-    }
-        default:
-            break;
+    default:
+        break;
     }
 
     gBattleScripting.moveEffect = MOVE_EFFECT_NONE;
@@ -5289,10 +5287,10 @@ static void Cmd_switchindataupdate(void)
     #if TESTING
     if (gTestRunnerEnabled)
     {
-        u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);
+        enum BattleTrainer trainer = GetBattleTrainer(battler);
         u32 partyIndex = gBattlerPartyIndexes[battler];
-        if (TestRunner_Battle_GetForcedAbility(array, partyIndex))
-            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(array, partyIndex);
+        if (TestRunner_Battle_GetForcedAbility(trainer, partyIndex))
+            gBattleMons[battler].ability = TestRunner_Battle_GetForcedAbility(trainer, partyIndex);
     }
     #endif
 
@@ -9432,9 +9430,9 @@ static void Cmd_healpartystatus(void)
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
-                    u32 array = (!IsPartnerMonFromSameTrainer(gBattlerAttacker)) ? gBattlerAttacker : GetBattlerSide(gBattlerAttacker);
-                    if (TestRunner_Battle_GetForcedAbility(array, i))
-                        ability = TestRunner_Battle_GetForcedAbility(array, i);
+                    enum BattleTrainer trainer = GetBattleTrainer(gBattlerAttacker);
+                    if (TestRunner_Battle_GetForcedAbility(trainer, i))
+                        ability = TestRunner_Battle_GetForcedAbility(trainer, i);
                 }
                 #endif
             }
