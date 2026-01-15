@@ -101,7 +101,7 @@ static u32 CanMonRelearnMoves(struct BoxPokemon *boxmon)
     {
     default:
     case MOVE_RELEARNER_LEVEL_UP_MOVES:
-        canRelearn = HasRelearnerLevelUpMoves(boxmon);
+        canRelearn = HasRelearnerLevelUpMovesBox(boxmon);
     }
     gSpecialVar_0x8005 = canRelearn;
     return canRelearn;
