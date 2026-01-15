@@ -26,7 +26,7 @@ static const u16 sRandomizerItemWhitelist[] =
     ITEM_POKE_BALL_HISUI,
     ITEM_GREAT_BALL_HISUI,
     ITEM_ULTRA_BALL_HISUI,
-    ITEM_FAST_BALL,
+    ITEM_FRIEND_ORB,
     ITEM_HEAVY_BALL,
     ITEM_DREAM_BALL,
     ITEM_SAFARI_ORB,

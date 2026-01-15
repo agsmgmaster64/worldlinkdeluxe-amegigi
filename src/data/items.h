@@ -298,23 +298,19 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_PremierBall,
     },
 
-    [ITEM_FOUL_ORB] =
+    [ITEM_HEAL_ORB] =
     {
-        .name = ITEM_NAME("Foul Orb"),
-        .price = 100,
+        .name = ITEM_NAME("Heal Orb"),
+        .price = 300,
         .description = COMPOUND_STRING(
-            "A rather cheap\n"
-            "Orb with a much\n"
-            "lower catch rate."),
-        .descriptionLong = COMPOUND_STRING(
-            "A rather cheap Orb that has\n"
-            "a lower Puppet catch rate than\n"
-            "a standard Toho Orb."),
+            "A remedial Orb\n"
+            "that restores\n"
+            "caught Puppets."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = BALL_FOUL,
+        .secondaryId = BALL_HEAL,
         .iconPic = gItemIcon_HealBall,
         .iconPalette = gItemIconPalette_HealBall,
     },
@@ -540,21 +536,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LoveBall,
     },
 
-    [ITEM_FAST_BALL] =
+    [ITEM_FRIEND_ORB] =
     {
-        .name = ITEM_NAME("Fast Ball"),
+        .name = ITEM_NAME("Friend Orb"),
         .price = (I_PRICE >= GEN_7) ? 0 : 300,
         .description = COMPOUND_STRING(
-            "An Orb that works\n"
-            "well on Flying-\n"
-            "type Puppets."),
+            "An Orb that makes\n"
+            "a Puppet friendly\n"
+            "when caught."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = BALL_FAST,
-        .iconPic = gItemIcon_FastBall,
-        .iconPalette = gItemIconPalette_FastBall,
+        .secondaryId = BALL_FRIEND,
+        .iconPic = gItemIcon_FriendBall,
+        .iconPalette = gItemIconPalette_FriendBall,
     },
 
     [ITEM_HEAVY_BALL] =
@@ -613,21 +609,25 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_SafariBall,
     },
 
-    [ITEM_SPORT_BALL] =
+    [ITEM_FOUL_ORB] =
     {
-        .name = ITEM_NAME("Sport Ball"),
-        .price = (I_PRICE <= GEN_3 || I_PRICE >= GEN_9) ? 0 : 300,
+        .name = ITEM_NAME("Foul Orb"),
+        .price = 100,
         .description = COMPOUND_STRING(
-            "A special Ball\n"
-            "used in the Bug-\n"
-            "Catching Contest."),
+            "A rather cheap\n"
+            "Orb with a much\n"
+            "lower catch rate."),
+        .descriptionLong = COMPOUND_STRING(
+            "A rather cheap Orb that has\n"
+            "a lower Puppet catch rate than\n"
+            "a standard Toho Orb."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = BALL_SPORT,
-        .iconPic = gItemIcon_SportBall,
-        .iconPalette = gItemIconPalette_SportBall,
+        .secondaryId = BALL_FOUL,
+        .iconPic = gItemIcon_FoulOrb,
+        .iconPalette = gItemIconPalette_FoulOrb,
     },
 
     [ITEM_PARK_BALL] =

@@ -73,7 +73,7 @@ static u16 GetBattlerPokeballItemId(u8 battler);
 #define GFX_TAG_HEAVY_BALL   55021
 #define GFX_TAG_DREAM_BALL   55022
 #define GFX_TAG_SAFARI_BALL  55023
-#define GFX_TAG_SPORT_BALL   55024
+#define GFX_TAG_FOUL_BALL    55024
 #define GFX_TAG_PARK_BALL    55025
 #define GFX_TAG_BEAST_BALL   55026
 #define GFX_TAG_CHERISH_BALL 55027
@@ -86,7 +86,7 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallGfx_Ultra,   384, GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallGfx_Master,  384, GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},
-    [BALL_FOUL]    = {gBallGfx_Foul,    384, GFX_TAG_HEAL_BALL},
+    [BALL_HEAL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallGfx_Net,     384, GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallGfx_Nest,    384, GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallGfx_Dive,    384, GFX_TAG_DIVE_BALL},
@@ -98,13 +98,13 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_LEVEL]   = {gBallGfx_Level,   384, GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallGfx_Lure,    384, GFX_TAG_LURE_BALL},
     [BALL_POKE2]   = {gBallGfx_PokeHisui,  384, GFX_TAG_MOON_BALL},
-    [BALL_GREAT2]  = {gBallGfx_GreatHisui, 384, GFX_TAG_FRIEND_BALL},
-    [BALL_ULTRA2]  = {gBallGfx_UltraHisui, 384, GFX_TAG_LOVE_BALL},
-    [BALL_FAST]    = {gBallGfx_Fast,    384, GFX_TAG_FAST_BALL},
+    [BALL_FRIEND]  = {gBallGfx_Friend,   384, GFX_TAG_FRIEND_BALL},
+    [BALL_GREAT2]  = {gBallGfx_GreatHisui, 384, GFX_TAG_LOVE_BALL},
+    [BALL_ULTRA2]  = {gBallGfx_UltraHisui, 384, GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallGfx_Heavy,   384, GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallGfx_Safari,  384, GFX_TAG_SAFARI_BALL},
-    [BALL_SPORT]   = {gBallGfx_Sport,   384, GFX_TAG_SPORT_BALL},
+    [BALL_FOUL]    = {gBallGfx_Foul,    384, GFX_TAG_FOUL_BALL},
     [BALL_PARK]    = {gBallGfx_Park,    384, GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallGfx_Beast,   384, GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallGfx_Cherish, 384, GFX_TAG_CHERISH_BALL},
@@ -118,7 +118,7 @@ const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_ULTRA]   = {gBallPal_Ultra,   GFX_TAG_ULTRA_BALL},
     [BALL_MASTER]  = {gBallPal_Master,  GFX_TAG_MASTER_BALL},
     [BALL_PREMIER] = {gBallPal_Premier, GFX_TAG_PREMIER_BALL},
-    [BALL_FOUL]    = {gBallPal_Foul,    GFX_TAG_HEAL_BALL},
+    [BALL_HEAL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
     [BALL_NET]     = {gBallPal_Net,     GFX_TAG_NET_BALL},
     [BALL_NEST]    = {gBallPal_Nest,    GFX_TAG_NEST_BALL},
     [BALL_DIVE]    = {gBallPal_Dive,    GFX_TAG_DIVE_BALL},
@@ -130,13 +130,13 @@ const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_LEVEL]   = {gBallPal_Level,   GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallPal_Lure,    GFX_TAG_LURE_BALL},
     [BALL_POKE2]   = {gBallPal_PokeHisui,  GFX_TAG_MOON_BALL},
-    [BALL_GREAT2]  = {gBallPal_GreatHisui, GFX_TAG_FRIEND_BALL},
-    [BALL_ULTRA2]  = {gBallPal_UltraHisui, GFX_TAG_LOVE_BALL},
-    [BALL_FAST]    = {gBallPal_Fast,    GFX_TAG_FAST_BALL},
+    [BALL_FRIEND]  = {gBallPal_Friend,  GFX_TAG_FRIEND_BALL},
+    [BALL_GREAT2]  = {gBallPal_GreatHisui, GFX_TAG_LOVE_BALL},
+    [BALL_ULTRA2]  = {gBallPal_UltraHisui, GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallPal_Heavy,   GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallPal_Safari,  GFX_TAG_SAFARI_BALL},
-    [BALL_SPORT]   = {gBallPal_Sport,   GFX_TAG_SPORT_BALL},
+    [BALL_FOUL]    = {gBallPal_Foul,    GFX_TAG_FOUL_BALL},
     [BALL_PARK]    = {gBallPal_Park,    GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallPal_Beast,   GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallPal_Cherish, GFX_TAG_CHERISH_BALL},
@@ -311,7 +311,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_FOUL] =
+    [BALL_HEAL] =
     {
         .tileTag = GFX_TAG_HEAL_BALL,
         .paletteTag = GFX_TAG_HEAL_BALL,
@@ -419,7 +419,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_GREAT2] =
+    [BALL_FRIEND] =
     {
         .tileTag = GFX_TAG_FRIEND_BALL,
         .paletteTag = GFX_TAG_FRIEND_BALL,
@@ -428,7 +428,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_ULTRA2] =
+    [BALL_GREAT2] =
     {
         .tileTag = GFX_TAG_LOVE_BALL,
         .paletteTag = GFX_TAG_LOVE_BALL,
@@ -437,7 +437,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_FAST] =
+    [BALL_ULTRA2] =
     {
         .tileTag = GFX_TAG_FAST_BALL,
         .paletteTag = GFX_TAG_FAST_BALL,
@@ -473,10 +473,10 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_SPORT] =
+    [BALL_FOUL] =
     {
-        .tileTag = GFX_TAG_SPORT_BALL,
-        .paletteTag = GFX_TAG_SPORT_BALL,
+        .tileTag = GFX_TAG_FOUL_BALL,
+        .paletteTag = GFX_TAG_FOUL_BALL,
         .oam = &sBallOamData,
         .anims = sBallAnimSequences,
         .affineAnims = sAffineAnim_BallRotate,
@@ -525,7 +525,7 @@ const u16 gBallItemIds[POKEBALL_COUNT] =
     [BALL_ULTRA]   = ITEM_ULTRA_ORB,
     [BALL_MASTER]  = ITEM_MASTER_ORB,
     [BALL_PREMIER] = ITEM_PREMIER_ORB,
-    [BALL_FOUL]    = ITEM_FOUL_ORB,
+    [BALL_HEAL]    = ITEM_HEAL_ORB,
     [BALL_NET]     = ITEM_NET_ORB,
     [BALL_NEST]    = ITEM_NEST_ORB,
     [BALL_DIVE]    = ITEM_DIVE_ORB,
@@ -537,13 +537,13 @@ const u16 gBallItemIds[POKEBALL_COUNT] =
     [BALL_LEVEL]   = ITEM_LEVEL_BALL,
     [BALL_LURE]    = ITEM_LURE_BALL,
     [BALL_POKE2]   = ITEM_POKE_BALL_HISUI,
+    [BALL_FRIEND]  = ITEM_FRIEND_ORB,
     [BALL_GREAT2]  = ITEM_GREAT_BALL_HISUI,
     [BALL_ULTRA2]  = ITEM_ULTRA_BALL_HISUI,
-    [BALL_FAST]    = ITEM_FAST_BALL,
     [BALL_HEAVY]   = ITEM_HEAVY_BALL,
     [BALL_DREAM]   = ITEM_DREAM_BALL,
     [BALL_SAFARI]  = ITEM_SAFARI_ORB,
-    [BALL_SPORT]   = ITEM_SPORT_BALL,
+    [BALL_FOUL]    = ITEM_FOUL_ORB,
     [BALL_PARK]    = ITEM_PARK_BALL,
     [BALL_BEAST]   = ITEM_BEAST_BALL,
     [BALL_CHERISH] = ITEM_CHERISH_BALL,

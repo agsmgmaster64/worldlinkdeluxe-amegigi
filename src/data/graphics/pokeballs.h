@@ -16,8 +16,8 @@ const u16 gBallPal_Master[] = INCBIN_U16("graphics/balls/master.gbapal");
 const u32 gBallGfx_Premier[] = INCBIN_U32("graphics/balls/premier.4bpp.smol");
 const u16 gBallPal_Premier[] = INCBIN_U16("graphics/balls/premier.gbapal");
 
-const u32 gBallGfx_Foul[] = INCBIN_U32("graphics/balls/foul.4bpp.smol");
-const u16 gBallPal_Foul[] = INCBIN_U16("graphics/balls/foul.gbapal");
+const u32 gBallGfx_Heal[] = INCBIN_U32("graphics/balls/heal.4bpp.smol");
+const u16 gBallPal_Heal[] = INCBIN_U16("graphics/balls/heal.gbapal");
 
 const u32 gBallGfx_Net[] = INCBIN_U32("graphics/balls/net.4bpp.smol");
 const u16 gBallPal_Net[] = INCBIN_U16("graphics/balls/net.gbapal");
@@ -52,14 +52,14 @@ const u16 gBallPal_Lure[] = INCBIN_U16("graphics/balls/lure.gbapal");
 const u32 gBallGfx_PokeHisui[] = INCBIN_U32("graphics/balls/poke_hisui.4bpp.smol");
 const u16 gBallPal_PokeHisui[] = INCBIN_U16("graphics/balls/poke_hisui.gbapal");
 
+const u32 gBallGfx_Friend[] = INCBIN_U32("graphics/balls/friend.4bpp.smol");
+const u16 gBallPal_Friend[] = INCBIN_U16("graphics/balls/friend.gbapal");
+
 const u32 gBallGfx_GreatHisui[] = INCBIN_U32("graphics/balls/great_hisui.4bpp.smol");
 const u16 gBallPal_GreatHisui[] = INCBIN_U16("graphics/balls/great_hisui.gbapal");
 
 const u32 gBallGfx_UltraHisui[] = INCBIN_U32("graphics/balls/ultra_hisui.4bpp.smol");
 const u16 gBallPal_UltraHisui[] = INCBIN_U16("graphics/balls/ultra_hisui.gbapal");
-
-const u32 gBallGfx_Fast[] = INCBIN_U32("graphics/balls/fast.4bpp.smol");
-const u16 gBallPal_Fast[] = INCBIN_U16("graphics/balls/fast.gbapal");
 
 const u32 gBallGfx_Heavy[] = INCBIN_U32("graphics/balls/heavy.4bpp.smol");
 const u16 gBallPal_Heavy[] = INCBIN_U16("graphics/balls/heavy.gbapal");
@@ -70,8 +70,8 @@ const u16 gBallPal_Dream[] = INCBIN_U16("graphics/balls/dream.gbapal");
 const u32 gBallGfx_Safari[] = INCBIN_U32("graphics/balls/safari.4bpp.smol");
 const u16 gBallPal_Safari[] = INCBIN_U16("graphics/balls/safari.gbapal");
 
-const u32 gBallGfx_Sport[] = INCBIN_U32("graphics/balls/sport.4bpp.smol");
-const u16 gBallPal_Sport[] = INCBIN_U16("graphics/balls/sport.gbapal");
+const u32 gBallGfx_Foul[] = INCBIN_U32("graphics/balls/foul.4bpp.smol");
+const u16 gBallPal_Foul[] = INCBIN_U16("graphics/balls/foul.gbapal");
 
 const u32 gBallGfx_Park[] = INCBIN_U32("graphics/balls/park.4bpp.smol");
 const u16 gBallPal_Park[] = INCBIN_U16("graphics/balls/park.gbapal");

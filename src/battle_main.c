@@ -311,7 +311,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PKMN_TRAINER_2] = { _("{PKMN} TRAINER") },
     [TRAINER_CLASS_HIKER] = { _("Hiker"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_ULTRA : BALL_POKE },
     [TRAINER_CLASS_TEAM_AQUA] = { _("Team Aqua") },
-    [TRAINER_CLASS_PKMN_BREEDER] = { _("{PKMN} Breeder"), 10 },
+    [TRAINER_CLASS_PKMN_BREEDER] = { _("{PKMN} Breeder"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_HEAL : BALL_FRIEND },
     [TRAINER_CLASS_COOLTRAINER] = { _("Ace Trainer"), 12, BALL_ULTRA },
     [TRAINER_CLASS_BIRD_KEEPER] = { _("Bird Keeper"), 8 },
     [TRAINER_CLASS_COLLECTOR] = { _("Collector"), 15, BALL_PREMIER },

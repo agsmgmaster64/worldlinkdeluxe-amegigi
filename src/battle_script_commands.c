@@ -10942,6 +10942,19 @@ static void FinalizeCapture(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;
     else
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+
+    if (ballId == BALL_HEAL)
+    {
+        MonRestorePP(caughtMon);
+        HealStatusConditions(caughtMon, STATUS1_ANY, gBattlerTarget);
+        gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
+        SetMonData(caughtMon, MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
+    }
+    else if (ballId == BALL_FRIEND)
+    {
+        u32 friendship = (B_FRIEND_BALL_MODIFIER >= GEN_8 ? 150 : 200);
+        SetMonData(caughtMon, MON_DATA_FRIENDSHIP, &friendship);
+    }
 }
 
 struct BallData
@@ -11066,10 +11079,6 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
                 ball->multiplier = 300;
         }
         break;
-    case BALL_FAST:
-        if (GetSpeciesBaseSpeed(battleMon->species) >= 100)
-            ball->multiplier = 400;
-        break;
     case BALL_DREAM:
         if (B_DREAM_BALL_MODIFIER >= GEN_8 && (battleMon->status1 & STATUS1_SLEEP || (GetBattlerAbilityIgnoreMoldBreaker(wildMonBattler) == ABILITY_COMATOSE)))
             ball->multiplier = 400;
@@ -11078,10 +11087,6 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         if (B_SAFARI_BALL_MODIFIER == GEN_1)
             ball->multiplier = 200;
         else if (B_SAFARI_BALL_MODIFIER <= GEN_7)
-            ball->multiplier = 150;
-        break;
-    case BALL_SPORT:
-        if (B_SPORT_BALL_MODIFIER <= GEN_7)
             ball->multiplier = 150;
         break;
     case BALL_BEAST:

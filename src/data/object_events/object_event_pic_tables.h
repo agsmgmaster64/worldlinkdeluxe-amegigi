@@ -1200,8 +1200,8 @@ static const struct SpriteFrameImage sPicTable_Ball_PREMIER[] = {
 static const struct SpriteFrameImage sPicTable_Ball_DUSK[] = {
     POKEBALL_PIC_FRAMES(Dusk),
 };
-static const struct SpriteFrameImage sPicTable_Ball_FOUL[] = {
-    POKEBALL_PIC_FRAMES(Foul),
+static const struct SpriteFrameImage sPicTable_Ball_HEAL[] = {
+    POKEBALL_PIC_FRAMES(Heal),
 };
 static const struct SpriteFrameImage sPicTable_Ball_QUICK[] = {
     POKEBALL_PIC_FRAMES(Quick),
@@ -1212,8 +1212,8 @@ static const struct SpriteFrameImage sPicTable_Ball_CHERISH[] = {
 static const struct SpriteFrameImage sPicTable_Ball_PARK[] = {
     POKEBALL_PIC_FRAMES(Park),
 };
-static const struct SpriteFrameImage sPicTable_Ball_FAST[] = {
-    POKEBALL_PIC_FRAMES(Fast),
+static const struct SpriteFrameImage sPicTable_Ball_ULTRA2[] = {
+    POKEBALL_PIC_FRAMES(UltraHisui),
 };
 static const struct SpriteFrameImage sPicTable_Ball_LEVEL[] = {
     POKEBALL_PIC_FRAMES(Level),
@@ -1224,17 +1224,17 @@ static const struct SpriteFrameImage sPicTable_Ball_LURE[] = {
 static const struct SpriteFrameImage sPicTable_Ball_HEAVY[] = {
     POKEBALL_PIC_FRAMES(Heavy),
 };
-static const struct SpriteFrameImage sPicTable_Ball_ULTRA2[] = {
-    POKEBALL_PIC_FRAMES(UltraHisui),
-};
 static const struct SpriteFrameImage sPicTable_Ball_GREAT2[] = {
     POKEBALL_PIC_FRAMES(GreatHisui),
+};
+static const struct SpriteFrameImage sPicTable_Ball_FRIEND[] = {
+    POKEBALL_PIC_FRAMES(Friend),
 };
 static const struct SpriteFrameImage sPicTable_Ball_POKE2[] = {
     POKEBALL_PIC_FRAMES(PokeHisui),
 };
-static const struct SpriteFrameImage sPicTable_Ball_SPORT[] = {
-    POKEBALL_PIC_FRAMES(Sport),
+static const struct SpriteFrameImage sPicTable_Ball_FOUL[] = {
+    POKEBALL_PIC_FRAMES(Foul),
 };
 static const struct SpriteFrameImage sPicTable_Ball_DREAM[] = {
     POKEBALL_PIC_FRAMES(Dream),
