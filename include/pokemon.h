@@ -111,10 +111,10 @@ struct BoxPokemon
     /*0x08*/ u8 nickname[min(10, POKEMON_NAME_LENGTH)];
     /*0x12*/ u8 nickname11; // 11th character of nickname.
     /*0x13*/ u8 nickname12; // 12th character of nickname.
-    /*0x14*/ u8 metLocation;
+    /*0x14*/ u8 nickname13;
     /*0x15*/ u8 language:3;
              u8 hiddenNatureModifier:5; // 31 natures.
-    /*0x16*/ u8 pokerus;
+    /*0x16*/ u8 metLocation;
     /*0x17*/ u8 otName[PLAYER_NAME_LENGTH];
     /*0x1E*/ u16 hpLost:14; // 16383 HP.
              u16 shinyModifier:1;
@@ -158,7 +158,7 @@ struct BoxPokemon
     /*0x3E*/ u8 spDefenseIV:5;
              u8 abilityNum:2;
              u8 cantRandomizeAbility:1;
-    /*0x3F*/ u8 nickname13;
+    /*0x3F*/ u8 pokerus;
 };
 
 struct Pokemon

@@ -2086,13 +2086,13 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = boxMon->spDefenseEV;
         break;
     case MON_DATA_POKERUS:
-        retVal = boxMon->pokerus;
+        retVal = 0;
         break;
     case MON_DATA_POKERUS_STRAIN:
-        retVal = ((boxMon->pokerus & 0xF0) >> 4);
+        retVal = 0;
         break;
     case MON_DATA_POKERUS_DAYS_LEFT:
-        retVal = (boxMon->pokerus & 0x0F);
+        retVal = 0;
         break;
     case MON_DATA_MET_LOCATION:
         retVal = boxMon->metLocation;
@@ -2451,13 +2451,10 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         SET8(boxMon->spDefenseEV);
         break;
     case MON_DATA_POKERUS:
-        SET8(boxMon->pokerus);
         break;
     case MON_DATA_POKERUS_STRAIN:
-        boxMon->pokerus = (*data << 4) | (boxMon->pokerus & 0x0F);
         break;
     case MON_DATA_POKERUS_DAYS_LEFT:
-        boxMon->pokerus = (boxMon->pokerus & 0xF0) | *data;
         break;
     case MON_DATA_MET_LOCATION:
         SET8(boxMon->metLocation);
