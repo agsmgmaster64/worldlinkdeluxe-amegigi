@@ -9674,15 +9674,6 @@ static void Cmd_magnitudedamagecalculation(void)
     }
 
     PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 2, magnitude)
-
-    for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
-    {
-        if (gBattlerTarget == gBattlerAttacker)
-            continue;
-        if (!(gAbsentBattlerFlags & (1u << gBattlerTarget))) // A valid target was found.
-            break;
-    }
-
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -13791,7 +13782,12 @@ void BS_TryFlingHoldEffect(void)
 {
     NATIVE_ARGS();
     enum HoldEffect holdEffect = GetItemHoldEffect(gBattleStruct->flingItem);
-    gBattleStruct->flingItem = ITEM_NONE;
+
+    if (GetItemPocket(gBattleStruct->flingItem) == POCKET_BERRIES)
+    {
+        gBattlescriptCurrInstr = BattleScript_EffectFlingConsumeBerry;
+        return;
+    }
 
     if (IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
     {
@@ -13812,7 +13808,7 @@ void BS_TryFlingHoldEffect(void)
         SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_FROSTBITE, cmd->nextInstr, NO_FLAGS);
         break;
     case HOLD_EFFECT_TYPE_POWER:
-        if (GetItemSecondaryId(gLastUsedItem) != TYPE_MIASMA)
+        if (GetItemSecondaryId(gBattleStruct->flingItem) != TYPE_MIASMA)
             gBattlescriptCurrInstr = cmd->nextInstr;
         else
             SetMoveEffect(gBattlerAttacker, gBattlerTarget, MOVE_EFFECT_POISON, cmd->nextInstr, NO_FLAGS);
@@ -15426,15 +15422,6 @@ void BS_TryResetNegativeStatStages(void)
         if (gBattleMons[gBattlerTarget].statStages[stat] < DEFAULT_STAT_STAGE)
             gBattleMons[gBattlerTarget].statStages[stat] = DEFAULT_STAT_STAGE;
     gBattlescriptCurrInstr = cmd->nextInstr;
-}
-
-void BS_JumpIfLastUsedItemBerry(void)
-{
-    NATIVE_ARGS(const u8 *jumpInstr);
-    if (GetItemPocket(gLastUsedItem) == POCKET_BERRIES)
-        gBattlescriptCurrInstr = cmd->jumpInstr;
-    else
-        gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 void BS_SaveBattlerItem(void)
