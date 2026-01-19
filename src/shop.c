@@ -772,8 +772,8 @@ static void BuyMenuSetListEntry(struct ListMenuItem *menuItem, enum Item item, u
 {
     if (IsMartTypeItem(sMartInfo.martType))
         CopyItemName(item, name);
-    else if (IsMartTypeMove(sMartInfo.martType))
-        StringCopy(name, GetMoveName(item));
+    //else if (IsMartTypeMove(sMartInfo.martType))
+        ///StringCopy(name, GetMoveName(item));
     else if (IsMartTypeOutfit(sMartInfo.martType))
         BufferOutfitStrings(name, item, OUTFIT_BUFFER_NAME);
     else

@@ -17,7 +17,7 @@ MirageTower_4F_EventScript_RootFossil::
 # 9 "data/maps/MirageTower_4F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MirageTower_4F_EventScript_LeaveRootFossil
 # 10 "data/maps/MirageTower_4F/scripts.pory"
-	giveitem ITEM_ROOT_FOSSIL
+	giveitem ITEM_HELIX_FOSSIL
 # 11 "data/maps/MirageTower_4F/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 12 "data/maps/MirageTower_4F/scripts.pory"
@@ -59,7 +59,7 @@ MirageTower_4F_EventScript_ClawFossil::
 # 30 "data/maps/MirageTower_4F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, MirageTower_4F_EventScript_LeaveClawFossil
 # 31 "data/maps/MirageTower_4F/scripts.pory"
-	giveitem ITEM_CLAW_FOSSIL
+	giveitem ITEM_DOME_FOSSIL
 # 32 "data/maps/MirageTower_4F/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 33 "data/maps/MirageTower_4F/scripts.pory"

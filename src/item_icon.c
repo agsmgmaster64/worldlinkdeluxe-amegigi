@@ -188,7 +188,7 @@ const u16 *GetItemIconPalette(enum Item itemId)
     return gItemsInfo[itemId].iconPalette;
 }
 
-u16 GetMoveTypeItemShopIcon(u16 move)
+u16 GetMoveTypeItemShopIcon(enum Move move)
 {
     u32 type = GetMoveType(move);
     return gTypesInfo[type].shopItem;

@@ -20,10 +20,10 @@ enum PokeBall
     BALL_LUXURY = 14,
     BALL_LEVEL = 15,
     BALL_LURE = 16,
-    BALL_POKE2 = 17,
+    BALL_MOON = 17,
     BALL_FRIEND = 18,
-    BALL_GREAT2 = 19,
-    BALL_ULTRA2 = 20,
+    BALL_LOVE = 19,
+    BALL_FAST = 20,
     BALL_HEAVY = 21,
     BALL_DREAM = 22,
     BALL_SAFARI = 23,
@@ -31,6 +31,9 @@ enum PokeBall
     BALL_PARK = 25,
     BALL_BEAST = 26,
     BALL_CHERISH = 27,
+    BALL_POKE2 = 28,
+    BALL_GREAT2 = 29,
+    BALL_ULTRA2 = 30,
     POKEBALL_COUNT
 };
 

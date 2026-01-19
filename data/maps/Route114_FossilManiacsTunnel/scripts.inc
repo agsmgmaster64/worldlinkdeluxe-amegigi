@@ -75,11 +75,11 @@ Route114_FossilManiacsTunnel_EventScript_FossilManiac::
 # 38 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	goto_if_set FLAG_RECEIVED_REVIVED_FOSSIL_MON, Route114_FossilManiacsTunnel_EventScript_PlayerRevivedFossil
 # 39 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	checkitem ITEM_ROOT_FOSSIL
+	checkitem ITEM_HELIX_FOSSIL
 # 40 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
 # 41 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
-	checkitem ITEM_CLAW_FOSSIL
+	checkitem ITEM_DOME_FOSSIL
 # 42 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
 # 43 "data/maps/Route114_FossilManiacsTunnel/scripts.pory"

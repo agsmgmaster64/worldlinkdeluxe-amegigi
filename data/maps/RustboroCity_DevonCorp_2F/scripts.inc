@@ -125,11 +125,11 @@ RustboroCity_DevonCorp_2F_EventScript_FossilScientist::
 # 63 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils, MSGBOX_DEFAULT
 # 64 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	checkitem ITEM_ROOT_FOSSIL
+	checkitem ITEM_HELIX_FOSSIL
 # 65 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil
 # 66 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	checkitem ITEM_CLAW_FOSSIL
+	checkitem ITEM_DOME_FOSSIL
 # 67 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil
 # 68 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -159,7 +159,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil::
 # 80 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
 # 81 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	checkitem ITEM_CLAW_FOSSIL
+	checkitem ITEM_DOME_FOSSIL
 # 82 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_ChooseFossil
 # 83 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -171,11 +171,11 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil::
 # 86 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_GiveRootFossil::
 # 87 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_ROOT_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_HELIX_FOSSIL
 # 88 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 # 89 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	removeitem ITEM_ROOT_FOSSIL
+	removeitem ITEM_HELIX_FOSSIL
 # 90 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
 # 91 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -205,7 +205,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil::
 # 103 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, NO, RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
 # 104 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	checkitem ITEM_ROOT_FOSSIL
+	checkitem ITEM_HELIX_FOSSIL
 # 105 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_DevonCorp_2F_EventScript_ChooseFossil
 # 106 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
@@ -217,11 +217,11 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil::
 # 109 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 RustboroCity_DevonCorp_2F_EventScript_GiveClawFossil::
 # 110 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_CLAW_FOSSIL
+	bufferitemname STR_VAR_1, ITEM_DOME_FOSSIL
 # 111 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 # 112 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
-	removeitem ITEM_CLAW_FOSSIL
+	removeitem ITEM_DOME_FOSSIL
 # 113 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
 # 114 "data/maps/RustboroCity_DevonCorp_2F/scripts.pory"

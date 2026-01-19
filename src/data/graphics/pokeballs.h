@@ -49,17 +49,17 @@ const u16 gBallPal_Level[] = INCBIN_U16("graphics/balls/level.gbapal");
 const u32 gBallGfx_Lure[] = INCBIN_U32("graphics/balls/lure.4bpp.smol");
 const u16 gBallPal_Lure[] = INCBIN_U16("graphics/balls/lure.gbapal");
 
-const u32 gBallGfx_PokeHisui[] = INCBIN_U32("graphics/balls/poke_hisui.4bpp.smol");
-const u16 gBallPal_PokeHisui[] = INCBIN_U16("graphics/balls/poke_hisui.gbapal");
+const u32 gBallGfx_Moon[] = INCBIN_U32("graphics/balls/moon.4bpp.smol");
+const u16 gBallPal_Moon[] = INCBIN_U16("graphics/balls/moon.gbapal");
 
 const u32 gBallGfx_Friend[] = INCBIN_U32("graphics/balls/friend.4bpp.smol");
 const u16 gBallPal_Friend[] = INCBIN_U16("graphics/balls/friend.gbapal");
 
-const u32 gBallGfx_GreatHisui[] = INCBIN_U32("graphics/balls/great_hisui.4bpp.smol");
-const u16 gBallPal_GreatHisui[] = INCBIN_U16("graphics/balls/great_hisui.gbapal");
+const u32 gBallGfx_Love[] = INCBIN_U32("graphics/balls/love.4bpp.smol");
+const u16 gBallPal_Love[] = INCBIN_U16("graphics/balls/love.gbapal");
 
-const u32 gBallGfx_UltraHisui[] = INCBIN_U32("graphics/balls/ultra_hisui.4bpp.smol");
-const u16 gBallPal_UltraHisui[] = INCBIN_U16("graphics/balls/ultra_hisui.gbapal");
+const u32 gBallGfx_Fast[] = INCBIN_U32("graphics/balls/fast.4bpp.smol");
+const u16 gBallPal_Fast[] = INCBIN_U16("graphics/balls/fast.gbapal");
 
 const u32 gBallGfx_Heavy[] = INCBIN_U32("graphics/balls/heavy.4bpp.smol");
 const u16 gBallPal_Heavy[] = INCBIN_U16("graphics/balls/heavy.gbapal");
@@ -81,3 +81,12 @@ const u16 gBallPal_Beast[] = INCBIN_U16("graphics/balls/beast.gbapal");
 
 const u32 gBallGfx_Cherish[] = INCBIN_U32("graphics/balls/cherish.4bpp.smol");
 const u16 gBallPal_Cherish[] = INCBIN_U16("graphics/balls/cherish.gbapal");
+
+const u32 gBallGfx_PokeHisui[] = INCBIN_U32("graphics/balls/poke_hisui.4bpp.smol");
+const u16 gBallPal_PokeHisui[] = INCBIN_U16("graphics/balls/poke_hisui.gbapal");
+
+const u32 gBallGfx_GreatHisui[] = INCBIN_U32("graphics/balls/great_hisui.4bpp.smol");
+const u16 gBallPal_GreatHisui[] = INCBIN_U16("graphics/balls/great_hisui.gbapal");
+
+const u32 gBallGfx_UltraHisui[] = INCBIN_U32("graphics/balls/ultra_hisui.4bpp.smol");
+const u16 gBallPal_UltraHisui[] = INCBIN_U16("graphics/balls/ultra_hisui.gbapal");

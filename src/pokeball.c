@@ -77,6 +77,9 @@ static u16 GetBattlerPokeballItemId(u8 battler);
 #define GFX_TAG_PARK_BALL    55025
 #define GFX_TAG_BEAST_BALL   55026
 #define GFX_TAG_CHERISH_BALL 55027
+#define GFX_TAG_POKE_BALL2   55028
+#define GFX_TAG_GREAT_BALL2  55029
+#define GFX_TAG_ULTRA_BALL2  55030
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -97,10 +100,10 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_LUXURY]  = {gBallGfx_Luxury,  384, GFX_TAG_LUXURY_BALL},
     [BALL_LEVEL]   = {gBallGfx_Level,   384, GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallGfx_Lure,    384, GFX_TAG_LURE_BALL},
-    [BALL_POKE2]   = {gBallGfx_PokeHisui,  384, GFX_TAG_MOON_BALL},
-    [BALL_FRIEND]  = {gBallGfx_Friend,   384, GFX_TAG_FRIEND_BALL},
-    [BALL_GREAT2]  = {gBallGfx_GreatHisui, 384, GFX_TAG_LOVE_BALL},
-    [BALL_ULTRA2]  = {gBallGfx_UltraHisui, 384, GFX_TAG_FAST_BALL},
+    [BALL_MOON]    = {gBallGfx_Moon,    384, GFX_TAG_MOON_BALL},
+    [BALL_FRIEND]  = {gBallGfx_Friend,  384, GFX_TAG_FRIEND_BALL},
+    [BALL_LOVE]    = {gBallGfx_Love,    384, GFX_TAG_LOVE_BALL},
+    [BALL_FAST]    = {gBallGfx_Fast,    384, GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallGfx_Heavy,   384, GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallGfx_Safari,  384, GFX_TAG_SAFARI_BALL},
@@ -108,6 +111,9 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallGfx_Park,    384, GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallGfx_Beast,   384, GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallGfx_Cherish, 384, GFX_TAG_CHERISH_BALL},
+    [BALL_POKE2]   = {gBallGfx_PokeHisui,  384, GFX_TAG_POKE_BALL2},
+    [BALL_GREAT2]  = {gBallGfx_GreatHisui, 384, GFX_TAG_GREAT_BALL2},
+    [BALL_ULTRA2]  = {gBallGfx_UltraHisui, 384, GFX_TAG_ULTRA_BALL2},
 };
 
 const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -129,10 +135,10 @@ const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_LUXURY]  = {gBallPal_Luxury,  GFX_TAG_LUXURY_BALL},
     [BALL_LEVEL]   = {gBallPal_Level,   GFX_TAG_LEVEL_BALL},
     [BALL_LURE]    = {gBallPal_Lure,    GFX_TAG_LURE_BALL},
-    [BALL_POKE2]   = {gBallPal_PokeHisui,  GFX_TAG_MOON_BALL},
+    [BALL_MOON]    = {gBallPal_Moon,    GFX_TAG_MOON_BALL},
     [BALL_FRIEND]  = {gBallPal_Friend,  GFX_TAG_FRIEND_BALL},
-    [BALL_GREAT2]  = {gBallPal_GreatHisui, GFX_TAG_LOVE_BALL},
-    [BALL_ULTRA2]  = {gBallPal_UltraHisui, GFX_TAG_FAST_BALL},
+    [BALL_LOVE]    = {gBallPal_Love,    GFX_TAG_LOVE_BALL},
+    [BALL_FAST]    = {gBallPal_Fast,    GFX_TAG_FAST_BALL},
     [BALL_HEAVY]   = {gBallPal_Heavy,   GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallPal_Safari,  GFX_TAG_SAFARI_BALL},
@@ -140,6 +146,9 @@ const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallPal_Park,    GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallPal_Beast,   GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallPal_Cherish, GFX_TAG_CHERISH_BALL},
+    [BALL_POKE2]   = {gBallPal_PokeHisui,  GFX_TAG_POKE_BALL2},
+    [BALL_GREAT2]  = {gBallPal_GreatHisui, GFX_TAG_GREAT_BALL2},
+    [BALL_ULTRA2]  = {gBallPal_UltraHisui, GFX_TAG_ULTRA_BALL2},
 };
 
 static const struct OamData sBallOamData =
@@ -410,7 +419,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_POKE2] =
+    [BALL_MOON] =
     {
         .tileTag = GFX_TAG_MOON_BALL,
         .paletteTag = GFX_TAG_MOON_BALL,
@@ -428,7 +437,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_GREAT2] =
+    [BALL_LOVE] =
     {
         .tileTag = GFX_TAG_LOVE_BALL,
         .paletteTag = GFX_TAG_LOVE_BALL,
@@ -437,7 +446,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-    [BALL_ULTRA2] =
+    [BALL_FAST] =
     {
         .tileTag = GFX_TAG_FAST_BALL,
         .paletteTag = GFX_TAG_FAST_BALL,
@@ -509,6 +518,33 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
+    [BALL_POKE2] =
+    {
+        .tileTag = GFX_TAG_POKE_BALL2,
+        .paletteTag = GFX_TAG_POKE_BALL2,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    [BALL_GREAT2] =
+    {
+        .tileTag = GFX_TAG_GREAT_BALL2,
+        .paletteTag = GFX_TAG_GREAT_BALL2,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    [BALL_ULTRA2] =
+    {
+        .tileTag = GFX_TAG_ULTRA_BALL2,
+        .paletteTag = GFX_TAG_ULTRA_BALL2,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
 };
 
 #define tFrames          data[0]
@@ -536,10 +572,10 @@ const u16 gBallItemIds[POKEBALL_COUNT] =
     [BALL_LUXURY]  = ITEM_LUXURY_ORB,
     [BALL_LEVEL]   = ITEM_LEVEL_BALL,
     [BALL_LURE]    = ITEM_LURE_BALL,
-    [BALL_POKE2]   = ITEM_POKE_BALL_HISUI,
+    [BALL_MOON]    = ITEM_MOON_BALL,
     [BALL_FRIEND]  = ITEM_FRIEND_ORB,
-    [BALL_GREAT2]  = ITEM_GREAT_BALL_HISUI,
-    [BALL_ULTRA2]  = ITEM_ULTRA_BALL_HISUI,
+    [BALL_LOVE]    = ITEM_LOVE_BALL,
+    [BALL_FAST]    = ITEM_FAST_BALL,
     [BALL_HEAVY]   = ITEM_HEAVY_BALL,
     [BALL_DREAM]   = ITEM_DREAM_BALL,
     [BALL_SAFARI]  = ITEM_SAFARI_ORB,
@@ -547,6 +583,9 @@ const u16 gBallItemIds[POKEBALL_COUNT] =
     [BALL_PARK]    = ITEM_PARK_BALL,
     [BALL_BEAST]   = ITEM_BEAST_BALL,
     [BALL_CHERISH] = ITEM_CHERISH_BALL,
+    [BALL_POKE2]   = ITEM_POKE_BALL_HISUI,
+    [BALL_GREAT2]  = ITEM_GREAT_BALL_HISUI,
+    [BALL_ULTRA2]  = ITEM_ULTRA_BALL_HISUI,
 };
 
 u8 DoPokeballSendOutAnimation(u32 battler, s16 pan, u8 kindOfThrow)

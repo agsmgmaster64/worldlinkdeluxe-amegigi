@@ -224,8 +224,6 @@ static inline bool32 ShouldRandomizeItem(u16 itemId)
     return !(IsItemHM(itemId) || IsKeyItem(itemId) || itemId == ITEM_NONE);
 }
 
-#include "data/randomizer/item_whitelist.h"
-
 // Given a found item and its location in the game, returns a replacement for that item.
 u16 RandomizeFoundItem(u16 itemId, u8 mapNum, u8 mapGroup, u8 localId)
 {
@@ -251,7 +249,7 @@ u16 RandomizeFoundItem(u16 itemId, u8 mapNum, u8 mapGroup, u8 localId)
 
     // Randomize everything else to everything else.
     do {
-        result = sRandomizerItemWhitelist[RandomizerNextRange(&state, ITEM_WHITELIST_SIZE)];
+        result = RandomizerNextRange(&state, ITEMS_COUNT);
     } while(!ShouldRandomizeItem(result) || IsItemTMHM(result));
 
     return result;

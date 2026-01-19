@@ -453,13 +453,13 @@
 #define OBJ_EVENT_PAL_TAG_BALL_CHERISH            0x115E
 #define OBJ_EVENT_PAL_TAG_BALL_PARK               0x115F
 // Gen II/Johto Apricorns
-#define OBJ_EVENT_PAL_TAG_BALL_ULTRA2             0x1160
+#define OBJ_EVENT_PAL_TAG_BALL_FAST               0x1160
 #define OBJ_EVENT_PAL_TAG_BALL_LEVEL              0x1161
 #define OBJ_EVENT_PAL_TAG_BALL_LURE               0x1162
 #define OBJ_EVENT_PAL_TAG_BALL_HEAVY              0x1163
-#define OBJ_EVENT_PAL_TAG_BALL_GREAT2             0x1164
+#define OBJ_EVENT_PAL_TAG_BALL_LOVE               0x1164
 #define OBJ_EVENT_PAL_TAG_BALL_FRIEND             0x1165
-#define OBJ_EVENT_PAL_TAG_BALL_POKE2              0x1166
+#define OBJ_EVENT_PAL_TAG_BALL_MOON               0x1166
 #define OBJ_EVENT_PAL_TAG_BALL_FOUL               0x1167
 // Gen V
 #define OBJ_EVENT_PAL_TAG_BALL_DREAM              0x1168
@@ -467,6 +467,9 @@
 #define OBJ_EVENT_PAL_TAG_BALL_BEAST              0x1169
 // Gen VIII
 #define OBJ_EVENT_PAL_TAG_BALL_STRANGE            0x116A
+#define OBJ_EVENT_PAL_TAG_BALL_POKE2              0x116B
+#define OBJ_EVENT_PAL_TAG_BALL_GREAT2             0x116C
+#define OBJ_EVENT_PAL_TAG_BALL_ULTRA2             0x116D
 #endif //OW_FOLLOWERS_POKEBALLS
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611

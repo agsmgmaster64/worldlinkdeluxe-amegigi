@@ -1212,8 +1212,8 @@ static const struct SpriteFrameImage sPicTable_Ball_CHERISH[] = {
 static const struct SpriteFrameImage sPicTable_Ball_PARK[] = {
     POKEBALL_PIC_FRAMES(Park),
 };
-static const struct SpriteFrameImage sPicTable_Ball_ULTRA2[] = {
-    POKEBALL_PIC_FRAMES(UltraHisui),
+static const struct SpriteFrameImage sPicTable_Ball_FAST[] = {
+    POKEBALL_PIC_FRAMES(Fast),
 };
 static const struct SpriteFrameImage sPicTable_Ball_LEVEL[] = {
     POKEBALL_PIC_FRAMES(Level),
@@ -1224,14 +1224,14 @@ static const struct SpriteFrameImage sPicTable_Ball_LURE[] = {
 static const struct SpriteFrameImage sPicTable_Ball_HEAVY[] = {
     POKEBALL_PIC_FRAMES(Heavy),
 };
-static const struct SpriteFrameImage sPicTable_Ball_GREAT2[] = {
-    POKEBALL_PIC_FRAMES(GreatHisui),
+static const struct SpriteFrameImage sPicTable_Ball_LOVE[] = {
+    POKEBALL_PIC_FRAMES(Love),
 };
 static const struct SpriteFrameImage sPicTable_Ball_FRIEND[] = {
     POKEBALL_PIC_FRAMES(Friend),
 };
-static const struct SpriteFrameImage sPicTable_Ball_POKE2[] = {
-    POKEBALL_PIC_FRAMES(PokeHisui),
+static const struct SpriteFrameImage sPicTable_Ball_MOON[] = {
+    POKEBALL_PIC_FRAMES(Moon),
 };
 static const struct SpriteFrameImage sPicTable_Ball_FOUL[] = {
     POKEBALL_PIC_FRAMES(Foul),
@@ -1242,11 +1242,18 @@ static const struct SpriteFrameImage sPicTable_Ball_DREAM[] = {
 static const struct SpriteFrameImage sPicTable_Ball_BEAST[] = {
     POKEBALL_PIC_FRAMES(Beast),
 };
-#ifdef ITEM_STRANGE_BALL
 static const struct SpriteFrameImage sPicTable_Ball_STRANGE[] = {
     POKEBALL_PIC_FRAMES(Strange),
 };
-#endif //ITEM_STRANGE_BALL
+static const struct SpriteFrameImage sPicTable_Ball_POKE2[] = {
+    POKEBALL_PIC_FRAMES(PokeHisui),
+};
+static const struct SpriteFrameImage sPicTable_Ball_GREAT2[] = {
+    POKEBALL_PIC_FRAMES(GreatHisui),
+};
+static const struct SpriteFrameImage sPicTable_Ball_ULTRA2[] = {
+    POKEBALL_PIC_FRAMES(UltraHisui),
+};
 #endif //OW_FOLLOWERS_POKEBALLS
 
 static const struct SpriteFrameImage sPicTable_DeoxysOld[] = {

@@ -56,17 +56,17 @@ const u16 gItemIconPalette_LevelBall[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_LureBall[] = INCBIN_U32("graphics/items/icons/lure_ball.4bpp.smol");
 const u16 gItemIconPalette_LureBall[] = INCBIN_U16("graphics/items/icon_palettes/lure_ball.gbapal");
 
-const u32 gItemIcon_PokeBallHisui[] = INCBIN_U32("graphics/items/icons/poke_ball_hisui.4bpp.smol");
-const u16 gItemIconPalette_PokeBallHisui[] = INCBIN_U16("graphics/items/icon_palettes/poke_ball_hisui.gbapal");
+const u32 gItemIcon_MoonBall[] = INCBIN_U32("graphics/items/icons/moon_ball.4bpp.smol");
+const u16 gItemIconPalette_MoonBall[] = INCBIN_U16("graphics/items/icon_palettes/moon_ball.gbapal");
 
 const u32 gItemIcon_FriendBall[] = INCBIN_U32("graphics/items/icons/friend_orb.4bpp.smol");
 const u16 gItemIconPalette_FriendBall[] = INCBIN_U16("graphics/items/icon_palettes/friend_orb.gbapal");
 
-const u32 gItemIcon_GreatBallHisui[] = INCBIN_U32("graphics/items/icons/great_ball_hisui.4bpp.smol");
-const u16 gItemIconPalette_GreatBallHisui[] = INCBIN_U16("graphics/items/icon_palettes/great_ball_hisui.gbapal");
-
 const u32 gItemIcon_LoveBall[] = INCBIN_U32("graphics/items/icons/love_ball.4bpp.smol");
 const u16 gItemIconPalette_LoveBall[] = INCBIN_U16("graphics/items/icon_palettes/love_ball.gbapal");
+
+const u32 gItemIcon_FastBall[] = INCBIN_U32("graphics/items/icons/fast_ball.4bpp.smol");
+const u16 gItemIconPalette_FastBall[] = INCBIN_U16("graphics/items/icon_palettes/fast_ball.gbapal");
 
 const u32 gItemIcon_HeavyBall[] = INCBIN_U32("graphics/items/icons/heavy_ball.4bpp.smol");
 const u16 gItemIconPalette_HeavyBall[] = INCBIN_U16("graphics/items/icon_palettes/heavy_ball.gbapal");
@@ -88,6 +88,12 @@ const u16 gItemIconPalette_BeastBall[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_CherishBall[] = INCBIN_U32("graphics/items/icons/cherish_ball.4bpp.smol");
 const u16 gItemIconPalette_CherishBall[] = INCBIN_U16("graphics/items/icon_palettes/cherish_ball.gbapal");
+
+const u32 gItemIcon_PokeBallHisui[] = INCBIN_U32("graphics/items/icons/poke_ball_hisui.4bpp.smol");
+const u16 gItemIconPalette_PokeBallHisui[] = INCBIN_U16("graphics/items/icon_palettes/poke_ball_hisui.gbapal");
+
+const u32 gItemIcon_GreatBallHisui[] = INCBIN_U32("graphics/items/icons/great_ball_hisui.4bpp.smol");
+const u16 gItemIconPalette_GreatBallHisui[] = INCBIN_U16("graphics/items/icon_palettes/great_ball_hisui.gbapal");
 
 // Medicine
 
