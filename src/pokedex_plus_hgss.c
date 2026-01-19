@@ -5151,7 +5151,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     u8 moves_x = 5;
     u8 moves_y = 3;
 
-    u32 item = ITEM_MASTER_ORB;
+    enum Item item = ITEM_MASTER_ORB;
     u32 species = NationalPokedexNumToSpeciesHGSS(sPokedexListItem->dexNum);
     u32 selected = sPokedexView->moveSelected;
     enum Move move = GetSelectedMove(species, selected);
@@ -5177,7 +5177,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     }
     else if (move)
     {
-        u32 TMHMItemId = ITEM_NONE;
+        enum Item TMHMItemId = ITEM_NONE;
         for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
         {
             if (move == GetTMHMMoveId(i + 1))

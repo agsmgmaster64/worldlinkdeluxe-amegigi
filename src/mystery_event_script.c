@@ -114,7 +114,7 @@ static void ClearRecordMixingGift(void)
 {
 }
 
-static void SetRecordMixingGift(u8 unk, u8 quantity, u16 itemId)
+static void SetRecordMixingGift(u8 unk, u8 quantity, enum Item itemId)
 {
 }
 
@@ -258,7 +258,7 @@ bool8 MEScrCmd_setrecordmixinggift(struct ScriptContext *ctx)
 {
     u8 unk = ScriptReadByte(ctx);
     u8 quantity = ScriptReadByte(ctx);
-    u16 itemId = ScriptReadHalfword(ctx);
+    enum Item itemId = ScriptReadHalfword(ctx);
     SetRecordMixingGift(unk, quantity, itemId);
     return FALSE;
 }

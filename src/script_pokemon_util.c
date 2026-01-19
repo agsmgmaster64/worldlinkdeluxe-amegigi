@@ -108,7 +108,7 @@ void HasEnoughMonsForDoubleBattle(void)
     }
 }
 
-static bool8 UNUSED CheckPartyMonHasHeldItem(u16 item)
+static bool32 UNUSED CheckPartyMonHasHeldItem(enum Item item)
 {
     int i;
 
@@ -121,7 +121,7 @@ static bool8 UNUSED CheckPartyMonHasHeldItem(u16 item)
     return FALSE;
 }
 
-void CreateScriptedWildMon(u16 species, u8 level, u16 item)
+void CreateScriptedWildMon(u16 species, u8 level, enum Item item)
 {
     u8 heldItem[2];
 
@@ -141,7 +141,7 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 
     SetNuzlockeChecks(); //tx_randomizer_and_challenges
 }
-void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
+void CreateScriptedDoubleWildMon(u16 species1, u8 level1, enum Item item1, u16 species2, u8 level2, enum Item item2)
 {
     u8 heldItem1[2];
     u8 heldItem2[2];
@@ -420,7 +420,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, u16 *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, enum Item item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, enum Move *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel)
 {
     struct Pokemon mon;
     u32 i;
@@ -527,7 +527,7 @@ u32 BirchCase_GiveMonParameterized(u16 species, u8 level, u16 item, u8 ball, u8 
     return ScriptGiveMonParameterized(B_SIDE_PLAYER, PARTY_SIZE, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, ggMaxFactor, teraType, 0);
 }
 
-u32 ScriptGiveMon(u16 species, u8 level, u16 item)
+u32 ScriptGiveMon(u16 species, u8 level, enum Item item)
 {
     struct Pokemon mon;
     u8 heldItem[2];
@@ -571,7 +571,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 level          = VarGet(ScriptReadHalfword(ctx));
 
     u32 flags         = ScriptReadWord(ctx);
-    u16 item          = PARSE_FLAG(0, ITEM_NONE);
+    enum Item item    = PARSE_FLAG(0, ITEM_NONE);
     u8 ball           = PARSE_FLAG(1, ITEM_TOHO_ORB);
     u8 nature         = PARSE_FLAG(2, NATURE_RANDOM);
     u8 abilityNum     = PARSE_FLAG(3, NUM_ABILITY_PERSONALITY);
@@ -579,21 +579,13 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
 
     u32 i;
     u16 evs[NUM_STATS];
-    u32 evTotal = 0;
-    u32 evCap = GetCurrentEVCap();
     for (i = 0; i < NUM_STATS; i++)
     {
         evs[i] = PARSE_FLAG(5 + i, 0);
         assertf(evs[i] <= MAX_PER_STAT_EVS, "invalid ev value of %d above maximum of %d", evs[i], MAX_PER_STAT_EVS)
         {
-            evs[i] = 0;
+            evs[i] = MAX_PER_STAT_EVS;
         }
-        evTotal += evs[i];
-    }
-    assertf(evTotal <= evCap, "total ev count of %d above maximum of %d", evTotal, evCap)
-    {
-        for (i = 0; i < NUM_STATS; i++)
-            evs[i] = 0;
     }
 
     u16 ivs[NUM_STATS];
@@ -603,8 +595,10 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     for (i = 0; i < NUM_STATS; i++)
     {
         ivs[i] = PARSE_FLAG(11 + i, USE_RANDOM_IVS);
-        if (ivs[i] > USE_RANDOM_IVS)
-            errorf("invalid iv value of %d  above maximum of %d", ivs[i], MAX_PER_STAT_IVS);
+        assertf(ivs[i] <= USE_RANDOM_IVS, "invalid iv value of %d above maximum of %d", ivs[i], MAX_PER_STAT_IVS)
+        {
+            ivs[i] = MAX_PER_STAT_IVS;
+        }
         if (ivs[i] == USE_RANDOM_IVS)
         {
             availableIVs[nonFixedIvCount] = i;

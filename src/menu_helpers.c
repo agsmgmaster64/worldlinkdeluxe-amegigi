@@ -289,7 +289,7 @@ u8 GetLRKeysPressedAndHeld(void)
     return 0;
 }
 
-bool8 IsWritingMailAllowed(u16 itemId)
+bool8 IsWritingMailAllowed(enum Item itemId)
 {
     if ((IsOverworldLinkActive() == TRUE || InUnionRoom() == TRUE) && ItemIsMail(itemId) == TRUE)
         return FALSE;

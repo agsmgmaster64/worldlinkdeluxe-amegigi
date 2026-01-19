@@ -188,7 +188,7 @@ enum ItemObtainFlags
     FLAG_GET_ITEM_OBTAINED,
     FLAG_SET_ITEM_OBTAINED,
 };
-bool8 GetSetItemObtained(u16 item, enum ItemObtainFlags caseId);
+bool8 GetSetItemObtained(enum Item item, enum ItemObtainFlags caseId);
 u8 NuzlockeGetCurrentRegionMapSectionId(void); //tx_randomizer_and_challenges
 u8 GetLastUsedWarpMapSectionId(void);
 u8 GetDestinationWarpMapSectionId(void);

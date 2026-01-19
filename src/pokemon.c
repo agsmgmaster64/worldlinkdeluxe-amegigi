@@ -83,7 +83,7 @@
 struct SpeciesItem
 {
     u16 species;
-    u16 item;
+    enum Item item;
 };
 
 static void Task_PlayMapChosenOrBattleBGM(u8 taskId);
@@ -3017,7 +3017,7 @@ void CopyPartyMonToBattleData(u32 battler, u32 partyIndex)
     ClearTemporarySpeciesSpriteData(battler, FALSE, FALSE);
 }
 
-bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex)
+bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex)
 {
     return PokemonUseItemEffects(mon, item, partyIndex, moveIndex, FALSE);
 }
@@ -3048,7 +3048,7 @@ const u32 sExpCandyExperienceTable[] = {
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
-bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
+bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, u8 moveIndex, bool8 usedByAI)
 {
     u32 dataUnsigned;
     s32 dataSigned, evCap;
@@ -3062,7 +3062,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     enum HoldEffect holdEffect;
     u8 battler = MAX_BATTLERS_COUNT;
     bool32 friendshipOnly = FALSE;
-    u16 heldItem;
+    enum Item heldItem;
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
@@ -3525,7 +3525,7 @@ bool8 HealStatusConditions(struct Pokemon *mon, u32 healMask, u8 battler)
     }
 }
 
-u8 GetItemEffectParamOffset(u32 battler, u16 itemId, u8 effectByte, u8 effectBit)
+u8 GetItemEffectParamOffset(u32 battler, enum Item itemId, u8 effectByte, u8 effectBit)
 {
     const u8 *temp;
     const u8 *itemEffect;
@@ -3650,7 +3650,7 @@ static void BufferStatRoseMessage(enum Stat statIdx)
     BattleStringExpandPlaceholdersToDisplayedString(gText_DefendersStatRose);
 }
 
-u8 *UseStatIncreaseItem(u16 itemId)
+u8 *UseStatIncreaseItem(enum Item itemId)
 {
     const u8 *itemEffect;
 
@@ -4785,7 +4785,7 @@ u32 GetRelearnerTMMovesBox(struct BoxPokemon *boxMon, u16 *moves)
 
     for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
     {
-        enum TMHMItemId item = GetTMHMItemId(i + 1);
+        enum Item item = GetTMHMItemId(i + 1);
         enum Move move = GetTMHMMoveId(i + 1);
 
         if (move == MOVE_NONE)
@@ -4915,7 +4915,7 @@ bool32 HasRelearnerTMMovesBox(struct BoxPokemon *boxMon)
 
     for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
     {
-        enum TMHMItemId item = GetTMHMItemId(i + 1);
+        enum Item item = GetTMHMItemId(i + 1);
         enum Move move = GetTMHMMoveId(i + 1);
 
         if (move == MOVE_NONE)
