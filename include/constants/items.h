@@ -69,7 +69,6 @@ enum __attribute__((packed)) Item
     ITEM_MAX_ELIXIR,
     ITEM_BERRY_JUICE,
     ITEM_SACRED_ASH,
-    ITEM_SWEET_HEART,
     ITEM_MAX_HONEY,
 
     // Regional Specialties
@@ -720,12 +719,7 @@ enum __attribute__((packed)) Item
 
     // Misc. Key Items
     ITEM_BICYCLE,
-    ITEM_MACH_BIKE,
-    ITEM_ACRO_BIKE,
     ITEM_FISHING_ROD,
-    ITEM_OLD_ROD,
-    ITEM_GOOD_ROD,
-    ITEM_SUPER_ROD,
     ITEM_DOWSING_MACHINE,
     ITEM_ITEMFINDER = ITEM_DOWSING_MACHINE, // Pre-Gen IV name
     ITEM_DOWSING_MCHN = ITEM_DOWSING_MACHINE, // Gen IV-V name
@@ -738,12 +732,8 @@ enum __attribute__((packed)) Item
     ITEM_COIN_CASE,
     ITEM_POWDER_JAR,
     ITEM_WAILMER_PAIL,
-    ITEM_POKE_RADAR,
-    ITEM_POKEBLOCK_CASE,
-    ITEM_SOOT_SACK,
     ITEM_POKE_FLUTE,
     ITEM_FAME_CHECKER,
-    ITEM_TEACHY_TV,
     ITEM_TOHOVIAL,
     ITEM_HEXORB,
     ITEM_OUTFIT_BOX,
@@ -797,6 +787,16 @@ enum __attribute__((packed)) Item
     ITEM_TEA,
     ITEM_RUBY,
     ITEM_SAPPHIRE,
+
+    ITEM_TEACHY_TV,
+    ITEM_POKE_RADAR,
+    ITEM_POKEBLOCK_CASE,
+    ITEM_MACH_BIKE,
+    ITEM_ACRO_BIKE,
+    ITEM_OLD_ROD,
+    ITEM_GOOD_ROD,
+    ITEM_SUPER_ROD,
+    ITEM_SOOT_SACK,
 
     // Form-changing Key Items
     ITEM_ROTOM_CATALOG,

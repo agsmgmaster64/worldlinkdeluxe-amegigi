@@ -98,10 +98,10 @@
 // Bag constants
 #define BAG_ITEMS_COUNT 130
 #define BAG_KEYITEMS_COUNT 50
-#define BAG_POKEBALLS_COUNT 27
+#define BAG_POKEBALLS_COUNT 31
 #define BAG_TMHM_COUNT 108
 #define BAG_BERRIES_COUNT 79
-#define BAG_MEDICINE_COUNT 80
+#define BAG_MEDICINE_COUNT 87
 #define BAG_BATTLEITEMS_COUNT 100
 
 // Number of facilities for Ranking Hall.

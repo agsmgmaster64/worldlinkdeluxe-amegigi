@@ -117,7 +117,7 @@ static const u8 sOddIncenseDesc[]     = _("A hold item that\n"
 
 static const u8 sRockIncenseDesc[]    = _("A hold item that\n"
                                           "raises the power of\n"
-                                          "Rock-type moves.");
+                                          "Earth-type moves.");
 
 static const u8 sFullIncenseDesc[]    = _("A held item that\n"
                                           "makes the holder\n"
@@ -5646,7 +5646,7 @@ const struct ItemInfo gItemsInfo[] =
         .sortType = ITEM_TYPE_INCENSE,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = TYPE_BEAST,
+        .secondaryId = TYPE_EARTH,
         .flingPower = 10,
         .iconPic = gItemIcon_RockIncense,
         .iconPalette = gItemIconPalette_RockIncense,
@@ -12914,7 +12914,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Health Mochi"),
         .price = 500,
         .description = sHealthFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -12930,7 +12930,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Muscle Mochi"),
         .price = 500,
         .description = sMuscleFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -12946,7 +12946,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Resist Mochi"),
         .price = 500,
         .description = sResistFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -12962,7 +12962,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Genius Mochi"),
         .price = 500,
         .description = sGeniusFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -12978,7 +12978,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Clever Mochi"),
         .price = 500,
         .description = sCleverFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -12994,7 +12994,7 @@ const struct ItemInfo gItemsInfo[] =
         .pluralName = ITEM_PLURAL_NAME("Swift Mochi"),
         .price = 500,
         .description = sSwiftFeatherDesc,
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -13013,7 +13013,7 @@ const struct ItemInfo gItemsInfo[] =
             "An item that resets\n"
             "all base points of\n"
             "a Pokémon."),
-        .pocket = POCKET_ITEMS,
+        .pocket = POCKET_MEDICINE,
         .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_ResetEVs,
