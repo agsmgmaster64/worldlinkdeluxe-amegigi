@@ -285,3 +285,6 @@ const u32 gMetatileAttributes_Verdanturf[] = INCBIN_U32("data/tilesets/secondary
 
 const u16 gMetatiles_Desert[] = INCBIN_U16("data/tilesets/secondary/desert/metatiles.bin");
 const u32 gMetatileAttributes_Desert[] = INCBIN_U32("data/tilesets/secondary/desert/metatile_attributes.bin");
+
+const u16 gMetatiles_Autumn[] = INCBIN_U16("data/tilesets/secondary/autumn/metatiles.bin");
+const u32 gMetatileAttributes_Autumn[] = INCBIN_U32("data/tilesets/secondary/autumn/metatile_attributes.bin");

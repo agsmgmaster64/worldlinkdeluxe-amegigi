@@ -1116,3 +1116,14 @@ const struct Tileset gTileset_Desert =
     .metatileAttributes = gMetatileAttributes_Desert,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Autumn =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Autumn,
+    .palettes = gTilesetPalettes_Autumn,
+    .metatiles = gMetatiles_Autumn,
+    .metatileAttributes = gMetatileAttributes_Autumn,
+    .callback = NULL,
+};

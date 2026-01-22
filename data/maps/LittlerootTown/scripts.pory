@@ -68,7 +68,7 @@ mapscripts LittlerootTown_MapScripts {
 			waitmovement(0)
 			msgbox(format("{SPEAKER NAME_MOM}{PLAYER}, we're here, honey!\p"
 				"It must be tiring riding with our things in the moving truck.\p"
-				"Well, this is Littleroot Town.\p"
+				"Well, this is Autumnleaf Town.\p"
 				"How do you like it?\N"
 				"This is our new home!\p"
 				"It has a quaint feel, but it seems to be an easy place to live, don't you think?\p"
