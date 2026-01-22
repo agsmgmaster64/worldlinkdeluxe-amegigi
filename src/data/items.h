@@ -627,6 +627,40 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_FoulOrb,
     },
 
+    [ITEM_IGNITE_ORB] =
+    {
+        .name = ITEM_NAME("Ignite Orb"),
+        .price = (I_PRICE >= GEN_8) ? 3000 : 1000,
+        .description = COMPOUND_STRING(
+            "A cozy Orb that\n"
+            "makes Puppets\n"
+            "more friendly."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = BALL_IGNITE,
+        .iconPic = gItemIcon_LuxuryBall,
+        .iconPalette = gItemIconPalette_LuxuryBall,
+    },
+
+    [ITEM_BOMB_ORB] =
+    {
+        .name = ITEM_NAME("Bomb Orb"),
+        .price = (I_PRICE >= GEN_8) ? 3000 : 1000,
+        .description = COMPOUND_STRING(
+            "A cozy Orb that\n"
+            "makes Puppets\n"
+            "more friendly."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokeball,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = BALL_BOMB,
+        .iconPic = gItemIcon_BombOrb,
+        .iconPalette = gItemIconPalette_BombOrb,
+    },
+
     [ITEM_PARK_BALL] =
     {
         .name = ITEM_NAME("Park Ball"),

@@ -80,6 +80,9 @@ const u16 gItemIconPalette_SafariBall[] = INCBIN_U16("graphics/items/icon_palett
 const u32 gItemIcon_FoulOrb[] = INCBIN_U32("graphics/items/icons/foul_orb.4bpp.smol");
 const u16 gItemIconPalette_FoulOrb[] = INCBIN_U16("graphics/items/icon_palettes/foul_orb.gbapal");
 
+const u32 gItemIcon_BombOrb[] = INCBIN_U32("graphics/items/icons/bomb_orb.4bpp.smol");
+const u16 gItemIconPalette_BombOrb[] = INCBIN_U16("graphics/items/icon_palettes/bomb_orb.gbapal");
+
 const u32 gItemIcon_ParkBall[] = INCBIN_U32("graphics/items/icons/park_ball.4bpp.smol");
 const u16 gItemIconPalette_ParkBall[] = INCBIN_U16("graphics/items/icon_palettes/park_ball.gbapal");
 

@@ -74,12 +74,14 @@ static u16 GetBattlerPokeballItemId(u8 battler);
 #define GFX_TAG_DREAM_BALL   55022
 #define GFX_TAG_SAFARI_BALL  55023
 #define GFX_TAG_FOUL_BALL    55024
-#define GFX_TAG_PARK_BALL    55025
-#define GFX_TAG_BEAST_BALL   55026
-#define GFX_TAG_CHERISH_BALL 55027
-#define GFX_TAG_POKE_BALL2   55028
-#define GFX_TAG_GREAT_BALL2  55029
-#define GFX_TAG_ULTRA_BALL2  55030
+#define GFX_TAG_IGNITE_BALL  55025
+#define GFX_TAG_BOMB_BALL    55026
+#define GFX_TAG_PARK_BALL    55027
+#define GFX_TAG_BEAST_BALL   55028
+#define GFX_TAG_CHERISH_BALL 55029
+#define GFX_TAG_POKE_BALL2   55030
+#define GFX_TAG_GREAT_BALL2  55031
+#define GFX_TAG_ULTRA_BALL2  55032
 
 static const struct OamData sBallOamData =
 {
@@ -363,6 +365,18 @@ const struct PokeBallSprite gPokeBalls[POKEBALL_COUNT] =
     {
         POKE_BALL_SPRITE(GFX_TAG_FOUL_BALL, gBallGfx_Foul, gBallPal_Foul),
         .itemId = ITEM_FOUL_ORB,
+    },
+
+    [BALL_IGNITE]  =
+    {
+        POKE_BALL_SPRITE(GFX_TAG_IGNITE_BALL, gBallGfx_Park, gBallPal_Park),
+        .itemId = ITEM_IGNITE_ORB,
+    },
+
+    [BALL_BOMB]    =
+    {
+        POKE_BALL_SPRITE(GFX_TAG_BOMB_BALL, gBallGfx_Bomb, gBallPal_Bomb),
+        .itemId = ITEM_BOMB_ORB,
     },
 
     [BALL_PARK]    =

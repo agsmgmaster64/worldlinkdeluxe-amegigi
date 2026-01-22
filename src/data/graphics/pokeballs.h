@@ -73,6 +73,9 @@ const u16 gBallPal_Safari[] = INCBIN_U16("graphics/balls/safari.gbapal");
 const u32 gBallGfx_Foul[] = INCBIN_U32("graphics/balls/foul.4bpp.smol");
 const u16 gBallPal_Foul[] = INCBIN_U16("graphics/balls/foul.gbapal");
 
+const u32 gBallGfx_Bomb[] = INCBIN_U32("graphics/balls/bomb.4bpp.smol");
+const u16 gBallPal_Bomb[] = INCBIN_U16("graphics/balls/bomb.gbapal");
+
 const u32 gBallGfx_Park[] = INCBIN_U32("graphics/balls/park.4bpp.smol");
 const u16 gBallPal_Park[] = INCBIN_U16("graphics/balls/park.gbapal");
 

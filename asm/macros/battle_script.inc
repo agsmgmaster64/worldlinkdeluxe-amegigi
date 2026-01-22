@@ -1772,6 +1772,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro jumpifdamagingball jumpInstr:req
+	callnative BS_JumpIfDamagingBall
+	.4byte \jumpInstr
+	.endm
+
 	.macro jumpifpointbattle jumpInstr:req
 	callnative BS_JumpIfPointBattle
 	.4byte \jumpInstr

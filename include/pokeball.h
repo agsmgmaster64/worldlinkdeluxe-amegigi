@@ -28,12 +28,14 @@ enum PokeBall
     BALL_DREAM = 22,
     BALL_SAFARI = 23,
     BALL_FOUL = 24,
-    BALL_PARK = 25,
-    BALL_BEAST = 26,
-    BALL_CHERISH = 27,
-    BALL_POKE2 = 28,
-    BALL_GREAT2 = 29,
-    BALL_ULTRA2 = 30,
+    BALL_IGNITE = 25,
+    BALL_BOMB = 26,
+    BALL_PARK = 27,
+    BALL_BEAST = 28,
+    BALL_CHERISH = 29,
+    BALL_POKE2 = 30,
+    BALL_GREAT2 = 31,
+    BALL_ULTRA2 = 32,
     POKEBALL_COUNT
 };
 

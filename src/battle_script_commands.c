@@ -13665,6 +13665,18 @@ void BS_CopyMovePermanentlyDeleteOthers(void)
     }
 }
 
+void BS_JumpIfDamagingBall(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+
+    u32 ballId = ItemIdToBallId(gLastThrownBall);
+
+    if (ballId == BALL_BOMB)
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_JumpIfPointBattle(void)
 {
     NATIVE_ARGS(const u8 *jumpInstr);

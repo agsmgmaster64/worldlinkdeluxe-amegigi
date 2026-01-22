@@ -33,6 +33,8 @@ enum __attribute__((packed)) Item
     ITEM_DREAM_BALL,
     ITEM_SAFARI_ORB,
     ITEM_FOUL_ORB,
+    ITEM_IGNITE_ORB,
+    ITEM_BOMB_ORB,
     ITEM_PARK_BALL,
     ITEM_BEAST_BALL,
     ITEM_CHERISH_BALL,

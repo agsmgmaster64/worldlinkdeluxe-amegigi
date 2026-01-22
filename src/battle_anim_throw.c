@@ -176,12 +176,14 @@ static const struct CaptureStar sCaptureStarsHisui[] =
 #define TAG_PARTICLES_DREAM_BALL   65052
 #define TAG_PARTICLES_SAFARI_BALL  65053
 #define TAG_PARTICLES_FOUL_BALL    65054
-#define TAG_PARTICLES_PARK_BALL    65055
-#define TAG_PARTICLES_BEAST_BALL   65056
-#define TAG_PARTICLES_CHERISH_BALL 65057
-#define TAG_PARTICLES_POKE_BALL2   65058
-#define TAG_PARTICLES_GREAT_BALL2  65059
-#define TAG_PARTICLES_ULTRA_BALL2  65060
+#define TAG_PARTICLES_IGNITE_BALL  65055
+#define TAG_PARTICLES_BOMB_BALL    65056
+#define TAG_PARTICLES_PARK_BALL    65057
+#define TAG_PARTICLES_BEAST_BALL   65058
+#define TAG_PARTICLES_CHERISH_BALL 65059
+#define TAG_PARTICLES_POKE_BALL2   65060
+#define TAG_PARTICLES_GREAT_BALL2  65061
+#define TAG_PARTICLES_ULTRA_BALL2  65062
 
 static const union AnimCmd sAnim_RegularBall[] =
 {
@@ -456,6 +458,22 @@ static const struct PokeBallParticles sBallParticles[POKEBALL_COUNT] =
         .openFadeColor = RGB(15, 24, 7),
         .animNums = 0,
         .particleAnimationFunc = PokeBallOpenParticleAnimation,
+    },
+
+    [BALL_IGNITE] =
+    {
+        POKE_BALL_ANIMATION(TAG_PARTICLES_IGNITE_BALL, gBattleAnimSpriteGfx_Particles, gBattleAnimSpritePal_CircleImpact),
+        .openFadeColor = RGB(31, 31, 15),
+        .animNums = 5,
+        .particleAnimationFunc = UltraBallOpenParticleAnimation,
+    },
+
+    [BALL_BOMB] =
+    {
+        POKE_BALL_ANIMATION(TAG_PARTICLES_BOMB_BALL, gBattleAnimSpriteGfx_Particles, gBattleAnimSpritePal_CircleImpact),
+        .openFadeColor = RGB(31, 31, 15),
+        .animNums = 5,
+        .particleAnimationFunc = UltraBallOpenParticleAnimation,
     },
 
     [BALL_PARK] =
