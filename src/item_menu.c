@@ -2407,7 +2407,6 @@ static void InitBerryPouchFromBattle(void)
 static const u8 sText_BattleRules_NoItems_Player[] = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
 static void ItemMenu_UseInBattle(u8 taskId)
 {
-    u16 type;
     //tx_randomizer_and_challenges
     if (gSaveBlock2Ptr->tx_Challenges_NoItemPlayer && GetItemBattleUsage(gSpecialVar_ItemId) != EFFECT_ITEM_THROW_BALL)
     {
@@ -2422,7 +2421,7 @@ static void ItemMenu_UseInBattle(u8 taskId)
     }
 
     // Safety check
-    type = GetItemType(gSpecialVar_ItemId);
+    enum ItemType type = GetItemType(gSpecialVar_ItemId);
     if (!GetItemBattleUsage(gSpecialVar_ItemId))
         return;
 

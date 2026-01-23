@@ -561,7 +561,7 @@ void SpawnLinkPartnerObjectEvent(void)
         {-1,  0}
     };
     u8 myLinkPlayerNumber;
-    u8 playerFacingDirection;
+    enum Direction playerFacingDirection;
     u8 linkSpriteId;
     u8 i;
 
@@ -587,12 +587,16 @@ void SpawnLinkPartnerObjectEvent(void)
         j = 3;
         x = gSaveBlock1Ptr->pos.x;
         y = gSaveBlock1Ptr->pos.y + 1;
+    default:
+        break;
     }
+
     for (i = 0; i < gSpecialVar_0x8004; i++)
     {
         if (myLinkPlayerNumber != i)
         {
-            switch ((u8)gLinkPlayers[i].version)
+            enum GameVersion version = (u8)gLinkPlayers[i].version;
+            switch (version)
             {
             case VERSION_RUBY:
             case VERSION_SAPPHIRE:
@@ -1054,7 +1058,7 @@ static void Task_PCTurnOnEffect(u8 taskId)
 
 static void PCTurnOnEffect(struct Task *task)
 {
-    u8 playerDirection;
+    enum Direction playerDirection;
     s8 dx = 0;
     s8 dy = 0;
     if (task->tTimer == 6)
@@ -1076,6 +1080,8 @@ static void PCTurnOnEffect(struct Task *task)
         case DIR_EAST:
             dx = 1;
             dy = -1;
+            break;
+        default:
             break;
         }
 
@@ -1131,7 +1137,7 @@ static void PCTurnOffEffect(void)
     u16 metatileId = 0;
 
     // Get where the PC should be, depending on where the player is looking.
-    u8 playerDirection = GetPlayerFacingDirection();
+    enum Direction playerDirection = GetPlayerFacingDirection();
 
     if (IsPlayerInFrontOfPC() == FALSE)
         return;
@@ -1148,6 +1154,8 @@ static void PCTurnOffEffect(void)
     case DIR_EAST:
         dx = 1;
         dy = -1;
+        break;
+    default:
         break;
     }
 
@@ -2235,7 +2243,7 @@ void BufferBattleTowerElevatorFloors(void)
 
     u8 i;
     u16 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
-    u8 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    enum FrontierLevelMode lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
 
     if (battleMode == FRONTIER_MODE_MULTIS && !FlagGet(FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER))
     {
@@ -4398,7 +4406,7 @@ static void Task_LearnMove(u8 taskId)
 
 void CanTeachMoveBoxMon(void)
 {
-    if (gSpecialVar_Result == FALSE)
+    if (gSpecialVar_0x8004 == PARTY_NOTHING_CHOSEN)
     {
         // We want to wait one frame before using ScriptContext_Enable() or the game freezes
         CreateTask(UIEndTask, 1);

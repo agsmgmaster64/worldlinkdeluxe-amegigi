@@ -1108,7 +1108,7 @@ void TryPutPokemonTodayOnAir(void)
     u8 i;
     u16 ballsUsed;
     TVShow *show;
-    u32 language2;
+    enum Language language2;
     enum Item itemLastUsed;
 
     ballsUsed = 0;
@@ -1296,7 +1296,7 @@ void PutBattleUpdateOnTheAir(u8 opponentLinkPlayerId, enum Move move, u16 specie
     }
 }
 
-bool8 Put3CheersForPokeblocksOnTheAir(const u8 *partnersName, u8 flavor, u8 color, u8 sheen, u8 language)
+bool8 Put3CheersForPokeblocksOnTheAir(const u8 *partnersName, enum Flavor flavor, u8 color, u8 sheen, u8 language)
 {
     TVShow *show;
     u8 name[32];
@@ -1534,26 +1534,28 @@ void TryPutSmartShopperOnAir(void)
 void PutNameRaterShowOnTheAir(void)
 {
     TVShow *show;
+    struct BoxPokemon *boxmon;
 
     InterviewBefore_NameRater();
     if (gSpecialVar_Result != 1)
     {
-        GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+        boxmon = GetSelectedBoxMonFromPcOrParty();
+        GetBoxMonData(boxmon, MON_DATA_NICKNAME, gStringVar1);
         if (StringLength(gSaveBlock2Ptr->playerName) > 1 && StringLength(gStringVar1) > 1)
         {
             show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
             show->nameRaterShow.kind = TVSHOW_NAME_RATER_SHOW;
             show->nameRaterShow.active = TRUE;
-            show->nameRaterShow.species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+            show->nameRaterShow.species = GetBoxMonData(boxmon, MON_DATA_SPECIES);
             show->nameRaterShow.random = Random() % 3;
             show->nameRaterShow.random2 = Random() % 2;
             show->nameRaterShow.randomSpecies = GetRandomDifferentSpeciesSeenByPlayer(show->nameRaterShow.species);
             StringCopy(show->nameRaterShow.trainerName, gSaveBlock2Ptr->playerName);
-            GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME10, show->nameRaterShow.pokemonName);
+            GetBoxMonData(boxmon, MON_DATA_NICKNAME10, show->nameRaterShow.pokemonName);
             StripExtCtrlCodes(show->nameRaterShow.pokemonName);
             StorePlayerIdInNormalShow(show);
             show->nameRaterShow.language = gGameLanguage;
-            show->nameRaterShow.pokemonNameLanguage = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LANGUAGE);
+            show->nameRaterShow.pokemonNameLanguage = GetBoxMonData(boxmon, MON_DATA_LANGUAGE);
         }
     }
 }
@@ -2725,7 +2727,7 @@ void CopyContestRankToStringVar(u8 varIdx, u8 rank)
     }
 }
 
-void CopyContestCategoryToStringVar(u8 varIdx, u8 category)
+void CopyContestCategoryToStringVar(u8 varIdx, enum ContestCategories category)
 {
     switch (category)
     {
@@ -2743,6 +2745,8 @@ void CopyContestCategoryToStringVar(u8 varIdx, u8 category)
         break;
     case CONTEST_CATEGORY_TOUGH:
         StringCopy(gTVStringVarPtrs[varIdx], gStdStrings[STDSTRING_TOUGH]);
+        break;
+    default:
         break;
     }
 }
@@ -3266,10 +3270,7 @@ static void ChangeBoxPokemonNickname_CB(void)
 
 void ChangePokemonNickname(void)
 {
-    struct BoxPokemon *boxMon = GetSelectedBoxMonFromPcOrParty();
-    GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar3);
-    GetBoxMonData(boxMon, MON_DATA_NICKNAME, gStringVar2);
-    DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2, GetBoxMonData(boxMon, MON_DATA_SPECIES), GetBoxMonGender(boxMon), GetBoxMonData(boxMon, MON_DATA_PERSONALITY), ChangeBoxPokemonNickname_CB);
+    ChangePokemonNicknameWithCallback(ChangeBoxPokemonNickname_CB);
 }
 
 void BufferMonNickname(void)
@@ -3286,7 +3287,6 @@ void IsMonOTIDNotPlayers(void)
         gSpecialVar_Result = FALSE;
     else
         gSpecialVar_Result = TRUE;
-
 }
 
 static u8 GetTVGroupByShowId(u8 kind)
@@ -3425,7 +3425,7 @@ void HideBattleTowerReporter(void)
 void ReceiveTvShowsData(void *src, u32 size, u8 playersLinkId)
 {
     u8 i;
-    u16 version;
+    enum GameVersion version;
     TVShow (*rmBuffer2)[MAX_LINK_PLAYERS][TV_SHOWS_COUNT];
     TVShow (*rmBuffer)[MAX_LINK_PLAYERS][TV_SHOWS_COUNT];
 
@@ -4036,7 +4036,7 @@ static void TranslateRubyShows(TVShow *shows)
     }
 }
 
-static u8 GetStringLanguage(u8 *str)
+static enum Language GetStringLanguage(u8 *str)
 {
     return IsStringJapanese(str) ? LANGUAGE_JAPANESE : GAME_LANGUAGE;
 }
@@ -5323,20 +5323,22 @@ static void DoTVShow3CheersForPokeblocks(void)
     case 1:
         switch (show->threeCheers.flavor)
         {
-        case 0:
+        case FLAVOR_SPICY:
             StringCopy(gStringVar1, gText_Spicy2);
             break;
-        case 1:
+        case FLAVOR_DRY:
             StringCopy(gStringVar1, gText_Dry2);
             break;
-        case 2:
+        case FLAVOR_SWEET:
             StringCopy(gStringVar1, gText_Sweet2);
             break;
-        case 3:
+        case FLAVOR_BITTER:
             StringCopy(gStringVar1, gText_Bitter2);
             break;
-        case 4:
+        case FLAVOR_SOUR:
             StringCopy(gStringVar1, gText_Sour2);
+            break;
+        default:
             break;
         }
         if (show->threeCheers.sheen > 24)
@@ -5361,20 +5363,22 @@ static void DoTVShow3CheersForPokeblocks(void)
     case 3:
         switch (show->threeCheers.flavor)
         {
-        case 0:
+        case FLAVOR_SPICY:
             StringCopy(gStringVar1, gText_Spicy2);
             break;
-        case 1:
+        case FLAVOR_DRY:
             StringCopy(gStringVar1, gText_Dry2);
             break;
-        case 2:
+        case FLAVOR_SWEET:
             StringCopy(gStringVar1, gText_Sweet2);
             break;
-        case 3:
+        case FLAVOR_BITTER:
             StringCopy(gStringVar1, gText_Bitter2);
             break;
-        case 4:
+        case FLAVOR_SOUR:
             StringCopy(gStringVar1, gText_Sour2);
+            break;
+        default:
             break;
         }
 

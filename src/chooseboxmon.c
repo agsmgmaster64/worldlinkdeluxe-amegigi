@@ -27,7 +27,8 @@ struct PcMonSelection
     void      (*partyMonBackup)(void);
     u32       (*isMonInvalid)(struct BoxPokemon *);
     const u8* postSelectionScript;
-    bool32    isStrict;
+    u32 isStrict:1;
+    u32 padding:31; 
 };
 
 static EWRAM_DATA u8 sSelectionType = 0;
@@ -38,7 +39,7 @@ static u32 IsNotEgg(struct BoxPokemon *boxmon);
 static u32 IsMatchingSpecies(struct BoxPokemon *boxmon);
 static u32 CanMonDeleteMove(struct BoxPokemon *boxmon);
 static u32 CanMonLearnMove(struct BoxPokemon *boxmon);
-static u32 CanMonRelearnMoves(struct BoxPokemon *boxmon);
+static u32 CanRelearnMoves(struct BoxPokemon *boxmon);
 
 static const struct PcMonSelection sPcMonSelectionTypes[] =
 {
@@ -47,7 +48,7 @@ static const struct PcMonSelection sPcMonSelectionTypes[] =
     [SELECT_PC_MON_DAYCARE] = {ChooseSendDaycareMon, IsNotEgg, NULL, TRUE},
     [SELECT_PC_MON_MOVE_TUTOR] = {ChooseMonForMoveTutor, CanMonLearnMove, MoveTutor_AfterChooseBoxMon, FALSE},
     [SELECT_PC_MON_MOVE_DELETER] = {ChoosePartyMon, CanMonDeleteMove, NULL, FALSE},
-    [SELECT_PC_MON_MOVE_RELEARNER] = {ChooseMonForMoveRelearner, CanMonRelearnMoves, NULL, TRUE}
+    [SELECT_PC_MON_MOVE_RELEARNER] = {ChooseMonForMoveRelearner, CanRelearnMoves, NULL, FALSE}
 };
 
 static u32 NoFilter(struct BoxPokemon *boxmon)
@@ -60,6 +61,15 @@ static u32 IsNotEgg(struct BoxPokemon *boxmon)
     if (GetBoxMonData(boxmon, MON_DATA_IS_EGG))
         return INVALID_MON;
     return VALID_MON;
+}
+
+static u32 CanRelearnMoves(struct BoxPokemon *boxmon)
+{
+    if (GetBoxMonData(boxmon, MON_DATA_IS_EGG))
+        return INVALID_MON;
+    if (CanBoxMonRelearnMoves(boxmon, gMoveRelearnerState))
+        return VALID_MON;
+    return INVALID_MON;
 }
 
 static u32 IsMatchingSpecies(struct BoxPokemon *boxmon)
@@ -87,24 +97,6 @@ static u32 CanMonLearnMove(struct BoxPokemon *boxmon)
     if (CanLearnTeachableMove(GetBoxMonData(boxmon, MON_DATA_SPECIES), gSpecialVar_0x8005))
         return VALID_MON;
     return CANNOT_LEARN_MOVE;
-}
-
-static u32 CanMonRelearnMoves(struct BoxPokemon *boxmon)
-{
-    bool32 canRelearn = FALSE;
-    if (GetBoxMonData(boxmon, MON_DATA_IS_EGG))
-    {
-        gSpecialVar_0x8005 = FALSE;
-        return INVALID_MON;
-    }
-    switch (gMoveRelearnerState)
-    {
-    default:
-    case MOVE_RELEARNER_LEVEL_UP_MOVES:
-        canRelearn = HasRelearnerLevelUpMovesBox(boxmon);
-    }
-    gSpecialVar_0x8005 = canRelearn;
-    return canRelearn;
 }
 
 u32 IsBoxMonExcluded(struct BoxPokemon *boxmon)
@@ -152,7 +144,9 @@ enum LearnMoveState
 {
     LEARN_MOVE_END,
 
-    LEARN_MOVE, //Start
+    MON_CAN_LEARN, //Start
+
+    LEARN_MOVE,
 
     ASK_REPLACEMENT_1,
     ASK_REPLACEMENT_2,
@@ -196,12 +190,28 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
     struct BoxPokemon *boxmon = LearnMove_GetBoxMonFromTaskData(partyIndex);
     switch (state)
     {
+    case MON_CAN_LEARN:
+        GetBoxMonNickname(boxmon, gStringVar1);
+        StringCopy(gStringVar2, GetMoveName(move));
+        gSpecialVar_Result = FALSE;
+        switch(CanMonLearnMove(boxmon))
+        {
+        case VALID_MON:
+            return LEARN_MOVE;
+        case ALREADY_KNOWS_MOVE:
+            ui->printMessage(gText_PkmnAlreadyKnows);
+            return LEARN_MOVE_END;
+        case CANNOT_LEARN_MOVE_IS_EGG:
+        case CANNOT_LEARN_MOVE:
+        default:
+            ui->printMessage(gText_PkmnCantLearnMove);
+            return LEARN_MOVE_END;
+        }
     case LEARN_MOVE:
         if (GiveMoveToBoxMon(boxmon, move) != MON_HAS_MAX_MOVES)
             return LEARNED_MOVE_1;
         else
             return ASK_REPLACEMENT_1;
-
     case ASK_REPLACEMENT_1:
         GetBoxMonNickname(boxmon, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(move));
@@ -220,7 +230,6 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
             return REFUSE_REPLACE_1;
         }
         return state;
-
     case REFUSE_REPLACE_1:
         StringCopy(gStringVar2, GetMoveName(move));
         ui->printMessage(gText_StopLearningMove2);
@@ -238,7 +247,6 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
             return WANT_REPLACE_1;
         }
         return state;
-
     case WANT_REPLACE_1:
         ui->printMessage(gText_WhichMoveToForget);
         return WANT_REPLACE_2;
@@ -250,7 +258,6 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
             return REFUSE_REPLACE_1;
         else
             return FORGOT_MOVE_1;
-
     case LEARNED_MOVE_1:
         GetBoxMonNickname(boxmon, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(move));
@@ -260,13 +267,11 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
         gSpecialVar_Result = TRUE;
         ui->playFanfare(MUS_LEVEL_UP);
         return LEARN_MOVE_END;
-
     case FORGOT_MOVE_1:
         GetBoxMonNickname(boxmon, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(GetBoxMonData(boxmon, MON_DATA_MOVE1 + GetMoveSlotToReplace())));
         ui->printMessage(gText_12PoofForgotMove);
         return REPLACE_MOVE_1;
-
     case REPLACE_MOVE_1:
         u32 slot = GetMoveSlotToReplace();
         RemoveBoxMonPPBonus(boxmon, slot);
@@ -278,16 +283,14 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
         gSpecialVar_Result = TRUE;
         ui->printMessage(gText_PkmnLearnedMove4);
         return LEARN_MOVE_END;
-
     case DID_NOT_LEARN_1:
         GetBoxMonNickname(boxmon, gStringVar1);
         StringCopy(gStringVar2, GetMoveName(move));
         gSpecialVar_Result = FALSE;
         ui->printMessage(gText_MoveNotLearned);
         return LEARN_MOVE_END;
-
     default:
-        assertf(FALSE, "Unknown LearnMove state %d\nEnding move learning ...", state);
+        errorf("Unknown LearnMove state %d\nEnding move learning ...", state);
     case LEARN_MOVE_END:
         ui->endTask(taskId);
         return LEARN_MOVE_END;
@@ -296,7 +299,7 @@ s32 LearnMove(const struct MoveLearnUI *ui, u8 taskId)
 
 s32 GetLearnMoveStartState(void)
 {
-    return LEARN_MOVE;
+    return MON_CAN_LEARN;
 }
 
 //At the time of writing code for this, there was no prescribed way to make a task persist between scenes

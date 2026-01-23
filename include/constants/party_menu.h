@@ -132,4 +132,22 @@ enum {
     CANNOT_LEARN_MOVE_IS_EGG
 };
 
+enum PcMonSelectionType
+{
+    SELECT_PC_MON_NORMAL,
+    SELECT_PC_MON_TRADE, // Also used for Lotad / Seedot size check
+    SELECT_PC_MON_DAYCARE,
+    SELECT_PC_MON_MOVE_TUTOR,
+    SELECT_PC_MON_MOVE_DELETER,
+    SELECT_PC_MON_MOVE_RELEARNER,
+};
+
+enum CanMoveBeLearned
+{
+    CAN_LEARN_MOVE,
+    CANNOT_LEARN_MOVE,
+    ALREADY_KNOWS_MOVE,
+    CANNOT_LEARN_MOVE_IS_EGG
+};
+
 #endif // GUARD_CONSTANTS_PARTY_MENU_H

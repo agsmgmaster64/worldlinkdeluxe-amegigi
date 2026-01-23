@@ -4536,10 +4536,10 @@ static bool32 ShouldBoxmonSpriteBeTransparent(u32 boxId, u32 boxPosition)
     if (GetBoxMonDataAt(boxId, boxPosition, MON_DATA_NUZLOCKE_RIBBON))
         return TRUE;
     if (sStorage->boxOption == OPTION_MOVE_ITEMS
-    && GetBoxMonDataAt(boxId, boxPosition, MON_DATA_HELD_ITEM) == ITEM_NONE)
+     && GetBoxMonDataAt(boxId, boxPosition, MON_DATA_HELD_ITEM) == ITEM_NONE)
         return TRUE;
     if (sStorage->boxOption == OPTION_SELECT_MON
-    && IsBoxMonExcluded(GetBoxedMonPtr(boxId, boxPosition)))
+     && IsBoxMonExcluded(GetBoxedMonPtr(boxId, boxPosition)))
         return TRUE;
     return FALSE;
 }
@@ -4592,9 +4592,6 @@ static void CreateBoxMonIconAtPos(u8 boxPosition)
 
         sStorage->boxMonsSprites[boxPosition] = CreateMonIconSprite(species, personality, x, y, 2, 19 - (boxPosition % IN_BOX_COLUMNS), isEgg);
         if (ShouldBoxmonSpriteBeTransparent(StorageGetCurrentBox(), boxPosition))
-            sStorage->boxMonsSprites[boxPosition]->oam.objMode = ST_OAM_OBJ_BLEND;
-        // Locked nuzlocke mons should be transparent
-        if (GetCurrentBoxMonData(boxPosition, MON_DATA_NUZLOCKE_RIBBON))
             sStorage->boxMonsSprites[boxPosition]->oam.objMode = ST_OAM_OBJ_BLEND;
     }
 }

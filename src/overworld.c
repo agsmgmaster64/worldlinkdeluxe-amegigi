@@ -154,9 +154,9 @@ static void ClearAllPlayerKeys(void);
 static void ResetAllPlayerLinkStates(void);
 static void UpdateHeldKeyCode(u16);
 static void UpdateAllLinkPlayers(u16 *, s32);
-static u8 FlipVerticalAndClearForced(u8, u8);
-static u8 LinkPlayerGetCollision(u8, u8, s16, s16);
-static void CreateLinkPlayerSprite(u8, u8);
+static enum Direction FlipVerticalAndClearForced(u8, u8);
+static u8 LinkPlayerGetCollision(u8, enum Direction, s16, s16);
+static void CreateLinkPlayerSprite(u8, enum GameVersion);
 static void GetLinkPlayerCoords(u8, s16 *, s16 *);
 static u8 GetLinkPlayerFacingDirection(u8);
 static u8 GetLinkPlayerElevation(u8);
@@ -194,7 +194,7 @@ static void SetFieldVBlankCallback(void);
 static void FieldClearVBlankHBlankCallbacks(void);
 static void TransitionMapMusic(void);
 static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *playerStruct, u16 metatileBehavior, enum MapType mapType);
-static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType);
+static enum Direction GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType);
 static u16 GetCenterScreenMetatileBehavior(void);
 
 static void *sUnusedOverworldCallback;
@@ -356,23 +356,23 @@ static const struct ScanlineEffectParams sFlashEffectParams =
     0,
 };
 
-static u8 MovementEventModeCB_Normal(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
-static u8 MovementEventModeCB_Ignored(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
-static u8 MovementEventModeCB_Scripted(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
+static u8 MovementEventModeCB_Normal(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
+static u8 MovementEventModeCB_Ignored(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
+static u8 MovementEventModeCB_Scripted(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
 
-static u8 (*const sLinkPlayerMovementModes[])(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8) =
+static u8 (*const sLinkPlayerMovementModes[])(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction) =
 {
     [MOVEMENT_MODE_FREE]     = MovementEventModeCB_Normal,
     [MOVEMENT_MODE_FROZEN]   = MovementEventModeCB_Ignored,
     [MOVEMENT_MODE_SCRIPTED] = MovementEventModeCB_Scripted,
 };
 
-static u8 FacingHandler_DoNothing(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
-static u8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
-static u8 FacingHandler_ForcedFacingChange(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8);
+static u8 FacingHandler_DoNothing(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
+static u8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
+static u8 FacingHandler_ForcedFacingChange(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction);
 
 // These handlers return TRUE if the movement was scripted and successful, and FALSE otherwise.
-static bool8 (*const sLinkPlayerFacingHandlers[])(struct LinkPlayerObjectEvent *, struct ObjectEvent *, u8) =
+static bool8 (*const sLinkPlayerFacingHandlers[])(struct LinkPlayerObjectEvent *, struct ObjectEvent *, enum Direction) =
 {
     FacingHandler_DoNothing,
     FacingHandler_DpadMovement,
@@ -878,7 +878,7 @@ const struct MapConnection *GetMapConnection(u8 dir)
     return NULL;
 }
 
-static bool8 SetDiveWarp(u8 dir, u16 x, u16 y)
+static bool8 SetDiveWarp(enum Connection dir, u16 x, u16 y)
 {
     const struct MapConnection *connection = GetMapConnection(dir);
 
@@ -1069,7 +1069,7 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
 
-static u8 GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType)
+static enum Direction GetAdjustedInitialDirection(struct InitialPlayerAvatarState *playerStruct, u8 transitionFlags, u16 metatileBehavior, enum MapType mapType)
 {
     if (FlagGet(FLAG_SYS_CRUISE_MODE) && mapType == MAP_TYPE_OCEAN_ROUTE)
         return DIR_EAST;
@@ -3377,7 +3377,7 @@ static void InitLinkPlayerObjectEventPos(struct ObjectEvent *objEvent, s16 x, s1
     ObjectEventUpdateElevation(objEvent, NULL);
 }
 
-static void UNUSED SetLinkPlayerObjectRange(u8 linkPlayerId, u8 dir)
+static void UNUSED SetLinkPlayerObjectRange(u8 linkPlayerId, enum Direction dir)
 {
     if (gLinkPlayerObjectEvents[linkPlayerId].active)
     {
@@ -3478,28 +3478,28 @@ static void SetPlayerFacingDirection(u8 linkPlayerId, u8 facing)
 }
 
 
-static u8 MovementEventModeCB_Normal(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static u8 MovementEventModeCB_Normal(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     return sLinkPlayerFacingHandlers[dir](linkPlayerObjEvent, objEvent, dir);
 }
 
-static u8 MovementEventModeCB_Ignored(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static u8 MovementEventModeCB_Ignored(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     return FACING_UP;
 }
 
 // Identical to MovementEventModeCB_Normal
-static u8 MovementEventModeCB_Scripted(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static u8 MovementEventModeCB_Scripted(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     return sLinkPlayerFacingHandlers[dir](linkPlayerObjEvent, objEvent, dir);
 }
 
-static bool8 FacingHandler_DoNothing(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static bool8 FacingHandler_DoNothing(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     return FALSE;
 }
 
-static bool8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static bool8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     s16 x, y;
 
@@ -3519,7 +3519,7 @@ static bool8 FacingHandler_DpadMovement(struct LinkPlayerObjectEvent *linkPlayer
     }
 }
 
-static bool8 FacingHandler_ForcedFacingChange(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, u8 dir)
+static bool8 FacingHandler_ForcedFacingChange(struct LinkPlayerObjectEvent *linkPlayerObjEvent, struct ObjectEvent *objEvent, enum Direction dir)
 {
     linkDirection(objEvent) = FlipVerticalAndClearForced(dir, linkDirection(objEvent));
     return FALSE;
@@ -3546,7 +3546,7 @@ static void MovementStatusHandler_TryAdvanceScript(struct LinkPlayerObjectEvent 
 // Flip Up/Down facing codes. If newFacing doesn't specify a direction, default
 // to oldFacing. Note that this clears also the "FORCED" part of the facing code,
 // even for Left/Right codes.
-static u8 FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing)
+static enum Direction FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing)
 {
     switch (newFacing)
     {
@@ -3566,7 +3566,7 @@ static u8 FlipVerticalAndClearForced(u8 newFacing, u8 oldFacing)
     return oldFacing;
 }
 
-static u8 LinkPlayerGetCollision(u8 selfObjEventId, u8 direction, s16 x, s16 y)
+static u8 LinkPlayerGetCollision(u8 selfObjEventId, enum Direction direction, s16 x, s16 y)
 {
     u8 i;
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
@@ -3583,7 +3583,7 @@ static u8 LinkPlayerGetCollision(u8 selfObjEventId, u8 direction, s16 x, s16 y)
     return MapGridGetCollisionAt(x, y);
 }
 
-static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
+static void CreateLinkPlayerSprite(u8 linkPlayerId, enum GameVersion gameVersion)
 {
     struct LinkPlayerObjectEvent *linkPlayerObjEvent = &gLinkPlayerObjectEvents[linkPlayerId];
     u8 objEventId = linkPlayerObjEvent->objEventId;
@@ -3607,6 +3607,8 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, u8 gameVersion)
             u16 gfxId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkPlayerId, linkGender(objEvent));
             objEvent->spriteId = CreateObjectGraphicsSprite(gfxId, SpriteCB_LinkPlayer, 0, 0, 0);
         }
+            break;
+        default:
             break;
         }
 

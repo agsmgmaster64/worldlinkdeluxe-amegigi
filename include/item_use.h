@@ -89,7 +89,7 @@ void ItemUseOnFieldCB_RockClimbTool(u8);
 
 // End qol_field_moves
 bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
-u8 GetDirectionToHiddenItem(s16, s16);
+enum Direction GetDirectionToHiddenItem(s16, s16);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

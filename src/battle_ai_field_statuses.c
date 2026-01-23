@@ -340,7 +340,6 @@ static enum FieldEffectOutcome BenefitsFromElectricTerrain(u32 battler)
      || HasBattlerTerrainBoostMove(RIGHT_FOE(battler), STATUS_FIELD_ELECTRIC_TERRAIN))
         return FIELD_EFFECT_NEGATIVE;
 
-
     return FIELD_EFFECT_NEUTRAL;
 }
 
@@ -613,4 +612,3 @@ s32 CalcWeatherScore(u32 battlerAtk, u32 battlerDef, enum Move move, struct AiLo
 
     return score;
 }
-

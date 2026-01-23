@@ -2479,7 +2479,7 @@ s32 GetGameProgressForLinkTrade(void)
     // The usage of this value is a little unusual given it's treated as a bool,
     // but it's the result of its usage in FRLG, where 0 is FRLG, 1 is RS, and 2 is Emerald.
     s32 versionId; // 0: RSE, 2: FRLG
-    u16 version;
+    enum GameVersion version;
 
     if (gReceivedRemoteLinkPlayers)
     {
@@ -2521,7 +2521,7 @@ int GetUnionRoomTradeMessageId(struct RfuGameCompatibilityData player, struct Rf
     bool8 playerCanLinkNationally = player.canLinkNationally;
     bool8 partnerHasNationalDex = partner.hasNationalDex;
     bool8 partnerCanLinkNationally = partner.canLinkNationally;
-    u8 partnerVersion = partner.version;
+    enum GameVersion partnerVersion = partner.version;
 
     // If partner is not using Emerald, both players must have progressed the story
     // to a certain point (becoming champion in RSE, finishing the Sevii islands in FRLG)
@@ -2991,7 +2991,7 @@ static void CB2_InitInGameTrade(void)
 
     struct Pokemon *playerMon;
     if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
-        playerMon = &gEnemyParty[1];
+        playerMon = &gEnemyParty[TRADEMON_FROM_PC];
     else
         playerMon = &gPlayerParty[gSpecialVar_0x8004];
 
@@ -3001,8 +3001,8 @@ static void CB2_InitInGameTrade(void)
         //If ChooseBoxMon points to a pc mon, we store it into gEnemyParty
         if(gSpecialVar_0x8004 == PC_MON_CHOSEN)
         {
-            gSelectedTradeMonPositions[TRADE_PLAYER] = 1;
-            RemoveSelectedPcMon(&gEnemyParty[1]);
+            gSelectedTradeMonPositions[TRADE_PLAYER] = TRADEMON_FROM_PC;
+            RemoveSelectedPcMon(&gEnemyParty[TRADEMON_FROM_PC]);
         }
         else
         {
@@ -3088,7 +3088,7 @@ static void UpdatePokedexForReceivedMon(u8 partyIdx)
 {
     struct Pokemon *mon;
     if (partyIdx == PC_MON_CHOSEN)
-        mon = &gEnemyParty[1];
+        mon = &gEnemyParty[TRADEMON_FROM_PC];
     else
         mon = &gPlayerParty[partyIdx];
 
@@ -3116,7 +3116,7 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
     u8 friendship;
     struct Pokemon *playerMon, *partnerMon;
     if (playerPartyIdx == PC_MON_CHOSEN)
-        playerMon = &gEnemyParty[1];
+        playerMon = &gEnemyParty[TRADEMON_FROM_PC];
     else
         playerMon = &gPlayerParty[playerPartyIdx];
 
@@ -3377,9 +3377,8 @@ static void BufferTradeSceneStrings(void)
         GetMonData(&gEnemyParty[0], MON_DATA_OT_NAME, gStringVar1);
         ConvertInternationalString(gStringVar1, GetMonData(&gEnemyParty[0], MON_DATA_LANGUAGE));
         GetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, name);
-        StringCopy_Nickname(gStringVar3, name);
         if(gSpecialVar_0x8004 == PC_MON_CHOSEN)
-            GetMonData(&gEnemyParty[1], MON_DATA_NICKNAME, name);
+            GetMonData(&gEnemyParty[TRADEMON_FROM_PC], MON_DATA_NICKNAME, name);
         else
             GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, name);
         StringCopy_Nickname(gStringVar2, name);
@@ -4409,14 +4408,14 @@ static bool8 DoTradeAnim_Wireless(void)
         gCB2_AfterEvolution = CB2_InGameTrade;
         struct Pokemon *canEvolveMon;
         if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
-            canEvolveMon = &gEnemyParty[1];
+            canEvolveMon = &gEnemyParty[TRADEMON_FROM_PC];
         else
-            canEvolveMon = &gPlayerParty[gSelectedTradeMonPositions[TRADE_PLAYER]];
+            canEvolveMon = &gPlayerParty[gSpecialVar_0x8004];
         evoTarget = GetEvolutionTargetSpecies(canEvolveMon, EVO_MODE_TRADE, ITEM_NONE, &gEnemyParty[0], NULL, CHECK_EVO);
         if (evoTarget != SPECIES_NONE)
         {
             GetEvolutionTargetSpecies(canEvolveMon, EVO_MODE_TRADE, ITEM_NONE, &gEnemyParty[0], NULL, DO_EVO);
-            TradeEvolutionScene(canEvolveMon, evoTarget, sTradeAnim->monSpriteIds[TRADE_PARTNER], gSelectedTradeMonPositions[TRADE_PLAYER]);
+            TradeEvolutionScene(canEvolveMon, evoTarget, sTradeAnim->monSpriteIds[TRADE_PARTNER], gSpecialVar_0x8004);
         }
         sTradeAnim->state++;
         break;
