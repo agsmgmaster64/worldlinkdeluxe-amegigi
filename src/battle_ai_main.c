@@ -3922,7 +3922,7 @@ static u32 GetWindAbilityScore(u32 battlerAtk, u32 battlerDef, struct AiLogicDat
     else if (aiData->abilities[battlerAtk] == ABILITY_WIND_POWER)
     {
         if (gBattleMons[battlerAtk].volatiles.chargeTimer == 0
-         && HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
+         && HasDamagingMoveOfType(battlerAtk, TYPE_WIND))
         {
             score = DECENT_EFFECT;
         }

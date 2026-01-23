@@ -119,7 +119,7 @@ void ItemUseCB_Pokeball(u8 taskId, TaskFunc task);
 
 // Start qol_field_moves
 // These are all moved from src/party_menu.c
-u8 CanTeachMove(struct Pokemon *mon, enum Move move);
+enum CanMoveBeLearned CanTeachMove(struct Pokemon *mon, enum Move move);
 
 // End qol_field_moves
 

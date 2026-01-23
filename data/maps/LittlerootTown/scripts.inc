@@ -1117,7 +1117,7 @@ LittlerootTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0_Text_0:
 	.string "{SPEAKER NAME_MOM}{PLAYER}, we're here, honey!\p"
 	.string "It must be tiring riding with our things\n"
 	.string "in the moving truck.\p"
-	.string "Well, this is Littleroot Town.\p"
+	.string "Well, this is Autumnleaf Town.\p"
 	.string "How do you like it?\n"
 	.string "This is our new home!\p"
 	.string "It has a quaint feel, but it seems to be\n"
