@@ -234,7 +234,7 @@ enum Gender
 #define PLAYLIST_SET_STYLE_ALTERNATE2 4
 #define PLAYLIST_SET_STYLE_COUNT 5
 
-enum Direction
+enum __attribute__((packed)) Direction
 {
     DIR_NONE,
     DIR_SOUTH,
