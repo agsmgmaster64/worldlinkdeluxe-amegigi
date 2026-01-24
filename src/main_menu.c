@@ -1604,7 +1604,7 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
             NewGameBirchSpeech_ClearGenderWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
-        default:
+        default: //repeat task if nothing is selected
             break;
     }
     gender2 = Menu_GetCursorPos();
