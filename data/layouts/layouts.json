@@ -209,7 +209,7 @@
       "id": "LAYOUT_ROUTE102",
       "name": "Route102_Layout",
       "width": 50,
-      "height": 30,
+      "height": 32,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_RG_General",
@@ -5472,6 +5472,30 @@
       "secondary_tileset": "gTileset_RG_GameCorner",
       "border_filepath": "data/layouts/CarpetTraining/border.bin",
       "blockdata_filepath": "data/layouts/CarpetTraining/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_HOUSE",
+      "name": "OldaleTown_House",
+      "width": 11,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PewterGym",
+      "border_filepath": "data/layouts/OldaleHouse1/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleHouse1/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLDALE_TOWN_HOUSE_ALT",
+      "name": "OldaleTown_HouseAlt",
+      "width": 11,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_Building",
+      "secondary_tileset": "gTileset_RG_PewterGym",
+      "border_filepath": "data/layouts/OldaleTown_HouseAlt/border.bin",
+      "blockdata_filepath": "data/layouts/OldaleTown_HouseAlt/map.bin"
     }
   ]
 }

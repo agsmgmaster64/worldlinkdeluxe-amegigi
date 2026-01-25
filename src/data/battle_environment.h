@@ -44,6 +44,10 @@ const u32 gBattleEnvironmentTiles_Ice[] = INCBIN_U32("graphics/battle_environmen
 const u16 gBattleEnvironmentPalette_Ice[] = INCBIN_U16("graphics/battle_environment/ice/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Ice[] = INCBIN_U32("graphics/battle_environment/ice/map.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_FallGrass[] = INCBIN_U32("graphics/battle_environment/fall_grass/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_FallGrass[] = INCBIN_U16("graphics/battle_environment/fall_grass/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_FallGrass[] = INCBIN_U32("graphics/battle_environment/fall_grass/map.bin.smolTM");
+
 #define ENVIRONMENT_BACKGROUND(background)                      \
 {                                                               \
     .tileset = gBattleEnvironmentTiles_##background,            \
@@ -608,6 +612,37 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .camouflageType = TYPE_COSMIC,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
         .background = ENVIRONMENT_BACKGROUND(TallGrass),
+        .battleIntroSlide = BattleIntroSlide1,
+    },
+
+    [BATTLE_ENVIRONMENT_SNOW_GRASS] =
+    {
+        .name = _("Snow Grass"),
+        .naturePower = MOVE_ICE_BEAM,
+        .secretPowerAnimation = B_SECRET_POWER_ANIMATION >= GEN_7 ? gBattleAnimMove_IceShard : gBattleAnimMove_Avalanche,
+        .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        .camouflageType = TYPE_ICE,
+        .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
+        .background = ENVIRONMENT_BACKGROUND(TallGrass),
+        .battleIntroSlide = BattleIntroSlide1,
+    },
+
+    [BATTLE_ENVIRONMENT_FALL_GRASS] =
+    {
+        .name = _("Fall Grass"),
+        .naturePower = MOVE_ENERGY_LIGHT,
+        .secretPowerAnimation = gBattleAnimMove_NeedleArm,
+        .secretPowerEffect = MOVE_EFFECT_SLEEP,
+        .camouflageType = TYPE_NATURE,
+        .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
+        .background = 
+        {
+            .tileset = gBattleEnvironmentTiles_FallGrass,
+            .tilemap = gBattleEnvironmentTilemap_FallGrass,
+            .entryTileset = gBattleEnvironmentAnimTiles_TallGrass,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_TallGrass,
+            .palette = gBattleEnvironmentPalette_FallGrass,
+        },
         .battleIntroSlide = BattleIntroSlide1,
     },
 };

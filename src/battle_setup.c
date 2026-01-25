@@ -739,7 +739,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_LONG_GRASS;
     if (MetatileBehavior_IsSnowGrass(tileBehavior))
-        return BATTLE_ENVIRONMENT_SNOW;
+        return BATTLE_ENVIRONMENT_SNOW_GRASS;
+    if (MetatileBehavior_IsFallGrass(tileBehavior))
+        return BATTLE_ENVIRONMENT_FALL_GRASS;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
         return BATTLE_ENVIRONMENT_SAND;
     if (MetatileBehavior_IsIce(tileBehavior))

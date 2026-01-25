@@ -85,6 +85,7 @@
 #define FLDEFF_DEFOG                     80
 #define FLDEFF_ORAS_DOWSE                81
 #define FLDEFF_ROCK_CLIMB_DUST           82
+#define FLDEFF_FALL_GRASS                83
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -132,6 +133,7 @@
 #define FLDEFFOBJ_ORAS_DOWSE_MAY        43
 #define FLDEFFOBJ_ROCK_CLIMB_BLOB       44
 #define FLDEFFOBJ_ROCK_CLIMB_DUST       45
+#define FLDEFFOBJ_FALL_GRASS            46
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
@@ -146,7 +148,7 @@
 #define FLDEFF_PAL_TAG_HOF_MONITOR        0x1010
 #define FLDEFF_PAL_TAG_UNKNOWN            0x1011
 #define FLDEFF_PAL_TAG_CAVE_DUST          0x1012
-#define FLDEFF_PAL_TAG_SNOW_GRASS         0x1013
+#define FLDEFF_PAL_TAG_SEASON_GRASS       0x1013
 #define FLDEFF_PAL_TAG_ORAS_DOWSE         0x1014
 #define FLDEFF_PAL_TAG_DUST_CLOUD         0x1015
 #define FLDEFF_PAL_TAG_FIELD_MOVE_MON     0x8400

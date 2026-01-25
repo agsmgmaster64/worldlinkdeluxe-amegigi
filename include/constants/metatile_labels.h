@@ -1,6 +1,16 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_Autumn
+#define METATILE_Autumn_FallGrass                0x801
+#define METATILE_Autumn_FallGrass_ShortTree      0x810
+#define METATILE_Autumn_FallGrass_TreeLeft       0x806
+#define METATILE_Autumn_FallGrass_TreeRight      0x807
+#define METATILE_Autumn_FallTallGrass            0x802
+#define METATILE_Autumn_FallTallGrass_ShortTree  0x803
+#define METATILE_Autumn_FallTallGrass_TreeLeft   0x804
+#define METATILE_Autumn_FallTallGrass_TreeRight  0x805
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 

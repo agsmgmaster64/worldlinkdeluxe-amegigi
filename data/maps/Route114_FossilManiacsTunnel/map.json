@@ -13,11 +13,11 @@
   "show_map_name": false,
   "floor_number": 0,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "local_id": "LOCALID_FOSSIL_MANIAC",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 5,
       "y": 3,
@@ -74,7 +74,5 @@
       "script": "Route114_FossilManiacsTunnel_EventScript_ManiacMentionCaveIn"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

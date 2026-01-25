@@ -1364,7 +1364,7 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_CaveDust = {
 
 const struct SpritePalette gSpritePalette_CaveDust = {gFieldEffectObjectPalette_CaveDust, FLDEFF_PAL_TAG_CAVE_DUST};
 
-const struct SpritePalette gSpritePalette_SnowGrass = {gFieldEffectObjectPalette_SnowGrass, FLDEFF_PAL_TAG_SNOW_GRASS};
+const struct SpritePalette gSpritePalette_SeasonGrass = {gFieldEffectObjectPalette_SeasonGrass, FLDEFF_PAL_TAG_SEASON_GRASS};
 
 static const struct SpriteFrameImage sPicTable_SnowGrass[] = {
     overworld_frame(gFieldEffectObjectPic_SnowGrass, 2, 2, 0),
@@ -1376,13 +1376,32 @@ static const struct SpriteFrameImage sPicTable_SnowGrass[] = {
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_SnowGrass = {
     .tileTag = TAG_NONE,
-    .paletteTag = FLDEFF_PAL_TAG_SNOW_GRASS,
+    .paletteTag = FLDEFF_PAL_TAG_SEASON_GRASS,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_TallGrass,
     .images = sPicTable_SnowGrass,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateSnowGrassFieldEffect,
 };
+
+static const struct SpriteFrameImage sPicTable_FallGrass[] = {
+    overworld_frame(gFieldEffectObjectPic_FallGrass, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_FallGrass, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_FallGrass, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_FallGrass, 2, 2, 3),
+    overworld_frame(gFieldEffectObjectPic_FallGrass, 2, 2, 4),
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_FallGrass = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_SEASON_GRASS,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_TallGrass,
+    .images = sPicTable_FallGrass,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateFallGrassFieldEffect,
+};
+
 static const struct SpriteFrameImage sPicTable_RockClimbBlob[] = {
     overworld_frame(gFieldEffectObjectPic_RockClimbBlob, 4, 4, 1),
     overworld_frame(gFieldEffectObjectPic_RockClimbBlob, 4, 4, 0),
@@ -1390,7 +1409,7 @@ static const struct SpriteFrameImage sPicTable_RockClimbBlob[] = {
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_RockClimbBlob = {
-    .tileTag = 0xFFFF,
+    .tileTag = TAG_NONE,
     .paletteTag = 0xFFFF,
     .oam = &gObjectEventBaseOam_32x32,
     .anims = sAnimTable_SurfBlob,
