@@ -5496,6 +5496,18 @@
       "secondary_tileset": "gTileset_RG_PewterGym",
       "border_filepath": "data/layouts/OldaleTown_HouseAlt/border.bin",
       "blockdata_filepath": "data/layouts/OldaleTown_HouseAlt/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_MAP",
+      "name": "TestMap_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_RG_General",
+      "secondary_tileset": "gTileset_Snow2",
+      "border_filepath": "data/layouts/TestMap/border.bin",
+      "blockdata_filepath": "data/layouts/TestMap/map.bin"
     }
   ]
 }

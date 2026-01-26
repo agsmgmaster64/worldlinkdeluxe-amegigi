@@ -1216,3 +1216,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CarpetTraining/text.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/TestMap/scripts.inc"
+	.include "data/maps/TestMap/text.inc"
