@@ -105,4 +105,11 @@ bool32 CanThrowBall(void);
 bool32 CannotUseItemsInBattle(enum Item itemId, struct Pokemon *mon);
 void ItemUseOutOfBattle_Hexorb(u8 taskId); // Hexorb
 
+enum ItemTMHMOrEvolutionStone
+{
+    ITEM_IS_OTHER,
+    ITEM_IS_TM_HM,
+    ITEM_IS_EVOLUTION_STONE,
+};
+
 #endif // GUARD_ITEM_USE_H

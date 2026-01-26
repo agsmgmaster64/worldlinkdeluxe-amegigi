@@ -39,7 +39,7 @@ $(VOICE_BIN_DIR)/uncomp_%.bin: $(VOICE_SUBDIR)/uncomp_%.aif
 	$(WAV2AGB) -b -l 1 --no-pad $< $@
 
 # Uncompressed sounds
-$(SOUND_BIN_DIR)/%.bin: sound/%.wav 
+$(SOUND_BIN_DIR)/%.bin: sound/%.wav
 	$(WAV2AGB) -b $< $@
 
 # For each line in midi.cfg, we do some trickery to convert it into a make rule for the `.mid` file described on the line

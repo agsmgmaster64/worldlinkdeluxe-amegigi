@@ -529,7 +529,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
 {
     u32 battlerIn1, battlerIn2;
     u8 numAbsorbingAbilities = 0;
-    enum Ability absorbingTypeAbilities[3]; // Array size is maximum number of absorbing abilities for a single type
+    enum Ability absorbingTypeAbilities[8]; // Max needed for type + move property absorbers
     s32 firstId;
     s32 lastId;
     struct Pokemon *party;
@@ -574,42 +574,47 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLASH_FIRE;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLAME_ABSORB;
     }
-    else if (incomingType == TYPE_WATER || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WATER))
+    if (incomingType == TYPE_WATER || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WATER))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WATER_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_DRY_SKIN;
         if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
     }
-    else if (incomingType == TYPE_WIND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WIND))
+    if (incomingType == TYPE_WIND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WIND))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_VOLT_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOTOR_DRIVE;
         if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LIGHTNING_ROD;
     }
-    else if (incomingType == TYPE_NATURE || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_NATURE))
+    if (incomingType == TYPE_NATURE || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_NATURE))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SAP_SIPPER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_FLORA_ABSORB;
     }
-    else if (incomingType == TYPE_EARTH || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_EARTH))
+    if (incomingType == TYPE_EARTH || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_EARTH))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
     }
-    else if (IsSoundMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove)))
+    if (IsSoundMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SOUNDPROOF;
     }
-    else if (IsBallisticMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsBallisticMove(incomingMove)))
+    if (IsBallisticMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsBallisticMove(incomingMove)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_BULLETPROOF;
     }
-    else if (IsWindMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsWindMove(incomingMove)))
+    if (IsWindMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsWindMove(incomingMove)))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_WIND_RIDER;
     }
-    else
+    if (IsPowderMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsPowderMove(incomingMove)))
+    {
+        if (GetConfig(CONFIG_POWDER_OVERCOAT) >= GEN_6)
+            absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_OVERCOAT;
+    }
+    if (numAbsorbingAbilities == 0)
     {
         return FALSE;
     }
