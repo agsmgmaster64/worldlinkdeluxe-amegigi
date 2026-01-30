@@ -18,7 +18,7 @@ enum __attribute__((packed)) Type
     TYPE_FIRE = 11,
     TYPE_WATER = 12,
     TYPE_NATURE = 13,
-    TYPE_WIND = 14,
+    TYPE_ELECTRIC = 14,
     TYPE_REASON = 15,
     TYPE_ICE = 16,
     TYPE_FAITH = 17,

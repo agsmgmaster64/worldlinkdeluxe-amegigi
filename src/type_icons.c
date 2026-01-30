@@ -125,7 +125,7 @@ const union AnimCmd sSpriteAnim_TypeIcon_Grass[] =
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Electric[] =
 {
-    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_WIND), 0),
+    ANIMCMD_FRAME(TYPE_ICON_2_FRAME(TYPE_ELECTRIC), 0),
     ANIMCMD_END
 };
 const union AnimCmd sSpriteAnim_TypeIcon_Psychic[] =
@@ -170,7 +170,7 @@ const union AnimCmd *const sSpriteAnimTable_TypeIcons[] =
     [TYPE_FIRE] =       sSpriteAnim_TypeIcon_Fire,
     [TYPE_WATER] =      sSpriteAnim_TypeIcon_Water,
     [TYPE_NATURE] =     sSpriteAnim_TypeIcon_Grass,
-    [TYPE_WIND] =       sSpriteAnim_TypeIcon_Electric,
+    [TYPE_ELECTRIC] =   sSpriteAnim_TypeIcon_Electric,
     [TYPE_REASON] =     sSpriteAnim_TypeIcon_Psychic,
     [TYPE_ICE] =        sSpriteAnim_TypeIcon_Ice,
     [TYPE_FAITH] =      sSpriteAnim_TypeIcon_Dragon,

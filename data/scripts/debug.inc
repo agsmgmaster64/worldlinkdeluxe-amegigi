@@ -882,7 +882,7 @@ Debug_EventScript_SetTeraType_Nature:
 	end
 
 Debug_EventScript_SetTeraType_Wind:
-	setteratype TYPE_WIND, VAR_0x8004
+	setteratype TYPE_ELECTRIC, VAR_0x8004
 	releaseall
 	end
 

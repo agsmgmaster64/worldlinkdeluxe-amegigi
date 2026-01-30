@@ -6469,7 +6469,7 @@ gBattleAnimMove_TechnoBlast::
 	createvisualtask AnimTask_TechnoBlast, 0x5
 	jumpargeq 0x0, TYPE_FIRE, TechnoBlastFire
 	jumpargeq 0x0, TYPE_WATER, TechnoBlastWater
-	jumpargeq 0x0, TYPE_WIND, TechnoBlastElectric
+	jumpargeq 0x0, TYPE_ELECTRIC, TechnoBlastElectric
 	jumpargeq 0x0, TYPE_ICE, TechnoBlastIce
 TechnoBlastNormal:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge animation
@@ -14941,7 +14941,7 @@ gBattleAnimMove_TerrainPulse::
 	setalpha 12, 8
 	simplepaletteblend selector=F_PAL_BG, delay=1, initial_blend_y=0, target_blend_y=7, color=RGB_BLACK
 	createvisualtask AnimTask_TerrainPulse, 0x5
-	jumpargeq 0x0, TYPE_WIND, TerrainPulseElectric
+	jumpargeq 0x0, TYPE_ELECTRIC, TerrainPulseElectric
 	jumpargeq 0x0, TYPE_NATURE, TerrainPulseGrass
 	jumpargeq 0x0, TYPE_HEART, TerrainPulseFairy
 	jumpargeq 0x0, TYPE_REASON, TerrainPulsePsychic
@@ -19590,7 +19590,7 @@ gBattleAnimMove_TeraBlast::
 	jumpifmovetypeequal TYPE_FIRE, TeraBlastFire
 	jumpifmovetypeequal TYPE_WATER, TeraBlastWater
 	jumpifmovetypeequal TYPE_NATURE, TeraBlastGrass
-	jumpifmovetypeequal TYPE_WIND, TeraBlastElectric
+	jumpifmovetypeequal TYPE_ELECTRIC, TeraBlastElectric
 	jumpifmovetypeequal TYPE_REASON, TeraBlastPsychic
 	jumpifmovetypeequal TYPE_ICE, TeraBlastIce
 	jumpifmovetypeequal TYPE_FAITH, TeraBlastDragon

@@ -7751,7 +7751,7 @@ void AnimTask_TerrainPulse(u8 taskId)
     if (IsAnyTerrainAffected(gBattleAnimAttacker, GetBattlerAbility(gBattleAnimAttacker), GetBattlerHoldEffect(gBattleAnimAttacker), gFieldStatuses))
     {
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
-            gBattleAnimArgs[0] = TYPE_WIND;
+            gBattleAnimArgs[0] = TYPE_ELECTRIC;
         else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
             gBattleAnimArgs[0] = TYPE_NATURE;
         else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)

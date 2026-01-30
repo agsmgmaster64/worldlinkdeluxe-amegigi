@@ -441,7 +441,7 @@ BattleFrontier_BattleFactoryPreBattleRoom_EventScript_CommentOnOpponentType::
 # 221 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	call_if_eq VAR_0x8005, TYPE_NATURE, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesGrass
 # 222 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
-	call_if_eq VAR_0x8005, TYPE_WIND, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesElectric
+	call_if_eq VAR_0x8005, TYPE_ELECTRIC, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesElectric
 # 223 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"
 	call_if_eq VAR_0x8005, TYPE_REASON, BattleFrontier_BattleFactoryPreBattleRoom_EventScript_OpponentUsesPsychic
 # 224 "data/maps/BattleFrontier_BattleFactoryPreBattleRoom/scripts.pory"

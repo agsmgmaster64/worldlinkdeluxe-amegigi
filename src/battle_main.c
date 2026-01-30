@@ -5937,7 +5937,7 @@ enum Type TrySetAteType(enum Move move, enum BattlerId battlerAtk, enum Ability 
         ateType = TYPE_FLYING;
         break;
     case ABILITY_GALVANIZE:
-        ateType = TYPE_WIND;
+        ateType = TYPE_ELECTRIC;
         break;
     case ABILITY_CONSECRATE:
         ateType = TYPE_FAITH;
@@ -6113,7 +6113,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
             if (IsAnyTerrainAffected(battler, GetBattlerAbility(battler), GetBattlerHoldEffect(battler), gFieldStatuses))
             {
                 if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
-                    return TYPE_WIND;
+                    return TYPE_ELECTRIC;
                 else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
                     return TYPE_NATURE;
                 else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
@@ -6132,7 +6132,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
             {
             case WEATHER_RAIN_THUNDERSTORM:
                 if (B_THUNDERSTORM_TERRAIN)
-                    return TYPE_WIND;
+                    return TYPE_ELECTRIC;
                 break;
             case WEATHER_FOG_HORIZONTAL:
             case WEATHER_FOG_DIAGONAL:

@@ -333,7 +333,7 @@ static enum FieldEffectOutcome BenefitsFromElectricTerrain(enum BattlerId battle
 
     if (grounded && ((gBattleMons[battler].status1 & STATUS1_SLEEP)
     || gBattleMons[battler].volatiles.yawn
-    || HasDamagingMoveOfType(battler, TYPE_WIND)))
+    || HasDamagingMoveOfType(battler, TYPE_ELECTRIC)))
         return FIELD_EFFECT_POSITIVE;
 
     if (HasBattlerTerrainBoostMove(LEFT_FOE(battler), STATUS_FIELD_ELECTRIC_TERRAIN)

@@ -104,7 +104,7 @@ static bool32 Hexorb_DoesTypeBlockStatus(u32 species, u32 typeIndex, u32 status)
         case STATUS1_FROSTBITE:
             return (type == TYPE_ICE);
         case STATUS1_PARALYSIS:
-            return (B_PARALYZE_ELECTRIC >= GEN_6 && type == TYPE_WIND);
+            return (B_PARALYZE_ELECTRIC >= GEN_6 && type == TYPE_ELECTRIC);
         case STATUS1_BURN:
             return (type == TYPE_FIRE);
         default:

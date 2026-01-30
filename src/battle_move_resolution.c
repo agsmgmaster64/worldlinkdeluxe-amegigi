@@ -3540,7 +3540,7 @@ static void TryClearChargeVolatile(enum Type moveType)
     if (B_CHARGE < GEN_9) // Prior to gen9, charge is cleared during the end turn
         return;
 
-    if (moveType == TYPE_WIND && gBattleMons[gBattlerAttacker].volatiles.chargeTimer == 1)
+    if (moveType == TYPE_ELECTRIC && gBattleMons[gBattlerAttacker].volatiles.chargeTimer == 1)
         gBattleMons[gBattlerAttacker].volatiles.chargeTimer = 0;
 
     for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)

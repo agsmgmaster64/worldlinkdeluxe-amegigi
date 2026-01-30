@@ -1333,7 +1333,7 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             switch (aiData->abilities[BATTLE_PARTNER(battlerDef)])
             {
             case ABILITY_LIGHTNING_ROD:
-                if (moveType == TYPE_WIND && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
+                if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(battlerAtk, move, aiData->abilities[battlerAtk]))
                     RETURN_SCORE_MINUS(20);
                 break;
             case ABILITY_STORM_DRAIN:
@@ -1535,7 +1535,7 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
         case EFFECT_CHARGE:
             if (gBattleMons[battlerAtk].volatiles.chargeTimer > 0)
                 ADJUST_SCORE(-20);
-            else if (!HasMoveWithType(battlerAtk, TYPE_WIND))
+            else if (!HasMoveWithType(battlerAtk, TYPE_ELECTRIC))
                 ADJUST_SCORE(-10);
             else if (B_CHARGE_SPDEF_RAISE >= GEN_5
               && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPDEF))
@@ -3466,7 +3466,7 @@ static s32 AI_DoubleBattle(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             case ABILITY_LIGHTNING_ROD:
             case ABILITY_MOTOR_DRIVE:
             case ABILITY_VOLT_ABSORB:
-                if (moveType == TYPE_WIND)
+                if (moveType == TYPE_ELECTRIC)
                 {
                     if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) < GEN_5 && atkPartnerAbility == ABILITY_LIGHTNING_ROD)
                     {
@@ -3922,7 +3922,7 @@ static u32 GetWindAbilityScore(enum BattlerId battlerAtk, enum BattlerId battler
     else if (aiData->abilities[battlerAtk] == ABILITY_WIND_POWER)
     {
         if (gBattleMons[battlerAtk].volatiles.chargeTimer == 0
-         && HasDamagingMoveOfType(battlerAtk, TYPE_WIND))
+         && HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
         {
             score = DECENT_EFFECT;
         }
@@ -5035,7 +5035,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
         }
         break;
     case EFFECT_CHARGE:
-        if (HasDamagingMoveOfType(battlerAtk, TYPE_WIND))
+        if (HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))
             ADJUST_SCORE(DECENT_EFFECT);
         if (B_CHARGE_SPDEF_RAISE >= GEN_5)
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
@@ -5238,7 +5238,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
             ADJUST_SCORE(GOOD_EFFECT); // Steal move
         break;
     case EFFECT_MUD_SPORT:
-        if (!HasMoveWithType(battlerAtk, TYPE_WIND) && HasMoveWithType(battlerDef, TYPE_WIND))
+        if (!HasMoveWithType(battlerAtk, TYPE_ELECTRIC) && HasMoveWithType(battlerDef, TYPE_ELECTRIC))
             ADJUST_SCORE(WEAK_EFFECT);
         break;
     case EFFECT_WATER_SPORT:
@@ -5556,8 +5556,8 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_SOAK:
-        if (HasMoveWithType(battlerAtk, TYPE_WIND) || HasMoveWithType(battlerAtk, TYPE_NATURE)
-        || HasMoveWithType(BATTLE_PARTNER(battlerAtk), TYPE_WIND) || HasMoveWithType(BATTLE_PARTNER(battlerAtk), TYPE_NATURE)
+        if (HasMoveWithType(battlerAtk, TYPE_ELECTRIC) || HasMoveWithType(battlerAtk, TYPE_NATURE)
+        || HasMoveWithType(BATTLE_PARTNER(battlerAtk), TYPE_ELECTRIC) || HasMoveWithType(BATTLE_PARTNER(battlerAtk), TYPE_NATURE)
         || (HasBattlerSideMoveWithEffect(battlerAtk, EFFECT_SUPER_EFFECTIVE_ON_ARG) && GetMoveArgType(move) == TYPE_WATER) )
             ADJUST_SCORE(DECENT_EFFECT); // Get some super effective moves
         break;
@@ -6492,7 +6492,7 @@ static s32 AI_HPAware(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum
     if (IsTargetingPartner(battlerAtk, battlerDef))
     {
         if ((effect == EFFECT_HEAL_PULSE || effect == EFFECT_HIT_ENEMY_HEAL_ALLY)
-         || (moveType == TYPE_WIND && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
+         || (moveType == TYPE_ELECTRIC && gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_VOLT_ABSORB)
          || (moveType == TYPE_WATER && (gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_DRY_SKIN || gAiLogicData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_WATER_ABSORB)))
         {
             if (gBattleMons[battlerDef].volatiles.healBlock)

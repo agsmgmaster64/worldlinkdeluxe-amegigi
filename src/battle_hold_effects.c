@@ -304,7 +304,7 @@ static enum ItemEffect TryCellBattery(enum BattlerId battlerDef)
 
     if (IsBattlerAlive(battlerDef)
      && IsBattlerTurnDamaged(battlerDef)
-     && GetBattleMoveType(gCurrentMove) == TYPE_WIND)
+     && GetBattleMoveType(gCurrentMove) == TYPE_ELECTRIC)
     {
         BattleScriptCall(BattleScript_TargetItemStatRaise);
         SET_STATCHANGER(STAT_ATK, 1, FALSE);

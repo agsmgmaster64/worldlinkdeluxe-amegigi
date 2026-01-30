@@ -581,7 +581,7 @@ static bool32 FindMonThatAbsorbsOpponentsMove(enum BattlerId battler)
         if (GetConfig(CONFIG_REDIRECT_ABILITY_IMMUNITY) >= GEN_5)
             absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_STORM_DRAIN;
     }
-    if (incomingType == TYPE_WIND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_WIND))
+    if (incomingType == TYPE_ELECTRIC || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_ELECTRIC))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_VOLT_ABSORB;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_MOTOR_DRIVE;
@@ -864,7 +864,7 @@ static bool32 GetHitEscapeTransformState(enum BattlerId battlerAtk, enum Move mo
         if (AI_CanMoveBeBlockedByTarget(&ctx))
         {
             if ((moveType == TYPE_WATER && abilityDef == ABILITY_STORM_DRAIN)
-             || (moveType == TYPE_WIND && abilityDef == ABILITY_LIGHTNING_ROD))
+             || (moveType == TYPE_ELECTRIC && abilityDef == ABILITY_LIGHTNING_ROD))
                 absorberOnField = TRUE;
             gAiLogicData->effectiveness[battlerAtk][battlerDef][moveIndex] = UQ_4_12(0.0);
             continue;
