@@ -273,6 +273,12 @@ extern const u16 gBattleEnvironmentPalette_Building[];
 extern const u32 gBattleEnvironmentTiles_Plain[];
 extern const u32 gBattleEnvironmentTilemap_Plain[];
 extern const u16 gBattleEnvironmentPalette_Plain[];
+extern const u32 gBattleEnvironmentTiles_FallGrass[];
+extern const u32 gBattleEnvironmentTilemap_FallGrass[];
+extern const u16 gBattleEnvironmentPalette_FallGrass[];
+extern const u32 gBattleEnvironmentTiles_Ice[];
+extern const u32 gBattleEnvironmentTilemap_Ice[];
+extern const u16 gBattleEnvironmentPalette_Ice[];
 extern const u16 gBattleEnvironmentPalette_Frontier[];
 extern const u32 gBattleEnvironmentTiles_Stadium[];
 extern const u32 gBattleEnvironmentTilemap_Stadium[];
@@ -2080,8 +2086,6 @@ extern const u32 gConfetti_Gfx[];
 extern const u16 gConfetti_Pal[];
 
 extern const u32 gBattleInterfaceGfx_BattleBar[];
-extern const u32 gGhostFrontPic[];
-extern const u16 gGhostPalette[];
 extern const u32 gBattleAnimSpriteGfx_Substitute[];
 extern const u32 gBattleAnimSpriteGfx_SubstituteBack[];
 extern const u16 gBattleAnimSpritePal_Substitute[];
@@ -3463,5 +3467,7 @@ extern const u16 gBattleIcons_Pal2[];
 extern const u32 gItemIcon_Hexorb[];
 extern const u16 gItemIconPalette_Hexorb[];
 // End hexorb Branch
+extern const u32 gGhostFrontPic[];
+extern const u16 gGhostPalette[];
 
 #endif //GUARD_GRAPHICS_H

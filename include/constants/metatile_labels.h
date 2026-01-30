@@ -1,6 +1,8 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+#include "constants/metatile_labels_frlg.h"
+
 // gTileset_Autumn
 #define METATILE_Autumn_FallGrass                0x801
 #define METATILE_Autumn_FallGrass_ShortTree      0x810

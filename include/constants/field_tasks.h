@@ -11,5 +11,6 @@
 #define STEP_CB_CRACKED_FLOOR       7
 #define STEP_CB_FLIPSWITCH_TILE     8
 #define STEP_CB_UT_TILE_PUZZLE      9
+#define STEP_CB_ICEFALL_CAVE        10
 
 #endif // GUARD_CONSTANTS_FIELD_TASKS_H

@@ -2864,6 +2864,14 @@ void DoWallyTutorialBagMenu(void)
     GoToBagMenu(ITEMMENULOCATION_WALLY, POCKET_MEDICINE, CB2_SetUpReshowBattleScreenAfterMenu2);
 }
 
+void InitOldManBag(void)
+{
+    PrepareBagForWallyTutorial();
+    AddBagItem(ITEM_POTION, 1);
+    AddBagItem(ITEM_POKE_BALL, 1);
+    GoToBagMenu(ITEMMENULOCATION_WALLY, POCKET_ITEMS, CB2_SetUpReshowBattleScreenAfterMenu2);
+}
+
 #define tTimer data[8]
 #define WALLY_BAG_DELAY 80 // The number of frames between each action Wally takes in the bag
 

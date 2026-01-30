@@ -57,6 +57,7 @@ static void SootopolisGymIcePerStepCallback(u8);
 static void FlipSwitchPanelPerStepCallback(u8);
 static void UTTilePuzzlePerStepCallback(u8);
 static void CrackedFloorPerStepCallback(u8);
+static void IcefallCaveIcePerStepCallback(u8);
 static void Task_MuddySlope(u8);
 
 static const TaskFunc sPerStepCallbacks[] =
@@ -71,6 +72,21 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
     [STEP_CB_FLIPSWITCH_TILE]   = FlipSwitchPanelPerStepCallback,
     [STEP_CB_UT_TILE_PUZZLE]    = UTTilePuzzlePerStepCallback,
+    [STEP_CB_ICEFALL_CAVE]      = IcefallCaveIcePerStepCallback
+};
+
+// The positions of each map space with crackable ice in Icefall Cave.
+static const u8 sIcefallCaveIceCoords[][2] =
+{
+    {  8,  3 },
+    { 10,  5 },
+    { 15,  5 },
+    {  8,  9 },
+    {  9,  9 },
+    { 16,  9 },
+    {  8, 10 },
+    {  9, 10 },
+    {  8, 14 }
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.
@@ -105,7 +121,7 @@ static const struct PacifidlogMetatileOffsets sFloatingBridgeMetatileOffsets[] =
 };
 
 // The positions of each map space with crackable ice in Granite Cave.
-static const u8 sIcefallCaveIceCoords[][2] =
+static const u8 sSootIceCoords[][2] =
 {
     {  4,  2 },
     {  2,  5 },
@@ -613,9 +629,9 @@ static void MarkFlipSwitchCoordVisited(s16 x, s16 y, bool32 turnOn)
 static void MarkIcePuzzleCoordVisited(s16 x, s16 y)
 {
     u8 i;
-    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    for (i = 0; i < ARRAY_COUNT(sSootIceCoords); i++)
     {
-        if (sIcefallCaveIceCoords[i][0] + MAP_OFFSET == x && sIcefallCaveIceCoords[i][1] + MAP_OFFSET == y)
+        if (sSootIceCoords[i][0] + MAP_OFFSET == x && sSootIceCoords[i][1] + MAP_OFFSET == y)
         {
             FlagSet(i + 1);
             break;
@@ -640,12 +656,12 @@ static bool32 IsIcePuzzleCoordVisited(s16 x, s16 y)
 void SetSootopolisGymCrackedIceMetatiles(void)
 {
     u8 i;
-    for (i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    for (i = 0; i < ARRAY_COUNT(sSootIceCoords); i++)
     {
         if (FlagGet(i + 1) == TRUE)
         {
-            int x = sIcefallCaveIceCoords[i][0] + MAP_OFFSET;
-            int y = sIcefallCaveIceCoords[i][1] + MAP_OFFSET;
+            int x = sSootIceCoords[i][0] + MAP_OFFSET;
+            int y = sSootIceCoords[i][1] + MAP_OFFSET;
             MapGridSetMetatileIdAt(x, y, METATILE_RG_SeafoamIslands_CrackedIce);
         }
     }
@@ -1145,3 +1161,118 @@ static void Task_MuddySlope(u8 taskId)
         }
     }
 }
+
+static void MarkIcefallCavePuzzleCoordVisited(s16 x, s16 y)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    {
+        if (sIcefallCaveIceCoords[i][0] + MAP_OFFSET == x && sIcefallCaveIceCoords[i][1] + MAP_OFFSET == y)
+        {
+            FlagSet(i + 1);
+            break;
+        }
+    }
+}
+
+void SetIcefallCaveCrackedIceMetatiles(void)
+{
+    for (u32 i = 0; i < ARRAY_COUNT(sIcefallCaveIceCoords); i++)
+    {
+        if (FlagGet(i + 1) == TRUE)
+        {
+            int x = sIcefallCaveIceCoords[i][0] + MAP_OFFSET;
+            int y = sIcefallCaveIceCoords[i][1] + MAP_OFFSET;
+            MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_CrackedIce);
+        }
+    }
+}
+
+#define tState data[1]
+#define tPrevX data[2]
+#define tPrevY data[3]
+#define tIceX  data[4]
+#define tIceY  data[5]
+#define tDelay data[6]
+
+static void IcefallCaveIcePerStepCallback(u8 taskId)
+{
+    s16 x, y;
+    u8 tileBehavior;
+    s16 *data = gTasks[taskId].data;
+    switch (tState)
+    {
+        case 0:
+            PlayerGetDestCoords(&x, &y);
+            tPrevX = x;
+            tPrevY = y;
+            tState = 1;
+            break;
+        case 1:
+            PlayerGetDestCoords(&x, &y);
+            // End if player hasn't moved
+            if (x == tPrevX && y == tPrevY)
+                return;
+
+            tPrevX = x;
+            tPrevY = y;
+            tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+            if (MetatileBehavior_IsThinIce(tileBehavior) == TRUE)
+            {
+                // Thin ice, set it to cracked ice
+                MarkIcefallCavePuzzleCoordVisited(x, y);
+                tDelay = 4;
+                tState = 2;
+                tIceX = x;
+                tIceY = y;
+            }
+            else if (MetatileBehavior_IsCrackedIce(tileBehavior) == TRUE)
+            {
+                // Cracked ice, set it to broken ice
+                tDelay = 4;
+                tState = 3;
+                tIceX = x;
+                tIceY = y;
+            }
+            break;
+        case 2:
+            if (tDelay != 0)
+            {
+                tDelay--;
+            }
+            else
+            {
+                // Crack ice
+                x = tIceX;
+                y = tIceY;
+                PlaySE(SE_ICE_CRACK);
+                MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_CrackedIce);
+                CurrentMapDrawMetatileAt(x, y);
+                tState = 1;
+            }
+            break;
+        case 3:
+            if (tDelay != 0)
+            {
+                tDelay--;
+            }
+            else
+            {
+                // Break ice
+                x = tIceX;
+                y = tIceY;
+                PlaySE(SE_ICE_BREAK);
+                MapGridSetMetatileIdAt(x, y, METATILE_SeafoamIslands_IceHole);
+                CurrentMapDrawMetatileAt(x, y);
+                VarSet(VAR_TEMP_1, 1);
+                tState = 1;
+            }
+            break;
+    }
+}
+
+#undef tState
+#undef tPrevX
+#undef tPrevY
+#undef tIceX
+#undef tIceY
+#undef tDelay

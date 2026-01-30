@@ -6,6 +6,7 @@
 #include "field_camera.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
+#include "field_specials.h"
 #include "fieldmap.h"
 #include "fldeff.h"
 #include "malloc.h"
@@ -53,6 +54,7 @@ static void CutGrassSpriteCallbackEnd(struct Sprite *);
 
 // EWRAM variables
 static EWRAM_DATA u8 *sCutGrassSpriteArrayPtr = NULL;
+static EWRAM_DATA bool8 sScheduleOpenDottedHole = FALSE;
 
 static const u16 sCutGrassMetatileMapping[][2] = {
     {
@@ -177,7 +179,7 @@ bool32 SetUpFieldMove_Cut(void)
     s32 x, y;
     u32 i, j;
 
-    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE || CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG) == TRUE)
     {
         // Standing in front of cuttable tree.
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
@@ -245,7 +247,10 @@ bool8 FldEff_UseCutOnTree(void)
 static void StartCutGrassFieldEffect(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_CUT_ON_GRASS);
-    FieldEffectStart(FLDEFF_CUT_GRASS);
+    if (sScheduleOpenDottedHole == TRUE)
+        CutMoveOpenDottedHoleDoor();
+    else
+        FieldEffectStart(FLDEFF_CUT_GRASS);
 }
 
 bool8 FldEff_CutGrass(void)

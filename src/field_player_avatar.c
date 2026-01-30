@@ -109,6 +109,7 @@ static bool8 ForcedMovement_MuddySlope(void);
 static bool8 ForcedMovement_Electricity(void);
 static bool8 ForcedMovement_TileWater(void);
 static bool8 ForcedMovement_SlideBack(void);
+static void PlaySpinSound(void);
 
 static void MovePlayerNotOnBike(enum Direction, u16);
 static u8 CheckMovementInputNotOnBike(enum Direction);
@@ -134,8 +135,6 @@ static bool8 PlayerAnimIsMultiFrameStationaryAndStateNotTurning(void);
 static bool8 PlayerIsAnimActive(void);
 static bool8 PlayerCheckIfAnimFinishedOrInactive(void);
 
-static void PlayerGoSpin(enum Direction);
-static void PlayerApplyTileForcedMovement(u8);
 static void PlayerWalkSlowStairs(enum Direction direction);
 static void PlayerWalkSlow(enum Direction direction);
 static void PlayerRunSlow(enum Direction direction);
@@ -144,6 +143,8 @@ static void PlayerNotOnBikeCollide(enum Direction);
 static void PlayerNotOnBikeCollideWithFarawayIslandMew(enum Direction);
 
 static void PlayCollisionSoundIfNotFacingWarp(enum Direction);
+static void PlayerGoSpin(enum Direction direction);
+static void PlayerApplyTileForcedMovement(u8 metatileBehavior);
 
 static void HideShowWarpArrow(struct ObjectEvent *);
 
@@ -342,7 +343,7 @@ void PlayerStep(enum Direction direction, u16 newKeys, u16 heldKeys)
     struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
 
     HideShowWarpArrow(playerObjEvent);
-    if (gPlayerAvatar.preventStep == FALSE && TryUpdatePlayerSpinDirection() == FALSE)
+    if (gPlayerAvatar.preventStep == FALSE && !TryUpdatePlayerSpinDirection())
     {
         Bike_TryAcroBikeHistoryUpdate(newKeys, heldKeys);
         if (TryInterruptObjectEventSpecialAnim(playerObjEvent, direction) == 0)
@@ -437,16 +438,19 @@ static void PlayerAllowForcedMovementIfMovingSameDirection(void)
 
 static bool8 TryUpdatePlayerSpinDirection(void)
 {
-    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && (gPlayerAvatar.lastSpinTile >= MB_SPIN_RIGHT && gPlayerAvatar.lastSpinTile <= MB_SPIN_DOWN))
+    if ((gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && MetatileBehavior_IsSpinTile(gPlayerAvatar.lastSpinTile))
     {
         struct ObjectEvent *playerObjEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
         if (playerObjEvent->heldMovementFinished)
         {
-            u32 playerMetatileBehavior = playerObjEvent->currentMetatileBehavior;
-            if (MetatileBehavior_IsStopSpinning(playerMetatileBehavior))
+            if (MetatileBehavior_IsStopSpinning(playerObjEvent->currentMetatileBehavior))
+            {
                 return FALSE;
-            if (playerMetatileBehavior >= MB_SPIN_RIGHT && playerMetatileBehavior <= MB_SPIN_DOWN)
-                gPlayerAvatar.lastSpinTile = playerMetatileBehavior;
+            }
+            if (MetatileBehavior_IsSpinTile(playerObjEvent->currentMetatileBehavior))
+            {
+                gPlayerAvatar.lastSpinTile = playerObjEvent->currentMetatileBehavior;
+            }
             ObjectEventClearHeldMovement(playerObjEvent);
             PlayerApplyTileForcedMovement(gPlayerAvatar.lastSpinTile);
         }
@@ -581,26 +585,6 @@ static bool8 ForcedMovement_WalkEast(void)
     return DoForcedMovement(DIR_EAST, PlayerWalkNormal);
 }
 
-static bool8 ForcedMovement_SpinRight(void)
-{
-    return DoForcedMovement(DIR_EAST, PlayerGoSpin);
-}
-
-static bool8 ForcedMovement_SpinLeft(void)
-{
-    return DoForcedMovement(DIR_WEST, PlayerGoSpin);
-}
-
-static bool8 ForcedMovement_SpinUp(void)
-{
-    return DoForcedMovement(DIR_NORTH, PlayerGoSpin);
-}
-
-static bool8 ForcedMovement_SpinDown(void)
-{
-    return DoForcedMovement(DIR_SOUTH, PlayerGoSpin);
-}
-
 static bool8 ForcedMovement_PushedSouthByCurrent(void)
 {
     return DoForcedMovement(DIR_SOUTH, PlayerRideWaterCurrent);
@@ -721,6 +705,35 @@ static bool8 ForcedMovement_SlideBack(void)
         break;
     }
     return ForcedMovement_Slide(slideDirection, PlayerWalkFast);
+}
+
+static bool8 ForcedMovement_SpinRight(void)
+{
+    PlaySpinSound();
+    return DoForcedMovement(DIR_EAST, PlayerGoSpin);
+}
+
+static bool8 ForcedMovement_SpinLeft(void)
+{
+    PlaySpinSound();
+    return DoForcedMovement(DIR_WEST, PlayerGoSpin);
+}
+
+static bool8 ForcedMovement_SpinUp(void)
+{
+    PlaySpinSound();
+    return DoForcedMovement(DIR_NORTH, PlayerGoSpin);
+}
+
+static bool8 ForcedMovement_SpinDown(void)
+{
+    PlaySpinSound();
+    return DoForcedMovement(DIR_SOUTH, PlayerGoSpin);
+}
+
+static void PlaySpinSound(void)
+{
+    PlaySE(SE_M_RAZOR_WIND2);
 }
 
 static void MovePlayerNotOnBike(enum Direction direction, u16 heldKeys)
@@ -1063,7 +1076,7 @@ bool8 TryPushBoulder(s16 x, s16 y, enum Direction direction)
     {
         u8 objectEventId = GetObjectEventIdByXY(x, y);
 
-        if (objectEventId != OBJECT_EVENTS_COUNT && gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+        if (objectEventId != OBJECT_EVENTS_COUNT && (gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER || gObjectEvents[objectEventId].graphicsId == OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG))
         {
             x = gObjectEvents[objectEventId].currentCoords.x;
             y = gObjectEvents[objectEventId].currentCoords.y;
@@ -1380,15 +1393,14 @@ void PlayerFreeze(void)
 
 static void PlayerGoSpin(enum Direction direction)
 {
-    m4aSongNumStart(SE_M_RAZOR_WIND2);
     PlayerSetAnimId(GetSpinMovementAction(direction), COPY_MOVE_WALK_FAST);
 }
 
 static void PlayerApplyTileForcedMovement(u8 metatileBehavior)
 {
-    u32 i;
+    int i;
 
-    for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
+    for (i = 0; i < ARRAY_COUNT(sForcedMovementTestFuncs); i++)
     {
         if (sForcedMovementTestFuncs[i](metatileBehavior))
             sForcedMovementFuncs[i + 1]();
@@ -1594,7 +1606,10 @@ void StopPlayerAvatar(void)
 
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
 {
-    return sRivalAvatarGfxIds[state][gender];
+    if (IS_FRLG)
+        return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gender);
+    else
+        return sRivalAvatarGfxIds[state][gender];
 }
 
 static u16 GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(u8 outfit, u8 state, u8 gender, bool32 isAnim)
@@ -1874,6 +1889,8 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
     {
         ObjectEventClearHeldMovementIfFinished(player);
         ObjectEventClearHeldMovementIfFinished(boulder);
+        HandleBoulderFallThroughHole(boulder);
+        HandleBoulderActivateVictoryRoadSwitch(boulder->currentCoords.x, boulder->currentCoords.y);
         gPlayerAvatar.preventStep = FALSE;
         UnlockPlayerFieldControls();
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
@@ -1988,6 +2005,11 @@ static bool8 PlayerAvatar_SecretBaseMatSpinStep3(struct Task *task, struct Objec
         DestroyTask(FindTaskIdByFunc(PlayerAvatar_DoSecretBaseMatSpin));
     }
     return FALSE;
+}
+
+void SeafoamIslandsB4F_CurrentDumpsPlayerOnLand(void)
+{
+    CreateStopSurfingTask(DIR_NORTH);
 }
 
 static void CreateStopSurfingTask(enum Direction direction)

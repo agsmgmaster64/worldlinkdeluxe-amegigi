@@ -276,7 +276,7 @@ void AnimTask_AttackerFadeToInvisible(u8 taskId)
 {
     ANIM_CMD_ARGS(stepDelay);
 
-    int battler;
+    enum BattlerId battler;
     gTasks[taskId].data[0] = cmd->stepDelay;
     battler = gBattleAnimAttacker;
     gTasks[taskId].data[1] = 16;
@@ -439,7 +439,7 @@ void AnimTearDrop(struct Sprite *sprite)
 {
     ANIM_CMD_ARGS(relativeTo, type);
 
-    u8 battler;
+    enum BattlerId battler;
     s8 xOffset;
 
     if (cmd->relativeTo == ANIM_ATTACKER)
@@ -1015,20 +1015,20 @@ static void AnimTask_MetallicShine_Step(u8 taskId)
 // Changes battler's palette to either grayscale or original.
 void AnimTask_SetGrayscaleOrOriginalPal(u8 taskId)
 {
-    ANIM_CMD_ARGS(battler, mode);
+    ANIM_CMD_ARGS(animBattler, mode);
 
     u8 spriteId;
-    u8 battler;
+    enum BattlerId battler;
     bool8 calcSpriteId = FALSE;
     u8 position = B_POSITION_PLAYER_LEFT;
 
-    switch (cmd->battler)
+    switch (cmd->animBattler)
     {
     case ANIM_ATTACKER:
     case ANIM_TARGET:
     case ANIM_ATK_PARTNER:
     case ANIM_DEF_PARTNER:
-        spriteId = GetAnimBattlerSpriteId(cmd->battler);
+        spriteId = GetAnimBattlerSpriteId(cmd->animBattler);
         break;
     case ANIM_PLAYER_LEFT:
         position = B_POSITION_PLAYER_LEFT;

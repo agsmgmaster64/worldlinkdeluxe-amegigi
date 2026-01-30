@@ -5,6 +5,7 @@
 #include "fieldmap.h"
 #include "metatile_behavior.h"
 #include "task.h"
+#include "tilesets.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 
@@ -21,6 +22,7 @@ enum {
 struct DoorGraphics
 {
     u16 metatileNum;
+    const struct Tileset *tileset;
     u8 sound;
     u8 size;
     const void *tiles;
@@ -190,6 +192,38 @@ static const struct DoorAnimFrame sDoorAnimFrames_CloseBig[] = {
     {}
 };
 
+static const struct DoorAnimFrame sDoorAnimFrames_OpenSmallFrlg[] = {
+    {4, -1},
+    {4, 0 * TILE_SIZE_4BPP},
+    {4, 4 * TILE_SIZE_4BPP},
+    {4, 8 * TILE_SIZE_4BPP},
+    {}
+};
+
+static const struct DoorAnimFrame sDoorAnimFrames_CloseSmallFrlg[] = {
+    {4, 8 * TILE_SIZE_4BPP},
+    {4, 4 * TILE_SIZE_4BPP},
+    {4, 0 * TILE_SIZE_4BPP},
+    {4, -1},
+    {}
+};
+
+static const struct DoorAnimFrame sDoorAnimFrames_OpenLargeFrlg[] = {
+    {4, -1},
+    {4, 0 * TILE_SIZE_4BPP},
+    {4, 8 * TILE_SIZE_4BPP},
+    {4, 16 * TILE_SIZE_4BPP},
+    {}
+};
+
+static const struct DoorAnimFrame sDoorAnimFrames_CloseLargeFrlg[] = {
+    {4, 16 * TILE_SIZE_4BPP},
+    {4, 8 * TILE_SIZE_4BPP},
+    {4, 0 * TILE_SIZE_4BPP},
+    {4, -1},
+    {}
+};
+
 static const u8 sDoorAnimPalettes_General[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_PokeCenter[] = {1, 1, 1, 1, 1, 1, 1, 1};
 static const u8 sDoorAnimPalettes_Gym[] = {5, 5, 5, 5, 5, 5, 5, 5};
@@ -245,6 +279,43 @@ static const u8 sDoorAnimPalettes_RG_General[] = {2, 2, 2, 2, 2, 2, 2, 2};
 static const u8 sDoorAnimPalettes_RG_SlidingSingle[] = {3, 3, 3, 3, 3, 3, 3, 3};
 static const u8 sDoorAnimPalettes_RG_SlidingDouble[] = {3, 3, 3, 3, 3, 3, 3, 3};
 static const u8 sDoorAnimPalettes_RG_Sevii123[] = {5, 5, 5, 5, 5, 5, 5, 5};
+
+#if IS_FRLG
+
+static const u8 sDoorAnimPalettes_GeneralFrlg[] = {2, 2, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_SlidingSingle[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_SlidingDouble[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Pallet[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_OaksLab[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_Viridian[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_Pewter[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_Saffron[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_SilphCo[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Cerulean[] = {12, 12, 12, 12, 12, 12, 12, 12};
+static const u8 sDoorAnimPalettes_Lavender[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_Vermilion[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_PokemonFanClub[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_DeptStore[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Fuchsia[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_SafariZoneFrlg[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_CinnabarLab[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_DeptStoreElevator[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_CableClubFrlg[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_HideoutElevator[] = {12, 12, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_SSAnne[] = {7, 7, 7, 7, 7, 7, 7, 7};
+static const u8 sDoorAnimPalettes_SilphCoElevator[] = {8, 8, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_Sevii123[] = {5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_JoyfulGameCorner[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_OneIslandPokeCenter[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Sevii45[] = {5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_FourIslandDayCare[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_RocketWarehouse[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_Sevii67[] = {5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_Teleporter[] = {8, 8, 8, 8, 8, 8, 8, 8};
+static const u8 sDoorAnimPalettes_TrainerTowerLobbyElevator[] = {8, 8, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_TrainerTowerRoofElevator[] = {11, 11, 2, 2, 2, 2, 2, 2};
+
+#endif // IS_FRLG
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -320,8 +391,30 @@ static void BuildDoorTiles(u16 *tiles, u16 tileNum, const u8 *paletteNums)
     }
 }
 
+static void DrawCurrentDoorAnimFrameFrlg(const struct DoorGraphics *gfx, int x, int y, const u8 *paletteNums)
+{
+    u16 tiles[8];
+    if (gfx->size == 1)
+        BuildDoorTiles(tiles, DOOR_TILE_START_SIZE1, paletteNums);
+
+    else
+    {
+        BuildDoorTiles(tiles, DOOR_TILE_START_SIZE1, paletteNums);
+        DrawDoorMetatileAt(x, y - 1, tiles);
+        BuildDoorTiles(tiles, DOOR_TILE_START_SIZE1 + 4, &paletteNums[4]);
+    }
+
+    DrawDoorMetatileAt(x, y, tiles);
+}
+
 static void DrawCurrentDoorAnimFrame(const struct DoorGraphics *gfx, u32 x, u32 y, const u8 *paletteNums)
 {
+    if (gMapHeader.mapLayout->isFrlg)
+    {
+        DrawCurrentDoorAnimFrameFrlg(gfx, x, y, paletteNums);
+        return;
+    }
+
     u16 tiles[24];
 
     switch (gfx->size)
@@ -360,8 +453,25 @@ static void DrawCurrentDoorAnimFrame(const struct DoorGraphics *gfx, u32 x, u32 
     }
 }
 
+static void DrawClosedDoorTilesFrlg(const struct DoorGraphics *gfx, int x, int y)
+{
+    if (gfx->size == 1)
+        CurrentMapDrawMetatileAt(x, y);
+    else
+    {
+        CurrentMapDrawMetatileAt(x, y);
+        CurrentMapDrawMetatileAt(x, y - 1);
+    }
+}
+
 static void DrawClosedDoorTiles(const struct DoorGraphics *gfx, u32 x, u32 y)
 {
+    if (gMapHeader.mapLayout->isFrlg)
+    {
+        DrawClosedDoorTilesFrlg(gfx, x, y);
+        return;
+    }
+
     CurrentMapDrawMetatileAt(x, y - 1);
     CurrentMapDrawMetatileAt(x, y);
 
@@ -439,7 +549,7 @@ static const struct DoorGraphics *GetDoorGraphics(const struct DoorGraphics *gfx
 {
     while (gfx->tiles != NULL)
     {
-        if (gfx->metatileNum == metatileNum)
+        if (gfx->metatileNum == metatileNum && (gfx->tileset == gMapHeader.mapLayout->primaryTileset || gfx->tileset == gMapHeader.mapLayout->secondaryTileset))
             return gfx;
         gfx++;
     }
@@ -477,6 +587,7 @@ static void DrawClosedDoor(const struct DoorGraphics *gfx, u32 x, u32 y)
 
 static void DrawOpenedDoor(const struct DoorGraphics *gfx, u32 x, u32 y)
 {
+    const struct DoorAnimFrame *doorAnimFrames = gMapHeader.mapLayout->isFrlg ? sDoorAnimFrames_OpenSmallFrlg : sDoorOpenAnimFrames;
     gfx = GetDoorGraphics(gfx, MapGridGetMetatileIdAt(x, y));
     if (gfx != NULL)
     {

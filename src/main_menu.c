@@ -18,6 +18,7 @@
 #include "list_menu.h"
 #include "mystery_event_menu.h"
 #include "naming_screen.h"
+#include "oak_speech.h"
 #include "option_menu.h"
 #include "option_plus_menu.h"
 #include "overworld.h"
@@ -1041,13 +1042,21 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
         {
             case ACTION_NEW_GAME:
             default:
-                // gPlttBufferUnfaded[0] = RGB_BLACK;
-                // gPlttBufferFaded[0] = RGB_BLACK;
-                gExitStairsMovementDisabled = FALSE;
-                // gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
-                gMain.savedCallback = CB2_NewGameBirchSpeech_ReturnFromOptionsMenu;
-                SetMainCallback2(CB2_InitChallengesMenu);
-                DestroyTask(taskId);
+                if (IS_FRLG)
+                {
+                    DestroyTask(taskId);
+                    FreeAllWindowBuffers();
+                    if (action != ACTION_OPTION)
+                        sCurrItemAndOptionMenuCheck = 0;
+                    else
+                        sCurrItemAndOptionMenuCheck |= OPTION_MENU_FLAG;  // entering the options menu
+                    StartNewGameSceneFrlg();
+                    return;
+                }
+
+                gPlttBufferUnfaded[0] = RGB_BLACK;
+                gPlttBufferFaded[0] = RGB_BLACK;
+                gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
                 break;
             case ACTION_CONTINUE:
                 gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -2299,7 +2308,7 @@ static void MainMenu_FormatSavegamePokedex(void)
         if (IsNationalPokedexEnabled())
             dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
         else
-            dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
+            dexCount = GetRegionalPokedexCount(FLAG_GET_CAUGHT);
         StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
         AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
         ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);

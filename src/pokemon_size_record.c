@@ -10,6 +10,7 @@
 #include "constants/pokemon_size_record.h"
 
 #define DEFAULT_MAX_SIZE 0x8000 // was 0x8100 in Ruby/Sapphire
+#define DEFAULT_MAX_SIZE_MAGIKARP 0
 static u8* ReturnHeightStringNoWhitespace(u32 size);
 
 struct UnknownStruct
@@ -157,6 +158,10 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
 
     FormatMonSizeRecord(gStringVar3, size);
     StringCopy(gStringVar1, GetSpeciesName(species));
+
+    if (species == SPECIES_MAGIKARP)
+        return;
+
     if (*sizeRecord == DEFAULT_MAX_SIZE)
         StringCopy(gStringVar2, gText_Marco);
     else
@@ -199,4 +204,42 @@ void CompareLotadSize(void)
     u16 *sizeRecord = GetVarPointer(VAR_LOTAD_SIZE_RECORD);
 
     gSpecialVar_Result = CompareMonSize(SPECIES_PLACEHOLD_FUTO, sizeRecord);
+}
+
+void InitHeracrossSizeRecord(void)
+{
+    VarSet(VAR_HERACROSS_SIZE_RECORD, DEFAULT_MAX_SIZE);
+}
+
+void GetHeracrossSizeRecordInfo(void)
+{
+    u16 *sizeRecord = GetVarPointer(VAR_HERACROSS_SIZE_RECORD);
+
+    GetMonSizeRecordInfo(SPECIES_PORYGON, sizeRecord);
+}
+
+void CompareHeracrossSize(void)
+{
+    u16 *sizeRecord = GetVarPointer(VAR_HERACROSS_SIZE_RECORD);
+
+    gSpecialVar_Result = CompareMonSize(SPECIES_PORYGON, sizeRecord);
+}
+
+void InitMagikarpSizeRecord(void)
+{
+    VarSet(VAR_MAGIKARP_SIZE_RECORD, DEFAULT_MAX_SIZE_MAGIKARP);
+}
+
+void GetMagikarpSizeRecordInfo(void)
+{
+    u16 *sizeRecord = GetVarPointer(VAR_MAGIKARP_SIZE_RECORD);
+
+    GetMonSizeRecordInfo(SPECIES_CHIBI_HINA, sizeRecord);
+}
+
+void CompareMagikarpSize(void)
+{
+    u16 *sizeRecord = GetVarPointer(VAR_MAGIKARP_SIZE_RECORD);
+
+    gSpecialVar_Result = CompareMonSize(SPECIES_CHIBI_HINA, sizeRecord);
 }

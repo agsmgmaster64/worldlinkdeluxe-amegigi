@@ -1038,7 +1038,6 @@ enum NationalDexOrder
     NATIONAL_DEX_PECHARUNT,
 };
 
-#define KANTO_DEX_COUNT     NATIONAL_DEX_NORMAL_KOMACHI
 #define JOHTO_DEX_COUNT     NATIONAL_DEX_CHIBI_KYOUKO
 
 #if TRUE
@@ -1122,7 +1121,19 @@ enum HoennDexOrder
     HOENN_DEX_PLACEHOLD2_KOSUZU,
 };
 
+
+// Kanto Pokedex order
+enum KantoDexOrder
+{
+    KANTO_DEX_NONE,
+    // Kanto
+    KANTO_DEX_CHIBI_REIMU,
+};
+
+#define KANTO_DEX_COUNT (KANTO_DEX_CHIBI_REIMU + 1)
 #define HOENN_DEX_COUNT (HOENN_DEX_PLACEHOLD2_KOSUZU + 1)
+
+#define REGIONAL_DEX_COUNT (IS_FRLG ? KANTO_DEX_COUNT : HOENN_DEX_COUNT)
 
 #define DECAGRAMS_IN_POUND             4536
 #define CM_PER_INCH                    2.54

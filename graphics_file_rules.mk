@@ -277,6 +277,9 @@ $(FONTGFXDIR)/outlined_narrow.latfont: $(FONTGFXDIR)/latin_outlined_narrow.png
 
 ### Miscellaneous ###
 
+$(MISCGFXDIR)/emoticons.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
 $(TITLESCREENGFXDIR)/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224
 

@@ -376,7 +376,7 @@ u32 UnpackSelectedBattlePalettes(s16 selector)
     bool8 targetPartner = (selector >> 4) & 1;
     bool8 anim1 = (selector >> 5) & 1;
     bool8 anim2 = (selector >> 6) & 1;
-    u32 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gAnimMoveIndex);
+    enum MoveTarget moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, gAnimMoveIndex);
 
     switch (moveTarget)
     {
@@ -392,6 +392,8 @@ u32 UnpackSelectedBattlePalettes(s16 selector)
             targetPartner |= 1;
             attackerPartner |= 1;
         }
+        break;
+    default:
         break;
     }
 
@@ -582,7 +584,6 @@ void AnimTask_BlendColorCycleExclude(u8 taskId)
 {
     ANIM_CMD_ARGS(unk0, delay, numBlends, initialBlendY, targetBlendY, color);
 
-    int battler;
     u32 selectedPalettes = 0;
 
     gTasks[taskId].data[0] = cmd->unk0;
@@ -593,7 +594,7 @@ void AnimTask_BlendColorCycleExclude(u8 taskId)
     gTasks[taskId].tBlendColor = cmd->color;
     gTasks[taskId].tRestoreBlend = 0;
 
-    for (battler = 0; battler < gBattlersCount; battler++)
+    for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
     {
         if (battler != gBattleAnimAttacker && battler != gBattleAnimTarget)
             selectedPalettes |= 1 << (battler + 16);
@@ -866,8 +867,8 @@ void AnimTask_TintPalettes(u8 taskId)
 {
     ANIM_CMD_ARGS(flagsScenery, flagsAttacker, flagsTarget, duration, r, g, b);
 
-    u8 attackerBattler;
-    u8 targetBattler;
+    enum BattlerId attackerBattler;
+    enum BattlerId targetBattler;
     u8 paletteIndex;
     u32 selectedPalettes = 0;
 
@@ -962,7 +963,7 @@ static void AnimShakeMonOrBattlePlatforms(struct Sprite *sprite)
 
 static void AnimShakeMonOrBattlePlatforms_Step(struct Sprite *sprite)
 {
-    u8 i;
+    u16 var0;
 
     if (sprite->sTimer > 0)
     {
@@ -983,7 +984,7 @@ static void AnimShakeMonOrBattlePlatforms_Step(struct Sprite *sprite)
         *(u16 *)(sprite->sShakePtrLo | (sprite->sShakePtrHi << 16)) = sprite->sOriginalValue;
         if (sprite->sType == SHAKE_MON_X || sprite->sType == SHAKE_MON_Y)
         {
-            for (i = 0; i < gBattlersCount; i++)
+            for (enum BattlerId i = 0; i < gBattlersCount; i++)
                 gSprites[gBattlerSpriteIds[i]].coordOffsetEnabled = FALSE;
         }
 
@@ -1128,9 +1129,11 @@ static void AnimHitSplatHandleInvert(struct Sprite *sprite)
 
 void AnimHitSplatRandom(struct Sprite *sprite)
 {
-    ANIM_CMD_ARGS(relativeTo, animation);
+    ANIM_CMD_ARGS(animBattler, animation);
+    if (cmd->animation == -1)
+        cmd->animation = Random2() & 3;
 
-    if (!InitSpritePosToAnimBattler(cmd->relativeTo, sprite, FALSE))
+    if (!InitSpritePosToAnimBattler(cmd->animBattler, sprite, FALSE))
         return;
     StartSpriteAffineAnim(sprite, cmd->animation);
 
@@ -1143,9 +1146,9 @@ void AnimHitSplatRandom(struct Sprite *sprite)
 
 void AnimHitSplatOnMonEdge(struct Sprite *sprite)
 {
-    ANIM_CMD_ARGS(relativeTo, x, y, animation);
+    ANIM_CMD_ARGS(animBattler, x, y, animation);
 
-    sprite->data[0] = GetAnimBattlerSpriteId(cmd->relativeTo);
+    sprite->data[0] = GetAnimBattlerSpriteId(cmd->animBattler);
     sprite->x = gSprites[sprite->data[0]].x + gSprites[sprite->data[0]].x2;
     sprite->y = gSprites[sprite->data[0]].y + gSprites[sprite->data[0]].y2;
     sprite->x2 = cmd->x;
