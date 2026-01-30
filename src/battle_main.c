@@ -5964,7 +5964,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
     if (state == MON_IN_BATTLE)
     {
         if (moveEffect == EFFECT_STRUGGLE)
-            return TYPE_MYSTERY;
+            return TYPE_NONE;
 
         species = gBattleMons[battler].species;
         heldItem = gBattleMons[battler].item;
