@@ -685,17 +685,6 @@ void BattleLoadMonSpriteGfx(struct Pokemon *mon, enum BattlerId battler)
     }
 }
 
-void DecompressGhostFrontPic(struct Pokemon *unused, u8 battlerId)
-{
-    u16 palOffset;
-    u8 position = GetBattlerPosition(battlerId);
-
-    DecompressDataWithHeaderWram(gGhostFrontPic, gMonSpritesGfxPtr->spritesGfx[position]);
-    palOffset = OBJ_PLTT_ID(battlerId);
-    LoadPalette(gGhostPalette, palOffset, PLTT_SIZE_4BPP);
-    LoadPalette(gGhostPalette, BG_PLTT_ID(8) + BG_PLTT_ID(battlerId), PLTT_SIZE_4BPP);
-}
-
 void BattleGfxSfxDummy2(u16 species)
 {
 }

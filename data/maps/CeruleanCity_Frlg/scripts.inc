@@ -167,7 +167,7 @@ CeruleanCity_EventScript_Grunt::
 	goto_if_defeated TRAINER_TEAM_ROCKET_GRUNT_5, CeruleanCity_EventScript_GruntDefeated
 	message CeruleanCity_Text_GruntIntro
 	waitmessage
-	playbgm MUS_RG_ENCOUNTER_ROCKET, 0
+	playbgm MUS_ZGS_ENCOUNTER_ROCKET, 0
 	waitbuttonpress
 	trainerbattle_no_intro TRAINER_TEAM_ROCKET_GRUNT_5, CeruleanCity_Text_GruntDefeat
 	setvar VAR_MAP_SCENE_CERULEAN_CITY_ROCKET, 1
@@ -407,7 +407,7 @@ CeruleanCity_Text_GruntIntro::
     .string "…Huh?\n"
     .string "Me?\p"
     .string "I'm an innocent bystander!\n"
-    .string "Don't you believe me?{PLAY_BGM}{MUS_RG_ENCOUNTER_ROCKET}$"
+    .string "Don't you believe me?{PLAY_BGM}{MUS_ZGS_ENCOUNTER_ROCKET}$"
 
 CeruleanCity_Text_GruntDefeat::
     .string "GRUNT: Stop! I give up!\n"

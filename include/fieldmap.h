@@ -44,7 +44,6 @@ enum Connection GetMapBorderIdAt(int x, int y);
 bool32 CanCameraMoveInDirection(enum Direction direction);
 u32 GetMetatileAttributesById(u16 metatile, u8 attributeType);
 void GetCameraFocusCoords(u16 *x, u16 *y);
-u32 MapGridGetMetatileAttributeAt(s16 x, s16 y, u8 attributeType);
 u8 MapGridGetMetatileLayerTypeAt(int x, int y);
 u8 MapGridGetElevationAt(int x, int y);
 bool8 CameraMove(int x, int y);

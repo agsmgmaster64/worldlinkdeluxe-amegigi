@@ -1161,7 +1161,7 @@ static bool32 HandleEndTurnMagicRoom(enum BattlerId battler)
     return effect;
 }
 
-static bool32 HandleEndTurnInverseRoom(u32 battler)
+static bool32 HandleEndTurnInverseRoom(enum BattlerId battler)
 {
     bool32 effect = FALSE;
 

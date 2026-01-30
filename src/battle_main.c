@@ -5695,7 +5695,7 @@ static void HandleEndTurn_FinishBattle(void)
             if (!(gBattleTypeFlags &(BATTLE_TYPE_LINK
                                         | BATTLE_TYPE_LINK_IN_BATTLE
                                         | BATTLE_TYPE_FIRST_BATTLE
-                                        | BATTLE_TYPE_WALLY_TUTORIAL
+                                        | BATTLE_TYPE_CATCH_TUTORIAL
                                         | BATTLE_TYPE_INGAME_PARTNER
                                         | BATTLE_TYPE_TOWER_LINK_MULTI
                                         | BATTLE_TYPE_RECORDED_LINK
@@ -5708,7 +5708,7 @@ static void HandleEndTurn_FinishBattle(void)
                                         | BATTLE_TYPE_LINK_IN_BATTLE
                                         | BATTLE_TYPE_MULTI
                                         | BATTLE_TYPE_BATTLE_TOWER
-                                        | BATTLE_TYPE_WALLY_TUTORIAL
+                                        | BATTLE_TYPE_CATCH_TUTORIAL
                                         | BATTLE_TYPE_LEGENDARY
                                         | BATTLE_TYPE_TWO_OPPONENTS
                                         | BATTLE_TYPE_INGAME_PARTNER

@@ -1322,7 +1322,7 @@ static void IntroCB_Scene1(struct IntroSequenceData * this)
     case 3:
         if (!gPaletteFade.active)
         {
-            m4aSongNumStart(MUS_RG_INTRO_FIGHT);
+            m4aSongNumStart(MUS_ZGS_INTRO_FIGHT);
             this->timer = 0;
             this->state++;
         }
@@ -2455,7 +2455,7 @@ static void SpriteCB_NidorinoCry(struct Sprite *sprite)
         }
         break;
     case 1:
-        PlayCry_ByMode(SPECIES_NIDORINO, 0x3F, CRY_MODE_DOUBLES);
+        PlayCry_ByMode(SPECIES_CHIBI_WRIGGLE, 0x3F, CRY_MODE_DOUBLES);
         sprite->sStateTimer = 0;
         sprite->sState++;
         break;

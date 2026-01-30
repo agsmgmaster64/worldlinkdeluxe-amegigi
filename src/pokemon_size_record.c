@@ -159,7 +159,7 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
     FormatMonSizeRecord(gStringVar3, size);
     StringCopy(gStringVar1, GetSpeciesName(species));
 
-    if (species == SPECIES_MAGIKARP)
+    if (species == SPECIES_CHIBI_HINA)
         return;
 
     if (*sizeRecord == DEFAULT_MAX_SIZE)

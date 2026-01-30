@@ -2268,7 +2268,6 @@ void BtlController_HandleLoadMonSprite(enum BattlerId battler)
     u32 y;
     struct Pokemon *mon = GetBattlerMon(battler);
     u16 species = GetBattlerVisualSpecies(battler);
-    u32 y;
 
     if (gBattleTypeFlags & BATTLE_TYPE_GHOST && GetBattlerSide(battler) == B_SIDE_OPPONENT)
     {

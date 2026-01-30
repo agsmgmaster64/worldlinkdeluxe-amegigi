@@ -2,7 +2,6 @@ const LOCALID_NURSE = 1
 
 mapscripts CarpetCenter_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        setrespawn(HEAL_LOCATION_CARPET_TOWN)
         end
     }
 }

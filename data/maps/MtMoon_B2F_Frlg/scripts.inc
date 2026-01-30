@@ -32,7 +32,7 @@ MtMoon_B2F_EventScript_BattleMiguel::
 	textcolor NPC_TEXT_COLOR_MALE
 	message MtMoon_B2F_Text_MiguelIntro
 	waitmessage
-	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, 0
+	playbgm MUS_ZGS_ENCOUNTER_GYM_LEADER, 0
 	waitbuttonpress
 	setvar VAR_LAST_TALKED, LOCALID_MIGUEL
 	trainerbattle_no_intro TRAINER_SUPER_NERD_MIGUEL, MtMoon_B2F_Text_MiguelDefeat

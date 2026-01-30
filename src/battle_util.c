@@ -834,9 +834,6 @@ void HandleAction_Run(void)
     }
 }
 
-#define safariBaitThrowCounter safariPkblThrowCounter
-#define safariRockThrowCounter safariGoNearCounter
-
 void HandleAction_WatchesCarefully(void)
 {
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
@@ -939,9 +936,6 @@ void HandleAction_ThrowRock(void)
 
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
-
-#undef safariBaitThrowCounter
-#undef safariRockThrowCounter
 
 void HandleAction_SafariZoneRun(void)
 {
@@ -9781,7 +9775,7 @@ bool32 AreBattlersOfSameGender(enum BattlerId battler1, enum BattlerId battler2)
     return (gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS && gender1 == gender2);
 }
 
-bool32 CanBeInfatuated(u32 battlerAtk, u32 battlerDef)
+bool32 CanBeInfatuated(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
     u16 atkAbility = GetBattlerAbility(battlerAtk);
 

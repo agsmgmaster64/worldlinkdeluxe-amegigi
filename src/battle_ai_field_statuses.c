@@ -456,7 +456,7 @@ static enum FieldEffectOutcome BenefitsFromHolyTerrain(enum BattlerId battler)
     return FIELD_EFFECT_NEUTRAL;
 }
 
-static enum FieldEffectOutcome BenefitsFromGravity(u32 battler)
+static enum FieldEffectOutcome BenefitsFromGravity(enum BattlerId battler)
 {
     if (!AI_IsBattlerGrounded(battler))
         return FIELD_EFFECT_NEGATIVE;

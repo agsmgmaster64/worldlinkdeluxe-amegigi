@@ -31,7 +31,7 @@ MtEmber_Summit_EventScript_Moltres::
 	waitmessage
 	waitmoncry
 	delay 10
-	playbgm MUS_RG_ENCOUNTER_GYM_LEADER, 0
+	playbgm MUS_ZGS_ENCOUNTER_GYM_LEADER, 0
 	waitbuttonpress
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle

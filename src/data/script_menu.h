@@ -771,13 +771,6 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
-static const struct MenuAction MultichoiceList_TrainerCardIconTint[] = {
-    {gText_Normal},
-    {gText_Black},
-    {gText_Pink},
-    {gText_Sepia},
-};
-
 static const struct MenuAction MultichoiceList_BerryPlot[] =
 {
     {COMPOUND_STRING("FERTILIZE")},
@@ -1047,9 +1040,9 @@ static const struct MenuAction sMultichoiceList_TrainerTowerMode[] = {
 
 static const struct MenuAction sMultichoiceList_TrainerCardIconTint[] = {
     { gText_Normal },
-    { gText_DexSearchColorBlack },
-    { gText_DexSearchColorPink },
-    { COMPOUND_STRING("SEPIA") }
+    { COMPOUND_STRING("Black") },
+    { COMPOUND_STRING("Pink") },
+    { COMPOUND_STRING("Sepia") }
 };
 
 static const u8 sText_Eggs[] = _("EGGS");
@@ -1241,7 +1234,6 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
-    [MULTI_TRAINER_CARD_ICON_TINT]     = MULTICHOICE(MultichoiceList_TrainerCardIconTint),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
     [MULTI_BIKE_SHOP]                  = MULTICHOICE(sMultichoiceList_BikeShop),
     [MULTI_EEVEELUTIONS]               = MULTICHOICE(sMultichoiceList_Eeveelutions),

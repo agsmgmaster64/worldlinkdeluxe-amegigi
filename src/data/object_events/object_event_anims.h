@@ -761,46 +761,6 @@ static const union AnimCmd sAnim_RaiseHand[] = {
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_SpinSouth[] =
-{
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(2, 2),
-    ANIMCMD_LOOP(1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_SpinNorth[] =
-{
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(2, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
-    ANIMCMD_LOOP(1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_SpinWest[] =
-{
-    ANIMCMD_FRAME(2, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_LOOP(1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_SpinEast[] =
-{
-    ANIMCMD_FRAME(2, 2, .hFlip = TRUE),
-    ANIMCMD_FRAME(1, 2),
-    ANIMCMD_FRAME(2, 2),
-    ANIMCMD_FRAME(0, 2),
-    ANIMCMD_LOOP(1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_RunSouth[] =
 {
     ANIMCMD_FRAME(12, 5),

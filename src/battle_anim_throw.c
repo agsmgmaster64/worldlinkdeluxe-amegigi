@@ -2634,13 +2634,6 @@ void AnimTask_SetAttackerTargetLeftPos(u8 taskId)
     DestroyAnimVisualTask(taskId);
 }
 
-void AnimTask_SafariGetReaction(u8 taskId)
-{
-    gBattleAnimArgs[7] = gBattleCommunication[MULTISTRING_CHOOSER];
-    
-    DestroyAnimVisualTask(taskId);
-}
-
 void AnimTask_GetTrappedMoveAnimId(u8 taskId)
 {
     switch (gBattleSpritesDataPtr->animationData->animArg)

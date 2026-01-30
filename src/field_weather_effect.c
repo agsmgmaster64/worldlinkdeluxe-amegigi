@@ -158,10 +158,6 @@ void Sunny_InitVars(void)
 {
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    if (MapHasPreviewScreen_HandleQLState2(gMapHeader.regionMapSectionId, MPS_TYPE_FADE_IN) == FALSE)
-    {
-        Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
-    }
     gWeatherPtr->noShadows = FALSE;
 }
 

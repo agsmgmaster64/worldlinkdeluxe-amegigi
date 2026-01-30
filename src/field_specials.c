@@ -4597,12 +4597,6 @@ u16 GetFirstPartnerMove(u16 species)
 {
     switch(species)
     {
-        case SPECIES_VENUSAUR:
-            return MOVE_FRENZY_PLANT;
-        case SPECIES_CHARIZARD:
-            return MOVE_BLAST_BURN;
-        case SPECIES_BLASTOISE:
-            return MOVE_HYDRO_CANNON;
         default:
             return MOVE_NONE;
     }
@@ -5368,7 +5362,7 @@ static void Task_AnimateElevatorWindowView(u8 taskId)
 void ForcePlayerOntoBike(void)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
-        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_BIKE);
     Overworld_SetSavedMusic(MUS_CYCLING);
     Overworld_ChangeMusicTo(MUS_CYCLING);
 }
@@ -5575,7 +5569,7 @@ static u16 SampleResortGorgeousMon(void)
     }
     while (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), 0) != TRUE)
     {
-        if (species == SPECIES_BULBASAUR)
+        if (species == SPECIES_CHIBI_REIMU)
             species = NUM_SPECIES - 1;
         else
             species--;
@@ -5595,7 +5589,7 @@ static const u16 sResortGorgeousDeluxeRewards[] = {
 static u16 SampleResortGorgeousReward(void)
 {
     if ((Random() % 100) >= 30)
-        return ITEM_LUXURY_BALL;
+        return ITEM_LUXURY_ORB;
     else
         return sResortGorgeousDeluxeRewards[Random() % NELEMS(sResortGorgeousDeluxeRewards)];
 }
@@ -5711,12 +5705,12 @@ void UpdateTrainerCardPhotoIcons(void)
         species[i] = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL);
         personality[i] = GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY, NULL);
     }
-    VarSet(VAR_TRAINER_CARD_MON_ICON_1, SpeciesToMailSpecies(species[0], personality[0]));
-    VarSet(VAR_TRAINER_CARD_MON_ICON_2, SpeciesToMailSpecies(species[1], personality[1]));
-    VarSet(VAR_TRAINER_CARD_MON_ICON_3, SpeciesToMailSpecies(species[2], personality[2]));
-    VarSet(VAR_TRAINER_CARD_MON_ICON_4, SpeciesToMailSpecies(species[3], personality[3]));
-    VarSet(VAR_TRAINER_CARD_MON_ICON_5, SpeciesToMailSpecies(species[4], personality[4]));
-    VarSet(VAR_TRAINER_CARD_MON_ICON_6, SpeciesToMailSpecies(species[5], personality[5]));
+    VarSet(VAR_TRAINER_CARD_MON_ICON_1, species[0]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_2, species[1]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_3, species[2]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_4, species[3]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_5, species[4]);
+    VarSet(VAR_TRAINER_CARD_MON_ICON_6, species[5]);
     VarSet(VAR_TRAINER_CARD_MON_ICON_TINT_IDX, gSpecialVar_0x8004);
 }
 

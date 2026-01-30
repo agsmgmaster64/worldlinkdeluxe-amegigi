@@ -108,8 +108,8 @@ static const u8 *GetProfOaksRatingMessageByCount(u16 count)
 {
     gSpecialVar_Result = FALSE;
 
-    if (count > 0 && GetSetPokedexFlag(NATIONAL_DEX_MEW, FLAG_GET_CAUGHT))
-        count--;
+    //if (count > 0 && GetSetPokedexFlag(NATIONAL_DEX_MEW, FLAG_GET_CAUGHT))
+        //count--;
 
     if (count < 10)
         return PokedexRating_Text_LessThan10;

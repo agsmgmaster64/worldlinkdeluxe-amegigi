@@ -95,7 +95,7 @@ PewterCity_Gym_Text_BrockIntro::
     .string "That's the TRAINER's honor that\n"
     .string "compels you to challenge me.\p"
     .string "Fine, then!\n"
-    .string "Show me your best!{PLAY_BGM}{MUS_RG_ENCOUNTER_GYM_LEADER}$"
+    .string "Show me your best!{PLAY_BGM}{MUS_ZGS_ENCOUNTER_GYM_LEADER}$"
 
 PewterCity_Gym_Text_BrockDefeat::
     .string "I took you for granted, and so\n"

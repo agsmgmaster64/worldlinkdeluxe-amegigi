@@ -1216,8 +1216,7 @@ static void ShowDecorationOnMap_(u16 mapX, u16 mapY, u8 decWidth, u8 decHeight, 
 {
     u16 i, j;
     s16 x, y;
-    u16 metatileBehavior;
-    u16 layerType;
+    u16 attributes;
     u16 impassableFlag;
     u16 overlapsWall;
     u16 elevation;

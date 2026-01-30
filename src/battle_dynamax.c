@@ -90,10 +90,6 @@ bool32 CanDynamax(enum BattlerId battler)
             return FALSE;
     }
 
-    // Cannot Dynamax against a ghost without the Silph Scope
-    if (IS_BATTLE_TYPE_GHOST_WITHOUT_SCOPE(gBattleTypeFlags))
-        return FALSE;
-
     // Check if species isn't allowed to Dynamax.
     if (GET_BASE_SPECIES_ID(species) == SPECIES_ZACIAN
         || GET_BASE_SPECIES_ID(species) == SPECIES_ZAMAZENTA

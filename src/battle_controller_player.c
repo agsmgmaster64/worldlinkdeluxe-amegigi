@@ -2374,7 +2374,7 @@ static void Controller_WaitForDebug(enum BattlerId battler)
     }
 }
 
-static void Controller_WaitToTransitionStatusMenu(u32 battler)
+static void Controller_WaitToTransitionStatusMenu(enum BattlerId battler)
 {
     if (!gPaletteFade.active)
     {

@@ -419,23 +419,21 @@
 #define OBJ_EVENT_GFX_HIKER_2                    401
 #define OBJ_EVENT_GFX_ENGINEER                   402
 #define OBJ_EVENT_GFX_KINDLER                    403
-#define OBJ_EVENT_GFX_SUPER_NERD                 404
-#define OBJ_EVENT_GFX_LASS_2                     405
-#define OBJ_EVENT_GFX_BUG_CATCHER_2              406
-#define OBJ_EVENT_GFX_TWIN_2                     407
-#define OBJ_EVENT_GFX_SCHOOL_KID_F               408
-#define OBJ_EVENT_GFX_RICH_BOY_2                 409
-#define OBJ_EVENT_GFX_LADY                       410
-#define OBJ_EVENT_GFX_PSYCHIC_F                  411
-#define OBJ_EVENT_GFX_BLACK_BELT_2               412
-#define OBJ_EVENT_GFX_AROMA_LADY                 413
-#define OBJ_EVENT_GFX_BATTLE_GIRL                414
-#define OBJ_EVENT_GFX_BIRD_KEEPER                415
+#define OBJ_EVENT_GFX_LASS_2                     404
+#define OBJ_EVENT_GFX_BUG_CATCHER_2              405
+#define OBJ_EVENT_GFX_TWIN_2                     406
+#define OBJ_EVENT_GFX_SCHOOL_KID_F               407
+#define OBJ_EVENT_GFX_RICH_BOY_2                 408
+#define OBJ_EVENT_GFX_LADY                       409
+#define OBJ_EVENT_GFX_PSYCHIC_F                  410
+#define OBJ_EVENT_GFX_BLACK_BELT_2               411
+#define OBJ_EVENT_GFX_AROMA_LADY                 412
+#define OBJ_EVENT_GFX_BIRD_KEEPER                413
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        416
+#define NUM_OBJ_EVENT_GFX                        414
 
 
 // These are dynamic object gfx ids.

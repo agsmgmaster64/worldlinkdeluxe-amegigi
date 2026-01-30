@@ -697,9 +697,9 @@ string generate_layout_headers_text(Json layouts_data) {
         else
             text << "\t.byte FALSE\n";
 
-            text << "\t.byte " << json_to_string(layout, "border_width") << "\n"
-                 << "\t.byte " << json_to_string(layout, "border_height") << "\n"
-                 << "\t.byte 0\n";
+        text << "\t.byte " << json_to_string(layout, "border_width") << "\n"
+                << "\t.byte " << json_to_string(layout, "border_height") << "\n"
+                << "\t.byte 0\n";
         text << "\n";
     }
 

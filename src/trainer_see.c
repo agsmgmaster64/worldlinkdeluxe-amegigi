@@ -424,49 +424,6 @@ static const struct SpriteFrameImage sSpriteImageTable_Emoticons[] = {
     {sEmoticons_Gfx + 0x380, 0x80},
 };
 
-static const union AnimCmd sAnimCmd_ExclamationMark1[] = {
-    ANIMCMD_FRAME( 0,  4),
-    ANIMCMD_FRAME( 1,  4),
-    ANIMCMD_FRAME( 2, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_DoubleExclMark[] = {
-    ANIMCMD_FRAME( 6,  4),
-    ANIMCMD_FRAME( 7,  4),
-    ANIMCMD_FRAME( 8, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_X[] = {
-    ANIMCMD_FRAME( 3,  4),
-    ANIMCMD_FRAME( 4,  4),
-    ANIMCMD_FRAME( 5, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_SmileyFace[] = {
-    ANIMCMD_FRAME( 9,  4),
-    ANIMCMD_FRAME(10,  4),
-    ANIMCMD_FRAME(11, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd sAnimCmd_QuestionMark[] = {
-    ANIMCMD_FRAME(12,  4),
-    ANIMCMD_FRAME(13,  4),
-    ANIMCMD_FRAME(14, 52),
-    ANIMCMD_END
-};
-
-static const union AnimCmd *const sSpriteAnimTable_Emoticons[] = {
-    sAnimCmd_ExclamationMark1,
-    sAnimCmd_DoubleExclMark,
-    sAnimCmd_X,
-    sAnimCmd_SmileyFace,
-    sAnimCmd_QuestionMark
-};
-
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
@@ -474,16 +431,6 @@ static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
-    .callback = SpriteCB_TrainerIcons
-};
-
-static const struct SpriteTemplate sSpriteTemplate_Emoticons = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
-    .oam = &sOamData_Icons,
-    .anims = sSpriteAnimTable_Emoticons,
-    .images = sSpriteImageTable_Emoticons,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_TrainerIcons
 };
 
